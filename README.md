@@ -1,13 +1,6 @@
-<p align="center">
-  <a href="https://next.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Contentful TypeScript starter 
-</h1>
+# Node.js Website Redesign Prototype
 
-Gatsby starter with Contentful and TypeScript configuration.
+Gatsby starter with TypeScript, Emotion, Contentful, and Remark.
 
 
 ## 🚀 Quick start
@@ -17,22 +10,15 @@ Gatsby starter with Contentful and TypeScript configuration.
     The Gatsby CLI helps you create new sites using Gatsby starters (like this one!)
 
     ```sh
-    # install the Gatsby CLI globally
-    npm install -g gatsby-cli
+    # install the dependencies
+    yarn install
     ```
 
-2.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the default starter.
-
-    ```sh
-    # create a new Gatsby site using the default starter
-    gatsby new my-project https://github.com/fhavrlent/gatsby-contentful-typescript-starter
-    ```
-
-3. **Set Contentful API keys.**
+2. **Set Contentful API keys.**
 
     Rename **`empty.env`** to **`.env`** and set your Contentful API variables
+
+    > TODO: Set up Contentful. You may skip this step right now. More detailed instructions to follow.
 
 3.  **Start developing.**
 
@@ -40,7 +26,7 @@ Gatsby starter with Contentful and TypeScript configuration.
 
     ```sh
     cd my-default-starter/
-    npm develop
+    yarn develop
     ```
 
 4.  **Open the source code and start editing!**
@@ -94,10 +80,10 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
   
   9.  **`gatsby-ssr.tsx`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://next.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
   
-  910.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+  10.  **`LICENSE`**: Gatsby is licensed under the MIT license.
   
   11.  **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. (You won’t change this file directly).
-  
+
   12.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
   
   13.  **`README.md`**: A text file containing useful reference information about your project.
@@ -108,6 +94,14 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
   
   16.  **`yarn.lock`**: [Yarn](https://yarnpkg.com/) is a package manager alternative to npm. You can use either yarn or npm, though all of the Gatsby docs reference npm.  This file serves essentially the same purpose as `package-lock.json`, just for a different package management system.
 
+## 📝 Data Sources
+
+This repository contains no documentation content. Content is pulled from across the Node.js Github Org, Contentful, and other data sources and stitched together into a cohesive website.
+
+### @nodejs/website-redesign
+
+The `/documentation` directory in website-redesign's `master` branch currently contains all the getting started content. Once this site and its content stabilizes a little further, the plan is to migrate this content into `nodejs/node` for continued maintenance.
+
 ## 🎓 Learning Gatsby
 
 Looking for more guidance? Full documentation for Gatsby lives [on the website](https://next.gatsbyjs.org/). Here are some places to start:
@@ -115,7 +109,3 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 -   **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://next.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
 -   **To dive straight into code samples head [to our documentation](https://next.gatsbyjs.org/docs/).** In particular, check out the “Guides”, API reference, and “Advanced Tutorials” sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/fhavrlent/gatsby-contentful-typescript-starter)
