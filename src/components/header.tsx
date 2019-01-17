@@ -10,15 +10,15 @@ type Props = {
 const Header = ({ siteTitle }: Props) => (
   <div
     style={{
-      background: 'white',
-      marginBottom: '1.45rem',
+      borderBottom: '1px solid var(--gray2)',
+      marginBottom: '1.4rem',
     }}
   >
     <div
       style={{
         margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
+        maxWidth: 1024,
+        padding: '1.4rem 1.2rem',
         display: 'flex',
         alignItems: 'center'
       }}
@@ -28,7 +28,7 @@ const Header = ({ siteTitle }: Props) => (
         <Link
           to="/"
           style={{
-            color: 'black',
+            color: 'var(--gray9)',
             textDecoration: 'none',
           }}
         >

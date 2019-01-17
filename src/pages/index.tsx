@@ -5,7 +5,7 @@ import { css } from 'emotion'
 import Layout from '../components/layout'
 
 const header = css({
-  color: 'black',
+  textDecoration: 'underline',
 });
 
 interface RemarkPage {
