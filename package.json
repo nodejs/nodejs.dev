@@ -1,0 +1,57 @@
+{
+  "name": "nodejs-website",
+  "description": "Node.js Demo Page",
+  "version": "0.3.0",
+  "author": "Adam Miller <ammiller@linkedin.com>",
+  "private": true,
+  "dependencies": {
+    "@types/react-helmet": "^5.0.7",
+    "dotenv": "^6.0.0",
+    "emotion": "^9.2.12",
+    "emotion-server": "^9.2.12",
+    "gatsby": "^2.0.0",
+    "gatsby-plugin-catch-links": "^2.0.9",
+    "gatsby-plugin-emotion": "^2.0.5",
+    "gatsby-plugin-manifest": "^2.0.2",
+    "gatsby-plugin-offline": "^2.0.5",
+    "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-sharp": "^2.0.17",
+    "gatsby-plugin-typescript": "^2.0.0",
+    "gatsby-remark-images": "^3.0.1",
+    "gatsby-remark-prismjs": "^3.2.0",
+    "gatsby-source-contentful": "^2.0.1",
+    "gatsby-source-filesystem": "^2.0.16",
+    "gatsby-transformer-remark": "^2.1.5",
+    "prismjs": "^1.15.0",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-emotion": "^9.2.12",
+    "react-helmet": "^5.2.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.1",
+    "website-redesign": "nodejs/website-redesign#f8fdb87d"
+  },
+  "keywords": [
+    "gatsby",
+    "node.js"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "format": "prettier --write '**/*.tsx'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commitmsg": "commitlint --edit $GIT_PARAMS"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.3.2",
+    "@commitlint/config-conventional": "^7.3.1",
+    "prettier": "^1.14.2",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-react": "^3.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  }
+}
