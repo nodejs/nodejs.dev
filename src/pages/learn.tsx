@@ -7,13 +7,16 @@ import Layout from '../components/layout';
  * When on the "Learn" page, we need to update the background gradient
  * that runs the side menu's title color change from white to black
  * as it becomes sticky and overlays the hero banner.
+ * TODO: This should happen in the component, only when rendered.
  */
 let prevOffset = -1;
 function magicHeroNumber() {
-  const offset = Math.min(document.scrollingElement!.scrollTop, 210);
+  if (typeof window === 'undefined') { return; } // Guard for SSR.
+  const doc = window.document;
+  const offset = Math.min(doc.scrollingElement!.scrollTop, 210);
   if (Math.abs(prevOffset - offset) > 5) {
     prevOffset = offset;
-    document.body.setAttribute('style', `--magic-hero-number: ${365 - offset}px`);
+    doc.body.setAttribute('style', `--magic-hero-number: ${365 - offset}px`);
   }
   window.requestAnimationFrame(magicHeroNumber);
 }
