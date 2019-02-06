@@ -9,7 +9,7 @@ if (process.env.ENVIROMENT !== 'production') {
 
 module.exports = {
   siteMetadata: {
-    title: 'Nodejs.dev Working Site',
+    title: 'Node.js',
   },
   plugins: [
     'gatsby-plugin-catch-links',
