@@ -207,7 +207,7 @@ main {
   /* Equivalent of .85 opacity without the transparency! */
   filter: brightness(160%) saturate(45%);
   height: 152px;
-  margin-bottom: 0 -2.4rem -152px 0;
+  margin: 0 -2.4rem -152px 0;
   position: sticky;
   top: 0;
   width: 100vw;
