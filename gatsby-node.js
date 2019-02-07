@@ -1,11 +1,17 @@
 exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage } = actions
+  const { createPage, deletePage } = actions
 
   // If this is the learn page, accept all following paths.
-  if (page.path.match(/^\/learn/)) {
-    page.matchPath = "/learn/*";
-
-    // Update the page.
-    createPage(page)
+  console.log(page.path);
+  if (!!~page.path.indexOf('/learn')) {
+    deletePage(page);
+    createPage({
+      ...page,
+      path: '/'
+    });
+    createPage({
+      ...page,
+      matchPath: "/learn/*",
+    });
   }
 }
