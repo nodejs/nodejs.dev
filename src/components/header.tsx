@@ -8,35 +8,23 @@ type Props = {
 }
 
 const Header = ({ siteTitle }: Props) => (
-  <div
-    style={{
-      borderBottom: '1px solid var(--gray2)',
-      marginBottom: '1.4rem',
-    }}
-  >
-    <div
+  <nav className="nav">
+    <ul
       style={{
         margin: '0 auto',
-        maxWidth: 1024,
-        padding: '1.4rem 1.2rem',
+        padding: '1.4rem 4.8rem',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        listStyle: 'none',
       }}
     >
-      <img src={logo} style={{ width: '120px', margin: '14px 24px 0 0' }} />
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'var(--gray9)',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
+      <li>
+        <Link to="/">
+          <img src={logo} alt={siteTitle} style={{ height: '62px', margin: '-6px 24px 0 0' }} />
         </Link>
-      </h1>
-    </div>
-  </div>
+      </li>
+    </ul>
+  </nav>
 )
 
 export default Header

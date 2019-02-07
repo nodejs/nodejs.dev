@@ -1,7 +1,17 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage, deletePage } = actions
 
-// You can delete this file if you're not using it
+  // If this is the learn page, accept all following paths.
+  console.log(page.path);
+  if (!!~page.path.indexOf('/learn')) {
+    deletePage(page);
+    createPage({
+      ...page,
+      path: '/'
+    });
+    createPage({
+      ...page,
+      matchPath: "/learn/*",
+    });
+  }
+}
