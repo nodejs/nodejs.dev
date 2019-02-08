@@ -8,6 +8,7 @@ if (process.env.ENVIROMENT !== 'production') {
 // }
 
 module.exports = {
+  pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
     title: 'Node.js',
   },

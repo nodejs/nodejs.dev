@@ -2,4 +2,8 @@ steps:
 - name: 'gcr.io/cloud-builders/yarn'
   args: ['install']
 - name: 'gcr.io/cloud-builders/yarn'
-  args: ['run', 'build']
+  args: ['run', 'build-ci']
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['rsync', '-R', 'public', 'gs://$GCS_PATH']
+  env:
+    - 'GCS_PATH=nodejs-dev-staging/$SHORT_SHA'
