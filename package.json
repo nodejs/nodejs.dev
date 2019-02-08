@@ -38,6 +38,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "build-ci": "gatsby build --prefix-paths",
     "start": "gatsby develop",
     "format": "prettier --write '**/*.tsx'",
     "test": "echo \"Error: no test specified\" && exit 1",
