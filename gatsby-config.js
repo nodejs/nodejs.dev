@@ -20,7 +20,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `learn`,
-        path: `${__dirname}/node_modules/website-redesign/documentation/`,
+        path: `${__dirname}/src/documentation/`,
         include: [`**/*.md`], // ignore files starting with a dot
       },
     },
