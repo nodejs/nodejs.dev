@@ -4,6 +4,6 @@ workflow "Post Staging Link on pull_request" {
 }
 
 action "Post Staging Link" {
-  uses = "mylesborins/action@master"
+  uses = "./.github/action/result-poster"
   secrets = ["GITHUB_TOKEN"]
 }
