@@ -1,5 +1,5 @@
 workflow "Post Staging Link on pull_request" {
-  on = "check_run"
+  on = "check_suite"
   resolves = ["Post Staging Link"]
 }
 
