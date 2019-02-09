@@ -28,8 +28,7 @@
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
     "tslint": "^5.11.0",
-    "typescript": "^3.1.1",
-    "website-redesign": "nodejs/website-redesign#f8fdb87d"
+    "typescript": "^3.1.1"
   },
   "keywords": [
     "gatsby",
