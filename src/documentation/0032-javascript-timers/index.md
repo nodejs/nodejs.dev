@@ -4,15 +4,6 @@ description: 'When writing JavaScript code, you might want to delay the executio
 author: flaviocopes
 ---
 
-<!-- TOC -->
-
-- [`setTimeout()`](#settimeout)
-  - [Zero delay](#zero-delay)
-- [`setInterval()`](#setinterval)
-- [Recursive setTimeout](#recursive-settimeout)
-
-<!-- /TOC -->
-
 ## `setTimeout()`
 
 When writing JavaScript code, you might want to delay the execution of a function.

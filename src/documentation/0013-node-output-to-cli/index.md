@@ -4,19 +4,6 @@ description: 'How to print to the command line console using Node, from the basi
 author: flaviocopes
 ---
 
-<!-- TOC -->
-
-- [Basic output using the console module](#basic-output-using-the-console-module)
-- [Clear the console](#clear-the-console)
-- [Counting elements](#counting-elements)
-- [Print the stack trace](#print-the-stack-trace)
-- [Calculate the time spent](#calculate-the-time-spent)
-- [stdout and stderr](#stdout-and-stderr)
-- [Color the output](#color-the-output)
-- [Create a progress bar](#create-a-progress-bar)
-
-<!-- /TOC -->
-
 ## Basic output using the console module
 
 Node provides a [`console` module](https://nodejs.org/api/console.html) which provides tons of very useful ways to interact with the command line.

@@ -4,22 +4,6 @@ description: 'Learn what streams are for, why are they so important, and how to 
 author: flaviocopes
 ---
 
-<!-- TOC -->
-
-- [What are streams](#what-are-streams)
-- [Why streams](#why-streams)
-- [An example of a stream](#an-example-of-a-stream)
-- [pipe()](#pipe)
-- [Streams-powered Node APIs](#streams-powered-node-apis)
-- [Different types of streams](#different-types-of-streams)
-- [How to create a readable stream](#how-to-create-a-readable-stream)
-- [How to create a writable stream](#how-to-create-a-writable-stream)
-- [How to get data from a readable stream](#how-to-get-data-from-a-readable-stream)
-- [How to send data to a writable stream](#how-to-send-data-to-a-writable-stream)
-- [Signaling a writable stream that you ended writing](#signaling-a-writable-stream-that-you-ended-writing)
-
-<!-- /TOC -->
-
 ## What are streams
 
 Streams are one of the fundamental concepts that power Node.js applications.

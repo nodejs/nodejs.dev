@@ -8,24 +8,6 @@ Here is a non-exhaustive list of the options you can explore when you want to de
 
 I will list the options from simplest and constrained to more complex and powerful.
 
-<!-- TOC -->
-
-- [Simplest option ever: local tunnel](#simplest-option-ever-local-tunnel)
-- [Zero configuration deployments](#zero-configuration-deployments)
-  - [Glitch](#glitch)
-  - [Codepen](#codepen)
-- [Serverless](#serverless)
-- [PAAS](#paas)
-  - [Zeit Now](#zeit-now)
-  - [Nanobox](#nanobox)
-  - [Heroku](#heroku)
-  - [Microsoft Azure](#microsoft-azure)
-  - [Google Cloud Platform](#google-cloud-platform)
-- [Virtual Private Server](#virtual-private-server)
-- [Bare metal](#bare-metal)
-
-<!-- /TOC -->
-
 ## Simplest option ever: local tunnel
 
 Even if you have a dynamic IP, or you're under a NAT, you can deploy your app and serve the requests right from your computer using a local tunnel.

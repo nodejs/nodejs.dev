@@ -4,18 +4,6 @@ description: 'The Event Loop is one of the most important aspects to understand 
 author: flaviocopes
 ---
 
-<!-- TOC -->
-
-- [Introduction](#introduction)
-- [Blocking the event loop](#blocking-the-event-loop)
-- [The call stack](#the-call-stack)
-- [A simple event loop explanation](#a-simple-event-loop-explanation)
-- [Queuing function execution](#queuing-function-execution)
-- [The Message Queue](#the-message-queue)
-- [ES6 Job Queue](#es6-job-queue)
-
-<!-- /TOC -->
-
 ## Introduction
 
 The **Event Loop** is one of the most important aspects to understand about Node.

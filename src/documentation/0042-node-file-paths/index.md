@@ -4,13 +4,6 @@ description: 'How to interact with file paths and manipulate them in Node'
 author: flaviocopes
 ---
 
-<!-- TOC -->
-
-- [Getting information out of a path](#getting-information-out-of-a-path)
-- [Working with paths](#working-with-paths)
-
-<!-- /TOC -->
-
 Every file in the system has a path.
 
 On Linux and macOS, a path might look like:

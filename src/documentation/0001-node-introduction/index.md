@@ -4,21 +4,6 @@ description: "This post is a getting started guide to Node.js, the server-side J
 author: flaviocopes
 ---
 
-<!-- TOC -->
-
-- [Overview](#overview)
-- [The best features of Node.js](#the-best-features-of-nodejs)
-  - [Fast](#fast)
-  - [Simple](#simple)
-  - [JavaScript](#javascript)
-  - [V8](#v8)
-  - [Asynchronous platform](#asynchronous-platform)
-  - [A huge number of libraries](#a-huge-number-of-libraries)
-- [An example Node.js application](#an-example-nodejs-application)
-- [Node.js frameworks and tools](#nodejs-frameworks-and-tools)
-
-<!-- /TOC -->
-
 ## Overview
 
 Node.js is a **runtime environment for JavaScript** that runs on the **server**.

@@ -4,25 +4,6 @@ description: 'Promises are one way to deal with asynchronous code in JavaScript,
 author: flaviocopes
 ---
 
-<!-- TOC -->
-
-- [Introduction to promises](#introduction-to-promises)
-  - [How promises work, in brief](#how-promises-work-in-brief)
-  - [Which JS API use promises?](#which-js-api-use-promises)
-- [Creating a promise](#creating-a-promise)
-- [Consuming a promise](#consuming-a-promise)
-- [Chaining promises](#chaining-promises)
-  - [Example of chaining promises](#example-of-chaining-promises)
-- [Handling errors](#handling-errors)
-  - [Cascading errors](#cascading-errors)
-- [Orchestrating promises](#orchestrating-promises)
-  - [`Promise.all()`](#promiseall)
-  - [`Promise.race()`](#promiserace)
-- [Common errors](#common-errors)
-  - [Uncaught TypeError: undefined is not a promise](#uncaught-typeerror-undefined-is-not-a-promise)
-
-<!-- /TOC -->
-
 ## Introduction to promises
 
 A promise is commonly defined as **a proxy for a value that will eventually become available**.

@@ -4,17 +4,6 @@ description: 'JavaScript is synchronous by default, and is single threaded. This
 author: flaviocopes
 ---
 
-<!-- TOC -->
-
-- [Asynchronicity in Programming Languages](#asynchronicity-in-programming-languages)
-- [JavaScript](#javascript)
-- [Callbacks](#callbacks)
-- [Handling errors in callbacks](#handling-errors-in-callbacks)
-- [The problem with callbacks](#the-problem-with-callbacks)
-- [Alternatives to callbacks](#alternatives-to-callbacks)
-
-<!-- /TOC -->
-
 ## Asynchronicity in Programming Languages
 
 Computers are asynchronous by design.
