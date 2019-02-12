@@ -6,7 +6,14 @@ author: flaviocopes
 
 Here is a sample Hello World HTTP web server:
 
-```js
+<iframe
+  allow="geolocation; microphone; camera; midi; encrypted-media"
+  src="https://glitch.com/embed/#!/embed/nodejs-dev-0037-01?path=server.js&previewSize=33&attributionHidden=true&sidebarCollapsed=true"
+  alt="nodejs-dev-0037-01 on Glitch"
+  style="height: 400px; width: 100%; border: 0;">
+</iframe>
+
+<!--```js
 const http = require('http')
 
 const port = 3000
@@ -20,7 +27,7 @@ const server = http.createServer((req, res) => {
 server.listen(port, () => {
   console.log(`Server running at http://${hostname}:${port}/`)
 })
-```
+```-->
 
 Let's analyze it briefly. We include the [`http` module](https://nodejs.org/api/http.html).
 
