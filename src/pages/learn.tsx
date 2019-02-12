@@ -47,7 +47,7 @@ type Props = {
 let prev = 0;
 function openNav() {
   const old = prev;
-  prev = document.scrollingElement.scrollTop;
+  prev = document.scrollingElement!.scrollTop;
   document.getElementsByClassName('side-nav')[0].classList.toggle('side-nav--open');
   scrollTo(old);
 }
@@ -115,7 +115,7 @@ export default ({ data, location }: Props) => {
         </ul>
       </nav>
       <article className="article-reader">
-        <h1 class="article-reader__headline">{activePage.title}</h1>
+        <h1 className="article-reader__headline">{activePage.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: activePage.html }} />
       </article>
     </Layout>

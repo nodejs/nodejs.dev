@@ -6,11 +6,8 @@ export function scrollTo(scrollTo: number, duration: number = 333): Promise<bool
   let previousTime = window.performance.now();
   let currentTime = 0;
 
-  let ACTIVE_ANIMATION = true;
-
   const ret: Promise<boolean> = new Promise((resolve, _reject) => {
     const animateScroll = function animateScroll() {
-      if (!ACTIVE_ANIMATION) { resolve(false); }
       const time = window.performance.now();
       const increment = time - previousTime;
       previousTime = time;
@@ -24,8 +21,6 @@ export function scrollTo(scrollTo: number, duration: number = 333): Promise<bool
     };
     animateScroll();
   });
-
-  (ret as any).stop = () => ACTIVE_ANIMATION = false;
 
   return ret;
 };
