@@ -11120,10 +11120,6 @@ webpack@^4.12.0:
     watchpack "^1.5.0"
     webpack-sources "^1.3.0"
 
-website-redesign@nodejs/website-redesign#f8fdb87d:
-  version "0.0.0"
-  resolved "https://codeload.github.com/nodejs/website-redesign/tar.gz/f8fdb87dadc16627daefcc03c1e82d59c94df6b7"
-
 websocket-driver@>=0.5.1:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/websocket-driver/-/websocket-driver-0.7.0.tgz#0caf9d2d755d93aee049d4bdd0d3fe2cca2a24eb"
