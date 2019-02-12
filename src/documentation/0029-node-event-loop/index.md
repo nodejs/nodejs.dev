@@ -56,7 +56,14 @@ You know the error stack trace you might be familiar with, in the debugger or in
 
 Let's pick an example:
 
-```js
+<iframe
+  allow="geolocation; microphone; camera; midi; encrypted-media"
+  src="https://glitch.com/embed/#!/embed/nodejs-dev-0029-01?path=server.js&previewSize=20&attributionHidden=true&sidebarCollapsed=true"
+  alt="nodejs-dev-0029-01 on Glitch"
+  style="height: 400px; width: 100%; border: 0;">
+</iframe>
+
+<!--```js
 const bar = () => console.log('bar')
 
 const baz = () => console.log('baz')
@@ -78,7 +85,7 @@ bar
 baz
 ```
 
-as expected.
+as expected.-->
 
 When this code runs, first `foo()` is called. Inside `foo()` we first call `bar()`, then we call `baz()`.
 
@@ -102,7 +109,14 @@ The use case of `setTimeout(() => {}), 0)` is to call a function, but execute it
 
 Take this example:
 
-```js
+<iframe
+  allow="geolocation; microphone; camera; midi; encrypted-media"
+  src="https://glitch.com/embed/#!/embed/nodejs-dev-0029-02?path=server.js&previewSize=20&attributionHidden=true&sidebarCollapsed=true"
+  alt="nodejs-dev-0029-02 on Glitch"
+  style="height: 400px; width: 100%; border: 0;">
+</iframe>
+
+<!--```js
 const bar = () => console.log('bar')
 
 const baz = () => console.log('baz')
@@ -114,7 +128,7 @@ const foo = () => {
 }
 
 foo()
-```
+```-->
 
 This code prints, maybe surprisingly:
 
@@ -156,7 +170,14 @@ I find nice the analogy of a rollercoaster ride at an amusement park: the messag
 
 Example:
 
-```js
+<iframe
+  allow="geolocation; microphone; camera; midi; encrypted-media"
+  src="https://glitch.com/embed/#!/embed/nodejs-dev-0029-03?path=server.js&previewSize=35&attributionHidden=true&sidebarCollapsed=true"
+  alt="nodejs-dev-0029-03 on Glitch"
+  style="height: 400px; width: 100%; border: 0;">
+</iframe>
+
+<!--```js
 const bar = () => console.log('bar')
 
 const baz = () => console.log('baz')
@@ -180,6 +201,6 @@ foo
 baz
 should be right after baz, before bar
 bar
-```
+```-->
 
 That's a big difference between Promises (and Async/await, which is built on promises) and plain old asynchronous functions through `setTimeout()` or other platform APIs.

@@ -25,6 +25,13 @@ author: flaviocopes
 
 ## Introduction to promises
 
+<iframe
+  allow="geolocation; microphone; camera; midi; encrypted-media"
+  src="https://glitch.com/embed/#!/embed/nodejs-dev-0034-01?path=server.js&previewSize=35&attributionHidden=true&sidebarCollapsed=true"
+  alt="nodejs-dev-0034-01 on Glitch"
+  style="height: 400px; width: 100%; border: 0;">
+</iframe>
+
 A promise is commonly defined as **a proxy for a value that will eventually become available**.
 
 Promises are one way to deal with asynchronous code, without writing too many callbacks in your code.

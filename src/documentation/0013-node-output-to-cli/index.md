@@ -66,6 +66,14 @@ console.log('%O', Number)
 
 Take this code:
 
+<iframe
+  allow="geolocation; microphone; camera; midi; encrypted-media"
+  src="https://glitch.com/embed/#!/embed/nodejs-dev-0013-02?path=server.js&previewSize=40&attributionHidden=true&sidebarCollapsed=true"
+  alt="nodejs-dev-0013-02 on Glitch"
+  style="height: 400px; width: 100%; border: 0;">
+</iframe>
+
+<!--
 ```js
 const x = 1
 const y = 2
@@ -80,6 +88,7 @@ console.count(
   'The value of y is ' + y + ' and has been checked .. how many times?'
 )
 ```
+-->
 
 What happens is that count will count the number of times a string is printed, and print the count next to it:
 
