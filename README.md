@@ -1,32 +1,21 @@
-# Node.js Website Redesign Prototype
+# Node.js Website Prototype
 
 Gatsby starter with TypeScript, Emotion, Contentful, and Remark.
 
-
 ## 🚀 Quick start
 
-1.  **Install the Gatsby CLI.**
-
-    The Gatsby CLI helps you create new sites using Gatsby starters (like this one!)
+1.  **Install.**
 
     ```sh
     # install the dependencies
     yarn install
     ```
 
-2. **Set Contentful API keys.**
-
-    Rename **`empty.env`** to **`.env`** and set your Contentful API variables
-
-    > TODO: Set up Contentful. You may skip this step right now. More detailed instructions to follow.
-
-3.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
+2. **Start developing.**
 
     ```sh
-    cd my-default-starter/
-    yarn develop
+    # "start": "gatsby develop"
+    yarn start
     ```
 
 4.  **Open the source code and start editing!**
@@ -34,8 +23,6 @@ Gatsby starter with TypeScript, Emotion, Contentful, and Remark.
     Your site is now running at `http://localhost:8000`!
     
     *Note: You'll also see a second link: `http://localhost:8000___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://next.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).*
-    
-    Open the the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
     
 ## 🧐 What's inside?
 
@@ -98,9 +85,9 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 This repository contains no documentation content. Content is pulled from across the Node.js Github Org, Contentful, and other data sources and stitched together into a cohesive website.
 
-### @nodejs/website-redesign
+### src/documentation
 
-The `/documentation` directory in website-redesign's `master` branch currently contains all the getting started content. Once this site and its content stabilizes a little further, the plan is to migrate this content into `nodejs/node` for continued maintenance.
+The `src/documentation` directory currently contains all the getting started content.
 
 ## 🎓 Learning Gatsby
 
