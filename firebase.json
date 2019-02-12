@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "target": "nodejs-dev",
     "public": "public",
     "rewrites": [{
       "source": "/learn/**",

@@ -4,6 +4,6 @@ steps:
 - name: 'gcr.io/cloud-builders/yarn'
   args: ['run', 'build-ci']
   env:
-    - 'PATH_PREFIX=nodejs-dev-staging/$SHORT_SHA'
+    - 'PATH_PREFIX=staging.nodejs.dev/$SHORT_SHA'
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['rsync', '-R', 'public', 'gs://nodejs-dev-staging/$SHORT_SHA']
+  args: ['rsync', '-R', 'public', 'gs://staging.nodejs.dev/$SHORT_SHA']
