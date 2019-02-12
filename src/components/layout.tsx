@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Header from './header';
 
 import './layout.css';
+import './mobile.css';
 import 'prismjs/themes/prism-okaidia.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 

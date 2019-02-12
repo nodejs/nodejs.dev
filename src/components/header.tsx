@@ -20,7 +20,7 @@ const Header = ({ siteTitle }: Props) => (
     >
       <li>
         <Link to="/">
-          <img src={logo} alt={siteTitle} style={{ height: '62px', margin: '-6px 24px 0 0' }} />
+          <img src={logo} alt={siteTitle} class="nav__logo"/>
         </Link>
       </li>
     </ul>

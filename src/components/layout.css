@@ -141,6 +141,11 @@ main {
   z-index: 999;
 }
 
+.nav__logo {
+  height: 62px;
+  margin: -6px 24px 0 0;
+}
+
 .hero {
   align-items: center;
   display: flex;
@@ -192,6 +197,10 @@ main {
   z-index: 998;
 }
 
+.side-nav__open {
+  display: none;
+}
+
 .side-nav > :last-child {
   /* To allow side menu to scroll to bottom when not sticky */
   padding-bottom: 230px;
@@ -207,7 +216,7 @@ main {
   /* Equivalent of .85 opacity without the transparency! */
   filter: brightness(160%) saturate(45%);
   height: 152px;
-  margin: 0 -2.4rem -152px 0;
+  margin: 0 -2.4rem -152px -2.4rem;
   position: sticky;
   top: 0;
   width: 100vw;
@@ -316,6 +325,18 @@ main {
   max-width: 768px;
   padding-left: 4.2rem;
   width: calc(100vw - 36.0rem);
+}
+
+/* sr-only for desktop */
+.article-reader__headline {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
 }
 
 .article-reader p {
