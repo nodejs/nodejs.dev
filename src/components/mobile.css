@@ -58,19 +58,19 @@
 
   .side-nav::before {
     height: 92px;
+    margin-bottom: -92px;
     top: var(--nav-height);
   }
 
   .side-nav__open {
     display: block;
     position: sticky;
-    top: 3.4rem;
+    top: 1.8rem;
     margin-left: -0.8rem;
-    width: 2.8rem;
-    height: 3px;
+    width: 20px;
+    height: calc(24px + 3px);
+    padding: 12px 0;
     background: white;
-    z-index: 9999;
-    border-radius: 3px;
     color: white;
     overflow: visible;
     border: none;
@@ -80,6 +80,8 @@
     font-weight: 200;
     transition: color .28s, background-color .28s;
     outline: none;
+    background-clip: content-box;
+    z-index: 9999;
   }
 
   .side-nav__open::before, .side-nav__open::after {
@@ -87,10 +89,9 @@
     width: 100%;
     height: 3px;
     position: absolute;
-    top: 0;
+    top: calc(50% - 1.5px);
     left: 0;
     transform: translateY(-250%);
-    border-radius: 3px;
     background-color: white;
     transition: transform .28s;
   }
@@ -100,9 +101,9 @@
   }
 
   .side-nav.side-nav--open .side-nav__open {
-    top: calc(var(--nav-height) + 3.4rem);
-    margin-top: 92px;
-    margin-bottom: -92px;
+    top: calc(var(--nav-height) + 1.8rem);
+    margin-bottom: -35px;
+    margin-top: 16px;
     color: transparent;
     background-color: transparent;
   }
@@ -114,13 +115,13 @@
   }
 
   .side-nav__list:first-of-type {
-    padding-top: 5.8rem
+    margin-top: -52px;
   }
 
   .side-nav__title {
     padding-left: 3.2rem;
     margin: 2.4rem 0 3.2rem;
-    top: calc(var(--nav-height) + 16px);
+    top: calc(var(--nav-height) + 12px);
     background-position: 0px calc(-50vh + var(--magic-hero-number) - 32px);
   }
 
