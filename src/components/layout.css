@@ -312,6 +312,58 @@ main {
   width: 2px;
 }
 
+.side-nav__open {
+  display: none;
+  position: sticky;
+  top: 1.8rem;
+  margin-left: -0.8rem;
+  width: 20px;
+  height: calc(24px + 3px);
+  padding: 12px 0;
+  background: white;
+  color: white;
+  overflow: visible;
+  border: none;
+  font-size: 1.8rem;
+  text-indent: 3.2rem;
+  line-height: 0;
+  font-weight: 200;
+  transition: color .28s, background-color .28s;
+  outline: none;
+  background-clip: content-box;
+  z-index: 9999;
+}
+
+.side-nav__open::before, .side-nav__open::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  top: calc(50% - 1.5px);
+  left: 0;
+  transform: translateY(-250%);
+  background-color: white;
+  transition: transform .28s;
+}
+
+.side-nav__open::after {
+  transform: translateY(250%);
+}
+
+.side-nav.side-nav--open .side-nav__open {
+  top: calc(var(--nav-height) + 1.8rem);
+  margin-bottom: -35px;
+  margin-top: 16px;
+  color: transparent;
+  background-color: transparent;
+}
+.side-nav.side-nav--open  .side-nav__open::before {
+  transform: rotate(-45deg);
+}
+.side-nav.side-nav--open  .side-nav__open::after {
+  transform: rotate(45deg);
+}
+
 /* Start: Article Reader HTML Reset */
 
 .article-reader {
