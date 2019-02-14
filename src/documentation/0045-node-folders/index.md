@@ -1,6 +1,6 @@
 ---
-title: 'Working with folders in Node'
-description: 'How to interact with folders using Node'
+title: 'Working with folders in Node.js'
+description: 'How to interact with folders using Node.js'
 author: flaviocopes
 ---
 
@@ -8,7 +8,7 @@ The Node.js `fs` core module provides many handy methods you can use to work wit
 
 ## Check if a folder exists
 
-Use `fs.access()` to check if the folder exists and Node can access it with its permissions.
+Use `fs.access()` to check if the folder exists and Node.js can access it with its permissions.
 
 ## Create a new folder
 

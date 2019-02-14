@@ -1,6 +1,6 @@
 ---
-title: The npx Node Package Runner
-description: 'npx is a very cool way to run Node code, and provides many useful features'
+title: The npx Node.js Package Runner
+description: 'npx is a very cool way to run Node.js code, and provides many useful features'
 author: flaviocopes
 ---
 
@@ -8,11 +8,11 @@ author: flaviocopes
 
 > If you don't want to install npm, you can [install npx as a standalone package](https://www.npmjs.com/package/npx)
 
-`npx` lets you run code built with Node and published through the npm registry.
+`npx` lets you run code built with Node.js and published through the npm registry.
 
 ## Easily run local commands
 
-Node developers used to publish most of the executable commands as global packages, in order for them to be in the path and executable immediately.
+Node.js developers used to publish most of the executable commands as global packages, in order for them to be in the path and executable immediately.
 
 This was a pain because you could not really install different versions of the same command.
 
@@ -62,7 +62,7 @@ and many more.
 
 Once downloaded, the downloaded code will be wiped.
 
-## Run some code using a different Node version
+## Run some code using a different Node.js version
 
 Use the `@` to specify the version, and combine that with the [`node` npm package](https://www.npmjs.com/package/node):
 
@@ -71,7 +71,7 @@ npx node@6 -v #v6.14.3
 npx node@8 -v #v8.11.3
 ```
 
-This helps to avoid tools like `nvm` or the other Node version management tools.
+This helps to avoid tools like `nvm` or the other Node.js version management tools.
 
 ## Run arbitrary code snippets directly from a URL
 

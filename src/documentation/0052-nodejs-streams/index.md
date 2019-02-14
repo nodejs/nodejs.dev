@@ -10,7 +10,7 @@ author: flaviocopes
 - [Why streams](#why-streams)
 - [An example of a stream](#an-example-of-a-stream)
 - [pipe()](#pipe)
-- [Streams-powered Node APIs](#streams-powered-node-apis)
+- [Streams-powered Node.js APIs](#streams-powered-node-apis)
 - [Different types of streams](#different-types-of-streams)
 - [How to create a readable stream](#how-to-create-a-readable-stream)
 - [How to create a writable stream](#how-to-create-a-writable-stream)
@@ -45,7 +45,7 @@ Streams basically provide two major advantages using other data handling methods
 
 A typical example is the one of reading files from a disk.
 
-Using the Node `fs` module you can read a file, and serve it over HTTP when a new connection is established to your http server:
+Using the Node.js `fs` module you can read a file, and serve it over HTTP when a new connection is established to your http server:
 
 ```js
 const http = require('http')
@@ -99,7 +99,7 @@ src.pipe(dest1)
 dest1.pipe(dest2)
 ```
 
-## Streams-powered Node APIs
+## Streams-powered Node.js APIs
 
 Due to their advantages, many Node.js core modules provide native stream handling capabilities, most notably:
 

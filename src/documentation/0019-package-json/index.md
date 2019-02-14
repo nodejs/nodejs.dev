@@ -147,7 +147,7 @@ there are _lots_ of things going on here:
 - `scripts` defines a set of node scripts you can run
 - `dependencies` sets a list of `npm` packages installed as dependencies
 - `devDependencies` sets a list of `npm` packages installed as development dependencies
-- `engines` sets which versions of Node this package/app works on
+- `engines` sets which versions of Node.js this package/app works on
 - `browserslist` is used to tell which browsers (and their versions) you want to support
 
 All those properties are used by either `npm` or other tools that we can use.

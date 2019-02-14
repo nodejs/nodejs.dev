@@ -1,12 +1,12 @@
 ---
-title: Get HTTP request body data using Node
-description: 'Find out how to extract the data sent as JSON through an HTTP request body using Node'
+title: Get HTTP request body data using Node.js
+description: 'Find out how to extract the data sent as JSON through an HTTP request body using Node.js'
 author: flaviocopes
 ---
 
 Here is how you can extract the data that was sent as JSON in the request body.
 
-If you are using Express, that's quite simple: use the `body-parser` Node module.
+If you are using Express, that's quite simple: use the `body-parser` Node.js module.
 
 For example, to get the body of this request:
 
@@ -36,7 +36,7 @@ app.post('/endpoint', (req, res) => {
 })
 ```
 
-If you're not using Express and you want to do this in vanilla Node, you need to do a bit more work, of course, as Express abstracts a lot of this for you.
+If you're not using Express and you want to do this in vanilla Node.js, you need to do a bit more work, of course, as Express abstracts a lot of this for you.
 
 The key thing to understand is that when you initialize the HTTP server using `http.createServer()`, the callback is called when the server got all the HTTP headers, but not the request body.
 

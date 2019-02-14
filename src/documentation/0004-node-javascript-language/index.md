@@ -1,5 +1,5 @@
 ---
-title: How much JavaScript do you need to know to use Node?
+title: How much JavaScript do you need to know to use Node.js?
 description: 'If you are just starting out with JavaScript, how much deeply do you need to know the language?'
 author: flaviocopes
 ---

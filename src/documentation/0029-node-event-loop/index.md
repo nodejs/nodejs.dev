@@ -1,6 +1,6 @@
 ---
 title: 'The Node.js Event Loop'
-description: 'The Event Loop is one of the most important aspects to understand about Node'
+description: 'The Event Loop is one of the most important aspects to understand about Node.js'
 author: flaviocopes
 ---
 
@@ -20,7 +20,7 @@ author: flaviocopes
 
 The **Event Loop** is one of the most important aspects to understand about Node.
 
-Why is this so important? Because it explains how Node can be asynchronous and have non-blocking I/O, and so it explains basically the "killer app" of Node, the thing that made it this successful.
+Why is this so important? Because it explains how Node.js can be asynchronous and have non-blocking I/O, and so it explains basically the "killer app" of Node.js, the thing that made it this successful.
 
 The Node.js JavaScript code runs on a single thread. There is just one thing happening at a time.
 

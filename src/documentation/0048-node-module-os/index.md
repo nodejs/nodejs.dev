@@ -1,5 +1,5 @@
 ---
-title: 'The Node os module'
+title: 'The Node.js os module'
 description: 'The os module of Node.js provides useful functions to interact with underlying system'
 author: flaviocopes
 ---
@@ -81,7 +81,7 @@ Example:
 
 ## `os.endianness()`
 
-Return `BE` or `LE` depending if Node was compiled with [Big Endian or Little Endian](https://en.wikipedia.org/wiki/Endianness).
+Return `BE` or `LE` depending if Node.js was compiled with [Big Endian or Little Endian](https://en.wikipedia.org/wiki/Endianness).
 
 ## `os.freemem()`
 
@@ -161,7 +161,7 @@ Example:
 
 ## `os.platform()`
 
-Return the platform that Node was compiled for:
+Return the platform that Node.js was compiled for:
 
 - `darwin`
 - `freebsd`

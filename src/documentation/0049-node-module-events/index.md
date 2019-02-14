@@ -1,5 +1,5 @@
 ---
-title: 'The Node events module'
+title: 'The Node.js events module'
 description: 'The events module of Node.js provides the EventEmitter class'
 author: flaviocopes
 ---
@@ -79,7 +79,7 @@ door.listeners('open')
 
 ## `emitter.off()`
 
-Alias for `emitter.removeListener()` added in Node 10
+Alias for `emitter.removeListener()` added in Node.js 10
 
 ## `emitter.on()`
 

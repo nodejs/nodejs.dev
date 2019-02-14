@@ -1,5 +1,5 @@
 ---
-title: Update all the Node dependencies to their latest version
+title: Update all the Node.js dependencies to their latest version
 description: 'How do you update all the npm dependencies store in the package.json file, to their latest version available?'
 author: flaviocopes
 ---
