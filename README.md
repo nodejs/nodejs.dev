@@ -4,7 +4,18 @@ Gatsby starter with TypeScript, Emotion, Contentful, and Remark.
 
 ## 🚀 Quick start
 
-1.  **Install.**
+0.  **Install Yarn (if Yarn Package Manager is not available on your machine).**
+
+Following below is the command you'll need to use if you've installed Node.js with `nvm`.
+
+    ```sh
+    # install yarn
+    brew install yarn --ignore-dependencies
+    ```
+
+Otherwise, Yarn has an [installation guide](https://yarnpkg.com/en/docs/install) for your specific configuration. Happy knitting!
+
+1.  **Install dependencies.**
 
     ```sh
     # install the dependencies
