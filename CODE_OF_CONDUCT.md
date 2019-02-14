@@ -1,4 +1,4 @@
-### CITGM Code of Conduct
+### Code of Conduct
 
 The [Node.js Code of Conduct][] applies to this repo.
 
