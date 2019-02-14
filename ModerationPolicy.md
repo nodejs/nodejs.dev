@@ -1,4 +1,4 @@
-### CITGM Moderation Policy
+### Moderation Policy
 
 The [Node.js Moderation Policy][] applies to this repo.
 
