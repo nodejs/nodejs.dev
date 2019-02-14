@@ -10,7 +10,7 @@
 
 There is a built in commit linter. Basic rules:
 
-* Commit messages must start with a capitol letter
+* Commit messages must start with a capital letter
 * Commit message must end with a period `.`
 * Supported subsystems:
 
