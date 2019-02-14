@@ -1,12 +1,12 @@
 ---
-title: 'The Node path module'
+title: 'The Node.js path module'
 description: 'The path module of Node.js provides useful functions to interact with file paths'
 author: flaviocopes
 ---
 
 The `path` module provides a lot of very useful functionality to access and interact with the file system.
 
-There is no need to install it. Being part of the Node core, it can be used by simply requiring it:
+There is no need to install it. Being part of the Node.js core, it can be used by simply requiring it:
 
 ```js
 const path = require('path')

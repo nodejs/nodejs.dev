@@ -1,5 +1,5 @@
 ---
-title: How to log an object in Node
+title: How to log an object in Node.js
 description: 'Logging objects in Node.js'
 author: flaviocopes
 ---
@@ -12,11 +12,11 @@ Once you click the arrow, the log is expanded, and you can clearly see the objec
 
 ![](console-log-browser-expanded.png)
 
-In Node, the same happens.
+In Node.js, the same happens.
 
-We don’t have such luxury when we log something to the console, because that’s going to output the object to the shell if you run the Node program manually, or to the log file. You get a string representation of the object.
+We don’t have such luxury when we log something to the console, because that’s going to output the object to the shell if you run the Node.js program manually, or to the log file. You get a string representation of the object.
 
-Now, all is fine until a certain level of nesting. After two levels of nesting, Node gives up and prints `[Object]` as a placeholder:
+Now, all is fine until a certain level of nesting. After two levels of nesting, Node.js gives up and prints `[Object]` as a placeholder:
 
 ```
 const obj = {

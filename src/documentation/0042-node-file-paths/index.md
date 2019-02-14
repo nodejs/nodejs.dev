@@ -1,6 +1,6 @@
 ---
-title: 'Node File Paths'
-description: 'How to interact with file paths and manipulate them in Node'
+title: 'Node.js File Paths'
+description: 'How to interact with file paths and manipulate them in Node.js'
 author: flaviocopes
 ---
 
@@ -70,7 +70,7 @@ You can get the absolute path calculation of a relative path using `path.resolve
 path.resolve('joe.txt') //'/Users/joe/joe.txt' if run from my home folder
 ```
 
-In this case Node will simply append `/joe.txt` to the current working directory. If you specify a second parameter folder, `resolve` will use the first as a base for the second:
+In this case Node.js will simply append `/joe.txt` to the current working directory. If you specify a second parameter folder, `resolve` will use the first as a base for the second:
 
 ```js
 path.resolve('tmp', 'joe.txt') //'/Users/joe/tmp/joe.txt' if run from my home folder

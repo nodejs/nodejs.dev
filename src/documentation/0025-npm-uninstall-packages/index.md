@@ -1,6 +1,6 @@
 ---
 title: Uninstalling npm packages
-description: 'How to uninstall an npm Node package, locally or globally'
+description: 'How to uninstall an npm Node.js package, locally or globally'
 author: flaviocopes
 ---
 

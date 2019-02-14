@@ -1,6 +1,6 @@
 ---
-title: Node Buffers
-description: 'Learn what Node buffers are, what they are used for, how to use them'
+title: Node.js Buffers
+description: 'Learn what Node.js buffers are, what they are used for, how to use them'
 author: flaviocopes
 ---
 
@@ -12,7 +12,7 @@ It represents a fixed-size chunk of memory (can't be resized) allocated outside 
 
 You can think of a buffer like an array of integers, which each represent a byte of data.
 
-It is implemented by the Node [Buffer class](https://nodejs.org/api/buffer.html).
+It is implemented by the Node.js [Buffer class](https://nodejs.org/api/buffer.html).
 
 ## Why do we need a buffer?
 

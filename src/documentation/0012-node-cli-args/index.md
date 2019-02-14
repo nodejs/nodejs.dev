@@ -1,5 +1,5 @@
 ---
-title: Node, accept arguments from the command line
+title: Node.js, accept arguments from the command line
 description: 'How to accept arguments in a Node.js program passed from the command line'
 author: flaviocopes
 ---
@@ -24,7 +24,7 @@ or
 node app.js name=joe
 ```
 
-This changes how you will retrieve this value in the Node code.
+This changes how you will retrieve this value in the Node.js code.
 
 The way you retrieve it is using the `process` object built into Node.
 

@@ -62,7 +62,7 @@ To solve this, you listen for the `uncaughtException` event on the `process` obj
 ```js
 process.on('uncaughtException', err => {
   console.error('There was an uncaught error', err)
-  process.exit(1) //mandatory (as per the Node docs)
+  process.exit(1) //mandatory (as per the Node.js docs)
 })
 ```
 
