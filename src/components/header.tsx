@@ -1,11 +1,11 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
-import logo from '../images/logo.svg'
+import logo from '../images/logo.svg';
 
 type Props = {
-  siteTitle: string
-}
+  siteTitle: string;
+};
 
 const Header = ({ siteTitle }: Props) => (
   <nav className="nav">
@@ -40,13 +40,13 @@ const Header = ({ siteTitle }: Props) => (
         <a
           target="_blank"
           style={{ textDecoration: 'none' }}
-          href="https:github.com/nodejs/website-prototype"
+          href="https://github.com/nodejs/website-prototype"
         >
           GitHub
         </a>
       </li>
     </ul>
   </nav>
-)
+);
 
-export default Header
+export default Header;

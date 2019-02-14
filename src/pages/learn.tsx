@@ -11,7 +11,9 @@ import Layout from '../components/layout';
  */
 let prevOffset = -1;
 function magicHeroNumber() {
-  if (typeof window === 'undefined') { return; } // Guard for SSR.
+  if (typeof window === 'undefined') {
+    return;
+  } // Guard for SSR.
   const doc = window.document;
   const offset = Math.min(doc.scrollingElement!.scrollTop, 210);
   if (Math.abs(prevOffset - offset) > 5) {
@@ -30,18 +32,18 @@ interface RemarkPage {
     title: string;
     description: string;
     author: string;
-  }
+  };
 }
 
 interface LearnPageData {
   pages: {
     edges: ({ node: RemarkPage })[];
-  }
+  };
 }
 type Props = {
   data: LearnPageData;
   location: Location;
-}
+};
 
 export default ({ data, location }: Props) => {
   const pages = [];
@@ -51,31 +53,39 @@ export default ({ data, location }: Props) => {
 
   // For every page,
   for (const { node: page } of data.pages.edges) {
-
     // If this page does not have a title, skip.
-    if (!page.frontmatter.title) { continue; }
+    if (!page.frontmatter.title) {
+      continue;
+    }
 
     // Generate a slug for this page
     // TODO: We need a more robust slug creation here.
-    const slug = page.frontmatter.title.toLowerCase().replace(/ /g, '-').replace(/[^a-z|-]/g, '');
+    const slug = page.frontmatter.title
+      .toLowerCase()
+      .replace(/ /g, '-')
+      .replace(/[^a-z|-]/g, '');
 
     // If there is no current page slug discovered from the URL, use the first page's.
-    if (!currentPage) { currentPage = slug; }
+    if (!currentPage) {
+      currentPage = slug;
+    }
 
     // Determine if this is the active page, and mark if we've found the active page yet.
     const isActive = slug === currentPage;
     foundActive = foundActive || isActive;
-    if (isActive) { activePage = { html: page.html, title: page.frontmatter.title }; }
+    if (isActive) {
+      activePage = { html: page.html, title: page.frontmatter.title };
+    }
 
     // Construct class name for this side nav item.
-    const className = `side-nav__item ${!foundActive ? 'side-nav__item--done' : ''} ${isActive ? 'side-nav__item--active' : ''}`;
+    const className = `side-nav__item ${
+      !foundActive ? 'side-nav__item--done' : ''
+    } ${isActive ? 'side-nav__item--active' : ''}`;
 
     // Add the constructed page JSX to the pages list.
     pages.push(
       <li className={className}>
-        <Link to={`/learn/${slug}`}>
-          {page.frontmatter.title}
-        </Link>
+        <Link to={`/learn/${slug}`}>{page.frontmatter.title}</Link>
       </li>
     );
   }
@@ -86,10 +96,10 @@ export default ({ data, location }: Props) => {
         <h1>{activePage.title}</h1>
         <div className="diagonal-hero-bg">
           <div className="stars">
-              <div className="small"/>
-              <div className="medium"/>
-              <div className="big"/>
-            </div>
+            <div className="small" />
+            <div className="medium" />
+            <div className="big" />
+          </div>
         </div>
       </div>
       <nav className="side-nav">
@@ -104,24 +114,29 @@ export default ({ data, location }: Props) => {
           {pages.slice(5)}
         </ul>
       </nav>
-      <article className="article-reader" dangerouslySetInnerHTML={{ __html: activePage.html }} />
+      <article
+        className="article-reader"
+        dangerouslySetInnerHTML={{ __html: activePage.html }}
+      />
     </Layout>
   );
-}
+};
 
-export const query = graphql`{
-  pages: allMarkdownRemark {
-    edges {
-      node {
-        id,
-        fileAbsolutePath,
-        html,
-        frontmatter {
-          title
-          description
-          author
+export const query = graphql`
+  {
+    pages: allMarkdownRemark {
+      edges {
+        node {
+          id
+          fileAbsolutePath
+          html
+          frontmatter {
+            title
+            description
+            author
+          }
         }
       }
     }
   }
-}`;
+`;

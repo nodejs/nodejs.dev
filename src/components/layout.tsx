@@ -9,8 +9,8 @@ import 'prismjs/themes/prism-okaidia.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const Layout = ({ children }: Props) => (
   <StaticQuery
@@ -35,12 +35,10 @@ const Layout = ({ children }: Props) => (
           <html lang="en" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
       </>
     )}
   />
-)
+);
 
-export default Layout
+export default Layout;
