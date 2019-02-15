@@ -1,12 +1,12 @@
 ---
-title: Accept input from the command line in Node
-description: 'How to make a Node.js CLI program interactive using the built-in readline Node module'
+title: Accept input from the command line in Node.js
+description: 'How to make a Node.js CLI program interactive using the built-in readline Node.js module'
 author: flaviocopes
 ---
 
 How to make a Node.js CLI program interactive?
 
-Node since version 7 provides the [`readline` module](https://nodejs.org/api/readline.html) to perform exactly this: get input from a readable stream such as the `process.stdin` stream, which during the execution of a Node program is the terminal input, one line at a time.
+Node.js since version 7 provides the [`readline` module](https://nodejs.org/api/readline.html) to perform exactly this: get input from a readable stream such as the `process.stdin` stream, which during the execution of a Node.js program is the terminal input, one line at a time.
 
 ```js
 const readline = require('readline').createInterface({
@@ -54,4 +54,4 @@ inquirer.prompt(questions).then(answers => {
 
 Inquirer.js lets you do many things like asking multiple choices, having radio buttons, confirmations, and more.
 
-It's worth knowing all the alternatives, especially the built-in ones provided by Node, but if you plan to take CLI input to the next level, Inquirer.js is an optimal choice.
+It's worth knowing all the alternatives, especially the built-in ones provided by Node.js, but if you plan to take CLI input to the next level, Inquirer.js is an optimal choice.

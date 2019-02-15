@@ -48,7 +48,7 @@ Such mechanism derives from the browser. We can't wait until something loads fro
 
 This allows Node.js to handle thousands of concurrent connections with a single server without introducing the burden of managing threads concurrency, which would be a major source of bugs.
 
-Node provides non-blocking I/O primitives, and generally, libraries in Node.js are written using non-blocking paradigms, making a blocking behavior an exception rather than the normal.
+Node.js provides non-blocking I/O primitives, and generally, libraries in Node.js are written using non-blocking paradigms, making a blocking behavior an exception rather than the normal.
 
 When Node.js needs to perform an I/O operation, like reading from the network, access a database or the filesystem, instead of blocking the thread Node.js will simply resume the operations when the response comes back, instead of wasting CPU cycles waiting.
 
@@ -60,7 +60,14 @@ npm with its simple structure helped the ecosystem of node.js proliferate and no
 
 The most common example Hello World of Node.js is a web server:
 
-```js
+<iframe
+  allow="geolocation; microphone; camera; midi; encrypted-media"
+  src="https://glitch.com/embed/#!/embed/nodejs-dev-0001-01?path=server.js&previewSize=30&attributionHidden=true&sidebarCollapsed=true"
+  alt="nodejs-dev-0001-01 on Glitch"
+  style="height: 400px; width: 100%; border: 0;">
+</iframe>
+
+<!--```js
 const http = require('http')
 
 const hostname = '127.0.0.1'
@@ -77,7 +84,7 @@ server.listen(port, hostname, () => {
 })
 ```
 
-To run this snippet, save it as a `server.js` file and run `node server.js` in your terminal.
+To run this snippet, save it as a `server.js` file and run `node server.js` in your terminal.-->
 
 This code first includes the Node.js [`http` module](https://nodejs.org/api/http.html).
 

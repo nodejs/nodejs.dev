@@ -1,5 +1,5 @@
 ---
-title: 'Making HTTP requests with Node'
+title: 'Making HTTP requests with Node.js'
 description: 'How to perform HTTP requests with Node.js using GET, POST, PUT and DELETE'
 author: flaviocopes
 ---

@@ -18,12 +18,12 @@ brew install node
 
 Other package managers for Linux and Windows are listed in <https://nodejs.org/en/download/package-manager/>
 
-`nvm` is a popular way to run Node. It allows you to easily switch the Node version, and install new versions to try and easily rollback if something breaks, for example.
+`nvm` is a popular way to run Node. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks, for example.
 
-It is also very useful to test your code with old Node versions.
+It is also very useful to test your code with old Node.js versions.
 
 See <https://github.com/creationix/nvm> for more information about this option.
 
 My suggestion is to use the official installer if you are just starting out and you don't use Homebrew already, otherwise, Homebrew is my favorite solution.
 
-In any case, when Node is installed you'll have access to the `node` executable program in the command line.
+In any case, when Node.js is installed you'll have access to the `node` executable program in the command line.

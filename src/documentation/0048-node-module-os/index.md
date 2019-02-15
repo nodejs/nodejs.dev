@@ -1,5 +1,5 @@
 ---
-title: 'The Node os module'
+title: 'The Node.js os module'
 description: 'The os module of Node.js provides useful functions to interact with underlying system'
 author: flaviocopes
 ---
@@ -33,7 +33,7 @@ Return information on the CPUs available on your system.
 Example:
 
 ```js
-;[
+[
   {
     model: 'Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz',
     speed: 2400,
@@ -61,7 +61,7 @@ Example:
 
 ## `os.endianness()`
 
-Return `BE` or `LE` depending if Node was compiled with [Big Endian or Little Endian](https://en.wikipedia.org/wiki/Endianness).
+Return `BE` or `LE` depending if Node.js was compiled with [Big Endian or Little Endian](https://en.wikipedia.org/wiki/Endianness).
 
 ## `os.freemem()`
 
@@ -90,7 +90,7 @@ It only returns a meaningful value on Linux and macOS.
 Example:
 
 ```js
-;[3.68798828125, 4.00244140625, 11.1181640625]
+[3.68798828125, 4.00244140625, 11.1181640625]
 ```
 
 ## `os.networkInterfaces()`
@@ -141,7 +141,7 @@ Example:
 
 ## `os.platform()`
 
-Return the platform that Node was compiled for:
+Return the platform that Node.js was compiled for:
 
 - `darwin`
 - `freebsd`

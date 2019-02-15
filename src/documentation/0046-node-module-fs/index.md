@@ -1,12 +1,12 @@
 ---
-title: 'The Node fs module'
+title: 'The Node.js fs module'
 description: 'The fs module of Node.js provides useful functions to interact with the file system'
 author: flaviocopes
 ---
 
 The `fs` module provides a lot of very useful functionality to access and interact with the file system.
 
-There is no need to install it. Being part of the Node core, it can be used by simply requiring it:
+There is no need to install it. Being part of the Node.js core, it can be used by simply requiring it:
 
 ```js
 const fs = require('fs')
@@ -14,7 +14,7 @@ const fs = require('fs')
 
 Once you do so, you have access to all its methods, which include:
 
-- `fs.access()`: check if the file exists and Node can access it with its permissions
+- `fs.access()`: check if the file exists and Node.js can access it with its permissions
 - `fs.appendFile()`: append data to a file. If the file does not exist, it's created
 - `fs.chmod()`: change the permissions of a file specified by the filename passed. Related: `fs.lchmod()`, `fs.fchmod()`
 - `fs.chown()`: change the owner and group of a file specified by the filename passed. Related: `fs.fchown()`, `fs.lchown()`
@@ -52,7 +52,7 @@ For example:
 
 This makes a huge difference in your application flow.
 
-> Node 10 includes [experimental support](https://nodejs.org/api/fs.html#fs_fs_promises_api) for a promise based API
+> Node.js 10 includes [experimental support](https://nodejs.org/api/fs.html#fs_fs_promises_api) for a promise based API
 
 For example let's examine the `fs.rename()` method. The asynchronous API is used with a callback:
 

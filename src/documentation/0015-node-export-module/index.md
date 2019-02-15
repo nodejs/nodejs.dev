@@ -1,10 +1,10 @@
 ---
-title: Expose functionality from a Node file using exports
+title: Expose functionality from a Node.js file using exports
 description: 'How to use the module.exports API to expose data to other files in your application, or to other applications as well'
 author: flaviocopes
 ---
 
-Node has a built-in module system.
+Node.js has a built-in module system.
 
 A Node.js file can import functionality exposed by other Node.js files.
 

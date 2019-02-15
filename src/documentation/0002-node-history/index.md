@@ -10,9 +10,9 @@ In comparison, JavaScript is 23 years old and the web as we know it (after the i
 
 9 years is such a little amount of time for a technology, but Node.js seems to have been around forever.
 
-I've had the pleasure to work with Node since the early days when it was just 2 years old, and despite the little information available, you could already feel it was a huge thing.
+I've had the pleasure to work with Node.js since the early days when it was just 2 years old, and despite the little information available, you could already feel it was a huge thing.
 
-In this post, we want to draw the big picture of Node in its history, to put things in perspective.
+In this post, we want to draw the big picture of Node.js in its history, to put things in perspective.
 
 ## A little bit of history
 
@@ -39,7 +39,7 @@ Express is born
 ## 2011
 
 npm hits 1.0
-Big companies start adopting Node: LinkedIn, Uber
+Big companies start adopting Node.js: LinkedIn, Uber
 [Hapi](https://hapijs.com) is born
 
 ## 2012
@@ -48,7 +48,7 @@ Adoption continues very rapidly
 
 ## 2013
 
-First big blogging platform using Node: Ghost
+First big blogging platform using Node.js: Ghost
 [Koa](https://koajs.com/) is born
 
 ## 2014
@@ -60,23 +60,23 @@ The Big Fork: [io.js](https://iojs.org/) is a major fork of Node.js, with the go
 The [Node.js Foundation](https://foundation.nodejs.org/) is born
 IO.js is merged back into Node.js
 npm introduces private modules
-Node 4 (no 1, 2, 3 versions were previously released)
+Node.js 4 (no 1, 2, 3 versions were previously released)
 
 ## 2016
 
 The [leftpad incident](https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm)
 Yarn is born
-Node 6
+Node.js 6
 
 ## 2017
 
 npm focuses more on security
-Node 8
+Node.js 8
 HTTP/2
-V8 introduces Node in its testing suite, officially making Node a target for the JS engine, in addition to Chrome
+V8 introduces Node.js in its testing suite, officially making Node.js a target for the JS engine, in addition to Chrome
 3 billion npm downloads every week
 
 ## 2018
 
-Node 10
+Node.js 10
 ES modules .mjs experimental support

@@ -1,12 +1,12 @@
 ---
-title: Node, the difference between development and production
+title: Node.js, the difference between development and production
 description: 'Learn how to set up different configurations for production and development environments'
 author: flaviocopes
 ---
 
 You can have different configurations for production and development environments.
 
-Node assumes it's always running in a development environment.
+Node.js assumes it's always running in a development environment.
 You can signal Node.js that you are running in production by setting the `NODE_ENV=production` environment variable.
 
 This is usually done by executing the command

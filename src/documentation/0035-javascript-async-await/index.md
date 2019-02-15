@@ -46,7 +46,14 @@ const doSomething = async () => {
 
 This is a simple example of async/await used to run a function asynchronously:
 
-```js
+<iframe
+  allow="geolocation; microphone; camera; midi; encrypted-media"
+  src="https://glitch.com/embed/#!/embed/nodejs-dev-0035-01?path=server.js&previewSize=25&attributionHidden=true&sidebarCollapsed=true"
+  alt="nodejs-dev-0035-01 on Glitch"
+  style="height: 400px; width: 100%; border: 0;">
+</iframe>
+
+<!--```js
 const doSomethingAsync = () => {
   return new Promise(resolve => {
     setTimeout(() => resolve('I did something'), 3000)
@@ -68,7 +75,7 @@ The above code will print the following to the browser console:
 Before
 After
 I did something //after 3s
-```
+```-->
 
 ## Promise all the things
 
@@ -135,7 +142,14 @@ getFirstUserData()
 
 Async functions can be chained very easily, and the syntax is much more readable than with plain promises:
 
-```js
+<iframe
+  allow="geolocation; microphone; camera; midi; encrypted-media"
+  src="https://glitch.com/embed/#!/embed/nodejs-dev-0035-02?path=server.js&previewSize=30&attributionHidden=true&sidebarCollapsed=true"
+  alt="nodejs-dev-0035-02 on Glitch"
+  style="height: 400px; width: 100%; border: 0;">
+</iframe>
+
+<!--```js
 const promiseToDoSomething = () => {
   return new Promise(resolve => {
     setTimeout(() => resolve('I did something'), 10000)
@@ -161,7 +175,7 @@ Will print:
 
 ```
 I did something and I watched and I watched as well
-```
+```-->
 
 ## Easier debugging
 

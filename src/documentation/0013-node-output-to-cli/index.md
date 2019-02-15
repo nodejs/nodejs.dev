@@ -1,12 +1,12 @@
 ---
-title: Output to the command line using Node
-description: 'How to print to the command line console using Node, from the basic console.log to more complex scenarios'
+title: Output to the command line using Node.js
+description: 'How to print to the command line console using Node.js, from the basic console.log to more complex scenarios'
 author: flaviocopes
 ---
 
 ## Basic output using the console module
 
-Node provides a [`console` module](https://nodejs.org/api/console.html) which provides tons of very useful ways to interact with the command line.
+Node.js provides a [`console` module](https://nodejs.org/api/console.html) which provides tons of very useful ways to interact with the command line.
 
 It is basically the same as the `console` object you find in the browser.
 
@@ -22,7 +22,7 @@ const y = 'y'
 console.log(x, y)
 ```
 
-and Node will print both.
+and Node.js will print both.
 
 We can also format pretty phrases by passing variables and a format specifier.
 
@@ -53,6 +53,14 @@ console.log('%O', Number)
 
 Take this code:
 
+<iframe
+  allow="geolocation; microphone; camera; midi; encrypted-media"
+  src="https://glitch.com/embed/#!/embed/nodejs-dev-0013-02?path=server.js&previewSize=40&attributionHidden=true&sidebarCollapsed=true"
+  alt="nodejs-dev-0013-02 on Glitch"
+  style="height: 400px; width: 100%; border: 0;">
+</iframe>
+
+<!--
 ```js
 const x = 1
 const y = 2
@@ -67,6 +75,7 @@ console.count(
   'The value of y is ' + y + ' and has been checked .. how many times?'
 )
 ```
+-->
 
 What happens is that count will count the number of times a string is printed, and print the count next to it:
 
@@ -95,7 +104,7 @@ const function1 = () => function2()
 function1()
 ```
 
-This will print the stack trace. This is what's printed if we try this in the Node REPL:
+This will print the stack trace. This is what's printed if we try this in the Node.js REPL:
 
 ```txt
 Trace
@@ -144,7 +153,7 @@ Example:
 console.log('\x1b[33m%s\x1b[0m', 'hi!')
 ```
 
-You can try that in the Node REPL, and it will print `hi!` in yellow.
+You can try that in the Node.js REPL, and it will print `hi!` in yellow.
 
 However, this is the low-level way to do this. The simplest way to go about coloring the console output is by using a library. [Chalk](https://github.com/chalk/chalk) is such a library, and in addition to coloring it also helps with other styling facilities, like making text bold, italic or underlined.
 

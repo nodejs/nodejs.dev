@@ -1,10 +1,10 @@
 ---
-title: 'Reading files with Node'
-description: 'How to read files using Node'
+title: 'Reading files with Node.js'
+description: 'How to read files using Node.js'
 author: flaviocopes
 ---
 
-The simplest way to read a file in Node is to use the `fs.readFile()` method, passing it the file path and a callback function that will be called with the file data (and the error):
+The simplest way to read a file in Node.js is to use the `fs.readFile()` method, passing it the file path and a callback function that will be called with the file data (and the error):
 
 ```js
 const fs = require('fs')

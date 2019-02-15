@@ -1,10 +1,10 @@
 ---
-title: 'The Node http module'
+title: 'The Node.js http module'
 description: 'The http module of Node.js provides useful functions and classes to build an HTTP server'
 author: flaviocopes
 ---
 
-The HTTP core module is a key module to Node networking.
+The HTTP core module is a key module to Node.js networking.
 
 It can be included using
 
@@ -131,7 +131,7 @@ This property lists all the HTTP status codes and their description:
 
 Points to the global instance of the Agent object, which is an instance of the `http.Agent` class.
 
-It's used to manage connections persistance and reuse for HTTP clients, and it's a key component of Node HTTP networking.
+It's used to manage connections persistance and reuse for HTTP clients, and it's a key component of Node.js HTTP networking.
 
 More in the `http.Agent` class description later on.
 
@@ -169,7 +169,7 @@ The HTTP module provides 5 classes:
 
 ### `http.Agent`
 
-Node creates a global instance of the `http.Agent` class to manage connections persistance and reuse for HTTP clients, a key component of Node HTTP networking.
+Node.js creates a global instance of the `http.Agent` class to manage connections persistance and reuse for HTTP clients, a key component of Node.js HTTP networking.
 
 This object makes sure that every request made to a server is queued and a single socket is reused.
 
