@@ -75,7 +75,14 @@ npm with its simple structure helped the ecosystem of node.js proliferate and no
 
 The most common example Hello World of Node.js is a web server:
 
-```js
+<iframe
+  allow="geolocation; microphone; camera; midi; encrypted-media"
+  src="https://glitch.com/embed/#!/embed/nodejs-dev-0001-01?path=server.js&previewSize=30&attributionHidden=true&sidebarCollapsed=true"
+  alt="nodejs-dev-0001-01 on Glitch"
+  style="height: 400px; width: 100%; border: 0;">
+</iframe>
+
+<!--```js
 const http = require('http')
 
 const hostname = '127.0.0.1'
@@ -92,7 +99,7 @@ server.listen(port, hostname, () => {
 })
 ```
 
-To run this snippet, save it as a `server.js` file and run `node server.js` in your terminal.
+To run this snippet, save it as a `server.js` file and run `node server.js` in your terminal.-->
 
 This code first includes the Node.js [`http` module](https://nodejs.org/api/http.html).
 

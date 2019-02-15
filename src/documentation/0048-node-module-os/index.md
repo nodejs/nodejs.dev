@@ -53,7 +53,7 @@ Return information on the CPUs available on your system.
 Example:
 
 ```js
-;[
+[
   {
     model: 'Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz',
     speed: 2400,
@@ -110,7 +110,7 @@ It only returns a meaningful value on Linux and macOS.
 Example:
 
 ```js
-;[3.68798828125, 4.00244140625, 11.1181640625]
+[3.68798828125, 4.00244140625, 11.1181640625]
 ```
 
 ## `os.networkInterfaces()`
