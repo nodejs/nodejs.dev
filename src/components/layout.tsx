@@ -1,8 +1,9 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
+import React from 'react'
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
+import image from '../images/image.png'
 
-import Header from './header';
+import Header from './header'
 
 import './layout.css';
 import './mobile.css';
@@ -11,9 +12,11 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
 type Props = {
   children: React.ReactNode
+  title: string
+  descript: string
 }
 
-const Layout = ({ children }: Props) => (
+const Layout = ({ children, title, description }: Props) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -27,18 +30,23 @@ const Layout = ({ children }: Props) => (
     render={data => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: description },
+            { name: 'keywords', content: 'nodejs, javascript, documentation' },
+            { name: 'title', content: title },
+            { property: 'og:title', content: title },
+            { property: 'og:image', content: image },
+            { property: 'og:image:type', content: 'image/png' },
+            { property: 'og:image:alt', content: description },
+            { property: 'og:image:width', content: '1200' },
+            { property: 'og:image:height', content: '1200' }
           ]}
         >
           <html lang="en" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
       </>
     )}
   />

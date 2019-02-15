@@ -8,6 +8,7 @@ exports.onCreatePage = async ({ page, actions }) => {
     createPage({
       ...page,
       path: '/'
+      
     });
     createPage({
       ...page,

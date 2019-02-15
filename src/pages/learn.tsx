@@ -55,7 +55,7 @@ function openNav() {
 export default ({ data, location }: Props) => {
   const pages = [];
   let currentPage = location.pathname.split('/').pop();
-  let activePage = { title: '404', html: '404' };
+  let activePage = { title: '404', html: '404', author : '',  description : '' };
   let foundActive = false;
 
   // For every page,
@@ -68,20 +68,28 @@ export default ({ data, location }: Props) => {
     // TODO: We need a more robust slug creation here.
     const slug = page.frontmatter.title.toLowerCase().replace(/ /g, '-').replace(/[^a-z|-]/g, '');
 
+
     // If there is no current page slug discovered from the URL, use the first page's.
     if (!currentPage) { currentPage = slug; }
 
     // Determine if this is the active page, and mark if we've found the active page yet.
     const isActive = slug === currentPage;
     foundActive = foundActive || isActive;
-    if (isActive) { activePage = { html: page.html, title: page.frontmatter.title }; }
+    if (isActive) { activePage = { 
+      html: page.html, 
+      title: page.frontmatter.title, 
+      author : page.frontmatter.author, 
+      description : page.frontmatter.description 
+     }; }
+
+
 
     // Construct class name for this side nav item.
     const className = `side-nav__item ${!foundActive ? 'side-nav__item--done' : ''} ${isActive ? 'side-nav__item--active' : ''}`;
 
     // Add the constructed page JSX to the pages list.
     pages.push(
-      <li className={className}>
+      <li className={className} key={page.id}>
         <Link to={`/learn/${slug}`}>
           {page.frontmatter.title}
         </Link>
@@ -90,7 +98,7 @@ export default ({ data, location }: Props) => {
   }
 
   return (
-    <Layout>
+    <Layout title={activePage.title} author={activePage.author} description={activePage.description} slug={currentPage}>
       <div className="hero">
         <h1>{activePage.title}</h1>
         <div className="diagonal-hero-bg">
@@ -107,11 +115,11 @@ export default ({ data, location }: Props) => {
         {/* TODO: H2s should not be in the ULs, but needed to make sticky titles work. Find a new way. */}
         <ul className="side-nav__list">
           <h2 className="side-nav__title">Quick Start</h2>
-          {pages.slice(0, 5)}
+        {pages}
         </ul>
         <ul className="side-nav__list">
           <h2 className="side-nav__title">Getting Started</h2>
-          {pages.slice(5)}
+          {pages}
         </ul>
       </nav>
       <article className="article-reader">
