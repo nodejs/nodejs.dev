@@ -4,19 +4,6 @@ description: 'Discover the modern approach to asynchronous functions in JavaScri
 author: flaviocopes
 ---
 
-<!-- TOC -->
-
-- [Introduction](#introduction)
-- [Why were async/await introduced?](#why-were-asyncawait-introduced)
-- [How it works](#how-it-works)
-- [A quick example](#a-quick-example)
-- [Promise all the things](#promise-all-the-things)
-- [The code is much simpler to read](#the-code-is-much-simpler-to-read)
-- [Multiple async functions in series](#multiple-async-functions-in-series)
-- [Easier debugging](#easier-debugging)
-
-<!-- /TOC -->
-
 ## Introduction
 
 JavaScript evolved in a very short time from callbacks to promises (ES2015), and since ES2017 asynchronous JavaScript is even simpler with the async/await syntax.

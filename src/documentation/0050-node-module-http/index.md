@@ -6,25 +6,6 @@ author: flaviocopes
 
 The HTTP core module is a key module to Node.js networking.
 
-<!-- TOC -->
-
-- [Properties](#properties)
-  - [`http.METHODS`](#httpmethods)
-  - [`http.STATUS_CODES`](#httpstatus_codes)
-  - [`http.globalAgent`](#httpglobalagent)
-- [Methods](#methods)
-  - [`http.createServer()`](#httpcreateserver)
-  - [`http.request()`](#httprequest)
-  - [`http.get()`](#httpget)
-- [Classes](#classes)
-  - [`http.Agent`](#httpagent)
-  - [`http.ClientRequest`](#httpclientrequest)
-  - [`http.Server`](#httpserver)
-  - [`http.ServerResponse`](#httpserverresponse)
-  - [`http.IncomingMessage`](#httpincomingmessage)
-
-<!-- /TOC -->
-
 It can be included using
 
 ```js

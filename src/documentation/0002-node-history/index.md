@@ -14,22 +14,6 @@ I've had the pleasure to work with Node.js since the early days when it was just
 
 In this post, we want to draw the big picture of Node.js in its history, to put things in perspective.
 
-<!-- TOC -->
-
-- [A little bit of history](#a-little-bit-of-history)
-- [2009](#2009)
-- [2010](#2010)
-- [2011](#2011)
-- [2012](#2012)
-- [2013](#2013)
-- [2014](#2014)
-- [2015](#2015)
-- [2016](#2016)
-- [2017](#2017)
-- [2018](#2018)
-
-<!-- /TOC -->
-
 ## A little bit of history
 
 JavaScript is a programming language that was created at Netscape as a scripting tool to manipulate web pages inside their browser, [Netscape Navigator](https://en.wikipedia.org/wiki/Netscape_Navigator).

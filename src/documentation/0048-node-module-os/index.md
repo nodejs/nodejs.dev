@@ -22,26 +22,6 @@ You can read them all on <https://nodejs.org/api/os.html#os_signal_constants>.
 
 Let's now see the main methods that `os` provides:
 
-<!-- TOC -->
-
-- [`os.arch()`](#osarch)
-- [`os.cpus()`](#oscpus)
-- [`os.endianness()`](#osendianness)
-- [`os.freemem()`](#osfreemem)
-- [`os.homedir()`](#oshomedir)
-- [`os.hostname()`](#oshostname)
-- [`os.loadavg()`](#osloadavg)
-- [`os.networkInterfaces()`](#osnetworkinterfaces)
-- [`os.platform()`](#osplatform)
-- [`os.release()`](#osrelease)
-- [`os.tmpdir()`](#ostmpdir)
-- [`os.totalmem()`](#ostotalmem)
-- [`os.type()`](#ostype)
-- [`os.uptime()`](#osuptime)
-- [`os.userInfo()`](#osuserinfo)
-
-<!-- /TOC -->
-
 ## `os.arch()`
 
 Return the string that identifies the underlying architecture, like `arm`, `x64`, `arm64`.

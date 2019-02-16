@@ -4,6 +4,7 @@ description: 'Learn what streams are for, why are they so important, and how to 
 author: flaviocopes
 ---
 
+
 <!-- TOC -->
 
 - [What are streams](#what-are-streams)

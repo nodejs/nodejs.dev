@@ -4,18 +4,6 @@ description: 'A quick guide to npm, the powerful package manager key to the succ
 author: flaviocopes
 ---
 
-<!-- TOC -->
-
-- [Introduction to npm](#introduction-to-npm)
-- [Downloads](#downloads)
-  - [Installing all dependencies](#installing-all-dependencies)
-  - [Installing a single package](#installing-a-single-package)
-  - [Updating packages](#updating-packages)
-- [Versioning](#versioning)
-- [Running Tasks](#running-tasks)
-
-<!-- /TOC -->
-
 ## Introduction to npm
 
 `npm` is the standard package manager for Node.js.

@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
+import { scrollTo } from '../util/scrollTo';
 
 /**
  * When on the "Learn" page, we need to update the background gradient
@@ -41,6 +42,14 @@ interface LearnPageData {
 type Props = {
   data: LearnPageData;
   location: Location;
+}
+
+let prev = 0;
+function openNav() {
+  const old = prev;
+  prev = document.scrollingElement!.scrollTop;
+  document.getElementsByClassName('side-nav')[0].classList.toggle('side-nav--open');
+  scrollTo(old);
 }
 
 export default ({ data, location }: Props) => {
@@ -93,6 +102,7 @@ export default ({ data, location }: Props) => {
         </div>
       </div>
       <nav className="side-nav">
+        <button className="side-nav__open" onClick={openNav}>Menu</button>
         {/* TODO: Get side nav sections from frontmatter fields. Need a new one. */}
         {/* TODO: H2s should not be in the ULs, but needed to make sticky titles work. Find a new way. */}
         <ul className="side-nav__list">
@@ -104,7 +114,10 @@ export default ({ data, location }: Props) => {
           {pages.slice(5)}
         </ul>
       </nav>
-      <article className="article-reader" dangerouslySetInnerHTML={{ __html: activePage.html }} />
+      <article className="article-reader">
+        <h1 className="article-reader__headline">{activePage.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: activePage.html }} />
+      </article>
     </Layout>
   );
 }

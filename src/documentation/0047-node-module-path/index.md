@@ -16,20 +16,6 @@ This module provides `path.sep` which provides the path segment separator (`\` o
 
 These are the `path` methods:
 
-<!-- TOC -->
-
-- [`path.basename()`](#pathbasename)
-- [`path.dirname()`](#pathdirname)
-- [`path.extname()`](#pathextname)
-- [`path.isAbsolute()`](#pathisabsolute)
-- [`path.join()`](#pathjoin)
-- [`path.normalize()`](#pathnormalize)
-- [`path.parse()`](#pathparse)
-- [`path.relative()`](#pathrelative)
-- [`path.resolve()`](#pathresolve)
-
-<!-- /TOC -->
-
 ### `path.basename()`
 
 Return the last portion of a path. A second parameter can filter out the file extension:

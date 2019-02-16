@@ -18,25 +18,6 @@ The event listener eats its own dog food and uses these events:
 
 Here's a detailed description of the most useful methods:
 
-<!-- TOC -->
-
-- [`emitter.addListener()`](#emitteraddlistener)
-- [`emitter.emit()`](#emitteremit)
-- [`emitter.eventNames()`](#emittereventnames)
-- [`emitter.getMaxListeners()`](#emittergetmaxlisteners)
-- [`emitter.listenerCount()`](#emitterlistenercount)
-- [`emitter.listeners()`](#emitterlisteners)
-- [`emitter.off()`](#emitteroff)
-- [`emitter.on()`](#emitteron)
-- [`emitter.once()`](#emitteronce)
-- [`emitter.prependListener()`](#emitterprependlistener)
-- [`emitter.prependOnceListener()`](#emitterprependoncelistener)
-- [`emitter.removeAllListeners()`](#emitterremovealllisteners)
-- [`emitter.removeListener()`](#emitterremovelistener)
-- [`emitter.setMaxListeners()`](#emittersetmaxlisteners)
-
-<!-- /TOC -->
-
 ## `emitter.addListener()`
 
 Alias for `emitter.on()`.

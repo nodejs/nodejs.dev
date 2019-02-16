@@ -10,32 +10,6 @@ What's that for? What should you know about it, and what are some of the cool th
 
 The `package.json` file is kind of a manifest for your project. It can do a lot of things, completely unrelated. It's a central repository of configuration for tools, for example. It's also where npm and `yarn` store the names and versions of the package it installed.
 
-<!-- TOC -->
-
-- [The file structure](#the-file-structure)
-- [Properties breakdown](#properties-breakdown)
-  - [`name`](#name)
-  - [`author`](#author)
-  - [`contributors`](#contributors)
-  - [`bugs`](#bugs)
-  - [`homepage`](#homepage)
-  - [`version`](#version)
-  - [`license`](#license)
-  - [`keywords`](#keywords)
-  - [`description`](#description)
-  - [`repository`](#repository)
-  - [`main`](#main)
-  - [`private`](#private)
-  - [`scripts`](#scripts)
-  - [`dependencies`](#dependencies)
-  - [`devDependencies`](#devdependencies)
-  - [`engines`](#engines)
-  - [`browserslist`](#browserslist)
-  - [Command-specific properties](#command-specific-properties)
-- [Package versions](#package-versions)
-
-<!-- /TOC -->
-
 ## The file structure
 
 Here's an example package.json file:
