@@ -20,7 +20,7 @@ const Header = ({ siteTitle }: Props) => (
     >
       <li>
         <Link to="/">
-          <img src={logo} alt={siteTitle} class="nav__logo"/>
+          <img src={logo} alt={siteTitle} className="nav__logo"/>
         </Link>
       </li>
     </ul>
