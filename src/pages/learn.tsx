@@ -51,6 +51,26 @@ function openNav() {
   document.getElementsByClassName('side-nav')[0].classList.toggle('side-nav--open');
   scrollTo(old);
 }
+/** Small screen width 
+ *  If the width of the viewport is lesser than this value
+ * it means that the website is viewed in a tablet or mobile
+ */
+const MAX_SMALLSCREEN_WIDTH = 1262;
+/**
+ * When on smaller devices such as tablets and mobiles, the side menu needs
+ * to be close when an article is selected.
+ * closeNavOnSmallScreens checks for the viewport width and toggles it sideNav
+ * if it is open on a small screen 
+ */
+function closeNavOnSmallScreens() {
+  // Get viewport width 
+  // Source - https://stackoverflow.com/a/8876069/2621400
+  const w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  // If width is lesser or equal to max small screen width
+  if (w <= MAX_SMALLSCREEN_WIDTH) {
+    openNav()
+  }
+}
 
 export default ({ data, location }: Props) => {
   const pages = [];
@@ -82,7 +102,7 @@ export default ({ data, location }: Props) => {
     // Add the constructed page JSX to the pages list.
     pages.push(
       <li className={className}>
-        <Link to={`/learn/${slug}`}>
+        <Link to={`/learn/${slug}`} onClick={closeNavOnSmallScreens}>
           {page.frontmatter.title}
         </Link>
       </li>
@@ -95,10 +115,10 @@ export default ({ data, location }: Props) => {
         <h1>{activePage.title}</h1>
         <div className="diagonal-hero-bg">
           <div className="stars">
-              <div className="small"/>
-              <div className="medium"/>
-              <div className="big"/>
-            </div>
+            <div className="small" />
+            <div className="medium" />
+            <div className="big" />
+          </div>
         </div>
       </div>
       <nav className="side-nav">
