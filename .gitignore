@@ -10,3 +10,4 @@ package-lock.json
 
 .env
 .firebase/*
+coverage
