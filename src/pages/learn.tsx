@@ -115,11 +115,11 @@ export default ({ data, location }: Props) => {
         {/* TODO: H2s should not be in the ULs, but needed to make sticky titles work. Find a new way. */}
         <ul className="side-nav__list">
           <h2 className="side-nav__title">Quick Start</h2>
-        {pages}
+        {pages.slice(0, 5)}
         </ul>
         <ul className="side-nav__list">
           <h2 className="side-nav__title">Getting Started</h2>
-          {pages}
+           {pages.slice(5)}
         </ul>
       </nav>
       <article className="article-reader">
