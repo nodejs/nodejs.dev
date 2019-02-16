@@ -32,6 +32,9 @@ interface RemarkPage {
     description: string;
     author: string;
   }
+  fields: {
+    slug: string
+  }
 }
 
 interface LearnPageData {
@@ -64,9 +67,7 @@ export default ({ data, location }: Props) => {
     // If this page does not have a title, skip.
     if (!page.frontmatter.title) { continue; }
 
-    // Generate a slug for this page
-    // TODO: We need a more robust slug creation here.
-    const slug = page.frontmatter.title.toLowerCase().replace(/ /g, '-').replace(/[^a-z|-]/g, '');
+    const slug = page.fields.slug;
 
     // If there is no current page slug discovered from the URL, use the first page's.
     if (!currentPage) { currentPage = slug; }
@@ -133,6 +134,9 @@ export const query = graphql`{
           title
           description
           author
+        }
+        fields {
+          slug
         }
       }
     }
