@@ -34,9 +34,21 @@ interface RemarkPage {
   }
 }
 
+interface PreviousPage {
+  frontmatter: {
+    title: string
+  }
+}
+
+interface NextPage {
+  frontmatter: {
+    title: string
+  }
+}
+
 interface LearnPageData {
   pages: {
-    edges: ({ node: RemarkPage })[];
+    edges: ({ node: RemarkPage, previous: PreviousPage, next: NextPage })[];
   }
 }
 type Props = {
@@ -77,12 +89,16 @@ export default ({ data, location }: Props) => {
   const pages = [];
   let currentPage = location.pathname.split('/').pop();
   let activePage = { title: '404', html: '404' };
+
+  let previousPage = { frontmatter: { title: '404', path: '404' } }
+  let nextPage = { frontmatter: { title: '404', path: '404' } }
+
+  
   let foundActive = false;
 
   // For every page,
-  for (const { node: page } of data.pages.edges) {
-
-    // If this page does not have a title, skip.
+  for (const { node: page, previous, next } of data.pages.edges) {
+    // If this page does not have a title, skip
     if (!page.frontmatter.title) { continue; }
 
     // Generate a slug for this page
@@ -95,7 +111,13 @@ export default ({ data, location }: Props) => {
     // Determine if this is the active page, and mark if we've found the active page yet.
     const isActive = slug === currentPage;
     foundActive = foundActive || isActive;
-    if (isActive) { activePage = { html: page.html, title: page.frontmatter.title }; }
+    if (isActive) {
+      activePage = { html: page.html, title: page.frontmatter.title };
+
+      previousPage = { frontmatter: { title: previous.frontmatter.title, path: previous.frontmatter.title.toLowerCase().replace(/ /g, '-').replace(/[^a-z|-]/g, '') } };
+
+      nextPage = { frontmatter: { title: next && next.frontmatter.title, path: next && next.frontmatter.title.toLowerCase().replace(/ /g, '-').replace(/[^a-z|-]/g, '') } };
+    }
 
     // Construct class name for this side nav item.
     const className = `side-nav__item ${!foundActive ? 'side-nav__item--done' : ''} ${isActive ? 'side-nav__item--active' : ''}`;
@@ -138,7 +160,31 @@ export default ({ data, location }: Props) => {
       <article className="article-reader">
         <h1 className="article-reader__headline">{activePage.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: activePage.html }} />
+        <ul
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `space-between`,
+            listStyle: `none`,
+            padding: '30px',
+           
+          }}
+        >
+          <li>
+            {previousPage.frontmatter.title &&
+              <Link to={`/learn/${previousPage.frontmatter.path}`} rel="prev">
+                ←  &nbsp; Prev
+              </Link>
+            }
+        </li>
+          <li>
+            {nextPage.frontmatter.title && <Link to={`/learn/${nextPage.frontmatter.path}`} rel="next">
+              Next &nbsp; →
+          </Link>}
+          </li>
+          </ul>
       </article>
+      
     </Layout>
   );
 }
@@ -154,6 +200,16 @@ export const query = graphql`{
           title
           description
           author
+        }
+      }
+      next {
+        frontmatter {
+          title
+        }
+      }
+      previous {
+        frontmatter {
+          title
         }
       }
     }
