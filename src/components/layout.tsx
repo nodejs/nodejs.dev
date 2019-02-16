@@ -35,12 +35,15 @@ const Layout = ({ children, title, description }: Props) => (
             { name: 'description', content: description },
             { name: 'keywords', content: 'nodejs, javascript, documentation' },
             { name: 'title', content: title },
+            { name:"twitter:card" content:"summary"},
+            { name:"twitter:site" content:"@nodejs"},
+            { name:"twitter:creator" content:`@${author}`}
             { property: 'og:title', content: title },
             { property: 'og:image', content: image },
             { property: 'og:image:type', content: 'image/png' },
             { property: 'og:image:alt', content: description },
             { property: 'og:image:width', content: '1200' },
-            { property: 'og:image:height', content: '1200' }
+            { property: 'og:image:height', content: '1200' },
           ]}
         >
           <html lang="en" />
