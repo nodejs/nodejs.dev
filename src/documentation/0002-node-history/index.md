@@ -2,6 +2,7 @@
 title: A brief history of Node.js
 description: 'A look back on the history of Node.js from 2009 to today'
 author: flaviocopes
+section: Quick Start
 ---
 
 Believe it or not, Node.js is just 9 years old.

@@ -2,6 +2,7 @@
 title: Differences between Node.js and the Browser
 description: 'How writing JavaScript application in Node.js differs from programming for the Web inside the browser'
 author: flaviocopes
+section: Quick Start
 ---
 
 Both the browser and Node.js use JavaScript as their programming language.
