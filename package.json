@@ -44,6 +44,7 @@
     "commitmsg": "commitlint --edit $GIT_PARAMS"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.3",
     "@babel/preset-typescript": "^7.3.3",
     "@commitlint/cli": "^7.3.2",
     "@commitlint/config-conventional": "^7.3.1",
