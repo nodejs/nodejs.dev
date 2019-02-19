@@ -48,12 +48,12 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: "language-",
+              classPrefix: 'language-',
               inlineCodeMarker: null,
               aliases: { js: 'javascript' },
               showLineNumbers: false,
               noInlineHighlight: false,
-            }
+            },
           },
           {
             resolve: `gatsby-remark-images`,
@@ -61,8 +61,8 @@ module.exports = {
               maxWidth: 590,
             },
           },
-        ]
-      }
+        ],
+      },
     },
     // {
     //   resolve: `gatsby-source-contentful`,
