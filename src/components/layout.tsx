@@ -30,7 +30,6 @@ const Layout = ({ children }: Props) => (
               name: 'description',
               content: `Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.`,
             },
-            { name: 'keywords', content: 'sample, something' },
           ]}
         >
           <html lang="en" />
