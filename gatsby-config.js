@@ -13,6 +13,7 @@ module.exports = {
     title: 'Node.js',
     description: `Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.`,
     featuredImage: `https://nodejs.org/static/images/logo-hexagon-card.png`,
+    url: 'https://nodejs.dev/',
   },
   plugins: [
     'gatsby-plugin-catch-links',
