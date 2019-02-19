@@ -35,9 +35,9 @@ const Layout = ({ children, title, description }: Props) => (
             { name: 'description', content: description },
             { name: 'keywords', content: 'nodejs, javascript, documentation' },
             { name: 'title', content: title },
-            { name:"twitter:card" content:"summary"},
-            { name:"twitter:site" content:"@nodejs"},
-            { name:"twitter:creator" content:`@${author}`}
+            { name:"twitter:card", content:"summary"},
+            { name:"twitter:site", content:"@nodejs"},
+            { name:"twitter:creator", content:`@${author}`},
             { property: 'og:title', content: title },
             { property: 'og:image', content: image },
             { property: 'og:image:type', content: 'image/png' },
