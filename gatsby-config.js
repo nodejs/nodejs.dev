@@ -18,6 +18,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://nodejs.dev`,
+      },
+    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
