@@ -11,6 +11,7 @@ module.exports = {
   pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
     title: 'Node.js',
+    description: `Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.`,
   },
   plugins: [
     'gatsby-plugin-catch-links',
