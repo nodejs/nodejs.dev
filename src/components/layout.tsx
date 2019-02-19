@@ -3,6 +3,7 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 import 'prismjs/themes/prism-okaidia.css'
 import React from 'react'
 import Helmet from 'react-helmet'
+import Header from './header'
 import './layout.css'
 import './mobile.css'
 
