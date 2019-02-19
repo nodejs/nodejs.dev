@@ -41,7 +41,8 @@
     "start": "gatsby develop",
     "format": "prettier --write '**/*.tsx'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "commitmsg": "commitlint --edit $GIT_PARAMS"
+    "commitmsg": "commitlint --edit $GIT_PARAMS",
+    "now-build": "gatsby build"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.3.2",
