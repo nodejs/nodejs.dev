@@ -39,8 +39,8 @@ Express is born
 ## 2011
 
 npm hits 1.0
-Big companies start adopting Node.js: LinkedIn, Uber
-[Hapi](https://hapijs.com) is born
+Big companies start adopting Node.js: LinkedIn, Uber,
+[hapi](https://hapijs.com) is born
 
 ## 2012
 
