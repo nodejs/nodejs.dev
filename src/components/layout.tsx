@@ -13,10 +13,11 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 type Props = {
   children: React.ReactNode
   title: string
-  descript: string
+  description: string
+  author : string 
 }
 
-const Layout = ({ children, title, description }: Props) => (
+const Layout = ({ children, title, description, author }: Props) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
