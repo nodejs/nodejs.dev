@@ -29,18 +29,21 @@ But of course, Node.js is not popular just because of pure luck or timing. It in
 ## 2009
 
 Node.js is born
+
 The first form of npm is created
 
 ## 2010
 
 Express is born
+
 [Socket.io](https://socket.io) is born
 
 ## 2011
 
 npm hits 1.0
-Big companies start adopting Node.js: LinkedIn, Uber
-[Hapi](https://hapijs.com) is born
+Big companies start adopting Node.js: LinkedIn, Uber.
+
+[hapi](https://hapijs.com) is born
 
 ## 2012
 
@@ -49,6 +52,7 @@ Adoption continues very rapidly
 ## 2013
 
 First big blogging platform using Node.js: Ghost
+
 [Koa](https://koajs.com/) is born
 
 ## 2014
@@ -58,25 +62,34 @@ The Big Fork: [io.js](https://iojs.org/) is a major fork of Node.js, with the go
 ## 2015
 
 The [Node.js Foundation](https://foundation.nodejs.org/) is born
+
 IO.js is merged back into Node.js
 npm introduces private modules
+
 Node.js 4 (no 1, 2, 3 versions were previously released)
 
 ## 2016
 
 The [leftpad incident](https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm)
+
 Yarn is born
+
 Node.js 6
 
 ## 2017
 
 npm focuses more on security
+
 Node.js 8
+
 HTTP/2
+
 V8 introduces Node.js in its testing suite, officially making Node.js a target for the JS engine, in addition to Chrome
+
 3 billion npm downloads every week
 
 ## 2018
 
 Node.js 10
+
 ES modules .mjs experimental support
