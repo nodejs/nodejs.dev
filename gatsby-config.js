@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'nodejs dev docs',
+        name: 'nodejs.dev',
         short_name: 'nodejs.dev',
         start_url: '/',
         background_color: '#663399',
