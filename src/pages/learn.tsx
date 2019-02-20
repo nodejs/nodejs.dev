@@ -1,13 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
 import { LearnPageData } from '../types';
 import Layout from '../components/layout';
 import Hero from '../components/hero';
 import Article from '../components/article';
 import Navigation from '../components/navigation';
 import { findActive } from '../util/findActive';
-import Page404 from './404'
+import Page404 from './404';
 
 type Props = {
   data: LearnPageData;

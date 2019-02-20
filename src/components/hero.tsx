@@ -1,7 +1,7 @@
 import React from 'react';
 
 type Props = {
-  title: string
+  title: string;
 }
 
 const Hero = ({ title }: Props) => (

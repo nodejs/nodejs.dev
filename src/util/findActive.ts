@@ -1,10 +1,10 @@
 import { RemarkSection, RemarkPage, NavigationSectionData, PageInfo } from '../types';
 
 type ActiveResults = {
-  activePage?: RemarkPage,
-  previousPage?: PageInfo,
-  nextPage?: PageInfo,
-  navigationSections: Array<NavigationSectionData>
+  activePage?: RemarkPage;
+  previousPage?: PageInfo;
+  nextPage?: PageInfo;
+  navigationSections: Array<NavigationSectionData>;
 }
 
 export function findActive(sections: Array<RemarkSection>, currentPage?: string): ActiveResults {

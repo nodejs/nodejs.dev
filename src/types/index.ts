@@ -11,27 +11,27 @@ export interface RemarkPage {
     author: string;
   }
   fields: {
-    slug: string
+    slug: string;
   }
 }
 
 export interface PageInfo {
   frontmatter: {
-    title: string
+    title: string;
   }
   fields: {
-    slug: string
+    slug: string;
   }
 }
 
 export interface RemarkSection {
-  fieldValue: string,
+  fieldValue: string;
   edges: Array<{ node: RemarkPage; previous: PageInfo; next: PageInfo }>;
 }
 
 export interface LearnPageData {
   sections: {
-    group: Array<RemarkSection>
+    group: Array<RemarkSection>;
   }
 }
 
@@ -44,6 +44,6 @@ export interface NavigationItemData {
 }
 
 export interface NavigationSectionData {
-  title: string,
-  items: Array<NavigationItemData>
+  title: string;
+  items: Array<NavigationItemData>;
 }
