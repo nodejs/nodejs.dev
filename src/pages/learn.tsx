@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
+import Page404 from "./404"
 import { scrollTo } from '../util/scrollTo';
 
 /**
@@ -96,7 +97,7 @@ export default ({ data, location }: Props) => {
   let previousPage = { frontmatter: { title: '404', path: '404' } }
   let nextPage = { frontmatter: { title: '404', path: '404' } }
 
-  
+
   let foundActive = false;
 
   // For every page,
@@ -131,6 +132,12 @@ export default ({ data, location }: Props) => {
         </Link>
       </li>
     );
+  }
+
+  if (!foundActive) {
+    // Rendering 404 page as a component here
+    // The reason is to show the 404 component but maintaining the url (instead of redirecting to 404)
+    return <Page404 />
   }
 
   return (
@@ -168,7 +175,7 @@ export default ({ data, location }: Props) => {
             justifyContent: `space-between`,
             listStyle: `none`,
             padding: '30px',
-           
+
           }}
         >
           <li>
@@ -177,15 +184,15 @@ export default ({ data, location }: Props) => {
                 ←  &nbsp; Prev
               </Link>
             }
-        </li>
+          </li>
           <li>
             {nextPage.frontmatter.title && <Link to={`/learn/${nextPage.frontmatter.path}`} rel="next">
               Next &nbsp; →
           </Link>}
           </li>
-          </ul>
+        </ul>
       </article>
-      
+
     </Layout>
   );
 }
