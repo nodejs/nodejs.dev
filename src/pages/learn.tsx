@@ -2,6 +2,7 @@ import { graphql, Link } from 'gatsby'
 import React from 'react'
 import Layout from '../components/layout'
 import { scrollTo } from '../util/scrollTo'
+import Page404 from "./404"
 
 /**
  * When on the "Learn" page, we need to update the background gradient
@@ -32,6 +33,9 @@ interface RemarkPage {
     title: string
     description: string
     author: string
+  }
+  fields: {
+    slug: string
   }
 }
 
@@ -108,12 +112,7 @@ export default ({ data, location }: Props) => {
       continue
     }
 
-    // Generate a slug for this page
-    // TODO: We need a more robust slug creation here.
-    const slug = page.frontmatter.title
-      .toLowerCase()
-      .replace(/ /g, '-')
-      .replace(/[^a-z|-]/g, '')
+    const slug = page.fields.slug;
 
     // If there is no current page slug discovered from the URL, use the first page's.
     if (!currentPage) {
@@ -167,6 +166,12 @@ export default ({ data, location }: Props) => {
         </Link>
       </li>
     )
+  }
+
+  if (!foundActive) {
+    // Rendering 404 page as a component here
+    // The reason is to show the 404 component but maintaining the url (instead of redirecting to 404)
+    return <Page404 />
   }
 
   return (
@@ -245,10 +250,13 @@ export const query = graphql`
             author
           }
         }
-        next {
-          frontmatter {
-            title
-          }
+        fields {
+          slug
+        }
+      }
+      next {
+        frontmatter {
+          title
         }
         previous {
           frontmatter {

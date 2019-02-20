@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for Header component renders correctly 1`] = `
+<nav
+  className="nav"
+>
+  <ul
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "listStyle": "none",
+        "margin": "0 auto",
+        "padding": "1.4rem 4.8rem",
+      }
+    }
+  >
+    <li>
+      <a
+        href="/"
+      >
+        <img
+          alt="test-title"
+          className="nav__logo"
+          src="test-file-stub"
+        />
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

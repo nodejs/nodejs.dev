@@ -41,19 +41,53 @@
     "build-ci": "gatsby build --prefix-paths",
     "start": "gatsby develop",
     "format": "prettier --write '**/*.tsx'",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "commitmsg": "commitlint --edit $GIT_PARAMS"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-typescript": "^7.3.3",
     "@commitlint/cli": "^7.3.2",
     "@commitlint/config-conventional": "^7.3.1",
+    "@types/jest": "^24.0.5",
+    "@types/react-test-renderer": "^16.8.1",
+    "babel-jest": "^24.1.0",
+    "babel-preset-gatsby": "^0.1.7",
     "husky": "^1.3.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.1.0",
     "prettier": "^1.14.2",
+    "react-test-renderer": "^16.8.2",
     "tslint-config-prettier": "^1.15.0",
     "tslint-react": "^3.6.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx|js)$": "<rootDir>/test-preprocessor.js"
+    },
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss)$": "identity-obj-proxy",
+      ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/fileMock.js"
+    },
+    "testPathIgnorePatterns": [
+      "node_modules",
+      ".cache"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(gatsby)/)"
+    ],
+    "globals": {
+      "__PATH_PREFIX__": ""
+    },
+    "setupFiles": [
+      "<rootDir>/test-setup.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/**.(ts|tsx|js)"
+    ]
   }
 }
