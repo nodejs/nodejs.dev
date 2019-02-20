@@ -230,7 +230,7 @@ main {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 49%, rgba(255, 255, 255, 1) 51%);
   background-position: 0px calc(-50vh + var(--magic-hero-number));
   background-size: 100% 100vh;
-  color: white;
+  color: #a0a097;
   /* Force new paint layer in Firefox for rendering bug with background clip position sticky */
   filter: opacity(0.9);
   font-weight: 200;
