@@ -13,7 +13,9 @@ function createSlug(title) {
 
   return slug
     .replace(/[^\w\-]+/g, '') // Remove any non word characters
-    .replace(/\-\-+/g, '-');  // Replace multiple hyphens
+    .replace(/\-\-+/g, '-')   // Replace multiple hyphens with single
+    .replace(/^-/, '')        // Remove any leading hyphen
+    .replace(/-$/, '');       // Remove any trailing hyphen
 }
 
 module.exports = createSlug;
