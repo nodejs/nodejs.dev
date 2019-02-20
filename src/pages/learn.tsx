@@ -26,9 +26,12 @@ function magicHeroNumber() {
 magicHeroNumber()
 
 interface RemarkPage {
-  id: string
-  fileAbsolutePath: string
-  html: string
+  id: string;
+  fileAbsolutePath: string;
+  html: string;
+  parent: {
+    relativePath: string
+  }
   frontmatter: {
     title: string
     description: string
@@ -102,9 +105,16 @@ function closeNavOnSmallScreens() {
 }
 
 export default ({ data, location }: Props) => {
-  const pages = []
-  let currentPage = location.pathname.split('/').pop()
-  let activePage = { title: '404', html: '404', author: '', description: '' }
+  const pages = [];
+  let currentPage = location.pathname.split('/').pop();
+  let activePage = {
+    title: "404",
+    html: "404",
+    relativePath: "",
+    author: "",
+    description: ""
+  };
+
 
   let previousPage = { frontmatter: { title: '404', path: '404' } }
   let nextPage = { frontmatter: { title: '404', path: '404' } }
@@ -134,6 +144,7 @@ export default ({ data, location }: Props) => {
         title: page.frontmatter.title,
         description: page.frontmatter.description,
         author: page.frontmatter.author,
+        relativePath: page.parent.relativePath
       }
 
       previousPage = {
@@ -150,7 +161,6 @@ export default ({ data, location }: Props) => {
         },
       }
     }
-
     // Construct class name for this side nav item.
     const className = `side-nav__item ${
       !foundActive ? 'side-nav__item--done' : ''
@@ -205,6 +215,17 @@ export default ({ data, location }: Props) => {
       <article className="article-reader">
         <h1 className="article-reader__headline">{activePage.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: activePage.html }} />
+        {
+          activePage.relativePath && (
+            <a
+              href={`https://github.com/nodejs/website-prototype/tree/master/src/documentation/${
+                activePage.relativePath
+              }`}
+            >
+              Edit this page on Github
+            </a>
+          )
+        }
         <ul
           style={{
             display: `flex`,
@@ -241,7 +262,12 @@ export const query = graphql`
         node {
           id
           fileAbsolutePath
-          html
+          html,
+          parent {
+            ... on File {
+              relativePath
+            }
+          }
           frontmatter {
             title
             description
