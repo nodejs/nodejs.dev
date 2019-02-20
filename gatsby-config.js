@@ -7,13 +7,15 @@ if (process.env.ENVIROMENT !== 'production') {
 //   accessToken: process.env.ACCESS_TOKEN,
 // }
 
+const config = require('./src/config')
+
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
-    title: 'Node.js',
-    description: `Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.`,
-    featuredImage: `https://nodejs.org/static/images/logo-hexagon-card.png`,
-    url: 'https://nodejs.dev/',
+    title: config.title,
+    description: config.description,
+    featuredImage: config.featuredImage,
+    siteUrl: config.siteUrl,
   },
   plugins: [
     'gatsby-plugin-catch-links',
@@ -36,13 +38,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-contentful-typescript',
-        short_name: 'starter',
+        name: config.title,
+        short_name: config.title,
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/favicon.png', // This path is relative to the root of the site.
+        background_color: config.color,
+        theme_color: config.color,
+        display: config.display,
+        icon: config.icon,
       },
     },
     'gatsby-plugin-offline',
