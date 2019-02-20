@@ -6,4 +6,4 @@ steps:
   env:
     - 'PATH_PREFIX=staging.nodejs.dev/$SHORT_SHA'
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['rsync', '-R', 'public', 'gs://staging.nodejs.dev/$SHORT_SHA']
+  args: ['-m', 'rsync', '-R', 'public', 'gs://staging.nodejs.dev/$SHORT_SHA']
