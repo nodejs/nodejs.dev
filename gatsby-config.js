@@ -7,14 +7,25 @@ if (process.env.ENVIROMENT !== 'production') {
 //   accessToken: process.env.ACCESS_TOKEN,
 // }
 
+const config = require('./src/config')
+
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
-    title: 'Node.js',
+    title: config.title,
+    description: config.description,
+    featuredImage: config.featuredImage,
+    siteUrl: config.siteUrl,
   },
   plugins: [
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: config.siteUrl,
+      },
+    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,13 +38,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'nodejs.dev',
-        short_name: 'nodejs.dev',
+        name: config.title,
+        short_name: config.title,
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/favicon.png', // This path is relative to the root of the site.
+        background_color: config.color,
+        theme_color: config.color,
+        display: config.display,
+        icon: config.icon,
       },
     },
     'gatsby-plugin-offline',
@@ -45,12 +56,12 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: "language-",
+              classPrefix: 'language-',
               inlineCodeMarker: null,
               aliases: { js: 'javascript' },
               showLineNumbers: false,
               noInlineHighlight: false,
-            }
+            },
           },
           {
             resolve: `gatsby-remark-images`,
@@ -58,8 +69,8 @@ module.exports = {
               maxWidth: 590,
             },
           },
-        ]
-      }
+        ],
+      },
     },
     // {
     //   resolve: `gatsby-source-contentful`,
