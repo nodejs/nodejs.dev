@@ -27,8 +27,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-contentful-typescript',
-        short_name: 'starter',
+        name: 'nodejs.dev',
+        short_name: 'nodejs.dev',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
