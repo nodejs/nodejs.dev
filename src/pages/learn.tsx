@@ -2,7 +2,7 @@ import { graphql, Link } from 'gatsby'
 import React from 'react'
 import Layout from '../components/layout'
 import { scrollTo } from '../util/scrollTo'
-import Page404 from "./404"
+import Page404 from './404'
 
 /**
  * When on the "Learn" page, we need to update the background gradient
@@ -112,7 +112,7 @@ export default ({ data, location }: Props) => {
       continue
     }
 
-    const slug = page.fields.slug;
+    const slug = page.fields.slug
 
     // If there is no current page slug discovered from the URL, use the first page's.
     if (!currentPage) {
@@ -249,14 +249,14 @@ export const query = graphql`
             description
             author
           }
+          fields {
+            slug
+          }
         }
-        fields {
-          slug
-        }
-      }
-      next {
-        frontmatter {
-          title
+        next {
+          frontmatter {
+            title
+          }
         }
         previous {
           frontmatter {
