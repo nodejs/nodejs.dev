@@ -115,9 +115,9 @@ export default ({ data, location }: Props) => {
     if (isActive) {
       activePage = { html: page.html, title: page.frontmatter.title };
 
-      previousPage = { frontmatter: { title: previous.frontmatter.title, path: previous.frontmatter.title.toLowerCase().replace(/ /g, '-').replace(/[^a-z|-]/g, '') } };
+      previousPage = { frontmatter: { title: previous.frontmatter.title, path: previous.frontmatter.title.toLowerCase().replace(/ /g, '-').replace(/[^[a-z-0-9]|-]/g, '') } };
 
-      nextPage = { frontmatter: { title: next && next.frontmatter.title, path: next && next.frontmatter.title.toLowerCase().replace(/ /g, '-').replace(/[^a-z|-]/g, '') } };
+      nextPage = { frontmatter: { title: next && next.frontmatter.title, path: next && next.frontmatter.title.toLowerCase().replace(/ /g, '-').replace(/[^[a-z-0-9]|-]/g, '') } };
     }
 
     // Construct class name for this side nav item.
