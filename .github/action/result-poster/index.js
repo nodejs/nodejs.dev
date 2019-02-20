@@ -1,14 +1,20 @@
 const { Toolkit } = require('actions-toolkit')
-const { context, github: { request } } = new Toolkit()
+const { context, github } = new Toolkit({ event: 'check_run' })
 
-const name = context.payload.check_suite.app.name;
-const conclusion = context.payload.check_suite.conclusion
-const sha = context.payload.check_suite.head_sha;
-const prs = context.payload.check_suite.pull_requests;
+const name = context.payload.name;
+const conclusion = context.payload.conclusion;
+const sha = context.payload.pull_request.head.sha;
 
-if (name === 'Google Cloud Build' && conclusion === 'success' && prs[0]) {
-  request('POST /repos/:owner/:repo/issues/:number/comments', context.repo({
-    number: prs[0].number,
-    body: `Preview at: https://storage.googleapis.com/staging.nodejs.dev/${sha.slice(0,7)}/index.html`
+if (name.startsWith('Build') && conclusion === 'success') {
+  github.repos.createStatus(context.repo({
+    sha,
+    state: 'success',
+    target_url: `https://storage.googleapis.com/staging.nodejs.dev/${sha.slice(0,7)}/index.html`,
+    description: `Click details to preview changes`,
+    context: 'Staging Link'
   }));
+} else {
+  // lol-magic.gif
+  // exit without noise in the status
+  process.exit(78);
 }
