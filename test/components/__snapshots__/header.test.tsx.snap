@@ -20,7 +20,7 @@ exports[`Tests for Header component renders correctly 1`] = `
         href="/"
       >
         <img
-          alt="test-title"
+          alt="Node.js"
           className="nav__logo"
           src="test-file-stub"
         />
