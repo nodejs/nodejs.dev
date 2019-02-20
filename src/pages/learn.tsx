@@ -42,11 +42,17 @@ interface PreviousPage {
   frontmatter: {
     title: string
   }
+  fields: {
+    slug: string
+  }
 }
 
 interface NextPage {
   frontmatter: {
     title: string
+  }
+  fields: {
+    slug: string
   }
 }
 
@@ -116,9 +122,9 @@ export default ({ data, location }: Props) => {
     if (isActive) {
       activePage = { html: page.html, title: page.frontmatter.title };
 
-      previousPage = { frontmatter: { title: previous.frontmatter.title, path: previous.frontmatter.title.toLowerCase().replace(/ /g, '-').replace(/[^a-z|-]/g, '') } };
+      previousPage = { frontmatter: { title: previous.frontmatter.title, path: previous.fields.slug } };
 
-      nextPage = { frontmatter: { title: next && next.frontmatter.title, path: next && next.frontmatter.title.toLowerCase().replace(/ /g, '-').replace(/[^a-z|-]/g, '') } };
+      nextPage = { frontmatter: { title: next && next.frontmatter.title, path: next && next.fields.slug } };
     }
 
     // Construct class name for this side nav item.
@@ -217,10 +223,16 @@ export const query = graphql`{
         frontmatter {
           title
         }
+        fields {
+          slug
+        }
       }
       previous {
         frontmatter {
           title
+        }
+        fields {
+          slug
         }
       }
     }
