@@ -255,22 +255,17 @@ export const query = graphql`
           frontmatter {
             title
           }
+          fields {
+            slug
+          }
         }
-      }
-      next {
-        frontmatter {
-          title
-        }
-        fields {
-          slug
-        }
-      }
-      previous {
-        frontmatter {
-          title
-        }
-        fields {
-          slug
+        previous {
+          frontmatter {
+            title
+          }
+          fields {
+            slug
+          }
         }
       }
     }
