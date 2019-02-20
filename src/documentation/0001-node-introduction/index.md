@@ -129,6 +129,7 @@ Node.js is a low-level platform, and to make things easier and more interesting 
 Many of those established over time as popular options. Here is a non-comprehensive list of the ones worth learning:
 
 - [**Express**](https://expressjs.com/), one of the most simple yet powerful ways to create a web server. Its minimalist approach, unopinionated, focused on the core features of a server, is key to its success.
+- [**Fastify**](https://fastify.io/), a web framework highly focused on providing the best developer experience with the least overhead and a powerful plugin architecture. Fastify is one of the fastest Node.js web frameworks.
 - [**Meteor**](https://meteor.com), an incredibly powerful full-stack framework, powering you with an isomorphic approach to building apps with JavaScript, sharing code on the client and the server. Once an off-the-shelf tool that provided everything, now integrates with frontend libs React, [Vue](https://vuejs.org/) and Angular. Can be used to create mobile apps as well.
 - [**koa**](http://koajs.com/), built by the same team behind Express, aims to be even simpler and smaller, building on top of years of knowledge. The new project born out of the need to create incompatible changes without disrupting the existing community.
 - [**Next.js**](https://nextjs.org/), a framework to render server-side rendered [React](https://reactjs.org/) applications.
