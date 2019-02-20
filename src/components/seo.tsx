@@ -35,14 +35,6 @@ const SEO = ({ title, description, img }: Props) => (
         content: `${title || config.title}`,
       },
       {
-        property: 'article:author',
-        content: config.facebook,
-      },
-      {
-        property: 'article:publisher',
-        content: config.facebook,
-      },
-      {
         property: 'article:section',
         content: config.title,
       },
@@ -58,11 +50,23 @@ const SEO = ({ title, description, img }: Props) => (
         content: `${img || config.featuredImage}`,
       },
       {
-        name: 'twitter:site',
-        content: config.twitter,
+        property: 'article:author',
+        content: config.facebook,
+      },
+      {
+        property: 'article:publisher',
+        content: config.facebook,
+      },
+      {
+        name: 'twitter:url',
+        content: `${config.siteUrl}`,
       },
       {
         name: 'twitter:creator',
+        content: config.twitter,
+      },
+      {
+        name: 'twitter:site',
         content: config.twitter,
       },
       {
@@ -74,28 +78,16 @@ const SEO = ({ title, description, img }: Props) => (
         content: config.twitterCard,
       },
       {
-        name: 'twitter:image:1200',
-        content: `${img || config.featuredImage}`,
-      },
-      {
-        name: 'twitter:image:630',
-        content: `${img || config.featuredImage}`,
-      },
-      {
         name: 'twitter:image',
         content: `${img || config.featuredImage}`,
       },
       {
-        name: 'twitter:description',
-        content: `${description || config.description}`,
-      },
-      {
-        name: 'twitter:url',
-        content: `${config.siteUrl}`,
-      },
-      {
         name: 'twitter:image:alt',
         content: config.twitterImgAlt,
+      },
+      {
+        name: 'twitter:description',
+        content: `${description || config.description}`,
       },
     ]}
   >
