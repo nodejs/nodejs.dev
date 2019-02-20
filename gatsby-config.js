@@ -23,7 +23,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://nodejs.dev`,
+        siteUrl: config.siteUrl,
       },
     },
     `gatsby-plugin-sharp`,
