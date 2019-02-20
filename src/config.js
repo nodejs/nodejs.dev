@@ -4,9 +4,8 @@
 
 module.exports = {
   title: `Node.js`,
-  siteUrl: `https://nodejs.dev/`,
-  siteUrlNoSlash: `https://vscode.pro`,
   description: `Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.`,
+  siteUrl: `https://nodejs.dev/`,
   featuredImage: `https://nodejs.org/static/images/logo-hexagon-card.png`,
   color: `#6cc24a`,
   icon: `src/images/favicon.png`, // This path is relative to the root of the site.
