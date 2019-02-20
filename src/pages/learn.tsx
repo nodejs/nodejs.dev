@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
+import Page404 from "./404"
 import { scrollTo } from '../util/scrollTo';
 
 /**
@@ -32,11 +33,26 @@ interface RemarkPage {
     description: string;
     author: string;
   }
+  fields: {
+    slug: string
+  }
+}
+
+interface PreviousPage {
+  frontmatter: {
+    title: string
+  }
+}
+
+interface NextPage {
+  frontmatter: {
+    title: string
+  }
 }
 
 interface LearnPageData {
   pages: {
-    edges: ({ node: RemarkPage })[];
+    edges: ({ node: RemarkPage, previous: PreviousPage, next: NextPage })[];
   }
 }
 type Props = {
@@ -51,22 +67,49 @@ function openNav() {
   document.getElementsByClassName('side-nav')[0].classList.toggle('side-nav--open');
   scrollTo(old);
 }
+/** Small screen width 
+ *  If the width of the viewport is lesser than this value
+ * it means that the website is viewed in a tablet or mobile
+ * TODO have this number shared in one place in the project
+ */
+const MAX_SMALLSCREEN_WIDTH = 1262;
+/**
+ * When on smaller devices such as tablets and mobiles, the side menu needs
+ * to be close when an article is selected.
+ * closeNavOnSmallScreens checks for the viewport width and toggles it sideNav
+ * if it is open on a small screen 
+ */
+function closeNavOnSmallScreens() {
+  // Get viewport width 
+  // Source - https://stackoverflow.com/a/8876069/2621400
+  const w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  // If width is lesser or equal to max small screen width
+  if (w <= MAX_SMALLSCREEN_WIDTH) {
+    openNav()
+  }
+}
 
 export default ({ data, location }: Props) => {
   const pages = [];
   let currentPage = location.pathname.split('/').pop();
+
   let activePage = { title: '404', html: '404', author : '',  description : '' };
+
+  let activePage = { title: '404', html: '404' };
+
+  let previousPage = { frontmatter: { title: '404', path: '404' } }
+  let nextPage = { frontmatter: { title: '404', path: '404' } }
+
+
+
   let foundActive = false;
 
   // For every page,
-  for (const { node: page } of data.pages.edges) {
-
-    // If this page does not have a title, skip.
+  for (const { node: page, previous, next } of data.pages.edges) {
+    // If this page does not have a title, skip
     if (!page.frontmatter.title) { continue; }
 
-    // Generate a slug for this page
-    // TODO: We need a more robust slug creation here.
-    const slug = page.frontmatter.title.toLowerCase().replace(/ /g, '-').replace(/[^a-z|-]/g, '');
+    const slug = page.fields.slug;
 
 
     // If there is no current page slug discovered from the URL, use the first page's.
@@ -75,6 +118,7 @@ export default ({ data, location }: Props) => {
     // Determine if this is the active page, and mark if we've found the active page yet.
     const isActive = slug === currentPage;
     foundActive = foundActive || isActive;
+
     if (isActive) { activePage = { 
       html: page.html, 
       title: page.frontmatter.title, 
@@ -84,17 +128,37 @@ export default ({ data, location }: Props) => {
 
 
 
+    if (isActive) {
+      activePage = { html: page.html, title: page.frontmatter.title };
+
+      previousPage = { frontmatter: { title: previous.frontmatter.title, path: previous.frontmatter.title.toLowerCase().replace(/ /g, '-').replace(/[^a-z|-]/g, '') } };
+
+      nextPage = { frontmatter: { title: next && next.frontmatter.title, path: next && next.frontmatter.title.toLowerCase().replace(/ /g, '-').replace(/[^a-z|-]/g, '') } };
+    }
+
+
     // Construct class name for this side nav item.
     const className = `side-nav__item ${!foundActive ? 'side-nav__item--done' : ''} ${isActive ? 'side-nav__item--active' : ''}`;
 
     // Add the constructed page JSX to the pages list.
     pages.push(
+
       <li className={className} key={page.id}>
         <Link to={`/learn/${slug}`}>
+
+      <li className={className}>
+        <Link to={`/learn/${slug}`} onClick={closeNavOnSmallScreens}>
+
           {page.frontmatter.title}
         </Link>
       </li>
     );
+  }
+
+  if (!foundActive) {
+    // Rendering 404 page as a component here
+    // The reason is to show the 404 component but maintaining the url (instead of redirecting to 404)
+    return <Page404 />
   }
 
   return (
@@ -103,10 +167,10 @@ export default ({ data, location }: Props) => {
         <h1>{activePage.title}</h1>
         <div className="diagonal-hero-bg">
           <div className="stars">
-              <div className="small"/>
-              <div className="medium"/>
-              <div className="big"/>
-            </div>
+            <div className="small" />
+            <div className="medium" />
+            <div className="big" />
+          </div>
         </div>
       </div>
       <nav className="side-nav">
@@ -125,7 +189,31 @@ export default ({ data, location }: Props) => {
       <article className="article-reader">
         <h1 className="article-reader__headline">{activePage.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: activePage.html }} />
+        <ul
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `space-between`,
+            listStyle: `none`,
+            padding: '30px',
+
+          }}
+        >
+          <li>
+            {previousPage.frontmatter.title &&
+              <Link to={`/learn/${previousPage.frontmatter.path}`} rel="prev">
+                ←  &nbsp; Prev
+              </Link>
+            }
+          </li>
+          <li>
+            {nextPage.frontmatter.title && <Link to={`/learn/${nextPage.frontmatter.path}`} rel="next">
+              Next &nbsp; →
+          </Link>}
+          </li>
+        </ul>
       </article>
+
     </Layout>
   );
 }
@@ -141,6 +229,19 @@ export const query = graphql`{
           title
           description
           author
+        }
+        fields {
+          slug
+        }
+      }
+      next {
+        frontmatter {
+          title
+        }
+      }
+      previous {
+        frontmatter {
+          title
         }
       }
     }

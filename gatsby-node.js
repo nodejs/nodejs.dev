@@ -1,3 +1,5 @@
+const createSlug = require('./src/util/createSlug');
+
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage, deletePage } = actions
 
@@ -13,6 +15,18 @@ exports.onCreatePage = async ({ page, actions }) => {
     createPage({
       ...page,
       matchPath: "/learn/*",
+    });
+  }
+}
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  if (node.internal.type === 'MarkdownRemark') {
+    const { createNodeField } = actions;
+    const slug = createSlug(node.frontmatter.title);
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
     });
   }
 }
