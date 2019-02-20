@@ -17,10 +17,10 @@ body {
   /* Set in JavaScript */
   --magic-hero-number: 365px;
 
-  --banner-clip: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 82px));
+  --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
   --banner-gradient: linear-gradient(to right, var(--purple9), var(--blue7));
-  --nav-height: 8.2rem;
-  --hero-height: 30.0rem;
+  --nav-height: 6.2rem;
+  --hero-height: 36.0rem;
 
   --sans-serif: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --serif: 'Merriweather', Georgia, Cambria, "Times New Roman", Times, serif;
@@ -142,7 +142,7 @@ main {
 }
 
 .nav__logo {
-  height: 62px;
+  height: 42px;
   margin: -6px 24px 0 0;
 }
 
@@ -153,7 +153,7 @@ main {
   grid-column-start: 1;
   height: var(--hero-height);
   position: sticky;
-  top: -126px;
+  top: -206px;
   width: 100%;
   z-index: 998;
 }
@@ -187,7 +187,7 @@ main {
   /* Needed since overflow: none will disable position: sticky on children */
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   height: calc(100vh - var(--nav-height));
-  margin-top: -152px;
+  margin-top: -92px;
   overflow: auto;
   overflow-x: hidden;
   padding: 0 2.4rem;
@@ -215,8 +215,8 @@ main {
   display: block;
   /* Equivalent of .85 opacity without the transparency! */
   filter: brightness(160%) saturate(45%);
-  height: 152px;
-  margin: 0 -2.4rem -152px -2.4rem;
+  height: 92px;
+  margin: 0 -2.4rem -92px -2.4rem;
   position: sticky;
   top: 0;
   width: 100vw;
@@ -235,10 +235,10 @@ main {
   filter: opacity(0.9);
   font-weight: 200;
   letter-spacing: 2px;
-  margin: 2.4rem 0 2.8rem;
+  margin: 2.8rem 0 2.4rem;
   position: sticky;
   -webkit-text-fill-color: transparent;
-  top: 2.4rem;
+  top: 2.8rem;
   will-change: background-position;
   z-index: 999;
 }
