@@ -1,6 +1,7 @@
-@media (max-width: 1262px) and (min-width: 521px) {
+@media (max-width: 1262px) and (min-width: 721px) {
   body {
     --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 32px), 0 calc(100% - 82px));
+    --hero-height: 36.0rem;
   }
 
   .article-reader {
@@ -58,7 +59,7 @@
   }
 
   .hero h1 {
-    left: 6.2rem;
+    left: 20rem;
   }
 
   .side-nav__open, .side-nav.side-nav--open .side-nav__open {
@@ -70,7 +71,7 @@
 
 }
 
-@media (max-width: 520px) {
+@media (max-width: 720px) {
   html {
     font-size: 9px;
   }
