@@ -12,14 +12,12 @@ import Page404 from './404'
  */
 let prevOffset = -1
 function magicHeroNumber() {
-  if (typeof window === 'undefined') {
-    return
-  } // Guard for SSR.
-  const doc = window.document
-  const offset = Math.min(doc.scrollingElement!.scrollTop, 210)
+  if (typeof window === 'undefined') { return; } // Guard for SSR.
+  const doc = window.document;
+  const offset = Math.min(doc.scrollingElement!.scrollTop - 62, 210);
   if (Math.abs(prevOffset - offset) > 5) {
-    prevOffset = offset
-    doc.body.setAttribute('style', `--magic-hero-number: ${365 - offset}px`)
+    prevOffset = offset;
+    doc.body.setAttribute('style', `--magic-hero-number: ${356 - offset}px`);
   }
   window.requestAnimationFrame(magicHeroNumber)
 }
