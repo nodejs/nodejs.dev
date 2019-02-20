@@ -1,14 +1,27 @@
 const { Toolkit } = require('actions-toolkit')
-const { context, github: { request } } = new Toolkit()
+const { context, github } = new Toolkit({ event: 'pull_request' })
 
-const name = context.payload.check_suite.app.name;
-const conclusion = context.payload.check_suite.conclusion
-const sha = context.payload.check_suite.head_sha;
-const prs = context.payload.check_suite.pull_requests;
+const { action, pull_request: pr } = context.payload;
+const ref = pr.head.sha;
+// can't wait for top-level await
 
-if (name === 'Google Cloud Build' && conclusion === 'success' && prs[0]) {
-  request('POST /repos/:owner/:repo/issues/:number/comments', context.repo({
-    number: prs[0].number,
-    body: `Preview at: https://storage.googleapis.com/staging.nodejs.dev/${sha.slice(0,7)}/index.html`
-  }));
+function getBuildCheckRun(suites) {
+  return new Promise((resolve, reject) => {
+    let result;
+    suites.forEach((suite) => {
+      console.log(suite.app.name);
+    });
+  });
 }
+
+async function main() {
+  const result = await github.checks.listSuitesForRef(context.repo({
+    ref
+  }));
+  getBuildCheckRun(result.data.check_suites);
+};
+
+main().catch((err) => {
+  // magic!
+  process.exit(78);
+});
