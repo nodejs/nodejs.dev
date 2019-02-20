@@ -43,11 +43,17 @@ interface PreviousPage {
   frontmatter: {
     title: string
   }
+  fields: {
+    slug: string
+  }
 }
 
 interface NextPage {
   frontmatter: {
     title: string
+  }
+  fields: {
+    slug: string
   }
 }
 
@@ -133,22 +139,14 @@ export default ({ data, location }: Props) => {
       previousPage = {
         frontmatter: {
           title: previous.frontmatter.title,
-          path: previous.frontmatter.title
-            .toLowerCase()
-            .replace(/ /g, '-')
-            .replace(/[^a-z|-]/g, ''),
+          path: previous.fields.slug,
         },
       }
 
       nextPage = {
         frontmatter: {
           title: next && next.frontmatter.title,
-          path:
-            next &&
-            next.frontmatter.title
-              .toLowerCase()
-              .replace(/ /g, '-')
-              .replace(/[^a-z|-]/g, ''),
+          path: next && next.fields.slug,
         },
       }
     }
@@ -258,10 +256,21 @@ export const query = graphql`
             title
           }
         }
-        previous {
-          frontmatter {
-            title
-          }
+      }
+      next {
+        frontmatter {
+          title
+        }
+        fields {
+          slug
+        }
+      }
+      previous {
+        frontmatter {
+          title
+        }
+        fields {
+          slug
         }
       }
     }
