@@ -11,5 +11,8 @@ cache:
     - 'node_modules'
     - '.cache'
 
+before_script:
+  - yarn build
+
 script:
   - yarn run test
