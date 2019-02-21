@@ -262,9 +262,10 @@ main {
   width: calc(100% - 4.8rem);
 }
 
-.side-nav__item a {
+.side-nav__item {
   color: var(--gray9);
   text-decoration: none;
+  display: block;
 }
 
 .side-nav__item:last-of-type::after {
