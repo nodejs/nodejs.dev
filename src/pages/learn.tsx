@@ -158,11 +158,9 @@ export default ({ data, location }: Props) => {
 
     // Add the constructed page JSX to the pages list.
     pages.push(
-      <li className={className}>
-        <Link to={`/learn/${slug}`} onClick={closeNavOnSmallScreens}>
-          {page.frontmatter.title}
-        </Link>
-      </li>
+      <Link to={`/learn/${slug}`} onClick={closeNavOnSmallScreens} className={className}>
+        {page.frontmatter.title}
+      </Link>
     )
   }
 
