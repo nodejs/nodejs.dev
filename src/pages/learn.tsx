@@ -37,7 +37,7 @@ export default class LearnPage extends React.Component<Props> {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, location } = this.props;
     const currentPage = location.pathname.split('/').pop();
     const { activePage, previousPage, nextPage, navigationSections } = findActive(data.sections.group, currentPage);
     if (!activePage) {
