@@ -222,7 +222,7 @@ export default ({ data, location }: Props) => {
                 activePage.relativePath
               }`}
             >
-              Edit this page on Github
+              Edit this page on GitHub
             </a>
           )
         }
