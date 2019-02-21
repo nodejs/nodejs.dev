@@ -40,7 +40,7 @@ JavaScript is generally considered an interpreted language, but modern JavaScrip
 
 This happens since 2009 when the SpiderMonkey JavaScript compiler was added to Firefox 3.5, and everyone followed this idea.
 
-JavScript is internally compiled by V8 with **just-in-time** (JIT) **compilation** to speed up the execution.
+JavaScript is internally compiled by V8 with **just-in-time** (JIT) **compilation** to speed up the execution.
 
 This might seem counter-intuitive, but since the introduction of Google Maps in 2004, JavaScript has evolved from a language that was generally executing a few dozens of lines of code to complete applications with thousands to hundreds of thousands of lines running in the browser.
 
