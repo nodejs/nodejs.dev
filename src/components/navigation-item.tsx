@@ -33,8 +33,9 @@ class NavigationItem extends React.Component<Props> {
     } else if (isActive) {
       className += 'side-nav__item--active';
     }
+
     return (
-      <Link to={`/learn/${slug}`} ref={this.setReference as any} onClick={onClick} className={className}>
+      <Link to={`/learn/${slug}`} ref={this.setReference} onClick={onClick} className={className}>
         {title}
       </Link>
     )

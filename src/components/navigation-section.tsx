@@ -4,7 +4,7 @@ import NavigationItem from './navigation-item';
 
 type Props = {
   title: string;
-  items: Array<NavigationItemData>;
+  items: NavigationItemData[];
   onItemClick: () => void;
 }
 

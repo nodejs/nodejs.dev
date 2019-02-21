@@ -11,7 +11,7 @@ const MAX_SMALLSCREEN_WIDTH = 1262
 
 type Props = {
   activePage: RemarkPage;
-  sections: Array<NavigationSectionData>;
+  sections: NavigationSectionData[];
 }
 
 type State = {
@@ -41,7 +41,8 @@ class Navigation extends React.Component<Props, State> {
   }
 
   render() {
-    const className = this.state.isOpen ? 'side-nav side-nav--open': 'side-nav';
+    const className = this.state.isOpen ? 'side-nav side-nav--open' : 'side-nav';
+
     return (
       <nav className={className}>
         <button className="side-nav__open" onClick={this.toggle}>Menu</button>

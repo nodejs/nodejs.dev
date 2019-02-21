@@ -4,10 +4,10 @@ type ActiveResults = {
   activePage?: RemarkPage;
   previousPage?: PageInfo;
   nextPage?: PageInfo;
-  navigationSections: Array<NavigationSectionData>;
+  navigationSections: NavigationSectionData[];
 }
 
-export function findActive(sections: Array<RemarkSection>, currentPage?: string): ActiveResults {
+export function findActive(sections: RemarkSection[], currentPage?: string): ActiveResults {
   let activePage: RemarkPage | undefined;
   let previousPage: PageInfo | undefined;
   let nextPage: PageInfo | undefined;

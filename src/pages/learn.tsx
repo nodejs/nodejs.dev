@@ -45,6 +45,7 @@ export default class LearnPage extends React.Component<Props> {
       // The reason is to show the 404 component but maintaining the url (instead of redirecting to 404)
       return <Page404 />
     }
+
     return (
       <Layout
         title={`${activePage.frontmatter.title} by ${activePage.frontmatter.author}`}

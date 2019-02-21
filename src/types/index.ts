@@ -26,12 +26,12 @@ export interface PageInfo {
 
 export interface RemarkSection {
   fieldValue: string;
-  edges: Array<{ node: RemarkPage; previous: PageInfo; next: PageInfo }>;
+  edges: { node: RemarkPage; previous: PageInfo; next: PageInfo }[];
 }
 
 export interface LearnPageData {
   sections: {
-    group: Array<RemarkSection>;
+    group: RemarkSection[];
   }
 }
 
@@ -45,5 +45,5 @@ export interface NavigationItemData {
 
 export interface NavigationSectionData {
   title: string;
-  items: Array<NavigationItemData>;
+  items: NavigationItemData[];
 }
