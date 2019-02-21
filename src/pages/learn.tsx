@@ -218,7 +218,7 @@ export default ({ data, location }: Props) => {
         {
           activePage.relativePath && (
             <a
-              href={`https://github.com/nodejs/website-prototype/tree/master/src/documentation/${
+              href={`https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/${
                 activePage.relativePath
               }`}
             >
