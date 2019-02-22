@@ -3,6 +3,10 @@ language: node_js
 node_js:
   - '10'
 
+env:
+  - COMMAND=build
+  - COMMAND=test
+
 install: yarn --frozen-lockfile
 
 cache:
@@ -12,4 +16,4 @@ cache:
     - '.cache'
 
 script:
-  - yarn run test
+  - yarn run $COMMAND
