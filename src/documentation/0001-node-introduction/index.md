@@ -2,6 +2,7 @@
 title: Introduction to Node.js
 description: "This post is a getting started guide to Node.js, the server-side JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to that"
 author: flaviocopes
+section: Quick Start
 ---
 
 ## Overview
@@ -54,7 +55,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
 ### A huge number of libraries
 
-npm with its simple structure helped the ecosystem of node.js proliferate and now the npm registry hosts almost 500.000 open source packages you can freely use.
+npm with its simple structure helped the ecosystem of node.js proliferate and now the npm registry hosts almost 500,000 open source packages you can freely use.
 
 ## An example Node.js application
 
@@ -128,11 +129,13 @@ Node.js is a low-level platform, and to make things easier and more interesting 
 
 Many of those established over time as popular options. Here is a non-comprehensive list of the ones worth learning:
 
+- [**AdonisJs**](https://adonisjs.com/), a full-stack framework highly focused on developer ergonomics, stability and confidence. Adonis is one of the fastest Node.js web frameworks.
 - [**Express**](https://expressjs.com/), one of the most simple yet powerful ways to create a web server. Its minimalist approach, unopinionated, focused on the core features of a server, is key to its success.
 - [**Fastify**](https://fastify.io/), a web framework highly focused on providing the best developer experience with the least overhead and a powerful plugin architecture. Fastify is one of the fastest Node.js web frameworks.
 - [**hapi**](https://hapijs.com), A rich framework for building applications and services that enables developers to focus on writing reusable application logic instead of spending time building infrastructure.
-- [**Meteor**](https://meteor.com), an incredibly powerful full-stack framework, powering you with an isomorphic approach to building apps with JavaScript, sharing code on the client and the server. Once an off-the-shelf tool that provided everything, now integrates with frontend libs React, [Vue](https://vuejs.org/) and Angular. Can be used to create mobile apps as well.
 - [**koa**](http://koajs.com/), built by the same team behind Express, aims to be even simpler and smaller, building on top of years of knowledge. The new project born out of the need to create incompatible changes without disrupting the existing community.
-- [**Next.js**](https://nextjs.org/), a framework to render server-side rendered [React](https://reactjs.org/) applications.
+- [**Meteor**](https://meteor.com), an incredibly powerful full-stack framework, powering you with an isomorphic approach to building apps with JavaScript, sharing code on the client and the server. Once an off-the-shelf tool that provided everything, now integrates with frontend libs React, [Vue](https://vuejs.org/) and Angular. Can be used to create mobile apps as well.
 - [**Micro**](https://github.com/zeit/micro), a very lightweight server to create asynchronous HTTP microservices.
+- [**NestJS**](https://nestjs.com/), a TypeScript based progressive Node.js framework for building enterprise-grade efficient, reliable and scalable server-side applications.
+- [**Next.js**](https://nextjs.org/), a framework to render server-side rendered [React](https://reactjs.org/) applications.
 - [**Socket.io**](https://socket.io/), a real-time communication engine to build network applications.

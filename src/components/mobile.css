@@ -1,6 +1,7 @@
-@media (max-width: 1262px) and (min-width: 521px) {
+@media (max-width: 1262px) and (min-width: 721px) {
   body {
-    --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 32px), 0 calc(100% - 82px));
+    --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 52px), 0 100%);
+    --hero-height: 36.0rem;
   }
 
   .article-reader {
@@ -58,11 +59,11 @@
   }
 
   .hero h1 {
-    left: 6.2rem;
+    left: 20rem;
   }
 
   .side-nav__open, .side-nav.side-nav--open .side-nav__open {
-    top: 30px;
+    top: 34px;
     margin-top: 0;
     display: block;
     pointer-events: all;
@@ -70,7 +71,7 @@
 
 }
 
-@media (max-width: 520px) {
+@media (max-width: 720px) {
   html {
     font-size: 9px;
   }
@@ -78,7 +79,7 @@
   body {
     --nav-height: 5.2rem;
     --hero-height: 92px;
-    --banner-clip: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 32px));
+    --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 52px), 0 calc(100% - 32px));
   }
 
   .hero {
@@ -105,7 +106,7 @@
 
   .side-nav {
     height: auto;
-    max-height: 60px;
+    max-height: 42px;
     margin-top: -92px;
     overflow: hidden;
   }

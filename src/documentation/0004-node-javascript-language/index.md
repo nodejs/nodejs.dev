@@ -2,6 +2,7 @@
 title: How much JavaScript do you need to know to use Node.js?
 description: 'If you are just starting out with JavaScript, how much deeply do you need to know the language?'
 author: flaviocopes
+section: Quick Start
 ---
 
 As a beginner, it's hard to get to a point where you are confident enough in your programming abilities.
