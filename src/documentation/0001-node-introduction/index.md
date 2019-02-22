@@ -136,5 +136,6 @@ Many of those established over time as popular options. Here is a non-comprehens
 - [**koa**](http://koajs.com/), built by the same team behind Express, aims to be even simpler and smaller, building on top of years of knowledge. The new project born out of the need to create incompatible changes without disrupting the existing community.
 - [**Meteor**](https://meteor.com), an incredibly powerful full-stack framework, powering you with an isomorphic approach to building apps with JavaScript, sharing code on the client and the server. Once an off-the-shelf tool that provided everything, now integrates with frontend libs React, [Vue](https://vuejs.org/) and Angular. Can be used to create mobile apps as well.
 - [**Micro**](https://github.com/zeit/micro), a very lightweight server to create asynchronous HTTP microservices.
+- [**NestJS**](https://nestjs.com/), a TypeScript based progressive Node.js framework for building enterprise-grade efficient, reliable and scalable server-side applications.
 - [**Next.js**](https://nextjs.org/), a framework to render server-side rendered [React](https://reactjs.org/) applications.
 - [**Socket.io**](https://socket.io/), a real-time communication engine to build network applications.
