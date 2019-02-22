@@ -11,7 +11,7 @@ module.exports = {
   color: `#6cc24a`,
   icon: `src/images/favicon.png`, // This path is relative to the root of the site.
   lang: `en`,
-  display: `minimal-ui`,
+  display: `browser`,
   ogType: `website`,
   ogImgType: `image/png`,
   ogImgWidth: `224`,
