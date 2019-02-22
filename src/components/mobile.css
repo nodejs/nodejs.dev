@@ -17,6 +17,7 @@
     margin-right: -36.0rem;
     margin-bottom: calc(-100vh + var(--nav-height));
     pointer-events: none;
+    overflow: hidden;
   }
 
   .side-nav::after {
@@ -40,6 +41,7 @@
 
   .side-nav.side-nav--open {
     pointer-events: all;
+    overflow-y: auto;
   }
 
   .side-nav.side-nav--open::after {
