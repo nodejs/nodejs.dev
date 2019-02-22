@@ -201,13 +201,16 @@ main {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   height: calc(100vh - var(--nav-height));
   margin-top: -92px;
-  overflow: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 0 2.4rem;
   position: sticky;
   top: var(--nav-height);
   width: 36.0rem;
   z-index: 998;
+}
+
+.side-nav:hover {
+  overflow-y: auto;
 }
 
 .side-nav__open {
