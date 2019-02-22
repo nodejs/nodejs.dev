@@ -54,7 +54,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
 ### A huge number of libraries
 
-npm with its simple structure helped the ecosystem of node.js proliferate and now the npm registry hosts almost 500.000 open source packages you can freely use.
+npm with its simple structure helped the ecosystem of node.js proliferate and now the npm registry hosts almost 500,000 open source packages you can freely use.
 
 ## An example Node.js application
 
