@@ -2,6 +2,7 @@
 title: How to install Node.js
 description: 'How you can install Node.js on your system: a package manager, the official website installer or nvm'
 author: flaviocopes
+section: Quick Start
 ---
 
 Node.js can be installed in different ways. This post highlights the most common and convenient ones.
