@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'gatsby';
 
 type Props = {
@@ -7,39 +7,36 @@ type Props = {
   slug: string;
   title: string;
   onClick: () => void;
-}
+};
 
-class NavigationItem extends React.Component<Props> {
-  private element?: HTMLAnchorElement;
-
-  setReference = (ref: HTMLAnchorElement) => {
-    if (this.props.isActive) {
-      this.element = ref;
+const NavigationItem = ({ isDone, isActive, slug, title, onClick }: Props) => {
+  const element = useRef<HTMLAnchorElement | null>(null);
+  
+  const handleRef = (ref?: HTMLAnchorElement | null) => {
+    if (ref && isActive) {
+      element.current = ref;
     }
   }
 
-  componentDidMount() {
-    if (this.element) {
+  useEffect(() => {
+    if (element.current) {
       // TODO: Scroll ref element in to view
-      // this.element.scrollIntoView(true);
+      // maybe use utils/scrollTo
     }
+  });
+
+  let className = 'side-nav__item ';
+  if (isDone) {
+    className += 'side-nav__item--done';
+  } else if (isActive) {
+    className += 'side-nav__item--active';
   }
 
-  render() {
-    const { isDone, isActive, slug, title, onClick } = this.props;
-    let className = 'side-nav__item ';
-    if (isDone) {
-      className += 'side-nav__item--done';
-    } else if (isActive) {
-      className += 'side-nav__item--active';
-    }
+  return (
+    <Link ref={handleRef} to={`/learn/${slug}`} onClick={onClick} className={className}>
+      {title}
+    </Link>
+  );
+};
 
-    return (
-      <Link to={`/learn/${slug}`} ref={this.setReference} onClick={onClick} className={className}>
-        {title}
-      </Link>
-    )
-  }
-}
-
-export default NavigationItem
+export default NavigationItem;
