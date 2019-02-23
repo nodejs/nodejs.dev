@@ -206,7 +206,8 @@ main {
   padding: 0 2.4rem;
   position: sticky;
   top: var(--nav-height);
-  width: 36.0rem;
+  width: 100%;
+  max-width: 36.0rem;
   z-index: 998;
 }
 
@@ -390,7 +391,7 @@ main {
   letter-spacing: -.003em;
   max-width: 768px;
   padding-left: 4.2rem;
-  width: calc(100vw - 36.0rem);
+  width: calc(100% - 36.0rem);
 }
 
 /* sr-only for desktop */
