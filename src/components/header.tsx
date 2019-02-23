@@ -18,6 +18,19 @@ const Header = () => (
           <img src={logo} alt="Node.js" className="nav__logo" />
         </Link>
       </li>
+
+      <li className="nav__tabs">
+        <a target="_blank" href="https://nodejs.org/en/docs/">
+          API Docs
+        </a>
+      </li>
+
+      <li className="nav__tabs">
+        <a target="_blank" href="https://github.com/nodejs/nodejs.dev">
+          GitHub
+        </a>
+      </li>
+
     </ul>
   </nav>
 )

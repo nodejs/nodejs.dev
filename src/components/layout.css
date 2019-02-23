@@ -146,6 +146,19 @@ main {
   margin: -6px 24px 0 0;
 }
 
+.nav__tabs {
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 14px;
+  margin-left: 16px;
+}
+
+.nav__tabs > a {
+  text-decoration: none;
+  color: black;
+}
+
+
 .hero {
   align-items: center;
   display: flex;
@@ -180,7 +193,7 @@ main {
   overflow: hidden;
   position: absolute;
   top: 0;
-  width: 100vw;
+  width: 100%;
 }
 
 .side-nav {

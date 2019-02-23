@@ -26,6 +26,26 @@ exports[`Tests for Header component renders correctly 1`] = `
         />
       </a>
     </li>
+    <li
+      className="nav__tabs"
+    >
+      <a
+        href="https://nodejs.org/en/docs/"
+        target="_blank"
+      >
+        API Docs
+      </a>
+    </li>
+    <li
+      className="nav__tabs"
+    >
+      <a
+        href="https://github.com/nodejs/nodejs.dev"
+        target="_blank"
+      >
+        GitHub
+      </a>
+    </li>
   </ul>
 </nav>
 `;
