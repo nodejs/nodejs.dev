@@ -47,7 +47,7 @@ request.post(
 )
 ```
 
-The 2 ways highlighted up to now require the use of a 3rd part library.
+The 2 ways highlighted up to now require the use of a 3rd party library.
 
 A POST request is possible just using the Node.js standard modules, although it's more verbose than the two preceding options:
 
