@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavigationSection from './navigation-section';
 import { NavigationSectionData } from '../types';
 import { isSmallScreen } from '../util/isSmallScreen';
@@ -12,6 +12,18 @@ const Navigation = ({ sections }: Props) => {
   const toggle = () => setIsOpen(!isOpen);
   const onItemClick = () => isSmallScreen() && toggle();
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
+
+  useEffect(() => {
+    const activeSideNavItem =
+      document.querySelector('.side-nav__item--active');
+    if (isOpen && activeSideNavItem) {
+      activeSideNavItem.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'nearest'
+      });
+    }
+  });
 
   return (
     <nav className={className}>
