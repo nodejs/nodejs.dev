@@ -5,7 +5,7 @@ import NavigationItem from './navigation-item';
 type Props = {
   title: string;
   items: NavigationItemData[];
-  onItemClick: () => void;
+  onItemClick: (event: HTMLAnchorElement) => void;
 }
 
 const NavigationSection = ({ title, items, onItemClick }: Props) => {

@@ -1,27 +1,32 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useContext } from 'react';
 import { Link } from 'gatsby';
+import NavigationContext from './navigation-context';
 
 type Props = {
   isDone: boolean;
   isActive: boolean;
   slug: string;
   title: string;
-  onClick: () => void;
+  onClick: (event: HTMLAnchorElement) => void;
 };
 
 const NavigationItem = ({ isDone, isActive, slug, title, onClick }: Props) => {
   const element = useRef<HTMLAnchorElement | null>(null);
-  
+  const { isOpen, selectedItem } = useContext(NavigationContext);
+
   const handleRef = (ref?: HTMLAnchorElement | null) => {
     if (ref && isActive) {
       element.current = ref;
     }
-  }
+  };
 
   useEffect(() => {
-    if (element.current) {
-      // TODO: Scroll ref element in to view
-      // maybe use utils/scrollTo
+    if (isOpen && selectedItem.scrollIntoView) {
+      selectedItem.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'nearest'
+      });
     }
   });
 
