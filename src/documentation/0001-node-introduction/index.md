@@ -5,49 +5,19 @@ authors: flaviocopes
 section: Quick Start
 ---
 
-## Overview
-
 Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!
 
-## The best features of Node.js
+Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. Node.js is able to leverage the work of the engineers that made (and will continue to make) the Chrome JavaScript runtime blazing fast, and this allows Node.js to benefit from the huge performance improvements and the Just-In-Time compilation that V8 performs. Thanks to this, JavaScript code running in Node.js can become very performant.
 
-### Fast
+A Node.js app is run by a single process, without creating a new thread for every request. Node provides a set of asynchronous I/O primitives in its standard library that will prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making a blocking behavior an exception rather than the normal.
 
-![Fast](fast.png)
-
-One of the main selling points of Node.js is **speed**. JavaScript code running on Node.js (depending on the benchmark) can be twice as fast than compiled languages like C or Java, and orders of magnitude faster than interpreted languages like Python or Ruby, because of its non-blocking paradigm.
-
-### Simple
-
-Node.js is simple. Extremely simple, actually.
-
-### JavaScript
-
-Node.js runs JavaScript code. This means that millions of frontend developers that already use JavaScript in the browser are able to run the server-side code and frontend-side code using the same programming language without the need to learn a completely different tool.
-
-The paradigms are all the same, and in Node.js the new ECMAScript standards can be used first, as you don't have to wait for all your users to update their browsers - you decide which ECMAScript version to use by changing the Node.js version.
-
-### V8
-
-Running on the Google V8 JavaScript engine, which is Open Source, Node.js is able to leverage the work of thousands of engineers that made (and will continue to make) the Chrome JavaScript runtime blazing fast.
-
-### Asynchronous platform
-
-![Async](async.png)
-
-In traditional programming languages (C, Java, Python, PHP) all instructions are blocking by default unless you explicitly "opt in" to perform asynchronous operations. If you perform a network request to read some JSON, the execution of that particular thread is blocked until the response is ready.
-
-**JavaScript allows to create asynchronous and non-blocking code in a very simple way**, by using a **single thread**, **callback functions** and **event-driven programming**. Every time an expensive operation occurs, we pass a callback function that will be called once we can continue with the processing. We're not waiting for that to finish before going on with the rest of the program.
-
-Such mechanism derives from the browser. We can't wait until something loads from an AJAX request before being able to intercept click events on the page. **It all must happen in real time** to provide a good experience to the user.
-
-> If you've created an onclick handler for a web page you've already used asynchronous programming techniques with event listeners.
+When Node.js needs to perform an I/O operation, like reading from the network, access a database or the filesystem, instead of blocking the thread Node.js will resume the operations when the response comes back, instead of wasting CPU cycles waiting.
 
 This allows Node.js to handle thousands of concurrent connections with a single server without introducing the burden of managing threads concurrency, which would be a major source of bugs.
 
-Node.js provides non-blocking I/O primitives, and generally, libraries in Node.js are written using non-blocking paradigms, making a blocking behavior an exception rather than the normal.
+Node.js has a unique advantage because millions of frontend developers that write JavaScript for the browser are now able to run the server-side code and frontend-side code without the need to learn a completely different language.
 
-When Node.js needs to perform an I/O operation, like reading from the network, access a database or the filesystem, instead of blocking the thread Node.js will simply resume the operations when the response comes back, instead of wasting CPU cycles waiting.
+In Node.js the new ECMAScript standards can be used without problems, as you don't have to wait for all your users to update their browsers - you are in charge of deciding which ECMAScript version to use by changing the Node.js version, and you can also enable specific experimental features by running Node with flags.
 
 ### A huge number of libraries
 
