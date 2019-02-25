@@ -138,4 +138,5 @@ Many of those established over time as popular options. Here is a non-comprehens
 - [**Micro**](https://github.com/zeit/micro), a very lightweight server to create asynchronous HTTP microservices.
 - [**NestJS**](https://nestjs.com/), a TypeScript based progressive Node.js framework for building enterprise-grade efficient, reliable and scalable server-side applications.
 - [**Next.js**](https://nextjs.org/), a framework to render server-side rendered [React](https://reactjs.org/) applications.
+- [**Nx**](https://nx.dev/), power-ups to the Angular CLI which allows building full-stack applications using NestJS, Express, and [Angular](https://angular.io) and easily share code between backends and frontends.
 - [**Socket.io**](https://socket.io/), a real-time communication engine to build network applications.
