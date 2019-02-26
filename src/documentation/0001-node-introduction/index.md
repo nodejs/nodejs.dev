@@ -1,27 +1,27 @@
 ---
 title: Introduction to Node.js
-description: "This post is a getting started guide to Node.js, the server-side JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to that"
-authors: flaviocopes
+description: "Getting started guide to Node.js, the server-side JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to just that."
+author: flaviocopes
 section: Quick Start
 ---
 
 Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!
 
-Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. Node.js is able to leverage the work of the engineers that made (and will continue to make) the Chrome JavaScript runtime blazing fast, and this allows Node.js to benefit from the huge performance improvements and the Just-In-Time compilation that V8 performs. Thanks to this, JavaScript code running in Node.js can become very performant.
+Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. Node.js is able to leverage the work of the engineers that made (and will continue to make) the Chrome JavaScript runtime blazing fast, and this allows Node.js to benefit from the substantial performance improvements and the Just-In-Time compilation that V8 performs. Thanks to this, JavaScript code running in Node.js can become very performant.
 
 A Node.js app is run by a single process, without creating a new thread for every request. Node provides a set of asynchronous I/O primitives in its standard library that will prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making a blocking behavior an exception rather than the normal.
 
 When Node.js needs to perform an I/O operation, like reading from the network, access a database or the filesystem, instead of blocking the thread Node.js will resume the operations when the response comes back, instead of wasting CPU cycles waiting.
 
-This allows Node.js to handle thousands of concurrent connections with a single server without introducing the burden of managing threads concurrency, which would be a major source of bugs.
+This allows Node.js to handle thousands of concurrent connections with a single server without introducing the burden of managing threads concurrency, which would be a significant source of bugs.
 
 Node.js has a unique advantage because millions of frontend developers that write JavaScript for the browser are now able to run the server-side code and frontend-side code without the need to learn a completely different language.
 
 In Node.js the new ECMAScript standards can be used without problems, as you don't have to wait for all your users to update their browsers - you are in charge of deciding which ECMAScript version to use by changing the Node.js version, and you can also enable specific experimental features by running Node with flags.
 
-### A huge number of libraries
+### A vast number of libraries
 
-npm with its simple structure helped the ecosystem of node.js proliferate and now the npm registry hosts almost 500,000 open source packages you can freely use.
+npm with its simple structure helped the ecosystem of node.js proliferate, and now the npm registry hosts almost 500,000 open source packages you can freely use.
 
 ## An example Node.js application
 
@@ -55,7 +55,7 @@ To run this snippet, save it as a `server.js` file and run `node server.js` in y
 
 This code first includes the Node.js [`http` module](https://nodejs.org/api/http.html).
 
-Node.js has an amazing [standard library](https://nodejs.org/api/), including a first-class support for networking.
+Node.js has a fantastic [standard library](https://nodejs.org/api/), including first-class support for networking.
 
 The `createServer()` method of `http` creates a new HTTP server and returns it.
 
