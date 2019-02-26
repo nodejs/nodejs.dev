@@ -5,7 +5,7 @@
   </a>
 </p>
 
-<h1 align="center">Nodejs.dev Website</h1>
+<h1 align="center">Nodejs.dev</h1>
 
 <p align="center">
   Gatsby starter with TypeScript, Emotion, Contentful, and Remark for <a href="https://nodejs.dev">Nodejs.dev</a>
