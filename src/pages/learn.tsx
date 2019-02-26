@@ -1,10 +1,10 @@
-import React, { useRef, useEffect } from 'react';
 import { graphql } from 'gatsby';
-import { LearnPageData } from '../types';
-import Layout from '../components/layout';
-import Hero from '../components/hero';
+import React, { useEffect, useRef } from 'react';
 import Article from '../components/article';
+import Hero from '../components/hero';
+import Layout from '../components/layout';
 import Navigation from '../components/navigation';
+import { LearnPageData } from '../types';
 import { findActive } from '../util/findActive';
 import Page404 from './404';
 
@@ -43,12 +43,21 @@ export default ({ data, location }: Props) => {
     return <Page404 />;
   }
 
+  // Set the title and desceription for pages only.
+  // Leave the home page with default by providing empty values.
+  let title = '';
+  let description = '';
+
+  // The currentPage has empty string value since its pathname only has '/' and nothing after that.
+  if (currentPage) {
+    title = `${activePage.frontmatter.title} by ${
+      activePage.frontmatter.author
+    }`;
+    description = activePage.frontmatter.description;
+  }
+
   return (
-    <Layout
-      title={`${activePage.frontmatter.title} by ${
-        activePage.frontmatter.author
-      }`}
-      description={activePage.frontmatter.description}>
+    <Layout title={title} description={description}>
       <Hero title={activePage.frontmatter.title} />
       <Navigation sections={navigationSections} />
       <Article page={activePage} previous={previousPage} next={nextPage} />
