@@ -1,11 +1,5 @@
 # Making changes to the Website-Prototype
 
-## Collaboration Policy
-
-- All changes must come in a PR
-- All changes must be reviewed by another Collaborator or member of
-  @nodejs/website or @nodejs/website-redesign
-
 ## Commit Guidelines
 
 There is a built in commit linter. Basic rules:
@@ -18,6 +12,25 @@ There is a built in commit linter. Basic rules:
 
 * Commit messages must start with a capital letter
 * Commit message must end with a period `.`
+
+## Collaboration Policy
+
+- All changes must come in a PR
+- All changes must be reviewed by a member of @nodejs/nodejs.dev,
+  @nodejs/website, or @nodejs/website-redesign
+
+## Landing Pull Requests
+
+### Before you can land
+
+- The Status Checks for the test suite must pass
+- There must be at least one sign off
+
+## When Landing
+
+- Do not use merge button
+- [`squash`][] pull-requests made up of multiple commits
+- Land how you like as long as there are no merge commits
 
 ## Developer's Certificate of Origin 1.1
 
@@ -36,3 +49,5 @@ By making a contribution to this project, I certify that:
   a record of the contribution (including all personal information I submit with it,
   including my sign-off) is maintained indefinitely and may be redistributed consistent
   with this project or the open source license(s) involved.
+
+[`squash`]: https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits
