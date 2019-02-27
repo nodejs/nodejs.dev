@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination component only renders links to pages that has a title 1`] = `
+<ul
+  style={
+    Object {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "justifyContent": "space-between",
+      "listStyle": "none",
+      "padding": "30px",
+    }
+  }
+>
+  <li />
+  <li>
+    <a
+      href="/learn/next-page"
+      rel="next"
+    >
+      Next   →
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`Pagination component renders correctly when there is no next page 1`] = `
+<ul
+  style={
+    Object {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "justifyContent": "space-between",
+      "listStyle": "none",
+      "padding": "30px",
+    }
+  }
+>
+  <li>
+    <a
+      href="/learn/prev-page"
+      rel="prev"
+    >
+      ←   Prev
+    </a>
+  </li>
+  <li />
+</ul>
+`;
+
+exports[`Pagination component renders correctly when there is no previous page 1`] = `
+<ul
+  style={
+    Object {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "justifyContent": "space-between",
+      "listStyle": "none",
+      "padding": "30px",
+    }
+  }
+>
+  <li />
+  <li>
+    <a
+      href="/learn/next-page"
+      rel="next"
+    >
+      Next   →
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`Pagination component renders links to the next and previous page 1`] = `
+<ul
+  style={
+    Object {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "justifyContent": "space-between",
+      "listStyle": "none",
+      "padding": "30px",
+    }
+  }
+>
+  <li>
+    <a
+      href="/learn/prev-page"
+      rel="prev"
+    >
+      ←   Prev
+    </a>
+  </li>
+  <li>
+    <a
+      href="/learn/next-page"
+      rel="next"
+    >
+      Next   →
+    </a>
+  </li>
+</ul>
+`;
