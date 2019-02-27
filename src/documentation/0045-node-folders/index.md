@@ -8,7 +8,7 @@ The Node.js `fs` core module provides many handy methods you can use to work wit
 
 ## Check if a folder exists
 
-Use `fs.access()` to check if the folder exists and Node.js can access it with its permissions.
+Use `fs.existsSync()` to check if the folder exists and Node.js can access it with its permissions.
 
 ## Create a new folder
 
