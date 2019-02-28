@@ -15,19 +15,19 @@ author: flaviocopes
 
 A promise is commonly defined as **a proxy for a value that will eventually become available**.
 
-Promises are one way to deal with asynchronous code, without writing too many callbacks in your code.
+Promises are one way to deal with asynchronous code, without getting stuck in [callback hell](http://callbackhell.com/).
 
-Although being around since years, they have been standardized and introduced in ES2015, and now they have been superseded in ES2017 by async functions.
+Promises have been part of the language for years (standardized and introduced in ES2015), and have recently become more integrated, with **async** and **await** in ES2017.
 
-**Async functions** use the promises API as their building block, so understanding them is fundamental even if in newer code you'll likely use async functions instead of promises.
+**Async functions** use promises behind the scenes, so understanding how promises work is fundamental to understanding how `async` and `await` work.
 
 ### How promises work, in brief
 
-Once a promise has been called, it will start in **pending state**. This means that the caller function continues the execution, while it waits for the promise to do its own processing, and give the caller function some feedback.
+Once a promise has been called, it will start in a **pending state**. This means that the calling function continues executing, while the promise is pending until it resolves, giving the calling function whatever data was being requested.
 
-At this point, the caller function waits for it to either return the promise in a **resolved state**, or in a **rejected state**, but as you know JavaScript is asynchronous, so _the function continues its execution while the promise does it work_.
+The created promise will eventually end in a **resolved state**, or in a **rejected state**, calling the respective callback functions (passed to `then` and `catch`) upon finishing.
 
-### Which JS API use promises?
+### Which JS APIs use promises?
 
 In addition to your own code and libraries code, promises are used by standard modern Web APIs such as:
 
@@ -57,10 +57,33 @@ const isItDoneYet = new Promise((resolve, reject) => {
 })
 ```
 
-As you can see the promise checks the `done` global constant, and if that's true, we return a resolved promise, otherwise a rejected promise.
+As you can see, the promise checks the `done` global constant, and if that's true, the promise goes to a **resolved** state (since the `resolve` callback was called); otherwise, the `reject` callback is executed, putting the promise in a rejected state. (Note that if one of these functions is never called in the execution path, the promise will remain in a pending state)
 
-Using `resolve` and `reject` we can communicate back a value, in the above case we just return a string, but it could be an object as well.
+Using `resolve` and `reject`, we can communicate back to the caller what the resulting promise state was, and what to do with it. In the above case we just returned a string, but it could be an object, or `null` as well. Because we've created the promise in the above snippet, it has **already started executing**. This is important to understand what's going on in the section [Consuming a promise](#consuming-a-promise) below.
 
+A more common example you may come across is a technique called **Promisifying**. This technique is a way to be able to use a classic javascript function that takes a callback, and have it return a promise:
+
+```js
+const fs = require('fs')
+
+const getFile = (fileName) => {
+  return new Promise((resolve, reject) => {
+    fs.readFile(fileName, (err, data) => {
+      if (err) {
+        reject (err)  // calling `reject` will cause the promise to fail with or without the error passed as an argument
+        return        // and we don't want to go any further
+      }
+      resolve(data)
+    })
+  })
+}
+
+getFile('/etc/passwd')
+.then(data => console.log(data))
+.catch(err => console.error(err))
+```
+
+> note that in recent versions of node.js, you won't have to do this manual conversion for a lot of the API. There is a promisifying function available in the [util module](https://nodejs.org/docs/latest-v11.x/api/util.html#util_util_promisify_original) that will do this for you, given that the function you're promisifying has the correct signature.
 ---
 
 ## Consuming a promise
@@ -70,7 +93,7 @@ In the last section, we introduced how a promise is created.
 Now let's see how the promise can be _consumed_ or used.
 
 ```js
-const isItDoneYet = new Promise()
+const isItDoneYet = new Promise(/* ... as above ... */)
 //...
 
 const checkIfItsDone = () => {
@@ -84,7 +107,7 @@ const checkIfItsDone = () => {
 }
 ```
 
-Running `checkIfItsDone()` will execute the `isItDoneYet()` promise and will wait for it to resolve, using the `then` callback, and if there is an error, it will handle it in the `catch` callback.
+Running `checkIfItsDone()` will specify functions to execute when the `isItDoneYet` promise resolves (in the `then` call) or rejects (in the `catch` call).
 
 ---
 
@@ -109,9 +132,9 @@ const status = response => {
 const json = response => response.json()
 
 fetch('/todos.json')
-  .then(status)
-  .then(json)
-  .then(data => {
+  .then(status)    // note that the `status` function is actually **called** here, and that it **returns a promise***
+  .then(json)      // likewise, the only difference here is that the `json` function here returns a promise that resolves with `data`
+  .then(data => {  // ... which is why `data` shows up here as the first parameter to the anonymous function
     console.log('Request succeeded with JSON response', data)
   })
   .catch(error => {
@@ -132,7 +155,7 @@ So given those premises, this is what happens: the first promise in the chain is
 
 This operation will cause the promise chain to skip all the chained promises listed and will skip directly to the `catch()` statement at the bottom, logging the `Request failed` text along with the error message.
 
-If that succeeds instead, it calls the json() function we defined. Since the previous promise, when successful, returned the `response` object, we get it as an input to the second promise.
+If that succeeds instead, it calls the `json()` function we defined. Since the previous promise, when successful, returned the `response` object, we get it as an input to the second promise.
 
 In this case, we return the data JSON processed, so the third promise receives the JSON directly:
 
@@ -215,7 +238,7 @@ Promise.all([f1, f2]).then(([res1, res2]) => {
 })
 ```
 
-You are not limited to using `fetch` of course, **any promise is good to go**.
+You are not limited to using `fetch` of course, **any promise can be used in this fashion**.
 
 ### `Promise.race()`
 
@@ -241,3 +264,7 @@ Promise.race([first, second]).then(result => {
 ### Uncaught TypeError: undefined is not a promise
 
 If you get the `Uncaught TypeError: undefined is not a promise` error in the console, make sure you use `new Promise()` instead of just `Promise()`
+
+### UnhandledPromiseRejectionWarning
+
+This means that a promise you called rejected, but there was no `catch` used to handle the error. Add a `catch` after the offending `then` to handle this properly.

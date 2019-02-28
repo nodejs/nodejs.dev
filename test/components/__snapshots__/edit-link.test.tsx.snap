@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditLink component renders correctly 1`] = `
+<a
+  href="https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/0002-node-history/index.md"
+>
+  Edit this page on GitHub
+</a>
+`;

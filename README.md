@@ -8,7 +8,7 @@
 <h1 align="center"><a href="https://nodejs.dev">Nodejs.dev</a></h1>
 
 <p align="center">
-  <a href="https://nodejs.dev">Nodejs.dev</a> site built with Gatsby.js using TypeScript, Emotion, Contentful, and Remark.
+  <a href="https://nodejs.dev">Nodejs.dev</a> site built using Gatsby.js with React.js, TypeScript, Emotion, and Remark.
 </p>
 
 <p align="center">

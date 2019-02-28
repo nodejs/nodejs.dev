@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Article from '../components/article';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
@@ -14,32 +14,15 @@ type Props = {
 };
 
 export default ({ data, location }: Props) => {
-  const prevOffset = useRef(-1);
-
-  const magicHeroNumber = () => {
-    if (typeof window === 'undefined') {
-      return;
-    } // Guard for SSR.
-    const doc = window.document;
-    const offset = Math.min(doc.scrollingElement!.scrollTop - 62, 210);
-    if (Math.abs(prevOffset.current - offset) > 5) {
-      prevOffset.current = offset;
-      doc.body.setAttribute('style', `--magic-hero-number: ${356 - offset}px`);
-    }
-    window.requestAnimationFrame(magicHeroNumber);
-  };
-
-  useEffect(magicHeroNumber);
-
+  // Get current page related data.
   const currentPage = location.pathname.split('/').pop();
   const { activePage, previousPage, nextPage, navigationSections } = findActive(
     data.sections.group,
     currentPage
   );
 
+  // Rendering 404 page as a component here but maintain the url
   if (!activePage) {
-    // Rendering 404 page as a component here
-    // The reason is to show the 404 component but maintaining the url (instead of redirecting to 404)
     return <Page404 />;
   }
 
@@ -48,7 +31,8 @@ export default ({ data, location }: Props) => {
   let title = '';
   let description = '';
 
-  // The currentPage has empty string value since its pathname only has '/' and nothing after that.
+  // The currentPage has empty string value
+  // Since its pathname only has '/' and nothing after that.
   if (currentPage) {
     title = `${activePage.frontmatter.title} by ${
       activePage.frontmatter.author

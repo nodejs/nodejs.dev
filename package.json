@@ -42,8 +42,7 @@
     "build-ci": "gatsby build --prefix-paths",
     "start": "gatsby develop",
     "format": "prettier --write '**/*.tsx'",
-    "test": "jest",
-    "commitmsg": "commitlint --edit $GIT_PARAMS"
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
@@ -90,5 +89,10 @@
     "collectCoverageFrom": [
       "src/**/**.(ts|tsx|js)"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint --edit $HUSKY_GIT_PARAMS"
+    }
   }
 }
