@@ -21,7 +21,7 @@ There is a built in commit linter. Basic rules:
 - Pull Requests must be open for at least 24 hours unless included in the special exemptions section below
 
 ### Special Exemptions
-Pull request seeking to make any of the following changes do not need to wait 24 hours
+Pull requests seeking to make any of the following changes do not need to wait 24 hours
 
 * Errata fixes
 * Infrastructure Maintenance
