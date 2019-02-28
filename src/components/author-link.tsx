@@ -1,0 +1,16 @@
+import React from 'react';
+
+type Props = {
+  username: string;
+};
+
+const AuthorLink = ({ username }: Props) => {
+  const githubLink = `https://github.com/${username}`;
+  return (
+    <a style={{ marginLeft: '0.5rem' }} href={githubLink}>
+      {username}
+    </a>
+  );
+};
+
+export default AuthorLink;
