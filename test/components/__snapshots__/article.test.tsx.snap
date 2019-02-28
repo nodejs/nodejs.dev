@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article component renders correctly 1`] = `
+<article
+  className="article-reader"
+>
+  <h1
+    className="article-reader__headline"
+  >
+    mock-page
+  </h1>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<span>mock-page</span>",
+      }
+    }
+  />
+  <EditLink
+    relativePath="path/mock-page.md"
+  />
+  <Pagination
+    next={
+      Object {
+        "fields": Object {
+          "slug": "mock-next",
+        },
+        "frontmatter": Object {
+          "title": "mock-next",
+        },
+      }
+    }
+    previous={
+      Object {
+        "fields": Object {
+          "slug": "mock-prev",
+        },
+        "frontmatter": Object {
+          "title": "mock-prev",
+        },
+      }
+    }
+  />
+</article>
+`;
