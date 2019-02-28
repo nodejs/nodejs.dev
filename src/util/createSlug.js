@@ -4,7 +4,7 @@ function createSlug(title) {
   const sets = [
     {to: 'nodejs', from: /node.js/ }, // Replace node.js
     {to: '-and-', from: /&/ }, // Replace &
-    {to: '-', from: /([\/_,:;\\ .])/g } // Replace /_,:;\. and whitespace
+    {to: '-', from: /[/_,:;\\ .]/g } // Replace /_,:;\. and whitespace
   ];
 
   sets.forEach(set => {
