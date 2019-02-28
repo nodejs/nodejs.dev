@@ -1,21 +1,44 @@
 import React from 'react';
-import { RemarkPage, PageInfo } from '../types';
+import { PaginationInfo } from '../types';
 import Pagination from './pagination';
 import EditLink from './edit-link';
+import AuthorLink from './author-link';
 
 type Props = {
-  page: RemarkPage;
-  previous?: PageInfo;
-  next?: PageInfo;
-}
+  title: string;
+  html: string;
+  authors: Array<string>;
+  relativePath: string;
+  next?: PaginationInfo;
+  previous?: PaginationInfo;
+};
 
-const Article = ({ page, previous, next }: Props) => (
+const Article = ({
+  title,
+  html,
+  previous,
+  next,
+  relativePath,
+  authors,
+}: Props) => (
   <article className="article-reader">
-    <h1 className="article-reader__headline">{page.frontmatter.title}</h1>
-    <div dangerouslySetInnerHTML={{ __html: page.html }} />
-    <EditLink relativePath={page.parent.relativePath} />
-    <Pagination previous={previous} next={next}/>
+    <h1 className="article-reader__headline">{title}</h1>
+    <div dangerouslySetInnerHTML={{ __html: html }} />
+    <div
+      style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        marginTop: '5rem',
+        alignItems: 'center',
+      }}>
+      Contributors:
+      {authors.map(author => (
+          <AuthorLink username={author} />
+      ))}
+    </div>
+    <EditLink relativePath={relativePath} />
+    <Pagination previous={previous} next={next} />
   </article>
-)
+);
 
-export default Article
+export default Article;

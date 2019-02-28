@@ -1,7 +1,7 @@
 ---
 title: Introduction to Node.js
 description: "This post is a getting started guide to Node.js, the server-side JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to that"
-authors: flaviocopes,flaviocopes,flaviocopes,flaviocopes,flaviocopes,flaviocopes,flaviocopes,flaviocopes,flaviocopes
+authors: flaviocopes
 section: Quick Start
 ---
 

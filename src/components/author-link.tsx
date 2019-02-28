@@ -7,6 +7,7 @@ type Props = {
 const AuthorLink = ({ username }: Props) => {
   const githubLink = `https://github.com/${username}`;
   return (
+    
     <a style={{ marginLeft: '0.5rem' }} href={githubLink}>
       {username}
     </a>

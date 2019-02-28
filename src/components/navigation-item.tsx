@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Link } from 'gatsby';
 
 type Props = {
+  key: string;
   isDone: boolean;
   isActive: boolean;
   slug: string;

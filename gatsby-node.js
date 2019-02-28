@@ -1,31 +1,177 @@
 const createSlug = require('./src/util/createSlug');
+const path = require('path');
 
-exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage, deletePage } = actions
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage, createRedirect, createNodeField } = actions;
 
-  // If this is the learn page, accept all following paths.
-  console.log(page.path);
-  if (!!~page.path.indexOf('/learn')) {
-    deletePage(page);
-    createPage({
-      ...page,
-      path: '/'
-    });
-    createPage({
-      ...page,
-      matchPath: "/learn/*",
-    });
-  }
-}
+  // TODO: remove this redirect when we have an /index page
+  createRedirect({
+    fromPath: '/',
+    toPath: '/learn/introduction-to-nodejs',
+    redirectInBrowser: true,
+    force: true,
+  });
+
+  // TOOD: remove this redirect when we have a /learn index page
+  createRedirect({
+    fromPath: '/learn/',
+    toPath: '/learn/introduction-to-nodejs',
+    redirectInBrowser: true,
+  });
+
+  // TOOD: remove this redirect when we have a /learn index page
+  createRedirect({
+    fromPath: '/learn',
+    toPath: '/learn/introduction-to-nodejs',
+    redirectInBrowser: true,
+  });
+
+  return new Promise((resolve, reject) => {
+    const docTemplate = path.resolve('./src/templates/learn.tsx');
+    const filters = `filter: { fields: { slug: { ne: "" } } }`;
+
+    resolve(
+      graphql(
+        `
+          {
+            allMarkdownRemark(
+              ` +
+          filters +
+          `
+              sort: { fields: [fileAbsolutePath], order: ASC }
+            ) {
+              edges {
+                node {
+                  id
+                  fileAbsolutePath
+                  html
+                  parent {
+                    ... on File {
+                      relativePath
+                    }
+                  }
+                  frontmatter {
+                    title
+                    description
+                    authors
+                    section
+                  }
+                  fields {
+                    slug
+                  }
+                }
+                next {
+                  frontmatter {
+                    title
+                  }
+                  fields {
+                    slug
+                  }
+                }
+                previous {
+                  frontmatter {
+                    title
+                  }
+                  fields {
+                    slug
+                  }
+                }
+              }
+            }
+          }
+        `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors);
+          reject(result.errors);
+        }
+        const { edges } = result.data.allMarkdownRemark;
+        let navigationData = {};
+        const docPages = [];
+        edges.forEach(({ node }, index) => {
+          const {
+            fields: { slug, authors },
+            frontmatter: { title, section },
+            parent: { relativePath },
+          } = node;
+
+          let previousNodeData = undefined;
+          const previousNode = index === 0 ? undefined : edges[index - 1].node;
+          if (previousNode) {
+            previousNodeData = {
+              slug: previousNode.fields.slug,
+              title: previousNode.frontmatter.title,
+            };
+          }
+
+          let nextNodeData = undefined;
+          const nextNode =
+            index === edges.length - 1 ? undefined : edges[index + 1].node;
+          if (nextNode) {
+            nextNodeData = {
+              slug: nextNode.fields.slug,
+              title: nextNode.frontmatter.title,
+            };
+          }
+
+          let data;
+          if (!navigationData[section]) {
+            data = { title, slug, section };
+            navigationData = { ...navigationData, [section]: [data] };
+          } else {
+            data = { title, slug, section };
+            navigationData = {
+              ...navigationData,
+              [section]: [...navigationData[section], data],
+            };
+          }
+          docPages.push({
+            slug,
+            next: nextNodeData,
+            previous: previousNodeData,
+            relativePath,
+            // authors,
+          });
+        });
+
+        docPages.forEach(page => {
+          createPage({
+            path: `/learn/${page.slug}`,
+            component: docTemplate,
+            context: {
+              slug: page.slug,
+              next: page.next,
+              previous: page.previous,
+              relativePath: page.relativePath,
+              navigationData: navigationData,
+              // authors: page.authors,
+            },
+          });
+        });
+      })
+    );
+  });
+};
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === 'MarkdownRemark') {
     const { createNodeField } = actions;
+
     const slug = createSlug(node.frontmatter.title);
     createNodeField({
       node,
       name: `slug`,
       value: slug,
     });
+
+    let authors = node.frontmatter.authors;
+    if (authors) {
+      authors = authors.split(',');
+      createNodeField({
+        node,
+        name: `authors`,
+        value: authors,
+      });
+    }
   }
-}
+};
