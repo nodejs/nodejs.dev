@@ -18,6 +18,14 @@ There is a built in commit linter. Basic rules:
 - All changes must come in a PR
 - All changes must be reviewed by a member of @nodejs/nodejs.dev,
   @nodejs/website, or @nodejs/website-redesign
+- Pull Requests must be open for at least 24 hours unless included in the special exemptions section below
+
+### Special Exemptions
+Pull request seeking to make any of the following changes do not need to wait 24 hours
+
+* Errata fixes
+* Infrastructure Maintenance
+* Tests
 
 ## Landing Pull Requests
 
