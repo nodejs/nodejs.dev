@@ -1,7 +1,8 @@
 ---
 title: Node.js, the difference between development and production
 description: 'Learn how to set up different configurations for production and development environments'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 You can have different configurations for production and development environments.

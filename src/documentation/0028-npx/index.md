@@ -1,7 +1,8 @@
 ---
 title: The npx Node.js Package Runner
 description: 'npx is a very cool way to run Node.js code, and provides many useful features'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 `npx` is a very powerful command that's been available in **npm** starting version 5.2, released in July 2017.

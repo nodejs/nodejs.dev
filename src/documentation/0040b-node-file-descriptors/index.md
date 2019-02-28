@@ -1,7 +1,8 @@
 ---
 title: 'Working with file descriptors in Node.js'
 description: 'How to interact with file descriptors using Node.js'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 Before you're able to interact with a file that sits in your filesystem, you must get a file descriptor.

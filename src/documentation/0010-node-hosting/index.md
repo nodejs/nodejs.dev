@@ -1,7 +1,8 @@
 ---
 title: Where to host a Node.js app
 description: 'A Node.js application can be hosted in a lot of places, depending on your needs. This is a list of all the various options you have at your disposal'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 Here is a non-exhaustive list of the options you can explore when you want to deploy your app and make it publicly accessible.

@@ -1,7 +1,8 @@
 ---
 title: 'The Node.js http module'
 description: 'The http module of Node.js provides useful functions and classes to build an HTTP server'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 The HTTP core module is a key module to Node.js networking.
@@ -69,7 +70,7 @@ This property lists all the HTTP status codes and their description:
   '200': 'OK',
   '201': 'Created',
   '202': 'Accepted',
-  '203': 'Non-Authoritative Information',
+  '203': 'Non-authorsitative Information',
   '204': 'No Content',
   '205': 'Reset Content',
   '206': 'Partial Content',
@@ -85,7 +86,7 @@ This property lists all the HTTP status codes and their description:
   '307': 'Temporary Redirect',
   '308': 'Permanent Redirect',
   '400': 'Bad Request',
-  '401': 'Unauthorized',
+  '401': 'Unauthorsized',
   '402': 'Payment Required',
   '403': 'Forbidden',
   '404': 'Not Found',

@@ -1,7 +1,8 @@
 ---
 title: The package.json guide
 description: 'The package.json file is a key element in lots of app codebases based on the Node.js ecosystem.'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 If you work with JavaScript, or you've ever interacted with a JavaScript project, Node.js or a frontend project, you surely met the `package.json` file.
@@ -148,15 +149,15 @@ This is because when a package is published on `npm`, it gets its own URL based 
 
 If you published this package publicly on GitHub, a good value for this property is the GitHub repository name.
 
-### `author`
+### `authors`
 
-Lists the package author name
+Lists the package authors name
 
 Example:
 
 ```json
 {
-  "author": "Joe <joe@whatever.com> (https://whatever.com)"
+  "authors": "Joe <joe@whatever.com> (https://whatever.com)"
 }
 ```
 
@@ -164,7 +165,7 @@ Can also be used with this format:
 
 ```json
 {
-  "author": {
+  "authors": {
     "name": "Joe",
     "email": "joe@whatever.com",
     "url": "https://whatever.com"
@@ -174,7 +175,7 @@ Can also be used with this format:
 
 ### `contributors`
 
-As well as the author, the project can have one or more contributors. This property is an array that lists them.
+As well as the authors, the project can have one or more contributors. This property is an array that lists them.
 
 Example:
 

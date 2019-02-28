@@ -1,7 +1,8 @@
 ---
 title: How to log an object in Node.js
 description: 'Logging objects in Node.js'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 When you type `console.log()` into a JavaScript program that runs in the browser, that is going to create a nice entry in the Browser Console:

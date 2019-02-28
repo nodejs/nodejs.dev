@@ -1,7 +1,8 @@
 ---
 title: Where does npm install the packages?
 description: 'How to find out where npm installs the packages'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 When you install a package using `npm` you can perform 2 types of installation:

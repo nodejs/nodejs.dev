@@ -1,7 +1,8 @@
 ---
 title: How to use the Node.js REPL
 description: "REPL stands for Read-Evaluate-Print-Loop, and it's a great way to explore the Node.js features in a quick way"
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 The `node` command is the one we use to run our Node.js scripts:

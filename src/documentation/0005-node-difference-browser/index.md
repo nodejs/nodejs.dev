@@ -1,7 +1,7 @@
 ---
 title: Differences between Node.js and the Browser
 description: 'How writing JavaScript application in Node.js differs from programming for the Web inside the browser'
-author: flaviocopes
+authors: flaviocopes
 section: Quick Start
 ---
 
