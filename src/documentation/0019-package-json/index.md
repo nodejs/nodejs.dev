@@ -149,15 +149,15 @@ This is because when a package is published on `npm`, it gets its own URL based 
 
 If you published this package publicly on GitHub, a good value for this property is the GitHub repository name.
 
-### `authors`
+### `author`
 
-Lists the package authors name
+Lists the package author name
 
 Example:
 
 ```json
 {
-  "authors": "Joe <joe@whatever.com> (https://whatever.com)"
+  "author": "Joe <joe@whatever.com> (https://whatever.com)"
 }
 ```
 
@@ -165,7 +165,7 @@ Can also be used with this format:
 
 ```json
 {
-  "authors": {
+  "author": {
     "name": "Joe",
     "email": "joe@whatever.com",
     "url": "https://whatever.com"
@@ -175,7 +175,7 @@ Can also be used with this format:
 
 ### `contributors`
 
-As well as the authors, the project can have one or more contributors. This property is an array that lists them.
+As well as the author, the project can have one or more contributors. This property is an array that lists them.
 
 Example:
 

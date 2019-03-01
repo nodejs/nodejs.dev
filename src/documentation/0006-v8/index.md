@@ -29,7 +29,7 @@ All those engines implement the ECMA ES-262 standard, also called ECMAScript, th
 
 V8 is written in C++, and it's continuously improved. It is portable and runs on Mac, Windows, Linux and several other systems.
 
-In this V8 introduction, we will ignore the implementation details of V8: they can be found on more authorsitative sites (e.g. the V8 official site), and they change over time, often radically.
+In this V8 introduction, we will ignore the implementation details of V8: they can be found on more authoritative sites (e.g. the V8 official site), and they change over time, often radically.
 
 V8 is always evolving, just like the other JavaScript engines around, to speed up the Web and the Node.js ecosystem.
 
