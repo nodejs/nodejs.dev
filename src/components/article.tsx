@@ -32,7 +32,7 @@ const Article = ({
         alignItems: 'center',
       }}>
       Contributors:
-      {authors.map(author => (
+      {authors && authors.map(author => (
           <AuthorLink username={author} />
       ))}
     </div>
