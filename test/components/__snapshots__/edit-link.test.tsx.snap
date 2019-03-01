@@ -3,6 +3,12 @@
 exports[`EditLink component renders correctly 1`] = `
 <a
   href="https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/0002-node-history/index.md"
+  style={
+    Object {
+      "display": "inlineFlex",
+      "marginTop": "1rem",
+    }
+  }
 >
   Edit this page on GitHub
 </a>
