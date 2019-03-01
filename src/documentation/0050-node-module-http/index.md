@@ -131,7 +131,7 @@ This property lists all the HTTP status codes and their description:
 
 Points to the global instance of the Agent object, which is an instance of the `http.Agent` class.
 
-It's used to manage connections persistance and reuse for HTTP clients, and it's a key component of Node.js HTTP networking.
+It's used to manage connections persistence and reuse for HTTP clients, and it's a key component of Node.js HTTP networking.
 
 More in the `http.Agent` class description later on.
 
@@ -169,7 +169,7 @@ The HTTP module provides 5 classes:
 
 ### `http.Agent`
 
-Node.js creates a global instance of the `http.Agent` class to manage connections persistance and reuse for HTTP clients, a key component of Node.js HTTP networking.
+Node.js creates a global instance of the `http.Agent` class to manage connections persistence and reuse for HTTP clients, a key component of Node.js HTTP networking.
 
 This object makes sure that every request made to a server is queued and a single socket is reused.
 

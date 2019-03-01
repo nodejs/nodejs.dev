@@ -1,15 +1,70 @@
-import React from 'react'
-import Layout from '../components/layout'
+import { graphql } from 'gatsby';
+import React from 'react';
+import Hero from '../components/hero';
+import Layout from '../components/layout';
+import Navigation from '../components/navigation';
+import { LearnPageData } from '../types';
+import { findActive } from '../util/findActive';
 
-const title = 'NOT FOUND 404'
-const description =
-  'You just hit a route that doesn&#39;t exist... the sadness.'
+type Props = {
+  data: LearnPageData;
+};
 
-const NotFoundPage = () => (
-  <Layout title={title} description={description}>
-    <h1>{title}</h1>
-    <p>{description}</p>
-  </Layout>
-)
+export default ({ data }: Props) => {
+  // Get current page related data.
+  const { navigationSections } = findActive(data.sections.group);
 
-export default NotFoundPage
+  const title = `PAGE NOT FOUND`;
+  const description = `You've hit a route that does not exist.`;
+
+  return (
+    <Layout title={title} description={description}>
+      <Hero title={title} />
+      <Navigation sections={navigationSections} />
+      <article className="article-reader">
+        <h1 className="article-reader__headline">{title}</h1>
+        <div>
+          <p>
+            The page you're trying to access does not exist. Go back to the
+            Homepage or find what you're looking for in the menu.
+          </p>
+          <p>
+            Take me back to the <a href="/">Homepage</a> →
+          </p>
+        </div>
+      </article>
+    </Layout>
+  );
+};
+
+export const query = graphql`
+  {
+    sections: allMarkdownRemark(
+      sort: { fields: [fileAbsolutePath], order: ASC }
+    ) {
+      group(field: frontmatter___section) {
+        fieldValue
+        edges {
+          node {
+            id
+            fileAbsolutePath
+            html
+            parent {
+              ... on File {
+                relativePath
+              }
+            }
+            frontmatter {
+              title
+              description
+              author
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  }
+`;
