@@ -130,7 +130,6 @@ exports.createPages = ({ graphql, actions }) => {
             next: nextNodeData,
             previous: previousNodeData,
             relativePath,
-            // authors,
           });
         });
 
@@ -144,7 +143,6 @@ exports.createPages = ({ graphql, actions }) => {
               previous: page.previous,
               relativePath: page.relativePath,
               navigationData: navigationData,
-              // authors: page.authors,
             },
           });
         });
