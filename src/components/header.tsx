@@ -7,14 +7,14 @@ const Header = () => (
     <ul
       style={{
         margin: '0 auto',
-        padding: '1.4rem 4.8rem',
+        padding: '0 4.8rem',
         display: 'flex',
         alignItems: 'center',
         listStyle: 'none',
       }}
     >
       <li>
-        <Link to="/">
+        <Link to="/" style={{ display: 'block' }}>
           <img src={logo} alt="Node.js" className="nav__logo" />
         </Link>
       </li>
