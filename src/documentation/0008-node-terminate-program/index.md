@@ -10,7 +10,7 @@ When running a program in the console you can close it with `ctrl-C`, but what w
 
 Let's start with the most drastic one, and see why you're better off _not_ using it.
 
-The `process` core module is provides a handy method that allows you to programmatically exit from a Node.js program: `process.exit()`.
+The `process` core module provides a handy method that allows you to programmatically exit from a Node.js program: `process.exit()`.
 
 When Node.js runs this line, the process is immediately forced to terminate.
 
@@ -75,9 +75,9 @@ process.on('SIGTERM', () => {
 
 > What are signals? Signals are a POSIX intercommunication system: a notification sent to a process in order to notify it of an event that occurred.
 
-`SIGKILL` is the signals that tells a process to immediately terminate, and would ideally act like `process.exit()`.
+`SIGKILL` is the signal that tells a process to immediately terminate, and would ideally act like `process.exit()`.
 
-`SIGTERM` is the signals that tells a process to gracefully terminate. It is the signal that's sent from process managers like `upstart` or `supervisord` and many others.
+`SIGTERM` is the signal that tells a process to gracefully terminate. It is the signal that's sent from process managers like `upstart` or `supervisord` and many others.
 
 You can send this signal from inside the program, in another function:
 
