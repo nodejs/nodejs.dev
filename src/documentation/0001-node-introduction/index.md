@@ -7,11 +7,7 @@ section: Quick Start
 
 ## Overview
 
-Node.js is a **runtime environment for JavaScript** that runs on the **server**.
-
-Node.js is open source, cross-platform, and since its introduction in 2009, it got hugely popular and now plays a significant role in the web development scene. If GitHub stars are one popularity indication factor, having 46000+ stars means being very popular.
-
-Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to that.
+Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!
 
 ## The best features of Node.js
 
