@@ -20,6 +20,12 @@ const Header = () => (
       </li>
 
       <li className="nav__tabs">
+        <a target="_blank" href="https://nodejs.org/en/download/">
+          Download
+        </a>
+      </li>
+
+      <li className="nav__tabs">
         <a target="_blank" href="https://nodejs.org/en/docs/">
           API Docs
         </a>
