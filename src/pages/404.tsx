@@ -14,7 +14,7 @@ export default () => {
   return (
     <StaticQuery
       query={query}
-      render={data => {
+      render={(data: LearnPageData) => {
 
         const { navigationSections } = findActive(data.sections.group);
 
