@@ -6,7 +6,7 @@ type Props = {
   title: string;
   items: NavigationItemData[];
   onItemClick: () => void;
-}
+};
 
 const NavigationSection = ({ title, items, onItemClick }: Props) => {
   return (
@@ -23,7 +23,7 @@ const NavigationSection = ({ title, items, onItemClick }: Props) => {
         />
       ))}
     </ul>
-  )
-}
+  );
+};
 
-export default NavigationSection
+export default NavigationSection;

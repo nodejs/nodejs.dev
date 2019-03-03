@@ -11,12 +11,12 @@ type Props = {
 
 const NavigationItem = ({ isDone, isActive, slug, title, onClick }: Props) => {
   const element = useRef<HTMLAnchorElement | null>(null);
-  
+
   const handleRef = (ref?: HTMLAnchorElement | null) => {
     if (ref && isActive) {
       element.current = ref;
     }
-  }
+  };
 
   useEffect(() => {
     if (element.current) {
@@ -33,7 +33,12 @@ const NavigationItem = ({ isDone, isActive, slug, title, onClick }: Props) => {
   }
 
   return (
-    <Link ref={handleRef} to={`/learn/${slug}`} onClick={onClick} className={className}>
+    <Link
+      ref={handleRef}
+      to={`/learn/${slug}`}
+      onClick={onClick}
+      className={className}
+    >
       {title}
     </Link>
   );

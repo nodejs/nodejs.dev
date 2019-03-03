@@ -5,16 +5,18 @@ import logo from '../images/logo.svg';
 
 const Header = () => (
   <nav className="nav">
-    <ul css={css`
-      @media (max-width: 380px) {
-        padding: 0;
-      }
-      margin: 0 auto;
-      padding: 0 4.8rem;
-      display: flex;
-      align-items: center;
-      list-style: none;
-    `}>
+    <ul
+      css={css`
+        @media (max-width: 380px) {
+          padding: 0;
+        }
+        margin: 0 auto;
+        padding: 0 4.8rem;
+        display: flex;
+        align-items: center;
+        list-style: none;
+      `}
+    >
       <li>
         <Link to="/" style={{ display: 'block' }}>
           <img src={logo} alt="Node.js" className="nav__logo" />

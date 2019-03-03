@@ -8,13 +8,7 @@ describe('SEO component', () => {
     const title = 'title-mock';
     const description = 'description-mock';
     const img = 'image-mock';
-    renderer.render(
-      <SEO
-        title={title}
-        description={description}
-        img={img}
-      />
-    );
+    renderer.render(<SEO title={title} description={description} img={img} />);
     expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
   it('uses config properties as fallback for missing props', () => {
