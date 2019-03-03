@@ -20,8 +20,8 @@ const fs = require('fs')
 const folderName = '/Users/joe/test'
 
 try {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir)
+  if (!fs.existsSync(folderName)) {
+    fs.mkdirSync(folderName)
   }
 } catch (err) {
   console.error(err)
