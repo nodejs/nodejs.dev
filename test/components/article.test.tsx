@@ -10,7 +10,11 @@ describe('Article component', () => {
     const prevMock = createPageInfo('mock-prev');
     const nextMock = createPageInfo('mock-next');
     renderer.render(
-      <Article page={pageMock} previous={prevMock} next={nextMock} />
+      <Article
+        page={pageMock}
+        previous={prevMock}
+        next={nextMock}
+      />
     );
     expect(renderer.getRenderOutput()).toMatchSnapshot();
   });

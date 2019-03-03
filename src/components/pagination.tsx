@@ -5,7 +5,7 @@ import { PageInfo } from '../types';
 type Props = {
   previous?: PageInfo;
   next?: PageInfo;
-};
+}
 
 const Pagination = ({ previous, next }: Props) => (
   <ul
@@ -32,6 +32,6 @@ const Pagination = ({ previous, next }: Props) => (
       )}
     </li>
   </ul>
-);
+)
 
-export default Pagination;
+export default Pagination

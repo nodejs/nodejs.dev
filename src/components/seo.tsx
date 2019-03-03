@@ -1,12 +1,12 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import config from '../config';
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import config from '../config'
 
 type Props = {
-  title?: string;
-  description?: string;
-  img?: string;
-};
+  title?: string
+  description?: string
+  img?: string
+}
 
 const SEO = ({ title, description, img }: Props) => (
   <Helmet
@@ -93,6 +93,6 @@ const SEO = ({ title, description, img }: Props) => (
   >
     <html lang={config.lang} />
   </Helmet>
-);
+)
 
-export default SEO;
+export default SEO

@@ -16,7 +16,7 @@ const NavigationItem = ({ isDone, isActive, slug, title, onClick }: Props) => {
     if (ref && isActive) {
       element.current = ref;
     }
-  };
+  }
 
   useEffect(() => {
     if (element.current) {
@@ -33,12 +33,7 @@ const NavigationItem = ({ isDone, isActive, slug, title, onClick }: Props) => {
   }
 
   return (
-    <Link
-      ref={handleRef}
-      to={`/learn/${slug}`}
-      onClick={onClick}
-      className={className}
-    >
+    <Link ref={handleRef} to={`/learn/${slug}`} onClick={onClick} className={className}>
       {title}
     </Link>
   );
