@@ -8,7 +8,7 @@ If you work with JavaScript, or you've ever interacted with a JavaScript project
 
 What's that for? What should you know about it, and what are some of the cool things you can do with it?
 
-The `package.json` file is kind of a manifest for your project. It can do a lot of things, completely unrelated. It's a central repository of configuration for tools, for example. It's also where npm and `yarn` store the names and versions of the package it installed.
+The `package.json` file is kind of a manifest for your project. It can do a lot of things, completely unrelated. It's a central repository of configuration for tools, for example. It's also where npm and `yarn` store the names and versions of the package they installed.
 
 ## The file structure
 
@@ -130,7 +130,7 @@ All those properties are used by either `npm` or other tools that we can use.
 
 This section describes the properties you can use in detail. We refer to "package" but the same thing applies to local applications which you do not use as packages.
 
-Most of those properties are only used on the <https://www.npmjs.com/>, other by scripts that interact with your code, like `npm` or others.
+Most of those properties are only used on the <https://www.npmjs.com/>, others by scripts that interact with your code, like `npm` or others.
 
 ### `name`
 
