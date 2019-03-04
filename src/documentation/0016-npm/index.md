@@ -22,7 +22,7 @@ There are many things that `npm` does.
 
 ### Installing all dependencies
 
-If a project has a `packages.json` file, by running
+If a project has a `package.json` file, by running
 
 ```bash
 npm install
