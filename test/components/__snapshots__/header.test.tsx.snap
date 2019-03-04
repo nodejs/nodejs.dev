@@ -5,15 +5,7 @@ exports[`Tests for Header component renders correctly 1`] = `
   className="nav"
 >
   <ul
-    style={
-      Object {
-        "alignItems": "center",
-        "display": "flex",
-        "listStyle": "none",
-        "margin": "0 auto",
-        "padding": "0 4.8rem",
-      }
-    }
+    css="css-k9ksbg"
   >
     <li>
       <a
@@ -29,6 +21,16 @@ exports[`Tests for Header component renders correctly 1`] = `
           className="nav__logo"
           src="test-file-stub"
         />
+      </a>
+    </li>
+    <li
+      className="nav__tabs"
+    >
+      <a
+        href="https://nodejs.org/en/download/"
+        target="_blank"
+      >
+        Download
       </a>
     </li>
     <li
