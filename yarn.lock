@@ -3240,6 +3240,16 @@ create-emotion-server@10.0.0:
     multipipe "^1.0.2"
     through "^2.3.8"
 
+create-emotion@^10.0.7:
+  version "10.0.7"
+  resolved "https://registry.yarnpkg.com/create-emotion/-/create-emotion-10.0.7.tgz#608d69c550e2f57827383762d416a9ddf75d8bed"
+  integrity sha512-2T6vvvh7XN/MvI3far2SXeQ5s7wti/dae6jKuHxkK4IA1IKdYocKTujZ+r56azZ8fguq3Qj4ua1AJ2vHCq7VTg==
+  dependencies:
+    "@emotion/cache" "^10.0.7"
+    "@emotion/serialize" "^0.11.4"
+    "@emotion/sheet" "0.9.2"
+    "@emotion/utils" "0.11.1"
+
 create-error-class@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/create-error-class/-/create-error-class-3.0.2.tgz#06be7abef947a3f14a30fd610671d401bca8b7b6"
@@ -4104,6 +4114,14 @@ emotion-server@^10.0.7:
   integrity sha512-bjOs3bQa4MqWCTvVdN1fc9LeYMW76IsDcUzD0m4bUl8SNoRcH9dXXgwII+L7XotnfsB0ttg4R/G7QeLDhfGWjQ==
   dependencies:
     create-emotion-server "10.0.0"
+
+emotion@^10.0.7:
+  version "10.0.7"
+  resolved "https://registry.yarnpkg.com/emotion/-/emotion-10.0.7.tgz#74ea432c7004c2bd5452d017d52e307a7a31a835"
+  integrity sha512-k1gGBoel9rlHvHIUVHyk4iJPsRaDsrpr7vKivOmdJAH2Va+smxIYvsjjzXnxTeqJt5IwcVBareuoAJMxeShG/w==
+  dependencies:
+    babel-plugin-emotion "^10.0.7"
+    create-emotion "^10.0.7"
 
 encodeurl@~1.0.2:
   version "1.0.2"
