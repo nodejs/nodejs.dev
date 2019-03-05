@@ -14,7 +14,7 @@ export default (props: Props) => {
   return (
     <Layout title={title} description={description}>
       <Hero title={title} />
-      <article style={{width: "100%"}} className="article-reader">
+      <article style={{width: '100%'}} className="article-reader">
           <p>
             The page you're trying to access does not exist. Go back to the
             Homepage or find what you're looking for in the menu.

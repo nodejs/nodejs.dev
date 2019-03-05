@@ -43,11 +43,11 @@ const isDone = (
   let currentSlugIndex: number = 0;
   let requestedSlugIndex: number = 0;
   section.forEach((navigationItem, index) => {
-    if (navigationItem.slug == currentSlug) {
+    if (navigationItem.slug === currentSlug) {
       currentSlugIndex = index;
     }
 
-    if (navigationItem.slug == requestedSlug) {
+    if (navigationItem.slug === requestedSlug) {
       requestedSlugIndex = index;
     }
   });

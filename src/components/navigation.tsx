@@ -12,9 +12,12 @@ const Navigation = ({ sections, currentSlug }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const onItemClick = () => {
-    isSmallScreen() && toggle();
+    if (isSmallScreen()) {
+      toggle();
+    }
   };
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
+
   return (
     <nav className={className}>
       <button className="side-nav__open" onClick={toggle}>

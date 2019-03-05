@@ -10,6 +10,7 @@ const AuthorLink = ({ username }: Props) => {
     return null;
   }
   const githubLink = `https://github.com/${username}`;
+
   return (
     <a style={{ marginLeft: '0.5rem' }} href={githubLink}>
       {username}

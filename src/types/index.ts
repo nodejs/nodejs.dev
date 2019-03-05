@@ -22,7 +22,7 @@ export interface LearnPageData {
       description: string;
     };
     fields: {
-      authors: Array<string>;
+      authors: string[];
     };
   };
 }

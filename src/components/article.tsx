@@ -7,7 +7,7 @@ import AuthorLink from './author-link';
 type Props = {
   title: string;
   html: string;
-  authors: Array<string>;
+  authors: string[];
   relativePath: string;
   next?: PaginationInfo;
   previous?: PaginationInfo;
