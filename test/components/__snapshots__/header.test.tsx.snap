@@ -5,7 +5,23 @@ exports[`Tests for Header component renders correctly 1`] = `
   className="nav"
 >
   <ul
-    css="css-k9ksbg"
+    css={
+      Object {
+        "map": undefined,
+        "name": "xzcnt4",
+        "next": undefined,
+        "styles": "
+  @media (max-width: 380px) {
+    padding: 0;
+  }
+  margin: 0 auto;
+  padding: 0 4.8rem;
+  display: flex;
+  align-items: center;
+  list-style: none;
+",
+      }
+    }
   >
     <li>
       <a

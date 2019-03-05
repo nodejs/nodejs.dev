@@ -2,13 +2,18 @@
 
 exports[`Pagination component only renders links to pages that has a title 1`] = `
 <ul
-  style={
+  css={
     Object {
-      "display": "flex",
-      "flexWrap": "wrap",
-      "justifyContent": "space-between",
-      "listStyle": "none",
-      "padding": "30px",
+      "map": undefined,
+      "name": "4bjqmt",
+      "next": undefined,
+      "styles": "
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 30px;
+",
     }
   }
 >
@@ -26,13 +31,18 @@ exports[`Pagination component only renders links to pages that has a title 1`] =
 
 exports[`Pagination component renders correctly when there is no next page 1`] = `
 <ul
-  style={
+  css={
     Object {
-      "display": "flex",
-      "flexWrap": "wrap",
-      "justifyContent": "space-between",
-      "listStyle": "none",
-      "padding": "30px",
+      "map": undefined,
+      "name": "4bjqmt",
+      "next": undefined,
+      "styles": "
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 30px;
+",
     }
   }
 >
@@ -50,13 +60,18 @@ exports[`Pagination component renders correctly when there is no next page 1`] =
 
 exports[`Pagination component renders correctly when there is no previous page 1`] = `
 <ul
-  style={
+  css={
     Object {
-      "display": "flex",
-      "flexWrap": "wrap",
-      "justifyContent": "space-between",
-      "listStyle": "none",
-      "padding": "30px",
+      "map": undefined,
+      "name": "4bjqmt",
+      "next": undefined,
+      "styles": "
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 30px;
+",
     }
   }
 >
@@ -74,13 +89,18 @@ exports[`Pagination component renders correctly when there is no previous page 1
 
 exports[`Pagination component renders links to the next and previous page 1`] = `
 <ul
-  style={
+  css={
     Object {
-      "display": "flex",
-      "flexWrap": "wrap",
-      "justifyContent": "space-between",
-      "listStyle": "none",
-      "padding": "30px",
+      "map": undefined,
+      "name": "4bjqmt",
+      "next": undefined,
+      "styles": "
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 30px;
+",
     }
   }
 >
