@@ -26,7 +26,7 @@ const NavigationSection = ({
             title={item.title}
             slug={item.slug}
             isDone={isDone(currentSlug, item.slug, section)}
-            isActive={item.slug == currentSlug}
+            isActive={item.slug === currentSlug}
             onClick={() => onItemClick}
           />
         );

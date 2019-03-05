@@ -33,7 +33,7 @@ const Article = ({
       }}>
       Contributors:
       {authors && authors.map(author => (
-          <AuthorLink username={author} />
+          author && <AuthorLink username={author} key={author}/>
       ))}
     </div>
     <EditLink relativePath={relativePath} />

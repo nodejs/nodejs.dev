@@ -14,9 +14,7 @@ export default (props: Props) => {
   return (
     <Layout title={title} description={description}>
       <Hero title={title} />
-      <article className="article-reader">
-        <h1 className="article-reader__headline">{title}</h1>
-        <div>
+      <article style={{width: "100%"}} className="article-reader">
           <p>
             The page you're trying to access does not exist. Go back to the
             Homepage or find what you're looking for in the menu.
@@ -24,7 +22,6 @@ export default (props: Props) => {
           <p>
             Take me back to the <a href="/">Homepage</a> →
           </p>
-        </div>
       </article>
     </Layout>
   );

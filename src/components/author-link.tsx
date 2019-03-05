@@ -2,6 +2,7 @@ import React from 'react';
 
 type Props = {
   username: string;
+  key: string;
 };
 
 const AuthorLink = ({ username }: Props) => {

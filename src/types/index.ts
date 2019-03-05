@@ -10,7 +10,7 @@ export interface PaginationInfo {
   title: string;
 }
 export interface NavigationSectionData {
-  [index: string]: NavigationItemList[];
+  [index: string]: NavigationItemList;
 }
 
 export interface LearnPageData {
