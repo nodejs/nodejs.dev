@@ -19,14 +19,14 @@ const Pagination = ({ previous, next }: Props) => (
   >
     <li>
       {previous && previous.title && (
-        <Link to={`/learn/${previous.slug}`} rel="prev">
+        <Link to={`/${previous.slug}`} rel="prev">
           ← &nbsp; Prev
         </Link>
       )}
     </li>
     <li>
       {next && next.title && (
-        <Link to={`/learn/${next.slug}`} rel="next">
+        <Link to={`/${next.slug}`} rel="next">
           Next &nbsp; →
         </Link>
       )}

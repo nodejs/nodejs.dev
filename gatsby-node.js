@@ -4,40 +4,15 @@ const path = require('path');
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect, createNodeField } = actions;
 
-  // TODO: remove this redirect when we have an /index page
-  createRedirect({
-    fromPath: '/',
-    toPath: '/learn/introduction-to-nodejs',
-    redirectInBrowser: true,
-    force: true,
-  });
-
-  // TOOD: remove this redirect when we have a /learn index page
-  createRedirect({
-    fromPath: '/learn/',
-    toPath: '/learn/introduction-to-nodejs',
-    redirectInBrowser: true,
-  });
-
-  // TOOD: remove this redirect when we have a /learn index page
-  createRedirect({
-    fromPath: '/learn',
-    toPath: '/learn/introduction-to-nodejs',
-    redirectInBrowser: true,
-  });
-
   return new Promise((resolve, reject) => {
     const docTemplate = path.resolve('./src/templates/learn.tsx');
-    const filters = `filter: { fields: { slug: { ne: "" } } }`;
 
     resolve(
       graphql(
         `
           {
             allMarkdownRemark(
-              ` +
-          filters +
-          `
+              filter: { fields: { slug: { ne: "" } } }
               sort: { fields: [fileAbsolutePath], order: ASC }
             ) {
               edges {
@@ -135,7 +110,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         docPages.forEach(page => {
           createPage({
-            path: `/learn/${page.slug}`,
+            path: `/${page.slug}`,
             component: docTemplate,
             context: {
               slug: page.slug,
@@ -145,6 +120,18 @@ exports.createPages = ({ graphql, actions }) => {
               navigationData: navigationData,
             },
           });
+          if (page.slug === 'introduction-to-nodejs')
+          createPage({
+            path: `/`,
+            component: docTemplate,
+            context: {
+              slug: page.slug,
+              next: page.next,
+              previous: page.previous,
+              relativePath: page.relativePath,
+              navigationData: navigationData,
+            },
+          })
         });
       })
     );
