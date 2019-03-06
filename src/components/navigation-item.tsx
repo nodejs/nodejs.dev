@@ -11,7 +11,7 @@ type Props = {
 
 const NavigationItem = ({ isDone, isActive, slug, title, onClick }: Props) => {
   const element = useRef<HTMLAnchorElement | null>(null);
-  
+
   const handleRef = (ref?: HTMLAnchorElement | null) => {
     if (ref && isActive) {
       element.current = ref;
