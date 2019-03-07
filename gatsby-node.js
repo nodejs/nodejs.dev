@@ -120,7 +120,7 @@ exports.createPages = ({ graphql, actions }) => {
               navigationData: navigationData,
             },
           });
-          if (page.slug === 'introduction-to-nodejs')
+          if (page.slug === 'introduction-to-nodejs') {
             createPage({
               path: `/`,
               component: docTemplate,
@@ -132,6 +132,7 @@ exports.createPages = ({ graphql, actions }) => {
                 navigationData: navigationData,
               },
             });
+          }
         });
       })
     );
