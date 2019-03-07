@@ -1,49 +1,36 @@
-export interface RemarkPage {
-  id: string;
-  fileAbsolutePath: string;
-  html: string;
-  parent: {
-    relativePath: string
-  }
-  frontmatter: {
-    title: string;
-    description: string;
-    author: string;
-  }
-  fields: {
-    slug: string;
-  }
+export interface LearnPageContext {
+  slug: string;
+  relativePath: string;
+  next: PaginationInfo;
+  previous: PaginationInfo;
+  navigationData: NavigationSectionData;
 }
-
-export interface PageInfo {
-  frontmatter: {
-    title: string;
-  }
-  fields: {
-    slug: string;
-  }
+export interface PaginationInfo {
+  slug: string;
+  title: string;
 }
-
-export interface RemarkSection {
-  fieldValue: string;
-  edges: { node: RemarkPage; previous: PageInfo; next: PageInfo }[];
+export interface NavigationSectionData {
+  [index: string]: NavigationItemList;
 }
 
 export interface LearnPageData {
-  sections: {
-    group: RemarkSection[];
-  }
+  doc: {
+    id: string;
+    html: string;
+    frontmatter: {
+      title: string;
+      description: string;
+    };
+    fields: {
+      authors: string[];
+    };
+  };
 }
 
-export interface NavigationItemData {
-  id: string;
-  title: string;
-  isActive: boolean;
-  isDone: boolean;
+export type NavigationItemList = NavigationSectionItem[];
+
+export interface NavigationSectionItem {
   slug: string;
-}
-
-export interface NavigationSectionData {
   title: string;
-  items: NavigationItemData[];
+  section: string;
 }

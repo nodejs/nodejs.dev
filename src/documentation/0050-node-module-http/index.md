@@ -1,7 +1,8 @@
 ---
 title: 'The Node.js http module'
 description: 'The http module of Node.js provides useful functions and classes to build an HTTP server'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 The HTTP core module is a key module to Node.js networking.

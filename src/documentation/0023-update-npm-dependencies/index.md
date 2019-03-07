@@ -1,7 +1,8 @@
 ---
 title: Update all the Node.js dependencies to their latest version
 description: 'How do you update all the npm dependencies store in the package.json file, to their latest version available?'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 When you install a package using `npm install <packagename>`, the latest available version of the package is downloaded and put in the `node_modules` folder, and a corresponding entry is added to the `package.json` and `package-lock.json` files that are present in your current folder.

@@ -1,7 +1,8 @@
 ---
 title: Error handling in Node.js
 description: 'How to handle errors during the execution of a Node.js application'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 Errors in Node.js are handled through exceptions.

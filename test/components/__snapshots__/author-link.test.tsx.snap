@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthorLink component renders correctly 1`] = `
+<a
+  href="https://github.com/test-author"
+  style={
+    Object {
+      "marginLeft": "0.5rem",
+    }
+  }
+>
+  test-author
+</a>
+`;

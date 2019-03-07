@@ -1,7 +1,8 @@
 ---
 title: Understanding JavaScript Promises
 description: 'Promises are one way to deal with asynchronous code in JavaScript, without writing too many callbacks in your code.'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 ## Introduction to promises

@@ -1,29 +1,58 @@
 import React from 'react';
-import { NavigationItemData } from '../types';
+import { NavigationItemList, NavigationSectionItem } from '../types';
 import NavigationItem from './navigation-item';
 
 type Props = {
+  key: string;
   title: string;
-  items: NavigationItemData[];
+  section: NavigationItemList;
+  currentSlug: string;
   onItemClick: () => void;
-}
+};
 
-const NavigationSection = ({ title, items, onItemClick }: Props) => {
+const NavigationSection = ({
+  title,
+  section,
+  currentSlug,
+  onItemClick,
+}: Props) => {
   return (
     <ul className="side-nav__list">
       <h2 className="side-nav__title">{title}</h2>
-      {items.map((item: NavigationItemData) => (
-        <NavigationItem
-          key={item.id}
-          title={item.title}
-          slug={item.slug}
-          isDone={item.isDone}
-          isActive={item.isActive}
-          onClick={onItemClick}
-        />
-      ))}
+      {section.map((item: NavigationSectionItem) => {
+        return (
+          <NavigationItem
+            key={item.slug}
+            title={item.title}
+            slug={item.slug}
+            isDone={isDone(currentSlug, item.slug, section)}
+            isActive={item.slug === currentSlug}
+            onClick={() => onItemClick}
+          />
+        );
+      })}
     </ul>
-  )
-}
+  );
+};
 
-export default NavigationSection
+const isDone = (
+  currentSlug: string,
+  requestedSlug: string,
+  section: NavigationItemList
+): boolean => {
+  let currentSlugIndex: number = 0;
+  let requestedSlugIndex: number = 0;
+  section.forEach((navigationItem, index) => {
+    if (navigationItem.slug === currentSlug) {
+      currentSlugIndex = index;
+    }
+
+    if (navigationItem.slug === requestedSlug) {
+      requestedSlugIndex = index;
+    }
+  });
+
+  return currentSlugIndex > requestedSlugIndex;
+};
+
+export default NavigationSection;

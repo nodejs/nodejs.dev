@@ -12,15 +12,15 @@ exports[`Pagination component only renders links to pages that has a title 1`] =
     }
   }
 >
-  <li />
   <li>
     <a
-      href="/learn/next-page"
-      rel="next"
+      href="/test-slug"
+      rel="prev"
     >
-      Next   →
+      ←   Prev
     </a>
   </li>
+  <li />
 </ul>
 `;
 
@@ -38,7 +38,7 @@ exports[`Pagination component renders correctly when there is no next page 1`] =
 >
   <li>
     <a
-      href="/learn/prev-page"
+      href="/test-slug"
       rel="prev"
     >
       ←   Prev
@@ -63,7 +63,7 @@ exports[`Pagination component renders correctly when there is no previous page 1
   <li />
   <li>
     <a
-      href="/learn/next-page"
+      href="/test-slug"
       rel="next"
     >
       Next   →
@@ -86,7 +86,7 @@ exports[`Pagination component renders links to the next and previous page 1`] = 
 >
   <li>
     <a
-      href="/learn/prev-page"
+      href="/test-slug"
       rel="prev"
     >
       ←   Prev
@@ -94,7 +94,7 @@ exports[`Pagination component renders links to the next and previous page 1`] = 
   </li>
   <li>
     <a
-      href="/learn/next-page"
+      href="/test-slug"
       rel="next"
     >
       Next   →

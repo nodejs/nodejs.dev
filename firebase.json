@@ -2,10 +2,6 @@
   "hosting": {
     "target": "nodejs-dev",
     "public": "public",
-    "rewrites": [{
-      "source": "/learn/**",
-      "destination": "/learn/"
-    }],
     "ignore": [
       "firebase.json",
       "**/.*",

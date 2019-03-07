@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Link } from 'gatsby';
 
 type Props = {
+  key: string;
   isDone: boolean;
   isActive: boolean;
   slug: string;
@@ -33,7 +34,7 @@ const NavigationItem = ({ isDone, isActive, slug, title, onClick }: Props) => {
   }
 
   return (
-    <Link ref={handleRef} to={`/learn/${slug}`} onClick={onClick} className={className}>
+    <Link ref={handleRef} to={`/${slug}`} onClick={onClick} className={className}>
       {title}
     </Link>
   );

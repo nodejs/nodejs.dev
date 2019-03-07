@@ -1,7 +1,8 @@
 ---
 title: npm dependencies and devDependencies
 description: 'When is a package a dependency, and when is it a dev dependency?'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 When you install an npm package using `npm install <package-name>`, you are installing it as a **dependency**.
