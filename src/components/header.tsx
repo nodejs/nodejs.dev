@@ -1,22 +1,22 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { css } from 'emotion';
+import { css, SerializedStyles } from '@emotion/core';
 import logo from '../images/logo.svg';
+
+const ulStyles: SerializedStyles = css`
+  @media (max-width: 380px) {
+    padding: 0;
+  }
+  margin: 0 auto;
+  padding: 0 4.8rem;
+  display: flex;
+  align-items: center;
+  list-style: none;
+`;
 
 const Header = () => (
   <nav className="nav">
-    <ul
-      css={css`
-        @media (max-width: 380px) {
-          padding: 0;
-        }
-        margin: 0 auto;
-        padding: 0 4.8rem;
-        display: flex;
-        align-items: center;
-        list-style: none;
-      `}
-    >
+    <ul css={ulStyles}>
       <li>
         <Link to="/" style={{ display: 'block' }}>
           <img src={logo} alt="Node.js" className="nav__logo" />
