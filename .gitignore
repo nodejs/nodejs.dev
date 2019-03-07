@@ -12,3 +12,4 @@ package-lock.json
 .firebase/*
 coverage
 .vscode
+.history
