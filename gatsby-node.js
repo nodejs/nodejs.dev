@@ -70,7 +70,7 @@ exports.createPages = ({ graphql, actions }) => {
             parent: { relativePath },
           } = node;
 
-          let previousNodeData = undefined;
+          let previousNodeData = null;
           const previousNode = index === 0 ? undefined : edges[index - 1].node;
           if (previousNode) {
             previousNodeData = {
@@ -79,7 +79,7 @@ exports.createPages = ({ graphql, actions }) => {
             };
           }
 
-          let nextNodeData = undefined;
+          let nextNodeData = null;
           const nextNode =
             index === edges.length - 1 ? undefined : edges[index + 1].node;
           if (nextNode) {
@@ -121,17 +121,17 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
           if (page.slug === 'introduction-to-nodejs')
-          createPage({
-            path: `/`,
-            component: docTemplate,
-            context: {
-              slug: page.slug,
-              next: page.next,
-              previous: page.previous,
-              relativePath: page.relativePath,
-              navigationData: navigationData,
-            },
-          })
+            createPage({
+              path: `/`,
+              component: docTemplate,
+              context: {
+                slug: page.slug,
+                next: page.next,
+                previous: page.previous,
+                relativePath: page.relativePath,
+                navigationData: navigationData,
+              },
+            });
         });
       })
     );
