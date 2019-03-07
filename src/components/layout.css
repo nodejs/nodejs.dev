@@ -132,7 +132,7 @@ main {
 
 .nav {
   background: white;
-  box-shadow: 0px 0 0 1px rgba(0, 0, 0, 0.33), 0 2px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.33), 0 2px 3px rgba(0, 0, 0, 0.2);
   height: var(--nav-height);
   line-height: var(--nav-height);
   left: 0;
@@ -243,7 +243,7 @@ main {
   -webkit-background-clip: text;
   background-clip: text;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 49%, rgba(255, 255, 255, 1) 51%);
-  background-position: 0px calc(-50vh + var(--magic-hero-number));
+  background-position: 0 calc(-50vh + var(--magic-hero-number));
   background-size: 100% 100vh;
   color: white;
   /* Force new paint layer in Firefox for rendering bug with background clip position sticky */
@@ -465,7 +465,6 @@ main {
   font-style: italic;
   font-weight: 200;
   letter-spacing: 1px;
-  margin-left: 3.2rem;
   margin: 0 0 2.8rem 0;
   padding: 1.8rem 0 1.8rem 3.2rem;
 }
@@ -526,7 +525,7 @@ main {
 .stars > .big {
   background: transparent;
   border-radius: 100%;
-  box-shadow: var(--stars-big);
+  box-shadow: var(--stars-large);
   height: 3px;
   width: 3px;
 }
@@ -535,7 +534,7 @@ main {
   content: " ";
   background: transparent;
   border-radius: 100%;
-  box-shadow: var(--stars-big);
+  box-shadow: var(--stars-large);
   height: 3px;
   position: absolute;
   top: 2000px;
