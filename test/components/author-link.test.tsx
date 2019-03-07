@@ -5,7 +5,9 @@ import AuthorLink from '../../src/components/author-link';
 describe('AuthorLink component', () => {
   it('renders correctly', () => {
     const username = 'test-author';
-    const tree = renderer.create(<AuthorLink key={username} username={username} />).toJSON();
+    const tree = renderer
+      .create(<AuthorLink key={username} username={username} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('does not render without a username', () => {

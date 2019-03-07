@@ -6,7 +6,7 @@ import { PaginationInfo } from '../types';
 type Props = {
   previous?: PaginationInfo;
   next?: PaginationInfo;
-}
+};
 
 const ulStyles: SerializedStyles = css`
   display: flex;
@@ -33,6 +33,6 @@ const Pagination = ({ previous, next }: Props) => (
       )}
     </li>
   </ul>
-)
+);
 
-export default Pagination
+export default Pagination;

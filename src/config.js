@@ -20,4 +20,4 @@ module.exports = {
   twitterCard: `summary`,
   twitterImgAlt: `The Node.js Hexagon Logo`,
   facebook: `https://www.facebook.com/nodejsfoundation/`,
-}
+};
