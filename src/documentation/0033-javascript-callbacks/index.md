@@ -1,7 +1,8 @@
 ---
 title: 'JavaScript Asynchronous Programming and Callbacks'
 description: 'JavaScript is synchronous by default, and is single threaded. This means that code cannot create new threads and run in parallel. Find out what asynchronous code means and how it looks like'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 ## Asynchronicity in Programming Languages

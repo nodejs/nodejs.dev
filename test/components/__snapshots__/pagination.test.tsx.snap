@@ -2,43 +2,53 @@
 
 exports[`Pagination component only renders links to pages that has a title 1`] = `
 <ul
-  style={
+  css={
     Object {
-      "display": "flex",
-      "flexWrap": "wrap",
-      "justifyContent": "space-between",
-      "listStyle": "none",
-      "padding": "30px",
+      "map": undefined,
+      "name": "4bjqmt",
+      "next": undefined,
+      "styles": "
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 30px;
+",
     }
   }
 >
-  <li />
   <li>
     <a
-      href="/learn/next-page"
-      rel="next"
+      href="/test-slug"
+      rel="prev"
     >
-      Next   →
+      ←   Prev
     </a>
   </li>
+  <li />
 </ul>
 `;
 
 exports[`Pagination component renders correctly when there is no next page 1`] = `
 <ul
-  style={
+  css={
     Object {
-      "display": "flex",
-      "flexWrap": "wrap",
-      "justifyContent": "space-between",
-      "listStyle": "none",
-      "padding": "30px",
+      "map": undefined,
+      "name": "4bjqmt",
+      "next": undefined,
+      "styles": "
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 30px;
+",
     }
   }
 >
   <li>
     <a
-      href="/learn/prev-page"
+      href="/test-slug"
       rel="prev"
     >
       ←   Prev
@@ -50,20 +60,25 @@ exports[`Pagination component renders correctly when there is no next page 1`] =
 
 exports[`Pagination component renders correctly when there is no previous page 1`] = `
 <ul
-  style={
+  css={
     Object {
-      "display": "flex",
-      "flexWrap": "wrap",
-      "justifyContent": "space-between",
-      "listStyle": "none",
-      "padding": "30px",
+      "map": undefined,
+      "name": "4bjqmt",
+      "next": undefined,
+      "styles": "
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 30px;
+",
     }
   }
 >
   <li />
   <li>
     <a
-      href="/learn/next-page"
+      href="/test-slug"
       rel="next"
     >
       Next   →
@@ -74,19 +89,24 @@ exports[`Pagination component renders correctly when there is no previous page 1
 
 exports[`Pagination component renders links to the next and previous page 1`] = `
 <ul
-  style={
+  css={
     Object {
-      "display": "flex",
-      "flexWrap": "wrap",
-      "justifyContent": "space-between",
-      "listStyle": "none",
-      "padding": "30px",
+      "map": undefined,
+      "name": "4bjqmt",
+      "next": undefined,
+      "styles": "
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 30px;
+",
     }
   }
 >
   <li>
     <a
-      href="/learn/prev-page"
+      href="/test-slug"
       rel="prev"
     >
       ←   Prev
@@ -94,7 +114,7 @@ exports[`Pagination component renders links to the next and previous page 1`] = 
   </li>
   <li>
     <a
-      href="/learn/next-page"
+      href="/test-slug"
       rel="next"
     >
       Next   →

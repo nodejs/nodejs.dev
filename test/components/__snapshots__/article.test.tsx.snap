@@ -7,37 +7,47 @@ exports[`Article component renders correctly 1`] = `
   <h1
     className="article-reader__headline"
   >
-    mock-page
+    test-title
   </h1>
   <div
     dangerouslySetInnerHTML={
       Object {
-        "__html": "<span>mock-page</span>",
+        "__html": "<span>Test html</span>",
       }
     }
   />
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexWrap": "wrap",
+        "marginTop": "5rem",
+      }
+    }
+  >
+    Contributors:
+    <AuthorLink
+      username="test-user1"
+    />
+    <AuthorLink
+      username="test-user2"
+    />
+  </div>
   <EditLink
-    relativePath="path/mock-page.md"
+    relativePath="test-path"
   />
   <Pagination
     next={
       Object {
-        "fields": Object {
-          "slug": "mock-next",
-        },
-        "frontmatter": Object {
-          "title": "mock-next",
-        },
+        "slug": "test-slug",
+        "title": "test-title",
       }
     }
     previous={
       Object {
-        "fields": Object {
-          "slug": "mock-prev",
-        },
-        "frontmatter": Object {
-          "title": "mock-prev",
-        },
+        "slug": "test-slug",
+        "title": "test-title",
       }
     }
   />

@@ -1,7 +1,8 @@
 ---
 title: 'Modern Asynchronous JavaScript with Async and Await'
 description: 'Discover the modern approach to asynchronous functions in JavaScript. JavaScript evolved in a very short time from callbacks to Promises, and since ES2017 asynchronous JavaScript is even simpler with the async/await syntax'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 ## Introduction

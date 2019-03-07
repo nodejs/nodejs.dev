@@ -1,7 +1,8 @@
 ---
 title: Install an older version of an npm package
 description: 'Learn how to install an older version of an npm package, something that might be useful to solve a compatibility problem'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 You can install an old version of an npm package using the `@` syntax:

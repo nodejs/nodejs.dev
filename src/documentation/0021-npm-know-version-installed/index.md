@@ -1,7 +1,8 @@
 ---
 title: Find the installed version of an npm package
 description: 'How to find out which version of a particular package you have installed in your app'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 To see the latest version of all the npm package installed, including their dependencies:

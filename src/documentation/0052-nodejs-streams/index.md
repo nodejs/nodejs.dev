@@ -1,7 +1,8 @@
 ---
 title: Node.js Streams
 description: 'Learn what streams are for, why are they so important, and how to use them.'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 
