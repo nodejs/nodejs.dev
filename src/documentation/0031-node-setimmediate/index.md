@@ -1,7 +1,8 @@
 ---
 title: 'Understanding setImmediate()'
 description: 'The Node.js setImmediate function interacts with the event loop in a special way'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 When you want to execute some piece of code asynchronously, but as soon as possible, one option is to use the `setImmediate()` function provided by Node.js:

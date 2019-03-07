@@ -1,7 +1,8 @@
 ---
 title: 'Node.js file stats'
 description: 'How to get the details of a file using Node.js'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 Every file comes with a set of details that we can inspect using Node.

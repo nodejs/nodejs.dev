@@ -1,7 +1,8 @@
 ---
 title: How to read environment variables from Node.js
 description: 'Learn how to read and make use of environment variables in a Node.js program'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 The `process` core module of Node.js provides the `env` property which hosts all the environment variables that were set at the moment the process was started.

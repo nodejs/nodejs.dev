@@ -1,7 +1,8 @@
 ---
 title: Output to the command line using Node.js
 description: 'How to print to the command line console using Node.js, from the basic console.log to more complex scenarios'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 ## Basic output using the console module

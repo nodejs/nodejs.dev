@@ -1,13 +1,8 @@
 if (process.env.ENVIROMENT !== 'production') {
-  require('dotenv').config()
+  require('dotenv').config();
 }
 
-// const contentfulConfig = {
-//   spaceId: process.env.SPACE_ID,
-//   accessToken: process.env.ACCESS_TOKEN,
-// }
-
-const config = require('./src/config')
+const config = require('./src/config');
 
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX,
@@ -73,10 +68,6 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-source-contentful`,
-    //   options: contentfulConfig,
-    // },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
@@ -104,25 +95,25 @@ module.exports = {
           }
         }`,
         serialize: ({ site, allSitePage, allMarkdownRemark }) => {
-          let pages = []
+          let pages = [];
           allSitePage.edges.map(edge => {
             pages.push({
               url: site.siteMetadata.siteUrlNoSlash + edge.node.path,
               changefreq: `daily`,
               priority: 0.7,
-            })
-          })
+            });
+          });
           allMarkdownRemark.edges.map(edge => {
             pages.push({
-              url: `${site.siteMetadata.siteUrlNoSlash}/learn/${
+              url: `${site.siteMetadata.siteUrlNoSlash}/${
                 edge.node.fields.slug
               }`,
               changefreq: `daily`,
               priority: 0.7,
-            })
-          })
+            });
+          });
 
-          return pages
+          return pages;
         },
       },
     },
@@ -130,4 +121,4 @@ module.exports = {
       resolve: `gatsby-plugin-emotion`,
     },
   ],
-}
+};

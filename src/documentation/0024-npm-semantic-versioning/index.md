@@ -1,7 +1,8 @@
 ---
 title: Semantic Versioning using npm
 description: 'Semantic Versioning is a convention used to provide a meaning to versions'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 If there's one great thing in Node.js packages, is that all agreed on using Semantic Versioning for their version numbering.

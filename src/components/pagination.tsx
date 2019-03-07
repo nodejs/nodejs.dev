@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { css, SerializedStyles } from '@emotion/core';
-import { PageInfo } from '../types';
+import { PaginationInfo } from '../types';
 
 type Props = {
-  previous?: PageInfo;
-  next?: PageInfo;
+  previous?: PaginationInfo;
+  next?: PaginationInfo;
 }
 
 const ulStyles: SerializedStyles = css`
@@ -19,15 +19,15 @@ const ulStyles: SerializedStyles = css`
 const Pagination = ({ previous, next }: Props) => (
   <ul css={ulStyles}>
     <li>
-      {previous && previous.frontmatter.title && (
-        <Link to={`/learn/${previous.fields.slug}`} rel="prev">
+      {previous && previous.title && (
+        <Link to={`/${previous.slug}`} rel="prev">
           ← &nbsp; Prev
         </Link>
       )}
     </li>
     <li>
-      {next && next.frontmatter.title && (
-        <Link to={`/learn/${next.fields.slug}`} rel="next">
+      {next && next.title && (
+        <Link to={`/${next.slug}`} rel="next">
           Next &nbsp; →
         </Link>
       )}

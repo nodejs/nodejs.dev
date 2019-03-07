@@ -1,7 +1,8 @@
 ---
 title: 'The Node.js path module'
 description: 'The path module of Node.js provides useful functions to interact with file paths'
-author: flaviocopes
+authors: flaviocopes
+section: Getting Started
 ---
 
 The `path` module provides a lot of very useful functionality to access and interact with the file system.
