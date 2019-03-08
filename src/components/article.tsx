@@ -30,11 +30,13 @@ const Article = ({
         flexWrap: 'wrap',
         marginTop: '5rem',
         alignItems: 'center',
-      }}>
+      }}
+    >
       Contributors:
-      {authors && authors.map(author => (
-          author && <AuthorLink username={author} key={author}/>
-      ))}
+      {authors &&
+        authors.map(
+          author => author && <AuthorLink username={author} key={author} />
+        )}
     </div>
     <EditLink relativePath={relativePath} />
     <Pagination previous={previous} next={next} />

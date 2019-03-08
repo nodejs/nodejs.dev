@@ -1,5 +1,8 @@
 {
   "extends": ["tslint-react", "tslint-config-prettier"],
+  "jsRules": {
+    "no-empty": true
+  },
   "rules": {
     "array-type": [true, "array"],
     "arrow-return-shorthand": true,

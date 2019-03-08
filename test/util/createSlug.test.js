@@ -13,7 +13,7 @@ describe('Tests for createSlug', () => {
       'title: subtitle',
       'a; b',
       'C:\\Program Files\\nodejs',
-      'a---b'
+      'a---b',
     ].map(createSlug);
     expect(slugs).toEqual([
       'how-to-install-nodejs',
@@ -26,7 +26,7 @@ describe('Tests for createSlug', () => {
       'title-subtitle',
       'a-b',
       'c-program-files-nodejs',
-      'a-b'
+      'a-b',
     ]);
   });
 });

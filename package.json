@@ -42,8 +42,11 @@
     "build": "gatsby build",
     "build-ci": "gatsby build --prefix-paths",
     "start": "gatsby develop",
-    "format": "prettier --write '**/*.tsx'",
-    "test": "jest"
+    "format": "prettier --write '**/*.{ts,tsx,js}'",
+    "format-check": "prettier --check '**/*.{ts,tsx,js}'",
+    "jest": "jest",
+    "test": "yarn run jest && yarn run format-check && yarn run tslint",
+    "tslint": "tslint --project ./tsconfig.json"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
@@ -57,7 +60,7 @@
     "husky": "^1.3.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.1.0",
-    "prettier": "^1.14.2",
+    "prettier": "^1.16.4",
     "react-test-renderer": "^16.8.2",
     "tslint-config-prettier": "^1.15.0",
     "tslint-react": "^3.6.0"
