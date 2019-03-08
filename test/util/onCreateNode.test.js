@@ -9,9 +9,9 @@ function createMockNodeOfType(type) {
     getNode: jest.fn(),
     node: {
       internal: { type },
-      frontmatter: { title: 'Test title' }
-    }
-  }
+      frontmatter: { title: 'Test title' },
+    },
+  };
 }
 
 describe('Tests for onCreateNode', () => {

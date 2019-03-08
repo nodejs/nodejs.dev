@@ -42,8 +42,8 @@
     "build": "gatsby build",
     "build-ci": "gatsby build --prefix-paths",
     "start": "gatsby develop",
-    "format": "prettier --write **/*.{ts,tsx,js} !.cache !public",
-    "format-check": "prettier --check **/*.{ts,tsx,js} !.cache !public",
+    "format": "prettier --write '**/*.{ts,tsx,js}'",
+    "format-check": "prettier --check '**/*.{ts,tsx,js}'",
     "jest": "jest",
     "test": "yarn run jest && yarn run format-check && yarn run tslint",
     "tslint": "tslint --project ./tsconfig.json"
