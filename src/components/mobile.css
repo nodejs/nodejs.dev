@@ -148,7 +148,6 @@
     padding-left: 3.2rem;
     margin: 2.4rem 0 3.2rem;
     top: calc(var(--nav-height) + 12px);
-    background-position: 0 calc(-50vh + var(--magic-hero-number) - 32px);
   }
 
   .article-reader {

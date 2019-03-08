@@ -15,8 +15,6 @@ body {
   padding-top: var(--nav-height);
 
   /* Set in JavaScript */
-  --magic-hero-number: 365px;
-
   --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
   --banner-gradient: linear-gradient(to right, var(--purple9), var(--blue7));
   --nav-height: 6.2rem;
@@ -239,22 +237,12 @@ main {
 }
 
 .side-nav__title {
-  background-attachment: fixed;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 49%, rgba(255, 255, 255, 1) 51%);
-  background-position: 0 calc(-50vh + var(--magic-hero-number));
-  background-size: 100% 100vh;
-  color: white;
-  /* Force new paint layer in Firefox for rendering bug with background clip position sticky */
-  filter: opacity(0.9);
+  color: #000;
   font-weight: 200;
   letter-spacing: 2px;
   margin: 2.8rem 0 2.4rem;
   position: sticky;
-  -webkit-text-fill-color: transparent;
   top: 2.8rem;
-  will-change: background-position;
   z-index: 999;
 }
 

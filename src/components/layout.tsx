@@ -16,7 +16,30 @@ type Props = {
 const Layout = ({ children, title, description, img }: Props) => {
   const prevOffset = useRef(-1);
 
-  // Header hero number CSS varaiable.
+  useEffect(() => {
+    if ('IntersectionObserver' in window) {
+      setupObserver();
+    } else {
+      // Fallback for browsers without IntersectionObserver support
+      magicHeroNumber();
+    }
+  });
+
+  const setupObserver = () => {
+    const root = document.querySelector('.side-nav');
+    const options = { root, threshold: 0.5, rootMargin: '-93px 0px 0px 0px' };
+    const observer = new IntersectionObserver(onIntersectionChange, options);
+    const targets = document.querySelectorAll('.side-nav__title');
+    targets.forEach((target: Element) => observer.observe(target));
+  };
+
+  const onIntersectionChange = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry: IntersectionObserverEntry) => {
+      const element = entry.target as HTMLElement;
+      element.style.color = entry.isIntersecting ? '#000' : '#fff';
+    });
+  };
+
   const magicHeroNumber = () => {
     if (typeof window === 'undefined') {
       return;
@@ -29,8 +52,6 @@ const Layout = ({ children, title, description, img }: Props) => {
     }
     window.requestAnimationFrame(magicHeroNumber);
   };
-
-  useEffect(magicHeroNumber);
 
   return (
     <>
