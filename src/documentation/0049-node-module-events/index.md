@@ -5,7 +5,7 @@ authors: flaviocopes
 section: Getting Started
 ---
 
-The `events` module provides us the EventEmitter class, which is key to working with events in Node.
+The `events` module provides us the EventEmitter class, which is key to working with events in Node.js.
 
 ```js
 const EventEmitter = require('events')

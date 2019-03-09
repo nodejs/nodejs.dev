@@ -27,7 +27,7 @@ node app.js name=joe
 
 This changes how you will retrieve this value in the Node.js code.
 
-The way you retrieve it is using the `process` object built into Node.
+The way you retrieve it is using the `process` object built into Node.js.
 
 It exposes an `argv` property, which is an array that contains all the command line invocation arguments.
 
