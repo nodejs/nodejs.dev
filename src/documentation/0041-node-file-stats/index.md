@@ -5,7 +5,7 @@ authors: flaviocopes
 section: Getting Started
 ---
 
-Every file comes with a set of details that we can inspect using Node.
+Every file comes with a set of details that we can inspect using Node.js.
 
 In particular, using the `stat()` method provided by the `fs` module.
 
