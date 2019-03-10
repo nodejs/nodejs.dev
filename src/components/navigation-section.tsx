@@ -22,17 +22,20 @@ const NavigationSection = ({
     <ul className="side-nav__list">
       <h2 className="side-nav__title">{title}</h2>
       {section.map((item: NavigationSectionItem) => {
-        const flatItem = flatSessions.find(x => x.slug === item.slug) || {
-          ...item,
-          isDone: false,
-        };
+        let flatItem: NavigationSectionItem = { ...item, isDone: false };
+        for (let i = 0; i < flatSessions.length; i++) {
+          if (flatSessions[i].slug === item.slug) {
+            flatItem = flatSessions[i];
+            break;
+          }
+        }
 
         return (
           <NavigationItem
             key={item.slug}
             title={item.title}
             slug={item.slug}
-            isDone={flatItem.isDone}
+            isDone={flatItem.isDone || false}
             isActive={item.slug === currentSlug}
             onClick={onItemClick}
           />
