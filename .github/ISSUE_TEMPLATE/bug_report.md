@@ -5,7 +5,7 @@ about: Report that something isn't working.
 
 ## Description
 
-Describe the issue that you're seeing.
+<!-- Describe the issue that you're seeing. -->
 
 ### Steps to reproduce
 
