@@ -546,3 +546,11 @@ details,
 .toc li p {
   margin: 0;
 }
+
+/* 3rd Party plugin styles. */
+/* Styles for gatsby-remark-autolink-headers plugin*/
+
+.autolink-headers {
+  position: absolute;
+  left: -4px;
+}
