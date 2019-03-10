@@ -45,7 +45,7 @@
     "format": "prettier --write '**/*.{ts,tsx,js}'",
     "format-check": "prettier --check '**/*.{ts,tsx,js}'",
     "jest": "jest",
-    "test": "yarn jest && yarn format-check && yarn tslint",
+    "test": "yarn format-check && yarn tslint && yarn jest",
     "tslint": "tslint --project ./tsconfig.json"
   },
   "devDependencies": {
