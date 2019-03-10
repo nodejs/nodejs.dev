@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import NavigationSection from './navigation-section';
-import { NavigationSectionData } from '../types';
+import { NavigationSectionData, NavigationSectionItem } from '../types';
 import { isSmallScreen } from '../util/isSmallScreen';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Navigation = ({ sections, currentSlug }: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggle = () => setIsOpen(!isOpen);
   const onItemClick = () => {
     if (isSmallScreen()) {
@@ -17,6 +17,16 @@ const Navigation = ({ sections, currentSlug }: Props) => {
     }
   };
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
+  let flatSessions: NavigationSectionItem[] = [];
+  Object.keys(sections).map(sectionKey => {
+    flatSessions = [...flatSessions, ...sections[sectionKey]];
+  });
+  const currentSlugIndex = flatSessions.findIndex(
+    item => item.slug === currentSlug
+  );
+  flatSessions.forEach((item, index) => {
+    item.isDone = index < currentSlugIndex;
+  });
 
   return (
     <nav className={className}>
@@ -30,6 +40,7 @@ const Navigation = ({ sections, currentSlug }: Props) => {
           section={sections[section]}
           currentSlug={currentSlug}
           onItemClick={onItemClick}
+          flatSessions={flatSessions}
         />
       ))}
     </nav>
