@@ -30,7 +30,7 @@ export interface LearnPageData {
 export type NavigationItemList = NavigationSectionItem[];
 
 export interface NavigationSectionItem {
-  isDone: boolean | null | undefined;
+  isDone: boolean;
   slug: string;
   title: string;
   section: string;
