@@ -17,7 +17,7 @@ What should happen?
 
 ### Actual result
 
-What happened?
+<!-- What happened? -->
 
 ### Environment
 
