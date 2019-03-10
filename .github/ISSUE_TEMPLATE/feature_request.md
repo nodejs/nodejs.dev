@@ -5,7 +5,7 @@ about: Suggest a new idea for the project.
 
 ## Summary
 
-Brief explanation of the feature.
+<!-- Brief explanation of the feature. -->
 
 ### Basic example
 
