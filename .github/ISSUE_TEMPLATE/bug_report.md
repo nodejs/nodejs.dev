@@ -9,7 +9,7 @@ Describe the issue that you're seeing.
 
 ### Steps to reproduce
 
-Clear steps describing how to reproduce the issue.
+<!-- Clear steps describing how to reproduce the issue. -->
 
 ### Expected result
 
