@@ -13,7 +13,7 @@ Describe the issue that you're seeing.
 
 ### Expected result
 
-What should happen?
+<!-- What should happen? -->
 
 ### Actual result
 
