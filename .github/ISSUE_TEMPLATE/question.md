@@ -1,6 +1,6 @@
 ---
 name: Question
-about: Usage for question or discussion.
+about: Ask a question or start a discussion.
 ---
 
 ## Summary
