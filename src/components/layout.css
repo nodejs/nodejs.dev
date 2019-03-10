@@ -528,3 +528,21 @@ main {
   top: 2000px;
   width: 3px;
 }
+
+/* TOC */
+details,
+.toc {
+  cursor: pointer;
+}
+.toc h6 {
+  display: inherit !important;
+}
+.toc a {
+  font-family: var(--sans-serif);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--gray3);
+}
+
+.toc li p {
+  margin: 0;
+}
