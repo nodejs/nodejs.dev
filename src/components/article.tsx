@@ -1,12 +1,13 @@
 import React from 'react';
 import { PaginationInfo } from '../types';
-import Pagination from './pagination';
-import EditLink from './edit-link';
 import AuthorLink from './author-link';
+import EditLink from './edit-link';
+import Pagination from './pagination';
 
 type Props = {
   title: string;
   html: string;
+  tableOfContents: string;
   authors: string[];
   relativePath: string;
   next?: PaginationInfo;
@@ -16,6 +17,7 @@ type Props = {
 const Article = ({
   title,
   html,
+  tableOfContents,
   previous,
   next,
   relativePath,
@@ -23,6 +25,14 @@ const Article = ({
 }: Props) => (
   <article className="article-reader">
     <h1 className="article-reader__headline">{title}</h1>
+    {tableOfContents && (
+      <details className="toc">
+        <summary>
+          <h6>TABLE OF CONTENTS</h6>
+        </summary>
+        <div dangerouslySetInnerHTML={{ __html: tableOfContents }} />
+      </details>
+    )}
     <div dangerouslySetInnerHTML={{ __html: html }} />
     <div
       style={{
