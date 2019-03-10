@@ -9,7 +9,7 @@ about: Suggest a new idea for the project.
 
 ### Basic example
 
-Include a basic code example. Omit this section if it's not applicable.
+<!-- Include a basic code example. Omit this section if it's not applicable. -->
 
 ### Motivation
 
