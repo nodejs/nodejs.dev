@@ -18,13 +18,19 @@ const Navigation = ({ sections, currentSlug }: Props) => {
   };
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
   let flatSessions: NavigationSectionItem[] = [];
-  Object.keys(sections).map(sectionKey => {
+  Object.keys(sections).map((sectionKey: string) => {
     flatSessions = [...flatSessions, ...sections[sectionKey]];
   });
-  const currentSlugIndex = flatSessions.findIndex(
-    item => item.slug === currentSlug
-  );
-  flatSessions.forEach((item, index) => {
+
+  let currentSlugIndex: number = -1;
+  for (let i = 0; i < flatSessions.length; i++) {
+    if (flatSessions[i].slug === currentSlug) {
+      currentSlugIndex = i;
+      break;
+    }
+  }
+
+  flatSessions.forEach((item: NavigationSectionItem, index: number) => {
     item.isDone = index < currentSlugIndex;
   });
 
@@ -33,11 +39,11 @@ const Navigation = ({ sections, currentSlug }: Props) => {
       <button className="side-nav__open" onClick={toggle}>
         Menu
       </button>
-      {Object.keys(sections).map(section => (
+      {Object.keys(sections).map((sectionKey: string) => (
         <NavigationSection
-          key={section}
-          title={section}
-          section={sections[section]}
+          key={sectionKey}
+          title={sectionKey}
+          section={sections[sectionKey]}
           currentSlug={currentSlug}
           onItemClick={onItemClick}
           flatSessions={flatSessions}
