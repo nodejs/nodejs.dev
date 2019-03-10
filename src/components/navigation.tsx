@@ -23,7 +23,7 @@ const Navigation = ({ sections, currentSlug }: Props) => {
   });
 
   let currentSlugIndex: number = -1;
-  for (let i = 0; i < flatSessions.length; i++) {
+  for (let i: number = 0; i < flatSessions.length; i++) {
     if (flatSessions[i].slug === currentSlug) {
       currentSlugIndex = i;
       break;

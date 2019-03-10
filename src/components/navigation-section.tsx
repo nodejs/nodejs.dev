@@ -23,7 +23,7 @@ const NavigationSection = ({
       <h2 className="side-nav__title">{title}</h2>
       {section.map((item: NavigationSectionItem) => {
         let flatItem: NavigationSectionItem = { ...item, isDone: false };
-        for (let i = 0; i < flatSessions.length; i++) {
+        for (let i: number = 0; i < flatSessions.length; i++) {
           if (flatSessions[i].slug === item.slug) {
             flatItem = flatSessions[i];
             break;
