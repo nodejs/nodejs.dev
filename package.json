@@ -47,7 +47,7 @@
     "format-check": "prettier --check '**/*.{ts,tsx,js}'",
     "jest": "jest",
     "snapshot": "jest --updateSnapshot",
-    "test": "yarn run jest && yarn run format-check && yarn run tslint",
+    "test": "yarn format-check && yarn tslint && yarn jest",
     "tslint": "tslint --project ./tsconfig.json",
     "serve": "yarn run build && clear && gatsby serve"
   },
@@ -99,7 +99,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint --edit $HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint --edit $HUSKY_GIT_PARAMS",
+      "pre-push": "yarn format-check && yarn tslint"
     }
   }
 }

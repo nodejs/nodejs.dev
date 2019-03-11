@@ -1,13 +1,8 @@
 import React from 'react';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
-import { LearnPageData } from '../types';
 
-type Props = {
-  data: LearnPageData;
-};
-
-export default (props: Props) => {
+export default () => {
   const title = 'PAGE NOT FOUND';
   const description = 'You have hit a route that does not exist.';
 

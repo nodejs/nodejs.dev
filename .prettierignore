@@ -1,3 +1,4 @@
 .cache/
 .github/
 public/
+coverage/
