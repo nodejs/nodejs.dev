@@ -1,7 +1,7 @@
 @media (max-width: 1262px) and (min-width: 721px) {
   body {
     --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 52px), 0 100%);
-    --hero-height: 36rem;
+    --hero-height: 36.0rem;
   }
 
   .article-reader {
@@ -13,14 +13,14 @@
   }
 
   .side-nav {
-    margin-right: -36rem;
+    margin-right: -36.0rem;
     margin-bottom: calc(-100vh + var(--nav-height));
     pointer-events: none;
     overflow: hidden;
   }
 
   .side-nav::after {
-    content: '';
+    content: "";
     width: 392px;
     height: 100%;
     position: fixed;
@@ -28,7 +28,7 @@
     top: 0;
     background-color: var(--gray0);
     transform: translateX(-120%);
-    transition: transform 0.28s;
+    transition: transform .28s;
     pointer-events: none;
     z-index: -1;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.33), 2px 0 3px rgba(0, 0, 0, 0.2);
@@ -50,7 +50,7 @@
 
   .side-nav__list {
     transform: translateX(-120%);
-    transition: transform 0.28s;
+    transition: transform .28s;
     pointer-events: none;
   }
 
@@ -63,13 +63,13 @@
     left: 20rem;
   }
 
-  .side-nav__open,
-  .side-nav.side-nav--open .side-nav__open {
+  .side-nav__open, .side-nav.side-nav--open .side-nav__open {
     top: 34px;
     margin-top: 0;
     display: block;
     pointer-events: all;
   }
+
 }
 
 @media (max-width: 720px) {
@@ -80,12 +80,7 @@
   body {
     --nav-height: 5.2rem;
     --hero-height: 92px;
-    --banner-clip: polygon(
-      0 0,
-      100% 0,
-      100% calc(100% - 52px),
-      0 calc(100% - 32px)
-    );
+    --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 52px), 0 calc(100% - 32px));
   }
 
   .hero {
@@ -128,7 +123,7 @@
   }
 
   .side-nav.side-nav--open + .article-reader {
-    display: none;
+     display: none;
   }
 
   .side-nav > :last-child {
@@ -157,7 +152,7 @@
 
   .article-reader {
     width: 100%;
-    padding: 0 1rem;
+    padding: 0 1.0rem;
     box-sizing: border-box;
   }
 
@@ -174,23 +169,15 @@
     margin: 4.2rem 0 0;
   }
 
-  .article-reader h1 {
-    font-size: 3.2rem;
-  }
-  .article-reader h2 {
-    font-size: 2.8rem;
-  }
-  .article-reader h3 {
-    font-size: 2.4rem;
-  }
-  .article-reader h4 {
-    font-size: 2.2rem;
-  }
-  .article-reader h5 {
-    font-size: 2rem;
-  }
+
+  .article-reader h1 { font-size: 3.2rem; }
+  .article-reader h2 { font-size: 2.8rem; }
+  .article-reader h3 { font-size: 2.4rem; }
+  .article-reader h4 { font-size: 2.2rem; }
+  .article-reader h5 { font-size: 2.0rem; }
   .article-reader h6 {
     font-size: 1.8rem;
     font-weight: 800;
   }
+
 }
