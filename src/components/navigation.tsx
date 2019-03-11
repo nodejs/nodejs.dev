@@ -17,20 +17,20 @@ const Navigation = ({ sections, currentSlug }: Props) => {
     }
   };
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
-  let flatSessions: NavigationSectionItem[] = [];
+  let flatSections: NavigationSectionItem[] = [];
   Object.keys(sections).map((sectionKey: string) => {
-    flatSessions = [...flatSessions, ...sections[sectionKey]];
+    flatSections = [...flatSections, ...sections[sectionKey]];
   });
 
   let currentSlugIndex: number = -1;
-  for (let i: number = 0; i < flatSessions.length; i++) {
-    if (flatSessions[i].slug === currentSlug) {
+  for (let i: number = 0; i < flatSections.length; i++) {
+    if (flatSections[i].slug === currentSlug) {
       currentSlugIndex = i;
       break;
     }
   }
 
-  flatSessions.forEach((item: NavigationSectionItem, index: number) => {
+  flatSections.forEach((item: NavigationSectionItem, index: number) => {
     item.isDone = index < currentSlugIndex;
   });
 
@@ -46,7 +46,7 @@ const Navigation = ({ sections, currentSlug }: Props) => {
           section={sections[sectionKey]}
           currentSlug={currentSlug}
           onItemClick={onItemClick}
-          flatSessions={flatSessions}
+          flatSections={flatSections}
         />
       ))}
     </nav>
