@@ -1,16 +1,5 @@
-@import url(
-  https://fonts.googleapis.com/css?family=Open+Sans:300,
-  400,
-  700&subset=latin,
-  latin-ext
-);
-@import url(
-  https://fonts.googleapis.com/css?family=Merriweather:400,
-  300,
-  300italic,
-  400italic&subset=latin,
-  latin-ext
-);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic&subset=latin,latin-ext);
 
 html {
   font-size: 10px;
@@ -34,74 +23,74 @@ body {
   --sans-serif: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --serif: 'Merriweather', Georgia, Cambria, 'Times New Roman', Times, serif;
 
-  --gray0: #f5f6f7;
-  --gray1: #eaedef;
-  --gray2: #dae1e5;
-  --gray3: #cbd4d8;
-  --gray4: #b0bcc1;
-  --gray5: #929fa5;
-  --gray6: #6f7b82;
+  --gray0: #F5F6F7;
+  --gray1: #EAEDEF;
+  --gray2: #DAE1E5;
+  --gray3: #CBD4D8;
+  --gray4: #B0BCC1;
+  --gray5: #929FA5;
+  --gray6: #6F7B82;
   --gray7: #556066;
-  --gray8: #3f484c;
-  --gray9: #2d3438;
-  --red0: #faf0f0;
-  --red1: #fad4d4;
-  --red2: #fab6b6;
-  --red3: #fa8e8e;
-  --red4: #f55353;
-  --red5: #de1b1b;
-  --red6: #b80d0d;
-  --red7: #8f0e0e;
+  --gray8: #3F484C;
+  --gray9: #2D3438;
+  --red0: #FAF0F0;
+  --red1: #FAD4D4;
+  --red2: #FAB6B6;
+  --red3: #FA8E8E;
+  --red4: #F55353;
+  --red5: #DE1B1B;
+  --red6: #B80D0D;
+  --red7: #8F0E0E;
   --red8: #661414;
   --red9: #451717;
-  --orange0: #fcf2e6;
-  --orange1: #fad8af;
-  --orange2: #f5bc76;
-  --orange3: #e89c3f;
-  --orange4: #cf7911;
-  --orange5: #ad5f00;
-  --orange6: #8a4d03;
-  --orange7: #693d07;
-  --orange8: #4d2f0b;
-  --orange9: #33210c;
-  --green0: #ecf2e9;
-  --green1: #c5e5b5;
-  --green2: #9acc7d;
-  --green3: #83ba63;
-  --green4: #5fa04d;
-  --green5: #417f38;
-  --green6: #2c682c;
+  --orange0: #FCF2E6;
+  --orange1: #FAD8AF;
+  --orange2: #F5BC76;
+  --orange3: #E89C3F;
+  --orange4: #CF7911;
+  --orange5: #AD5F00;
+  --orange6: #8A4D03;
+  --orange7: #693D07;
+  --orange8: #4D2F0B;
+  --orange9: #33210C;
+  --green0: #ECF2E9;
+  --green1: #C5E5B5;
+  --green2: #9ACC7D;
+  --green3: #83BA63;
+  --green4: #5FA04D;
+  --green5: #417F38;
+  --green6: #2C682C;
   --green7: #215127;
-  --green8: #193f1d;
-  --green9: #0f260f;
-  --blue0: #e8f4fa;
-  --blue1: #bbe5fa;
-  --blue2: #8dd4f7;
-  --blue3: #53baed;
-  --blue4: #229ad6;
-  --blue5: #0c7bb3;
+  --green8: #193F1D;
+  --green9: #0F260F;
+  --blue0: #E8F4FA;
+  --blue1: #BBE5FA;
+  --blue2: #8DD4F7;
+  --blue3: #53BAED;
+  --blue4: #229AD6;
+  --blue5: #0C7BB3;
   --blue6: #066391;
-  --blue7: #064d70;
+  --blue7: #064D70;
   --blue8: #093952;
-  --blue9: #0c2938;
-  --purple0: #f5f0fa;
-  --purple1: #ead9fa;
-  --purple2: #dabcf7;
-  --purple3: #c79bf2;
-  --purple4: #ae74e8;
-  --purple5: #9656d6;
-  --purple6: #7d3cbd;
-  --purple7: #642b9e;
-  --purple8: #4b2175;
-  --purple9: #371c52;
-  --pink0: #faf0f4;
-  --pink1: #fad4e4;
-  --pink2: #fab4d1;
-  --pink3: #f78bb8;
-  --pink4: #ed5393;
-  --pink5: #d6246e;
-  --pink6: #b01355;
-  --pink7: #8a1244;
+  --blue9: #0C2938;
+  --purple0: #F5F0FA;
+  --purple1: #EAD9FA;
+  --purple2: #DABCF7;
+  --purple3: #C79BF2;
+  --purple4: #AE74E8;
+  --purple5: #9656D6;
+  --purple6: #7D3CBD;
+  --purple7: #642B9E;
+  --purple8: #4B2175;
+  --purple9: #371C52;
+  --pink0: #FAF0F4;
+  --pink1: #FAD4E4;
+  --pink2: #FAB4D1;
+  --pink3: #F78BB8;
+  --pink4: #ED5393;
+  --pink5: #D6246E;
+  --pink6: #B01355;
+  --pink7: #8A1244;
   --pink8: #611535;
   --pink9: #421527;
 
