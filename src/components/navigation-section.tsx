@@ -35,7 +35,7 @@ const NavigationSection = ({
             key={item.slug}
             title={item.title}
             slug={item.slug}
-            isDone={flatItem.isDone || false}
+            isDone={flatItem.isDone}
             isActive={item.slug === currentSlug}
             onClick={onItemClick}
           />
