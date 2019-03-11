@@ -51,6 +51,35 @@ const Layout = ({ children, title, description, img }: Props) => {
       doc.body.setAttribute('style', `--magic-hero-number: ${356 - offset}px`);
     }
     window.requestAnimationFrame(magicHeroNumber);
+
+    if (doc.body.dataset.browser !== 'legacy') {
+      doc.body.dataset.browser = 'legacy';
+
+      const css = doc.createElement('style');
+      css.type = 'text/css';
+      const styles = `
+        .side-nav__title {
+          background-attachment: fixed;
+          -webkit-background-clip: text;
+          background-clip: text;
+          background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 49%, rgba(255, 255, 255, 1) 51%);
+          background-position: 0 calc(-50vh + var(--magic-hero-number));
+          background-size: 100% 100vh;
+          color: white;
+          filter: opacity(0.9);
+          -webkit-text-fill-color: transparent;
+          will-change: background-position;
+        }
+
+        @media (max-width: 720px) {
+          .side-nav__title {
+            background-position: 0 calc(-50vh + var(--magic-hero-number) - 32px);
+          }
+        }
+      `;
+      css.appendChild(document.createTextNode(styles));
+      doc.getElementsByTagName('head')[0].appendChild(css);
+    }
   };
 
   return (
