@@ -22,13 +22,9 @@ const NavigationSection = ({
     <ul className="side-nav__list">
       <h2 className="side-nav__title">{title}</h2>
       {section.map((item: NavigationSectionItem) => {
-        let flatItem: NavigationSectionItem = { ...item, isDone: false };
-        for (let i: number = 0; i < flatSections.length; i++) {
-          if (flatSections[i].slug === item.slug) {
-            flatItem = flatSections[i];
-            break;
-          }
-        }
+        const flatItem: NavigationSectionItem = flatSections.find(
+          (flatSection: NavigationSectionItem) => flatSection.slug === item.slug
+        ) || { ...item, isDone: false };
 
         return (
           <NavigationItem

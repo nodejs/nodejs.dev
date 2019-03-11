@@ -22,13 +22,9 @@ const Navigation = ({ sections, currentSlug }: Props) => {
     flatSections = [...flatSections, ...sections[sectionKey]];
   });
 
-  let currentSlugIndex: number = -1;
-  for (let i: number = 0; i < flatSections.length; i++) {
-    if (flatSections[i].slug === currentSlug) {
-      currentSlugIndex = i;
-      break;
-    }
-  }
+  const currentSlugIndex: number = flatSections.findIndex(
+    (flatSection: NavigationSectionItem) => flatSection.slug === currentSlug
+  );
 
   flatSections.forEach((item: NavigationSectionItem, index: number) => {
     item.isDone = index < currentSlugIndex;
