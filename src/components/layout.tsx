@@ -36,7 +36,7 @@ const Layout = ({ children, title, description, img }: Props) => {
   const onIntersectionChange = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry: IntersectionObserverEntry) => {
       const element = entry.target as HTMLElement;
-      element.style.color = entry.isIntersecting ? '#000' : '#fff';
+      element.style.color = entry.intersectionRatio > 0.5 ? '#000' : '#fff';
     });
   };
 
