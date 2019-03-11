@@ -896,6 +896,7 @@ details,
 }
 .toc h6 {
   display: inline-block !important;
+  margin: 0;
 }
 .toc a {
   font-family: var(--sans-serif);
