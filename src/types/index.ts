@@ -17,6 +17,7 @@ export interface LearnPageData {
   doc: {
     id: string;
     html: string;
+    tableOfContents: string;
     frontmatter: {
       title: string;
       description: string;

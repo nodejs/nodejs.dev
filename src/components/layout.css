@@ -412,28 +412,22 @@ main {
 .article-reader h5,
 .article-reader h6 {
   font-family: var(--sans-serif);
+  margin-bottom: 0.1rem;
+  position: relative;
+}
+
+.article-reader h1 {
   margin-bottom: 2.8rem;
 }
 
-.hero h1,
-.article-reader h1,
-.article-reader h2,
-.article-reader h3 {
+.hero h1 {
   cursor: pointer;
 }
 
-.hero h1::before,
-.article-reader h1::before,
-.article-reader h2::before,
-.article-reader h3::before {
-  color: var(--orange3);
-  content: "#";
-  display: inline-block;
-  font-weight: 800;
-  margin-left: -4.2rem;
-  padding-right: 1.2rem;
-  text-align: right;
-  width: 3.0rem;
+.article-reader h2,
+.article-reader h3 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.1rem;
 }
 
 .article-reader h1 { font-size: 4.8rem; }
@@ -527,4 +521,32 @@ main {
   position: absolute;
   top: 2000px;
   width: 3px;
+}
+
+/* TOC */
+details,
+.toc {
+  cursor: pointer;
+}
+.toc h6 {
+  display: inline-block;
+  margin: 0;
+}
+.toc a {
+  font-family: var(--sans-serif);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--gray3);
+}
+
+.toc li p {
+  margin: 0;
+}
+
+/* 3rd Party plugin styles. */
+/* Styles for gatsby-remark-autolink-headers plugin*/
+
+.autolink-headers {
+  position: absolute;
+  left: -4px;
+  fill: var(--green8);
 }

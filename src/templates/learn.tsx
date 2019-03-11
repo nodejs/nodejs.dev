@@ -1,10 +1,10 @@
-import React from 'react';
 import { graphql } from 'gatsby';
-import { LearnPageData, LearnPageContext } from '../types';
-import Layout from '../components/layout';
-import Hero from '../components/hero';
+import React from 'react';
 import Article from '../components/article';
+import Hero from '../components/hero';
+import Layout from '../components/layout';
 import Navigation from '../components/navigation';
+import { LearnPageContext, LearnPageData } from '../types';
 
 type Props = {
   data: LearnPageData;
@@ -16,6 +16,7 @@ export default ({
     doc: {
       frontmatter: { title, description },
       html,
+      tableOfContents,
       fields: { authors },
     },
   },
@@ -28,6 +29,7 @@ export default ({
       <Article
         title={title}
         html={html}
+        tableOfContents={tableOfContents}
         next={next}
         authors={authors}
         previous={previous}
@@ -42,6 +44,7 @@ export const query = graphql`
     doc: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      tableOfContents
       frontmatter {
         title
         description

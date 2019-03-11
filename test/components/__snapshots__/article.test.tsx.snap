@@ -9,6 +9,9 @@ exports[`Article component renders correctly 1`] = `
   >
     test-title
   </h1>
+  <TOC
+    heading="TABLE OF CONTENTS"
+  />
   <div
     dangerouslySetInnerHTML={
       Object {
