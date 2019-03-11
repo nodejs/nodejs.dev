@@ -895,7 +895,7 @@ details,
   cursor: pointer;
 }
 .toc h6 {
-  display: inline-block !important;
+  display: inline-block;
   margin: 0;
 }
 .toc a {
