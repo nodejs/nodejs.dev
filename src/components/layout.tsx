@@ -14,7 +14,7 @@ type Props = {
 };
 
 const Layout = ({ children, title, description, img }: Props) => {
-  const prevOffset = useRef(-1);
+  const prevOffset = useRef<number>(-1);
 
   useEffect(() => {
     if ('IntersectionObserver' in window) {
