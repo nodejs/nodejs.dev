@@ -48,7 +48,7 @@
     "jest": "jest",
     "test": "yarn run jest && yarn run format-check && yarn run tslint",
     "tslint": "tslint --project ./tsconfig.json",
-    "serve": "npm run build && clear && gatsby serve"
+    "serve": "yarn run build && clear && gatsby serve"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
