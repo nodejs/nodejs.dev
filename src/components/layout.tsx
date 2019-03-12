@@ -77,7 +77,7 @@ const Layout = ({ children, title, description, img }: Props) => {
           }
         }
       `;
-      css.appendChild(document.createTextNode(styles));
+      css.appendChild(doc.createTextNode(styles));
       doc.getElementsByTagName('head')[0].appendChild(css);
     }
   };
