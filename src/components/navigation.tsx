@@ -18,7 +18,7 @@ const Navigation = ({ sections, currentSlug }: Props) => {
   };
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
   let flatSections: NavigationSectionItem[] = [];
-  Object.keys(sections).map((sectionKey: string) => {
+  Object.keys(sections).forEach((sectionKey: string) => {
     flatSections = [...flatSections, ...sections[sectionKey]];
   });
 
