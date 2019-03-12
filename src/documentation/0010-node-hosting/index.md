@@ -81,8 +81,11 @@ They have a good [Node.js Documentation Section](https://cloud.google.com/node/)
 In this section you find the usual suspects, ordered from more user friendly to less user friendly:
 
 - [Digital Ocean](https://www.digitalocean.com)
+  - [DigitalOcean Guide: How to setup a NodeJS Application](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04) 
 - [Linode](https://www.linode.com/)
+  - [NodeJS tutorials from Linode](https://www.linode.com/docs/development/nodejs/)
 - [Amazon Web Services](https://aws.amazon.com)
+  - [Deploy a NodeJS WebApp on AWS](https://aws.amazon.com/en/getting-started/projects/deploy-nodejs-web-app/)
 
 Since they provide an empty Linux machine on which you can work, there is no specific tutorial for these.
 
