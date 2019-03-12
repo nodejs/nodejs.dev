@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import NavigationSection from './navigation-section';
-import { NavigationSectionData } from '../types';
+import { NavigationSectionData, NavigationSectionItem } from '../types';
 import { isSmallScreen } from '../util/isSmallScreen';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Navigation = ({ sections, currentSlug }: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggle = () => setIsOpen(!isOpen);
   const onItemClick = () => {
     if (isSmallScreen()) {
@@ -17,19 +17,32 @@ const Navigation = ({ sections, currentSlug }: Props) => {
     }
   };
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
+  let flatSections: NavigationSectionItem[] = [];
+  Object.keys(sections).forEach((sectionKey: string) => {
+    flatSections = [...flatSections, ...sections[sectionKey]];
+  });
+
+  const currentSlugIndex: number = flatSections.findIndex(
+    (flatSection: NavigationSectionItem) => flatSection.slug === currentSlug
+  );
+
+  flatSections.forEach((item: NavigationSectionItem, index: number) => {
+    item.isDone = index < currentSlugIndex;
+  });
 
   return (
     <nav className={className}>
       <button className="side-nav__open" onClick={toggle}>
         Menu
       </button>
-      {Object.keys(sections).map(section => (
+      {Object.keys(sections).map((sectionKey: string) => (
         <NavigationSection
-          key={section}
-          title={section}
-          section={sections[section]}
+          key={sectionKey}
+          title={sectionKey}
+          section={sections[sectionKey]}
           currentSlug={currentSlug}
           onItemClick={onItemClick}
+          flatSections={flatSections}
         />
       ))}
     </nav>

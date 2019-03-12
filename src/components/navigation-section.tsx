@@ -8,6 +8,7 @@ type Props = {
   section: NavigationItemList;
   currentSlug: string;
   onItemClick: () => void;
+  flatSections: NavigationSectionItem[];
 };
 
 const NavigationSection = ({
@@ -15,44 +16,29 @@ const NavigationSection = ({
   section,
   currentSlug,
   onItemClick,
+  flatSections,
 }: Props) => {
   return (
     <ul className="side-nav__list">
       <h2 className="side-nav__title">{title}</h2>
       {section.map((item: NavigationSectionItem) => {
+        const flatItem: NavigationSectionItem = flatSections.find(
+          (flatSection: NavigationSectionItem) => flatSection.slug === item.slug
+        ) || { ...item, isDone: false };
+
         return (
           <NavigationItem
             key={item.slug}
             title={item.title}
             slug={item.slug}
-            isDone={isDone(currentSlug, item.slug, section)}
+            isDone={flatItem.isDone}
             isActive={item.slug === currentSlug}
-            onClick={() => onItemClick}
+            onClick={onItemClick}
           />
         );
       })}
     </ul>
   );
-};
-
-const isDone = (
-  currentSlug: string,
-  requestedSlug: string,
-  section: NavigationItemList
-): boolean => {
-  let currentSlugIndex: number = 0;
-  let requestedSlugIndex: number = 0;
-  section.forEach((navigationItem, index) => {
-    if (navigationItem.slug === currentSlug) {
-      currentSlugIndex = index;
-    }
-
-    if (navigationItem.slug === requestedSlug) {
-      requestedSlugIndex = index;
-    }
-  });
-
-  return currentSlugIndex > requestedSlugIndex;
 };
 
 export default NavigationSection;
