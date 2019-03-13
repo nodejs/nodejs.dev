@@ -30,11 +30,7 @@ const Layout = ({ children, title, description, img }: Props) => {
     const root = document.querySelector(
       `${isScreenWithinWidth(720) ? '.side-nav::before' : '.side-nav'}`
     );
-    const options = {
-      root,
-      threshold: 0.5,
-      rootMargin: '-93px 0px 0px 0px',
-    };
+    const options = { root, threshold: 0.5, rootMargin: '-93px 0px 0px 0px' };
     const observer = new IntersectionObserver(onIntersectionChange, options);
     const targets = document.querySelectorAll('.side-nav__title');
     targets.forEach((target: Element) => observer.observe(target));
