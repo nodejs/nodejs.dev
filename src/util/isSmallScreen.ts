@@ -4,7 +4,7 @@
  */
 export const MAX_SMALL_SCREEN_WIDTH = 1262;
 
-export const isSmallScreen = () => {
+export const isScreenWithinWidth = (maxWidth: number): boolean => {
   // Get viewport width
   // Source - https://stackoverflow.com/a/8876069/2621400
   const w = Math.max(
@@ -12,5 +12,8 @@ export const isSmallScreen = () => {
     window.innerWidth || 0
   );
 
-  return w <= MAX_SMALL_SCREEN_WIDTH;
+  return w <= maxWidth;
 };
+
+export const isSmallScreen = (): boolean =>
+  isScreenWithinWidth(MAX_SMALL_SCREEN_WIDTH);

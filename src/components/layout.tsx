@@ -5,6 +5,7 @@ import Header from './header';
 import './layout.css';
 import './mobile.css';
 import SEO from './seo';
+import { isScreenWithinWidth } from '../util/isSmallScreen';
 
 type Props = {
   children: React.ReactNode;
@@ -26,8 +27,14 @@ const Layout = ({ children, title, description, img }: Props) => {
   });
 
   const setupObserver = () => {
-    const root = document.querySelector('.side-nav');
-    const options = { root, threshold: 0.5, rootMargin: '-93px 0px 0px 0px' };
+    const root = document.querySelector(
+      `${isScreenWithinWidth(720) ? '.side-nav::before' : '.side-nav'}`
+    );
+    const options = {
+      root,
+      threshold: 0.5,
+      rootMargin: '-93px 0px 0px 0px',
+    };
     const observer = new IntersectionObserver(onIntersectionChange, options);
     const targets = document.querySelectorAll('.side-nav__title');
     targets.forEach((target: Element) => observer.observe(target));
