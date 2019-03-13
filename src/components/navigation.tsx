@@ -18,16 +18,21 @@ const Navigation = ({ sections, currentSlug }: Props) => {
   };
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
 
-  const readStatus: Map<NavigationSectionItem['slug'], boolean> = new Map();
-  // Mark section items as read up to the one currently open
-  let isRead: boolean = true;
-  Object.keys(sections).forEach(sectionKey => {
-    sections[sectionKey].forEach(sectionItem => {
-      if (sectionItem.slug === currentSlug) {
-        isRead = false;
+  const readSections: Set<NavigationSectionItem['slug']> = new Set();
+  // Assume section items up to the one currently open have been read. Track
+  // their unique slugs in `readSections` set.
+  Object.keys(sections).some(sectionKey => {
+    let isCurrentSlug: boolean = false;
+    sections[sectionKey].some(sectionItem => {
+      isCurrentSlug = sectionItem.slug === currentSlug;
+      if (!isCurrentSlug) {
+        readSections.add(sectionItem.slug);
       }
-      readStatus.set(sectionItem.slug, isRead);
+
+      return isCurrentSlug;
     });
+
+    return isCurrentSlug;
   });
 
   return (
@@ -42,7 +47,7 @@ const Navigation = ({ sections, currentSlug }: Props) => {
           section={sections[sectionKey]}
           currentSlug={currentSlug}
           onItemClick={onItemClick}
-          readStatus={readStatus}
+          readSections={readSections}
         />
       ))}
     </nav>

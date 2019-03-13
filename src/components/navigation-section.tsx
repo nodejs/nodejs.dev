@@ -8,7 +8,7 @@ type Props = {
   section: NavigationSectionItem[];
   currentSlug: string;
   onItemClick: () => void;
-  readStatus: Map<NavigationSectionItem['slug'], boolean>;
+  readSections: Set<NavigationSectionItem['slug']>;
 };
 
 const NavigationSection = ({
@@ -16,13 +16,13 @@ const NavigationSection = ({
   section,
   currentSlug,
   onItemClick,
-  readStatus,
+  readSections,
 }: Props) => {
   return (
     <ul className="side-nav__list">
       <h2 className="side-nav__title">{title}</h2>
       {section.map((item: NavigationSectionItem) => {
-        const isRead: boolean = readStatus.get(item.slug) || false;
+        const isRead: boolean = readSections.has(item.slug);
 
         return (
           <NavigationItem
