@@ -247,6 +247,19 @@ main {
   transition: color 0.28s;
 }
 
+[data-browser=legacy] .side-nav__title {
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 49%, rgba(255, 255, 255, 1) 51%);
+  background-position: 0 calc(-50vh + var(--magic-hero-number));
+  background-size: 100% 100vh;
+  color: white;
+  filter: opacity(0.9);
+  -webkit-text-fill-color: transparent;
+  will-change: background-position;
+}
+
 .side-nav__list {
   margin: 0;
   padding: 0;

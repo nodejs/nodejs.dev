@@ -150,6 +150,10 @@
     top: calc(var(--nav-height) + 12px);
   }
 
+  [data-browser=legacy] .side-nav__title {
+    background-position: 0 calc(-50vh + var(--magic-hero-number) - 32px);
+  }
+
   .article-reader {
     width: 100%;
     padding: 0 1.0rem;
