@@ -244,6 +244,7 @@ main {
   position: sticky;
   top: 2.8rem;
   z-index: 999;
+  transition: color 0.28s;
 }
 
 .side-nav__list {
