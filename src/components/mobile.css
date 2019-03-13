@@ -113,7 +113,7 @@
   }
 
   .side-nav::before {
-    width: 100%;
+    width: 110%;
   }
 
   .side-nav.side-nav--open {
