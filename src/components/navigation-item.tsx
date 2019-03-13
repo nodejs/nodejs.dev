@@ -35,7 +35,7 @@ const NavigationItem = ({ isRead, isActive, slug, title, onClick }: Props) => {
 
   return (
     <Link
-      ref={handleRef}
+      innerRef={handleRef}
       to={`/${slug}`}
       onClick={onClick}
       className={className}
