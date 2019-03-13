@@ -19,17 +19,17 @@ const Navigation = ({ sections, currentSlug }: Props) => {
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
 
   const readStatus: Map<NavigationSectionItem['slug'], boolean> = new Map();
-  // Set status flag as read for section items till the one currently open
-  let isRead = true;
-  Object.keys(sections).forEach((sectionKey: string) => {
+  const sectionKeys = Object.keys(sections);
+  let isCurrentSlugTraversed = false;
+  sectionKeys.forEach(sectionKey => {
     const sectionData = sections[sectionKey];
-    sectionData.forEach(section => {
-      // Set status flag as unread for section items starting from the one currently open
-      if (isRead && section.slug === currentSlug) {
-        isRead = false;
+    sectionData.forEach(sectionItem => {
+      // Mark section items as read up to the one currently open
+      if (sectionItem.slug === currentSlug) {
+        isCurrentSlugTraversed = true;
       }
-      // Mark section items as read or unread using the flag
-      readStatus.set(section.slug, isRead);
+      const isRead = !isCurrentSlugTraversed;
+      readStatus.set(sectionItem.slug, isRead);
     });
   });
 
