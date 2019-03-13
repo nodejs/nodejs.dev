@@ -20,7 +20,7 @@ const Navigation = ({ sections, currentSlug }: Props) => {
 
   const readStatus: Map<NavigationSectionItem['slug'], boolean> = new Map();
   // Mark section items as read up to the one currently open
-  let isRead = true;
+  let isRead: boolean = true;
   Object.keys(sections).forEach(sectionKey => {
     sections[sectionKey].forEach(sectionItem => {
       if (sectionItem.slug === currentSlug) {
