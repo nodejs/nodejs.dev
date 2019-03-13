@@ -17,17 +17,20 @@ const Navigation = ({ sections, currentSlug }: Props) => {
     }
   };
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
-  let flatSections: NavigationSectionItem[] = [];
+
+  const readStatus: Map<NavigationSectionItem['slug'], boolean> = new Map();
+  // Set status flag as read for section items till the one currently open
+  let isRead = true;
   Object.keys(sections).forEach((sectionKey: string) => {
-    flatSections = [...flatSections, ...sections[sectionKey]];
-  });
-
-  const currentSlugIndex: number = flatSections.findIndex(
-    (flatSection: NavigationSectionItem) => flatSection.slug === currentSlug
-  );
-
-  flatSections.forEach((item: NavigationSectionItem, index: number) => {
-    item.isDone = index < currentSlugIndex;
+    const sectionData = sections[sectionKey];
+    sectionData.forEach(section => {
+      // Set status flag as unread for section items starting from the one currently open
+      if (isRead && section.slug === currentSlug) {
+        isRead = false;
+      }
+      // Mark section items as read or unread using the flag
+      readStatus.set(section.slug, isRead);
+    });
   });
 
   return (
@@ -42,7 +45,7 @@ const Navigation = ({ sections, currentSlug }: Props) => {
           section={sections[sectionKey]}
           currentSlug={currentSlug}
           onItemClick={onItemClick}
-          flatSections={flatSections}
+          readStatus={readStatus}
         />
       ))}
     </nav>

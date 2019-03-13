@@ -3,14 +3,14 @@ import { Link } from 'gatsby';
 
 type Props = {
   key: string;
-  isDone: boolean;
+  isRead: boolean;
   isActive: boolean;
   slug: string;
   title: string;
   onClick: () => void;
 };
 
-const NavigationItem = ({ isDone, isActive, slug, title, onClick }: Props) => {
+const NavigationItem = ({ isRead, isActive, slug, title, onClick }: Props) => {
   const element = useRef<HTMLAnchorElement | null>(null);
 
   const handleRef = (ref?: HTMLAnchorElement | null) => {
@@ -27,7 +27,7 @@ const NavigationItem = ({ isDone, isActive, slug, title, onClick }: Props) => {
   });
 
   let className = 'side-nav__item ';
-  if (isDone) {
+  if (isRead) {
     className += 'side-nav__item--done';
   } else if (isActive) {
     className += 'side-nav__item--active';
