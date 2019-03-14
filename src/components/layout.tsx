@@ -36,7 +36,7 @@ const Layout = ({ children, title, description, img }: Props) => {
   const onIntersectionChange = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry: IntersectionObserverEntry) => {
       const element = entry.target as HTMLElement;
-      element.style.color = entry.isIntersecting ? '#000' : '#fff';
+      element.style.color = entry.intersectionRatio > 0.5 ? '#000' : '#fff';
     });
   };
 
@@ -45,6 +45,9 @@ const Layout = ({ children, title, description, img }: Props) => {
       return;
     } // Guard for SSR.
     const doc = window.document;
+    if (!doc.body.dataset.browser) {
+      doc.body.dataset.browser = 'legacy';
+    }
     const offset = Math.min(doc.scrollingElement!.scrollTop - 62, 210);
     if (Math.abs(prevOffset.current - offset) > 5) {
       prevOffset.current = offset;
