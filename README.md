@@ -22,6 +22,8 @@
   <br>
 </p>
 
+**Watch this repo and [nodejs/website-redesign](https://github.com/nodejs/website-redesign/). This repo is a codebase for the initiative. Ongoing work is also happening in the administrative/planning repo at [nodejs/website-redesign](https://github.com/nodejs/website-redesign/).**
+
 ## 🚀 Get Started
 
 1.  **Install Yarn (if Yarn Package Manager is not available on your machine).**
