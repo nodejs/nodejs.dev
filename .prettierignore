@@ -1,4 +1,5 @@
 .cache/
 .github/
+.history/
 public/
 coverage/

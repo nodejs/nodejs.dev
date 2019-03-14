@@ -5,13 +5,6 @@ export interface LearnPageContext {
   previous: PaginationInfo;
   navigationData: NavigationSectionData;
 }
-export interface PaginationInfo {
-  slug: string;
-  title: string;
-}
-export interface NavigationSectionData {
-  [index: string]: NavigationItemList;
-}
 
 export interface LearnPageData {
   doc: {
@@ -28,11 +21,17 @@ export interface LearnPageData {
   };
 }
 
-export type NavigationItemList = NavigationSectionItem[];
+export interface PaginationInfo {
+  slug: string;
+  title: string;
+}
 
 export interface NavigationSectionItem {
-  isDone: boolean;
   slug: string;
   title: string;
   section: string;
+}
+
+export interface NavigationSectionData {
+  [index: string]: NavigationSectionItem[];
 }

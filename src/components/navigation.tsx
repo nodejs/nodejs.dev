@@ -17,17 +17,22 @@ const Navigation = ({ sections, currentSlug }: Props) => {
     }
   };
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
-  let flatSections: NavigationSectionItem[] = [];
-  Object.keys(sections).forEach((sectionKey: string) => {
-    flatSections = [...flatSections, ...sections[sectionKey]];
-  });
 
-  const currentSlugIndex: number = flatSections.findIndex(
-    (flatSection: NavigationSectionItem) => flatSection.slug === currentSlug
-  );
+  const readSections: Set<NavigationSectionItem['slug']> = new Set();
+  // Assume section items up to the one currently open have been read. Track
+  // their unique slugs in `readSections` set.
+  Object.keys(sections).some(sectionKey => {
+    let isCurrentSlug: boolean = false;
+    sections[sectionKey].some(sectionItem => {
+      isCurrentSlug = sectionItem.slug === currentSlug;
+      if (!isCurrentSlug) {
+        readSections.add(sectionItem.slug);
+      }
 
-  flatSections.forEach((item: NavigationSectionItem, index: number) => {
-    item.isDone = index < currentSlugIndex;
+      return isCurrentSlug;
+    });
+
+    return isCurrentSlug;
   });
 
   return (
@@ -42,7 +47,7 @@ const Navigation = ({ sections, currentSlug }: Props) => {
           section={sections[sectionKey]}
           currentSlug={currentSlug}
           onItemClick={onItemClick}
-          flatSections={flatSections}
+          readSections={readSections}
         />
       ))}
     </nav>

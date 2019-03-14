@@ -1,14 +1,14 @@
 import React from 'react';
-import { NavigationItemList, NavigationSectionItem } from '../types';
+import { NavigationSectionItem } from '../types';
 import NavigationItem from './navigation-item';
 
 type Props = {
   key: string;
   title: string;
-  section: NavigationItemList;
+  section: NavigationSectionItem[];
   currentSlug: string;
   onItemClick: () => void;
-  flatSections: NavigationSectionItem[];
+  readSections: Set<NavigationSectionItem['slug']>;
 };
 
 const NavigationSection = ({
@@ -16,22 +16,20 @@ const NavigationSection = ({
   section,
   currentSlug,
   onItemClick,
-  flatSections,
+  readSections,
 }: Props) => {
   return (
     <ul className="side-nav__list">
       <h2 className="side-nav__title">{title}</h2>
       {section.map((item: NavigationSectionItem) => {
-        const flatItem: NavigationSectionItem = flatSections.find(
-          (flatSection: NavigationSectionItem) => flatSection.slug === item.slug
-        ) || { ...item, isDone: false };
+        const isRead: boolean = readSections.has(item.slug);
 
         return (
           <NavigationItem
             key={item.slug}
             title={item.title}
             slug={item.slug}
-            isDone={flatItem.isDone}
+            isRead={isRead}
             isActive={item.slug === currentSlug}
             onClick={onItemClick}
           />
