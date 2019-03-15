@@ -393,9 +393,26 @@ main {
   font-weight: 400;
   line-height: 1.58;
   letter-spacing: -.003em;
-  max-width: 768px;
   padding-left: 4.2rem;
-  width: calc(100% - 36.0rem);
+}
+
+.article-reader__inner{
+    max-width: 768px;
+    width: calc(100% - 36.0rem);
+}
+
+@media(min-width:1263px){
+  .article-reader{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .article-reader__inner{
+    flex: 1;
+  }
+  .toc{
+    width: 420px;
+  }
 }
 
 /* sr-only for desktop */
