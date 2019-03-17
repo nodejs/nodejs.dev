@@ -1,59 +1,29 @@
 ---
 title: Introduction to Node.js
-description: "This post is a getting started guide to Node.js, the server-side JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to that"
+description: "Getting started guide to Node.js, the server-side JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to just that."
 authors: flaviocopes
 section: Quick Start
 ---
 
-## Overview
-
 Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!
 
-## The best features of Node.js
+Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. Node.js is able to leverage the work of the engineers that made (and continue to make) the Chrome JavaScript runtime blazing fast, and this allows Node.js to benefit from the substantial performance improvements and the Just-In-Time compilation that V8 performs. Thanks to this, JavaScript code running in Node.js can become very performant.
 
-### Fast
+A Node.js app is run in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.
 
-![Fast](fast.png)
+When Node.js needs to perform an I/O operation, like reading from the network, accessing a database or the filesystem, instead of blocking the thread and wasting CPU cycles waiting, Node.js will resume the operations when the response comes back.
 
-One of the main selling points of Node.js is **speed**. JavaScript code running on Node.js (depending on the benchmark) can be twice as fast than compiled languages like C or Java, and orders of magnitude faster than interpreted languages like Python or Ruby, because of its non-blocking paradigm.
+This allows Node.js to handle thousands of concurrent connections with a single server without introducing the burden of managing thread concurrency, which could be a significant source of bugs.
 
-### Simple
+Node.js has a unique advantage because millions of frontend developers that write JavaScript for the browser are now able to write the server-side code in addition to the client-side code without the need to learn a completely different language.
 
-Node.js is simple. Extremely simple, actually.
+In Node.js the new ECMAScript standards can be used without problems, as you don't have to wait for all your users to update their browsers - you are in charge of deciding which ECMAScript version to use by changing the Node.js version, and you can also enable specific experimental features by running Node.js with flags.
 
-### JavaScript
+### A Vast Number of Libraries
 
-Node.js runs JavaScript code. This means that millions of frontend developers that already use JavaScript in the browser are able to run the server-side code and frontend-side code using the same programming language without the need to learn a completely different tool.
+npm with its simple structure helped the ecosystem of node.js proliferate, and now the npm registry hosts almost 500,000 open source packages you can freely use.
 
-The paradigms are all the same, and in Node.js the new ECMAScript standards can be used first, as you don't have to wait for all your users to update their browsers - you decide which ECMAScript version to use by changing the Node.js version.
-
-### V8
-
-Running on the Google V8 JavaScript engine, which is Open Source, Node.js is able to leverage the work of thousands of engineers that made (and will continue to make) the Chrome JavaScript runtime blazing fast.
-
-### Asynchronous platform
-
-![Async](async.png)
-
-In traditional programming languages (C, Java, Python, PHP) all instructions are blocking by default unless you explicitly "opt in" to perform asynchronous operations. If you perform a network request to read some JSON, the execution of that particular thread is blocked until the response is ready.
-
-**JavaScript allows to create asynchronous and non-blocking code in a very simple way**, by using a **single thread**, **callback functions** and **event-driven programming**. Every time an expensive operation occurs, we pass a callback function that will be called once we can continue with the processing. We're not waiting for that to finish before going on with the rest of the program.
-
-Such mechanism derives from the browser. We can't wait until something loads from an AJAX request before being able to intercept click events on the page. **It all must happen in real time** to provide a good experience to the user.
-
-> If you've created an onclick handler for a web page you've already used asynchronous programming techniques with event listeners.
-
-This allows Node.js to handle thousands of concurrent connections with a single server without introducing the burden of managing threads concurrency, which would be a major source of bugs.
-
-Node.js provides non-blocking I/O primitives, and generally, libraries in Node.js are written using non-blocking paradigms, making a blocking behavior an exception rather than the normal.
-
-When Node.js needs to perform an I/O operation, like reading from the network, access a database or the filesystem, instead of blocking the thread Node.js will simply resume the operations when the response comes back, instead of wasting CPU cycles waiting.
-
-### A huge number of libraries
-
-npm with its simple structure helped the ecosystem of node.js proliferate and now the npm registry hosts almost 500,000 open source packages you can freely use.
-
-## An example Node.js application
+## An Example Node.js Application
 
 The most common example Hello World of Node.js is a web server:
 
@@ -85,7 +55,7 @@ To run this snippet, save it as a `server.js` file and run `node server.js` in y
 
 This code first includes the Node.js [`http` module](https://nodejs.org/api/http.html).
 
-Node.js has an amazing [standard library](https://nodejs.org/api/), including a first-class support for networking.
+Node.js has a fantastic [standard library](https://nodejs.org/api/), including first-class support for networking.
 
 The `createServer()` method of `http` creates a new HTTP server and returns it.
 
@@ -119,7 +89,7 @@ and we end close the response, adding the content as an argument to `end()`:
 res.end('Hello World\n')
 ```
 
-## Node.js frameworks and tools
+## Node.js Frameworks and Tools
 
 Node.js is a low-level platform, and to make things easier and more interesting for developers thousands of libraries were built upon Node.js.
 
