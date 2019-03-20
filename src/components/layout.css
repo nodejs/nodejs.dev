@@ -263,6 +263,7 @@ main {
 .side-nav__list {
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .side-nav__item {
@@ -562,5 +563,24 @@ details,
 .autolink-headers {
   position: absolute;
   left: -4px;
-  fill: var(--green8);
+  fill: var(--orange3);
+}
+
+/* IntersectionObserver DOM API related styles */
+/* Sentinels - waypoints for figuring out scroll position */
+
+.sticky-sentinel {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.sticky-sentinel--top {
+  height: 40px;
+  top: -24px;
+}
+
+.sticky-sentinel--bottom {
+  height: 40px;
+  bottom: 0;
 }
