@@ -117,7 +117,7 @@
   }
 
   .side-nav.side-nav--open {
-    max-height: 3250px; /* TODO: Magic number. Get programmatically based on content. */
+    max-height: 100%;
     overflow: visible;
     position: static;
   }
