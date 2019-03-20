@@ -35,3 +35,19 @@ export interface NavigationSectionItem {
 export interface NavigationSectionData {
   [index: string]: NavigationSectionItem[];
 }
+
+/**
+ * Payload on the `stickychange` custom event
+ */
+export interface StickyChange {
+  stuck: boolean;
+  target: HTMLElement;
+}
+
+export interface SentinelObserverSetupOptions {
+  container: HTMLElement;
+  stickyElementsClassName: string;
+  root: HTMLElement | null;
+  headerRootMargin?: string;
+  footerRootMargin?: string;
+}
