@@ -52,7 +52,7 @@ const Layout = ({ children, title, description, img }: Props) => {
       detail,
     }: CustomEvent<StickyChange>) => {
       const { target, stuck } = detail;
-      // Update sticking header color.
+      // Update sticking header color
       target.style.color = stuck ? '#fff' : '#000';
     }) as EventListener);
   };
