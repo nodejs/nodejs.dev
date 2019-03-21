@@ -59,14 +59,20 @@ const Layout = ({ children, title, description, img }: Props) => {
       // Guard for SSR
       return;
     }
-    const doc = window.document;
+    const doc: Document = window.document;
     if (!doc.body.dataset.browser) {
       doc.body.dataset.browser = 'legacy';
     }
-    const offset = Math.min(doc.scrollingElement!.scrollTop - 62, 210);
-    if (Math.abs(prevOffset.current - offset) > 5) {
-      prevOffset.current = offset;
-      doc.body.setAttribute('style', `--magic-hero-number: ${356 - offset}px`);
+    const scrollingElement: HTMLElement | null = doc.scrollingElement as HTMLElement;
+    if (scrollingElement) {
+      const offset: number = Math.min(scrollingElement.scrollTop - 62, 210);
+      if (Math.abs(prevOffset.current - offset) > 5) {
+        prevOffset.current = offset;
+        doc.body.setAttribute(
+          'style',
+          `--magic-hero-number: ${356 - offset}px`
+        );
+      }
     }
     window.requestAnimationFrame(magicHeroNumber);
   };
