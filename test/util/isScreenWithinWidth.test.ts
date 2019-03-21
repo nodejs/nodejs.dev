@@ -1,30 +1,30 @@
 import {
-  isScreenSmall,
-  isScreenMobile,
+  isSmallScreen,
+  isMobileScreen,
 } from '../../src/util/isScreenWithinWidth';
 
-describe('Tests for isScreenSmall', () => {
+describe('Tests for isSmallScreen', () => {
   it('returns true for small screens', () => {
     // @ts-ignore
     window.innerWidth = 1262;
-    expect(isScreenSmall()).toEqual(true);
+    expect(isSmallScreen()).toEqual(true);
   });
   it('returns false for large screens', () => {
     // @ts-ignore
     window.innerWidth = 1263;
-    expect(isScreenSmall()).toEqual(false);
+    expect(isSmallScreen()).toEqual(false);
   });
 });
 
-describe('Tests for isScreenMobile', () => {
+describe('Tests for isMobileScreen', () => {
   it('returns true for mobile screens', () => {
     // @ts-ignore
     window.innerWidth = 720;
-    expect(isScreenMobile()).toEqual(true);
+    expect(isMobileScreen()).toEqual(true);
   });
   it('returns false for mobile screens', () => {
     // @ts-ignore
     window.innerWidth = 721;
-    expect(isScreenMobile()).toEqual(false);
+    expect(isMobileScreen()).toEqual(false);
   });
 });

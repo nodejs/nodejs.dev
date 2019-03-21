@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavigationSection from './navigation-section';
 import { NavigationSectionData, NavigationSectionItem } from '../types';
-import { isScreenSmall } from '../util/isScreenWithinWidth';
+import { isSmallScreen } from '../util/isScreenWithinWidth';
 
 type Props = {
   sections: NavigationSectionData;
@@ -12,7 +12,7 @@ const Navigation = ({ sections, currentSlug }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggle = () => setIsOpen(!isOpen);
   const onItemClick = () => {
-    if (isScreenSmall()) {
+    if (isSmallScreen()) {
       toggle();
     }
   };

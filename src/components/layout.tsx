@@ -5,7 +5,7 @@ import Header from './header';
 import './layout.css';
 import './mobile.css';
 import SEO from './seo';
-import { isScreenMobile } from '../util/isScreenWithinWidth';
+import { isMobileScreen } from '../util/isScreenWithinWidth';
 import { notifyWhenStickyHeadersChange } from '../util/notifyWhenStickyHeadersChange';
 import { StickyChange, SentinelObserverSetupOptions } from '../types';
 
@@ -31,7 +31,7 @@ const Layout = ({ children, title, description, img }: Props) => {
   const setupObserver = (): void => {
     const container = document.querySelector('.side-nav') as HTMLElement;
     const stickyElementsClassName = 'side-nav__title';
-    const root = isScreenMobile() ? null : container;
+    const root = isMobileScreen() ? null : container;
     const headerRootMargin = '-93px 0px 0px 0px';
     const setupOptions: SentinelObserverSetupOptions = {
       container,

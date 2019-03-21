@@ -17,7 +17,7 @@ const isScreenWithinWidth = (maxWidth: number): boolean => {
   return w <= maxWidth;
 };
 
-export const isScreenSmall = () => isScreenWithinWidth(MAX_SMALL_SCREEN_WIDTH);
+export const isSmallScreen = () => isScreenWithinWidth(MAX_SMALL_SCREEN_WIDTH);
 
-export const isScreenMobile = () =>
+export const isMobileScreen = () =>
   isScreenWithinWidth(MAX_MOBILE_SCREEN_WIDTH);
