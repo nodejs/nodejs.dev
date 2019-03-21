@@ -566,7 +566,7 @@ details,
   fill: var(--orange3);
 }
 
-/* IntersectionObserver DOM API related styles */
+/* IntersectionObserver related styles */
 /* Sentinels - waypoints for figuring out scroll position */
 
 .sticky-sentinel {
