@@ -47,7 +47,7 @@ export interface StickyChange {
 export interface SentinelObserverSetupOptions {
   container: HTMLElement;
   stickyElementsClassName: string;
-  root: HTMLElement | null;
+  root?: HTMLElement | null;
   headerRootMargin?: string;
   footerRootMargin?: string;
 }

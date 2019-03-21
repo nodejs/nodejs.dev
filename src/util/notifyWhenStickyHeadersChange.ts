@@ -71,7 +71,7 @@ const observeTopSentinels = ({
     {
       rootMargin: headerRootMargin || '0px',
       threshold: [0],
-      root,
+      root: root || container,
     }
   );
 
@@ -131,7 +131,7 @@ const observeBottomSentinels = ({
       rootMargin: footerRootMargin || '0px',
       // Get callback slightly before element is 100% visible/invisible
       threshold: [1],
-      root,
+      root: root || container,
     }
   );
 
