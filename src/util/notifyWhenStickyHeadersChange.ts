@@ -20,15 +20,20 @@ const addSentinels = (
   stickyElementsClassName: string,
   className: string
 ): HTMLDivElement[] => {
-  return Array.from(
+  const stickyElements: HTMLElement[] = Array.from(
     container.querySelectorAll(`.${stickyElementsClassName}`)
-  ).map(stickyElement => {
-    const sentinel = document.createElement('div');
-    sentinel.classList.add('sticky-sentinel', className);
-    const parentElement = stickyElement.parentElement!;
+  ) as HTMLElement[];
+  const sentinels: HTMLDivElement[] = stickyElements.map(
+    (stickyElement: HTMLElement) => {
+      const sentinel: HTMLDivElement = document.createElement('div');
+      sentinel.classList.add('sticky-sentinel', className);
+      const parentElement: HTMLElement = stickyElement.parentElement!;
 
-    return parentElement && parentElement.appendChild(sentinel);
-  });
+      return parentElement.appendChild(sentinel);
+    }
+  );
+
+  return sentinels;
 };
 
 /**
@@ -41,47 +46,50 @@ const observeTopSentinels = ({
   root,
   headerRootMargin,
 }: SentinelObserverSetupOptions): void => {
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        const targetBoundsInfo = entry.boundingClientRect;
-        const targetParentElement = entry.target.parentElement;
-        const stickyElement =
-          targetParentElement &&
-          (targetParentElement.querySelector(
-            `.${stickyElementsClassName}`
-          ) as HTMLElement);
-        const rootBoundsInfo = entry.rootBounds;
+  const callback: IntersectionObserverCallback = (
+    entries: IntersectionObserverEntry[]
+  ) => {
+    entries.forEach((entry: IntersectionObserverEntry) => {
+      const targetBoundsInfo: ClientRect = entry.boundingClientRect;
+      const targetParentElement: HTMLElement = entry.target.parentElement!;
+      const stickyElement: HTMLElement = targetParentElement.querySelector(
+        `.${stickyElementsClassName}`
+      )! as HTMLElement;
+      const rootBoundsInfo: ClientRect = entry.rootBounds;
 
-        // Started sticking
-        if (stickyElement && targetBoundsInfo.bottom < rootBoundsInfo.top) {
-          fireStickyChange(true, stickyElement);
-        }
+      // Started sticking
+      if (targetBoundsInfo.bottom < rootBoundsInfo.top) {
+        fireStickyChange(true, stickyElement);
+      }
 
-        // Stopped sticking
-        if (
-          stickyElement &&
-          targetBoundsInfo.bottom >= rootBoundsInfo.top &&
-          targetBoundsInfo.bottom < rootBoundsInfo.bottom
-        ) {
-          fireStickyChange(false, stickyElement);
-        }
-      });
-    },
-    {
-      rootMargin: headerRootMargin || '0px',
-      threshold: [0],
-      root: root || container,
-    }
+      // Stopped sticking
+      if (
+        targetBoundsInfo.bottom >= rootBoundsInfo.top &&
+        targetBoundsInfo.bottom < rootBoundsInfo.bottom
+      ) {
+        fireStickyChange(false, stickyElement);
+      }
+    });
+  };
+  const options: IntersectionObserverInit = {
+    rootMargin: headerRootMargin || '0px',
+    threshold: [0],
+    root: root || container,
+  };
+  const observer: IntersectionObserver = new IntersectionObserver(
+    callback,
+    options
   );
 
   // Add the top sentinels to each section and attach an observer
-  const topSentinels = addSentinels(
+  const topSentinels: HTMLDivElement[] = addSentinels(
     container,
     stickyElementsClassName,
     'sticky-sentinel--top'
   );
-  topSentinels.forEach(sentinel => observer.observe(sentinel));
+  topSentinels.forEach((sentinel: HTMLDivElement) =>
+    observer.observe(sentinel)
+  );
 };
 
 /**
@@ -95,53 +103,52 @@ const observeBottomSentinels = ({
   root,
   footerRootMargin,
 }: SentinelObserverSetupOptions): void => {
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        const targetBoundsInfo = entry.boundingClientRect;
-        const targetParentElement = entry.target.parentElement;
-        const stickyElement =
-          targetParentElement &&
-          (targetParentElement.querySelector(
-            `.${stickyElementsClassName}`
-          ) as HTMLElement);
-        const rootBoundsInfo = entry.rootBounds;
-        const ratio = entry.intersectionRatio;
+  const callback: IntersectionObserverCallback = (
+    entries: IntersectionObserverEntry[]
+  ) => {
+    entries.forEach((entry: IntersectionObserverEntry) => {
+      const targetBoundsInfo: ClientRect = entry.boundingClientRect;
+      const targetParentElement: HTMLElement = entry.target.parentElement!;
+      const stickyElement: HTMLElement = targetParentElement.querySelector(
+        `.${stickyElementsClassName}`
+      )! as HTMLElement;
+      const rootBoundsInfo: ClientRect = entry.rootBounds;
+      const ratio: number = entry.intersectionRatio;
 
-        // Started sticking
-        if (
-          stickyElement &&
-          targetBoundsInfo.bottom > rootBoundsInfo.top &&
-          ratio === 1
-        ) {
-          fireStickyChange(true, stickyElement);
-        }
+      // Started sticking
+      if (targetBoundsInfo.bottom > rootBoundsInfo.top && ratio === 1) {
+        fireStickyChange(true, stickyElement);
+      }
 
-        // Stopped sticking
-        if (
-          stickyElement &&
-          targetBoundsInfo.top < rootBoundsInfo.top &&
-          targetBoundsInfo.bottom < rootBoundsInfo.bottom
-        ) {
-          fireStickyChange(false, stickyElement);
-        }
-      });
-    },
-    {
-      rootMargin: footerRootMargin || '0px',
-      // Get callback slightly before element is 100% visible/invisible
-      threshold: [1],
-      root: root || container,
-    }
+      // Stopped sticking
+      if (
+        targetBoundsInfo.top < rootBoundsInfo.top &&
+        targetBoundsInfo.bottom < rootBoundsInfo.bottom
+      ) {
+        fireStickyChange(false, stickyElement);
+      }
+    });
+  };
+  const options: IntersectionObserverInit = {
+    rootMargin: footerRootMargin || '0px',
+    // Get callback slightly before element is 100% visible/invisible
+    threshold: [1],
+    root: root || container,
+  };
+  const observer: IntersectionObserver = new IntersectionObserver(
+    callback,
+    options
   );
 
   // Add the bottom sentinels to each section and attach an observer
-  const bottomSentinels = addSentinels(
+  const bottomSentinels: HTMLDivElement[] = addSentinels(
     container,
     stickyElementsClassName,
     'sticky-sentinel--bottom'
   );
-  bottomSentinels.forEach(sentinel => observer.observe(sentinel));
+  bottomSentinels.forEach((sentinel: HTMLDivElement) =>
+    observer.observe(sentinel)
+  );
 };
 
 /**

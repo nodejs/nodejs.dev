@@ -29,10 +29,12 @@ const Layout = ({ children, title, description, img }: Props) => {
   });
 
   const setupObserver = (): void => {
-    const container = document.querySelector('.side-nav') as HTMLElement;
-    const stickyElementsClassName = 'side-nav__title';
-    const root = isMobileScreen() ? null : container;
-    const headerRootMargin = '-93px 0px 0px 0px';
+    const container: HTMLElement = document.querySelector(
+      '.side-nav'
+    ) as HTMLElement;
+    const stickyElementsClassName: string = 'side-nav__title';
+    const root: HTMLElement | null = isMobileScreen() ? null : container;
+    const headerRootMargin: string = '-93px 0px 0px 0px';
     const setupOptions: SentinelObserverSetupOptions = {
       container,
       stickyElementsClassName,
@@ -46,7 +48,7 @@ const Layout = ({ children, title, description, img }: Props) => {
     document.addEventListener('stickychange', (({
       detail,
     }: CustomEvent<StickyChange>) => {
-      const { target, stuck } = detail;
+      const { target, stuck }: StickyChange = detail;
       // Update sticking header color
       target.style.color = stuck ? '#fff' : '#000';
     }) as EventListener);
