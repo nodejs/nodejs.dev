@@ -17,12 +17,12 @@ describe('Tests for isSmallScreen', () => {
 });
 
 describe('Tests for isMobileScreen', () => {
-  it('returns true for mobile screens', () => {
+  it('returns true for screens on mobile devices', () => {
     // @ts-ignore
     window.innerWidth = 720;
     expect(isMobileScreen()).toEqual(true);
   });
-  it('returns false for mobile screens', () => {
+  it('returns false for screens larger than on mobile devices', () => {
     // @ts-ignore
     window.innerWidth = 721;
     expect(isMobileScreen()).toEqual(false);
