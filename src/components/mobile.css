@@ -184,7 +184,7 @@
     font-weight: 800;
   }
 
-  /* Place top sentinels higher on mobile */
+  /* Place top sentinels higher up on mobile */
   .sticky-sentinel--top {
     top: -92px;
   }
