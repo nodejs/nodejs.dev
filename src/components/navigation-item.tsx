@@ -8,30 +8,35 @@ type Props = {
   slug: string;
   title: string;
   onClick: () => void;
+  autoScroll: (height: number) => void;
 };
 
-const NavigationItem = ({ isRead, isActive, slug, title, onClick }: Props) => {
-  const element = useRef<HTMLAnchorElement | null>(null);
-
-  const handleRef = (ref?: HTMLAnchorElement | null) => {
-    if (ref && isActive) {
-      element.current = ref;
-    }
-  };
-
-  useEffect(() => {
-    if (element.current) {
-      // TODO: Scroll ref element in to view
-      // maybe use utils/scrollTo
-    }
-  });
-
+const NavigationItem = ({
+  isRead,
+  isActive,
+  slug,
+  title,
+  onClick,
+  autoScroll,
+}: Props) => {
   let className = 'side-nav__item ';
   if (isRead) {
     className += 'side-nav__item--done';
   } else if (isActive) {
     className += 'side-nav__item--active';
   }
+  const element = useRef<HTMLAnchorElement | null>(null);
+  const handleRef = (ref?: HTMLAnchorElement | null) => {
+    if (ref && isActive) {
+      element.current = ref;
+    }
+  };
+  useEffect(() => {
+    if (element.current) {
+      const height = element.current.getBoundingClientRect().top;
+      autoScroll(height);
+    }
+  });
 
   return (
     <Link

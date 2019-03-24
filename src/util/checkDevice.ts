@@ -14,3 +14,7 @@ export const isSmallScreen = () => {
 
   return w <= MAX_SMALL_SCREEN_WIDTH;
 };
+
+export const isMobile = () => {
+  return window.matchMedia('(max-width: 720px)').matches;
+};

@@ -1,3 +1,5 @@
+import { isMobile } from './checkDevice';
+
 const easeInOutCubic = (t: number, b: number, c: number, d: number) =>
   (t /= d / 2) < 1
     ? (c / 2) * t * t * t + b
@@ -5,11 +7,14 @@ const easeInOutCubic = (t: number, b: number, c: number, d: number) =>
 
 export function scrollTo(
   scrollTo: number,
+  element: HTMLElement | null = null,
   duration: number = 333
 ): Promise<boolean> {
   const start =
-    (window.pageYOffset || document.documentElement.scrollTop) -
-    (document.documentElement.clientTop || 0);
+    ((element && element.scrollTop) ||
+      window.pageYOffset ||
+      document.documentElement.scrollTop) -
+    ((element && element.clientTop) || 0);
   const change = scrollTo - start;
   let previousTime = window.performance.now();
   let currentTime = 0;
@@ -20,11 +25,10 @@ export function scrollTo(
       const increment = time - previousTime;
       previousTime = time;
       currentTime += increment;
-      (document.scrollingElement || window).scrollTo(
+      (element || document.scrollingElement || window).scrollTo(
         0,
         easeInOutCubic(currentTime, start, change, duration)
       );
-
       if (currentTime < duration) {
         return window.requestAnimationFrame(animateScroll);
       }
@@ -35,3 +39,34 @@ export function scrollTo(
 
   return ret;
 }
+
+const SPEED_MODIFIER = 0.9;
+const BASE_TIME = 500;
+
+export const calcNavScrollParams = (
+  linkHeight: number,
+  navElement: HTMLElement
+) => {
+  const navRect = navElement.getBoundingClientRect();
+  let newScrollPos: number;
+  let scrollWindow: HTMLElement | null;
+  if (isMobile()) {
+    // phone
+    scrollWindow = null;
+    newScrollPos = linkHeight - window.screen.height / 2;
+  } else {
+    // tablet
+    scrollWindow = navElement;
+    newScrollPos =
+      linkHeight -
+      navRect.top -
+      (navElement.offsetHeight - navElement.offsetTop) / 2;
+  }
+  const scrollTime = newScrollPos * SPEED_MODIFIER + BASE_TIME;
+
+  return {
+    newScrollPos,
+    scrollWindow,
+    scrollTime,
+  };
+};
