@@ -1,4 +1,4 @@
-import { isMobile } from './checkDevice';
+import { isMobile } from './isDevice';
 
 const easeInOutCubic = (t: number, b: number, c: number, d: number) =>
   (t /= d / 2) < 1

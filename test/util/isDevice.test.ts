@@ -1,4 +1,4 @@
-import { isSmallScreen } from '../../src/util/isSmallScreen';
+import { isSmallScreen, isMobile } from '../../src/util/isDevice';
 
 describe('Tests for isSmallScreen', () => {
   it('returns true for small screens', () => {
@@ -12,3 +12,12 @@ describe('Tests for isSmallScreen', () => {
     expect(isSmallScreen()).toEqual(false);
   });
 });
+
+describe('Tests for isMobile', () => {
+  it('returns true for mobile devices', () => {
+    Object.defineProperty(window, 'matchMedia', {
+      value: jest.fn(() => { return { matches: true } })
+    });
+    expect(isMobile()).toEqual(true)
+  });
+})
