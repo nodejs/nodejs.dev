@@ -16,8 +16,10 @@ describe('Tests for isSmallScreen', () => {
 describe('Tests for isMobile', () => {
   it('returns true for mobile devices', () => {
     Object.defineProperty(window, 'matchMedia', {
-      value: jest.fn(() => { return { matches: true } })
+      value: jest.fn(() => {
+        return { matches: true };
+      }),
     });
-    expect(isMobile()).toEqual(true)
+    expect(isMobile()).toEqual(true);
   });
-})
+});

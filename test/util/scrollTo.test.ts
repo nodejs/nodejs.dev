@@ -5,7 +5,9 @@ describe('Tests for calcNavScrollParams', () => {
   const height = 100; // arbritrary
   it('scrollWindow is set null for mobile devices', () => {
     Object.defineProperty(window, 'matchMedia', {
-      value: jest.fn(() => { return { matches: true } })
+      value: jest.fn(() => {
+        return { matches: true };
+      }),
     });
     const { newScrollPos, scrollWindow, scrollTime } = calcNavScrollParams(
       height,
