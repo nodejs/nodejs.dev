@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import NavigationSection from './navigation-section';
 import { NavigationSectionData, NavigationSectionItem } from '../types';
-import { isSmallScreen } from '../util/isDevice';
+import { isSmallScreen } from '../util/isScreenWithinWidth';
 import { scrollTo, calcNavScrollParams } from '../util/scrollTo';
 
 type Props = {

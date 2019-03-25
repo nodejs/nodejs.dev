@@ -21,7 +21,7 @@ Running `npx commandname` automatically finds the correct reference of the comma
 
 ## Installation-less command execution
 
-There is another great feature of `npm`, which is allowing to run commands without first installing them.
+There is another great feature of `npx`, which is allowing to run commands without first installing them.
 
 This is pretty useful, mostly because:
 
