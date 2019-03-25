@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavigationSection from './navigation-section';
 import { NavigationSectionData, NavigationSectionItem } from '../types';
-import { isSmallScreen } from '../util/isSmallScreen';
+import { isSmallScreen } from '../util/isScreenWithinWidth';
 
 type Props = {
   sections: NavigationSectionData;
