@@ -1,4 +1,4 @@
-import { isMobile } from './isDevice';
+import { isMobileScreen } from './isScreenWithinWidth';
 
 const easeInOutCubic = (t: number, b: number, c: number, d: number) =>
   (t /= d / 2) < 1
@@ -50,7 +50,7 @@ export const calcNavScrollParams = (
   const navRect = navElement.getBoundingClientRect();
   let newScrollPos: number;
   let scrollWindow: HTMLElement | null;
-  if (isMobile()) {
+  if (isMobileScreen()) {
     // phone
     scrollWindow = null;
     newScrollPos = linkHeight - window.screen.height / 2;
