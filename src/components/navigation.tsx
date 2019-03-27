@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import NavigationSection from './navigation-section';
 import { NavigationSectionData, NavigationSectionItem } from '../types';
 import { isSmallScreen } from '../util/isScreenWithinWidth';
+import { scrollTo, calcNavScrollParams } from '../util/scrollTo';
 
 type Props = {
   sections: NavigationSectionData;
@@ -10,12 +11,25 @@ type Props = {
 
 const Navigation = ({ sections, currentSlug }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [hasScrolled, setHasScrolled] = useState<boolean>(false);
+  const navElement = useRef<HTMLElement | null>(null);
   const toggle = () => setIsOpen(!isOpen);
   const onItemClick = () => {
     if (isSmallScreen()) {
       toggle();
     }
   };
+  const autoScroll = (height: number) => {
+    if (isOpen && !hasScrolled && navElement.current) {
+      const { newScrollPos, scrollWindow, scrollTime } = calcNavScrollParams(
+        height,
+        navElement.current
+      );
+      scrollTo(newScrollPos, scrollWindow, scrollTime);
+      setHasScrolled(true);
+    }
+  };
+
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
 
   const readSections: Set<NavigationSectionItem['slug']> = new Set();
@@ -36,7 +50,7 @@ const Navigation = ({ sections, currentSlug }: Props) => {
   });
 
   return (
-    <nav className={className}>
+    <nav className={className} ref={navElement}>
       <button className="side-nav__open" onClick={toggle}>
         Menu
       </button>
@@ -48,6 +62,7 @@ const Navigation = ({ sections, currentSlug }: Props) => {
           currentSlug={currentSlug}
           onItemClick={onItemClick}
           readSections={readSections}
+          autoScroll={autoScroll}
         />
       ))}
     </nav>
