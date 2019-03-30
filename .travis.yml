@@ -5,7 +5,7 @@ node_js:
 
 env:
   - COMMAND=build
-  - COMMAND=test
+  - COMMAND=test-ci
 
 install: yarn --frozen-lockfile
 
