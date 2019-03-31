@@ -19,7 +19,7 @@ exports[`Article component renders correctly 1`] = `
       }
     }
   />
-  <AuthorsList
+  <_default
     authors={
       Array [
         "test-user1",

@@ -2,13 +2,13 @@
 
 exports[`AuthorLink component renders correctly 1`] = `
 <a
-  className="author-link"
+  className="css-tubh1u"
   href="https://github.com/test-author"
   title="test-author"
 >
   <img
     alt="test-author"
-    className="author-img"
+    className="author-img css-nm77gf"
     src="https://github.com/test-author.png?size=60"
   />
 </a>
