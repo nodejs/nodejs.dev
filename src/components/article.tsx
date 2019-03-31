@@ -1,6 +1,6 @@
 import React from 'react';
 import { PaginationInfo } from '../types';
-import AuthorLink from './author-link';
+import AuthorsList from './authors-list';
 import EditLink from './edit-link';
 import Pagination from './pagination';
 import TOC from './toc';
@@ -28,20 +28,7 @@ const Article = ({
     <h1 className="article-reader__headline">{title}</h1>
     <TOC heading="TABLE OF CONTENTS" tableOfContents={tableOfContents} />
     <div dangerouslySetInnerHTML={{ __html: html }} />
-    <div
-      style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        marginTop: '5rem',
-        alignItems: 'center',
-      }}
-    >
-      Contributors:
-      {authors &&
-        authors.map(
-          author => author && <AuthorLink username={author} key={author} />
-        )}
-    </div>
+    <AuthorsList authors={authors} />
     <EditLink relativePath={relativePath} />
     <Pagination previous={previous} next={next} />
   </article>
