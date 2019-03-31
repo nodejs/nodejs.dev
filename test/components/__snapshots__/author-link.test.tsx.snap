@@ -4,6 +4,7 @@ exports[`AuthorLink component renders correctly 1`] = `
 <a
   className="author-link"
   href="https://github.com/test-author"
+  title="test-author"
 >
   <img
     alt="test-author"
