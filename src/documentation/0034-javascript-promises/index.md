@@ -212,7 +212,7 @@ new Promise((resolve, reject) => {
 
 ## Orchestrating promises
 
-### `Promise.all()`
+### Promise.all()
 
 If you need to synchronize different promises, `Promise.all()` helps you define a list of promises, and execute something when they are all resolved.
 
@@ -241,7 +241,7 @@ Promise.all([f1, f2]).then(([res1, res2]) => {
 
 You are not limited to using `fetch` of course, **any promise can be used in this fashion**.
 
-### `Promise.race()`
+### Promise.race()
 
 `Promise.race()` runs when the first of the promises you pass to it resolves, and it runs the attached callback just once, with the result of the first promise resolved.
 
