@@ -133,7 +133,7 @@ This section describes the properties you can use in detail. We refer to "packag
 
 Most of those properties are only used on <https://www.npmjs.com/>, others by scripts that interact with your code, like `npm` or others.
 
-### `name`
+### name
 
 Sets the package name.
 
@@ -149,7 +149,7 @@ This is because when a package is published on `npm`, it gets its own URL based 
 
 If you published this package publicly on GitHub, a good value for this property is the GitHub repository name.
 
-### `author`
+### author
 
 Lists the package author name
 
@@ -173,7 +173,7 @@ Can also be used with this format:
 }
 ```
 
-### `contributors`
+### contributors
 
 As well as the author, the project can have one or more contributors. This property is an array that lists them.
 
@@ -199,7 +199,7 @@ Can also be used with this format:
 }
 ```
 
-### `bugs`
+### bugs
 
 Links to the package issue tracker, most likely a GitHub issues page
 
@@ -211,7 +211,7 @@ Example:
 }
 ```
 
-### `homepage`
+### homepage
 
 Sets the package homepage
 
@@ -223,7 +223,7 @@ Example:
 }
 ```
 
-### `version`
+### version
 
 Indicates the current version of the package.
 
@@ -239,7 +239,7 @@ The first number is the major version, the second the minor version and the thir
 
 There is a meaning in these numbers: a release that only fixes bugs is a patch release, a release that introduces backward-compatible changes is a minor release, a major release can have breaking changes.
 
-### `license`
+### license
 
 Indicates the license of the package.
 
@@ -249,7 +249,7 @@ Example:
 "license": "MIT"
 ```
 
-### `keywords`
+### keywords
 
 This property contains an array of keywords that associate with what your package does.
 
@@ -265,7 +265,7 @@ Example:
 
 This helps people find your package when navigating similar packages, or when browsing the <https://www.npmjs.com/> website.
 
-### `description`
+### description
 
 This property contains a brief description of the package
 
@@ -277,7 +277,7 @@ Example:
 
 This is especially useful if you decide to publish your package to `npm` so that people can find out what the package is about.
 
-### `repository`
+### repository
 
 This property specifies where this package repository is located.
 
@@ -315,7 +315,7 @@ You can use different version control systems:
 }
 ```
 
-### `main`
+### main
 
 Sets the entry point for the package.
 
@@ -327,7 +327,7 @@ Example:
 "main": "src/main.js"
 ```
 
-### `private`
+### private
 
 if set to `true` prevents the app/package to be accidentally published on `npm`
 
@@ -337,7 +337,7 @@ Example:
 "private": true
 ```
 
-### `scripts`
+### scripts
 
 Defines a set of node scripts you can run
 
@@ -358,7 +358,7 @@ These scripts are command line applications. You can run them by calling `npm ru
 
 You can use any name you want for a command, and scripts can do literally anything you want.
 
-### `dependencies`
+### dependencies
 
 Sets a list of `npm` packages installed as dependencies.
 
@@ -379,7 +379,7 @@ Example:
 }
 ```
 
-### `devDependencies`
+### devDependencies
 
 Sets a list of `npm` packages installed as development dependencies.
 
@@ -403,7 +403,7 @@ Example:
 }
 ```
 
-### `engines`
+### engines
 
 Sets which versions of Node.js and other commands this package/app work on
 
@@ -417,7 +417,7 @@ Example:
 }
 ```
 
-### `browserslist`
+### browserslist
 
 Is used to tell which browsers (and their versions) you want to support. It's referenced by Babel, Autoprefixer, and other tools, to only add the polyfills and fallbacks needed to the browsers you target.
 
