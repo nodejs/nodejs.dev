@@ -584,3 +584,28 @@ details,
   height: 40px;
   bottom: 0;
 }
+
+.authors-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5rem 0;
+  align-items: center;
+  color: var(--gray8);
+  text-transform: uppercase;
+}
+
+.authors-list p {
+  margin: 0.5rem;
+}
+
+.author-link {
+  margin-left: 0.5rem;
+}
+
+.author-img {
+  height: 30px;
+  width: 30px;
+  margin-top: 5px;
+  border-radius: 100%;
+  border: 1px solid var(--brand-light);
+}
