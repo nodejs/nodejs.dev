@@ -1,13 +1,13 @@
 ---
 title: Introduction to Node.js
 description: "Getting started guide to Node.js, the server-side JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to just that."
-authors: flaviocopes
+authors: flaviocopes, potch, MylesBorins, RomainLanz, virkt25, Trott, onel0p3z, ollelauribostrom, MarkPieszak, fhemberger, LaRuaNa, FrozenPandaz, mcollina, amiller-gh, ahmadawais
 section: Quick Start
 ---
 
 Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!
 
-Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. Node.js is able to leverage the work of the engineers that made (and continue to make) the Chrome JavaScript runtime blazing fast, and this allows Node.js to benefit from the substantial performance improvements and the Just-In-Time compilation that V8 performs. Thanks to this, JavaScript code running in Node.js can become very performant.
+Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. Node.js can leverage the work of the engineers that made (and continue to make) the Chrome JavaScript runtime blazing fast, and this allows Node.js to benefit from the substantial performance improvements and the Just-In-Time compilation that V8 performs. Thanks to this, JavaScript code running in Node.js can become very performant.
 
 A Node.js app is run in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.
 
