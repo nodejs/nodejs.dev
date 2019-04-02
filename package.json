@@ -6,7 +6,6 @@
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.7",
-    "@emotion/styled": "^10.0.10",
     "@types/react-helmet": "^5.0.7",
     "dotenv": "^6.0.0",
     "emotion": "^10.0.7",

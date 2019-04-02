@@ -1,11 +1,11 @@
-import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 import React from 'react';
 
-const Author = styled.a`
+const link = css`
   margin-left: 0.5rem;
 `;
 
-const Img = styled.img`
+const img = css`
   height: 30px;
   width: 30px;
   margin-top: 5px;
@@ -18,7 +18,7 @@ type Props = {
   size: string;
 };
 
-export default ({ username, size = '64' }: Props) => {
+const Author = ({ username, size = '64' }: Props) => {
   if (!username) {
     return null;
   }
@@ -28,8 +28,15 @@ export default ({ username, size = '64' }: Props) => {
   const githubImgLink = `https://github.com/${username}.png?size=${size}`;
 
   return (
-    <Author href={githubLink} title={username} key={username}>
-      <Img className="author-img" src={githubImgLink} alt={username} />
-    </Author>
+    <a css={link} href={githubLink} title={username} key={username}>
+      <img
+        css={img}
+        className="author-img"
+        src={githubImgLink}
+        alt={username}
+      />
+    </a>
   );
 };
+
+export default Author;
