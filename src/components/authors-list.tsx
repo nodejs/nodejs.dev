@@ -19,7 +19,7 @@ type Props = {
   authors: string[];
 };
 
-export default ({ authors }: Props) => {
+const AuthorsList = ({ authors }: Props) => {
   if (!authors) {
     return null;
   }
@@ -35,3 +35,5 @@ export default ({ authors }: Props) => {
     </div>
   );
 };
+
+export default AuthorsList;
