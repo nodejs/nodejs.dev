@@ -28,7 +28,14 @@ const Author = ({ username, size = '64' }: Props) => {
   const githubImgLink = `https://github.com/${username}.png?size=${size}`;
 
   return (
-    <a css={link} href={githubLink} title={username} key={username}>
+    <a
+      css={link}
+      href={githubLink}
+      title={username}
+      key={username}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img
         css={img}
         className="author-img"
