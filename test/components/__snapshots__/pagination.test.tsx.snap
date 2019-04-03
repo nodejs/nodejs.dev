@@ -5,20 +5,40 @@ exports[`Pagination component only renders links to pages that has a title 1`] =
   css={
     Object {
       "map": undefined,
-      "name": "4bjqmt",
+      "name": "1gwj20b",
       "next": undefined,
       "styles": "
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   list-style: none;
-  padding: 30px;
+  padding: 5rem 0;
 ",
     }
   }
 >
   <li>
     <a
+      css={
+        Object {
+          "map": undefined,
+          "name": "u0j7sy",
+          "next": undefined,
+          "styles": "
+  color: var(--gray7) !important;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  font-size: 1.4rem;
+  font-weight: normal;
+  font-family: var(--sans-serif);
+  vertical-align: middle;
+
+  &:hover {
+    color: var(--brand-light) !important;
+  }
+",
+        }
+      }
       href="/test-slug"
       rel="prev"
     >
@@ -34,20 +54,40 @@ exports[`Pagination component renders correctly when there is no next page 1`] =
   css={
     Object {
       "map": undefined,
-      "name": "4bjqmt",
+      "name": "1gwj20b",
       "next": undefined,
       "styles": "
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   list-style: none;
-  padding: 30px;
+  padding: 5rem 0;
 ",
     }
   }
 >
   <li>
     <a
+      css={
+        Object {
+          "map": undefined,
+          "name": "u0j7sy",
+          "next": undefined,
+          "styles": "
+  color: var(--gray7) !important;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  font-size: 1.4rem;
+  font-weight: normal;
+  font-family: var(--sans-serif);
+  vertical-align: middle;
+
+  &:hover {
+    color: var(--brand-light) !important;
+  }
+",
+        }
+      }
       href="/test-slug"
       rel="prev"
     >
@@ -63,14 +103,14 @@ exports[`Pagination component renders correctly when there is no previous page 1
   css={
     Object {
       "map": undefined,
-      "name": "4bjqmt",
+      "name": "1gwj20b",
       "next": undefined,
       "styles": "
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   list-style: none;
-  padding: 30px;
+  padding: 5rem 0;
 ",
     }
   }
@@ -78,6 +118,26 @@ exports[`Pagination component renders correctly when there is no previous page 1
   <li />
   <li>
     <a
+      css={
+        Object {
+          "map": undefined,
+          "name": "u0j7sy",
+          "next": undefined,
+          "styles": "
+  color: var(--gray7) !important;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  font-size: 1.4rem;
+  font-weight: normal;
+  font-family: var(--sans-serif);
+  vertical-align: middle;
+
+  &:hover {
+    color: var(--brand-light) !important;
+  }
+",
+        }
+      }
       href="/test-slug"
       rel="next"
     >
@@ -92,20 +152,40 @@ exports[`Pagination component renders links to the next and previous page 1`] = 
   css={
     Object {
       "map": undefined,
-      "name": "4bjqmt",
+      "name": "1gwj20b",
       "next": undefined,
       "styles": "
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   list-style: none;
-  padding: 30px;
+  padding: 5rem 0;
 ",
     }
   }
 >
   <li>
     <a
+      css={
+        Object {
+          "map": undefined,
+          "name": "u0j7sy",
+          "next": undefined,
+          "styles": "
+  color: var(--gray7) !important;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  font-size: 1.4rem;
+  font-weight: normal;
+  font-family: var(--sans-serif);
+  vertical-align: middle;
+
+  &:hover {
+    color: var(--brand-light) !important;
+  }
+",
+        }
+      }
       href="/test-slug"
       rel="prev"
     >
@@ -114,6 +194,26 @@ exports[`Pagination component renders links to the next and previous page 1`] = 
   </li>
   <li>
     <a
+      css={
+        Object {
+          "map": undefined,
+          "name": "u0j7sy",
+          "next": undefined,
+          "styles": "
+  color: var(--gray7) !important;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  font-size: 1.4rem;
+  font-weight: normal;
+  font-family: var(--sans-serif);
+  vertical-align: middle;
+
+  &:hover {
+    color: var(--brand-light) !important;
+  }
+",
+        }
+      }
       href="/test-slug"
       rel="next"
     >
