@@ -1,6 +1,10 @@
 import { css } from '@emotion/core';
 import React from 'react';
 
+const list = css`
+  list-style: none;
+`;
+
 const link = css`
   margin-left: 0.5rem;
 `;
@@ -28,21 +32,23 @@ const Author = ({ username, size = '64' }: Props) => {
   const githubImgLink = `https://github.com/${username}.png?size=${size}`;
 
   return (
-    <a
-      css={link}
-      href={githubLink}
-      title={username}
-      key={username}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        css={img}
-        className="author-img"
-        src={githubImgLink}
-        alt={username}
-      />
-    </a>
+    <li css={list}>
+      <a
+        css={link}
+        href={githubLink}
+        title={username}
+        key={username}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          css={img}
+          className="author-img"
+          src={githubImgLink}
+          alt={username}
+        />
+      </a>
+    </li>
   );
 };
 
