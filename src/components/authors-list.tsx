@@ -9,9 +9,11 @@ const list = css`
   align-items: center;
   color: var(--gray7);
   text-transform: uppercase;
+  padding-left: 0;
 
-  span {
+  h5 {
     margin: 0.5rem;
+    font-weight: normal;
   }
 `;
 
@@ -25,12 +27,12 @@ const AuthorsList = ({ authors }: Props) => {
   }
 
   return (
-    <div css={list}>
-      <span>Contributors</span>
+    <ul css={list}>
+      <h5>Contributors</h5>
       {authors.map(
         author => author && <Author username={author} key={author} size="60" />
       )}
-    </div>
+    </ul>
   );
 };
 

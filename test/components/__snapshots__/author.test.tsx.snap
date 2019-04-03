@@ -1,40 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Author component renders correctly 1`] = `
-<a
+<li
   css={
     Object {
       "map": undefined,
-      "name": "tubh1u",
+      "name": "66iazq",
       "next": undefined,
       "styles": "
-  margin-left: 0.5rem;
+  list-style: none;
 ",
     }
   }
-  href="https://github.com/test-author"
-  rel="noopener noreferrer"
-  target="_blank"
-  title="test-author"
 >
-  <img
-    alt="test-author"
-    className="author-img"
+  <a
     css={
       Object {
         "map": undefined,
-        "name": "nm77gf",
+        "name": "tubh1u",
         "next": undefined,
         "styles": "
+  margin-left: 0.5rem;
+",
+      }
+    }
+    href="https://github.com/test-author"
+    rel="noopener noreferrer"
+    target="_blank"
+    title="test-author"
+  >
+    <img
+      alt="test-author"
+      className="author-img"
+      css={
+        Object {
+          "map": undefined,
+          "name": "nm77gf",
+          "next": undefined,
+          "styles": "
   height: 30px;
   width: 30px;
   margin-top: 5px;
   border-radius: 100%;
   border: 1px solid var(--brand-light);
 ",
+        }
       }
-    }
-    src="https://github.com/test-author.png?size=60"
-  />
-</a>
+      src="https://github.com/test-author.png?size=60"
+    />
+  </a>
+</li>
 `;
