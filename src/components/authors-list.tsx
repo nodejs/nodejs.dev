@@ -5,15 +5,19 @@ import Author from './author';
 const list = css`
   display: flex;
   flex-wrap: wrap;
-  margin: 5rem 0;
+  margin: 5rem 0 2.5rem;
   align-items: center;
   color: var(--gray7);
   text-transform: uppercase;
   padding-left: 0;
 
   h5 {
-    margin: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0.5rem 0.5rem 0.5rem 0;
     font-weight: normal;
+    font-size: 1.4rem;
   }
 `;
 
