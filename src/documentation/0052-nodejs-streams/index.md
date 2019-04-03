@@ -1,7 +1,7 @@
 ---
 title: Node.js Streams
 description: 'Learn what streams are for, why are they so important, and how to use them.'
-authors: flaviocopes
+authors: flaviocopes, 19shubham11
 section: Getting Started
 ---
 
@@ -18,6 +18,7 @@ For example, in the traditional way, when you tell the program to read a file, t
 Using streams you read it piece by piece, processing its content without keeping it all in memory.
 
 The Node.js [`stream` module](https://nodejs.org/api/stream.html) provides the foundation upon which all streaming APIs are build.
+All streams are instances of [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter)
 
 ## Why streams
 
