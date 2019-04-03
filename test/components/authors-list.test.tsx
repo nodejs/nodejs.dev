@@ -8,7 +8,7 @@ describe('AuthorsList component', () => {
     const tree = renderer.create(<AuthorsList authors={authors} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it("does not render without an author's list", () => {
+  it('does not render without an authors list', () => {
     const tree = renderer.create(<AuthorsList authors={null} />);
     expect(tree.getInstance()).toBeNull();
   });
