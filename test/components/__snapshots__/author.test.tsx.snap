@@ -26,6 +26,7 @@ exports[`Author component renders correctly 1`] = `
     }
     href="https://github.com/test-author"
     rel="noopener noreferrer"
+    style={Object {}}
     target="_blank"
     title="test-author"
   >

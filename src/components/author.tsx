@@ -18,18 +18,23 @@ const img = css`
 `;
 
 type Props = {
+  number: Number;
   username: string;
   size: string;
 };
 
-const Author = ({ username, size = '64' }: Props) => {
+const Author = ({ number, username, size = '64' }: Props) => {
   if (!username) {
     return null;
   }
 
+  // Clean up username and build links.
   username = username.trim();
   const githubLink = `https://github.com/${username}`;
   const githubImgLink = `https://github.com/${username}.png?size=${size}`;
+
+  // If first author then no margin left.
+  const mleft = number === 0 ? { marginLeft: 0 } : {};
 
   return (
     <li css={list}>
@@ -40,6 +45,7 @@ const Author = ({ username, size = '64' }: Props) => {
         key={username}
         target="_blank"
         rel="noopener noreferrer"
+        style={mleft}
       >
         <img
           css={img}
