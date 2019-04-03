@@ -1,7 +1,7 @@
 ---
 title: 'Build an HTTP Server'
 description: 'How to build an HTTP server with Node.js'
-authors: flaviocopes
+authors: flaviocopes, potch, MylesBorins, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 
