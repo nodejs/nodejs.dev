@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AuthorLink component renders correctly 1`] = `
+exports[`Author component renders correctly 1`] = `
 <a
   css={
     Object {

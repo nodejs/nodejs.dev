@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Author from '../../src/components/author';
 
-describe('AuthorLink component', () => {
+describe('Author component', () => {
   it('renders correctly', () => {
     const username = 'test-author';
     const tree = renderer
