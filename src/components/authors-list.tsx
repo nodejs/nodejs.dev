@@ -27,11 +27,9 @@ const AuthorsList = ({ authors }: Props) => {
   return (
     <div css={list}>
       <span>Contributors</span>
-      {authors &&
-        authors.map(
-          author =>
-            author && <Author username={author} key={author} size="60" />
-        )}
+      {authors.map(
+        author => author && <Author username={author} key={author} size="60" />
+      )}
     </div>
   );
 };
