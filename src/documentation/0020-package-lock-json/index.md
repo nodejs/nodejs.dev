@@ -1,7 +1,7 @@
 ---
 title: The package-lock.json file
 description: "The package-lock.json file is automatically generated when installing node packages. Learn what it's about"
-authors: flaviocopes
+authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 

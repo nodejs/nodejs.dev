@@ -1,7 +1,7 @@
 ---
 title: How to read environment variables from Node.js
 description: 'Learn how to read and make use of environment variables in a Node.js program'
-authors: flaviocopes
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 

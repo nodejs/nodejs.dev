@@ -1,7 +1,7 @@
 ---
 title: Make an HTTP POST request using Node.js
 description: 'Find out how to make an HTTP POST request using Node.js'
-authors: flaviocopes
+authors: flaviocopes, OnyekaIjeh, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 

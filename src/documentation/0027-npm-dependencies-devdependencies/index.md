@@ -1,7 +1,7 @@
 ---
 title: npm dependencies and devDependencies
 description: 'When is a package a dependency, and when is it a dev dependency?'
-authors: flaviocopes
+authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 

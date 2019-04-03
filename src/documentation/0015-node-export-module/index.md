@@ -1,7 +1,7 @@
 ---
 title: Expose functionality from a Node.js file using exports
 description: 'How to use the module.exports API to expose data to other files in your application, or to other applications as well'
-authors: flaviocopes
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 

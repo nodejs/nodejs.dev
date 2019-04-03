@@ -1,7 +1,7 @@
 ---
 title: How to log an object in Node.js
 description: 'Logging objects in Node.js'
-authors: flaviocopes
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 

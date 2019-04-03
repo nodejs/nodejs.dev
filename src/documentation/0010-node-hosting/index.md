@@ -1,7 +1,7 @@
 ---
 title: Where to host a Node.js app
 description: 'A Node.js application can be hosted in a lot of places, depending on your needs. This is a list of all the various options you have at your disposal'
-authors: flaviocopes
+authors: flaviocopes, MylesBorins, LaRuaNa, Rawnly, amiller-gh, ahmadawais
 section: Getting Started
 ---
 
@@ -81,7 +81,7 @@ They have a good [Node.js Documentation Section](https://cloud.google.com/node/)
 In this section you find the usual suspects, ordered from more user friendly to less user friendly:
 
 - [Digital Ocean](https://www.digitalocean.com)
-  - [DigitalOcean Guide: How to setup a NodeJS Application](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04) 
+  - [DigitalOcean Guide: How to setup a NodeJS Application](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04)
 - [Linode](https://www.linode.com/)
   - [NodeJS tutorials from Linode](https://www.linode.com/docs/development/nodejs/)
 - [Amazon Web Services](https://aws.amazon.com)

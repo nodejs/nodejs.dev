@@ -1,7 +1,7 @@
 ---
 title: Where does npm install the packages?
 description: 'How to find out where npm installs the packages'
-authors: flaviocopes
+authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: npm global or local packages
 description: 'When is a package best installed globally? Why?'
-authors: flaviocopes
+authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Run Node.js scripts from the command line
 description: 'How to run any Node.js script from the CLI'
-authors: flaviocopes
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 

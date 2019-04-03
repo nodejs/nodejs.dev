@@ -1,7 +1,7 @@
 ---
 title: Node.js Buffers
 description: 'Learn what Node.js buffers are, what they are used for, how to use them'
-authors: flaviocopes
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 
@@ -31,8 +31,8 @@ A buffer is created using the [`Buffer.from()`](https://nodejs.org/api/buffer.ht
 const buf = Buffer.from('Hey!')
 ```
 - [`Buffer.from(array)`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_array)
-- [`Buffer.from(arrayBuffer[, byteOffset[, length]])`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_arraybuffer_byteoffset_length) 
-- [`Buffer.from(buffer)`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_buffer)  
+- [`Buffer.from(arrayBuffer[, byteOffset[, length]])`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_arraybuffer_byteoffset_length)
+- [`Buffer.from(buffer)`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_buffer)
 - [`Buffer.from(string[, encoding])`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_string_encoding)
 
 You can also just initialize the buffer passing the size. This creates a 1KB buffer:

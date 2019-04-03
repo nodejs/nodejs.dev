@@ -1,7 +1,7 @@
 ---
 title: How to exit from a Node.js program
 description: 'Learn how to terminate a Node.js app in the best possible way'
-authors: flaviocopes
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, jgb-solutions, ahmadawais
 section: Getting Started
 ---
 

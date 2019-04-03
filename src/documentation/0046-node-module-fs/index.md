@@ -1,7 +1,7 @@
 ---
 title: 'The Node.js fs module'
 description: 'The fs module of Node.js provides useful functions to interact with the file system'
-authors: flaviocopes
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 

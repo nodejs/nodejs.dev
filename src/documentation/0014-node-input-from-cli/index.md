@@ -1,7 +1,7 @@
 ---
 title: Accept input from the command line in Node.js
 description: 'How to make a Node.js CLI program interactive using the built-in readline Node.js module'
-authors: flaviocopes
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 
