@@ -5,7 +5,7 @@ authors: flaviocopes, MylesBorins, LaRuaNa, amiller-gh, ahmadawais
 section: Getting Started
 ---
 
-## `setTimeout()`
+## setTimeout()
 
 When writing JavaScript code, you might want to delay the execution of a function.
 
@@ -61,7 +61,7 @@ This is especially useful to avoid blocking the CPU on intensive tasks and let o
 
 > Some browsers (IE and Edge) implement a `setImmediate()` method that does this same exact functionality, but it's not standard and [unavailable on other browsers](https://caniuse.com/#feat=setimmediate). But it's a standard function in Node.js.
 
-## `setInterval()`
+## setInterval()
 
 `setInterval` is a function similar to `setTimeout`, with a difference: instead of running the callback function once, it will run it forever, at the specific time interval you specify (in milliseconds):
 
