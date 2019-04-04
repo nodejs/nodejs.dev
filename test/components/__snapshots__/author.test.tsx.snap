@@ -17,10 +17,14 @@ exports[`Author component renders correctly 1`] = `
     css={
       Object {
         "map": undefined,
-        "name": "tubh1u",
+        "name": "1uax1e8",
         "next": undefined,
         "styles": "
   margin-left: 0.5rem;
+
+  &:hover img {
+    transform: scale(1.1);
+  }
 ",
       }
     }
@@ -36,7 +40,7 @@ exports[`Author component renders correctly 1`] = `
       css={
         Object {
           "map": undefined,
-          "name": "nm77gf",
+          "name": "bq2cf",
           "next": undefined,
           "styles": "
   height: 30px;
@@ -44,6 +48,7 @@ exports[`Author component renders correctly 1`] = `
   margin-top: 5px;
   border-radius: 100%;
   border: 1px solid var(--brand-light);
+  transition: all 0.2s ease-in-out;
 ",
         }
       }
