@@ -5,7 +5,7 @@ exports[`AuthorsList component renders correctly 1`] = `
   css={
     Object {
       "map": undefined,
-      "name": "irphdi",
+      "name": "1bgkbt8",
       "next": undefined,
       "styles": "
   display: flex;
@@ -15,6 +15,10 @@ exports[`AuthorsList component renders correctly 1`] = `
   color: var(--gray7);
   text-transform: uppercase;
   padding-left: 0;
+
+  li:first-child a {
+    margin-left: 0 !important;
+  }
 
   h5 {
     display: flex;
@@ -47,15 +51,24 @@ exports[`AuthorsList component renders correctly 1`] = `
       css={
         Object {
           "map": undefined,
-          "name": "tubh1u",
+          "name": "1uax1e8",
           "next": undefined,
           "styles": "
   margin-left: 0.5rem;
+
+  &:hover img {
+    transform: scale(1.1);
+  }
 ",
         }
       }
       href="https://github.com/test-author"
       rel="noopener noreferrer"
+      style={
+        Object {
+          "marginLeft": 0,
+        }
+      }
       target="_blank"
       title="test-author"
     >
@@ -65,7 +78,7 @@ exports[`AuthorsList component renders correctly 1`] = `
         css={
           Object {
             "map": undefined,
-            "name": "nm77gf",
+            "name": "bq2cf",
             "next": undefined,
             "styles": "
   height: 30px;
@@ -73,6 +86,7 @@ exports[`AuthorsList component renders correctly 1`] = `
   margin-top: 5px;
   border-radius: 100%;
   border: 1px solid var(--brand-light);
+  transition: all 0.2s ease-in-out;
 ",
           }
         }
@@ -96,15 +110,20 @@ exports[`AuthorsList component renders correctly 1`] = `
       css={
         Object {
           "map": undefined,
-          "name": "tubh1u",
+          "name": "1uax1e8",
           "next": undefined,
           "styles": "
   margin-left: 0.5rem;
+
+  &:hover img {
+    transform: scale(1.1);
+  }
 ",
         }
       }
       href="https://github.com/another-test-author"
       rel="noopener noreferrer"
+      style={Object {}}
       target="_blank"
       title="another-test-author"
     >
@@ -114,7 +133,7 @@ exports[`AuthorsList component renders correctly 1`] = `
         css={
           Object {
             "map": undefined,
-            "name": "nm77gf",
+            "name": "bq2cf",
             "next": undefined,
             "styles": "
   height: 30px;
@@ -122,6 +141,7 @@ exports[`AuthorsList component renders correctly 1`] = `
   margin-top: 5px;
   border-radius: 100%;
   border: 1px solid var(--brand-light);
+  transition: all 0.2s ease-in-out;
 ",
           }
         }

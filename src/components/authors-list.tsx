@@ -11,6 +11,10 @@ const list = css`
   text-transform: uppercase;
   padding-left: 0;
 
+  li:first-child a {
+    margin-left: 0 !important;
+  }
+
   h5 {
     display: flex;
     flex-wrap: wrap;
@@ -34,7 +38,10 @@ const AuthorsList = ({ authors }: Props) => {
     <ul css={list}>
       <h5>Contributors</h5>
       {authors.map(
-        author => author && <Author username={author} key={author} size="60" />
+        (author, i) =>
+          author && (
+            <Author index={i} username={author} key={author} size="60" />
+          )
       )}
     </ul>
   );

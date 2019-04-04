@@ -7,6 +7,10 @@ const list = css`
 
 const link = css`
   margin-left: 0.5rem;
+
+  &:hover img {
+    transform: scale(1.1);
+  }
 `;
 
 const img = css`
@@ -15,21 +19,27 @@ const img = css`
   margin-top: 5px;
   border-radius: 100%;
   border: 1px solid var(--brand-light);
+  transition: all 0.2s ease-in-out;
 `;
 
 type Props = {
+  index: Number;
   username: string;
   size: string;
 };
 
-const Author = ({ username, size = '64' }: Props) => {
+const Author = ({ index, username, size = '64' }: Props) => {
   if (!username) {
     return null;
   }
 
+  // Clean up username and build links.
   username = username.trim();
   const githubLink = `https://github.com/${username}`;
   const githubImgLink = `https://github.com/${username}.png?size=${size}`;
+
+  // If it's the first author then no margin left.
+  const mleft = index === 0 ? { marginLeft: 0 } : {};
 
   return (
     <li css={list}>
@@ -40,6 +50,7 @@ const Author = ({ username, size = '64' }: Props) => {
         key={username}
         target="_blank"
         rel="noopener noreferrer"
+        style={mleft}
       >
         <img
           css={img}
