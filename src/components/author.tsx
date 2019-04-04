@@ -7,6 +7,10 @@ const list = css`
 
 const link = css`
   margin-left: 0.5rem;
+
+  &:hover img {
+    transform: scale(1.1);
+  }
 `;
 
 const img = css`
@@ -15,6 +19,7 @@ const img = css`
   margin-top: 5px;
   border-radius: 100%;
   border: 1px solid var(--brand-light);
+  transition: all 0.2s ease-in-out;
 `;
 
 type Props = {
