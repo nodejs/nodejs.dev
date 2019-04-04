@@ -6,7 +6,7 @@ import Layout from '../components/layout';
 import Navigation from '../components/navigation';
 import { LearnPageContext, LearnPageData } from '../types';
 
-if (typeof window !== `undefined`) {
+if (typeof window !== 'undefined') {
   require('intersection-observer');
 }
 
