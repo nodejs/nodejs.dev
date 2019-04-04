@@ -24,14 +24,14 @@ const Article = ({
   relativePath,
   authors,
 }: Props) => (
-    <article className="article-reader">
-      <h1 className="article-reader__headline">{title}</h1>
-      <TOC heading="TABLE OF CONTENTS" tableOfContents={tableOfContents} />
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-      <AuthorsList authors={authors} />
-      <EditLink relativePath={relativePath} />
-      <Pagination previous={previous} next={next} />
-    </article>
-  );
+  <article className="article-reader">
+    <h1 className="article-reader__headline">{title}</h1>
+    <TOC heading="TABLE OF CONTENTS" tableOfContents={tableOfContents} />
+    <div dangerouslySetInnerHTML={{ __html: html }} />
+    <AuthorsList authors={authors} />
+    <EditLink relativePath={relativePath} />
+    <Pagination previous={previous} next={next} />
+  </article>
+);
 
 export default Article;

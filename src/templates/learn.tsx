@@ -36,7 +36,10 @@ export default ({
         previous={previous}
         relativePath={relativePath}
       />
-      <TOCDesktop heading="TABLE OF CONTENTS" tableOfContents={tableOfContents} />
+      <TOCDesktop
+        heading="TABLE OF CONTENTS"
+        tableOfContents={tableOfContents}
+      />
     </Layout>
   );
 };
