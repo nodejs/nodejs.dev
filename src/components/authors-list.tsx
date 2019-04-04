@@ -40,7 +40,7 @@ const AuthorsList = ({ authors }: Props) => {
       {authors.map(
         (author, i) =>
           author && (
-            <Author number={i} username={author} key={author} size="60" />
+            <Author index={i} username={author} key={author} size="60" />
           )
       )}
     </ul>

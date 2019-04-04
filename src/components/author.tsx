@@ -18,12 +18,12 @@ const img = css`
 `;
 
 type Props = {
-  number: Number;
+  index: Number;
   username: string;
   size: string;
 };
 
-const Author = ({ number, username, size = '64' }: Props) => {
+const Author = ({ index, username, size = '64' }: Props) => {
   if (!username) {
     return null;
   }
@@ -33,8 +33,8 @@ const Author = ({ number, username, size = '64' }: Props) => {
   const githubLink = `https://github.com/${username}`;
   const githubImgLink = `https://github.com/${username}.png?size=${size}`;
 
-  // If first author then no margin left.
-  const mleft = number === 0 ? { marginLeft: 0 } : {};
+  // If it's the first author then no margin left.
+  const mleft = index === 0 ? { marginLeft: 0 } : {};
 
   return (
     <li css={list}>
