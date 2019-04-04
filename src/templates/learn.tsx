@@ -1,4 +1,3 @@
-import 'intersection-observer';
 import { graphql } from 'gatsby';
 import React from 'react';
 import Article from '../components/article';
@@ -6,6 +5,10 @@ import Hero from '../components/hero';
 import Layout from '../components/layout';
 import Navigation from '../components/navigation';
 import { LearnPageContext, LearnPageData } from '../types';
+
+if (typeof window !== `undefined`) {
+  require('intersection-observer');
+}
 
 type Props = {
   data: LearnPageData;
