@@ -47,7 +47,7 @@
     "format-check": "prettier --check '**/*.{ts,tsx,js}'",
     "jest": "jest",
     "snapshot": "jest --updateSnapshot",
-    "test": "yarn format-check && yarn tslint && yarn jest",
+    "test": "yarn format-check && yarn tslint && yarn snapshot && yarn jest",
     "tslint": "tslint --project ./tsconfig.json",
     "serve": "yarn run build && clear && gatsby serve"
   },
