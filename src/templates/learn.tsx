@@ -5,6 +5,7 @@ import Hero from '../components/hero';
 import Layout from '../components/layout';
 import Navigation from '../components/navigation';
 import { LearnPageContext, LearnPageData } from '../types';
+import TOCDesktop from '../components/toc-desktop';
 
 type Props = {
   data: LearnPageData;
@@ -35,6 +36,7 @@ export default ({
         previous={previous}
         relativePath={relativePath}
       />
+      <TOCDesktop heading="TABLE OF CONTENTS" tableOfContents={tableOfContents} />
     </Layout>
   );
 };
