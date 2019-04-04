@@ -1,3 +1,4 @@
+import 'intersection-observer';
 import { graphql } from 'gatsby';
 import React from 'react';
 import Article from '../components/article';
