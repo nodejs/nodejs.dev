@@ -49,7 +49,7 @@
     "jestUpdate": "jest --updateSnapshot",
     "test": "yarn format-check && yarn tslint && yarn jest",
     "testUpdate": "yarn format-check && yarn tslint && yarn jestUpdate",
-    "test-ci": "yarn test --coverage && cat ./coverage/lcov.info | coveralls",
+    "test-ci": "yarn test --coverage && codecov",
     "tslint": "tslint --project ./tsconfig.json",
     "serve": "yarn run build && clear && gatsby serve"
   },
@@ -62,7 +62,7 @@
     "@types/react-test-renderer": "^16.8.1",
     "babel-jest": "^24.1.0",
     "babel-preset-gatsby": "^0.1.7",
-    "coveralls": "^3.0.3",
+    "codecov": "^3.3.0",
     "husky": "^1.3.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.1.0",
