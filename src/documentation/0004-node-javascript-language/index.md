@@ -19,7 +19,7 @@ I would recommend you to have a good grasp of the main JavaScript concepts befor
 - this
 - Arrow Functions
 - Loops
-- Scope
+- Scopes
 - Arrays
 - Template Literals
 - Semicolons
