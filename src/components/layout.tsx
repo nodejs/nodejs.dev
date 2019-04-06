@@ -23,8 +23,15 @@ const Layout = ({ children, title, description, img }: Props) => {
     if ('IntersectionObserver' in window) {
       setupObserver();
     } else {
-      // Fallback for browsers without IntersectionObserver support
-      magicHeroNumber();
+      import('intersection-observer')
+        .then(() => {
+          // Use polyfill for browsers without IntersectionObserver support
+          setupObserver();
+        })
+        .catch(() => {
+          // Fallback for browsers without IntersectionObserver support
+          magicHeroNumber();
+        });
     }
   });
 
