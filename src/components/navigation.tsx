@@ -20,7 +20,7 @@ const Navigation = ({ sections, currentSlug }: Props) => {
     }
   };
   const autoScroll = (height: number) => {
-    if (isOpen && !hasScrolled && navElement.current) {
+    if ((isOpen || !isSmallScreen()) && !hasScrolled && navElement.current) {
       const { newScrollPos, scrollWindow, scrollTime } = calcNavScrollParams(
         height,
         navElement.current

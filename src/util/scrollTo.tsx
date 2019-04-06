@@ -1,4 +1,4 @@
-import { isMobileScreen } from './isScreenWithinWidth';
+import { isMobileScreen, isSmallScreen } from './isScreenWithinWidth';
 
 const easeInOutCubic = (t: number, b: number, c: number, d: number) =>
   (t /= d / 2) < 1
@@ -22,12 +22,12 @@ export function scrollTo(
   const ret: Promise<boolean> = new Promise((resolve, _reject) => {
     const animateScroll = function animateScroll() {
       const time = window.performance.now();
-      const increment = time - previousTime;
+      const increment = time - previousTime;     
       previousTime = time;
       currentTime += increment;
       (element || document.scrollingElement || window).scrollTo(
         0,
-        easeInOutCubic(currentTime, start, change, duration)
+       isSmallScreen() ? easeInOutCubic(currentTime, start, change, duration) : change
       );
       if (currentTime < duration) {
         return window.requestAnimationFrame(animateScroll);
