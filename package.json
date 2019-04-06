@@ -48,7 +48,7 @@
     "jest": "jest",
     "update-snapshot": "jest --updateSnapshot",
     "test": "yarn format-check && yarn tslint && yarn jest",
-    "testUpdate": "yarn format-check && yarn tslint && yarn update-snapshot",
+    "test-watch": "yarn jest --watch",
     "test-ci": "yarn test --coverage && codecov",
     "tslint": "tslint --project ./tsconfig.json",
     "serve": "yarn run build && clear && gatsby serve"
