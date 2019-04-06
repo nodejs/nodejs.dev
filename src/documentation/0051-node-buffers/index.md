@@ -43,9 +43,9 @@ const buf = Buffer.alloc(1024)
 const buf = Buffer.allocUnsafe(1024)
 ```
 
-While both `alloc` and `allocUnsafe` allocate a `Buffer` of the specified size in bytes, the `Buffer` created by `alloc` will be _initialized_ with zeroes and the one created by `allocUnsafe` will be _uninitialized_. This means that while `allocUnsafe` whould be quite fast in comparison to `alloc`, the allocated segment of memory may contain old data which could potentially be sensitve.
+While both `alloc` and `allocUnsafe` allocate a `Buffer` of the specified size in bytes, the `Buffer` created by `alloc` will be _initialized_ with zeroes and the one created by `allocUnsafe` will be _uninitialized_. This means that while `allocUnsafe` would be quite fast in comparison to `alloc`, the allocated segment of memory may contain old data which could potentially be sensitve.
 
-Older data, if present in the memory can be accessed or leaked when the `Buffer` memory is read. This is what really makes `allocUnsafe` unsafe and extra care must be taken while using it.
+Older data, if present in the memory, can be accessed or leaked when the `Buffer` memory is read. This is what really makes `allocUnsafe` unsafe and extra care must be taken while using it.
 
 ## Using a buffer
 
