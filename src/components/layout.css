@@ -128,6 +128,10 @@ main {
   grid-template-columns: 420px auto;
 }
 
+summary {
+  outline: none;
+}
+
 .nav {
   background: white;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.33), 0 2px 3px rgba(0, 0, 0, 0.2);
