@@ -9,9 +9,9 @@ Believe it or not, Node.js is just 9 years old.
 
 In comparison, JavaScript is 23 years old and the Web, as we know it (after the introduction of Mosaic), is 25 years old.
 
-9 years isn't a very long time in tech, but Node.js seems to have been around since forever.
+9 years isn't a very long time in tech, but Node.js seems to have been around forever.
 
-I've had the pleasure to work with Node.js since the early days when it was just 2 years old, and despite the little information available, you could already feel it was a huge thing.
+I've had the pleasure to work with Node.js since the early days when it was only 2 years old, and despite the little information available, you could already feel that it was going to be a huge thing.
 
 In this post, we draw the big picture of Node.js in its history, to put things in perspective.
 
@@ -21,11 +21,11 @@ JavaScript is a programming language that was created at Netscape as a scripting
 
 Part of the business model of Netscape was to sell Web Servers, which included an environment called _Netscape LiveWire_ that could create dynamic pages using server-side JavaScript. Unfortunately, _Netscape LiveWire_ wasn't very successful and server-side Javascript wasn't popularized until recently, by the introduction of Node.js.
 
-One key factor that led to the rise of Node.js was the timing. Just a few years before, Javascript had started to be considered as a serious language, thanks to the "Web 2.0" applications (Google Maps, Gmail, etc) that really showed the world what a modern experience on the web could be like.
+One key factor that led to the rise of Node.js was the timing. Just a few years before, Javascript had started to become considered as a serious language, thanks to the "Web 2.0" applications (Google Maps, Gmail, etc) that really showed the world what a modern experience on the web could be like.
 
-Javascript engines also got considerably better as many browsers competed to offer users the best performance. Development teams behind every major browser worked hard every day to offer better support for Javascript on their browser as well as make Javascript run faster. Javascript V8, the engine that Node.js uses under the hood also known as the Chrome JS engine, is one of the engines that improved significantly due to this competition.
+Javascript engines also got considerably better as many browsers competed to offer users the best performance. Development teams behind major browsers worked hard every day to offer better support for Javascript on their browsers, as well as find ways to make Javascript run faster. V8, the engine that Node.js uses under the hood also known as the Chrome JS engine, is one Javascript engine that improved significantly due to this competition.
 
-Node.js happened to be built in the right place and right time, but luck isn't the only reason why it is popular today. It introduces a lot of innovative thinking and approaches regarding Javascript server-side development.
+Node.js happened to be built in the right place and right time, but luck isn't the only reason why it is popular today. It introduces a lot of innovative thinking and approaches regarding Javascript server-side development that has already helped so many developers.
 
 ## 2009
 
