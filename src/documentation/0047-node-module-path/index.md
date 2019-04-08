@@ -68,7 +68,7 @@ require('path').join('/', 'users', name, 'notes.txt') //'/users/joe/notes.txt'
 Tries to calculate the actual path when it contains relative specifiers like `.` or `..`, or double slashes:
 
 ```js
-require('path').normalize('/users/joe/..//test.txt') ///users/test.txt
+require('path').normalize('/users/joe/..//test.txt') //'/users/test.txt'
 ```
 
 ### `path.parse()`
