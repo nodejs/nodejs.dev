@@ -11,7 +11,7 @@ In comparison, JavaScript is 23 years old and the Web, as we know it (after the 
 
 9 years isn't a very long time in tech, but Node.js seems to have been around forever.
 
-I've had the pleasure to work with Node.js since the early days when it was only 2 years old, and despite the little information available, you could already feel that it was going to be a huge thing.
+I've had the pleasure to work with Node.js since the early days when it was only 2 years old, and despite the limited information in the wild, you could already feel that it was going to be a huge thing.
 
 In this post, we draw the big picture of Node.js in its history, to put things in perspective.
 
