@@ -1,4 +1,5 @@
 import React from 'react';
+import { fixTocCodeTag } from '../util/tocFormatter';
 
 type Props = {
   heading: string;
@@ -9,6 +10,7 @@ const TOC = ({ heading, tableOfContents }: Props) => {
   if (!tableOfContents) {
     return null;
   }
+  tableOfContents = fixTocCodeTag(tableOfContents)
 
   return (
     <details className="toc">
