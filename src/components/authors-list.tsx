@@ -1,8 +1,8 @@
-import { css } from '@emotion/core';
+import { css, SerializedStyles } from '@emotion/core';
 import React from 'react';
 import Author from './author';
 
-const list = css`
+const list: SerializedStyles = css`
   display: flex;
   flex-wrap: wrap;
   margin: 5rem 0 2.5rem;
