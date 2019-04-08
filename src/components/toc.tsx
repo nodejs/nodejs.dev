@@ -10,7 +10,7 @@ const TOC = ({ heading, tableOfContents }: Props) => {
   if (!tableOfContents) {
     return null;
   }
-  tableOfContents = fixTocCodeTag(tableOfContents)
+  tableOfContents = fixTocCodeTag(tableOfContents);
 
   return (
     <details className="toc">
