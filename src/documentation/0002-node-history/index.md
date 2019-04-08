@@ -21,11 +21,11 @@ JavaScript is a programming language that was created at Netscape as a scripting
 
 Part of the business model of Netscape was to sell Web Servers, which included an environment called _Netscape LiveWire_ that could create dynamic pages using server-side JavaScript. Unfortunately, _Netscape LiveWire_ wasn't very successful and server-side Javascript wasn't popularized until recently, by the introduction of Node.js.
 
-One key factor that led to the rise of Node.js was the timing. Just a few years before, Javascript had started to become considered as a serious language, thanks to the "Web 2.0" applications (Google Maps, Gmail, etc) that really showed the world what a modern experience on the web could be like.
+One key factor that led to the rise of Node.js was the timing. Just a few years earlier, JavaScript had started to be considered as a more serious language, thanks to "Web 2.0" applications (such as Flickr, Gmail, etc.) that showed the world what a modern experience on the web could be like.
 
-Javascript engines also got considerably better as many browsers competed to offer users the best performance. Development teams behind major browsers worked hard every day to offer better support for Javascript on their browsers, as well as find ways to make Javascript run faster. V8, the engine that Node.js uses under the hood also known as the Chrome JS engine, is one Javascript engine that improved significantly due to this competition.
+JavaScript engines also became considerably better as many browsers competed to offer users the best performance. Development teams behind major browsers worked hard to offer better support for JavaScript and find ways to make JavaScript run faster. The engine that Node.js uses under the hood, V8 (also known as Chrome V8 for being the open-source JavaScript engine of The Chromium Project), improved significantly due to this competition.
 
-Node.js happened to be built in the right place and right time, but luck isn't the only reason why it is popular today. It introduces a lot of innovative thinking and approaches regarding Javascript server-side development that has already helped so many developers.
+Node.js happened to be built in the right place and right time, but luck isn't the only reason why it is popular today. It introduces a lot of innovative thinking and approaches for JavaScript server-side development that has already helped so many developers.
 
 ## 2009
 
