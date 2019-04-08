@@ -1,14 +1,17 @@
 ---
 title: Node.js, the difference between development and production
 description: 'Learn how to set up different configurations for production and development environments'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, 19shubham11
 section: Getting Started
 ---
 
-You can have different configurations for production and development environments.
+While working on a real project you may want your server to interact with several `outside` systems, that may be databases, messaging queues or even external APIs. In this scenario, a good convention to follow is to always have multiple environment variables and configurations associated with them.
 
-Node.js assumes it's always running in a development environment.
-You can signal Node.js that you are running in production by setting the `NODE_ENV=production` environment variable.
+You may have `development`, `QA`, `staging` and `production` environments depending upon your scale and use case, each of these environments should ideally have different configurations (database URLs and passwords, API access keys, etc.), for example, you may not want to pollute your production database while fixing a bug locally! This is where different environments come into play and the most commonly recommended way of doing this in Node.js is setting up an environment variable `NODE_ENV` and trigger different configs based on that.
+
+More on [environment variables](https://en.wikipedia.org/wiki/Environment_variable)
+
+You can signal Node.js that you are running in a particular environment by setting the `NODE_ENV=$environment` environment variable.
 
 This is usually done by executing the command
 
@@ -24,9 +27,7 @@ You can also apply the environment variable by prepending it to your application
 NODE_ENV=production node app.js
 ```
 
-This environment variable is a convention that is widely used in external libraries as well.
-
-Setting the environment to `production` generally ensures that
+While setting the environment to `production` it is generally recommended that
 
 - logging is kept to a minimum, essential level
 - more caching levels take place to optimize performance
