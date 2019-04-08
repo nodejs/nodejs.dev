@@ -42,7 +42,7 @@ The first form of [npm](https://www.npmjs.com/) is created
 ## 2011
 
 npm hits version 1.0
-Big companies start adopting Node.js: LinkedIn, Uber, etc.
+Larger companies start adopting Node.js: LinkedIn, Uber, etc.
 
 [hapi](https://hapijs.com) is born
 
