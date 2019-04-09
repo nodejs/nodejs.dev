@@ -1,11 +1,11 @@
-import { css } from '@emotion/core';
+import { css, SerializedStyles } from '@emotion/core';
 import React from 'react';
 
-const list = css`
+const list: SerializedStyles = css`
   list-style: none;
 `;
 
-const link = css`
+const link: SerializedStyles = css`
   margin-left: 0.5rem;
 
   &:hover img {
@@ -13,7 +13,7 @@ const link = css`
   }
 `;
 
-const img = css`
+const img: SerializedStyles = css`
   height: 30px;
   width: 30px;
   margin-top: 5px;
