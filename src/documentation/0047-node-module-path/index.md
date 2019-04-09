@@ -1,7 +1,7 @@
 ---
 title: 'The Node.js path module'
 description: 'The path module of Node.js provides useful functions to interact with file paths'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, 19shubham11
 section: Getting Started
 ---
 
@@ -68,7 +68,7 @@ require('path').join('/', 'users', name, 'notes.txt') //'/users/joe/notes.txt'
 Tries to calculate the actual path when it contains relative specifiers like `.` or `..`, or double slashes:
 
 ```js
-require('path').normalize('/users/joe/..//test.txt') ///users/test.txt
+require('path').normalize('/users/joe/..//test.txt') //'/users/test.txt'
 ```
 
 ### `path.parse()`
