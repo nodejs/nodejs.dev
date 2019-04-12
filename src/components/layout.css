@@ -128,7 +128,7 @@ main {
   grid-template-columns: 420px auto;
 }
 
-summary {
+[data-is-focused="true"] {
   outline: none;
 }
 

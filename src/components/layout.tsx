@@ -8,6 +8,7 @@ import SEO from './seo';
 import { isMobileScreen } from '../util/isScreenWithinWidth';
 import { notifyWhenStickyHeadersChange } from '../util/notifyWhenStickyHeadersChange';
 import { StickyChange, SentinelObserverSetupOptions } from '../types';
+import { addFocusOutlineListeners, removeFocusOutlineListeners } from '../util/outlineOnKeyboardNav';
 
 type Props = {
   children: React.ReactNode;
@@ -20,12 +21,17 @@ const Layout = ({ children, title, description, img }: Props) => {
   const prevOffset = useRef<number>(-1);
 
   useEffect(() => {
+    if (window.document && 'documentElement' in window.document) {
+      addFocusOutlineListeners();
+    }
     if ('IntersectionObserver' in window) {
       setupObserver();
     } else {
       // Fallback for browsers without IntersectionObserver support
       magicHeroNumber();
     }
+
+    return cleanUp
   });
 
   const setupObserver = (): void => {
@@ -76,6 +82,10 @@ const Layout = ({ children, title, description, img }: Props) => {
     }
     window.requestAnimationFrame(magicHeroNumber);
   };
+
+  const cleanUp = (): void => {
+    return removeFocusOutlineListeners()
+  }
 
   return (
     <>
