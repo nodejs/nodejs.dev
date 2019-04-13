@@ -35,23 +35,23 @@ export function removeFocusOutlineListeners() {
   }
 }
 
-function handleKeyDown(event: KeyboardEvent) {
+export function handleKeyDown(event: KeyboardEvent) {
   if (event.keyCode === TAB_KEYCODE) {
     IS_MOUSE_EVENT = false;
   }
 }
 
-function handleMouseDown(event: MouseEvent) {
+export function handleMouseDown(event: MouseEvent) {
   IS_MOUSE_EVENT = true;
 }
 
-function handleFocus(event: Event) {
+export function handleFocus(event: Event) {
   if (IS_MOUSE_EVENT && event.target && event.target !== event.currentTarget) {
     (event.target as Element).setAttribute(FOCUS_ATTR, 'true');
   }
 }
 
-function handleBlur(event: Event) {
+export function handleBlur(event: Event) {
   if (event.target !== event.currentTarget) {
     (event.target as Element).removeAttribute(FOCUS_ATTR);
   }
