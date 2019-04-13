@@ -12,14 +12,14 @@ let IS_MOUSE_EVENT = false;
  * which handle adding or removing focus outline css class for mouse events.
  */
 export function addFocusOutlineListeners() {
-    const docEl = window.document.documentElement;
-    IS_MOUSE_EVENT = false;
+  const docEl = window.document.documentElement;
+  IS_MOUSE_EVENT = false;
 
-    docEl.addEventListener(KEYDOWN_EVENT, handleKeyDown, false);
-    docEl.addEventListener(MOUSEDOWN_EVENT, handleMouseDown, false);
-    docEl.addEventListener(FOCUS_EVENT, handleFocus, true);
-    docEl.addEventListener(BLUR_EVENT, handleBlur, true);
-  }
+  docEl.addEventListener(KEYDOWN_EVENT, handleKeyDown, false);
+  docEl.addEventListener(MOUSEDOWN_EVENT, handleMouseDown, false);
+  docEl.addEventListener(FOCUS_EVENT, handleFocus, true);
+  docEl.addEventListener(BLUR_EVENT, handleBlur, true);
+}
 
 /**
  * Detaches listeners

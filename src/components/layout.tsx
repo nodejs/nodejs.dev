@@ -8,7 +8,10 @@ import SEO from './seo';
 import { isMobileScreen } from '../util/isScreenWithinWidth';
 import { notifyWhenStickyHeadersChange } from '../util/notifyWhenStickyHeadersChange';
 import { StickyChange, SentinelObserverSetupOptions } from '../types';
-import { addFocusOutlineListeners, removeFocusOutlineListeners } from '../util/outlineOnKeyboardNav';
+import {
+  addFocusOutlineListeners,
+  removeFocusOutlineListeners,
+} from '../util/outlineOnKeyboardNav';
 
 type Props = {
   children: React.ReactNode;
@@ -31,7 +34,7 @@ const Layout = ({ children, title, description, img }: Props) => {
       magicHeroNumber();
     }
 
-    return cleanUp
+    return cleanUp;
   });
 
   const setupObserver = (): void => {
@@ -84,8 +87,8 @@ const Layout = ({ children, title, description, img }: Props) => {
   };
 
   const cleanUp = (): void => {
-    return removeFocusOutlineListeners()
-  }
+    return removeFocusOutlineListeners();
+  };
 
   return (
     <>
