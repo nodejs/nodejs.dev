@@ -26,6 +26,7 @@
     "gatsby-source-contentful": "^2.0.1",
     "gatsby-source-filesystem": "^2.0.16",
     "gatsby-transformer-remark": "^2.1.5",
+    "intersection-observer": "^0.5.1",
     "prismjs": "^1.15.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
@@ -51,7 +52,7 @@
     "test-watch": "yarn jest --watch",
     "test-ci": "yarn test --coverage && codecov",
     "tslint": "tslint --project ./tsconfig.json",
-    "serve": "yarn run build && clear && gatsby serve"
+    "serve": "yarn build && clear && gatsby serve"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
