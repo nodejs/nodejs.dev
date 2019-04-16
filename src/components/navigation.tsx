@@ -30,6 +30,7 @@ const Navigation = ({ sections, currentSlug }: Props) => {
         await scrollTo(newScrollPos, scrollWindow, scrollTime);
         setHasScrolled(true);
       } catch (e) {
+        // TODO: follow up with appropriate error logging if any
         setHasScrolled(false);
       }
     }
