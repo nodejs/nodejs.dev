@@ -11,7 +11,7 @@ You may have `development`, `QA`, `staging` and `production` environments depend
 
 More on [environment variables](https://en.wikipedia.org/wiki/Environment_variable)
 
-You can signal Node.js that you are running in a particular environment by setting the `NODE_ENV=$environment` environment variable.
+You can specify that you are running in a particular environment by setting the `NODE_ENV=$environment` environment variable.
 
 This is usually done by executing the command
 
