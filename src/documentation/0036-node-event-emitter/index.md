@@ -14,7 +14,8 @@ This module, in particular, offers the `EventEmitter` class, which we'll use to 
 You initialize that using
 
 ```js
-const eventEmitter = require('events').EventEmitter()
+const EventEmitter = require('events')
+const eventEmitter = new EventEmitter()
 ```
 
 This object exposes, among many others, the `on` and `emit` methods.
