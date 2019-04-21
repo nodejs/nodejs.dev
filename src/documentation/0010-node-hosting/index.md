@@ -39,7 +39,7 @@ I use it a lot for demo purposes.
 
 A way to publish your apps, and have no server at all to manage, is Serverless. Serverless is a paradigm where you publish your apps as **functions**, and they respond on a network endpoint (also called FAAS - Functions As A Service).
 
-To very popular solutions are
+Two very popular solutions are
 
 - [Serverless Framework](https://serverless.com/framework/)
 - [Standard Library](https://stdlib.com/)
