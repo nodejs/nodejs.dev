@@ -1,11 +1,29 @@
 ---
 title: How to read environment variables from Node.js
 description: 'Learn how to read and make use of environment variables in a Node.js program'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, aymen94
 section: Getting Started
 ---
 
 The `process` core module of Node.js provides the `env` property which hosts all the environment variables that were set at the moment the process was started.
+
+## We have two way to set variables:
+- using the command line
+- using a `.env` file
+
+### Using Command Line:
+
+`PORT=8626 node app.js`
+
+### Using a `.env` File:
+
+Create the .env file in the root of your app and add your variables and values to it.
+
+```
+NODE_ENV=development
+PORT=8626
+```
+Here is an example that accesses the NODE_ENV environment variable, which is set to `development` by default.
 
 Here is an example that accesses the NODE_ENV environment variable, which is set to `development` by default.
 
