@@ -17,14 +17,14 @@ The `process` core module of Node.js provides the `env` property which hosts all
 
 ### Using a `.env` File:
 
+we need to install [dotenv](https://www.npmjs.com/package/dotenv) module.
+
 Create the .env file in the root of your app and add your variables and values to it.
 
 ```
 NODE_ENV=development
 PORT=8626
 ```
-Here is an example that accesses the NODE_ENV environment variable, which is set to `development` by default.
-
 Here is an example that accesses the NODE_ENV environment variable, which is set to `development` by default.
 
 > Note: `process` does not require a "require", it's automatically available.
