@@ -146,7 +146,7 @@ It will not appear in the console, but it will appear in the error log.
 
 ## Color the output
 
-You can color the output of your text in the console by using [escape sequences](https://gist.github.com/chrisopedia/8754917). An escape sequence is a set of characters that identifies a color.
+You can color the output of your text in the console by using [escape sequences](https://flaviocopes.com/node-output-to-cli/#color-the-output). An escape sequence is a set of characters that identifies a color.
 
 Example:
 
