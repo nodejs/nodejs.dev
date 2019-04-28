@@ -17,7 +17,7 @@ The `process` core module of Node.js provides the `env` property which hosts all
 
 ### Using a `.env` File:
 
-we need to install [dotenv](https://www.npmjs.com/package/dotenv) module.
+We need to install [dotenv](https://www.npmjs.com/package/dotenv) module.
 
 Create the .env file in the root of your app and add your variables and values to it.
 
