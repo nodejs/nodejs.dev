@@ -8,7 +8,7 @@ section: Getting Started
 The `process` core module of Node.js provides the `env` property which hosts all the environment variables that were set at the moment the process was started.
 
 ## We have two way to set variables:
-- using the command line
+- using command line
 - using a `.env` file
 
 ### Using Command Line:
