@@ -128,7 +128,11 @@ main {
   grid-template-columns: 420px auto;
 }
 
-summary {
+:focus {
+  outline: var(--green3) dotted 2px;
+}
+
+[data-is-focused="true"] {
   outline: none;
 }
 
