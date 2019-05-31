@@ -19,8 +19,8 @@ export function scrollTo(
   let previousTime = window.performance.now();
   let currentTime = 0;
 
-  const ret: Promise<boolean> = new Promise((resolve, _reject) => {
-    const animateScroll = function animateScroll() {
+  return new Promise((resolve, _reject) => {
+    const animateScroll = () => {
       const time = window.performance.now();
       const increment = time - previousTime;
       previousTime = time;
@@ -30,14 +30,12 @@ export function scrollTo(
         easeInOutCubic(currentTime, start, change, duration)
       );
       if (currentTime < duration) {
-        return window.requestAnimationFrame(animateScroll);
+        window.requestAnimationFrame(animateScroll);
       }
       resolve(true);
     };
     animateScroll();
   });
-
-  return ret;
 }
 
 const SPEED_MODIFIER = 0.9;

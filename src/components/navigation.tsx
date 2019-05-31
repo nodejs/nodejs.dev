@@ -19,14 +19,20 @@ const Navigation = ({ sections, currentSlug }: Props) => {
       toggle();
     }
   };
-  const autoScroll = (height: number) => {
+  const autoScroll = async (height: number) => {
     if (isOpen && !hasScrolled && navElement.current) {
       const { newScrollPos, scrollWindow, scrollTime } = calcNavScrollParams(
         height,
         navElement.current
       );
-      scrollTo(newScrollPos, scrollWindow, scrollTime);
-      setHasScrolled(true);
+
+      try {
+        await scrollTo(newScrollPos, scrollWindow, scrollTime);
+        setHasScrolled(true);
+      } catch (e) {
+        // TODO: follow up with appropriate error logging if any
+        setHasScrolled(false);
+      }
     }
   };
 
