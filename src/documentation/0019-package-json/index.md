@@ -445,7 +445,7 @@ Each has a specific property, like `eslintConfig`, `babel` and others. Those are
 
 You have seen in the description above version numbers like these: `~3.0.0` or `^0.13.0`. What do they mean, and which other version specifiers can you use?
 
-That symbol specifies which updates you package accepts, from that dependency.
+That symbol specifies which updates your package accepts, from that dependency.
 
 Given that using semver (semantic versioning) all versions have 3 digits, the first being the major release, the second the minor release and the third is the patch release, you have these rules:
 
