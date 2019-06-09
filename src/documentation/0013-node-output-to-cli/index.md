@@ -36,12 +36,12 @@ console.log('My %s has %d years', 'cat', 2)
 - `%s` format a variable as a string
 - `%d` format a variable as a number
 - `%i` format a variable as its integer part only
-- `%O` used to print an object representation
+- `%o` used to print an object representation
 
 Example:
 
 ```js
-console.log('%O', Number)
+console.log('%o', Number)
 ```
 
 ## Clear the console
