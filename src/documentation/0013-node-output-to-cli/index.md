@@ -34,8 +34,8 @@ console.log('My %s has %d years', 'cat', 2)
 ```
 
 - `%s` format a variable as a string
-- `%d` or `%i` format a variable as an integer
-- `%f` format a variable as a floating point number
+- `%d` format a variable as a number
+- `%i` format a variable as its integer part only
 - `%O` used to print an object representation
 
 Example:
