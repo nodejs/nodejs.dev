@@ -25,8 +25,8 @@
   },
   "devDependencies": {
     "nock": "^10.0.6",
-    "standard": "^12.0.1",
-    "semantic-release": "^15.13.3"
+    "semantic-release": "^15.13.16",
+    "standard": "^12.0.1"
   },
   "release": {
     "prepare": [],

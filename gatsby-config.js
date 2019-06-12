@@ -115,9 +115,7 @@ module.exports = {
           });
           allMarkdownRemark.edges.map(edge => {
             pages.push({
-              url: `${site.siteMetadata.siteUrlNoSlash}/${
-                edge.node.fields.slug
-              }`,
+              url: `${site.siteMetadata.siteUrlNoSlash}/${edge.node.fields.slug}`,
               changefreq: `daily`,
               priority: 0.7,
             });
