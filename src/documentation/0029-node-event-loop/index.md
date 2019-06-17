@@ -94,7 +94,7 @@ The above example looks normal, there's nothing special about it: JavaScript fin
 
 Let's see how to defer a function until the stack is clear.
 
-The use case of `setTimeout(() => {}), 0)` is to call a function, but execute it once every other function in the code has executed.
+The use case of `setTimeout(() => {}, 0)` is to call a function, but execute it once every other function in the code has executed.
 
 Take this example:
 
