@@ -7,6 +7,9 @@ env:
   - COMMAND=build
   - COMMAND=test-ci
 
+before_install:
+  - npm install -g yarn
+
 install: yarn --frozen-lockfile
 
 cache:
