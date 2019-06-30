@@ -41,8 +41,8 @@ require('path').dirname('/test/something/file.txt') // /test/something
 Return the extension part of a path
 
 ```js
-require('path').dirname('/test/something') // ''
-require('path').dirname('/test/something/file.txt') // '.txt'
+require('path').extname('/test/something') // ''
+require('path').extname('/test/something/file.txt') // '.txt'
 ```
 
 ### `path.isAbsolute()`
