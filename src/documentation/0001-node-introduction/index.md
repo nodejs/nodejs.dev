@@ -69,7 +69,7 @@ The first provides the request details. In this simple example, this is not used
 
 The second is used to return data to the caller.
 
-In this case with
+In this case with:
 
 ```js
 res.statusCode = 200
