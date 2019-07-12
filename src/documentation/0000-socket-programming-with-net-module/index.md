@@ -30,15 +30,17 @@ const server = net.createServer(client => {
 
   console.log('Client connected!')
 
+  // The client is a stream, set the data encoding to utf8
+  client.setEncoding('utf8')
+
   // Manual implementation of an echo server:
-  // Get data in from the client, and write it back to the client without modifying it.
-  client.on('data', buf => { // receiving data from the client connection as a Buffer
-    console.log(buf.toString()) // easily transfrom this into a string with the Buffer.toString() prototype method
-    client.write(buf)
+  client.on('data', data => { // data is a UTF-8 string
+    console.log(data) // log the message from the client to the server
+    client.write(data) // write the same message back to the client
   })
 
   // Automatic implementation of an echo server:
-  client.pipe(client) // client connections are streams so you have full access to regular stream methods
+  client.pipe(client) // client is a stream, use the Stream.pipe prototype method
 })
 
 // Start the server on localhost:8124
@@ -48,7 +50,7 @@ server.listen(8124, 'localhost', () => {
 })
 ```
 
-With this server running, connect to it using your system's command-line TCP interface. The two most common are telnet and netcat. If you're unsure which, try both! If neither work a quick search for "telnet alternative for \<your OS\>" will help. 
+With this server running, connect to it using your system's command-line TCP interface. The two most common are telnet and netcat. If you're unsure which, try both! If neither work, search on Google for "telnet alternative for \<your OS\>".
 
 In another terminal connect to the running TCP server:
 ```bash
@@ -63,7 +65,7 @@ Great work! You have succesfully implemented your first TCP server-client connec
 
 ## Example using `net.createConnection()`
 
-Before starting, open to terminals and startup the Node.js repl (you can also use two files called `server.js` and `client.js` respectively). In the following example, we will create a TCP server and a connection to that server using the `net` module. By doing so, the interactivity is not the same as the previous echo example. In fact, without using another core module such as `readline` or `fs`, this example is completely non-interactive. The client code will disconnect itself at the end of its execution.
+Before starting, open to terminals and startup the Node.js repl (you can also use two files called `server.js` and `client.js` respectively). In the following example, we will create a TCP server and a connection to that server using the `net` module. By doing so, the interactivity is not the same as the previous echo example. In fact, without using other core Node.js modules, this example is completely non-interactive. The client code will disconnect itself at the end of its execution.
 
 ```js
 // In the first repl, create and start a server
@@ -73,12 +75,12 @@ const server = net.createServer(client => {
 
   console.log('Client connected') // log the client has connected to the server 
 
+  client.setEncoding('utf8') // set the data encoding
+
   client.write('Hello from the server!\n') // say hello to the new connection
 
-  client.on('data', buf => {
-    const str = buf.toString()
-    client.write(str.toUpperCase()) // return the users message in ALL CAPS
-    client.write('QUIT') // send an arbitrary message to end the non-interactive session
+  client.on('data', data => {
+    client.write(data.toUpperCase()) // echo the client message in ALL CAPS
   })
 
   client.on('end', () => {
@@ -102,13 +104,11 @@ const client = net.createConnection(8124, 'localhost', () => {
   client.write('Hello from the client!\n') // say hello to the server
 })
 
-client.on('data', buf => {
-  const str = buf.toString()
-  if (str === 'QUIT') {
-    client.end() // if the server sends the arbitrary quit message, end the connection. This will happen after the server sends back the hello message in ALL CAPS.
-  } else {
-    console.log(buf.toString()) // log messages from the server to the client
-  }
+client.setEncoding('utf8') // set the encoding 
+
+client.on('data', data => {
+  console.log(data) // log messages from the server to the client
+  client.end() // end the connection after
 })
 
 client.on('end', () => {
@@ -116,9 +116,11 @@ client.on('end', () => {
 })
 ```
 
+The second example introduces an additional event listener `'end'`. This is very useful for determining when a socket connection is terminated. In the client code, the call to `client.end()` is the programatic way of ending a socket connection.
+
 ## Conclusion
 
-Fantastic work! With these two examples you should have what you need to get started building your own TCP communication networks.
+Fantastic work! With these two examples you should have what you need to get started building your own TCP communication networks. This guide only brushes the surface of socket programming applications, but the most important take away here is that Node.js implements TCP socket connections as duplex streams and event emitters. Understanding those two concepts will benefit your overall understanding of the `net` module.
 
 For more capabilities of the `net` module read the Node.js [net documentation](https://nodejs.org/api/net.html).
 
