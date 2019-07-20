@@ -240,7 +240,7 @@ main {
   margin: 0 -2.4rem -92px -2.4rem;
   position: sticky;
   top: 0;
-  width: 100vw;
+  width: 100%;
   z-index: 998;
 }
 
