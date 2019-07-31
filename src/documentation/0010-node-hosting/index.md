@@ -50,9 +50,9 @@ They both provide an abstraction layer to publishing on AWS Lambda and other FAA
 
 PAAS stands for Platform As A Service. These platforms take away a lot of things you should otherwise worry about when deploying your application.
 
-### Zeit Now
+### ZEIT Now
 
-Zeit is an interesting option. You just type `now` in your terminal, and it takes care of deploying your application. There is a free version with limitations, and the paid version is more powerful. You simply forget that there's a server, you just deploy the app.
+ZEIT Now is an interesting option. You just type `now` in your terminal, and it takes care of deploying your application. There is a free version with limitations, and the paid version is more powerful. You simply forget that there's a server, you just deploy the app.
 
 ### Nanobox
 
