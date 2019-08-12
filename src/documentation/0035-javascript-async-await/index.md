@@ -118,7 +118,7 @@ const getFirstUserData = () => {
     .then(response => response.json()) // parse JSON
     .then(users => users[0]) // pick first user
     .then(user => fetch(`/users/${user.name}`)) // get user data
-    .then(userResponse => response.json()) // parse JSON
+    .then(userResponse => userResponse.json()) // parse JSON
 }
 
 getFirstUserData()
@@ -132,7 +132,7 @@ const getFirstUserData = async () => {
   const users = await response.json() // parse JSON
   const user = users[0] // pick first user
   const userResponse = await fetch(`/users/${user.name}`) // get user data
-  const userData = await user.json() // parse JSON
+  const userData = await userResponse.json() // parse JSON
   return userData
 }
 
