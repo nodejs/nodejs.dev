@@ -32,7 +32,7 @@ try {
 }
 ```
 
-The default encoding is utf8, but you can specify a custom encoding using a a second parameter.
+The default encoding is utf8, but you can specify a custom encoding using a second parameter.
 
 Both `fs.readFile()` and `fs.readFileSync()` read the full content of the file in memory before returning the data.
 
