@@ -29,7 +29,7 @@ Emits an event. It synchronously calls every event listener in the order they we
 
 ## `emitter.eventNames()`
 
-Return an array of strings that represent the events registered on the current EventListener:
+Return an array of strings that represent the events registered on the current `EventEmitter` object:
 
 ```js
 door.eventNames()
@@ -37,7 +37,7 @@ door.eventNames()
 
 ## `emitter.getMaxListeners()`
 
-Get the maximum amount of listeners one can add to an EventListener object, which defaults to 10 but can be increased or lowered by using `setMaxListeners()`
+Get the maximum amount of listeners one can add to an `EventEmitter` object, which defaults to 10 but can be increased or lowered by using `setMaxListeners()`
 
 ```js
 door.getMaxListeners()
@@ -98,7 +98,7 @@ When you add a listener using `once`, it's added last in the queue of listeners,
 
 ## `emitter.removeAllListeners()`
 
-Removes all listeners of an event emitter object listening to a specific event:
+Removes all listeners of an `EventEmitter` object listening to a specific event:
 
 ```js
 door.removeAllListeners('open')
@@ -116,7 +116,7 @@ door.removeListener('open', doSomething)
 
 ## `emitter.setMaxListeners()`
 
-Sets the maximum amount of listeners one can add to an EventListener object, which defaults to 10 but can be increased or lowered.
+Sets the maximum amount of listeners one can add to an `EventEmitter` object, which defaults to 10 but can be increased or lowered.
 
 ```js
 door.setMaxListeners(50)
