@@ -3,8 +3,8 @@
   "plugins": ["@typescript-eslint", "react-hooks"],
   "extends": [
     "airbnb",
-    "prettier/@typescript-eslint",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint"
   ],
   "env": {
     "browser": true
