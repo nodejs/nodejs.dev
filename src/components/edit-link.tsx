@@ -30,11 +30,11 @@ const icon: SerializedStyles = css`
   vertical-align: middle;
 `;
 
-type Props = {
+interface Props {
   relativePath?: string;
-};
+}
 
-const EditLink = ({ relativePath }: Props) => {
+const EditLink = ({ relativePath }: Props): JSX.Element | null => {
   if (!relativePath) {
     return null;
   }

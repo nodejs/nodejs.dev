@@ -13,14 +13,14 @@ import {
   removeFocusOutlineListeners,
 } from '../util/outlineOnKeyboardNav';
 
-type Props = {
+interface Props {
   children: React.ReactNode;
   title?: string;
   description?: string;
   img?: string;
-};
+}
 
-const Layout = ({ children, title, description, img }: Props) => {
+const Layout = ({ children, title, description, img }: Props): JSX.Element => {
   const prevOffset = useRef<number>(-1);
 
   useEffect(() => {
@@ -94,11 +94,11 @@ const Layout = ({ children, title, description, img }: Props) => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <SEO title={title} description={description} img={img} />
       <Header />
       <main>{children}</main>
-    </>
+    </React.Fragment>
   );
 };
 

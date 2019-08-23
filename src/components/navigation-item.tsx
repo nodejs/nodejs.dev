@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'gatsby';
 
-type Props = {
+interface Props {
   key: string;
   isRead: boolean;
   isActive: boolean;
@@ -18,7 +18,7 @@ const NavigationItem = ({
   title,
   onClick,
   autoScroll,
-}: Props) => {
+}: Props): JSX.Element => {
   let className = 'side-nav__item ';
   if (isRead) {
     className += 'side-nav__item--done';
@@ -26,11 +26,12 @@ const NavigationItem = ({
     className += 'side-nav__item--active';
   }
   const element = useRef<HTMLAnchorElement | null>(null);
-  const handleRef = (ref?: HTMLAnchorElement | null) => {
+  const handleRef = (ref?: HTMLAnchorElement | null): void => {
     if (ref && isActive) {
       element.current = ref;
     }
   };
+
   useEffect(() => {
     if (element.current) {
       const height = element.current.getBoundingClientRect().top;
@@ -40,7 +41,7 @@ const NavigationItem = ({
 
   return (
     <Link
-      ref={handleRef}
+      innerRef={handleRef}
       to={`/${slug}`}
       onClick={onClick}
       className={className}

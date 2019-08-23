@@ -1,10 +1,10 @@
 import React from 'react';
 
-type Props = {
+interface Props {
   title: string;
 };
 
-const Hero = ({ title }: Props) => (
+const Hero = ({ title }: Props): JSX.Element => (
   <div className="hero">
     <h1>{title}</h1>
     <div className="diagonal-hero-bg">

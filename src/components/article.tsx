@@ -5,7 +5,7 @@ import EditLink from './edit-link';
 import Pagination from './pagination';
 import TOC from './toc';
 
-type Props = {
+interface Props {
   title: string;
   html: string;
   tableOfContents: string;
@@ -13,7 +13,7 @@ type Props = {
   relativePath: string;
   next?: PaginationInfo;
   previous?: PaginationInfo;
-};
+}
 
 const Article = ({
   title,
@@ -23,7 +23,7 @@ const Article = ({
   next,
   relativePath,
   authors,
-}: Props) => (
+}: Props): JSX.Element => (
   <article className="article-reader">
     <h1 className="article-reader__headline">{title}</h1>
     <TOC heading="TABLE OF CONTENTS" tableOfContents={tableOfContents} />

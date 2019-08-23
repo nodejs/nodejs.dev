@@ -6,10 +6,10 @@ import Layout from '../components/layout';
 import Navigation from '../components/navigation';
 import { LearnPageContext, LearnPageData } from '../types';
 
-type Props = {
+interface Props {
   data: LearnPageData;
   pageContext: LearnPageContext;
-};
+}
 
 export default ({
   data: {
@@ -20,24 +20,24 @@ export default ({
       fields: { authors },
     },
   },
-  pageContext: { slug, next, previous, relativePath, navigationData },
-}: Props) => {
-  return (
-    <Layout title={title} description={description}>
-      <Hero title={title} />
-      <Navigation currentSlug={slug} sections={navigationData} />
-      <Article
-        title={title}
-        html={html}
-        tableOfContents={tableOfContents}
-        next={next}
-        authors={authors}
-        previous={previous}
-        relativePath={relativePath}
-      />
-    </Layout>
-  );
-};
+  pageContext: {
+    slug, next, previous, relativePath, navigationData,
+  },
+}: Props): React.ReactNode => (
+  <Layout title={title} description={description}>
+    <Hero title={title} />
+    <Navigation currentSlug={slug} sections={navigationData} />
+    <Article
+      title={title}
+      html={html}
+      tableOfContents={tableOfContents}
+      next={next}
+      authors={authors}
+      previous={previous}
+      relativePath={relativePath}
+    />
+  </Layout>
+);
 
 export const query = graphql`
   query DocBySlug($slug: String!) {
