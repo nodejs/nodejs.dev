@@ -22,7 +22,7 @@
   <br>
 </p>
 
-**Watch this repo and [nodejs/website-redesign](https://github.com/nodejs/website-redesign/). This repo is a codebase for the initiative. Ongoing work is also happening in the administrative/planning repo at [nodejs/website-redesign](https://github.com/nodejs/website-redesign/).**
+**You can find the latest [Figma design protype here](https://www.figma.com/proto/lOxAGGg5KXb6nwie7zXkz6/NJ---Design-System?node-id=1276%3A10492&viewport=-232%2C-1378%2C0.21998274326324463&scaling=min-zoom).**
 
 ## 🚀 Get Started
 
