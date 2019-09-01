@@ -1,7 +1,7 @@
 ---
 title: Differences between Node.js and the Browser
 description: 'How writing JavaScript application in Node.js differs from programming for the Web inside the browser'
-authors: flaviocopes, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais
+authors: flaviocopes, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, karlhorky
 section: Quick Start
 ---
 
@@ -11,7 +11,7 @@ Building apps that run in the browser is a completely different thing than build
 
 Despite the fact that it's always JavaScript, there are some key differences that make the experience radically different.
 
-As a frontend developer who extensively uses Javascript, Node.js apps brings with it, a huge advantage - the comfort of programming everything, the frontend and the backend, in a single language
+From the perspective of a frontend developer who extensively uses JavaScript, Node.js apps bring with them a huge advantage: the comfort of programming everything - the frontend and the backend - in a single language.
 
 You have a huge opportunity because we know how hard it is to fully, deeply learn a programming language, and by using the same language to perform all your work on the web - both on the client and on the server, you're in a unique position of advantage.
 
