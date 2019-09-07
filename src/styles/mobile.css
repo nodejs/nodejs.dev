@@ -173,17 +173,6 @@
     margin: 4.2rem 0 0;
   }
 
-
-  /* .article-reader h1 { font-size: 3.2rem; }
-  .article-reader h2 { font-size: 2.8rem; }
-  .article-reader h3 { font-size: 2.4rem; }
-  .article-reader h4 { font-size: 2.2rem; }
-  .article-reader h5 { font-size: 2.0rem; }
-  .article-reader h6 {
-    font-size: 1.8rem;
-    font-weight: 800;
-  } */
-
   /* Place top sentinels higher up on mobile */
   .sticky-sentinel--top {
     top: -92px;
