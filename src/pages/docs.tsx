@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApiData, useReleaseHistory } from '../hooks';
-import { ApiDocsPage, APIResponse } from '../hooks/useApiDocs';
+import { ApiDocsObj, APIResponse } from '../hooks/useApiDocs';
 import Layout from '../components/layout';
 
 function sideBarSection(
@@ -29,7 +29,7 @@ export default () => {
   const title = 'API Docs';
   const description = 'Come learn yourself something.';
   const [version, setVersion] = useState<string | null>(null);
-  const [page, setPage] = useState<ApiDocsPage | null>(null);
+  const [page, setPage] = useState<ApiDocsObj | null>(null);
 
   // Magical function filters out all major versions less than 6.
   // TODO: Remove the magical number for the major version. Fet from dynamic releases data to filter out EOL'd versions.
