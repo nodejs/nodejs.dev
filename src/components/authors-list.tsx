@@ -21,7 +21,7 @@ const list: SerializedStyles = css`
     width: 100%;
     margin: 0.5rem 0.5rem 0.5rem 0;
     font-weight: normal;
-    :1.4rem ;
+    font-size: 1.4rem;
   }
 `;
 

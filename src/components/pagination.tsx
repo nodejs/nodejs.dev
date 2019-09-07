@@ -7,7 +7,7 @@ const link: SerializedStyles = css`
   color: var(--black7) !important;
   text-transform: uppercase;
   text-decoration: none !important;
-  :1.4rem ;
+  font-size: 1.4rem;
   font-weight: normal;
   font-family: var(--sans-serif);
   vertical-align: middle;
