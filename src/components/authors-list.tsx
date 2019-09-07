@@ -7,7 +7,7 @@ const list: SerializedStyles = css`
   flex-wrap: wrap;
   margin: 5rem 0 2.5rem;
   align-items: center;
-  color: var(--gray7);
+  color: var(--black7);
   text-transform: uppercase;
   padding-left: 0;
 
@@ -21,7 +21,7 @@ const list: SerializedStyles = css`
     width: 100%;
     margin: 0.5rem 0.5rem 0.5rem 0;
     font-weight: normal;
-    font-size: 1.4rem;
+    :1.4rem ;
   }
 `;
 

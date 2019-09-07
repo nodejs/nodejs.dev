@@ -7,10 +7,10 @@ const edit: SerializedStyles = css`
 `;
 
 const link: SerializedStyles = css`
-  color: var(--gray7) !important;
+  color: var(--black7) !important;
   text-transform: uppercase;
   text-decoration: none !important;
-  font-size: 1.4rem;
+  :1.4rem ;
   font-weight: normal;
   font-family: var(--sans-serif);
   vertical-align: middle;
