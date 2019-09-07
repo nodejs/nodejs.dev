@@ -2,16 +2,22 @@ import { useState, useEffect } from 'react';
 
 // TODO: Flesh out API types.
 /* tslint:disable */
-interface APIResponse {
-  classes: any[];
-  globals: any[];
-  methods: any[];
-  miscs: any[];
-  modules: any[];
+export interface ApiDocsPage {
+  name: string;
+  displayName?: string;
+  desc?: string;
+}
+
+export interface APIResponse {
+  classes: ApiDocsPage[];
+  globals: ApiDocsPage[];
+  methods: ApiDocsPage[];
+  miscs: ApiDocsPage[];
+  modules: ApiDocsPage[];
 }
 /* tslint:enable */
 
-export function useApiData(version: string): APIResponse {
+export function useApiData(version: string | null): APIResponse {
   const [apiData, setApiData] = useState<APIResponse>({
     classes: [],
     globals: [],
@@ -27,8 +33,10 @@ export function useApiData(version: string): APIResponse {
       );
       setApiData((await res.json()) as APIResponse);
     };
-    fetchData();
-  }, []);
+    if (version) {
+      fetchData();
+    }
+  }, [version]);
 
   return apiData;
 }
