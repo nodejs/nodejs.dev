@@ -29,9 +29,7 @@ const Header = () => (
         <a href="/docs">Documentation</a>
       </li>
       <li className="nav__tabs">
-        <a target="_blank" href="https://nodejs.org/en/download/">
-          Download
-        </a>
+        <a href="/download">Download</a>
       </li>
       <li className="nav__tabs">
         <a target="_blank" href="https://github.com/nodejs/nodejs.dev">
