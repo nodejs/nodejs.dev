@@ -1,7 +1,29 @@
 import React, { useState } from 'react';
 import { useApiData, useReleaseHistory } from '../hooks';
-import { ApiDocsPage } from '../hooks/useApiDocs';
+import { ApiDocsPage, APIResponse } from '../hooks/useApiDocs';
 import Layout from '../components/layout';
+
+function sideBarSection(
+  title: string,
+  section: keyof APIResponse,
+  data: APIResponse,
+  setPage: Function
+) {
+  return (
+    <li>
+      <h2>{title}</h2>
+      <ul>
+        {data[section].map(module => (
+          <li key={module.name}>
+            <a href="#" onClick={() => setPage(module)}>
+              {module.displayName || module.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </li>
+  );
+}
 
 export default () => {
   const title = 'API Docs';
@@ -36,18 +58,8 @@ export default () => {
               ))}
             </select>
           </li>
-          <li>
-            <h2>Modules</h2>
-            <ul>
-              {apiData.modules.map(module => (
-                <li key={module.name}>
-                  <a href="#" onClick={() => setPage(module)}>
-                    {module.displayName}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </li>
+          {sideBarSection('Globals', 'globals', apiData, setPage)}
+          {sideBarSection('Modules', 'modules', apiData, setPage)}
         </ul>
       </nav>
       <article style={{ width: '100%' }} className="article-reader">
