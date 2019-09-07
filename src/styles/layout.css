@@ -9,6 +9,7 @@ body {
   font-size: var(--base-font-size);
   font-family: var(--base-type-face);
   margin: 0;
+  margin-top: 100px;
 
   /* Set in JavaScript */
   --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
@@ -76,6 +77,32 @@ body {
   color: var(--color-text-accent);
   text-decoration: underline;
   cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+body:not(.dark-mode) .dark-mode-only {
+  display: none;
+}
+
+.dark-mode .light-mode-only {
+  display: none;
+}
+
+.dark-mode-toggle {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-text-accent);
 }
 
 /* Start: Syntax Highlight Overrides */

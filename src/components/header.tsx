@@ -36,6 +36,13 @@ const Header = () => (
           GitHub
         </a>
       </li>
+      <li className="nav__tabs">
+        <button className="dark-mode-toggle" onClick={() => document.body.classList.toggle("dark-mode")}>
+          <span className="sr-only">Toggle Dark Mode</span>
+          <i className="material-icons light-mode-only">nights_stay</i>
+          <i className="material-icons dark-mode-only">wb_sunny</i>
+        </button>
+      </li>
     </ul>
   </nav>
 );
