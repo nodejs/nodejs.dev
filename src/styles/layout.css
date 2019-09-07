@@ -1,109 +1,88 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin,latin-ext);
-@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic&subset=latin,latin-ext);
-
 html {
-  font-size: 10px;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--gray0);
-  color: var(--gray9);
-  font-family: var(--sans-serif);
-  font-size: 1.8rem;
+  background: var(--color-fill-app);
+  color: var(--color-text-primary);
+  font-size: var(--base-font-size);
+  font-family: var(--base-type-face);
   margin: 0;
-  padding-top: var(--nav-height);
 
   /* Set in JavaScript */
   --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
-  --banner-gradient: linear-gradient(to right, var(--purple9), var(--blue7));
+  --banner-gradient: linear-gradient(to right, var(--accent9), var(--info7));
   --nav-height: 6.2rem;
   --hero-height: 36.0rem;
 
-  --sans-serif: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --serif: 'Merriweather', Georgia, Cambria, "Times New Roman", Times, serif;
+  --brand-light: var(--brand3);
+  --brand: var(--brand5);
+  --brand-dark: var(--brand7); 
+}
 
-  --gray0: #F5F6F7;
-  --gray1: #EAEDEF;
-  --gray2: #DAE1E5;
-  --gray3: #CBD4D8;
-  --gray4: #B0BCC1;
-  --gray5: #929FA5;
-  --gray6: #6F7B82;
-  --gray7: #556066;
-  --gray8: #3F484C;
-  --gray9: #2D3438;
-  --red0: #FAF0F0;
-  --red1: #FAD4D4;
-  --red2: #FAB6B6;
-  --red3: #FA8E8E;
-  --red4: #F55353;
-  --red5: #DE1B1B;
-  --red6: #B80D0D;
-  --red7: #8F0E0E;
-  --red8: #661414;
-  --red9: #451717;
-  --orange0: #FCF2E6;
-  --orange1: #FAD8AF;
-  --orange2: #F5BC76;
-  --orange3: #E89C3F;
-  --orange4: #CF7911;
-  --orange5: #AD5F00;
-  --orange6: #8A4D03;
-  --orange7: #693D07;
-  --orange8: #4D2F0B;
-  --orange9: #33210C;
-  --green0: #ECF2E9;
-  --green1: #C5E5B5;
-  --green2: #9ACC7D;
-  --green3: #83BA63;
-  --green4: #5FA04D;
-  --green5: #417F38;
-  --green6: #2C682C;
-  --green7: #215127;
-  --green8: #193F1D;
-  --green9: #0F260F;
-  --blue0: #E8F4FA;
-  --blue1: #BBE5FA;
-  --blue2: #8DD4F7;
-  --blue3: #53BAED;
-  --blue4: #229AD6;
-  --blue5: #0C7BB3;
-  --blue6: #066391;
-  --blue7: #064D70;
-  --blue8: #093952;
-  --blue9: #0C2938;
-  --purple0: #F5F0FA;
-  --purple1: #EAD9FA;
-  --purple2: #DABCF7;
-  --purple3: #C79BF2;
-  --purple4: #AE74E8;
-  --purple5: #9656D6;
-  --purple6: #7D3CBD;
-  --purple7: #642B9E;
-  --purple8: #4B2175;
-  --purple9: #371C52;
-  --pink0: #FAF0F4;
-  --pink1: #FAD4E4;
-  --pink2: #FAB4D1;
-  --pink3: #F78BB8;
-  --pink4: #ED5393;
-  --pink5: #D6246E;
-  --pink6: #B01355;
-  --pink7: #8A1244;
-  --pink8: #611535;
-  --pink9: #421527;
-
-  --brand-light: var(--green3);
-  --brand: var(--green5);
-  --brand-dark: var(--green7);
+.t-display1, h1 {
+  font-size: var(--font-size-display1);
+  line-height: var(--line-height-display1);
+  font-weight: var(--font-weight-light);
+  margin-bottom: var(--spacing-80);
+}
+.t-display2 {
+  font-size: var(--font-size-display2);
+  line-height: var(--line-height-display2);
+  font-weight: var(--font-weight-regular);
+}
+.t-display3 {
+  font-size: var(--font-size-display3);
+  line-height: var(--line-height-display3);
+  font-weight: var(--font-weight-regular);
+}
+.t-headline, h2 {
+  font-size: var(--font-size-headline);
+  line-height: var(--line-height-headline);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-24);
+}
+.t-subheading, h3 {
+  font-size: var(--font-size-subheading);
+  line-height: var(--line-height-subheading);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-08);
+}
+.t-body1, p {
+  font-size: var(--font-size-body1);
+  line-height: var(--line-height-body1);
+  font-weight: var(--font-weight-regular);
+  margin-bottom: var(--space-24);
+}
+.t-body2 {
+  font-size: var(--font-size-body2);
+  line-height: var(--line-height-body2);
+  font-weight: var(--font-weight-regular);
+}
+.t-caption {
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  font-weight: var(--font-weight-regular);
+}
+.t-overline {
+  font-size: var(--font-size-overline);
+  line-height: var(--line-height-overline);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+.t-link, a {
+  color: var(--color-text-accent);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /* Start: Syntax Highlight Overrides */
 
 :not(pre) > code[class*="language-"] {
-  background-color: var(--gray2) !important;
-  color: var(--gray9) !important;
+  background-color: var(--black2) !important;
+  color: var(--black9) !important;
   padding: 0 6px !important;
   text-decoration: none;
   text-shadow: none;
@@ -111,14 +90,14 @@ body {
 
 pre[class*="language-"],
 code[class*="language-"] {
-  color: var(--gray2) !important;
-  background: var(--gray9) !important;
+  color: var(--black2) !important;
+  background: var(--black9) !important;
 }
-.token.punctuation { color: var(--gray2) !important; }
-.token.operator { color: var(--gray2) !important; }
-.token.function { color: var(--orange3) !important; }
-.token.keyword { color: var(--blue3) !important; }
-.token.string { color: var(--green3) !important; }
+.token.punctuation { color: var(--black2) !important; }
+.token.operator { color: var(--black2) !important; }
+.token.function { color: var(--warning3) !important; }
+.token.keyword { color: var(--info3) !important; }
+.token.string { color: var(--brand3) !important; }
 .token.number { color: var(--purple3) !important; }
 
 /* End: Syntax Highlight Overrides */
@@ -129,7 +108,7 @@ main {
 }
 
 :focus {
-  outline: var(--green3) dotted 2px;
+  outline: var(--brand3) dotted 2px;
 }
 
 [data-is-focused="true"] {
@@ -156,7 +135,6 @@ main {
 
 .nav__tabs {
   text-decoration: none;
-  font-size: 14px;
   margin-left: 16px;
 }
 
@@ -164,7 +142,6 @@ main {
   text-decoration: none;
   color: black;
 }
-
 
 .hero {
   align-items: center;
@@ -181,7 +158,6 @@ main {
 .hero h1 {
   bottom: 28px;
   color: white;
-  font-size: 4.2rem;
   font-weight: 600;
   left: 460px;
   max-width: 768px;
@@ -229,7 +205,7 @@ main {
 
 .side-nav::before {
   background: var(--banner-gradient);
-  background-color: var(--gray9);
+  background-color: var(--black9);
   background-size: 100vw 100%;
   clip-path: var(--banner-clip);
   content: "";
@@ -278,7 +254,7 @@ main {
   align-items: center;
   border-radius: 4px;
   box-sizing: border-box;
-  color: var(--gray9);
+  color: var(--black9);
   cursor: pointer;
   line-height: 2.4rem;
   list-style: none;
@@ -289,7 +265,7 @@ main {
 }
 
 .side-nav__item {
-  color: var(--gray9);
+  color: var(--black9);
   text-decoration: none;
   display: block;
 }
@@ -351,7 +327,6 @@ main {
   color: white;
   overflow: visible;
   border: none;
-  font-size: 1.8rem;
   text-indent: 3.2rem;
   line-height: 0;
   font-weight: 200;
@@ -394,9 +369,7 @@ main {
 /* Start: Article Reader HTML Reset */
 
 .article-reader {
-  color: var(--gray9);
-  font-family: var(--serif);
-  font-size: 1.8rem;
+  color: var(--black9);
   font-style: normal;
   font-weight: 400;
   line-height: 1.58;
@@ -423,10 +396,10 @@ main {
 }
 
 .article-reader a {
-  color: var(--gray9);
+  color: var(--black9);
   font-weight: 600;
   text-decoration: underline;
-  text-decoration-color: var(--gray4);
+  text-decoration-color: var(--black4);
   transition: all ease-out 0.2s;
 }
 
@@ -460,20 +433,9 @@ main {
   padding-bottom: 0.1rem;
 }
 
-.article-reader h1 { font-size: 4.8rem; }
-.article-reader h2 { font-size: 4.0rem; }
-.article-reader h3 { font-size: 3.2rem; }
-.article-reader h4 { font-size: 2.4rem; }
-.article-reader h5 { font-size: 2.0rem; }
-.article-reader h6 {
-  font-size: 1.8rem;
-  font-weight: 800;
-}
-
 .article-reader blockquote {
-  border-left: 3px solid var(--gray4);
-  color: var(--gray6);
-  font-size: 2.0rem;
+  border-left: 3px solid var(--black4);
+  color: var(--black6);
   font-style: italic;
   font-weight: 200;
   letter-spacing: 1px;
@@ -565,7 +527,7 @@ details,
 .toc a {
   font-family: var(--sans-serif);
   text-decoration: underline;
-  text-decoration-color: var(--gray4);
+  text-decoration-color: var(--black4);
   transition: all ease-out 0.2s;
 }
 
@@ -584,7 +546,7 @@ details,
 .autolink-headers {
   position: absolute;
   left: -4px;
-  fill: var(--orange3);
+  fill: var(--warning3);
 }
 
 /* IntersectionObserver related styles */

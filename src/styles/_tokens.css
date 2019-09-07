@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body {
+    /* Colors */
+    --brand2: #C5E5B4;
+    --brand3: #99CC7D;
+    --brand4: #84BA64;
+    --brand5: #5FA04E;
+    --brand6: #417E38;
+    --brand7: #2C682C;
+    --brand8: #215127;
+    --brand9: #1A3F1D;
+
+    --black0: #FFFFFF;
+    --black1: #F6F7F9;
+    --black2: #E9EDF0;
+    --black3: #D9E1E4;
+    --black4: #CBD4D9;
+    --black5: #B1BCC2;
+    --black6: #929FA5;
+    --black7: #6E7B83;
+    --black8: #556066;
+    --black9: #2C3437;
+
+    --warning1: #FDF3E7;
+    --warning2: #FAD9B0;
+    --warning3: #F5BC75;
+    --warning4: #E99C40;
+    --warning5: #D07912;
+    --warning6: #AE5F00;
+    --warning7: #8B4D04;
+    --warning8: #683D08;
+    --warning9: #4D2F0B;
+
+    --danger1: #FBF1F0;
+    --danger2: #FAD3D4;
+    --danger3: #FAB6B7;
+    --danger4: #FA8E8E;
+    --danger5: #F65354;
+    --danger6: #DE1A1B;
+    --danger7: #B80C0C;
+    --danger8: #900E0E;
+    --danger9: #661514;
+
+    --info1: #E9F4FA;
+    --info2: #BCE6FC;
+    --info3: #8ED4F8;
+    --info4: #52BAED;
+    --info5: #229AD6;
+    --info6: #0C7BB3;
+    --info7: #066291;
+    --info8: #074D71;
+    --info9: #0A3953;
+
+    --purple1: #F7F1FB;
+    --purple2: #EAD9FB;
+    --purple3: #DBBDF9;
+    --purple4: #C79BF2;
+    --purple5: #AF74E8;
+    --purple6: #9756D6;
+    --purple7: #7D3CBE;
+    --purple8: #642B9E;
+    --purple9: #361B52;
+
+    --pink1: #FBF0F4;
+    --pink2: #FBD4E6;
+    --pink3: #FBB4D2;
+    --pink4: #F68BB7;
+    --pink5: #ED5393;
+    --pink6: #D6246E;
+    --pink7: #B01356;
+    --pink8: #8B1245;
+    --pink9: #411526;
+
+    --color-brand-primary: var(--brand5);
+
+    --color-text-primary: var(--black9);
+    --color-text-secondary: var(--black7);
+    --color-text-accent: var(--color-brand-primary);
+
+    --color-border-primary: var(--black4);
+    --color-border-secondary: var(--black3);
+    --color-border-accent: var(--color-brand-primary);
+
+    --color-fill-app: var(--black0);
+    --color-fill-canvas: var(--black0);
+    --color-fill-side-nav: var(--black1);
+    --color-fill-top-nav: var(--black0);
+    --color-fill-action: var(--brand5); /*for actionable elements*/
+
+    /* Typography */
+    --base-type-face: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --base-font-size: 16px;
+
+    --font-size-display1: 3.75rem;      /*60px*/
+    --font-size-display2: 3rem;         /*48px*/
+    --font-size-display3: 2.125rem;    /*34px*/
+    --font-size-headline: 1.5rem;       /*24px*/
+    --font-size-subheading: 1.25rem;    /*20px*/
+    --font-size-body1: var(--base-font-size); /*16px*/
+    --font-size-body2: 0.875rem;        /*14px*/
+    --font-size-caption: 0.75rem;       /*12px*/
+    --font-size-overline: 0.625rem;     /*10px*/
+    --font-size-code: 0.75rem;          /*12px*/
+
+    --line-height-display1: 4.5rem ;    /*72px*/
+    --line-height-display2: 3.5625rem;  /*57px*/
+    --line-height-display3: 3.05rem ;   /*40.8px*/
+    --line-height-headline: 1.8rem;     /*28.8px*/
+    --line-height-subheading: 1.875rem; /*30px*/
+    --line-height-body1: 1.5rem;        /*24px*/
+    --line-height-body2: 1.3125rem;     /*21px*/
+    --line-height-caption: 1.125rem;    /*18px*/
+    --line-height-overline: 0.9375rem;  /*15px*/
+    --line-height-code: 2.5rem;         /*24px*/
+
+    --font-weight-light: 100;
+    --font-weight-regular: normal;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 900;
+
+    /* Spacing */
+    --space-01:  0.0625rem; /*1px*/
+    --space-02:  0.125rem;  /*2px*/
+    --space-04:  0.25rem;   /*4px*/
+    --space-08:  0.5rem;    /*8px*/
+    --space-12:  0.75rem;   /*12px*/
+    --space-16:  1rem;      /*16px*/
+    --space-20:  1.25rem;   /*20px*/
+    --space-24:  1.5rem;    /*24px*/
+    --space-32:  2rem;      /*32px*/
+    --space-40:  2.5rem;    /*40px*/
+    --space-48:  3rem;      /*48px*/
+    --space-64:  4rem;      /*64px*/
+    --space-80:  5rem;      /*80px*/
+    --space-96:  6rem;      /*96px*/
+    --space-128: 8rem;      /*128px*/
+    --space-160: 10rem;     /*160px*/
+}
+
+.dark-mode {
+     /* Colors */
+    --color-brand-primary: var(--brand5);
+
+    --color-text-primary: var(--black4);
+    --color-text-secondary: var(--black6);
+    --color-text-accent: var(--brand4);
+
+    --color-border-primary: var(--black4);
+    --color-border-secondary: var(--black3);
+    --color-border-accent: var(--brand4);
+
+    --color-fill-app: #090C15;
+    --color-fill-canvas: #090C15;
+    --color-fill-side-nav: #0D111D;
+    --color-fill-top-nav: #090C15;
+    --color-fill-action: var(--brand4); /*for actionable elements*/
+}
