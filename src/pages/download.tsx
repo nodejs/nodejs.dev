@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 import ReleaseTable from '../components/release-table';
 
 export default () => {
-  const releaseHistory = useReleaseHistory().slice(0, 24);
+  const releaseHistory = useReleaseHistory().slice(0, 25);
   const title = 'Download Node.js';
   const description = 'Come get me!';
 
