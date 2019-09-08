@@ -41,7 +41,7 @@ const NavigationItem = ({
   return (
     <Link
       ref={handleRef}
-      to={`/${slug}`}
+      to={`/learn/${slug}`}
       onClick={onClick}
       className={className}
     >

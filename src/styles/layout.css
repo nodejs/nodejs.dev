@@ -6,7 +6,7 @@ html {
 body {
   background: var(--color-fill-app);
   color: var(--color-text-primary);
-  font-size: var(--base-font-size);
+  font-size: 1.6rem;
   font-family: var(--base-type-face);
   margin: 0;
   margin-top: 100px;
@@ -76,6 +76,12 @@ body {
 .t-link, a {
   color: var(--color-text-accent);
   text-decoration: underline;
+  cursor: pointer;
+}
+
+.t-link:hover, a:hover, .t-link:active, a:active {
+  color: var(--color-text-accent);
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -396,11 +402,6 @@ main {
 /* Start: Article Reader HTML Reset */
 
 .article-reader {
-  color: var(--black9);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.58;
-  letter-spacing: -.003em;
   max-width: 768px;
   padding-left: 4.2rem;
   width: calc(100% - 36.0rem);
@@ -418,51 +419,13 @@ main {
   border: 0;
 }
 
-.article-reader p {
-  margin-bottom: 2.8rem;
-}
-
-.article-reader a {
-  color: var(--black9);
-  font-weight: 600;
-  text-decoration: underline;
-  text-decoration-color: var(--black4);
-  transition: all ease-out 0.2s;
-}
-
-.article-reader a:hover {
-  color: var(--brand-light);
-  text-decoration: none;
-}
-
-.article-reader h1,
-.article-reader h2,
-.article-reader h3,
-.article-reader h4,
-.article-reader h5,
-.article-reader h6 {
-  font-family: var(--sans-serif);
-  margin-bottom: 0.1rem;
-  position: relative;
-}
-
-.article-reader h1 {
-  margin-bottom: 2.8rem;
-}
-
 .hero h1 {
   cursor: pointer;
 }
 
-.article-reader h2,
-.article-reader h3 {
-  border-bottom: 1px solid #eaecef;
-  padding-bottom: 0.1rem;
-}
-
 .article-reader blockquote {
   border-left: 3px solid var(--black4);
-  color: var(--black6);
+  color: var(--color-text-primary);
   font-style: italic;
   font-weight: 200;
   letter-spacing: 1px;

@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
+html {
+    font-size: 10px;
+}
+
 body {
     /* Colors */
     --brand2: #C5E5B4;
@@ -91,29 +95,28 @@ body {
 
     /* Typography */
     --base-type-face: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --base-font-size: 16px;
 
-    --font-size-display1: 3.75rem;      /*60px*/
-    --font-size-display2: 3rem;         /*48px*/
-    --font-size-display3: 2.125rem;    /*34px*/
-    --font-size-headline: 1.5rem;       /*24px*/
-    --font-size-subheading: 1.25rem;    /*20px*/
-    --font-size-body1: var(--base-font-size); /*16px*/
-    --font-size-body2: 0.875rem;        /*14px*/
-    --font-size-caption: 0.75rem;       /*12px*/
-    --font-size-overline: 0.625rem;     /*10px*/
-    --font-size-code: 0.75rem;          /*12px*/
+    --font-size-display1: 6.0rem;
+    --font-size-display2: 4.8rem;
+    --font-size-display3: 3.4rem;
+    --font-size-headline: 2.4rem;
+    --font-size-subheading: 2.0rem;
+    --font-size-body1: 1.6rem;
+    --font-size-body2: 1.4rem;
+    --font-size-caption: 1.2rem;
+    --font-size-overline: 1.0rem;
+    --font-size-code: 1.2rem;
 
-    --line-height-display1: 4.5rem ;    /*72px*/
-    --line-height-display2: 3.5625rem;  /*57px*/
-    --line-height-display3: 3.05rem ;   /*40.8px*/
-    --line-height-headline: 1.8rem;     /*28.8px*/
-    --line-height-subheading: 1.875rem; /*30px*/
-    --line-height-body1: 1.5rem;        /*24px*/
-    --line-height-body2: 1.3125rem;     /*21px*/
-    --line-height-caption: 1.125rem;    /*18px*/
-    --line-height-overline: 0.9375rem;  /*15px*/
-    --line-height-code: 2.5rem;         /*24px*/
+    --line-height-display1: 7.2rem;
+    --line-height-display2: 5.7rem;
+    --line-height-display3: 4.08rem;
+    --line-height-headline: 2.88rem;
+    --line-height-subheading: 3.0rem;
+    --line-height-body1: 2.4rem;
+    --line-height-body2: 2.1rem;
+    --line-height-caption: 1.8rem;
+    --line-height-overline: 1.5rem;
+    --line-height-code: 2.4rem;
 
     --font-weight-light: 100;
     --font-weight-regular: normal;
@@ -121,22 +124,22 @@ body {
     --font-weight-bold: 900;
 
     /* Spacing */
-    --space-01:  0.0625rem; /*1px*/
-    --space-02:  0.125rem;  /*2px*/
-    --space-04:  0.25rem;   /*4px*/
-    --space-08:  0.5rem;    /*8px*/
-    --space-12:  0.75rem;   /*12px*/
-    --space-16:  1rem;      /*16px*/
-    --space-20:  1.25rem;   /*20px*/
-    --space-24:  1.5rem;    /*24px*/
-    --space-32:  2rem;      /*32px*/
-    --space-40:  2.5rem;    /*40px*/
-    --space-48:  3rem;      /*48px*/
-    --space-64:  4rem;      /*64px*/
-    --space-80:  5rem;      /*80px*/
-    --space-96:  6rem;      /*96px*/
-    --space-128: 8rem;      /*128px*/
-    --space-160: 10rem;     /*160px*/
+    --space-01:  0.1rem;
+    --space-02:  0.2rem;
+    --space-04:  0.4rem;
+    --space-08:  0.8rem;
+    --space-12:  1.2rem;
+    --space-16:  1.6rem;
+    --space-20:  2.0rem;
+    --space-24:  2.4rem;
+    --space-32:  3.2rem;
+    --space-40:  4.0rem;
+    --space-48:  4.8rem;
+    --space-64:  6.4rem;
+    --space-80:  8.0rem;
+    --space-96:  9.6rem;
+    --space-128: 12.8rem;
+    --space-160: 16.0rem;
 }
 
 .dark-mode {

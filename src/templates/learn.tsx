@@ -24,7 +24,6 @@ export default ({
 }: Props) => {
   return (
     <Layout title={title} description={description}>
-      <Hero title={title} />
       <Navigation currentSlug={slug} sections={navigationData} />
       <Article
         title={title}
