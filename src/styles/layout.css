@@ -545,8 +545,25 @@ details,
   margin: 0.8rem 0;
 }
 
+
+.api-key__section .api-key__item:hover,
+.api-key__section .api-key__item > a:hover,
+.api-key__section .api-key__item:focus,
+.api-key__section .api-key__item > a:focus {
+  background-color: var(--black4);
+  box-shadow: 0 0 0 0.4rem var(--black4);
+}
+
 .dark-mode .api-key__section {
   background: var(--black9);
+}
+
+.dark-mode .api-key__section .api-key__item:hover,
+.dark-mode .api-key__section .api-key__item > a:hover,
+.dark-mode .api-key__section .api-key__item:focus,
+.dark-mode .api-key__section .api-key__item > a:focus {
+  background-color: var(--black8);
+  box-shadow: 0 0 0 0.4rem var(--black8);
 }
 
 .api-key__item--class, .api-key__item--module {
@@ -566,13 +583,6 @@ details,
   transition: background-color .28s, box-shadow .28s;
 }
 
-.api-key__section .api-key__item:hover,
-.api-key__section .api-key__item > a:hover,
-.api-key__section .api-key__item:focus,
-.api-key__section .api-key__item > a:focus {
-  background-color: var(--black8);
-  box-shadow: 0 0 0 0.4rem var(--black8);
-}
 
 .api-key__item--has-children {
   grid-column-start: 1;
