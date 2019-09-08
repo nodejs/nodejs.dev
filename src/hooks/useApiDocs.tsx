@@ -11,26 +11,45 @@ export interface ApiDocsBase {
   desc?: string;
   meta?: ApiDocsMeta;
   introduced_in?: string;
+  modules?: ApiDocsModule[];
+  events?: ApiDocsEvent[];
+  methods?: ApiDocsMethod[];
+  classes?: ApiDocsClass[];
+  properties?: ApiDocsProp[];
+  miscs?: ApiDocsMiscs[];
 }
 
 export interface ApiDocsMiscs extends ApiDocsBase {
   type: 'misc';
-  miscs?: ApiDocsMiscs[];
 }
 
 export interface ApiDocsMethod extends ApiDocsBase {
   type: 'method';
   signatures: ApiDocsSignature[];
 }
+
+export function isMethodObj(obj: ApiDocsObj): obj is ApiDocsMethod {
+  return obj.type === 'method';
+}
+
 export interface ApiDocsSignature extends ApiDocsBase {
   params: ApiDocsProp[];
 }
 
+export interface ApiDocsEvent extends ApiDocsBase {
+  type: 'event';
+}
+export function isEventObj(obj: ApiDocsObj): obj is ApiDocsClass {
+  return obj.type === 'event';
+}
+
 export interface ApiDocsClass extends ApiDocsBase {
   type: 'class';
-  methods: ApiDocsMethod[];
-  properties: ApiDocsProp[];
   signatures: ApiDocsSignature[];
+}
+
+export function isClassObj(obj: ApiDocsObj): obj is ApiDocsClass {
+  return obj.type === 'class';
 }
 
 export interface ApiDocsProp extends ApiDocsBase {
@@ -41,11 +60,10 @@ export interface ApiDocsModule extends ApiDocsBase {
   type: 'module';
   stability: number;
   stabilityText: string;
-  modules?: ApiDocsModule[];
-  methods?: ApiDocsMethod[];
-  classes?: ApiDocsClass[];
-  properties?: ApiDocsProp[];
-  miscs?: ApiDocsMiscs[];
+}
+
+export function isModuleObj(obj: ApiDocsObj): obj is ApiDocsModule {
+  return obj.type === 'module';
 }
 
 export interface APIResponse {
