@@ -113,7 +113,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint --edit $HUSKY_GIT_PARAMS",
-      "pre-push": "yarn format-check && yarn tslint"
+      "pre-push": "yarn lint"
     }
   }
 }
