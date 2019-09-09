@@ -31,6 +31,14 @@
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/indent": ["error", 2]
       }
+      },
+
+      {
+        "files": ["**/*.js"],
+      "parser": "@typescript-eslint/parser",
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
     }
   ]
 }
