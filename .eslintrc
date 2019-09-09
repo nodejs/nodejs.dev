@@ -1,9 +1,10 @@
 {
   "root": true,
-  "plugins": ["@typescript-eslint", "react-hooks"],
+  "plugins": ["@typescript-eslint", "react-hooks", "jest"],
   "extends": [
     "airbnb",
     "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
     "prettier/@typescript-eslint"
   ],
   "env": {
