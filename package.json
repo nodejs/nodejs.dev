@@ -47,7 +47,7 @@
     "format-check": "prettier --check '**/*.{ts,tsx,js}'",
     "jest": "jest",
     "update-snapshot": "jest --updateSnapshot",
-    "test": "yarn format-check && yarn lint && yarn jest",
+    "test": "yarn lint && yarn jest",
     "test-watch": "yarn jest --watch",
     "test-ci": "yarn test --coverage && codecov",
     "lint": "eslint .",
