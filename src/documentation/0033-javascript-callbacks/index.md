@@ -11,7 +11,7 @@ Computers are asynchronous by design.
 
 Asynchronous means that things can happen independently of the main program flow.
 
-In the current consumer computers, every program runs for a specific time slot, and then it stops its execution to let another program continue its execution. This thing runs in a cycle so fast that's impossible to notice, and we think our computers run many programs simultaneously, but this is an illusion (except on multiprocessor machines).
+In the current consumer computers, every program runs for a specific time slot, and then it stops its execution to let another program continue its execution. This process of scheduling runs in a cycle so fast that it is impossible to notice. We think our computers run many programs simultaneously, but this is an illusion (except on multiprocessor machines).
 
 Programs internally use _interrupts_, a signal that's emitted to the processor to gain the attention of the system.
 
@@ -33,15 +33,15 @@ console.log(c)
 doSomething()
 ```
 
-But JavaScript was born inside the browser, its main job, in the beginning, was to respond to user actions, like `onClick`, `onMouseOver`, `onChange`, `onSubmit` and so on. How could it do this with a synchronous programming model?
+But JavaScript was born inside the browser, and its main job in the beginning was to respond to user actions, like `onClick`, `onMouseOver`, `onChange`, `onSubmit` and so on. How could it do this with a synchronous programming model?
 
-The answer was in its environment. The **browser** provides a way to do it by providing a set of APIs that can handle this kind of functionality.
+The answer is in its environment. The **browser** provides a way to do it by providing a set of APIs that can handle this kind of functionality.
 
 More recently, Node.js introduced a non-blocking I/O environment to extend this concept to file access, network calls and so on.
 
 ## Callbacks
 
-You can't know when a user is going to click a button, so what you do is, you **define an event handler for the click event**. This event handler accepts a function, which will be called when the event is triggered:
+Applications can't know when a user is going to click a button, so what you do is, you **define an event handler for the click event**. This event handler accepts a function, which will be called when the event is triggered:
 
 ```js
 document.getElementById('button').addEventListener('click', () => {
@@ -51,7 +51,7 @@ document.getElementById('button').addEventListener('click', () => {
 
 This is the so-called **callback**.
 
-A callback is a simple function that's passed as a value to another function, and will only be executed when the event happens. We can do this because JavaScript has first-class functions, which can be assigned to variables and passed around to other functions (called **higher-order functions**)
+A callback is a simple function that's passed as a value to another function, and will only be executed when the event happens. We can do this because JavaScript has first-class functions, which can be assigned to variables and passed around to other functions (called **higher-order functions**).
 
 It's common to wrap all your client code in a `load` event listener on the `window` object, which runs the callback function only when the page is ready:
 
@@ -122,7 +122,7 @@ window.addEventListener('load', () => {
 })
 ```
 
-This is just a simple 4-levels code, but I've seen much more levels of nesting and it's not fun.
+This is just a simple 4-levels code, but I've seen much more levels of nesting and it's not fun (**callback hell**).
 
 How do we solve this?
 
