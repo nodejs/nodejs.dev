@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+html {
+    font-size: 10px;
+}
+
+body {
+    /* Colors */
+    --brand2: #C5E5B4;
+    --brand3: #99CC7D;
+    --brand4: #84BA64;
+    --brand5: #5FA04E;
+    --brand6: #417E38;
+    --brand7: #2C682C;
+    --brand8: #215127;
+    --brand9: #1A3F1D;
+
+    --black0: #FFFFFF;
+    --black1: #F6F7F9;
+    --black2: #E9EDF0;
+    --black3: #D9E1E4;
+    --black4: #CBD4D9;
+    --black5: #B1BCC2;
+    --black6: #929FA5;
+    --black7: #6E7B83;
+    --black8: #556066;
+    --black9: #2C3437;
+
+    --warning1: #FDF3E7;
+    --warning2: #FAD9B0;
+    --warning3: #F5BC75;
+    --warning4: #E99C40;
+    --warning5: #D07912;
+    --warning6: #AE5F00;
+    --warning7: #8B4D04;
+    --warning8: #683D08;
+    --warning9: #4D2F0B;
+
+    --danger1: #FBF1F0;
+    --danger2: #FAD3D4;
+    --danger3: #FAB6B7;
+    --danger4: #FA8E8E;
+    --danger5: #F65354;
+    --danger6: #DE1A1B;
+    --danger7: #B80C0C;
+    --danger8: #900E0E;
+    --danger9: #661514;
+
+    --info1: #E9F4FA;
+    --info2: #BCE6FC;
+    --info3: #8ED4F8;
+    --info4: #52BAED;
+    --info5: #229AD6;
+    --info6: #0C7BB3;
+    --info7: #066291;
+    --info8: #074D71;
+    --info9: #0A3953;
+
+    --purple1: #F7F1FB;
+    --purple2: #EAD9FB;
+    --purple3: #DBBDF9;
+    --purple4: #C79BF2;
+    --purple5: #AF74E8;
+    --purple6: #9756D6;
+    --purple7: #7D3CBE;
+    --purple8: #642B9E;
+    --purple9: #361B52;
+
+    --pink1: #FBF0F4;
+    --pink2: #FBD4E6;
+    --pink3: #FBB4D2;
+    --pink4: #F68BB7;
+    --pink5: #ED5393;
+    --pink6: #D6246E;
+    --pink7: #B01356;
+    --pink8: #8B1245;
+    --pink9: #411526;
+
+    --color-brand-primary: var(--brand5);
+
+    --color-text-primary: var(--black9);
+    --color-text-secondary: var(--black7);
+    --color-text-accent: var(--color-brand-primary);
+
+    --color-border-primary: var(--black4);
+    --color-border-secondary: var(--black3);
+    --color-border-accent: var(--color-brand-primary);
+
+    --color-fill-app: var(--black0);
+    --color-fill-canvas: var(--black0);
+    --color-fill-side-nav: var(--black1);
+    --color-fill-top-nav: var(--black0);
+    --color-fill-action: var(--brand5); /*for actionable elements*/
+
+    /* Typography */
+    --base-type-face: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    --font-size-display1: 6.0rem;
+    --font-size-display2: 4.8rem;
+    --font-size-display3: 3.4rem;
+    --font-size-headline: 2.4rem;
+    --font-size-subheading: 2.0rem;
+    --font-size-body1: 1.6rem;
+    --font-size-body2: 1.4rem;
+    --font-size-caption: 1.2rem;
+    --font-size-overline: 1.0rem;
+    --font-size-code: 1.2rem;
+
+    --line-height-display1: 7.2rem;
+    --line-height-display2: 5.7rem;
+    --line-height-display3: 4.08rem;
+    --line-height-headline: 2.88rem;
+    --line-height-subheading: 3.0rem;
+    --line-height-body1: 2.4rem;
+    --line-height-body2: 2.1rem;
+    --line-height-caption: 1.8rem;
+    --line-height-overline: 1.5rem;
+    --line-height-code: 2.4rem;
+
+    --font-weight-light: 100;
+    --font-weight-regular: normal;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 900;
+
+    /* Spacing */
+    --space-01:  0.1rem;
+    --space-02:  0.2rem;
+    --space-04:  0.4rem;
+    --space-08:  0.8rem;
+    --space-12:  1.2rem;
+    --space-16:  1.6rem;
+    --space-20:  2.0rem;
+    --space-24:  2.4rem;
+    --space-32:  3.2rem;
+    --space-40:  4.0rem;
+    --space-48:  4.8rem;
+    --space-64:  6.4rem;
+    --space-80:  8.0rem;
+    --space-96:  9.6rem;
+    --space-128: 12.8rem;
+    --space-160: 16.0rem;
+}
+
+.dark-mode {
+     /* Colors */
+    --color-brand-primary: var(--brand5);
+
+    --color-text-primary: var(--black4);
+    --color-text-secondary: var(--black6);
+    --color-text-accent: var(--brand4);
+
+    --color-border-primary: var(--black4);
+    --color-border-secondary: var(--black3);
+    --color-border-accent: var(--brand4);
+
+    --color-fill-app: #090C15;
+    --color-fill-canvas: #090C15;
+    --color-fill-side-nav: #0D111D;
+    --color-fill-top-nav: #090C15;
+    --color-fill-action: var(--brand4); /*for actionable elements*/
+}

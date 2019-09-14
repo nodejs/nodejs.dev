@@ -42,7 +42,7 @@ const NavigationItem = ({
   return (
     <Link
       innerRef={handleRef}
-      to={`/${slug}`}
+      to={`/learn/${slug}`}
       onClick={onClick}
       className={className}
     >

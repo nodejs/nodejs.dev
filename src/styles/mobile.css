@@ -26,7 +26,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    background-color: var(--gray0);
+    background-color: var(--black0);
     transform: translateX(-120%);
     transition: transform 0.28s;
     pointer-events: none;
@@ -74,7 +74,7 @@
 
 @media (max-width: 720px) {
   html {
-    font-size: 9px;
+    font-size: 0.5625rem;
   }
 
   body {
@@ -176,16 +176,6 @@
     border: auto;
     line-height: 1.2;
     margin: 4.2rem 0 0;
-  }
-
-  .article-reader h1 { font-size: 3.2rem; }
-  .article-reader h2 { font-size: 2.8rem; }
-  .article-reader h3 { font-size: 2.4rem; }
-  .article-reader h4 { font-size: 2.2rem; }
-  .article-reader h5 { font-size: 2.0rem; }
-  .article-reader h6 {
-    font-size: 1.8rem;
-    font-weight: 800;
   }
 
   /* Place top sentinels higher up on mobile */

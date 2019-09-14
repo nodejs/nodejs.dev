@@ -4,7 +4,7 @@ import React from 'react';
 import { PaginationInfo } from '../types';
 
 const link: SerializedStyles = css`
-  color: var(--gray7) !important;
+  color: var(--black7) !important;
   text-transform: uppercase;
   text-decoration: none !important;
   font-size: 1.4rem;

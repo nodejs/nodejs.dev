@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import Article from '../components/article';
-import Hero from '../components/hero';
 import Layout from '../components/layout';
 import Navigation from '../components/navigation';
 import { LearnPageContext, LearnPageData } from '../types';
@@ -22,7 +21,6 @@ const LearnLayout = ({
   pageContext: { slug, next, previous, relativePath, navigationData },
 }: Props): React.ReactNode => (
   <Layout title={title} description={description}>
-    <Hero title={title} />
     <Navigation currentSlug={slug} sections={navigationData} />
     <Article
       title={title}
