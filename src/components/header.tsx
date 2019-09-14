@@ -28,7 +28,10 @@ const Header = (): JSX.Element => (
         <Link to="/learn">Learn</Link>
       </li>
       <li className="nav__tabs">
-        <Link to="/docs">Documentation</Link>
+        <Link to="/docs">Docs</Link>
+      </li>
+      <li className="nav__tabs">
+        <Link to="/community">Community</Link>
       </li>
       <li className="nav__tabs">
         <Link to="/download">Download</Link>

@@ -19,27 +19,32 @@ const NavigationSection = ({
   onItemClick,
   readSections,
   autoScroll,
-}: Props): JSX.Element => (
-  <ul className="side-nav__list">
-    <h2 className="side-nav__title">{title}</h2>
-    {section.map(
-      (item: NavigationSectionItem): JSX.Element => {
-        const isRead: boolean = readSections.has(item.slug);
+}: Props): JSX.Element => {
+  return (
+    <ul className="side-nav__list">
+      <h2 className="t-body2 side-nav__title">
+        <i className="material-icons">offline_bolt</i>
+        {title}
+      </h2>
+      {section.map(
+        (item: NavigationSectionItem): JSX.Element => {
+          const isRead: boolean = readSections.has(item.slug);
 
-        return (
-          <NavigationItem
-            key={item.slug}
-            title={item.title}
-            slug={item.slug}
-            isRead={isRead}
-            isActive={item.slug === currentSlug}
-            onClick={onItemClick}
-            autoScroll={autoScroll}
-          />
-        );
-      }
-    )}
-  </ul>
-);
+          return (
+            <NavigationItem
+              key={item.slug}
+              title={item.title}
+              slug={item.slug}
+              isRead={isRead}
+              isActive={item.slug === currentSlug}
+              onClick={onItemClick}
+              autoScroll={autoScroll}
+            />
+          );
+        }
+      )}
+    </ul>
+  );
+};
 
 export default NavigationSection;

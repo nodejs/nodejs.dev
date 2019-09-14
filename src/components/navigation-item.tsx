@@ -19,7 +19,7 @@ const NavigationItem = ({
   onClick,
   autoScroll,
 }: Props): JSX.Element => {
-  let className = 'side-nav__item ';
+  let className = 't-body2 side-nav__item ';
   if (isRead) {
     className += 'side-nav__item--done';
   } else if (isActive) {

@@ -90,17 +90,19 @@ function sideBarSection(
         {title}
       </h2>
       <ul className="api-nav__sub-list">
-        {data[section].map(module => (
-          <li key={module.name} className="api-nav__sub-list-item">
-            <a
-              href="#"
-              onClick={(): void => setPage(module)}
-              className="t-body2 api-nav__sub-list-link"
-            >
-              {module.displayName || module.name}
-            </a>
-          </li>
-        ))}
+        {(data[section] as ApiDocsObj[]).map(
+          (module: ApiDocsObj): JSX.Element => (
+            <li key={module.name} className="api-nav__sub-list-item">
+              <a
+                href={`#${module.name}`}
+                onClick={(): void => setPage(module)}
+                className="t-body2 api-nav__sub-list-link"
+              >
+                {module.displayName || module.name}
+              </a>
+            </li>
+          )
+        )}
       </ul>
     </li>
   );
