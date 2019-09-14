@@ -30,7 +30,8 @@ module.exports = {
   rules: {
     "react/jsx-filename-extension": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "import/prefer-default-export": "off",
     // "camelcase": "off",
     // "@typescript-eslint/camelcase": ["error", { "properties": "never" }],
     // "no-unused-vars": "off",
