@@ -217,6 +217,11 @@ main {
   width: calc(100% - 36.0rem);
 }
 
+.article-reader hr {
+  border: none;
+  border-bottom: 0.4rem solid var(--black2);
+}
+
 /* sr-only for desktop */
 .article-reader__headline {
   padding: 0;

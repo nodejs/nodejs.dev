@@ -1,6 +1,14 @@
+/* eslint-disable react/no-danger */
 import React, { useState } from 'react';
 import { useApiData, useReleaseHistory } from '../hooks';
-import { ApiDocsObj, APIResponse } from '../hooks/useApiDocs';
+import {
+  ApiDocsObj,
+  APIResponse,
+  isMethodObj,
+  isEventObj,
+  isClassObj,
+  isModuleObj,
+} from '../hooks/useApiDocs';
 import Layout from '../components/layout';
 
 import '../styles/docs.css';
@@ -56,6 +64,107 @@ function renderArticleOverview(
   return overview;
 }
 
+function renderArticleSections(
+  pages: ApiDocsObj[],
+  sections: JSX.Element[] = [],
+  depth = 0
+): JSX.Element[] {
+  /* eslint-disable-next-line no-restricted-syntax */
+  for (const page of pages) {
+    const children = [];
+
+    if (depth === 0) {
+      sections.push(<hr />);
+      children.push(
+        <h2 className={`api-docs__title api-docs__title--${page.type}`}>
+          {page.displayName || page.name}
+        </h2>
+      );
+    } else if (depth === 1) {
+      children.push(
+        <h3 className={`api-docs__title api-docs__title--${page.type}`}>
+          {page.displayName || page.name}
+        </h3>
+      );
+    } else if (depth === 2) {
+      children.push(
+        <h4 className={`api-docs__title api-docs__title--${page.type}`}>
+          {page.displayName || page.name}
+        </h4>
+      );
+    } else if (depth === 3) {
+      children.push(
+        <h5 className={`api-docs__title api-docs__title--${page.type}`}>
+          {page.displayName || page.name}
+        </h5>
+      );
+    } else if (depth === 4) {
+      children.push(
+        <h6 className={`api-docs__title api-docs__title--${page.type}`}>
+          {page.displayName || page.name}
+        </h6>
+      );
+    }
+
+    if (isModuleObj(page)) {
+      children.push(
+        <li id={page.name}>
+          Module: ({page.type}){' '}
+          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
+        </li>
+      );
+    } else if (isMethodObj(page)) {
+      children.push(
+        <li id={page.name}>
+          Method: ({page.type}){' '}
+          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
+        </li>
+      );
+    } else if (isEventObj(page)) {
+      children.push(
+        <li id={page.name}>
+          Event: ({page.type}){' '}
+          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
+        </li>
+      );
+    } else if (isClassObj(page)) {
+      children.push(
+        <li id={page.name}>
+          Class: ({page.type}){' '}
+          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
+        </li>
+      );
+    } else {
+      children.push(
+        <li id={page.name}>
+          Property: ({page.type}){' '}
+          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
+        </li>
+      );
+    }
+
+    if (page.events) {
+      renderArticleSections(page.events, children, depth + 1);
+    }
+    if (page.methods) {
+      renderArticleSections(page.methods, children, depth + 1);
+    }
+    if (page.properties) {
+      renderArticleSections(page.properties, children, depth + 1);
+    }
+    if (page.classes) {
+      renderArticleSections(page.classes, children, depth + 1);
+    }
+    if (page.modules) {
+      renderArticleSections(page.modules, children, depth + 1);
+    }
+
+    sections.push(<section className="api-docs__section">{children}</section>);
+  }
+
+  return sections;
+}
+
 function renderArticle(page: ApiDocsObj | null): JSX.Element {
   if (!page) {
     return <article>No Page Found</article>;
@@ -71,8 +180,8 @@ function renderArticle(page: ApiDocsObj | null): JSX.Element {
             renderArticleOverview(mod, [])
           )}
       </ul>
-      {/* eslint-disable-next-line react/no-danger */}
       {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
+      {renderArticleSections([page])}
     </article>
   );
 }
@@ -94,7 +203,7 @@ function sideBarSection(
           (module: ApiDocsObj): JSX.Element => (
             <li key={module.name} className="api-nav__sub-list-item">
               <a
-                href={`#${module.name}`}
+                href={`#temporary_path_for_${module.name}`}
                 onClick={(): void => setPage(module)}
                 className="t-body2 api-nav__sub-list-link"
               >
