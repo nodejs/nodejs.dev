@@ -3,6 +3,8 @@ import { useApiData, useReleaseHistory } from '../hooks';
 import { ApiDocsObj, APIResponse } from '../hooks/useApiDocs';
 import Layout from '../components/layout';
 
+import '../styles/docs.css';
+
 function renderArticleOverview(
   obj: ApiDocsObj,
   overview: JSX.Element[] = []
@@ -82,18 +84,23 @@ function sideBarSection(
   setPage: Function
 ): JSX.Element {
   return (
-    <li>
-      <h2>{title}</h2>
-      <ul>
-        {data[section].map(
-          (module: ApiDocsObj): JSX.Element => (
-            <li key={module.name}>
-              <a href="#" onClick={(): ApiDocsObj | null => setPage(module)}>
-                {module.displayName || module.name}
-              </a>
-            </li>
-          )
-        )}
+    <li className="api-nav__list-item">
+      <h2 className="t-body2 api-nav__list-title">
+        <i className="material-icons">offline_bolt</i>
+        {title}
+      </h2>
+      <ul className="api-nav__sub-list">
+        {data[section].map(module => (
+          <li key={module.name} className="api-nav__sub-list-item">
+            <a
+              href="#"
+              onClick={() => setPage(module)}
+              className="t-body2 api-nav__sub-list-link"
+            >
+              {module.displayName || module.name}
+            </a>
+          </li>
+        ))}
       </ul>
     </li>
   );
@@ -116,10 +123,11 @@ export default function APIDocsPage(): JSX.Element {
 
   return (
     <Layout title={title} description={description}>
-      <nav>
-        <ul>
-          <li>
+      <nav className="api-nav">
+        <ul className="api-nav__list">
+          <li className="api-nav__list-item">
             <select
+              className="api-nav__version"
               onChange={(e): void => {
                 setPage(null);
                 setVersion(e.target.value);
