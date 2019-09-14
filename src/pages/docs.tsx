@@ -94,7 +94,7 @@ function sideBarSection(
           <li key={module.name} className="api-nav__sub-list-item">
             <a
               href="#"
-              onClick={() => setPage(module)}
+              onClick={(): void => setPage(module)}
               className="t-body2 api-nav__sub-list-link"
             >
               {module.displayName || module.name}
