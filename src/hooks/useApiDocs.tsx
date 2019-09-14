@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 export interface ApiDocsMeta {
   added: string[];
   changes: string[];
@@ -91,8 +92,8 @@ export function useApiData(version: string | null): APIResponse {
     modules: [],
   });
 
-  useEffect(() => {
-    const fetchData = async () => {
+  useEffect((): void => {
+    const fetchData = async (): Promise<void> => {
       const res = await window.fetch(
         `https://nodejs.org/dist/${version}/docs/api/all.json`
       );

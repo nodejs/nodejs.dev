@@ -1,7 +1,9 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { css, SerializedStyles } from '@emotion/core';
-const logo = require('../images/logo.svg')
+
+/* eslint-disable-next-line @typescript-eslint/no-var-requires */
+const logo = require('../images/logo.svg');
 
 const ulStyles: SerializedStyles = css`
   @media (max-width: 380px) {
@@ -34,8 +36,9 @@ const Header = (): JSX.Element => (
       <li style={{ flexGrow: 1 }} />
       <li className="nav__tabs nav__tabs--right">
         <button
+          type="button"
           className="dark-mode-toggle"
-          onClick={() => document.body.classList.toggle('dark-mode')}
+          onClick={(): boolean => document.body.classList.toggle('dark-mode')}
         >
           <span className="sr-only">Toggle Dark Mode</span>
           <i className="material-icons light-mode-only">nights_stay</i>
@@ -44,7 +47,11 @@ const Header = (): JSX.Element => (
       </li>
 
       <li className="nav__tabs">
-        <a target="_blank" href="https://github.com/nodejs/nodejs.dev">
+        <a
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://github.com/nodejs/nodejs.dev"
+        >
           <span className="sr-only">GitHub</span>
           <svg
             width="2.4rem"

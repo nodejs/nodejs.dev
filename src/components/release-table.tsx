@@ -1,6 +1,11 @@
 import React from 'react';
+import { ReleaseData } from '../hooks/useReleaseHistory';
 
-const ReleaseTable = ({ releases }) => {
+interface Props {
+  releases: ReleaseData[];
+}
+
+const ReleaseTable = ({ releases }: Props): JSX.Element => {
   return (
     <table>
       <thead>
@@ -15,34 +20,36 @@ const ReleaseTable = ({ releases }) => {
         </tr>
       </thead>
       <tbody>
-        {releases.map(({ version, date, files, npm, v8, lts }) => {
-          const majorVersion = version.substring(1).split('.')[0];
+        {releases.map(
+          ({ version, date, npm, v8, lts }: ReleaseData): JSX.Element => {
+            const majorVersion = version.substring(1).split('.')[0];
 
-          return (
-            <tr key={version}>
-              <td>{version}</td>
-              <td>{lts ? lts : ''}</td>
-              <td>{date}</td>
-              <td>{v8}</td>
-              <td>{npm}</td>
-              <td>ABI?</td>
-              <td>
-                <a
-                  href={`https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V${majorVersion}.md#${version.substring(
-                    1
-                  )}`}
-                >
-                  Changelog
-                </a>
-              </td>
-              <td>
-                <a href={`https://nodejs.org/download/release/${version}/`}>
-                  Download
-                </a>
-              </td>
-            </tr>
-          );
-        })}
+            return (
+              <tr key={version}>
+                <td>{version}</td>
+                <td>{lts || ''}</td>
+                <td>{date}</td>
+                <td>{v8}</td>
+                <td>{npm}</td>
+                <td>ABI?</td>
+                <td>
+                  <a
+                    href={`https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V${majorVersion}.md#${version.substring(
+                      1
+                    )}`}
+                  >
+                    Changelog
+                  </a>
+                </td>
+                <td>
+                  <a href={`https://nodejs.org/download/release/${version}/`}>
+                    Download
+                  </a>
+                </td>
+              </tr>
+            );
+          }
+        )}
       </tbody>
     </table>
   );

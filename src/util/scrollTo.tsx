@@ -1,9 +1,12 @@
 import { isMobileScreen } from './isScreenWithinWidth';
 
+/* eslint-disable */
+// this is from stack overflow I assume
 const easeInOutCubic = (t: number, b: number, c: number, d: number) =>
   (t /= d / 2) < 1
     ? (c / 2) * t * t * t + b
     : (c / 2) * ((t -= 2) * t * t + 2) + b;
+/* eslint-enable */
 
 export function scrollTo(
   scrollToPoint: number,

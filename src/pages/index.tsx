@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
 
-export default () => {
+export default function HomePage(): JSX.Element {
   const title = 'Home Page';
   const description = 'Welcome to Node.js!';
 
@@ -14,4 +14,4 @@ export default () => {
       </article>
     </Layout>
   );
-};
+}
