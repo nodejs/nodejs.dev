@@ -23,7 +23,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    jest: true
+    // jest: true
   },
   rules: {
     // "react/jsx-filename-extension": "off",
