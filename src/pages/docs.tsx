@@ -3,6 +3,8 @@ import { useApiData, useReleaseHistory } from '../hooks';
 import { ApiDocsObj, APIResponse, isModuleObj } from '../hooks/useApiDocs';
 import Layout from '../components/layout';
 
+import '../styles/docs.css';
+
 function renderArticleOverview(obj: ApiDocsObj, overview: JSX.Element[] = []) {
   const children: JSX.Element[] = [];
   if (obj.events) {
@@ -70,12 +72,19 @@ function sideBarSection(
   setPage: Function
 ) {
   return (
-    <li>
-      <h2>{title}</h2>
-      <ul>
+    <li className="api-nav__list-item">
+      <h2 className="t-body2 api-nav__list-title">
+        <i className="material-icons">offline_bolt</i>
+        {title}
+      </h2>
+      <ul className="api-nav__sub-list">
         {data[section].map(module => (
-          <li key={module.name}>
-            <a href="#" onClick={() => setPage(module)}>
+          <li key={module.name} className="api-nav__sub-list-item">
+            <a
+              href="#"
+              onClick={() => setPage(module)}
+              className="t-body2 api-nav__sub-list-link"
+            >
               {module.displayName || module.name}
             </a>
           </li>
@@ -102,10 +111,11 @@ export default () => {
 
   return (
     <Layout title={title} description={description}>
-      <nav>
-        <ul>
-          <li>
+      <nav className="api-nav">
+        <ul className="api-nav__list">
+          <li className="api-nav__list-item">
             <select
+              className="api-nav__version"
               onChange={e => {
                 setPage(null);
                 setVersion(e.target.value);

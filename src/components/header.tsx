@@ -47,8 +47,8 @@ const Header = () => (
         <a target="_blank" href="https://github.com/nodejs/nodejs.dev">
           <span className="sr-only">GitHub</span>
           <svg
-            width="2.4rem"
-            height="2.4rem"
+            width="2.0rem"
+            height="2.0rem"
             viewBox="0 0 438.549 438.549"
             style={{ fill: 'var(--color-text-accent)' }}
           >
