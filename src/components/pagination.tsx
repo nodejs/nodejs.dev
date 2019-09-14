@@ -17,10 +17,10 @@ const link: SerializedStyles = css`
   }
 `;
 
-type Props = {
+interface Props {
   previous?: PaginationInfo;
   next?: PaginationInfo;
-};
+}
 
 const ulStyles: SerializedStyles = css`
   display: flex;
@@ -30,7 +30,7 @@ const ulStyles: SerializedStyles = css`
   padding: 5rem 0;
 `;
 
-const Pagination = ({ previous, next }: Props) => (
+const Pagination = ({ previous, next }: Props): JSX.Element => (
   <ul css={ulStyles}>
     <li>
       {previous && previous.title && (

@@ -5,17 +5,17 @@ import Layout from '../components/layout';
 import './konami.js';
 
 let discoMode: NodeJS.Timeout | null = null;
-document.addEventListener('konamiCode', () => {
+document.addEventListener('konamiCode', (): void => {
   if (discoMode) {
     return clearInterval(discoMode);
   }
   discoMode = setInterval(
-    () => document.body.classList.toggle('dark-mode'),
+    (): boolean => document.body.classList.toggle('dark-mode'),
     300
   );
 });
 
-export default () => {
+export default function HomePage(): JSX.Element {
   const title = 'Home Page';
   const description = 'Welcome to Node.js!';
 
@@ -27,4 +27,4 @@ export default () => {
       </article>
     </Layout>
   );
-};
+}

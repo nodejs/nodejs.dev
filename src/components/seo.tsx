@@ -2,13 +2,13 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import config from '../config';
 
-type Props = {
+interface Props {
   title?: string;
   description?: string;
   img?: string;
-};
+}
 
-const SEO = ({ title, description, img }: Props) => (
+const SEO = ({ title, description, img }: Props): JSX.Element => (
   <Helmet
     title={title || config.title}
     meta={[

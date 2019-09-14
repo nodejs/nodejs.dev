@@ -1,7 +1,7 @@
 @media (max-width: 1262px) and (min-width: 721px) {
   body {
     --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 52px), 0 100%);
-    --hero-height: 36.0rem;
+    --hero-height: 36rem;
   }
 
   .article-reader {
@@ -13,7 +13,7 @@
   }
 
   .side-nav {
-    margin-right: -36.0rem;
+    margin-right: -36rem;
     margin-bottom: calc(-100vh + var(--nav-height));
     pointer-events: none;
     overflow: hidden;
@@ -28,7 +28,7 @@
     top: 0;
     background-color: var(--black0);
     transform: translateX(-120%);
-    transition: transform .28s;
+    transition: transform 0.28s;
     pointer-events: none;
     z-index: -1;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.33), 2px 0 3px rgba(0, 0, 0, 0.2);
@@ -50,7 +50,7 @@
 
   .side-nav__list {
     transform: translateX(-120%);
-    transition: transform .28s;
+    transition: transform 0.28s;
     pointer-events: none;
   }
 
@@ -63,13 +63,13 @@
     left: 20rem;
   }
 
-  .side-nav__open, .side-nav.side-nav--open .side-nav__open {
+  .side-nav__open,
+  .side-nav.side-nav--open .side-nav__open {
     top: 34px;
     margin-top: 0;
     display: block;
     pointer-events: all;
   }
-
 }
 
 @media (max-width: 720px) {
@@ -80,7 +80,12 @@
   body {
     --nav-height: 5.2rem;
     --hero-height: 92px;
-    --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 52px), 0 calc(100% - 32px));
+    --banner-clip: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 52px),
+      0 calc(100% - 32px)
+    );
   }
 
   .hero {
@@ -156,7 +161,7 @@
 
   .article-reader {
     width: 100%;
-    padding: 0 1.0rem;
+    padding: 0 1rem;
     box-sizing: border-box;
   }
 

@@ -7,19 +7,21 @@ export interface ReleaseData {
   lts: boolean;
   v8: string;
   npm?: string;
-  modules?: String;
+  modules?: string;
   openssl?: string;
   security?: boolean;
   uv?: string;
   zlib?: string;
 }
 
-export function useReleaseHistory() {
+export function useReleaseHistory(): ReleaseData[] {
   const releasesURL = 'https://nodejs.org/dist/index.json';
   const [releaseHistory, setReleaseHistory] = useState<ReleaseData[]>([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await fetch(releasesURL).then(data => data.json());
+  useEffect((): void => {
+    const fetchData = async (): Promise<void> => {
+      const result = await fetch(releasesURL).then(
+        (data): Promise<ReleaseData[]> => data.json()
+      );
       setReleaseHistory(result);
     };
     fetchData();

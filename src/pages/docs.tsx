@@ -1,29 +1,38 @@
 import React, { useState } from 'react';
 import { useApiData, useReleaseHistory } from '../hooks';
-import { ApiDocsObj, APIResponse, isModuleObj } from '../hooks/useApiDocs';
+import { ApiDocsObj, APIResponse } from '../hooks/useApiDocs';
 import Layout from '../components/layout';
 
 import '../styles/docs.css';
 
-function renderArticleOverview(obj: ApiDocsObj, overview: JSX.Element[] = []) {
+function renderArticleOverview(
+  obj: ApiDocsObj,
+  overview: JSX.Element[] = []
+): JSX.Element[] {
   const children: JSX.Element[] = [];
   if (obj.events) {
-    obj.events.map(evt => renderArticleOverview(evt, children));
+    obj.events.map((evt): JSX.Element[] =>
+      renderArticleOverview(evt, children)
+    );
   }
   if (obj.methods) {
-    obj.methods.map(method => renderArticleOverview(method, children));
+    obj.methods.map((method): JSX.Element[] =>
+      renderArticleOverview(method, children)
+    );
   }
   if (obj.properties) {
     obj.properties
-      .filter(o => o.type !== 'Object')
-      .map(prop => renderArticleOverview(prop, children));
+      .filter((o): boolean => o.type !== 'Object')
+      .map((prop): JSX.Element[] => renderArticleOverview(prop, children));
 
     obj.properties
-      .filter(o => o.type === 'Object')
-      .map(prop => renderArticleOverview(prop, children));
+      .filter((o): boolean => o.type === 'Object')
+      .map((prop): JSX.Element[] => renderArticleOverview(prop, children));
   }
   if (obj.classes) {
-    obj.classes.map(klass => renderArticleOverview(klass, children));
+    obj.classes.map((klass): JSX.Element[] =>
+      renderArticleOverview(klass, children)
+    );
   }
 
   overview.push(
@@ -47,7 +56,7 @@ function renderArticleOverview(obj: ApiDocsObj, overview: JSX.Element[] = []) {
   return overview;
 }
 
-function renderArticle(page: ApiDocsObj | null) {
+function renderArticle(page: ApiDocsObj | null): JSX.Element {
   if (!page) {
     return <article>No Page Found</article>;
   }
@@ -58,8 +67,11 @@ function renderArticle(page: ApiDocsObj | null) {
       <ul className="api-key">
         {renderArticleOverview(page)}
         {page.modules &&
-          page.modules.map(mod => renderArticleOverview(mod, []))}
+          page.modules.map((mod): JSX.Element[] =>
+            renderArticleOverview(mod, [])
+          )}
       </ul>
+      {/* eslint-disable-next-line react/no-danger */}
       {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
     </article>
   );
@@ -70,7 +82,7 @@ function sideBarSection(
   section: keyof APIResponse,
   data: APIResponse,
   setPage: Function
-) {
+): JSX.Element {
   return (
     <li className="api-nav__list-item">
       <h2 className="t-body2 api-nav__list-title">
@@ -82,7 +94,7 @@ function sideBarSection(
           <li key={module.name} className="api-nav__sub-list-item">
             <a
               href="#"
-              onClick={() => setPage(module)}
+              onClick={(): void => setPage(module)}
               className="t-body2 api-nav__sub-list-link"
             >
               {module.displayName || module.name}
@@ -94,7 +106,7 @@ function sideBarSection(
   );
 }
 
-export default () => {
+export default function APIDocsPage(): JSX.Element {
   const title = 'API Docs';
   const description = 'Come learn yourself something.';
   const [version, setVersion] = useState<string | null>(null);
@@ -103,7 +115,7 @@ export default () => {
   // Magical function filters out all major versions less than 6.
   // TODO: Remove the magical number for the major version. Fet from dynamic releases data to filter out EOL'd versions.
   const releases = useReleaseHistory().filter(
-    r => parseInt(r.version.slice(1), 10) >= 6
+    (r): boolean => parseInt(r.version.slice(1), 10) >= 6
   );
   const apiData = useApiData(
     version || (releases[0] && releases[0].version) || null
@@ -116,16 +128,18 @@ export default () => {
           <li className="api-nav__list-item">
             <select
               className="api-nav__version"
-              onChange={e => {
+              onChange={(e): void => {
                 setPage(null);
                 setVersion(e.target.value);
               }}
             >
-              {releases.map(release => (
-                <option value={release.version} key={release.version}>
-                  {release.version}
-                </option>
-              ))}
+              {releases.map(
+                (release): JSX.Element => (
+                  <option value={release.version} key={release.version}>
+                    {release.version}
+                  </option>
+                )
+              )}
             </select>
           </li>
           {sideBarSection('Globals', 'globals', apiData, setPage)}
@@ -138,4 +152,4 @@ export default () => {
       {renderArticle(page)}
     </Layout>
   );
-};
+}

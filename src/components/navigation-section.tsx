@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationSectionItem } from '../types';
 import NavigationItem from './navigation-item';
 
-type Props = {
+interface Props {
   key: string;
   title: string;
   section: NavigationSectionItem[];
@@ -10,7 +10,7 @@ type Props = {
   onItemClick: () => void;
   readSections: Set<NavigationSectionItem['slug']>;
   autoScroll: (height: number) => void;
-};
+}
 
 const NavigationSection = ({
   title,
@@ -19,11 +19,11 @@ const NavigationSection = ({
   onItemClick,
   readSections,
   autoScroll,
-}: Props) => {
-  return (
-    <ul className="side-nav__list">
-      <h2 className="side-nav__title">{title}</h2>
-      {section.map((item: NavigationSectionItem) => {
+}: Props): JSX.Element => (
+  <ul className="side-nav__list">
+    <h2 className="side-nav__title">{title}</h2>
+    {section.map(
+      (item: NavigationSectionItem): JSX.Element => {
         const isRead: boolean = readSections.has(item.slug);
 
         return (
@@ -37,9 +37,9 @@ const NavigationSection = ({
             autoScroll={autoScroll}
           />
         );
-      })}
-    </ul>
-  );
-};
+      }
+    )}
+  </ul>
+);
 
 export default NavigationSection;

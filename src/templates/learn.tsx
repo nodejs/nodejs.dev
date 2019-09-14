@@ -1,17 +1,15 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import Article from '../components/article';
-import Hero from '../components/hero';
 import Layout from '../components/layout';
 import Navigation from '../components/navigation';
 import { LearnPageContext, LearnPageData } from '../types';
 
-type Props = {
+interface Props {
   data: LearnPageData;
   pageContext: LearnPageContext;
-};
-
-export default ({
+}
+const LearnLayout = ({
   data: {
     doc: {
       frontmatter: { title, description },
@@ -21,22 +19,21 @@ export default ({
     },
   },
   pageContext: { slug, next, previous, relativePath, navigationData },
-}: Props) => {
-  return (
-    <Layout title={title} description={description}>
-      <Navigation currentSlug={slug} sections={navigationData} />
-      <Article
-        title={title}
-        html={html}
-        tableOfContents={tableOfContents}
-        next={next}
-        authors={authors}
-        previous={previous}
-        relativePath={relativePath}
-      />
-    </Layout>
-  );
-};
+}: Props): React.ReactNode => (
+  <Layout title={title} description={description}>
+    <Navigation currentSlug={slug} sections={navigationData} />
+    <Article
+      title={title}
+      html={html}
+      tableOfContents={tableOfContents}
+      next={next}
+      authors={authors}
+      previous={previous}
+      relativePath={relativePath}
+    />
+  </Layout>
+);
+export default LearnLayout;
 
 export const query = graphql`
   query DocBySlug($slug: String!) {

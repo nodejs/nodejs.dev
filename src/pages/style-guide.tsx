@@ -1,12 +1,7 @@
 import React from 'react';
 import '../styles/layout.css';
 
-type Props = {
-  heading: string;
-  tableOfContents: string;
-};
-
-const StyleGuidePage = ({ heading }: Props) => {
+const StyleGuidePage = (): JSX.Element => {
   return (
     <div style={{ maxWidth: `940px`, margin: `0 auto` }}>
       <div className="t-display1">Display1</div>
@@ -31,7 +26,8 @@ const StyleGuidePage = ({ heading }: Props) => {
         optimized for print, web, and mobile interfaces, and has excellent
         legibility characteristics in its letterforms.
       </p>
-      <a>This is a link</a>
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+      <a href="#">This is a link</a>
     </div>
   );
 };
