@@ -1,13 +1,12 @@
-(function() {
-  'use strict';
-
+(function konami() {
   // http://stackoverflow.com/a/9849276
-  function _contains(a, b) {
+  function contains(a, b) {
+    // eslint-disable-next-line no-bitwise
     return !!~a.indexOf(b);
   }
 
-  var konamiCode = {
-    init: function() {
+  const konamiCode = {
+    init() {
       this.KEY_LEFT = 37;
       this.KEY_UP = 38;
       this.KEY_RIGHT = 39;
@@ -21,11 +20,11 @@
 
       return this;
     },
-    bindListener: function() {
-      var buffer = '';
-      var lastDate = new Date();
-      var konamiCodeEvent = new Event('konamiCode');
-      var validKeys = [
+    bindListener() {
+      let buffer = '';
+      let lastDate = new Date();
+      const konamiCodeEvent = new Event('konamiCode');
+      const validKeys = [
         this.KEY_LEFT,
         this.KEY_UP,
         this.KEY_RIGHT,
@@ -36,15 +35,15 @@
 
       document.addEventListener(
         'keyup',
-        function(ev) {
+        function enableKonami(ev) {
           if (
-            _contains(validKeys, ev.keyCode) &&
+            contains(validKeys, ev.keyCode) &&
             new Date() - lastDate <= this.maxDelay
           ) {
             lastDate = new Date();
-            buffer = buffer + ev.keyCode;
+            buffer += ev.keyCode;
 
-            if (_contains(buffer, this.CODE_SEQUENCE)) {
+            if (contains(buffer, this.CODE_SEQUENCE)) {
               document.dispatchEvent(konamiCodeEvent);
               buffer = '';
             }
