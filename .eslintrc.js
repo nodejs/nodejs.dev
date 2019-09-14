@@ -27,7 +27,7 @@ module.exports = {
     jest: true
   },
   rules: {
-    // "react/jsx-filename-extension": "off",
+    "react/jsx-filename-extension": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
     // "camelcase": "off",
