@@ -32,6 +32,8 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "consistent-return": "off",
     // "camelcase": "off",
     // "@typescript-eslint/camelcase": ["error", { "properties": "never" }],
     // "no-unused-vars": "off",
