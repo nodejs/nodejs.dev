@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
 
-export default (): JSX.Element => {
+export default function NotFoundPage(): JSX.Element {
   const title = 'PAGE NOT FOUND';
   const description = 'You have hit a route that does not exist.';
 
@@ -11,8 +11,8 @@ export default (): JSX.Element => {
       <Hero title={title} />
       <article style={{ width: '100%' }} className="article-reader">
         <p>
-          The page you&apos;re trying to access does not exist. Go back to the Homepage or find what
-          you&apos;re looking for in the menu.
+          The page you&apos;re trying to access does not exist. Go back to the
+          Homepage or find what you&apos;re looking for in the menu.
         </p>
         <p>
           Take me back to the
@@ -21,4 +21,4 @@ export default (): JSX.Element => {
       </article>
     </Layout>
   );
-};
+}

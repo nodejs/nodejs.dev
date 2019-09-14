@@ -2,7 +2,7 @@ import React from 'react';
 
 interface Props {
   title: string;
-};
+}
 
 const Hero = ({ title }: Props): JSX.Element => (
   <div className="hero">

@@ -19,53 +19,37 @@ interface Props {
   description?: string;
   img?: string;
 }
+const setupObserver = (): void => {
+  const container: HTMLElement = document.querySelector(
+    '.side-nav'
+  ) as HTMLElement;
+  const stickyElementsClassName = 'side-nav__title';
+  const root: HTMLElement | null = isMobileScreen() ? null : container;
+  const headerRootMargin = '-93px 0px 0px 0px';
+  const setupOptions: SentinelObserverSetupOptions = {
+    container,
+    stickyElementsClassName,
+    root,
+    headerRootMargin,
+  };
+  if (container) {
+    notifyWhenStickyHeadersChange(setupOptions);
+  }
+
+  document.addEventListener('stickychange', (({
+    detail,
+  }: CustomEvent<StickyChange>): void => {
+    const { target, stuck }: StickyChange = detail;
+    // Update sticking header color
+    target.style.color = stuck ? '#fff' : '#000';
+  }) as EventListener);
+};
+const cleanUp = (): void => {
+  return removeFocusOutlineListeners();
+};
 
 const Layout = ({ children, title, description, img }: Props): JSX.Element => {
   const prevOffset = useRef<number>(-1);
-
-  useEffect(() => {
-    if (window.document && 'documentElement' in window.document) {
-      addFocusOutlineListeners();
-    }
-    if ('IntersectionObserver' in window) {
-      setupObserver();
-    } else {
-      // Use polyfill for browsers without IntersectionObserver support
-      import('intersection-observer')
-        .then(setupObserver)
-        // Fallback for browsers without IntersectionObserver support
-        .catch(magicHeroNumber);
-    }
-
-    return cleanUp;
-  });
-
-  const setupObserver = (): void => {
-    const container: HTMLElement = document.querySelector(
-      '.side-nav'
-    ) as HTMLElement;
-    const stickyElementsClassName: string = 'side-nav__title';
-    const root: HTMLElement | null = isMobileScreen() ? null : container;
-    const headerRootMargin: string = '-93px 0px 0px 0px';
-    const setupOptions: SentinelObserverSetupOptions = {
-      container,
-      stickyElementsClassName,
-      root,
-      headerRootMargin,
-    };
-    if (container) {
-      notifyWhenStickyHeadersChange(setupOptions);
-    }
-
-    document.addEventListener('stickychange', (({
-      detail,
-    }: CustomEvent<StickyChange>) => {
-      const { target, stuck }: StickyChange = detail;
-      // Update sticking header color
-      target.style.color = stuck ? '#fff' : '#000';
-    }) as EventListener);
-  };
-
   const magicHeroNumber = (): void => {
     if (typeof window === 'undefined') {
       // Guard for SSR
@@ -89,9 +73,22 @@ const Layout = ({ children, title, description, img }: Props): JSX.Element => {
     window.requestAnimationFrame(magicHeroNumber);
   };
 
-  const cleanUp = (): void => {
-    return removeFocusOutlineListeners();
-  };
+  useEffect(() => {
+    if (window.document && 'documentElement' in window.document) {
+      addFocusOutlineListeners();
+    }
+    if ('IntersectionObserver' in window) {
+      setupObserver();
+    } else {
+      // Use polyfill for browsers without IntersectionObserver support
+      import('intersection-observer')
+        .then(setupObserver)
+        // Fallback for browsers without IntersectionObserver support
+        .catch(magicHeroNumber);
+    }
+
+    return cleanUp;
+  });
 
   return (
     <React.Fragment>

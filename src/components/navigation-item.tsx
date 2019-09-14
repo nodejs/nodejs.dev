@@ -9,7 +9,7 @@ interface Props {
   title: string;
   onClick: () => void;
   autoScroll: (height: number) => void;
-};
+}
 
 const NavigationItem = ({
   isRead,
@@ -32,7 +32,7 @@ const NavigationItem = ({
     }
   };
 
-  useEffect(() => {
+  useEffect((): void => {
     if (element.current) {
       const height = element.current.getBoundingClientRect().top;
       autoScroll(height);

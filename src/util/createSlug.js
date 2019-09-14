@@ -7,16 +7,18 @@ function createSlug(title) {
     { to: '-', from: /[/_,:;\\ .]/g }, // Replace /_,:;\. and whitespace
   ];
 
-  sets.forEach((set) => {
+  sets.forEach(set => {
     slug = slug.replace(set.from, set.to);
   });
 
-  return slug
-  // eslint-disable-next-line no-useless-escape
-    .replace(/[^\w\-]+/g, '') // Remove any non word characters
-    .replace(/--+/g, '-') // Replace multiple hyphens with single
-    .replace(/^-/, '') // Remove any leading hyphen
-    .replace(/-$/, ''); // Remove any trailing hyphen
+  return (
+    slug
+      // eslint-disable-next-line no-useless-escape
+      .replace(/[^\w\-]+/g, '') // Remove any non word characters
+      .replace(/--+/g, '-') // Replace multiple hyphens with single
+      .replace(/^-/, '') // Remove any leading hyphen
+      .replace(/-$/, '')
+  ); // Remove any trailing hyphen
 }
 
 module.exports = createSlug;

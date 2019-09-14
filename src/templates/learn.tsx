@@ -10,8 +10,7 @@ interface Props {
   data: LearnPageData;
   pageContext: LearnPageContext;
 }
-
-export default ({
+const LearnLayout = ({
   data: {
     doc: {
       frontmatter: { title, description },
@@ -20,9 +19,7 @@ export default ({
       fields: { authors },
     },
   },
-  pageContext: {
-    slug, next, previous, relativePath, navigationData,
-  },
+  pageContext: { slug, next, previous, relativePath, navigationData },
 }: Props): React.ReactNode => (
   <Layout title={title} description={description}>
     <Hero title={title} />
@@ -38,6 +35,7 @@ export default ({
     />
   </Layout>
 );
+export default LearnLayout;
 
 export const query = graphql`
   query DocBySlug($slug: String!) {

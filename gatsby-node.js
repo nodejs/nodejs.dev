@@ -56,8 +56,8 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           }
-        `,
-      ).then((result) => {
+        `
+      ).then(result => {
         if (result.errors) {
           // eslint-disable-next-line no-console
           console.log(result.errors);
@@ -83,7 +83,8 @@ exports.createPages = ({ graphql, actions }) => {
           }
 
           let nextNodeData = null;
-          const nextNode = index === edges.length - 1 ? undefined : edges[index + 1].node;
+          const nextNode =
+            index === edges.length - 1 ? undefined : edges[index + 1].node;
           if (nextNode) {
             nextNodeData = {
               slug: nextNode.fields.slug,
@@ -110,7 +111,7 @@ exports.createPages = ({ graphql, actions }) => {
           });
         });
 
-        docPages.forEach((page) => {
+        docPages.forEach(page => {
           createPage({
             path: `/${page.slug}`,
             component: docTemplate,
@@ -136,7 +137,7 @@ exports.createPages = ({ graphql, actions }) => {
             });
           }
         });
-      }),
+      })
     );
   });
 };

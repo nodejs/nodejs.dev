@@ -23,7 +23,7 @@ const Navigation = ({ sections, currentSlug }: Props): JSX.Element => {
     if (isOpen && !hasScrolled && navElement.current) {
       const { newScrollPos, scrollWindow, scrollTime } = calcNavScrollParams(
         height,
-        navElement.current,
+        navElement.current
       );
 
       try {
@@ -41,9 +41,9 @@ const Navigation = ({ sections, currentSlug }: Props): JSX.Element => {
   const readSections: Set<NavigationSectionItem['slug']> = new Set();
   // Assume section items up to the one currently open have been read. Track
   // their unique slugs in `readSections` set.
-  Object.keys(sections).some((sectionKey) => {
+  Object.keys(sections).some((sectionKey): boolean => {
     let isCurrentSlug = false;
-    sections[sectionKey].some((sectionItem) => {
+    sections[sectionKey].some((sectionItem): boolean => {
       isCurrentSlug = sectionItem.slug === currentSlug;
       if (!isCurrentSlug) {
         readSections.add(sectionItem.slug);
@@ -60,7 +60,7 @@ const Navigation = ({ sections, currentSlug }: Props): JSX.Element => {
       <button type="button" className="side-nav__open" onClick={toggle}>
         Menu
       </button>
-      {Object.keys(sections).map((sectionKey: string) => (
+      {Object.keys(sections).map((sectionKey: string): JSX.Element[] => (
         <NavigationSection
           key={sectionKey}
           title={sectionKey}

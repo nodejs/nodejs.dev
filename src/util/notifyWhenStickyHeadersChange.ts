@@ -23,13 +23,13 @@ const addSentinels = (
   const stickyElements: HTMLElement[] = Array.from(
     container.querySelectorAll(`.${stickyElementsClassName}`)
   ) as HTMLElement[];
-  const sentinels: HTMLDivElement[] = stickyElements.map(
-    (stickyElement: HTMLElement) => {
+  const sentinels: (HTMLDivElement | null)[] = stickyElements.map(
+    (stickyElement: HTMLElement): HTMLDivElement | null => {
       const sentinel: HTMLDivElement = document.createElement('div');
       sentinel.classList.add('sticky-sentinel', className);
-      const appendedSentinel: HTMLDivElement = stickyElement.parentElement!.appendChild(
-        sentinel
-      );
+      const appendedSentinel: HTMLDivElement | null =
+        stickyElement.parentElement &&
+        stickyElement.parentElement.appendChild(sentinel);
 
       return appendedSentinel;
     }

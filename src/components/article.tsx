@@ -27,6 +27,7 @@ const Article = ({
   <article className="article-reader">
     <h1 className="article-reader__headline">{title}</h1>
     <TOC heading="TABLE OF CONTENTS" tableOfContents={tableOfContents} />
+    {/* eslint-disable react/no-danger */}
     <div dangerouslySetInnerHTML={{ __html: html }} />
     <AuthorsList authors={authors} />
     <EditLink relativePath={relativePath} />
