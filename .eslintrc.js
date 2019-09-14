@@ -7,6 +7,7 @@ module.exports = {
     // project: './tsconfig.json'
   },
   extends: [
+    "airbnb",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
@@ -23,7 +24,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    // jest: true
+    jest: true
   },
   rules: {
     // "react/jsx-filename-extension": "off",
