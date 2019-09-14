@@ -7,17 +7,15 @@ module.exports = {
     // project: './tsconfig.json'
   },
   extends: [
-    "airbnb",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    // "prettier",
     "prettier/@typescript-eslint",
-    //
-    // these were used in the other config
-    // not sure wht the plugin prefix does
-    // "plugin:jest/recommended",
     "plugin:prettier/recommended"
   ],
   settings: {
+    react: {
+      version: "detect"
+    },
     "import/resolver": {
       typescript: {}
     }
@@ -29,8 +27,8 @@ module.exports = {
   },
   rules: {
     // "react/jsx-filename-extension": "off",
-    // "react-hooks/rules-of-hooks": "error",
-    // "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
     // "camelcase": "off",
     // "@typescript-eslint/camelcase": ["error", { "properties": "never" }],
     // "no-unused-vars": "off",
@@ -39,7 +37,15 @@ module.exports = {
   },
   plugins: [
     "@typescript-eslint",
-    // "react-hooks",
+    "react-hooks"
     // "prettier"
+  ],
+  overrides: [
+    {
+      files: ["**/*.js"],
+      rules: {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
   ]
-}
+};

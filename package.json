@@ -50,8 +50,8 @@
     "test": "yarn lint && yarn jest",
     "test-watch": "yarn jest --watch",
     "test-ci": "yarn test --coverage && codecov",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
+    "lint": "eslint . --ext .js,.ts,.tsx",
+    "lint:fix": "yarn lint --fix",
     "serve": "yarn build && clear && gatsby serve"
   },
   "devDependencies": {
