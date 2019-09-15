@@ -28,44 +28,52 @@ body {
   font-weight: var(--font-weight-light);
   margin: 0 0 var(--space-48) 0;
 }
+
 .t-display2 {
   font-size: var(--font-size-display2);
   line-height: var(--line-height-display2);
   font-weight: var(--font-weight-regular);
 }
+
 .t-display3 {
   font-size: var(--font-size-display3);
   line-height: var(--line-height-display3);
   font-weight: var(--font-weight-regular);
 }
+
 .t-headline, h2 {
   font-size: var(--font-size-headline);
   line-height: var(--line-height-headline);
   font-weight: var(--font-weight-semibold);
   margin: 0 0 var(--space-24) 0;
 }
+
 .t-subheading, h3 {
   font-size: var(--font-size-subheading);
   line-height: var(--line-height-subheading);
   font-weight: var(--font-weight-semibold);
   margin: 0 0 var(--space-08) 0;
 }
+
 .t-body1, p {
   font-size: var(--font-size-body1);
   line-height: var(--line-height-body1);
   font-weight: var(--font-weight-regular);
   margin: 0 0 var(--space-24) 0;
 }
+
 .t-body2 {
   font-size: var(--font-size-body2);
   line-height: var(--line-height-body2);
   font-weight: var(--font-weight-regular);
 }
+
 .t-caption {
   font-size: var(--font-size-caption);
   line-height: var(--line-height-caption);
   font-weight: var(--font-weight-regular);
 }
+
 .t-overline {
   font-size: var(--font-size-overline);
   line-height: var(--line-height-overline);
@@ -73,11 +81,13 @@ body {
   color: var(--color-text-secondary);
   text-transform: uppercase;
 }
+
 .t-link, a {
   color: var(--color-text-accent);
   text-decoration: underline;
   cursor: pointer;
 }
+
 .t-link:hover, a:hover, .t-link:focus, a:focus {
   color: var(--color-text-accent);
   text-decoration: none;
@@ -117,6 +127,10 @@ button, input {
 
 button {
   cursor: pointer;
+}
+
+input {
+  color: var(--color-text-primary);
 }
 
 body:not(.dark-mode) .dark-mode-only {
@@ -205,6 +219,10 @@ main {
   right: 0;
   top: 0;
   z-index: 999;
+}
+
+.dark-mode .nav {
+  border: none;
 }
 
 .nav__logo {

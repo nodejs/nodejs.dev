@@ -47,7 +47,7 @@ function renderArticleOverview(
     <li
       className={`api-key__item api-key__item--${obj.type} ${
         children.length ? 'api-key__item--has-children' : ''
-      }`}
+        }`}
       key={obj.name}
     >
       <a href={`#${obj.name}`} className="t-body1">
@@ -56,8 +56,8 @@ function renderArticleOverview(
       {children.length ? (
         <ul className="api-key__section">{children}</ul>
       ) : (
-        undefined
-      )}
+          undefined
+        )}
     </li>
   );
 
@@ -183,6 +183,7 @@ function renderArticle(page: ApiDocsObj | null): JSX.Element {
       {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
       {renderArticleSections([page])}
     </article>
+
   );
 }
 
@@ -233,34 +234,37 @@ export default function APIDocsPage(): JSX.Element {
   );
 
   return (
-    <Layout title={title} description={description}>
-      <nav className="api-nav">
-        <ul className="api-nav__list">
-          <li className="api-nav__list-item">
-            <select
-              className="api-nav__version"
-              onChange={(e): void => {
-                setPage(null);
-                setVersion(e.target.value);
-              }}
-            >
-              {releases.map(
-                (release): JSX.Element => (
-                  <option value={release.version} key={release.version}>
-                    {release.version}
-                  </option>
-                )
-              )}
-            </select>
-          </li>
-          {sideBarSection('Globals', 'globals', apiData, setPage)}
-          {sideBarSection('Methods', 'methods', apiData, setPage)}
-          {sideBarSection('Misc', 'miscs', apiData, setPage)}
-          {sideBarSection('Modules', 'modules', apiData, setPage)}
-          {sideBarSection('Classes', 'classes', apiData, setPage)}
-        </ul>
-      </nav>
-      {renderArticle(page)}
-    </Layout>
+    <main>
+      <Layout title={title} description={description}>
+        <nav className="api-nav">
+          <ul className="api-nav__list">
+            <li className="api-nav__list-item">
+              <select
+                className="api-nav__version"
+                onChange={(e): void => {
+                  setPage(null);
+                  setVersion(e.target.value);
+                }}
+              >
+                {releases.map(
+                  (release): JSX.Element => (
+                    <option value={release.version} key={release.version}>
+                      {release.version}
+                    </option>
+                  )
+                )}
+              </select>
+            </li>
+            {sideBarSection('Globals', 'globals', apiData, setPage)}
+            {sideBarSection('Methods', 'methods', apiData, setPage)}
+            {sideBarSection('Misc', 'miscs', apiData, setPage)}
+            {sideBarSection('Modules', 'modules', apiData, setPage)}
+            {sideBarSection('Classes', 'classes', apiData, setPage)}
+          </ul>
+        </nav>
+        {renderArticle(page)}
+      </Layout>
+    </main>
+
   );
 }

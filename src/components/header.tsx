@@ -22,13 +22,13 @@ const Header = () => (
 
     <ul className="nav__tabs__container">
       <li className="nav__tabs">
-        <Link to="/learn">Learn</Link>
+        <Link to="/learn" activeStyle={{ fontWeight: "var(--font-weight-semibold)", color: "var(--color-text-accent)" }} partiallyActive={true}>Learn</Link>
       </li>
       <li className="nav__tabs">
-        <Link to="/docs">Documentation</Link>
+        <Link to="/docs" activeStyle={{ fontWeight: "var(--font-weight-semibold)", color: "var(--color-text-accent)" }} partiallyActive={true}>Documentation</Link>
       </li>
       <li className="nav__tabs">
-        <Link to="/download">Download</Link>
+        <Link to="/download" activeStyle={{ fontWeight: "var(--font-weight-semibold)", color: "var(--color-text-accent)" }} partiallyActive={true}>Download</Link>
       </li>
     </ul>
 

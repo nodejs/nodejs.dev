@@ -4,7 +4,7 @@ import Hero from '../components/hero';
 import Layout from '../components/layout';
 import '../util/konami';
 
-import '../styles/index-page.css';
+import '../styles/index.css';
 
 import featureImg from '../images/placeholder-img.svg';
 
@@ -16,6 +16,11 @@ import logoImg5 from '../images/logos/paypal-logo.svg';
 
 import GetStartedIllustration1 from '../images/illustrations/beginners-guide-illustration.svg';
 import GetStartedIllustration2 from '../images/illustrations/do-more-illustration.svg';
+
+import pentagonIllustration1 from '../images/illustrations/pentagon-illustration1.svg'
+import pentagonIllustration2 from '../images/illustrations/pentagon-illustration2.svg'
+import leafsIllustration from '../images/illustrations/leafs-illustration.svg'
+
 
 const nodeFeature1 =
   'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
@@ -40,10 +45,14 @@ export default function Index(): JSX.Element {
   const description = 'Welcome to Node.js!';
 
   return (
-    <Layout title={title} description={description}>
+    <Layout title={title} description={description} style={{ overflow: "hidden" }}>
       <div className="home-page">
         <Hero title={title} subTitle={subTitle} />
-        <section className="node-demo"></section>
+
+        <section className="node-demo-container">
+          <div className="node-demo"></div>
+          <img className="leafs-illustration" src={leafsIllustration} />
+        </section>
 
         <section className="node-features">
           <NodeFeature img={featureImg} featureText={nodeFeature1} />
@@ -110,7 +119,11 @@ export default function Index(): JSX.Element {
         <Link to="/learn" className="btn-primary">
           Get Started
         </Link>
+
       </div>
+      <img className="pentagon-illustration-big1" src={pentagonIllustration1} />
+      <img className="pentagon-illustration-big2" src={pentagonIllustration2} />
+      <div className="double-background"></div>
     </Layout>
   );
 }
