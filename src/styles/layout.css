@@ -78,7 +78,6 @@ body {
   text-decoration: underline;
   cursor: pointer;
 }
-
 .t-link:hover, a:hover, .t-link:focus, a:focus {
   color: var(--color-text-accent);
   text-decoration: none;
@@ -104,6 +103,20 @@ body {
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
+}
+
+::placeholder {
+  color: var(--black3);
+}
+
+button, input {
+  font-family: var(--base-type-face);
+  font-size: var(--font-size-body);
+  background: transparent;
+}
+
+button {
+  cursor: pointer;
 }
 
 body:not(.dark-mode) .dark-mode-only {
@@ -181,10 +194,12 @@ main {
 }
 
 .nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
   background: var(--color-fill-app);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.33), 0 2px 3px rgba(0, 0, 0, 0.2);
+  border-bottom: var(--space-01) solid var(--black2);
   height: var(--nav-height);
-  line-height: var(--nav-height);
   left: 0;
   position: fixed;
   right: 0;
@@ -193,14 +208,29 @@ main {
 }
 
 .nav__logo {
-  display: block;
-  height: 42px;
-  margin: 0 24px 0 0;
+  height: var(--space-32);
+  margin-left: var(--space-24);
+}
+
+.nav__tabs__container {
+  margin-left: 120px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  max-width: 352px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav .right-container {
+  display: flex;
+  padding-right: var(--space-24);
+  list-style: none;
 }
 
 .nav__tabs {
   text-decoration: none;
-  margin-left: 16px;
+  margin-left: var(--space-16);
 }
 
 .nav__tabs > a {

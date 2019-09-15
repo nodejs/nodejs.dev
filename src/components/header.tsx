@@ -1,47 +1,45 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { css, SerializedStyles } from '@emotion/core';
+import logoLight from '../images/logos/nodejs-logo-light-mode.svg';
+import logoDark from '../images/logos/nodejs-logo-dark-mode.svg';
 
-/* eslint-disable-next-line @typescript-eslint/no-var-requires */
-const logo = require('../images/logo.svg');
-
-const ulStyles: SerializedStyles = css`
-  @media (max-width: 380px) {
-    padding: 0;
-  }
-  margin: 0 auto;
-  padding: 0 4.8rem;
-  display: flex;
-  align-items: center;
-  list-style: none;
-`;
-
-const Header = (): JSX.Element => (
+const Header = () => (
   <nav className="nav">
-    <ul css={ulStyles}>
-      <li>
-        <Link to="/" style={{ display: 'block' }}>
-          <img src={logo} alt="Node.js" className="nav__logo" />
-        </Link>
-      </li>
+    <div className="logo">
+      <Link to="/">
+        <img
+          src={logoLight}
+          alt="Node.js"
+          className="nav__logo light-mode-only"
+        />
+        <img
+          src={logoDark}
+          alt="Node.js"
+          className="nav__logo dark-mode-only"
+        />
+      </Link>
+    </div>
+
+    <ul className="nav__tabs__container">
       <li className="nav__tabs">
         <Link to="/learn">Learn</Link>
       </li>
       <li className="nav__tabs">
-        <Link to="/docs">Docs</Link>
-      </li>
-      <li className="nav__tabs">
-        <Link to="/community">Community</Link>
+        <Link to="/docs">Documentation</Link>
       </li>
       <li className="nav__tabs">
         <Link to="/download">Download</Link>
       </li>
-      <li style={{ flexGrow: 1 }} />
+    </ul>
+
+    <div style={{ flexGrow: 1 }}></div>
+
+    <ul className="right-container">
       <li className="nav__tabs nav__tabs--right">
         <button
           type="button"
           className="dark-mode-toggle"
-          onClick={(): boolean => document.body.classList.toggle('dark-mode')}
+          onClick={() => document.body.classList.toggle('dark-mode')}
         >
           <span className="sr-only">Toggle Dark Mode</span>
           <i className="material-icons light-mode-only">nights_stay</i>
@@ -52,13 +50,13 @@ const Header = (): JSX.Element => (
       <li className="nav__tabs">
         <a
           target="_blank"
-          rel="noreferrer noopener"
           href="https://github.com/nodejs/nodejs.dev"
+          rel="noopener noreferrer"
         >
           <span className="sr-only">GitHub</span>
           <svg
-            width="2.0rem"
-            height="2.0rem"
+            width="2.4rem"
+            height="2.4rem"
             viewBox="0 0 438.549 438.549"
             style={{ fill: 'var(--color-text-accent)' }}
           >
