@@ -10,6 +10,7 @@ export default function ReleaseCards({ line }: Props): JSX.Element {
   return (
     <div>
       <div>
+        <i className="material-icons">cloud</i>
         <p>Windows Installer</p>
         <a
           href={`https://nodejs.org/dist/${fileName}/node-${line &&
@@ -19,6 +20,7 @@ export default function ReleaseCards({ line }: Props): JSX.Element {
         </a>
       </div>
       <div>
+        <i className="material-icons">cloud</i>
         <p>Mac Installer</p>
         <a
           href={`https://nodejs.org/dist/${fileName}/node-${line &&
@@ -28,6 +30,7 @@ export default function ReleaseCards({ line }: Props): JSX.Element {
         </a>
       </div>
       <div>
+        <i className="material-icons">cloud</i>
         <p>Source Code</p>
         <a
           href={`https://nodejs.org/dist/${fileName}/node-${line &&
