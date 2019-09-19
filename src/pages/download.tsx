@@ -8,11 +8,11 @@ import ReleaseCards from '../components/release-cards';
 
 import { detectOS } from '../util/detectOS';
 
-const userOS = detectOS();
-
 export default function DownloadPage(): JSX.Element {
   const releaseHistory = useReleaseHistory().slice(0, 50);
   const [ltsSelected, setLtsSelected] = useState(true);
+
+  const userOS = detectOS();
   const title = 'Download Node.js';
   const description = 'Come get me!';
 
@@ -31,7 +31,7 @@ export default function DownloadPage(): JSX.Element {
           Download the Node.js source code, a pre-built installer for your
           platform, or install via package manager.
         </p>
-        <p>You are currently on a {userOS} machine!</p>
+        <p>You are currently on a {userOS} machine</p>
         <ReleaseToggle selected={ltsSelected} onToggle={setLtsSelected} />
         <ReleaseCards line={selectedLine} />
         <ReleaseTable releases={releaseHistory} />
