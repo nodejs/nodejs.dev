@@ -6,7 +6,7 @@ interface Props {
   subTitle: string;
 }
 
-const NodeVersion = 'Version 10.15.3'
+const NodeVersion = 'Version 10.15.3';
 
 const Hero = ({ title, subTitle }: Props) => (
   <div className="home-page-hero">

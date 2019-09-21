@@ -3,6 +3,12 @@ import React from 'react';
 import logoLight from '../images/logos/nodejs-logo-light-mode.svg';
 import logoDark from '../images/logos/nodejs-logo-dark-mode.svg';
 
+const activeStyleTab = {
+  fontWeight: 'var(--font-weight-semibold)',
+  color: 'var(--color-text-accent)',
+  borderBottom: 'var(--space-04) inset var(--color-text-accent)',
+};
+
 const Header = () => (
   <nav className="nav">
     <div className="logo">
@@ -22,41 +28,17 @@ const Header = () => (
 
     <ul className="nav__tabs__container">
       <li className="nav__tabs">
-        <Link
-          to="/learn"
-          activeStyle={{
-            fontWeight: 'var(--font-weight-semibold)',
-            color: 'var(--color-text-accent)',
-            borderBottom: 'var(--space-04) inset var(--color-text-accent)',
-          }}
-          partiallyActive
-        >
+        <Link to="/learn" activeStyle={activeStyleTab} partiallyActive>
           Learn
         </Link>
       </li>
       <li className="nav__tabs">
-        <Link
-          to="/docs"
-          activeStyle={{
-            fontWeight: 'var(--font-weight-semibold)',
-            color: 'var(--color-text-accent)',
-            borderBottom: 'var(--space-04) inset var(--color-text-accent)',
-          }}
-          partiallyActive
-        >
+        <Link to="/docs" activeStyle={activeStyleTab} partiallyActive>
           Documentation
         </Link>
       </li>
       <li className="nav__tabs">
-        <Link
-          to="/download"
-          activeStyle={{
-            fontWeight: 'var(--font-weight-semibold)',
-            color: 'var(--color-text-accent)',
-            borderBottom: 'var(--space-04) inset var(--color-text-accent)',
-          }}
-          partiallyActive
-        >
+        <Link to="/download" activeStyle={activeStyleTab} partiallyActive>
           Download
         </Link>
       </li>
@@ -70,7 +52,6 @@ const Header = () => (
           type="button"
           className="dark-mode-toggle"
           onClick={() => document.body.classList.toggle('dark-mode')}
-          type="button"
         >
           <span className="sr-only">Toggle Dark Mode</span>
           <i className="material-icons light-mode-only">nights_stay</i>

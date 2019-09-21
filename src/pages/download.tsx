@@ -17,4 +17,3 @@ export default function DownloadPage(): JSX.Element {
     </Layout>
   );
 }
-

@@ -17,13 +17,12 @@ import logoImg5 from '../images/logos/paypal-logo.svg';
 import GetStartedIllustration1 from '../images/illustrations/beginners-guide-illustration.svg';
 import GetStartedIllustration2 from '../images/illustrations/do-more-illustration.svg';
 
-import pentagonIllustration1 from '../images/illustrations/pentagon-illustration1.svg'
-import pentagonIllustration2 from '../images/illustrations/pentagon-illustration2.svg'
+import pentagonIllustration1 from '../images/illustrations/pentagon-illustration1.svg';
+import pentagonIllustration2 from '../images/illustrations/pentagon-illustration2.svg';
 import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
 import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
 import dotsIllustration from '../images/illustrations/dots.svg';
-
 
 const nodeFeature1 =
   'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
@@ -48,7 +47,11 @@ export default function Index(): JSX.Element {
   const description = 'Welcome to Node.js!';
 
   return (
-    <Layout title={title} description={description} style={{ overflow: "hidden" }}>
+    <Layout
+      title={title}
+      description={description}
+      style={{ overflow: 'hidden' }}
+    >
       <div className="home-page">
         <Hero title={title} subTitle={subTitle} />
 
@@ -125,10 +128,17 @@ export default function Index(): JSX.Element {
         <Link to="/learn" className="btn-primary">
           Get Started
         </Link>
-
       </div>
-      <img className="pentagon-illustration-big1" src={pentagonIllustration1} />
-      <img className="pentagon-illustration-big2" src={pentagonIllustration2} />
+      <img
+        className="pentagon-illustration-big1"
+        src={pentagonIllustration1}
+        alt=""
+      />
+      <img
+        className="pentagon-illustration-big2"
+        src={pentagonIllustration2}
+        alt=""
+      />
       <div className="double-background"></div>
     </Layout>
   );
