@@ -19,7 +19,10 @@ import GetStartedIllustration2 from '../images/illustrations/do-more-illustratio
 
 import pentagonIllustration1 from '../images/illustrations/pentagon-illustration1.svg'
 import pentagonIllustration2 from '../images/illustrations/pentagon-illustration2.svg'
-import leafsIllustration from '../images/illustrations/leafs-illustration.svg'
+import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
+import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
+import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
+import dotsIllustration from '../images/illustrations/dots.svg';
 
 
 const nodeFeature1 =
@@ -51,7 +54,10 @@ export default function Index(): JSX.Element {
 
         <section className="node-demo-container">
           <div className="node-demo"></div>
-          <img className="leafs-illustration" src={leafsIllustration} />
+          <img className="leafs-front" src={leafsIllustrationFront} alt="" />
+          <img className="leafs-middle" src={leafsIllustrationMiddle} alt="" />
+          <img className="leafs-back" src={leafsIllustrationBack} alt="" />
+          <img className="dots" src={dotsIllustration} alt="" />
         </section>
 
         <section className="node-features">
@@ -106,7 +112,7 @@ export default function Index(): JSX.Element {
             </p>
           </Link>
 
-          <Link to="/documentation" className="get-started-callout">
+          <Link to="/docs" className="get-started-callout">
             <img src={GetStartedIllustration2} alt="" />
             <h5 className="t-headline">Do even more with Node</h5>
             <p>

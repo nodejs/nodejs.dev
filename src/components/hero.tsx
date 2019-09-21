@@ -6,6 +6,8 @@ interface Props {
   subTitle: string;
 }
 
+const NodeVersion = 'Version 10.15.3'
+
 const Hero = ({ title, subTitle }: Props) => (
   <div className="home-page-hero">
     <h1>{title}</h1>
@@ -16,7 +18,7 @@ const Hero = ({ title, subTitle }: Props) => (
           Download Node (LTS)
         </button>
         <p className="links t-caption">
-          Version 10.15.3 - <Link to="/download">What’s new</Link> /{' '}
+          {NodeVersion} - <Link to="/download">What’s new</Link> /{' '}
           <Link to="/download">Get Current</Link>
         </p>
       </div>

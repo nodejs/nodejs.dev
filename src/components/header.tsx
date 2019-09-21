@@ -27,6 +27,7 @@ const Header = () => (
           activeStyle={{
             fontWeight: 'var(--font-weight-semibold)',
             color: 'var(--color-text-accent)',
+            borderBottom: 'var(--space-04) inset var(--color-text-accent)',
           }}
           partiallyActive
         >
@@ -39,6 +40,7 @@ const Header = () => (
           activeStyle={{
             fontWeight: 'var(--font-weight-semibold)',
             color: 'var(--color-text-accent)',
+            borderBottom: 'var(--space-04) inset var(--color-text-accent)',
           }}
           partiallyActive
         >
@@ -51,6 +53,7 @@ const Header = () => (
           activeStyle={{
             fontWeight: 'var(--font-weight-semibold)',
             color: 'var(--color-text-accent)',
+            borderBottom: 'var(--space-04) inset var(--color-text-accent)',
           }}
           partiallyActive
         >
