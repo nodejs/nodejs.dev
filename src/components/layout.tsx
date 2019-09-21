@@ -15,7 +15,13 @@ interface Props {
   href: string;
 }
 
-const Layout = ({ children, title, description, img, location }: Props): JSX.Element => {
+const Layout = ({
+  children,
+  title,
+  description,
+  img,
+  location,
+}: Props): JSX.Element => {
   return (
     <React.Fragment>
       <SEO title={title} description={description} img={img} />

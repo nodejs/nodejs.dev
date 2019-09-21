@@ -22,13 +22,40 @@ const Header = () => (
 
     <ul className="nav__tabs__container">
       <li className="nav__tabs">
-        <Link to="/learn" activeStyle={{ fontWeight: "var(--font-weight-semibold)", color: "var(--color-text-accent)" }} partiallyActive={true}>Learn</Link>
+        <Link
+          to="/learn"
+          activeStyle={{
+            fontWeight: 'var(--font-weight-semibold)',
+            color: 'var(--color-text-accent)',
+          }}
+          partiallyActive
+        >
+          Learn
+        </Link>
       </li>
       <li className="nav__tabs">
-        <Link to="/docs" activeStyle={{ fontWeight: "var(--font-weight-semibold)", color: "var(--color-text-accent)" }} partiallyActive={true}>Documentation</Link>
+        <Link
+          to="/docs"
+          activeStyle={{
+            fontWeight: 'var(--font-weight-semibold)',
+            color: 'var(--color-text-accent)',
+          }}
+          partiallyActive
+        >
+          Documentation
+        </Link>
       </li>
       <li className="nav__tabs">
-        <Link to="/download" activeStyle={{ fontWeight: "var(--font-weight-semibold)", color: "var(--color-text-accent)" }} partiallyActive={true}>Download</Link>
+        <Link
+          to="/download"
+          activeStyle={{
+            fontWeight: 'var(--font-weight-semibold)',
+            color: 'var(--color-text-accent)',
+          }}
+          partiallyActive
+        >
+          Download
+        </Link>
       </li>
     </ul>
 
@@ -40,6 +67,7 @@ const Header = () => (
           type="button"
           className="dark-mode-toggle"
           onClick={() => document.body.classList.toggle('dark-mode')}
+          type="button"
         >
           <span className="sr-only">Toggle Dark Mode</span>
           <i className="material-icons light-mode-only">nights_stay</i>

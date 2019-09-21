@@ -47,7 +47,7 @@ function renderArticleOverview(
     <li
       className={`api-key__item api-key__item--${obj.type} ${
         children.length ? 'api-key__item--has-children' : ''
-        }`}
+      }`}
       key={obj.name}
     >
       <a href={`#${obj.name}`} className="t-body1">
@@ -56,8 +56,8 @@ function renderArticleOverview(
       {children.length ? (
         <ul className="api-key__section">{children}</ul>
       ) : (
-          undefined
-        )}
+        undefined
+      )}
     </li>
   );
 
@@ -183,7 +183,6 @@ function renderArticle(page: ApiDocsObj | null): JSX.Element {
       {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
       {renderArticleSections([page])}
     </article>
-
   );
 }
 
@@ -265,6 +264,5 @@ export default function APIDocsPage(): JSX.Element {
         {renderArticle(page)}
       </Layout>
     </main>
-
   );
 }

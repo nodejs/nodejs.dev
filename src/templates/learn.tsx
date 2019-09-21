@@ -22,22 +22,21 @@ const LearnLayout = ({
   },
   pageContext: { slug, next, previous, relativePath, navigationData },
 }: Props): React.ReactNode => (
-    <main>
-      <Layout title={title} description={description}>
-        <Navigation currentSlug={slug} sections={navigationData} />
-        <Article
-          title={title}
-          html={html}
-          tableOfContents={tableOfContents}
-          next={next}
-          authors={authors}
-          previous={previous}
-          relativePath={relativePath}
-        />
-      </Layout>
-    </main>
-
-  );
+  <main>
+    <Layout title={title} description={description}>
+      <Navigation currentSlug={slug} sections={navigationData} />
+      <Article
+        title={title}
+        html={html}
+        tableOfContents={tableOfContents}
+        next={next}
+        authors={authors}
+        previous={previous}
+        relativePath={relativePath}
+      />
+    </Layout>
+  </main>
+);
 export default LearnLayout;
 
 export const query = graphql`
