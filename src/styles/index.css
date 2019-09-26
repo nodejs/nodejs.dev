@@ -9,7 +9,7 @@
 
 .pentagon-illustration-big1 {
     position: absolute;
-    top: 130%;
+    top: 1200px;
     z-index: -1;
     right: 0;
 }
@@ -18,7 +18,7 @@
     position: absolute;
     z-index: -2;
     left: 0;
-    bottom: -260%;
+    bottom: -2000px;
 }
 
 .double-background {
@@ -116,6 +116,7 @@
     right: -16px;
     z-index: -1;
     animation: leafs-animation 10s infinite alternate ease-in-out;
+    filter: drop-shadow(10px 5px 50px rgba(0, 0, 0, .1));
 }
 
 .leafs-middle {
@@ -124,6 +125,7 @@
     right: 20px;
     z-index: -2;
     animation: leafs-animation 15s infinite alternate ease-in-out;
+    filter: drop-shadow(6px 5px 25px rgba(0, 0, 0, .1));
 }
 
 .leafs-back {
