@@ -35,23 +35,6 @@ main {
   outline: none;
 }
 
-.nav__logo {
-  display: block;
-  height: 42px;
-  margin: 0 24px 0 0;
-}
-
-.nav__tabs {
-  text-decoration: none;
-  font-size: 14px;
-  margin-left: 16px;
-}
-
-.nav__tabs > a {
-  text-decoration: none;
-  color: black;
-}
-
 
 .hero {
   align-items: center;

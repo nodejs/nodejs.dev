@@ -1,0 +1,39 @@
+.main-header {
+  position: fixed;
+  width: calc(100% - var(--size2)*2);
+  left: 0;
+  top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  z-index: 100;
+  background-color: var(--white);
+  box-shadow: 0 0 0.2em var(--gray3);
+  height: var(--size4);
+	padding: 0 var(--size2);
+
+  .navigation {
+    display: flex;
+    align-items: center;
+		height: 100%;
+
+    .navigation-logo {
+      display: block;
+      height: var(--size3);
+    }
+
+    .navigation-item {
+      text-decoration: none;
+      font-size: 14px;
+      margin-left: var(--size3);
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  .panel {
+    display: flex;
+    align-items: center;
+		height: 100%;
+  }
+}

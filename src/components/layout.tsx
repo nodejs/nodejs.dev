@@ -1,7 +1,7 @@
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/themes/prism-okaidia.css';
 import React, { useEffect, useRef } from 'react';
-import Header from './header';
+import Header from './Header/header';
 import './layout.css';
 import './mobile.css';
 import SEO from './seo';

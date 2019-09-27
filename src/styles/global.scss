@@ -15,14 +15,20 @@ body {
   padding-top: var(--nav-height);
 
   /* Set in JavaScript */
+	--size1: 1em;
+	--size2: 2em;
+	--size3: 3em;
+	--size4: 4em;
+
+
   --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
   --banner-gradient: linear-gradient(to right, var(--purple9), var(--blue7));
-  --nav-height: 6.2rem;
-  --hero-height: 36.0rem;
+  --hero-height: 36.0em;
 
   --sans-serif: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --serif: 'Merriweather', Georgia, Cambria, "Times New Roman", Times, serif;
 
+  --white: #FFFFFF;
   --gray0: #F5F6F7;
   --gray1: #EAEDEF;
   --gray2: #DAE1E5;
