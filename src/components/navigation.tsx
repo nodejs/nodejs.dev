@@ -4,22 +4,22 @@ import { NavigationSectionData, NavigationSectionItem } from '../types';
 import { isSmallScreen } from '../util/isScreenWithinWidth';
 import { scrollTo, calcNavScrollParams } from '../util/scrollTo';
 
-type Props = {
+interface Props {
   sections: NavigationSectionData;
   currentSlug: string;
-};
+}
 
-const Navigation = ({ sections, currentSlug }: Props) => {
+const Navigation = ({ sections, currentSlug }: Props): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [hasScrolled, setHasScrolled] = useState<boolean>(false);
   const navElement = useRef<HTMLElement | null>(null);
-  const toggle = () => setIsOpen(!isOpen);
-  const onItemClick = () => {
+  const toggle = (): void => setIsOpen(!isOpen);
+  const onItemClick = (): void => {
     if (isSmallScreen()) {
       toggle();
     }
   };
-  const autoScroll = async (height: number) => {
+  const autoScroll = async (height: number): Promise<void> => {
     if (isOpen && !hasScrolled && navElement.current) {
       const { newScrollPos, scrollWindow, scrollTime } = calcNavScrollParams(
         height,
@@ -41,9 +41,9 @@ const Navigation = ({ sections, currentSlug }: Props) => {
   const readSections: Set<NavigationSectionItem['slug']> = new Set();
   // Assume section items up to the one currently open have been read. Track
   // their unique slugs in `readSections` set.
-  Object.keys(sections).some(sectionKey => {
-    let isCurrentSlug: boolean = false;
-    sections[sectionKey].some(sectionItem => {
+  Object.keys(sections).some((sectionKey): boolean => {
+    let isCurrentSlug = false;
+    sections[sectionKey].some((sectionItem): boolean => {
       isCurrentSlug = sectionItem.slug === currentSlug;
       if (!isCurrentSlug) {
         readSections.add(sectionItem.slug);
@@ -57,10 +57,10 @@ const Navigation = ({ sections, currentSlug }: Props) => {
 
   return (
     <nav className={className} ref={navElement}>
-      <button className="side-nav__open" onClick={toggle}>
+      <button type="button" className="side-nav__open" onClick={toggle}>
         Menu
       </button>
-      {Object.keys(sections).map((sectionKey: string) => (
+      {Object.keys(sections).map((sectionKey: string): JSX.Element[] => (
         <NavigationSection
           key={sectionKey}
           title={sectionKey}

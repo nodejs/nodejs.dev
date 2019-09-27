@@ -18,10 +18,10 @@ exports[`EditLink component renders correctly 1`] = `
     css={
       Object {
         "map": undefined,
-        "name": "1dmmrc2",
+        "name": "1fo9rdi",
         "next": undefined,
         "styles": "
-  color: var(--gray7) !important;
+  color: var(--black7) !important;
   text-transform: uppercase;
   text-decoration: none !important;
   font-size: 1.4rem;

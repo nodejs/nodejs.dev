@@ -7,7 +7,7 @@ const edit: SerializedStyles = css`
 `;
 
 const link: SerializedStyles = css`
-  color: var(--gray7) !important;
+  color: var(--black7) !important;
   text-transform: uppercase;
   text-decoration: none !important;
   font-size: 1.4rem;
@@ -30,11 +30,11 @@ const icon: SerializedStyles = css`
   vertical-align: middle;
 `;
 
-type Props = {
+interface Props {
   relativePath?: string;
-};
+}
 
-const EditLink = ({ relativePath }: Props) => {
+const EditLink = ({ relativePath }: Props): JSX.Element | null => {
   if (!relativePath) {
     return null;
   }

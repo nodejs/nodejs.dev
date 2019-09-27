@@ -6,12 +6,13 @@ import Layout from './layout';
 import Navigation from '../components/navigation';
 import { LearnPageContext, LearnPageData } from '../types';
 
-type Props = {
+import '../styles/learn.css';
+
+interface Props {
   data: LearnPageData;
   pageContext: LearnPageContext;
-};
-
-export default ({
+}
+const LearnLayout = ({
   data: {
     doc: {
       frontmatter: { title, description },
@@ -21,23 +22,21 @@ export default ({
     },
   },
   pageContext: { slug, next, previous, relativePath, navigationData },
-}: Props) => {
-  return (
-    <Layout title={title} description={description}>
-      <Hero title={title} />
-      <Navigation currentSlug={slug} sections={navigationData} />
-      <Article
-        title={title}
-        html={html}
-        tableOfContents={tableOfContents}
-        next={next}
-        authors={authors}
-        previous={previous}
-        relativePath={relativePath}
-      />
-    </Layout>
-  );
-};
+}: Props): React.ReactNode => (
+  <Layout title={title} description={description}>
+    <Navigation currentSlug={slug} sections={navigationData} />
+    <Article
+      title={title}
+      html={html}
+      tableOfContents={tableOfContents}
+      next={next}
+      authors={authors}
+      previous={previous}
+      relativePath={relativePath}
+    />
+  </Layout>
+);
+export default LearnLayout;
 
 export const query = graphql`
   query DocBySlug($slug: String!) {

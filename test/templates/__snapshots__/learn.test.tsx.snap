@@ -5,9 +5,6 @@ exports[`Learn Template renders correctly 1`] = `
   description="test-description"
   title="test-title"
 >
-  <Hero
-    title="test-title"
-  />
   <Navigation
     currentSlug="test-slug"
     sections={
