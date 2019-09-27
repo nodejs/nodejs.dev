@@ -92,7 +92,7 @@ body {
     --color-border-accent: var(--color-brand-primary);
 
     --color-fill-app: var(--black0);
-    --color-fill-canvas: var(--black0);
+    --color-fill-canvas: var(--black1);
     --color-fill-side-nav: var(--black1);
     --color-fill-top-nav: var(--black0);
     --color-fill-action: var(--brand5); /*for actionable elements*/
