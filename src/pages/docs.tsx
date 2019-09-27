@@ -9,7 +9,7 @@ import {
   isClassObj,
   isModuleObj,
 } from '../hooks/useApiDocs';
-import Layout from '../components/layout';
+import Layout from '../templates/layout';
 
 import '../styles/docs.css';
 

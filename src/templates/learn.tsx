@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import Article from '../components/article';
-import Hero from '../components/hero';
 import Layout from './layout';
 import Navigation from '../components/navigation';
 import { LearnPageContext, LearnPageData } from '../types';

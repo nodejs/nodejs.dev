@@ -1,11 +1,11 @@
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/themes/prism-okaidia.css';
 import React from 'react';
-import Header from './header';
+import Header from '../components/header';
 import '../styles/tokens.css';
 import '../styles/layout.css';
 import '../styles/mobile.css';
-import SEO from './seo';
+import SEO from '../components/seo';
 
 interface Props {
   children: React.ReactNode;
