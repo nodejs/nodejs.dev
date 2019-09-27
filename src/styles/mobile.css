@@ -86,11 +86,6 @@
     height: 3.6rem;
   }
 
-  main {
-    display: flex;
-    flex-flow: column;
-  }
-
   .side-nav {
     height: auto;
     max-height: 42px;

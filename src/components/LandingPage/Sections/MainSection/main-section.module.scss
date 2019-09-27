@@ -1,10 +1,20 @@
 .main-section {
-	width: calc(100% - var(--size2)*2);
-	height: calc(100vh - var(--size4) - var(--size2)*2);
-	padding: var(--size2);
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 	flex-direction: column;
 	text-align: center;
+	padding-top: var(--space-96);
+	margin-bottom: 160px;
+
+	.title {
+		max-width: 840px;
+	}
+
+	.sub-title {
+		max-width: 780px;
+		color: var(--color-text-secondary);
+		margin: var(--space-32) 0 var(--space-80) 0;
+		font-weight: var(--font-weight-light);
+	}
 }

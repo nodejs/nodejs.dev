@@ -3,8 +3,8 @@ import 'prismjs/themes/prism-okaidia.css';
 import React from 'react';
 import Header from '../components/header';
 import '../styles/tokens.css';
-import '../styles/layout.css';
-import '../styles/mobile.css';
+// import '../styles/layout.css';
+// import '../styles/mobile.css';
 import SEO from '../components/seo';
 
 interface Props {
