@@ -12,18 +12,13 @@ body {
   font-family: var(--sans-serif);
   font-size: 1.8rem;
   margin: 0;
-  padding-top: var(--nav-height);
+	padding-top: var(--size4); // header compensator
 
   /* Set in JavaScript */
 	--size1: 1em;
 	--size2: 2em;
 	--size3: 3em;
 	--size4: 4em;
-
-
-  --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
-  --banner-gradient: linear-gradient(to right, var(--purple9), var(--blue7));
-  --hero-height: 36.0em;
 
   --sans-serif: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --serif: 'Merriweather', Georgia, Cambria, "Times New Roman", Times, serif;

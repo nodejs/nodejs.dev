@@ -1,6 +1,6 @@
 import React from 'react';
 import Hero from '../components/hero';
-import Layout from '../components/layout';
+import Layout from '../templates/layout';
 
 export default () => {
   const title = 'PAGE NOT FOUND';

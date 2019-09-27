@@ -4,7 +4,7 @@ import Link from '../Link';
 import logo from '../../images/logo.svg';
 import styles from './header.module.scss';
 
-// should be reaplaced in a future with GraphQL data
+// should be reaplaced with GraphQL data
 const navigationLinks = [
 	{
 		link: 'https://nodejs.org/en/docs/',

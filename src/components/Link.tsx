@@ -1,7 +1,12 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-const UniversalLink = (props: any) => {
+
+interface UniversalLinkProps {
+  children: React.ReactNode;
+};
+
+const UniversalLink = (props: UniversalLinkProps & any) => {
 	const { to, children } = props;
   if (to.includes('http')) {
     // render absolute link

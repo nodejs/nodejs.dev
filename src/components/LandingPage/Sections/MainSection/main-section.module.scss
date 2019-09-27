@@ -1,0 +1,10 @@
+.main-section {
+	width: calc(100% - var(--size2)*2);
+	height: calc(100vh - var(--size4) - var(--size2)*2);
+	padding: var(--size2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}

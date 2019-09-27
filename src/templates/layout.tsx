@@ -1,10 +1,10 @@
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/themes/prism-okaidia.css';
 import React, { useEffect, useRef } from 'react';
-import Header from './Header/header';
-import './layout.css';
-import './mobile.css';
-import SEO from './seo';
+import Header from '../components/Header/header';
+// import './layout.css';
+// import './mobile.css';
+import SEO from '../components/seo';
 import { isMobileScreen } from '../util/isScreenWithinWidth';
 import { notifyWhenStickyHeadersChange } from '../util/notifyWhenStickyHeadersChange';
 import { StickyChange, SentinelObserverSetupOptions } from '../types';
