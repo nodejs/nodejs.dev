@@ -120,18 +120,18 @@ exports.createPages = ({ graphql, actions }) => {
               navigationData: navigationData,
             },
           });
-          if (page.slug === 'introduction-to-nodejs')
-            createPage({
-              path: `/`,
-              component: docTemplate,
-              context: {
-                slug: page.slug,
-                next: page.next,
-                previous: page.previous,
-                relativePath: page.relativePath,
-                navigationData: navigationData,
-              },
-            });
+        //   if (page.slug === 'introduction-to-nodejs')
+        //     createPage({
+        //       path: `/`,
+        //       component: docTemplate,
+        //       context: {
+        //         slug: page.slug,
+        //         next: page.next,
+        //         previous: page.previous,
+        //         relativePath: page.relativePath,
+        //         navigationData: navigationData,
+        //       },
+        //     });
         });
       })
     );

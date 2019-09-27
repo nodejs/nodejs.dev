@@ -1,0 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic&subset=latin,latin-ext);
+
+html {
+  font-size: 10px;
+  margin: 0;
+}
+
+body {
+  background: var(--gray0);
+  color: var(--gray9);
+  font-family: var(--sans-serif);
+  font-size: 1.8rem;
+  margin: 0;
+  padding-top: var(--nav-height);
+
+  /* Set in JavaScript */
+  --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
+  --banner-gradient: linear-gradient(to right, var(--purple9), var(--blue7));
+  --nav-height: 6.2rem;
+  --hero-height: 36.0rem;
+
+  --sans-serif: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --serif: 'Merriweather', Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --gray0: #F5F6F7;
+  --gray1: #EAEDEF;
+  --gray2: #DAE1E5;
+  --gray3: #CBD4D8;
+  --gray4: #B0BCC1;
+  --gray5: #929FA5;
+  --gray6: #6F7B82;
+  --gray7: #556066;
+  --gray8: #3F484C;
+  --gray9: #2D3438;
+  --red0: #FAF0F0;
+  --red1: #FAD4D4;
+  --red2: #FAB6B6;
+  --red3: #FA8E8E;
+  --red4: #F55353;
+  --red5: #DE1B1B;
+  --red6: #B80D0D;
+  --red7: #8F0E0E;
+  --red8: #661414;
+  --red9: #451717;
+  --orange0: #FCF2E6;
+  --orange1: #FAD8AF;
+  --orange2: #F5BC76;
+  --orange3: #E89C3F;
+  --orange4: #CF7911;
+  --orange5: #AD5F00;
+  --orange6: #8A4D03;
+  --orange7: #693D07;
+  --orange8: #4D2F0B;
+  --orange9: #33210C;
+  --green0: #ECF2E9;
+  --green1: #C5E5B5;
+  --green2: #9ACC7D;
+  --green3: #83BA63;
+  --green4: #5FA04D;
+  --green5: #417F38;
+  --green6: #2C682C;
+  --green7: #215127;
+  --green8: #193F1D;
+  --green9: #0F260F;
+  --blue0: #E8F4FA;
+  --blue1: #BBE5FA;
+  --blue2: #8DD4F7;
+  --blue3: #53BAED;
+  --blue4: #229AD6;
+  --blue5: #0C7BB3;
+  --blue6: #066391;
+  --blue7: #064D70;
+  --blue8: #093952;
+  --blue9: #0C2938;
+  --purple0: #F5F0FA;
+  --purple1: #EAD9FA;
+  --purple2: #DABCF7;
+  --purple3: #C79BF2;
+  --purple4: #AE74E8;
+  --purple5: #9656D6;
+  --purple6: #7D3CBD;
+  --purple7: #642B9E;
+  --purple8: #4B2175;
+  --purple9: #371C52;
+  --pink0: #FAF0F4;
+  --pink1: #FAD4E4;
+  --pink2: #FAB4D1;
+  --pink3: #F78BB8;
+  --pink4: #ED5393;
+  --pink5: #D6246E;
+  --pink6: #B01355;
+  --pink7: #8A1244;
+  --pink8: #611535;
+  --pink9: #421527;
+
+  --brand-light: var(--green3);
+  --brand: var(--green5);
+  --brand-dark: var(--green7);
+}
