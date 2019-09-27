@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { useReleaseHistory } from '../hooks/useReleaseHistory';
-import Hero from '../components/hero';
-import Layout from '../templates/layout';
+import { useReleaseHistory } from '../hooks';
+import Layout from '../components/layout';
 import ReleaseTable from '../components/release-table';
 import ReleaseToggle from '../components/release-toggle';
 import ReleaseCards from '../components/release-cards';
@@ -25,7 +24,6 @@ export default function DownloadPage(): JSX.Element {
 
   return (
     <Layout title={title} description={description}>
-      <Hero title={title} />
       <article style={{ width: '100%' }} className="article-reader">
         <p>
           Download the Node.js source code, a pre-built installer for your

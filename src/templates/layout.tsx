@@ -12,14 +12,21 @@ interface Props {
   title?: string;
   description?: string;
   img?: string;
+  href: string;
 }
 
-const Layout = ({ children, title, description, img }: Props): JSX.Element => {
+const Layout = ({
+  children,
+  title,
+  description,
+  img,
+  location,
+}: Props): JSX.Element => {
   return (
     <React.Fragment>
       <SEO title={title} description={description} img={img} />
       <Header />
-      <main>{children}</main>
+      {children}
     </React.Fragment>
   );
 };

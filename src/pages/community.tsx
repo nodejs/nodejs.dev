@@ -7,9 +7,11 @@ export default function DownloadPage(): JSX.Element {
 
   return (
     <Layout title={title} description={description}>
-      <article style={{ width: '100%' }} className="article-reader">
-        <h1>Welcome to the Community Page!</h1>
-      </article>
+      <main>
+        <article style={{ width: '100%' }} className="article-reader">
+          <h1>Welcome to the Community Page!</h1>
+        </article>
+      </main>
     </Layout>
   );
 }
