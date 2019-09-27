@@ -6,7 +6,7 @@ import '../util/konami';
 
 import '../styles/index.css';
 
-import featureImg from '../images/placeholder-img.svg';
+import featureImg from '../images/placeholder-img.png';
 
 import logoImg1 from '../images/logos/ibm-logo.svg';
 import logoImg2 from '../images/logos/linkedin-logo.svg';
