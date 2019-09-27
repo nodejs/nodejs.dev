@@ -1,13 +1,12 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-
 interface UniversalLinkProps {
   children: React.ReactNode;
-};
+}
 
 const UniversalLink = (props: UniversalLinkProps & any) => {
-	const { to, children } = props;
+  const { to, children } = props;
   if (to.includes('http')) {
     // render absolute link
     return (
@@ -16,8 +15,12 @@ const UniversalLink = (props: UniversalLinkProps & any) => {
       </a>
     );
   } else {
-		// render gatsby optimized link
-    return <Link to={to} {...props}>{children}</Link>;
+    // render gatsby optimized link
+    return (
+      <Link to={to} {...props}>
+        {children}
+      </Link>
+    );
   }
 };
 

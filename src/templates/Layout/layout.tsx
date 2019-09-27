@@ -10,14 +10,14 @@ interface LayoutProps {
   title?: string;
   description?: string;
   img?: string;
-};
+}
 
 const Layout = ({ children, title, description, img }: LayoutProps) => (
-	<>
-		<SEO title={title} description={description} img={img} />
-		<Header />
-		<main className={styles.mainContainer}>{children}</main>
-	</>
+  <>
+    <SEO title={title} description={description} img={img} />
+    <Header />
+    <main className={styles.mainContainer}>{children}</main>
+  </>
 );
 
 export default Layout;
