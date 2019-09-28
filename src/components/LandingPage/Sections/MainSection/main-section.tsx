@@ -5,20 +5,20 @@ import styles from './main-section.module.scss';
 
 const nodeVersion = 'Version 10.15.3';
 
-const MainSection = ({ content }) => (
+const MainSection = ({ content }: any) => (
   <section className={styles.mainSection}>
-    <h1 className={styles.title}>{content.section1_1}</h1>
-    <p className={styles.subTitle}>{content.section1_2}</p>
+    <h1 className={styles.title}>{content.title}</h1>
+    <p className={styles.subTitle}>{content.desc}</p>
     <div className={styles.buttons}>
       <div className={styles.downloadActions}>
-        <Button>Download Node (LTS)</Button>
+        <Button>{content.downloadButton}</Button>
         <div className={[styles.downloadLinks, 't-caption'].join(' ')}>
-          {nodeVersion} - <Link to="/download">What’s new</Link> /{' '}
-          <Link to="/download">Get Current</Link>
+          {nodeVersion} - <Link to="/download">{content.subDownloadMessage}</Link> /{' '}
+          <Link to="/download">{content.downloadCurrent}</Link>
         </div>
       </div>
       <Button to="/learn" type="secondary">
-        Learn Node
+        {content.learnNode}
       </Button>
     </div>
   </section>

@@ -3,22 +3,18 @@ import { Link, Button } from '../../../';
 
 import styles from './getstarted-section.module.scss';
 
-const GetStartedSection = ({ content }) => (
+const GetStartedSection = ({ content }: any) => (
   <section className={styles.getstartedSection}>
     <div className={styles.resources}>
-      <Link to="/learn" className={styles.item}>
-        <img src={content.section6_1_image} alt="" />
-        <h5 className="t-headline">{content.section6_1}</h5>
-        <p>{content.section6_2}</p>
-      </Link>
-
-      <Link to="/docs" className={styles.item}>
-        <img src={content.section6_3_image} alt="" />
-        <h5 className="t-headline">{content.section6_3}</h5>
-        <p>{content.section6_4}</p>
-      </Link>
+      {content.blocks.map(({ image, title, desc, link }: {image: string, title: string, desc: string, link: string}, i: number) => (
+        <Link to={link} className={styles.item} key={`get-started-block-${i}`}>
+          <img src={image} alt="" />
+          <h5 className="t-headline">{title}</h5>
+          <p>{desc}</p>
+        </Link>
+      ))}
     </div>
-    <Button to="/learn">Get Started</Button>
+    <Button to="/learn">{content.actionButton}</Button>
   </section>
 );
 

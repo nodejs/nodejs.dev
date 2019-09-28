@@ -23,7 +23,7 @@ const navigationLinks = [
 const Header = () => (
   <header className={styles.mainHeader}>
     <nav className={styles.navigation}>
-      <Link to={2}>
+      <Link to='/'>
         <img src={logo} alt="Node.js" className={styles.navigationLogo} />
       </Link>
       {navigationLinks.map((item, i) => (

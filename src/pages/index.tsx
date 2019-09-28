@@ -24,10 +24,16 @@ import getStartedIllustration2 from '../images/illustrations/do-more-illustratio
 // should be reaplaced with GraphQL data
 const title = 'Node.js Official website';
 const content = {
-  section1_1: 'The power of JavaScript minus the browser',
-  section1_2: `Tacos raw denim palo santo, squid 90's occupy sustainable leggings locavore before they sold out chambray gastropub synth. Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.`,
-  section3: {
-    features: [
+  sectionMain: {
+    title: 'The power of JavaScript minus the browser',
+    desc: 'Tacos raw denim palo santo, squid 90s occupy sustainable leggings locavore before they sold out chambray gastropub synth. Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.',
+    downloadButton: 'Download Node (LTS)',
+    subDownloadMessage: 'What’s new',
+    downloadCurrent: 'Get Current',
+    learnNode: 'Learn Node',
+  },
+  sectionFeatures: {
+    featureList: [
       {
         text:
           'Feat #1 Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.',
@@ -45,19 +51,35 @@ const content = {
       },
     ],
   },
-  section5_1: 'Trusted by development teams around the world',
-  section5_2: 'Including IBM, LinkedIn, Microsoft, Netflix, and PayPal.',
-  section5_3: {
-    images: [logoImg1, logoImg2, logoImg3, logoImg4, logoImg5],
+  sectionCommunity: {
+    title1: 'Join',
+    title2: 'the community',
+    desc: 'We’ll never share your information and always respect your inbox - quality content only, we promise.',
+    subscribe: 'Subscribe',
+    eventsLink: 'See events near you',
   },
-  section6_1_image: getStartedIllustration1,
-  section6_1: 'A beginner’s guide',
-  section6_2:
-    'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh.',
-  section6_3_image: getStartedIllustration2,
-  section6_3: 'Do even more with Node',
-  section6_4:
-    'Tacos raw denim palo santo, squid 90 occupy sustainable leggings locavore before they sold out chambray gastropub synth.',
+  sectionPartner: {
+    title: 'Trusted by development teams around the world',
+    desc: 'Including IBM, LinkedIn, Microsoft, Netflix, and PayPal.',
+    partnersLogoList: [logoImg1, logoImg2, logoImg3, logoImg4, logoImg5]
+  },
+  sectionGetStarted: {
+    blocks: [
+      {
+        title: 'A beginner’s guide',
+        desc: 'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh.',
+        image: getStartedIllustration1,
+        link: '/learn'
+      },
+      {
+        title: 'Do even more with Node',
+        desc: 'Tacos raw denim palo santo, squid 90 occupy sustainable leggings locavore before they sold out chambray gastropub synth.',
+        image: getStartedIllustration2,
+        link: '/docs'
+      },
+    ],
+    actionButton: 'Get Started'
+  }
 };
 
 export default function Index(): JSX.Element {
@@ -65,12 +87,12 @@ export default function Index(): JSX.Element {
 
   return (
     <Layout title={title} description={description} withBg>
-      <MainSection content={content} />
+      <MainSection content={content.sectionMain} />
       <SandboxSection />
-      <FeaturesSection content={content} />
-      <CommunitySection content={content} />
-      <PartnerSection content={content} />
-      <GetStartedSection content={content} />
+      <FeaturesSection content={content.sectionFeatures} />
+      <CommunitySection content={content.sectionCommunity} />
+      <PartnerSection content={content.sectionPartner} />
+      <GetStartedSection content={content.sectionGetStarted} />
     </Layout>
   );
 }

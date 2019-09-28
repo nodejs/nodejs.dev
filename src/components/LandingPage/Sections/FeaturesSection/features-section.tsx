@@ -16,11 +16,13 @@ const FeatureItem = ({ img, featureText }: FeatureItemProps) => {
   );
 };
 
-const FeaturesSection = ({ content }) => (
+const FeaturesSection = ({ content }: any) => (
   <section className={styles.featuresSection}>
-    {content.section3.features.map(({ text, image }, i) => (
-      <FeatureItem img={image} featureText={text} key={`node-feature-${i}`} />
-    ))}
+    {content.featureList.map(
+      ({ text, image }: { text: string; image: string }, i: number) => (
+        <FeatureItem img={image} featureText={text} key={`node-feature-${i}`} />
+      )
+    )}
   </section>
 );
 

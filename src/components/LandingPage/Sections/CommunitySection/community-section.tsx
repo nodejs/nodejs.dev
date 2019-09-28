@@ -3,23 +3,22 @@ import { Link, Button } from '../../../';
 
 import styles from './community-section.module.scss';
 
-const CommunitySection = ({ content }) => (
+const CommunitySection = ({ content }: any) => (
   <section className={styles.communitySection}>
     <h4 className="t-headline">
-      <span className={styles.accent}>Join</span> the community
+      <span className={styles.accent}>{content.title1}</span>{' '}{content.title2}
     </h4>
     <div className={styles.subscribe}>
       <p className="t-body2">
-        We’ll never share your information and always respect your inbox -
-        quality content only, we promise.
+        {content.desc}
       </p>
       <div className={styles.inputBlock}>
         <input type="email" placeholder="node@nodejs.dev" />
-        <Button className="t-body1">Subscribe</Button>
+        <Button className="t-body1">{content.subscribe}</Button>
       </div>
     </div>
     <Link className={styles.seeMoreEvents} to="/events">
-      See events near you ⟶
+      {content.eventsLink}{' '}⟶
     </Link>
   </section>
 );

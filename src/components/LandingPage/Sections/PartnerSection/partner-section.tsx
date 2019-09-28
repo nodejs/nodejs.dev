@@ -2,12 +2,12 @@ import React from 'react';
 
 import styles from './partner-section.module.scss';
 
-const PartnerSection = ({ content }) => (
+const PartnerSection = ({ content }: any) => (
   <section className={styles.partnerSection}>
-    <h4 className="t-headline">{content.section5_1}</h4>
-    <p>{content.section5_2}</p>
+    <h4 className="t-headline">{content.title}</h4>
+    <p>{content.desc}</p>
     <div className={styles.partnersLogoContainer}>
-      {content.section5_3.images.map((url, i) => (
+      {content.partnersLogoList.map((url: string, i: number) => (
         <img src={url} alt="" key={`partner-item-${i}`} />
       ))}
     </div>

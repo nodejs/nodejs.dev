@@ -13,6 +13,7 @@ interface UniversalLinkProps {
 
 const UniversalLink = (props: UniversalLinkProps) => {
   const { to, children } = props;
+
   if (to && to.includes('http')) {
     // render absolute link
     return (
@@ -23,7 +24,7 @@ const UniversalLink = (props: UniversalLinkProps) => {
   }
   // render gatsby optimized link
   return (
-    <Link to={to} {...props}>
+    <Link to={to || '/'} {...props}>
       {children}
     </Link>
   );
