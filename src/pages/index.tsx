@@ -2,8 +2,7 @@ import React from 'react';
 
 import MainSection from '../components/LandingPage/Sections/MainSection/main-section';
 import Layout from '../templates/Layout/layout';
-import Link from '../components/Link';
-import Hero from '../components/hero';
+import Link from '../components/Link/Link';
 
 import '../styles/index.css';
 

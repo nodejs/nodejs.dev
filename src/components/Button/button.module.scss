@@ -1,0 +1,32 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: var(--space-240);
+  height: var(--space-48);
+  font-weight: var(--font-weight-semibold);
+  padding: 0;
+  margin: 0;
+  border-radius: 5.6rem;
+  text-decoration: none;
+
+  &[disabled] {
+    pointer-events: none;
+  }
+
+  &.primary {
+    background: var(--color-fill-action);
+    color: var(--black0);
+  }
+
+  &.secondary {
+    border: var(--color-fill-action) var(--space-02) solid;
+    color: var(--color-fill-action);
+  }
+
+  &.default {
+    background: var(--black5);
+    color: var(--black2);
+  }
+}

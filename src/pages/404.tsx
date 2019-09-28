@@ -1,6 +1,5 @@
 import React from 'react';
-import Hero from '../components/hero';
-import Layout from '../templates/layout';
+import Layout from '../templates/Layout/layout';
 
 export default function NotFoundPage(): JSX.Element {
   const title = 'PAGE NOT FOUND';
@@ -8,7 +7,6 @@ export default function NotFoundPage(): JSX.Element {
 
   return (
     <Layout title={title} description={description}>
-      <Hero title={title} />
       <article style={{ width: '100%' }} className="article-reader">
         <p>
           The page you&apos;re trying to access does not exist. Go back to the

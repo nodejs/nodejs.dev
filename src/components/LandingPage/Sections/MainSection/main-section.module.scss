@@ -1,20 +1,35 @@
 .main-section {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	text-align: center;
-	padding-top: var(--space-96);
-	margin-bottom: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: var(--space-96);
+  margin-bottom: 160px;
 
-	.title {
-		max-width: 840px;
-	}
+  .title {
+    max-width: 840px;
+  }
 
-	.sub-title {
-		max-width: 780px;
-		color: var(--color-text-secondary);
-		margin: var(--space-32) 0 var(--space-80) 0;
-		font-weight: var(--font-weight-light);
-	}
+  .sub-title {
+    max-width: 780px;
+    color: var(--color-text-secondary);
+    margin: var(--space-32) 0 var(--space-80) 0;
+    font-weight: var(--font-weight-light);
+  }
+
+  .buttons {
+    display: flex;
+
+    .download-actions {
+      position: relative;
+      margin-right: var(--space-32);
+
+      .download-links {
+        color: var(--color-text-secondary);
+        margin: var(--space-08) 0 0 0;
+      }
+    }
+  }
+
 }

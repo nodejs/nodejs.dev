@@ -1,6 +1,8 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
+import './link.module.scss';
+
 const UniversalLink = props => {
   const { to, children } = props;
   if (to.includes('http')) {

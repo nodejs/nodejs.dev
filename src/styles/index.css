@@ -23,46 +23,6 @@
     z-index: -10;
 }
 
-
-.download-lts-container {
-    position: relative;
-}
-
-.download-lts-container .links {
-    color: var(--color-text-secondary);
-    margin: var(--space-08) 0 0 0;
-    position: absolute;
-    left: calc(var(--space-16) * -1);
-}
-
-.home-page-hero .btn-ctas {
-    display: flex;
-}
-
-.home-page-hero .btn-ctas button {
-    border: none;
-    box-sizing: border-box;
-    width: 20rem;
-    height: 5.6rem;
-    padding: 0 var(--space-16);
-    font-weight: var(--font-weight-semibold);
-    margin: 0;
-}
-
-.home-page-hero .btn-ctas .download-lts-cta {
-    border-radius: 5.6rem;
-    background: var(--color-fill-action);
-    color: var(--black0);
-    margin-right: var(--space-32);
-    position: relative;
-}
-
-.home-page-hero .btn-ctas .learn-cta {
-    border-radius: 5.6rem;
-    border: var(--color-fill-action) var(--space-02) solid;
-    color: var(--color-fill-action);
-}
-
 .node-demo-container {
     position: relative;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Link from '../Link';
+import Link from '../Link/Link';
 import logo from '../../images/logo.svg';
 import styles from './header.module.scss';
 

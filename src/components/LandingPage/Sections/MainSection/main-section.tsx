@@ -1,5 +1,6 @@
 import React from 'react';
-import Link from '../../../Link';
+import Link from '../../../Link/Link';
+import Button from '../../../Button/button';
 
 import styles from './main-section.module.scss';
 
@@ -9,21 +10,17 @@ const MainSection = ({ content }) => (
   <section className={styles.mainSection}>
     <h1 className={styles.title}>{content.section1_1}</h1>
     <p className={styles.subTitle}>{content.section1_2}</p>
-    <div className="btn-ctas">
-      <div className="download-lts-container">
-        <button className="download-lts-cta t-body1" type="button">
-          Download Node (LTS)
-        </button>
-        <p className="links t-caption">
+    <div className={styles.buttons}>
+      <div className={styles.downloadActions}>
+        <Button>Download Node (LTS)</Button>
+        <div className={[styles.downloadLinks, 't-caption'].join(' ')}>
           {nodeVersion} - <Link to="/download">What’s new</Link> /{' '}
           <Link to="/download">Get Current</Link>
-        </p>
+        </div>
       </div>
-      <Link to="/learn">
-        <button className="learn-cta t-body1" type="button">
-          Learn Node
-        </button>
-      </Link>
+      <Button to="/learn" type="secondary">
+        Learn Node
+      </Button>
     </div>
   </section>
 );
