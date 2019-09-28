@@ -24,23 +24,6 @@
     z-index: -10;
 }
 
-.node-features {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: var(--section-margin-bottom);
-}
-
-.node-features__feature {
-    max-width: 188px;
-    color: var(--color-text-secondary);
-}
-
-.node-features__feature, p {
-    margin-top: var(--space-24);
-}
-
 .join-node .accent {
     color: var(--pink5);
 }

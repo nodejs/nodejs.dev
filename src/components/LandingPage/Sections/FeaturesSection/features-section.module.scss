@@ -1,0 +1,19 @@
+.features-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: var(--space-128);
+
+  .item {
+    max-width: var(--space-240);
+    color: var(--color-text-secondary);
+
+    img {
+      width: 100%;
+    }
+
+    p {
+      margin-top: var(--space-16);
+    }
+  }
+}

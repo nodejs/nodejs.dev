@@ -2,6 +2,7 @@ import React from 'react';
 
 import MainSection from '../components/LandingPage/Sections/MainSection/main-section';
 import SandboxSection from '../components/LandingPage/Sections/SandboxSection/sandbox-section';
+import FeaturesSection from '../components/LandingPage/Sections/FeaturesSection/features-section';
 import Layout from '../templates/Layout/layout';
 import Link from '../components/Link/Link';
 
@@ -27,28 +28,23 @@ const description = 'You have hit a route that does not exist.';
 const content = {
   section1_1: 'The power of JavaScript minus the browser',
   section1_2: `Tacos raw denim palo santo, squid 90's occupy sustainable leggings locavore before they sold out chambray gastropub synth. Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.`,
+  section3: {
+    features: [
+      {
+        text: 'Feat #1 Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.',
+        image: featureImg
+      },
+      {
+        text: 'Feat #2 Tacos raw denim palo santo, squid 90 occupy sustainable leggings locavore before they sold out chambray gastropub synth.',
+        image: featureImg
+      },
+      {
+        text: 'Feat #3 Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ',
+        image: featureImg
+      },
+    ]
+  } 
 };
-
-const nodeFeature1 =
-  'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
-const nodeFeature2 =
-  'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
-const nodeFeature3 =
-  'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
-
-const NodeFeature = ({ img, featureText }: Props) => {
-  return (
-    <div className="node-features__feature">
-      <img src={img} alt="node feature" />
-      <p className="t-caption">{featureText}</p>
-    </div>
-  );
-};
-
-interface Props {
-  img: string;
-  featureText: string;
-}
 
 export default function Index(): JSX.Element {
   const description = 'Welcome to Node.js!';
@@ -56,13 +52,8 @@ export default function Index(): JSX.Element {
   return (
     <Layout title={title} description={description}>
       <MainSection content={content} />
-      <SandboxSection content={content} />
-
-      <section className="node-features">
-        <NodeFeature img={featureImg} featureText={nodeFeature1} />
-        <NodeFeature img={featureImg} featureText={nodeFeature2} />
-        <NodeFeature img={featureImg} featureText={nodeFeature3} />
-      </section>
+      <SandboxSection />
+      <FeaturesSection content={content} />
 
       <section className="join-node">
         <h4 className="t-headline">
