@@ -5,14 +5,6 @@ import Layout from '../templates/Layout/layout';
 import Link from '../components/Link';
 import Hero from '../components/hero';
 
-// should be reaplaced with GraphQL data
-const title = 'Node.js Official website';
-const description = 'You have hit a route that does not exist.';
-const content = {
-  section1_1: 'The power of JavaScript minus the browser',
-  section1_2: `Tacos raw denim palo santo, squid 90's occupy sustainable leggings locavore before they sold out chambray gastropub synth. Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.`,
-};
-
 import '../styles/index.css';
 
 import featureImg from '../images/placeholder-img.png';
@@ -32,6 +24,14 @@ import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
 import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
 import dotsIllustration from '../images/illustrations/dots.svg';
+
+// should be reaplaced with GraphQL data
+const title = 'Node.js Official website';
+const description = 'You have hit a route that does not exist.';
+const content = {
+  section1_1: 'The power of JavaScript minus the browser',
+  section1_2: `Tacos raw denim palo santo, squid 90's occupy sustainable leggings locavore before they sold out chambray gastropub synth. Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.`,
+};
 
 const nodeFeature1 =
   'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
@@ -58,10 +58,7 @@ export default function Index(): JSX.Element {
   const description = 'Welcome to Node.js!';
 
   return (
-    <Layout
-      title={title}
-      description={description}
-    >
+    <Layout title={title} description={description}>
       <MainSection content={content} />
 
       <section className="node-demo-container">

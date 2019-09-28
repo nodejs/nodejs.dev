@@ -10,14 +10,13 @@ const UniversalLink = props => {
         {children}
       </a>
     );
-  } else {
-    // render gatsby optimized link
-    return (
-      <Link to={to} {...props}>
-        {children}
-      </Link>
-    );
   }
+  // render gatsby optimized link
+  return (
+    <Link to={to} {...props}>
+      {children}
+    </Link>
+  );
 };
 
 export default UniversalLink;
