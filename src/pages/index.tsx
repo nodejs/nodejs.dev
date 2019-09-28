@@ -7,9 +7,6 @@ import CommunitySection from '../components/LandingPage/Sections/CommunitySectio
 import PartnerSection from '../components/LandingPage/Sections/PartnerSection/partner-section';
 import GetStartedSection from '../components/LandingPage/Sections/GetStartedSection/getstarted-section';
 import Layout from '../templates/Layout/layout';
-import Link from '../components/Link/Link';
-
-import '../styles/index.css';
 
 import featureImg from '../images/placeholder-img.png';
 
@@ -22,12 +19,8 @@ import logoImg5 from '../images/logos/paypal-logo.svg';
 import getStartedIllustration1 from '../images/illustrations/beginners-guide-illustration.svg';
 import getStartedIllustration2 from '../images/illustrations/do-more-illustration.svg';
 
-import pentagonIllustration1 from '../images/illustrations/pentagon-illustration1.svg';
-import pentagonIllustration2 from '../images/illustrations/pentagon-illustration2.svg';
-
 // should be reaplaced with GraphQL data
 const title = 'Node.js Official website';
-const description = 'You have hit a route that does not exist.';
 const content = {
   section1_1: 'The power of JavaScript minus the browser',
   section1_2: `Tacos raw denim palo santo, squid 90's occupy sustainable leggings locavore before they sold out chambray gastropub synth. Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.`,
@@ -70,25 +63,13 @@ export default function Index(): JSX.Element {
   const description = 'Welcome to Node.js!';
 
   return (
-    <Layout title={title} description={description}>
+    <Layout title={title} description={description} withBg>
       <MainSection content={content} />
       <SandboxSection />
       <FeaturesSection content={content} />
       <CommunitySection content={content} />
       <PartnerSection content={content} />
       <GetStartedSection content={content} />
-
-      <img
-        className="pentagon-illustration-big1"
-        src={pentagonIllustration1}
-        alt=""
-      />
-      <img
-        className="pentagon-illustration-big2"
-        src={pentagonIllustration2}
-        alt=""
-      />
-      <div className="double-background" />
     </Layout>
   );
 }

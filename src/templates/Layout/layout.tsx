@@ -10,13 +10,17 @@ interface LayoutProps {
   title?: string;
   description?: string;
   img?: string;
+  withBg?: boolean;
 }
 
-const Layout = ({ children, title, description, img }: LayoutProps) => (
+const Layout = ({ children, title, description, img, withBg }: LayoutProps) => (
   <>
     <SEO title={title} description={description} img={img} />
     <Header />
-    <main className={styles.mainContainer}>{children}</main>
+    <main className={styles.mainContainer}>
+      {children}
+      {withBg && <div className={styles.bg} />}
+    </main>
   </>
 );
 
