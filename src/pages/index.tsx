@@ -5,6 +5,7 @@ import SandboxSection from '../components/LandingPage/Sections/SandboxSection/sa
 import FeaturesSection from '../components/LandingPage/Sections/FeaturesSection/features-section';
 import CommunitySection from '../components/LandingPage/Sections/CommunitySection/community-section';
 import PartnerSection from '../components/LandingPage/Sections/PartnerSection/partner-section';
+import GetStartedSection from '../components/LandingPage/Sections/GetStartedSection/getstarted-section';
 import Layout from '../templates/Layout/layout';
 import Link from '../components/Link/Link';
 
@@ -18,8 +19,8 @@ import logoImg3 from '../images/logos/microsoft-logo.svg';
 import logoImg4 from '../images/logos/netflix-logo.svg';
 import logoImg5 from '../images/logos/paypal-logo.svg';
 
-import GetStartedIllustration1 from '../images/illustrations/beginners-guide-illustration.svg';
-import GetStartedIllustration2 from '../images/illustrations/do-more-illustration.svg';
+import getStartedIllustration1 from '../images/illustrations/beginners-guide-illustration.svg';
+import getStartedIllustration2 from '../images/illustrations/do-more-illustration.svg';
 
 import pentagonIllustration1 from '../images/illustrations/pentagon-illustration1.svg';
 import pentagonIllustration2 from '../images/illustrations/pentagon-illustration2.svg';
@@ -56,7 +57,13 @@ const content = {
       logoImg4,
       logoImg5,
     ]
-  }
+  },
+  section6_1_image: getStartedIllustration1,
+  section6_1: 'A beginner’s guide',
+  section6_2: 'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh.',
+  section6_3_image: getStartedIllustration2,
+  section6_3: 'Do even more with Node',
+  section6_4: 'Tacos raw denim palo santo, squid 90 occupy sustainable leggings locavore before they sold out chambray gastropub synth.',
 };
 
 export default function Index(): JSX.Element {
@@ -69,28 +76,8 @@ export default function Index(): JSX.Element {
       <FeaturesSection content={content} />
       <CommunitySection content={content} />
       <PartnerSection content={content} />
+      <GetStartedSection content={content} />
 
-      <section className="get-started-callouts">
-        <Link to="/learn" className="get-started-callout">
-          <img src={GetStartedIllustration1} alt="" />
-          <h5 className="t-headline">A beginner’s guide</h5>
-          <p>
-            Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh.
-          </p>
-        </Link>
-
-        <Link to="/docs" className="get-started-callout">
-          <img src={GetStartedIllustration2} alt="" />
-          <h5 className="t-headline">Do even more with Node</h5>
-          <p>
-            Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh.
-          </p>
-        </Link>
-      </section>
-
-      <Link to="/learn" className="btn-primary">
-        Get Started
-      </Link>
       <img
         className="pentagon-illustration-big1"
         src={pentagonIllustration1}

@@ -1,6 +1,4 @@
 import React from 'react';
-import Button from '../../../Button/button';
-import Link from '../../../Link/Link';
 
 import styles from './partner-section.module.scss';
 
