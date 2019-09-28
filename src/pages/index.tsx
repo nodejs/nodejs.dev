@@ -26,7 +26,8 @@ const title = 'Node.js Official website';
 const content = {
   sectionMain: {
     title: 'The power of JavaScript minus the browser',
-    desc: 'Tacos raw denim palo santo, squid 90s occupy sustainable leggings locavore before they sold out chambray gastropub synth. Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.',
+    desc:
+      'Tacos raw denim palo santo, squid 90s occupy sustainable leggings locavore before they sold out chambray gastropub synth. Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.',
     downloadButton: 'Download Node (LTS)',
     subDownloadMessage: 'What’s new',
     downloadCurrent: 'Get Current',
@@ -54,32 +55,35 @@ const content = {
   sectionCommunity: {
     title1: 'Join',
     title2: 'the community',
-    desc: 'We’ll never share your information and always respect your inbox - quality content only, we promise.',
+    desc:
+      'We’ll never share your information and always respect your inbox - quality content only, we promise.',
     subscribe: 'Subscribe',
     eventsLink: 'See events near you',
   },
   sectionPartner: {
     title: 'Trusted by development teams around the world',
     desc: 'Including IBM, LinkedIn, Microsoft, Netflix, and PayPal.',
-    partnersLogoList: [logoImg1, logoImg2, logoImg3, logoImg4, logoImg5]
+    partnersLogoList: [logoImg1, logoImg2, logoImg3, logoImg4, logoImg5],
   },
   sectionGetStarted: {
     blocks: [
       {
         title: 'A beginner’s guide',
-        desc: 'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh.',
+        desc:
+          'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh.',
         image: getStartedIllustration1,
-        link: '/learn'
+        link: '/learn',
       },
       {
         title: 'Do even more with Node',
-        desc: 'Tacos raw denim palo santo, squid 90 occupy sustainable leggings locavore before they sold out chambray gastropub synth.',
+        desc:
+          'Tacos raw denim palo santo, squid 90 occupy sustainable leggings locavore before they sold out chambray gastropub synth.',
         image: getStartedIllustration2,
-        link: '/docs'
+        link: '/docs',
       },
     ],
-    actionButton: 'Get Started'
-  }
+    actionButton: 'Get Started',
+  },
 };
 
 export default function Index(): JSX.Element {

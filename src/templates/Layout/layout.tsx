@@ -13,7 +13,13 @@ interface LayoutProps {
   withBg?: boolean;
 }
 
-const Layout = ({ children, title, description, img, withBg }: LayoutProps) => (
+const Layout = ({
+  children,
+  title,
+  description,
+  img,
+  withBg,
+}: LayoutProps): JSX.Element => (
   <>
     <SEO title={title} description={description} img={img} />
     <Header />

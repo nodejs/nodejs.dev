@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '../';
+import { Link } from '..';
 
 import styles from './button.module.scss';
 
@@ -13,7 +13,7 @@ interface ButtonProps {
   className?: string;
 }
 
-const Button = (props: ButtonProps) => {
+const Button = (props: ButtonProps): JSX.Element => {
   const { children, type, disabled, to, onClick, className, alt } = props;
   if (to && !onClick) {
     return (
@@ -21,7 +21,7 @@ const Button = (props: ButtonProps) => {
         to={to}
         className={[
           styles.button,
-          styles[disabled ? 'default' : type || 'primary'],
+          styles[disabled ? 'disabled' : type || 'primary'],
           className,
         ].join(' ')}
         disabled={disabled}
@@ -35,12 +35,13 @@ const Button = (props: ButtonProps) => {
     <button
       className={[
         styles.button,
-        styles[disabled ? 'default' : type || 'primary'],
+        styles[disabled ? 'disabled' : type || 'primary'],
         className,
       ].join(' ')}
       disabled={disabled}
       onClick={onClick}
       title={alt}
+      type="button"
     >
       {children}
     </button>

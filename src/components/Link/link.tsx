@@ -9,9 +9,9 @@ interface UniversalLinkProps {
   className?: string;
   disabled?: boolean;
   title?: string;
-};
+}
 
-const UniversalLink = (props: UniversalLinkProps) => {
+const UniversalLink = (props: UniversalLinkProps): JSX.Element => {
   const { to, children } = props;
 
   if (to && to.includes('http')) {

@@ -3,24 +3,34 @@ import React from 'react';
 import styles from './features-section.module.scss';
 
 interface FeatureItemProps {
-  img: string;
-  featureText: string;
+  image: string;
+  text: string;
 }
 
-const FeatureItem = ({ img, featureText }: FeatureItemProps) => {
+const FeatureItem = ({ image, text }: FeatureItemProps): JSX.Element => {
   return (
     <div className={styles.item}>
-      <img src={img} alt="node feature" />
-      <p className="t-caption">{featureText}</p>
+      <img src={image} alt="node feature" />
+      <p className="t-caption">{text}</p>
     </div>
   );
 };
 
-const FeaturesSection = ({ content }: any) => (
+interface FeaturesSectionProps {
+  content: {
+    featureList: [FeatureItemProps];
+  };
+}
+
+const FeaturesSection = ({ content }: FeaturesSectionProps): JSX.Element => (
   <section className={styles.featuresSection}>
     {content.featureList.map(
-      ({ text, image }: { text: string; image: string }, i: number) => (
-        <FeatureItem img={image} featureText={text} key={`node-feature-${i}`} />
+      ({ text, image }: FeatureItemProps, i: number): JSX.Element => (
+        <FeatureItem
+          image={image}
+          text={text}
+          key={`node-feature-${i * 3.14}`}
+        />
       )
     )}
   </section>
