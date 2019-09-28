@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/layout.css';
 
 const StyleGuidePage = (): JSX.Element => {
   return (

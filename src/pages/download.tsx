@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useReleaseHistory } from '../hooks';
-import Layout from '../templates/layout';
+import Layout from '../templates/Layout/layout';
 import ReleaseTable from '../components/release-table';
 import ReleaseToggle from '../components/release-toggle';
 import ReleaseCards from '../components/release-cards';

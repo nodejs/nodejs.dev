@@ -34,5 +34,13 @@
     display: flex;
     align-items: center;
 		height: 100%;
+
+
+    .theme-toggler {
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: var(--color-text-accent);
+    }
   }
 }

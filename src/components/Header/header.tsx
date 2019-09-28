@@ -36,7 +36,18 @@ const Header = () => (
         </Link>
       ))}
     </nav>
-    <div className={styles.panel}>Search Theme</div>
+    <div className={styles.panel}>
+      <div className={styles.navigationItem}>
+        <button
+          className={styles.themeToggler}
+          onClick={() => document.body.classList.toggle('dark-mode')}
+          title={'Toggle theme'}
+        >
+          <i className="material-icons light-mode-only">nights_stay</i>
+          <i className="material-icons dark-mode-only">wb_sunny</i>
+        </button>
+      </div>
+    </div>
   </header>
 );
 

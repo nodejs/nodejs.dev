@@ -8,12 +8,13 @@ interface ButtonProps {
   type?: 'primary' | 'secondary' | 'default';
   disabled?: boolean;
   to?: string;
+  alt?: string;
   onClick?: () => {};
   className?: string;
 }
 
 const Button = (props: ButtonProps) => {
-  const { children, type, disabled, to, onClick, className } = props;
+  const { children, type, disabled, to, onClick, className, alt } = props;
   if (to && !onClick) {
     return (
       <Link
@@ -24,6 +25,7 @@ const Button = (props: ButtonProps) => {
           className,
         ].join(' ')}
         disabled={disabled}
+        title={alt}
       >
         {children}
       </Link>
@@ -38,6 +40,7 @@ const Button = (props: ButtonProps) => {
         ].join(' ')}
         disabled={disabled}
         onClick={onClick}
+        title={alt}
       >
         {children}
       </button>
