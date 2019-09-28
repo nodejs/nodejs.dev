@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Link from '../Link/Link';
+import { Link } from '..';
 import logo from '../../images/logo.svg';
 import styles from './header.module.scss';
 
@@ -23,7 +23,7 @@ const navigationLinks = [
 const Header = () => (
   <header className={styles.mainHeader}>
     <nav className={styles.navigation}>
-      <Link to="/">
+      <Link to={2}>
         <img src={logo} alt="Node.js" className={styles.navigationLogo} />
       </Link>
       {navigationLinks.map((item, i) => (

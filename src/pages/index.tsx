@@ -1,11 +1,13 @@
 import React from 'react';
 
-import MainSection from '../components/LandingPage/Sections/MainSection/main-section';
-import SandboxSection from '../components/LandingPage/Sections/SandboxSection/sandbox-section';
-import FeaturesSection from '../components/LandingPage/Sections/FeaturesSection/features-section';
-import CommunitySection from '../components/LandingPage/Sections/CommunitySection/community-section';
-import PartnerSection from '../components/LandingPage/Sections/PartnerSection/partner-section';
-import GetStartedSection from '../components/LandingPage/Sections/GetStartedSection/getstarted-section';
+import {
+  MainSection,
+  SandboxSection,
+  FeaturesSection,
+  CommunitySection,
+  PartnerSection,
+  GetStartedSection,
+} from '../components';
 import Layout from '../templates/Layout/layout';
 
 import featureImg from '../images/placeholder-img.png';

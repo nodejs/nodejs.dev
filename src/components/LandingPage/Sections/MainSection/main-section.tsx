@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from '../../../Link/Link';
-import Button from '../../../Button/button';
+import { Link, Button } from '../../../';
 
 import styles from './main-section.module.scss';
 

@@ -3,9 +3,17 @@ import React from 'react';
 
 import './link.module.scss';
 
-const UniversalLink = props => {
+interface UniversalLinkProps {
+  children: JSX.Element[] | JSX.Element | string;
+  to?: string;
+  className?: string;
+  disabled?: boolean;
+  title?: string;
+};
+
+const UniversalLink = (props: UniversalLinkProps) => {
   const { to, children } = props;
-  if (to.includes('http')) {
+  if (to && to.includes('http')) {
     // render absolute link
     return (
       <a href={to} target="_blank" rel="noopener noreferrer" {...props}>

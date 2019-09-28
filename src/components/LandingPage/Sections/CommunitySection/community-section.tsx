@@ -1,6 +1,5 @@
 import React from 'react';
-import Button from '../../../Button/button';
-import Link from '../../../Link/Link';
+import { Link, Button } from '../../../';
 
 import styles from './community-section.module.scss';
 
