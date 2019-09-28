@@ -18,7 +18,7 @@ const FeatureItem = ({ img, featureText }: FeatureItemProps) => {
 
 const FeaturesSection = ({ content }) => (
   <section className={styles.featuresSection}>
-    {content.section3.features.map(({text, image}, i) => (
+    {content.section3.features.map(({ text, image }, i) => (
       <FeatureItem img={image} featureText={text} key={`node-feature-${i}`} />
     ))}
   </section>

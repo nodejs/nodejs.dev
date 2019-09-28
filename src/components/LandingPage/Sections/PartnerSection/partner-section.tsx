@@ -4,9 +4,7 @@ import styles from './partner-section.module.scss';
 
 const PartnerSection = ({ content }) => (
   <section className={styles.partnerSection}>
-    <h4 className="t-headline">
-      {content.section5_1}
-    </h4>
+    <h4 className="t-headline">{content.section5_1}</h4>
     <p>{content.section5_2}</p>
     <div className={styles.partnersLogoContainer}>
       {content.section5_3.images.map((url, i) => (

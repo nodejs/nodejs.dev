@@ -15,16 +15,11 @@ const CommunitySection = ({ content }) => (
         quality content only, we promise.
       </p>
       <div className={styles.inputBlock}>
-        <input
-          type="email"
-          placeholder="node@nodejs.dev"
-        />
-        <Button className="t-body1">
-          Subscribe
-        </Button>
+        <input type="email" placeholder="node@nodejs.dev" />
+        <Button className="t-body1">Subscribe</Button>
       </div>
     </div>
-    <Link className={styles.seeMoreEvents} to='/events'>
+    <Link className={styles.seeMoreEvents} to="/events">
       See events near you ⟶
     </Link>
   </section>

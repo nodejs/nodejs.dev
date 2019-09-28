@@ -30,22 +30,21 @@ const Button = (props: ButtonProps) => {
         {children}
       </Link>
     );
-  } else {
-    return (
-      <button
-        className={[
-          styles.button,
-          styles[disabled ? 'default' : type || 'primary'],
-          className,
-        ].join(' ')}
-        disabled={disabled}
-        onClick={onClick}
-        title={alt}
-      >
-        {children}
-      </button>
-    );
   }
+  return (
+    <button
+      className={[
+        styles.button,
+        styles[disabled ? 'default' : type || 'primary'],
+        className,
+      ].join(' ')}
+      disabled={disabled}
+      onClick={onClick}
+      title={alt}
+    >
+      {children}
+    </button>
+  );
 };
 
 export default Button;

@@ -41,7 +41,7 @@ const Header = () => (
         <button
           className={styles.themeToggler}
           onClick={() => document.body.classList.toggle('dark-mode')}
-          title={'Toggle theme'}
+          title="Toggle theme"
         >
           <i className="material-icons light-mode-only">nights_stay</i>
           <i className="material-icons dark-mode-only">wb_sunny</i>

@@ -19,9 +19,7 @@ const GetStartedSection = ({ content }) => (
         <p>{content.section6_4}</p>
       </Link>
     </div>
-    <Button to="/learn">
-      Get Started
-    </Button>
+    <Button to="/learn">Get Started</Button>
   </section>
 );
 
