@@ -1,0 +1,16 @@
+.partner-section {
+  padding-bottom: var(--space-160);
+  text-align: center;
+
+  p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-64);
+  }
+  .partners-logo-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    filter: grayscale(1);
+  }
+}

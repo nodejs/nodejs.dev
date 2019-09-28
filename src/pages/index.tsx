@@ -4,6 +4,7 @@ import MainSection from '../components/LandingPage/Sections/MainSection/main-sec
 import SandboxSection from '../components/LandingPage/Sections/SandboxSection/sandbox-section';
 import FeaturesSection from '../components/LandingPage/Sections/FeaturesSection/features-section';
 import CommunitySection from '../components/LandingPage/Sections/CommunitySection/community-section';
+import PartnerSection from '../components/LandingPage/Sections/PartnerSection/partner-section';
 import Layout from '../templates/Layout/layout';
 import Link from '../components/Link/Link';
 
@@ -44,7 +45,18 @@ const content = {
         image: featureImg
       },
     ]
-  } 
+  },
+  section5_1: 'Trusted by development teams around the world',
+  section5_2: 'Including IBM, LinkedIn, Microsoft, Netflix, and PayPal.',
+  section5_3: {
+    images: [
+      logoImg1,
+      logoImg2,
+      logoImg3,
+      logoImg4,
+      logoImg5,
+    ]
+  }
 };
 
 export default function Index(): JSX.Element {
@@ -56,20 +68,7 @@ export default function Index(): JSX.Element {
       <SandboxSection />
       <FeaturesSection content={content} />
       <CommunitySection content={content} />
-
-      <section className="trusted-by">
-        <h4 className="t-headline">
-          Trusted by development teams around the world
-        </h4>
-        <p>Including IBM, LinkedIn, Microsoft, Netflix, and PayPal.</p>
-        <div className="logos-container">
-          <img src={logoImg1} alt="ibm logo" />
-          <img src={logoImg2} alt="linkedin logo" />
-          <img src={logoImg3} alt="microsoft logo" />
-          <img src={logoImg4} alt="netflix logo" />
-          <img src={logoImg5} alt="paypal logo" />
-        </div>
-      </section>
+      <PartnerSection content={content} />
 
       <section className="get-started-callouts">
         <Link to="/learn" className="get-started-callout">
