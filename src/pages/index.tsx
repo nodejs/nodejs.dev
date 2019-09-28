@@ -3,6 +3,7 @@ import React from 'react';
 import MainSection from '../components/LandingPage/Sections/MainSection/main-section';
 import SandboxSection from '../components/LandingPage/Sections/SandboxSection/sandbox-section';
 import FeaturesSection from '../components/LandingPage/Sections/FeaturesSection/features-section';
+import CommunitySection from '../components/LandingPage/Sections/CommunitySection/community-section';
 import Layout from '../templates/Layout/layout';
 import Link from '../components/Link/Link';
 
@@ -54,28 +55,7 @@ export default function Index(): JSX.Element {
       <MainSection content={content} />
       <SandboxSection />
       <FeaturesSection content={content} />
-
-      <section className="join-node">
-        <h4 className="t-headline">
-          <span className="accent">Join</span> the community
-        </h4>
-        <div className="join-node-form-container">
-          <p className="t-body2">
-            We’ll never share your information and always respect your inbox -
-            quality content only, we promise.{' '}
-          </p>
-          <div style={{ display: `flex`, alignItems: 'flex-start' }}>
-            <input
-              type="email"
-              placeholder="node@nodejs.dev"
-              className="input-subscribe"
-            />
-            <button className="btn-subscribe t-body1" type="button">
-              Subscribe
-            </button>
-          </div>
-        </div>
-      </section>
+      <CommunitySection content={content} />
 
       <section className="trusted-by">
         <h4 className="t-headline">

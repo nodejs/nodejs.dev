@@ -24,46 +24,6 @@
     z-index: -10;
 }
 
-.join-node .accent {
-    color: var(--pink5);
-}
-
-.join-node {
-    width: 200%;
-    margin: 0 auto;
-    margin-bottom: var(--section-margin-bottom);
-    max-width: 851px;
-}
-
-.join-node-form-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.input-subscribe {
-    box-sizing: border-box;
-    padding: var(--space-16) var(--space-24);
-    border-radius: 3px;
-    border: var(--space-02) solid var(--color-border-primary);
-    height: 5.6rem;
-}
-
-.join-node p {
-    max-width: 390px;
-    color: var(--color-text-secondary);
-}
-
-.see-more-events {
-    margin-top: var(--space-48);
-    color: var(--pink5);
-    display: block;
-}
-
-.see-more-events span {
-    margin-left: var(--space-08);
-}
-
 .btn-subscribe {
     border: none;
     box-sizing: border-box;

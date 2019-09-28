@@ -1,0 +1,38 @@
+.community-section {
+  padding-bottom: var(--space-128);
+
+  p {
+    max-width: 390px;
+    color: var(--color-text-secondary);
+  }
+
+  .accent {
+    color: var(--pink5);
+  }
+
+  .subscribe {
+    display: flex;
+    justify-content: space-between;
+
+    .input-block {
+      display: flex;
+      align-items: flex-start;
+
+      input {
+        box-sizing: border-box;
+        height: var(--space-48);
+        padding: 0 var(--space-24);
+        margin-right: var(--space-12);
+        border-radius: 3px;
+        border: var(--space-02) solid var(--color-border-primary);
+      }
+    }
+  }
+
+  .see-more-events {
+    display: block;
+    margin-top: var(--space-48);
+    color: var(--pink5);
+    text-decoration: none;
+  }
+}
