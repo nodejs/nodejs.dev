@@ -6,12 +6,13 @@ html {
 }
 
 body {
+  box-sizing: border-box;
   background: var(--color-fill-app);
   color: var(--color-text-primary);
   font-size: 1.6rem;
   font-family: var(--base-type-face);
   margin: 0;
-  margin-top: var(--nav-height);
+  padding-top: var(--nav-height);
 
   /* Set in JavaScript */
   --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
@@ -162,6 +163,8 @@ body {
   --space-160: 16rem;
   --space-240: 24rem;
   --space-320: 32rem;
+  --space-480: 48rem;
+  --space-640: 64rem;
 }
 
 .dark-mode {

@@ -1,6 +1,7 @@
 .main-header {
   position: fixed;
   width: calc(100% - var(--space-40)*2);
+  height: var(--nav-height);
   left: 0;
   top: 0;
 	display: flex;
@@ -9,7 +10,6 @@
   z-index: 100;
   background-color: var(--black0);
   box-shadow: 0 0 0.2em var(--black5);
-  height: var(--space-80);
 	padding: 0 var(--space-40);
 
   .navigation {

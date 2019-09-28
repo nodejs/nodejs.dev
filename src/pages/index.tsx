@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MainSection from '../components/LandingPage/Sections/MainSection/main-section';
+import SandboxSection from '../components/LandingPage/Sections/SandboxSection/sandbox-section';
 import Layout from '../templates/Layout/layout';
 import Link from '../components/Link/Link';
 
@@ -19,10 +20,6 @@ import GetStartedIllustration2 from '../images/illustrations/do-more-illustratio
 
 import pentagonIllustration1 from '../images/illustrations/pentagon-illustration1.svg';
 import pentagonIllustration2 from '../images/illustrations/pentagon-illustration2.svg';
-import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
-import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
-import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
-import dotsIllustration from '../images/illustrations/dots.svg';
 
 // should be reaplaced with GraphQL data
 const title = 'Node.js Official website';
@@ -59,14 +56,7 @@ export default function Index(): JSX.Element {
   return (
     <Layout title={title} description={description}>
       <MainSection content={content} />
-
-      <section className="node-demo-container">
-        <div className="node-demo" />
-        <img className="leafs-front" src={leafsIllustrationFront} alt="" />
-        <img className="leafs-middle" src={leafsIllustrationMiddle} alt="" />
-        <img className="leafs-back" src={leafsIllustrationBack} alt="" />
-        <img className="dots" src={dotsIllustration} alt="" />
-      </section>
+      <SandboxSection content={content} />
 
       <section className="node-features">
         <NodeFeature img={featureImg} featureText={nodeFeature1} />

@@ -1,0 +1,49 @@
+.sandbox-section {
+  position: relative;
+  padding-bottom: var(--space-128);
+  .sandbox {
+    width: 80%;
+    height: var(--space-480);
+    margin: 0 auto;
+    background: var(--black9);
+    border-radius: var(--space-04);
+    box-shadow: 5px 10px 50px rgba(0, 0, 0, 0.25);
+    color: var(--black0);
+    z-index: 2;
+  }
+
+  .flying-animation {
+    span {
+      overflow: hidden;
+      position: absolute;
+      border-radius: 20%;
+      cursor: pointer;
+      pointer-events: none;
+      border-radius: 0% 60% 15% 80%;
+
+      @mixin randomizeTriangles {
+        @for $i from 1 through 10 {
+          $x: random(10);
+          &:nth-child(#{$i}) {
+            top: random(80) + 0%;
+            right: random(100) + 0%;
+            transform: rotateZ(random(180) + deg);
+            filter: blur($x + px);
+            width: $x + rem;
+            height: $x + rem;
+            background-color: var(--purple + random(9));
+            z-index: ($x * (-1) + 11) * (-1);
+          }
+        }
+      }
+      @include randomizeTriangles;
+    }
+  }
+
+  .dots {
+    position: absolute;
+    top: 180px;
+    left: -24px;
+    z-index: -4;
+  }
+}
