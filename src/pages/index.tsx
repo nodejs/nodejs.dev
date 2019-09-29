@@ -23,6 +23,7 @@ import getStartedIllustration2 from '../images/illustrations/do-more-illustratio
 
 // should be reaplaced with GraphQL data
 const title = 'Node.js Official website';
+const description = 'Welcome to Node.js!';
 const content = {
   sectionMain: {
     title: 'The power of JavaScript minus the browser',
@@ -87,8 +88,6 @@ const content = {
 };
 
 export default function Index(): JSX.Element {
-  const description = 'Welcome to Node.js!';
-
   return (
     <Layout title={title} description={description} withBg>
       <MainSection content={content.sectionMain} />

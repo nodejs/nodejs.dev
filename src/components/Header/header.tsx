@@ -5,20 +5,24 @@ import logo from '../../images/logo.svg';
 import styles from './header.module.scss';
 
 // should be reaplaced with GraphQL data
-const navigationLinks = [
-  {
-    link: 'https://nodejs.org/en/docs/',
-    text: 'Documentation',
-  },
-  {
-    link: 'https://github.com/nodejs/nodejs.dev',
-    text: 'GitHub',
-  },
-  {
-    link: 'https://nodejs.org/en/download/',
-    text: 'Downloads',
-  },
-];
+
+const content = {
+  navigationLinks: [
+    {
+      link: 'https://nodejs.org/en/docs/',
+      text: 'Documentation',
+    },
+    {
+      link: 'https://github.com/nodejs/nodejs.dev',
+      text: 'GitHub',
+    },
+    {
+      link: 'https://nodejs.org/en/download/',
+      text: 'Downloads',
+    },
+  ],
+  toggleTheme: 'Toggle theme'
+};
 
 const Header = (): JSX.Element => (
   <header className={styles.mainHeader}>
@@ -26,7 +30,7 @@ const Header = (): JSX.Element => (
       <Link to="/">
         <img src={logo} alt="Node.js" className={styles.navigationLogo} />
       </Link>
-      {navigationLinks.map(
+      {content.navigationLinks.map(
         (item, i): JSX.Element => (
           <Link
             to={item.link}
@@ -43,7 +47,7 @@ const Header = (): JSX.Element => (
         <button
           className={styles.themeToggler}
           onClick={(): boolean => document.body.classList.toggle('dark-mode')}
-          title="Toggle theme"
+          title={content.toggleTheme}
           type="button"
         >
           <i className="material-icons light-mode-only">nights_stay</i>
