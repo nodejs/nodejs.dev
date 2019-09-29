@@ -25,8 +25,8 @@
         @for $i from 1 through 10 {
           $x: random(10);
           &:nth-child(#{$i}) {
-            top: random(80) + 0%;
-            right: random(100) + 0%;
+            top: -20% + random(110);
+            right: -20% + random(110);
             transform: rotateZ(random(180) + deg);
             filter: blur($x + px);
             width: $x + rem;
