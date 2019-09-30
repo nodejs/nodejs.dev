@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing page renders correctly 1`] = `
+<Layout
+  description="Welcome to Node.js!"
+  title="Node.js Official website"
+  withBg={true}
+>
+  <MainSection
+    content={
+      Object {
+        "desc": "Tacos raw denim palo santo, squid 90s occupy sustainable leggings locavore before they sold out chambray gastropub synth. Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.",
+        "downloadButton": "Download Node (LTS)",
+        "downloadCurrent": "Get Current",
+        "learnNode": "Learn Node",
+        "subDownloadMessage": "What’s new",
+        "title": "The power of JavaScript minus the browser",
+      }
+    }
+  />
+  <SandboxSection />
+  <FeaturesSection
+    content={
+      Object {
+        "featureList": Array [
+          Object {
+            "image": "test-file-stub",
+            "text": "Feat #1 Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.",
+          },
+          Object {
+            "image": "test-file-stub",
+            "text": "Feat #2 Tacos raw denim palo santo, squid 90 occupy sustainable leggings locavore before they sold out chambray gastropub synth.",
+          },
+          Object {
+            "image": "test-file-stub",
+            "text": "Feat #3 Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ",
+          },
+        ],
+      }
+    }
+  />
+  <CommunitySection
+    content={
+      Object {
+        "desc": "We’ll never share your information and always respect your inbox - quality content only, we promise.",
+        "eventsLink": "See events near you",
+        "subscribe": "Subscribe",
+        "title1": "Join",
+        "title2": "the community",
+      }
+    }
+  />
+  <PartnerSection
+    content={
+      Object {
+        "desc": "Including IBM, LinkedIn, Microsoft, Netflix, and PayPal.",
+        "partnersLogoList": Array [
+          "test-file-stub",
+          "test-file-stub",
+          "test-file-stub",
+          "test-file-stub",
+          "test-file-stub",
+        ],
+        "title": "Trusted by development teams around the world",
+      }
+    }
+  />
+  <GetStartedSection
+    content={
+      Object {
+        "actionButton": "Get Started",
+        "blocks": Array [
+          Object {
+            "desc": "Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh.",
+            "image": "test-file-stub",
+            "link": "/learn",
+            "title": "A beginner’s guide",
+          },
+          Object {
+            "desc": "Tacos raw denim palo santo, squid 90 occupy sustainable leggings locavore before they sold out chambray gastropub synth.",
+            "image": "test-file-stub",
+            "link": "/docs",
+            "title": "Do even more with Node",
+          },
+        ],
+      }
+    }
+  />
+</Layout>
+`;

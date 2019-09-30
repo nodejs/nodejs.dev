@@ -5,9 +5,6 @@ exports[`404 page renders correctly 1`] = `
   description="You have hit a route that does not exist."
   title="PAGE NOT FOUND"
 >
-  <Hero
-    title="PAGE NOT FOUND"
-  />
   <article
     className="article-reader"
     style={
