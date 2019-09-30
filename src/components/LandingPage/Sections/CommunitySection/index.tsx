@@ -26,7 +26,7 @@ const CommunitySection = ({ content }: CommunitySectionProps): JSX.Element => (
       </div>
     </div>
     <Link className={styles.seeMoreEvents} to="/events">
-      {content.eventsLink} ⟶
+      {`${content.eventsLink} ⟶`}
     </Link>
   </section>
 );

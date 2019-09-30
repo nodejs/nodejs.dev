@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../templates/Layout/layout';
+import Layout from '../templates/Layout';
 
 export default function NotFoundPage(): JSX.Element {
   const title = 'PAGE NOT FOUND';

@@ -8,7 +8,7 @@ import {
   PartnerSection,
   GetStartedSection,
 } from '../components';
-import Layout from '../templates/Layout/layout';
+import Layout from '../templates/Layout';
 
 import featureImg from '../images/placeholder-img.png';
 
