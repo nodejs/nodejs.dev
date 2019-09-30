@@ -1,8 +1,8 @@
 .features-section {
+	height: 50vh;
   width: 100%;
   display: flex;
   justify-content: space-around;
-  padding-bottom: var(--space-128);
 
   .item {
     max-width: var(--space-240);

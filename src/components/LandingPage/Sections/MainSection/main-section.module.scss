@@ -1,10 +1,11 @@
 .main-section {
+	height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  padding: var(--space-128) 0;
+  // padding: var(--space-128) 0;
 
   .title {
     max-width: 840px;

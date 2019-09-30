@@ -1,6 +1,9 @@
 .partner-section {
-  padding-bottom: var(--space-160);
+	height: 50vh;
   text-align: center;
+  display: flex;
+	justify-content: center;
+	flex-direction: column;
 
   p {
     color: var(--color-text-secondary);

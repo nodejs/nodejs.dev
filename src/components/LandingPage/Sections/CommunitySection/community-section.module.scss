@@ -1,5 +1,8 @@
 .community-section {
-  padding-bottom: var(--space-128);
+	height: 50vh;
+  display: flex;
+	justify-content: center;
+	flex-direction: column;
 
   p {
     max-width: 390px;
