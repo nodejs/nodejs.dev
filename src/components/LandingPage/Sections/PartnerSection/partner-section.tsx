@@ -6,7 +6,7 @@ interface PartnerSectionProps {
   content: {
     title: string;
     desc: string;
-    partnersLogoList: [string];
+    partnersLogoList: string[];
   };
 }
 

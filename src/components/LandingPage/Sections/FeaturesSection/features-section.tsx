@@ -18,7 +18,7 @@ const FeatureItem = ({ image, text }: FeatureItemProps): JSX.Element => {
 
 interface FeaturesSectionProps {
   content: {
-    featureList: [FeatureItemProps];
+    featureList: FeatureItemProps[];
   };
 }
 

@@ -12,7 +12,7 @@ interface GetStartedBlock {
 
 interface GetStartedSectionProps {
   content: {
-    blocks: [GetStartedBlock];
+    blocks: GetStartedBlock[];
     actionButton: string;
   };
 }
