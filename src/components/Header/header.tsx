@@ -21,7 +21,7 @@ const content = {
       text: 'Downloads',
     },
   ],
-  toggleTheme: 'Toggle theme'
+  toggleTheme: 'Toggle theme',
 };
 
 const Header = (): JSX.Element => (
