@@ -2,6 +2,7 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/themes/prism-okaidia.css';
 import React from 'react';
 import Header from './header';
+import Footer from './footer';
 import '../styles/tokens.css';
 import '../styles/layout.css';
 import '../styles/mobile.css';
@@ -12,7 +13,9 @@ interface Props {
   title?: string;
   description?: string;
   img?: string;
-  href: string;
+  href?: string;
+  showFooter?: boolean;
+  location?: any;
 }
 
 const Layout = ({
@@ -21,12 +24,14 @@ const Layout = ({
   description,
   img,
   location,
+  showFooter = true,
 }: Props): JSX.Element => {
   return (
     <React.Fragment>
       <SEO title={title} description={description} img={img} />
       <Header />
       {children}
+      {showFooter && <Footer />}
     </React.Fragment>
   );
 };
