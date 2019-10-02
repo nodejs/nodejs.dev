@@ -184,6 +184,12 @@
 
   .footer .footer__left,
   .footer .footer__right {
-    padding: 5px 10px;
+    padding: 6px 18px;
+  }
+
+  .footer .footer__left > li,
+  .footer .footer__right > li {
+    margin-right: 18px;
+    padding: 6px 0;
   }
 }
