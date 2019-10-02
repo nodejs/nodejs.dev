@@ -24,7 +24,7 @@ const DropDownContainer: SerializedStyles = css`
   left: -25px;
   box-shadow: 0 5px 15px -5px var(--color-border-primary);
   border-bottom: 2px solid var(--color-brand-primary);
-  z-index: 100;
+  z-index: 999;
   &::after {
     content: '';
     position: absolute;
@@ -55,31 +55,52 @@ const DropDownContainerButton: SerializedStyles = css`
 const DropDownButton: SerializedStyles = css`
   border: none;
   color: var(--color-text-accent);
-  &:focus {
-    & > span {
-      transform: rotate(180deg);
-    }
-  }
 `;
 
+export interface DropDownState {
+  active: number;
+  isOpen: boolean;
+  shouldDropDownBlur: boolean;
+}
+
 const FooterDropDown: React.FC = (): JSX.Element => {
-  const [state, setState] = useState<{ active: number; isOpen: boolean }>({
+  const [state, setState] = useState<DropDownState>({
     active: 3,
     isOpen: false,
+    shouldDropDownBlur: true,
   });
 
+  const handleMouseEnter = (): void => {
+    setState({ ...state, shouldDropDownBlur: false });
+  };
+
+  const handleMouseExit = (): void => {
+    setState({ ...state, shouldDropDownBlur: true });
+  };
+
   const handleOnClick = (): void => {
-    setState({ ...state, isOpen: !state.isOpen });
+    if (state.shouldDropDownBlur) {
+      setState({ ...state, isOpen: !state.isOpen });
+    }
   };
 
   const handleOnSelectLang = (index: number): void => {
-    setState({ active: index, isOpen: !state.isOpen });
+    setState({
+      ...state,
+      active: index,
+      isOpen: !state.isOpen,
+      shouldDropDownBlur: true,
+    });
   };
 
   return (
     <div style={{ position: 'relative' }}>
       {state.isOpen && (
-        <div css={DropDownContainer}>
+        <div
+          css={DropDownContainer}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseExit}
+        >
           {dropDownData.map(
             (data: string, index: number): JSX.Element => (
               <button
@@ -94,8 +115,14 @@ const FooterDropDown: React.FC = (): JSX.Element => {
           )}
         </div>
       )}
-      <button type="button" css={DropDownButton} onClick={handleOnClick}>
-        {dropDownData[state.active]} <span>&#9207;</span>
+      <button
+        type="button"
+        css={DropDownButton}
+        onClick={handleOnClick}
+        onBlur={handleOnClick}
+      >
+        {dropDownData[state.active]}{' '}
+        <span>{state.isOpen ? '\u23f6' : '\u23f7'}</span>
       </button>
     </div>
   );
