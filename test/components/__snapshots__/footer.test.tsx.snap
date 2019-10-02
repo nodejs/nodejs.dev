@@ -19,19 +19,15 @@ exports[`Tests for Footer component renders correctly 1`] = `
           css={
             Object {
               "map": undefined,
-              "name": "1aq97v",
+              "name": "45tpuz",
               "next": undefined,
               "styles": "
   border: none;
   color: var(--color-text-accent);
-  &:focus {
-    & > span {
-      transform: rotate(180deg);
-    }
-  }
 ",
             }
           }
+          onBlur={[Function]}
           onClick={[Function]}
           type="button"
         >
