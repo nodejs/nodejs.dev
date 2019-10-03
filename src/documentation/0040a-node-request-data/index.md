@@ -68,7 +68,7 @@ const server = http.createServer((req, res) => {
     data.push(chunk)
   })
   req.on('end', () => {
-    JSON.parse(data).todo // 'Buy the milk'
+    JSON.parse(data.toString()).todo // 'Buy the milk'
   })
 })
 ```
