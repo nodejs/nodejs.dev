@@ -21,8 +21,8 @@ const CommunitySection = ({ content }: CommunitySectionProps): JSX.Element => (
     <div className={styles.subscribe}>
       <p className="t-body2">{content.desc}</p>
       <div className={styles.inputBlock}>
-        <input type="email" placeholder="node@nodejs.dev" />
-        <Button className="t-body1">{content.subscribe}</Button>
+        <input type="email" placeholder="turtle@rocket.dev" />
+        <Button>{content.subscribe}</Button>
       </div>
     </div>
     <Link className={styles.seeMoreEvents} to="/events">

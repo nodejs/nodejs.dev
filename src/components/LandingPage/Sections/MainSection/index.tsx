@@ -22,14 +22,14 @@ const MainSection = ({ content }: MainSectionProps): JSX.Element => (
     <p className={styles.subTitle}>{content.desc}</p>
     <div className={styles.buttons}>
       <div className={styles.downloadActions}>
-        <Button>{content.downloadButton}</Button>
+        <Button shape="rounded">{content.downloadButton}</Button>
         <div className={[styles.downloadLinks, 't-caption'].join(' ')}>
           {nodeVersion} -{' '}
           <Link to="/download">{content.subDownloadMessage}</Link> /{' '}
           <Link to="/download">{content.downloadCurrent}</Link>
         </div>
       </div>
-      <Button to="/learn" type="secondary">
+      <Button to="/learn" type="secondary" shape="rounded">
         {content.learnNode}
       </Button>
     </div>

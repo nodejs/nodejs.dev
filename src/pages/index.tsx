@@ -29,10 +29,10 @@ const content = {
     title: 'The power of JavaScript minus the browser',
     desc:
       'Tacos raw denim palo santo, squid 90s occupy sustainable leggings locavore before they sold out chambray gastropub synth. Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.',
-    downloadButton: 'Download Node (LTS)',
+    downloadButton: 'Download Node.js (LTS)',
     subDownloadMessage: 'What’s new',
     downloadCurrent: 'Get Current',
-    learnNode: 'Learn Node',
+    learnNode: 'Learn Node.js',
   },
   sectionFeatures: {
     featureList: [
@@ -76,7 +76,7 @@ const content = {
         link: '/learn',
       },
       {
-        title: 'Do even more with Node',
+        title: 'Do even more with Node.js',
         desc:
           'Tacos raw denim palo santo, squid 90 occupy sustainable leggings locavore before they sold out chambray gastropub synth.',
         image: getStartedIllustration2,

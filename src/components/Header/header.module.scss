@@ -8,8 +8,8 @@
 	align-items: center;
 	justify-content: space-between;
   z-index: 100;
-  background-color: var(--black0);
-  box-shadow: 0 0 0.2em var(--black5);
+  background-color: var(--color-fill-app);
+  box-shadow: 0 0 0.2em rgba(0,0,0,0.2);
 	padding: 0 var(--space-40);
 
   .navigation {
@@ -18,15 +18,14 @@
 		height: 100%;
 
     .navigation-logo {
-      display: block;
-      height: var(--space-40);
+      height: var(--space-32);
     }
 
     .navigation-item {
       text-decoration: none;
       margin-left: var(--space-32);
       text-decoration: none;
-      color: var(--black9);
+      color: var(--color-text-primary);
     }
   }
 

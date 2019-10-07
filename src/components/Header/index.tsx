@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { Link } from '..';
-import logo from '../../images/logo.svg';
+import logoLight from '../../images/logo-light.svg';
+import logoDark from '../../images/logo-dark.svg';
 import styles from './header.module.scss';
 
 // should be reaplaced with GraphQL data
@@ -28,7 +29,8 @@ const Header = (): JSX.Element => (
   <header className={styles.mainHeader}>
     <nav className={styles.navigation}>
       <Link to="/">
-        <img src={logo} alt="Node.js" className={styles.navigationLogo} />
+        <img src={logoLight} alt="Node.js" className={[styles.navigationLogo, 'light-mode-only'].join(' ')} />
+        <img src={logoDark} alt="Node.js" className={[styles.navigationLogo, 'dark-mode-only'].join(' ')} />
       </Link>
       {content.navigationLinks.map(
         (item, i): JSX.Element => (

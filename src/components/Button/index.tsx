@@ -6,6 +6,7 @@ import styles from './button.module.scss';
 interface ButtonProps {
   children: JSX.Element[] | JSX.Element | string;
   type?: 'primary' | 'secondary' | 'default';
+  shape?: 'rounded';
   disabled?: boolean;
   to?: string;
   alt?: string;
@@ -14,7 +15,7 @@ interface ButtonProps {
 }
 
 const Button = (props: ButtonProps): JSX.Element => {
-  const { children, type, disabled, to, onClick, className, alt } = props;
+  const { children, type, disabled, shape, to, onClick, className, alt } = props;
   if (to && !onClick) {
     return (
       <Link
@@ -22,6 +23,7 @@ const Button = (props: ButtonProps): JSX.Element => {
         className={[
           styles.button,
           styles[disabled ? 'disabled' : type || 'primary'],
+          shape && styles[shape],
           className,
         ].join(' ')}
         disabled={disabled}
@@ -36,6 +38,7 @@ const Button = (props: ButtonProps): JSX.Element => {
       className={[
         styles.button,
         styles[disabled ? 'disabled' : type || 'primary'],
+				shape && styles[shape],
         className,
       ].join(' ')}
       disabled={disabled}
