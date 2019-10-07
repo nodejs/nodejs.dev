@@ -29,8 +29,16 @@ const Header = (): JSX.Element => (
   <header className={styles.mainHeader}>
     <nav className={styles.navigation}>
       <Link to="/">
-        <img src={logoLight} alt="Node.js" className={[styles.navigationLogo, 'light-mode-only'].join(' ')} />
-        <img src={logoDark} alt="Node.js" className={[styles.navigationLogo, 'dark-mode-only'].join(' ')} />
+        <img
+          src={logoLight}
+          alt="Node.js"
+          className={[styles.navigationLogo, 'light-mode-only'].join(' ')}
+        />
+        <img
+          src={logoDark}
+          alt="Node.js"
+          className={[styles.navigationLogo, 'dark-mode-only'].join(' ')}
+        />
       </Link>
       {content.navigationLinks.map(
         (item, i): JSX.Element => (

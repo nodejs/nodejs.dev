@@ -15,7 +15,16 @@ interface ButtonProps {
 }
 
 const Button = (props: ButtonProps): JSX.Element => {
-  const { children, type, disabled, shape, to, onClick, className, alt } = props;
+  const {
+    children,
+    type,
+    disabled,
+    shape,
+    to,
+    onClick,
+    className,
+    alt,
+  } = props;
   if (to && !onClick) {
     return (
       <Link
@@ -38,7 +47,7 @@ const Button = (props: ButtonProps): JSX.Element => {
       className={[
         styles.button,
         styles[disabled ? 'disabled' : type || 'primary'],
-				shape && styles[shape],
+        shape && styles[shape],
         className,
       ].join(' ')}
       disabled={disabled}

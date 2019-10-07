@@ -12,7 +12,12 @@ exports[`Tests for Header component renders correctly 1`] = `
     >
       <img
         alt="Node.js"
-        className="navigationLogo"
+        className="navigationLogo light-mode-only"
+        src="test-file-stub"
+      />
+      <img
+        alt="Node.js"
+        className="navigationLogo dark-mode-only"
         src="test-file-stub"
       />
     </a>

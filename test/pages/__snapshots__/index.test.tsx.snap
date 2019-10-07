@@ -10,9 +10,9 @@ exports[`Landing page renders correctly 1`] = `
     content={
       Object {
         "desc": "Tacos raw denim palo santo, squid 90s occupy sustainable leggings locavore before they sold out chambray gastropub synth. Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.",
-        "downloadButton": "Download Node (LTS)",
+        "downloadButton": "Download Node.js (LTS)",
         "downloadCurrent": "Get Current",
-        "learnNode": "Learn Node",
+        "learnNode": "Learn Node.js",
         "subDownloadMessage": "What’s new",
         "title": "The power of JavaScript minus the browser",
       }
@@ -80,7 +80,7 @@ exports[`Landing page renders correctly 1`] = `
             "desc": "Tacos raw denim palo santo, squid 90 occupy sustainable leggings locavore before they sold out chambray gastropub synth.",
             "image": "test-file-stub",
             "link": "/docs",
-            "title": "Do even more with Node",
+            "title": "Do even more with Node.js",
           },
         ],
       }

@@ -2,7 +2,7 @@
 
 exports[`Tests for Button component renders correctly 1`] = `
 <button
-  className="button primary "
+  className="button primary  "
   type="button"
 >
   Custom
