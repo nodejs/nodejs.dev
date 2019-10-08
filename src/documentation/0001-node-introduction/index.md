@@ -1,11 +1,12 @@
 ---
 title: Introduction to Node.js
 description: "Getting started guide to Node.js, the server-side JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to just that."
-authors: flaviocopes, potch, MylesBorins, RomainLanz, virkt25, Trott, onel0p3z, ollelauribostrom, MarkPieszak, fhemberger, LaRuaNa, FrozenPandaz, mcollina, amiller-gh, ahmadawais, saqibameen
+authors: flaviocopes, potch, MylesBorins, RomainLanz, virkt25, Trott, onel0p3z, ollelauribostrom, MarkPieszak, fhemberger, LaRuaNa, FrozenPandaz, mcollina, amiller-gh, ahmadawais, saqibameen, dangen-effy
 section: Quick Start
 ---
 
-Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!
+
+is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!
 
 Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. This allows Node.js to be very performant.
 
@@ -21,7 +22,7 @@ In Node.js the new ECMAScript standards can be used without problems, as you don
 
 ## A Vast Number of Libraries
 
-npm with its simple structure helped the ecosystem of node.js proliferate, and now the npm registry hosts almost 500,000 open source packages you can freely use.
+npm with its simple structure helped the ecosystem of Node.js proliferate, and now the npm registry hosts almost 500,000 open source packages you can freely use.
 
 ## An Example Node.js Application
 
