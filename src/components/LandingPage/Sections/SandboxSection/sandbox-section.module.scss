@@ -22,16 +22,17 @@
       border-radius: 0% 60% 15% 80%;
 
       @mixin randomizeTriangles {
-        @for $i from 1 through 10 {
+        @for $i from 1 through 4 {
           $x: random(10);
+          $y: random(9);
           &:nth-child(#{$i}) {
-            top: -20% + random(110);
+            top: -30% + random(110);
             right: -20% + random(110);
             transform: rotateZ(random(180) + deg);
-            filter: blur($x + px);
+            box-shadow: 0 0 $x + px $x + px var(--purple + $y);
             width: $x + rem;
             height: $x + rem;
-            background-color: var(--purple + random(9));
+            background-color: var(--purple + $y);
             z-index: ($x * (-1) + 11) * (-1);
           }
         }

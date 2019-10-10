@@ -11,12 +11,6 @@ const SandboxSection = (): JSX.Element => (
       <span></span>
       <span></span>
       <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
     </div>
     <img className={styles.dots} src={dotsIllustration} alt="" />
   </section>
