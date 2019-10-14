@@ -21,7 +21,7 @@ In Node.js the new ECMAScript standards can be used without problems, as you don
 
 ## A Vast Number of Libraries
 
-npm with its simple structure helped the ecosystem of Node.js proliferate, and now the npm registry hosts almost 500,000 open source packages you can freely use.
+npm with its simple structure helped the ecosystem of Node.js proliferate, and now the npm registry hosts over 1,000,000 open source packages you can freely use.
 
 ## An Example Node.js Application
 
