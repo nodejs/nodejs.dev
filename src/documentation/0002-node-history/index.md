@@ -19,7 +19,7 @@ In this post, we draw the big picture of Node.js in its history, to put things i
 
 JavaScript is a programming language that was created at Netscape as a scripting tool to manipulate web pages inside their browser, [Netscape Navigator](https://en.wikipedia.org/wiki/Netscape_Navigator).
 
-Part of the business model of Netscape was to sell Web Servers, which included an environment called _Netscape LiveWire_ that could create dynamic pages using server-side JavaScript. Unfortunately, _Netscape LiveWire_ wasn't very successful and server-side Javascript wasn't popularized until recently, by the introduction of Node.js.
+Part of the business model of Netscape was to sell Web Servers, which included an environment called _Netscape LiveWire_ that could create dynamic pages using server-side JavaScript. Unfortunately, _Netscape LiveWire_ wasn't very successful and server-side JavaScript wasn't popularized until recently, by the introduction of Node.js.
 
 One key factor that led to the rise of Node.js was the timing. Just a few years earlier, JavaScript had started to be considered as a more serious language, thanks to "Web 2.0" applications (such as Flickr, Gmail, etc.) that showed the world what a modern experience on the web could be like.
 
