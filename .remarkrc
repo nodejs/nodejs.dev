@@ -13,7 +13,6 @@
     ["remark-lint-no-heading-indent", false],
     ["remark-lint-no-inline-padding", false],
     ["remark-lint-no-multiple-toplevel-headings", false],
-    ["remark-lint-no-tabs", false],
     ["remark-lint-no-trailing-spaces", false],
     ["remark-lint-prohibited-strings", false],
     ["remark-lint-unordered-list-marker-style", false]
