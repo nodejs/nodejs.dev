@@ -10,7 +10,6 @@
     ["remark-lint-maximum-line-length", false],
     ["remark-lint-no-blockquote-without-marker", false],
     ["remark-lint-no-consecutive-blank-lines", false],
-    ["remark-lint-no-heading-indent", false],
     ["remark-lint-no-inline-padding", false],
     ["remark-lint-no-multiple-toplevel-headings", false],
     ["remark-lint-no-tabs", false],
