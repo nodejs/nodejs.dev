@@ -109,7 +109,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 ## 📝 Data Sources
 
-This repository contains no documentation content. Content is pulled from across the Node.js Github Org, Contentful, and other data sources and stitched together into a cohesive website.
+This repository contains no documentation content. Content is pulled from across the Node.js GitHub Org, Contentful, and other data sources and stitched together into a cohesive website.
 
 ### src/documentation
 

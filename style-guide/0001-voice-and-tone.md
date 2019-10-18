@@ -49,7 +49,7 @@ to be personal and inviting. To achieve this, we may address our reader like
 a friend.
 
 We might say: _"You're welcome to chat with us about Node.js core features on our
-Github issues list!"_
+GitHub issues list!"_
 
 Instead of: _"The GitHub issues list is the place for discussion of Node.js core
 features."_
