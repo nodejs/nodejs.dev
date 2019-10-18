@@ -85,6 +85,7 @@ getFile('/etc/passwd')
 ```
 
 > In recent versions of Node.js, you won't have to do this manual conversion for a lot of the API. There is a promisifying function available in the [util module](https://nodejs.org/docs/latest-v11.x/api/util.html#util_util_promisify_original) that will do this for you, given that the function you're promisifying has the correct signature.
+
 ---
 
 ## Consuming a promise
