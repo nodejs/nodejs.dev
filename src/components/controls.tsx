@@ -34,7 +34,7 @@ const controlsStyles = {
   button: css/* scss */ `
     color: inherit;
     border: none;
-    width:max-content;
+    width: max-content;
     display: contents;
   `,
   controls: css/* scss */ `
