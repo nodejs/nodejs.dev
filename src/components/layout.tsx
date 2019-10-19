@@ -2,6 +2,7 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/themes/prism-okaidia.css';
 import React from 'react';
 import Header from './header';
+import Controls from './controls';
 import '../styles/tokens.css';
 import '../styles/layout.css';
 import '../styles/mobile.css';
@@ -26,6 +27,7 @@ const Layout = ({
     <React.Fragment>
       <SEO title={title} description={description} img={img} />
       <Header />
+      <Controls />
       {children}
     </React.Fragment>
   );
