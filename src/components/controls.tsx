@@ -19,21 +19,26 @@ const controlsStyles = {
     align-items: center;
 
     opacity: 0.9;
-    color: #999;
-    background: linear-gradient(to right, #9993, #9993), #333f46;
-    border-radius: 1ch;
+    color: var(--color-text-accent, #999);
+    background-color: var(--black9, #9993);
+    border-top-left-radius: 1ch;
+    border-bottom-left-radius: 1ch;
 
-    font-family: initial;
-    /* -apple-system', system-ui, 'Segoe UI', Roboto,
-      Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
-    font-size: 16px;
-    font-weight: 200;
-    min-height: 2em;
-    line-height: normal;
+    min-width: max-content;
+    width: 0;
     white-space: normal;
     text-size-adjust: 100%;
     text-shadow: #333f46 0px 0.875px 0px;
     user-select: none;
+  `,
+  button: css/* scss */ `
+    color: inherit;
+    border: none;
+    width:max-content;
+    display: contents;
+  `,
+  controls: css/* scss */ `
+    color: inherit;
   `,
 };
 
@@ -49,11 +54,11 @@ const Controls = ({
   controller = new DarkModeController(),
 }: Props) => (
   <header css={controlsStyles.header}>
-    <div id="controls">
+    <div id="controls" css={controlsStyles.controls}>
       <span>
         <button
           type="button"
-          className="icon-button"
+          css={controlsStyles.button}
           id="contrast"
           title="Dark/Light"
           onPointerDown={(): void => {
