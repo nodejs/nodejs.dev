@@ -32,7 +32,7 @@ A typical demonstration of using `npx` is through the `cowsay` command. `cowsay`
 
 `cowsay "Hello"` will print
 
-```
+```console
  _______
 < Hello >
  -------
