@@ -51,17 +51,22 @@ const Controls = ({
   <header css={controlsStyles.header}>
     <div id="controls">
       <span>
-        <a
+        <button
+          type="button"
           className="icon-button"
           id="contrast"
           title="Dark/Light"
-          onPointerDown={() => controller.onPointerDown()}
-          onPointerUp={() => controller.onPointerUp()}
+          onPointerDown={(): void => {
+            controller.onPointerDown();
+          }}
+          onPointerUp={(): void => {
+            controller.onPointerUp();
+          }}
         >
           <span className="sr-only">Toggle Dark Mode</span>
           <i className="material-icons light-mode-only">{darkModeIcon}</i>
           <i className="material-icons dark-mode-only">{lightModeIcon}</i>
-        </a>
+        </button>
       </span>
     </div>
   </header>

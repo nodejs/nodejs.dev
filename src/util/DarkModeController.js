@@ -1,5 +1,7 @@
 ﻿// @ts-check
 
+/*eslint-disable */
+
 export default class DarkModeController {
   static get timeout() {
     const value = Symbol.for('dark-mode.toggler.timeout');
@@ -121,7 +123,7 @@ export default class DarkModeController {
     this[DarkModeController.timeout] = setTimeout(() => {
       this.toggle('auto');
       this[DarkModeController.resetting] = true;
-      console.log('Reset dark mode!');
+      // console.log('Reset dark mode!');
     }, 2000);
   }
 
@@ -139,3 +141,5 @@ Object.preventExtensions(DarkModeController);
 
 /** @typedef {'auto'|'enabled'|'disabled'} DarkModeState */
 /** @typedef {'light'|'dark'} PrefersColorSchemes */
+
+/* eslint-enable */
