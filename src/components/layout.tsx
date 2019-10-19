@@ -2,11 +2,11 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/themes/prism-okaidia.css';
 import React from 'react';
 import Header from './header';
-import Controls from './controls';
 import '../styles/tokens.css';
 import '../styles/layout.css';
 import '../styles/mobile.css';
 import SEO from './seo';
+import DarkModeController from '../util/DarkModeController';
 
 interface Props {
   children: React.ReactNode;
@@ -14,6 +14,7 @@ interface Props {
   description?: string;
   img?: string;
   href: string;
+  darkModeController?: DarkModeController;
 }
 
 const Layout = ({
@@ -22,12 +23,12 @@ const Layout = ({
   description,
   img,
   location,
+  darkModeController = new DarkModeController(),
 }: Props): JSX.Element => {
   return (
     <React.Fragment>
       <SEO title={title} description={description} img={img} />
-      <Header />
-      <Controls />
+      <Header darkModeController={darkModeController} />
       {children}
     </React.Fragment>
   );
