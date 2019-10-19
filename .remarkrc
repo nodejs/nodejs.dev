@@ -5,8 +5,6 @@
     ["remark-lint-code-block-style", false],
     ["remark-lint-fenced-code-flag", false],
     ["remark-lint-first-heading-level", false],
-    ["remark-lint-list-item-bullet-indent", false],
-    ["remark-lint-list-item-indent", false],
     ["remark-lint-maximum-line-length", false],
     ["remark-lint-no-multiple-toplevel-headings", false],
     ["remark-lint-unordered-list-marker-style", false]
