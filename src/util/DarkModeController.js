@@ -16,22 +16,33 @@ export default class DarkModeController {
   }
 
   static get prefersLightMode() {
-    const value = matchMedia('(prefers-color-scheme: light)');
+    const value =
+      (typeof matchMedia === 'function' &&
+        matchMedia('(prefers-color-scheme: light)')) ||
+      undefined;
     Object.defineProperty(this, 'prefersLightMode', { value, writable: false });
     return value;
   }
 
   static get prefersDarkMode() {
-    const value = matchMedia('(prefers-color-scheme: dark)');
+    const value =
+      (typeof matchMedia === 'function' &&
+        matchMedia('(prefers-color-scheme: dark)')) ||
+      undefined;
     Object.defineProperty(this, 'prefersDarkMode', { value, writable: false });
     return value;
   }
 
   /** @param {HTMLElement} [target] */
   constructor(target) {
-    this.target = target || document.body;
-
     Object.defineProperties(this, {
+      target: {
+        value:
+          /** @type {HTMLElement|undefined} */ (target ||
+          (typeof document === 'object' && document.body) ||
+          undefined),
+        writable: false,
+      },
       [DarkModeController.timeout]: {
         value: /** @type {number|undefined} */ (undefined),
         writable: true,
@@ -55,7 +66,8 @@ export default class DarkModeController {
       onPointerUp: { value: this.onPointerUp.bind(this), writable: false },
     });
 
-    ((prefersDarkMode, prefersLightMode) => {
+    ((prefersDarkMode, prefersLightMode, localStorage) => {
+      if (!localStorage || !prefersDarkMode || !prefersLightMode) return;
       localStorage.darkMode === 'enabled'
         ? ((this.state = 'enabled'), this.enable())
         : localStorage.darkMode === 'disabled'
@@ -72,7 +84,11 @@ export default class DarkModeController {
       prefersLightMode.addListener(
         ({ matches = false }) => matches === true && this.toggle(!matches, true)
       );
-    })(DarkModeController.prefersDarkMode, DarkModeController.prefersLightMode);
+    })(
+      DarkModeController.prefersDarkMode,
+      DarkModeController.prefersLightMode,
+      (typeof localStorage === 'object' && localStorage) || undefined
+    );
 
     Object.preventExtensions(this);
   }

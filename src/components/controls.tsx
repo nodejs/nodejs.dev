@@ -46,7 +46,7 @@ interface Props {
 const Controls = ({
   lightModeIcon = 'wb_sunny',
   darkModeIcon = 'nights_stay',
-  controller = new DarkModeController(document.body),
+  controller = new DarkModeController(),
 }: Props) => (
   <header css={controlsStyles.header}>
     <div id="controls">
