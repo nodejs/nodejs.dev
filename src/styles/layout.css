@@ -26,7 +26,7 @@ body {
   font-size: var(--font-size-display1);
   line-height: var(--line-height-display1);
   font-weight: var(--font-weight-light);
-  margin: 0 0 var(--space-48) 0;
+  margin: 0 0 var(--space-80) 0;
 }
 
 .t-display2 {
@@ -162,6 +162,10 @@ pre[class*="language-"],
 code[class*="language-"] {
   color: var(--black2) !important;
   background: var(--black9) !important;
+  margin-bottom: var(--space-24);
+}
+pre[class*="language-"] > code[class*="language-"] + h2 {
+  margin-top: var(--space-40);
 }
 .token.punctuation { color: var(--black2) !important; }
 .token.operator { color: var(--black2) !important; }
@@ -256,46 +260,6 @@ main {
   color: var(--color-text-primary);
     padding: var(--space-24) var(--space-16)  calc(var(--space-24) - 2px) var(--space-16)
 }
-
-/* Start: Article Reader HTML Reset */
-
-.article-reader {
-  max-width: 768px;
-  padding-left: 4.2rem;
-  padding-top: var(--space-80);
-  width: calc(100% - 36.0rem);
-}
-
-.article-reader hr {
-  border: none;
-  border-bottom: 0.4rem solid var(--black2);
-}
-
-/* sr-only for desktop */
-.article-reader__headline {
-  padding: 0;
-}
-
-.hero h1 {
-  cursor: pointer;
-}
-
-.article-reader blockquote {
-  border-left: 3px solid var(--black4);
-  color: var(--color-text-primary);
-  font-style: italic;
-  font-weight: 200;
-  letter-spacing: 1px;
-  margin: 0 0 2.8rem 0;
-  padding: 1.8rem 0 1.8rem 3.2rem;
-}
-
-.article-reader blockquote p {
-  margin: 0;
-  padding: 0;
-}
-
-/* End: Article Reader HTML Reset */
 
 /* TOC */
 details,
