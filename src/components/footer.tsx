@@ -70,17 +70,27 @@ const FooterDropDown: React.FC = (): JSX.Element => {
     shouldDropDownBlur: true,
   });
 
-  const handleMouseEnter = (): void => {
-    setState({ ...state, shouldDropDownBlur: false });
-  };
-
-  const handleMouseExit = (): void => {
-    setState({ ...state, shouldDropDownBlur: true });
+  const handleMouseEvent = (event: React.MouseEvent<HTMLDivElement>): void => {
+    if (event.type === 'mouseenter') {
+      setState({ ...state, shouldDropDownBlur: false });
+    } else {
+      setState({ ...state, shouldDropDownBlur: true });
+    }
   };
 
   const handleOnClick = (): void => {
-    if (state.shouldDropDownBlur) {
-      setState({ ...state, isOpen: !state.isOpen });
+    setState({
+      ...state,
+      isOpen: !state.isOpen,
+    });
+  };
+
+  const handleOnBlur = (): void => {
+    if (state.shouldDropDownBlur && state.isOpen) {
+      setState({
+        ...state,
+        isOpen: !state.isOpen,
+      });
     }
   };
 
@@ -98,8 +108,8 @@ const FooterDropDown: React.FC = (): JSX.Element => {
       {state.isOpen && (
         <div
           css={DropDownContainer}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseExit}
+          onMouseEnter={handleMouseEvent}
+          onMouseLeave={handleMouseEvent}
         >
           {dropDownData.map(
             (data: string, index: number): JSX.Element => (
@@ -119,7 +129,7 @@ const FooterDropDown: React.FC = (): JSX.Element => {
         type="button"
         css={DropDownButton}
         onClick={handleOnClick}
-        onBlur={handleOnClick}
+        onBlur={handleOnBlur}
       >
         {dropDownData[state.active]}{' '}
         <span>{state.isOpen ? '\u23f6' : '\u23f7'}</span>
