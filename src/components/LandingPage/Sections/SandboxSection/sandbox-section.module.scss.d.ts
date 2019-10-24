@@ -1,4 +1,4 @@
 export const sandboxSection: string;
 export const sandbox: string;
-export const flyingAnimation: string;
+export const leafs: string;
 export const dots: string;
