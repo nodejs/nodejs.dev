@@ -15,14 +15,14 @@ const SandboxSection = (): JSX.Element => (
   <section className={styles.sandboxSection}>
     <div className={styles.sandbox} />
     <div className={styles.leafs}>
-			<img src={leaf0Illustration} alt="leaf"/>
-			<img src={leaf1Illustration} alt="leaf"/>
-			<img src={leaf2Illustration} alt="leaf"/>
-			<img src={leaf3Illustration} alt="leaf"/>
-			<img src={leaf4Illustration} alt="leaf"/>
-			<img src={leaf5Illustration} alt="leaf"/>
-			<img src={leaf6Illustration} alt="leaf"/>
-			<img src={leaf7Illustration} alt="leaf"/>
+      <img src={leaf0Illustration} alt="leaf" />
+      <img src={leaf1Illustration} alt="leaf" />
+      <img src={leaf2Illustration} alt="leaf" />
+      <img src={leaf3Illustration} alt="leaf" />
+      <img src={leaf4Illustration} alt="leaf" />
+      <img src={leaf5Illustration} alt="leaf" />
+      <img src={leaf6Illustration} alt="leaf" />
+      <img src={leaf7Illustration} alt="leaf" />
     </div>
     <img className={styles.dots} src={dotsIllustration} alt="" />
   </section>
