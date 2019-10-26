@@ -32,6 +32,14 @@ module.exports = {
         include: ['**/*.md'], // ignore files starting with a dot
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: `${__dirname}/src/content/`,
+        include: ['*/*.md'], // ignore files starting with a dot
+      },
+    },
 
     {
       resolve: 'gatsby-plugin-manifest',

@@ -41,7 +41,10 @@ export default LearnLayout;
 
 export const query = graphql`
   query DocBySlug($slug: String!) {
-    doc: markdownRemark(fields: { slug: { eq: $slug } }) {
+    doc: markdownRemark(
+      fields: { slug: { eq: $slug } }
+      frontmatter: { section: { ne: "Content" } }
+    ) {
       id
       html
       tableOfContents

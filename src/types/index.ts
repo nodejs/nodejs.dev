@@ -7,18 +7,25 @@ export interface LearnPageContext {
 }
 
 export interface LearnPageData {
-  doc: {
-    id: string;
-    html: string;
-    tableOfContents: string;
-    frontmatter: {
-      title: string;
-      description: string;
-    };
-    fields: {
-      authors: string[];
-    };
+  doc: GeneratedPageDocument;
+}
+
+export interface ContentPageData {
+  content: GeneratedPageDocument;
+}
+
+interface GeneratedPageDocument {
+  id: string;
+  html: string;
+  tableOfContents: string;
+  frontmatter: {
+    title: string;
+    description: string;
   };
+  fields: {
+    authors: string[];
+  };
+  parent?: { relativePath: string };
 }
 
 export interface PaginationInfo {

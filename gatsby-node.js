@@ -7,14 +7,18 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    const docTemplate = path.resolve('./src/templates/learn.tsx');
+    const learnTemplate = path.resolve('./src/templates/learn.tsx');
+    const contentTemplate = path.resolve('./src/templates/content.tsx');
 
     resolve(
       graphql(
         `
           {
             allMarkdownRemark(
-              filter: { fields: { slug: { ne: "" } } }
+              filter: {
+                fields: { slug: { ne: "" } }
+                frontmatter: { section: { ne: "Content" } }
+              }
               sort: { fields: [fileAbsolutePath], order: ASC }
             ) {
               edges {
@@ -112,29 +116,45 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         docPages.forEach(page => {
-          createPage({
-            path: `/learn/${page.slug}`,
-            component: docTemplate,
-            context: {
-              slug: page.slug,
-              next: page.next,
-              previous: page.previous,
-              relativePath: page.relativePath,
-              navigationData,
-            },
-          });
-          if (page.slug === 'introduction-to-nodejs') {
-            createPage({
-              path: `/learn`,
-              component: docTemplate,
-              context: {
-                slug: page.slug,
-                next: page.next,
-                previous: page.previous,
-                relativePath: page.relativePath,
-                navigationData,
-              },
-            });
+          switch (page.slug) {
+            case 'installing-via-package-manager':
+              // createPage({
+              //   path: `/`,
+              //   component: contentTemplate,
+              //   context: {
+              //     slug: page.slug,
+              //     next: page.next,
+              //     previous: page.previous,
+              //     relativePath: page.relativePath,
+              //     navigationData,
+              //   },
+              // });
+              break;
+            case 'introduction-to-nodejs':
+              createPage({
+                path: `/learn`,
+                component: learnTemplate,
+                context: {
+                  slug: page.slug,
+                  next: page.next,
+                  previous: page.previous,
+                  relativePath: page.relativePath,
+                  navigationData,
+                },
+              });
+              break;
+            default:
+              createPage({
+                path: `/learn/${page.slug}`,
+                component: learnTemplate,
+                context: {
+                  slug: page.slug,
+                  next: page.next,
+                  previous: page.previous,
+                  relativePath: page.relativePath,
+                  navigationData,
+                },
+              });
           }
         });
       })
