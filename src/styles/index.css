@@ -108,6 +108,8 @@
     box-shadow: 5px 10px 50px rgba(0, 0, 0, .25);
     color: var(--black0);
     z-index: 2;
+    /* TODO: We need to contain both content and scrolling  */
+    overflow: scroll;
 }
 
 .leafs-front {
