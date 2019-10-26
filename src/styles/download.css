@@ -1,0 +1,52 @@
+.download-page {
+  background-color: var(--color-fill-canvas);
+}
+
+.download-page-content {
+  margin: 0 auto;
+  max-width: 960px;
+  padding-top: var(--space-80)
+}
+
+.release-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-64) 0;
+}
+
+.release-card {
+  width: 165px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: var(--color-fill-app);
+  margin: 10px;
+  border: 1px solid var(--color-border-secondary);
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.release-card-title {
+  font-size: 1.60rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-subheading);
+  margin-top: 5px;
+}
+.release-card-filename {
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.release-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.release-table td, th {
+  border-bottom: 1px solid var(--color-border-primary);
+  text-align: left;
+  padding: 1rem;
+}

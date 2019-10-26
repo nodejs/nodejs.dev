@@ -7,7 +7,7 @@ interface Props {
 
 const ReleaseTable = ({ releases }: Props): JSX.Element => {
   return (
-    <table>
+    <table className="release-table">
       <thead>
         <tr>
           <td>Version</td>
@@ -17,6 +17,7 @@ const ReleaseTable = ({ releases }: Props): JSX.Element => {
           <td>NPM</td>
           <td>ABI</td>
           <td>SHASUM</td>
+          <td></td>
         </tr>
       </thead>
       <tbody>
