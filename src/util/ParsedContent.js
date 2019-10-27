@@ -71,38 +71,43 @@ export class ParsedContent {
     if (ownerDocument === null || template === null) return null;
     if (generatedContent == null) return document.createDocumentFragment();
 
+    // template.innerHTML = `<scope>${generatedContent.html}</scope>`;
     template.innerHTML = generatedContent.html;
     return template.content.cloneNode(true);
   }
 
   /** @param {ParsedContent} content */
   static parseFragment(content) {
-    if (!content || !ParsedContent[Symbol.hasInstance](content)) return null;
-
-    const parsedHTML = '';
+    if (!content || !ParsedContent[Symbol.hasInstance](content)) return;
 
     const { documentFragment: fragment, ownerDocument: document } = content;
 
-    if (!fragment || !document) return; // parsedHTML;
+    if (!fragment || !document) return;
 
     const { textContent: generatedHTML } = fragment;
 
-    if (!generatedHTML || !generatedHTML.trim()) return; // generatedHTML;
+    if (!generatedHTML || !generatedHTML.trim()) return;
 
     ParsedContent.processCodeBlocks(content);
     ParsedContent.processAnchorTargets(content);
     ParsedContent.processSections(content);
+
+    // return;
   }
 
   /** @param {ParsedContent} content */
   static processSections(content) {
+    // debugger;
     if (!content || !content.documentFragment || !content.ownerDocument) return;
     /* eslint-disable */
-    content.sections = Object.freeze(
-      /** @type {HTMLElement[]} */ ([
-        ...content.documentFragment.querySelectorAll(':scope > section[name]'),
-      ])
-    );
+
+    const parent = content.documentFragment.querySelector(':root > article:first-of-type:last-of-type') || content.documentFragment;
+    /** @type {HTMLElement[]} */
+    const sections = /** @type {HTMLElement[]} */ ([
+      ...content.documentFragment.querySelectorAll('section[name]:not(:empty)'),
+    ]).filter(section => section.parentNode === parent);
+
+    content.sections = Object.freeze(sections);
     /* eslint-enable */
   }
 
@@ -185,7 +190,8 @@ export class ParsedContent {
   /** @param {GeneratedContent} [content] @param {Document} [ownerDocument] */
   constructor(content, ownerDocument) {
     /* eslint-disable */
-    if (!ownerDocument) ownerDocument = typeof document === 'object' && document || undefined;
+    if (!ownerDocument)
+      ownerDocument = (typeof document === 'object' && document) || undefined;
     this.ownerDocument =
       /** @type {Document | null | undefined} */ ((ownerDocument != null &&
         typeof ownerDocument === 'object' &&
@@ -210,10 +216,10 @@ export class ParsedContent {
   }
   /* eslint-enable */
 
-  /** @type {string} */
-  get parsedHTML() {
-    return this[ParsedContent.HTML] || '';
-  }
+  // /** @type {string} */
+  // get parsedHTML() {
+  //   return this[ParsedContent.HTML] || '';
+  // }
 
   /** @type {DocumentFragment | undefined} */
   get documentFragment() {
@@ -236,7 +242,7 @@ export class ParsedContent {
     if (!value) {
       this[ParsedContent.CONTENT] = undefined;
       this[ParsedContent.FRAGMENT] = undefined;
-      this[ParsedContent.HTML] = undefined;
+      // this[ParsedContent.HTML] = undefined;
       this.sections = ParsedContent.empty;
       return;
     }
@@ -249,7 +255,8 @@ export class ParsedContent {
     }
     this[ParsedContent.CONTENT] = value;
     this[ParsedContent.FRAGMENT] = ParsedContent.createFragment(this);
-    this[ParsedContent.HTML] = ParsedContent.parseFragment(this) || undefined;
+    // this[ParsedContent.HTML] = ParsedContent.parseFragment(this) || undefined;
+    ParsedContent.parseFragment(this);
   }
 
   static get CONTENT() {
@@ -272,15 +279,15 @@ export class ParsedContent {
     return value;
   }
 
-  static get HTML() {
-    const value = Symbol('ParsedContent.html');
-    Object.defineProperty(ParsedContent, 'HTML', {
-      value,
-      enumerable: false,
-      writable: false,
-    });
-    return value;
-  }
+  // static get HTML() {
+  //   const value = Symbol('ParsedContent.html');
+  //   Object.defineProperty(ParsedContent, 'HTML', {
+  //     value,
+  //     enumerable: false,
+  //     writable: false,
+  //   });
+  //   return value;
+  // }
 }
 
 // @ts-ignore

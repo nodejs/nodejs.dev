@@ -40,11 +40,13 @@ export interface Props {
 class DemoTabs extends React.Component<Props> {
   public parsedContent: ParsedContent;
 
+  public parsedFragment: DocumentFragment | null;
+
   public articleRef: React.RefObject<HTMLElement>;
 
   public selectRef: React.RefObject<HTMLSelectElement>;
 
-  public optionMap: Map<HTMLOptionElement, HTMLElement>;
+  public optionMap: WeakMap<HTMLOptionElement, HTMLElement>;
 
   public options: HTMLOptionElement[];
 
@@ -57,10 +59,11 @@ class DemoTabs extends React.Component<Props> {
     this.parsedContent = (props && props.parsedContent) || new ParsedContent();
     this.articleRef = React.createRef();
     this.selectRef = React.createRef();
-    this.optionMap = new Map<HTMLOptionElement, HTMLElement>();
+    this.optionMap = new WeakMap<HTMLOptionElement, HTMLElement>();
     this.options = [];
     this.sections = [];
     this.currentSection = null;
+    this.parsedFragment = null;
   }
 
   public componentDidMount() {
@@ -68,69 +71,77 @@ class DemoTabs extends React.Component<Props> {
   }
 
   public populate() {
+    if (this.parsedFragment === this.parsedContent.documentFragment) return;
+
     /* eslint-disable */
-    this.options.splice(0, this.options.length);
-    this.sections.splice(0, this.sections.length);
-    this.currentSection = null;
-
-    // @ts-ignore
-    for (const node of [].concat(...this.optionMap.entries()))
-      node && node.remove();
-
-    this.optionMap.clear();
 
     const {
       parsedContent,
+      parsedFragment,
       articleRef: { current: articleNode },
       selectRef: { current: selectNode },
     } = this;
 
-    if (!articleNode || !selectNode) return; // requestAnimationFrame(() => this.populate());
+    const splicedNodes = [
+      ...this.options.splice(0, this.options.length),
+      ...this.sections.splice(0, this.sections.length),
+    ];
 
-    for (const node of [
-      // @ts-ignore
-      ...articleNode.querySelectorAll(':scope > section'),
-      // @ts-ignore
-      ...selectNode.childNodes,
-    ])
-      node && node.remove();
+    this.currentSection = null;
+
+    // @ts-ignore
+    for (const node of splicedNodes) node.remove();
+
+    if (!articleNode || !selectNode) return;
 
     if (parsedContent.sections) {
-      this.sections.push(...this.parsedContent.sections);
-
-      for (const section of this.sections) {
-        section.removeAttribute('visible');
-        const name = section.getAttribute('name') || '';
+      for (const section of parsedContent.sections) {
+        const clone = section.cloneNode(true) as HTMLElement;
+        clone.removeAttribute('visible');
+        const name = clone.getAttribute('name') || '';
         const option = selectNode.appendChild(document.createElement('option'));
-        this.optionMap.set(option, section);
+        this.optionMap.set(option, clone);
         option.setAttribute('value', (option.innerText = name));
+        this.sections.push(clone);
         this.options.push(option);
+        const heading = /** @type {HTMLHeadingElement} */ clone.querySelector(
+          `h2:first-child,h3:first-child`
+        );
+        if (heading && heading.parentElement === clone) heading.hidden = true;
       }
 
-      // articleNode.append(... this.sections);
       articleNode.append(...this.sections, ...articleNode.children);
       selectNode.append(...this.options);
+
       this.select(this.sections[0]);
     }
+
+    this.parsedFragment = parsedFragment;
     /* eslint-enable */
   }
 
   public select(selection: HTMLOptionElement | HTMLElement) {
     /* eslint-disable */
-    !selection ||
-      this.sections.includes(selection) ||
-      // @ts-ignore
-      (selection = this.optionMap.get(selection));
+    selection === undefined
+      ? (selection = this.sections[0])
+      : !selection ||
+        this.sections.includes(selection) ||
+        // @ts-ignore
+        (selection = this.optionMap.get(selection));
     if (!selection || selection === this.currentSection) return;
     if (this.currentSection != null)
       this.currentSection.removeAttribute('visible');
     selection.setAttribute('visible', '');
     this.currentSection = selection;
 
-    const heading = /** @type {HTMLHeadingElement} */ this.currentSection.querySelector(
-      'h2:first-child, h3:first-child'
-    );
-    if (heading) heading.hidden = true;
+    const name = selection.getAttribute('name');
+
+    !this.selectRef.current ||
+      !this.selectRef.current.parentElement ||
+      this.selectRef.current.parentElement.setAttribute(
+        'aria-selected',
+        name || ''
+      );
     /* eslint-enable */
   }
 
@@ -159,9 +170,6 @@ class DemoTabs extends React.Component<Props> {
                 <footer>
                   <hr />
                   <AuthorsList authors={fields.authors} />
-                  {parent && parent.relativePath && (
-                    <EditLink relativePath={parent.relativePath} />
-                  )}
                 </footer>
               );
             }}
