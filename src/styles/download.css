@@ -20,10 +20,18 @@
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: var(--color-fill-app);
-  margin: 10px;
+  margin: 0px 20px;
   border: 1px solid var(--color-border-secondary);
   border-radius: 4px;
   padding: 10px;
+}
+
+.release-card i {
+  color: var(--color-brand-primary);
+  font-size: 3rem;
+  background: var(--color-fill-canvas);
+  padding: 10px;
+  border-radius: 50%;
 }
 
 .release-card-title {
@@ -33,13 +41,17 @@
   margin-top: 5px;
 }
 .release-card-filename {
+  text-decoration: none;
   font-size: var(--font-size-caption);
   line-height: var(--line-height-caption);
   font-weight: var(--font-weight-regular);
   color: var(--color-text-secondary);
-  text-decoration: none;
+  margin-top: 5px;
 }
-
+.release-card-download {
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
 .release-table {
   border-collapse: collapse;
   width: 100%;
