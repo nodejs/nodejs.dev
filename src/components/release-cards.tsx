@@ -9,18 +9,19 @@ export default function ReleaseCards({ line }: Props): JSX.Element {
   const fileName = line && line.version;
   return (
     <div className="release-card-container">
-      <div className="release-card">
-        <i className="material-icons">cloud</i>
-        <p className="release-card-title">Windows Installer</p>
-        <a
-          className="release-card-filename"
-          href={`https://nodejs.org/dist/${fileName}/node-${line &&
-            line.version}-x86.msi`}
-        >
-          {' '}
-          node-{line && line.version}.x86.msi
-        </a>
-      </div>
+      <a
+        className="release-card-download"
+        href={`https://nodejs.org/dist/${fileName}/node-${line &&
+          line.version}-x86.msi`}
+      >
+        <div className="release-card">
+          <i className="material-icons">cloud</i>
+          <p className="release-card-title">Windows Installer</p>
+          <p className="release-card-filename">
+            node-{line && line.version}.x86.msi
+          </p>
+        </div>
+      </a>
       <div className="release-card">
         <i className="material-icons">cloud</i>
         <p className="release-card-title">Mac Installer</p>
