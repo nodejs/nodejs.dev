@@ -58,3 +58,16 @@ export interface SentinelObserverSetupOptions {
   headerRootMargin?: string;
   footerRootMargin?: string;
 }
+
+declare global {
+  interface NodeListOf<TNode extends Node> extends NodeList {
+    [Symbol.iterator](): Iterator<TNode>;
+  }
+  interface HTMLCollection {
+    [Symbol.iterator](): Iterator<HTMLElement>;
+  }
+
+  interface Element {
+    hidden: boolean;
+  }
+}

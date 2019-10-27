@@ -98,18 +98,153 @@
     position: relative;
 }
 
+.node-demo:after {
+    display: block;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    content: '';
+    box-shadow: inset 1px 1px 0.75px #fff3;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 1;
+}
+
 .node-demo {
+    position: relative;
+    --fill-color: var(--black9);
     width: 832px;
     margin: 0 auto;
     margin-bottom: 240px;
     height: 374px;
-    background: var(--black9);
+    background: var(--fill-color);
     border-radius: var(--space-04);
-    box-shadow: 5px 10px 50px rgba(0, 0, 0, .25);
+    box-shadow: 5px 10px 50px rgba(0, 0, 0, 0.25);
     color: var(--black0);
     z-index: 2;
-    /* TODO: We need to contain both content and scrolling  */
-    overflow: scroll;
+    overflow: hidden;
+    box-sizing: padding-box;
+    display: flex;
+    flex-flow: column;
+    place-content: stretch;
+    place-items: stretch;
+    padding: 0;
+    contain: paint;
+}
+
+.node-demo > article > section,
+.node-demo > article {
+    outline: 1px solid red;
+}
+
+.node-demo > article {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: calc(100% - 3em);
+    max-width: none;
+    margin: 0;
+    overflow-y: scroll;
+    display: block;
+    flex: 1;
+    padding: 1.5em;
+    overscroll-behavior: contain;
+    z-index: -1;
+    font-family: var(--mono);
+}
+
+.node-demo > label {
+    position: relative;
+    padding-left: 5em;
+    padding-right: 5em;
+    border-radius: inherit;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+}
+
+.node-demo > label:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background-color: var(--fill-color);
+    opacity: 0.9;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: -1;
+}
+.node-demo > label:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    background-image: url(../images/window-buttons.svg);
+    background-position: 5% 50%;
+    background-repeat: no-repeat;
+    background-size: auto 40%;
+    height: 100%;
+    width: 25%;
+    pointer-events: none;
+    border-radius: inherit;
+    /* width: 8em; */
+}
+
+.node-demo:not(:hover) > label:after {
+    background-image: url(../images/window-buttons-disabled.svg);
+}
+
+.node-demo footer {
+    margin-top: 5em;
+}
+
+.node-demo > label > select {
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    z-index: 1;
+}
+
+.node-demo > article > section[visible] {
+    display: contents;
+}
+.node-demo > article > section:not([visible]) {
+    display: none;
+}
+
+.node-demo > article pre {
+    white-space: pre-wrap;
+    position: relative;
+    width: inherit;
+    overflow-x: hidden;
+}
+
+pre > code.line {
+    -webkit-padding-start: 1em;
+    padding-inline-start: 1em;
+    text-indent: -1em;
+    display: inline-block;
+    white-space: pre-wrap;
+}
+
+pre > code.line.shell-command:before {
+    content: '\203A';
+    display: inline-block;
+    position: absolute;
+    text-indent: -0.75em;
+    color: var(--color-text-accent);
+    width: 0.75em;
 }
 
 .leafs-front {

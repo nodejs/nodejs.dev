@@ -5,6 +5,8 @@ authors: fhemberger, XhmikosR, vsemozhetbyt, nschonni, kasicka, cassidyjames, Qa
 section: Content
 ---
 
+<section>
+
 # Installing Node.js via package manager
 
 **_Note:_** The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
@@ -32,6 +34,8 @@ section: Content
 
 ---
 
+</section><section name="Android">
+
 ## Android
 
 Android support is still experimental in Node.js, so precompiled binaries are not yet provided by Node.js developers.
@@ -44,6 +48,8 @@ pkg install nodejs
 
 Currently, Termux Node.js binaries are linked against `system-icu` (depending on `libicu` package).
 
+</section><section name="Arch Linux">
+
 ## Arch Linux
 
 Node.js and npm packages are available in the Community Repository.
@@ -52,9 +58,13 @@ Node.js and npm packages are available in the Community Repository.
 pacman -S nodejs npm
 ```
 
+</section><section name="Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages">
+
 ## Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages
 
 [Official Node.js binary distributions](https://github.com/nodesource/distributions/blob/master/README.md) are provided by NodeSource.
+
+</section><section name="FreeBSD">
 
 ## FreeBSD
 
@@ -72,6 +82,8 @@ Or compile it on your own using [ports](https://www.freebsd.org/cgi/man.cgi?port
 cd /usr/ports/www/node && make install
 ```
 
+</section><section name="Gentoo">
+
 ## Gentoo
 
 Node.js is available in the portage tree.
@@ -79,6 +91,8 @@ Node.js is available in the portage tree.
 ```bash
 emerge nodejs
 ```
+
+</section><section name="IBM i">
 
 ## IBM i
 
@@ -105,6 +119,8 @@ Or install a binary package (if available for your platform) using pkgin:
 ```bash
 pkgin -y install nodejs
 ```
+
+</section><section name="nvm">
 
 ## nvm
 
@@ -134,6 +150,8 @@ from source:
 nvm uninstall 8
 ```
 
+</section><section name="OpenBSD">
+
 ## OpenBSD
 
 Node.js is available through the ports system.
@@ -147,6 +165,8 @@ Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenB
 ```bash
 pkg_add node
 ```
+
+</section><section name="openSUSE and SLE">
 
 ## openSUSE and SLE
 
@@ -164,6 +184,8 @@ For example, to install Node.js 4.x on openSUSE Leap 42.2, run the following as 
 zypper install nodejs4
 ```
 
+</section><section name="macOS">
+
 ## macOS
 
 Simply download the [macOS Installer](https://nodejs.org/en/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
@@ -173,6 +195,8 @@ _If you want to download the package with bash:_
 ```bash
 curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
 ```
+
+</section><section name="Alternatives">
 
 ### Alternatives
 
@@ -205,6 +229,8 @@ Or build manually from pkgsrc:
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
+</section><section name="SmartOS and illumos">
+
 ## SmartOS and illumos
 
 SmartOS images come with pkgsrc pre-installed. On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
@@ -219,6 +245,8 @@ Or build manually from pkgsrc:
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
+</section><section name="Solus">
+
 ## Solus
 
 Solus provides Node.js in its main repository.
@@ -226,6 +254,8 @@ Solus provides Node.js in its main repository.
 ```bash
 sudo eopkg install nodejs
 ```
+
+</section><section name="Void Linux">
 
 ## Void Linux
 
@@ -235,9 +265,13 @@ Void Linux ships Node.js stable in the main repository.
 xbps-install -Sy nodejs
 ```
 
+</section><section name="Windows">
+
 ## Windows
 
 Simply download the [Windows Installer](https://nodejs.org/en/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+
+</section><section name="Alternatives">
 
 ### Alternatives
 
@@ -254,3 +288,5 @@ Using **[Scoop](https://scoop.sh/)**:
 ```bash
 scoop install nodejs
 ```
+
+</section>
