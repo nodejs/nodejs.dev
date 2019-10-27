@@ -182,15 +182,15 @@ export class ParsedContent {
     /* eslint-enable */
   }
 
-  /** @param {GeneratedContent} [content] @param {Document} [document] */
-  constructor(content, document) {
+  /** @param {GeneratedContent} [content] @param {Document} [ownerDocument] */
+  constructor(content, ownerDocument) {
     /* eslint-disable */
-    if (!document) document = globalThis.document;
+    if (!ownerDocument) ownerDocument = typeof document === 'object' && document || undefined;
     this.ownerDocument =
-      /** @type {Document | null | undefined} */ ((document != null &&
-        typeof document === 'object' &&
-        typeof document.createElement === 'function' &&
-        document) ||
+      /** @type {Document | null | undefined} */ ((ownerDocument != null &&
+        typeof ownerDocument === 'object' &&
+        typeof ownerDocument.createElement === 'function' &&
+        ownerDocument) ||
       null);
     this.template = /** @type {HTMLTemplateElement | null | undefined} */ (undefined);
     this.sections = ParsedContent.empty;
@@ -201,7 +201,7 @@ export class ParsedContent {
   /* eslint-disable */
   /** @param {string | Error} reason @param {new (message: string) => Error} [type] */
   throw(reason, type) {
-    throw new (typeof type === 'function' ? type : globalThis.Error)(
+    throw new (typeof type === 'function' ? type : Error)(
       (reason &&
         reason.toString !== Symbol.prototype.toString &&
         `${reason}`.trim()) ||
