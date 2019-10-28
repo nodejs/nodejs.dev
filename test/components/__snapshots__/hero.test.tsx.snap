@@ -2,27 +2,55 @@
 
 exports[`Hero component renders correctly 1`] = `
 <div
-  className="hero"
+  className="home-page-hero"
 >
   <h1>
     Introduction to Node.js
   </h1>
+  <h2
+    className="sub-title t-subheading"
+  />
   <div
-    className="diagonal-hero-bg"
+    className="btn-ctas"
   >
     <div
-      className="stars"
+      className="download-lts-container"
     >
-      <div
-        className="small"
-      />
-      <div
-        className="medium"
-      />
-      <div
-        className="big"
-      />
+      <button
+        className="download-lts-cta t-body1"
+        type="button"
+      >
+        Download Node (LTS)
+      </button>
+      <p
+        className="links t-caption"
+      >
+        Version 10.15.3
+         - 
+        <a
+          href="/download"
+        >
+          What’s new
+        </a>
+         /
+         
+        <a
+          href="/download"
+        >
+          Get Current
+        </a>
+      </p>
     </div>
+    <a
+      href="/learn"
+    >
+      <button
+        className="learn-cta t-body1"
+        type="button"
+      >
+        Learn Node
+      </button>
+    </a>
   </div>
 </div>
 `;
