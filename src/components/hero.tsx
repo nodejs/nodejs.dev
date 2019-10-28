@@ -8,7 +8,7 @@ interface Props {
 
 const NodeVersion = 'Version 10.15.3';
 
-const Hero = ({ title, subTitle }: Props) => (
+const Hero = ({ title, subTitle }: Props): JSX.Element => (
   <div className="home-page-hero">
     <h1>{title}</h1>
     <h2 className="sub-title t-subheading">{subTitle}</h2>
@@ -18,8 +18,7 @@ const Hero = ({ title, subTitle }: Props) => (
           Download Node (LTS)
         </button>
         <p className="links t-caption">
-          {NodeVersion} - <Link to="/download">What’s new</Link> /{' '}
-          <Link to="/download">Get Current</Link>
+          {NodeVersion} - <Link to="/download">What’s new</Link> / <Link to="/download">Get Current</Link>
         </p>
       </div>
       <Link to="/learn">

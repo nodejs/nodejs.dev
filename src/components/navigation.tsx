@@ -21,10 +21,7 @@ const Navigation = ({ sections, currentSlug }: Props): JSX.Element => {
   };
   const autoScroll = async (height: number): Promise<void> => {
     if (isOpen && !hasScrolled && navElement.current) {
-      const { newScrollPos, scrollWindow, scrollTime } = calcNavScrollParams(
-        height,
-        navElement.current
-      );
+      const { newScrollPos, scrollWindow, scrollTime } = calcNavScrollParams(height, navElement.current);
 
       try {
         await scrollTo(newScrollPos, scrollWindow, scrollTime);

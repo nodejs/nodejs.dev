@@ -12,6 +12,7 @@ interface Props {
   data: LearnPageData;
   pageContext: LearnPageContext;
 }
+
 const LearnLayout = ({
   data: {
     doc: {
@@ -26,18 +27,11 @@ const LearnLayout = ({
   <main>
     <Layout title={title} description={description}>
       <Navigation currentSlug={slug} sections={navigationData} />
-      <Article
-        title={title}
-        html={html}
-        tableOfContents={tableOfContents}
-        next={next}
-        authors={authors}
-        previous={previous}
-        relativePath={relativePath}
-      />
+      <Article title={title} html={html} tableOfContents={tableOfContents} next={next} authors={authors} previous={previous} relativePath={relativePath} />
     </Layout>
   </main>
 );
+
 export default LearnLayout;
 
 export const query = graphql`

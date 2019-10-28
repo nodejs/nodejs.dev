@@ -16,9 +16,7 @@ if (typeof window !== `undefined`) {
     let buffer = '';
     let lastDate = Date.now();
 
-    document.addEventListener('keyup', function triggerKonami({
-      keyCode,
-    }): void {
+    document.addEventListener('keyup', function triggerKonami({ keyCode }): void {
       if (!VALID_KEYS.has(keyCode)) {
         return;
       }
@@ -37,9 +35,6 @@ if (typeof window !== `undefined`) {
     if (discoMode) {
       return clearInterval(discoMode);
     }
-    discoMode = setInterval(
-      (): boolean => document.body.classList.toggle('dark-mode'),
-      300
-    );
+    discoMode = setInterval((): boolean => document.body.classList.toggle('dark-mode'), 300);
   });
 }

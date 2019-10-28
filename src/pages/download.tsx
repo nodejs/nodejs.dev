@@ -16,19 +16,14 @@ export default function DownloadPage(): JSX.Element {
   const description = 'Come get me!';
 
   const lts = releaseHistory.find((release): boolean => release && release.lts);
-  const current = releaseHistory.find(
-    (release): boolean => release && !release.lts
-  );
+  const current = releaseHistory.find((release): boolean => release && !release.lts);
 
   const selectedLine = ltsSelected ? lts : current;
 
   return (
     <Layout title={title} description={description}>
       <article style={{ width: '100%' }} className="article-reader">
-        <p>
-          Download the Node.js source code, a pre-built installer for your
-          platform, or install via package manager.
-        </p>
+        <p>Download the Node.js source code, a pre-built installer for your platform, or install via package manager.</p>
         <p>You are currently on a {userOS} machine</p>
         <ReleaseToggle selected={ltsSelected} onToggle={setLtsSelected} />
         <ReleaseCards line={selectedLine} />

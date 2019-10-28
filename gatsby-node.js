@@ -3,6 +3,15 @@
 const path = require('path');
 const createSlug = require('./src/util/createSlug');
 
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions;
+  if (page.path.match(/^\/docs/)) {
+    // eslint-disable-next-line no-param-reassign
+    page.matchPath = '/docs/*';
+    createPage(page);
+  }
+};
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
@@ -13,10 +22,7 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allMarkdownRemark(
-              filter: { fields: { slug: { ne: "" } } }
-              sort: { fields: [fileAbsolutePath], order: ASC }
-            ) {
+            allMarkdownRemark(filter: { fields: { slug: { ne: "" } } }, sort: { fields: [fileAbsolutePath], order: ASC }) {
               edges {
                 node {
                   id
@@ -83,8 +89,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
 
           let nextNodeData = null;
-          const nextNode =
-            index === edges.length - 1 ? undefined : edges[index + 1].node;
+          const nextNode = index === edges.length - 1 ? undefined : edges[index + 1].node;
           if (nextNode) {
             nextNodeData = {
               slug: nextNode.fields.slug,

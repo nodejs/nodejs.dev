@@ -10,10 +10,7 @@ export default function NotFoundPage(): JSX.Element {
     <Layout title={title} description={description}>
       <Hero title={title} />
       <article style={{ width: '100%' }} className="article-reader">
-        <p>
-          The page you&apos;re trying to access does not exist. Go back to the
-          Homepage or find what you&apos;re looking for in the menu.
-        </p>
+        <p>The page you&apos;re trying to access does not exist. Go back to the Homepage or find what you&apos;re looking for in the menu.</p>
         <p>
           Take me back to the
           <a href="/">Homepage</a>

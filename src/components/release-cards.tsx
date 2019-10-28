@@ -12,32 +12,17 @@ export default function ReleaseCards({ line }: Props): JSX.Element {
       <div>
         <i className="material-icons">cloud</i>
         <p>Windows Installer</p>
-        <a
-          href={`https://nodejs.org/dist/${fileName}/node-${line &&
-            line.version}-x86.msi`}
-        >
-          node-{line && line.version}.x86.msi
-        </a>
+        <a href={`https://nodejs.org/dist/${fileName}/node-${line && line.version}-x86.msi`}>node-{line && line.version}.x86.msi</a>
       </div>
       <div>
         <i className="material-icons">cloud</i>
         <p>Mac Installer</p>
-        <a
-          href={`https://nodejs.org/dist/${fileName}/node-${line &&
-            line.version}.pkg`}
-        >
-          node-{line && line.version}.pkg
-        </a>
+        <a href={`https://nodejs.org/dist/${fileName}/node-${line && line.version}.pkg`}>node-{line && line.version}.pkg</a>
       </div>
       <div>
         <i className="material-icons">cloud</i>
         <p>Source Code</p>
-        <a
-          href={`https://nodejs.org/dist/${fileName}/node-${line &&
-            line.version}.tar.gz`}
-        >
-          node-{line && line.version}.tar.gz
-        </a>
+        <a href={`https://nodejs.org/dist/${fileName}/node-${line && line.version}.tar.gz`}>node-{line && line.version}.tar.gz</a>
       </div>
     </div>
   );

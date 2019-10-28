@@ -25,7 +25,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    background-color: var(--black0);
+    background-color: var(--white);
     transform: translateX(-120%);
     transition: transform .28s;
     pointer-events: none;

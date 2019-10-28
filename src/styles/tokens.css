@@ -11,6 +11,8 @@ body {
     --sans: 'Open Sans', sans-serif;
 
     /* Colors */
+    --white: #FFFFFF;
+
     --brand2: #C5E5B4;
     --brand3: #99CC7D;
     --brand4: #84BA64;
@@ -20,7 +22,7 @@ body {
     --brand8: #215127;
     --brand9: #1A3F1D;
 
-    --black0: #FFFFFF;
+    --black0: #FCFCFD;
     --black1: #F6F7F9;
     --black2: #E9EDF0;
     --black3: #D9E1E4;
@@ -91,10 +93,10 @@ body {
     --color-border-secondary: var(--black3);
     --color-border-accent: var(--color-brand-primary);
 
-    --color-fill-app: var(--black0);
+    --color-fill-app: var(--white);
     --color-fill-canvas: var(--black1);
     --color-fill-side-nav: var(--black1);
-    --color-fill-top-nav: var(--black0);
+    --color-fill-top-nav: var(--white);
     --color-fill-action: var(--brand5); /*for actionable elements*/
 
     /* Typography */

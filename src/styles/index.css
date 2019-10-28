@@ -87,7 +87,7 @@
 .home-page-hero .btn-ctas .download-lts-cta {
     border-radius: 5.6rem;
     background: var(--color-fill-action);
-    color: var(--black0);
+    color: var(--white);
     margin-right: var(--space-32);
     position: relative;
 }
@@ -110,7 +110,7 @@
     background: var(--black9);
     border-radius: var(--space-04);
     box-shadow: 5px 10px 50px rgba(0, 0, 0, .25);
-    color: var(--black0);
+    color: var(--white);
     z-index: 2;
 }
 
@@ -212,7 +212,7 @@
     font-weight: var(--font-weight-semibold);
     background: var(--color-fill-action);
     border-radius: var(--space-04);
-    color: var(--black0);
+    color: var(--white);
     margin: 0;
     margin-left: var(--space-08);
     cursor: pointer;
@@ -274,14 +274,14 @@
     padding: var(--space-08) var(--space-24);
     font-weight: var(--font-weight-semibold);
     background: var(--color-fill-action);
-    color: var(--black0);
+    color: var(--white);
     border-radius: var(--space-04);
     text-decoration: none;
     line-height: var(--line-height-body1);
 }
 
 .btn-primary:hover, .btn-primary:focus {
-    color: var(--black0);
+    color: var(--white);
 }
 
 @keyframes leafs-animation {

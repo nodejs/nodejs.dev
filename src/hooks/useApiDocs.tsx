@@ -75,13 +75,7 @@ export interface APIResponse {
   modules: ApiDocsModule[];
 }
 
-export type ApiDocsObj =
-  | ApiDocsMiscs
-  | ApiDocsMethod
-  | ApiDocsSignature
-  | ApiDocsClass
-  | ApiDocsProp
-  | ApiDocsModule;
+export type ApiDocsObj = ApiDocsMiscs | ApiDocsMethod | ApiDocsSignature | ApiDocsClass | ApiDocsProp | ApiDocsModule;
 
 export function useApiData(version: string | null): APIResponse {
   const [apiData, setApiData] = useState<APIResponse>({
@@ -94,9 +88,7 @@ export function useApiData(version: string | null): APIResponse {
 
   useEffect((): void => {
     const fetchData = async (): Promise<void> => {
-      const res = await window.fetch(
-        `https://nodejs.org/dist/${version}/docs/api/all.json`
-      );
+      const res = await window.fetch(`https://nodejs.org/dist/v${version}/docs/api/all.json`);
       setApiData((await res.json()) as APIResponse);
     };
     if (version) {

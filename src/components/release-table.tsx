@@ -33,18 +33,10 @@ const ReleaseTable = ({ releases }: Props): JSX.Element => {
                 <td>{npm}</td>
                 <td>ABI?</td>
                 <td>
-                  <a
-                    href={`https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V${majorVersion}.md#${version.substring(
-                      1
-                    )}`}
-                  >
-                    Changelog
-                  </a>
+                  <a href={`https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V${majorVersion}.md#${version.substring(1)}`}>Changelog</a>
                 </td>
                 <td>
-                  <a href={`https://nodejs.org/download/release/${version}/`}>
-                    Download
-                  </a>
+                  <a href={`https://nodejs.org/download/release/${version}/`}>Download</a>
                 </td>
               </tr>
             );

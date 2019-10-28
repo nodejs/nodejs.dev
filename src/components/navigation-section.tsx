@@ -12,14 +12,7 @@ interface Props {
   autoScroll: (height: number) => void;
 }
 
-const NavigationSection = ({
-  title,
-  section,
-  currentSlug,
-  onItemClick,
-  readSections,
-  autoScroll,
-}: Props): JSX.Element => {
+const NavigationSection = ({ title, section, currentSlug, onItemClick, readSections, autoScroll }: Props): JSX.Element => {
   return (
     <ul className="side-nav__list">
       <h2 className="t-body2 side-nav__title">

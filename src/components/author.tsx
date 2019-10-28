@@ -28,11 +28,7 @@ interface Props {
   size: string;
 }
 
-const Author = ({
-  index,
-  username,
-  size = '64',
-}: Props): null | JSX.Element => {
+const Author = ({ index, username, size = '64' }: Props): null | JSX.Element => {
   if (!username) {
     return null;
   }
@@ -47,21 +43,8 @@ const Author = ({
 
   return (
     <li css={list}>
-      <a
-        css={link}
-        href={githubLink}
-        title={username}
-        key={username}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={mleft}
-      >
-        <img
-          css={img}
-          className="author-img"
-          src={githubImgLink}
-          alt={username}
-        />
+      <a css={link} href={githubLink} title={username} key={username} target="_blank" rel="noopener noreferrer" style={mleft}>
+        <img css={img} className="author-img" src={githubImgLink} alt={username} />
       </a>
     </li>
   );

@@ -313,3 +313,19 @@ details,
   height: 40px;
   bottom: 0;
 }
+
+.article-header {
+  background-color: var(--black0);
+  background-image: url(../images/illustrations/article-header-background.svg);
+  background-size: contain;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  min-height: 480px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  padding: 3.2rem 6.2rem;
+}
+.dark-mode .article-header {
+  background-color: var(--color-fill-side-nav);
+}

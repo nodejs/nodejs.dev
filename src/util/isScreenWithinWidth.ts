@@ -9,16 +9,11 @@ const MAX_MOBILE_SCREEN_WIDTH = 720;
 const isScreenWithinWidth = (maxWidth: number): boolean => {
   // Get viewport width
   // Source - https://stackoverflow.com/a/8876069/2621400
-  const w = Math.max(
-    document.documentElement.clientWidth,
-    window.innerWidth || 0
-  );
+  const w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
   return w <= maxWidth;
 };
 
-export const isSmallScreen = (): boolean =>
-  isScreenWithinWidth(MAX_SMALL_SCREEN_WIDTH);
+export const isSmallScreen = (): boolean => isScreenWithinWidth(MAX_SMALL_SCREEN_WIDTH);
 
-export const isMobileScreen = (): boolean =>
-  isScreenWithinWidth(MAX_MOBILE_SCREEN_WIDTH);
+export const isMobileScreen = (): boolean => isScreenWithinWidth(MAX_MOBILE_SCREEN_WIDTH);

@@ -11,14 +11,7 @@ interface Props {
   autoScroll: (height: number) => void;
 }
 
-const NavigationItem = ({
-  isRead,
-  isActive,
-  slug,
-  title,
-  onClick,
-  autoScroll,
-}: Props): JSX.Element => {
+const NavigationItem = ({ isRead, isActive, slug, title, onClick, autoScroll }: Props): JSX.Element => {
   let className = 't-body2 side-nav__item ';
   if (isRead) {
     className += 'side-nav__item--done';
@@ -40,12 +33,7 @@ const NavigationItem = ({
   });
 
   return (
-    <Link
-      innerRef={handleRef}
-      to={`/learn/${slug}`}
-      onClick={onClick}
-      className={className}
-    >
+    <Link innerRef={handleRef} to={`/learn/${slug}`} onClick={onClick} className={className}>
       {title}
     </Link>
   );

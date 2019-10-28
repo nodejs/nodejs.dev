@@ -5,10 +5,7 @@ interface Props {
   selected: boolean;
 }
 
-export default function ReleaseToggle({
-  onToggle,
-  selected,
-}: Props): JSX.Element {
+export default function ReleaseToggle({ onToggle, selected }: Props): JSX.Element {
   const handleClick = (): void => {
     onToggle(!selected);
   };
@@ -16,12 +13,7 @@ export default function ReleaseToggle({
   const id = Math.random() * (100000 - 1) + 1;
   return (
     <label htmlFor={`release-selector-${id}`}>
-      <input
-        id={`release-selector-${id}`}
-        type="checkbox"
-        checked={selected}
-        onChange={handleClick}
-      ></input>
+      <input id={`release-selector-${id}`} type="checkbox" checked={selected} onChange={handleClick}></input>
       {selected ? 'lts' : 'current'}
     </label>
   );

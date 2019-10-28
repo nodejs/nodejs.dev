@@ -24,14 +24,11 @@ import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
 import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
 import dotsIllustration from '../images/illustrations/dots.svg';
 
-const nodeFeature1 =
-  'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
-const nodeFeature2 =
-  'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
-const nodeFeature3 =
-  'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
+const nodeFeature1 = 'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
+const nodeFeature2 = 'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
+const nodeFeature3 = 'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
 
-const NodeFeature = ({ img, featureText }: Props) => {
+const NodeFeature = ({ img, featureText }: Props): JSX.Element => {
   return (
     <div className="node-features__feature">
       <img src={img} alt="node feature" />
@@ -47,11 +44,7 @@ export default function Index(): JSX.Element {
   const description = 'Welcome to Node.js!';
 
   return (
-    <Layout
-      title={title}
-      description={description}
-      style={{ overflow: 'hidden' }}
-    >
+    <Layout title={title} description={description} style={{ overflow: 'hidden' }}>
       <div className="home-page">
         <Hero title={title} subTitle={subTitle} />
 
@@ -74,16 +67,9 @@ export default function Index(): JSX.Element {
             <span className="accent">Join</span> the community
           </h4>
           <div className="join-node-form-container">
-            <p className="t-body2">
-              We’ll never share your information and always respect your inbox -
-              quality content only, we promise.{' '}
-            </p>
+            <p className="t-body2">We’ll never share your information and always respect your inbox - quality content only, we promise. </p>
             <div style={{ display: `flex`, alignItems: 'flex-start' }}>
-              <input
-                type="email"
-                placeholder="node@nodejs.dev"
-                className="input-subscribe"
-              />
+              <input type="email" placeholder="node@nodejs.dev" className="input-subscribe" />
               <button className="btn-subscribe t-body1" type="button">
                 Subscribe
               </button>
@@ -92,9 +78,7 @@ export default function Index(): JSX.Element {
         </section>
 
         <section className="trusted-by">
-          <h4 className="t-headline">
-            Trusted by development teams around the world
-          </h4>
+          <h4 className="t-headline">Trusted by development teams around the world</h4>
           <p>Including IBM, LinkedIn, Microsoft, Netflix, and PayPal.</p>
           <div className="logos-container">
             <img src={logoImg1} alt="ibm logo" />
@@ -109,19 +93,13 @@ export default function Index(): JSX.Element {
           <Link to="/learn" className="get-started-callout">
             <img src={GetStartedIllustration1} alt="" />
             <h5 className="t-headline">A beginner’s guide</h5>
-            <p>
-              Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos
-              meh.
-            </p>
+            <p>Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh.</p>
           </Link>
 
           <Link to="/docs" className="get-started-callout">
             <img src={GetStartedIllustration2} alt="" />
             <h5 className="t-headline">Do even more with Node</h5>
-            <p>
-              Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos
-              meh.
-            </p>
+            <p>Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh.</p>
           </Link>
         </section>
 
@@ -129,16 +107,8 @@ export default function Index(): JSX.Element {
           Get Started
         </Link>
       </div>
-      <img
-        className="pentagon-illustration-big1"
-        src={pentagonIllustration1}
-        alt=""
-      />
-      <img
-        className="pentagon-illustration-big2"
-        src={pentagonIllustration2}
-        alt=""
-      />
+      <img className="pentagon-illustration-big1" src={pentagonIllustration1} alt="" />
+      <img className="pentagon-illustration-big2" src={pentagonIllustration2} alt="" />
       <div className="double-background"></div>
     </Layout>
   );

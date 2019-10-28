@@ -8,16 +8,8 @@ const easeInOutCubic = (t: number, b: number, c: number, d: number) =>
     : (c / 2) * ((t -= 2) * t * t + 2) + b;
 /* eslint-enable */
 
-export function scrollTo(
-  scrollToPoint: number,
-  element: HTMLElement | null = null,
-  duration: number = 333
-): Promise<boolean> {
-  const start =
-    ((element && element.scrollTop) ||
-      window.pageYOffset ||
-      document.documentElement.scrollTop) -
-    ((element && element.clientTop) || 0);
+export function scrollTo(scrollToPoint: number, element: HTMLElement | null = null, duration: number = 333): Promise<boolean> {
+  const start = ((element && element.scrollTop) || window.pageYOffset || document.documentElement.scrollTop) - ((element && element.clientTop) || 0);
   const change = scrollToPoint - start;
   let previousTime = window.performance.now();
   let currentTime = 0;
@@ -28,10 +20,7 @@ export function scrollTo(
       const increment = time - previousTime;
       previousTime = time;
       currentTime += increment;
-      (element || document.scrollingElement || window).scrollTo(
-        0,
-        easeInOutCubic(currentTime, start, change, duration)
-      );
+      (element || document.scrollingElement || window).scrollTo(0, easeInOutCubic(currentTime, start, change, duration));
       if (currentTime < duration) {
         window.requestAnimationFrame(animateScroll);
       }
@@ -50,10 +39,7 @@ interface ScrollParams {
   scrollTime: number;
 }
 
-export const calcNavScrollParams = (
-  linkHeight: number,
-  navElement: HTMLElement
-): ScrollParams => {
+export const calcNavScrollParams = (linkHeight: number, navElement: HTMLElement): ScrollParams => {
   const navRect = navElement.getBoundingClientRect();
   let newScrollPos: number;
   let scrollWindow: HTMLElement | null;
@@ -64,10 +50,7 @@ export const calcNavScrollParams = (
   } else {
     // tablet
     scrollWindow = navElement;
-    newScrollPos =
-      linkHeight -
-      navRect.top -
-      (navElement.offsetHeight - navElement.offsetTop) / 2;
+    newScrollPos = linkHeight - navRect.top - (navElement.offsetHeight - navElement.offsetTop) / 2;
   }
   const scrollTime = newScrollPos * SPEED_MODIFIER + BASE_TIME;
 

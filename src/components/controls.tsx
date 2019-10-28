@@ -48,11 +48,7 @@ interface Props {
   controller?: DarkModeController;
 }
 
-const Controls = ({
-  lightModeIcon = 'wb_sunny',
-  darkModeIcon = 'nights_stay',
-  controller = new DarkModeController(),
-}: Props) => (
+const Controls = ({ lightModeIcon = 'wb_sunny', darkModeIcon = 'nights_stay', controller = new DarkModeController() }: Props): JSX.Element => (
   <header css={controlsStyles.header}>
     <div id="controls" css={controlsStyles.controls}>
       <span>

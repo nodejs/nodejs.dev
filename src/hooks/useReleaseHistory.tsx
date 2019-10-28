@@ -19,9 +19,7 @@ export function useReleaseHistory(): ReleaseData[] {
   const [releaseHistory, setReleaseHistory] = useState<ReleaseData[]>([]);
   useEffect((): void => {
     const fetchData = async (): Promise<void> => {
-      const result = await fetch(releasesURL).then(
-        (data): Promise<ReleaseData[]> => data.json()
-      );
+      const result = await fetch(releasesURL).then((data): Promise<ReleaseData[]> => data.json());
       setReleaseHistory(result);
     };
     fetchData();

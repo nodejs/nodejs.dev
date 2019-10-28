@@ -202,3 +202,24 @@
 .api-key__item--misc {
   display: none;
 }
+
+.version-meta {
+  border: 1px solid var(--black2);
+  max-width: 54.0rem;
+  border-radius: 4px;
+}
+
+.version-meta td {
+  padding: 0.6rem 1.2rem;
+  width: 50%;
+}
+.version-meta td:first-of-type {
+  font-weight: 600;
+}
+tr:nth-of-type(2n) {
+  background-color: var(--black1);
+}
+
+.dark-mode tr:nth-of-type(2n) {
+  background: black;
+}

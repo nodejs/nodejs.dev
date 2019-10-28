@@ -17,14 +17,7 @@ interface Props {
   darkModeController?: DarkModeController;
 }
 
-const Layout = ({
-  children,
-  title,
-  description,
-  img,
-  location,
-  darkModeController = new DarkModeController(),
-}: Props): JSX.Element => {
+const Layout = ({ children, title, description, img, darkModeController = new DarkModeController() }: Props): JSX.Element => {
   return (
     <React.Fragment>
       <SEO title={title} description={description} img={img} />

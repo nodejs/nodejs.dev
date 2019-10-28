@@ -15,15 +15,7 @@ interface Props {
   previous?: PaginationInfo;
 }
 
-const Article = ({
-  title,
-  html,
-  tableOfContents,
-  previous,
-  next,
-  relativePath,
-  authors,
-}: Props): JSX.Element => (
+const Article = ({ title, html, tableOfContents, previous, next, relativePath, authors }: Props): JSX.Element => (
   <article className="article-reader">
     <h1 className="article-reader__headline">{title}</h1>
     <TOC heading="TABLE OF CONTENTS" tableOfContents={tableOfContents} />
