@@ -50,7 +50,6 @@
   text-decoration: underline;
 }
 
-
 .api-key {
   padding : 0;
   list-style: none;
@@ -72,7 +71,6 @@
   padding: 0.8rem;
   margin: 0.8rem 0;
 }
-
 
 .api-key__section .api-key__item:hover,
 .api-key__section .api-key__item > a:hover,

@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 import Navigation from '../components/navigation';
 import { LearnPageContext, LearnPageData } from '../types';
 
+import '../styles/article-reader.css';
 import '../styles/learn.css';
 import Footer from '../components/footer';
 

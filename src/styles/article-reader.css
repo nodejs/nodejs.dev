@@ -1,0 +1,84 @@
+.article-reader {
+    max-width: 768px;
+    padding-left: 4.2rem;
+    padding-top: var(--space-80);
+    width: calc(100% - 36.0rem);
+}
+  
+.article-reader hr {
+    border: none;
+    border-bottom: 0.4rem solid var(--black2);
+}
+  
+  /* sr-only for desktop */
+.article-reader__headline {
+    padding: 0;
+}
+  
+.hero h1 {
+    cursor: pointer;
+}
+  
+.article-reader blockquote {
+    border-left: 3px solid var(--black4);
+    color: var(--color-text-primary);
+    font-style: italic;
+    font-weight: 200;
+    letter-spacing: 1px;
+    margin: 0 0 2.8rem 0;
+    padding: 1.8rem 0 1.8rem 3.2rem;
+}
+  
+.article-reader blockquote p {
+    margin: 0;
+    padding: 0;
+}
+
+.article-reader section {
+    margin-bottom: var(--space-48)
+}
+
+.article-reader ul {
+    margin-bottom: var(--space-24);
+}
+
+.article-reader li + h4 {
+    margin-top: var(--space-32);
+}
+
+.article-reader li {
+  margin-bottom: var(--space-08);
+}
+
+.article-reader h3 {
+    margin-bottom: var(--space-24);
+}
+
+.article-reader h4 {
+    margin-bottom: var(--space-16);
+}
+
+.article-reader hr {
+    margin-bottom: var(--space-40);
+}
+
+.article-reader details {
+    margin-bottom: var(--space-24)
+}
+
+.article-reader iframe {
+    margin-bottom: var(--space-24);
+}
+
+.article-reader p + h2 {
+    margin-top: var(--space-40);
+  }
+  
+.article-reader p + h3 {
+    margin-top: var(--space-32);
+}
+
+.article-reader .api-key__section {
+    /* margin-bottom: 0; */
+}
+  
