@@ -31,7 +31,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
           onClick={[Function]}
           type="button"
         >
-          🇺🇸 English
+          English
            
           <span>
             ⏷

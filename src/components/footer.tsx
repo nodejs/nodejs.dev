@@ -3,15 +3,15 @@ import { Link } from 'gatsby';
 import { css, SerializedStyles } from '@emotion/core';
 
 const dropDownData = [
-  '🇦🇪 العربية',
-  '🇦🇩 Catalan',
-  '🇩🇪 Deutsche',
-  '🇺🇸 English',
-  '🇪🇸 Español',
-  '🇫🇷 Français',
-  '🇪🇸 Galego',
-  '🇮🇳 हिंदी',
-  '🇮🇷 زبان فارسی',
+  'العربية',
+  'Catalan',
+  'Deutsche',
+  'English',
+  'Español',
+  'Français',
+  'Galego',
+  'हिंदी',
+  'زبان فارسی',
 ];
 
 const DropDownContainer: SerializedStyles = css`
@@ -65,7 +65,7 @@ export interface DropDownState {
 
 const FooterDropDown: React.FC = (): JSX.Element => {
   const [state, setState] = useState<DropDownState>({
-    active: 3,
+    active: 3, // Index of currently selected element.
     isOpen: false,
     shouldDropDownBlur: true,
   });
@@ -117,7 +117,8 @@ const FooterDropDown: React.FC = (): JSX.Element => {
                 key={data}
                 type="button"
                 css={DropDownContainerButton}
-                onClick={() => handleOnSelectLang(index)}
+                style={{ padding: 0 }}
+                onClick={(): void => handleOnSelectLang(index)}
               >
                 {data}
               </button>
