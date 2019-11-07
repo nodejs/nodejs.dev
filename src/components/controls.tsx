@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import DarkModeController from '../util/DarkModeController';
+import darkModeController from '../util/darkModeController';
 
 const controlsStyles = {
   header: css/* scss */ `
@@ -45,14 +45,12 @@ const controlsStyles = {
 interface Props {
   lightModeIcon?: string;
   darkModeIcon?: string;
-  controller?: DarkModeController;
 }
 
 const Controls = ({
   lightModeIcon = 'wb_sunny',
   darkModeIcon = 'nights_stay',
-  controller = new DarkModeController(),
-}: Props) => (
+}: Props = {}) => (
   <header css={controlsStyles.header}>
     <div id="controls" css={controlsStyles.controls}>
       <span>
@@ -61,11 +59,9 @@ const Controls = ({
           css={controlsStyles.button}
           id="contrast"
           title="Dark/Light"
-          onPointerDown={(): void => {
-            controller.onPointerDown();
-          }}
-          onPointerUp={(): void => {
-            controller.onPointerUp();
+          {...{
+            onPointerDown: darkModeController.handleEvent,
+            onPointerUp: darkModeController.handleEvent,
           }}
         >
           <span className="sr-only">Toggle Dark Mode</span>

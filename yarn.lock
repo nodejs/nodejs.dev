@@ -1547,6 +1547,11 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
+"@smotaal.io/dark-mode-controller@*":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@smotaal.io/dark-mode-controller/-/dark-mode-controller-0.0.2.tgz#966e1c1390fb0d25acfd511e5bec83c98cba269d"
+  integrity "sha1-lm4cE5D7DSWs/VEeW+yDyYy6Jp0= sha512-a+kVzV+TRM13mok5BUFkE3BDjFELd1H3ebQLa6hkjD1yBPW2fMbWhzMGuyY5zImjnBA2ZfP2+ZarN7NdRr8Dvw=="
+
 "@types/babel__core@^7.1.0":
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.2.tgz#608c74f55928033fce18b99b213c16be4b3d114f"
