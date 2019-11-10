@@ -52,19 +52,16 @@ const Header = () => (
         <button
           type="button"
           className="dark-mode-toggle"
-          onClick={
-            darkModeController
-              ? undefined
-              : () => {
-                  document.body.classList.toggle('dark-mode');
-                }
-          }
-          onPointerDown={
-            darkModeController ? darkModeController.handleEvent : undefined
-          }
-          onPointerUp={
-            darkModeController ? darkModeController.handleEvent : undefined
-          }
+          onClick={() => {
+            if (!darkModeController)
+              document.body.classList.toggle('dark-mode');
+          }}
+          onMouseDown={(event): void => {
+            if (darkModeController) darkModeController.onPointerDown(event);
+          }}
+          onMouseUp={(event): void => {
+            if (darkModeController) darkModeController.onPointerUp(event);
+          }}
         >
           <span className="sr-only">Toggle Dark Mode</span>
           <i className="material-icons light-mode-only">nights_stay</i>

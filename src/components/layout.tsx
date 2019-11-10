@@ -7,13 +7,15 @@ import '../styles/layout.css';
 import '../styles/mobile.css';
 import SEO from './seo';
 
+// Always import to restore dark-mode on load
+import '../util/darkModeController';
+
 interface Props {
   children: React.ReactNode;
   title?: string;
   description?: string;
   img?: string;
   href: string;
-  // darkModeController?: DarkModeController;
 }
 
 const Layout = ({
@@ -22,8 +24,7 @@ const Layout = ({
   description,
   img,
   location,
-}: // darkModeController = new DarkModeController(),
-Props): JSX.Element => {
+}: Props): JSX.Element => {
   return (
     <React.Fragment>
       <SEO title={title} description={description} img={img} />
