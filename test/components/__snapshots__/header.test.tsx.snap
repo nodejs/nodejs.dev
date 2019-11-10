@@ -92,8 +92,9 @@ exports[`Tests for Header component renders correctly 1`] = `
     >
       <button
         className="dark-mode-toggle"
-        onPointerDown={[Function]}
-        onPointerUp={[Function]}
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
         type="button"
       >
         <span
