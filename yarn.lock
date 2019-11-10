@@ -1548,9 +1548,9 @@
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
 "@smotaal.io/dark-mode-controller@*":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@smotaal.io/dark-mode-controller/-/dark-mode-controller-0.0.2.tgz#966e1c1390fb0d25acfd511e5bec83c98cba269d"
-  integrity "sha1-lm4cE5D7DSWs/VEeW+yDyYy6Jp0= sha512-a+kVzV+TRM13mok5BUFkE3BDjFELd1H3ebQLa6hkjD1yBPW2fMbWhzMGuyY5zImjnBA2ZfP2+ZarN7NdRr8Dvw=="
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@smotaal.io/dark-mode-controller/-/dark-mode-controller-0.0.3.tgz#f9be0835bed02be9edbb363701e25f62cd70f9ff"
+  integrity sha512-xZQLGUFFyrrBk2XcWPw4krwHNjU7ZEk6aeP/gHVbO4baEmY96NQwOxiHNBG/PNVs6UNJIzCvEDkEjzGzDIY3uw==
 
 "@types/babel__core@^7.1.0":
   version "7.1.2"
