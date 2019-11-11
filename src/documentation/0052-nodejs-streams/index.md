@@ -112,7 +112,7 @@ There are four classes of streams:
 
 ## How to create a readable stream
 
-We get the Readable stream from the [`stream` module](https://nodejs.org/api/stream.html), and we initialize it and implement the readable._read() method.
+We get the Readable stream from the [`stream` module](https://nodejs.org/api/stream.html), and we initialize it and implement the `readable._read()` method.
 
 First create a stream object:
 
