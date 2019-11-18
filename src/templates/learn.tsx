@@ -5,6 +5,7 @@ import Layout from './Layout';
 import Navigation from '../components/navigation';
 import { LearnPageContext, LearnPageData } from '../types';
 
+import '../styles/article-reader.css';
 import '../styles/learn.css';
 
 interface Props {

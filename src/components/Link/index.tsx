@@ -8,11 +8,12 @@ interface UniversalLinkProps {
   to?: string;
   className?: string;
   disabled?: boolean;
+  noActiveState?: boolean;
   title?: string;
 }
 
 const UniversalLink = (props: UniversalLinkProps): JSX.Element => {
-  const { to, children } = props;
+  const { to, children, noActiveState } = props;
 
   if (to && to.includes('http')) {
     // render absolute link
@@ -24,7 +25,7 @@ const UniversalLink = (props: UniversalLinkProps): JSX.Element => {
   }
   // render gatsby optimized link
   return (
-    <Link to={to || '/'} {...props} activeClassName={styles.activeNavigationItem}>
+    <Link to={to || '/'} {...props} activeClassName={noActiveState? '' : styles.activeNavigationItem}>
       {children}
     </Link>
   );

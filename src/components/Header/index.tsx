@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Link } from '..';
+import DarkModeController from '../../util/DarkModeController';
 import logoLight from '../../images/logo-light.svg';
 import logoDark from '../../images/logo-dark.svg';
 import styles from './header.module.scss';
@@ -10,25 +11,29 @@ import styles from './header.module.scss';
 const content = {
   navigationLinks: [
     {
-      link: 'https://nodejs.org/en/docs/',
+      link: 'learn',
+      text: 'Learn',
+    },
+    {
+      link: 'docs',
       text: 'Documentation',
     },
     {
-      link: 'https://github.com/nodejs/nodejs.dev',
-      text: 'GitHub',
-    },
-    {
-      link: 'https://nodejs.org/en/download/',
-      text: 'Downloads',
+      link: 'download',
+      text: 'Download',
     },
   ],
   toggleTheme: 'Toggle theme',
 };
 
-const Header = (): JSX.Element => (
+interface HeaderProps {
+  darkModeController?: DarkModeController;
+}
+
+const Header = ({ darkModeController }: HeaderProps): JSX.Element => (
   <header className={styles.mainHeader}>
     <nav className={styles.navigation}>
-      <Link to="/">
+      <Link to="/" noActiveState>
         <img
           src={logoLight}
           alt="Node.js"
@@ -56,7 +61,9 @@ const Header = (): JSX.Element => (
       <div className={styles.navigationItem}>
         <button
           className={styles.themeToggler}
-          onClick={(): boolean => document.body.classList.toggle('dark-mode')}
+					onClick={() => !darkModeController && document.body.classList.toggle('dark-mode')}
+          onPointerDown={(): void => darkModeController && darkModeController.onPointerDown()}
+          onPointerUp={(): void => darkModeController && darkModeController.onPointerUp()}
           title={content.toggleTheme}
           type="button"
         >

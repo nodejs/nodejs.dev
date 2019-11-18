@@ -8,7 +8,9 @@ exports[`Tests for Header component renders correctly 1`] = `
     className="navigation"
   >
     <a
+      activeClassName=""
       href="/"
+      noActiveState={true}
     >
       <img
         alt="Node.js"
@@ -22,31 +24,25 @@ exports[`Tests for Header component renders correctly 1`] = `
       />
     </a>
     <a
+      activeClassName="activeNavigationItem"
       className="navigationItem"
-      href="https://nodejs.org/en/docs/"
-      rel="noopener noreferrer"
-      target="_blank"
-      to="https://nodejs.org/en/docs/"
+      href="learn"
+    >
+      Learn
+    </a>
+    <a
+      activeClassName="activeNavigationItem"
+      className="navigationItem"
+      href="docs"
     >
       Documentation
     </a>
     <a
+      activeClassName="activeNavigationItem"
       className="navigationItem"
-      href="https://github.com/nodejs/nodejs.dev"
-      rel="noopener noreferrer"
-      target="_blank"
-      to="https://github.com/nodejs/nodejs.dev"
+      href="download"
     >
-      GitHub
-    </a>
-    <a
-      className="navigationItem"
-      href="https://nodejs.org/en/download/"
-      rel="noopener noreferrer"
-      target="_blank"
-      to="https://nodejs.org/en/download/"
-    >
-      Downloads
+      Download
     </a>
   </nav>
   <div
@@ -58,6 +54,8 @@ exports[`Tests for Header component renders correctly 1`] = `
       <button
         className="themeToggler"
         onClick={[Function]}
+        onPointerDown={[Function]}
+        onPointerUp={[Function]}
         title="Toggle theme"
         type="button"
       >

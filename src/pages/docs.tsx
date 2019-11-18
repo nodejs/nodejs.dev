@@ -11,6 +11,7 @@ import {
 } from '../hooks/useApiDocs';
 import Layout from '../templates/Layout';
 
+import '../styles/article-reader.css';
 import '../styles/docs.css';
 
 function renderArticleOverview(

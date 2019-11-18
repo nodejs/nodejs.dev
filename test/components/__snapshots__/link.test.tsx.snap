@@ -2,6 +2,7 @@
 
 exports[`Tests for Link component renders correctly 1`] = `
 <a
+  activeClassName="activeNavigationItem"
   href="/"
 >
   Custom
