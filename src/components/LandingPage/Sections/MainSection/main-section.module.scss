@@ -1,5 +1,5 @@
 .main-section {
-	height: 100vh;
+	height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,13 +9,14 @@
 
   .title {
     max-width: 840px;
+		margin-bottom: var(--space-32)
   }
 
   .sub-title {
     max-width: 780px;
     color: var(--color-text-secondary);
-    margin: var(--space-32) 0 var(--space-80) 0;
-    font-weight: var(--font-weight-light);
+    margin: 0 0 var(--space-80) 0;
+    font-weight: var(--font-weight-regular);
   }
 
   .buttons {

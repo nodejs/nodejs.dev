@@ -1,1 +1,1 @@
-export {};
+export const activeNavigationItem: string;

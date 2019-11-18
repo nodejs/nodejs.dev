@@ -3,16 +3,20 @@
   justify-content: center;
   align-items: center;
   border: none;
-  width: var(--space-240);
   height: var(--space-48);
   font-weight: var(--font-weight-semibold);
-  padding: 0;
+  padding: 0 var(--space-16);
   margin: 0;
 	border-radius: var(--space-04);
   text-decoration: none;
 
   &[disabled] {
     pointer-events: none;
+  }
+
+  &.strict-width {
+		width: var(--space-240);
+		padding: 0;
   }
 
   &.rounded {

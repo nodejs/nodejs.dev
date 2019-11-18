@@ -8,6 +8,7 @@ interface ButtonProps {
   type?: 'primary' | 'secondary' | 'default';
   shape?: 'rounded';
   disabled?: boolean;
+  strictWidth?: boolean;
   to?: string;
   alt?: string;
   onClick?: () => {};
@@ -24,6 +25,7 @@ const Button = (props: ButtonProps): JSX.Element => {
     onClick,
     className,
     alt,
+		strictWidth,
   } = props;
   if (to && !onClick) {
     return (
@@ -33,6 +35,7 @@ const Button = (props: ButtonProps): JSX.Element => {
           styles.button,
           styles[disabled ? 'disabled' : type || 'primary'],
           shape && styles[shape],
+					strictWidth && styles.strictWidth,
           className,
         ].join(' ')}
         disabled={disabled}
@@ -48,6 +51,7 @@ const Button = (props: ButtonProps): JSX.Element => {
         styles.button,
         styles[disabled ? 'disabled' : type || 'primary'],
         shape && styles[shape],
+        strictWidth && styles.strictWidth,
         className,
       ].join(' ')}
       disabled={disabled}

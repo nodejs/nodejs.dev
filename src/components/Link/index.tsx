@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import './link.module.scss';
+import styles from './link.module.scss';
 
 interface UniversalLinkProps {
   children: JSX.Element[] | JSX.Element | string;
@@ -24,7 +24,7 @@ const UniversalLink = (props: UniversalLinkProps): JSX.Element => {
   }
   // render gatsby optimized link
   return (
-    <Link to={to || '/'} {...props}>
+    <Link to={to || '/'} {...props} activeClassName={styles.activeNavigationItem}>
       {children}
     </Link>
   );
