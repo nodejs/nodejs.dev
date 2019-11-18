@@ -25,7 +25,7 @@ const Button = (props: ButtonProps): JSX.Element => {
     onClick,
     className,
     alt,
-		strictWidth,
+    strictWidth,
   } = props;
   if (to && !onClick) {
     return (
@@ -35,7 +35,7 @@ const Button = (props: ButtonProps): JSX.Element => {
           styles.button,
           styles[disabled ? 'disabled' : type || 'primary'],
           shape && styles[shape],
-					strictWidth && styles.strictWidth,
+          strictWidth && styles.strictWidth,
           className,
         ].join(' ')}
         disabled={disabled}

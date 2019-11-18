@@ -61,9 +61,15 @@ const Header = ({ darkModeController }: HeaderProps): JSX.Element => (
       <div className={styles.navigationItem}>
         <button
           className={styles.themeToggler}
-					onClick={() => !darkModeController && document.body.classList.toggle('dark-mode')}
-          onPointerDown={(): void => darkModeController && darkModeController.onPointerDown()}
-          onPointerUp={(): void => darkModeController && darkModeController.onPointerUp()}
+          onClick={() =>
+            !darkModeController && document.body.classList.toggle('dark-mode')
+          }
+          onPointerDown={(): void =>
+            darkModeController && darkModeController.onPointerDown()
+          }
+          onPointerUp={(): void =>
+            darkModeController && darkModeController.onPointerUp()
+          }
           title={content.toggleTheme}
           type="button"
         >

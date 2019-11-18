@@ -25,7 +25,11 @@ const UniversalLink = (props: UniversalLinkProps): JSX.Element => {
   }
   // render gatsby optimized link
   return (
-    <Link to={to || '/'} {...props} activeClassName={noActiveState? '' : styles.activeNavigationItem}>
+    <Link
+      to={to || '/'}
+      {...props}
+      activeClassName={noActiveState ? '' : styles.activeNavigationItem}
+    >
       {children}
     </Link>
   );

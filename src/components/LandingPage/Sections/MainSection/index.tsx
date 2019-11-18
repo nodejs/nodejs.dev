@@ -19,10 +19,14 @@ interface MainSectionProps {
 const MainSection = ({ content }: MainSectionProps): JSX.Element => (
   <section className={styles.mainSection}>
     <h1 className={styles.title}>{content.title}</h1>
-    <p className={[styles.subTitle, 't-subheading'].join(' ')}>{content.desc}</p>
+    <p className={[styles.subTitle, 't-subheading'].join(' ')}>
+      {content.desc}
+    </p>
     <div className={styles.buttons}>
       <div className={styles.downloadActions}>
-        <Button shape="rounded" strictWidth >{content.downloadButton}</Button>
+        <Button shape="rounded" strictWidth>
+          {content.downloadButton}
+        </Button>
         <div className={[styles.downloadLinks, 't-caption'].join(' ')}>
           {nodeVersion} -{' '}
           <Link to="/download">{content.subDownloadMessage}</Link> /{' '}
