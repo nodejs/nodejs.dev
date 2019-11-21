@@ -10,11 +10,17 @@ The main difference between local and global packages is this:
 - **local packages** are installed in the directory where you run `npm install <package-name>`, and they are put in the `node_modules` folder under this directory
 - **global packages** are all put in a single place in your system (exactly where depends on your setup), regardless of where you run `npm install -g <package-name>`
 
-In your code, they are both require in the same way:
+In your code, local packages are required in the same way :
 
 ```js
 require('package-name')
 ```
+but global packages can run anywhere you want through shell / bash / cli
+
+```js
+$ package-name  init 
+```
+
 
 so when should you install in one way or another?
 
