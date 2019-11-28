@@ -120,7 +120,7 @@ By default you copy the whole buffer. 3 more parameters let you define the start
 ```js
 const buf = Buffer.from('Hey!')
 let bufcopy = Buffer.alloc(2) //allocate 2 bytes
-buf.copy(bufcopy, 0, 2, 2)
+buf.copy(bufcopy, 0, 0, 2)
 bufcopy.toString() //'He'
 ```
 
