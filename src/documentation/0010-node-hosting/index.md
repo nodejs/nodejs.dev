@@ -68,7 +68,7 @@ This is a great article on [getting started with Node.js on Heroku](https://devc
 
 Azure is the Microsoft Cloud offering.
 
-Check out how to [create a Node.js web app in Azure](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-nodejs).
+Check out how to [create a Node.js web app in Azure](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-nodejs).
 
 ### Google Cloud Platform
 
