@@ -112,11 +112,27 @@ There are four classes of streams:
 
 ## How to create a readable stream
 
-We get the Readable stream from the [`stream` module](https://nodejs.org/api/stream.html), and we initialize it
+We get the Readable stream from the [`stream` module](https://nodejs.org/api/stream.html), and we initialize it and implement the `readable._read()` method.
+
+First create a stream object:
 
 ```js
 const Stream = require('stream')
 const readableStream = new Stream.Readable()
+```
+
+then implement `_read`:
+
+```js
+readableStream._read = () => {}
+```
+
+You can also implement `_read` using the `read` option:
+
+```js
+const readableStream = new Stream.Readable({
+  read() {}
+})
 ```
 
 Now that the stream is initialized, we can send data to it:
@@ -160,7 +176,9 @@ How do we read data from a readable stream? Using a writable stream:
 ```js
 const Stream = require('stream')
 
-const readableStream = new Stream.Readable()
+const readableStream = new Stream.Readable({
+  read() {}
+})
 const writableStream = new Stream.Writable()
 
 writableStream._write = (chunk, encoding, next) => {
@@ -197,7 +215,9 @@ Use the `end()` method:
 ```js
 const Stream = require('stream')
 
-const readableStream = new Stream.Readable()
+const readableStream = new Stream.Readable({
+  read() {}
+})
 const writableStream = new Stream.Writable()
 
 writableStream._write = (chunk, encoding, next) => {
