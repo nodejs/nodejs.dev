@@ -41,7 +41,7 @@ const NodeFeature = ({ img, featureText }: Props) => {
 };
 
 export default function Index(): JSX.Element {
-  const title = 'The power of JavaScript minus the browser';
+  const title = 'Run JavaScript Everywhere.';
   const subTitle =
     'Node.js is a free, open-sourced, cross-platform JavaScript run-time environment that lets developers write command line tools and server-side scripts outside of a browser.';
   const description = 'Welcome to Node.js!';
