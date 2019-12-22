@@ -15,12 +15,6 @@ In your code, local packages are required in the same way :
 ```js
 require('package-name')
 ```
-but global packages can run anywhere you want through shell / bash / cli
-
-```js
-$ package-name  init 
-```
-
 
 so when should you install in one way or another?
 
