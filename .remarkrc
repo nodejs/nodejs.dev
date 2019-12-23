@@ -2,18 +2,8 @@
   "plugins": [
     "remark-frontmatter",
     "remark-preset-lint-node",
-    ["remark-lint-code-block-style", false],
-    ["remark-lint-fenced-code-flag", false],
     ["remark-lint-first-heading-level", false],
-    ["remark-lint-list-item-bullet-indent", false],
-    ["remark-lint-list-item-indent", false],
     ["remark-lint-maximum-line-length", false],
-    ["remark-lint-no-consecutive-blank-lines", false],
-    ["remark-lint-no-inline-padding", false],
-    ["remark-lint-no-multiple-toplevel-headings", false],
-    ["remark-lint-no-shortcut-reference-link", false],
-    ["remark-lint-no-trailing-spaces", false],
-    ["remark-lint-no-undefined-references", false],
     ["remark-lint-unordered-list-marker-style", false]
   ]
 }

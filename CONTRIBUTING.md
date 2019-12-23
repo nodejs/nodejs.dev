@@ -44,7 +44,7 @@ Pull requests seeking to make any of the following changes do not need to wait 2
 - There must be at least one sign off
 - There must be no objections after a 48 hour period
 
-The default for each contribution is that it is accepted once no collaborator has an objection. During review collaborators may also request that a specific contributor who is most versed in a particular area gives a "LGTM" before the PR can be merged. 
+The default for each contribution is that it is accepted once no collaborator has an objection. During review collaborators may also request that a specific contributor who is most versed in a particular area gives a "LGTM" before the PR can be merged.
 
 In the case of an objection being raised in a pull request by another collaborator, all involved collaborators should seek to arrive at a consensus by way of addressing concerns being expressed by discussion, compromise on the proposed change, or withdrawal of the proposed change.
 
