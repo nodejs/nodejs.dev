@@ -9,12 +9,12 @@ exports[`Landing page renders correctly 1`] = `
   <MainSection
     content={
       Object {
-        "desc": "Tacos raw denim palo santo, squid 90s occupy sustainable leggings locavore before they sold out chambray gastropub synth. Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.",
+        "desc": "Node.js is a free, open-sourced, cross-platform JavaScript run-time environment that lets developers write command line tools and server-side scripts outside of a browser.",
         "downloadButton": "Download Node.js (LTS)",
         "downloadCurrent": "Get Current",
         "learnNode": "Learn Node.js",
         "subDownloadMessage": "What’s new",
-        "title": "The power of JavaScript minus the browser",
+        "title": "Run JavaScript Everywhere",
       }
     }
   />
