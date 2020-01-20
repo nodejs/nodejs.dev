@@ -26,9 +26,9 @@ const title = 'Node.js Official website';
 const description = 'Welcome to Node.js!';
 const content = {
   sectionMain: {
-    title: 'The power of JavaScript minus the browser',
+    title: 'Run JavaScript Everywhere',
     desc:
-      'Tacos raw denim palo santo, squid 90s occupy sustainable leggings locavore before they sold out chambray gastropub synth. Cornhole lomo dreamcatcher celiac enamel pin, yr lyft master cleanse meggings.',
+      'Node.js is a free, open-sourced, cross-platform JavaScript run-time environment that lets developers write command line tools and server-side scripts outside of a browser.',
     downloadButton: 'Download Node.js (LTS)',
     subDownloadMessage: 'What’s new',
     downloadCurrent: 'Get Current',
