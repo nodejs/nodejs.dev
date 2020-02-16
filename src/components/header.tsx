@@ -14,7 +14,7 @@ interface Props {
   darkModeController?: DarkModeController;
 }
 
-const Header = ({ darkModeController }: Props) => (
+const Header = ({ darkModeController }: Props): JSX.Element => (
   <nav className="nav">
     <div className="logo">
       <Link to="/">
@@ -56,7 +56,7 @@ const Header = ({ darkModeController }: Props) => (
         <button
           type="button"
           className="dark-mode-toggle"
-          onClick={() => {
+          onClick={(): void => {
             if (!darkModeController)
               document.body.classList.toggle('dark-mode');
           }}

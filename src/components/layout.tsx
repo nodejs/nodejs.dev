@@ -22,7 +22,6 @@ const Layout = ({
   title,
   description,
   img,
-  location,
   darkModeController = new DarkModeController(),
 }: Props): JSX.Element => {
   return (

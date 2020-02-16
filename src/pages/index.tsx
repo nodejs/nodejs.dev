@@ -31,7 +31,7 @@ const nodeFeature2 =
 const nodeFeature3 =
   'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
 
-const NodeFeature = ({ img, featureText }: Props) => {
+const NodeFeature = ({ img, featureText }: Props): JSX.Element => {
   return (
     <div className="node-features__feature">
       <img src={img} alt="node feature" />
