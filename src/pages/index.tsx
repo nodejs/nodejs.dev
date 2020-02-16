@@ -53,8 +53,8 @@ export default function Index(): JSX.Element {
       description={description}
       style={{ overflow: 'hidden' }}
     >
+      <Banner />
       <div className="home-page">
-        <Banner />
         <Hero title={title} subTitle={subTitle} />
 
         <section className="node-demo-container">

@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for Header component renders correctly 1`] = `
+<div
+  css={
+    Object {
+      "map": undefined,
+      "name": "1vzy5x6",
+      "next": undefined,
+      "styles": "
+  position: relative;
+  font-weight: bold;
+  background-color: var(--info9);
+  font-size: var(--font-size-display2);
+  color: var(--black0);
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 5px;
+",
+    }
+  }
+>
+  <p>
+    <button
+      css={
+        Object {
+          "map": undefined,
+          "name": "b1p96y",
+          "next": undefined,
+          "styles": "
+  border-radius: 5.6rem;
+  background: var(--color-fill-action);
+  margin-right: var(--space-32);
+  position: relative;
+",
+        }
+      }
+      type="button"
+    >
+      <a
+        css={
+          Object {
+            "map": undefined,
+            "name": "vh0gfp",
+            "next": undefined,
+            "styles": "
+  color: var(--black0);
+  text-decoration: none;
+",
+          }
+        }
+        href="https://nodejs.org/en/blog/vulnerability/february-2020-security-releases/"
+      >
+        Blog post
+      </a>
+    </button>
+    New security releases now available for all release lines
+  </p>
+</div>
+`;
