@@ -5,14 +5,14 @@ exports[`Tests for Header component renders correctly 1`] = `
   css={
     Object {
       "map": undefined,
-      "name": "1vzy5x6",
+      "name": "1g9ii1p",
       "next": undefined,
       "styles": "
   position: relative;
   font-weight: bold;
-  background-color: var(--info9);
+  background-color: var(--black3);
   font-size: var(--font-size-display2);
-  color: var(--black0);
+  color: var(--color-text-primary);
   border-radius: 5px;
   text-align: center;
   padding-top: 5px;
@@ -20,16 +20,24 @@ exports[`Tests for Header component renders correctly 1`] = `
     }
   }
 >
-  <p>
+  <p
+    css={
+      Object {
+        "paddingBottom": "var(--space-08)",
+        "paddingTop": "var(--space-08)",
+      }
+    }
+  >
     <button
       css={
         Object {
           "map": undefined,
-          "name": "b1p96y",
+          "name": "ihpspq",
           "next": undefined,
           "styles": "
   border-radius: 5.6rem;
-  background: var(--color-fill-action);
+  background: var(--purple5);
+  color: var(--color-fill-top-nav);
   margin-right: var(--space-32);
   position: relative;
 ",
@@ -41,11 +49,15 @@ exports[`Tests for Header component renders correctly 1`] = `
         css={
           Object {
             "map": undefined,
-            "name": "vh0gfp",
+            "name": "10el6nn",
             "next": undefined,
             "styles": "
-  color: var(--black0);
+  color: var(--color-fill-top-nav);
+  line-height: var(--line-height-subheading);
   text-decoration: none;
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight var(--font-weight-semibold);
 ",
           }
         }
