@@ -61,7 +61,7 @@
     "@types/react-test-renderer": "^16.8.1",
     "babel-jest": "^24.1.0",
     "babel-preset-gatsby": "^0.2.20",
-    "codecov": "^3.3.0",
+    "codecov": "^3.6.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.1.0",
     "prettier": "^1.16.4",
