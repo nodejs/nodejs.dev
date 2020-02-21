@@ -1,7 +1,7 @@
 ---
 title: (What Is a Good Title?)
 description: (~60 character explanation of the article content for page meta data)
-authors: (List of authors/editors: "flaviocopes, jonchurch, your_name_here")
+authors: (List of authors/editors, "flaviocopes, jonchurch, your_name_here")
 section: (One of "Quick Start" or "Getting Started")
 ---
 <!--
