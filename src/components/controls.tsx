@@ -52,7 +52,7 @@ const Controls = ({
   lightModeIcon = 'wb_sunny',
   darkModeIcon = 'nights_stay',
   controller = new DarkModeController(),
-}: Props) => (
+}: Props): JSX.Element => (
   <header css={controlsStyles.header}>
     <div id="controls" css={controlsStyles.controls}>
       <span>
