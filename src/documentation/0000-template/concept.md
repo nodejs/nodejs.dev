@@ -34,7 +34,6 @@ Upon completing this tutorial you'll be able to:
 
 > Introduction.
 
-
 ## Prerequisite knowledge
 <!--
 A bullet list, usually in the form of links to other documentation pages, that cover topics someone would need to understand already in order to full understand the concept covered here. Remove this section all together if it's not needed.
@@ -42,7 +41,6 @@ A bullet list, usually in the form of links to other documentation pages, that c
 
 - [item one](/src/documentation/0042/meaning-of-life.md)
 - [item two](/src/documentation/0043/just-some-number.md)
-
 
 <!--
 The main body of the tutorial goes here. This is where you provide an overview of the topic. Focus on introducing, and explaining terminology, important concepts, and information that will give the reader the context required to make informed decisions about the topic.
@@ -68,7 +66,7 @@ Summarize what was just covered in one paragraph.
 
 ## Expand your knowledge
 <!--
-Bullet list of 1-3 thought provoking questions intended to help the reader further their understanding of the topic by encouraging self-guided exploration. You can make cross-references to tasks in the documentation related to implementation of the concept explained in this document. Ask questions that will relate what they've just learned back to their own use-case or needs. Additionally, 
+Bullet list of 1-3 thought provoking questions intended to help the reader further their understanding of the topic by encouraging self-guided exploration. You can make cross-references to tasks in the documentation related to implementation of the concept explained in this document. Ask questions that will relate what they've just learned back to their own use-case or needs.
 -->
 
 - one

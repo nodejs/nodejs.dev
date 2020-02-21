@@ -52,7 +52,6 @@ A bullet list, usually in the form of links to other documentation pages, that c
 - [item one](/src/documentation/0042/meaning-of-life.md)
 - [item two](/src/documentation/0043/just-some-number.md)
 
-
 <!--
 The main body of the tutorial goes here. This is where you describe the actual steps required to achieve the goal. Be specific, not generic, when possible.
 
