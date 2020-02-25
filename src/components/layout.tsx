@@ -2,6 +2,7 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/themes/prism-okaidia.css';
 import React from 'react';
 import Header from './header';
+import Footer from './footer';
 import '../styles/tokens.css';
 import '../styles/layout.css';
 import '../styles/mobile.css';
@@ -13,7 +14,9 @@ interface Props {
   title?: string;
   description?: string;
   img?: string;
-  href: string;
+  href?: string;
+  showFooter?: boolean;
+  location?: any;
   darkModeController?: DarkModeController;
 }
 
@@ -22,6 +25,8 @@ const Layout = ({
   title,
   description,
   img,
+  location,
+  showFooter = true,
   darkModeController = new DarkModeController(),
 }: Props): JSX.Element => {
   return (
@@ -29,6 +34,7 @@ const Layout = ({
       <SEO title={title} description={description} img={img} />
       <Header darkModeController={darkModeController} />
       {children}
+      {showFooter && <Footer />}
     </React.Fragment>
   );
 };

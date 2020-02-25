@@ -49,7 +49,7 @@
     "test": "yarn lint && yarn jest",
     "test-watch": "yarn jest --watch",
     "test-ci": "yarn test --coverage && codecov",
-    "lint": "eslint . --ext .js,.ts,.tsx --ignore-pattern test/",
+    "lint": "eslint . --ext .js,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "serve": "yarn build && clear && gatsby serve"
   },

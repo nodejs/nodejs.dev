@@ -7,6 +7,7 @@ import { LearnPageContext, LearnPageData } from '../types';
 
 import '../styles/article-reader.css';
 import '../styles/learn.css';
+import Footer from '../components/footer';
 
 interface Props {
   data: LearnPageData;
@@ -23,20 +24,23 @@ const LearnLayout = ({
   },
   pageContext: { slug, next, previous, relativePath, navigationData },
 }: Props): React.ReactNode => (
-  <main>
-    <Layout title={title} description={description}>
-      <Navigation currentSlug={slug} sections={navigationData} />
-      <Article
-        title={title}
-        html={html}
-        tableOfContents={tableOfContents}
-        next={next}
-        authors={authors}
-        previous={previous}
-        relativePath={relativePath}
-      />
-    </Layout>
-  </main>
+  <React.Fragment>
+    <main>
+      <Layout title={title} description={description} showFooter={false}>
+        <Navigation currentSlug={slug} sections={navigationData} />
+        <Article
+          title={title}
+          html={html}
+          tableOfContents={tableOfContents}
+          next={next}
+          authors={authors}
+          previous={previous}
+          relativePath={relativePath}
+        />
+      </Layout>
+    </main>
+    <Footer />
+  </React.Fragment>
 );
 export default LearnLayout;
 
