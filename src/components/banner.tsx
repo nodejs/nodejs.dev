@@ -3,10 +3,11 @@ import { css, SerializedStyles } from '@emotion/core';
 
 const bannerLink =
   'https://nodejs.org/en/blog/vulnerability/february-2020-security-releases/';
-const banner: SerializedStyles = css`
+
+const banner: SerializedStyles = css/* scss */ `
   position: relative;
   font-weight: bold;
-  background-color: var(--black3);
+  background-color: var(--color-fill-top-banner);
   font-size: var(--font-size-display2);
   color: var(--color-text-primary);
   border-radius: 5px;
@@ -14,20 +15,17 @@ const banner: SerializedStyles = css`
   padding-top: 5px;
 `;
 
-const bannerCta: SerializedStyles = css`
+const bannerButton: SerializedStyles = css/* scss */ `
+  position: relative;
+  margin-right: var(--space-32);
   border-radius: 5.6rem;
   background: var(--purple5);
-  color: var(--color-fill-top-nav);
-  margin-right: var(--space-32);
-  position: relative;
-`;
-const bannerButtonText: SerializedStyles = css`
   color: var(--color-fill-top-nav);
   line-height: var(--line-height-subheading);
   text-decoration: none;
   font-family: var(--sans);
   font-style: normal;
-  font-weight var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
 `;
 
 /**
@@ -54,11 +52,11 @@ const Banner = (): JSX.Element => {
           paddingBottom: 'var(--space-08)',
         }}
       >
-        <button css={bannerCta} type="button">
-          <a css={bannerButtonText} href={bannerLink}>
+        <a href={bannerLink}>
+          <button css={bannerButton} type="button">
             Blog post
-          </a>
-        </button>
+          </button>
+        </a>
         New security releases now available for all release lines
       </p>
     </div>
