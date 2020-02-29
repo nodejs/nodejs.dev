@@ -4,7 +4,7 @@ import { css, SerializedStyles } from '@emotion/core';
 const bannerLink =
   'https://nodejs.org/en/blog/vulnerability/february-2020-security-releases/';
 
-const banner: SerializedStyles = css/*scss*/`
+const banner: SerializedStyles = css/* scss */ `
   position: relative;
   font-weight: bold;
   background-color: var(--color-fill-top-banner);
@@ -15,7 +15,7 @@ const banner: SerializedStyles = css/*scss*/`
   padding-top: 5px;
 `;
 
-const bannerButton: SerializedStyles = css/*scss*/`
+const bannerButton: SerializedStyles = css/* scss */ `
   position: relative;
   margin-right: var(--space-32);
   border-radius: 5.6rem;
@@ -54,7 +54,7 @@ const Banner = (): JSX.Element => {
       >
         <a href={bannerLink}>
           <button css={bannerButton} type="button">
-              Blog post
+            Blog post
           </button>
         </a>
         New security releases now available for all release lines
