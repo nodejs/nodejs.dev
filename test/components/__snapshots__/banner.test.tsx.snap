@@ -5,12 +5,12 @@ exports[`Tests for Header component renders correctly 1`] = `
   css={
     Object {
       "map": undefined,
-      "name": "1g9ii1p",
+      "name": "433qea",
       "next": undefined,
       "styles": "
   position: relative;
   font-weight: bold;
-  background-color: var(--black3);
+  background-color: var(--color-fill-top-banner);
   font-size: var(--font-size-display2);
   color: var(--color-text-primary);
   border-radius: 5px;
@@ -28,44 +28,34 @@ exports[`Tests for Header component renders correctly 1`] = `
       }
     }
   >
-    <button
-      css={
-        Object {
-          "map": undefined,
-          "name": "ihpspq",
-          "next": undefined,
-          "styles": "
-  border-radius: 5.6rem;
-  background: var(--purple5);
-  color: var(--color-fill-top-nav);
-  margin-right: var(--space-32);
-  position: relative;
-",
-        }
-      }
-      type="button"
+    <a
+      href="https://nodejs.org/en/blog/vulnerability/february-2020-security-releases/"
     >
-      <a
+      <button
         css={
           Object {
             "map": undefined,
-            "name": "10el6nn",
+            "name": "16knpov",
             "next": undefined,
             "styles": "
+  position: relative;
+  margin-right: var(--space-32);
+  border-radius: 5.6rem;
+  background: var(--purple5);
   color: var(--color-fill-top-nav);
   line-height: var(--line-height-subheading);
   text-decoration: none;
   font-family: var(--sans);
   font-style: normal;
-  font-weight var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
 ",
           }
         }
-        href="https://nodejs.org/en/blog/vulnerability/february-2020-security-releases/"
+        type="button"
       >
         Blog post
-      </a>
-    </button>
+      </button>
+    </a>
     New security releases now available for all release lines
   </p>
 </div>
