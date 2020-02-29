@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import logoLight from '../images/logos/nodejs-logo-light-mode.svg';
 import logoDark from '../images/logos/nodejs-logo-dark-mode.svg';
-import darkModeController from '../util/darkModeController';
+import defaultDarkModeController from '../util/darkModeController';
 
 const activeStyleTab = {
   fontWeight: 'var(--font-weight-semibold)',
@@ -11,10 +11,12 @@ const activeStyleTab = {
 };
 
 interface Props {
-  darkModeController?: DarkModeController;
+  darkModeController?: typeof defaultDarkModeController;
 }
 
-const Header = ({ darkModeController }: Props): JSX.Element => (
+const Header = ({
+  darkModeController = defaultDarkModeController,
+}: Props): JSX.Element => (
   <nav className="nav">
     <div className="logo">
       <Link to="/">
@@ -56,16 +58,8 @@ const Header = ({ darkModeController }: Props): JSX.Element => (
         <button
           type="button"
           className="dark-mode-toggle"
-          onClick={(): void => {
-            if (!darkModeController)
-              document.body.classList.toggle('dark-mode');
-          }}
-          onMouseDown={(event): void => {
-            if (darkModeController) darkModeController.onPointerDown(event);
-          }}
-          onMouseUp={(event): void => {
-            if (darkModeController) darkModeController.onPointerUp(event);
-          }}
+          onMouseDown={darkModeController.handleEvent}
+          onMouseUp={darkModeController.handleEvent}
         >
           <span className="sr-only">Toggle Dark Mode</span>
           <i className="material-icons light-mode-only">nights_stay</i>

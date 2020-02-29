@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { DarkModeController } from '@smotaal.io/dark-mode-controller/commonjs';
 
-interface ReactDarkModeController extends DarkModeController {
+export interface ReactDarkModeController extends DarkModeController {
   onPointerDown(
     event: React.PointerEvent | React.MouseEvent | PointerEvent
   ): void;
