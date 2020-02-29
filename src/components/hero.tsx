@@ -8,7 +8,7 @@ interface Props {
 
 const NodeVersion = 'Version 10.15.3';
 
-const Hero = ({ title, subTitle }: Props) => (
+const Hero = ({ title, subTitle }: Props): JSX.Element => (
   <div className="home-page-hero">
     <h1>{title}</h1>
     <h2 className="sub-title t-subheading">{subTitle}</h2>

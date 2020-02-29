@@ -15,14 +15,15 @@ body {
   --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
   --banner-gradient: linear-gradient(to right, var(--accent9), var(--info7));
   --nav-height: 7.2rem;
-  --hero-height: 36.0rem;
+  --hero-height: 36rem;
 
   --brand-light: var(--brand3);
   --brand: var(--brand5);
   --brand-dark: var(--brand7);
 }
 
-.t-display1, h1 {
+.t-display1,
+h1 {
   font-size: var(--font-size-display1);
   line-height: var(--line-height-display1);
   font-weight: var(--font-weight-light);
@@ -41,21 +42,24 @@ body {
   font-weight: var(--font-weight-regular);
 }
 
-.t-headline, h2 {
+.t-headline,
+h2 {
   font-size: var(--font-size-headline);
   line-height: var(--line-height-headline);
   font-weight: var(--font-weight-semibold);
   margin: 0 0 var(--space-24) 0;
 }
 
-.t-subheading, h3 {
+.t-subheading,
+h3 {
   font-size: var(--font-size-subheading);
   line-height: var(--line-height-subheading);
   font-weight: var(--font-weight-semibold);
   margin: 0 0 var(--space-08) 0;
 }
 
-.t-body1, p {
+.t-body1,
+p {
   font-size: var(--font-size-body1);
   line-height: var(--line-height-body1);
   font-weight: var(--font-weight-regular);
@@ -82,20 +86,24 @@ body {
   text-transform: uppercase;
 }
 
-.t-link, a {
+.t-link,
+a {
   color: var(--color-text-accent);
   text-decoration: underline;
   cursor: pointer;
 }
 
-.t-link:hover, a:hover, .t-link:focus, a:focus {
+.t-link:hover,
+a:hover,
+.t-link:focus,
+a:focus {
   color: var(--color-text-accent);
   text-decoration: none;
   cursor: pointer;
 }
 
 .material-icons {
-  font-size: 2.0rem;
+  font-size: 2rem;
   padding: 0.2rem;
 }
 
@@ -111,7 +119,7 @@ body {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
 }
 
@@ -119,7 +127,8 @@ body {
   color: var(--black3);
 }
 
-button, input {
+button,
+input {
   font-family: var(--base-type-face);
   font-size: var(--font-size-body);
   background: transparent;
@@ -150,7 +159,7 @@ body:not(.dark-mode) .dark-mode-only {
 
 /* Start: Syntax Highlight Overrides */
 
-:not(pre) > code[class*="language-"] {
+:not(pre) > code[class*='language-'] {
   background-color: var(--black2) !important;
   color: var(--black9) !important;
   padding: 0 6px !important;
@@ -158,21 +167,33 @@ body:not(.dark-mode) .dark-mode-only {
   text-shadow: none;
 }
 
-pre[class*="language-"],
-code[class*="language-"] {
+pre[class*='language-'],
+code[class*='language-'] {
   color: var(--black2) !important;
   background: var(--black9) !important;
   margin-bottom: var(--space-24);
 }
-pre[class*="language-"] > code[class*="language-"] + h2 {
+pre[class*='language-'] > code[class*='language-'] + h2 {
   margin-top: var(--space-40);
 }
-.token.punctuation { color: var(--black2) !important; }
-.token.operator { color: var(--black2) !important; }
-.token.function { color: var(--warning3) !important; }
-.token.keyword { color: var(--info3) !important; }
-.token.string { color: var(--brand3) !important; }
-.token.number { color: var(--purple3) !important; }
+.token.punctuation {
+  color: var(--black2) !important;
+}
+.token.operator {
+  color: var(--black2) !important;
+}
+.token.function {
+  color: var(--warning3) !important;
+}
+.token.keyword {
+  color: var(--info3) !important;
+}
+.token.string {
+  color: var(--brand3) !important;
+}
+.token.number {
+  color: var(--purple3) !important;
+}
 
 /* End: Syntax Highlight Overrides */
 
@@ -191,10 +212,11 @@ select {
   background-image: url(data:image/svg+xml;utf8;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAxMSAxMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01LjMzMzQgOC42MzMwOEwxLjA5MDc2IDQuMzkwNDRMMC4xNDc5NDkgNS4zMzMyNUw0Ljg2MTk5IDEwLjA0NzNDNS4xMjIzNCAxMC4zMDc2IDUuNTQ0NDUgMTAuMzA3NiA1LjgwNDggMTAuMDQ3M0wxMC41MTg4IDUuMzMzMjVMOS41NzYwNCA0LjM5MDQ0TDUuMzMzNCA4LjYzMzA4WiIgZmlsbD0iIzUxNTU2NSIvPgo8L3N2Zz4K);
   background-repeat: no-repeat;
   background-position: top 0.8rem right 0.8rem;
-  transition: border-color .28s;
+  transition: border-color 0.28s;
 }
 
-select:hover, select:active {
+select:hover,
+select:active {
   border-color: var(--black5);
 }
 
@@ -207,7 +229,7 @@ main {
   outline: var(--brand3) dotted 2px;
 }
 
-[data-is-focused="true"] {
+[data-is-focused='true'] {
   outline: none;
 }
 
@@ -258,8 +280,96 @@ main {
 .nav__tabs > a {
   text-decoration: none;
   color: var(--color-text-primary);
-    padding: var(--space-24) var(--space-16)  calc(var(--space-24) - 2px) var(--space-16)
+  padding: var(--space-24) var(--space-16) calc(var(--space-24) - 2px)
+    var(--space-16);
 }
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.footer .footer__left,
+.footer .footer__right {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  height: 100%;
+}
+
+.footer .footer__right {
+  margin-right: 20px;
+}
+
+.footer .footer__left > li,
+.footer .footer__right > li {
+  font-size: 12px;
+  margin-right: 32px;
+  height: 24px;
+}
+
+.footer .footer__left li a {
+  color: var(--color-text-primary);
+}
+
+.footer .footer__left li a:hover {
+  color: var(--color-brand-primary);
+}
+
+.footer .footer__left > li:first-of-type {
+  padding-right: 12px;
+  padding-top: 0;
+  margin-right: 12px;
+  border-right: 1px solid var(--black5);
+}
+
+.footer .footer__link {
+  text-decoration: none;
+}
+
+/* Start: Article Reader HTML Reset */
+
+.article-reader {
+  max-width: 768px;
+  padding-left: 4.2rem;
+  padding-top: var(--space-80);
+  width: calc(100% - 36rem);
+}
+
+.article-reader hr {
+  border: none;
+  border-bottom: 0.4rem solid var(--black2);
+}
+
+/* sr-only for desktop */
+.article-reader__headline {
+  padding: 0;
+}
+
+.hero h1 {
+  cursor: pointer;
+}
+
+.article-reader blockquote {
+  border-left: 3px solid var(--black4);
+  color: var(--color-text-primary);
+  font-style: italic;
+  font-weight: 200;
+  letter-spacing: 1px;
+  margin: 0 0 2.8rem 0;
+  padding: 1.8rem 0 1.8rem 3.2rem;
+}
+
+.article-reader blockquote p {
+  margin: 0;
+  padding: 0;
+}
+
+/* End: Article Reader HTML Reset */
 
 /* TOC */
 details,

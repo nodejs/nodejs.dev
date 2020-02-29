@@ -10,7 +10,11 @@ const activeStyleTab = {
   borderBottom: 'var(--space-04) inset var(--color-text-accent)',
 };
 
-const Header = () => (
+interface Props {
+  darkModeController?: DarkModeController;
+}
+
+const Header = ({ darkModeController }: Props): JSX.Element => (
   <nav className="nav">
     <div className="logo">
       <Link to="/">
@@ -52,7 +56,7 @@ const Header = () => (
         <button
           type="button"
           className="dark-mode-toggle"
-          onClick={() => {
+          onClick={(): void => {
             if (!darkModeController)
               document.body.classList.toggle('dark-mode');
           }}

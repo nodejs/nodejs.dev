@@ -23,6 +23,7 @@ import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
 import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
 import dotsIllustration from '../images/illustrations/dots.svg';
+import Banner from '../components/banner';
 
 const nodeFeature1 =
   'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
@@ -31,7 +32,7 @@ const nodeFeature2 =
 const nodeFeature3 =
   'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
 
-const NodeFeature = ({ img, featureText }: Props) => {
+const NodeFeature = ({ img, featureText }: Props): JSX.Element => {
   return (
     <div className="node-features__feature">
       <img src={img} alt="node feature" />
@@ -52,6 +53,7 @@ export default function Index(): JSX.Element {
       description={description}
       style={{ overflow: 'hidden' }}
     >
+      <Banner />
       <div className="home-page">
         <Hero title={title} subTitle={subTitle} />
 

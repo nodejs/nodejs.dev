@@ -12,14 +12,14 @@
   }
 
   .side-nav {
-    margin-right: -36.0rem;
+    margin-right: -36rem;
     margin-bottom: calc(-100vh + var(--nav-height));
     pointer-events: none;
     overflow: hidden;
   }
 
   .side-nav::after {
-    content: "";
+    content: '';
     width: 392px;
     height: 100%;
     position: fixed;
@@ -27,7 +27,7 @@
     top: 0;
     background-color: var(--black0);
     transform: translateX(-120%);
-    transition: transform .28s;
+    transition: transform 0.28s;
     pointer-events: none;
     z-index: -1;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.33), 2px 0 3px rgba(0, 0, 0, 0.2);
@@ -49,7 +49,7 @@
 
   .side-nav__list {
     transform: translateX(-120%);
-    transition: transform .28s;
+    transition: transform 0.28s;
     pointer-events: none;
   }
 
@@ -58,14 +58,13 @@
     pointer-events: all;
   }
 
-
-  .side-nav__open, .side-nav.side-nav--open .side-nav__open {
+  .side-nav__open,
+  .side-nav.side-nav--open .side-nav__open {
     top: 34px;
     margin-top: 0;
     display: block;
     pointer-events: all;
   }
-
 }
 
 @media (max-width: 720px) {
@@ -75,7 +74,12 @@
 
   body {
     --nav-height: 5.2rem;
-    --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 52px), 0 calc(100% - 32px));
+    --banner-clip: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 52px),
+      0 calc(100% - 32px)
+    );
   }
 
   .nav ul {
@@ -137,13 +141,13 @@
     top: calc(var(--nav-height) + 12px);
   }
 
-  [data-browser=legacy] .side-nav__title {
+  [data-browser='legacy'] .side-nav__title {
     background-position: 0 calc(-50vh + var(--magic-hero-number) - 32px);
   }
 
   .article-reader {
     width: 100%;
-    padding: 0 1.0rem;
+    padding: 0 1rem;
     box-sizing: border-box;
   }
 
@@ -163,5 +167,29 @@
   /* Place top sentinels higher up on mobile */
   .sticky-sentinel--top {
     top: -92px;
+  }
+
+  .footer,
+  .footer .footer__left {
+    flex-direction: column;
+  }
+
+  .footer .footer__left > li:first-of-type {
+    border-right: none;
+  }
+
+  .footer .footer__right {
+    margin: 0 auto;
+  }
+
+  .footer .footer__left,
+  .footer .footer__right {
+    padding: 6px 18px;
+  }
+
+  .footer .footer__left > li,
+  .footer .footer__right > li {
+    margin-right: 18px;
+    padding: 6px 0;
   }
 }
