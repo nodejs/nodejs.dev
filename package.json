@@ -7,11 +7,13 @@
   "dependencies": {
     "@emotion/core": "^10.0.7",
     "@types/react-helmet": "^5.0.7",
-    "dotenv": "^6.0.0",
+    "algoliasearch": "4.0.3",
+    "dotenv": "6.2.0",
     "emotion": "^10.0.7",
     "emotion-server": "^10.0.7",
     "eslint-plugin-jest": "^22.17.0",
     "gatsby": "^2.13.13",
+    "gatsby-plugin-algolia": "0.5.0",
     "gatsby-plugin-canonical-urls": "^2.0.10",
     "gatsby-plugin-catch-links": "^2.0.9",
     "gatsby-plugin-emotion": "^4.0.4",
@@ -31,7 +33,9 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-emotion": "^10.0.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-instantsearch-dom": "6.3.0",
+    "striptags": "3.1.1"
   },
   "keywords": [
     "gatsby",

@@ -291,6 +291,26 @@ main {
   flex-wrap: wrap;
   margin: 0;
 }
+/* .ais-SearchBox-form {
+  display: flex;
+  flex-direction: row-reverse;
+} */
+
+.ais-SearchBox-form {
+  display: block;
+  position: relative;
+}
+
+.ais-SearchBox-input,
+.ais-SearchBox-submit {
+  outline: none;
+  border: 1px solid var(--brand3);
+}
+
+.ais-SearchBox-resetIcon path,
+.ais-SearchBox-submitIcon path {
+  fill: var(--brand3);
+}
 
 .footer .footer__left,
 .footer .footer__right {

@@ -1,9 +1,61 @@
+const striptags = require('striptags');
+
 if (process.env.ENVIROMENT !== 'production') {
   // eslint-disable-next-line global-require
   require('dotenv').config();
 }
 
 const config = require('./src/config');
+
+const learnQuery = `{
+  allMarkdownRemark(filter: {fields: {slug: {ne: ""}}}, sort: {fields: [fileAbsolutePath], order: ASC}) {
+    edges {
+      node {
+        html
+        frontmatter {
+          title
+          description
+          section
+        }
+        fields {
+          slug
+        }
+      }
+      next {
+        frontmatter {
+          title
+        }
+        fields {
+          slug
+        }
+        excerpt
+      }
+    }
+  }
+}`;
+
+// const queries = {
+//   query: learnQuery,
+//   transformer: ({ data }) => {
+// return data.allMarkdownRemark.reduce((indices, doc) => {
+//   const pchunks = striptags(doc.html, [], 'SPLIT_HERE').split('SPLIT_HERE');
+//   const chunks = pchunks.map(chunk => ({
+//     slut: doc.fields.slug,
+//   }));
+//   return [...indices];
+// });
+//   },
+// };
+const queries = [
+  {
+    indexName: `pages`,
+    learnQuery,
+    transformer: ({ data }) => data.allSitePage.edges.map(({ node }) => node), // optional
+    settings: {
+      attributesToSnippet: ['path:5', 'internal'],
+    },
+  },
+]
 
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX,
@@ -129,5 +181,16 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-emotion',
     },
+    {
+      resolve: 'gatsby-plugin-algolia',
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME,
+        queries,
+        chunkSize: 1000,
+      },
+    },
   ],
 };
+console.log(process.env.ALGOLIA_APP_ID);

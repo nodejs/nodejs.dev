@@ -3,6 +3,7 @@ import React from 'react';
 import logoLight from '../images/logos/nodejs-logo-light-mode.svg';
 import logoDark from '../images/logos/nodejs-logo-dark-mode.svg';
 import DarkModeController from '../util/DarkModeController';
+import Search from './search';
 
 const activeStyleTab = {
   fontWeight: 'var(--font-weight-semibold)',
@@ -52,6 +53,9 @@ const Header = ({ darkModeController }: Props): JSX.Element => (
     <div style={{ flexGrow: 1 }}></div>
 
     <ul className="right-container">
+      <li>
+        <Search />
+      </li>
       <li className="nav__tabs nav__tabs--right">
         <button
           type="button"
