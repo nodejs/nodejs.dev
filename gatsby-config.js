@@ -37,22 +37,28 @@ const learnQuery = `{
 // const queries = {
 //   query: learnQuery,
 //   transformer: ({ data }) => {
-// return data.allMarkdownRemark.reduce((indices, doc) => {
-//   const pchunks = striptags(doc.html, [], 'SPLIT_HERE').split('SPLIT_HERE');
-//   const chunks = pchunks.map(chunk => ({
-//     slut: doc.fields.slug,
-//   }));
-//   return [...indices];
-// });
+//     return data.allMarkdownRemark.reduce((indices, doc) => {
+//       const pchunks = striptags(doc.html, [], 'SPLIT_HERE').split('SPLIT_HERE');
+//       const chunks = pchunks.map(chunk => ({
+//         slut: doc.fields.slug,
+//       }));
+//       return [...indices];
+//     });
 //   },
 // };
 const queries = [
   {
-    indexName: `pages`,
-    learnQuery,
-    transformer: ({ data }) => data.allSitePage.edges.map(({ node }) => node), // optional
-    settings: {
-      attributesToSnippet: ['path:5', 'internal'],
+    indexName: `Learn`,
+    query: learnQuery,
+    transformer: ({ data }) => {
+      return data;
+      // return data.allMarkdownRemark.reduce((indices, doc) => {
+      //   const pchunks = striptags(doc.html, [], 'SPLIT_HERE').split('SPLIT_HERE');
+      //   const chunks = pchunks.map(chunk => ({
+      //     slug: doc.fields.slug,
+      //   }));
+      //   return [...indices];
+      // });
     },
   },
 ]
@@ -193,4 +199,6 @@ module.exports = {
     },
   ],
 };
-console.log(process.env.ALGOLIA_APP_ID);
+console.log(`${process.env.ALGOLIA_APP_ID}`);
+console.log(`${process.env.ALGOLIA_API_KEY}`);
+console.log(`${process.env.ALGOLIA_INDEX_NAME}`);
