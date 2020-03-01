@@ -1,0 +1,13 @@
+.node-demo > article pre.language-bash:before {
+  display: block;
+  content:'';
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: var(--color-text-accent);
+  border: 1px solid var(--color-text-accent);
+  opacity: 0.05;
+  /* outline: 1px solid var(--color-text-accent); */
+}

@@ -7,18 +7,25 @@ export interface LearnPageContext {
 }
 
 export interface LearnPageData {
-  doc: {
-    id: string;
-    html: string;
-    tableOfContents: string;
-    frontmatter: {
-      title: string;
-      description: string;
-    };
-    fields: {
-      authors: string[];
-    };
+  doc: GeneratedPageDocument;
+}
+
+export interface ContentPageData {
+  content: GeneratedPageDocument;
+}
+
+interface GeneratedPageDocument {
+  id: string;
+  html: string;
+  tableOfContents: string;
+  frontmatter: {
+    title: string;
+    description: string;
   };
+  fields: {
+    authors: string[];
+  };
+  parent?: { relativePath: string };
 }
 
 export interface PaginationInfo {
@@ -50,4 +57,17 @@ export interface SentinelObserverSetupOptions {
   root?: HTMLElement | null;
   headerRootMargin?: string;
   footerRootMargin?: string;
+}
+
+declare global {
+  interface NodeListOf<TNode extends Node> extends NodeList {
+    [Symbol.iterator](): Iterator<TNode>;
+  }
+  interface HTMLCollection {
+    [Symbol.iterator](): Iterator<HTMLElement>;
+  }
+
+  interface Element {
+    hidden: boolean;
+  }
 }

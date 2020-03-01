@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
+import DemoTabs from '../components/demo-tabs';
 import '../util/konami';
 
 import '../styles/index.css';
@@ -58,7 +59,9 @@ export default function Index(): JSX.Element {
         <Hero title={title} subTitle={subTitle} />
 
         <section className="node-demo-container">
-          <div className="node-demo"></div>
+          <div className="node-demo">
+            <DemoTabs />
+          </div>
           <img className="leafs-front" src={leafsIllustrationFront} alt="" />
           <img className="leafs-middle" src={leafsIllustrationMiddle} alt="" />
           <img className="leafs-back" src={leafsIllustrationBack} alt="" />
