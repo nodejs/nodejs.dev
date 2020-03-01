@@ -70,10 +70,8 @@ class DemoTabs extends React.Component<Props> {
     this.populate();
   }
 
-  public populate() {
+  public populate(): DocumentFragment | undefined {
     if (this.parsedFragment === this.parsedContent.documentFragment) return;
-
-    /* eslint-disable */
 
     const {
       parsedContent,
@@ -89,12 +87,15 @@ class DemoTabs extends React.Component<Props> {
 
     this.currentSection = null;
 
-    // @ts-ignore
-    for (const node of splicedNodes) node.remove();
+    // eslint-disable-next-line no-restricted-syntax
+    for (const node of splicedNodes) {
+      node.remove();
+    }
 
     if (!articleNode || !selectNode) return;
 
     if (parsedContent.sections) {
+      // eslint-disable-next-line no-restricted-syntax
       for (const section of parsedContent.sections) {
         const clone = section.cloneNode(true) as HTMLElement;
         clone.removeAttribute('visible');
@@ -116,17 +117,15 @@ class DemoTabs extends React.Component<Props> {
       this.select(this.sections[0]);
     }
 
-    this.parsedFragment = parsedFragment;
-    /* eslint-enable */
+    return parsedFragment as DocumentFragment;
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   public select(selection: HTMLOptionElement | HTMLElement) {
-    /* eslint-disable */
     selection === undefined
       ? (selection = this.sections[0])
       : !selection ||
         this.sections.includes(selection) ||
-        // @ts-ignore
         (selection = this.optionMap.get(selection));
     if (!selection || selection === this.currentSection) return;
     if (this.currentSection != null)
@@ -142,17 +141,16 @@ class DemoTabs extends React.Component<Props> {
         'aria-selected',
         name || ''
       );
-    /* eslint-enable */
   }
 
-  public render() {
+  public render(): JSX.Element {
     return (
       <React.Fragment>
         <label htmlFor="demo-input">
           <select
             id="demo-input"
             ref={this.selectRef}
-            onChange={({ target: { selectedOptions } }) =>
+            onChange={({ target: { selectedOptions } }): void =>
               this.select(selectedOptions && selectedOptions[0])
             }
           />
@@ -160,7 +158,7 @@ class DemoTabs extends React.Component<Props> {
         <article className="article-reader" ref={this.articleRef}>
           <StaticQuery
             query={query}
-            render={({ content }: ContentPageData) => {
+            render={({ content }: ContentPageData): JSX.Element => {
               const { parent, fields } = content;
               this.parsedContent.generatedContent = content;
 
