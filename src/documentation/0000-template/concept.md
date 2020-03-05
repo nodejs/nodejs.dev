@@ -1,7 +1,7 @@
 ---
 title: (What Is a Good Title?)
 description: (~60 character explanation of the article content for page meta data)
-authors: (List of authors/editors, "flaviocopes, jonchurch, your_name_here")
+authors: (List of authors/editors github handles, "flaviocopes, jonchurch, your_name_here")
 section: (One of "Quick Start" or "Getting Started")
 ---
 <!--
@@ -52,7 +52,7 @@ Note: any included images for your article should be saved in the same directory
 e.g.:
 ![Don't forget an alt tag](./screenshot-1.png)
 
-See /style-guide/0001-voice-and-tone.md for further writing guidelines.
+For further writing guidelines see the style guide https://github.com/nodejs/nodejs.dev/blob/master/style-guide/0001-voice-and-tone.md
 -->
 
 > Copy goes here ...
