@@ -12,9 +12,6 @@ export class ParsedContent {
     /** @type {typeof ParsedContent} */
     const constructor = this || ParsedContent;
 
-    /** @type {WeakMap<Document, HTMLTemplateElement | null>} */
-    let templates;
-
     const { ownerDocument, template } = content;
 
     if (template !== undefined) return template;
@@ -178,9 +175,9 @@ export class ParsedContent {
       for (const line of parentElement.querySelectorAll(':scope > code.line')) {
         line.firstChild &&
           (line.firstChild.nodeType === TEXT_NODE
-            ? /^\s*\w/.test(/** @type {Text } */ (line.firstChild).data)
+            ? /^\s*\w/.test(/** @type {Text } */(line.firstChild).data)
             : line.firstElementChild === line.firstChild &&
-              !line.firstElementChild.classList.contains('comment')) &&
+            !line.firstElementChild.classList.contains('comment')) &&
           line.classList.add('shell-command');
       }
     }
@@ -197,7 +194,7 @@ export class ParsedContent {
         typeof ownerDocument === 'object' &&
         typeof ownerDocument.createElement === 'function' &&
         ownerDocument) ||
-      null);
+        null);
     this.template = /** @type {HTMLTemplateElement | null | undefined} */ (undefined);
     this.sections = ParsedContent.empty;
     this.content = content || undefined;
@@ -211,7 +208,7 @@ export class ParsedContent {
       (reason &&
         reason.toString !== Symbol.prototype.toString &&
         `${reason}`.trim()) ||
-        `Exception thrown — ${Object.prototype.toString.call(reason)}`
+      `Exception thrown — ${Object.prototype.toString.call(reason)}`
     );
   }
   /* eslint-enable */

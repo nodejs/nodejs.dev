@@ -14,7 +14,6 @@ exports[`Pagination component only renders links to pages that has a title 1`] =
   list-style: none;
   padding: 5rem 0;
 ",
-      "toString": [Function],
     }
   }
 >
@@ -38,7 +37,6 @@ exports[`Pagination component only renders links to pages that has a title 1`] =
     color: var(--brand-light) !important;
   }
 ",
-          "toString": [Function],
         }
       }
       href="/test-slug"
@@ -65,7 +63,6 @@ exports[`Pagination component renders correctly when there is no next page 1`] =
   list-style: none;
   padding: 5rem 0;
 ",
-      "toString": [Function],
     }
   }
 >
@@ -89,7 +86,6 @@ exports[`Pagination component renders correctly when there is no next page 1`] =
     color: var(--brand-light) !important;
   }
 ",
-          "toString": [Function],
         }
       }
       href="/test-slug"
@@ -116,7 +112,6 @@ exports[`Pagination component renders correctly when there is no previous page 1
   list-style: none;
   padding: 5rem 0;
 ",
-      "toString": [Function],
     }
   }
 >
@@ -141,7 +136,6 @@ exports[`Pagination component renders correctly when there is no previous page 1
     color: var(--brand-light) !important;
   }
 ",
-          "toString": [Function],
         }
       }
       href="/test-slug"
@@ -167,7 +161,6 @@ exports[`Pagination component renders links to the next and previous page 1`] = 
   list-style: none;
   padding: 5rem 0;
 ",
-      "toString": [Function],
     }
   }
 >
@@ -191,7 +184,6 @@ exports[`Pagination component renders links to the next and previous page 1`] = 
     color: var(--brand-light) !important;
   }
 ",
-          "toString": [Function],
         }
       }
       href="/test-slug"
@@ -220,7 +212,6 @@ exports[`Pagination component renders links to the next and previous page 1`] = 
     color: var(--brand-light) !important;
   }
 ",
-          "toString": [Function],
         }
       }
       href="/test-slug"

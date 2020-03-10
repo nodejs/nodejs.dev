@@ -1,7 +1,10 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable no-unused-expressions */
+// TODO: remove the above eslint-disable comments.
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { ContentPageData } from '../types';
-import EditLink from './edit-link';
 import { ParsedContent } from '../util/ParsedContent';
 
 const query = graphql`
@@ -61,7 +64,7 @@ class DemoTabs extends React.Component<Props> {
     this.parsedFragment = null;
   }
 
-  public componentDidMount() {
+  public componentDidMount(): void {
     this.populate();
   }
 
@@ -121,6 +124,7 @@ class DemoTabs extends React.Component<Props> {
       ? (selection = this.sections[0])
       : !selection ||
         this.sections.includes(selection) ||
+        // eslint-disable-next-line no-param-reassign
         (selection = this.optionMap.get(selection));
     if (!selection || selection === this.currentSection) return;
     if (this.currentSection != null)
@@ -130,6 +134,7 @@ class DemoTabs extends React.Component<Props> {
 
     const name = selection.getAttribute('name');
 
+    // eslint-disable-next-line no-unused-expressions
     !this.selectRef.current ||
       !this.selectRef.current.parentElement ||
       this.selectRef.current.parentElement.setAttribute(
@@ -154,7 +159,6 @@ class DemoTabs extends React.Component<Props> {
           <StaticQuery
             query={query}
             render={({ content }: ContentPageData): JSX.Element => {
-              const { parent, fields } = content;
               this.parsedContent.generatedContent = content;
 
               this.populate();

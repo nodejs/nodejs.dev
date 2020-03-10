@@ -16,7 +16,7 @@ interface Props {
   img?: string;
   href?: string;
   showFooter?: boolean;
-  location?: any;
+  location?: string;
   darkModeController?: DarkModeController;
 }
 
@@ -25,7 +25,6 @@ const Layout = ({
   title,
   description,
   img,
-  location,
   showFooter = true,
   darkModeController = new DarkModeController(),
 }: Props): JSX.Element => {
