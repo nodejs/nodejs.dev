@@ -118,17 +118,6 @@ exports.createPages = ({ graphql, actions }) => {
         docPages.forEach(page => {
           switch (page.slug) {
             case 'installing-via-package-manager':
-              // createPage({
-              //   path: `/`,
-              //   component: contentTemplate,
-              //   context: {
-              //     slug: page.slug,
-              //     next: page.next,
-              //     previous: page.previous,
-              //     relativePath: page.relativePath,
-              //     navigationData,
-              //   },
-              // });
               break;
             case 'introduction-to-nodejs':
               createPage({
