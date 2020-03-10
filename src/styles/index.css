@@ -214,13 +214,12 @@ p {
 .node-demo > label > select {
   width: 100%;
   text-align: center;
-  color: white;
-  background: transparent;
+  color: #ffffff;
+  background: var(--color-fill-action);
   box-shadow: none;
   border: none;
   outline: none;
   z-index: 1;
-  opacity: 0;
 }
 
 .node-demo > article > section[visible] {

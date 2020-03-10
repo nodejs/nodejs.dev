@@ -1,7 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { ContentPageData } from '../types';
-import AuthorsList from './authors-list';
 import EditLink from './edit-link';
 import { ParsedContent } from '../util/ParsedContent';
 
@@ -19,10 +18,6 @@ const query = graphql`
       frontmatter {
         title
         description
-      }
-      fields {
-        slug
-        authors
       }
       parent {
         ... on File {
@@ -164,12 +159,7 @@ class DemoTabs extends React.Component<Props> {
 
               this.populate();
 
-              return (
-                <footer>
-                  <hr />
-                  <AuthorsList authors={fields.authors} />
-                </footer>
-              );
+              return <footer />;
             }}
           />
         </article>
