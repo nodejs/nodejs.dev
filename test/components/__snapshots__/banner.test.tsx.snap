@@ -17,6 +17,7 @@ exports[`Tests for Header component renders correctly 1`] = `
   text-align: center;
   padding-top: 5px;
 ",
+      "toString": [Function],
     }
   }
 >
@@ -50,6 +51,7 @@ exports[`Tests for Header component renders correctly 1`] = `
   font-weight: var(--font-weight-semibold);
   border: 1px solid transparent;
 ",
+            "toString": [Function],
           }
         }
         type="button"
