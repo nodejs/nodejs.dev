@@ -35,7 +35,7 @@ exports[`Tests for Header component renders correctly 1`] = `
         css={
           Object {
             "map": undefined,
-            "name": "16knpov",
+            "name": "1x4o9mg",
             "next": undefined,
             "styles": "
   position: relative;
@@ -48,6 +48,7 @@ exports[`Tests for Header component renders correctly 1`] = `
   font-family: var(--sans);
   font-style: normal;
   font-weight: var(--font-weight-semibold);
+  border: 1px solid transparent;
 ",
           }
         }
