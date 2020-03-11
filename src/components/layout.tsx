@@ -7,7 +7,9 @@ import '../styles/tokens.css';
 import '../styles/layout.css';
 import '../styles/mobile.css';
 import SEO from './seo';
-import DarkModeController from '../util/DarkModeController';
+
+// NOTE: Quickly restores dark-mode state to mitigate onload flash
+import darkModeController from '../util/darkModeController';
 
 interface Props {
   children: React.ReactNode;
@@ -17,7 +19,6 @@ interface Props {
   href?: string;
   showFooter?: boolean;
   location?: any;
-  darkModeController?: DarkModeController;
 }
 
 const Layout = ({
@@ -27,7 +28,6 @@ const Layout = ({
   img,
   location,
   showFooter = true,
-  darkModeController = new DarkModeController(),
 }: Props): JSX.Element => {
   return (
     <React.Fragment>
