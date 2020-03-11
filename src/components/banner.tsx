@@ -26,6 +26,7 @@ const bannerButton: SerializedStyles = css/* scss */ `
   font-family: var(--sans);
   font-style: normal;
   font-weight: var(--font-weight-semibold);
+  border: 1px solid transparent;
 `;
 
 /**
