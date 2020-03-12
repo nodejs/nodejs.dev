@@ -27,7 +27,7 @@ Node.js provides also a sync method, which blocks the thread until the file stat
 ```js
 const fs = require('fs')
 try {
-  const stats = fs.stat('/Users/joe/test.txt')
+  const stats = fs.statSync('/Users/joe/test.txt')
 } catch (err) {
   console.error(err)
 }

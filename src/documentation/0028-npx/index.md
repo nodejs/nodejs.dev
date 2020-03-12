@@ -68,8 +68,8 @@ Once downloaded, the downloaded code will be wiped.
 Use the `@` to specify the version, and combine that with the [`node` npm package](https://www.npmjs.com/package/node):
 
 ```bash
-npx node@6 -v #v6.14.3
-npx node@8 -v #v8.11.3
+npx node@10 -v #v10.18.1
+npx node@12 -v #v12.14.1
 ```
 
 This helps to avoid tools like `nvm` or the other Node.js version management tools.
