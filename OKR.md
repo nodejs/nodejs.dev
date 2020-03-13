@@ -1,6 +1,6 @@
 # Nodejs.dev Objectives and Key Results
 
-The Nodejs.dev project uses Objectives and Key Results to try to provide direction and guidance to the work we to, enabling our own work and the work of our initiatives to have a north star for us to ensure we're working towards.
+The Nodejs.dev project uses Objectives and Key Results to provide direction and guidance to the work we do, enabling our own work and the work of our initiatives to have a north star for us to work towards.
 
 ## Key Concepts
 
