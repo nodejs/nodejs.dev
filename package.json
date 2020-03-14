@@ -5,7 +5,7 @@
   "author": "Adam Miller <ammiller@linkedin.com>",
   "private": true,
   "dependencies": {
-    "@smotaal.io/dark-mode-controller": "^0.0.4",
+    "@smotaal.io/dark-mode-controller": "<0.5",
     "@emotion/core": "^10.0.7",
     "@types/react-helmet": "^5.0.7",
     "dotenv": "^6.0.0",
