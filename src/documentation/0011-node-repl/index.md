@@ -77,7 +77,7 @@ The REPL has some special commands, all starting with a dot `.`. They are
 - `.clear`: resets the REPL context to an empty object and clears any multi-line expression currently being input.
 - `.load`: loads a JavaScript file, relative to the current working directory
 - `.save`: saves all you entered in the REPL session to a file (specify the filename)
-- `.exit`: exists the repl (same as pressing ctrl-C two times)
+- `.exit`: exits the repl (same as pressing ctrl-C two times)
 
 The REPL knows when you are typing a multi-line statement without the need to invoke `.editor`.
 
