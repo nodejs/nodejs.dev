@@ -3,6 +3,10 @@ import React from 'react';
 
 const list: SerializedStyles = css`
   list-style: none;
+
+  & :first-of-type a {
+    margin-left: 0rem;
+  }
 `;
 
 const link: SerializedStyles = css`
@@ -23,16 +27,11 @@ const img: SerializedStyles = css`
 `;
 
 interface Props {
-  index: number;
   username: string;
   size: string;
 }
 
-const Author = ({
-  index,
-  username,
-  size = '64',
-}: Props): null | JSX.Element => {
+const Author = ({ username, size = '64' }: Props): null | JSX.Element => {
   if (!username) {
     return null;
   }
@@ -41,9 +40,6 @@ const Author = ({
   const githubUserName = username.trim();
   const githubLink = `https://github.com/${githubUserName}`;
   const githubImgLink = `https://github.com/${githubUserName}.png?size=${size}`;
-
-  // If it's the first author then no margin left.
-  const mleft = index === 0 ? { marginLeft: 0 } : {};
 
   return (
     <li css={list}>
@@ -54,7 +50,6 @@ const Author = ({
         key={username}
         target="_blank"
         rel="noopener noreferrer"
-        style={mleft}
       >
         <img
           css={img}
