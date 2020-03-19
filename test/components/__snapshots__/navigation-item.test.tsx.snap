@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationItem component renders correctly 1`] = `
+<a
+  className="t-body2 side-nav__item side-nav__item--done"
+  href="/learn/"
+  innerRef={[Function]}
+  onClick={[Function]}
+>
+  
+</a>
+`;
