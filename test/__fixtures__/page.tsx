@@ -3,6 +3,7 @@ import {
   PaginationInfo,
   LearnPageContext,
   NavigationSectionData,
+  LearnPageToc,
 } from '../../src/types';
 
 export const createPaginationInfo = () =>
@@ -62,3 +63,12 @@ export const createLearnPageContext = () =>
     previous: createPaginationInfo(),
     navigationData: createNavigationSectionData(),
   } as LearnPageContext);
+
+export const createLearnPageTocData = () =>
+  ({
+    learnPageToc: `<ul>
+<li><a href="/introduction-to-nodejs/#a-vast-number-of-libraries">A Vast Number of Libraries</a></li>
+<li><a href="/introduction-to-nodejs/#an-example-nodejs-application">An Example Node.js Application</a></li>
+<li><a href="/introduction-to-nodejs/#nodejs-frameworks-and-tools">Node.js Frameworks and Tools</a></li>
+</ul>`,
+  } as LearnPageToc);
