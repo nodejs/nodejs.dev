@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'gatsby';
 
-interface Props {
+export interface NavigationItemProps {
   key: string;
   isRead: boolean;
   isActive: boolean;
@@ -18,7 +18,7 @@ const NavigationItem = ({
   title,
   onClick,
   autoScroll,
-}: Props): JSX.Element => {
+}: NavigationItemProps): JSX.Element => {
   let className = 't-body2 side-nav__item ';
   if (isRead) {
     className += 'side-nav__item--done';
