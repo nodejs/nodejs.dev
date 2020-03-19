@@ -11,6 +11,11 @@ exports[`Article component renders correctly 1`] = `
   </h1>
   <TOC
     heading="TABLE OF CONTENTS"
+    tableOfContents="<ul>
+<li><a href=\\"/introduction-to-nodejs/#a-vast-number-of-libraries\\">A Vast Number of Libraries</a></li>
+<li><a href=\\"/introduction-to-nodejs/#an-example-nodejs-application\\">An Example Node.js Application</a></li>
+<li><a href=\\"/introduction-to-nodejs/#nodejs-frameworks-and-tools\\">Node.js Frameworks and Tools</a></li>
+</ul>"
   />
   <div
     dangerouslySetInnerHTML={
