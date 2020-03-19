@@ -4,6 +4,7 @@ import * as ShallowRenderer from 'react-test-renderer/shallow';
 import {
   createLearnPageData,
   createLearnPageContext,
+  createLearnPageTocData,
 } from '../__fixtures__/page';
 
 describe('Article component', () => {
@@ -11,6 +12,7 @@ describe('Article component', () => {
     const renderer = ShallowRenderer.createRenderer();
     const learnPageData = createLearnPageData();
     const learnPageContext = createLearnPageContext();
+    const learnPageTocData = createLearnPageTocData();
 
     const {
       doc: {
@@ -22,6 +24,8 @@ describe('Article component', () => {
 
     const { relativePath, next, previous } = learnPageContext;
 
+    const { learnPageToc } = learnPageTocData;
+
     renderer.render(
       <Article
         title={title}
@@ -30,6 +34,7 @@ describe('Article component', () => {
         previous={previous}
         authors={authors}
         relativePath={relativePath}
+        tableOfContents={learnPageToc}
       />
     );
     expect(renderer.getRenderOutput()).toMatchSnapshot();
