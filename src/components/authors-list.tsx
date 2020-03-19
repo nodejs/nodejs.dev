@@ -38,10 +38,8 @@ const AuthorsList = ({ authors }: Props): null | JSX.Element => {
     <ul css={list}>
       <h5>Contributors</h5>
       {authors.map(
-        (author, i): string | JSX.Element =>
-          author && (
-            <Author index={i} username={author} key={author} size="60" />
-          )
+        (author): string | JSX.Element =>
+          author && <Author username={author} key={author} size="60" />
       )}
     </ul>
   );
