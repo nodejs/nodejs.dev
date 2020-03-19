@@ -11,7 +11,7 @@ import SEO from './seo';
 // NOTE: Quickly restores dark-mode state to mitigate onload flash
 import darkModeController from '../util/darkModeController';
 
-interface Props {
+export interface LayoutProps {
   children: React.ReactNode;
   title?: string;
   description?: string;
@@ -28,7 +28,7 @@ const Layout = ({
   img,
   location,
   showFooter = true,
-}: Props): JSX.Element => {
+}: LayoutProps): JSX.Element => {
   return (
     <React.Fragment>
       <SEO title={title} description={description} img={img} />
