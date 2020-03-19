@@ -51,3 +51,7 @@ export interface SentinelObserverSetupOptions {
   headerRootMargin?: string;
   footerRootMargin?: string;
 }
+
+export interface LearnPageToc {
+  learnPageToc: string;
+}
