@@ -5,10 +5,14 @@ exports[`Author component renders correctly 1`] = `
   css={
     Object {
       "map": undefined,
-      "name": "66iazq",
+      "name": "b1uihh",
       "next": undefined,
       "styles": "
   list-style: none;
+
+  & :first-of-type a {
+    margin-left: 0rem;
+  }
 ",
     }
   }
@@ -30,7 +34,6 @@ exports[`Author component renders correctly 1`] = `
     }
     href="https://github.com/test-author"
     rel="noopener noreferrer"
-    style={Object {}}
     target="_blank"
     title="test-author"
   >
