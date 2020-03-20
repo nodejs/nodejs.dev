@@ -1,13 +1,13 @@
 # Nodejs.dev Objectives and Key Results
 
-The Nodejs.dev project uses Objectives and Key Results to provide direction and guidance to the work we do, enabling our own work and the work of our initiatives to have a north star for us to work towards.
+The Nodejs.dev project uses Objectives and Key Results to provide direction and guidance to the work we do, enabling our work and the work of our initiatives to have a north star for us to work towards.
 
 ## Key Concepts
 
 OKRs consist of two elements:
 
 - Objectives
-  - Objectives are qualatative, ambitious, and memorable definitions of the things we as a committee would like to achieve.
+  - Objectives are qualitative, ambitious, and memorable definitions of the things we as a committee would like to achieve.
 - Key Results
   - Key Results are a set of metrics by which we can measure progress toward their objectives. Like objectives, they should be ambitious and overestimate what we can accomplish.
 
@@ -23,7 +23,7 @@ Here are some external references that may help provide further context on OKRs.
 
 - **Objective:** Continuity of process
 
-  - **Key Result:** Draft and maintain technical administration summary and how-to guides covering staging and CI.
+  - **Key Result:** Staging and CI have each have a published technical administration summary and a how-to guide.
   - **Key Result:** Consider using issue templates to facilitate operations.
 
 - **Objective:** Identify areas of progress and future goals
