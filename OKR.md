@@ -21,12 +21,12 @@ Here are some external references that may help provide further context on OKRs.
 
 ## OKRs (2020 Set 1):
 
-- **Objective:** Continuity of process
+a. **Objective:** Continuity of process
 
   - **Key Result:** Staging and CI have each have a published technical administration summary and a how-to guide.
   - **Key Result:** Consider using issue templates to facilitate operations.
 
-- **Objective:** Identify areas of progress and future goals
+b. **Objective:** Identify areas of progress and future goals
 
   - **Key Result:** Create a feature roadmap
   - **Key Result:** Track features & priorities in one place (project?)
@@ -34,6 +34,6 @@ Here are some external references that may help provide further context on OKRs.
     1. Docs — https://nodejs.org/en/docs/
     2. Download — https://nodejs.org/en/download/
 
-- **Objective:** Make explicit the channels of interfacing internally and with larger org
+c. **Objective:** Make explicit the channels of interfacing internally and with larger org
   - **Key Result:** Write down implicit team norms
   - **Key Result:** How do we propose and review non-feature changes in PRs?
