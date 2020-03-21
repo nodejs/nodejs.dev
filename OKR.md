@@ -23,17 +23,18 @@ Here are some external references that may help provide further context on OKRs.
 
 a. **Objective:** Continuity of process
 
-  - **Key Result:** Staging and CI have each have a published technical administration summary and a how-to guide.
-  - **Key Result:** Consider using issue templates to facilitate operations.
+- **Key Result:** Staging and CI have each have a published technical administration summary and a how-to guide.
+- **Key Result:** Consider using issue templates to facilitate operations.
 
 b. **Objective:** Identify areas of progress and future goals
 
-  - **Key Result:** Create a feature roadmap
-  - **Key Result:** Track features & priorities in one place (project?)
-  - **Key Result:** Make available the top two features in nodejs.org:
-    1. Docs — https://nodejs.org/en/docs/
-    2. Download — https://nodejs.org/en/download/
+- **Key Result:** Create a feature roadmap
+- **Key Result:** Track features & priorities in one place (project?)
+- **Key Result:** Make available the top two features in nodejs.org:
+  1. Docs — https://nodejs.org/en/docs/
+  2. Download — https://nodejs.org/en/download/
 
 c. **Objective:** Make explicit the channels of interfacing internally and with larger org
-  - **Key Result:** Write down implicit team norms
-  - **Key Result:** How do we propose and review non-feature changes in PRs?
+
+- **Key Result:** Write down implicit team norms
+- **Key Result:** How do we propose and review non-feature changes in PRs?
