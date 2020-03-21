@@ -1,6 +1,3 @@
-/* eslint-disable */
-/* tslint:disable */
-
 import React from 'react';
 import { PaginationInfo } from '../types';
 import AuthorsList from './authors-list';
@@ -18,6 +15,11 @@ interface Props {
   previous?: PaginationInfo;
 }
 
+interface Header {
+  id: string;
+  scrollYPos: number;
+}
+
 const Article = ({
   title,
   html,
@@ -28,7 +30,7 @@ const Article = ({
   authors,
 }: Props): JSX.Element => {
   const element = React.useRef<HTMLElement | null>(null);
-  const [headers, setHeaders] = React.useState<{ id: string; scrollYPos: number; }[]>([]);
+  const [headers, setHeaders] = React.useState<Header[]>([]);
 
   const handleRef = (ref?: HTMLElement | null): void => {
     if (ref) {
@@ -36,7 +38,7 @@ const Article = ({
     }
   };
 
-  React.useEffect(() => {
+  React.useEffect((): void => {
     if (window.location.hash) {
       const el = document.getElementById(window.location.hash.substr(1));
 
@@ -49,33 +51,35 @@ const Article = ({
 
     if (element.current) {
       // save current headers positions
-      const newHeaders = Array.from(element.current.getElementsByTagName('h2')).map((header) => {
-        console.log('header', header);
-
-        return {
+      const newHeaders = Array.from(
+        element.current.getElementsByTagName('h2')
+      ).map(
+        (header: HTMLHeadingElement): Header => ({
           id: `#${header.getAttribute('id')}`,
-          scrollYPos: (header.getBoundingClientRect().top) - 64,
-        };
-      });
+          scrollYPos: header.getBoundingClientRect().top - 64,
+        })
+      );
 
       setHeaders(newHeaders);
     }
   }, []);
 
-  React.useEffect(() => {
-    let debounce: any;
+  React.useEffect((): (() => void) => {
+    let debounce: ReturnType<typeof setTimeout>;
 
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       if (debounce) {
         clearTimeout(debounce);
       }
 
-      debounce = setTimeout(() => {
+      debounce = setTimeout((): void => {
         // find right header based on current position
-        const el = headers.find((header, index) => {
+        const el = headers.find((header, index): boolean => {
           if (headers[index + 1]) {
-            return window.scrollY >= header.scrollYPos
-              && window.scrollY < headers[index + 1].scrollYPos;
+            return (
+              window.scrollY >= header.scrollYPos &&
+              window.scrollY < headers[index + 1].scrollYPos
+            );
           }
 
           return window.scrollY >= header.scrollYPos;
@@ -90,7 +94,7 @@ const Article = ({
 
     window.addEventListener('scroll', handleScroll);
 
-    return () => {
+    return (): void => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [headers]);
