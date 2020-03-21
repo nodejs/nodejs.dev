@@ -1,14 +1,5 @@
 {
   "projects": {
-    "staging": "nodejs-infrastructure"
-  },
-  "targets": {
-    "nodejs-infrastructure": {
-      "hosting": {
-        "nodejs-dev": [
-          "nodejs-dev"
-        ]
-      }
-    }
+    "default": "nodejs-web-dev"
   }
 }

@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "target": "nodejs-dev",
     "public": "public",
     "ignore": [
       "firebase.json",
