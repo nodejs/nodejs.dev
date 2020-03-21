@@ -1,6 +1,7 @@
 ---
 name: Bug Report
 about: Report that something isn't working.
+labels: bug
 ---
 
 ## Description
