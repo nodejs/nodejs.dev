@@ -1,65 +1,101 @@
 const striptags = require('striptags');
 
-if (process.env.ENVIROMENT !== 'production') {
-  // eslint-disable-next-line global-require
-  require('dotenv').config();
-}
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 const config = require('./src/config');
 
-const learnQuery = `{
+// const myQuery = `{
+//   allSitePage {
+//     edges {
+//       node {
+//         # try to find a unique id for each node
+//         # if this field is absent, it's going to
+//         # be inserted by Algolia automatically
+//         # and will be less simple to update etc.
+//         objectID: id
+//         component
+//         path
+//         componentChunkName
+//         jsonName
+//         internal {
+//           type
+//           contentDigest
+//           owner
+//         }
+//       }
+//     }
+//   }
+// }`;
+
+const learnQuery = `
+{
   allMarkdownRemark(filter: {fields: {slug: {ne: ""}}}, sort: {fields: [fileAbsolutePath], order: ASC}) {
     edges {
       node {
-        html
         frontmatter {
           title
           description
-          section
         }
         fields {
           slug
         }
-      }
-      next {
-        frontmatter {
-          title
-        }
-        fields {
-          slug
-        }
-        excerpt
+        html
       }
     }
   }
 }`;
-
-// const queries = {
-//   query: learnQuery,
-//   transformer: ({ data }) => {
-//     return data.allMarkdownRemark.reduce((indices, doc) => {
-//       const pchunks = striptags(doc.html, [], 'SPLIT_HERE').split('SPLIT_HERE');
-//       const chunks = pchunks.map(chunk => ({
-//         slut: doc.fields.slug,
-//       }));
-//       return [...indices];
-//     });
-//   },
-// };
+const flatten = arr =>
+  arr.map(({ node: { frontmatter } }) => ({
+    ...frontmatter
+  }))
 const queries = [
   {
     indexName: `Learn`,
     query: learnQuery,
-    transformer: ({ data }) => {
-      return data;
-      // return data.allMarkdownRemark.reduce((indices, doc) => {
-      //   const pchunks = striptags(doc.html, [], 'SPLIT_HERE').split('SPLIT_HERE');
-      //   const chunks = pchunks.map(chunk => ({
-      //     slug: doc.fields.slug,
-      //   }));
-      //   return [...indices];
-      // });
-    },
+    transformer: ({ data }) => flatten(data.allMarkdownRemark.edges),
+
+
+
+
+
+
+
+    // transformer: ({ data }) => {
+    //   // 1. Break each post into an array of searchable text chunks.
+    //   // 2. return a flattened array of all indices
+    //   return data.allMarkdownRemark.edges.reduce((indices, post) => {
+    //     // 1. description (if it exists)
+    //     // 2. Each paragraph
+    //     // console.log(post)
+    //     const pChunks = striptags(post, [], "XXX_SPLIT_HERE_XXX").split(
+    //       "XXX_SPLIT_HERE_XXX"
+    //     )
+    //     console.log(pChunks);
+
+    //     // const chunks = pChunks.map(chnk => {
+    //     //   // console.log(chnk);
+    //     // });
+
+    //     //   ({
+    //     //   slug: post.fields.slug,
+    //     //   title: post.frontmatter.title,
+    //     // }))
+
+    //     // if (post.frontmatter.description) {
+    //     //   chunks.push({
+    //     //     slug: post.fields.slug,
+    //     //     title: post.frontmatter.title,
+    //     //   })
+    //     // }
+
+    //     // const filtered = chunks.filter(chnk => !!chnk.excerpt)
+    //     // console.log('result', ...filtered);
+    //     return [...indices] //...filtered]
+
+    //   }, [])
+    // },
   },
 ]
 
@@ -190,15 +226,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-algolia',
       options: {
-        appId: process.env.ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_API_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME,
+        appId: '1G9WNEG3D7', //process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: '5144fc916038631f8226a6b5acab39b7', //process.env.GATSBY_ALGOLIA_SEARCH_KEY,
+        indexName: 'Learn', //process.env.ALGOLIA_INDEX_NAME,
         queries,
         chunkSize: 1000,
       },
     },
   ],
 };
-console.log(`${process.env.ALGOLIA_APP_ID}`);
-console.log(`${process.env.ALGOLIA_API_KEY}`);
-console.log(`${process.env.ALGOLIA_INDEX_NAME}`);
