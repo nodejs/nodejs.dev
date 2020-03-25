@@ -1,9 +1,9 @@
 steps:
 - name: 'node:10'
-  entrypoint: yarn
-  args: ['install']
+  entrypoint: npm
+  args: ['ci']
 - name: 'node:10'
-  entrypoint: yarn
+  entrypoint: npm
   args: ['run', 'build-ci']
   env:
     - 'PATH_PREFIX=staging.nodejs.dev/$SHORT_SHA'
