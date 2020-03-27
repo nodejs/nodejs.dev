@@ -57,7 +57,7 @@
   "devDependencies": {
     "@babel/core": "^7.3.3",
     "@babel/preset-typescript": "^7.3.3",
-    "@types/jest": "^24.0.5",
+    "@types/jest": "^25.1.4",
     "@types/react-test-renderer": "^16.8.1",
     "babel-jest": "^24.1.0",
     "babel-preset-gatsby": "^0.2.20",
