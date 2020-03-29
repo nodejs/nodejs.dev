@@ -37,7 +37,7 @@ const Article = ({
   React.useEffect((): (() => void) => {
     let observer: IntersectionObserver;
 
-    if (window.history.state.articleScrollTo) {
+    if (window.history.state && window.history.state.articleScrollTo) {
       window.scrollTo({
         top: window.history.state.articleScrollTo,
       });
