@@ -28,7 +28,7 @@
     "intersection-observer": "^0.7.0",
     "prismjs": "^1.15.0",
     "react": "^16.8.0",
-    "react-dom": "^16.8.0",
+    "react-dom": "^16.13.0",
     "react-emotion": "^10.0.0",
     "react-helmet": "^5.2.0",
     "tslint": "^5.11.0",
