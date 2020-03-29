@@ -15,10 +15,7 @@ interface Props {
   previous?: PaginationInfo;
 }
 
-interface Header {
-  id: string;
-  scrollYPos: number;
-}
+const NAV_HEIGHT = 72;
 
 const Article = ({
   title,
@@ -30,7 +27,6 @@ const Article = ({
   authors,
 }: Props): JSX.Element => {
   const element = React.useRef<HTMLElement | null>(null);
-  const [headers, setHeaders] = React.useState<Header[]>([]);
 
   const handleRef = (ref?: HTMLElement | null): void => {
     if (ref) {
@@ -38,66 +34,61 @@ const Article = ({
     }
   };
 
-  React.useEffect((): void => {
-    if (window.location.hash) {
-      const el = document.getElementById(window.location.hash.substr(1));
+  React.useEffect((): (() => void) => {
+    let observer: IntersectionObserver;
 
-      if (el) {
-        el.scrollIntoView({
-          behavior: 'smooth',
-        });
-      }
+    if (window.history.state.articleScrollTo) {
+      window.scrollTo({
+        top: window.history.state.articleScrollTo,
+      });
     }
 
     if (element.current) {
-      // save current headers positions
-      const newHeaders = Array.from(
-        element.current.getElementsByTagName('h2')
-      ).map(
-        (header: HTMLHeadingElement): Header => ({
-          id: `#${header.getAttribute('id')}`,
-          scrollYPos: header.getBoundingClientRect().top - 64,
-        })
+      observer = new IntersectionObserver(
+        (entries): void => {
+          entries.forEach((entry): void => {
+            // element is already hidden by the nav
+            if (entry.boundingClientRect.y < NAV_HEIGHT) {
+              if (!entry.target.previousElementSibling) {
+                window.history.replaceState(
+                  {
+                    articleScrollTo: null,
+                  },
+                  '',
+                  null
+                );
+                return;
+              }
+
+              window.history.replaceState(
+                {
+                  articleScrollTo: document.documentElement.scrollTop,
+                },
+                '',
+                null
+              );
+            }
+          });
+        },
+        {
+          threshold: [0.25, 0.5, 0.75],
+          rootMargin: `-${NAV_HEIGHT}px 0px 0px 0px`,
+        }
       );
 
-      setHeaders(newHeaders);
+      Array.from(element.current.children).forEach((children): void => {
+        observer.observe(children);
+      });
     }
-  }, []);
-
-  React.useEffect((): (() => void) => {
-    let debounce: ReturnType<typeof setTimeout>;
-
-    const handleScroll = (): void => {
-      if (debounce) {
-        clearTimeout(debounce);
-      }
-
-      debounce = setTimeout((): void => {
-        // find right header based on current position
-        const el = headers.find((header, index): boolean => {
-          if (headers[index + 1]) {
-            return (
-              window.scrollY >= header.scrollYPos &&
-              window.scrollY < headers[index + 1].scrollYPos
-            );
-          }
-
-          return window.scrollY >= header.scrollYPos;
-        });
-
-        // set header id in url as hash
-        if (el) {
-          window.history.replaceState(null, '', el.id);
-        }
-      }, 10);
-    };
-
-    window.addEventListener('scroll', handleScroll);
 
     return (): void => {
-      window.removeEventListener('scroll', handleScroll);
+      if (observer && element.current) {
+        Array.from(element.current.children).forEach((children): void => {
+          observer.unobserve(children);
+        });
+      }
     };
-  }, [headers]);
+  }, []);
 
   return (
     <article className="article-reader">
