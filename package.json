@@ -70,7 +70,7 @@
     "remark-preset-lint-node": "^1.13.0",
     "tslint": "^6.1.0",
     "tslint-config-prettier": "^1.15.0",
-    "tslint-react": "^4.1.0"
+    "tslint-react": "^4.2.0"
   },
   "repository": {
     "type": "git",
