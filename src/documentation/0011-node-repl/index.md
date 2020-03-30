@@ -32,7 +32,7 @@ The REPL is waiting for us to enter some JavaScript code, to be more precise.
 
 Start simple and enter
 
-```console
+```
 > console.log('test')
 test
 undefined
