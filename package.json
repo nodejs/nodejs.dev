@@ -58,7 +58,7 @@
     "@babel/preset-typescript": "^7.9.0",
     "@types/jest": "^25.1.4",
     "@types/react-test-renderer": "^16.9.2",
-    "babel-jest": "^25.2.3",
+    "babel-jest": "^25.2.4",
     "babel-preset-gatsby": "^0.3.1",
     "codecov": "^3.6.5",
     "identity-obj-proxy": "^3.0.0",
