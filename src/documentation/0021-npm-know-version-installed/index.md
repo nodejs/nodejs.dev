@@ -13,7 +13,7 @@ npm list
 
 Example:
 
-```txt
+```
 ❯ npm list
 /Users/joe/dev/node/cowsay
 └─┬ cowsay@1.3.1
@@ -34,7 +34,7 @@ You can also just open the `package-lock.json` file, but this involves some visu
 
 To get only your top-level packages (basically, the ones you told npm to install and you listed in the `package.json`), run `npm list --depth=0`:
 
-```txt
+```
 ❯ npm list --depth=0
 /Users/joe/dev/node/cowsay
 └── cowsay@1.3.1
@@ -42,7 +42,7 @@ To get only your top-level packages (basically, the ones you told npm to install
 
 You can get the version of a specific package by specifying the name:
 
-```txt
+```
 ❯ npm list cowsay
 /Users/joe/dev/node/cowsay
 └── cowsay@1.3.1
@@ -50,7 +50,7 @@ You can get the version of a specific package by specifying the name:
 
 This also works for dependencies of packages you installed:
 
-```txt
+```
 ❯ npm list minimist
 /Users/joe/dev/node/cowsay
 └─┬ cowsay@1.3.1
@@ -60,7 +60,7 @@ This also works for dependencies of packages you installed:
 
 If you want to see what's the latest available version of the package on the npm repository, run `npm view [package_name] version`:
 
-```txt
+```
 ❯ npm view cowsay version
 
 1.3.1

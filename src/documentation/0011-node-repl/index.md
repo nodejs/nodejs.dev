@@ -19,7 +19,7 @@ node
 
 If you try it now in your terminal, this is what happens:
 
-```txt
+```
 ❯ node
 >
 ```

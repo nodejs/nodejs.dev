@@ -33,7 +33,7 @@ npm install -g webpack@4.16.4
 
 You might also be interested in listing all the previous version of a package. You can do it with `npm view <package> versions`:
 
-```txt
+```
 ❯ npm view cowsay versions
 
 [ '1.0.0',

@@ -68,7 +68,7 @@ foo()
 
 This code prints
 
-```txt
+```
 foo
 bar
 baz
@@ -121,7 +121,7 @@ foo()
 
 This code prints, maybe surprisingly:
 
-```txt
+```
 foo
 baz
 bar
@@ -185,7 +185,7 @@ foo()
 
 This prints
 
-```txt
+```
 foo
 baz
 should be right after baz, before bar
