@@ -59,13 +59,13 @@ Some of those updates are major releases. Running `npm update` won't update the 
 
 To update to a new major version all the packages, install the `npm-check-updates` package globally:
 
-```sh
+```
 npm install -g npm-check-updates
 ```
 
 then run it:
 
-```sh
+```
 ncu -u
 ```
 
@@ -73,12 +73,12 @@ this will upgrade all the version hints in the `package.json` file, to `dependen
 
 You are now ready to run the update:
 
-```sh
+```
 npm update
 ```
 
 If you just downloaded the project without the `node_modules` dependencies and you want to install the shiny new versions first, just run
 
-```sh
+```
 npm install
 ```

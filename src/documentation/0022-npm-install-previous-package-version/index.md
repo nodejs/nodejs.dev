@@ -7,13 +7,13 @@ section: Getting Started
 
 You can install an old version of an npm package using the `@` syntax:
 
-```sh
+```
 npm install <package>@<version>
 ```
 
 Example:
 
-```sh
+```
 npm install cowsay
 ```
 
@@ -21,13 +21,13 @@ installs version 1.3.1 (at the time of writing).
 
 Install version 1.2.0 with:
 
-```sh
+```
 npm install cowsay@1.2.0
 ```
 
 The same can be done with global packages:
 
-```sh
+```
 npm install -g webpack@4.16.4
 ```
 

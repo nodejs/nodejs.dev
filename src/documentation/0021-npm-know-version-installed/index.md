@@ -7,7 +7,7 @@ section: Getting Started
 
 To see the latest version of all the npm package installed, including their dependencies:
 
-```sh
+```
 npm list
 ```
 

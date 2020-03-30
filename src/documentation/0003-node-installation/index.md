@@ -13,7 +13,7 @@ One very convenient way to install Node.js is through a package manager. In this
 
 On macOS, [Homebrew](https://brew.sh/) is the de-facto standard, and - once installed - allows to install Node.js very easily, by running this command in the CLI:
 
-```sh
+```
 brew install node
 ```
 

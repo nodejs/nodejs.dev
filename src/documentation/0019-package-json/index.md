@@ -364,7 +364,7 @@ Sets a list of `npm` packages installed as dependencies.
 
 When you install a package using npm or yarn:
 
-```sh
+```
 npm install <PACKAGENAME>
 yarn add <PACKAGENAME>
 ```
@@ -387,7 +387,7 @@ They differ from `dependencies` because they are meant to be installed only on a
 
 When you install a package using npm or yarn:
 
-```sh
+```
 npm install --dev <PACKAGENAME>
 yarn add --dev <PACKAGENAME>
 ```
