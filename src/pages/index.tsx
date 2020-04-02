@@ -71,28 +71,6 @@ export default function Index(): JSX.Element {
           <NodeFeature img={featureImg} featureText={nodeFeature3} />
         </section>
 
-        <section className="join-node">
-          <h4 className="t-headline">
-            <span className="accent">Join</span> the community
-          </h4>
-          <div className="join-node-form-container">
-            <p className="t-body2">
-              We’ll never share your information and always respect your inbox -
-              quality content only, we promise.{' '}
-            </p>
-            <div style={{ display: `flex`, alignItems: 'flex-start' }}>
-              <input
-                type="email"
-                placeholder="node@nodejs.dev"
-                className="input-subscribe"
-              />
-              <button className="btn-subscribe t-body1" type="button">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </section>
-
         <section className="trusted-by">
           <h4 className="t-headline">
             Trusted by development teams around the world
