@@ -101,7 +101,7 @@ results in
 
 ### `path.relative()`
 
-Accepts 2 paths as arguments. Returns the the relative path from the first path to the second, based on the current working directory.
+Accepts 2 paths as arguments. Returns the relative path from the first path to the second, based on the current working directory.
 
 Example:
 
