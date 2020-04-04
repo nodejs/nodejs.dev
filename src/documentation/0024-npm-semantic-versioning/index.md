@@ -5,7 +5,7 @@ authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 
-If there's one great thing in Node.js packages, is that all agreed on using Semantic Versioning for their version numbering.
+If there's one great thing in Node.js packages, it's that they all agreed on using Semantic Versioning for their version numbering.
 
 The Semantic Versioning concept is simple: all versions have 3 digits: `x.y.z`.
 
