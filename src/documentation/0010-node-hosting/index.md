@@ -41,7 +41,7 @@ A way to publish your apps, and have no server at all to manage, is Serverless. 
 
 Two very popular solutions are
 
-* [Serverless Framework](https://serverless.com/framework/)
+* [Serverless Framework](https://serverless.com/framework/docs/)
 * [Standard Library](https://stdlib.com/)
 
 They both provide an abstraction layer to publishing on AWS Lambda and other FAAS solutions based on Azure or the Google Cloud offering.
