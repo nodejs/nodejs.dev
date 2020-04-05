@@ -37,6 +37,8 @@ const car = {
 
 module.exports = car
 
+//save this file as car.js
+
 //..in the other file
 
 const car = require('./car')
