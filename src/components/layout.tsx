@@ -41,9 +41,8 @@ const Layout = ({ children, title, description, img }: Props) => {
   });
 
   const setupObserver = (): void => {
-    const container: HTMLElement = document.querySelector(
-      '.side-nav'
-    ) as HTMLElement;
+    const container: HTMLElement =
+      document.querySelector('.side-nav') as HTMLElement;
     const stickyElementsClassName: string = 'side-nav__title';
     const root: HTMLElement | null = isMobileScreen() ? null : container;
     const headerRootMargin: string = '-93px 0px 0px 0px';
@@ -75,7 +74,8 @@ const Layout = ({ children, title, description, img }: Props) => {
     if (!doc.body.dataset.browser) {
       doc.body.dataset.browser = 'legacy';
     }
-    const scrollingElement: HTMLElement | null = doc.scrollingElement as HTMLElement;
+    const scrollingElement: HTMLElement | null =
+      doc.scrollingElement as HTMLElement;
     if (scrollingElement) {
       const offset: number = Math.min(scrollingElement.scrollTop - 62, 210);
       if (Math.abs(prevOffset.current - offset) > 5) {

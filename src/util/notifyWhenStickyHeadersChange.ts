@@ -20,9 +20,9 @@ const addSentinels = (
   stickyElementsClassName: string,
   className: string
 ): HTMLDivElement[] => {
-  const stickyElements: HTMLElement[] = Array.from(
-    container.querySelectorAll(`.${stickyElementsClassName}`)
-  ) as HTMLElement[];
+  const stickyElements: HTMLElement[] =
+    Array.from(container.querySelectorAll(`.${stickyElementsClassName}`)) as
+    HTMLElement[];
   const sentinels: HTMLDivElement[] = stickyElements.map(
     (stickyElement: HTMLElement) => {
       const sentinel: HTMLDivElement = document.createElement('div');
@@ -57,9 +57,8 @@ const observeTopSentinels = ({
         entry.target.parentElement;
       const stickyElement: HTMLElement | null =
         targetParentElement &&
-        (targetParentElement.querySelector(
-          `.${stickyElementsClassName}`
-        ) as HTMLElement);
+        (targetParentElement.querySelector(`.${stickyElementsClassName}`) as
+          HTMLElement);
       const rootBoundsInfo: ClientRect = entry.rootBounds;
 
       // Started sticking
@@ -118,9 +117,8 @@ const observeBottomSentinels = ({
         entry.target.parentElement;
       const stickyElement: HTMLElement | null =
         targetParentElement &&
-        (targetParentElement.querySelector(
-          `.${stickyElementsClassName}`
-        ) as HTMLElement);
+        (targetParentElement.querySelector(`.${stickyElementsClassName}`) as
+          HTMLElement);
       const rootBoundsInfo: ClientRect = entry.rootBounds;
       const ratio: number = entry.intersectionRatio;
 
