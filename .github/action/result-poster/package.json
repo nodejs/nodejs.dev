@@ -4,8 +4,7 @@
   "description": "The WIP GitHub Action",
   "main": "index.js",
   "scripts": {
-    "pretest": "standard",
-    "test": "node test/smoke.js"
+    "test": "standard"
   },
   "repository": {
     "type": "git",
