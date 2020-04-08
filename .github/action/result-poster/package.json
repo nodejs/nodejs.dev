@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "nock": "^10.0.6",
-    "semantic-release": "^15.13.24",
+    "semantic-release": "^17.0.4",
     "standard": "^14.3.3"
   },
   "release": {
