@@ -5,7 +5,7 @@
   "author": "Adam Miller <ammiller@linkedin.com>",
   "private": true,
   "dependencies": {
-    "@emotion/core": "^10.0.7",
+    "@emotion/core": "^10.0.28",
     "@types/react-helmet": "^5.0.15",
     "dotenv": "^8.2.0",
     "emotion": "^10.0.27",
