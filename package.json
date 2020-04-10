@@ -7,7 +7,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.7",
     "@types/react-helmet": "^5.0.7",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.1.0",
     "emotion": "^10.0.7",
     "emotion-server": "^10.0.7",
     "gatsby": "^2.13.13",
