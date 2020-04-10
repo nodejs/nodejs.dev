@@ -83,7 +83,7 @@ We set the Content-Type header:
 res.setHeader('Content-Type', 'text/plain')
 ```
 
-and we close the response, adding the content as an argument to `end()`:
+and we end close the response, adding the content as an argument to `end()`:
 
 ```js
 res.end('Hello World\n')
