@@ -17,9 +17,9 @@ The Node.js ecosystem is huge and thanks to it V8 also powers desktop apps, with
 
 Other browsers have their own JavaScript engine:
 
-* Firefox has [**SpiderMonkey**](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
-* Safari has [**JavaScriptCore**](https://developer.apple.com/documentation/javascriptcore) (also called Nitro)
-* Edge has [**Chakra**](https://github.com/Microsoft/ChakraCore)
+- Firefox has [**SpiderMonkey**](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
+- Safari has [**JavaScriptCore**](https://developer.apple.com/documentation/javascriptcore) (also called Nitro)
+- Edge has [**Chakra**](https://github.com/Microsoft/ChakraCore)
 
 and many others exist as well.
 

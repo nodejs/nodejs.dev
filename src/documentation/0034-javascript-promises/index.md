@@ -32,9 +32,9 @@ The created promise will eventually end in a **resolved state**, or in a **rejec
 
 In addition to your own code and libraries code, promises are used by standard modern Web APIs such as:
 
-* the Battery API
-* the Fetch API
-* Service Workers
+- the Battery API
+- the Fetch API
+- Service Workers
 
 It's unlikely that in modern JavaScript you'll find yourself _not_ using promises, so let's start diving right into them.
 
@@ -148,8 +148,8 @@ In this example, we call `fetch()` to get a list of TODO items from the `todos.j
 
 Running `fetch()` returns a [response](https://fetch.spec.whatwg.org/#concept-response), which has many properties, and within those we reference:
 
-* `status`, a numeric value representing the HTTP status code
-* `statusText`, a status message, which is `OK` if the request succeeded
+- `status`, a numeric value representing the HTTP status code
+- `statusText`, a status message, which is `OK` if the request succeeded
 
 `response` also has a `json()` method, which returns a promise that will resolve with the content of the body processed and transformed into JSON.
 
