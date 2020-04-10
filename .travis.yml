@@ -7,10 +7,15 @@ env:
   - COMMAND=build
   - COMMAND=test-ci
 
+before_install:
+  - npm install -g yarn
+
+install: yarn --frozen-lockfile
+
 cache:
-  npm: true
+  yarn: true
   directories:
     - 'node_modules'
 
 script:
-  - npm run $COMMAND
+  - yarn run $COMMAND

@@ -2,6 +2,7 @@
 .cache
 node_modules
 yarn-error.log
+package-lock.json
 
 # Build directory
 /public
@@ -12,4 +13,3 @@ yarn-error.log
 coverage
 .vscode
 .history
-yarn.lock
