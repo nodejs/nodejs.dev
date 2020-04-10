@@ -4,7 +4,7 @@ on:
   pull_request:
     paths:
     - ".github/workflows/result-poster-ci.yml"
-    - ".github/action/result-poster"
+    - ".github/action/result-poster/*"
 
 jobs:
   test:
