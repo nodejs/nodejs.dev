@@ -80,7 +80,7 @@ Example:
 
 ## `os.hostname()`
 
-Return the host name.
+Return the hostname.
 
 ## `os.loadavg()`
 

@@ -59,7 +59,7 @@ Node.js has a fantastic [standard library](https://nodejs.org/api/), including f
 
 The `createServer()` method of `http` creates a new HTTP server and returns it.
 
-The server is set to listen on the specified port and host name. When the server is ready, the callback function is called, in this case informing us that the server is running.
+The server is set to listen on the specified port and hostname. When the server is ready, the callback function is called, in this case informing us that the server is running.
 
 Whenever a new request is received, the [`request` event](https://nodejs.org/api/http.html#http_event_request) is called, providing two objects: a request (an [`http.IncomingMessage`](https://nodejs.org/api/http.html#http_class_http_incomingmessage) object) and a response (an [`http.ServerResponse`](https://nodejs.org/api/http.html#http_class_http_serverresponse) object).
 
