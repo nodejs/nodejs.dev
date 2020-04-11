@@ -1,0 +1,17 @@
+.home-page.-download {
+  margin-top: 79px;
+  max-width: 936px;
+  width: 80%;
+  font-family: var(--base-type-face);
+  font-style: var(--font-style-regular);
+  font-weight: var(--font-weight-regular);
+  display: inline-block;
+  margin-left: calc(50% - 936px / 2);
+}
+
+.download-description {
+  margin-top: 40px;
+  font-size: var(--font-size-body1);
+  line-height: var(--line-height-body1);
+  text-align: center;
+}

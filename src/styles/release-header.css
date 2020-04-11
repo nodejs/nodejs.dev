@@ -1,0 +1,24 @@
+.release-page-navigation {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: var(--black7);
+  font-size: var(--font-size-overline);
+  line-height: var(--line-height-overline);
+  letter-spacing: var(--space-02);
+}
+
+.release-page-navigation-active {
+  color: var(--brand4);
+}
+
+.release-page-navigation.-title {
+  text-transform: capitalize;
+  color: var(--black9);
+  font-size: var(--font-size-display3);
+  line-height: var(--line-height-display3);
+}
+
+.release-page-navigation-right-npm {
+  text-transform: lowercase;
+}

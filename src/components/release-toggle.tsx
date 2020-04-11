@@ -1,28 +1,47 @@
 import React from 'react';
 
+import '../styles/release-toggle.css';
+
 interface Props {
-  onToggle: Function;
-  selected: boolean;
+  handleClick: void;
+  selected: string;
 }
 
 export default function ReleaseToggle({
-  onToggle,
+  handleClick,
   selected,
 }: Props): JSX.Element {
-  const handleClick = (): void => {
-    onToggle(!selected);
-  };
-
-  const id = Math.random() * (100000 - 1) + 1;
   return (
-    <label htmlFor={`release-selector-${id}`}>
-      <input
-        id={`release-selector-${id}`}
-        type="checkbox"
-        checked={selected}
-        onChange={handleClick}
-      ></input>
-      {selected ? 'lts' : 'current'}
-    </label>
+    <div className="slider-checkbox">
+      <div className="slider-checkbox-selector">
+        <button
+          type="button"
+          className={
+            selected === 'LTS'
+              ? 'slider-checkbox-button -active'
+              : 'slider-checkbox-button'
+          }
+          onClick={(): void => handleClick('LTS')}
+        >
+          LTS
+        </button>
+        <button
+          type="button"
+          className={
+            selected === 'CURRENT'
+              ? 'slider-checkbox-button -current -active'
+              : 'slider-checkbox-button -current'
+          }
+          onClick={(): void => handleClick('CURRENT')}
+        >
+          Current
+        </button>
+      </div>
+      <p className="release-description">
+        {selected === 'LTS'
+          ? 'Recommended for most users'
+          : 'With the latest features'}
+      </p>
+    </div>
   );
 }

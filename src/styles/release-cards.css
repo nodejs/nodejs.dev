@@ -1,0 +1,52 @@
+.release-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-64) 0;
+}
+
+.release-card {
+  width: 165px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: var(--color-fill-app);
+  margin: 0px 20px;
+  border: 1px solid var(--color-border-secondary);
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.release-card-active {
+  /* width: 165px;
+  margin-top: 20px;
+  margin-bottom: 20px; */
+  background-color: var(--color-fill-app);
+  /* margin: 0px 20px; */
+  /* border: 1px solid  var(--color-border-secondary); */
+  border: 1px solid green;
+  /* border-radius: 4px;
+  padding: 10px; */
+}
+
+.release-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.release-card-title {
+  font-size: 1.6rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-subheading);
+  margin-top: 5px;
+}
+
+.release-card-filename {
+  text-decoration: none;
+  font-size: var(--font-size-caption);
+  color: var(--color-border-secondary);
+}
+
+.release-card-download {
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
