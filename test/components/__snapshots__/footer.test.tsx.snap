@@ -25,6 +25,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
   border: none;
   color: var(--color-text-accent);
 ",
+              "toString": [Function],
             }
           }
           onBlur={[Function]}

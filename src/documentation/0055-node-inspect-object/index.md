@@ -19,7 +19,7 @@ We donâ€™t have such luxury when we log something to the console, because thatâ€
 
 Now, all is fine until a certain level of nesting. After two levels of nesting, Node.js gives up and prints `[Object]` as a placeholder:
 
-```
+```js
 const obj = {
   name: 'joe',
   age: 35,
