@@ -43,16 +43,16 @@
     "build": "gatsby build",
     "build-ci": "gatsby build --prefix-paths",
     "start": "gatsby develop",
-    "format": "yarn lint:fix",
+    "format": "npm run lint:fix",
     "format-check": "prettier --check '**/*.{ts,tsx,js}'",
     "jest": "jest",
     "update-snapshot": "jest --updateSnapshot",
-    "test": "yarn lint && yarn jest",
-    "test-watch": "yarn jest --watch",
-    "test-ci": "yarn test --coverage && codecov",
+    "test": "npm run lint && npm run jest",
+    "test-watch": "npm run jest --watch",
+    "test-ci": "npm run test --coverage && codecov",
     "lint": "eslint . --ext .js,.ts,.tsx",
-    "lint:fix": "yarn lint --fix",
-    "serve": "yarn build && clear && gatsby serve"
+    "lint:fix": "npm run lint --fix",
+    "serve": "npm run build && clear && gatsby serve"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
@@ -113,7 +113,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint --edit $HUSKY_GIT_PARAMS",
-      "pre-push": "yarn lint"
+      "pre-push": "npm run lint"
     }
   }
 }
