@@ -52,7 +52,9 @@ PAAS stands for Platform As A Service. These platforms take away a lot of things
 
 ### ZEIT Now
 
-ZEIT Now is an interesting option. You just type `now` in your terminal, and it takes care of deploying your application. There is a free version with limitations, and the paid version is more powerful. You simply forget that there's a server, you just deploy the app.
+If you'd like to deploy a static frontend powered by a serverless Node.js API, **ZEIT Now** is the right choice.
+
+After [importing your Git repository](https://zeit.co/import), deploying an update is only a matter of `git push`.
 
 ### Nanobox
 
