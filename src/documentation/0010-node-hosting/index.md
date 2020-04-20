@@ -25,7 +25,7 @@ Another service you can use is <https://github.com/localtunnel/localtunnel>
 
 ### Glitch
 
-[Glitch](https://glitch.com) is a playground and a way to build your apps faster than ever, and see them live on their own glitch.com subdomain. You cannot currently have a a custom domain, and there are a few [restrictions](https://glitch.com/faq#restrictions) in place, but it's really great to prototype. It looks fun (and this is a plus), and it's not a dumbed down environment - you get all the power of Node.js, a CDN, secure storage for credentials, GitHub import/export and much more.
+[Glitch](https://glitch.com) is a playground and a way to build your apps faster than ever, and see them live on their own glitch.com subdomain. You cannot currently have a custom domain, and there are a few [restrictions](https://glitch.com/faq#restrictions) in place, but it's really great to prototype. It looks fun (and this is a plus), and it's not a dumbed down environment - you get all the power of Node.js, a CDN, secure storage for credentials, GitHub import/export and much more.
 
 Provided by the company behind FogBugz and Trello (and co-creators of Stack Overflow).
 
@@ -41,7 +41,7 @@ A way to publish your apps, and have no server at all to manage, is Serverless. 
 
 Two very popular solutions are
 
-* [Serverless Framework](https://serverless.com/framework/)
+* [Serverless Framework](https://serverless.com/framework/docs/)
 * [Standard Library](https://stdlib.com/)
 
 They both provide an abstraction layer to publishing on AWS Lambda and other FAAS solutions based on Azure or the Google Cloud offering.
