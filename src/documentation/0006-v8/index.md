@@ -19,7 +19,7 @@ Other browsers have their own JavaScript engine:
 
 * Firefox has [**SpiderMonkey**](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
 * Safari has [**JavaScriptCore**](https://developer.apple.com/documentation/javascriptcore) (also called Nitro)
-* Edge has [**Chakra**](https://github.com/Microsoft/ChakraCore)
+* Edge had [**Chakra**](https://github.com/Microsoft/ChakraCore) (until Edge has been rebuilt on top of Chromium)
 
 and many others exist as well.
 
