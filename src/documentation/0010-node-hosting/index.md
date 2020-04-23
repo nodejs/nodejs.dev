@@ -52,7 +52,7 @@ PAAS stands for Platform As A Service. These platforms take away a lot of things
 
 ### ZEIT Now
 
-If you'd like to deploy a static frontend powered by a serverless Node.js API, **ZEIT Now** is the right choice.
+If you'd like to deploy a static frontend powered by a serverless Node.js API, **Vercel** is the right choice.
 
 After [importing your Git repository](https://zeit.co/import), deploying an update is only a matter of `git push`.
 
