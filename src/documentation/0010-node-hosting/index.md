@@ -50,7 +50,7 @@ They both provide an abstraction layer to publishing on AWS Lambda and other FAA
 
 PAAS stands for Platform As A Service. These platforms take away a lot of things you should otherwise worry about when deploying your application.
 
-### ZEIT Now
+### Vercel
 
 If you'd like to deploy a static frontend powered by a serverless Node.js API, **Vercel** is the right choice.
 
