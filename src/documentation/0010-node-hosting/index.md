@@ -25,7 +25,7 @@ Another service you can use is <https://github.com/localtunnel/localtunnel>
 
 ### Glitch
 
-[Glitch](https://glitch.com) is a playground and a way to build your apps faster than ever, and see them live on their own glitch.com subdomain. You cannot currently have a a custom domain, and there are a few [restrictions](https://glitch.com/faq#restrictions) in place, but it's really great to prototype. It looks fun (and this is a plus), and it's not a dumbed down environment - you get all the power of Node.js, a CDN, secure storage for credentials, GitHub import/export and much more.
+[Glitch](https://glitch.com) is a playground and a way to build your apps faster than ever, and see them live on their own glitch.com subdomain. You cannot currently have a custom domain, and there are a few [restrictions](https://glitch.com/faq#restrictions) in place, but it's really great to prototype. It looks fun (and this is a plus), and it's not a dumbed down environment - you get all the power of Node.js, a CDN, secure storage for credentials, GitHub import/export and much more.
 
 Provided by the company behind FogBugz and Trello (and co-creators of Stack Overflow).
 
@@ -41,8 +41,8 @@ A way to publish your apps, and have no server at all to manage, is Serverless. 
 
 Two very popular solutions are
 
-- [Serverless Framework](https://serverless.com/framework/)
-- [Standard Library](https://stdlib.com/)
+* [Serverless Framework](https://serverless.com/framework/docs/)
+* [Standard Library](https://stdlib.com/)
 
 They both provide an abstraction layer to publishing on AWS Lambda and other FAAS solutions based on Azure or the Google Cloud offering.
 
@@ -68,7 +68,7 @@ This is a great article on [getting started with Node.js on Heroku](https://devc
 
 Azure is the Microsoft Cloud offering.
 
-Check out how to [create a Node.js web app in Azure](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-nodejs).
+Check out how to [create a Node.js web app in Azure](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs).
 
 ### Google Cloud Platform
 
@@ -80,12 +80,12 @@ They have a good [Node.js Documentation Section](https://cloud.google.com/node/)
 
 In this section you find the usual suspects, ordered from more user friendly to less user friendly:
 
-- [Digital Ocean](https://www.digitalocean.com)
-  - [DigitalOcean Guide: How to setup a NodeJS Application](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04)
-- [Linode](https://www.linode.com/)
-  - [NodeJS tutorials from Linode](https://www.linode.com/docs/development/nodejs/)
-- [Amazon Web Services](https://aws.amazon.com)
-  - [Deploy a NodeJS WebApp on AWS](https://aws.amazon.com/en/getting-started/projects/deploy-nodejs-web-app/)
+* [Digital Ocean](https://www.digitalocean.com)
+  * [DigitalOcean Guide: How to setup a NodeJS Application](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04)
+* [Linode](https://www.linode.com/)
+  * [NodeJS tutorials from Linode](https://www.linode.com/docs/development/nodejs/)
+* [Amazon Web Services](https://aws.amazon.com)
+  * [Deploy a NodeJS WebApp on AWS](https://aws.amazon.com/en/getting-started/projects/deploy-nodejs-web-app/)
 
 Since they provide an empty Linux machine on which you can work, there is no specific tutorial for these.
 

@@ -57,9 +57,7 @@ function renderArticleOverview(
       </a>
       {children.length ? (
         <ul className="api-key__section">{children}</ul>
-      ) : (
-        undefined
-      )}
+      ) : undefined}
     </li>
   );
 
