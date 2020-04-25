@@ -26,3 +26,6 @@ jobs:
 
       - name: Run test and coverage
         run: npm run test-ci
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
