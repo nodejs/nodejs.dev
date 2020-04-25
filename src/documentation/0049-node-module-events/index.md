@@ -27,6 +27,10 @@ Alias for `emitter.on()`.
 
 Emits an event. It synchronously calls every event listener in the order they were registered.
 
+```js
+door.emit("slam") // emitting the event "slam"
+```
+
 ## `emitter.eventNames()`
 
 Return an array of strings that represent the events registered on the current `EventEmitter` object:
