@@ -25,7 +25,7 @@ Another service you can use is <https://github.com/localtunnel/localtunnel>
 
 ### Glitch
 
-[Glitch](https://glitch.com) is a playground and a way to build your apps faster than ever, and see them live on their own glitch.com subdomain. You cannot currently have a a custom domain, and there are a few [restrictions](https://glitch.com/faq#restrictions) in place, but it's really great to prototype. It looks fun (and this is a plus), and it's not a dumbed down environment - you get all the power of Node.js, a CDN, secure storage for credentials, GitHub import/export and much more.
+[Glitch](https://glitch.com) is a playground and a way to build your apps faster than ever, and see them live on their own glitch.com subdomain. You cannot currently have a custom domain, and there are a few [restrictions](https://glitch.com/faq#restrictions) in place, but it's really great to prototype. It looks fun (and this is a plus), and it's not a dumbed down environment - you get all the power of Node.js, a CDN, secure storage for credentials, GitHub import/export and much more.
 
 Provided by the company behind FogBugz and Trello (and co-creators of Stack Overflow).
 
@@ -50,9 +50,11 @@ They both provide an abstraction layer to publishing on AWS Lambda and other FAA
 
 PAAS stands for Platform As A Service. These platforms take away a lot of things you should otherwise worry about when deploying your application.
 
-### ZEIT Now
+### Vercel
 
-ZEIT Now is an interesting option. You just type `now` in your terminal, and it takes care of deploying your application. There is a free version with limitations, and the paid version is more powerful. You simply forget that there's a server, you just deploy the app.
+If you'd like to deploy a static frontend powered by a serverless Node.js API, **Vercel** is the right choice.
+
+After [importing your Git repository](https://vercel.com/import), deploying an update is only a matter of `git push`.
 
 ### Nanobox
 
