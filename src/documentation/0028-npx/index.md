@@ -32,7 +32,7 @@ A typical demonstration of using `npx` is through the `cowsay` command. `cowsay`
 
 `cowsay "Hello"` will print
 
-```
+```console
  _______
 < Hello >
  -------
@@ -56,8 +56,8 @@ will do the job.
 Now, this is a funny useless command.
 Other scenarios include:
 
-- running the `vue` CLI tool to create new applications and run them: `npx vue create my-vue-app`
-- creating a new React app using `create-react-app`: `npx create-react-app my-react-app`
+* running the `vue` CLI tool to create new applications and run them: `npx vue create my-vue-app`
+* creating a new React app using `create-react-app`: `npx create-react-app my-react-app`
 
 and many more.
 
@@ -68,8 +68,8 @@ Once downloaded, the downloaded code will be wiped.
 Use the `@` to specify the version, and combine that with the [`node` npm package](https://www.npmjs.com/package/node):
 
 ```bash
-npx node@6 -v #v6.14.3
-npx node@8 -v #v8.11.3
+npx node@10 -v #v10.18.1
+npx node@12 -v #v12.14.1
 ```
 
 This helps to avoid tools like `nvm` or the other Node.js version management tools.
