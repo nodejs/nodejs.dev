@@ -32,7 +32,6 @@ try {
 }
 ```
 
-
 Both `fs.readFile()` and `fs.readFileSync()` read the full content of the file in memory before returning the data.
 
 This means that big files are going to have a major impact on your memory consumption and speed of execution of the program.
