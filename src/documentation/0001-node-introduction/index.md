@@ -11,7 +11,7 @@ Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the
 
 A Node.js app is run in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.
 
-When Node.js needs to perform an I/O operation, like reading from the network, accessing a database or the filesystem, instead of blocking the thread and wasting CPU cycles waiting, Node.js will resume the operations when the response comes back.
+When Node.js performs an I/O operation, like reading from the network, accessing a database or the filesystem, instead of blocking the thread and wasting CPU cycles waiting, Node.js will resume the operations when the response comes back.
 
 This allows Node.js to handle thousands of concurrent connections with a single server without introducing the burden of managing thread concurrency, which could be a significant source of bugs.
 
@@ -59,7 +59,7 @@ Node.js has a fantastic [standard library](https://nodejs.org/api/), including f
 
 The `createServer()` method of `http` creates a new HTTP server and returns it.
 
-The server is set to listen on the specified port and hostname. When the server is ready, the callback function is called, in this case informing us that the server is running.
+The server is set to listen on the specified port and host name. When the server is ready, the callback function is called, in this case informing us that the server is running.
 
 Whenever a new request is received, the [`request` event](https://nodejs.org/api/http.html#http_event_request) is called, providing two objects: a request (an [`http.IncomingMessage`](https://nodejs.org/api/http.html#http_class_http_incomingmessage) object) and a response (an [`http.ServerResponse`](https://nodejs.org/api/http.html#http_class_http_serverresponse) object).
 
@@ -83,7 +83,7 @@ We set the Content-Type header:
 res.setHeader('Content-Type', 'text/plain')
 ```
 
-and we end close the response, adding the content as an argument to `end()`:
+and we close the response, adding the content as an argument to `end()`:
 
 ```js
 res.end('Hello World\n')
@@ -95,15 +95,15 @@ Node.js is a low-level platform. In order to make things easy and exciting for d
 
 Many of those established over time as popular options. Here is a non-comprehensive list of the ones worth learning:
 
-- [**AdonisJs**](https://adonisjs.com/): A full-stack framework highly focused on developer ergonomics, stability, and confidence. Adonis is one of the fastest Node.js web frameworks.
-- [**Express**](https://expressjs.com/): It provides one of the most simple yet powerful ways to create a web server. Its minimalist approach, unopinionated, focused on the core features of a server, is key to its success.
-- [**Fastify**](https://fastify.io/): A web framework highly focused on providing the best developer experience with the least overhead and a powerful plugin architecture. Fastify is one of the fastest Node.js web frameworks.
-- [**hapi**](https://hapijs.com): A rich framework for building applications and services that enables developers to focus on writing reusable application logic instead of spending time building infrastructure.
-- [**koa**](http://koajs.com/): It is built by the same team behind Express, aims to be even simpler and smaller, building on top of years of knowledge. The new project born out of the need to create incompatible changes without disrupting the existing community.
-- [**Loopback.io**](https://loopback.io/): Makes it easy to build modern applications that require complex integrations.
-- [**Meteor**](https://meteor.com): An incredibly powerful full-stack framework, powering you with an isomorphic approach to building apps with JavaScript, sharing code on the client and the server. Once an off-the-shelf tool that provided everything, now integrates with frontend libs [React](https://reactjs.org/), [Vue](https://vuejs.org/), and [Angular](https://angular.io). Can be used to create mobile apps as well.
-- [**Micro**](https://github.com/zeit/micro): It provides a very lightweight server to create asynchronous HTTP microservices.
-- [**NestJS**](https://nestjs.com/): A TypeScript based progressive Node.js framework for building enterprise-grade efficient, reliable and scalable server-side applications.
-- [**Next.js**](https://nextjs.org/): A framework to render server-side rendered [React](https://reactjs.org/) applications.
-- [**Nx**](https://nx.dev/): It powers the Angular CLI which allows building full-stack applications using NestJS, Express, and [Angular](https://angular.io) and easily share code between backends and frontends.
-- [**Socket.io**](https://socket.io/): A real-time communication engine to build network applications.
+* [**AdonisJs**](https://adonisjs.com/): A full-stack framework highly focused on developer ergonomics, stability, and confidence. Adonis is one of the fastest Node.js web frameworks.
+* [**Express**](https://expressjs.com/): It provides one of the most simple yet powerful ways to create a web server. Its minimalist approach, unopinionated, focused on the core features of a server, is key to its success.
+* [**Fastify**](https://fastify.io/): A web framework highly focused on providing the best developer experience with the least overhead and a powerful plugin architecture. Fastify is one of the fastest Node.js web frameworks.
+* [**hapi**](https://hapijs.com): A rich framework for building applications and services that enables developers to focus on writing reusable application logic instead of spending time building infrastructure.
+* [**koa**](http://koajs.com/): It is built by the same team behind Express, aims to be even simpler and smaller, building on top of years of knowledge. The new project born out of the need to create incompatible changes without disrupting the existing community.
+* [**Loopback.io**](https://loopback.io/): Makes it easy to build modern applications that require complex integrations.
+* [**Meteor**](https://meteor.com): An incredibly powerful full-stack framework, powering you with an isomorphic approach to building apps with JavaScript, sharing code on the client and the server. Once an off-the-shelf tool that provided everything, now integrates with frontend libs [React](https://reactjs.org/), [Vue](https://vuejs.org/), and [Angular](https://angular.io). Can be used to create mobile apps as well.
+* [**Micro**](https://github.com/zeit/micro): It provides a very lightweight server to create asynchronous HTTP microservices.
+* [**NestJS**](https://nestjs.com/): A TypeScript based progressive Node.js framework for building enterprise-grade efficient, reliable and scalable server-side applications.
+* [**Next.js**](https://nextjs.org/): A framework to render server-side rendered [React](https://reactjs.org/) applications.
+* [**Nx**](https://nx.dev/): It powers the Angular CLI which allows building full-stack applications using NestJS, Express, and [Angular](https://angular.io) and easily share code between backends and frontends.
+* [**Socket.io**](https://socket.io/): A real-time communication engine to build network applications.

@@ -29,9 +29,9 @@ and you can start using its methods.
 
 Given a path, you can extract information out of it using those methods:
 
-- `dirname`: get the parent folder of a file
-- `basename`: get the filename part
-- `extname`: get the file extension
+* `dirname`: get the parent folder of a file
+* `basename`: get the filename part
+* `extname`: get the file extension
 
 Example:
 
