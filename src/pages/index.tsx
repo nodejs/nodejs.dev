@@ -51,7 +51,6 @@ export default function Index(): JSX.Element {
     <Layout
       title={title}
       description={description}
-      style={{ overflow: 'hidden' }}
     >
       <Banner />
       <div className="home-page">
