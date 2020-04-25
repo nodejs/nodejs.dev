@@ -48,10 +48,7 @@ export default function Index(): JSX.Element {
   const description = 'Welcome to Node.js!';
 
   return (
-    <Layout
-      title={title}
-      description={description}
-    >
+    <Layout title={title} description={description}>
       <Banner />
       <div className="home-page">
         <Hero title={title} subTitle={subTitle} />
