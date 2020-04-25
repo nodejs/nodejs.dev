@@ -3,9 +3,9 @@ import 'prismjs/themes/prism-okaidia.css';
 import React from 'react';
 import Header from './header';
 import Footer from './footer';
-import '../styles/tokens.css';
-import '../styles/layout.css';
-import '../styles/mobile.css';
+import '../styles/tokens.scss';
+import '../styles/layout.scss';
+import '../styles/mobile.scss';
 import SEO from './seo';
 
 // NOTE: Quickly restores dark-mode state to mitigate onload flash

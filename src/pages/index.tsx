@@ -4,7 +4,7 @@ import Hero from '../components/hero';
 import Layout from '../components/layout';
 import '../util/konami';
 
-import '../styles/index.css';
+import '../styles/index.scss';
 
 import featureImg from '../images/placeholder-img.png';
 

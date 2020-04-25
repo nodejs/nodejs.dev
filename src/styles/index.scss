@@ -190,7 +190,7 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  filter: grayscale();
+  filter: grayscale(1);
 }
 
 .get-started-callouts {
