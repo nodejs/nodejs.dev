@@ -36,13 +36,13 @@ For example Pug, the templating library used by Express, compiles in debug mode 
 Express provides configuration hooks specific to the environment, which are automatically called based on the NODE_ENV variable value:
 
 ```js
-app.configure('development', () => {
+if (app.get('env') === "development") {
   //...
-})
-app.configure('production', () => {
+}
+if (app.get('env') === "production") {
   //...
-})
-app.configure('production', 'staging', () => {
+}
+if(['production', 'staging'].indexOf(app.get('env')) >= 0) {
   //...
 })
 ```
@@ -50,11 +50,11 @@ app.configure('production', 'staging', () => {
 For example you can use this to set different error handlers for different mode:
 
 ```js
-app.configure('development', () => {
+if (app.get('env') === "development") {
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }))
 })
 
-app.configure('production', () => {
+if (app.get('env') === "production") {
   app.use(express.errorHandler())
 })
 ```
