@@ -11,8 +11,8 @@ import {
 } from '../hooks/useApiDocs';
 import Layout from '../components/layout';
 
-import '../styles/article-reader.css';
-import '../styles/docs.css';
+import '../styles/article-reader.scss';
+import '../styles/docs.scss';
 import Footer from '../components/footer';
 
 function renderArticleOverview(
