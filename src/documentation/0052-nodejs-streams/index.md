@@ -17,7 +17,7 @@ For example, in the traditional way, when you tell the program to read a file, t
 
 Using streams you read it piece by piece, processing its content without keeping it all in memory.
 
-The Node.js [`stream` module](https://nodejs.org/api/stream.html) provides the foundation upon which all streaming APIs are build.
+The Node.js [`stream` module](https://nodejs.org/api/stream.html) provides the foundation upon which all streaming APIs are built.
 All streams are instances of [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter)
 
 ## Why streams
