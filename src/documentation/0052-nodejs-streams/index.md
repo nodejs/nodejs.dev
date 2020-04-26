@@ -24,8 +24,8 @@ All streams are instances of [EventEmitter](https://nodejs.org/api/events.html#e
 
 Streams basically provide two major advantages using other data handling methods:
 
-- **Memory efficiency**: you don't need to load large amounts of data in memory before you are able to process it
-- **Time efficiency**: it takes way less time to start processing data as soon as you have it, rather than waiting till the whole data payload is available to start
+* **Memory efficiency**: you don't need to load large amounts of data in memory before you are able to process it
+* **Time efficiency**: it takes way less time to start processing data as soon as you have it, rather than waiting till the whole data payload is available to start
 
 ## An example of a stream
 
@@ -89,34 +89,50 @@ dest1.pipe(dest2)
 
 Due to their advantages, many Node.js core modules provide native stream handling capabilities, most notably:
 
-- `process.stdin` returns a stream connected to stdin
-- `process.stdout` returns a stream connected to stdout
-- `process.stderr` returns a stream connected to stderr
-- `fs.createReadStream()` creates a readable stream to a file
-- `fs.createWriteStream()` creates a writable stream to a file
-- `net.connect()` initiates a stream-based connection
-- `http.request()` returns an instance of the http.ClientRequest class, which is a writable stream
-- `zlib.createGzip()` compress data using gzip (a compression algorithm) into a stream
-- `zlib.createGunzip()` decompress a gzip stream.
-- `zlib.createDeflate()` compress data using deflate (a compression algorithm) into a stream
-- `zlib.createInflate()` decompress a deflate stream
+* `process.stdin` returns a stream connected to stdin
+* `process.stdout` returns a stream connected to stdout
+* `process.stderr` returns a stream connected to stderr
+* `fs.createReadStream()` creates a readable stream to a file
+* `fs.createWriteStream()` creates a writable stream to a file
+* `net.connect()` initiates a stream-based connection
+* `http.request()` returns an instance of the http.ClientRequest class, which is a writable stream
+* `zlib.createGzip()` compress data using gzip (a compression algorithm) into a stream
+* `zlib.createGunzip()` decompress a gzip stream.
+* `zlib.createDeflate()` compress data using deflate (a compression algorithm) into a stream
+* `zlib.createInflate()` decompress a deflate stream
 
 ## Different types of streams
 
 There are four classes of streams:
 
-- `Readable`: a stream you can pipe from, but not pipe into (you can receive data, but not send data to it). When you push data into a readable stream, it is buffered, until a consumer starts to read the data.
-- `Writable`: a stream you can pipe into, but not pipe from (you can send data, but not receive from it)
-- `Duplex`: a stream you can both pipe into and pipe from, basically a combination of a Readable and Writable stream
-- `Transform`: a Transform stream is similar to a Duplex, but the output is a transform of its input
+* `Readable`: a stream you can pipe from, but not pipe into (you can receive data, but not send data to it). When you push data into a readable stream, it is buffered, until a consumer starts to read the data.
+* `Writable`: a stream you can pipe into, but not pipe from (you can send data, but not receive from it)
+* `Duplex`: a stream you can both pipe into and pipe from, basically a combination of a Readable and Writable stream
+* `Transform`: a Transform stream is similar to a Duplex, but the output is a transform of its input
 
 ## How to create a readable stream
 
-We get the Readable stream from the [`stream` module](https://nodejs.org/api/stream.html), and we initialize it
+We get the Readable stream from the [`stream` module](https://nodejs.org/api/stream.html), and we initialize it and implement the `readable._read()` method.
+
+First create a stream object:
 
 ```js
 const Stream = require('stream')
 const readableStream = new Stream.Readable()
+```
+
+then implement `_read`:
+
+```js
+readableStream._read = () => {}
+```
+
+You can also implement `_read` using the `read` option:
+
+```js
+const readableStream = new Stream.Readable({
+  read() {}
+})
 ```
 
 Now that the stream is initialized, we can send data to it:
@@ -160,7 +176,9 @@ How do we read data from a readable stream? Using a writable stream:
 ```js
 const Stream = require('stream')
 
-const readableStream = new Stream.Readable()
+const readableStream = new Stream.Readable({
+  read() {}
+})
 const writableStream = new Stream.Writable()
 
 writableStream._write = (chunk, encoding, next) => {
@@ -197,7 +215,9 @@ Use the `end()` method:
 ```js
 const Stream = require('stream')
 
-const readableStream = new Stream.Readable()
+const readableStream = new Stream.Readable({
+  read() {}
+})
 const writableStream = new Stream.Writable()
 
 writableStream._write = (chunk, encoding, next) => {

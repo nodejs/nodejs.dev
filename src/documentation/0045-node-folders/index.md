@@ -31,7 +31,7 @@ try {
 
 ## Read the content of a directory
 
-Use `fs.readdir()` or `fs.readdirSync` to read the contents of a directory.
+Use `fs.readdir()` or `fs.readdirSync()` to read the contents of a directory.
 
 This piece of code reads the content of a folder, both files and subfolders, and returns their relative path:
 
