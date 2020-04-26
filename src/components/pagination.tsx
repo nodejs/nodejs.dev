@@ -34,14 +34,14 @@ const Pagination = ({ previous, next }: Props): JSX.Element => (
   <ul css={ulStyles}>
     <li>
       {previous && previous.title && (
-        <Link css={link} to={`/${previous.slug}`} rel="prev">
+        <Link css={link} to={`/learn/${previous.slug}`} rel="prev">
           ← &nbsp; Prev
         </Link>
       )}
     </li>
     <li>
       {next && next.title && (
-        <Link css={link} to={`/${next.slug}`} rel="next">
+        <Link css={link} to={`/learn/${next.slug}`} rel="next">
           Next &nbsp; →
         </Link>
       )}
