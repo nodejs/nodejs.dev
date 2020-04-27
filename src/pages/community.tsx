@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from '../components/layout/layout';
 
 export default function DownloadPage(): JSX.Element {
   const title = 'Download Node.js';

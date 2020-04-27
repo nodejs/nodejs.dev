@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Hero from '../components/hero';
-import Layout from '../components/layout';
+import Hero from '../components/hero/hero';
+import Layout from '../components/layout/layout';
 import '../util/konami';
 
 import '../styles/index.scss';
@@ -23,7 +23,7 @@ import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
 import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
 import dotsIllustration from '../images/illustrations/dots.svg';
-import Banner from '../components/banner';
+import Banner from '../components/banner/banner';
 
 const nodeFeature1 =
   'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';

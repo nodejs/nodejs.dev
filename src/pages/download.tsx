@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useReleaseHistory } from '../hooks';
-import Layout from '../components/layout';
-import ReleaseTable from '../components/release-table';
-import ReleaseToggle from '../components/release-toggle';
-import ReleaseCards from '../components/release-cards';
+import Layout from '../components/layout/layout';
+import ReleaseTable from '../components/release/release-table';
+import ReleaseToggle from '../components/release/release-toggle';
+import ReleaseCards from '../components/release/release-cards';
 
 import { detectOS } from '../util/detectOS';
 

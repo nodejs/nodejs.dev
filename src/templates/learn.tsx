@@ -1,13 +1,13 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import Article from '../components/article';
-import Layout from '../components/layout';
-import Navigation from '../components/navigation';
+import Article from '../components/article/article';
+import Layout from '../components/layout/layout';
+import Navigation from '../components/navigation/navigation';
 import { LearnPageContext, LearnPageData } from '../types';
 
 import '../styles/article-reader.scss';
 import '../styles/learn.scss';
-import Footer from '../components/footer';
+import Footer from '../components/footer/footer';
 
 interface Props {
   data: LearnPageData;

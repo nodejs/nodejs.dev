@@ -9,11 +9,11 @@ import {
   isClassObj,
   isModuleObj,
 } from '../hooks/useApiDocs';
-import Layout from '../components/layout';
+import Layout from '../components/layout/layout';
 
 import '../styles/article-reader.scss';
 import '../styles/docs.scss';
-import Footer from '../components/footer';
+import Footer from '../components/footer/footer';
 
 function renderArticleOverview(
   obj: ApiDocsObj,
