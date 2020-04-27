@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import EditLink from '../edit-link';
+import EditLink from '..';
 
 describe('EditLink component', () => {
   it('renders correctly', () => {

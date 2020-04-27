@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationSectionItem } from '../../types';
-import NavigationItem from './navigation-item';
+import NavigationItem from '../NavigationItem';
 
 interface Props {
   key: string;

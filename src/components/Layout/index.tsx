@@ -1,12 +1,12 @@
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/themes/prism-okaidia.css';
 import React from 'react';
-import Header from '../header/header';
-import Footer from '../footer/footer';
+import Header from '../Header';
+import Footer from '../Footer';
 import '../../styles/tokens.scss';
 import '../../styles/layout.scss';
 import '../../styles/mobile.scss';
-import SEO from '../seo/seo';
+import SEO from '../Seo';
 
 // NOTE: Quickly restores dark-mode state to mitigate onload flash
 import darkModeController from '../../util/darkModeController';

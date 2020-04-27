@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Hero from '../hero';
+import Hero from '..';
 
 describe('Hero component', () => {
   it('renders correctly', () => {

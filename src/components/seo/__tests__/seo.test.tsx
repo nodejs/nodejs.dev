@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
 import * as ShallowRenderer from 'react-test-renderer/shallow';
-import SEO from '../seo';
+import SEO from '..';
 
 describe('SEO component', () => {
   it('renders correctly', () => {

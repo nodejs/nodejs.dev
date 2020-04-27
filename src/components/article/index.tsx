@@ -1,9 +1,9 @@
 import React from 'react';
 import { PaginationInfo } from '../../types';
-import AuthorsList from '../author/authors-list';
-import EditLink from '../editLink/edit-link';
-import Pagination from '../pagination/pagination';
-import TOC from '../toc/toc';
+import AuthorsList from '../../containers/AuthorList';
+import EditLink from '../EditLink';
+import Pagination from '../Pagination';
+import TOC from '../Toc';
 
 interface Props {
   title: string;

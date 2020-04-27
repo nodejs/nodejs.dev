@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import TOC from '../toc';
+import TOC from '..';
 
 describe('TOC component', () => {
   it('renders correctly', () => {

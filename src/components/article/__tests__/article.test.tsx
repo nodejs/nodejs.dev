@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
 import * as ShallowRenderer from 'react-test-renderer/shallow';
-import Article from '../article';
+import Article from '..';
 import {
   createLearnPageData,
   createLearnPageContext,

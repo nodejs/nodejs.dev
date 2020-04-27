@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import AuthorsList from '../authors-list';
+import AuthorsList from '..';
 
 describe('AuthorsList component', () => {
   it('renders correctly', () => {

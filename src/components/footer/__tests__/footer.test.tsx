@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Footer from '../footer';
+import Footer from '..';
 
 describe('Tests for Footer component', () => {
   it('renders correctly', () => {

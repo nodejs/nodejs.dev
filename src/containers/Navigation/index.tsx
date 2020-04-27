@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import NavigationSection from './navigation-section';
+import NavigationSection from '../../components/NavigationSection';
 import { NavigationSectionData, NavigationSectionItem } from '../../types';
 import { isSmallScreen } from '../../util/isScreenWithinWidth';
 import { scrollTo, calcNavScrollParams } from '../../util/scrollTo';
