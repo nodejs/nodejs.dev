@@ -1,18 +1,18 @@
 name: Upload to staging
 
-on: issue_comment
+on:
+  issue_comment:
+    type: created
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@0.3.0
-        if: github.event.action == 'created'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const isValidPreview = (
-              context.payload.action === 'created' &&
               context.payload.issue.pull_request &&
               context.payload.comment.body === '/test'
             );
