@@ -18,15 +18,10 @@
     cursor: pointer;
 
     &--selected {
-      background: #2c3437;
-      border-color: #aaa;
+      background: var(--black9);
+      border-color: var(--color-border-primary);
       color: #fff;
       border-radius: 5px 5px 0 0;
-    }
-
-    &--disabled {
-      color: #ccc;
-      cursor: default;
     }
 
     &:focus {
@@ -41,7 +36,7 @@
         left: -4px;
         right: -4px;
         bottom: -5px;
-        background: #fff;
+        background: var(--black0);
       }
     }
   }

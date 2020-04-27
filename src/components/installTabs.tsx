@@ -1,6 +1,5 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-// import 'react-tabs/style/react-tabs.scss';
 import '../styles/install-tabs.scss';
 import { Link } from 'gatsby';
 
@@ -19,14 +18,14 @@ const InstallTabs = (): JSX.Element => {
           the nodejs.org web site.
           <h2>Alternatives</h2>
           <p>
-            Using
+            Using{' '}
             <a href="https://brew.sh" target="_blank" rel="noopener noreferrer">
               Homebrew
             </a>
           </p>
           <code>brew install node</code>
           <p>
-            Using
+            Using{' '}
             <a
               href="https://www.macports.org"
               target="_blank"
@@ -61,7 +60,7 @@ const InstallTabs = (): JSX.Element => {
           <p>
             <a href="https://github.com/nodesource/distributions/blob/master/README.md">
               Node.js binary distributions
-            </a>
+            </a>{' '}
             are available from NodeSource.
           </p>
         </div>
