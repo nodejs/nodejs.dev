@@ -1,8 +1,8 @@
 steps:
-- name: 'node:10'
+- name: 'node:12'
   entrypoint: npm
   args: ['ci']
-- name: 'node:10'
+- name: 'node:12'
   entrypoint: npm
   args: ['run', 'build-ci']
   env:
