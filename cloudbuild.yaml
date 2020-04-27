@@ -6,6 +6,6 @@ steps:
   entrypoint: npm
   args: ['run', 'build-ci']
   env:
-    - 'PATH_PREFIX=staging.nodejs.dev/$SHORT_SHA'
+    - 'PATH_PREFIX=$SHORT_SHA/'
 - name: 'gcr.io/cloud-builders/gsutil'
   args: ['-m', 'rsync', '-R', 'public', 'gs://staging.nodejs.dev/$SHORT_SHA']
