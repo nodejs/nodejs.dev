@@ -1,13 +1,24 @@
 name: Upload to staging
 
-on: [pull_request]
+on: issue_comment
 
 jobs:
   upload-to-staging:
+    if: github.event.action == 'created'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    
+
+    - uses: actions/github-script@0.3.0
+      whith:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const isValidPR = (
+            context.payload.action === 'created' &&
+            context.payload.issue.pull_request &&
+            context.payload.comment.body === '/preview'
+          )
+
     - name: Get PR Number
       id: vars
       run: echo "::set-output name=pr_number::$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')"
