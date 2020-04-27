@@ -1,16 +1,16 @@
-- **Start Date:** 2019-07-11
-- **PR:**
-- **Issue:** [#126](https://github.com/nodejs/nodejs.dev/issues/126)
-- **Keywords:** net core tcp socket networking
-- **Summary:** A guide to using the core Node.js module `net` for TCP socket programming
+* **Start Date:** 2019-07-11
+* **PR:**
+* **Issue:** [#126](https://github.com/nodejs/nodejs.dev/issues/126)
+* **Keywords:** net core tcp socket networking
+* **Summary:** A guide to using the core Node.js module `net` for TCP socket programming
 
 # Computer Networking & Socket Programming
 
-Socket programming is the development of programs for [Computer Networking](https://en.wikipedia.org/wiki/Computer_network). Networking applications are loosely based off of the top most layers of the conceptual 7-layer model called the [OSI Model](https://en.wikipedia.org/wiki/OSI_model). The layers most relevant to socket programmers is layer 4, the [Transport layer](https://en.wikipedia.org/wiki/Transport_layer), and layer 7, the [Application layer](https://en.wikipedia.org/wiki/Application_layer). Specific protocols are implemented at each layer, and are instrumental for the functionality of the internet. 
+Socket programming is the development of programs for [Computer Networking](https://en.wikipedia.org/wiki/Computer_network). Networking applications are loosely based off of the top most layers of the conceptual 7-layer model called the [OSI Model](https://en.wikipedia.org/wiki/OSI_model). The layers most relevant to socket programmers is layer 4, the [Transport layer](https://en.wikipedia.org/wiki/Transport_layer), and layer 7, the [Application layer](https://en.wikipedia.org/wiki/Application_layer). Specific protocols are implemented at each layer, and are instrumental for the functionality of the internet.
 
-Node.js exposes extensive API's for implementing these protocols so developers can create socket programming applications. The most common example is the `http` module. [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) exists on the Application layer of the OSI Model; if you want to learn more about the `http` module, read the Node.js [http documentation](https://nodejs.org/api/http.html) or the Nodejs.dev [guide](https://nodejs.dev/the-nodejs-http-module). Another socket programming, Node.js module is the `dgram` module for [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) servers. UDP exists on the Transport layer; for more information about this technology read the Node.js [dgram documentaion](https://nodejs.org/api/dgram.html). More importantly, the `net` module, which this guide is all about, provides an extensive API for a stream-based TCP server. [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) exists on the Transport layer of the OSI Model and is what HTTP is implemented on. 
+Node.js exposes extensive API's for implementing these protocols so developers can create socket programming applications. The most common example is the `http` module. [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) exists on the Application layer of the OSI Model; if you want to learn more about the `http` module, read the Node.js [http documentation](https://nodejs.org/api/http.html) or the Nodejs.dev [guide](https://nodejs.dev/the-nodejs-http-module). Another socket programming, Node.js module is the `dgram` module for [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) servers. UDP exists on the Transport layer; for more information about this technology read the Node.js [dgram documentaion](https://nodejs.org/api/dgram.html). More importantly, the `net` module, which this guide is all about, provides an extensive API for a stream-based TCP server. [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) exists on the Transport layer of the OSI Model and is what HTTP is implemented on.
 
-> TCP is a reliable, ordered, and error-checked delivery of a stream of bytes between applications communicating via an internet protocol (IP) network. 
+> TCP is a reliable, ordered, and error-checked delivery of a stream of bytes between applications communicating via an internet protocol (IP) network.
 >
 > ~ Wikipedia
 
@@ -73,7 +73,7 @@ const net = require('net')
 
 const server = net.createServer(client => {
 
-  console.log('Client connected') // log the client has connected to the server 
+  console.log('Client connected') // log the client has connected to the server
 
   client.setEncoding('utf8') // set the data encoding
 
@@ -84,7 +84,7 @@ const server = net.createServer(client => {
   })
 
   client.on('end', () => {
-    console.log('Client disconnected') // log the client has disconnected to the server 
+    console.log('Client disconnected') // log the client has disconnected to the server
   })
 })
 
@@ -98,13 +98,13 @@ server.listen(8124, 'localhost', () => {
 const net = require('net')
 
 const client = net.createConnection(8124, 'localhost', () => {
-  
+
   console.log('Connected to Server!') // log the server connection to the client
 
   client.write('Hello from the client!\n') // say hello to the server
 })
 
-client.setEncoding('utf8') // set the encoding 
+client.setEncoding('utf8') // set the encoding
 
 client.on('data', data => {
   console.log(data) // log messages from the server to the client
@@ -125,12 +125,12 @@ Fantastic work! With these two examples you should have what you need to get sta
 For more capabilities of the `net` module read the Node.js [net documentation](https://nodejs.org/api/net.html).
 
 To learn more, try completing the following challenges:
-- Using `readline` or `stream` modules, create an interactive client connection script
-  - this can build on the second example provided in this guide
-- Create a group-chat TCP server
-  - hint: you can hold multiple client connections in an array
-  - use multiple arrays for a multi-channel chat server
-  - for an extra challenge try to implement a basic user-store for authentication of user accounts
-- Create a mini CRUD database server using an idiomatic chat-command interface
-  - The chat-command interface could use keywords such as `create`, `read`, `update`, and `delete` so the client can send instructions to the server
-  - Data can be persisted between sessions using `fs` to read and write data to files
+* Using `readline` or `stream` modules, create an interactive client connection script
+  * this can build on the second example provided in this guide
+* Create a group-chat TCP server
+  * hint: you can hold multiple client connections in an array
+  * use multiple arrays for a multi-channel chat server
+  * for an extra challenge try to implement a basic user-store for authentication of user accounts
+* Create a mini CRUD database server using an idiomatic chat-command interface
+  * The chat-command interface could use keywords such as `create`, `read`, `update`, and `delete` so the client can send instructions to the server
+  * Data can be persisted between sessions using `fs` to read and write data to files
