@@ -8,6 +8,7 @@
     "@emotion/core": "^10.0.7",
     "@smotaal.io/dark-mode-controller": "<0.5",
     "@types/react-helmet": "^5.0.15",
+    "@types/react-tabs": "2.3.1",
     "dotenv": "^8.2.0",
     "emotion": "^10.0.27",
     "emotion-server": "^10.0.27",
@@ -33,7 +34,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-emotion": "^10.0.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-tabs": "3.1.0"
   },
   "keywords": [
     "gatsby",
