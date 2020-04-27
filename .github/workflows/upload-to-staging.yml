@@ -14,7 +14,7 @@ jobs:
             const isValidPreview = (
               context.payload.action === 'created' &&
               context.payload.issue.pull_request &&
-              context.payload.comment.body === '/preview'
+              context.payload.comment.body === '/test'
             );
             if (!isValidPreview) return;
             github.issues.createComment({
