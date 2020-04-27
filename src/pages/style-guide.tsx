@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/layout.css';
+import '../styles/layout.scss';
 
 const StyleGuidePage = (): JSX.Element => {
   return (

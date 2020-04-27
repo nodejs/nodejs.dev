@@ -4,7 +4,7 @@ import Hero from '../components/hero';
 import Layout from '../components/layout';
 import '../util/konami';
 
-import '../styles/index.css';
+import '../styles/index.scss';
 
 import featureImg from '../images/placeholder-img.png';
 
@@ -48,11 +48,7 @@ export default function Index(): JSX.Element {
   const description = 'Welcome to Node.js!';
 
   return (
-    <Layout
-      title={title}
-      description={description}
-      style={{ overflow: 'hidden' }}
-    >
+    <Layout title={title} description={description}>
       <Banner />
       <div className="home-page">
         <Hero title={title} subTitle={subTitle} />
