@@ -3,7 +3,7 @@ name: Upload to staging
 on: [pull_request]
 
 env: 
-  PATH_PREFIX: $(echo ${{ github.sha }} | cut -c1-7)/
+  PATH_PREFIX: ${GITHUB_SHA::8}/
 
 jobs:
   upload-to-staging:
