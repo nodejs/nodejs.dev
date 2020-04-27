@@ -14,8 +14,10 @@ const InstallTabs = (): JSX.Element => {
 
       <TabPanel>
         <div>
-          Download the <Link to="/download">macOS Installer</Link> directly from
-          the nodejs.org web site.
+          <p>
+            Download the <Link to="/download">macOS Installer</Link> directly
+            from the nodejs.org web site.
+          </p>
           <h2>Alternatives</h2>
           <p>
             Using{' '}
@@ -23,7 +25,7 @@ const InstallTabs = (): JSX.Element => {
               Homebrew
             </a>
           </p>
-          <code>brew install node</code>
+          <code className="install__text">brew install node</code>
           <p>
             Using{' '}
             <a
@@ -34,7 +36,7 @@ const InstallTabs = (): JSX.Element => {
               Macports
             </a>
           </p>
-          <code>port install nodejs14</code>
+          <code className="install__text">port install nodejs14</code>
         </div>
       </TabPanel>
       <TabPanel>
@@ -45,10 +47,9 @@ const InstallTabs = (): JSX.Element => {
           </p>
           <h2>Alternatives</h2>
           <p> Using Chocolatey:</p>
-          <code>
-            cinst nodejs # or for full install with npm cinst nodejs.install
-            Using Scoop: scoop install nodejs
-          </code>
+          <code className="install__text">cinst nodejs</code>
+          <p>Using Scoop:</p>
+          <code className="install__text">scoop install nodejs</code>
         </div>
       </TabPanel>
       <TabPanel>
