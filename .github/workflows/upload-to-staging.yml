@@ -4,7 +4,7 @@ on: [pull_request]
 
 env: 
   SHORT_SHA: $(git rev-parse --short=7 ${{ github.sha }})
-  PATH_PREFIX: $SHORT_SHA/
+  PATH_PREFIX: ${{ env.SHORT_SHA }}/
 
 jobs:
   upload-to-staging:
@@ -33,4 +33,4 @@ jobs:
         service_account_email: ${{ secrets.GCP_SA_EMAIL }}
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         export_default_credentials: true
-    - run: gsutil -m rsync -R public gs://staging.nodejs.dev/$SHORT_SHA
+    - run: gsutil -m rsync -R public gs://staging.nodejs.dev/${{ env.SHORT_SHA }}
