@@ -1,9 +1,9 @@
 name: Upload to staging
 
 on: [pull_request]
-
-env: 
-  PATH_PREFIX: ${GITHUB_SHA::8}/
+#
+# env:
+#   PATH_PREFIX: ${GITHUB_SHA::8}/
 
 jobs:
   upload-to-staging:
@@ -18,15 +18,21 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
     
-    - name: Delete me
-      run: echo $PATH_PREFIX    
+    - name: Create ShortSha
+      id: vars
+      run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      
+    - name: Check ShortSha
+      run: echo ${{ steps.vars.outputs.sha_short }}
 
     - name: Install Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci
 
     - name: Run Gatsby Build
-      run: npm run build    
+      run: npm run build
+      env:
+        PATH_PREFIX: ${{ steps.vars.outputs.sha_short }}/ 
     
     - name: Upload to GCS
       uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
@@ -35,4 +41,4 @@ jobs:
         service_account_email: ${{ secrets.GCP_SA_EMAIL }}
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         export_default_credentials: true
-    - run: gsutil -m rsync -R ./public/ gs://staging.nodejs.dev/$PATH_PREFIX
+    - run: gsutil -m rsync -R ./public/ gs://staging.nodejs.dev/${{ steps.vars.outputs.sha_short }}/
