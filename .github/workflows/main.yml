@@ -1,4 +1,6 @@
-on: check_suite
+on:
+  check_suite:
+    types: completed
 name: Post Staging Link on pull_request
 jobs:
   postStagingLink:
