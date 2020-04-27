@@ -17,6 +17,9 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
+    
+    - name: Delete me
+      run: echo $PATH_PREFIX    
 
     - name: Install Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
