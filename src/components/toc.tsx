@@ -1,23 +1,24 @@
 import React from 'react';
 import { fixTocCodeTag } from '../util/tocFormatter';
 
-type Props = {
+interface Props {
   heading: string;
   tableOfContents: string;
-};
+}
 
-const TOC = ({ heading, tableOfContents }: Props) => {
+const TOC = ({ heading, tableOfContents }: Props): null | JSX.Element => {
   if (!tableOfContents) {
     return null;
   }
-  tableOfContents = fixTocCodeTag(tableOfContents);
+  const toc = fixTocCodeTag(tableOfContents);
 
   return (
     <details className="toc">
       <summary>
         <h6>{heading}</h6>
       </summary>
-      <div dangerouslySetInnerHTML={{ __html: tableOfContents }} />
+      {/* eslint-disable react/no-danger */}
+      <div dangerouslySetInnerHTML={{ __html: toc }} />
     </details>
   );
 };

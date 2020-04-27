@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.7",
+    "@smotaal.io/dark-mode-controller": "<0.5",
     "@types/react-helmet": "^5.0.15",
     "dotenv": "^8.2.0",
     "emotion": "^10.0.27",
@@ -14,24 +15,25 @@
     "gatsby-plugin-canonical-urls": "^2.2.3",
     "gatsby-plugin-catch-links": "^2.2.1",
     "gatsby-plugin-emotion": "^4.2.1",
-    "gatsby-plugin-manifest": "^2.3.7",
+    "gatsby-plugin-manifest": "^2.3.6",
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.2.4",
-    "gatsby-plugin-sharp": "^2.5.7",
+    "gatsby-plugin-sass": "^2.2.4",
+    "gatsby-plugin-sharp": "^2.5.4",
     "gatsby-plugin-sitemap": "^2.0.5",
-    "gatsby-plugin-typescript": "^2.3.5",
+    "gatsby-plugin-typescript": "^2.3.1",
     "gatsby-remark-autolink-headers": "^2.2.1",
     "gatsby-remark-images": "^3.2.2",
-    "gatsby-remark-prismjs": "^3.4.5",
-    "gatsby-source-filesystem": "^2.2.5",
-    "gatsby-transformer-remark": "^2.7.5",
+    "gatsby-remark-prismjs": "^3.4.4",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-remark": "^2.7.1",
     "intersection-observer": "^0.9.0",
+    "node-sass": "^4.14.0",
     "prismjs": "^1.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-emotion": "^10.0.0",
-    "react-helmet": "^5.2.0",
-    "typescript": "^3.8.3"
+    "react-helmet": "^5.2.0"
   },
   "keywords": [
     "gatsby",
@@ -42,35 +44,48 @@
     "build": "gatsby build",
     "build-ci": "gatsby build --prefix-paths",
     "start": "gatsby develop",
-    "format": "prettier --write \"**/*.{ts,tsx,js}\"",
-    "format-check": "prettier --check \"**/*.{ts,tsx,js}\" && npm run md-check",
+    "format": "prettier --write \"**/*.{ts,tsx,js,scss}\" && npm run lint:fix",
+    "format-check": "prettier --check \"**/*.{ts,tsx,js,scss}\"",
     "jest": "jest",
     "update-snapshot": "jest --updateSnapshot",
-    "test": "npm run format-check && npm run tslint && npm run jest",
+    "test": "npm run format && npm run format-check && npm run lint && npm run jest",
     "test-watch": "npm run jest --watch",
     "test-ci": "npm run test --coverage && codecov",
-    "tslint": "tslint --project ./tsconfig.json",
+    "lint": "eslint . --ext .js,.ts,.tsx",
+    "lint:fix": "npm run lint --fix",
     "serve": "npm run build && clear && gatsby serve",
     "md-check": "remark -qf ."
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-typescript": "^7.9.0",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^7.3.1",
     "@types/jest": "^25.2.1",
     "@types/react-test-renderer": "^16.9.2",
+    "@typescript-eslint/eslint-plugin": "^1.4.2",
+    "@typescript-eslint/parser": "^2.28.0",
     "babel-jest": "^25.3.0",
-    "babel-preset-gatsby": "^0.3.5",
+    "babel-preset-gatsby": "^0.3.4",
     "codecov": "^3.6.5",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-import-resolver-typescript": "^1.1.1",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.4.0",
+    "husky": "^1.3.1",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^25.4.0",
+    "jest": "^25.3.0",
     "prettier": "^2.0.4",
     "react-test-renderer": "^16.13.1",
     "remark-cli": "^8.0.0",
     "remark-frontmatter": "^2.0.0",
     "remark-preset-lint-node": "^1.13.0",
-    "tslint": "^6.1.1",
-    "tslint-config-prettier": "^1.15.0",
-    "tslint-react": "^4.2.0"
+    "typescript": "~3.2.1"
   },
   "repository": {
     "type": "git",
@@ -100,5 +115,11 @@
     "collectCoverageFrom": [
       "src/**/**.(ts|tsx|js)"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint --edit $HUSKY_GIT_PARAMS",
+      "pre-push": "npm run lint"
+    }
   }
 }

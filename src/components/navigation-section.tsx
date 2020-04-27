@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationSectionItem } from '../types';
 import NavigationItem from './navigation-item';
 
-type Props = {
+interface Props {
   key: string;
   title: string;
   section: NavigationSectionItem[];
@@ -10,7 +10,7 @@ type Props = {
   onItemClick: () => void;
   readSections: Set<NavigationSectionItem['slug']>;
   autoScroll: (height: number) => void;
-};
+}
 
 const NavigationSection = ({
   title,
@@ -19,25 +19,30 @@ const NavigationSection = ({
   onItemClick,
   readSections,
   autoScroll,
-}: Props) => {
+}: Props): JSX.Element => {
   return (
     <ul className="side-nav__list">
-      <h2 className="side-nav__title">{title}</h2>
-      {section.map((item: NavigationSectionItem) => {
-        const isRead: boolean = readSections.has(item.slug);
+      <h2 className="t-body2 side-nav__title">
+        <i className="material-icons">offline_bolt</i>
+        {title}
+      </h2>
+      {section.map(
+        (item: NavigationSectionItem): JSX.Element => {
+          const isRead: boolean = readSections.has(item.slug);
 
-        return (
-          <NavigationItem
-            key={item.slug}
-            title={item.title}
-            slug={item.slug}
-            isRead={isRead}
-            isActive={item.slug === currentSlug}
-            onClick={onItemClick}
-            autoScroll={autoScroll}
-          />
-        );
-      })}
+          return (
+            <NavigationItem
+              key={item.slug}
+              title={item.title}
+              slug={item.slug}
+              isRead={isRead}
+              isActive={item.slug === currentSlug}
+              onClick={onItemClick}
+              autoScroll={autoScroll}
+            />
+          );
+        }
+      )}
     </ul>
   );
 };

@@ -7,7 +7,7 @@ const list: SerializedStyles = css`
   flex-wrap: wrap;
   margin: 5rem 0 2.5rem;
   align-items: center;
-  color: var(--gray7);
+  color: var(--black7);
   text-transform: uppercase;
   padding-left: 0;
 
@@ -25,11 +25,11 @@ const list: SerializedStyles = css`
   }
 `;
 
-type Props = {
+interface Props {
   authors: string[];
-};
+}
 
-const AuthorsList = ({ authors }: Props) => {
+const AuthorsList = ({ authors }: Props): null | JSX.Element => {
   if (!authors) {
     return null;
   }
@@ -38,7 +38,7 @@ const AuthorsList = ({ authors }: Props) => {
     <ul css={list}>
       <h5>Contributors</h5>
       {authors.map(
-        (author, i) =>
+        (author, i): string | JSX.Element =>
           author && (
             <Author index={i} username={author} key={author} size="60" />
           )
