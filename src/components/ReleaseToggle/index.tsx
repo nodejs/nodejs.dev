@@ -21,7 +21,7 @@ export default function ReleaseToggle({
         type="checkbox"
         checked={selected}
         onChange={handleClick}
-      ></input>
+      />
       {selected ? 'lts' : 'current'}
     </label>
   );

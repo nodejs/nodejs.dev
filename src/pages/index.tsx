@@ -54,7 +54,7 @@ export default function Index(): JSX.Element {
         <Hero title={title} subTitle={subTitle} />
 
         <section className="node-demo-container">
-          <div className="node-demo"></div>
+          <div className="node-demo" />
           <img className="leafs-front" src={leafsIllustrationFront} alt="" />
           <img className="leafs-middle" src={leafsIllustrationMiddle} alt="" />
           <img className="leafs-back" src={leafsIllustrationBack} alt="" />
@@ -115,7 +115,7 @@ export default function Index(): JSX.Element {
         src={pentagonIllustration2}
         alt=""
       />
-      <div className="double-background"></div>
+      <div className="double-background" />
     </Layout>
   );
 }

@@ -51,7 +51,7 @@ const Header = ({
       </li>
     </ul>
 
-    <div style={{ flexGrow: 1 }}></div>
+    <div style={{ flexGrow: 1 }} />
 
     <ul className="right-container">
       <li className="nav__tabs nav__tabs--right">
