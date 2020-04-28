@@ -59,7 +59,7 @@
     "@types/jest": "^25.2.1",
     "@types/react-test-renderer": "^16.9.2",
     "babel-jest": "^25.3.0",
-    "babel-preset-gatsby": "^0.3.5",
+    "babel-preset-gatsby": "^0.4.0",
     "codecov": "^3.6.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.4.0",
