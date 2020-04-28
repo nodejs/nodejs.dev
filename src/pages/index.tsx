@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import Hero from '../components/hero';
-import Layout from '../components/layout';
+import Hero from '../components/Hero';
+import Layout from '../components/Layout';
+
 import '../util/konami';
 
 import '../styles/index.scss';
@@ -24,8 +25,9 @@ import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
 import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
 import dotsIllustration from '../images/illustrations/dots.svg';
-import Banner from '../components/banner';
+
 import InstallTabs from '../components/installTabs';
+import Banner from '../components/Banner';
 
 const nodeFeature1 =
   'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
@@ -119,7 +121,7 @@ export default function Index(): JSX.Element {
         src={pentagonIllustration2}
         alt=""
       />
-      <div className="double-background"></div>
+      <div className="double-background" />
     </Layout>
   );
 }
