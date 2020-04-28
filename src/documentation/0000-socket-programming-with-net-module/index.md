@@ -65,7 +65,7 @@ Great work! You have succesfully implemented your first TCP server-client connec
 
 ## Example using `net.createConnection()`
 
-Before starting, open to terminals and startup the Node.js repl (you can also use two files called `server.js` and `client.js` respectively). In the following example, we will create a TCP server and a connection to that server using the `net` module. By doing so, the interactivity is not the same as the previous echo example. In fact, without using other core Node.js modules, this example is completely non-interactive. The client code will disconnect itself at the end of its execution.
+Before starting, open two terminals and startup the Node.js repl (you can also use two files called `server.js` and `client.js` respectively). In the following example, we will create a TCP server and a connection to that server using the `net` module. By doing so, the interactivity is not the same as the previous echo example. In fact, without using other core Node.js modules, this example is completely non-interactive. The client code will disconnect itself at the end of its execution.
 
 ```js
 // In the first repl, create and start a server
