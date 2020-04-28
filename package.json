@@ -30,7 +30,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-emotion": "^10.0.0",
-    "react-helmet": "^5.2.0",
+    "react-helmet": "^6.0.0",
     "typescript": "^3.8.3"
   },
   "keywords": [
