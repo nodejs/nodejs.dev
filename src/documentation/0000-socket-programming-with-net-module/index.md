@@ -40,7 +40,9 @@ const server = net.createServer(client => {
   })
 
   // Automatic implementation of an echo server:
-  client.pipe(client) // client is a stream, use the Stream.pipe prototype method
+  // client is a stream, use the Stream.pipe prototype method to connect it's
+  // read stream to it's write stream
+  // client.pipe(client)
 })
 
 // Start the server on localhost:8124
