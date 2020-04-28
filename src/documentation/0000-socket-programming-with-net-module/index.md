@@ -12,11 +12,11 @@ Node.js exposes extensive API's for implementing these protocols so developers c
 
 > TCP is a reliable, ordered, and error-checked delivery of a stream of bytes between applications communicating via an internet protocol (IP) network.
 >
-> ~ Wikipedia
+> ~ [Wikipedia](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
 
 ## Net Module - Getting Started
 
-The key part of the `net` module is the `net.Socket` class. A socket instance in Node.js is both a duplex stream and an event emitter. This means it is readable, writable, and can utilize the event loop. Sockets can be created by the user and by Node.js, and they are the programmatic object for communicating. Sockets must connect to a `net.Server` class instance; a socket connection to a server is often referred to as a _client connection_. Every socket connection is considered "private" in the sense that the only entities with access to the connection is the server and the client. A server instance **can** have multiple client connections, but will maintain separate communication streams with each connection.
+The key part of the `net` module is the `net.Socket` class. A socket instance in Node.js is both a [duplex stream](https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams) and an [event emitter](https://nodejs.org/api/events.html#events_class_eventemitter). This means it is readable, writable, and can utilize the event loop. Sockets can be created by the user and by Node.js, and they are the programmatic object for communicating. Sockets must connect to a `net.Server` class instance; a socket connection to a server is often referred to as a _client connection_. Every socket connection is considered "private" in the sense that the only entities with access to the connection is the server and the client. A server instance **can** have multiple client connections, but will maintain separate communication streams with each connection.
 
 Lets look at the simplest example of a TCP server, an echo server. An _echo server_ is one which returns the same message sent to it.
 
@@ -122,7 +122,7 @@ The second example introduces an additional event listener `'end'`. This is very
 
 ## Conclusion
 
-Fantastic work! With these two examples you should have what you need to get started building your own TCP communication networks. This guide only brushes the surface of socket programming applications, but the most important take away here is that Node.js implements TCP socket connections as duplex streams and event emitters. Understanding those two concepts will benefit your overall understanding of the `net` module.
+Fantastic work! With these two examples you should have what you need to get started building your own TCP communication networks. This guide only brushes the surface of socket programming applications, but the most important take away here is that Node.js implements TCP socket connections as [duplex streams](https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams) and [event emitters](https://nodejs.org/api/events.html#events_class_eventemitter). Understanding those two concepts will benefit your overall understanding of the `net` module.
 
 For more capabilities of the `net` module read the Node.js [net documentation](https://nodejs.org/api/net.html).
 
