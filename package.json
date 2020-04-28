@@ -25,12 +25,12 @@
     "gatsby-remark-prismjs": "^3.4.5",
     "gatsby-source-filesystem": "^2.2.5",
     "gatsby-transformer-remark": "^2.7.5",
-    "intersection-observer": "^0.9.0",
+    "intersection-observer": "^0.10.0",
     "prismjs": "^1.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-emotion": "^10.0.0",
-    "react-helmet": "^5.2.0",
+    "react-helmet": "^6.0.0",
     "typescript": "^3.8.3"
   },
   "keywords": [
@@ -59,7 +59,7 @@
     "@types/jest": "^25.2.1",
     "@types/react-test-renderer": "^16.9.2",
     "babel-jest": "^25.3.0",
-    "babel-preset-gatsby": "^0.3.5",
+    "babel-preset-gatsby": "^0.4.0",
     "codecov": "^3.6.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.4.0",
@@ -70,7 +70,7 @@
     "remark-preset-lint-node": "^1.13.0",
     "tslint": "^6.1.1",
     "tslint-config-prettier": "^1.15.0",
-    "tslint-react": "^4.2.0"
+    "tslint-react": "^5.0.0"
   },
   "repository": {
     "type": "git",
