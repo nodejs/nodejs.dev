@@ -1,12 +1,12 @@
-import { css } from '@emotion/core';
+import { css, SerializedStyles } from '@emotion/core';
 import React from 'react';
 
-const edit = css`
+const edit: SerializedStyles = css`
   display: flex;
   flex-wrap: wrap;
 `;
 
-const link = css`
+const link: SerializedStyles = css`
   color: var(--gray7) !important;
   text-transform: uppercase;
   text-decoration: none !important;
@@ -25,7 +25,7 @@ const link = css`
   }
 `;
 
-const icon = css`
+const icon: SerializedStyles = css`
   margin-left: 0.5rem;
   vertical-align: middle;
 `;

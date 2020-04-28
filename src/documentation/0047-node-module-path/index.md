@@ -1,7 +1,7 @@
 ---
 title: 'The Node.js path module'
 description: 'The path module of Node.js provides useful functions to interact with file paths'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, 19shubham11
 section: Getting Started
 ---
 
@@ -41,8 +41,8 @@ require('path').dirname('/test/something/file.txt') // /test/something
 Return the extension part of a path
 
 ```js
-require('path').dirname('/test/something') // ''
-require('path').dirname('/test/something/file.txt') // '.txt'
+require('path').extname('/test/something') // ''
+require('path').extname('/test/something/file.txt') // '.txt'
 ```
 
 ### `path.isAbsolute()`
@@ -68,18 +68,18 @@ require('path').join('/', 'users', name, 'notes.txt') //'/users/joe/notes.txt'
 Tries to calculate the actual path when it contains relative specifiers like `.` or `..`, or double slashes:
 
 ```js
-require('path').normalize('/users/joe/..//test.txt') ///users/test.txt
+require('path').normalize('/users/joe/..//test.txt') //'/users/test.txt'
 ```
 
 ### `path.parse()`
 
 Parses a path to an object with the segments that compose it:
 
-- `root`: the root
-- `dir`: the folder path starting from the root
-- `base`: the file name + extension
-- `name`: the file name
-- `ext`: the file extension
+* `root`: the root
+* `dir`: the folder path starting from the root
+* `base`: the file name + extension
+* `name`: the file name
+* `ext`: the file extension
 
 Example:
 
@@ -101,7 +101,7 @@ results in
 
 ### `path.relative()`
 
-Accepts 2 paths as arguments. Returns the the relative path from the first path to the second, based on the current working directory.
+Accepts 2 paths as arguments. Returns the relative path from the first path to the second, based on the current working directory.
 
 Example:
 
