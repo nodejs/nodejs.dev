@@ -22,7 +22,7 @@
     "gatsby-plugin-typescript": "^2.3.5",
     "gatsby-remark-autolink-headers": "^2.2.1",
     "gatsby-remark-images": "^3.2.2",
-    "gatsby-remark-prismjs": "^3.4.5",
+    "gatsby-remark-prismjs": "^3.5.0",
     "gatsby-source-filesystem": "^2.2.5",
     "gatsby-transformer-remark": "^2.7.5",
     "intersection-observer": "^0.10.0",
