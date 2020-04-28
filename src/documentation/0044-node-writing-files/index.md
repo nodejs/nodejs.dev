@@ -48,10 +48,10 @@ fs.writeFile('/Users/joe/test.txt', content, { flag: 'a+' }, err => {})
 
 The flags you'll likely use are
 
-- `r+` open the file for reading and writing
-- `w+` open the file for reading and writing, positioning the stream at the beginning of the file. The file is created if not existing
-- `a` open the file for writing, positioning the stream at the end of the file. The file is created if not existing
-- `a+` open the file for reading and writing, positioning the stream at the end of the file. The file is created if not existing
+* `r+` open the file for reading and writing
+* `w+` open the file for reading and writing, positioning the stream at the beginning of the file. The file is created if not existing
+* `a` open the file for writing, positioning the stream at the end of the file. The file is created if not existing
+* `a+` open the file for reading and writing, positioning the stream at the end of the file. The file is created if not existing
 
 (you can find more flags at <https://nodejs.org/api/fs.html#fs_file_system_flags>)
 

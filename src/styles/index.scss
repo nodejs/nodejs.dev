@@ -1,0 +1,248 @@
+.home-page {
+  max-width: 960px;
+  margin: 0 auto;
+  margin-bottom: var(--space-80);
+  position: relative;
+  --section-margin-bottom: 340px;
+}
+
+.pentagon-illustration-big1 {
+  position: absolute;
+  top: 1200px;
+  z-index: -1;
+  right: 0;
+}
+
+.pentagon-illustration-big2 {
+  position: absolute;
+  z-index: -2;
+  left: 0;
+  bottom: -2000px;
+}
+
+.double-background {
+  position: absolute;
+  width: 100%;
+  height: 1954px;
+  top: 808px;
+  background: var(--color-fill-canvas);
+  z-index: -10;
+}
+
+.home-page-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: var(--space-96);
+  margin-bottom: 160px;
+
+  h1,
+  p {
+    margin: 0;
+  }
+
+  h1 {
+    max-width: 840px;
+  }
+
+  .sub-title {
+    max-width: 780px;
+    color: var(--color-text-secondary);
+    margin: var(--space-32) 0 var(--space-80) 0;
+    font-weight: var(--font-weight-light);
+  }
+}
+
+.download-lts-container {
+  position: relative;
+
+  .links {
+    color: var(--color-text-secondary);
+    margin: var(--space-08) 0 0 0;
+    position: absolute;
+    left: calc(var(--space-16) * -1);
+  }
+}
+
+.home-page-hero .btn-ctas {
+  display: flex;
+
+  button {
+    border: none;
+    box-sizing: border-box;
+    width: 20rem;
+    height: 5.6rem;
+    padding: 0 var(--space-16);
+    font-weight: var(--font-weight-semibold);
+    margin: 0;
+  }
+
+  .download-lts-cta {
+    border-radius: 5.6rem;
+    background: var(--color-fill-action);
+    color: var(--black0);
+    margin-right: var(--space-32);
+    position: relative;
+  }
+
+  .learn-cta {
+    border-radius: 5.6rem;
+    border: var(--color-fill-action) var(--space-02) solid;
+    color: var(--color-fill-action);
+  }
+}
+
+.node-demo-container {
+  position: relative;
+}
+
+.node-demo {
+  width: 832px;
+  margin: 0 auto;
+  margin-bottom: 240px;
+  height: 374px;
+  background: var(--black9);
+  border-radius: var(--space-04);
+  box-shadow: 5px 10px 50px rgba(0, 0, 0, 0.25);
+  color: var(--black0);
+  z-index: 2;
+}
+
+.leafs-front {
+  position: absolute;
+  top: 145px;
+  right: -16px;
+  z-index: -1;
+  animation: leafs-animation 10s infinite alternate ease-in-out;
+  filter: drop-shadow(10px 5px 50px rgba(0, 0, 0, 0.1));
+}
+
+.leafs-middle {
+  position: absolute;
+  top: -32px;
+  right: 20px;
+  z-index: -2;
+  animation: leafs-animation 15s infinite alternate ease-in-out;
+  filter: drop-shadow(6px 5px 25px rgba(0, 0, 0, 0.1));
+}
+
+.leafs-back {
+  position: absolute;
+  top: -48px;
+  left: -62px;
+  z-index: -3;
+  animation: leafs-animation 18s infinite alternate ease-in-out;
+}
+
+.dots {
+  position: absolute;
+  top: 180px;
+  left: -24px;
+  z-index: -4;
+}
+
+.node-features {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: var(--section-margin-bottom);
+}
+
+.node-features__feature {
+  max-width: 188px;
+  color: var(--color-text-secondary);
+
+  > p {
+    margin-top: var(--space-16);
+  }
+}
+
+.see-more-events {
+  margin-top: var(--space-48);
+  color: var(--pink5);
+  display: block;
+
+  span {
+    margin-left: var(--space-08);
+  }
+}
+
+.trusted-by {
+  margin-bottom: var(--section-margin-bottom);
+  text-align: center;
+  width: 100%;
+
+  p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-64);
+  }
+
+  .logos-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    filter: grayscale(1);
+  }
+}
+
+.get-started-callouts {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-80);
+}
+
+.get-started-callout {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+
+  h5 {
+    color: var(--color-text-primary);
+    margin: 0;
+    margin-top: var(--space-24);
+  }
+
+  p {
+    margin-top: var(--space-16);
+    color: var(--color-text-secondary);
+    width: 422px;
+  }
+}
+
+.btn-primary {
+  display: block;
+  width: 141px;
+  margin: 0 auto;
+  cursor: pointer;
+  border: none;
+  box-sizing: border-box;
+  padding: var(--space-08) var(--space-24);
+  font-weight: var(--font-weight-semibold);
+  background: var(--color-fill-action);
+  color: var(--black0);
+  border-radius: var(--space-04);
+  text-decoration: none;
+  line-height: var(--line-height-body1);
+
+  &:hover,
+  &:focus {
+    color: var(--black0);
+  }
+}
+
+@keyframes leafs-animation {
+  50% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(8deg);
+  }
+}

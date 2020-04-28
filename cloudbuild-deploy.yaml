@@ -1,5 +1,5 @@
 # Google Cloud Build config for deploying site to Firebase hosting
-# 
+#
 # PREREQUISITES:
 # You must enable firebase and allow Cloud Build to publish to it
 # 1. Enable the following APIs:
@@ -9,13 +9,15 @@
 # 2. Grant the following roles to the Cloud Build service account (<your-project-id>@cloudbuild.gserviceaccount.com):
 #    - Firebase Admin
 #    - API Keys Admin
-# (Alternativey, use a (Firebase Token)[https://github.com/GoogleCloudPlatform/cloud-builders-community/tree/master/firebase#with-token] 
+# (Alternativey, use a (Firebase Token)[https://github.com/GoogleCloudPlatform/cloud-builders-community/tree/master/firebase#with-token]
 # to grant publishing access to Cloud Build.)
 
 steps:
-- name: 'gcr.io/cloud-builders/yarn'
-  args: ['install']
-- name: 'gcr.io/cloud-builders/yarn'
+- name: 'node:10'
+  entrypoint: npm
+  args: ['ci']
+- name: 'node:10'
+  entrypoint: npm
   args: ['run', 'build']
 - name: 'gcr.io/$PROJECT_ID/firebase'
   args: ['deploy', "--project", "$PROJECT_ID", "--only", "hosting"]

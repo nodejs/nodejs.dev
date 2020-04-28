@@ -32,7 +32,7 @@ The REPL is waiting for us to enter some JavaScript code, to be more precise.
 
 Start simple and enter
 
-```
+```console
 > console.log('test')
 test
 undefined
@@ -71,13 +71,13 @@ If after some code you type `_`, that is going to print the result of the last o
 
 The REPL has some special commands, all starting with a dot `.`. They are
 
-- `.help`: shows the dot commands help
-- `.editor`: enables editor more, to write multiline JavaScript code with ease. Once you are in this mode, enter ctrl-D to run the code you wrote.
-- `.break`: when inputting a multi-line expression, entering the .break command will abort further input. Same as pressing ctrl-C.
-- `.clear`: resets the REPL context to an empty object and clears any multi-line expression currently being input.
-- `.load`: loads a JavaScript file, relative to the current working directory
-- `.save`: saves all you entered in the REPL session to a file (specify the filename)
-- `.exit`: exists the repl (same as pressing ctrl-C two times)
+* `.help`: shows the dot commands help
+* `.editor`: enables editor more, to write multiline JavaScript code with ease. Once you are in this mode, enter ctrl-D to run the code you wrote.
+* `.break`: when inputting a multi-line expression, entering the .break command will abort further input. Same as pressing ctrl-C.
+* `.clear`: resets the REPL context to an empty object and clears any multi-line expression currently being input.
+* `.load`: loads a JavaScript file, relative to the current working directory
+* `.save`: saves all you entered in the REPL session to a file (specify the filename)
+* `.exit`: exits the repl (same as pressing ctrl-C two times)
 
 The REPL knows when you are typing a multi-line statement without the need to invoke `.editor`.
 

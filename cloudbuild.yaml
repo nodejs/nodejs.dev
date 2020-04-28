@@ -1,7 +1,9 @@
 steps:
-- name: 'gcr.io/cloud-builders/yarn'
-  args: ['install']
-- name: 'gcr.io/cloud-builders/yarn'
+- name: 'node:10'
+  entrypoint: npm
+  args: ['ci']
+- name: 'node:10'
+  entrypoint: npm
   args: ['run', 'build-ci']
   env:
     - 'PATH_PREFIX=staging.nodejs.dev/$SHORT_SHA'
