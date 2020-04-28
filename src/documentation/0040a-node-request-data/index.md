@@ -32,7 +32,7 @@ app.use(
 
 app.use(bodyParser.json())
 
-app.post('/endpoint', (req, res) => {
+app.post('/todos', (req, res) => {
   console.log(req.body.todo)
 })
 ```
