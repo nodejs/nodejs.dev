@@ -36,25 +36,25 @@ For example Pug, the templating library used by Express, compiles in debug mode 
 You can use conditional statements to execute code in different environments:
 
 ```js
-if (app.get('env') === "development") {
+if (process.env.NODE_ENV === "development") {
   //...
 }
-if (app.get('env') === "production") {
+if (process.env.NODE_ENV === "production") {
   //...
 }
-if(['production', 'staging'].indexOf(app.get('env')) >= 0) {
+if(['production', 'staging'].indexOf(process.env.NODE_ENV) >= 0) {
   //...
 })
 ```
 
-For example you can use this to set different error handlers per environment:
+For example, in an Express app, you can use this to set different error handlers per environment:
 
 ```js
-if (app.get('env') === "development") {
+if (process.env.NODE_ENV === "development") {
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }))
 })
 
-if (app.get('env') === "production") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.errorHandler())
 })
 ```
