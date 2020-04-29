@@ -33,7 +33,7 @@ Setting the environment to `production` generally ensures that
 
 For example Pug, the templating library used by Express, compiles in debug mode if `NODE_ENV` is not set to `production`. Express views are compiled in every request in development mode, while in production they are cached. There are many more examples.
 
-Express provides configuration hooks specific to the environment, which are automatically called based on the NODE_ENV variable value:
+You can use conditional statements to execute code in different environments:
 
 ```js
 if (app.get('env') === "development") {
@@ -47,7 +47,7 @@ if(['production', 'staging'].indexOf(app.get('env')) >= 0) {
 })
 ```
 
-For example you can use this to set different error handlers for different mode:
+For example you can use this to set different error handlers per environment:
 
 ```js
 if (app.get('env') === "development") {
