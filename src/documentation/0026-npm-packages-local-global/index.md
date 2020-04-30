@@ -7,8 +7,8 @@ section: Getting Started
 
 The main difference between local and global packages is this:
 
-- **local packages** are installed in the directory where you run `npm install <package-name>`, and they are put in the `node_modules` folder under this directory
-- **global packages** are all put in a single place in your system (exactly where depends on your setup), regardless of where you run `npm install -g <package-name>`
+* **local packages** are installed in the directory where you run `npm install <package-name>`, and they are put in the `node_modules` folder under this directory
+* **global packages** are all put in a single place in your system (exactly where depends on your setup), regardless of where you run `npm install -g <package-name>`
 
 In your code, they are both required in the same way:
 
@@ -32,15 +32,15 @@ You can also install executable commands locally and run them using npx, but som
 
 Great examples of popular global packages which you might know are
 
-- `npm`
-- `create-react-app`
-- `vue-cli`
-- `grunt-cli`
-- `mocha`
-- `react-native-cli`
-- `gatsby-cli`
-- `forever`
-- `nodemon`
+* `npm`
+* `create-react-app`
+* `vue-cli`
+* `grunt-cli`
+* `mocha`
+* `react-native-cli`
+* `gatsby-cli`
+* `forever`
+* `nodemon`
 
 You probably have some packages installed globally already on your system. You can see them by running
 

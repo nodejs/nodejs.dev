@@ -28,8 +28,8 @@ This environment variable is a convention that is widely used in external librar
 
 Setting the environment to `production` generally ensures that
 
-- logging is kept to a minimum, essential level
-- more caching levels take place to optimize performance
+* logging is kept to a minimum, essential level
+* more caching levels take place to optimize performance
 
 For example Pug, the templating library used by Express, compiles in debug mode if `NODE_ENV` is not set to `production`. Express views are compiled in every request in development mode, while in production they are cached. There are many more examples.
 

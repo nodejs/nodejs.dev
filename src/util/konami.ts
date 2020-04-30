@@ -33,13 +33,16 @@ if (typeof window !== `undefined`) {
   })();
 
   let discoMode: NodeJS.Timeout | null = null;
-  document.addEventListener('konamiCode', (): void => {
-    if (discoMode) {
-      return clearInterval(discoMode);
+  document.addEventListener(
+    'konamiCode',
+    (): void => {
+      if (discoMode) {
+        return clearInterval(discoMode);
+      }
+      discoMode = setInterval(
+        (): boolean => document.body.classList.toggle('dark-mode'),
+        300
+      );
     }
-    discoMode = setInterval(
-      (): boolean => document.body.classList.toggle('dark-mode'),
-      300
-    );
-  });
+  );
 }

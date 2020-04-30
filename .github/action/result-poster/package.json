@@ -4,8 +4,7 @@
   "description": "The WIP GitHub Action",
   "main": "index.js",
   "scripts": {
-    "pretest": "standard",
-    "test": "node test/smoke.js"
+    "test": "standard"
   },
   "repository": {
     "type": "git",
@@ -21,12 +20,11 @@
   },
   "homepage": "https://github.com/wip/action#readme",
   "dependencies": {
-    "actions-toolkit": "^1.1.0"
+    "actions-toolkit": "^4.0.0"
   },
   "devDependencies": {
-    "nock": "^10.0.6",
-    "semantic-release": "^15.13.24",
-    "standard": "^12.0.1"
+    "semantic-release": "^17.0.7",
+    "standard": "^14.3.3"
   },
   "release": {
     "prepare": [],

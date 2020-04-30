@@ -5,10 +5,12 @@ authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 
-The usual way to run a Node.js program is to call the `node` globally available command (once you install Node.js) and pass the name of the file you want to execute.
+The usual way to run a Node.js program is to run the `node` globally available command (once you install Node.js) and pass the name of the file you want to execute.
 
-If your main Node.js application file is in `app.js`, you can call it by typing
+If your main Node.js application file is `app.js`, you can call it by typing:
 
 ```sh
 node app.js
 ```
+
+While running the command, make sure you are in the same directory which contains the `app.js` file.

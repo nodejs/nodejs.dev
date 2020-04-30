@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Hero from '../components/hero';
-import Layout from '../components/layout';
+import Hero from '../components/Hero';
+import Layout from '../components/Layout';
 import '../util/konami';
 
-import '../styles/index.css';
+import '../styles/index.scss';
 
 import featureImg from '../images/placeholder-img.png';
 
@@ -23,7 +23,7 @@ import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
 import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
 import dotsIllustration from '../images/illustrations/dots.svg';
-import Banner from '../components/banner';
+import Banner from '../components/Banner';
 
 const nodeFeature1 =
   'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
@@ -48,17 +48,13 @@ export default function Index(): JSX.Element {
   const description = 'Welcome to Node.js!';
 
   return (
-    <Layout
-      title={title}
-      description={description}
-      style={{ overflow: 'hidden' }}
-    >
+    <Layout title={title} description={description}>
       <Banner />
       <div className="home-page">
         <Hero title={title} subTitle={subTitle} />
 
         <section className="node-demo-container">
-          <div className="node-demo"></div>
+          <div className="node-demo" />
           <img className="leafs-front" src={leafsIllustrationFront} alt="" />
           <img className="leafs-middle" src={leafsIllustrationMiddle} alt="" />
           <img className="leafs-back" src={leafsIllustrationBack} alt="" />
@@ -69,28 +65,6 @@ export default function Index(): JSX.Element {
           <NodeFeature img={featureImg} featureText={nodeFeature1} />
           <NodeFeature img={featureImg} featureText={nodeFeature2} />
           <NodeFeature img={featureImg} featureText={nodeFeature3} />
-        </section>
-
-        <section className="join-node">
-          <h4 className="t-headline">
-            <span className="accent">Join</span> the community
-          </h4>
-          <div className="join-node-form-container">
-            <p className="t-body2">
-              We’ll never share your information and always respect your inbox -
-              quality content only, we promise.{' '}
-            </p>
-            <div style={{ display: `flex`, alignItems: 'flex-start' }}>
-              <input
-                type="email"
-                placeholder="node@nodejs.dev"
-                className="input-subscribe"
-              />
-              <button className="btn-subscribe t-body1" type="button">
-                Subscribe
-              </button>
-            </div>
-          </div>
         </section>
 
         <section className="trusted-by">
@@ -141,7 +115,7 @@ export default function Index(): JSX.Element {
         src={pentagonIllustration2}
         alt=""
       />
-      <div className="double-background"></div>
+      <div className="double-background" />
     </Layout>
   );
 }
