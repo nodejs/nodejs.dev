@@ -33,20 +33,18 @@ const ulStyles: SerializedStyles = css`
 const Pagination = ({ previous, next }: Props): JSX.Element => (
   <ul css={ulStyles}>
     <li>
-      {previous &&
-        previous.title && (
-          <Link css={link} to={`/learn/${previous.slug}`} rel="prev">
-            ← &nbsp; Prev
-          </Link>
-        )}
+      {previous && previous.title && (
+        <Link css={link} to={`/learn/${previous.slug}`} rel="prev">
+          ← &nbsp; Prev
+        </Link>
+      )}
     </li>
     <li>
-      {next &&
-        next.title && (
-          <Link css={link} to={`/learn/${next.slug}`} rel="next">
-            Next &nbsp; →
-          </Link>
-        )}
+      {next && next.title && (
+        <Link css={link} to={`/learn/${next.slug}`} rel="next">
+          Next &nbsp; →
+        </Link>
+      )}
     </li>
   </ul>
 );

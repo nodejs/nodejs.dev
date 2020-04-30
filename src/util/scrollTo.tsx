@@ -22,25 +22,23 @@ export function scrollTo(
   let previousTime = window.performance.now();
   let currentTime = 0;
 
-  return new Promise<boolean>(
-    (resolve): void => {
-      const animateScroll = (): void => {
-        const time = window.performance.now();
-        const increment = time - previousTime;
-        previousTime = time;
-        currentTime += increment;
-        (element || document.scrollingElement || window).scrollTo(
-          0,
-          easeInOutCubic(currentTime, start, change, duration)
-        );
-        if (currentTime < duration) {
-          window.requestAnimationFrame(animateScroll);
-        }
-        resolve(true);
-      };
-      animateScroll();
-    }
-  );
+  return new Promise<boolean>((resolve): void => {
+    const animateScroll = (): void => {
+      const time = window.performance.now();
+      const increment = time - previousTime;
+      previousTime = time;
+      currentTime += increment;
+      (element || document.scrollingElement || window).scrollTo(
+        0,
+        easeInOutCubic(currentTime, start, change, duration)
+      );
+      if (currentTime < duration) {
+        window.requestAnimationFrame(animateScroll);
+      }
+      resolve(true);
+    };
+    animateScroll();
+  });
 }
 
 const SPEED_MODIFIER = 0.9;
