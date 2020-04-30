@@ -25,8 +25,7 @@ exports[`Hero component renders correctly 1`] = `
       <p
         className="links t-caption"
       >
-        Version 10.15.3
-         - 
+        
         <a
           href="/download"
         >
