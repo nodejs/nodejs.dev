@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import { useReleaseHistory, ReleaseData } from '../hooks/useReleaseHistory';
+import { useReleaseHistory, ReleaseData } from '../../hooks/useReleaseHistory';
 
 interface Props {
   title: string;
