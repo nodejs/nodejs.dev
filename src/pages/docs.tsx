@@ -21,13 +21,13 @@ function renderArticleOverview(
 ): JSX.Element[] {
   const children: JSX.Element[] = [];
   if (obj.events) {
-    obj.events.map(
-      (evt): JSX.Element[] => renderArticleOverview(evt, children)
+    obj.events.map((evt): JSX.Element[] =>
+      renderArticleOverview(evt, children)
     );
   }
   if (obj.methods) {
-    obj.methods.map(
-      (method): JSX.Element[] => renderArticleOverview(method, children)
+    obj.methods.map((method): JSX.Element[] =>
+      renderArticleOverview(method, children)
     );
   }
   if (obj.properties) {
@@ -40,8 +40,8 @@ function renderArticleOverview(
       .map((prop): JSX.Element[] => renderArticleOverview(prop, children));
   }
   if (obj.classes) {
-    obj.classes.map(
-      (klass): JSX.Element[] => renderArticleOverview(klass, children)
+    obj.classes.map((klass): JSX.Element[] =>
+      renderArticleOverview(klass, children)
     );
   }
 
@@ -178,8 +178,8 @@ function renderArticle(page: ApiDocsObj | null): JSX.Element {
       <ul className="api-key">
         {renderArticleOverview(page)}
         {page.modules &&
-          page.modules.map(
-            (mod): JSX.Element[] => renderArticleOverview(mod, [])
+          page.modules.map((mod): JSX.Element[] =>
+            renderArticleOverview(mod, [])
           )}
       </ul>
       {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
