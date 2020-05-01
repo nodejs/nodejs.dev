@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
 import { css, SerializedStyles } from '@emotion/core';
 
 const dropDownData = [
@@ -63,6 +62,8 @@ export interface DropDownState {
   shouldDropDownBlur: boolean;
 }
 
+// TODO When we start on translation work, reimplement the dropdown for language selection
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const FooterDropDown: React.FC = (): JSX.Element => {
   const [state, setState] = useState<DropDownState>({
     active: 3, // Index of currently selected element.
@@ -144,41 +145,47 @@ function Footer(): JSX.Element {
     <footer className="footer">
       <ul className="footer__left">
         <li>
-          <FooterDropDown />
-        </li>
-        <li>
-          <Link className="footer__link" to="/">
+          <a
+            className="footer__link"
+            href="https://nodejs.org/en/about/trademark/"
+          >
             Trademark Policy
-          </Link>
+          </a>
         </li>
         <li>
-          <Link className="footer__link" to="/">
+          <a
+            className="footer__link"
+            href="https://nodejs.org/en/about/privacy/"
+          >
             Privacy Policy
-          </Link>
+          </a>
         </li>
         <li>
-          <Link className="footer__link" to="/">
+          <a
+            className="footer__link"
+            href="https://github.com/openjs-foundation/cross-project-council/blob/master/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
+          >
             Code of Conduct
-          </Link>
+          </a>
         </li>
         <li>
-          <Link className="footer__link" to="/">
+          <a className="footer__link" href="https://nodejs.org/en/security/">
             Security Reporting
-          </Link>
+          </a>
         </li>
         <li>
-          <Link className="footer__link" to="/">
+          <a className="footer__link" href="https://nodejs.org/en/about/">
             About
-          </Link>
+          </a>
         </li>
         <li>
-          <Link className="footer__link" to="/">
+          <a className="footer__link" href="https://nodejs.org/en/blog/">
             Blog
-          </Link>
+          </a>
         </li>
       </ul>
       <ul className="footer__right">
-        <li>&copy; 2019 Node.js Foundation</li>
+        <li>&copy; OpenJS Foundation</li>
         <li>
           <a
             target="_blank"
