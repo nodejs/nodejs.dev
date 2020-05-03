@@ -62,7 +62,7 @@
     color: var(--color-text-secondary);
     margin: var(--space-08) 0 0 0;
     position: absolute;
-    left: calc(var(--space-16) * -1);
+    left: var(--space-16);
   }
 }
 
