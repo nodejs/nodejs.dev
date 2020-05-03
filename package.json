@@ -68,7 +68,7 @@
     "remark-cli": "^8.0.0",
     "remark-frontmatter": "^2.0.0",
     "remark-preset-lint-node": "^1.13.0",
-    "tslint": "^6.1.1",
+    "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.15.0",
     "tslint-react": "^5.0.0"
   },
