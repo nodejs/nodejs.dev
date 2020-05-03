@@ -41,8 +41,8 @@ npm install <package-name>
 
 Often you'll see more flags added to this command:
 
-- `--save` installs and adds the entry to the `package.json` file _dependencies_
-- `--save-dev` installs and adds the entry to the `package.json` file _devDependencies_
+* `--save` installs and adds the entry to the `package.json` file _dependencies_
+* `--save-dev` installs and adds the entry to the `package.json` file _devDependencies_
 
 The difference is mainly that devDependencies are usually development tools, like a testing library, while `dependencies` are bundled with the app in production.
 
@@ -50,7 +50,7 @@ The difference is mainly that devDependencies are usually development tools, lik
 
 Updating is also made easy, by running
 
-```
+```console
 npm update
 ```
 
@@ -58,7 +58,7 @@ npm update
 
 You can specify a single package to update as well:
 
-```
+```console
 npm update <package-name>
 ```
 
@@ -78,13 +78,13 @@ In all those cases, versioning helps a lot, and `npm` follows the semantic versi
 
 The package.json file supports a format for specifying command line tasks that can be run by using
 
-```
+```console
 npm run <task-name>
 ```
 
 For example:
 
-```js
+```json
 {
   "scripts": {
     "start-dev": "node lib/server-development",
@@ -95,7 +95,7 @@ For example:
 
 It's very common to use this feature to run Webpack:
 
-```js
+```json
 {
   "scripts": {
     "watch": "webpack --watch --progress --colors --config webpack.conf.js",
@@ -107,7 +107,7 @@ It's very common to use this feature to run Webpack:
 
 So instead of typing those long commands, which are easy to forget or mistype, you can run
 
-```
+```console
 $ npm run watch
 $ npm run dev
 $ npm run prod

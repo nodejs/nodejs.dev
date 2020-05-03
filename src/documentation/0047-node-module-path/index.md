@@ -75,11 +75,11 @@ require('path').normalize('/users/joe/..//test.txt') //'/users/test.txt'
 
 Parses a path to an object with the segments that compose it:
 
-- `root`: the root
-- `dir`: the folder path starting from the root
-- `base`: the file name + extension
-- `name`: the file name
-- `ext`: the file extension
+* `root`: the root
+* `dir`: the folder path starting from the root
+* `base`: the file name + extension
+* `name`: the file name
+* `ext`: the file extension
 
 Example:
 
@@ -101,7 +101,7 @@ results in
 
 ### `path.relative()`
 
-Accepts 2 paths as arguments. Returns the the relative path from the first path to the second, based on the current working directory.
+Accepts 2 paths as arguments. Returns the relative path from the first path to the second, based on the current working directory.
 
 Example:
 

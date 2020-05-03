@@ -162,11 +162,11 @@ Similar to `http.request()`, but automatically sets the HTTP method to GET, and 
 
 The HTTP module provides 5 classes:
 
-- `http.Agent`
-- `http.ClientRequest`
-- `http.Server`
-- `http.ServerResponse`
-- `http.IncomingMessage`
+* `http.Agent`
+* `http.ClientRequest`
+* `http.Server`
+* `http.ServerResponse`
+* `http.IncomingMessage`
 
 ### `http.Agent`
 
@@ -184,8 +184,8 @@ When a response is received, the `response` event is called with the response, w
 
 The returned data of a response can be read in 2 ways:
 
-- you can call the `response.read()` method
-- in the `response` event handler you can setup an event listener for the `data` event, so you can listen for the data streamed into.
+* you can call the `response.read()` method
+* in the `response` event handler you can setup an event listener for the `data` event, so you can listen for the data streamed into.
 
 ### `http.Server`
 
@@ -193,8 +193,8 @@ This class is commonly instantiated and returned when creating a new server usin
 
 Once you have a server object, you have access to its methods:
 
-- `close()` stops the server from accepting new connections
-- `listen()` starts the HTTP server and listens for connections
+* `close()` stops the server from accepting new connections
+* `listen()` starts the HTTP server and listens for connections
 
 ### `http.ServerResponse`
 
@@ -212,13 +212,13 @@ The method you'll always call in the handler is `end()`, which closes the respon
 
 These methods are used to interact with HTTP headers:
 
-- `getHeaderNames()` get the list of the names of the HTTP headers already set
-- `getHeaders()` get a copy of the HTTP headers already set
-- `setHeader('headername', value)` sets an HTTP header value
-- `getHeader('headername')` gets an HTTP header already set
-- `removeHeader('headername')` removes an HTTP header already set
-- `hasHeader('headername')` return true if the response has that header set
-- `headersSent()` return true if the headers have already been sent to the client
+* `getHeaderNames()` get the list of the names of the HTTP headers already set
+* `getHeaders()` get a copy of the HTTP headers already set
+* `setHeader('headername', value)` sets an HTTP header value
+* `getHeader('headername')` gets an HTTP header already set
+* `removeHeader('headername')` removes an HTTP header already set
+* `hasHeader('headername')` return true if the response has that header set
+* `headersSent()` return true if the headers have already been sent to the client
 
 After processing the headers you can send them to the client by calling `response.writeHead()`, which accepts the statusCode as the first parameter, the optional status message, and the headers object.
 
@@ -235,16 +235,16 @@ response.statusMessage = 'Internal Server Error'
 
 An `http.IncomingMessage` object is created by:
 
-- `http.Server` when listening to the `request` event
-- `http.ClientRequest` when listening to the `response` event
+* `http.Server` when listening to the `request` event
+* `http.ClientRequest` when listening to the `response` event
 
 It can be used to access the response:
 
-- status using its `statusCode` and `statusMessage` methods
-- headers using its `headers` method or `rawHeaders`
-- HTTP method using its `method` method
-- HTTP version using the `httpVersion` method
-- URL using the `url` method
-- underlying socket using the `socket` method
+* status using its `statusCode` and `statusMessage` methods
+* headers using its `headers` method or `rawHeaders`
+* HTTP method using its `method` method
+* HTTP version using the `httpVersion` method
+* URL using the `url` method
+* underlying socket using the `socket` method
 
 The data is accessed using streams, since `http.IncomingMessage` implements the Readable Stream interface.
