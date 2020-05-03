@@ -41,7 +41,8 @@
 }
 
 .circular-container,
-.circular-container:hover {
+.circular-container:hover,
+.circular-container:focus {
   display: flex;
   align-items: center;
   justify-content: center;
