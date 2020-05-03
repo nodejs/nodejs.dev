@@ -4,6 +4,8 @@ import { Link } from 'gatsby';
 import { detectOS, UserOS } from '../../util/detectOS';
 import { useReleaseHistory, ReleaseData } from '../../hooks/useReleaseHistory';
 
+import './Hero.scss';
+
 interface Props {
   title: string;
   subTitle: string;
@@ -58,22 +60,18 @@ const Hero = ({ title, subTitle }: Props): JSX.Element => {
       <h2 className="sub-title t-subheading">{subTitle}</h2>
       <div className="btn-ctas">
         <div className="download-lts-container">
-          <a href={ltsVersionUrl}>
-            <button className="download-lts-cta t-body1" type="button">
-              Download Node (LTS)
-            </button>
+          <a className="circular-container" href={ltsVersionUrl}>
+            Download Node (LTS)
           </a>
-          <p className="links t-caption">
+          <p className="t-caption">
             {lastLTSRelease
               ? `Version ${lastLTSRelease.version.substr(1)} - `
               : ''}
             <a href={currentVersionUrl}>Get Current</a>
           </p>
         </div>
-        <Link to="/learn">
-          <button className="learn-cta t-body1" type="button">
-            Learn Node
-          </button>
+        <Link className="circular-container inverse" to="/learn">
+          Learn Node
         </Link>
       </div>
     </div>
