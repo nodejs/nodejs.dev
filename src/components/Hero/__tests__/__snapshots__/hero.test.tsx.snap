@@ -17,17 +17,13 @@ exports[`Hero component renders correctly 1`] = `
       className="download-lts-container"
     >
       <a
+        className="circular-container"
         href="https://nodejs.org/dist//node-.tar.gz"
       >
-        <button
-          className="download-lts-cta t-body1"
-          type="button"
-        >
-          Download Node (LTS)
-        </button>
+        Download Node (LTS)
       </a>
       <p
-        className="links t-caption"
+        className="t-caption"
       >
         
         <a
@@ -38,14 +34,10 @@ exports[`Hero component renders correctly 1`] = `
       </p>
     </div>
     <a
+      className="circular-container inverse"
       href="/learn"
     >
-      <button
-        className="learn-cta t-body1"
-        type="button"
-      >
-        Learn Node
-      </button>
+      Learn Node
     </a>
   </div>
 </div>
