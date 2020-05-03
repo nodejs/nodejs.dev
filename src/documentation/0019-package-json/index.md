@@ -445,21 +445,4 @@ Each has a specific property, like `eslintConfig`, `babel` and others. Those are
 
 You have seen in the description above version numbers like these: `~3.0.0` or `^0.13.0`. What do they mean, and which other version specifiers can you use?
 
-That symbol specifies which updates your package accepts, from that dependency.
-
-Given that using semver (semantic versioning) all versions have 3 digits, the first being the major release, the second the minor release and the third is the patch release, you have these rules:
-
-* `~`: if you write `~0.13.0`, you want to only update patch releases: `0.13.1` is ok, but `0.14.0` is not.
-* `^`: if you write `^0.13.0`, you want to update patch and minor releases: `0.13.1`, `0.14.0` and so on.
-* `*`: if you write `*`, that means you accept all updates, including major version upgrades.
-* `>`: you accept any version higher than the one you specify
-* `>=`: you accept any version equal to or higher than the one you specify
-* `<=`: you accept any version equal or lower to the one you specify
-* `<`: you accept any version lower to the one you specify
-
-There are other rules, too:
-
-* no symbol: you accept only that specific version you specify
-* `latest`: you want to use the latest version available
-
-and you can combine most of the above in ranges, like this: `1.0.0 || >=1.1.0 <1.2.0`, to either use 1.0.0 or one release from 1.1.0 up, but lower than 1.2.0.
+Read more about [Semantic Versioning](./semantic-versioning-using-npm) to understand more.
