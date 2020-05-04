@@ -10,7 +10,6 @@ import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
 import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
 import dotsIllustration from '../images/illustrations/dots.svg';
-import Banner from '../components/Banner';
 
 export default function Index(): JSX.Element {
   const title = 'Run JavaScript Everywhere.';
@@ -20,7 +19,6 @@ export default function Index(): JSX.Element {
 
   return (
     <Layout title={title} description={description}>
-      <Banner />
       <div className="home-page">
         <Hero title={title} subTitle={subTitle} />
 
