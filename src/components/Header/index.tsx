@@ -4,12 +4,6 @@ import logoLight from '../../images/logos/nodejs-logo-light-mode.svg';
 import logoDark from '../../images/logos/nodejs-logo-dark-mode.svg';
 import defaultDarkModeController from '../../util/darkModeController';
 
-const activeStyleTab = {
-  fontWeight: 'var(--font-weight-semibold)',
-  color: 'var(--color-text-accent)',
-  borderBottom: 'var(--space-04) inset var(--color-text-accent)',
-};
-
 interface Props {
   darkModeController?: typeof defaultDarkModeController;
 }
@@ -35,19 +29,29 @@ const Header = ({
 
     <ul className="nav__tabs__container">
       <li className="nav__tabs">
-        <Link to="/learn" activeStyle={activeStyleTab} partiallyActive>
+        <Link to="/learn" className="activeStyleTab" partiallyActive>
           Learn
         </Link>
       </li>
       <li className="nav__tabs">
-        <Link to="/docs" activeStyle={activeStyleTab} partiallyActive>
+        <a
+          className="activeStyleTab"
+          target="_blank"
+          href="https://nodejs.org/en/docs/"
+          rel="noopener noreferrer"
+        >
           Documentation
-        </Link>
+        </a>
       </li>
       <li className="nav__tabs">
-        <Link to="/download" activeStyle={activeStyleTab} partiallyActive>
+        <a
+          href="https://nodejs.org/en/download/"
+          className="activeStyleTab"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Download
-        </Link>
+        </a>
       </li>
     </ul>
 
