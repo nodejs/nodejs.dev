@@ -24,7 +24,7 @@
     "gatsby-remark-images": "^3.2.2",
     "gatsby-remark-prismjs": "^3.5.0",
     "gatsby-source-filesystem": "^2.2.5",
-    "gatsby-transformer-remark": "^2.8.0",
+    "gatsby-transformer-remark": "^2.8.5",
     "intersection-observer": "^0.10.0",
     "prismjs": "^1.20.0",
     "react": "^16.13.1",
