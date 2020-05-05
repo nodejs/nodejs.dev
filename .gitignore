@@ -8,7 +8,6 @@ yarn-error.log
 .DS_Store
 
 .env
-.env.production
 .firebase/*
 coverage
 .vscode
