@@ -8,41 +8,9 @@ exports[`Tests for Footer component renders correctly 1`] = `
     className="footer__left"
   >
     <li>
-      <div
-        style={
-          Object {
-            "position": "relative",
-          }
-        }
-      >
-        <button
-          css={
-            Object {
-              "map": undefined,
-              "name": "45tpuz",
-              "next": undefined,
-              "styles": "
-  border: none;
-  color: var(--color-text-accent);
-",
-            }
-          }
-          onBlur={[Function]}
-          onClick={[Function]}
-          type="button"
-        >
-          English
-           
-          <span>
-            ⏷
-          </span>
-        </button>
-      </div>
-    </li>
-    <li>
       <a
         className="footer__link"
-        href="/"
+        href="https://nodejs.org/en/about/trademark/"
       >
         Trademark Policy
       </a>
@@ -50,7 +18,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
     <li>
       <a
         className="footer__link"
-        href="/"
+        href="https://nodejs.org/en/about/privacy/"
       >
         Privacy Policy
       </a>
@@ -58,7 +26,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
     <li>
       <a
         className="footer__link"
-        href="/"
+        href="https://github.com/openjs-foundation/cross-project-council/blob/master/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
       >
         Code of Conduct
       </a>
@@ -66,7 +34,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
     <li>
       <a
         className="footer__link"
-        href="/"
+        href="https://nodejs.org/en/security/"
       >
         Security Reporting
       </a>
@@ -74,7 +42,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
     <li>
       <a
         className="footer__link"
-        href="/"
+        href="https://nodejs.org/en/about/"
       >
         About
       </a>
@@ -82,7 +50,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
     <li>
       <a
         className="footer__link"
-        href="/"
+        href="https://nodejs.org/en/blog/"
       >
         Blog
       </a>
@@ -92,7 +60,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
     className="footer__right"
   >
     <li>
-      © 2019 Node.js Foundation
+      © OpenJS Foundation
     </li>
     <li>
       <a
