@@ -11,6 +11,7 @@ exports[`EditLink component renders correctly 1`] = `
   display: flex;
   flex-wrap: wrap;
 ",
+      "toString": [Function],
     }
   }
 >
@@ -38,6 +39,7 @@ exports[`EditLink component renders correctly 1`] = `
     color: var(--brand-light) !important;
   }
 ",
+        "toString": [Function],
       }
     }
     href="https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/0002-node-history/index.md"
@@ -56,6 +58,7 @@ exports[`EditLink component renders correctly 1`] = `
   margin-left: 0.5rem;
   vertical-align: middle;
 ",
+          "toString": [Function],
         }
       }
       fill="currentColor"

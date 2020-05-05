@@ -29,6 +29,7 @@ exports[`AuthorsList component renders correctly 1`] = `
     font-size: 1.4rem;
   }
 ",
+      "toString": [Function],
     }
   }
 >
@@ -44,6 +45,7 @@ exports[`AuthorsList component renders correctly 1`] = `
         "styles": "
   list-style: none;
 ",
+        "toString": [Function],
       }
     }
   >
@@ -60,6 +62,7 @@ exports[`AuthorsList component renders correctly 1`] = `
     transform: scale(1.1);
   }
 ",
+          "toString": [Function],
         }
       }
       href="https://github.com/test-author"
@@ -88,6 +91,7 @@ exports[`AuthorsList component renders correctly 1`] = `
   border: 1px solid var(--brand-light);
   transition: all 0.2s ease-in-out;
 ",
+            "toString": [Function],
           }
         }
         src="https://github.com/test-author.png?size=60"
@@ -103,6 +107,7 @@ exports[`AuthorsList component renders correctly 1`] = `
         "styles": "
   list-style: none;
 ",
+        "toString": [Function],
       }
     }
   >
@@ -119,6 +124,7 @@ exports[`AuthorsList component renders correctly 1`] = `
     transform: scale(1.1);
   }
 ",
+          "toString": [Function],
         }
       }
       href="https://github.com/another-test-author"
@@ -143,6 +149,7 @@ exports[`AuthorsList component renders correctly 1`] = `
   border: 1px solid var(--brand-light);
   transition: all 0.2s ease-in-out;
 ",
+            "toString": [Function],
           }
         }
         src="https://github.com/another-test-author.png?size=60"

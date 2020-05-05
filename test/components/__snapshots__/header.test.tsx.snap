@@ -20,6 +20,7 @@ exports[`Tests for Header component renders correctly 1`] = `
   align-items: center;
   list-style: none;
 ",
+        "toString": [Function],
       }
     }
   >
