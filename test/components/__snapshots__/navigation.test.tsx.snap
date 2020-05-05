@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation component renders correctly 1`] = `
+<nav
+  className="side-nav"
+>
+  <button
+    className="side-nav__open"
+    onClick={[Function]}
+  >
+    Menu
+  </button>
+  <ul
+    className="side-nav__list"
+  >
+    <h2
+      className="side-nav__title"
+    >
+      Getting Started
+    </h2>
+    <a
+      className="side-nav__item side-nav__item--active"
+      href="/intro"
+      onClick={[Function]}
+    >
+      Section 1
+    </a>
+  </ul>
+  <ul
+    className="side-nav__list"
+  >
+    <h2
+      className="side-nav__title"
+    >
+      Versions
+    </h2>
+    <a
+      className="side-nav__item "
+      href="/version"
+      onClick={[Function]}
+    >
+      Version 1
+    </a>
+  </ul>
+</nav>
+`;

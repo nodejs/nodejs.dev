@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationSection component renders correctly 1`] = `
+<ul
+  className="side-nav__list"
+>
+  <h2
+    className="side-nav__title"
+  >
+    Introduction
+  </h2>
+  <a
+    className="side-nav__item "
+    href="/intro"
+    onClick={[Function]}
+  >
+    Section 1
+  </a>
+</ul>
+`;

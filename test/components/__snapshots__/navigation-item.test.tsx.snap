@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationItem component renders correctly 1`] = `
+<a
+  className="side-nav__item side-nav__item--active"
+  href="/versioning"
+  onClick={[Function]}
+>
+  Versioning
+</a>
+`;
