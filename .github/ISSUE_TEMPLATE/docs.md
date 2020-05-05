@@ -8,8 +8,8 @@ labels: docs
 
 <!-- Please place an x (no spaces!) in all [ ] that apply -->
 
-- [ ] Missing
-- [ ] Needed
+- [ ] Missing/Needed
+- [ ] Incorrect
 - [ ] Confusing
 - [ ] Not Sure?
 
