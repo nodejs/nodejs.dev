@@ -36,7 +36,34 @@ const InstallTabs = (): JSX.Element => {
               Macports
             </a>
           </p>
+
           <code className="install__text">port install nodejs14</code>
+          <p>
+            Using{' '}
+            <a
+              href="https://github.com/nvm-sh/nvm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              nvm
+            </a>
+          </p>
+          <code className="install__text">
+            curl -o-
+            https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh |
+            bash
+          </code>
+          {/* TODO when the new docs page is ready link to that page.  */}
+          <button type="button">
+            <a
+              className="install__docs-button"
+              href="https://nodejs.org/en/download/package-manager/#macos"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read documentation
+            </a>
+          </button>
         </div>
       </TabPanel>
       <TabPanel>
@@ -50,6 +77,16 @@ const InstallTabs = (): JSX.Element => {
           <code className="install__text">cinst nodejs</code>
           <p>Using Scoop:</p>
           <code className="install__text">scoop install nodejs</code>
+          <button type="button">
+            <a
+              className="install__docs-button"
+              href="https://nodejs.org/en/download/package-manager/#windows"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read documentation
+            </a>
+          </button>
         </div>
       </TabPanel>
       <TabPanel>

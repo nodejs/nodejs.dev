@@ -17,6 +17,7 @@ import logoImg2 from '../images/logos/linkedin-logo.svg';
 import logoImg3 from '../images/logos/microsoft-logo.svg';
 import logoImg4 from '../images/logos/netflix-logo.svg';
 import logoImg5 from '../images/logos/paypal-logo.svg';
+import InstallTabs from '../components/installTabs';
 
 export default function Index(): JSX.Element {
   const title = 'Run JavaScript Everywhere.';
