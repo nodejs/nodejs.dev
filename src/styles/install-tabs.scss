@@ -4,6 +4,7 @@
   &__tab-list {
     margin: 0 0 10px;
     padding: 0;
+    text-align: center;
   }
 
   &__tab {
@@ -16,6 +17,9 @@
     padding: 6px 12px;
     background: lighten($color: #2c3437, $amount: 20);
     cursor: pointer;
+    height: 32px;
+    width: 167px;
+    text-align: center;
 
     &--selected {
       background: var(--black9);
@@ -51,8 +55,24 @@
 
   p {
     margin-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 3px;
   }
   .install__text {
     color: var(--pink6);
+    padding-left: 6px;
+  }
+  .install__docs-button,
+  .install__docs-button:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    width: 17rem;
+    height: 4rem;
+    color: var(--black6);
+    margin: 0 var(--space-16);
+    font-weight: var(--font-weight-semibold);
   }
 }

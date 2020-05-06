@@ -96,6 +96,34 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       >
         port install nodejs14
       </code>
+      <p>
+        Using
+         
+        <a
+          href="https://github.com/nvm-sh/nvm"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          nvm
+        </a>
+      </p>
+      <code
+        className="install__text"
+      >
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+      </code>
+      <button
+        className="install__docs-button"
+        type="button"
+      >
+        <a
+          href="https://nodejs.org/en/download/package-manager"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Read documentation
+        </a>
+      </button>
     </div>
   </div>
   <div
