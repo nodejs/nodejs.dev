@@ -41,42 +41,36 @@ const Navigation = ({ sections, currentSlug }: Props): JSX.Element => {
   const readSections: Set<NavigationSectionItem['slug']> = new Set();
   // Assume section items up to the one currently open have been read. Track
   // their unique slugs in `readSections` set.
-  Object.keys(sections).some(
-    (sectionKey): boolean => {
-      let isCurrentSlug = false;
-      sections[sectionKey].some(
-        (sectionItem): boolean => {
-          isCurrentSlug = sectionItem.slug === currentSlug;
-          if (!isCurrentSlug) {
-            readSections.add(sectionItem.slug);
-          }
-
-          return isCurrentSlug;
-        }
-      );
+  Object.keys(sections).some((sectionKey): boolean => {
+    let isCurrentSlug = false;
+    sections[sectionKey].some((sectionItem): boolean => {
+      isCurrentSlug = sectionItem.slug === currentSlug;
+      if (!isCurrentSlug) {
+        readSections.add(sectionItem.slug);
+      }
 
       return isCurrentSlug;
-    }
-  );
+    });
+
+    return isCurrentSlug;
+  });
 
   return (
     <nav className={className} ref={navElement}>
       <button type="button" className="side-nav__open" onClick={toggle}>
         Menu
       </button>
-      {Object.keys(sections).map(
-        (sectionKey: string): JSX.Element[] => (
-          <NavigationSection
-            key={sectionKey}
-            title={sectionKey}
-            section={sections[sectionKey]}
-            currentSlug={currentSlug}
-            onItemClick={onItemClick}
-            readSections={readSections}
-            autoScroll={autoScroll}
-          />
-        )
-      )}
+      {Object.keys(sections).map((sectionKey: string): JSX.Element[] => (
+        <NavigationSection
+          key={sectionKey}
+          title={sectionKey}
+          section={sections[sectionKey]}
+          currentSlug={currentSlug}
+          onItemClick={onItemClick}
+          readSections={readSections}
+          autoScroll={autoScroll}
+        />
+      ))}
     </nav>
   );
 };

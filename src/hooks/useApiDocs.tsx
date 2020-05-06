@@ -92,20 +92,17 @@ export function useApiData(version: string | null): APIResponse {
     modules: [],
   });
 
-  useEffect(
-    (): void => {
-      const fetchData = async (): Promise<void> => {
-        const res = await window.fetch(
-          `https://nodejs.org/dist/${version}/docs/api/all.json`
-        );
-        setApiData((await res.json()) as APIResponse);
-      };
-      if (version) {
-        fetchData();
-      }
-    },
-    [version]
-  );
+  useEffect((): void => {
+    const fetchData = async (): Promise<void> => {
+      const res = await window.fetch(
+        `https://nodejs.org/dist/${version}/docs/api/all.json`
+      );
+      setApiData((await res.json()) as APIResponse);
+    };
+    if (version) {
+      fetchData();
+    }
+  }, [version]);
 
   return apiData;
 }

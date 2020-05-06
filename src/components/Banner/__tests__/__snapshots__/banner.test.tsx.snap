@@ -2,56 +2,14 @@
 
 exports[`Tests for Header component renders correctly 1`] = `
 <div
-  css={
-    Object {
-      "map": undefined,
-      "name": "433qea",
-      "next": undefined,
-      "styles": "
-  position: relative;
-  font-weight: bold;
-  background-color: var(--color-fill-top-banner);
-  font-size: var(--font-size-display2);
-  color: var(--color-text-primary);
-  border-radius: 5px;
-  text-align: center;
-  padding-top: 5px;
-",
-    }
-  }
+  className="banner"
 >
-  <p
-    css={
-      Object {
-        "paddingBottom": "var(--space-08)",
-        "paddingTop": "var(--space-08)",
-      }
-    }
-  >
+  <p>
     <a
       href="https://nodejs.org/en/blog/vulnerability/february-2020-security-releases/"
     >
       <button
-        css={
-          Object {
-            "map": undefined,
-            "name": "1x4o9mg",
-            "next": undefined,
-            "styles": "
-  position: relative;
-  margin-right: var(--space-32);
-  border-radius: 5.6rem;
-  background: var(--purple5);
-  color: var(--color-fill-top-nav);
-  line-height: var(--line-height-subheading);
-  text-decoration: none;
-  font-family: var(--sans);
-  font-style: normal;
-  font-weight: var(--font-weight-semibold);
-  border: 1px solid transparent;
-",
-          }
-        }
+        className="bannerButton"
         type="button"
       >
         Blog post

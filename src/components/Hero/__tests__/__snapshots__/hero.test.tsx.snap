@@ -16,40 +16,28 @@ exports[`Hero component renders correctly 1`] = `
     <div
       className="download-lts-container"
     >
-      <button
-        className="download-lts-cta t-body1"
-        type="button"
+      <a
+        className="circular-container"
+        href="https://nodejs.org/dist//node-.tar.gz"
       >
         Download Node (LTS)
-      </button>
+      </a>
       <p
-        className="links t-caption"
+        className="t-caption"
       >
-        Version 10.15.3
-         - 
+        
         <a
-          href="/download"
-        >
-          What’s new
-        </a>
-         /
-         
-        <a
-          href="/download"
+          href="https://nodejs.org/dist//node-.tar.gz"
         >
           Get Current
         </a>
       </p>
     </div>
     <a
+      className="circular-container inverse"
       href="/learn"
     >
-      <button
-        className="learn-cta t-body1"
-        type="button"
-      >
-        Learn Node
-      </button>
+      Learn Node
     </a>
   </div>
 </div>

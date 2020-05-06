@@ -29,13 +29,7 @@ exports[`Tests for Header component renders correctly 1`] = `
       className="nav__tabs"
     >
       <a
-        activeStyle={
-          Object {
-            "borderBottom": "var(--space-04) inset var(--color-text-accent)",
-            "color": "var(--color-text-accent)",
-            "fontWeight": "var(--font-weight-semibold)",
-          }
-        }
+        className="activeStyleTab"
         href="/learn"
         partiallyActive={true}
       >
@@ -46,15 +40,10 @@ exports[`Tests for Header component renders correctly 1`] = `
       className="nav__tabs"
     >
       <a
-        activeStyle={
-          Object {
-            "borderBottom": "var(--space-04) inset var(--color-text-accent)",
-            "color": "var(--color-text-accent)",
-            "fontWeight": "var(--font-weight-semibold)",
-          }
-        }
-        href="/docs"
-        partiallyActive={true}
+        className="activeStyleTab"
+        href="https://nodejs.org/en/docs/"
+        rel="noopener noreferrer"
+        target="_blank"
       >
         Documentation
       </a>
@@ -63,15 +52,10 @@ exports[`Tests for Header component renders correctly 1`] = `
       className="nav__tabs"
     >
       <a
-        activeStyle={
-          Object {
-            "borderBottom": "var(--space-04) inset var(--color-text-accent)",
-            "color": "var(--color-text-accent)",
-            "fontWeight": "var(--font-weight-semibold)",
-          }
-        }
-        href="/download"
-        partiallyActive={true}
+        className="activeStyleTab"
+        href="https://nodejs.org/en/download/"
+        rel="noopener noreferrer"
+        target="_blank"
       >
         Download
       </a>

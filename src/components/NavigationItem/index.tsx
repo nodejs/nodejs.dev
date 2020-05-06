@@ -32,14 +32,12 @@ const NavigationItem = ({
     }
   };
 
-  useEffect(
-    (): void => {
-      if (element.current) {
-        const height = element.current.getBoundingClientRect().top;
-        autoScroll(height);
-      }
+  useEffect((): void => {
+    if (element.current) {
+      const height = element.current.getBoundingClientRect().top;
+      autoScroll(height);
     }
-  );
+  });
 
   return (
     <Link
