@@ -2,8 +2,11 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import NavigationItem from '..';
 
-describe('NavigationItem component', () => {
-  it('renders correctly', () => {
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+function noop(): void {}
+
+describe('NavigationItem component', (): void => {
+  it('renders correctly', (): void => {
     const tree = renderer
       .create(
         <NavigationItem
@@ -12,8 +15,8 @@ describe('NavigationItem component', () => {
           isActive
           slug="versioning"
           title="Versioning"
-          onClick={console.log}
-          autoScroll={console.log}
+          onClick={noop}
+          autoScroll={noop}
         />
       )
       .toJSON();
