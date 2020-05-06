@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
+
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
+
 import '../util/konami';
 
 import '../styles/index.scss';
