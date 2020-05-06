@@ -2,8 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Navigation from '..';
 
-describe('Navigation component', () => {
-  it('renders correctly', () => {
+describe('Navigation component', (): void => {
+  it('renders correctly', (): void => {
     const tree = renderer
       .create(
         <Navigation

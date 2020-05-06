@@ -2,8 +2,11 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import NavigationSection from '..';
 
-describe('NavigationSection component', () => {
-  it('renders correctly', () => {
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+function noop(): void {}
+
+describe('NavigationSection component', (): void => {
+  it('renders correctly', (): void => {
     const tree = renderer
       .create(
         <NavigationSection
@@ -17,9 +20,9 @@ describe('NavigationSection component', () => {
             },
           ]}
           currentSlug=""
-          onItemClick={console.log}
+          onItemClick={noop}
           readSections={new Set()}
-          autoScroll={console.log}
+          autoScroll={noop}
         />
       )
       .toJSON();
