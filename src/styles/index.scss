@@ -76,6 +76,25 @@
   }
 }
 
+.trusted-by {
+  margin-bottom: var(--section-margin-bottom);
+  text-align: center;
+  width: 100%;
+
+  p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-64);
+  }
+
+  .logos-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    filter: grayscale(1);
+  }
+}
+
 @keyframes leafs-animation {
   50% {
     transform: rotate(5deg);
