@@ -113,11 +113,11 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
       </code>
       <button
-        className="install__docs-button"
         type="button"
       >
         <a
-          href="https://nodejs.org/en/download/package-manager"
+          className="install__docs-button"
+          href="https://nodejs.org/en/download/package-manager/#macos"
           rel="noopener noreferrer"
           target="_blank"
         >
