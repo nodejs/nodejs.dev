@@ -49,7 +49,7 @@ export const query = graphql`
     doc: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
-      tableOfContents
+      tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
       frontmatter {
         title
         description
