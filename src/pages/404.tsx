@@ -1,6 +1,6 @@
 import React from 'react';
-import Hero from '../components/hero';
-import Layout from '../components/layout';
+import Hero from '../components/Hero';
+import Layout from '../components/Layout';
 
 export default function NotFoundPage(): JSX.Element {
   const title = 'PAGE NOT FOUND';

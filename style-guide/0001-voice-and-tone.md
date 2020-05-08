@@ -49,7 +49,7 @@ to be personal and inviting. To achieve this, we may address our reader like
 a friend.
 
 We might say: _"You're welcome to chat with us about Node.js core features on our
-Github issues list!"_
+GitHub issues list!"_
 
 Instead of: _"The GitHub issues list is the place for discussion of Node.js core
 features."_
@@ -114,7 +114,7 @@ They might say: _"How do I load another .js file and run that new .js file in a 
 global context?..."_
 
 We might respond: _"This would not be recommended. The reason for this suggestion
-is [insert reason here]. You might also want to take a look at..."_
+is \[insert reason here\]. You might also want to take a look at..."_
 
 The response above is direct, yet respectful. It is straightforward and answers
 the question with a concrete suggestion. It invites, rather than commands, the person

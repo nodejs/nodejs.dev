@@ -30,10 +30,10 @@ A buffer is created using the [`Buffer.from()`](https://nodejs.org/api/buffer.ht
 ```js
 const buf = Buffer.from('Hey!')
 ```
-- [`Buffer.from(array)`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_array)
-- [`Buffer.from(arrayBuffer[, byteOffset[, length]])`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_arraybuffer_byteoffset_length)
-- [`Buffer.from(buffer)`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_buffer)
-- [`Buffer.from(string[, encoding])`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_string_encoding)
+* [`Buffer.from(array)`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_array)
+* [`Buffer.from(arrayBuffer[, byteOffset[, length]])`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_arraybuffer_byteoffset_length)
+* [`Buffer.from(buffer)`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_buffer)
+* [`Buffer.from(string[, encoding])`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_string_encoding)
 
 You can also just initialize the buffer passing the size. This creates a 1KB buffer:
 
@@ -120,7 +120,7 @@ By default you copy the whole buffer. 3 more parameters let you define the start
 ```js
 const buf = Buffer.from('Hey!')
 let bufcopy = Buffer.alloc(2) //allocate 2 bytes
-buf.copy(bufcopy, 0, 2, 2)
+buf.copy(bufcopy, 0, 0, 2)
 bufcopy.toString() //'He'
 ```
 

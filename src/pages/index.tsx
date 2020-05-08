@@ -1,30 +1,26 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Hero from '../components/hero';
-import Layout from '../components/layout';
+import Hero from '../components/Hero';
+import Layout from '../components/Layout';
 import '../util/konami';
 
-import '../styles/index.css';
-
+import '../styles/index.scss';
+  
 import featureImg1 from '../images/feature-img-1.png';
 import featureImg2 from '../images/feature-img-2.png';
 import featureImg3 from '../images/feature-img-3.png';
+
+import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
+import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
+import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
+import dotsIllustration from '../images/illustrations/dots.svg';
 
 import logoImg1 from '../images/logos/ibm-logo.svg';
 import logoImg2 from '../images/logos/linkedin-logo.svg';
 import logoImg3 from '../images/logos/microsoft-logo.svg';
 import logoImg4 from '../images/logos/netflix-logo.svg';
 import logoImg5 from '../images/logos/paypal-logo.svg';
-
-import GetStartedIllustration1 from '../images/illustrations/beginners-guide-illustration.svg';
-import GetStartedIllustration2 from '../images/illustrations/do-more-illustration.svg';
-
-import pentagonIllustration1 from '../images/illustrations/pentagon-illustration1.svg';
-import pentagonIllustration2 from '../images/illustrations/pentagon-illustration2.svg';
-import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
-import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
-import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
-import dotsIllustration from '../images/illustrations/dots.svg';
+import InstallTabs from '../components/installTabs';
 import Banner from '../components/banner';
 
 const nodeFeatureHeader1 = 'JavaScript';
@@ -59,17 +55,14 @@ export default function Index(): JSX.Element {
   const description = 'Welcome to Node.js!';
 
   return (
-    <Layout
-      title={title}
-      description={description}
-      style={{ overflow: 'hidden' }}
-    >
-      <Banner />
+    <Layout title={title} description={description}>
       <div className="home-page">
         <Hero title={title} subTitle={subTitle} />
 
         <section className="node-demo-container">
-          <div className="node-demo"></div>
+          <div className="node-demo">
+            <InstallTabs />
+          </div>
           <img className="leafs-front" src={leafsIllustrationFront} alt="" />
           <img className="leafs-middle" src={leafsIllustrationMiddle} alt="" />
           <img className="leafs-back" src={leafsIllustrationBack} alt="" />
@@ -108,41 +101,10 @@ export default function Index(): JSX.Element {
           </div>
         </section>
 
-        <section className="get-started-callouts">
-          <Link to="/learn" className="get-started-callout">
-            <img src={GetStartedIllustration1} alt="" />
-            <h5 className="t-headline">A beginner’s guide</h5>
-            <p>
-              Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos
-              meh.
-            </p>
-          </Link>
-
-          <Link to="/docs" className="get-started-callout">
-            <img src={GetStartedIllustration2} alt="" />
-            <h5 className="t-headline">Do even more with Node</h5>
-            <p>
-              Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos
-              meh.
-            </p>
-          </Link>
-        </section>
-
         <Link to="/learn" className="btn-primary">
           Get Started
         </Link>
       </div>
-      <img
-        className="pentagon-illustration-big1"
-        src={pentagonIllustration1}
-        alt=""
-      />
-      <img
-        className="pentagon-illustration-big2"
-        src={pentagonIllustration2}
-        alt=""
-      />
-      <div className="double-background"></div>
     </Layout>
   );
 }
