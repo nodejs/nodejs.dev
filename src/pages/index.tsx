@@ -6,7 +6,9 @@ import '../util/konami';
 
 import '../styles/index.css';
 
-import featureImg from '../images/placeholder-img.png';
+import featureImg1 from '../images/feature-img-1.png';
+import featureImg2 from '../images/feature-img-2.png';
+import featureImg3 from '../images/feature-img-3.png';
 
 import logoImg1 from '../images/logos/ibm-logo.svg';
 import logoImg2 from '../images/logos/linkedin-logo.svg';
@@ -25,17 +27,26 @@ import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
 import dotsIllustration from '../images/illustrations/dots.svg';
 import Banner from '../components/banner';
 
-const nodeFeature1 =
-  'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
-const nodeFeature2 =
-  'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
-const nodeFeature3 =
-  'Lorem ipsum dolor amet pug vape +1 poke pour-over kitsch tacos meh. ';
+const nodeFeatureHeader1 = 'JavaScript';
+const nodeFeatureHeader2 = 'Open Source';
+const nodeFeatureHeader3 = 'Everywhere';
 
-const NodeFeature = ({ img, featureText }: Props): JSX.Element => {
+const nodeFeature1 =
+  'Node.js provides support for the JavaScript programming language ';
+const nodeFeature2 =
+  'Node.js is open source and actively maintained by contributors all over the world ';
+const nodeFeature3 =
+  'Node.js has been adapted to work in a wide variety of places ';
+
+const NodeFeature = ({
+  img,
+  featureText,
+  featureHeader,
+}: Props): JSX.Element => {
   return (
     <div className="node-features__feature">
       <img src={img} alt="node feature" />
+      <h4>{featureHeader}</h4>
       <p className="t-caption">{featureText}</p>
     </div>
   );
@@ -66,9 +77,21 @@ export default function Index(): JSX.Element {
         </section>
 
         <section className="node-features">
-          <NodeFeature img={featureImg} featureText={nodeFeature1} />
-          <NodeFeature img={featureImg} featureText={nodeFeature2} />
-          <NodeFeature img={featureImg} featureText={nodeFeature3} />
+          <NodeFeature
+            img={featureImg1}
+            featureText={nodeFeature1}
+            featureHeader={nodeFeatureHeader1}
+          />
+          <NodeFeature
+            img={featureImg2}
+            featureText={nodeFeature2}
+            featureHeader={nodeFeatureHeader2}
+          />
+          <NodeFeature
+            img={featureImg3}
+            featureText={nodeFeature3}
+            featureHeader={nodeFeatureHeader3}
+          />
         </section>
 
         <section className="trusted-by">
@@ -127,4 +150,5 @@ export default function Index(): JSX.Element {
 interface Props {
   img: string;
   featureText: string;
+  featureHeader: string;
 }
