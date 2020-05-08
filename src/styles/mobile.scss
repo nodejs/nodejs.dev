@@ -86,10 +86,6 @@
     justify-content: center;
   }
 
-  .nav__logo {
-    height: 3.6rem;
-  }
-
   main {
     display: flex;
     flex-flow: column;
@@ -169,32 +165,5 @@
 
   .sticky-sentinel--top {
     top: -92px;
-  }
-
-  .footer {
-    flex-direction: column;
-
-    .footer__left {
-      flex-direction: column;
-
-      > li:first-of-type {
-        border-right: none;
-      }
-    }
-
-    .footer__right {
-      margin: 0 auto;
-    }
-
-    .footer__left,
-    .footer__right {
-      padding: 6px 18px;
-    }
-
-    .footer__left > li,
-    .footer__right > li {
-      margin-right: 18px;
-      padding: 6px 0;
-    }
   }
 }

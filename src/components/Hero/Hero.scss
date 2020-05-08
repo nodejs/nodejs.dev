@@ -20,6 +20,7 @@
     color: var(--color-text-secondary);
     margin: var(--space-32) 0 var(--space-80) 0;
     font-weight: var(--font-weight-light);
+    margin: var(--space-32) 0 var(--space-32) 0;
   }
 }
 
@@ -27,6 +28,8 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .download-lts-container {
@@ -61,5 +64,23 @@
     background-color: transparent;
     color: var(--color-fill-action);
     border: var(--color-fill-action) var(--space-02) solid;
+  }
+}
+
+@media (max-width: 720px) {
+  .home-page-hero {
+    padding: var(--space-96) 0 var(--space-96) 0;
+    h1 {
+      font-size: 40px;
+      max-width: 90vw;
+      line-height: 48px;
+    }
+
+    .sub-title {
+      max-width: 90vw;
+    }
+
+    .btn-ctas {
+    }
   }
 }
