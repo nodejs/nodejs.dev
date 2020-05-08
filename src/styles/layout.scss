@@ -271,6 +271,7 @@ main {
 .nav .right-container {
   display: flex;
   padding-right: var(--space-24);
+  padding-left: 0;
   list-style: none;
 }
 
@@ -438,4 +439,73 @@ details {
 .sticky-sentinel--bottom {
   height: 40px;
   bottom: 0;
+}
+
+@media (max-width: 720px) {
+  .nav__logo {
+    height: 2.4rem;
+    margin-left: var(--space-12);
+  }
+
+  .nav__tabs__container {
+    padding-left: 14px;
+    margin-left: unset;
+    justify-content: space-between;
+    width: fit-content;
+  }
+
+  .nav .right-container {
+    width: fit-content;
+    display: flex;
+    padding-right: 0;
+    list-style: none;
+  }
+
+  .nav__tabs {
+    margin-left: 0;
+
+    > a {
+      padding: var(--space-12);
+    }
+  }
+
+  .footer {
+    flex-direction: column;
+
+    .footer__left {
+      flex-direction: column;
+      height: 10rem;
+      justify-content: center;
+      align-items: center;
+      > li:first-of-type {
+        padding-right: 0;
+        margin-right: 0;
+        border-right: none;
+      }
+    }
+
+    .footer__right {
+      margin: 0;
+
+      > li:first-of-type {
+        margin-right: auto;
+        margin-left: 0;
+      }
+
+      > li {
+        margin-left: 18px;
+      }
+    }
+
+    .footer__left,
+    .footer__right {
+      padding: 6px 18px;
+    }
+
+    .footer__left > li,
+    .footer__right > li {
+      margin-right: 0;
+      padding: 6px 0;
+    }
+  }
 }

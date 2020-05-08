@@ -33,7 +33,7 @@ const Header = ({
           Learn
         </Link>
       </li>
-      <li className="nav__tabs">
+      <li className="nav__tabs only-desktop">
         <a
           className="activeStyleTab"
           target="_blank"
@@ -41,6 +41,16 @@ const Header = ({
           rel="noopener noreferrer"
         >
           Documentation
+        </a>
+      </li>
+      <li className="nav__tabs">
+        <a
+          className="activeStyleTab only-mobile"
+          target="_blank"
+          href="https://nodejs.org/en/docs/"
+          rel="noopener noreferrer"
+        >
+          Docs
         </a>
       </li>
       <li className="nav__tabs">
