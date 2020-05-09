@@ -18,22 +18,10 @@ import logoImg3 from '../images/logos/microsoft-logo.svg';
 import logoImg4 from '../images/logos/netflix-logo.svg';
 import logoImg5 from '../images/logos/paypal-logo.svg';
 import InstallTabs from '../components/installTabs';
-import Banner from '../components/banner';
 
 import featureImg1 from '../images/feature-img-1.png';
 import featureImg2 from '../images/feature-img-2.png';
 import featureImg3 from '../images/feature-img-3.png';
-
-import GetStartedIllustration1 from '../images/illustrations/beginners-guide-illustration.svg';
-import GetStartedIllustration2 from '../images/illustrations/do-more-illustration.svg';
-
-import pentagonIllustration1 from '../images/illustrations/pentagon-illustration1.svg';
-import pentagonIllustration2 from '../images/illustrations/pentagon-illustration2.svg';
-import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
-import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
-import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
-import dotsIllustration from '../images/illustrations/dots.svg';
-
 
 const nodeFeatureHeader1 = 'JavaScript';
 const nodeFeatureHeader2 = 'Open Source';
