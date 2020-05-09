@@ -32,9 +32,9 @@ The created promise will eventually end in a **resolved state**, or in a **rejec
 
 In addition to your own code and libraries code, promises are used by standard modern Web APIs such as:
 
-- the Battery API
-- the Fetch API
-- Service Workers
+* the Battery API
+* the Fetch API
+* Service Workers
 
 It's unlikely that in modern JavaScript you'll find yourself _not_ using promises, so let's start diving right into them.
 
@@ -58,11 +58,11 @@ const isItDoneYet = new Promise((resolve, reject) => {
 })
 ```
 
-As you can see, the promise checks the `done` global constant, and if that's true, the promise goes to a **resolved** state (since the `resolve` callback was called); otherwise, the `reject` callback is executed, putting the promise in a rejected state. (Note that if one of these functions is never called in the execution path, the promise will remain in a pending state)
+As you can see, the promise checks the `done` global constant, and if that's true, the promise goes to a **resolved** state (since the `resolve` callback was called); otherwise, the `reject` callback is executed, putting the promise in a rejected state. (If one of these functions is never called in the execution path, the promise will remain in a pending state)
 
 Using `resolve` and `reject`, we can communicate back to the caller what the resulting promise state was, and what to do with it. In the above case we just returned a string, but it could be an object, or `null` as well. Because we've created the promise in the above snippet, it has **already started executing**. This is important to understand what's going on in the section [Consuming a promise](#consuming-a-promise) below.
 
-A more common example you may come across is a technique called **Promisifying**. This technique is a way to be able to use a classic javascript function that takes a callback, and have it return a promise:
+A more common example you may come across is a technique called **Promisifying**. This technique is a way to be able to use a classic JavaScript function that takes a callback, and have it return a promise:
 
 ```js
 const fs = require('fs')
@@ -84,7 +84,8 @@ getFile('/etc/passwd')
 .catch(err => console.error(err))
 ```
 
-> note that in recent versions of node.js, you won't have to do this manual conversion for a lot of the API. There is a promisifying function available in the [util module](https://nodejs.org/docs/latest-v11.x/api/util.html#util_util_promisify_original) that will do this for you, given that the function you're promisifying has the correct signature.
+> In recent versions of Node.js, you won't have to do this manual conversion for a lot of the API. There is a promisifying function available in the [util module](https://nodejs.org/docs/latest-v11.x/api/util.html#util_util_promisify_original) that will do this for you, given that the function you're promisifying has the correct signature.
+
 ---
 
 ## Consuming a promise
@@ -147,8 +148,8 @@ In this example, we call `fetch()` to get a list of TODO items from the `todos.j
 
 Running `fetch()` returns a [response](https://fetch.spec.whatwg.org/#concept-response), which has many properties, and within those we reference:
 
-- `status`, a numeric value representing the HTTP status code
-- `statusText`, a status message, which is `OK` if the request succeeded
+* `status`, a numeric value representing the HTTP status code
+* `statusText`, a status message, which is `OK` if the request succeeded
 
 `response` also has a `json()` method, which returns a promise that will resolve with the content of the body processed and transformed into JSON.
 

@@ -14,8 +14,8 @@ const door = new EventEmitter()
 
 The event listener eats its own dog food and uses these events:
 
-- `newListener` when a listener is added
-- `removeListener` when a listener is removed
+* `newListener` when a listener is added
+* `removeListener` when a listener is removed
 
 Here's a detailed description of the most useful methods:
 
