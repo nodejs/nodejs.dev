@@ -18,7 +18,6 @@
   .sub-title {
     max-width: 780px;
     color: var(--color-text-secondary);
-    margin: var(--space-32) 0 var(--space-80) 0;
     font-weight: var(--font-weight-light);
     margin: var(--space-32) 0 var(--space-32) 0;
   }
@@ -71,7 +70,7 @@
   .home-page-hero {
     padding: var(--space-96) 0 var(--space-96) 0;
     h1 {
-      font-size: 40px;
+      font-size: var(--font-size-display2);
       max-width: 90vw;
       line-height: 48px;
     }
