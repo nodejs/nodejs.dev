@@ -43,7 +43,7 @@ const NodeFeature = ({
     <div className="node-features__feature">
       <img src={img} alt="node feature" />
       <h4>{featureHeader}</h4>
-      <p className="t-caption">{featureText}</p>
+      <p>{featureText}</p>
     </div>
   );
 };
