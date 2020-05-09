@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
+import Banner from '../components/banner';
+
 import '../util/konami';
 
 import '../styles/index.css';
@@ -25,7 +27,6 @@ import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
 import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
 import dotsIllustration from '../images/illustrations/dots.svg';
-import Banner from '../components/banner';
 
 const nodeFeatureHeader1 = 'JavaScript';
 const nodeFeatureHeader2 = 'Open Source';
