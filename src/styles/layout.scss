@@ -441,14 +441,24 @@ details {
   bottom: 0;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 800px) {
+  main {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .article-reader {
+    margin-top: 100px;
+    padding: 0 3rem;
+  }
+
   .nav__logo {
     height: 2.4rem;
     margin-left: var(--space-12);
   }
 
   .nav__tabs__container {
-    padding-left: 14px;
+    padding-left: 0;
     margin-left: unset;
     justify-content: space-between;
     width: fit-content;
