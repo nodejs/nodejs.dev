@@ -77,6 +77,20 @@
   }
 }
 
+.node-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5em;
+}
+
+.node-features__feature {
+  max-width: 248px;
+  margin: 0 2em;
+  text-align: center;
+}
+
 .trusted-by {
   margin-bottom: var(--section-margin-bottom);
   text-align: center;
