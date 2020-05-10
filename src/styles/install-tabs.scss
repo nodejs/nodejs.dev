@@ -2,9 +2,10 @@
   -webkit-tap-highlight-color: transparent;
 
   &__tab-list {
-    margin: 0 0 10px;
+    margin: 0;
     padding: 0;
     text-align: center;
+    display: flex;
   }
 
   &__tab {
@@ -14,16 +15,14 @@
     bottom: -1px;
     position: relative;
     list-style: none;
-    padding: 6px 12px;
-    background: lighten($color: #2c3437, $amount: 20);
+    padding: 10px 12px;
+    background: var(--black8);
     cursor: pointer;
-    height: 32px;
-    width: 167px;
+    width: 100%;
     text-align: center;
 
     &--selected {
       background: var(--black9);
-      border-color: var(--color-border-primary);
       color: #fff;
       border-radius: 5px 5px 0 0;
     }
@@ -47,6 +46,7 @@
 
   &__tab-panel {
     display: none;
+    padding: 20px;
 
     &--selected {
       display: block;
@@ -54,25 +54,53 @@
   }
 
   p {
-    margin-bottom: 5px;
-    padding-left: 10px;
-    padding-top: 3px;
+    margin-bottom: 0;
+    margin-top: var(--space-08);
   }
-  .install__text {
-    color: var(--pink6);
-    padding-left: 6px;
+
+  h2 {
+    margin: var(--space-16) 0;
   }
-  .install__docs-button,
-  .install__docs-button:hover {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-sizing: border-box;
-    width: 17rem;
-    height: 4rem;
-    color: var(--black6);
-    margin: 0 var(--space-16);
-    font-weight: var(--font-weight-semibold);
+
+  .install {
+    &__header {
+      height: 30px;
+      margin: 0 5px;
+      &-circles {
+        height: 100%;
+        float: left;
+      }
+      &-grey-circle {
+        display: inline-block;
+        background-color: var(--black8);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 10px 5px;
+      }
+      &-text {
+        width: 100%;
+        text-align: center;
+        line-height: 30px;
+      }
+    }
+    &__text {
+      color: var(--pink6);
+      padding-left: 6px;
+    }
+    &__docs-button {
+      border-radius: var(--space-04);
+      padding: var(--space-08) var(--space-16);
+      margin-top: var(--space-20);
+    }
+    &__docs-button-text,
+    &__docs-button-text:hover {
+      text-decoration: none;
+      box-sizing: border-box;
+      width: 17rem;
+      height: 4rem;
+      color: var(--black6);
+      font-weight: var(--font-weight-semibold);
+    }
   }
 }

@@ -6,6 +6,14 @@ import { Link } from 'gatsby';
 const InstallTabs = (): JSX.Element => {
   return (
     <Tabs>
+      <div className="install__header">
+        <div className="install__header-circles">
+          <div className="install__header-grey-circle"></div>
+          <div className="install__header-grey-circle"></div>
+          <div className="install__header-grey-circle"></div>
+        </div>
+        <div className="install__header-text">bash</div>
+      </div>
       <TabList>
         <Tab>Mac OS</Tab>
         <Tab>Windows</Tab>
@@ -16,7 +24,7 @@ const InstallTabs = (): JSX.Element => {
         <div>
           <p>
             Download the <Link to="/download">macOS Installer</Link> directly
-            from the nodejs.org web site.
+            from the nodejs.org website.
           </p>
           <h2>Alternatives</h2>
           <p>
@@ -53,10 +61,11 @@ const InstallTabs = (): JSX.Element => {
             https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh |
             bash
           </code>
+          <br />
           {/* TODO when the new docs page is ready link to that page.  */}
-          <button type="button">
+          <button type="button" className="install__docs-button">
             <a
-              className="install__docs-button"
+              className="install__docs-button-text"
               href="https://nodejs.org/en/download/package-manager/#macos"
               target="_blank"
               rel="noopener noreferrer"
@@ -77,9 +86,10 @@ const InstallTabs = (): JSX.Element => {
           <code className="install__text">cinst nodejs</code>
           <p>Using Scoop:</p>
           <code className="install__text">scoop install nodejs</code>
-          <button type="button">
+          <br />
+          <button type="button" className="install__docs-button">
             <a
-              className="install__docs-button"
+              className="install__docs-button-text"
               href="https://nodejs.org/en/download/package-manager/#windows"
               target="_blank"
               rel="noopener noreferrer"
