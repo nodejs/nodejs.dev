@@ -79,7 +79,7 @@
         margin: 10px 5px;
       }
       &-text {
-        width: 100%;
+        width: calc(100% - 60px);
         text-align: center;
         line-height: 30px;
       }
