@@ -2,7 +2,7 @@ name: Upload to staging
 
 on:
   issue_comment:
-    type: created
+    types: [created]
 
 jobs:
   build:
