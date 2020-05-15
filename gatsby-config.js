@@ -84,49 +84,7 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: 'gatsby-plugin-sitemap',
-      options: {
-        query: `{
-          site {
-            siteMetadata {
-              siteUrl,
-              siteUrlNoSlash
-            }
-          }
-          allSitePage {
-            edges {
-              node {
-                path
-              }
-            }
-          }
-          allMarkdownRemark {
-            edges {
-              node {
-                fields {
-                  slug
-                }
-              }
-            }
-          }
-        }`,
-        serialize: ({ site, allSitePage, allMarkdownRemark }) => {
-          const sitePages = allSitePage.edges.map(edge => ({
-            url: site.siteMetadata.siteUrlNoSlash + edge.node.path,
-            changefreq: 'daily',
-            priority: 0.7,
-          }));
-          const markdownRemark = allMarkdownRemark.edges.map(edge => ({
-            url: `${site.siteMetadata.siteUrlNoSlash}/${edge.node.fields.slug}`,
-            changefreq: 'daily',
-            priority: 0.7,
-          }));
-
-          return sitePages.concat(markdownRemark);
-        },
-      },
-    },
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-emotion',
     },
