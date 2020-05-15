@@ -54,6 +54,22 @@ In the case of an objection being raised in a pull request by another collaborat
 * [`squash`][] pull-requests made up of multiple commits
 * Land how you like as long as there are no merge commits
 
+## Getting Started
+
+For feature development you should be working from the staging branch.
+
+* Fork
+* Clone your fork `git clone git@github.com:<githubid>/nodejs.dev.git`
+* cd into your project
+* Add the following to your remotes by doing `git remote add upstream git@github.com:nodejs/nodejs.dev.git`
+* Check out the staging branch by doing `git checkout upstream/staging`
+* Create a new branch for your awesome work `git checkout -b branchname`
+* Commit your work
+* Push to your branch `git push -u origin yourbranch`
+* Make a pull request against the remote branch `staging`
+  * Example `https://github.com/nodejs/nodejs.dev/pull/398`
+* Mention @nodejs/website-redesign `/gcbrun`
+
 ## Developer's Certificate of Origin 1.1
 
 By making a contribution to this project, I certify that:
