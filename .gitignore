@@ -9,6 +9,7 @@ yarn-error.log
 build
 
 .env
+.env.production
 .firebase/*
 coverage
 .vscode

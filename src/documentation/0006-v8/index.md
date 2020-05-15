@@ -39,7 +39,7 @@ On the web, there is a race for performance that's been going on for years, and 
 
 JavaScript is generally considered an interpreted language, but modern JavaScript engines no longer just interpret JavaScript, they compile it.
 
-This happens since 2009 when the SpiderMonkey JavaScript compiler was added to Firefox 3.5, and everyone followed this idea.
+This has been happening since 2009, when the SpiderMonkey JavaScript compiler was added to Firefox 3.5, and everyone followed this idea.
 
 JavaScript is internally compiled by V8 with **just-in-time** (JIT) **compilation** to speed up the execution.
 
