@@ -3,7 +3,7 @@
   margin: 0 auto;
   margin-bottom: var(--space-80);
   position: relative;
-  --section-margin-bottom: 340px;
+  --section-margin-bottom: 80px;
 }
 
 .node-demo-container {
@@ -11,6 +11,7 @@
 }
 
 .node-demo {
+  position: relative;
   max-width: 832px;
   width: 90vw;
   margin: 0 auto;

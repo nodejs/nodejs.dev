@@ -1,6 +1,10 @@
 .react-tabs {
   -webkit-tap-highlight-color: transparent;
 
+  h4 {
+    margin-top: 0;
+  }
+
   &__tab-list {
     margin: 0;
     padding: 0;
@@ -28,18 +32,19 @@
     }
 
     &:focus {
-      box-shadow: 0 0 5px hsl(208, 99%, 50%);
-      border-color: hsl(208, 99%, 50%);
+      box-shadow: 0 0 5px var(--pink5);
+      border-color: var(--pink5);
+      border-bottom: none;
       outline: none;
 
       &:after {
         content: '';
         position: absolute;
         height: 5px;
-        left: -4px;
-        right: -4px;
+        left: 0;
+        right: 0;
         bottom: -5px;
-        background: var(--black0);
+        background: var(--black9);
       }
     }
   }
@@ -84,14 +89,23 @@
         line-height: 30px;
       }
     }
+    &__comments {
+      color: var(--black8);
+      font-style: italic;
+      a {
+        color: var(--color-fill-action);
+      }
+    }
     &__text {
-      color: var(--pink6);
+      color: var(--pink5);
       padding-left: 6px;
     }
     &__docs-button {
       border-radius: var(--space-04);
       padding: var(--space-08) var(--space-16);
-      margin-top: var(--space-20);
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
     }
     &__docs-button-text,
     &__docs-button-text:hover {

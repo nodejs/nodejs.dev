@@ -74,7 +74,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
     role="tabpanel"
   >
     <div>
-      <p>
+      <h4>
         Download the 
         <a
           href="/download"
@@ -82,12 +82,14 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
           macOS Installer
         </a>
          directly from the nodejs.org website.
-      </p>
-      <h2>
+      </h4>
+      <h4>
         Alternatives
-      </h2>
-      <p>
-        Using
+      </h4>
+      <code
+        className="install__comments"
+      >
+        #Using
          
         <a
           href="https://brew.sh"
@@ -96,14 +98,19 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
         >
           Homebrew
         </a>
-      </p>
+      </code>
+      <br />
       <code
         className="install__text"
       >
         brew install node
       </code>
-      <p>
-        Using
+      <br />
+      <br />
+      <code
+        className="install__comments"
+      >
+        #Using
          
         <a
           href="https://www.macports.org"
@@ -112,14 +119,19 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
         >
           Macports
         </a>
-      </p>
+      </code>
+      <br />
       <code
         className="install__text"
       >
         port install nodejs14
       </code>
-      <p>
-        Using
+      <br />
+      <br />
+      <code
+        className="install__comments"
+      >
+        #Using
          
         <a
           href="https://github.com/nvm-sh/nvm"
@@ -128,7 +140,8 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
         >
           nvm
         </a>
-      </p>
+      </code>
+      <br />
       <code
         className="install__text"
       >
