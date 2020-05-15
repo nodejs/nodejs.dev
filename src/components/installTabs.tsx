@@ -22,20 +22,23 @@ const InstallTabs = (): JSX.Element => {
 
       <TabPanel>
         <div>
-          <p>
+          <h4>
             Download the <Link to="/download">macOS Installer</Link> directly
             from the nodejs.org website.
-          </p>
-          <h2>Alternatives</h2>
-          <p>
-            Using{' '}
+          </h4>
+          <h4>Alternatives</h4>
+          <code className="install__comments">
+            #Using{' '}
             <a href="https://brew.sh" target="_blank" rel="noopener noreferrer">
               Homebrew
             </a>
-          </p>
+          </code>
+          <br />
           <code className="install__text">brew install node</code>
-          <p>
-            Using{' '}
+          <br />
+          <br />
+          <code className="install__comments">
+            #Using{' '}
             <a
               href="https://www.macports.org"
               target="_blank"
@@ -43,11 +46,13 @@ const InstallTabs = (): JSX.Element => {
             >
               Macports
             </a>
-          </p>
-
+          </code>
+          <br />
           <code className="install__text">port install nodejs14</code>
-          <p>
-            Using{' '}
+          <br />
+          <br />
+          <code className="install__comments">
+            #Using{' '}
             <a
               href="https://github.com/nvm-sh/nvm"
               target="_blank"
@@ -55,7 +60,8 @@ const InstallTabs = (): JSX.Element => {
             >
               nvm
             </a>
-          </p>
+          </code>
+          <br />
           <code className="install__text">
             curl -o-
             https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh |
@@ -77,14 +83,18 @@ const InstallTabs = (): JSX.Element => {
       </TabPanel>
       <TabPanel>
         <div>
-          <p>
+          <h4>
             Download the <Link to="/download">Windows Installer</Link> directly
             from the nodejs.org web site.
-          </p>
-          <h2>Alternatives</h2>
-          <p> Using Chocolatey:</p>
+          </h4>
+          <h4>Alternatives</h4>
+          <code className="install__comments">#Using Chocolatey:</code>
+          <br />
           <code className="install__text">cinst nodejs</code>
-          <p>Using Scoop:</p>
+          <br />
+          <br />
+          <code className="install__comments">#Using Scoop</code>
+          <br />
           <code className="install__text">scoop install nodejs</code>
           <br />
           <button type="button" className="install__docs-button">
@@ -101,10 +111,10 @@ const InstallTabs = (): JSX.Element => {
       </TabPanel>
       <TabPanel>
         <div>
-          <h2>
+          <h4>
             Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora
             and Snap packages
-          </h2>
+          </h4>
           <p>
             <a href="https://github.com/nodesource/distributions/blob/master/README.md">
               Node.js binary distributions
