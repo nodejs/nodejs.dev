@@ -8,9 +8,9 @@ const InstallTabs = (): JSX.Element => {
     <Tabs>
       <div className="install__header">
         <div className="install__header-circles">
-          <div className="install__header-grey-circle"></div>
-          <div className="install__header-grey-circle"></div>
-          <div className="install__header-grey-circle"></div>
+          <div className="install__header-grey-circle" />
+          <div className="install__header-grey-circle" />
+          <div className="install__header-grey-circle" />
         </div>
         <div className="install__header-text">bash</div>
       </div>

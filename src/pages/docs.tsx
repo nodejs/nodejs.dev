@@ -233,7 +233,7 @@ export default function APIDocsPage(): JSX.Element {
   );
 
   return (
-    <React.Fragment>
+    <>
       <main>
         <Layout title={title} description={description} showFooter={false}>
           <nav className="api-nav">
@@ -266,6 +266,6 @@ export default function APIDocsPage(): JSX.Element {
         </Layout>
       </main>
       <Footer />
-    </React.Fragment>
+    </>
   );
 }

@@ -26,16 +26,15 @@ const Layout = ({
   title,
   description,
   img,
-  location,
   showFooter = true,
 }: Props): JSX.Element => {
   return (
-    <React.Fragment>
+    <>
       <SEO title={title} description={description} img={img} />
       <Header darkModeController={darkModeController} />
       {children}
       {showFooter && <Footer />}
-    </React.Fragment>
+    </>
   );
 };
 

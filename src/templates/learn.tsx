@@ -24,7 +24,7 @@ const LearnLayout = ({
   },
   pageContext: { slug, next, previous, relativePath, navigationData },
 }: Props): React.ReactNode => (
-  <React.Fragment>
+  <>
     <main>
       <Layout title={title} description={description} showFooter={false}>
         <Navigation currentSlug={slug} sections={navigationData} />
@@ -40,7 +40,7 @@ const LearnLayout = ({
       </Layout>
     </main>
     <Footer />
-  </React.Fragment>
+  </>
 );
 export default LearnLayout;
 
