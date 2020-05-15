@@ -88,7 +88,7 @@
     "remark-cli": "^8.0.0",
     "remark-frontmatter": "^2.0.0",
     "remark-preset-lint-node": "^1.13.0",
-    "typescript": "~3.2.1"
+    "typescript": "3.9.2"
   },
   "repository": {
     "type": "git",
