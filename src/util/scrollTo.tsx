@@ -11,7 +11,7 @@ const easeInOutCubic = (t: number, b: number, c: number, d: number) =>
 export function scrollTo(
   scrollToPoint: number,
   element: HTMLElement | null = null,
-  duration: number = 333
+  duration = 333
 ): Promise<boolean> {
   const start =
     ((element && element.scrollTop) ||
