@@ -84,7 +84,7 @@ For feature development you should be working from the staging branch.
 - Push to your branch `git push -u origin yourbranch`
 - Make a pull request against the remote branch `staging`
   - Example `https://github.com/nodejs/nodejs.dev/pull/398`
-- Mention @nodejs/website-redesign `/gcbrun`
+- Mention @nodejs/website-redesign `/preview`
 
 ## Developer's Certificate of Origin 1.1
 

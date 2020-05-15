@@ -29,21 +29,21 @@ test 2
 
 1. **Install dependencies.**
 
-    ```sh
-    # install the dependencies
-    npm install
-    ```
+   ```sh
+   # install the dependencies
+   npm install
+   ```
 
 1. **Start developing.**
 
-    ```sh
-    # "start": "gatsby develop"
-    npm start
-    ```
+   ```sh
+   # "start": "gatsby develop"
+   npm start
+   ```
 
 1. **Open the source code and start editing!**
 
-    Your site is now running at `http://localhost:8000`!
+   Your site is now running at `http://localhost:8000`!
 
     *Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://next.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).*
 
@@ -86,25 +86,25 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 7. **`gatsby-browser.tsx`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://next.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-6. **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you'd like to include, etc. (Check out the [config docs](https://next.gatsbyjs.org/docs/gatsby-config/) for more detail).
+8. **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you'd like to include, etc. (Check out the [config docs](https://next.gatsbyjs.org/docs/gatsby-config/) for more detail).
 
-8. **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby node APIs](https://next.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+9. **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby node APIs](https://next.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-9. **`gatsby-ssr.tsx`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://next.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+10. **`gatsby-ssr.tsx`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://next.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-10. **`LICENSE`**: Gatsby is licensed under the MIT license.
+11. **`LICENSE`**: Gatsby is licensed under the MIT license.
 
-11. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. (You won't change this file directly).
+12. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. (You won't change this file directly).
 
-12. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project's name, author, etc.). This manifest is how npm knows which packages to install for your project.
+13. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project's name, author, etc.). This manifest is how npm knows which packages to install for your project.
 
-13. **`README.md`**: A text file containing useful reference information about your project.
+14. **`README.md`**: A text file containing useful reference information about your project.
 
-14. **`tsconfig.json`**: Config file for TypeScript
+15. **`tsconfig.json`**: Config file for TypeScript
 
-15. **`tslint.json`**: TS Lint configuration file
+16. **`tslint.json`**: TS Lint configuration file
 
-16. **`yarn.lock`**: [Yarn](https://yarnpkg.com/) is a package manager alternative to npm. You can use either yarn or npm, though all of the Gatsby docs reference npm. This file serves essentially the same purpose as `package-lock.json`, just for a different package management system.
+17. **`yarn.lock`**: [Yarn](https://yarnpkg.com/) is a package manager alternative to npm. You can use either yarn or npm, though all of the Gatsby docs reference npm. This file serves essentially the same purpose as `package-lock.json`, just for a different package management system.
 
 ## 📝 Data Sources
 
@@ -118,9 +118,9 @@ The `src/documentation` directory currently contains all the getting started con
 
 Looking for more guidance? Full documentation for Gatsby lives [on the website](https://next.gatsbyjs.org/). Here are some places to start:
 
-* **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://next.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://next.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
-* **To dive straight into code samples head [to our documentation](https://next.gatsbyjs.org/docs/).** In particular, check out the "Guides", API reference, and "Advanced Tutorials" sections in the sidebar.
+- **To dive straight into code samples head [to our documentation](https://next.gatsbyjs.org/docs/).** In particular, check out the "Guides", API reference, and "Advanced Tutorials" sections in the sidebar.
 
 ## 🏛 Governance
 
@@ -150,87 +150,87 @@ Any member of the website-redesign initiative who prefers to begin contributing
 at a specific future phase is welcome to make a PR adding their handle to that
 phase.
 
-* [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**, CommComm
+- [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**, CommComm
   Co-champion
-* [@chowdhurian](https://github.com/chowdhurian) - **Manil Chowdhury**, CommComm
+- [@chowdhurian](https://github.com/chowdhurian) - **Manil Chowdhury**, CommComm
   Co-champion
 
 #### Information Gathering
 
-* [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**
-* [@codeekage](https://github.com/codeekage) - **Agiri Abraham JNR**
-* [@darcyclarke](https://github.com/darcyclarke) - **Darcy Clarke**
-* [@maddhruv](https://github.com/maddhruv) - **Dhruv Jain**
-* [@fhemberger](https://github.com/fhemberger) - **Frederic Hemberger**
-* [@JonahMoses](https://github.com/JonahMoses) - **Jonah Moses**
-* [@chowdhurian](https://github.com/chowdhurian) - **Manil Chowdhury**
-* [@oe](https://github.com/oe) - **Olivia Hugger**
-* [@bnb](https://github.com/bnb) - **Tierney Cyren**
-* [@timothyis](https://github.com/timothyis) - **Timothy**
+- [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**
+- [@codeekage](https://github.com/codeekage) - **Agiri Abraham JNR**
+- [@darcyclarke](https://github.com/darcyclarke) - **Darcy Clarke**
+- [@maddhruv](https://github.com/maddhruv) - **Dhruv Jain**
+- [@fhemberger](https://github.com/fhemberger) - **Frederic Hemberger**
+- [@JonahMoses](https://github.com/JonahMoses) - **Jonah Moses**
+- [@chowdhurian](https://github.com/chowdhurian) - **Manil Chowdhury**
+- [@oe](https://github.com/oe) - **Olivia Hugger**
+- [@bnb](https://github.com/bnb) - **Tierney Cyren**
+- [@timothyis](https://github.com/timothyis) - **Timothy**
 
 #### IA / UX Planning
 
-* [@oe](https://github.com/oe) - **Olivia Hugger**
-* [@fhemberger](https://github.com/fhemberger) - **Frederic Hemberger**
-* [@bnb](https://github.com/bnb) - **Tierney Cyren**
-* [@timothyis](https://github.com/timothyis) - **Timothy**
-* [@JonahMoses](https://github.com/JonahMoses) - **Jonah Moses**
-* [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**
-* [@emilypmendez](https://github.com/emilypmendez) - **Emily Mendez**
-* [@darcyclarke](https://github.com/darcyclarke) - **Darcy Clarke**
-* [@maddhruv](https://github.com/maddhruv) - **Dhruv Jain**
-* [@chowdhurian](https://github.com/chowdhurian) - **Manil Chowdhury**
-* [@codeekage](https://github.com/codeekage) - **Agiri Abraham JNR**
-* [@add1sun](https://github.com/add1sun) - **Addison Berry**
-* [@Qard](https://github.com/Qard) - **Stephen Belanger**
-* [@watilde](https://github.com/watilde) - **Daijiro Wachi**
-* [@tolmasky](https://github.com/tolmasky) - **Francisco Ryan Tolmasky I**
-* [@milapbhojak](https://github.com/milapbhojak) - **Milap Bhojak**
-* [@devamaz](https://github.com/devamaz) - **Ahmad Abdul-Aziz**
+- [@oe](https://github.com/oe) - **Olivia Hugger**
+- [@fhemberger](https://github.com/fhemberger) - **Frederic Hemberger**
+- [@bnb](https://github.com/bnb) - **Tierney Cyren**
+- [@timothyis](https://github.com/timothyis) - **Timothy**
+- [@JonahMoses](https://github.com/JonahMoses) - **Jonah Moses**
+- [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**
+- [@emilypmendez](https://github.com/emilypmendez) - **Emily Mendez**
+- [@darcyclarke](https://github.com/darcyclarke) - **Darcy Clarke**
+- [@maddhruv](https://github.com/maddhruv) - **Dhruv Jain**
+- [@chowdhurian](https://github.com/chowdhurian) - **Manil Chowdhury**
+- [@codeekage](https://github.com/codeekage) - **Agiri Abraham JNR**
+- [@add1sun](https://github.com/add1sun) - **Addison Berry**
+- [@Qard](https://github.com/Qard) - **Stephen Belanger**
+- [@watilde](https://github.com/watilde) - **Daijiro Wachi**
+- [@tolmasky](https://github.com/tolmasky) - **Francisco Ryan Tolmasky I**
+- [@milapbhojak](https://github.com/milapbhojak) - **Milap Bhojak**
+- [@devamaz](https://github.com/devamaz) - **Ahmad Abdul-Aziz**
 
 #### UI Design and Content Creation
 
-* [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**
-* [@bnb](https://github.com/bnb) - **Tierney Cyren**
-* [@codeekage](https://github.com/codeekage) - **Agiri Abraham JNR**
-* [@chowdhurian](https://github.com/chowdhurian) - **Manil Chowdhury**
-* [@maddhruv](https://github.com/maddhruv) - **Dhruv Jain**
-* [@milapbhojak](https://github.com/milapbhojak) - **Milap Bhojak**
-* [@tolmasky](https://github.com/tolmasky) - **Francisco Ryan Tolmasky I**
-* [@iNidAName](https://github.com/inidaname) - **Hassaan Sani**
-* [@abedzantout](https://github.com/abedzantout) - **Abdul Rahman Zantout**
-* [@AliObaji](https://github.com/AliObaji) - **Ali Obaji**
-* [@AhmadAwais](https://github.com/AhmadAwais) - **AhmadAwais**
+- [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**
+- [@bnb](https://github.com/bnb) - **Tierney Cyren**
+- [@codeekage](https://github.com/codeekage) - **Agiri Abraham JNR**
+- [@chowdhurian](https://github.com/chowdhurian) - **Manil Chowdhury**
+- [@maddhruv](https://github.com/maddhruv) - **Dhruv Jain**
+- [@milapbhojak](https://github.com/milapbhojak) - **Milap Bhojak**
+- [@tolmasky](https://github.com/tolmasky) - **Francisco Ryan Tolmasky I**
+- [@iNidAName](https://github.com/inidaname) - **Hassaan Sani**
+- [@abedzantout](https://github.com/abedzantout) - **Abdul Rahman Zantout**
+- [@AliObaji](https://github.com/AliObaji) - **Ali Obaji**
+- [@AhmadAwais](https://github.com/AhmadAwais) - **AhmadAwais**
 
 #### Site Development _<-- current phase_
 
-* [@abiclub23](https://github.com/abiclub23) - **Abhi Tondepu**
-* [@ajay2507](https://github.com/ajay2507) - **Ajaykumar**
-* [@connorholyday](https://github.com/connorholyday) - **Connor Holyday**
-* [@iceagency-jakecruse](https://github.com/iceagency-jakecruse) - **Jake Cruse**
-* [@iceagency-lukehopkins](https://github.com/iceagency-lukehopkins) - **Luke Hopkins**
-* [@jestho](https://github.com/jestho) - **Jesper Thøgersen**
-* [@jonahmoses](https://github.com/jonahmoses) - **Jonah Moses**
-* [@sagirk](https://github.com/sagirk) - **Sagir Khan**
-* [@ollelauribostrom](https://github.com/ollelauribostrom) - **Olle Lauri Boström**
-* [@belar](https://github.com/Belar) - **Paweł**
-* [@erichodges](https://github.com/erichodges) - **Eric Hodges**
-* [@utkarshbhimte](https://github.com/utkarshbhimte) - **Utkarsh Bhimte**
-* [@lidoravitan](https://github.com/lidoravitan) - **Lidor Avitan**
-* [@mbj36](https://github.com/mbj36) - **Mohit Bajoria**
-* [@zanmarolt](https://github.com/zanmarolt) - **Zan Marolt**
-* [@imbhargav5](https://github.com/imbhargav5) - **Bhargav Ponnapalli**
-* [@mikeattara](https://github.com/mikeattara) - **Mike Perry Y Attara**
-* [@ZYSzys](https://github.com/ZYSzys) - **ZYSzys**
-* [@mrjam2](https://github.com/mrjam2) - **Jamie Burton**
-* [@jamesgeorge007](https://github.com/jamesgeorge007) - **James George**
-* [@Yash-Handa](https://github.com/Yash-Handa) - **Yash Handa**
-* [@iNidAName](https://github.com/inidaname) - **Hassaan Sani**
-* [@abedzantout](https://github.com/abedzantout) - **Abdul Rahman Zantout**
-* [@LaRuaNa](https://github.com/LaRuaNa) - **Onur Laru**
-* [@AhmadAwais](https://github.com/AhmadAwais) - **AhmadAwais**
-* [@BeniCheni](https://github.com/BeniCheni) - **Benjamin Chen**
-* [@kevjin](https://github.com/kevjin) - **Kevin Jin**
+- [@abiclub23](https://github.com/abiclub23) - **Abhi Tondepu**
+- [@ajay2507](https://github.com/ajay2507) - **Ajaykumar**
+- [@connorholyday](https://github.com/connorholyday) - **Connor Holyday**
+- [@iceagency-jakecruse](https://github.com/iceagency-jakecruse) - **Jake Cruse**
+- [@iceagency-lukehopkins](https://github.com/iceagency-lukehopkins) - **Luke Hopkins**
+- [@jestho](https://github.com/jestho) - **Jesper Thøgersen**
+- [@jonahmoses](https://github.com/jonahmoses) - **Jonah Moses**
+- [@sagirk](https://github.com/sagirk) - **Sagir Khan**
+- [@ollelauribostrom](https://github.com/ollelauribostrom) - **Olle Lauri Boström**
+- [@belar](https://github.com/Belar) - **Paweł**
+- [@erichodges](https://github.com/erichodges) - **Eric Hodges**
+- [@utkarshbhimte](https://github.com/utkarshbhimte) - **Utkarsh Bhimte**
+- [@lidoravitan](https://github.com/lidoravitan) - **Lidor Avitan**
+- [@mbj36](https://github.com/mbj36) - **Mohit Bajoria**
+- [@zanmarolt](https://github.com/zanmarolt) - **Zan Marolt**
+- [@imbhargav5](https://github.com/imbhargav5) - **Bhargav Ponnapalli**
+- [@mikeattara](https://github.com/mikeattara) - **Mike Perry Y Attara**
+- [@ZYSzys](https://github.com/ZYSzys) - **ZYSzys**
+- [@mrjam2](https://github.com/mrjam2) - **Jamie Burton**
+- [@jamesgeorge007](https://github.com/jamesgeorge007) - **James George**
+- [@Yash-Handa](https://github.com/Yash-Handa) - **Yash Handa**
+- [@iNidAName](https://github.com/inidaname) - **Hassaan Sani**
+- [@abedzantout](https://github.com/abedzantout) - **Abdul Rahman Zantout**
+- [@LaRuaNa](https://github.com/LaRuaNa) - **Onur Laru**
+- [@AhmadAwais](https://github.com/AhmadAwais) - **AhmadAwais**
+- [@BeniCheni](https://github.com/BeniCheni) - **Benjamin Chen**
+- [@kevjin](https://github.com/kevjin) - **Kevin Jin**
 
 ## Links
 
