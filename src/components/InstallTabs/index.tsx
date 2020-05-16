@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import '../styles/install-tabs.scss';
+import './InstallTabs.scss';
 import { Link } from 'gatsby';
 
 const InstallTabs = (): JSX.Element => {
