@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ReleaseData } from '../../hooks/useReleaseHistory';
 
-import '../styles/release-cards.css';
-import appleLogo from '../images/logos/apple-logo.svg';
-import microsoftLogo from '../images/logos/microsoft-download-logo.svg';
-import sourceCodeIcon from '../images/logos/source-code-icon.svg';
+import './ReleaseCards.scss';
+import appleLogo from '../../images/logos/apple-logo.svg';
+import microsoftLogo from '../../images/logos/microsoft-download-logo.svg';
+import sourceCodeIcon from '../../images/logos/source-code-icon.svg';
+
 interface Props {
   line?: ReleaseData;
   userOS: string;
@@ -12,53 +13,82 @@ interface Props {
 
 export default function ReleaseCards({ line, userOS }: Props): JSX.Element {
   const fileName = line && line.version;
+  const [selected, setSelected] = useState(
+    !(['WIN', 'MAC', 'MOBILE'].indexOf(userOS) >= 0) ? 'SOURCECODE' : userOS
+  );
+  const DownloadTypes = [
+    {
+      label: 'Windows Installer',
+      icon: microsoftLogo,
+      name: 'WIN',
+      fileName: `node-${fileName}-x86.msi`,
+      download: `https://nodejs.org/dist/${fileName}/node-${fileName}-x86.msi`,
+    },
+    {
+      label: 'MAC Installer',
+      icon: appleLogo,
+      name: 'MAC',
+      fileName: `node-${fileName}.pkg`,
+      download: `https://nodejs.org/dist/${fileName}/node-${fileName}.pkg`,
+    },
+    {
+      label: 'Source Code',
+      name: 'SOURCECODE',
+      icon: sourceCodeIcon,
+      fileName: `node-${fileName}.tar.gz`,
+      download: `https://nodejs.org/dist/${fileName}/node-${fileName}.tar.gz`,
+    },
+  ];
+
   return (
-    <div>
-      <div>
-        <i className="material-icons">cloud</i>
-        <p>Windows Installer</p>
-        <a
-          href={`https://nodejs.org/dist/${fileName}/node-${line &&
-            line.version}-x86.msi`}
-        >
-          node-
-          {line && line.version}
-          .x86.msi
-        </a>
-      </div>
-      <div>
-        <i className="material-icons">cloud</i>
-        <p>Mac Installer</p>
-        <a
-          href={`https://nodejs.org/dist/${fileName}/node-${line &&
-            line.version}.pkg`}
-        >
-          node-
-          {line && line.version}
-          .pkg
-        </a>
-      </div>
-      <div className="release-card">
-        <div className="release-row">
-          <img src={sourceCodeIcon} alt="source code icon" />
-          <a
-            className="release-card-download"
-            href={`https://nodejs.org/dist/${fileName}/node-${line &&
-              line.version}.tar.gz`}
-          >
-            <i className="material-icons">get_app</i>
-          </a>
-        </div>
-        <p>Source Code</p>
-        <a
-          href={`https://nodejs.org/dist/${fileName}/node-${line &&
-            line.version}.tar.gz`}
-        >
-          node-
-          {line && line.version}
-          .tar.gz
-        </a>
-      </div>
-    </div>
+    <>
+      <ul className="release-card__row">
+        {DownloadTypes.map(
+          (os): JSX.Element => {
+            return (
+              <li
+                className={
+                  selected === os.name
+                    ? 'release-card--active'
+                    : 'release-card--inactive'
+                }
+                key={os.name}
+                role="presentation"
+                onClick={(): void => {
+                  setSelected(os.name);
+                }}
+              >
+                <div className="release-card__top">
+                  <img
+                    className={
+                      selected === os.name
+                        ? 'release-card__top--active'
+                        : 'release-card__top--inactive'
+                    }
+                    src={os.icon}
+                    alt={`${os.label} logo`}
+                  />
+                  {selected === os.name && (
+                    <a className="release-card__link" href={os.download}>
+                      <i className="material-icons">get_app</i>
+                    </a>
+                  )}
+                </div>
+                <p
+                  className={
+                    selected === os.name
+                      ? 'release-card__label--active'
+                      : 'release-card__label--inactive'
+                  }
+                >
+                  {os.label}
+                </p>
+                <p className="release-card__filename">{os.fileName}</p>
+              </li>
+            );
+          }
+        )}
+      </ul>
+    </>
   );
 }

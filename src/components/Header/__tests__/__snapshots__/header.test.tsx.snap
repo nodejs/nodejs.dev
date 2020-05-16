@@ -65,9 +65,7 @@ exports[`Tests for Header component renders correctly 1`] = `
     >
       <a
         className="activeStyleTab"
-        href="https://nodejs.org/en/download/"
-        rel="noopener noreferrer"
-        target="_blank"
+        href="/download"
       >
         Download
       </a>

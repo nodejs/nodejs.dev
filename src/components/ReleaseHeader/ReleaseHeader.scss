@@ -6,6 +6,7 @@
   font-size: var(--font-size-overline);
   line-height: var(--line-height-overline);
   letter-spacing: var(--space-02);
+  width: 100%;
 }
 
 .release-page-navigation-active {
@@ -21,4 +22,13 @@
 
 .release-page-navigation-right-npm {
   text-transform: lowercase;
+  width: 100%;
+  text-align: right;
+}
+
+@media (max-width: 500px) {
+  .release-page-navigation.-title {
+    font-size: var(--font-size-display4);
+    line-height: var(--line-height-display4);
+  }
 }

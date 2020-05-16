@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
 import * as ShallowRenderer from 'react-test-renderer/shallow';
 import Article from '..';
@@ -7,15 +6,15 @@ import {
   createLearnPageContext,
 } from '../../../../test/__fixtures__/page';
 
-describe('Article component', () => {
-  it('renders correctly', () => {
+describe('Article component', (): void => {
+  it('renders correctly', (): void => {
     const renderer = ShallowRenderer.createRenderer();
     const learnPageData = createLearnPageData();
     const learnPageContext = createLearnPageContext();
 
     const {
       doc: {
-        frontmatter: { title, description },
+        frontmatter: { title },
         html,
         fields: { authors },
       },
