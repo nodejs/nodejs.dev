@@ -80,7 +80,7 @@ Example:
 
 ## `os.hostname()`
 
-Return the hostname.
+Return the host name.
 
 ## `os.loadavg()`
 
@@ -144,12 +144,12 @@ Example:
 
 Return the platform that Node.js was compiled for:
 
-- `darwin`
-- `freebsd`
-- `linux`
-- `openbsd`
-- `win32`
-- ...more
+* `darwin`
+* `freebsd`
+* `linux`
+* `openbsd`
+* `win32`
+* ...more
 
 ## `os.release()`
 
@@ -167,9 +167,9 @@ Returns the number of bytes that represent the total memory available in the sys
 
 Identifies the operating system:
 
-- `Linux`
-- `Darwin` on macOS
-- `Windows_NT` on Windows
+* `Linux`
+* `Darwin` on macOS
+* `Windows_NT` on Windows
 
 ## `os.uptime()`
 

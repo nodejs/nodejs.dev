@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for InstallTabs component renders correctly 1`] = `
+<div
+  className="react-tabs"
+  data-tabs={true}
+  onClick={[Function]}
+  onKeyDown={[Function]}
+>
+  <div
+    className="install__header"
+  >
+    <div
+      className="install__header-circles"
+    >
+      <div
+        className="install__header-grey-circle"
+      />
+      <div
+        className="install__header-grey-circle"
+      />
+      <div
+        className="install__header-grey-circle"
+      />
+    </div>
+    <div
+      className="install__header-text"
+    >
+      bash
+    </div>
+  </div>
+  <ul
+    className="react-tabs__tab-list"
+    role="tablist"
+  >
+    <li
+      aria-controls="react-tabs-1"
+      aria-disabled="false"
+      aria-selected="true"
+      className="react-tabs__tab react-tabs__tab--selected"
+      id="react-tabs-0"
+      role="tab"
+      tabIndex="0"
+    >
+      Mac OS
+    </li>
+    <li
+      aria-controls="react-tabs-3"
+      aria-disabled="false"
+      aria-selected="false"
+      className="react-tabs__tab"
+      id="react-tabs-2"
+      role="tab"
+      tabIndex={null}
+    >
+      Windows
+    </li>
+    <li
+      aria-controls="react-tabs-5"
+      aria-disabled="false"
+      aria-selected="false"
+      className="react-tabs__tab"
+      id="react-tabs-4"
+      role="tab"
+      tabIndex={null}
+    >
+      Ubuntu / Debian
+    </li>
+  </ul>
+  <div
+    aria-labelledby="react-tabs-0"
+    className="react-tabs__tab-panel react-tabs__tab-panel--selected"
+    id="react-tabs-1"
+    role="tabpanel"
+  >
+    <div>
+      <p>
+        Download the 
+        <a
+          href="/download"
+        >
+          macOS Installer
+        </a>
+         directly from the nodejs.org website.
+      </p>
+      <h2>
+        Alternatives
+      </h2>
+      <p>
+        Using
+         
+        <a
+          href="https://brew.sh"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Homebrew
+        </a>
+      </p>
+      <code
+        className="install__text"
+      >
+        brew install node
+      </code>
+      <p>
+        Using
+         
+        <a
+          href="https://www.macports.org"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Macports
+        </a>
+      </p>
+      <code
+        className="install__text"
+      >
+        port install nodejs14
+      </code>
+      <p>
+        Using
+         
+        <a
+          href="https://github.com/nvm-sh/nvm"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          nvm
+        </a>
+      </p>
+      <code
+        className="install__text"
+      >
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+      </code>
+      <br />
+      <button
+        className="install__docs-button"
+        type="button"
+      >
+        <a
+          className="install__docs-button-text"
+          href="https://nodejs.org/en/download/package-manager/#macos"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Read documentation
+        </a>
+      </button>
+    </div>
+  </div>
+  <div
+    aria-labelledby="react-tabs-2"
+    className="react-tabs__tab-panel"
+    id="react-tabs-3"
+    role="tabpanel"
+  />
+  <div
+    aria-labelledby="react-tabs-4"
+    className="react-tabs__tab-panel"
+    id="react-tabs-5"
+    role="tabpanel"
+  />
+</div>
+`;

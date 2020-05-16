@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useReleaseHistory } from '../hooks';
-import Layout from '../components/layout';
-import ReleaseTable from '../components/release-table';
-import ReleaseToggle from '../components/release-toggle';
-import ReleaseCards from '../components/release-cards';
 import ReleaseHeader from '../components/release-header';
 import '../styles/download.css';
 import '../styles/release-toggle.css';
+import Layout from '../components/Layout';
+import ReleaseTable from '../components/ReleaseTable';
+import ReleaseToggle from '../components/ReleaseToggle';
+import ReleaseCards from '../components/ReleaseCards';
+
 import { detectOS } from '../util/detectOS';
 
 export default function DownloadPage(): JSX.Element {

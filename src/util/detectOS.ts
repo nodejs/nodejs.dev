@@ -14,7 +14,7 @@ export function detectOS(): UserOS {
     if (navigator.appVersion.indexOf('Mac') !== -1) OS = UserOS.MAC;
     if (navigator.appVersion.indexOf('X11') !== -1) OS = UserOS.UNIX;
     if (navigator.appVersion.indexOf('Linux') !== -1) OS = UserOS.LINUX;
-    // not currently checking for mobile devices
+    if (navigator.appVersion.indexOf('Mobi') !== -1) OS = UserOS.MOBILE;
   }
   return OS;
 }
