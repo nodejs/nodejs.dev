@@ -1,66 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Learn Template renders correctly 1`] = `
-<Layout
-  description="test-description"
-  title="test-title"
->
-  <Hero
-    title="test-title"
-  />
-  <Navigation
-    currentSlug="test-slug"
-    sections={
-      Object {
-        "test-section": Array [
+<React.Fragment>
+  <main>
+    <Layout
+      description="test-description"
+      showFooter={false}
+      title="test-title"
+    >
+      <Navigation
+        currentSlug="test-slug"
+        sections={
           Object {
-            "section": "test-section",
+            "test-section": Array [
+              Object {
+                "section": "test-section",
+                "slug": "test-slug",
+                "title": "test-title",
+              },
+              Object {
+                "section": "test-section",
+                "slug": "test-slug",
+                "title": "test-title",
+              },
+            ],
+            "test-section2": Array [
+              Object {
+                "section": "test-section",
+                "slug": "test-slug",
+                "title": "test-title",
+              },
+              Object {
+                "section": "test-section",
+                "slug": "test-slug",
+                "title": "test-title",
+              },
+            ],
+          }
+        }
+      />
+      <Article
+        authors={
+          Array [
+            "test-user1",
+            "test-user2",
+          ]
+        }
+        html="<span>Test html</span>"
+        next={
+          Object {
             "slug": "test-slug",
             "title": "test-title",
-          },
+          }
+        }
+        previous={
           Object {
-            "section": "test-section",
             "slug": "test-slug",
             "title": "test-title",
-          },
-        ],
-        "test-section2": Array [
-          Object {
-            "section": "test-section",
-            "slug": "test-slug",
-            "title": "test-title",
-          },
-          Object {
-            "section": "test-section",
-            "slug": "test-slug",
-            "title": "test-title",
-          },
-        ],
-      }
-    }
-  />
-  <Article
-    authors={
-      Array [
-        "test-user1",
-        "test-user2",
-      ]
-    }
-    html="<span>Test html</span>"
-    next={
-      Object {
-        "slug": "test-slug",
-        "title": "test-title",
-      }
-    }
-    previous={
-      Object {
-        "slug": "test-slug",
-        "title": "test-title",
-      }
-    }
-    relativePath="test-path"
-    title="test-title"
-  />
-</Layout>
+          }
+        }
+        relativePath="test-path"
+        title="test-title"
+      />
+    </Layout>
+  </main>
+  <Footer />
+</React.Fragment>
 `;

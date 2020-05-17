@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero component renders correctly 1`] = `
+<div
+  className="home-page-hero"
+>
+  <h1>
+    Introduction to Node.js
+  </h1>
+  <h2
+    className="sub-title t-subheading"
+  />
+  <div
+    className="btn-ctas"
+  >
+    <div
+      className="download-lts-container"
+    >
+      <a
+        className="circular-container"
+        href="https://nodejs.org/dist//node-.tar.gz"
+      >
+        Download Node (LTS)
+      </a>
+      <p
+        className="t-caption"
+      >
+        
+        <a
+          href="https://nodejs.org/dist//node-.tar.gz"
+        >
+          Get Current
+        </a>
+      </p>
+    </div>
+    <a
+      className="circular-container inverse"
+      href="/learn"
+    >
+      Learn Node
+    </a>
+  </div>
+</div>
+`;
