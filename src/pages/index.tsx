@@ -87,20 +87,6 @@ export default function Index(): JSX.Element {
           />
         </section>
 
-        <section className="trusted-by">
-          <h4 className="t-headline">
-            Trusted by development teams around the world
-          </h4>
-          <p>Including IBM, LinkedIn, Microsoft, Netflix, and PayPal.</p>
-          <div className="logos-container">
-            <img src={logoImg1} alt="ibm logo" />
-            <img src={logoImg2} alt="linkedin logo" />
-            <img src={logoImg3} alt="microsoft logo" />
-            <img src={logoImg4} alt="netflix logo" />
-            <img src={logoImg5} alt="paypal logo" />
-          </div>
-        </section>
-
         <Link to="/learn" className="btn-primary">
           Get Started
         </Link>
