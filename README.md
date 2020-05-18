@@ -1,8 +1,7 @@
-test 2
 <p align="center">
   <br>
   <a href="https://nodejs.dev">
-    <img src="./src/images/nodejs-logo-light-mode.svg" width="200"/>
+    <img src="./src/images/logos/nodejs-logo-light-mode.svg" width="200"/>
   </a>
 </p>
 
