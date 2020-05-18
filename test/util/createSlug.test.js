@@ -1,4 +1,4 @@
-import createSlug from '../../src/util/createSlug';
+import createSlug from '../../util-node/createSlug';
 
 describe('Tests for createSlug', () => {
   it('generates a slug', () => {

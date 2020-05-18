@@ -6,7 +6,8 @@
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.7",
-    "@types/react-helmet": "^5.0.15",
+    "@smotaal.io/dark-mode-controller": "<0.5",
+    "@types/react-tabs": "2.3.1",
     "dotenv": "^8.2.0",
     "emotion": "^10.0.27",
     "emotion-server": "^10.0.27",
@@ -17,6 +18,7 @@
     "gatsby-plugin-manifest": "^2.4.0",
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.2.4",
+    "gatsby-plugin-sass": "2.3.1",
     "gatsby-plugin-sharp": "^2.5.7",
     "gatsby-plugin-sitemap": "^2.0.5",
     "gatsby-plugin-typescript": "^2.3.5",
@@ -31,6 +33,7 @@
     "react-dom": "^16.13.1",
     "react-emotion": "^10.0.0",
     "react-helmet": "^6.0.0",
+    "react-tabs": "3.1.0",
     "typescript": "^3.8.3"
   },
   "keywords": [
@@ -42,35 +45,50 @@
     "build": "gatsby build",
     "build-ci": "gatsby build --prefix-paths",
     "start": "gatsby develop",
-    "format": "prettier --write \"**/*.{ts,tsx,js}\"",
-    "format-check": "prettier --check \"**/*.{ts,tsx,js}\" && npm run md-check",
+    "format": "prettier --write \"**/*.{ts,tsx,js,scss}\" && npm run lint:fix",
+    "format-check": "prettier --check \"**/*.{ts,tsx,js,scss}\"",
     "jest": "jest",
     "update-snapshot": "jest --updateSnapshot",
-    "test": "npm run format-check && npm run tslint && npm run jest",
+    "test": "npm run format && npm run format-check && npm run lint && npm run jest",
     "test-watch": "npm run jest --watch",
     "test-ci": "npm run test --coverage && codecov",
-    "tslint": "tslint --project ./tsconfig.json",
+    "lint": "eslint src --ext .js,.ts,.tsx",
+    "lint:fix": "npm run lint --fix",
     "serve": "npm run build && clear && gatsby serve",
     "md-check": "remark -qf ."
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-typescript": "^7.9.0",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "8.3.4",
     "@types/jest": "^25.2.1",
+    "@types/react-helmet": "6.0.0",
     "@types/react-test-renderer": "^16.9.2",
-    "babel-jest": "^25.3.0",
-    "babel-preset-gatsby": "^0.4.0",
+    "@typescript-eslint/eslint-plugin": "2.33.0",
+    "@typescript-eslint/parser": "^2.28.0",
+    "babel-jest": "26.0.1",
+    "babel-preset-gatsby": "0.4.2",
     "codecov": "^3.6.5",
+    "eslint": "7.0.0",
+    "eslint-config-airbnb": "18.1.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-import-resolver-typescript": "2.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "4.0.2",
+    "husky": "4.2.5",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^25.4.0",
-    "prettier": "^2.0.5",
+    "jest": "26.0.1",
+    "node-sass": "4.14.1",
+    "prettier": "^2.0.4",
     "react-test-renderer": "^16.13.1",
     "remark-cli": "^8.0.0",
     "remark-frontmatter": "^2.0.0",
-    "remark-preset-lint-node": "^1.15.0",
-    "tslint": "^6.1.2",
-    "tslint-config-prettier": "^1.15.0",
-    "tslint-react": "^5.0.0"
+    "remark-preset-lint-node": "^1.13.0",
+    "typescript": "3.9.2"
   },
   "repository": {
     "type": "git",
@@ -100,5 +118,11 @@
     "collectCoverageFrom": [
       "src/**/**.(ts|tsx|js)"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint --edit $HUSKY_GIT_PARAMS",
+      "pre-push": "npm run lint"
+    }
   }
 }
