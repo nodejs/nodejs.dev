@@ -9,6 +9,7 @@ body {
   font-size: 1.6rem;
   font-family: var(--base-type-face);
   margin: 0;
+  margin-top: var(--nav-height);
 
   /* Set in JavaScript */
   --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
@@ -241,6 +242,11 @@ main {
   background: var(--color-fill-app);
   border-bottom: var(--space-01) solid var(--black2);
   height: var(--nav-height);
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999;
 }
 
 .dark-mode .nav {
@@ -280,7 +286,7 @@ main {
       var(--space-16);
   }
 }
-/*
+
 .nav__tabs
 {
     position: relative;
@@ -302,8 +308,14 @@ main {
     background-color: green;
     visibility: visible;
     height: 3px;
-  }
-*/
+}
+
+.active:before{
+    background-color: green;
+    visibility: visible;
+    height: 3px;
+}
+
 /* Footer */
 
 .footer {
