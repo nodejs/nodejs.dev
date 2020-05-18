@@ -287,6 +287,35 @@ main {
   }
 }
 
+.nav__tabs
+{
+    position: relative;
+}
+
+.nav__tabs:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav__tabs:hover:before {
+    background-color: green;
+    visibility: visible;
+    height: 3px;
+}
+
+.active:before{
+    background-color: green;
+    visibility: visible;
+    height: 3px;
+}
+
 /* Footer */
 
 .footer {
