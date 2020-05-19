@@ -447,5 +447,5 @@ You have seen in the description above version numbers like these: `~3.0.0` or `
 
 That symbol specifies which updates your package accepts, from that dependency.
 
-Read more about [Semantic Versioning](https://nodejs.dev/learn/semantic-versioning-using-npm) to understand more about Sematic Versioning.
+Read more about [Semantic Versioning](https://nodejs.dev/learn/semantic-versioning-using-npm) to understand more about Semantic Versioning.
 
