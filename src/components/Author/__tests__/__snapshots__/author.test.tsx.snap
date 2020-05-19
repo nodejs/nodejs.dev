@@ -10,6 +10,7 @@ exports[`Author component renders correctly 1`] = `
       "styles": "
   list-style: none;
 ",
+      "toString": [Function],
     }
   }
 >
@@ -26,6 +27,7 @@ exports[`Author component renders correctly 1`] = `
     transform: scale(1.1);
   }
 ",
+        "toString": [Function],
       }
     }
     href="https://github.com/test-author"
@@ -50,6 +52,7 @@ exports[`Author component renders correctly 1`] = `
   border: 1px solid var(--brand-light);
   transition: all 0.2s ease-in-out;
 ",
+          "toString": [Function],
         }
       }
       src="https://github.com/test-author.png?size=60"
