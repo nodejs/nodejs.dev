@@ -62,29 +62,10 @@ For feature development you should be working from the staging branch.
 * Clone your fork `git clone git@github.com:<githubid>/nodejs.dev.git`
 * cd into your project
 * Add the following to your remotes by doing `git remote add upstream git@github.com:nodejs/nodejs.dev.git`
-* Check out the staging branch by doing `git checkout upstream/staging`
 * Create a new branch for your awesome work `git checkout -b branchname`
 * Commit your work
 * Push to your branch `git push -u origin yourbranch`
-* Make a pull request against the remote branch `staging`
-  * Example `https://github.com/nodejs/nodejs.dev/pull/398`
-* Mention @nodejs/website-redesign `/gcbrun`
-
-## Getting Started
-
-For feature development you should be working from the staging branch.
-
-- Fork
-- Clone your fork `git clone git@github.com:<githubid>/nodejs.dev.git`
-- cd into your project
-- Add the following to your remotes by doing `git remote add upstream git@github.com:nodejs/nodejs.dev.git`
-- Check out the staging branch by doing `git checkout upstream/staging`
-- Create a new branch for your awesome work `git checkout -b branchname`
-- Commit your work
-- Push to your branch `git push -u origin yourbranch`
-- Make a pull request against the remote branch `staging`
-  - Example `https://github.com/nodejs/nodejs.dev/pull/398`
-- Mention @nodejs/website-redesign `/preview`
+* Make a pull request
 
 ## Developer's Certificate of Origin 1.1
 
