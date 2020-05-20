@@ -87,9 +87,11 @@ export default function Index(): JSX.Element {
           />
         </section>
 
-        <Link to="/learn" className="btn-primary">
-          Get Started
-        </Link>
+        <div className="download-lts-container">
+          <Link to="/learn" className="circular-container">
+            Get Started
+          </Link>
+        </div>
       </div>
     </Layout>
   );
