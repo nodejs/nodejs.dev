@@ -29,7 +29,7 @@ const Header = ({
 
     <ul className="nav__tabs__container">
       <li className="nav__tabs">
-        <Link to="/learn" className="activeStyleTab" partiallyActive>
+        <Link activeClassName="active" to="/learn" className="activeStyleTab" partiallyActive>
           Learn
         </Link>
       </li>

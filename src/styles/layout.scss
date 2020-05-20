@@ -242,9 +242,8 @@ main {
   background: var(--color-fill-app);
   border-bottom: var(--space-01) solid var(--black2);
   height: var(--nav-height);
-  left: 0;
+  width:100%;
   position: fixed;
-  right: 0;
   top: 0;
   z-index: 999;
 }
@@ -278,6 +277,7 @@ main {
 .nav__tabs {
   text-decoration: none;
   margin-left: var(--space-16);
+  position: relative;
 
   > a {
     text-decoration: none;
@@ -285,6 +285,21 @@ main {
     padding: var(--space-24) var(--space-16) calc(var(--space-24) - 2px)
       var(--space-16);
   }
+}
+
+.nav__tabs:after , .active:after {    
+  background: none repeat scroll 0 0 transparent;
+  content: "";
+  display: block;
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  background: green;
+  width: 0;
+}
+.nav__tabs:hover:after , .active::after { 
+  width: 100%; 
+  left: 0; 
 }
 
 /* Footer */
