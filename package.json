@@ -87,8 +87,7 @@
     "react-test-renderer": "^16.13.1",
     "remark-cli": "^8.0.0",
     "remark-frontmatter": "^2.0.0",
-    "remark-preset-lint-node": "^1.13.0",
-    "typescript": "^3.8.3"
+    "remark-preset-lint-node": "^1.13.0"
   },
   "repository": {
     "type": "git",
