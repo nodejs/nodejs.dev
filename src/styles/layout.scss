@@ -287,21 +287,21 @@ main {
   }
 }
 
-.nav__tabs:after,
-.active:after {
-  background: none repeat scroll 0 0 transparent;
-  content: '';
-  display: block;
-  height: 4px;
-  left: 50%;
-  position: absolute;
-  background: green;
-  width: 0;
+
+.nav__tabs {
+  cursor: pointer;
+  text-decoration: none;
+  color: green;
+  border-bottom: 3px solid transparent;
 }
-.nav__tabs:hover:after,
-.active::after {
-  width: 100%;
-  left: 0;
+
+.nav__tabs:hover {
+  transform: translateY(-2px);
+}
+
+.active {
+  border-bottom: 4px solid green;
+  transition: border-bottom .5s ease-in-out;
 }
 
 /* Footer */

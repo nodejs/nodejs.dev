@@ -31,8 +31,8 @@ const Header = ({
       <li className="nav__tabs">
         <Link 
           to="/learn"
+          className="activeStyleTab"
           activeClassName="active"
-          className="activeStyleTab" 
           partiallyActive>
           Learn
         </Link>
