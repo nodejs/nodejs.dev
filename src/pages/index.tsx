@@ -12,38 +12,42 @@ import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
 import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
 import dotsIllustration from '../images/illustrations/dots.svg';
-import logoImg1 from '../images/logos/ibm-logo.svg';
-import logoImg2 from '../images/logos/linkedin-logo.svg';
-import logoImg3 from '../images/logos/microsoft-logo.svg';
-import logoImg4 from '../images/logos/netflix-logo.svg';
-import logoImg5 from '../images/logos/paypal-logo.svg';
 import InstallTabs from '../components/InstallTabs';
 
-import featureImg1 from '../images/feature-img-1.png';
-import featureImg2 from '../images/feature-img-2.png';
-import featureImg3 from '../images/feature-img-3.png';
+import featureImg1 from '../images/feature-img-1.svg';
+import featureImg2 from '../images/feature-img-2.svg';
+import featureImg3 from '../images/feature-img-3.svg';
 
-const nodeFeatureHeader1 = 'JavaScript';
-const nodeFeatureHeader2 = 'Open Source';
-const nodeFeatureHeader3 = 'Everywhere';
-
-const nodeFeature1 =
-  'Node.js provides support for the JavaScript programming language ';
-const nodeFeature2 =
-  'Node.js is open source and actively maintained by contributors all over the world ';
-const nodeFeature3 =
-  'Node.js has been adapted to work in a wide variety of places ';
+const features = [
+  {
+    image: featureImg1,
+    heading: 'JavaScript',
+    description:
+      'Node.js provides support for the JavaScript programming language',
+  },
+  {
+    image: featureImg2,
+    heading: 'Open Source',
+    description:
+      'Node.js is open source and actively maintained by contributors all over the world',
+  },
+  {
+    image: featureImg3,
+    heading: 'Everywhere',
+    description: 'Node.js has been adapted to work in a wide variety of places',
+  },
+];
 
 const NodeFeature = ({
-  img,
-  featureText,
-  featureHeader,
-}: Props): JSX.Element => {
+  image,
+  heading,
+  description,
+}: NodeFeatureProps): JSX.Element => {
   return (
     <div className="node-features__feature">
-      <img src={img} alt="node feature" />
-      <h4>{featureHeader}</h4>
-      <p>{featureText}</p>
+      <img src={image} alt="node feature" />
+      <h4>{heading}</h4>
+      <p>{description}</p>
     </div>
   );
 };
@@ -70,21 +74,14 @@ export default function Index(): JSX.Element {
         </section>
 
         <section className="node-features">
-          <NodeFeature
-            img={featureImg1}
-            featureText={nodeFeature1}
-            featureHeader={nodeFeatureHeader1}
-          />
-          <NodeFeature
-            img={featureImg2}
-            featureText={nodeFeature2}
-            featureHeader={nodeFeatureHeader2}
-          />
-          <NodeFeature
-            img={featureImg3}
-            featureText={nodeFeature3}
-            featureHeader={nodeFeatureHeader3}
-          />
+          {features.map(feature => (
+            <NodeFeature
+              key={feature.heading}
+              image={feature.image}
+              heading={feature.heading}
+              description={feature.description}
+            />
+          ))}
         </section>
 
         <Link to="/learn" className="btn-primary">
@@ -95,8 +92,8 @@ export default function Index(): JSX.Element {
   );
 }
 
-interface Props {
-  img: string;
-  featureText: string;
-  featureHeader: string;
+interface NodeFeatureProps {
+  image: string;
+  heading: string;
+  description: string;
 }

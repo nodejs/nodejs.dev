@@ -91,6 +91,11 @@
   max-width: 248px;
   margin: 0 2em;
   text-align: center;
+
+  img {
+    width: 65%;
+    fill: var(--color-text-secondary);
+  }
 }
 
 .trusted-by {
