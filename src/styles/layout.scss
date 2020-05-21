@@ -242,9 +242,8 @@ main {
   background: var(--color-fill-app);
   border-bottom: var(--space-01) solid var(--black2);
   height: var(--nav-height);
-  left: 0;
+  width: 100%;
   position: fixed;
-  right: 0;
   top: 0;
   z-index: 999;
 }
@@ -285,6 +284,22 @@ main {
     padding: var(--space-24) var(--space-16) calc(var(--space-24) - 2px)
       var(--space-16);
   }
+}
+
+.nav__tabs {
+  cursor: pointer;
+  text-decoration: none;
+  color: green;
+  border-bottom: 3px solid transparent;
+}
+
+.nav__tabs:hover {
+  transform: translateY(-2px);
+}
+
+.active {
+  border-bottom: 4px solid green;
+  transition: border-bottom .5s ease-in-out;
 }
 
 /* Footer */
