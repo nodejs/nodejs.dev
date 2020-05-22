@@ -15,64 +15,37 @@ const InstallTabs = (): JSX.Element => {
         <div className="install__header-text">bash</div>
       </div>
       <TabList>
-        <Tab>Mac OS</Tab>
-        <Tab>Windows</Tab>
-        <Tab>Ubuntu / Debian</Tab>
+        <Tab>nvm (Linux)</Tab>
+        <Tab>nvm (macOS)</Tab>
+        <Tab>Chocolatey (Windows)</Tab>
+        <Tab>apt-get (Debian)</Tab>
       </TabList>
 
       <TabPanel>
         <div>
-          <h4>
-            Download the <Link to="/download">macOS Installer</Link> directly
-            from the nodejs.org website.
-          </h4>
-          <h4>Alternatives</h4>
-          <code className="install__comments">
-            #Using{' '}
-            <a href="https://brew.sh" target="_blank" rel="noopener noreferrer">
-              Homebrew
-            </a>
-          </code>
-          <br />
-          <code className="install__text">brew install node</code>
-          <br />
-          <br />
-          <code className="install__comments">
-            #Using{' '}
-            <a
-              href="https://www.macports.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Macports
-            </a>
-          </code>
-          <br />
-          <code className="install__text">port install nodejs14</code>
-          <br />
-          <br />
-          <code className="install__comments">
-            #Using{' '}
-            <a
-              href="https://github.com/nvm-sh/nvm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              nvm
-            </a>
-          </code>
-          <br />
           <code className="install__text">
-            curl -o-
-            https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh |
-            bash
+            <span className="install__text__no-select">$</span>nvm install node
           </code>
+          <br />
+          <br />
+          <div>
+            Download the <Link to="/download">Linux installer</Link> directly
+            from the{' '}
+            <a
+              href="https://nodejs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              nodejs.org
+            </a>{' '}
+            website.
+          </div>
           <br />
           {/* TODO when the new docs page is ready link to that page.  */}
           <button type="button" className="install__docs-button">
             <a
               className="install__docs-button-text"
-              href="https://nodejs.org/en/download/package-manager/#macos"
+              href="https://nodejs.org/en/download/package-manager/#nvm"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -83,19 +56,74 @@ const InstallTabs = (): JSX.Element => {
       </TabPanel>
       <TabPanel>
         <div>
-          <h4>
-            Download the <Link to="/download">Windows Installer</Link> directly
-            from the nodejs.org web site.
-          </h4>
-          <h4>Alternatives</h4>
-          <code className="install__comments">#Using Chocolatey:</code>
-          <br />
-          <code className="install__text">cinst nodejs</code>
+          <code className="install__text">
+            <span className="install__text__no-select">$</span>nvm install node
+          </code>
           <br />
           <br />
-          <code className="install__comments">#Using Scoop</code>
+          <div>
+            Download the <Link to="/download">macOS installer</Link> directly
+            from the{' '}
+            <a
+              href="https://nodejs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              nodejs.org
+            </a>{' '}
+            website.
+          </div>
           <br />
-          <code className="install__text">scoop install nodejs</code>
+          <button type="button" className="install__docs-button">
+            <a
+              className="install__docs-button-text"
+              href="https://nodejs.org/en/download/package-manager/#nvm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read documentation
+            </a>
+          </button>
+        </div>
+      </TabPanel>
+      <TabPanel>
+        <div>
+          <code className="install__text">
+            <span className="install__text__no-select">$</span>cinst nodejs
+          </code>
+          <br />
+          <br />
+          <div>
+            Download the <Link to="/download">Windows installer</Link> directly
+            from the{' '}
+            <a
+              href="https://nodejs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              nodejs.org
+            </a>{' '}
+            website.
+          </div>
+          <br />
+          <h4>Alternative</h4>
+          <div>
+            <code className="install__comments">
+              # Using{' '}
+              <a
+                href="https://scoop.sh/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Scoopy
+              </a>
+            </code>
+            <br />
+            <code className="install__text">
+              <span className="install__text__no-select">$</span>scoop install
+              nodejs
+            </code>
+          </div>
           <br />
           <button type="button" className="install__docs-button">
             <a
@@ -111,16 +139,28 @@ const InstallTabs = (): JSX.Element => {
       </TabPanel>
       <TabPanel>
         <div>
-          <h4>
-            Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora
-            and Snap packages
-          </h4>
-          <p>
+          <code className="install__text">
+            <span className="install__text__no-select">$</span>sudo apt-get
+            install nodejs
+          </code>
+          <br />
+          <br />
+          <div>
             <a href="https://github.com/nodesource/distributions/blob/master/README.md">
               Node.js binary distributions
             </a>{' '}
             are available from NodeSource.
-          </p>
+          </div>
+          <button type="button" className="install__docs-button">
+            <a
+              className="install__docs-button-text"
+              href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read documentation
+            </a>
+          </button>
         </div>
       </TabPanel>
     </Tabs>
