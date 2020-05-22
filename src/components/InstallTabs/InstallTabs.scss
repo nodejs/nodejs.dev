@@ -71,6 +71,7 @@
     &__header {
       height: 30px;
       margin: 0 5px;
+      font-weight: var(--font-weight-semibold);
       &-circles {
         height: 100%;
         float: left;
@@ -92,6 +93,7 @@
     &__comments {
       color: var(--black8);
       font-style: italic;
+      padding-left: 6px;
       a {
         color: var(--color-fill-action);
       }
@@ -99,13 +101,22 @@
     &__text {
       color: var(--pink5);
       padding-left: 6px;
+      &__no-select {
+        margin-right: var(--space-12);
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+      }
     }
     &__docs-button {
       border-radius: var(--space-04);
       padding: var(--space-08) var(--space-16);
       position: absolute;
       bottom: 2rem;
-      left: 2rem;
+      right: 2rem;
     }
     &__docs-button-text,
     &__docs-button-text:hover {
