@@ -43,7 +43,7 @@ const Header = ({
           Documentation
         </a>
       </li>
-      <li className="nav__tabs">
+      <li className="nav__tabs only-mobile">
         <a
           className="activeStyleTab only-mobile"
           target="_blank"
