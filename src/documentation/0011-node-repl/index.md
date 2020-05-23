@@ -73,7 +73,7 @@ If after some code you type `_`, that is going to print the result of the last o
 The REPL has some special commands, all starting with a dot `.`. They are
 
 * `.help`: shows the dot commands help
-* `.editor`: enables editor more, to write multiline JavaScript code with ease. Once you are in this mode, enter ctrl-D to run the code you wrote.
+* `.editor`: enables editor mode, to write multiline JavaScript code with ease. Once you are in this mode, enter ctrl-D to run the code you wrote.
 * `.break`: when inputting a multi-line expression, entering the .break command will abort further input. Same as pressing ctrl-C.
 * `.clear`: resets the REPL context to an empty object and clears any multi-line expression currently being input.
 * `.load`: loads a JavaScript file, relative to the current working directory
