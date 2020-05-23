@@ -7,7 +7,9 @@
   "dependencies": {
     "@emotion/core": "^10.0.7",
     "@smotaal.io/dark-mode-controller": "<0.5",
+    "@storybook/react": "5.3.18",
     "@types/react-tabs": "2.3.1",
+    "babel-preset-react-app": "9.1.2",
     "dotenv": "^8.2.0",
     "emotion": "^10.0.27",
     "emotion-server": "^10.0.27",
@@ -65,7 +67,6 @@
     "@storybook/addon-actions": "5.3.18",
     "@storybook/addon-links": "5.3.18",
     "@storybook/addons": "5.3.18",
-    "@storybook/react": "5.3.18",
     "@types/jest": "^25.2.1",
     "@types/react-helmet": "6.0.0",
     "@types/react-test-renderer": "^16.9.2",
@@ -75,6 +76,7 @@
     "babel-loader": "8.1.0",
     "babel-preset-gatsby": "0.4.2",
     "codecov": "^3.6.5",
+    "css-loader": "3.5.3",
     "eslint": "7.0.0",
     "eslint-config-airbnb": "18.1.0",
     "eslint-config-prettier": "6.11.0",
@@ -91,7 +93,10 @@
     "react-test-renderer": "^16.13.1",
     "remark-cli": "^8.0.0",
     "remark-frontmatter": "^2.0.0",
-    "remark-preset-lint-node": "^1.13.0"
+    "remark-preset-lint-node": "^1.13.0",
+    "sass-loader": "8.0.2",
+    "scss-loader": "0.0.1",
+    "style-loader": "1.2.1"
   },
   "repository": {
     "type": "git",
