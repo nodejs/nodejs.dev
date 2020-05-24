@@ -13,6 +13,8 @@ interface Props {
 
 export default function ReleaseCards({ line, userOS }: Props): JSX.Element {
   const fileName = line && line.version;
+  // eslint-disable-next-line no-console
+  console.log('OS: ', userOS);
   const [selected, setSelected] = useState(
     !(['WIN', 'MAC', 'MOBILE'].indexOf(userOS) >= 0) ? 'SOURCECODE' : userOS
   );
