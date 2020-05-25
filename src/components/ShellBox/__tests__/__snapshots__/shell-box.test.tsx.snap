@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShellBox component renders correctly 1`] = `
+<pre
+  className="shell-box"
+>
+  <div
+    className="shell-box-top"
+  >
+    <span>
+      SHELL
+    </span>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      copy
+    </button>
+  </div>
+  <code />
+</pre>
+`;
