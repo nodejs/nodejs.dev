@@ -88,34 +88,38 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       <code
         className="install__text"
       >
-        <span
-          className="install__text__no-select"
+        <div
+          className="install__text__line"
         >
-          $
-        </span>
-        nvm install node
+          <span
+            className="install__text__no-select"
+          >
+            $
+          </span>
+          apk add -U curl bash ca-certificates openssl ncurses coreutils python2 make gcc g++ libgcc linux-headers grep util-linux binutils findutils
+        </div>
+        <div
+          className="install__text__line"
+        >
+          <span
+            className="install__text__no-select"
+          >
+            $
+          </span>
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+        </div>
+        <div
+          className="install__text__line"
+        >
+          <span
+            className="install__text__no-select"
+          >
+            $
+          </span>
+          nvm install --lts
+        </div>
       </code>
       <br />
-      <br />
-      <div>
-        Download the 
-        <a
-          href="/download"
-        >
-          Linux installer
-        </a>
-         directly from the
-         
-        <a
-          href="https://nodejs.org"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          nodejs.org
-        </a>
-         
-        website.
-      </div>
       <br />
       <button
         className="install__docs-button"
