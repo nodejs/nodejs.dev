@@ -184,10 +184,10 @@ function renderArticle(
       <article className="article-reader">
         <p className="t-overline">
           <span>home</span>
-          &nbsp;&#47;&nbsp;
+          <span className="breadcrumb-separator">/</span>
           <span>documentation</span>
-          &nbsp;&#47;&nbsp;
-          <span style={{ color: 'var(--brand5)' }}>installing node</span>
+          <span className="breadcrumb-separator">/</span>
+          <span className="breadcrumb-active">installing node</span>
         </p>
         <h1>{version}</h1>
         <h2>Installing Node</h2>
@@ -471,8 +471,8 @@ function renderArticle(
             <p className="t-body1">
               openSUSE Tumbleweed:&nbsp;
               <span>
-                <code>nodejs4</code>,&nbsp;<code>nodejs6</code>,&nbsp;
-                <code>nodejs8</code>
+                <code>nodejs10</code>,&nbsp;<code>nodejs12</code>,&nbsp;
+                <code>nodejs14</code>
               </span>
             </p>
           </li>
