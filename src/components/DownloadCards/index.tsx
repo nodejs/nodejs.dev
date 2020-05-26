@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ReleaseData } from '../../hooks/useReleaseHistory';
 
-import './ReleaseCards.scss';
+import './DownloadCards.scss';
 import appleLogo from '../../images/logos/apple-logo.svg';
 import microsoftLogo from '../../images/logos/microsoft-download-logo.svg';
 import sourceCodeIcon from '../../images/logos/source-code-icon.svg';
@@ -11,13 +11,13 @@ interface Props {
   userOS: string;
 }
 
-export default function ReleaseCards({ line, userOS }: Props): JSX.Element {
+export default function DownloadCards({ line, userOS }: Props): JSX.Element {
   const fileName = line && line.version;
-  // eslint-disable-next-line no-console
-  console.log('OS: ', userOS);
   const [selected, setSelected] = useState(
     !(['WIN', 'MAC', 'MOBILE'].indexOf(userOS) >= 0) ? 'SOURCECODE' : userOS
   );
+  // eslint-disable-next-line no-console
+  console.log('OS: ', userOS, 'hook: ', selected);
   const DownloadTypes = [
     {
       label: 'Windows Installer',
@@ -44,15 +44,15 @@ export default function ReleaseCards({ line, userOS }: Props): JSX.Element {
 
   return (
     <>
-      <ul className="release-card__row">
+      <ul className="download-card__row">
         {DownloadTypes.map(
           (os): JSX.Element => {
             return (
               <li
                 className={
                   selected === os.name
-                    ? 'release-card--active'
-                    : 'release-card--inactive'
+                    ? 'download-card--active'
+                    : 'download-card--inactive'
                 }
                 key={os.name}
                 role="presentation"
@@ -60,18 +60,18 @@ export default function ReleaseCards({ line, userOS }: Props): JSX.Element {
                   setSelected(os.name);
                 }}
               >
-                <div className="release-card__top">
+                <div className="download-card__top">
                   <img
                     className={
                       selected === os.name
-                        ? 'release-card__top--active'
-                        : 'release-card__top--inactive'
+                        ? 'download-card__top--active'
+                        : 'download-card__top--inactive'
                     }
                     src={os.icon}
                     alt={`${os.label} logo`}
                   />
                   {selected === os.name && (
-                    <a className="release-card__link" href={os.download}>
+                    <a className="download-card__link" href={os.download}>
                       <i className="material-icons">get_app</i>
                     </a>
                   )}
@@ -79,13 +79,13 @@ export default function ReleaseCards({ line, userOS }: Props): JSX.Element {
                 <p
                   className={
                     selected === os.name
-                      ? 'release-card__label--active'
-                      : 'release-card__label--inactive'
+                      ? 'download-card__label--active'
+                      : 'download-card__label--inactive'
                   }
                 >
                   {os.label}
                 </p>
-                <p className="release-card__filename">{os.fileName}</p>
+                <p className="download-card__filename">{os.fileName}</p>
               </li>
             );
           }

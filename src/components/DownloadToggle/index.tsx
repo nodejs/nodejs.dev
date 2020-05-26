@@ -1,25 +1,25 @@
 import React from 'react';
 
-import './ReleaseToggle.scss';
+import './DownloadToggle.scss';
 
 interface Props {
   handleClick: (type: string) => void;
   selected: string;
 }
 
-export default function ReleaseToggle({
+export default function DownloadToggle({
   handleClick,
   selected,
 }: Props): JSX.Element {
   return (
-    <div className="slider-checkbox">
-      <div className="slider-checkbox-selector">
+    <div className="download-toogle">
+      <div className="download-toogle__selector">
         <button
           type="button"
           className={
             selected === 'LTS'
-              ? 'slider-checkbox-button -active'
-              : 'slider-checkbox-button'
+              ? 'download-toogle__button -active'
+              : 'download-toogle__button'
           }
           onClick={(): void => handleClick('LTS')}
         >
@@ -29,15 +29,15 @@ export default function ReleaseToggle({
           type="button"
           className={
             selected === 'CURRENT'
-              ? 'slider-checkbox-button -current -active'
-              : 'slider-checkbox-button -current'
+              ? 'download-toogle__button -current -active'
+              : 'download-toogle__button -current'
           }
           onClick={(): void => handleClick('CURRENT')}
         >
           Current
         </button>
       </div>
-      <p className="release-toogle__description">
+      <p className="download-toogle__description">
         {selected === 'LTS'
           ? 'Recommended for most users'
           : 'With the latest features'}

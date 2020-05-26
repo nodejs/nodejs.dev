@@ -18,50 +18,6 @@
   text-align: center;
 }
 
-.node {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  text-align: center;
-}
-
-.current {
-  grid-area: 1 / 1 / 2 / 2;
-}
-.lts {
-  grid-area: 1 / 2 / 2 / 3;
-}
-.maintenance {
-  grid-area: 1 / 3 / 2 / 4;
-}
-.endoflife {
-  grid-area: 1 / 4 / 2 / 5;
-}
-.div5 {
-  grid-area: 1 / 5 / 2 / 6;
-}
-.release-title {
-  font-weight: 600;
-  // text-align: center;
-}
-.release-date {
-  // text-align: center;
-  font-size: 12px;
-}
-
-.lts__text {
-  font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-display4);
-  line-height: var(--line-height-body1);
-  // color: var(--black9);
-}
-
-.react-tabs__tab--selected {
-  border-bottom: 2px solid #5fa04e;
-}
-
 @media (max-width: 975px) {
   .home-page.-download {
     width: 90%;

@@ -1,4 +1,4 @@
-.release-page-navigation {
+.download-page__navigation {
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
@@ -9,26 +9,26 @@
   width: 100%;
 }
 
-.release-page-navigation-active {
+.download-page__navigation--active {
   color: var(--brand4);
 }
 
-.release-page-navigation.-title {
+.download-page__navigation--title {
   text-transform: capitalize;
   color: var(--black9);
   font-size: var(--font-size-display3);
   line-height: var(--line-height-display3);
 }
 
-.release-page-navigation-right-npm {
+.download-page__navigation--npm {
   text-transform: lowercase;
   width: 100%;
   text-align: right;
 }
 
 @media (max-width: 500px) {
-  .release-page-navigation.-title {
-    font-size: var(--font-size-display4);
-    line-height: var(--line-height-display4);
+  .download-page__navigation--title {
+    font-size: var(--font-size-display5);
+    line-height: var(--line-height-display5);
   }
 }

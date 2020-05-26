@@ -5,7 +5,7 @@ interface Props {
   releases: ReleaseData[];
 }
 
-const ReleaseTable = ({ releases }: Props): JSX.Element => {
+const DownloadTable = ({ releases }: Props): JSX.Element => {
   return (
     <table>
       <thead>
@@ -55,4 +55,4 @@ const ReleaseTable = ({ releases }: Props): JSX.Element => {
   );
 };
 
-export default ReleaseTable;
+export default DownloadTable;
