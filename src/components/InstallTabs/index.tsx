@@ -24,22 +24,22 @@ const InstallTabs = (): JSX.Element => {
       <TabPanel>
         <div>
           <code className="install__text">
-            <span className="install__text__no-select">$</span>nvm install node
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>apk add -U curl
+              bash ca-certificates openssl ncurses coreutils python2 make gcc
+              g++ libgcc linux-headers grep util-linux binutils findutils
+            </div>
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>curl -o-
+              https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh |
+              bash
+            </div>
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>
+              nvm install --lts
+            </div>
           </code>
           <br />
-          <br />
-          <div>
-            Download the <Link to="/download">Linux installer</Link> directly
-            from the{' '}
-            <a
-              href="https://nodejs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              nodejs.org
-            </a>{' '}
-            website.
-          </div>
           <br />
           {/* TODO when the new docs page is ready link to that page.  */}
           <button type="button" className="install__docs-button">
@@ -57,22 +57,17 @@ const InstallTabs = (): JSX.Element => {
       <TabPanel>
         <div>
           <code className="install__text">
-            <span className="install__text__no-select">$</span>nvm install node
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>curl -o-
+              https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh |
+              bash
+            </div>
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>nvm install
+              --lts
+            </div>
           </code>
           <br />
-          <br />
-          <div>
-            Download the <Link to="/download">macOS installer</Link> directly
-            from the{' '}
-            <a
-              href="https://nodejs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              nodejs.org
-            </a>{' '}
-            website.
-          </div>
           <br />
           <button type="button" className="install__docs-button">
             <a
@@ -89,41 +84,12 @@ const InstallTabs = (): JSX.Element => {
       <TabPanel>
         <div>
           <code className="install__text">
-            <span className="install__text__no-select">$</span>cinst nodejs
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>choco install
+              nodejs-lts
+            </div>
           </code>
           <br />
-          <br />
-          <div>
-            Download the <Link to="/download">Windows installer</Link> directly
-            from the{' '}
-            <a
-              href="https://nodejs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              nodejs.org
-            </a>{' '}
-            website.
-          </div>
-          <br />
-          <h4>Alternative</h4>
-          <div>
-            <code className="install__comments">
-              # Using{' '}
-              <a
-                href="https://scoop.sh/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Scoopy
-              </a>
-            </code>
-            <br />
-            <code className="install__text">
-              <span className="install__text__no-select">$</span>scoop install
-              nodejs
-            </code>
-          </div>
           <br />
           <button type="button" className="install__docs-button">
             <a
@@ -140,17 +106,17 @@ const InstallTabs = (): JSX.Element => {
       <TabPanel>
         <div>
           <code className="install__text">
-            <span className="install__text__no-select">$</span>sudo apt-get
-            install nodejs
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>curl -sL
+              https://deb.nodesource.com/setup_12.x | sudo -E bash -
+            </div>
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>sudo apt-get
+              install nodejs
+            </div>
           </code>
           <br />
           <br />
-          <div>
-            <a href="https://github.com/nodesource/distributions/blob/master/README.md">
-              Node.js binary distributions
-            </a>{' '}
-            are available from NodeSource.
-          </div>
           <button type="button" className="install__docs-button">
             <a
               className="install__docs-button-text"

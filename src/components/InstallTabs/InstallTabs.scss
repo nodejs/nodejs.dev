@@ -100,7 +100,9 @@
     }
     &__text {
       color: var(--pink5);
-      padding-left: 6px;
+      &__line {
+        margin: var(--space-12) 0;
+      }
       &__no-select {
         margin-right: var(--space-12);
         -webkit-touch-callout: none; /* iOS Safari */
