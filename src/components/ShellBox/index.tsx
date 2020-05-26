@@ -10,6 +10,22 @@ interface Props {
 const ShellBox = ({ children, textToCopy }: Props): JSX.Element => {
   const [copied, setCopied] = React.useState(false);
 
+  React.useEffect((): (() => void) => {
+    let timer: ReturnType<typeof setTimeout>;
+
+    if (copied) {
+      timer = setTimeout((): void => {
+        setCopied(false);
+      }, 3000);
+    }
+
+    return (): void => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+    };
+  }, [copied]);
+
   return (
     <pre className="shell-box">
       <div className="shell-box-top">
@@ -19,11 +35,7 @@ const ShellBox = ({ children, textToCopy }: Props): JSX.Element => {
           onClick={(event: React.MouseEvent<HTMLButtonElement>): void => {
             event.preventDefault();
             navigator.clipboard.writeText(textToCopy);
-
             setCopied(true);
-            setTimeout((): void => {
-              setCopied(false);
-            }, 3000);
           }}
         >
           {copied ? 'copied' : 'copy'}
