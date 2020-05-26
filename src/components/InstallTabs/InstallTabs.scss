@@ -1,10 +1,6 @@
 .react-tabs {
   -webkit-tap-highlight-color: transparent;
 
-  h4 {
-    margin-top: 0;
-  }
-
   &__tab-list {
     margin: 0;
     padding: 0;
@@ -58,15 +54,6 @@
     }
   }
 
-  p {
-    margin-bottom: 0;
-    margin-top: var(--space-08);
-  }
-
-  h2 {
-    margin: var(--space-16) 0;
-  }
-
   .install {
     &__header {
       height: 30px;
@@ -88,14 +75,6 @@
         width: calc(100% - 60px);
         text-align: center;
         line-height: 30px;
-      }
-    }
-    &__comments {
-      color: var(--black8);
-      font-style: italic;
-      padding-left: 6px;
-      a {
-        color: var(--color-fill-action);
       }
     }
     &__text {
