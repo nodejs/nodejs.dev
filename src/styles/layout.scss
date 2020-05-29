@@ -10,6 +10,8 @@ body {
   font-family: var(--base-type-face);
   margin: 0;
   margin-top: var(--nav-height);
+  overflow-x: hidden;
+
 
   /* Set in JavaScript */
   --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
