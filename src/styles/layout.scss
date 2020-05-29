@@ -293,13 +293,12 @@ main {
   border-bottom: 3px solid transparent;
 }
 
-.nav__tabs:hover {
-  transform: translateY(-2px);
+.activeStyleTab:hover {
+  border-bottom: 4px solid green;
 }
 
 .active {
   border-bottom: 4px solid green;
-  transition: border-bottom .5s ease-in-out;
 }
 
 /* Footer */
