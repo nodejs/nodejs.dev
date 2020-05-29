@@ -12,7 +12,6 @@ body {
   margin-top: var(--nav-height);
   overflow-x: hidden;
 
-
   /* Set in JavaScript */
   --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
   --banner-gradient: linear-gradient(to right, var(--accent9), var(--info7));
