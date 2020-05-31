@@ -40,7 +40,10 @@ exports[`Tests for Header component renders correctly 1`] = `
       className="nav__tabs only-desktop"
     >
       <a
-        href="/docs"
+        className="activeStyleTab"
+        href="https://nodejs.org/en/docs/"
+        rel="noopener noreferrer"
+        target="_blank"
       >
         Documentation
       </a>
@@ -49,7 +52,10 @@ exports[`Tests for Header component renders correctly 1`] = `
       className="nav__tabs only-mobile"
     >
       <a
-        href="/docs"
+        className="activeStyleTab only-mobile"
+        href="https://nodejs.org/en/docs/"
+        rel="noopener noreferrer"
+        target="_blank"
       >
         Docs
       </a>

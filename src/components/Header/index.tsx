@@ -34,10 +34,24 @@ const Header = ({
         </Link>
       </li>
       <li className="nav__tabs only-desktop">
-        <Link to="/docs">Documentation</Link>
+        <a
+          className="activeStyleTab"
+          target="_blank"
+          href="https://nodejs.org/en/docs/"
+          rel="noopener noreferrer"
+        >
+          Documentation
+        </a>
       </li>
       <li className="nav__tabs only-mobile">
-        <Link to="/docs">Docs</Link>
+        <a
+          className="activeStyleTab only-mobile"
+          target="_blank"
+          href="https://nodejs.org/en/docs/"
+          rel="noopener noreferrer"
+        >
+          Docs
+        </a>
       </li>
       <li className="nav__tabs">
         <a
