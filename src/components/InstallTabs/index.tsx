@@ -15,64 +15,37 @@ const InstallTabs = (): JSX.Element => {
         <div className="install__header-text">bash</div>
       </div>
       <TabList>
-        <Tab>Mac OS</Tab>
-        <Tab>Windows</Tab>
-        <Tab>Ubuntu / Debian</Tab>
+        <Tab>nvm (Linux)</Tab>
+        <Tab>nvm (macOS)</Tab>
+        <Tab>Chocolatey (Windows)</Tab>
+        <Tab>apt-get (Debian)</Tab>
       </TabList>
 
       <TabPanel>
         <div>
-          <h4>
-            Download the <Link to="/download">macOS Installer</Link> directly
-            from the nodejs.org website.
-          </h4>
-          <h4>Alternatives</h4>
-          <code className="install__comments">
-            #Using{' '}
-            <a href="https://brew.sh" target="_blank" rel="noopener noreferrer">
-              Homebrew
-            </a>
-          </code>
-          <br />
-          <code className="install__text">brew install node</code>
-          <br />
-          <br />
-          <code className="install__comments">
-            #Using{' '}
-            <a
-              href="https://www.macports.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Macports
-            </a>
-          </code>
-          <br />
-          <code className="install__text">port install nodejs14</code>
-          <br />
-          <br />
-          <code className="install__comments">
-            #Using{' '}
-            <a
-              href="https://github.com/nvm-sh/nvm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              nvm
-            </a>
-          </code>
-          <br />
           <code className="install__text">
-            curl -o-
-            https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh |
-            bash
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>apk add -U curl
+              bash ca-certificates openssl ncurses coreutils python2 make gcc
+              g++ libgcc linux-headers grep util-linux binutils findutils
+            </div>
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>curl -o-
+              https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh |
+              bash
+            </div>
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>
+              nvm install --lts
+            </div>
           </code>
+          <br />
           <br />
           {/* TODO when the new docs page is ready link to that page.  */}
           <button type="button" className="install__docs-button">
             <a
               className="install__docs-button-text"
-              href="https://nodejs.org/en/download/package-manager/#macos"
+              href="https://nodejs.org/en/download/package-manager/#nvm"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -83,19 +56,40 @@ const InstallTabs = (): JSX.Element => {
       </TabPanel>
       <TabPanel>
         <div>
-          <h4>
-            Download the <Link to="/download">Windows Installer</Link> directly
-            from the nodejs.org web site.
-          </h4>
-          <h4>Alternatives</h4>
-          <code className="install__comments">#Using Chocolatey:</code>
+          <code className="install__text">
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>curl -o-
+              https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh |
+              bash
+            </div>
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>nvm install
+              --lts
+            </div>
+          </code>
           <br />
-          <code className="install__text">cinst nodejs</code>
           <br />
+          <button type="button" className="install__docs-button">
+            <a
+              className="install__docs-button-text"
+              href="https://nodejs.org/en/download/package-manager/#nvm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read documentation
+            </a>
+          </button>
+        </div>
+      </TabPanel>
+      <TabPanel>
+        <div>
+          <code className="install__text">
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>choco install
+              nodejs-lts
+            </div>
+          </code>
           <br />
-          <code className="install__comments">#Using Scoop</code>
-          <br />
-          <code className="install__text">scoop install nodejs</code>
           <br />
           <button type="button" className="install__docs-button">
             <a
@@ -111,16 +105,28 @@ const InstallTabs = (): JSX.Element => {
       </TabPanel>
       <TabPanel>
         <div>
-          <h4>
-            Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora
-            and Snap packages
-          </h4>
-          <p>
-            <a href="https://github.com/nodesource/distributions/blob/master/README.md">
-              Node.js binary distributions
-            </a>{' '}
-            are available from NodeSource.
-          </p>
+          <code className="install__text">
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>curl -sL
+              https://deb.nodesource.com/setup_12.x | sudo -E bash -
+            </div>
+            <div className="install__text__line">
+              <span className="install__text__no-select">$</span>sudo apt-get
+              install nodejs
+            </div>
+          </code>
+          <br />
+          <br />
+          <button type="button" className="install__docs-button">
+            <a
+              className="install__docs-button-text"
+              href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read documentation
+            </a>
+          </button>
         </div>
       </TabPanel>
     </Tabs>
