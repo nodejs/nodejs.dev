@@ -9,7 +9,7 @@ export default function DownloadPage(): JSX.Element {
     <Layout title={title} description={description}>
       <main>
         <article style={{ width: '100%' }} className="article-reader">
-          <h1>Welcome to the Community Page!</h1>
+          <h1>The Node.js Community</h1>
         </article>
       </main>
     </Layout>
