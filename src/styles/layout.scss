@@ -83,6 +83,8 @@ p {
   font-weight: var(--font-weight-normal);
   color: var(--color-text-secondary);
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin: 0 0 var(--space-4) 0;
 }
 
 .t-link,
