@@ -6,8 +6,6 @@
   .side-nav {
     margin-right: -36rem;
     margin-bottom: calc(-100vh + var(--nav-height));
-    pointer-events: none;
-    overflow: hidden;
 
     &::after {
       content: '';

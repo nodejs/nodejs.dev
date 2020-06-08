@@ -226,3 +226,10 @@
 .api-key__item--misc {
   display: none;
 }
+
+.breadcrumb-separator {
+  margin: 0 0.5rem;
+}
+.breadcrumb-active {
+  color: var(--brand5);
+}
