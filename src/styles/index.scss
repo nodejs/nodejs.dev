@@ -1,10 +1,22 @@
 .home-page {
-  max-width: 960px;
   margin: 0 auto;
   margin-bottom: var(--space-80);
   position: relative;
   --section-margin-bottom: 340px;
 }
+
+@media (min-width: 1000px) {
+  .home-page {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .home-page {
+    max-width: 800px;
+  }
+}
+
 
 .node-demo-container {
   position: relative;
@@ -132,7 +144,7 @@
   display: none;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 870px) {
   .only-desktop {
     display: none;
   }
