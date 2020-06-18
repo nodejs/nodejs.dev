@@ -55,7 +55,7 @@ Here's the list of a few outdated packages in one repository that wasn't updated
 
 ![](outdated-packages.png)
 
-Some of those updates are major releases. Running `npm update` won't update the version of those. Major releases are never updated in this way because they (by definition) introduce breaking changes, and `npm` want to save you trouble.
+Some of those updates are major releases. Running `npm update` won't update the version of those. Major releases are never updated in this way because they (by definition) introduce breaking changes, and `npm` wants to save you trouble.
 
 To update to a new major version all the packages, install the `npm-check-updates` package globally:
 
