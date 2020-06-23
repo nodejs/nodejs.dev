@@ -42,7 +42,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       role="tab"
       tabIndex="0"
     >
-      Mac OS
+      nvm (Linux)
     </li>
     <li
       aria-controls="react-tabs-3"
@@ -53,7 +53,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       role="tab"
       tabIndex={null}
     >
-      Windows
+      nvm (macOS)
     </li>
     <li
       aria-controls="react-tabs-5"
@@ -64,7 +64,18 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       role="tab"
       tabIndex={null}
     >
-      Ubuntu / Debian
+      Chocolatey (Windows)
+    </li>
+    <li
+      aria-controls="react-tabs-7"
+      aria-disabled="false"
+      aria-selected="false"
+      className="react-tabs__tab"
+      id="react-tabs-6"
+      role="tab"
+      tabIndex={null}
+    >
+      apt-get (Debian)
     </li>
   </ul>
   <div
@@ -74,79 +85,41 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
     role="tabpanel"
   >
     <div>
-      <h4>
-        Download the 
-        <a
-          href="/download"
-        >
-          macOS Installer
-        </a>
-         directly from the nodejs.org website.
-      </h4>
-      <h4>
-        Alternatives
-      </h4>
-      <code
-        className="install__comments"
-      >
-        #Using
-         
-        <a
-          href="https://brew.sh"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Homebrew
-        </a>
-      </code>
-      <br />
       <code
         className="install__text"
       >
-        brew install node
-      </code>
-      <br />
-      <br />
-      <code
-        className="install__comments"
-      >
-        #Using
-         
-        <a
-          href="https://www.macports.org"
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="install__text__line"
         >
-          Macports
-        </a>
-      </code>
-      <br />
-      <code
-        className="install__text"
-      >
-        port install nodejs14
-      </code>
-      <br />
-      <br />
-      <code
-        className="install__comments"
-      >
-        #Using
-         
-        <a
-          href="https://github.com/nvm-sh/nvm"
-          rel="noopener noreferrer"
-          target="_blank"
+          <span
+            className="install__text__no-select"
+          >
+            $
+          </span>
+          apk add -U curl bash ca-certificates openssl ncurses coreutils python2 make gcc g++ libgcc linux-headers grep util-linux binutils findutils
+        </div>
+        <div
+          className="install__text__line"
         >
-          nvm
-        </a>
+          <span
+            className="install__text__no-select"
+          >
+            $
+          </span>
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+        </div>
+        <div
+          className="install__text__line"
+        >
+          <span
+            className="install__text__no-select"
+          >
+            $
+          </span>
+          nvm install --lts
+        </div>
       </code>
       <br />
-      <code
-        className="install__text"
-      >
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-      </code>
       <br />
       <button
         className="install__docs-button"
@@ -154,7 +127,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       >
         <a
           className="install__docs-button-text"
-          href="https://nodejs.org/en/download/package-manager/#macos"
+          href="https://nodejs.org/en/download/package-manager/#nvm"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -173,6 +146,12 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
     aria-labelledby="react-tabs-4"
     className="react-tabs__tab-panel"
     id="react-tabs-5"
+    role="tabpanel"
+  />
+  <div
+    aria-labelledby="react-tabs-6"
+    className="react-tabs__tab-panel"
+    id="react-tabs-7"
     role="tabpanel"
   />
 </div>
