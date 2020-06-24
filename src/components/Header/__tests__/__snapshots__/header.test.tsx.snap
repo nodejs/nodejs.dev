@@ -29,6 +29,7 @@ exports[`Tests for Header component renders correctly 1`] = `
       className="nav__tabs"
     >
       <a
+        activeClassName="active"
         className="activeStyleTab"
         href="/learn"
         partiallyActive={true}
@@ -49,7 +50,7 @@ exports[`Tests for Header component renders correctly 1`] = `
       </a>
     </li>
     <li
-      className="nav__tabs"
+      className="nav__tabs only-mobile"
     >
       <a
         className="activeStyleTab only-mobile"
