@@ -16,8 +16,8 @@ const InstallTabs = (): JSX.Element => {
       </div>
       <TabList>
         <Tab>nvm (macOS)</Tab>
-        <Tab>nvm (Linux)</Tab>
         <Tab>Chocolatey (Windows)</Tab>
+        <Tab>nvm (Linux)</Tab>
       </TabList>
       <TabPanel>
         <div>
@@ -36,6 +36,27 @@ const InstallTabs = (): JSX.Element => {
             <a
               className="install__docs-button-text"
               href="https://nodejs.org/en/download/package-manager/#nvm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read documentation
+            </a>
+          </button>
+        </div>
+      </TabPanel>
+      <TabPanel>
+        <div>
+          <ShellBox textToCopy="choco install nodejs-lts">
+            <span className="install__text__no-select">$</span>
+            <span className="install__text__command">choco </span>install
+            nodejs-lts
+          </ShellBox>
+          <br />
+          <br />
+          <button type="button" className="install__docs-button">
+            <a
+              className="install__docs-button-text"
+              href="https://nodejs.org/en/download/package-manager/#windows"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -72,27 +93,6 @@ g++ libgcc linux-headers grep util-linux binutils findutils"
             <a
               className="install__docs-button-text"
               href="https://nodejs.org/en/download/package-manager/#nvm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read documentation
-            </a>
-          </button>
-        </div>
-      </TabPanel>
-      <TabPanel>
-        <div>
-          <ShellBox textToCopy="choco install nodejs-lts">
-            <span className="install__text__no-select">$</span>
-            <span className="install__text__command">choco </span>install
-            nodejs-lts
-          </ShellBox>
-          <br />
-          <br />
-          <button type="button" className="install__docs-button">
-            <a
-              className="install__docs-button-text"
-              href="https://nodejs.org/en/download/package-manager/#windows"
               target="_blank"
               rel="noopener noreferrer"
             >
