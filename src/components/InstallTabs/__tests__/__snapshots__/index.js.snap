@@ -53,7 +53,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       role="tab"
       tabIndex={null}
     >
-      nvm (Linux)
+      Chocolatey (Windows)
     </li>
     <li
       aria-controls="react-tabs-5"
@@ -64,7 +64,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       role="tab"
       tabIndex={null}
     >
-      Chocolatey (Windows)
+      nvm (Linux)
     </li>
   </ul>
   <div
