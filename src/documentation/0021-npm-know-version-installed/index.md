@@ -1,17 +1,17 @@
 ---
 title: Find the installed version of an npm package
 description: 'How to find out which version of a particular package you have installed in your app'
-authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais
+authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais, siraben
 section: Getting Started
 ---
 
-To see the latest version of all the npm package installed, including their dependencies:
+To see the latest version of all the npm packages installed, including their dependencies:
 
 ```sh
 npm list
 ```
 
-Example:
+For example:
 
 ```txt
 ❯ npm list
@@ -40,7 +40,7 @@ To get only your top-level packages (basically, the ones you told npm to install
 └── cowsay@1.3.1
 ```
 
-You can get the version of a specific package by specifying the name:
+You can get the version of a specific package by specifying its name:
 
 ```txt
 ❯ npm list cowsay
