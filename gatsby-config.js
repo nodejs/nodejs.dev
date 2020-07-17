@@ -33,7 +33,21 @@ module.exports = {
         include: ['**/*.md'], // ignore files starting with a dot
       },
     },
-
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'learn',
+        path: `${__dirname}/src/pages/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve(`./src/components/Layout/index.tsx`),
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
