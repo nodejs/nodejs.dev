@@ -21,35 +21,25 @@ import ShellBox from '../components/ShellBox';
 import '../styles/docs.scss';
 import '../styles/article-reader.scss';
 
+const API_DOCS_OBJ_KEYS = ['events', 'methods', 'properties', 'classes'];
+
 function renderArticleOverview(
   obj: ApiDocsObj,
   overview: JSX.Element[] = []
 ): JSX.Element[] {
   const children: JSX.Element[] = [];
-  if (obj.events) {
-    obj.events.map((evt): JSX.Element[] =>
-      renderArticleOverview(evt, children)
-    );
-  }
-  if (obj.methods) {
-    obj.methods.map((method): JSX.Element[] =>
-      renderArticleOverview(method, children)
-    );
-  }
-  if (obj.properties) {
-    obj.properties
-      .filter((o): boolean => o.type !== 'Object')
-      .map((prop): JSX.Element[] => renderArticleOverview(prop, children));
 
-    obj.properties
-      .filter((o): boolean => o.type === 'Object')
-      .map((prop): JSX.Element[] => renderArticleOverview(prop, children));
-  }
-  if (obj.classes) {
-    obj.classes.map((klass): JSX.Element[] =>
-      renderArticleOverview(klass, children)
-    );
-  }
+  API_DOCS_OBJ_KEYS.map(function iterateOverApiDocsObjects(key: string) {
+    if (obj[key]) {
+      obj[key]
+        .filter(function removeObjectTypeForProperties(property: any) {
+          return key === 'properties' && property.type !== 'Object';
+        })
+        .map((docObject: ApiDocsObj) =>
+          renderArticleOverview(docObject, children)
+        );
+    }
+  });
 
   overview.push(
     <li
@@ -81,36 +71,15 @@ function renderArticleSections(
 
     if (depth === 0) {
       sections.push(<hr />);
-      children.push(
-        <h2 className={`api-docs__title api-docs__title--${page.type}`}>
-          {page.displayName || page.name}
-        </h2>
-      );
-    } else if (depth === 1) {
-      children.push(
-        <h3 className={`api-docs__title api-docs__title--${page.type}`}>
-          {page.displayName || page.name}
-        </h3>
-      );
-    } else if (depth === 2) {
-      children.push(
-        <h4 className={`api-docs__title api-docs__title--${page.type}`}>
-          {page.displayName || page.name}
-        </h4>
-      );
-    } else if (depth === 3) {
-      children.push(
-        <h5 className={`api-docs__title api-docs__title--${page.type}`}>
-          {page.displayName || page.name}
-        </h5>
-      );
-    } else if (depth === 4) {
-      children.push(
-        <h6 className={`api-docs__title api-docs__title--${page.type}`}>
-          {page.displayName || page.name}
-        </h6>
-      );
     }
+
+    const HeadingTag = `h${Math.min(depth + 2, 6)}`;
+    children.push(
+      //@ts-ignore
+      <HeadingTag className={`api-docs__title api-docs__title--${page.type}`}>
+        {page.displayName || page.name}
+      </HeadingTag>
+    );
 
     if (isModuleObj(page)) {
       children.push(
