@@ -1,11 +1,7 @@
-/* eslint-disable react/no-danger */
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { useApiData, useReleaseHistory } from '../hooks';
-import {
-  ApiDocsObj,
-  APIResponse,
-} from '../hooks/useApiDocs';
+import { ApiDocsObj, APIResponse } from '../hooks/useApiDocs';
 
 import downloadUrlByOs from '../util/downloadUrlByOS';
 import { detectOS, UserOS } from '../util/detectOS';
@@ -24,7 +20,7 @@ function capitalizeFirstLetter(text: string) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-function getHeadingForPage(page: ApiDocsObj, depth: number = 0) {
+function getHeadingForPage(page: ApiDocsObj, depth = 0) {
   const HeaderName = `h${Math.min(depth + 2, 6)}`;
   return React.createElement(
     HeaderName,
@@ -89,11 +85,11 @@ function renderArticleSections(
   sections: JSX.Element[] = [],
   depth = 0
 ): JSX.Element[] {
-  for (const page of pages) {
+  pages.forEach(page => {
     const children: JSX.Element[] = [];
 
-    const prepareArticleSectionsForPage = (page: ApiDocsObj, depth: number) => {
-      API_DOCS_OBJ_KEYS.map((key: string) => {
+    const prepareArticleSections: Function = () => {
+      API_DOCS_OBJ_KEYS.forEach((key: string) => {
         if (page[key]) {
           renderArticleSections(page[key], children, depth + 1);
         }
@@ -108,10 +104,10 @@ function renderArticleSections(
 
     children.push(getListItemForPage(page));
 
-    prepareArticleSectionsForPage(page, depth);
+    prepareArticleSections();
 
     sections.push(<section className="api-docs__section">{children}</section>);
-  }
+  });
 
   return sections;
 }
