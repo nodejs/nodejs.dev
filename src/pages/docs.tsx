@@ -5,10 +5,6 @@ import { useApiData, useReleaseHistory } from '../hooks';
 import {
   ApiDocsObj,
   APIResponse,
-  isMethodObj,
-  isEventObj,
-  isClassObj,
-  isModuleObj,
 } from '../hooks/useApiDocs';
 
 import downloadUrlByOs from '../util/downloadUrlByOS';
