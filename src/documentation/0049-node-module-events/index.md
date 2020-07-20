@@ -14,8 +14,8 @@ const door = new EventEmitter()
 
 The event listener eats its own dog food and uses these events:
 
-- `newListener` when a listener is added
-- `removeListener` when a listener is removed
+* `newListener` when a listener is added
+* `removeListener` when a listener is removed
 
 Here's a detailed description of the most useful methods:
 
@@ -26,6 +26,10 @@ Alias for `emitter.on()`.
 ## `emitter.emit()`
 
 Emits an event. It synchronously calls every event listener in the order they were registered.
+
+```js
+door.emit("slam") // emitting the event "slam"
+```
 
 ## `emitter.eventNames()`
 
