@@ -94,7 +94,15 @@ function renderArticleSections(
   depth = 0
 ): JSX.Element[] {
   for (const page of pages) {
-    const children = [];
+    const children: JSX.Element[] = [];
+
+    const prepareArticleSectionsForPage = (page: ApiDocsObj, depth: number) => {
+      API_DOCS_OBJ_KEYS.map((key: string) => {
+        if (page[key]) {
+          renderArticleSections(page[key], children, depth + 1);
+        }
+      });
+    };
 
     if (depth === 0) {
       sections.push(<hr />);
@@ -104,21 +112,7 @@ function renderArticleSections(
 
     children.push(getListItemForPage(page));
 
-    if (page.events) {
-      renderArticleSections(page.events, children, depth + 1);
-    }
-    if (page.methods) {
-      renderArticleSections(page.methods, children, depth + 1);
-    }
-    if (page.properties) {
-      renderArticleSections(page.properties, children, depth + 1);
-    }
-    if (page.classes) {
-      renderArticleSections(page.classes, children, depth + 1);
-    }
-    if (page.modules) {
-      renderArticleSections(page.modules, children, depth + 1);
-    }
+    prepareArticleSectionsForPage(page, depth);
 
     sections.push(<section className="api-docs__section">{children}</section>);
   }
