@@ -22,6 +22,11 @@ import '../styles/docs.scss';
 import '../styles/article-reader.scss';
 
 const API_DOCS_OBJ_KEYS = ['events', 'methods', 'properties', 'classes'];
+const DOCUMENT_ELEMENT_TYPES = ['module', 'event', 'method', 'class'];
+
+function capitalizeFirstLetter(text: string) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
 
 function getHeadingForPage(page: ApiDocsObj, depth: number = 0) {
   const HeaderName = `h${Math.min(depth + 2, 6)}`;
@@ -29,6 +34,18 @@ function getHeadingForPage(page: ApiDocsObj, depth: number = 0) {
     HeaderName,
     { className: `api-docs__title api-docs__title--${page.type}` },
     page.displayName || page.name
+  );
+}
+
+function getListItemForPage(page: ApiDocsObj) {
+  return (
+    <li id={page.name}>
+      {DOCUMENT_ELEMENT_TYPES.includes(page.type)
+        ? capitalizeFirstLetter(page.type)
+        : 'Property'}
+      : ({page.type})
+      {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
+    </li>
   );
 }
 
@@ -85,42 +102,7 @@ function renderArticleSections(
 
     children.push(getHeadingForPage(page, depth));
 
-    if (isModuleObj(page)) {
-      children.push(
-        <li id={page.name}>
-          Module: ({page.type}){' '}
-          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
-        </li>
-      );
-    } else if (isMethodObj(page)) {
-      children.push(
-        <li id={page.name}>
-          Method: ({page.type}){' '}
-          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
-        </li>
-      );
-    } else if (isEventObj(page)) {
-      children.push(
-        <li id={page.name}>
-          Event: ({page.type}){' '}
-          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
-        </li>
-      );
-    } else if (isClassObj(page)) {
-      children.push(
-        <li id={page.name}>
-          Class: ({page.type}){' '}
-          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
-        </li>
-      );
-    } else {
-      children.push(
-        <li id={page.name}>
-          Property: ({page.type}){' '}
-          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
-        </li>
-      );
-    }
+    children.push(getListItemForPage(page));
 
     if (page.events) {
       renderArticleSections(page.events, children, depth + 1);
