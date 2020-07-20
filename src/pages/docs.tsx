@@ -23,13 +23,22 @@ import '../styles/article-reader.scss';
 
 const API_DOCS_OBJ_KEYS = ['events', 'methods', 'properties', 'classes'];
 
+function getHeadingForPage(page: ApiDocsObj, depth: number = 0) {
+  const HeaderName = `h${Math.min(depth + 2, 6)}`;
+  return React.createElement(
+    HeaderName,
+    { className: `api-docs__title api-docs__title--${page.type}` },
+    page.displayName || page.name
+  );
+}
+
 function renderArticleOverview(
   obj: ApiDocsObj,
   overview: JSX.Element[] = []
 ): JSX.Element[] {
   const children: JSX.Element[] = [];
 
-  API_DOCS_OBJ_KEYS.map(function iterateOverApiDocsObjects(key: string) {
+  function prepareArticleOverviewForApiDocObjKey(key: string) {
     if (obj[key]) {
       obj[key]
         .filter(function removeObjectTypeForProperties(property: any) {
@@ -39,7 +48,9 @@ function renderArticleOverview(
           renderArticleOverview(docObject, children)
         );
     }
-  });
+  }
+
+  API_DOCS_OBJ_KEYS.map(prepareArticleOverviewForApiDocObjKey);
 
   overview.push(
     <li
@@ -65,7 +76,6 @@ function renderArticleSections(
   sections: JSX.Element[] = [],
   depth = 0
 ): JSX.Element[] {
-  /* eslint-disable-next-line no-restricted-syntax */
   for (const page of pages) {
     const children = [];
 
@@ -73,13 +83,7 @@ function renderArticleSections(
       sections.push(<hr />);
     }
 
-    const HeadingTag = `h${Math.min(depth + 2, 6)}`;
-    children.push(
-      //@ts-ignore
-      <HeadingTag className={`api-docs__title api-docs__title--${page.type}`}>
-        {page.displayName || page.name}
-      </HeadingTag>
-    );
+    children.push(getHeadingForPage(page, depth));
 
     if (isModuleObj(page)) {
       children.push(
