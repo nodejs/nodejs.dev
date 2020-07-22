@@ -1,10 +1,6 @@
 .react-tabs {
   -webkit-tap-highlight-color: transparent;
 
-  h4 {
-    margin-top: 0;
-  }
-
   &__tab-list {
     margin: 0;
     padding: 0;
@@ -58,19 +54,11 @@
     }
   }
 
-  p {
-    margin-bottom: 0;
-    margin-top: var(--space-08);
-  }
-
-  h2 {
-    margin: var(--space-16) 0;
-  }
-
   .install {
     &__header {
       height: 30px;
       margin: 0 5px;
+      font-weight: var(--font-weight-semibold);
       &-circles {
         height: 100%;
         float: left;
@@ -89,23 +77,27 @@
         line-height: 30px;
       }
     }
-    &__comments {
-      color: var(--black8);
-      font-style: italic;
-      a {
-        color: var(--color-fill-action);
-      }
-    }
     &__text {
       color: var(--pink5);
-      padding-left: 6px;
+      &__line {
+        margin: var(--space-12) 0;
+      }
+      &__no-select {
+        margin-right: var(--space-12);
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+      }
     }
     &__docs-button {
       border-radius: var(--space-04);
       padding: var(--space-08) var(--space-16);
       position: absolute;
       bottom: 2rem;
-      left: 2rem;
+      right: 2rem;
     }
     &__docs-button-text,
     &__docs-button-text:hover {
@@ -116,5 +108,17 @@
       color: var(--black6);
       font-weight: var(--font-weight-semibold);
     }
+  }
+  .shell-box {
+    code {
+      color: var(--pink5);
+      width: calc(100% - 20px);
+      line-height: 30px;
+      > span.install__text__command {
+        color: #fff;
+      }
+    }
+    background-color: var(--black9);
+    padding-bottom: 15px;
   }
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import { detectOS, UserOS } from '../../util/detectOS';
+import { detectOS } from '../../util/detectOS';
+import downloadUrlByOS from '../../util/downloadUrlByOS';
 import { useReleaseHistory, ReleaseData } from '../../hooks/useReleaseHistory';
 
 import './Hero.scss';
@@ -9,31 +10,6 @@ import './Hero.scss';
 interface Props {
   title: string;
   subTitle: string;
-}
-
-function downloadUrlByOS(userOS: UserOS, version: string): string {
-  const baseURL = `https://nodejs.org/dist/${version}`;
-
-  if (userOS === UserOS.MOBILE) {
-    return baseURL;
-  }
-
-  if (userOS === UserOS.MAC) {
-    return `${baseURL}/node-${version}.pkg`;
-  }
-
-  if (userOS === UserOS.WIN) {
-    if (
-      navigator.appVersion.indexOf('WOW64') !== -1 ||
-      navigator.appVersion.indexOf('Win64') !== -1
-    ) {
-      return `${baseURL}/node-${version}-x64.msi`;
-    }
-
-    return `${baseURL}/node-${version}-x86.msi`;
-  }
-
-  return `${baseURL}/node-${version}.tar.gz`;
 }
 
 const Hero = ({ title, subTitle }: Props): JSX.Element => {
