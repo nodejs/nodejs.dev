@@ -50,7 +50,7 @@ function renderArticleOverview(
   function prepareArticleOverviewForApiDocObjKey(key: string) {
     if (obj[key]) {
       obj[key]
-        .filter(function removeObjectTypeForProperties(property: any) {
+        .filter(function removeObjectTypeForProperties(property: ApiDocsObj) {
           return key === 'properties' && property.type !== 'Object';
         })
         .map((docObject: ApiDocsObj) =>
