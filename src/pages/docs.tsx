@@ -1,15 +1,7 @@
-/* eslint-disable react/no-danger */
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { useApiData, useReleaseHistory } from '../hooks';
-import {
-  ApiDocsObj,
-  APIResponse,
-  isMethodObj,
-  isEventObj,
-  isClassObj,
-  isModuleObj,
-} from '../hooks/useApiDocs';
+import { ApiDocsObj, APIResponse } from '../hooks/useApiDocs';
 
 import downloadUrlByOs from '../util/downloadUrlByOS';
 import { detectOS, UserOS } from '../util/detectOS';
@@ -21,35 +13,53 @@ import ShellBox from '../components/ShellBox';
 import '../styles/docs.scss';
 import '../styles/article-reader.scss';
 
+const API_DOCS_OBJ_KEYS = ['events', 'methods', 'properties', 'classes'];
+const DOCUMENT_ELEMENT_TYPES = ['module', 'event', 'method', 'class'];
+
+function capitalizeFirstLetter(text: string) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function getHeadingForPage(page: ApiDocsObj, depth = 0) {
+  const HeaderName = `h${Math.min(depth + 2, 6)}`;
+  return React.createElement(
+    HeaderName,
+    { className: `api-docs__title api-docs__title--${page.type}` },
+    page.displayName || page.name
+  );
+}
+
+function getListItemForPage(page: ApiDocsObj) {
+  return (
+    <li id={page.name}>
+      {DOCUMENT_ELEMENT_TYPES.includes(page.type)
+        ? capitalizeFirstLetter(page.type)
+        : 'Property'}
+      : ({page.type})
+      {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
+    </li>
+  );
+}
+
 function renderArticleOverview(
   obj: ApiDocsObj,
   overview: JSX.Element[] = []
 ): JSX.Element[] {
   const children: JSX.Element[] = [];
-  if (obj.events) {
-    obj.events.map((evt): JSX.Element[] =>
-      renderArticleOverview(evt, children)
-    );
-  }
-  if (obj.methods) {
-    obj.methods.map((method): JSX.Element[] =>
-      renderArticleOverview(method, children)
-    );
-  }
-  if (obj.properties) {
-    obj.properties
-      .filter((o): boolean => o.type !== 'Object')
-      .map((prop): JSX.Element[] => renderArticleOverview(prop, children));
 
-    obj.properties
-      .filter((o): boolean => o.type === 'Object')
-      .map((prop): JSX.Element[] => renderArticleOverview(prop, children));
+  function prepareArticleOverviewForApiDocObjKey(key: string) {
+    if (obj[key]) {
+      obj[key]
+        .filter(function removeObjectTypeForProperties(property: ApiDocsObj) {
+          return key === 'properties' && property.type !== 'Object';
+        })
+        .map((docObject: ApiDocsObj) =>
+          renderArticleOverview(docObject, children)
+        );
+    }
   }
-  if (obj.classes) {
-    obj.classes.map((klass): JSX.Element[] =>
-      renderArticleOverview(klass, children)
-    );
-  }
+
+  API_DOCS_OBJ_KEYS.map(prepareArticleOverviewForApiDocObjKey);
 
   overview.push(
     <li
@@ -75,98 +85,29 @@ function renderArticleSections(
   sections: JSX.Element[] = [],
   depth = 0
 ): JSX.Element[] {
-  /* eslint-disable-next-line no-restricted-syntax */
-  for (const page of pages) {
-    const children = [];
+  pages.forEach(page => {
+    const children: JSX.Element[] = [];
+
+    const prepareArticleSections: Function = () => {
+      API_DOCS_OBJ_KEYS.forEach((key: string) => {
+        if (page[key]) {
+          renderArticleSections(page[key], children, depth + 1);
+        }
+      });
+    };
 
     if (depth === 0) {
       sections.push(<hr />);
-      children.push(
-        <h2 className={`api-docs__title api-docs__title--${page.type}`}>
-          {page.displayName || page.name}
-        </h2>
-      );
-    } else if (depth === 1) {
-      children.push(
-        <h3 className={`api-docs__title api-docs__title--${page.type}`}>
-          {page.displayName || page.name}
-        </h3>
-      );
-    } else if (depth === 2) {
-      children.push(
-        <h4 className={`api-docs__title api-docs__title--${page.type}`}>
-          {page.displayName || page.name}
-        </h4>
-      );
-    } else if (depth === 3) {
-      children.push(
-        <h5 className={`api-docs__title api-docs__title--${page.type}`}>
-          {page.displayName || page.name}
-        </h5>
-      );
-    } else if (depth === 4) {
-      children.push(
-        <h6 className={`api-docs__title api-docs__title--${page.type}`}>
-          {page.displayName || page.name}
-        </h6>
-      );
     }
 
-    if (isModuleObj(page)) {
-      children.push(
-        <li id={page.name}>
-          Module: ({page.type}){' '}
-          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
-        </li>
-      );
-    } else if (isMethodObj(page)) {
-      children.push(
-        <li id={page.name}>
-          Method: ({page.type}){' '}
-          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
-        </li>
-      );
-    } else if (isEventObj(page)) {
-      children.push(
-        <li id={page.name}>
-          Event: ({page.type}){' '}
-          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
-        </li>
-      );
-    } else if (isClassObj(page)) {
-      children.push(
-        <li id={page.name}>
-          Class: ({page.type}){' '}
-          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
-        </li>
-      );
-    } else {
-      children.push(
-        <li id={page.name}>
-          Property: ({page.type}){' '}
-          {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
-        </li>
-      );
-    }
+    children.push(getHeadingForPage(page, depth));
 
-    if (page.events) {
-      renderArticleSections(page.events, children, depth + 1);
-    }
-    if (page.methods) {
-      renderArticleSections(page.methods, children, depth + 1);
-    }
-    if (page.properties) {
-      renderArticleSections(page.properties, children, depth + 1);
-    }
-    if (page.classes) {
-      renderArticleSections(page.classes, children, depth + 1);
-    }
-    if (page.modules) {
-      renderArticleSections(page.modules, children, depth + 1);
-    }
+    children.push(getListItemForPage(page));
+
+    prepareArticleSections();
 
     sections.push(<section className="api-docs__section">{children}</section>);
-  }
+  });
 
   return sections;
 }
