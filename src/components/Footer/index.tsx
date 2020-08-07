@@ -242,7 +242,7 @@ function Footer(): JSX.Element {
         <li>
           <a
             target="_blank"
-            href="https://communityinviter.com/apps/js-foundation/join-openjs-foundation-on-slack"
+            href="https://slack.openjsf.org"
             rel="noopener noreferrer"
             aria-label="Node.js Slack Link"
           >

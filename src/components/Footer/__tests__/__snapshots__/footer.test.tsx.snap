@@ -117,7 +117,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
     <li>
       <a
         aria-label="Node.js Slack Link"
-        href="https://communityinviter.com/apps/js-foundation/join-openjs-foundation-on-slack"
+        href="https://slack.openjsf.org"
         rel="noopener noreferrer"
         target="_blank"
       >
