@@ -28,7 +28,7 @@
     "gatsby-source-filesystem": "^2.2.5",
     "gatsby-transformer-remark": "^2.8.5",
     "intersection-observer": "^0.10.0",
-    "prismjs": "^1.20.0",
+    "prismjs": "^1.21.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-emotion": "^10.0.0",
