@@ -8,7 +8,7 @@ exports[`404 page renders correctly 1`] = `
   <Hero
     title="PAGE NOT FOUND"
   />
-  <article
+  <main
     className="article-reader"
     style={
       Object {
@@ -27,6 +27,6 @@ exports[`404 page renders correctly 1`] = `
         Homepage
       </a>
     </p>
-  </article>
+  </main>
 </Layout>
 `;
