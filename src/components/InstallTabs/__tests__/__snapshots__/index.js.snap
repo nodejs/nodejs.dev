@@ -42,7 +42,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       role="tab"
       tabIndex="0"
     >
-      nvm (macOS)
+      Chocolatey (Windows)
     </li>
     <li
       aria-controls="react-tabs-3"
@@ -53,7 +53,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       role="tab"
       tabIndex={null}
     >
-      Chocolatey (Windows)
+      nvm (macOS)
     </li>
     <li
       aria-controls="react-tabs-5"
@@ -99,39 +99,9 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
           <span
             className="install__text__command"
           >
-            curl -o- | bash 
+            choco 
           </span>
-          https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
-        </code>
-      </pre>
-      <pre
-        className="shell-box"
-      >
-        <div
-          className="shell-box-top"
-        >
-          <span>
-            SHELL
-          </span>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            copy
-          </button>
-        </div>
-        <code>
-          <span
-            className="install__text__no-select"
-          >
-            $
-          </span>
-          <span
-            className="install__text__command"
-          >
-            nvm 
-          </span>
-          install --lts
+          install nodejs-lts
         </code>
       </pre>
       <br />
@@ -142,7 +112,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       >
         <a
           className="install__docs-button-text"
-          href="https://nodejs.org/en/download/package-manager/#nvm"
+          href="https://nodejs.org/en/download/package-manager/#windows"
           rel="noopener noreferrer"
           target="_blank"
         >
