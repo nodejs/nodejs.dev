@@ -152,9 +152,10 @@ body:not(.dark-mode) .dark-mode-only,
   border: none;
   background: none;
   cursor: pointer;
-  color: var(--color-text-accent);
+  color: var(--color-text-accent);  
+  padding: var(--space-24) var(--space-16) calc(var(--space-24) - 2px) var(--space-16);
 }
-
+ 
 /* Start: Syntax Highlight Overrides */
 
 :not(pre) > code[class*='language-'] {
@@ -238,16 +239,32 @@ main {
 }
 
 .nav {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
   background: var(--color-fill-app);
   border-bottom: var(--space-01) solid var(--black2);
-  height: var(--nav-height);
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 999;
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 var(--space-08) 0 var(--space-24);
+} 
+
+.nav__startwrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.nav__endwrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .dark-mode .nav {
@@ -256,27 +273,29 @@ main {
 
 .nav__logo {
   height: var(--space-32);
-  margin-left: var(--space-24);
 }
 
 .nav__tabs__container {
-  margin-left: 120px;
+  margin: 0 0 0 120px;
   list-style: none;
   display: flex;
   align-items: center;
-  max-width: 352px;
-  justify-content: space-between;
-  width: 100%;
 }
 
 .nav .right-container {
   display: flex;
-  padding-right: var(--space-24);
   padding-left: 0;
   list-style: none;
+  align-items: center;
+  flex: 1 1 auto;
+  margin: 0;
 }
 
 .nav__tabs {
+  display: flex;
+  cursor: pointer;
+  text-decoration: none;
+  color: green;
   text-decoration: none;
   margin-left: var(--space-16);
 
@@ -288,19 +307,14 @@ main {
   }
 }
 
-.nav__tabs {
-  cursor: pointer;
-  text-decoration: none;
-  color: green;
-  border-bottom: 3px solid transparent;
-}
-
 .activeStyleTab:hover {
   border-bottom: 4px solid green;
+  margin-bottom: -4px;
 }
 
 .active {
   border-bottom: 4px solid green;
+  margin-bottom: -4px;
 }
 
 /* Footer */
@@ -468,31 +482,41 @@ details {
     padding: 0 3rem;
   }
 
+  .nav__container {
+    padding: 0 var(--space-12);
+  }  
+  
   .nav__logo {
     height: 2.4rem;
-    margin-left: var(--space-12);
   }
 
   .nav__tabs__container {
     padding-left: 0;
-    margin-left: unset;
+    margin-left: var(--space-08);
     justify-content: space-between;
-    width: fit-content;
   }
 
   .nav .right-container {
-    width: fit-content;
     display: flex;
     padding-right: 0;
     list-style: none;
   }
 
   .nav__tabs {
+    display: flex;
     margin-left: 0;
 
     > a {
-      padding: var(--space-12);
+      padding: var(--space-10);
     }
+  }
+
+  .dark-mode-toggle {
+    padding: var(--space-10);
+  }
+
+  .right-container .nav__tabs > a:last-child {
+    padding-right: 0;
   }
 
   .footer {
