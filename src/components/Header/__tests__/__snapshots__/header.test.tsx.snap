@@ -26,17 +26,6 @@ exports[`Tests for Header component renders correctly 1`] = `
     className="nav__tabs__container"
   >
     <li
-      className="nav__tabs"
-    >
-      <a
-        className="activeStyleTab"
-        href="/learn"
-        partiallyActive={true}
-      >
-        Learn
-      </a>
-    </li>
-    <li
       className="nav__tabs only-desktop"
     >
       <a
@@ -46,6 +35,17 @@ exports[`Tests for Header component renders correctly 1`] = `
         target="_blank"
       >
         Documentation
+      </a>
+    </li>
+    <li
+      className="nav__tabs"
+    >
+      <a
+        className="activeStyleTab"
+        href="/learn"
+        partiallyActive={true}
+      >
+        Learn
       </a>
     </li>
     <li
