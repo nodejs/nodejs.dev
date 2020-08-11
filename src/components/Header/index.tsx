@@ -28,11 +28,6 @@ const Header = ({
     </div>
 
     <ul className="nav__tabs__container">
-      <li className="nav__tabs">
-        <Link to="/learn" className="activeStyleTab" partiallyActive>
-          Learn
-        </Link>
-      </li>
       <li className="nav__tabs only-desktop">
         <a
           className="activeStyleTab"
@@ -42,6 +37,11 @@ const Header = ({
         >
           Documentation
         </a>
+      </li>
+      <li className="nav__tabs">
+        <Link to="/learn" className="activeStyleTab" partiallyActive>
+          Learn
+        </Link>
       </li>
       <li className="nav__tabs">
         <a
