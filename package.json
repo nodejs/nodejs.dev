@@ -51,8 +51,10 @@
     "update-snapshot": "jest --updateSnapshot",
     "pretest": "npm run format && npm run format-check && npm run lint",
     "test": "npx jest",
+    "test-watch": "npx jest --watch",
+    "test-ci": "npm run test -- --coverage && codecov",
     "lint": "eslint src --ext .js,.ts,.tsx",
-    "lint:fix": "npm run lint --fix",
+    "lint:fix": "npm run lint -- --fix",
     "serve": "npm run build && clear && gatsby serve",
     "md-check": "remark -qf ."
   },
