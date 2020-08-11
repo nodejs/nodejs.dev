@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
+import dompurify from 'dompurify';
 import { useApiData, useReleaseHistory } from '../hooks';
 import { ApiDocsObj, APIResponse } from '../hooks/useApiDocs';
 
@@ -15,12 +16,12 @@ import '../styles/article-reader.scss';
 
 const API_DOCS_OBJ_KEYS = ['events', 'methods', 'properties', 'classes'];
 const DOCUMENT_ELEMENT_TYPES = ['module', 'event', 'method', 'class'];
-
-function capitalizeFirstLetter(text: string) {
+const sanitizer = dompurify.sanitize;
+function capitalizeFirstLetter(text: string): string {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-function getHeadingForPage(page: ApiDocsObj, depth = 0) {
+function getHeadingForPage(page: ApiDocsObj, depth = 0): JSX.Element {
   const HeaderName = `h${Math.min(depth + 2, 6)}`;
   return React.createElement(
     HeaderName,
@@ -29,14 +30,16 @@ function getHeadingForPage(page: ApiDocsObj, depth = 0) {
   );
 }
 
-function getListItemForPage(page: ApiDocsObj) {
+function getListItemForPage(page: ApiDocsObj): JSX.Element {
   return (
     <li id={page.name}>
       {DOCUMENT_ELEMENT_TYPES.includes(page.type)
         ? capitalizeFirstLetter(page.type)
         : 'Property'}
       : ({page.type})
-      {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
+      {page.desc && (
+        <p dangerouslySetInnerHTML={{ __html: sanitizer(page.desc) }} />
+      )}
     </li>
   );
 }
@@ -47,7 +50,7 @@ function renderArticleOverview(
 ): JSX.Element[] {
   const children: JSX.Element[] = [];
 
-  function prepareArticleOverviewForApiDocObjKey(key: string) {
+  function prepareArticleOverviewForApiDocObjKey(key: string): JSX.Element {
     if (obj[key]) {
       obj[key]
         .filter(function removeObjectTypeForProperties(property: ApiDocsObj) {
@@ -513,7 +516,10 @@ function renderArticle(
             renderArticleOverview(mod, [])
           )}
       </ul>
-      {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
+      {page.desc && (
+        <p dangerouslySetInnerHTML={{ __html: sanitizer(page.desc) }} />
+      )}
+
       {renderArticleSections([page])}
     </article>
   );
