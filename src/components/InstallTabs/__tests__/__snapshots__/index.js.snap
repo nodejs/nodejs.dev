@@ -51,7 +51,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       className="react-tabs__tab"
       id="react-tabs-2"
       role="tab"
-      tabIndex={null}
+      tabIndex="0"
     >
       Chocolatey (Windows)
     </li>
@@ -62,7 +62,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       className="react-tabs__tab"
       id="react-tabs-4"
       role="tab"
-      tabIndex={null}
+      tabIndex="0"
     >
       nvm (Linux)
     </li>

@@ -15,9 +15,9 @@ const InstallTabs = (): JSX.Element => {
         <div className="install__header-text">bash</div>
       </div>
       <TabList>
-        <Tab>nvm (macOS)</Tab>
-        <Tab>Chocolatey (Windows)</Tab>
-        <Tab>nvm (Linux)</Tab>
+        <Tab tabIndex="0">nvm (macOS)</Tab>
+        <Tab tabIndex="0">Chocolatey (Windows)</Tab>
+        <Tab tabIndex="0">nvm (Linux)</Tab>
       </TabList>
       <TabPanel>
         <div>
