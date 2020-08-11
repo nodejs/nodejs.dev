@@ -51,7 +51,7 @@ export default function Index(): JSX.Element {
 
   return (
     <Layout title={title} description={description}>
-      <div className="home-page">
+      <main className="home-page">
         <Hero title={title} subTitle={subTitle} />
 
         <section className="node-demo-container">
@@ -87,7 +87,7 @@ export default function Index(): JSX.Element {
             Get Started
           </Link>
         </div>
-      </div>
+      </main>
     </Layout>
   );
 }
