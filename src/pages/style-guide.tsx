@@ -3,7 +3,7 @@ import '../styles/layout.scss';
 
 const StyleGuidePage = (): JSX.Element => {
   return (
-    <div style={{ maxWidth: `940px`, margin: `0 auto` }}>
+    <main style={{ maxWidth: `940px`, margin: `0 auto` }}>
       <div className="t-display1">Display1</div>
       <div className="t-display2">Display2</div>
       <div className="t-display3">Display3</div>
@@ -28,7 +28,7 @@ const StyleGuidePage = (): JSX.Element => {
       </p>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <a href="#">This is a link</a>
-    </div>
+    </main>
   );
 };
 
