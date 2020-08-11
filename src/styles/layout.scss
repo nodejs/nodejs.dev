@@ -224,11 +224,6 @@ select {
   }
 }
 
-main {
-  display: grid;
-  grid-template-columns: 28.8rem auto;
-}
-
 :focus {
   outline: var(--brand3) dotted 2px;
 }
