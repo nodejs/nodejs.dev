@@ -232,6 +232,11 @@ select {
   outline: none;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 28.8rem auto;
+}
+
 .nav {
   display: flex;
   align-items: center;

@@ -570,7 +570,7 @@ export default function APIDocsPage(): JSX.Element {
 
   return (
     <>
-      <main>
+      <main className="grid-container">
         <Layout title={title} description={description} showFooter={false}>
           <nav className="api-nav">
             <ul className="api-nav__list">
