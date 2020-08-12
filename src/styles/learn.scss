@@ -208,6 +208,12 @@
 
   .side-nav__list {
     top: 24px;
+    height: 0;
+    overflow: hidden;
+    .side-nav--open & {
+      overflow: visible;
+      height: auto;
+    }
   }
 
   .side-nav__title {
