@@ -4,9 +4,17 @@ export interface HomepageData {
     html: string;
     frontmatter: {
       title: string;
+      displayTitle: string;
       subTitle: string;
       description: string;
       learnLinkText: string;
+      nodeFeatureHeader1: string;
+      nodeFeatureHeader2: string;
+      nodeFeatureHeader3: string;
+      nodeFeature1: string;
+      nodeFeature2: string;
+      nodeFeature3: string;
+      nodeFeatureAltText: string;
     };
   };
 }
