@@ -1,5 +1,6 @@
 ---
-title: Run JavaScript Everywhere.
+title: homepage
+displayTitle: Run JavaScript Everywhere.
 subTitle: 'Node.js is a free, open-sourced, cross-platform JavaScript run-time environment that lets developers write command line tools and server-side scripts outside of a browser.'
 description: Welcome to Node.js!
 leafsIllustrationFront: ./images/illustrations/leafs-front.svg
