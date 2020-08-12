@@ -72,7 +72,7 @@ The second is used to return data to the caller.
 In this case with:
 
 ```js
-res.statusCode = 200;
+res.statusCode = 200
 ```
 
 we set the statusCode property to 200, to indicate a successful response.
@@ -80,13 +80,13 @@ we set the statusCode property to 200, to indicate a successful response.
 We set the Content-Type header:
 
 ```js
-res.setHeader('Content-Type', 'text/plain');
+res.setHeader('Content-Type', 'text/plain')
 ```
 
 and we close the response, adding the content as an argument to `end()`:
 
 ```js
-res.end('Hello World\n');
+res.end('Hello World\n')
 ```
 
 ## Node.js Frameworks and Tools
@@ -95,15 +95,15 @@ Node.js is a low-level platform. In order to make things easy and exciting for d
 
 Many of those established over time as popular options. Here is a non-comprehensive list of the ones worth learning:
 
-- [**AdonisJs**](https://adonisjs.com/): A full-stack framework highly focused on developer ergonomics, stability, and confidence. Adonis is one of the fastest Node.js web frameworks.
-- [**Express**](https://expressjs.com/): It provides one of the most simple yet powerful ways to create a web server. Its minimalist approach, unopinionated, focused on the core features of a server, is key to its success.
-- [**Fastify**](https://fastify.io/): A web framework highly focused on providing the best developer experience with the least overhead and a powerful plugin architecture. Fastify is one of the fastest Node.js web frameworks.
-- [**hapi**](https://hapijs.com): A rich framework for building applications and services that enables developers to focus on writing reusable application logic instead of spending time building infrastructure.
-- [**koa**](http://koajs.com/): It is built by the same team behind Express, aims to be even simpler and smaller, building on top of years of knowledge. The new project born out of the need to create incompatible changes without disrupting the existing community.
-- [**Loopback.io**](https://loopback.io/): Makes it easy to build modern applications that require complex integrations.
-- [**Meteor**](https://meteor.com): An incredibly powerful full-stack framework, powering you with an isomorphic approach to building apps with JavaScript, sharing code on the client and the server. Once an off-the-shelf tool that provided everything, now integrates with frontend libs [React](https://reactjs.org/), [Vue](https://vuejs.org/), and [Angular](https://angular.io). Can be used to create mobile apps as well.
-- [**Micro**](https://github.com/zeit/micro): It provides a very lightweight server to create asynchronous HTTP microservices.
-- [**NestJS**](https://nestjs.com/): A TypeScript based progressive Node.js framework for building enterprise-grade efficient, reliable and scalable server-side applications.
-- [**Next.js**](https://nextjs.org/): A framework to render server-side rendered [React](https://reactjs.org/) applications.
-- [**Nx**](https://nx.dev/): A toolkit for full-stack monorepo development using NestJS, Express, [React](https://reactjs.org/), [Angular](https://angular.io), and more! Nx helps scale your development from one team building one application to many teams collaborating on multiple applications!
-- [**Socket.io**](https://socket.io/): A real-time communication engine to build network applications.
+* [**AdonisJs**](https://adonisjs.com/): A full-stack framework highly focused on developer ergonomics, stability, and confidence. Adonis is one of the fastest Node.js web frameworks.
+* [**Express**](https://expressjs.com/): It provides one of the most simple yet powerful ways to create a web server. Its minimalist approach, unopinionated, focused on the core features of a server, is key to its success.
+* [**Fastify**](https://fastify.io/): A web framework highly focused on providing the best developer experience with the least overhead and a powerful plugin architecture. Fastify is one of the fastest Node.js web frameworks.
+* [**hapi**](https://hapijs.com): A rich framework for building applications and services that enables developers to focus on writing reusable application logic instead of spending time building infrastructure.
+* [**koa**](http://koajs.com/): It is built by the same team behind Express, aims to be even simpler and smaller, building on top of years of knowledge. The new project born out of the need to create incompatible changes without disrupting the existing community.
+* [**Loopback.io**](https://loopback.io/): Makes it easy to build modern applications that require complex integrations.
+* [**Meteor**](https://meteor.com): An incredibly powerful full-stack framework, powering you with an isomorphic approach to building apps with JavaScript, sharing code on the client and the server. Once an off-the-shelf tool that provided everything, now integrates with frontend libs [React](https://reactjs.org/), [Vue](https://vuejs.org/), and [Angular](https://angular.io). Can be used to create mobile apps as well.
+* [**Micro**](https://github.com/zeit/micro): It provides a very lightweight server to create asynchronous HTTP microservices.
+* [**NestJS**](https://nestjs.com/): A TypeScript based progressive Node.js framework for building enterprise-grade efficient, reliable and scalable server-side applications.
+* [**Next.js**](https://nextjs.org/): A framework to render server-side rendered [React](https://reactjs.org/) applications.
+* [**Nx**](https://nx.dev/): A toolkit for full-stack monorepo development using NestJS, Express, [React](https://reactjs.org/), [Angular](https://angular.io), and more! Nx helps scale your development from one team building one application to many teams collaborating on multiple applications!
+* [**Socket.io**](https://socket.io/): A real-time communication engine to build network applications.

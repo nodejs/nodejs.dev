@@ -16,7 +16,6 @@ If we omit the filename, we use it in REPL mode:
 ```sh
 node
 ```
-
 > Note: REPL also known as Read Evaluate Print Loop is a programming language environment(Basically a console window) that takes single expression as user input and returns the result back to the console after execution.
 
 If you try it now in your terminal, this is what happens:
@@ -73,13 +72,13 @@ If after some code you type `_`, that is going to print the result of the last o
 
 The REPL has some special commands, all starting with a dot `.`. They are
 
-- `.help`: shows the dot commands help
-- `.editor`: enables editor mode, to write multiline JavaScript code with ease. Once you are in this mode, enter ctrl-D to run the code you wrote.
-- `.break`: when inputting a multi-line expression, entering the .break command will abort further input. Same as pressing ctrl-C.
-- `.clear`: resets the REPL context to an empty object and clears any multi-line expression currently being input.
-- `.load`: loads a JavaScript file, relative to the current working directory
-- `.save`: saves all you entered in the REPL session to a file (specify the filename)
-- `.exit`: exits the repl (same as pressing ctrl-C two times)
+* `.help`: shows the dot commands help
+* `.editor`: enables editor mode, to write multiline JavaScript code with ease. Once you are in this mode, enter ctrl-D to run the code you wrote.
+* `.break`: when inputting a multi-line expression, entering the .break command will abort further input. Same as pressing ctrl-C.
+* `.clear`: resets the REPL context to an empty object and clears any multi-line expression currently being input.
+* `.load`: loads a JavaScript file, relative to the current working directory
+* `.save`: saves all you entered in the REPL session to a file (specify the filename)
+* `.exit`: exits the repl (same as pressing ctrl-C two times)
 
 The REPL knows when you are typing a multi-line statement without the need to invoke `.editor`.
 
