@@ -57,7 +57,7 @@
     "format-check": "prettier --check \"**/*.{ts,tsx,js,scss}\"",
     "update-snapshot": "npm run test -- --updateSnapshot",
     "pretest": "npm run format && npm run format-check && npm run lint",
-    "test": "npx jest",
+    "test": "jest",
     "test-watch": "npx jest --watch",
     "test-ci": "npm run test -- --coverage && codecov",
     "lint": "eslint src --ext .js,.ts,.tsx",
