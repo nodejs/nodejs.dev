@@ -6,11 +6,24 @@
   --section-margin-bottom: 340px;
 }
 
+@media (min-width: 1100px) {
+  .home-page {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .home-page {
+    max-width: 800px;
+  }
+}
+
 .node-demo-container {
   position: relative;
 }
 
 .node-demo {
+  position: relative;
   max-width: 832px;
   width: 90vw;
   margin: 0 auto;
@@ -65,7 +78,7 @@
   box-sizing: border-box;
   padding: var(--space-08) var(--space-24);
   font-weight: var(--font-weight-semibold);
-  background: var(--color-fill-action);
+  background: var(--brand6);
   color: var(--black0);
   border-radius: var(--space-04);
   text-decoration: none;
@@ -131,7 +144,7 @@
   display: none;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 870px) {
   .only-desktop {
     display: none;
   }

@@ -1,7 +1,7 @@
 <p align="center">
   <br>
   <a href="https://nodejs.dev">
-    <img src="./src/images/nodejs-logo-light-mode.svg" width="200"/>
+    <img src="./src/images/logos/nodejs-logo-light-mode.svg" width="200"/>
   </a>
 </p>
 
@@ -22,7 +22,7 @@
   <br>
 </p>
 
-**You can find the latest [Figma design protype here](https://www.figma.com/proto/lOxAGGg5KXb6nwie7zXkz6/NJ---Design-System?node-id=1276%3A10492&viewport=-232%2C-1378%2C0.21998274326324463&scaling=min-zoom).**
+**You can find the latest [Figma design protype here](https://www.figma.com/proto/lOxAGGg5KXb6nwie7zXkz6/NJ---Design-System?node-id=3546%3A12092&viewport=-232%2C-1378%2C0.21998274326324463&scaling=min-zoom).**
 
 ## 🚀 Get Started
 
@@ -44,7 +44,7 @@
 
    Your site is now running at `http://localhost:8000`!
 
-   _Note: You'll also see a second link: `http://localhost:8000___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://next.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+   _Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://next.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
 ## 🧐 What's inside?
 
@@ -243,4 +243,4 @@ phase.
 [code of conduct]: https://github.com/nodejs/admin/blob/master/CODE_OF_CONDUCT.md
 [contributing guidelines]: ./CONTRIBUTING.md
 [meeting notes]: ./meetings
-[query issues for "meeting"]: https://github.com/nodejs/website-redesign/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+Meeting+in%3Atitle
+[query issues for "meeting"]: https://github.com/nodejs/nodejs.dev/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+Meeting+in%3Atitle

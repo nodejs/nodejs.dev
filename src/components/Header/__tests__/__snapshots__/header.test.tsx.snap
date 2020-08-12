@@ -26,17 +26,6 @@ exports[`Tests for Header component renders correctly 1`] = `
     className="nav__tabs__container"
   >
     <li
-      className="nav__tabs"
-    >
-      <a
-        className="activeStyleTab"
-        href="/learn"
-        partiallyActive={true}
-      >
-        Learn
-      </a>
-    </li>
-    <li
       className="nav__tabs only-desktop"
     >
       <a
@@ -52,6 +41,18 @@ exports[`Tests for Header component renders correctly 1`] = `
       className="nav__tabs"
     >
       <a
+        activeClassName="active"
+        className="activeStyleTab"
+        href="/learn"
+        partiallyActive={true}
+      >
+        Learn
+      </a>
+    </li>
+    <li
+      className="nav__tabs only-mobile"
+    >
+      <a
         className="activeStyleTab only-mobile"
         href="https://nodejs.org/en/docs/"
         rel="noopener noreferrer"
@@ -65,7 +66,9 @@ exports[`Tests for Header component renders correctly 1`] = `
     >
       <a
         className="activeStyleTab"
-        href="/download"
+        href="https://nodejs.org/en/download/"
+        rel="noopener noreferrer"
+        target="_blank"
       >
         Download
       </a>

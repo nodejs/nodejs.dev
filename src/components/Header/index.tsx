@@ -28,11 +28,6 @@ const Header = ({
     </div>
 
     <ul className="nav__tabs__container">
-      <li className="nav__tabs">
-        <Link to="/learn" className="activeStyleTab" partiallyActive>
-          Learn
-        </Link>
-      </li>
       <li className="nav__tabs only-desktop">
         <a
           className="activeStyleTab"
@@ -44,6 +39,16 @@ const Header = ({
         </a>
       </li>
       <li className="nav__tabs">
+        <Link
+          to="/learn"
+          className="activeStyleTab"
+          activeClassName="active"
+          partiallyActive
+        >
+          Learn
+        </Link>
+      </li>
+      <li className="nav__tabs only-mobile">
         <a
           className="activeStyleTab only-mobile"
           target="_blank"
@@ -54,9 +59,18 @@ const Header = ({
         </a>
       </li>
       <li className="nav__tabs">
-        <Link className="activeStyleTab" to="/download">
+        <a
+          href="https://nodejs.org/en/download/"
+          className="activeStyleTab"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Download
-        </Link>
+        </a>
+        {/* TODO - Add Releases Page
+         <Link className="activeStyleTab" to="/download">
+          Download
+        </Link> */}
       </li>
     </ul>
 

@@ -43,7 +43,6 @@
 }
 
 .circular-container,
-.circular-container:hover,
 .circular-container:focus {
   display: flex;
   align-items: center;
@@ -57,12 +56,35 @@
   color: var(--black0);
   margin: 0 var(--space-16);
   font-weight: var(--font-weight-semibold);
-  background-color: var(--color-fill-action);
+  background-color: var(--brand6);
+  transition: background-color 0.2s ease-out;
+
+  &:hover {
+    color: var(--black0);
+    background-color: var(--brand7);
+  }
 
   &.inverse {
     background-color: transparent;
-    color: var(--color-fill-action);
-    border: var(--color-fill-action) var(--space-02) solid;
+    border: var(--brand6) var(--space-02) solid;
+    transition: background-color 0.2s ease-out;
+  }
+
+  &.inverse:hover {
+    background-color: var(--brand7);
+    border: var(--brand7) var(--space-02) solid;
+  }
+
+  .dark-mode &.inverse {
+    color: var(--black0);
+  }
+
+  .light-mode &.inverse {
+    color: var(--brand6);
+  }
+
+  .light-mode &.inverse:hover {
+    color: var(--black0);
   }
 }
 

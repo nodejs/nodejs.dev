@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 function createSlug(title) {
   let slug = title.toLowerCase().trim();
 

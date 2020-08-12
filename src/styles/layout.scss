@@ -83,6 +83,8 @@ p {
   font-weight: var(--font-weight-normal);
   color: var(--color-text-secondary);
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin: 0 0 var(--space-4) 0;
 }
 
 .t-link,
@@ -222,7 +224,7 @@ select {
   }
 }
 
-main {
+.grid-container {
   display: grid;
   grid-template-columns: 28.8rem auto;
 }
@@ -243,8 +245,9 @@ main {
   border-bottom: var(--space-01) solid var(--black2);
   height: var(--nav-height);
   left: 0;
-  position: fixed;
   right: 0;
+  width: 100%;
+  position: fixed;
   top: 0;
   z-index: 999;
 }
@@ -339,6 +342,21 @@ main {
   .footer__link {
     text-decoration: none;
   }
+}
+
+.nav__tabs {
+  cursor: pointer;
+  text-decoration: none;
+  color: green;
+  border-bottom: 3px solid transparent;
+}
+
+.activeStyleTab:hover {
+  border-bottom: 4px solid green;
+}
+
+.active {
+  border-bottom: 4px solid green;
 }
 
 /* Start: Article Reader HTML Reset */
