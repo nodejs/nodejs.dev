@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
@@ -7,6 +7,8 @@ import Layout from '../components/Layout';
 import '../util/konami';
 
 import '../styles/index.scss';
+
+import { HomepageData } from '../types';
 
 import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
@@ -43,7 +45,7 @@ const NodeFeature = ({
   );
 };
 
-export default function Index(): JSX.Element {
+export default function Index({ data }: HomepageProps): JSX.Element {
   const title = 'Run JavaScript Everywhere.';
   const subTitle =
     'Node.js is a free, open-sourced, cross-platform JavaScript run-time environment that lets developers write command line tools and server-side scripts outside of a browser.';
@@ -84,7 +86,7 @@ export default function Index(): JSX.Element {
 
         <div className="download-lts-container">
           <Link to="/learn" className="circular-container">
-            Get Started
+            {data.page.frontmatter.learnLinkText}
           </Link>
         </div>
       </main>
@@ -97,3 +99,24 @@ interface Props {
   featureText: string;
   featureHeader: string;
 }
+
+interface HomepageProps {
+  data: HomepageData;
+}
+
+export const query = graphql`
+  query pageQuery {
+    page: markdownRemark(
+      fields: { slug: { eq: "run-javascript-everywhere" } }
+    ) {
+      id
+      html
+      frontmatter {
+        title
+        subTitle
+        description
+        learnLinkText
+      }
+    }
+  }
+`;
