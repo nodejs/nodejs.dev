@@ -577,7 +577,7 @@ export default function APIDocsPage(): JSX.Element {
               <li className="api-nav__list-item">
                 {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                 <label
-                  className="visually-hidden"
+                  className="sr-only"
                   htmlFor="api-nav__version__select-id"
                 >
                   Select API version
