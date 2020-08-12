@@ -575,7 +575,15 @@ export default function APIDocsPage(): JSX.Element {
           <nav className="api-nav">
             <ul className="api-nav__list">
               <li className="api-nav__list-item">
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                <label
+                  className="visually-hidden"
+                  htmlFor="api-nav__version__select-id"
+                >
+                  Select API version
+                </label>
                 <select
+                  id="api-nav__version__select-id"
                   className="api-nav__version"
                   onChange={(e): void => {
                     setPage(null);
