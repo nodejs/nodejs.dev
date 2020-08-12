@@ -137,8 +137,6 @@ Our current focus is on site development. Development is happening in the [nodej
 
 ### Team
 
-**[@nodejs/website-redesign](https://github.com/nodejs/website-redesign)**
-
 Any person who wants to contribute to the initiative is welcome! Please read
 [Contributing Guidelines][] and join the effort 🙌.
 
@@ -148,6 +146,39 @@ the project will be added to a future phase as the project moves forward.
 Any member of the website-redesign initiative who prefers to begin contributing
 at a specific future phase is welcome to make a PR adding their handle to that
 phase.
+
+**[@nodejs/nodejs-dev](https://github.com/nodejs/nodejs.dev)**
+
+- [@darcyclarke](https://github.com/darcyclarke) - **Darcy Clarke** 
+- [@MylesBorins](https://github.com/mylesborins) - **Myles Borins**
+- [@SMotaal](https://github.com/smotaal) - **Saleh Abdel Motaal**
+- [@ahmadawais](https://github.com/ahmadawais) - **Ahmad Awais**
+- [@argyleink](https://github.com/argyleink) - **Adam Argyle** 
+- [@timothyis](https://github.com/timothyis) - **Timothy** 
+- [@LaRuaNa](https://github.com/laruana) - **Onur Laru** 
+- [@sagirk](https://github.com/sagirk) - **Sagir Khan** 
+- [@imbhargav5](https://github.com/imbhargav5) - **Bhargav Ponnapalli** 
+- [@designMoreWeb](https://github.com/designmoreweb) - **Divy Tolia**
+- [@BeniCheni](https://github.com/benicheni) - **Benjamin Chen**
+- [@kasicka](https://github.com/kasicka) - **Zuzana Svetlíková** 
+- [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller** 
+- [@benhalverson](https://github.com/benhalverson) - **Ben Halverson** 
+- [@skllcrn](https://github.com/skllcrn) - **Christopher** 
+- [@mbj36](https://github.com/mbj36) - **Mohit kumar Bajoria** 
+- [@keywordnew](https://github.com/keywordnew) - **Manil Chowdhury** 
+- [@ogonzal87](https://github.com/ogonzal87) - **Oscar Gonzalez** 
+- [@tstreamDOTh](https://github.com/tstreamdoth) - **T Thiyagaraj** 
+- [@pierreneter](https://github.com/pierreneter) - **pierreneter** 
+- [@jonchurch](https://github.com/jonchurch) - **Jonathan Church** 
+- [@ollelauribostrom](https://github.com/ollelauribostrom) - **Olle Lauri Boström**
+- [@maddhruv](https://github.com/maddhruv) - **Dhruv Jain**
+- [@ZYSzys](https://github.com/zyszys) - **ZYSzys** 
+- [@codeekage](https://github.com/codeekage) - **Abraham Jr. Agiri** 
+- [@saulonunesdev](https://github.com/saulonunesdev) - **Saulo Nunes**
+- [@alexandrtovmach](https://github.com/alexandrtovmach) - **Alexandr Tovmach**
+
+
+**[@nodejs/website-redesign](https://github.com/nodejs/website-redesign)**
 
 - [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**, CommComm
   Co-champion
