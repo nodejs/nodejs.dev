@@ -63,7 +63,7 @@
     "serve": "npm run build && clear && gatsby serve",
     "md-check": "remark -qf .",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o ./public/storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
