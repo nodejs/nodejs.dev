@@ -58,7 +58,7 @@
     "update-snapshot": "npm run test -- --updateSnapshot",
     "pretest": "npm run format && npm run format-check && npm run lint",
     "test": "jest",
-    "test-watch": "npx jest --watch",
+    "test-watch": "jest --watch",
     "test-ci": "npm run test -- --coverage && codecov",
     "lint": "eslint src --ext .js,.ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
