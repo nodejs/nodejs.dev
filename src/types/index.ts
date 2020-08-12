@@ -1,3 +1,16 @@
+export interface HomepageData {
+  page: {
+    id: string;
+    html: string;
+    frontmatter: {
+      title: string;
+      subTitle: string;
+      description: string;
+      learnLinkText: string;
+    };
+  };
+}
+
 export interface LearnPageContext {
   slug: string;
   relativePath: string;
