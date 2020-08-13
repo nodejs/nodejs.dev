@@ -24,7 +24,7 @@ export default function DownloadPage(): JSX.Element {
 
   return (
     <Layout title={title} description={description}>
-      <article style={{ width: '100%' }} className="article-reader">
+      <main style={{ width: '100%' }} className="article-reader">
         <p>
           Download the Node.js source code, a pre-built installer for your
           platform, or install via package manager.
@@ -33,7 +33,7 @@ export default function DownloadPage(): JSX.Element {
         <ReleaseToggle selected={ltsSelected} onToggle={setLtsSelected} />
         <ReleaseCards line={selectedLine} />
         <ReleaseTable releases={releaseHistory} />
-      </article>
+      </main>
     </Layout>
   );
 }
