@@ -57,7 +57,7 @@ jobs:
 
       - name: Run Storybook Build
         if: steps.comment.outputs.result == 'true'
-        run: npm run storybook-build
+        run: npm run build-storybook
         env:
           PATH_PREFIX: ${{ github.event.issue.number }}/
 
