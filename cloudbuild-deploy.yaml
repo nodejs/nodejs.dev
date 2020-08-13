@@ -21,6 +21,6 @@ steps:
     args: ['run', 'build']
   - name: 'node:12'
     entrypoint: npm
-    args: ['run', 'storybook-build']
+    args: ['run', 'build-storybook']
   - name: 'gcr.io/$PROJECT_ID/firebase'
     args: ['deploy', '--project', '$PROJECT_ID', '--only', 'hosting']
