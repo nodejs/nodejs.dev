@@ -226,7 +226,9 @@ select {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 28.8rem auto;
+  @media (min-width: 800px) {
+    grid-template-columns: 28.8rem auto;
+  }
 }
 
 :focus {
