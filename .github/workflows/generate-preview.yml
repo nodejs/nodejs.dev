@@ -1,4 +1,4 @@
-name: Label to staging
+name: Generate Preview
 
 on:
   pull_request_target:
@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event.label.name == 'start-ci'
+    if: github.event.label.name == 'create-preview'
     steps:
 
       - uses: actions/checkout@v2
@@ -21,6 +21,30 @@ jobs:
           service_account_email: ${{ secrets.GCP_SA_EMAIL }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
+
+      - name: Remove create-preview label
+        uses: actions/github-script@0.9.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.removeLabels({
+              issue_number: github.event.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: ['create-preview']
+            })
+
+      - name: Add generating-preview label
+        uses: actions/github-script@0.9.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.addLabels({
+              issue_number: github.event.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: ['create-preview']
+            })
 
       - name: Install Dependencies
         run: npm ci
@@ -50,14 +74,27 @@ jobs:
               body: 'Please find a preview at: https://staging.nodejs.dev/${{ github.event.pull_request.number }}/'
             });
 
-      - name: Remove label
+      - name: Remove generating-preview label
         uses: actions/github-script@0.9.0
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             github.issues.removeLabels({
-              issue_number: context.pull_request.number,
+              issue_number: github.event.pull_request.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              name: ['start-ci']
+              name: ['generating-preview']
+            })
+
+      - name: Add failure label if job broke
+        if: ${{ failure() }}
+        uses: actions/github-script@0.9.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.addLabels({
+              issue_number: github.event.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: ['preview-failed']
             })
