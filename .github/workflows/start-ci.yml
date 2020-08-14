@@ -51,7 +51,7 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             github.issues.createComment({
-              issue_number: context.pull_request.number,
+              issue_number: context.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: 'Please find a preview at: https://staging.nodejs.dev/${{ github.event.pull_request.number }}/'
@@ -63,7 +63,7 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             github.issues.removeLabels({
-              issue_number: context.pull_request.number,
+              issue_number: context.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
               name: ['start-ci']
