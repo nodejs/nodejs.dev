@@ -13,7 +13,7 @@ const InstallTabs = (): JSX.Element => {
   const systems = {
     WIN: ['Chocolatey (Windows)', 'nvm (macOS)', 'nvm (Linux)'],
     MAC: ['nvm (macOS)', 'Chocolatey (Windows)', 'nvm (Linux)'],
-    LINUX: ['nvm (Linux', 'nvm (macOS)', 'Chocolatey (Windows)'],
+    LINUX: ['nvm (Linux)', 'nvm (macOS)', 'Chocolatey (Windows)'],
     UNKNOWN: ['Chocolatey (Windows)', 'nvm (macOS)', 'nvm (Linux)'],
   };
 
