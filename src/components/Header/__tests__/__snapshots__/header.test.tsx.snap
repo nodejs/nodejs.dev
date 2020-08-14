@@ -2,6 +2,7 @@
 
 exports[`Tests for Header component renders correctly 1`] = `
 <nav
+  aria-label="Primary"
   className="nav"
 >
   <div
