@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+import './footer.scss';
 import { css, SerializedStyles } from '@emotion/core';
 
 const dropDownData = [
