@@ -32,7 +32,6 @@ exports.createPages = ({ graphql, actions }) => {
                     description
                     authors
                     section
-                    redirects
                   }
                   fields {
                     slug
@@ -70,7 +69,7 @@ exports.createPages = ({ graphql, actions }) => {
         edges.forEach(({ node }, index) => {
           const {
             fields: { slug },
-            frontmatter: { title, section, redirects },
+            frontmatter: { title, section },
             parent: { relativePath },
           } = node;
 
