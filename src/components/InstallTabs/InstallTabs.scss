@@ -92,21 +92,18 @@
         user-select: none;
       }
     }
-    &__docs-button {
+    &__docs-link {
+      box-sizing: border-box;
+      display: block;
       border-radius: var(--space-04);
       padding: var(--space-08) var(--space-16);
       position: absolute;
       bottom: 2rem;
       right: 2rem;
-    }
-    &__docs-button-text {
       text-decoration: none;
-      box-sizing: border-box;
-      width: 17rem;
-      height: 4rem;
-      color: var(--black5);
-      font-weight: var(--font-weight-semibold);
+
       &:hover {
+        text-decoration: none;
         color: var(--pink5);
       }
     }

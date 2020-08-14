@@ -32,16 +32,14 @@ const InstallTabs = (): JSX.Element => {
           </ShellBox>
           <br />
           <br />
-          <button type="button" className="install__docs-button">
-            <a
-              className="install__docs-button-text"
-              href="https://nodejs.org/en/download/package-manager/#nvm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read documentation
-            </a>
-          </button>
+          <a
+            className="install__docs-link"
+            href="https://nodejs.org/en/download/package-manager/#nvm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read documentation
+          </a>
         </div>
       </TabPanel>
       <TabPanel>
@@ -53,16 +51,14 @@ const InstallTabs = (): JSX.Element => {
           </ShellBox>
           <br />
           <br />
-          <button type="button" className="install__docs-button">
-            <a
-              className="install__docs-button-text"
-              href="https://nodejs.org/en/download/package-manager/#windows"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read documentation
-            </a>
-          </button>
+          <a
+            className="install__docs-link"
+            href="https://nodejs.org/en/download/package-manager/#windows"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read documentation
+          </a>
         </div>
       </TabPanel>
       <TabPanel>
@@ -89,16 +85,14 @@ g++ libgcc linux-headers grep util-linux binutils findutils"
           <br />
           <br />
           {/* TODO when the new docs page is ready link to that page.  */}
-          <button type="button" className="install__docs-button">
-            <a
-              className="install__docs-button-text"
-              href="https://nodejs.org/en/download/package-manager/#nvm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read documentation
-            </a>
-          </button>
+          <a
+            className="install__docs-link"
+            href="https://nodejs.org/en/download/package-manager/#nvm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read documentation
+          </a>
         </div>
       </TabPanel>
     </Tabs>
