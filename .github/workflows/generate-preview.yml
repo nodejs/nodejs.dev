@@ -61,16 +61,3 @@ jobs:
               repo: context.repo.repo,
               body: 'Please find a preview at: https://staging.nodejs.dev/${{ github.event.pull_request.number }}/'
             });
-
-      - name: Add failure label if job broke
-        if: ${{ failure() }}
-        uses: actions/github-script@0.9.0
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            github.issues.addLabels({
-              issue_number: github.event.pull_request.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: ['preview-failed']
-            })
