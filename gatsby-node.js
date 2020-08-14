@@ -126,7 +126,7 @@ exports.createPages = ({ graphql, actions }) => {
           createRedirect({
             fromPath: `/${page.slug}`,
             toPath: `/learn/${page.slug}`,
-            isPermanent: true
+            isPermanent: true,
           });
           if (page.slug === 'introduction-to-nodejs') {
             createPage({
