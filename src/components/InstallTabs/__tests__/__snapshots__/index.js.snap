@@ -106,19 +106,14 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       </pre>
       <br />
       <br />
-      <button
-        className="install__docs-button"
-        type="button"
+      <a
+        className="install__docs-link"
+        href="https://nodejs.org/en/download/package-manager/#windows"
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="install__docs-button-text"
-          href="https://nodejs.org/en/download/package-manager/#windows"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Read documentation
-        </a>
-      </button>
+        Read documentation
+      </a>
     </div>
   </div>
   <div
