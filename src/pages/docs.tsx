@@ -572,7 +572,7 @@ export default function APIDocsPage(): JSX.Element {
     <>
       <main className="grid-container">
         <Layout title={title} description={description} showFooter={false}>
-          <nav className="api-nav">
+          <nav aria-label="Secondary" className="api-nav">
             <ul className="api-nav__list">
               <li className="api-nav__list-item">
                 {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}

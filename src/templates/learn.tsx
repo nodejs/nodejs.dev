@@ -27,7 +27,11 @@ const LearnLayout = ({
   <>
     <main className="grid-container">
       <Layout title={title} description={description} showFooter={false}>
-        <Navigation currentSlug={slug} sections={navigationData} />
+        <Navigation
+          currentSlug={slug}
+          label="Secondary"
+          sections={navigationData}
+        />
         <Article
           title={title}
           html={html}
