@@ -14,12 +14,6 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Set variables
-        run: |
-          echo "::set-env name=REPOSITORY::$(echo ${{ github.repository }} | cut -d/ -f2)"
-          echo "::set-env name=OWNER::${{ github.repository_owner }}"
-          echo "::set-env name=PR_ID::$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 })"
-
       - name: Setup GCloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
@@ -34,9 +28,9 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             github.issues.removeLabel({
-              issue_number: ${{ env.PR_ID }},
-              owner: ${{ env.OWNER }},
-              repo: ${{ env.REPOSITORY }},
+              issue_number: ${{ github.event.pull_request.number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               name: ['create-preview']
             })
 
@@ -46,12 +40,12 @@ jobs:
       - name: Run Gatsby Build
         run: npm run build-ci
         env:
-          PATH_PREFIX: ${{ env.PR_ID }}/
+          PATH_PREFIX: ${{ github.event.pull_request.number }}/
 
       - name: Run Storybook Build
         run: npm run build-storybook
         env:
-          PATH_PREFIX: ${{ env.PR_ID }}/
+          PATH_PREFIX: ${{ github.event.pull_request.number }}/
 
       - name: Upload to GCS
         run: gsutil -m rsync -R public gs://staging.nodejs.dev/${{ github.event.pull_request.number }}/
@@ -62,8 +56,8 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             github.issues.createComment({
-              issue_number: ${{ env.PR_ID }},
-              owner: ${{ env.OWNER }},
-              repo: ${{ env.REPOSITORY }},
+              issue_number: ${{ github.event.pull_request.number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               body: 'Please find a preview at: https://staging.nodejs.dev/${{ github.event.pull_request.number }}/'
             });
