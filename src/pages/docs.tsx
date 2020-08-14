@@ -570,12 +570,20 @@ export default function APIDocsPage(): JSX.Element {
 
   return (
     <>
-      <main>
+      <main className="grid-container">
         <Layout title={title} description={description} showFooter={false}>
-          <nav className="api-nav">
+          <nav aria-label="Secondary" className="api-nav">
             <ul className="api-nav__list">
               <li className="api-nav__list-item">
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                <label
+                  className="sr-only"
+                  htmlFor="api-nav__version__select-id"
+                >
+                  Select API version
+                </label>
                 <select
+                  id="api-nav__version__select-id"
                   className="api-nav__version"
                   onChange={(e): void => {
                     setPage(null);

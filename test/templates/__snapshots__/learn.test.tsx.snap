@@ -2,7 +2,9 @@
 
 exports[`Learn Template renders correctly 1`] = `
 <React.Fragment>
-  <main>
+  <main
+    className="grid-container"
+  >
     <Layout
       description="test-description"
       showFooter={false}
@@ -10,6 +12,7 @@ exports[`Learn Template renders correctly 1`] = `
     >
       <Navigation
         currentSlug="test-slug"
+        label="Secondary"
         sections={
           Object {
             "test-section": Array [

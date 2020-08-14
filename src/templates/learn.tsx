@@ -25,9 +25,13 @@ const LearnLayout = ({
   pageContext: { slug, next, previous, relativePath, navigationData },
 }: Props): React.ReactNode => (
   <>
-    <main>
+    <main className="grid-container">
       <Layout title={title} description={description} showFooter={false}>
-        <Navigation currentSlug={slug} sections={navigationData} />
+        <Navigation
+          currentSlug={slug}
+          label="Secondary"
+          sections={navigationData}
+        />
         <Article
           title={title}
           html={html}
