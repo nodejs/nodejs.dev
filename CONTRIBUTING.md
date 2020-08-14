@@ -56,8 +56,6 @@ In the case of an objection being raised in a pull request by another collaborat
 
 ## Getting Started
 
-For feature development you should be working from the staging branch.
-
 * Fork
 * Clone your fork `git clone git@github.com:<githubid>/nodejs.dev.git`
 * cd into your project

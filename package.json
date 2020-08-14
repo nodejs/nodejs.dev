@@ -5,9 +5,17 @@
   "author": "Adam Miller <ammiller@linkedin.com>",
   "private": true,
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.27",
     "@emotion/core": "^10.0.7",
     "@smotaal.io/dark-mode-controller": "<0.5",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
     "@types/react-tabs": "2.3.1",
+    "babel-preset-react-app": "^9.1.2",
+    "color": "^3.1.2",
+    "color-string": "^1.5.3",
     "dotenv": "^8.2.0",
     "emotion": "^10.0.27",
     "emotion-server": "^10.0.27",
@@ -47,15 +55,17 @@
     "start": "gatsby develop",
     "format": "prettier --write \"**/*.{ts,tsx,js,scss}\" && npm run lint:fix",
     "format-check": "prettier --check \"**/*.{ts,tsx,js,scss}\"",
-    "jest": "jest",
-    "update-snapshot": "jest --updateSnapshot",
-    "test": "npm run format && npm run format-check && npm run lint && npm run jest",
-    "test-watch": "npm run jest --watch",
-    "test-ci": "npm run test --coverage && codecov",
+    "update-snapshot": "npm run test -- --updateSnapshot",
+    "pretest": "npm run format && npm run format-check && npm run lint",
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "test-ci": "npm run test -- --coverage && codecov",
     "lint": "eslint src --ext .js,.ts,.tsx",
-    "lint:fix": "npm run lint --fix",
+    "lint:fix": "npm run lint -- --fix",
     "serve": "npm run build && clear && gatsby serve",
-    "md-check": "remark -qf ."
+    "md-check": "remark -qf .",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -o ./public/storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -84,7 +94,8 @@
     "react-test-renderer": "^16.13.1",
     "remark-cli": "^8.0.0",
     "remark-frontmatter": "^2.0.0",
-    "remark-preset-lint-node": "^1.13.0"
+    "remark-preset-lint-node": "^1.13.0",
+    "babel-loader": "^8.1.0"
   },
   "repository": {
     "type": "git",
