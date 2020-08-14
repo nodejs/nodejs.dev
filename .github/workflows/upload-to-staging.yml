@@ -37,16 +37,8 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
-      - uses: actions/cache@v1
-        if: steps.comment.outputs.result == 'true'
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
       - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true' && steps.comment.outputs.result == 'true'
+        if: steps.comment.outputs.result == 'true'
         run: npm ci
 
       - name: Run Gatsby Build
