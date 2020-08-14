@@ -11,7 +11,6 @@ interface Props {
 const Header = ({
   darkModeController = defaultDarkModeController,
 }: Props): JSX.Element => (
-  
   <nav aria-label="Primary" className="nav">
     <div className="nav__container">
       <div className="nav__startwrapper">
