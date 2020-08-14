@@ -18,7 +18,7 @@ jobs:
         run: |
           echo "::set-env name=REPOSITORY::$(echo ${{ github.repository }} | cut -d/ -f2)"
           echo "::set-env name=OWNER::${{ github.repository_owner }}"
-          echo "::set-env name=PR_ID::$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 })"
+          echo "::set-env name=PR_ID::${{ github.event.number || github.event.pull_request.number }}"
 
       - name: Setup GCloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
