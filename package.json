@@ -14,6 +14,8 @@
     "@storybook/react": "^5.3.19",
     "@types/react-tabs": "2.3.1",
     "babel-preset-react-app": "^9.1.2",
+    "color": "^3.1.2",
+    "color-string": "^1.5.3",
     "dotenv": "^8.2.0",
     "emotion": "^10.0.27",
     "emotion-server": "^10.0.27",
@@ -63,7 +65,7 @@
     "serve": "npm run build && clear && gatsby serve",
     "md-check": "remark -qf .",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o ./public/storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
