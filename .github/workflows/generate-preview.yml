@@ -27,7 +27,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            github.issues.removeLabels({
+            github.issues.removeLabel({
               issue_number: github.event.pull_request.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -72,5 +72,5 @@ jobs:
               issue_number: github.event.pull_request.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              name: ['preview-failed']
+              labels: ['preview-failed']
             })
