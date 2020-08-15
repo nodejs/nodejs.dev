@@ -4,7 +4,7 @@ const path = require('path');
 const createSlug = require('./util-node/createSlug');
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
 
   return new Promise((resolve, reject) => {
     const docTemplate = path.resolve('./src/templates/learn.tsx');
@@ -122,6 +122,11 @@ exports.createPages = ({ graphql, actions }) => {
               relativePath: page.relativePath,
               navigationData,
             },
+          });
+          createRedirect({
+            fromPath: `/${page.slug}`,
+            toPath: `/learn/${page.slug}`,
+            isPermanent: true,
           });
           if (page.slug === 'introduction-to-nodejs') {
             createPage({
