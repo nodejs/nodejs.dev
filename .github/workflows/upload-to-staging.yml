@@ -10,11 +10,8 @@ jobs:
     if: github.event.issue.pull_request != null && github.event.comment.body == '/preview'
     steps:
       - uses: actions/checkout@v2
-
-      - name: Checkout Git Branch
-        run: |
-          git fetch origin +refs/pull/${{ github.event.issue.number }}/merge
-          git checkout FETCH_HEAD
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Setup GCloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
