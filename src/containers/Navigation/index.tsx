@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import NavigationSection from '../../components/NavigationSection';
 import { NavigationSectionData, NavigationSectionItem } from '../../types';
-import { isSmallScreen } from '../../util/isScreenWithinWidth';
+import { isMobileScreen } from '../../util/isScreenWithinWidth';
 import { scrollTo, calcNavScrollParams } from '../../util/scrollTo';
 
 interface Props {
@@ -16,12 +16,13 @@ const Navigation = ({ sections, currentSlug, label }: Props): JSX.Element => {
   const navElement = useRef<HTMLElement | null>(null);
   const toggle = (): void => setIsOpen(!isOpen);
   const onItemClick = (): void => {
-    if (isSmallScreen()) {
+    if (isMobileScreen()) {
       toggle();
     }
   };
+
   const autoScroll = async (height: number): Promise<void> => {
-    if (isOpen && !hasScrolled && navElement.current) {
+    if ((isOpen || !isMobileScreen()) && !hasScrolled && navElement.current) {
       const { newScrollPos, scrollWindow, scrollTime } = calcNavScrollParams(
         height,
         navElement.current
@@ -61,17 +62,19 @@ const Navigation = ({ sections, currentSlug, label }: Props): JSX.Element => {
       <button type="button" className="side-nav__open" onClick={toggle}>
         Menu
       </button>
-      {Object.keys(sections).map((sectionKey: string): JSX.Element[] => (
-        <NavigationSection
-          key={sectionKey}
-          title={sectionKey}
-          section={sections[sectionKey]}
-          currentSlug={currentSlug}
-          onItemClick={onItemClick}
-          readSections={readSections}
-          autoScroll={autoScroll}
-        />
-      ))}
+      {Object.keys(sections).map(
+        (sectionKey: string): JSX.Element => (
+          <NavigationSection
+            key={sectionKey}
+            title={sectionKey}
+            section={sections[sectionKey]}
+            currentSlug={currentSlug}
+            onItemClick={onItemClick}
+            readSections={readSections}
+            autoScroll={autoScroll}
+          />
+        )
+      )}
     </nav>
   );
 };
