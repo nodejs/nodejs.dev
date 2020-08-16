@@ -15,7 +15,6 @@ const InstallTabs = (): JSX.Element => {
     MAC: ['nvm (macOS)', 'Chocolatey (Windows)', 'nvm (Linux)'],
     LINUX: ['nvm (Linux)', 'nvm (macOS)', 'Chocolatey (Windows)'],
     UNKNOWN: ['Chocolatey (Windows)', 'nvm (macOS)', 'nvm (Linux)'],
-    // MOBILE: ['Chocolatey (Windows)', 'nvm (macOS)', 'nvm (Linux)'],
   };
 
   function panelSwitch(): JSX.Element {
@@ -65,12 +64,7 @@ const InstallTabs = (): JSX.Element => {
     }
   }
 
-  // if userOS doesn't match for some reason, return an empty element
-  if (systems[userOS] === undefined) {
-    return <></>;
-  }
-
-  return (
+  return systems[userOS] !== undefined ? (
     <Tabs>
       <div className="install__header">
         <div className="install__header-circles">
@@ -85,9 +79,10 @@ const InstallTabs = (): JSX.Element => {
           <Tab key={system.toString()}>{system}</Tab>
         ))}
       </TabList>
-      )}
       {panelSwitch()}
     </Tabs>
+  ) : (
+    <></>
   );
 };
 
