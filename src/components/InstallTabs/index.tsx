@@ -13,7 +13,7 @@ const InstallTabs = (): JSX.Element => {
   const systems = {
     WIN: ['Chocolatey (Windows)', 'nvm (macOS)', 'nvm (Linux)'],
     MAC: ['nvm (macOS)', 'Chocolatey (Windows)', 'nvm (Linux)'],
-    LINUX: ['nvm (Linux', 'nvm (macOS)', 'Chocolatey (Windows)'],
+    LINUX: ['nvm (Linux)', 'nvm (macOS)', 'Chocolatey (Windows)'],
     UNKNOWN: ['Chocolatey (Windows)', 'nvm (macOS)', 'nvm (Linux)'],
   };
 
@@ -64,7 +64,7 @@ const InstallTabs = (): JSX.Element => {
     }
   }
 
-  return (
+  return systems[userOS] !== undefined ? (
     <Tabs>
       <div className="install__header">
         <div className="install__header-circles">
@@ -81,6 +81,8 @@ const InstallTabs = (): JSX.Element => {
       </TabList>
       {panelSwitch()}
     </Tabs>
+  ) : (
+    <></>
   );
 };
 

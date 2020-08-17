@@ -85,5 +85,6 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-emotion',
     },
+    'gatsby-plugin-meta-redirect',
   ],
 };
