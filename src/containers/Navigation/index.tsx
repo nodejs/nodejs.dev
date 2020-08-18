@@ -7,9 +7,10 @@ import { scrollTo, calcNavScrollParams } from '../../util/scrollTo';
 interface Props {
   sections: NavigationSectionData;
   currentSlug: string;
+  label: string;
 }
 
-const Navigation = ({ sections, currentSlug }: Props): JSX.Element => {
+const Navigation = ({ sections, currentSlug, label }: Props): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [hasScrolled, setHasScrolled] = useState<boolean>(false);
   const navElement = useRef<HTMLElement | null>(null);
@@ -56,7 +57,7 @@ const Navigation = ({ sections, currentSlug }: Props): JSX.Element => {
   });
 
   return (
-    <nav className={className} ref={navElement}>
+    <nav aria-label={label} className={className} ref={navElement}>
       <button type="button" className="side-nav__open" onClick={toggle}>
         Menu
       </button>
