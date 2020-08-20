@@ -64,7 +64,7 @@ const InstallTabs = (): JSX.Element => {
     }
   }
 
-  return (
+  return systems[userOS] !== undefined ? (
     <Tabs>
       <div className="install__header">
         <div className="install__header-circles">
@@ -81,6 +81,8 @@ const InstallTabs = (): JSX.Element => {
       </TabList>
       {panelSwitch()}
     </Tabs>
+  ) : (
+    <></>
   );
 };
 
