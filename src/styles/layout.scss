@@ -224,6 +224,11 @@ tbody {
     background-color: var(--black0);
     border-bottom: 1px solid #e2e3e7;
 
+    .dark-mode & {
+      background: var(--color-fill-app);
+      border-bottom: 1px solid var(--color-border-primary);
+    }
+
     td {
       padding: var(--space-32) var(--space-14) var(--space-16);
     }
