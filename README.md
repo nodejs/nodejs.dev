@@ -44,7 +44,7 @@
 
    Your site is now running at `http://localhost:8000`!
 
-    *Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://next.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).*
+   \_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://next.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).\_
 
 ## 🧐 What's inside?
 
@@ -52,23 +52,41 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 ```console
 .
+├── .github
+├── .storybook
+├── meetings
 ├── node_modules
 ├── src
+├── stories
+├── style-guide
+├── test
+├── util-node
+├── .editorconfig
+├── .eslintignore
+├── .eslintrc.js
+├── .firebaserc
 ├── .gitignore
 ├── .nvmrc
+├── .prettierignore
 ├── .prettierrc
+├── .remarkrc
+├── cloudbuild-deploy.yaml
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
 ├── empty.env
-├── gatsby-browser.js
+├── firebase.json
 ├── gatsby-config.js
 ├── gatsby-node.js
-├── gatsby-ssr.js
 ├── LICENSE
+├── ModerationPolicy.md
+├── OKR.md
 ├── package-lock.json
 ├── package.json
 ├── README.md
-├── tsconfig.json
-├── tslint.json
-└── yarn.lock
+├── test-preprocessor.js
+├── test-setup.js
+└── tsconfig.json
+
 ```
 
 1. **`/node_modules`**: The directory where all of the modules of code that your project depends on (npm packages) are automatically installed.
