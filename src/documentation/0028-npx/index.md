@@ -43,7 +43,7 @@ A typical demonstration of using `npx` is through the `cowsay` command. `cowsay`
                 ||     ||
 ```
 
-Now, this if you have the `cowsay` command globally installed from npm previously, otherwise you'll get an error when you try to run the command.
+This only works if you have the `cowsay` command globally installed from npm previously. Otherwise you'll get an error when you try to run the command.
 
 `npx` allows you to run that npm command without having it installed locally:
 
