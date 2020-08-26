@@ -99,7 +99,7 @@ A quick look at some of the top-level files and directories found in this projec
 
 5. **`/test`**: Tests for this projects are stored in this directory. This project uses [Jest]("https://jestjs.io/) as it's testing framework.
 
-6. **`/util-node`**: Custom utility functions that require nodeJs to run can be stored in files inside this directory. An example is the create-slug function in the [createSlug.js]("./../util-node/createSlug.js") file that generates unique slugs for articles.
+6. **`/util-node`**: Custom utility functions that require nodeJs to run can be stored in files inside this directory. An example is the create-slug function in the createSlug.js file that generates unique slugs for articles.
 
 7. **`.gitignore`**: This file tells git which files it should not track/not maintain a version history.
 
