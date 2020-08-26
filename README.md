@@ -44,11 +44,11 @@
 
    Your site is now running at `http://localhost:8000`!
 
-   \_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://next.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).\_
+   \_\_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://next.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).\_\_
 
 ## 🧐 What's inside?
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+A quick look at some of the top-level files and directories found in this project.
 
 ```console
 .
@@ -89,39 +89,39 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 ```
 
-1. **`/node_modules`**: The directory where all of the modules of code that your project depends on (npm packages) are automatically installed.
+1. **`.storybook`**: This directory contains configuration files so the [storybook]("https://storybook.js.org/) package works as it should. Storybook is used to build the individual UI components in this project.
 
-2. **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser), like your site header, or a page template. "Src" is a convention for "source code."
+2. **`/node_modules`**: The directory where all of the modules of code that your project depends on (npm packages) are automatically installed.
 
-3. **`.gitignore`**: This file tells git which files it should not track/not maintain a version history.
+3. **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser), like your site header, or a page template. "Src" is a convention for "source code."
 
-4. **`.nvmrc`**: NVM configuration so packages work as they should
+4. **`/stories`**: This directory contains stories for UI components used in this project. You can find out what a story is [here]("https://storybook.js.org/docs/react/get-started/whats-a-story).
 
-5. **`.prettierrc`**: This is a configuration file for a tool called [Prettier](https://prettier.io/), which is a tool to help keep the formatting of your code consistent.
+5. **`/test`**: Tests for this projects are stored in this directory. This project uses [Jest]("https://jestjs.io/) as it's testing framework.
 
-6. **`empty.env`**: Rename to **`.env`** and set your Contentful API key
+6. **`/util-node`**: Custom utility functions that require nodeJs to run can be stored in files inside this directory. An example is the create-slug function in the [createSlug.js]("./../util-node/createSlug.js") file that generates unique slugs for articles.
 
-7. **`gatsby-browser.tsx`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://next.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+7. **`.gitignore`**: This file tells git which files it should not track/not maintain a version history.
 
-8. **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you'd like to include, etc. (Check out the [config docs](https://next.gatsbyjs.org/docs/gatsby-config/) for more detail).
+8. **`.nvmrc`**: NVM configuration so packages work as they should
 
-9. **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby node APIs](https://next.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+9. **`.prettierrc`**: This is a configuration file for a tool called [Prettier](https://prettier.io/), which is a tool to help keep the formatting of your code consistent.
 
-10. **`gatsby-ssr.tsx`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://next.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+10. **`empty.env`**: Rename to **`.env`** and set your Contentful API key
 
-11. **`LICENSE`**: Gatsby is licensed under the MIT license.
+11. **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you'd like to include, etc. (Check out the [config docs](https://next.gatsbyjs.org/docs/gatsby-config/) for more detail).
 
-12. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. (You won't change this file directly).
+12. **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby node APIs](https://next.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-13. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project's name, author, etc.). This manifest is how npm knows which packages to install for your project.
+13. **`LICENSE`**: Gatsby is licensed under the MIT license.
 
-14. **`README.md`**: A text file containing useful reference information about your project.
+14. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. (You won't change this file directly).
 
-15. **`tsconfig.json`**: Config file for TypeScript
+15. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project's name, author, etc.). This manifest is how npm knows which packages to install for your project.
 
-16. **`tslint.json`**: TS Lint configuration file
+16. **`README.md`**: A text file containing useful reference information about your project.
 
-17. **`yarn.lock`**: [Yarn](https://yarnpkg.com/) is a package manager alternative to npm. You can use either yarn or npm, though all of the Gatsby docs reference npm. This file serves essentially the same purpose as `package-lock.json`, just for a different package management system.
+17. **`tsconfig.json`**: Config file for TypeScript
 
 ## 📝 Data Sources
 
