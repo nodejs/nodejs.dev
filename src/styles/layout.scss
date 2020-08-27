@@ -503,6 +503,10 @@ details {
     display: flex;
     margin-left: 0;
 
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+
     > a {
       padding: var(--space-10);
     }
