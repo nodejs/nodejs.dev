@@ -42,7 +42,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       role="tab"
       tabIndex="0"
     >
-      nvm (Linux)
+      Chocolatey (Windows)
     </li>
     <li
       aria-controls="react-tabs-3"
@@ -64,18 +64,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       role="tab"
       tabIndex={null}
     >
-      Chocolatey (Windows)
-    </li>
-    <li
-      aria-controls="react-tabs-7"
-      aria-disabled="false"
-      aria-selected="false"
-      className="react-tabs__tab"
-      id="react-tabs-6"
-      role="tab"
-      tabIndex={null}
-    >
-      apt-get (Debian)
+      nvm (Linux)
     </li>
   </ul>
   <div
@@ -85,40 +74,36 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
     role="tabpanel"
   >
     <div>
-      <code
-        className="install__text"
+      <pre
+        className="shell-box"
       >
         <div
-          className="install__text__line"
+          className="shell-box-top"
         >
+          <span>
+            SHELL
+          </span>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            copy
+          </button>
+        </div>
+        <code>
           <span
             className="install__text__no-select"
           >
             $
           </span>
-          apk add -U curl bash ca-certificates openssl ncurses coreutils python2 make gcc g++ libgcc linux-headers grep util-linux binutils findutils
-        </div>
-        <div
-          className="install__text__line"
-        >
           <span
-            className="install__text__no-select"
+            className="install__text__command"
           >
-            $
+            choco 
           </span>
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-        </div>
-        <div
-          className="install__text__line"
-        >
-          <span
-            className="install__text__no-select"
-          >
-            $
-          </span>
-          nvm install --lts
-        </div>
-      </code>
+          install nodejs-lts
+        </code>
+      </pre>
       <br />
       <br />
       <button
@@ -127,7 +112,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       >
         <a
           className="install__docs-button-text"
-          href="https://nodejs.org/en/download/package-manager/#nvm"
+          href="https://nodejs.org/en/download/package-manager/#windows"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -146,12 +131,6 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
     aria-labelledby="react-tabs-4"
     className="react-tabs__tab-panel"
     id="react-tabs-5"
-    role="tabpanel"
-  />
-  <div
-    aria-labelledby="react-tabs-6"
-    className="react-tabs__tab-panel"
-    id="react-tabs-7"
     role="tabpanel"
   />
 </div>

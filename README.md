@@ -22,7 +22,7 @@
   <br>
 </p>
 
-**You can find the latest [Figma design protype here](https://www.figma.com/proto/lOxAGGg5KXb6nwie7zXkz6/NJ---Design-System?node-id=1276%3A10492&viewport=-232%2C-1378%2C0.21998274326324463&scaling=min-zoom).**
+**You can find the latest [Figma design protype here](https://www.figma.com/file/lOxAGGg5KXb6nwie7zXkz6/NJ---Design-System?node-id=22%3A6086).**
 
 ## 🚀 Get Started
 
@@ -137,24 +137,53 @@ Our current focus is on site development. Development is happening in the [nodej
 
 ### Team
 
-**[@nodejs/website-redesign](https://github.com/nodejs/website-redesign)**
-
 Any person who wants to contribute to the initiative is welcome! Please read
 [Contributing Guidelines][] and join the effort 🙌.
 
-Any member of the website-redesign initiative attached to the current phase of
-the project will be added to a future phase as the project moves forward.
+This repo is managed by the nodejs.dev. Members of the nodejs website team
+also have commiter rights on the repo.
 
-Any member of the website-redesign initiative who prefers to begin contributing
-at a specific future phase is welcome to make a PR adding their handle to that
-phase.
+#### The nodejs.dev team
 
-- [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**, CommComm
-  Co-champion
-- [@chowdhurian](https://github.com/chowdhurian) - **Manil Chowdhury**, CommComm
-  Co-champion
+<!-- ncu-team-sync.team(nodejs/nodejs-dev) -->
 
-#### Information Gathering
+- [@ahmadawais](https://github.com/ahmadawais) - Ahmad Awais ⚡️
+- [@alexandrtovmach](https://github.com/alexandrtovmach) - Alexandr Tovmach
+- [@amiller-gh](https://github.com/amiller-gh) - Adam Miller
+- [@argyleink](https://github.com/argyleink) - Adam Argyle
+- [@benhalverson](https://github.com/benhalverson) - Ben Halverson
+- [@BeniCheni](https://github.com/BeniCheni) - Benjamin Chen
+- [@codeekage](https://github.com/codeekage) - Abraham Jr. Agiri
+- [@darcyclarke](https://github.com/darcyclarke) - Darcy Clarke
+- [@designMoreWeb](https://github.com/designMoreWeb) - Divy Tolia
+- [@imbhargav5](https://github.com/imbhargav5) - Bhargav Ponnapalli
+- [@jonchurch](https://github.com/jonchurch) - Jonathan Church
+- [@kasicka](https://github.com/kasicka) - Zuzana Svetlíková
+- [@keywordnew](https://github.com/keywordnew) - Manil Chowdhury
+- [@LaRuaNa](https://github.com/LaRuaNa) - Onur Laru
+- [@maddhruv](https://github.com/maddhruv) - Dhruv Jain
+- [@mbj36](https://github.com/mbj36) - Mohit kumar Bajoria
+- [@MylesBorins](https://github.com/MylesBorins) - Myles Borins
+- [@ogonzal87](https://github.com/ogonzal87) - Oscar Gonzalez
+- [@ollelauribostrom](https://github.com/ollelauribostrom) - Olle Lauri Boström
+- [@pierreneter](https://github.com/pierreneter)
+- [@sagirk](https://github.com/sagirk) - Sagir Khan
+- [@saulonunesdev](https://github.com/saulonunesdev) - Saulo Nunes
+- [@skllcrn](https://github.com/skllcrn) - Christopher
+- [@SMotaal](https://github.com/SMotaal) - Saleh Abdel Motaal
+- [@timothyis](https://github.com/timothyis) - Timothy
+- [@tstreamDOTh](https://github.com/tstreamDOTh) - T Thiyagaraj
+- [@ZYSzys](https://github.com/ZYSzys) - ZYSzys
+
+<!-- ncu-team-sync end -->
+
+#### The Website Redesign Teams
+
+This repo originated as "The Website Redesign" strategic initiative under
+the Node.js Community Community. Below are various teams and people that
+participated in that process.
+
+##### Information Gathering
 
 - [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**
 - [@codeekage](https://github.com/codeekage) - **Agiri Abraham JNR**
@@ -167,7 +196,7 @@ phase.
 - [@bnb](https://github.com/bnb) - **Tierney Cyren**
 - [@timothyis](https://github.com/timothyis) - **Timothy**
 
-#### IA / UX Planning
+##### IA / UX Planning
 
 - [@oe](https://github.com/oe) - **Olivia Hugger**
 - [@fhemberger](https://github.com/fhemberger) - **Frederic Hemberger**
@@ -187,7 +216,7 @@ phase.
 - [@milapbhojak](https://github.com/milapbhojak) - **Milap Bhojak**
 - [@devamaz](https://github.com/devamaz) - **Ahmad Abdul-Aziz**
 
-#### UI Design and Content Creation
+##### UI Design and Content Creation
 
 - [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**
 - [@bnb](https://github.com/bnb) - **Tierney Cyren**
@@ -201,7 +230,7 @@ phase.
 - [@AliObaji](https://github.com/AliObaji) - **Ali Obaji**
 - [@AhmadAwais](https://github.com/AhmadAwais) - **AhmadAwais**
 
-#### Site Development _<-- current phase_
+##### Site Development
 
 - [@abiclub23](https://github.com/abiclub23) - **Abhi Tondepu**
 - [@ajay2507](https://github.com/ajay2507) - **Ajaykumar**
@@ -243,4 +272,4 @@ phase.
 [code of conduct]: https://github.com/nodejs/admin/blob/master/CODE_OF_CONDUCT.md
 [contributing guidelines]: ./CONTRIBUTING.md
 [meeting notes]: ./meetings
-[query issues for "meeting"]: https://github.com/nodejs/website-redesign/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+Meeting+in%3Atitle
+[query issues for "meeting"]: https://github.com/nodejs/nodejs.dev/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+Meeting+in%3Atitle

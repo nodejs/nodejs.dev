@@ -12,11 +12,6 @@ import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
 import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
 import dotsIllustration from '../images/illustrations/dots.svg';
-import logoImg1 from '../images/logos/ibm-logo.svg';
-import logoImg2 from '../images/logos/linkedin-logo.svg';
-import logoImg3 from '../images/logos/microsoft-logo.svg';
-import logoImg4 from '../images/logos/netflix-logo.svg';
-import logoImg5 from '../images/logos/paypal-logo.svg';
 import InstallTabs from '../components/InstallTabs';
 
 import featureImg1 from '../images/feature-img-1.png';
@@ -56,7 +51,7 @@ export default function Index(): JSX.Element {
 
   return (
     <Layout title={title} description={description}>
-      <div className="home-page">
+      <main className="home-page">
         <Hero title={title} subTitle={subTitle} />
 
         <section className="node-demo-container">
@@ -92,7 +87,7 @@ export default function Index(): JSX.Element {
             Get Started
           </Link>
         </div>
-      </div>
+      </main>
     </Layout>
   );
 }
