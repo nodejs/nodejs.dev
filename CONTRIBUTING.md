@@ -72,7 +72,7 @@ This project uses [Storybook], a tool which provides a sandbox environment for d
 * Run `npm run storybook`
 * Navigate to `localhost:6006`
 
-The production Storybook can be viewed at: [https://nodejs.dev/storybook][]
+The production Storybook can be viewed at <https://nodejs.dev/storybook>
 
 ## Developer's Certificate of Origin 1.1
 
@@ -94,5 +94,4 @@ By making a contribution to this project, I certify that:
 
 [conventional commits]: https://www.conventionalcommits.org/
 [`squash`]: https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits
-[storybook]: https://storybook.js.org/
-[https://nodejs.dev/storybook]: https://nodejs.dev/storybook
+[Storybook]: https://storybook.js.org/
