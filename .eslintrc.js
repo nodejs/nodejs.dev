@@ -31,6 +31,8 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'import/prefer-default-export': 'off',
+    'react/require-default-props': 'off',
+    'react/no-unused-prop-types': 'off',
     'import/extensions': 'off',
     'consistent-return': 'off',
     'react/no-danger': 'off',
