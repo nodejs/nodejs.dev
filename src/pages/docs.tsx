@@ -637,11 +637,11 @@ export default function APIDocsPage(): JSX.Element {
                   )}
                 </select>
               </li>
-              {sideBarSection('Globals', 'globals', apiData, setPage)}
-              {sideBarSection('Methods', 'methods', apiData, setPage)}
-              {sideBarSection('Misc', 'miscs', apiData, setPage)}
-              {sideBarSection('Modules', 'modules', apiData, setPage)}
-              {sideBarSection('Classes', 'classes', apiData, setPage)}
+              {sideBarSection('Globals', 'globals', apiData)}
+              {sideBarSection('Methods', 'methods', apiData)}
+              {sideBarSection('Misc', 'miscs', apiData)}
+              {sideBarSection('Modules', 'modules', apiData)}
+              {sideBarSection('Classes', 'classes', apiData)}
             </ul>
           </nav>
           {renderArticle(page, userOS, currentVersionSelected || '')}
