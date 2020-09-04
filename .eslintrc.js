@@ -4,7 +4,6 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    // project: './tsconfig.json'
   },
   extends: [
     'airbnb',
@@ -34,17 +33,9 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
     'consistent-return': 'off',
-    // "camelcase": "off",
-    // "@typescript-eslint/camelcase": ["error", { "properties": "never" }],
-    // "no-unused-vars": "off",
-    // "@typescript-eslint/no-unused-vars": "error",
-    // "@typescript-eslint/indent": ["error", 2]
+    'react/no-danger': 'off',
   },
-  plugins: [
-    '@typescript-eslint',
-    'react-hooks',
-    // "prettier"
-  ],
+  plugins: ['@typescript-eslint', 'react-hooks'],
   overrides: [
     {
       files: ['**/*.js'],

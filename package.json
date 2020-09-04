@@ -13,9 +13,13 @@
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "@types/react-tabs": "2.3.1",
+<<<<<<< HEAD
     "babel-preset-react-app": "^9.1.2",
     "color": "^3.1.2",
     "color-string": "^1.5.3",
+=======
+    "dompurify": "2.0.12",
+>>>>>>> ff5cba82608d71d3529b50f7eaa4288da7154b77
     "dotenv": "^8.2.0",
     "emotion": "^10.0.27",
     "emotion-server": "^10.0.27",
