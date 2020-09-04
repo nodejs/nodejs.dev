@@ -3,7 +3,7 @@ import React from 'react';
 import logoLight from '../../images/logos/nodejs-logo-light-mode.svg';
 import logoDark from '../../images/logos/nodejs-logo-dark-mode.svg';
 import defaultDarkModeController from '../../util/darkModeController';
-import { useMediaQuery } from '../../hooks/useMedia';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 interface Props {
   darkModeController?: typeof defaultDarkModeController;
