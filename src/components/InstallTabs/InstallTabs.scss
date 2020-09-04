@@ -99,14 +99,16 @@
       bottom: 2rem;
       right: 2rem;
     }
-    &__docs-button-text,
-    &__docs-button-text:hover {
+    &__docs-button-text {
       text-decoration: none;
       box-sizing: border-box;
       width: 17rem;
       height: 4rem;
-      color: var(--black6);
+      color: var(--black5);
       font-weight: var(--font-weight-semibold);
+      &:hover {
+        color: var(--pink5);
+      }
     }
   }
   .shell-box {

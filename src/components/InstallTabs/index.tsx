@@ -1,10 +1,70 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import ShellBox from '../ShellBox';
+import { detectOS, UserOS } from '../../util/detectOS';
 import './InstallTabs.scss';
 
+import WindowsPanel from './WindowsPanel';
+import MacOSPanel from './MacOSPanel';
+import LinuxPanel from './LinuxPanel';
+
 const InstallTabs = (): JSX.Element => {
-  return (
+  const userOS = detectOS();
+
+  const systems = {
+    WIN: ['Chocolatey (Windows)', 'nvm (macOS)', 'nvm (Linux)'],
+    MAC: ['nvm (macOS)', 'Chocolatey (Windows)', 'nvm (Linux)'],
+    LINUX: ['nvm (Linux)', 'nvm (macOS)', 'Chocolatey (Windows)'],
+    UNKNOWN: ['Chocolatey (Windows)', 'nvm (macOS)', 'nvm (Linux)'],
+  };
+
+  function panelSwitch(): JSX.Element {
+    switch (userOS) {
+      default:
+        return (
+          <>
+            <TabPanel>
+              <WindowsPanel />
+            </TabPanel>
+            <TabPanel>
+              <MacOSPanel />
+            </TabPanel>
+            <TabPanel>
+              <LinuxPanel />
+            </TabPanel>
+          </>
+        );
+      case UserOS.MAC:
+        return (
+          <>
+            <TabPanel>
+              <MacOSPanel />
+            </TabPanel>
+            <TabPanel>
+              <WindowsPanel />
+            </TabPanel>
+            <TabPanel>
+              <LinuxPanel />
+            </TabPanel>
+          </>
+        );
+      case UserOS.LINUX:
+        return (
+          <>
+            <TabPanel>
+              <LinuxPanel />
+            </TabPanel>
+            <TabPanel>
+              <MacOSPanel />
+            </TabPanel>
+            <TabPanel>
+              <WindowsPanel />
+            </TabPanel>
+          </>
+        );
+    }
+  }
+
+  return systems[userOS] !== undefined ? (
     <Tabs>
       <div className="install__header">
         <div className="install__header-circles">
@@ -15,93 +75,14 @@ const InstallTabs = (): JSX.Element => {
         <div className="install__header-text">bash</div>
       </div>
       <TabList>
-        <Tab>nvm (macOS)</Tab>
-        <Tab>Chocolatey (Windows)</Tab>
-        <Tab>nvm (Linux)</Tab>
+        {systems[userOS].map((system: string) => (
+          <Tab key={system.toString()}>{system}</Tab>
+        ))}
       </TabList>
-      <TabPanel>
-        <div>
-          <ShellBox textToCopy="curl -o- | bash https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh">
-            <span className="install__text__no-select">$</span>
-            <span className="install__text__command">curl -o- | bash </span>
-            https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
-          </ShellBox>
-          <ShellBox textToCopy="nvm install --lts">
-            <span className="install__text__no-select">$</span>
-            <span className="install__text__command">nvm </span>install --lts
-          </ShellBox>
-          <br />
-          <br />
-          <button type="button" className="install__docs-button">
-            <a
-              className="install__docs-button-text"
-              href="https://nodejs.org/en/download/package-manager/#nvm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read documentation
-            </a>
-          </button>
-        </div>
-      </TabPanel>
-      <TabPanel>
-        <div>
-          <ShellBox textToCopy="choco install nodejs-lts">
-            <span className="install__text__no-select">$</span>
-            <span className="install__text__command">choco </span>install
-            nodejs-lts
-          </ShellBox>
-          <br />
-          <br />
-          <button type="button" className="install__docs-button">
-            <a
-              className="install__docs-button-text"
-              href="https://nodejs.org/en/download/package-manager/#windows"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read documentation
-            </a>
-          </button>
-        </div>
-      </TabPanel>
-      <TabPanel>
-        <div>
-          <ShellBox
-            textToCopy="apk add -U curl
-bash ca-certificates openssl ncurses coreutils python2 make gcc
-g++ libgcc linux-headers grep util-linux binutils findutils"
-          >
-            <span className="install__text__no-select">$</span>
-            <span className="install__text__command">apk add -U</span> curl bash
-            ca-certificates openssl ncurses coreutils python2 make gcc g++
-            libgcc linux-headers grep util-linux binutils findutils
-          </ShellBox>
-          <ShellBox textToCopy="curl -o- | bash https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh">
-            <span className="install__text__no-select">$</span>
-            <span className="install__text__command"> curl -o- | bash </span>
-            https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
-          </ShellBox>
-          <ShellBox textToCopy="nvm install --lts">
-            <span className="install__text__no-select">$</span>
-            <span className="install__text__command"> nvm</span> install --lts
-          </ShellBox>
-          <br />
-          <br />
-          {/* TODO when the new docs page is ready link to that page.  */}
-          <button type="button" className="install__docs-button">
-            <a
-              className="install__docs-button-text"
-              href="https://nodejs.org/en/download/package-manager/#nvm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read documentation
-            </a>
-          </button>
-        </div>
-      </TabPanel>
+      {panelSwitch()}
     </Tabs>
+  ) : (
+    <></>
   );
 };
 

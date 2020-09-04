@@ -1,7 +1,4 @@
-if (process.env.ENVIROMENT !== 'production') {
-  // eslint-disable-next-line global-require
-  require('dotenv').config();
-}
+require('dotenv').config();
 
 const config = require('./src/config');
 
@@ -88,5 +85,6 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-emotion',
     },
+    'gatsby-plugin-meta-redirect',
   ],
 };
