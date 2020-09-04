@@ -30,6 +30,8 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'react/require-default-props': 'off',
+    'react/no-unused-prop-types': 'off',
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
     'consistent-return': 'off',
