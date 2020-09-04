@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import { useApiData, useReleaseHistory } from '../hooks';
 import { ApiDocsObj, APIResponse } from '../hooks/useApiDocs';
@@ -567,6 +567,27 @@ export default function APIDocsPage(): JSX.Element {
     version || (releases[0] && releases[0].version) || null;
 
   const apiData = useApiData(currentVersionSelected);
+
+  useEffect(() => {
+    const findModuleByHash = (hash: string): ApiDocsObj | undefined => {
+      const hashPrefix = '#temporary_path_for_';
+      const moduleName = decodeURI(hash.replace(hashPrefix, ''));
+      let matchingModule;
+      Object.keys(apiData).forEach(section => {
+        const match = apiData[section].find(
+          (item: ApiDocsObj) => item.name === moduleName
+        );
+        if (match !== undefined) {
+          matchingModule = match;
+        }
+      });
+      return matchingModule;
+    };
+    const docsPage = findModuleByHash(window.location.hash);
+    if (docsPage !== undefined) {
+      setPage(docsPage);
+    }
+  }, [apiData]);
 
   return (
     <>
