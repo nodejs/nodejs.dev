@@ -20,18 +20,21 @@ function capitalizeFirstLetter(text: string): string {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-function getHeadingForPage(page: ApiDocsObj, depth = 0): React.ReactElement {
+function getHeadingForPage(page: ApiDocsObj, depth = 0): JSX.Element {
   const HeaderName = `h${Math.min(depth + 2, 6)}`;
   return React.createElement(
     HeaderName,
-    { className: `api-docs__title api-docs__title--${page.type}` },
+    {
+      key: `${page.name}-heading`,
+      className: `api-docs__title api-docs__title--${page.type}`,
+    },
     page.displayName || page.name
   );
 }
 
-function getListItemForPage(page: ApiDocsObj): any {
+function getListItemForPage(page: ApiDocsObj): JSX.Element {
   return (
-    <li id={page.name}>
+    <li key={`${page.name}-list`} id={page.name}>
       {DOCUMENT_ELEMENT_TYPES.includes(page.type)
         ? capitalizeFirstLetter(page.type)
         : 'Property'}
@@ -97,7 +100,7 @@ function renderArticleSections(
     };
 
     if (depth === 0) {
-      sections.push(<hr />);
+      sections.push(<hr key={`${page.name}-hr`} />);
     }
 
     children.push(getHeadingForPage(page, depth));
@@ -106,7 +109,11 @@ function renderArticleSections(
 
     prepareArticleSections();
 
-    sections.push(<section className="api-docs__section">{children}</section>);
+    sections.push(
+      <section key={page.name} className="api-docs__section">
+        {children}
+      </section>
+    );
   });
 
   return sections;

@@ -16,7 +16,7 @@ exports[`AuthorsList component renders correctly 1`] = `
   text-transform: uppercase;
   padding-left: 0;
 
-  li:first-child a {
+  li:first-of-type a {
     margin-left: 0 !important;
   }
 
