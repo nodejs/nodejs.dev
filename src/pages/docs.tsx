@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
+import dompurify from 'dompurify';
 import { useApiData, useReleaseHistory } from '../hooks';
 import { ApiDocsObj, APIResponse } from '../hooks/useApiDocs';
 
@@ -15,6 +16,7 @@ import '../styles/article-reader.scss';
 
 const API_DOCS_OBJ_KEYS = ['events', 'methods', 'properties', 'classes'];
 const DOCUMENT_ELEMENT_TYPES = ['module', 'event', 'method', 'class'];
+const sanitizer = dompurify.sanitize;
 
 function capitalizeFirstLetter(text: string): string {
   return text.charAt(0).toUpperCase() + text.slice(1);
@@ -39,7 +41,9 @@ function getListItemForPage(page: ApiDocsObj): JSX.Element {
         ? capitalizeFirstLetter(page.type)
         : 'Property'}
       : ({page.type})
-      {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
+      {page.desc && (
+        <p dangerouslySetInnerHTML={{ __html: sanitizer(page.desc) }} />
+      )}
     </li>
   );
 }
@@ -522,7 +526,10 @@ function renderArticle(
             renderArticleOverview(mod, [])
           )}
       </ul>
-      {page.desc && <p dangerouslySetInnerHTML={{ __html: page.desc }} />}
+      {page.desc && (
+        <p dangerouslySetInnerHTML={{ __html: sanitizer(page.desc) }} />
+      )}
+
       {renderArticleSections([page])}
     </article>
   );
