@@ -48,10 +48,10 @@ exports[`Tests for Header component renders correctly 1`] = `
           className="nav__tabs"
         >
           <a
-            activeClassName="active"
             className="activeStyleTab"
-            href="/docs"
-            partiallyActive={true}
+            href="https://nodejs.org/en/docs/"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Documentation
           </a>
