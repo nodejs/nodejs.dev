@@ -27,6 +27,8 @@ module.exports = {
     jest: true,
   },
   rules: {
+    'react/no-unused-prop-types': 'off',
+    'react/require-default-props': 'off',
     'react/jsx-filename-extension': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
