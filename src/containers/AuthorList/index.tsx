@@ -11,7 +11,7 @@ const list: SerializedStyles = css`
   text-transform: uppercase;
   padding-left: 0;
 
-  li:first-child a {
+  li:first-of-type a {
     margin-left: 0 !important;
   }
 

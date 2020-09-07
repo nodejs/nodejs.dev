@@ -18,7 +18,7 @@ interface Props {
   img?: string;
   href?: string;
   showFooter?: boolean;
-  location?: any;
+  location?: string;
 }
 
 const Layout = ({
