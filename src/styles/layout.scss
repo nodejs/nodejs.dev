@@ -293,7 +293,7 @@ select {
 .nav__startwrapper {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .nav__endwrapper {
@@ -343,7 +343,7 @@ select {
 }
 
 .activeStyleTab:hover {
-  border-bottom: 4px solid green;
+  border-bottom: 4px solid var(--color-text-primary);
   margin-bottom: -4px;
 }
 
@@ -475,7 +475,6 @@ details {
   }
 
   .article-reader {
-    margin-top: 100px;
     padding: 0 3rem;
   }
 
@@ -502,6 +501,10 @@ details {
   .nav__tabs {
     display: flex;
     margin-left: 0;
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
 
     > a {
       padding: var(--space-10);

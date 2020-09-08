@@ -25,6 +25,7 @@ describe('Article component', () => {
     renderer.render(
       <Article
         title={title}
+        description={description}
         html={html}
         next={next}
         previous={previous}

@@ -1,7 +1,7 @@
 ---
 title: A brief history of Node.js
 description: 'A look back on the history of Node.js from 2009 to today'
-authors: flaviocopes, onel0p3z, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, kevjin, keywordnew, karlhorky, bdharrington7
+authors: flaviocopes, onel0p3z, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, kevjin, keywordnew, karlhorky, bdharrington7, MalachiCunliffe
 section: Quick Start
 ---
 
@@ -81,3 +81,16 @@ Node.js happened to be built in the right place and right time, but luck isn't t
 
 * Node.js 10
 * [ES modules](https://nodejs.org/api/esm.html) .mjs experimental support
+* Node.js 11
+
+## 2019
+
+* Node.js 12
+* Node.js 13
+
+## 2020
+
+* Node.js 14
+
+
+
