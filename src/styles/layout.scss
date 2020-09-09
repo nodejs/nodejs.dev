@@ -1,6 +1,10 @@
 html {
   margin: 0;
   box-sizing: border-box;
+  /* setting up custom scrollbar */
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #84ba64;
 }
 
 body {
@@ -19,6 +23,25 @@ body {
   --brand: var(--brand5);
   --brand-dark: var(--brand7);
 }
+
+
+/* Start: setting up custom scrollbar */ 
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #392E3D;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #84ba64 ;
+  border-radius: .5rem;
+  background: #84ba64;
+  background: linear-gradient(180deg, #779766 0%, #85a076 100%);
+  border: 1px solid rgba(148, 207, 146, 0.5);
+}
+/* End */ 
 
 .t-display1,
 h1 {
