@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ReleaseData } from '../../hooks/useReleaseHistory';
 
 import './DownloadCards.scss';
@@ -13,9 +13,13 @@ interface Props {
 
 export default function DownloadCards({ line, userOS }: Props): JSX.Element {
   const fileName = line && line.version;
-  const [selected, setSelected] = useState(
-    !(['WIN', 'MAC', 'MOBILE'].indexOf(userOS) >= 0) ? 'SOURCECODE' : userOS
-  );
+  const [selected, setSelected] = useState('');
+  useEffect(() => {
+    setSelected(
+      !(['WIN', 'MAC', 'MOBILE'].indexOf(userOS) >= 0) ? 'SOURCECODE' : userOS
+    );
+  }, [userOS]);
+
   // eslint-disable-next-line no-console
   console.log('OS: ', userOS, 'hook: ', selected);
   const DownloadTypes = [
