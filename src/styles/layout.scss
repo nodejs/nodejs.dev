@@ -24,24 +24,23 @@ body {
   --brand-dark: var(--brand7);
 }
 
-
-/* Start: setting up custom scrollbar */ 
+/* Start: setting up custom scrollbar */
 body::-webkit-scrollbar {
   width: 1rem;
 }
 
 body::-webkit-scrollbar-track {
-  background: #392E3D;
+  background: #392e3d;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #84ba64 ;
-  border-radius: .5rem;
+  background-color: #84ba64;
+  border-radius: 0.5rem;
   background: #84ba64;
   background: linear-gradient(180deg, #779766 0%, #85a076 100%);
   border: 1px solid rgba(148, 207, 146, 0.5);
 }
-/* End */ 
+/* End */
 
 .t-display1,
 h1 {
