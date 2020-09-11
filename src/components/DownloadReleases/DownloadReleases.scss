@@ -1,0 +1,51 @@
+.download-releases {
+  margin-top: 126px;
+  width: 100%;
+}
+
+.download-releases__title {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-display4);
+  line-height: var(--line-height-display4);
+}
+
+.node {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  text-align: center;
+}
+
+.current {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.lts {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.maintenance {
+  grid-area: 1 / 3 / 2 / 4;
+}
+.endoflife {
+  grid-area: 1 / 4 / 2 / 5;
+}
+.div5 {
+  grid-area: 1 / 5 / 2 / 6;
+}
+.release-title {
+  font-weight: 600;
+}
+.release-date {
+  font-size: 12px;
+}
+
+.lts__text {
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-display5);
+  line-height: var(--line-height-body1);
+}
+
+.react-tabs__tab--selected {
+  border-bottom: 2px solid #5fa04e;
+}
