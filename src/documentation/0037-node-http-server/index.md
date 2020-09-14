@@ -10,6 +10,9 @@ Here is a sample Hello World HTTP web server:
 <iframe
   allow="geolocation; microphone; camera; midi; encrypted-media"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0037-01?path=server.js&previewSize=33&attributionHidden=true&sidebarCollapsed=true"
+  <!-- above link is similar to the example given below, but has some minor differences, in the above code port is set to " = process.env.PORT", content type is set to "text/html", and res.end is set to ('<h1> Hello World </h1>').
+Although this are not significant changes, are they are unlikely to confuse anyone, they might be changed for consistancy's sake-->
+  
   alt="nodejs-dev-0037-01 on Glitch"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
