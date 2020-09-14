@@ -21,7 +21,7 @@ Normally, programming languages are synchronous and some provide a way to manage
 
 ## JavaScript
 
-JavaScript is **synchronous** by default and is single threaded. This means that code cannot create new threads and run in parallel.
+JavaScript is **asynchronous** by default and is single threaded. This means that code cannot create new threads and run in parallel.
 
 Lines of code are executed in series, one after another, for example:
 
