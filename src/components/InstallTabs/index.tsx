@@ -78,7 +78,9 @@ const InstallTabs = (): JSX.Element => {
           <div className="install__header-grey-circle" />
           <div className="install__header-grey-circle" />
         </div>
-        <div className="install__header-text">bash</div>
+        <div className="install__header-text">
+          {userOS === 'MAC' ? 'zsh' : 'bash'}
+        </div>
       </div>
       <TabList>
         {installTabSystems[userOS].map((system: string) => (
