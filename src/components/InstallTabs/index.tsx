@@ -10,11 +10,17 @@ import LinuxPanel from './LinuxPanel';
 const InstallTabs = (): JSX.Element => {
   const userOS = detectOS();
 
-  const systems = {
-    WIN: ['Chocolatey (Windows)', 'nvm (macOS)', 'nvm (Linux)'],
-    MAC: ['nvm (macOS)', 'Chocolatey (Windows)', 'nvm (Linux)'],
-    LINUX: ['nvm (Linux)', 'nvm (macOS)', 'Chocolatey (Windows)'],
-    UNKNOWN: ['Chocolatey (Windows)', 'nvm (macOS)', 'nvm (Linux)'],
+  const os = {
+    win: 'Windows (Chocolatey)',
+    mac: 'macOS (nvm)',
+    linux: 'Linux (nvm)',
+  };
+
+  const installTabSystems = {
+    WIN: [os.win, os.mac, os.linux],
+    MAC: [os.mac, os.win, os.linux],
+    LINUX: [os.linux, os.mac, os.win],
+    UNKNOWN: [os.win, os.mac, os.linux],
   };
 
   function panelSwitch(): JSX.Element {
@@ -64,7 +70,7 @@ const InstallTabs = (): JSX.Element => {
     }
   }
 
-  return systems[userOS] !== undefined ? (
+  return installTabSystems[userOS] !== undefined ? (
     <Tabs>
       <div className="install__header">
         <div className="install__header-circles">
@@ -75,7 +81,7 @@ const InstallTabs = (): JSX.Element => {
         <div className="install__header-text">bash</div>
       </div>
       <TabList>
-        {systems[userOS].map((system: string) => (
+        {installTabSystems[userOS].map((system: string) => (
           <Tab key={system.toString()}>{system}</Tab>
         ))}
       </TabList>
