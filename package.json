@@ -13,10 +13,10 @@
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "@types/react-tabs": "2.3.1",
-    "dompurify": "2.0.12",
     "babel-preset-react-app": "^9.1.2",
     "color": "^3.1.2",
     "color-string": "^1.5.3",
+    "dompurify": "2.0.12",
     "dotenv": "^8.2.0",
     "emotion": "^10.0.27",
     "emotion-server": "^10.0.27",
@@ -44,6 +44,7 @@
     "react-emotion": "^10.0.0",
     "react-helmet": "^6.0.0",
     "react-tabs": "3.1.0",
+    "throttle-debounce": "^2.3.0",
     "typescript": "3.9.2"
   },
   "keywords": [
@@ -75,9 +76,11 @@
     "@types/jest": "^25.2.1",
     "@types/react-helmet": "6.0.0",
     "@types/react-test-renderer": "^16.9.2",
+    "@types/throttle-debounce": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "2.33.0",
     "@typescript-eslint/parser": "^2.28.0",
     "babel-jest": "26.0.1",
+    "babel-loader": "^8.1.0",
     "babel-preset-gatsby": "0.4.2",
     "codecov": "^3.7.1",
     "eslint": "7.0.0",
@@ -96,8 +99,7 @@
     "react-test-renderer": "^16.13.1",
     "remark-cli": "^8.0.0",
     "remark-frontmatter": "^2.0.0",
-    "remark-preset-lint-node": "^1.13.0",
-    "babel-loader": "^8.1.0"
+    "remark-preset-lint-node": "^1.13.0"
   },
   "repository": {
     "type": "git",
