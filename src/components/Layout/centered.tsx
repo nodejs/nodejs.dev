@@ -13,30 +13,30 @@ import SEO from '../Seo';
 import darkModeController from '../../util/darkModeController';
 
 interface Props {
-    children: React.ReactNode;
-    title?: string;
-    description?: string;
-    img?: string;
-    href?: string;
-    showFooter?: boolean;
-    location?: string;
+  children: React.ReactNode;
+  title?: string;
+  description?: string;
+  img?: string;
+  href?: string;
+  showFooter?: boolean;
+  location?: string;
 }
 
 const CenteredLayout = ({
-    children,
-    title,
-    description,
-    img,
-    showFooter = true,
+  children,
+  title,
+  description,
+  img,
+  showFooter = true,
 }: Props): JSX.Element => {
-    return (
-        <>
-            <SEO title={title} description={description} img={img} />
-            <Header darkModeController={darkModeController} />
-            <main className="main__centered">{children}</main>
-            {showFooter && <Footer />}
-        </>
-    );
+  return (
+    <>
+      <SEO title={title} description={description} img={img} />
+      <Header darkModeController={darkModeController} />
+      <main className="main__centered">{children}</main>
+      {showFooter && <Footer />}
+    </>
+  );
 };
 
 export default CenteredLayout;
