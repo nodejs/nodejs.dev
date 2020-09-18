@@ -5,6 +5,8 @@
   "author": "Adam Miller <ammiller@linkedin.com>",
   "private": true,
   "dependencies": {
+    "@mdx-js/mdx": "^1.6.18",
+    "@mdx-js/react": "^1.6.18",
     "@smotaal.io/dark-mode-controller": "<0.5",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",
@@ -20,6 +22,7 @@
     "gatsby-plugin-canonical-urls": "^2.2.3",
     "gatsby-plugin-catch-links": "^2.2.1",
     "gatsby-plugin-manifest": "^2.4.0",
+    "gatsby-plugin-mdx": "^1.2.40",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.2.4",
