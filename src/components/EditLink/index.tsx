@@ -1,34 +1,5 @@
-import { css, SerializedStyles } from '@emotion/core';
 import React from 'react';
-
-const edit: SerializedStyles = css`
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const link: SerializedStyles = css`
-  color: var(--black7) !important;
-  text-transform: uppercase;
-  text-decoration: none !important;
-  font-size: 1.4rem;
-  font-weight: normal;
-  font-family: var(--sans-serif);
-  vertical-align: middle;
-
-  span {
-    vertical-align: middle;
-    font-weight: normal;
-  }
-
-  &:hover {
-    color: var(--brand-light) !important;
-  }
-`;
-
-const icon: SerializedStyles = css`
-  margin-left: 0.5rem;
-  vertical-align: middle;
-`;
+import './EditLink.scss';
 
 interface Props {
   relativePath?: string;
@@ -42,11 +13,11 @@ const EditLink = ({ relativePath }: Props): JSX.Element | null => {
   const href = `https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/${relativePath}`;
 
   return (
-    <div css={edit}>
-      <a css={link} href={href}>
+    <div className="edit">
+      <a className="link" href={href}>
         <span>Edit this page on GitHub</span>{' '}
         <svg
-          css={icon}
+          className="icon"
           fill="currentColor"
           height="1em"
           width="1em"
