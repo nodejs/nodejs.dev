@@ -2,7 +2,6 @@
   "plugins": [
     "remark-frontmatter",
     "remark-preset-lint-node",
-    ["remark-lint-code-block-style", false],
     ["remark-lint-first-heading-level", false],
     ["remark-lint-maximum-line-length", false],
     ["remark-lint-no-consecutive-blank-lines", false],
