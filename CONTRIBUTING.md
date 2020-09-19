@@ -2,9 +2,9 @@
 
 ## Vocabulary
 
-- A **Contributor** is any individual creating or commenting on an issue or pull request,
+* A **Contributor** is any individual creating or commenting on an issue or pull request,
   or contributing in some other way.
-- A **Collaborator** is a contributor who has been given write access to the repository.
+* A **Collaborator** is a contributor who has been given write access to the repository.
 
 ## Commit Guidelines
 
