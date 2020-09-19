@@ -1,4 +1,5 @@
 import React from 'react';
+import { throttle } from 'throttle-debounce';
 import { PaginationInfo } from '../../types';
 import AuthorsList from '../../containers/AuthorList';
 import EditLink from '../EditLink';
@@ -44,8 +45,9 @@ const Article = ({
     }
 
     if (element.current) {
-      observer = new IntersectionObserver(
-        (entries): void => {
+      const handleObserverThrottled = throttle(
+        300,
+        (entries: IntersectionObserverEntry[]) => {
           entries.forEach((entry): void => {
             // element is already hidden by the nav
             if (entry.boundingClientRect.y < NAV_HEIGHT) {
@@ -69,6 +71,12 @@ const Article = ({
               );
             }
           });
+        }
+      );
+
+      observer = new IntersectionObserver(
+        (entries): void => {
+          handleObserverThrottled(entries);
         },
         {
           threshold: [0.25, 0.5, 0.75],

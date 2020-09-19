@@ -1,0 +1,238 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DownloadReleases component renders correctly 1`] = `
+<div
+  className="download-releases"
+>
+  <h2
+    className="download-releases__title"
+  >
+    Upcoming Releases
+  </h2>
+  <div
+    className="react-tabs"
+    data-tabs={true}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+  >
+    <ul
+      className="react-tabs__tab-list"
+      role="tablist"
+    >
+      <li
+        aria-controls="react-tabs-1"
+        aria-disabled="false"
+        aria-selected="true"
+        className="react-tabs__tab react-tabs__tab--selected"
+        id="react-tabs-0"
+        role="tab"
+        tabIndex="0"
+      >
+        Node.js 12
+      </li>
+      <li
+        aria-controls="react-tabs-3"
+        aria-disabled="false"
+        aria-selected="false"
+        className="react-tabs__tab"
+        id="react-tabs-2"
+        role="tab"
+        tabIndex={null}
+      >
+        Node.js 13
+      </li>
+      <li
+        aria-controls="react-tabs-5"
+        aria-disabled="false"
+        aria-selected="false"
+        className="react-tabs__tab"
+        id="react-tabs-4"
+        role="tab"
+        tabIndex={null}
+      >
+        Node.js 14
+      </li>
+      <li
+        aria-controls="react-tabs-7"
+        aria-disabled="false"
+        aria-selected="false"
+        className="react-tabs__tab"
+        id="react-tabs-6"
+        role="tab"
+        tabIndex={null}
+      >
+        Node.js 15
+      </li>
+    </ul>
+    <div
+      aria-labelledby="react-tabs-0"
+      className="react-tabs__tab-panel react-tabs__tab-panel--selected"
+      id="react-tabs-1"
+      role="tabpanel"
+    >
+      <div
+        className="node"
+      >
+        <div
+          className="current"
+        >
+          <img
+            alt=""
+            src="test-file-stub"
+          />
+          <p
+            className="release-title"
+          >
+            Current
+          </p>
+          <p
+            className="release-date"
+          >
+            Released 2019-04-23
+          </p>
+        </div>
+        <div
+          className="lts"
+        >
+          <img
+            alt=""
+            src="test-file-stub"
+          />
+          <p
+            className="release-title"
+          >
+            Active LTS
+          </p>
+          <p
+            className="release-date"
+          >
+            Released 2019-10-21
+          </p>
+        </div>
+        <div
+          className="maintenance"
+        >
+          <img
+            alt=""
+            src="test-file-stub"
+          />
+          <p
+            className="release-title"
+          >
+            Maintenance Release
+          </p>
+          <p
+            className="release-date"
+          >
+            Released 2020-10-20 
+          </p>
+        </div>
+        <div
+          className="endoflife"
+        >
+          <img
+            alt=""
+            src="test-file-stub"
+          />
+          <p
+            className="release-title"
+          >
+            End-of-life Release
+          </p>
+          <p
+            className="release-date"
+          >
+            Released 2022-04-30
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-labelledby="react-tabs-2"
+      className="react-tabs__tab-panel"
+      id="react-tabs-3"
+      role="tabpanel"
+    />
+    <div
+      aria-labelledby="react-tabs-4"
+      className="react-tabs__tab-panel"
+      id="react-tabs-5"
+      role="tabpanel"
+    />
+    <div
+      aria-labelledby="react-tabs-6"
+      className="react-tabs__tab-panel"
+      id="react-tabs-7"
+      role="tabpanel"
+    />
+  </div>
+  <p
+    className="lts__text"
+  >
+    Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general use. LTS release status is "long-term support", which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use Active LTS or Maintenance LTS releases.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <td>
+          Version
+        </td>
+        <td>
+          LTS
+        </td>
+        <td>
+          Date
+        </td>
+        <td>
+          V8
+        </td>
+        <td>
+          NPM
+        </td>
+        <td>
+          ABI
+        </td>
+        <td>
+          SHASUM
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          v14.11.0
+        </td>
+        <td>
+          
+        </td>
+        <td>
+          2020-09-15
+        </td>
+        <td>
+          8.4.371.19
+        </td>
+        <td>
+          6.14.8
+        </td>
+        <td>
+          ABI?
+        </td>
+        <td>
+          <a
+            href="https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V14.md#14.11.0"
+          >
+            Changelog
+          </a>
+        </td>
+        <td>
+          <a
+            href="https://nodejs.org/download/release/v14.11.0/"
+          >
+            Download
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
