@@ -4,7 +4,6 @@
     "remark-preset-lint-node",
     ["remark-lint-first-heading-level", false],
     ["remark-lint-maximum-line-length", false],
-    ["remark-lint-no-inline-padding", false],
     ["remark-lint-no-literal-urls", false],
     ["remark-lint-no-shortcut-reference-link", false],
     ["remark-lint-no-undefined-references", false],
