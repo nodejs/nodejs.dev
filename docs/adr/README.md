@@ -15,7 +15,7 @@ minutes; the collection of ADRs created and maintained in a project
 constitute its decision log.
 
 The ADR organization on github has a good set of documentation that
-introduces the concept well: https://adr.github.io/. For the purposes of this
+introduces the concept well: <https://adr.github.io/>. For the purposes of this
 repo we've adopted markdown ADR ([MADR](https://adr.github.io/madr/))
 
 ## Why Do We Have This?
