@@ -35,7 +35,7 @@ const Author = ({
         rel="noopener noreferrer"
         style={mleft}
       >
-        <img className="img " src={githubImgLink} alt={username} />
+        <img className="img" src={githubImgLink} alt={username} />
       </a>
     </li>
   );
