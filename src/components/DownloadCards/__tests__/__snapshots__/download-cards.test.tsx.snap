@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DownloadCards component renders correctly 1`] = `
+<ul
+  className="download-card__row"
+>
+  <li
+    className="download-card--inactive"
+    onClick={[Function]}
+    role="presentation"
+  >
+    <div
+      className="download-card__top"
+    >
+      <img
+        alt="Windows Installer logo"
+        className="download-card__top--inactive"
+        src="test-file-stub"
+      />
+    </div>
+    <p
+      className="download-card__label--inactive"
+    >
+      Windows Installer
+    </p>
+    <p
+      className="download-card__filename"
+    >
+      node-undefined-x86.msi
+    </p>
+  </li>
+  <li
+    className="download-card--inactive"
+    onClick={[Function]}
+    role="presentation"
+  >
+    <div
+      className="download-card__top"
+    >
+      <img
+        alt="MAC Installer logo"
+        className="download-card__top--inactive"
+        src="test-file-stub"
+      />
+    </div>
+    <p
+      className="download-card__label--inactive"
+    >
+      MAC Installer
+    </p>
+    <p
+      className="download-card__filename"
+    >
+      node-undefined.pkg
+    </p>
+  </li>
+  <li
+    className="download-card--inactive"
+    onClick={[Function]}
+    role="presentation"
+  >
+    <div
+      className="download-card__top"
+    >
+      <img
+        alt="Source Code logo"
+        className="download-card__top--inactive"
+        src="test-file-stub"
+      />
+    </div>
+    <p
+      className="download-card__label--inactive"
+    >
+      Source Code
+    </p>
+    <p
+      className="download-card__filename"
+    >
+      node-undefined.tar.gz
+    </p>
+  </li>
+</ul>
+`;

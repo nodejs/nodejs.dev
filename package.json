@@ -57,10 +57,11 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "test-ci": "npm run test -- --coverage && codecov",
-    "lint": "eslint src --ext .js,.ts,.tsx",
+    "lint": "npm run lint:js && npm run lint:md",
+    "lint:js": "eslint src --ext .js,.ts,.tsx",
+    "lint:md": "remark -qf .",
     "lint:fix": "npm run lint -- --fix",
     "serve": "npm run build && clear && gatsby serve",
-    "md-check": "remark -qf .",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o ./public/storybook"
   },
