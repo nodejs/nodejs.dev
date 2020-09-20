@@ -24,7 +24,7 @@ exports[`AuthorsList component renders correctly 1`] = `
     >
       <img
         alt="test-author"
-        className="img "
+        className="img"
         src="https://github.com/test-author.png?size=60"
       />
     </a>
@@ -42,7 +42,7 @@ exports[`AuthorsList component renders correctly 1`] = `
     >
       <img
         alt="another-test-author"
-        className="img "
+        className="img"
         src="https://github.com/another-test-author.png?size=60"
       />
     </a>
