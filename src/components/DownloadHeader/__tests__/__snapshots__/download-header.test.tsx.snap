@@ -7,11 +7,10 @@ Array [
   >
     <div>
       HOME /
-       
       <span
         className="download-page__navigation--active"
       >
-        downloads
+         downloads
       </span>
     </div>
     <div>

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
 import { ReleaseData } from '../../hooks/useReleaseHistory';
-import DownloadTable from './DownloadTable';
 import hexagonFilled from '../../images/icons/hexagon-filled.svg';
+import DownloadTable from './DownloadTable';
 import hexagonOutline from '../../images/icons/hexagon-outline.svg';
+
 import './DownloadReleases.scss';
 
 interface Props {
@@ -25,7 +27,6 @@ export default function DownloadToggle({ releases }: Props): JSX.Element {
           <div className="node">
             <div className="current">
               <img src={hexagonFilled} alt="" />
-
               <p className="release-title">Current</p>
               <p className="release-date">Released 2019-04-23</p>
             </div>
@@ -69,7 +70,6 @@ export default function DownloadToggle({ releases }: Props): JSX.Element {
           <div className="node">
             <div className="current">
               <img src={hexagonFilled} alt="" />
-
               <p className="release-title">Current</p>
               <p className="release-date">Released 2020-04-21</p>
             </div>
@@ -94,7 +94,6 @@ export default function DownloadToggle({ releases }: Props): JSX.Element {
           <div className="node">
             <div className="current">
               <img src={hexagonFilled} alt="" />
-
               <p className="release-title">Current</p>
               <p className="release-date">Released 2020-10-21 </p>
             </div>
