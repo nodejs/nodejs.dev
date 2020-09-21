@@ -2,9 +2,9 @@
 
 ## Vocabulary
 
-- A **Contributor** is any individual creating or commenting on an issue or pull request,
+* A **Contributor** is any individual creating or commenting on an issue or pull request,
   or contributing in some other way.
-- A **Collaborator** is a contributor who has been given write access to the repository.
+* A **Collaborator** is a contributor who has been given write access to the repository.
 
 ## Commit Guidelines
 
@@ -67,7 +67,7 @@ In the case of an objection being raised in a pull request by another collaborat
 
 ## Storybook
 
-This project uses [Storybook], a tool which provides a sandbox environment for developing UI components. To generate the Storybook locally:
+This project uses [Storybook][], a tool which provides a sandbox environment for developing UI components. To generate the Storybook locally:
 
 * Run `npm run storybook`
 * Navigate to `localhost:6006`
