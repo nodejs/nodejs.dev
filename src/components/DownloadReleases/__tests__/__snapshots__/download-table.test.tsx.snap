@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DownloadTable component renders correctly 1`] = `
+<table>
+  <thead>
+    <tr>
+      <td>
+        Version
+      </td>
+      <td>
+        LTS
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        V8
+      </td>
+      <td>
+        NPM
+      </td>
+      <td>
+        ABI
+      </td>
+      <td>
+        SHASUM
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        v14.11.0
+      </td>
+      <td>
+        
+      </td>
+      <td>
+        2020-09-15
+      </td>
+      <td>
+        8.4.371.19
+      </td>
+      <td>
+        6.14.8
+      </td>
+      <td>
+        ABI?
+      </td>
+      <td>
+        <a
+          href="https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V14.md#14.11.0"
+        >
+          Changelog
+        </a>
+      </td>
+      <td>
+        <a
+          href="https://nodejs.org/download/release/v14.11.0/"
+        >
+          Download
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
