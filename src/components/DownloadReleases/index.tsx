@@ -3,9 +3,9 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import { ReleaseData } from '../../hooks/useReleaseHistory';
 import hexagonFilled from '../../images/icons/hexagon-filled.svg';
-import DownloadTable from './DownloadTable';
 import hexagonOutline from '../../images/icons/hexagon-outline.svg';
 
+import DownloadTable from './DownloadTable';
 import './DownloadReleases.scss';
 
 interface Props {
