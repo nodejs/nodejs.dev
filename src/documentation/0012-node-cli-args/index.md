@@ -31,7 +31,7 @@ The way you retrieve it is using the `process` object built into Node.js.
 
 It exposes an `argv` property, which is an array that contains all the command line invocation arguments.
 
-The first argument is the full path of the `node` command.
+The first element is the full path of the `node` command.
 
 The second element is the full path of the file being executed.
 
