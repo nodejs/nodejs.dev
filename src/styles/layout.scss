@@ -479,7 +479,8 @@ details {
   }
 
   .nav__container {
-    padding: 10px var(--space-12);
+    padding: 0 var(--space-12);
+    min-height: var(--nav-height);
   }
 
   .nav__logo {
