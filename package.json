@@ -47,10 +47,7 @@
     "throttle-debounce": "^2.3.0",
     "typescript": "3.9.2"
   },
-  "keywords": [
-    "gatsby",
-    "node.js"
-  ],
+  "keywords": ["gatsby", "node.js"],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -59,7 +56,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,scss}\" && npm run lint:fix",
     "format-check": "prettier --check \"**/*.{ts,tsx,js,scss}\"",
     "update-snapshot": "npm run test -- --updateSnapshot",
-    "pretest": "npm run format-check && npm run lint",
+    "pretest": "npm run format && npm run format-check && npm run lint",
     "test": "jest",
     "test-watch": "jest --watch",
     "test-ci": "npm run test -- --coverage && codecov",
@@ -114,21 +111,12 @@
       ".+\\.(css|styl|less|sass|scss)$": "identity-obj-proxy",
       ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/fileMock.js"
     },
-    "testPathIgnorePatterns": [
-      "node_modules",
-      ".cache"
-    ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!(gatsby)/)"
-    ],
+    "testPathIgnorePatterns": ["node_modules", ".cache"],
+    "transformIgnorePatterns": ["node_modules/(?!(gatsby)/)"],
     "globals": {
       "__PATH_PREFIX__": ""
     },
-    "setupFiles": [
-      "<rootDir>/test-setup.js"
-    ],
-    "collectCoverageFrom": [
-      "src/**/**.(ts|tsx|js)"
-    ]
+    "setupFiles": ["<rootDir>/test-setup.js"],
+    "collectCoverageFrom": ["src/**/**.(ts|tsx|js)"]
   }
 }
