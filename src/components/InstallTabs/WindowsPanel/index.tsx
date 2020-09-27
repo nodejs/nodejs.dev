@@ -11,16 +11,14 @@ const WindowsPanel = (): JSX.Element => {
       </ShellBox>
       <br />
       <br />
-      <button type="button" className="install__docs-button">
-        <a
-          className="install__docs-button-text"
-          href="https://nodejs.org/en/download/package-manager/#windows"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Read documentation
-        </a>
-      </button>
+      <a
+        className="install__docs-button"
+        href="https://nodejs.org/en/download/package-manager/#windows"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read documentation
+      </a>
     </div>
   );
 };

@@ -2,34 +2,10 @@
 
 exports[`Author component renders correctly 1`] = `
 <li
-  css={
-    Object {
-      "map": undefined,
-      "name": "66iazq",
-      "next": undefined,
-      "styles": "
-  list-style: none;
-",
-      "toString": [Function],
-    }
-  }
+  className="list"
 >
   <a
-    css={
-      Object {
-        "map": undefined,
-        "name": "1uax1e8",
-        "next": undefined,
-        "styles": "
-  margin-left: 0.5rem;
-
-  &:hover img {
-    transform: scale(1.1);
-  }
-",
-        "toString": [Function],
-      }
-    }
+    className="link"
     href="https://github.com/test-author"
     rel="noopener noreferrer"
     style={Object {}}
@@ -38,23 +14,7 @@ exports[`Author component renders correctly 1`] = `
   >
     <img
       alt="test-author"
-      className="author-img"
-      css={
-        Object {
-          "map": undefined,
-          "name": "bq2cf",
-          "next": undefined,
-          "styles": "
-  height: 30px;
-  width: 30px;
-  margin-top: 5px;
-  border-radius: 100%;
-  border: 1px solid var(--brand-light);
-  transition: all 0.2s ease-in-out;
-",
-          "toString": [Function],
-        }
-      }
+      className="img"
       src="https://github.com/test-author.png?size=60"
     />
   </a>
