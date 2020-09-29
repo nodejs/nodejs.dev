@@ -2,46 +2,10 @@
 
 exports[`EditLink component renders correctly 1`] = `
 <div
-  css={
-    Object {
-      "map": undefined,
-      "name": "rtde4j",
-      "next": undefined,
-      "styles": "
-  display: flex;
-  flex-wrap: wrap;
-",
-      "toString": [Function],
-    }
-  }
+  className="edit"
 >
   <a
-    css={
-      Object {
-        "map": undefined,
-        "name": "1fo9rdi",
-        "next": undefined,
-        "styles": "
-  color: var(--black7) !important;
-  text-transform: uppercase;
-  text-decoration: none !important;
-  font-size: 1.4rem;
-  font-weight: normal;
-  font-family: var(--sans-serif);
-  vertical-align: middle;
-
-  span {
-    vertical-align: middle;
-    font-weight: normal;
-  }
-
-  &:hover {
-    color: var(--brand-light) !important;
-  }
-",
-        "toString": [Function],
-      }
-    }
+    className="link"
     href="https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/0002-node-history/index.md"
   >
     <span>
@@ -49,18 +13,7 @@ exports[`EditLink component renders correctly 1`] = `
     </span>
      
     <svg
-      css={
-        Object {
-          "map": undefined,
-          "name": "y6j8ah",
-          "next": undefined,
-          "styles": "
-  margin-left: 0.5rem;
-  vertical-align: middle;
-",
-          "toString": [Function],
-        }
-      }
+      className="icon"
       fill="currentColor"
       height="1em"
       viewBox="0 0 40 40"

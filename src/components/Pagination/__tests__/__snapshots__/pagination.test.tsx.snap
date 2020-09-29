@@ -2,45 +2,11 @@
 
 exports[`Pagination component only renders links to pages that has a title 1`] = `
 <ul
-  css={
-    Object {
-      "map": undefined,
-      "name": "1gwj20b",
-      "next": undefined,
-      "styles": "
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  padding: 5rem 0;
-",
-      "toString": [Function],
-    }
-  }
+  className="pagination"
 >
   <li>
     <a
-      css={
-        Object {
-          "map": undefined,
-          "name": "1guobqr",
-          "next": undefined,
-          "styles": "
-  color: var(--black7) !important;
-  text-transform: uppercase;
-  text-decoration: none !important;
-  font-size: 1.4rem;
-  font-weight: normal;
-  font-family: var(--sans-serif);
-  vertical-align: middle;
-
-  &:hover {
-    color: var(--brand-light) !important;
-  }
-",
-          "toString": [Function],
-        }
-      }
+      className="link"
       href="/learn/test-slug"
       rel="prev"
     >
@@ -53,45 +19,11 @@ exports[`Pagination component only renders links to pages that has a title 1`] =
 
 exports[`Pagination component renders correctly when there is no next page 1`] = `
 <ul
-  css={
-    Object {
-      "map": undefined,
-      "name": "1gwj20b",
-      "next": undefined,
-      "styles": "
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  padding: 5rem 0;
-",
-      "toString": [Function],
-    }
-  }
+  className="pagination"
 >
   <li>
     <a
-      css={
-        Object {
-          "map": undefined,
-          "name": "1guobqr",
-          "next": undefined,
-          "styles": "
-  color: var(--black7) !important;
-  text-transform: uppercase;
-  text-decoration: none !important;
-  font-size: 1.4rem;
-  font-weight: normal;
-  font-family: var(--sans-serif);
-  vertical-align: middle;
-
-  &:hover {
-    color: var(--brand-light) !important;
-  }
-",
-          "toString": [Function],
-        }
-      }
+      className="link"
       href="/learn/test-slug"
       rel="prev"
     >
@@ -104,46 +36,12 @@ exports[`Pagination component renders correctly when there is no next page 1`] =
 
 exports[`Pagination component renders correctly when there is no previous page 1`] = `
 <ul
-  css={
-    Object {
-      "map": undefined,
-      "name": "1gwj20b",
-      "next": undefined,
-      "styles": "
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  padding: 5rem 0;
-",
-      "toString": [Function],
-    }
-  }
+  className="pagination"
 >
   <li />
   <li>
     <a
-      css={
-        Object {
-          "map": undefined,
-          "name": "1guobqr",
-          "next": undefined,
-          "styles": "
-  color: var(--black7) !important;
-  text-transform: uppercase;
-  text-decoration: none !important;
-  font-size: 1.4rem;
-  font-weight: normal;
-  font-family: var(--sans-serif);
-  vertical-align: middle;
-
-  &:hover {
-    color: var(--brand-light) !important;
-  }
-",
-          "toString": [Function],
-        }
-      }
+      className="link"
       href="/learn/test-slug"
       rel="next"
     >
@@ -155,45 +53,11 @@ exports[`Pagination component renders correctly when there is no previous page 1
 
 exports[`Pagination component renders links to the next and previous page 1`] = `
 <ul
-  css={
-    Object {
-      "map": undefined,
-      "name": "1gwj20b",
-      "next": undefined,
-      "styles": "
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  padding: 5rem 0;
-",
-      "toString": [Function],
-    }
-  }
+  className="pagination"
 >
   <li>
     <a
-      css={
-        Object {
-          "map": undefined,
-          "name": "1guobqr",
-          "next": undefined,
-          "styles": "
-  color: var(--black7) !important;
-  text-transform: uppercase;
-  text-decoration: none !important;
-  font-size: 1.4rem;
-  font-weight: normal;
-  font-family: var(--sans-serif);
-  vertical-align: middle;
-
-  &:hover {
-    color: var(--brand-light) !important;
-  }
-",
-          "toString": [Function],
-        }
-      }
+      className="link"
       href="/learn/test-slug"
       rel="prev"
     >
@@ -202,27 +66,7 @@ exports[`Pagination component renders links to the next and previous page 1`] = 
   </li>
   <li>
     <a
-      css={
-        Object {
-          "map": undefined,
-          "name": "1guobqr",
-          "next": undefined,
-          "styles": "
-  color: var(--black7) !important;
-  text-transform: uppercase;
-  text-decoration: none !important;
-  font-size: 1.4rem;
-  font-weight: normal;
-  font-family: var(--sans-serif);
-  vertical-align: middle;
-
-  &:hover {
-    color: var(--brand-light) !important;
-  }
-",
-          "toString": [Function],
-        }
-      }
+      className="link"
       href="/learn/test-slug"
       rel="next"
     >
