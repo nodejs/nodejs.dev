@@ -388,7 +388,7 @@ They differ from `dependencies` because they are meant to be installed only on a
 When you install a package using npm or yarn:
 
 ```sh
-npm install --dev <PACKAGENAME>
+npm install --save-dev <PACKAGENAME>
 yarn add --dev <PACKAGENAME>
 ```
 
