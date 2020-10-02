@@ -1,22 +1,23 @@
 import React from 'react';
 
 import { NodeReleaseData } from '../../hooks/useReleaseHistory';
+import './DownloadTable.scss';
 
 interface Props {
   releases: NodeReleaseData[];
 }
 
 const DownloadTable = ({ releases }: Props): JSX.Element => (
-  <table>
+  <table className="downloads-table">
     <thead>
       <tr>
-        <td>Release</td>
-        <td>Status</td>
-        <td>Codename</td>
-        <td>Initial Release</td>
-        <td>Active LTS Start</td>
-        <td>Maintainance LTS Start</td>
-        <td>End of Life</td>
+        <th>Release</th>
+        <th>Status</th>
+        <th>Codename</th>
+        <th>Initial Release</th>
+        <th>Active LTS Start</th>
+        <th>Maintainance LTS Start</th>
+        <th>End of Life</th>
       </tr>
     </thead>
     <tbody>
