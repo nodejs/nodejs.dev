@@ -56,7 +56,7 @@ will do the job.
 Now, this is a funny useless command.
 Other scenarios include:
 
-* running the `vue` CLI tool to create new applications and run them: `npx vue create my-vue-app`
+* running the `vue` CLI tool to create new applications and run them: `npx @vue/cli create my-vue-app`
 * creating a new React app using `create-react-app`: `npx create-react-app my-react-app`
 
 and many more.

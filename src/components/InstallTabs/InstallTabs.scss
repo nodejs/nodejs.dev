@@ -92,23 +92,19 @@
         user-select: none;
       }
     }
-    &__docs-button {
+    &__docs-button,
+    &__docs-button:hover {
       border-radius: var(--space-04);
+      border: 1px solid var(--color-text-secondary);
       padding: var(--space-08) var(--space-16);
       position: absolute;
       bottom: 2rem;
       right: 2rem;
-    }
-    &__docs-button-text {
       text-decoration: none;
       box-sizing: border-box;
-      width: 17rem;
       height: 4rem;
-      color: var(--black5);
+      color: var(--color-text-secondary);
       font-weight: var(--font-weight-semibold);
-      &:hover {
-        color: var(--pink5);
-      }
     }
   }
   .shell-box {

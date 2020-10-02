@@ -1,29 +1,6 @@
-import { css, SerializedStyles } from '@emotion/core';
 import React from 'react';
 import Author from '../../components/Author';
-
-const list: SerializedStyles = css`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 5rem 0 2.5rem;
-  align-items: center;
-  color: var(--black7);
-  text-transform: uppercase;
-  padding-left: 0;
-
-  li:first-of-type a {
-    margin-left: 0 !important;
-  }
-
-  h5 {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 0.5rem 0.5rem 0.5rem 0;
-    font-weight: normal;
-    font-size: 1.4rem;
-  }
-`;
+import './AuthorList.scss';
 
 interface Props {
   authors: string[];
@@ -35,7 +12,7 @@ const AuthorsList = ({ authors }: Props): null | JSX.Element => {
   }
 
   return (
-    <ul css={list}>
+    <ul className="list">
       <h5>Contributors</h5>
       {authors.map(
         (author, i): string | JSX.Element =>

@@ -7,16 +7,16 @@ interface Props {
 }
 
 export default function DownloadHeader({ release }: Props): JSX.Element {
-  const nodev = release && release.version;
-  const npmv = release && release.npm;
-  const lts = release && release.lts;
+  const nodev = release?.version;
+  const npmv = release?.npm;
+  const lts = release?.lts;
 
   return (
     <>
       <div className="download-page__navigation">
         <div>
-          HOME /{' '}
-          <span className="download-page__navigation--active">downloads</span>
+          HOME /
+          <span className="download-page__navigation--active"> downloads</span>
         </div>
         <div>
           {lts ? 'LATEST LTS' : 'CURRENT'} VERSION {nodev}

@@ -30,7 +30,22 @@ module.exports = {
         include: ['**/*.md'], // ignore files starting with a dot
       },
     },
-
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'sites',
+        path: `${__dirname}/src/pages/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          sites: require.resolve(`./src/components/Layout/centered.tsx`),
+          default: require.resolve(`./src/components/Layout/index.tsx`),
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -82,9 +97,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-sitemap',
-    {
-      resolve: 'gatsby-plugin-emotion',
-    },
     'gatsby-plugin-meta-redirect',
   ],
 };
