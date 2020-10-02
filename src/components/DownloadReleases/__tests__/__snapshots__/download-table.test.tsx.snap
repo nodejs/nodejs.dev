@@ -1,30 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DownloadTable component renders correctly 1`] = `
-<table>
+<table
+  className="downloads-table"
+>
   <thead>
     <tr>
-      <td>
+      <th>
         Release
-      </td>
-      <td>
+      </th>
+      <th>
         Status
-      </td>
-      <td>
+      </th>
+      <th>
         Codename
-      </td>
-      <td>
+      </th>
+      <th>
         Initial Release
-      </td>
-      <td>
+      </th>
+      <th>
         Active LTS Start
-      </td>
-      <td>
+      </th>
+      <th>
         Maintainance LTS Start
-      </td>
-      <td>
+      </th>
+      <th>
         End of Life
-      </td>
+      </th>
     </tr>
   </thead>
   <tbody>

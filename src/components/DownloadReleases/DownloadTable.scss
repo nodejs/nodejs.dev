@@ -1,0 +1,32 @@
+.downloads-table {
+  color: var(--black8);
+  font-size: var(--font-size-body3);
+
+  thead {
+    th {
+      background: #f7f8f9;
+      color: var(--black9);
+      text-align: left;
+      padding: var(--space-08) var(--space-16);
+      font-weight: normal;
+    }
+    th:first-child {
+      border-radius: 3px 0px 0px 0px;
+    }
+    th:last-child {
+      border-radius: 0px 3px 0px 0px;
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        padding: var(--space-16) var(--space-16);
+      }
+
+      &:hover {
+        background: var(--brand10);
+      }
+    }
+  }
+}
