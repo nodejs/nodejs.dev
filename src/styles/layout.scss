@@ -9,6 +9,7 @@ body {
   font-size: 1.6rem;
   font-family: var(--base-type-face);
   margin: var(--nav-height) 0 0;
+  overflow-x: hidden;
 
   /* Set in JavaScript */
   --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
@@ -480,6 +481,7 @@ details {
 
   .nav__container {
     padding: 0 var(--space-12);
+    min-height: var(--nav-height);
   }
 
   .nav__logo {
