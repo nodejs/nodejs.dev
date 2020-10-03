@@ -1,11 +1,11 @@
 .downloads-table {
-  color: var(--black8);
+  color: var(--color-text-primary);
   font-size: var(--font-size-body3);
 
   thead {
     th {
-      background: #f7f8f9;
-      color: var(--black9);
+      background: var(--color-fill-body);
+      color: var(--color-text-primary);
       text-align: left;
       padding: var(--space-08) var(--space-16);
       font-weight: normal;
@@ -20,12 +20,17 @@
 
   tbody {
     tr {
+      background: var(--color-fill-app);
       td {
         padding: var(--space-16) var(--space-16);
       }
 
       &:hover {
         background: var(--brand10);
+      }
+
+      .dark-mode &:hover {
+        background: var(--brand9);
       }
     }
   }
