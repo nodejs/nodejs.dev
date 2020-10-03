@@ -19,7 +19,7 @@ const DownloadTable = ({ releases }: Props): JSX.Element => (
         <th>Maintainance LTS Start</th>
         <th>End of Life</th>
       </tr>
-    </thead>
+    </thead> 
     <tbody>
       {releases.map(
         ({
