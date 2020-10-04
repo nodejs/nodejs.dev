@@ -38,6 +38,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'markdown-docs',
+        path: `./node_modules/node-i18n/content/v12.x/en-US/doc/`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {

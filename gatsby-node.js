@@ -1,14 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // Use in this file CommonJS syntax see https://www.gatsbyjs.org/docs/migrating-from-v1-to-v2/#convert-to-either-pure-commonjs-or-pure-es6
 const path = require('path');
+const { allPages, getPages, locales, supportedVersions } = require('node-i18n');
 const createSlug = require('./util-node/createSlug');
+require('./gatsby-node-docs');
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
 
   return new Promise((resolve, reject) => {
     const docTemplate = path.resolve('./src/templates/learn.tsx');
-
+  
+    // console.log('supportedVersions', supportedVersions());
     resolve(
       graphql(
         `
