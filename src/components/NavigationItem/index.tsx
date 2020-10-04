@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'gatsby';
 
 interface Props {
@@ -8,7 +8,6 @@ interface Props {
   slug: string;
   title: string;
   onClick: () => void;
-  autoScroll: (height: number) => void;
 }
 
 const NavigationItem = ({
@@ -17,7 +16,6 @@ const NavigationItem = ({
   slug,
   title,
   onClick,
-  autoScroll,
 }: Props): JSX.Element => {
   let className = 't-body2 side-nav__item ';
   if (isRead) {
@@ -32,17 +30,11 @@ const NavigationItem = ({
     }
   };
 
-  useEffect((): void => {
-    if (element.current) {
-      const height = element.current.getBoundingClientRect().top;
-      autoScroll(height);
-    }
-  });
-
   return (
     <Link
       innerRef={handleRef}
       to={`/learn/${slug}`}
+      id={`link-${slug}`}
       onClick={onClick}
       className={className}
     >
