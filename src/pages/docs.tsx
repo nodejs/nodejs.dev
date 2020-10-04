@@ -639,7 +639,7 @@ export default function APIDocsPage(): JSX.Element {
                 <select
                   id="api-nav__version__select-id"
                   className="api-nav__version"
-                  onChange={(e): void => {
+                  onBlur={(e): void => {
                     setPage(null);
                     setVersion(e.target.value);
                   }}
