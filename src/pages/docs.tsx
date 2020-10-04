@@ -92,7 +92,7 @@ function renderArticleSections(
   sections: JSX.Element[] = [],
   depth = 0
 ): JSX.Element[] {
-  pages.forEach(page => {
+  pages.forEach((page, index) => {
     const children: JSX.Element[] = [];
 
     const prepareArticleSections: Function = () => {
@@ -113,8 +113,10 @@ function renderArticleSections(
 
     prepareArticleSections();
 
+    const keyName = `${page.name}-${page.type}-${index}`;
+
     sections.push(
-      <section key={page.name} className="api-docs__section">
+      <section key={keyName} className="api-docs__section">
         {children}
       </section>
     );
@@ -581,6 +583,8 @@ export default function APIDocsPage(): JSX.Element {
     version || (releases[0] && releases[0].version) || null;
 
   const apiData = useApiData(currentVersionSelected);
+
+  console.log(apiData);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
