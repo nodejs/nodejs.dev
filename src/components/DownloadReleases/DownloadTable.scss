@@ -21,8 +21,14 @@
   tbody {
     tr {
       background: var(--color-fill-app);
+
       td {
         padding: var(--space-16) var(--space-16);
+        border-bottom: 1px solid #e2e3e7;
+
+        .dark-mode & {
+          border-bottom: 1px solid var(--color-border-primary);
+        }
       }
 
       &:hover {
