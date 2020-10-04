@@ -584,8 +584,6 @@ export default function APIDocsPage(): JSX.Element {
 
   const apiData = useApiData(currentVersionSelected);
 
-  console.log(apiData);
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     // run this every time the page loads. If there is no hash, return page back to default
