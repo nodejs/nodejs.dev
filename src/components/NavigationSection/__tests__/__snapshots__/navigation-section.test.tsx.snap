@@ -17,6 +17,7 @@ exports[`NavigationSection component renders correctly 1`] = `
   <a
     className="t-body2 side-nav__item "
     href="/learn/intro"
+    id="link-intro"
     innerRef={[Function]}
     onClick={[Function]}
   >
