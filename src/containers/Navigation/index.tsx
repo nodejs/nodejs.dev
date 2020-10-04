@@ -18,6 +18,7 @@ const Navigation = ({
   previousSlug,
 }: Props): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [hasScrolled, setHasScrolled] = useState<boolean>(false);
   const navElement = useRef<HTMLElement | null>(null);
   const toggle = (): void => setIsOpen(!isOpen);
   const onItemClick = (): void => {
@@ -48,6 +49,11 @@ const Navigation = ({
       }
     }
   }
+
+  const reRender = async (): Promise<void> => {
+    if ((isOpen || !isMobileScreen()) && !hasScrolled && navElement.current)
+      setHasScrolled(true);
+  };
 
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
 
@@ -82,6 +88,7 @@ const Navigation = ({
             currentSlug={currentSlug}
             onItemClick={onItemClick}
             readSections={readSections}
+            reRender={reRender}
           />
         )
       )}
