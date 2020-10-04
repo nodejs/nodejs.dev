@@ -34,7 +34,9 @@ const LearnLayout = ({
 
   if (typeof window !== 'undefined') {
     if (window.previousPath)
-      previousSlug = window.previousPath.split('/learn')[1].substr(1);
+      previousSlug =
+        window.previousPath.split('/learn')[1]?.substr(1) ||
+        'introduction-to-nodejs';
   }
 
   return (
