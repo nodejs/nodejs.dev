@@ -1,48 +1,59 @@
 import React from 'react';
 
-import { ReleaseData } from '../../hooks/useReleaseHistory';
+import { NodeReleaseData } from '../../hooks/useReleaseHistory';
 
 interface Props {
-  releases: ReleaseData[];
+  releases: NodeReleaseData[];
 }
 
 const DownloadTable = ({ releases }: Props): JSX.Element => (
   <table>
     <thead>
       <tr>
-        <td>Version</td>
-        <td>LTS</td>
-        <td>Date</td>
-        <td>V8</td>
-        <td>NPM</td>
-        <td>ABI</td>
-        <td>SHASUM</td>
+        <td>Release</td>
+        <td>Status</td>
+        <td>Codename</td>
+        <td>Initial Release</td>
+        <td>Active LTS Start</td>
+        <td>Maintainance LTS Start</td>
+        <td>End of Life</td>
       </tr>
     </thead>
     <tbody>
       {releases.map(
-        ({ version, date, npm, v8, lts }: ReleaseData): JSX.Element => {
-          const majorVersion = version.substring(1).split('.')[0];
-          const changelogHref = `https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V${majorVersion}.md#${version.substring(
-            1
-          )}`;
+        ({
+          release,
+          status,
+          codename,
+          initialRelease,
+          activeLTSStart,
+          maintenanceLTSStart,
+          endOfLife,
+        }: NodeReleaseData): JSX.Element => {
+          // Check if release is pending or not
+          const isPending = status === 'Pending';
+          // Download hyperlink for release
+          const releaseDownloadLink = `https://nodejs.org/download/release/latest-${release}.x/`;
+          // Download hyperlink for codename
+          const codenameReleaseLink = `https://nodejs.org/download/release/latest-${codename.toLowerCase()}/`;
 
           return (
-            <tr key={version}>
-              <td>{version}</td>
-              <td>{lts || ''}</td>
-              <td>{date}</td>
-              <td>{v8}</td>
-              <td>{npm}</td>
-              <td>ABI?</td>
+            <tr key={release}>
               <td>
-                <a href={changelogHref}>Changelog</a>
+                {isPending ? (
+                  release
+                ) : (
+                  <a href={releaseDownloadLink}>{release}</a>
+                )}
               </td>
+              <td>{status || ''}</td>
               <td>
-                <a href={`https://nodejs.org/download/release/${version}/`}>
-                  Download
-                </a>
+                {codename ? <a href={codenameReleaseLink}>{codename}</a> : null}
               </td>
+              <td>{initialRelease}</td>
+              <td>{activeLTSStart}</td>
+              <td>{maintenanceLTSStart}</td>
+              <td>{endOfLife}</td>
             </tr>
           );
         }
