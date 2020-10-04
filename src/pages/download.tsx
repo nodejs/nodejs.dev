@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { useReleaseHistory } from '../hooks';
+import {
+  useReleaseHistory,
+  getStaticReleaseData,
+} from '../hooks/useReleaseHistory';
 import { detectOS } from '../util/detectOS';
 import Layout from '../components/Layout';
 import DownloadHeader from '../components/DownloadHeader';
@@ -10,6 +13,7 @@ import '../styles/download.scss';
 
 export default function DownloadPage(): JSX.Element {
   const releaseHistory = useReleaseHistory().slice(0, 50);
+  const staticReleaseData = getStaticReleaseData();
   const [typeRelease, setTypeRelease] = useState('LTS');
 
   const userOS = detectOS();
@@ -35,7 +39,7 @@ export default function DownloadPage(): JSX.Element {
           }
         />
         <DownloadCards line={selectedType} userOS={userOS} />
-        <DownloadReleases releases={releaseHistory} />
+        <DownloadReleases releases={staticReleaseData} />
       </span>
     </Layout>
   );
