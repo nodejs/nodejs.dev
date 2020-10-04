@@ -8,11 +8,16 @@ interface Props {
   sections: NavigationSectionData;
   currentSlug: string;
   label: string;
+  previousSlug: string;
 }
 
-const Navigation = ({ sections, currentSlug, label }: Props): JSX.Element => {
+const Navigation = ({
+  sections,
+  currentSlug,
+  label,
+  previousSlug,
+}: Props): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [hasScrolled, setHasScrolled] = useState<boolean>(false);
   const navElement = useRef<HTMLElement | null>(null);
   const toggle = (): void => setIsOpen(!isOpen);
   const onItemClick = (): void => {
@@ -21,22 +26,28 @@ const Navigation = ({ sections, currentSlug, label }: Props): JSX.Element => {
     }
   };
 
-  const autoScroll = async (height: number): Promise<void> => {
-    if ((isOpen || !isMobileScreen()) && !hasScrolled && navElement.current) {
-      const { newScrollPos, scrollWindow, scrollTime } = calcNavScrollParams(
-        height,
-        navElement.current
-      );
+  if (typeof window !== 'undefined') {
+    const nav = navElement.current;
 
-      try {
-        await scrollTo(newScrollPos, scrollWindow, scrollTime);
-        setHasScrolled(true);
-      } catch (e) {
-        // TODO: follow up with appropriate error logging if any
-        setHasScrolled(false);
+    if (nav) {
+      const CurrentLinkElem = document.getElementById(`link-${currentSlug}`);
+      const { newScrollPos, scrollWindow, scrollTime } = calcNavScrollParams(
+        CurrentLinkElem?.getBoundingClientRect().top || 0,
+        nav
+      );
+      if (!previousSlug) {
+        nav.scrollTop = newScrollPos;
+      } else {
+        const PrevLinkElem = document.getElementById(`link-${previousSlug}`);
+        const prevElemScroll = calcNavScrollParams(
+          PrevLinkElem?.getBoundingClientRect().top || 0,
+          nav
+        );
+        nav.scrollTop = prevElemScroll.newScrollPos;
+        scrollTo(newScrollPos, scrollWindow, scrollTime);
       }
     }
-  };
+  }
 
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
 
@@ -71,7 +82,6 @@ const Navigation = ({ sections, currentSlug, label }: Props): JSX.Element => {
             currentSlug={currentSlug}
             onItemClick={onItemClick}
             readSections={readSections}
-            autoScroll={autoScroll}
           />
         )
       )}

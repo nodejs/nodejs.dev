@@ -13,6 +13,7 @@ exports[`Learn Template renders correctly 1`] = `
       <Navigation
         currentSlug="test-slug"
         label="Secondary"
+        previousSlug=""
         sections={
           Object {
             "test-section": Array [
