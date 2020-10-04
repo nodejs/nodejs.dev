@@ -9,6 +9,7 @@ interface Props {
   currentSlug: string;
   onItemClick: () => void;
   readSections: Set<NavigationSectionItem['slug']>;
+  reRender: () => void;
 }
 
 const NavigationSection = ({
@@ -17,6 +18,7 @@ const NavigationSection = ({
   currentSlug,
   onItemClick,
   readSections,
+  reRender,
 }: Props): JSX.Element => {
   return (
     <ul className="side-nav__list">
@@ -36,6 +38,7 @@ const NavigationSection = ({
               isRead={isRead}
               isActive={item.slug === currentSlug}
               onClick={onItemClick}
+              reRender={reRender}
             />
           );
         }

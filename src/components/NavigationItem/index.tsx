@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'gatsby';
 
 interface Props {
@@ -8,6 +8,7 @@ interface Props {
   slug: string;
   title: string;
   onClick: () => void;
+  reRender: () => void;
 }
 
 const NavigationItem = ({
@@ -16,6 +17,7 @@ const NavigationItem = ({
   slug,
   title,
   onClick,
+  reRender,
 }: Props): JSX.Element => {
   let className = 't-body2 side-nav__item ';
   if (isRead) {
@@ -29,6 +31,12 @@ const NavigationItem = ({
       element.current = ref;
     }
   };
+
+  useEffect((): void => {
+    if (element.current) {
+      reRender();
+    }
+  });
 
   return (
     <Link
