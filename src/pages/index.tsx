@@ -114,8 +114,6 @@ interface HomepageProps {
 export const query = graphql`
   query pageQuery {
     page: markdownRemark(fields: { slug: { eq: "homepage" } }) {
-      id
-      html
       frontmatter {
         title
         displayTitle
