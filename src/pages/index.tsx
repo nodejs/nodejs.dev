@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
@@ -7,6 +7,8 @@ import Layout from '../components/Layout';
 import '../util/konami';
 
 import '../styles/index.scss';
+
+import { HomepageData } from '../types';
 
 import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
@@ -18,41 +20,44 @@ import featureImg1 from '../images/feature-img-1.png';
 import featureImg2 from '../images/feature-img-2.png';
 import featureImg3 from '../images/feature-img-3.png';
 
-const nodeFeatureHeader1 = 'JavaScript';
-const nodeFeatureHeader2 = 'Open Source';
-const nodeFeatureHeader3 = 'Everywhere';
-
-const nodeFeature1 =
-  'Node.js provides support for the JavaScript programming language ';
-const nodeFeature2 =
-  'Node.js is open source and actively maintained by contributors all over the world ';
-const nodeFeature3 =
-  'Node.js has been adapted to work in a wide variety of places ';
-
 const NodeFeature = ({
   img,
   featureText,
   featureHeader,
+  featureAltText,
 }: Props): JSX.Element => {
   return (
     <div className="node-features__feature">
-      <img src={img} alt="node feature" />
+      <img src={img} alt={featureAltText} />
       <h4>{featureHeader}</h4>
       <p>{featureText}</p>
     </div>
   );
 };
 
-export default function Index(): JSX.Element {
-  const title = 'Run JavaScript Everywhere.';
-  const subTitle =
-    'Node.js is a free, open-sourced, cross-platform JavaScript run-time environment that lets developers write command line tools and server-side scripts outside of a browser.';
-  const description = 'Welcome to Node.js!';
-
+export default function Index({
+  data: {
+    page: {
+      frontmatter: {
+        displayTitle,
+        subTitle,
+        description,
+        learnLinkText,
+        nodeFeatureHeader1,
+        nodeFeatureHeader2,
+        nodeFeatureHeader3,
+        nodeFeature1,
+        nodeFeature2,
+        nodeFeature3,
+        nodeFeatureAltText,
+      },
+    },
+  },
+}: HomepageProps): JSX.Element {
   return (
-    <Layout title={title} description={description}>
+    <Layout title={displayTitle} description={description}>
       <main className="home-page">
-        <Hero title={title} subTitle={subTitle} />
+        <Hero title={displayTitle} subTitle={subTitle} />
 
         <section className="node-demo-container">
           <div className="node-demo">
@@ -69,22 +74,25 @@ export default function Index(): JSX.Element {
             img={featureImg1}
             featureText={nodeFeature1}
             featureHeader={nodeFeatureHeader1}
+            featureAltText={nodeFeatureAltText}
           />
           <NodeFeature
             img={featureImg2}
             featureText={nodeFeature2}
             featureHeader={nodeFeatureHeader2}
+            featureAltText={nodeFeatureAltText}
           />
           <NodeFeature
             img={featureImg3}
             featureText={nodeFeature3}
             featureHeader={nodeFeatureHeader3}
+            featureAltText={nodeFeatureAltText}
           />
         </section>
 
         <div className="download-lts-container">
           <Link to="/learn" className="circular-container">
-            Get Started
+            {learnLinkText}
           </Link>
         </div>
       </main>
@@ -96,4 +104,30 @@ interface Props {
   img: string;
   featureText: string;
   featureHeader: string;
+  featureAltText: string;
 }
+
+interface HomepageProps {
+  data: HomepageData;
+}
+
+export const query = graphql`
+  query pageQuery {
+    page: markdownRemark(fields: { slug: { eq: "homepage" } }) {
+      frontmatter {
+        title
+        displayTitle
+        subTitle
+        description
+        learnLinkText
+        nodeFeatureHeader1
+        nodeFeatureHeader2
+        nodeFeatureHeader3
+        nodeFeature1
+        nodeFeature2
+        nodeFeature3
+        nodeFeatureAltText
+      }
+    }
+  }
+`;
