@@ -63,9 +63,21 @@ export default function Index({
           <div className="node-demo">
             <InstallTabs />
           </div>
-          <img className="leafs-front" src={leafsIllustrationFront} alt="" />
-          <img className="leafs-middle" src={leafsIllustrationMiddle} alt="" />
-          <img className="leafs-back" src={leafsIllustrationBack} alt="" />
+          <img
+            className="leafs-front animations"
+            src={leafsIllustrationFront}
+            alt=""
+          />
+          <img
+            className="leafs-middle animations"
+            src={leafsIllustrationMiddle}
+            alt=""
+          />
+          <img
+            className="leafs-back animations"
+            src={leafsIllustrationBack}
+            alt=""
+          />
           <img className="dots" src={dotsIllustration} alt="" />
         </section>
 
