@@ -59,6 +59,12 @@
   animation: leafs-animation 18s infinite alternate ease-in-out;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .leafs-front, .leafs-middle, .leafs-back {
+    animation-name: dissolve;
+  }
+}
+
 .dots {
   position: absolute;
   top: 180px;
