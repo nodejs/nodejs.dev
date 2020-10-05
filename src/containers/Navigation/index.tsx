@@ -37,7 +37,12 @@ const Navigation = ({
           currentLinkElem?.getBoundingClientRect().top || 0,
           nav
         );
-        if (!previousSlug) {
+        // If it's mobile screen and nav is not open, do nothing
+        if (isMobileScreen() && !isOpen) return;
+        // If it's mobile screen, directly scroll to current element when nav opens
+        if (isMobileScreen()) {
+          scrollTo(newScrollPos, scrollWindow, scrollTime);
+        } else if (!previousSlug) {
           // If there's no previous slug, directly scroll to the current link
           nav.scrollTop = newScrollPos;
         } else {
@@ -55,7 +60,7 @@ const Navigation = ({
         }
       }
     }
-  }, [currentSlug, previousSlug]);
+  }, [currentSlug, previousSlug, isOpen]);
 
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
 
