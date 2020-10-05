@@ -9,12 +9,6 @@ import '../styles/article-reader.scss';
 import '../styles/learn.scss';
 import Footer from '../components/Footer';
 
-declare global {
-  interface Window {
-    previousPath: string;
-  }
-}
-
 interface Props {
   data: LearnPageData;
   pageContext: LearnPageContext;
@@ -32,11 +26,10 @@ const LearnLayout = ({
 }: Props): React.ReactNode => {
   let previousSlug = '';
 
-  if (typeof window !== 'undefined') {
-    if (window.previousPath)
-      previousSlug =
-        window.previousPath.split('/learn')[1]?.substr(1) ||
-        'introduction-to-nodejs';
+  if (typeof window !== 'undefined' && window.previousPath) {
+    previousSlug =
+      window.previousPath.split('/learn')[1]?.substr(1) ||
+      'introduction-to-nodejs';
   }
 
   return (
@@ -45,9 +38,9 @@ const LearnLayout = ({
         <Layout title={title} description={description} showFooter={false}>
           <Navigation
             currentSlug={slug}
+            previousSlug={previousSlug}
             label="Secondary"
             sections={navigationData}
-            previousSlug={previousSlug}
           />
           <Article
             title={title}
