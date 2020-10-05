@@ -29,9 +29,11 @@ export interface LearnPageContext {
 
 export interface LearnPageData {
   doc: {
-    id: string; html: string; tableOfContents: string;
-    frontmatter: {title: string; description: string};
-    fields: {authors: string[]};
+    id: string;
+    html: string;
+    tableOfContents: string;
+    frontmatter: { title: string; description: string };
+    fields: { authors: string[] };
   };
 }
 
@@ -61,7 +63,7 @@ export interface StickyChange {
 export interface SentinelObserverSetupOptions {
   container: HTMLElement;
   stickyElementsClassName: string;
-  root?: HTMLElement|null;
+  root?: HTMLElement | null;
   headerRootMargin?: string;
   footerRootMargin?: string;
 }
