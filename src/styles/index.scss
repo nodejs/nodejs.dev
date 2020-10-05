@@ -60,7 +60,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .leafs-front, .leafs-middle, .leafs-back {
+  .leafs-front,
+  .leafs-middle,
+  .leafs-back {
     animation-name: dissolve;
   }
 }
