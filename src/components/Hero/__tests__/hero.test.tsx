@@ -1,6 +1,7 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
 import renderer from 'react-test-renderer';
+
+import { ReleaseData } from '../../../hooks/useReleaseHistory';
 
 import Hero from '..';
 
@@ -34,7 +35,7 @@ const mockReleaseData = [
 ];
 
 jest.mock('../../../hooks/useReleaseHistory', () => ({
-  useReleaseHistory: () => mockReleaseData,
+  useReleaseHistory: (): ReleaseData[] => mockReleaseData,
 }));
 
 describe('Hero component', () => {
