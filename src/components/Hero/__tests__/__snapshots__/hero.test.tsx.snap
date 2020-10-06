@@ -9,7 +9,9 @@ exports[`Hero component renders correctly 1`] = `
   </h1>
   <h2
     className="sub-title t-subheading"
-  />
+  >
+    Mock SubTitle
+  </h2>
   <div
     className="btn-ctas"
   >
@@ -18,16 +20,16 @@ exports[`Hero component renders correctly 1`] = `
     >
       <a
         className="circular-container"
-        href="https://nodejs.org/dist//node-.tar.gz"
+        href="https://nodejs.org/dist/mmock-version-2/node-mmock-version-2.tar.gz"
       >
         Download Node (LTS)
       </a>
       <p
         className="t-caption"
       >
-        
+        Version mock-version-2 - 
         <a
-          href="https://nodejs.org/dist//node-.tar.gz"
+          href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
         >
           Get Current
         </a>
