@@ -32,13 +32,8 @@ export interface LearnPageData {
     id: string;
     html: string;
     tableOfContents: string;
-    frontmatter: {
-      title: string;
-      description: string;
-    };
-    fields: {
-      authors: string[];
-    };
+    frontmatter: { title: string; description: string };
+    fields: { authors: string[] };
   };
 }
 
@@ -71,4 +66,10 @@ export interface SentinelObserverSetupOptions {
   root?: HTMLElement | null;
   headerRootMargin?: string;
   footerRootMargin?: string;
+}
+
+declare global {
+  interface Window {
+    previousPath: string;
+  }
 }

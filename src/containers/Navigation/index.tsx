@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import NavigationSection from '../../components/NavigationSection';
 import { NavigationSectionData, NavigationSectionItem } from '../../types';
 import { isMobileScreen } from '../../util/isScreenWithinWidth';
@@ -7,12 +7,17 @@ import { scrollTo, calcNavScrollParams } from '../../util/scrollTo';
 interface Props {
   sections: NavigationSectionData;
   currentSlug: string;
+  previousSlug: string;
   label: string;
 }
 
-const Navigation = ({ sections, currentSlug, label }: Props): JSX.Element => {
+const Navigation = ({
+  sections,
+  currentSlug,
+  previousSlug,
+  label,
+}: Props): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [hasScrolled, setHasScrolled] = useState<boolean>(false);
   const navElement = useRef<HTMLElement | null>(null);
   const toggle = (): void => setIsOpen(!isOpen);
   const onItemClick = (): void => {
@@ -21,22 +26,41 @@ const Navigation = ({ sections, currentSlug, label }: Props): JSX.Element => {
     }
   };
 
-  const autoScroll = async (height: number): Promise<void> => {
-    if ((isOpen || !isMobileScreen()) && !hasScrolled && navElement.current) {
-      const { newScrollPos, scrollWindow, scrollTime } = calcNavScrollParams(
-        height,
-        navElement.current
-      );
-
-      try {
-        await scrollTo(newScrollPos, scrollWindow, scrollTime);
-        setHasScrolled(true);
-      } catch (e) {
-        // TODO: follow up with appropriate error logging if any
-        setHasScrolled(false);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const nav = navElement.current;
+      if (nav) {
+        //  Get current link element
+        const currentLinkElem = document.getElementById(`link-${currentSlug}`);
+        // Get scroll position for current link
+        const { newScrollPos, scrollWindow, scrollTime } = calcNavScrollParams(
+          currentLinkElem?.getBoundingClientRect().top || 0,
+          nav
+        );
+        // If it's mobile screen and nav is not open, do nothing
+        if (isMobileScreen() && !isOpen) return;
+        // If it's mobile screen, directly scroll to current element when nav opens
+        if (isMobileScreen()) {
+          scrollTo(newScrollPos, scrollWindow, scrollTime);
+        } else if (!previousSlug) {
+          // If there's no previous slug, directly scroll to the current link
+          nav.scrollTop = newScrollPos;
+        } else {
+          // Get previous link element
+          const prevLinkElem = document.getElementById(`link-${previousSlug}`);
+          // Get previous element's position
+          const prevElemScroll = calcNavScrollParams(
+            prevLinkElem?.getBoundingClientRect().top || 0,
+            nav
+          );
+          // First scroll directly to previous element
+          nav.scrollTop = prevElemScroll.newScrollPos;
+          // Now scroll to current element with animation
+          scrollTo(newScrollPos, scrollWindow, scrollTime);
+        }
       }
     }
-  };
+  }, [currentSlug, previousSlug, isOpen]);
 
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
 
@@ -71,7 +95,6 @@ const Navigation = ({ sections, currentSlug, label }: Props): JSX.Element => {
             currentSlug={currentSlug}
             onItemClick={onItemClick}
             readSections={readSections}
-            autoScroll={autoScroll}
           />
         )
       )}
