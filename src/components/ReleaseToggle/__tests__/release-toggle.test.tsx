@@ -42,7 +42,7 @@ describe('ReleaseToggle component', (): void => {
     const { getByLabelText } = render(
       <ReleaseToggle selected={false} onToggle={mockOnToggle} />
     );
-    const inputEle = getByLabelText('current') as HTMLInputElement;
+    const inputEle = getByLabelText('current');
 
     fireEvent.click(inputEle);
 

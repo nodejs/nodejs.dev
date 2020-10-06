@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReleaseCards component renders correctly with data 1`] = `
+<div>
+  <div>
+    <i
+      className="material-icons"
+    >
+      cloud
+    </i>
+    <p>
+      Windows Installer
+    </p>
+    <a
+      href="https://nodejs.org/dist/v14.13.0/node-v14.13.0-x86.msi"
+    >
+      node-
+      v14.13.0
+      .x86.msi
+    </a>
+  </div>
+  <div>
+    <i
+      className="material-icons"
+    >
+      cloud
+    </i>
+    <p>
+      Mac Installer
+    </p>
+    <a
+      href="https://nodejs.org/dist/v14.13.0/node-v14.13.0.pkg"
+    >
+      node-
+      v14.13.0
+      .pkg
+    </a>
+  </div>
+  <div>
+    <i
+      className="material-icons"
+    >
+      cloud
+    </i>
+    <p>
+      Source Code
+    </p>
+    <a
+      href="https://nodejs.org/dist/v14.13.0/node-v14.13.0.tar.gz"
+    >
+      node-
+      v14.13.0
+      .tar.gz
+    </a>
+  </div>
+</div>
+`;
