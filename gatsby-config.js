@@ -38,6 +38,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'homepage',
+        path: `${__dirname}/content/homepage`,
+        include: ['**/*.md'], // ignore files starting with a dot
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
