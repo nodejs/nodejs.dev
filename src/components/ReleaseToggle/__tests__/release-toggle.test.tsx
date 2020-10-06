@@ -42,9 +42,9 @@ describe('ReleaseToggle component', (): void => {
     const { getByLabelText } = render(
       <ReleaseToggle selected={false} onToggle={mockOnToggle} />
     );
-    const inputEle = getByLabelText('current');
+    const inputElement = getByLabelText('current');
 
-    fireEvent.click(inputEle);
+    fireEvent.click(inputElement);
 
     expect(mockOnToggle).toHaveBeenCalledTimes(1);
     expect(mockOnToggle).toHaveBeenCalledWith(true);

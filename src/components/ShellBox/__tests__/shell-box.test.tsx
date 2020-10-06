@@ -34,8 +34,8 @@ describe('ShellBox component', (): void => {
 
     navigatorClipboardSpy.mockImplementationOnce(() => Promise.resolve());
 
-    const buttonEle = getByText('copy');
-    fireEvent.click(buttonEle);
+    const buttonElement = getByText('copy');
+    fireEvent.click(buttonElement);
 
     await waitFor(() => getByText('copied'));
 

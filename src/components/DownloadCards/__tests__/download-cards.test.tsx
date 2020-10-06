@@ -15,12 +15,12 @@ describe('DownloadCards component', (): void => {
   it('check click handler on DownloadCards component', (): void => {
     const { getAllByRole } = render(<DownloadCards userOS={UserOS.MAC} />);
 
-    const listEle = getAllByRole('presentation');
+    const listElement = getAllByRole('presentation');
 
-    expect(listEle[0]).toHaveClass('download-card--inactive');
+    expect(listElement[0]).toHaveClass('download-card--inactive');
 
-    fireEvent.click(listEle[0]);
+    fireEvent.click(listElement[0]);
 
-    expect(listEle[0]).toHaveClass('download-card--active');
+    expect(listElement[0]).toHaveClass('download-card--active');
   });
 });
