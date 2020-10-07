@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import MacOSPanel from '../MacOSPanel';
 
 describe('Tests for MacOSPanel component', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<MacOSPanel />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(<MacOSPanel />);
+    expect(container).toMatchSnapshot();
   });
 });

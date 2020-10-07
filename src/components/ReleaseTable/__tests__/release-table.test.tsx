@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import ReleaseTable from '..';
 
 describe('ReleaseTable component', () => {
@@ -32,9 +32,7 @@ describe('ReleaseTable component', () => {
         security: false,
       },
     ];
-    const tree = renderer
-      .create(<ReleaseTable releases={mockReleaseData} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(<ReleaseTable releases={mockReleaseData} />);
+    expect(container).toMatchSnapshot();
   });
 });

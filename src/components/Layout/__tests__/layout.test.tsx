@@ -1,21 +1,20 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+
+import { render } from '@testing-library/react';
 import Layout from '..';
 
 describe('Layout component', () => {
   it('renders correctly with data', () => {
-    const tree = renderer
-      .create(
-        <Layout
-          title="mock-title"
-          description="mock-description"
-          img="mock-image-url"
-          showFooter={false}
-        >
-          mock-children
-        </Layout>
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(
+      <Layout
+        title="mock-title"
+        description="mock-description"
+        img="mock-image-url"
+        showFooter={false}
+      >
+        mock-children
+      </Layout>
+    );
+    expect(container).toMatchSnapshot();
   });
 });

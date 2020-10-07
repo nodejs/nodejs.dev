@@ -1,55 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Layout component renders correctly with data 1`] = `
-Array [
+<div>
   <nav
     aria-label="Primary"
-    className="nav"
+    class="nav"
   >
     <div
-      className="nav__container"
+      class="nav__container"
     >
       <div
-        className="nav__startwrapper"
+        class="nav__startwrapper"
       >
         <a
           href="/"
         >
           <div
-            className="logo"
+            class="logo"
           >
             <img
               alt="Node.js"
-              className="nav__logo light-mode-only"
+              class="nav__logo light-mode-only"
               src="test-file-stub"
             />
             <img
               alt="Node.js"
-              className="nav__logo dark-mode-only"
+              class="nav__logo dark-mode-only"
               src="test-file-stub"
             />
           </div>
         </a>
         <ul
-          className="nav__tabs__container"
+          class="nav__tabs__container"
         >
           <li
-            className="nav__tabs"
+            class="nav__tabs"
           >
             <a
-              activeClassName="active"
-              className="activeStyleTab"
+              class="activeStyleTab"
               href="/learn"
-              partiallyActive={true}
             >
               Learn
             </a>
           </li>
           <li
-            className="nav__tabs"
+            class="nav__tabs"
           >
             <a
-              className="activeStyleTab"
+              class="activeStyleTab"
               href="https://nodejs.org/en/docs/"
               rel="noopener noreferrer"
               target="_blank"
@@ -58,10 +56,10 @@ Array [
             </a>
           </li>
           <li
-            className="nav__tabs"
+            class="nav__tabs"
           >
             <a
-              className="activeStyleTab"
+              class="activeStyleTab"
               href="https://nodejs.org/en/download/"
               rel="noopener noreferrer"
               target="_blank"
@@ -72,39 +70,37 @@ Array [
         </ul>
       </div>
       <div
-        className="nav__endwrapper"
+        class="nav__endwrapper"
       >
         <ul
-          className="right-container"
+          class="right-container"
         >
           <li
-            className="nav__tabs nav__tabs--right"
+            class="nav__tabs nav__tabs--right"
           >
             <button
-              className="dark-mode-toggle"
-              onMouseDown={[Function]}
-              onMouseUp={[Function]}
+              class="dark-mode-toggle"
               type="button"
             >
               <span
-                className="sr-only"
+                class="sr-only"
               >
                 Toggle Dark Mode
               </span>
               <i
-                className="material-icons light-mode-only"
+                class="material-icons light-mode-only"
               >
                 nights_stay
               </i>
               <i
-                className="material-icons dark-mode-only"
+                class="material-icons dark-mode-only"
               >
                 wb_sunny
               </i>
             </button>
           </li>
           <li
-            className="nav__tabs"
+            class="nav__tabs"
           >
             <a
               href="https://github.com/nodejs/nodejs.dev"
@@ -112,17 +108,13 @@ Array [
               target="_blank"
             >
               <span
-                className="sr-only"
+                class="sr-only"
               >
                 GitHub
               </span>
               <svg
                 height="2.2rem"
-                style={
-                  Object {
-                    "fill": "var(--color-text-accent)",
-                  }
-                }
+                style="fill: var(--color-text-accent);"
                 viewBox="0 0 438.549 438.549"
                 width="2.2rem"
               >
@@ -135,7 +127,7 @@ Array [
         </ul>
       </div>
     </div>
-  </nav>,
-  "mock-children",
-]
+  </nav>
+  mock-children
+</div>
 `;

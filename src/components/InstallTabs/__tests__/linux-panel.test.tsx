@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import LinuxPanel from '../LinuxPanel';
 
 describe('Tests for LinuxPanel component', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<LinuxPanel />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(<LinuxPanel />);
+    expect(container).toMatchSnapshot();
   });
 });

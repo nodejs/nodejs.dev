@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 import { ReleaseData } from '../../../hooks/useReleaseHistory';
 
@@ -42,9 +42,7 @@ describe('Hero component', () => {
   it('renders correctly', () => {
     const title = 'Introduction to Node.js';
     const subTitle = 'Mock SubTitle';
-    const tree = renderer
-      .create(<Hero title={title} subTitle={subTitle} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(<Hero title={title} subTitle={subTitle} />);
+    expect(container).toMatchSnapshot();
   });
 });

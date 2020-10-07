@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import ReleaseCards from '..';
 
 describe('ReleaseCards component', () => {
@@ -18,7 +18,7 @@ describe('ReleaseCards component', () => {
       security: false,
     };
 
-    const tree = renderer.create(<ReleaseCards line={mockLineData} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(<ReleaseCards line={mockLineData} />);
+    expect(container).toMatchSnapshot();
   });
 });

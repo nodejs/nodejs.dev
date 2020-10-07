@@ -28,7 +28,6 @@ exports[`Navigation component renders correctly 1`] = `
       className="t-body2 side-nav__item side-nav__item--active"
       href="/learn/intro"
       id="link-intro"
-      innerRef={[Function]}
       onClick={[Function]}
     >
       Section 1
@@ -51,7 +50,6 @@ exports[`Navigation component renders correctly 1`] = `
       className="t-body2 side-nav__item "
       href="/learn/version"
       id="link-version"
-      innerRef={[Function]}
       onClick={[Function]}
     >
       Version 1
