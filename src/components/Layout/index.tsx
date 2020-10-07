@@ -31,7 +31,7 @@ const Layout = ({
   return (
     <>
       <SEO title={title} description={description} img={img} />
-      <div id="layout-container">
+      <div className="layout-container">
         <Header darkModeController={darkModeController} />
         {children}
         {showFooter && <Footer />}
