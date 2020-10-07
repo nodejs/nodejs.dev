@@ -32,9 +32,9 @@ const Layout = ({
     <>
       <SEO title={title} description={description} img={img} />
       <div id="layout-container">
-          <Header darkModeController={darkModeController} />
-          {children}
-          {showFooter && <Footer />}
+        <Header darkModeController={darkModeController} />
+        {children}
+        {showFooter && <Footer />}
       </div>
     </>
   );
