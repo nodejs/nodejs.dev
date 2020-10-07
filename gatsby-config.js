@@ -40,16 +40,9 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'markdown-docs',
-        path: `./node_modules/node-i18n/content/v12.x/en-US/doc/`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'markdown-docs',
-        path: `./node_modules/node-i18n/content/v12.x/en-US/doc/`,
-        include: ['**/*.md'],
+        name: 'homepage',
+        path: `${__dirname}/content/homepage`,
+        include: ['**/*.md'], // ignore files starting with a dot
       },
     },
     {
