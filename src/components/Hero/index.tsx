@@ -34,8 +34,8 @@ const Hero = ({ title, subTitle }: Props): JSX.Element => {
     <div className="home-page-hero">
       <h1>{title}</h1>
       <h2 className="sub-title t-subheading">{subTitle}</h2>
-      <div className="btn-ctas">
-        <div className="download-lts-container">
+      <div className="btn-ctas" style={{textTransform:'none'}} >
+        <div className="download-lts-container" >
           <a className="circular-container" href={ltsVersionUrl}>
             Download Node (LTS)
           </a>

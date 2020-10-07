@@ -8,11 +8,13 @@ import { useMediaQuery } from '../../hooks/useMediaQuery';
 interface Props {
   darkModeController?: typeof defaultDarkModeController;
 }
+var isCurrentUrl= window.location.href
 
 const Header = ({
   darkModeController = defaultDarkModeController,
 }: Props): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
+
   return (
     <nav aria-label="Primary" className="nav">
       <div className="nav__container">
@@ -53,6 +55,7 @@ const Header = ({
                 {isMobile ? 'Docs' : 'Documentation'}
               </a>
             </li>
+          
             <li className="nav__tabs">
               <a
                 href="https://nodejs.org/en/download/"
@@ -60,7 +63,8 @@ const Header = ({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Download
+              {isCurrentUrl =="https://nodejs.dev/404/" ?'':<div>Download</div>}
+               
               </a>
             </li>
           </ul>
