@@ -624,8 +624,8 @@ export default function APIDocsPage(): JSX.Element {
 
   return (
     <>
-      <main className="grid-container">
-        <Layout title={title} description={description} showFooter={false}>
+      <Layout title={title} description={description} showFooter={false}>
+        <main className="grid-container">
           <nav aria-label="Secondary" className="api-nav">
             <ul className="api-nav__list">
               <li className="api-nav__list-item">
@@ -661,8 +661,8 @@ export default function APIDocsPage(): JSX.Element {
             </ul>
           </nav>
           {renderArticle(page, userOS, currentVersionSelected || '')}
-        </Layout>
-      </main>
+        </main>
+      </Layout>
       <Footer />
     </>
   );
