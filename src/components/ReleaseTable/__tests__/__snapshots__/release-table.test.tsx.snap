@@ -34,31 +34,31 @@ exports[`ReleaseTable component renders correctly with data 1`] = `
       <tbody>
         <tr>
           <td>
-            v14.13.0
+            mock-version-1
           </td>
           <td />
           <td>
-            2020-09-29
+            mock-date
           </td>
           <td>
-            8.4.371.19
+            mock-v8
           </td>
           <td>
-            6.14.8
+            mock-npm
           </td>
           <td>
             ABI?
           </td>
           <td>
             <a
-              href="https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V14.md#14.13.0"
+              href="https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_Vock-version-1.md#ock-version-1"
             >
               Changelog
             </a>
           </td>
           <td>
             <a
-              href="https://nodejs.org/download/release/v14.13.0/"
+              href="https://nodejs.org/download/release/mock-version-1/"
             >
               Download
             </a>
@@ -66,31 +66,31 @@ exports[`ReleaseTable component renders correctly with data 1`] = `
         </tr>
         <tr>
           <td>
-            v13.0.1
+            mmock-version-2
           </td>
           <td />
           <td>
-            2019-10-23
+            mock-date
           </td>
           <td>
-            7.8.279.17
+            mock-v8
           </td>
           <td>
-            6.12.0
+            mock-npm
           </td>
           <td>
             ABI?
           </td>
           <td>
             <a
-              href="https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V13.md#13.0.1"
+              href="https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_Vmock-version-2.md#mock-version-2"
             >
               Changelog
             </a>
           </td>
           <td>
             <a
-              href="https://nodejs.org/download/release/v13.0.1/"
+              href="https://nodejs.org/download/release/mmock-version-2/"
             >
               Download
             </a>

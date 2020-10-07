@@ -3,7 +3,7 @@ import Author from '../../components/Author';
 import './AuthorList.scss';
 
 interface Props {
-  authors: string[];
+  authors?: string[];
 }
 
 const AuthorsList = ({ authors }: Props): null | JSX.Element => {

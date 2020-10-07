@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import AuthorsList from '..';
 
 describe('AuthorsList component', () => {
   it('renders correctly', () => {
     const authors = ['test-author', 'another-test-author'];
-    const tree = renderer.create(<AuthorsList authors={authors} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(<AuthorsList authors={authors} />);
+    expect(container).toMatchSnapshot();
   });
-  it('does not render without an authors list', () => {
-    const tree = renderer.create(<AuthorsList authors={null} />);
-    expect(tree.getInstance()).toBeNull();
+  it('render empty div without an authors list', () => {
+    const { container } = render(<AuthorsList authors={undefined} />);
+    expect(container).toMatchSnapshot();
   });
 });
