@@ -8,7 +8,6 @@ import { useMediaQuery } from '../../hooks/useMediaQuery';
 interface Props {
   darkModeController?: typeof defaultDarkModeController;
 }
-var isCurrentUrl= window.location.href
 
 const Header = ({
   darkModeController = defaultDarkModeController,
@@ -55,18 +54,22 @@ const Header = ({
                 {isMobile ? 'Docs' : 'Documentation'}
               </a>
             </li>
-          
-            <li className="nav__tabs">
-              <a
-                href="https://nodejs.org/en/download/"
-                className="activeStyleTab"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-              {isCurrentUrl =="https://nodejs.dev/404/" ?'':<div>Download</div>}
-               
-              </a>
-            </li>
+            {window.location.pathname === '/404/' ? (
+              ''
+            ) : (
+              <div>
+                <li className="nav__tabs">
+                  <a
+                    href="https://nodejs.org/en/download/"
+                    className="activeStyleTab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download
+                  </a>
+                </li>
+              </div>
+            )}
           </ul>
         </div>
 
