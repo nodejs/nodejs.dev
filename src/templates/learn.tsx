@@ -34,8 +34,8 @@ const LearnLayout = ({
 
   return (
     <>
-      <main className="grid-container">
-        <Layout title={title} description={description} showFooter={false}>
+      <Layout title={title} description={description} showFooter={false}>
+        <main className="grid-container">
           <Navigation
             currentSlug={slug}
             previousSlug={previousSlug}
@@ -51,8 +51,8 @@ const LearnLayout = ({
             previous={previous}
             relativePath={relativePath}
           />
-        </Layout>
-      </main>
+        </main>
+      </Layout>
       <Footer />
     </>
   );
