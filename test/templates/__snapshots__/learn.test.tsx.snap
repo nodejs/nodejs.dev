@@ -2,13 +2,13 @@
 
 exports[`Learn Template renders correctly 1`] = `
 <React.Fragment>
-  <main
-    className="grid-container"
+  <Layout
+    description="test-description"
+    showFooter={false}
+    title="test-title"
   >
-    <Layout
-      description="test-description"
-      showFooter={false}
-      title="test-title"
+    <main
+      className="grid-container"
     >
       <Navigation
         currentSlug="test-slug"
@@ -66,8 +66,8 @@ exports[`Learn Template renders correctly 1`] = `
         relativePath="test-path"
         title="test-title"
       />
-    </Layout>
-  </main>
+    </main>
+  </Layout>
   <Footer />
 </React.Fragment>
 `;

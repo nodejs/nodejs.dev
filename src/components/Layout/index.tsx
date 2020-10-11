@@ -31,9 +31,11 @@ const Layout = ({
   return (
     <>
       <SEO title={title} description={description} img={img} />
-      <Header darkModeController={darkModeController} />
-      {children}
-      {showFooter && <Footer />}
+      <div className="layout-container">
+        <Header darkModeController={darkModeController} />
+        {children}
+        {showFooter && <Footer />}
+      </div>
     </>
   );
 };
