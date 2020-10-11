@@ -1,14 +1,13 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-// import Article from '../components/Article';
+import dompurify from 'dompurify';
 import Layout from '../components/Layout';
-// import Navigation from '../containers/Navigation';
-// import { LearnPageContext, LearnPageData } from '../types';
 
 import '../styles/article-reader.scss';
 import '../styles/learn.scss';
 import Footer from '../components/Footer';
 
+const sanitizer = dompurify.sanitize;
 interface Props {
   data: any;
   pageContext: any;
@@ -16,25 +15,12 @@ interface Props {
 const DocsLayout = ({ data }: Props): React.ReactNode => (
   <>
     <main className="grid-container">
-      <div>test</div>
-      <div>{data.doc.edges[0].node.internal.content}</div>
-      {console.log('data', data.doc.edges[0].node.internal.content)}
-      {/* <Layout title={title} description={description} showFooter={false}>
-        <Navigation
-          currentSlug={slug}
-          label="Secondary"
-          sections={navigationData}
-        />
-        <Article
-          title={title}
-          html={html}
-          tableOfContents={tableOfContents}
-          next={next}
-          authors={authors}
-          previous={previous}
-          relativePath={relativePath}
-        />
-      </Layout> */}
+      {console.log(typeof data)}
+      <p
+        dangerouslySetInnerHTML={{
+          __html: sanitizer(data.doc.edges[0].node.html),
+        }}
+      />
     </main>
     <Footer />
   </>
@@ -47,9 +33,20 @@ export const query = graphql`
       edges {
         node {
           fileAbsolutePath
-          internal {
-            content
-          }
+
+          html
+        }
+      }
+    }
+    allFile(
+      filter: {
+        absolutePath: { eq: "node_modules/node-i18n/content/v12.x/en-US/doc/" }
+      }
+    ) {
+      edges {
+        node {
+          id
+          absolutePath
         }
       }
     }
