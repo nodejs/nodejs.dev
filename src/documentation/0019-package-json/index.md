@@ -114,16 +114,16 @@ Here's a much more complex example, which was extracted from a sample Vue.js app
 
 there are _lots_ of things going on here:
 
-- `name` sets the application/package name
-- `version` indicates the current version
-- `description` is a brief description of the app/package
-- `main` set the entry point for the application
-- `private` if set to `true` prevents the app/package to be accidentally published on `npm`
-- `scripts` defines a set of node scripts you can run
-- `dependencies` sets a list of `npm` packages installed as dependencies
-- `devDependencies` sets a list of `npm` packages installed as development dependencies
-- `engines` sets which versions of Node.js this package/app works on
-- `browserslist` is used to tell which browsers (and their versions) you want to support
+* `version` indicates the current version
+* `name` sets the application/package name
+* `description` is a brief description of the app/package
+* `main` set the entry point for the application
+* `private` if set to `true` prevents the app/package to be accidentally published on `npm`
+* `scripts` defines a set of node scripts you can run
+* `dependencies` sets a list of `npm` packages installed as dependencies
+* `devDependencies` sets a list of `npm` packages installed as development dependencies
+* `engines` sets which versions of Node.js this package/app works on
+* `browserslist` is used to tell which browsers (and their versions) you want to support
 
 All those properties are used by either `npm` or other tools that we can use.
 
@@ -449,4 +449,4 @@ That symbol specifies which updates your package accepts, from that dependency.
 
 Given that using semver (semantic versioning) all versions have 3 digits, the first being the major release, the second the minor release and the third is the patch release, you have these "[Rules](https://nodejs.dev/learn/semantic-versioning-using-npm/)".
 
-You can combine most of the version(notations) in ranges, like this: `1.0.0 || >=1.1.0 <1.2.0`, to either use 1.0.0 or one release from 1.1.0 up, but lower than 1.2.0.
+You can combine most of the versions in ranges, like this: `1.0.0 || >=1.1.0 <1.2.0`, to either use 1.0.0 or one release from 1.1.0 up, but lower than 1.2.0.
