@@ -67,7 +67,7 @@
     "serve": "npm run build && clear && gatsby serve",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o ./public/storybook",
-    "i18n": "./node_modules/pa11y/bin/pa11y.js localhost:8000"
+    "a11y": "./node_modules/pa11y/bin/pa11y.js localhost:8000"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
