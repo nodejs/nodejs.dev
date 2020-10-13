@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-onchange */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import dompurify from 'dompurify';
@@ -639,7 +640,7 @@ export default function APIDocsPage(): JSX.Element {
                 <select
                   id="api-nav__version__select-id"
                   className="api-nav__version"
-                  onBlur={(e): void => {
+                  onChange={(e): void => {
                     setPage(null);
                     setVersion(e.target.value);
                   }}
