@@ -2,8 +2,8 @@
 
 exports[`Learn Template renders correctly 1`] = `
 <div>
-  <main
-    class="grid-container"
+  <div
+    class="layout-container"
   >
     <nav
       aria-label="Primary"
@@ -131,176 +131,180 @@ exports[`Learn Template renders correctly 1`] = `
         </div>
       </div>
     </nav>
-    <nav
-      aria-label="Secondary"
-      class="side-nav"
+    <main
+      class="grid-container"
     >
-      <button
-        class="side-nav__open"
-        type="button"
+      <nav
+        aria-label="Secondary"
+        class="side-nav"
       >
-        Menu
-      </button>
-      <ul
-        class="side-nav__list"
-      >
-        <h2
-          class="t-body2 side-nav__title"
+        <button
+          class="side-nav__open"
+          type="button"
         >
-          <i
-            class="material-icons"
+          Menu
+        </button>
+        <ul
+          class="side-nav__list"
+        >
+          <h2
+            class="t-body2 side-nav__title"
           >
-            offline_bolt
-          </i>
-          test-section
-        </h2>
-        <a
-          class="t-body2 side-nav__item side-nav__item--done"
-          href="/learn/test-slug-1"
-          id="link-test-slug-1"
-        >
-          test-title-1
-        </a>
-        <a
-          class="t-body2 side-nav__item side-nav__item--done"
-          href="/learn/test-slug-2"
-          id="link-test-slug-2"
-        >
-          test-title-2
-        </a>
-      </ul>
-      <ul
-        class="side-nav__list"
-      >
-        <h2
-          class="t-body2 side-nav__title"
-        >
-          <i
-            class="material-icons"
-          >
-            offline_bolt
-          </i>
-          test-section2
-        </h2>
-        <a
-          class="t-body2 side-nav__item side-nav__item--done"
-          href="/learn/test-slug-3"
-          id="link-test-slug-3"
-        >
-          test-title-3
-        </a>
-        <a
-          class="t-body2 side-nav__item side-nav__item--done"
-          href="/learn/test-slug-4"
-          id="link-test-slug-4"
-        >
-          test-title-4
-        </a>
-      </ul>
-    </nav>
-    <article
-      class="article-reader"
-    >
-      <h1
-        class="article-reader__headline"
-      >
-        test-title
-      </h1>
-      <div>
-        <span>
-          Test html
-        </span>
-      </div>
-      <ul
-        class="list"
-      >
-        <h5>
-          Contributors
-        </h5>
-        <li
-          class="list"
-        >
+            <i
+              class="material-icons"
+            >
+              offline_bolt
+            </i>
+            test-section
+          </h2>
           <a
-            class="link"
-            href="https://github.com/test-user1"
-            rel="noopener noreferrer"
-            style="margin-left: 0px;"
-            target="_blank"
-            title="test-user1"
+            class="t-body2 side-nav__item side-nav__item--done"
+            href="/learn/test-slug-1"
+            id="link-test-slug-1"
           >
-            <img
-              alt="test-user1"
-              class="img"
-              src="https://github.com/test-user1.png?size=60"
-            />
+            test-title-1
           </a>
-        </li>
-        <li
-          class="list"
-        >
           <a
-            class="link"
-            href="https://github.com/test-user2"
-            rel="noopener noreferrer"
-            target="_blank"
-            title="test-user2"
+            class="t-body2 side-nav__item side-nav__item--done"
+            href="/learn/test-slug-2"
+            id="link-test-slug-2"
           >
-            <img
-              alt="test-user2"
-              class="img"
-              src="https://github.com/test-user2.png?size=60"
-            />
+            test-title-2
           </a>
-        </li>
-      </ul>
-      <div
-        class="edit"
-      >
-        <a
-          class="link"
-          href="https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/test-path"
+        </ul>
+        <ul
+          class="side-nav__list"
         >
+          <h2
+            class="t-body2 side-nav__title"
+          >
+            <i
+              class="material-icons"
+            >
+              offline_bolt
+            </i>
+            test-section2
+          </h2>
+          <a
+            class="t-body2 side-nav__item side-nav__item--done"
+            href="/learn/test-slug-3"
+            id="link-test-slug-3"
+          >
+            test-title-3
+          </a>
+          <a
+            class="t-body2 side-nav__item side-nav__item--done"
+            href="/learn/test-slug-4"
+            id="link-test-slug-4"
+          >
+            test-title-4
+          </a>
+        </ul>
+      </nav>
+      <article
+        class="article-reader"
+      >
+        <h1
+          class="article-reader__headline"
+        >
+          test-title
+        </h1>
+        <div>
           <span>
-            Edit this page on GitHub
+            Test html
           </span>
-           
-          <svg
-            class="icon"
-            fill="currentColor"
-            height="1em"
-            viewBox="0 0 40 40"
-            width="1em"
+        </div>
+        <ul
+          class="list"
+        >
+          <h5>
+            Contributors
+          </h5>
+          <li
+            class="list"
           >
-            <path
-              d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"
-            />
-          </svg>
-        </a>
-      </div>
-      <ul
-        class="pagination"
-      >
-        <li>
+            <a
+              class="link"
+              href="https://github.com/test-user1"
+              rel="noopener noreferrer"
+              style="margin-left: 0px;"
+              target="_blank"
+              title="test-user1"
+            >
+              <img
+                alt="test-user1"
+                class="img"
+                src="https://github.com/test-user1.png?size=60"
+              />
+            </a>
+          </li>
+          <li
+            class="list"
+          >
+            <a
+              class="link"
+              href="https://github.com/test-user2"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="test-user2"
+            >
+              <img
+                alt="test-user2"
+                class="img"
+                src="https://github.com/test-user2.png?size=60"
+              />
+            </a>
+          </li>
+        </ul>
+        <div
+          class="edit"
+        >
           <a
             class="link"
-            href="/learn/test-slug"
-            rel="prev"
+            href="https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/test-path"
           >
-            ←   Prev
+            <span>
+              Edit this page on GitHub
+            </span>
+             
+            <svg
+              class="icon"
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 40 40"
+              width="1em"
+            >
+              <path
+                d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"
+              />
+            </svg>
           </a>
-        </li>
-        <li>
-          <a
-            class="link"
-            href="/learn/test-slug"
-            rel="next"
-          >
-            Next   →
-          </a>
-        </li>
-      </ul>
-    </article>
-  </main>
+        </div>
+        <ul
+          class="pagination"
+        >
+          <li>
+            <a
+              class="link"
+              href="/learn/test-slug"
+              rel="prev"
+            >
+              ←   Prev
+            </a>
+          </li>
+          <li>
+            <a
+              class="link"
+              href="/learn/test-slug"
+              rel="next"
+            >
+              Next   →
+            </a>
+          </li>
+        </ul>
+      </article>
+    </main>
+  </div>
   <footer
     class="footer"
   >
