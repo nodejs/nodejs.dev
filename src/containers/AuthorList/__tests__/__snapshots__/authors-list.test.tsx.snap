@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AuthorsList component render empty div without an authors list 1`] = `<div />`;
-
 exports[`AuthorsList component renders correctly 1`] = `
 <div>
   <ul
