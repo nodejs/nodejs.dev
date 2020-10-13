@@ -125,6 +125,9 @@
     "setupFiles": [
       "<rootDir>/test-setup.js"
     ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/setup-test-env.js"
+    ],
     "collectCoverageFrom": [
       "src/**/**.(ts|tsx|js)"
     ]

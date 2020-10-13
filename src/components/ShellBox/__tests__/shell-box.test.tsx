@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { fireEvent, render, waitFor } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { fireEvent, render } from '@testing-library/react';
 
 import ShellBox from '../index';
 
@@ -28,7 +27,7 @@ describe('ShellBox component', (): void => {
 
   it('renders correctly', async () => {
     const textToCopy = 'text to be copy';
-    const { getByText } = render(
+    const { getByText, findByText } = render(
       <ShellBox textToCopy={textToCopy}>mock-children-code</ShellBox>
     );
 
@@ -37,7 +36,7 @@ describe('ShellBox component', (): void => {
     const buttonElement = getByText('copy');
     fireEvent.click(buttonElement);
 
-    await waitFor(() => getByText('copied'));
+    await findByText('copied');
 
     expect(getByText('done')).toBeInTheDocument();
     expect(navigatorClipboardSpy).toHaveBeenCalledTimes(1);
