@@ -75,6 +75,7 @@ A quick look at some of the top-level files and directories found in this projec
 ├── CONTRIBUTING.md
 ├── empty.env
 ├── firebase.json
+├── gatsby-browser.js
 ├── gatsby-config.js
 ├── gatsby-node.js
 ├── LICENSE
@@ -95,7 +96,7 @@ A quick look at some of the top-level files and directories found in this projec
 
 3. **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser), like your site header, or a page template. "Src" is a convention for "source code."
 
-4. **`/stories`**: This directory contains stories for UI components used in this project. You can find out what a story is [here]("https://storybook.js.org/docs/react/get-started/whats-a-story).
+4. **`/stories`**: This directory contains stories for UI components used in this project. You can find out what a story is [here]("https://storybook.js.org/docs/react/get-started/whats-a-story). Also, you can run them locally using `npm run storybook`.
 
 5. **`/test`**: Tests for this projects are stored in this directory. This project uses [Jest]("https://jestjs.io/) as it's testing framework.
 
@@ -109,19 +110,21 @@ A quick look at some of the top-level files and directories found in this projec
 
 10. **`empty.env`**: Rename to **`.env`** and set your Contentful API key
 
-11. **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you'd like to include, etc. (Check out the [config docs](https://next.gatsbyjs.org/docs/gatsby-config/) for more detail).
+11. **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-12. **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby node APIs](https://next.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+12. **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you'd like to include, etc. (Check out the [config docs](https://next.gatsbyjs.org/docs/gatsby-config/) for more detail).
 
-13. **`LICENSE`**: Gatsby is licensed under the MIT license.
+13. **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby node APIs](https://next.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-14. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. (You won't change this file directly).
+14. **`LICENSE`**: Gatsby is licensed under the MIT license.
 
-15. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project's name, author, etc.). This manifest is how npm knows which packages to install for your project.
+15. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. (You won't change this file directly).
 
-16. **`README.md`**: A text file containing useful reference information about your project.
+16. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project's name, author, etc.). This manifest is how npm knows which packages to install for your project.
 
-17. **`tsconfig.json`**: Config file for TypeScript
+17. **`README.md`**: A text file containing useful reference information about your project.
+
+18. **`tsconfig.json`**: Config file for TypeScript
 
 ## 📝 Data Sources
 
