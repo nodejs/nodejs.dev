@@ -4,6 +4,7 @@ import {
   handleKeyDown,
   handleBlur,
 } from '../../src/util/outlineOnKeyboardNav';
+
 describe('Tests for focus and blur handlers', () => {
   const FOCUS_ATTR = 'data-is-focused';
   const TAB_KEYCODE = 9;

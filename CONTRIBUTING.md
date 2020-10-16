@@ -56,19 +56,23 @@ In the case of an objection being raised in a pull request by another collaborat
 
 ## Getting Started
 
-For feature development you should be working from the staging branch.
-
 * Fork
 * Clone your fork `git clone git@github.com:<githubid>/nodejs.dev.git`
 * cd into your project
 * Add the following to your remotes by doing `git remote add upstream git@github.com:nodejs/nodejs.dev.git`
-* Check out the staging branch by doing `git checkout upstream/staging`
 * Create a new branch for your awesome work `git checkout -b branchname`
 * Commit your work
 * Push to your branch `git push -u origin yourbranch`
-* Make a pull request against the remote branch `staging`
-  * Example `https://github.com/nodejs/nodejs.dev/pull/398`
-* Mention @nodejs/website-redesign `/gcbrun`
+* Make a pull request
+
+## Storybook
+
+This project uses [Storybook][], a tool which provides a sandbox environment for developing UI components. To generate the Storybook locally:
+
+* Run `npm run storybook`
+* Navigate to `localhost:6006`
+
+The production Storybook can be viewed at <https://nodejs.dev/storybook>
 
 ## Developer's Certificate of Origin 1.1
 
@@ -90,3 +94,4 @@ By making a contribution to this project, I certify that:
 
 [conventional commits]: https://www.conventionalcommits.org/
 [`squash`]: https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits
+[Storybook]: https://storybook.js.org/
