@@ -5,13 +5,13 @@ authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 
-To see the latest version of all the npm package installed, including their dependencies:
+To see the latest version of all installed npm packages, including their dependencies:
 
 ```sh
 npm list
 ```
 
-Example:
+For example:
 
 ```txt
 ❯ npm list
@@ -40,7 +40,7 @@ To get only your top-level packages (basically, the ones you told npm to install
 └── cowsay@1.3.1
 ```
 
-You can get the version of a specific package by specifying the name:
+You can get the version of a specific package by specifying its name:
 
 ```txt
 ❯ npm list cowsay
