@@ -66,7 +66,8 @@
     "lint:fix": "npm run lint -- --fix",
     "serve": "npm run build && clear && gatsby serve",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o ./public/storybook"
+    "build-storybook": "build-storybook -o ./public/storybook",
+    "a11y": "./node_modules/pa11y/bin/pa11y.js localhost:8000"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -87,7 +88,7 @@
     "eslint-config-prettier": "6.11.0",
     "eslint-import-resolver-typescript": "2.0.0",
     "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-jsx-a11y": "6.3.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "4.0.2",
@@ -95,6 +96,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "26.0.1",
     "node-sass": "4.14.1",
+    "pa11y": "5.3.0",
     "prettier": "^2.0.4",
     "react-test-renderer": "^16.13.1",
     "remark-cli": "^8.0.0",
