@@ -11,6 +11,13 @@
   justify-content: center;
 }
 
+.download-toogle__switch {
+  width: 236px;
+  height: 42px;
+  border: none;
+  padding: 0;
+}
+
 .download-toogle__button {
   background: var(--black2);
   box-shadow: inset 1px -1px 1px rgba(0, 0, 0, 0.08),
@@ -23,6 +30,11 @@
   font-size: var(--font-size-body2);
   line-height: var(--line-height-body2);
   color: var(--black7);
+  padding: 1px 6px;
+  line-height: 40px;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
 }
 
 .download-toogle__button.-active,
