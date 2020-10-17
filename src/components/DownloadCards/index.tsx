@@ -50,7 +50,26 @@ export default function DownloadCards({ line, userOS }: Props): JSX.Element {
   ];
 
   return (
-    <ul className="download-card__row">
+    <ul
+      className="download-card__row"
+      role="tablist"
+      tabIndex={0}
+      onKeyDown={(e: React.KeyboardEvent): void => {
+        let key = null;
+        if (e.which === 37) key = 'left';
+        if (e.which === 39) key = 'right';
+        if (!key) return;
+
+        const currentIndex = downloadTypes.findIndex(d => d.name === selected);
+        let nextIndex = currentIndex;
+        nextIndex += key === 'left' ? -1 : 1;
+        if (nextIndex < 0) nextIndex = downloadTypes.length - 1;
+        if (nextIndex >= downloadTypes.length) nextIndex = 0;
+
+        const nextItem = downloadTypes[nextIndex].name;
+        setSelected(nextItem);
+      }}
+    >
       {downloadTypes.map(
         (os): JSX.Element => (
           <li
