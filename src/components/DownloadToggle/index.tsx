@@ -15,26 +15,33 @@ export default function DownloadToggle({
     <div className="download-toogle">
       <div className="download-toogle__selector">
         <button
+          className="download-toogle__switch"
           type="button"
-          className={
-            selected === 'LTS'
-              ? 'download-toogle__button -active'
-              : 'download-toogle__button'
+          role="switch"
+          aria-label="Show LTS versions"
+          aria-checked={selected === 'LTS'}
+          onClick={(): void =>
+            handleClick(selected === 'CURRENT' ? 'LTS' : 'CURRENT')
           }
-          onClick={(): void => handleClick('LTS')}
         >
-          LTS
-        </button>
-        <button
-          type="button"
-          className={
-            selected === 'CURRENT'
-              ? 'download-toogle__button -current -active'
-              : 'download-toogle__button -current'
-          }
-          onClick={(): void => handleClick('CURRENT')}
-        >
-          Current
+          <span
+            className={
+              selected === 'LTS'
+                ? 'download-toogle__button -active'
+                : 'download-toogle__button'
+            }
+          >
+            LTS
+          </span>
+          <span
+            className={
+              selected === 'CURRENT'
+                ? 'download-toogle__button -current -active'
+                : 'download-toogle__button -current'
+            }
+          >
+            Current
+          </span>
         </button>
       </div>
       <p className="download-toogle__description">

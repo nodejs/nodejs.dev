@@ -3,6 +3,9 @@
 exports[`DownloadCards component renders correctly 1`] = `
 <ul
   className="download-card__row"
+  onKeyDown={[Function]}
+  role="tablist"
+  tabIndex={0}
 >
   <li
     className="download-card--inactive"
