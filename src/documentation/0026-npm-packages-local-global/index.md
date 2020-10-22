@@ -44,7 +44,7 @@ Great examples of popular global packages which you might know are
 
 You probably have some packages installed globally already on your system. You can see them by running
 
-```sh
+```bash
 npm list -g --depth 0
 ```
 
