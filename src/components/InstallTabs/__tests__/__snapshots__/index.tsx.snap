@@ -128,6 +128,18 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
         role="tabpanel"
       />
     </div>
+    <div
+      aria-labelledby="react-tabs-2"
+      class="react-tabs__tab-panel"
+      id="react-tabs-3"
+      role="tabpanel"
+    />
+    <div
+      aria-labelledby="react-tabs-4"
+      class="react-tabs__tab-panel"
+      id="react-tabs-5"
+      role="tabpanel"
+    />
   </div>
 </div>
 `;
