@@ -20,6 +20,14 @@ import featureImg1 from '../images/feature-img-1.png';
 import featureImg2 from '../images/feature-img-2.png';
 import featureImg3 from '../images/feature-img-3.png';
 
+import expressLogo from '../images/logos/express-logo.png';
+import electronLogo from '../images/logos/electron-logo.svg';
+import eslintLogo from '../images/logos/eslint-logo.svg';
+import webTorrentLogo from '../images/logos/web-torrent-logo.png';
+import standardjsLogo from '../images/logos/standard-logo.svg';
+
+import placeholder from '../images/placeholder-img.png';
+
 const NodeFeature = ({
   img,
   featureText,
@@ -50,6 +58,7 @@ export default function Index({
         nodeFeature2,
         nodeFeature3,
         nodeFeatureAltText,
+        logoSectionText,
       },
     },
   },
@@ -102,6 +111,24 @@ export default function Index({
           />
         </section>
 
+        <section className="trusted-by">
+          <h4 className="t-headline">
+            {/* Trusted by development teams around the world */}
+            {logoSectionText}
+          </h4>
+          <div className="logos-container">
+            <img src={expressLogo} alt="Express logo" width="20%" />
+            <img src={electronLogo} alt="Electron logo" width="20%" />
+            <img src={eslintLogo} alt="esLint Logo" />
+            <img src={webTorrentLogo} alt="WebTorrent Logo" width="20%" />
+            <img
+              src={standardjsLogo}
+              alt="Standard - JavaScript Style Guide"
+              width="20%"
+            />
+          </div>
+        </section>
+
         <div className="download-lts-container">
           <Link to="/learn" className="circular-container">
             {learnLinkText}
@@ -139,6 +166,7 @@ export const query = graphql`
         nodeFeature2
         nodeFeature3
         nodeFeatureAltText
+        logoSectionText
       }
     }
   }

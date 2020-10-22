@@ -15,6 +15,7 @@ export interface HomepageData {
       nodeFeature2: string;
       nodeFeature3: string;
       nodeFeatureAltText: string;
+      logoSectionText: string;
     };
   };
 }
