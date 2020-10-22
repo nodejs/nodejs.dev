@@ -2,7 +2,7 @@ import React from 'react';
 import {
   NodeReleaseData,
   getStaticReleaseData,
-} from '../src/hooks/useReleaseHistory.tsx';
+} from '../src/hooks/useReleaseHistory';
 
 import DownloadTable from '../src/components/DownloadReleases/DownloadTable';
 
