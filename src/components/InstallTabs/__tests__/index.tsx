@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import InstallTabs from '../index';
 
 describe('Tests for InstallTabs component', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<InstallTabs />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(<InstallTabs />);
+    expect(container).toMatchSnapshot();
   });
 });
