@@ -28,7 +28,7 @@ npm with its simple structure helped the ecosystem of Node.js proliferate, and n
 The most common example Hello World of Node.js is a web server:
 
 <iframe
-  allow="geolocation; microphone; camera; midi; encrypted-media"
+  title="Hello world web server"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0001-01?path=server.js&previewSize=30&attributionHidden=true&sidebarCollapsed=true"
   alt="nodejs-dev-0001-01 on Glitch"
   style="height: 400px; width: 100%; border: 0;">
