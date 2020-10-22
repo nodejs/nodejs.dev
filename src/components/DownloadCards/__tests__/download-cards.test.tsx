@@ -62,7 +62,7 @@ describe('DownloadCards component', (): void => {
 
     fireEvent.keyDown(tabListElement, {
       key: 'ArrowRight',
-      code: 'LeftArrowKey',
+      code: 'RightArrowKey',
     });
 
     expect(listElement[0]).toHaveClass('download-card--active');
