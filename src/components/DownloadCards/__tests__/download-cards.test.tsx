@@ -21,4 +21,52 @@ describe('DownloadCards component', (): void => {
 
     expect(listElement[0]).toHaveClass('download-card--active');
   });
+
+  it('check left and right arrow click handler on DownloadCards component', (): void => {
+    const { getByRole, getAllByRole } = render(
+      <DownloadCards userOS={UserOS.MAC} />
+    );
+
+    const tabListElement = getByRole('tablist');
+    const listElement = getAllByRole('presentation');
+
+    expect(listElement[0]).toHaveClass('download-card--inactive');
+
+    /**
+     * First left click from default OS of MAC
+     */
+    fireEvent.keyDown(tabListElement, {
+      key: 'ArrowLeft',
+      code: 'LeftArrowKey',
+    });
+
+    expect(listElement[0]).toHaveClass('download-card--active');
+    expect(listElement[1]).toHaveClass('download-card--inactive');
+    expect(listElement[2]).toHaveClass('download-card--inactive');
+
+    /**
+     * Left click from WIN
+     */
+    fireEvent.keyDown(tabListElement, {
+      key: 'ArrowLeft',
+      code: 'LeftArrowKey',
+    });
+
+    expect(listElement[0]).toHaveClass('download-card--inactive');
+    expect(listElement[1]).toHaveClass('download-card--inactive');
+    expect(listElement[2]).toHaveClass('download-card--active');
+
+    /**
+     * Right click from SOURCECODE
+     */
+
+    fireEvent.keyDown(tabListElement, {
+      key: 'ArrowRight',
+      code: 'LeftArrowKey',
+    });
+
+    expect(listElement[0]).toHaveClass('download-card--active');
+    expect(listElement[1]).toHaveClass('download-card--inactive');
+    expect(listElement[2]).toHaveClass('download-card--inactive');
+  });
 });

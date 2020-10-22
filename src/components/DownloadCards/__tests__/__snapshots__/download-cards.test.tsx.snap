@@ -4,6 +4,8 @@ exports[`DownloadCards component renders correctly 1`] = `
 <div>
   <ul
     class="download-card__row"
+    role="tablist"
+    tabindex="0"
   >
     <li
       class="download-card--active"
