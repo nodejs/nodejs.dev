@@ -46,7 +46,7 @@ You know the error stack trace you might be familiar with, in the debugger or in
 Let's pick an example:
 
 <iframe
-  allow="geolocation; microphone; camera; midi; encrypted-media"
+  title="A simple event loop explanation"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0029-01?path=server.js&previewSize=20&attributionHidden=true&sidebarCollapsed=true"
   alt="nodejs-dev-0029-01 on Glitch"
   style="height: 400px; width: 100%; border: 0;">
@@ -99,7 +99,7 @@ The use case of `setTimeout(() => {}, 0)` is to call a function, but execute it 
 Take this example:
 
 <iframe
-  allow="geolocation; microphone; camera; midi; encrypted-media"
+  title="Queuing function execution"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0029-02?path=server.js&previewSize=20&attributionHidden=true&sidebarCollapsed=true"
   alt="nodejs-dev-0029-02 on Glitch"
   style="height: 400px; width: 100%; border: 0;">
@@ -160,7 +160,7 @@ I find nice the analogy of a rollercoaster ride at an amusement park: the messag
 Example:
 
 <iframe
-  allow="geolocation; microphone; camera; midi; encrypted-media"
+  title="ECMAScript 2015 Job Queue"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0029-03?path=server.js&previewSize=35&attributionHidden=true&sidebarCollapsed=true"
   alt="nodejs-dev-0029-03 on Glitch"
   style="height: 400px; width: 100%; border: 0;">
