@@ -1,16 +1,15 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import EditLink from '..';
 
 describe('EditLink component', () => {
   it('renders correctly', () => {
     const path = '0002-node-history/index.md';
-    const tree = renderer.create(<EditLink relativePath={path} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(<EditLink relativePath={path} />);
+    expect(container).toMatchSnapshot();
   });
-  it('does not render without a relative path', () => {
-    const tree = renderer.create(<EditLink relativePath={null} />);
-    expect(tree.getInstance()).toBeNull();
+  it('renders without a relative path', () => {
+    const { container } = render(<EditLink relativePath={undefined} />);
+    expect(container).toMatchSnapshot();
   });
 });

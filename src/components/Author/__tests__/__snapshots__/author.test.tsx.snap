@@ -1,22 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Author component does not render without a username 1`] = `<div />`;
+
 exports[`Author component renders correctly 1`] = `
-<li
-  className="list"
->
-  <a
-    className="link"
-    href="https://github.com/test-author"
-    rel="noopener noreferrer"
-    style={Object {}}
-    target="_blank"
-    title="test-author"
+<div>
+  <li
+    class="list"
   >
-    <img
-      alt="test-author"
-      className="img"
-      src="https://github.com/test-author.png?size=60"
-    />
-  </a>
-</li>
+    <a
+      class="link"
+      href="https://github.com/test-author"
+      rel="noopener noreferrer"
+      target="_blank"
+      title="test-author"
+    >
+      <img
+        alt="test-author"
+        class="img"
+        src="https://github.com/test-author.png?size=60"
+      />
+    </a>
+  </li>
+</div>
 `;

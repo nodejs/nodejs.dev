@@ -1,20 +1,18 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Author from '..';
 
 describe('Author component', () => {
   it('renders correctly', () => {
     const username = 'test-author';
-    const tree = renderer
-      .create(<Author username={username} size="60" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(<Author username={username} size="60" />);
+    expect(container).toMatchSnapshot();
   });
+
   it('does not render without a username', () => {
-    const tree = renderer.create(
+    const { container } = render(
       <Author key={null} username={null} size={null} />
     );
-    expect(tree.getInstance()).toBeNull();
+    expect(container).toMatchSnapshot();
   });
 });

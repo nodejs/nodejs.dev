@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Banner from '..';
 
 describe('Tests for Header component', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<Banner />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(<Banner />);
+    expect(container).toMatchSnapshot();
   });
 });
