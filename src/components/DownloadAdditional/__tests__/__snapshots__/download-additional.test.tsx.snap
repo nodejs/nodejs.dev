@@ -1,7 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DownloadAdditional component renders correctly 1`] = `
-<<<<<<< HEAD
 <div>
   <div
     class="download-additional"
@@ -45,49 +44,5 @@ exports[`DownloadAdditional component renders correctly 1`] = `
       class="download-additional__body"
     />
   </div>
-=======
-<div
-  className="download-additional"
->
-  <div
-    className="download-additional__header"
-  >
-    <h3
-      className="download-additional__title"
-    >
-      Additional Downloads
-    </h3>
-    <div
-      className="download-toogle"
-    >
-      <div
-        className="download-toogle__selector"
-      >
-        <button
-          aria-checked={true}
-          aria-label="Show LTS versions"
-          className="download-toogle__switch"
-          onClick={[Function]}
-          role="switch"
-          type="button"
-        >
-          <span
-            className="download-toogle__button -active"
-          >
-            LTS
-          </span>
-          <span
-            className="download-toogle__button -current"
-          >
-            Current
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    className="download-additional__body"
-  />
->>>>>>> feat: additional downloads
 </div>
 `;
