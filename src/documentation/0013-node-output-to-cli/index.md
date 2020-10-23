@@ -55,7 +55,7 @@ console.log('%o', Number)
 Take this code:
 
 <iframe
-  allow="geolocation; microphone; camera; midi; encrypted-media"
+  title="Output to the command line using Node.js"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0013-02?path=server.js&previewSize=40&attributionHidden=true&sidebarCollapsed=true"
   alt="nodejs-dev-0013-02 on Glitch"
   style="height: 400px; width: 100%; border: 0;">
