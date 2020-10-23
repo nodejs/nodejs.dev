@@ -18,7 +18,7 @@
     "color-string": "^1.5.3",
     "dompurify": "2.0.12",
     "dotenv": "^8.2.0",
-    "gatsby": "^2.21.11",
+    "gatsby": "2.24.85",
     "gatsby-plugin-canonical-urls": "^2.2.3",
     "gatsby-plugin-catch-links": "^2.2.1",
     "gatsby-plugin-manifest": "^2.4.0",
