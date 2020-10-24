@@ -3,8 +3,13 @@
 exports[`DownloadReleases component renders correctly 1`] = `
 <div>
   <div
-    className="upcoming-releases"
+    class="download-releases"
   >
+    <h2
+      class="download-releases__title"
+    >
+      Upcoming Releases
+    </h2>
     <div
       class="upcoming-releases"
     >
@@ -168,31 +173,17 @@ exports[`DownloadReleases component renders correctly 1`] = `
           role="tabpanel"
         />
       </div>
-      <div
-        aria-labelledby="react-tabs-2"
-        className="react-tabs__tab-panel"
-        id="react-tabs-3"
-        role="tabpanel"
-      />
-      <div
-        aria-labelledby="react-tabs-4"
-        className="react-tabs__tab-panel"
-        id="react-tabs-5"
-        role="tabpanel"
-      />
-      <div
-        aria-labelledby="react-tabs-6"
-        className="react-tabs__tab-panel"
-        id="react-tabs-7"
-        role="tabpanel"
-      />
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fix: update all tests
     <p
       class="lts__text"
     >
       Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general use. LTS release status is "long-term support", which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use Active LTS or Maintenance LTS releases.
     </p>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <div
       class="downloads-table-container"
@@ -249,6 +240,8 @@ exports[`DownloadReleases component renders correctly 1`] = `
       </table>
     </div>
 =======
+=======
+>>>>>>> fix: update all tests
     <table
       class="downloads-table"
     >
@@ -299,9 +292,12 @@ exports[`DownloadReleases component renders correctly 1`] = `
         </tr>
       </tbody>
     </table>
+<<<<<<< HEAD
 >>>>>>> test: add unit tests for possible components (#975)
 =======
 >>>>>>> feat: upcoming releases tabs
+=======
+>>>>>>> fix: update all tests
   </div>
 </div>
 `;
