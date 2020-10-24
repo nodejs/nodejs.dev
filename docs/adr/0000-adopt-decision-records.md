@@ -3,7 +3,7 @@
 * Status: Proposed
 * Date: 2020-08-27 <!-- optional -->
 
-[Github issue describing potentially adopting decision records](https://github.com/nodejs/nodejs.dev/issues/853)
+[GitHub issue describing potentially adopting decision records](https://github.com/nodejs/nodejs.dev/issues/853)
 
 ## Context and Problem Statement
 

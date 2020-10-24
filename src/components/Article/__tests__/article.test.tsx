@@ -1,5 +1,7 @@
 import React from 'react';
-import * as ShallowRenderer from 'react-test-renderer/shallow';
+import { render } from '@testing-library/react';
+import '../../../../test/__mocks__/intersectionObserverMock';
+
 import Article from '..';
 import {
   createLearnPageData,
@@ -8,7 +10,6 @@ import {
 
 describe('Article component', () => {
   it('renders correctly', () => {
-    const renderer = ShallowRenderer.createRenderer();
     const learnPageData = createLearnPageData();
     const learnPageContext = createLearnPageContext();
 
@@ -22,10 +23,10 @@ describe('Article component', () => {
 
     const { relativePath, next, previous } = learnPageContext;
 
-    renderer.render(
+    const { container } = render(
       <Article
         title={title}
-        description={description}
+        tableOfContents={description}
         html={html}
         next={next}
         previous={previous}
@@ -33,6 +34,6 @@ describe('Article component', () => {
         relativePath={relativePath}
       />
     );
-    expect(renderer.getRenderOutput()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });
