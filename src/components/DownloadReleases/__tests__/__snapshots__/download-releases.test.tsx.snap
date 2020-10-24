@@ -3,13 +3,8 @@
 exports[`DownloadReleases component renders correctly 1`] = `
 <div>
   <div
-    class="download-releases"
+    className="upcoming-releases"
   >
-    <h2
-      class="download-releases__title"
-    >
-      Upcoming Releases
-    </h2>
     <div
       class="upcoming-releases"
     >
@@ -175,23 +170,24 @@ exports[`DownloadReleases component renders correctly 1`] = `
       </div>
       <div
         aria-labelledby="react-tabs-2"
-        class="react-tabs__tab-panel"
+        className="react-tabs__tab-panel"
         id="react-tabs-3"
         role="tabpanel"
       />
       <div
         aria-labelledby="react-tabs-4"
-        class="react-tabs__tab-panel"
+        className="react-tabs__tab-panel"
         id="react-tabs-5"
         role="tabpanel"
       />
       <div
         aria-labelledby="react-tabs-6"
-        class="react-tabs__tab-panel"
+        className="react-tabs__tab-panel"
         id="react-tabs-7"
         role="tabpanel"
       />
     </div>
+<<<<<<< HEAD
     <p
       class="lts__text"
     >
@@ -304,6 +300,8 @@ exports[`DownloadReleases component renders correctly 1`] = `
       </tbody>
     </table>
 >>>>>>> test: add unit tests for possible components (#975)
+=======
+>>>>>>> feat: upcoming releases tabs
   </div>
 </div>
 `;

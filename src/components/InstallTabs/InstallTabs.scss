@@ -107,35 +107,6 @@
     color: var(--black3);
     font-weight: var(--font-weight-semibold);
   }
-  &__text {
-    color: var(--pink5);
-    &__line {
-      margin: var(--space-12) 0;
-    }
-    &__no-select {
-      margin-right: var(--space-12);
-      -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-      -khtml-user-select: none; /* Konqueror HTML */
-      -moz-user-select: none; /* Old versions of Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-      user-select: none;
-    }
-  }
-  &__docs-button,
-  &__docs-button:hover {
-    border-radius: var(--space-04);
-    border: 1px solid var(--black3);
-    padding: var(--space-08) var(--space-16);
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    text-decoration: none;
-    box-sizing: border-box;
-    height: 4rem;
-    color: var(--black3);
-    font-weight: var(--font-weight-semibold);
-  }
 }
 .shell-box {
   code {
