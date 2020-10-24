@@ -62,10 +62,7 @@ exports[`Learn Template renders correctly 1`] = `
               class="nav__tabs"
             >
               <a
-                class="activeStyleTab"
-                href="https://nodejs.org/en/download/"
-                rel="noopener noreferrer"
-                target="_blank"
+                href="/download"
               >
                 Download
               </a>
