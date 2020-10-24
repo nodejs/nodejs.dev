@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import UpcomingReleases from '..';
 
 describe('UpcomingReleases component', (): void => {
   it('renders correctly', (): void => {
-    const tree = renderer.create(<UpcomingReleases />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(<UpcomingReleases />);
+    expect(container).toMatchSnapshot();
   });
 });
