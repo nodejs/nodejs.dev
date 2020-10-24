@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tests for InstallTabs component renders correctly 1`] = `
-<div>
+<div
+  className="install"
+>
   <div
     class="install"
   >
@@ -130,13 +132,13 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
     </div>
     <div
       aria-labelledby="react-tabs-2"
-      class="react-tabs__tab-panel"
+      className="react-tabs__tab-panel"
       id="react-tabs-3"
       role="tabpanel"
     />
     <div
       aria-labelledby="react-tabs-4"
-      class="react-tabs__tab-panel"
+      className="react-tabs__tab-panel"
       id="react-tabs-5"
       role="tabpanel"
     />
