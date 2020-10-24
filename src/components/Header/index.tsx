@@ -54,7 +54,14 @@ const Header = ({
               </a>
             </li>
             <li className="nav__tabs">
-              <Link to="/download">Download</Link>
+              <Link
+                to="/download"
+                className="activeStyleTab"
+                activeClassName="active"
+                partiallyActive
+              >
+                Download
+              </Link>
             </li>
           </ul>
         </div>
