@@ -1,23 +1,22 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import TOC from '..';
 
 describe('TOC component', () => {
   it('renders correctly', () => {
     const heading = 'TABLE OF CONTENTS';
     const tableOfContents = 'mock-toc';
-    const tree = renderer
-      .create(<TOC heading={heading} tableOfContents={tableOfContents} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-  it('does not render without a table of contents', () => {
-    const heading = 'TABLE OF CONTENTS';
-    const tableOfContents = null;
-    const tree = renderer.create(
+    const { container } = render(
       <TOC heading={heading} tableOfContents={tableOfContents} />
     );
-    expect(tree.getInstance()).toBeNull();
+    expect(container).toMatchSnapshot();
+  });
+  it('render empty div without a table of contents', () => {
+    const heading = 'TABLE OF CONTENTS';
+    const tableOfContents = undefined;
+    const { container } = render(
+      <TOC heading={heading} tableOfContents={tableOfContents} />
+    );
+    expect(container).toMatchSnapshot();
   });
 });
