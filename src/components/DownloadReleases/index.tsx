@@ -36,7 +36,7 @@ export default function DownloadToggle({ releases }: Props): JSX.Element {
               <p className="release-date">Released 2019-10-21</p>
             </div>
             <div className="maintenance">
-              <img src={hexagonOutline} alt="" />
+              <img src={hexagonFilled} alt="" />
               <p className="release-title">Maintenance Release</p>
               <p className="release-date">Released 2020-10-20 </p>
             </div>
@@ -74,7 +74,7 @@ export default function DownloadToggle({ releases }: Props): JSX.Element {
               <p className="release-date">Released 2020-04-21</p>
             </div>
             <div className="lts">
-              <img src={hexagonOutline} alt="" />
+              <img src={hexagonFilled} alt="" />
               <p className="release-title">Active LTS</p>
               <p className="release-date">Released 2020-10-20</p>
             </div>
