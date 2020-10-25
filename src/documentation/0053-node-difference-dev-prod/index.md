@@ -12,7 +12,7 @@ You can signal Node.js that you are running in production by setting the `NODE_E
 
 This is usually done by executing the command
 
-```sh
+```bash
 export NODE_ENV=production
 ```
 
@@ -20,7 +20,7 @@ in the shell, but it's better to put it in your shell configuration file (e.g. `
 
 You can also apply the environment variable by prepending it to your application initialization command:
 
-```sh
+```bash
 NODE_ENV=production node app.js
 ```
 
