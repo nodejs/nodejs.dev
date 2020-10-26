@@ -292,12 +292,6 @@ exports[`DownloadReleases component renders correctly 1`] = `
         </tr>
       </tbody>
     </table>
-<<<<<<< HEAD
->>>>>>> test: add unit tests for possible components (#975)
-=======
->>>>>>> feat: upcoming releases tabs
-=======
->>>>>>> fix: update all tests
   </div>
 </div>
 `;
