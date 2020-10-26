@@ -3,7 +3,7 @@ import { fixTocCodeTag } from '../../util/tocFormatter';
 
 interface Props {
   heading: string;
-  tableOfContents: string;
+  tableOfContents?: string;
 }
 
 const TOC = ({ heading, tableOfContents }: Props): null | JSX.Element => {

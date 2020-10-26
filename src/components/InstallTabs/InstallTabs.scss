@@ -13,6 +13,7 @@
     border: 1px solid transparent;
     border-bottom: none;
     bottom: -1px;
+    color: var(--black4);
     position: relative;
     list-style: none;
     padding: 10px 12px;
@@ -92,21 +93,31 @@
         user-select: none;
       }
     }
-    &__docs-button {
+    &__docs-button,
+    &__docs-button:hover {
       border-radius: var(--space-04);
+      border: 1px solid var(--black3);
       padding: var(--space-08) var(--space-16);
       position: absolute;
       bottom: 2rem;
       right: 2rem;
-    }
-    &__docs-button-text,
-    &__docs-button-text:hover {
       text-decoration: none;
       box-sizing: border-box;
-      width: 17rem;
       height: 4rem;
-      color: var(--black6);
+      color: var(--black3);
       font-weight: var(--font-weight-semibold);
     }
+  }
+  .shell-box {
+    code {
+      color: var(--pink5);
+      width: calc(100% - 20px);
+      line-height: 30px;
+      > span.install__text__command {
+        color: #fff;
+      }
+    }
+    background-color: var(--black9);
+    padding-bottom: 15px;
   }
 }

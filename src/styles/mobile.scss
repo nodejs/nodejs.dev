@@ -5,7 +5,6 @@
 
   .side-nav {
     margin-right: -36rem;
-    margin-bottom: calc(-100vh + var(--nav-height));
 
     &::after {
       content: '';
@@ -14,7 +13,7 @@
       position: fixed;
       left: 0;
       top: 0;
-      background-color: var(--black0);
+      background-color: var(--color-fill-side-nav);
       transform: translateX(-120%);
       transition: transform 0.28s;
       pointer-events: none;
@@ -46,7 +45,7 @@
   .side-nav.side-nav--open .side-nav__open {
     top: 34px;
     margin-top: 0;
-    display: block;
+    display: none;
     pointer-events: all;
   }
 }

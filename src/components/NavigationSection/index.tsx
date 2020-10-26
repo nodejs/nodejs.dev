@@ -9,7 +9,6 @@ interface Props {
   currentSlug: string;
   onItemClick: () => void;
   readSections: Set<NavigationSectionItem['slug']>;
-  autoScroll: (height: number) => void;
 }
 
 const NavigationSection = ({
@@ -18,7 +17,6 @@ const NavigationSection = ({
   currentSlug,
   onItemClick,
   readSections,
-  autoScroll,
 }: Props): JSX.Element => {
   return (
     <ul className="side-nav__list">
@@ -38,7 +36,6 @@ const NavigationSection = ({
               isRead={isRead}
               isActive={item.slug === currentSlug}
               onClick={onItemClick}
-              autoScroll={autoScroll}
             />
           );
         }

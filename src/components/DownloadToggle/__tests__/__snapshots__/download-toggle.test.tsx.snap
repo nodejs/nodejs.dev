@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DownloadToggle component renders correctly 1`] = `
+<div>
+  <div
+    class="download-toogle"
+  >
+    <div
+      class="download-toogle__selector"
+    >
+      <button
+        aria-checked="true"
+        aria-label="Show LTS versions"
+        class="download-toogle__switch"
+        role="switch"
+        type="button"
+      >
+        <span
+          class="download-toogle__button -active"
+        >
+          LTS
+        </span>
+        <span
+          class="download-toogle__button -current"
+        >
+          Current
+        </span>
+      </button>
+    </div>
+    <p
+      class="download-toogle__description"
+    >
+      Recommended for most users
+    </p>
+  </div>
+</div>
+`;
