@@ -14,4 +14,4 @@ title: Community Page
 
  Request features by opening issues on the nodejs/node repository.
 
- Report Code of Conduct violations by emailing commcomm@nodejs.org.
+ For Code of Conduct reporting or moderation guidance, please see [Code of Conduct Guidelines](https://github.com/nodejs/node/blob/master/CODE_OF_CONDUCT.md)
