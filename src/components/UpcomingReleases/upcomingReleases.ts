@@ -30,7 +30,7 @@ export const NODE_12_RELEASES: UpcomingRelease[] = [
     releaseType: 'maintenance',
   },
   {
-    alreadyReleased: true,
+    alreadyReleased: false,
     releaseDate: '2022-04-30',
     releaseType: 'endoflife',
   },
