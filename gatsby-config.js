@@ -46,6 +46,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'community-page',
+        path: `${__dirname}/content/communityPage`,
+        include: ['**/*.md'], // ignore files starting with a dot
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
