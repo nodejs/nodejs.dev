@@ -125,7 +125,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             </p>
           </div>
           <div
-            class="upcoming-releases__item--endoflife"
+            class="upcoming-releases__item--endoflife upcoming-releases__item--already-released"
           >
             <img
               alt="hexagon icon"
@@ -139,7 +139,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             <p
               class="release-date"
             >
-              Released
+              To be released
                
               2022-04-30
             </p>
