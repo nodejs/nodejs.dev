@@ -73,3 +73,11 @@ declare global {
     previousPath: string;
   }
 }
+export interface CommunityPage {
+  page: {
+    html: string;
+    frontmatter: {
+      title: string;
+    };
+  };
+}
