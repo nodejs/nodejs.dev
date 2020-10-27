@@ -1,17 +1,15 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import DownloadAdditional from '..';
 
 describe('DownloadAdditional component', (): void => {
   it('renders correctly', (): void => {
-    const tree = renderer
-      .create(
-        <DownloadAdditional
-          selectedTypeRelease="LTS"
-          handleTypeReleaseToggle={(): null => null}
-        />
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(
+      <DownloadAdditional
+        selectedTypeRelease="LTS"
+        handleTypeReleaseToggle={(): null => null}
+      />
+    );
+    expect(container).toMatchSnapshot();
   });
 });
