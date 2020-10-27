@@ -1,11 +1,12 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import dompurify from 'dompurify';
-import Layout from '../components/Layout';
 import { CommunityPage } from '../types';
-import { ReleaseData } from '../../hooks/useReleaseHistory';
+import { ReleaseData } from '../hooks/useReleaseHistory';
+import Layout from '../components/Layout';
+import '../styles/community-page.scss';
 
-interface Props { 
+interface Props {
   release?: ReleaseData;
 }
 
@@ -20,35 +21,59 @@ export default function DownloadPage({ data }: CommunityProps): JSX.Element {
   return (
     <Layout title={title} description={description}>
       <main>
-        <DownloadHeader />
-        <article style={{ width: '100%' }} className="article-reader">
-          <h1>The Node.js Community</h1>
-          <div dangerouslySetInnerHTML={{ __html: sanitizer(commCommData) }} />
-        </article>
+        <div className="container">
+          <div className="community-header community">
+            <CommmunityHeader />
+          </div>
+          <div className="sidebar">
+            <ul>
+              <li className="community-links">
+                <Link to="/">Link 1</Link>
+              </li>
+              <li className="community-links">
+                <Link to="/">Link 2</Link>
+              </li>
+              <li className="community-links">
+                <Link to="/">Link 3</Link>
+              </li>
+              <li className="community-links">
+                <Link to="/">Link 4</Link>
+              </li>
+              <li className="community-links">
+                <Link to="/">Link 5</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="community-content">
+            <div
+              dangerouslySetInnerHTML={{ __html: sanitizer(commCommData) }}
+            />
+          </div>
+        </div>
       </main>
     </Layout>
   );
 }
 
-const DownloadHeader = ({ release }: Props): JSX.Element => {
+const CommmunityHeader = ({ release }: Props): JSX.Element => {
   const nodev = release?.version;
   const npmv = release?.npm;
   const lts = release?.lts;
 
   return (
     <>
-      <div className="download-page__navigation">
+      <div className="community-page__navigation">
         <div>
           HOME /
-          <span className="download-page__navigation--active"> downloads</span>
+          <span className="community-page__navigation--active"> community</span>
         </div>
         <div>
           {lts ? 'LATEST LTS' : 'CURRENT'} VERSION {nodev}
         </div>
       </div>
-      <div className="download-page__navigation">
-        <div className="download-page__navigation--title">Downloads</div>
-        <div className="download-page__navigation--npm">
+      <div className="community-page__navigation">
+        <div className="community-page__navigation--title">Community Page</div>
+        <div className="community-page__navigation--npm">
           (includes npm {npmv})
         </div>
       </div>
