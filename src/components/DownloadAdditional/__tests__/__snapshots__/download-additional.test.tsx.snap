@@ -2,6 +2,7 @@
 
 exports[`DownloadAdditional component renders correctly 1`] = `
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div>
   <div
     class="download-additional"
@@ -49,45 +50,57 @@ exports[`DownloadAdditional component renders correctly 1`] = `
 <div
   className="download-additional"
 >
+=======
+<div>
+>>>>>>> test: change to react testing library
   <div
-    className="download-additional__header"
+    class="download-additional"
   >
-    <h3
-      className="download-additional__title"
-    >
-      Additional Downloads
-    </h3>
     <div
-      className="download-toogle"
+      class="download-additional__header"
     >
-      <div
-        className="download-toogle__selector"
+      <h3
+        class="download-additional__title"
       >
-        <button
-          aria-checked={true}
-          aria-label="Show LTS versions"
-          className="download-toogle__switch"
-          onClick={[Function]}
-          role="switch"
-          type="button"
+        Additional Downloads
+      </h3>
+      <div
+        class="download-toogle"
+      >
+        <div
+          class="download-toogle__selector"
         >
-          <span
-            className="download-toogle__button -active"
+          <button
+            aria-checked="true"
+            aria-label="Show LTS versions"
+            class="download-toogle__switch"
+            role="switch"
+            type="button"
           >
-            LTS
-          </span>
-          <span
-            className="download-toogle__button -current"
-          >
-            Current
-          </span>
-        </button>
+            <span
+              class="download-toogle__button -active"
+            >
+              LTS
+            </span>
+            <span
+              class="download-toogle__button -current"
+            >
+              Current
+            </span>
+          </button>
+        </div>
       </div>
     </div>
+    <div
+      class="download-additional__body"
+    />
   </div>
+<<<<<<< HEAD
   <div
     className="download-additional__body"
   />
 >>>>>>> feat: additional downloads
+=======
+>>>>>>> test: change to react testing library
 </div>
 `;
