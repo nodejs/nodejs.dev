@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import dompurify from 'dompurify';
+// import dompurify from 'dompurify';
 import { CommunityPage } from '../types';
 import { ReleaseData } from '../hooks/useReleaseHistory';
 import Layout from '../components/Layout';
@@ -17,7 +17,8 @@ export default function DownloadPage({ data }: CommunityProps): JSX.Element {
   const title = 'Community Page';
   const description = 'Community page';
   const commCommData = data.page.html;
-  const sanitizer = dompurify.sanitize;
+  // Commented out temporarly
+  // const sanitizer = dompurify.sanitize;
   return (
     <Layout title={title} description={description}>
       <main>
@@ -45,9 +46,7 @@ export default function DownloadPage({ data }: CommunityProps): JSX.Element {
             </ul>
           </div>
           <div className="community-content">
-            <div
-              dangerouslySetInnerHTML={{ __html: sanitizer(commCommData) }}
-            />
+            <div dangerouslySetInnerHTML={{ __html: commCommData }} />
           </div>
         </div>
       </main>
@@ -82,7 +81,7 @@ const CommmunityHeader = ({ release }: Props): JSX.Element => {
 };
 
 export const query = graphql`
-  query pageQueryAndPageQuery {
+  query {
     page: markdownRemark(fields: { slug: { eq: "community-page" } }) {
       frontmatter {
         title
