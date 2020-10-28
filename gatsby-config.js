@@ -27,7 +27,6 @@ module.exports = {
       options: {
         name: 'learn',
         path: `${__dirname}/src/documentation/`,
-        include: ['**/*.md'], // ignore files starting with a dot
       },
     },
     {
@@ -42,7 +41,6 @@ module.exports = {
       options: {
         name: 'homepage',
         path: `${__dirname}/content/homepage`,
-        include: ['**/*.md'], // ignore files starting with a dot
       },
     },
     {
