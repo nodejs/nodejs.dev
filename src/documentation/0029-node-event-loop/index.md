@@ -121,7 +121,7 @@ foo()
 
 This code prints, maybe surprisingly:
 
-```txt
+```bash
 foo
 baz
 bar
