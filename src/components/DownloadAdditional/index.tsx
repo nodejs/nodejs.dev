@@ -7,7 +7,6 @@ const CLASS_NAME = 'download-additional';
 
 type Item = {
   name: string;
-  link?: string;
   link32?: string;
   link64?: string;
 };
@@ -27,7 +26,7 @@ const getDownloadableItemsList = (fileName: string): Item[] => {
     },
     {
       name: 'macOS Installer (.pkg)',
-      link: `https://nodejs.org/dist/${versionPrefix}/node-${fileName}.pkg`,
+      link64: `https://nodejs.org/dist/${versionPrefix}/node-${fileName}.pkg`,
     },
   ];
 };
@@ -92,13 +91,6 @@ const DownloadableItem: FC<DownloadableItemProps> = ({
 
       {isExapanded && (
         <div className={`${CLASS_NAME}__item__body`}>
-          {item.link && (
-            <DownloadButton
-              className={`${CLASS_NAME}__item__body__link`}
-              link={item.link}
-              label="download"
-            />
-          )}
           {item.link32 && (
             <DownloadButton
               className={`${CLASS_NAME}__item__body__link`}
