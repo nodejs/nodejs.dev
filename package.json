@@ -69,15 +69,16 @@
     "lint:fix": "npm run lint -- --fix",
     "serve": "npm run build && clear && gatsby serve",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o ./public/storybook"
+    "build-storybook": "build-storybook -o ./public/storybook",
+    "a11y": "./node_modules/pa11y/bin/pa11y.js localhost:8000"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-typescript": "^7.9.0",
+    "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
     "@types/jest": "^25.2.1",
     "@types/react-helmet": "6.0.0",
-    "@types/react-test-renderer": "^16.9.2",
     "@types/throttle-debounce": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "2.33.0",
     "@typescript-eslint/parser": "^2.28.0",
@@ -90,7 +91,7 @@
     "eslint-config-prettier": "6.11.0",
     "eslint-import-resolver-typescript": "2.0.0",
     "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-jsx-a11y": "6.3.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "4.0.2",
@@ -98,8 +99,8 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "26.0.1",
     "node-sass": "4.14.1",
+    "pa11y": "5.3.0",
     "prettier": "^2.0.4",
-    "react-test-renderer": "^16.13.1",
     "remark-cli": "^8.0.0",
     "remark-frontmatter": "^2.0.0",
     "remark-preset-lint-node": "^1.13.0"
@@ -128,6 +129,9 @@
     },
     "setupFiles": [
       "<rootDir>/test-setup.js"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/setup-test-env.js"
     ],
     "collectCoverageFrom": [
       "src/**/**.(ts|tsx|js)"

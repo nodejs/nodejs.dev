@@ -13,6 +13,7 @@ module.exports = {
     'prettier/react',
     'plugin:prettier/recommended',
     'plugin:testing-library/recommended',
+    'plugin:jsx-a11y/recommended',
   ],
   settings: {
     react: {

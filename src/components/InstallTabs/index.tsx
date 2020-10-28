@@ -25,20 +25,6 @@ const InstallTabs = (): JSX.Element => {
 
   function panelSwitch(): JSX.Element {
     switch (userOS) {
-      default:
-        return (
-          <>
-            <TabPanel>
-              <WindowsPanel />
-            </TabPanel>
-            <TabPanel>
-              <MacOSPanel />
-            </TabPanel>
-            <TabPanel>
-              <LinuxPanel />
-            </TabPanel>
-          </>
-        );
       case UserOS.MAC:
         return (
           <>
@@ -67,28 +53,44 @@ const InstallTabs = (): JSX.Element => {
             </TabPanel>
           </>
         );
+      default:
+        return (
+          <>
+            <TabPanel>
+              <WindowsPanel />
+            </TabPanel>
+            <TabPanel>
+              <MacOSPanel />
+            </TabPanel>
+            <TabPanel>
+              <LinuxPanel />
+            </TabPanel>
+          </>
+        );
     }
   }
 
   return installTabSystems[userOS] !== undefined ? (
-    <Tabs>
-      <div className="install__header">
-        <div className="install__header-circles">
-          <div className="install__header-grey-circle" />
-          <div className="install__header-grey-circle" />
-          <div className="install__header-grey-circle" />
+    <div className="install">
+      <Tabs>
+        <div className="install__header">
+          <div className="install__header-circles">
+            <div className="install__header-grey-circle" />
+            <div className="install__header-grey-circle" />
+            <div className="install__header-grey-circle" />
+          </div>
+          <div className="install__header-text">
+            {userOS === 'MAC' ? 'zsh' : 'bash'}
+          </div>
         </div>
-        <div className="install__header-text">
-          {userOS === 'MAC' ? 'zsh' : 'bash'}
-        </div>
-      </div>
-      <TabList>
-        {installTabSystems[userOS].map((system: string) => (
-          <Tab key={system.toString()}>{system}</Tab>
-        ))}
-      </TabList>
-      {panelSwitch()}
-    </Tabs>
+        <TabList>
+          {installTabSystems[userOS].map((system: string) => (
+            <Tab key={system.toString()}>{system}</Tab>
+          ))}
+        </TabList>
+        {panelSwitch()}
+      </Tabs>
+    </div>
   ) : (
     <></>
   );

@@ -9,16 +9,22 @@ exports[`DownloadToggle component renders correctly 1`] = `
       class="download-toogle__selector"
     >
       <button
-        class="download-toogle__button -active"
+        aria-checked="true"
+        aria-label="Show LTS versions"
+        class="download-toogle__switch"
+        role="switch"
         type="button"
       >
-        LTS
-      </button>
-      <button
-        class="download-toogle__button -current"
-        type="button"
-      >
-        Current
+        <span
+          class="download-toogle__button -active"
+        >
+          LTS
+        </span>
+        <span
+          class="download-toogle__button -current"
+        >
+          Current
+        </span>
       </button>
     </div>
     <p

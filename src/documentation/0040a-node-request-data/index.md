@@ -64,9 +64,9 @@ So to access the data, assuming we expect to receive a string, we must put it in
 
 ```js
 const server = http.createServer((req, res) => {
-  let data = []
+  let data = '';
   req.on('data', chunk => {
-    data.push(chunk)
+    data += chunk;
   })
   req.on('end', () => {
     JSON.parse(data).todo // 'Buy the milk'
