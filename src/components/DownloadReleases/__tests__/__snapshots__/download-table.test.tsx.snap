@@ -2,55 +2,59 @@
 
 exports[`DownloadTable component renders correctly 1`] = `
 <div>
-  <table
-    class="downloads-table"
+  <div
+    class="downloads-table-container"
   >
-    <thead>
-      <tr>
-        <th>
-          Release
-        </th>
-        <th>
-          Status
-        </th>
-        <th>
-          Codename
-        </th>
-        <th>
-          Initial Release
-        </th>
-        <th>
-          Active LTS Start
-        </th>
-        <th>
-          Maintainance LTS Start
-        </th>
-        <th>
-          End of Life
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          v15
-        </td>
-        <td>
-          Pending
-        </td>
-        <td />
-        <td>
-          2020-10-20
-        </td>
-        <td />
-        <td>
-          2021-04-01
-        </td>
-        <td>
-          2021-06-01
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <table
+      class="downloads-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Release
+          </th>
+          <th>
+            Status
+          </th>
+          <th>
+            Codename
+          </th>
+          <th>
+            Initial Release
+          </th>
+          <th>
+            Active LTS Start
+          </th>
+          <th>
+            Maintainance LTS Start
+          </th>
+          <th>
+            End of Life
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            v15
+          </td>
+          <td>
+            Pending
+          </td>
+          <td />
+          <td>
+            2020-10-20
+          </td>
+          <td />
+          <td>
+            2021-04-01
+          </td>
+          <td>
+            2021-06-01
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 `;
