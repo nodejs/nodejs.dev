@@ -20,25 +20,12 @@ const InstallTabs = (): JSX.Element => {
     WIN: [os.win, os.mac, os.linux],
     MAC: [os.mac, os.win, os.linux],
     LINUX: [os.linux, os.mac, os.win],
+    UNIX: [os.linux, os.mac, os.win],
     UNKNOWN: [os.win, os.mac, os.linux],
   };
 
   function panelSwitch(): JSX.Element {
     switch (userOS) {
-      default:
-        return (
-          <>
-            <TabPanel>
-              <WindowsPanel />
-            </TabPanel>
-            <TabPanel>
-              <MacOSPanel />
-            </TabPanel>
-            <TabPanel>
-              <LinuxPanel />
-            </TabPanel>
-          </>
-        );
       case UserOS.MAC:
         return (
           <>
@@ -54,6 +41,7 @@ const InstallTabs = (): JSX.Element => {
           </>
         );
       case UserOS.LINUX:
+      case UserOS.UNIX:
         return (
           <>
             <TabPanel>
@@ -67,28 +55,44 @@ const InstallTabs = (): JSX.Element => {
             </TabPanel>
           </>
         );
+      default:
+        return (
+          <>
+            <TabPanel>
+              <WindowsPanel />
+            </TabPanel>
+            <TabPanel>
+              <MacOSPanel />
+            </TabPanel>
+            <TabPanel>
+              <LinuxPanel />
+            </TabPanel>
+          </>
+        );
     }
   }
 
   return installTabSystems[userOS] !== undefined ? (
-    <Tabs>
-      <div className="install__header">
-        <div className="install__header-circles">
-          <div className="install__header-grey-circle" />
-          <div className="install__header-grey-circle" />
-          <div className="install__header-grey-circle" />
+    <div className="install">
+      <Tabs>
+        <div className="install__header">
+          <div className="install__header-circles">
+            <div className="install__header-grey-circle" />
+            <div className="install__header-grey-circle" />
+            <div className="install__header-grey-circle" />
+          </div>
+          <div className="install__header-text">
+            {userOS === 'MAC' ? 'zsh' : 'bash'}
+          </div>
         </div>
-        <div className="install__header-text">
-          {userOS === 'MAC' ? 'zsh' : 'bash'}
-        </div>
-      </div>
-      <TabList>
-        {installTabSystems[userOS].map((system: string) => (
-          <Tab key={system.toString()}>{system}</Tab>
-        ))}
-      </TabList>
-      {panelSwitch()}
-    </Tabs>
+        <TabList>
+          {installTabSystems[userOS].map((system: string) => (
+            <Tab key={system.toString()}>{system}</Tab>
+          ))}
+        </TabList>
+        {panelSwitch()}
+      </Tabs>
+    </div>
   ) : (
     <></>
   );
