@@ -1,9 +1,9 @@
 import React from 'react';
+import classnames from 'classnames';
 import hexagonFilled from '../../../images/icons/hexagon-filled.svg';
 import hexagonOutline from '../../../images/icons/hexagon-outline.svg';
 import { UpcomingRelease, RELEASE_TYPES } from '../upcomingReleases';
 import './UpcomingReleasesItem.scss';
-import classnames from 'classnames';
 
 type Props = UpcomingRelease;
 
