@@ -108,15 +108,3 @@
     font-weight: var(--font-weight-semibold);
   }
 }
-.shell-box {
-  code {
-    color: var(--pink5);
-    width: calc(100% - 20px);
-    line-height: 30px;
-    > span.install__text__command {
-      color: #fff;
-    }
-  }
-  background-color: var(--black9);
-  padding-bottom: 15px;
-}
