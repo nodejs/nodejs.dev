@@ -20,7 +20,7 @@ const NavigationItem = ({
 }: Props): JSX.Element => {
   const className = classnames('t-body2 side-nav__item', {
     'side-nav__item--done': isRead,
-    'side-nav__item--active': isActive,
+    'side-nav__item--active': !isRead && isActive,
   });
 
   const element = useRef<HTMLAnchorElement | null>(null);
