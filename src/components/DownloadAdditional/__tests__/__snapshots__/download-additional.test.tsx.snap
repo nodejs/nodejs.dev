@@ -1,8 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DownloadAdditional component renders correctly 1`] = `
-<<<<<<< HEAD
-<<<<<<< HEAD
 <div>
   <div
     class="download-additional"
@@ -46,61 +44,5 @@ exports[`DownloadAdditional component renders correctly 1`] = `
       class="download-additional__body"
     />
   </div>
-=======
-<div
-  className="download-additional"
->
-=======
-<div>
->>>>>>> test: change to react testing library
-  <div
-    class="download-additional"
-  >
-    <div
-      class="download-additional__header"
-    >
-      <h3
-        class="download-additional__title"
-      >
-        Additional Downloads
-      </h3>
-      <div
-        class="download-toogle"
-      >
-        <div
-          class="download-toogle__selector"
-        >
-          <button
-            aria-checked="true"
-            aria-label="Show LTS versions"
-            class="download-toogle__switch"
-            role="switch"
-            type="button"
-          >
-            <span
-              class="download-toogle__button -active"
-            >
-              LTS
-            </span>
-            <span
-              class="download-toogle__button -current"
-            >
-              Current
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div
-      class="download-additional__body"
-    />
-  </div>
-<<<<<<< HEAD
-  <div
-    className="download-additional__body"
-  />
->>>>>>> feat: additional downloads
-=======
->>>>>>> test: change to react testing library
 </div>
 `;
