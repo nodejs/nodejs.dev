@@ -1,47 +1,10 @@
 import React, { useState, FC } from 'react';
 import DownloadToggle from '../DownloadToggle';
 import { ReleaseData } from '../../hooks/useReleaseHistory';
+import { getDownloadableItemsList, Downloadable } from './downloadItems';
 import './DownloadAdditional.scss';
 
 const CLASS_NAME = 'download-additional';
-
-type Item = {
-  name: string;
-  link32?: string;
-  link64?: string;
-};
-
-const getDownloadableItemsList = (fileName: string): Item[] => {
-  const versionPrefix = `latest-${fileName.split('.')[0]}.x`;
-  return [
-    {
-      name: 'Windows Installer (.msi)',
-      link32: `https://nodejs.org/dist/${versionPrefix}/node-${fileName}-x86.msi`,
-      link64: `https://nodejs.org/dist/${versionPrefix}/node-${fileName}-x64.msi`,
-    },
-    {
-      name: 'Windows Binary (.zip)',
-      link32: `https://nodejs.org/dist/${versionPrefix}/node-${fileName}-win-x86.zip`,
-      link64: `https://nodejs.org/dist/${versionPrefix}/node-${fileName}-win-x64.zip`,
-    },
-    {
-      name: 'macOS Installer (.pkg)',
-      link64: `https://nodejs.org/dist/${versionPrefix}/node-${fileName}.pkg`,
-    },
-  ];
-};
-
-interface DownloadAdditionalProps {
-  line?: ReleaseData;
-  selectedTypeRelease: string;
-  handleTypeReleaseToggle: (selected: React.SetStateAction<string>) => void;
-}
-
-interface DownloadableItemProps {
-  item: Item;
-  isExapanded: boolean;
-  setExapandedItem: (itemName: string) => void;
-}
 
 interface DownloadButtonProps {
   className: string;
@@ -59,6 +22,12 @@ const DownloadButton: FC<DownloadButtonProps> = ({
     {label}
   </a>
 );
+
+interface DownloadableItemProps {
+  item: Downloadable;
+  isExapanded: boolean;
+  setExapandedItem: (itemName: string) => void;
+}
 
 const DownloadableItem: FC<DownloadableItemProps> = ({
   item,
@@ -91,25 +60,25 @@ const DownloadableItem: FC<DownloadableItemProps> = ({
 
       {isExapanded && (
         <div className={`${CLASS_NAME}__item__body`}>
-          {item.link32 && (
+          {item.links.map(link => (
             <DownloadButton
               className={`${CLASS_NAME}__item__body__link`}
-              link={item.link32}
-              label="32-bit"
+              key={link.label}
+              link={link.path}
+              label={link.label}
             />
-          )}
-          {item.link64 && (
-            <DownloadButton
-              className={`${CLASS_NAME}__item__body__link`}
-              link={item.link64}
-              label="64-bit"
-            />
-          )}
+          ))}
         </div>
       )}
     </div>
   );
 };
+
+interface DownloadAdditionalProps {
+  line?: ReleaseData;
+  selectedTypeRelease: string;
+  handleTypeReleaseToggle: (selected: React.SetStateAction<string>) => void;
+}
 
 const DownloadAdditional: FC<DownloadAdditionalProps> = ({
   line,
