@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import hexagonFilled from '../../../images/icons/hexagon-filled.svg';
 import hexagonOutline from '../../../images/icons/hexagon-outline.svg';
 import { UpcomingRelease, RELEASE_TYPES } from '../upcomingReleases';
@@ -12,9 +13,9 @@ export default function UpcomingReleasesItem({
   alreadyReleased,
 }: Props): JSX.Element {
   const image = alreadyReleased ? hexagonFilled : hexagonOutline;
-  const className = alreadyReleased
-    ? `upcoming-releases__item--${releaseType}`
-    : `upcoming-releases__item--${releaseType} upcoming-releases__item--already-released`;
+  const className = classnames(`upcoming-releases__item--${releaseType}`, {
+    'upcoming-releases__item--to-be-released': !alreadyReleased,
+  });
 
   return (
     <div className={className}>

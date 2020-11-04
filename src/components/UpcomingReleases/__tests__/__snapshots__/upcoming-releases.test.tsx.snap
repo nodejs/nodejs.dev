@@ -125,7 +125,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             </p>
           </div>
           <div
-            class="upcoming-releases__item--endoflife upcoming-releases__item--already-released"
+            class="upcoming-releases__item--endoflife upcoming-releases__item--to-be-released"
           >
             <img
               alt="hexagon icon"
