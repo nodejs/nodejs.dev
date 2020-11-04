@@ -174,17 +174,11 @@ exports[`DownloadReleases component renders correctly 1`] = `
         />
       </div>
     </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fix: update all tests
     <p
       class="lts__text"
     >
       Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general use. LTS release status is "long-term support", which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use Active LTS or Maintenance LTS releases.
     </p>
-<<<<<<< HEAD
-<<<<<<< HEAD
     <div
       class="downloads-table-container"
     >
@@ -239,59 +233,6 @@ exports[`DownloadReleases component renders correctly 1`] = `
         </tbody>
       </table>
     </div>
-=======
-=======
->>>>>>> fix: update all tests
-    <table
-      class="downloads-table"
-    >
-      <thead>
-        <tr>
-          <th>
-            Release
-          </th>
-          <th>
-            Status
-          </th>
-          <th>
-            Codename
-          </th>
-          <th>
-            Initial Release
-          </th>
-          <th>
-            Active LTS Start
-          </th>
-          <th>
-            Maintainance LTS Start
-          </th>
-          <th>
-            End of Life
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            v15
-          </td>
-          <td>
-            Pending
-          </td>
-          <td />
-          <td>
-            2020-10-20
-          </td>
-          <td />
-          <td>
-            2021-04-01
-          </td>
-          <td>
-            2021-06-01
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </div>
 `;
