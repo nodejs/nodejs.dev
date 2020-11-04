@@ -9,6 +9,7 @@ import DownloadHeader from '../components/DownloadHeader';
 import DownloadToggle from '../components/DownloadToggle';
 import DownloadCards from '../components/DownloadCards';
 import DownloadReleases from '../components/DownloadReleases';
+import DownloadAdditional from '../components/DownloadAdditional';
 import '../styles/download.scss';
 
 export default function DownloadPage(): JSX.Element {
@@ -23,6 +24,9 @@ export default function DownloadPage(): JSX.Element {
   );
 
   const selectedType = typeRelease === 'LTS' ? lts : current;
+  const handleTypeReleaseToggle = (
+    selected: React.SetStateAction<string>
+  ): void => setTypeRelease(selected);
 
   return (
     <Layout title="Download Node.js" description="Come get me!">
@@ -34,12 +38,15 @@ export default function DownloadPage(): JSX.Element {
         </p>
         <DownloadToggle
           selected={typeRelease}
-          handleClick={(selected: React.SetStateAction<string>): void =>
-            setTypeRelease(selected)
-          }
+          handleClick={handleTypeReleaseToggle}
         />
         <DownloadCards line={selectedType} userOS={userOS} />
         <DownloadReleases releases={staticReleaseData} />
+        <DownloadAdditional
+          line={selectedType}
+          selectedTypeRelease={typeRelease}
+          handleTypeReleaseToggle={handleTypeReleaseToggle}
+        />
       </span>
     </Layout>
   );
