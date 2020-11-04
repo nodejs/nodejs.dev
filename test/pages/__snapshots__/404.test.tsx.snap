@@ -62,6 +62,7 @@ exports[`404 page renders correctly 1`] = `
               class="nav__tabs"
             >
               <a
+                class="activeStyleTab"
                 href="/download"
               >
                 Download

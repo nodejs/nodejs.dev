@@ -59,6 +59,7 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
             class="nav__tabs"
           >
             <a
+              class="activeStyleTab"
               href="/download"
             >
               Download
@@ -328,6 +329,7 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
             class="nav__tabs"
           >
             <a
+              class="activeStyleTab"
               href="/download"
             >
               Download
