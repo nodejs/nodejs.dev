@@ -107,7 +107,7 @@ function1()
 
 This will print the stack trace. This is what's printed if we try this in the Node.js REPL:
 
-```txt
+```bash
 Trace
     at function2 (repl:1:33)
     at function1 (repl:1:25)

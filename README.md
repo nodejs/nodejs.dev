@@ -28,14 +28,14 @@
 
 1. **Install dependencies.**
 
-   ```sh
+   ```bash
    # install the dependencies
    npm install
    ```
 
 1. **Start developing.**
 
-   ```sh
+   ```bash
    # "start": "gatsby develop"
    npm start
    ```
