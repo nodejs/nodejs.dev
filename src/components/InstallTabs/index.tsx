@@ -20,6 +20,7 @@ const InstallTabs = (): JSX.Element => {
     WIN: [os.win, os.mac, os.linux],
     MAC: [os.mac, os.win, os.linux],
     LINUX: [os.linux, os.mac, os.win],
+    UNIX: [os.linux, os.mac, os.win],
     UNKNOWN: [os.win, os.mac, os.linux],
   };
 
@@ -40,6 +41,7 @@ const InstallTabs = (): JSX.Element => {
           </>
         );
       case UserOS.LINUX:
+      case UserOS.UNIX:
         return (
           <>
             <TabPanel>
