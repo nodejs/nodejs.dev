@@ -5,11 +5,13 @@ import './DownloadToggle.scss';
 interface Props {
   handleClick: (type: string) => void;
   selected: string;
+  showDescription?: boolean;
 }
 
 export default function DownloadToggle({
   handleClick,
   selected,
+  showDescription = true,
 }: Props): JSX.Element {
   return (
     <div className="download-toogle">
@@ -44,11 +46,13 @@ export default function DownloadToggle({
           </span>
         </button>
       </div>
-      <p className="download-toogle__description">
-        {selected === 'LTS'
-          ? 'Recommended for most users'
-          : 'With the latest features'}
-      </p>
+      {showDescription && (
+        <p className="download-toogle__description">
+          {selected === 'LTS'
+            ? 'Recommended for most users'
+            : 'With the latest features'}
+        </p>
+      )}
     </div>
   );
 }
