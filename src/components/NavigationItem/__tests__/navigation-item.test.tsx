@@ -16,7 +16,6 @@ describe('NavigationItem component', (): void => {
         slug="versioning"
         title="Versioning"
         onClick={noop}
-        autoScroll={noop}
       />
     );
     expect(container).toMatchSnapshot();

@@ -21,7 +21,6 @@ describe('NavigationSection component', (): void => {
         currentSlug=""
         onItemClick={noop}
         readSections={new Set()}
-        autoScroll={noop}
       />
     );
     expect(container).toMatchSnapshot();

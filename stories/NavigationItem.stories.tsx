@@ -20,7 +20,6 @@ export const root = (): JSX.Element => (
     isActive
     slug="versioning"
     onClick={noop}
-    autoScroll={noop}
     title="Navigation Item"
   />
 );
