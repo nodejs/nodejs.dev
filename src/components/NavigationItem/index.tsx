@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { Link } from 'gatsby';
+import classnames from 'classnames';
 
 interface Props {
   key: string;
@@ -17,12 +18,11 @@ const NavigationItem = ({
   title,
   onClick,
 }: Props): JSX.Element => {
-  let className = 't-body2 side-nav__item ';
-  if (isRead) {
-    className += 'side-nav__item--done';
-  } else if (isActive) {
-    className += 'side-nav__item--active';
-  }
+  const className = classnames('t-body2 side-nav__item', {
+    'side-nav__item--done': isRead,
+    'side-nav__item--active': !isRead && isActive,
+  });
+
   const element = useRef<HTMLAnchorElement | null>(null);
   const handleRef = (ref?: HTMLAnchorElement | null): void => {
     if (ref && isActive) {

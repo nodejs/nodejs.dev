@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-onchange */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import dompurify from 'dompurify';
@@ -624,8 +625,8 @@ export default function APIDocsPage(): JSX.Element {
 
   return (
     <>
-      <main className="grid-container">
-        <Layout title={title} description={description} showFooter={false}>
+      <Layout title={title} description={description} showFooter={false}>
+        <main className="grid-container">
           <nav aria-label="Secondary" className="api-nav">
             <ul className="api-nav__list">
               <li className="api-nav__list-item">
@@ -661,8 +662,8 @@ export default function APIDocsPage(): JSX.Element {
             </ul>
           </nav>
           {renderArticle(page, userOS, currentVersionSelected || '')}
-        </Layout>
-      </main>
+        </main>
+      </Layout>
       <Footer />
     </>
   );

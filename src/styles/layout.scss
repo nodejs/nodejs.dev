@@ -1,6 +1,7 @@
 html {
   margin: 0;
   box-sizing: border-box;
+  height: 100%;
 }
 
 body {
@@ -8,8 +9,9 @@ body {
   color: var(--color-text-primary);
   font-size: 1.6rem;
   font-family: var(--base-type-face);
-  margin: var(--nav-height) 0 0;
+  margin: 0 0;
   overflow-x: hidden;
+  height: 100%;
 
   /* Set in JavaScript */
   --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
@@ -81,7 +83,7 @@ p {
   font-size: var(--font-size-overline);
   line-height: var(--line-height-overline);
   font-weight: var(--font-weight-normal);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   margin: 0 0 var(--space-4) 0;
@@ -254,7 +256,7 @@ select {
   background: var(--color-fill-app);
   border-bottom: var(--space-01) solid var(--black2);
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 999;
 }
@@ -485,15 +487,21 @@ details {
     }
 
     > a {
-      padding: var(--space-10);
+      padding: var(--space-08);
     }
   }
 
   .dark-mode-toggle {
-    padding: var(--space-10);
+    padding: var(--space-08);
   }
 
   .right-container .nav__tabs > a:last-child {
     padding-right: 0;
   }
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
