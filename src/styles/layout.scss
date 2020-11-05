@@ -83,7 +83,7 @@ p {
   font-size: var(--font-size-overline);
   line-height: var(--line-height-overline);
   font-weight: var(--font-weight-normal);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   margin: 0 0 var(--space-4) 0;
@@ -487,12 +487,12 @@ details {
     }
 
     > a {
-      padding: var(--space-10);
+      padding: var(--space-08);
     }
   }
 
   .dark-mode-toggle {
-    padding: var(--space-10);
+    padding: var(--space-08);
   }
 
   .right-container .nav__tabs > a:last-child {
