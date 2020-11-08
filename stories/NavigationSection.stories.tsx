@@ -27,6 +27,5 @@ export const root = (): JSX.Element => (
     currentSlug=""
     onItemClick={noop}
     readSections={new Set()}
-    autoScroll={noop}
   />
 );
