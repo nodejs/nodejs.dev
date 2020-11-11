@@ -178,6 +178,7 @@ also have commiter rights on the repo.
 * [@darcyclarke](https://github.com/darcyclarke) - Darcy Clarke
 * [@designMoreWeb](https://github.com/designMoreWeb) - Divy Tolia
 * [@imbhargav5](https://github.com/imbhargav5) - Bhargav Ponnapalli
+* [@joesepi](https://github.com/joesepi) - Joe Sepi
 * [@jonchurch](https://github.com/jonchurch) - Jonathan Church
 * [@kasicka](https://github.com/kasicka) - Zuzana Svetlíková
 * [@keywordnew](https://github.com/keywordnew) - Manil Chowdhury
