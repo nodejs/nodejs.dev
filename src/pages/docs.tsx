@@ -187,6 +187,28 @@ function renderDefaultArticle(
         pacman -S nodejs&nbsp;
         <span className="function">npm</span>
       </ShellBox>
+      <h3>CentOS, Fedora and Red Hat Enterprise Linux</h3>
+      <p className="t-body1">
+        Node.js is available as a module called <code>nodejs</code> in
+        CentOS/RHEL 8 and Fedora.
+        <ShellBox textToCopy="dnf module install nodejs:">
+          dnf module install nodejs:&lt;stream&gt;
+        </ShellBox>
+        where <code>&lt;stream&gt;</code> corresponds to the major version of
+        Node.js. To see a list of available streams:
+        <ShellBox textToCopy="dnf module list nodejs">
+          dnf module list nodejs
+        </ShellBox>
+        For example, to install Node.js 12:
+        <ShellBox textToCopy="dnf module install nodejs:12">
+          dnf module install nodejs:12
+        </ShellBox>
+        For CentOS/RHEL 7 Node.js is available via&nbsp;
+        <a href="https://www.softwarecollections.org/en/scls/?search=NodeJS">
+          Software Collections
+        </a>
+        .
+      </p>
       <h3>
         Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and
         Snap packages
