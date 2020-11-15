@@ -63,6 +63,15 @@ const Header = ({
                 Download
               </a>
             </li>
+            <li className="nav__tabs">
+              <a
+                href="/community"
+                className="activeStyleTab"
+                rel="noopener noreferrer"
+              >
+                Community
+              </a>
+            </li>
           </ul>
         </div>
 
