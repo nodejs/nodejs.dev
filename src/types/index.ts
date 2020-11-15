@@ -73,3 +73,18 @@ declare global {
     previousPath: string;
   }
 }
+
+export interface Page {
+  editPath?: string;
+  data: {
+    page: {
+      html: string;
+      tableOfContents: string;
+      frontmatter: {
+        title: string;
+        description: string;
+      };
+      fields: { authors: string[] };
+    };
+  };
+}
