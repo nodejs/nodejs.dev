@@ -67,6 +67,17 @@ exports[`Tests for Header component renders correctly 1`] = `
               Download
             </a>
           </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/community"
+              rel="noopener noreferrer"
+            >
+              Community
+            </a>
+          </li>
         </ul>
       </div>
       <div
