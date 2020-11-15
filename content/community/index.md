@@ -18,15 +18,15 @@ In the interest of fostering an open and welcoming environment, we as contributo
 
 We welcome all kinds of contributions — documentation, bugs reporting, core contribution. Irrespective of the extent of the contribution, we encourage you to be a part of Node.js. If you miss a feature, request it, or maybe help build it.
 
-- [Community Discussions](https://nodejs.org/en/get-involved/#community-discussion)
-- [Learning Node.js](https://nodejs.org/en/get-involved/#learning)
-- [Asking for General Help](https://nodejs.org/en/get-involved/contribute/#asking-for-general-help)
-- [Reporting an Issue](https://nodejs.org/en/get-involved/contribute/#reporting-an-issue)
-- [Code contributions](https://nodejs.org/en/get-involved/contribute/#code-contributions)
-- [Becoming a collaborator](https://nodejs.org/en/get-involved/contribute/#becoming-a-collaborator)
-- [Community Committee](https://github.com/nodejs/community-committee)
-- [Node.js Meetups](https://nodejs.org/en/get-involved/node-meetups/)
-- [Start Contributing to Node.js](https://dev.to/azure/start-contributing-to-nodejs-in-the-new-year-3dlh)
+* [Community Discussions](https://nodejs.org/en/get-involved/#community-discussion)
+* [Learning Node.js](https://nodejs.org/en/get-involved/#learning)
+* [Asking for General Help](https://nodejs.org/en/get-involved/contribute/#asking-for-general-help)
+* [Reporting an Issue](https://nodejs.org/en/get-involved/contribute/#reporting-an-issue)
+* [Code contributions](https://nodejs.org/en/get-involved/contribute/#code-contributions)
+* [Becoming a collaborator](https://nodejs.org/en/get-involved/contribute/#becoming-a-collaborator)
+* [Community Committee](https://github.com/nodejs/community-committee)
+* [Node.js Meetups](https://nodejs.org/en/get-involved/node-meetups/)
+* [Start Contributing to Node.js](https://dev.to/azure/start-contributing-to-nodejs-in-the-new-year-3dlh)
 
 ## Node.js News
 
@@ -54,6 +54,6 @@ DEV Community is an excellent platform to ask questions and share your knowledge
 
 ## Learn More About Node.js:
 
-- [Nodejs.dev](https://nodejs.dev/)
-- [Node.js documentation](https://nodejs.org/en/docs/)
-- [NodeSchool Workshoppers](https://nodeschool.io/#workshoppers)
+* [Nodejs.dev](https://nodejs.dev/)
+* [Node.js documentation](https://nodejs.org/en/docs/)
+* [NodeSchool Workshoppers](https://nodeschool.io/#workshoppers)
