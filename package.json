@@ -1,8 +1,8 @@
 {
   "name": "nodejs-website",
-  "description": "Node.js Demo Page",
+  "description": "Nodejs.dev Website",
   "version": "0.3.0",
-  "author": "Adam Miller <ammiller@linkedin.com>",
+  "author": "Node.js Dev Team <https://github.com/nodejs/nodejs.dev#the-nodejsdev-team>",
   "private": true,
   "dependencies": {
     "@mdx-js/mdx": "^1.6.18",
