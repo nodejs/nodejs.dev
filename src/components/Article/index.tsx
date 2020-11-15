@@ -11,7 +11,7 @@ interface Props {
   html: string;
   tableOfContents: string;
   authors: string[];
-  relativePath: string;
+  relativePath?: string;
   editPath?: string;
   next?: PaginationInfo;
   previous?: PaginationInfo;
