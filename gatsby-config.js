@@ -48,7 +48,6 @@ module.exports = {
       options: {
         name: 'community',
         path: `${__dirname}/content/community`,
-        include: ['**/*.md'], // ignore files starting with a dot
       },
     },
     {
