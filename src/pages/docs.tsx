@@ -209,7 +209,34 @@ function renderDefaultArticle(
         </a>
         .
       </p>
-      <h3>
+      <h4>Alternatives</h4>
+      <p className="t-body1">
+        These resources provide packages compatible with CentOS, Fedora, and
+        RHEL.
+        <ul>
+          <li>
+            <p className="t-body1">
+              <a href="#snap">Node.js snaps</a> maintained and supported
+              at&nbsp;
+              <a href="https://github.com/nodejs/snap">
+                https://github.com/nodejs/snap
+              </a>
+            </p>
+          </li>
+          <li>
+            <p className="t-body1">
+              <a href="#debian-and-ubuntu-based-linux-distributions">
+                Node.js binary distributions
+              </a>
+              &nbsp;maintained and supported by&nbsp;
+              <a href="https://github.com/nodesource/distributions">
+                NodeSource
+              </a>
+            </p>
+          </li>
+        </ul>
+      </p>
+      <h3 id="debian-and-ubuntu-based-linux-distributions">
         Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and
         Snap packages
       </h3>
@@ -218,6 +245,12 @@ function renderDefaultArticle(
           Node.js binary distributions
         </a>
         &nbsp;are available from NodeSource.
+      </p>
+      <h4>Alternatives</h4>
+      <p className="t-body1">
+        Packages compatible with Debian and Ubuntu based Linux distributions are
+        available via&nbsp;
+        <a href="#snap">Node.js snaps</a>.
       </p>
       <h3>FreeBSD</h3>
       <p className="t-body1">
@@ -292,10 +325,6 @@ function renderDefaultArticle(
           '-qO- https://nodejs.org/dist/latest/ | sed -nE \'s|.*>node-(.*)\\.pkg</a>.*|\\1|p\')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"'
         }
       </ShellBox>
-      <p className="t-body1">
-        Node.js can also be installed with the IBM i Access Client Solutions
-        product. See this support document for more details
-      </p>
       <h4>Alternatives</h4>
       <p className="t-body1">
         Using <a href="https://brew.sh/">Homebrew</a>:
@@ -484,6 +513,15 @@ function renderDefaultArticle(
         cd pkgsrc/lang/nodejs && bmake&nbsp;
         <span className="function">install</span>
       </ShellBox>
+      <h3 id="snap">Snap</h3>
+      <p className="t-body1">
+        <a href="https://github.com/nodejs/snap">Node.js snaps</a>
+        &nbsp;are available as&nbsp;
+        <a href="https://snapcraft.io/node">
+          <code>node</code>
+        </a>
+        &nbsp;on the Snap store.
+      </p>
       <h3>Solus</h3>
       <p className="t-body1">Solus provides Node.js in its main repository.</p>
       <ShellBox textToCopy="sudo eopkg install nodejs">
