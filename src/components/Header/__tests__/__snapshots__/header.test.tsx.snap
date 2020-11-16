@@ -73,7 +73,6 @@ exports[`Tests for Header component renders correctly 1`] = `
             <a
               class="activeStyleTab"
               href="/community"
-              rel="noopener noreferrer"
             >
               Community
             </a>

@@ -73,7 +73,6 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
             <a
               class="activeStyleTab"
               href="/community"
-              rel="noopener noreferrer"
             >
               Community
             </a>
@@ -356,7 +355,6 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
             <a
               class="activeStyleTab"
               href="/community"
-              rel="noopener noreferrer"
             >
               Community
             </a>
