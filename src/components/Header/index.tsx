@@ -64,13 +64,9 @@ const Header = ({
               </a>
             </li>
             <li className="nav__tabs">
-              <a
-                href="/community"
-                className="activeStyleTab"
-                rel="noopener noreferrer"
-              >
+              <Link to="/community" className="activeStyleTab">
                 Community
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
