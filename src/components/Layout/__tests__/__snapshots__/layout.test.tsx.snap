@@ -76,7 +76,6 @@ exports[`Layout component renders correctly with data 1`] = `
               <a
                 class="activeStyleTab"
                 href="/community"
-                rel="noopener noreferrer"
               >
                 Community
               </a>
