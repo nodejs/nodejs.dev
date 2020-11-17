@@ -5,7 +5,7 @@ import appleLogo from '../../images/logos/apple-logo.svg';
 import microsoftLogo from '../../images/logos/microsoft-download-logo.svg';
 import sourceCodeIcon from '../../images/logos/source-code-icon.svg';
 import { UserOS } from '../../util/detectOS';
-
+import DownloadCard from './DownloadCard';
 import './DownloadCards.scss';
 
 interface Props {
@@ -51,7 +51,7 @@ export default function DownloadCards({ line, userOS }: Props): JSX.Element {
 
   return (
     <ul
-      className="download-card__row"
+      className="download-cards"
       role="tablist"
       tabIndex={0}
       onKeyDown={(e: React.KeyboardEvent): void => {
@@ -79,47 +79,20 @@ export default function DownloadCards({ line, userOS }: Props): JSX.Element {
       }}
     >
       {downloadTypes.map(
-        (os): JSX.Element => (
-          <li
-            className={
-              selected === os.name
-                ? 'download-card--active'
-                : 'download-card--inactive'
-            }
-            key={os.name}
-            role="presentation"
-            onClick={(): void => {
-              setSelected(os.name);
-            }}
-          >
-            <div className="download-card__top">
-              <img
-                className={
-                  selected === os.name
-                    ? 'download-card__top--active'
-                    : 'download-card__top--inactive'
-                }
-                src={os.icon}
-                alt={`${os.label} logo`}
-              />
-              {selected === os.name && (
-                <a className="download-card__link" href={os.download}>
-                  <i className="material-icons">get_app</i>
-                </a>
-              )}
-            </div>
-            <p
-              className={
-                selected === os.name
-                  ? 'download-card__label--active'
-                  : 'download-card__label--inactive'
-              }
-            >
-              {os.label}
-            </p>
-            <p className="download-card__filename">{os.fileName}</p>
-          </li>
-        )
+        (os): JSX.Element => {
+          return (
+            <DownloadCard
+              key={os.name}
+              name={os.name}
+              icon={os.icon}
+              label={os.label}
+              download={os.download}
+              fileName={os.fileName}
+              selected={selected === os.name}
+              onSelect={setSelected}
+            />
+          );
+        }
       )}
     </ul>
   );
