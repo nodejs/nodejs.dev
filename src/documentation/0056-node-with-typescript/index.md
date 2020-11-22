@@ -9,7 +9,7 @@ section: Getting Started
 
 TypeScript is a very popular open-source language maintained and developed by Microsoft, it's loved and used by a lot of software developers around the world.
 
-Basically, it's a superset of JavaScript that adds new functionalities to the language. Most notable addition are static type definitions, something that is not present in plain JavaScript. Thanks to types, it's possible, for example, to declare what kind of arguments we are expecting and what is returned exactly in our functions or what's the exact shape of the object that we are creating. TypeScript is a really powerful tool and opens new world of possibilities in JavaScript projects. It makes our code more secure and robust by preventing a lot of bugs before code is even shipped - it catches problems during writing the code and integrates wonderfully with code editors like Visual Studio Code.
+Basically, it's a superset of JavaScript that adds new capabilities to the language. Most notable addition are static type definitions, something that is not present in plain JavaScript. Thanks to types, it's possible, for example, to declare what kind of arguments we are expecting and what is returned exactly in our functions or what's the exact shape of the object that we are creating. TypeScript is a really powerful tool and opens new world of possibilities in JavaScript projects. It makes our code more secure and robust by preventing a lot of bugs before code is even shipped - it catches problems during writing the code and integrates wonderfully with code editors like Visual Studio Code.
 
 We can talk about other TypeScript benefits later, let's see some examples now!
 
