@@ -3,12 +3,12 @@
 exports[`DownloadCards component renders correctly 1`] = `
 <div>
   <ul
-    class="download-card__row"
+    class="download-cards"
     role="tablist"
     tabindex="0"
   >
     <li
-      class="download-card--active"
+      class="download-card download-card--active"
       role="presentation"
     >
       <div
@@ -16,7 +16,7 @@ exports[`DownloadCards component renders correctly 1`] = `
       >
         <img
           alt="Windows Installer logo"
-          class="download-card__top--active"
+          class="download-card__image"
           src="test-file-stub"
         />
         <a
@@ -31,7 +31,7 @@ exports[`DownloadCards component renders correctly 1`] = `
         </a>
       </div>
       <p
-        class="download-card__label--active"
+        class="download-card__label"
       >
         Windows Installer
       </p>
@@ -42,7 +42,7 @@ exports[`DownloadCards component renders correctly 1`] = `
       </p>
     </li>
     <li
-      class="download-card--inactive"
+      class="download-card"
       role="presentation"
     >
       <div
@@ -50,12 +50,12 @@ exports[`DownloadCards component renders correctly 1`] = `
       >
         <img
           alt="MAC Installer logo"
-          class="download-card__top--inactive"
+          class="download-card__image"
           src="test-file-stub"
         />
       </div>
       <p
-        class="download-card__label--inactive"
+        class="download-card__label"
       >
         MAC Installer
       </p>
@@ -66,7 +66,7 @@ exports[`DownloadCards component renders correctly 1`] = `
       </p>
     </li>
     <li
-      class="download-card--inactive"
+      class="download-card"
       role="presentation"
     >
       <div
@@ -74,12 +74,12 @@ exports[`DownloadCards component renders correctly 1`] = `
       >
         <img
           alt="Source Code logo"
-          class="download-card__top--inactive"
+          class="download-card__image"
           src="test-file-stub"
         />
       </div>
       <p
-        class="download-card__label--inactive"
+        class="download-card__label"
       >
         Source Code
       </p>
