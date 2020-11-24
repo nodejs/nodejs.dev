@@ -62,8 +62,8 @@ export function getStaticReleaseData(): NodeReleaseData[] {
     },
     {
       release: 'v14',
-      status: 'Current',
-      codename: '',
+      status: 'Active LTS',
+      codename: 'Fermium',
       initialRelease: '2020-04-21',
       activeLTSStart: '2020-10-27',
       maintenanceLTSStart: '2021-10-19',
@@ -71,7 +71,7 @@ export function getStaticReleaseData(): NodeReleaseData[] {
     },
     {
       release: 'v15',
-      status: 'Pending',
+      status: 'Curent',
       codename: '',
       initialRelease: '2020-10-20',
       activeLTSStart: '',
