@@ -53,7 +53,6 @@ export default function DownloadCards({ line, userOS }: Props): JSX.Element {
     <ul
       className="download-cards"
       role="tablist"
-      tabIndex={0}
       onKeyDown={(e: React.KeyboardEvent): void => {
         const currentIndex = downloadTypes.findIndex(d => d.name === selected);
 

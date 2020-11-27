@@ -27,6 +27,9 @@
     width: 24px;
     color: var(--black5);
     font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__label {
