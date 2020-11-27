@@ -29,9 +29,9 @@ Streams basically provide two major advantages over using other data handling me
 
 ## An example of a stream
 
-A typical example is the one of reading files from a disk.
+A typical example is reading files from a disk.
 
-Using the Node.js `fs` module you can read a file, and serve it over HTTP when a new connection is established to your http server:
+Using the Node.js `fs` module, you can read a file, and serve it over HTTP when a new connection is established to your HTTP server:
 
 ```js
 const http = require('http')
