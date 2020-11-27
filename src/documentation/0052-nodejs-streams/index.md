@@ -22,7 +22,7 @@ All streams are instances of [EventEmitter](https://nodejs.org/api/events.html#e
 
 ## Why streams
 
-Streams basically provide two major advantages using other data handling methods:
+Streams basically provide two major advantages over using other data handling methods:
 
 * **Memory efficiency**: you don't need to load large amounts of data in memory before you are able to process it
 * **Time efficiency**: it takes way less time to start processing data as soon as you have it, rather than waiting till the whole data payload is available to start
