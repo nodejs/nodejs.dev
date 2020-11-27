@@ -31,7 +31,7 @@ export default function DownloadCard({
       key={name}
       role="presentation"
       onClick={handleSelectCard}
-      tabIndex={0}
+      tabIndex={-1}
     >
       <div className="download-card__top">
         <img

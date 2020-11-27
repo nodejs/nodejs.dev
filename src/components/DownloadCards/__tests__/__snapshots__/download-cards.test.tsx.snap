@@ -5,11 +5,11 @@ exports[`DownloadCards component renders correctly 1`] = `
   <ul
     class="download-cards"
     role="tablist"
-    tabindex="0"
   >
     <li
       class="download-card download-card--active"
       role="presentation"
+      tabindex="-1"
     >
       <div
         class="download-card__top"
@@ -44,6 +44,7 @@ exports[`DownloadCards component renders correctly 1`] = `
     <li
       class="download-card"
       role="presentation"
+      tabindex="-1"
     >
       <div
         class="download-card__top"
@@ -68,6 +69,7 @@ exports[`DownloadCards component renders correctly 1`] = `
     <li
       class="download-card"
       role="presentation"
+      tabindex="-1"
     >
       <div
         class="download-card__top"
