@@ -1,59 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navigation component renders correctly 1`] = `
-<nav
-  className="side-nav"
->
-  <button
-    className="side-nav__open"
-    onClick={[Function]}
-    type="button"
+<div>
+  <nav
+    class="side-nav"
   >
-    Menu
-  </button>
-  <ul
-    className="side-nav__list"
-  >
-    <h2
-      className="t-body2 side-nav__title"
+    <button
+      class="side-nav__open"
+      type="button"
     >
-      <i
-        className="material-icons"
+      Menu
+    </button>
+    <ul
+      class="side-nav__list"
+    >
+      <h2
+        class="t-body2 side-nav__title"
       >
-        offline_bolt
-      </i>
-      Getting Started
-    </h2>
-    <a
-      className="t-body2 side-nav__item side-nav__item--active"
-      href="/learn/intro"
-      innerRef={[Function]}
-      onClick={[Function]}
-    >
-      Section 1
-    </a>
-  </ul>
-  <ul
-    className="side-nav__list"
-  >
-    <h2
-      className="t-body2 side-nav__title"
-    >
-      <i
-        className="material-icons"
+        <i
+          class="material-icons"
+        >
+          offline_bolt
+        </i>
+        Getting Started
+      </h2>
+      <a
+        class="t-body2 side-nav__item side-nav__item--active"
+        href="/learn/intro"
+        id="link-intro"
       >
-        offline_bolt
-      </i>
-      Versions
-    </h2>
-    <a
-      className="t-body2 side-nav__item "
-      href="/learn/version"
-      innerRef={[Function]}
-      onClick={[Function]}
+        Section 1
+      </a>
+    </ul>
+    <ul
+      class="side-nav__list"
     >
-      Version 1
-    </a>
-  </ul>
-</nav>
+      <h2
+        class="t-body2 side-nav__title"
+      >
+        <i
+          class="material-icons"
+        >
+          offline_bolt
+        </i>
+        Versions
+      </h2>
+      <a
+        class="t-body2 side-nav__item"
+        href="/learn/version"
+        id="link-version"
+      >
+        Version 1
+      </a>
+    </ul>
+  </nav>
+</div>
 `;

@@ -23,29 +23,40 @@ const LearnLayout = ({
     },
   },
   pageContext: { slug, next, previous, relativePath, navigationData },
-}: Props): React.ReactNode => (
-  <>
-    <main className="grid-container">
+}: Props): React.ReactNode => {
+  let previousSlug = '';
+
+  if (typeof window !== 'undefined' && window.previousPath) {
+    previousSlug =
+      window.previousPath.split('/learn')[1]?.substr(1) ||
+      'introduction-to-nodejs';
+  }
+
+  return (
+    <>
       <Layout title={title} description={description} showFooter={false}>
-        <Navigation
-          currentSlug={slug}
-          label="Secondary"
-          sections={navigationData}
-        />
-        <Article
-          title={title}
-          html={html}
-          tableOfContents={tableOfContents}
-          next={next}
-          authors={authors}
-          previous={previous}
-          relativePath={relativePath}
-        />
+        <main className="grid-container">
+          <Navigation
+            currentSlug={slug}
+            previousSlug={previousSlug}
+            label="Secondary"
+            sections={navigationData}
+          />
+          <Article
+            title={title}
+            html={html}
+            tableOfContents={tableOfContents}
+            next={next}
+            authors={authors}
+            previous={previous}
+            relativePath={relativePath}
+          />
+        </main>
       </Layout>
-    </main>
-    <Footer />
-  </>
-);
+      <Footer />
+    </>
+  );
+};
 export default LearnLayout;
 
 export const query = graphql`

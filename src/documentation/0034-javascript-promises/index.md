@@ -8,7 +8,7 @@ section: Getting Started
 ## Introduction to promises
 
 <iframe
-  allow="geolocation; microphone; camera; midi; encrypted-media"
+  title="Introduction to promises"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0034-01?path=server.js&previewSize=35&attributionHidden=true&sidebarCollapsed=true"
   alt="nodejs-dev-0034-01 on Glitch"
   style="height: 400px; width: 100%; border: 0;">

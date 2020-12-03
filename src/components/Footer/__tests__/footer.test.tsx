@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Footer from '..';
 
 describe('Tests for Footer component', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<Footer />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(<Footer />);
+    expect(container).toMatchSnapshot();
   });
 });

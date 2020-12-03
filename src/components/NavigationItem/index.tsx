@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'gatsby';
+import classnames from 'classnames';
 
 interface Props {
   key: string;
@@ -8,7 +9,6 @@ interface Props {
   slug: string;
   title: string;
   onClick: () => void;
-  autoScroll: (height: number) => void;
 }
 
 const NavigationItem = ({
@@ -17,14 +17,12 @@ const NavigationItem = ({
   slug,
   title,
   onClick,
-  autoScroll,
 }: Props): JSX.Element => {
-  let className = 't-body2 side-nav__item ';
-  if (isRead) {
-    className += 'side-nav__item--done';
-  } else if (isActive) {
-    className += 'side-nav__item--active';
-  }
+  const className = classnames('t-body2 side-nav__item', {
+    'side-nav__item--done': isRead,
+    'side-nav__item--active': !isRead && isActive,
+  });
+
   const element = useRef<HTMLAnchorElement | null>(null);
   const handleRef = (ref?: HTMLAnchorElement | null): void => {
     if (ref && isActive) {
@@ -32,17 +30,11 @@ const NavigationItem = ({
     }
   };
 
-  useEffect((): void => {
-    if (element.current) {
-      const height = element.current.getBoundingClientRect().top;
-      autoScroll(height);
-    }
-  });
-
   return (
     <Link
       innerRef={handleRef}
       to={`/learn/${slug}`}
+      id={`link-${slug}`}
       onClick={onClick}
       className={className}
     >
