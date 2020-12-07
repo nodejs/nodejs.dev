@@ -178,16 +178,19 @@ also have commiter rights on the repo.
 * [@darcyclarke](https://github.com/darcyclarke) - Darcy Clarke
 * [@designMoreWeb](https://github.com/designMoreWeb) - Divy Tolia
 * [@imbhargav5](https://github.com/imbhargav5) - Bhargav Ponnapalli
+* [@jemjam](https://github.com/jemjam) - j'em bones [he/them]
+* [@joesepi](https://github.com/joesepi) - Joe Sepi
 * [@jonchurch](https://github.com/jonchurch) - Jonathan Church
 * [@kasicka](https://github.com/kasicka) - Zuzana Svetlíková
 * [@keywordnew](https://github.com/keywordnew) - Manil Chowdhury
 * [@LaRuaNa](https://github.com/LaRuaNa) - Onur Laru
 * [@maddhruv](https://github.com/maddhruv) - Dhruv Jain
+* [@marcustisater](https://github.com/marcustisater) - Marcus Tisäter
 * [@mbj36](https://github.com/mbj36) - Mohit kumar Bajoria
 * [@MylesBorins](https://github.com/MylesBorins) - Myles Borins
 * [@ogonzal87](https://github.com/ogonzal87) - Oscar Gonzalez
 * [@ollelauribostrom](https://github.com/ollelauribostrom) - Olle Lauri Boström
-* [@pierreneter](https://github.com/pierreneter)
+* [@pierreneter](https://github.com/pierreneter) - Nguyễn J Huỳnh Long
 * [@sagirk](https://github.com/sagirk) - Sagir Khan
 * [@saulonunesdev](https://github.com/saulonunesdev) - Saulo Nunes
 * [@skllcrn](https://github.com/skllcrn) - Christopher
