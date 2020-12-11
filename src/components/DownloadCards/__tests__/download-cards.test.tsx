@@ -15,11 +15,11 @@ describe('DownloadCards component', (): void => {
 
     const listElement = getAllByRole('presentation');
 
-    expect(listElement[0]).toHaveClass('download-card--inactive');
+    expect(listElement[0]).toHaveClass('download-card');
 
     fireEvent.click(listElement[0]);
 
-    expect(listElement[0]).toHaveClass('download-card--active');
+    expect(listElement[0]).toHaveClass('download-card download-card--active');
   });
 
   it('check left and right arrow click handler on DownloadCards component', (): void => {
@@ -30,7 +30,7 @@ describe('DownloadCards component', (): void => {
     const tabListElement = getByRole('tablist');
     const listElement = getAllByRole('presentation');
 
-    expect(listElement[0]).toHaveClass('download-card--inactive');
+    expect(listElement[0]).toHaveClass('download-card');
 
     /**
      * First left click from default OS of MAC
@@ -40,9 +40,9 @@ describe('DownloadCards component', (): void => {
       code: 'LeftArrowKey',
     });
 
-    expect(listElement[0]).toHaveClass('download-card--active');
-    expect(listElement[1]).toHaveClass('download-card--inactive');
-    expect(listElement[2]).toHaveClass('download-card--inactive');
+    expect(listElement[0]).toHaveClass('download-card download-card--active');
+    expect(listElement[1]).toHaveClass('download-card');
+    expect(listElement[2]).toHaveClass('download-card');
 
     /**
      * Left click from WIN
@@ -52,9 +52,9 @@ describe('DownloadCards component', (): void => {
       code: 'LeftArrowKey',
     });
 
-    expect(listElement[0]).toHaveClass('download-card--inactive');
-    expect(listElement[1]).toHaveClass('download-card--inactive');
-    expect(listElement[2]).toHaveClass('download-card--active');
+    expect(listElement[0]).toHaveClass('download-card');
+    expect(listElement[1]).toHaveClass('download-card');
+    expect(listElement[2]).toHaveClass('download-card download-card--active');
 
     /**
      * Right click from SOURCECODE
@@ -65,8 +65,8 @@ describe('DownloadCards component', (): void => {
       code: 'RightArrowKey',
     });
 
-    expect(listElement[0]).toHaveClass('download-card--active');
-    expect(listElement[1]).toHaveClass('download-card--inactive');
-    expect(listElement[2]).toHaveClass('download-card--inactive');
+    expect(listElement[0]).toHaveClass('download-card download-card--active');
+    expect(listElement[1]).toHaveClass('download-card');
+    expect(listElement[2]).toHaveClass('download-card');
   });
 });
