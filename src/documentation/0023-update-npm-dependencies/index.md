@@ -47,7 +47,7 @@ Now those 2 files tell us that we installed version `1.3.1` of cowsay, and our r
 
 If there is a new minor or patch release and we type `npm update`, the installed version is updated, and the `package-lock.json` file diligently filled with the new version.
 
-`package.json` remains unchanged.
+As of npm@5.0.0, the npm update will change package.json to save the new version as the minimum required dependency. To get the old behavior, use npm update --no-save.
 
 To discover new releases of the packages, you run `npm outdated`.
 
