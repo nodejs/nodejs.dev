@@ -10,7 +10,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const docTemplate = path.resolve('./src/templates/learn.tsx');
-  
+
     // console.log('supportedVersions', supportedVersions());
     resolve(
       graphql(

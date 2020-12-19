@@ -3,27 +3,36 @@ import React from 'react';
 import dompurify from 'dompurify';
 import Layout from '../components/Layout';
 
-import '../styles/article-reader.scss';
-import '../styles/learn.scss';
-import Footer from '../components/Footer';
-
 const sanitizer = dompurify.sanitize;
+const title = 'Download Node.js';
+const description = 'Come get me!';
+
 interface Props {
-  data: any;
-  pageContext: any;
+  data: {
+    doc: {
+      edges: string[] | {};
+    };
+  };
 }
+
+const Sidebar = ({data}: Props) => (
+  <ul>
+    {
+      data.doc
+    }
+  </ul>
+)
 const DocsLayout = ({ data }: Props): React.ReactNode => (
-  <>
+  <Layout title={title} description={description}>
     <main className="grid-container">
-      {console.log(typeof data)}
+      {console.log(data)}
       <p
         dangerouslySetInnerHTML={{
-          __html: sanitizer(data.doc.edges[0].node.html),
+          __html: sanitizer(data.doc.edges[42].node.html),
         }}
       />
     </main>
-    <Footer />
-  </>
+  </Layout>
 );
 export default DocsLayout;
 
@@ -33,7 +42,9 @@ export const query = graphql`
       edges {
         node {
           fileAbsolutePath
-
+					frontmatter {
+            title
+          }
           html
         }
       }
