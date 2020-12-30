@@ -5,7 +5,9 @@
 html {
   font-size: 10px;
 }
-
+* {
+  transition: background-color 0.6s ease, color 0.1s ease;
+}
 body {
   --mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   --sans: 'Open Sans', sans-serif;

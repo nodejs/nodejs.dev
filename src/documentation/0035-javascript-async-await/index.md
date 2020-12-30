@@ -97,7 +97,7 @@ aFunction().then(alert) // This will alert 'test'
 and it's the same as:
 
 ```js
-const aFunction = async () => {
+const aFunction = () => {
   return Promise.resolve('test')
 }
 
