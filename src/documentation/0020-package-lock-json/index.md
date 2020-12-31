@@ -11,7 +11,7 @@ What's that? You probably know about the `package.json` file, which is much more
 
 The goal of the file is to keep track of the exact version of every package that is installed so that a product is 100% reproducible in the same way even if packages are updated by their maintainers.
 
-This solves a very specific problem that `package.json` left unsolved. In package.json you can set which versions you want to upgrade to (patch or minor), using the **semver** notation, for example:
+This solves a very specific problem that `package.json` left unsolved. In package-lock.json you can set which versions you want to upgrade to (patch or minor), using the **semver** notation, for example:
 
 * if you write `~0.13.0`, you want to only update patch releases: `0.13.1` is ok, but `0.14.0` is not.
 * if you write `^0.13.0`, you want to update patch and minor releases: `0.13.1`, `0.14.0` and so on.
