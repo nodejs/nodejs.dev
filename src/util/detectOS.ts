@@ -9,20 +9,20 @@ export enum UserOS {
 
 export function detectOS(): UserOS {
   let OS = UserOS.UNKNOWN;
-  switch (typeof navigator !== `undefined`) {
-    case navigator.appVersion.includes('Win'):
+  switch (typeof window.navigator !== `undefined`) {
+    case window.navigator.appVersion.includes('Win'):
       OS = UserOS.WIN;
       break;
-    case navigator.appVersion.includes('Mac'):
+    case window.navigator.appVersion.includes('Mac'):
       OS = UserOS.MAC;
       break;
-    case navigator.appVersion.includes('X11'):
+    case window.navigator.appVersion.includes('X11'):
       OS = UserOS.UNIX;
       break;
-    case navigator.appVersion.includes('Linux'):
+    case window.navigator.appVersion.includes('Linux'):
       OS = UserOS.LINUX;
       break;
-    case navigator.appVersion.includes('Mobi'):
+    case window.navigator.appVersion.includes('Mobi'):
       OS = UserOS.MOBILE;
       break;
     default:
