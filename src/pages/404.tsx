@@ -9,7 +9,7 @@ export default function NotFoundPage(): JSX.Element {
   return (
     <Layout title={title} description={description}>
       <Hero title={title} />
-      <article style={{ width: '100%' }} className="article-reader">
+      <main style={{ width: '100%' }} className="article-reader">
         <p>
           The page you&apos;re trying to access does not exist. Go back to the
           Homepage or find what you&apos;re looking for in the menu.
@@ -18,7 +18,7 @@ export default function NotFoundPage(): JSX.Element {
           Take me back to the
           <a href="/">Homepage</a>
         </p>
-      </article>
+      </main>
     </Layout>
   );
 }

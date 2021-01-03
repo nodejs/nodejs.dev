@@ -1,44 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Hero component renders correctly 1`] = `
-<div
-  className="home-page-hero"
->
-  <h1>
-    Introduction to Node.js
-  </h1>
-  <h2
-    className="sub-title t-subheading"
-  />
+<div>
   <div
-    className="btn-ctas"
+    class="home-page-hero"
   >
+    <h1>
+      Introduction to Node.js
+    </h1>
+    <h2
+      class="sub-title t-subheading"
+    >
+      Mock SubTitle
+    </h2>
     <div
-      className="download-lts-container"
+      class="btn-ctas"
     >
-      <a
-        className="circular-container"
-        href="https://nodejs.org/dist//node-.tar.gz"
+      <div
+        class="download-lts-container"
       >
-        Download Node (LTS)
-      </a>
-      <p
-        className="t-caption"
-      >
-        
         <a
-          href="https://nodejs.org/dist//node-.tar.gz"
+          class="circular-container"
+          href="https://nodejs.org/dist/mmock-version-2/node-mmock-version-2.tar.gz"
         >
-          Get Current
+          Download Node (LTS)
         </a>
-      </p>
+        <p
+          class="t-caption"
+        >
+          Version mock-version-2 - 
+          <a
+            href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
+          >
+            Get Current
+          </a>
+        </p>
+      </div>
+      <a
+        class="circular-container inverse"
+        href="/learn"
+      >
+        Learn Node
+      </a>
     </div>
-    <a
-      className="circular-container inverse"
-      href="/learn"
-    >
-      Learn Node
-    </a>
   </div>
 </div>
 `;

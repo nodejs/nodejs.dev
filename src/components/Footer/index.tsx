@@ -1,144 +1,12 @@
-import React, { useState } from 'react';
-import { css, SerializedStyles } from '@emotion/core';
+import React from 'react';
 
-const dropDownData = [
-  'العربية',
-  'Catalan',
-  'Deutsche',
-  'English',
-  'Español',
-  'Français',
-  'Galego',
-  'हिंदी',
-  'زبان فارسی',
-];
-
-const DropDownContainer: SerializedStyles = css`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  background-color: var(--color-fill-app);
-  top: calc(-40px * ${dropDownData.length} - 40px);
-  left: -25px;
-  box-shadow: 0 5px 15px -5px var(--color-border-primary);
-  border-bottom: 2px solid var(--color-brand-primary);
-  z-index: 999;
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    transform: rotate(45deg);
-    left: calc(50% - 10px);
-    width: 15px;
-    height: 15px;
-    z-index: -1;
-    background-color: var(--color-fill-app);
-    border-right: 2px solid var(--color-brand-primary);
-    border-bottom: 2px solid var(--color-brand-primary);
-  }
-`;
-
-const DropDownContainerButton: SerializedStyles = css`
-  border: none;
-  width: 120px;
-  padding: 10px;
-  height: 40px;
-  color: var(--color-text-primary);
-  &:hover {
-    background-color: var(--brand2);
-    color: var(--black9);
-  }
-`;
-
-const DropDownButton: SerializedStyles = css`
-  border: none;
-  color: var(--color-text-accent);
-`;
+import './footer.scss';
 
 export interface DropDownState {
   active: number;
   isOpen: boolean;
   shouldDropDownBlur: boolean;
 }
-
-// TODO When we start on translation work, reimplement the dropdown for language selection
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const FooterDropDown: React.FC = (): JSX.Element => {
-  const [state, setState] = useState<DropDownState>({
-    active: 3, // Index of currently selected element.
-    isOpen: false,
-    shouldDropDownBlur: true,
-  });
-
-  const handleMouseEvent = (event: React.MouseEvent<HTMLDivElement>): void => {
-    if (event.type === 'mouseenter') {
-      setState({ ...state, shouldDropDownBlur: false });
-    } else {
-      setState({ ...state, shouldDropDownBlur: true });
-    }
-  };
-
-  const handleOnClick = (): void => {
-    setState({
-      ...state,
-      isOpen: !state.isOpen,
-    });
-  };
-
-  const handleOnBlur = (): void => {
-    if (state.shouldDropDownBlur && state.isOpen) {
-      setState({
-        ...state,
-        isOpen: !state.isOpen,
-      });
-    }
-  };
-
-  const handleOnSelectLang = (index: number): void => {
-    setState({
-      ...state,
-      active: index,
-      isOpen: !state.isOpen,
-      shouldDropDownBlur: true,
-    });
-  };
-
-  return (
-    <div style={{ position: 'relative' }}>
-      {state.isOpen && (
-        <div
-          css={DropDownContainer}
-          onMouseEnter={handleMouseEvent}
-          onMouseLeave={handleMouseEvent}
-        >
-          {dropDownData.map(
-            (data: string, index: number): JSX.Element => (
-              <button
-                key={data}
-                type="button"
-                css={DropDownContainerButton}
-                style={{ padding: 0 }}
-                onClick={(): void => handleOnSelectLang(index)}
-              >
-                {data}
-              </button>
-            )
-          )}
-        </div>
-      )}
-      <button
-        type="button"
-        css={DropDownButton}
-        onClick={handleOnClick}
-        onBlur={handleOnBlur}
-      >
-        {dropDownData[state.active]}{' '}
-        <span>{state.isOpen ? '\u23f6' : '\u23f7'}</span>
-      </button>
-    </div>
-  );
-};
 
 function Footer(): JSX.Element {
   return (
@@ -236,6 +104,27 @@ function Footer(): JSX.Element {
                   A  65,  65 0 0 1 630, 425
                   Z"
               />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            href="https://slack.openjsf.org"
+            rel="noopener noreferrer"
+            aria-label="Node.js Slack Link"
+          >
+            <svg
+              width="1.8rem"
+              height="1.8rem"
+              viewBox="0 0 54 54"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ fill: 'var(--color-text-secondary)' }}
+            >
+              <path d="M19.712.133a5.381 5.381 0 0 0-5.376 5.387 5.381 5.381 0 0 0 5.376 5.386h5.376V5.52A5.381 5.381 0 0 0 19.712.133m0 14.365H5.376A5.381 5.381 0 0 0 0 19.884a5.381 5.381 0 0 0 5.376 5.387h14.336a5.381 5.381 0 0 0 5.376-5.387 5.381 5.381 0 0 0-5.376-5.386" />
+              <path d="M53.76 19.884a5.381 5.381 0 0 0-5.376-5.386 5.381 5.381 0 0 0-5.376 5.386v5.387h5.376a5.381 5.381 0 0 0 5.376-5.387m-14.336 0V5.52A5.381 5.381 0 0 0 34.048.133a5.381 5.381 0 0 0-5.376 5.387v14.364a5.381 5.381 0 0 0 5.376 5.387 5.381 5.381 0 0 0 5.376-5.387" />
+              <path d="M34.048 54a5.381 5.381 0 0 0 5.376-5.387 5.381 5.381 0 0 0-5.376-5.386h-5.376v5.386A5.381 5.381 0 0 0 34.048 54m0-14.365h14.336a5.381 5.381 0 0 0 5.376-5.386 5.381 5.381 0 0 0-5.376-5.387H34.048a5.381 5.381 0 0 0-5.376 5.387 5.381 5.381 0 0 0 5.376 5.386" />
+              <path d="M0 34.249a5.381 5.381 0 0 0 5.376 5.386 5.381 5.381 0 0 0 5.376-5.386v-5.387H5.376A5.381 5.381 0 0 0 0 34.25m14.336-.001v14.364A5.381 5.381 0 0 0 19.712 54a5.381 5.381 0 0 0 5.376-5.387V34.25a5.381 5.381 0 0 0-5.376-5.387 5.381 5.381 0 0 0-5.376 5.387" />
             </svg>
           </a>
         </li>

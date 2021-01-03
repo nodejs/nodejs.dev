@@ -1,7 +1,4 @@
-if (process.env.ENVIROMENT !== 'production') {
-  // eslint-disable-next-line global-require
-  require('dotenv').config();
-}
+require('dotenv').config();
 
 const config = require('./src/config');
 
@@ -30,10 +27,31 @@ module.exports = {
       options: {
         name: 'learn',
         path: `${__dirname}/src/documentation/`,
-        include: ['**/*.md'], // ignore files starting with a dot
       },
     },
-
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'sites',
+        path: `${__dirname}/src/pages/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'homepage',
+        path: `${__dirname}/content/homepage`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          sites: require.resolve(`./src/components/Layout/centered.tsx`),
+          default: require.resolve(`./src/components/Layout/index.tsx`),
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -79,14 +97,13 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 590,
+              backgroundColor: 'transparent',
             },
           },
         ],
       },
     },
     'gatsby-plugin-sitemap',
-    {
-      resolve: 'gatsby-plugin-emotion',
-    },
+    'gatsby-plugin-meta-redirect',
   ],
 };

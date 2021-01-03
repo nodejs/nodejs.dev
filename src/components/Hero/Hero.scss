@@ -105,3 +105,9 @@
     }
   }
 }
+
+@media (max-width: 640px) {
+  .download-lts-container {
+    margin-bottom: var(--space-20);
+  }
+}
