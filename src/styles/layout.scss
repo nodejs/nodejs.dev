@@ -1,6 +1,7 @@
 html {
   margin: 0;
   box-sizing: border-box;
+  height: 100%;
 }
 
 body {
@@ -8,7 +9,9 @@ body {
   color: var(--color-text-primary);
   font-size: 1.6rem;
   font-family: var(--base-type-face);
-  margin: var(--nav-height) 0 0;
+  margin: 0 0;
+  overflow-x: hidden;
+  height: 100%;
 
   /* Set in JavaScript */
   --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
@@ -80,7 +83,7 @@ p {
   font-size: var(--font-size-overline);
   line-height: var(--line-height-overline);
   font-weight: var(--font-weight-normal);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   margin: 0 0 var(--space-4) 0;
@@ -104,7 +107,7 @@ a:focus {
 
 .material-icons {
   font-size: 2rem;
-  padding: 0.2rem;
+  padding: 1rem;
 }
 
 .material-icons--small {
@@ -202,6 +205,15 @@ pre[class*='language-'] > code[class*='language-'] + h2 {
 
 /* End: Syntax Highlight Overrides */
 
+.overflow-horizontal-scroll {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
 select {
   appearance: none;
   padding: 0.4rem 2.4rem 0.4rem 0.8rem;
@@ -227,7 +239,9 @@ select {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 28.8rem auto;
+  @media (min-width: 800px) {
+    grid-template-columns: 28.8rem auto;
+  }
 }
 
 :focus {
@@ -242,7 +256,7 @@ select {
   background: var(--color-fill-app);
   border-bottom: var(--space-01) solid var(--black2);
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 999;
 }
@@ -258,7 +272,7 @@ select {
 .nav__startwrapper {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .nav__endwrapper {
@@ -308,7 +322,7 @@ select {
 }
 
 .activeStyleTab:hover {
-  border-bottom: 4px solid green;
+  border-bottom: 4px solid var(--color-text-primary);
   margin-bottom: -4px;
 }
 
@@ -423,13 +437,29 @@ details {
     flex-flow: column;
   }
 
+  thead {
+    tr {
+      th {
+        padding: var(--space-14) var(--space-12) var(--space-14);
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        padding: var(--space-14) var(--space-12) var(--space-14);
+      }
+    }
+  }
+
   .article-reader {
-    margin-top: 100px;
     padding: 0 3rem;
   }
 
   .nav__container {
     padding: 0 var(--space-12);
+    min-height: var(--nav-height);
   }
 
   .nav__logo {
@@ -452,16 +482,26 @@ details {
     display: flex;
     margin-left: 0;
 
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+
     > a {
-      padding: var(--space-10);
+      padding: var(--space-08);
     }
   }
 
   .dark-mode-toggle {
-    padding: var(--space-10);
+    padding: var(--space-08);
   }
 
   .right-container .nav__tabs > a:last-child {
     padding-right: 0;
   }
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

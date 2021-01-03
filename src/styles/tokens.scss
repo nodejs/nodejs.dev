@@ -5,7 +5,9 @@
 html {
   font-size: 10px;
 }
-
+* {
+  transition: background-color 0.6s ease, color 0.1s ease;
+}
 body {
   --mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   --sans: 'Open Sans', sans-serif;
@@ -19,6 +21,7 @@ body {
   --brand7: #2c682c;
   --brand8: #215127;
   --brand9: #1a3f1d;
+  --brand10: #edf2eb;
   --black0: #ffffff;
   --black1: #f6f7f9;
   --black2: #e9edf0;
@@ -29,6 +32,7 @@ body {
   --black7: #6e7b83;
   --black8: #556066;
   --black9: #2c3437;
+  --body0: #f2f2f2;
   --warning1: #fdf3e7;
   --warning2: #fad9b0;
   --warning3: #f5bc75;
@@ -82,6 +86,7 @@ body {
   --color-border-secondary: var(--black3);
   --color-border-accent: var(--color-brand-primary);
   --color-fill-app: var(--black0);
+  --color-fill-body: var(--body0);
   --color-fill-canvas: var(--black1);
   --color-fill-side-nav: var(--black1);
   --color-fill-top-nav: var(--black0);
@@ -95,16 +100,21 @@ body {
   --font-size-display1: 6rem;
   --font-size-display2: 4.8rem;
   --font-size-display3: 3.4rem;
+  --font-size-display4: 2.3rem;
+  --font-size-display5: 1.8rem;
   --font-size-headline: 2.4rem;
   --font-size-subheading: 2rem;
   --font-size-body1: 1.6rem;
   --font-size-body2: 1.4rem;
+  --font-size-body3: 1.3rem;
   --font-size-caption: 1.2rem;
   --font-size-overline: 1rem;
-  --font-size-code: 1.2rem;
+  --font-size-code: 1.6rem;
   --line-height-display1: 7.2rem;
   --line-height-display2: 5.7rem;
   --line-height-display3: 4.08rem;
+  --line-height-display4: 2.8rem;
+  --line-height-display5: 1.5rem;
   --line-height-headline: 2.88rem;
   --line-height-subheading: 3rem;
   --line-height-body1: 2.4rem;
@@ -116,14 +126,15 @@ body {
   --font-weight-regular: normal;
   --font-weight-semibold: 600;
   --font-weight-bold: 900;
+  --font-style-regular: normal;
 
   /* Spacing */
   --space-01: 0.1rem;
   --space-02: 0.2rem;
   --space-04: 0.4rem;
   --space-08: 0.8rem;
-  --space-10: 1rem;
   --space-12: 1.2rem;
+  --space-14: 1.4rem;
   --space-16: 1.6rem;
   --space-20: 2rem;
   --space-24: 2.4rem;
@@ -147,6 +158,7 @@ body {
   --color-border-secondary: var(--black3);
   --color-border-accent: var(--brand4);
   --color-fill-app: #090c15;
+  --color-fill-body: #090c15;
   --color-fill-canvas: #090c15;
   --color-fill-side-nav: #0d111d;
   --color-fill-top-nav: #090c15;

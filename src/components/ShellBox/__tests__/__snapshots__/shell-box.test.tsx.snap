@@ -1,22 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ShellBox component renders correctly 1`] = `
-<pre
-  className="shell-box"
->
-  <div
-    className="shell-box-top"
+<div>
+  <pre
+    class="shell-box"
   >
-    <span>
-      SHELL
-    </span>
-    <button
-      onClick={[Function]}
-      type="button"
+    <div
+      class="shell-box-top"
     >
-      copy
-    </button>
-  </div>
-  <code />
-</pre>
+      <span>
+        SHELL
+      </span>
+      <button
+        type="button"
+      >
+        copy
+      </button>
+    </div>
+    <code>
+      mock-children-code
+    </code>
+  </pre>
+</div>
 `;

@@ -1,15 +1,15 @@
 ---
 title: A brief history of Node.js
 description: 'A look back on the history of Node.js from 2009 to today'
-authors: flaviocopes, onel0p3z, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, kevjin, keywordnew, karlhorky, bdharrington7
+authors: flaviocopes, onel0p3z, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, kevjin, keywordnew, karlhorky, bdharrington7, MalachiCunliffe
 section: Quick Start
 ---
 
-Believe it or not, Node.js is only ten years old.
+Believe it or not, Node.js is only eleven years old.
 
-In comparison, JavaScript is [24 years old](https://en.wikipedia.org/wiki/JavaScript#Beginnings_at_Netscape) and the Web is [30 years old](https://howoldistheinter.net/).
+In comparison, JavaScript is [24 years old](https://en.wikipedia.org/wiki/JavaScript#Beginnings_at_Netscape) and the Web is [31 years old](https://howoldistheinter.net/).
 
-Ten years isn't a very long time in tech, but Node.js seems to have been around forever.
+Eleven years isn't a very long time in tech, but Node.js seems to have been around forever.
 
 I've had the pleasure to work with Node.js since the early days when it was only 2 years old, and despite the limited information in the wild, you could already feel that it was going to be a huge thing.
 
@@ -81,3 +81,14 @@ Node.js happened to be built in the right place and right time, but luck isn't t
 
 * Node.js 10
 * [ES modules](https://nodejs.org/api/esm.html) .mjs experimental support
+* Node.js 11
+
+## 2019
+
+* Node.js 12
+* Node.js 13
+
+## 2020
+
+* Node.js 14
+* Node.js 15

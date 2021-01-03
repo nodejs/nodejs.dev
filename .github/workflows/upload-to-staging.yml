@@ -17,7 +17,7 @@ jobs:
           git checkout FETCH_HEAD
 
       - name: Setup GCloud
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@master
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           service_account_email: ${{ secrets.GCP_SA_EMAIL }}
@@ -41,7 +41,7 @@ jobs:
         run: gsutil -m rsync -R public gs://staging.nodejs.dev/${{ github.event.issue.number }}/
 
       - name: Comment on PR
-        uses: actions/github-script@0.9.0
+        uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
