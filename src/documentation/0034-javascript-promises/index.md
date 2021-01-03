@@ -8,7 +8,7 @@ section: Getting Started
 ## Introduction to promises
 
 <iframe
-  allow="geolocation; microphone; camera; midi; encrypted-media"
+  title="Introduction to promises"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0034-01?path=server.js&previewSize=35&attributionHidden=true&sidebarCollapsed=true"
   alt="nodejs-dev-0034-01 on Glitch"
   style="height: 400px; width: 100%; border: 0;">
@@ -117,7 +117,7 @@ Running `checkIfItsDone()` will specify functions to execute when the `isItDoneY
 
 A promise can be returned to another promise, creating a chain of promises.
 
-A great example of chaining promises is given by the Fetch API, a layer on top of the XMLHttpRequest API, which we can use to get a resource and queue a chain of promises to execute when the resource is fetched.
+A great example of chaining promises is the Fetch API, which we can use to get a resource and queue a chain of promises to execute when the resource is fetched.
 
 The Fetch API is a promise-based mechanism, and calling `fetch()` is equivalent to defining our own promise using `new Promise()`.
 
