@@ -22,17 +22,18 @@ axios.post('https://whatever.com/todos', {
 This is the matching server-side code:
 
 ```js
-const bodyParser = require('body-parser')
+const express = require('express')
+const app = express()
 
 app.use(
-  bodyParser.urlencoded({
+  express.urlencoded({
     extended: true
   })
 )
 
-app.use(bodyParser.json())
+app.use(express.json())
 
-app.post('/endpoint', (req, res) => {
+app.post('/todos', (req, res) => {
   console.log(req.body.todo)
 })
 ```
@@ -63,9 +64,9 @@ So to access the data, assuming we expect to receive a string, we must put it in
 
 ```js
 const server = http.createServer((req, res) => {
-  let data = []
+  let data = '';
   req.on('data', chunk => {
-    data.push(chunk)
+    data += chunk;
   })
   req.on('end', () => {
     JSON.parse(data.toString()).todo // 'Buy the milk'

@@ -29,9 +29,9 @@ and you can start using its methods.
 
 Given a path, you can extract information out of it using those methods:
 
-- `dirname`: get the parent folder of a file
-- `basename`: get the filename part
-- `extname`: get the file extension
+* `dirname`: get the parent folder of a file
+* `basename`: get the filename part
+* `extname`: get the file extension
 
 Example:
 
@@ -79,7 +79,7 @@ path.resolve('/etc', 'joe.txt') //'/etc/joe.txt'
 `path.normalize()` is another useful function, that will try and calculate the actual path, when it contains relative specifiers like `.` or `..`, or double slashes:
 
 ```js
-path.normalize('/users/joe/..//test.txt') ///users/test.txt
+path.normalize('/users/joe/..//test.txt') //'/users/test.txt'
 ```
 
-**Both resolve and normalize will not check if the path exists**. They just calculate a path based on the information they got.
+**Neither resolve nor normalize will check if the path exists**. They just calculate a path based on the information they got.

@@ -33,10 +33,10 @@ For example:
 console.log('My %s has %d years', 'cat', 2)
 ```
 
-- `%s` format a variable as a string
-- `%d` format a variable as a number
-- `%i` format a variable as its integer part only
-- `%o` format a variable as an object
+* `%s` format a variable as a string
+* `%d` format a variable as a number
+* `%i` format a variable as its integer part only
+* `%o` format a variable as an object
 
 Example:
 
@@ -55,7 +55,7 @@ console.log('%o', Number)
 Take this code:
 
 <iframe
-  allow="geolocation; microphone; camera; midi; encrypted-media"
+  title="Output to the command line using Node.js"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0013-02?path=server.js&previewSize=40&attributionHidden=true&sidebarCollapsed=true"
   alt="nodejs-dev-0013-02 on Glitch"
   style="height: 400px; width: 100%; border: 0;">
@@ -107,7 +107,7 @@ function1()
 
 This will print the stack trace. This is what's printed if we try this in the Node.js REPL:
 
-```txt
+```bash
 Trace
     at function2 (repl:1:33)
     at function1 (repl:1:25)

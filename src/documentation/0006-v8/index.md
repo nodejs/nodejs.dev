@@ -1,7 +1,7 @@
 ---
 title: The V8 JavaScript Engine
 description: "V8 is the name of the JavaScript engine that powers Google Chrome. It's the thing that takes our JavaScript and executes it while browsing with Chrome. V8 provides the runtime environment in which JavaScript executes. The DOM and the other Web Platform APIs are provided by the browser."
-authors: flaviocopes, smfoote, co16353sidak, MylesBorins, LaRuaNa, andys8, ahmadawais, karlhorky
+authors: flaviocopes, smfoote, co16353sidak, MylesBorins, LaRuaNa, andys8, ahmadawais, karlhorky, aymen94
 section: Getting Started
 ---
 
@@ -17,19 +17,19 @@ The Node.js ecosystem is huge and thanks to it V8 also powers desktop apps, with
 
 Other browsers have their own JavaScript engine:
 
-- Firefox has [**SpiderMonkey**](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
-- Safari has [**JavaScriptCore**](https://developer.apple.com/documentation/javascriptcore) (also called Nitro)
-- Edge has [**Chakra**](https://github.com/Microsoft/ChakraCore)
+* Firefox has [**SpiderMonkey**](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
+* Safari has [**JavaScriptCore**](https://developer.apple.com/documentation/javascriptcore) (also called Nitro)
+* Edge was originally based on [**Chakra**](https://github.com/Microsoft/ChakraCore) but has more recently been [rebuilt using Chromium](https://support.microsoft.com/en-us/help/4501095/download-the-new-microsoft-edge-based-on-chromium) and the V8 engine.
 
 and many others exist as well.
 
-All those engines implement the ECMA ES-262 standard, also called ECMAScript, the standard used by JavaScript.
+All those engines implement the [ECMA ES-262 standard](https://www.ecma-international.org/publications/standards/Ecma-262.htm), also called ECMAScript, the standard used by JavaScript.
 
 ## The quest for performance
 
 V8 is written in C++, and it's continuously improved. It is portable and runs on Mac, Windows, Linux and several other systems.
 
-In this V8 introduction, we will ignore the implementation details of V8: they can be found on more authoritative sites (e.g. the V8 official site), and they change over time, often radically.
+In this V8 introduction, we will ignore the implementation details of V8: they can be found on more authoritative sites (e.g. the [V8 official site](https://v8.dev/)), and they change over time, often radically.
 
 V8 is always evolving, just like the other JavaScript engines around, to speed up the Web and the Node.js ecosystem.
 
@@ -39,7 +39,7 @@ On the web, there is a race for performance that's been going on for years, and 
 
 JavaScript is generally considered an interpreted language, but modern JavaScript engines no longer just interpret JavaScript, they compile it.
 
-This happens since 2009 when the SpiderMonkey JavaScript compiler was added to Firefox 3.5, and everyone followed this idea.
+This has been happening since 2009, when the SpiderMonkey JavaScript compiler was added to Firefox 3.5, and everyone followed this idea.
 
 JavaScript is internally compiled by V8 with **just-in-time** (JIT) **compilation** to speed up the execution.
 

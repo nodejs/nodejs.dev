@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "remark-frontmatter",
+    "remark-preset-lint-node",
+    ["remark-lint-first-heading-level", false],
+    ["remark-lint-maximum-line-length", false]
+  ]
+}
