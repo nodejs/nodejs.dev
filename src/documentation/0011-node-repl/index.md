@@ -28,7 +28,7 @@ If you try it now in your terminal, this is what happens:
 
 the command stays in idle mode and waits for us to enter something.
 
-> Tip: if you are unsure how to open your terminal, google "How to open terminal on <your-operating-system>".
+> Tip: if you are unsure how to open your terminal, google "How to open terminal on \<your-operating-system\>".
 
 The REPL is waiting for us to enter some JavaScript code, to be more precise.
 
