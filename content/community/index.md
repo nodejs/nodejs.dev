@@ -44,6 +44,11 @@ For social updates, [follow @Nodejs on Twitter](https://twitter.com/nodejs).
 
 Node.js has a dedicated [repository on GitHub](https://github.com/nodejs/help) to help you with your issues. If you are facing a problem, feel free to create an issue, or go through the already answered questions to seek help.
 
+### Real-time Chat 
+For real-time chat about Node.js development use the [OpenJS Foundation Slack](https://slack-invite.openjsf.org/) or IRC
+For Slack, join the OpenJSF workspace and then join the [#nodejs](https://openjs-foundation.slack.com/archives/CK9Q4MB53) channel or [Node Slackers](https://www.nodeslackers.com/) 
+For IRC, go to irc.freenode.net in the #node.js channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](https://webchat.freenode.net/#node.js).
+
 ### Stack Overflow
 
 Many community members prefer to use Stack Overflow to ask questions. You can browse the [existing questions](https://stackoverflow.com/questions/tagged/node.js) tagged `node.js` or [ask your own](https://stackoverflow.com/questions/ask?tags=node.js).
