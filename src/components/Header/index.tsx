@@ -64,9 +64,14 @@ const Header = ({
               </a>
             </li>
             <li className="nav__tabs">
-              <Link to="/community" className="activeStyleTab">
+              <a
+                href="https://nodejs.org/en/get-involved/"
+                className="activeStyleTab"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Community
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
