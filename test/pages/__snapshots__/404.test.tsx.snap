@@ -143,55 +143,17 @@ exports[`404 page renders correctly 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="home-page-hero"
+    <h1
+      class="not-found"
     >
-      <h1>
-        PAGE NOT FOUND
-      </h1>
-      <h2
-        class="sub-title t-subheading"
-      />
-      <div
-        class="btn-ctas"
-      >
-        <div
-          class="download-lts-container"
-        >
-          <a
-            class="circular-container"
-            href="https://nodejs.org/dist/mmock-version-2/node-mmock-version-2.tar.gz"
-          >
-            Download Node (LTS)
-          </a>
-          <p
-            class="t-caption"
-          >
-            Version mock-version-2 - 
-            <a
-              href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
-            >
-              Get Current
-            </a>
-          </p>
-        </div>
-        <a
-          class="circular-container inverse"
-          href="/learn"
-        >
-          Learn Node
-        </a>
-      </div>
-    </div>
-    <main
-      class="article-reader"
-      style="width: 100%;"
-    >
+      PAGE NOT FOUND
+    </h1>
+    <main>
       <p>
         The page you're trying to access does not exist. Go back to the Homepage or find what you're looking for in the menu.
       </p>
       <p>
-        Take me back to the
+        Take me back to the 
         <a
           href="/"
         >

@@ -1,6 +1,8 @@
 import React from 'react';
-import Hero from '../components/Hero';
+import { Link } from 'gatsby';
+
 import Layout from '../components/Layout';
+import '../styles/not-found.scss';
 
 export default function NotFoundPage(): JSX.Element {
   const title = 'PAGE NOT FOUND';
@@ -8,15 +10,14 @@ export default function NotFoundPage(): JSX.Element {
 
   return (
     <Layout title={title} description={description}>
-      <Hero title={title} />
-      <main style={{ width: '100%' }} className="article-reader">
+      <h1 className="not-found">PAGE NOT FOUND</h1>
+      <main>
         <p>
           The page you&apos;re trying to access does not exist. Go back to the
           Homepage or find what you&apos;re looking for in the menu.
         </p>
         <p>
-          Take me back to the
-          <a href="/">Homepage</a>
+          Take me back to the <Link to="/">Homepage</Link>
         </p>
       </main>
     </Layout>
