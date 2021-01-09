@@ -72,7 +72,9 @@ exports[`Tests for Header component renders correctly 1`] = `
           >
             <a
               class="activeStyleTab"
-              href="/community"
+              href="https://nodejs.org/en/get-involved/"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Community
             </a>
