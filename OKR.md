@@ -6,18 +6,18 @@ The Nodejs.dev project uses Objectives and Key Results to provide direction and 
 
 OKRs consist of two elements:
 
-- Objectives
-  - Objectives are qualitative, ambitious, and memorable definitions of the things we as a committee would like to achieve.
-- Key Results
-  - Key Results are a set of metrics by which we can measure progress toward their objectives. Like objectives, they should be ambitious and overestimate what we can accomplish.
+* Objectives
+  * Objectives are qualitative, ambitious, and memorable definitions of the things we as a committee would like to achieve.
+* Key Results
+  * Key Results are a set of metrics by which we can measure progress toward their objectives. Like objectives, they should be ambitious and overestimate what we can accomplish.
 
 ### External References
 
 Here are some external references that may help provide further context on OKRs.
 
-- [Guide: Set goals with OKRs](https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/)
-- [What is OKR?](https://felipecastro.com/en/okr/what-is-okr/)
-- [What Are OKRs? How to Use OKRs for Planning (and Achieving) Your Goals](https://plan.io/blog/what-are-okrs/)
+* [Guide: Set goals with OKRs](https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/)
+* [What is OKR?](https://felipecastro.com/en/okr/what-is-okr/)
+* [What Are OKRs? How to Use OKRs for Planning (and Achieving) Your Goals](https://plan.io/blog/what-are-okrs/)
 
 ## OKRs (2020 Set 1):
 

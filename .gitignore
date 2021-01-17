@@ -2,14 +2,17 @@
 .cache
 node_modules
 yarn-error.log
-package-lock.json
 
 # Build directory
 /public
 .DS_Store
+build
 
 .env
+.env.production
 .firebase/*
 coverage
 .vscode
 .history
+yarn.lock
+.idea/

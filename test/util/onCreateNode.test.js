@@ -1,7 +1,7 @@
 import { onCreateNode } from '../../gatsby-node';
-import createSlug from '../../src/util/createSlug';
+import createSlug from '../../util-node/createSlug';
 
-jest.mock('../../src/util/createSlug', () => jest.fn(() => 'slug'));
+jest.mock('../../util-node/createSlug', () => jest.fn(() => 'slug'));
 
 function createMockNodeOfType(type) {
   return {

@@ -37,9 +37,9 @@ The file information is included in the stats variable. What kind of information
 
 A lot, including:
 
-- if the file is a directory or a file, using `stats.isFile()` and `stats.isDirectory()`
-- if the file is a symbolic link using `stats.isSymbolicLink()`
-- the file size in bytes using `stats.size`.
+* if the file is a directory or a file, using `stats.isFile()` and `stats.isDirectory()`
+* if the file is a symbolic link using `stats.isSymbolicLink()`
+* the file size in bytes using `stats.size`.
 
 There are other advanced methods, but the bulk of what you'll use in your day-to-day programming is this.
 

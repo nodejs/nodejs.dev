@@ -30,10 +30,10 @@ A buffer is created using the [`Buffer.from()`](https://nodejs.org/api/buffer.ht
 ```js
 const buf = Buffer.from('Hey!')
 ```
-- [`Buffer.from(array)`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_array)
-- [`Buffer.from(arrayBuffer[, byteOffset[, length]])`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_arraybuffer_byteoffset_length)
-- [`Buffer.from(buffer)`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_buffer)
-- [`Buffer.from(string[, encoding])`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_string_encoding)
+* [`Buffer.from(array)`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_array)
+* [`Buffer.from(arrayBuffer[, byteOffset[, length]])`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_arraybuffer_byteoffset_length)
+* [`Buffer.from(buffer)`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_buffer)
+* [`Buffer.from(string[, encoding])`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_string_encoding)
 
 You can also just initialize the buffer passing the size. This creates a 1KB buffer:
 
@@ -43,7 +43,7 @@ const buf = Buffer.alloc(1024)
 const buf = Buffer.allocUnsafe(1024)
 ```
 
-While both `alloc` and `allocUnsafe` allocate a `Buffer` of the specified size in bytes, the `Buffer` created by `alloc` will be _initialized_ with zeroes and the one created by `allocUnsafe` will be _uninitialized_. This means that while `allocUnsafe` would be quite fast in comparison to `alloc`, the allocated segment of memory may contain old data which could potentially be sensitve.
+While both `alloc` and `allocUnsafe` allocate a `Buffer` of the specified size in bytes, the `Buffer` created by `alloc` will be _initialized_ with zeroes and the one created by `allocUnsafe` will be _uninitialized_. This means that while `allocUnsafe` would be quite fast in comparison to `alloc`, the allocated segment of memory may contain old data which could potentially be sensitive.
 
 Older data, if present in the memory, can be accessed or leaked when the `Buffer` memory is read. This is what really makes `allocUnsafe` unsafe and extra care must be taken while using it.
 
@@ -115,7 +115,7 @@ let bufcopy = Buffer.alloc(4) //allocate 4 bytes
 buf.copy(bufcopy)
 ```
 
-By default you copy the whole buffer. 3 more parameters let you define the starting position, the ending position, and the new buffer length:
+By default you copy the whole buffer. 3 more parameters let you define the target buffer starting position to copy to, the source buffer starting position to copy from, and the new buffer length:
 
 ```js
 const buf = Buffer.from('Hey!')
@@ -136,5 +136,5 @@ buf.slice(0).toString() //Hey!
 const slice = buf.slice(0, 2)
 console.log(slice.toString()) //He
 buf[1] = 111 //o
-console.log(slice.toString())
+console.log(slice.toString()) //Ho
 ```
