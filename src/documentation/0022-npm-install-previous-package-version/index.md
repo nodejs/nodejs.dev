@@ -31,7 +31,7 @@ The same can be done with global packages:
 npm install -g webpack@4.16.4
 ```
 
-You might also be interested in listing all the previous version of a package. You can do it with `npm view <package> versions`:
+You might also be interested in listing all the previous versions of a package. You can do it with `npm view <package> versions`:
 
 ```bash
 ❯ npm view cowsay versions
