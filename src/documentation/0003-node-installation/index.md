@@ -23,7 +23,7 @@ Other package managers for Linux and Windows are listed in <https://nodejs.org/e
 
 It is also very useful to test your code with old Node.js versions.
 
-See <https://github.com/creationix/nvm> for more information about this option.
+See <https://github.com/nvm-sh/nvm> for more information about this option.
 
 My suggestion is to use the official installer if you are just starting out and you don't use Homebrew already, otherwise, Homebrew is my favorite solution.
 

@@ -25,7 +25,7 @@ const Author = ({
   const mleft = index === 0 ? { marginLeft: 0 } : {};
 
   return (
-    <li className="list">
+    <li>
       <a
         className="link"
         href={githubLink}
