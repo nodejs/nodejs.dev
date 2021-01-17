@@ -31,7 +31,7 @@ Almost all the I/O primitives in JavaScript are non-blocking. Network requests, 
 
 ## The call stack
 
-The call stack is a LIFO queue (Last In, First Out).
+The call stack is a LIFO (Last In, First Out) stack.
 
 The event loop continuously checks the **call stack** to see if there's any function that needs to run.
 

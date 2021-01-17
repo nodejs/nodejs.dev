@@ -8,6 +8,10 @@ export interface HomepageData {
       subTitle: string;
       description: string;
       learnLinkText: string;
+      beginnerGuideHeaderText: string;
+      beginnerGuideBodyText: string;
+      doMoreWithNodeHeaderText: string;
+      doMoreWithNodeBodyText: string;
       nodeFeatureHeader1: string;
       nodeFeatureHeader2: string;
       nodeFeatureHeader3: string;
