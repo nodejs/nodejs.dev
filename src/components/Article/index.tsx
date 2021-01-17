@@ -1,4 +1,5 @@
 import React from 'react';
+import { throttle } from 'throttle-debounce';
 import { PaginationInfo } from '../../types';
 import AuthorsList from '../../containers/AuthorList';
 import EditLink from '../EditLink';
@@ -10,7 +11,8 @@ interface Props {
   html: string;
   tableOfContents: string;
   authors: string[];
-  relativePath: string;
+  relativePath?: string;
+  editPath?: string;
   next?: PaginationInfo;
   previous?: PaginationInfo;
 }
@@ -24,6 +26,7 @@ const Article = ({
   previous,
   next,
   relativePath,
+  editPath,
   authors,
 }: Props): JSX.Element => {
   const element = React.useRef<HTMLElement | null>(null);
@@ -44,8 +47,9 @@ const Article = ({
     }
 
     if (element.current) {
-      observer = new IntersectionObserver(
-        (entries): void => {
+      const handleObserverThrottled = throttle(
+        300,
+        (entries: IntersectionObserverEntry[]) => {
           entries.forEach((entry): void => {
             // element is already hidden by the nav
             if (entry.boundingClientRect.y < NAV_HEIGHT) {
@@ -69,6 +73,12 @@ const Article = ({
               );
             }
           });
+        }
+      );
+
+      observer = new IntersectionObserver(
+        (entries): void => {
+          handleObserverThrottled(entries);
         },
         {
           threshold: [0.25, 0.5, 0.75],
@@ -97,7 +107,7 @@ const Article = ({
       {/* eslint-disable-next-line react/no-danger */}
       <div ref={handleRef} dangerouslySetInnerHTML={{ __html: html }} />
       <AuthorsList authors={authors} />
-      <EditLink relativePath={relativePath} />
+      <EditLink relativePath={relativePath} editPath={editPath} />
       <Pagination previous={previous} next={next} />
     </article>
   );

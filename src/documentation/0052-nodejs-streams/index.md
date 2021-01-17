@@ -22,16 +22,16 @@ All streams are instances of [EventEmitter](https://nodejs.org/api/events.html#e
 
 ## Why streams
 
-Streams basically provide two major advantages using other data handling methods:
+Streams basically provide two major advantages over using other data handling methods:
 
 * **Memory efficiency**: you don't need to load large amounts of data in memory before you are able to process it
-* **Time efficiency**: it takes way less time to start processing data as soon as you have it, rather than waiting till the whole data payload is available to start
+* **Time efficiency**: it takes way less time to start processing data, since you can start processing as soon as you have it, rather than waiting till the whole data payload is available
 
 ## An example of a stream
 
-A typical example is the one of reading files from a disk.
+A typical example is reading files from a disk.
 
-Using the Node.js `fs` module you can read a file, and serve it over HTTP when a new connection is established to your http server:
+Using the Node.js `fs` module, you can read a file, and serve it over HTTP when a new connection is established to your HTTP server:
 
 ```js
 const http = require('http')

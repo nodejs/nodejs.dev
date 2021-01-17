@@ -18,7 +18,7 @@ interface Props {
   img?: string;
   href?: string;
   showFooter?: boolean;
-  location?: any;
+  location?: string;
 }
 
 const Layout = ({
@@ -31,9 +31,11 @@ const Layout = ({
   return (
     <>
       <SEO title={title} description={description} img={img} />
-      <Header darkModeController={darkModeController} />
-      {children}
-      {showFooter && <Footer />}
+      <div className="layout-container">
+        <Header darkModeController={darkModeController} />
+        {children}
+        {showFooter && <Footer />}
+      </div>
     </>
   );
 };

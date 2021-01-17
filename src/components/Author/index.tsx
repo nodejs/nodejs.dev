@@ -1,26 +1,5 @@
-import { css, SerializedStyles } from '@emotion/core';
 import React from 'react';
-
-const list: SerializedStyles = css`
-  list-style: none;
-`;
-
-const link: SerializedStyles = css`
-  margin-left: 0.5rem;
-
-  &:hover img {
-    transform: scale(1.1);
-  }
-`;
-
-const img: SerializedStyles = css`
-  height: 30px;
-  width: 30px;
-  margin-top: 5px;
-  border-radius: 100%;
-  border: 1px solid var(--brand-light);
-  transition: all 0.2s ease-in-out;
-`;
+import './Author.scss';
 
 interface Props {
   index: number;
@@ -46,9 +25,9 @@ const Author = ({
   const mleft = index === 0 ? { marginLeft: 0 } : {};
 
   return (
-    <li css={list}>
+    <li>
       <a
-        css={link}
+        className="link"
         href={githubLink}
         title={username}
         key={username}
@@ -56,12 +35,7 @@ const Author = ({
         rel="noopener noreferrer"
         style={mleft}
       >
-        <img
-          css={img}
-          className="author-img"
-          src={githubImgLink}
-          alt={username}
-        />
+        <img className="img" src={githubImgLink} alt={username} />
       </a>
     </li>
   );

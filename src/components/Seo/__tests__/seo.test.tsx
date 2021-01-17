@@ -1,20 +1,19 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
-import * as ShallowRenderer from 'react-test-renderer/shallow';
+import { render } from '@testing-library/react';
 import SEO from '..';
 
 describe('SEO component', () => {
   it('renders correctly', () => {
-    const renderer = ShallowRenderer.createRenderer();
     const title = 'title-mock';
     const description = 'description-mock';
     const img = 'image-mock';
-    renderer.render(<SEO title={title} description={description} img={img} />);
-    expect(renderer.getRenderOutput()).toMatchSnapshot();
+    const { container } = render(
+      <SEO title={title} description={description} img={img} />
+    );
+    expect(container).toMatchSnapshot();
   });
   it('uses config properties as fallback for missing props', () => {
-    const renderer = ShallowRenderer.createRenderer();
-    renderer.render(<SEO />);
-    expect(renderer.getRenderOutput()).toMatchSnapshot();
+    const { container } = render(<SEO />);
+    expect(container).toMatchSnapshot();
   });
 });

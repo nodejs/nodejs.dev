@@ -8,7 +8,7 @@ section: Getting Started
 ## Introduction to promises
 
 <iframe
-  allow="geolocation; microphone; camera; midi; encrypted-media"
+  title="Introduction to promises"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0034-01?path=server.js&previewSize=35&attributionHidden=true&sidebarCollapsed=true"
   alt="nodejs-dev-0034-01 on Glitch"
   style="height: 400px; width: 100%; border: 0;">
@@ -71,7 +71,7 @@ const getFile = (fileName) => {
   return new Promise((resolve, reject) => {
     fs.readFile(fileName, (err, data) => {
       if (err) {
-        reject (err)  // calling `reject` will cause the promise to fail with or without the error passed as an argument
+        reject(err)  // calling `reject` will cause the promise to fail with or without the error passed as an argument
         return        // and we don't want to go any further
       }
       resolve(data)

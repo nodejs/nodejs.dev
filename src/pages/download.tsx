@@ -1,39 +1,53 @@
 import React, { useState } from 'react';
-import { useReleaseHistory } from '../hooks';
-import Layout from '../components/Layout';
-import ReleaseTable from '../components/ReleaseTable';
-import ReleaseToggle from '../components/ReleaseToggle';
-import ReleaseCards from '../components/ReleaseCards';
-
+import {
+  useReleaseHistory,
+  getStaticReleaseData,
+} from '../hooks/useReleaseHistory';
 import { detectOS } from '../util/detectOS';
+import Layout from '../components/Layout';
+import DownloadHeader from '../components/DownloadHeader';
+import DownloadToggle from '../components/DownloadToggle';
+import DownloadCards from '../components/DownloadCards';
+import DownloadReleases from '../components/DownloadReleases';
+import DownloadAdditional from '../components/DownloadAdditional';
+import '../styles/download.scss';
 
 export default function DownloadPage(): JSX.Element {
   const releaseHistory = useReleaseHistory().slice(0, 50);
-  const [ltsSelected, setLtsSelected] = useState(true);
+  const staticReleaseData = getStaticReleaseData();
+  const [typeRelease, setTypeRelease] = useState('LTS');
 
   const userOS = detectOS();
-  const title = 'Download Node.js';
-  const description = 'Come get me!';
-
   const lts = releaseHistory.find((release): boolean => release && release.lts);
   const current = releaseHistory.find(
     (release): boolean => release && !release.lts
   );
 
-  const selectedLine = ltsSelected ? lts : current;
+  const selectedType = typeRelease === 'LTS' ? lts : current;
+  const handleTypeReleaseToggle = (
+    selected: React.SetStateAction<string>
+  ): void => setTypeRelease(selected);
 
   return (
-    <Layout title={title} description={description}>
-      <article style={{ width: '100%' }} className="article-reader">
-        <p>
+    <Layout title="Download Node.js" description="Come get me!">
+      <span className="home-page -download">
+        <DownloadHeader release={selectedType} />
+        <p className="release-description">
           Download the Node.js source code, a pre-built installer for your
           platform, or install via package manager.
         </p>
-        <p>You are currently on a {userOS} machine</p>
-        <ReleaseToggle selected={ltsSelected} onToggle={setLtsSelected} />
-        <ReleaseCards line={selectedLine} />
-        <ReleaseTable releases={releaseHistory} />
-      </article>
+        <DownloadToggle
+          selected={typeRelease}
+          handleClick={handleTypeReleaseToggle}
+        />
+        <DownloadCards line={selectedType} userOS={userOS} />
+        <DownloadReleases releases={staticReleaseData} />
+        <DownloadAdditional
+          line={selectedType}
+          selectedTypeRelease={typeRelease}
+          handleTypeReleaseToggle={handleTypeReleaseToggle}
+        />
+      </span>
     </Layout>
   );
 }
