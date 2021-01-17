@@ -8,9 +8,7 @@ exports[`AuthorsList component renders correctly 1`] = `
     <h5>
       Contributors
     </h5>
-    <li
-      class="list"
-    >
+    <li>
       <a
         class="link"
         href="https://github.com/test-author"
@@ -26,9 +24,7 @@ exports[`AuthorsList component renders correctly 1`] = `
         />
       </a>
     </li>
-    <li
-      class="list"
-    >
+    <li>
       <a
         class="link"
         href="https://github.com/another-test-author"
