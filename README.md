@@ -104,7 +104,7 @@ A quick look at some of the top-level files and directories found in this projec
 
 7. **`.gitignore`**: This file tells git which files it should not track/not maintain a version history.
 
-8. **`.nvmrc`**: NVM configuration so packages work as they should
+8. **`.nvmrc`**: nvm configuration so packages work as they should
 
 9. **`.prettierrc`**: This is a configuration file for a tool called [Prettier](https://prettier.io/), which is a tool to help keep the formatting of your code consistent.
 
