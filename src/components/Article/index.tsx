@@ -11,7 +11,8 @@ interface Props {
   html: string;
   tableOfContents: string;
   authors: string[];
-  relativePath: string;
+  relativePath?: string;
+  editPath?: string;
   next?: PaginationInfo;
   previous?: PaginationInfo;
 }
@@ -25,6 +26,7 @@ const Article = ({
   previous,
   next,
   relativePath,
+  editPath,
   authors,
 }: Props): JSX.Element => {
   const element = React.useRef<HTMLElement | null>(null);
@@ -105,7 +107,7 @@ const Article = ({
       {/* eslint-disable-next-line react/no-danger */}
       <div ref={handleRef} dangerouslySetInnerHTML={{ __html: html }} />
       <AuthorsList authors={authors} />
-      <EditLink relativePath={relativePath} />
+      <EditLink relativePath={relativePath} editPath={editPath} />
       <Pagination previous={previous} next={next} />
     </article>
   );
