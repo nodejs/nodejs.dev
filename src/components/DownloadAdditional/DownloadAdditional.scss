@@ -34,7 +34,7 @@ $downloadable-item-height: 40px;
     transition: height 30ms ease-in;
 
     &__expanded {
-      height: calc(#{$downloadable-item-height} * 2);
+      height: auto;
     }
 
     &__header {
@@ -62,15 +62,18 @@ $downloadable-item-height: 40px;
     }
     &__body {
       display: flex;
+      flex-wrap: wrap;
       &__link {
         display: flex;
+        align-items: center;
         background: var(--brand2);
         color: var(--brand6);
         text-decoration: none;
         font-size: 14px;
+        line-height: 36px;
         border-radius: 40px;
-        margin: 13px 0 18px 18px;
-        padding: 6px 16px 4px 12px;
+        margin: 5px;
+        padding: 0 15px 0 0;
       }
     }
   }
