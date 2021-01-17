@@ -57,7 +57,7 @@ Here's the list of a few outdated packages in one repository that wasn't updated
 
 Some of those updates are major releases. Running `npm update` won't update the version of those. Major releases are never updated in this way because they (by definition) introduce breaking changes, and `npm` wants to save you trouble.
 
-To update to a new major version all the packages, install the `npm-check-updates` package globally:
+To update all packages to a new major version, install the `npm-check-updates` package globally:
 
 ```bash
 npm install -g npm-check-updates
