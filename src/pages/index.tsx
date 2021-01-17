@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
@@ -19,6 +19,7 @@ import InstallTabs from '../components/InstallTabs';
 import featureImg1 from '../images/feature-img-1.png';
 import featureImg2 from '../images/feature-img-2.png';
 import featureImg3 from '../images/feature-img-3.png';
+import GetStartedSection from '../components/GetStartedSection';
 
 const NodeFeature = ({
   img,
@@ -43,6 +44,10 @@ export default function Index({
         subTitle,
         description,
         learnLinkText,
+        beginnerGuideHeaderText,
+        beginnerGuideBodyText,
+        doMoreWithNodeHeaderText,
+        doMoreWithNodeBodyText,
         nodeFeatureHeader1,
         nodeFeatureHeader2,
         nodeFeatureHeader3,
@@ -102,11 +107,13 @@ export default function Index({
           />
         </section>
 
-        <div className="download-lts-container">
-          <Link to="/learn" className="circular-container">
-            {learnLinkText}
-          </Link>
-        </div>
+        <GetStartedSection
+          learnLinkText={learnLinkText}
+          beginnerGuideHeaderText={beginnerGuideHeaderText}
+          beginnerGuideBodyText={beginnerGuideBodyText}
+          doMoreWithNodeHeaderText={doMoreWithNodeHeaderText}
+          doMoreWithNodeBodyText={doMoreWithNodeBodyText}
+        />
       </main>
     </Layout>
   );
@@ -132,6 +139,10 @@ export const query = graphql`
         subTitle
         description
         learnLinkText
+        beginnerGuideHeaderText
+        beginnerGuideBodyText
+        doMoreWithNodeHeaderText
+        doMoreWithNodeBodyText
         nodeFeatureHeader1
         nodeFeatureHeader2
         nodeFeatureHeader3

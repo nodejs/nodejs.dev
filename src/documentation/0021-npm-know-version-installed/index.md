@@ -5,7 +5,7 @@ authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais
 section: Getting Started
 ---
 
-To see the latest version of all installed npm packages, including their dependencies:
+To see the version of all installed npm packages, including their dependencies:
 
 ```bash
 npm list

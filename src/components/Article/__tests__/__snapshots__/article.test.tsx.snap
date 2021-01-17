@@ -33,9 +33,7 @@ exports[`Article component renders correctly 1`] = `
       <h5>
         Contributors
       </h5>
-      <li
-        class="list"
-      >
+      <li>
         <a
           class="link"
           href="https://github.com/test-user1"
@@ -51,9 +49,7 @@ exports[`Article component renders correctly 1`] = `
           />
         </a>
       </li>
-      <li
-        class="list"
-      >
+      <li>
         <a
           class="link"
           href="https://github.com/test-user2"
