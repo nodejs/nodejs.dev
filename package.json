@@ -1,8 +1,8 @@
 {
   "name": "nodejs-website",
-  "description": "Node.js Demo Page",
+  "description": "Nodejs.dev Website",
   "version": "0.3.0",
-  "author": "Adam Miller <ammiller@linkedin.com>",
+  "author": "Node.js Dev Team <https://github.com/nodejs/nodejs.dev#the-nodejsdev-team>",
   "private": true,
   "dependencies": {
     "@mdx-js/mdx": "^1.6.18",
@@ -17,7 +17,7 @@
     "classnames": "^2.2.6",
     "color": "^3.1.2",
     "color-string": "^1.5.3",
-    "dompurify": "2.0.12",
+    "dompurify": "2.0.17",
     "dotenv": "^8.2.0",
     "gatsby": "2.24.85",
     "gatsby-plugin-canonical-urls": "^2.2.3",

@@ -78,7 +78,7 @@ console.count(
 ```
 -->
 
-What happens is that count will count the number of times a string is printed, and print the count next to it:
+What happens is that `console.count()` will count the number of times a string is printed, and print the count next to it:
 
 You can just count apples and oranges:
 
