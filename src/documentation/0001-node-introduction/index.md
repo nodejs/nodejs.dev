@@ -96,7 +96,8 @@ Node.js is a low-level platform. In order to make things easy and exciting for d
 Many of those established over time as popular options. Here is a non-comprehensive list of the ones worth learning:
 
 * [**AdonisJs**](https://adonisjs.com/): A full-stack framework highly focused on developer ergonomics, stability, and confidence. Adonis is one of the fastest Node.js web frameworks.
-* [**Express**](https://expressjs.com/): It provides one of the most simple yet powerful ways to create a web server. Its unopinionated, minimalist approach, focused on the core features of a server, is key to its success.
+* [**Egg.js**](https://eggjs.org/en/): A framework to build better enterprise frameworks and apps with Node.js & Koa.
+* [**Express**](https://expressjs.com/): It provides one of the most simple yet powerful ways to create a web server. Its minimalist approach, unopinionated, focused on the core features of a server, is key to its success.
 * [**Fastify**](https://fastify.io/): A web framework highly focused on providing the best developer experience with the least overhead and a powerful plugin architecture. Fastify is one of the fastest Node.js web frameworks.
 * [**Gatsby**](https://www.gatsbyjs.com/): A [React](https://reactjs.org/)-based, [GraphQL](https://graphql.org/) powered, static site generator with a very rich ecosystem of plugins and starters.
 * [**hapi**](https://hapijs.com): A rich framework for building applications and services that enables developers to focus on writing reusable application logic instead of spending time building infrastructure.
