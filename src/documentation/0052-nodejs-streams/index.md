@@ -232,3 +232,29 @@ readableStream.push('ho!')
 
 writableStream.end()
 ```
+
+## How to create a transform stream
+
+We get the Transform stream from the [`stream` module](https://nodejs.org/api/stream.html), and we initialize it and implement the `transform._transform()` method.
+
+First create a transform stream object:
+
+```js
+const { Transform } = require('stream')
+const TransformStream = new Transform;
+```
+
+then implement `_transform`:
+
+```js
+TransformStream._transform = (chunk, encoding, callback) => {
+  console.log(chunk.toString().toUpperCase());
+  callback();
+}
+```
+
+Pipe readable stream:
+
+```js
+process.stdin.pipe(TransformStream);
+```

@@ -400,7 +400,7 @@ function renderDefaultArticle(
       </p>
       <p className="t-body1">
         On Unix / OS X systems Node.js built from source can be installed
-        using&nbsp;<a href="https://github.com/creationix/nvm">nvm</a>&nbsp;by
+        using&nbsp;<a href="https://github.com/nvm-sh/nvm">nvm</a>&nbsp;by
         installing into the location that nvm expects:
       </p>
       <ShellBox
