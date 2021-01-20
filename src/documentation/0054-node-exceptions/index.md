@@ -106,7 +106,7 @@ doSomething1()
     })
   })
   .then(() => {
-    return doSomething2().catch(err => {
+    return doSomething3().catch(err => {
       //handle error
       throw err //break the chain!
     })

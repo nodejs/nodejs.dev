@@ -58,7 +58,7 @@ const isItDoneYet = new Promise((resolve, reject) => {
 })
 ```
 
-As you can see, the promise checks the `done` global constant, and if that's true, the promise goes to a **resolved** state (since the `resolve` callback was called); otherwise, the `reject` callback is executed, putting the promise in a rejected state. (If one of these functions is never called in the execution path, the promise will remain in a pending state)
+As you can see, the promise checks the `done` global constant, and if that's true, the promise goes to a **resolved** state (since the `resolve` callback was called); otherwise, the `reject` callback is executed, putting the promise in a rejected state. (If none of these functions is called in the execution path, the promise will remain in a pending state)
 
 Using `resolve` and `reject`, we can communicate back to the caller what the resulting promise state was, and what to do with it. In the above case we just returned a string, but it could be an object, or `null` as well. Because we've created the promise in the above snippet, it has **already started executing**. This is important to understand what's going on in the section [Consuming a promise](#consuming-a-promise) below.
 
@@ -71,7 +71,7 @@ const getFile = (fileName) => {
   return new Promise((resolve, reject) => {
     fs.readFile(fileName, (err, data) => {
       if (err) {
-        reject (err)  // calling `reject` will cause the promise to fail with or without the error passed as an argument
+        reject(err)  // calling `reject` will cause the promise to fail with or without the error passed as an argument
         return        // and we don't want to go any further
       }
       resolve(data)
