@@ -23,7 +23,7 @@ And in the browser, we don't have all the nice APIs that Node.js provides throug
 
 Another big difference is that in Node.js you control the environment. Unless you are building an open source application that anyone can deploy anywhere, you know which version of Node.js you will run the application on. Compared to the browser environment, where you don't get the luxury to choose what browser your visitors will use, this is very convenient.
 
-This means that you can write all the modern ES6-7-8-9 JavaScript that your Node.js version supports.
+This means that you can write all the modern ES6-7-8-9-10 JavaScript that your Node.js version supports.
 
 Since JavaScript moves so fast, but browsers can be a bit slow to upgrade, sometimes on the web you are stuck with using older JavaScript / ECMAScript releases.
 
