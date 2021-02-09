@@ -3,14 +3,16 @@ import './EditLink.scss';
 
 interface Props {
   relativePath?: string;
+  editPath?: string;
 }
 
-const EditLink = ({ relativePath }: Props): JSX.Element | null => {
-  if (!relativePath) {
-    return null;
-  }
+const EditLink = ({ relativePath, editPath }: Props): JSX.Element | null => {
+  if (!relativePath && !editPath) return null;
 
-  const href = `https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/${relativePath}`;
+  const baseURL = `https://github.com/nodejs/nodejs.dev/edit/master`;
+  const href = relativePath
+    ? `${baseURL}/src/documentation/${relativePath}`
+    : `${baseURL}/${editPath}`;
 
   return (
     <div className="edit">

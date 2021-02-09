@@ -13,8 +13,10 @@ export function handleKeyDown(event: KeyboardEvent): void {
   }
 }
 
-export function handleMouseDown(): void {
-  IS_MOUSE_EVENT = true;
+export function handleMouseDown(event: Event): void {
+  if (event) {
+    IS_MOUSE_EVENT = true;
+  }
 }
 
 export function handleFocus(event: Event): void {
