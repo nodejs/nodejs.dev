@@ -5,10 +5,10 @@ import '../InstallTabs.scss';
 const MacOSPanel = (): JSX.Element => {
   return (
     <div>
-      <ShellBox textToCopy="curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash">
+      <ShellBox textToCopy="curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash">
         <span className="install__text__no-select">$</span>
         <span className="install__text__command">curl -o- </span>
-        https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
+        https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh
         <span className="install__text__command"> | bash </span>
       </ShellBox>
       <ShellBox textToCopy="nvm install --lts">
