@@ -63,11 +63,21 @@ exports[`Learn Template renders correctly 1`] = `
             >
               <a
                 class="activeStyleTab"
-                href="https://nodejs.org/en/download/"
+                href="/download"
+              >
+                Download
+              </a>
+            </li>
+            <li
+              class="nav__tabs"
+            >
+              <a
+                class="activeStyleTab"
+                href="https://nodejs.org/en/get-involved/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Download
+                Community
               </a>
             </li>
           </ul>
@@ -220,9 +230,7 @@ exports[`Learn Template renders correctly 1`] = `
           <h5>
             Contributors
           </h5>
-          <li
-            class="list"
-          >
+          <li>
             <a
               class="link"
               href="https://github.com/test-user1"
@@ -238,9 +246,7 @@ exports[`Learn Template renders correctly 1`] = `
               />
             </a>
           </li>
-          <li
-            class="list"
-          >
+          <li>
             <a
               class="link"
               href="https://github.com/test-user2"

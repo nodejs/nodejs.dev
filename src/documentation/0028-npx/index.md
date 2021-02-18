@@ -61,7 +61,7 @@ Other scenarios include:
 
 and many more.
 
-Once downloaded, the downloaded code will be wiped.
+Once executed, the downloaded code will be wiped.
 
 ## Run some code using a different Node.js version
 
