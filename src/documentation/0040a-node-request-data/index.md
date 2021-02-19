@@ -60,7 +60,7 @@ const server = http.createServer((req, res) => {
 })
 ```
 
-So to access the data, assuming we expect to receive a string, we must put it into an array:
+So to access the data, assuming we expect to receive a string, we must concatenate the chunks into a string when listening to the stream `data`, and when the stream `end`, we parse the string to JSON:
 
 ```js
 const server = http.createServer((req, res) => {
