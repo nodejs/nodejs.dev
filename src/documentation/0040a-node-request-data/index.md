@@ -69,7 +69,8 @@ const server = http.createServer((req, res) => {
     data += chunk;
   })
   req.on('end', () => {
-    JSON.parse(data).todo // 'Buy the milk'
+    console.log(JSON.parse(data).todo); // 'Buy the milk'
+    res.end();
   })
 })
 ```
