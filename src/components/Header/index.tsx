@@ -54,13 +54,23 @@ const Header = ({
               </a>
             </li>
             <li className="nav__tabs">
+              <Link
+                to="/download"
+                className="activeStyleTab"
+                activeClassName="active"
+                partiallyActive
+              >
+                Download
+              </Link>
+            </li>
+            <li className="nav__tabs">
               <a
-                href="https://nodejs.org/en/download/"
+                href="https://nodejs.org/en/get-involved/"
                 className="activeStyleTab"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Download
+                Community
               </a>
             </li>
           </ul>

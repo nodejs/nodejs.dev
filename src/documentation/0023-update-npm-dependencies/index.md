@@ -47,7 +47,7 @@ Now those 2 files tell us that we installed version `1.3.1` of cowsay, and our r
 
 If there is a new minor or patch release and we type `npm update`, the installed version is updated, and the `package-lock.json` file diligently filled with the new version.
 
-`package.json` remains unchanged.
+Since npm version 5.0.0, `npm update` will update the `package.json` with the updated version. Use `npm update --no-save` to not update `package.json`.
 
 To discover new releases of the packages, you run `npm outdated`.
 
@@ -57,7 +57,7 @@ Here's the list of a few outdated packages in one repository that wasn't updated
 
 Some of those updates are major releases. Running `npm update` won't update the version of those. Major releases are never updated in this way because they (by definition) introduce breaking changes, and `npm` wants to save you trouble.
 
-To update to a new major version all the packages, install the `npm-check-updates` package globally:
+To update all packages to a new major version, install the `npm-check-updates` package globally:
 
 ```bash
 npm install -g npm-check-updates

@@ -8,6 +8,10 @@ export interface HomepageData {
       subTitle: string;
       description: string;
       learnLinkText: string;
+      beginnerGuideHeaderText: string;
+      beginnerGuideBodyText: string;
+      doMoreWithNodeHeaderText: string;
+      doMoreWithNodeBodyText: string;
       nodeFeatureHeader1: string;
       nodeFeatureHeader2: string;
       nodeFeatureHeader3: string;
@@ -72,4 +76,19 @@ declare global {
   interface Window {
     previousPath: string;
   }
+}
+
+export interface Page {
+  editPath?: string;
+  data: {
+    page: {
+      html: string;
+      tableOfContents: string;
+      frontmatter: {
+        title: string;
+        description: string;
+      };
+      fields: { authors: string[] };
+    };
+  };
 }

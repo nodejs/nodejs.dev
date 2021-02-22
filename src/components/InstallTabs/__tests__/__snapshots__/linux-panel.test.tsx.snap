@@ -56,9 +56,15 @@ exports[`Tests for LinuxPanel component renders correctly 1`] = `
         <span
           class="install__text__command"
         >
-           curl -o- | bash 
+           curl -o- 
         </span>
-        https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
+        https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh
+         
+        <span
+          class="install__text__command"
+        >
+          | bash
+        </span>
       </code>
     </pre>
     <pre

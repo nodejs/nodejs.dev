@@ -104,7 +104,7 @@ A quick look at some of the top-level files and directories found in this projec
 
 7. **`.gitignore`**: This file tells git which files it should not track/not maintain a version history.
 
-8. **`.nvmrc`**: NVM configuration so packages work as they should
+8. **`.nvmrc`**: nvm configuration so packages work as they should
 
 9. **`.prettierrc`**: This is a configuration file for a tool called [Prettier](https://prettier.io/), which is a tool to help keep the formatting of your code consistent.
 
@@ -178,16 +178,19 @@ also have commiter rights on the repo.
 * [@darcyclarke](https://github.com/darcyclarke) - Darcy Clarke
 * [@designMoreWeb](https://github.com/designMoreWeb) - Divy Tolia
 * [@imbhargav5](https://github.com/imbhargav5) - Bhargav Ponnapalli
+* [@jemjam](https://github.com/jemjam) - j'em bones
+* [@joesepi](https://github.com/joesepi) - Joe Sepi
 * [@jonchurch](https://github.com/jonchurch) - Jonathan Church
 * [@kasicka](https://github.com/kasicka) - Zuzana Svetlíková
 * [@keywordnew](https://github.com/keywordnew) - Manil Chowdhury
 * [@LaRuaNa](https://github.com/LaRuaNa) - Onur Laru
 * [@maddhruv](https://github.com/maddhruv) - Dhruv Jain
+* [@marcustisater](https://github.com/marcustisater) - Marcus Tisäter
 * [@mbj36](https://github.com/mbj36) - Mohit kumar Bajoria
 * [@MylesBorins](https://github.com/MylesBorins) - Myles Borins
 * [@ogonzal87](https://github.com/ogonzal87) - Oscar Gonzalez
 * [@ollelauribostrom](https://github.com/ollelauribostrom) - Olle Lauri Boström
-* [@pierreneter](https://github.com/pierreneter)
+* [@pierreneter](https://github.com/pierreneter) - Nguyễn J Huỳnh Long
 * [@sagirk](https://github.com/sagirk) - Sagir Khan
 * [@saulonunesdev](https://github.com/saulonunesdev) - Saulo Nunes
 * [@skllcrn](https://github.com/skllcrn) - Christopher

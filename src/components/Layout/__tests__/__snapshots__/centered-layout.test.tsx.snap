@@ -60,11 +60,21 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
           >
             <a
               class="activeStyleTab"
-              href="https://nodejs.org/en/download/"
+              href="/download"
+            >
+              Download
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="https://nodejs.org/en/get-involved/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Download
+              Community
             </a>
           </li>
         </ul>
@@ -332,11 +342,21 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
           >
             <a
               class="activeStyleTab"
-              href="https://nodejs.org/en/download/"
+              href="/download"
+            >
+              Download
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="https://nodejs.org/en/get-involved/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Download
+              Community
             </a>
           </li>
         </ul>
