@@ -10,7 +10,7 @@ export enum UserOS {
 export function detectOS(): UserOS {
   let OS = UserOS.UNKNOWN;
   if (typeof window !== 'undefined') {
-    switch (typeof navigator !== `undefined`) {
+    switch (typeof navigator !== 'undefined') {
       case navigator.appVersion.includes('Win'):
         OS = UserOS.WIN;
         break;
