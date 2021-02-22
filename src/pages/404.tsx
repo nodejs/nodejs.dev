@@ -10,10 +10,10 @@ export default function NotFoundPage(): JSX.Element {
 
   return (
     <Layout title={title} description={description}>
-      <h1 className="not-found">PAGE NOT FOUND</h1>
+      <h1 className="not-found">page not found</h1>
       <main>
         <p>
-          The page you&apos;re trying to access does not exist. Go back to the
+          The page you are trying to access does not exist. Go back to the
           Homepage or find what you&apos;re looking for in the menu.
         </p>
         <p>

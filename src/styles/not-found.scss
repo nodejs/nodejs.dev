@@ -1,16 +1,9 @@
 .not-found {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-content: center;
   padding: var(--space-48) 0 var(--space-48) 0;
-}
-
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   text-align: center;
+  text-transform: uppercase;
 }
