@@ -106,6 +106,10 @@
   max-width: 248px;
   margin: 0 2em;
   text-align: center;
+
+  img {
+    width: 65%;
+  }
 }
 
 .trusted-by {
@@ -189,4 +193,10 @@
       }
     }
   }
+}
+
+.feature-icon {
+  min-width: 120px;
+  height: auto;
+  opacity: 0.75;
 }
