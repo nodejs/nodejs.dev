@@ -193,3 +193,7 @@ bar
 ```-->
 
 That's a big difference between Promises (and Async/await, which is built on promises) and plain old asynchronous functions through `setTimeout()` or other platform APIs.
+
+Finally, here's what the call stack looks like for the example above:
+
+![Call stack third example](call-stack-third-example.svg)
