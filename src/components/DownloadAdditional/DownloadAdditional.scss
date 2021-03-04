@@ -40,6 +40,7 @@ $downloadable-item-height: 40px;
     &__header {
       display: flex;
       flex-direction: row;
+      cursor: pointer;
       &__arrow {
         margin-right: 16px;
         width: 0;
