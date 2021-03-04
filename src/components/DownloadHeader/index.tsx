@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { ReleaseData } from '../../hooks/useReleaseHistory';
 import './DownloadHeader.scss';
 
@@ -15,7 +16,9 @@ export default function DownloadHeader({ release }: Props): JSX.Element {
     <>
       <div className="download-page__navigation">
         <div>
-          HOME /
+          <Link to="/" className="download-page__navigation--link">
+            HOME /
+          </Link>
           <span className="download-page__navigation--active"> downloads</span>
         </div>
         <div>
