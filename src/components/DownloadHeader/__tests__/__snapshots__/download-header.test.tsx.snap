@@ -6,12 +6,7 @@ exports[`DownloadHeader component renders correctly 1`] = `
     class="download-page__navigation"
   >
     <div>
-      <a
-        class="download-page__navigation--link"
-        href="/"
-      >
-        HOME /
-      </a>
+      HOME /
       <span
         class="download-page__navigation--active"
       >
