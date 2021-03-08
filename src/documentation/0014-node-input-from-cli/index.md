@@ -38,6 +38,9 @@ A more complete and abstract solution is provided by the [Inquirer.js package](h
 You can install it using `npm install inquirer`, and then you can replicate the above code like this:
 
 ```js
+import { createRequire } from "module";
+const require = createRequire(import.meta.url)
+
 const inquirer = require('inquirer')
 
 var questions = [
