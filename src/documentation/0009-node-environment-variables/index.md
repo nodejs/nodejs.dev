@@ -7,7 +7,7 @@ section: Getting Started
 
 The `process` core module of Node.js provides the `env` property which hosts all the environment variables that were set at the moment the process was started.
 
-Here is an example that accesses the NODE_ENV environment variable, which is set to `development` by default.
+Here is an example that accesses the NODE_ENV environment variable, it will return `undefined` untill the variable is set. After every change in `process.env`, you need to restart the server. 
 
 > Note: `process` does not require a "require", it's automatically available.
 
