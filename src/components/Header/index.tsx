@@ -82,6 +82,9 @@ const Header = ({
               <button
                 type="button"
                 className="dark-mode-toggle"
+                onKeyPress={e =>
+                  e.charCode === 13 && darkModeController.toggle()
+                }
                 onMouseDown={darkModeController.handleEvent}
                 onMouseUp={darkModeController.handleEvent}
               >
