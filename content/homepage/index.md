@@ -19,7 +19,7 @@ nodeFeature3: Node.js has been adapted to work in a wide variety of places
 nodeFeatureAltText: node feature
 learnLinkText: Get Started
 beginnerGuideHeaderText: A beginner's guide
-beginnerGuideBodyText: Development teams around th world - including ABC Company, ABC Company, ABC Company, ABC Company
+beginnerGuideBodyText: Development teams around the world - including ABC Company, ABC Company, ABC Company, ABC Company
 doMoreWithNodeHeaderText: Do even more with Node.js
-doMoreWithNodeBodyText: Development teams around th world - including ABC Company, ABC Company, ABC Company, ABC Company
+doMoreWithNodeBodyText: Development teams around the world - including ABC Company, ABC Company, ABC Company, ABC Company
 ---
