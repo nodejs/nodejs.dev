@@ -4,12 +4,15 @@ import './AuthorList.scss';
 
 interface Props {
   authors: string[];
+  blog?: boolean;
 }
 
-const AuthorsList = ({ authors }: Props): null | JSX.Element => {
+const AuthorsList = ({ authors, blog }: Props): null | JSX.Element => {
   return (
     <ul className="list">
-      <h5>Contributors</h5>
+      <h5>
+        {!blog ? 'Contributors' : `Author${authors.length > 1 ? 's' : ''}`}
+      </h5>
       {authors.map(
         (author, i): string | JSX.Element =>
           author && (
