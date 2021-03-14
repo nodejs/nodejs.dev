@@ -1,0 +1,29 @@
+.blogCard {
+  padding: 40px;
+  a {
+    text-decoration: none;
+    font-size: 2em;
+    margin-bottom: 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  h4 {
+    opacity: 0.7;
+    margin: 0;
+    margin-top: 7px;
+  }
+
+  p {
+    margin: 7px 0;
+    opacity: 0.8;
+
+    li {
+      list-style: none;
+      display: inline;
+      margin: 0 3px;
+    }
+  }
+}
