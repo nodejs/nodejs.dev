@@ -17,7 +17,6 @@ interface Props {
   next?: PaginationInfo;
   previous?: PaginationInfo;
   blog?: boolean;
-  date?: string;
 }
 
 const NAV_HEIGHT = 72;
@@ -32,7 +31,6 @@ const Article = ({
   editPath,
   authors,
   blog,
-  date,
 }: Props): JSX.Element => {
   const element = React.useRef<HTMLElement | null>(null);
 
@@ -108,15 +106,12 @@ const Article = ({
   return (
     <article className="article-reader">
       <h1 className="article-reader__headline">{title}</h1>
-      {blog && (
-        <BlogAuthorsList date={date} authors={authors as BlogPostAuthor[]} />
-      )}
       {!blog && (
         <TOC heading="TABLE OF CONTENTS" tableOfContents={tableOfContents} />
       )}
       {/* eslint-disable-next-line react/no-danger */}
       <div ref={handleRef} dangerouslySetInnerHTML={{ __html: html }} />
-      {!blog && <AuthorsList authors={authors as string[]} />}
+      <AuthorsList blog={blog} authors={authors} />
       {!blog && <EditLink relativePath={relativePath} editPath={editPath} />}
       {!blog && <Pagination previous={previous} next={next} />}
     </article>
