@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
-import React, { Fragment } from 'react';
+import React from 'react';
 import { BlogMetaData } from '../../types';
-import { getTerminatingString } from '../../util/getTerminatingString';
+import Author from '../Author';
 import './BlogCard.scss';
 
 interface Props {
@@ -12,7 +12,7 @@ const BlogCard = ({
   data: {
     node: {
       fields: { date, slug },
-      frontmatter: { author, title },
+      frontmatter: { authors, title },
     },
   },
 }: Props): JSX.Element => (
@@ -23,12 +23,11 @@ const BlogCard = ({
     <h4>{date}</h4>
     <p>
       by{' '}
-      {author &&
-        author.map((user, i) => (
-          <Fragment key={user.id}>
-            <span>{user.name}</span>
-            {getTerminatingString(i, author.length)}
-          </Fragment>
+      {authors
+        .replace(/\s/g, '')
+        .split(',')
+        .map((username, i) => (
+          <Author key={username} username={username} index={i} size="30" />
         ))}
     </p>
   </div>

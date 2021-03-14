@@ -136,3 +136,15 @@ export interface BlogPageContext {
   previous: PaginationInfo;
   navigationData: NavigationSectionData;
 }
+
+export interface BlogMetaData {
+  node: {
+    frontmatter: { title: string; authors: string };
+    fields: { date: string; slug: string };
+  };
+}
+export interface BlogPostsList {
+  blogs: {
+    edges: BlogMetaData[];
+  };
+}
