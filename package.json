@@ -37,6 +37,7 @@
     "gatsby-remark-prismjs": "^3.5.0",
     "gatsby-source-filesystem": "^2.2.5",
     "gatsby-transformer-remark": "^2.8.5",
+    "gatsby-transformer-yaml": "^2.11.0",
     "intersection-observer": "^0.10.0",
     "prismjs": "^1.21.0",
     "react": "^16.13.1",

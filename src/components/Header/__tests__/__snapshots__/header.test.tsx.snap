@@ -77,6 +77,16 @@ exports[`Tests for Header component renders correctly 1`] = `
               Community
             </a>
           </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/blog"
+            >
+              Blog
+            </a>
+          </li>
         </ul>
       </div>
       <div

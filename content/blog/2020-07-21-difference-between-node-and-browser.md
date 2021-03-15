@@ -1,6 +1,6 @@
 ---
 title: Difference between NodeJS and Browser
-authors: ollelauribostrom, MylesBorins
+author: [batman,johndoe]
 ---
 
 Both the browser and Node.js use JavaScript as their programming language.

@@ -1,6 +1,6 @@
 ---
 title: "Node using CLI"
-authors: LaRuaNa, ahmadawais
+author: [batman]
 ---
 
 The usual way to run a Node.js program is to run the `node` globally available command (once you install Node.js) and pass the name of the file you want to execute.
