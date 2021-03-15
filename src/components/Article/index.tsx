@@ -1,21 +1,23 @@
 import React from 'react';
 import { throttle } from 'throttle-debounce';
-import { PaginationInfo } from '../../types';
+import { PaginationInfo, BlogPostAuthor } from '../../types';
 import AuthorsList from '../../containers/AuthorList';
 import EditLink from '../EditLink';
 import Pagination from '../Pagination';
 import TOC from '../Toc';
+import BlogAuthorsList from '../BlogAuthorsList';
 
 interface Props {
   title: string;
   html: string;
-  tableOfContents: string;
-  authors: string[];
+  tableOfContents?: string;
+  authors: string[] | BlogPostAuthor[];
   relativePath?: string;
   editPath?: string;
   next?: PaginationInfo;
   previous?: PaginationInfo;
   blog?: boolean;
+  date?: string;
 }
 
 const NAV_HEIGHT = 72;
@@ -30,6 +32,7 @@ const Article = ({
   editPath,
   authors,
   blog,
+  date,
 }: Props): JSX.Element => {
   const element = React.useRef<HTMLElement | null>(null);
 
@@ -105,12 +108,15 @@ const Article = ({
   return (
     <article className="article-reader">
       <h1 className="article-reader__headline">{title}</h1>
+      {blog && (
+        <BlogAuthorsList date={date} authors={authors as BlogPostAuthor[]} />
+      )}
       {!blog && (
         <TOC heading="TABLE OF CONTENTS" tableOfContents={tableOfContents} />
       )}
       {/* eslint-disable-next-line react/no-danger */}
       <div ref={handleRef} dangerouslySetInnerHTML={{ __html: html }} />
-      <AuthorsList blog={blog} authors={authors} />
+      {!blog && <AuthorsList authors={authors as string[]} />}
       {!blog && <EditLink relativePath={relativePath} editPath={editPath} />}
       {!blog && <Pagination previous={previous} next={next} />}
     </article>

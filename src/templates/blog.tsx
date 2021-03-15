@@ -2,43 +2,43 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
-import { LearnPageContext, LearnPageData } from '../types';
+import { BlogPageData, BlogPageContext } from '../types';
 
 import '../styles/article-reader.scss';
 import '../styles/learn.scss';
 import Footer from '../components/Footer';
 
 interface Props {
-  data: LearnPageData;
-  pageContext: LearnPageContext;
+  data: BlogPageData;
+  pageContext: BlogPageContext;
 }
 const LearnLayout = ({
   data,
   pageContext: { next, previous, relativePath },
 }: Props): React.ReactNode => {
   const {
-    doc: {
-      frontmatter: { title, description },
+    blog: {
+      frontmatter: { title, author },
       html,
-      tableOfContents,
-      fields: { authors },
+      excerpt,
+      fields: { date },
     },
   } = data;
   return (
     <>
-      <Layout title={title} description={description} showFooter={false}>
-        {/* <main className="grid-container"> */}
-        <Article
-          title={title}
-          html={html}
-          tableOfContents={tableOfContents}
-          next={next}
-          authors={authors}
-          previous={previous}
-          relativePath={relativePath}
-          blog
-        />
-        {/* </main> */}
+      <Layout title={title} description={excerpt} showFooter={false}>
+        <main className="blog-container">
+          <Article
+            title={title}
+            html={html}
+            next={next}
+            authors={author}
+            previous={previous}
+            relativePath={relativePath}
+            blog
+            date={date}
+          />
+        </main>
       </Layout>
       <Footer />
     </>
@@ -48,15 +48,20 @@ export default LearnLayout;
 
 export const query = graphql`
   query BlogBySlug($slug: String!) {
-    doc: markdownRemark(fields: { slug: { eq: $slug } }) {
+    blog: markdownRemark(fields: { slug: { eq: $slug } }) {
       html
-      excerpt(pruneLength: 5000)
+      excerpt(pruneLength: 500)
       frontmatter {
         title
+        author {
+          id
+          name
+          url
+        }
       }
       fields {
         slug
-        authors
+        date(formatString: "MMMM DD, YYYY")
       }
     }
     recent: allMarkdownRemark(

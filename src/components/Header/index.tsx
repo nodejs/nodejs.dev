@@ -73,6 +73,16 @@ const Header = ({
                 Community
               </a>
             </li>
+            <li className="nav__tabs">
+              <Link
+                to="/blog"
+                className="activeStyleTab"
+                activeClassName="active"
+                partiallyActive
+              >
+                Blog
+              </Link>
+            </li>
           </ul>
         </div>
 
