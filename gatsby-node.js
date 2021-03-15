@@ -179,7 +179,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
       const date = new Date(year, month - 1, day);
 
-      // Blog posts are sorted by date and display the date in their header.
       createNodeField({
         node,
         name: 'date',
