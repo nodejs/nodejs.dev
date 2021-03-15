@@ -77,6 +77,16 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
               Community
             </a>
           </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/blog"
+            >
+              Blog
+            </a>
+          </li>
         </ul>
       </div>
       <div
@@ -357,6 +367,16 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
               target="_blank"
             >
               Community
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/blog"
+            >
+              Blog
             </a>
           </li>
         </ul>
