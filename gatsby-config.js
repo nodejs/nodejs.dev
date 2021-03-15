@@ -11,8 +11,12 @@ module.exports = {
     siteUrl: config.siteUrl,
     siteUrlNoSlash: config.siteUrlNoSlash,
   },
+  mapping: {
+    'MarkdownRemark.frontmatter.author': `AuthorYaml`,
+  },
   plugins: [
     'gatsby-plugin-catch-links',
+    'gatsby-transformer-yaml',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-canonical-urls',
@@ -55,6 +59,13 @@ module.exports = {
       options: {
         name: 'blog',
         path: `${__dirname}/content/blog`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'data',
+        path: `${__dirname}/src/data`,
       },
     },
     {

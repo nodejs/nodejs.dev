@@ -99,9 +99,15 @@ export interface CommunityNavigationSection {
   sections: string[];
 }
 
+export interface BlogPostAuthor {
+  id?: string;
+  name: string;
+  url: string;
+}
+
 export interface BlogMetaData {
   node: {
-    frontmatter: { title: string; authors: string };
+    frontmatter: { title: string; author: BlogPostAuthor[] };
     fields: { date: string; slug: string };
   };
 }
@@ -109,4 +115,24 @@ export interface BlogPostsList {
   blogs: {
     edges: BlogMetaData[];
   };
+}
+
+export interface BlogPageData {
+  blog: {
+    html: string;
+    excerpt: string;
+    frontmatter: { title: string; author: BlogPostAuthor[] };
+    fields: { slug: string; date: string };
+  };
+  recent: {
+    edges: BlogMetaData[];
+  };
+}
+
+export interface BlogPageContext {
+  slug: string;
+  relativePath: string;
+  next: PaginationInfo;
+  previous: PaginationInfo;
+  navigationData: NavigationSectionData;
 }
