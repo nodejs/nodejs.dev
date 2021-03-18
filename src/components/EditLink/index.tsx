@@ -9,7 +9,7 @@ interface Props {
 const EditLink = ({ relativePath, editPath }: Props): JSX.Element | null => {
   if (!relativePath && !editPath) return null;
 
-  const baseURL = `https://github.com/nodejs/nodejs.dev/edit/master`;
+  const baseURL = `https://github.com/nodejs/nodejs.dev/edit/main`;
   const href = relativePath
     ? `${baseURL}/src/documentation/${relativePath}`
     : `${baseURL}/${editPath}`;

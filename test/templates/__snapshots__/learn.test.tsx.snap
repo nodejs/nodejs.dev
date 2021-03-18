@@ -211,7 +211,7 @@ exports[`Learn Template renders correctly 1`] = `
         >
           <a
             class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/test-path"
+            href="https://github.com/nodejs/nodejs.dev/edit/main/src/documentation/test-path"
           >
             <span>
               Edit this page on GitHub
@@ -287,7 +287,7 @@ exports[`Learn Template renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://github.com/openjs-foundation/cross-project-council/blob/master/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
+          href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
         >
           Code of Conduct
         </a>
