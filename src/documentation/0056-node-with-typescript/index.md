@@ -18,7 +18,7 @@ We can talk about other TypeScript benefits later, let's see some examples now!
 Take a look at this code snippet and then we can unpack it together:
 
 <!-- figure out why ts doesnt work here -->
-```js 
+```js
 type User = {
   name: string;
   age: number;

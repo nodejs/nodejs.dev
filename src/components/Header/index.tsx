@@ -11,7 +11,9 @@ const Header = (): JSX.Element => {
   const keyPressDarkModeHandler: (
     e: KeyboardEvent<HTMLButtonElement>
   ) => void = e => {
-    if (e.charCode === 13 || e.charCode === 32) console.log('key pressed.');
+    // eslint-disable-next-line no-empty
+    if (e.charCode === 13 || e.charCode === 32) {
+    }
   };
 
   return (
