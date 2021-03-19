@@ -102,7 +102,20 @@ export function useApiData(version: string | null): APIResponse {
     if (version) {
       fetchData();
     }
-  }, [version]);
+
+    try {
+      const calendar = async (): Promise<void> => {
+        const res = await fetch(`https://www.googleapis.com/calendar/v3/calendars/nodejs.org_nr77ama8p7d7f9ajrpnu506c98@group.calendar.google.com/events?maxResults=2&key=AIzaSyAmQQ
+        vNGwK9lVPsSNF_aoVoytUrE0Jr1FA`);
+        await res.json()
+        console.log('res', res)
+      }
+      calendar();
+    } catch (error) {
+      console.error('Error', error);
+    }
+
+  }, [version, ]);
 
   return apiData;
 }
