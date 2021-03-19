@@ -4,7 +4,10 @@ const config = require('./src/config');
 
 module.exports = {
   flags: {
-    DEV_SSR: false
+    DEV_SSR: false,
+    FAST_DEV: false,
+    PRESERVE_WEBPACK_CACHE: false,
+    PARALLEL_SOURCING: false,
   },
   pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
