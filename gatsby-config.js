@@ -3,6 +3,9 @@ require('dotenv').config();
 const config = require('./src/config');
 
 module.exports = {
+  flags: {
+    DEV_SSR: false
+  },
   pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
     title: config.title,
