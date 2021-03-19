@@ -5,9 +5,7 @@ import logoDark from '../../images/logos/nodejs-logo-dark-mode.svg';
 // import defaultDarkModeController from '../../util/darkModeController';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
-const Header = ({
-  // darkModeController = defaultDarkModeController,
-}: Props): JSX.Element => {
+const Header = (): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
 
   const keyPressDarkModeHandler: (
