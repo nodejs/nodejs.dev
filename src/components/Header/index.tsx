@@ -2,22 +2,18 @@ import { Link } from 'gatsby';
 import React, { KeyboardEvent } from 'react';
 import logoLight from '../../images/logos/nodejs-logo-light-mode.svg';
 import logoDark from '../../images/logos/nodejs-logo-dark-mode.svg';
-import defaultDarkModeController from '../../util/darkModeController';
+// import defaultDarkModeController from '../../util/darkModeController';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
-interface Props {
-  darkModeController?: typeof defaultDarkModeController;
-}
-
 const Header = ({
-  darkModeController = defaultDarkModeController,
+  // darkModeController = defaultDarkModeController,
 }: Props): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
 
   const keyPressDarkModeHandler: (
     e: KeyboardEvent<HTMLButtonElement>
   ) => void = e => {
-    if (e.charCode === 13 || e.charCode === 32) darkModeController.toggle();
+    if (e.charCode === 13 || e.charCode === 32) console.log('key pressed.');
   };
 
   return (
