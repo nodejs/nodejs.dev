@@ -86,8 +86,8 @@ const Header = ({
                 type="button"
                 className="dark-mode-toggle"
                 onKeyPress={keyPressDarkModeHandler}
-                onMouseDown={darkModeController.handleEvent}
-                onMouseUp={darkModeController.handleEvent}
+                // onMouseDown={darkModeController.handleEvent}
+                // onMouseUp={darkModeController.handleEvent}
               >
                 <span className="sr-only">Toggle Dark Mode</span>
                 <i className="material-icons light-mode-only">nights_stay</i>
