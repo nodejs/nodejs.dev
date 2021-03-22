@@ -30,15 +30,15 @@ You can do so in 2 ways.
 The first is to assign an object to `module.exports`, which is an object provided out of the box by the module system, and this will make your file export _just that object_:
 
 ```js
+// car.js
 const car = {
   brand: 'Ford',
   model: 'Fiesta'
 }
 
 module.exports = car
-
-//save this file as car.js
-
+```
+```js
 //..in the other file
 
 const car = require('./car')
