@@ -1,6 +1,10 @@
 name: Test
 
-on: [pull_request]
+on:
+  pull_request:
+  push:
+    branches:
+      - master
 
 jobs:
   test-ci:
@@ -8,7 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/cache@v1
+      - uses: actions/setup-node@v2.1.5
+
+      - uses: actions/cache@v2.1.4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -19,5 +25,11 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
 
+      - name: Run linting
+        run: npm run lint
+
       - name: Run test and coverage
         run: npm run test-ci
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
