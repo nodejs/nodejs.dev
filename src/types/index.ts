@@ -91,6 +91,7 @@ export interface Page {
       fields: { authors: string[] };
     };
   };
+  location?: Location;
 }
 
 export interface BlogPostAuthor {
