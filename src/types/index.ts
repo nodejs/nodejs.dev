@@ -98,3 +98,8 @@ export interface CommunityNavigationSection {
   title: string;
   sections: string[];
 }
+
+export interface CommunityNavigationSection {
+  title: string;
+  sections: string[];
+}

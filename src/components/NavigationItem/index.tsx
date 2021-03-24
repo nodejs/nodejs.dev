@@ -9,7 +9,7 @@ interface Props {
   isActive: boolean;
   slug: string;
   title: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const NavigationItem = ({
