@@ -93,3 +93,8 @@ export interface Page {
   };
   location?: Location;
 }
+
+export interface CommunityNavigationSection {
+  title: string;
+  sections: string[];
+}
