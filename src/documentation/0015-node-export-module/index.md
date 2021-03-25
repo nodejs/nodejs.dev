@@ -39,8 +39,7 @@ const car = {
 module.exports = car
 ```
 ```js
-//..in the other file
-
+// index.js
 const car = require('./car')
 ```
 
