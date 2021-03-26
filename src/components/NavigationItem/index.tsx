@@ -4,24 +4,30 @@ import classnames from 'classnames';
 
 interface Props {
   key: string;
+  isLearn?: boolean;
   isRead: boolean;
   isActive: boolean;
   slug: string;
   title: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const NavigationItem = ({
+  isLearn = true,
   isRead,
   isActive,
   slug,
   title,
   onClick,
 }: Props): JSX.Element => {
-  const className = classnames('t-body2 side-nav__item', {
-    'side-nav__item--done': isRead,
-    'side-nav__item--active': !isRead && isActive,
-  });
+  const className = isLearn
+    ? classnames('t-body2 side-nav__item', {
+        'side-nav__item--done': isRead,
+        'side-nav__item--active': !isRead && isActive,
+      })
+    : classnames('t-body2 side-nav__item-community', {
+        'side-nav__item-community--active': isActive,
+      });
 
   const element = useRef<HTMLAnchorElement | null>(null);
   const handleRef = (ref?: HTMLAnchorElement | null): void => {
