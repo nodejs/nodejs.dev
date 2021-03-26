@@ -106,6 +106,7 @@ export interface BlogMetaData {
     fields: { date: string; slug: string };
   };
 }
+
 export interface BlogPostsList {
   blogs: {
     edges: BlogMetaData[];
@@ -130,4 +131,9 @@ export interface BlogPageContext {
   next: PaginationInfo;
   previous: PaginationInfo;
   navigationData: NavigationSectionData;
+}
+
+export interface CommunityNavigationSection {
+  title: string;
+  sections: string[];
 }
