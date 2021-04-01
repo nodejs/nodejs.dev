@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-catch-links',
+    'gatsby-plugin-dark-mode',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-canonical-urls',

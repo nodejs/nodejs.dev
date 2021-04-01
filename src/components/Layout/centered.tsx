@@ -9,9 +9,6 @@ import '../../styles/centered-layout.scss';
 import '../../styles/mobile.scss';
 import SEO from '../Seo';
 
-// NOTE: Quickly restores dark-mode state to mitigate onload flash
-import darkModeController from '../../util/darkModeController';
-
 interface Props {
   children: React.ReactNode;
   title?: string;
@@ -32,7 +29,7 @@ const CenteredLayout = ({
   return (
     <>
       <SEO title={title} description={description} img={img} />
-      <Header darkModeController={darkModeController} />
+      <Header />
       <main className="main__centered">{children}</main>
       {showFooter && <Footer />}
     </>
