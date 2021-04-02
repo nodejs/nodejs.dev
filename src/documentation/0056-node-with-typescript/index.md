@@ -17,7 +17,7 @@ We can talk about other TypeScript benefits later, let's see some examples now!
 
 Take a look at this code snippet and then we can unpack it together:
 
-```ts
+```js
 type User = {
   name: string;
   age: number;
@@ -60,7 +60,7 @@ Now when we know how to compile and run TypeScript code let's see TypeScript bug
 
 This is how we will modify our code:
 
-```ts
+```js
 type User = {
   name: string;
   age: number;
@@ -80,7 +80,7 @@ const isJustineAnAdult: string = isAdult(justine, "I shouldn't be here!");
 
 And this is what TypeScript has to say about this:
 
-```ts
+```js
 example.ts:12:3 - error TS2322: Type 'string' is not assignable to type 'number'.
 
 12   age: "Secret!",
