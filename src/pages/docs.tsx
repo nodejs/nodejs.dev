@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/no-onchange */
+/* eslint-disable react/no-danger, jsx-a11y/no-onchange */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import dompurify from 'dompurify';
@@ -100,7 +100,7 @@ function renderArticleSections(
   pages.forEach((page, index) => {
     const children: JSX.Element[] = [];
 
-    const prepareArticleSections: Function = () => {
+    const prepareArticleSections = () => {
       API_DOCS_OBJ_KEYS.forEach((key: string) => {
         if (page[key]) {
           renderArticleSections(page[key], children, depth + 1);

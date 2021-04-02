@@ -11,6 +11,7 @@ export interface ApiDocsBase {
   displayName?: string;
   desc?: string;
   meta?: ApiDocsMeta;
+  // eslint-disable-next-line camelcase
   introduced_in?: string;
   modules?: ApiDocsModule[];
   events?: ApiDocsEvent[];
