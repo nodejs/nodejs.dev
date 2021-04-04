@@ -91,4 +91,10 @@ export interface Page {
       fields: { authors: string[] };
     };
   };
+  location?: Location;
+}
+
+export interface CommunityNavigationSection {
+  title: string;
+  sections: string[];
 }
