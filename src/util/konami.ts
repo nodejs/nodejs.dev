@@ -16,23 +16,20 @@ if (typeof window !== `undefined`) {
     let buffer = '';
     let lastDate = Date.now();
 
-    document.addEventListener(
-      'keyup',
-      function triggerKonami({ keyCode }): void {
-        if (!VALID_KEYS.has(keyCode)) {
-          return;
-        }
-        buffer = `${
-          Date.now() - lastDate >= MAX_DELAY ? '' : buffer
-        }${keyCode}`;
-        lastDate = Date.now();
-        if (!contains(buffer, CODE_SEQUENCE)) {
-          return;
-        }
-        document.dispatchEvent(KONAMI_EVENT);
-        buffer = '';
+    document.addEventListener('keyup', function triggerKonami({
+      keyCode,
+    }): void {
+      if (!VALID_KEYS.has(keyCode)) {
+        return;
       }
-    );
+      buffer = `${Date.now() - lastDate >= MAX_DELAY ? '' : buffer}${keyCode}`;
+      lastDate = Date.now();
+      if (!contains(buffer, CODE_SEQUENCE)) {
+        return;
+      }
+      document.dispatchEvent(KONAMI_EVENT);
+      buffer = '';
+    });
   })();
 
   let discoMode: NodeJS.Timeout | null = null;
