@@ -11,7 +11,9 @@ const Header = (): JSX.Element => {
   const keyPressDarkModeHandler: (
     e: KeyboardEvent<HTMLButtonElement>
   ) => void = e => {
-    if (e.charCode === 13 || e.charCode === 32) console.log('key pressed.');
+    // eslint-disable-next-line no-empty
+    if (e.charCode === 13 || e.charCode === 32) {
+    }
   };
 
   return (
@@ -84,8 +86,8 @@ const Header = (): JSX.Element => {
                 type="button"
                 className="dark-mode-toggle"
                 onKeyPress={keyPressDarkModeHandler}
-                // onMouseDown={darkModeController.handleEvent}
-                // onMouseUp={darkModeController.handleEvent}
+              // onMouseDown={darkModeController.handleEvent}
+              // onMouseUp={darkModeController.handleEvent}
               >
                 <span className="sr-only">Toggle Dark Mode</span>
                 <i className="material-icons light-mode-only">nights_stay</i>
