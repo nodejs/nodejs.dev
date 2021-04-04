@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { tokens } from './colors';
 import '../src/styles/tokens.scss';
 import '../src/styles/layout.scss';
 import '../src/styles/mobile.scss';
 import Color from 'color';
 import colorString from 'color-string';
+import { tokens } from './colors';
 
 export default {
   title: 'Design',
@@ -50,11 +51,13 @@ export const TextStyles = (): JSX.Element => (
   </div>
 );
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const Colors = () => {
   const colorSquares = Object.keys(tokens).map(key => {
     const bgIsDark = Color(colorString.get.rgb(tokens[key])).isDark();
 
     return (
+      // eslint-disable-next-line react/jsx-key
       <div
         style={{
           display: 'flex',
