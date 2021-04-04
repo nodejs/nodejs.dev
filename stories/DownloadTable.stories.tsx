@@ -16,6 +16,7 @@ export default {
   component: DownloadTable,
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const DownloadTableExample = ({ releases }: Props): JSX.Element => {
   const releaseHistory = getStaticReleaseData().slice(0, 10);
 
