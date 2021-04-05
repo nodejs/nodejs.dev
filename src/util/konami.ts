@@ -36,6 +36,7 @@ if (typeof window !== `undefined`) {
   })();
 
   let discoMode: NodeJS.Timeout | null = null;
+  // eslint-disable-next-line consistent-return
   document.addEventListener('konamiCode', (): void => {
     if (discoMode) {
       return clearInterval(discoMode);

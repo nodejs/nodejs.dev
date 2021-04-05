@@ -64,12 +64,10 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.title,
-        /* eslint-disable @typescript-eslint/camelcase */
         short_name: config.title,
         start_url: '/',
         background_color: config.color,
         theme_color: config.color,
-        /* eslint-disable @typescript-eslint/camelcase */
         display: config.display,
         icon: config.icon,
       },
