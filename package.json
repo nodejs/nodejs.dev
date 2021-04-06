@@ -7,9 +7,9 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.18",
-    "@storybook/addon-actions": "^6.1.11",
-    "@storybook/addon-links": "^6.1.11",
-    "@storybook/addons": "^6.1.11",
+    "@storybook/addon-actions": "^6.2.2",
+    "@storybook/addon-links": "^6.2.2",
+    "@storybook/addons": "^6.2.2",
     "@storybook/react": "^6.2.2",
     "@types/react-tabs": "2.3.1",
     "babel-preset-react-app": "^9.1.2",
