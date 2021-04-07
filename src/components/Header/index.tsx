@@ -10,6 +10,7 @@ const Header = (): JSX.Element => {
 
   const handleThemeOnClick = (
     e: MouseEvent<HTMLButtonElement, Event>,
+    // eslint-disable-next-line @typescript-eslint/ban-types
     toggleTheme: Function
   ): void => {
     const target = e.target as HTMLElement;
@@ -88,6 +89,7 @@ const Header = (): JSX.Element => {
                   toggleTheme,
                 }: {
                   theme: string | null;
+                  // eslint-disable-next-line @typescript-eslint/ban-types
                   toggleTheme: Function;
                 }): JSX.Element | null => {
                   if (theme === null) {
