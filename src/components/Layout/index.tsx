@@ -8,9 +8,6 @@ import '../../styles/layout.scss';
 import '../../styles/mobile.scss';
 import SEO from '../Seo';
 
-// NOTE: Quickly restores dark-mode state to mitigate onload flash
-import darkModeController from '../../util/darkModeController';
-
 interface Props {
   children: React.ReactNode;
   title?: string;
@@ -38,7 +35,7 @@ const Layout = ({
         img={img}
       />
       <div className="layout-container">
-        <Header darkModeController={darkModeController} />
+        <Header />
         {children}
         {showFooter && <Footer />}
       </div>

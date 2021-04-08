@@ -1,23 +1,25 @@
 import { Link } from 'gatsby';
-import React, { KeyboardEvent } from 'react';
+import React, { MouseEvent, KeyboardEvent } from 'react';
+import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import logoLight from '../../images/logos/nodejs-logo-light-mode.svg';
 import logoDark from '../../images/logos/nodejs-logo-dark-mode.svg';
-import defaultDarkModeController from '../../util/darkModeController';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
-interface Props {
-  darkModeController?: typeof defaultDarkModeController;
-}
-
-const Header = ({
-  darkModeController = defaultDarkModeController,
-}: Props): JSX.Element => {
+const Header = (): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
 
-  const keyPressDarkModeHandler: (
-    e: KeyboardEvent<HTMLButtonElement>
-  ) => void = e => {
-    if (e.charCode === 13 || e.charCode === 32) darkModeController.toggle();
+  const handleThemeOnClick = (
+    e: MouseEvent<HTMLButtonElement, Event> | KeyboardEvent<HTMLButtonElement>,
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    toggleTheme: Function,
+    isKeyPress = false
+  ): void => {
+    if (isKeyPress) {
+      return;
+    }
+    const target = e.target as HTMLElement;
+    const toggle = target.innerText.includes('nights_stay') ? 'dark' : 'light';
+    toggleTheme(toggle);
   };
 
   return (
@@ -86,17 +88,36 @@ const Header = ({
         <div className="nav__endwrapper">
           <ul className="right-container">
             <li className="nav__tabs nav__tabs--right">
-              <button
-                type="button"
-                className="dark-mode-toggle"
-                onKeyPress={keyPressDarkModeHandler}
-                onMouseDown={darkModeController.handleEvent}
-                onMouseUp={darkModeController.handleEvent}
-              >
-                <span className="sr-only">Toggle Dark Mode</span>
-                <i className="material-icons light-mode-only">nights_stay</i>
-                <i className="material-icons dark-mode-only">wb_sunny</i>
-              </button>
+              <ThemeToggler>
+                {({
+                  theme,
+                  toggleTheme,
+                }: {
+                  theme: string | null;
+                  // eslint-disable-next-line @typescript-eslint/ban-types
+                  toggleTheme: Function;
+                }): JSX.Element | null => {
+                  if (theme === null) {
+                    return null;
+                  }
+                  return (
+                    <button
+                      type="button"
+                      onClick={(e): void => handleThemeOnClick(e, toggleTheme)}
+                      className="dark-mode-toggle"
+                      onKeyPress={(e): void =>
+                        handleThemeOnClick(e, toggleTheme, true)
+                      }
+                    >
+                      <span className="sr-only">Toggle Dark Mode</span>
+                      <i className="material-icons light-mode-only">
+                        nights_stay
+                      </i>
+                      <i className="material-icons dark-mode-only">wb_sunny</i>
+                    </button>
+                  );
+                }}
+              </ThemeToggler>
             </li>
 
             <li className="nav__tabs">
