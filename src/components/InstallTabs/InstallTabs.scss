@@ -18,13 +18,13 @@
       position: relative;
       list-style: none;
       padding: 10px 12px;
-      background: #515c62;
+      background: var(--black11);
       cursor: pointer;
       width: 100%;
       text-align: center;
 
       &--selected {
-        background: #1f272a;
+        background: var(--black10);
         color: #fff;
         border-radius: 5px 5px 0 0;
       }
@@ -42,7 +42,7 @@
           left: 0;
           right: 0;
           bottom: -5px;
-          background: #1f272a;
+          background: var(--black10);
         }
       }
     }
