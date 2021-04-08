@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React, { MouseEvent } from 'react';
+import React, { MouseEvent, KeyboardEvent } from 'react';
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import logoLight from '../../images/logos/nodejs-logo-light-mode.svg';
 import logoDark from '../../images/logos/nodejs-logo-dark-mode.svg';
@@ -9,12 +9,17 @@ const Header = (): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
 
   const handleThemeOnClick = (
-    e: MouseEvent<HTMLButtonElement, Event>,
+    e: MouseEvent<HTMLButtonElement, Event> | KeyboardEvent<HTMLButtonElement>,
     // eslint-disable-next-line @typescript-eslint/ban-types
-    toggleTheme: Function
+    toggleTheme: Function,
+    isKeyPress = false
   ): void => {
+    if (isKeyPress) {
+      return;
+    }
     const target = e.target as HTMLElement;
-    toggleTheme(target.innerText === 'nights_stay' ? 'dark' : 'light');
+    const toggle = target.innerText.includes('nights_stay') ? 'dark' : 'light';
+    toggleTheme(toggle);
   };
 
   return (
@@ -100,6 +105,9 @@ const Header = (): JSX.Element => {
                       type="button"
                       onClick={(e): void => handleThemeOnClick(e, toggleTheme)}
                       className="dark-mode-toggle"
+                      onKeyPress={(e): void =>
+                        handleThemeOnClick(e, toggleTheme, true)
+                      }
                     >
                       <span className="sr-only">Toggle Dark Mode</span>
                       <i className="material-icons light-mode-only">

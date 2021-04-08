@@ -22,13 +22,13 @@
     "gatsby-plugin-canonical-urls": "^2.2.3",
     "gatsby-plugin-catch-links": "^2.2.1",
     "gatsby-plugin-dark-mode": "^1.1.2",
-    "gatsby-plugin-manifest": "^2.4.0",
+    "gatsby-plugin-manifest": "^2.12.1",
     "gatsby-plugin-mdx": "^1.2.40",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.2.4",
     "gatsby-plugin-sass": "2.3.1",
-    "gatsby-plugin-sharp": "2.6.36",
+    "gatsby-plugin-sharp": "^2.6.36",
     "gatsby-plugin-sitemap": "^2.0.5",
     "gatsby-plugin-typescript": "^2.3.5",
     "gatsby-remark-autolink-headers": "^2.2.1",
@@ -108,6 +108,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/nodejs/nodejs.dev"
+  },
+  "resolutions": {
+    "sharp": "0.27.2"
   },
   "jest": {
     "transform": {
