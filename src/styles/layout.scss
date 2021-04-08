@@ -505,3 +505,23 @@ details {
   flex-direction: column;
   min-height: 100vh;
 }
+
+.blog-grid-container {
+  width: 75%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(388px, 1fr));
+
+  @media only screen and (max-width: 1000px) {
+    width: 80%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+  }
+}
+
+.blog-container {
+  display: flex;
+  justify-content: center;
+}
