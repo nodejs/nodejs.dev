@@ -228,6 +228,62 @@ describe('Article component', () => {
     );
   });
 
+  it('should skip non-scrolled title from saving in history', () => {
+    const {
+      title,
+      description,
+      html,
+      next,
+      previous,
+      authors,
+      relativePath,
+    } = getArticleProps();
+
+    window.history.replaceState = jest.fn();
+
+    // mock IntersectionObserver
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    window.IntersectionObserver = jest.fn(callback => {
+      return {
+        unobserve: jest.fn(),
+        observe: jest.fn(() => {
+          callback(
+            [
+              {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
+                boundingClientRect: {
+                  y: 100, // title still in view, not scrolled
+                },
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
+                target: {
+                  previousElementSibling: null,
+                },
+              },
+            ],
+            (jest.fn() as unknown) as IntersectionObserver
+          );
+        }),
+      };
+    });
+
+    render(
+      <Article
+        title={title}
+        tableOfContents={description}
+        html={html}
+        next={next}
+        previous={previous}
+        authors={authors}
+        relativePath={relativePath}
+      />
+    );
+
+    expect(window.history.replaceState).toHaveBeenCalledTimes(0);
+  });
+
   it('should scroll into last viewed article position', () => {
     const {
       title,
