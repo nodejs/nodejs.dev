@@ -70,6 +70,40 @@ describe('Article component', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('renders correctly in blog mode', () => {
+    const {
+      title,
+      description,
+      html,
+      next,
+      previous,
+      relativePath,
+    } = getArticleProps();
+
+    const authors = [
+      {
+        id: 1,
+        name: 'test-user',
+      },
+    ];
+
+    const { container } = render(
+      <Article
+        title={title}
+        tableOfContents={description}
+        html={html}
+        next={next}
+        previous={previous}
+        authors={authors}
+        relativePath={relativePath}
+        blog
+        date="date string from test"
+      />
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
   it('should delete first article title from history', () => {
     const {
       title,
