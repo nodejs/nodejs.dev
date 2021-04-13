@@ -114,3 +114,33 @@ exports[`Article component renders correctly 1`] = `
   </article>
 </div>
 `;
+
+exports[`Article component renders correctly in blog mode 1`] = `
+<div>
+  <article
+    class="article-reader"
+  >
+    <h1
+      class="article-reader__headline"
+    >
+      test-title
+    </h1>
+    <h5
+      class="list"
+    >
+      date string from test
+       by
+       
+      <span>
+        test-user
+        
+      </span>
+    </h5>
+    <div>
+      <span>
+        Test html
+      </span>
+    </div>
+  </article>
+</div>
+`;
