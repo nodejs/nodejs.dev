@@ -1,13 +1,15 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 // Use in this file CommonJS syntax see https://www.gatsbyjs.org/docs/migrating-from-v1-to-v2/#convert-to-either-pure-commonjs-or-pure-es6
 const path = require('path');
 const createSlug = require('./util-node/createSlug');
+
+const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
 
   return new Promise((resolve, reject) => {
     const docTemplate = path.resolve('./src/templates/learn.tsx');
+    const blogTemplate = path.resolve('./src/templates/blog.tsx');
 
     resolve(
       graphql(
@@ -114,33 +116,38 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         docPages.forEach(page => {
-          createPage({
-            path: `/learn/${page.slug}`,
-            component: docTemplate,
-            context: {
-              slug: page.slug,
-              next: page.next,
-              previous: page.previous,
-              relativePath: page.relativePath,
-              navigationData,
-            },
-          });
-          createRedirect({
-            fromPath: `/${page.slug}`,
-            toPath: `/learn/${page.slug}`,
-            isPermanent: true,
-          });
+          const context = {
+            slug: page.slug,
+            next: page.next,
+            previous: page.previous,
+            relativePath: page.relativePath,
+            navigationData,
+          };
+
+          if (page.slug.includes('/blog/')) {
+            createPage({
+              path: page.slug,
+              component: blogTemplate,
+              context,
+            });
+          } else {
+            createPage({
+              path: `/learn/${page.slug}`,
+              component: docTemplate,
+              context,
+            });
+            createRedirect({
+              fromPath: `/${page.slug}`,
+              toPath: `/learn/${page.slug}`,
+              isPermanent: true,
+            });
+          }
+
           if (page.slug === 'introduction-to-nodejs') {
             createPage({
               path: `/learn`,
               component: docTemplate,
-              context: {
-                slug: page.slug,
-                next: page.next,
-                previous: page.previous,
-                relativePath: page.relativePath,
-                navigationData,
-              },
+              context,
             });
           }
         });
@@ -149,11 +156,35 @@ exports.createPages = ({ graphql, actions }) => {
   });
 };
 
-exports.onCreateNode = ({ node, actions }) => {
+exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === 'MarkdownRemark') {
     const { createNodeField } = actions;
 
-    const slug = createSlug(node.frontmatter.title);
+    const { fileAbsolutePath } = node;
+    let relativePath = '';
+    if (node.parent && getNode(node.parent))
+      relativePath = getNode(node.parent).relativePath;
+
+    let slug;
+
+    if (fileAbsolutePath && fileAbsolutePath.includes('/blog/')) {
+      const match = BLOG_POST_FILENAME_REGEX.exec(relativePath || '');
+      const year = match[1];
+      const month = match[2];
+      const day = match[3];
+      const filename = match[4];
+
+      slug = `/blog/${year}/${month}/${day}/${filename}`;
+
+      const date = new Date(year, month - 1, day);
+
+      createNodeField({
+        node,
+        name: 'date',
+        value: date.toJSON(),
+      });
+    } else slug = createSlug(node.frontmatter.title);
+
     createNodeField({
       node,
       name: 'slug',

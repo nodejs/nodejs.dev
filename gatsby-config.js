@@ -11,8 +11,13 @@ module.exports = {
     siteUrl: config.siteUrl,
     siteUrlNoSlash: config.siteUrlNoSlash,
   },
+  mapping: {
+    'MarkdownRemark.frontmatter.author': `AuthorYaml`,
+  },
   plugins: [
     'gatsby-plugin-catch-links',
+    'gatsby-plugin-dark-mode',
+    'gatsby-transformer-yaml',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-canonical-urls',
@@ -51,6 +56,20 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'blog',
+        path: `${__dirname}/content/blog`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'data',
+        path: `${__dirname}/src/data`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
@@ -63,12 +82,10 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.title,
-        /* eslint-disable @typescript-eslint/camelcase */
         short_name: config.title,
         start_url: '/',
         background_color: config.color,
         theme_color: config.color,
-        /* eslint-disable @typescript-eslint/camelcase */
         display: config.display,
         icon: config.icon,
       },
