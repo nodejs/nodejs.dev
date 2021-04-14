@@ -43,65 +43,59 @@ const Article = ({
   };
 
   React.useEffect((): (() => void) => {
-    let observer: IntersectionObserver;
-
     if (window.history.state && window.history.state.articleScrollTo) {
       window.scrollTo({
         top: window.history.state.articleScrollTo,
       });
     }
 
-    if (element.current) {
-      const handleObserverThrottled = throttle(
-        300,
-        (entries: IntersectionObserverEntry[]) => {
-          entries.forEach((entry): void => {
-            // element is already hidden by the nav
-            if (entry.boundingClientRect.y < NAV_HEIGHT) {
-              if (!entry.target.previousElementSibling) {
-                window.history.replaceState(
-                  {
-                    articleScrollTo: null,
-                  },
-                  '',
-                  null
-                );
-                return;
-              }
-
+    const handleObserverThrottled = throttle(
+      300,
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry): void => {
+          // element is already hidden by the nav
+          if (entry.boundingClientRect.y < NAV_HEIGHT) {
+            if (!entry.target.previousElementSibling) {
               window.history.replaceState(
                 {
-                  articleScrollTo: document.documentElement.scrollTop,
+                  articleScrollTo: null,
                 },
                 '',
                 null
               );
+              return;
             }
-          });
-        }
-      );
 
-      observer = new IntersectionObserver(
-        (entries): void => {
-          handleObserverThrottled(entries);
-        },
-        {
-          threshold: [0.25, 0.5, 0.75],
-          rootMargin: `-${NAV_HEIGHT}px 0px 0px 0px`,
-        }
-      );
-
-      Array.from(element.current.children).forEach((children): void => {
-        observer.observe(children);
-      });
-    }
-
-    return (): void => {
-      if (observer && element.current) {
-        Array.from(element.current.children).forEach((children): void => {
-          observer.unobserve(children);
+            window.history.replaceState(
+              {
+                articleScrollTo: document.documentElement.scrollTop,
+              },
+              '',
+              null
+            );
+          }
         });
       }
+    );
+
+    const observer = new IntersectionObserver(
+      (entries): void => {
+        handleObserverThrottled(entries);
+      },
+      {
+        threshold: [0.25, 0.5, 0.75],
+        rootMargin: `-${NAV_HEIGHT}px 0px 0px 0px`,
+      }
+    );
+
+    Array.from(element.current.children).forEach((children): void => {
+      observer.observe(children);
+    });
+
+    return (): void => {
+      Array.from(element.current.children).forEach((children): void => {
+        observer.unobserve(children);
+      });
     };
   }, []);
 
