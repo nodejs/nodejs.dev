@@ -84,7 +84,7 @@ export const NODE_15_RELEASES: UpcomingRelease[] = [
     releaseType: 'current',
   },
   {
-    alreadyReleased: false,
+    alreadyReleased: true,
     releaseDate: '2021-04-01',
     releaseType: 'maintenance',
   },
