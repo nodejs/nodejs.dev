@@ -94,3 +94,26 @@ export const NODE_15_RELEASES: UpcomingRelease[] = [
     releaseType: 'endoflife',
   },
 ];
+
+export const NODE_16_RELEASES: UpcomingRelease[] = [
+  {
+    alreadyReleased: true,
+    releaseDate: '2020-04-21',
+    releaseType: 'current',
+  },
+  {
+    alreadyReleased: false,
+    releaseDate: '2021-10-26',
+    releaseType: 'lts',
+  },
+  {
+    alreadyReleased: false,
+    releaseDate: '2022-10-18',
+    releaseType: 'maintenance',
+  },
+  {
+    alreadyReleased: false,
+    releaseDate: '2024-04-30',
+    releaseType: 'endoflife',
+  },
+];
