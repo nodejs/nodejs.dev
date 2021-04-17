@@ -25,19 +25,19 @@ const DownloadButton: FC<DownloadButtonProps> = ({
 
 interface DownloadableItemProps {
   item: Downloadable;
-  isExapanded: boolean;
-  setExapandedItem: (itemName: string) => void;
+  isExpanded: boolean;
+  setExpandedItem: (itemName: string) => void;
 }
 
 const DownloadableItem: FC<DownloadableItemProps> = ({
   item,
-  isExapanded,
-  setExapandedItem,
+  isExpanded,
+  setExpandedItem,
 }: DownloadableItemProps) => {
   const onClick = (): void =>
-    isExapanded ? setExapandedItem('') : setExapandedItem(item.name);
+    isExpanded ? setExpandedItem('') : setExpandedItem(item.name);
   const classes = `${CLASS_NAME}__item`.concat(
-    isExapanded ? ` ${CLASS_NAME}__item__expanded` : ''
+    isExpanded ? ` ${CLASS_NAME}__item__expanded` : ''
   );
   return (
     <div
@@ -49,7 +49,7 @@ const DownloadableItem: FC<DownloadableItemProps> = ({
     >
       <div className={`${CLASS_NAME}__item__header`}>
         <div className={`${CLASS_NAME}__item__header__arrow`}>
-          {isExapanded ? (
+          {isExpanded ? (
             <div className={`${CLASS_NAME}__item__header__arrow__down`} />
           ) : (
             <div className={`${CLASS_NAME}__item__header__arrow__right`} />
@@ -58,7 +58,7 @@ const DownloadableItem: FC<DownloadableItemProps> = ({
         {item.name}
       </div>
 
-      {isExapanded && (
+      {isExpanded && (
         <div className={`${CLASS_NAME}__item__body`}>
           {item.links.map(link => (
             <DownloadButton
@@ -85,7 +85,7 @@ const DownloadAdditional: FC<DownloadAdditionalProps> = ({
   selectedTypeRelease,
   handleTypeReleaseToggle,
 }: DownloadAdditionalProps): JSX.Element => {
-  const [expandedItem, setExapandedItem] = useState('');
+  const [expandedItem, setExpandedItem] = useState('');
   return (
     <div className={CLASS_NAME}>
       <div className={`${CLASS_NAME}__header`}>
@@ -102,8 +102,8 @@ const DownloadAdditional: FC<DownloadAdditionalProps> = ({
             <DownloadableItem
               key={item.name}
               item={item}
-              isExapanded={expandedItem === item.name}
-              setExapandedItem={setExapandedItem}
+              isExpanded={expandedItem === item.name}
+              setExpandedItem={setExpandedItem}
             />
           ))}
       </div>
