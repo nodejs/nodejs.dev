@@ -34,13 +34,7 @@ const Article = ({
   blog,
   date,
 }: Props): JSX.Element => {
-  const element = React.useRef<HTMLElement | null>(null);
-
-  const handleRef = (ref?: HTMLElement | null): void => {
-    if (ref) {
-      element.current = ref;
-    }
-  };
+  const element = React.useRef<HTMLDivElement>(null);
 
   React.useEffect((): (() => void) => {
     if (window.history.state && window.history.state.articleScrollTo) {
@@ -88,14 +82,18 @@ const Article = ({
       }
     );
 
-    Array.from(element.current.children).forEach((children): void => {
-      observer.observe(children);
-    });
+    if (element && element.current) {
+      Array.from(element.current.children).forEach((children): void => {
+        observer.observe(children);
+      });
+    }
 
     return (): void => {
-      Array.from(element.current.children).forEach((children): void => {
-        observer.unobserve(children);
-      });
+      if (element && element.current) {
+        Array.from(element.current.children).forEach((children): void => {
+          observer.unobserve(children);
+        });
+      }
     };
   }, []);
 
@@ -109,7 +107,7 @@ const Article = ({
         <TOC heading="TABLE OF CONTENTS" tableOfContents={tableOfContents} />
       )}
       {/* eslint-disable-next-line react/no-danger */}
-      <div ref={handleRef} dangerouslySetInnerHTML={{ __html: html }} />
+      <div ref={element} dangerouslySetInnerHTML={{ __html: html }} />
       {!blog && <AuthorsList authors={authors as string[]} />}
       {!blog && <EditLink relativePath={relativePath} editPath={editPath} />}
       {!blog && <Pagination previous={previous} next={next} />}

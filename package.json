@@ -65,14 +65,15 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "test-ci": "npm run test -- --coverage",
-    "lint": "npm run lint:js && npm run lint:md",
+    "lint": "npm run type-check && npm run lint:js && npm run lint:md",
     "lint:js": "eslint .",
     "lint:md": "remark -qf .",
     "lint:fix": "npm run lint -- --fix",
     "serve": "npm run build && clear && gatsby serve",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o ./public/storybook",
-    "a11y": "./node_modules/pa11y/bin/pa11y.js localhost:8000"
+    "a11y": "./node_modules/pa11y/bin/pa11y.js localhost:8000",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -81,7 +82,9 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
     "@types/classnames": "^2.2.11",
+    "@types/dompurify": "^2.2.1",
     "@types/jest": "^25.2.1",
+    "@types/react-dom": "^17.0.3",
     "@types/react-helmet": "6.0.0",
     "@types/throttle-debounce": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "4.20.0",
