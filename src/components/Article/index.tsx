@@ -37,6 +37,8 @@ const Article = ({
   const element = React.useRef<HTMLDivElement>(null);
 
   React.useEffect((): (() => void) => {
+    const currentElementRef = element;
+
     if (window.history.state && window.history.state.articleScrollTo) {
       window.scrollTo({
         top: window.history.state.articleScrollTo,
@@ -82,17 +84,21 @@ const Article = ({
       }
     );
 
-    if (element && element.current) {
-      Array.from(element.current.children).forEach((children): void => {
-        observer.observe(children);
-      });
+    if (currentElementRef && currentElementRef.current) {
+      Array.from(currentElementRef.current.children).forEach(
+        (children): void => {
+          observer.observe(children);
+        }
+      );
     }
 
     return (): void => {
-      if (element && element.current) {
-        Array.from(element.current.children).forEach((children): void => {
-          observer.unobserve(children);
-        });
+      if (currentElementRef && currentElementRef.current) {
+        Array.from(currentElementRef.current.children).forEach(
+          (children): void => {
+            observer.unobserve(children);
+          }
+        );
       }
     };
   }, []);
