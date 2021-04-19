@@ -9,7 +9,7 @@ export default {
   title: 'NavigationSection',
   component: NavigationSection,
 };
-const noop = (): void => {
+const noop = (): null => {
   return null;
 };
 
