@@ -13,9 +13,20 @@
     color: var(--pink5);
     width: calc(100% - 20px);
     line-height: 30px;
+    padding-bottom: 0.5em;
 
-    &:hover {
-      overflow-x: auto;
+    &::-webkit-scrollbar {
+      height: 0.5em;
+    }
+
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-thumb {
+      overflow: visible;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
     }
 
     > span.install__text__command {
