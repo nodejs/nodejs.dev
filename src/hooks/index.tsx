@@ -1,3 +1,3 @@
 export { useApiData } from './useApiDocs';
 export { useReleaseHistory } from './useReleaseHistory';
-export { useHover } from './useHover';
+export { default as useHover } from './useHover';
