@@ -17,7 +17,7 @@ If we omit the filename, we use it in REPL mode:
 node
 ```
 
-> Note: REPL also known as Read Evaluate Print Loop is a programming language environment(Basically a console window) that takes single expression as user input and returns the result back to the console after execution.
+> Note: REPL also known as Read Evaluate Print Loop is a programming language environment (basically a console window) that takes single expression as user input and returns the result back to the console after execution.
 
 If you try it now in your terminal, this is what happens:
 
