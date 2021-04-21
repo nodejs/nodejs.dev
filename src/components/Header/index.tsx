@@ -18,7 +18,7 @@ const Header = (): JSX.Element => {
       return;
     }
     const target = e.target as HTMLElement;
-    const toggle = target.innerText.includes('nights_stay') ? 'dark' : 'light';
+    const toggle = target.innerHTML.includes('nights_stay') ? 'dark' : 'light';
     toggleTheme(toggle);
   };
 

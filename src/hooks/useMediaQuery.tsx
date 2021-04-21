@@ -1,7 +1,7 @@
 import { useState, useLayoutEffect } from 'react';
 
 // eslint-disable-next-line import/prefer-default-export
-export const useMediaQuery = (query: string): boolean | undefined => {
+export function useMediaQuery(query: string): boolean | undefined {
   const [matches, setMatches] = useState<boolean>();
 
   useLayoutEffect(() => {
@@ -15,4 +15,4 @@ export const useMediaQuery = (query: string): boolean | undefined => {
   }, [query]);
 
   return matches;
-};
+}
