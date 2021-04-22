@@ -10,7 +10,6 @@ describe('CenteredLayout component', () => {
         title="mock-title"
         description="mock-description"
         img="mock-image-url"
-        showFooter
       >
         mock-children
       </CenteredLayout>
