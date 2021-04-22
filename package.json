@@ -80,7 +80,7 @@
     "@storybook/semver": "^7.3.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
-    "@types/classnames": "^2.2.11",
+    "@types/classnames": "^2.3.1",
     "@types/jest": "^25.2.1",
     "@types/react-helmet": "6.1.1",
     "@types/throttle-debounce": "^2.1.0",
