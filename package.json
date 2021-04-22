@@ -46,7 +46,7 @@
     "react-helmet": "^6.0.0",
     "react-icons": "^3.11.0",
     "react-tabs": "3.1.0",
-    "throttle-debounce": "^2.3.0",
+    "throttle-debounce": "^3.0.1",
     "typescript": "3.9.2"
   },
   "keywords": [
