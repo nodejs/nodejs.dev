@@ -8,7 +8,7 @@
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.18",
     "@storybook/addon-actions": "^6.2.2",
-    "@storybook/addon-links": "^6.2.2",
+    "@storybook/addon-links": "^6.2.8",
     "@storybook/addons": "^6.2.8",
     "@storybook/builder-webpack5": "^6.2.7",
     "@storybook/react": "^6.2.2",
