@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 
@@ -29,16 +29,8 @@ const NavigationItem = ({
         'side-nav__item-community--active': isActive,
       });
 
-  const element = useRef<HTMLAnchorElement | null>(null);
-  const handleRef = (ref?: HTMLAnchorElement | null): void => {
-    if (ref && isActive) {
-      element.current = ref;
-    }
-  };
-
   return (
     <Link
-      innerRef={handleRef}
       to={`/learn/${slug}`}
       id={`link-${slug}`}
       onClick={onClick}
