@@ -12,7 +12,7 @@
     "@storybook/addons": "^6.2.8",
     "@storybook/builder-webpack5": "^6.2.7",
     "@storybook/react": "^6.2.2",
-    "@types/react-tabs": "2.3.1",
+    "@types/react-tabs": "2.3.2",
     "babel-preset-react-app": "^10.0.0",
     "classnames": "^2.2.6",
     "color": "^3.1.2",
