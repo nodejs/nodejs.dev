@@ -14,4 +14,10 @@ describe('ImageFigure component', () => {
     );
     expect(container).toMatchSnapshot();
   });
+  it('renders correctly with default target', () => {
+    const { container } = render(
+      <ImageFigure caption="mock-caption" src="mock-src" alt="mock-alternate" />
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

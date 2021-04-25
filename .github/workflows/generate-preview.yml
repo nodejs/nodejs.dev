@@ -23,7 +23,7 @@ jobs:
           export_default_credentials: true
 
       - name: Remove create-preview label
-        uses: actions/github-script@v3
+        uses: actions/github-script@v4.0.1
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
@@ -51,7 +51,7 @@ jobs:
         run: gsutil -m rsync -R public gs://staging.nodejs.dev/${{ github.event.pull_request.number }}/
 
       - name: Comment on PR
-        uses: actions/github-script@v3
+        uses: actions/github-script@v4.0.1
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
