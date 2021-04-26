@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import fetchMock from 'jest-fetch-mock';
 import {
   isClassObj,
@@ -111,10 +111,10 @@ describe('useApiDocs', () => {
 
     it('should retrieve correct APIResponse for specified version', async () => {
       fetchMock.mockResponseOnce(JSON.stringify({ mockedVersions: [] }));
-      const { getByText } = render(<ApiDataRenderer version="mock-version" />);
+      render(<ApiDataRenderer version="mock-version" />);
 
       await waitFor(() => {
-        expect(getByText(/mockedVersions/i)).toBeInTheDocument();
+        expect(screen.getByText(/mockedVersions/i)).toBeInTheDocument();
         expect(fetchMock.mock.calls[0][0]).toBe(
           'https://nodejs.org/dist/mock-version/docs/api/all.json'
         );

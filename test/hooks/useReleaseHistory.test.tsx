@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import fetchMock from 'jest-fetch-mock';
 import {
   getStaticReleaseData,
@@ -28,10 +28,10 @@ describe('useReleaseHistory', () => {
 
     it('should retrieve data from correct endpoint', async () => {
       fetchMock.mockResponseOnce(JSON.stringify({ mockedData: [] }));
-      const { getByText } = render(<ReleaseHistoryRenderer />);
+      render(<ReleaseHistoryRenderer />);
 
       await waitFor(() => {
-        expect(getByText(/mockedData/i)).toBeInTheDocument();
+        expect(screen.getByText(/mockedData/i)).toBeInTheDocument();
         expect(fetchMock.mock.calls[0][0]).toBe(
           'https://nodejs.org/dist/index.json'
         );
