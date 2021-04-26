@@ -70,6 +70,36 @@ describe('Article component', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('renders correctly in case html ref is null', () => {
+    const {
+      title,
+      description,
+      html,
+      next,
+      previous,
+      authors,
+      relativePath,
+    } = getArticleProps();
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    jest.spyOn(React, 'useRef').mockReturnValueOnce(null);
+
+    const { container } = render(
+      <Article
+        title={title}
+        tableOfContents={description}
+        html={html}
+        next={next}
+        previous={previous}
+        authors={authors}
+        relativePath={relativePath}
+      />
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
   it('renders correctly in blog mode', () => {
     const {
       title,
@@ -82,8 +112,9 @@ describe('Article component', () => {
 
     const authors = [
       {
-        id: 1,
+        id: '1',
         name: 'test-user',
+        url: '',
       },
     ];
 

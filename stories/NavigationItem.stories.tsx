@@ -9,7 +9,7 @@ export default {
   title: 'NavigationItem',
   component: NavigationItem,
 };
-const noop = (): void => {
+const noop = (): null => {
   return null;
 };
 
