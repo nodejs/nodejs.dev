@@ -3,6 +3,7 @@
 exports[`Navigation component renders correctly 1`] = `
 <div>
   <nav
+    aria-label=""
     class="side-nav"
   >
     <button

@@ -12,6 +12,8 @@ export function useMediaQuery(query: string): boolean | undefined {
       mq.addListener(handler);
       return (): void => mq.removeListener(handler);
     }
+
+    return undefined;
   }, [query]);
 
   return matches;
