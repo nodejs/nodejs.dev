@@ -3,6 +3,7 @@ import {
   PaginationInfo,
   LearnPageContext,
   NavigationSectionData,
+  BlogPostsList,
 } from '../../src/types';
 
 import { ReleaseData } from '../../src/hooks/useReleaseHistory';
@@ -94,3 +95,25 @@ export const createLearnPageContext = (): LearnPageContext =>
     previous: createPaginationInfo(),
     navigationData: createNavigationSectionData(),
   } as LearnPageContext);
+
+export const createBlogData = (): BlogPostsList =>
+  ({
+    blogs: {
+      edges: [
+        {
+          node: {
+            frontmatter: {
+              title: 'Mock blog title',
+              author: [
+                {
+                  name: 'Mock author name',
+                  url: 'Mock URL',
+                },
+              ],
+            },
+            fields: { date: 'Mock date', slug: 'Mock blog slug' },
+          },
+        },
+      ],
+    },
+  } as BlogPostsList);
