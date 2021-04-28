@@ -1,15 +1,14 @@
 import { graphql } from 'gatsby';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import BlogCard from '../components/BlogCard';
 import Layout from '../components/Layout';
 import { BlogPostsList } from '../types';
 
 type Props = {
   data: BlogPostsList;
-  location: Location;
 };
 
-const AllBlogPosts = ({ data }: Props): ReactNode => (
+const AllBlogPosts = ({ data }: Props): JSX.Element => (
   <Layout title="Blogs at Nodejs">
     <main className="blog-grid-container">
       {!data.blogs.edges.length && <h1>No Blog Posts yet</h1>}
