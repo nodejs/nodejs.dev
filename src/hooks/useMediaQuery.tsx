@@ -9,8 +9,8 @@ export function useMediaQuery(query: string): boolean | undefined {
       const mq = window.matchMedia(query);
       setMatches(mq.matches);
       const handler = (): void => setMatches(mq.matches);
-      mq.addListener(handler);
-      return (): void => mq.removeListener(handler);
+      mq.addEventListener('change', handler);
+      return (): void => mq.removeEventListener('change', handler);
     }
 
     return undefined;
