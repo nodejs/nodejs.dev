@@ -4,6 +4,8 @@ import {
   LearnPageContext,
   NavigationSectionData,
   BlogPostsList,
+  BlogPageData,
+  BlogPageContext,
 } from '../../src/types';
 
 import { ReleaseData } from '../../src/hooks/useReleaseHistory';
@@ -96,6 +98,14 @@ export const createLearnPageContext = (): LearnPageContext =>
     navigationData: createNavigationSectionData(),
   } as LearnPageContext);
 
+export const createBlogPageContext = (): BlogPageContext => ({
+  slug: 'test-slug',
+  relativePath: 'test-path',
+  next: createPaginationInfo(),
+  previous: createPaginationInfo(),
+  navigationData: createNavigationSectionData(),
+});
+
 export const createBlogData = (): BlogPostsList =>
   ({
     blogs: {
@@ -117,3 +127,40 @@ export const createBlogData = (): BlogPostsList =>
       ],
     },
   } as BlogPostsList);
+
+export const createBlogPageData = (): BlogPageData => ({
+  blog: {
+    html: 'html-mock',
+    excerpt: 'excerpt-mock',
+    frontmatter: {
+      title: 't,itle-mock',
+      author: [
+        {
+          id: 'id-mock',
+          name: 'name-mock',
+          url: 'url-mock',
+        },
+      ],
+    },
+    fields: { slug: 'slug-mock', date: 'date-mock' },
+  },
+  recent: {
+    edges: [
+      {
+        node: {
+          frontmatter: {
+            title: 'title-mock',
+            author: [
+              {
+                id: 'id-mock',
+                name: 'name-mock',
+                url: 'url-mock',
+              },
+            ],
+          },
+          fields: { date: 'date-mock', slug: 'slug-mock' },
+        },
+      },
+    ],
+  },
+});
