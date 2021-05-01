@@ -19,7 +19,7 @@
     "color-string": "^1.5.3",
     "dompurify": "2.2.7",
     "dotenv": "^8.2.0",
-    "gatsby": "^3.3.1",
+    "gatsby": "^3.4.0",
     "gatsby-plugin-canonical-urls": "^3.3.0",
     "gatsby-plugin-catch-links": "^3.3.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
