@@ -95,7 +95,7 @@ const doSomething1 = () => {
 }
 ```
 
-To be able to handle errors locally without handling them in the function we call, we can break the chain you can create a function in each `then()` and process the exception:
+To be able to handle errors locally without handling them in the function we call, we can break the chain. You can create a function in each `then()` and process the exception:
 
 ```js
 doSomething1()
