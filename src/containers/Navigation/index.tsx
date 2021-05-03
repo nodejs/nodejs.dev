@@ -87,16 +87,17 @@ const Navigation = ({
         Menu
       </button>
       {Object.keys(sections).map(
-        (sectionKey: string): JSX.Element => (
-          <NavigationSection
-            key={sectionKey}
-            title={sectionKey}
-            section={sections[sectionKey]}
-            currentSlug={currentSlug}
-            onItemClick={onItemClick}
-            readSections={readSections}
-          />
-        )
+        (sectionKey: string): false | JSX.Element =>
+          sectionKey !== 'null' && (
+            <NavigationSection
+              key={sectionKey}
+              title={sectionKey}
+              section={sections[sectionKey]}
+              currentSlug={currentSlug}
+              onItemClick={onItemClick}
+              readSections={readSections}
+            />
+          )
       )}
     </nav>
   );

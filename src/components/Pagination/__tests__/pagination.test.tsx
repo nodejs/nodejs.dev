@@ -26,7 +26,7 @@ describe('Pagination component', () => {
 
   it('only renders links to pages that has a title', () => {
     const paginationInfo = createPaginationInfo();
-    const nextPaginationInfo = { slug: 'test-slug', title: null };
+    const nextPaginationInfo = { slug: 'test-slug', title: '' };
     const { container } = render(
       <Pagination next={nextPaginationInfo} previous={paginationInfo} />
     );

@@ -44,7 +44,7 @@ Okay, so we have some TypeScript code. Now how do we run it?
 First thing to do is to install TypeScript in our project:
 
 ```bash
-npm install typescript
+npm i -D typescript
 ```
 
 Now we can compile it to JavaScript using `tsc` command in the terminal. Let's do it!

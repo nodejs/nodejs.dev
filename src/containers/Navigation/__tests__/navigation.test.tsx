@@ -23,6 +23,8 @@ describe('Navigation component', (): void => {
             },
           ],
         }}
+        previousSlug=""
+        label=""
       />
     );
     expect(container).toMatchSnapshot();

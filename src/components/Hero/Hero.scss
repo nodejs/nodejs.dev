@@ -75,15 +75,15 @@
     border: var(--brand7) var(--space-02) solid;
   }
 
-  .dark-mode &.inverse {
+  .dark &.inverse {
     color: var(--black0);
   }
 
-  .light-mode &.inverse {
+  .light &.inverse {
     color: var(--brand6);
   }
 
-  .light-mode &.inverse:hover {
+  .light &.inverse:hover {
     color: var(--black0);
   }
 }

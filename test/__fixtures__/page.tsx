@@ -3,17 +3,20 @@ import {
   PaginationInfo,
   LearnPageContext,
   NavigationSectionData,
+  BlogPostsList,
+  BlogPageData,
+  BlogPageContext,
 } from '../../src/types';
 
 import { ReleaseData } from '../../src/hooks/useReleaseHistory';
 
-export const createPaginationInfo = () =>
+export const createPaginationInfo = (): PaginationInfo =>
   ({
     slug: 'test-slug',
     title: 'test-title',
   } as PaginationInfo);
 
-export const createNavigationSectionData = () =>
+export const createNavigationSectionData = (): NavigationSectionData =>
   ({
     'test-section': [
       {
@@ -41,7 +44,7 @@ export const createNavigationSectionData = () =>
     ],
   } as NavigationSectionData);
 
-export const createLearnPageData = () =>
+export const createLearnPageData = (): LearnPageData =>
   ({
     doc: {
       id: 'test-id',
@@ -56,7 +59,7 @@ export const createLearnPageData = () =>
     },
   } as LearnPageData);
 
-export const createReleaseData = () =>
+export const createReleaseData = (): ReleaseData[] =>
   [
     {
       version: 'mock-version-1',
@@ -86,7 +89,7 @@ export const createReleaseData = () =>
     },
   ] as ReleaseData[];
 
-export const createLearnPageContext = () =>
+export const createLearnPageContext = (): LearnPageContext =>
   ({
     slug: 'test-slug',
     relativePath: 'test-path',
@@ -94,3 +97,70 @@ export const createLearnPageContext = () =>
     previous: createPaginationInfo(),
     navigationData: createNavigationSectionData(),
   } as LearnPageContext);
+
+export const createBlogPageContext = (): BlogPageContext => ({
+  slug: 'test-slug',
+  relativePath: 'test-path',
+  next: createPaginationInfo(),
+  previous: createPaginationInfo(),
+  navigationData: createNavigationSectionData(),
+});
+
+export const createBlogData = (): BlogPostsList =>
+  ({
+    blogs: {
+      edges: [
+        {
+          node: {
+            frontmatter: {
+              title: 'Mock blog title',
+              author: [
+                {
+                  name: 'Mock author name',
+                  url: 'Mock URL',
+                },
+              ],
+            },
+            fields: { date: 'Mock date', slug: 'Mock blog slug' },
+          },
+        },
+      ],
+    },
+  } as BlogPostsList);
+
+export const createBlogPageData = (): BlogPageData => ({
+  blog: {
+    html: 'html-mock',
+    excerpt: 'excerpt-mock',
+    frontmatter: {
+      title: 't,itle-mock',
+      author: [
+        {
+          id: 'id-mock',
+          name: 'name-mock',
+          url: 'url-mock',
+        },
+      ],
+    },
+    fields: { slug: 'slug-mock', date: 'date-mock' },
+  },
+  recent: {
+    edges: [
+      {
+        node: {
+          frontmatter: {
+            title: 'title-mock',
+            author: [
+              {
+                id: 'id-mock',
+                name: 'name-mock',
+                url: 'url-mock',
+              },
+            ],
+          },
+          fields: { date: 'date-mock', slug: 'slug-mock' },
+        },
+      },
+    ],
+  },
+});
