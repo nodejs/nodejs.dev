@@ -15,7 +15,7 @@ interface Props {
 const LearnLayout = ({
   data,
   pageContext: { next, previous, relativePath },
-}: Props): React.ReactNode => {
+}: Props): JSX.Element => {
   const {
     blog: {
       frontmatter: { title, author },

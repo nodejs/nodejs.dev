@@ -1,3 +1,5 @@
+// TODO include into coverage before page release
+/* istanbul ignore file */
 import React, { useState, useRef } from 'react';
 import { graphql } from 'gatsby';
 import { Page, CommunityNavigationSection } from '../types';
