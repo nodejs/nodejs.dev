@@ -3,6 +3,7 @@ title: An introduction to the npm package manager
 description: 'A quick guide to npm, the powerful package manager key to the success of Node.js. In January 2017 over 350000 packages were reported being listed in the npm registry, making it the biggest single language code repository on Earth, and you can be sure there is a package for (almost!) everything.'
 authors: flaviocopes, MylesBorins, LaRuaNa, jgb-solutions, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## Introduction to npm
