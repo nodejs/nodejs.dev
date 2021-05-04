@@ -3,6 +3,7 @@ title: Node.js, accept arguments from the command line
 description: 'How to accept arguments in a Node.js program passed from the command line'
 authors: flaviocopes, ZYSzys, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 You can pass any number of arguments when invoking a Node.js application using

@@ -50,10 +50,11 @@ export interface NavigationSectionItem {
   slug: string;
   title: string;
   section: string;
+  category: string;
 }
 
 export interface NavigationSectionData {
-  [index: string]: NavigationSectionItem[];
+  [index: string]: { category: string; data: NavigationSectionItem[] };
 }
 
 /**

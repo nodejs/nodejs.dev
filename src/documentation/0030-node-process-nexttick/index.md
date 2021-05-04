@@ -3,6 +3,7 @@ title: 'Understanding process.nextTick()'
 description: 'The Node.js process.nextTick function interacts with the event loop in a special way'
 authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 As you try to understand the Node.js event loop, one important part of it is `process.nextTick()`.

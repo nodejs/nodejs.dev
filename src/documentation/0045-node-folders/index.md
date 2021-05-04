@@ -3,6 +3,7 @@ title: 'Working with folders in Node.js'
 description: 'How to interact with folders using Node.js'
 authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 The Node.js `fs` core module provides many handy methods you can use to work with folders.
