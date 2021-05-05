@@ -813,51 +813,57 @@ exports[`Download page renders correctly 1`] = `
       class="footer"
     >
       <ul
-        class="footer__left"
+        class="footer-links footer-links--left"
       >
-        <li>
+        <li
+          class="footer-links__item footer-links-item--left"
+        >
           <a
-            class="footer__link"
             href="https://nodejs.org/en/about/trademark/"
           >
             Trademark Policy
           </a>
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--left"
+        >
           <a
-            class="footer__link"
             href="https://nodejs.org/en/about/privacy/"
           >
             Privacy Policy
           </a>
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--left"
+        >
           <a
-            class="footer__link"
             href="https://github.com/openjs-foundation/cross-project-council/blob/master/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
           >
             Code of Conduct
           </a>
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--left"
+        >
           <a
-            class="footer__link"
             href="https://nodejs.org/en/security/"
           >
             Security Reporting
           </a>
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--left"
+        >
           <a
-            class="footer__link"
             href="https://nodejs.org/en/about/"
           >
             About
           </a>
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--left"
+        >
           <a
-            class="footer__link"
             href="https://nodejs.org/en/blog/"
           >
             Blog
@@ -865,14 +871,17 @@ exports[`Download page renders correctly 1`] = `
         </li>
       </ul>
       <ul
-        class="footer__right"
+        class="footer-links footer-links--right"
       >
-        <li>
+        <li
+          class="footer-links__item footer-links-item--right"
+        >
           © OpenJS Foundation
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--right"
+        >
           <a
-            aria-label="Node.js Github Page Link"
             href="https://github.com/nodejs/node"
             rel="noopener noreferrer"
             target="_blank"
@@ -894,9 +903,10 @@ exports[`Download page renders correctly 1`] = `
             </svg>
           </a>
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--right"
+        >
           <a
-            aria-label="Node.js Twitter Link"
             href="https://twitter.com/nodejs"
             rel="noopener noreferrer"
             target="_blank"
@@ -914,9 +924,10 @@ exports[`Download page renders correctly 1`] = `
             </svg>
           </a>
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--right"
+        >
           <a
-            aria-label="Node.js Slack Link"
             href="https://slack.openjsf.org"
             rel="noopener noreferrer"
             target="_blank"
@@ -1669,51 +1680,57 @@ exports[`Download page should handle LTS to Current switch 1`] = `
       class="footer"
     >
       <ul
-        class="footer__left"
+        class="footer-links footer-links--left"
       >
-        <li>
+        <li
+          class="footer-links__item footer-links-item--left"
+        >
           <a
-            class="footer__link"
             href="https://nodejs.org/en/about/trademark/"
           >
             Trademark Policy
           </a>
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--left"
+        >
           <a
-            class="footer__link"
             href="https://nodejs.org/en/about/privacy/"
           >
             Privacy Policy
           </a>
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--left"
+        >
           <a
-            class="footer__link"
             href="https://github.com/openjs-foundation/cross-project-council/blob/master/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
           >
             Code of Conduct
           </a>
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--left"
+        >
           <a
-            class="footer__link"
             href="https://nodejs.org/en/security/"
           >
             Security Reporting
           </a>
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--left"
+        >
           <a
-            class="footer__link"
             href="https://nodejs.org/en/about/"
           >
             About
           </a>
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--left"
+        >
           <a
-            class="footer__link"
             href="https://nodejs.org/en/blog/"
           >
             Blog
@@ -1721,14 +1738,17 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </li>
       </ul>
       <ul
-        class="footer__right"
+        class="footer-links footer-links--right"
       >
-        <li>
+        <li
+          class="footer-links__item footer-links-item--right"
+        >
           © OpenJS Foundation
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--right"
+        >
           <a
-            aria-label="Node.js Github Page Link"
             href="https://github.com/nodejs/node"
             rel="noopener noreferrer"
             target="_blank"
@@ -1750,9 +1770,10 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             </svg>
           </a>
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--right"
+        >
           <a
-            aria-label="Node.js Twitter Link"
             href="https://twitter.com/nodejs"
             rel="noopener noreferrer"
             target="_blank"
@@ -1770,9 +1791,10 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             </svg>
           </a>
         </li>
-        <li>
+        <li
+          class="footer-links__item footer-links-item--right"
+        >
           <a
-            aria-label="Node.js Slack Link"
             href="https://slack.openjsf.org"
             rel="noopener noreferrer"
             target="_blank"

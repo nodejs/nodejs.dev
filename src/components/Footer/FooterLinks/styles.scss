@@ -1,0 +1,21 @@
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  height: 100%;
+}
+
+.footer-links__item {
+  font-size: 12px;
+  margin-right: 32px;
+  height: 24px;
+  a {
+    text-decoration: none;
+    color: var(--color-text-primary);
+
+    &:hover {
+      color: var(--color-brand-primary);
+    }
+  }
+}
