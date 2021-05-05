@@ -4,10 +4,34 @@ import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import logoLight from '../../images/logos/nodejs-logo-light-mode.svg';
 import logoDark from '../../images/logos/nodejs-logo-dark-mode.svg';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
+import LinkHeader from './LinkHeader'
+import AnchorHeader from './AnchorHeader'
+import { headersLinks } from './utils/links'
+import { HeaderType } from './utils/types'
 
 const Header = (): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
-
+  const generateHeaderLinks = () => {
+    return headersLinks.map((header, idx) => {
+      return header.type === HeaderType.Link ? (
+        <LinkHeader
+          to={header.to}
+          classes={header.classes}
+          title={header.title}
+          activeClassName={header.activeClassName}
+          partiallyActive={header.partiallyActive}
+          key={idx}
+        />
+      ) : (
+        <AnchorHeader
+          href={header.href}
+          classes={header.classes}
+          title={header.checkMobile ? (isMobile? header.mobileTitle : header.title) : header.title}
+          key={idx}
+        />
+      );
+    });
+  }
   const handleThemeOnClick = (
     e: MouseEvent<HTMLButtonElement, Event> | KeyboardEvent<HTMLButtonElement>,
     // eslint-disable-next-line @typescript-eslint/ban-types
@@ -42,46 +66,7 @@ const Header = (): JSX.Element => {
           </Link>
 
           <ul className="nav__tabs__container">
-            <li className="nav__tabs">
-              <Link
-                to="/learn"
-                className="activeStyleTab"
-                activeClassName="active"
-                partiallyActive
-              >
-                Learn
-              </Link>
-            </li>
-            <li className="nav__tabs">
-              <a
-                className="activeStyleTab"
-                target="_blank"
-                href="https://nodejs.org/en/docs/"
-                rel="noopener noreferrer"
-              >
-                {isMobile ? 'Docs' : 'Documentation'}
-              </a>
-            </li>
-            <li className="nav__tabs">
-              <Link
-                to="/download"
-                className="activeStyleTab"
-                activeClassName="active"
-                partiallyActive
-              >
-                Download
-              </Link>
-            </li>
-            <li className="nav__tabs">
-              <a
-                href="https://nodejs.org/en/get-involved/"
-                className="activeStyleTab"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Community
-              </a>
-            </li>
+            {generateHeaderLinks()}
           </ul>
         </div>
 
