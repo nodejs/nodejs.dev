@@ -18,4 +18,5 @@ nodeFeature2: Node.js is open source and actively maintained by contributors all
 nodeFeature3: Node.js has been adapted to work in a wide variety of places
 nodeFeatureAltText: node feature
 learnLinkText: Get Started
+category: home
 ---

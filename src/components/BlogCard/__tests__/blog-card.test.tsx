@@ -12,7 +12,7 @@ describe('Blog Card component', () => {
           slug: '/blog/2019/07/11/sample-blog',
         },
         frontmatter: {
-          author: [{ name: 'Batman', url: 'https://bat.man' }],
+          author: [{ name: 'Batman', url: 'https://bat.man', id: 'batman' }],
           title: 'Sample Test Blog',
         },
       },

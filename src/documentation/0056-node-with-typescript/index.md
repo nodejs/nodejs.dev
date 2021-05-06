@@ -3,6 +3,7 @@ title: 'Node.js with TypeScript'
 description: 'Find out why TypeScript is an awesome tool and learn to use it by yourself.'
 authors: sbielenica
 section: Getting Started
+category: learn
 ---
 
 ## What is TypeScript

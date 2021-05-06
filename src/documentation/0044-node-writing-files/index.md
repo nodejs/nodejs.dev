@@ -3,6 +3,7 @@ title: 'Writing files with Node.js'
 description: 'How to write files using Node.js'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 The easiest way to write to files in Node.js is to use the `fs.writeFile()` API.

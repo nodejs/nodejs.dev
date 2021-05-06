@@ -3,6 +3,9 @@ import {
   PaginationInfo,
   LearnPageContext,
   NavigationSectionData,
+  BlogPostsList,
+  BlogPageData,
+  BlogPageContext,
 } from '../../src/types';
 
 import { ReleaseData } from '../../src/hooks/useReleaseHistory';
@@ -15,30 +18,40 @@ export const createPaginationInfo = (): PaginationInfo =>
 
 export const createNavigationSectionData = (): NavigationSectionData =>
   ({
-    'test-section': [
-      {
-        slug: 'test-slug-1',
-        title: 'test-title-1',
-        section: 'test-section-1',
-      },
-      {
-        title: 'test-title-2',
-        slug: 'test-slug-2',
-        section: 'test-section-2',
-      },
-    ],
-    'test-section2': [
-      {
-        slug: 'test-slug-3',
-        title: 'test-title-3',
-        section: 'test-section-3',
-      },
-      {
-        title: 'test-title-4',
-        slug: 'test-slug-4',
-        section: 'test-section-4',
-      },
-    ],
+    'test-section': {
+      data: [
+        {
+          slug: 'test-slug-1',
+          title: 'test-title-1',
+          section: 'test-section-1',
+          category: 'test1',
+        },
+        {
+          title: 'test-title-2',
+          slug: 'test-slug-2',
+          section: 'test-section-2',
+          category: 'test1',
+        },
+      ],
+      category: 'test1',
+    },
+    'test-section2': {
+      data: [
+        {
+          slug: 'test-slug-3',
+          title: 'test-title-3',
+          section: 'test-section-3',
+          category: 'test2',
+        },
+        {
+          title: 'test-title-4',
+          slug: 'test-slug-4',
+          section: 'test-section-4',
+          category: 'test2',
+        },
+      ],
+      category: 'test2',
+    },
   } as NavigationSectionData);
 
 export const createLearnPageData = (): LearnPageData =>
@@ -94,3 +107,70 @@ export const createLearnPageContext = (): LearnPageContext =>
     previous: createPaginationInfo(),
     navigationData: createNavigationSectionData(),
   } as LearnPageContext);
+
+export const createBlogPageContext = (): BlogPageContext => ({
+  slug: 'test-slug',
+  relativePath: 'test-path',
+  next: createPaginationInfo(),
+  previous: createPaginationInfo(),
+  navigationData: createNavigationSectionData(),
+});
+
+export const createBlogData = (): BlogPostsList =>
+  ({
+    blogs: {
+      edges: [
+        {
+          node: {
+            frontmatter: {
+              title: 'Mock blog title',
+              author: [
+                {
+                  name: 'Mock author name',
+                  url: 'Mock URL',
+                },
+              ],
+            },
+            fields: { date: 'Mock date', slug: 'Mock blog slug' },
+          },
+        },
+      ],
+    },
+  } as BlogPostsList);
+
+export const createBlogPageData = (): BlogPageData => ({
+  blog: {
+    html: 'html-mock',
+    excerpt: 'excerpt-mock',
+    frontmatter: {
+      title: 't,itle-mock',
+      author: [
+        {
+          id: 'id-mock',
+          name: 'name-mock',
+          url: 'url-mock',
+        },
+      ],
+    },
+    fields: { slug: 'slug-mock', date: 'date-mock' },
+  },
+  recent: {
+    edges: [
+      {
+        node: {
+          frontmatter: {
+            title: 'title-mock',
+            author: [
+              {
+                id: 'id-mock',
+                name: 'name-mock',
+                url: 'url-mock',
+              },
+            ],
+          },
+          fields: { date: 'date-mock', slug: 'slug-mock' },
+        },
+      },
+    ],
+  },
+});
