@@ -1,5 +1,3 @@
-// TODO include into coverage before page release
-/* istanbul ignore file */
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Page } from '../types';
@@ -9,7 +7,7 @@ import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
 import '../styles/community.scss';
 
-export default function CommunityPage({ data }: Page): JSX.Element {
+export default function PrivacyPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
   const { html, tableOfContents } = data.page;
   const { authors } = data.page.fields;
