@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 
 import './footer.scss';
@@ -21,12 +22,9 @@ function Footer(): JSX.Element {
           </a>
         </li>
         <li>
-          <a
-            className="footer__link"
-            href="https://nodejs.org/en/about/privacy/"
-          >
+          <Link className="footer__link" to="/privacy">
             Privacy Policy
-          </a>
+          </Link>
         </li>
         <li>
           <a
