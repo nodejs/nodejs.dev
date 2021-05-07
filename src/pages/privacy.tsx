@@ -5,7 +5,6 @@ import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
-import '../styles/community.scss';
 
 export default function PrivacyPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
