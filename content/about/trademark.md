@@ -1,6 +1,6 @@
 ---
 title: Trademark Policy
-description: "Node.js has one of the largest, most vibrant and innovative open source communities in the world. Node.js is built, used, and maintained by the community. We believe the community to be at the core of Node.js popularity. Amazing people from every part of the world, with a common interest, collaborate and shape this community."
+description: "Trademark Policy | Node.js"
 authors: palakjain21
 category: others
 ---

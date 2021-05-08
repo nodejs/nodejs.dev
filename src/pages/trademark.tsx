@@ -1,5 +1,3 @@
-// TODO include into coverage before page release
-/* istanbul ignore file */
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Page } from '../types';
