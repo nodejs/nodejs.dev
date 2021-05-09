@@ -2,7 +2,7 @@
 title: Trademark Policy
 description: "Trademark Policy | Node.js"
 authors: palakjain21
-category: others
+category: trademark
 ---
 
 The Node.js trademarks, service marks, and graphics marks are symbols of the
