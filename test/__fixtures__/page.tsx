@@ -6,6 +6,7 @@ import {
   BlogPostsList,
   BlogPageData,
   BlogPageContext,
+  Page,
 } from '../../src/types';
 
 import { ReleaseData } from '../../src/hooks/useReleaseHistory';
@@ -172,5 +173,20 @@ export const createBlogPageData = (): BlogPageData => ({
         },
       },
     ],
+  },
+});
+export const createPrivacyData = (): Page => ({
+  data: {
+    page: {
+      fields: {
+        authors: ['Author'],
+      },
+      frontmatter: {
+        description: 'Description',
+        title: 'Title',
+      },
+      html: '<div>Sample</div>',
+      tableOfContents: 'Table of Contents',
+    },
   },
 });

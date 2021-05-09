@@ -1,7 +1,8 @@
 ---
 title: Privacy Policy
-description: ""
+description: "Privacy Policy | Node.js"
 authors: poorvi-vaish
+category: privacy
 ---
 
 Effective Date: November 21, 2019
