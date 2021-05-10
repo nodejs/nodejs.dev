@@ -180,11 +180,8 @@
       max-height: calc(100vh - var(--nav-height));
       overflow: visible;
       overflow-y: scroll;
-      position: static;
-
-      + .article-reader {
-        display: none;
-      }
+      position: fixed;
+      top: var(--nav-height);
     }
 
     > :last-child {
@@ -192,7 +189,7 @@
     }
 
     &::before {
-      height: 50px;
+      height: 60px;
       margin-bottom: -92px;
       top: var(--nav-height);
       width: 110%;
