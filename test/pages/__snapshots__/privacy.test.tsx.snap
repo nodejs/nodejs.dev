@@ -150,7 +150,7 @@ exports[`Privacy Page renders correctly 1`] = `
         <h1
           class="article-reader__headline"
         >
-          Mock Title
+          Title
         </h1>
         <details
           class="toc"
@@ -161,7 +161,7 @@ exports[`Privacy Page renders correctly 1`] = `
             </h6>
           </summary>
           <div>
-            Table of Content
+            Table of Contents
           </div>
         </details>
         <div>
@@ -178,16 +178,16 @@ exports[`Privacy Page renders correctly 1`] = `
           <li>
             <a
               class="link"
-              href="https://github.com/batman"
+              href="https://github.com/Author"
               rel="noopener noreferrer"
               style="margin-left: 0px;"
               target="_blank"
-              title="batman"
+              title="Author"
             >
               <img
-                alt="batman"
+                alt="Author"
                 class="img"
-                src="https://github.com/batman.png?size=60"
+                src="https://github.com/Author.png?size=60"
               />
             </a>
           </li>
