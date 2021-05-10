@@ -154,7 +154,7 @@
 }
 
 .side-nav.side-nav--open .side-nav__open {
-  top: calc(var(--nav-height) + 1.8rem);
+  top: 1.8rem;
   margin-bottom: -35px;
   margin-top: 16px;
   color: transparent;
@@ -176,17 +176,8 @@
     overflow: hidden;
     max-width: unset;
 
-    &::before {
-      width: 110%;
-      content: "";
-      z-index: 100;
-      position: fixed;
-      background-color: var(--color-fill-side-nav);
-      height: var(--nav-height);
-    }
-
     &.side-nav--open {
-      max-height: 100vh;
+      max-height: calc(100vh - var(--nav-height));
       overflow: visible;
       overflow-y: scroll;
       position: static;
@@ -201,9 +192,14 @@
     }
 
     &::before {
-      height: 92px;
+      height: 50px;
       margin-bottom: -92px;
       top: var(--nav-height);
+      width: 110%;
+      content: "";
+      z-index: 100;
+      position: fixed;
+      background-color: var(--color-fill-side-nav);
     }
   }
 
