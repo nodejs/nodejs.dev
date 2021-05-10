@@ -3,6 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import DownloadPage from '../../src/pages/download';
 import { createReleaseData } from '../__fixtures__/page';
 import * as useReleaseHistory from '../../src/hooks/useReleaseHistory';
+import '../__mocks__/intersectionObserverMock';
 
 const mockReleaseData = createReleaseData();
 
