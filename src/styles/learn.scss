@@ -178,11 +178,17 @@
 
     &::before {
       width: 110%;
+      content: "";
+      z-index: 100;
+      position: fixed;
+      background-color: var(--color-fill-side-nav);
+      height: var(--nav-height);
     }
 
     &.side-nav--open {
-      max-height: 100%;
+      max-height: 100vh;
       overflow: visible;
+      overflow-y: scroll;
       position: static;
 
       + .article-reader {
@@ -209,6 +215,7 @@
     top: 24px;
     height: 0;
     overflow: hidden;
+
     .side-nav--open & {
       overflow: visible;
       height: auto;
