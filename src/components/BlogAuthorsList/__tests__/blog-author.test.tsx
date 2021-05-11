@@ -6,7 +6,7 @@ import { BlogPostAuthor } from '../../../types';
 describe('Blog Author component', () => {
   it('renders correctly', () => {
     const authors: BlogPostAuthor[] = [
-      { name: 'Bruce Wayne', url: 'https://bat.man' },
+      { name: 'Bruce Wayne', url: 'https://bat.man', id: 'batman' },
     ];
     const { container } = render(<BlogAuthor authors={authors} />);
     expect(container).toMatchSnapshot();

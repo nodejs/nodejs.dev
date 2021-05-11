@@ -3,6 +3,7 @@ title: A brief history of Node.js
 description: 'A look back on the history of Node.js from 2009 to today'
 authors: flaviocopes, onel0p3z, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, kevjin, keywordnew, karlhorky, bdharrington7, MalachiCunliffe
 section: Quick Start
+category: learn
 ---
 
 Believe it or not, Node.js is only eleven years old.

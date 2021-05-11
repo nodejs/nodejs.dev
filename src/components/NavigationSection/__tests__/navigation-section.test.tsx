@@ -16,6 +16,7 @@ describe('NavigationSection component', (): void => {
             slug: 'intro',
             title: 'Section 1',
             section: '...',
+            category: 'null',
           },
         ]}
         currentSlug=""
