@@ -22,6 +22,7 @@ export const root = (): JSX.Element => (
         slug: 'intro',
         title: 'Section 1',
         section: '...',
+        category: 'category1',
       },
     ]}
     currentSlug=""

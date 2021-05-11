@@ -2,6 +2,7 @@
 title: Node.js Community
 description: "Node.js has one of the largest, most vibrant and innovative open source communities in the world. Node.js is built, used, and maintained by the community. We believe the community to be at the core of Node.js popularity. Amazing people from every part of the world, with a common interest, collaborate and shape this community."
 authors: ahmadawais, maedahbatool, saqibameen, msaaddev
+category: community
 ---
 
 ## Introduction
