@@ -8,9 +8,7 @@ const CONTRIBUTORS_API_URI =
  * Returns page values for "next" and "last" API URLs
  * @param linkHeader
  */
-function linkParser(
-  linkHeader: string
-): {
+function linkParser(linkHeader: string): {
   [keu: string]: {
     url: string;
     page: number;
@@ -82,9 +80,8 @@ async function fetchRandomContributor() {
   const ONE_MONTH_MS = 2592000000;
 
   if (window.localStorage) {
-    const maxContributorsStored = window.localStorage.getItem(
-      'max_contributors'
-    );
+    const maxContributorsStored =
+      window.localStorage.getItem('max_contributors');
     const fetchDateStored = window.localStorage.getItem('fetch_date');
 
     maxContributors = maxContributorsStored
