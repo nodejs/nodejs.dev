@@ -55,7 +55,7 @@ describe('useOnScreen', () => {
                 isIntersecting: true,
               },
             ],
-            (jest.fn() as unknown) as IntersectionObserver
+            jest.fn() as unknown as IntersectionObserver
           );
         },
       };
@@ -85,7 +85,7 @@ describe('useOnScreen', () => {
                 isIntersecting: true,
               },
             ],
-            (jest.fn() as unknown) as IntersectionObserver
+            jest.fn() as unknown as IntersectionObserver
           );
         },
       };
