@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LearnLayout Template renders correctly 1`] = `
+exports[`About page renders correctly 1`] = `
 <div>
   <div
     class="layout-container"
@@ -33,55 +33,55 @@ exports[`LearnLayout Template renders correctly 1`] = `
               />
             </div>
           </a>
+          <ul
+            class="nav__tabs__container"
+          >
+            <li
+              class="nav__tabs"
+            >
+              <a
+                class="activeStyleTab"
+                href="/learn"
+              >
+                Learn
+              </a>
+            </li>
+            <li
+              class="nav__tabs"
+            >
+              <a
+                class="activeStyleTab"
+                href="https://nodejs.org/en/docs/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Documentation
+              </a>
+            </li>
+            <li
+              class="nav__tabs"
+            >
+              <a
+                class="activeStyleTab"
+                href="/download"
+              >
+                Download
+              </a>
+            </li>
+            <li
+              class="nav__tabs"
+            >
+              <a
+                class="activeStyleTab"
+                href="https://nodejs.org/en/get-involved/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Community
+              </a>
+            </li>
+          </ul>
         </div>
-        <ul
-          class="nav__tabs__container"
-        >
-          <li
-            class="nav__tabs"
-          >
-            <a
-              class="activeStyleTab"
-              href="/learn"
-            >
-              Learn
-            </a>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <a
-              class="activeStyleTab"
-              href="https://nodejs.org/en/docs/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Documentation
-            </a>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <a
-              class="activeStyleTab"
-              href="/download"
-            >
-              Download
-            </a>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <a
-              class="activeStyleTab"
-              href="https://nodejs.org/en/get-involved/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </li>
-        </ul>
         <div
           class="nav__endwrapper"
         >
@@ -142,7 +142,7 @@ exports[`LearnLayout Template renders correctly 1`] = `
       </div>
     </nav>
     <main
-      class="blog-container"
+      class="centered-container"
     >
       <article
         class="article-reader"
@@ -150,38 +150,63 @@ exports[`LearnLayout Template renders correctly 1`] = `
         <h1
           class="article-reader__headline"
         >
-          t,itle-mock
+          Mock Title
         </h1>
-        <h5
+        <div>
+          <div>
+            Sample
+          </div>
+        </div>
+        <ul
           class="list"
         >
-          date-mock
-           by
-           
-          <span>
+          <h5>
+            Contributors
+          </h5>
+          <li>
             <a
-              href="url-mock"
+              class="link"
+              href="https://github.com/asdf"
               rel="noopener noreferrer"
+              style="margin-left: 0px;"
               target="_blank"
+              title="asdf"
             >
-              name-mock
+              <img
+                alt="asdf"
+                class="img"
+                src="https://github.com/asdf.png?size=60"
+              />
             </a>
-            
-          </span>
-        </h5>
-        <div>
-          html-mock
+          </li>
+        </ul>
+        <div
+          class="edit"
+        >
+          <a
+            class="link"
+            href="https://github.com/nodejs/nodejs.dev/edit/master/content/about/about.md"
+          >
+            <span>
+              Edit this page on GitHub
+            </span>
+             
+            <svg
+              class="icon"
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 40 40"
+              width="1em"
+            >
+              <path
+                d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"
+              />
+            </svg>
+          </a>
         </div>
       </article>
     </main>
   </div>
-  <section
-    class="bottom-info"
-  >
-    <div
-      class="random-contributor"
-    />
-  </section>
   <footer
     class="footer"
   >
@@ -191,7 +216,7 @@ exports[`LearnLayout Template renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="/trademark"
+          href="https://nodejs.org/en/about/trademark/"
         >
           Trademark Policy
         </a>
@@ -199,7 +224,7 @@ exports[`LearnLayout Template renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="/privacy"
+          href="https://nodejs.org/en/about/privacy/"
         >
           Privacy Policy
         </a>
@@ -207,7 +232,7 @@ exports[`LearnLayout Template renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
+          href="https://github.com/openjs-foundation/cross-project-council/blob/master/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
         >
           Code of Conduct
         </a>
