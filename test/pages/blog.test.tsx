@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import AllBlogPosts from '../../src/pages/blog';
-
 import { createBlogData } from '../__fixtures__/page';
+import '../__mocks__/intersectionObserverMock';
 
 const mockData = createBlogData();
 
