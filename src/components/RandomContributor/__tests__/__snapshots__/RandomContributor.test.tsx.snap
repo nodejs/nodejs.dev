@@ -57,3 +57,35 @@ exports[`RandomContributor component should render correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`RandomContributor component should render loading animation until data will be fetched 1`] = `
+<div>
+  <div
+    class="random-contributor"
+  >
+    <div
+      class="animated-placeholder"
+    >
+      <div
+        class="animated-placeholder__image"
+      />
+      <div
+        class="animated-placeholder__text"
+      >
+        <div
+          class="animated-placeholder__text-line"
+        />
+        <div
+          class="animated-placeholder__text-line"
+        />
+        <div
+          class="animated-placeholder__text-line"
+        />
+        <div
+          class="animated-placeholder__text-line"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

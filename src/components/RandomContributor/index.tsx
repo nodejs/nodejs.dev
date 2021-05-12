@@ -1,6 +1,7 @@
 import React, { MutableRefObject, useRef } from 'react';
 import { useNodeJsContributorsApi, useOnScreen } from '../../hooks';
 import './RandomContributor.scss';
+import AnimatedPlaceholder from '../AnimatedPlaceholder';
 
 const RandomContributor = (): JSX.Element => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -9,6 +10,7 @@ const RandomContributor = (): JSX.Element => {
 
   return (
     <div ref={ref} className="random-contributor">
+      {!contributor && <AnimatedPlaceholder />}
       {contributor && (
         <>
           <div className="random-contributor__avatar">
