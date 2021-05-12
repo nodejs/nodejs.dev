@@ -21,4 +21,17 @@ describe('RandomContributor component', () => {
     const { container } = render(<RandomContributor />);
     expect(container).toMatchSnapshot();
   });
+
+  it('should render loading animation until data will be fetched', () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    useOnScreen.mockReturnValue(true);
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    useNodeJsContributorsApi.mockReturnValue(false);
+
+    const { container } = render(<RandomContributor />);
+    expect(container).toMatchSnapshot();
+  });
 });
