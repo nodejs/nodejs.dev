@@ -1,10 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import NotFound from '../../src/pages/404';
-
 import { createReleaseData } from '../__fixtures__/page';
-
 import { ReleaseData } from '../../src/hooks/useReleaseHistory';
+import '../__mocks__/intersectionObserverMock';
 
 const mockReleaseData = createReleaseData();
 
@@ -14,7 +13,7 @@ jest.mock('../../src/hooks/useReleaseHistory', () => ({
 
 describe('404 page', () => {
   it('renders correctly', () => {
-    const { container } = render(<NotFound />);
+    const { container } = render(<NotFound location={window.location} />);
     expect(container).toMatchSnapshot();
   });
 });
