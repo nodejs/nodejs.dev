@@ -3,6 +3,7 @@ title: 'Making HTTP requests with Node.js'
 description: 'How to perform HTTP requests with Node.js using GET, POST, PUT and DELETE'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## Perform a GET Request

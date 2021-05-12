@@ -67,8 +67,7 @@ export const query = graphql`
     recent: allMarkdownRemark(
       limit: 10
       filter: {
-        fileAbsolutePath: { regex: "/blog/" }
-        frontmatter: { title: { ne: "mock" } }
+        frontmatter: { title: { ne: "mock" }, category: { eq: "blog" } }
       }
       sort: { fields: fields___date, order: DESC }
     ) {
