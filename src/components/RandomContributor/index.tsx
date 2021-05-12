@@ -10,7 +10,7 @@ const RandomContributor = (): JSX.Element => {
 
   return (
     <div ref={ref} className="random-contributor">
-      {!contributor && <AnimatedPlaceholder />}
+      {!contributor && isVisible && <AnimatedPlaceholder />}
       {contributor && (
         <>
           <div className="random-contributor__avatar">
