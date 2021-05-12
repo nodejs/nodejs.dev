@@ -78,22 +78,20 @@ export default function DownloadCards({ line, userOS }: Props): JSX.Element {
         setSelected(nextItem);
       }}
     >
-      {downloadTypes.map(
-        (os): JSX.Element => {
-          return (
-            <DownloadCard
-              key={os.name}
-              name={os.name}
-              icon={os.icon}
-              label={os.label}
-              download={os.download}
-              fileName={os.fileName}
-              selected={selected === os.name}
-              onSelect={setSelected}
-            />
-          );
-        }
-      )}
+      {downloadTypes.map((os): JSX.Element => {
+        return (
+          <DownloadCard
+            key={os.name}
+            name={os.name}
+            icon={os.icon}
+            label={os.label}
+            download={os.download}
+            fileName={os.fileName}
+            selected={selected === os.name}
+            onSelect={setSelected}
+          />
+        );
+      })}
     </ul>
   );
 }
