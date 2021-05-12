@@ -175,6 +175,13 @@ exports[`LearnLayout Template renders correctly 1`] = `
       </article>
     </main>
   </div>
+  <section
+    class="bottom-info"
+  >
+    <div
+      class="random-contributor"
+    />
+  </section>
   <footer
     class="footer"
   >
