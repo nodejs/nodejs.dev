@@ -256,7 +256,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/security"
+            href="https://nodejs.org/en/security/"
           >
             Security Reporting
           </a>

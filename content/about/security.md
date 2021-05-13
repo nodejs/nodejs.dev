@@ -1,7 +1,7 @@
 ---
 title: Security
 description: 'This is security page'
-authors: parthlaw
+authors: reedloden,XhmikosR,Trott,fhemberger,MaledongGit,yous,sam-github,vdeturckheim,tniessen,richardlau,nschonni,mikeal,e-jigsaw,parthlaw
 category: security
 ---
 
