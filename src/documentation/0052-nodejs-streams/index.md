@@ -242,7 +242,7 @@ First create a transform stream object:
 
 ```js
 const { Transform } = require('stream')
-const TransformStream = new Transform;
+const TransformStream = new Transform();
 ```
 
 then implement `_transform`:
