@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RandomContributor component should render correctly 1`] = `
+<div>
+  <div
+    class="random-contributor"
+  >
+    <div
+      class="random-contributor__avatar"
+    >
+      <a
+        href="profileUri_mock"
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="Avatar of a Node.js contributor"
+          src="avatarUri_mock"
+        />
+      </a>
+    </div>
+    <div
+      class="random-contributor__thank"
+    >
+      Thank you
+       
+      <a
+        href="profileUri_mock"
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+      >
+        login_mock
+      </a>
+       
+      for being a
+       
+      <a
+        href="https://github.com/nodejs/node/graphs/contributors"
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+        title="List of all Node.js contributors"
+      >
+        Node.js contributor
+      </a>
+       
+      <a
+        href="commitsListUri_mock"
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+      >
+        <span>
+          0
+           contributions
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RandomContributor component should render loading animation until data will be fetched 1`] = `
+<div>
+  <div
+    class="random-contributor"
+  >
+    <div
+      class="animated-placeholder"
+    >
+      <div
+        class="animated-placeholder__image"
+      />
+      <div
+        class="animated-placeholder__text"
+      >
+        <div
+          class="animated-placeholder__text-line"
+        />
+        <div
+          class="animated-placeholder__text-line"
+        />
+        <div
+          class="animated-placeholder__text-line"
+        />
+        <div
+          class="animated-placeholder__text-line"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

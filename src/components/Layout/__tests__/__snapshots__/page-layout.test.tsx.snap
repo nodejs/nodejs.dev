@@ -216,6 +216,13 @@ exports[`PageLayout component renders correctly with data 1`] = `
         </div>
       </article>
     </main>
+    <section
+      class="bottom-info"
+    >
+      <div
+        class="random-contributor"
+      />
+    </section>
     <footer
       class="footer"
     >

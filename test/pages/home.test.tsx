@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import Index from '../../src/pages';
 import { HomepageData } from '../../src/types';
+import '../__mocks__/intersectionObserverMock';
 
 const homePageData: HomepageData = {
   page: {

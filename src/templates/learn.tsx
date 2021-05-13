@@ -25,7 +25,7 @@ const LearnLayout = ({
   },
   pageContext: { slug, next, previous, relativePath, navigationData },
   location,
-}: Props): React.ReactNode => {
+}: Props): JSX.Element => {
   let previousSlug = '';
 
   if (typeof window !== 'undefined' && window.previousPath) {

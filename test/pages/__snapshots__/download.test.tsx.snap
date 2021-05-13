@@ -809,6 +809,13 @@ exports[`Download page renders correctly 1`] = `
         </div>
       </div>
     </span>
+    <section
+      class="bottom-info"
+    >
+      <div
+        class="random-contributor"
+      />
+    </section>
     <footer
       class="footer"
     >
@@ -1665,6 +1672,13 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         />
       </div>
     </span>
+    <section
+      class="bottom-info"
+    >
+      <div
+        class="random-contributor"
+      />
+    </section>
     <footer
       class="footer"
     >
