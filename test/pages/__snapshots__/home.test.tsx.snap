@@ -427,6 +427,13 @@ exports[`Home page renders correctly 1`] = `
         </div>
       </section>
     </main>
+    <section
+      class="bottom-info"
+    >
+      <div
+        class="random-contributor"
+      />
+    </section>
     <footer
       class="footer"
     >
