@@ -3,6 +3,7 @@ title: How to use the Node.js REPL
 description: "REPL stands for Read-Evaluate-Print-Loop, and it's a great way to explore the Node.js features in a quick way"
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 The `node` command is the one we use to run our Node.js scripts:
@@ -17,7 +18,7 @@ If we omit the filename, we use it in REPL mode:
 node
 ```
 
-> Note: REPL also known as Read Evaluate Print Loop is a programming language environment(Basically a console window) that takes single expression as user input and returns the result back to the console after execution.
+> Note: REPL also known as Read Evaluate Print Loop is a programming language environment (basically a console window) that takes single expression as user input and returns the result back to the console after execution.
 
 If you try it now in your terminal, this is what happens:
 

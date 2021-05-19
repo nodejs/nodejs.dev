@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blog Author component does not render without authors 1`] = `
+<div>
+  <h5
+    class="list"
+  >
+     by
+     
+  </h5>
+</div>
+`;
+
+exports[`Blog Author component renders correctly 1`] = `
+<div>
+  <h5
+    class="list"
+  >
+     by
+     
+    <span>
+      <a
+        href="https://bat.man"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Bruce Wayne
+      </a>
+      
+    </span>
+  </h5>
+</div>
+`;

@@ -3,6 +3,7 @@ title: 'Node.js with TypeScript'
 description: 'Find out why TypeScript is an awesome tool and learn to use it by yourself.'
 authors: sbielenica
 section: Getting Started
+category: learn
 ---
 
 ## What is TypeScript
@@ -17,7 +18,7 @@ We can talk about other TypeScript benefits later, let's see some examples now!
 
 Take a look at this code snippet and then we can unpack it together:
 
-```ts
+```js
 type User = {
   name: string;
   age: number;
@@ -44,12 +45,12 @@ Okay, so we have some TypeScript code. Now how do we run it?
 First thing to do is to install TypeScript in our project:
 
 ```bash
-npm install typescript
+npm i -D typescript
 ```
 
 Now we can compile it to JavaScript using `tsc` command in the terminal. Let's do it!
 
-Assuming that our file is named `example.ts` the command would like like that:
+Assuming that our file is named `example.ts`, the command would look like:
 
 ```bash
 tsc example.ts
@@ -60,7 +61,7 @@ Now when we know how to compile and run TypeScript code let's see TypeScript bug
 
 This is how we will modify our code:
 
-```ts
+```js
 type User = {
   name: string;
   age: number;
@@ -80,7 +81,7 @@ const isJustineAnAdult: string = isAdult(justine, "I shouldn't be here!");
 
 And this is what TypeScript has to say about this:
 
-```ts
+```js
 example.ts:12:3 - error TS2322: Type 'string' is not assignable to type 'number'.
 
 12   age: "Secret!",
