@@ -7,7 +7,7 @@ import { createGeneralPageData } from '../__fixtures__/page';
 
 const mockData = createGeneralPageData();
 
-describe('Privacy Page', () => {
+describe('Governance Page', () => {
   it('renders correctly', () => {
     const { container } = render(<GovernancePage data={mockData.data} />);
     expect(container).toMatchSnapshot();

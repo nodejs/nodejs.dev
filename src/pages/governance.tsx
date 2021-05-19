@@ -20,7 +20,7 @@ export default function GovernancePage({ data }: Page): JSX.Element {
             html={html}
             tableOfContents={tableOfContents}
             authors={authors}
-            editPath="content/about/privacy.md"
+            editPath="content/about/governance.md"
           />
         </main>
       </Layout>

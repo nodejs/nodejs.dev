@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Privacy Page renders correctly 1`] = `
+exports[`Governance Page renders correctly 1`] = `
 <div>
   <div
     class="layout-container"
@@ -197,7 +197,7 @@ exports[`Privacy Page renders correctly 1`] = `
         >
           <a
             class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/master/content/about/privacy.md"
+            href="https://github.com/nodejs/nodejs.dev/edit/master/content/about/governance.md"
           >
             <span>
               Edit this page on GitHub
