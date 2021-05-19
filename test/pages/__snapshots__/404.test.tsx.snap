@@ -146,7 +146,9 @@ exports[`404 page renders correctly 1`] = `
     >
       page not found
     </h1>
-    <main>
+    <main
+      class="container"
+    >
       <p>
         The page you are trying to access does not exist. Go back to the Homepage or find what you're looking for in the menu.
       </p>

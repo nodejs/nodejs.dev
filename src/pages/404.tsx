@@ -13,9 +13,9 @@ export default function NotFoundPage({ location }: Props): JSX.Element {
   const description = 'You have hit a route that does not exist.';
 
   return (
-    <Layout title={title} description={description}>
+    <Layout title={title} description={description} location={location}>
       <h1 className="not-found">page not found</h1>
-      <main style={{ width: '100%' }} className="article-reader">
+      <main className="container">
         <p>
           The page you are trying to access does not exist. Go back to the
           Homepage or find what you&apos;re looking for in the menu.
