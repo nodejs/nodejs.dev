@@ -321,6 +321,16 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
           >
             <a
               class="activeStyleTab"
+              href="/download"
+            >
+              Download
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
               href="https://nodejs.org/en/get-involved/"
               rel="noopener noreferrer"
               target="_blank"
