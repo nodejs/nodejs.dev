@@ -6,7 +6,7 @@ import logoDark from '../../images/logos/nodejs-logo-dark-mode.svg';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 const Header = (): JSX.Element => {
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 870px)');
 
   const handleThemeOnClick = (
     e: MouseEvent<HTMLButtonElement, Event> | KeyboardEvent<HTMLButtonElement>,
@@ -62,18 +62,16 @@ const Header = (): JSX.Element => {
                 {isMobile ? 'Docs' : 'Documentation'}
               </a>
             </li>
-            {!isMobile && (
-              <li className="nav__tabs">
-                <Link
-                  to="/download"
-                  className="activeStyleTab"
-                  activeClassName="active"
-                  partiallyActive
-                >
-                  Download
-                </Link>
-              </li>
-            )}
+            <li className="nav__tabs">
+              <Link
+                to="/download"
+                className="activeStyleTab"
+                activeClassName="active"
+                partiallyActive
+              >
+                Download
+              </Link>
+            </li>
             <li className="nav__tabs">
               <a
                 href="https://nodejs.org/en/get-involved/"
