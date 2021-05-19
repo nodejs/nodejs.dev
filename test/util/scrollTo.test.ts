@@ -6,6 +6,6 @@ describe('Tests for calcNavScrollParams', () => {
   it('scrollWindow is set null for mobile devices', () => {
     window.innerWidth = 720;
     const { scrollWindow } = calcNavScrollParams(height, mockHTMLElement);
-    expect(scrollWindow).toBeNull();
+    expect(scrollWindow).toBeValid();
   });
 });
