@@ -154,62 +154,6 @@ exports[`Learn Template renders correctly 1`] = `
         >
           Menu
         </button>
-        <ul
-          class="side-nav__list"
-        >
-          <h2
-            class="t-body2 side-nav__title"
-          >
-            <i
-              class="material-icons"
-            >
-              offline_bolt
-            </i>
-            test-section
-          </h2>
-          <a
-            class="t-body2 side-nav__item side-nav__item--done"
-            href="/learn/test-slug-1"
-            id="link-test-slug-1"
-          >
-            test-title-1
-          </a>
-          <a
-            class="t-body2 side-nav__item side-nav__item--done"
-            href="/learn/test-slug-2"
-            id="link-test-slug-2"
-          >
-            test-title-2
-          </a>
-        </ul>
-        <ul
-          class="side-nav__list"
-        >
-          <h2
-            class="t-body2 side-nav__title"
-          >
-            <i
-              class="material-icons"
-            >
-              offline_bolt
-            </i>
-            test-section2
-          </h2>
-          <a
-            class="t-body2 side-nav__item side-nav__item--done"
-            href="/learn/test-slug-3"
-            id="link-test-slug-3"
-          >
-            test-title-3
-          </a>
-          <a
-            class="t-body2 side-nav__item side-nav__item--done"
-            href="/learn/test-slug-4"
-            id="link-test-slug-4"
-          >
-            test-title-4
-          </a>
-        </ul>
       </nav>
       <article
         class="article-reader"
@@ -311,6 +255,13 @@ exports[`Learn Template renders correctly 1`] = `
       </article>
     </main>
   </div>
+  <section
+    class="bottom-info"
+  >
+    <div
+      class="random-contributor"
+    />
+  </section>
   <footer
     class="footer"
   >

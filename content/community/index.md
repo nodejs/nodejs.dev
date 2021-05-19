@@ -2,6 +2,7 @@
 title: Node.js Community
 description: "Node.js has one of the largest, most vibrant and innovative open source communities in the world. Node.js is built, used, and maintained by the community. We believe the community to be at the core of Node.js popularity. Amazing people from every part of the world, with a common interest, collaborate and shape this community."
 authors: ahmadawais, maedahbatool, saqibameen, msaaddev
+category: community
 ---
 
 ## Introduction
@@ -47,7 +48,7 @@ Node.js has a dedicated [repository on GitHub](https://github.com/nodejs/help) t
 ### Real-time Chat
 For real-time chat about Node.js development use the [OpenJS Foundation Slack](https://slack-invite.openjsf.org/) or IRC
 For Slack, join the OpenJSF workspace and then join the [#nodejs](https://openjs-foundation.slack.com/archives/CK9Q4MB53) channel or [Node.js Slackers](https://www.nodeslackers.com/)
-For IRC, go to irc.freenode.net in the #node.js channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](https://webchat.freenode.net/#node.js).
+For IRC, go to irc.freenode.net in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](https://webchat.freenode.net/#node.js).
 
 ### Stack Overflow
 

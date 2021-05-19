@@ -1,4 +1,6 @@
-/* eslint-disable jsx-a11y/no-onchange */
+// TODO include into coverage before page release
+/* istanbul ignore file */
+/* eslint-disable react/no-danger, jsx-a11y/no-onchange */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import dompurify from 'dompurify';
@@ -14,6 +16,10 @@ import ShellBox from '../components/ShellBox';
 
 import '../styles/docs.scss';
 import '../styles/article-reader.scss';
+
+interface Props {
+  location: Location;
+}
 
 const API_DOCS_OBJ_KEYS = ['events', 'methods', 'properties', 'classes'];
 const DOCUMENT_ELEMENT_TYPES = ['module', 'event', 'method', 'class'];
@@ -96,7 +102,7 @@ function renderArticleSections(
   pages.forEach((page, index) => {
     const children: JSX.Element[] = [];
 
-    const prepareArticleSections: Function = () => {
+    const prepareArticleSections = () => {
       API_DOCS_OBJ_KEYS.forEach((key: string) => {
         if (page[key]) {
           renderArticleSections(page[key], children, depth + 1);
@@ -627,7 +633,7 @@ function sideBarSection(
   );
 }
 
-export default function APIDocsPage(): JSX.Element {
+export default function APIDocsPage({ location }: Props): JSX.Element {
   const title = 'API Docs';
   const description = 'Come learn yourself something.';
   const userOS = detectOS();
@@ -685,7 +691,12 @@ export default function APIDocsPage(): JSX.Element {
 
   return (
     <>
-      <Layout title={title} description={description} showFooter={false}>
+      <Layout
+        title={title}
+        description={description}
+        location={location}
+        showFooter={false}
+      >
         <main className="grid-container">
           <nav aria-label="Secondary" className="api-nav">
             <ul className="api-nav__list">

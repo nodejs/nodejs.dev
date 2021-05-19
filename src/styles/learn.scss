@@ -154,7 +154,7 @@
 }
 
 .side-nav.side-nav--open .side-nav__open {
-  top: calc(var(--nav-height) + 1.8rem);
+  top: 1.8rem;
   margin-bottom: -35px;
   margin-top: 16px;
   color: transparent;
@@ -176,18 +176,12 @@
     overflow: hidden;
     max-width: unset;
 
-    &::before {
-      width: 110%;
-    }
-
     &.side-nav--open {
-      max-height: 100%;
+      max-height: calc(100vh - var(--nav-height));
       overflow: visible;
-      position: static;
-
-      + .article-reader {
-        display: none;
-      }
+      overflow-y: scroll;
+      position: fixed;
+      top: var(--nav-height);
     }
 
     > :last-child {
@@ -195,9 +189,14 @@
     }
 
     &::before {
-      height: 92px;
+      height: 60px;
       margin-bottom: -92px;
       top: var(--nav-height);
+      width: 110%;
+      content: '';
+      z-index: 100;
+      position: fixed;
+      background-color: var(--color-fill-side-nav);
     }
   }
 
@@ -209,6 +208,7 @@
     top: 24px;
     height: 0;
     overflow: hidden;
+
     .side-nav--open & {
       overflow: visible;
       height: auto;

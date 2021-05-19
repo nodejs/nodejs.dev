@@ -50,10 +50,11 @@ export interface NavigationSectionItem {
   slug: string;
   title: string;
   section: string;
+  category: string;
 }
 
 export interface NavigationSectionData {
-  [index: string]: NavigationSectionItem[];
+  [index: string]: { category: string; data: NavigationSectionItem[] };
 }
 
 /**
@@ -91,4 +92,47 @@ export interface Page {
       fields: { authors: string[] };
     };
   };
+  location?: Location;
+}
+export interface CommunityNavigationSection {
+  title: string;
+  sections: string[];
+}
+
+export interface BlogPostAuthor {
+  id?: string;
+  name: string;
+  url: string;
+}
+
+export interface BlogMetaData {
+  node: {
+    frontmatter: { title: string; author: BlogPostAuthor[] };
+    fields: { date: string; slug: string };
+  };
+}
+export interface BlogPostsList {
+  blogs: {
+    edges: BlogMetaData[];
+  };
+}
+
+export interface BlogPageData {
+  blog: {
+    html: string;
+    excerpt: string;
+    frontmatter: { title: string; author: BlogPostAuthor[] };
+    fields: { slug: string; date: string };
+  };
+  recent: {
+    edges: BlogMetaData[];
+  };
+}
+
+export interface BlogPageContext {
+  slug: string;
+  relativePath: string;
+  next: PaginationInfo;
+  previous: PaginationInfo;
+  navigationData: NavigationSectionData;
 }

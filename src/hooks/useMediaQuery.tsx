@@ -1,6 +1,7 @@
 import { useState, useLayoutEffect } from 'react';
 
-export const useMediaQuery = (query: string): boolean | undefined => {
+// eslint-disable-next-line import/prefer-default-export
+export function useMediaQuery(query: string): boolean | undefined {
   const [matches, setMatches] = useState<boolean>();
 
   useLayoutEffect(() => {
@@ -8,10 +9,12 @@ export const useMediaQuery = (query: string): boolean | undefined => {
       const mq = window.matchMedia(query);
       setMatches(mq.matches);
       const handler = (): void => setMatches(mq.matches);
-      mq.addListener(handler);
-      return (): void => mq.removeListener(handler);
+      mq.addEventListener('change', handler);
+      return (): void => mq.removeEventListener('change', handler);
     }
+
+    return undefined;
   }, [query]);
 
   return matches;
-};
+}

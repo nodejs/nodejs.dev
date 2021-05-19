@@ -100,14 +100,72 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
               >
                 choco 
               </span>
-              install nodejs-lts
+              install nvs
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                nvs 
+              </span>
+              add lts
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                nvs 
+              </span>
+              use lts
             </code>
           </pre>
           <br />
           <br />
           <a
             class="install__docs-button"
-            href="https://nodejs.org/en/download/package-manager/#windows"
+            href="https://nodejs.org/en/download/package-manager/#nvs"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -125,6 +183,756 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
         aria-labelledby="react-tabs-4"
         class="react-tabs__tab-panel"
         id="react-tabs-5"
+        role="tabpanel"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
+<div>
+  <div
+    class="install"
+  >
+    <div
+      class="react-tabs"
+      data-tabs="true"
+    >
+      <div
+        class="install__header"
+      >
+        <div
+          class="install__header-circles"
+        >
+          <div
+            class="install__header-grey-circle"
+          />
+          <div
+            class="install__header-grey-circle"
+          />
+          <div
+            class="install__header-grey-circle"
+          />
+        </div>
+        <div
+          class="install__header-text"
+        >
+          bash
+        </div>
+      </div>
+      <ul
+        class="react-tabs__tab-list"
+        role="tablist"
+      >
+        <li
+          aria-controls="react-tabs-13"
+          aria-disabled="false"
+          aria-selected="true"
+          class="react-tabs__tab react-tabs__tab--selected"
+          id="react-tabs-12"
+          role="tab"
+          tabindex="0"
+        >
+          Linux (nvm)
+        </li>
+        <li
+          aria-controls="react-tabs-15"
+          aria-disabled="false"
+          aria-selected="false"
+          class="react-tabs__tab"
+          id="react-tabs-14"
+          role="tab"
+        >
+          macOS (nvm)
+        </li>
+        <li
+          aria-controls="react-tabs-17"
+          aria-disabled="false"
+          aria-selected="false"
+          class="react-tabs__tab"
+          id="react-tabs-16"
+          role="tab"
+        >
+          Windows (Chocolatey)
+        </li>
+      </ul>
+      <div
+        aria-labelledby="react-tabs-12"
+        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        id="react-tabs-13"
+        role="tabpanel"
+      >
+        <div>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                apk add -U
+              </span>
+               curl bash ca-certificates openssl ncurses coreutils python2 make gcc g++ libgcc linux-headers grep util-linux binutils findutils
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                 curl -o- 
+              </span>
+              https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh
+               
+              <span
+                class="install__text__command"
+              >
+                | bash
+              </span>
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                 nvm
+              </span>
+               install --lts
+            </code>
+          </pre>
+          <br />
+          <br />
+          <a
+            class="install__docs-button"
+            href="https://nodejs.org/en/download/package-manager/#nvm"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Read documentation
+          </a>
+        </div>
+      </div>
+      <div
+        aria-labelledby="react-tabs-14"
+        class="react-tabs__tab-panel"
+        id="react-tabs-15"
+        role="tabpanel"
+      />
+      <div
+        aria-labelledby="react-tabs-16"
+        class="react-tabs__tab-panel"
+        id="react-tabs-17"
+        role="tabpanel"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
+<div>
+  <div
+    class="install"
+  >
+    <div
+      class="react-tabs"
+      data-tabs="true"
+    >
+      <div
+        class="install__header"
+      >
+        <div
+          class="install__header-circles"
+        >
+          <div
+            class="install__header-grey-circle"
+          />
+          <div
+            class="install__header-grey-circle"
+          />
+          <div
+            class="install__header-grey-circle"
+          />
+        </div>
+        <div
+          class="install__header-text"
+        >
+          bash
+        </div>
+      </div>
+      <ul
+        class="react-tabs__tab-list"
+        role="tablist"
+      >
+        <li
+          aria-controls="react-tabs-19"
+          aria-disabled="false"
+          aria-selected="true"
+          class="react-tabs__tab react-tabs__tab--selected"
+          id="react-tabs-18"
+          role="tab"
+          tabindex="0"
+        >
+          Linux (nvm)
+        </li>
+        <li
+          aria-controls="react-tabs-21"
+          aria-disabled="false"
+          aria-selected="false"
+          class="react-tabs__tab"
+          id="react-tabs-20"
+          role="tab"
+        >
+          macOS (nvm)
+        </li>
+        <li
+          aria-controls="react-tabs-23"
+          aria-disabled="false"
+          aria-selected="false"
+          class="react-tabs__tab"
+          id="react-tabs-22"
+          role="tab"
+        >
+          Windows (Chocolatey)
+        </li>
+      </ul>
+      <div
+        aria-labelledby="react-tabs-18"
+        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        id="react-tabs-19"
+        role="tabpanel"
+      >
+        <div>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                apk add -U
+              </span>
+               curl bash ca-certificates openssl ncurses coreutils python2 make gcc g++ libgcc linux-headers grep util-linux binutils findutils
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                 curl -o- 
+              </span>
+              https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh
+               
+              <span
+                class="install__text__command"
+              >
+                | bash
+              </span>
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                 nvm
+              </span>
+               install --lts
+            </code>
+          </pre>
+          <br />
+          <br />
+          <a
+            class="install__docs-button"
+            href="https://nodejs.org/en/download/package-manager/#nvm"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Read documentation
+          </a>
+        </div>
+      </div>
+      <div
+        aria-labelledby="react-tabs-20"
+        class="react-tabs__tab-panel"
+        id="react-tabs-21"
+        role="tabpanel"
+      />
+      <div
+        aria-labelledby="react-tabs-22"
+        class="react-tabs__tab-panel"
+        id="react-tabs-23"
+        role="tabpanel"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
+<div>
+  <div
+    class="install"
+  >
+    <div
+      class="react-tabs"
+      data-tabs="true"
+    >
+      <div
+        class="install__header"
+      >
+        <div
+          class="install__header-circles"
+        >
+          <div
+            class="install__header-grey-circle"
+          />
+          <div
+            class="install__header-grey-circle"
+          />
+          <div
+            class="install__header-grey-circle"
+          />
+        </div>
+        <div
+          class="install__header-text"
+        >
+          zsh
+        </div>
+      </div>
+      <ul
+        class="react-tabs__tab-list"
+        role="tablist"
+      >
+        <li
+          aria-controls="react-tabs-7"
+          aria-disabled="false"
+          aria-selected="true"
+          class="react-tabs__tab react-tabs__tab--selected"
+          id="react-tabs-6"
+          role="tab"
+          tabindex="0"
+        >
+          macOS (nvm)
+        </li>
+        <li
+          aria-controls="react-tabs-9"
+          aria-disabled="false"
+          aria-selected="false"
+          class="react-tabs__tab"
+          id="react-tabs-8"
+          role="tab"
+        >
+          Windows (Chocolatey)
+        </li>
+        <li
+          aria-controls="react-tabs-11"
+          aria-disabled="false"
+          aria-selected="false"
+          class="react-tabs__tab"
+          id="react-tabs-10"
+          role="tab"
+        >
+          Linux (nvm)
+        </li>
+      </ul>
+      <div
+        aria-labelledby="react-tabs-6"
+        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        id="react-tabs-7"
+        role="tabpanel"
+      >
+        <div>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                curl -o- 
+              </span>
+              https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh
+              <span
+                class="install__text__command"
+              >
+                 | bash 
+              </span>
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                nvm 
+              </span>
+              install --lts
+            </code>
+          </pre>
+          <br />
+          <br />
+          <a
+            class="install__docs-button"
+            href="https://nodejs.org/en/download/package-manager/#nvm"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Read documentation
+          </a>
+        </div>
+      </div>
+      <div
+        aria-labelledby="react-tabs-8"
+        class="react-tabs__tab-panel"
+        id="react-tabs-9"
+        role="tabpanel"
+      />
+      <div
+        aria-labelledby="react-tabs-10"
+        class="react-tabs__tab-panel"
+        id="react-tabs-11"
+        role="tabpanel"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `<div />`;
+
+exports[`Tests for InstallTabs component renders correctly for other 1`] = `
+<div>
+  <div
+    class="install"
+  >
+    <div
+      class="react-tabs"
+      data-tabs="true"
+    >
+      <div
+        class="install__header"
+      >
+        <div
+          class="install__header-circles"
+        >
+          <div
+            class="install__header-grey-circle"
+          />
+          <div
+            class="install__header-grey-circle"
+          />
+          <div
+            class="install__header-grey-circle"
+          />
+        </div>
+        <div
+          class="install__header-text"
+        >
+          bash
+        </div>
+      </div>
+      <ul
+        class="react-tabs__tab-list"
+        role="tablist"
+      >
+        <li
+          aria-controls="react-tabs-25"
+          aria-disabled="false"
+          aria-selected="true"
+          class="react-tabs__tab react-tabs__tab--selected"
+          id="react-tabs-24"
+          role="tab"
+          tabindex="0"
+        >
+          Windows (Chocolatey)
+        </li>
+        <li
+          aria-controls="react-tabs-27"
+          aria-disabled="false"
+          aria-selected="false"
+          class="react-tabs__tab"
+          id="react-tabs-26"
+          role="tab"
+        >
+          macOS (nvm)
+        </li>
+        <li
+          aria-controls="react-tabs-29"
+          aria-disabled="false"
+          aria-selected="false"
+          class="react-tabs__tab"
+          id="react-tabs-28"
+          role="tab"
+        >
+          Linux (nvm)
+        </li>
+      </ul>
+      <div
+        aria-labelledby="react-tabs-24"
+        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        id="react-tabs-25"
+        role="tabpanel"
+      >
+        <div>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                choco 
+              </span>
+              install nvs
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                nvs 
+              </span>
+              add lts
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                nvs 
+              </span>
+              use lts
+            </code>
+          </pre>
+          <br />
+          <br />
+          <a
+            class="install__docs-button"
+            href="https://nodejs.org/en/download/package-manager/#nvs"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Read documentation
+          </a>
+        </div>
+      </div>
+      <div
+        aria-labelledby="react-tabs-26"
+        class="react-tabs__tab-panel"
+        id="react-tabs-27"
+        role="tabpanel"
+      />
+      <div
+        aria-labelledby="react-tabs-28"
+        class="react-tabs__tab-panel"
+        id="react-tabs-29"
         role="tabpanel"
       />
     </div>

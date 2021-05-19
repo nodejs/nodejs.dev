@@ -7,22 +7,33 @@ describe('Navigation component', (): void => {
     const { container } = render(
       <Navigation
         currentSlug="intro"
+        category="category1"
         sections={{
-          'Getting Started': [
-            {
-              slug: 'intro',
-              title: 'Section 1',
-              section: '...',
-            },
-          ],
-          Versions: [
-            {
-              slug: 'version',
-              title: 'Version 1',
-              section: '...',
-            },
-          ],
+          'Getting Started': {
+            data: [
+              {
+                slug: 'intro',
+                title: 'Section 1',
+                section: '...',
+                category: 'category1',
+              },
+            ],
+            category: 'category1',
+          },
+          Versions: {
+            data: [
+              {
+                slug: 'version',
+                title: 'Version 1',
+                section: '...',
+                category: 'category2',
+              },
+            ],
+            category: 'category2',
+          },
         }}
+        previousSlug=""
+        label=""
       />
     );
     expect(container).toMatchSnapshot();
