@@ -100,14 +100,72 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
               >
                 choco 
               </span>
-              install nodejs-lts
+              install nvs
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                nvs 
+              </span>
+              add lts
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                nvs 
+              </span>
+              use lts
             </code>
           </pre>
           <br />
           <br />
           <a
             class="install__docs-button"
-            href="https://nodejs.org/en/download/package-manager/#windows"
+            href="https://nodejs.org/en/download/package-manager/#nvs"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -792,14 +850,72 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
               >
                 choco 
               </span>
-              install nodejs-lts
+              install nvs
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                nvs 
+              </span>
+              add lts
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                nvs 
+              </span>
+              use lts
             </code>
           </pre>
           <br />
           <br />
           <a
             class="install__docs-button"
-            href="https://nodejs.org/en/download/package-manager/#windows"
+            href="https://nodejs.org/en/download/package-manager/#nvs"
             rel="noopener noreferrer"
             target="_blank"
           >
