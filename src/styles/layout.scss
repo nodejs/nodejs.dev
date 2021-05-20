@@ -544,3 +544,21 @@ details {
   display: flex;
   justify-content: center;
 }
+
+.resources-logos {
+  img {
+    width: 100%;
+  }
+
+  td {
+    padding: 20px;
+  }
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-node-gray {
+  background-color: #333;
+}
