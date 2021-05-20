@@ -80,7 +80,7 @@ module.exports = {
       resolve: 'gatsby-source-git',
       options: {
         name: 'markdown-docs',
-        path: './node_modules/node-i18n/content/v12.x/en-US/doc/api'
+        path: './node_modules/node-i18n/content/v12.x/en-US/doc/api',
       },
     },
     {
