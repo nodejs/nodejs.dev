@@ -24,6 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
                       "nodejs-community"
                       "homepage"
                       "trademark-policy"
+                      "resources"
                     ]
                   }
                 }
