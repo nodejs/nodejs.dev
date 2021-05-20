@@ -1,3 +1,5 @@
+// TODO include into coverage before page release
+/* istanbul ignore file */
 /* eslint-disable react/no-danger, jsx-a11y/no-onchange */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';

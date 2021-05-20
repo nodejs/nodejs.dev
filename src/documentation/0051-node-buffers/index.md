@@ -3,6 +3,7 @@ title: Node.js Buffers
 description: 'Learn what Node.js buffers are, what they are used for, how to use them'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, 19shubham11
 section: Getting Started
+category: learn
 ---
 
 ## What is a buffer?

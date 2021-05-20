@@ -63,7 +63,7 @@ module.exports = {
     },
     {
       files: ['test-processor.js', 'test-setup.js', 'test/**'],
-      extends: ['plugin:testing-library/recommended'],
+      extends: ['plugin:testing-library/react'],
       env: {
         jest: true,
       },

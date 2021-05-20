@@ -3,6 +3,7 @@ title: 'The Node.js Event Loop'
 description: 'The Event Loop is one of the most important aspects to understand about Node.js'
 authors: flaviocopes, potch, ZYSzys, MylesBorins, fhemberger, LaRuaNa, flaviocopes, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## Introduction

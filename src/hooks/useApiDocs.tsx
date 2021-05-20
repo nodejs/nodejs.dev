@@ -95,10 +95,11 @@ export function useApiData(version: string | null): APIResponse {
 
   useEffect((): void => {
     const fetchData = async (): Promise<void> => {
-      const res = await window.fetch(
+      const res = await fetch(
         `https://nodejs.org/dist/${version}/docs/api/all.json`
       );
-      setApiData((await res.json()) as APIResponse);
+      const result = (await res.json()) as APIResponse;
+      setApiData(result);
     };
     if (version) {
       fetchData();
