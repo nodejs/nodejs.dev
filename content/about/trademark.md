@@ -1,7 +1,7 @@
 ---
 title: Trademark Policy
 description: "Trademark Policy | Node.js"
-authors: fhemberger, XhmikosR, mikeal, brianwarner, bf4 
+authors: fhemberger, XhmikosR, mikeal,  brianwarner, bf4
 category: trademark
 ---
 
