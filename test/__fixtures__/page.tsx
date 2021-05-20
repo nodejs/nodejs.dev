@@ -6,6 +6,7 @@ import {
   BlogPostsList,
   BlogPageData,
   BlogPageContext,
+  Page,
 } from '../../src/types';
 
 import { ReleaseData } from '../../src/hooks/useReleaseHistory';
@@ -172,5 +173,20 @@ export const createBlogPageData = (): BlogPageData => ({
         },
       },
     ],
+  },
+});
+export const createWorkingGroupsData = (): Page => ({
+  data: {
+    page: {
+      fields: {
+        authors: ['sejal'],
+      },
+      frontmatter: {
+        description: 'Mock Description',
+        title: 'Mock Title',
+      },
+      html: '<div>Sample</div>',
+      tableOfContents: 'Table of Content',
+    },
   },
 });
