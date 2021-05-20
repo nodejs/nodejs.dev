@@ -25,6 +25,9 @@ function Footer(): JSX.Element {
           </li>
           <li>
           <Link className="footer__link" to="/privacy">
+              className="footer__link"
+              href="https://nodejs.org/en/about/privacy/"
+            >
               Privacy Policy
           </Link>
           </li>
