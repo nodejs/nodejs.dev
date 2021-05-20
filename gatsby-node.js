@@ -3,7 +3,7 @@ const path = require('path');
 const fetch = require('node-fetch');
 const createSlug = require('./util-node/createSlug');
 const getReleaseStatus = require('./util-node/getReleaseStatus');
-
+require('./gatsby-node-docs');
 const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
 
 exports.createPages = ({ graphql, actions }) => {

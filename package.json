@@ -42,6 +42,7 @@
     "gatsby-transformer-yaml": "^3.4.0",
     "intersection-observer": "^0.12.0",
     "node-fetch": "^2.6.1",
+    "node-i18n": "github:nodejs/i18n",
     "prismjs": "^1.23.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
