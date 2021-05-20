@@ -40,9 +40,19 @@ const Navigation = ({
           nav
         );
         // If it's mobile screen and nav is not open, do nothing
-        if (isMobileScreen() && !isOpen) return;
+        if (isMobileScreen() && !isOpen) {
+          (document.querySelector(':root') as HTMLElement).style.overflowY =
+            'initial';
+          (document.querySelector('.nav') as HTMLElement).style.position =
+            'sticky';
+          return;
+        }
         // If it's mobile screen, directly scroll to current element when nav opens
         if (isMobileScreen()) {
+          (document.querySelector(':root') as HTMLElement).style.overflowY =
+            'hidden';
+          (document.querySelector('.nav') as HTMLElement).style.position =
+            'fixed';
           scrollTo(newScrollPos, scrollWindow, scrollTime);
         } else if (!previousSlug) {
           // If there's no previous slug, directly scroll to the current link
