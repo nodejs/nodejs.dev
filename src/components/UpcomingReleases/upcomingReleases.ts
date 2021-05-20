@@ -36,24 +36,6 @@ export const NODE_12_RELEASES: UpcomingRelease[] = [
   },
 ];
 
-export const NODE_13_RELEASES: UpcomingRelease[] = [
-  {
-    alreadyReleased: true,
-    releaseDate: '2019-10-22',
-    releaseType: 'current',
-  },
-  {
-    alreadyReleased: true,
-    releaseDate: '2020-04-01',
-    releaseType: 'maintenance',
-  },
-  {
-    alreadyReleased: true,
-    releaseDate: '2020-06-01',
-    releaseType: 'endoflife',
-  },
-];
-
 export const NODE_14_RELEASES: UpcomingRelease[] = [
   {
     alreadyReleased: true,
