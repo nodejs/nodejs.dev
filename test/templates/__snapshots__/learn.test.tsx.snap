@@ -271,7 +271,7 @@ exports[`Learn Template renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="/trademark"
+          href="https://nodejs.org/en/about/trademark/"
         >
           Trademark Policy
         </a>
