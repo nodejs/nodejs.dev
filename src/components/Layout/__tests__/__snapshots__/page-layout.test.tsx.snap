@@ -232,7 +232,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://nodejs.org/en/about/trademark/"
+            href="/trademark"
           >
             Trademark Policy
           </a>

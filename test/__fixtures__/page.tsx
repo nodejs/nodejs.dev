@@ -190,3 +190,19 @@ export const createPrivacyData = (): Page => ({
     },
   },
 });
+
+export const createTrademarkData = (): Page => ({
+  data: {
+    page: {
+      fields: {
+        authors: ['palak'],
+      },
+      frontmatter: {
+        description: 'Mock Description',
+        title: 'Mock Title',
+      },
+      html: '<div>Sample</div>',
+      tableOfContents: 'Table of Content',
+    },
+  },
+});

@@ -72,7 +72,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'learn',
+        name: 'data',
         path: `${__dirname}/content/about`,
       },
     },

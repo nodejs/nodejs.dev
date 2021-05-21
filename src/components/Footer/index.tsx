@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
 import RandomContributor from '../RandomContributor';
 import './footer.scss';
 
@@ -18,12 +19,9 @@ function Footer(): JSX.Element {
       <footer className="footer">
         <ul className="footer__left">
           <li>
-            <a
-              className="footer__link"
-              href="https://nodejs.org/en/about/trademark/"
-            >
+            <Link className="footer__link" to="/trademark">
               Trademark Policy
-            </a>
+            </Link>
           </li>
           <li>
             <Link className="footer__link" to="/privacy">
