@@ -1,7 +1,7 @@
 ---
 title: Working Groups
 description: "Working Groups| Node.js"
-authors: williamkapke,  Trott,  fhemberger,  rxmarbles, mhdawson,XhmikosR,ryanmurakami,outsideris,MaledongGit, vsemozhetbyt, wonderdogone,sotayamashita,richardlau, pierreneter,nschonni, marocchino, stevemao, lpinca, phillipj, jasnell,sejaljain123
+authors: williamkapke,Trott,fhemberger,rxmarbles,mhdawson,XhmikosR,ryanmurakami,outsideris,MaledongGit,vsemozhetbyt,wonderdogone,sotayamashita,richardlau,pierreneter,nschonni,marocchino,stevemao,lpinca,phillipj,jasnell,sejaljain123
 category: working-groups
 ---
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
