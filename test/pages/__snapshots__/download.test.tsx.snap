@@ -343,7 +343,7 @@ exports[`Download page renders correctly 1`] = `
                 id="react-tabs-2"
                 role="tab"
               >
-                Node.js 13
+                Node.js 14
               </li>
               <li
                 aria-controls="react-tabs-5"
@@ -353,7 +353,7 @@ exports[`Download page renders correctly 1`] = `
                 id="react-tabs-4"
                 role="tab"
               >
-                Node.js 14
+                Node.js 15
               </li>
               <li
                 aria-controls="react-tabs-7"
@@ -361,16 +361,6 @@ exports[`Download page renders correctly 1`] = `
                 aria-selected="false"
                 class="react-tabs__tab"
                 id="react-tabs-6"
-                role="tab"
-              >
-                Node.js 15
-              </li>
-              <li
-                aria-controls="react-tabs-9"
-                aria-disabled="false"
-                aria-selected="false"
-                class="react-tabs__tab"
-                id="react-tabs-8"
                 role="tab"
               >
                 Node.js 16
@@ -483,12 +473,6 @@ exports[`Download page renders correctly 1`] = `
               aria-labelledby="react-tabs-6"
               class="react-tabs__tab-panel"
               id="react-tabs-7"
-              role="tabpanel"
-            />
-            <div
-              aria-labelledby="react-tabs-8"
-              class="react-tabs__tab-panel"
-              id="react-tabs-9"
               role="tabpanel"
             />
           </div>
@@ -1279,15 +1263,25 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               role="tablist"
             >
               <li
-                aria-controls="react-tabs-11"
+                aria-controls="react-tabs-9"
                 aria-disabled="false"
                 aria-selected="true"
                 class="react-tabs__tab react-tabs__tab--selected"
-                id="react-tabs-10"
+                id="react-tabs-8"
                 role="tab"
                 tabindex="0"
               >
                 Node.js 12
+              </li>
+              <li
+                aria-controls="react-tabs-11"
+                aria-disabled="false"
+                aria-selected="false"
+                class="react-tabs__tab"
+                id="react-tabs-10"
+                role="tab"
+              >
+                Node.js 14
               </li>
               <li
                 aria-controls="react-tabs-13"
@@ -1297,7 +1291,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                 id="react-tabs-12"
                 role="tab"
               >
-                Node.js 13
+                Node.js 15
               </li>
               <li
                 aria-controls="react-tabs-15"
@@ -1307,33 +1301,13 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                 id="react-tabs-14"
                 role="tab"
               >
-                Node.js 14
-              </li>
-              <li
-                aria-controls="react-tabs-17"
-                aria-disabled="false"
-                aria-selected="false"
-                class="react-tabs__tab"
-                id="react-tabs-16"
-                role="tab"
-              >
-                Node.js 15
-              </li>
-              <li
-                aria-controls="react-tabs-19"
-                aria-disabled="false"
-                aria-selected="false"
-                class="react-tabs__tab"
-                id="react-tabs-18"
-                role="tab"
-              >
                 Node.js 16
               </li>
             </ul>
             <div
-              aria-labelledby="react-tabs-10"
+              aria-labelledby="react-tabs-8"
               class="react-tabs__tab-panel react-tabs__tab-panel--selected"
-              id="react-tabs-11"
+              id="react-tabs-9"
               role="tabpanel"
             >
               <div
@@ -1422,6 +1396,12 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               </div>
             </div>
             <div
+              aria-labelledby="react-tabs-10"
+              class="react-tabs__tab-panel"
+              id="react-tabs-11"
+              role="tabpanel"
+            />
+            <div
               aria-labelledby="react-tabs-12"
               class="react-tabs__tab-panel"
               id="react-tabs-13"
@@ -1431,18 +1411,6 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               aria-labelledby="react-tabs-14"
               class="react-tabs__tab-panel"
               id="react-tabs-15"
-              role="tabpanel"
-            />
-            <div
-              aria-labelledby="react-tabs-16"
-              class="react-tabs__tab-panel"
-              id="react-tabs-17"
-              role="tabpanel"
-            />
-            <div
-              aria-labelledby="react-tabs-18"
-              class="react-tabs__tab-panel"
-              id="react-tabs-19"
               role="tabpanel"
             />
           </div>

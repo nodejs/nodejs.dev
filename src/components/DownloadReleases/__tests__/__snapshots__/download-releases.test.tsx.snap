@@ -40,7 +40,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
             id="react-tabs-2"
             role="tab"
           >
-            Node.js 13
+            Node.js 14
           </li>
           <li
             aria-controls="react-tabs-5"
@@ -50,7 +50,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
             id="react-tabs-4"
             role="tab"
           >
-            Node.js 14
+            Node.js 15
           </li>
           <li
             aria-controls="react-tabs-7"
@@ -58,16 +58,6 @@ exports[`DownloadReleases component renders correctly 1`] = `
             aria-selected="false"
             class="react-tabs__tab"
             id="react-tabs-6"
-            role="tab"
-          >
-            Node.js 15
-          </li>
-          <li
-            aria-controls="react-tabs-9"
-            aria-disabled="false"
-            aria-selected="false"
-            class="react-tabs__tab"
-            id="react-tabs-8"
             role="tab"
           >
             Node.js 16
@@ -180,12 +170,6 @@ exports[`DownloadReleases component renders correctly 1`] = `
           aria-labelledby="react-tabs-6"
           class="react-tabs__tab-panel"
           id="react-tabs-7"
-          role="tabpanel"
-        />
-        <div
-          aria-labelledby="react-tabs-8"
-          class="react-tabs__tab-panel"
-          id="react-tabs-9"
           role="tabpanel"
         />
       </div>
