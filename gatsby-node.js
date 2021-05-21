@@ -17,7 +17,16 @@ exports.createPages = ({ graphql, actions }) => {
           {
             allMarkdownRemark(
               filter: {
-                fields: { slug: { nin: ["", "nodejs-community", "homepage"] } }
+                fields: {
+                  slug: {
+                    nin: [
+                      ""
+                      "nodejs-community"
+                      "homepage"
+                      "trademark-policy"
+                    ]
+                  }
+                }
               }
               sort: { fields: [fileAbsolutePath], order: ASC }
             ) {
