@@ -181,7 +181,7 @@ export const createWorkingGroupsData = (): Page => ({
     page: {
       fields: {
         authors: ['sejal'],
-      }, 
+      },
       frontmatter: {
         description: 'Mock Description',
         title: 'Mock Title',
@@ -197,7 +197,6 @@ export const createTrademarkData = (): Page => ({
     page: {
       fields: {
         authors: ['palak'],
-
       },
       frontmatter: {
         description: 'Mock Description',
