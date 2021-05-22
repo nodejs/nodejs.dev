@@ -459,7 +459,14 @@ details {
 
   .nav__container {
     padding: 0 var(--space-12);
-    min-height: var(--nav-height);
+    min-height: calc(2 * var(--nav-height));
+    align-items: start;
+  }
+
+  .logo {
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
   }
 
   .nav__logo {
@@ -470,6 +477,13 @@ details {
     padding-left: 0;
     margin-left: var(--space-08);
     justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    transform: translateY(var(--nav-height))
+      translateX(calc(var(--space-12) * -1));
+    background: var(--color-fill-app);
+    height: var(--nav-height);
+    margin: 0;
   }
 
   .nav .right-container {
