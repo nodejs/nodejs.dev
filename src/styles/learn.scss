@@ -7,7 +7,7 @@
   overflow-x: hidden;
   padding: 0 var(--space-20);
   position: sticky;
-  top: calc(2 * var(--nav-height));
+  top: var(--nav-height);
   width: 100%;
   max-width: 36rem;
   box-sizing: border-box;
@@ -154,7 +154,7 @@
 }
 
 .side-nav.side-nav--open .side-nav__open {
-  top: calc(var(--nav-height) + 1.8rem);
+  top: 1.8rem;
   margin-bottom: -35px;
   margin-top: 16px;
   color: transparent;
