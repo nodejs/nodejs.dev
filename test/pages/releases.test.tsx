@@ -1,15 +1,14 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import TrademarkPage from '../../src/pages/trademark';
 import '../__mocks__/intersectionObserverMock';
-
 import { createGeneralPageData } from '../__fixtures__/page';
+import ReleasesPage from '../../src/pages/releases';
 
 const mockData = createGeneralPageData();
 
-describe('Trademark page', () => {
+describe('Releases page', () => {
   it('renders correctly', () => {
-    const { container } = render(<TrademarkPage data={mockData.data} />);
+    const { container } = render(<ReleasesPage data={mockData.data} />);
     expect(container).toMatchSnapshot();
   });
 });

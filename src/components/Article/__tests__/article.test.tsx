@@ -42,6 +42,9 @@ describe('Article component', () => {
     window.IntersectionObserver = intersectionObserverOriginal;
     window.scrollTo = scrollToOriginal;
     window.history.replaceState = replaceStateOriginal;
+
+    // clean-up history state
+    window.history.replaceState({}, '', null);
   });
 
   it('renders correctly', () => {
@@ -301,5 +304,26 @@ describe('Article component', () => {
     );
 
     expect(window.scrollTo).toHaveBeenCalledWith({ top: 1 });
+  });
+
+  it('should accept and render child components', () => {
+    const { title, description, html, next, previous, authors, relativePath } =
+      getArticleProps();
+
+    const { container } = render(
+      <Article
+        title={title}
+        tableOfContents={description}
+        html={html}
+        next={next}
+        previous={previous}
+        authors={authors}
+        relativePath={relativePath}
+      >
+        <div>test child JSX</div>
+      </Article>
+    );
+
+    expect(container).toMatchSnapshot();
   });
 });

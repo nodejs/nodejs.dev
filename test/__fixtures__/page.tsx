@@ -176,11 +176,11 @@ export const createBlogPageData = (): BlogPageData => ({
   },
 });
 
-export const createTrademarkData = (): Page => ({
+export const createGeneralPageData = (): Page => ({
   data: {
     page: {
       fields: {
-        authors: ['palak'],
+        authors: ['author-mock'],
       },
       frontmatter: {
         description: 'Mock Description',
