@@ -18,6 +18,7 @@ interface Props {
   previous?: PaginationInfo;
   blog?: boolean;
   date?: string;
+  children?: JSX.Element;
 }
 
 const NAV_HEIGHT = 72;
@@ -33,6 +34,7 @@ const Article = ({
   authors,
   blog,
   date,
+  children,
 }: Props): JSX.Element => {
   const element = React.useRef<HTMLDivElement>(null);
 
@@ -85,18 +87,16 @@ const Article = ({
     );
 
     if (currentElementRef && currentElementRef.current) {
-      Array.from(currentElementRef.current.children).forEach(
-        (children): void => {
-          observer.observe(children);
-        }
-      );
+      Array.from(currentElementRef.current.children).forEach((child): void => {
+        observer.observe(child);
+      });
     }
 
     return (): void => {
       if (currentElementRef && currentElementRef.current) {
         Array.from(currentElementRef.current.children).forEach(
-          (children): void => {
-            observer.unobserve(children);
+          (child): void => {
+            observer.unobserve(child);
           }
         );
       }
@@ -114,6 +114,9 @@ const Article = ({
       )}
       {/* eslint-disable-next-line react/no-danger */}
       <div ref={element} dangerouslySetInnerHTML={{ __html: html }} />
+      {children && (
+        <div className="article-reader__additional-content">{children}</div>
+      )}
       {!blog && <AuthorsList authors={authors as string[]} />}
       {!blog && <EditLink relativePath={relativePath} editPath={editPath} />}
       {!blog && <Pagination previous={previous} next={next} />}

@@ -345,6 +345,10 @@ select {
     border: none;
     border-bottom: 0.4rem solid var(--black2);
   }
+
+  img {
+    max-width: 100%;
+  }
 }
 
 /* sr-only for desktop */

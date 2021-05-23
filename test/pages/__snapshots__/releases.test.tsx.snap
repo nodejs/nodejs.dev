@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Trademark page renders correctly 1`] = `
+exports[`Releases page renders correctly 1`] = `
 <div>
   <div
     class="layout-container"
@@ -33,55 +33,55 @@ exports[`Trademark page renders correctly 1`] = `
               />
             </div>
           </a>
+          <ul
+            class="nav__tabs__container"
+          >
+            <li
+              class="nav__tabs"
+            >
+              <a
+                class="activeStyleTab"
+                href="/learn"
+              >
+                Learn
+              </a>
+            </li>
+            <li
+              class="nav__tabs"
+            >
+              <a
+                class="activeStyleTab"
+                href="https://nodejs.org/en/docs/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Documentation
+              </a>
+            </li>
+            <li
+              class="nav__tabs"
+            >
+              <a
+                class="activeStyleTab"
+                href="/download"
+              >
+                Download
+              </a>
+            </li>
+            <li
+              class="nav__tabs"
+            >
+              <a
+                class="activeStyleTab"
+                href="https://nodejs.org/en/get-involved/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Community
+              </a>
+            </li>
+          </ul>
         </div>
-        <ul
-          class="nav__tabs__container"
-        >
-          <li
-            class="nav__tabs"
-          >
-            <a
-              class="activeStyleTab"
-              href="/learn"
-            >
-              Learn
-            </a>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <a
-              class="activeStyleTab"
-              href="https://nodejs.org/en/docs/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Documentation
-            </a>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <a
-              class="activeStyleTab"
-              href="/download"
-            >
-              Download
-            </a>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <a
-              class="activeStyleTab"
-              href="https://nodejs.org/en/get-involved/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </li>
-        </ul>
         <div
           class="nav__endwrapper"
         >
@@ -142,79 +142,8 @@ exports[`Trademark page renders correctly 1`] = `
       </div>
     </nav>
     <main
-      class="streched-container"
+      class="centered-container"
     >
-       
-      <nav
-        class="side-nav-about"
-      >
-        <button
-          class="side-nav__open"
-          type="button"
-        >
-          Menu
-        </button>
-        <ul
-          class="community-nav__list"
-        >
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/"
-            id="link-"
-          >
-            About
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/governance"
-            id="link-governance"
-          >
-            Project Governance
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/community"
-            id="link-community"
-          >
-            Community
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/working-groups"
-            id="link-working-groups"
-          >
-            Working Groups
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/releases"
-            id="link-releases"
-          >
-            Releases
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/resources"
-            id="link-resources"
-          >
-            Resources
-          </a>
-          <a
-            class="t-body2 side-nav__item-community side-nav__item-community--active"
-            href="/trademark"
-            id="link-trademark"
-          >
-            Trademark Policy
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/privacy"
-            id="link-privacy"
-          >
-            Privacy Policy
-          </a>
-        </ul>
-      </nav>
       <article
         class="article-reader"
       >
@@ -238,6 +167,182 @@ exports[`Trademark page renders correctly 1`] = `
         <div>
           <div>
             Sample
+          </div>
+        </div>
+        <div
+          class="article-reader__additional-content"
+        >
+          <div
+            class="downloads-table-container"
+          >
+            <table
+              class="downloads-table"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    Release
+                  </th>
+                  <th>
+                    Status
+                  </th>
+                  <th>
+                    Codename
+                  </th>
+                  <th>
+                    Initial Release
+                  </th>
+                  <th>
+                    Active LTS Start
+                  </th>
+                  <th>
+                    Maintainance LTS Start
+                  </th>
+                  <th>
+                    End of Life
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a
+                      href="https://nodejs.org/download/release/latest-v10.x/"
+                    >
+                      v10
+                    </a>
+                  </td>
+                  <td>
+                    Maintenance LTS
+                  </td>
+                  <td>
+                    <a
+                      href="https://nodejs.org/download/release/latest-dubnium/"
+                    >
+                      Dubnium
+                    </a>
+                  </td>
+                  <td>
+                    2018-04-24
+                  </td>
+                  <td>
+                    2018-10-30
+                  </td>
+                  <td>
+                    2020-05-19
+                  </td>
+                  <td>
+                    2021-04-30
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a
+                      href="https://nodejs.org/download/release/latest-v12.x/"
+                    >
+                      v12
+                    </a>
+                  </td>
+                  <td>
+                    Active LTS
+                  </td>
+                  <td>
+                    <a
+                      href="https://nodejs.org/download/release/latest-erbium/"
+                    >
+                      Erbium
+                    </a>
+                  </td>
+                  <td>
+                    2019-04-23
+                  </td>
+                  <td>
+                    2019-10-21
+                  </td>
+                  <td>
+                    2020-10-20
+                  </td>
+                  <td>
+                    2022-04-30
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a
+                      href="https://nodejs.org/download/release/latest-v14.x/"
+                    >
+                      v14
+                    </a>
+                  </td>
+                  <td>
+                    Active LTS
+                  </td>
+                  <td>
+                    <a
+                      href="https://nodejs.org/download/release/latest-fermium/"
+                    >
+                      Fermium
+                    </a>
+                  </td>
+                  <td>
+                    2020-04-21
+                  </td>
+                  <td>
+                    2020-10-27
+                  </td>
+                  <td>
+                    2021-10-19
+                  </td>
+                  <td>
+                    2023-04-30
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a
+                      href="https://nodejs.org/download/release/latest-v15.x/"
+                    >
+                      v15
+                    </a>
+                  </td>
+                  <td>
+                    Curent
+                  </td>
+                  <td />
+                  <td>
+                    2020-10-20
+                  </td>
+                  <td />
+                  <td>
+                    2021-04-01
+                  </td>
+                  <td>
+                    2021-06-01
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    v16
+                  </td>
+                  <td>
+                    Pending
+                  </td>
+                  <td />
+                  <td>
+                    2021-04-20
+                  </td>
+                  <td>
+                    2021-10-26
+                  </td>
+                  <td>
+                    2022-10-18
+                  </td>
+                  <td>
+                    2024-04-30
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
         <ul
@@ -268,7 +373,7 @@ exports[`Trademark page renders correctly 1`] = `
         >
           <a
             class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/trademark.md"
+            href="https://github.com/nodejs/nodejs.dev/edit/master/content/about/releases.md"
           >
             <span>
               Edit this page on GitHub
@@ -314,7 +419,7 @@ exports[`Trademark page renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="/privacy"
+          href="https://nodejs.org/en/about/privacy/"
         >
           Privacy Policy
         </a>
@@ -322,7 +427,7 @@ exports[`Trademark page renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
+          href="https://github.com/openjs-foundation/cross-project-council/blob/master/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
         >
           Code of Conduct
         </a>
