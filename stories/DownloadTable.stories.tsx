@@ -1,5 +1,5 @@
 import React from 'react';
-import { getStaticReleaseData } from '../src/hooks/useReleaseHistory';
+import { useReleaseData } from '../src/hooks/useReleaseHistory';
 
 import DownloadTable from '../src/components/DownloadReleases/DownloadTable';
 
@@ -11,7 +11,7 @@ export default {
 };
 
 const DownloadTableExample = (): JSX.Element => {
-  const releaseHistory = getStaticReleaseData().slice(0, 10);
+  const releaseHistory = useReleaseData().slice(0, 10);
 
   return <DownloadTable releases={releaseHistory} />;
 };
