@@ -177,9 +177,9 @@ Responsibilities include:
   the [pkgjs](https://github.com/pkgjs) organization
 * Managing the maintainer teams and contribution policies for the
   following repositories
-  * nodejs/ci-config-travis
-  * nodejs/ci-config-github-actions
-  * nodejs/package-maintenance repository.
+  `* nodejs/ci-config-travis`
+  `* nodejs/ci-config-github-actions`
+  `* nodejs/package-maintenance repository.`
 
 ### [Release](https://github.com/nodejs/Release)
 
