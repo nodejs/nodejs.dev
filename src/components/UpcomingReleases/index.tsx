@@ -11,7 +11,7 @@ export default function UpcomingReleases(): JSX.Element {
       <Tabs>
         <TabList>
           {upcomingReleaseData.map(release => (
-            <Tab key={release.title}>{release.title}</Tab>
+            <Tab key={release.title}>Node.js {release.title}</Tab>
           ))}
         </TabList>
         {upcomingReleaseData.map(release => (
