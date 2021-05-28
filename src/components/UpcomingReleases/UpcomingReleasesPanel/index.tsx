@@ -1,9 +1,9 @@
 import React from 'react';
 import UpcomingReleasesItem from '../UpcomingReleasesItem';
-import { UpcomingRelease } from '../upcomingReleases';
+import { UpcomingReleaseData } from '../../../hooks/useUpcomingReleases';
 
 type Props = {
-  releases: UpcomingRelease[];
+  releases: UpcomingReleaseData[];
 };
 
 export default function UpcomingReleasesPanel({
