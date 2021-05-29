@@ -40,9 +40,8 @@ export function useReleaseHistory(): ReleaseData[] {
   const [releaseHistory, setReleaseHistory] = useState<ReleaseData[]>([]);
   useEffect((): void => {
     const fetchData = async (): Promise<void> => {
-      const result = await fetch(releasesURL).then(
-        (data): Promise<ReleaseData[]> => data.json()
-      );
+      const apiResponse = await fetch(releasesURL);
+      const result: ReleaseData[] = await apiResponse.json();
       setReleaseHistory(result);
     };
     fetchData();
@@ -51,15 +50,19 @@ export function useReleaseHistory(): ReleaseData[] {
   return releaseHistory;
 }
 
-export function useReleaseData(): NodeReleaseData[] {
+export function useReleaseData(): {
+  releaseData: NodeReleaseData[];
+  rawData: NodeReleaseDataAPIResponse;
+} {
   const releaseDataURL =
     'https://raw.githubusercontent.com/nodejs/Release/main/schedule.json';
   const [releaseData, setReleaseData] = useState<NodeReleaseData[]>([]);
+  const [rawData, setRawData] = useState<NodeReleaseDataAPIResponse>({});
   useEffect((): void => {
     const fetchData = async (): Promise<void> => {
-      const result = await fetch(releaseDataURL).then(
-        (data): Promise<NodeReleaseDataAPIResponse> => data.json()
-      );
+      const apiResponse = await fetch(releaseDataURL);
+      const result: NodeReleaseDataAPIResponse = await apiResponse.json();
+      setRawData(result);
       const filteredResult: NodeReleaseData[] = [];
       Object.keys(result).forEach(key => {
         const release = result[key];
@@ -80,5 +83,5 @@ export function useReleaseData(): NodeReleaseData[] {
     fetchData();
   }, []);
 
-  return releaseData;
+  return { releaseData, rawData };
 }

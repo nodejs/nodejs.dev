@@ -11,7 +11,7 @@ export default {
 };
 
 const DownloadTableExample = (): JSX.Element => {
-  const releaseHistory = useReleaseData().slice(0, 10);
+  const releaseHistory = useReleaseData().releaseData.slice(0, 10);
 
   return <DownloadTable releases={releaseHistory} />;
 };
