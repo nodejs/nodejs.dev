@@ -15,7 +15,7 @@ interface Props {
 
 export default function DownloadPage({ location }: Props): JSX.Element {
   const releaseHistory = useReleaseHistory().slice(0, 50);
-  const releaseData = useReleaseData();
+  const { releaseData } = useReleaseData();
   const [typeRelease, setTypeRelease] = useState('LTS');
 
   const userOS = detectOS();

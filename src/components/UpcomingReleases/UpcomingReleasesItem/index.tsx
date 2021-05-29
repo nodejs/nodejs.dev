@@ -2,10 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import hexagonFilled from '../../../images/icons/hexagon-filled.svg';
 import hexagonOutline from '../../../images/icons/hexagon-outline.svg';
-import {
-  UpcomingReleaseData,
-  RELEASE_TYPES,
-} from '../../../hooks/useUpcomingReleases';
+import { UpcomingReleaseData } from '../../../hooks/useUpcomingReleases';
 import './UpcomingReleasesItem.scss';
 
 type Props = UpcomingReleaseData;
@@ -23,7 +20,7 @@ export default function UpcomingReleasesItem({
   return (
     <div className={className}>
       <img src={image} alt="hexagon icon" />
-      <p className="release-title">{RELEASE_TYPES[releaseType]}</p>
+      <p className="release-title">{releaseType}</p>
       <p className="release-date">
         {alreadyReleased ? 'Released' : 'To be released'} {releaseDate}
       </p>
