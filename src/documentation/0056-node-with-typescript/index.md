@@ -123,5 +123,6 @@ Some of the notable examples of open-source projects using TypeScript are:
 * [TypeORM](https://typeorm.io/#/) - great ORM influenced by other well-known tools from other languages like Hibernate, Doctrine or Entity Framework
 * [Prisma](https://prisma.io/) - next-generation ORM featuring a declarative data model, generated migrations and fully type-safe database queries
 * [RxJS](https://rxjs.dev/) - widely used library for reactive programming
+* [AdonisJS](https://adonisjs.com) - A fully featured web framework with Node.js
 
 And many, many more great projects... Maybe even your next one!
