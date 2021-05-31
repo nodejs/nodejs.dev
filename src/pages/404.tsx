@@ -12,7 +12,7 @@ export default function NotFoundPage({ location }: Props): JSX.Element {
 
   return (
     <Layout title={title} location={location} description={description}>
-      <Hero title={title} />
+      <Hero title={title} displayDownload={false} />
       <main style={{ width: '100%' }} className="article-reader">
         <p>
           The page you&apos;re trying to access does not exist. Go back to the
