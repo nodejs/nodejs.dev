@@ -19,8 +19,7 @@ export default function NotFoundPage({ location }: Props): JSX.Element {
           Homepage or find what you&apos;re looking for in the menu.
         </p>
         <p>
-          Take me back to the
-          <a href="/">Homepage</a>
+          Take me back to the <a href="/">Homepage</a>
         </p>
       </main>
     </Layout>
