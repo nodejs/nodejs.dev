@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Learn Template renders correctly 1`] = `
+exports[`Trademark page renders correctly 1`] = `
 <div>
   <div
     class="layout-container"
@@ -142,31 +142,32 @@ exports[`Learn Template renders correctly 1`] = `
       </div>
     </nav>
     <main
-      class="grid-container"
+      class="centered-container"
     >
-      <nav
-        aria-label="Secondary"
-        class="side-nav"
-      >
-        <button
-          class="side-nav__open"
-          type="button"
-        >
-          Menu
-        </button>
-      </nav>
       <article
         class="article-reader"
       >
         <h1
           class="article-reader__headline"
         >
-          test-title
+          Mock Title
         </h1>
+        <details
+          class="toc"
+        >
+          <summary>
+            <h6>
+              TABLE OF CONTENTS
+            </h6>
+          </summary>
+          <div>
+            Table of Content
+          </div>
+        </details>
         <div>
-          <span>
-            Test html
-          </span>
+          <div>
+            Sample
+          </div>
         </div>
         <ul
           class="list"
@@ -177,31 +178,16 @@ exports[`Learn Template renders correctly 1`] = `
           <li>
             <a
               class="link"
-              href="https://github.com/test-user1"
+              href="https://github.com/palak"
               rel="noopener noreferrer"
               style="margin-left: 0px;"
               target="_blank"
-              title="test-user1"
+              title="palak"
             >
               <img
-                alt="test-user1"
+                alt="palak"
                 class="img"
-                src="https://github.com/test-user1.png?size=60"
-              />
-            </a>
-          </li>
-          <li>
-            <a
-              class="link"
-              href="https://github.com/test-user2"
-              rel="noopener noreferrer"
-              target="_blank"
-              title="test-user2"
-            >
-              <img
-                alt="test-user2"
-                class="img"
-                src="https://github.com/test-user2.png?size=60"
+                src="https://github.com/palak.png?size=60"
               />
             </a>
           </li>
@@ -211,7 +197,7 @@ exports[`Learn Template renders correctly 1`] = `
         >
           <a
             class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/test-path"
+            href="https://github.com/nodejs/nodejs.dev/edit/master/content/about/trademark.md"
           >
             <span>
               Edit this page on GitHub
@@ -230,28 +216,6 @@ exports[`Learn Template renders correctly 1`] = `
             </svg>
           </a>
         </div>
-        <ul
-          class="pagination"
-        >
-          <li>
-            <a
-              class="link"
-              href="/learn/test-slug"
-              rel="prev"
-            >
-              ←   Prev
-            </a>
-          </li>
-          <li>
-            <a
-              class="link"
-              href="/learn/test-slug"
-              rel="next"
-            >
-              Next   →
-            </a>
-          </li>
-        </ul>
       </article>
     </main>
   </div>

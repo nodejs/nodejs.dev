@@ -1,41 +1,24 @@
 import React from 'react';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import UpcomingReleasesPanel from './UpcomingReleasesPanel';
-import {
-  NODE_12_RELEASES,
-  NODE_13_RELEASES,
-  NODE_14_RELEASES,
-  NODE_15_RELEASES,
-  NODE_16_RELEASES,
-} from './upcomingReleases';
 import './UpcomingReleases.scss';
+import { useUpcomingReleases } from '../../hooks/useUpcomingReleases';
 
 export default function UpcomingReleases(): JSX.Element {
+  const upcomingReleaseData = useUpcomingReleases();
   return (
     <div className="upcoming-releases">
       <Tabs>
         <TabList>
-          <Tab>Node.js 12</Tab>
-          <Tab>Node.js 13</Tab>
-          <Tab>Node.js 14</Tab>
-          <Tab>Node.js 15</Tab>
-          <Tab>Node.js 16</Tab>
+          {upcomingReleaseData.map(release => (
+            <Tab key={release.title}>Node.js {release.title}</Tab>
+          ))}
         </TabList>
-        <TabPanel>
-          <UpcomingReleasesPanel releases={NODE_12_RELEASES} />
-        </TabPanel>
-        <TabPanel>
-          <UpcomingReleasesPanel releases={NODE_13_RELEASES} />
-        </TabPanel>
-        <TabPanel>
-          <UpcomingReleasesPanel releases={NODE_14_RELEASES} />
-        </TabPanel>
-        <TabPanel>
-          <UpcomingReleasesPanel releases={NODE_15_RELEASES} />
-        </TabPanel>
-        <TabPanel>
-          <UpcomingReleasesPanel releases={NODE_16_RELEASES} />
-        </TabPanel>
+        {upcomingReleaseData.map(release => (
+          <TabPanel key={release.title}>
+            <UpcomingReleasesPanel releases={release.releases} />
+          </TabPanel>
+        ))}
       </Tabs>
     </div>
   );
