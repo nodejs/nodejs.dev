@@ -34,7 +34,7 @@ You can also set the `process.exitCode` property:
 process.exitCode = 1
 ```
 
-and when the program will later end, Node.js will return that exit code.
+and when the program ends, Node.js will return that exit code.
 
 A program will gracefully exit when all the processing is done.
 
