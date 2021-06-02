@@ -154,7 +154,7 @@ exports[`404 page renders correctly 1`] = `
         class="btn-ctas"
       >
         <a
-          class="circular-container inverse"
+          class="circular-container"
           href="/learn"
         >
           Learn Node
