@@ -153,26 +153,6 @@ exports[`404 page renders correctly 1`] = `
       <div
         class="btn-ctas"
       >
-        <div
-          class="download-lts-container"
-        >
-          <a
-            class="circular-container"
-            href="https://nodejs.org/dist/mmock-version-2/node-mmock-version-2.tar.gz"
-          >
-            Download Node (LTS)
-          </a>
-          <p
-            class="t-caption"
-          >
-            Version mock-version-2 - 
-            <a
-              href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
-            >
-              Get Current
-            </a>
-          </p>
-        </div>
         <a
           class="circular-container inverse"
           href="/learn"
@@ -182,14 +162,13 @@ exports[`404 page renders correctly 1`] = `
       </div>
     </div>
     <main
-      class="article-reader"
-      style="width: 100%;"
+      style="width: 100%; text-align: center;"
     >
       <p>
         The page you're trying to access does not exist. Go back to the Homepage or find what you're looking for in the menu.
       </p>
       <p>
-        Take me back to the
+        Take me back to the 
         <a
           href="/"
         >
