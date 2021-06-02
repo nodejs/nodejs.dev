@@ -6,13 +6,13 @@ import Article from '../components/Article';
 import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
 import DownloadTable from '../components/DownloadReleases/DownloadTable';
-import { getStaticReleaseData } from '../hooks/useReleaseHistory';
+import { useReleaseData } from '../hooks/useReleaseHistory';
 
 export default function ReleasesPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
   const { html, tableOfContents } = data.page;
   const { authors } = data.page.fields;
-  const releases = getStaticReleaseData();
+  const { releaseData } = useReleaseData();
 
   return (
     <>
@@ -25,7 +25,7 @@ export default function ReleasesPage({ data }: Page): JSX.Element {
             authors={authors}
             editPath="content/about/releases.md"
           >
-            <DownloadTable releases={releases} />
+            <DownloadTable releases={releaseData} />
           </Article>
         </main>
       </Layout>

@@ -207,44 +207,13 @@ exports[`Releases page renders correctly 1`] = `
                 <tr>
                   <td>
                     <a
-                      href="https://nodejs.org/download/release/latest-v10.x/"
-                    >
-                      v10
-                    </a>
-                  </td>
-                  <td>
-                    Maintenance LTS
-                  </td>
-                  <td>
-                    <a
-                      href="https://nodejs.org/download/release/latest-dubnium/"
-                    >
-                      Dubnium
-                    </a>
-                  </td>
-                  <td>
-                    2018-04-24
-                  </td>
-                  <td>
-                    2018-10-30
-                  </td>
-                  <td>
-                    2020-05-19
-                  </td>
-                  <td>
-                    2021-04-30
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a
                       href="https://nodejs.org/download/release/latest-v12.x/"
                     >
                       v12
                     </a>
                   </td>
                   <td>
-                    Active LTS
+                    Maintenance LTS
                   </td>
                   <td>
                     <a
@@ -260,7 +229,7 @@ exports[`Releases page renders correctly 1`] = `
                     2019-10-21
                   </td>
                   <td>
-                    2020-10-20
+                    2020-11-30
                   </td>
                   <td>
                     2022-04-30
@@ -295,50 +264,6 @@ exports[`Releases page renders correctly 1`] = `
                   </td>
                   <td>
                     2023-04-30
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a
-                      href="https://nodejs.org/download/release/latest-v15.x/"
-                    >
-                      v15
-                    </a>
-                  </td>
-                  <td>
-                    Curent
-                  </td>
-                  <td />
-                  <td>
-                    2020-10-20
-                  </td>
-                  <td />
-                  <td>
-                    2021-04-01
-                  </td>
-                  <td>
-                    2021-06-01
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    v16
-                  </td>
-                  <td>
-                    Pending
-                  </td>
-                  <td />
-                  <td>
-                    2021-04-20
-                  </td>
-                  <td>
-                    2021-10-26
-                  </td>
-                  <td>
-                    2022-10-18
-                  </td>
-                  <td>
-                    2024-04-30
                   </td>
                 </tr>
               </tbody>
