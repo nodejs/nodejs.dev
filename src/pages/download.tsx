@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import {
-  useReleaseHistory,
-  getStaticReleaseData,
-} from '../hooks/useReleaseHistory';
+import { useReleaseHistory, useReleaseData } from '../hooks/useReleaseHistory';
 import { detectOS } from '../util/detectOS';
 import Layout from '../components/Layout';
 import DownloadHeader from '../components/DownloadHeader';
@@ -18,7 +15,7 @@ interface Props {
 
 export default function DownloadPage({ location }: Props): JSX.Element {
   const releaseHistory = useReleaseHistory().slice(0, 50);
-  const staticReleaseData = getStaticReleaseData();
+  const { releaseData } = useReleaseData();
   const [typeRelease, setTypeRelease] = useState('LTS');
 
   const userOS = detectOS();
@@ -49,7 +46,7 @@ export default function DownloadPage({ location }: Props): JSX.Element {
           handleClick={handleTypeReleaseToggle}
         />
         <DownloadCards line={selectedType} userOS={userOS} />
-        <DownloadReleases releases={staticReleaseData} />
+        <DownloadReleases releases={releaseData} />
         <DownloadAdditional
           line={selectedType}
           selectedTypeRelease={typeRelease}
