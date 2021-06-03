@@ -13,7 +13,7 @@ const EventEmitter = require('events')
 const door = new EventEmitter()
 ```
 
-The event listener eats its own dog food and uses these events:
+The event listener has these in-built events:
 
 * `newListener` when a listener is added
 * `removeListener` when a listener is removed
