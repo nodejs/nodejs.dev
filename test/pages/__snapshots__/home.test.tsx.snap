@@ -184,12 +184,6 @@ exports[`Home page renders correctly 1`] = `
           >
             Learn Node
           </a>
-          <a
-            class="circular-container"
-            href="/learn"
-          >
-            Learn Node
-          </a>
         </div>
       </div>
       <section
