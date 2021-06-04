@@ -20,13 +20,4 @@ describe('Hero component', () => {
     const { container } = render(<Hero title={title} subTitle={subTitle} />);
     expect(container).toMatchSnapshot();
   });
-
-  it('renders without download button', () => {
-    const title = 'Introduction to Node.js';
-    const subTitle = 'Mock SubTitle';
-    const { container } = render(
-      <Hero title={title} subTitle={subTitle} displayDownload={false} />
-    );
-    expect(container).toMatchSnapshot();
-  });
 });

@@ -141,29 +141,13 @@ exports[`404 page renders correctly 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="home-page-hero"
+    <main
+      style="width: 100%; text-align: center; margin-top: 150px;"
     >
       <h1>
+         
         PAGE NOT FOUND
       </h1>
-      <h2
-        class="sub-title t-subheading"
-      />
-      <div
-        class="btn-ctas"
-      >
-        <a
-          class="circular-container"
-          href="/learn"
-        >
-          Learn Node
-        </a>
-      </div>
-    </div>
-    <main
-      style="width: 100%; text-align: center;"
-    >
       <p>
         The page you're trying to access does not exist. Go back to the Homepage or find what you're looking for in the menu.
       </p>

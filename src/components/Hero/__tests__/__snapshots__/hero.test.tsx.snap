@@ -42,27 +42,6 @@ exports[`Hero component renders correctly 1`] = `
       >
         Learn Node
       </a>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Hero component renders without download button 1`] = `
-<div>
-  <div
-    class="home-page-hero"
-  >
-    <h1>
-      Introduction to Node.js
-    </h1>
-    <h2
-      class="sub-title t-subheading"
-    >
-      Mock SubTitle
-    </h2>
-    <div
-      class="btn-ctas"
-    >
       <a
         class="circular-container"
         href="/learn"

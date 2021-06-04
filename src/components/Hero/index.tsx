@@ -10,14 +10,9 @@ import './Hero.scss';
 interface Props {
   title: string;
   subTitle?: string;
-  displayDownload?: boolean;
 }
 
-const Hero = ({
-  title,
-  subTitle,
-  displayDownload = true,
-}: Props): JSX.Element => {
+const Hero = ({ title, subTitle }: Props): JSX.Element => {
   const userOS = detectOS();
   const [currentRelease, ...releases] = useReleaseHistory();
 
@@ -40,29 +35,25 @@ const Hero = ({
       <h1>{title}</h1>
       <h2 className="sub-title t-subheading">{subTitle}</h2>
       <div className="btn-ctas">
-        {displayDownload && (
-          <div className="download-lts-container">
-            <a className="circular-container" href={ltsVersionUrl}>
-              Download Node (LTS)
-            </a>
-            <p className="t-caption">
-              {lastLTSRelease
-                ? `Version ${lastLTSRelease.version.substr(1)} - `
-                : ''}
-              <a href={currentVersionUrl}>Get Current</a>
-            </p>
-          </div>
-        )}
+        <div className="download-lts-container">
+          <a className="circular-container" href={ltsVersionUrl}>
+            Download Node (LTS)
+          </a>
+          <p className="t-caption">
+            {lastLTSRelease
+              ? `Version ${lastLTSRelease.version.substr(1)} - `
+              : ''}
+            <a href={currentVersionUrl}>Get Current</a>
+          </p>
+        </div>
 
-        {displayDownload ? (
-          <Link className="circular-container inverse" to="/learn">
-            Learn Node
-          </Link>
-        ) : (
-          <Link className="circular-container" to="/learn">
-            Learn Node
-          </Link>
-        )}
+        <Link className="circular-container inverse" to="/learn">
+          Learn Node
+        </Link>
+
+        <Link className="circular-container" to="/learn">
+          Learn Node
+        </Link>
       </div>
     </div>
   );
