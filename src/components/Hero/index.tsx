@@ -50,10 +50,6 @@ const Hero = ({ title, subTitle }: Props): JSX.Element => {
         <Link className="circular-container inverse" to="/learn">
           Learn Node
         </Link>
-
-        <Link className="circular-container" to="/learn">
-          Learn Node
-        </Link>
       </div>
     </div>
   );
