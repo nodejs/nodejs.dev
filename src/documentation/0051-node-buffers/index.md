@@ -116,7 +116,7 @@ let bufcopy = Buffer.alloc(4) //allocate 4 bytes
 buf.copy(bufcopy)
 ```
 
-By default you copy the whole buffer. 3 more parameters let you define the target buffer starting position to copy to, the source buffer starting position to copy from, and the new buffer length:
+By default you copy the whole buffer. 3 more parameters let you define the target buffer starting position to copy to, the source buffer starting position to copy from, and the source buffer position to stop copying (not inclusive):
 
 ```js
 const buf = Buffer.from('Hey!')
