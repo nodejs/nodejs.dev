@@ -59,8 +59,8 @@ console.log(buf[1]) //101
 console.log(buf[2]) //121
 ```
 
-Those numbers are the UTF-8 bytes that identifies the character in the buffer position (H => 72, e => 101, y => 121). This happens because `Buffer.from()` uses UTF-8 by default.
-Keep in mind that some characters may occupy more than one byte in the buffer (é => 195 169).
+Those numbers are the UTF-8 bytes that identify the characters in the buffer (`H` → `72`, `e` → `101`, `y` → `121`). This happens because `Buffer.from()` uses UTF-8 by default.
+Keep in mind that some characters may occupy more than one byte in the buffer (`é` → `195 169`).
 
 You can print the full content of the buffer using the `toString()` method:
 
