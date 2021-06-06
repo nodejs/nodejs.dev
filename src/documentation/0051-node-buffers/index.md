@@ -20,9 +20,7 @@ It is implemented by the Node.js [Buffer class](https://nodejs.org/api/buffer.ht
 
 Buffers were introduced to help developers deal with binary data, in an ecosystem that traditionally only dealt with strings rather than binaries.
 
-Buffers are deeply linked with streams. When a stream processor receives data faster than it can digest, it puts the data in a buffer.
-
-A simple visualization of a buffer is when you are watching a YouTube video and the red line goes beyond your visualization point: you are downloading data faster than you're viewing it, and your browser buffers it.
+Buffers in Node.js are not related to the concept of buffering data. That is what happens when a stream processor receives data faster than it can digest.
 
 ## How to create a buffer
 
@@ -61,13 +59,16 @@ console.log(buf[1]) //101
 console.log(buf[2]) //121
 ```
 
-Those numbers are the Unicode Code that identifies the character in the buffer position (H => 72, e => 101, y => 121)
+Those numbers are the UTF-8 bytes that identifies the character in the buffer position (H => 72, e => 101, y => 121). This happens because `Buffer.from()` uses UTF-8 by default.
+Keep in mind that some characters may occupy more than one byte in the buffer (é => 195 169).
 
 You can print the full content of the buffer using the `toString()` method:
 
 ```js
 console.log(buf.toString())
 ```
+
+`buf.toString()` also uses UTF-8 by default.
 
 > Notice that if you initialize a buffer with a number that sets its size, you'll get access to pre-initialized memory that will contain random data, not an empty buffer!
 
@@ -102,40 +103,40 @@ Just like you can access a buffer with an array syntax, you can also set the con
 
 ```js
 const buf = Buffer.from('Hey!')
-buf[1] = 111 //o
+buf[1] = 111 //o in UTF-8
 console.log(buf.toString()) //Hoy!
-```
-
-### Copy a buffer
-
-Copying a buffer is possible using the `copy()` method:
-
-```js
-const buf = Buffer.from('Hey!')
-let bufcopy = Buffer.alloc(4) //allocate 4 bytes
-buf.copy(bufcopy)
-```
-
-By default you copy the whole buffer. 3 more parameters let you define the target buffer starting position to copy to, the source buffer starting position to copy from, and the new buffer length:
-
-```js
-const buf = Buffer.from('Hey!')
-let bufcopy = Buffer.alloc(2) //allocate 2 bytes
-buf.copy(bufcopy, 0, 0, 2)
-bufcopy.toString() //'He'
 ```
 
 ### Slice a buffer
 
 If you want to create a partial visualization of a buffer, you can create a slice. A slice is not a copy: the original buffer is still the source of truth. If that changes, your slice changes.
 
-Use the `slice()` method to create it. The first parameter is the starting position, and you can specify an optional second parameter with the end position:
+Use the `subarray()` method to create it. The first parameter is the starting position, and you can specify an optional second parameter with the end position:
 
 ```js
 const buf = Buffer.from('Hey!')
-buf.slice(0).toString() //Hey!
-const slice = buf.slice(0, 2)
+buf.subarray(0).toString() //Hey!
+const slice = buf.subarray(0, 2)
 console.log(slice.toString()) //He
 buf[1] = 111 //o
 console.log(slice.toString()) //Ho
+```
+
+### Copy a buffer
+
+Copying a buffer is possible using the `set()` method:
+
+```js
+const buf = Buffer.from('Hey!')
+let bufcopy = Buffer.alloc(4) //allocate 4 bytes
+bufcopy.set(buf)
+```
+
+By default you copy the whole buffer. If you only want to copy a part of the buffer, you can use `.subarray()` from above and the `offset` argument that specifies an offset to write to:
+
+```js
+const buf = Buffer.from('Hey?')
+let bufcopy = Buffer.from('Moo!')
+bufcopy.set(buf.subarray(1, 3), 1)
+bufcopy.toString() //'Mey!'
 ```
