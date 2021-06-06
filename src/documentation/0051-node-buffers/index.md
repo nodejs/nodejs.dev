@@ -132,7 +132,7 @@ let bufcopy = Buffer.alloc(4) //allocate 4 bytes
 bufcopy.set(buf)
 ```
 
-By default you copy the whole buffer. If you only want to copy a part of the buffer, you can use `.subarray()` from above and the `offset` argument that specifies an offset to write to:
+By default you copy the whole buffer. If you only want to copy a part of the buffer, you can use `.subarray()` shown above and the `offset` argument that specifies an offset to write to:
 
 ```js
 const buf = Buffer.from('Hey?')
