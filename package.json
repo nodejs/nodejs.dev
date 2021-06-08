@@ -76,7 +76,7 @@
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.0",
+    "@babel/core": "^7.14.3",
     "@babel/preset-typescript": "^7.9.0",
     "@storybook/semver": "^7.3.2",
     "@testing-library/jest-dom": "^5.12.0",
