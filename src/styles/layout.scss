@@ -562,3 +562,9 @@ details {
 .bg-node-gray {
   background-color: #333;
 }
+
+.streched-container {
+  display: flex;
+  justify-content: stretch;
+  width: fit-content;
+}

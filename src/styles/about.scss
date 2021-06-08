@@ -1,0 +1,7 @@
+@import 'learn.scss';
+
+.side-nav-about {
+  @extend .side-nav;
+  overflow: hidden;
+  position: inherit;
+}
