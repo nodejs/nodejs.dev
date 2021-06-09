@@ -54,6 +54,13 @@ In the case of an objection being raised in a pull request by another collaborat
 * [`squash`][] pull-requests made up of multiple commits
 * Land how you like as long as there are no merge commits
 
+## How to become a collaborator
+
+* Collaborators must be actively contributing to the project
+* A collaborator issue must be opened on the @nodejs/nodejs.dev with user's github name in the title
+* Issue must be reviewed and approved by at least two members of @nodejs/nodejs.dev, @nodejs/website, or @nodejs/website-redesign 
+* After the issue is reviewed and approved it must stay for 48 hours without any changes
+* Once the requirements are met and approved, a member of @nodejs/community-committee will make the person an official collaborator
 ## Getting Started
 
 * Fork
