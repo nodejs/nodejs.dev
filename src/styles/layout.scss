@@ -477,9 +477,8 @@ details {
   }
 
   .nav__tabs__container {
-    padding-left: 0;
-    margin-left: var(--space-08);
-    justify-content: space-between;
+    padding: 0;
+    justify-content: center;
     width: 100%;
     background: var(--color-fill-app);
     height: var(--nav-height);
