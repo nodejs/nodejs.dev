@@ -86,7 +86,7 @@
     "@types/color-string": "^1.5.0",
     "@types/dompurify": "^2.2.1",
     "@types/jest": "^26.0.23",
-    "@types/react-dom": "^17.0.4",
+    "@types/react-dom": "^17.0.7",
     "@types/react-helmet": "6.1.1",
     "@types/throttle-debounce": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
