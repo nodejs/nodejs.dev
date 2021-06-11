@@ -30,7 +30,7 @@ function Footer(): JSX.Element {
           <li>
             <a
               className="footer__link"
-              href="https://github.com/openjs-foundation/cross-project-council/blob/master/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
+              href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
             >
               Code of Conduct
             </a>

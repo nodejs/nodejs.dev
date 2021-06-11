@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { getReleaseStatus } from '../util/getReleaseStatus';
 
 export interface ReleaseData {
   date: string;
@@ -24,14 +25,23 @@ export interface NodeReleaseData {
   endOfLife: string;
 }
 
+export interface NodeReleaseVersionData {
+  start: string;
+  end: string;
+  maintenance?: string;
+  lts?: string;
+  codename?: string;
+}
+
+type NodeReleaseDataAPIResponse = Record<string, NodeReleaseVersionData>;
+
 export function useReleaseHistory(): ReleaseData[] {
   const releasesURL = 'https://nodejs.org/dist/index.json';
   const [releaseHistory, setReleaseHistory] = useState<ReleaseData[]>([]);
   useEffect((): void => {
     const fetchData = async (): Promise<void> => {
-      const result = await fetch(releasesURL).then(
-        (data): Promise<ReleaseData[]> => data.json()
-      );
+      const apiResponse = await fetch(releasesURL);
+      const result: ReleaseData[] = await apiResponse.json();
       setReleaseHistory(result);
     };
     fetchData();
@@ -40,52 +50,38 @@ export function useReleaseHistory(): ReleaseData[] {
   return releaseHistory;
 }
 
-export function getStaticReleaseData(): NodeReleaseData[] {
-  return [
-    {
-      release: 'v10',
-      status: 'Maintenance LTS',
-      codename: 'Dubnium',
-      initialRelease: '2018-04-24',
-      activeLTSStart: '2018-10-30',
-      maintenanceLTSStart: '2020-05-19',
-      endOfLife: '2021-04-30',
-    },
-    {
-      release: 'v12',
-      status: 'Active LTS',
-      codename: 'Erbium',
-      initialRelease: '2019-04-23',
-      activeLTSStart: '2019-10-21',
-      maintenanceLTSStart: '2020-10-20',
-      endOfLife: '2022-04-30',
-    },
-    {
-      release: 'v14',
-      status: 'Active LTS',
-      codename: 'Fermium',
-      initialRelease: '2020-04-21',
-      activeLTSStart: '2020-10-27',
-      maintenanceLTSStart: '2021-10-19',
-      endOfLife: '2023-04-30',
-    },
-    {
-      release: 'v15',
-      status: 'Curent',
-      codename: '',
-      initialRelease: '2020-10-20',
-      activeLTSStart: '',
-      maintenanceLTSStart: '2021-04-01',
-      endOfLife: '2021-06-01',
-    },
-    {
-      release: 'v16',
-      status: 'Pending',
-      codename: '',
-      initialRelease: '2021-04-20',
-      activeLTSStart: '2021-10-26',
-      maintenanceLTSStart: '2022-10-18',
-      endOfLife: '2024-04-30',
-    },
-  ];
+export function useReleaseData(): {
+  releaseData: NodeReleaseData[];
+  rawData: NodeReleaseDataAPIResponse;
+} {
+  const releaseDataURL =
+    'https://raw.githubusercontent.com/nodejs/Release/main/schedule.json';
+  const [releaseData, setReleaseData] = useState<NodeReleaseData[]>([]);
+  const [rawData, setRawData] = useState<NodeReleaseDataAPIResponse>({});
+  useEffect((): void => {
+    const fetchData = async (): Promise<void> => {
+      const apiResponse = await fetch(releaseDataURL);
+      const result: NodeReleaseDataAPIResponse = await apiResponse.json();
+      setRawData(result);
+      const filteredResult: NodeReleaseData[] = [];
+      Object.keys(result).forEach(key => {
+        const release = result[key];
+        const end = new Date(release.end);
+        if (end >= new Date())
+          filteredResult.push({
+            endOfLife: release.end,
+            maintenanceLTSStart: release.maintenance || '',
+            activeLTSStart: release.lts || '',
+            codename: release.codename || '',
+            initialRelease: release.start,
+            release: key,
+            status: getReleaseStatus(release),
+          });
+      });
+      setReleaseData(filteredResult);
+    };
+    fetchData();
+  }, []);
+
+  return { releaseData, rawData };
 }
