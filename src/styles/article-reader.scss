@@ -77,15 +77,12 @@
       margin-top: var(--space-32);
     }
   }
-
-  .api-key__section {
-    /* margin-bottom: 0; */
-  }
 }
 
 @media (max-width: 800px) {
   .article-reader {
     width: 100%;
+    max-width: 100vw;
     padding: 0 3rem;
     box-sizing: border-box;
 
