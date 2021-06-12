@@ -33,55 +33,55 @@ exports[`Download page renders correctly 1`] = `
               />
             </div>
           </a>
-          <ul
-            class="nav__tabs__container"
-          >
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="/learn"
-              >
-                Learn
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="https://nodejs.org/en/docs/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Documentation
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="/download"
-              >
-                Download
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="https://nodejs.org/en/get-involved/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Community
-              </a>
-            </li>
-          </ul>
         </div>
+        <ul
+          class="nav__tabs__container"
+        >
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/learn"
+            >
+              Learn
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="https://nodejs.org/en/docs/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Documentation
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/download"
+            >
+              Download
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="https://nodejs.org/en/get-involved/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Community
+            </a>
+          </li>
+        </ul>
         <div
           class="nav__endwrapper"
         >
@@ -684,55 +684,55 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               />
             </div>
           </a>
-          <ul
-            class="nav__tabs__container"
-          >
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="/learn"
-              >
-                Learn
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="https://nodejs.org/en/docs/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Documentation
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="/download"
-              >
-                Download
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="https://nodejs.org/en/get-involved/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Community
-              </a>
-            </li>
-          </ul>
         </div>
+        <ul
+          class="nav__tabs__container"
+        >
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/learn"
+            >
+              Learn
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="https://nodejs.org/en/docs/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Documentation
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/download"
+            >
+              Download
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="https://nodejs.org/en/get-involved/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Community
+            </a>
+          </li>
+        </ul>
         <div
           class="nav__endwrapper"
         >

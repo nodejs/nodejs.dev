@@ -40,50 +40,50 @@ const Header = (): JSX.Element => {
               />
             </div>
           </Link>
-
-          <ul className="nav__tabs__container">
-            <li className="nav__tabs">
-              <Link
-                to="/learn"
-                className="activeStyleTab"
-                activeClassName="active"
-                partiallyActive
-              >
-                Learn
-              </Link>
-            </li>
-            <li className="nav__tabs">
-              <a
-                className="activeStyleTab"
-                target="_blank"
-                href="https://nodejs.org/en/docs/"
-                rel="noopener noreferrer"
-              >
-                {isMobile ? 'Docs' : 'Documentation'}
-              </a>
-            </li>
-            <li className="nav__tabs">
-              <Link
-                to="/download"
-                className="activeStyleTab"
-                activeClassName="active"
-                partiallyActive
-              >
-                Download
-              </Link>
-            </li>
-            <li className="nav__tabs">
-              <a
-                href="https://nodejs.org/en/get-involved/"
-                className="activeStyleTab"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Community
-              </a>
-            </li>
-          </ul>
         </div>
+
+        <ul className="nav__tabs__container">
+          <li className="nav__tabs">
+            <Link
+              to="/learn"
+              className="activeStyleTab"
+              activeClassName="active"
+              partiallyActive
+            >
+              Learn
+            </Link>
+          </li>
+          <li className="nav__tabs">
+            <a
+              className="activeStyleTab"
+              target="_blank"
+              href="https://nodejs.org/en/docs/"
+              rel="noopener noreferrer"
+            >
+              {isMobile ? 'Docs' : 'Documentation'}
+            </a>
+          </li>
+          <li className="nav__tabs">
+            <Link
+              to="/download"
+              className="activeStyleTab"
+              activeClassName="active"
+              partiallyActive
+            >
+              Download
+            </Link>
+          </li>
+          <li className="nav__tabs">
+            <a
+              href="https://nodejs.org/en/get-involved/"
+              className="activeStyleTab"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Community
+            </a>
+          </li>
+        </ul>
 
         <div className="nav__endwrapper">
           <ul className="right-container">
