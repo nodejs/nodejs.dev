@@ -255,9 +255,9 @@ select {
 .nav {
   background: var(--color-fill-app);
   border-bottom: var(--space-01) solid var(--black2);
-  width: 100%;
   position: sticky;
-  top: 0;
+  top: calc(-1 * var(--nav-height));
+  width: 100%;
   z-index: 999;
 }
 
@@ -294,6 +294,8 @@ select {
   list-style: none;
   display: flex;
   align-items: center;
+  justify-self: flex-start;
+  margin-right: auto;
 }
 
 .nav .right-container {
@@ -459,7 +461,15 @@ details {
 
   .nav__container {
     padding: 0 var(--space-12);
-    min-height: var(--nav-height);
+    min-height: calc(1 * var(--nav-height));
+    align-items: start;
+    flex-flow: wrap;
+  }
+
+  .logo {
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
   }
 
   .nav__logo {
@@ -467,9 +477,13 @@ details {
   }
 
   .nav__tabs__container {
-    padding-left: 0;
-    margin-left: var(--space-08);
-    justify-content: space-between;
+    padding: 0;
+    justify-content: center;
+    width: 100%;
+    background: var(--color-fill-app);
+    height: var(--nav-height);
+    margin: 0;
+    order: 3;
   }
 
   .nav .right-container {
