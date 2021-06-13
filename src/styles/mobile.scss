@@ -65,10 +65,6 @@
     );
   }
 
-  .nav ul {
-    justify-content: center;
-  }
-
   [data-browser='legacy'] .side-nav__title {
     background-position: 0 calc(-50vh + var(--magic-hero-number) - 32px);
   }

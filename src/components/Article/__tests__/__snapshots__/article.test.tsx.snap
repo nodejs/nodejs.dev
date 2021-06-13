@@ -70,7 +70,7 @@ exports[`Article component renders correctly 1`] = `
     >
       <a
         class="link"
-        href="https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/test-path"
+        href="https://github.com/nodejs/nodejs.dev/edit/main/src/documentation/test-path"
       >
         <span>
           Edit this page on GitHub
@@ -215,7 +215,7 @@ exports[`Article component renders correctly in case html ref is null 1`] = `
     >
       <a
         class="link"
-        href="https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/test-path"
+        href="https://github.com/nodejs/nodejs.dev/edit/main/src/documentation/test-path"
       >
         <span>
           Edit this page on GitHub

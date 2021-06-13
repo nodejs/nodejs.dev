@@ -216,3 +216,35 @@ export const createGeneralPageData = (): Page => ({
     },
   },
 });
+
+export const createResourcesData = (): Page => ({
+  data: {
+    page: {
+      fields: {
+        authors: ['MrJithil'],
+      },
+      frontmatter: {
+        description: 'Mock Description',
+        title: 'Mock Title',
+      },
+      html: '<div>Sample</div>',
+      tableOfContents: 'Table of Content',
+    },
+  },
+});
+
+export const createPrivacyData = (): Page => ({
+  data: {
+    page: {
+      fields: {
+        authors: ['Author'],
+      },
+      frontmatter: {
+        description: 'Description',
+        title: 'Title',
+      },
+      html: '<div>Sample</div>',
+      tableOfContents: 'Table of Contents',
+    },
+  },
+});
