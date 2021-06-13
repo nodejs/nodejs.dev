@@ -5,26 +5,20 @@ import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
-import AboutPageSideNavBar, {
-  AboutPageKeys,
-} from '../components/AboutPageSideNavBar';
 
-export default function TrademarkPage({ data }: Page): JSX.Element {
+export default function ResourcesPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
-  const { html, tableOfContents } = data.page;
+  const { html } = data.page;
   const { authors } = data.page.fields;
-
   return (
     <>
       <Layout title={title} description={description} showFooter={false}>
-        <main className="streched-container">
-          <AboutPageSideNavBar pageKey={AboutPageKeys.trademark} />
+        <main className="centered-container">
           <Article
             title={title}
             html={html}
-            tableOfContents={tableOfContents}
             authors={authors}
-            editPath="content/about/trademark.md"
+            editPath="content/resources/resources.md"
           />
         </main>
       </Layout>
@@ -35,9 +29,9 @@ export default function TrademarkPage({ data }: Page): JSX.Element {
 
 export const query = graphql`
   query {
-    page: markdownRemark(fields: { slug: { eq: "trademark-policy" } }) {
+    page: markdownRemark(fields: { slug: { eq: "resources" } }) {
       html
-      tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
+      tableOfContents(absolute: true, pathToSlugField: "frontmatter.path")
       frontmatter {
         title
         description

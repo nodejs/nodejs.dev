@@ -9,6 +9,7 @@ interface Props {
   isActive: boolean;
   slug: string;
   title: string;
+  baseUrl?: string;
   onClick?: () => void;
 }
 
@@ -18,6 +19,7 @@ const NavigationItem = ({
   isActive,
   slug,
   title,
+  baseUrl,
   onClick,
 }: Props): JSX.Element => {
   const className = isLearn
@@ -31,7 +33,7 @@ const NavigationItem = ({
 
   return (
     <Link
-      to={`/learn/${slug}`}
+      to={`${baseUrl || '/learn/'}${slug}`}
       id={`link-${slug}`}
       onClick={onClick}
       className={className}

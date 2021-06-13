@@ -9,7 +9,7 @@ const AnimatedPlaceholder = ({ children }: Props): JSX.Element => {
   return (
     <div className="animated-placeholder">
       {/* Prefer external skeleton structure or render default in case not passed */}
-      {children && children}
+      {children}
       {!children && (
         <>
           <div className="animated-placeholder__image" />

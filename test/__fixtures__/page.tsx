@@ -206,3 +206,19 @@ export const createTrademarkData = (): Page => ({
     },
   },
 });
+
+export const createResourcesData = (): Page => ({
+  data: {
+    page: {
+      fields: {
+        authors: ['MrJithil'],
+      },
+      frontmatter: {
+        description: 'Mock Description',
+        title: 'Mock Title',
+      },
+      html: '<div>Sample</div>',
+      tableOfContents: 'Table of Content',
+    },
+  },
+});
