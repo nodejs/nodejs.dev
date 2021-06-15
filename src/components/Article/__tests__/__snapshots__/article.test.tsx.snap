@@ -337,7 +337,7 @@ exports[`Article component should accept and render child components 1`] = `
     >
       <a
         class="link"
-        href="https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/test-path"
+        href="https://github.com/nodejs/nodejs.dev/edit/main/src/documentation/test-path"
       >
         <span>
           Edit this page on GitHub

@@ -33,55 +33,55 @@ exports[`Releases page renders correctly 1`] = `
               />
             </div>
           </a>
-          <ul
-            class="nav__tabs__container"
-          >
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="/learn"
-              >
-                Learn
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="https://nodejs.org/en/docs/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Documentation
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="/download"
-              >
-                Download
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="https://nodejs.org/en/get-involved/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Community
-              </a>
-            </li>
-          </ul>
         </div>
+        <ul
+          class="nav__tabs__container"
+        >
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/learn"
+            >
+              Learn
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="https://nodejs.org/en/docs/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Documentation
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/download"
+            >
+              Download
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="https://nodejs.org/en/get-involved/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Community
+            </a>
+          </li>
+        </ul>
         <div
           class="nav__endwrapper"
         >
@@ -298,7 +298,7 @@ exports[`Releases page renders correctly 1`] = `
         >
           <a
             class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/master/content/about/releases.md"
+            href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/releases.md"
           >
             <span>
               Edit this page on GitHub
@@ -344,7 +344,7 @@ exports[`Releases page renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://nodejs.org/en/about/privacy/"
+          href="/privacy"
         >
           Privacy Policy
         </a>
@@ -352,7 +352,7 @@ exports[`Releases page renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://github.com/openjs-foundation/cross-project-council/blob/master/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
+          href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
         >
           Code of Conduct
         </a>
