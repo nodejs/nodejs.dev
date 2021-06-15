@@ -18,7 +18,7 @@ interface Props {
   previous?: PaginationInfo;
   blog?: boolean;
   date?: string;
-  children?: JSX.Element;
+  children?: React.ReactNode;
 }
 
 const NAV_HEIGHT = 72;
