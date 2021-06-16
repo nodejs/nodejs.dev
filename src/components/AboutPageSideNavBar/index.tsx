@@ -72,17 +72,15 @@ export default function AboutPageSideNavBar({
         <ul className="community-nav__list">
           {aboutPageSideNavBarItem.map(({ title: commTitle, slug }) => {
             return (
-              <>
-                <NavigationItem
-                  key={slug}
-                  title={commTitle}
-                  isLearn={false}
-                  isRead={false}
-                  isActive={slug === pageKey}
-                  slug={slug}
-                  baseUrl="/"
-                />
-              </>
+              <NavigationItem
+                key={slug}
+                title={commTitle}
+                isLearn={false}
+                isRead={false}
+                isActive={slug === pageKey}
+                slug={slug}
+                baseUrl="/"
+              />
             );
           })}
         </ul>
