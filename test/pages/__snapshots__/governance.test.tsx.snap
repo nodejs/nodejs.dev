@@ -33,55 +33,55 @@ exports[`Governance Page renders correctly 1`] = `
               />
             </div>
           </a>
-          <ul
-            class="nav__tabs__container"
-          >
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="/learn"
-              >
-                Learn
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="https://nodejs.org/en/docs/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Documentation
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="/download"
-              >
-                Download
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="https://nodejs.org/en/get-involved/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Community
-              </a>
-            </li>
-          </ul>
         </div>
+        <ul
+          class="nav__tabs__container"
+        >
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/learn"
+            >
+              Learn
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="https://nodejs.org/en/docs/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Documentation
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/download"
+            >
+              Download
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="https://nodejs.org/en/get-involved/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Community
+            </a>
+          </li>
+        </ul>
         <div
           class="nav__endwrapper"
         >
@@ -142,15 +142,86 @@ exports[`Governance Page renders correctly 1`] = `
       </div>
     </nav>
     <main
-      class="blog-container"
+      class="streched-container"
     >
+       
+      <nav
+        class="side-nav-about"
+      >
+        <button
+          class="side-nav__open"
+          type="button"
+        >
+          Menu
+        </button>
+        <ul
+          class="community-nav__list"
+        >
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/"
+            id="link-"
+          >
+            About
+          </a>
+          <a
+            class="t-body2 side-nav__item-community side-nav__item-community--active"
+            href="/governance"
+            id="link-governance"
+          >
+            Project Governance
+          </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/community"
+            id="link-community"
+          >
+            Community
+          </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/working-groups"
+            id="link-working-groups"
+          >
+            Working Groups
+          </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/releases"
+            id="link-releases"
+          >
+            Releases
+          </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/resources"
+            id="link-resources"
+          >
+            Resources
+          </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/trademark"
+            id="link-trademark"
+          >
+            Trademark Policy
+          </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/privacy"
+            id="link-privacy"
+          >
+            Privacy Policy
+          </a>
+        </ul>
+      </nav>
       <article
         class="article-reader"
       >
         <h1
           class="article-reader__headline"
         >
-          Title
+          Mock Title
         </h1>
         <details
           class="toc"
@@ -161,7 +232,7 @@ exports[`Governance Page renders correctly 1`] = `
             </h6>
           </summary>
           <div>
-            Table of Contents
+            Table of Content
           </div>
         </details>
         <div>
@@ -178,16 +249,16 @@ exports[`Governance Page renders correctly 1`] = `
           <li>
             <a
               class="link"
-              href="https://github.com/Author"
+              href="https://github.com/author-mock"
               rel="noopener noreferrer"
               style="margin-left: 0px;"
               target="_blank"
-              title="Author"
+              title="author-mock"
             >
               <img
-                alt="Author"
+                alt="author-mock"
                 class="img"
-                src="https://github.com/Author.png?size=60"
+                src="https://github.com/author-mock.png?size=60"
               />
             </a>
           </li>
@@ -197,7 +268,7 @@ exports[`Governance Page renders correctly 1`] = `
         >
           <a
             class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/master/content/about/governance.md"
+            href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/governance.md"
           >
             <span>
               Edit this page on GitHub
@@ -235,7 +306,7 @@ exports[`Governance Page renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://nodejs.org/en/about/trademark/"
+          href="/trademark"
         >
           Trademark Policy
         </a>
@@ -243,7 +314,7 @@ exports[`Governance Page renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://nodejs.org/en/about/privacy/"
+          href="/privacy"
         >
           Privacy Policy
         </a>
@@ -251,7 +322,7 @@ exports[`Governance Page renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://github.com/openjs-foundation/cross-project-council/blob/master/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
+          href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
         >
           Code of Conduct
         </a>
