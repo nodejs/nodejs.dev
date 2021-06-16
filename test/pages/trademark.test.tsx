@@ -3,9 +3,9 @@ import { render } from '@testing-library/react';
 import TrademarkPage from '../../src/pages/trademark';
 import '../__mocks__/intersectionObserverMock';
 
-import { createTrademarkData } from '../__fixtures__/page';
+import { createGeneralPageData } from '../__fixtures__/page';
 
-const mockData = createTrademarkData();
+const mockData = createGeneralPageData();
 
 describe('Trademark page', () => {
   it('renders correctly', () => {
