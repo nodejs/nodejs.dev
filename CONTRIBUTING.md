@@ -57,9 +57,9 @@ In the case of an objection being raised in a pull request by another collaborat
 ## How to become a collaborator
 
 * Collaborators must be actively contributing to the project
-* A collaborator PR must be opened on the @nodejs/nodejs.dev with user's github name in the title
-* Issue must be reviewed and approved by at least two members of @nodejs/nodejs.dev, @nodejs/website, or @nodejs/website-redesign 
-* PR must remain open for 48 hours without any objections
+* A Pull Request must be opened on the @nodejs/nodejs.dev README file adding the new collaborator to the list (note the order of names)
+* The Pull Request must be approved by at least two members of @nodejs/nodejs.dev, @nodejs/website, or @nodejs/website-redesign 
+* Pull Request must remain open for 72 hours without any objections
 * Once the requirements are met and approved, a member of @nodejs/community-committee will make the person an official collaborator
 ## Getting Started
 
