@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`About page renders correctly 1`] = `
+exports[`Governance Page renders correctly 1`] = `
 <div>
   <div
     class="layout-container"
@@ -165,7 +165,7 @@ exports[`About page renders correctly 1`] = `
             About
           </a>
           <a
-            class="t-body2 side-nav__item-community"
+            class="t-body2 side-nav__item-community side-nav__item-community--active"
             href="/governance"
             id="link-governance"
           >
@@ -193,7 +193,7 @@ exports[`About page renders correctly 1`] = `
             Releases
           </a>
           <a
-            class="t-body2 side-nav__item-community side-nav__item-community--active"
+            class="t-body2 side-nav__item-community"
             href="/resources"
             id="link-resources"
           >
@@ -223,6 +223,18 @@ exports[`About page renders correctly 1`] = `
         >
           Mock Title
         </h1>
+        <details
+          class="toc"
+        >
+          <summary>
+            <h6>
+              TABLE OF CONTENTS
+            </h6>
+          </summary>
+          <div>
+            Table of Content
+          </div>
+        </details>
         <div>
           <div>
             Sample
@@ -237,16 +249,16 @@ exports[`About page renders correctly 1`] = `
           <li>
             <a
               class="link"
-              href="https://github.com/MrJithil"
+              href="https://github.com/author-mock"
               rel="noopener noreferrer"
               style="margin-left: 0px;"
               target="_blank"
-              title="MrJithil"
+              title="author-mock"
             >
               <img
-                alt="MrJithil"
+                alt="author-mock"
                 class="img"
-                src="https://github.com/MrJithil.png?size=60"
+                src="https://github.com/author-mock.png?size=60"
               />
             </a>
           </li>
@@ -256,7 +268,7 @@ exports[`About page renders correctly 1`] = `
         >
           <a
             class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/main/content/resources/resources.md"
+            href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/governance.md"
           >
             <span>
               Edit this page on GitHub

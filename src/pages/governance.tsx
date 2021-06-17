@@ -9,20 +9,22 @@ import AboutPageSideNavBar, {
   AboutPageKeys,
 } from '../components/AboutPageSideNavBar';
 
-export default function ResourcesPage({ data }: Page): JSX.Element {
+export default function GovernancePage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
-  const { html } = data.page;
+  const { html, tableOfContents } = data.page;
   const { authors } = data.page.fields;
+
   return (
     <>
       <Layout title={title} description={description} showFooter={false}>
         <main className="streched-container">
-          <AboutPageSideNavBar pageKey={AboutPageKeys.resources} />
+          <AboutPageSideNavBar pageKey={AboutPageKeys.governance} />
           <Article
             title={title}
             html={html}
+            tableOfContents={tableOfContents}
             authors={authors}
-            editPath="content/resources/resources.md"
+            editPath="content/about/governance.md"
           />
         </main>
       </Layout>
@@ -33,9 +35,9 @@ export default function ResourcesPage({ data }: Page): JSX.Element {
 
 export const query = graphql`
   query {
-    page: markdownRemark(fields: { slug: { eq: "resources" } }) {
+    page: markdownRemark(fields: { slug: { eq: "governance" } }) {
       html
-      tableOfContents(absolute: true, pathToSlugField: "frontmatter.path")
+      tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
       frontmatter {
         title
         description
