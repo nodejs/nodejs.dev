@@ -240,7 +240,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://nodejs.org/en/about/privacy/"
+            href="/privacy"
           >
             Privacy Policy
           </a>
@@ -264,7 +264,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://nodejs.org/en/about/"
+            href="/about"
           >
             About
           </a>

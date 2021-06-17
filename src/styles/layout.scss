@@ -345,6 +345,10 @@ select {
     border: none;
     border-bottom: 0.4rem solid var(--black2);
   }
+
+  img {
+    max-width: 100%;
+  }
 }
 
 /* sr-only for desktop */
@@ -543,4 +547,28 @@ details {
 .centered-container {
   display: flex;
   justify-content: center;
+}
+
+.resources-logos {
+  img {
+    width: 100%;
+  }
+
+  td {
+    padding: 20px;
+  }
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-node-gray {
+  background-color: #333;
+}
+
+.streched-container {
+  display: flex;
+  justify-content: stretch;
+  width: fit-content;
 }
