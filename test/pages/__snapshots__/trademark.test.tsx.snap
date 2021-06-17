@@ -249,16 +249,16 @@ exports[`Trademark page renders correctly 1`] = `
           <li>
             <a
               class="link"
-              href="https://github.com/palak"
+              href="https://github.com/author-mock"
               rel="noopener noreferrer"
               style="margin-left: 0px;"
               target="_blank"
-              title="palak"
+              title="author-mock"
             >
               <img
-                alt="palak"
+                alt="author-mock"
                 class="img"
-                src="https://github.com/palak.png?size=60"
+                src="https://github.com/author-mock.png?size=60"
               />
             </a>
           </li>
@@ -338,7 +338,7 @@ exports[`Trademark page renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://nodejs.org/en/about/"
+          href="/about"
         >
           About
         </a>

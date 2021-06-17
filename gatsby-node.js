@@ -26,6 +26,8 @@ exports.createPages = ({ graphql, actions }) => {
                       "trademark-policy"
                       "resources"
                       "privacy-policy"
+                      "about"
+                      "governance"
                     ]
                   }
                 }

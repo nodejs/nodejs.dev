@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LearnLayout Template renders correctly 1`] = `
+exports[`Releases page renders correctly 1`] = `
 <div>
   <div
     class="layout-container"
@@ -142,7 +142,7 @@ exports[`LearnLayout Template renders correctly 1`] = `
       </div>
     </nav>
     <main
-      class="blog-container"
+      class="centered-container"
     >
       <article
         class="article-reader"
@@ -150,27 +150,172 @@ exports[`LearnLayout Template renders correctly 1`] = `
         <h1
           class="article-reader__headline"
         >
-          t,itle-mock
+          Mock Title
         </h1>
-        <h5
+        <details
+          class="toc"
+        >
+          <summary>
+            <h6>
+              TABLE OF CONTENTS
+            </h6>
+          </summary>
+          <div>
+            Table of Content
+          </div>
+        </details>
+        <div>
+          <div>
+            Sample
+          </div>
+        </div>
+        <div
+          class="article-reader__additional-content"
+        >
+          <div
+            class="downloads-table-container"
+          >
+            <table
+              class="downloads-table"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    Release
+                  </th>
+                  <th>
+                    Status
+                  </th>
+                  <th>
+                    Codename
+                  </th>
+                  <th>
+                    Initial Release
+                  </th>
+                  <th>
+                    Active LTS Start
+                  </th>
+                  <th>
+                    Maintainance LTS Start
+                  </th>
+                  <th>
+                    End of Life
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a
+                      href="https://nodejs.org/download/release/latest-v12.x/"
+                    >
+                      v12
+                    </a>
+                  </td>
+                  <td>
+                    Maintenance LTS
+                  </td>
+                  <td>
+                    <a
+                      href="https://nodejs.org/download/release/latest-erbium/"
+                    >
+                      Erbium
+                    </a>
+                  </td>
+                  <td>
+                    2019-04-23
+                  </td>
+                  <td>
+                    2019-10-21
+                  </td>
+                  <td>
+                    2020-11-30
+                  </td>
+                  <td>
+                    2022-04-30
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a
+                      href="https://nodejs.org/download/release/latest-v14.x/"
+                    >
+                      v14
+                    </a>
+                  </td>
+                  <td>
+                    Active LTS
+                  </td>
+                  <td>
+                    <a
+                      href="https://nodejs.org/download/release/latest-fermium/"
+                    >
+                      Fermium
+                    </a>
+                  </td>
+                  <td>
+                    2020-04-21
+                  </td>
+                  <td>
+                    2020-10-27
+                  </td>
+                  <td>
+                    2021-10-19
+                  </td>
+                  <td>
+                    2023-04-30
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <ul
           class="list"
         >
-          date-mock
-           by
-           
-          <span>
+          <h5>
+            Contributors
+          </h5>
+          <li>
             <a
-              href="url-mock"
+              class="link"
+              href="https://github.com/author-mock"
               rel="noopener noreferrer"
+              style="margin-left: 0px;"
               target="_blank"
+              title="author-mock"
             >
-              name-mock
+              <img
+                alt="author-mock"
+                class="img"
+                src="https://github.com/author-mock.png?size=60"
+              />
             </a>
-            
-          </span>
-        </h5>
-        <div>
-          html-mock
+          </li>
+        </ul>
+        <div
+          class="edit"
+        >
+          <a
+            class="link"
+            href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/releases.md"
+          >
+            <span>
+              Edit this page on GitHub
+            </span>
+             
+            <svg
+              class="icon"
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 40 40"
+              width="1em"
+            >
+              <path
+                d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"
+              />
+            </svg>
+          </a>
         </div>
       </article>
     </main>

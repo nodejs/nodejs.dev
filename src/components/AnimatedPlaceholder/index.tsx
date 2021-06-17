@@ -2,7 +2,7 @@ import React from 'react';
 import './AnimatedPlaceholder.scss';
 
 interface Props {
-  children?: JSX.Element;
+  children?: React.ReactNode;
 }
 
 const AnimatedPlaceholder = ({ children }: Props): JSX.Element => {

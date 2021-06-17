@@ -9,7 +9,10 @@ import {
   Page,
 } from '../../src/types';
 
-import { ReleaseData } from '../../src/hooks/useReleaseHistory';
+import {
+  NodeReleaseData,
+  ReleaseData,
+} from '../../src/hooks/useReleaseHistory';
 
 export const createPaginationInfo = (): PaginationInfo =>
   ({
@@ -100,6 +103,28 @@ export const createReleaseData = (): ReleaseData[] =>
     },
   ] as ReleaseData[];
 
+export const createNodeReleaseData = (): NodeReleaseData[] =>
+  [
+    {
+      endOfLife: '2022-04-30',
+      maintenanceLTSStart: '2020-11-30',
+      activeLTSStart: '2019-10-21',
+      codename: 'Erbium',
+      initialRelease: '2019-04-23',
+      release: 'v12',
+      status: 'Maintenance LTS',
+    },
+    {
+      endOfLife: '2023-04-30',
+      maintenanceLTSStart: '2021-10-19',
+      activeLTSStart: '2020-10-27',
+      codename: 'Fermium',
+      initialRelease: '2020-04-21',
+      release: 'v14',
+      status: 'Active LTS',
+    },
+  ] as NodeReleaseData[];
+
 export const createLearnPageContext = (): LearnPageContext =>
   ({
     slug: 'test-slug',
@@ -176,11 +201,11 @@ export const createBlogPageData = (): BlogPageData => ({
   },
 });
 
-export const createTrademarkData = (): Page => ({
+export const createGeneralPageData = (): Page => ({
   data: {
     page: {
       fields: {
-        authors: ['palak'],
+        authors: ['author-mock'],
       },
       frontmatter: {
         description: 'Mock Description',
