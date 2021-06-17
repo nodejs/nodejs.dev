@@ -31,7 +31,7 @@
     "gatsby-plugin-sass": "^4.5.0",
     "gatsby-plugin-sharp": "^3.4.2",
     "gatsby-plugin-sitemap": "^4.0.0",
-    "gatsby-plugin-typescript": "^3.7.0",
+    "gatsby-plugin-typescript": "^3.7.1",
     "gatsby-remark-autolink-headers": "^4.3.0",
     "gatsby-remark-copy-linked-files": "^4.3.0",
     "gatsby-remark-images": "^5.3.0",
