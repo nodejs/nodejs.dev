@@ -2,7 +2,6 @@
 
 exports[`AboutPageSideNavBar renders correctly 1`] = `
 <div>
-   
   <nav
     class="side-nav-about"
   >
@@ -78,7 +77,6 @@ exports[`AboutPageSideNavBar renders correctly 1`] = `
 
 exports[`AboutPageSideNavBar should about Releases page exist and contain a href to \`~/release\` 1`] = `
 <div>
-   
   <nav
     class="side-nav-about"
   >

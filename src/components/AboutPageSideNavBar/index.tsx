@@ -63,28 +63,25 @@ export default function AboutPageSideNavBar({
     : 'side-nav-about';
   const navElement = useRef<HTMLElement | null>(null);
   return (
-    <>
-      {' '}
-      <nav className={className} ref={navElement}>
-        <button type="button" className="side-nav__open" onClick={toggle}>
-          Menu
-        </button>
-        <ul className="community-nav__list">
-          {aboutPageSideNavBarItem.map(({ title: commTitle, slug }) => {
-            return (
-              <NavigationItem
-                key={slug}
-                title={commTitle}
-                isLearn={false}
-                isRead={false}
-                isActive={slug === pageKey}
-                slug={slug}
-                baseUrl="/"
-              />
-            );
-          })}
-        </ul>
-      </nav>
-    </>
+    <nav className={className} ref={navElement}>
+      <button type="button" className="side-nav__open" onClick={toggle}>
+        Menu
+      </button>
+      <ul className="community-nav__list">
+        {aboutPageSideNavBarItem.map(({ title: commTitle, slug }) => {
+          return (
+            <NavigationItem
+              key={slug}
+              title={commTitle}
+              isLearn={false}
+              isRead={false}
+              isActive={slug === pageKey}
+              slug={slug}
+              baseUrl="/"
+            />
+          );
+        })}
+      </ul>
+    </nav>
   );
 }

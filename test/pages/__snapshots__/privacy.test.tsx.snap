@@ -144,7 +144,6 @@ exports[`Privacy Page renders correctly 1`] = `
     <main
       class="streched-container"
     >
-       
       <nav
         class="side-nav-about"
       >
