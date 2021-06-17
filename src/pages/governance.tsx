@@ -4,14 +4,12 @@ import { Page } from '../types';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Footer from '../components/Footer';
-
 import '../styles/article-reader.scss';
-import '../styles/community.scss';
 import AboutPageSideNavBar, {
   AboutPageKeys,
 } from '../components/AboutPageSideNavBar';
 
-export default function CommunityPage({ data }: Page): JSX.Element {
+export default function GovernancePage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
   const { html, tableOfContents } = data.page;
   const { authors } = data.page.fields;
@@ -19,14 +17,14 @@ export default function CommunityPage({ data }: Page): JSX.Element {
   return (
     <>
       <Layout title={title} description={description} showFooter={false}>
-        <main className="grid-container">
-          <AboutPageSideNavBar pageKey={AboutPageKeys.community} />
+        <main className="streched-container">
+          <AboutPageSideNavBar pageKey={AboutPageKeys.governance} />
           <Article
             title={title}
             html={html}
             tableOfContents={tableOfContents}
             authors={authors}
-            editPath="content/community/index.md"
+            editPath="content/about/governance.md"
           />
         </main>
       </Layout>
@@ -37,7 +35,7 @@ export default function CommunityPage({ data }: Page): JSX.Element {
 
 export const query = graphql`
   query {
-    page: markdownRemark(fields: { slug: { eq: "nodejs-community" } }) {
+    page: markdownRemark(fields: { slug: { eq: "governance" } }) {
       html
       tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
       frontmatter {
