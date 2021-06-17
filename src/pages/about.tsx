@@ -9,7 +9,7 @@ import AboutPageSideNavBar, {
   AboutPageKeys,
 } from '../components/AboutPageSideNavBar';
 
-export default function ResourcesPage({ data }: Page): JSX.Element {
+export default function AboutPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
   const { html } = data.page;
   const { authors } = data.page.fields;
@@ -17,12 +17,12 @@ export default function ResourcesPage({ data }: Page): JSX.Element {
     <>
       <Layout title={title} description={description} showFooter={false}>
         <main className="streched-container">
-          <AboutPageSideNavBar pageKey={AboutPageKeys.resources} />
+          <AboutPageSideNavBar pageKey={AboutPageKeys.about} />
           <Article
             title={title}
             html={html}
             authors={authors}
-            editPath="content/resources/resources.md"
+            editPath="content/about/about.md"
           />
         </main>
       </Layout>
@@ -33,7 +33,7 @@ export default function ResourcesPage({ data }: Page): JSX.Element {
 
 export const query = graphql`
   query {
-    page: markdownRemark(fields: { slug: { eq: "resources" } }) {
+    page: markdownRemark(fields: { slug: { eq: "about" } }) {
       html
       tableOfContents(absolute: true, pathToSlugField: "frontmatter.path")
       frontmatter {
