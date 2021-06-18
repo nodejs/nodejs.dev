@@ -46,6 +46,7 @@ const Hero = ({ title, subTitle }: Props): JSX.Element => {
             <a href={currentVersionUrl}>Get Current</a>
           </p>
         </div>
+
         <Link className="circular-container inverse" to="/learn">
           Learn Node
         </Link>

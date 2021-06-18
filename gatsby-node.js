@@ -19,7 +19,17 @@ exports.createPages = ({ graphql, actions }) => {
               filter: {
                 fields: {
                   slug: {
-                    nin: ["", "nodejs-community", "homepage", "security"]
+                    nin: [
+                      ""
+                      "nodejs-community"
+                      "homepage"
+                      "trademark-policy"
+                      "resources"
+                      "privacy-policy"
+                      "about"
+                      "governance"
+                      "security"
+                    ]
                   }
                 }
               }

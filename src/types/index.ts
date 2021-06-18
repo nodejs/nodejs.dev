@@ -136,3 +136,8 @@ export interface BlogPageContext {
   previous: PaginationInfo;
   navigationData: NavigationSectionData;
 }
+
+export interface AboutPageSideNavBarItem {
+  title: string;
+  slug: string;
+}
