@@ -25,6 +25,10 @@ exports.createPages = ({ graphql, actions }) => {
                       "homepage"
                       "trademark-policy"
                       "working-groups"
+                      "resources"
+                      "privacy-policy"
+                      "about"
+                      "governance"
                     ]
                   }
                 }
@@ -200,7 +204,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       createNodeField({
         node,
         name: 'date',
-        value: date.toJSON(),
+        value: date.toJSON(),>>>>>>> main
       });
     } else slug = createSlug(node.frontmatter.title);
 
