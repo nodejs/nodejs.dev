@@ -5,7 +5,7 @@ import '../../styles/about.scss';
 
 // eslint-disable-next-line no-shadow
 export enum AboutPageKeys {
-  about = '',
+  about = 'about',
   governance = 'governance',
   community = 'community',
   workingGroups = 'working-groups',
