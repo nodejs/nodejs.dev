@@ -142,7 +142,7 @@ exports[`Working Groups page renders correctly 1`] = `
       </div>
     </nav>
     <main
-      class="streched-container"
+      class="grid-container"
     >
       <nav
         class="side-nav-about"
