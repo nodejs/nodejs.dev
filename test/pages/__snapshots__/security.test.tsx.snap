@@ -227,7 +227,7 @@ exports[`Privacy page renders correctly 1`] = `
         <h1
           class="article-reader__headline"
         >
-          Title
+          Mock Title
         </h1>
         <details
           class="toc"
@@ -238,7 +238,7 @@ exports[`Privacy page renders correctly 1`] = `
             </h6>
           </summary>
           <div>
-            Table of Contents
+            Table of Content
           </div>
         </details>
         <div>
@@ -255,16 +255,16 @@ exports[`Privacy page renders correctly 1`] = `
           <li>
             <a
               class="link"
-              href="https://github.com/Author"
+              href="https://github.com/author-mock"
               rel="noopener noreferrer"
               style="margin-left: 0px;"
               target="_blank"
-              title="Author"
+              title="author-mock"
             >
               <img
-                alt="Author"
+                alt="author-mock"
                 class="img"
-                src="https://github.com/Author.png?size=60"
+                src="https://github.com/author-mock.png?size=60"
               />
             </a>
           </li>
