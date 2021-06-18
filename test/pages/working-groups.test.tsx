@@ -2,10 +2,9 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import WorkingGroupsPage from '../../src/pages/working-groups';
 import '../__mocks__/intersectionObserverMock';
+import { createGeneralPageData } from '../__fixtures__/page';
 
-import { createWorkingGroupsData } from '../__fixtures__/page';
-
-const mockData = createWorkingGroupsData();
+const mockData = createGeneralPageData();
 
 describe('Working Groups page', () => {
   it('renders correctly', () => {

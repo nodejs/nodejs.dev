@@ -204,7 +204,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       createNodeField({
         node,
         name: 'date',
-        value: date.toJSON(),>>>>>>> main
+        value: date.toJSON(),
       });
     } else slug = createSlug(node.frontmatter.title);
 

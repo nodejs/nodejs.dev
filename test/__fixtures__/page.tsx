@@ -201,8 +201,6 @@ export const createBlogPageData = (): BlogPageData => ({
   },
 });
 
-
-
 export const createGeneralPageData = (): Page => ({
   data: {
     page: {
