@@ -248,3 +248,18 @@ export const createPrivacyData = (): Page => ({
     },
   },
 });
+export const createSecurityData = (): Page => ({
+  data: {
+    page: {
+      fields: {
+        authors: ['Author'],
+      },
+      frontmatter: {
+        description: 'Description',
+        title: 'Title',
+      },
+      html: '<div>Sample</div>',
+      tableOfContents: 'Table of Contents',
+    },
+  },
+});

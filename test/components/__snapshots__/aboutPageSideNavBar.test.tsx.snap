@@ -70,6 +70,13 @@ exports[`AboutPageSideNavBar renders correctly 1`] = `
       >
         Privacy Policy
       </a>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/security"
+        id="link-security"
+      >
+        Security Reporting
+      </a>
     </ul>
   </nav>
 </div>
@@ -144,6 +151,13 @@ exports[`AboutPageSideNavBar should about Releases page exist and contain a href
         id="link-privacy"
       >
         Privacy Policy
+      </a>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/security"
+        id="link-security"
+      >
+        Security Reporting
       </a>
     </ul>
   </nav>

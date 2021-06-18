@@ -5,6 +5,9 @@ import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
+import AboutPageSideNavBar, {
+  AboutPageKeys,
+} from '../components/AboutPageSideNavBar';
 
 export default function SecurityPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
@@ -13,7 +16,8 @@ export default function SecurityPage({ data }: Page): JSX.Element {
   return (
     <>
       <Layout title={title} description={description} showFooter={false}>
-        <main className="blog-container">
+        <main className="streched-container">
+          <AboutPageSideNavBar pageKey={AboutPageKeys.security} />
           <Article
             title={title}
             html={html}
