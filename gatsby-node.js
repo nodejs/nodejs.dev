@@ -24,6 +24,11 @@ exports.createPages = ({ graphql, actions }) => {
                       "nodejs-community"
                       "homepage"
                       "trademark-policy"
+                      "working-groups"
+                      "resources"
+                      "privacy-policy"
+                      "about"
+                      "governance"
                     ]
                   }
                 }

@@ -53,7 +53,7 @@ const NodeFeature = ({
 }: NodeFeatureProps): JSX.Element => {
   return (
     <div className="node-features__feature">
-      {icon && icon}
+      {icon}
       <h4>{heading}</h4>
       <p>{description}</p>
     </div>

@@ -13,7 +13,7 @@ Node.js has one of the largest, most vibrant and innovative open source communit
 
 In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
-[Read the full code of conduct →](https://github.com/nodejs/admin/blob/master/CODE_OF_CONDUCT.md)
+[Read the full code of conduct →](https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md)
 
 ## Ways to Contribute
 
