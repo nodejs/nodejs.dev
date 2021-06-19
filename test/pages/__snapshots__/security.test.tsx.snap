@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Privacy Page renders correctly 1`] = `
+exports[`Security page renders correctly 1`] = `
 <div>
   <div
     class="layout-container"
@@ -206,14 +206,14 @@ exports[`Privacy Page renders correctly 1`] = `
             Trademark Policy
           </a>
           <a
-            class="t-body2 side-nav__item-community side-nav__item-community--active"
+            class="t-body2 side-nav__item-community"
             href="/privacy"
             id="link-privacy"
           >
             Privacy Policy
           </a>
           <a
-            class="t-body2 side-nav__item-community"
+            class="t-body2 side-nav__item-community side-nav__item-community--active"
             href="/security"
             id="link-security"
           >
@@ -227,7 +227,7 @@ exports[`Privacy Page renders correctly 1`] = `
         <h1
           class="article-reader__headline"
         >
-          Title
+          Mock Title
         </h1>
         <details
           class="toc"
@@ -238,7 +238,7 @@ exports[`Privacy Page renders correctly 1`] = `
             </h6>
           </summary>
           <div>
-            Table of Contents
+            Table of Content
           </div>
         </details>
         <div>
@@ -255,16 +255,16 @@ exports[`Privacy Page renders correctly 1`] = `
           <li>
             <a
               class="link"
-              href="https://github.com/Author"
+              href="https://github.com/author-mock"
               rel="noopener noreferrer"
               style="margin-left: 0px;"
               target="_blank"
-              title="Author"
+              title="author-mock"
             >
               <img
-                alt="Author"
+                alt="author-mock"
                 class="img"
-                src="https://github.com/Author.png?size=60"
+                src="https://github.com/author-mock.png?size=60"
               />
             </a>
           </li>
@@ -274,7 +274,7 @@ exports[`Privacy Page renders correctly 1`] = `
         >
           <a
             class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/privacy.md"
+            href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/security.md"
           >
             <span>
               Edit this page on GitHub

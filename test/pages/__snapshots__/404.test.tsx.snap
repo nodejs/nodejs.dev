@@ -200,7 +200,7 @@ exports[`404 page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://nodejs.org/en/security/"
+            href="/security"
           >
             Security Reporting
           </a>
