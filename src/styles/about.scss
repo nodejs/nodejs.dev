@@ -5,4 +5,12 @@
   overflow: hidden;
   position: inherit;
   width: auto;
+
+  &.side-nav--open {
+    @extend .side-nav--open;
+    width: 100%;
+    height: 100vh;
+    top: calc(var(--nav-height) * 2);
+    touch-action: none;
+  }
 }
