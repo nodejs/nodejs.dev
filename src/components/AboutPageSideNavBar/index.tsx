@@ -13,6 +13,7 @@ export enum AboutPageKeys {
   resources = 'resources',
   trademark = 'trademark',
   privacy = 'privacy',
+  security = 'security',
 }
 
 const aboutPageSideNavBarItem: AboutPageSideNavBarItem[] = [
@@ -47,6 +48,10 @@ const aboutPageSideNavBarItem: AboutPageSideNavBarItem[] = [
   {
     title: 'Privacy Policy',
     slug: AboutPageKeys.privacy,
+  },
+  {
+    title: 'Security Reporting',
+    slug: AboutPageKeys.security,
   },
 ];
 

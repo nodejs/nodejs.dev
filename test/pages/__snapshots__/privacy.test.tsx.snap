@@ -212,6 +212,13 @@ exports[`Privacy Page renders correctly 1`] = `
           >
             Privacy Policy
           </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/security"
+            id="link-security"
+          >
+            Security Reporting
+          </a>
         </ul>
       </nav>
       <article
@@ -329,7 +336,7 @@ exports[`Privacy Page renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://nodejs.org/en/security/"
+          href="/security"
         >
           Security Reporting
         </a>

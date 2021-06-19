@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`About page renders correctly 1`] = `
+exports[`Security page renders correctly 1`] = `
 <div>
   <div
     class="layout-container"
@@ -142,7 +142,7 @@ exports[`About page renders correctly 1`] = `
       </div>
     </nav>
     <main
-      class="grid-container"
+      class="streched-container"
     >
       <nav
         class="side-nav-about"
@@ -157,9 +157,9 @@ exports[`About page renders correctly 1`] = `
           class="community-nav__list"
         >
           <a
-            class="t-body2 side-nav__item-community side-nav__item-community--active"
-            href="/about"
-            id="link-about"
+            class="t-body2 side-nav__item-community"
+            href="/"
+            id="link-"
           >
             About
           </a>
@@ -213,7 +213,7 @@ exports[`About page renders correctly 1`] = `
             Privacy Policy
           </a>
           <a
-            class="t-body2 side-nav__item-community"
+            class="t-body2 side-nav__item-community side-nav__item-community--active"
             href="/security"
             id="link-security"
           >
@@ -229,6 +229,18 @@ exports[`About page renders correctly 1`] = `
         >
           Mock Title
         </h1>
+        <details
+          class="toc"
+        >
+          <summary>
+            <h6>
+              TABLE OF CONTENTS
+            </h6>
+          </summary>
+          <div>
+            Table of Content
+          </div>
+        </details>
         <div>
           <div>
             Sample
@@ -262,7 +274,7 @@ exports[`About page renders correctly 1`] = `
         >
           <a
             class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/about.md"
+            href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/security.md"
           >
             <span>
               Edit this page on GitHub
