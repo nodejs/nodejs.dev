@@ -212,6 +212,13 @@ exports[`Releases page renders correctly 1`] = `
           >
             Privacy Policy
           </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/security"
+            id="link-security"
+          >
+            Security Reporting
+          </a>
         </ul>
       </nav>
       <article
