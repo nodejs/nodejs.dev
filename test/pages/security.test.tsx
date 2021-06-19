@@ -5,7 +5,7 @@ import '../__mocks__/intersectionObserverMock';
 import { createGeneralPageData } from '../__fixtures__/page';
 
 const mockData = createGeneralPageData();
-describe('Privacy page', () => {
+describe('Security page', () => {
   it('renders correctly', () => {
     const { container } = render(<SecurityPage data={mockData.data} />);
     expect(container).toMatchSnapshot();
