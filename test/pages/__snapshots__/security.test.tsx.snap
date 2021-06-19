@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Privacy page renders correctly 1`] = `
+exports[`Security page renders correctly 1`] = `
 <div>
   <div
     class="layout-container"
