@@ -36,9 +36,9 @@ function Footer(): JSX.Element {
             </a>
           </li>
           <li>
-            <a className="footer__link" href="https://nodejs.org/en/security/">
+            <Link className="footer__link" to="/security">
               Security Reporting
-            </a>
+            </Link>
           </li>
           <li>
             <Link className="footer__link" to="/about">
