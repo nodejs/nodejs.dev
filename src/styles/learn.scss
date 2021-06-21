@@ -2,7 +2,6 @@
   /* Needed since overflow: none will disable position: sticky on children */
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   background-color: var(--color-fill-side-nav);
-  height: calc(100vh - var(--nav-height));
   overflow: auto;
   overflow-x: hidden;
   padding: 0 var(--space-20);
@@ -181,7 +180,7 @@
       overflow: visible;
       overflow-y: scroll;
       position: fixed;
-      top: var(--nav-height);
+      top: calc(var(--nav-height) * 2);
     }
 
     > :last-child {

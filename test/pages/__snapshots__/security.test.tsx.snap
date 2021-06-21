@@ -142,7 +142,7 @@ exports[`Security page renders correctly 1`] = `
       </div>
     </nav>
     <main
-      class="streched-container"
+      class="grid-container"
     >
       <nav
         class="side-nav-about"
@@ -158,8 +158,8 @@ exports[`Security page renders correctly 1`] = `
         >
           <a
             class="t-body2 side-nav__item-community"
-            href="/"
-            id="link-"
+            href="/about"
+            id="link-about"
           >
             About
           </a>
