@@ -94,7 +94,7 @@ If there is no error, the object is `null`. If there is an error, it contains so
 
 ```js
 fs.readFile('/file.json', (err, data) => {
-  if (err !== null) {
+  if (err) {
     //handle error
     console.log(err)
     return
