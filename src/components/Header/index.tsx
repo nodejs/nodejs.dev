@@ -74,14 +74,14 @@ const Header = (): JSX.Element => {
             </Link>
           </li>
           <li className="nav__tabs">
-            <a
-              href="https://nodejs.org/en/get-involved/"
+            <Link
+              to="/community"
               className="activeStyleTab"
-              target="_blank"
-              rel="noopener noreferrer"
+              activeClassName="active"
+              partiallyActive
             >
               Community
-            </a>
+            </Link>
           </li>
         </ul>
 
