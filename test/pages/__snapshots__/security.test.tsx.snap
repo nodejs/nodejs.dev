@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Releases page renders correctly 1`] = `
+exports[`Security page renders correctly 1`] = `
 <div>
   <div
     class="layout-container"
@@ -185,7 +185,7 @@ exports[`Releases page renders correctly 1`] = `
             Working Groups
           </a>
           <a
-            class="t-body2 side-nav__item-community side-nav__item-community--active"
+            class="t-body2 side-nav__item-community"
             href="/releases"
             id="link-releases"
           >
@@ -213,7 +213,7 @@ exports[`Releases page renders correctly 1`] = `
             Privacy Policy
           </a>
           <a
-            class="t-body2 side-nav__item-community"
+            class="t-body2 side-nav__item-community side-nav__item-community--active"
             href="/security"
             id="link-security"
           >
@@ -246,107 +246,6 @@ exports[`Releases page renders correctly 1`] = `
             Sample
           </div>
         </div>
-        <div
-          class="article-reader__additional-content"
-        >
-          <div
-            class="downloads-table-container"
-          >
-            <table
-              class="downloads-table"
-            >
-              <thead>
-                <tr>
-                  <th>
-                    Release
-                  </th>
-                  <th>
-                    Status
-                  </th>
-                  <th>
-                    Codename
-                  </th>
-                  <th>
-                    Initial Release
-                  </th>
-                  <th>
-                    Active LTS Start
-                  </th>
-                  <th>
-                    Maintainance LTS Start
-                  </th>
-                  <th>
-                    End of Life
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <a
-                      href="https://nodejs.org/download/release/latest-v12.x/"
-                    >
-                      v12
-                    </a>
-                  </td>
-                  <td>
-                    Maintenance LTS
-                  </td>
-                  <td>
-                    <a
-                      href="https://nodejs.org/download/release/latest-erbium/"
-                    >
-                      Erbium
-                    </a>
-                  </td>
-                  <td>
-                    2019-04-23
-                  </td>
-                  <td>
-                    2019-10-21
-                  </td>
-                  <td>
-                    2020-11-30
-                  </td>
-                  <td>
-                    2022-04-30
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a
-                      href="https://nodejs.org/download/release/latest-v14.x/"
-                    >
-                      v14
-                    </a>
-                  </td>
-                  <td>
-                    Active LTS
-                  </td>
-                  <td>
-                    <a
-                      href="https://nodejs.org/download/release/latest-fermium/"
-                    >
-                      Fermium
-                    </a>
-                  </td>
-                  <td>
-                    2020-04-21
-                  </td>
-                  <td>
-                    2020-10-27
-                  </td>
-                  <td>
-                    2021-10-19
-                  </td>
-                  <td>
-                    2023-04-30
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
         <ul
           class="list"
         >
@@ -375,7 +274,7 @@ exports[`Releases page renders correctly 1`] = `
         >
           <a
             class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/releases.md"
+            href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/security.md"
           >
             <span>
               Edit this page on GitHub

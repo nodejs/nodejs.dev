@@ -185,6 +185,7 @@ also have commiter rights on the repo.
 * [@keywordnew](https://github.com/keywordnew) - Manil Chowdhury
 * [@LaRuaNa](https://github.com/LaRuaNa) - Onur Laru
 * [@maddhruv](https://github.com/maddhruv) - Dhruv Jain
+* [@manishprivet](https://github.com/manishprivet) - Manish Kumar
 * [@marcustisater](https://github.com/marcustisater) - Marcus Tisäter
 * [@mbj36](https://github.com/mbj36) - Mohit kumar Bajoria
 * [@MylesBorins](https://github.com/MylesBorins) - Myles Borins

@@ -142,9 +142,8 @@ exports[`About page renders correctly 1`] = `
       </div>
     </nav>
     <main
-      class="streched-container"
+      class="grid-container"
     >
-       
       <nav
         class="side-nav-about"
       >
@@ -159,8 +158,8 @@ exports[`About page renders correctly 1`] = `
         >
           <a
             class="t-body2 side-nav__item-community"
-            href="/"
-            id="link-"
+            href="/about"
+            id="link-about"
           >
             About
           </a>
@@ -212,6 +211,13 @@ exports[`About page renders correctly 1`] = `
             id="link-privacy"
           >
             Privacy Policy
+          </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/security"
+            id="link-security"
+          >
+            Security Reporting
           </a>
         </ul>
       </nav>
@@ -318,7 +324,7 @@ exports[`About page renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://nodejs.org/en/security/"
+          href="/security"
         >
           Security Reporting
         </a>

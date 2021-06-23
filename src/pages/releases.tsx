@@ -7,6 +7,9 @@ import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
 import DownloadTable from '../components/DownloadReleases/DownloadTable';
 import { useReleaseData } from '../hooks/useReleaseHistory';
+import AboutPageSideNavBar, {
+  AboutPageKeys,
+} from '../components/AboutPageSideNavBar';
 
 export default function ReleasesPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
@@ -17,7 +20,8 @@ export default function ReleasesPage({ data }: Page): JSX.Element {
   return (
     <>
       <Layout title={title} description={description} showFooter={false}>
-        <main className="centered-container">
+        <main className="grid-container">
+          <AboutPageSideNavBar pageKey={AboutPageKeys.releases} />
           <Article
             title={title}
             html={html}
