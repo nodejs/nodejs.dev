@@ -2,7 +2,19 @@
 
 .side-nav-about {
   @extend .side-nav;
+  top: 1.8rem;
   overflow: hidden;
   position: inherit;
   width: auto;
+
+  &.side-nav--open {
+    @extend .side-nav--open;
+    width: 100%;
+    height: 100vh;
+    top: calc(var(--nav-height) * 2);
+    touch-action: none;
+    .side-nav__open {
+      top: 1.8rem;
+    }
+  }
 }
