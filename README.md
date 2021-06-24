@@ -281,7 +281,7 @@ participated in that process.
 * [@iNidAName](https://github.com/inidaname) - Hassaan Sani
 * [@abedzantout](https://github.com/abedzantout) - Abdul Rahman Zantout
 * [@LaRuaNa](https://github.com/LaRuaNa) - Onur Laru
-* [@AhmadAwais](https://github.com/AhmadAwais) - *AhmadAwais
+* [@AhmadAwais](https://github.com/AhmadAwais) - AhmadAwais
 * [@BeniCheni](https://github.com/BeniCheni) - Benjamin Chen
 * [@kevjin](https://github.com/kevjin) - Kevin Jin
 
