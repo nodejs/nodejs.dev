@@ -6,6 +6,9 @@ import Article from '../components/Article';
 import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
 import DownloadTable from '../components/DownloadReleases/DownloadTable';
+import AboutPageSideNavBar, {
+  AboutPageKeys,
+} from '../components/AboutPageSideNavBar';
 
 export interface ReleasesNodeReleases {
   nodeReleases: {
@@ -28,7 +31,8 @@ export default function ReleasesPage({
   return (
     <>
       <Layout title={title} description={description} showFooter={false}>
-        <main className="centered-container">
+        <main className="grid-container">
+          <AboutPageSideNavBar pageKey={AboutPageKeys.releases} />
           <Article
             title={title}
             html={html}

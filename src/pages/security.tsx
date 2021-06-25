@@ -16,7 +16,7 @@ export default function SecurityPage({ data }: Page): JSX.Element {
   return (
     <>
       <Layout title={title} description={description} showFooter={false}>
-        <main className="streched-container">
+        <main className="grid-container">
           <AboutPageSideNavBar pageKey={AboutPageKeys.security} />
           <Article
             title={title}

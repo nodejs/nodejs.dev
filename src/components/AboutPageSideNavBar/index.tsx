@@ -5,7 +5,7 @@ import '../../styles/about.scss';
 
 // eslint-disable-next-line no-shadow
 export enum AboutPageKeys {
-  about = '',
+  about = 'about',
   governance = 'governance',
   community = 'community',
   workingGroups = 'working-groups',
@@ -55,6 +55,12 @@ const aboutPageSideNavBarItem: AboutPageSideNavBarItem[] = [
   },
 ];
 
+// eslint-disable-next-line no-shadow
+export enum OverflowTypes {
+  unset = 'unset',
+  hidden = 'hidden',
+}
+
 export default function AboutPageSideNavBar({
   pageKey,
 }: {
@@ -66,6 +72,13 @@ export default function AboutPageSideNavBar({
   const className = navOpen
     ? 'side-nav-about side-nav--open'
     : 'side-nav-about';
+
+  if (typeof document !== 'undefined') {
+    document.body.style.overflow = navOpen
+      ? OverflowTypes.hidden
+      : OverflowTypes.unset;
+  }
+
   const navElement = useRef<HTMLElement | null>(null);
   return (
     <nav className={className} ref={navElement}>
