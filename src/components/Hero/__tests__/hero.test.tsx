@@ -1,8 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-// import { ReleaseData } from '../../../hooks/useReleaseHistory';
-
 import { createNodeReleasesDataDetail } from '../../../../test/__fixtures__/page';
 
 import Hero from '..';
