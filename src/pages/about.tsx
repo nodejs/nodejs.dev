@@ -16,7 +16,7 @@ export default function AboutPage({ data }: Page): JSX.Element {
   return (
     <>
       <Layout title={title} description={description} showFooter={false}>
-        <main className="streched-container">
+        <main className="grid-container">
           <AboutPageSideNavBar pageKey={AboutPageKeys.about} />
           <Article
             title={title}
