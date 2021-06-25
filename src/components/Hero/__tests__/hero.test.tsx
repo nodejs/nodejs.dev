@@ -1,23 +1,29 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { ReleaseData } from '../../../hooks/useReleaseHistory';
+// import { ReleaseData } from '../../../hooks/useReleaseHistory';
 
-import { createReleaseData } from '../../../../test/__fixtures__/page';
+import { createNodeReleasesDataDetail } from '../../../../test/__fixtures__/page';
 
 import Hero from '..';
 
-const mockReleaseData = createReleaseData();
-
-jest.mock('../../../hooks/useReleaseHistory', () => ({
-  useReleaseHistory: (): ReleaseData[] => mockReleaseData,
+const mockReleaseData = createNodeReleasesDataDetail();
+const mockNodeReleasesLTSVersion = mockReleaseData.map(release => ({
+  version: release.version,
+  lts: release.lts,
 }));
 
 describe('Hero component', () => {
   it('renders correctly', () => {
     const title = 'Introduction to Node.js';
     const subTitle = 'Mock SubTitle';
-    const { container } = render(<Hero title={title} subTitle={subTitle} />);
+    const { container } = render(
+      <Hero
+        title={title}
+        subTitle={subTitle}
+        nodeReleasesLTSVersion={mockNodeReleasesLTSVersion}
+      />
+    );
     expect(container).toMatchSnapshot();
   });
 });

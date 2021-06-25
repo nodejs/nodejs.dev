@@ -1,18 +1,29 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Page } from '../types';
+import { Page, NodeReleaseData, DataPage } from '../types';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
 import DownloadTable from '../components/DownloadReleases/DownloadTable';
-import { useReleaseData } from '../hooks/useReleaseHistory';
 
-export default function ReleasesPage({ data }: Page): JSX.Element {
-  const { title, description } = data.page.frontmatter;
-  const { html, tableOfContents } = data.page;
-  const { authors } = data.page.fields;
-  const { releaseData } = useReleaseData();
+export interface ReleasesNodeReleases {
+  nodeReleases: {
+    nodeReleasesData: NodeReleaseData[];
+  };
+}
+
+interface ReleasesPageProps extends Page {
+  data: ReleasesNodeReleases & DataPage;
+}
+
+export default function ReleasesPage({
+  data: { page, nodeReleases },
+}: ReleasesPageProps): JSX.Element {
+  const { html, tableOfContents } = page;
+  const { title, description } = page.frontmatter;
+  const { authors } = page.fields;
+  const { nodeReleasesData } = nodeReleases;
 
   return (
     <>
@@ -25,7 +36,7 @@ export default function ReleasesPage({ data }: Page): JSX.Element {
             authors={authors}
             editPath="content/about/releases.md"
           >
-            <DownloadTable releases={releaseData} />
+            <DownloadTable nodeReleasesData={nodeReleasesData} />
           </Article>
         </main>
       </Layout>
@@ -45,6 +56,17 @@ export const query = graphql`
       }
       fields {
         authors
+      }
+    }
+    nodeReleases {
+      nodeReleasesData {
+        activeLTSStart
+        codename
+        endOfLife
+        initialRelease
+        maintenanceLTSStart
+        release
+        status
       }
     }
   }
