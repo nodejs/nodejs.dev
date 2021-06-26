@@ -74,9 +74,7 @@ exports[`Working Groups page renders correctly 1`] = `
           >
             <a
               class="activeStyleTab"
-              href="https://nodejs.org/en/get-involved/"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/community"
             >
               Community
             </a>
