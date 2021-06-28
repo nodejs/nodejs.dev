@@ -35,7 +35,9 @@ length<number> : It is used to specify number of bytes to be write from the file
 position<number> : It is used to specify from which byte to start writeing in the file content.
 
 string: Writes the string to the file specified by fd.
-callback: It is a function that receives err<NodeJS.ErrnoException>, byteswrite<number> and buffer<NodeJS.ArrayBufferView> to which the write bytes where written and stored.
+encoding: The default encoding value is UTF-8.
+
+callback: It is a function that receives err<NodeJS.ErrnoException> and byteswritte<number>.
 
 
 Example ::
