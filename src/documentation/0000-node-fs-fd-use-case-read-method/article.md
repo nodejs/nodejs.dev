@@ -1,19 +1,59 @@
-* **Start Date:** (fill me in with today's date, YYYY-MM-DD)
+* **Start Date:** 2021-06-28
 * **PR:** (leave this empty)
-* **Issue:** [#0000](link-to-issue) (remove if no associated issue)
-* **Keywords:** (4-8 keywords for page meta data)
-* **Summary:** (~60 character explanation of the article content for page meta data)
+* **Keywords:** node fs read file-descriptor 
+* **Summary:** Use case of file descriptor returned by fs.open() method in fs.read()
 
 # Title
 
-> Introduction paragraph(s).
+Using `fs.read()` method to read a file in a more controlled manner in comparision to `fs.readFile()` or `fs.readFileSync()`.
 
 ## Body Content
 
-> Body content, including sub-headings (H3 or lower, using the appropriate H(n) level for the content's place in the document), prose, code samples, screenshots, etc.
+Since `fs.readFile()` and `fs.readFileSync()` reads the full content of the file in memory before returning the data or in other words before you access and start operating on the data that is read, the methods will make sure the entire file is read which in case of huge sized file will have a great performance impact in terms of memory usage and speed of execution of the program.
 
-> Note: any included screenshots for your article should be saved in the same directory your article.md lives in!
+So, we can manage the above situation by using `fs.read()` method which give us more control over reading the file. How ? We will see it below.
 
+`fs.read()` Asynchronously reads data from the file referenced by the supplied file descriptor returned by `fs.open()`. Since it's asynchronous in nature which will help not to block our call stack.
+
+Syntax of `fs.read()` method is : `fs.read( fd, buffer, offset, length, position, callback )`.
+
+Parameters description:
+
+fd<number> : It is the file descriptor that is provided by `fs.open()` method.
+
+buffer<NodeJS.ArrayBufferView> : It is the a memory allocation to a specific size ( usually in bytes ) which is used to store the bytes read from the file.
+
+offset<number> : It is used to specify where the next I/O operation to be executed in the buffer. Whatever is read from a file is first written to the buffer, so using this parameter you can specify where to start writing in the buffer.
+
+length<number> : It is used to specify number of bytes to be read from the file.
+
+position<number> : It is used to specify from which byte to start reading in the file content.
+
+callback: It is a function that receives err<NodeJS.ErrnoException>, bytesRead<number> and buffer<NodeJS.ArrayBufferView> to which the read bytes where written and stored.
+
+
+Example ::
+
+```js
+const fs = require( "fs" );
+const buffer = Buffer.alloc( 1024 );
+
+fs.open( "./myFile.txt", "r", ( err, fd ) => {
+
+  if ( err  ) {
+    return console.log( "LOG_ERROR :: ", err.message );
+  }
+
+  fs.read( fd, buffer, 0, 53, 0, ( er, bytesRead, buffer ) => {
+
+    if ( er ) {
+      return console.log( "LOG_ERROR :: ", err.message );
+    }
+
+    console.log( " Bytes read :: ", bytesRead, " :: content :: ", buffer.toString() );
+  } );
+} );
+```
 ## Conclusion
 
-> 1-2 paragraphs wrapping up the article
+At times when you have to handle really big files or you want to read a file based on some spefic conditions, you can just read in chunks or specific chunks of data from a file using `fs.read()` method.
