@@ -5,7 +5,7 @@
 
 # Title
 
-Using `fs.read()` method to read a file in a more controlled manner in comparision to `fs.readFile()` or `fs.readFileSync()`.
+Using `fs.read()` method we can read a file in a more controlled manner in comparision to `fs.readFile()` or `fs.readFileSync()`.
 
 ## Body Content
 
