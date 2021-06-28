@@ -7,7 +7,7 @@
   overflow-x: hidden;
   padding: 0 var(--space-20);
   position: sticky;
-  top: var(--nav-height);
+  top: calc(var(--nav-height) + var(--space-12) + 2px);
   width: 100%;
   max-width: 36rem;
   box-sizing: border-box;
