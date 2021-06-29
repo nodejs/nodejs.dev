@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-import { ReleaseData } from '../../hooks/useReleaseHistory';
+import { NodeReleaseLTSNPMVersion } from '../../types';
 import appleLogo from '../../images/logos/apple-logo.svg';
 import microsoftLogo from '../../images/logos/microsoft-download-logo.svg';
 import sourceCodeIcon from '../../images/logos/source-code-icon.svg';
@@ -9,7 +8,7 @@ import DownloadCard from './DownloadCard';
 import './DownloadCards.scss';
 
 interface Props {
-  line?: ReleaseData;
+  line?: NodeReleaseLTSNPMVersion;
   userOS: UserOS;
 }
 

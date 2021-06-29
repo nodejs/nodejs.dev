@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import hexagonFilled from '../../../images/icons/hexagon-filled.svg';
 import hexagonOutline from '../../../images/icons/hexagon-outline.svg';
-import { UpcomingReleaseData } from '../../../hooks/useUpcomingReleases';
+import { UpcomingReleaseData } from '../../../types';
 import './UpcomingReleasesItem.scss';
 
 type Props = UpcomingReleaseData;

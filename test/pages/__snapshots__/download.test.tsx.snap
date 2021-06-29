@@ -321,6 +321,127 @@ exports[`Download page renders correctly 1`] = `
             <ul
               class="react-tabs__tab-list"
               role="tablist"
+            >
+              <li
+                aria-controls="react-tabs-1"
+                aria-disabled="false"
+                aria-selected="true"
+                class="react-tabs__tab react-tabs__tab--selected"
+                id="react-tabs-0"
+                role="tab"
+                tabindex="0"
+              >
+                Node.js 
+                v12
+              </li>
+              <li
+                aria-controls="react-tabs-3"
+                aria-disabled="false"
+                aria-selected="false"
+                class="react-tabs__tab"
+                id="react-tabs-2"
+                role="tab"
+              >
+                Node.js 
+                v14
+              </li>
+            </ul>
+            <div
+              aria-labelledby="react-tabs-0"
+              class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+              id="react-tabs-1"
+              role="tabpanel"
+            >
+              <div
+                class="upcoming-releases__panel"
+              >
+                <div
+                  class="upcoming-releases__item--Current"
+                >
+                  <img
+                    alt="hexagon icon"
+                    src="test-file-stub"
+                  />
+                  <p
+                    class="release-title"
+                  >
+                    Current
+                  </p>
+                  <p
+                    class="release-date"
+                  >
+                    Released
+                     
+                    2019-04-23
+                  </p>
+                </div>
+                <div
+                  class="upcoming-releases__item--LTS"
+                >
+                  <img
+                    alt="hexagon icon"
+                    src="test-file-stub"
+                  />
+                  <p
+                    class="release-title"
+                  >
+                    LTS
+                  </p>
+                  <p
+                    class="release-date"
+                  >
+                    Released
+                     
+                    2019-10-21
+                  </p>
+                </div>
+                <div
+                  class="upcoming-releases__item--Maintenance Release"
+                >
+                  <img
+                    alt="hexagon icon"
+                    src="test-file-stub"
+                  />
+                  <p
+                    class="release-title"
+                  >
+                    Maintenance Release
+                  </p>
+                  <p
+                    class="release-date"
+                  >
+                    Released
+                     
+                    2020-11-30
+                  </p>
+                </div>
+                <div
+                  class="upcoming-releases__item--End-of-life Release upcoming-releases__item--to-be-released"
+                >
+                  <img
+                    alt="hexagon icon"
+                    src="test-file-stub"
+                  />
+                  <p
+                    class="release-title"
+                  >
+                    End-of-life Release
+                  </p>
+                  <p
+                    class="release-date"
+                  >
+                    To be released
+                     
+                    2022-04-30
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              aria-labelledby="react-tabs-2"
+              class="react-tabs__tab-panel"
+              id="react-tabs-3"
+              role="tabpanel"
             />
           </div>
         </div>
@@ -353,14 +474,77 @@ exports[`Download page renders correctly 1`] = `
                   Active LTS Start
                 </th>
                 <th>
-                  Maintainance LTS Start
+                  Maintenance LTS Start
                 </th>
                 <th>
                   End of Life
                 </th>
               </tr>
             </thead>
-            <tbody />
+            <tbody>
+              <tr>
+                <td>
+                  <a
+                    href="https://nodejs.org/download/release/latest-v12.x/"
+                  >
+                    v12
+                  </a>
+                </td>
+                <td>
+                  Maintenance LTS
+                </td>
+                <td>
+                  <a
+                    href="https://nodejs.org/download/release/latest-erbium/"
+                  >
+                    Erbium
+                  </a>
+                </td>
+                <td>
+                  2019-04-23
+                </td>
+                <td>
+                  2019-10-21
+                </td>
+                <td>
+                  2020-11-30
+                </td>
+                <td>
+                  2022-04-30
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://nodejs.org/download/release/latest-v14.x/"
+                  >
+                    v14
+                  </a>
+                </td>
+                <td>
+                  Active LTS
+                </td>
+                <td>
+                  <a
+                    href="https://nodejs.org/download/release/latest-fermium/"
+                  >
+                    Fermium
+                  </a>
+                </td>
+                <td>
+                  2020-04-21
+                </td>
+                <td>
+                  2020-10-27
+                </td>
+                <td>
+                  2021-10-19
+                </td>
+                <td>
+                  2023-04-30
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
@@ -968,6 +1152,127 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             <ul
               class="react-tabs__tab-list"
               role="tablist"
+            >
+              <li
+                aria-controls="react-tabs-5"
+                aria-disabled="false"
+                aria-selected="true"
+                class="react-tabs__tab react-tabs__tab--selected"
+                id="react-tabs-4"
+                role="tab"
+                tabindex="0"
+              >
+                Node.js 
+                v12
+              </li>
+              <li
+                aria-controls="react-tabs-7"
+                aria-disabled="false"
+                aria-selected="false"
+                class="react-tabs__tab"
+                id="react-tabs-6"
+                role="tab"
+              >
+                Node.js 
+                v14
+              </li>
+            </ul>
+            <div
+              aria-labelledby="react-tabs-4"
+              class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+              id="react-tabs-5"
+              role="tabpanel"
+            >
+              <div
+                class="upcoming-releases__panel"
+              >
+                <div
+                  class="upcoming-releases__item--Current"
+                >
+                  <img
+                    alt="hexagon icon"
+                    src="test-file-stub"
+                  />
+                  <p
+                    class="release-title"
+                  >
+                    Current
+                  </p>
+                  <p
+                    class="release-date"
+                  >
+                    Released
+                     
+                    2019-04-23
+                  </p>
+                </div>
+                <div
+                  class="upcoming-releases__item--LTS"
+                >
+                  <img
+                    alt="hexagon icon"
+                    src="test-file-stub"
+                  />
+                  <p
+                    class="release-title"
+                  >
+                    LTS
+                  </p>
+                  <p
+                    class="release-date"
+                  >
+                    Released
+                     
+                    2019-10-21
+                  </p>
+                </div>
+                <div
+                  class="upcoming-releases__item--Maintenance Release"
+                >
+                  <img
+                    alt="hexagon icon"
+                    src="test-file-stub"
+                  />
+                  <p
+                    class="release-title"
+                  >
+                    Maintenance Release
+                  </p>
+                  <p
+                    class="release-date"
+                  >
+                    Released
+                     
+                    2020-11-30
+                  </p>
+                </div>
+                <div
+                  class="upcoming-releases__item--End-of-life Release upcoming-releases__item--to-be-released"
+                >
+                  <img
+                    alt="hexagon icon"
+                    src="test-file-stub"
+                  />
+                  <p
+                    class="release-title"
+                  >
+                    End-of-life Release
+                  </p>
+                  <p
+                    class="release-date"
+                  >
+                    To be released
+                     
+                    2022-04-30
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              aria-labelledby="react-tabs-6"
+              class="react-tabs__tab-panel"
+              id="react-tabs-7"
+              role="tabpanel"
             />
           </div>
         </div>
@@ -1000,14 +1305,77 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   Active LTS Start
                 </th>
                 <th>
-                  Maintainance LTS Start
+                  Maintenance LTS Start
                 </th>
                 <th>
                   End of Life
                 </th>
               </tr>
             </thead>
-            <tbody />
+            <tbody>
+              <tr>
+                <td>
+                  <a
+                    href="https://nodejs.org/download/release/latest-v12.x/"
+                  >
+                    v12
+                  </a>
+                </td>
+                <td>
+                  Maintenance LTS
+                </td>
+                <td>
+                  <a
+                    href="https://nodejs.org/download/release/latest-erbium/"
+                  >
+                    Erbium
+                  </a>
+                </td>
+                <td>
+                  2019-04-23
+                </td>
+                <td>
+                  2019-10-21
+                </td>
+                <td>
+                  2020-11-30
+                </td>
+                <td>
+                  2022-04-30
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://nodejs.org/download/release/latest-v14.x/"
+                  >
+                    v14
+                  </a>
+                </td>
+                <td>
+                  Active LTS
+                </td>
+                <td>
+                  <a
+                    href="https://nodejs.org/download/release/latest-fermium/"
+                  >
+                    Fermium
+                  </a>
+                </td>
+                <td>
+                  2020-04-21
+                </td>
+                <td>
+                  2020-10-27
+                </td>
+                <td>
+                  2021-10-19
+                </td>
+                <td>
+                  2023-04-30
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>

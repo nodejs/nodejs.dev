@@ -1,8 +1,23 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Index from '../../src/pages';
+import Index, { HomeNodeReleases } from '../../src/pages';
 import { HomepageData } from '../../src/types';
+import { createNodeReleasesDataDetail } from '../__fixtures__/page';
 import '../__mocks__/intersectionObserverMock';
+
+const mockNodeReleasesDataDetail = createNodeReleasesDataDetail();
+const mockNodeReleasesLTSVersion = mockNodeReleasesDataDetail.map(
+  ({ lts, version }) => ({
+    lts,
+    version,
+  })
+);
+
+const mockHomeNodeReleases: HomeNodeReleases = {
+  nodeReleases: {
+    nodeReleasesLTSVersion: mockNodeReleasesLTSVersion,
+  },
+};
 
 const homePageData: HomepageData = {
   page: {
@@ -29,9 +44,14 @@ const homePageData: HomepageData = {
   },
 };
 
+const mockData = {
+  ...mockHomeNodeReleases,
+  ...homePageData,
+};
+
 describe('Home page', () => {
   it('renders correctly', () => {
-    const { container } = render(<Index data={homePageData} />);
+    const { container } = render(<Index data={mockData} />);
     expect(container).toMatchSnapshot();
   });
 });
