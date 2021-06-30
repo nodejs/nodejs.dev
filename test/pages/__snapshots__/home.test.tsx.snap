@@ -143,6 +143,23 @@ exports[`Home page renders correctly 1`] = `
       class="home-page"
     >
       <div
+        class="banner"
+      >
+        <p>
+          <a
+            href="https://nodejs.org/en/blog/vulnerability/july-2021-security-releases/"
+          >
+            <button
+              class="bannerButton"
+              type="button"
+            >
+              Blog post
+            </button>
+          </a>
+          New security releases to be made available July 1st, 2021
+        </p>
+      </div>
+      <div
         class="home-page-hero"
       >
         <h1>
