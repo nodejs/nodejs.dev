@@ -7,12 +7,9 @@ import {
   BlogPageData,
   BlogPageContext,
   Page,
-} from '../../src/types';
-
-import {
+  NodeReleaseDataDetail,
   NodeReleaseData,
-  ReleaseData,
-} from '../../src/hooks/useReleaseHistory';
+} from '../../src/types';
 
 export const createPaginationInfo = (): PaginationInfo =>
   ({
@@ -73,7 +70,7 @@ export const createLearnPageData = (): LearnPageData =>
     },
   } as LearnPageData);
 
-export const createReleaseData = (): ReleaseData[] =>
+export const createNodeReleasesDataDetail = (): NodeReleaseDataDetail[] =>
   [
     {
       version: 'mock-version-1',
@@ -85,7 +82,7 @@ export const createReleaseData = (): ReleaseData[] =>
       zlib: 'mock-zlib',
       openssl: 'mock-openssl',
       modules: 'mock-module',
-      lts: true,
+      lts: 'fermium',
       security: false,
     },
     {
@@ -98,12 +95,12 @@ export const createReleaseData = (): ReleaseData[] =>
       zlib: 'mock-zlib',
       openssl: '1.1.1g',
       modules: '83',
-      lts: true,
+      lts: 'fermium',
       security: false,
     },
-  ] as ReleaseData[];
+  ] as NodeReleaseDataDetail[];
 
-export const createNodeReleaseData = (): NodeReleaseData[] =>
+export const createNodeReleasesData = (): NodeReleaseData[] =>
   [
     {
       endOfLife: '2022-04-30',

@@ -37,9 +37,11 @@ req.end()
 ```js
 const https = require('https')
 
-const data = JSON.stringify({
-  todo: 'Buy the milk'
-})
+const data = new TextEncoder().encode(
+  JSON.stringify({
+    todo: 'Buy the milk 🍼'
+  })
+)
 
 const options = {
   hostname: 'whatever.com',

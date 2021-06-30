@@ -1,6 +1,6 @@
 import React, { useState, FC } from 'react';
 import DownloadToggle from '../DownloadToggle';
-import { ReleaseData } from '../../hooks/useReleaseHistory';
+import { NodeReleaseLTSNPMVersion } from '../../types';
 import { getDownloadableItemsList, Downloadable } from './downloadItems';
 import './DownloadAdditional.scss';
 
@@ -75,7 +75,7 @@ const DownloadableItem: FC<DownloadableItemProps> = ({
 };
 
 interface DownloadAdditionalProps {
-  line?: ReleaseData;
+  line?: NodeReleaseLTSNPMVersion;
   selectedTypeRelease: string;
   handleTypeReleaseToggle: (selected: React.SetStateAction<string>) => void;
 }
