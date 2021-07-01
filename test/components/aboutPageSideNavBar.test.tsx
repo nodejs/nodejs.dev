@@ -1,7 +1,8 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { screen, render, fireEvent } from '@testing-library/react';
 import AboutPageSideNavBar, {
   AboutPageKeys,
+  OverflowTypes,
 } from '../../src/components/AboutPageSideNavBar';
 
 describe('AboutPageSideNavBar', () => {
@@ -27,5 +28,26 @@ describe('AboutPageSideNavBar', () => {
     const innrerHtml = container.innerHTML;
     const activeLinks = innrerHtml.match('side-nav__item-community--active');
     expect(activeLinks.length).toBe(1);
+  });
+  it('should set the body oveflow hidden on menu click', () => {
+    render(<AboutPageSideNavBar pageKey={AboutPageKeys.releases} />);
+    const downloadItem: Element = screen.getAllByRole('button')[0] as Element;
+    expect(document.body.style.overflow).toBe(OverflowTypes.unset);
+    fireEvent.click(downloadItem);
+    expect(document.body.style.overflow).toBe(OverflowTypes.hidden);
+  });
+
+  fit('should set the body overflow hidden/unset on toggling', () => {
+    render(<AboutPageSideNavBar pageKey={AboutPageKeys.releases} />);
+    const downloadItem: Element = screen.getAllByRole('button')[0] as Element;
+    expect(document.body.style.overflow).toBe(OverflowTypes.unset);
+    fireEvent.click(downloadItem);
+    expect(document.body.style.overflow).toBe(OverflowTypes.hidden);
+    fireEvent.click(downloadItem);
+    expect(document.body.style.overflow).toBe(OverflowTypes.unset);
+    fireEvent.click(downloadItem);
+    expect(document.body.style.overflow).toBe(OverflowTypes.hidden);
+    fireEvent.click(downloadItem);
+    expect(document.body.style.overflow).toBe(OverflowTypes.unset);
   });
 });

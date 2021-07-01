@@ -17,7 +17,7 @@ export default function GovernancePage({ data }: Page): JSX.Element {
   return (
     <>
       <Layout title={title} description={description} showFooter={false}>
-        <main className="streched-container">
+        <main className="grid-container">
           <AboutPageSideNavBar pageKey={AboutPageKeys.governance} />
           <Article
             title={title}

@@ -5,7 +5,7 @@ import '../../styles/about.scss';
 
 // eslint-disable-next-line no-shadow
 export enum AboutPageKeys {
-  about = '',
+  about = 'about',
   governance = 'governance',
   community = 'community',
   workingGroups = 'working-groups',
@@ -13,6 +13,7 @@ export enum AboutPageKeys {
   resources = 'resources',
   trademark = 'trademark',
   privacy = 'privacy',
+  security = 'security',
 }
 
 const aboutPageSideNavBarItem: AboutPageSideNavBarItem[] = [
@@ -48,7 +49,17 @@ const aboutPageSideNavBarItem: AboutPageSideNavBarItem[] = [
     title: 'Privacy Policy',
     slug: AboutPageKeys.privacy,
   },
+  {
+    title: 'Security Reporting',
+    slug: AboutPageKeys.security,
+  },
 ];
+
+// eslint-disable-next-line no-shadow
+export enum OverflowTypes {
+  unset = 'unset',
+  hidden = 'hidden',
+}
 
 export default function AboutPageSideNavBar({
   pageKey,
@@ -61,32 +72,34 @@ export default function AboutPageSideNavBar({
   const className = navOpen
     ? 'side-nav-about side-nav--open'
     : 'side-nav-about';
+
+  if (typeof document !== 'undefined') {
+    document.body.style.overflow = navOpen
+      ? OverflowTypes.hidden
+      : OverflowTypes.unset;
+  }
+
   const navElement = useRef<HTMLElement | null>(null);
   return (
-    <>
-      {' '}
-      <nav className={className} ref={navElement}>
-        <button type="button" className="side-nav__open" onClick={toggle}>
-          Menu
-        </button>
-        <ul className="community-nav__list">
-          {aboutPageSideNavBarItem.map(({ title: commTitle, slug }) => {
-            return (
-              <>
-                <NavigationItem
-                  key={slug}
-                  title={commTitle}
-                  isLearn={false}
-                  isRead={false}
-                  isActive={slug === pageKey}
-                  slug={slug}
-                  baseUrl="/"
-                />
-              </>
-            );
-          })}
-        </ul>
-      </nav>
-    </>
+    <nav className={className} ref={navElement}>
+      <button type="button" className="side-nav__open" onClick={toggle}>
+        Menu
+      </button>
+      <ul className="community-nav__list">
+        {aboutPageSideNavBarItem.map(({ title: commTitle, slug }) => {
+          return (
+            <NavigationItem
+              key={slug}
+              title={commTitle}
+              isLearn={false}
+              isRead={false}
+              isActive={slug === pageKey}
+              slug={slug}
+              baseUrl="/"
+            />
+          );
+        })}
+      </ul>
+    </nav>
   );
 }

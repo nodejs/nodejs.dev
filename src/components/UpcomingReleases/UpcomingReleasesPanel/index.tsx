@@ -1,6 +1,6 @@
 import React from 'react';
 import UpcomingReleasesItem from '../UpcomingReleasesItem';
-import { UpcomingReleaseData } from '../../../hooks/useUpcomingReleases';
+import { UpcomingReleaseData } from '../../../types';
 
 type Props = {
   releases: UpcomingReleaseData[];
