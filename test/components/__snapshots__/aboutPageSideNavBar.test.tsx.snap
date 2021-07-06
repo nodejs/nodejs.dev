@@ -16,8 +16,8 @@ exports[`AboutPageSideNavBar renders correctly 1`] = `
     >
       <a
         class="t-body2 side-nav__item-community"
-        href="/"
-        id="link-"
+        href="/about"
+        id="link-about"
       >
         About
       </a>
@@ -69,6 +69,13 @@ exports[`AboutPageSideNavBar renders correctly 1`] = `
         id="link-privacy"
       >
         Privacy Policy
+      </a>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/security"
+        id="link-security"
+      >
+        Security Reporting
       </a>
     </ul>
   </nav>
@@ -91,8 +98,8 @@ exports[`AboutPageSideNavBar should about Releases page exist and contain a href
     >
       <a
         class="t-body2 side-nav__item-community"
-        href="/"
-        id="link-"
+        href="/about"
+        id="link-about"
       >
         About
       </a>
@@ -144,6 +151,13 @@ exports[`AboutPageSideNavBar should about Releases page exist and contain a href
         id="link-privacy"
       >
         Privacy Policy
+      </a>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/security"
+        id="link-security"
+      >
+        Security Reporting
       </a>
     </ul>
   </nav>

@@ -1,6 +1,8 @@
 // Use in this file CommonJS syntax see https://www.gatsbyjs.org/docs/migrating-from-v1-to-v2/#convert-to-either-pure-commonjs-or-pure-es6
 const path = require('path');
+const fetch = require('node-fetch');
 const createSlug = require('./util-node/createSlug');
+const getReleaseStatus = require('./util-node/getReleaseStatus');
 
 const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
 
@@ -29,6 +31,7 @@ exports.createPages = ({ graphql, actions }) => {
                       "privacy-policy"
                       "about"
                       "governance"
+                      "security"
                     ]
                   }
                 }
@@ -223,5 +226,82 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         value: authors,
       });
     }
+  }
+};
+
+exports.sourceNodes = async ({
+  actions: { createNode },
+  createNodeId,
+  createContentDigest,
+  reporter: { activityTimer },
+}) => {
+  const activity = activityTimer('Fetching Node release data');
+  activity.start();
+  try {
+    const releasesDataDetailURL = 'https://nodejs.org/dist/index.json';
+    const releasesDataURL =
+      'https://raw.githubusercontent.com/nodejs/Release/main/schedule.json';
+
+    const releasesDataDetailResponse = await fetch(releasesDataDetailURL);
+    const releasesDataDetailResult = await releasesDataDetailResponse.json();
+
+    const releasesDataResponse = await fetch(releasesDataURL);
+    const releasesDataResult = await releasesDataResponse.json();
+
+    const mappedReleasesDataDetail = releasesDataDetailResult
+      .map(release => ({
+        ...release,
+        lts: release.lts || '',
+      }))
+      .slice(0, 50);
+
+    const filteredReleasesData = Object.keys(releasesDataResult)
+      .filter(key => {
+        const release = releasesDataResult[key];
+        const end = new Date(release.end);
+        return end >= new Date();
+      })
+      .map(key => {
+        const release = releasesDataResult[key];
+
+        return {
+          endOfLife: release.end,
+          maintenanceLTSStart: release.maintenance || '',
+          activeLTSStart: release.lts || '',
+          codename: release.codename || '',
+          initialRelease: release.start,
+          release: key,
+          status: getReleaseStatus(release),
+        };
+      });
+
+    const nodeReleasesData = {
+      nodeReleasesDataDetail: mappedReleasesDataDetail,
+      nodeReleasesData: filteredReleasesData,
+    };
+
+    const nodeReleasesDataContent = JSON.stringify(nodeReleasesData);
+
+    const nodeReleasesMeta = {
+      id: createNodeId('node-releases'),
+      parent: null,
+      children: [],
+      internal: {
+        type: 'NodeReleases',
+        mediaType: 'application/json',
+        content: nodeReleasesDataContent,
+        contentDigest: createContentDigest(nodeReleasesData),
+      },
+    };
+
+    const nodeReleases = {
+      ...nodeReleasesData,
+      ...nodeReleasesMeta,
+    };
+
+    await createNode(nodeReleases);
+    activity.end();
+  } catch (err) {
+    activity.panic(err);
   }
 };
