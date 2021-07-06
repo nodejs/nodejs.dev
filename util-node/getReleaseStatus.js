@@ -1,6 +1,5 @@
-import { NodeReleaseVersionData } from '../hooks/useReleaseHistory';
-
-export function getReleaseStatus(release: NodeReleaseVersionData): string {
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+function getReleaseStatus(release) {
   const currentDate = new Date();
   const startDate = new Date(release.start);
   const released = startDate <= currentDate;
@@ -15,3 +14,5 @@ export function getReleaseStatus(release: NodeReleaseVersionData): string {
   if (released) return 'Current';
   return 'Pending';
 }
+
+module.exports = getReleaseStatus;

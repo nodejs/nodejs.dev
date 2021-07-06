@@ -3,9 +3,6 @@
 
 .side-nav-about {
   @extend .side-nav;
-  top: 1.8rem;
-  overflow: hidden;
-  position: inherit;
   width: auto;
 
   &.side-nav--open {

@@ -4,11 +4,9 @@ import DownloadAdditional from '..';
 
 describe('DownloadAdditional component', (): void => {
   const releaseData = {
-    date: 'date',
     version: 'version',
-    files: [],
-    lts: true,
-    v8: 'v8',
+    lts: '',
+    npm: '6.14.8',
   };
 
   it('renders correctly', (): void => {

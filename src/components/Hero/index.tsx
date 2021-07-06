@@ -1,25 +1,27 @@
 import React from 'react';
 import { Link } from 'gatsby';
-
 import { detectOS } from '../../util/detectOS';
 import downloadUrlByOS from '../../util/downloadUrlByOS';
-import { useReleaseHistory, ReleaseData } from '../../hooks/useReleaseHistory';
+import { NodeReleaseLTSVersion } from '../../types';
 
 import './Hero.scss';
 
 interface Props {
   title: string;
   subTitle?: string;
+  nodeReleasesLTSVersion: NodeReleaseLTSVersion[];
 }
 
-const Hero = ({ title, subTitle }: Props): JSX.Element => {
+const Hero = ({
+  title,
+  subTitle,
+  nodeReleasesLTSVersion,
+}: Props): JSX.Element => {
   const userOS = detectOS();
-  const [currentRelease, ...releases] = useReleaseHistory();
+  const [currentRelease, ...releases] = nodeReleasesLTSVersion;
 
   // find first lts version (first found is last LTS)
-  const lastLTSRelease = releases.find(
-    (release: ReleaseData): boolean => release.lts
-  );
+  const lastLTSRelease = releases.find((release): boolean => !!release.lts);
 
   const ltsVersionUrl = downloadUrlByOS(
     userOS,

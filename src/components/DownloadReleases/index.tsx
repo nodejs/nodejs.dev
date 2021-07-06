@@ -1,18 +1,22 @@
 import React from 'react';
 import DownloadTable from './DownloadTable';
 import UpcomingReleases from '../UpcomingReleases';
-import { NodeReleaseData } from '../../hooks/useReleaseHistory';
+import { NodeReleaseData, UpcomingRelease } from '../../types';
 import './DownloadReleases.scss';
 
 interface Props {
-  releases: NodeReleaseData[];
+  nodeReleasesData: NodeReleaseData[];
+  upcomingReleases: UpcomingRelease[];
 }
 
-export default function DownloadReleases({ releases }: Props): JSX.Element {
+export default function DownloadReleases({
+  nodeReleasesData,
+  upcomingReleases,
+}: Props): JSX.Element {
   return (
     <div className="download-releases">
       <h2 className="download-releases__title">Upcoming Releases</h2>
-      <UpcomingReleases />
+      <UpcomingReleases upcomingReleases={upcomingReleases} />
       <p className="lts__text">
         Major Node.js versions enter Current release status for six months,
         which gives library authors time to add support for them. After six
@@ -23,7 +27,7 @@ export default function DownloadReleases({ releases }: Props): JSX.Element {
         fixed for a total of 30 months. Production applications should only use
         Active LTS or Maintenance LTS releases.
       </p>
-      <DownloadTable releases={releases} />
+      <DownloadTable nodeReleasesData={nodeReleasesData} />
     </div>
   );
 }

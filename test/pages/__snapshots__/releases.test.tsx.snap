@@ -74,9 +74,7 @@ exports[`Releases page renders correctly 1`] = `
           >
             <a
               class="activeStyleTab"
-              href="https://nodejs.org/en/get-involved/"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/community"
             >
               Community
             </a>
@@ -273,7 +271,7 @@ exports[`Releases page renders correctly 1`] = `
                     Active LTS Start
                   </th>
                   <th>
-                    Maintainance LTS Start
+                    Maintenance LTS Start
                   </th>
                   <th>
                     End of Life

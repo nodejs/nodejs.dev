@@ -210,80 +210,80 @@ participated in that process.
 
 ##### Information Gathering
 
-* [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**
-* [@codeekage](https://github.com/codeekage) - **Agiri Abraham JNR**
-* [@darcyclarke](https://github.com/darcyclarke) - **Darcy Clarke**
-* [@maddhruv](https://github.com/maddhruv) - **Dhruv Jain**
-* [@fhemberger](https://github.com/fhemberger) - **Frederic Hemberger**
-* [@JonahMoses](https://github.com/JonahMoses) - **Jonah Moses**
-* [@chowdhurian](https://github.com/chowdhurian) - **Manil Chowdhury**
-* [@oe](https://github.com/oe) - **Olivia Hugger**
-* [@bnb](https://github.com/bnb) - **Tierney Cyren**
-* [@timothyis](https://github.com/timothyis) - **Timothy**
+* [@amiller-gh](https://github.com/amiller-gh) - Adam Miller
+* [@codeekage](https://github.com/codeekage) - Agiri Abraham JNR
+* [@darcyclarke](https://github.com/darcyclarke) - Darcy Clarke
+* [@maddhruv](https://github.com/maddhruv) - Dhruv Jain
+* [@fhemberger](https://github.com/fhemberger) - Frederic Hemberger
+* [@JonahMoses](https://github.com/JonahMoses) - Jonah Moses
+* [@chowdhurian](https://github.com/chowdhurian) - Manil Chowdhury
+* [@oe](https://github.com/oe) - Olivia Hugger
+* [@bnb](https://github.com/bnb) - Tierney Cyren
+* [@timothyis](https://github.com/timothyis) - Timothy
 
 ##### IA / UX Planning
 
-* [@oe](https://github.com/oe) - **Olivia Hugger**
-* [@fhemberger](https://github.com/fhemberger) - **Frederic Hemberger**
-* [@bnb](https://github.com/bnb) - **Tierney Cyren**
-* [@timothyis](https://github.com/timothyis) - **Timothy**
-* [@JonahMoses](https://github.com/JonahMoses) - **Jonah Moses**
-* [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**
-* [@emilypmendez](https://github.com/emilypmendez) - **Emily Mendez**
-* [@darcyclarke](https://github.com/darcyclarke) - **Darcy Clarke**
-* [@maddhruv](https://github.com/maddhruv) - **Dhruv Jain**
-* [@chowdhurian](https://github.com/chowdhurian) - **Manil Chowdhury**
-* [@codeekage](https://github.com/codeekage) - **Agiri Abraham JNR**
-* [@add1sun](https://github.com/add1sun) - **Addison Berry**
-* [@Qard](https://github.com/Qard) - **Stephen Belanger**
-* [@watilde](https://github.com/watilde) - **Daijiro Wachi**
-* [@tolmasky](https://github.com/tolmasky) - **Francisco Ryan Tolmasky I**
-* [@milapbhojak](https://github.com/milapbhojak) - **Milap Bhojak**
-* [@devamaz](https://github.com/devamaz) - **Ahmad Abdul-Aziz**
+* [@oe](https://github.com/oe) - Olivia Hugger
+* [@fhemberger](https://github.com/fhemberger) - Frederic Hemberger
+* [@bnb](https://github.com/bnb) - Tierney Cyren
+* [@timothyis](https://github.com/timothyis) - Timothy
+* [@JonahMoses](https://github.com/JonahMoses) - Jonah Moses
+* [@amiller-gh](https://github.com/amiller-gh) - Adam Miller
+* [@emilypmendez](https://github.com/emilypmendez) - Emily Mendez
+* [@darcyclarke](https://github.com/darcyclarke) - Darcy Clarke
+* [@maddhruv](https://github.com/maddhruv) - Dhruv Jain
+* [@chowdhurian](https://github.com/chowdhurian) - Manil Chowdhury
+* [@codeekage](https://github.com/codeekage) - Agiri Abraham JNR
+* [@add1sun](https://github.com/add1sun) - Addison Berry
+* [@Qard](https://github.com/Qard) - Stephen Belanger
+* [@watilde](https://github.com/watilde) - Daijiro Wachi
+* [@tolmasky](https://github.com/tolmasky) - Francisco Ryan Tolmasky I
+* [@milapbhojak](https://github.com/milapbhojak) - Milap Bhojak
+* [@devamaz](https://github.com/devamaz) - Ahmad Abdul-Aziz
 
 ##### UI Design and Content Creation
 
-* [@amiller-gh](https://github.com/amiller-gh) - **Adam Miller**
-* [@bnb](https://github.com/bnb) - **Tierney Cyren**
-* [@codeekage](https://github.com/codeekage) - **Agiri Abraham JNR**
-* [@chowdhurian](https://github.com/chowdhurian) - **Manil Chowdhury**
-* [@maddhruv](https://github.com/maddhruv) - **Dhruv Jain**
-* [@milapbhojak](https://github.com/milapbhojak) - **Milap Bhojak**
-* [@tolmasky](https://github.com/tolmasky) - **Francisco Ryan Tolmasky I**
-* [@iNidAName](https://github.com/inidaname) - **Hassaan Sani**
-* [@abedzantout](https://github.com/abedzantout) - **Abdul Rahman Zantout**
-* [@AliObaji](https://github.com/AliObaji) - **Ali Obaji**
-* [@AhmadAwais](https://github.com/AhmadAwais) - **AhmadAwais**
+* [@amiller-gh](https://github.com/amiller-gh) - Adam Miller
+* [@bnb](https://github.com/bnb) - Tierney Cyren
+* [@codeekage](https://github.com/codeekage) - Agiri Abraham JNR
+* [@chowdhurian](https://github.com/chowdhurian) - Manil Chowdhury
+* [@maddhruv](https://github.com/maddhruv) - Dhruv Jain
+* [@milapbhojak](https://github.com/milapbhojak) - Milap Bhojak
+* [@tolmasky](https://github.com/tolmasky) - Francisco Ryan Tolmasky I
+* [@iNidAName](https://github.com/inidaname) - Hassaan Sani
+* [@abedzantout](https://github.com/abedzantout) - Abdul Rahman Zantout
+* [@AliObaji](https://github.com/AliObaji) - Ali Obaji
+* [@AhmadAwais](https://github.com/AhmadAwais) - AhmadAwais
 
 ##### Site Development
 
-* [@abiclub23](https://github.com/abiclub23) - **Abhi Tondepu**
-* [@ajay2507](https://github.com/ajay2507) - **Ajaykumar**
-* [@connorholyday](https://github.com/connorholyday) - **Connor Holyday**
-* [@iceagency-jakecruse](https://github.com/iceagency-jakecruse) - **Jake Cruse**
-* [@iceagency-lukehopkins](https://github.com/iceagency-lukehopkins) - **Luke Hopkins**
-* [@jestho](https://github.com/jestho) - **Jesper Thøgersen**
-* [@jonahmoses](https://github.com/jonahmoses) - **Jonah Moses**
-* [@sagirk](https://github.com/sagirk) - **Sagir Khan**
-* [@ollelauribostrom](https://github.com/ollelauribostrom) - **Olle Lauri Boström**
-* [@belar](https://github.com/Belar) - **Paweł**
-* [@erichodges](https://github.com/erichodges) - **Eric Hodges**
-* [@utkarshbhimte](https://github.com/utkarshbhimte) - **Utkarsh Bhimte**
-* [@lidoravitan](https://github.com/lidoravitan) - **Lidor Avitan**
-* [@mbj36](https://github.com/mbj36) - **Mohit Bajoria**
-* [@zanmarolt](https://github.com/zanmarolt) - **Zan Marolt**
-* [@imbhargav5](https://github.com/imbhargav5) - **Bhargav Ponnapalli**
-* [@mikeattara](https://github.com/mikeattara) - **Mike Perry Y Attara**
-* [@ZYSzys](https://github.com/ZYSzys) - **ZYSzys**
-* [@mrjam2](https://github.com/mrjam2) - **Jamie Burton**
-* [@jamesgeorge007](https://github.com/jamesgeorge007) - **James George**
-* [@Yash-Handa](https://github.com/Yash-Handa) - **Yash Handa**
-* [@iNidAName](https://github.com/inidaname) - **Hassaan Sani**
-* [@abedzantout](https://github.com/abedzantout) - **Abdul Rahman Zantout**
-* [@LaRuaNa](https://github.com/LaRuaNa) - **Onur Laru**
-* [@AhmadAwais](https://github.com/AhmadAwais) - **AhmadAwais**
-* [@BeniCheni](https://github.com/BeniCheni) - **Benjamin Chen**
-* [@kevjin](https://github.com/kevjin) - **Kevin Jin**
+* [@abiclub23](https://github.com/abiclub23) - Abhi Tondepu
+* [@ajay2507](https://github.com/ajay2507) - Ajaykumar
+* [@connorholyday](https://github.com/connorholyday) - Connor Holyday
+* [@iceagency-jakecruse](https://github.com/iceagency-jakecruse) - Jake Cruse
+* [@iceagency-lukehopkins](https://github.com/iceagency-lukehopkins) - Luke Hopkins
+* [@jestho](https://github.com/jestho) - Jesper Thøgersen
+* [@jonahmoses](https://github.com/jonahmoses) - Jonah Moses
+* [@sagirk](https://github.com/sagirk) - Sagir Khan
+* [@ollelauribostrom](https://github.com/ollelauribostrom) - Olle Lauri Boström
+* [@belar](https://github.com/Belar) - Paweł
+* [@erichodges](https://github.com/erichodges) - Eric Hodges
+* [@utkarshbhimte](https://github.com/utkarshbhimte) - Utkarsh Bhimte
+* [@lidoravitan](https://github.com/lidoravitan) - Lidor Avitan
+* [@mbj36](https://github.com/mbj36) - Mohit Bajoria
+* [@zanmarolt](https://github.com/zanmarolt) - Zan Marolt
+* [@imbhargav5](https://github.com/imbhargav5) - Bhargav Ponnapalli
+* [@mikeattara](https://github.com/mikeattara) - Mike Perry Y Attara
+* [@ZYSzys](https://github.com/ZYSzys) - ZYSzys
+* [@mrjam2](https://github.com/mrjam2) - Jamie Burton
+* [@jamesgeorge007](https://github.com/jamesgeorge007) - James George
+* [@Yash-Handa](https://github.com/Yash-Handa) - Yash Handa
+* [@iNidAName](https://github.com/inidaname) - Hassaan Sani
+* [@abedzantout](https://github.com/abedzantout) - Abdul Rahman Zantout
+* [@LaRuaNa](https://github.com/LaRuaNa) - Onur Laru
+* [@AhmadAwais](https://github.com/AhmadAwais) - AhmadAwais
+* [@BeniCheni](https://github.com/BeniCheni) - Benjamin Chen
+* [@kevjin](https://github.com/kevjin) - Kevin Jin
 
 ## Links
 
