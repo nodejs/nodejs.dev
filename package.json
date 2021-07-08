@@ -11,7 +11,7 @@
     "@storybook/addon-links": "^6.2.9",
     "@storybook/addons": "^6.3.4",
     "@storybook/builder-webpack5": "^6.3.3",
-    "@storybook/react": "^6.2.9",
+    "@storybook/react": "^6.3.4",
     "@types/react-tabs": "2.3.2",
     "babel-preset-react-app": "^10.0.0",
     "classnames": "^2.2.6",
