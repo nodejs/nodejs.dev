@@ -7,7 +7,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.18",
-    "@storybook/addon-actions": "^6.3.1",
+    "@storybook/addon-actions": "^6.3.4",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/addons": "^6.3.4",
     "@storybook/builder-webpack5": "^6.3.3",
