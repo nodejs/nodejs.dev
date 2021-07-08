@@ -17,8 +17,8 @@ const Header = (): JSX.Element => {
     if (isKeyPress) {
       return;
     }
-    const target = e.target as HTMLElement;
-    const toggle = target.innerHTML.includes('nights_stay') ? 'dark' : 'light';
+    const target = e.target as any;
+    const toggle = target.innerText.includes('nights_stay') ? 'dark' : 'light';
     toggleTheme(toggle);
   };
 
