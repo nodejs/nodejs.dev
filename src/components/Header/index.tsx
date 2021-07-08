@@ -4,6 +4,7 @@ import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import logoLight from '../../images/logos/nodejs-logo-light-mode.svg';
 import logoDark from '../../images/logos/nodejs-logo-dark-mode.svg';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
+import { LocalizedLink, LocalesList } from "gatsby-theme-i18n"
 
 const Header = (): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
@@ -44,14 +45,15 @@ const Header = (): JSX.Element => {
 
         <ul className="nav__tabs__container">
           <li className="nav__tabs">
-            <Link
+            <LocalizedLink
               to="/learn"
               className="activeStyleTab"
               activeClassName="active"
               partiallyActive
+              language="de"
             >
               Learn
-            </Link>
+            </LocalizedLink>
           </li>
           <li className="nav__tabs">
             <a
@@ -83,6 +85,7 @@ const Header = (): JSX.Element => {
               Community
             </Link>
           </li>
+          
         </ul>
 
         <div className="nav__endwrapper">

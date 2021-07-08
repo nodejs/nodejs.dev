@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { graphql } from 'gatsby';
 import { IoLogoNodejs, IoMdGitPullRequest, IoMdRocket } from 'react-icons/io';
-
+import { LocalizedLink } from "gatsby-theme-i18n"
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 
@@ -67,7 +67,8 @@ export default function Index({
     },
     nodeReleases: { nodeReleasesLTSVersion },
   },
-}: HomepageProps): JSX.Element {
+}: HomepageProps, locale: string): JSX.Element {
+  console.log(locale);
   return (
     <Layout title={displayTitle} description={description}>
       <main className="home-page">
