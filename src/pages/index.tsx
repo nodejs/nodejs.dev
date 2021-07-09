@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import { graphql } from 'gatsby';
 import { IoLogoNodejs, IoMdGitPullRequest, IoMdRocket } from 'react-icons/io';
-import { LocalizedLink } from "gatsby-theme-i18n"
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 
@@ -60,14 +59,17 @@ const NodeFeature = ({
   );
 };
 
-export default function Index({
-  data: {
-    page: {
-      frontmatter: { displayTitle, subTitle, description },
+export default function Index(
+  {
+    data: {
+      page: {
+        frontmatter: { displayTitle, subTitle, description },
+      },
+      nodeReleases: { nodeReleasesLTSVersion },
     },
-    nodeReleases: { nodeReleasesLTSVersion },
-  },
-}: HomepageProps, locale: string): JSX.Element {
+  }: HomepageProps,
+  locale: string
+): JSX.Element {
   console.log(locale);
   return (
     <Layout title={displayTitle} description={description}>
