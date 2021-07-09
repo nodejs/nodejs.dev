@@ -1,7 +1,7 @@
 ---
 title: How to install Node.js
 description: 'How you can install Node.js on your system: a package manager, the official website installer or nvm'
-authors: flaviocopes, ZYSzys, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais
+authors: flaviocopes, ZYSzys, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, bhalverson
 section: Quick Start
 category: learn
 ---
@@ -19,6 +19,5 @@ Other package managers for Linux and Windows are listed in <https://nodejs.org/e
 It is also very useful to test your code with old Node.js versions.
 
 See <https://github.com/nvm-sh/nvm> for more information about this option.
-
 
 In any case, when Node.js is installed you'll have access to the `node` executable program in the command line.
