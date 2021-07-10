@@ -17,8 +17,17 @@ const Header = (): JSX.Element => {
     if (isKeyPress) {
       return;
     }
-    const target = e.target as HTMLButtonElement;
-    const toggle = target.innerText.includes('nights_stay') ? 'dark' : 'light';
+    const target = e.target as HTMLElement;
+    let toggle = null;
+    if (target.className.includes('dark-mode-toggle')) {
+      if (localStorage.getItem('theme') === 'light') {
+        toggle = 'dark';
+      } else {
+        toggle = 'light';
+      }
+    } else {
+      toggle = target.innerHTML.includes('nights_stay') ? 'dark' : 'light';
+    }
     toggleTheme(toggle);
   };
 
