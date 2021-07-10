@@ -15,6 +15,7 @@ I would recommend you to have a good grasp of the main JavaScript concepts befor
 * Lexical Structure
 * Expressions
 * Types
+* Classes
 * Variables
 * Functions
 * this
