@@ -2,12 +2,11 @@ import React from 'react';
 import './Banner.scss';
 import config from '../../config.json';
 
-const bannerBtnText = 'Blog post';
-
 const Banner = (): JSX.Element | null => {
   const {
     banners: {
       index: { text, link, visible },
+      bannerBtnText,
     },
   } = config;
 

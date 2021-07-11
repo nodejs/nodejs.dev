@@ -42,7 +42,11 @@ async function updateBanners() {
       return;
     }
 
-    config.banners = banners;
+    config.banners = {
+      ...config.banners,
+      ...banners,
+    };
+
     if (!dateBetween && visible) {
       config.banners.index.visible = false;
     } else if (dateBetween && !visible) {
