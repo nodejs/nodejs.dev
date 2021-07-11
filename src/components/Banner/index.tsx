@@ -1,34 +1,28 @@
 import React from 'react';
 import './Banner.scss';
+import config from '../../config.json';
 
-const bannerLink =
-  'https://nodejs.org/en/blog/vulnerability/february-2020-security-releases/';
+const bannerBtnText = 'Blog post';
 
-/**
- * The banner is used for displaying upcoming Nodejs events and important announcements ex. security updates
- * Usage
-      <p>
-        <a href={bannerLink}>
-          <button className="bannerButton" type="button">
-            Blog post
-          </button>
-        </a>
-        New security releases now available for all release lines
-      </p>
- */
-const Banner = (): JSX.Element => {
-  return (
+const Banner = (): JSX.Element | null => {
+  const {
+    banners: {
+      index: { text, link, visible },
+    },
+  } = config;
+
+  return visible ? (
     <div className="banner">
       <p>
-        <a href={bannerLink}>
+        <a href={link}>
           <button className="bannerButton" type="button">
-            Blog post
+            {bannerBtnText}
           </button>
         </a>
-        New security releases now available for all release lines
+        {text}
       </p>
     </div>
-  );
+  ) : null;
 };
 
 export default Banner;

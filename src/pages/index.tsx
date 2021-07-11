@@ -16,6 +16,7 @@ import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
 import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
 import dotsIllustration from '../images/illustrations/dots.svg';
 import InstallTabs from '../components/InstallTabs';
+import Banner from '../components/Banner';
 
 interface NodeFeatureProps {
   icon?: ReactElement;
@@ -71,6 +72,7 @@ export default function Index({
   return (
     <Layout title={displayTitle} description={description}>
       <main className="home-page">
+        <Banner />
         <Hero
           title={displayTitle}
           subTitle={subTitle}
