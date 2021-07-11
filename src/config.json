@@ -1,0 +1,33 @@
+{
+  "title": "Node.js",
+  "description": "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+  "siteUrl": "https://nodejs.dev",
+  "siteUrlNoSlash": "https://nodejs.dev",
+  "featuredImage": "https://nodejs.org/static/images/logo-hexagon-card.png",
+  "color": "#6cc24a",
+  "icon": "src/images/favicon.png",
+  "lang": "en",
+  "display": "browser",
+  "ogType": "website",
+  "ogImgType": "image/png",
+  "ogImgWidth": "224",
+  "ogImgHeight": "256",
+  "twitter": "@nodejs",
+  "twitterCard": "summary",
+  "twitterImgAlt": "The Node.js Hexagon Logo",
+  "facebook": "https://www.facebook.com/nodejsfoundation/",
+  "banners": {
+    "index": {
+      "startDate": "2021-07-01T16:00:00.000Z",
+      "endDate": "2021-07-30T16:00:00.000Z",
+      "text": "New security releases now available for 16.x, 14.x, and 12.x release lines",
+      "link": "blog/vulnerability/july-2021-security-releases/",
+      "visible": true
+    },
+    "blacklivesmatter": {
+      "visible": false,
+      "text": "#BlackLivesMatter",
+      "link": "black-lives-matter/"
+    }
+  }
+}
