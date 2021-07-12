@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import Index, { HomeNodeReleases } from '../../src/pages';
-import { HomepageData } from '../../src/types';
+import { HomepageData, BannersIndex } from '../../src/types';
 import { createNodeReleasesDataDetail } from '../__fixtures__/page';
 import '../__mocks__/intersectionObserverMock';
 
@@ -44,14 +44,29 @@ const homePageData: HomepageData = {
   },
 };
 
+const bannersIndex: BannersIndex = {
+  endDate: new Date().toISOString(),
+  link: 'test/banner/link',
+  text: 'Test banner text',
+  startDate: new Date().toISOString(),
+};
+
 const mockData = {
   ...mockHomeNodeReleases,
   ...homePageData,
+  banners: {
+    bannersIndex,
+  },
 };
 
 describe('Home page', () => {
   it('renders correctly', () => {
     const { container } = render(<Index data={mockData} />);
     expect(container).toMatchSnapshot();
+  });
+  describe('Banner', () => {
+    it.todo('renders Banner when today between startDate and endDate');
+    it.todo('does not render Banner when today before startDate');
+    it.todo('does not render Banner when today after endDate');
   });
 });

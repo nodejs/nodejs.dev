@@ -9,7 +9,7 @@ import '../util/konami';
 
 import '../styles/index.scss';
 
-import { HomepageData, NodeReleaseLTSVersion } from '../types';
+import { HomepageData, NodeReleaseLTSVersion, BannersIndex } from '../types';
 
 import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
@@ -67,12 +67,13 @@ export default function Index({
       frontmatter: { displayTitle, subTitle, description },
     },
     nodeReleases: { nodeReleasesLTSVersion },
+    banners: { bannersIndex },
   },
 }: HomepageProps): JSX.Element {
   return (
     <Layout title={displayTitle} description={description}>
       <main className="home-page">
-        <Banner />
+        <Banner bannersIndex={bannersIndex} />
         <Hero
           title={displayTitle}
           subTitle={subTitle}
@@ -122,8 +123,14 @@ export interface HomeNodeReleases {
   };
 }
 
+export interface HomeBannersIndex {
+  banners: {
+    bannersIndex: BannersIndex;
+  };
+}
+
 interface HomepageProps {
-  data: HomepageData & HomeNodeReleases;
+  data: HomepageData & HomeNodeReleases & HomeBannersIndex;
 }
 
 export const query = graphql`
@@ -148,6 +155,14 @@ export const query = graphql`
       nodeReleasesLTSVersion: nodeReleasesDataDetail {
         lts
         version
+      }
+    }
+    banners {
+      bannersIndex: index {
+        endDate
+        link
+        text
+        startDate
       }
     }
   }

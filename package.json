@@ -75,8 +75,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o ./public/storybook",
     "a11y": "./node_modules/pa11y/bin/pa11y.js localhost:8000",
-    "type-check": "tsc --noEmit",
-    "update-banners": "node util-node/updateBanners.js"
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",

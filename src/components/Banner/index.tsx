@@ -1,21 +1,24 @@
 import React from 'react';
 import './Banner.scss';
+import { dateIsBetween } from '../../util/dateIsBetween';
 import config from '../../config.json';
+import { BannersIndex } from '../../types';
 
-const Banner = (): JSX.Element | null => {
-  const {
-    banners: {
-      index: { text, link, visible },
-      bannerBtnText,
-    },
-  } = config;
+export interface BannerProps {
+  bannersIndex: BannersIndex;
+}
 
-  return visible ? (
+const Banner = ({
+  bannersIndex: { startDate, endDate, text, link },
+}: BannerProps): JSX.Element | null => {
+  const showBanner = dateIsBetween(startDate, endDate);
+
+  return showBanner ? (
     <div className="banner">
       <p>
         <a href={link}>
           <button className="bannerButton" type="button">
-            {bannerBtnText}
+            {config.bannerBtnText}
           </button>
         </a>
         {text}
