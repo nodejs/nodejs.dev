@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home page renders correctly 1`] = `
+exports[`Home page renders correctly without banner 1`] = `
 <div>
   <div
     class="layout-container"
@@ -142,23 +142,6 @@ exports[`Home page renders correctly 1`] = `
     <main
       class="home-page"
     >
-      <div
-        class="banner"
-      >
-        <p>
-          <a
-            href="blog/vulnerability/july-2021-security-releases/"
-          >
-            <button
-              class="bannerButton"
-              type="button"
-            >
-              Blog post
-            </button>
-          </a>
-          New security releases now available for 16.x, 14.x, and 12.x release lines
-        </p>
-      </div>
       <div
         class="home-page-hero"
       >

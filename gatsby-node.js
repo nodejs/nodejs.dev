@@ -235,7 +235,7 @@ exports.sourceNodes = async ({
   createContentDigest,
   reporter: { activityTimer },
 }) => {
-  const activity = activityTimer('Fetching Node release data');
+  let activity = activityTimer('Fetching Node release data');
   activity.start();
   try {
     const releasesDataDetailURL = 'https://nodejs.org/dist/index.json';
@@ -300,6 +300,38 @@ exports.sourceNodes = async ({
     };
 
     await createNode(nodeReleases);
+
+    activity.end();
+    activity = activityTimer('Fetching Banners');
+    activity.start();
+
+    const siteResponse = await fetch(
+      'https://raw.githubusercontent.com/nodejs/nodejs.org/master/locale/en/site.json'
+    );
+    const siteData = await siteResponse.json();
+    const { banners: bannersData } = siteData;
+
+    const bannersContent = JSON.stringify(bannersData);
+
+    const bannersMeta = {
+      id: createNodeId('banners'),
+      parent: null,
+      children: [],
+      internal: {
+        type: 'Banners',
+        mediaType: 'application/json',
+        content: bannersContent,
+        contentDigest: createContentDigest(bannersData),
+      },
+    };
+
+    const banners = {
+      ...bannersData,
+      ...bannersMeta,
+    };
+
+    await createNode(banners);
+
     activity.end();
   } catch (err) {
     activity.panic(err);
