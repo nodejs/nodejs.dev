@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Index, { HomeNodeReleases } from '../../src/pages';
 import { HomepageData, BannersIndex } from '../../src/types';
 import { createNodeReleasesDataDetail } from '../__fixtures__/page';
@@ -65,8 +65,47 @@ describe('Home page', () => {
     expect(container).toMatchSnapshot();
   });
   describe('Banner', () => {
-    it.todo('renders Banner when today between startDate and endDate');
-    it.todo('does not render Banner when today before startDate');
-    it.todo('does not render Banner when today after endDate');
+    it('renders Banner when today between startDate and endDate', () => {
+      const beforeToday = new Date();
+      beforeToday.setDate(beforeToday.getDate() - 1);
+      const afterToday = new Date();
+      afterToday.setDate(afterToday.getDate() + 1);
+
+      bannersIndex.startDate = beforeToday.toISOString();
+      bannersIndex.endDate = afterToday.toISOString();
+
+      render(<Index data={mockData} />);
+
+      const bannerText = screen.getByText(bannersIndex.text);
+      expect(bannerText).toBeInTheDocument();
+    });
+    it('does not render Banner when today before startDate', () => {
+      const beforeToday = new Date();
+      beforeToday.setDate(beforeToday.getDate() + 1);
+      const afterToday = new Date();
+      afterToday.setDate(afterToday.getDate() + 2);
+
+      bannersIndex.startDate = beforeToday.toISOString();
+      bannersIndex.endDate = afterToday.toISOString();
+
+      render(<Index data={mockData} />);
+
+      const bannerText = screen.queryByText(bannersIndex.text);
+      expect(bannerText).not.toBeInTheDocument();
+    });
+    it('does not render Banner when today after endDate', () => {
+      const beforeToday = new Date();
+      beforeToday.setDate(beforeToday.getDate() - 2);
+      const afterToday = new Date();
+      afterToday.setDate(afterToday.getDate() - 1);
+
+      bannersIndex.startDate = beforeToday.toISOString();
+      bannersIndex.endDate = afterToday.toISOString();
+
+      render(<Index data={mockData} />);
+
+      const bannerText = screen.queryByText(bannersIndex.text);
+      expect(bannerText).not.toBeInTheDocument();
+    });
   });
 });
