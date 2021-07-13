@@ -10,7 +10,7 @@ The `process` core module of Node.js provides the `env` property which hosts all
 
 The below code runs `app.js` and set `USER_ID` and `USER_KEY`.
 
-```js
+```bash
 USER_ID=239482 USER_KEY=foobar node app.js
 ```
 
