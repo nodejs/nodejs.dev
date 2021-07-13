@@ -5,15 +5,20 @@ import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
+import AboutPageSideNavBar, {
+  AboutPageKeys,
+} from '../components/AboutPageSideNavBar';
 
 export default function TrademarkPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
   const { html, tableOfContents } = data.page;
   const { authors } = data.page.fields;
+
   return (
     <>
       <Layout title={title} description={description} showFooter={false}>
-        <main className="centered-container">
+        <main className="grid-container">
+          <AboutPageSideNavBar pageKey={AboutPageKeys.trademark} />
           <Article
             title={title}
             html={html}

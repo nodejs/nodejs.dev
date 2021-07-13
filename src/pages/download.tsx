@@ -1,29 +1,40 @@
 import React, { useState } from 'react';
-import {
-  useReleaseHistory,
-  getStaticReleaseData,
-} from '../hooks/useReleaseHistory';
+import { graphql } from 'gatsby';
 import { detectOS } from '../util/detectOS';
+import { getUpcomingReleases } from '../util/getUpcomingReleases';
 import Layout from '../components/Layout';
 import DownloadHeader from '../components/DownloadHeader';
 import DownloadToggle from '../components/DownloadToggle';
 import DownloadCards from '../components/DownloadCards';
 import DownloadReleases from '../components/DownloadReleases';
 import DownloadAdditional from '../components/DownloadAdditional';
+import { NodeReleaseData, NodeReleaseLTSNPMVersion } from '../types';
 import '../styles/download.scss';
+
+export interface DownloadNodeReleases {
+  nodeReleases: {
+    nodeReleasesData: NodeReleaseData[];
+    nodeReleasesLTSNPMVersion: NodeReleaseLTSNPMVersion[];
+  };
+}
 
 interface Props {
   location: Location;
+  data: DownloadNodeReleases;
 }
 
-export default function DownloadPage({ location }: Props): JSX.Element {
-  const releaseHistory = useReleaseHistory().slice(0, 50);
-  const staticReleaseData = getStaticReleaseData();
+export default function DownloadPage({
+  location,
+  data: { nodeReleases },
+}: Props): JSX.Element {
+  const { nodeReleasesData, nodeReleasesLTSNPMVersion } = nodeReleases;
   const [typeRelease, setTypeRelease] = useState('LTS');
 
   const userOS = detectOS();
-  const lts = releaseHistory.find((release): boolean => release && release.lts);
-  const current = releaseHistory.find(
+  const lts = nodeReleasesLTSNPMVersion.find(
+    (release): boolean => !!release.lts
+  );
+  const current = nodeReleasesLTSNPMVersion.find(
     (release): boolean => release && !release.lts
   );
 
@@ -31,6 +42,8 @@ export default function DownloadPage({ location }: Props): JSX.Element {
   const handleTypeReleaseToggle = (
     selected: React.SetStateAction<string>
   ): void => setTypeRelease(selected);
+
+  const upcomingReleases = getUpcomingReleases(nodeReleasesData);
 
   return (
     <Layout
@@ -49,7 +62,10 @@ export default function DownloadPage({ location }: Props): JSX.Element {
           handleClick={handleTypeReleaseToggle}
         />
         <DownloadCards line={selectedType} userOS={userOS} />
-        <DownloadReleases releases={staticReleaseData} />
+        <DownloadReleases
+          nodeReleasesData={nodeReleasesData}
+          upcomingReleases={upcomingReleases}
+        />
         <DownloadAdditional
           line={selectedType}
           selectedTypeRelease={typeRelease}
@@ -59,3 +75,24 @@ export default function DownloadPage({ location }: Props): JSX.Element {
     </Layout>
   );
 }
+
+export const query = graphql`
+  query {
+    nodeReleases {
+      nodeReleasesData {
+        activeLTSStart
+        codename
+        endOfLife
+        initialRelease
+        maintenanceLTSStart
+        release
+        status
+      }
+      nodeReleasesLTSNPMVersion: nodeReleasesDataDetail {
+        lts
+        version
+        npm
+      }
+    }
+  }
+`;

@@ -37,9 +37,11 @@ req.end()
 ```js
 const https = require('https')
 
-const data = JSON.stringify({
-  todo: 'Buy the milk'
-})
+const data = new TextEncoder().encode(
+  JSON.stringify({
+    todo: 'Buy the milk 🍼'
+  })
+)
 
 const options = {
   hostname: 'whatever.com',
@@ -70,4 +72,4 @@ req.end()
 
 ## PUT and DELETE
 
-PUT and DELETE requests use the same POST request format, and just change the `options.method` value.
+PUT and DELETE requests use the same POST request format - you just need to change the `options.method` value to the appropriate method.

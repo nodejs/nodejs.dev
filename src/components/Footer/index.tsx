@@ -1,5 +1,5 @@
-import React from 'react';
 import { Link } from 'gatsby';
+import React from 'react';
 import RandomContributor from '../RandomContributor';
 import './footer.scss';
 
@@ -23,30 +23,27 @@ function Footer(): JSX.Element {
             </Link>
           </li>
           <li>
-            <a
-              className="footer__link"
-              href="https://nodejs.org/en/about/privacy/"
-            >
+            <Link className="footer__link" to="/privacy">
               Privacy Policy
-            </a>
+            </Link>
           </li>
           <li>
             <a
               className="footer__link"
-              href="https://github.com/openjs-foundation/cross-project-council/blob/master/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
+              href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
             >
               Code of Conduct
             </a>
           </li>
           <li>
-            <a className="footer__link" href="https://nodejs.org/en/security/">
+            <Link className="footer__link" to="/security">
               Security Reporting
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="footer__link" href="https://nodejs.org/en/about/">
+            <Link className="footer__link" to="/about">
               About
-            </a>
+            </Link>
           </li>
           <li>
             <a className="footer__link" href="https://nodejs.org/en/blog/">

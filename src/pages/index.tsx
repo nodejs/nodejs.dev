@@ -9,7 +9,7 @@ import '../util/konami';
 
 import '../styles/index.scss';
 
-import { HomepageData } from '../types';
+import { HomepageData, NodeReleaseLTSVersion } from '../types';
 
 import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
@@ -53,7 +53,7 @@ const NodeFeature = ({
 }: NodeFeatureProps): JSX.Element => {
   return (
     <div className="node-features__feature">
-      {icon && icon}
+      {icon}
       <h4>{heading}</h4>
       <p>{description}</p>
     </div>
@@ -65,12 +65,17 @@ export default function Index({
     page: {
       frontmatter: { displayTitle, subTitle, description },
     },
+    nodeReleases: { nodeReleasesLTSVersion },
   },
 }: HomepageProps): JSX.Element {
   return (
     <Layout title={displayTitle} description={description}>
       <main className="home-page">
-        <Hero title={displayTitle} subTitle={subTitle} />
+        <Hero
+          title={displayTitle}
+          subTitle={subTitle}
+          nodeReleasesLTSVersion={nodeReleasesLTSVersion}
+        />
 
         <section className="node-demo-container">
           <div className="node-demo">
@@ -108,8 +113,15 @@ export default function Index({
     </Layout>
   );
 }
+
+export interface HomeNodeReleases {
+  nodeReleases: {
+    nodeReleasesLTSVersion: NodeReleaseLTSVersion[];
+  };
+}
+
 interface HomepageProps {
-  data: HomepageData;
+  data: HomepageData & HomeNodeReleases;
 }
 
 export const query = graphql`
@@ -128,6 +140,12 @@ export const query = graphql`
         nodeFeature2
         nodeFeature3
         nodeFeatureAltText
+      }
+    }
+    nodeReleases {
+      nodeReleasesLTSVersion: nodeReleasesDataDetail {
+        lts
+        version
       }
     }
   }

@@ -30,7 +30,8 @@ exports[`DownloadReleases component renders correctly 1`] = `
             role="tab"
             tabindex="0"
           >
-            Node.js 12
+            Node.js 
+            v12
           </li>
           <li
             aria-controls="react-tabs-3"
@@ -40,27 +41,8 @@ exports[`DownloadReleases component renders correctly 1`] = `
             id="react-tabs-2"
             role="tab"
           >
-            Node.js 14
-          </li>
-          <li
-            aria-controls="react-tabs-5"
-            aria-disabled="false"
-            aria-selected="false"
-            class="react-tabs__tab"
-            id="react-tabs-4"
-            role="tab"
-          >
-            Node.js 15
-          </li>
-          <li
-            aria-controls="react-tabs-7"
-            aria-disabled="false"
-            aria-selected="false"
-            class="react-tabs__tab"
-            id="react-tabs-6"
-            role="tab"
-          >
-            Node.js 16
+            Node.js 
+            v14
           </li>
         </ul>
         <div
@@ -73,7 +55,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
             class="upcoming-releases__panel"
           >
             <div
-              class="upcoming-releases__item--current"
+              class="upcoming-releases__item--Current"
             >
               <img
                 alt="hexagon icon"
@@ -93,7 +75,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
               </p>
             </div>
             <div
-              class="upcoming-releases__item--lts"
+              class="upcoming-releases__item--LTS"
             >
               <img
                 alt="hexagon icon"
@@ -113,7 +95,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
               </p>
             </div>
             <div
-              class="upcoming-releases__item--maintenance"
+              class="upcoming-releases__item--Maintenance Release"
             >
               <img
                 alt="hexagon icon"
@@ -129,11 +111,11 @@ exports[`DownloadReleases component renders correctly 1`] = `
               >
                 Released
                  
-                2020-10-20
+                2020-11-30
               </p>
             </div>
             <div
-              class="upcoming-releases__item--endoflife upcoming-releases__item--to-be-released"
+              class="upcoming-releases__item--End-of-life Release upcoming-releases__item--to-be-released"
             >
               <img
                 alt="hexagon icon"
@@ -158,18 +140,6 @@ exports[`DownloadReleases component renders correctly 1`] = `
           aria-labelledby="react-tabs-2"
           class="react-tabs__tab-panel"
           id="react-tabs-3"
-          role="tabpanel"
-        />
-        <div
-          aria-labelledby="react-tabs-4"
-          class="react-tabs__tab-panel"
-          id="react-tabs-5"
-          role="tabpanel"
-        />
-        <div
-          aria-labelledby="react-tabs-6"
-          class="react-tabs__tab-panel"
-          id="react-tabs-7"
           role="tabpanel"
         />
       </div>
@@ -203,7 +173,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
               Active LTS Start
             </th>
             <th>
-              Maintainance LTS Start
+              Maintenance LTS Start
             </th>
             <th>
               End of Life
@@ -213,21 +183,64 @@ exports[`DownloadReleases component renders correctly 1`] = `
         <tbody>
           <tr>
             <td>
-              v15
+              <a
+                href="https://nodejs.org/download/release/latest-v12.x/"
+              >
+                v12
+              </a>
             </td>
             <td>
-              Pending
-            </td>
-            <td />
-            <td>
-              2020-10-20
-            </td>
-            <td />
-            <td>
-              2021-04-01
+              Maintenance LTS
             </td>
             <td>
-              2021-06-01
+              <a
+                href="https://nodejs.org/download/release/latest-erbium/"
+              >
+                Erbium
+              </a>
+            </td>
+            <td>
+              2019-04-23
+            </td>
+            <td>
+              2019-10-21
+            </td>
+            <td>
+              2020-11-30
+            </td>
+            <td>
+              2022-04-30
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="https://nodejs.org/download/release/latest-v14.x/"
+              >
+                v14
+              </a>
+            </td>
+            <td>
+              Active LTS
+            </td>
+            <td>
+              <a
+                href="https://nodejs.org/download/release/latest-fermium/"
+              >
+                Fermium
+              </a>
+            </td>
+            <td>
+              2020-04-21
+            </td>
+            <td>
+              2020-10-27
+            </td>
+            <td>
+              2021-10-19
+            </td>
+            <td>
+              2023-04-30
             </td>
           </tr>
         </tbody>

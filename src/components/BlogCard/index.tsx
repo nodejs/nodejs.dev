@@ -25,7 +25,7 @@ const BlogCard = ({
       by{' '}
       {author &&
         author.map((user, i) => (
-          <Fragment key={user.id}>
+          <Fragment key={user.name}>
             <span>{user.name}</span>
             {getTerminatingString(i, author.length)}
           </Fragment>
