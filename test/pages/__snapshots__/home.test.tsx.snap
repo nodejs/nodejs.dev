@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home page renders correctly without banner 1`] = `
+exports[`Home page renders correctly 1`] = `
 <div>
   <div
     class="layout-container"
