@@ -8,8 +8,7 @@ category: learn
 
 The `process` core module of Node.js provides the `env` property which hosts all the environment variables that were set at the moment the process was started.
 
-
-The below code runs `app.js` and set `USER_ID` and `USER_KEY`
+The below code runs `app.js` and set `USER_ID` and `USER_KEY`.
 
 ```js
 USER_ID=239482 USER_KEY=foobar node app.js
