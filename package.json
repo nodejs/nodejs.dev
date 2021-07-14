@@ -89,7 +89,7 @@
     "@types/dompurify": "^2.2.1",
     "@types/jest": "^26.0.23",
     "@types/react-dom": "^17.0.8",
-    "@types/react-helmet": "6.1.1",
+    "@types/react-helmet": "6.1.2",
     "@types/throttle-debounce": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "@typescript-eslint/parser": "^4.26.1",
