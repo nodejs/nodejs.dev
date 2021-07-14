@@ -68,7 +68,7 @@ And in the other file, you'll use it by referencing a property of your import:
 
 ```js
 const items = require('./items')
-items.car
+const car = items.car
 ```
 
 or
