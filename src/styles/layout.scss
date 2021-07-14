@@ -107,8 +107,7 @@ a:focus {
 
 .material-icons {
   font-size: 2rem;
-  padding: calc(var(--space-24) + 1rem) calc(var(--space-16) + 1rem)
-    calc(var(--space-24) - 2px + 1rem) calc(var(--space-16) + 1rem);
+  padding: 1rem;
 }
 
 .material-icons--small {
@@ -157,6 +156,12 @@ body:not(.dark) .dark-mode-only,
   cursor: pointer;
   color: var(--color-text-accent);
   padding: 0;
+}
+
+.theme-buttons {
+  font-size: 2rem;
+  padding: calc(var(--space-24) + 1rem) calc(var(--space-16) + 1rem)
+    calc(var(--space-24) - 2px + 1rem) calc(var(--space-16) + 1rem);
 }
 
 /* Start: Syntax Highlight Overrides */
@@ -513,7 +518,7 @@ details {
     padding: 0;
   }
 
-  .material-icons {
+  .theme-buttons {
     padding: calc(var(--space-08) + 1rem);
   }
 
