@@ -110,10 +110,12 @@ const Header = (): JSX.Element => {
                       }
                     >
                       <span className="sr-only">Toggle Dark Mode</span>
-                      <i className="material-icons light-mode-only">
+                      <i className="material-icons light-mode-only theme-buttons">
                         nights_stay
                       </i>
-                      <i className="material-icons dark-mode-only">wb_sunny</i>
+                      <i className="material-icons dark-mode-only theme-buttons">
+                        wb_sunny
+                      </i>
                     </button>
                   );
                 }}
