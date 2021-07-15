@@ -196,3 +196,23 @@ export type NodeReleaseLTSNPMVersion = Pick<
   NodeReleaseDataDetail,
   'lts' | 'npm' | 'version'
 >;
+
+export interface BannersIndex {
+  endDate: string;
+  link: string;
+  text: string;
+  startDate: string;
+}
+
+export interface BannersBLM {
+  link: string;
+  text: string;
+  visible: boolean;
+}
+
+export interface Banners {
+  banners: {
+    index: BannersIndex;
+    blacklivesmatter: BannersBLM;
+  };
+}
