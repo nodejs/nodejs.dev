@@ -116,7 +116,7 @@ fs.rmdir(dir, { recursive: true }, (err) => {
 ```js
 const fs = require('fs/promises')
 
-try{
+try {
 fs.rm(dir,{recursive:true,force:true})
 } catch (err) {
     console.log(err)
