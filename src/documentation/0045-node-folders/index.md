@@ -111,16 +111,18 @@ fs.rmdir(dir, { recursive: true }, (err) => {
 });
 ```
 
-> **NOTE:** In Node `v16.x` the option `recursive` is **deprecated** for `fs.rmdir` of callback API, instead use the below code to delete folders that have content in them:
+> **NOTE:** In Node `v16.x` the option `recursive` is **deprecated** for `fs.rmdir` of callback API, instead use `fs.rm` to delete folders that have content in them:
 
 ```js
-const fs = require('fs/promises')
+const fs = require('fs')
 
-try {
-    fs.rm(dir, { recursive: true, force: true })
-} catch (err) {
-    console.log(err)
-}
+fs.rm(dir, { recursive: true, force: true }, (err) => {
+  if (err) {
+    throw err;
+  }
+    
+  console.log(`${dir} is deleted!`)
+});
 
 ```
 
