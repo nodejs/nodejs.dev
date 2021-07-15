@@ -11,7 +11,7 @@ Using `fs.write()` method we can write a file in a more controlled manner in com
 
 Since `fs.writeFile()` and `fs.writeFileSync()` writes the entire content of data in memory before returning, the methods will make sure the entire data is written in a go which in case of huge sized data will have a great performance impact in terms of memory usage and speed of execution of the program.
 
-So, we can manage the above situation by using `fs.write()` method which give us more control over writeing the file. How ? We will see it below.
+So, we can manage the above situation by using `fs.write()` method which gives us more control over writing the file. How? We will see it below.
 
 `fs.write()` Asynchronously writes data to the file referenced by the supplied file descriptor returned by `fs.open()`. Since it's asynchronous in nature which will help not to block our call stack.
 

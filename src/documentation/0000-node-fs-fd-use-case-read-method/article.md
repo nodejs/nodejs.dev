@@ -11,7 +11,7 @@ Using `fs.read()` method we can read a file in a more controlled manner in compa
 
 Since `fs.readFile()` and `fs.readFileSync()` reads the full content of the file in memory before returning the data or in other words before you access and start operating on the data that is read, the methods will make sure the entire file is read which in case of huge sized file will have a great performance impact in terms of memory usage and speed of execution of the program.
 
-So, we can manage the above situation by using `fs.read()` method which give us more control over reading the file. How ? We will see it below.
+So, we can manage the above situation by using `fs.read()` method which gives us more control over reading the file. How? We will see it below.
 
 `fs.read()` Asynchronously reads data from the file referenced by the supplied file descriptor returned by `fs.open()`. Since it's asynchronous in nature which will help not to block our call stack.
 
