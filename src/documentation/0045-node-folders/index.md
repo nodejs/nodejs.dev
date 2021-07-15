@@ -120,7 +120,7 @@ try{
 fs.rm(dir,{recursive:true,force:true})
 }
 catch(err){
-console.log(err)
+    console.log(err)
 }
 
 ```
