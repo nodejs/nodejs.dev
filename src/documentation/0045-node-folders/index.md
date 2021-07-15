@@ -118,7 +118,6 @@ const fs = require('fs/promises')
 
 try{
 fs.rm(dir,{recursive:true,force:true})
-}
 catch(err){
     console.log(err)
 }
