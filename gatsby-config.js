@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const config = require('./src/config');
+const config = require('./src/config.json');
 
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX,
