@@ -45,7 +45,7 @@ Example ::
 ```js
 
 const fs = require("fs");
- 
+
 const buffer = Buffer.alloc(1024);
 
 fs.open("./myFile.txt", "r", (err, fdr) => {
