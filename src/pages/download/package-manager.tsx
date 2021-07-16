@@ -1,13 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Page } from '../types';
-import Layout from '../components/Layout';
-import Article from '../components/Article';
-import Footer from '../components/Footer';
-import '../styles/article-reader.scss';
-import SideNavBar, { AboutPageKeys } from '../components/SideNavBar';
+import { Page } from '../../types';
+import Layout from '../../components/Layout';
+import Article from '../../components/Article';
+import Footer from '../../components/Footer';
+import '../../styles/article-reader.scss';
+import SideNavBar, { DownloadPageKeys } from '../../components/SideNavBar';
 
-export default function SecurityPage({ data }: Page): JSX.Element {
+export default function PackageManagerPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
   const { html, tableOfContents } = data.page;
   const { authors } = data.page.fields;
@@ -15,13 +15,16 @@ export default function SecurityPage({ data }: Page): JSX.Element {
     <>
       <Layout title={title} description={description} showFooter={false}>
         <main className="grid-container">
-          <SideNavBar pageKey={AboutPageKeys.security} parent="about" />
+          <SideNavBar
+            pageKey={DownloadPageKeys.packageManager}
+            parent="download"
+          />
           <Article
             title={title}
             html={html}
             tableOfContents={tableOfContents}
             authors={authors}
-            editPath="content/about/security.md"
+            editPath="content/download/package-manager.md"
           />
         </main>
       </Layout>
@@ -32,7 +35,7 @@ export default function SecurityPage({ data }: Page): JSX.Element {
 
 export const query = graphql`
   query {
-    page: markdownRemark(fields: { slug: { eq: "security" } }) {
+    page: markdownRemark(fields: { slug: { eq: "package-manager" } }) {
       html
       tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
       frontmatter {

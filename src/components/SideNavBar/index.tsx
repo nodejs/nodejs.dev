@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { AboutPageSideNavBarItem } from '../../types';
+import { SideNavBarItem } from '../../types';
 import NavigationItem from '../NavigationItem';
 import '../../styles/about.scss';
 
@@ -16,7 +16,12 @@ export enum AboutPageKeys {
   security = 'security',
 }
 
-const aboutPageSideNavBarItem: AboutPageSideNavBarItem[] = [
+// eslint-disable-next-line no-shadow
+export enum DownloadPageKeys {
+  packageManager = 'package-manager',
+}
+
+const aboutPageSideNavBarItem: SideNavBarItem[] = [
   {
     title: 'About',
     slug: AboutPageKeys.about,
@@ -55,17 +60,28 @@ const aboutPageSideNavBarItem: AboutPageSideNavBarItem[] = [
   },
 ];
 
+const downloadPageSideNavBarItem: SideNavBarItem[] = [
+  {
+    title: 'Package Manager',
+    slug: DownloadPageKeys.packageManager,
+  },
+];
+
 // eslint-disable-next-line no-shadow
 export enum OverflowTypes {
   unset = 'unset',
   hidden = 'hidden',
 }
 
-export default function AboutPageSideNavBar({
-  pageKey,
-}: {
+interface NavBarProps {
   pageKey: string;
-}): JSX.Element {
+  parent: 'about' | 'download';
+}
+
+export default function SideNavBar({
+  pageKey,
+  parent,
+}: NavBarProps): JSX.Element {
   const [navOpen, setNavOpen] = useState<boolean>(false);
   const toggle = (): void => setNavOpen(!navOpen);
 
@@ -80,13 +96,11 @@ export default function AboutPageSideNavBar({
   }
 
   const navElement = useRef<HTMLElement | null>(null);
-  return (
-    <nav className={className} ref={navElement}>
-      <button type="button" className="side-nav__open" onClick={toggle}>
-        Menu
-      </button>
-      <ul className="community-nav__list">
-        {aboutPageSideNavBarItem.map(({ title: commTitle, slug }) => {
+
+  const generateNavItems = () => {
+    switch (parent) {
+      case 'about':
+        return aboutPageSideNavBarItem.map(({ title: commTitle, slug }) => {
           return (
             <NavigationItem
               key={slug}
@@ -98,8 +112,32 @@ export default function AboutPageSideNavBar({
               baseUrl="/"
             />
           );
-        })}
-      </ul>
+        });
+      case 'download':
+        return downloadPageSideNavBarItem.map(({ title: commTitle, slug }) => {
+          return (
+            <NavigationItem
+              key={slug}
+              title={commTitle}
+              isLearn={false}
+              isRead={false}
+              isActive={slug === pageKey}
+              slug={slug}
+              baseUrl="/"
+            />
+          );
+        });
+      default:
+        return [];
+    }
+  };
+
+  return (
+    <nav className={className} ref={navElement}>
+      <button type="button" className="side-nav__open" onClick={toggle}>
+        Menu
+      </button>
+      <ul className="community-nav__list">{generateNavItems()}</ul>
     </nav>
   );
 }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AboutPageSideNavBar renders correctly 1`] = `
+exports[`SideNavBar AboutPageSideNavBar renders correctly 1`] = `
 <div>
   <nav
     class="side-nav-about"
@@ -82,7 +82,7 @@ exports[`AboutPageSideNavBar renders correctly 1`] = `
 </div>
 `;
 
-exports[`AboutPageSideNavBar should about Releases page exist and contain a href to \`~/release\` 1`] = `
+exports[`SideNavBar DownloadPageSideNavBar renders correctly 1`] = `
 <div>
   <nav
     class="side-nav-about"
@@ -97,67 +97,11 @@ exports[`AboutPageSideNavBar should about Releases page exist and contain a href
       class="community-nav__list"
     >
       <a
-        class="t-body2 side-nav__item-community"
-        href="/about"
-        id="link-about"
-      >
-        About
-      </a>
-      <a
-        class="t-body2 side-nav__item-community"
-        href="/governance"
-        id="link-governance"
-      >
-        Project Governance
-      </a>
-      <a
-        class="t-body2 side-nav__item-community"
-        href="/community"
-        id="link-community"
-      >
-        Community
-      </a>
-      <a
-        class="t-body2 side-nav__item-community"
-        href="/working-groups"
-        id="link-working-groups"
-      >
-        Working Groups
-      </a>
-      <a
         class="t-body2 side-nav__item-community side-nav__item-community--active"
-        href="/releases"
-        id="link-releases"
+        href="/package-manager"
+        id="link-package-manager"
       >
-        Releases
-      </a>
-      <a
-        class="t-body2 side-nav__item-community"
-        href="/resources"
-        id="link-resources"
-      >
-        Resources
-      </a>
-      <a
-        class="t-body2 side-nav__item-community"
-        href="/trademark"
-        id="link-trademark"
-      >
-        Trademark Policy
-      </a>
-      <a
-        class="t-body2 side-nav__item-community"
-        href="/privacy"
-        id="link-privacy"
-      >
-        Privacy Policy
-      </a>
-      <a
-        class="t-body2 side-nav__item-community"
-        href="/security"
-        id="link-security"
-      >
-        Security Reporting
+        Package Manager
       </a>
     </ul>
   </nav>

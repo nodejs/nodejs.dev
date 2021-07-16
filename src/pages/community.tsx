@@ -7,9 +7,7 @@ import Footer from '../components/Footer';
 
 import '../styles/article-reader.scss';
 import '../styles/community.scss';
-import AboutPageSideNavBar, {
-  AboutPageKeys,
-} from '../components/AboutPageSideNavBar';
+import SideNavBar, { AboutPageKeys } from '../components/SideNavBar';
 
 export default function CommunityPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
@@ -20,7 +18,7 @@ export default function CommunityPage({ data }: Page): JSX.Element {
     <>
       <Layout title={title} description={description} showFooter={false}>
         <main className="grid-container">
-          <AboutPageSideNavBar pageKey={AboutPageKeys.community} />
+          <SideNavBar pageKey={AboutPageKeys.community} parent="about" />
           <Article
             title={title}
             html={html}

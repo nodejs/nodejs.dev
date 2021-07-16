@@ -5,9 +5,7 @@ import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
-import AboutPageSideNavBar, {
-  AboutPageKeys,
-} from '../components/AboutPageSideNavBar';
+import SideNavBar, { AboutPageKeys } from '../components/SideNavBar';
 
 export default function TrademarkPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
@@ -18,7 +16,7 @@ export default function TrademarkPage({ data }: Page): JSX.Element {
     <>
       <Layout title={title} description={description} showFooter={false}>
         <main className="grid-container">
-          <AboutPageSideNavBar pageKey={AboutPageKeys.trademark} />
+          <SideNavBar pageKey={AboutPageKeys.trademark} parent="about" />
           <Article
             title={title}
             html={html}
