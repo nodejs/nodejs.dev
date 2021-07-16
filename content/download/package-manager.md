@@ -9,37 +9,6 @@ category: download
 
 ***Note:*** The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
 
-* [Installing Node.js via package manager](#installing-nodejs-via-package-manager)
-  * [Android](#android)
-  * [Arch Linux](#arch-linux)
-  * [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-    * [Alternatives](#alternatives)
-  * [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
-    * [Alternatives](#alternatives-1)
-  * [fnm](#fnm)
-  * [FreeBSD](#freebsd)
-  * [Gentoo](#gentoo)
-  * [IBM i](#ibm-i)
-  * [macOS](#macos)
-    * [Alternatives](#alternatives-2)
-  * [n](#n)
-  * [NetBSD](#netbsd)
-  * [Nodenv](#nodenv)
-  * [nvm](#nvm)
-  * [nvs](#nvs)
-      * [Windows](#windows)
-      * [macOS,UnixLike](#macosunixlike)
-      * [Usage](#usage)
-  * [OpenBSD](#openbsd)
-  * [openSUSE and SLE](#opensuse-and-sle)
-  * [SmartOS and illumos](#smartos-and-illumos)
-  * [Snap](#snap)
-  * [Solus](#solus)
-  * [Void Linux](#void-linux)
-  * [Windows](#windows-1)
-    * [Alternatives](#alternatives-3)
-  * [z/OS](#zos)
-
 ## Android
 
 Android support is still experimental in Node.js, so precompiled binaries are not yet provided by Node.js developers.
