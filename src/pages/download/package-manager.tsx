@@ -5,7 +5,7 @@ import Layout from '../../components/Layout';
 import Article from '../../components/Article';
 import Footer from '../../components/Footer';
 import '../../styles/article-reader.scss';
-import SideNavBar, { DownloadPageKeys } from '../../components/SideNavBar';
+import SideNavBar, { SideNavBarKeys } from '../../components/SideNavBar';
 
 export default function PackageManagerPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
@@ -15,10 +15,7 @@ export default function PackageManagerPage({ data }: Page): JSX.Element {
     <>
       <Layout title={title} description={description} showFooter={false}>
         <main className="grid-container">
-          <SideNavBar
-            pageKey={DownloadPageKeys.packageManager}
-            parent="download"
-          />
+          <SideNavBar pageKey={SideNavBarKeys.packageManager} />
           <Article
             title={title}
             html={html}

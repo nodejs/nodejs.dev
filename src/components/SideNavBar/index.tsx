@@ -4,7 +4,7 @@ import NavigationItem from '../NavigationItem';
 import '../../styles/about.scss';
 
 // eslint-disable-next-line no-shadow
-export enum AboutPageKeys {
+export enum SideNavBarKeys {
   about = 'about',
   governance = 'governance',
   community = 'community',
@@ -14,56 +14,49 @@ export enum AboutPageKeys {
   trademark = 'trademark',
   privacy = 'privacy',
   security = 'security',
+  packageManager = 'download/package-manager',
 }
 
-// eslint-disable-next-line no-shadow
-export enum DownloadPageKeys {
-  packageManager = 'package-manager',
-}
-
-const aboutPageSideNavBarItem: SideNavBarItem[] = [
+const sideNavBarItems: SideNavBarItem[] = [
   {
     title: 'About',
-    slug: AboutPageKeys.about,
+    slug: SideNavBarKeys.about,
   },
   {
     title: 'Project Governance',
-    slug: AboutPageKeys.governance,
+    slug: SideNavBarKeys.governance,
   },
   {
     title: 'Community',
-    slug: AboutPageKeys.community,
+    slug: SideNavBarKeys.community,
   },
   {
     title: 'Working Groups',
-    slug: AboutPageKeys.workingGroups,
+    slug: SideNavBarKeys.workingGroups,
   },
   {
     title: 'Releases',
-    slug: AboutPageKeys.releases,
+    slug: SideNavBarKeys.releases,
   },
   {
     title: 'Resources',
-    slug: AboutPageKeys.resources,
+    slug: SideNavBarKeys.resources,
   },
   {
     title: 'Trademark Policy',
-    slug: AboutPageKeys.trademark,
+    slug: SideNavBarKeys.trademark,
   },
   {
     title: 'Privacy Policy',
-    slug: AboutPageKeys.privacy,
+    slug: SideNavBarKeys.privacy,
   },
   {
     title: 'Security Reporting',
-    slug: AboutPageKeys.security,
+    slug: SideNavBarKeys.security,
   },
-];
-
-const downloadPageSideNavBarItem: SideNavBarItem[] = [
   {
     title: 'Package Manager',
-    slug: DownloadPageKeys.packageManager,
+    slug: SideNavBarKeys.packageManager,
   },
 ];
 
@@ -75,13 +68,9 @@ export enum OverflowTypes {
 
 interface NavBarProps {
   pageKey: string;
-  parent: 'about' | 'download';
 }
 
-export default function SideNavBar({
-  pageKey,
-  parent,
-}: NavBarProps): JSX.Element {
+export default function SideNavBar({ pageKey }: NavBarProps): JSX.Element {
   const [navOpen, setNavOpen] = useState<boolean>(false);
   const toggle = (): void => setNavOpen(!navOpen);
 
@@ -97,47 +86,26 @@ export default function SideNavBar({
 
   const navElement = useRef<HTMLElement | null>(null);
 
-  const generateNavItems = () => {
-    switch (parent) {
-      case 'about':
-        return aboutPageSideNavBarItem.map(({ title: commTitle, slug }) => {
-          return (
-            <NavigationItem
-              key={slug}
-              title={commTitle}
-              isLearn={false}
-              isRead={false}
-              isActive={slug === pageKey}
-              slug={slug}
-              baseUrl="/"
-            />
-          );
-        });
-      case 'download':
-        return downloadPageSideNavBarItem.map(({ title: commTitle, slug }) => {
-          return (
-            <NavigationItem
-              key={slug}
-              title={commTitle}
-              isLearn={false}
-              isRead={false}
-              isActive={slug === pageKey}
-              slug={slug}
-              baseUrl="/"
-            />
-          );
-        });
-      default:
-        return [];
-    }
-  };
-
   return (
     <nav className={className} ref={navElement}>
       <button type="button" className="side-nav__open" onClick={toggle}>
         Menu
       </button>
-      <ul className="community-nav__list">{generateNavItems()}</ul>
+      <ul className="community-nav__list">
+        {sideNavBarItems.map(({ title: commTitle, slug }) => {
+          return (
+            <NavigationItem
+              key={slug}
+              title={commTitle}
+              isLearn={false}
+              isRead={false}
+              isActive={slug === pageKey}
+              slug={slug}
+              baseUrl="/"
+            />
+          );
+        })}
+      </ul>
     </nav>
   );
 }

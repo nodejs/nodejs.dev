@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SideNavBar AboutPageSideNavBar renders correctly 1`] = `
+exports[`SideNavBar renders correctly 1`] = `
 <div>
   <nav
     class="side-nav-about"
@@ -77,29 +77,10 @@ exports[`SideNavBar AboutPageSideNavBar renders correctly 1`] = `
       >
         Security Reporting
       </a>
-    </ul>
-  </nav>
-</div>
-`;
-
-exports[`SideNavBar DownloadPageSideNavBar renders correctly 1`] = `
-<div>
-  <nav
-    class="side-nav-about"
-  >
-    <button
-      class="side-nav__open"
-      type="button"
-    >
-      Menu
-    </button>
-    <ul
-      class="community-nav__list"
-    >
       <a
-        class="t-body2 side-nav__item-community side-nav__item-community--active"
-        href="/package-manager"
-        id="link-package-manager"
+        class="t-body2 side-nav__item-community"
+        href="/download/package-manager"
+        id="link-download/package-manager"
       >
         Package Manager
       </a>
