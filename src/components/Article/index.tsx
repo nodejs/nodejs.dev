@@ -6,7 +6,6 @@ import EditLink from '../EditLink';
 import Pagination from '../Pagination';
 import TOC from '../Toc';
 import BlogAuthorsList from '../BlogAuthorsList';
-import './Article.scss';
 
 interface Props {
   title: string;
