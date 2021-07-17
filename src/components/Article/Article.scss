@@ -1,0 +1,10 @@
+.copy-btn-container {
+  touch-action: none;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: 42px;
+  z-index: 100;
+  pointer-events: none;
+  right: 4px;
+}

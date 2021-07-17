@@ -112,6 +112,13 @@ module.exports = {
         plugins: [
           'gatsby-remark-copy-linked-files',
           {
+            resolve: 'gatsby-remark-code-buttons',
+            options: {
+              buttonContainerClass: 'copy-btn-container',
+              toasterText: 'Code copied!',
+            },
+          },
+          {
             resolve: 'gatsby-remark-autolink-headers',
             options: {
               offsetY: '125',
