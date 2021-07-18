@@ -5,8 +5,6 @@ authors: fhemberger, XhmikosR, shadowspawn, vsemozhetbyt, nschonni, wildcard, Mr
 category: download
 ---
 
-# Installing Node.js via package manager
-
 ***Note:*** The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
 
 ## Android
