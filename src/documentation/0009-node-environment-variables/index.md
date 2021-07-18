@@ -1,7 +1,7 @@
 ---
 title: How to read environment variables from Node.js
 description: 'Learn how to read and make use of environment variables in a Node.js program'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, manishprivet
 section: Getting Started
 category: learn
 ---
@@ -25,12 +25,25 @@ process.env.USER_ID // "239482"
 process.env.USER_KEY // "foobar"
 ```
 
-Here is an example that accesses the NODE_ENV environment variable, which is set to `development` by default.
+In the same way you can access any custom environment variable you set.
+
+If you have multiple environment variables in your node project, you can also create an `.env` file in the root directory of your project, and then use the [dotenv](https://www.npmjs.com/package/dotenv) package to load them during runtime.
+
+```bash
+# .env file
+USER_ID="239482"
+USER_KEY="foobar"
+NODE_ENV="development"
+```
+
+In your js file
 
 ```js
+require('dotenv').config();
+
+process.env.USER_ID // "239482"
+process.env.USER_KEY // "foobar"
 process.env.NODE_ENV // "development"
 ```
 
-Setting it to "production" before the script runs will tell Node.js that this is a production environment.
-
-In the same way you can access any custom environment variable you set.
+> You can also run your js file with `node -r dotenv/config index.js` command if you don't want to import the package in your code.
