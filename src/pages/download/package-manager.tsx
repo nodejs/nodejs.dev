@@ -32,7 +32,9 @@ export default function PackageManagerPage({ data }: Page): JSX.Element {
 
 export const query = graphql`
   query {
-    page: markdownRemark(fields: { slug: { eq: "package-manager" } }) {
+    page: markdownRemark(
+      fields: { slug: { eq: "installing-nodejs-via-package-manager" } }
+    ) {
       html
       tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
       frontmatter {
