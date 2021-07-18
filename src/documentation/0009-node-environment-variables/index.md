@@ -27,7 +27,7 @@ process.env.USER_KEY // "foobar"
 
 In the same way you can access any custom environment variable you set.
 
-If you have multiple environment variables in your node project, you can also create an `.env` file in the root directory of your project, and then use the [dotenv](https://www.npmjs.com/package/dotenv) package to load them when during runtime.
+If you have multiple environment variables in your node project, you can also create an `.env` file in the root directory of your project, and then use the [dotenv](https://www.npmjs.com/package/dotenv) package to load them during runtime.
 
 ```bash
 # .env file
