@@ -113,7 +113,7 @@ module.exports = {
               toasterClass: `toaster-class`,
               toasterTextClass: `toaster-Text`,
               toasterText: 'Copied to clipboard',
-            }
+            },
           },
           'gatsby-remark-copy-linked-files',
           {
