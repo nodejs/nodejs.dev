@@ -30,7 +30,7 @@
     "gatsby-plugin-offline": "^4.9.0",
     "gatsby-plugin-react-helmet": "^4.9.0",
     "gatsby-plugin-sass": "^4.9.0",
-    "gatsby-plugin-sharp": "^3.8.0",
+    "gatsby-plugin-sharp": "^3.9.0",
     "gatsby-plugin-sitemap": "^4.4.0",
     "gatsby-plugin-typescript": "^3.9.0",
     "gatsby-remark-autolink-headers": "^4.6.0",
@@ -78,7 +78,7 @@
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.3",
+    "@babel/core": "^7.14.6",
     "@babel/preset-typescript": "^7.14.5",
     "@storybook/semver": "^7.3.2",
     "@testing-library/jest-dom": "^5.14.1",
