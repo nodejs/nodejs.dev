@@ -2,7 +2,7 @@
   display: flex;
 }
 
-.gatsby-code-button {
+.code-button {
   background-color: var(--brand2);
   color: black;
   font-family: var(--mono);
@@ -11,7 +11,6 @@
   top: 20px;
 }
 
-.gatsby-code-button:hover {
-  border-bottom: 4px solid var(--color-text-primary);
-  margin-bottom: -4px;
+.toaster-text {
+  color: var(--color-text-secondary);
 }
