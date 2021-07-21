@@ -19,7 +19,7 @@ const MacOSPanel = (): JSX.Element => {
       <br />
       <a
         className="install__docs-button"
-        href="https://nodejs.dev/en/download/package-manager/#nvm"
+        href="https://nodejs.dev/download/package-manager/#nvm"
         target="_blank"
         rel="noopener noreferrer"
       >
