@@ -21,7 +21,7 @@ const WindowsPanel = (): JSX.Element => {
       <br />
       <a
         className="install__docs-button"
-        href="https://nodejs.dev/en/download/package-manager/#nvs"
+        href="https://nodejs.dev/download/package-manager/#nvs"
         target="_blank"
         rel="noopener noreferrer"
       >
