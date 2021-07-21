@@ -30,7 +30,7 @@
     "gatsby-plugin-offline": "^4.9.0",
     "gatsby-plugin-react-helmet": "^4.9.0",
     "gatsby-plugin-sass": "^4.9.0",
-    "gatsby-plugin-sharp": "^3.8.0",
+    "gatsby-plugin-sharp": "^3.10.0",
     "gatsby-plugin-sitemap": "^4.6.0",
     "gatsby-plugin-typescript": "^3.9.0",
     "gatsby-remark-autolink-headers": "^4.6.0",
