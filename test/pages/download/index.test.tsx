@@ -1,5 +1,6 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import DownloadPage, {
   DownloadNodeReleases,
 } from '../../../src/pages/download';
@@ -39,7 +40,7 @@ describe('Download page', () => {
       <DownloadPage location={window.location} data={nodeReleaseData} />
     );
 
-    fireEvent.click(screen.getAllByText('Current')[0]);
+    userEvent.click(screen.getAllByText('Current')[0]);
 
     expect(container).toMatchSnapshot();
   });
