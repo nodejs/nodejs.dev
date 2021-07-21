@@ -30,7 +30,7 @@ g++ libgcc linux-headers grep util-linux binutils findutils"
       {/* TODO when the new docs page is ready link to that page.  */}
       <a
         className="install__docs-button"
-        href="https://nodejs.dev/en/download/package-manager/#nvm"
+        href="https://nodejs.dev/download/package-manager/#nvm"
         target="_blank"
         rel="noopener noreferrer"
       >
