@@ -1,14 +1,17 @@
 .code-button-container {
   display: flex;
 }
-.code-button {
+
+.gatsby-code-button {
   background-color: var(--brand2);
   color: black;
   font-family: var(--mono);
+  padding: 6px;
   position: relative;
-  top: 8px;
+  top: 20px;
 }
 
-.toaster-class {
-  font-family: var(--mono);
+.gatsby-code-button:hover {
+  border-bottom: 4px solid var(--color-text-primary);
+  margin-bottom: -4px;
 }

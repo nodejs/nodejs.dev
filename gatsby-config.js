@@ -106,13 +106,8 @@ module.exports = {
           {
             resolve: 'gatsby-remark-code-buttons',
             options: {
-              buttonContainerClass: `code-button-container`,
+              // buttonContainerClass: `code-button-container`,
               buttonClass: `code-button`,
-              buttonText: `Copy`,
-              tooltipText: `Copy to clipboard`,
-              toasterClass: `toaster-class`,
-              toasterTextClass: `toaster-Text`,
-              toasterText: 'Copied to clipboard',
             },
           },
           'gatsby-remark-copy-linked-files',
