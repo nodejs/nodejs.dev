@@ -58,9 +58,9 @@
 @media (max-width: 620px) {
   .download-card {
     $self: &;
+    margin-top: 16px;
     padding: 8px;
     width: 130px;
-    height: 137px;
 
     &__label {
       margin-top: 16px;
@@ -74,7 +74,6 @@
 
     &--active {
       width: 130px;
-      height: 167px;
 
       #{ $self }__label {
         margin-top: 12px;
@@ -87,7 +86,6 @@
 @media (max-width: 460px) {
   .download-cards {
     flex-direction: column;
-    height: 500px;
     margin-top: 10px;
   }
 
@@ -96,7 +94,6 @@
 
     &--active {
       width: 160px;
-      height: 167px;
     }
   }
 }
