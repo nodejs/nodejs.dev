@@ -1,5 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import Header from '..';
 import { useMediaQuery } from '../../../hooks/useMediaQuery';
@@ -70,7 +71,7 @@ describe('Tests for Header component', () => {
       );
       render(<Header />);
       const toggle = await screen.findByRole('button');
-      fireEvent.click(toggle);
+      userEvent.click(toggle);
       expect(toggleThemeMock).toHaveBeenCalledWith('dark');
     });
 
@@ -85,7 +86,7 @@ describe('Tests for Header component', () => {
       );
       render(<Header />);
       const toggle = await screen.findByRole('button');
-      fireEvent.click(toggle);
+      userEvent.click(toggle);
       expect(toggleThemeMock).toHaveBeenCalledWith('light');
     });
 
