@@ -18,7 +18,7 @@ axios
     todo: 'Buy the milk'
   })
   .then(res => {
-    console.log(`statusCode: ${res.statusCode}`)
+    console.log(`statusCode: ${res.status}`)
     console.log(res)
   })
   .catch(error => {
