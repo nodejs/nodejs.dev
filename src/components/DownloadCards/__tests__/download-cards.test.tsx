@@ -1,5 +1,6 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import DownloadCards from '..';
 import { UserOS } from '../../../util/detectOS';
@@ -17,7 +18,7 @@ describe('DownloadCards component', (): void => {
 
     expect(listElement[0]).toHaveClass('download-card');
 
-    fireEvent.click(listElement[0]);
+    userEvent.click(listElement[0]);
 
     expect(listElement[0]).toHaveClass('download-card download-card--active');
   });
