@@ -12,7 +12,7 @@
     "@storybook/addons": "^6.3.4",
     "@storybook/builder-webpack5": "^6.3.5",
     "@storybook/manager-webpack5": "^6.3.4",
-    "@storybook/react": "^6.3.4",
+    "@storybook/react": "^6.3.5",
     "@types/react-tabs": "2.3.3",
     "babel-preset-react-app": "^10.0.0",
     "classnames": "^2.2.6",
