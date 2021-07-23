@@ -6,7 +6,7 @@ section: Getting Started
 category: learn
 ---
 
-WebAssembly is a high-performance assembly-like language that can be compiled from a myriad of languages including C/C++, Rust, and AssemblyScript. As of right now, it is supported by Chrome, Firefox, Safari, Edge, and Node.js! 
+WebAssembly is a high-performance assembly-like language that can be compiled from a myriad of languages including C/C++, Rust, and AssemblyScript. As of right now, it is supported by Chrome, Firefox, Safari, Edge, and Node.js!
 
 The WebAssembly specification details two file formats, a binary format called a WebAssembly Module with a `.wasm` extension and corresponding text representation called WebAssembly Text format with a `.wat` extension.
 
@@ -17,7 +17,7 @@ The WebAssembly specification details two file formats, a binary format called a
 * Table - A resizable typed array of references not stored in Memory.
 * Instance - An instantiation of a Module with its' Memory, Table, and variables.
 
-In order to use WebAssembly, you need a `.wasm` binary file and a set of APIs to communicate with WebAssembly. Node.js provides the necessary APIs via the global `WebAssembly` object. 
+In order to use WebAssembly, you need a `.wasm` binary file and a set of APIs to communicate with WebAssembly. Node.js provides the necessary APIs via the global `WebAssembly` object.
 
 ```js
 console.log(WebAssembly);
@@ -43,7 +43,7 @@ There are multiple methods available to generate WebAssembly binary files includ
 
 ## How to use it
 
-Once you have a WebAssembly module, you can use the Node.js `WebAssembly` object to instantiate it. 
+Once you have a WebAssembly module, you can use the Node.js `WebAssembly` object to instantiate it.
 
 ```js
 // Assume add.wasm file exists that contains a single function adding 2 provided arguments
