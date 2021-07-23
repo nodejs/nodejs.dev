@@ -1,5 +1,6 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import ReleaseToggle from '..';
 
 /**
@@ -44,7 +45,7 @@ describe('ReleaseToggle component', (): void => {
     );
     const inputElement = getByLabelText('current');
 
-    fireEvent.click(inputElement);
+    userEvent.click(inputElement);
 
     expect(mockOnToggle).toHaveBeenCalledTimes(1);
     expect(mockOnToggle).toHaveBeenCalledWith(true);
