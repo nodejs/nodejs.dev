@@ -81,7 +81,7 @@
     "@babel/core": "^7.14.6",
     "@babel/preset-typescript": "^7.14.5",
     "@storybook/semver": "^7.3.2",
-    "@testing-library/dom": "^7.31.2",
+    "@testing-library/dom": "^8.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.0",
