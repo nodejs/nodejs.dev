@@ -22,7 +22,7 @@
     "dotenv": "^10.0.0",
     "gatsby": "^3.9.1",
     "gatsby-plugin-canonical-urls": "^3.10.0",
-    "gatsby-plugin-catch-links": "^3.9.0",
+    "gatsby-plugin-catch-links": "^3.10.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-manifest": "^3.10.0",
     "gatsby-plugin-mdx": "^2.10.0",
