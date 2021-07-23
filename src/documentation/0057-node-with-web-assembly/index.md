@@ -59,7 +59,7 @@ WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
 
 ## Interacting with the OS
 
-WebAssembly modules cannot directly access OS functionality on its own. A third-party tool [`Wasmtime`](https://docs.wasmtime.dev/) can be used to access this functionality. `Wasmtime` utilizes the [`WASI`](https://wasi.dev/) API to access the OS functionality.
+WebAssembly modules cannot directly access OS functionality on its own. A third-party tool [Wasmtime](https://docs.wasmtime.dev/) can be used to access this functionality. `Wasmtime` utilizes the [WASI](https://wasi.dev/) API to access the OS functionality.
 
 ## Resources
 
