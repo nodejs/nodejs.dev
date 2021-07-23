@@ -1,5 +1,6 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import DownloadAdditional from '..';
 
 describe('DownloadAdditional component', (): void => {
@@ -44,7 +45,7 @@ describe('DownloadAdditional component', (): void => {
     ) as Element;
 
     // expand installers list
-    fireEvent.click(downloadItem);
+    userEvent.click(downloadItem);
 
     expect(container).toMatchSnapshot();
   });
@@ -63,9 +64,9 @@ describe('DownloadAdditional component', (): void => {
     ) as Element;
 
     // expand installers list
-    fireEvent.click(downloadItem);
+    userEvent.click(downloadItem);
     // collapse it back to check all relevant html classes was set
-    fireEvent.click(downloadItem);
+    userEvent.click(downloadItem);
 
     expect(container).toMatchSnapshot();
   });
