@@ -39,17 +39,17 @@
     "gatsby-remark-prismjs": "^5.7.0",
     "gatsby-source-filesystem": "^3.10.0",
     "gatsby-transformer-remark": "^4.7.0",
-    "gatsby-transformer-yaml": "^3.4.0",
+    "gatsby-transformer-yaml": "^3.10.0",
     "intersection-observer": "^0.12.0",
     "node-fetch": "^2.6.1",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.24.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
     "react-icons": "^4.2.0",
     "react-tabs": "3.2.2",
     "throttle-debounce": "^3.0.1",
-    "typescript": "4.2.4"
+    "typescript": "4.3.5"
   },
   "keywords": [
     "gatsby",
