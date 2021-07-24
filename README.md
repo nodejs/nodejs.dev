@@ -90,15 +90,15 @@ A quick look at some of the top-level files and directories found in this projec
 
 ```
 
-1. **`.storybook`**: This directory contains configuration files so the [storybook]("https://storybook.js.org/) package works as it should. Storybook is used to build the individual UI components in this project.
+1. **`.storybook`**: This directory contains configuration files so the [storybook](https://storybook.js.org/) package works as it should. Storybook is used to build the individual UI components in this project.
 
 2. **`/node_modules`**: The directory where all of the modules of code that your project depends on (npm packages) are automatically installed.
 
 3. **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser), like your site header, or a page template. "Src" is a convention for "source code."
 
-4. **`/stories`**: This directory contains stories for UI components used in this project. You can find out what a story is [here]("https://storybook.js.org/docs/react/get-started/whats-a-story). Also, you can run them locally using `npm run storybook`.
+4. **`/stories`**: This directory contains stories for UI components used in this project. You can find out what a story is [here](https://storybook.js.org/docs/react/get-started/whats-a-story). Also, you can run them locally using `npm run storybook`.
 
-5. **`/test`**: Tests for this projects are stored in this directory. This project uses [Jest]("https://jestjs.io/) as it's testing framework.
+5. **`/test`**: Tests for this projects are stored in this directory. This project uses [Jest](https://jestjs.io/) as it's testing framework.
 
 6. **`/util-node`**: Custom utility functions that require nodeJs to run can be stored in files inside this directory. An example is the create-slug function in the createSlug.js file that generates unique slugs for articles.
 
@@ -293,8 +293,8 @@ participated in that process.
 [Meeting Notes][]
 [Query issues for "Meeting"][]
 
-[community committee]: https://github.com/nodejs/community-committee
 [code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
+[community committee]: https://github.com/nodejs/community-committee
 [contributing guidelines]: ./CONTRIBUTING.md
 [meeting notes]: ./meetings
 [query issues for "meeting"]: https://github.com/nodejs/nodejs.dev/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+Meeting+in%3Atitle
