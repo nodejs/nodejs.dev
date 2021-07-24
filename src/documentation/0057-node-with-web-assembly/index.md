@@ -65,4 +65,4 @@ WebAssembly modules cannot directly access OS functionality on its own. A third-
 
 * [General WebAssembly Information](https://webassembly.org/)
 * [MDN Docs](https://developer.mozilla.org/en-US/docs/WebAssembly)
-* [Write WebAssembly by hand like a boss](https://webassembly.github.io/spec/core/text/index.html)
+* [Write WebAssembly by hand](https://webassembly.github.io/spec/core/text/index.html)
