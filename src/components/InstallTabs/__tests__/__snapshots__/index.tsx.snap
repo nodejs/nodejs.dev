@@ -165,7 +165,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
           <br />
           <a
             class="install__docs-button"
-            href="https://nodejs.org/en/download/package-manager/#nvs"
+            href="https://nodejs.dev/download/package-manager/#nvs"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -361,7 +361,7 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
           <br />
           <a
             class="install__docs-button"
-            href="https://nodejs.org/en/download/package-manager/#nvm"
+            href="https://nodejs.dev/download/package-manager/#nvm"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -557,7 +557,7 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
           <br />
           <a
             class="install__docs-button"
-            href="https://nodejs.org/en/download/package-manager/#nvm"
+            href="https://nodejs.dev/download/package-manager/#nvm"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -723,7 +723,7 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
           <br />
           <a
             class="install__docs-button"
-            href="https://nodejs.org/en/download/package-manager/#nvm"
+            href="https://nodejs.dev/download/package-manager/#nvm"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -915,7 +915,7 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
           <br />
           <a
             class="install__docs-button"
-            href="https://nodejs.org/en/download/package-manager/#nvs"
+            href="https://nodejs.dev/download/package-manager/#nvs"
             rel="noopener noreferrer"
             target="_blank"
           >

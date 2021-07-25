@@ -41,6 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
                       "about"
                       "governance"
                       "security"
+                      "package-manager"
                     ]
                   }
                 }
