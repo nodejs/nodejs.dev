@@ -353,9 +353,7 @@ exports[`Home page renders correctly 1`] = `
                   <br />
                   <a
                     class="install__docs-button"
-                    href="https://nodejs.dev/download/package-manager/#nvs"
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    href="/download/package-manager/#nvs"
                   >
                     Read documentation
                   </a>

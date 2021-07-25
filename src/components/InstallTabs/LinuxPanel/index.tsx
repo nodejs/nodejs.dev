@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import ShellBox from '../../ShellBox';
 import '../InstallTabs.scss';
@@ -27,15 +28,12 @@ g++ libgcc linux-headers grep util-linux binutils findutils"
       </ShellBox>
       <br />
       <br />
-      {/* TODO when the new docs page is ready link to that page.  */}
-      <a
+      <Link
         className="install__docs-button"
-        href="https://nodejs.dev/download/package-manager/#nvm"
-        target="_blank"
-        rel="noopener noreferrer"
+        to="/download/package-manager/#nvm"
       >
         Read documentation
-      </a>
+      </Link>
     </div>
   );
 };
