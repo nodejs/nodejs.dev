@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import ShellBox from '../../ShellBox';
 import '../InstallTabs.scss';
@@ -19,14 +20,12 @@ const WindowsPanel = (): JSX.Element => {
       </ShellBox>
       <br />
       <br />
-      <a
+      <Link
         className="install__docs-button"
-        href="https://nodejs.dev/download/package-manager/#nvs"
-        target="_blank"
-        rel="noopener noreferrer"
+        to="/download/package-manager/#nvs"
       >
         Read documentation
-      </a>
+      </Link>
     </div>
   );
 };
