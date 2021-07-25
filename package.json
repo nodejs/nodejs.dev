@@ -112,12 +112,12 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.6",
     "jest-fetch-mock": "^3.0.3",
-    "node-sass": "6.0.0",
+    "node-sass": "6.0.1",
     "pa11y": "6.0.1",
     "prettier": "^2.3.2",
     "remark-cli": "^9.0.0",
     "remark-frontmatter": "^3.0.0",
-    "remark-preset-lint-node": "^2.3.0"
+    "remark-preset-lint-node": "^2.4.1"
   },
   "repository": {
     "type": "git",
