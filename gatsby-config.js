@@ -12,13 +12,14 @@ module.exports = {
     siteUrlNoSlash: config.siteUrlNoSlash,
   },
   mapping: {
-    'MarkdownRemark.frontmatter.author': `AuthorYaml`,
+    'Mdx.frontmatter.author': `AuthorYaml`,
   },
   plugins: [
     'gatsby-plugin-catch-links',
     'gatsby-plugin-dark-mode',
     'gatsby-transformer-yaml',
     'gatsby-plugin-react-helmet',
+    `gatsby-remark-images`,
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
@@ -84,15 +85,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        defaultLayouts: {
-          sites: require.resolve(`./src/components/Layout/centered.tsx`),
-          default: require.resolve(`./src/components/Layout/index.tsx`),
-        },
-      },
-    },
-    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.title,
@@ -107,9 +99,14 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-typescript',
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        plugins: [
+        extensions: ['.mdx', '.md'],
+        defaultLayouts: {
+          sites: require.resolve(`./src/components/Layout/centered.tsx`),
+          default: require.resolve(`./src/components/Layout/index.tsx`),
+        },
+        gatsbyRemarkPlugins: [
           'gatsby-remark-copy-linked-files',
           {
             resolve: 'gatsby-remark-autolink-headers',
@@ -119,16 +116,6 @@ module.exports = {
               className: 'autolink-headers',
               maintainCase: false,
               removeAccents: true,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-prismjs',
-            options: {
-              classPrefix: 'language-',
-              inlineCodeMarker: null,
-              aliases: { js: 'javascript' },
-              showLineNumbers: false,
-              noInlineHighlight: false,
             },
           },
           {

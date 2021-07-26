@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShellBox component renders correctly 1`] = `
+<div>
+  <pre
+    class="prism-code language-javascript"
+  >
+    <div
+      class="shell-box-top"
+    >
+      <span>
+        JAVASCRIPT
+      </span>
+      <button
+        type="button"
+      >
+        copy
+      </button>
+    </div>
+    <div
+      class="token-line"
+    >
+      <span
+        class="token punctuation"
+      >
+        [
+      </span>
+      <span
+        class="token plain"
+      >
+        object 
+      </span>
+      <span
+        class="token known-class-name class-name"
+      >
+        Object
+      </span>
+      <span
+        class="token punctuation"
+      >
+        ]
+      </span>
+    </div>
+  </pre>
+</div>
+`;

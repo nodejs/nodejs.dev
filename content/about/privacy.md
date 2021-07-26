@@ -81,7 +81,7 @@ OpenJS Foundation and the Linux Foundation use the personal information we colle
 <table>
   <tr>
    <td>Purposes of Processing
-<p>
+<p></p>
 (see above)
    </td>
    <td>Legal Bases of Processing (EU Users)
@@ -93,14 +93,13 @@ OpenJS Foundation and the Linux Foundation use the personal information we colle
    <td>
 <ul>
 
-<li>Our Legitimate Business Interests
+<li>Our Legitimate Business Interests</li>
 
-<li>Where Necessary to Enter into or Perform a Contract with You (upon your request, or as necessary to make the Services available)
+<li>Where Necessary to Enter into or Perform a Contract with You (upon your request, or as necessary to make the Services available)</li>
 
-<li>Compliance with Law
+<li>Compliance with Law</li>
 
-<li>Where permitted, with Your Consent (where we process any sensitive personal information you voluntarily provide – e.g., for diversity-related purposes)
-</li>
+<li>Where permitted, with Your Consent (where we process any sensitive personal information you voluntarily provide – e.g., for diversity-related purposes)</li>
 </ul>
    </td>
   </tr>
@@ -110,14 +109,13 @@ OpenJS Foundation and the Linux Foundation use the personal information we colle
    <td>
 <ul>
 
-<li>Our Legitimate Business Interests
+<li>Our Legitimate Business Interests</li>
 
-<li>Where Necessary to Enter into or Perform a Contract with You (upon your request, or as necessary to enable your participation in the Projects or to make the Services available)
+<li>Where Necessary to Enter into or Perform a Contract with You (upon your request, or as necessary to enable your participation in the Projects or to make the Services available)</li>
 
-<li>Compliance with Law
+<li>Compliance with Law</li>
 
-<li>As Necessary to Establish, Exercise and Defend Legal Claims
-</li>
+<li>As Necessary to Establish, Exercise and Defend Legal Claims</li>
 </ul>
    </td>
   </tr>
@@ -127,14 +125,13 @@ OpenJS Foundation and the Linux Foundation use the personal information we colle
    <td>
 <ul>
 
-<li>Our Legitimate Business Interests
+<li>Our Legitimate Business Interests</li>
 
-<li>Where Necessary to Enter into or Perform a Contract with You (upon your request, or as necessary relating to Your application for an internship)
+<li>Where Necessary to Enter into or Perform a Contract with You (upon your request, or as necessary relating to Your application for an internship)</li>
 
-<li>Compliance with Law
+<li>Compliance with Law</li>
 
-<li>Where permitted, with Your Consent (where we process any sensitive personal information you voluntarily provide – e.g., for diversity-related purposes)
-</li>
+<li>Where permitted, with Your Consent (where we process any sensitive personal information you voluntarily provide – e.g., for diversity-related purposes)</li>
 </ul>
    </td>
   </tr>
@@ -144,14 +141,13 @@ OpenJS Foundation and the Linux Foundation use the personal information we colle
    <td>
 <ul>
 
-<li>Our Legitimate Business Interests
+<li>Our Legitimate Business Interests</li>
 
-<li>Where Necessary to Enter into or Perform a Contract with You (upon your request, or as necessary to make the Services available)
+<li>Where Necessary to Enter into or Perform a Contract with You (upon your request, or as necessary to make the Services available)</li>
 
-<li>Compliance with Law
+<li>Compliance with Law</li>
 
-<li>With Your Consent (in particular regarding your sensitive personal information – e.g., disability and medical conditions and information related to a visa letter request)
-</li>
+<li>With Your Consent (in particular regarding your sensitive personal information – e.g., disability and medical conditions and information related to a visa letter request)</li>
 </ul>
    </td>
   </tr>
@@ -161,7 +157,7 @@ OpenJS Foundation and the Linux Foundation use the personal information we colle
    <td>
 <ul>
 
-<li>Our Legitimate Business Interests
+<li>Our Legitimate Business Interests</li>
 
 <li>Where Necessary to Enter into or Perform a Contract with You (upon your request, or as necessary to make the Services available)
 </li>
@@ -185,7 +181,7 @@ OpenJS Foundation and the Linux Foundation use the personal information we colle
    <td>
 <ul>
 
-<li>Our Legitimate Business Interests, and those of the Linux Foundation
+<li>Our Legitimate Business Interests, and those of the Linux Foundation</li>
 
 <li>With Your Consent
 </li>
@@ -198,7 +194,7 @@ OpenJS Foundation and the Linux Foundation use the personal information we colle
    <td>
 <ul>
 
-<li>Our Legitimate Business Interests
+<li>Our Legitimate Business Interests</li>
 
 <li>With Your Consent
 </li>
@@ -211,7 +207,7 @@ OpenJS Foundation and the Linux Foundation use the personal information we colle
    <td>
 <ul>
 
-<li> Our Legitimate Business Interests
+<li> Our Legitimate Business Interests</li>
 
 <li>Where permitted, with Your Consent (where we process any sensitive personal information you voluntarily provide – e.g., for diversity-related purposes)
 </li>
@@ -224,9 +220,9 @@ OpenJS Foundation and the Linux Foundation use the personal information we colle
    <td>
 <ul>
 
-<li>Our Legitimate Business Interests
+<li>Our Legitimate Business Interests</li>
 
-<li>Compliance with Law
+<li>Compliance with Law</li>
 
 <li>As Necessary to Establish, Exercise and Defend Legal Claims
 </li>
@@ -239,9 +235,9 @@ OpenJS Foundation and the Linux Foundation use the personal information we colle
    <td>
 <ul>
 
-<li>Our Legitimate Business Interests
+<li>Our Legitimate Business Interests</li>
 
-<li>Compliance with Law
+<li>Compliance with Law</li>
 
 <li>As Necessary to Establish, Exercise and Defend Legal Claims
 </li>
@@ -254,9 +250,9 @@ OpenJS Foundation and the Linux Foundation use the personal information we colle
    <td>
 <ul>
 
-<li>Our Legitimate Business Interests
+<li>Our Legitimate Business Interests</li>
 
-<li>Compliance with Law
+<li>Compliance with Law</li>
 
 <li>As Necessary to Establish, Exercise and Defend Legal Claims
 </li>

@@ -9,7 +9,7 @@ import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
 
 export default function PrivacyPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
-  const { html, tableOfContents } = data.page;
+  const { body, tableOfContents } = data.page;
   const { authors } = data.page.fields;
 
   return (
@@ -19,7 +19,7 @@ export default function PrivacyPage({ data }: Page): JSX.Element {
           <SideNavBar pageKey={SideNavBarKeys.privacy} />
           <Article
             title={title}
-            html={html}
+            body={body}
             tableOfContents={tableOfContents}
             authors={authors}
             editPath="content/about/privacy.md"
@@ -33,9 +33,9 @@ export default function PrivacyPage({ data }: Page): JSX.Element {
 
 export const query = graphql`
   query {
-    page: markdownRemark(fields: { slug: { eq: "privacy-policy" } }) {
-      html
-      tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
+    page: mdx(fields: { slug: { eq: "privacy-policy" } }) {
+      body
+      tableOfContents
       frontmatter {
         title
         description
