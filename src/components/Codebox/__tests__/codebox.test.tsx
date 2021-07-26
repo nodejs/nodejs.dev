@@ -17,15 +17,15 @@ afterEach(() => {
   jest.clearAllMocks();
 });
 
-describe('ShellBox component', (): void => {
+describe('Codebox component', (): void => {
   it('renders correctly', (): void => {
     const textToCopy = <p>text to be copy</p>;
     const { container } = render(
       <Codebox>
         {{
           props: {
-            className: 'language-javascript',
-            children: <p>{textToCopy}</p>,
+            className: 'language-html',
+            children: { textToCopy },
           },
         }}
       </Codebox>
@@ -39,7 +39,7 @@ describe('ShellBox component', (): void => {
       <Codebox>
         {{
           props: {
-            className: 'language-javascript',
+            className: 'language-html',
             children: textToCopy,
           },
         }}

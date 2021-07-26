@@ -14,7 +14,7 @@ interface Props {
   };
 }
 
-const ShellBox = ({ children: { props } }: Props): JSX.Element => {
+const Codebox = ({ children: { props } }: Props): JSX.Element => {
   const [copied, setCopied] = React.useState(false);
 
   // Language Matches in class
@@ -79,4 +79,4 @@ const ShellBox = ({ children: { props } }: Props): JSX.Element => {
   );
 };
 
-export default ShellBox;
+export default Codebox;
