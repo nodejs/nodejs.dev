@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ShellBox component renders correctly 1`] = `
+exports[`Codebox component renders correctly 1`] = `
 <div>
   <pre
-    class="prism-code language-javascript"
+    class="prism-code language-html"
   >
     <div
       class="shell-box-top"
     >
       <span>
-        JAVASCRIPT
+        HTML
       </span>
       <button
         type="button"
@@ -21,24 +21,9 @@ exports[`ShellBox component renders correctly 1`] = `
       class="token-line"
     >
       <span
-        class="token punctuation"
-      >
-        [
-      </span>
-      <span
         class="token plain"
       >
-        object 
-      </span>
-      <span
-        class="token known-class-name class-name"
-      >
-        Object
-      </span>
-      <span
-        class="token punctuation"
-      >
-        ]
+        [object Object]
       </span>
     </div>
   </pre>
