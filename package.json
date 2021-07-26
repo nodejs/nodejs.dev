@@ -10,7 +10,7 @@
     "@storybook/addon-actions": "^6.3.5",
     "@storybook/addon-links": "^6.3.5",
     "@storybook/addons": "^6.3.4",
-    "@storybook/builder-webpack5": "^6.3.5",
+    "@storybook/builder-webpack5": "^6.3.6",
     "@storybook/manager-webpack5": "^6.3.4",
     "@storybook/react": "^6.3.5",
     "@types/react-tabs": "2.3.3",
