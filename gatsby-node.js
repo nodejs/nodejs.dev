@@ -29,13 +29,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       createPage({
         path: page.slug,
         component: blogTemplate,
-        page,
+        context: page,
       });
     } else if (page.category === 'learn') {
       createPage({
         path: `/learn/${page.slug}`,
         component: docTemplate,
-        page,
+        context: page,
       });
       createRedirect({
         fromPath: `/${page.slug}`,
@@ -48,7 +48,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       createPage({
         path: `/learn`,
         component: docTemplate,
-        page,
+        context: page,
       });
     }
   });
