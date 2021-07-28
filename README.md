@@ -183,6 +183,7 @@ also have commiter rights on the repo.
 * [@jonchurch](https://github.com/jonchurch) - Jonathan Church
 * [@kasicka](https://github.com/kasicka) - Zuzana Svetlíková
 * [@keywordnew](https://github.com/keywordnew) - Manil Chowdhury
+* [@lancemccluskey](https://github.com/lancemccluskey) - Lance McCluskey
 * [@LaRuaNa](https://github.com/LaRuaNa) - Onur Laru
 * [@maddhruv](https://github.com/maddhruv) - Dhruv Jain
 * [@manishprivet](https://github.com/manishprivet) - Manish Kumar
