@@ -4,25 +4,11 @@ description: "Working Groups| Node.js"
 authors: williamkapke,Trott,fhemberger,rxmarbles,mhdawson,XhmikosR,ryanmurakami,outsideris,MaledongGit,vsemozhetbyt,wonderdogone,sotayamashita,richardlau,pierreneter,nschonni,marocchino,stevemao,lpinca,phillipj,jasnell,sejaljain123
 category: working-groups
 ---
-<!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
 Core Working Groups are created by the
 [Technical Steering Committee (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
 
-## Current Working Groups
-
-* [Addon API](#addon-api)
-* [Build](#build)
-* [Diagnostics](#diagnostics)
-* [Docker](#docker)
-* [Evangelism](#evangelism)
-* [i18n](#i18n)
-* [Package Maintenance](#package-maintenance)
-* [Release](#release)
-* [Security](#security)
-* [Streams](#streams)
-
-### [Addon API](https://github.com/nodejs/nan)
+## [Addon API](https://github.com/nodejs/nan)
 
 The Addon API Working Group is responsible for maintaining the NAN project and
 corresponding _nan_ package in npm. The NAN project makes available an
@@ -47,7 +33,7 @@ Responsibilities include:
 The current members can be found in their
 [README](https://github.com/nodejs/nan#collaborators).
 
-### [Build](https://github.com/nodejs/build)
+## [Build](https://github.com/nodejs/build)
 
 The Build Working Group's purpose is to create and maintain a distributed
 automation infrastructure.
@@ -59,7 +45,7 @@ Responsibilities include:
 * Running performance testing and comparisons.
 * Creating and managing build-containers.
 
-### [Diagnostics](https://github.com/nodejs/diagnostics)
+## [Diagnostics](https://github.com/nodejs/diagnostics)
 
 The Diagnostics Working Group's purpose is to surface a set of comprehensive,
 documented, and extensible diagnostic interfaces for use by Node.js tools and
@@ -80,7 +66,7 @@ Responsibilities include:
 * Defining and adding common structures to the dumps generated in order to
   support tools that want to introspect those dumps.
 
-### [Docker](https://github.com/nodejs/docker-node)
+## [Docker](https://github.com/nodejs/docker-node)
 
 The Docker Working Group's purpose is to build, maintain, and improve official
 Docker images for the Node.js project.
@@ -91,7 +77,7 @@ Responsibilities include:
 * Decide and implement image improvements and/or fixes.
 * Maintain and improve the images' documentation.
 
-### [Evangelism](https://github.com/nodejs/evangelism)
+## [Evangelism](https://github.com/nodejs/evangelism)
 
 The Evangelism Working Group promotes the accomplishments
 of Node.js and lets the community know how they can get involved.
@@ -105,7 +91,7 @@ Responsibilities include:
 * Publishing regular update summaries and other promotional
   content.
 
-### [i18n](https://github.com/nodejs/i18n)
+## [i18n](https://github.com/nodejs/i18n)
 
 The i18n Working Groups handle more than just translations. They
 are endpoints for community members to collaborate with each
@@ -160,7 +146,7 @@ Each language community maintains its own membership.
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
 
-### [Package Maintenance](https://github.com/nodejs/package-maintenance)
+## [Package Maintenance](https://github.com/nodejs/package-maintenance)
 
 Responsibilities include:
 
@@ -181,7 +167,7 @@ Responsibilities include:
   `* nodejs/ci-config-github-actions`
   `* nodejs/package-maintenance repository.`
 
-### [Release](https://github.com/nodejs/Release)
+## [Release](https://github.com/nodejs/Release)
 
 The Release Working Group manages the release process for Node.js.
 
@@ -195,7 +181,7 @@ Responsibilities include:
   backporting changes to these branches.
 * Define the policy for what gets backported to release streams
 
-### [Security](https://github.com/nodejs/security-wg)
+## [Security](https://github.com/nodejs/security-wg)
 
 The Security Working Group manages all aspects and processes linked to Node.js security.
 
@@ -224,7 +210,7 @@ Responsibilities include:
 * Facilitate and promote the expansion of a healthy security service and product
   provider ecosystem.
 
-### [Streams](https://github.com/nodejs/readable-stream)
+## [Streams](https://github.com/nodejs/readable-stream)
 
 The Streams Working Group is dedicated to the support and improvement of the
 Streams API as used in Node.js and the npm ecosystem. We seek to create a

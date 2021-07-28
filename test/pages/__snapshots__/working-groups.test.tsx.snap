@@ -234,6 +234,18 @@ exports[`Working Groups page renders correctly 1`] = `
         >
           Mock Title
         </h1>
+        <details
+          class="toc"
+        >
+          <summary>
+            <h6>
+              TABLE OF CONTENTS
+            </h6>
+          </summary>
+          <div>
+            Table of Content
+          </div>
+        </details>
         <div>
           <div>
             Sample
