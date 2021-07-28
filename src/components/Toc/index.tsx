@@ -1,7 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { TableOfContents } from '../../types';
-// import { fixTocCodeTag } from '../../util/tocFormatter';
 
 interface Props {
   heading: string;
@@ -12,7 +11,6 @@ const TOC = ({ heading, tableOfContents }: Props): null | JSX.Element => {
   if (!tableOfContents?.items) {
     return null;
   }
-  // const toc = fixTocCodeTag(tableOfContents);
 
   return (
     <details className="toc">
