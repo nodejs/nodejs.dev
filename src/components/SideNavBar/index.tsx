@@ -92,19 +92,21 @@ export default function SideNavBar({ pageKey }: NavBarProps): JSX.Element {
         Menu
       </button>
       <ul className="community-nav__list">
-        {sideNavBarItems.map(({ title: commTitle, slug }) => {
-          return (
-            <NavigationItem
-              key={slug}
-              title={commTitle}
-              isLearn={false}
-              isRead={false}
-              isActive={slug === pageKey}
-              slug={slug}
-              baseUrl="/"
-            />
-          );
-        })}
+        {sideNavBarItems
+          .sort((a, b) => a.title.localeCompare(b.title))
+          .map(({ title: commTitle, slug }) => {
+            return (
+              <NavigationItem
+                key={slug}
+                title={commTitle}
+                isLearn={false}
+                isRead={false}
+                isActive={slug === pageKey}
+                slug={slug}
+                baseUrl="/"
+              />
+            );
+          })}
       </ul>
     </nav>
   );
