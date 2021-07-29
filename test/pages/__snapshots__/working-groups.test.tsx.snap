@@ -163,24 +163,31 @@ exports[`Working Groups page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/governance"
-            id="link-governance"
-          >
-            Project Governance
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
             href="/community"
             id="link-community"
           >
             Community
           </a>
           <a
-            class="t-body2 side-nav__item-community side-nav__item-community--active"
-            href="/working-groups"
-            id="link-working-groups"
+            class="t-body2 side-nav__item-community"
+            href="/download/package-manager"
+            id="link-download/package-manager"
           >
-            Working Groups
+            Package Manager
+          </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/privacy"
+            id="link-privacy"
+          >
+            Privacy Policy
+          </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/governance"
+            id="link-governance"
+          >
+            Project Governance
           </a>
           <a
             class="t-body2 side-nav__item-community"
@@ -198,20 +205,6 @@ exports[`Working Groups page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/trademark"
-            id="link-trademark"
-          >
-            Trademark Policy
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/privacy"
-            id="link-privacy"
-          >
-            Privacy Policy
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
             href="/security"
             id="link-security"
           >
@@ -219,10 +212,17 @@ exports[`Working Groups page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/download/package-manager"
-            id="link-download/package-manager"
+            href="/trademark"
+            id="link-trademark"
           >
-            Package Manager
+            Trademark Policy
+          </a>
+          <a
+            class="t-body2 side-nav__item-community side-nav__item-community--active"
+            href="/working-groups"
+            id="link-working-groups"
+          >
+            Working Groups
           </a>
         </ul>
       </nav>
