@@ -183,6 +183,7 @@ also have commiter rights on the repo.
 * [@jonchurch](https://github.com/jonchurch) - Jonathan Church
 * [@kasicka](https://github.com/kasicka) - Zuzana Svetlíková
 * [@keywordnew](https://github.com/keywordnew) - Manil Chowdhury
+* [@lancemccluskey](https://github.com/lancemccluskey) - Lance McCluskey
 * [@LaRuaNa](https://github.com/LaRuaNa) - Onur Laru
 * [@maddhruv](https://github.com/maddhruv) - Dhruv Jain
 * [@manishprivet](https://github.com/manishprivet) - Manish Kumar
@@ -192,6 +193,7 @@ also have commiter rights on the repo.
 * [@ogonzal87](https://github.com/ogonzal87) - Oscar Gonzalez
 * [@ollelauribostrom](https://github.com/ollelauribostrom) - Olle Lauri Boström
 * [@pierreneter](https://github.com/pierreneter) - Nguyễn J Huỳnh Long
+* [@rodion-arr](https://github.com/rodion-arr) - Rodion Abdurakhimov
 * [@sagirk](https://github.com/sagirk) - Sagir Khan
 * [@saulonunesdev](https://github.com/saulonunesdev) - Saulo Nunes
 * [@skllcrn](https://github.com/skllcrn) - Christopher

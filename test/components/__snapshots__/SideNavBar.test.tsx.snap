@@ -23,13 +23,6 @@ exports[`SideNavBar renders correctly 1`] = `
       </a>
       <a
         class="t-body2 side-nav__item-community"
-        href="/governance"
-        id="link-governance"
-      >
-        Project Governance
-      </a>
-      <a
-        class="t-body2 side-nav__item-community"
         href="/community"
         id="link-community"
       >
@@ -37,10 +30,24 @@ exports[`SideNavBar renders correctly 1`] = `
       </a>
       <a
         class="t-body2 side-nav__item-community"
-        href="/working-groups"
-        id="link-working-groups"
+        href="/download/package-manager"
+        id="link-download/package-manager"
       >
-        Working Groups
+        Package Manager
+      </a>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/privacy"
+        id="link-privacy"
+      >
+        Privacy Policy
+      </a>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/governance"
+        id="link-governance"
+      >
+        Project Governance
       </a>
       <a
         class="t-body2 side-nav__item-community"
@@ -57,6 +64,13 @@ exports[`SideNavBar renders correctly 1`] = `
         Resources
       </a>
       <a
+        class="t-body2 side-nav__item-community"
+        href="/security"
+        id="link-security"
+      >
+        Security Reporting
+      </a>
+      <a
         class="t-body2 side-nav__item-community side-nav__item-community--active"
         href="/trademark"
         id="link-trademark"
@@ -65,24 +79,10 @@ exports[`SideNavBar renders correctly 1`] = `
       </a>
       <a
         class="t-body2 side-nav__item-community"
-        href="/privacy"
-        id="link-privacy"
+        href="/working-groups"
+        id="link-working-groups"
       >
-        Privacy Policy
-      </a>
-      <a
-        class="t-body2 side-nav__item-community"
-        href="/security"
-        id="link-security"
-      >
-        Security Reporting
-      </a>
-      <a
-        class="t-body2 side-nav__item-community"
-        href="/download/package-manager"
-        id="link-download/package-manager"
-      >
-        Package Manager
+        Working Groups
       </a>
     </ul>
   </nav>
