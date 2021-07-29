@@ -442,6 +442,16 @@ exports[`Package Manager Page renders correctly 1`] = `
           </svg>
         </a>
       </li>
+      <li>
+        <a
+          href="https://www.netlify.com"
+        >
+          <img
+            alt="Deploys by Netlify"
+            src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"
+          />
+        </a>
+      </li>
     </ul>
   </footer>
 </div>

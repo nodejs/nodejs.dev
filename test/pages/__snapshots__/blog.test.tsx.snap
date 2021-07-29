@@ -305,6 +305,16 @@ exports[`Blog page renders correctly 1`] = `
             </svg>
           </a>
         </li>
+        <li>
+          <a
+            href="https://www.netlify.com"
+          >
+            <img
+              alt="Deploys by Netlify"
+              src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"
+            />
+          </a>
+        </li>
       </ul>
     </footer>
   </div>
@@ -596,6 +606,16 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
                 d="M0 34.249a5.381 5.381 0 0 0 5.376 5.386 5.381 5.381 0 0 0 5.376-5.386v-5.387H5.376A5.381 5.381 0 0 0 0 34.25m14.336-.001v14.364A5.381 5.381 0 0 0 19.712 54a5.381 5.381 0 0 0 5.376-5.387V34.25a5.381 5.381 0 0 0-5.376-5.387 5.381 5.381 0 0 0-5.376 5.387"
               />
             </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.netlify.com"
+          >
+            <img
+              alt="Deploys by Netlify"
+              src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"
+            />
           </a>
         </li>
       </ul>
