@@ -1,14 +1,13 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import DownloadAdditional from '..';
 
 describe('DownloadAdditional component', (): void => {
   const releaseData = {
-    date: 'date',
     version: 'version',
-    files: [],
-    lts: true,
-    v8: 'v8',
+    lts: '',
+    npm: '6.14.8',
   };
 
   it('renders correctly', (): void => {
@@ -46,7 +45,7 @@ describe('DownloadAdditional component', (): void => {
     ) as Element;
 
     // expand installers list
-    fireEvent.click(downloadItem);
+    userEvent.click(downloadItem);
 
     expect(container).toMatchSnapshot();
   });
@@ -65,9 +64,9 @@ describe('DownloadAdditional component', (): void => {
     ) as Element;
 
     // expand installers list
-    fireEvent.click(downloadItem);
+    userEvent.click(downloadItem);
     // collapse it back to check all relevant html classes was set
-    fireEvent.click(downloadItem);
+    userEvent.click(downloadItem);
 
     expect(container).toMatchSnapshot();
   });

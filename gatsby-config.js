@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const config = require('./src/config');
+const config = require('./src/config.json');
 
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX,
@@ -67,6 +67,20 @@ module.exports = {
       options: {
         name: 'data',
         path: `${__dirname}/src/data`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'about',
+        path: `${__dirname}/content/about`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'download',
+        path: `${__dirname}/content/download`,
       },
     },
     {

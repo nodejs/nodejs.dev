@@ -33,55 +33,53 @@ exports[`404 page renders correctly 1`] = `
               />
             </div>
           </a>
-          <ul
-            class="nav__tabs__container"
-          >
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="/learn"
-              >
-                Learn
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="https://nodejs.org/en/docs/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Documentation
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="/download"
-              >
-                Download
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="https://nodejs.org/en/get-involved/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Community
-              </a>
-            </li>
-          </ul>
         </div>
+        <ul
+          class="nav__tabs__container"
+        >
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/learn"
+            >
+              Learn
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="https://nodejs.org/en/docs/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Documentation
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/download"
+            >
+              Download
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/community"
+            >
+              Community
+            </a>
+          </li>
+        </ul>
         <div
           class="nav__endwrapper"
         >
@@ -101,12 +99,12 @@ exports[`404 page renders correctly 1`] = `
                   Toggle Dark Mode
                 </span>
                 <i
-                  class="material-icons light-mode-only"
+                  class="material-icons light-mode-only theme-buttons"
                 >
                   nights_stay
                 </i>
                 <i
-                  class="material-icons dark-mode-only"
+                  class="material-icons dark-mode-only theme-buttons"
                 >
                   wb_sunny
                 </i>
@@ -141,55 +139,18 @@ exports[`404 page renders correctly 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="home-page-hero"
+    <main
+      style="width: 100%; text-align: center; margin-top: 150px;"
     >
       <h1>
+         
         PAGE NOT FOUND
       </h1>
-      <h2
-        class="sub-title t-subheading"
-      />
-      <div
-        class="btn-ctas"
-      >
-        <div
-          class="download-lts-container"
-        >
-          <a
-            class="circular-container"
-            href="https://nodejs.org/dist/mmock-version-2/node-mmock-version-2.tar.gz"
-          >
-            Download Node (LTS)
-          </a>
-          <p
-            class="t-caption"
-          >
-            Version mock-version-2 - 
-            <a
-              href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
-            >
-              Get Current
-            </a>
-          </p>
-        </div>
-        <a
-          class="circular-container inverse"
-          href="/learn"
-        >
-          Learn Node
-        </a>
-      </div>
-    </div>
-    <main
-      class="article-reader"
-      style="width: 100%;"
-    >
       <p>
         The page you're trying to access does not exist. Go back to the Homepage or find what you're looking for in the menu.
       </p>
       <p>
-        Take me back to the
+        Take me back to the 
         <a
           href="/"
         >
@@ -213,7 +174,7 @@ exports[`404 page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://nodejs.org/en/about/trademark/"
+            href="/trademark"
           >
             Trademark Policy
           </a>
@@ -221,7 +182,7 @@ exports[`404 page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://nodejs.org/en/about/privacy/"
+            href="/privacy"
           >
             Privacy Policy
           </a>
@@ -229,7 +190,7 @@ exports[`404 page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://github.com/openjs-foundation/cross-project-council/blob/master/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
+            href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
           >
             Code of Conduct
           </a>
@@ -237,7 +198,7 @@ exports[`404 page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://nodejs.org/en/security/"
+            href="/security"
           >
             Security Reporting
           </a>
@@ -245,7 +206,7 @@ exports[`404 page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://nodejs.org/en/about/"
+            href="/about"
           >
             About
           </a>

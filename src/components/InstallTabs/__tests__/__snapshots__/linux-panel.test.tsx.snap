@@ -100,9 +100,7 @@ exports[`Tests for LinuxPanel component renders correctly 1`] = `
     <br />
     <a
       class="install__docs-button"
-      href="https://nodejs.org/en/download/package-manager/#nvm"
-      rel="noopener noreferrer"
-      target="_blank"
+      href="/download/package-manager/#nvm"
     >
       Read documentation
     </a>

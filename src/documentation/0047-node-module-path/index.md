@@ -65,7 +65,7 @@ require('path').format({ dir: '/Users/joe', base: 'test.txt' }) //  '/Users/joe/
 
 require('path').format({ root: '/Users/joe', name: 'test', ext: 'txt' }) //  '/Users/joe/test.txt'
 
-//WINODWS
+// WINDOWS
 require('path').format({ dir: 'C:\\Users\\joe', base: 'test.txt' }) //  'C:\\Users\\joe\\test.txt'
 ```
 

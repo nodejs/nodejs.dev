@@ -21,5 +21,6 @@ export const root = (): JSX.Element => (
     slug="versioning"
     onClick={noop}
     title="Navigation Item"
+    baseUrl="/"
   />
 );
