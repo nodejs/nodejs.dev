@@ -43,7 +43,7 @@
     "intersection-observer": "^0.12.0",
     "node-fetch": "^2.6.1",
     "prismjs": "^1.24.0",
-    "react": "^16.13.1",
+    "react": "^17.0.2",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
     "react-icons": "^4.2.0",
