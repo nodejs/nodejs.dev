@@ -3,6 +3,7 @@ title: Node.js, the difference between development and production
 description: 'Learn how to set up different configurations for production and development environments'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 You can have different configurations for production and development environments.
@@ -12,7 +13,7 @@ You can signal Node.js that you are running in production by setting the `NODE_E
 
 This is usually done by executing the command
 
-```sh
+```bash
 export NODE_ENV=production
 ```
 
@@ -20,7 +21,7 @@ in the shell, but it's better to put it in your shell configuration file (e.g. `
 
 You can also apply the environment variable by prepending it to your application initialization command:
 
-```sh
+```bash
 NODE_ENV=production node app.js
 ```
 
@@ -33,28 +34,28 @@ Setting the environment to `production` generally ensures that
 
 For example Pug, the templating library used by Express, compiles in debug mode if `NODE_ENV` is not set to `production`. Express views are compiled in every request in development mode, while in production they are cached. There are many more examples.
 
-Express provides configuration hooks specific to the environment, which are automatically called based on the NODE_ENV variable value:
+You can use conditional statements to execute code in different environments:
 
 ```js
-app.configure('development', () => {
+if (process.env.NODE_ENV === "development") {
   //...
-})
-app.configure('production', () => {
+}
+if (process.env.NODE_ENV === "production") {
   //...
-})
-app.configure('production', 'staging', () => {
+}
+if(['production', 'staging'].indexOf(process.env.NODE_ENV) >= 0) {
   //...
 })
 ```
 
-For example you can use this to set different error handlers for different mode:
+For example, in an Express app, you can use this to set different error handlers per environment:
 
 ```js
-app.configure('development', () => {
+if (process.env.NODE_ENV === "development") {
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }))
 })
 
-app.configure('production', () => {
+if (process.env.NODE_ENV === "production") {
   app.use(express.errorHandler())
 })
 ```

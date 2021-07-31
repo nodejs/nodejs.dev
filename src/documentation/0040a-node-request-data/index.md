@@ -3,6 +3,7 @@ title: Get HTTP request body data using Node.js
 description: 'Find out how to extract the data sent as JSON through an HTTP request body using Node.js'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 Here is how you can extract the data that was sent as JSON in the request body.
@@ -22,17 +23,18 @@ axios.post('https://whatever.com/todos', {
 This is the matching server-side code:
 
 ```js
-const bodyParser = require('body-parser')
+const express = require('express')
+const app = express()
 
 app.use(
-  bodyParser.urlencoded({
+  express.urlencoded({
     extended: true
   })
 )
 
-app.use(bodyParser.json())
+app.use(express.json())
 
-app.post('/endpoint', (req, res) => {
+app.post('/todos', (req, res) => {
   console.log(req.body.todo)
 })
 ```
@@ -59,16 +61,17 @@ const server = http.createServer((req, res) => {
 })
 ```
 
-So to access the data, assuming we expect to receive a string, we must put it into an array:
+So to access the data, assuming we expect to receive a string, we must concatenate the chunks into a string when listening to the stream `data`, and when the stream `end`, we parse the string to JSON:
 
 ```js
 const server = http.createServer((req, res) => {
-  let data = []
+  let data = '';
   req.on('data', chunk => {
-    data.push(chunk)
+    data += chunk;
   })
   req.on('end', () => {
-    JSON.parse(data).todo // 'Buy the milk'
+    console.log(JSON.parse(data).todo); // 'Buy the milk'
+    res.end();
   })
 })
 ```

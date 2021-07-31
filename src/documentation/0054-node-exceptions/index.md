@@ -3,6 +3,7 @@ title: Error handling in Node.js
 description: 'How to handle errors during the execution of a Node.js application'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 Errors in Node.js are handled through exceptions.
@@ -75,8 +76,8 @@ Using promises you can chain different operations, and handle errors at the end:
 
 ```js
 doSomething1()
-  .then(doSomething2())
-  .then(doSomething3())
+  .then(doSomething2)
+  .then(doSomething3)
   .catch(err => console.error(err))
 ```
 
@@ -95,18 +96,18 @@ const doSomething1 = () => {
 }
 ```
 
-To be able to handle errors locally without handling them in the function we call, we can break the chain you can create a function in each `then()` and process the exception:
+To be able to handle errors locally without handling them in the function we call, we can break the chain. You can create a function in each `then()` and process the exception:
 
 ```js
-doSomething1
-  .then((() => {
+doSomething1()
+  .then(() => {
     return doSomething2().catch(err => {
       //handle error
       throw err //break the chain!
     })
   })
-  .then((() => {
-    return doSomething2().catch(err => {
+  .then(() => {
+    return doSomething3().catch(err => {
       //handle error
       throw err //break the chain!
     })

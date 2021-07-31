@@ -3,12 +3,13 @@ title: Understanding JavaScript Promises
 description: 'Promises are one way to deal with asynchronous code in JavaScript, without writing too many callbacks in your code.'
 authors: flaviocopes, potch, MylesBorins, LaRuaNa, bdharrington7, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## Introduction to promises
 
 <iframe
-  allow="geolocation; microphone; camera; midi; encrypted-media"
+  title="Introduction to promises"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0034-01?path=server.js&previewSize=35&attributionHidden=true&sidebarCollapsed=true"
   alt="nodejs-dev-0034-01 on Glitch"
   style="height: 400px; width: 100%; border: 0;">
@@ -58,7 +59,7 @@ const isItDoneYet = new Promise((resolve, reject) => {
 })
 ```
 
-As you can see, the promise checks the `done` global constant, and if that's true, the promise goes to a **resolved** state (since the `resolve` callback was called); otherwise, the `reject` callback is executed, putting the promise in a rejected state. (If one of these functions is never called in the execution path, the promise will remain in a pending state)
+As you can see, the promise checks the `done` global constant, and if that's true, the promise goes to a **resolved** state (since the `resolve` callback was called); otherwise, the `reject` callback is executed, putting the promise in a rejected state. (If none of these functions is called in the execution path, the promise will remain in a pending state)
 
 Using `resolve` and `reject`, we can communicate back to the caller what the resulting promise state was, and what to do with it. In the above case we just returned a string, but it could be an object, or `null` as well. Because we've created the promise in the above snippet, it has **already started executing**. This is important to understand what's going on in the section [Consuming a promise](#consuming-a-promise) below.
 
@@ -71,7 +72,7 @@ const getFile = (fileName) => {
   return new Promise((resolve, reject) => {
     fs.readFile(fileName, (err, data) => {
       if (err) {
-        reject (err)  // calling `reject` will cause the promise to fail with or without the error passed as an argument
+        reject(err)  // calling `reject` will cause the promise to fail with or without the error passed as an argument
         return        // and we don't want to go any further
       }
       resolve(data)
@@ -117,7 +118,7 @@ Running `checkIfItsDone()` will specify functions to execute when the `isItDoneY
 
 A promise can be returned to another promise, creating a chain of promises.
 
-A great example of chaining promises is given by the Fetch API, a layer on top of the XMLHttpRequest API, which we can use to get a resource and queue a chain of promises to execute when the resource is fetched.
+A great example of chaining promises is the Fetch API, which we can use to get a resource and queue a chain of promises to execute when the resource is fetched.
 
 The Fetch API is a promise-based mechanism, and calling `fetch()` is equivalent to defining our own promise using `new Promise()`.
 
@@ -143,6 +144,7 @@ fetch('/todos.json')
     console.log('Request failed', error)
   })
 ```
+> <code><a href="https://www.npmjs.com/package/node-fetch">node-fetch</a></code> is  minimal code for window.fetch compatible API on Node.js runtime.
 
 In this example, we call `fetch()` to get a list of TODO items from the `todos.json` file found in the domain root, and we create a chain of promises.
 
@@ -153,7 +155,7 @@ Running `fetch()` returns a [response](https://fetch.spec.whatwg.org/#concept-re
 
 `response` also has a `json()` method, which returns a promise that will resolve with the content of the body processed and transformed into JSON.
 
-So given those premises, this is what happens: the first promise in the chain is a function that we defined, called `status()`, that checks the response status and if it's not a success response (between 200 and 299), it rejects the promise.
+So given those promises, this is what happens: the first promise in the chain is a function that we defined, called `status()`, that checks the response status and if it's not a success response (between 200 and 299), it rejects the promise.
 
 This operation will cause the promise chain to skip all the chained promises listed and will skip directly to the `catch()` statement at the bottom, logging the `Request failed` text along with the error message.
 

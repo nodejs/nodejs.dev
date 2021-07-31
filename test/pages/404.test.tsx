@@ -1,11 +1,11 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import NotFound from '../../src/pages/404';
-import * as ShallowRenderer from 'react-test-renderer/shallow';
+import '../__mocks__/intersectionObserverMock';
 
 describe('404 page', () => {
   it('renders correctly', () => {
-    const renderer = ShallowRenderer.createRenderer();
-    renderer.render(<NotFound />);
-    expect(renderer.getRenderOutput()).toMatchSnapshot();
+    const { container } = render(<NotFound location={window.location} />);
+    expect(container).toMatchSnapshot();
   });
 });

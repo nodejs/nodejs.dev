@@ -3,6 +3,7 @@ title: 'Modern Asynchronous JavaScript with Async and Await'
 description: 'Discover the modern approach to asynchronous functions in JavaScript. JavaScript evolved in a very short time from callbacks to Promises, and since ES2017 asynchronous JavaScript is even simpler with the async/await syntax'
 authors: flaviocopes, potch, MylesBorins, LaRuaNa, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## Introduction
@@ -15,7 +16,7 @@ Async functions are a combination of promises and generators, and basically, the
 
 They reduce the boilerplate around promises, and the "don't break the chain" limitation of chaining promises.
 
-When Promises were introduced in ES2015, they were meant to solve a problem with asynchronous code, and they did, but over the 2 years that separated ES2015 and ES2017, it was clear that _promises could not be the final solution_.
+When Promises were introduced in ES2015, they were meant to solve a problem with asynchronous code, and they did, but over the 2 years that separated ES2015 and ES2017, it was clear that _promises could not be the ultimate solution_.
 
 Promises were introduced to solve the famous _callback hell_ problem, but they introduced complexity on their own, and syntax complexity.
 
@@ -48,7 +49,7 @@ const doSomething = async () => {
 This is a simple example of async/await used to run a function asynchronously:
 
 <iframe
-  allow="geolocation; microphone; camera; midi; encrypted-media"
+  title="Modern Asynchronous JavaScript with Async and Await"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0035-01?path=server.js&previewSize=25&attributionHidden=true&sidebarCollapsed=true"
   alt="nodejs-dev-0035-01 on Glitch"
   style="height: 400px; width: 100%; border: 0;">
@@ -97,7 +98,7 @@ aFunction().then(alert) // This will alert 'test'
 and it's the same as:
 
 ```js
-const aFunction = async () => {
+const aFunction = () => {
   return Promise.resolve('test')
 }
 
@@ -144,7 +145,7 @@ getFirstUserData()
 Async functions can be chained very easily, and the syntax is much more readable than with plain promises:
 
 <iframe
-  allow="geolocation; microphone; camera; midi; encrypted-media"
+  title="Multiple async functions in series"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0035-02?path=server.js&previewSize=30&attributionHidden=true&sidebarCollapsed=true"
   alt="nodejs-dev-0035-02 on Glitch"
   style="height: 400px; width: 100%; border: 0;">

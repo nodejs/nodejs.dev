@@ -3,6 +3,7 @@ title: The npx Node.js Package Runner
 description: 'npx is a very cool way to run Node.js code, and provides many useful features'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, jgb-solutions, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 `npx` is a very powerful command that's been available in **npm** starting version 5.2, released in July 2017.
@@ -43,9 +44,9 @@ A typical demonstration of using `npx` is through the `cowsay` command. `cowsay`
                 ||     ||
 ```
 
-Now, this if you have the `cowsay` command globally installed from npm previously, otherwise you'll get an error when you try to run the command.
+This only works if you have the `cowsay` command globally installed from npm previously. Otherwise you'll get an error when you try to run the command.
 
-`npx` allows you to run that npm command without having it installed locally:
+`npx` allows you to run that npm command without installing it first. If the command isn't found, `npx` will install it into a central cache:
 
 ```bash
 npx cowsay "Hello"
@@ -56,12 +57,10 @@ will do the job.
 Now, this is a funny useless command.
 Other scenarios include:
 
-* running the `vue` CLI tool to create new applications and run them: `npx vue create my-vue-app`
+* running the `vue` CLI tool to create new applications and run them: `npx @vue/cli create my-vue-app`
 * creating a new React app using `create-react-app`: `npx create-react-app my-react-app`
 
 and many more.
-
-Once downloaded, the downloaded code will be wiped.
 
 ## Run some code using a different Node.js version
 

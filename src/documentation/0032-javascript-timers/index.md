@@ -3,6 +3,7 @@ title: Discover JavaScript Timers
 description: 'When writing JavaScript code, you might want to delay the execution of a function. Learn how to use setTimeout and setInterval to schedule functions in the future'
 authors: flaviocopes, MylesBorins, LaRuaNa, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## `setTimeout()`
@@ -97,7 +98,7 @@ const interval = setInterval(() => {
 
 `setInterval` starts a function every n milliseconds, without any consideration about when a function finished its execution.
 
-If a function takes always the same amount of time, it's all fine:
+If a function always takes the same amount of time, it's all fine:
 
 ![setInterval working fine](setinterval-ok.png)
 

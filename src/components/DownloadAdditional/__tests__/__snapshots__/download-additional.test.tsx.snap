@@ -1,0 +1,504 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DownloadAdditional component allows to collapse expanded items 1`] = `
+<div>
+  <div
+    class="download-additional"
+  >
+    <div
+      class="download-additional__header"
+    >
+      <h3
+        class="download-additional__title"
+      >
+        Additional Downloads
+      </h3>
+      <div
+        class="download-toogle"
+      >
+        <div
+          class="download-toogle__selector"
+        >
+          <div
+            class="download-toogle__switch"
+          >
+            <button
+              aria-checked="true"
+              aria-label="Show LTS versions"
+              class="download-toogle__button -active"
+              role="switch"
+              type="button"
+            >
+              LTS
+            </button>
+            <button
+              aria-checked="true"
+              aria-label="Show LTS versions"
+              class="download-toogle__button -current"
+              role="switch"
+              type="button"
+            >
+              Current
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="download-additional__body"
+    >
+      <div
+        class="download-additional__item"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__right"
+            />
+          </div>
+          Windows Installer (.msi)
+        </div>
+      </div>
+      <div
+        class="download-additional__item"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__right"
+            />
+          </div>
+          Windows Binary (.zip)
+        </div>
+      </div>
+      <div
+        class="download-additional__item"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__right"
+            />
+          </div>
+          macOS Installer (.pkg)
+        </div>
+      </div>
+      <div
+        class="download-additional__item"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__right"
+            />
+          </div>
+          macOS Binary (.tar.gz)
+        </div>
+      </div>
+      <div
+        class="download-additional__item"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__right"
+            />
+          </div>
+          Linux (PPC, S390x, AIX, ARMv7, ARMv8)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DownloadAdditional component allows to expand items 1`] = `
+<div>
+  <div
+    class="download-additional"
+  >
+    <div
+      class="download-additional__header"
+    >
+      <h3
+        class="download-additional__title"
+      >
+        Additional Downloads
+      </h3>
+      <div
+        class="download-toogle"
+      >
+        <div
+          class="download-toogle__selector"
+        >
+          <div
+            class="download-toogle__switch"
+          >
+            <button
+              aria-checked="true"
+              aria-label="Show LTS versions"
+              class="download-toogle__button -active"
+              role="switch"
+              type="button"
+            >
+              LTS
+            </button>
+            <button
+              aria-checked="true"
+              aria-label="Show LTS versions"
+              class="download-toogle__button -current"
+              role="switch"
+              type="button"
+            >
+              Current
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="download-additional__body"
+    >
+      <div
+        class="download-additional__item download-additional__item__expanded"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__down"
+            />
+          </div>
+          Windows Installer (.msi)
+        </div>
+        <div
+          class="download-additional__item__body"
+        >
+          <a
+            class="download-additional__item__body__link"
+            href="https://nodejs.org/dist/latest-version.x/node-version-x86.msi"
+          >
+            <i
+              class="material-icons"
+            >
+              get_app
+            </i>
+            32-bit
+          </a>
+          <a
+            class="download-additional__item__body__link"
+            href="https://nodejs.org/dist/latest-version.x/node-version-x64.msi"
+          >
+            <i
+              class="material-icons"
+            >
+              get_app
+            </i>
+            64-bit
+          </a>
+        </div>
+      </div>
+      <div
+        class="download-additional__item"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__right"
+            />
+          </div>
+          Windows Binary (.zip)
+        </div>
+      </div>
+      <div
+        class="download-additional__item"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__right"
+            />
+          </div>
+          macOS Installer (.pkg)
+        </div>
+      </div>
+      <div
+        class="download-additional__item"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__right"
+            />
+          </div>
+          macOS Binary (.tar.gz)
+        </div>
+      </div>
+      <div
+        class="download-additional__item"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__right"
+            />
+          </div>
+          Linux (PPC, S390x, AIX, ARMv7, ARMv8)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DownloadAdditional component renders correctly 1`] = `
+<div>
+  <div
+    class="download-additional"
+  >
+    <div
+      class="download-additional__header"
+    >
+      <h3
+        class="download-additional__title"
+      >
+        Additional Downloads
+      </h3>
+      <div
+        class="download-toogle"
+      >
+        <div
+          class="download-toogle__selector"
+        >
+          <div
+            class="download-toogle__switch"
+          >
+            <button
+              aria-checked="true"
+              aria-label="Show LTS versions"
+              class="download-toogle__button -active"
+              role="switch"
+              type="button"
+            >
+              LTS
+            </button>
+            <button
+              aria-checked="true"
+              aria-label="Show LTS versions"
+              class="download-toogle__button -current"
+              role="switch"
+              type="button"
+            >
+              Current
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="download-additional__body"
+    />
+  </div>
+</div>
+`;
+
+exports[`DownloadAdditional component renders correctly with release data 1`] = `
+<div>
+  <div
+    class="download-additional"
+  >
+    <div
+      class="download-additional__header"
+    >
+      <h3
+        class="download-additional__title"
+      >
+        Additional Downloads
+      </h3>
+      <div
+        class="download-toogle"
+      >
+        <div
+          class="download-toogle__selector"
+        >
+          <div
+            class="download-toogle__switch"
+          >
+            <button
+              aria-checked="true"
+              aria-label="Show LTS versions"
+              class="download-toogle__button -active"
+              role="switch"
+              type="button"
+            >
+              LTS
+            </button>
+            <button
+              aria-checked="true"
+              aria-label="Show LTS versions"
+              class="download-toogle__button -current"
+              role="switch"
+              type="button"
+            >
+              Current
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="download-additional__body"
+    >
+      <div
+        class="download-additional__item"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__right"
+            />
+          </div>
+          Windows Installer (.msi)
+        </div>
+      </div>
+      <div
+        class="download-additional__item"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__right"
+            />
+          </div>
+          Windows Binary (.zip)
+        </div>
+      </div>
+      <div
+        class="download-additional__item"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__right"
+            />
+          </div>
+          macOS Installer (.pkg)
+        </div>
+      </div>
+      <div
+        class="download-additional__item"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__right"
+            />
+          </div>
+          macOS Binary (.tar.gz)
+        </div>
+      </div>
+      <div
+        class="download-additional__item"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="download-additional__item__header"
+        >
+          <div
+            class="download-additional__item__header__arrow"
+          >
+            <div
+              class="download-additional__item__header__arrow__right"
+            />
+          </div>
+          Linux (PPC, S390x, AIX, ARMv7, ARMv8)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

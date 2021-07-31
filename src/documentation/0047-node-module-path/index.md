@@ -3,6 +3,7 @@ title: 'The Node.js path module'
 description: 'The path module of Node.js provides useful functions to interact with file paths'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, 19shubham11
 section: Getting Started
+category: learn
 ---
 
 The `path` module provides a lot of very useful functionality to access and interact with the file system.
@@ -43,6 +44,29 @@ Return the extension part of a path
 ```js
 require('path').extname('/test/something') // ''
 require('path').extname('/test/something/file.txt') // '.txt'
+```
+
+### `path.format()`
+
+Returns a path string from an object, This is the opposite of `path.parse`<br>
+`path.format` accepts an object as argument with the follwing keys:
+* `root`: the root
+* `dir`: the folder path starting from the root
+* `base`: the file name + extension
+* `name`: the file name
+* `ext`: the file extension
+
+`root` is ignored if `dir` is provided<br>
+`ext` and `name` are ignored if `base` exists
+
+```js
+// POSIX
+require('path').format({ dir: '/Users/joe', base: 'test.txt' }) //  '/Users/joe/test.txt'
+
+require('path').format({ root: '/Users/joe', name: 'test', ext: 'txt' }) //  '/Users/joe/test.txt'
+
+// WINDOWS
+require('path').format({ dir: 'C:\\Users\\joe', base: 'test.txt' }) //  'C:\\Users\\joe\\test.txt'
 ```
 
 ### `path.isAbsolute()`
@@ -101,7 +125,7 @@ results in
 
 ### `path.relative()`
 
-Accepts 2 paths as arguments. Returns the the relative path from the first path to the second, based on the current working directory.
+Accepts 2 paths as arguments. Returns the relative path from the first path to the second, based on the current working directory.
 
 Example:
 

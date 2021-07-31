@@ -3,6 +3,7 @@ title: 'JavaScript Asynchronous Programming and Callbacks'
 description: 'JavaScript is synchronous by default, and is single threaded. This means that code cannot create new threads and run in parallel. Find out what asynchronous code means and how it looks like'
 authors: flaviocopes, MylesBorins, LaRuaNa, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## Asynchronicity in Programming Languages
@@ -11,13 +12,13 @@ Computers are asynchronous by design.
 
 Asynchronous means that things can happen independently of the main program flow.
 
-In the current consumer computers, every program runs for a specific time slot, and then it stops its execution to let another program continue its execution. This thing runs in a cycle so fast that's impossible to notice, and we think our computers run many programs simultaneously, but this is an illusion (except on multiprocessor machines).
+In the current consumer computers, every program runs for a specific time slot and then it stops its execution to let another program continue their execution. This thing runs in a cycle so fast that it's impossible to notice. We think our computers run many programs simultaneously, but this is an illusion (except on multiprocessor machines).
 
 Programs internally use _interrupts_, a signal that's emitted to the processor to gain the attention of the system.
 
-I won't go into the internals of this, but just keep in mind that it's normal for programs to be asynchronous, and halt their execution until they need attention, and the computer can execute other things in the meantime. When a program is waiting for a response from the network, it cannot halt the processor until the request finishes.
+I won't go into the internals of this, but just keep in mind that it's normal for programs to be asynchronous and halt their execution until they need attention, allowing the computer to execute other things in the meantime. When a program is waiting for a response from the network, it cannot halt the processor until the request finishes.
 
-Normally, programming languages are synchronous, and some provide a way to manage asynchronicity, in the language or through libraries. C, Java, C#, PHP, Go, Ruby, Swift, Python, they are all synchronous by default. Some of them handle async by using threads, spawning a new process.
+Normally, programming languages are synchronous and some provide a way to manage asynchronicity in the language or through libraries. C, Java, C#, PHP, Go, Ruby, Swift, and Python are all synchronous by default. Some of them handle async by using threads, spawning a new process.
 
 ## JavaScript
 
@@ -41,7 +42,7 @@ More recently, Node.js introduced a non-blocking I/O environment to extend this 
 
 ## Callbacks
 
-You can't know when a user is going to click a button, so what you do is, you **define an event handler for the click event**. This event handler accepts a function, which will be called when the event is triggered:
+You can't know when a user is going to click a button. So, you **define an event handler for the click event**. This event handler accepts a function, which will be called when the event is triggered:
 
 ```js
 document.getElementById('button').addEventListener('click', () => {
@@ -93,7 +94,7 @@ If there is no error, the object is `null`. If there is an error, it contains so
 
 ```js
 fs.readFile('/file.json', (err, data) => {
-  if (err !== null) {
+  if (err) {
     //handle error
     console.log(err)
     return

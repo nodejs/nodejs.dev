@@ -3,6 +3,7 @@ title: 'Node.js File Paths'
 description: 'How to interact with file paths and manipulate them in Node.js'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 Every file in the system has a path.
@@ -79,7 +80,7 @@ path.resolve('/etc', 'joe.txt') //'/etc/joe.txt'
 `path.normalize()` is another useful function, that will try and calculate the actual path, when it contains relative specifiers like `.` or `..`, or double slashes:
 
 ```js
-path.normalize('/users/joe/..//test.txt') ///users/test.txt
+path.normalize('/users/joe/..//test.txt') //'/users/test.txt'
 ```
 
-**Both resolve and normalize will not check if the path exists**. They just calculate a path based on the information they got.
+**Neither resolve nor normalize will check if the path exists**. They just calculate a path based on the information they got.

@@ -3,17 +3,18 @@ title: Find the installed version of an npm package
 description: 'How to find out which version of a particular package you have installed in your app'
 authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
-To see the latest version of all the npm package installed, including their dependencies:
+To see the version of all installed npm packages, including their dependencies:
 
-```sh
+```bash
 npm list
 ```
 
-Example:
+For example:
 
-```txt
+```bash
 ❯ npm list
 /Users/joe/dev/node/cowsay
 └─┬ cowsay@1.3.1
@@ -34,15 +35,15 @@ You can also just open the `package-lock.json` file, but this involves some visu
 
 To get only your top-level packages (basically, the ones you told npm to install and you listed in the `package.json`), run `npm list --depth=0`:
 
-```txt
+```bash
 ❯ npm list --depth=0
 /Users/joe/dev/node/cowsay
 └── cowsay@1.3.1
 ```
 
-You can get the version of a specific package by specifying the name:
+You can get the version of a specific package by specifying its name:
 
-```txt
+```bash
 ❯ npm list cowsay
 /Users/joe/dev/node/cowsay
 └── cowsay@1.3.1
@@ -50,7 +51,7 @@ You can get the version of a specific package by specifying the name:
 
 This also works for dependencies of packages you installed:
 
-```txt
+```bash
 ❯ npm list minimist
 /Users/joe/dev/node/cowsay
 └─┬ cowsay@1.3.1
@@ -60,7 +61,7 @@ This also works for dependencies of packages you installed:
 
 If you want to see what's the latest available version of the package on the npm repository, run `npm view [package_name] version`:
 
-```txt
+```bash
 ❯ npm view cowsay version
 
 1.3.1

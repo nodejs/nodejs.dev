@@ -54,6 +54,33 @@ In the case of an objection being raised in a pull request by another collaborat
 * [`squash`][] pull-requests made up of multiple commits
 * Land how you like as long as there are no merge commits
 
+## How to become a collaborator
+
+* Collaborators must be actively contributing to the project
+* A Pull Request must be opened on the @nodejs/nodejs.dev README file adding the new collaborator to the list (note the order of names)
+* The Pull Request must be approved by at least two members of @nodejs/nodejs.dev, @nodejs/website, or @nodejs/website-redesign
+* Pull Request must remain open for 72 hours without any objections
+* Once the requirements are met and approved, the pull request can be merged and a member of @nodejs/community-committee will add the new member to the [@nodejs/nodejs-dev team](https://github.com/orgs/nodejs/teams/nodejs-dev)
+## Getting Started
+
+* Fork
+* Clone your fork `git clone git@github.com:<githubid>/nodejs.dev.git`
+* cd into your project
+* Add the following to your remotes by doing `git remote add upstream git@github.com:nodejs/nodejs.dev.git`
+* Create a new branch for your awesome work `git checkout -b branchname`
+* Commit your work
+* Push to your branch `git push -u origin yourbranch`
+* Make a pull request
+
+## Storybook
+
+This project uses [Storybook][], a tool which provides a sandbox environment for developing UI components. To generate the Storybook locally:
+
+* Run `npm run storybook`
+* Navigate to `localhost:6006`
+
+The production Storybook can be viewed at <https://nodejs.dev/storybook>
+
 ## Developer's Certificate of Origin 1.1
 
 By making a contribution to this project, I certify that:
@@ -72,5 +99,6 @@ By making a contribution to this project, I certify that:
   including my sign-off) is maintained indefinitely and may be redistributed consistent
   with this project or the open source license(s) involved.
 
-[conventional commits]: https://www.conventionalcommits.org/
 [`squash`]: https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits
+[conventional commits]: https://www.conventionalcommits.org/
+[Storybook]: https://storybook.js.org/

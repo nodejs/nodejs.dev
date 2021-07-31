@@ -3,9 +3,10 @@ title: Semantic Versioning using npm
 description: 'Semantic Versioning is a convention used to provide a meaning to versions'
 authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
-If there's one great thing in Node.js packages, is that all agreed on using Semantic Versioning for their version numbering.
+If there's one great thing in Node.js packages, it's that they all agreed on using Semantic Versioning for their version numbering.
 
 The Semantic Versioning concept is simple: all versions have 3 digits: `x.y.z`.
 
@@ -39,12 +40,12 @@ The rules use those symbols:
 
 Let's see those rules in detail:
 
-* `^`: if you write `^0.13.0` when running `npm update` it can update to patch and minor releases: `0.13.1`, `0.14.0` and so on.
-* `~`: if you write `~0.13.0`, when running `npm update` it can update to patch releases: `0.13.1` is ok, but `0.14.0` is not.
+* `^`:  It will only do updates that do not change the leftmost non-zero number. If you write `^0.13.0`, when running `npm update`, it can update to `0.13.1`, `0.13.2`, and so on, but not to `0.14.0` or above.
+* `~`: if you write `~0.13.0` when running `npm update` it can update to patch releases: `0.13.1` is ok, but `0.14.0` is not.
 * `>`: you accept any version higher than the one you specify
 * `>=`: you accept any version equal to or higher than the one you specify
 * `<=`: you accept any version equal or lower to the one you specify
-* `<`: you accept any version lower to the one you specify
+* `<`: you accept any version lower than the one you specify
 * `=`: you accept that exact version
 * `-`: you accept a range of versions. Example: `2.1.0 - 2.6.2`
 * `||`: you combine sets. Example: `< 2.1 || > 2.6`

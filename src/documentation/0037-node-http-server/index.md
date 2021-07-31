@@ -1,14 +1,15 @@
 ---
 title: 'Build an HTTP Server'
 description: 'How to build an HTTP server with Node.js'
-authors: flaviocopes, potch, MylesBorins, LaRuaNa, ahmadawais
+authors: flaviocopes, potch, MylesBorins, LaRuaNa, ahmadawais, dogafincan
 section: Getting Started
+category: learn
 ---
 
 Here is a sample Hello World HTTP web server:
 
 <iframe
-  allow="geolocation; microphone; camera; midi; encrypted-media"
+  title="Build an HTTP Server"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0037-01?path=server.js&previewSize=33&attributionHidden=true&sidebarCollapsed=true"
   alt="nodejs-dev-0037-01 on Glitch"
   style="height: 400px; width: 100%; border: 0;">
@@ -17,16 +18,16 @@ Here is a sample Hello World HTTP web server:
 <!--```js
 const http = require('http')
 
-const port = 3000
+const port = process.env.PORT
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200
-  res.setHeader('Content-Type', 'text/plain')
-  res.end('Hello World\n')
+  res.setHeader('Content-Type', 'text/html')
+  res.end('<h1>Hello, World!</h1>')
 })
 
 server.listen(port, () => {
-  console.log(`Server running at http://${hostname}:${port}/`)
+  console.log(`Server running at port ${port}`)
 })
 ```-->
 
@@ -53,11 +54,11 @@ we set the statusCode property to 200, to indicate a successful response.
 We also set the Content-Type header:
 
 ```js
-res.setHeader('Content-Type', 'text/plain')
+res.setHeader('Content-Type', 'text/html')
 ```
 
 and we end close the response, adding the content as an argument to `end()`:
 
 ```js
-res.end('Hello World\n')
+res.end('<h1>Hello, World!</h1>')
 ```

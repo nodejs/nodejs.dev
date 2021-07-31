@@ -3,6 +3,7 @@ title: Output to the command line using Node.js
 description: 'How to print to the command line console using Node.js, from the basic console.log to more complex scenarios'
 authors: flaviocopes, potch, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## Basic output using the console module
@@ -55,7 +56,7 @@ console.log('%o', Number)
 Take this code:
 
 <iframe
-  allow="geolocation; microphone; camera; midi; encrypted-media"
+  title="Output to the command line using Node.js"
   src="https://glitch.com/embed/#!/embed/nodejs-dev-0013-02?path=server.js&previewSize=40&attributionHidden=true&sidebarCollapsed=true"
   alt="nodejs-dev-0013-02 on Glitch"
   style="height: 400px; width: 100%; border: 0;">
@@ -78,7 +79,7 @@ console.count(
 ```
 -->
 
-What happens is that count will count the number of times a string is printed, and print the count next to it:
+What happens is that `console.count()` will count the number of times a string is printed, and print the count next to it:
 
 You can just count apples and oranges:
 
@@ -92,6 +93,29 @@ apples.forEach(fruit => {
   console.count(fruit)
 })
 ```
+## Reset counting
+The console.countReset() method resets counter used with console.count().
+
+We will use the apples and orange example to demonstrate this.
+
+```js
+const oranges = ['orange', 'orange']
+const apples = ['just one apple']
+oranges.forEach(fruit => {
+  console.count(fruit)
+})
+apples.forEach(fruit => {
+  console.count(fruit)
+})
+
+console.countReset('orange')
+
+oranges.forEach(fruit => {
+  console.count(fruit)
+})
+```
+
+Notice how the call to `console.counterReset('orange')` resets the value counter to zero.
 
 ## Print the stack trace
 
@@ -107,7 +131,7 @@ function1()
 
 This will print the stack trace. This is what's printed if we try this in the Node.js REPL:
 
-```txt
+```bash
 Trace
     at function2 (repl:1:33)
     at function1 (repl:1:25)
