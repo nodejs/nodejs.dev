@@ -8,9 +8,9 @@
 
 ## Commit Guidelines
 
-This project follows the [Conventional Commits][] specification.
+This project follows the [Conventional Commits][] specification. Why? [See here](https://nodejs.dev/guides/commit-messages)
 
-There is a built-in commit linter. Basic rules:
+Basic rules:
 
 * Commit messages must be prefixed with the name of the changed subsystem, followed by a colon and a space and start with an imperative verb. Check the output of `git log --oneline files/you/changed` to find out what subsystems your changes touch.
 
