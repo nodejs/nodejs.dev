@@ -4,6 +4,7 @@ import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import logoLight from '../../images/logos/nodejs-logo-light-mode.svg';
 import logoDark from '../../images/logos/nodejs-logo-dark-mode.svg';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
+import SearchBar from '../SearchBar';
 
 const Header = (): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
@@ -87,6 +88,10 @@ const Header = (): JSX.Element => {
 
         <div className="nav__endwrapper">
           <ul className="right-container">
+            <li>
+              {/* real search bar goes here */}
+              <SearchBar />
+            </li>
             <li className="nav__tabs nav__tabs--right">
               <ThemeToggler>
                 {({
