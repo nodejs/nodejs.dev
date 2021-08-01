@@ -189,6 +189,7 @@ also have commiter rights on the repo.
 * [@manishprivet](https://github.com/manishprivet) - Manish Kumar
 * [@marcustisater](https://github.com/marcustisater) - Marcus Tisäter
 * [@mbj36](https://github.com/mbj36) - Mohit kumar Bajoria
+* [@MrSlimCoder](https://github.com/Mrslimcoder) - Slim Coder
 * [@MylesBorins](https://github.com/MylesBorins) - Myles Borins
 * [@ogonzal87](https://github.com/ogonzal87) - Oscar Gonzalez
 * [@ollelauribostrom](https://github.com/ollelauribostrom) - Olle Lauri Boström
