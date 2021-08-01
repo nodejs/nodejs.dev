@@ -99,12 +99,12 @@ exports[`Releases page renders correctly 1`] = `
                   Toggle Dark Mode
                 </span>
                 <i
-                  class="material-icons light-mode-only"
+                  class="material-icons light-mode-only theme-buttons"
                 >
                   nights_stay
                 </i>
                 <i
-                  class="material-icons dark-mode-only"
+                  class="material-icons dark-mode-only theme-buttons"
                 >
                   wb_sunny
                 </i>
@@ -163,13 +163,6 @@ exports[`Releases page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/governance"
-            id="link-governance"
-          >
-            Project Governance
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
             href="/community"
             id="link-community"
           >
@@ -177,10 +170,24 @@ exports[`Releases page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/working-groups"
-            id="link-working-groups"
+            href="/download/package-manager"
+            id="link-download/package-manager"
           >
-            Working Groups
+            Package Manager
+          </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/privacy"
+            id="link-privacy"
+          >
+            Privacy Policy
+          </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/governance"
+            id="link-governance"
+          >
+            Project Governance
           </a>
           <a
             class="t-body2 side-nav__item-community side-nav__item-community--active"
@@ -198,6 +205,13 @@ exports[`Releases page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 side-nav__item-community"
+            href="/security"
+            id="link-security"
+          >
+            Security Reporting
+          </a>
+          <a
+            class="t-body2 side-nav__item-community"
             href="/trademark"
             id="link-trademark"
           >
@@ -205,17 +219,10 @@ exports[`Releases page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/privacy"
-            id="link-privacy"
+            href="/working-groups"
+            id="link-working-groups"
           >
-            Privacy Policy
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/security"
-            id="link-security"
-          >
-            Security Reporting
+            Working Groups
           </a>
         </ul>
       </nav>

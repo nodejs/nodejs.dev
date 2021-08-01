@@ -99,12 +99,12 @@ exports[`Blog page renders correctly 1`] = `
                   Toggle Dark Mode
                 </span>
                 <i
-                  class="material-icons light-mode-only"
+                  class="material-icons light-mode-only theme-buttons"
                 >
                   nights_stay
                 </i>
                 <i
-                  class="material-icons dark-mode-only"
+                  class="material-icons dark-mode-only theme-buttons"
                 >
                   wb_sunny
                 </i>
@@ -410,12 +410,12 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
                   Toggle Dark Mode
                 </span>
                 <i
-                  class="material-icons light-mode-only"
+                  class="material-icons light-mode-only theme-buttons"
                 >
                   nights_stay
                 </i>
                 <i
-                  class="material-icons dark-mode-only"
+                  class="material-icons dark-mode-only theme-buttons"
                 >
                   wb_sunny
                 </i>

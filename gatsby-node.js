@@ -3,6 +3,7 @@ const path = require('path');
 const fetch = require('node-fetch');
 const createSlug = require('./util-node/createSlug');
 const getReleaseStatus = require('./util-node/getReleaseStatus');
+const redirects = require('./util-node/redirects');
 
 const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
 
@@ -12,6 +13,14 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const docTemplate = path.resolve('./src/templates/learn.tsx');
     const blogTemplate = path.resolve('./src/templates/blog.tsx');
+
+    Object.keys(redirects).forEach(from => {
+      createRedirect({
+        fromPath: from,
+        toPath: redirects[from],
+        isPermanent: true,
+      });
+    });
 
     resolve(
       graphql(
@@ -32,6 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
                       "about"
                       "governance"
                       "security"
+                      "package-manager"
                     ]
                   }
                 }
@@ -235,7 +245,7 @@ exports.sourceNodes = async ({
   createContentDigest,
   reporter: { activityTimer },
 }) => {
-  const activity = activityTimer('Fetching Node release data');
+  let activity = activityTimer('Fetching Node release data');
   activity.start();
   try {
     const releasesDataDetailURL = 'https://nodejs.org/dist/index.json';
@@ -300,6 +310,38 @@ exports.sourceNodes = async ({
     };
 
     await createNode(nodeReleases);
+
+    activity.end();
+    activity = activityTimer('Fetching Banners');
+    activity.start();
+
+    const siteResponse = await fetch(
+      'https://raw.githubusercontent.com/nodejs/nodejs.org/master/locale/en/site.json'
+    );
+    const siteData = await siteResponse.json();
+    const { banners: bannersData } = siteData;
+
+    const bannersContent = JSON.stringify(bannersData);
+
+    const bannersMeta = {
+      id: createNodeId('banners'),
+      parent: null,
+      children: [],
+      internal: {
+        type: 'Banners',
+        mediaType: 'application/json',
+        content: bannersContent,
+        contentDigest: createContentDigest(bannersData),
+      },
+    };
+
+    const banners = {
+      ...bannersData,
+      ...bannersMeta,
+    };
+
+    await createNode(banners);
+
     activity.end();
   } catch (err) {
     activity.panic(err);

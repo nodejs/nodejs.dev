@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React, { MouseEvent, KeyboardEvent } from 'react';
+import React from 'react';
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import logoLight from '../../images/logos/nodejs-logo-light-mode.svg';
 import logoDark from '../../images/logos/nodejs-logo-dark-mode.svg';
@@ -9,16 +9,16 @@ const Header = (): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
 
   const handleThemeOnClick = (
-    e: MouseEvent<HTMLButtonElement, Event> | KeyboardEvent<HTMLButtonElement>,
     // eslint-disable-next-line @typescript-eslint/ban-types
     toggleTheme: Function,
+    currentTheme: string,
     isKeyPress = false
   ): void => {
     if (isKeyPress) {
       return;
     }
-    const target = e.target as HTMLElement;
-    const toggle = target.innerHTML.includes('nights_stay') ? 'dark' : 'light';
+
+    const toggle = currentTheme === 'light' ? 'dark' : 'light';
     toggleTheme(toggle);
   };
 
@@ -103,17 +103,21 @@ const Header = (): JSX.Element => {
                   return (
                     <button
                       type="button"
-                      onClick={(e): void => handleThemeOnClick(e, toggleTheme)}
+                      onClick={(): void =>
+                        handleThemeOnClick(toggleTheme, theme)
+                      }
                       className="dark-mode-toggle"
-                      onKeyPress={(e): void =>
-                        handleThemeOnClick(e, toggleTheme, true)
+                      onKeyPress={(): void =>
+                        handleThemeOnClick(toggleTheme, theme, true)
                       }
                     >
                       <span className="sr-only">Toggle Dark Mode</span>
-                      <i className="material-icons light-mode-only">
+                      <i className="material-icons light-mode-only theme-buttons">
                         nights_stay
                       </i>
-                      <i className="material-icons dark-mode-only">wb_sunny</i>
+                      <i className="material-icons dark-mode-only theme-buttons">
+                        wb_sunny
+                      </i>
                     </button>
                   );
                 }}

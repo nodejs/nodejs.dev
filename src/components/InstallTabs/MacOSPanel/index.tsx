@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import ShellBox from '../../ShellBox';
 import '../InstallTabs.scss';
@@ -17,14 +18,12 @@ const MacOSPanel = (): JSX.Element => {
       </ShellBox>
       <br />
       <br />
-      <a
+      <Link
         className="install__docs-button"
-        href="https://nodejs.org/en/download/package-manager/#nvm"
-        target="_blank"
-        rel="noopener noreferrer"
+        to="/download/package-manager/#nvm"
       >
         Read documentation
-      </a>
+      </Link>
     </div>
   );
 };
