@@ -27,7 +27,7 @@ exports[`Navigation component renders correctly 1`] = `
       </h2>
       <a
         class="t-body2 side-nav__item side-nav__item--active"
-        href="/learn/intro"
+        href="/category1/intro"
         id="link-intro"
       >
         Section 1

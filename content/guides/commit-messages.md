@@ -3,6 +3,7 @@ title: Commit Messages
 description: Standard commit messages style
 authors: lancemccluskey
 category: guides
+section: Guides
 ---
 
 ## Introduction

@@ -25,6 +25,7 @@ export const root = (): JSX.Element => (
         category: 'category1',
       },
     ]}
+    category="category1"
     currentSlug=""
     onItemClick={noop}
     readSections={new Set()}

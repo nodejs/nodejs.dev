@@ -13,6 +13,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const docTemplate = path.resolve('./src/templates/learn.tsx');
     const blogTemplate = path.resolve('./src/templates/blog.tsx');
+    const guidesTemplate = path.resolve('./src/templates/guides.tsx');
 
     Object.keys(redirects).forEach(from => {
       createRedirect({
@@ -176,6 +177,25 @@ exports.createPages = ({ graphql, actions }) => {
               fromPath: `/${page.slug}`,
               toPath: `/learn/${page.slug}`,
               isPermanent: true,
+            });
+          } else if (page.category === 'guides') {
+            createPage({
+              path: `/guides/${page.slug}`,
+              component: guidesTemplate,
+              context,
+            });
+            createRedirect({
+              fromPath: `/${page.slug}`,
+              toPath: `/guides/${page.slug}`,
+              isPermanent: true,
+            });
+          }
+
+          if (page.slug === 'commit-messages') {
+            createPage({
+              path: `/guides`,
+              component: guidesTemplate,
+              context,
             });
           }
 

@@ -22,6 +22,7 @@ describe('NavigationSection component', (): void => {
         currentSlug=""
         onItemClick={noop}
         readSections={new Set()}
+        category="learn"
       />
     );
     expect(container).toMatchSnapshot();

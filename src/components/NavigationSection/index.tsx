@@ -9,6 +9,7 @@ interface Props {
   currentSlug: string;
   onItemClick: () => void;
   readSections: Set<NavigationSectionItem['slug']>;
+  category: string;
 }
 
 const NavigationSection = ({
@@ -17,6 +18,7 @@ const NavigationSection = ({
   currentSlug,
   onItemClick,
   readSections,
+  category,
 }: Props): JSX.Element => {
   return (
     <ul className="side-nav__list">
@@ -32,6 +34,7 @@ const NavigationSection = ({
             key={item.slug}
             title={item.title}
             slug={item.slug}
+            baseUrl={`/${category}/`}
             isRead={isRead}
             isActive={item.slug === currentSlug}
             onClick={onItemClick}

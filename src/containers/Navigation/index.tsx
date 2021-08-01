@@ -108,6 +108,7 @@ const Navigation = ({
               currentSlug={currentSlug}
               onItemClick={onItemClick}
               readSections={readSections}
+              category={category}
             />
           )
       )}
