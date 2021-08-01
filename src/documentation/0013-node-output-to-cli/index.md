@@ -3,6 +3,7 @@ title: Output to the command line using Node.js
 description: 'How to print to the command line console using Node.js, from the basic console.log to more complex scenarios'
 authors: flaviocopes, potch, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## Basic output using the console module
@@ -92,6 +93,29 @@ apples.forEach(fruit => {
   console.count(fruit)
 })
 ```
+## Reset counting
+The console.countReset() method resets counter used with console.count().
+
+We will use the apples and orange example to demonstrate this.
+
+```js
+const oranges = ['orange', 'orange']
+const apples = ['just one apple']
+oranges.forEach(fruit => {
+  console.count(fruit)
+})
+apples.forEach(fruit => {
+  console.count(fruit)
+})
+
+console.countReset('orange')
+
+oranges.forEach(fruit => {
+  console.count(fruit)
+})
+```
+
+Notice how the call to `console.counterReset('orange')` resets the value counter to zero.
 
 ## Print the stack trace
 

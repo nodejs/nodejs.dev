@@ -3,6 +3,7 @@ title: 'Build an HTTP Server'
 description: 'How to build an HTTP server with Node.js'
 authors: flaviocopes, potch, MylesBorins, LaRuaNa, ahmadawais, dogafincan
 section: Getting Started
+category: learn
 ---
 
 Here is a sample Hello World HTTP web server:

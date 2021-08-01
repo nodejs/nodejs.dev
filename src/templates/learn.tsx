@@ -25,7 +25,7 @@ const LearnLayout = ({
   },
   pageContext: { slug, next, previous, relativePath, navigationData },
   location,
-}: Props): React.ReactNode => {
+}: Props): JSX.Element => {
   let previousSlug = '';
 
   if (typeof window !== 'undefined' && window.previousPath) {
@@ -48,6 +48,7 @@ const LearnLayout = ({
             previousSlug={previousSlug}
             label="Secondary"
             sections={navigationData}
+            category="learn"
           />
           <Article
             title={title}
@@ -68,7 +69,10 @@ export default LearnLayout;
 
 export const query = graphql`
   query DocBySlug($slug: String!) {
-    doc: markdownRemark(fields: { slug: { eq: $slug } }) {
+    doc: markdownRemark(
+      fields: { slug: { eq: $slug } }
+      frontmatter: { category: { eq: "learn" } }
+    ) {
       id
       html
       tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")

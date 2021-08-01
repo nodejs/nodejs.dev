@@ -9,6 +9,7 @@ interface Props {
   currentSlug: string;
   previousSlug: string;
   label: string;
+  category: string;
 }
 
 const Navigation = ({
@@ -16,6 +17,7 @@ const Navigation = ({
   currentSlug,
   previousSlug,
   label,
+  category,
 }: Props): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const navElement = useRef<HTMLElement | null>(null);
@@ -38,9 +40,19 @@ const Navigation = ({
           nav
         );
         // If it's mobile screen and nav is not open, do nothing
-        if (isMobileScreen() && !isOpen) return;
+        if (isMobileScreen() && !isOpen) {
+          (document.querySelector(':root') as HTMLElement).style.overflowY =
+            'initial';
+          (document.querySelector('.nav') as HTMLElement).style.position =
+            'sticky';
+          return;
+        }
         // If it's mobile screen, directly scroll to current element when nav opens
         if (isMobileScreen()) {
+          (document.querySelector(':root') as HTMLElement).style.overflowY =
+            'hidden';
+          (document.querySelector('.nav') as HTMLElement).style.position =
+            'fixed';
           scrollTo(newScrollPos, scrollWindow, scrollTime);
         } else if (!previousSlug) {
           // If there's no previous slug, directly scroll to the current link
@@ -69,7 +81,7 @@ const Navigation = ({
   // their unique slugs in `readSections` set.
   Object.keys(sections).some((sectionKey): boolean => {
     let isCurrentSlug = false;
-    sections[sectionKey].some((sectionItem): boolean => {
+    sections[sectionKey].data.some((sectionItem): boolean => {
       isCurrentSlug = sectionItem.slug === currentSlug;
       if (!isCurrentSlug) {
         readSections.add(sectionItem.slug);
@@ -88,11 +100,11 @@ const Navigation = ({
       </button>
       {Object.keys(sections).map(
         (sectionKey: string): false | JSX.Element =>
-          sectionKey !== 'null' && (
+          sections[sectionKey].category === category && (
             <NavigationSection
               key={sectionKey}
               title={sectionKey}
-              section={sections[sectionKey]}
+              section={sections[sectionKey].data}
               currentSlug={currentSlug}
               onItemClick={onItemClick}
               readSections={readSections}

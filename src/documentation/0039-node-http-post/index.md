@@ -3,6 +3,7 @@ title: Make an HTTP POST request using Node.js
 description: 'Find out how to make an HTTP POST request using Node.js'
 authors: flaviocopes, OnyekaIjeh, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 There are many ways to perform an HTTP POST request in Node.js, depending on the abstraction level you want to use.
@@ -17,7 +18,7 @@ axios
     todo: 'Buy the milk'
   })
   .then(res => {
-    console.log(`statusCode: ${res.statusCode}`)
+    console.log(`statusCode: ${res.status}`)
     console.log(res)
   })
   .catch(error => {

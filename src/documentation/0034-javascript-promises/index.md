@@ -3,6 +3,7 @@ title: Understanding JavaScript Promises
 description: 'Promises are one way to deal with asynchronous code in JavaScript, without writing too many callbacks in your code.'
 authors: flaviocopes, potch, MylesBorins, LaRuaNa, bdharrington7, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## Introduction to promises
@@ -143,6 +144,7 @@ fetch('/todos.json')
     console.log('Request failed', error)
   })
 ```
+> <code><a href="https://www.npmjs.com/package/node-fetch">node-fetch</a></code> is  minimal code for window.fetch compatible API on Node.js runtime.
 
 In this example, we call `fetch()` to get a list of TODO items from the `todos.json` file found in the domain root, and we create a chain of promises.
 
@@ -153,7 +155,7 @@ Running `fetch()` returns a [response](https://fetch.spec.whatwg.org/#concept-re
 
 `response` also has a `json()` method, which returns a promise that will resolve with the content of the body processed and transformed into JSON.
 
-So given those premises, this is what happens: the first promise in the chain is a function that we defined, called `status()`, that checks the response status and if it's not a success response (between 200 and 299), it rejects the promise.
+So given those promises, this is what happens: the first promise in the chain is a function that we defined, called `status()`, that checks the response status and if it's not a success response (between 200 and 299), it rejects the promise.
 
 This operation will cause the promise chain to skip all the chained promises listed and will skip directly to the `catch()` statement at the bottom, logging the `Request failed` text along with the error message.
 

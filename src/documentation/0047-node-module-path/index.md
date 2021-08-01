@@ -3,6 +3,7 @@ title: 'The Node.js path module'
 description: 'The path module of Node.js provides useful functions to interact with file paths'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, 19shubham11
 section: Getting Started
+category: learn
 ---
 
 The `path` module provides a lot of very useful functionality to access and interact with the file system.
@@ -64,7 +65,7 @@ require('path').format({ dir: '/Users/joe', base: 'test.txt' }) //  '/Users/joe/
 
 require('path').format({ root: '/Users/joe', name: 'test', ext: 'txt' }) //  '/Users/joe/test.txt'
 
-//WINODWS
+// WINDOWS
 require('path').format({ dir: 'C:\\Users\\joe', base: 'test.txt' }) //  'C:\\Users\\joe\\test.txt'
 ```
 
