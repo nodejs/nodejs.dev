@@ -130,5 +130,51 @@ module.exports = {
     },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-meta-redirect',
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'learn-pages',
+        engine: 'flexsearch',
+        engineOptions: 'speed',
+        query: `
+        {
+          allMarkdownRemark {
+            edges {
+              node {
+                fields {
+                  slug
+                }
+                id
+                rawMarkdownBody
+                frontmatter {
+                  title
+                  description
+                }
+         
+              }
+        
+            }
+          }
+        }        
+        `,
+        ref: 'id',
+        index: ['title', 'body', 'description', 'slug'],
+        store: ['id', 'title', 'body', 'description', 'slug'],
+        normalizer: ({ error, data }) => {
+          if (error) {
+            throw error;
+          }
+          return data.allMarkdownRemark.edges.map(node => {
+            return {
+              id: node.node.id,
+              title: node.node.frontmatter.title,
+              body: node.node.rawMarkdownBody,
+              description: node.node.frontmatter.description,
+              slug: node.node.fields.slug,
+            };
+          });
+        },
+      },
+    },
   ],
 };
