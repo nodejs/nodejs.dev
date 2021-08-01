@@ -9,7 +9,16 @@ import {
   Page,
   NodeReleaseDataDetail,
   NodeReleaseData,
+  TableOfContents,
 } from '../../src/types';
+import mockMDXBodyContent from './mockMDXBodyContent';
+
+export const mockTableOfContents: TableOfContents = {
+  items: [
+    { title: 'mock-title', url: '#mock-title' },
+    { title: 'mock-title-2', url: '#mock-title-2' },
+  ],
+};
 
 export const createPaginationInfo = (): PaginationInfo =>
   ({
@@ -59,7 +68,8 @@ export const createLearnPageData = (): LearnPageData =>
   ({
     doc: {
       id: 'test-id',
-      html: '<span>Test html</span>',
+      body: mockMDXBodyContent,
+      tableOfContents: mockTableOfContents,
       frontmatter: {
         title: 'test-title',
         description: 'test-description',
@@ -163,7 +173,7 @@ export const createBlogData = (): BlogPostsList =>
 
 export const createBlogPageData = (): BlogPageData => ({
   blog: {
-    html: 'html-mock',
+    body: mockMDXBodyContent,
     excerpt: 'excerpt-mock',
     frontmatter: {
       title: 't,itle-mock',
@@ -208,8 +218,8 @@ export const createGeneralPageData = (): Page => ({
         description: 'Mock Description',
         title: 'Mock Title',
       },
-      html: '<div>Sample</div>',
-      tableOfContents: 'Table of Content',
+      body: mockMDXBodyContent,
+      tableOfContents: mockTableOfContents,
     },
   },
 });
@@ -224,8 +234,8 @@ export const createResourcesData = (): Page => ({
         description: 'Mock Description',
         title: 'Mock Title',
       },
-      html: '<div>Sample</div>',
-      tableOfContents: 'Table of Content',
+      body: mockMDXBodyContent,
+      tableOfContents: mockTableOfContents,
     },
   },
 });
@@ -240,8 +250,8 @@ export const createPrivacyData = (): Page => ({
         description: 'Description',
         title: 'Title',
       },
-      html: '<div>Sample</div>',
-      tableOfContents: 'Table of Contents',
+      body: mockMDXBodyContent,
+      tableOfContents: mockTableOfContents,
     },
   },
 });

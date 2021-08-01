@@ -9,7 +9,7 @@ import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
 
 export default function WorkingGroupsPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
-  const { html } = data.page;
+  const { body } = data.page;
   const { authors } = data.page.fields;
   return (
     <>
@@ -18,7 +18,7 @@ export default function WorkingGroupsPage({ data }: Page): JSX.Element {
           <SideNavBar pageKey={SideNavBarKeys.workingGroups} />
           <Article
             title={title}
-            html={html}
+            body={body}
             authors={authors}
             editPath="content/about/working-groups.md"
           />
@@ -31,9 +31,9 @@ export default function WorkingGroupsPage({ data }: Page): JSX.Element {
 
 export const query = graphql`
   query {
-    page: markdownRemark(fields: { slug: { eq: "working-groups" } }) {
-      html
-      tableOfContents(absolute: true, pathToSlugField: "frontmatter.path")
+    page: mdx(fields: { slug: { eq: "working-groups" } }) {
+      body
+      tableOfContents
       frontmatter {
         title
         description

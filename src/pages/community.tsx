@@ -11,7 +11,7 @@ import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
 
 export default function CommunityPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
-  const { html, tableOfContents } = data.page;
+  const { body, tableOfContents } = data.page;
   const { authors } = data.page.fields;
 
   return (
@@ -21,7 +21,7 @@ export default function CommunityPage({ data }: Page): JSX.Element {
           <SideNavBar pageKey={SideNavBarKeys.community} />
           <Article
             title={title}
-            html={html}
+            body={body}
             tableOfContents={tableOfContents}
             authors={authors}
             editPath="content/community/index.md"
@@ -35,9 +35,9 @@ export default function CommunityPage({ data }: Page): JSX.Element {
 
 export const query = graphql`
   query {
-    page: markdownRemark(fields: { slug: { eq: "nodejs-community" } }) {
-      html
-      tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
+    page: mdx(fields: { slug: { eq: "nodejs-community" } }) {
+      body
+      tableOfContents
       frontmatter {
         title
         description

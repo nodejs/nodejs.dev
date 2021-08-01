@@ -1,0 +1,38 @@
+.prism-code {
+  padding: 0 !important;
+
+  .shell-box-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    span,
+    button {
+      width: 86px;
+      height: 23px;
+      font-size: var(--font-size-code);
+      display: inherit;
+      align-items: center;
+      justify-content: center;
+    }
+
+    span {
+      color: var(--black9);
+      background-color: var(--black3);
+      border-radius: 0 0 0.3rem 0.3rem;
+    }
+
+    button {
+      border-width: 0;
+      border-radius: 0 0.3rem 0.3rem 0.3rem;
+      background-color: var(--brand2);
+      i {
+        padding: 0;
+      }
+    }
+  }
+
+  .token-line {
+    margin: 0 1em !important;
+  }
+}

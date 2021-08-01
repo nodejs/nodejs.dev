@@ -17,7 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allMarkdownRemark(
+            allMdx(
               filter: {
                 fields: {
                   slug: {
@@ -43,7 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
                 node {
                   id
                   fileAbsolutePath
-                  html
+                  body
                   parent {
                     ... on File {
                       relativePath
@@ -86,7 +86,7 @@ exports.createPages = ({ graphql, actions }) => {
           console.log(result.errors);
           reject(result.errors);
         }
-        const { edges } = result.data.allMarkdownRemark;
+        const { edges } = result.data.allMdx;
         let navigationData = {};
         const docPages = [];
         edges.forEach(({ node }, index) => {
@@ -184,7 +184,7 @@ exports.createPages = ({ graphql, actions }) => {
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  if (node.internal.type === 'MarkdownRemark') {
+  if (node.internal.type === 'Mdx') {
     const { createNodeField } = actions;
 
     const { fileAbsolutePath } = node;
