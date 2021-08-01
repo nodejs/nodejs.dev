@@ -22,7 +22,8 @@ exports[`UpcomingReleases component renders correctly 1`] = `
           role="tab"
           tabindex="0"
         >
-          Node.js 12
+          Node.js 
+          v12
         </li>
         <li
           aria-controls="react-tabs-3"
@@ -32,27 +33,8 @@ exports[`UpcomingReleases component renders correctly 1`] = `
           id="react-tabs-2"
           role="tab"
         >
-          Node.js 13
-        </li>
-        <li
-          aria-controls="react-tabs-5"
-          aria-disabled="false"
-          aria-selected="false"
-          class="react-tabs__tab"
-          id="react-tabs-4"
-          role="tab"
-        >
-          Node.js 14
-        </li>
-        <li
-          aria-controls="react-tabs-7"
-          aria-disabled="false"
-          aria-selected="false"
-          class="react-tabs__tab"
-          id="react-tabs-6"
-          role="tab"
-        >
-          Node.js 15
+          Node.js 
+          v14
         </li>
       </ul>
       <div
@@ -65,7 +47,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
           class="upcoming-releases__panel"
         >
           <div
-            class="upcoming-releases__item--current"
+            class="upcoming-releases__item--Current"
           >
             <img
               alt="hexagon icon"
@@ -85,7 +67,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             </p>
           </div>
           <div
-            class="upcoming-releases__item--lts"
+            class="upcoming-releases__item--LTS"
           >
             <img
               alt="hexagon icon"
@@ -105,7 +87,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             </p>
           </div>
           <div
-            class="upcoming-releases__item--maintenance"
+            class="upcoming-releases__item--Maintenance Release"
           >
             <img
               alt="hexagon icon"
@@ -121,11 +103,11 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             >
               Released
                
-              2020-10-20
+              2020-11-30
             </p>
           </div>
           <div
-            class="upcoming-releases__item--endoflife upcoming-releases__item--to-be-released"
+            class="upcoming-releases__item--End-of-life Release upcoming-releases__item--to-be-released"
           >
             <img
               alt="hexagon icon"
@@ -150,18 +132,6 @@ exports[`UpcomingReleases component renders correctly 1`] = `
         aria-labelledby="react-tabs-2"
         class="react-tabs__tab-panel"
         id="react-tabs-3"
-        role="tabpanel"
-      />
-      <div
-        aria-labelledby="react-tabs-4"
-        class="react-tabs__tab-panel"
-        id="react-tabs-5"
-        role="tabpanel"
-      />
-      <div
-        aria-labelledby="react-tabs-6"
-        class="react-tabs__tab-panel"
-        id="react-tabs-7"
         role="tabpanel"
       />
     </div>

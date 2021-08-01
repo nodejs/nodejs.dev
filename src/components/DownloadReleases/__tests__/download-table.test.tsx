@@ -6,7 +6,7 @@ describe('DownloadTable component', (): void => {
   it('renders correctly', (): void => {
     const { container } = render(
       <DownloadTable
-        releases={[
+        nodeReleasesData={[
           {
             release: 'v15',
             status: 'Pending',

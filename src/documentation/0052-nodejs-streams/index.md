@@ -3,6 +3,7 @@ title: Node.js Streams
 description: 'Learn what streams are for, why are they so important, and how to use them.'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, r0mflip, ahmadawais, 19shubham11
 section: Getting Started
+category: learn
 ---
 
 ## What are streams
@@ -241,7 +242,7 @@ First create a transform stream object:
 
 ```js
 const { Transform } = require('stream')
-const TransformStream = new Transform;
+const TransformStream = new Transform();
 ```
 
 then implement `_transform`:

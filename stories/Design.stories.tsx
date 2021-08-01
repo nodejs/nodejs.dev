@@ -54,7 +54,9 @@ export const TextStyles = (): JSX.Element => (
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const Colors = () => {
   const colorSquares = Object.keys(tokens).map(key => {
-    const bgIsDark = Color(colorString.get.rgb(tokens[key])).isDark();
+    const bgIsDark = Color(
+      colorString.get.rgb(tokens[key]) as number[]
+    ).isDark();
 
     return (
       // eslint-disable-next-line react/jsx-key

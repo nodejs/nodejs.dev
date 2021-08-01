@@ -1,6 +1,9 @@
 // Use in this file CommonJS syntax see https://www.gatsbyjs.org/docs/migrating-from-v1-to-v2/#convert-to-either-pure-commonjs-or-pure-es6
 const path = require('path');
+const fetch = require('node-fetch');
 const createSlug = require('./util-node/createSlug');
+const getReleaseStatus = require('./util-node/getReleaseStatus');
+const redirects = require('./util-node/redirects');
 
 const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
 
@@ -11,13 +14,37 @@ exports.createPages = ({ graphql, actions }) => {
     const docTemplate = path.resolve('./src/templates/learn.tsx');
     const blogTemplate = path.resolve('./src/templates/blog.tsx');
 
+    Object.keys(redirects).forEach(from => {
+      createRedirect({
+        fromPath: from,
+        toPath: redirects[from],
+        isPermanent: true,
+      });
+    });
+
     resolve(
       graphql(
         `
           {
             allMarkdownRemark(
               filter: {
-                fields: { slug: { nin: ["", "nodejs-community", "homepage"] } }
+                fields: {
+                  slug: {
+                    nin: [
+                      ""
+                      "nodejs-community"
+                      "homepage"
+                      "trademark-policy"
+                      "working-groups"
+                      "resources"
+                      "privacy-policy"
+                      "about"
+                      "governance"
+                      "security"
+                      "package-manager"
+                    ]
+                  }
+                }
               }
               sort: { fields: [fileAbsolutePath], order: ASC }
             ) {
@@ -36,6 +63,7 @@ exports.createPages = ({ graphql, actions }) => {
                     description
                     authors
                     section
+                    category
                   }
                   fields {
                     slug
@@ -73,7 +101,7 @@ exports.createPages = ({ graphql, actions }) => {
         edges.forEach(({ node }, index) => {
           const {
             fields: { slug },
-            frontmatter: { title, section },
+            frontmatter: { title, section, category },
             parent: { relativePath },
           } = node;
 
@@ -98,13 +126,19 @@ exports.createPages = ({ graphql, actions }) => {
 
           let data;
           if (!navigationData[section]) {
-            data = { title, slug, section };
-            navigationData = { ...navigationData, [section]: [data] };
-          } else {
-            data = { title, slug, section };
+            data = { title, slug, section, category };
             navigationData = {
               ...navigationData,
-              [section]: [...navigationData[section], data],
+              [section]: { data: [data], category },
+            };
+          } else {
+            data = { title, slug, section, category };
+            navigationData = {
+              ...navigationData,
+              [section]: {
+                data: [...navigationData[section].data, data],
+                category: navigationData[section].category,
+              },
             };
           }
           docPages.push({
@@ -112,6 +146,7 @@ exports.createPages = ({ graphql, actions }) => {
             next: nextNodeData,
             previous: previousNodeData,
             relativePath,
+            category,
           });
         });
 
@@ -122,15 +157,16 @@ exports.createPages = ({ graphql, actions }) => {
             previous: page.previous,
             relativePath: page.relativePath,
             navigationData,
+            category: page.category,
           };
 
-          if (page.slug.includes('/blog/')) {
+          if (page.category === 'blog') {
             createPage({
               path: page.slug,
               component: blogTemplate,
               context,
             });
-          } else {
+          } else if (page.category === 'learn') {
             createPage({
               path: `/learn/${page.slug}`,
               component: docTemplate,
@@ -200,5 +236,114 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         value: authors,
       });
     }
+  }
+};
+
+exports.sourceNodes = async ({
+  actions: { createNode },
+  createNodeId,
+  createContentDigest,
+  reporter: { activityTimer },
+}) => {
+  let activity = activityTimer('Fetching Node release data');
+  activity.start();
+  try {
+    const releasesDataDetailURL = 'https://nodejs.org/dist/index.json';
+    const releasesDataURL =
+      'https://raw.githubusercontent.com/nodejs/Release/main/schedule.json';
+
+    const releasesDataDetailResponse = await fetch(releasesDataDetailURL);
+    const releasesDataDetailResult = await releasesDataDetailResponse.json();
+
+    const releasesDataResponse = await fetch(releasesDataURL);
+    const releasesDataResult = await releasesDataResponse.json();
+
+    const mappedReleasesDataDetail = releasesDataDetailResult
+      .map(release => ({
+        ...release,
+        lts: release.lts || '',
+      }))
+      .slice(0, 50);
+
+    const filteredReleasesData = Object.keys(releasesDataResult)
+      .filter(key => {
+        const release = releasesDataResult[key];
+        const end = new Date(release.end);
+        return end >= new Date();
+      })
+      .map(key => {
+        const release = releasesDataResult[key];
+
+        return {
+          endOfLife: release.end,
+          maintenanceLTSStart: release.maintenance || '',
+          activeLTSStart: release.lts || '',
+          codename: release.codename || '',
+          initialRelease: release.start,
+          release: key,
+          status: getReleaseStatus(release),
+        };
+      });
+
+    const nodeReleasesData = {
+      nodeReleasesDataDetail: mappedReleasesDataDetail,
+      nodeReleasesData: filteredReleasesData,
+    };
+
+    const nodeReleasesDataContent = JSON.stringify(nodeReleasesData);
+
+    const nodeReleasesMeta = {
+      id: createNodeId('node-releases'),
+      parent: null,
+      children: [],
+      internal: {
+        type: 'NodeReleases',
+        mediaType: 'application/json',
+        content: nodeReleasesDataContent,
+        contentDigest: createContentDigest(nodeReleasesData),
+      },
+    };
+
+    const nodeReleases = {
+      ...nodeReleasesData,
+      ...nodeReleasesMeta,
+    };
+
+    await createNode(nodeReleases);
+
+    activity.end();
+    activity = activityTimer('Fetching Banners');
+    activity.start();
+
+    const siteResponse = await fetch(
+      'https://raw.githubusercontent.com/nodejs/nodejs.org/master/locale/en/site.json'
+    );
+    const siteData = await siteResponse.json();
+    const { banners: bannersData } = siteData;
+
+    const bannersContent = JSON.stringify(bannersData);
+
+    const bannersMeta = {
+      id: createNodeId('banners'),
+      parent: null,
+      children: [],
+      internal: {
+        type: 'Banners',
+        mediaType: 'application/json',
+        content: bannersContent,
+        contentDigest: createContentDigest(bannersData),
+      },
+    };
+
+    const banners = {
+      ...bannersData,
+      ...bannersMeta,
+    };
+
+    await createNode(banners);
+
+    activity.end();
+  } catch (err) {
+    activity.panic(err);
   }
 };

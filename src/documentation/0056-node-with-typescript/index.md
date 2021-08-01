@@ -3,6 +3,7 @@ title: 'Node.js with TypeScript'
 description: 'Find out why TypeScript is an awesome tool and learn to use it by yourself.'
 authors: sbielenica
 section: Getting Started
+category: learn
 ---
 
 ## What is TypeScript
@@ -44,7 +45,7 @@ Okay, so we have some TypeScript code. Now how do we run it?
 First thing to do is to install TypeScript in our project:
 
 ```bash
-npm install typescript
+npm i -D typescript
 ```
 
 Now we can compile it to JavaScript using `tsc` command in the terminal. Let's do it!
@@ -122,5 +123,6 @@ Some of the notable examples of open-source projects using TypeScript are:
 * [TypeORM](https://typeorm.io/#/) - great ORM influenced by other well-known tools from other languages like Hibernate, Doctrine or Entity Framework
 * [Prisma](https://prisma.io/) - next-generation ORM featuring a declarative data model, generated migrations and fully type-safe database queries
 * [RxJS](https://rxjs.dev/) - widely used library for reactive programming
+* [AdonisJS](https://adonisjs.com) - A fully featured web framework with Node.js
 
 And many, many more great projects... Maybe even your next one!

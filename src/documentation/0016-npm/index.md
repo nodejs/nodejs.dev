@@ -3,6 +3,7 @@ title: An introduction to the npm package manager
 description: 'A quick guide to npm, the powerful package manager key to the success of Node.js. In January 2017 over 350000 packages were reported being listed in the npm registry, making it the biggest single language code repository on Earth, and you can be sure there is a package for (almost!) everything.'
 authors: flaviocopes, MylesBorins, LaRuaNa, jgb-solutions, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## Introduction to npm
@@ -39,12 +40,14 @@ You can also install a specific package by running
 npm install <package-name>
 ```
 
+Furthermore, since npm 5, this command adds `<package-name>` to the `package.json` file _dependencies_. Before version 5, you needed to add the flag `--save`.
+
 Often you'll see more flags added to this command:
 
-* `--save` installs and adds the entry to the `package.json` file _dependencies_
 * `--save-dev` installs and adds the entry to the `package.json` file _devDependencies_
+* `--no-save` installs but does not add the entry to the `package.json` file _dependencies_
 
-The difference is mainly that devDependencies are usually development tools, like a testing library, while `dependencies` are bundled with the app in production.
+The difference between _devDependencies_ and _dependencies_ is that the former contains development tools, like a testing library, while the latter is bundled with the app in production.
 
 ### Updating packages
 

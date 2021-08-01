@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-import { ReleaseData } from '../../hooks/useReleaseHistory';
+import { NodeReleaseLTSNPMVersion } from '../../types';
 import appleLogo from '../../images/logos/apple-logo.svg';
 import microsoftLogo from '../../images/logos/microsoft-download-logo.svg';
 import sourceCodeIcon from '../../images/logos/source-code-icon.svg';
@@ -9,7 +8,7 @@ import DownloadCard from './DownloadCard';
 import './DownloadCards.scss';
 
 interface Props {
-  line?: ReleaseData;
+  line?: NodeReleaseLTSNPMVersion;
   userOS: UserOS;
 }
 
@@ -78,22 +77,20 @@ export default function DownloadCards({ line, userOS }: Props): JSX.Element {
         setSelected(nextItem);
       }}
     >
-      {downloadTypes.map(
-        (os): JSX.Element => {
-          return (
-            <DownloadCard
-              key={os.name}
-              name={os.name}
-              icon={os.icon}
-              label={os.label}
-              download={os.download}
-              fileName={os.fileName}
-              selected={selected === os.name}
-              onSelect={setSelected}
-            />
-          );
-        }
-      )}
+      {downloadTypes.map((os): JSX.Element => {
+        return (
+          <DownloadCard
+            key={os.name}
+            name={os.name}
+            icon={os.icon}
+            label={os.label}
+            download={os.download}
+            fileName={os.fileName}
+            selected={selected === os.name}
+            onSelect={setSelected}
+          />
+        );
+      })}
     </ul>
   );
 }

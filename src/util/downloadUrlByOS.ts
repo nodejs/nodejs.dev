@@ -16,8 +16,8 @@ export default function downloadUrlByOS(
 
   if (userOS === UserOS.WIN) {
     if (
-      navigator.appVersion.indexOf('WOW64') !== -1 ||
-      navigator.appVersion.indexOf('Win64') !== -1
+      navigator.appVersion.includes('WOW64') ||
+      navigator.appVersion.includes('Win64')
     ) {
       return `${baseURL}/node-${version}-x64.msi`;
     }

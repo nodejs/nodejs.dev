@@ -33,55 +33,53 @@ exports[`Learn Template renders correctly 1`] = `
               />
             </div>
           </a>
-          <ul
-            class="nav__tabs__container"
-          >
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="/learn"
-              >
-                Learn
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="https://nodejs.org/en/docs/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Documentation
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="/download"
-              >
-                Download
-              </a>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                class="activeStyleTab"
-                href="https://nodejs.org/en/get-involved/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Community
-              </a>
-            </li>
-          </ul>
         </div>
+        <ul
+          class="nav__tabs__container"
+        >
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/learn"
+            >
+              Learn
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="https://nodejs.org/en/docs/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Documentation
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/download"
+            >
+              Download
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/community"
+            >
+              Community
+            </a>
+          </li>
+        </ul>
         <div
           class="nav__endwrapper"
         >
@@ -101,12 +99,12 @@ exports[`Learn Template renders correctly 1`] = `
                   Toggle Dark Mode
                 </span>
                 <i
-                  class="material-icons light-mode-only"
+                  class="material-icons light-mode-only theme-buttons"
                 >
                   nights_stay
                 </i>
                 <i
-                  class="material-icons dark-mode-only"
+                  class="material-icons dark-mode-only theme-buttons"
                 >
                   wb_sunny
                 </i>
@@ -154,62 +152,6 @@ exports[`Learn Template renders correctly 1`] = `
         >
           Menu
         </button>
-        <ul
-          class="side-nav__list"
-        >
-          <h2
-            class="t-body2 side-nav__title"
-          >
-            <i
-              class="material-icons"
-            >
-              offline_bolt
-            </i>
-            test-section
-          </h2>
-          <a
-            class="t-body2 side-nav__item side-nav__item--done"
-            href="/learn/test-slug-1"
-            id="link-test-slug-1"
-          >
-            test-title-1
-          </a>
-          <a
-            class="t-body2 side-nav__item side-nav__item--done"
-            href="/learn/test-slug-2"
-            id="link-test-slug-2"
-          >
-            test-title-2
-          </a>
-        </ul>
-        <ul
-          class="side-nav__list"
-        >
-          <h2
-            class="t-body2 side-nav__title"
-          >
-            <i
-              class="material-icons"
-            >
-              offline_bolt
-            </i>
-            test-section2
-          </h2>
-          <a
-            class="t-body2 side-nav__item side-nav__item--done"
-            href="/learn/test-slug-3"
-            id="link-test-slug-3"
-          >
-            test-title-3
-          </a>
-          <a
-            class="t-body2 side-nav__item side-nav__item--done"
-            href="/learn/test-slug-4"
-            id="link-test-slug-4"
-          >
-            test-title-4
-          </a>
-        </ul>
       </nav>
       <article
         class="article-reader"
@@ -267,7 +209,7 @@ exports[`Learn Template renders correctly 1`] = `
         >
           <a
             class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/test-path"
+            href="https://github.com/nodejs/nodejs.dev/edit/main/src/documentation/test-path"
           >
             <span>
               Edit this page on GitHub
@@ -311,6 +253,13 @@ exports[`Learn Template renders correctly 1`] = `
       </article>
     </main>
   </div>
+  <section
+    class="bottom-info"
+  >
+    <div
+      class="random-contributor"
+    />
+  </section>
   <footer
     class="footer"
   >
@@ -320,7 +269,7 @@ exports[`Learn Template renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://nodejs.org/en/about/trademark/"
+          href="/trademark"
         >
           Trademark Policy
         </a>
@@ -328,7 +277,7 @@ exports[`Learn Template renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://nodejs.org/en/about/privacy/"
+          href="/privacy"
         >
           Privacy Policy
         </a>
@@ -336,7 +285,7 @@ exports[`Learn Template renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://github.com/openjs-foundation/cross-project-council/blob/master/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
+          href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
         >
           Code of Conduct
         </a>
@@ -344,7 +293,7 @@ exports[`Learn Template renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://nodejs.org/en/security/"
+          href="/security"
         >
           Security Reporting
         </a>
@@ -352,7 +301,7 @@ exports[`Learn Template renders correctly 1`] = `
       <li>
         <a
           class="footer__link"
-          href="https://nodejs.org/en/about/"
+          href="/about"
         >
           About
         </a>

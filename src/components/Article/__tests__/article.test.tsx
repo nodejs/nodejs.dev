@@ -42,18 +42,37 @@ describe('Article component', () => {
     window.IntersectionObserver = intersectionObserverOriginal;
     window.scrollTo = scrollToOriginal;
     window.history.replaceState = replaceStateOriginal;
+
+    // clean-up history state
+    window.history.replaceState({}, '', null);
   });
 
   it('renders correctly', () => {
-    const {
-      title,
-      description,
-      html,
-      next,
-      previous,
-      authors,
-      relativePath,
-    } = getArticleProps();
+    const { title, description, html, next, previous, authors, relativePath } =
+      getArticleProps();
+
+    const { container } = render(
+      <Article
+        title={title}
+        tableOfContents={description}
+        html={html}
+        next={next}
+        previous={previous}
+        authors={authors}
+        relativePath={relativePath}
+      />
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders correctly in case html ref is null', () => {
+    const { title, description, html, next, previous, authors, relativePath } =
+      getArticleProps();
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    jest.spyOn(React, 'useRef').mockReturnValueOnce(null);
 
     const { container } = render(
       <Article
@@ -71,19 +90,14 @@ describe('Article component', () => {
   });
 
   it('renders correctly in blog mode', () => {
-    const {
-      title,
-      description,
-      html,
-      next,
-      previous,
-      relativePath,
-    } = getArticleProps();
+    const { title, description, html, next, previous, relativePath } =
+      getArticleProps();
 
     const authors = [
       {
-        id: 1,
+        id: '1',
         name: 'test-user',
+        url: '',
       },
     ];
 
@@ -105,15 +119,8 @@ describe('Article component', () => {
   });
 
   it('should delete first article title from history', () => {
-    const {
-      title,
-      description,
-      html,
-      next,
-      previous,
-      authors,
-      relativePath,
-    } = getArticleProps();
+    const { title, description, html, next, previous, authors, relativePath } =
+      getArticleProps();
 
     window.history.replaceState = jest.fn();
 
@@ -139,7 +146,7 @@ describe('Article component', () => {
                 },
               },
             ],
-            (jest.fn() as unknown) as IntersectionObserver
+            jest.fn() as unknown as IntersectionObserver
           );
         }),
       };
@@ -167,15 +174,8 @@ describe('Article component', () => {
   });
 
   it('should save scrolled title position in history', () => {
-    const {
-      title,
-      description,
-      html,
-      next,
-      previous,
-      authors,
-      relativePath,
-    } = getArticleProps();
+    const { title, description, html, next, previous, authors, relativePath } =
+      getArticleProps();
 
     window.history.replaceState = jest.fn();
 
@@ -201,7 +201,7 @@ describe('Article component', () => {
                 },
               },
             ],
-            (jest.fn() as unknown) as IntersectionObserver
+            jest.fn() as unknown as IntersectionObserver
           );
         }),
       };
@@ -229,15 +229,8 @@ describe('Article component', () => {
   });
 
   it('should skip non-scrolled title from saving in history', () => {
-    const {
-      title,
-      description,
-      html,
-      next,
-      previous,
-      authors,
-      relativePath,
-    } = getArticleProps();
+    const { title, description, html, next, previous, authors, relativePath } =
+      getArticleProps();
 
     window.history.replaceState = jest.fn();
 
@@ -263,7 +256,7 @@ describe('Article component', () => {
                 },
               },
             ],
-            (jest.fn() as unknown) as IntersectionObserver
+            jest.fn() as unknown as IntersectionObserver
           );
         }),
       };
@@ -285,15 +278,8 @@ describe('Article component', () => {
   });
 
   it('should scroll into last viewed article position', () => {
-    const {
-      title,
-      description,
-      html,
-      next,
-      previous,
-      authors,
-      relativePath,
-    } = getArticleProps();
+    const { title, description, html, next, previous, authors, relativePath } =
+      getArticleProps();
 
     // add scroll position to history
     window.history.replaceState(
@@ -318,5 +304,26 @@ describe('Article component', () => {
     );
 
     expect(window.scrollTo).toHaveBeenCalledWith({ top: 1 });
+  });
+
+  it('should accept and render child components', () => {
+    const { title, description, html, next, previous, authors, relativePath } =
+      getArticleProps();
+
+    const { container } = render(
+      <Article
+        title={title}
+        tableOfContents={description}
+        html={html}
+        next={next}
+        previous={previous}
+        authors={authors}
+        relativePath={relativePath}
+      >
+        <div>test child JSX</div>
+      </Article>
+    );
+
+    expect(container).toMatchSnapshot();
   });
 });
