@@ -9,7 +9,7 @@ import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
 
 export default function WorkingGroupsPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
-  const { body, tableOfContents } = data.page;
+  const { body } = data.page;
   const { authors } = data.page.fields;
   return (
     <>
@@ -20,7 +20,6 @@ export default function WorkingGroupsPage({ data }: Page): JSX.Element {
             title={title}
             body={body}
             authors={authors}
-            tableOfContents={tableOfContents}
             editPath="content/about/working-groups.md"
           />
         </main>
