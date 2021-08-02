@@ -21,7 +21,7 @@ interface ReleasesPageProps extends Page {
 export default function ReleasesPage({
   data: { page, nodeReleases },
 }: ReleasesPageProps): JSX.Element {
-  const { html, tableOfContents } = page;
+  const { body, tableOfContents } = page;
   const { title, description } = page.frontmatter;
   const { authors } = page.fields;
   const { nodeReleasesData } = nodeReleases;
@@ -33,7 +33,7 @@ export default function ReleasesPage({
           <SideNavBar pageKey={SideNavBarKeys.releases} />
           <Article
             title={title}
-            html={html}
+            body={body}
             tableOfContents={tableOfContents}
             authors={authors}
             editPath="content/about/releases.md"
@@ -49,9 +49,9 @@ export default function ReleasesPage({
 
 export const query = graphql`
   query {
-    page: markdownRemark(fields: { slug: { eq: "releases" } }) {
-      html
-      tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
+    page: mdx(fields: { slug: { eq: "releases" } }) {
+      body
+      tableOfContents
       frontmatter {
         title
         description

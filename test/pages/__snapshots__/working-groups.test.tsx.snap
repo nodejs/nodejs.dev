@@ -163,24 +163,31 @@ exports[`Working Groups page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/governance"
-            id="link-governance"
-          >
-            Project Governance
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
             href="/community"
             id="link-community"
           >
             Community
           </a>
           <a
-            class="t-body2 side-nav__item-community side-nav__item-community--active"
-            href="/working-groups"
-            id="link-working-groups"
+            class="t-body2 side-nav__item-community"
+            href="/download/package-manager"
+            id="link-download/package-manager"
           >
-            Working Groups
+            Package Manager
+          </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/privacy"
+            id="link-privacy"
+          >
+            Privacy Policy
+          </a>
+          <a
+            class="t-body2 side-nav__item-community"
+            href="/governance"
+            id="link-governance"
+          >
+            Project Governance
           </a>
           <a
             class="t-body2 side-nav__item-community"
@@ -198,20 +205,6 @@ exports[`Working Groups page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/trademark"
-            id="link-trademark"
-          >
-            Trademark Policy
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/privacy"
-            id="link-privacy"
-          >
-            Privacy Policy
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
             href="/security"
             id="link-security"
           >
@@ -219,10 +212,17 @@ exports[`Working Groups page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/download/package-manager"
-            id="link-download/package-manager"
+            href="/trademark"
+            id="link-trademark"
           >
-            Package Manager
+            Trademark Policy
+          </a>
+          <a
+            class="t-body2 side-nav__item-community side-nav__item-community--active"
+            href="/working-groups"
+            id="link-working-groups"
+          >
+            Working Groups
           </a>
         </ul>
       </nav>
@@ -235,9 +235,58 @@ exports[`Working Groups page renders correctly 1`] = `
           Mock Title
         </h1>
         <div>
-          <div>
-            Sample
-          </div>
+          <p>
+            Node.js can be installed in different ways. This post highlights the most common and convenient ones.
+          </p>
+          <p>
+            Official packages for all the major platforms are available at 
+            <a
+              href="https://nodejs.dev/download/"
+            >
+              https://nodejs.dev/download/
+            </a>
+            .
+          </p>
+          <p>
+            One very convenient way to install Node.js is through a package manager. In this case, every operating system has its own.
+          </p>
+          <p>
+            Other package managers for MacOS, Linux, and Windows are listed in 
+            <a
+              href="https://nodejs.dev/download/package-manager/"
+            >
+              https://nodejs.dev/download/package-manager/
+            </a>
+          </p>
+          <p>
+            <code
+              class="language-text"
+            >
+              nvm
+            </code>
+             is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks, for example.
+          </p>
+          <p>
+            It is also very useful to test your code with old Node.js versions.
+          </p>
+          <p>
+            See 
+            <a
+              href="https://github.com/nvm-sh/nvm"
+            >
+              https://github.com/nvm-sh/nvm
+            </a>
+             for more information about this option.
+          </p>
+          <p>
+            In any case, when Node.js is installed you'll have access to the 
+            <code
+              class="language-text"
+            >
+              node
+            </code>
+             executable program in the command line.
+          </p>
         </div>
         <ul
           class="list"

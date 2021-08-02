@@ -12,14 +12,14 @@ interface Props {
   data: BlogPageData;
   pageContext: BlogPageContext;
 }
-const LearnLayout = ({
+const BlogLayout = ({
   data,
   pageContext: { next, previous, relativePath },
 }: Props): JSX.Element => {
   const {
     blog: {
       frontmatter: { title, author },
-      html,
+      body,
       excerpt,
       fields: { date },
     },
@@ -30,7 +30,7 @@ const LearnLayout = ({
         <main className="blog-container">
           <Article
             title={title}
-            html={html}
+            body={body}
             next={next}
             authors={author}
             previous={previous}
@@ -44,12 +44,12 @@ const LearnLayout = ({
     </>
   );
 };
-export default LearnLayout;
+export default BlogLayout;
 
 export const query = graphql`
   query BlogBySlug($slug: String!) {
-    blog: markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    blog: mdx(fields: { slug: { eq: $slug } }) {
+      body
       excerpt(pruneLength: 500)
       frontmatter {
         title
@@ -64,7 +64,7 @@ export const query = graphql`
         date(formatString: "MMMM DD, YYYY")
       }
     }
-    recent: allMarkdownRemark(
+    recent: allMdx(
       limit: 10
       filter: {
         frontmatter: { title: { ne: "mock" }, category: { eq: "blog" } }

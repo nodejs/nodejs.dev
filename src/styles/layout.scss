@@ -421,6 +421,29 @@ details {
   position: absolute;
   left: -4px;
   fill: var(--warning3);
+
+  &.before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    padding-right: 4px;
+  }
+
+  svg {
+    visibility: hidden;
+  }
+}
+
+h1:hover .autolink-headers,
+h2:hover .autolink-headers,
+h3:hover .autolink-headers,
+h4:hover .autolink-headers,
+h5:hover .autolink-headers,
+h6:hover .autolink-headers {
+  svg {
+    visibility: visible;
+  }
 }
 
 /* IntersectionObserver related styles */

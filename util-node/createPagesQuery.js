@@ -1,6 +1,6 @@
 module.exports = `
 {
-  allMarkdownRemark(
+  allMdx(
     filter: {
       fields: {
         slug: {
@@ -26,7 +26,7 @@ module.exports = `
       node {
         id
         fileAbsolutePath
-        html
+        body
         parent {
           ... on File {
             relativePath

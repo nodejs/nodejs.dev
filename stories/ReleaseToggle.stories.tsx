@@ -1,18 +1,28 @@
-import React from 'react';
-import ReleaseToggle from '../src/components/ReleaseToggle';
-import '../src/styles/tokens.scss';
-import '../src/styles/layout.scss';
-import '../src/styles/mobile.scss';
+import React, { useState } from 'react';
+import DownloadToggle from '../src/components/DownloadToggle';
 
 export default {
-  title: 'ReleaseToggle',
-  component: ReleaseToggle,
+  title: 'DownloadToggle',
+  component: DownloadToggle,
 };
 
-export const root = (): JSX.Element => (
-  <ReleaseToggle selected={false} onToggle={() => null} />
-);
+export const Root = (): JSX.Element => {
+  const [typeRelease, setTypeRelease] = useState('LTS');
+  const handleTypeReleaseToggle = (
+    selected: React.SetStateAction<string>
+  ): void => setTypeRelease(selected);
 
-export const checked = (): JSX.Element => (
-  <ReleaseToggle selected onToggle={() => null} />
-);
+  return (
+    <>
+      <DownloadToggle
+        selected={typeRelease}
+        handleClick={handleTypeReleaseToggle}
+      />
+      <DownloadToggle
+        selected={typeRelease}
+        handleClick={handleTypeReleaseToggle}
+        showDescription={false}
+      />
+    </>
+  );
+};

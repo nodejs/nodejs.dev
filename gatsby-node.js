@@ -5,6 +5,7 @@ const getNodeReleasesData = require('./util-node/getNodeReleasesData');
 const getBannersData = require('./util-node/getBannersData');
 const createPagesQuery = require('./util-node/createPagesQuery');
 const createDocPages = require('./util-node/createDocPages');
+const redirects = require('./util-node/redirects');
 
 const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
 
@@ -18,10 +19,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return;
   }
 
+  Object.keys(redirects).forEach(from => {
+    createRedirect({
+      fromPath: from,
+      toPath: redirects[from],
+      isPermanent: true,
+    });
+  });
+
   const docTemplate = path.resolve('./src/templates/learn.tsx');
   const blogTemplate = path.resolve('./src/templates/blog.tsx');
 
-  const { edges } = result.data.allMarkdownRemark;
+  const { edges } = result.data.allMdx;
   const docPages = createDocPages(edges);
 
   docPages.forEach(page => {
@@ -55,7 +64,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  if (node.internal.type === 'MarkdownRemark') {
+  if (node.internal.type === 'Mdx') {
     const { createNodeField } = actions;
     const { fileAbsolutePath, parent, frontmatter } = node;
 

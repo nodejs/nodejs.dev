@@ -14,8 +14,9 @@ const getArticleProps = () => {
 
   const {
     doc: {
-      frontmatter: { title, description },
-      html,
+      frontmatter: { title },
+      body,
+      tableOfContents,
       fields: { authors },
     },
   } = learnPageData;
@@ -24,12 +25,12 @@ const getArticleProps = () => {
 
   return {
     title,
-    description,
-    html,
+    body,
     next,
     previous,
     authors,
     relativePath,
+    tableOfContents,
   };
 };
 
@@ -48,14 +49,21 @@ describe('Article component', () => {
   });
 
   it('renders correctly', () => {
-    const { title, description, html, next, previous, authors, relativePath } =
-      getArticleProps();
+    const {
+      title,
+      tableOfContents,
+      body,
+      next,
+      previous,
+      authors,
+      relativePath,
+    } = getArticleProps();
 
     const { container } = render(
       <Article
         title={title}
-        tableOfContents={description}
-        html={html}
+        tableOfContents={tableOfContents}
+        body={body}
         next={next}
         previous={previous}
         authors={authors}
@@ -66,9 +74,16 @@ describe('Article component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders correctly in case html ref is null', () => {
-    const { title, description, html, next, previous, authors, relativePath } =
-      getArticleProps();
+  it('renders correctly in case body ref is null', () => {
+    const {
+      title,
+      tableOfContents,
+      body,
+      next,
+      previous,
+      authors,
+      relativePath,
+    } = getArticleProps();
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
@@ -77,8 +92,8 @@ describe('Article component', () => {
     const { container } = render(
       <Article
         title={title}
-        tableOfContents={description}
-        html={html}
+        tableOfContents={tableOfContents}
+        body={body}
         next={next}
         previous={previous}
         authors={authors}
@@ -90,7 +105,7 @@ describe('Article component', () => {
   });
 
   it('renders correctly in blog mode', () => {
-    const { title, description, html, next, previous, relativePath } =
+    const { title, tableOfContents, body, next, previous, relativePath } =
       getArticleProps();
 
     const authors = [
@@ -104,8 +119,8 @@ describe('Article component', () => {
     const { container } = render(
       <Article
         title={title}
-        tableOfContents={description}
-        html={html}
+        tableOfContents={tableOfContents}
+        body={body}
         next={next}
         previous={previous}
         authors={authors}
@@ -119,8 +134,15 @@ describe('Article component', () => {
   });
 
   it('should delete first article title from history', () => {
-    const { title, description, html, next, previous, authors, relativePath } =
-      getArticleProps();
+    const {
+      title,
+      tableOfContents,
+      body,
+      next,
+      previous,
+      authors,
+      relativePath,
+    } = getArticleProps();
 
     window.history.replaceState = jest.fn();
 
@@ -155,8 +177,8 @@ describe('Article component', () => {
     render(
       <Article
         title={title}
-        tableOfContents={description}
-        html={html}
+        tableOfContents={tableOfContents}
+        body={body}
         next={next}
         previous={previous}
         authors={authors}
@@ -174,8 +196,15 @@ describe('Article component', () => {
   });
 
   it('should save scrolled title position in history', () => {
-    const { title, description, html, next, previous, authors, relativePath } =
-      getArticleProps();
+    const {
+      title,
+      tableOfContents,
+      body,
+      next,
+      previous,
+      authors,
+      relativePath,
+    } = getArticleProps();
 
     window.history.replaceState = jest.fn();
 
@@ -210,8 +239,8 @@ describe('Article component', () => {
     render(
       <Article
         title={title}
-        tableOfContents={description}
-        html={html}
+        tableOfContents={tableOfContents}
+        body={body}
         next={next}
         previous={previous}
         authors={authors}
@@ -229,8 +258,15 @@ describe('Article component', () => {
   });
 
   it('should skip non-scrolled title from saving in history', () => {
-    const { title, description, html, next, previous, authors, relativePath } =
-      getArticleProps();
+    const {
+      title,
+      tableOfContents,
+      body,
+      next,
+      previous,
+      authors,
+      relativePath,
+    } = getArticleProps();
 
     window.history.replaceState = jest.fn();
 
@@ -265,8 +301,8 @@ describe('Article component', () => {
     render(
       <Article
         title={title}
-        tableOfContents={description}
-        html={html}
+        tableOfContents={tableOfContents}
+        body={body}
         next={next}
         previous={previous}
         authors={authors}
@@ -278,8 +314,15 @@ describe('Article component', () => {
   });
 
   it('should scroll into last viewed article position', () => {
-    const { title, description, html, next, previous, authors, relativePath } =
-      getArticleProps();
+    const {
+      title,
+      tableOfContents,
+      body,
+      next,
+      previous,
+      authors,
+      relativePath,
+    } = getArticleProps();
 
     // add scroll position to history
     window.history.replaceState(
@@ -294,8 +337,8 @@ describe('Article component', () => {
     render(
       <Article
         title={title}
-        tableOfContents={description}
-        html={html}
+        tableOfContents={tableOfContents}
+        body={body}
         next={next}
         previous={previous}
         authors={authors}
@@ -307,14 +350,21 @@ describe('Article component', () => {
   });
 
   it('should accept and render child components', () => {
-    const { title, description, html, next, previous, authors, relativePath } =
-      getArticleProps();
+    const {
+      title,
+      tableOfContents,
+      body,
+      next,
+      previous,
+      authors,
+      relativePath,
+    } = getArticleProps();
 
     const { container } = render(
       <Article
         title={title}
-        tableOfContents={description}
-        html={html}
+        tableOfContents={tableOfContents}
+        body={body}
         next={next}
         previous={previous}
         authors={authors}

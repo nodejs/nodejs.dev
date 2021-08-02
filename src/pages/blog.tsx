@@ -21,7 +21,7 @@ const AllBlogPosts = ({ data }: Props): JSX.Element => (
 
 export const pageQuery = graphql`
   query AllBlogPostsPageQuery {
-    blogs: allMarkdownRemark(
+    blogs: allMdx(
       filter: {
         fileAbsolutePath: { regex: "/blog/" }
         frontmatter: { title: { ne: "mock" } }
