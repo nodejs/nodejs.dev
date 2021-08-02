@@ -138,14 +138,14 @@ module.exports = {
         engineOptions: 'speed',
         query: `
         {
-          allMarkdownRemark {
+          allMdx {
             edges {
               node {
                 fields {
                   slug
                 }
                 id
-                rawMarkdownBody
+                rawBody
                 frontmatter {
                   title
                   description
@@ -164,11 +164,11 @@ module.exports = {
           if (error) {
             throw error;
           }
-          return data.allMarkdownRemark.edges.map(node => {
+          return data.allMdx.edges.map(node => {
             return {
               id: node.node.id,
               title: node.node.frontmatter.title,
-              body: node.node.rawMarkdownBody,
+              body: node.node.rawBody,
               description: node.node.frontmatter.description,
               slug: node.node.fields.slug,
             };
