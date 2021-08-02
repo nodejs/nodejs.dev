@@ -1,16 +1,20 @@
 import React from 'react';
 import { throttle } from 'throttle-debounce';
-import { PaginationInfo, BlogPostAuthor } from '../../types';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { MDXProvider } from '@mdx-js/react';
+import { PaginationInfo, BlogPostAuthor, TableOfContents } from '../../types';
 import AuthorsList from '../../containers/AuthorList';
 import EditLink from '../EditLink';
 import Pagination from '../Pagination';
 import TOC from '../Toc';
 import BlogAuthorsList from '../BlogAuthorsList';
+import Codebox from '../Codebox';
+import InlineCode from '../Codebox/InlineCode';
 
 interface Props {
   title: string;
-  html: string;
-  tableOfContents?: string;
+  body: string;
+  tableOfContents?: TableOfContents;
   authors: string[] | BlogPostAuthor[];
   relativePath?: string;
   editPath?: string;
@@ -25,7 +29,7 @@ const NAV_HEIGHT = 72;
 
 const Article = ({
   title,
-  html,
+  body,
   tableOfContents,
   previous,
   next,
@@ -112,8 +116,11 @@ const Article = ({
       {!blog && (
         <TOC heading="TABLE OF CONTENTS" tableOfContents={tableOfContents} />
       )}
-      {/* eslint-disable-next-line react/no-danger */}
-      <div ref={element} dangerouslySetInnerHTML={{ __html: html }} />
+      <div ref={element}>
+        <MDXProvider components={{ pre: Codebox, inlineCode: InlineCode }}>
+          <MDXRenderer>{body}</MDXRenderer>
+        </MDXProvider>
+      </div>
       {children && (
         <div className="article-reader__additional-content">{children}</div>
       )}

@@ -9,7 +9,7 @@ import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
 
 export default function SecurityPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
-  const { html, tableOfContents } = data.page;
+  const { body, tableOfContents } = data.page;
   const { authors } = data.page.fields;
   return (
     <>
@@ -18,7 +18,7 @@ export default function SecurityPage({ data }: Page): JSX.Element {
           <SideNavBar pageKey={SideNavBarKeys.security} />
           <Article
             title={title}
-            html={html}
+            body={body}
             tableOfContents={tableOfContents}
             authors={authors}
             editPath="content/about/security.md"
@@ -32,9 +32,9 @@ export default function SecurityPage({ data }: Page): JSX.Element {
 
 export const query = graphql`
   query {
-    page: markdownRemark(fields: { slug: { eq: "security" } }) {
-      html
-      tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
+    page: mdx(fields: { slug: { eq: "security" } }) {
+      body
+      tableOfContents
       frontmatter {
         title
         description

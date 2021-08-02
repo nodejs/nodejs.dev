@@ -48,7 +48,7 @@ require('path').extname('/test/something/file.txt') // '.txt'
 
 ### `path.format()`
 
-Returns a path string from an object, This is the opposite of `path.parse`<br>
+Returns a path string from an object, This is the opposite of `path.parse`<br/>
 `path.format` accepts an object as argument with the follwing keys:
 * `root`: the root
 * `dir`: the folder path starting from the root
@@ -56,7 +56,7 @@ Returns a path string from an object, This is the opposite of `path.parse`<br>
 * `name`: the file name
 * `ext`: the file extension
 
-`root` is ignored if `dir` is provided<br>
+`root` is ignored if `dir` is provided<br/>
 `ext` and `name` are ignored if `base` exists
 
 ```js
