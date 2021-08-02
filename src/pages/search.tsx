@@ -2,12 +2,8 @@
 import React, { useState } from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { useFlexSearch } from 'react-use-flexsearch';
+import { SearchResult } from '../types';
 
-export type SearchResult = {
-  id: React.Key | null | undefined;
-  slug: string;
-  title: string;
-};
 
 const SearchPage = (): JSX.Element => {
   const queryData = useStaticQuery(graphql`
