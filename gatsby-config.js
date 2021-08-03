@@ -92,15 +92,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        defaultLayouts: {
-          sites: require.resolve(`./src/components/Layout/centered.tsx`),
-          default: require.resolve(`./src/components/Layout/index.tsx`),
-        },
-      },
-    },
-    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.title,

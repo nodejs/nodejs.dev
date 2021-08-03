@@ -70,13 +70,13 @@ export default GuidesLayout;
 
 export const query = graphql`
   query GuideBySlug($slug: String!) {
-    doc: markdownRemark(
+    doc: mdx(
       fields: { slug: { eq: $slug } }
       frontmatter: { category: { eq: "guides" } }
     ) {
       id
       html
-      tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
+      tableOfContents
       frontmatter {
         title
         description
