@@ -19,7 +19,7 @@ const GuidesLayout = ({
   data: {
     doc: {
       frontmatter: { title, description },
-      html,
+      body,
       tableOfContents,
       fields: { authors },
     },
@@ -52,7 +52,7 @@ const GuidesLayout = ({
           />
           <Article
             title={title}
-            html={html}
+            body={body}
             tableOfContents={tableOfContents}
             next={next}
             authors={authors}
