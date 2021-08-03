@@ -11,7 +11,7 @@ category: learn
 ```js
 const https = require('https')
 const options = {
-  hostname: 'whatever.com',
+  hostname: 'example.com',
   port: 443,
   path: '/todos',
   method: 'GET'
