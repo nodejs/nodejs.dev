@@ -9,7 +9,7 @@ import SideNavBar, { SideNavBarKeys } from '../../components/SideNavBar';
 
 export default function PackageManagerPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
-  const { html, tableOfContents } = data.page;
+  const { body, tableOfContents } = data.page;
   const { authors } = data.page.fields;
   return (
     <>
@@ -18,7 +18,7 @@ export default function PackageManagerPage({ data }: Page): JSX.Element {
           <SideNavBar pageKey={SideNavBarKeys.packageManager} />
           <Article
             title={title}
-            html={html}
+            body={body}
             tableOfContents={tableOfContents}
             authors={authors}
             editPath="content/download/package-manager.md"
@@ -32,11 +32,11 @@ export default function PackageManagerPage({ data }: Page): JSX.Element {
 
 export const query = graphql`
   query {
-    page: markdownRemark(
+    page: mdx(
       fields: { slug: { eq: "installing-nodejs-via-package-manager" } }
     ) {
-      html
-      tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
+      body
+      tableOfContents
       frontmatter {
         title
         description

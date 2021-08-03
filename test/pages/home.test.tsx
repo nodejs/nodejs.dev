@@ -22,7 +22,7 @@ const mockHomeNodeReleases: HomeNodeReleases = {
 const homePageData: HomepageData = {
   page: {
     id: 'id-mock',
-    html: 'html-mock',
+    body: 'body-mock',
     frontmatter: {
       title: 'title-mock',
       displayTitle: 'displayTitle-mock',
