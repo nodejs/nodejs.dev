@@ -75,7 +75,7 @@ export const query = graphql`
       frontmatter: { category: { eq: "guides" } }
     ) {
       id
-      html
+      body
       tableOfContents
       frontmatter {
         title
