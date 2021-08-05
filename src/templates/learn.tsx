@@ -18,7 +18,7 @@ const LearnLayout = ({
   data: {
     doc: {
       frontmatter: { title, description },
-      html,
+      body,
       tableOfContents,
       fields: { authors },
     },
@@ -52,7 +52,7 @@ const LearnLayout = ({
           />
           <Article
             title={title}
-            html={html}
+            body={body}
             tableOfContents={tableOfContents}
             next={next}
             authors={authors}
@@ -69,13 +69,13 @@ export default LearnLayout;
 
 export const query = graphql`
   query DocBySlug($slug: String!) {
-    doc: markdownRemark(
+    doc: mdx(
       fields: { slug: { eq: $slug } }
       frontmatter: { category: { eq: "learn" } }
     ) {
       id
-      html
-      tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
+      body
+      tableOfContents
       frontmatter {
         title
         description

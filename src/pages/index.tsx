@@ -135,7 +135,7 @@ interface HomepageProps {
 
 export const query = graphql`
   query pageQuery {
-    page: markdownRemark(fields: { slug: { eq: "homepage" } }) {
+    page: mdx(fields: { slug: { eq: "homepage" } }) {
       frontmatter {
         title
         displayTitle

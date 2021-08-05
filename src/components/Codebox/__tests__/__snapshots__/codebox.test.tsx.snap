@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Codebox component renders correctly 1`] = `
+<div>
+  <pre
+    class="prism-code language-html"
+  >
+    <div
+      class="shell-box-top"
+    >
+      <span>
+        HTML
+      </span>
+      <button
+        type="button"
+      >
+        copy
+      </button>
+    </div>
+    <div
+      class="token-line"
+    >
+      <span
+        class="token plain"
+      >
+        [object Object]
+      </span>
+    </div>
+  </pre>
+</div>
+`;
