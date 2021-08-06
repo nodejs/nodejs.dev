@@ -70,7 +70,7 @@ describe('Tests for Header component', () => {
         )
       );
       render(<Header />);
-      const toggle = await screen.findByRole('button');
+      const toggle = await screen.getByTestId('themeToggle');
       userEvent.click(toggle);
       expect(toggleThemeMock).toHaveBeenCalledWith('dark');
     });
@@ -85,14 +85,14 @@ describe('Tests for Header component', () => {
         )
       );
       render(<Header />);
-      const toggle = await screen.findByRole('button');
+      const toggle = await screen.getByTestId('themeToggle');
       userEvent.click(toggle);
       expect(toggleThemeMock).toHaveBeenCalledWith('light');
     });
 
     it('ignore key presses on color switcher', async () => {
       render(<Header />);
-      const toggler = screen.getByRole('button');
+      const toggler = screen.getByTestId('themeToggle');
 
       fireEvent.keyPress(toggler, { key: 'Enter', code: 13, charCode: 13 });
 

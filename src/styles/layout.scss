@@ -320,7 +320,7 @@ select {
   text-decoration: none;
   margin-left: var(--space-16);
 
-  button{
+  button {
     border: none;
   }
 
@@ -331,11 +331,11 @@ select {
       var(--space-16);
   }
 }
-.lang{
+.lang {
   width: 100%;
 }
-.lang:hover{
-  background-color: #090C15;
+.lang:hover {
+  background-color: #090c15;
 }
 
 .activeStyleTab:hover {
@@ -474,7 +474,7 @@ h6:hover .autolink-headers {
   height: 40px;
   bottom: 0;
 }
-@media (max-width:1400px){
+@media (max-width: 1400px) {
   .nav__tabs {
     display: flex;
     margin-left: 0;
@@ -559,6 +559,9 @@ h6:hover .autolink-headers {
     > a {
       padding: var(--space-08);
     }
+    > button {
+      padding: var(--space-08);
+    }
   }
 
   .dark-mode-toggle {
@@ -635,26 +638,27 @@ h6:hover .autolink-headers {
   min-height: 100%;
   max-height: 300%;
   overflow: auto;
-  background: #417E38;
+  background: #417e38;
   list-style-type: none;
   margin: 0;
   padding: 0;
   z-index: 1;
   align-items: center;
   text-align: center;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font: 400 20px/1.5 "Source Sans Pro","Open Sans",Roboto,"San Francisco",Helvetica,Arial,sans-serif;
+  // margin-block-start: 1em;
+  // margin-block-end: 1em;
+  // margin-inline-start: 0px;
+  // margin-inline-end: 0px;
+  font: 400 15px/1.5 'Source Sans Pro', 'Open Sans', Roboto, 'San Francisco',
+    Helvetica, Arial, sans-serif;
   color: #333;
 
-  button{
-    color: #FFFFFF;
+  button {
+    color: #ffffff;
     border: none;
-    padding: 0.2rem 0;
+    padding: 0.7rem 1rem;
   }
-  &.hide{
+  &.hide {
     display: none;
   }
 }
