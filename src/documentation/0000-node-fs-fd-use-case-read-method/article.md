@@ -32,7 +32,7 @@ length :: type - number : It is used to specify number of bytes to be read from 
 
 position :: type - number : It is used to specify from which byte to start reading in the file content.
 
-callback: It is a function that receives err<NodeJS.ErrnoException>, bytesRead<number> and buffer<NodeJS.ArrayBufferView> to which the read bytes where written and stored.
+callback: It is a function that receives err "NodeJS.ErrnoException", bytesRead "number" and buffer "NodeJS.ArrayBufferView" to which the read bytes where written and stored.
 
 Example ::
 

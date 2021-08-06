@@ -41,7 +41,7 @@ string: Writes the string to the file specified by fd.
 
 encoding: The default encoding value is UTF-8.
 
-callback: It is a function that receives err<NodeJS.ErrnoException> and byteswritten<number>.
+callback: It is a function that receives err "NodeJS.ErrnoException" and byteswritten "number".
 
 Example ::
 
