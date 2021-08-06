@@ -1,9 +1,12 @@
-* **Start Date:** 2021-06-28
-* **PR:** (leave this empty)
-* **Keywords:** node fs read file-descriptor
-* **Summary:** Use case of file descriptor returned by fs.open() method in fs.read()
+---
+title: Use case of file descriptor returned by fs.open() method in fs.read()
+description: "Use of read method in fs module to handle reading huge amount of data in chunks."
+authors: TanmayBanerjee-23rd
+section: Quick Start
+category: learn
+---
 
-# Introduction to fs module read method.
+## Introduction to fs module read method.
 
 Using `fs.read()` method we can read a file in a more controlled manner in comparision to `fs.readFile()` or `fs.readFileSync()`.
 

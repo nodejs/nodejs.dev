@@ -1,7 +1,10 @@
-* **Start Date:** 2021-06-28
-* **PR:** (leave this empty)
-* **Keywords:** node fs write file-descriptor
-* **Summary:** Use case of file descriptor returned by fs.open() method in fs.write()
+---
+title: Use case of file descriptor returned by fs.open() method in fs.write()
+description: "Use of write method in fs module to handle writing huge amount of data in chunks."
+authors: TanmayBanerjee-23rd
+section: Quick Start
+category: learn
+---
 
 # Introduction to fs module write method.
 
