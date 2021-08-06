@@ -154,7 +154,8 @@
       "<rootDir>/setup-test-env.js"
     ],
     "collectCoverageFrom": [
-      "src/**/**.(ts|tsx|js)"
+      "src/**/**.(ts|tsx|js)",
+      "util-node/**/**.(ts|tsx|js)"
     ],
     "testEnvironment": "jsdom"
   }
