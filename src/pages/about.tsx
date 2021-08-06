@@ -5,22 +5,20 @@ import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
-import AboutPageSideNavBar, {
-  AboutPageKeys,
-} from '../components/AboutPageSideNavBar';
+import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
 
 export default function AboutPage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
-  const { html } = data.page;
+  const { body } = data.page;
   const { authors } = data.page.fields;
   return (
     <>
       <Layout title={title} description={description} showFooter={false}>
         <main className="grid-container">
-          <AboutPageSideNavBar pageKey={AboutPageKeys.about} />
+          <SideNavBar pageKey={SideNavBarKeys.about} />
           <Article
             title={title}
-            html={html}
+            body={body}
             authors={authors}
             editPath="content/about/about.md"
           />
@@ -33,9 +31,9 @@ export default function AboutPage({ data }: Page): JSX.Element {
 
 export const query = graphql`
   query {
-    page: markdownRemark(fields: { slug: { eq: "about" } }) {
-      html
-      tableOfContents(absolute: true, pathToSlugField: "frontmatter.path")
+    page: mdx(fields: { slug: { eq: "about" } }) {
+      body
+      tableOfContents
       frontmatter {
         title
         description

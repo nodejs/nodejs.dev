@@ -1,7 +1,7 @@
 export interface HomepageData {
   page: {
     id: string;
-    html: string;
+    body: string;
     frontmatter: {
       title: string;
       displayTitle: string;
@@ -31,11 +31,18 @@ export interface LearnPageContext {
   navigationData: NavigationSectionData;
 }
 
+export interface TableOfContents {
+  items: {
+    title: string;
+    url: string;
+  }[];
+}
+
 export interface LearnPageData {
   doc: {
     id: string;
-    html: string;
-    tableOfContents: string;
+    body: string;
+    tableOfContents: TableOfContents;
     frontmatter: { title: string; description: string };
     fields: { authors: string[] };
   };
@@ -81,8 +88,8 @@ declare global {
 
 export interface DataPage {
   page: {
-    html: string;
-    tableOfContents: string;
+    body: string;
+    tableOfContents: TableOfContents;
     frontmatter: {
       title: string;
       description: string;
@@ -121,7 +128,7 @@ export interface BlogPostsList {
 
 export interface BlogPageData {
   blog: {
-    html: string;
+    body: string;
     excerpt: string;
     frontmatter: { title: string; author: BlogPostAuthor[] };
     fields: { slug: string; date: string };
@@ -139,7 +146,7 @@ export interface BlogPageContext {
   navigationData: NavigationSectionData;
 }
 
-export interface AboutPageSideNavBarItem {
+export interface SideNavBarItem {
   title: string;
   slug: string;
 }

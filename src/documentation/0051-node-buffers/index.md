@@ -8,7 +8,7 @@ category: learn
 
 ## What is a buffer?
 
-A buffer is an area of memory. JavaScript developers are not familiar with this concept, much less than C, C++ or Go developers (or any programmer that uses a system programming language), which interact with memory every day.
+A buffer is an area of memory. Most JavaScript developers are much less familiar with this concept, compared to programmers using a system programming languages (like C, C++, or Go), which interact directly with memory every day.
 
 It represents a fixed-size chunk of memory (can't be resized) allocated outside of the V8 JavaScript engine.
 

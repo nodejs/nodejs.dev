@@ -6,9 +6,7 @@ import Article from '../components/Article';
 import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
 import DownloadTable from '../components/DownloadReleases/DownloadTable';
-import AboutPageSideNavBar, {
-  AboutPageKeys,
-} from '../components/AboutPageSideNavBar';
+import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
 
 export interface ReleasesNodeReleases {
   nodeReleases: {
@@ -23,7 +21,7 @@ interface ReleasesPageProps extends Page {
 export default function ReleasesPage({
   data: { page, nodeReleases },
 }: ReleasesPageProps): JSX.Element {
-  const { html, tableOfContents } = page;
+  const { body, tableOfContents } = page;
   const { title, description } = page.frontmatter;
   const { authors } = page.fields;
   const { nodeReleasesData } = nodeReleases;
@@ -32,10 +30,10 @@ export default function ReleasesPage({
     <>
       <Layout title={title} description={description} showFooter={false}>
         <main className="grid-container">
-          <AboutPageSideNavBar pageKey={AboutPageKeys.releases} />
+          <SideNavBar pageKey={SideNavBarKeys.releases} />
           <Article
             title={title}
-            html={html}
+            body={body}
             tableOfContents={tableOfContents}
             authors={authors}
             editPath="content/about/releases.md"
@@ -51,9 +49,9 @@ export default function ReleasesPage({
 
 export const query = graphql`
   query {
-    page: markdownRemark(fields: { slug: { eq: "releases" } }) {
-      html
-      tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
+    page: mdx(fields: { slug: { eq: "releases" } }) {
+      body
+      tableOfContents
       frontmatter {
         title
         description

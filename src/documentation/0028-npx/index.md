@@ -46,7 +46,7 @@ A typical demonstration of using `npx` is through the `cowsay` command. `cowsay`
 
 This only works if you have the `cowsay` command globally installed from npm previously. Otherwise you'll get an error when you try to run the command.
 
-`npx` allows you to run that npm command without having it installed locally:
+`npx` allows you to run that npm command without installing it first. If the command isn't found, `npx` will install it into a central cache:
 
 ```bash
 npx cowsay "Hello"
@@ -61,8 +61,6 @@ Other scenarios include:
 * creating a new React app using `create-react-app`: `npx create-react-app my-react-app`
 
 and many more.
-
-Once executed, the downloaded code will be wiped.
 
 ## Run some code using a different Node.js version
 

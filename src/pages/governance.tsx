@@ -5,23 +5,21 @@ import Layout from '../components/Layout';
 import Article from '../components/Article';
 import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
-import AboutPageSideNavBar, {
-  AboutPageKeys,
-} from '../components/AboutPageSideNavBar';
+import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
 
 export default function GovernancePage({ data }: Page): JSX.Element {
   const { title, description } = data.page.frontmatter;
-  const { html, tableOfContents } = data.page;
+  const { body, tableOfContents } = data.page;
   const { authors } = data.page.fields;
 
   return (
     <>
       <Layout title={title} description={description} showFooter={false}>
         <main className="grid-container">
-          <AboutPageSideNavBar pageKey={AboutPageKeys.governance} />
+          <SideNavBar pageKey={SideNavBarKeys.governance} />
           <Article
             title={title}
-            html={html}
+            body={body}
             tableOfContents={tableOfContents}
             authors={authors}
             editPath="content/about/governance.md"
@@ -35,9 +33,9 @@ export default function GovernancePage({ data }: Page): JSX.Element {
 
 export const query = graphql`
   query {
-    page: markdownRemark(fields: { slug: { eq: "governance" } }) {
-      html
-      tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
+    page: mdx(fields: { slug: { eq: "governance" } }) {
+      body
+      tableOfContents
       frontmatter {
         title
         description
