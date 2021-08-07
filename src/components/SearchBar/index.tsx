@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useFlexSearch } from 'react-use-flexsearch';
-import { AnimatePresence, AnimatePresense, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from 'react-click-outside-hook';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import MoonLoader from 'react-spinners/MoonLoader';
-import config from '../../config.json';
+// import config from '../../config.json';
 import { SearchResult } from '../../types';
+import './SearchBar.scss';
 
 const containerTransition = { type: 'spring', damping: 22, stiffness: 150 };
 const containerVariants = {
@@ -58,9 +59,6 @@ const SearchBar = (): JSX.Element => {
     setQuery('');
     setLoading(false);
     setNoResults(false);
-    if (inputRef.current) {
-      inputRef.current.value = '';
-    }
   };
 
   useEffect(() => {
@@ -70,34 +68,28 @@ const SearchBar = (): JSX.Element => {
   }, [isClickedOutside]);
 
   return (
-    <div
+    <motion.div
       className="searchBarContainer"
       animate={isExpanded ? 'expanded' : 'collapsed'}
       variants={containerVariants}
       transition={containerTransition}
       ref={parentRef}
     >
-      <div className="SearchInputContainer">
+      <div className="searchInputContainer">
         <div className="searchIcon"></div>
-        {/* <input
-          type="text"
-          placeholder="search"
-          onFocus={expandContainer}
-          ref={inputRef}
-          value={e => setQuery(e.target.value)}
-          onChange={changeHandler}
-        /> */}
         <input
+          autoComplete="false"
+          autoCorrect="false"
+          className="inputClass"
           name="query"
           value={query}
           onChange={changeHandler}
           placeholder="search"
           onFocus={expandContainer}
-          ref={inputRef}
         />
         <AnimatePresence>
           {isExpanded && (
-            <span
+            <motion.span
               className="material-icons"
               key="close-icon"
               initial={{ opacity: 0 }}
@@ -107,12 +99,11 @@ const SearchBar = (): JSX.Element => {
               transition={{ duration: 0.2 }}
             >
               close
-            </span>
+              </motion.span>
           )}
         </AnimatePresence>
       </div>
 
-      {/* results  data*/}
       {isExpanded && (
         <div className="searchContent">
           {/* loading state with spinner displaying */}
@@ -148,7 +139,7 @@ const SearchBar = (): JSX.Element => {
           )}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 export default SearchBar;
