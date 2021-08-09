@@ -1,10 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useFlexSearch } from 'react-use-flexsearch';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from 'react-click-outside-hook';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import MoonLoader from 'react-spinners/MoonLoader';
-// import config from '../../config.json';
 import { SearchResult } from '../../types';
 import './SearchBar.scss';
 
@@ -28,23 +26,23 @@ const SearchBar = (): JSX.Element => {
     }
   `);
 
-  const index = queryData.localSearchLearnPages.index;
-  const store = queryData.localSearchLearnPages.store;
+  const { index } = queryData.localSearchLearnPages;
+  const { store } = queryData.localSearchLearnPages;
   const [query, setQuery] = useState('');
   const [isExpanded, setExpanded] = useState(false);
   const [parentRef, isClickedOutside] = useClickOutside();
-  const inputRef = useRef();
-  const [isLoading, setLoading] = useState(false);
-  const [r, setR] = useState([]);
   const [noResults, setNoResults] = useState(false);
 
   const results = useFlexSearch(query, index, store);
 
   const isEmpty = !results || results.length === 0;
 
-  const changeHandler = e => {
+  const changeHandler = (e: {
+    preventDefault: () => void;
+    target: { value: React.SetStateAction<string> };
+  }) => {
     e.preventDefault();
-    if (e.target.value.trim() === '') {
+    if (e.target.value === '') {
       setNoResults(false);
     }
     setQuery(e.target.value);
@@ -57,7 +55,6 @@ const SearchBar = (): JSX.Element => {
   const collapseContainer = () => {
     setExpanded(false);
     setQuery('');
-    setLoading(false);
     setNoResults(false);
   };
 
@@ -76,11 +73,10 @@ const SearchBar = (): JSX.Element => {
       ref={parentRef}
     >
       <div className="searchInputContainer">
-        <div className="searchIcon"></div>
+        <div className="searchIcon material-icons">search</div>
         <input
-          autoComplete="false"
-          autoCorrect="false"
-          className="inputClass"
+          autoComplete="off"
+          className="inputText"
           name="query"
           value={query}
           onChange={changeHandler}
@@ -90,7 +86,7 @@ const SearchBar = (): JSX.Element => {
         <AnimatePresence>
           {isExpanded && (
             <motion.span
-              className="material-icons"
+              className="material-icons closeIcon"
               key="close-icon"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -99,40 +95,27 @@ const SearchBar = (): JSX.Element => {
               transition={{ duration: 0.2 }}
             >
               close
-              </motion.span>
+            </motion.span>
           )}
         </AnimatePresence>
       </div>
 
       {isExpanded && (
         <div className="searchContent">
-          {/* loading state with spinner displaying */}
-          {isLoading && (
-            <div className="loadingWrapper">
-              <MoonLoader loading color="#000" size={20} />
-            </div>
-          )}
-
           {/* loading state with an expanded area for the results */}
-          {!isLoading && isEmpty && !noResults && (
+          {isEmpty && !noResults && (
             <div className="loadingWrapper">
               <div className="warningMessage">Start typing to Search</div>
             </div>
           )}
-
-          {/* loading state when no results are found */}
-          {!isLoading && noResults && (
-            <div className="loadingWrapper">
-              <div className="warningMessage">No results found</div>
-            </div>
-          )}
-
           {/* success state */}
-          {!isLoading && !isEmpty && (
+          {!isEmpty && (
             <>
               {results.map((result: SearchResult) => (
                 <ul key={result.id}>
-                  <li>{result.title}</li>
+                  <li className="resultItem">
+                    <Link to={result.slug}>{result.title}</Link>
+                  </li>
                 </ul>
               ))}
             </>
