@@ -30,7 +30,7 @@
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-offline": "^4.11.0",
     "gatsby-plugin-react-helmet": "^4.11.0",
-    "gatsby-plugin-sass": "^4.10.0",
+    "gatsby-plugin-sass": "^4.11.0",
     "gatsby-plugin-sharp": "^3.10.2",
     "gatsby-plugin-sitemap": "^4.6.0",
     "gatsby-plugin-typescript": "^3.10.0",
