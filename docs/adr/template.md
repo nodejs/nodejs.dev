@@ -1,6 +1,8 @@
 # \[short title of solved problem and solution\]
 
+<!--lint disable nodejs-links-->
 * Status: [proposed | rejected | accepted | deprecated | … | superseded by [ADR-0005](0005-example.md)] <!-- optional -->
+<!--lint enable nodejs-links-->
 * Deciders: \[list everyone involved in the decision\] <!-- optional -->
 * Date: \[YYYY-MM-DD when the decision was last updated\] <!-- optional -->
 
@@ -68,5 +70,7 @@ Chosen option: "\[option 1\]", because \[justification. e.g., only option, which
 
 ## Links <!-- optional -->
 
+<!--lint disable nodejs-links-->
 * [Link type](link-to-adr.md) <!-- example: Refined by [ADR-0005](0005-example.md) -->
+<!--lint enable nodejs-links-->
 * … <!-- numbers of links can vary -->
