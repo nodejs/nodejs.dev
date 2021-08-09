@@ -312,6 +312,12 @@ select {
   padding-left: 0;
 }
 
+.nav .right-container > li:first-child {
+  position: relative;
+  top: 0;
+  height: 3em;
+  }
+
 .nav__tabs {
   color: green;
   cursor: pointer;
