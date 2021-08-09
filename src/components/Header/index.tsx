@@ -88,8 +88,7 @@ const Header = (): JSX.Element => {
 
         <div className="nav__endwrapper">
           <ul className="right-container">
-            <li>
-              {/* real search bar goes here */}
+            <li className="nav__tabs">
               <SearchBar />
             </li>
             <li className="nav__tabs nav__tabs--right">
