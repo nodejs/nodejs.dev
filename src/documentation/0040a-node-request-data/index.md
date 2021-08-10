@@ -1,7 +1,7 @@
 ---
 title: Get HTTP request body data using Node.js
 description: 'Find out how to extract the data sent as JSON through an HTTP request body using Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, rodion-arr
 section: Getting Started
 category: learn
 ---
@@ -73,5 +73,22 @@ const server = http.createServer((req, res) => {
     console.log(JSON.parse(data).todo); // 'Buy the milk'
     res.end();
   })
+})
+```
+
+Starting from Node.js v10 a `for await .. of` syntax is available for use. It simplifies the example above and makes it look more linear:
+
+```js
+const server = http.createServer(async (req, res) => {
+  const buffers = [];
+
+  for await (const chunk of req) {
+    buffers.push(chunk);
+  }
+
+  const data = Buffer.concat(buffers).toString();
+
+  console.log(JSON.parse(data).todo); // 'Buy the milk'
+  res.end();
 })
 ```
