@@ -27,7 +27,6 @@ export default function DownloadPage({
   location,
   data: { nodeReleases },
 }: Props): JSX.Element {
-  console.log('🚀 -> file: index.tsx -> line 30 -> nodeReleases', nodeReleases);
   const { nodeReleasesData, nodeReleasesLTSNPMVersion } = nodeReleases;
   const [typeRelease, setTypeRelease] = useState('LTS');
 
@@ -45,10 +44,6 @@ export default function DownloadPage({
   ): void => setTypeRelease(selected);
 
   const upcomingReleases = getUpcomingReleases(nodeReleasesData);
-  console.log(
-    '🚀 -> file: index.tsx -> line 48 -> upcomingReleases',
-    upcomingReleases
-  );
 
   return (
     <Layout
