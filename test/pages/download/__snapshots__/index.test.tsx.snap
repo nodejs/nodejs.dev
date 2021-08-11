@@ -396,7 +396,7 @@ exports[`Download page renders correctly 1`] = `
                   </p>
                 </div>
                 <div
-                  class="upcoming-releases__item--Maintenance Release"
+                  class="upcoming-releases__item--Maintenance"
                 >
                   <img
                     alt="hexagon icon"
@@ -405,7 +405,7 @@ exports[`Download page renders correctly 1`] = `
                   <p
                     class="release-title"
                   >
-                    Maintenance Release
+                    Maintenance
                   </p>
                   <p
                     class="release-date"
@@ -416,7 +416,7 @@ exports[`Download page renders correctly 1`] = `
                   </p>
                 </div>
                 <div
-                  class="upcoming-releases__item--End-of-life Release upcoming-releases__item--to-be-released"
+                  class="upcoming-releases__item--End-of-life upcoming-releases__item--to-be-released"
                 >
                   <img
                     alt="hexagon icon"
@@ -425,12 +425,12 @@ exports[`Download page renders correctly 1`] = `
                   <p
                     class="release-title"
                   >
-                    End-of-life Release
+                    End-of-life
                   </p>
                   <p
                     class="release-date"
                   >
-                    To be released
+                    
                      
                     2022-04-30
                   </p>
@@ -1227,7 +1227,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   </p>
                 </div>
                 <div
-                  class="upcoming-releases__item--Maintenance Release"
+                  class="upcoming-releases__item--Maintenance"
                 >
                   <img
                     alt="hexagon icon"
@@ -1236,7 +1236,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   <p
                     class="release-title"
                   >
-                    Maintenance Release
+                    Maintenance
                   </p>
                   <p
                     class="release-date"
@@ -1247,7 +1247,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   </p>
                 </div>
                 <div
-                  class="upcoming-releases__item--End-of-life Release upcoming-releases__item--to-be-released"
+                  class="upcoming-releases__item--End-of-life upcoming-releases__item--to-be-released"
                 >
                   <img
                     alt="hexagon icon"
@@ -1256,12 +1256,12 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   <p
                     class="release-title"
                   >
-                    End-of-life Release
+                    End-of-life
                   </p>
                   <p
                     class="release-date"
                   >
-                    To be released
+                    
                      
                     2022-04-30
                   </p>
