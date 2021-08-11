@@ -118,7 +118,7 @@
     "node-sass": "6.0.1",
     "pa11y": "6.0.1",
     "prettier": "^2.3.2",
-    "remark-cli": "^9.0.0",
+    "remark-cli": "^10.0.0",
     "remark-frontmatter": "^3.0.0",
     "remark-preset-lint-node": "^2.4.1"
   },
