@@ -19,5 +19,5 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
 
-      - name: Run test and coverage
+      - name: Run build-ci
         run: npm run build-ci
