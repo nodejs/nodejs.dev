@@ -25,7 +25,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
 
-      - name: Run linting
+      - name: Run lintingg
         run: npm run lint
 
       - name: Run test and coverage
