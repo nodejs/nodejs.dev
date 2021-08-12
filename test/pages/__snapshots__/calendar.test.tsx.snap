@@ -140,7 +140,7 @@ exports[`Calendar page renders correctly 1`] = `
       </div>
     </nav>
     <div
-      class="calendar css-udcyyy-Calendar"
+      class="calendar css-zh2wur-Calendar"
     >
       <div
         class="calendar-header"
@@ -332,7 +332,7 @@ exports[`Calendar page renders correctly 1`] = `
           />
         </div>
         <div
-          class="day css-8m0l77-Calendar"
+          class="day css-0"
         >
           <span
             class="css-csro95-Calendar"
@@ -345,7 +345,7 @@ exports[`Calendar page renders correctly 1`] = `
           />
         </div>
         <div
-          class="day css-0"
+          class="day css-vkch5w-Calendar"
         >
           <span
             class="css-csro95-Calendar"

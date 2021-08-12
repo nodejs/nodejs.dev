@@ -5,7 +5,6 @@
   "author": "Node.js Dev Team <https://github.com/nodejs/nodejs.dev#the-nodejsdev-team>",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.4.0",
     "@ericz1803/react-google-calendar": "^4.2.1",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",

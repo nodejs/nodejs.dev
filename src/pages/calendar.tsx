@@ -1,6 +1,5 @@
 import React from 'react';
 import Calendar from '@ericz1803/react-google-calendar';
-import { css } from '@emotion/react';
 import Layout from '../components/Layout';
 
 const API_KEY =
@@ -15,20 +14,20 @@ const calendars = [
 ];
 
 const styles = {
-  calendar: css`
+  calendar: `
     border-color: var(--color-border-primary);
     color: var(--color-text-primary);
   `,
-  eventText: css`
+  eventText: `
     color: var(--color-text-primary);
   `,
-  eventCircle: css`
+  eventCircle: `
     color: var(--color-brand-primary);
   `,
-  today: css`
+  today: `
     border: var(--space-04) solid var(--color-border-accent);
   `,
-  tooltip: css`
+  tooltip: `
     color: var(--color-text-primary);
     background-color: var(--color-fill-card);
   `,
