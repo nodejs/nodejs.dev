@@ -70,7 +70,7 @@
     "pretest": "npm run format-check && npm run lint",
     "test": "jest",
     "test-watch": "jest --watch",
-    "test-ci": "npm run test -- --coverage",
+    "test-ci": "npm run test -- --coverage --colors",
     "lint": "npm run type-check && npm run lint:js && npm run lint:md",
     "lint:js": "eslint .",
     "lint:md": "remark -qf .",
