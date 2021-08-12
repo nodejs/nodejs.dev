@@ -13,7 +13,10 @@ jobs:
           path: ~/.npm
           key: ${{ runner.os }}-node-bustcache-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-node-bustcache
+
+      - name: Echo Node info
+        run: node --version 
 
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
