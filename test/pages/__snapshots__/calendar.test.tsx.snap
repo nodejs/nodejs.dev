@@ -345,7 +345,7 @@ exports[`Calendar page renders correctly 1`] = `
           />
         </div>
         <div
-          class="day css-vkch5w-Calendar"
+          class="day css-0"
         >
           <span
             class="css-csro95-Calendar"
@@ -358,7 +358,7 @@ exports[`Calendar page renders correctly 1`] = `
           />
         </div>
         <div
-          class="day css-0"
+          class="day css-vkch5w-Calendar"
         >
           <span
             class="css-csro95-Calendar"
