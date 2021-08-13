@@ -16,11 +16,11 @@
 }
 
 .api-nav__list-title {
+  align-items: center;
   color: var(--color-text-primary);
+  display: flex;
   font-weight: 600;
   margin: 0 0 calc(var(--space-20) - (var(--space-12) / 2)) 0;
-  display: flex;
-  align-items: center;
 }
 
 .api-nav__list-item {
@@ -39,10 +39,10 @@
 
 .api-nav__sub-list-link {
   color: var(--color-text-secondary);
+  display: block;
+  padding: calc(var(--space-12) / 2) 0;
   text-decoration: none;
   transition: color 0.15s;
-  padding: calc(var(--space-12) / 2) 0;
-  display: block;
 
   &:hover {
     color: var(--color-text-accent);
@@ -51,8 +51,8 @@
 }
 
 .api-key {
-  padding: 0;
   list-style: none;
+  padding: 0;
 
   > .api-key__item {
     margin-bottom: 0.8rem;
@@ -60,17 +60,15 @@
 }
 
 .api-key__section {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(5, 20%);
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-  /* margin: 0.8rem 0; */
   background: var(--black2);
   border-radius: 4px;
+  display: grid;
   grid-gap: 0.8rem;
-  padding: 0.8rem;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  list-style: none;
   margin: 0.8rem 0;
+  padding: 0.8rem;
 
   .api-key__item {
     &:hover,
@@ -103,34 +101,34 @@
 }
 
 .api-key__item {
+  border-radius: 4px;
   color: var(--color-text-primary);
-  text-decoration: none;
+  cursor: pointer;
   display: block;
   margin: 0;
   overflow: hidden;
-  white-space: pre;
+  text-decoration: none;
   text-overflow: ellipsis;
-  border-radius: 4px;
-  cursor: pointer;
   transition: background-color 0.28s, box-shadow 0.28s;
+  white-space: pre;
 
   > a {
+    border-radius: 4px;
     color: var(--color-text-primary);
-    text-decoration: none;
+    cursor: pointer;
     display: block;
     margin: 0;
     overflow: hidden;
-    white-space: pre;
+    text-decoration: none;
     text-overflow: ellipsis;
-    border-radius: 4px;
-    cursor: pointer;
     transition: background-color 0.28s, box-shadow 0.28s;
+    white-space: pre;
   }
 }
 
 .api-key__item--has-children {
-  grid-column-start: 1;
   grid-column-end: -1;
+  grid-column-start: 1;
 }
 
 .api-key__section .api-key__item--has-children .api-key__section {
@@ -138,17 +136,17 @@
 }
 
 .api-key__item > a::before {
-  content: 'P';
-  width: 2.4rem;
-  height: 2.4rem;
-  text-align: center;
-  line-height: 2.4rem;
-  font-size: 1.4rem;
-  color: white;
   background-color: var(--info6);
-  display: inline-block;
   border-radius: 50%;
+  color: white;
+  content: 'P';
+  display: inline-block;
+  font-size: 1.4rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
   margin-right: 0.8rem;
+  text-align: center;
+  width: 2.4rem;
 }
 
 .api-docs__section .api-docs__section {
@@ -158,69 +156,68 @@
 .api-docs__title {
   font-family: var(--mono);
   font-size: var(--font-size-code);
-  line-height: 2.4rem;
   font-weight: 400;
+  line-height: 2.4rem;
 
   &.api-key__item--module {
     font-family: var(--sans);
   }
 
   &::before {
-    content: 'P';
-    font-family: var(--sans);
-    width: 2.4rem;
-    height: 2.4rem;
-    text-align: center;
-    line-height: 2.4rem;
-    font-size: 1.4rem;
-    color: white;
     background-color: var(--info6);
-    display: inline-block;
     border-radius: 50%;
+    color: white;
+    content: 'P';
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 1.4rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
     margin-right: 0.8rem;
+    text-align: center;
+    width: 2.4rem;
   }
 }
 
 .api-key__item--global > a::before,
 .api-docs__title--global::before {
-  content: 'G';
   background-color: var(--warning4);
+  content: 'G';
 }
 
 .api-key__item--event > a::before,
 .api-docs__title--event::before {
-  content: 'E';
   background-color: var(--danger6);
+  content: 'E';
 }
 
 .api-key__item--class > a::before,
 .api-docs__title--class::before {
-  content: 'C';
   background-color: var(--warning4);
+  content: 'C';
 }
 
 .api-key__item--method > a::before,
 .api-docs__title--method::before {
-  content: 'M';
   background-color: var(--purple6);
+  content: 'M';
 }
 
 .api-key__item--Object > a::before,
 .api-docs__title--Object::before {
-  content: 'O';
   background-color: var(--pink6);
+  content: 'O';
 }
 
 .api-key__item--module > a::before,
 .api-docs__title--module::before {
-  font-family: 'Material Icons';
-  content: 'pages';
   background-color: transparent;
   color: var(--color-text-accent);
+  content: 'pages';
   font-size: 3rem;
-  vertical-align: middle;
   position: relative;
   right: 3px;
+  vertical-align: middle;
 }
 
 .api-key__item--misc {
