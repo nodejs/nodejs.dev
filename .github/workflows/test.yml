@@ -17,11 +17,9 @@ jobs:
       - uses: actions/cache@v2.1.6
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-bustcache-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-bustcache
-
-      
+            ${{ runner.os }}-node
 
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
