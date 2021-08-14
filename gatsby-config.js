@@ -138,7 +138,7 @@ module.exports = {
         engineOptions: 'speed',
         query: `
         {
-          allMdx {
+          allMdx (filter: {frontmatter: {category: {eq: "learn"}}}){
             edges {
               node {
                 fields {
@@ -149,6 +149,7 @@ module.exports = {
                 frontmatter {
                   title
                   description
+                  category
                 }
          
               }
