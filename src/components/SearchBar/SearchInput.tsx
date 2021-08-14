@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from 'react-click-outside-hook';
 import { Link } from 'gatsby';
+import { useFlexSearch } from 'react-use-flexsearch';
 import { SearchResult } from '../../types';
+import { SearchProps } from '.';
 
 const containerTransition = { type: 'spring', damping: 22, stiffness: 150 };
 const containerVariants = {
@@ -14,7 +16,14 @@ const containerVariants = {
   },
 };
 
-const SearchInput = (props: any): JSX.Element => {
+const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
+  const { index, store } = localSearchLearnPages;
+  const [query, setQuery] = useState('');
+  const [noResults, setNoResults] = useState(false);
+
+  const results = useFlexSearch(query, index, store);
+
+  const isEmpty = !results || results.length === 0;
   const [isExpanded, setExpanded] = useState(false);
   const [parentRef, isClickedOutside] = useClickOutside();
 
@@ -24,9 +33,9 @@ const SearchInput = (props: any): JSX.Element => {
   }) => {
     e.preventDefault();
     if (e.target.value === '') {
-      props.setNoResults(false);
+      setNoResults(false);
     }
-    props.setQuery(e.target.value);
+    setQuery(e.target.value);
   };
 
   const expandContainer = () => {
@@ -35,8 +44,8 @@ const SearchInput = (props: any): JSX.Element => {
 
   const collapseContainer = () => {
     setExpanded(false);
-    props.setQuery('');
-    props.setNoResults(false);
+    setQuery('');
+    setNoResults(false);
   };
 
   useEffect(() => {
@@ -59,7 +68,7 @@ const SearchInput = (props: any): JSX.Element => {
           autoComplete="off"
           className="inputText"
           name="query"
-          value={props.query}
+          value={query}
           onChange={changeHandler}
           placeholder="search"
           onFocus={expandContainer}
@@ -84,15 +93,15 @@ const SearchInput = (props: any): JSX.Element => {
       {isExpanded && (
         <div className="searchContent">
           {/* loading state with an expanded area for the results */}
-          {props.isEmpty && !props.noResults && (
+          {isEmpty && !noResults && (
             <div className="loadingWrapper">
               <div className="warningMessage">Start typing to Search</div>
             </div>
           )}
           {/* success state */}
-          {!props.isEmpty && (
+          {!isEmpty && (
             <>
-              {props.results.map((result: SearchResult) => (
+              {results.map((result: SearchResult) => (
                 <ul key={result.id}>
                   <li className="resultItem">
                     <Link to={`/learn/${result.slug}`}>{result.title}</Link>

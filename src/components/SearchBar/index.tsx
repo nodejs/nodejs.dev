@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useFlexSearch } from 'react-use-flexsearch';
+import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import './SearchBar.scss';
@@ -23,24 +22,8 @@ const SearchBar = (): JSX.Element => {
     }
   `);
 
-  const { index } = queryData.localSearchLearnPages;
-  const { store } = queryData.localSearchLearnPages;
-  const [query, setQuery] = useState('');
-  const [noResults, setNoResults] = useState(false);
-
-  const results = useFlexSearch(query, index, store);
-
-  const isEmpty = !results || results.length === 0;
-
   return (
-    <SearchInput
-      setQuery={setQuery}
-      isEmpty={isEmpty}
-      noResults={noResults}
-      setNoResults={setNoResults}
-      query={query}
-      results={results}
-    />
+    <SearchInput localSearchLearnPages={queryData.localSearchLearnPages} />
   );
 };
 export default SearchBar;
