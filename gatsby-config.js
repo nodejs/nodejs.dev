@@ -157,6 +157,7 @@ module.exports = {
           }
         }        
         `,
+
         ref: 'id',
         index: ['title', 'body', 'description', 'slug'],
         store: ['id', 'title', 'body', 'description', 'slug'],
