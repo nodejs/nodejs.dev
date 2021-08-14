@@ -89,7 +89,10 @@ const Header = (): JSX.Element => {
         <div className="nav__endwrapper">
           <ul className="right-container">
             <li className="nav__tabs">
-              <SearchBar />
+              {typeof window !== `undefined` &&
+              window.location.pathname.includes('learn') ? (
+                <SearchBar />
+              ) : null}
             </li>
             <li className="nav__tabs nav__tabs--right">
               <ThemeToggler>
