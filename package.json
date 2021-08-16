@@ -120,7 +120,7 @@
     "prettier": "^2.3.2",
     "remark-cli": "^10.0.0",
     "remark-frontmatter": "^3.0.0",
-    "remark-preset-lint-node": "^2.4.1"
+    "remark-preset-lint-node": "^3.0.0"
   },
   "repository": {
     "type": "git",
