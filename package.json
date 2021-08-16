@@ -37,7 +37,7 @@
     "gatsby-remark-autolink-headers": "^4.8.0",
     "gatsby-remark-copy-linked-files": "^4.8.0",
     "gatsby-remark-images": "^5.8.0",
-    "gatsby-remark-prismjs": "^5.7.0",
+    "gatsby-remark-prismjs": "^5.8.0",
     "gatsby-source-filesystem": "^3.11.0",
     "gatsby-transformer-remark": "^4.8.0",
     "gatsby-transformer-yaml": "^3.11.0",
