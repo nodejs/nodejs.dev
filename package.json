@@ -119,7 +119,7 @@
     "pa11y": "6.0.1",
     "prettier": "^2.3.2",
     "remark-cli": "^10.0.0",
-    "remark-frontmatter": "^3.0.0",
+    "remark-frontmatter": "^4.0.0",
     "remark-preset-lint-node": "^3.0.0"
   },
   "repository": {
