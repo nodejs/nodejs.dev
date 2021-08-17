@@ -25,7 +25,7 @@
     "gatsby-plugin-canonical-urls": "^3.11.0",
     "gatsby-plugin-catch-links": "^3.11.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
-    "gatsby-plugin-manifest": "^3.10.0",
+    "gatsby-plugin-manifest": "^3.11.0",
     "gatsby-plugin-mdx": "^2.11.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-offline": "^4.11.0",
