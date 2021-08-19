@@ -70,9 +70,10 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "test-ci": "npm run test -- --coverage",
-    "lint": "npm run type-check && npm run lint:js && npm run lint:md",
+    "lint": "npm run type-check && npm run lint:js && npm run lint:md && npm run lint:scss",
     "lint:js": "eslint .",
     "lint:md": "remark -qf .",
+    "lint:scss": "stylelint --config ./.stylelintrc.json ./src/**/*.{css,sass,scss}",
     "lint:fix": "npm run lint -- --fix",
     "serve": "npm run build && clear && gatsby serve",
     "storybook": "start-storybook -p 6006",
@@ -120,7 +121,12 @@
     "prettier": "^2.3.2",
     "remark-cli": "^10.0.0",
     "remark-frontmatter": "^4.0.0",
-    "remark-preset-lint-node": "^3.0.0"
+    "remark-preset-lint-node": "^3.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended-scss": "^4.3.0",
+    "stylelint-config-sass-guidelines": "^8.0.0",
+    "stylelint-selector-bem-pattern": "^2.1.1"
   },
   "repository": {
     "type": "git",
