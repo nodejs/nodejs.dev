@@ -11,9 +11,9 @@ import {
   getRenderedEvents,
   getCalendarURL,
 } from '../util/googleCalendarAPI';
-
-import '../styles/calendar.scss';
 import { CalendarEvent, GCalResponse } from '../types';
+import config from '../config.json';
+import '../styles/calendar.scss';
 
 const localizer = momentLocalizer(moment);
 
@@ -65,11 +65,12 @@ export default function NodeCalendarPage(): JSX.Element {
 
   // TODO: Create custom hook for this logic
   useEffect(() => {
-    loadCalendarAPI('AIzaSyCBklATFMNjWUjJVZswlTmoyZh27FbaHDQ')
+    loadCalendarAPI(
+      process.env.GATSBY_REACT_APP_GCAL_API_KEY ||
+        'AIzaSyCBklATFMNjWUjJVZswlTmoyZh27FbaHDQ'
+    )
       .then(() => {
-        getEventsList(
-          'nodejs.org_nr77ama8p7d7f9ajrpnu506c98@group.calendar.google.com'
-        ).then((events: GCalResponse) => {
+        getEventsList(config.nodeGcalId).then((events: GCalResponse) => {
           const processedEvents = processEvents(
             events.result.items,
             events.result.summary
