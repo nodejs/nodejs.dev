@@ -1,8 +1,6 @@
 // Type definitions for Google API Client
 // Reference: https://github.com/google/google-api-javascript-client/blob/master/docs/reference.md
 
-// import { GCalResponse } from '.';
-
 declare namespace gapi {
   type LoadCallback = (...args: unknown[]) => void;
   type LoadConfig = {
