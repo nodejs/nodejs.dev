@@ -47,7 +47,10 @@ export default function NodeCalendarPage(): JSX.Element {
     }
 
     if (referenceElement?.parentElement?.classList.contains('rbc-selected')) {
-      referenceElement?.parentElement?.classList.remove('rbc-selected');
+      const selectedElements = document.getElementsByClassName('rbc-selected');
+      Array.from(selectedElements).forEach(elm => {
+        elm.classList.remove('rbc-selected');
+      });
     }
     setReferenceElement(null);
   };
@@ -62,10 +65,6 @@ export default function NodeCalendarPage(): JSX.Element {
 
   // TODO: Create custom hook for this logic
   useEffect(() => {
-    console.log(
-      '🚀 -> file: calendar.tsx -> line 67 -> useEffect -> moment.locale();',
-      moment.locale()
-    );
     loadCalendarAPI('AIzaSyCBklATFMNjWUjJVZswlTmoyZh27FbaHDQ')
       .then(() => {
         getEventsList(
