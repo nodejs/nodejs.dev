@@ -140,482 +140,700 @@ exports[`Calendar page renders correctly 1`] = `
       </div>
     </nav>
     <div
-      class="calendar css-zh2wur-Calendar"
+      class="rbc-calendar"
+      style="height: 90vh;"
     >
       <div
-        class="calendar-header"
+        class="rbc-toolbar"
       >
-        <div
-          class="calendar-navigate unselectable"
+        <span
+          class="rbc-btn-group"
         >
-          ❮
-        </div>
-        <div>
-          <h2
-            class="calendar-title"
+          <button
+            type="button"
           >
-            August 2021
-          </h2>
-        </div>
-        <div
-          class="calendar-navigate unselectable"
+            Today
+          </button>
+          <button
+            type="button"
+          >
+            Back
+          </button>
+          <button
+            type="button"
+          >
+            Next
+          </button>
+        </span>
+        <span
+          class="rbc-toolbar-label"
         >
-          ❯
-        </div>
+          August 2021
+        </span>
+        <span
+          class="rbc-btn-group"
+        />
       </div>
       <div
-        class="calendar-body"
+        aria-label="Month View"
+        class="rbc-month-view"
+        role="table"
       >
         <div
-          class="day-name css-1esfe62-Calendar"
+          class="rbc-row rbc-month-header"
+          role="row"
         >
-          Sun
-        </div>
-        <div
-          class="day-name css-1esfe62-Calendar"
-        >
-          Mon
-        </div>
-        <div
-          class="day-name css-1esfe62-Calendar"
-        >
-          Tue
-        </div>
-        <div
-          class="day-name css-1esfe62-Calendar"
-        >
-          Wed
-        </div>
-        <div
-          class="day-name css-1esfe62-Calendar"
-        >
-          Thu
-        </div>
-        <div
-          class="day-name css-1esfe62-Calendar"
-        >
-          Fri
-        </div>
-        <div
-          class="day-name css-1esfe62-Calendar"
-        >
-          Sat
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            1
-          </span>
           <div
-            class="innerDay"
-            id="day-1"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
+            class="rbc-header"
           >
-            2
-          </span>
+            <span
+              aria-sort="none"
+              role="columnheader"
+            >
+              Sun
+            </span>
+          </div>
           <div
-            class="innerDay"
-            id="day-2"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
+            class="rbc-header"
           >
-            3
-          </span>
+            <span
+              aria-sort="none"
+              role="columnheader"
+            >
+              Mon
+            </span>
+          </div>
           <div
-            class="innerDay"
-            id="day-3"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
+            class="rbc-header"
           >
-            4
-          </span>
+            <span
+              aria-sort="none"
+              role="columnheader"
+            >
+              Tue
+            </span>
+          </div>
           <div
-            class="innerDay"
-            id="day-4"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
+            class="rbc-header"
           >
-            5
-          </span>
+            <span
+              aria-sort="none"
+              role="columnheader"
+            >
+              Wed
+            </span>
+          </div>
           <div
-            class="innerDay"
-            id="day-5"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
+            class="rbc-header"
           >
-            6
-          </span>
+            <span
+              aria-sort="none"
+              role="columnheader"
+            >
+              Thu
+            </span>
+          </div>
           <div
-            class="innerDay"
-            id="day-6"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
+            class="rbc-header"
           >
-            7
-          </span>
+            <span
+              aria-sort="none"
+              role="columnheader"
+            >
+              Fri
+            </span>
+          </div>
           <div
-            class="innerDay"
-            id="day-7"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
+            class="rbc-header"
           >
-            8
-          </span>
-          <div
-            class="innerDay"
-            id="day-8"
-          />
+            <span
+              aria-sort="none"
+              role="columnheader"
+            >
+              Sat
+            </span>
+          </div>
         </div>
         <div
-          class="day css-0"
+          class="rbc-month-row"
+          role="rowgroup"
         >
-          <span
-            class="css-csro95-Calendar"
-          >
-            9
-          </span>
           <div
-            class="innerDay"
-            id="day-9"
-          />
+            class="rbc-row-bg"
+          >
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+          </div>
+          <div
+            class="rbc-row-content"
+            role="row"
+          >
+            <div
+              class="rbc-row "
+            >
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  01
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  02
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  03
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  04
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  05
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  06
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  07
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
         <div
-          class="day css-0"
+          class="rbc-month-row"
+          role="rowgroup"
         >
-          <span
-            class="css-csro95-Calendar"
-          >
-            10
-          </span>
           <div
-            class="innerDay"
-            id="day-10"
-          />
+            class="rbc-row-bg"
+          >
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+          </div>
+          <div
+            class="rbc-row-content"
+            role="row"
+          >
+            <div
+              class="rbc-row "
+            >
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  08
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  09
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  10
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  11
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  12
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  13
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  14
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
         <div
-          class="day css-0"
+          class="rbc-month-row"
+          role="rowgroup"
         >
-          <span
-            class="css-csro95-Calendar"
-          >
-            11
-          </span>
           <div
-            class="innerDay"
-            id="day-11"
-          />
+            class="rbc-row-bg"
+          >
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg rbc-today"
+            />
+          </div>
+          <div
+            class="rbc-row-content"
+            role="row"
+          >
+            <div
+              class="rbc-row "
+            >
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  15
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  16
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  17
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  18
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  19
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  20
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell rbc-now rbc-current"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  21
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
         <div
-          class="day css-0"
+          class="rbc-month-row"
+          role="rowgroup"
         >
-          <span
-            class="css-csro95-Calendar"
-          >
-            12
-          </span>
           <div
-            class="innerDay"
-            id="day-12"
-          />
+            class="rbc-row-bg"
+          >
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+          </div>
+          <div
+            class="rbc-row-content"
+            role="row"
+          >
+            <div
+              class="rbc-row "
+            >
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  22
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  23
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  24
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  25
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  26
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  27
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  28
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
         <div
-          class="day css-vkch5w-Calendar"
+          class="rbc-month-row"
+          role="rowgroup"
         >
-          <span
-            class="css-csro95-Calendar"
-          >
-            13
-          </span>
           <div
-            class="innerDay"
-            id="day-13"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
+            class="rbc-row-bg"
           >
-            14
-          </span>
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg"
+            />
+            <div
+              class="rbc-day-bg rbc-off-range-bg"
+            />
+            <div
+              class="rbc-day-bg rbc-off-range-bg"
+            />
+            <div
+              class="rbc-day-bg rbc-off-range-bg"
+            />
+            <div
+              class="rbc-day-bg rbc-off-range-bg"
+            />
+          </div>
           <div
-            class="innerDay"
-            id="day-14"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
+            class="rbc-row-content"
+            role="row"
           >
-            15
-          </span>
-          <div
-            class="innerDay"
-            id="day-15"
-          />
+            <div
+              class="rbc-row "
+            >
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  29
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  30
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  31
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell rbc-off-range"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  01
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell rbc-off-range"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  02
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell rbc-off-range"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  03
+                </a>
+              </div>
+              <div
+                class="rbc-date-cell rbc-off-range"
+                role="cell"
+              >
+                <a
+                  href="#"
+                  role="cell"
+                >
+                  04
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            16
-          </span>
-          <div
-            class="innerDay"
-            id="day-16"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            17
-          </span>
-          <div
-            class="innerDay"
-            id="day-17"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            18
-          </span>
-          <div
-            class="innerDay"
-            id="day-18"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            19
-          </span>
-          <div
-            class="innerDay"
-            id="day-19"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            20
-          </span>
-          <div
-            class="innerDay"
-            id="day-20"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            21
-          </span>
-          <div
-            class="innerDay"
-            id="day-21"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            22
-          </span>
-          <div
-            class="innerDay"
-            id="day-22"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            23
-          </span>
-          <div
-            class="innerDay"
-            id="day-23"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            24
-          </span>
-          <div
-            class="innerDay"
-            id="day-24"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            25
-          </span>
-          <div
-            class="innerDay"
-            id="day-25"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            26
-          </span>
-          <div
-            class="innerDay"
-            id="day-26"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            27
-          </span>
-          <div
-            class="innerDay"
-            id="day-27"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            28
-          </span>
-          <div
-            class="innerDay"
-            id="day-28"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            29
-          </span>
-          <div
-            class="innerDay"
-            id="day-29"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            30
-          </span>
-          <div
-            class="innerDay"
-            id="day-30"
-          />
-        </div>
-        <div
-          class="day css-0"
-        >
-          <span
-            class="css-csro95-Calendar"
-          >
-            31
-          </span>
-          <div
-            class="innerDay"
-            id="day-31"
-          />
-        </div>
-        <div
-          class="day css-0"
-        />
-        <div
-          class="day css-0"
-        />
-        <div
-          class="day css-0"
-        />
-        <div
-          class="day css-0"
-        />
       </div>
     </div>
     <section

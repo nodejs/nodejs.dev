@@ -227,15 +227,6 @@ export interface Banners {
   };
 }
 
-/**
- * export interface Event {
-    allDay?: boolean | undefined;
-    title?: string | undefined; event.summary
-    start?: Date | undefined; event.startTime
-    end?: Date | undefined; event.endTime
-    resource?: any;
-}
-*/
 export interface CalendarEvent extends Event {
   htmlLink?: string;
   description?: string;

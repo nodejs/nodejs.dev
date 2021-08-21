@@ -8,40 +8,14 @@ import {
   GCalResponse,
 } from '../types';
 
-type InitParam = {
-  apiKey: string;
-};
-
-interface GAPI {
-  load: (path: string, callbackFn: () => void) => Promise<any>;
-  client: {
-    init: (initParam: InitParam) => Promise<any>;
-    load: (path: string) => Promise<any>;
-    calendar: {
-      events: {
-        list: (params: any) => Promise<any>;
-      };
-    };
-  };
-}
-
-// let gapi: GAPI;
-
-export async function loadCalendarAPI(apiKey: string): Promise<void> {
-  // let gapi: GAPI;
+export async function loadGAPI(apiKey: string): Promise<void> {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');
     script.src = 'https://apis.google.com/js/api.js';
     document.body.appendChild(script);
     script.onload = () => {
-      // eslint-disable-next-line
-      // @ts-ignore
       gapi.load('client', () => {
-        // eslint-disable-next-line
-        // @ts-ignore
         gapi.client.init({ apiKey }).then(() => {
-          // eslint-disable-next-line
-          // @ts-ignore
           gapi.client
             .load(
               'https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest'
@@ -56,12 +30,10 @@ export async function loadCalendarAPI(apiKey: string): Promise<void> {
   });
 }
 
-export async function getEventsList(
+export async function getEvents(
   calendarId: string,
   maxResults = 1000
 ): Promise<GCalResponse> {
-  // eslint-disable-next-line
-  // @ts-ignore
   return gapi.client.calendar.events.list({
     calendarId,
     maxResults,
@@ -79,7 +51,6 @@ export function processEvents(
   items: GCalEvent[],
   calendarName: string
 ): CalendarEvent[] {
-  // const singleEvents: any = [];
   const events: CalendarEvent[] = [];
   const changed: ChangedCalendarEvent[] = [];
   const cancelled: CancelledCalendarEvent[] = [];
@@ -112,8 +83,6 @@ export function processEvents(
             ? moment(event.end.dateTime)
             : moment.parseZone(event.end.date),
         });
-      } else {
-        console.log('Not categorized: ', event);
       }
     } else if (event.status === 'confirmed') {
       const eventStartTime = event.start.dateTime
@@ -138,8 +107,6 @@ export function processEvents(
       };
 
       events.push(newEvent);
-    } else {
-      console.log('Not categorized: ', event);
     }
   });
 

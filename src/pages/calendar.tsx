@@ -1,18 +1,12 @@
 import React, { useEffect, useState, SyntheticEvent } from 'react';
-import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
-import { usePopper } from 'react-popper';
 import dompurify from 'dompurify';
+import { Calendar, momentLocalizer } from 'react-big-calendar';
+import { usePopper } from 'react-popper';
 import Layout from '../components/Layout';
-import {
-  loadCalendarAPI,
-  getEventsList,
-  processEvents,
-  getRenderedEvents,
-  getCalendarURL,
-} from '../util/googleCalendarAPI';
-import { CalendarEvent, GCalResponse } from '../types';
-import config from '../config.json';
+import { getCalendarURL } from '../util/gcalUtils';
+import { CalendarEvent } from '../types';
+import { useGCalendarAPI } from '../hooks/useGCalAPI';
 import '../styles/calendar.scss';
 
 const localizer = momentLocalizer(moment);
@@ -30,8 +24,7 @@ const eventCardStyles = {
 };
 
 export default function NodeCalendarPage(): JSX.Element {
-  const [gcalEvents, setGcalEvents] = useState<CalendarEvent[]>([]);
-  const [renderedEvents, setRenderedEvents] = useState<CalendarEvent[]>([]);
+  const [events, setEvents] = useGCalendarAPI();
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(
     null
   );
@@ -63,37 +56,8 @@ export default function NodeCalendarPage(): JSX.Element {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [referenceElement]);
 
-  // TODO: Create custom hook for this logic
-  useEffect(() => {
-    loadCalendarAPI(
-      process.env.GATSBY_REACT_APP_GCAL_API_KEY ||
-        'AIzaSyCBklATFMNjWUjJVZswlTmoyZh27FbaHDQ'
-    )
-      .then(() => {
-        getEventsList(config.nodeGcalId).then((events: GCalResponse) => {
-          const processedEvents = processEvents(
-            events.result.items,
-            events.result.summary
-          );
-          setGcalEvents(processedEvents);
-          const initiallyRenderedEvents = getRenderedEvents(
-            processedEvents,
-            moment().startOf('month').utc(true)
-          );
-          setRenderedEvents(initiallyRenderedEvents);
-        });
-      })
-      .catch((err: unknown) => {
-        console.error(err);
-      });
-  }, []);
-
   const onNavigate = (navigatedDate: Date): void => {
-    const newRenderedEvents = getRenderedEvents(
-      gcalEvents,
-      moment(navigatedDate).startOf('month').utc(true)
-    );
-    setRenderedEvents(newRenderedEvents);
+    setEvents(navigatedDate);
   };
 
   const onSelectEvent = (
@@ -120,7 +84,7 @@ export default function NodeCalendarPage(): JSX.Element {
     <Layout title="Node.js Calendar" description="Node.js upcoming events">
       <Calendar
         localizer={localizer}
-        events={renderedEvents}
+        events={events}
         style={{ height: '90vh' }}
         onSelectEvent={onSelectEvent}
         startAccessor={startAccessor}

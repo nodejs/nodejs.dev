@@ -32,7 +32,8 @@
   }
 }
 
-.rbc-day-slot .rbc-event, .rbc-day-slot .rbc-background-event {
+.rbc-day-slot .rbc-event,
+.rbc-day-slot .rbc-background-event {
   border: 1px solid var(--color-border-accent);
   display: flex;
   max-height: 100%;
