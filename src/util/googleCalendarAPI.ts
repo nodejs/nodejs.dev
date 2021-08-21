@@ -242,3 +242,28 @@ export function getRenderedEvents(
   });
   return renderedEvents;
 }
+
+export function getCalendarURL(event: CalendarEvent): string {
+  const url = new URL('https://calendar.google.com/calendar/r/eventedit');
+  url.searchParams.append('text', event.title || '');
+
+  if (event.allDay) {
+    url.searchParams.append(
+      'dates',
+      `${event.startTime.format('YYYYMMDD')}/${event.endTime.format(
+        'YYYYMMDD'
+      )}`
+    );
+  } else {
+    url.searchParams.append(
+      'dates',
+      `${event.startTime.format('YYYYMMDDTHHmmss')}/${event.endTime.format(
+        'YYYYMMDDTHHmmss'
+      )}`
+    );
+  }
+
+  url.searchParams.append('details', event.description || '');
+  url.searchParams.append('location', event.location || '');
+  return url.href;
+}

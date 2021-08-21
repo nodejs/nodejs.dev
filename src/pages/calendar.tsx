@@ -2,18 +2,32 @@ import React, { useEffect, useState, SyntheticEvent } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import { usePopper } from 'react-popper';
+import dompurify from 'dompurify';
 import Layout from '../components/Layout';
 import {
   loadCalendarAPI,
   getEventsList,
   processEvents,
   getRenderedEvents,
+  getCalendarURL,
 } from '../util/googleCalendarAPI';
 
 import '../styles/calendar.scss';
 import { CalendarEvent, GCalResponse } from '../types';
 
 const localizer = momentLocalizer(moment);
+
+const eventCardStyles = {
+  backgroundColor: '#333',
+  color: 'white',
+  padding: '5px 10px',
+  borderRadius: '6px',
+  fontSize: '13px',
+  width: '36rem',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  zIndex: 999,
+};
 
 export default function NodeCalendarPage(): JSX.Element {
   const [gcalEvents, setGcalEvents] = useState<CalendarEvent[]>([]);
@@ -27,21 +41,13 @@ export default function NodeCalendarPage(): JSX.Element {
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
   const { styles, attributes } = usePopper(referenceElement, popperElement);
 
-  const otherStyles = {
-    backgroundColor: '#333',
-    color: 'white',
-    padding: '5px 10px',
-    borderRadius: '6px',
-    fontSize: '13px',
-    width: '36rem',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    zIndex: 999,
-  };
-
   const handleDocumentClick = (event: MouseEvent) => {
     if (referenceElement && referenceElement?.contains(event.target as Node)) {
       return;
+    }
+
+    if (referenceElement?.parentElement?.classList.contains('rbc-selected')) {
+      referenceElement?.parentElement?.classList.remove('rbc-selected');
     }
     setReferenceElement(null);
   };
@@ -54,7 +60,12 @@ export default function NodeCalendarPage(): JSX.Element {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [referenceElement]);
 
+  // TODO: Create custom hook for this logic
   useEffect(() => {
+    console.log(
+      '🚀 -> file: calendar.tsx -> line 67 -> useEffect -> moment.locale();',
+      moment.locale()
+    );
     loadCalendarAPI('AIzaSyCBklATFMNjWUjJVZswlTmoyZh27FbaHDQ')
       .then(() => {
         getEventsList(
@@ -101,6 +112,10 @@ export default function NodeCalendarPage(): JSX.Element {
     return event.endTime.toDate();
   };
 
+  const onView = () => {
+    setReferenceElement(null);
+  };
+
   return (
     <Layout title="Node.js Calendar" description="Node.js upcoming events">
       <Calendar
@@ -111,7 +126,7 @@ export default function NodeCalendarPage(): JSX.Element {
         startAccessor={startAccessor}
         endAccessor={endAccessor}
         onNavigate={onNavigate}
-        onView={view => console.log(`onView: ${view}`)}
+        onView={onView}
         views={['month']}
         popup
       />
@@ -120,7 +135,7 @@ export default function NodeCalendarPage(): JSX.Element {
         <div
           role="tooltip"
           ref={setPopperElement}
-          style={{ ...styles.popper, ...otherStyles }}
+          style={{ ...styles.popper, ...eventCardStyles }}
           onClick={e => e.stopPropagation()}
           onKeyPress={e => e.stopPropagation()}
           // eslint-disable-next-line react/jsx-props-no-spreading
@@ -135,22 +150,24 @@ export default function NodeCalendarPage(): JSX.Element {
           </div>
           <br />
           <div
-            role="button"
-            tabIndex={0}
-            onMouseDown={e => {
-              const eNode = e.target as Node;
-              if (eNode.nodeName === 'A') {
-                e.preventDefault();
-              }
-            }}
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
-              __html: selectedEvent?.description as string,
+              __html: dompurify.sanitize(selectedEvent?.description as string),
             }}
           />
-          <div>HTMLLINK: {selectedEvent?.htmlLink}</div>
-          <br />
-          <div>Location: {selectedEvent?.location}</div>
+          <div>
+            {selectedEvent?.location &&
+            selectedEvent.location.includes('https') ? (
+              <a href={selectedEvent.location}>{selectedEvent.location}</a>
+            ) : (
+              selectedEvent?.location
+            )}
+          </div>
+          <div>
+            <a href={getCalendarURL(selectedEvent as CalendarEvent)}>
+              Copy to Calendar
+            </a>
+          </div>
         </div>
       )}
     </Layout>

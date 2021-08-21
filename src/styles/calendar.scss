@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0;
   background-color: transparent;
-  border-radius: 0;
+  border-radius: 2px;
   color: var(--color-text-primary);
   cursor: pointer;
   width: 100%;
@@ -30,4 +30,23 @@
   &:focus {
     outline: var(--space-04) auto var(--color-border-accent);
   }
+}
+
+.rbc-day-slot .rbc-event, .rbc-day-slot .rbc-background-event {
+  border: 1px solid var(--color-border-accent);
+  display: flex;
+  max-height: 100%;
+  min-height: 20px;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  overflow: hidden;
+  position: absolute;
+}
+
+.rbc-overlay {
+  position: absolute;
+  z-index: 5;
+  border: 1px solid var(--color-fill-card);
+  background-color: var(--color-fill-card);
+  padding: 10px;
 }
