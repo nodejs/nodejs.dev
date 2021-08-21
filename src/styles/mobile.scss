@@ -2,7 +2,7 @@
   body {
     --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 52px), 0 100%);
   }
- .side-nav {
+  .side-nav {
     margin-right: -36rem;
 
     &::after {
@@ -57,11 +57,11 @@
   .searchBarContainer {
     width: 18em;
   }
-  
+
   .searchInputContainer {
     width: 94%;
   }
- 
+
   body {
     --nav-height: 5.2rem;
     --banner-clip: polygon(
