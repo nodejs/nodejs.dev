@@ -1,21 +1,21 @@
 .shell-box {
-  font-family: var(--mono);
-  display: flex;
-  flex-direction: column;
   background-color: var(--black10);
   border-radius: 0.4rem;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--mono);
   padding: 0 0 var(--space-48) var(--space-16);
   position: relative;
 
   code {
-    overflow-x: hidden;
-    font-family: inherit;
     color: var(--pink5);
-    width: calc(100% - 20px);
+    font-family: inherit;
     line-height: 30px;
+    overflow-x: hidden;
     position: absolute;
     top: 30px;
+    width: calc(100% - 20px);
 
     &:hover {
       overflow-x: auto;
@@ -27,8 +27,8 @@
 
     &::-webkit-scrollbar,
     &::-webkit-scrollbar-thumb {
-      overflow: visible;
       border-radius: 4px;
+      overflow: visible;
     }
 
     &::-webkit-scrollbar-thumb {
@@ -52,25 +52,25 @@
 
     span,
     button {
-      width: 86px;
-      height: 23px;
-      font-size: var(--font-size-code);
-      display: inherit;
       align-items: center;
+      display: inherit;
+      font-size: var(--font-size-code);
+      height: 23px;
       justify-content: center;
+      width: 86px;
     }
 
     span {
-      margin-left: 1.6rem;
-      color: var(--black9);
       background-color: var(--black3);
       border-radius: 0 0 0.3rem 0.3rem;
+      color: var(--black9);
+      margin-left: 1.6rem;
     }
 
     button {
-      border-width: 0;
-      border-radius: 0 0.3rem 0.3rem 0.3rem;
       background-color: var(--brand2);
+      border-radius: 0 0.3rem 0.3rem 0.3rem;
+      border-width: 0;
       i {
         padding: 0;
       }

@@ -1,18 +1,6 @@
-.article-reader {
-  padding: var(--space-24);
-  width: auto;
-
-  hr {
-    border: none;
-    border-bottom: 0.4rem solid var(--black2);
-  }
-}
-
-/* sr-only for desktop */
-
 .article-reader__headline {
-  padding: 0;
   margin: 0 0 var(--space-40) 0;
+  padding: 0;
 }
 
 .hero h1 {
@@ -20,6 +8,15 @@
 }
 
 .article-reader {
+  padding: var(--space-24);
+  width: auto;
+
+  hr {
+    border: none;
+    border-bottom: 0.4rem solid var(--black2);
+    margin-bottom: var(--space-40);
+  }
+
   blockquote {
     border-left: 3px solid var(--black4);
     color: var(--color-text-primary);
@@ -43,6 +40,10 @@
     margin-bottom: var(--space-24);
   }
 
+  h4 {
+    margin-bottom: var(--space-16);
+  }
+
   li {
     + h4 {
       margin-top: var(--space-32);
@@ -58,14 +59,6 @@
   h3 {
     margin-bottom: var(--space-24);
     scroll-margin-top: var(--space-128);
-  }
-
-  h4 {
-    margin-bottom: var(--space-16);
-  }
-
-  hr {
-    margin-bottom: var(--space-40);
   }
 
   details,
@@ -86,10 +79,10 @@
 
 @media (max-width: 800px) {
   .article-reader {
-    width: 100%;
+    box-sizing: border-box;
     max-width: 100vw;
     padding: 0 3rem;
-    box-sizing: border-box;
+    width: 100%;
 
     h1 {
       font-size: var(--font-size-display3);
@@ -100,15 +93,15 @@
   /* unset sr-only for mobile */
 
   .article-reader__headline {
-    position: static;
-    width: auto;
-    height: auto;
-    padding: auto;
-    overflow: visible;
-    clip: none;
     border: auto;
+    clip: none;
+    height: auto;
     line-height: 1.2;
     margin: 4.2rem 0 0;
+    overflow: visible;
+    padding: auto;
+    position: static;
+    width: auto;
   }
 }
 .gatsby-highlight {

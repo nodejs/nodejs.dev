@@ -4,19 +4,19 @@
     -webkit-tap-highlight-color: transparent;
 
     &__tab-list {
+      border-bottom: 1px solid #d7d8df;
+      display: flex;
       margin: 0;
+      overflow-x: auto;
       padding: 0;
       text-align: center;
-      display: flex;
-      border-bottom: 1px solid #d7d8df;
-      overflow-x: auto;
     }
 
     &__tab {
+      cursor: pointer;
       display: inline-block;
       list-style: none;
       padding: 7px 20px;
-      cursor: pointer;
 
       &--selected {
         border-bottom: 4px solid var(--brand5);
@@ -35,10 +35,10 @@
 
   &__panel {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     text-align: center;
   }
 }
