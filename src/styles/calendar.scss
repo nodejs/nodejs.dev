@@ -1,22 +1,22 @@
 @import 'react-big-calendar/lib/sass/styles';
 
 .rbc-today {
-  border-top: var(--space-04) solid var(--color-border-accent);
   background-color: transparent;
+  border-top: var(--space-04) solid var(--color-border-accent);
 }
 
 .rbc-event {
-  border: none;
-  box-sizing: border-box;
-  box-shadow: none;
-  margin: 0;
-  padding: 0;
   background-color: transparent;
+  border: none;
   border-radius: 2px;
+  box-shadow: none;
+  box-sizing: border-box;
   color: var(--color-text-primary);
   cursor: pointer;
-  width: 100%;
+  margin: 0;
+  padding: 0;
   text-align: left;
+  width: 100%;
 
   .rbc-slot-selecting & {
     cursor: inherit;
@@ -34,20 +34,20 @@
 
 .rbc-day-slot .rbc-event,
 .rbc-day-slot .rbc-background-event {
+  align-items: flex-start;
   border: 1px solid var(--color-border-accent);
   display: flex;
+  flex-flow: column wrap;
   max-height: 100%;
   min-height: 20px;
-  flex-flow: column wrap;
-  align-items: flex-start;
   overflow: hidden;
   position: absolute;
 }
 
 .rbc-overlay {
+  background-color: var(--color-fill-card);
+  border: 1px solid var(--color-fill-card);
+  padding: 10px;
   position: absolute;
   z-index: 5;
-  border: 1px solid var(--color-fill-card);
-  background-color: var(--color-fill-card);
-  padding: 10px;
 }
