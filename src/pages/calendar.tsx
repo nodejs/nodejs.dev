@@ -11,18 +11,6 @@ import '../styles/calendar.scss';
 
 const localizer = momentLocalizer(moment);
 
-const eventCardStyles = {
-  backgroundColor: '#333',
-  color: 'white',
-  padding: '5px 10px',
-  borderRadius: '6px',
-  fontSize: '13px',
-  width: '36rem',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  zIndex: 999,
-};
-
 export default function NodeCalendarPage(): JSX.Element {
   const [events, setEvents] = useGCalendarAPI();
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(
@@ -98,8 +86,9 @@ export default function NodeCalendarPage(): JSX.Element {
         // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
         <div
           role="tooltip"
+          className="rbc-tooltip"
           ref={setPopperElement}
-          style={{ ...styles.popper, ...eventCardStyles }}
+          style={{ ...styles.popper }}
           onClick={e => e.stopPropagation()}
           onKeyPress={e => e.stopPropagation()}
           // eslint-disable-next-line react/jsx-props-no-spreading

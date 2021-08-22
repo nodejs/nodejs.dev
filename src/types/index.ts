@@ -228,7 +228,6 @@ export interface Banners {
 }
 
 export interface CalendarEvent extends Event {
-  htmlLink?: string;
   description?: string;
   location?: string;
   id: string;
@@ -236,7 +235,6 @@ export interface CalendarEvent extends Event {
   changedEvents?: ChangedCalendarEvent[];
   cancelledEvents?: CancelledCalendarEvent[];
   calendarName?: string;
-  color?: string;
   startTime: Moment;
   endTime: Moment;
 }

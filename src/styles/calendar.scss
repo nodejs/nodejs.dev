@@ -51,3 +51,15 @@
   position: absolute;
   z-index: 5;
 }
+
+.rbc-tooltip {
+  background-color: #333;
+  border-radius: 6px;
+  color: white;
+  font-size: 13px;
+  overflow: hidden;
+  padding: 5px 10px;
+  text-overflow: ellipsis;
+  width: 36rem;
+  z-index: 999;
+}

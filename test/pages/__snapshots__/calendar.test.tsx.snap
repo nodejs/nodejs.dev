@@ -512,7 +512,7 @@ exports[`Calendar page renders correctly 1`] = `
               class="rbc-day-bg"
             />
             <div
-              class="rbc-day-bg rbc-today"
+              class="rbc-day-bg"
             />
           </div>
           <div
@@ -589,7 +589,7 @@ exports[`Calendar page renders correctly 1`] = `
                 </a>
               </div>
               <div
-                class="rbc-date-cell rbc-now rbc-current"
+                class="rbc-date-cell"
                 role="cell"
               >
                 <a
@@ -610,7 +610,7 @@ exports[`Calendar page renders correctly 1`] = `
             class="rbc-row-bg"
           >
             <div
-              class="rbc-day-bg"
+              class="rbc-day-bg rbc-today"
             />
             <div
               class="rbc-day-bg"
@@ -639,7 +639,7 @@ exports[`Calendar page renders correctly 1`] = `
               class="rbc-row "
             >
               <div
-                class="rbc-date-cell"
+                class="rbc-date-cell rbc-now rbc-current"
                 role="cell"
               >
                 <a

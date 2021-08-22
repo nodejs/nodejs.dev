@@ -22,7 +22,7 @@ export async function loadGAPI(apiKey: string): Promise<void> {
             )
             .then(
               () => resolve(),
-              (err: unknown) => reject(err)
+              (err: Error) => reject(err)
             );
         });
       });
@@ -136,10 +136,10 @@ export function getRRuleDates(
   betweenStart: Moment,
   betweenEnd: Moment
 ): Date[] {
-  const rstr = `DTSTART:${moment(startTime)
+  const rruleStr = `DTSTART:${moment(startTime)
     .utc(true)
     .format('YYYYMMDDTHHmmss')}Z\n${recurrenceRule}`;
-  const rruleSet = rrulestr(rstr, { forceset: true });
+  const rruleSet = rrulestr(rruleStr, { forceset: true });
   const begin = moment(betweenStart).utc(true).toDate();
   const end = moment(betweenEnd).utc(true).toDate();
   const dates = rruleSet.between(begin, end);
@@ -184,7 +184,6 @@ export function getRenderedEvents(
             description: changedEvent.description,
             location: changedEvent.location,
             calendarName: event.calendarName,
-            color: event.color,
           });
         } else {
           const eventStart = moment.utc(date);
@@ -197,7 +196,6 @@ export function getRenderedEvents(
             description: event.description,
             location: event.location,
             calendarName: event.calendarName,
-            color: event.color,
           });
         }
       });

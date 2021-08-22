@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import moment from 'moment';
-import { CalendarEvent, GCalResponse } from '../types';
+import { CalendarEvent } from '../types';
 import {
   loadGAPI,
   getEvents,
@@ -15,29 +15,31 @@ export function useGCalendarAPI(): [CalendarEvent[], (date: Date) => void] {
   const [renderedEvents, setRenderedEvents] = useState<CalendarEvent[]>([]);
 
   useEffect(() => {
-    loadGAPI(
-      process.env.GATSBY_REACT_APP_GCAL_API_KEY ||
-        'AIzaSyCBklATFMNjWUjJVZswlTmoyZh27FbaHDQ'
-    )
-      .then(() => {
-        getEvents(config.nodeGcalId).then((events: GCalResponse) => {
-          const processedEvents = processEvents(
-            events.result.items,
-            events.result.summary
-          );
-          setGcalEvents(processedEvents);
-          const initiallyRenderedEvents = getRenderedEvents(
-            processedEvents,
-            moment().startOf('month').utc(true)
-          );
-          setRenderedEvents(initiallyRenderedEvents);
-        });
-      })
-      .catch((err: unknown) => {
+    async function loadEvents() {
+      try {
+        await loadGAPI(
+          process.env.GATSBY_REACT_APP_GCAL_API_KEY ||
+            'AIzaSyCBklATFMNjWUjJVZswlTmoyZh27FbaHDQ'
+        );
+        const events = await getEvents(config.nodeGcalId);
+        const processedEvents = processEvents(
+          events.result.items,
+          events.result.summary
+        );
+        setGcalEvents(processedEvents);
+        const initiallyRenderedEvents = getRenderedEvents(
+          processedEvents,
+          moment().startOf('month').utc(true)
+        );
+        setRenderedEvents(initiallyRenderedEvents);
+      } catch (err: unknown) {
         // TODO: Need to show some kind of message to user
         // eslint-disable-next-line no-console
         console.error(err);
-      });
+      }
+    }
+
+    loadEvents();
   }, []);
 
   const updateRenderedEvents = (date: Date) => {
