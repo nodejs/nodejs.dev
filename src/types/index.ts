@@ -155,8 +155,8 @@ export interface SideNavBarItem {
 export enum ReleaseTypes {
   current = 'Current',
   lts = 'LTS',
-  maintenance = 'Maintenance Release',
-  endoflife = 'End-of-life Release',
+  maintenance = 'Maintenance',
+  endoflife = 'End-of-life',
 }
 
 export interface UpcomingReleaseData {

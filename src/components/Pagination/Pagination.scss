@@ -1,10 +1,10 @@
 .link {
   color: var(--black7) !important;
-  text-transform: uppercase;
-  text-decoration: none !important;
+  font-family: var(--sans-serif);
   font-size: 1.4rem;
   font-weight: normal;
-  font-family: var(--sans-serif);
+  text-decoration: none !important;
+  text-transform: uppercase;
   vertical-align: middle;
   &:hover {
     color: var(--brand-light) !important;

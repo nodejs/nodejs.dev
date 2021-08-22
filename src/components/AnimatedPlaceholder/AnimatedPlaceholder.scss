@@ -25,10 +25,10 @@
   }
 
   &__image {
-    height: 60px;
-    min-width: 60px;
-    margin-right: 5px;
     @extend .animated-background;
+    height: 60px;
+    margin-right: 5px;
+    min-width: 60px;
   }
 
   &__text {
@@ -36,9 +36,9 @@
   }
 
   &__text-line {
-    height: 10px;
-    width: 100%;
-    margin: 4px 0;
     @extend .animated-background;
+    height: 10px;
+    margin: 4px 0;
+    width: 100%;
   }
 }

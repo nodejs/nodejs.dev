@@ -22,7 +22,7 @@ export default function UpcomingReleasesItem({
       <img src={image} alt="hexagon icon" />
       <p className="release-title">{releaseType}</p>
       <p className="release-date">
-        {alreadyReleased ? 'Released' : 'To be released'} {releaseDate}
+        {alreadyReleased ? 'Released' : ''} {releaseDate}
       </p>
     </div>
   );

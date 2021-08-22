@@ -1,11 +1,11 @@
 .download-page__navigation {
-  display: flex;
-  justify-content: space-between;
-  text-transform: uppercase;
   color: var(--color-text-primary);
+  display: flex;
   font-size: var(--font-size-overline);
-  line-height: var(--line-height-overline);
+  justify-content: space-between;
   letter-spacing: var(--space-02);
+  line-height: var(--line-height-overline);
+  text-transform: uppercase;
   width: 100%;
 }
 
@@ -14,16 +14,16 @@
 }
 
 .download-page__navigation--title {
-  text-transform: capitalize;
   color: var(--color-text-primary);
   font-size: var(--font-size-display3);
   line-height: var(--line-height-display3);
+  text-transform: capitalize;
 }
 
 .download-page__navigation--npm {
+  text-align: right;
   text-transform: lowercase;
   width: 100%;
-  text-align: right;
 }
 
 @media (max-width: 500px) {
