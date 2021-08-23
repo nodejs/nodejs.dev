@@ -6,13 +6,13 @@ import { usePopper } from 'react-popper';
 import Layout from '../components/Layout';
 import { getCalendarURL } from '../util/gcalUtils';
 import { CalendarEvent } from '../types';
-import { useGCalendarAPI } from '../hooks/useGCalAPI';
+import { useGCalAPI } from '../hooks/useGCalAPI';
 import '../styles/calendar.scss';
 
 const localizer = momentLocalizer(moment);
 
 export default function NodeCalendarPage(): JSX.Element {
-  const [events, setEvents] = useGCalendarAPI();
+  const [events, setEvents] = useGCalAPI();
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(
     null
   );

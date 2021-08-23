@@ -10,7 +10,7 @@ import {
 import config from '../config.json';
 
 // eslint-disable-next-line import/prefer-default-export
-export function useGCalendarAPI(): [CalendarEvent[], (date: Date) => void] {
+export function useGCalAPI(): [CalendarEvent[], (date: Date) => void] {
   const [gcalEvents, setGcalEvents] = useState<CalendarEvent[]>([]);
   const [renderedEvents, setRenderedEvents] = useState<CalendarEvent[]>([]);
 
