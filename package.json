@@ -121,7 +121,7 @@
     "prettier": "^2.3.2",
     "remark-cli": "^10.0.0",
     "remark-frontmatter": "^4.0.0",
-    "remark-preset-lint-node": "^3.0.0",
+    "remark-preset-lint-node": "^3.0.1",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended-scss": "^4.3.0",
