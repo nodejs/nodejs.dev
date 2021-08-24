@@ -62,42 +62,119 @@ also have commiter rights on the repo.
 
 #### The nodejs.dev team
 
-<!-- ncu-team-sync.team(nodejs/nodejs-dev) -->
-* [@ahmadawais](https://github.com/ahmadawais) - Ahmad Awais ⚡️
-* [@alexandrtovmach](https://github.com/alexandrtovmach) - Alexandr Tovmach
-* [@amiller-gh](https://github.com/amiller-gh) - Adam Miller
-* [@argyleink](https://github.com/argyleink) - Adam Argyle
-* [@benhalverson](https://github.com/benhalverson) - Ben Halverson
-* [@BeniCheni](https://github.com/BeniCheni) - Benjamin Chen
-* [@codeekage](https://github.com/codeekage) - Abraham Jr. Agiri
-* [@darcyclarke](https://github.com/darcyclarke) - Darcy Clarke
-* [@designMoreWeb](https://github.com/designMoreWeb) - Divy Tolia
-* [@imbhargav5](https://github.com/imbhargav5) - Bhargav Ponnapalli
-* [@jemjam](https://github.com/jemjam) - j'em bones
-* [@joesepi](https://github.com/joesepi) - Joe Sepi
-* [@jonchurch](https://github.com/jonchurch) - Jonathan Church
-* [@kasicka](https://github.com/kasicka) - Zuzana Svetlíková
-* [@keywordnew](https://github.com/keywordnew) - Manil Chowdhury
-* [@lancemccluskey](https://github.com/lancemccluskey) - Lance McCluskey
-* [@LaRuaNa](https://github.com/LaRuaNa) - Onur Laru
-* [@maddhruv](https://github.com/maddhruv) - Dhruv Jain
-* [@manishprivet](https://github.com/manishprivet) - Manish Kumar
-* [@marcustisater](https://github.com/marcustisater) - Marcus Tisäter
-* [@mbj36](https://github.com/mbj36) - Mohit kumar Bajoria
-* [@MylesBorins](https://github.com/MylesBorins) - Myles Borins
-* [@ogonzal87](https://github.com/ogonzal87) - Oscar Gonzalez
-* [@ollelauribostrom](https://github.com/ollelauribostrom) - Olle Lauri Boström
-* [@pierreneter](https://github.com/pierreneter) - Nguyễn J Huỳnh Long
-* [@rodion-arr](https://github.com/rodion-arr) - Rodion Abdurakhimov
-* [@sagirk](https://github.com/sagirk) - Sagir Khan
-* [@saulonunesdev](https://github.com/saulonunesdev) - Saulo Nunes
-* [@skllcrn](https://github.com/skllcrn) - Christopher
-* [@SMotaal](https://github.com/SMotaal) - Saleh Abdel Motaal
-* [@timothyis](https://github.com/timothyis) - Timothy
-* [@tstreamDOTh](https://github.com/tstreamDOTh) - T Thiyagaraj
-* [@ZYSzys](https://github.com/ZYSzys) - ZYSzys
-
-<!-- ncu-team-sync end -->
+<div>
+<ul style="list-style: none;">
+  <li>
+  <a href="https://github.com/ahmadawais">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/ahmadawais.png?size=60" />
+  </a>
+  <a href="https://github.com/alexandrtovmach">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/alexandrtovmach.png?size=60" />
+  </a>
+    <a href="https://github.com/amiller-gh">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/amiller-gh.png?size=60" />
+  </a>
+    <a href="https://github.com/argyleink">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/argyleink.png?size=60" />
+  </a>
+    <a href="https://github.com/benhalverson">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/benhalverson.png?size=60" />
+  </a>
+    <a href="https://github.com/BeniCheni">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/BeniCheni.png?size=60" />
+  </a>
+    <a href="https://github.com/codeekage">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/codeekage.png?size=60" />
+  </a>
+    <a href="https://github.com/darcyclarke">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/darcyclarke.png?size=60" />
+  </a>
+  </li>
+  <li>
+  <a href="https://github.com/designMoreWeb">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/designMoreWeb.png?size=60" />
+  </a>
+    <a href="https://github.com/imbhargav5">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/imbhargav5.png?size=60" />
+  </a>
+    <a href="https://github.com/jemjam">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/jemjam.png?size=60" />
+  </a>
+    <a href="https://github.com/joesepi">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/joesepi.png?size=60" />
+  </a>
+    <a href="https://github.com/jonchurch">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/jonchurch.png?size=60" />
+  </a>
+    <a href="https://github.com/kasicka">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/kasicka.png?size=60" />
+  </a>
+    <a href="https://github.com/keywordnew">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/keywordnew.png?size=60" />
+  </a>
+    <a href="https://github.com/lancemccluskey">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/lancemccluskey.png?size=60" />
+  </a>
+  </li>
+    <li>
+  <a href="https://github.com/LaRuaNa">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/LaRuaNa.png?size=60" />
+  </a>
+    <a href="https://github.com/maddhruv">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/maddhruv.png?size=60" />
+  </a>
+    <a href="https://github.com/manishprivet">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/manishprivet.png?size=60" />
+  </a>
+    <a href="https://github.com/marcustisater">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/marcustisater.png?size=60" />
+  </a>
+    <a href="https://github.com/mbj36">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/mbj36.png?size=60" />
+  </a>
+    <a href="https://github.com/MylesBorins">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/MylesBorins.png?size=60" />
+  </a>
+    <a href="https://github.com/ogonzal87">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/ogonzal87.png?size=60" />
+  </a>
+    <a href="https://github.com/ollelauribostrom">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/ollelauribostrom.png?size=60" />
+  </a>
+  </li>
+    <li>
+  <a href="https://github.com/pierreneter">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/pierreneter.png?size=60" />
+  </a>
+    <a href="https://github.com/rodion-arr">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/rodion-arr.png?size=60" />
+  </a>
+    <a href="hhttps://github.com/sagirk">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="hhttps://github.com/sagirk.png?size=60" />
+  </a>
+    <a href="https://github.com/saulonunesdev">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/saulonunesdev.png?size=60" />
+  </a>
+    <a href="https://github.com/skllcrn">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/skllcrn.png?size=60" />
+  </a>
+    <a href="https://github.com/SMotaal">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/SMotaal.png?size=60" />
+  </a>
+    <a href="https://github.com/timothyis">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/timothyis.png?size=60" />
+  </a>
+    <a href="https://github.com/tstreamDOTh">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/tstreamDOTh.png?size=60" />
+  </a>
+  </li>
+  <li>
+      <a href="https://github.com/ZYSzys">
+  <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/ZYSzys.png?size=60" />
+  </a>
+  </li>
+</ul>
+</div>
 
 #### The Website Redesign Teams
 
