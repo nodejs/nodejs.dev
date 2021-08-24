@@ -65,7 +65,22 @@ also have commiter rights on the repo.
 <div>
 <ul style="list-style: none;">
   <li>
-  <img src="./src/images/github-user.svg" width="200" height="200" alt="css-in-readme">
+  <a href="https://github.com/lancemccluskey">
+    <svg width="40" height="40">
+      <defs>
+          <clipPath id="avatar-big-circle">
+              <circle cx="20" cy="20" r="19" fill="#FFFFFF" stroke="#99cc7d" strokeWidth="2" />
+          </clipPath>
+      </defs>
+      <circle cx="20" cy="20" r="20" fill="#99cc7d" />
+      <image 
+        width="40" 
+        height="40"
+        xlink:href="https://github.com/lancemccluskey.png" 
+        clip-path="url(#avatar-big-circle)"
+      />
+    </svg>
+  </a>
 
   <a href="https://github.com/ahmadawais">
   <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/ahmadawais.png?size=60" />
