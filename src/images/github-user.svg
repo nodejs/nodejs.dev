@@ -1,0 +1,18 @@
+<svg fill="none" viewBox="0 0 100 100" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <style>
+            image {
+              border: 1px solid #99cc7d;
+              border-radius: 100%;
+              height: 30px;
+              margin-top: 5px;
+              transition: all 0.2s ease-in-out;
+              width: 30px;
+            }
+            </style>
+            <!-- <h1>HELLO WORLD!</h1> -->
+            <image href="https://github.com/lancemccluskey.png?size=60" />
+        </div>
+    </foreignObject>
+</svg>

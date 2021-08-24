@@ -65,6 +65,8 @@ also have commiter rights on the repo.
 <div>
 <ul style="list-style: none;">
   <li>
+  <img src="./src/images/github-user.svg" width="100" height="100" alt="css-in-readme">
+
   <a href="https://github.com/ahmadawais">
   <img style="border: 1px solid #99cc7d;border-radius: 100%;height: 30px;margin-top: 5px;transition: all 0.2s ease-in-out;width: 30px;" src="https://github.com/ahmadawais.png?size=60" />
   </a>
