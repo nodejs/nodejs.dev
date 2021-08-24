@@ -55,7 +55,7 @@ own [Contributing Guidelines][].
 [Meeting notes][] from past meetings are maintained for later reference.
 [Query issues for "Meeting"][] to find future meetings.
 
-## Team
+### Team
 
 This repo is managed by the nodejs.dev. Members of the nodejs website team
 also have commiter rights on the repo.
