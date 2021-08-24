@@ -207,7 +207,7 @@ also have commiter rights on the repo.
 #### The Website Redesign Teams
 
 This repo originated as "The Website Redesign" strategic initiative under
-the Node.js Community. Below are various teams and people that
+the Node.js Community Committee. Below are various teams and people that
 participated in that process.
 
 ##### Information Gathering
