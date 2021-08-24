@@ -207,7 +207,7 @@ also have commiter rights on the repo.
 #### The Website Redesign Teams
 
 This repo originated as "The Website Redesign" strategic initiative under
-the Node.js Community Community. Below are various teams and people that
+the Node.js Community Committee. Below are various teams and people that
 participated in that process.
 
 ##### Information Gathering
@@ -290,9 +290,13 @@ participated in that process.
 ## Links
 
 [Community Committee][]
+
 [Code of Conduct][]
+
 [Contributing Guidelines][]
+
 [Meeting Notes][]
+
 [Query issues for "Meeting"][]
 
 [code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
