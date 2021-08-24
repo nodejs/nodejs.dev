@@ -22,21 +22,17 @@
   <br>
 </p>
 
-**You can find the latest [Figma design protype here](https://www.figma.com/file/lOxAGGg5KXb6nwie7zXkz6/NJ---Design-System?node-id=22%3A6086).**
-
 ## 🚀 Get Started
 
 1. **Install dependencies.**
 
    ```bash
-   # install the dependencies
    npm install
    ```
 
-1. **Start developing.**
+1. **Run locally.**
 
    ```bash
-   # "start": "gatsby develop"
    npm start
    ```
 
@@ -44,103 +40,10 @@
 
    Your site is now running at `http://localhost:8000`!
 
-   *Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/docs/tutorial/part-five/#introducing-graphiql).*
+## 🙌 Contributing
 
-## 🧐 What's inside?
-
-A quick look at some of the top-level files and directories found in this project.
-
-```console
-.
-├── .github
-├── .storybook
-├── meetings
-├── node_modules
-├── src
-├── stories
-├── style-guide
-├── test
-├── util-node
-├── .editorconfig
-├── .eslintignore
-├── .eslintrc.js
-├── .firebaserc
-├── .gitignore
-├── .nvmrc
-├── .prettierignore
-├── .prettierrc
-├── .remarkrc
-├── cloudbuild-deploy.yaml
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── empty.env
-├── firebase.json
-├── gatsby-browser.js
-├── gatsby-config.js
-├── gatsby-node.js
-├── LICENSE
-├── ModerationPolicy.md
-├── OKR.md
-├── package-lock.json
-├── package.json
-├── README.md
-├── test-preprocessor.js
-├── test-setup.js
-└── tsconfig.json
-
-```
-
-1. **`.storybook`**: This directory contains configuration files so the [storybook](https://storybook.js.org/) package works as it should. Storybook is used to build the individual UI components in this project.
-
-2. **`/node_modules`**: The directory where all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-3. **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser), like your site header, or a page template. "Src" is a convention for "source code."
-
-4. **`/stories`**: This directory contains stories for UI components used in this project. You can find out what a story is [here](https://storybook.js.org/docs/react/get-started/whats-a-story). Also, you can run them locally using `npm run storybook`.
-
-5. **`/test`**: Tests for this projects are stored in this directory. This project uses [Jest](https://jestjs.io/) as it's testing framework.
-
-6. **`/util-node`**: Custom utility functions that require nodeJs to run can be stored in files inside this directory. An example is the create-slug function in the createSlug.js file that generates unique slugs for articles.
-
-7. **`.gitignore`**: This file tells git which files it should not track/not maintain a version history.
-
-8. **`.nvmrc`**: nvm configuration so packages work as they should
-
-9. **`.prettierrc`**: This is a configuration file for a tool called [Prettier](https://prettier.io/), which is a tool to help keep the formatting of your code consistent.
-
-10. **`empty.env`**: Rename to **`.env`** and set your Contentful API key
-
-11. **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-12. **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you'd like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/) for more detail).
-
-13. **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby node APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-14. **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-15. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. (You won't change this file directly).
-
-16. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project's name, author, etc.). This manifest is how npm knows which packages to install for your project.
-
-17. **`README.md`**: A text file containing useful reference information about your project.
-
-18. **`tsconfig.json`**: Config file for TypeScript
-
-## 📝 Data Sources
-
-This repository contains no documentation content. Content is pulled from across the Node.js GitHub Org, Contentful, and other data sources and stitched together into a cohesive website.
-
-### src/documentation
-
-The `src/documentation` directory currently contains all the getting started content.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
-
-* **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/docs/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-* **To dive straight into code samples head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the "Guides", API reference, and "Advanced Tutorials" sections in the sidebar.
+Any person who wants to contribute to the initiative is welcome! Please read
+[Contributing Guidelines][] and [Project Overview][] to join the effort. The website design prototype can be found on [Figma][].
 
 ## 🏛 Governance
 
@@ -152,14 +55,7 @@ own [Contributing Guidelines][].
 [Meeting notes][] from past meetings are maintained for later reference.
 [Query issues for "Meeting"][] to find future meetings.
 
-### Summary / Current Status
-
-Our current focus is on site development. Development is happening in the [nodejs.dev repo](https://github.com/nodejs/nodejs.dev). This repo continues to be the hub for the redesign initiative.
-
-### Team
-
-Any person who wants to contribute to the initiative is welcome! Please read
-[Contributing Guidelines][] and join the effort 🙌.
+## Team
 
 This repo is managed by the nodejs.dev. Members of the nodejs website team
 also have commiter rights on the repo.
@@ -167,7 +63,6 @@ also have commiter rights on the repo.
 #### The nodejs.dev team
 
 <!-- ncu-team-sync.team(nodejs/nodejs-dev) -->
-
 * [@ahmadawais](https://github.com/ahmadawais) - Ahmad Awais ⚡️
 * [@alexandrtovmach](https://github.com/alexandrtovmach) - Alexandr Tovmach
 * [@amiller-gh](https://github.com/amiller-gh) - Adam Miller
@@ -292,7 +187,9 @@ participated in that process.
 [Community Committee][]
 [Code of Conduct][]
 [Contributing Guidelines][]
+[Figma][]
 [Meeting Notes][]
+[Project Overview][]
 [Query issues for "Meeting"][]
 
 [code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
@@ -300,3 +197,5 @@ participated in that process.
 [contributing guidelines]: ./CONTRIBUTING.md
 [meeting notes]: ./meetings
 [query issues for "meeting"]: https://github.com/nodejs/nodejs.dev/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+Meeting+in%3Atitle
+[project overview]: ./docs/project-overview.md
+[figma]: https://www.figma.com/file/lOxAGGg5KXb6nwie7zXkz6/NJ---Design-System?node-id=22%3A6086
