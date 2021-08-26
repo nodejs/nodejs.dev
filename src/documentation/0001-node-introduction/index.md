@@ -30,8 +30,8 @@ The most common example Hello World of Node.js is a web server:
 
 <iframe
   title="Hello world web server"
-  src="https://glitch.com/embed/#!/embed/nodejs-dev-0001-01?path=server.js&previewSize=30&attributionHidden=true&sidebarCollapsed=true"
-  alt="nodejs-dev-0001-01 on Glitch"
+  src="https://stackblitz.com/edit/nodejs-dev-0001-01?embed=1&file=index.js&zenmode=1"
+  alt="nodejs-dev-0001-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 

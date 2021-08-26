@@ -10,8 +10,8 @@ Here is a sample Hello World HTTP web server:
 
 <iframe
   title="Build an HTTP Server"
-  src="https://glitch.com/embed/#!/embed/nodejs-dev-0037-01?path=server.js&previewSize=33&attributionHidden=true&sidebarCollapsed=true"
-  alt="nodejs-dev-0037-01 on Glitch"
+  src="https://stackblitz.com/edit/nodejs-dev-0009-01?index.js&zenmode=1"
+  alt="nodejs-dev-0009-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 
