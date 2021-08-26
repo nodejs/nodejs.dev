@@ -11,28 +11,31 @@
     height: 100%;
     justify-content: space-between;
     list-style: none;
+  }
+
+  .footer__right {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: space-between;
+    list-style: none;
+    margin-right: 20px;
+  }
+
+  .footer__left > li,
+  .footer__right > li {
+    font-size: 12px;
+    height: 24px;
+    margin-right: 32px;
+  }
+
+  .footer__left {
     li a {
       color: var(--color-text-primary);
 
       &:hover {
         color: var(--color-brand-primary);
       }
-    }
-
-    .footer__right {
-      display: flex;
-      flex-wrap: wrap;
-      height: 100%;
-      justify-content: space-between;
-      list-style: none;
-      margin-right: 20px;
-    }
-
-    .footer__left > li,
-    .footer__right > li {
-      font-size: 12px;
-      height: 24px;
-      margin-right: 32px;
     }
 
     > li:first-of-type {
