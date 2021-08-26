@@ -1,11 +1,11 @@
 .list {
+  align-items: center;
+  color: var(--black7);
   display: flex;
   flex-wrap: wrap;
   margin: 5rem 0 2.5rem;
-  align-items: center;
-  color: var(--black7);
-  text-transform: uppercase;
   padding-left: 0;
+  text-transform: uppercase;
 
   li {
     margin-top: var(--space-08);
@@ -18,9 +18,9 @@
   h5 {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    margin: 0.5rem 0.5rem 0.5rem 0;
-    font-weight: normal;
     font-size: 1.4rem;
+    font-weight: normal;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    width: 100%;
   }
 }

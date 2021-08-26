@@ -8,24 +8,25 @@
 
     span,
     button {
-      width: 86px;
-      height: 23px;
-      font-size: var(--font-size-code);
-      display: inherit;
       align-items: center;
+      display: inherit;
+      font-size: var(--font-size-code);
+      height: 23px;
       justify-content: center;
+      width: 86px;
     }
 
     span {
-      color: var(--black9);
       background-color: var(--black3);
       border-radius: 0 0 0.3rem 0.3rem;
+      color: var(--black9);
     }
 
     button {
-      border-width: 0;
+      background-color: var(--brand8);
       border-radius: 0 0.3rem 0.3rem 0.3rem;
-      background-color: var(--brand2);
+      border-width: 0;
+      color: white;
       i {
         padding: 0;
       }
