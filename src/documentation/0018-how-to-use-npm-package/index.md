@@ -6,7 +6,7 @@ section: Getting Started
 category: learn
 ---
 
-When you install using `npm` a package into your `node_modules` folder, or also globally, how do you use it in your Node.js code?
+When you install a package into your `node_modules` folder using `npm` , or also globally, how do you use it in your Node.js code?
 
 Say you install `lodash`, the popular JavaScript utility library, using
 
