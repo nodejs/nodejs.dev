@@ -246,7 +246,7 @@ You are not limited to using `fetch` of course, **any promise can be used in thi
 
 ### `Promise.race()`
 
-`Promise.race()` runs when the first of the promises you pass to it resolves, and it runs the attached callback just once, with the result of the first promise resolved.
+`Promise.race()` runs when the first of the promises you pass to it settles (resolves or rejects), and it runs the attached callback just once, with the result of the first promise settled.
 
 Example:
 
