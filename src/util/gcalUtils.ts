@@ -64,7 +64,7 @@ export function processEvents(
           recurringEventId: event.recurringEventId,
           originalStartTime: event.originalStartTime.dateTime
             ? moment(event.originalStartTime.dateTime)
-            : moment.parseZone(event.originalStartTime.date),
+            : moment(event.originalStartTime.date),
         });
       } else if (event.status === 'confirmed') {
         // changed events
@@ -75,22 +75,22 @@ export function processEvents(
           location: event.location,
           originalStartTime: event.originalStartTime.dateTime
             ? moment(event.originalStartTime.dateTime)
-            : moment.parseZone(event.originalStartTime.date),
+            : moment(event.originalStartTime.date),
           newStartTime: event.start.dateTime
             ? moment(event.start.dateTime)
-            : moment.parseZone(event.start.date),
+            : moment(event.start.date),
           newEndTime: event.end.dateTime
             ? moment(event.end.dateTime)
-            : moment.parseZone(event.end.date),
+            : moment(event.end.date),
         });
       }
     } else if (event.status === 'confirmed') {
       const eventStartTime = event.start.dateTime
         ? moment(event.start.dateTime)
-        : moment.parseZone(event.start.date);
+        : moment(event.start.date);
       const eventEndTime = event.end.dateTime
         ? moment(event.end.dateTime)
-        : moment.parseZone(event.end.date);
+        : moment(event.end.date);
       // normal events
       const newEvent: CalendarEvent = {
         id: event.id,
@@ -130,16 +130,17 @@ export function processEvents(
   return events;
 }
 
+// rrule only accepts utc time. https://github.com/jakubroztocil/rrule#important-use-utc-dates
 export function getRRuleDates(
   recurrenceRule: string,
   startTime: Moment,
   betweenStart: Moment,
   betweenEnd: Moment
 ): Date[] {
-  const rruleStr = `DTSTART:${moment(startTime)
+  const rStr = `DTSTART:${moment(startTime)
     .utc(true)
     .format('YYYYMMDDTHHmmss')}Z\n${recurrenceRule}`;
-  const rruleSet = rrulestr(rruleStr, { forceset: true });
+  const rruleSet = rrulestr(rStr, { forceset: true });
   const begin = moment(betweenStart).utc(true).toDate();
   const end = moment(betweenEnd).utc(true).toDate();
   const dates = rruleSet.between(begin, end);
@@ -186,7 +187,15 @@ export function getRenderedEvents(
             calendarName: event.calendarName,
           });
         } else {
-          const eventStart = moment.utc(date);
+          // rrule returns dates in 'UTC' with 0 offset. See https://github.com/jakubroztocil/rrule#important-use-utc-dates
+          const eventStart = moment([
+            date.getUTCFullYear(),
+            date.getUTCMonth(),
+            date.getUTCDate(),
+            date.getUTCHours(),
+            date.getUTCMinutes(),
+            date.getUTCSeconds(),
+          ]);
           const eventEnd = moment(eventStart).add(duration);
           renderedEvents.push({
             id: event.id,
