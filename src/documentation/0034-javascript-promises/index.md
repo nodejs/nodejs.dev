@@ -10,8 +10,8 @@ category: learn
 
 <iframe
   title="Introduction to promises"
-  src="https://glitch.com/embed/#!/embed/nodejs-dev-0034-01?path=server.js&previewSize=35&attributionHidden=true&sidebarCollapsed=true"
-  alt="nodejs-dev-0034-01 on Glitch"
+  src="https://stackblitz.com/edit/nodejs-dev-0006-01?index.js&zenmode=1&view=editor"
+  alt="nodejs-dev-0006-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 
