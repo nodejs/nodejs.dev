@@ -50,8 +50,8 @@ This is a simple example of async/await used to run a function asynchronously:
 
 <iframe
   title="Modern Asynchronous JavaScript with Async and Await"
-  src="https://glitch.com/embed/#!/embed/nodejs-dev-0035-01?path=server.js&previewSize=25&attributionHidden=true&sidebarCollapsed=true"
-  alt="nodejs-dev-0035-01 on Glitch"
+  src="https://stackblitz.com/edit/nodejs-dev-0007-01?index.js&zenmode=1&view=editor"
+  alt="nodejs-dev-0007-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 
@@ -146,8 +146,8 @@ Async functions can be chained very easily, and the syntax is much more readable
 
 <iframe
   title="Multiple async functions in series"
-  src="https://glitch.com/embed/#!/embed/nodejs-dev-0035-02?path=server.js&previewSize=30&attributionHidden=true&sidebarCollapsed=true"
-  alt="nodejs-dev-0035-02 on Glitch"
+  src="https://stackblitz.com/edit/nodejs-dev-0008-01?index.js&zenmode=1&view=editor"
+  alt="nodejs-dev-0008-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 

@@ -57,8 +57,8 @@ Take this code:
 
 <iframe
   title="Output to the command line using Node.js"
-  src="https://glitch.com/embed/#!/embed/nodejs-dev-0013-02?path=server.js&previewSize=40&attributionHidden=true&sidebarCollapsed=true"
-  alt="nodejs-dev-0013-02 on Glitch"
+  src="https://stackblitz.com/edit/nodejs-dev-0002-01?index.js&zenmode=1&view=editor"
+  alt="nodejs-dev-0002-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 
