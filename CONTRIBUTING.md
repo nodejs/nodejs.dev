@@ -17,7 +17,7 @@
   or contributing in some other way.
 * A **Collaborator** is a contributor who has been given write access to the repository. See [here](#how-to-become-a-collaborator) on how to become a collaborator.
 
-## 📝	 Commit Guidelines
+## 📝 Commit Guidelines
 
 This project follows the [Conventional Commits][] specification.
 
