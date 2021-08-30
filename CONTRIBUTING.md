@@ -1,16 +1,27 @@
-# Making changes to nodejs.dev
+## Contributing Guide
+
+## 🚀 Get Started
+
+* Fork the nodejs.dev repo
+* Clone your fork `git clone git@github.com:<githubid>/nodejs.dev.git`
+* `cd` into your project
+* Add the following to your remotes by doing `git remote add upstream git@github.com:nodejs/nodejs.dev.git`
+* Create a new branch for your awesome work `git checkout -b branchname`
+* Commit your work. See [Commit Guidelines](#commit-guidelines)
+* Push to your branch `git push -u origin yourbranch`
+* Open a pull request. See [PR Policy](#pull-request-policy)
 
 ## Vocabulary
 
 * A **Contributor** is any individual creating or commenting on an issue or pull request,
   or contributing in some other way.
-* A **Collaborator** is a contributor who has been given write access to the repository.
+* A **Collaborator** is a contributor who has been given write access to the repository. See [here](#how-to-become-a-collaborator) on how to become a collaborator.
 
-## Commit Guidelines
+## 📝	 Commit Guidelines
 
 This project follows the [Conventional Commits][] specification.
 
-There is a built-in commit linter. Basic rules:
+Basic rules:
 
 * Commit messages must be prefixed with the name of the changed subsystem, followed by a colon and a space and start with an imperative verb. Check the output of `git log --oneline files/you/changed` to find out what subsystems your changes touch.
 
@@ -21,27 +32,11 @@ There is a built-in commit linter. Basic rules:
 * Commit messages **must** start with a capital letter
 * Commit messages **must not** end with a period `.`
 
-## Collaboration Policy
+## Pull Request Policy
 
-* All changes must come in a PR
-* All changes must be reviewed by a member of @nodejs/nodejs.dev,
-  @nodejs/website, or @nodejs/website-redesign
-* Pull Requests must be open for at least 48 hours unless included in the special exemptions section below
+### Before landing
 
-### Special Exemptions
-
-Pull requests seeking to make any of the following changes do not need to wait 24 hours
-
-* Errata fixes
-* Infrastructure Maintenance
-* Tests
-
-## Landing Pull Requests
-
-### Before you can land
-
-* The Status Checks for the test suite must pass
-* There must be at least one sign off
+* Pull Requests must be open for at least 48 hours unless changes include errata fixes, infrastructure maintenance, or tests
 * There must be no objections after a 48 hour period
 
 The default for each contribution is that it is accepted once no collaborator has an objection. During review collaborators may also request that a specific contributor who is most versed in a particular area gives a "LGTM" before the PR can be merged.
@@ -61,16 +56,6 @@ In the case of an objection being raised in a pull request by another collaborat
 * The Pull Request must be approved by at least two members of @nodejs/nodejs.dev, @nodejs/website, or @nodejs/website-redesign
 * Pull Request must remain open for 72 hours without any objections
 * Once the requirements are met and approved, the pull request can be merged and a member of @nodejs/community-committee will add the new member to the [@nodejs/nodejs-dev team](https://github.com/orgs/nodejs/teams/nodejs-dev)
-## Getting Started
-
-* Fork
-* Clone your fork `git clone git@github.com:<githubid>/nodejs.dev.git`
-* cd into your project
-* Add the following to your remotes by doing `git remote add upstream git@github.com:nodejs/nodejs.dev.git`
-* Create a new branch for your awesome work `git checkout -b branchname`
-* Commit your work
-* Push to your branch `git push -u origin yourbranch`
-* Make a pull request
 
 ## Storybook
 
