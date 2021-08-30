@@ -99,7 +99,7 @@
     "@types/throttle-debounce": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.3",
-    "babel-jest": "^27.0.6",
+    "babel-jest": "^27.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-remove-graphql-queries": "^3.11.0",
     "babel-preset-gatsby": "1.12.0",
