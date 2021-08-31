@@ -20,7 +20,7 @@
   <br>
 </p>
 
-## 🚀 Get Started
+## 🚀 Quick Start
 
 1. **Install dependencies.**
 

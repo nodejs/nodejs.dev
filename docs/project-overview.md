@@ -82,7 +82,7 @@ A quick look at some of the top-level files and directories found in this projec
 
 ## 📝 Data Sources
 
-This repository contains no documentation content. Content is pulled from across the Node.js GitHub Org, Contentful, and other data sources and stitched together into a cohesive website.
+Content is pulled from across the Node.js GitHub Org, Contentful, and other data sources and stitched together into a cohesive website.
 
 ### src/documentation
 

@@ -1,4 +1,4 @@
-## Contributing Guide
+# Contributing Guide
 
 ## 🚀 Get Started
 
