@@ -19,6 +19,7 @@
   box-sizing: border-box;
   color: var(--color-text-primary);
   cursor: pointer;
+  font-size: var(--font-size-caption);
   margin: 0;
   padding: 0;
   text-align: left;
@@ -136,6 +137,7 @@
     border: 1px solid var(--color-border-accent);
     display: flex;
     flex-flow: column wrap;
+    font-size: var(--font-size-body1);
     max-height: 100%;
     min-height: 20px;
     overflow: hidden;

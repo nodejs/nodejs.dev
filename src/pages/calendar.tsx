@@ -1,7 +1,7 @@
 import React, { useEffect, useState, SyntheticEvent } from 'react';
 import moment from 'moment';
 import dompurify from 'dompurify';
-import { Calendar, momentLocalizer } from 'react-big-calendar';
+import { Calendar, momentLocalizer, Views, View } from 'react-big-calendar';
 import { usePopper } from 'react-popper';
 import Layout from '../components/Layout';
 import { getCalendarURL } from '../util/gcalUtils';
@@ -20,6 +20,7 @@ export default function NodeCalendarPage(): JSX.Element {
     null
   );
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
+  const [view, setView] = useState<View>(Views.MONTH);
   const { styles, attributes } = usePopper(referenceElement, popperElement);
 
   const handleDocumentClick = (event?: MouseEvent) => {
@@ -62,9 +63,16 @@ export default function NodeCalendarPage(): JSX.Element {
     return event.endTime.toDate();
   };
 
-  const onView = () => {
+  const onView = (navigatedView: View) => {
+    setView(navigatedView);
     handleDocumentClick();
     setReferenceElement(null);
+  };
+
+  const titleAccessor = (event: CalendarEvent): string => {
+    return view === Views.MONTH
+      ? `${event.startTime.format('ha')} ${event.title || ''}`
+      : event.title || '';
   };
 
   return (
@@ -78,6 +86,7 @@ export default function NodeCalendarPage(): JSX.Element {
           endAccessor={endAccessor}
           onNavigate={onNavigate}
           onView={onView}
+          titleAccessor={titleAccessor}
           popup
         />
       </div>
