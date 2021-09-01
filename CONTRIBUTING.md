@@ -2,13 +2,40 @@
 
 ## 🚀 Get Started
 
-* Fork the nodejs.dev repo
-* Clone your fork `git clone git@github.com:<githubid>/nodejs.dev.git`
-* `cd` into your project
-* Add the following to your remotes by doing `git remote add upstream git@github.com:nodejs/nodejs.dev.git`
-* Create a new branch for your awesome work `git checkout -b branchname`
+* Fork the [nodejs.dev repo][] using the Fork button on the rop right
+* Clone your fork using SSH, GitHub CLI, or HTTPS
+
+  ```bash
+  git clone git@github.com:<GITHUB_ID>/nodejs.dev.git # SSH
+  gh repo clone <GITHUB_ID>/nodejs.dev # GitHub CLI
+  git clone https://github.com/<GITHUB_ID>/nodejs.dev.git # HTTPS
+  ```
+
+* Change into the nodejs.dev project directory
+
+  ```bash
+  cd nodejs.dev
+  ```
+
+* Add nodejs/nodejs.dev as your upstream remote branch
+
+  ```bash
+  git remote add upstream git@github.com:nodejs/nodejs.dev.git
+  ```
+
+* Create a new branch for your awesome work 
+
+  ```bash
+  git checkout -b <BRANCH_NAME>
+  ```
+
 * Commit your work. See [Commit Guidelines](#commit-guidelines)
-* Push to your branch `git push -u origin yourbranch`
+* Push to your branch 
+  
+  ```bash
+  git push -u origin <YOUR_BRANCH>
+  ```
+
 * Open a pull request. See [PR Policy](#pull-request-policy)
 
 ## Vocabulary
@@ -32,7 +59,7 @@ Basic rules:
 * Commit messages **must** start with a capital letter
 * Commit messages **must not** end with a period `.`
 
-## Pull Request Policy
+## 📜 Pull Request Policy
 
 ### Before landing
 
@@ -57,7 +84,7 @@ In the case of an objection being raised in a pull request by another collaborat
 * Pull Request must remain open for 72 hours without any objections
 * Once the requirements are met and approved, the pull request can be merged and a member of @nodejs/community-committee will add the new member to the [@nodejs/nodejs-dev team](https://github.com/orgs/nodejs/teams/nodejs-dev)
 
-## Storybook
+## 📕 Storybook
 
 This project uses [Storybook][], a tool which provides a sandbox environment for developing UI components. To generate the Storybook locally:
 
@@ -87,3 +114,4 @@ By making a contribution to this project, I certify that:
 [Storybook]: https://storybook.js.org/
 [`squash`]: https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits
 [conventional commits]: https://www.conventionalcommits.org/
+[nodejs.dev repo]: https://github.com/nodejs/nodejs.dev
