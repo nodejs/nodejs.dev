@@ -4,13 +4,12 @@
   box-sizing: border-box;
   color: var(--color-text-primary);
   cursor: pointer;
+  display: block;
   list-style: none;
   margin: 0 0 0 var(--space-24);
   padding: calc(var(--space-20) / 2) 0 calc(var(--space-20) / 2) var(--space-12);
   position: relative;
-  color: var(--color-text-primary);
   text-decoration: none;
-  display: block;
 
   &::before {
     background-size: 2.4rem;
@@ -21,13 +20,13 @@
     display: block;
     height: 2.4rem;
     left: -2.4rem;
+    line-height: 2.6rem;
+    overflow: hidden;
     padding: 2px 4px;
     position: absolute;
     top: 1rem;
     transition: box-shadow 0.28s;
-    overflow: hidden;
     width: 2.4rem;
-    line-height: 2.6rem;
   }
 
   &.side-nav__item-community--done::before {
@@ -65,8 +64,8 @@
 
 .community-nav__sub-list-link {
   color: var(--color-text-secondary);
+  display: block;
+  padding: calc(var(--space-20) / 2) 0 calc(var(--space-20) / 2) var(--space-12);
   text-decoration: none;
   transition: color 0.15s;
-  padding: calc(var(--space-20) / 2) 0 calc(var(--space-20) / 2) var(--space-12);
-  display: block;
 }

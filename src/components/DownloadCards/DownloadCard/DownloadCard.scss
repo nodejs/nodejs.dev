@@ -2,15 +2,15 @@
   $self: &;
   background-color: var(--color-fill-app);
   border: 1px solid var(--color-border-secondary);
+  border-radius: 4px;
+  box-shadow: 5px 10px 50px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
+  height: auto;
   padding: 16px;
   width: 179px;
-  height: auto;
-  box-sizing: border-box;
-  box-shadow: 5px 10px 50px rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  cursor: pointer;
 
   &__top {
     display: flex;
@@ -18,25 +18,25 @@
   }
 
   &__image {
-    width: 48px;
     height: 48px;
+    width: 48px;
   }
 
   &__link {
-    height: 24px;
-    width: 24px;
     color: var(--black5);
     font-size: 24px;
+    height: 24px;
+    width: 24px;
   }
 
   &__label {
-    margin-top: 16px;
     font-weight: var(--font-weight-semibold);
+    margin-top: 16px;
   }
 
   &__filename {
-    font-weight: normal;
     font-size: var(--font-size-body3);
+    font-weight: normal;
     line-height: 18px;
   }
 
@@ -45,8 +45,8 @@
     border-top: 4px solid var(--brand5);
 
     #{ $self }__image {
-      width: 56px;
       height: 56px;
+      width: 56px;
     }
 
     #{ $self }__label {
@@ -63,8 +63,8 @@
     width: 130px;
 
     &__label {
-      margin-top: 16px;
       font-size: var(--font-size-caption);
+      margin-top: 16px;
     }
 
     &__filename {
@@ -76,8 +76,8 @@
       width: 130px;
 
       #{ $self }__label {
-        margin-top: 12px;
         font-size: var(--font-size-caption);
+        margin-top: 12px;
       }
     }
   }

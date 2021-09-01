@@ -99,6 +99,6 @@ By making a contribution to this project, I certify that:
   including my sign-off) is maintained indefinitely and may be redistributed consistent
   with this project or the open source license(s) involved.
 
+[Storybook]: https://storybook.js.org/
 [`squash`]: https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits
 [conventional commits]: https://www.conventionalcommits.org/
-[Storybook]: https://storybook.js.org/

@@ -1,9 +1,9 @@
 $downloadable-item-height: 40px;
 
 .download-additional {
+  font-weight: var(--font-weight-semibold);
   margin-top: 133px;
   width: 100%;
-  font-weight: var(--font-weight-semibold);
 
   &__header {
     display: flex;
@@ -24,13 +24,13 @@ $downloadable-item-height: 40px;
   }
 
   &__item {
+    border: 1px solid #d7d8df;
     display: flex;
     flex-direction: column;
-    border: 1px solid #d7d8df;
-    outline: none;
-    margin-top: -1px; // Cancels overlapping borders extra thickness
-    padding: 16px 0 0 16px;
     height: $downloadable-item-height;
+    margin-top: -1px; // Cancels overlapping borders extra thickness
+    outline: none;
+    padding: 16px 0 0 16px;
     transition: height 30ms ease-in;
 
     &__expanded {
@@ -38,26 +38,26 @@ $downloadable-item-height: 40px;
     }
 
     &__header {
+      cursor: pointer;
       display: flex;
       flex-direction: row;
-      cursor: pointer;
       &__arrow {
+        height: 0;
         margin-right: 16px;
         width: 0;
-        height: 0;
         &__right {
-          margin-top: 6px;
-          border-top: 5px solid transparent;
-          border-left: 6px solid #757575;
           border-bottom: 5px solid transparent;
+          border-left: 6px solid #757575;
           border-radius: 3px;
+          border-top: 5px solid transparent;
+          margin-top: 6px;
         }
         &__down {
-          margin-top: 8px;
           border-left: 5px solid transparent;
-          border-top: 6px solid #757575;
-          border-right: 5px solid transparent;
           border-radius: 3px;
+          border-right: 5px solid transparent;
+          border-top: 6px solid #757575;
+          margin-top: 8px;
         }
       }
     }
@@ -65,16 +65,16 @@ $downloadable-item-height: 40px;
       display: flex;
       flex-wrap: wrap;
       &__link {
-        display: flex;
         align-items: center;
         background: var(--brand2);
+        border-radius: 40px;
         color: var(--brand6);
-        text-decoration: none;
+        display: flex;
         font-size: 14px;
         line-height: 36px;
-        border-radius: 40px;
         margin: 5px;
         padding: 0 15px 0 0;
+        text-decoration: none;
       }
     }
   }

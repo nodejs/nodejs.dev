@@ -1,10 +1,10 @@
-import { useState, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 // eslint-disable-next-line import/prefer-default-export
 export function useMediaQuery(query: string): boolean | undefined {
   const [matches, setMatches] = useState<boolean>();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (typeof window.matchMedia === 'function') {
       const mq = window.matchMedia(query);
       setMatches(mq.matches);

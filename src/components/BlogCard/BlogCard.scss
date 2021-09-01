@@ -1,9 +1,9 @@
 .blogCard {
   padding: 40px;
   a {
-    text-decoration: none;
     font-size: 2em;
     margin-bottom: 0;
+    text-decoration: none;
 
     &:hover {
       text-decoration: underline;
@@ -11,9 +11,9 @@
   }
 
   h4 {
-    opacity: 0.7;
     margin: 0;
     margin-top: 7px;
+    opacity: 0.7;
   }
 
   p {
@@ -21,8 +21,8 @@
     opacity: 0.8;
 
     li {
-      list-style: none;
       display: inline;
+      list-style: none;
       margin: 0 3px;
     }
   }

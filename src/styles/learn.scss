@@ -1,16 +1,16 @@
 .side-nav {
+  background-color: var(--color-fill-side-nav);
+  box-sizing: border-box;
   /* Needed since overflow: none will disable position: sticky on children */
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  background-color: var(--color-fill-side-nav);
   height: calc(100vh - var(--nav-height));
+  max-width: 36rem;
   overflow: auto;
   overflow-x: hidden;
   padding: 0 var(--space-20);
   position: sticky;
   top: calc(var(--nav-height) + var(--space-12) + 2px);
   width: 100%;
-  max-width: 36rem;
-  box-sizing: border-box;
   z-index: 998;
 }
 
@@ -20,15 +20,15 @@
 }
 
 .side-nav__title {
-  color: var(--color-text-primary);
-  font-weight: 600;
-  margin: 0 0 calc(var(--space-20) - (var(--space-12) / 2)) 0;
-  display: flex;
   align-items: center;
   background-color: var(--color-fill-side-nav);
-  padding: var(--space-20) 0 0;
   box-shadow: 0 25px 20px var(--color-fill-side-nav);
+  color: var(--color-text-primary);
+  display: flex;
+  font-weight: 600;
   margin: 0 0 2.4rem;
+  margin: 0 0 calc(var(--space-20) - (var(--space-12) / 2)) 0;
+  padding: var(--space-20) 0 0;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -46,13 +46,12 @@
   box-sizing: border-box;
   color: var(--color-text-primary);
   cursor: pointer;
+  display: block;
   list-style: none;
   margin: 0 0 0 var(--space-24);
   padding: calc(var(--space-12) / 2) 0 calc(var(--space-12) / 2) var(--space-08);
   position: relative;
-  color: var(--color-text-primary);
   text-decoration: none;
-  display: block;
 
   &:last-of-type::after {
     display: none;
@@ -67,13 +66,13 @@
     display: block;
     height: 2.4rem;
     left: -2.4rem;
+    line-height: 2.6rem;
+    overflow: hidden;
     padding: 2px 4px;
     position: absolute;
     top: 0.6rem;
     transition: box-shadow 0.28s;
-    overflow: hidden;
     width: 2.4rem;
-    line-height: 2.6rem;
   }
 
   &.side-nav__item--done::before {
@@ -107,58 +106,58 @@
 }
 
 .side-nav__open {
-  user-select: none;
-  display: none;
-  position: sticky;
-  top: 0.8rem;
-  margin-left: -0.8rem;
-  width: 20px;
-  height: calc(24px + 3px);
-  padding: 12px 0;
   background: var(--color-text-primary);
-  color: var(--color-text-primary);
-  overflow: visible;
-  border: none;
-  text-indent: 3.2rem;
-  line-height: 0;
-  font-weight: 200;
-  transition: color 0.28s, background-color 0.28s;
-  outline: none;
   background-clip: content-box;
+  border: none;
+  color: var(--color-text-primary);
+  display: none;
+  font-weight: 200;
+  height: calc(24px + 3px);
+  line-height: 0;
+  margin-left: -0.8rem;
+  outline: none;
+  overflow: visible;
+  padding: 12px 0;
+  position: sticky;
+  text-indent: 3.2rem;
+  top: 0.8rem;
+  transition: color 0.28s, background-color 0.28s;
+  user-select: none;
+  width: 20px;
   z-index: 9999;
 
   &::before {
+    background-color: var(--color-text-primary);
     content: '';
-    width: 100%;
     height: 3px;
+    left: 0;
     position: absolute;
     top: calc(50% - 1.5px);
-    left: 0;
     transform: translateY(-250%);
-    background-color: var(--color-text-primary);
     transition: transform 0.28s;
+    width: 100%;
   }
 
   &::after {
+    background-color: var(--color-text-primary);
     content: '';
-    width: 100%;
     height: 3px;
+    left: 0;
     position: absolute;
     top: calc(50% - 1.5px);
-    left: 0;
     transform: translateY(-250%);
-    background-color: var(--color-text-primary);
-    transition: transform 0.28s;
     transform: translateY(250%);
+    transition: transform 0.28s;
+    width: 100%;
   }
 }
 
 .side-nav.side-nav--open .side-nav__open {
-  top: calc(var(--nav-height) + 1.6rem);
+  background-color: transparent;
+  color: transparent;
   margin-bottom: -35px;
   margin-top: 16px;
-  color: transparent;
-  background-color: transparent;
+  top: calc(var(--nav-height) + 1.6rem);
 
   &::before {
     transform: rotate(-45deg);
@@ -173,8 +172,8 @@
   .side-nav {
     height: auto;
     max-height: 42px;
-    overflow: hidden;
     max-width: unset;
+    overflow: hidden;
 
     &.side-nav--open {
       max-height: calc(100vh - var(--nav-height));
@@ -189,14 +188,14 @@
     }
 
     &::before {
+      background-color: var(--color-fill-side-nav);
+      content: '';
       height: 60px;
       margin-bottom: -92px;
+      position: fixed;
       top: var(--nav-height);
       width: 110%;
-      content: '';
       z-index: 100;
-      position: fixed;
-      background-color: var(--color-fill-side-nav);
     }
   }
 
@@ -205,19 +204,19 @@
   }
 
   .side-nav__list {
-    top: 24px;
     height: 0;
     overflow: hidden;
+    top: 24px;
 
     .side-nav--open & {
-      overflow: visible;
       height: auto;
+      overflow: visible;
     }
   }
 
   .side-nav__title {
-    padding-left: 3.2rem;
     margin: 2.4rem 0 3.2rem;
+    padding-left: 3.2rem;
     top: calc(var(--nav-height));
   }
 }
