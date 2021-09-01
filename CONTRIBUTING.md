@@ -23,15 +23,15 @@
   git remote add upstream git@github.com:nodejs/nodejs.dev.git
   ```
 
-* Create a new branch for your awesome work 
+* Create a new branch for your awesome work
 
   ```bash
   git checkout -b <BRANCH_NAME>
   ```
 
 * Commit your work. See [Commit Guidelines](#commit-guidelines)
-* Push to your branch 
-  
+* Push to your branch
+
   ```bash
   git push -u origin <YOUR_BRANCH>
   ```
