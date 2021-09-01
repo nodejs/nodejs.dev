@@ -171,13 +171,13 @@
 @media (max-width: 800px) {
   .side-nav {
     height: auto;
+    left: 0;
     max-height: 42px;
     max-width: unset;
     overflow: hidden;
     position: fixed;
-    top: auto;
-    left: 0;
     right: 0;
+    top: auto;
 
     &.side-nav--open {
       max-height: calc(100vh - var(--nav-height));
