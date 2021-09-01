@@ -176,6 +176,8 @@
     overflow: hidden;
     position: fixed;
     top: auto;
+    left: 0;
+    right: 0;
 
     &.side-nav--open {
       max-height: calc(100vh - var(--nav-height));
