@@ -29,6 +29,12 @@
   git checkout -b <BRANCH_NAME>
   ```
 
+* Confirm tests, linting, and formatting are passing
+
+  ```bash
+  npm test # Runs formatter and linter also
+  ```
+
 * Commit your work. See [Commit Guidelines](#commit-guidelines)
 * Push to your branch
 
@@ -65,6 +71,7 @@ Basic rules:
 
 * Pull Requests must be open for at least 48 hours unless changes include errata fixes, infrastructure maintenance, or tests
 * There must be no objections after a 48 hour period
+* Pull Requests for a new feature or bug fix must include tests
 
 The default for each contribution is that it is accepted once no collaborator has an objection. During review collaborators may also request that a specific contributor who is most versed in a particular area gives a "LGTM" before the PR can be merged.
 

@@ -50,7 +50,7 @@ A quick look at some of the top-level files and directories found in this projec
 
 3. **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser), like your site header, or a page template. "Src" is a convention for "source code."
 
-4. **`/stories`**: This directory contains stories for UI components used in this project. You can find out what a story is [here](https://storybook.js.org/docs/react/get-started/whats-a-story). Also, you can run them locally using `npm run storybook`.
+4. **`/stories`**: This directory contains stories for UI components used in this project. You can find out what a story is [here](https://storybook.js.org/docs/react/get-started/whats-a-story). Also, you can run them locally using `npm run storybook`. Our public story link can be found [here](https://nodejs.dev/storybook).
 
 5. **`/test`**: Tests for this projects are stored in this directory. This project uses [Jest](https://jestjs.io/) as it's testing framework.
 
