@@ -6,7 +6,7 @@ section: Getting Started
 category: learn
 ---
 
-As you try to understand the Node.js event loop, one important part of it is `process.nextTick()`.
+As you trying to understand the Node.js event loop? , one important part of it is `process.nextTick()`.
 
 Every time the event loop takes a full trip, we call it a tick.
 
