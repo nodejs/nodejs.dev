@@ -32,7 +32,8 @@
   }
 
   &.rbc-selected {
-    background-color: var(--color-border-accent);
+    background-color: transparent;
+    color: var(--color-border-accent);
   }
 
   &:focus {
