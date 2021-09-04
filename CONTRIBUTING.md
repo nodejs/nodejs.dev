@@ -29,7 +29,7 @@
   git checkout -b <BRANCH_NAME>
   ```
 
-* Confirm tests, linting, and formatting are passing
+* Confirm tests, linting, and formatting are passing. See [here](#debugging-failing-checks) to fix failures
 
   ```bash
   npm test # Runs formatter and linter also
@@ -50,7 +50,7 @@
   or contributing in some other way.
 * A **Collaborator** is a contributor who has been given write access to the repository. See [here](#how-to-become-a-collaborator) on how to become a collaborator.
 
-## 📝 Commit Guidelines
+## 📝 Commit Message Guidelines
 
 This project follows the [Conventional Commits][] specification.
 
@@ -99,6 +99,20 @@ This project uses [Storybook][], a tool which provides a sandbox environment for
 * Navigate to `localhost:6006`
 
 The production Storybook can be viewed at <https://nodejs.dev/storybook>
+
+## 🐛 Debugging Failing Checks
+
+For failing formatting or linting, you can try running:
+
+  ```bash
+  npm run format
+  ```
+
+Tests sometimes fail when adding or updating HTML. To update snapshots you can run:
+
+ ```bash
+ npm run update-snapshot
+ ```
 
 ## Developer's Certificate of Origin 1.1
 
