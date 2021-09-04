@@ -179,7 +179,7 @@ participated in that process.
 * [@BeniCheni](https://github.com/BeniCheni) - Benjamin Chen
 * [@kevjin](https://github.com/kevjin) - Kevin Jin
 
-## Links
+## 🔗 Links
 
 [Community Committee][]
 
