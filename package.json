@@ -43,7 +43,7 @@
     "gatsby-transformer-yaml": "^3.13.0",
     "highlight.js": "^11.2.0",
     "intersection-observer": "^0.12.0",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.0.0",
     "prism-react-renderer": "^1.2.1",
     "prismjs": "^1.24.0",
     "react": "^17.0.2",
