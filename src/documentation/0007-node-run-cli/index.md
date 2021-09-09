@@ -16,19 +16,23 @@ node app.js
 
 Above you are explicitly telling the shell how to run your script. You can also embed this information into javascript file through shebang line. Shebang is the first line in the file which tells os which interpreter to use for running the script, below is the first line of javascript
 
-```bash
+```javascript
 #!/usr/bin/node
+
+// your code
 ```
 
 Above we are explicitly giving the absolute path of interpreter but not all os have `node` in it's bin folder but all have `env` so you can tell os to run env with node as parameter
 
-```bash
+```javascript
 #!/usr/bin/env node
+
+// your code
 ```
 
 For using shebang your file should have executable permission which you can give as follows
 
-```sh
+```bash
 chmod u+x app.js
 ```
 
