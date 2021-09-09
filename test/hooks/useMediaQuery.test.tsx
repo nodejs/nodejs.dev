@@ -63,4 +63,22 @@ describe('useMediaQuery', () => {
     render(<MediaQueryRenderer />);
     expect(listenerMock).toHaveBeenCalledTimes(1);
   });
+
+  it("should support MediaQueryList's old event listeners", () => {
+    const listenerMock = jest.fn().mockImplementation(handler => {
+      handler();
+    });
+
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: jest.fn().mockImplementation(() => ({
+        matches: false,
+        addListener: listenerMock,
+        removeListener: jest.fn(),
+      })),
+    });
+
+    render(<MediaQueryRenderer />);
+    expect(listenerMock).toHaveBeenCalledTimes(1);
+  });
 });
