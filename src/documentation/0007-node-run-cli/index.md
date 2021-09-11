@@ -22,7 +22,7 @@ Above you are explicitly telling the shell how to run your script. You can also 
 // your code
 ```
 
-Above we are explicitly giving the absolute path of interpreter but not all os have `node` in it's bin folder but all have `env` so you can tell os to run env with node as parameter
+Above we are explicitly giving the absolute path of interpreter but not all OS have `node` in it's bin folder but all have `env` so you can tell OS to run env with node as parameter:
 
 ```javascript
 #!/usr/bin/env node
