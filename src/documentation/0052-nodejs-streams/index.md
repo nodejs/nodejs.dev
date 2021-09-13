@@ -249,7 +249,7 @@ then implement `_transform`:
 
 ```js
 TransformStream._transform = (chunk, encoding, callback) => {
-  push(chunk.toString().toUpperCase());
+  this.push(chunk.toString().toUpperCase());
   callback();
 }
 ```
