@@ -20,7 +20,7 @@ Above, you are explicitly telling the shell to run your script with `node`. You 
 #!/usr/bin/node
 ```
 
-Above we are explicitly giving the absolute path of interpreter but not all OS have `node` in it's bin folder but all have `env` so you can tell OS to run env with node as parameter:
+Above, we are explicitly giving the absolute path of interpreter. Not all operating systems have `node` in the bin folder, but all should have `env`. You can tell the OS to run `env` with node as parameter:
 
 ```bash
 #!/usr/bin/env node
