@@ -14,7 +14,7 @@ If your main Node.js application file is `app.js`, you can call it by typing:
 node app.js
 ```
 
-Above you are explicitly telling the shell how to run your script. You can also embed this information into JavaScript file through shebang line. Shebang is the first line in the file which tells OS which interpreter to use for running the script, below is the first line of JavaScript:
+Above, you are explicitly telling the shell to run your script with `node`. You can also embed this information into your JavaScript file with a "shebang" line. The "shebang" is the first line in the file, and tells the OS which interpreter to use for running the script. Below is the first line of JavaScript:
 
 ```bash
 #!/usr/bin/node
