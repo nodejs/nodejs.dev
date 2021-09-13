@@ -28,7 +28,7 @@ Above we are explicitly giving the absolute path of interpreter but not all OS h
 // your code
 ```
 
-For using shebang your file should have executable permission which you can give as follows:
+To use a shebang, your file should have executable permission. You can give `app.js` the executable permission by running:
 
 ```bash
 chmod u+x app.js
