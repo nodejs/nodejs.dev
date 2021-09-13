@@ -118,7 +118,7 @@
     "jest-fetch-mock": "^3.0.3",
     "node-sass": "6.0.1",
     "pa11y": "6.0.1",
-    "prettier": "^2.3.2",
+    "prettier": "^2.4.0",
     "remark-cli": "^10.0.0",
     "remark-frontmatter": "^4.0.0",
     "remark-preset-lint-node": "^3.0.1",
