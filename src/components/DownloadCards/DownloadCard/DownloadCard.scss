@@ -24,10 +24,11 @@
   }
 
   &__link {
+    align-items: center;
     color: var(--black5);
-    font-size: 24px;
-    height: 24px;
-    width: 24px;
+    display: grid;
+    text-decoration: none;
+    width: auto;
   }
 
   &__label {
