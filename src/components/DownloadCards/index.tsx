@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { TabList } from 'react-tabs';
 import { NodeReleaseLTSNPMVersion } from '../../types';
 import appleLogo from '../../images/logos/apple-logo.svg';
 import microsoftLogo from '../../images/logos/microsoft-download-logo.svg';
@@ -49,10 +50,10 @@ export default function DownloadCards({ line, userOS }: Props): JSX.Element {
   ];
 
   return (
-    <ul
+    <TabList
       className="download-cards"
       role="tablist"
-      tabIndex={0}
+      tabIndex={-1}
       onKeyDown={(e: React.KeyboardEvent): void => {
         const currentIndex = downloadTypes.findIndex(d => d.name === selected);
 
@@ -91,6 +92,6 @@ export default function DownloadCards({ line, userOS }: Props): JSX.Element {
           />
         );
       })}
-    </ul>
+    </TabList>
   );
 }
