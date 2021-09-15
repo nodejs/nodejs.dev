@@ -180,9 +180,11 @@
     top: 95px;
 
     &.side-nav--open {
-      max-height: calc(100vh - var(--nav-height));
+      height: auto;
+      max-height: calc(100% - var(--nav-height));
       overflow: visible;
       overflow-y: scroll;
+      padding-bottom: var(--space-20);
       position: fixed;
       top: var(--nav-height);
     }
