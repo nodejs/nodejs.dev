@@ -77,6 +77,12 @@ or
 const car = require('./items').car
 ```
 
+or you can make a destructuring
+
+```js
+const { car } = require('./items')
+```
+
 What's the difference between `module.exports` and `exports`?
 
 The first exposes the object it points to.
