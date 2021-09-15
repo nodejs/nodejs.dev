@@ -56,7 +56,11 @@ setTimeout(() => {
 console.log(' before ')
 ```
 
-will print `before after`.
+This code will print 
+```bash
+before 
+after
+```
 
 This is especially useful to avoid blocking the CPU on intensive tasks and let other functions be executed while performing a heavy calculation, by queuing functions in the scheduler.
 
