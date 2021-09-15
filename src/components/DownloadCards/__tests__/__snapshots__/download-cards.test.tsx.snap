@@ -5,11 +5,14 @@ exports[`DownloadCards component renders correctly 1`] = `
   <ul
     class="download-cards"
     role="tablist"
-    tabindex="0"
+    tabindex="-1"
   >
     <li
+      aria-disabled="false"
+      aria-selected="false"
       class="download-card download-card--active"
-      role="presentation"
+      role="tab"
+      tabindex="0"
     >
       <div
         class="download-card__top"
@@ -42,8 +45,11 @@ exports[`DownloadCards component renders correctly 1`] = `
       </p>
     </li>
     <li
+      aria-disabled="false"
+      aria-selected="false"
       class="download-card"
-      role="presentation"
+      role="tab"
+      tabindex="0"
     >
       <div
         class="download-card__top"
@@ -66,8 +72,11 @@ exports[`DownloadCards component renders correctly 1`] = `
       </p>
     </li>
     <li
+      aria-disabled="false"
+      aria-selected="false"
       class="download-card"
-      role="presentation"
+      role="tab"
+      tabindex="0"
     >
       <div
         class="download-card__top"

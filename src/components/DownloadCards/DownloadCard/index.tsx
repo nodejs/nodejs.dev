@@ -1,4 +1,5 @@
 import React from 'react';
+import { Tab } from 'react-tabs';
 import './DownloadCard.scss';
 import classnames from 'classnames';
 
@@ -26,11 +27,11 @@ export default function DownloadCard({
     'download-card--active': selected,
   });
   return (
-    <li
-      className={classNames}
+    <Tab
+      className={`${classNames}`}
       key={name}
-      role="presentation"
       onClick={handleSelectCard}
+      tabIndex="0"
     >
       <div className="download-card__top">
         <img
@@ -46,6 +47,6 @@ export default function DownloadCard({
       </div>
       <p className="download-card__label">{label}</p>
       <p className="download-card__filename">{fileName}</p>
-    </li>
+    </Tab>
   );
 }
