@@ -18,7 +18,7 @@ Here is a sample Hello World HTTP web server:
 <!--```js
 const http = require('http')
 
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200
