@@ -28,7 +28,7 @@ export default function DownloadCard({
   });
   return (
     <Tab
-      className={`${classNames}`}
+      className={classNames}
       key={name}
       onClick={handleSelectCard}
       tabIndex="0"
@@ -51,6 +51,3 @@ export default function DownloadCard({
     </Tab>
   );
 }
-// {
-//   'download-card--active': selected,
-// }
