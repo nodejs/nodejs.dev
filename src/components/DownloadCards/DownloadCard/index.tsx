@@ -32,6 +32,7 @@ export default function DownloadCard({
       key={name}
       onClick={handleSelectCard}
       tabIndex="0"
+      selectedClassName="download-card--active"
     >
       <div className="download-card__top">
         <img
@@ -50,3 +51,6 @@ export default function DownloadCard({
     </Tab>
   );
 }
+// {
+//   'download-card--active': selected,
+// }
