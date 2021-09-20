@@ -50,7 +50,7 @@ export default function DownloadCards({ line, userOS }: Props): JSX.Element {
   ];
 
   return (
-    <Tabs tabIndex={-1} className="download-cards-div">
+    <Tabs tabIndex={-1} className="download-cards-wrapper">
       <TabList
         className="download-cards"
         role="tablist"
