@@ -216,7 +216,7 @@ exports[`Download page renders correctly 1`] = `
         </p>
       </div>
       <div
-        class="download-cards-div"
+        class="download-cards-wrapper"
         data-tabs="true"
         tabindex="-1"
       >
@@ -1061,7 +1061,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </p>
       </div>
       <div
-        class="download-cards-div"
+        class="download-cards-wrapper"
         data-tabs="true"
         tabindex="-1"
       >

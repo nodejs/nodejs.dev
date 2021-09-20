@@ -3,7 +3,7 @@
 exports[`DownloadCards component renders correctly 1`] = `
 <div>
   <div
-    class="download-cards-div"
+    class="download-cards-wrapper"
     data-tabs="true"
     tabindex="-1"
   >
