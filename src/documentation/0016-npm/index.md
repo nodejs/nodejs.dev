@@ -46,8 +46,17 @@ Often you'll see more flags added to this command:
 
 * `--save-dev` installs and adds the entry to the `package.json` file _devDependencies_
 * `--no-save` installs but does not add the entry to the `package.json` file _dependencies_
+* `--save-optional` installs and adds the entry to the `package.json` file _optionalDependencies_
+* `--no-optional` will prevent optional dependencies from being installed
+
+Shorthands of the flags can also be used: 
+* -S: --save
+* -D: --save-dev
+* -O: --save-optional
 
 The difference between _devDependencies_ and _dependencies_ is that the former contains development tools, like a testing library, while the latter is bundled with the app in production.
+
+As for the _optionalDependencies_ the difference is that build failure of the dependency will not cause installation to fail. But it is your program's responsibility to handle the lack of the dependency. Read more about [optional dependencies](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#optionaldependencies).
 
 ### Updating packages
 
