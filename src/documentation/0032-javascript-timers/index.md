@@ -58,7 +58,7 @@ console.log(' before ')
 
 This code will print
 ```bash
-before 
+before
 after
 ```
 
