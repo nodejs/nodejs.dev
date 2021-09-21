@@ -56,7 +56,7 @@ setTimeout(() => {
 console.log(' before ')
 ```
 
-This code will print 
+This code will print
 ```bash
 before 
 after
