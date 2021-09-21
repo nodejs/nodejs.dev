@@ -14,7 +14,7 @@ describe('DownloadCards component', (): void => {
   it('check click handler on DownloadCards component', (): void => {
     const { getAllByRole } = render(<DownloadCards userOS={UserOS.MAC} />);
 
-    const listElement = getAllByRole('presentation');
+    const listElement = getAllByRole('tab');
 
     expect(listElement[0]).toHaveClass('download-card');
 
@@ -29,7 +29,7 @@ describe('DownloadCards component', (): void => {
     );
 
     const tabListElement = getByRole('tablist');
-    const listElement = getAllByRole('presentation');
+    const listElement = getAllByRole('tab');
 
     expect(listElement[0]).toHaveClass('download-card');
 
