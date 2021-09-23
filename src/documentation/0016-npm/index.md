@@ -49,7 +49,7 @@ Often you'll see more flags added to this command:
 * `--save-optional` installs and adds the entry to the `package.json` file _optionalDependencies_
 * `--no-optional` will prevent optional dependencies from being installed
 
-Shorthands of the flags can also be used: 
+Shorthands of the flags can also be used:
 * -S: --save
 * -D: --save-dev
 * -O: --save-optional
