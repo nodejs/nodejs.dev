@@ -1,5 +1,24 @@
 import { useState, useEffect } from 'react';
 
+const mediaQueryChangeSubscribe = (mq: MediaQueryList, handler: () => void) => {
+  if (mq.addEventListener) {
+    mq.addEventListener('change', handler);
+  } else {
+    mq.addListener(handler);
+  }
+};
+
+const mediaQueryChangeUnsubscribe = (
+  mq: MediaQueryList,
+  handler: () => void
+) => {
+  if (mq.removeEventListener) {
+    mq.removeEventListener('change', handler);
+  } else {
+    mq.removeListener(handler);
+  }
+};
+
 // eslint-disable-next-line import/prefer-default-export
 export function useMediaQuery(query: string): boolean | undefined {
   const [matches, setMatches] = useState<boolean>();
@@ -9,8 +28,8 @@ export function useMediaQuery(query: string): boolean | undefined {
       const mq = window.matchMedia(query);
       setMatches(mq.matches);
       const handler = (): void => setMatches(mq.matches);
-      mq.addEventListener('change', handler);
-      return (): void => mq.removeEventListener('change', handler);
+      mediaQueryChangeSubscribe(mq, handler);
+      return (): void => mediaQueryChangeUnsubscribe(mq, handler);
     }
 
     return undefined;
