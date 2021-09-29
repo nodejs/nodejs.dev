@@ -26,7 +26,7 @@ It could be you, or another person trying to initialize the project on the other
 
 So your original project and the newly initialized project are actually different. Even if a patch or minor release should not introduce breaking changes, we all know bugs can (and so, they will) slide in.
 
-The `package-lock.json` sets your currently installed version of each package **in stone**, and `npm` will use those exact versions when running `npm install`.
+The `package-lock.json` sets your currently installed version of each package **in stone**, and `npm` will use those exact versions when running `npm ci`.
 
 This concept is not new, and other programming languages package managers (like Composer in PHP) use a similar system for years.
 
