@@ -1,7 +1,7 @@
 export interface HomepageData {
   page: {
     id: string;
-    html: string;
+    body: string;
     frontmatter: {
       title: string;
       displayTitle: string;
@@ -31,11 +31,18 @@ export interface LearnPageContext {
   navigationData: NavigationSectionData;
 }
 
+export interface TableOfContents {
+  items: {
+    title: string;
+    url: string;
+  }[];
+}
+
 export interface LearnPageData {
   doc: {
     id: string;
-    html: string;
-    tableOfContents: string;
+    body: string;
+    tableOfContents: TableOfContents;
     frontmatter: { title: string; description: string };
     fields: { authors: string[] };
   };
@@ -50,10 +57,11 @@ export interface NavigationSectionItem {
   slug: string;
   title: string;
   section: string;
+  category: string;
 }
 
 export interface NavigationSectionData {
-  [index: string]: NavigationSectionItem[];
+  [index: string]: { category: string; data: NavigationSectionItem[] };
 }
 
 /**
@@ -78,17 +86,140 @@ declare global {
   }
 }
 
+export interface DataPage {
+  page: {
+    body: string;
+    tableOfContents: TableOfContents;
+    frontmatter: {
+      title: string;
+      description: string;
+    };
+    fields: { authors: string[] };
+  };
+}
+
 export interface Page {
   editPath?: string;
-  data: {
-    page: {
-      html: string;
-      tableOfContents: string;
-      frontmatter: {
-        title: string;
-        description: string;
-      };
-      fields: { authors: string[] };
-    };
+  data: DataPage;
+  location?: Location;
+}
+export interface CommunityNavigationSection {
+  title: string;
+  sections: string[];
+}
+
+export interface BlogPostAuthor {
+  id?: string;
+  name: string;
+  url: string;
+}
+
+export interface BlogMetaData {
+  node: {
+    frontmatter: { title: string; author: BlogPostAuthor[] };
+    fields: { date: string; slug: string };
+  };
+}
+export interface BlogPostsList {
+  blogs: {
+    edges: BlogMetaData[];
+  };
+}
+
+export interface BlogPageData {
+  blog: {
+    body: string;
+    excerpt: string;
+    frontmatter: { title: string; author: BlogPostAuthor[] };
+    fields: { slug: string; date: string };
+  };
+  recent: {
+    edges: BlogMetaData[];
+  };
+}
+
+export interface BlogPageContext {
+  slug: string;
+  relativePath: string;
+  next: PaginationInfo;
+  previous: PaginationInfo;
+  navigationData: NavigationSectionData;
+}
+
+export interface SideNavBarItem {
+  title: string;
+  slug: string;
+}
+
+// eslint-disable-next-line no-shadow
+export enum ReleaseTypes {
+  current = 'Current',
+  lts = 'LTS',
+  maintenance = 'Maintenance',
+  endoflife = 'End-of-life',
+}
+
+export interface UpcomingReleaseData {
+  releaseDate: string;
+  releaseType: ReleaseTypes;
+  alreadyReleased: boolean;
+}
+
+export interface UpcomingRelease {
+  title: string;
+  releases: UpcomingReleaseData[];
+}
+
+export interface NodeReleaseDataDetail {
+  date: string;
+  version: string;
+  files: string[];
+  lts: string;
+  v8: string;
+  npm?: string;
+  modules?: string;
+  openssl?: string;
+  security?: boolean;
+  uv?: string;
+  zlib?: string;
+}
+
+export interface NodeReleaseData {
+  release: string;
+  status: string;
+  codename: string;
+  initialRelease: string;
+  activeLTSStart: string;
+  maintenanceLTSStart: string;
+  endOfLife: string;
+}
+
+export type NodeReleaseLTSVersion = Pick<
+  NodeReleaseDataDetail,
+  'version' | 'lts'
+>;
+
+export type NodeReleaseLTSNPMVersion = Pick<
+  NodeReleaseDataDetail,
+  'lts' | 'npm' | 'version'
+>;
+
+export interface BannersIndex {
+  endDate: string;
+  link: string;
+  text: string;
+  startDate: string;
+}
+
+export interface BannersBLM {
+  link: string;
+  text: string;
+  visible: boolean;
+}
+
+export interface Banners {
+  banners: {
+    index: BannersIndex;
+    blacklivesmatter: BannersBLM;
   };
 }

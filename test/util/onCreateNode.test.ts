@@ -18,8 +18,8 @@ describe('Tests for onCreateNode', () => {
   beforeEach(() => {
     createSlug.mockClear();
   });
-  it('generates a slug for MarkdownRemark nodes', () => {
-    const { node, getNode, actions } = createMockNodeOfType('MarkdownRemark');
+  it('generates a slug for Mdx nodes', () => {
+    const { node, getNode, actions } = createMockNodeOfType('Mdx');
     onCreateNode({ node, getNode, actions });
     expect(createSlug).toHaveBeenCalledWith('Test title');
     expect(actions.createNodeField).toHaveBeenCalledWith({
@@ -28,7 +28,7 @@ describe('Tests for onCreateNode', () => {
       value: 'slug',
     });
   });
-  it('only generates a slug for MarkdownRemark nodes', () => {
+  it('only generates a slug for Mdx nodes', () => {
     const { node, getNode, actions } = createMockNodeOfType('SomeOtherType');
     onCreateNode({ node, getNode, actions });
     expect(createSlug).not.toHaveBeenCalled();

@@ -1,7 +1,7 @@
 import React from 'react';
-
 import { render } from '@testing-library/react';
 import CenteredLayout from '../centered';
+import '../../../../test/__mocks__/intersectionObserverMock';
 
 describe('CenteredLayout component', () => {
   it('renders correctly with footer', () => {
@@ -10,7 +10,6 @@ describe('CenteredLayout component', () => {
         title="mock-title"
         description="mock-description"
         img="mock-image-url"
-        showFooter
       >
         mock-children
       </CenteredLayout>

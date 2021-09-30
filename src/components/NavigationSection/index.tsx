@@ -24,22 +24,20 @@ const NavigationSection = ({
         <i className="material-icons">offline_bolt</i>
         {title}
       </h2>
-      {section.map(
-        (item: NavigationSectionItem): JSX.Element => {
-          const isRead: boolean = readSections.has(item.slug);
+      {section.map((item: NavigationSectionItem): JSX.Element => {
+        const isRead: boolean = readSections.has(item.slug);
 
-          return (
-            <NavigationItem
-              key={item.slug}
-              title={item.title}
-              slug={item.slug}
-              isRead={isRead}
-              isActive={item.slug === currentSlug}
-              onClick={onItemClick}
-            />
-          );
-        }
-      )}
+        return (
+          <NavigationItem
+            key={item.slug}
+            title={item.title}
+            slug={item.slug}
+            isRead={isRead}
+            isActive={item.slug === currentSlug}
+            onClick={onItemClick}
+          />
+        );
+      })}
     </ul>
   );
 };

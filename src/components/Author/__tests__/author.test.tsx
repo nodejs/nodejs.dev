@@ -5,14 +5,14 @@ import Author from '..';
 describe('Author component', () => {
   it('renders correctly', () => {
     const username = 'test-author';
-    const { container } = render(<Author username={username} size="60" />);
+    const { container } = render(
+      <Author index={1} username={username} size="60" />
+    );
     expect(container).toMatchSnapshot();
   });
 
   it('does not render without a username', () => {
-    const { container } = render(
-      <Author key={null} username={null} size={null} />
-    );
+    const { container } = render(<Author index={0} username="" size="" />);
     expect(container).toMatchSnapshot();
   });
 });

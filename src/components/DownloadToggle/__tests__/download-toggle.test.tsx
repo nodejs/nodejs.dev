@@ -1,5 +1,6 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import DownloadToggle from '..';
 
 describe('DownloadToggle component', (): void => {
@@ -15,8 +16,8 @@ describe('DownloadToggle component', (): void => {
     const mockHandler = jest.fn();
     render(<DownloadToggle selected="LTS" handleClick={mockHandler} />);
 
-    fireEvent.click(screen.getByText('LTS'));
-    fireEvent.click(screen.getByText('Current'));
+    userEvent.click(screen.getByText('LTS'));
+    userEvent.click(screen.getByText('Current'));
 
     expect(mockHandler.mock.calls.length).toBe(2);
   });

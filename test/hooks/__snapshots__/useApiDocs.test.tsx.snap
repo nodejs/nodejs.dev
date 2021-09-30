@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useApiDocs useApiData hook tests should return empty APIResponse if version not passed 1`] = `
+<div>
+  {"classes":[],"globals":[],"methods":[],"miscs":[],"modules":[]}
+</div>
+`;

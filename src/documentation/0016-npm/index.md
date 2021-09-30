@@ -3,6 +3,7 @@ title: An introduction to the npm package manager
 description: 'A quick guide to npm, the powerful package manager key to the success of Node.js. In January 2017 over 350000 packages were reported being listed in the npm registry, making it the biggest single language code repository on Earth, and you can be sure there is a package for (almost!) everything.'
 authors: flaviocopes, MylesBorins, LaRuaNa, jgb-solutions, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## Introduction to npm
@@ -15,7 +16,7 @@ It started as a way to download and manage dependencies of Node.js packages, but
 
 There are many things that `npm` does.
 
-> [**Yarn**](https://yarnpkg.com/en/) is an alternative to npm. Make sure you check it out as well.
+> [**Yarn**](https://yarnpkg.com/en/) and [**pnpm**](https://pnpm.js.org/) are alternatives to npm cli. You can check them out as well.
 
 ## Downloads
 
@@ -39,12 +40,23 @@ You can also install a specific package by running
 npm install <package-name>
 ```
 
+Furthermore, since npm 5, this command adds `<package-name>` to the `package.json` file _dependencies_. Before version 5, you needed to add the flag `--save`.
+
 Often you'll see more flags added to this command:
 
-* `--save` installs and adds the entry to the `package.json` file _dependencies_
 * `--save-dev` installs and adds the entry to the `package.json` file _devDependencies_
+* `--no-save` installs but does not add the entry to the `package.json` file _dependencies_
+* `--save-optional` installs and adds the entry to the `package.json` file _optionalDependencies_
+* `--no-optional` will prevent optional dependencies from being installed
 
-The difference is mainly that devDependencies are usually development tools, like a testing library, while `dependencies` are bundled with the app in production.
+Shorthands of the flags can also be used:
+* -S: --save
+* -D: --save-dev
+* -O: --save-optional
+
+The difference between _devDependencies_ and _dependencies_ is that the former contains development tools, like a testing library, while the latter is bundled with the app in production.
+
+As for the _optionalDependencies_ the difference is that build failure of the dependency will not cause installation to fail. But it is your program's responsibility to handle the lack of the dependency. Read more about [optional dependencies](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#optionaldependencies).
 
 ### Updating packages
 
@@ -89,7 +101,7 @@ For example:
   "scripts": {
     "start-dev": "node lib/server-development",
     "start": "node lib/server-production"
-  },
+  }
 }
 ```
 
@@ -101,7 +113,7 @@ It's very common to use this feature to run Webpack:
     "watch": "webpack --watch --progress --colors --config webpack.conf.js",
     "dev": "webpack --progress --colors --config webpack.conf.js",
     "prod": "NODE_ENV=production webpack -p --config webpack.conf.js",
-  },
+  }
 }
 ```
 

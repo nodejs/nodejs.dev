@@ -12,18 +12,20 @@ import Footer from '../components/Footer';
 interface Props {
   data: LearnPageData;
   pageContext: LearnPageContext;
+  location: Location;
 }
 const LearnLayout = ({
   data: {
     doc: {
       frontmatter: { title, description },
-      html,
+      body,
       tableOfContents,
       fields: { authors },
     },
   },
   pageContext: { slug, next, previous, relativePath, navigationData },
-}: Props): React.ReactNode => {
+  location,
+}: Props): JSX.Element => {
   let previousSlug = '';
 
   if (typeof window !== 'undefined' && window.previousPath) {
@@ -34,17 +36,23 @@ const LearnLayout = ({
 
   return (
     <>
-      <Layout title={title} description={description} showFooter={false}>
+      <Layout
+        title={title}
+        description={description}
+        location={location}
+        showFooter={false}
+      >
         <main className="grid-container">
           <Navigation
             currentSlug={slug}
             previousSlug={previousSlug}
             label="Secondary"
             sections={navigationData}
+            category="learn"
           />
           <Article
             title={title}
-            html={html}
+            body={body}
             tableOfContents={tableOfContents}
             next={next}
             authors={authors}
@@ -61,10 +69,13 @@ export default LearnLayout;
 
 export const query = graphql`
   query DocBySlug($slug: String!) {
-    doc: markdownRemark(fields: { slug: { eq: $slug } }) {
+    doc: mdx(
+      fields: { slug: { eq: $slug } }
+      frontmatter: { category: { eq: "learn" } }
+    ) {
       id
-      html
-      tableOfContents(absolute: false, pathToSlugField: "frontmatter.path")
+      body
+      tableOfContents
       frontmatter {
         title
         description

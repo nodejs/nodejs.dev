@@ -14,7 +14,11 @@ describe('Learn Template', () => {
     const learnPageContext = createLearnPageContext();
 
     const { container } = render(
-      <LearnTemplate data={learnPageData} pageContext={learnPageContext} />
+      <LearnTemplate
+        data={learnPageData}
+        pageContext={learnPageContext}
+        location={window.location}
+      />
     );
     expect(container).toMatchSnapshot();
   });

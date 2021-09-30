@@ -3,6 +3,7 @@ title: 'JavaScript Asynchronous Programming and Callbacks'
 description: 'JavaScript is synchronous by default, and is single threaded. This means that code cannot create new threads and run in parallel. Find out what asynchronous code means and how it looks like'
 authors: flaviocopes, MylesBorins, LaRuaNa, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## Asynchronicity in Programming Languages
@@ -93,7 +94,7 @@ If there is no error, the object is `null`. If there is an error, it contains so
 
 ```js
 fs.readFile('/file.json', (err, data) => {
-  if (err !== null) {
+  if (err) {
     //handle error
     console.log(err)
     return

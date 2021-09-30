@@ -1,9 +1,9 @@
 import React from 'react';
-import { ReleaseData } from '../../hooks/useReleaseHistory';
+import { NodeReleaseLTSNPMVersion } from '../../types';
 import './DownloadHeader.scss';
 
 interface Props {
-  release?: ReleaseData;
+  release?: NodeReleaseLTSNPMVersion;
 }
 
 export default function DownloadHeader({ release }: Props): JSX.Element {

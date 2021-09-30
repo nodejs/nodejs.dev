@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import ShellBox from '../../ShellBox';
 import '../InstallTabs.scss';
@@ -15,10 +16,11 @@ g++ libgcc linux-headers grep util-linux binutils findutils"
         ca-certificates openssl ncurses coreutils python2 make gcc g++ libgcc
         linux-headers grep util-linux binutils findutils
       </ShellBox>
-      <ShellBox textToCopy="curl -o- | bash https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh">
+      <ShellBox textToCopy="curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash">
         <span className="install__text__no-select">$</span>
-        <span className="install__text__command"> curl -o- | bash </span>
-        https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
+        <span className="install__text__command"> curl -o- </span>
+        https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh{' '}
+        <span className="install__text__command">| bash</span>
       </ShellBox>
       <ShellBox textToCopy="nvm install --lts">
         <span className="install__text__no-select">$</span>
@@ -26,15 +28,12 @@ g++ libgcc linux-headers grep util-linux binutils findutils"
       </ShellBox>
       <br />
       <br />
-      {/* TODO when the new docs page is ready link to that page.  */}
-      <a
+      <Link
         className="install__docs-button"
-        href="https://nodejs.org/en/download/package-manager/#nvm"
-        target="_blank"
-        rel="noopener noreferrer"
+        to="/download/package-manager/#nvm"
       >
         Read documentation
-      </a>
+      </Link>
     </div>
   );
 };

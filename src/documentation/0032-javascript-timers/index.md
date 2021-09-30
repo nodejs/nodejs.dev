@@ -3,6 +3,7 @@ title: Discover JavaScript Timers
 description: 'When writing JavaScript code, you might want to delay the execution of a function. Learn how to use setTimeout and setInterval to schedule functions in the future'
 authors: flaviocopes, MylesBorins, LaRuaNa, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## `setTimeout()`
@@ -55,7 +56,11 @@ setTimeout(() => {
 console.log(' before ')
 ```
 
-will print `before after`.
+This code will print
+```bash
+before
+after
+```
 
 This is especially useful to avoid blocking the CPU on intensive tasks and let other functions be executed while performing a heavy calculation, by queuing functions in the scheduler.
 

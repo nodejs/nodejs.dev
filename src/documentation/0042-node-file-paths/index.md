@@ -3,6 +3,7 @@ title: 'Node.js File Paths'
 description: 'How to interact with file paths and manipulate them in Node.js'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 Every file in the system has a path.

@@ -9,7 +9,7 @@ export default {
   title: 'NavigationSection',
   component: NavigationSection,
 };
-const noop = (): void => {
+const noop = (): null => {
   return null;
 };
 
@@ -22,6 +22,7 @@ export const root = (): JSX.Element => (
         slug: 'intro',
         title: 'Section 1',
         section: '...',
+        category: 'category1',
       },
     ]}
     currentSlug=""

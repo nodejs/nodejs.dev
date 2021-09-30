@@ -1,5 +1,5 @@
 <!--
-Please read the [Code of Conduct](https://github.com/nodejs/nodejs.dev/blob/master/CODE_OF_CONDUCT.md) and the [Contributing Guidelines](https://github.com/nodejs/nodejs.dev/blob/master/CONTRIBUTING.md) before opening a pull request.
+Please read the [Code of Conduct](https://github.com/nodejs/nodejs.dev/blob/main/CODE_OF_CONDUCT.md) and the [Contributing Guidelines](https://github.com/nodejs/nodejs.dev/blob/main/CONTRIBUTING.md) before opening a pull request.
 -->
 
 ## Description

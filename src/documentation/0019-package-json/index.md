@@ -3,6 +3,7 @@ title: The package.json guide
 description: 'The package.json file is a key element in lots of app codebases based on the Node.js ecosystem.'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, jgb-solutions, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 If you work with JavaScript, or you've ever interacted with a JavaScript project, Node.js or a frontend project, you surely met the `package.json` file.

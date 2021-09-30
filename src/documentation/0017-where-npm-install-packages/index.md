@@ -3,6 +3,7 @@ title: Where does npm install the packages?
 description: 'How to find out where npm installs the packages'
 authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 When you install a package using `npm` you can perform 2 types of installation:
@@ -37,4 +38,4 @@ On Windows it could be `C:\Users\YOU\AppData\Roaming\npm\node_modules`
 
 If you use `nvm` to manage Node.js versions, however, that location would differ.
 
-I for example use `nvm` and my packages location was shown as `/Users/joe/.nvm/versions/node/v8.9.0/lib/node_modules`.
+I, for example, use `nvm` and my packages location was shown as `/Users/joe/.nvm/versions/node/v8.9.0/lib/node_modules`.

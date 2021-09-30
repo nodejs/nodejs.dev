@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import TOC from '..';
+import { mockTableOfContents } from '../../../../test/__fixtures__/page';
 
 describe('TOC component', () => {
   it('renders correctly', () => {
     const heading = 'TABLE OF CONTENTS';
-    const tableOfContents = 'mock-toc';
     const { container } = render(
-      <TOC heading={heading} tableOfContents={tableOfContents} />
+      <TOC heading={heading} tableOfContents={mockTableOfContents} />
     );
     expect(container).toMatchSnapshot();
   });

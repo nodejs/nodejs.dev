@@ -1,13 +1,12 @@
 import React from 'react';
-
-import { NodeReleaseData } from '../../hooks/useReleaseHistory';
+import { NodeReleaseData } from '../../types';
 import './DownloadTable.scss';
 
 interface Props {
-  releases: NodeReleaseData[];
+  nodeReleasesData: NodeReleaseData[];
 }
 
-const DownloadTable = ({ releases }: Props): JSX.Element => (
+const DownloadTable = ({ nodeReleasesData }: Props): JSX.Element => (
   <div className="downloads-table-container">
     <table className="downloads-table">
       <thead>
@@ -17,12 +16,12 @@ const DownloadTable = ({ releases }: Props): JSX.Element => (
           <th>Codename</th>
           <th>Initial Release</th>
           <th>Active LTS Start</th>
-          <th>Maintainance LTS Start</th>
+          <th>Maintenance LTS Start</th>
           <th>End of Life</th>
         </tr>
       </thead>
       <tbody>
-        {releases.map(
+        {nodeReleasesData.map(
           ({
             release,
             status,

@@ -7,7 +7,7 @@ exports[`EditLink component renders correctly 1`] = `
   >
     <a
       class="link"
-      href="https://github.com/nodejs/nodejs.dev/edit/master/src/documentation/0002-node-history/index.md"
+      href="https://github.com/nodejs/nodejs.dev/edit/main/src/documentation/0002-node-history/index.md"
     >
       <span>
         Edit this page on GitHub

@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import ShellBox from '../index';
 
@@ -34,7 +35,7 @@ describe('ShellBox component', (): void => {
     navigatorClipboardSpy.mockImplementationOnce(() => Promise.resolve());
 
     const buttonElement = getByText('copy');
-    fireEvent.click(buttonElement);
+    userEvent.click(buttonElement);
 
     await findByText('copied');
 

@@ -26,7 +26,7 @@ exports[`DownloadTable component renders correctly 1`] = `
             Active LTS Start
           </th>
           <th>
-            Maintainance LTS Start
+            Maintenance LTS Start
           </th>
           <th>
             End of Life

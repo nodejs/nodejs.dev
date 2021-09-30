@@ -3,6 +3,7 @@ title: 'Node.js file stats'
 description: 'How to get the details of a file using Node.js'
 authors: flaviocopes, ZYSzys, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 Every file comes with a set of details that we can inspect using Node.js.

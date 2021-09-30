@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-shadow
 export enum UserOS {
   MAC = 'MAC',
   WIN = 'WIN',
@@ -9,12 +10,27 @@ export enum UserOS {
 
 export function detectOS(): UserOS {
   let OS = UserOS.UNKNOWN;
-  if (typeof navigator !== `undefined`) {
-    if (navigator.appVersion.indexOf('Win') !== -1) OS = UserOS.WIN;
-    if (navigator.appVersion.indexOf('Mac') !== -1) OS = UserOS.MAC;
-    if (navigator.appVersion.indexOf('X11') !== -1) OS = UserOS.UNIX;
-    if (navigator.appVersion.indexOf('Linux') !== -1) OS = UserOS.LINUX;
-    if (navigator.appVersion.indexOf('Mobi') !== -1) OS = UserOS.MOBILE;
+  if (typeof window !== 'undefined') {
+    switch (typeof navigator !== 'undefined') {
+      case navigator.appVersion.includes('Win'):
+        OS = UserOS.WIN;
+        break;
+      case navigator.appVersion.includes('Mac'):
+        OS = UserOS.MAC;
+        break;
+      case navigator.appVersion.includes('X11'):
+        OS = UserOS.UNIX;
+        break;
+      case navigator.appVersion.includes('Linux'):
+        OS = UserOS.LINUX;
+        break;
+      case navigator.appVersion.includes('Mobi'):
+        OS = UserOS.MOBILE;
+        break;
+      default:
+        OS = UserOS.UNKNOWN;
+        break;
+    }
   }
   return OS;
 }

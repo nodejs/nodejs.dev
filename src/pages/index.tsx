@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { graphql } from 'gatsby';
+import { IoLogoNodejs, IoMdGitPullRequest, IoMdRocket } from 'react-icons/io';
 
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
@@ -8,30 +9,54 @@ import '../util/konami';
 
 import '../styles/index.scss';
 
-import { HomepageData } from '../types';
+import { HomepageData, NodeReleaseLTSVersion, BannersIndex } from '../types';
 
 import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
 import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
 import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
 import dotsIllustration from '../images/illustrations/dots.svg';
 import InstallTabs from '../components/InstallTabs';
+import Banner from '../components/Banner';
 
-import featureImg1 from '../images/feature-img-1.png';
-import featureImg2 from '../images/feature-img-2.png';
-import featureImg3 from '../images/feature-img-3.png';
-import GetStartedSection from '../components/GetStartedSection';
+interface NodeFeatureProps {
+  icon?: ReactElement;
+  heading: string;
+  description: string;
+}
+
+const styled = (icon: ReactElement): ReactElement =>
+  React.cloneElement(icon, { alt: 'Node Feature', className: 'feature-icon' });
+
+const features = [
+  {
+    icon: styled(<IoLogoNodejs />),
+    heading: 'JavaScript',
+    description:
+      'Node.js provides support for the JavaScript programming language',
+  },
+  {
+    icon: styled(<IoMdGitPullRequest />),
+    heading: 'Open Source',
+    description:
+      'Node.js is open source and actively maintained by contributors all over the world',
+  },
+  {
+    icon: styled(<IoMdRocket />),
+    heading: 'Everywhere',
+    description: 'Node.js has been adapted to work in a wide variety of places',
+  },
+];
 
 const NodeFeature = ({
-  img,
-  featureText,
-  featureHeader,
-  featureAltText,
-}: Props): JSX.Element => {
+  icon,
+  heading,
+  description,
+}: NodeFeatureProps): JSX.Element => {
   return (
     <div className="node-features__feature">
-      <img src={img} alt={featureAltText} />
-      <h4>{featureHeader}</h4>
-      <p>{featureText}</p>
+      {icon}
+      <h4>{heading}</h4>
+      <p>{description}</p>
     </div>
   );
 };
@@ -39,30 +64,21 @@ const NodeFeature = ({
 export default function Index({
   data: {
     page: {
-      frontmatter: {
-        displayTitle,
-        subTitle,
-        description,
-        learnLinkText,
-        beginnerGuideHeaderText,
-        beginnerGuideBodyText,
-        doMoreWithNodeHeaderText,
-        doMoreWithNodeBodyText,
-        nodeFeatureHeader1,
-        nodeFeatureHeader2,
-        nodeFeatureHeader3,
-        nodeFeature1,
-        nodeFeature2,
-        nodeFeature3,
-        nodeFeatureAltText,
-      },
+      frontmatter: { displayTitle, subTitle, description },
     },
+    nodeReleases: { nodeReleasesLTSVersion },
+    banners: { bannersIndex },
   },
 }: HomepageProps): JSX.Element {
   return (
     <Layout title={displayTitle} description={description}>
       <main className="home-page">
-        <Hero title={displayTitle} subTitle={subTitle} />
+        <Banner bannersIndex={bannersIndex} />
+        <Hero
+          title={displayTitle}
+          subTitle={subTitle}
+          nodeReleasesLTSVersion={nodeReleasesLTSVersion}
+        />
 
         <section className="node-demo-container">
           <div className="node-demo">
@@ -87,62 +103,45 @@ export default function Index({
         </section>
 
         <section className="node-features">
-          <NodeFeature
-            img={featureImg1}
-            featureText={nodeFeature1}
-            featureHeader={nodeFeatureHeader1}
-            featureAltText={nodeFeatureAltText}
-          />
-          <NodeFeature
-            img={featureImg2}
-            featureText={nodeFeature2}
-            featureHeader={nodeFeatureHeader2}
-            featureAltText={nodeFeatureAltText}
-          />
-          <NodeFeature
-            img={featureImg3}
-            featureText={nodeFeature3}
-            featureHeader={nodeFeatureHeader3}
-            featureAltText={nodeFeatureAltText}
-          />
+          {features.map(feature => (
+            <NodeFeature
+              key={feature.heading}
+              icon={feature.icon}
+              heading={feature.heading}
+              description={feature.description}
+            />
+          ))}
         </section>
-
-        <GetStartedSection
-          learnLinkText={learnLinkText}
-          beginnerGuideHeaderText={beginnerGuideHeaderText}
-          beginnerGuideBodyText={beginnerGuideBodyText}
-          doMoreWithNodeHeaderText={doMoreWithNodeHeaderText}
-          doMoreWithNodeBodyText={doMoreWithNodeBodyText}
-        />
       </main>
     </Layout>
   );
 }
 
-interface Props {
-  img: string;
-  featureText: string;
-  featureHeader: string;
-  featureAltText: string;
+export interface HomeNodeReleases {
+  nodeReleases: {
+    nodeReleasesLTSVersion: NodeReleaseLTSVersion[];
+  };
+}
+
+export interface HomeBannersIndex {
+  banners: {
+    bannersIndex: BannersIndex;
+  };
 }
 
 interface HomepageProps {
-  data: HomepageData;
+  data: HomepageData & HomeNodeReleases & HomeBannersIndex;
 }
 
 export const query = graphql`
   query pageQuery {
-    page: markdownRemark(fields: { slug: { eq: "homepage" } }) {
+    page: mdx(fields: { slug: { eq: "homepage" } }) {
       frontmatter {
         title
         displayTitle
         subTitle
         description
         learnLinkText
-        beginnerGuideHeaderText
-        beginnerGuideBodyText
-        doMoreWithNodeHeaderText
-        doMoreWithNodeBodyText
         nodeFeatureHeader1
         nodeFeatureHeader2
         nodeFeatureHeader3
@@ -150,6 +149,20 @@ export const query = graphql`
         nodeFeature2
         nodeFeature3
         nodeFeatureAltText
+      }
+    }
+    nodeReleases {
+      nodeReleasesLTSVersion: nodeReleasesDataDetail {
+        lts
+        version
+      }
+    }
+    banners {
+      bannersIndex: index {
+        endDate
+        link
+        text
+        startDate
       }
     }
   }

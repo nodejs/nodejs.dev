@@ -56,14 +56,12 @@ export const calcNavScrollParams = (
 ): ScrollParams => {
   const navRect = navElement.getBoundingClientRect();
   let newScrollPos: number;
-  let scrollWindow: HTMLElement | null;
+  const scrollWindow = navElement;
   if (isMobileScreen()) {
     // phone
-    scrollWindow = null;
     newScrollPos = linkHeight - window.screen.height / 2;
   } else {
     // tablet
-    scrollWindow = navElement;
     newScrollPos =
       linkHeight -
       navRect.top -

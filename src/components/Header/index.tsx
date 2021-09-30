@@ -1,18 +1,27 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import logoLight from '../../images/logos/nodejs-logo-light-mode.svg';
 import logoDark from '../../images/logos/nodejs-logo-dark-mode.svg';
-import defaultDarkModeController from '../../util/darkModeController';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
-interface Props {
-  darkModeController?: typeof defaultDarkModeController;
-}
-
-const Header = ({
-  darkModeController = defaultDarkModeController,
-}: Props): JSX.Element => {
+const Header = (): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
+
+  const handleThemeOnClick = (
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    toggleTheme: Function,
+    currentTheme: string,
+    isKeyPress = false
+  ): void => {
+    if (isKeyPress) {
+      return;
+    }
+
+    const toggle = currentTheme === 'light' ? 'dark' : 'light';
+    toggleTheme(toggle);
+  };
+
   return (
     <nav aria-label="Primary" className="nav">
       <div className="nav__container">
@@ -31,64 +40,88 @@ const Header = ({
               />
             </div>
           </Link>
-
-          <ul className="nav__tabs__container">
-            <li className="nav__tabs">
-              <Link
-                to="/learn"
-                className="activeStyleTab"
-                activeClassName="active"
-                partiallyActive
-              >
-                Learn
-              </Link>
-            </li>
-            <li className="nav__tabs">
-              <a
-                className="activeStyleTab"
-                target="_blank"
-                href="https://nodejs.org/en/docs/"
-                rel="noopener noreferrer"
-              >
-                {isMobile ? 'Docs' : 'Documentation'}
-              </a>
-            </li>
-            <li className="nav__tabs">
-              <a
-                href="https://nodejs.org/en/download/"
-                className="activeStyleTab"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download
-              </a>
-            </li>
-            <li className="nav__tabs">
-              <a
-                href="https://nodejs.org/en/get-involved/"
-                className="activeStyleTab"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Community
-              </a>
-            </li>
-          </ul>
         </div>
+
+        <ul className="nav__tabs__container">
+          <li className="nav__tabs">
+            <Link
+              to="/learn"
+              className="activeStyleTab"
+              activeClassName="active"
+              partiallyActive
+            >
+              Learn
+            </Link>
+          </li>
+          <li className="nav__tabs">
+            <a
+              className="activeStyleTab"
+              target="_blank"
+              href="https://nodejs.org/en/docs/"
+              rel="noopener noreferrer"
+            >
+              {isMobile ? 'Docs' : 'Documentation'}
+            </a>
+          </li>
+          <li className="nav__tabs">
+            <Link
+              to="/download"
+              className="activeStyleTab"
+              activeClassName="active"
+              partiallyActive
+            >
+              Download
+            </Link>
+          </li>
+          <li className="nav__tabs">
+            <Link
+              to="/community"
+              className="activeStyleTab"
+              activeClassName="active"
+              partiallyActive
+            >
+              Community
+            </Link>
+          </li>
+        </ul>
 
         <div className="nav__endwrapper">
           <ul className="right-container">
             <li className="nav__tabs nav__tabs--right">
-              <button
-                type="button"
-                className="dark-mode-toggle"
-                onMouseDown={darkModeController.handleEvent}
-                onMouseUp={darkModeController.handleEvent}
-              >
-                <span className="sr-only">Toggle Dark Mode</span>
-                <i className="material-icons light-mode-only">nights_stay</i>
-                <i className="material-icons dark-mode-only">wb_sunny</i>
-              </button>
+              <ThemeToggler>
+                {({
+                  theme,
+                  toggleTheme,
+                }: {
+                  theme: string | null;
+                  // eslint-disable-next-line @typescript-eslint/ban-types
+                  toggleTheme: Function;
+                }): JSX.Element | null => {
+                  if (theme === null) {
+                    return null;
+                  }
+                  return (
+                    <button
+                      type="button"
+                      onClick={(): void =>
+                        handleThemeOnClick(toggleTheme, theme)
+                      }
+                      className="dark-mode-toggle"
+                      onKeyPress={(): void =>
+                        handleThemeOnClick(toggleTheme, theme, true)
+                      }
+                    >
+                      <span className="sr-only">Toggle Dark Mode</span>
+                      <i className="material-icons light-mode-only theme-buttons">
+                        nights_stay
+                      </i>
+                      <i className="material-icons dark-mode-only theme-buttons">
+                        wb_sunny
+                      </i>
+                    </button>
+                  );
+                }}
+              </ThemeToggler>
             </li>
 
             <li className="nav__tabs">

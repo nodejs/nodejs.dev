@@ -3,6 +3,7 @@ title: npm global or local packages
 description: 'When is a package best installed globally? Why?'
 authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 The main difference between local and global packages is this:

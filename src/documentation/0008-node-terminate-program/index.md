@@ -3,6 +3,7 @@ title: How to exit from a Node.js program
 description: 'Learn how to terminate a Node.js app in the best possible way'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, jgb-solutions, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 There are various ways to terminate a Node.js application.
@@ -33,7 +34,7 @@ You can also set the `process.exitCode` property:
 process.exitCode = 1
 ```
 
-and when the program will later end, Node.js will return that exit code.
+and when the program ends, Node.js will return that exit code.
 
 A program will gracefully exit when all the processing is done.
 
@@ -49,6 +50,7 @@ app.get('/', (req, res) => {
 
 app.listen(3000, () => console.log('Server ready'))
 ```
+> Express is a framework that uses the http module under the hood, app.listen() returns an instance of http. You would use https.createServer if you needed to serve your app using HTTPS, as app.listen only uses the http module.
 
 This program is never going to end. If you call `process.exit()`, any currently pending or running request is going to be aborted. This is _not nice_.
 

@@ -29,7 +29,7 @@ exports[`Tests for MacOSPanel component renders correctly 1`] = `
         >
           curl -o- 
         </span>
-        https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
+        https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh
         <span
           class="install__text__command"
         >
@@ -70,9 +70,7 @@ exports[`Tests for MacOSPanel component renders correctly 1`] = `
     <br />
     <a
       class="install__docs-button"
-      href="https://nodejs.org/en/download/package-manager/#nvm"
-      rel="noopener noreferrer"
-      target="_blank"
+      href="/download/package-manager/#nvm"
     >
       Read documentation
     </a>

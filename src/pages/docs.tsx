@@ -1,8 +1,10 @@
-/* eslint-disable jsx-a11y/no-onchange */
+// TODO include into coverage before page release
+/* istanbul ignore file */
+/* eslint-disable react/no-danger, jsx-a11y/no-onchange */
 import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import dompurify from 'dompurify';
-import { useApiData, useReleaseHistory } from '../hooks';
+import { useApiData } from '../hooks';
 import { ApiDocsObj, APIResponse } from '../hooks/useApiDocs';
 
 import downloadUrlByOs from '../util/downloadUrlByOS';
@@ -14,6 +16,20 @@ import ShellBox from '../components/ShellBox';
 
 import '../styles/docs.scss';
 import '../styles/article-reader.scss';
+import { NodeReleaseDataDetail } from '../types';
+
+type NodeReleaseVersion = Pick<NodeReleaseDataDetail, 'version'>;
+
+interface NodeReleases {
+  nodeReleases: {
+    nodeReleasesVersion: NodeReleaseVersion[];
+  };
+}
+
+interface Props {
+  location: Location;
+  data: NodeReleases;
+}
 
 const API_DOCS_OBJ_KEYS = ['events', 'methods', 'properties', 'classes'];
 const DOCUMENT_ELEMENT_TYPES = ['module', 'event', 'method', 'class'];
@@ -96,7 +112,7 @@ function renderArticleSections(
   pages.forEach((page, index) => {
     const children: JSX.Element[] = [];
 
-    const prepareArticleSections: Function = () => {
+    const prepareArticleSections = () => {
       API_DOCS_OBJ_KEYS.forEach((key: string) => {
         if (page[key]) {
           renderArticleSections(page[key], children, depth + 1);
@@ -627,16 +643,20 @@ function sideBarSection(
   );
 }
 
-export default function APIDocsPage(): JSX.Element {
+export default function APIDocsPage({
+  location,
+  data: { nodeReleases },
+}: Props): JSX.Element {
   const title = 'API Docs';
   const description = 'Come learn yourself something.';
   const userOS = detectOS();
   const [version, setVersion] = useState<string | null>(null);
   const [page, setPage] = useState<ApiDocsObj | null>(null);
+  const { nodeReleasesVersion } = nodeReleases;
 
   // Magical function filters out all major versions less than 6.
   // TODO: Remove the magical number for the major version. Fet from dynamic releases data to filter out EOL'd versions.
-  const releases = useReleaseHistory().filter(
+  const releases = nodeReleasesVersion.filter(
     (r): boolean => parseInt(r.version.slice(1), 10) >= 6
   );
 
@@ -685,7 +705,12 @@ export default function APIDocsPage(): JSX.Element {
 
   return (
     <>
-      <Layout title={title} description={description} showFooter={false}>
+      <Layout
+        title={title}
+        description={description}
+        location={location}
+        showFooter={false}
+      >
         <main className="grid-container">
           <nav aria-label="Secondary" className="api-nav">
             <ul className="api-nav__list">
@@ -728,3 +753,13 @@ export default function APIDocsPage(): JSX.Element {
     </>
   );
 }
+
+export const query = graphql`
+  query {
+    nodeReleases {
+      nodeReleasesVersion: nodeReleasesDataDetail {
+        version
+      }
+    }
+  }
+`;

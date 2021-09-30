@@ -3,30 +3,33 @@ import Article from '../Article';
 import Layout from '.';
 
 import '../../styles/page.scss';
+import { TableOfContents } from '../../types';
 
 interface Page {
   editPath?: string;
-  html: string;
-  tableOfContents: string;
+  body: string;
+  tableOfContents: TableOfContents;
   title: string;
   description: string;
   authors: string[];
+  location?: Location;
 }
 
 export default function PageLayout(props: Page): JSX.Element {
   const {
     editPath,
-    html,
+    body,
     tableOfContents,
     title,
     description,
     authors,
+    location,
   } = props;
   return (
-    <Layout title={title} description={description}>
+    <Layout title={title} location={location} description={description}>
       <main className="page">
         <Article
-          html={html}
+          body={body}
           title={title}
           authors={authors}
           editPath={editPath}

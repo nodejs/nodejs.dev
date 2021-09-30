@@ -1,17 +1,39 @@
-import { useState, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-export const useMediaQuery = (query: string): boolean | undefined => {
+const mediaQueryChangeSubscribe = (mq: MediaQueryList, handler: () => void) => {
+  if (mq.addEventListener) {
+    mq.addEventListener('change', handler);
+  } else {
+    mq.addListener(handler);
+  }
+};
+
+const mediaQueryChangeUnsubscribe = (
+  mq: MediaQueryList,
+  handler: () => void
+) => {
+  if (mq.removeEventListener) {
+    mq.removeEventListener('change', handler);
+  } else {
+    mq.removeListener(handler);
+  }
+};
+
+// eslint-disable-next-line import/prefer-default-export
+export function useMediaQuery(query: string): boolean | undefined {
   const [matches, setMatches] = useState<boolean>();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (typeof window.matchMedia === 'function') {
       const mq = window.matchMedia(query);
       setMatches(mq.matches);
       const handler = (): void => setMatches(mq.matches);
-      mq.addListener(handler);
-      return (): void => mq.removeListener(handler);
+      mediaQueryChangeSubscribe(mq, handler);
+      return (): void => mediaQueryChangeUnsubscribe(mq, handler);
     }
+
+    return undefined;
   }, [query]);
 
   return matches;
-};
+}

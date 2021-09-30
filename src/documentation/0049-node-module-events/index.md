@@ -3,6 +3,7 @@ title: 'The Node.js events module'
 description: 'The events module of Node.js provides the EventEmitter class'
 authors: flaviocopes, ZYSzys, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 The `events` module provides us the EventEmitter class, which is key to working with events in Node.js.
@@ -12,7 +13,7 @@ const EventEmitter = require('events')
 const door = new EventEmitter()
 ```
 
-The event listener eats its own dog food and uses these events:
+The event listener has these in-built events:
 
 * `newListener` when a listener is added
 * `removeListener` when a listener is removed

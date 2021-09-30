@@ -1,10 +1,10 @@
 .get-started-section {
   .cta-container {
     display: flex;
-    padding-top: var(--space-160);
-    padding-bottom: var(--space-80);
-    justify-content: space-evenly;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-bottom: var(--space-80);
+    padding-top: var(--space-160);
 
     .cta {
       display: flex;
@@ -27,13 +27,13 @@
     }
   }
   .btn {
-    margin: 0 auto;
     background: var(--color-fill-button);
-    padding: var(--space-08) var(--space-20);
     border-radius: 4px;
     font-weight: var(--font-weight-semibold);
-    width: max-content;
     height: auto;
+    margin: 0 auto;
+    padding: var(--space-08) var(--space-20);
+    width: max-content;
 
     &:focus,
     &:hover {

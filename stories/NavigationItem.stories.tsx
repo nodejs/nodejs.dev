@@ -9,7 +9,7 @@ export default {
   title: 'NavigationItem',
   component: NavigationItem,
 };
-const noop = (): void => {
+const noop = (): null => {
   return null;
 };
 
@@ -21,5 +21,6 @@ export const root = (): JSX.Element => (
     slug="versioning"
     onClick={noop}
     title="Navigation Item"
+    baseUrl="/"
   />
 );

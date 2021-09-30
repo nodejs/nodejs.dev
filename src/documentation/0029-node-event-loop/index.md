@@ -3,6 +3,7 @@ title: 'The Node.js Event Loop'
 description: 'The Event Loop is one of the most important aspects to understand about Node.js'
 authors: flaviocopes, potch, ZYSzys, MylesBorins, fhemberger, LaRuaNa, flaviocopes, amiller-gh, ahmadawais
 section: Getting Started
+category: learn
 ---
 
 ## Introduction
@@ -47,8 +48,8 @@ Let's pick an example:
 
 <iframe
   title="A simple event loop explanation"
-  src="https://glitch.com/embed/#!/embed/nodejs-dev-0029-01?path=server.js&previewSize=20&attributionHidden=true&sidebarCollapsed=true"
-  alt="nodejs-dev-0029-01 on Glitch"
+  src="https://stackblitz.com/edit/nodejs-dev-0003-01?index.js&zenmode=1&view=editor"
+  alt="nodejs-dev-0003-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 
@@ -100,8 +101,8 @@ Take this example:
 
 <iframe
   title="Queuing function execution"
-  src="https://glitch.com/embed/#!/embed/nodejs-dev-0029-02?path=server.js&previewSize=20&attributionHidden=true&sidebarCollapsed=true"
-  alt="nodejs-dev-0029-02 on Glitch"
+  src="https://stackblitz.com/edit/nodejs-dev-0004-01?index.js&zenmode=1&view=editor"
+  alt="nodejs-dev-0004-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 
@@ -161,8 +162,8 @@ Example:
 
 <iframe
   title="ECMAScript 2015 Job Queue"
-  src="https://glitch.com/embed/#!/embed/nodejs-dev-0029-03?path=server.js&previewSize=35&attributionHidden=true&sidebarCollapsed=true"
-  alt="nodejs-dev-0029-03 on Glitch"
+  src="https://stackblitz.com/edit/nodejs-dev-0005-01?index.js&zenmode=1&view=editor"
+  alt="nodejs-dev-0005-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 
@@ -193,3 +194,7 @@ bar
 ```-->
 
 That's a big difference between Promises (and Async/await, which is built on promises) and plain old asynchronous functions through `setTimeout()` or other platform APIs.
+
+Finally, here's what the call stack looks like for the example above:
+
+![Call stack third example](call-stack-third-example.png)
