@@ -271,7 +271,7 @@ Example:
 
 ```js
 const first = new Promise((resolve, reject) => {
-  setTimeout(rejcet, 500, 'first')
+  setTimeout(reject, 500, 'first')
 })
 const second = new Promise((resolve, reject) => {
   setTimeout(reject, 100, 'second')
