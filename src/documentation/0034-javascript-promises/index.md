@@ -265,7 +265,7 @@ Promise.race([first, second]).then(result => {
 
 ### `Promise.any()`
 
-`Promise.any()` settles when any of the promises you pass to it settles or all of the promises gets rejected. It returns a single promise that resolves with the value from that promise resolved. if all promises are rejected, then the returned promise is rejected with an `AggregateError`.
+`Promise.any()` settles when any of the promises you pass to it fulfill or all of the promises get rejected. It returns a single promise that resolves with the value from the first promise that is fulfilled. If all promises are rejected, then the returned promise is rejected with an `AggregateError`.
 
 Example:
 
