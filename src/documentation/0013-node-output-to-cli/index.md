@@ -115,7 +115,7 @@ oranges.forEach(fruit => {
 })
 ```
 
-Notice how the call to `console.counterReset('orange')` resets the value counter to zero.
+Notice how the call to `console.countReset('orange')` resets the value counter to zero.
 
 ## Print the stack trace
 
