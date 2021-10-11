@@ -1,16 +1,60 @@
-# Making changes to nodejs.dev
+# Contributing Guide
+
+## 🚀 Get Started
+
+* Fork the [nodejs.dev repo][] using the Fork button on the rop right
+* Clone your fork using SSH, GitHub CLI, or HTTPS
+
+  ```bash
+  git clone git@github.com:<GITHUB_ID>/nodejs.dev.git # SSH
+  gh repo clone <GITHUB_ID>/nodejs.dev # GitHub CLI
+  git clone https://github.com/<GITHUB_ID>/nodejs.dev.git # HTTPS
+  ```
+
+* Change into the nodejs.dev project directory
+
+  ```bash
+  cd nodejs.dev
+  ```
+
+* Add nodejs/nodejs.dev as your upstream remote branch
+
+  ```bash
+  git remote add upstream git@github.com:nodejs/nodejs.dev.git
+  ```
+
+* Create a new branch for your awesome work
+
+  ```bash
+  git checkout -b <BRANCH_NAME>
+  ```
+
+* Confirm tests, linting, and formatting are passing. See [here](#debugging-failing-checks) to fix failures
+
+  ```bash
+  npm test # Runs formatter and linter also
+  ```
+
+* Commit your work. See [Commit Guidelines](#commit-guidelines)
+* Push to your branch
+
+  ```bash
+  git push -u origin <YOUR_BRANCH>
+  ```
+
+* Open a pull request. See [PR Policy](#pull-request-policy)
 
 ## Vocabulary
 
 * A **Contributor** is any individual creating or commenting on an issue or pull request,
   or contributing in some other way.
-* A **Collaborator** is a contributor who has been given write access to the repository.
+* A **Collaborator** is a contributor who has been given write access to the repository. See [here](#how-to-become-a-collaborator) on how to become a collaborator.
 
-## Commit Guidelines
+## 📝 Commit Message Guidelines
 
 This project follows the [Conventional Commits][] specification.
 
-There is a built-in commit linter. Basic rules:
+Basic rules:
 
 * Commit messages must be prefixed with the name of the changed subsystem, followed by a colon and a space and start with an imperative verb. Check the output of `git log --oneline files/you/changed` to find out what subsystems your changes touch.
 
@@ -21,28 +65,13 @@ There is a built-in commit linter. Basic rules:
 * Commit messages **must** start with a capital letter
 * Commit messages **must not** end with a period `.`
 
-## Collaboration Policy
+## 📜 Pull Request Policy
 
-* All changes must come in a PR
-* All changes must be reviewed by a member of @nodejs/nodejs.dev,
-  @nodejs/website, or @nodejs/website-redesign
-* Pull Requests must be open for at least 48 hours unless included in the special exemptions section below
+### Before landing
 
-### Special Exemptions
-
-Pull requests seeking to make any of the following changes do not need to wait 24 hours
-
-* Errata fixes
-* Infrastructure Maintenance
-* Tests
-
-## Landing Pull Requests
-
-### Before you can land
-
-* The Status Checks for the test suite must pass
-* There must be at least one sign off
+* Pull Requests must be open for at least 48 hours unless changes include errata fixes, infrastructure maintenance, or tests
 * There must be no objections after a 48 hour period
+* Pull Requests for a new feature or bug fix must include tests
 
 The default for each contribution is that it is accepted once no collaborator has an objection. During review collaborators may also request that a specific contributor who is most versed in a particular area gives a "LGTM" before the PR can be merged.
 
@@ -61,18 +90,8 @@ In the case of an objection being raised in a pull request by another collaborat
 * The Pull Request must be approved by at least two members of @nodejs/nodejs.dev, @nodejs/website, or @nodejs/website-redesign
 * Pull Request must remain open for 72 hours without any objections
 * Once the requirements are met and approved, the pull request can be merged and a member of @nodejs/community-committee will add the new member to the [@nodejs/nodejs-dev team](https://github.com/orgs/nodejs/teams/nodejs-dev)
-## Getting Started
 
-* Fork
-* Clone your fork `git clone git@github.com:<githubid>/nodejs.dev.git`
-* cd into your project
-* Add the following to your remotes by doing `git remote add upstream git@github.com:nodejs/nodejs.dev.git`
-* Create a new branch for your awesome work `git checkout -b branchname`
-* Commit your work
-* Push to your branch `git push -u origin yourbranch`
-* Make a pull request
-
-## Storybook
+## 📕 Storybook
 
 This project uses [Storybook][], a tool which provides a sandbox environment for developing UI components. To generate the Storybook locally:
 
@@ -80,6 +99,20 @@ This project uses [Storybook][], a tool which provides a sandbox environment for
 * Navigate to `localhost:6006`
 
 The production Storybook can be viewed at <https://nodejs.dev/storybook>
+
+## 🐛 Debugging Failing Checks
+
+For failing formatting or linting, you can try running:
+
+  ```bash
+  npm run format
+  ```
+
+Tests sometimes fail when adding or updating HTML. To update snapshots you can run:
+
+ ```bash
+ npm run update-snapshot
+ ```
 
 ## Developer's Certificate of Origin 1.1
 
@@ -99,6 +132,7 @@ By making a contribution to this project, I certify that:
   including my sign-off) is maintained indefinitely and may be redistributed consistent
   with this project or the open source license(s) involved.
 
+[Storybook]: https://storybook.js.org/
 [`squash`]: https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits
 [conventional commits]: https://www.conventionalcommits.org/
-[Storybook]: https://storybook.js.org/
+[nodejs.dev repo]: https://github.com/nodejs/nodejs.dev

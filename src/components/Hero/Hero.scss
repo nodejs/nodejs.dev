@@ -1,10 +1,10 @@
 .home-page-hero {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-content: center;
   padding: var(--space-96) 0 var(--space-128) 0;
+  text-align: center;
 
   h1,
   p {
@@ -16,26 +16,26 @@
   }
 
   .sub-title {
-    max-width: 780px;
     color: var(--color-text-secondary);
     font-weight: var(--font-weight-light);
     margin: var(--space-32) 0 var(--space-32) 0;
+    max-width: 780px;
   }
 }
 
 .btn-ctas {
+  align-items: flex-start;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .download-lts-container {
-  display: flex;
-  position: relative;
-  flex-direction: column;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 
   & > p {
     margin-top: var(--space-08);
@@ -44,24 +44,24 @@
 
 .circular-container,
 .circular-container:focus {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-sizing: border-box;
-  width: 20rem;
-  height: 5.6rem;
-  padding: 1.4rem 0;
-  border-radius: 5rem;
-  color: var(--black0);
-  margin: 0 var(--space-16);
-  font-weight: var(--font-weight-semibold);
   background-color: var(--brand6);
+  border-radius: 5rem;
+  box-sizing: border-box;
+  color: var(--black0);
+  display: flex;
+  font-weight: var(--font-weight-semibold);
+  height: 5.6rem;
+  justify-content: center;
+  margin: 0 var(--space-16);
+  padding: 1.4rem 0;
+  text-decoration: none;
   transition: background-color 0.2s ease-out;
+  width: 20rem;
 
   &:hover {
-    color: var(--black0);
     background-color: var(--brand7);
+    color: var(--black0);
   }
 
   &.inverse {
@@ -93,15 +93,12 @@
     padding: var(--space-96) 0 var(--space-96) 0;
     h1 {
       font-size: var(--font-size-display2);
-      max-width: 90vw;
       line-height: 48px;
+      max-width: 90vw;
     }
 
     .sub-title {
       max-width: 90vw;
-    }
-
-    .btn-ctas {
     }
   }
 }

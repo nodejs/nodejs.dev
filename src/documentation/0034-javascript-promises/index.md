@@ -10,8 +10,8 @@ category: learn
 
 <iframe
   title="Introduction to promises"
-  src="https://glitch.com/embed/#!/embed/nodejs-dev-0034-01?path=server.js&previewSize=35&attributionHidden=true&sidebarCollapsed=true"
-  alt="nodejs-dev-0034-01 on Glitch"
+  src="https://stackblitz.com/edit/nodejs-dev-0006-01?index.js&zenmode=1&view=editor"
+  alt="nodejs-dev-0006-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 
@@ -246,7 +246,7 @@ You are not limited to using `fetch` of course, **any promise can be used in thi
 
 ### `Promise.race()`
 
-`Promise.race()` runs when the first of the promises you pass to it resolves, and it runs the attached callback just once, with the result of the first promise resolved.
+`Promise.race()` runs when the first of the promises you pass to it settles (resolves or rejects), and it runs the attached callback just once, with the result of the first promise settled.
 
 Example:
 
@@ -260,6 +260,25 @@ const second = new Promise((resolve, reject) => {
 
 Promise.race([first, second]).then(result => {
   console.log(result) // second
+})
+```
+
+### `Promise.any()`
+
+`Promise.any()` settles when any of the promises you pass to it fulfill or all of the promises get rejected. It returns a single promise that resolves with the value from the first promise that is fulfilled. If all promises are rejected, then the returned promise is rejected with an `AggregateError`.
+
+Example:
+
+```js
+const first = new Promise((resolve, reject) => {
+  setTimeout(reject, 500, 'first')
+})
+const second = new Promise((resolve, reject) => {
+  setTimeout(reject, 100, 'second')
+})
+
+Promise.any([first, second]).catch(error => {
+  console.log(error) // AggregateError
 })
 ```
 

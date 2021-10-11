@@ -15,7 +15,7 @@ The WebAssembly specification details two file formats, a binary format called a
 * Module - A compiled WebAssembly binary, ie a `.wasm` file.
 * Memory - A resizable ArrayBuffer.
 * Table - A resizable typed array of references not stored in Memory.
-* Instance - An instantiation of a Module with its' Memory, Table, and variables.
+* Instance - An instantiation of a Module with its Memory, Table, and variables.
 
 In order to use WebAssembly, you need a `.wasm` binary file and a set of APIs to communicate with WebAssembly. Node.js provides the necessary APIs via the global `WebAssembly` object.
 

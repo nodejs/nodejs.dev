@@ -40,12 +40,10 @@ async function getNodeReleasesData() {
         };
       });
 
-    const nodeReleasesData = {
+    return {
       nodeReleasesDataDetail: mappedReleasesDataDetail,
       nodeReleasesData: filteredReleasesData,
     };
-
-    return nodeReleasesData;
   } catch (err) {
     return Promise.reject(err);
   }

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 function getReleaseStatus(release) {
   const currentDate = new Date();
   const startDate = new Date(release.start);

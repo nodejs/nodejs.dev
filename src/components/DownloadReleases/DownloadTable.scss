@@ -9,9 +9,9 @@
       th {
         background: var(--color-fill-body);
         color: var(--color-text-primary);
-        text-align: left;
-        padding: var(--space-08) var(--space-16);
         font-weight: normal;
+        padding: var(--space-08) var(--space-16);
+        text-align: left;
       }
       th:first-child {
         border-radius: 3px 0px 0px 0px;
@@ -26,8 +26,8 @@
         background: var(--color-fill-app);
 
         td {
-          padding: var(--space-16) var(--space-16);
           border-bottom: 1px solid #e2e3e7;
+          padding: var(--space-16) var(--space-16);
 
           .dark & {
             border-bottom: 1px solid var(--color-border-primary);
