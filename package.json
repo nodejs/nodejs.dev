@@ -9,7 +9,7 @@
     "@mdx-js/react": "^1.6.22",
     "@storybook/addon-actions": "^6.3.10",
     "@storybook/addon-links": "^6.3.9",
-    "@storybook/addons": "^6.3.9",
+    "@storybook/addons": "^6.3.10",
     "@storybook/builder-webpack5": "^6.3.9",
     "@storybook/manager-webpack5": "^6.3.9",
     "@storybook/react": "^6.3.10",
