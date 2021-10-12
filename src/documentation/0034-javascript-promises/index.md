@@ -263,6 +263,25 @@ Promise.race([first, second]).then(result => {
 })
 ```
 
+### `Promise.any()`
+
+`Promise.any()` settles when any of the promises you pass to it fulfill or all of the promises get rejected. It returns a single promise that resolves with the value from the first promise that is fulfilled. If all promises are rejected, then the returned promise is rejected with an `AggregateError`.
+
+Example:
+
+```js
+const first = new Promise((resolve, reject) => {
+  setTimeout(reject, 500, 'first')
+})
+const second = new Promise((resolve, reject) => {
+  setTimeout(reject, 100, 'second')
+})
+
+Promise.any([first, second]).catch(error => {
+  console.log(error) // AggregateError
+})
+```
+
 ## Common errors
 
 ### Uncaught TypeError: undefined is not a promise
