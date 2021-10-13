@@ -42,7 +42,7 @@ undefined
 >
 ```
 
-The first value, `test`, is the output we told the console to print, then we get undefined which is the return value of running `console.log()`.
+The first value, `test`, is the output we told the console to print, then we get `undefined` which is the return value of running `console.log()`.
 
 We can now enter a new line of JavaScript.
 
