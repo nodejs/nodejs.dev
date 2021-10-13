@@ -53,7 +53,7 @@ For CentOS/RHEL 7 Node.js is available via [Software Collections](https://www.so
 ### Alternatives
 
 These resources provide packages compatible with CentOS, Fedora, and RHEL.
-* [Node.js snaps](#snap) maintained and supported at https://github.com/nodejs/snap
+* [Node.js snaps](#snap) maintained and supported at [https://github.com/nodejs/snap]()
 * [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
 
 ## Debian and Ubuntu based Linux distributions
