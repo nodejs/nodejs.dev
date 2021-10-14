@@ -43,7 +43,7 @@ How do you execute those?
 You can of course type `./node_modules/.bin/cowsay` to run it, and it works, but `npx`, included in the recent versions of `npm` (since 5.2), is a much better option. You just run:
 
 ```bash
-npx cowsay
+npx cowsay some string here
 ```
 
 and `npx` will find the package location.
