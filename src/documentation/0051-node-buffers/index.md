@@ -128,7 +128,7 @@ Copying a buffer is possible using the `set()` method:
 
 ```js
 const buf = Buffer.from('Hey!')
-let bufcopy = Buffer.alloc(4) //allocate 4 bytes
+const bufcopy = Buffer.alloc(4) //allocate 4 bytes
 bufcopy.set(buf)
 ```
 
