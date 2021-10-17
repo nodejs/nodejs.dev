@@ -50,10 +50,10 @@ const edges = [
     },
     next: {
       frontmatter: {
-        title: 'Installing Node.js via package manager',
+        title: 'mock1',
       },
       fields: {
-        slug: 'installing-nodejs-via-package-manager',
+        slug: '/blog/0000/00/01/mock1',
       },
     },
     previous: {
@@ -62,6 +62,41 @@ const edges = [
       },
       fields: {
         slug: 'releases',
+      },
+    },
+  },
+  {
+    node: {
+      id: 'fcf411db-1983-5611-a668-9915fc33db11',
+      fileAbsolutePath: '/nodejs.dev/content/blog/0000-00-01-mock1.md',
+      parent: {
+        relativePath: '0000-00-01-mock1.md',
+      },
+      frontmatter: {
+        title: 'mock1',
+        description: null,
+        authors: null,
+        section: null,
+        category: 'blog',
+      },
+      fields: {
+        slug: '/blog/0000/00/01/mock1',
+      },
+    },
+    next: {
+      frontmatter: {
+        title: 'Installing Node.js via package manager',
+      },
+      fields: {
+        slug: 'installing-nodejs-via-package-manager',
+      },
+    },
+    previous: {
+      frontmatter: {
+        title: 'mock',
+      },
+      fields: {
+        slug: '/blog/0000/00/00/mock',
       },
     },
   },
@@ -94,10 +129,10 @@ const edges = [
     },
     previous: {
       frontmatter: {
-        title: 'mock',
+        title: 'mock1',
       },
       fields: {
-        slug: '/blog/0000/00/00/mock',
+        slug: '/blog/0000/00/01/mock1',
       },
     },
   },
@@ -106,10 +141,7 @@ const edges = [
 const expectedDocPages = [
   {
     slug: 'releases',
-    next: {
-      slug: '/blog/0000/00/00/mock',
-      title: 'mock',
-    },
+    next: null,
     previous: null,
     relativePath: 'releases.md',
     category: 'releases',
@@ -129,6 +161,12 @@ const expectedDocPages = [
             category: 'blog',
           },
           {
+            title: 'mock1',
+            slug: '/blog/0000/00/01/mock1',
+            section: null,
+            category: 'blog',
+          },
+          {
             title: 'Installing Node.js via package manager',
             slug: 'installing-nodejs-via-package-manager',
             section: null,
@@ -142,13 +180,10 @@ const expectedDocPages = [
   {
     slug: '/blog/0000/00/00/mock',
     next: {
-      slug: 'installing-nodejs-via-package-manager',
-      title: 'Installing Node.js via package manager',
+      slug: '/blog/0000/00/01/mock1',
+      title: 'mock1',
     },
-    previous: {
-      slug: 'releases',
-      title: 'Releases',
-    },
+    previous: null,
     relativePath: '0000-00-00-mock.md',
     category: 'blog',
     navigationData: {
@@ -167,6 +202,53 @@ const expectedDocPages = [
             category: 'blog',
           },
           {
+            title: 'mock1',
+            slug: '/blog/0000/00/01/mock1',
+            section: null,
+            category: 'blog',
+          },
+          {
+            title: 'Installing Node.js via package manager',
+            slug: 'installing-nodejs-via-package-manager',
+            section: null,
+            category: 'download',
+          },
+        ],
+        category: 'releases',
+      },
+    },
+  },
+  {
+    slug: '/blog/0000/00/01/mock1',
+    next: null,
+    previous: {
+      slug: '/blog/0000/00/00/mock',
+      title: 'mock',
+    },
+    relativePath: '0000-00-01-mock1.md',
+    category: 'blog',
+    navigationData: {
+      null: {
+        data: [
+          {
+            title: 'Releases',
+            slug: 'releases',
+            section: null,
+            category: 'releases',
+          },
+          {
+            title: 'mock',
+            slug: '/blog/0000/00/00/mock',
+            section: null,
+            category: 'blog',
+          },
+          {
+            title: 'mock1',
+            slug: '/blog/0000/00/01/mock1',
+            section: null,
+            category: 'blog',
+          },
+          {
             title: 'Installing Node.js via package manager',
             slug: 'installing-nodejs-via-package-manager',
             section: null,
@@ -180,10 +262,7 @@ const expectedDocPages = [
   {
     slug: 'installing-nodejs-via-package-manager',
     next: null,
-    previous: {
-      slug: '/blog/0000/00/00/mock',
-      title: 'mock',
-    },
+    previous: null,
     relativePath: 'package-manager.md',
     category: 'download',
     navigationData: {
@@ -198,6 +277,12 @@ const expectedDocPages = [
           {
             title: 'mock',
             slug: '/blog/0000/00/00/mock',
+            section: null,
+            category: 'blog',
+          },
+          {
+            title: 'mock1',
+            slug: '/blog/0000/00/01/mock1',
             section: null,
             category: 'blog',
           },
