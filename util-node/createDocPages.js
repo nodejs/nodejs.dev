@@ -11,7 +11,7 @@ function createDocPages(edges) {
 
     let previousNodeData = null;
     const previousNode = index === 0 ? undefined : edges[index - 1].node;
-    if (previousNode) {
+    if (previousNode && previousNode.frontmatter.category === category) {
       previousNodeData = {
         slug: previousNode.fields.slug,
         title: previousNode.frontmatter.title,
@@ -21,7 +21,7 @@ function createDocPages(edges) {
     let nextNodeData = null;
     const nextNode =
       index === edges.length - 1 ? undefined : edges[index + 1].node;
-    if (nextNode) {
+    if (nextNode && nextNode.frontmatter.category === category) {
       nextNodeData = {
         slug: nextNode.fields.slug,
         title: nextNode.frontmatter.title,
