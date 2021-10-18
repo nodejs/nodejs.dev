@@ -123,7 +123,7 @@
     "remark-frontmatter": "^4.0.0",
     "remark-preset-lint-node": "^3.2.0",
     "stylelint": "^13.13.1",
-    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended-scss": "^4.3.0",
     "stylelint-config-sass-guidelines": "^8.0.0",
     "stylelint-selector-bem-pattern": "^2.1.1"
