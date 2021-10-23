@@ -6,9 +6,11 @@ section: Getting Started
 category: learn
 ---
 
-WebAssembly is a high-performance assembly-like language that can be compiled from a myriad of languages including C/C++, Rust, and AssemblyScript. As of right now, it is supported by Chrome, Firefox, Safari, Edge, and Node.js!
+WebAssembly is a high-performance assembly-like language that can be compiled from a myriad of languages including C/C++, Rust, and AssemblyScript. As of now, it is supported by Chrome, Firefox, Safari, Edge, and Node.js!
 
-The WebAssembly specification details two file formats, a binary format called a WebAssembly Module with a `.wasm` extension and corresponding text representation called WebAssembly Text format with a `.wat` extension.
+The WebAssembly specification details two file formats: 
+- a binary format called a WebAssembly Module with a `.wasm` extension
+- corresponding text representation called WebAssembly Text format with a `.wat` extension
 
 ## Key Concepts
 
@@ -59,7 +61,7 @@ WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
 
 ## Interacting with the OS
 
-WebAssembly modules cannot directly access OS functionality on its own. A third-party tool [Wasmtime](https://docs.wasmtime.dev/) can be used to access this functionality. `Wasmtime` utilizes the [WASI](https://wasi.dev/) API to access the OS functionality.
+WebAssembly modules cannot directly access OS functionality on its own. A third-party tool like [Wasmtime](https://docs.wasmtime.dev/) can be used to access this functionality. `Wasmtime` utilizes the [WASI](https://wasi.dev/) API to access the OS functionality.
 
 ## Resources
 
