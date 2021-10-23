@@ -1,17 +1,19 @@
 .random-contributor {
   align-items: center;
-  background-color: var(--color-fill-app);
-  border: 1px solid var(--color-border-secondary);
+  background-color: var(--color-fill-banner);
+  border-radius: 5px;
+  color: var(--color-text-primary);
   display: flex;
   margin: 0 auto;
   max-width: 360px;
-  padding: 5px;
+  padding: var(--space-12);
 
   &__avatar {
     margin: 5px 10px 0 5px;
 
     img {
-      max-width: 50px;
+      border-radius: 5px;
+      max-width: 40px;
     }
   }
 }
