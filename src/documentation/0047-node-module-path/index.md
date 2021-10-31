@@ -49,7 +49,7 @@ require('path').extname('/test/something/file.txt') // '.txt'
 ### `path.format()`
 
 Returns a path string from an object, This is the opposite of `path.parse`<br/>
-`path.format` accepts an object as argument with the follwing keys:
+`path.format` accepts an object as argument with the following keys:
 * `root`: the root
 * `dir`: the folder path starting from the root
 * `base`: the file name + extension
@@ -63,7 +63,7 @@ Returns a path string from an object, This is the opposite of `path.parse`<br/>
 // POSIX
 require('path').format({ dir: '/Users/joe', base: 'test.txt' }) //  '/Users/joe/test.txt'
 
-require('path').format({ root: '/Users/joe', name: 'test', ext: 'txt' }) //  '/Users/joe/test.txt'
+require('path').format({ root: '/Users/joe', name: 'test', ext: '.txt' }) //  '/Users/joe/test.txt'
 
 // WINDOWS
 require('path').format({ dir: 'C:\\Users\\joe', base: 'test.txt' }) //  'C:\\Users\\joe\\test.txt'
