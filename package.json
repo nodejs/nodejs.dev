@@ -116,7 +116,6 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.3.1",
     "jest-fetch-mock": "^3.0.3",
-    "node-sass": "6.0.1",
     "pa11y": "6.0.1",
     "prettier": "^2.4.1",
     "remark-cli": "^10.0.0",
