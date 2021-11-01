@@ -48,10 +48,16 @@ describe('useNodeJsContributorsApi', () => {
     render(<HookRenderer isVisible />);
     await waitFor(() => {
       expect(screen.getByText(/login_mock/i)).toBeInTheDocument();
+    });
+    await waitFor(() => {
       expect(screen.getByText(/avatar_url_mock/i)).toBeInTheDocument();
+    });
+    await waitFor(() => {
       expect(fetchMock.mock.calls[0][0]).toBe(
         'https://api.github.com/repos/nodejs/node/contributors?per_page=1'
       );
+    });
+    await waitFor(() => {
       expect(
         (fetchMock.mock.calls[1][0] as string).includes(
           'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page='
@@ -70,10 +76,14 @@ describe('useNodeJsContributorsApi', () => {
 
     await waitFor(() => {
       expect(screen.getByText(/login_mock/i)).toBeInTheDocument();
+    });
+    await waitFor(() => {
       expect(screen.getByText(/avatar_url_mock/i)).toBeInTheDocument();
+    });
 
-      // expect first call will be to random page instead of extra request for
-      // getting max pages
+    // expect first call will be to random page instead of extra request for
+    // getting max pages
+    await waitFor(() => {
       expect(
         (fetchMock.mock.calls[0][0] as string).includes(
           'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page='
@@ -102,10 +112,16 @@ describe('useNodeJsContributorsApi', () => {
     render(<HookRenderer isVisible />);
     await waitFor(() => {
       expect(screen.getByText(/login_mock/i)).toBeInTheDocument();
+    });
+    await waitFor(() => {
       expect(screen.getByText(/avatar_url_mock/i)).toBeInTheDocument();
+    });
+    await waitFor(() => {
       expect(fetchMock.mock.calls[0][0]).toBe(
         'https://api.github.com/repos/nodejs/node/contributors?per_page=1'
       );
+    });
+    await waitFor(() => {
       expect(
         (fetchMock.mock.calls[1][0] as string).includes(
           'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page='
