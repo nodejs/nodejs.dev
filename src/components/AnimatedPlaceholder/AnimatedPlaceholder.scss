@@ -1,4 +1,5 @@
-.animated-background {
+.animated-background,
+%animated-background {
   animation-duration: 1.25s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -25,7 +26,7 @@
   }
 
   &__image {
-    @extend .animated-background;
+    @extend %animated-background;
     height: 60px;
     margin-right: 5px;
     min-width: 60px;
@@ -36,7 +37,7 @@
   }
 
   &__text-line {
-    @extend .animated-background;
+    @extend %animated-background;
     height: 10px;
     margin: 4px 0;
     width: 100%;
