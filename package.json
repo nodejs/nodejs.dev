@@ -122,10 +122,10 @@
     "remark-cli": "^10.0.0",
     "remark-frontmatter": "^4.0.1",
     "remark-preset-lint-node": "^3.2.0",
-    "stylelint": "^13.13.1",
+    "stylelint": "^14.0.1",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-recommended-scss": "^4.3.0",
-    "stylelint-config-sass-guidelines": "^8.0.0",
+    "stylelint-config-recommended-scss": "^5.0.0",
+    "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-selector-bem-pattern": "^2.1.1"
   },
   "repository": {

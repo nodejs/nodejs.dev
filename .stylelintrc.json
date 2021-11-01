@@ -1,4 +1,3 @@
-  
 {
   "extends": [
     "stylelint-config-recommended-scss"
@@ -9,6 +8,7 @@
   ],
   "rules": {
     "order/properties-alphabetical-order": true,
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "scss/at-import-partial-extension": "always"
   }
 }

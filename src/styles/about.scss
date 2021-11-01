@@ -1,11 +1,11 @@
 @import 'learn.scss';
 
 .side-nav-about {
-  @extend .side-nav;
+  @extend %side-nav;
   width: auto;
 
   &.side-nav--open {
-    @extend .side-nav--open;
+    @extend %side-nav--open;
     height: 100vh;
     top: calc(var(--nav-height) * 2);
     touch-action: none;
