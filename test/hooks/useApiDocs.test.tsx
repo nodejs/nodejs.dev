@@ -115,6 +115,9 @@ describe('useApiDocs', () => {
 
       await waitFor(() => {
         expect(screen.getByText(/mockedVersions/i)).toBeInTheDocument();
+      });
+
+      await waitFor(() => {
         expect(fetchMock.mock.calls[0][0]).toBe(
           'https://nodejs.org/dist/mock-version/docs/api/all.json'
         );
