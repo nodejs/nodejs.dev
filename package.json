@@ -82,7 +82,7 @@
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
+    "@babel/core": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
     "@storybook/semver": "^7.3.2",
     "@testing-library/dom": "^8.10.1",
