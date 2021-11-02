@@ -151,8 +151,7 @@
     }
   }
 
-  &--open &__open,
-  %side-nav--open {
+  &--open &__open {
     background-color: transparent;
     color: transparent;
     margin-bottom: -35px;
