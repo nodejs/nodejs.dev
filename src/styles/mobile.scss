@@ -2,7 +2,6 @@
   body {
     --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 52px), 0 100%);
   }
-
   .side-nav {
     margin-right: -36rem;
 
@@ -53,6 +52,14 @@
 @media (max-width: 800px) {
   html {
     font-size: 0.5625rem;
+  }
+
+  .searchBarContainer {
+    width: 18em;
+  }
+
+  .searchInputContainer {
+    width: 94%;
   }
 
   body {
