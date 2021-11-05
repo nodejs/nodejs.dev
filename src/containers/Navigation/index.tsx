@@ -94,26 +94,24 @@ const Navigation = ({
   });
 
   return (
-    <>
-      <nav aria-label={label} className={className} ref={navElement}>
-        <button type="button" className="side-nav__open" onClick={toggle}>
-          Menu
-        </button>
-        {Object.keys(sections).map(
-          (sectionKey: string): false | JSX.Element =>
-            sections[sectionKey].category === category && (
-              <NavigationSection
-                key={sectionKey}
-                title={sectionKey}
-                section={sections[sectionKey].data}
-                currentSlug={currentSlug}
-                onItemClick={onItemClick}
-                readSections={readSections}
-              />
-            )
-        )}
-      </nav>
-    </>
+    <nav aria-label={label} className={className} ref={navElement}>
+      <button type="button" className="side-nav__open" onClick={toggle}>
+        Menu
+      </button>
+      {Object.keys(sections).map(
+        (sectionKey: string): false | JSX.Element =>
+          sections[sectionKey].category === category && (
+            <NavigationSection
+              key={sectionKey}
+              title={sectionKey}
+              section={sections[sectionKey].data}
+              currentSlug={currentSlug}
+              onItemClick={onItemClick}
+              readSections={readSections}
+            />
+          )
+      )}
+    </nav>
   );
 };
 
