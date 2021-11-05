@@ -87,9 +87,6 @@ exports[`Learn Template renders correctly 1`] = `
             class="right-container"
           >
             <li
-              class="nav__tabs"
-            />
-            <li
               class="nav__tabs nav__tabs--right"
             >
               <button

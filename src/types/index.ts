@@ -223,9 +223,3 @@ export interface Banners {
     blacklivesmatter: BannersBLM;
   };
 }
-
-export type SearchResult = {
-  id: React.Key | null | undefined;
-  slug: string;
-  title: string;
-};
