@@ -49,10 +49,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
           <div
             class="upcoming-releases__item--Current"
           >
-            <img
-              alt="hexagon icon"
-              src="test-file-stub"
-            />
+            <svg />
             <p
               class="release-title"
             >
@@ -69,10 +66,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
           <div
             class="upcoming-releases__item--LTS"
           >
-            <img
-              alt="hexagon icon"
-              src="test-file-stub"
-            />
+            <svg />
             <p
               class="release-title"
             >
@@ -89,10 +83,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
           <div
             class="upcoming-releases__item--Maintenance"
           >
-            <img
-              alt="hexagon icon"
-              src="test-file-stub"
-            />
+            <svg />
             <p
               class="release-title"
             >
@@ -109,10 +100,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
           <div
             class="upcoming-releases__item--End-of-life upcoming-releases__item--to-be-released"
           >
-            <img
-              alt="hexagon icon"
-              src="test-file-stub"
-            />
+            <svg />
             <p
               class="release-title"
             >
