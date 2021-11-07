@@ -195,7 +195,7 @@ exports[`Home page renders correctly 1`] = `
           >
             <div
               class="react-tabs"
-              data-tabs="true"
+              data-rttabs="true"
             >
               <div
                 class="install__header"
@@ -228,6 +228,7 @@ exports[`Home page renders correctly 1`] = `
                   aria-disabled="false"
                   aria-selected="true"
                   class="react-tabs__tab react-tabs__tab--selected"
+                  data-rttab="true"
                   id="react-tabs-0"
                   role="tab"
                   tabindex="0"
@@ -239,6 +240,7 @@ exports[`Home page renders correctly 1`] = `
                   aria-disabled="false"
                   aria-selected="false"
                   class="react-tabs__tab"
+                  data-rttab="true"
                   id="react-tabs-2"
                   role="tab"
                 >
@@ -249,6 +251,7 @@ exports[`Home page renders correctly 1`] = `
                   aria-disabled="false"
                   aria-selected="false"
                   class="react-tabs__tab"
+                  data-rttab="true"
                   id="react-tabs-4"
                   role="tab"
                 >
