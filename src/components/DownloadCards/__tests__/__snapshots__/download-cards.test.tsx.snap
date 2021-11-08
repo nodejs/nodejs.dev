@@ -4,7 +4,7 @@ exports[`DownloadCards component renders correctly 1`] = `
 <div>
   <div
     class="download-cards-wrapper"
-    data-tabs="true"
+    data-rttabs="true"
     tabindex="-1"
   >
     <ul
@@ -15,6 +15,7 @@ exports[`DownloadCards component renders correctly 1`] = `
         aria-disabled="false"
         aria-selected="false"
         class="download-card download-card--active"
+        data-rttab="true"
         role="tab"
         tabindex="0"
       >
@@ -50,6 +51,7 @@ exports[`DownloadCards component renders correctly 1`] = `
         aria-disabled="false"
         aria-selected="false"
         class="download-card"
+        data-rttab="true"
         role="tab"
         tabindex="0"
       >
@@ -75,6 +77,7 @@ exports[`DownloadCards component renders correctly 1`] = `
         aria-disabled="false"
         aria-selected="false"
         class="download-card"
+        data-rttab="true"
         role="tab"
         tabindex="0"
       >

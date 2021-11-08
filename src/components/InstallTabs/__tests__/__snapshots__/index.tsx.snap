@@ -7,7 +7,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
   >
     <div
       class="react-tabs"
-      data-tabs="true"
+      data-rttabs="true"
     >
       <div
         class="install__header"
@@ -40,6 +40,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
           aria-disabled="false"
           aria-selected="true"
           class="react-tabs__tab react-tabs__tab--selected"
+          data-rttab="true"
           id="react-tabs-0"
           role="tab"
           tabindex="0"
@@ -51,6 +52,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
+          data-rttab="true"
           id="react-tabs-2"
           role="tab"
         >
@@ -61,6 +63,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
+          data-rttab="true"
           id="react-tabs-4"
           role="tab"
         >
@@ -195,7 +198,7 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
   >
     <div
       class="react-tabs"
-      data-tabs="true"
+      data-rttabs="true"
     >
       <div
         class="install__header"
@@ -228,6 +231,7 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
           aria-disabled="false"
           aria-selected="true"
           class="react-tabs__tab react-tabs__tab--selected"
+          data-rttab="true"
           id="react-tabs-12"
           role="tab"
           tabindex="0"
@@ -239,6 +243,7 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
+          data-rttab="true"
           id="react-tabs-14"
           role="tab"
         >
@@ -249,6 +254,7 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
+          data-rttab="true"
           id="react-tabs-16"
           role="tab"
         >
@@ -389,7 +395,7 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
   >
     <div
       class="react-tabs"
-      data-tabs="true"
+      data-rttabs="true"
     >
       <div
         class="install__header"
@@ -422,6 +428,7 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
           aria-disabled="false"
           aria-selected="true"
           class="react-tabs__tab react-tabs__tab--selected"
+          data-rttab="true"
           id="react-tabs-18"
           role="tab"
           tabindex="0"
@@ -433,6 +440,7 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
+          data-rttab="true"
           id="react-tabs-20"
           role="tab"
         >
@@ -443,6 +451,7 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
+          data-rttab="true"
           id="react-tabs-22"
           role="tab"
         >
@@ -583,7 +592,7 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
   >
     <div
       class="react-tabs"
-      data-tabs="true"
+      data-rttabs="true"
     >
       <div
         class="install__header"
@@ -616,6 +625,7 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
           aria-disabled="false"
           aria-selected="true"
           class="react-tabs__tab react-tabs__tab--selected"
+          data-rttab="true"
           id="react-tabs-6"
           role="tab"
           tabindex="0"
@@ -627,6 +637,7 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
+          data-rttab="true"
           id="react-tabs-8"
           role="tab"
         >
@@ -637,6 +648,7 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
+          data-rttab="true"
           id="react-tabs-10"
           role="tab"
         >
@@ -749,7 +761,7 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
   >
     <div
       class="react-tabs"
-      data-tabs="true"
+      data-rttabs="true"
     >
       <div
         class="install__header"
@@ -782,6 +794,7 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
           aria-disabled="false"
           aria-selected="true"
           class="react-tabs__tab react-tabs__tab--selected"
+          data-rttab="true"
           id="react-tabs-24"
           role="tab"
           tabindex="0"
@@ -793,6 +806,7 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
+          data-rttab="true"
           id="react-tabs-26"
           role="tab"
         >
@@ -803,6 +817,7 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
+          data-rttab="true"
           id="react-tabs-28"
           role="tab"
         >
