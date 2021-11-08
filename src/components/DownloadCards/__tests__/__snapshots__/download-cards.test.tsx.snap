@@ -22,10 +22,8 @@ exports[`DownloadCards component renders correctly 1`] = `
         <div
           class="download-card__top"
         >
-          <img
-            alt="Windows Installer logo"
+          <svg
             class="download-card__image"
-            src="test-file-stub"
           />
           <a
             class="download-card__link"
@@ -60,10 +58,8 @@ exports[`DownloadCards component renders correctly 1`] = `
         <div
           class="download-card__top"
         >
-          <img
-            alt="MAC Installer logo"
+          <svg
             class="download-card__image"
-            src="test-file-stub"
           />
         </div>
         <p
@@ -88,10 +84,8 @@ exports[`DownloadCards component renders correctly 1`] = `
         <div
           class="download-card__top"
         >
-          <img
-            alt="Source Code logo"
+          <svg
             class="download-card__image"
-            src="test-file-stub"
           />
         </div>
         <p
