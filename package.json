@@ -13,6 +13,7 @@
     "@storybook/builder-webpack5": "^6.3.12",
     "@storybook/manager-webpack5": "^6.3.12",
     "@storybook/react": "^6.3.12",
+    "@svgr/webpack": "^5.5.0",
     "@types/mdx-js__react": "^1.5.5",
     "@types/react-tabs": "2.3.3",
     "babel-preset-react-app": "^10.0.0",
@@ -33,6 +34,7 @@
     "gatsby-plugin-sass": "^4.14.0",
     "gatsby-plugin-sharp": "^3.14.2",
     "gatsby-plugin-sitemap": "^4.10.0",
+    "gatsby-plugin-svgr": "^3.0.0-beta.0",
     "gatsby-plugin-typescript": "^3.13.0",
     "gatsby-remark-autolink-headers": "^4.11.0",
     "gatsby-remark-copy-linked-files": "^4.11.0",
@@ -50,7 +52,7 @@
     "react-dom": "16.14.0",
     "react-helmet": "^6.0.0",
     "react-icons": "^4.3.1",
-    "react-tabs": "3.2.2",
+    "react-tabs": "3.2.3",
     "throttle-debounce": "^3.0.1",
     "typescript": "4.4.4"
   },
@@ -141,7 +143,8 @@
     },
     "moduleNameMapper": {
       ".+\\.(css|styl|less|sass|scss)$": "identity-obj-proxy",
-      ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/fileMock.js"
+      ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/fileMock.js",
+      ".+\\.(svg)$": "<rootDir>/test/__mocks__/svgMock.tsx"
     },
     "testPathIgnorePatterns": [
       "node_modules",
