@@ -100,13 +100,9 @@ const isItDoneYet = new Promise(/* ... as above ... */)
 //...
 
 const checkIfItsDone = () => {
-  isItDoneYet
-    .then(ok => {
-      console.log(ok)
-    })
-    .catch(err => {
-      console.error(err)
-    })
+    isItDoneYet
+        .then(ok => console.log(ok))
+        .catch(err => console.error(err))
 }
 ```
 
