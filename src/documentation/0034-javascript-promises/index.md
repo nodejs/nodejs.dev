@@ -37,7 +37,7 @@ In addition to your own code and libraries code, promises are used by standard m
 * the Fetch API
 * Service Workers
 
-It's unlikely that in modern JavaScript you'll find yourself _not_ using promises, so let's start diving right into them.
+It's highly unlikely that in modern JavaScript you'll find yourself _not_ using promises, so let's start diving right into them.
 
 ---
 
