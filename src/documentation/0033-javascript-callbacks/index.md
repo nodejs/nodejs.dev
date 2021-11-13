@@ -109,7 +109,7 @@ fs.readFile('/file.json', (err, data) => {
 
 Callbacks are great for simple cases!
 
-However every callback adds a level of nesting, and when you have lots of callbacks, the code starts to be complicated very quickly:
+However every callback adds a level of nesting, and when you have lots of callbacks, the code starts to get complicated very quickly:
 
 ```js
 window.addEventListener('load', () => {
