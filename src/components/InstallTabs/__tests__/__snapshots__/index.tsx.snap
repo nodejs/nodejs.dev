@@ -292,43 +292,13 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
               <span
                 class="install__text__command"
               >
-                apk add -U
-              </span>
-               curl bash ca-certificates openssl ncurses coreutils python2 make gcc g++ libgcc linux-headers grep util-linux binutils findutils
-            </code>
-          </pre>
-          <pre
-            class="shell-box"
-          >
-            <div
-              class="shell-box-top"
-            >
-              <span>
-                SHELL
-              </span>
-              <button
-                type="button"
-              >
-                copy
-              </button>
-            </div>
-            <code>
-              <span
-                class="install__text__no-select"
-              >
-                $
-              </span>
-              <span
-                class="install__text__command"
-              >
                  curl -o- 
               </span>
-              https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh
-               
+              https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh
               <span
                 class="install__text__command"
               >
-                | bash
+                 | bash
               </span>
             </code>
           </pre>
@@ -361,8 +331,6 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
                install --lts
             </code>
           </pre>
-          <br />
-          <br />
           <a
             class="install__docs-button"
             href="/download/package-manager/#nvm"
@@ -489,43 +457,13 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
               <span
                 class="install__text__command"
               >
-                apk add -U
-              </span>
-               curl bash ca-certificates openssl ncurses coreutils python2 make gcc g++ libgcc linux-headers grep util-linux binutils findutils
-            </code>
-          </pre>
-          <pre
-            class="shell-box"
-          >
-            <div
-              class="shell-box-top"
-            >
-              <span>
-                SHELL
-              </span>
-              <button
-                type="button"
-              >
-                copy
-              </button>
-            </div>
-            <code>
-              <span
-                class="install__text__no-select"
-              >
-                $
-              </span>
-              <span
-                class="install__text__command"
-              >
                  curl -o- 
               </span>
-              https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh
-               
+              https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh
               <span
                 class="install__text__command"
               >
-                | bash
+                 | bash
               </span>
             </code>
           </pre>
@@ -558,8 +496,6 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
                install --lts
             </code>
           </pre>
-          <br />
-          <br />
           <a
             class="install__docs-button"
             href="/download/package-manager/#nvm"
@@ -688,7 +624,7 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
               >
                 curl -o- 
               </span>
-              https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh
+              https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh
               <span
                 class="install__text__command"
               >
