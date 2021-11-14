@@ -1,15 +1,30 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import ShellBox from '../../ShellBox';
+import useNvmVersion from '../../../hooks/useNvmVersion';
 import '../InstallTabs.scss';
 
 const MacOSPanel = (): JSX.Element => {
+  const asyncState = useNvmVersion();
+
+  if (asyncState.state === 'loading') {
+    return <em>Loading...</em>;
+  }
+
+  if (asyncState.state === 'error') {
+    return <em>Error loading. Try refreshing the page.</em>;
+  }
+
+  const { nvmVersion } = asyncState;
+
   return (
     <div>
-      <ShellBox textToCopy="curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash">
+      <ShellBox
+        textToCopy={`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/${nvmVersion}/install.sh | bash`}
+      >
         <span className="install__text__no-select">$</span>
         <span className="install__text__command">curl -o- </span>
-        https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh
+        {`https://raw.githubusercontent.com/nvm-sh/nvm/${nvmVersion}/install.sh`}
         <span className="install__text__command"> | bash </span>
       </ShellBox>
       <ShellBox textToCopy="nvm install --lts">

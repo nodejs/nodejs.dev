@@ -1,5 +1,9 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 import InstallTabs from '../index';
 import * as detectOSModule from '../../../util/detectOS';
 import { UserOS } from '../../../util/detectOS';
@@ -12,19 +16,22 @@ describe('Tests for InstallTabs component', () => {
     const { container } = render(<InstallTabs />);
     expect(container).toMatchSnapshot();
   });
-  it('renders correctly for macOS', () => {
+  it('renders correctly for macOS', async () => {
     jest.spyOn(detectOSModule, 'detectOS').mockReturnValue(UserOS.MAC);
     const { container } = render(<InstallTabs />);
+    await waitForElementToBeRemoved(screen.getByText('Loading...'));
     expect(container).toMatchSnapshot();
   });
-  it('renders correctly for Linux', () => {
+  it('renders correctly for Linux', async () => {
     jest.spyOn(detectOSModule, 'detectOS').mockReturnValue(UserOS.LINUX);
     const { container } = render(<InstallTabs />);
+    await waitForElementToBeRemoved(screen.getByText('Loading...'));
     expect(container).toMatchSnapshot();
   });
-  it('renders correctly for Unix', () => {
+  it('renders correctly for Unix', async () => {
     jest.spyOn(detectOSModule, 'detectOS').mockReturnValue(UserOS.UNIX);
     const { container } = render(<InstallTabs />);
+    await waitForElementToBeRemoved(screen.getByText('Loading...'));
     expect(container).toMatchSnapshot();
   });
   it('renders correctly for other', () => {
