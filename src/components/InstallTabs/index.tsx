@@ -7,7 +7,7 @@ import WindowsPanel from './WindowsPanel';
 import MacOSPanel from './MacOSPanel';
 import LinuxPanel from './LinuxPanel';
 
-const InstallTabs = (): JSX.Element => {
+const InstallTabs = (): JSX.Element | null => {
   const userOS = detectOS();
 
   const os = {
@@ -93,9 +93,7 @@ const InstallTabs = (): JSX.Element => {
         {panelSwitch()}
       </Tabs>
     </div>
-  ) : (
-    <></>
-  );
+  ) : null;
 };
 
 export default InstallTabs;
