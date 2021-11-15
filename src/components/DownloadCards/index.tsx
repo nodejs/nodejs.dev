@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Tabs, TabList } from 'react-tabs';
 import { NodeReleaseLTSNPMVersion } from '../../types';
-import appleLogo from '../../images/logos/apple-logo.svg';
-import microsoftLogo from '../../images/logos/microsoft-download-logo.svg';
-import sourceCodeIcon from '../../images/logos/source-code-icon.svg';
+import { ReactComponent as AppleLogo } from '../../images/logos/apple-logo.svg';
+import { ReactComponent as MicrosoftLogo } from '../../images/logos/microsoft-download-logo.svg';
+import { ReactComponent as SourceCodeIcon } from '../../images/logos/source-code-icon.svg';
 import { UserOS } from '../../util/detectOS';
 import DownloadCard from './DownloadCard';
 import './DownloadCards.scss';
@@ -28,14 +28,14 @@ export default function DownloadCards({ line, userOS }: Props): JSX.Element {
   const downloadTypes = [
     {
       label: 'Windows Installer',
-      icon: microsoftLogo,
+      icon: MicrosoftLogo,
       name: UserOS.WIN,
       fileName: `node-${fileName}-x86.msi`,
       download: `https://nodejs.org/dist/${fileName}/node-${fileName}-x86.msi`,
     },
     {
       label: 'MAC Installer',
-      icon: appleLogo,
+      icon: AppleLogo,
       name: UserOS.MAC,
       fileName: `node-${fileName}.pkg`,
       download: `https://nodejs.org/dist/${fileName}/node-${fileName}.pkg`,
@@ -43,7 +43,7 @@ export default function DownloadCards({ line, userOS }: Props): JSX.Element {
     {
       label: 'Source Code',
       name: 'SOURCECODE',
-      icon: sourceCodeIcon,
+      icon: SourceCodeIcon,
       fileName: `node-${fileName}.tar.gz`,
       download: `https://nodejs.org/dist/${fileName}/node-${fileName}.tar.gz`,
     },

@@ -11,10 +11,8 @@ exports[`Tests for Footer component renders correctly 1`] = `
       <div
         class="cta"
       >
-        <img
-          alt=""
+        <svg
           class="image"
-          src="test-file-stub"
         />
         <h2
           class="header"
@@ -30,10 +28,8 @@ exports[`Tests for Footer component renders correctly 1`] = `
       <div
         class="cta"
       >
-        <img
-          alt=""
+        <svg
           class="image"
-          src="test-file-stub"
         />
         <h2
           class="header"
