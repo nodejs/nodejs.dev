@@ -77,7 +77,7 @@ or
 const car = require('./items').car
 ```
 
-or you can make a destructuring
+or you can use a destructuring assignment:
 
 ```js
 const { car } = require('./items')
