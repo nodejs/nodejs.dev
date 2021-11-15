@@ -5,7 +5,7 @@ import classnames from 'classnames';
 
 interface Props {
   name: string;
-  icon: string;
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
   label: string;
   download: string;
   fileName: string;
@@ -15,7 +15,7 @@ interface Props {
 
 export default function DownloadCard({
   name,
-  icon,
+  icon: Icon,
   label,
   download,
   fileName,
@@ -35,11 +35,7 @@ export default function DownloadCard({
       selectedClassName="download-card--active"
     >
       <div className="download-card__top">
-        <img
-          className="download-card__image"
-          src={icon}
-          alt={`${label} logo`}
-        />
+        <Icon className="download-card__image" />
         {selected && (
           <a className="download-card__link" href={download}>
             <i className="material-icons">get_app</i>

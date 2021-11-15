@@ -4,7 +4,7 @@ exports[`DownloadCards component renders correctly 1`] = `
 <div>
   <div
     class="download-cards-wrapper"
-    data-tabs="true"
+    data-rttabs="true"
     tabindex="-1"
   >
     <ul
@@ -15,16 +15,15 @@ exports[`DownloadCards component renders correctly 1`] = `
         aria-disabled="false"
         aria-selected="false"
         class="download-card download-card--active"
+        data-rttab="true"
         role="tab"
         tabindex="0"
       >
         <div
           class="download-card__top"
         >
-          <img
-            alt="Windows Installer logo"
+          <svg
             class="download-card__image"
-            src="test-file-stub"
           />
           <a
             class="download-card__link"
@@ -52,16 +51,15 @@ exports[`DownloadCards component renders correctly 1`] = `
         aria-disabled="false"
         aria-selected="false"
         class="download-card"
+        data-rttab="true"
         role="tab"
         tabindex="0"
       >
         <div
           class="download-card__top"
         >
-          <img
-            alt="MAC Installer logo"
+          <svg
             class="download-card__image"
-            src="test-file-stub"
           />
         </div>
         <p
@@ -79,16 +77,15 @@ exports[`DownloadCards component renders correctly 1`] = `
         aria-disabled="false"
         aria-selected="false"
         class="download-card"
+        data-rttab="true"
         role="tab"
         tabindex="0"
       >
         <div
           class="download-card__top"
         >
-          <img
-            alt="Source Code logo"
+          <svg
             class="download-card__image"
-            src="test-file-stub"
           />
         </div>
         <p
