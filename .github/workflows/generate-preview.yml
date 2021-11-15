@@ -10,7 +10,7 @@ jobs:
     if: github.event.label.name == 'create-preview'
     steps:
 
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
@@ -27,7 +27,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            github.issues.removeLabel({
+            github.rest.issues.removeLabel({
               issue_number: ${{ github.event.pull_request.number }},
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -55,7 +55,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            github.issues.createComment({
+            github.rest.issues.createComment({
               issue_number: ${{ github.event.pull_request.number }},
               owner: context.repo.owner,
               repo: context.repo.repo,

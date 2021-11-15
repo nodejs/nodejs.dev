@@ -290,11 +290,11 @@ Targeted Ads. As discussed in our Cookie Policy, we may work with third party ad
 
 We have implemented commercially reasonable precautions designed to protect the information we collect from loss, misuse, and unauthorized access, disclosure, alteration, and destruction. Please be aware that despite our best efforts, no data security measures can guarantee 100% security.
 
-You should take steps to protect against unauthorized access to your passwords, phone, and computer by, among other things, signing off after using a shared computer, choosing robust passwords that nobody else knows or can easily guess, not using a password for more than one site or service, and keeping your log-ins and passwords private. We are not responsible for any lost, stolen, or compromised passwords or for any activity on your account via unauthorized password activity. We ask you to promptly notify us if you become aware that any information provided by or submitted to our Sites or through our Services is lost, stolen, or used without permission at privacy@openjsf.org.
+You should take steps to protect against unauthorized access to your passwords, phone, and computer by, among other things, signing off after using a shared computer, choosing robust passwords that nobody else knows or can easily guess, not using a password for more than one site or service, and keeping your log-ins and passwords private. We are not responsible for any lost, stolen, or compromised passwords or for any activity on your account via unauthorized password activity. We ask you to promptly notify us if you become aware that any information provided by or submitted to our Sites or through our Services is lost, stolen, or used without permission at [privacy@openjsf.org](mailto:privacy@openjsf.org).
 
 ## Marketing Choices
 
-You may opt out of or withdraw your consent to receive direct marketing emails from us by using the unsubscribe or opt out mechanisms included in our marketing emails or by emailing privacy@openjsf.org. You may also unsubscribe from mailing lists via the applicable mailing list’s subscription website or, in some cases, by using the unsubscribe mechanisms included in such emails.
+You may opt out of or withdraw your consent to receive direct marketing emails from us by using the unsubscribe or opt out mechanisms included in our marketing emails or by emailing [privacy@openjsf.org](mailto:privacy@openjsf.org). You may also unsubscribe from mailing lists via the applicable mailing list’s subscription website or, in some cases, by using the unsubscribe mechanisms included in such emails.
 
 ## Retention of Your Personal Information
 
@@ -302,7 +302,7 @@ We generally keep personal information only for as long as required to fulfill t
 
 ## International Transfers
 
-If you are located within the European Economic Area, the United Kingdom or Switzerland, you should note that your personal information will be transferred to countries outside these jurisdictions, including the United States where OpenJS Foundation is located. The U.S. is deemed by the European Union to provide inadequate data protection. However, we have put in place European Commission approved Standard Contractual Clauses to provide for adequate safeguards to protect personal information transferred outside these jurisdictions, including between OpenJS Foundation and service providers. In addition, if personal information is transferred to third party service providers located outside these jurisdictions, we will take steps to ensure that your personal information receives the same level of protection as if it remained within these jurisdictions, including by entering into data transfer agreements, using the European Commission approved Standard Contractual Clauses or other safeguards as approved by the European Commission. You have a right to obtain details of the mechanism under which your personal information is transferred outside of the EU by emailing gdpr@openjsf.org.
+If you are located within the European Economic Area, the United Kingdom or Switzerland, you should note that your personal information will be transferred to countries outside these jurisdictions, including the United States where OpenJS Foundation is located. The U.S. is deemed by the European Union to provide inadequate data protection. However, we have put in place European Commission approved Standard Contractual Clauses to provide for adequate safeguards to protect personal information transferred outside these jurisdictions, including between OpenJS Foundation and service providers. In addition, if personal information is transferred to third party service providers located outside these jurisdictions, we will take steps to ensure that your personal information receives the same level of protection as if it remained within these jurisdictions, including by entering into data transfer agreements, using the European Commission approved Standard Contractual Clauses or other safeguards as approved by the European Commission. You have a right to obtain details of the mechanism under which your personal information is transferred outside of the EU by emailing [gdpr@openjsf.org](mailto:gdpr@openjsf.org).
 
 ## Children’s Privacy
 
@@ -329,15 +329,15 @@ Additional Rights. Individuals in the European Economic Area (and other jurisdic
 
 Lodging a Complaint. You also have the right to lodge a complaint with your local supervisory authority for data protection, or privacy regulator. A list of data protection supervisory authorities is available [here](http://ec.europa.eu/newsroom/article29/item-detail.cfm?item_id=612080).
 
-Submitting a Request. To exercise the above rights or contact us with questions or complaints regarding our treatment of your personal information, contact us at gdpr@openjsf.org. Please note that we may request proof of identity, and we reserve the right to charge a fee where permitted by law, especially if your request is manifestly unfounded or excessive. We will respond to your request within the applicable timeframes set out by law.
+Submitting a Request. To exercise the above rights or contact us with questions or complaints regarding our treatment of your personal information, contact us at [gdpr@openjsf.org](mailto:gdpr@openjsf.org). Please note that we may request proof of identity, and we reserve the right to charge a fee where permitted by law, especially if your request is manifestly unfounded or excessive. We will respond to your request within the applicable timeframes set out by law.
 
 ## California Privacy Rights
 
-California law permits users who are California residents to request and obtain from us once a year, free of charge, a list of the third parties to whom we have disclosed their personal information (if any) for their direct marketing purposes in the prior calendar year, as well as the types of personal information disclosed to those parties. If you are a California resident and would like to request this information, please submit your request in an email to privacy@openjsf.org. We may ask you to verify your California residency.
+California law permits users who are California residents to request and obtain from us once a year, free of charge, a list of the third parties to whom we have disclosed their personal information (if any) for their direct marketing purposes in the prior calendar year, as well as the types of personal information disclosed to those parties. If you are a California resident and would like to request this information, please submit your request in an email to [privacy@openjsf.org](mailto:privacy@openjsf.org). We may ask you to verify your California residency.
 
 ## Contact Us
 
-If you have any questions about our practices or this Privacy Policy, please contact us at privacy@openjsf.org, or write to us at: OpenJS Foundation, Attn: Legal Department, 1 Letterman Drive, Building D, Suite D4700, San Francisco, CA 94129.
+If you have any questions about our practices or this Privacy Policy, please contact us at [privacy@openjsf.org](mailto:privacy@openjsf.org), or write to us at: OpenJS Foundation, Attn: Legal Department, 1 Letterman Drive, Building D, Suite D4700, San Francisco, CA 94129.
 
 ## Changes to the Privacy Policy
 

@@ -1,7 +1,7 @@
 ---
 title: 'The Node.js Event Loop'
 description: 'The Event Loop is one of the most important aspects to understand about Node.js'
-authors: flaviocopes, potch, ZYSzys, MylesBorins, fhemberger, LaRuaNa, flaviocopes, amiller-gh, ahmadawais
+authors: flaviocopes, potch, ZYSzys, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
 section: Getting Started
 category: learn
 ---
@@ -144,7 +144,7 @@ Why is this happening?
 
 When setTimeout() is called, the Browser or Node.js starts the timer. Once the timer expires, in this case immediately as we put 0 as the timeout, the callback function is put in the **Message Queue**.
 
-The Message Queue is also where user-initiated events like click or keyboard events, or fetch responses are queued before your code has the opportunity to react to them. Or also DOM events like `onLoad`.
+The Message Queue is also where user-initiated events like click or keyboard events, or fetch responses are queued before your code has the opportunity to react to them. Or also DOM events like `onload`.
 
 **The loop gives priority to the call stack, and it first processes everything it finds in the call stack, and once there's nothing in there, it goes to pick up things in the message queue.**
 

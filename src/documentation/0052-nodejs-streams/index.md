@@ -231,8 +231,15 @@ readableStream.pipe(writableStream)
 readableStream.push('hi!')
 readableStream.push('ho!')
 
-writableStream.end()
+readableStream.on('close', () => writableStream.end())
+writableStream.on('close', () => console.log('ended'))
+
+readableStream.destroy()
 ```
+
+In the above example, `end()` is called within a listener to the `close` event on the readable stream to ensure it is not called before all write events have passed through the pipe, as doing so would cause an `error` event to be emitted.
+Calling `destroy()` on the readable stream causes the `close` event to be emitted.
+The listener to the `close` event on the writable stream demonstrates the completion of the process as it is emitted after the call to `end()`.
 
 ## How to create a transform stream
 
@@ -249,7 +256,7 @@ then implement `_transform`:
 
 ```js
 TransformStream._transform = (chunk, encoding, callback) => {
-  this.push(chunk.toString().toUpperCase());
+  TransformStream.push(chunk.toString().toUpperCase());
   callback();
 }
 ```
