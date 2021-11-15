@@ -114,15 +114,11 @@ function renderArticleSections(
 
     const prepareArticleSections = () => {
       API_DOCS_OBJ_KEYS.forEach((key: string) => {
-        if (page[key]) {
-          renderArticleSections(page[key], children, depth + 1);
-        }
+        if (page[key]) renderArticleSections(page[key], children, depth + 1);
       });
     };
 
-    if (depth === 0) {
-      sections.push(<hr key={`${page.name}-hr`} />);
-    }
+    if (depth === 0) sections.push(<hr key={`${page.name}-hr`} />);
 
     children.push(getHeadingForPage(page, depth));
 
@@ -591,9 +587,8 @@ function renderArticle(
   const sourceCodeLink = downloadUrlByOs(UserOS.UNIX, version);
   const prebuiltInstallerLink = downloadUrlByOs(userOS, version);
 
-  if (!page) {
-    return renderDefaultArticle(sourceCodeLink, prebuiltInstallerLink, version);
-  }
+  if (!page) return renderDefaultArticle(sourceCodeLink, prebuiltInstallerLink, version);
+
 
   return (
     <article style={{ width: '100%' }} className="article-reader">
@@ -668,9 +663,7 @@ export default function APIDocsPage({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     // run this every time the page loads. If there is no hash, return page back to default
-    if (!window.location.hash) {
-      setPage(null);
-    }
+    if (!window.location.hash) setPage(null);
   });
 
   useEffect(() => {
@@ -682,9 +675,7 @@ export default function APIDocsPage({
         const match = apiData[section].find(
           (item: ApiDocsObj) => item.name === moduleName
         );
-        if (match !== undefined) {
-          matchingModule = match;
-        }
+        if (match !== undefined) matchingModule = match;
       });
       return matchingModule;
     };
