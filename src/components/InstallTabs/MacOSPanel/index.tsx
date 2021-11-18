@@ -9,7 +9,7 @@ const MacOSPanel = (): JSX.Element => {
       <ShellBox textToCopy="curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash">
         <span className="install__text__no-select">$</span>
         <span className="install__text__command">curl -o- </span>
-        https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh
+        https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh
         <span className="install__text__command"> | bash </span>
       </ShellBox>
       <ShellBox textToCopy="nvm install --lts">

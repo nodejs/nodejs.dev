@@ -53,7 +53,7 @@ Now we can compile it to JavaScript using `tsc` command in the terminal. Let's d
 Assuming that our file is named `example.ts`, the command would look like:
 
 ```bash
-tsc example.ts
+npx tsc example.ts
 ```
 
 This command will result in a new file named `example.js` that we can run using Node.js.
