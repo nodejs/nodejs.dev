@@ -7,11 +7,11 @@ import './UpcomingReleasesItem.scss';
 
 type Props = UpcomingReleaseData;
 
-export default function UpcomingReleasesItem({
+const UpcomingReleasesItem = ({
   releaseType,
   releaseDate,
   alreadyReleased,
-}: Props): JSX.Element {
+}: Props): JSX.Element => {
   const Image = alreadyReleased ? HexagonFilled : HexagonOutline;
   const className = classnames(`upcoming-releases__item--${releaseType}`, {
     'upcoming-releases__item--to-be-released': !alreadyReleased,
@@ -26,4 +26,6 @@ export default function UpcomingReleasesItem({
       </p>
     </div>
   );
-}
+};
+
+export default UpcomingReleasesItem;

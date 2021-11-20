@@ -39,7 +39,13 @@ module.exports = {
         '@typescript-eslint/no-use-before-define': 'warn',
         'import/extensions': 'off',
         'consistent-return': 'off',
-        'react/function-component-definition': 'off',
+        'react/function-component-definition': [
+          'error',
+          {
+            namedComponents: 'arrow-function',
+            unnamedComponents: 'arrow-function',
+          },
+        ],
       },
     },
     {

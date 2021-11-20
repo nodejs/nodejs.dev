@@ -643,10 +643,10 @@ function sideBarSection(
   );
 }
 
-export default function APIDocsPage({
+const APIDocsPage = ({
   location,
   data: { nodeReleases },
-}: Props): JSX.Element {
+}: Props): JSX.Element => {
   const title = 'API Docs';
   const description = 'Come learn yourself something.';
   const userOS = detectOS();
@@ -752,7 +752,9 @@ export default function APIDocsPage({
       <Footer />
     </>
   );
-}
+};
+
+export default APIDocsPage;
 
 export const query = graphql`
   query {

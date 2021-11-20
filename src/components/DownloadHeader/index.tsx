@@ -6,7 +6,7 @@ interface Props {
   release?: NodeReleaseLTSNPMVersion;
 }
 
-export default function DownloadHeader({ release }: Props): JSX.Element {
+const DownloadHeader = ({ release }: Props): JSX.Element => {
   const nodev = release?.version;
   const npmv = release?.npm;
   const lts = release?.lts;
@@ -30,4 +30,6 @@ export default function DownloadHeader({ release }: Props): JSX.Element {
       </div>
     </>
   );
-}
+};
+
+export default DownloadHeader;
