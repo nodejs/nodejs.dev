@@ -12,7 +12,7 @@ export interface DropDownState {
   shouldDropDownBlur: boolean;
 }
 
-function Footer(): JSX.Element {
+const Footer = (): JSX.Element => {
   return (
     <>
       <section className="bottom-info">
@@ -91,6 +91,6 @@ function Footer(): JSX.Element {
       </footer>
     </>
   );
-}
+};
 
 export default Footer;

@@ -18,9 +18,9 @@ interface ReleasesPageProps extends Page {
   data: ReleasesNodeReleases & DataPage;
 }
 
-export default function ReleasesPage({
+const ReleasesPage = ({
   data: { page, nodeReleases },
-}: ReleasesPageProps): JSX.Element {
+}: ReleasesPageProps): JSX.Element => {
   const { body, tableOfContents } = page;
   const { title, description } = page.frontmatter;
   const { authors } = page.fields;
@@ -45,7 +45,9 @@ export default function ReleasesPage({
       <Footer />
     </>
   );
-}
+};
+
+export default ReleasesPage;
 
 export const query = graphql`
   query {
