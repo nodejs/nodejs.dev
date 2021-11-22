@@ -23,10 +23,10 @@ interface Props {
   data: DownloadNodeReleases;
 }
 
-export default function DownloadPage({
+const DownloadPage = ({
   location,
   data: { nodeReleases },
-}: Props): JSX.Element {
+}: Props): JSX.Element => {
   const { nodeReleasesData, nodeReleasesLTSNPMVersion } = nodeReleases;
   const [typeRelease, setTypeRelease] = useState('LTS');
 
@@ -74,7 +74,9 @@ export default function DownloadPage({
       </span>
     </Layout>
   );
-}
+};
+
+export default DownloadPage;
 
 export const query = graphql`
   query {

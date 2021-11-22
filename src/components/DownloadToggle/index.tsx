@@ -8,11 +8,11 @@ interface Props {
   showDescription?: boolean;
 }
 
-export default function DownloadToggle({
+const DownloadToggle = ({
   handleClick,
   selected,
   showDescription = true,
-}: Props): JSX.Element {
+}: Props): JSX.Element => {
   return (
     <div className="download-toogle">
       <div className="download-toogle__selector">
@@ -60,4 +60,6 @@ export default function DownloadToggle({
       )}
     </div>
   );
-}
+};
+
+export default DownloadToggle;

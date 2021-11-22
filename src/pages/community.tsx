@@ -9,7 +9,7 @@ import '../styles/article-reader.scss';
 import '../styles/community.scss';
 import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
 
-export default function CommunityPage({ data }: Page): JSX.Element {
+const CommunityPage = ({ data }: Page): JSX.Element => {
   const { title, description } = data.page.frontmatter;
   const { body, tableOfContents } = data.page;
   const { authors } = data.page.fields;
@@ -31,7 +31,9 @@ export default function CommunityPage({ data }: Page): JSX.Element {
       <Footer />
     </>
   );
-}
+};
+
+export default CommunityPage;
 
 export const query = graphql`
   query {

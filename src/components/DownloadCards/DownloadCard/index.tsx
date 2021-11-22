@@ -13,7 +13,7 @@ interface Props {
   onSelect: (name: string) => void;
 }
 
-export default function DownloadCard({
+const DownloadCard = ({
   name,
   icon: Icon,
   label,
@@ -21,7 +21,7 @@ export default function DownloadCard({
   fileName,
   selected,
   onSelect,
-}: Props): JSX.Element {
+}: Props): JSX.Element => {
   const handleSelectCard = (): void => onSelect(name);
   const classNames = classnames('download-card', {
     'download-card--active': selected,
@@ -46,4 +46,6 @@ export default function DownloadCard({
       <p className="download-card__filename">{fileName}</p>
     </Tab>
   );
-}
+};
+
+export default DownloadCard;
