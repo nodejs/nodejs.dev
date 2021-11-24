@@ -8,9 +8,7 @@ interface Props {
   upcomingReleases: UpcomingRelease[];
 }
 
-export default function UpcomingReleases({
-  upcomingReleases,
-}: Props): JSX.Element {
+const UpcomingReleases = ({ upcomingReleases }: Props): JSX.Element => {
   return (
     <div className="upcoming-releases">
       <Tabs>
@@ -27,4 +25,6 @@ export default function UpcomingReleases({
       </Tabs>
     </div>
   );
-}
+};
+
+export default UpcomingReleases;

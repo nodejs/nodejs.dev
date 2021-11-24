@@ -6,7 +6,7 @@ interface Props {
   location: Location;
 }
 
-export default function NotFoundPage({ location }: Props): JSX.Element {
+const NotFoundPage = ({ location }: Props): JSX.Element => {
   const title = 'PAGE NOT FOUND';
   const description = 'You have hit a route that does not exist.';
 
@@ -24,4 +24,6 @@ export default function NotFoundPage({ location }: Props): JSX.Element {
       </main>
     </Layout>
   );
-}
+};
+
+export default NotFoundPage;

@@ -13,7 +13,7 @@ interface Props {
   userOS: UserOS;
 }
 
-export default function DownloadCards({ line, userOS }: Props): JSX.Element {
+const DownloadCards = ({ line, userOS }: Props): JSX.Element => {
   const fileName = line?.version;
   const [selected, setSelected] = useState('');
 
@@ -97,4 +97,6 @@ export default function DownloadCards({ line, userOS }: Props): JSX.Element {
       </TabList>
     </Tabs>
   );
-}
+};
+
+export default DownloadCards;

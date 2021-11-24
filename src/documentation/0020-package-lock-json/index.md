@@ -28,7 +28,7 @@ So your original project and the newly initialized project are actually differen
 
 The `package-lock.json` sets your currently installed version of each package **in stone**, and `npm` will use those exact versions when running `npm ci`.
 
-This concept is not new, and other programming languages package managers (like Composer in PHP) use a similar system for years.
+This concept is not new, and other programming languages package managers (like Composer in PHP) have used a similar system for years.
 
 The `package-lock.json` file needs to be committed to your Git repository, so it can be fetched by other people, if the project is public or you have collaborators, or if you use Git as a source for deployments.
 

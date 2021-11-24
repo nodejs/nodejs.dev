@@ -61,7 +61,7 @@ const NodeFeature = ({
   );
 };
 
-export default function Index({
+const Index = ({
   data: {
     page: {
       frontmatter: { displayTitle, subTitle, description },
@@ -69,7 +69,7 @@ export default function Index({
     nodeReleases: { nodeReleasesLTSVersion },
     banners: { bannersIndex },
   },
-}: HomepageProps): JSX.Element {
+}: HomepageProps): JSX.Element => {
   return (
     <Layout title={displayTitle} description={description}>
       <main className="home-page">
@@ -103,7 +103,9 @@ export default function Index({
       </main>
     </Layout>
   );
-}
+};
+
+export default Index;
 
 export interface HomeNodeReleases {
   nodeReleases: {
