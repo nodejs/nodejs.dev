@@ -93,7 +93,7 @@ getFile('/etc/passwd')
 
 In the last section, we introduced how a promise is created.
 
-Now let's see how the promise can be _consumed_ or used.
+Now, let's see how the promise can be _consumed_ or used.
 
 ```js
 const isItDoneYet = new Promise(/* ... as above ... */)

@@ -9,10 +9,10 @@ interface Props {
   upcomingReleases: UpcomingRelease[];
 }
 
-export default function DownloadReleases({
+const DownloadReleases = ({
   nodeReleasesData,
   upcomingReleases,
-}: Props): JSX.Element {
+}: Props): JSX.Element => {
   return (
     <div className="download-releases">
       <h2 className="download-releases__title">Upcoming Releases</h2>
@@ -30,4 +30,6 @@ export default function DownloadReleases({
       <DownloadTable nodeReleasesData={nodeReleasesData} />
     </div>
   );
-}
+};
+
+export default DownloadReleases;

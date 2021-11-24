@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
 import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
 
-export default function SecurityPage({ data }: Page): JSX.Element {
+const SecurityPage = ({ data }: Page): JSX.Element => {
   const { title, description } = data.page.frontmatter;
   const { body, tableOfContents } = data.page;
   const { authors } = data.page.fields;
@@ -28,7 +28,9 @@ export default function SecurityPage({ data }: Page): JSX.Element {
       <Footer />
     </>
   );
-}
+};
+
+export default SecurityPage;
 
 export const query = graphql`
   query {
