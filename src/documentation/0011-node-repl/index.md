@@ -12,7 +12,7 @@ The `node` command is the one we use to run our Node.js scripts:
 node script.js
 ```
 
-If we omit the filename, we use it in REPL mode:
+If we run the node command without any arguments, we use it in REPL mode:
 
 ```bash
 node
