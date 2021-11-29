@@ -88,7 +88,7 @@
     "@babel/preset-typescript": "^7.16.0",
     "@storybook/semver": "^7.3.2",
     "@testing-library/dom": "^8.11.1",
-    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/classnames": "^2.3.1",
