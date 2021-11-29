@@ -11,7 +11,7 @@
     "@storybook/addon-links": "^6.4.0",
     "@storybook/addons": "^6.4.0",
     "@storybook/builder-webpack5": "^6.3.12",
-    "@storybook/manager-webpack5": "^6.3.12",
+    "@storybook/manager-webpack5": "^6.4.0",
     "@storybook/react": "^6.3.12",
     "@svgr/webpack": "^5.5.0",
     "@types/mdx-js__react": "^1.5.5",
