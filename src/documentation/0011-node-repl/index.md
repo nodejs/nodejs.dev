@@ -43,7 +43,7 @@ undefined
 ```
 
 The first value, `test`, is the output we told the console to print, then we get `undefined` which is the return value of running `console.log()`.
-Node read this line of code, evaluated it, printed the result, and then went back to waiting for more lines of code. Node will loop throough these three steps for every piece of code we execute in the REPL until we exit the session. That is where the REPL got its name.
+Node read this line of code, evaluated it, printed the result, and then went back to waiting for more lines of code. Node will loop through these three steps for every piece of code we execute in the REPL until we exit the session. That is where the REPL got its name.
 
 Node automatically prints the result of any line of JavaScript code without the need to instruct it to do so. For example, type in the following line and press enter:
 
