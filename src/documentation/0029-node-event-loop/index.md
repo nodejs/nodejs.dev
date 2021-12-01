@@ -152,7 +152,7 @@ We don't have to wait for functions like `setTimeout`, fetch or other things to 
 
 ## ES6 Job Queue
 
-ECMAScript 2015 introduced the concept of the Job Queue, which is used by Promises (also introduced in ES6/ES2015). It's a way to execute the result of an async function as soon as possible, rather than being put at the end of the call stack.
+ECMAScript 2015 introduced the concept of the Job Queue, which is used by Promises (also introduced in ES6/ES2015). It's a way to execute the result of an async function as soon as possible, rather than being put at the end of the message queue.
 
 Promises that resolve before the current function ends will be executed right after the current function.
 
