@@ -12,13 +12,13 @@ The `node` command is the one we use to run our Node.js scripts:
 node script.js
 ```
 
-If we run the `node` command without any arguments, we use it in REPL mode:
+If we run the `node` command without any script to execute or without any arguments, we start a REPL session:
 
 ```bash
 node
 ```
 
-> Note: REPL also known as Read Evaluate Print Loop is a programming language environment (basically a console window) that takes single expression as user input and returns the result back to the console after execution.
+> Note: REPL stands for Read Evaluate Print Loop, and it is a programming language environment (basically a console window) that takes single expression as user input and returns the result back to the console after execution. The REPL session provides a convenient way to quickly test simple JavaScript code.
 
 If you try it now in your terminal, this is what happens:
 
@@ -27,7 +27,7 @@ If you try it now in your terminal, this is what happens:
 >
 ```
 
-the command stays in idle mode and waits for us to enter something.
+The command stays in idle mode and waits for us to enter something.
 
 > Tip: if you are unsure how to open your terminal, google "How to open terminal on \<your-operating-system\>".
 
@@ -43,8 +43,30 @@ undefined
 ```
 
 The first value, `test`, is the output we told the console to print, then we get `undefined` which is the return value of running `console.log()`.
+Node read this line of code, evaluated it, printed the result, and then went back to waiting for more lines of code. Node will loop through these three steps for every piece of code we execute in the REPL until we exit the session. That is where the REPL got its name.
 
-We can now enter a new line of JavaScript.
+Node automatically prints the result of any line of JavaScript code without the need to instruct it to do so. For example, type in the following line and press enter:
+
+```console
+> 5 === '5'
+false
+>
+```
+Note the difference in the outputs of the above two lines. The Node REPL printed `undefined` after executed `console.log()`, while on the other hand, it just printed the result of `5 === '5'`. You need to keep in mind that the former is just a statement in JavaScript, and the latter is an expression.
+
+In some cases, the code you want to test might need multiple lines. For example, say you want to define a function that generates a random number, in the REPL session type in the following line and press enter:
+```console
+function generateRandom() {
+...
+```
+The Node REPL is smart enough to determine that you are not done writing your code yet, and it will go into a multi-line mode for you to type in more code. Now finish your function definition and press enter:
+```console
+function generateRandom() {
+...return Math.random()
+}
+undefined
+```
+Node will get out of the multi-line mode, and print `undefined` since there is no value returned. This multi-line mode is limited. Node offers a more featured editor right inside the REPL. We discuss it below under Dot commands.
 
 ## Use the tab to autocomplete
 
@@ -69,6 +91,9 @@ You can inspect the globals you have access to by typing `global.` and pressing 
 ## The \_ special variable
 
 If after some code you type `_`, that is going to print the result of the last operation.
+
+## The Up arrow key
+If you press the `up` arrow key, you will get access to the history of the previous lines of code executed in the current, and even previous REPL sessions.
 
 ## Dot commands
 
