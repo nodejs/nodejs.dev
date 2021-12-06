@@ -35,15 +35,15 @@ A typical example is reading files from a disk.
 Using the Node.js `fs` module, you can read a file, and serve it over HTTP when a new connection is established to your HTTP server:
 
 ```js
-const http = require('http')
-const fs = require('fs')
+const http = require('http');
+const fs = require('fs');
 
-const server = http.createServer(function(req, res) {
-  fs.readFile(__dirname + '/data.txt', (err, data) => {
-    res.end(data)
-  })
-})
-server.listen(3000)
+const server = http.createServer(function (req, res) {
+  fs.readFile(`${__dirname}/data.txt`, (err, data) => {
+    res.end(data);
+  });
+});
+server.listen(3000);
 ```
 
 `readFile()` reads the full contents of the file, and invokes the callback function when it's done.
@@ -53,14 +53,14 @@ server.listen(3000)
 If the file is big, the operation will take quite a bit of time. Here is the same thing written using streams:
 
 ```js
-const http = require('http')
-const fs = require('fs')
+const http = require('http');
+const fs = require('fs');
 
 const server = http.createServer((req, res) => {
-  const stream = fs.createReadStream(__dirname + '/data.txt')
-  stream.pipe(res)
-})
-server.listen(3000)
+  const stream = fs.createReadStream(`${__dirname}/data.txt`);
+  stream.pipe(res);
+});
+server.listen(3000);
 ```
 
 Instead of waiting until the file is fully read, we start streaming it to the HTTP client as soon as we have a chunk of data ready to be sent.
@@ -76,14 +76,14 @@ You call it on the source stream, so in this case, the file stream is piped to t
 The return value of the `pipe()` method is the destination stream, which is a very convenient thing that lets us chain multiple `pipe()` calls, like this:
 
 ```js
-src.pipe(dest1).pipe(dest2)
+src.pipe(dest1).pipe(dest2);
 ```
 
 This construct is the same as doing
 
 ```js
-src.pipe(dest1)
-dest1.pipe(dest2)
+src.pipe(dest1);
+dest1.pipe(dest2);
 ```
 
 ## Streams-powered Node.js APIs
@@ -118,29 +118,30 @@ We get the Readable stream from the [`stream` module](https://nodejs.org/api/str
 First create a stream object:
 
 ```js
-const Stream = require('stream')
-const readableStream = new Stream.Readable()
+const Stream = require('stream');
+
+const readableStream = new Stream.Readable();
 ```
 
 then implement `_read`:
 
 ```js
-readableStream._read = () => {}
+readableStream._read = () => {};
 ```
 
 You can also implement `_read` using the `read` option:
 
 ```js
 const readableStream = new Stream.Readable({
-  read() {}
-})
+  read() {},
+});
 ```
 
 Now that the stream is initialized, we can send data to it:
 
 ```js
-readableStream.push('hi!')
-readableStream.push('ho!')
+readableStream.push('hi!');
+readableStream.push('ho!');
 ```
 
 ## How to create a writable stream
@@ -150,24 +151,25 @@ To create a writable stream we extend the base `Writable` object, and we impleme
 First create a stream object:
 
 ```js
-const Stream = require('stream')
-const writableStream = new Stream.Writable()
+const Stream = require('stream');
+
+const writableStream = new Stream.Writable();
 ```
 
 then implement `_write`:
 
 ```js
 writableStream._write = (chunk, encoding, next) => {
-  console.log(chunk.toString())
-  next()
-}
+  console.log(chunk.toString());
+  next();
+};
 ```
 
 You can now pipe a
 readable stream in:
 
 ```js
-process.stdin.pipe(writableStream)
+process.stdin.pipe(writableStream);
 ```
 
 ## How to get data from a readable stream
@@ -175,30 +177,30 @@ process.stdin.pipe(writableStream)
 How do we read data from a readable stream? Using a writable stream:
 
 ```js
-const Stream = require('stream')
+const Stream = require('stream');
 
 const readableStream = new Stream.Readable({
-  read() {}
-})
-const writableStream = new Stream.Writable()
+  read() {},
+});
+const writableStream = new Stream.Writable();
 
 writableStream._write = (chunk, encoding, next) => {
-  console.log(chunk.toString())
-  next()
-}
+  console.log(chunk.toString());
+  next();
+};
 
-readableStream.pipe(writableStream)
+readableStream.pipe(writableStream);
 
-readableStream.push('hi!')
-readableStream.push('ho!')
+readableStream.push('hi!');
+readableStream.push('ho!');
 ```
 
 You can also consume a readable stream directly, using the `readable` event:
 
 ```js
 readableStream.on('readable', () => {
-  console.log(readableStream.read())
-})
+  console.log(readableStream.read());
+});
 ```
 
 ## How to send data to a writable stream
@@ -206,7 +208,7 @@ readableStream.on('readable', () => {
 Using the stream `write()` method:
 
 ```js
-writableStream.write('hey!\n')
+writableStream.write('hey!\n');
 ```
 
 ## Signaling a writable stream that you ended writing
@@ -214,27 +216,27 @@ writableStream.write('hey!\n')
 Use the `end()` method:
 
 ```js
-const Stream = require('stream')
+const Stream = require('stream');
 
 const readableStream = new Stream.Readable({
-  read() {}
-})
-const writableStream = new Stream.Writable()
+  read() {},
+});
+const writableStream = new Stream.Writable();
 
 writableStream._write = (chunk, encoding, next) => {
-  console.log(chunk.toString())
-  next()
-}
+  console.log(chunk.toString());
+  next();
+};
 
-readableStream.pipe(writableStream)
+readableStream.pipe(writableStream);
 
-readableStream.push('hi!')
-readableStream.push('ho!')
+readableStream.push('hi!');
+readableStream.push('ho!');
 
-readableStream.on('close', () => writableStream.end())
-writableStream.on('close', () => console.log('ended'))
+readableStream.on('close', () => writableStream.end());
+writableStream.on('close', () => console.log('ended'));
 
-readableStream.destroy()
+readableStream.destroy();
 ```
 
 In the above example, `end()` is called within a listener to the `close` event on the readable stream to ensure it is not called before all write events have passed through the pipe, as doing so would cause an `error` event to be emitted.
@@ -248,7 +250,8 @@ We get the Transform stream from the [`stream` module](https://nodejs.org/api/st
 First create a transform stream object:
 
 ```js
-const { Transform } = require('stream')
+const { Transform } = require('stream');
+
 const transformStream = new Transform();
 ```
 
@@ -258,7 +261,7 @@ then implement `_transform`:
 transformStream._transform = (chunk, encoding, callback) => {
   transformStream.push(chunk.toString().toUpperCase());
   callback();
-}
+};
 ```
 
 Pipe readable stream:

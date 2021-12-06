@@ -11,7 +11,7 @@ The `path` module provides a lot of very useful functionality to access and inte
 There is no need to install it. Being part of the Node.js core, it can be used by simply requiring it:
 
 ```js
-const path = require('path')
+const path = require('path');
 ```
 
 This module provides `path.sep` which provides the path segment separator (`\` on Windows, and `/` on Linux / macOS), and `path.delimiter` which provides the path delimiter (`;` on Windows, and `:` on Linux / macOS).
@@ -23,9 +23,9 @@ These are the `path` methods:
 Return the last portion of a path. A second parameter can filter out the file extension:
 
 ```js
-require('path').basename('/test/something') //something
-require('path').basename('/test/something.txt') //something.txt
-require('path').basename('/test/something.txt', '.txt') //something
+require('path').basename('/test/something'); // something
+require('path').basename('/test/something.txt'); // something.txt
+require('path').basename('/test/something.txt', '.txt'); // something
 ```
 
 ### `path.dirname()`
@@ -33,8 +33,8 @@ require('path').basename('/test/something.txt', '.txt') //something
 Return the directory part of a path:
 
 ```js
-require('path').dirname('/test/something') // /test
-require('path').dirname('/test/something/file.txt') // /test/something
+require('path').dirname('/test/something'); // /test
+require('path').dirname('/test/something/file.txt'); // /test/something
 ```
 
 ### `path.extname()`
@@ -42,8 +42,8 @@ require('path').dirname('/test/something/file.txt') // /test/something
 Return the extension part of a path
 
 ```js
-require('path').extname('/test/something') // ''
-require('path').extname('/test/something/file.txt') // '.txt'
+require('path').extname('/test/something'); // ''
+require('path').extname('/test/something/file.txt'); // '.txt'
 ```
 
 ### `path.format()`
@@ -61,12 +61,12 @@ Returns a path string from an object, This is the opposite of `path.parse`<br/>
 
 ```js
 // POSIX
-require('path').format({ dir: '/Users/joe', base: 'test.txt' }) //  '/Users/joe/test.txt'
+require('path').format({ dir: '/Users/joe', base: 'test.txt' }); //  '/Users/joe/test.txt'
 
-require('path').format({ root: '/Users/joe', name: 'test', ext: '.txt' }) //  '/Users/joe/test.txt'
+require('path').format({ root: '/Users/joe', name: 'test', ext: '.txt' }); //  '/Users/joe/test.txt'
 
 // WINDOWS
-require('path').format({ dir: 'C:\\Users\\joe', base: 'test.txt' }) //  'C:\\Users\\joe\\test.txt'
+require('path').format({ dir: 'C:\\Users\\joe', base: 'test.txt' }); //  'C:\\Users\\joe\\test.txt'
 ```
 
 ### `path.isAbsolute()`
@@ -74,8 +74,8 @@ require('path').format({ dir: 'C:\\Users\\joe', base: 'test.txt' }) //  'C:\\Use
 Returns true if it's an absolute path
 
 ```js
-require('path').isAbsolute('/test/something') // true
-require('path').isAbsolute('./test/something') // false
+require('path').isAbsolute('/test/something'); // true
+require('path').isAbsolute('./test/something'); // false
 ```
 
 ### `path.join()`
@@ -83,8 +83,8 @@ require('path').isAbsolute('./test/something') // false
 Joins two or more parts of a path:
 
 ```js
-const name = 'joe'
-require('path').join('/', 'users', name, 'notes.txt') //'/users/joe/notes.txt'
+const name = 'joe';
+require('path').join('/', 'users', name, 'notes.txt'); // '/users/joe/notes.txt'
 ```
 
 ### `path.normalize()`
@@ -92,7 +92,7 @@ require('path').join('/', 'users', name, 'notes.txt') //'/users/joe/notes.txt'
 Tries to calculate the actual path when it contains relative specifiers like `.` or `..`, or double slashes:
 
 ```js
-require('path').normalize('/users/joe/..//test.txt') //'/users/test.txt'
+require('path').normalize('/users/joe/..//test.txt'); // '/users/test.txt'
 ```
 
 ### `path.parse()`
@@ -108,12 +108,12 @@ Parses a path to an object with the segments that compose it:
 Example:
 
 ```js
-require('path').parse('/users/test.txt')
+require('path').parse('/users/test.txt');
 ```
 
 results in
 
-```js
+```console
 {
   root: '/',
   dir: '/users',
@@ -130,8 +130,8 @@ Accepts 2 paths as arguments. Returns the relative path from the first path to t
 Example:
 
 ```js
-require('path').relative('/Users/joe', '/Users/joe/test.txt') //'test.txt'
-require('path').relative('/Users/joe', '/Users/joe/something/test.txt') //'something/test.txt'
+require('path').relative('/Users/joe', '/Users/joe/test.txt'); // 'test.txt'
+require('path').relative('/Users/joe', '/Users/joe/something/test.txt'); // 'something/test.txt'
 ```
 
 ### `path.resolve()`
@@ -139,17 +139,17 @@ require('path').relative('/Users/joe', '/Users/joe/something/test.txt') //'somet
 You can get the absolute path calculation of a relative path using `path.resolve()`:
 
 ```js
-require('path').resolve('joe.txt') //'/Users/joe/joe.txt' if run from my home folder
+require('path').resolve('joe.txt'); // '/Users/joe/joe.txt' if run from my home folder
 ```
 
 By specifying a second parameter, `resolve` will use the first as a base for the second:
 
 ```js
-require('path').resolve('tmp', 'joe.txt') //'/Users/joe/tmp/joe.txt' if run from my home folder
+require('path').resolve('tmp', 'joe.txt'); // '/Users/joe/tmp/joe.txt' if run from my home folder
 ```
 
 If the first parameter starts with a slash, that means it's an absolute path:
 
 ```js
-require('path').resolve('/etc', 'joe.txt') //'/etc/joe.txt'
+require('path').resolve('/etc', 'joe.txt'); // '/etc/joe.txt'
 ```

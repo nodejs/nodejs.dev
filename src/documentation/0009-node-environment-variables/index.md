@@ -21,8 +21,8 @@ That will pass the user `USER_ID` as **239482** and the `USER_KEY` as **foobar**
 Here is an example that accesses the `USER_ID` and `USER_KEY` environment variables, which we set in above code.
 
 ```js
-process.env.USER_ID // "239482"
-process.env.USER_KEY // "foobar"
+process.env.USER_ID; // "239482"
+process.env.USER_KEY; // "foobar"
 ```
 
 In the same way you can access any custom environment variable you set.
@@ -41,9 +41,9 @@ In your js file
 ```js
 require('dotenv').config();
 
-process.env.USER_ID // "239482"
-process.env.USER_KEY // "foobar"
-process.env.NODE_ENV // "development"
+process.env.USER_ID; // "239482"
+process.env.USER_KEY; // "foobar"
+process.env.NODE_ENV; // "development"
 ```
 
 > You can also run your js file with `node -r dotenv/config index.js` command if you don't want to import the package in your code.

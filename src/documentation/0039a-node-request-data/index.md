@@ -13,30 +13,31 @@ If you are using Express, that's quite simple: use the `express.json()` middlewa
 For example, to get the body of this request:
 
 ```js
-const axios = require('axios')
+const axios = require('axios');
 
 axios.post('https://whatever.com/todos', {
-  todo: 'Buy the milk'
-})
+  todo: 'Buy the milk',
+});
 ```
 
 This is the matching server-side code:
 
 ```js
-const express = require('express')
-const app = express()
+const express = require('express');
+
+const app = express();
 
 app.use(
   express.urlencoded({
-    extended: true
+    extended: true,
   })
-)
+);
 
-app.use(express.json())
+app.use(express.json());
 
 app.post('/todos', (req, res) => {
-  console.log(req.body.todo)
-})
+  console.log(req.body.todo);
+});
 ```
 
 If you're not using Express and you want to do this in vanilla Node.js, you need to do a bit more work, of course, as Express abstracts a lot of this for you.
@@ -53,12 +54,12 @@ We first get the data by listening to the stream `data` events, and when the dat
 const server = http.createServer((req, res) => {
   // we can access HTTP headers
   req.on('data', chunk => {
-    console.log(`Data chunk available: ${chunk}`)
-  })
+    console.log(`Data chunk available: ${chunk}`);
+  });
   req.on('end', () => {
-    //end of data
-  })
-})
+    // end of data
+  });
+});
 ```
 
 So to access the data, assuming we expect to receive a string, we must concatenate the chunks into a string when listening to the stream `data`, and when the stream `end`, we parse the string to JSON:
@@ -68,12 +69,12 @@ const server = http.createServer((req, res) => {
   let data = '';
   req.on('data', chunk => {
     data += chunk;
-  })
+  });
   req.on('end', () => {
     console.log(JSON.parse(data).todo); // 'Buy the milk'
     res.end();
-  })
-})
+  });
+});
 ```
 
 Starting from Node.js v10 a `for await .. of` syntax is available for use. It simplifies the example above and makes it look more linear:
@@ -90,5 +91,5 @@ const server = http.createServer(async (req, res) => {
 
   console.log(JSON.parse(data).todo); // 'Buy the milk'
   res.end();
-})
+});
 ```

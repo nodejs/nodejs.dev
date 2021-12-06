@@ -32,14 +32,15 @@ const obj = {
       age: 21,
       person3: {
         name: 'Peter',
-        age: 23
-      }
-    }
-  }
-}
-console.log(obj)
+        age: 23,
+      },
+    },
+  },
+};
+console.log(obj);
+```
 
-
+```console
 {
   name: 'joe',
   age: 35,
@@ -60,7 +61,7 @@ How can you print the whole object?
 The best way to do so, while preserving the pretty print, is to use
 
 ```js
-console.log(JSON.stringify(obj, null, 2))
+console.log(JSON.stringify(obj, null, 2));
 ```
 
 where `2` is the number of spaces to use for indentation.
@@ -68,8 +69,9 @@ where `2` is the number of spaces to use for indentation.
 Another option is to use
 
 ```js
-require('util').inspect.defaultOptions.depth = null
-console.log(obj)
+require('util').inspect.defaultOptions.depth = null;
+
+console.log(obj);
 ```
 
 but the problem is that the nested objects after level 2 are now flattened, and this might be a problem with complex objects.
@@ -79,11 +81,11 @@ If you don't want to touch any kinds of `defaultOptions`, a perfect alternative 
 ```js
 // `depth` tells util.inspect() how many times to recurse while formatting the object, default is 2
 console.dir(obj, {
-  depth: 10
-})
+  depth: 10,
+});
 
 // ...or pass `null` to recurse indefinitely
 console.dir(obj, {
-  depth: null
-})
+  depth: null,
+});
 ```

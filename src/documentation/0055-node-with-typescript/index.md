@@ -81,7 +81,7 @@ const isJustineAnAdult: string = isAdult(justine, "I shouldn't be here!");
 
 And this is what TypeScript has to say about this:
 
-```ts
+```console
 example.ts:12:3 - error TS2322: Type 'string' is not assignable to type 'number'.
 
 12   age: "Secret!",
