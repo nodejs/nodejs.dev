@@ -111,13 +111,13 @@ The REPL knows when you are typing a multi-line statement without the need to in
 
 For example if you start typing an iteration like this:
 
-```js
+```console
 [1, 2, 3].forEach(num => {
 ```
 
 and you press `enter`, the REPL will go to a new line that starts with 3 dots, indicating you can now continue to work on that block.
 
-```js
+```console
 ... console.log(num)
 ... })
 ```
@@ -154,8 +154,8 @@ node repl.js
 You can display a message while exiting the REPL
 
 ```js
-local.on('exit',() => {
-    console.log("exiting repl");
-    process.exit();
-})
+local.on('exit', () => {
+  console.log('exiting repl');
+  process.exit();
+});
 ```

@@ -9,27 +9,27 @@ category: learn
 The simplest way to read a file in Node.js is to use the `fs.readFile()` method, passing it the file path, encoding and a callback function that will be called with the file data (and the error):
 
 ```js
-const fs = require('fs')
+const fs = require('fs');
 
-fs.readFile('/Users/joe/test.txt', 'utf8' , (err, data) => {
+fs.readFile('/Users/joe/test.txt', 'utf8', (err, data) => {
   if (err) {
-    console.error(err)
-    return
+    console.error(err);
+    return;
   }
-  console.log(data)
-})
+  console.log(data);
+});
 ```
 
 Alternatively, you can use the synchronous version `fs.readFileSync()`:
 
 ```js
-const fs = require('fs')
+const fs = require('fs');
 
 try {
-  const data = fs.readFileSync('/Users/joe/test.txt', 'utf8')
-  console.log(data)
+  const data = fs.readFileSync('/Users/joe/test.txt', 'utf8');
+  console.log(data);
 } catch (err) {
-  console.error(err)
+  console.error(err);
 }
 ```
 

@@ -9,8 +9,9 @@ category: learn
 The `events` module provides us the EventEmitter class, which is key to working with events in Node.js.
 
 ```js
-const EventEmitter = require('events')
-const door = new EventEmitter()
+const EventEmitter = require('events');
+
+const door = new EventEmitter();
 ```
 
 The event listener has these in-built events:
@@ -29,7 +30,7 @@ Alias for `emitter.on()`.
 Emits an event. It synchronously calls every event listener in the order they were registered.
 
 ```js
-door.emit("slam") // emitting the event "slam"
+door.emit('slam'); // emitting the event "slam"
 ```
 
 ## `emitter.eventNames()`
@@ -37,7 +38,7 @@ door.emit("slam") // emitting the event "slam"
 Return an array of strings that represent the events registered on the current `EventEmitter` object:
 
 ```js
-door.eventNames()
+door.eventNames();
 ```
 
 ## `emitter.getMaxListeners()`
@@ -45,7 +46,7 @@ door.eventNames()
 Get the maximum amount of listeners one can add to an `EventEmitter` object, which defaults to 10 but can be increased or lowered by using `setMaxListeners()`
 
 ```js
-door.getMaxListeners()
+door.getMaxListeners();
 ```
 
 ## `emitter.listenerCount()`
@@ -53,7 +54,7 @@ door.getMaxListeners()
 Get the count of listeners of the event passed as parameter:
 
 ```js
-door.listenerCount('open')
+door.listenerCount('open');
 ```
 
 ## `emitter.listeners()`
@@ -61,7 +62,7 @@ door.listenerCount('open')
 Gets an array of listeners of the event passed as parameter:
 
 ```js
-door.listeners('open')
+door.listeners('open');
 ```
 
 ## `emitter.off()`
@@ -76,8 +77,8 @@ Usage:
 
 ```js
 door.on('open', () => {
-  console.log('Door was opened')
-})
+  console.log('Door was opened');
+});
 ```
 
 ## `emitter.once()`
@@ -85,12 +86,13 @@ door.on('open', () => {
 Adds a callback function that's called when an event is emitted for the first time after registering this. This callback is only going to be called once, never again.
 
 ```js
-const EventEmitter = require('events')
-const ee = new EventEmitter()
+const EventEmitter = require('events');
+
+const ee = new EventEmitter();
 
 ee.once('my-event', () => {
-  //call callback function once
-})
+  // call callback function once
+});
 ```
 
 ## `emitter.prependListener()`
@@ -106,7 +108,7 @@ When you add a listener using `once`, it's added last in the queue of listeners,
 Removes all listeners of an `EventEmitter` object listening to a specific event:
 
 ```js
-door.removeAllListeners('open')
+door.removeAllListeners('open');
 ```
 
 ## `emitter.removeListener()`
@@ -114,9 +116,9 @@ door.removeAllListeners('open')
 Remove a specific listener. You can do this by saving the callback function to a variable, when added, so you can reference it later:
 
 ```js
-const doSomething = () => {}
-door.on('open', doSomething)
-door.removeListener('open', doSomething)
+const doSomething = () => {};
+door.on('open', doSomething);
+door.removeListener('open', doSomething);
 ```
 
 ## `emitter.setMaxListeners()`
@@ -124,5 +126,5 @@ door.removeListener('open', doSomething)
 Sets the maximum amount of listeners one can add to an `EventEmitter` object, which defaults to 10 but can be increased or lowered.
 
 ```js
-door.setMaxListeners(50)
+door.setMaxListeners(50);
 ```
