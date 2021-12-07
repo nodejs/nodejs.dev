@@ -114,7 +114,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "4.3.0",
-    "eslint-plugin-testing-library": "^5.0.0",
+    "eslint-plugin-testing-library": "^5.0.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",
     "jest-fetch-mock": "^3.0.3",
