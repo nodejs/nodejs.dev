@@ -29,20 +29,20 @@
   git checkout -b <BRANCH_NAME>
   ```
 
-* Confirm tests, linting, and formatting are passing. See [here](#debugging-failing-checks) to fix failures
+* Confirm tests, linting, and formatting are passing. See [here](#-debugging-failing-checks) to fix failures
 
   ```bash
   npm test # Runs formatter and linter also
   ```
 
-* Commit your work. See [Commit Guidelines](#commit-guidelines)
+* Commit your work. See [Commit Guidelines](#-commit-message-guidelines)
 * Push to your branch
 
   ```bash
   git push -u origin <YOUR_BRANCH>
   ```
 
-* Open a pull request. See [PR Policy](#pull-request-policy)
+* Open a pull request. See [PR Policy](#-pull-request-policy)
 
 ## Vocabulary
 
