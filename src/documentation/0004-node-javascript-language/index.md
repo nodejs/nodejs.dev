@@ -21,7 +21,8 @@ I would recommend you to have a good grasp of the main JavaScript concepts befor
 * this
 * Arrow Functions
 * Loops
-* Scopes
+* Scope
+* Scope Chain
 * Arrays
 * Template Literals
 * Semicolons
