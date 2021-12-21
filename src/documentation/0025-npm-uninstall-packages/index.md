@@ -14,7 +14,7 @@ npm uninstall <package-name>
 
 from the project root folder (the folder that contains the node_modules folder).
 
-Using the `-S` flag, or `--save`, this operation will also remove the reference in the `package.json`, or `package-lock.json` files (this is the default, but you may need to use this if you have for instance save=false in your npmrc file). 
+Using the `-S` flag, or `--save`, this operation will also remove the reference in the `package.json`, or `package-lock.json` files (this is the default, but you may need to use this if you have for instance save=false in your npmrc file).
 
 The `--no-save` flag will tell npm not to remove the package from your `package.json`, or `package-lock.json` files.
 
