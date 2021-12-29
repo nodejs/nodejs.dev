@@ -15,7 +15,7 @@
     "@storybook/react": "^6.4.9",
     "@svgr/webpack": "^6.1.2",
     "@types/mdx-js__react": "^1.5.5",
-    "@types/react-tabs": "2.3.3",
+    "@types/react-tabs": "2.3.4",
     "babel-preset-react-app": "^10.0.1",
     "classnames": "^2.2.6",
     "color": "^4.1.0",
