@@ -106,7 +106,7 @@
     "babel-plugin-remove-graphql-queries": "^3.13.0",
     "babel-preset-gatsby": "2.4.0",
     "eslint": "^8.5.0",
-    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "2.5.0",
     "eslint-plugin-import": "^2.25.3",
