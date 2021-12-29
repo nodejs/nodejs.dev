@@ -124,7 +124,7 @@
     "remark-cli": "^10.0.1",
     "remark-frontmatter": "^4.0.1",
     "remark-preset-lint-node": "^3.3.0",
-    "stylelint": "^14.1.0",
+    "stylelint": "^14.2.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended-scss": "^5.0.2",
     "stylelint-config-sass-guidelines": "^9.0.1",
