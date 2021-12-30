@@ -19,6 +19,8 @@ module.exports = {
     config.module.rules[0].use[0].options.plugins = [
       // use @babel/plugin-proposal-class-properties for class arrow functions
       require.resolve('@babel/plugin-proposal-class-properties'),
+      require.resolve('@babel/plugin-proposal-private-methods'),
+      require.resolve('@babel/plugin-proposal-private-property-in-object'),
       // use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
       require.resolve('babel-plugin-remove-graphql-queries'),
     ];
@@ -33,6 +35,10 @@ module.exports = {
 
           plugins: [
             require.resolve('@babel/plugin-proposal-class-properties'),
+            require.resolve('@babel/plugin-proposal-private-methods'),
+            require.resolve(
+              '@babel/plugin-proposal-private-property-in-object'
+            ),
             // use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
             require.resolve('babel-plugin-remove-graphql-queries'),
           ],

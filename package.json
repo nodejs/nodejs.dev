@@ -86,7 +86,6 @@
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
-    "@storybook/semver": "^7.3.2",
     "@testing-library/dom": "^8.11.1",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -118,7 +117,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.5",
     "jest-fetch-mock": "^3.0.3",
-    "node-sass": "7.0.1",
+    "node-sass": "^6.0.1",
     "pa11y": "6.1.1",
     "prettier": "^2.5.1",
     "remark-cli": "^10.0.1",
