@@ -28,7 +28,7 @@ The `question()` method shows the first parameter (a question) and waits for the
 
 In this callback function, we close the readline interface.
 
-`readline` offers several other methods, and I'll let you check them out on the package documentation linked above.
+`readline` offers several other methods, please check them out on the package documentation linked above.
 
 If you need to require a password, it's best not to echo it back, but instead show a `*` symbol.
 
