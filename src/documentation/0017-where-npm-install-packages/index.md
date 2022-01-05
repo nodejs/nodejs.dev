@@ -38,4 +38,4 @@ On Windows it could be `C:\Users\YOU\AppData\Roaming\npm\node_modules`
 
 If you use `nvm` to manage Node.js versions, however, that location would differ.
 
-For example, if your username is 'joe' and you use `nvm`, then packages location will show as `/Users/joe/.nvm/versions/node/v8.9.0/lib/node_modules`. 
+For example, if your username is 'joe' and you use `nvm`, then packages location will show as `/Users/joe/.nvm/versions/node/v8.9.0/lib/node_modules`.
