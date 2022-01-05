@@ -1,26 +1,19 @@
-import fetch from 'node-fetch';
-
-import { getLatestNvmVersion } from '../../util-node/getNvmData';
-
-jest.mock('node-fetch');
-
-const mockFetch = fetch as jest.MockedFunction<typeof fetch>;
-
-const prepareMockFetch = ({
-  response = [{ name: 'mockVersionString' }] as any,
-} = {}) => {
-  mockFetch.mockResolvedValue({
-    json: () => Promise.resolve(response),
-  } as any);
-};
+import fetchMock from 'jest-fetch-mock';
 
 describe('getLatestNvmVersion', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    fetchMock.enableMocks();
+  });
+
+  afterEach(() => {
+    fetchMock.resetMocks();
   });
 
   it('returns the latest NVM version', async () => {
-    prepareMockFetch();
+    // import dynamically in order to apply mock for node-fetch
+    const getLatestNvmVersion = (await import('../../util-node/getNvmData'))
+      .default;
+    fetchMock.mockResponse(JSON.stringify([{ name: 'mockVersionString' }]));
 
     const result = await getLatestNvmVersion();
 
@@ -34,8 +27,11 @@ describe('getLatestNvmVersion', () => {
     ${[false]}        | ${'is not an array of objects'}
     ${[{}]}           | ${'contains objects without a name'}
     ${[{ name: 12 }]} | ${'contains objects with a non-string name'}
-  `('rejects response which $reason', ({ response }) => {
-    prepareMockFetch({ response });
+  `('rejects response which $reason', async ({ response }) => {
+    // import dynamically in order to apply mock for node-fetch
+    const getLatestNvmVersion = (await import('../../util-node/getNvmData'))
+      .default;
+    fetchMock.mockResponse(JSON.stringify(response));
 
     expect(getLatestNvmVersion()).rejects.toThrow('Unable to parse response');
   });
