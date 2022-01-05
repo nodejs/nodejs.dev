@@ -3,13 +3,19 @@ import React from 'react';
 import ShellBox from '../../ShellBox';
 import '../InstallTabs.scss';
 
-const LinuxPanel = (): JSX.Element => {
+interface Props {
+  nvmVersion: string;
+}
+
+const LinuxPanel = ({ nvmVersion }: Props): JSX.Element => {
+  const nvmInstallScriptUrl = `https://raw.githubusercontent.com/nvm-sh/nvm/${nvmVersion}/install.sh`;
+
   return (
     <div>
-      <ShellBox textToCopy="curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash">
+      <ShellBox textToCopy={`curl -o- ${nvmInstallScriptUrl} | bash`}>
         <span className="install__text__no-select">$</span>
         <span className="install__text__command"> curl -o- </span>
-        https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh
+        {nvmInstallScriptUrl}
         <span className="install__text__command"> | bash</span>
       </ShellBox>
       <ShellBox textToCopy="nvm install --lts">

@@ -4,7 +4,7 @@ import MacOSPanel from '../MacOSPanel';
 
 describe('Tests for MacOSPanel component', () => {
   it('renders correctly', () => {
-    const { container } = render(<MacOSPanel />);
+    const { container } = render(<MacOSPanel nvmVersion="mockVersionString" />);
     expect(container).toMatchSnapshot();
   });
 });

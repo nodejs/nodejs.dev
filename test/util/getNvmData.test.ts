@@ -17,7 +17,7 @@ describe('getLatestNvmVersion', () => {
 
     const result = await getLatestNvmVersion();
 
-    expect(result).toEqual('mockVersionString');
+    expect(result).toEqual({ version: 'mockVersionString' });
   });
 
   it.each`
