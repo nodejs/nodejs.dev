@@ -34,7 +34,6 @@ You can also install executable commands locally and run them using npx, but som
 Great examples of popular global packages which you might know are
 
 * `npm`
-* `create-react-app`
 * `vue-cli`
 * `grunt-cli`
 * `mocha`
