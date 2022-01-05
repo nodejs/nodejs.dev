@@ -68,6 +68,7 @@ const Index = ({
     },
     nodeReleases: { nodeReleasesLTSVersion },
     banners: { bannersIndex },
+    nvm: { nvmVersion },
   },
 }: HomepageProps): JSX.Element => {
   return (
@@ -82,7 +83,7 @@ const Index = ({
 
         <section className="node-demo-container">
           <div className="node-demo">
-            <InstallTabs />
+            <InstallTabs nvmVersion={nvmVersion} />
           </div>
           <LeafsIllustrationFront className="leafs-front animations" />
           <LeafsIllustrationMiddle className="leafs-middle animations" />
@@ -119,8 +120,14 @@ export interface HomeBannersIndex {
   };
 }
 
+export interface HomeNvmVersion {
+  nvm: {
+    nvmVersion: string;
+  };
+}
+
 interface HomepageProps {
-  data: HomepageData & HomeNodeReleases & HomeBannersIndex;
+  data: HomepageData & HomeNodeReleases & HomeBannersIndex & HomeNvmVersion;
 }
 
 export const query = graphql`
@@ -154,6 +161,9 @@ export const query = graphql`
         text
         startDate
       }
+    }
+    nvm {
+      nvmVersion: version
     }
   }
 `;

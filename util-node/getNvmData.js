@@ -14,7 +14,7 @@ const getLatestNvmVersion = async () => {
   }
 
   const [latestVersion] = nvmTagsData;
-  return latestVersion.name;
+  return { version: latestVersion.name };
 };
 
 module.exports = getLatestNvmVersion;

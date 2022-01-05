@@ -10,4 +10,6 @@ export default {
   component: InstallTabs,
 };
 
-export const root = (): JSX.Element => <InstallTabs />;
+export const root = (): JSX.Element => (
+  <InstallTabs nvmVersion="mockVersionString" />
+);

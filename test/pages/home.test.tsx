@@ -57,6 +57,9 @@ const mockData = {
   banners: {
     bannersIndex,
   },
+  nvm: {
+    nvmVersion: 'mockVersionString',
+  },
 };
 
 describe('Home page', () => {
