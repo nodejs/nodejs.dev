@@ -156,7 +156,7 @@ ECMAScript 2015 introduced the concept of the Job Queue, which is used by Promis
 
 Promises that resolve before the current function ends will be executed right after the current function.
 
-I find nice the analogy of a rollercoaster ride at an amusement park: the message queue puts you at the back of the queue, behind all the other people, where you will have to wait for your turn, while the job queue is the fastpass ticket that lets you take another ride right after you finished the previous one.
+Similar to a rollercoaster ride at an amusement park: the message queue puts you at the back of the queue, behind all the other people, where you will have to wait for your turn, while the job queue is the fastpass ticket that lets you take another ride right after you finished the previous one.
 
 Example:
 
