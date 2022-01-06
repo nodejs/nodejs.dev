@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import MacOSPanel from '../MacOSPanel';
+import { PureMacOSPanel as MacOSPanel } from '../MacOSPanel';
 
 describe('Tests for MacOSPanel component', () => {
   it('renders correctly', () => {
