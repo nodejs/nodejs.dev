@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import useNvmVersion from '../../../hooks/useNvmVersion';
 import ShellBox from '../../ShellBox';
 import '../InstallTabs.scss';
 
@@ -7,7 +8,7 @@ interface Props {
   nvmVersion: string;
 }
 
-const LinuxPanel = ({ nvmVersion }: Props): JSX.Element => {
+export const PureLinuxPanel = ({ nvmVersion }: Props): JSX.Element => {
   const nvmInstallScriptUrl = `https://raw.githubusercontent.com/nvm-sh/nvm/${nvmVersion}/install.sh`;
 
   return (
@@ -30,6 +31,12 @@ const LinuxPanel = ({ nvmVersion }: Props): JSX.Element => {
       </Link>
     </div>
   );
+};
+
+const LinuxPanel = (): JSX.Element => {
+  const nvmVersion = useNvmVersion();
+
+  return <PureLinuxPanel nvmVersion={nvmVersion} />;
 };
 
 export default LinuxPanel;

@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import useNvmVersion from '../../../hooks/useNvmVersion';
 import ShellBox from '../../ShellBox';
 import '../InstallTabs.scss';
 
@@ -7,7 +8,7 @@ interface Props {
   nvmVersion: string;
 }
 
-const MacOSPanel = ({ nvmVersion }: Props): JSX.Element => {
+export const PureMacOSPanel = ({ nvmVersion }: Props): JSX.Element => {
   const nvmInstallScriptUrl = `https://raw.githubusercontent.com/nvm-sh/nvm/${nvmVersion}/install.sh`;
 
   return (
@@ -32,6 +33,12 @@ const MacOSPanel = ({ nvmVersion }: Props): JSX.Element => {
       </Link>
     </div>
   );
+};
+
+const MacOSPanel = (): JSX.Element => {
+  const nvmVersion = useNvmVersion();
+
+  return <PureMacOSPanel nvmVersion={nvmVersion} />;
 };
 
 export default MacOSPanel;

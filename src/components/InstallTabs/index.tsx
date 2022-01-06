@@ -7,11 +7,7 @@ import WindowsPanel from './WindowsPanel';
 import MacOSPanel from './MacOSPanel';
 import LinuxPanel from './LinuxPanel';
 
-interface Props {
-  nvmVersion: string;
-}
-
-const InstallTabs = ({ nvmVersion }: Props): JSX.Element | null => {
+const InstallTabs = (): JSX.Element | null => {
   const userOS = detectOS();
 
   const os = {
@@ -34,13 +30,13 @@ const InstallTabs = ({ nvmVersion }: Props): JSX.Element | null => {
         return (
           <>
             <TabPanel>
-              <MacOSPanel nvmVersion={nvmVersion} />
+              <MacOSPanel />
             </TabPanel>
             <TabPanel>
               <WindowsPanel />
             </TabPanel>
             <TabPanel>
-              <LinuxPanel nvmVersion={nvmVersion} />
+              <LinuxPanel />
             </TabPanel>
           </>
         );
@@ -49,10 +45,10 @@ const InstallTabs = ({ nvmVersion }: Props): JSX.Element | null => {
         return (
           <>
             <TabPanel>
-              <LinuxPanel nvmVersion={nvmVersion} />
+              <LinuxPanel />
             </TabPanel>
             <TabPanel>
-              <MacOSPanel nvmVersion={nvmVersion} />
+              <MacOSPanel />
             </TabPanel>
             <TabPanel>
               <WindowsPanel />
@@ -66,10 +62,10 @@ const InstallTabs = ({ nvmVersion }: Props): JSX.Element | null => {
               <WindowsPanel />
             </TabPanel>
             <TabPanel>
-              <MacOSPanel nvmVersion={nvmVersion} />
+              <MacOSPanel />
             </TabPanel>
             <TabPanel>
-              <LinuxPanel nvmVersion={nvmVersion} />
+              <LinuxPanel />
             </TabPanel>
           </>
         );
