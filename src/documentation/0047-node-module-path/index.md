@@ -139,17 +139,17 @@ require('path').relative('/Users/joe', '/Users/joe/something/test.txt') //'somet
 You can get the absolute path calculation of a relative path using `path.resolve()`:
 
 ```js
-path.resolve('joe.txt') //'/Users/joe/joe.txt' if run from my home folder
+require('path').resolve('joe.txt') //'/Users/joe/joe.txt' if run from my home folder
 ```
 
 By specifying a second parameter, `resolve` will use the first as a base for the second:
 
 ```js
-path.resolve('tmp', 'joe.txt') //'/Users/joe/tmp/joe.txt' if run from my home folder
+require('path').resolve('tmp', 'joe.txt') //'/Users/joe/tmp/joe.txt' if run from my home folder
 ```
 
 If the first parameter starts with a slash, that means it's an absolute path:
 
 ```js
-path.resolve('/etc', 'joe.txt') //'/etc/joe.txt'
+require('path').resolve('/etc', 'joe.txt') //'/etc/joe.txt'
 ```
