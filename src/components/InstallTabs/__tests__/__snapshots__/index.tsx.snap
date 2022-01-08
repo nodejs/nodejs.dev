@@ -294,7 +294,7 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
               >
                  curl -o- 
               </span>
-              https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh
+              https://raw.githubusercontent.com/nvm-sh/nvm/mockVersionString/install.sh
               <span
                 class="install__text__command"
               >
@@ -459,7 +459,7 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
               >
                  curl -o- 
               </span>
-              https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh
+              https://raw.githubusercontent.com/nvm-sh/nvm/mockVersionString/install.sh
               <span
                 class="install__text__command"
               >
@@ -624,7 +624,7 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
               >
                 curl -o- 
               </span>
-              https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh
+              https://raw.githubusercontent.com/nvm-sh/nvm/mockVersionString/install.sh
               <span
                 class="install__text__command"
               >

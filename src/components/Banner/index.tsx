@@ -16,11 +16,7 @@ const Banner = ({
   return showBanner ? (
     <div className="banner">
       <p>
-        <a
-          href={`http://nodejs.org/en/${link}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={link} target="_blank" rel="noopener noreferrer">
           <button className="bannerButton" type="button">
             {config.bannerBtnText}
           </button>
