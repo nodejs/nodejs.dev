@@ -53,4 +53,42 @@ describe('Tests for Header component', () => {
     const bannerText = screen.queryByText(bannersIndex.text);
     expect(bannerText).not.toBeInTheDocument();
   });
+
+  it('should use the supplied relative link', () => {
+    const beforeToday = new Date();
+    beforeToday.setDate(beforeToday.getDate() - 1);
+    const afterToday = new Date();
+    afterToday.setDate(afterToday.getDate() + 1);
+
+    bannersIndex.startDate = beforeToday.toISOString();
+    bannersIndex.endDate = afterToday.toISOString();
+    bannersIndex.link = 'foo/bar';
+
+    render(<Banner bannersIndex={bannersIndex} />);
+
+    const bannerText = screen.getByText(bannersIndex.text);
+    expect(bannerText).toBeInTheDocument();
+
+    const bannerLink = bannerText.innerHTML;
+    expect(bannerLink).toMatch('http://nodejs.org/foo/bar');
+  });
+
+  it('should use the supplied absolute link', () => {
+    const beforeToday = new Date();
+    beforeToday.setDate(beforeToday.getDate() - 1);
+    const afterToday = new Date();
+    afterToday.setDate(afterToday.getDate() + 1);
+
+    bannersIndex.startDate = beforeToday.toISOString();
+    bannersIndex.endDate = afterToday.toISOString();
+    bannersIndex.link = 'https://nodejs.org/en/an-absolute-content';
+
+    render(<Banner bannersIndex={bannersIndex} />);
+
+    const bannerText = screen.getByText(bannersIndex.text);
+    expect(bannerText).toBeInTheDocument();
+
+    const bannerLink = bannerText.innerHTML;
+    expect(bannerLink).toMatch('https://nodejs.org/en/an-absolute-content');
+  });
 });
