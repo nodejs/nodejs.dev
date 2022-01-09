@@ -45,7 +45,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
           role="tab"
           tabindex="0"
         >
-          Windows (Chocolatey)
+          Windows (nvs)
         </li>
         <li
           aria-controls="react-tabs-3"
@@ -258,7 +258,7 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
           id="react-tabs-16"
           role="tab"
         >
-          Windows (Chocolatey)
+          Windows (nvs)
         </li>
       </ul>
       <div
@@ -423,7 +423,7 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
           id="react-tabs-22"
           role="tab"
         >
-          Windows (Chocolatey)
+          Windows (nvs)
         </li>
       </ul>
       <div
@@ -577,7 +577,7 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
           id="react-tabs-8"
           role="tab"
         >
-          Windows (Chocolatey)
+          Windows (nvs)
         </li>
         <li
           aria-controls="react-tabs-11"
@@ -735,7 +735,7 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
           role="tab"
           tabindex="0"
         >
-          Windows (Chocolatey)
+          Windows (nvs)
         </li>
         <li
           aria-controls="react-tabs-27"

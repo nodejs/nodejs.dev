@@ -223,7 +223,7 @@ exports[`Home page renders correctly 1`] = `
                   role="tab"
                   tabindex="0"
                 >
-                  Windows (Chocolatey)
+                  Windows (nvs)
                 </li>
                 <li
                   aria-controls="react-tabs-3"
