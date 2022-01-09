@@ -11,7 +11,7 @@ const InstallTabs = (): JSX.Element | null => {
   const userOS = detectOS();
 
   const os = {
-    win: 'Windows (Chocolatey)',
+    win: 'Windows (nvs)',
     mac: 'macOS (nvm)',
     linux: 'Linux (nvm)',
   };
