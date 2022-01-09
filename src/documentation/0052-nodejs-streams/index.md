@@ -249,14 +249,14 @@ First create a transform stream object:
 
 ```js
 const { Transform } = require('stream')
-const TransformStream = new Transform();
+const transformStream = new Transform();
 ```
 
 then implement `_transform`:
 
 ```js
-TransformStream._transform = (chunk, encoding, callback) => {
-  TransformStream.push(chunk.toString().toUpperCase());
+transformStream._transform = (chunk, encoding, callback) => {
+  transformStream.push(chunk.toString().toUpperCase());
   callback();
 }
 ```
@@ -264,5 +264,5 @@ TransformStream._transform = (chunk, encoding, callback) => {
 Pipe readable stream:
 
 ```js
-process.stdin.pipe(TransformStream).pipe(process.stdout);
+process.stdin.pipe(transformStream).pipe(process.stdout);
 ```

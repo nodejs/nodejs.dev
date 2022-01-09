@@ -1,10 +1,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import * as gatsby from 'gatsby';
 import InstallTabs from '../index';
 import * as detectOSModule from '../../../util/detectOS';
 import { UserOS } from '../../../util/detectOS';
 
 jest.mock('../../../util/detectOS');
+
+jest
+  .spyOn(gatsby, 'useStaticQuery')
+  .mockReturnValue({ nvm: { version: 'mockVersionString' } });
 
 describe('Tests for InstallTabs component', () => {
   it('renders correctly', () => {
