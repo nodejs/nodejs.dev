@@ -3,6 +3,7 @@ const path = require('path');
 const createSlug = require('./util-node/createSlug');
 const getNodeReleasesData = require('./util-node/getNodeReleasesData');
 const getBannersData = require('./util-node/getBannersData');
+const getNvmData = require('./util-node/getNvmData');
 const createPagesQuery = require('./util-node/createPagesQuery');
 const createDocPages = require('./util-node/createDocPages');
 const redirects = require('./util-node/redirects');
@@ -153,6 +154,29 @@ exports.sourceNodes = async ({
     await createNode({
       ...bannersData,
       ...bannersMeta,
+    });
+
+    activity.end();
+    activity = activityTimer('Fetching latest NVM version data');
+    activity.start();
+
+    const nvmData = await getNvmData();
+
+    const nvmMeta = {
+      id: createNodeId('nvm'),
+      parent: null,
+      children: [],
+      internal: {
+        type: 'Nvm',
+        mediaType: 'application/json',
+        content: JSON.stringify(nvmData),
+        contentDigest: createContentDigest(nvmData),
+      },
+    };
+
+    await createNode({
+      ...nvmData,
+      ...nvmMeta,
     });
 
     activity.end();

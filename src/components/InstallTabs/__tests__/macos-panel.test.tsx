@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import MacOSPanel from '../MacOSPanel';
+import { PureMacOSPanel as MacOSPanel } from '../MacOSPanel';
 
 describe('Tests for MacOSPanel component', () => {
   it('renders correctly', () => {
-    const { container } = render(<MacOSPanel />);
+    const { container } = render(<MacOSPanel nvmVersion="mockVersionString" />);
     expect(container).toMatchSnapshot();
   });
 });

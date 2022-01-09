@@ -1,15 +1,22 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import useNvmVersion from '../../../hooks/useNvmVersion';
 import ShellBox from '../../ShellBox';
 import '../InstallTabs.scss';
 
-const LinuxPanel = (): JSX.Element => {
+interface Props {
+  nvmVersion: string;
+}
+
+export const PureLinuxPanel = ({ nvmVersion }: Props): JSX.Element => {
+  const nvmInstallScriptUrl = `https://raw.githubusercontent.com/nvm-sh/nvm/${nvmVersion}/install.sh`;
+
   return (
     <div>
-      <ShellBox textToCopy="curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash">
+      <ShellBox textToCopy={`curl -o- ${nvmInstallScriptUrl} | bash`}>
         <span className="install__text__no-select">$</span>
         <span className="install__text__command"> curl -o- </span>
-        https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh
+        {nvmInstallScriptUrl}
         <span className="install__text__command"> | bash</span>
       </ShellBox>
       <ShellBox textToCopy="nvm install --lts">
@@ -24,6 +31,12 @@ const LinuxPanel = (): JSX.Element => {
       </Link>
     </div>
   );
+};
+
+const LinuxPanel = (): JSX.Element => {
+  const nvmVersion = useNvmVersion();
+
+  return <PureLinuxPanel nvmVersion={nvmVersion} />;
 };
 
 export default LinuxPanel;
