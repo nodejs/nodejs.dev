@@ -47,7 +47,7 @@
     "intersection-observer": "^0.12.0",
     "node-fetch": "^2.6.6",
     "prism-react-renderer": "^1.2.1",
-    "prismjs": "^1.25.0",
+    "prismjs": "^1.26.0",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-helmet": "^6.0.0",
