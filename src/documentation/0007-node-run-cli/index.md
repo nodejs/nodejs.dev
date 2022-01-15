@@ -48,6 +48,7 @@ You can also install nodemon as a development-dependency
 ```bash
 npm i --save-dev nodemon
 ```
+This local installation of nodemon can be run by calling it from within npm script such as npm start or using npx nodemon.
 
 Run the application using nodemon followed by application file name.
 
