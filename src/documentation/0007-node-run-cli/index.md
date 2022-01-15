@@ -38,11 +38,17 @@ While running the command, make sure you are in the same directory which contain
 
 The `node` command in bash has to be re-executed in bash whenever there is a change in the application, to update the application automatically, `nodemon` module is used. 
 
-Install the nodemon module
+Install the nodemon module globally to system path
 
 ```bash
-npm i nodemon
+npm i -g nodemon
 ```
+You can also install nodemon as a development-dependency
+
+```bash
+npm i --save-dev nodemon
+```
+
 Run the application using nodemon followed by application file name.
 
 ```bash 
