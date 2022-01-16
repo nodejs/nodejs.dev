@@ -36,7 +36,7 @@ chmod u+x app.js
 
 While running the command, make sure you are in the same directory which contains the `app.js` file.
 
-The `node` command in bash has to be re-executed in bash whenever there is a change in the application, to update the application automatically, `nodemon` module is used. 
+The `node` command in bash has to be re-executed in bash whenever there is a change in the application, to update the application automatically, `nodemon` module is used.
 
 Install the nodemon module globally to system path
 
@@ -54,6 +54,6 @@ This local installation of nodemon can be run by calling it from within npm scri
 
 Run the application using nodemon followed by application file name.
 
-```bash 
+```bash
 nodemon app.js
 ```
