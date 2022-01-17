@@ -13,7 +13,7 @@
     "@storybook/builder-webpack5": "^6.4.10",
     "@storybook/manager-webpack5": "^6.4.13",
     "@storybook/react": "^6.4.10",
-    "@svgr/webpack": "^6.1.2",
+    "@svgr/webpack": "^6.2.0",
     "@types/mdx-js__react": "^1.5.5",
     "@types/react-tabs": "2.3.4",
     "babel-preset-react-app": "^10.0.1",
