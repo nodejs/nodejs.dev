@@ -115,35 +115,47 @@ TypeScript offers a whole lot of other great mechanisms like interfaces, classes
 Some of the other benefits of TypeScript that are worth mentioning are that it can be adopted progressively, it helps making code more readable and understandable and it allows developers to use modern language features while shipping code for older Node.js versions.
 
 ## Using node packages with TypeScript
+
 Node packages generally are written in javascript and not TypeScript so we need to have type definitions for the packages.
 For this we need to install a third party package called `@types/node`.
-```
+
+```js
 npm install -D @types/node
 ```
+
 For example
 first we install a node pacakge (say express)
-```
+
+```js
 npm install express
 ```
+
 Then we will install the type definations for express
 
-```
+```js
 npm install -D @types/express
 ```
-require the package and its type definations 
-```ts
+
+require the package and its type definations
+
+```js
 import express, {Request,Response,Application} from 'express';
 ```
+
 initalize express with typeScript
-```ts
+
+```js
 const app:Application = express();
 ```
+
 setting an endpoint in
+
 ```js
 app.get("/", (req:Request, res:Response):void => {
   res.send("some response")
 });
 ```
+
 ## TypeScript in the Node.js world
 
 TypeScript is well-established in the Node.js world and used by many companies, open-source projects, tools and frameworks.
