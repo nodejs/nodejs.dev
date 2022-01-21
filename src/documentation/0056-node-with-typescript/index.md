@@ -130,7 +130,7 @@ Then we will install the type definations for express
 ```
 npm install -D @types/express
 ```
-import the package and its type definations
+require the package and its type definations 
 ```ts
 import express, {Request,Response,Application} from 'express';
 ```
