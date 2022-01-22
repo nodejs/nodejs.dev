@@ -116,7 +116,7 @@ Some of the other benefits of TypeScript that are worth mentioning are that it c
 
 ## Using node packages with TypeScript
 
-Node packages generally are written in javascript and not TypeScript so we need to have type definitions for the packages.
+Node packages generally are written in Javascript and not TypeScript so we need to have type definitions for the packages.
 For this we need to install a third party package called `@types/node`.
 
 ```js
@@ -124,19 +124,19 @@ npm install -D @types/node
 ```
 
 For example
-first we install a node pacakge (say express)
+first we install a node package (say express)
 
 ```js
 npm install express
 ```
 
-Then we will install the type definations for express
+Then we will install the type definitions for express
 
 ```js
 npm install -D @types/express
 ```
 
-require the package and its type definations
+require the package and its type definitions
 
 ```js
 import express, {Request,Response,Application} from 'express';
@@ -148,7 +148,7 @@ initalize express with typeScript
 const app:Application = express();
 ```
 
-setting an endpoint in
+Creating an endpoint in
 
 ```js
 app.get("/", (req:Request, res:Response):void => {
