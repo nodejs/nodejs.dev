@@ -35,3 +35,27 @@ chmod u+x app.js
 ```
 
 While running the command, make sure you are in the same directory which contains the `app.js` file.
+
+## Restart the application automatically
+
+The `node` command has to be re-executed in bash whenever there is a change in the application, to restart the application automatically, `nodemon` module is used.
+
+Install the nodemon module globally to system path
+
+```bash
+npm i -g nodemon
+```
+
+You can also install nodemon as a development-dependency
+
+```bash
+npm i --save-dev nodemon
+```
+
+This local installation of nodemon can be run by calling it from within npm script such as npm start or using npx nodemon.
+
+Run the application using nodemon followed by application file name.
+
+```bash
+nodemon app.js
+```
