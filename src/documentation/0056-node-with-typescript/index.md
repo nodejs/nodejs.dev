@@ -117,14 +117,40 @@ Some of the other benefits of TypeScript that are worth mentioning are that it c
 ## Using node packages with TypeScript
 
 Node packages generally are written in Javascript and not TypeScript so we need to have type definitions for the packages.
-For this we need to install a third party package called `@types/node`.
+To use the built-in node modules (eg. 'http/stream') we need to install the type definitions
 
 ```js
 npm install -D @types/node
 ```
 
-For example
-first we install a node package (say express)
+To use the built-in node module with TypeScript
+
+```js
+import http, { RequestOptions, IncomingMessage } from "http";
+
+const options: RequestOptions = {
+  path: "/api/test",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  host: "localhost",
+};
+
+const handler = async (res: IncomingMessage) => {
+  const data: any[] = [];
+  res.on("data", (chunk) => {
+    data.push(chunk);
+  });
+  res.on("end", () => {
+    console.log(data.toString());
+  });
+};
+
+http.request(options, handler).end();
+```
+
+We can also install type definitions for third party modules if they don't have the type definations in themselves
+Such as
 
 ```js
 npm install express
@@ -142,7 +168,7 @@ require the package and its type definitions
 import express, {Request,Response,Application} from 'express';
 ```
 
-initalize express with typeScript
+initialize express with TypeScript
 
 ```js
 const app:Application = express();
