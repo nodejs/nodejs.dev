@@ -5,6 +5,7 @@ import { ReactComponent as LogoLight } from '../../images/logos/nodejs-logo-ligh
 import { ReactComponent as LogoDark } from '../../images/logos/nodejs-logo-dark-mode.svg';
 import { ReactComponent as GitHubLogo } from '../../images/logos/github-logo.svg';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
+import SearchBar from '../SearchBar';
 
 const Header = (): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
@@ -80,6 +81,12 @@ const Header = (): JSX.Element => {
 
         <div className="nav__endwrapper">
           <ul className="right-container">
+            <li className="nav__tabs">
+              {typeof window !== `undefined` &&
+              window.location.pathname.includes('learn') ? (
+                <SearchBar />
+              ) : null}
+            </li>
             <li className="nav__tabs nav__tabs--right">
               <ThemeToggler>
                 {({

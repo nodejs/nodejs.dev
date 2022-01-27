@@ -601,3 +601,9 @@ h6:hover .autolink-headers {
   justify-content: stretch;
   width: fit-content;
 }
+
+.nav .right-container > li:first-child {
+  height: 3em;
+  position: relative;
+  top: 0;
+}

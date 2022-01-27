@@ -80,6 +80,9 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
           class="right-container"
         >
           <li
+            class="nav__tabs"
+          />
+          <li
             class="nav__tabs nav__tabs--right"
           />
           <li
@@ -187,6 +190,9 @@ exports[`Tests for Header component renders correctly 1`] = `
         <ul
           class="right-container"
         >
+          <li
+            class="nav__tabs"
+          />
           <li
             class="nav__tabs nav__tabs--right"
           >
@@ -316,6 +322,9 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
         <ul
           class="right-container"
         >
+          <li
+            class="nav__tabs"
+          />
           <li
             class="nav__tabs nav__tabs--right"
           >

@@ -80,6 +80,9 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
           class="right-container"
         >
           <li
+            class="nav__tabs"
+          />
+          <li
             class="nav__tabs nav__tabs--right"
           >
             <button
@@ -324,6 +327,9 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
         <ul
           class="right-container"
         >
+          <li
+            class="nav__tabs"
+          />
           <li
             class="nav__tabs nav__tabs--right"
           >
