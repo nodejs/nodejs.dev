@@ -73,3 +73,17 @@ console.log(obj)
 ```
 
 but the problem is that the nested objects after level 2 are now flattened, and this might be a problem with complex objects.
+
+If you don't want to touch any kinds of `defaultOptions`, a perfect alternative is `console.dir`.
+
+```js
+// `depth` tells util.inspect() how many times to recurse while formatting the object, default is 2
+console.dir(obj, {
+  depth: 10
+})
+
+// ...or pass `null` to recurse indefinitely
+console.dir(obj, {
+  depth: null
+})
+```
