@@ -119,7 +119,7 @@ Some of the other benefits of TypeScript that are worth mentioning are that it c
 Node packages generally are written in Javascript and not TypeScript so we need to have type definitions for the packages.
 To use the built-in node modules (eg. 'http/stream') we need to install the type definitions
 
-```js
+```bash
 npm install -D @types/node
 ```
 
@@ -152,13 +152,13 @@ http.request(options, handler).end();
 We can also install type definitions for third party modules if they don't have the type definations in themselves
 Such as
 
-```js
+```bash
 npm install express
 ```
 
 Then we will install the type definitions for express
 
-```js
+```bash
 npm install -D @types/express
 ```
 
