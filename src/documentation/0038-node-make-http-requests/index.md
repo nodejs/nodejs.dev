@@ -56,7 +56,7 @@ axios
 
 Axios requires the use of a 3rd party library.
 
-A POST request is possible just using the Node.js standard modules, although it's more verbose than the two preceding options:
+A POST request is possible just using the Node.js standard modules, although it's more verbose than the above:
 
 ```js
 const https = require('https')
