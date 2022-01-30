@@ -123,3 +123,39 @@ and you press `enter`, the REPL will go to a new line that starts with 3 dots, i
 ```
 
 If you type `.break` at the end of a line, the multiline mode will stop and the statement will not be executed.
+
+## Run REPL from javascript file
+
+We can import the REPL in javascript file using `repl`.
+
+```js
+var repl = require('repl');
+```
+
+Using the repl variable we can perform various operations.
+To start the REPL command prompt, type in the following line
+
+```js
+var local = repl.start(prompt);
+```
+
+repl.start() starts the repl environment and the prompt is a string that accepts the prompt which shows when repl starts, default is '>'.We can define custom prompts.
+
+Run the file in the command line.
+
+```bash
+node repl.js
+```
+
+```console
+>var n = 10
+```
+
+You can display a message while exiting REPL
+
+```js
+local.on('exit',() => {
+    console.log("exiting repl");
+    process.exit();
+})
+```
