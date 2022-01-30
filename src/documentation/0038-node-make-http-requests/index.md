@@ -8,6 +8,28 @@ category: learn
 
 ## Perform a GET Request
 
+There are many ways to perform an HTTP GET request in Node.js, depending on the abstraction level you want to use.
+
+The simplest way to perform an HTTP request using Node.js is to use the [Axios library](https://github.com/axios/axios):
+
+```js
+const axios = require('axios')
+
+axios
+  .get('https://example.com/todos')
+  .then(res => {
+    console.log(`statusCode: ${res.status}`)
+    console.log(res)
+  })
+  .catch(error => {
+    console.error(error)
+  })
+```
+
+However, Axios requires the use of a 3rd party library.
+
+A GET request is possible just using the Node.js standard modules, although it's more verbose than the option above:
+
 ```js
 const https = require('https')
 const options = {
@@ -34,9 +56,7 @@ req.end()
 
 ## Perform a POST Request
 
-There are many ways to perform an HTTP POST request in Node.js, depending on the abstraction level you want to use.
-
-The simplest way to perform an HTTP request using Node.js is to use the [Axios library](https://github.com/axios/axios):
+Similar to making an HTTP GET request, you can use the [Axios library](https://github.com/axios/axios) library to perform a POST request:
 
 ```js
 const axios = require('axios')
@@ -54,9 +74,7 @@ axios
   })
 ```
 
-Axios requires the use of a 3rd party library.
-
-A POST request is possible just using the Node.js standard modules, although it's more verbose than the above:
+Or alternatively, use Node.js standard modules:
 
 ```js
 const https = require('https')
