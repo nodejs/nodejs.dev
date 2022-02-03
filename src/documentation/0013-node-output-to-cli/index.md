@@ -31,7 +31,7 @@ We can also format pretty phrases by passing variables and a format specifier.
 For example:
 
 ```js
-console.log('My %s has %d years', 'cat', 2)
+console.log('My %s has %d ears', 'cat', 2)
 ```
 
 * `%s` format a variable as a string
