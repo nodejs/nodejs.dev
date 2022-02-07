@@ -86,7 +86,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.12",
     "@babel/preset-typescript": "^7.16.7",
-    "@testing-library/dom": "^8.11.2",
+    "@testing-library/dom": "^8.11.3",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
