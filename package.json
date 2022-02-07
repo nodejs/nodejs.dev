@@ -103,7 +103,7 @@
     "babel-jest": "^27.4.4",
     "babel-loader": "^8.2.3",
     "babel-plugin-remove-graphql-queries": "^3.13.0",
-    "babel-preset-gatsby": "2.5.2",
+    "babel-preset-gatsby": "2.6.0",
     "eslint": "^8.7.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
