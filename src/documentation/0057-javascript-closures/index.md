@@ -10,7 +10,6 @@ category: learn
 
 A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
 
-
 A **closure** is the combination of a function bundled together (enclosed) with references to its surrounding state (the **lexical environment**). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
 
 ## Lexical scoping
@@ -62,7 +61,7 @@ Situations where you might want to do this are particularly common on the web. M
 
 For instance, suppose we want to add buttons to a page to adjust the text size. One way of doing this is to specify the font-size of the `body` element (in pixels), and then set the size of the other elements on the page (such as headers) using the relative `em` unit:
 
-```css
+```
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -98,7 +97,7 @@ document.getElementById('size-14').onclick = size14;
 document.getElementById('size-16').onclick = size16;
 ```
 
-```html
+```
 <a href="#" id="size-12">12</a>
 <a href="#" id="size-14">14</a>
 <a href="#" id="size-16">16</a>
@@ -182,9 +181,9 @@ Notice how the two counters maintain their independence from one another. Each c
 
 Every closure has three scopes:
 
-- Local Scope (Own scope)
-- Outer Functions Scope
-- Global Scope
+* Local Scope (Own scope)
+* Outer Functions Scope
+* Global Scope
 
 A common mistake is not realizing that in the case where the outer function is itself a nested function, access to the outer function's scope includes the enclosing scope of the outer function—effectively creating a chain of function scopes. To demonstrate, consider the following example code.
 
@@ -230,7 +229,7 @@ In the example above, there's a series of nested functions, all of which have ac
 
 Prior to the introduction of the `let` keyword in ECMAScript 2015, a common problem with closures occurred when you created them inside a loop. To demonstrate, consider the following example code.
 
-```html
+```
 <p id="help">Helpful notes will appear here</p>
 <p>E-mail: <input type="text" id="email" name="email"></p>
 <p>Name: <input type="text" id="name" name="name"></p>
