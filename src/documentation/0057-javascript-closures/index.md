@@ -30,8 +30,6 @@ init();
 
 `init()` creates a local variable called `name` and a function called `displayName()`. The `displayName()` function is an inner function that is defined inside `init()` and is available only within the body of the `init()` function. Note that the `displayName()` function has no local variables of its own. However, since inner functions have access to the variables of outer functions, `displayName()` can access the variable `name` declared in the parent function, `init()`.
 
-Run the code using [this JSFiddle link](https://jsfiddle.net/xAFs9/3/) and notice that the `alert()` statement within the `displayName()` function successfully displays the value of the `name` variable, which is declared in its parent function. This is an example of _lexical_ _scoping_, which describes how a parser resolves variable names when functions are nested. The word *lexical* refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Nested functions have access to variables declared in their outer scope.
-
 ## Closure
 
 Consider the following code example:
@@ -53,26 +51,6 @@ Running this code has exactly the same effect as the previous example of the `in
 At first glance, it might seem unintuitive that this code still works. In some programming languages, the local variables within a function exist for just the duration of that function's execution. Once `makeFunc()` finishes executing, you might expect that the name variable would no longer be accessible. However, because the code still works as expected, this is obviously not the case in JavaScript.
 
 The reason is that functions in JavaScript form closures. A _closure_ is the combination of a function and the lexical environment within which that function was declared. This environment consists of any local variables that were in-scope at the time the closure was created. In this case, `myFunc` is a reference to the instance of the function `displayName` that is created when `makeFunc` is run. The instance of `displayName` maintains a reference to its lexical environment, within which the variable `name` exists. For this reason, when `myFunc` is invoked, the variable `name` remains available for use, and "Node" is passed to `alert`.
-
-Here's a slightly more interesting example—a `makeAdder` function:
-
-```js
-function makeAdder(x) {
-  return function(y) {
-    return x + y;
-  };
-}
-var add5 = makeAdder(5);
-var add10 = makeAdder(10);
-console.log(add5(2));  // 7
-console.log(add10(2)); // 12
-```
-
-In this example, we have defined a function `makeAdder(x)`, that takes a single argument `x`, and returns a new function. The function it returns takes a single argument `y`, and returns the sum of `x` and `y`.
-
-In essence, `makeAdder` is a function factory. It creates functions that can add a specific value to their argument. In the above example, the function factory creates two new functions—one that adds five to its argument, and one that adds 10.
-
-`add5` and `add10` are both closures. They share the same function body definition, but store different lexical environments. In `add5`'s lexical environment, `x` is 5, while in the lexical environment for `add10`, `x` is 10.
 
 ## Practical closures
 
@@ -275,110 +253,6 @@ function setupHelp() {
       showHelp(item.help);
     }
   }
-}
-setupHelp();
-```
-
-Try running the code in JSFiddle.
-
-The `helpText` array defines three helpful hints, each associated with the ID of an input field in the document. The loop cycles through these definitions, hooking up an `onfocus` event to each one that shows the associated help method.
-
-If you try this code out, you'll see that it doesn't work as expected. No matter what field you focus on, the message about your age will be displayed.
-
-The reason for this is that the functions assigned to `onfocus` are closures; they consist of the function definition and the captured environment from the `setupHelp` function's scope. Three closures have been created by the loop, but each one shares the same single lexical environment, which has a variable with changing values (`item`). This is because the variable `item` is declared with `var` and thus has function scope due to hoisting. The value of `item.help` is determined when the `onfocus` callbacks are executed. Because the loop has already run its course by that time, the `item` variable object (shared by all three closures) has been left pointing to the last entry in the `helpText` list.
-
-One solution in this case is to use more closures: in particular, to use a function factory as described earlier:
-
-```js
-function showHelp(help) {
-  document.getElementById('help').textContent = help;
-}
-function makeHelpCallback(help) {
-  return function() {
-    showHelp(help);
-  };
-}
-function setupHelp() {
-  var helpText = [
-      {'id': 'email', 'help': 'Your e-mail address'},
-      {'id': 'name', 'help': 'Your full name'},
-      {'id': 'age', 'help': 'Your age (you must be over 16)'}
-    ];
-  for (var i = 0; i < helpText.length; i++) {
-    var item = helpText[i];
-    document.getElementById(item.id).onfocus = makeHelpCallback(item.help);
-  }
-}
-setupHelp();
-```
-
-Run the code using this JSFiddle link
-
-This works as expected. Rather than the callbacks all sharing a single lexical environment, the `makeHelpCallback` function creates _a new lexical environment_ for each callback, in which `help` refers to the corresponding string from the `helpText` array.
-
-One other way to write the above using anonymous closures is:
-
-```js
-function showHelp(help) {
-  document.getElementById('help').textContent = help;
-}
-function setupHelp() {
-  var helpText = [
-      {'id': 'email', 'help': 'Your e-mail address'},
-      {'id': 'name', 'help': 'Your full name'},
-      {'id': 'age', 'help': 'Your age (you must be over 16)'}
-    ];
-  for (var i = 0; i < helpText.length; i++) {
-    (function() {
-       var item = helpText[i];
-       document.getElementById(item.id).onfocus = function() {
-         showHelp(item.help);
-       }
-    })(); // Immediate event listener attachment with the current value of item (preserved until iteration).
-  }
-}
-setupHelp();
-```
-
-If you don't want to use more closures, you can use the `let` keyword introduced in ES2015 :
-
-```js
-function showHelp(help) {
-  document.getElementById('help').textContent = help;
-}
-function setupHelp() {
-  var helpText = [
-      {'id': 'email', 'help': 'Your e-mail address'},
-      {'id': 'name', 'help': 'Your full name'},
-      {'id': 'age', 'help': 'Your age (you must be over 16)'}
-    ];
-  for (let i = 0; i < helpText.length; i++) {
-    let item = helpText[i];
-    document.getElementById(item.id).onfocus = function() {
-      showHelp(item.help);
-    }
-  }
-}
-setupHelp();
-```
-
-This example uses `let` instead of `var`, so every closure binds the block-scoped variable, meaning that no additional closures are required.
-
-```js
-function showHelp(help) {
-  document.getElementById('help').textContent = help;
-}
-function setupHelp() {
-  var helpText = [
-      {'id': 'email', 'help': 'Your e-mail address'},
-      {'id': 'name', 'help': 'Your full name'},
-      {'id': 'age', 'help': 'Your age (you must be over 16)'}
-    ];
-  helpText.forEach(function(text) {
-    document.getElementById(text.id).onfocus = function() {
-      showHelp(text.help);
-    }
-  });
 }
 setupHelp();
 ```
