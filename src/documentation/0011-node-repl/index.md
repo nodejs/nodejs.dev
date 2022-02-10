@@ -129,14 +129,14 @@ If you type `.break` at the end of a line, the multiline mode will stop and the 
 We can import the REPL in javascript file using `repl`.
 
 ```js
-var repl = require('repl');
+const repl = require('repl');
 ```
 
 Using the repl variable we can perform various operations.
 To start the REPL command prompt, type in the following line
 
 ```js
-var local = repl.start(prompt);
+const local = repl.start(prompt);
 ```
 
 repl.start() starts the repl environment and the prompt is a string that accepts the prompt which shows when repl starts, default is '>'.We can define custom prompts.
@@ -148,7 +148,7 @@ node repl.js
 ```
 
 ```console
->var n = 10
+>const n = 10
 ```
 
 You can display a message while exiting REPL
