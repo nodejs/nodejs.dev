@@ -23,7 +23,7 @@ fs.stat('/Users/joe/test.txt', (err, stats) => {
 })
 ```
 
-Node.js provides also a sync method, which blocks the thread until the file stats are ready:
+Node.js also provides a sync method, which blocks the thread until the file stats are ready:
 
 ```js
 const fs = require('fs')
