@@ -30,6 +30,6 @@ Since JavaScript moves so fast, but browsers can be a bit slow to upgrade, somet
 
 You can use Babel to transform your code to be ES5-compatible before shipping it to the browser, but in Node.js, you won't need that.
 
-Another difference is that Node.js uses the CommonJS module system, while in the browser we are starting to see the ES Modules standard being implemented.
+Another difference is that Node.js supports both the CommonJS and ES module systems (since Node.js v12), while in the browser we are starting to see the ES Modules standard being implemented.
 
-In practice, this means that for the time being you use `require()` in Node.js and `import` in the browser.
+In practice, this means that you can use both `require()` and `import` in Node.js, while you are limited to `import` in the browser.
