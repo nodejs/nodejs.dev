@@ -21,6 +21,12 @@ so when should you install in one way or another?
 
 In general, **all packages should be installed locally**.
 
+To install npm packages locally, simply use:
+
+`npm install 'package-name'`
+
+This will install node modules locally specific to that project and will not disturb other projects.
+
 This makes sure you can have dozens of applications in your computer, all running a different version of each package if needed.
 
 Updating a global package would make all your projects use the new release, and as you can imagine this might cause nightmares in terms of maintenance, as some packages might break compatibility with further dependencies, and so on.
@@ -49,3 +55,5 @@ npm list -g --depth 0
 ```
 
 on your command line.
+
+
