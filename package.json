@@ -18,7 +18,7 @@
     "@types/react-tabs": "2.3.4",
     "babel-preset-react-app": "^10.0.1",
     "classnames": "^2.2.6",
-    "color": "^4.2.0",
+    "color": "^4.2.1",
     "color-string": "^1.9.0",
     "dompurify": "2.3.5",
     "dotenv": "^16.0.0",
