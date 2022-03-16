@@ -27,7 +27,7 @@ Once you do so, you have access to all its methods, which include:
 * `fs.link()`: create a new hard link to a file
 * `fs.mkdir()`: create a new folder
 * `fs.mkdtemp()`: create a temporary directory
-* `fs.open()`: set the file mode
+* `fs.open()`: opens the file and returns a file descriptor to allow file manipulation
 * `fs.readdir()`: read the contents of a directory
 * `fs.readFile()`: read the content of a file. Related: `fs.read()`
 * `fs.readlink()`: read the value of a symbolic link
