@@ -94,9 +94,9 @@ apples.forEach(fruit => {
 })
 ```
 ## Reset counting
-The console.countReset() method resets counter used with console.count().
+The console.countReset() method resets the counter used with console.count().
 
-We will use the apples and orange example to demonstrate this.
+We will use the apple and oranges example to demonstrate this.
 
 ```js
 const oranges = ['orange', 'orange']
