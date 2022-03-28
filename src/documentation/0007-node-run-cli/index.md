@@ -16,13 +16,13 @@ node app.js
 
 Above, you are explicitly telling the shell to run your script with `node`. You can also embed this information into your JavaScript file with a "shebang" line. The "shebang" is the first line in the file, and tells the OS which interpreter to use for running the script. Below is the first line of JavaScript:
 
-```app.js
+```JS
 #!/usr/bin/node
 ```
 
 Above, we are explicitly giving the absolute path of interpreter. Not all operating systems have `node` in the bin folder, but all should have `env`. You can tell the OS to run `env` with node as parameter:
 
-```app.js
+```JS
 #!/usr/bin/env node
 
 // your code
