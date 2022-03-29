@@ -16,7 +16,7 @@ It started as a way to download and manage dependencies of Node.js packages, but
 
 There are many things that `npm` does.
 
-> [**Yarn**](https://yarnpkg.com/en/) and [**pnpm**](https://pnpm.js.org/) are alternatives to npm cli. You can check them out as well.
+> [**Yarn**](https://yarnpkg.com/en/) and [**pnpm**](https://pnpm.io) are alternatives to npm cli. You can check them out as well.
 
 ## Downloads
 
