@@ -141,7 +141,7 @@ More in the `http.Agent` class description later on.
 
 ### `http.createServer()`
 
-Return a new instance of the `http.Server` class.
+Returns a new instance of the `http.Server` class.
 
 Usage:
 
