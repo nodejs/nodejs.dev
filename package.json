@@ -10,7 +10,7 @@
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-links": "^6.4.19",
     "@storybook/addons": "^6.4.19",
-    "@storybook/builder-webpack5": "^6.4.19",
+    "@storybook/builder-webpack5": "^6.4.20",
     "@storybook/manager-webpack5": "^6.4.19",
     "@storybook/react": "^6.4.19",
     "@svgr/webpack": "^6.2.1",
