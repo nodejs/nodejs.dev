@@ -87,7 +87,7 @@
     "@babel/core": "^7.17.5",
     "@babel/preset-typescript": "^7.16.7",
     "@testing-library/dom": "^8.11.3",
-    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "@types/classnames": "^2.3.1",
