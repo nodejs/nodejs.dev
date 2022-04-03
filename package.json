@@ -99,7 +99,7 @@
     "@types/react-helmet": "6.1.5",
     "@types/throttle-debounce": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
-    "@typescript-eslint/parser": "^5.14.0",
+    "@typescript-eslint/parser": "^5.17.0",
     "babel-jest": "^27.4.4",
     "babel-loader": "^8.2.3",
     "babel-plugin-remove-graphql-queries": "^3.13.0",
