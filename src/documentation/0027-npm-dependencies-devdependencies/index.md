@@ -8,7 +8,7 @@ category: learn
 
 When you install an npm package using `npm install <package-name>`, you are installing it as a **dependency**.
 
-The package is automatically listed in the package.json file, under the `dependencies` list (as of npm 5: before you had to manually specify `--save`).
+The package is automatically listed in the package.json file, under the `dependencies` list (as of npm 5. previously, you had to manually specify `--save`).
 
 When you add the `-D` flag, or `--save-dev`, you are installing it as a development dependency, which adds it to the `devDependencies` list.
 
