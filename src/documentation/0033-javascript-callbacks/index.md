@@ -124,7 +124,7 @@ window.addEventListener('load', () => {
 })
 ```
 
-This is just a simple 4-levels code, but I've seen much more levels of nesting and it's not fun.
+This is just some simple 4-level code, but I've seen many more levels of nesting and it's not fun.
 
 How do we solve this?
 
