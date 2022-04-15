@@ -54,7 +54,7 @@ app.listen(3000, () => console.log('Server ready'))
 
 This program is never going to end. If you call `process.exit()`, any currently pending or running request is going to be aborted. This is _not nice_.
 
-In this case you need to send the command a SIGTERM signal, and handle that with the process signal handler:
+It is better to allow running request to complete before terminating. In this case you need to send the command a SIGTERM signal, and handle that with the process signal handler:
 
 > Note: `process` does not require a "require", it's automatically available.
 
