@@ -8,7 +8,7 @@ category: learn
 
 Here is how you can extract the data that was sent as JSON in the request body.
 
-If you are using Express, that's quite simple: use the `body-parser` Node.js module.
+If you are using Express, that's quite simple: use the `express.json()` middleware which is available in Express v4.16.0 onwards.
 
 For example, to get the body of this request:
 
