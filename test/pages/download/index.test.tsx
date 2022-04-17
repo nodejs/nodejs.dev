@@ -35,12 +35,12 @@ describe('Download page', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should handle LTS to Current switch', () => {
+  it('should handle LTS to Current switch', async () => {
     const { container } = render(
       <DownloadPage location={window.location} data={nodeReleaseData} />
     );
 
-    userEvent.click(screen.getAllByText('Current')[0]);
+    await userEvent.click(screen.getAllByText('Current')[0]);
 
     expect(container).toMatchSnapshot();
   });

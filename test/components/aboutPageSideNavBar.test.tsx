@@ -30,25 +30,25 @@ describe('AboutPageSideNavBar', () => {
     const activeLinks = innrerHtml.match('side-nav__item-community--active');
     expect(activeLinks.length).toBe(1);
   });
-  it('should set the body oveflow hidden on menu click', () => {
+  it('should set the body oveflow hidden on menu click', async () => {
     render(<AboutPageSideNavBar pageKey={SideNavBarKeys.releases} />);
     const downloadItem: Element = screen.getAllByRole('button')[0] as Element;
     expect(document.body.style.overflow).toBe(OverflowTypes.unset);
-    userEvent.click(downloadItem);
+    await userEvent.click(downloadItem);
     expect(document.body.style.overflow).toBe(OverflowTypes.hidden);
   });
 
-  fit('should set the body overflow hidden/unset on toggling', () => {
+  fit('should set the body overflow hidden/unset on toggling', async () => {
     render(<AboutPageSideNavBar pageKey={SideNavBarKeys.releases} />);
     const downloadItem: Element = screen.getAllByRole('button')[0] as Element;
     expect(document.body.style.overflow).toBe(OverflowTypes.unset);
-    userEvent.click(downloadItem);
+    await userEvent.click(downloadItem);
     expect(document.body.style.overflow).toBe(OverflowTypes.hidden);
-    userEvent.click(downloadItem);
+    await userEvent.click(downloadItem);
     expect(document.body.style.overflow).toBe(OverflowTypes.unset);
-    userEvent.click(downloadItem);
+    await userEvent.click(downloadItem);
     expect(document.body.style.overflow).toBe(OverflowTypes.hidden);
-    userEvent.click(downloadItem);
+    await userEvent.click(downloadItem);
     expect(document.body.style.overflow).toBe(OverflowTypes.unset);
   });
 });
