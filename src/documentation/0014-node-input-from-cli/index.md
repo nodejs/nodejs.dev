@@ -22,7 +22,7 @@ readline.question(`What's your name?`, name => {
 })
 ```
 
-This piece of code asks the username, and once the text is entered and the user presses enter, we send a greeting.
+This piece of code asks the user's _name_, and once the text is entered and the user presses enter, we send a greeting.
 
 The `question()` method shows the first parameter (a question) and waits for the user input. It calls the callback function once enter is pressed.
 

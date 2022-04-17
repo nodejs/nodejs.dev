@@ -46,6 +46,6 @@ You can of course type `./node_modules/.bin/cowsay` to run it, and it works, but
 npx cowsay take me out of here
 ```
 
-and `npx` will find the package location.
+and `npx` will find the executable location.
 
 ![Cow says something](cow-say.png)
