@@ -12,12 +12,12 @@ describe('DownloadToggle component', (): void => {
     expect(container).toMatchSnapshot();
   });
 
-  it('utilizes click handler correctly', (): void => {
+  it('utilizes click handler correctly', async () => {
     const mockHandler = jest.fn();
     render(<DownloadToggle selected="LTS" handleClick={mockHandler} />);
 
-    userEvent.click(screen.getByText('LTS'));
-    userEvent.click(screen.getByText('Current'));
+    await userEvent.click(screen.getByText('LTS'));
+    await userEvent.click(screen.getByText('Current'));
 
     expect(mockHandler.mock.calls.length).toBe(2);
   });
