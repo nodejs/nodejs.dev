@@ -71,7 +71,7 @@ describe('Tests for Header component', () => {
       );
       render(<Header />);
       const toggle = await screen.findByRole('button');
-      userEvent.click(toggle);
+      await userEvent.click(toggle);
       expect(toggleThemeMock).toHaveBeenCalledWith('dark');
     });
 
@@ -86,7 +86,7 @@ describe('Tests for Header component', () => {
       );
       render(<Header />);
       const toggle = await screen.findByRole('button');
-      userEvent.click(toggle);
+      await userEvent.click(toggle);
       expect(toggleThemeMock).toHaveBeenCalledWith('light');
     });
 
