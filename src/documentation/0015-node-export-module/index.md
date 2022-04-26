@@ -96,7 +96,7 @@ The latter exposes _the properties_ of the object it points to.
 exports.car = {
   brand: 'Ford',
   model: 'Fiesta'
-} 
+}
 
 module.exports = {
   brand: 'Tesla',
@@ -111,4 +111,3 @@ console.log(tesla, ford)
 ```
 
 This will print `{ brand: 'Tesla', model: 'Model S' } undefined` since the `require` function's return value has been updated to the object that `module.exports` points to, so _the property_ that `exports` added can't be accessed.
-
