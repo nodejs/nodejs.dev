@@ -84,7 +84,7 @@ Or a bug in the latest release of a lib, still unfixed, is causing an issue.
 
 Specifying an explicit version of a library also helps to keep everyone on the same exact version of a package, so that the whole team runs the same version until the `package.json` file is updated.
 
-In all those cases, versioning helps a lot, and `npm` follows the semantic versioning (semver) standard.
+In all those cases, versioning helps a lot, and `npm` follows the semantic versioning (semver) standard. Read more about [semantic versioning](https://docs.npmjs.com/about-semantic-versioning).
 
 ## Running Tasks
 
