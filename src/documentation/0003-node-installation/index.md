@@ -14,7 +14,7 @@ One very convenient way to install Node.js is through a package manager. In this
 
 Other package managers for MacOS, Linux, and Windows are listed in <https://nodejs.dev/download/package-manager/>
 
-`nvm` is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks, for example.
+`nvm` is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks.
 
 It is also very useful to test your code with old Node.js versions.
 
