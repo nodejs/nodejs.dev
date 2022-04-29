@@ -95,19 +95,19 @@ The latter exposes _the properties_ of the object it points to.
 // car.js
 exports.car = {
   brand: 'Ford',
-  model: 'Fiesta'
-}
+  model: 'Fiesta',
+};
 
 module.exports = {
   brand: 'Tesla',
-  model: 'Model S'
-}
+  model: 'Model S',
+};
 
 // app.js
-const tesla = require('./car')
-const ford = require('./car').car
+const tesla = require('./car');
+const ford = require('./car').car;
 
-console.log(tesla, ford)
+console.log(tesla, ford);
 ```
 
 This will print `{ brand: 'Tesla', model: 'Model S' } undefined` since the `require` function's return value has been updated to the object that `module.exports` points to, so _the property_ that `exports` added can't be accessed.
