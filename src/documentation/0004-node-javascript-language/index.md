@@ -36,5 +36,5 @@ The following concepts are also key to understand asynchronous programming, whic
 * [Timers](https://nodejs.dev/learn/discover-javascript-timers)
 * [Promises](https://nodejs.dev/learn/understanding-javascript-promises)
 * [Async and Await](https://nodejs.dev/learn/modern-asynchronous-javascript-with-async-and-await)
-* Closures
+* [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 * [The Event Loop](https://nodejs.dev/learn/the-nodejs-event-loop)
