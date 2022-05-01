@@ -11,7 +11,7 @@ The HTTP core module is a key module to Node.js networking.
 It can be included using
 
 ```js
-const http = require('http')
+const http = require('http');
 ```
 
 The module provides some properties and methods, and some classes.
@@ -22,7 +22,7 @@ The module provides some properties and methods, and some classes.
 
 This property lists all the HTTP methods supported:
 
-```js
+```console
 > require('http').METHODS
 [ 'ACL',
   'BIND',
@@ -63,7 +63,7 @@ This property lists all the HTTP methods supported:
 
 This property lists all the HTTP status codes and their description:
 
-```js
+```console
 > require('http').STATUS_CODES
 { '100': 'Continue',
   '101': 'Switching Protocols',
@@ -147,8 +147,8 @@ Usage:
 
 ```js
 const server = http.createServer((req, res) => {
-  //handle every single request with this callback
-})
+  // handle every single request with this callback
+});
 ```
 
 ### `http.request()`
@@ -205,8 +205,8 @@ Commonly known and used in code as `res`:
 
 ```js
 const server = http.createServer((req, res) => {
-  //res is an http.ServerResponse object
-})
+  // res is an http.ServerResponse object
+});
 ```
 
 The method you'll always call in the handler is `end()`, which closes the response, the message is complete and the server can send it to the client. It must be called on each response.
@@ -228,8 +228,8 @@ To send data to the client in the response body, you use `write()`. It will send
 If the headers were not sent yet using `response.writeHead()`, it will send the headers first, with the status code and message that's set in the request, which you can edit by setting the `statusCode` and `statusMessage` properties values:
 
 ```js
-response.statusCode = 500
-response.statusMessage = 'Internal Server Error'
+response.statusCode = 500;
+response.statusMessage = 'Internal Server Error';
 ```
 
 ### `http.IncomingMessage`

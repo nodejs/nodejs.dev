@@ -15,11 +15,11 @@ This is the job of `setTimeout`. You specify a callback function to execute late
 ```js
 setTimeout(() => {
   // runs after 2 seconds
-}, 2000)
+}, 2000);
 
 setTimeout(() => {
   // runs after 50 milliseconds
-}, 50)
+}, 50);
 ```
 
 This syntax defines a new function. You can call whatever other function you want in there, or you can pass an existing function name, and a set of parameters:
@@ -27,10 +27,10 @@ This syntax defines a new function. You can call whatever other function you wan
 ```js
 const myFunction = (firstParam, secondParam) => {
   // do something
-}
+};
 
 // runs after 2 seconds
-setTimeout(myFunction, 2000, firstParam, secondParam)
+setTimeout(myFunction, 2000, firstParam, secondParam);
 ```
 
 `setTimeout` returns the timer id. This is generally not used, but you can store this id, and clear it if you want to delete this scheduled function execution:
@@ -38,10 +38,10 @@ setTimeout(myFunction, 2000, firstParam, secondParam)
 ```js
 const id = setTimeout(() => {
   // should run after 2 seconds
-}, 2000)
+}, 2000);
 
 // I changed my mind
-clearTimeout(id)
+clearTimeout(id);
 ```
 
 ### Zero delay
@@ -50,10 +50,10 @@ If you specify the timeout delay to `0`, the callback function will be executed 
 
 ```js
 setTimeout(() => {
-  console.log('after ')
-}, 0)
+  console.log('after ');
+}, 0);
 
-console.log(' before ')
+console.log(' before ');
 ```
 
 This code will print
@@ -73,7 +73,7 @@ This is especially useful to avoid blocking the CPU on intensive tasks and let o
 ```js
 setInterval(() => {
   // runs every 2 seconds
-}, 2000)
+}, 2000);
 ```
 
 The function above runs every 2 seconds unless you tell it to stop, using `clearInterval`, passing it the interval id that `setInterval` returned:
@@ -81,9 +81,9 @@ The function above runs every 2 seconds unless you tell it to stop, using `clear
 ```js
 const id = setInterval(() => {
   // runs every 2 seconds
-}, 2000)
+}, 2000);
 
-clearInterval(id)
+clearInterval(id);
 ```
 
 It's common to call `clearInterval` inside the setInterval callback function, to let it auto-determine if it should run again or stop. For example this code runs something unless App.somethingIWait has the value `arrived`:
@@ -91,11 +91,10 @@ It's common to call `clearInterval` inside the setInterval callback function, to
 ```js
 const interval = setInterval(() => {
   if (App.somethingIWait === 'arrived') {
-    clearInterval(interval)
-    return
+    clearInterval(interval);
   }
   // otherwise do things
-}, 100)
+}, 100);
 ```
 
 ## Recursive setTimeout
@@ -120,10 +119,10 @@ To avoid this, you can schedule a recursive setTimeout to be called when the cal
 const myFunction = () => {
   // do something
 
-  setTimeout(myFunction, 1000)
-}
+  setTimeout(myFunction, 1000);
+};
 
-setTimeout(myFunction, 1000)
+setTimeout(myFunction, 1000);
 ```
 
 to achieve this scenario:

@@ -111,22 +111,22 @@ The REPL knows when you are typing a multi-line statement without the need to in
 
 For example if you start typing an iteration like this:
 
-```js
+```console
 [1, 2, 3].forEach(num => {
 ```
 
 and you press `enter`, the REPL will go to a new line that starts with 3 dots, indicating you can now continue to work on that block.
 
-```js
+```console
 ... console.log(num)
 ... })
 ```
 
 If you type `.break` at the end of a line, the multiline mode will stop and the statement will not be executed.
 
-## Run REPL from javascript file
+## Run REPL from JavaScript file
 
-We can import the REPL in javascript file using `repl`.
+We can import the REPL in a JavaScript file using `repl`.
 
 ```js
 const repl = require('repl');
@@ -139,7 +139,7 @@ To start the REPL command prompt, type in the following line
 const local = repl.start(prompt);
 ```
 
-repl.start() starts the repl environment and the prompt is a string that accepts the prompt which shows when repl starts, default is '>'.We can define custom prompts.
+repl.start() starts the REPL environment and the prompt is a string that accepts the prompt which shows when the REPL starts. The default is '>', but we can define custom prompts.
 
 Run the file in the command line.
 
@@ -151,11 +151,11 @@ node repl.js
 >const n = 10
 ```
 
-You can display a message while exiting REPL
+You can display a message while exiting the REPL
 
 ```js
-local.on('exit',() => {
-    console.log("exiting repl");
-    process.exit();
-})
+local.on('exit', () => {
+  console.log('exiting repl');
+  process.exit();
+});
 ```

@@ -73,7 +73,7 @@ The second is used to return data to the caller.
 In this case with:
 
 ```js
-res.statusCode = 200
+res.statusCode = 200;
 ```
 
 we set the statusCode property to 200, to indicate a successful response.
@@ -81,13 +81,13 @@ we set the statusCode property to 200, to indicate a successful response.
 We set the Content-Type header:
 
 ```js
-res.setHeader('Content-Type', 'text/plain')
+res.setHeader('Content-Type', 'text/plain');
 ```
 
 and we close the response, adding the content as an argument to `end()`:
 
 ```js
-res.end('Hello World\n')
+res.end('Hello World\n');
 ```
 
 ## Node.js Frameworks and Tools

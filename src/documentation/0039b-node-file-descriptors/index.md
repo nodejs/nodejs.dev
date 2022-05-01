@@ -11,11 +11,11 @@ Before you're able to interact with a file that sits in your filesystem, you mus
 A file descriptor is a reference to an open file, a number (fd) returned by opening the file using the `open()` method offered by the `fs` module. This number (`fd`) uniquely identifies an open file in operating system:
 
 ```js
-const fs = require('fs')
+const fs = require('fs');
 
 fs.open('/Users/joe/test.txt', 'r', (err, fd) => {
-  //fd is our file descriptor
-})
+  // fd is our file descriptor
+});
 ```
 
 Notice the `r` we used as the second parameter to the `fs.open()` call.
@@ -32,12 +32,12 @@ Other flags you'll commonly use are:
 You can also open the file by using the `fs.openSync` method, which returns the file descriptor, instead of providing it in a callback:
 
 ```js
-const fs = require('fs')
+const fs = require('fs');
 
 try {
-  const fd = fs.openSync('/Users/joe/test.txt', 'r')
+  const fd = fs.openSync('/Users/joe/test.txt', 'r');
 } catch (err) {
-  console.error(err)
+  console.error(err);
 }
 ```
 

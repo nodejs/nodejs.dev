@@ -13,24 +13,25 @@ In particular, using the `stat()` method provided by the `fs` module.
 You call it passing a file path, and once Node.js gets the file details it will call the callback function you pass, with 2 parameters: an error message, and the file stats:
 
 ```js
-const fs = require('fs')
+const fs = require('fs');
+
 fs.stat('/Users/joe/test.txt', (err, stats) => {
   if (err) {
-    console.error(err)
-    return
+    console.error(err);
   }
-  //we have access to the file stats in `stats`
-})
+  // we have access to the file stats in `stats`
+});
 ```
 
 Node.js also provides a sync method, which blocks the thread until the file stats are ready:
 
 ```js
-const fs = require('fs')
+const fs = require('fs');
+
 try {
-  const stats = fs.statSync('/Users/joe/test.txt')
+  const stats = fs.statSync('/Users/joe/test.txt');
 } catch (err) {
-  console.error(err)
+  console.error(err);
 }
 ```
 
@@ -45,16 +46,17 @@ A lot, including:
 There are other advanced methods, but the bulk of what you'll use in your day-to-day programming is this.
 
 ```js
-const fs = require('fs')
+const fs = require('fs');
+
 fs.stat('/Users/joe/test.txt', (err, stats) => {
   if (err) {
-    console.error(err)
-    return
+    console.error(err);
+    return;
   }
 
-  stats.isFile() //true
-  stats.isDirectory() //false
-  stats.isSymbolicLink() //false
-  stats.size //1024000 //= 1MB
-})
+  stats.isFile(); // true
+  stats.isDirectory(); // false
+  stats.isSymbolicLink(); // false
+  stats.size; // 1024000 //= 1MB
+});
 ```

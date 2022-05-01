@@ -10,8 +10,8 @@ When you want to execute some piece of code asynchronously, but as soon as possi
 
 ```js
 setImmediate(() => {
-  //run something
-})
+  // run something
+});
 ```
 
 Any function passed as the setImmediate() argument is a callback that's executed in the next iteration of the event loop.
