@@ -87,9 +87,10 @@ body {
   --color-border-primary: var(--black4);
   --color-border-secondary: var(--black3);
   --color-border-accent: var(--color-brand-primary);
+  --color-bg-accent: var(--black4);
   --color-fill-app: var(--black0);
   --color-fill-body: var(--body0);
-  --color-fill-canvas: var(--black1);
+  --color-fill-card: var(--black1);
   --color-fill-side-nav: var(--black1);
   --color-fill-top-nav: var(--black0);
   --color-fill-banner: #9992;
@@ -135,7 +136,9 @@ body {
   --space-01: 0.1rem;
   --space-02: 0.2rem;
   --space-04: 0.4rem;
+  --space-06: 0.6rem;
   --space-08: 0.8rem;
+  --space-10: 1rem;
   --space-12: 1.2rem;
   --space-14: 1.4rem;
   --space-16: 1.6rem;
@@ -159,9 +162,10 @@ body {
   --color-border-primary: var(--black4);
   --color-border-secondary: var(--black3);
   --color-border-accent: var(--brand4);
+  --color-bg-accent: var(--black7);
   --color-fill-app: #090c15;
   --color-fill-body: #090c15;
-  --color-fill-canvas: #090c15;
+  --color-fill-card: var(--black9);
   --color-fill-side-nav: #0d111d;
   --color-fill-top-nav: #090c15;
   --color-fill-action: var(--brand4);
