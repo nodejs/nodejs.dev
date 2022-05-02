@@ -101,7 +101,7 @@
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
     "babel-jest": "^27.4.4",
-    "babel-loader": "^8.2.4",
+    "babel-loader": "^8.2.5",
     "babel-plugin-remove-graphql-queries": "^3.13.0",
     "babel-preset-gatsby": "2.11.1",
     "eslint": "^8.14.0",
