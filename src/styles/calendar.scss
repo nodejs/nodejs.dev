@@ -1,4 +1,4 @@
-@import 'react-big-calendar/lib/sass/styles';
+@import 'react-big-calendar/lib/sass/styles.scss';
 
 .rbc-calendar-container {
   background-color: var(--color-fill-side-nav);
@@ -143,7 +143,7 @@
     }
   }
 
-  .rbc-event {
+  %rbc-event {
     align-items: flex-start;
     border: var(--space-01) solid var(--color-border-accent);
     display: flex;
@@ -156,7 +156,7 @@
   }
 
   .rbc-background-event {
-    @extend .rbc-event;
+    @extend %rbc-event;
     opacity: 0.75;
   }
 

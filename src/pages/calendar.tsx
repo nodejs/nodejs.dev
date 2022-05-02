@@ -11,7 +11,7 @@ import '../styles/calendar.scss';
 
 const localizer = momentLocalizer(moment);
 
-export default function NodeCalendarPage(): JSX.Element {
+const NodeCalendarPage = (): JSX.Element => {
   const [events, setEvents] = useGCalAPI();
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(
     null
@@ -133,4 +133,6 @@ export default function NodeCalendarPage(): JSX.Element {
       )}
     </Layout>
   );
-}
+};
+
+export default NodeCalendarPage;
