@@ -22,9 +22,8 @@ A function passed to `process.nextTick()` is going to be executed on the current
 
 A `setTimeout()` callback with a 0ms delay is very similar to `setImmediate()`. The execution order will depend on various factors, but they will be both run in the next iteration of the event loop.
 
-A `process.nextTick` callback is added to `process.nextTick queue`. A `Promise.then()` callback is added to `promises microtask queue`.
-
-Event loop executes tasks in `process.nextTick queue` first, and then executes `promises microtask queue`.
+A `process.nextTick` callback is added to `process.nextTick queue`. A `Promise.then()` callback is added to `promises microtask queue`. A `setTimeout`, `setImmediate` callback is added to `macrotask queue`.
+Event loop executes tasks in `process.nextTick queue` first, and then executes `promises microtask queue`, and then executes `macrotask queue`.
 
 Here is an example to show the order between `setImmediate()`, `process.nextTick()` and `Promise.then()`:
 
@@ -36,4 +35,4 @@ Here is an example to show the order between `setImmediate()`, `process.nextTick
   style="height: 500px; width: 100%; border: 0;">
 </iframe>
 
-This code will first call `start()`, then call `foo()` in `process.nextTick queue`. After that, it will handle `promises microtask queue`, which prints `bar` and adds `zoo()` in `process.nextTick queue` at the same time. Then it will call `zoo()` which just be added. In the end, the `baz()` is called.
+This code will first call `start()`, then call `foo()` in `process.nextTick queue`. After that, it will handle `promises microtask queue`, which prints `bar` and adds `zoo()` in `process.nextTick queue` at the same time. Then it will call `zoo()` which just be added. In the end, the `baz()` in `macrotask queue` is called.
