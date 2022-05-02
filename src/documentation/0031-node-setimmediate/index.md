@@ -36,4 +36,4 @@ Here is an example to show the order between `setImmediate()`, `process.nextTick
   style="height: 500px; width: 100%; border: 0;">
 </iframe>
 
-This code will first call `start()`, then call `foo()` in `process.nextTick queue`. After that, it will handle `promises microtask queue`, which prints `bar` and adds `zoo()` in `process.nextTick queue` at the same time. Then it will called `zoo()` which just be added. In the end, the `baz()` is called.
+This code will first call `start()`, then call `foo()` in `process.nextTick queue`. After that, it will handle `promises microtask queue`, which prints `bar` and adds `zoo()` in `process.nextTick queue` at the same time. Then it will call `zoo()` which just be added. In the end, the `baz()` is called.
