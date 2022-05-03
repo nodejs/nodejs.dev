@@ -12,7 +12,7 @@
     "@storybook/addons": "^6.4.20",
     "@storybook/builder-webpack5": "^6.4.20",
     "@storybook/manager-webpack5": "^6.4.20",
-    "@storybook/react": "^6.4.20",
+    "@storybook/react": "^6.4.22",
     "@svgr/webpack": "^6.2.1",
     "@types/mdx-js__react": "^1.5.5",
     "@types/react-tabs": "2.3.4",
