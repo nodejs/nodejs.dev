@@ -97,10 +97,10 @@ try {
 
 ```js
 async function example() {
-  try{
-      await fs.rename('/Users/joe', '/Users/roger')
+  try {
+    await fs.rename('/Users/joe', '/Users/roger')
   } catch(err) {
-      console.log(err)
+    console.log(err)
   }
 }
 example()
