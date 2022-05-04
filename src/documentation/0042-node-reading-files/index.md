@@ -49,7 +49,7 @@ async function example() {
 example()
 ```
 
-Both `fs.readFile()`, `fs.readFileSync()` and `fsPromises.readFile()` read the full content of the file in memory before returning the data.
+All three of `fs.readFile()`, `fs.readFileSync()` and `fsPromises.readFile()` read the full content of the file in memory before returning the data.
 
 This means that big files are going to have a major impact on your memory consumption and speed of execution of the program.
 
