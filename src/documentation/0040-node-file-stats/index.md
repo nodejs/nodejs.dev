@@ -60,3 +60,22 @@ fs.stat('/Users/joe/test.txt', (err, stats) => {
   stats.size; // 1024000 //= 1MB
 });
 ```
+
+You can also use promise-based `fsPromises.stat()` method offered by the `fs/promises` module if you like:
+
+```js
+const fs = require('fs/promises')
+
+async function example() {
+  try {
+    const stats = await fs.stat('/Users/joe/test.txt')
+    await stats.isFile() //true
+    await stats.isDirectory() //false
+    await stats.isSymbolicLink() //false
+    stats.size //1024000 //= 1MB
+  } catch(err) {
+    console.log(err)
+  }
+}
+example()
+```
