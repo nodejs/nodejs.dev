@@ -33,7 +33,7 @@ try {
 }
 ```
 
-You can also use promise-based `fsPromises.readFile()` method offered by the `fs/promises` module:
+You can also use the promise-based `fsPromises.readFile()` method offered by the `fs/promises` module:
 
 ```js
 const fs = require('fs/promises')
