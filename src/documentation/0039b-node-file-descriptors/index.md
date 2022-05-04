@@ -42,3 +42,25 @@ try {
 ```
 
 Once you get the file descriptor, in whatever way you choose, you can perform all the operations that require it, like calling `fs.close()` and many other operations that interact with the filesystem.
+
+You can also open the file by using the promise-based `fsPromises.open` method offered by the `fs/promises` module.
+
+```js
+const fs = require('fs/promises')
+
+async function example() {
+  let filehandle
+  try {
+    const filehandle = await fs.open('/Users/joe/test.txt', 'r')
+    console.log(filehandle.fd)
+    console.log(await filehandle.readFile({ encoding: 'utf8' }))
+  } finally {
+    await filehandle?.close()
+  }
+}
+example()
+```
+
+`fsPromises.open()` in `fs/promises` module return a `filehandle`, which is an object wrapper for a numeric file descriptor and provides operations on files.
+
+If a `filehandle` is not closed using `filehanlde.close()` method, it will try to automatically close the file descriptor for preventing memory leaks. But this behavior can be unreliabled and the file may not be closed. Instead, always explicitly close `filehandle`.
