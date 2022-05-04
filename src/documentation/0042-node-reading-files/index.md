@@ -33,7 +33,23 @@ try {
 }
 ```
 
-Both `fs.readFile()` and `fs.readFileSync()` read the full content of the file in memory before returning the data.
+You can also use promise-based `fsPromises.readFile()` method offered by the `fs/promises` module:
+
+```js
+const fs = require('fs/promises')
+
+async function example() {
+  try {
+    const data = await fs.readFile('/Users/joe/test.txt', { encoding: 'utf8' })
+    console.log(data)
+  } catch(err) {
+    console.log(err)
+  }
+}
+example()
+```
+
+Both `fs.readFile()`, `fs.readFileSync()` and `fsPromises.readFile()` read the full content of the file in memory before returning the data.
 
 This means that big files are going to have a major impact on your memory consumption and speed of execution of the program.
 
