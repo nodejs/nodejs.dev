@@ -51,7 +51,7 @@ const fs = require('fs/promises');
 async function example() {
   let filehandle;
   try {
-    const filehandle = await fs.open('/Users/joe/test.txt', 'r');
+    filehandle = await fs.open('/Users/joe/test.txt', 'r');
     console.log(filehandle.fd);
     console.log(await filehandle.readFile({ encoding: 'utf8' }));
   } finally {
