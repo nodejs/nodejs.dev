@@ -46,19 +46,19 @@ Once you get the file descriptor, in whatever way you choose, you can perform al
 You can also open the file by using the promise-based `fsPromises.open` method offered by the `fs/promises` module.
 
 ```js
-const fs = require('fs/promises')
+const fs = require('fs/promises');
 
 async function example() {
-  let filehandle
+  let filehandle;
   try {
-    const filehandle = await fs.open('/Users/joe/test.txt', 'r')
-    console.log(filehandle.fd)
-    console.log(await filehandle.readFile({ encoding: 'utf8' }))
+    const filehandle = await fs.open('/Users/joe/test.txt', 'r');
+    console.log(filehandle.fd);
+    console.log(await filehandle.readFile({ encoding: 'utf8' }));
   } finally {
-    await filehandle?.close()
+    await filehandle.close();
   }
 }
-example()
+example();
 ```
 
 `fsPromises.open()` in `fs/promises` module return a `filehandle`, which is an object wrapper for a numeric file descriptor and provides operations on files.
