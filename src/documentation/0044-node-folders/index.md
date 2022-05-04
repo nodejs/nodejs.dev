@@ -1,7 +1,7 @@
 ---
 title: 'Working with folders in Node.js'
 description: 'How to interact with folders using Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais
+authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais, clean99
 section: Getting Started
 category: learn
 ---
