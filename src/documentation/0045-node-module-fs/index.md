@@ -90,31 +90,31 @@ You can use promise-based API provided by `fs/promises` module to avoid using ca
 ```js
 // Example: Read a file and change its content and read
 // it again using callback-based API.
-const fs = require('fs')
+const fs = require('fs');
 
-const fileName = '/Users/joe/test.txt'
+const fileName = '/Users/joe/test.txt';
 fs.readFile(fileName, 'utf8', (err, data) => {
   if(err) {
-    console.log(err)
-    return
+    console.log(err);
+    return;
   }
-  console.log(data)
-  const content = 'Some content!'
+  console.log(data);
+  const content = 'Some content!';
   fs.writeFile(fileName, content, (err) => {
     if(err) {
-      console.log(err)
-      return
+      console.log(err);
+      return;
     }
-    console.log('Wrote some content!')
+    console.log('Wrote some content!');
     fs.readFile(fileName, 'utf8', (err, data) => {
       if(err) {
-        console.log(err)
-        return
+        console.log(err);
+        return;
       }
-      console.log(data)
-    })
-  })
-})
+      console.log(data);
+    });
+  });
+});
 ```
 
 The callback-based API may rises callback hell when there are too many nested callbacks. We can simply use promise-based API to avoid it:
@@ -122,21 +122,21 @@ The callback-based API may rises callback hell when there are too many nested ca
 ```js
 // Example: Read a file and change its content and read
 // it again using promise-based API.
-const fs = require('fs/promises')
+const fs = require('fs/promises');
 
 async function example() {
-  const fileName = '/Users/joe/test.txt'
+  const fileName = '/Users/joe/test.txt';
   try {
-    const data = await fs.readFile(fileName, 'utf8')
-    console.log(data)
-    const content = 'Some content!'
-    await fs.writeFile(fileName, content)
-    console.log('Wrote some content!')
-    const newData = await fs.readFile(fileName, 'utf8')
-    console.log(newData)
+    const data = await fs.readFile(fileName, 'utf8');
+    console.log(data);
+    const content = 'Some content!';
+    await fs.writeFile(fileName, content);
+    console.log('Wrote some content!');
+    const newData = await fs.readFile(fileName, 'utf8');
+    console.log(newData);
   } catch(err) {
-    console.log(err)
+    console.log(err);
   }
 }
-example()
+example();
 ```

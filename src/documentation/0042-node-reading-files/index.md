@@ -36,17 +36,17 @@ try {
 You can also use the promise-based `fsPromises.readFile()` method offered by the `fs/promises` module:
 
 ```js
-const fs = require('fs/promises')
+const fs = require('fs/promises');
 
 async function example() {
   try {
-    const data = await fs.readFile('/Users/joe/test.txt', { encoding: 'utf8' })
-    console.log(data)
+    const data = await fs.readFile('/Users/joe/test.txt', { encoding: 'utf8' });
+    console.log(data);
   } catch(err) {
-    console.log(err)
+    console.log(err);
   }
 }
-example()
+example();
 ```
 
 All three of `fs.readFile()`, `fs.readFileSync()` and `fsPromises.readFile()` read the full content of the file in memory before returning the data.

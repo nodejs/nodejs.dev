@@ -96,14 +96,16 @@ try {
 `fsPromises.rename()` is the promise-based version:
 
 ```js
+const fs = require('fs/promises');
+
 async function example() {
   try {
-    await fs.rename('/Users/joe', '/Users/roger')
+    await fs.rename('/Users/joe', '/Users/roger');
   } catch(err) {
-    console.log(err)
+    console.log(err);
   }
 }
-example()
+example();
 ```
 
 ## Remove a folder
