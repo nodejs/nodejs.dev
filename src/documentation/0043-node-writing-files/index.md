@@ -47,7 +47,7 @@ async function example() {
   try {
     const content = 'Some content!';
     await fs.writeFile('/Users/joe/test.txt', content);
-  } catch(err) {
+  } catch (err) {
     console.log(err);
   }
 }
@@ -97,7 +97,7 @@ async function example() {
   try {
     const content = 'Some content!';
     await fs.appendFile('/Users/joe/test.txt', content);
-  } catch(err) {
+  } catch (err) {
     console.log(err);
   }
 }

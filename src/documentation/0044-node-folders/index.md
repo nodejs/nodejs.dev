@@ -101,7 +101,7 @@ const fs = require('fs/promises');
 async function example() {
   try {
     await fs.rename('/Users/joe', '/Users/roger');
-  } catch(err) {
+  } catch (err) {
     console.log(err);
   }
 }
