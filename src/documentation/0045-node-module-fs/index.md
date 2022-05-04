@@ -85,7 +85,7 @@ try {
 
 The key difference here is that the execution of your script will block in the second example, until the file operation succeeded.
 
-You can use promise-based API provided by `fs/promises` module to avoid using callbacks, which may causes [callback hell](http://callbackhell.com/). Here is an example:
+You can use promise-based API provided by `fs/promises` module to avoid using callback-based API, which may causes [callback hell](http://callbackhell.com/). Here is an example:
 
 ```js
 // Example: Read a file and change its content and read
@@ -101,18 +101,18 @@ fs.readFile(fileName, 'utf8', (err, data) => {
   console.log(data)
   const content = 'Some content!'
   fs.writeFile(fileName, content, (err) => {
+    if(err) {
+      console.log(err)
+      return
+    }
+    console.log('Wrote some content!')
+    fs.readFile(fileName, 'utf8', (err, data) => {
       if(err) {
         console.log(err)
         return
       }
-      console.log('Wrote some content!')
-      fs.readFile(fileName, 'utf8', (err, data) => {
-        if(err) {
-          console.log(err)
-          return
-        }
-        console.log(data)
-      })
+      console.log(data)
+    })
   })
 })
 ```
