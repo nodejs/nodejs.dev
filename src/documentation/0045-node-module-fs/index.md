@@ -84,3 +84,59 @@ try {
 ```
 
 The key difference here is that the execution of your script will block in the second example, until the file operation succeeded.
+
+You can use promise-based API provided by `fs/promises` module to avoid using callbacks, which may causes [callback hell](http://callbackhell.com/). Here is an example:
+
+```js
+// Example: Read a file and change its content and read
+// it again using callback-based API.
+const fs = require('fs')
+
+const fileName = '/Users/joe/test.txt'
+fs.readFile(fileName, 'utf8', (err, data) => {
+  if(err) {
+    console.log(err)
+    return
+  }
+  console.log(data)
+  const content = 'Some content!'
+  fs.writeFile(fileName, content, (err) => {
+      if(err) {
+        console.log(err)
+        return
+      }
+      console.log('Wrote some content!')
+      fs.readFile(fileName, 'utf8', (err, data) => {
+        if(err) {
+          console.log(err)
+          return
+        }
+        console.log(data)
+      })
+  })
+})
+```
+
+The callback-based API may rises callback hell when there are too many nested callbacks. We can simply use promise-based API to avoid it:
+
+```js
+// Example: Read a file and change its content and read
+// it again using promise-based API.
+const fs = require('fs/promises')
+
+async function example() {
+  const fileName = '/Users/joe/test.txt'
+  try {
+    const data = await fs.readFile(fileName, 'utf8')
+    console.log(data)
+    const content = 'Some content!'
+    await fs.writeFile(fileName, content)
+    console.log('Wrote some content!')
+    const newData = await fs.readFile(fileName, 'utf8')
+    console.log(newData)
+  } catch(err) {
+    console.log(err)
+  }
+}
+example()
+```
