@@ -69,9 +69,9 @@ const fs = require('fs/promises');
 async function example() {
   try {
     const stats = await fs.stat('/Users/joe/test.txt');
-    await stats.isFile(); // true
-    await stats.isDirectory(); // false
-    await stats.isSymbolicLink(); // false
+    stats.isFile(); // true
+    stats.isDirectory(); // false
+    stats.isSymbolicLink(); // false
     stats.size; // 1024000 //= 1MB
   } catch (err) {
     console.log(err);

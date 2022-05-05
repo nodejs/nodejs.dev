@@ -14,7 +14,7 @@ Use `fs.access()` (and its promise-based `fsPromises.access()` counterpart) to c
 
 ## Create a new folder
 
-Use `fs.mkdir()` or `fs.mkdirSync()` or `fsPromises.mkdir()`to create a new folder.
+Use `fs.mkdir()` or `fs.mkdirSync()` or `fsPromises.mkdir()` to create a new folder.
 
 ```js
 const fs = require('fs');
