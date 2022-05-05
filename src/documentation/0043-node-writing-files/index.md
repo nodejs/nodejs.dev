@@ -62,8 +62,6 @@ You can modify the default by specifying a flag:
 fs.writeFile('/Users/joe/test.txt', content, { flag: 'a+' }, err => {});
 ```
 
-The `fsPromises.writeFile()` can also be used in this way by removing `err => {}`.
-
 The flags you'll likely use are
 
 * `r+` open the file for reading and writing

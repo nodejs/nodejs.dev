@@ -45,9 +45,11 @@ Once you get the file descriptor, in whatever way you choose, you can perform al
 
 You can also open the file by using the promise-based `fsPromises.open` method offered by the `fs/promises` module.
 
+The `fs/promises` module is available starting only from Node.js v14. Before v14, after v10, you can use `require('fs').promises` instead. Before v10, after v8, you can use `util.promisify` to convert `fs` methods into promise-based methods.
+
 ```js
 const fs = require('fs/promises');
-
+// Or const fs = require('fs').promises before v14.
 async function example() {
   let filehandle;
   try {
@@ -61,6 +63,17 @@ async function example() {
 example();
 ```
 
-`fsPromises.open()` in `fs/promises` module return a `filehandle`, which is an object wrapper for a numeric file descriptor and provides operations on files.
+Here is an example of `util.promisify`:
 
-If a `filehandle` is not closed using `filehanlde.close()` method, it will try to automatically close the file descriptor for preventing memory leaks. But this behavior can be unreliabled and the file may not be closed. Instead, always explicitly close `filehandle`.
+```js
+const fs = require('fs');
+const util = require('util');
+
+async function example() {
+  const open = util.promisify(fs.open);
+  const fd = await open('/Users/joe/test.txt', 'r');
+}
+example();
+```
+
+To see more details about the `fs/promises` module, please check [fs/promises API](https://nodejs.org/docs/latest-v17.x/api/fs.html#promises-api).
