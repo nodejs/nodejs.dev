@@ -1,7 +1,7 @@
 ---
 title: 'Writing files with Node.js'
 description: 'How to write files using Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99
 section: Getting Started
 category: learn
 ---
@@ -38,6 +38,22 @@ try {
 }
 ```
 
+You can also use the promise-based `fsPromises.writeFile()` method offered by the `fs/promises` module:
+
+```js
+const fs = require('fs/promises');
+
+async function example() {
+  try {
+    const content = 'Some content!';
+    await fs.writeFile('/Users/joe/test.txt', content);
+  } catch (err) {
+    console.log(err);
+  }
+}
+example();
+```
+
 By default, this API will **replace the contents of the file** if it does already exist.
 
 You can modify the default by specifying a flag:
@@ -68,6 +84,22 @@ fs.appendFile('file.log', content, err => {
   }
   // done!
 });
+```
+
+Here is a `fsPromises.appendFile()` example:
+
+```js
+const fs = require('fs/promises');
+
+async function example() {
+  try {
+    const content = 'Some content!';
+    await fs.appendFile('/Users/joe/test.txt', content);
+  } catch (err) {
+    console.log(err);
+  }
+}
+example();
 ```
 
 ## Using streams
