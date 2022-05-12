@@ -6,7 +6,7 @@ section: Getting Started
 category: learn
 ---
 
-# How Packages Become Dependencies
+## How Packages Become Dependencies
 
 When you install a package using `npm install <packagename>`, the latest version is downloaded to the `node_modules` folder. A corresponding entry is added to `package.json` and `package-lock.json` in the current folder.
 
@@ -60,7 +60,7 @@ Here's the list of a few outdated packages in a repository:
 
 Some of those updates are _major_ releases. Running `npm update` won't help here. Major releases are _never_ updated in this way because they (by definition) introduce breaking changes, and `npm` wants to save you trouble.
 
-# Update All Packages to the Latest Version
+## Update All Packages to the Latest Version
 
 Leveraging [npm-check-updates](https://www.npmjs.com/package/npm-check-updates), you can upgrade all `package.json` dependencies to the latest version.
 
