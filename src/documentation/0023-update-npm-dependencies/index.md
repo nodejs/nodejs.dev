@@ -1,10 +1,12 @@
 ---
 title: Update all the Node.js dependencies to their latest version
 description: 'How do you update all the npm dependencies store in the package.json file, to their latest version available?'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, mcdonaldjc
 section: Getting Started
 category: learn
 ---
+
+# How Packages Become Dependencies
 
 When you install a package using `npm install <packagename>`, the latest version is downloaded to the `node_modules` folder. A corresponding entry is added to `package.json` and `package-lock.json` in the current folder.
 
@@ -58,28 +60,24 @@ Here's the list of a few outdated packages in a repository:
 
 Some of those updates are _major_ releases. Running `npm update` won't help here. Major releases are _never_ updated in this way because they (by definition) introduce breaking changes, and `npm` wants to save you trouble.
 
-To update all packages to a new major version:
+# Update All Packages to the Latest Version
 
-* Install the `npm-check-updates` package globally:
+Leveraging [npm-check-updates](https://www.npmjs.com/package/npm-check-updates), you can upgrade all `package.json` dependencies to the latest version.
 
-  ```bash
-  npm install -g npm-check-updates
-  ```
+1. Install the `npm-check-updates` package globally:
 
-* Now run `npm-check-updates` to upgrade all version hints in `package.json`, allowing installation of the new major versions:
+    ```bash
+    npm install -g npm-check-updates
+    ```
 
-  ```bash
-  ncu -u
-  ```
+2. Now run `npm-check-updates` to upgrade all version hints in `package.json`, allowing installation of the new major versions:
 
-* Finally, run a standard update:
+    ```bash
+    ncu -u
+    ```
 
-  ```bash
-  npm update
-  ```
+3. Finally, run a standard install:
 
-If you downloaded the project without the `node_modules` dependencies and want to install the shiny new versions first, just run:
-
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
