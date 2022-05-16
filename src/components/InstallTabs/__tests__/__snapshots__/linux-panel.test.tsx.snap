@@ -27,7 +27,7 @@ exports[`Tests for LinuxPanel component renders correctly 1`] = `
         <span
           class="install__text__command"
         >
-           curl -o- 
+          curl -o- 
         </span>
         https://raw.githubusercontent.com/nvm-sh/nvm/mockVersionString/install.sh
         <span
@@ -61,7 +61,7 @@ exports[`Tests for LinuxPanel component renders correctly 1`] = `
         <span
           class="install__text__command"
         >
-           nvm
+          nvm
         </span>
          install --lts
       </code>
