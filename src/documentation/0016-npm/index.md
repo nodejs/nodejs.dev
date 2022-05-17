@@ -119,7 +119,7 @@ It's very common to use this feature to run Webpack:
 
 So instead of typing those long commands, which are easy to forget or mistype, you can run
 
-```bash
+```console
 $ npm run watch
 $ npm run dev
 $ npm run prod
