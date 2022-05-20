@@ -1,7 +1,7 @@
 ---
 title: 'Working with folders in Node.js'
 description: 'How to interact with folders using Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais
+authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais, clean99
 section: Getting Started
 category: learn
 ---
@@ -10,11 +10,11 @@ The Node.js `fs` core module provides many handy methods you can use to work wit
 
 ## Check if a folder exists
 
-Use `fs.access()` to check if the folder exists and Node.js can access it with its permissions.
+Use `fs.access()` (and its promise-based `fsPromises.access()` counterpart) to check if the folder exists and Node.js can access it with its permissions.
 
 ## Create a new folder
 
-Use `fs.mkdir()` or `fs.mkdirSync()` to create a new folder.
+Use `fs.mkdir()` or `fs.mkdirSync()` or `fsPromises.mkdir()` to create a new folder.
 
 ```js
 const fs = require('fs');
@@ -32,7 +32,7 @@ try {
 
 ## Read the content of a directory
 
-Use `fs.readdir()` or `fs.readdirSync()` to read the contents of a directory.
+Use `fs.readdir()` or `fs.readdirSync()` or `fsPromises.readdir()` to read the contents of a directory.
 
 This piece of code reads the content of a folder, both files and subfolders, and returns their relative path:
 
@@ -68,7 +68,7 @@ fs.readdirSync(folderPath)
 
 ## Rename a folder
 
-Use `fs.rename()` or `fs.renameSync()` to rename folder. The first parameter is the current path, the second the new path:
+Use `fs.rename()` or `fs.renameSync()` or `fsPromises.rename()` to rename folder. The first parameter is the current path, the second the new path:
 
 ```js
 const fs = require('fs');
@@ -93,9 +93,24 @@ try {
 }
 ```
 
+`fsPromises.rename()` is the promise-based version:
+
+```js
+const fs = require('fs/promises');
+
+async function example() {
+  try {
+    await fs.rename('/Users/joe', '/Users/roger');
+  } catch (err) {
+    console.log(err);
+  }
+}
+example();
+```
+
 ## Remove a folder
 
-Use `fs.rmdir()` or `fs.rmdirSync()` to remove a folder.
+Use `fs.rmdir()` or `fs.rmdirSync()` or `fsPromises.rmdir()` to remove a folder.
 
 Removing a folder that has content can be more complicated than you need. You can pass the option `{ recursive: true }` to recursively remove the contents.
 
