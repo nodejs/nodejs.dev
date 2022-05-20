@@ -1,7 +1,7 @@
 ---
 title: 'Node.js file stats'
 description: 'How to get the details of a file using Node.js'
-authors: flaviocopes, ZYSzys, MylesBorins, fhemberger, LaRuaNa, ahmadawais
+authors: flaviocopes, ZYSzys, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99
 section: Getting Started
 category: learn
 ---
@@ -59,4 +59,23 @@ fs.stat('/Users/joe/test.txt', (err, stats) => {
   stats.isSymbolicLink(); // false
   stats.size; // 1024000 //= 1MB
 });
+```
+
+You can also use promise-based `fsPromises.stat()` method offered by the `fs/promises` module if you like:
+
+```js
+const fs = require('fs/promises');
+
+async function example() {
+  try {
+    const stats = await fs.stat('/Users/joe/test.txt');
+    stats.isFile(); // true
+    stats.isDirectory(); // false
+    stats.isSymbolicLink(); // false
+    stats.size; // 1024000 //= 1MB
+  } catch (err) {
+    console.log(err);
+  }
+}
+example();
 ```

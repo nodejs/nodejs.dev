@@ -72,12 +72,6 @@ const items = require('./items');
 const { car } = items;
 ```
 
-or
-
-```js
-const { car } = require('./items');
-```
-
 or you can use a destructuring assignment:
 
 ```js
