@@ -19,7 +19,7 @@ This is going to install the package in the local `node_modules` folder.
 To use it in your code, you just need to import it into your program using `require`:
 
 ```js
-const _ = require('lodash')
+const _ = require('lodash');
 ```
 
 What if your package is an executable?
@@ -46,6 +46,6 @@ You can of course type `./node_modules/.bin/cowsay` to run it, and it works, but
 npx cowsay take me out of here
 ```
 
-and `npx` will find the package location.
+and `npx` will find the executable location.
 
 ![Cow says something](cow-say.png)

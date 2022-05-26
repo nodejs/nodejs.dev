@@ -134,6 +134,9 @@ module.exports = {
       resolve: 'gatsby-plugin-svgr',
       options: {
         prettier: true,
+        svgoConfig: {
+          plugins: ['prefixIds'],
+        },
       },
     },
   ],

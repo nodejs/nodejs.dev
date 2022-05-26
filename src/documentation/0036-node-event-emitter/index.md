@@ -15,8 +15,9 @@ This module, in particular, offers the `EventEmitter` class, which we'll use to 
 You initialize that using
 
 ```js
-const EventEmitter = require('events')
-const eventEmitter = new EventEmitter()
+const EventEmitter = require('events');
+
+const eventEmitter = new EventEmitter();
 ```
 
 This object exposes, among many others, the `on` and `emit` methods.
@@ -28,14 +29,14 @@ For example, let's create a `start` event, and as a matter of providing a sample
 
 ```js
 eventEmitter.on('start', () => {
-  console.log('started')
-})
+  console.log('started');
+});
 ```
 
 When we run
 
 ```js
-eventEmitter.emit('start')
+eventEmitter.emit('start');
 ```
 
 the event handler function is triggered, and we get the console log.
@@ -44,20 +45,20 @@ You can pass arguments to the event handler by passing them as additional argume
 
 ```js
 eventEmitter.on('start', number => {
-  console.log(`started ${number}`)
-})
+  console.log(`started ${number}`);
+});
 
-eventEmitter.emit('start', 23)
+eventEmitter.emit('start', 23);
 ```
 
 Multiple arguments:
 
 ```js
 eventEmitter.on('start', (start, end) => {
-  console.log(`started from ${start} to ${end}`)
-})
+  console.log(`started from ${start} to ${end}`);
+});
 
-eventEmitter.emit('start', 1, 100)
+eventEmitter.emit('start', 1, 100);
 ```
 
 The EventEmitter object also exposes several other methods to interact with events, like

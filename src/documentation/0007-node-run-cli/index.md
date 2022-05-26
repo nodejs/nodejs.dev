@@ -6,7 +6,7 @@ section: Getting Started
 category: learn
 ---
 
-The usual way to run a Node.js program is to run the `node` globally available command (once you install Node.js) and pass the name of the file you want to execute.
+The usual way to run a Node.js program is to run the globally available `node` command (once you install Node.js) and pass the name of the file you want to execute.
 
 If your main Node.js application file is `app.js`, you can call it by typing:
 
@@ -16,13 +16,13 @@ node app.js
 
 Above, you are explicitly telling the shell to run your script with `node`. You can also embed this information into your JavaScript file with a "shebang" line. The "shebang" is the first line in the file, and tells the OS which interpreter to use for running the script. Below is the first line of JavaScript:
 
-```bash
+```js
 #!/usr/bin/node
 ```
 
 Above, we are explicitly giving the absolute path of interpreter. Not all operating systems have `node` in the bin folder, but all should have `env`. You can tell the OS to run `env` with node as parameter:
 
-```bash
+```js
 #!/usr/bin/env node
 
 // your code
@@ -35,3 +35,27 @@ chmod u+x app.js
 ```
 
 While running the command, make sure you are in the same directory which contains the `app.js` file.
+
+## Restart the application automatically
+
+The `node` command has to be re-executed in bash whenever there is a change in the application, to restart the application automatically, `nodemon` module is used.
+
+Install the nodemon module globally to system path
+
+```bash
+npm i -g nodemon
+```
+
+You can also install nodemon as a development-dependency
+
+```bash
+npm i --save-dev nodemon
+```
+
+This local installation of nodemon can be run by calling it from within npm script such as npm start or using npx nodemon.
+
+Run the application using nodemon followed by application file name.
+
+```bash
+nodemon app.js
+```

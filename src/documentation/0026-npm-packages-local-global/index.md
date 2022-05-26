@@ -14,7 +14,7 @@ The main difference between local and global packages is this:
 In your code you can only require local packages:
 
 ```js
-require('package-name')
+require('package-name');
 ```
 
 so when should you install in one way or another?

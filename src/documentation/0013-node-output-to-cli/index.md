@@ -19,9 +19,9 @@ If you pass an object, it will render it as a string.
 You can pass multiple variables to `console.log`, for example:
 
 ```js
-const x = 'x'
-const y = 'y'
-console.log(x, y)
+const x = 'x';
+const y = 'y';
+console.log(x, y);
 ```
 
 and Node.js will print both.
@@ -31,7 +31,7 @@ We can also format pretty phrases by passing variables and a format specifier.
 For example:
 
 ```js
-console.log('My %s has %d years', 'cat', 2)
+console.log('My %s has %d ears', 'cat', 2);
 ```
 
 * `%s` format a variable as a string
@@ -42,7 +42,7 @@ console.log('My %s has %d years', 'cat', 2)
 Example:
 
 ```js
-console.log('%o', Number)
+console.log('%o', Number);
 ```
 
 ## Clear the console
@@ -84,14 +84,14 @@ What happens is that `console.count()` will count the number of times a string i
 You can just count apples and oranges:
 
 ```js
-const oranges = ['orange', 'orange']
-const apples = ['just one apple']
+const oranges = ['orange', 'orange'];
+const apples = ['just one apple'];
 oranges.forEach(fruit => {
-  console.count(fruit)
-})
+  console.count(fruit);
+});
 apples.forEach(fruit => {
-  console.count(fruit)
-})
+  console.count(fruit);
+});
 ```
 ## Reset counting
 The console.countReset() method resets counter used with console.count().
@@ -99,20 +99,20 @@ The console.countReset() method resets counter used with console.count().
 We will use the apples and orange example to demonstrate this.
 
 ```js
-const oranges = ['orange', 'orange']
-const apples = ['just one apple']
+const oranges = ['orange', 'orange'];
+const apples = ['just one apple'];
 oranges.forEach(fruit => {
-  console.count(fruit)
-})
+  console.count(fruit);
+});
 apples.forEach(fruit => {
-  console.count(fruit)
-})
+  console.count(fruit);
+});
 
-console.countReset('orange')
+console.countReset('orange');
 
 oranges.forEach(fruit => {
-  console.count(fruit)
-})
+  console.count(fruit);
+});
 ```
 
 Notice how the call to `console.countReset('orange')` resets the value counter to zero.
@@ -124,9 +124,9 @@ There might be cases where it's useful to print the call stack trace of a functi
 You can do so using `console.trace()`:
 
 ```js
-const function2 = () => console.trace()
-const function1 = () => function2()
-function1()
+const function2 = () => console.trace();
+const function1 = () => function2();
+function1();
 ```
 
 This will print the stack trace. This is what's printed if we try this in the Node.js REPL:
@@ -150,14 +150,14 @@ Trace
 You can easily calculate how much time a function takes to run, using `time()` and `timeEnd()`
 
 ```js
-const doSomething = () => console.log('test')
+const doSomething = () => console.log('test');
 const measureDoingSomething = () => {
-  console.time('doSomething()')
-  //do something, and measure the time it takes
-  doSomething()
-  console.timeEnd('doSomething()')
-}
-measureDoingSomething()
+  console.time('doSomething()');
+  // do something, and measure the time it takes
+  doSomething();
+  console.timeEnd('doSomething()');
+};
+measureDoingSomething();
 ```
 
 ## stdout and stderr
@@ -175,18 +175,19 @@ You can color the output of your text in the console by using [escape sequences]
 Example:
 
 ```js
-console.log('\x1b[33m%s\x1b[0m', 'hi!')
+console.log('\x1b[33m%s\x1b[0m', 'hi!');
 ```
 
 You can try that in the Node.js REPL, and it will print `hi!` in yellow.
 
 However, this is the low-level way to do this. The simplest way to go about coloring the console output is by using a library. [Chalk](https://github.com/chalk/chalk) is such a library, and in addition to coloring it also helps with other styling facilities, like making text bold, italic or underlined.
 
-You install it with `npm install chalk`, then you can use it:
+You install it with `npm install chalk@4`, then you can use it:
 
 ```js
-const chalk = require('chalk')
-console.log(chalk.yellow('hi!'))
+const chalk = require('chalk');
+
+console.log(chalk.yellow('hi!'));
 ```
 
 Using `chalk.yellow` is much more convenient than trying to remember the escape codes, and the code is much more readable.
@@ -200,13 +201,13 @@ Check the project link posted above for more usage examples.
 This snippet creates a 10-step progress bar, and every 100ms one step is completed. When the bar completes we clear the interval:
 
 ```js
-const ProgressBar = require('progress')
+const ProgressBar = require('progress');
 
-const bar = new ProgressBar(':bar', { total: 10 })
+const bar = new ProgressBar(':bar', { total: 10 });
 const timer = setInterval(() => {
-  bar.tick()
+  bar.tick();
   if (bar.complete) {
-    clearInterval(timer)
+    clearInterval(timer);
   }
-}, 100)
+}, 100);
 ```

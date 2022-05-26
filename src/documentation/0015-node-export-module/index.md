@@ -13,7 +13,7 @@ A Node.js file can import functionality exposed by other Node.js files.
 When you want to import something you use
 
 ```js
-const library = require('./library')
+const library = require('./library');
 ```
 
 to import the functionality exposed in the `library.js` file that resides in the current file folder.
@@ -34,14 +34,14 @@ The first is to assign an object to `module.exports`, which is an object provide
 // car.js
 const car = {
   brand: 'Ford',
-  model: 'Fiesta'
-}
+  model: 'Fiesta',
+};
 
-module.exports = car
+module.exports = car;
 ```
 ```js
 // index.js
-const car = require('./car')
+const car = require('./car');
 ```
 
 The second way is to add the exported object as a property of `exports`. This way allows you to export multiple objects, functions or data:
@@ -49,10 +49,10 @@ The second way is to add the exported object as a property of `exports`. This wa
 ```js
 const car = {
   brand: 'Ford',
-  model: 'Fiesta'
-}
+  model: 'Fiesta',
+};
 
-exports.car = car
+exports.car = car;
 ```
 
 or directly
@@ -60,30 +60,48 @@ or directly
 ```js
 exports.car = {
   brand: 'Ford',
-  model: 'Fiesta'
-}
+  model: 'Fiesta',
+};
 ```
 
 And in the other file, you'll use it by referencing a property of your import:
 
 ```js
-const items = require('./items')
-const car = items.car
-```
+const items = require('./items');
 
-or
-
-```js
-const car = require('./items').car
+const { car } = items;
 ```
 
 or you can use a destructuring assignment:
 
 ```js
-const { car } = require('./items')
+const { car } = require('./items');
 ```
 
 What's the difference between `module.exports` and `exports`?
 
 The first exposes the object it points to.
 The latter exposes _the properties_ of the object it points to.
+
+`require` will always return the object that `module.exports` points to.
+
+```js
+// car.js
+exports.car = {
+  brand: 'Ford',
+  model: 'Fiesta',
+};
+
+module.exports = {
+  brand: 'Tesla',
+  model: 'Model S',
+};
+
+// app.js
+const tesla = require('./car');
+const ford = require('./car').car;
+
+console.log(tesla, ford);
+```
+
+This will print `{ brand: 'Tesla', model: 'Model S' } undefined` since the `require` function's return value has been updated to the object that `module.exports` points to, so _the property_ that `exports` added can't be accessed.

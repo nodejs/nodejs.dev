@@ -42,9 +42,7 @@ const Hero = ({
             Download Node (LTS)
           </a>
           <p className="t-caption">
-            {lastLTSRelease
-              ? `Version ${lastLTSRelease.version.substr(1)} - `
-              : ''}
+            {lastLTSRelease ? `Version ${currentRelease.version} - ` : ''}
             <a href={currentVersionUrl}>Get Current</a>
           </p>
         </div>

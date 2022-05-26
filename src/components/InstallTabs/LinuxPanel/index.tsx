@@ -15,13 +15,13 @@ export const PureLinuxPanel = ({ nvmVersion }: Props): JSX.Element => {
     <div>
       <ShellBox textToCopy={`curl -o- ${nvmInstallScriptUrl} | bash`}>
         <span className="install__text__no-select">$</span>
-        <span className="install__text__command"> curl -o- </span>
+        <span className="install__text__command">curl -o- </span>
         {nvmInstallScriptUrl}
         <span className="install__text__command"> | bash</span>
       </ShellBox>
       <ShellBox textToCopy="nvm install --lts">
         <span className="install__text__no-select">$</span>
-        <span className="install__text__command"> nvm</span> install --lts
+        <span className="install__text__command">nvm</span> install --lts
       </ShellBox>
       <Link
         className="install__docs-button"
