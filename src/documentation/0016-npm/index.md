@@ -16,7 +16,7 @@ It started as a way to download and manage dependencies of Node.js packages, but
 
 There are many things that `npm` does.
 
-> [**Yarn**](https://yarnpkg.com/en/) and [**pnpm**](https://pnpm.js.org/) are alternatives to npm cli. You can check them out as well.
+> [**Yarn**](https://yarnpkg.com/en/) and [**pnpm**](https://pnpm.io) are alternatives to npm cli. You can check them out as well.
 
 ## Downloads
 
@@ -62,7 +62,7 @@ As for the _optionalDependencies_ the difference is that build failure of the de
 
 Updating is also made easy, by running
 
-```console
+```bash
 npm update
 ```
 
@@ -70,7 +70,7 @@ npm update
 
 You can specify a single package to update as well:
 
-```console
+```bash
 npm update <package-name>
 ```
 
@@ -90,7 +90,7 @@ In all those cases, versioning helps a lot, and `npm` follows the semantic versi
 
 The package.json file supports a format for specifying command line tasks that can be run by using
 
-```console
+```bash
 npm run <task-name>
 ```
 

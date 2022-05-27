@@ -6,15 +6,20 @@ jobs:
   test-ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           cache: npm
 
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run test and coverage
+      - name: Run Gatsby Build
         run: npm run build-ci
+
+      - name: Run Storybook Build
+        run: npm run build-storybook

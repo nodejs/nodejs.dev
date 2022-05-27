@@ -6,9 +6,7 @@ type Props = {
   releases: UpcomingReleaseData[];
 };
 
-export default function UpcomingReleasesPanel({
-  releases,
-}: Props): JSX.Element {
+const UpcomingReleasesPanel = ({ releases }: Props): JSX.Element => {
   return (
     <div className="upcoming-releases__panel">
       {releases.map(release => (
@@ -21,4 +19,6 @@ export default function UpcomingReleasesPanel({
       ))}
     </div>
   );
-}
+};
+
+export default UpcomingReleasesPanel;

@@ -31,7 +31,7 @@ describe('DownloadAdditional component', (): void => {
     expect(container).toMatchSnapshot();
   });
 
-  it('allows to expand items', () => {
+  it('allows to expand items', async () => {
     const { container } = render(
       <DownloadAdditional
         line={releaseData}
@@ -45,12 +45,12 @@ describe('DownloadAdditional component', (): void => {
     ) as Element;
 
     // expand installers list
-    userEvent.click(downloadItem);
+    await userEvent.click(downloadItem);
 
     expect(container).toMatchSnapshot();
   });
 
-  it('allows to collapse expanded items', () => {
+  it('allows to collapse expanded items', async () => {
     const { container } = render(
       <DownloadAdditional
         line={releaseData}
@@ -64,9 +64,9 @@ describe('DownloadAdditional component', (): void => {
     ) as Element;
 
     // expand installers list
-    userEvent.click(downloadItem);
+    await userEvent.click(downloadItem);
     // collapse it back to check all relevant html classes was set
-    userEvent.click(downloadItem);
+    await userEvent.click(downloadItem);
 
     expect(container).toMatchSnapshot();
   });

@@ -13,22 +13,22 @@ Node.js since version 7 provides the [`readline` module](https://nodejs.org/api/
 ```js
 const readline = require('readline').createInterface({
   input: process.stdin,
-  output: process.stdout
-})
+  output: process.stdout,
+});
 
 readline.question(`What's your name?`, name => {
-  console.log(`Hi ${name}!`)
-  readline.close()
-})
+  console.log(`Hi ${name}!`);
+  readline.close();
+});
 ```
 
-This piece of code asks the username, and once the text is entered and the user presses enter, we send a greeting.
+This piece of code asks the user's _name_, and once the text is entered and the user presses enter, we send a greeting.
 
 The `question()` method shows the first parameter (a question) and waits for the user input. It calls the callback function once enter is pressed.
 
 In this callback function, we close the readline interface.
 
-`readline` offers several other methods, and I'll let you check them out on the package documentation linked above.
+`readline` offers several other methods, please check them out on the package documentation linked above.
 
 If you need to require a password, it's best not to echo it back, but instead show a `*` symbol.
 
@@ -39,19 +39,19 @@ A more complete and abstract solution is provided by the [Inquirer.js package](h
 You can install it using `npm install inquirer`, and then you can replicate the above code like this:
 
 ```js
-const inquirer = require('inquirer')
+const inquirer = require('inquirer');
 
-var questions = [
+const questions = [
   {
     type: 'input',
     name: 'name',
-    message: "What's your name?"
-  }
-]
+    message: "What's your name?",
+  },
+];
 
 inquirer.prompt(questions).then(answers => {
-  console.log(`Hi ${answers['name']}!`)
-})
+  console.log(`Hi ${answers.name}!`);
+});
 ```
 
 Inquirer.js lets you do many things like asking multiple choices, having radio buttons, confirmations, and more.

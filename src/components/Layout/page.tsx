@@ -15,7 +15,7 @@ interface Page {
   location?: Location;
 }
 
-export default function PageLayout(props: Page): JSX.Element {
+const PageLayout = (props: Page): JSX.Element => {
   const {
     editPath,
     body,
@@ -38,4 +38,6 @@ export default function PageLayout(props: Page): JSX.Element {
       </main>
     </Layout>
   );
-}
+};
+
+export default PageLayout;

@@ -46,7 +46,7 @@ The callback function we pass is the one that's going to be executed upon every 
 In this case with
 
 ```js
-res.statusCode = 200
+res.statusCode = 200;
 ```
 
 we set the statusCode property to 200, to indicate a successful response.
@@ -54,11 +54,11 @@ we set the statusCode property to 200, to indicate a successful response.
 We also set the Content-Type header:
 
 ```js
-res.setHeader('Content-Type', 'text/html')
+res.setHeader('Content-Type', 'text/html');
 ```
 
 and we end close the response, adding the content as an argument to `end()`:
 
 ```js
-res.end('<h1>Hello, World!</h1>')
+res.end('<h1>Hello, World!</h1>');
 ```

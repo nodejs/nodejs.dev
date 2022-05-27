@@ -1,7 +1,7 @@
 ---
 title: 'The Node.js Event Loop'
 description: 'The Event Loop is one of the most important aspects to understand about Node.js'
-authors: flaviocopes, potch, ZYSzys, MylesBorins, fhemberger, LaRuaNa, flaviocopes, amiller-gh, ahmadawais
+authors: flaviocopes, potch, ZYSzys, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
 section: Getting Started
 category: learn
 ---
@@ -10,7 +10,7 @@ category: learn
 
 The **Event Loop** is one of the most important aspects to understand about Node.js.
 
-Why is this so important? Because it explains how Node.js can be asynchronous and have non-blocking I/O, and so it explains basically the "killer app" of Node.js, the thing that made it this successful.
+Why is this so important? Because it explains how Node.js can be asynchronous and have non-blocking I/O, and so it explains basically the "killer feature" of Node.js, the thing that made it this successful.
 
 The Node.js JavaScript code runs on a single thread. There is just one thing happening at a time.
 
@@ -156,7 +156,7 @@ ECMAScript 2015 introduced the concept of the Job Queue, which is used by Promis
 
 Promises that resolve before the current function ends will be executed right after the current function.
 
-I find nice the analogy of a rollercoaster ride at an amusement park: the message queue puts you at the back of the queue, behind all the other people, where you will have to wait for your turn, while the job queue is the fastpass ticket that lets you take another ride right after you finished the previous one.
+Similar to a rollercoaster ride at an amusement park: the message queue puts you at the back of the queue, behind all the other people, where you will have to wait for your turn, while the job queue is the fastpass ticket that lets you take another ride right after you finished the previous one.
 
 Example:
 

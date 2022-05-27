@@ -1,8 +1,8 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import './GetStartedSection.scss';
-import beginnerGuideIllustration from '../../images/illustrations/beginners-guide-illustration.svg';
-import doMoreWithNodeIllustration from '../../images/illustrations/do-more-illustration.svg';
+import { ReactComponent as BeginnerGuideIllustration } from '../../images/illustrations/beginners-guide-illustration.svg';
+import { ReactComponent as DoMoreWithNodeIllustration } from '../../images/illustrations/do-more-illustration.svg';
 
 interface Props {
   learnLinkText: string;
@@ -22,12 +22,12 @@ const GetStartedSection = ({
   <section className="get-started-section">
     <div className="cta-container">
       <div className="cta">
-        <img src={beginnerGuideIllustration} alt="" className="image" />
+        <BeginnerGuideIllustration className="image" />
         <h2 className="header">{beginnerGuideHeaderText}</h2>
         <p className="body-text">{beginnerGuideBodyText}</p>
       </div>
       <div className="cta">
-        <img src={doMoreWithNodeIllustration} alt="" className="image" />
+        <DoMoreWithNodeIllustration className="image" />
         <h2 className="header">{doMoreWithNodeHeaderText}</h2>
         <p className="body-text">{doMoreWithNodeBodyText}</p>
       </div>

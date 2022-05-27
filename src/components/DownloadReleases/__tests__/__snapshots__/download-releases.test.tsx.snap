@@ -15,7 +15,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
     >
       <div
         class="react-tabs"
-        data-tabs="true"
+        data-rttabs="true"
       >
         <ul
           class="react-tabs__tab-list"
@@ -26,6 +26,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
             aria-disabled="false"
             aria-selected="true"
             class="react-tabs__tab react-tabs__tab--selected"
+            data-rttab="true"
             id="react-tabs-0"
             role="tab"
             tabindex="0"
@@ -38,6 +39,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
             aria-disabled="false"
             aria-selected="false"
             class="react-tabs__tab"
+            data-rttab="true"
             id="react-tabs-2"
             role="tab"
           >
@@ -57,10 +59,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
             <div
               class="upcoming-releases__item--Current"
             >
-              <img
-                alt="hexagon icon"
-                src="test-file-stub"
-              />
+              <svg />
               <p
                 class="release-title"
               >
@@ -77,10 +76,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
             <div
               class="upcoming-releases__item--LTS"
             >
-              <img
-                alt="hexagon icon"
-                src="test-file-stub"
-              />
+              <svg />
               <p
                 class="release-title"
               >
@@ -97,10 +93,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
             <div
               class="upcoming-releases__item--Maintenance"
             >
-              <img
-                alt="hexagon icon"
-                src="test-file-stub"
-              />
+              <svg />
               <p
                 class="release-title"
               >
@@ -115,12 +108,9 @@ exports[`DownloadReleases component renders correctly 1`] = `
               </p>
             </div>
             <div
-              class="upcoming-releases__item--End-of-life upcoming-releases__item--to-be-released"
+              class="upcoming-releases__item--End-of-life"
             >
-              <img
-                alt="hexagon icon"
-                src="test-file-stub"
-              />
+              <svg />
               <p
                 class="release-title"
               >
@@ -129,7 +119,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
               <p
                 class="release-date"
               >
-                
+                Released
                  
                 2022-04-30
               </p>

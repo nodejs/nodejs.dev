@@ -19,8 +19,16 @@ module.exports = {
     config.module.rules[0].use[0].options.plugins = [
       // use @babel/plugin-proposal-class-properties for class arrow functions
       require.resolve('@babel/plugin-proposal-class-properties'),
+      require.resolve('@babel/plugin-proposal-private-methods'),
+      require.resolve('@babel/plugin-proposal-private-property-in-object'),
       // use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
-      require.resolve('babel-plugin-remove-graphql-queries'),
+      [
+        require.resolve('babel-plugin-remove-graphql-queries'),
+        {
+          stage: config.mode === `development` ? 'develop-html' : 'build-html',
+          staticQueryDir: 'page-data/sq/d',
+        },
+      ],
     ];
     // Prefer Gatsby ES6 entrypoint (module) over commonjs (main) entrypoint
     config.resolve.mainFields = ['browser', 'module', 'main'];
@@ -33,8 +41,19 @@ module.exports = {
 
           plugins: [
             require.resolve('@babel/plugin-proposal-class-properties'),
+            require.resolve('@babel/plugin-proposal-private-methods'),
+            require.resolve(
+              '@babel/plugin-proposal-private-property-in-object'
+            ),
             // use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
-            require.resolve('babel-plugin-remove-graphql-queries'),
+            [
+              require.resolve('babel-plugin-remove-graphql-queries'),
+              {
+                stage:
+                  config.mode === `development` ? 'develop-html' : 'build-html',
+                staticQueryDir: 'page-data/sq/d',
+              },
+            ],
           ],
         },
       },

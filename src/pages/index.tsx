@@ -11,10 +11,10 @@ import '../styles/index.scss';
 
 import { HomepageData, NodeReleaseLTSVersion, BannersIndex } from '../types';
 
-import leafsIllustrationFront from '../images/illustrations/leafs-front.svg';
-import leafsIllustrationMiddle from '../images/illustrations/leafs-middle.svg';
-import leafsIllustrationBack from '../images/illustrations/leafs-back.svg';
-import dotsIllustration from '../images/illustrations/dots.svg';
+import { ReactComponent as LeafsIllustrationFront } from '../images/illustrations/leafs-front.svg';
+import { ReactComponent as LeafsIllustrationMiddle } from '../images/illustrations/leafs-middle.svg';
+import { ReactComponent as LeafsIllustrationBack } from '../images/illustrations/leafs-back.svg';
+import { ReactComponent as DotsIllustration } from '../images/illustrations/dots.svg';
 import InstallTabs from '../components/InstallTabs';
 import Banner from '../components/Banner';
 
@@ -61,7 +61,7 @@ const NodeFeature = ({
   );
 };
 
-export default function Index({
+const Index = ({
   data: {
     page: {
       frontmatter: { displayTitle, subTitle, description },
@@ -69,7 +69,7 @@ export default function Index({
     nodeReleases: { nodeReleasesLTSVersion },
     banners: { bannersIndex },
   },
-}: HomepageProps): JSX.Element {
+}: HomepageProps): JSX.Element => {
   return (
     <Layout title={displayTitle} description={description}>
       <main className="home-page">
@@ -84,22 +84,10 @@ export default function Index({
           <div className="node-demo">
             <InstallTabs />
           </div>
-          <img
-            className="leafs-front animations"
-            src={leafsIllustrationFront}
-            alt=""
-          />
-          <img
-            className="leafs-middle animations"
-            src={leafsIllustrationMiddle}
-            alt=""
-          />
-          <img
-            className="leafs-back animations"
-            src={leafsIllustrationBack}
-            alt=""
-          />
-          <img className="dots" src={dotsIllustration} alt="" />
+          <LeafsIllustrationFront className="leafs-front animations" />
+          <LeafsIllustrationMiddle className="leafs-middle animations" />
+          <LeafsIllustrationBack className="leafs-back animations" />
+          <DotsIllustration className="dots" />
         </section>
 
         <section className="node-features">
@@ -115,7 +103,9 @@ export default function Index({
       </main>
     </Layout>
   );
-}
+};
+
+export default Index;
 
 export interface HomeNodeReleases {
   nodeReleases: {

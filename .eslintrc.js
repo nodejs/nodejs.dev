@@ -39,6 +39,13 @@ module.exports = {
         '@typescript-eslint/no-use-before-define': 'warn',
         'import/extensions': 'off',
         'consistent-return': 'off',
+        'react/function-component-definition': [
+          'error',
+          {
+            namedComponents: 'arrow-function',
+            unnamedComponents: 'arrow-function',
+          },
+        ],
       },
     },
     {
@@ -66,6 +73,31 @@ module.exports = {
       extends: ['plugin:testing-library/react'],
       env: {
         jest: true,
+      },
+    },
+    {
+      files: ['**/*.md'],
+      plugins: ['markdown'],
+      processor: 'markdown/markdown',
+    },
+    {
+      files: ['**/*.md/*.js', '**/*.md/*.ts'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'off',
+        'consistent-return': 'off',
+        'func-names': 'off',
+        'import/extensions': 'off',
+        'import/no-extraneous-dependencies': 'off',
+        'import/no-unresolved': 'off',
+        'no-console': 'off',
+        'no-empty': 'off',
+        'no-restricted-globals': 'off',
+        'no-restricted-syntax': 'off',
+        'no-undef': 'off',
+        'no-underscore-dangle': 'off',
+        'no-unused-expressions': 'off',
+        'no-unused-vars': 'off',
+        'prefer-promise-reject-errors': 'off',
       },
     },
   ],

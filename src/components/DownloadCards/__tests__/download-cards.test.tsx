@@ -11,14 +11,14 @@ describe('DownloadCards component', (): void => {
     expect(container).toMatchSnapshot();
   });
 
-  it('check click handler on DownloadCards component', (): void => {
+  it('check click handler on DownloadCards component', async () => {
     const { getAllByRole } = render(<DownloadCards userOS={UserOS.MAC} />);
 
     const listElement = getAllByRole('tab');
 
     expect(listElement[0]).toHaveClass('download-card');
 
-    userEvent.click(listElement[0]);
+    await userEvent.click(listElement[0]);
 
     expect(listElement[0]).toHaveClass('download-card download-card--active');
   });

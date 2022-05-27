@@ -70,7 +70,7 @@ interface NavBarProps {
   pageKey: string;
 }
 
-export default function SideNavBar({ pageKey }: NavBarProps): JSX.Element {
+const SideNavBar = ({ pageKey }: NavBarProps): JSX.Element => {
   const [navOpen, setNavOpen] = useState<boolean>(false);
   const toggle = (): void => setNavOpen(!navOpen);
 
@@ -110,4 +110,6 @@ export default function SideNavBar({ pageKey }: NavBarProps): JSX.Element {
       </ul>
     </nav>
   );
-}
+};
+
+export default SideNavBar;

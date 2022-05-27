@@ -130,5 +130,14 @@ module.exports = {
     },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-meta-redirect',
+    {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        prettier: true,
+        svgoConfig: {
+          plugins: ['prefixIds'],
+        },
+      },
+    },
   ],
 };
