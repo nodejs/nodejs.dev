@@ -6,7 +6,7 @@ section: Getting Started
 category: learn
 ---
 
-Here is a sample Hello World HTTP web server:
+Here is a sample Hello World HTTP web server on [StackBlitz](https://stackblitz.com/):
 
 <iframe
   title="Build an HTTP Server"
