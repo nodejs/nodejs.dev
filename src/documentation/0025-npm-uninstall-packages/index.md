@@ -14,7 +14,7 @@ npm uninstall <package-name>
 
 from the project root folder (the folder that contains the `node_modules` folder). This will update `dependencies`, `devDependencies`, `optionalDependencies`, and `peerDependencies` in both `package.json` and `package-lock.json` files.
 
-Use `--no-save` option if you dont want to update the `package.json` and `package-lock.json` files.
+Use `--no-save` option if you don't want to update the `package.json` and `package-lock.json` files.
 
 If the package is installed **globally**, you need to add the `-g` / `--global` flag:
 
