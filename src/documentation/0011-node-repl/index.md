@@ -136,10 +136,8 @@ Using the repl variable we can perform various operations.
 To start the REPL command prompt, type in the following line
 
 ```js
-const local = repl.start(prompt);
+repl.start();
 ```
-
-repl.start() starts the REPL environment and the prompt is a string that accepts the prompt which shows when the REPL starts. The default is '>', but we can define custom prompts.
 
 Run the file in the command line.
 
@@ -148,7 +146,14 @@ node repl.js
 ```
 
 ```console
->const n = 10
+> const n = 10
+```
+
+You can pass a string which shows when the REPL starts. The default is '> ' (with a trailing space), but we can define custom prompt.
+
+```js
+// a Unix style prompt
+const local = repl.start('$ ');
 ```
 
 You can display a message while exiting the REPL
