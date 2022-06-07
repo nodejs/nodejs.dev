@@ -117,7 +117,7 @@ fs.readFile(fileName, 'utf8', (err, data) => {
 });
 ```
 
-The callback-based API may rises callback hell when there are too many nested callbacks. We can simply use promise-based API to avoid it:
+The callback-based API may rise a callback hell when there are too many nested callbacks. We can simply use promise-based API to avoid it:
 
 ```js
 // Example: Read a file and change its content and read
