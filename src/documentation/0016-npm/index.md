@@ -86,6 +86,12 @@ Specifying an explicit version of a library also helps to keep everyone on the s
 
 In all those cases, versioning helps a lot, and `npm` follows the semantic versioning (semver) standard.
 
+You can install a specific version of a package, by running
+
+```bash
+npm install <package-name>@<version>
+```
+
 ## Running Tasks
 
 The package.json file supports a format for specifying command line tasks that can be run by using
