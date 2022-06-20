@@ -57,7 +57,7 @@ req.end();
 
 ## Perform a POST Request
 
-Similar to making an HTTP GET request, you can use the [Axios library](https://github.com/axios/axios) library to perform a POST request:
+Similar to making an HTTP GET request, you can use the [Axios library](https://github.com/axios/axios) to perform a POST request:
 
 ```js
 const axios = require('axios');
