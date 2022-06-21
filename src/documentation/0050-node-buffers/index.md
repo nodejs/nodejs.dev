@@ -141,5 +141,5 @@ By default you copy the whole buffer. If you only want to copy a part of the buf
 const buf = Buffer.from('Hey?');
 const bufcopy = Buffer.from('Moo!');
 bufcopy.set(buf.subarray(1, 3), 1);
-bufcopy.toString(); // 'Mey!'
+console.log(bufcopy.toString()); // 'Mey!'
 ```
