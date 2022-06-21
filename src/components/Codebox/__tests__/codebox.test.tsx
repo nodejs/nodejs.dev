@@ -25,7 +25,7 @@ describe('Codebox component', (): void => {
         {{
           props: {
             className: 'language-html',
-            children: { textToCopy },
+            children: textToCopy,
           },
         }}
       </Codebox>
