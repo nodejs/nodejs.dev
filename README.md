@@ -25,7 +25,7 @@
 1. **Install dependencies.**
 
    ```bash
-   npm install
+   npm ci --no-audit
    ```
 
 1. **Start project locally.**
