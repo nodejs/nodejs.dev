@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { Link } from 'gatsby-plugin-react-intl';
 import React, { Fragment } from 'react';
 import { BlogMetaData } from '../../types';
 import { getTerminatingString } from '../../util/getTerminatingString';

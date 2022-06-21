@@ -1,0 +1,28 @@
+.dropdownList {
+  background-color: var(--color-dropdown-background);
+  border-radius: 5px;
+  height: 200px;
+  list-style-type: none;
+  overflow-y: scroll;
+  padding: 0;
+  position: absolute;
+  width: fit-content;
+
+  > li {
+    > button {
+      background: none;
+      border: none;
+
+      color: var(--color-text-primary);
+      cursor: pointer;
+      font-size: var(--font-size-body1);
+      padding: var(--space-12);
+      text-align: center;
+      width: 100%;
+
+      &:hover {
+        background-color: var(--color-dropdown-hover);
+      }
+    }
+  }
+}

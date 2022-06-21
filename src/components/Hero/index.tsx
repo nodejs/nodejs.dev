@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from 'gatsby-plugin-react-intl';
 import { detectOS } from '../../util/detectOS';
 import downloadUrlByOS from '../../util/downloadUrlByOS';
 import { NodeReleaseLTSVersion } from '../../types';

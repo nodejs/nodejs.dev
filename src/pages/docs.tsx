@@ -2,7 +2,8 @@
 /* istanbul ignore file */
 /* eslint-disable react/no-danger, jsx-a11y/no-onchange */
 import React, { useState, useEffect } from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
+import { Link } from 'gatsby-plugin-react-intl';
 import DOMPurify from 'isomorphic-dompurify';
 import { useApiData } from '../hooks';
 import { ApiDocsObj, APIResponse } from '../hooks/useApiDocs';

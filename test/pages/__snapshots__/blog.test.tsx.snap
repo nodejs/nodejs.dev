@@ -129,6 +129,174 @@ exports[`Blog page renders correctly 1`] = `
                 />
               </a>
             </li>
+            <li
+              class="nav__tabs"
+            >
+              <button
+                class="language-switch"
+                type="button"
+              >
+                <span
+                  class="sr-only"
+                >
+                  Switch Language
+                </span>
+                <i
+                  class="material-icons theme-buttons"
+                >
+                  translate
+                </i>
+              </button>
+              <ul
+                class="dropdownList"
+                style="left: -10px; top: -15px; visibility: hidden;"
+              >
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    العربية
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Catalan
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Deutsch
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: bold;"
+                    type="button"
+                  >
+                    English
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Español
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    زبان فارسی
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Français
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Italiano
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    日本語
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    ქართული
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    한국어
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Português do Brasil
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    limba română
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Русский
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Türkçe
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Українська
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    简体中文
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    繁體中文
+                  </button>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -414,6 +582,174 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
                   style="margin-bottom: -3px;"
                 />
               </a>
+            </li>
+            <li
+              class="nav__tabs"
+            >
+              <button
+                class="language-switch"
+                type="button"
+              >
+                <span
+                  class="sr-only"
+                >
+                  Switch Language
+                </span>
+                <i
+                  class="material-icons theme-buttons"
+                >
+                  translate
+                </i>
+              </button>
+              <ul
+                class="dropdownList"
+                style="left: -10px; top: -15px; visibility: hidden;"
+              >
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    العربية
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Catalan
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Deutsch
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: bold;"
+                    type="button"
+                  >
+                    English
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Español
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    زبان فارسی
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Français
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Italiano
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    日本語
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    ქართული
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    한국어
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Português do Brasil
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    limba română
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Русский
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Türkçe
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Українська
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    简体中文
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    繁體中文
+                  </button>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
