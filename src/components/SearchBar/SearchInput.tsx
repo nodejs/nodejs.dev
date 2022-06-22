@@ -114,15 +114,13 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
             </div>
           )}
           {!isEmpty && (
-            <>
+            <ul>
               {results.map((result: SearchResult) => (
-                <ul key={result.id}>
-                  <li className="resultItem">
-                    <Link to={`/learn/${result.slug}`}>{result.title}</Link>
-                  </li>
-                </ul>
+                <li className="resultItem" key={result.id}>
+                  <Link to={`/learn/${result.slug}`}>{result.title}</Link>
+                </li>
               ))}
-            </>
+            </ul>
           )}
         </div>
       )}
