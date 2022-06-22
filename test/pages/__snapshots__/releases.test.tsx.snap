@@ -83,6 +83,31 @@ exports[`Releases page renders correctly 1`] = `
             class="right-container"
           >
             <li
+              class="nav__tabs"
+            >
+              <div
+                class="searchBarContainer"
+                style="min-height: 0; width: 8em; box-shadow: 0; min-height: 0; box-shadow: 0;"
+              >
+                <div
+                  class="searchInputContainer"
+                >
+                  <i
+                    class="searchIcon material-icons"
+                  >
+                    search
+                  </i>
+                  <input
+                    autocomplete="off"
+                    class="inputText"
+                    name="query"
+                    placeholder="search..."
+                    value=""
+                  />
+                </div>
+              </div>
+            </li>
+            <li
               class="nav__tabs nav__tabs--right"
             >
               <button
