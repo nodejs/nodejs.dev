@@ -87,7 +87,7 @@ exports[`Blog page renders correctly 1`] = `
             >
               <div
                 class="searchBarContainer"
-                style="min-height: 0; width: 8em; box-shadow: 0; min-height: 0; box-shadow: 0;"
+                style="min-height: 3em; width: 8em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
@@ -381,7 +381,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
             >
               <div
                 class="searchBarContainer"
-                style="min-height: 0; width: 8em; box-shadow: 0; min-height: 0; box-shadow: 0;"
+                style="min-height: 3em; width: 8em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
