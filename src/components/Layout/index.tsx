@@ -1,6 +1,7 @@
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/themes/prism-okaidia.css';
 import React from 'react';
+import { MotionConfig } from 'framer-motion';
 import Header from '../Header';
 import Footer from '../Footer';
 import '../../styles/tokens.scss';
@@ -34,11 +35,13 @@ const Layout = ({
         location={location}
         img={img}
       />
-      <div className="layout-container">
-        <Header />
-        {children}
-        {showFooter && <Footer />}
-      </div>
+      <MotionConfig reducedMotion="user">
+        <div className="layout-container">
+          <Header />
+          {children}
+          {showFooter && <Footer />}
+        </div>
+      </MotionConfig>
     </>
   );
 };
