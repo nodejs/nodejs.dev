@@ -64,7 +64,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "pre-build": "node scripts/generateRedirects.js",
+    "build": "npm run pre-build && gatsby build",
     "build-ci": "gatsby build --prefix-paths",
     "start": "gatsby develop",
     "format": "prettier --write \"**/*.{ts,tsx,js,scss}\" && npm run lint:fix",
