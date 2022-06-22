@@ -904,7 +904,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             >
               <div
                 class="searchBarContainer"
-                style="min-height: 0.47873em; width: 8em; box-shadow: none; min-height: 0.47873em; box-shadow: none; min-height: 0.47873em; box-shadow: none;"
+                style="min-height: 0.42676em; width: 8em; box-shadow: none; min-height: 0.42676em; box-shadow: none; min-height: 0.42676em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
