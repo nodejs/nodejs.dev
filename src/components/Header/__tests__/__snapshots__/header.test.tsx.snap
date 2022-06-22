@@ -80,6 +80,31 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
           class="right-container"
         >
           <li
+            class="nav__tabs"
+          >
+            <div
+              class="searchBarContainer"
+              style="min-height: 0; width: 8em; box-shadow: 0; min-height: 0; box-shadow: 0;"
+            >
+              <div
+                class="searchInputContainer"
+              >
+                <i
+                  class="searchIcon material-icons"
+                >
+                  search
+                </i>
+                <input
+                  autocomplete="off"
+                  class="inputText"
+                  name="query"
+                  placeholder="search..."
+                  value=""
+                />
+              </div>
+            </div>
+          </li>
+          <li
             class="nav__tabs nav__tabs--right"
           />
           <li
@@ -187,6 +212,31 @@ exports[`Tests for Header component renders correctly 1`] = `
         <ul
           class="right-container"
         >
+          <li
+            class="nav__tabs"
+          >
+            <div
+              class="searchBarContainer"
+              style="min-height: 0; width: 8em; box-shadow: 0; min-height: 0; box-shadow: 0;"
+            >
+              <div
+                class="searchInputContainer"
+              >
+                <i
+                  class="searchIcon material-icons"
+                >
+                  search
+                </i>
+                <input
+                  autocomplete="off"
+                  class="inputText"
+                  name="query"
+                  placeholder="search..."
+                  value=""
+                />
+              </div>
+            </div>
+          </li>
           <li
             class="nav__tabs nav__tabs--right"
           >
@@ -316,6 +366,31 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
         <ul
           class="right-container"
         >
+          <li
+            class="nav__tabs"
+          >
+            <div
+              class="searchBarContainer"
+              style="min-height: 0; width: 8em; box-shadow: 0; min-height: 0; box-shadow: 0;"
+            >
+              <div
+                class="searchInputContainer"
+              >
+                <i
+                  class="searchIcon material-icons"
+                >
+                  search
+                </i>
+                <input
+                  autocomplete="off"
+                  class="inputText"
+                  name="query"
+                  placeholder="search..."
+                  value=""
+                />
+              </div>
+            </div>
+          </li>
           <li
             class="nav__tabs nav__tabs--right"
           >
