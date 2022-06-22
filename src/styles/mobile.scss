@@ -65,6 +65,14 @@
     );
   }
 
+  .searchBarContainer {
+    width: 18em !important;
+  }
+
+  .searchInputContainer {
+    width: 94%;
+  }
+
   [data-browser='legacy'] .side-nav__title {
     background-position: 0 calc(-50vh + var(--magic-hero-number) - 32px);
   }
