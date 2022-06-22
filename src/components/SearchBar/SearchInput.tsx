@@ -74,6 +74,7 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
     <motion.div
       className="searchBarContainer"
       animate={isExpanded ? 'expanded' : 'collapsed'}
+      initial="collapsed"
       variants={containerVariants}
       transition={containerTransition}
       ref={parentRef}
