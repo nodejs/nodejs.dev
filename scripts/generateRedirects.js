@@ -6,9 +6,7 @@ const firebaseConfig = resolve(__dirname, '../firebase.json');
 
 const firebaseJSON = JSON.parse(readFileSync(firebaseConfig));
 
-let firebaseRedirects = [];
-
-firebaseRedirects = Object.entries(redirects).map(([key, value]) => ({
+const firebaseRedirects = Object.entries(redirects).map(([key, value]) => ({
   source: key,
   destination: value,
   type: '301',
@@ -25,8 +23,10 @@ writeFile(
     2
   ),
   err => {
+    // eslint-disable-next-line no-console
     if (err) console.error('error writing redirects', err);
     else {
+      // eslint-disable-next-line no-console
       console.log('redirects written successfully\n');
     }
   }
