@@ -283,7 +283,7 @@ select {
 .nav__endwrapper {
   align-items: center;
   display: flex;
-  justify-content: flex-end;
+  flex-grow: 1;
 }
 
 .dark .nav {
@@ -307,15 +307,17 @@ select {
   align-items: center;
   display: flex;
   flex: 1 1 auto;
+  justify-content: flex-end;
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
 
 .nav .right-container > li:first-child {
+  flex-grow: 1;
   height: 3em;
+  justify-content: flex-end;
   position: relative;
-  top: 0;
 }
 
 .nav__tabs {
@@ -470,6 +472,12 @@ h6:hover .autolink-headers {
   height: 40px;
 }
 
+@media (max-width: 1300px) {
+  .nav__tabs__container {
+    margin: 0;
+  }
+}
+
 @media (max-width: 800px) {
   main {
     display: flex;
@@ -517,7 +525,6 @@ h6:hover .autolink-headers {
     background: var(--color-fill-app);
     height: var(--nav-height);
     justify-content: center;
-    margin: 0;
     order: 3;
     padding: 0;
     width: 100%;
