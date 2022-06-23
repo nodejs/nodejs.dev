@@ -13,21 +13,18 @@ const GovernancePage = ({ data }: Page): JSX.Element => {
   const { authors } = data.page.fields;
 
   return (
-    <>
-      <Layout title={title} description={description} showFooter={false}>
-        <main className="grid-container">
-          <SideNavBar pageKey={SideNavBarKeys.governance} />
-          <Article
-            title={title}
-            body={body}
-            tableOfContents={tableOfContents}
-            authors={authors}
-            editPath="content/about/governance.md"
-          />
-        </main>
-      </Layout>
-      <Footer />
-    </>
+    <Layout title={title} description={description}>
+      <main className="grid-container">
+        <SideNavBar pageKey={SideNavBarKeys.governance} />
+        <Article
+          title={title}
+          body={body}
+          tableOfContents={tableOfContents}
+          authors={authors}
+          editPath="content/about/governance.md"
+        />
+      </main>
+    </Layout>
   );
 };
 

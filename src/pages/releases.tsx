@@ -27,23 +27,20 @@ const ReleasesPage = ({
   const { nodeReleasesData } = nodeReleases;
 
   return (
-    <>
-      <Layout title={title} description={description} showFooter={false}>
-        <main className="grid-container">
-          <SideNavBar pageKey={SideNavBarKeys.releases} />
-          <Article
-            title={title}
-            body={body}
-            tableOfContents={tableOfContents}
-            authors={authors}
-            editPath="content/about/releases.md"
-          >
-            <DownloadTable nodeReleasesData={nodeReleasesData} />
-          </Article>
-        </main>
-      </Layout>
-      <Footer />
-    </>
+    <Layout title={title} description={description}>
+      <main className="grid-container">
+        <SideNavBar pageKey={SideNavBarKeys.releases} />
+        <Article
+          title={title}
+          body={body}
+          tableOfContents={tableOfContents}
+          authors={authors}
+          editPath="content/about/releases.md"
+        >
+          <DownloadTable nodeReleasesData={nodeReleasesData} />
+        </Article>
+      </main>
+    </Layout>
   );
 };
 

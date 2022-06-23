@@ -704,53 +704,42 @@ const APIDocsPage = ({
   }, [apiData]);
 
   return (
-    <>
-      <Layout
-        title={title}
-        description={description}
-        location={location}
-        showFooter={false}
-      >
-        <main className="grid-container">
-          <nav aria-label="Secondary" className="api-nav">
-            <ul className="api-nav__list">
-              <li className="api-nav__list-item">
-                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                <label
-                  className="sr-only"
-                  htmlFor="api-nav__version__select-id"
-                >
-                  Select API version
-                </label>
-                <select
-                  id="api-nav__version__select-id"
-                  className="api-nav__version"
-                  onChange={(e): void => {
-                    setPage(null);
-                    setVersion(e.target.value);
-                  }}
-                >
-                  {releases.map(
-                    (release): JSX.Element => (
-                      <option value={release.version} key={release.version}>
-                        {release.version}
-                      </option>
-                    )
-                  )}
-                </select>
-              </li>
-              {sideBarSection('Globals', 'globals', apiData)}
-              {sideBarSection('Methods', 'methods', apiData)}
-              {sideBarSection('Misc', 'miscs', apiData)}
-              {sideBarSection('Modules', 'modules', apiData)}
-              {sideBarSection('Classes', 'classes', apiData)}
-            </ul>
-          </nav>
-          {renderArticle(page, userOS, currentVersionSelected || '')}
-        </main>
-      </Layout>
-      <Footer />
-    </>
+    <Layout title={title} description={description} location={location}>
+      <main className="grid-container">
+        <nav aria-label="Secondary" className="api-nav">
+          <ul className="api-nav__list">
+            <li className="api-nav__list-item">
+              {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+              <label className="sr-only" htmlFor="api-nav__version__select-id">
+                Select API version
+              </label>
+              <select
+                id="api-nav__version__select-id"
+                className="api-nav__version"
+                onChange={(e): void => {
+                  setPage(null);
+                  setVersion(e.target.value);
+                }}
+              >
+                {releases.map(
+                  (release): JSX.Element => (
+                    <option value={release.version} key={release.version}>
+                      {release.version}
+                    </option>
+                  )
+                )}
+              </select>
+            </li>
+            {sideBarSection('Globals', 'globals', apiData)}
+            {sideBarSection('Methods', 'methods', apiData)}
+            {sideBarSection('Misc', 'miscs', apiData)}
+            {sideBarSection('Modules', 'modules', apiData)}
+            {sideBarSection('Classes', 'classes', apiData)}
+          </ul>
+        </nav>
+        {renderArticle(page, userOS, currentVersionSelected || '')}
+      </main>
+    </Layout>
   );
 };
 
