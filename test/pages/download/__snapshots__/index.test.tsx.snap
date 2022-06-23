@@ -87,7 +87,7 @@ exports[`Download page renders correctly 1`] = `
             >
               <div
                 class="searchBarContainer"
-                style="min-height: 3em; width: 8em; box-shadow: none;"
+                style="min-height: 3em; width: 100%; max-width: 8em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
@@ -904,7 +904,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             >
               <div
                 class="searchBarContainer"
-                style="min-height: 3em; width: 8em; box-shadow: none;"
+                style="min-height: 3em; width: 100%; max-width: 8em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"

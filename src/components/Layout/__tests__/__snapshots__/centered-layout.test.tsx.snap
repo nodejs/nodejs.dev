@@ -84,7 +84,7 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
           >
             <div
               class="searchBarContainer"
-              style="min-height: 3em; width: 8em; box-shadow: none;"
+              style="min-height: 3em; width: 100%; max-width: 8em; box-shadow: none;"
             >
               <div
                 class="searchInputContainer"
@@ -354,7 +354,7 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
           >
             <div
               class="searchBarContainer"
-              style="min-height: 3em; width: 8em; box-shadow: none;"
+              style="min-height: 3em; width: 100%; max-width: 8em; box-shadow: none;"
             >
               <div
                 class="searchInputContainer"

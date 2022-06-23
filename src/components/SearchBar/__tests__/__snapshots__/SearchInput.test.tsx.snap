@@ -7,7 +7,7 @@ Object {
     <div>
       <div
         class="searchBarContainer"
-        style="min-height: 3em; width: 8em; box-shadow: none;"
+        style="min-height: 3em; width: 100%; max-width: 8em; box-shadow: none;"
       >
         <div
           class="searchInputContainer"
@@ -31,7 +31,7 @@ Object {
   "container": <div>
     <div
       class="searchBarContainer"
-      style="min-height: 3em; width: 8em; box-shadow: none;"
+      style="min-height: 3em; width: 100%; max-width: 8em; box-shadow: none;"
     >
       <div
         class="searchInputContainer"
