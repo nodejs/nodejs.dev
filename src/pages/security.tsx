@@ -12,21 +12,18 @@ const SecurityPage = ({ data }: Page): JSX.Element => {
   const { body, tableOfContents } = data.page;
   const { authors } = data.page.fields;
   return (
-    <>
-      <Layout title={title} description={description} showFooter={false}>
-        <main className="grid-container">
-          <SideNavBar pageKey={SideNavBarKeys.security} />
-          <Article
-            title={title}
-            body={body}
-            tableOfContents={tableOfContents}
-            authors={authors}
-            editPath="content/about/security.md"
-          />
-        </main>
-      </Layout>
-      <Footer />
-    </>
+    <Layout title={title} description={description}>
+      <main className="grid-container">
+        <SideNavBar pageKey={SideNavBarKeys.security} />
+        <Article
+          title={title}
+          body={body}
+          tableOfContents={tableOfContents}
+          authors={authors}
+          editPath="content/about/security.md"
+        />
+      </main>
+    </Layout>
   );
 };
 

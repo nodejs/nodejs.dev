@@ -12,20 +12,17 @@ const AboutPage = ({ data }: Page): JSX.Element => {
   const { body } = data.page;
   const { authors } = data.page.fields;
   return (
-    <>
-      <Layout title={title} description={description} showFooter={false}>
-        <main className="grid-container">
-          <SideNavBar pageKey={SideNavBarKeys.about} />
-          <Article
-            title={title}
-            body={body}
-            authors={authors}
-            editPath="content/about/about.md"
-          />
-        </main>
-      </Layout>
-      <Footer />
-    </>
+    <Layout title={title} description={description}>
+      <main className="grid-container">
+        <SideNavBar pageKey={SideNavBarKeys.about} />
+        <Article
+          title={title}
+          body={body}
+          authors={authors}
+          editPath="content/about/about.md"
+        />
+      </main>
+    </Layout>
   );
 };
 
