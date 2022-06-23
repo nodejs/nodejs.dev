@@ -6,7 +6,6 @@ import { BlogPageData, BlogPageContext } from '../types';
 
 import '../styles/article-reader.scss';
 import '../styles/learn.scss';
-import Footer from '../components/Footer';
 import RecentPosts from '../components/RecentPosts';
 
 interface Props {

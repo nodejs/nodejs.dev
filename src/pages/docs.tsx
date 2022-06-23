@@ -10,7 +10,6 @@ import { ApiDocsObj, APIResponse } from '../hooks/useApiDocs';
 import downloadUrlByOs from '../util/downloadUrlByOS';
 import { detectOS, UserOS } from '../util/detectOS';
 
-import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import ShellBox from '../components/ShellBox';
 

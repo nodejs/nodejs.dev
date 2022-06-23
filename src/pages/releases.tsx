@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import { Page, NodeReleaseData, DataPage } from '../types';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
-import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
 import DownloadTable from '../components/DownloadReleases/DownloadTable';
 import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';

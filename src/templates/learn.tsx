@@ -7,7 +7,6 @@ import { LearnPageContext, LearnPageData } from '../types';
 
 import '../styles/article-reader.scss';
 import '../styles/learn.scss';
-import Footer from '../components/Footer';
 
 interface Props {
   data: LearnPageData;
