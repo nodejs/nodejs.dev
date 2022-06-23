@@ -61,7 +61,7 @@ telnet localhost 8124
 nc localhost 8124
 ```
 
-If you see the message `Client connected!` in the TCP server terminal, you can begin sending messages from the client connection terminal. Whatever you send should be sent back to you immediately (if you copy-and-pasted the code from above directly, you'll receive your message twice because their are two echo implementations). Disconnecting is easy; use your terminal's quit keystroke (commonly `CTRL+C`) or exit the terminal application instance.
+If you see the message `Client connected!` in the TCP server terminal, you can begin sending messages from the client connection terminal. Whatever you send should be sent back to you immediately (if you copy-and-pasted the code from above directly, you'll receive your message twice because there are two echo implementations). Disconnecting is easy; use your terminal's quit keystroke (commonly `CTRL+C`) or exit the terminal application instance.
 
 Great work! You have successfully implemented your first TCP server-client connection.
 
@@ -120,7 +120,7 @@ The second example introduces an additional event listener `'end'`. This is very
 
 ## Conclusion
 
-Fantastic work! With these two examples you should have what you need to get started building your own TCP communication networks. This guide only brushes the surface of socket programming applications, but the most important take away here is that Node.js implements TCP socket connections as [duplex streams](https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams) and [event emitters](https://nodejs.org/api/events.html#events_class_eventemitter). Understanding those two concepts will benefit your overall understanding of the `net` module.
+Fantastic work! With these two examples you should have what you need to get started building your own TCP communication networks. This guide only brushes the surface of socket programming applications, but the most important takeaway here is that Node.js implements TCP socket connections as [duplex streams](https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams) and [event emitters](https://nodejs.org/api/events.html#events_class_eventemitter). Understanding those two concepts will benefit your overall understanding of the `net` module.
 
 For more capabilities of the `net` module read the Node.js [net documentation](https://nodejs.org/api/net.html).
 
