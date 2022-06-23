@@ -9,7 +9,6 @@ const firebaseJSON = JSON.parse(readFileSync(firebaseConfig));
 let firebaseRedirects = [];
 
 firebaseRedirects = Object.entries(redirects).map(([key, value]) => ({
-  ...firebaseRedirects,
   source: key,
   destination: value,
   type: '301',
