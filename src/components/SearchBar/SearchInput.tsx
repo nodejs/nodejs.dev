@@ -10,12 +10,14 @@ const containerTransition = { type: 'spring', damping: 22, stiffness: 150 };
 const containerVariants = {
   expanded: {
     minHeight: '5em',
-    width: '30em',
+    width: '100%',
+    maxWidth: '30em',
     boxShadow: '0px 2px 12px 3px rgba(153, 204, 125, 0.14)',
   },
   collapsed: {
     minHeight: '3em',
-    width: '8em',
+    width: '100%',
+    maxWidth: '8em',
     boxShadow: 'none',
   },
 };
