@@ -1,4 +1,4 @@
-name: Gastby build
+name: Gatsby build
 
 on: [pull_request]
 
