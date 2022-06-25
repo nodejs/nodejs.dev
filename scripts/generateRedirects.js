@@ -6,18 +6,43 @@ const firebaseConfig = resolve(__dirname, '../firebase.json');
 
 const firebaseJSON = JSON.parse(readFileSync(firebaseConfig));
 
-const firebaseRedirects = Object.entries(redirects).map(([key, value]) => ({
-  source: key,
-  destination: value,
-  type: '301',
-}));
+/**
+ * Map data as firebase expects it to be
+ */
+const firebaseRedirects = {};
+Object.entries(redirects).forEach(([key, value]) => {
+  firebaseRedirects[key] = {
+    source: key,
+    destination: value,
+    type: '301',
+  };
+});
+
+/**
+ * Delete keys that already exists in the firebase.json
+ */
+Object.entries(firebaseJSON.redirects).forEach(([key]) => {
+  delete firebaseRedirects[key];
+});
+
+/**
+ * Serialize the redirects as firebase expects it to be
+ */
+const newRedirects = [];
+Object.keys(firebaseRedirects).forEach(value =>
+  newRedirects.push({
+    source: value,
+    destination: firebaseRedirects[value].destination,
+    type: '301',
+  })
+);
 
 writeFile(
   firebaseConfig,
   JSON.stringify(
     {
       ...firebaseJSON,
-      redirects: firebaseRedirects,
+      redirects: newRedirects,
     },
     null,
     2
@@ -25,9 +50,5 @@ writeFile(
   err => {
     // eslint-disable-next-line no-console
     if (err) console.error('error writing redirects', err);
-    else {
-      // eslint-disable-next-line no-console
-      console.log('redirects written successfully\n');
-    }
   }
 );
