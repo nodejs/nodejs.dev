@@ -15,7 +15,7 @@ All the blog posts should be written inside `content/blog` as only the Markdown 
 
 Every Blog Post should follow the following template:
 
-```mdx
+```markdown
 ---
 title: Your Blog Post Title
 blogAuthors: ["your-blog-authors-id", ...]
