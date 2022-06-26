@@ -8,10 +8,17 @@ interface Props {
   date?: string;
 }
 
+const unknownAuthor = {
+  name: 'Unknown',
+};
+
+const mapAuthorsList = (authors: BlogPostAuthor[]) =>
+  authors.map(author => author || unknownAuthor);
+
 const BlogAuthorsList = ({ authors, date }: Props): null | JSX.Element => (
   <h5 className="list">
     {date} by{' '}
-    {authors?.map(
+    {mapAuthorsList(authors || []).map(
       (author, i): string | JSX.Element =>
         author && (
           <span key={author.id}>

@@ -127,7 +127,7 @@ export interface BlogMetaData {
       blogAuthors: BlogPostAuthor[];
       category: BlogCategory;
     };
-    fields: { date: string; slug: string };
+    fields: { date: string; slug: string; categoryName: string };
   };
 }
 
