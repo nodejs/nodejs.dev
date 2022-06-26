@@ -14,9 +14,24 @@ type GroupedPosts = {
   } & BlogCategory;
 };
 
+const unknownAuthor = {
+  name: 'Unknown',
+};
+
+const getUnknownCategory = (name: string) => ({
+  name,
+  slug: name.charAt(0).toUpperCase() + name.slice(1),
+});
+
 const groupPostsByCategory = ({ blogs }: BlogPostsList): GroupedPosts => {
   const postsByCategory = blogs.edges.reduce((acc, post) => {
-    const { category } = post.node.frontmatter;
+    const category = post.node.frontmatter.category
+      ? post.node.frontmatter.category
+      : getUnknownCategory(post.node.fields.categoryName);
+
+    const blogAuthors = post.node.frontmatter.blogAuthors.map(
+      author => author || unknownAuthor
+    );
 
     if (!acc[category.name]) {
       acc[category.name] = {
@@ -25,7 +40,12 @@ const groupPostsByCategory = ({ blogs }: BlogPostsList): GroupedPosts => {
       };
     }
 
-    acc[category.name].posts.push(post);
+    const clonedPost = { ...post };
+
+    clonedPost.node.frontmatter.blogAuthors = blogAuthors;
+    clonedPost.node.frontmatter.category = category;
+
+    acc[category.name].posts.push(clonedPost);
 
     return acc;
   }, {});
@@ -84,6 +104,7 @@ export const pageQuery = graphql`
           fields {
             date(formatString: "MMMM DD, YYYY")
             slug
+            categoryName
           }
         }
       }
