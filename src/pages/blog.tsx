@@ -24,6 +24,10 @@ const getUnknownCategory = (name: string) => ({
 });
 
 const groupPostsByCategory = ({ blogs }: BlogPostsList): GroupedPosts => {
+  if (blogs.edges.length === 0) {
+    return {};
+  }
+
   const postsByCategory = blogs.edges.reduce((acc, post) => {
     const category = post.node.frontmatter.category
       ? post.node.frontmatter.category
@@ -61,7 +65,7 @@ const AllBlogPosts = ({ data }: Props): JSX.Element => {
       {Object.values(postsByCategory).map(({ posts, ...category }) => (
         <div key={category.name}>
           <div className="blog-category-container">
-            <div>
+            <div className="blog-category-header">
               <h2>{category.slug}</h2>
               <span>{category.description}</span>
             </div>

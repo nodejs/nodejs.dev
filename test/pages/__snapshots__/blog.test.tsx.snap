@@ -129,31 +129,45 @@ exports[`Blog page renders correctly 1`] = `
         </div>
       </div>
     </nav>
-    <main
-      class="blog-grid-container"
-    >
+    <div>
       <div
-        class="blogCard"
+        class="blog-category-container"
       >
-        <a
-          class="title"
-          href="Mock blog slug"
+        <div
+          class="blog-category-header"
         >
-          Mock blog title
-        </a>
-        <h4>
-          Mock date
-        </h4>
-        <p>
-          by
-           
-          <span>
-            Mock author name
-          </span>
-          
-        </p>
+          <h2>
+            Mock Category Slug
+          </h2>
+          <span />
+        </div>
       </div>
-    </main>
+      <div
+        class="blog-grid-container"
+      >
+        <div
+          class="blogCard"
+        >
+          <a
+            class="title"
+            href="Mock blog slug"
+          >
+            Mock blog title
+          </a>
+          <h4>
+            Mock date
+          </h4>
+          <p>
+            by
+             
+            <span>
+              Mock author name
+            </span>
+            
+          </p>
+        </div>
+      </div>
+    </div>
     <section
       class="bottom-info"
     >
@@ -398,13 +412,6 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         </div>
       </div>
     </nav>
-    <main
-      class="blog-grid-container"
-    >
-      <h1>
-        No Blog Posts yet
-      </h1>
-    </main>
     <section
       class="bottom-info"
     >
