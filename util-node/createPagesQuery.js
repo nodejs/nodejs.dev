@@ -43,6 +43,7 @@ module.exports = `
         }
         fields {
           slug
+          categoryName
         }
       }
       next {
