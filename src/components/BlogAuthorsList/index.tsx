@@ -8,27 +8,29 @@ interface Props {
   date?: string;
 }
 
-const BlogAuthorsList = ({ authors, date }: Props): null | JSX.Element => {
-  return (
-    <h5 className="list">
-      {date} by{' '}
-      {authors.map(
-        (author, i): string | JSX.Element =>
-          author && (
-            <span key={author.id}>
-              {author.url ? (
-                <a target="_blank" rel="noopener noreferrer" href={author.url}>
-                  {author.name}
-                </a>
-              ) : (
-                author.name
-              )}
-              {getTerminatingString(i, authors.length)}
-            </span>
-          )
-      )}
-    </h5>
-  );
-};
+const BlogAuthorsList = ({ authors, date }: Props): null | JSX.Element => (
+  <h5 className="list">
+    {date} by{' '}
+    {authors?.map(
+      (author, i): string | JSX.Element =>
+        author && (
+          <span key={author.id}>
+            {author.website ? (
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={author.website}
+              >
+                {author.name}
+              </a>
+            ) : (
+              author.name
+            )}
+            {getTerminatingString(i, authors.length)}
+          </span>
+        )
+    )}
+  </h5>
+);
 
 export default BlogAuthorsList;

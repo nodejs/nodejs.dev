@@ -12,7 +12,7 @@ const BlogCard = ({
   data: {
     node: {
       fields: { date, slug },
-      frontmatter: { author, title },
+      frontmatter: { blogAuthors, title },
     },
   },
 }: Props): JSX.Element => (
@@ -23,13 +23,12 @@ const BlogCard = ({
     <h4>{date}</h4>
     <p>
       by{' '}
-      {author &&
-        author.map((user, i) => (
-          <Fragment key={user.name}>
-            <span>{user.name}</span>
-            {getTerminatingString(i, author.length)}
-          </Fragment>
-        ))}
+      {blogAuthors?.map((author, i) => (
+        <Fragment key={author.name}>
+          <span>{author.name}</span>
+          {getTerminatingString(i, blogAuthors.length)}
+        </Fragment>
+      ))}
     </p>
   </div>
 );

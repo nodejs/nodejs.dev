@@ -62,7 +62,7 @@ export const query = graphql`
   query DocBySlug($slug: String!) {
     doc: mdx(
       fields: { slug: { eq: $slug } }
-      frontmatter: { category: { eq: "learn" } }
+      frontmatter: { category: { name: { eq: "learn" } } }
     ) {
       id
       body
