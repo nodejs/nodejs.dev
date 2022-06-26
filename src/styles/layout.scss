@@ -557,7 +557,7 @@ h6:hover .autolink-headers {
 
 .blog-grid-container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(388px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .blog-category-container > div {
