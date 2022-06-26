@@ -2,22 +2,61 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import BlogCard from '../components/BlogCard';
 import Layout from '../components/Layout';
-import { BlogPostsList } from '../types';
+import { BlogPostsList, BlogMetaData, BlogCategory } from '../types';
 
 type Props = {
   data: BlogPostsList;
 };
 
-const AllBlogPosts = ({ data }: Props): JSX.Element => (
-  <Layout title="Blogs at Nodejs">
-    <main className="blog-grid-container">
-      {!data.blogs.edges.length && <h1>No Blog Posts yet</h1>}
-      {data.blogs.edges.map(node => (
-        <BlogCard key={node.node.fields.slug} data={node} />
+type GroupedPosts = {
+  [key: BlogCategory['name']]: {
+    posts: BlogMetaData[];
+  } & BlogCategory;
+};
+
+const groupPostsByCategory = ({ blogs }: BlogPostsList): GroupedPosts => {
+  const postsByCategory = blogs.edges.reduce((acc, post) => {
+    const { category } = post.node.frontmatter;
+
+    if (!acc[category.name]) {
+      acc[category.name] = {
+        posts: [],
+        ...category,
+      };
+    }
+
+    acc[category.name].posts.push(post);
+
+    return acc;
+  }, {});
+
+  return postsByCategory;
+};
+
+const AllBlogPosts = ({ data }: Props): JSX.Element => {
+  const postsByCategory = groupPostsByCategory(data);
+
+  return (
+    <Layout title="Blogs at Nodejs">
+      {Object.values(postsByCategory).map(({ posts, ...category }) => (
+        <div key={category.name}>
+          <div className="blog-category-container">
+            <div>
+              <h2>{category.slug}</h2>
+              <span>{category.description}</span>
+            </div>
+          </div>
+          <div className="blog-grid-container">
+            {!posts.length && <h2>No blog posts under this category.</h2>}
+            {posts.map(edge => (
+              <BlogCard key={edge.node.fields.slug} data={edge} />
+            ))}
+          </div>
+        </div>
       ))}
-    </main>
-  </Layout>
-);
+    </Layout>
+  );
+};
 
 export const pageQuery = graphql`
   query AllBlogPostsPageQuery {
@@ -32,7 +71,12 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
-            author {
+            category {
+              name
+              slug
+              description
+            }
+            blogAuthors {
               id
               name
             }
