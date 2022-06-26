@@ -115,6 +115,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         value: frontmatter.authors.split(','),
       });
     }
+
+    if (frontmatter.category) {
+      createNodeField({
+        node,
+        name: 'categoryName',
+        value: frontmatter.category,
+      });
+    }
   }
 };
 
