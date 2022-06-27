@@ -1,5 +1,5 @@
 ---
-title: npm 1.0: Released
+title: 'npm 1.0: Released'
 blogAuthors: ['isaacs']
 category: 'npm'
 ---

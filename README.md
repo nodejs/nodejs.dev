@@ -1,5 +1,5 @@
 <p align="center">
-  <br>
+  <br />
   <a href="https://nodejs.dev">
     <img src="./src/images/logos/nodejs-logo-light-mode.svg" width="200"/>
   </a>
@@ -16,8 +16,8 @@
   <a title="Follow on Twitter" href="https://twitter.com/Nodejs">
     <img src="https://img.shields.io/twitter/follow/Nodejs.svg?style=social&label=Follow%20@Nodejs">
   </a>
-  <br>
-  <br>
+  <br />
+  <br />
 </p>
 
 ## 🚀 Quick Start
