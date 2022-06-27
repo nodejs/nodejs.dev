@@ -6,7 +6,6 @@ import { BlogPageData, BlogPageContext } from '../types';
 
 import '../styles/article-reader.scss';
 import '../styles/learn.scss';
-import Footer from '../components/Footer';
 import RecentPosts from '../components/RecentPosts';
 
 interface Props {
@@ -30,24 +29,21 @@ const BlogLayout = ({
   const { edges: recentPosts } = recent;
 
   return (
-    <>
-      <Layout title={title} description={excerpt} showFooter={false}>
-        <main className="grid-container blog-container">
-          <RecentPosts posts={recentPosts} />
-          <Article
-            title={title}
-            body={body}
-            next={next}
-            authors={author}
-            previous={previous}
-            relativePath={relativePath}
-            blog
-            date={date}
-          />
-        </main>
-      </Layout>
-      <Footer />
-    </>
+    <Layout title={title} description={excerpt}>
+      <main className="grid-container blog-container">
+        <RecentPosts posts={recentPosts} />
+        <Article
+          title={title}
+          body={body}
+          next={next}
+          authors={author}
+          previous={previous}
+          relativePath={relativePath}
+          blog
+          date={date}
+        />
+      </main>
+    </Layout>
   );
 };
 export default BlogLayout;
