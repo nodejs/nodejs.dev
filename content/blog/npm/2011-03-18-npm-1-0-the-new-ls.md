@@ -1,5 +1,5 @@
 ---
-title: npm 1.0: The New 'ls'
+title: "npm 1.0: The New 'ls'"
 blogAuthors: ['isaacs']
 category: 'npm'
 ---

@@ -6,9 +6,9 @@ category: 'npm'
 
 <p style="float:right;text-align:center;margin:5px;">
 <a href="http://www.flickr.com/photos/luc_viatour/4247957432/">
-<img style="border:1px #000 solid;" title="Web" src="/static/images/blog/npm/managing-node-js-dependencies-with-shrinkwrap/web-300x300.jpg" alt="" width="250" height="250">
+<img style="border:1px #000 solid;" title="Web" src="/static/images/blog/npm/managing-node-js-dependencies-with-shrinkwrap/web-300x300.jpg" alt="" width="250" height="250" />
 </a>
-<br>
+<br />
 Photo by Luc Viatour (flickr)
 </p>
 
@@ -44,11 +44,11 @@ Let's consider package A:
 
 ```json
 {
-    "name": "A",
-    "version": "0.1.0",
-    "dependencies": {
-        "B": "<0.1.0"
-    }
+  "name": "A",
+  "version": "0.1.0",
+  "dependencies": {
+    "B": "<0.1.0"
+  }
 }
 ```
 
@@ -56,11 +56,11 @@ package B:
 
 ```json
 {
-    "name": "B",
-    "version": "0.0.1",
-    "dependencies": {
-        "C": "<0.1.0"
-    }
+  "name": "B",
+  "version": "0.0.1",
+  "dependencies": {
+    "C": "<0.1.0"
+  }
 }
 ```
 
@@ -68,8 +68,8 @@ and package C:
 
 ```json
 {
-    "name": "C",
-    "version": "0.0.1"
+  "name": "C",
+  "version": "0.0.1"
 }
 ```
 
@@ -95,15 +95,15 @@ This generates npm-shrinkwrap.json, which will look something like this:
 
 ```json
 {
-    "name": "A",
-    "dependencies": {
-        "B": {
-            "version": "0.0.1",
-            "dependencies": {
-                "C": {  "version": "0.1.0" }
-            }
-        }
+  "name": "A",
+  "dependencies": {
+    "B": {
+      "version": "0.0.1",
+      "dependencies": {
+        "C": { "version": "0.1.0" }
+      }
     }
+  }
 }
 ```
 

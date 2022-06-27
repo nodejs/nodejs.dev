@@ -1,5 +1,5 @@
 ---
-title: npm 1.0: Global vs Local installation
+title: 'npm 1.0: Global vs Local installation'
 blogAuthors: ['isaacs']
 category: 'npm'
 ---
