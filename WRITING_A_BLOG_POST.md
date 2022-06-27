@@ -5,7 +5,7 @@ In order to publish a new blog post, make sure that you added yourself into `src
 The current schema supports the following fields:
 
 | Field   | Description                                                                                          | Required |
-|---------|------------------------------------------------------------------------------------------------------|----------|
+| ------- | ---------------------------------------------------------------------------------------------------- | -------- |
 | id      | Your unique id. In preference it should be your GitHub Username as we resolve the images from there. | Yes      |
 | name    | Your display name. It could be your full name.                                                       | Yes      |
 | website | A link to open when someone wants to get to know more about you                                      | No       |

@@ -29,5 +29,7 @@ If you have any questions don't hesitate to
 [email us](mailto:trademark@openjsf.org).
 
 <!--lint disable nodejs-links-->
+
 Guidelines for the visual display of the Node.js mark are described in the [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
+
 <!--lint enable nodejs-links-->
