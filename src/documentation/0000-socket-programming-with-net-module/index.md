@@ -12,7 +12,7 @@ Node.js exposes extensive API's for implementing these protocols so developers c
 
 > TCP is a reliable, ordered, and error-checked delivery of a stream of bytes between applications communicating via an internet protocol (IP) network.
 >
-> ~ [Wikipedia](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
+> \~ [Wikipedia](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
 
 ## Net Module - Getting Started
 
@@ -52,9 +52,10 @@ server.listen(8124, 'localhost', () => {
 });
 ```
 
-With this server running, connect to it using your system's command-line TCP interface. The two most common are telnet and netcat. If you're unsure which, try both! If neither work, search on Google for "telnet alternative for \<your OS\>".
+With this server running, connect to it using your system's command-line TCP interface. The two most common are telnet and netcat. If you're unsure which, try both! If neither work, search on Google for "telnet alternative for \<your OS>".
 
 In another terminal connect to the running TCP server:
+
 ```bash
 telnet localhost 8124
 # or
@@ -125,6 +126,7 @@ Fantastic work! With these two examples you should have what you need to get sta
 For more capabilities of the `net` module read the Node.js [net documentation](https://nodejs.org/api/net.html).
 
 To learn more, try completing the following challenges:
+
 * Using `readline` or `stream` modules, create an interactive client connection script
   * this can build on the second example provided in this guide
 * Create a group-chat TCP server

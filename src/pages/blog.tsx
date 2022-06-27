@@ -60,24 +60,30 @@ const groupPostsByCategory = ({ blogs }: BlogPostsList): GroupedPosts => {
 const AllBlogPosts = ({ data }: Props): JSX.Element => {
   const postsByCategory = groupPostsByCategory(data);
 
+  const sortedCategories = Object.keys(postsByCategory).sort();
+
   return (
     <Layout title="Blogs at Nodejs">
-      {Object.values(postsByCategory).map(({ posts, ...category }) => (
-        <div key={category.name}>
-          <div className="blog-category-container">
-            <div className="blog-category-header">
-              <h2>{category.slug}</h2>
-              <span>{category.description}</span>
+      {sortedCategories.map(categoryName => {
+        const { posts, ...category } = postsByCategory[categoryName];
+
+        return (
+          <div key={category.name}>
+            <div className="blog-category-container">
+              <div className="blog-category-header">
+                <h2>{category.slug}</h2>
+                <span>{category.description}</span>
+              </div>
+            </div>
+            <div className="blog-grid-container">
+              {!posts.length && <h2>No blog posts under this category.</h2>}
+              {posts.map(edge => (
+                <BlogCard key={edge.node.fields.slug} data={edge} />
+              ))}
             </div>
           </div>
-          <div className="blog-grid-container">
-            {!posts.length && <h2>No blog posts under this category.</h2>}
-            {posts.map(edge => (
-              <BlogCard key={edge.node.fields.slug} data={edge} />
-            ))}
-          </div>
-        </div>
-      ))}
+        );
+      })}
     </Layout>
   );
 };

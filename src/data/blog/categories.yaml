@@ -1,24 +1,7 @@
-- name: learn
-  slug: Learn
-- name: about
-  slug: About
-- name: governance
-  slug: Governance
-- name: privacy
-  slug: Privacy
-- name: releases
-  slug: Releases
-- name: security
-  slug: Security
-- name: trademark
-  slug: Trademark
-- name: community
-  slug: Community
-- name: working-groups
-  slug: Working Groups
-- name: announcements
-  slug: Announcements
-  description: 'Node.js project official announcements'
-- name: vulnerabilities
-  slug: Vulnerabilities
-  description: 'Posts regarding Vulnerabilities and CVEs reported by the community.'
+- name: advisory-board
+  slug: Advisory Board
+- name: weekly-updates
+  slug: Weekly Updates
+- name: npm
+  slug: NPM
+  description: 'Blog posts about the NPM package manager.'

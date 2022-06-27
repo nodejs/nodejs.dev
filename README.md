@@ -28,13 +28,13 @@
    npm install
    ```
 
-1. **Start project locally.**
+2. **Start project locally.**
 
    ```bash
    npm start
    ```
 
-1. **Open the source code and start editing!**
+3. **Open the source code and start editing!**
 
 ## 🙌 Contributing
 

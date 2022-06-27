@@ -29,7 +29,7 @@ If you try it now in your terminal, this is what happens:
 
 The command stays in idle mode and waits for us to enter something.
 
-> Tip: if you are unsure how to open your terminal, google "How to open terminal on \<your-operating-system\>".
+> Tip: if you are unsure how to open your terminal, google "How to open terminal on \<your-operating-system>".
 
 The REPL is waiting for us to enter some JavaScript code, to be more precise.
 
@@ -52,20 +52,25 @@ Node automatically prints the result of any line of JavaScript code without the 
 false
 >
 ```
+
 Note the difference in the outputs of the above two lines. The Node REPL printed `undefined` after executed `console.log()`, while on the other hand, it just printed the result of `5 === '5'`. You need to keep in mind that the former is just a statement in JavaScript, and the latter is an expression.
 
 In some cases, the code you want to test might need multiple lines. For example, say you want to define a function that generates a random number, in the REPL session type in the following line and press enter:
+
 ```console
 function generateRandom() {
 ...
 ```
+
 The Node REPL is smart enough to determine that you are not done writing your code yet, and it will go into a multi-line mode for you to type in more code. Now finish your function definition and press enter:
+
 ```console
 function generateRandom() {
 ...return Math.random()
 }
 undefined
 ```
+
 Node will get out of the multi-line mode, and print `undefined` since there is no value returned. This multi-line mode is limited. Node offers a more featured editor right inside the REPL. We discuss it below under Dot commands.
 
 ## Use the tab to autocomplete
@@ -93,6 +98,7 @@ You can inspect the globals you have access to by typing `global.` and pressing 
 If after some code you type `_`, that is going to print the result of the last operation.
 
 ## The Up arrow key
+
 If you press the `up` arrow key, you will get access to the history of the previous lines of code executed in the current, and even previous REPL sessions.
 
 ## Dot commands

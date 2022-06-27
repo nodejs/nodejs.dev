@@ -39,6 +39,7 @@ const car = {
 
 module.exports = car;
 ```
+
 ```js
 // index.js
 const car = require('./car');

@@ -36,7 +36,7 @@ Node.js directly performs I/O, so the process never blocks. Because nothing bloc
 If some of this language is unfamiliar, there is a full article on
 [Blocking vs. Non-Blocking][].
 
----
+***
 
 Node.js is similar in design to, and influenced by, systems like Ruby's
 [Event Machine][] and Python's [Twisted][]. Node.js takes the event model a bit
