@@ -76,7 +76,7 @@
     "test-ci": "npm run test -- --coverage",
     "lint": "npm run type-check && npm run lint:js && npm run lint:md && npm run lint:scss",
     "lint:js": "eslint .",
-    "lint:md": "remark -qf .",
+    "lint:md": "remark -q .",
     "lint:scss": "stylelint --config ./.stylelintrc.json ./src/**/*.{css,sass,scss}",
     "lint:fix": "npm run lint -- --fix",
     "serve": "npm run build && clear && gatsby serve",
