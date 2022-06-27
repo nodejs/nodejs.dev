@@ -52,7 +52,7 @@ server.listen(8124, 'localhost', () => {
 });
 ```
 
-With this server running, connect to it using your system's command-line TCP interface. The two most common are telnet and netcat. If you're unsure which, try both! If neither work, search on Google for "telnet alternative for \<your OS>".
+With this server running, connect to it using your system's command-line TCP interface. The two most common are telnet and netcat. If you're unsure which, try both! If neither work, search on Google for "telnet alternative for your OS".
 
 In another terminal connect to the running TCP server:
 
