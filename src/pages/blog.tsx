@@ -31,9 +31,9 @@ const groupPostsByCategory = ({ blogs }: BlogPostsList): GroupedPosts => {
   const postsByCategory = blogs.edges.reduce((acc, post) => {
     const category = post.node.frontmatter.category
       ? post.node.frontmatter.category
-      : getUnknownCategory(post.node.fields.categoryName);
+      : getUnknownCategory(post.node.fields.categoryName || 'uncategorized');
 
-    const blogAuthors = post.node.frontmatter.blogAuthors.map(
+    const blogAuthors = (post.node.frontmatter.blogAuthors || []).map(
       author => author || unknownAuthor
     );
 
