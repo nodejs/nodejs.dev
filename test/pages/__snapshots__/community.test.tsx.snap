@@ -87,13 +87,13 @@ exports[`Community Page renders correctly 1`] = `
             >
               <div
                 class="searchBarContainer"
-                style="min-height: 3em; width: 100%; max-width: 8em; box-shadow: none;"
+                style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
                 >
                   <i
-                    class="searchIcon material-icons"
+                    class="material-icons searchIcon"
                   >
                     search
                   </i>
@@ -101,7 +101,7 @@ exports[`Community Page renders correctly 1`] = `
                     autocomplete="off"
                     class="inputText"
                     name="query"
-                    placeholder="search..."
+                    placeholder="Search"
                     value=""
                   />
                 </div>
