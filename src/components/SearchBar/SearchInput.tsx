@@ -17,7 +17,7 @@ const containerVariants = {
   collapsed: {
     minHeight: '3em',
     width: '100%',
-    maxWidth: '8em',
+    maxWidth: '7em',
     boxShadow: 'none',
   },
 };
@@ -41,7 +41,7 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
       .search(currentQuery, { expand: true })
       .map(({ ref }) => storeIndex.documentStore.getDoc(ref) as SearchResult);
 
-    setResults(currentResults);
+    setResults(currentResults.slice(0, 20));
   };
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -64,6 +64,7 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
     setExpanded(false);
     setQuery('');
     setNoResults(false);
+    setResults([]);
   };
 
   useEffect(() => {
@@ -82,14 +83,14 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
       ref={parentRef}
     >
       <div className="searchInputContainer">
-        <i className="searchIcon material-icons">search</i>
+        <i className="material-icons searchIcon">search</i>
         <input
           autoComplete="off"
           className="inputText"
           name="query"
           value={query}
           onChange={changeHandler}
-          placeholder="search..."
+          placeholder="Search"
           onFocus={expandContainer}
         />
         <AnimatePresence>
