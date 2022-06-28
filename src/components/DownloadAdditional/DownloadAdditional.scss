@@ -33,8 +33,19 @@ $downloadable-item-height: 40px;
     padding: 16px 0 0 16px;
     transition: height 30ms ease-in;
 
+    &:first-of-type {
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+    }
+
+    &:last-of-type {
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+
     &__expanded {
       height: auto;
+      padding-bottom: 5px;
     }
 
     &__header {

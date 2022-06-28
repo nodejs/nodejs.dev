@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import { Page, NodeReleaseData, DataPage } from '../types';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
-import Footer from '../components/Footer';
 import '../styles/article-reader.scss';
 import DownloadTable from '../components/DownloadReleases/DownloadTable';
 import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
@@ -27,23 +26,20 @@ const ReleasesPage = ({
   const { nodeReleasesData } = nodeReleases;
 
   return (
-    <>
-      <Layout title={title} description={description} showFooter={false}>
-        <main className="grid-container">
-          <SideNavBar pageKey={SideNavBarKeys.releases} />
-          <Article
-            title={title}
-            body={body}
-            tableOfContents={tableOfContents}
-            authors={authors}
-            editPath="content/about/releases.md"
-          >
-            <DownloadTable nodeReleasesData={nodeReleasesData} />
-          </Article>
-        </main>
-      </Layout>
-      <Footer />
-    </>
+    <Layout title={title} description={description}>
+      <main className="grid-container">
+        <SideNavBar pageKey={SideNavBarKeys.releases} />
+        <Article
+          title={title}
+          body={body}
+          tableOfContents={tableOfContents}
+          authors={authors}
+          editPath="content/about/releases.md"
+        >
+          <DownloadTable nodeReleasesData={nodeReleasesData} />
+        </Article>
+      </main>
+    </Layout>
   );
 };
 
