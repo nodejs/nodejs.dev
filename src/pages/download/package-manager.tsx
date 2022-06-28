@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import { Page } from '../../types';
 import Layout from '../../components/Layout';
 import Article from '../../components/Article';
-import Footer from '../../components/Footer';
 import '../../styles/article-reader.scss';
 import SideNavBar, { SideNavBarKeys } from '../../components/SideNavBar';
 
@@ -12,21 +11,18 @@ const PackageManagerPage = ({ data }: Page): JSX.Element => {
   const { body, tableOfContents } = data.page;
   const { authors } = data.page.fields;
   return (
-    <>
-      <Layout title={title} description={description} showFooter={false}>
-        <main className="grid-container">
-          <SideNavBar pageKey={SideNavBarKeys.packageManager} />
-          <Article
-            title={title}
-            body={body}
-            tableOfContents={tableOfContents}
-            authors={authors}
-            editPath="content/download/package-manager.md"
-          />
-        </main>
-      </Layout>
-      <Footer />
-    </>
+    <Layout title={title} description={description}>
+      <main className="grid-container">
+        <SideNavBar pageKey={SideNavBarKeys.packageManager} />
+        <Article
+          title={title}
+          body={body}
+          tableOfContents={tableOfContents}
+          authors={authors}
+          editPath="content/download/package-manager.md"
+        />
+      </main>
+    </Layout>
   );
 };
 
