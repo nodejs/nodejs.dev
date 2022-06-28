@@ -15,4 +15,19 @@ module.exports = {
         })
     ),
   StaticQuery: jest.fn(),
+  useStaticQuery: jest.fn().mockReturnValue({
+    siteSearchIndex: {
+      index: {
+        version: '0.9.5',
+        fields: [],
+        ref: '',
+        pipeline: [],
+        documentStore: {
+          docInfo: {},
+          docs: {},
+        },
+        index: {},
+      },
+    },
+  }),
 };
