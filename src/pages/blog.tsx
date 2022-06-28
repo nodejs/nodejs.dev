@@ -10,12 +10,17 @@ type Props = {
 
 const AllBlogPosts = ({ data }: Props): JSX.Element => (
   <Layout title="Blogs at Nodejs">
-    <main className="blog-grid-container">
-      {!data.blogs.edges.length && <h1>No Blog Posts yet</h1>}
-      {data.blogs.edges.map(node => (
-        <BlogCard key={node.node.fields.slug} data={node} />
-      ))}
-    </main>
+    {data.blogs.edges.length ? (
+      <main className="blog-grid-container">
+        {data.blogs.edges.map(node => (
+          <BlogCard key={node.node.fields.slug} data={node} />
+        ))}
+      </main>
+    ) : (
+      <main className="no-blog-container">
+        <h1>No Blog Posts yet</h1>
+      </main>
+    )}
   </Layout>
 );
 

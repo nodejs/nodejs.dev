@@ -555,13 +555,20 @@ h6:hover .autolink-headers {
   min-height: 100vh;
 }
 
-.blog-grid-container {
+.no-blog-container {
   display: flex;
   flex-grow: 1;
   align-items: center;
   width: 75%;
   justify-content: center;
   margin: auto;
+}
+
+.blog-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(388px, 1fr));
+  margin: 0 auto;
+  width: 75%;
 
   @media only screen and (max-width: 1000px) {
     width: 80%;
