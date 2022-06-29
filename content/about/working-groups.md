@@ -6,7 +6,7 @@ category: working-groups
 ---
 
 Core Working Groups are created by the
-[Technical Steering Committee (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
+[Technical Steering Committee (TSC)](https://github.com/nodejs/TSC/blob/main/TSC-Charter.md).
 
 ## [Addon API](https://github.com/nodejs/nan)
 
@@ -155,7 +155,7 @@ Responsibilities include:
 * Management of repositories within the [pkgjs](https://github.com/pkgjs)
   GitHub organization including but not limited to:
   * Managing the list of organization owners which supplement the standard
-    Node.js organization owners as outlined in: <https://github.com/nodejs/admin/blob/master/GITHUB_ORG_MANAGEMENT_POLICY.md#owners>
+    Node.js organization owners as outlined in: <https://github.com/nodejs/admin/blob/main/GITHUB_ORG_MANAGEMENT_POLICY.md#owners>
   * Overseeing new repositories (creating, moving, removing)
   * Managing the maintainer teams for all of the repositories.
   * Contribution policy for repositories
