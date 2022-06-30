@@ -7,7 +7,6 @@ import { LearnPageContext, LearnPageData } from '../types';
 
 import '../styles/article-reader.scss';
 import '../styles/learn.scss';
-import Footer from '../components/Footer';
 
 interface Props {
   data: LearnPageData;
@@ -35,34 +34,26 @@ const LearnLayout = ({
   }
 
   return (
-    <>
-      <Layout
-        title={title}
-        description={description}
-        location={location}
-        showFooter={false}
-      >
-        <main className="grid-container">
-          <Navigation
-            currentSlug={slug}
-            previousSlug={previousSlug}
-            label="Secondary"
-            sections={navigationData}
-            category="learn"
-          />
-          <Article
-            title={title}
-            body={body}
-            tableOfContents={tableOfContents}
-            next={next}
-            authors={authors}
-            previous={previous}
-            relativePath={relativePath}
-          />
-        </main>
-      </Layout>
-      <Footer />
-    </>
+    <Layout title={title} description={description} location={location}>
+      <main className="grid-container">
+        <Navigation
+          currentSlug={slug}
+          previousSlug={previousSlug}
+          label="Secondary"
+          sections={navigationData}
+          category="learn"
+        />
+        <Article
+          title={title}
+          body={body}
+          tableOfContents={tableOfContents}
+          next={next}
+          authors={authors}
+          previous={previous}
+          relativePath={relativePath}
+        />
+      </main>
+    </Layout>
   );
 };
 export default LearnLayout;

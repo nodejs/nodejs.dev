@@ -139,5 +139,21 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        fields: [`title`, `body`, `description`, `slug`],
+        resolvers: {
+          Mdx: {
+            id: node => node.id,
+            title: node => node.frontmatter.title,
+            body: node => node.rawBody,
+            description: node => node.frontmatter.description,
+            slug: node => node.fields.slug,
+          },
+        },
+        filter: node => node.frontmatter.category === 'learn',
+      },
+    },
   ],
 };

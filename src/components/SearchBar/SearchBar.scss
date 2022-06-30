@@ -1,0 +1,80 @@
+.searchBarContainer {
+  background-color: var(--color-fill-top-nav);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding-bottom: 10px;
+}
+
+.searchInputContainer {
+  align-items: center;
+  display: flex;
+  height: 3em;
+  position: relative;
+  width: 100%;
+}
+
+.inputText {
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-body1);
+  font-weight: 500;
+  height: 100%;
+  outline: none;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &::placeholder {
+    color: #99cc7d;
+    transition: all 250ms ease-in-out;
+  }
+}
+
+.closeIcon {
+  padding: 0 15px 0 0;
+}
+
+.searchIcon {
+  color: var(--color-brand-primary);
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.searchContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.loadingWrapper {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.warningMessage {
+  align-self: center;
+  color: var(--color-text-primary);
+  display: flex;
+  font-size: 14px;
+  justify-self: center;
+}
+
+.resultItem {
+  color: var(--color-text-primary);
+  padding: 5px 0;
+}
