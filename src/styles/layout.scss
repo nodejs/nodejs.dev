@@ -569,12 +569,12 @@ h6:hover .autolink-headers {
 }
 
 .no-blog-container {
+  align-items: center;
   display: flex;
   flex-grow: 1;
-  align-items: center;
-  width: 75%;
   justify-content: center;
   margin: auto;
+  width: 75%;
 }
 
 .blog-grid-container {
