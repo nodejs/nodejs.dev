@@ -449,7 +449,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
       </div>
     </nav>
     <main
-      class="blog-grid-container"
+      class="no-blog-container"
     >
       <h1>
         No Blog Posts yet
