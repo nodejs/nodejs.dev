@@ -12,7 +12,9 @@ module.exports = {
     siteUrlNoSlash: config.siteUrlNoSlash,
   },
   mapping: {
-    'Mdx.frontmatter.author': `AuthorYaml`,
+    // gatsby-transformer-yaml transforms the id field into yamlId
+    'Mdx.frontmatter.blogAuthors': `AuthorsYaml.yamlId`,
+    'Mdx.frontmatter.category': `CategoriesYaml.name`,
   },
   plugins: [
     'gatsby-plugin-catch-links',
