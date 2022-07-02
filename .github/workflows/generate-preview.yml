@@ -47,10 +47,11 @@ jobs:
         env:
           PATH_PREFIX: ${{ github.event.pull_request.number }}/
 
-      - name: Run Storybook Build
-        run: npm run build-storybook
-        env:
-          PATH_PREFIX: ${{ github.event.pull_request.number }}/
+      # temporarily disable storybook so the preview can build 
+      # - name: Run Storybook Build
+      #   run: npm run build-storybook
+      #   env:
+      #     PATH_PREFIX: ${{ github.event.pull_request.number }}/
 
       - name: Upload to GCS
         run: gsutil -m rsync -R public gs://staging.nodejs.dev/${{ github.event.pull_request.number }}/
