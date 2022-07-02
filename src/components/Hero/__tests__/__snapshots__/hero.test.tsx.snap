@@ -28,7 +28,7 @@ exports[`Hero component renders correctly 1`] = `
         <p
           class="t-caption"
         >
-          Version mock-version-2 - 
+          Version mock-version-1 - 
           <a
             href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
           >

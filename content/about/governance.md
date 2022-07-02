@@ -4,6 +4,7 @@ description: 'Project Governance | Node.js'
 authors: XhmikosR, fhemberger, thefourtheye, ryanmurakami, refack
 category: governance
 ---
+
 ## Consensus Seeking Process
 
 The Node.js project follows a [Consensus Seeking][] decision making model.

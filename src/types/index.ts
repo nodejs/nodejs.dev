@@ -56,6 +56,12 @@ export interface PaginationInfo {
   title: string;
 }
 
+export interface BlogCategory {
+  name: string;
+  slug: string;
+  description?: string;
+}
+
 export interface NavigationSectionItem {
   slug: string;
   title: string;
@@ -114,15 +120,20 @@ export interface CommunityNavigationSection {
 export interface BlogPostAuthor {
   id?: string;
   name: string;
-  url: string;
+  website: string;
 }
 
 export interface BlogMetaData {
   node: {
-    frontmatter: { title: string; author: BlogPostAuthor[] };
-    fields: { date: string; slug: string };
+    frontmatter: {
+      title: string;
+      blogAuthors: BlogPostAuthor[];
+      category: BlogCategory;
+    };
+    fields: { date: string; slug: string; categoryName: string };
   };
 }
+
 export interface BlogPostsList {
   blogs: {
     edges: BlogMetaData[];
@@ -133,7 +144,7 @@ export interface BlogPageData {
   blog: {
     body: string;
     excerpt: string;
-    frontmatter: { title: string; author: BlogPostAuthor[] };
+    frontmatter: { title: string; blogAuthors: BlogPostAuthor[] };
     fields: { slug: string; date: string };
   };
   recent: {
@@ -406,3 +417,8 @@ export interface GCalResponse {
     summary: string;
   };
 }
+export type SearchResult = {
+  id: React.Key | null | undefined;
+  slug: string;
+  title: string;
+};

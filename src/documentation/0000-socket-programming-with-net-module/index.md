@@ -8,11 +8,11 @@
 
 Socket programming is the development of programs for [Computer Networking](https://en.wikipedia.org/wiki/Computer_network). Networking applications are loosely based off of the top most layers of the conceptual 7-layer model called the [OSI Model](https://en.wikipedia.org/wiki/OSI_model). The layers most relevant to socket programmers is layer 4, the [Transport layer](https://en.wikipedia.org/wiki/Transport_layer), and layer 7, the [Application layer](https://en.wikipedia.org/wiki/Application_layer). Specific protocols are implemented at each layer, and are instrumental for the functionality of the internet.
 
-Node.js exposes extensive API's for implementing these protocols so developers can create socket programming applications. The most common example is the `http` module. [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) exists on the Application layer of the OSI Model; if you want to learn more about the `http` module, read the Node.js [http documentation](https://nodejs.org/api/http.html) or the Nodejs.dev [guide](https://nodejs.dev/the-nodejs-http-module). Another socket programming Node.js module is the `dgram` module for [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) communication. UDP exists on the Transport layer; for more information about this technology read the Node.js [dgram documentaion](https://nodejs.org/api/dgram.html). More importantly, the `net` module, which this guide is all about, provides an extensive API for a stream-based TCP server. [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) exists on the Transport layer of the OSI Model and is what HTTP is implemented on top of.
+Node.js exposes extensive API's for implementing these protocols so developers can create socket programming applications. The most common example is the `http` module. [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) exists on the Application layer of the OSI Model; if you want to learn more about the `http` module, read the Node.js [http documentation](https://nodejs.org/api/http.html) or the Nodejs.dev [guide](https://nodejs.dev/the-nodejs-http-module). Another socket programming Node.js module is the `dgram` module for [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) communication. UDP exists on the Transport layer; for more information about this technology read the Node.js [dgram documentation](https://nodejs.org/api/dgram.html). More importantly, the `net` module, which this guide is all about, provides an extensive API for a stream-based TCP server. [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) exists on the Transport layer of the OSI Model and is what HTTP is implemented on top of.
 
 > TCP is a reliable, ordered, and error-checked delivery of a stream of bytes between applications communicating via an internet protocol (IP) network.
 >
-> ~ [Wikipedia](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
+> \~ [Wikipedia](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
 
 ## Net Module - Getting Started
 
@@ -52,18 +52,19 @@ server.listen(8124, 'localhost', () => {
 });
 ```
 
-With this server running, connect to it using your system's command-line TCP interface. The two most common are telnet and netcat. If you're unsure which, try both! If neither work, search on Google for "telnet alternative for \<your OS\>".
+With this server running, connect to it using your system's command-line TCP interface. The two most common are telnet and netcat. If you're unsure which, try both! If neither work, search on Google for "telnet alternative for your OS".
 
 In another terminal connect to the running TCP server:
+
 ```bash
 telnet localhost 8124
 # or
 nc localhost 8124
 ```
 
-If you see the message `Client connected!` in the TCP server terminal, you can begin sending messages from the client connection terminal. Whatever you send should be sent back to you immediatly (if you copy-and-pasted the code from above directly, you'll receive your message twice because their are two echo implementations). Disconnecting is easy; use your terminal's quit keystroke (commonly `CTRL+C`) or exit the terminal application instance.
+If you see the message `Client connected!` in the TCP server terminal, you can begin sending messages from the client connection terminal. Whatever you send should be sent back to you immediately (if you copy-and-pasted the code from above directly, you'll receive your message twice because there are two echo implementations). Disconnecting is easy; use your terminal's quit keystroke (commonly `CTRL+C`) or exit the terminal application instance.
 
-Great work! You have succesfully implemented your first TCP server-client connection.
+Great work! You have successfully implemented your first TCP server-client connection.
 
 ## Example using `net.createConnection()`
 
@@ -116,15 +117,16 @@ client.on('end', () => {
 });
 ```
 
-The second example introduces an additional event listener `'end'`. This is very useful for determining when a socket connection is terminated. In the client code, the call to `client.end()` is the programatic way of ending a socket connection.
+The second example introduces an additional event listener `'end'`. This is very useful for determining when a socket connection is terminated. In the client code, the call to `client.end()` is the programmatic way of ending a socket connection.
 
 ## Conclusion
 
-Fantastic work! With these two examples you should have what you need to get started building your own TCP communication networks. This guide only brushes the surface of socket programming applications, but the most important take away here is that Node.js implements TCP socket connections as [duplex streams](https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams) and [event emitters](https://nodejs.org/api/events.html#events_class_eventemitter). Understanding those two concepts will benefit your overall understanding of the `net` module.
+Fantastic work! With these two examples you should have what you need to get started building your own TCP communication networks. This guide only brushes the surface of socket programming applications, but the most important takeaway here is that Node.js implements TCP socket connections as [duplex streams](https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams) and [event emitters](https://nodejs.org/api/events.html#events_class_eventemitter). Understanding those two concepts will benefit your overall understanding of the `net` module.
 
 For more capabilities of the `net` module read the Node.js [net documentation](https://nodejs.org/api/net.html).
 
 To learn more, try completing the following challenges:
+
 * Using `readline` or `stream` modules, create an interactive client connection script
   * this can build on the second example provided in this guide
 * Create a group-chat TCP server

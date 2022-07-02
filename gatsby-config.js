@@ -12,7 +12,9 @@ module.exports = {
     siteUrlNoSlash: config.siteUrlNoSlash,
   },
   mapping: {
-    'Mdx.frontmatter.author': `AuthorYaml`,
+    // gatsby-transformer-yaml transforms the id field into yamlId
+    'Mdx.frontmatter.blogAuthors': `AuthorsYaml.yamlId`,
+    'Mdx.frontmatter.category': `CategoriesYaml.name`,
   },
   plugins: [
     'gatsby-plugin-catch-links',
@@ -137,6 +139,22 @@ module.exports = {
         svgoConfig: {
           plugins: ['prefixIds'],
         },
+      },
+    },
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        fields: [`title`, `body`, `description`, `slug`],
+        resolvers: {
+          Mdx: {
+            id: node => node.id,
+            title: node => node.frontmatter.title,
+            body: node => node.rawBody,
+            description: node => node.frontmatter.description,
+            slug: node => node.fields.slug,
+          },
+        },
+        filter: node => node.frontmatter.category === 'learn',
       },
     },
   ],

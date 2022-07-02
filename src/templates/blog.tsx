@@ -6,7 +6,6 @@ import { BlogPageData, BlogPageContext } from '../types';
 
 import '../styles/article-reader.scss';
 import '../styles/learn.scss';
-import Footer from '../components/Footer';
 import RecentPosts from '../components/RecentPosts';
 
 interface Props {
@@ -19,7 +18,7 @@ const BlogLayout = ({
 }: Props): JSX.Element => {
   const {
     blog: {
-      frontmatter: { title, author },
+      frontmatter: { title, blogAuthors },
       body,
       excerpt,
       fields: { date },
@@ -29,25 +28,26 @@ const BlogLayout = ({
 
   const { edges: recentPosts } = recent;
 
+  const recentPostsWithoutCurrent = recentPosts.filter(
+    post => post.node.frontmatter.title !== title
+  );
+
   return (
-    <>
-      <Layout title={title} description={excerpt} showFooter={false}>
-        <main className="grid-container blog-container">
-          <RecentPosts posts={recentPosts} />
-          <Article
-            title={title}
-            body={body}
-            next={next}
-            authors={author}
-            previous={previous}
-            relativePath={relativePath}
-            blog
-            date={date}
-          />
-        </main>
-      </Layout>
-      <Footer />
-    </>
+    <Layout title={title} description={excerpt}>
+      <main className="grid-container blog-container">
+        <RecentPosts posts={recentPostsWithoutCurrent} />
+        <Article
+          title={title}
+          body={body}
+          next={next}
+          authors={blogAuthors}
+          previous={previous}
+          relativePath={relativePath}
+          blog
+          date={date}
+        />
+      </main>
+    </Layout>
   );
 };
 export default BlogLayout;
@@ -59,10 +59,10 @@ export const query = graphql`
       excerpt(pruneLength: 500)
       frontmatter {
         title
-        author {
+        blogAuthors {
           id
           name
-          url
+          website
         }
       }
       fields {
@@ -73,7 +73,8 @@ export const query = graphql`
     recent: allMdx(
       limit: 10
       filter: {
-        frontmatter: { title: { ne: "mock" }, category: { eq: "blog" } }
+        fileAbsolutePath: { regex: "/blog/" }
+        frontmatter: { title: { ne: "mock" } }
       }
       sort: { fields: fields___date, order: DESC }
     ) {

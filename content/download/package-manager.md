@@ -5,7 +5,7 @@ authors: fhemberger, XhmikosR, shadowspawn, vsemozhetbyt, nschonni, wildcard, Mr
 category: download
 ---
 
-***Note:*** The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
+_**Note:**_ The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
 
 ## Android
 
@@ -53,6 +53,7 @@ For CentOS/RHEL 7 Node.js is available via [Software Collections](https://www.so
 ### Alternatives
 
 These resources provide packages compatible with CentOS, Fedora, and RHEL.
+
 * [Node.js snaps](#snap) maintained and supported at [https://github.com/nodejs/snap]()
 * [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
 
@@ -185,6 +186,7 @@ pkgin -y install nodejs
 Nodenv installation instructions are maintained [on its Github page](https://github.com/nodenv/nodenv#installation). Please visit that page to ensure you're following the latest version of the installation steps.
 
 ## nvm
+
 Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
 you to perform operations like install, uninstall, switch version, etc.
 To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
@@ -214,6 +216,7 @@ nvm uninstall 8
 ## nvs
 
 #### Windows
+
 The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
 
 To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
@@ -225,9 +228,11 @@ choco install nvs
 ```
 
 #### macOS,UnixLike
+
 You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
 #### Usage
+
 After this you can use `nvs` to switch between different versions of node.
 
 To add the latest version of node:
@@ -264,7 +269,7 @@ Node.js is available through the ports system.
 /usr/ports/lang/node
 ```
 
-Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+Using [pkg\_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
 
 ```bash
 pkg_add node
@@ -345,7 +350,8 @@ scoop install nodejs
 
 ## z/OS
 
-IBM&reg; SDK for Node.js - z/OS&reg; is available in two installation formats,
+IBM® SDK for Node.js - z/OS® is available in two installation formats,
 SMP/E and PAX. Select the installation format that applies to you:
+
 * [Installing and configuring SMP/E edition of Node.js on z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/smpe.htm)
 * [Installing and configuring PAX edition of Node.js on z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/paxz.htm)

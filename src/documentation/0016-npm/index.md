@@ -50,9 +50,10 @@ Often you'll see more flags added to this command:
 * `--no-optional` will prevent optional dependencies from being installed
 
 Shorthands of the flags can also be used:
-* -S: --save
-* -D: --save-dev
-* -O: --save-optional
+
+* \-S: --save
+* \-D: --save-dev
+* \-O: --save-optional
 
 The difference between _devDependencies_ and _dependencies_ is that the former contains development tools, like a testing library, while the latter is bundled with the app in production.
 
@@ -62,7 +63,7 @@ As for the _optionalDependencies_ the difference is that build failure of the de
 
 Updating is also made easy, by running
 
-```console
+```bash
 npm update
 ```
 
@@ -70,7 +71,7 @@ npm update
 
 You can specify a single package to update as well:
 
-```console
+```bash
 npm update <package-name>
 ```
 
@@ -90,7 +91,7 @@ In all those cases, versioning helps a lot, and `npm` follows the semantic versi
 
 The package.json file supports a format for specifying command line tasks that can be run by using
 
-```console
+```bash
 npm run <task-name>
 ```
 

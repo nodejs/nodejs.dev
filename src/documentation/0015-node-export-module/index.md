@@ -39,6 +39,7 @@ const car = {
 
 module.exports = car;
 ```
+
 ```js
 // index.js
 const car = require('./car');
@@ -67,21 +68,15 @@ exports.car = {
 And in the other file, you'll use it by referencing a property of your import:
 
 ```js
-const items = require('./items');
+const items = require('./car');
 
 const { car } = items;
-```
-
-or
-
-```js
-const { car } = require('./items');
 ```
 
 or you can use a destructuring assignment:
 
 ```js
-const { car } = require('./items');
+const { car } = require('./car');
 ```
 
 What's the difference between `module.exports` and `exports`?
