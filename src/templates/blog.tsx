@@ -18,7 +18,7 @@ const BlogLayout = ({
 }: Props): JSX.Element => {
   const {
     blog: {
-      frontmatter: { title, author },
+      frontmatter: { title, blogAuthors },
       body,
       excerpt,
       fields: { date },
@@ -28,15 +28,19 @@ const BlogLayout = ({
 
   const { edges: recentPosts } = recent;
 
+  const recentPostsWithoutCurrent = recentPosts.filter(
+    post => post.node.frontmatter.title !== title
+  );
+
   return (
     <Layout title={title} description={excerpt}>
       <main className="grid-container blog-container">
-        <RecentPosts posts={recentPosts} />
+        <RecentPosts posts={recentPostsWithoutCurrent} />
         <Article
           title={title}
           body={body}
           next={next}
-          authors={author}
+          authors={blogAuthors}
           previous={previous}
           relativePath={relativePath}
           blog
@@ -55,10 +59,10 @@ export const query = graphql`
       excerpt(pruneLength: 500)
       frontmatter {
         title
-        author {
+        blogAuthors {
           id
           name
-          url
+          website
         }
       }
       fields {
@@ -69,7 +73,8 @@ export const query = graphql`
     recent: allMdx(
       limit: 10
       filter: {
-        frontmatter: { title: { ne: "mock" }, category: { eq: "blog" } }
+        fileAbsolutePath: { regex: "/blog/" }
+        frontmatter: { title: { ne: "mock" } }
       }
       sort: { fields: fields___date, order: DESC }
     ) {

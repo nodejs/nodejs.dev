@@ -37,10 +37,13 @@ module.exports = `
           description
           authors
           section
-          category
+          category {
+            name
+          }
         }
         fields {
           slug
+          categoryName
         }
       }
       next {
