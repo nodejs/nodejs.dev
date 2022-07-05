@@ -125,7 +125,7 @@
     "eslint-plugin-testing-library": "^5.5.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^28.0.3",
-    "jest-environment-jsdom": "^28.0.2",
+    "jest-environment-jsdom": "^28.1.2",
     "jest-fetch-mock": "^3.0.3",
     "markdown-yaml-metadata-parser": "^3.0.0",
     "pa11y": "6.2.3",
