@@ -21,7 +21,7 @@
     "classnames": "^2.2.6",
     "color": "^4.2.3",
     "color-string": "^1.9.1",
-    "dompurify": "2.3.6",
+    "dompurify": "2.3.8",
     "dotenv": "^16.0.1",
     "elasticlunr": "^0.9.5",
     "framer-motion": "^6.3.12",
