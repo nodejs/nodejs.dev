@@ -24,7 +24,7 @@
     "dompurify": "2.3.6",
     "dotenv": "^16.0.1",
     "elasticlunr": "^0.9.5",
-    "framer-motion": "^6.3.12",
+    "framer-motion": "^6.3.16",
     "gatsby": "^4.0.0",
     "gatsby-link": "^4.0.0",
     "gatsby-plugin-canonical-urls": "^4.0.0",
