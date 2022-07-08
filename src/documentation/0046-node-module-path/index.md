@@ -50,6 +50,7 @@ require('path').extname('/test/something/file.txt'); // '.txt'
 
 Returns a path string from an object, This is the opposite of `path.parse`<br/>
 `path.format` accepts an object as argument with the following keys:
+
 * `root`: the root
 * `dir`: the folder path starting from the root
 * `base`: the file name + extension

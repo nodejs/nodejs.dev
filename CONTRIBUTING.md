@@ -3,6 +3,7 @@
 ## 🚀 Get Started
 
 * Fork the [nodejs.dev repo][] using the Fork button on the rop right
+
 * Clone your fork using SSH, GitHub CLI, or HTTPS
 
   ```bash
@@ -36,6 +37,7 @@
   ```
 
 * Commit your work. See [Commit Guidelines](#-commit-message-guidelines)
+
 * Push to your branch
 
   ```bash
@@ -63,6 +65,7 @@ Basic rules:
   > build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test
 
 * Commit messages **must** start with a capital letter
+
 * Commit messages **must not** end with a period `.`
 
 ## 📜 Pull Request Policy
@@ -104,15 +107,15 @@ The production Storybook can be viewed at <https://nodejs.dev/storybook>
 
 For failing formatting or linting, you can try running:
 
-  ```bash
-  npm run format
-  ```
+```bash
+npm run format
+```
 
 Tests sometimes fail when adding or updating HTML. To update snapshots you can run:
 
- ```bash
- npm run update-snapshot
- ```
+```bash
+npm run update-snapshot
+```
 
 ## Developer's Certificate of Origin 1.1
 

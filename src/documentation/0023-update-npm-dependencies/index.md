@@ -66,18 +66,18 @@ Leveraging [npm-check-updates](https://www.npmjs.com/package/npm-check-updates),
 
 1. Install the `npm-check-updates` package globally:
 
-    ```bash
-    npm install -g npm-check-updates
-    ```
+   ```bash
+   npm install -g npm-check-updates
+   ```
 
 2. Now run `npm-check-updates` to upgrade all version hints in `package.json`, allowing installation of the new major versions:
 
-    ```bash
-    ncu -u
-    ```
+   ```bash
+   ncu -u
+   ```
 
 3. Finally, run a standard install:
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```

@@ -30,7 +30,7 @@ found.
 ## Template
 
 The [template](./template.md) file is based on [this markdown
-template](https://raw.githubusercontent.com/adr/madr/master/template/template.md)
+template](https://raw.githubusercontent.com/adr/madr/main/template/adr-template.md)
 from the ADR organization.
 
 When making new decisions (or reinforcing our existing approaches) update
