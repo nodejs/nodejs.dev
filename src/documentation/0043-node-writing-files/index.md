@@ -31,7 +31,7 @@ const fs = require('fs');
 const content = 'Some content!';
 
 try {
-  fs.writeFileSync('/Users/joe/test.txt', content);
+  fs.writeFileSync('/Users/joe/test.txt', content, () => {});
   // file written successfully
 } catch (err) {
   console.error(err);
@@ -46,7 +46,7 @@ const fs = require('fs/promises');
 async function example() {
   try {
     const content = 'Some content!';
-    await fs.writeFile('/Users/joe/test.txt', content);
+    await fs.writeFile('/Users/joe/test.txt', content, () => {});
   } catch (err) {
     console.log(err);
   }
