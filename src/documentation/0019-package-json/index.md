@@ -428,11 +428,11 @@ Example:
 "browserslist": [
   "> 1%",
   "last 2 versions",
-  "not ie <= 8"
+  "not Safari <= 15"
 ]
 ```
 
-This configuration means you want to support the last 2 major versions of all browsers with at least 1% of usage (from the [CanIUse.com](https://caniuse.com) stats), except IE8 and lower.
+This configuration means you want to support the last 2 major versions of all browsers with at least 1% of usage (from the [CanIUse.com](https://caniuse.com) stats), except Safari15 and lower.
 
 ([see more](https://www.npmjs.com/package/browserslist))
 
