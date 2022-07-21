@@ -91,3 +91,20 @@ This time you need to use double dashes before each argument name:
 ```bash
 node app.js --name=joe
 ```
+
+A complete code example that shows how to create an application using Node CLI Args:
+
+```
+const argvs = process.argv
+const argv = argvs.slice(2)
+const operation = argv[0]
+const operator1 = parseInt(argv[1])
+const operator2 = parseInt(argv[2])
+
+if (operation === 'add') {
+    console.log(operation + ' is ' + (operator1 + operator2));
+}
+if (operation === 'substract') {
+    console.log(operation + ' is ' + (operator1 - operator2));
+}
+```
