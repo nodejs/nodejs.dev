@@ -106,7 +106,7 @@
     "@types/react-dom": "^17.0.14",
     "@types/react-helmet": "6.1.5",
     "@types/throttle-debounce": "^5.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
     "babel-jest": "^28.1.2",
     "babel-loader": "^8.2.5",
