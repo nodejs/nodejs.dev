@@ -4,14 +4,15 @@ function createDocPages(edges) {
 
   edges.forEach(({ node }, index) => {
     const {
-      fields: { slug },
-      frontmatter: { title, section, category },
+      fields: { slug, categoryName },
+      frontmatter: { title, section },
       parent: { relativePath },
+      fileAbsolutePath,
     } = node;
 
     let previousNodeData = null;
     const previousNode = index === 0 ? undefined : edges[index - 1].node;
-    if (previousNode && previousNode.frontmatter.category === category) {
+    if (previousNode && previousNode.fields.categoryName === categoryName) {
       previousNodeData = {
         slug: previousNode.fields.slug,
         title: previousNode.frontmatter.title,
@@ -21,7 +22,7 @@ function createDocPages(edges) {
     let nextNodeData = null;
     const nextNode =
       index === edges.length - 1 ? undefined : edges[index + 1].node;
-    if (nextNode && nextNode.frontmatter.category === category) {
+    if (nextNode && nextNode.fields.categoryName === categoryName) {
       nextNodeData = {
         slug: nextNode.fields.slug,
         title: nextNode.frontmatter.title,
@@ -30,10 +31,10 @@ function createDocPages(edges) {
 
     let data;
     if (!navigationData[section]) {
-      data = { title, slug, section, category };
-      navigationData[section] = { data: [data], category };
+      data = { title, slug, section, category: categoryName };
+      navigationData[section] = { data: [data], category: categoryName };
     } else {
-      data = { title, slug, section, category };
+      data = { title, slug, section, category: categoryName };
       navigationData[section] = {
         data: [...navigationData[section].data, data],
         category: navigationData[section].category,
@@ -42,10 +43,11 @@ function createDocPages(edges) {
 
     docPages.push({
       slug,
+      realPath: fileAbsolutePath || '',
       next: nextNodeData,
       previous: previousNodeData,
       relativePath,
-      category,
+      category: categoryName,
     });
   });
 

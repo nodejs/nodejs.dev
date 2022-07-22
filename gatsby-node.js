@@ -35,18 +35,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const docPages = createDocPages(edges);
 
   docPages.forEach(page => {
-    if (page.category === 'blog') {
-      createPage({
+    // Blog Pages don't necessary need to be within the `blog` category
+    // But actually inside /content/blog/ section of the repository
+    if (page.realPath.match('/blog/')) {
+      return createPage({
         path: page.slug,
         component: blogTemplate,
         context: page,
       });
-    } else if (page.category === 'learn') {
+    }
+
+    if (page.category === 'learn') {
       createPage({
         path: `/learn/${page.slug}`,
         component: docTemplate,
         context: page,
       });
+
       createRedirect({
         fromPath: `/${page.slug}`,
         toPath: `/learn/${page.slug}`,
@@ -61,6 +66,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         context: page,
       });
     }
+
+    return null;
   });
 };
 
@@ -73,11 +80,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       parent && getNode(parent) ? getNode(parent).relativePath : '';
 
     let slug;
+
     if (fileAbsolutePath && fileAbsolutePath.includes('/blog/')) {
       const [, year, month, day, filename] =
         BLOG_POST_FILENAME_REGEX.exec(relativePath);
 
-      slug = `/blog/${year}/${month}/${day}/${filename}`;
+      slug = '/blog/';
+
+      if (frontmatter.category) {
+        slug += `${frontmatter.category}/`;
+      }
+
+      slug += `${year}/${month}/${day}/${filename}`;
 
       const date = new Date(year, month - 1, day);
 
@@ -94,12 +108,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: slug,
     });
 
-    const { authors } = frontmatter;
-    if (authors) {
+    if (frontmatter.authors) {
       createNodeField({
         node,
         name: 'authors',
-        value: authors.split(','),
+        value: frontmatter.authors.split(','),
+      });
+    }
+
+    if (frontmatter.category) {
+      createNodeField({
+        node,
+        name: 'categoryName',
+        value: frontmatter.category,
       });
     }
   }
