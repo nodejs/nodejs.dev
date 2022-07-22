@@ -7,7 +7,6 @@ import { LearnPageContext, LearnPageData } from '../types';
 
 import '../styles/article-reader.scss';
 import '../styles/learn.scss';
-import Footer from '../components/Footer';
 
 interface Props {
   data: LearnPageData;
@@ -35,44 +34,33 @@ const LearnLayout = ({
   }
 
   return (
-    <>
-      <Layout
-        title={title}
-        description={description}
-        location={location}
-        showFooter={false}
-      >
-        <main className="grid-container">
-          <Navigation
-            currentSlug={slug}
-            previousSlug={previousSlug}
-            label="Secondary"
-            sections={navigationData}
-            category="learn"
-          />
-          <Article
-            title={title}
-            body={body}
-            tableOfContents={tableOfContents}
-            next={next}
-            authors={authors}
-            previous={previous}
-            relativePath={relativePath}
-          />
-        </main>
-      </Layout>
-      <Footer />
-    </>
+    <Layout title={title} description={description} location={location}>
+      <main className="grid-container">
+        <Navigation
+          currentSlug={slug}
+          previousSlug={previousSlug}
+          label="Secondary"
+          sections={navigationData}
+          category="learn"
+        />
+        <Article
+          title={title}
+          body={body}
+          tableOfContents={tableOfContents}
+          next={next}
+          authors={authors}
+          previous={previous}
+          relativePath={relativePath}
+        />
+      </main>
+    </Layout>
   );
 };
 export default LearnLayout;
 
 export const query = graphql`
   query DocBySlug($slug: String!) {
-    doc: mdx(
-      fields: { slug: { eq: $slug } }
-      frontmatter: { category: { eq: "learn" } }
-    ) {
+    doc: mdx(fields: { slug: { eq: $slug }, categoryName: { eq: "learn" } }) {
       id
       body
       tableOfContents
