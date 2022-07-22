@@ -8,7 +8,7 @@ category: learn
 
 ## What is a buffer?
 
-A buffer is an area of memory. Most JavaScript developers are much less familiar with this concept, compared to programmers using a system programming languages (like C, C++, or Go), which interact directly with memory every day.
+A buffer is an area of memory. Most JavaScript developers are much less familiar with this concept, compared to programmers using a system programming language (like C, C++, or Go), which interact directly with memory every day.
 
 It represents a fixed-size chunk of memory (can't be resized) allocated outside of the V8 JavaScript engine.
 
@@ -29,6 +29,7 @@ A buffer is created using the [`Buffer.from()`](https://nodejs.org/api/buffer.ht
 ```js
 const buf = Buffer.from('Hey!');
 ```
+
 * [`Buffer.from(array)`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_array)
 * [`Buffer.from(arrayBuffer[, byteOffset[, length]])`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_arraybuffer_byteoffset_length)
 * [`Buffer.from(buffer)`](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_buffer)
@@ -41,6 +42,7 @@ const buf = Buffer.alloc(1024);
 ```
 
 or
+
 ```js
 const buf = Buffer.allocUnsafe(1024);
 ```
@@ -141,5 +143,5 @@ By default you copy the whole buffer. If you only want to copy a part of the buf
 const buf = Buffer.from('Hey?');
 const bufcopy = Buffer.from('Moo!');
 bufcopy.set(buf.subarray(1, 3), 1);
-bufcopy.toString(); // 'Mey!'
+console.log(bufcopy.toString()); // 'Mey!'
 ```

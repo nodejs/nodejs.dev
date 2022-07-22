@@ -1,0 +1,7 @@
+- name: advisory-board
+  slug: Advisory Board
+- name: weekly-updates
+  slug: Weekly Updates
+- name: npm
+  slug: NPM
+  description: 'Blog posts about the NPM package manager.'

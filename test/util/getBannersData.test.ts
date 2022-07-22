@@ -18,7 +18,7 @@ describe('getBannersData', () => {
 
     expect(banners).toStrictEqual(['mocked-banner']);
     expect(fetchMock.mock.calls[0][0]).toBe(
-      'https://raw.githubusercontent.com/nodejs/nodejs.org/master/locale/en/site.json'
+      'https://raw.githubusercontent.com/nodejs/nodejs.org/main/locale/en/site.json'
     );
   });
 

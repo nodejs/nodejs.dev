@@ -14,10 +14,14 @@ const edges = [
         authors:
           'ZYSzys, nstanard,  mikeal, fhemberger, garybernhardt, piepmatz, boneskull, bjb568',
         section: null,
-        category: 'releases',
+        category: {
+          name: 'releases',
+          slug: 'Releases',
+        },
       },
       fields: {
         slug: 'releases',
+        categoryName: 'releases',
       },
     },
     next: {
@@ -42,10 +46,11 @@ const edges = [
         description: null,
         authors: null,
         section: null,
-        category: 'blog',
+        category: null, // test non-existent category
       },
       fields: {
         slug: '/blog/0000/00/00/mock',
+        categoryName: 'blog',
       },
     },
     next: {
@@ -77,10 +82,11 @@ const edges = [
         description: null,
         authors: null,
         section: null,
-        category: 'blog',
+        category: null, // test non-existent category
       },
       fields: {
         slug: '/blog/0000/00/01/mock1',
+        categoryName: 'blog',
       },
     },
     next: {
@@ -113,10 +119,14 @@ const edges = [
         authors:
           'fhemberger, XhmikosR, shadowspawn, vsemozhetbyt, nschonni, wildcard, MrJithil, kasicka, cassidyjames, Trott, richardlau, Qantas94Heavy, pierreneter, 0mp, ThePrez, PoojaDurgad, MaledongGit, Megajin, marc-maurer, yodeyer, geek, sudowork, strawbrary, ryanmurakami, rbnswartz, arkwright, oliversalzburg, mweagle, Mohamed3on, Ginden, kapouer, jperkin, jericopulvera, jedsmith, jasonkarns, sonicdoe, mcollina, fornwall, danbev, naskapal, awochna, AdamMajer, ahmetanilgur, bnb, qbit',
         section: null,
-        category: 'download',
+        category: {
+          name: 'download',
+          slug: 'Download',
+        },
       },
       fields: {
         slug: 'installing-nodejs-via-package-manager',
+        categoryName: 'download',
       },
     },
     next: {
@@ -144,6 +154,7 @@ const expectedDocPages = [
     next: null,
     previous: null,
     relativePath: 'releases.md',
+    realPath: '/nodejs.dev/content/about/releases.md',
     category: 'releases',
     navigationData: {
       null: {
@@ -184,6 +195,7 @@ const expectedDocPages = [
       title: 'mock1',
     },
     previous: null,
+    realPath: '/nodejs.dev/content/blog/0000-00-00-mock.md',
     relativePath: '0000-00-00-mock.md',
     category: 'blog',
     navigationData: {
@@ -225,6 +237,7 @@ const expectedDocPages = [
       slug: '/blog/0000/00/00/mock',
       title: 'mock',
     },
+    realPath: '/nodejs.dev/content/blog/0000-00-01-mock1.md',
     relativePath: '0000-00-01-mock1.md',
     category: 'blog',
     navigationData: {
@@ -263,6 +276,7 @@ const expectedDocPages = [
     slug: 'installing-nodejs-via-package-manager',
     next: null,
     previous: null,
+    realPath: '/nodejs.dev/content/download/package-manager.md',
     relativePath: 'package-manager.md',
     category: 'download',
     navigationData: {

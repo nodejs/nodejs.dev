@@ -50,9 +50,10 @@ Often you'll see more flags added to this command:
 * `--no-optional` will prevent optional dependencies from being installed
 
 Shorthands of the flags can also be used:
-* -S: --save
-* -D: --save-dev
-* -O: --save-optional
+
+* \-S: --save
+* \-D: --save-dev
+* \-O: --save-optional
 
 The difference between _devDependencies_ and _dependencies_ is that the former contains development tools, like a testing library, while the latter is bundled with the app in production.
 
