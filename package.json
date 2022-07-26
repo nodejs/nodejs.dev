@@ -26,7 +26,7 @@
     "elasticlunr": "^0.9.5",
     "framer-motion": "^6.5.1",
     "gatsby": "^4.0.0",
-    "gatsby-link": "^4.0.0",
+    "gatsby-link": "^4.19.1",
     "gatsby-plugin-canonical-urls": "^4.0.0",
     "gatsby-plugin-catch-links": "^4.0.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
