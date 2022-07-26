@@ -26,7 +26,7 @@ Why is that so important?
 
 Because `npm` set some rules we can use in the `package.json` file to choose which versions it can update our packages to, when we run `npm update`.
 
-The rules use those symbols:
+The rules use these symbols:
 
 * `^`
 * `~`

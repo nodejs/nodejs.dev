@@ -157,14 +157,22 @@ export const createBlogData = (): BlogPostsList =>
           node: {
             frontmatter: {
               title: 'Mock blog title',
-              author: [
+              category: {
+                name: 'mock-category',
+                slug: 'Mock Category Slug',
+              },
+              blogAuthors: [
                 {
                   name: 'Mock author name',
-                  url: 'Mock URL',
+                  website: 'Mock URL',
                 },
               ],
             },
-            fields: { date: 'Mock date', slug: 'Mock blog slug' },
+            fields: {
+              date: 'Mock date',
+              slug: 'Mock blog slug',
+              categoryName: 'mock-category',
+            },
           },
         },
       ],
@@ -177,11 +185,11 @@ export const createBlogPageData = (): BlogPageData => ({
     excerpt: 'excerpt-mock',
     frontmatter: {
       title: 't,itle-mock',
-      author: [
+      blogAuthors: [
         {
           id: 'id-mock',
           name: 'name-mock',
-          url: 'url-mock',
+          website: 'url-mock',
         },
       ],
     },
@@ -193,15 +201,23 @@ export const createBlogPageData = (): BlogPageData => ({
         node: {
           frontmatter: {
             title: 'title-mock',
-            author: [
+            category: {
+              name: 'category-mock',
+              slug: 'category-mock-slug',
+            },
+            blogAuthors: [
               {
                 id: 'id-mock',
                 name: 'name-mock',
-                url: 'url-mock',
+                website: 'url-mock',
               },
             ],
           },
-          fields: { date: 'date-mock', slug: 'slug-mock' },
+          fields: {
+            date: 'date-mock',
+            slug: 'slug-mock',
+            categoryName: 'category-mock',
+          },
         },
       },
     ],
