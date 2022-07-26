@@ -42,7 +42,7 @@ app.post('/todos', (req, res) => {
 
 If you're not using Express and you want to do this in vanilla Node.js, you need to do a bit more work, of course, as Express abstracts a lot of this for you.
 
-The key thing to understand is that when you initialize the HTTP server using `http.createServer()`, the callback is called when the server got all the HTTP headers, but not the request body.
+The key thing to understand is that when you initialize the HTTP server using `http.createServer()`, the callback is called when the server gets all the HTTP headers, but not the request body.
 
 The `request` object passed in the connection callback is a stream.
 

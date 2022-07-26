@@ -92,12 +92,12 @@ It will help to know the audience and the situation when deciding on the right t
 * Who will be reading this content or post? _This is our intended audience._
 * What does the reader want? _This is their goal._
 * How familar is the reader with the content? _This lets us tailor our answer
-to them._
+  to them._
 * What situation is the reader in? _This helps us understand why they are here._
 * What emotion is the reader feeling at this moment? _This helps us empathise,
-to help better._
+  to help better._
 * How can you maintain (or better yet, improve) the reader's state of mind? _This
-is our goal._
+  is our goal._
 
 When we understand the context to which the conversation belongs, we can adjust
 our tone to fit.
@@ -114,7 +114,7 @@ They might say: _"How do I load another .js file and run that new .js file in a 
 global context?..."_
 
 We might respond: _"This would not be recommended. The reason for this suggestion
-is \[insert reason here\]. You might also want to take a look at..."_
+is \[insert reason here]. You might also want to take a look at..."_
 
 The response above is direct, yet respectful. It is straightforward and answers
 the question with a concrete suggestion. It invites, rather than commands, the person

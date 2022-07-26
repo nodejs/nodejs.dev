@@ -8,7 +8,7 @@ import './Codebox.scss';
 interface Props {
   children: {
     props: {
-      className: string;
+      className: string | null;
       children: React.ReactNode;
     };
   };
@@ -17,13 +17,13 @@ interface Props {
 const Codebox = ({ children: { props } }: Props): JSX.Element => {
   const [copied, setCopied] = React.useState(false);
 
-  // Language Matches in class
   // eslint-disable-next-line react/prop-types
-  const matches = props.className.match(/language-(?<lang>.*)/);
+  const className = props.className || '';
+
+  // Language Matches in class
+  const matches = className.match(/language-(?<lang>.*)/);
   // Get language from classname
-  const language = (
-    matches && matches.groups && matches.groups.lang ? matches.groups.lang : ''
-  ) as Language;
+  const language = (matches?.groups?.lang || '') as Language;
   // Actual Code
   const code = props.children?.toString() || '';
 
@@ -50,8 +50,14 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
       theme={undefined}
       language={language}
     >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={style}>
+      {({
+        className: codeClassName,
+        style,
+        tokens,
+        getLineProps,
+        getTokenProps,
+      }) => (
+        <pre className={codeClassName} style={style}>
           <div className="shell-box-top">
             <span>{language.toUpperCase()}</span>
             <button

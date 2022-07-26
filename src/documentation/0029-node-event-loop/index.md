@@ -36,7 +36,7 @@ The call stack is a LIFO (Last In, First Out) stack.
 
 The event loop continuously checks the **call stack** to see if there's any function that needs to run.
 
-While doing so, it adds any function call it finds to the call stack and executes each one in order.
+While doing so, it adds any function call it finds in the call stack and executes each one in order.
 
 You know the error stack trace you might be familiar with, in the debugger or in the browser console? The browser looks up the function names in the call stack to inform you which function originates the current call:
 

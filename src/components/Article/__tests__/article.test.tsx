@@ -112,7 +112,7 @@ describe('Article component', () => {
       {
         id: '1',
         name: 'test-user',
-        url: '',
+        website: '',
       },
     ];
 
