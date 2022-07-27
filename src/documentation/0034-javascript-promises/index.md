@@ -39,7 +39,7 @@ In addition to your own code and libraries code, promises are used by standard m
 
 It's unlikely that in modern JavaScript you'll find yourself _not_ using promises, so let's start diving right into them.
 
----
+***
 
 ## Creating a promise
 
@@ -87,7 +87,7 @@ getFile('/etc/passwd')
 
 > In recent versions of Node.js, you won't have to do this manual conversion for a lot of the API. There is a promisifying function available in the [util module](https://nodejs.org/docs/latest-v11.x/api/util.html#util_util_promisify_original) that will do this for you, given that the function you're promisifying has the correct signature.
 
----
+***
 
 ## Consuming a promise
 
@@ -112,7 +112,7 @@ const checkIfItsDone = () => {
 
 Running `checkIfItsDone()` will specify functions to execute when the `isItDoneYet` promise resolves (in the `then` call) or rejects (in the `catch` call).
 
----
+***
 
 ## Chaining promises
 
@@ -145,7 +145,8 @@ fetch('/todos.json')
     console.log('Request failed', error);
   });
 ```
-> [`node-fetch`](https://www.npmjs.com/package/node-fetch) is  minimal code for window.fetch compatible API on Node.js runtime.
+
+> [`node-fetch`](https://www.npmjs.com/package/node-fetch) is  minimal code for window\.fetch compatible API on Node.js runtime.
 
 In this example, we call `fetch()` to get a list of TODO items from the `todos.json` file found in the domain root, and we create a chain of promises.
 
@@ -175,7 +176,7 @@ fetch('/todos.json')
 
 and we simply log it to the console.
 
----
+***
 
 ## Handling errors
 
@@ -215,7 +216,7 @@ new Promise((resolve, reject) => {
   });
 ```
 
----
+***
 
 ## Orchestrating promises
 
