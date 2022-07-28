@@ -55,7 +55,8 @@ const DownloadPage = ({
         <DownloadHeader release={selectedType} />
         <p className="release-description">
           Download the Node.js source code, a pre-built installer for your
-          platform, or install via <Link to="/download/package-manager">package manager</Link>.
+          platform, or install via{' '}
+          <Link to="/download/package-manager">package manager</Link>.
         </p>
         <DownloadToggle
           selected={typeRelease}
