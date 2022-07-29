@@ -7,5 +7,12 @@
       "**/.*",
       "**/node_modules/**"
     ]
-  }
+  },
+  "redirects": [
+    {
+      "source": "/en/get-involved",
+      "destination": "/community",
+      "type": "301"
+    }
+  ]
 }

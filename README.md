@@ -84,6 +84,7 @@ also have committer rights on the repo.
 * [@MylesBorins](https://github.com/MylesBorins) - Myles Borins
 * [@ogonzal87](https://github.com/ogonzal87) - Oscar Gonzalez
 * [@ollelauribostrom](https://github.com/ollelauribostrom) - Olle Lauri Boström
+* [@ovflowd](https://github.com/ovflowd) - Claudio Wunder
 * [@pierreneter](https://github.com/pierreneter) - Nguyễn J Huỳnh Long
 * [@rodion-arr](https://github.com/rodion-arr) - Rodion Abdurakhimov
 * [@sagirk](https://github.com/sagirk) - Sagir Khan

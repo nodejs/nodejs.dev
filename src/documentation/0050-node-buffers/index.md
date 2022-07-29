@@ -8,7 +8,7 @@ category: learn
 
 ## What is a buffer?
 
-A buffer is an area of memory. Most JavaScript developers are much less familiar with this concept, compared to programmers using a system programming languages (like C, C++, or Go), which interact directly with memory every day.
+A buffer is an area of memory. Most JavaScript developers are much less familiar with this concept, compared to programmers using a system programming language (like C, C++, or Go), which interact directly with memory every day.
 
 It represents a fixed-size chunk of memory (can't be resized) allocated outside of the V8 JavaScript engine.
 
@@ -47,7 +47,7 @@ or
 const buf = Buffer.allocUnsafe(1024);
 ```
 
-While both `alloc` and `allocUnsafe` allocate a `Buffer` of the specified size in bytes, the `Buffer` created by `alloc` will be _initialized_ with zeroes and the one created by `allocUnsafe` will be _uninitialized_. This means that while `allocUnsafe` would be quite fast in comparison to `alloc`, the allocated segment of memory may contain old data which could potentially be sensitive.
+While both `alloc` and `allocUnsafe` allocate a `Buffer` of the specified size in bytes, the `Buffer` created by `alloc` will be _initialized_ with zeroes. This means that while `allocUnsafe` would be quite fast in comparison to `alloc`, the allocated segment of memory may contain old data which could potentially be sensitive.
 
 Older data, if present in the memory, can be accessed or leaked when the `Buffer` memory is read. This is what really makes `allocUnsafe` unsafe and extra care must be taken while using it.
 
