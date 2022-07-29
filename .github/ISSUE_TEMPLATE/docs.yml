@@ -1,0 +1,24 @@
+name: 📖 Documentation Improvement
+description: Use this template for making changes in the docs.
+labels: [docs]
+body:
+  - type: dropdown
+    attributes:
+      label: "The Documentation is?"
+      description: What is currently wrong with the docs?
+      options:
+        - Missing
+        - Incorrect
+        - Confusing
+        - Not sure?
+      validations:
+        required: true
+  - type: textarea
+    attributes:
+      label: "Please Explain in details:"
+      placeholder: |
+        1. What part of the docs affect your report?
+        2. What do you propose to be changed?
+        3. Pleae include any relevant URLs
+    validations:
+      required: true
