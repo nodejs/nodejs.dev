@@ -201,7 +201,6 @@ exports[`LearnLayout Template renders correctly 1`] = `
             >
               name-mock
             </a>
-            
           </span>
         </h5>
         <div>

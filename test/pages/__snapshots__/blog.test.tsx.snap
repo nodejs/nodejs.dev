@@ -188,7 +188,6 @@ exports[`Blog page renders correctly 1`] = `
             <span>
               Mock author name
             </span>
-            
           </p>
         </div>
       </div>

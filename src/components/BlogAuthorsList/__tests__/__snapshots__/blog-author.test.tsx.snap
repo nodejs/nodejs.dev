@@ -26,7 +26,6 @@ exports[`Blog Author component renders correctly 1`] = `
       >
         Bruce Wayne
       </a>
-      
     </span>
   </h5>
 </div>
