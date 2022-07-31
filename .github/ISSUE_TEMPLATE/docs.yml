@@ -11,8 +11,8 @@ body:
         - Incorrect
         - Confusing
         - Not sure?
-      validations:
-        required: true
+    validations:
+      required: true
   - type: textarea
     attributes:
       label: "Please Explain in details:"
