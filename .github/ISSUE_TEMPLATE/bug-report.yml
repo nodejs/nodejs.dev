@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for wanting to report an issue you've found on the nodejs.org website.
+        Thanks for wanting to report an issue you've found on the nodejs.dev website.
         Please fill in the template below. If unsure about something, just do as best
         as you're able. If you are reporting a visual glitch, it will be much easier
         for us to fix it when you attach a screenshot as well.
@@ -32,9 +32,9 @@ body:
       required: true
   - type: input
     attributes:
-      label: "Operation System:"
+      label: "Operating System:"
       description:
-        What kind of operation system are you using
+        What operating system are you using
         (Write it in full, with version number)?
       placeholder: "Windows 10, 21H2, 19044.1826"
     validations:
