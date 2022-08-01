@@ -300,7 +300,7 @@ exports[`Learn Template renders correctly 1`] = `
         >
           <a
             class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/main/src/documentation/test-path"
+            href="https://github.com/nodejs/nodejs.dev/edit/main/content/learn/test-path"
           >
             <span>
               Edit this page on GitHub
