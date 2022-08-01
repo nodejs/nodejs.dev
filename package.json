@@ -46,7 +46,7 @@
     "gatsby-remark-images": "^6.0.0",
     "gatsby-remark-prismjs": "^6.0.0",
     "gatsby-source-filesystem": "^4.0.0",
-    "gatsby-transformer-remark": "^5.0.0",
+    "gatsby-transformer-remark": "^5.19.0",
     "gatsby-transformer-yaml": "^4.0.0",
     "highlight.js": "^11.5.1",
     "intersection-observer": "^0.12.0",
