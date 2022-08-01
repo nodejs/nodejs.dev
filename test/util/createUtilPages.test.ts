@@ -1,4 +1,4 @@
-import createDocPages from '../../util-node/createDocPages';
+import createLearnPages from '../../util-node/createLearnPages';
 
 const edges = [
   {
@@ -313,9 +313,9 @@ const expectedDocPages = [
   },
 ];
 
-describe('createDocPages', () => {
+describe('createLearnPages', () => {
   it('returns expected object', () => {
-    const docPages = createDocPages(edges);
+    const docPages = createLearnPages(edges);
     expect(docPages).toEqual(expectedDocPages);
   });
 });

@@ -1,14 +1,20 @@
 // Use in this file CommonJS syntax see https://www.gatsbyjs.org/docs/migrating-from-v1-to-v2/#convert-to-either-pure-commonjs-or-pure-es6
+const fs = require('fs');
 const path = require('path');
+const yaml = require('yaml');
 const createSlug = require('./util-node/createSlug');
 const getNodeReleasesData = require('./util-node/getNodeReleasesData');
 const getBannersData = require('./util-node/getBannersData');
 const getNvmData = require('./util-node/getNvmData');
 const createPagesQuery = require('./util-node/createPagesQuery');
-const createDocPages = require('./util-node/createDocPages');
+const createMarkdownPages = require('./util-node/createMarkdownPages');
 const redirects = require('./util-node/redirects');
 
 const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
+
+const learnYamlNavigationData = yaml.parse(
+  fs.readFileSync('./src/data/learn.yaml', 'utf8')
+);
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage, createRedirect } = actions;
@@ -32,24 +38,43 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogTemplate = path.resolve('./src/templates/blog.tsx');
 
   const { edges } = result.data.allMdx;
-  const docPages = createDocPages(edges);
 
-  docPages.forEach(page => {
+  const { markdownPages, navigationData } = createMarkdownPages(
+    edges,
+    learnYamlNavigationData
+  );
+
+  const learnNavigationEntries = Object.keys(navigationData);
+
+  if (learnNavigationEntries.length) {
+    const firstSectionPages = navigationData[learnNavigationEntries[0]].data;
+
+    if (firstSectionPages.length) {
+      createPage({
+        path: `/learn`,
+        component: docTemplate,
+        context: { ...firstSectionPages[0], navigationData },
+      });
+    }
+  }
+
+  markdownPages.forEach(page => {
     // Blog Pages don't necessary need to be within the `blog` category
     // But actually inside /content/blog/ section of the repository
     if (page.realPath.match('/blog/')) {
-      return createPage({
+      createPage({
         path: page.slug,
         component: blogTemplate,
         context: page,
       });
+      return;
     }
 
     if (page.category === 'learn') {
       createPage({
         path: `/learn/${page.slug}`,
         component: docTemplate,
-        context: page,
+        context: { ...page, navigationData },
       });
 
       createRedirect({
@@ -58,16 +83,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         isPermanent: true,
       });
     }
-
-    if (page.slug === 'introduction-to-nodejs') {
-      createPage({
-        path: `/learn`,
-        component: docTemplate,
-        context: page,
-      });
-    }
-
-    return null;
   });
 };
 
