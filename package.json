@@ -43,7 +43,7 @@
     "gatsby-react-router-scroll": "^5.9.0",
     "gatsby-remark-autolink-headers": "^5.0.0",
     "gatsby-remark-copy-linked-files": "^5.19.0",
-    "gatsby-remark-images": "^6.0.0",
+    "gatsby-remark-images": "^6.19.0",
     "gatsby-remark-prismjs": "^6.0.0",
     "gatsby-source-filesystem": "^4.19.0",
     "gatsby-transformer-remark": "^5.19.0",
