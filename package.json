@@ -111,7 +111,7 @@
     "@typescript-eslint/parser": "^5.30.7",
     "babel-jest": "^28.1.2",
     "babel-loader": "^8.2.5",
-    "babel-plugin-remove-graphql-queries": "^4.0.0",
+    "babel-plugin-remove-graphql-queries": "^4.19.0",
     "babel-preset-gatsby": "2.19.0",
     "eslint": "^8.21.0",
     "eslint-config-airbnb": "^19.0.4",
