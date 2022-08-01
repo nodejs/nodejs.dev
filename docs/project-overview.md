@@ -84,9 +84,9 @@ A quick look at some of the top-level files and directories found in this projec
 
 Content is pulled from across the Node.js GitHub Org, Contentful, and other data sources and stitched together into a cohesive website.
 
-### src/documentation
+### Content (Blogs, Learn, etc.)
 
-The `src/documentation` directory currently contains all the getting started content.
+The content folder is responsible for aggregating all the content of the Website, such as the Community pages, Blog pages and Learn pages.
 
 ## 🎓 Learning Gatsby
 
