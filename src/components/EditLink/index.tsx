@@ -11,7 +11,7 @@ const EditLink = ({ relativePath, editPath }: Props): JSX.Element | null => {
 
   const baseURL = `https://github.com/nodejs/nodejs.dev/edit/main`;
   const href = relativePath
-    ? `${baseURL}/src/documentation/${relativePath}`
+    ? `${baseURL}/content/learn/${relativePath}`
     : `${baseURL}/${editPath}`;
 
   return (
