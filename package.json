@@ -131,7 +131,7 @@
     "markdown-yaml-metadata-parser": "^3.0.0",
     "pa11y": "6.2.3",
     "prettier": "^2.6.2",
-    "remark-cli": "^10.0.1",
+    "remark-cli": "^11.0.0",
     "remark-frontmatter": "^4.0.1",
     "remark-preset-lint-node": "^3.3.1",
     "sass": "^1.53.0",
