@@ -28,7 +28,7 @@
     "gatsby": "^4.0.0",
     "gatsby-link": "^4.0.0",
     "gatsby-plugin-canonical-urls": "^4.0.0",
-    "gatsby-plugin-catch-links": "^4.0.0",
+    "gatsby-plugin-catch-links": "^4.19.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-manifest": "^4.0.0",
     "gatsby-plugin-mdx": "^3.0.0",
