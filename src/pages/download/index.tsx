@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { detectOS } from '../../util/detectOS';
 import { getUpcomingReleases } from '../../util/getUpcomingReleases';
 import Layout from '../../components/Layout';
@@ -55,7 +55,8 @@ const DownloadPage = ({
         <DownloadHeader release={selectedType} />
         <p className="release-description">
           Download the Node.js source code, a pre-built installer for your
-          platform, or install via package manager.
+          platform, or install via{' '}
+          <Link to="/download/package-manager">package manager</Link>.
         </p>
         <DownloadToggle
           selected={typeRelease}
