@@ -164,7 +164,7 @@
       ".cache"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!(gatsby|gatsby-plugin-mdx|gatsby-script)/)"
+      "node_modules/(?!(gatsby|gatsby-plugin-mdx|gatsby-script|yaml)/)"
     ],
     "globals": {
       "__PATH_PREFIX__": ""
