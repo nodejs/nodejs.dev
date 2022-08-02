@@ -12,10 +12,10 @@ If you submit a pull request to implement a significant change to the documentat
 
 ## To begin drafting a documentation page:
 
-1. Fork the [nodejs/website-redesign repo](https://github.com/nodejs/website-redesign) so that you have your own copy of the repository that you have push access to.
-1. Create your documentation file on `content/learn` use a reasonable and descriptive name for the file.
-  - If you're writing a simple Markdown file, use an `.md` extension. Otherwise, if you want to incorporate [JSX](https://reactjs.org/docs/introducing-jsx.html) features, sabve it with an `.mdx` extension.
-1. Copy the metadata from the template below. This metadata defines crucial information such as authors, the title of your documentation page, and more
+1. Fork the [nodejs/nodejs.dev repo](https://github.com/nodejs/nodejs.dev) so that you have your own copy of the repository to which you have push access.
+1. Create your documentation file in `content/learn`. Use a reasonable and descriptive name for the file.
+  - If you're writing a simple Markdown file, use an `.md` extension. Otherwise, if you want to incorporate [JSX](https://reactjs.org/docs/introducing-jsx.html) features, save it with an `.mdx` extension.
+1. Copy the metadata from the template below. This metadata defines crucial information such as authors, the title of your documentation page, and more.
   ```mdx
   ---
   title: 'A title for your page'
@@ -25,14 +25,14 @@ If you submit a pull request to implement a significant change to the documentat
   category: learn # Leave this as it is
   ---
   ```
-1. Edit your file and begin writing out your article. Put care into the details! Please review the proposed [Node.js Voice and Tone Guidelines](https://github.com/nodejs/website-redesign/blob/master/style-guide/0001-voice-and-tone.md) before you begin writing.
+1. Edit your file and begin writing out your article. Put care into the details! Please review the proposed [Node.js Voice and Tone Guidelines](https://github.com/nodejs/nodejs.dev/blob/main/style-guide/0001-voice-and-tone.md) before you begin writing.
 1. When you are ready to get some feedback on your article, submit a pull request back to the main nodejs/nodejs.dev repository. As a pull request, the draft will receive feedback from the larger community, and the author should be prepared to revise it in response.
 1. Build consensus on your article by integrating feedback from the community.
 1. Eventually, the Website Redesign Working Group will decide in one of their bi-weekly meetings whether the RFC is a candidate for inclusion on the Node.js website.
 
 ### Recommendations
 
-- We recommend you to give a read to general Markdown and MDX documentation before you start writing your article.
+- We recommend you read general Markdown and MDX documentation before you start writing your article.
 - If you're adding code snippets within your article, please run `npm run lint:js` to check if your snippets follow our linting rules.
 - If you're in doubt regarding a specific Node.js API, refer to the [Node.js Docs](https://nodejs.org/en/docs/).
 
