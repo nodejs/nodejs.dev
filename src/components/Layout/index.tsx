@@ -1,13 +1,18 @@
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/themes/prism-okaidia.css';
+
 import React from 'react';
+
 import { MotionConfig } from 'framer-motion';
+import { FeatureToggleProvider } from '../FeatureToggleProvider';
+
 import Header from '../Header';
 import Footer from '../Footer';
+import SEO from '../Seo';
+
 import '../../styles/tokens.scss';
 import '../../styles/layout.scss';
 import '../../styles/mobile.scss';
-import SEO from '../Seo';
 
 interface Props {
   children: React.ReactNode;
@@ -28,7 +33,7 @@ const Layout = ({
   location,
 }: Props): JSX.Element => {
   return (
-    <>
+    <FeatureToggleProvider>
       <SEO
         title={title}
         description={description}
@@ -42,7 +47,7 @@ const Layout = ({
           {showFooter && <Footer />}
         </div>
       </MotionConfig>
-    </>
+    </FeatureToggleProvider>
   );
 };
 
