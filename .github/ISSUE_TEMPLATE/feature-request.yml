@@ -1,0 +1,19 @@
+name: 🚀 Feature Request For Nodejs Website
+description: I have a suggestion (and may want to implement it)!
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You have an idea how to improve the site? That's awesome!
+        Before submitting, please have a look at the existing issues if there's already
+        something related to your suggestion.
+  - type: textarea
+    attributes:
+      label: "Enter your suggestions in details:"
+      placeholder: |
+        1. What I expected to happen.
+        2. Your reason (if possible, images or videos are welcome).
+        3. What I plan to do (Optional but better).
+    validations:
+      required: true
