@@ -197,7 +197,6 @@ exports[`Article component renders correctly in blog mode 1`] = `
        
       <span>
         test-user
-        
       </span>
     </h5>
     <div>

@@ -109,28 +109,7 @@ exports[`Home page renders correctly 1`] = `
             </li>
             <li
               class="nav__tabs nav__tabs--right"
-            >
-              <button
-                class="dark-mode-toggle"
-                type="button"
-              >
-                <span
-                  class="sr-only"
-                >
-                  Toggle Dark Mode
-                </span>
-                <i
-                  class="material-icons light-mode-only theme-buttons"
-                >
-                  nights_stay
-                </i>
-                <i
-                  class="material-icons dark-mode-only theme-buttons"
-                >
-                  wb_sunny
-                </i>
-              </button>
-            </li>
+            />
             <li
               class="nav__tabs"
             >
@@ -239,44 +218,44 @@ exports[`Home page renders correctly 1`] = `
                 role="tablist"
               >
                 <li
-                  aria-controls="react-tabs-1"
+                  aria-controls="panel:r0:0"
                   aria-disabled="false"
                   aria-selected="true"
                   class="react-tabs__tab react-tabs__tab--selected"
                   data-rttab="true"
-                  id="react-tabs-0"
+                  id="tab:r0:0"
                   role="tab"
                   tabindex="0"
                 >
                   Windows (Chocolatey)
                 </li>
                 <li
-                  aria-controls="react-tabs-3"
+                  aria-controls="panel:r0:1"
                   aria-disabled="false"
                   aria-selected="false"
                   class="react-tabs__tab"
                   data-rttab="true"
-                  id="react-tabs-2"
+                  id="tab:r0:1"
                   role="tab"
                 >
                   macOS (nvm)
                 </li>
                 <li
-                  aria-controls="react-tabs-5"
+                  aria-controls="panel:r0:2"
                   aria-disabled="false"
                   aria-selected="false"
                   class="react-tabs__tab"
                   data-rttab="true"
-                  id="react-tabs-4"
+                  id="tab:r0:2"
                   role="tab"
                 >
                   Linux (nvm)
                 </li>
               </ul>
               <div
-                aria-labelledby="react-tabs-0"
+                aria-labelledby="tab:r0:0"
                 class="react-tabs__tab-panel react-tabs__tab-panel--selected"
-                id="react-tabs-1"
+                id="panel:r0:0"
                 role="tabpanel"
               >
                 <div>
@@ -378,15 +357,15 @@ exports[`Home page renders correctly 1`] = `
                 </div>
               </div>
               <div
-                aria-labelledby="react-tabs-2"
+                aria-labelledby="tab:r0:1"
                 class="react-tabs__tab-panel"
-                id="react-tabs-3"
+                id="panel:r0:1"
                 role="tabpanel"
               />
               <div
-                aria-labelledby="react-tabs-4"
+                aria-labelledby="tab:r0:2"
                 class="react-tabs__tab-panel"
-                id="react-tabs-5"
+                id="panel:r0:2"
                 role="tabpanel"
               />
             </div>

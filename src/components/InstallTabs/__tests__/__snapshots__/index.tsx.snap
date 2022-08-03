@@ -36,44 +36,44 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
         role="tablist"
       >
         <li
-          aria-controls="react-tabs-1"
+          aria-controls="panel:r0:0"
           aria-disabled="false"
           aria-selected="true"
           class="react-tabs__tab react-tabs__tab--selected"
           data-rttab="true"
-          id="react-tabs-0"
+          id="tab:r0:0"
           role="tab"
           tabindex="0"
         >
           Windows (Chocolatey)
         </li>
         <li
-          aria-controls="react-tabs-3"
+          aria-controls="panel:r0:1"
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
           data-rttab="true"
-          id="react-tabs-2"
+          id="tab:r0:1"
           role="tab"
         >
           macOS (nvm)
         </li>
         <li
-          aria-controls="react-tabs-5"
+          aria-controls="panel:r0:2"
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
           data-rttab="true"
-          id="react-tabs-4"
+          id="tab:r0:2"
           role="tab"
         >
           Linux (nvm)
         </li>
       </ul>
       <div
-        aria-labelledby="react-tabs-0"
+        aria-labelledby="tab:r0:0"
         class="react-tabs__tab-panel react-tabs__tab-panel--selected"
-        id="react-tabs-1"
+        id="panel:r0:0"
         role="tabpanel"
       >
         <div>
@@ -175,15 +175,15 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
         </div>
       </div>
       <div
-        aria-labelledby="react-tabs-2"
+        aria-labelledby="tab:r0:1"
         class="react-tabs__tab-panel"
-        id="react-tabs-3"
+        id="panel:r0:1"
         role="tabpanel"
       />
       <div
-        aria-labelledby="react-tabs-4"
+        aria-labelledby="tab:r0:2"
         class="react-tabs__tab-panel"
-        id="react-tabs-5"
+        id="panel:r0:2"
         role="tabpanel"
       />
     </div>
@@ -227,44 +227,44 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
         role="tablist"
       >
         <li
-          aria-controls="react-tabs-13"
+          aria-controls="panel:r2:0"
           aria-disabled="false"
           aria-selected="true"
           class="react-tabs__tab react-tabs__tab--selected"
           data-rttab="true"
-          id="react-tabs-12"
+          id="tab:r2:0"
           role="tab"
           tabindex="0"
         >
           Linux (nvm)
         </li>
         <li
-          aria-controls="react-tabs-15"
+          aria-controls="panel:r2:1"
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
           data-rttab="true"
-          id="react-tabs-14"
+          id="tab:r2:1"
           role="tab"
         >
           macOS (nvm)
         </li>
         <li
-          aria-controls="react-tabs-17"
+          aria-controls="panel:r2:2"
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
           data-rttab="true"
-          id="react-tabs-16"
+          id="tab:r2:2"
           role="tab"
         >
           Windows (Chocolatey)
         </li>
       </ul>
       <div
-        aria-labelledby="react-tabs-12"
+        aria-labelledby="tab:r2:0"
         class="react-tabs__tab-panel react-tabs__tab-panel--selected"
-        id="react-tabs-13"
+        id="panel:r2:0"
         role="tabpanel"
       >
         <div>
@@ -340,15 +340,15 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
         </div>
       </div>
       <div
-        aria-labelledby="react-tabs-14"
+        aria-labelledby="tab:r2:1"
         class="react-tabs__tab-panel"
-        id="react-tabs-15"
+        id="panel:r2:1"
         role="tabpanel"
       />
       <div
-        aria-labelledby="react-tabs-16"
+        aria-labelledby="tab:r2:2"
         class="react-tabs__tab-panel"
-        id="react-tabs-17"
+        id="panel:r2:2"
         role="tabpanel"
       />
     </div>
@@ -392,44 +392,44 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
         role="tablist"
       >
         <li
-          aria-controls="react-tabs-19"
+          aria-controls="panel:r3:0"
           aria-disabled="false"
           aria-selected="true"
           class="react-tabs__tab react-tabs__tab--selected"
           data-rttab="true"
-          id="react-tabs-18"
+          id="tab:r3:0"
           role="tab"
           tabindex="0"
         >
           Linux (nvm)
         </li>
         <li
-          aria-controls="react-tabs-21"
+          aria-controls="panel:r3:1"
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
           data-rttab="true"
-          id="react-tabs-20"
+          id="tab:r3:1"
           role="tab"
         >
           macOS (nvm)
         </li>
         <li
-          aria-controls="react-tabs-23"
+          aria-controls="panel:r3:2"
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
           data-rttab="true"
-          id="react-tabs-22"
+          id="tab:r3:2"
           role="tab"
         >
           Windows (Chocolatey)
         </li>
       </ul>
       <div
-        aria-labelledby="react-tabs-18"
+        aria-labelledby="tab:r3:0"
         class="react-tabs__tab-panel react-tabs__tab-panel--selected"
-        id="react-tabs-19"
+        id="panel:r3:0"
         role="tabpanel"
       >
         <div>
@@ -505,15 +505,15 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
         </div>
       </div>
       <div
-        aria-labelledby="react-tabs-20"
+        aria-labelledby="tab:r3:1"
         class="react-tabs__tab-panel"
-        id="react-tabs-21"
+        id="panel:r3:1"
         role="tabpanel"
       />
       <div
-        aria-labelledby="react-tabs-22"
+        aria-labelledby="tab:r3:2"
         class="react-tabs__tab-panel"
-        id="react-tabs-23"
+        id="panel:r3:2"
         role="tabpanel"
       />
     </div>
@@ -557,44 +557,44 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
         role="tablist"
       >
         <li
-          aria-controls="react-tabs-7"
+          aria-controls="panel:r1:0"
           aria-disabled="false"
           aria-selected="true"
           class="react-tabs__tab react-tabs__tab--selected"
           data-rttab="true"
-          id="react-tabs-6"
+          id="tab:r1:0"
           role="tab"
           tabindex="0"
         >
           macOS (nvm)
         </li>
         <li
-          aria-controls="react-tabs-9"
+          aria-controls="panel:r1:1"
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
           data-rttab="true"
-          id="react-tabs-8"
+          id="tab:r1:1"
           role="tab"
         >
           Windows (Chocolatey)
         </li>
         <li
-          aria-controls="react-tabs-11"
+          aria-controls="panel:r1:2"
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
           data-rttab="true"
-          id="react-tabs-10"
+          id="tab:r1:2"
           role="tab"
         >
           Linux (nvm)
         </li>
       </ul>
       <div
-        aria-labelledby="react-tabs-6"
+        aria-labelledby="tab:r1:0"
         class="react-tabs__tab-panel react-tabs__tab-panel--selected"
-        id="react-tabs-7"
+        id="panel:r1:0"
         role="tabpanel"
       >
         <div>
@@ -672,15 +672,15 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
         </div>
       </div>
       <div
-        aria-labelledby="react-tabs-8"
+        aria-labelledby="tab:r1:1"
         class="react-tabs__tab-panel"
-        id="react-tabs-9"
+        id="panel:r1:1"
         role="tabpanel"
       />
       <div
-        aria-labelledby="react-tabs-10"
+        aria-labelledby="tab:r1:2"
         class="react-tabs__tab-panel"
-        id="react-tabs-11"
+        id="panel:r1:2"
         role="tabpanel"
       />
     </div>
@@ -726,44 +726,44 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
         role="tablist"
       >
         <li
-          aria-controls="react-tabs-25"
+          aria-controls="panel:r4:0"
           aria-disabled="false"
           aria-selected="true"
           class="react-tabs__tab react-tabs__tab--selected"
           data-rttab="true"
-          id="react-tabs-24"
+          id="tab:r4:0"
           role="tab"
           tabindex="0"
         >
           Windows (Chocolatey)
         </li>
         <li
-          aria-controls="react-tabs-27"
+          aria-controls="panel:r4:1"
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
           data-rttab="true"
-          id="react-tabs-26"
+          id="tab:r4:1"
           role="tab"
         >
           macOS (nvm)
         </li>
         <li
-          aria-controls="react-tabs-29"
+          aria-controls="panel:r4:2"
           aria-disabled="false"
           aria-selected="false"
           class="react-tabs__tab"
           data-rttab="true"
-          id="react-tabs-28"
+          id="tab:r4:2"
           role="tab"
         >
           Linux (nvm)
         </li>
       </ul>
       <div
-        aria-labelledby="react-tabs-24"
+        aria-labelledby="tab:r4:0"
         class="react-tabs__tab-panel react-tabs__tab-panel--selected"
-        id="react-tabs-25"
+        id="panel:r4:0"
         role="tabpanel"
       >
         <div>
@@ -865,15 +865,15 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
         </div>
       </div>
       <div
-        aria-labelledby="react-tabs-26"
+        aria-labelledby="tab:r4:1"
         class="react-tabs__tab-panel"
-        id="react-tabs-27"
+        id="panel:r4:1"
         role="tabpanel"
       />
       <div
-        aria-labelledby="react-tabs-28"
+        aria-labelledby="tab:r4:2"
         class="react-tabs__tab-panel"
-        id="react-tabs-29"
+        id="panel:r4:2"
         role="tabpanel"
       />
     </div>
