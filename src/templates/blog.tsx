@@ -28,14 +28,10 @@ const BlogLayout = ({
 
   const { edges: recentPosts } = recent;
 
-  const recentPostsWithoutCurrent = recentPosts.filter(
-    post => post.node.frontmatter.title !== title
-  );
-
   return (
     <Layout title={title} description={excerpt}>
       <main className="grid-container blog-container">
-        <RecentPosts posts={recentPostsWithoutCurrent} />
+        <RecentPosts posts={recentPosts} />
         <Article
           title={title}
           body={body}
