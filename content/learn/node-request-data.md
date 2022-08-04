@@ -1,14 +1,12 @@
 ---
 title: Get HTTP request body data using Node.js
 description: 'Find out how to extract the data sent as JSON through an HTTP request body using Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, rodion-arr
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, rodion-arr, araujogui
 section: Getting Started
 category: learn
 ---
 
 Here is how you can extract the data that was sent as JSON in the request body.
-
-If you are using Express, that's quite simple: use the `express.json()` middleware which is available in Express v4.16.0 onwards.
 
 For example, to get the body of this request:
 
@@ -20,29 +18,7 @@ axios.post('https://whatever.com/todos', {
 });
 ```
 
-This is the matching server-side code:
-
-```js
-const express = require('express');
-
-const app = express();
-
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
-
-app.use(express.json());
-
-app.post('/todos', (req, res) => {
-  console.log(req.body.todo);
-});
-```
-
-If you're not using Express and you want to do this in vanilla Node.js, you need to do a bit more work, of course, as Express abstracts a lot of this for you.
-
-The key thing to understand is that when you initialize the HTTP server using `http.createServer()`, the callback is called when the server gets all the HTTP headers, but not the request body.
+We must understand that when you initialize the HTTP server using `http.createServer()`, the callback is called when the server gets all the HTTP headers, but not the request body.
 
 The `request` object passed in the connection callback is a stream.
 

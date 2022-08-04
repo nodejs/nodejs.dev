@@ -1,7 +1,7 @@
 ---
 title: How to exit from a Node.js program
 description: 'Learn how to terminate a Node.js app in the best possible way'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, jgb-solutions, ahmadawais
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, jgb-solutions, ahmadawais, araujogui
 section: Getting Started
 category: learn
 ---
@@ -41,18 +41,15 @@ A program will gracefully exit when all the processing is done.
 Many times with Node.js we start servers, like this HTTP server:
 
 ```js
-const express = require('express');
+const http = require('node:http');
 
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send('Hi!');
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.end('Hi!');
 });
 
-app.listen(3000, () => console.log('Server ready'));
+server.listen(3000, () => console.log('Server ready'));
 ```
-
-> Express is a framework that uses the http module under the hood, app.listen() returns an instance of http. You would use https.createServer if you needed to serve your app using HTTPS, as app.listen only uses the http module.
 
 This program is never going to end. If you call `process.exit()`, any currently pending or running request is going to be aborted. This is _not nice_.
 
@@ -61,15 +58,14 @@ It is better to allow running request to complete before terminating. In this ca
 > Note: `process` does not require a "require", it's automatically available.
 
 ```js
-const express = require('express');
+const http = require('node:http');
 
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send('Hi!');
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.end('Hi!');
 });
 
-const server = app.listen(3000, () => console.log('Server ready'));
+server.listen(3000, () => console.log('Server ready'));
 
 process.on('SIGTERM', () => {
   server.close(() => {
