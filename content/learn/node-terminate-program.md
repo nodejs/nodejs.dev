@@ -44,7 +44,6 @@ Many times with Node.js we start servers, like this HTTP server:
 const http = require('node:http');
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
   res.end('Hi!');
 });
 
@@ -61,7 +60,6 @@ It is better to allow running request to complete before terminating. In this ca
 const http = require('node:http');
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
   res.end('Hi!');
 });
 

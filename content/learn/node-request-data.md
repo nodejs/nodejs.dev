@@ -18,7 +18,26 @@ axios.post('https://whatever.com/todos', {
 });
 ```
 
-We must understand that when you initialize the HTTP server using `http.createServer()`, the callback is called when the server gets all the HTTP headers, but not the request body.
+This is the matching server-side code:
+
+```js
+const http = require('node:http');
+
+const server = http.createServer((req, res) => {
+  let data = '';
+  req.on('data', chunk => {
+    data += chunk;
+  });
+  req.on('end', () => {
+    console.log(JSON.parse(data).todo); // 'Buy the milk'
+    res.end();
+  });
+});
+
+server.listen(3000);
+```
+
+You must understand that when you initialize the HTTP server using `http.createServer()`, the callback is called when the server gets all the HTTP headers, but not the request body.
 
 The `request` object passed in the connection callback is a stream.
 
