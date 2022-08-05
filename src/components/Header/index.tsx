@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { ThemeToggler } from 'gatsby-plugin-dark-mode';
+import { useTheme } from '@skagami/gatsby-plugin-dark-mode';
 import { ReactComponent as LogoLight } from '../../images/logos/nodejs-logo-light-mode.svg';
 import { ReactComponent as LogoDark } from '../../images/logos/nodejs-logo-dark-mode.svg';
 import { ReactComponent as GitHubLogo } from '../../images/logos/github-logo.svg';
@@ -10,18 +10,14 @@ import SearchBar from '../SearchBar';
 const Header = (): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
 
-  const handleThemeOnClick = (
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    toggleTheme: Function,
-    currentTheme: string,
-    isKeyPress = false
-  ): void => {
+  const [theme, toggleTheme] = useTheme();
+
+  const handleThemeOnClick = (isKeyPress = false): void => {
     if (isKeyPress) {
       return;
     }
 
-    const toggle = currentTheme === 'light' ? 'dark' : 'light';
-    toggleTheme(toggle);
+    toggleTheme(theme === 'light' ? 'dark' : 'light');
   };
 
   return (
@@ -85,40 +81,22 @@ const Header = (): JSX.Element => {
               <SearchBar />
             </li>
             <li className="nav__tabs nav__tabs--right">
-              <ThemeToggler>
-                {({
-                  theme,
-                  toggleTheme,
-                }: {
-                  theme: string | null;
-                  // eslint-disable-next-line @typescript-eslint/ban-types
-                  toggleTheme: Function;
-                }): JSX.Element | null => {
-                  if (theme === null) {
-                    return null;
-                  }
-                  return (
-                    <button
-                      type="button"
-                      onClick={(): void =>
-                        handleThemeOnClick(toggleTheme, theme)
-                      }
-                      className="dark-mode-toggle"
-                      onKeyPress={(): void =>
-                        handleThemeOnClick(toggleTheme, theme, true)
-                      }
-                    >
-                      <span className="sr-only">Toggle Dark Mode</span>
-                      <i className="material-icons light-mode-only theme-buttons">
-                        nights_stay
-                      </i>
-                      <i className="material-icons dark-mode-only theme-buttons">
-                        wb_sunny
-                      </i>
-                    </button>
-                  );
-                }}
-              </ThemeToggler>
+              {theme && (
+                <button
+                  type="button"
+                  onClick={() => handleThemeOnClick()}
+                  className="dark-mode-toggle"
+                  onKeyPress={() => handleThemeOnClick(true)}
+                >
+                  <span className="sr-only">Toggle Dark Mode</span>
+                  <i className="material-icons light-mode-only theme-buttons">
+                    nights_stay
+                  </i>
+                  <i className="material-icons dark-mode-only theme-buttons">
+                    wb_sunny
+                  </i>
+                </button>
+              )}
             </li>
 
             <li className="nav__tabs">

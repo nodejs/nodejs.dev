@@ -18,9 +18,8 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-dark-mode',
+    '@skagami/gatsby-plugin-dark-mode',
     'gatsby-transformer-yaml',
-    'gatsby-plugin-react-helmet',
     `gatsby-remark-images`,
     {
       resolve: 'gatsby-plugin-canonical-urls',

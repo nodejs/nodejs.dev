@@ -20,7 +20,6 @@ exports[`Blog Card component renders correctly 1`] = `
       <span>
         Batman
       </span>
-      
     </p>
   </div>
 </div>
