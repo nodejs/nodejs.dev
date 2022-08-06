@@ -1,4 +1,4 @@
-import { Link } from 'gatsby-plugin-react-intl';
+import { Link } from 'gatsby';
 import React from 'react';
 import { TableOfContents } from '../../types';
 

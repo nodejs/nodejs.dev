@@ -1,4 +1,4 @@
-import { Link } from 'gatsby-plugin-react-intl';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import React, { useRef } from 'react';
 import { useTheme } from '@skagami/gatsby-plugin-dark-mode';
 import { ReactComponent as LogoLight } from '../../images/logos/nodejs-logo-light-mode.svg';

@@ -1,4 +1,4 @@
-import { Link } from 'gatsby-plugin-react-intl';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import React from 'react';
 import { BlogMetaData } from '../../types';
 
