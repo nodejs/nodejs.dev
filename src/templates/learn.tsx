@@ -59,8 +59,14 @@ const LearnLayout = ({
 export default LearnLayout;
 
 export const query = graphql`
-  query DocBySlug($slug: String!) {
-    doc: mdx(fields: { slug: { eq: $slug }, categoryName: { eq: "learn" } }) {
+  query ($slug: String!, $locale: String!) {
+    doc: mdx(
+      fields: {
+        slug: { eq: $slug }
+        categoryName: { eq: "learn" }
+        locale: { eq: $locale }
+      }
+    ) {
       id
       body
       tableOfContents

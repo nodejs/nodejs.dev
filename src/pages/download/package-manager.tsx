@@ -29,9 +29,12 @@ const PackageManagerPage = ({ data }: Page): JSX.Element => {
 export default PackageManagerPage;
 
 export const query = graphql`
-  query {
+  query ($locale: String!) {
     page: mdx(
-      fields: { slug: { eq: "installing-nodejs-via-package-manager" } }
+      fields: {
+        slug: { eq: "installing-nodejs-via-package-manager" }
+        locale: { eq: $locale }
+      }
     ) {
       body
       tableOfContents

@@ -30,8 +30,8 @@ const GovernancePage = ({ data }: Page): JSX.Element => {
 export default GovernancePage;
 
 export const query = graphql`
-  query {
-    page: mdx(fields: { slug: { eq: "governance" } }) {
+  query ($locale: String!) {
+    page: mdx(fields: { slug: { eq: "governance" }, locale: { eq: $locale } }) {
       body
       tableOfContents
       frontmatter {

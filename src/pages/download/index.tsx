@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { detectOS } from '../../util/detectOS';
 import { getUpcomingReleases } from '../../util/getUpcomingReleases';
 import Layout from '../../components/Layout';

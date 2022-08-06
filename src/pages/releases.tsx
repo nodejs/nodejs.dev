@@ -46,8 +46,8 @@ const ReleasesPage = ({
 export default ReleasesPage;
 
 export const query = graphql`
-  query {
-    page: mdx(fields: { slug: { eq: "releases" } }) {
+  query ($locale: String!) {
+    page: mdx(fields: { slug: { eq: "releases" }, locale: { eq: $locale } }) {
       body
       tableOfContents
       frontmatter {

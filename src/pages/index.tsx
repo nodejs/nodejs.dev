@@ -6,7 +6,6 @@ import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 
 import '../util/konami';
-
 import '../styles/index.scss';
 
 import { HomepageData, NodeReleaseLTSVersion, BannersIndex } from '../types';
@@ -124,8 +123,8 @@ interface HomepageProps {
 }
 
 export const query = graphql`
-  query pageQuery {
-    page: mdx(fields: { slug: { eq: "homepage" } }) {
+  query ($locale: String!) {
+    page: mdx(fields: { slug: { eq: "homepage" }, locale: { eq: $locale } }) {
       frontmatter {
         title
         displayTitle

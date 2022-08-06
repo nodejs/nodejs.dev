@@ -28,8 +28,8 @@ const AboutPage = ({ data }: Page): JSX.Element => {
 export default AboutPage;
 
 export const query = graphql`
-  query {
-    page: mdx(fields: { slug: { eq: "about" } }) {
+  query ($locale: String!) {
+    page: mdx(fields: { slug: { eq: "about" }, locale: { eq: $locale } }) {
       body
       tableOfContents
       frontmatter {

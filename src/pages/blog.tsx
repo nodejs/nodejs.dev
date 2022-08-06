@@ -89,12 +89,9 @@ const AllBlogPosts = ({ data }: Props): JSX.Element => {
 };
 
 export const pageQuery = graphql`
-  query AllBlogPostsPageQuery {
+  query {
     blogs: allMdx(
-      filter: {
-        fileAbsolutePath: { regex: "/blog/" }
-        frontmatter: { title: { ne: "mock" } }
-      }
+      filter: { fileAbsolutePath: { regex: "/blog/" } }
       sort: { fields: [fields___date], order: DESC }
     ) {
       edges {

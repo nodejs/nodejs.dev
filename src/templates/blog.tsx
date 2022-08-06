@@ -49,7 +49,7 @@ const BlogLayout = ({
 export default BlogLayout;
 
 export const query = graphql`
-  query BlogBySlug($slug: String!) {
+  query ($slug: String!) {
     blog: mdx(fields: { slug: { eq: $slug } }) {
       body
       excerpt(pruneLength: 500)
@@ -68,10 +68,7 @@ export const query = graphql`
     }
     recent: allMdx(
       limit: 10
-      filter: {
-        fileAbsolutePath: { regex: "/blog/" }
-        frontmatter: { title: { ne: "mock" } }
-      }
+      filter: { fileAbsolutePath: { regex: "/blog/" } }
       sort: { fields: fields___date, order: DESC }
     ) {
       edges {

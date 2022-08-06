@@ -30,8 +30,10 @@ const TrademarkPage = ({ data }: Page): JSX.Element => {
 export default TrademarkPage;
 
 export const query = graphql`
-  query {
-    page: mdx(fields: { slug: { eq: "trademark-policy" } }) {
+  query ($locale: String!) {
+    page: mdx(
+      fields: { slug: { eq: "trademark-policy" }, locale: { eq: $locale } }
+    ) {
       body
       tableOfContents
       frontmatter {

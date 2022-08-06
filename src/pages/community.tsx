@@ -31,8 +31,10 @@ const CommunityPage = ({ data }: Page): JSX.Element => {
 export default CommunityPage;
 
 export const query = graphql`
-  query {
-    page: mdx(fields: { slug: { eq: "nodejs-community" } }) {
+  query ($locale: String!) {
+    page: mdx(
+      fields: { slug: { eq: "nodejs-community" }, locale: { eq: $locale } }
+    ) {
       body
       tableOfContents
       frontmatter {

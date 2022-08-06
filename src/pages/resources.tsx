@@ -28,8 +28,8 @@ const ResourcesPage = ({ data }: Page): JSX.Element => {
 export default ResourcesPage;
 
 export const query = graphql`
-  query {
-    page: mdx(fields: { slug: { eq: "resources" } }) {
+  query ($locale: String!) {
+    page: mdx(fields: { slug: { eq: "resources" }, locale: { eq: $locale } }) {
       body
       tableOfContents
       frontmatter {

@@ -54,10 +54,9 @@ A set of pre-processed summary data is also made available in the **[./summaries
 Contains two data columns: **_downloads_** and **_TiB_**, where TiB is 2<sup>40</sup> bytes.
 
 Source data: [./summaries/total/](./summaries/total/)
-
 Aggregate data: [./summaries/total.csv](./summaries/total.csv)
 
-Plot:
+**Plot:**
 
 <a href="https://nodejs.org/metrics/summaries/total.png">
   <img src="https://nodejs.org/metrics/summaries/total.png" width="100%" />
@@ -68,10 +67,9 @@ Plot:
 Contains a data column per distributed architecture, including **_unknown_** where the architecture cannot be determined (source or header tarballs). The columns are ordered by totals where the architecture that has the highest total is listed first and so on, the column ordering may therefore change over time. The list is not fixed and may expand when additional architectures are distributed from nodejs.org. The **.pkg** OS X installers are counted as **_x64_** even though, prior to Node.js v4, they were "universal binaries" containing both x64 and x86 versions, usable on both architectures.
 
 Source data: [./summaries/arch/](./summaries/arch/)
-
 Aggregate data: [./summaries/arch.csv](./summaries/arch.csv)
 
-Plot:
+**Plot:**
 
 <a href="https://nodejs.org/metrics/summaries/arch.png">
   <img src="https://nodejs.org/metrics/summaries/arch.png" width="100%" />
@@ -82,10 +80,9 @@ Plot:
 Contains a data column per country from the geolocation data, including **_unknown_** where a country could not be determined. The column names take the form of [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166) country codes. The columns are ordered by totals where the country with the highest total is listed first and so on, the column ordering may therefore change over time. The list is not fixed and may expand if additional countries not already listed are discovered via geolocation.
 
 Source data: [./summaries/country/](./summaries/country/)
-
 Aggregate data: [./summaries/country.csv](./summaries/country.csv)
 
-Plot:
+**Plot:**
 
 <a href="https://nodejs.org/metrics/summaries/country.png">
   <img src="https://nodejs.org/metrics/summaries/country.png" width="100%" />
@@ -96,10 +93,9 @@ Plot:
 Contains a data column per distributed operating system, including **_unknown_** where the operating system cannot be determined (due to `node-latest.tar.gz`), **_src_** for source tarballs and **_headers_** for header tarballs. The columns are ordered by totals where the operating system that has the highest total is listed first and so on, the column ordering may therefore change over time. The list is not fixed and may expand when additional operating systems are distributed from nodejs.org.
 
 Source data: [./summaries/os/](./summaries/os/)
-
 Aggregate data: [./summaries/os.csv](./summaries/os.csv)
 
-Plot:
+**Plot:**
 
 <a href="https://nodejs.org/metrics/summaries/os.png">
   <img src="https://nodejs.org/metrics/summaries/os.png" width="100%" />
@@ -110,10 +106,9 @@ Plot:
 Contains a data column per significant version number of Node.js. For <= 0.12, the semver-minor version number is listed, for >= 4.x the semver-major version number is listed. The **_unknown_** column contains counts of downloads where the version number could not be determined (see above note about `node-latest.tar.gz` and the `latest` directory symlinks coupled with `node.exe`). The columns are ordered by totals where the version that has the highest total is listed first and so on, the column ordering may therefore change over time. The list is not fixed and will expand when additional significant Node.js versions are made available for download.
 
 Source data: [./summaries/version/](./summaries/version/)
-
 Aggregate data: [./summaries/version.csv](./summaries/version.csv)
 
-Plot:
+**Plot:**
 
 <a href="https://nodejs.org/metrics/summaries/version.png">
   <img src="https://nodejs.org/metrics/summaries/version.png" width="100%" />

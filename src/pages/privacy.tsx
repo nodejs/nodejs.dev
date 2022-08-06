@@ -30,8 +30,10 @@ const PrivacyPage = ({ data }: Page): JSX.Element => {
 export default PrivacyPage;
 
 export const query = graphql`
-  query {
-    page: mdx(fields: { slug: { eq: "privacy-policy" } }) {
+  query ($locale: String!) {
+    page: mdx(
+      fields: { slug: { eq: "privacy-policy" }, locale: { eq: $locale } }
+    ) {
       body
       tableOfContents
       frontmatter {

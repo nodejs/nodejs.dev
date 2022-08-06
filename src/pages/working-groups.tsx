@@ -28,8 +28,10 @@ const WorkingGroupsPage = ({ data }: Page): JSX.Element => {
 export default WorkingGroupsPage;
 
 export const query = graphql`
-  query {
-    page: mdx(fields: { slug: { eq: "working-groups" } }) {
+  query ($locale: String!) {
+    page: mdx(
+      fields: { slug: { eq: "working-groups" }, locale: { eq: $locale } }
+    ) {
       body
       tableOfContents
       frontmatter {

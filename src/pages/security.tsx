@@ -29,8 +29,8 @@ const SecurityPage = ({ data }: Page): JSX.Element => {
 export default SecurityPage;
 
 export const query = graphql`
-  query {
-    page: mdx(fields: { slug: { eq: "security" } }) {
+  query ($locale: String!) {
+    page: mdx(fields: { slug: { eq: "security" }, locale: { eq: $locale } }) {
       body
       tableOfContents
       frontmatter {
