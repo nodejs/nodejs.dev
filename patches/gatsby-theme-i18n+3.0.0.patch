@@ -1,0 +1,13 @@
+diff --git a/node_modules/gatsby-theme-i18n/index.d.ts b/node_modules/gatsby-theme-i18n/index.d.ts
+index 2715442..a21ee3a 100644
+--- a/node_modules/gatsby-theme-i18n/index.d.ts
++++ b/node_modules/gatsby-theme-i18n/index.d.ts
+@@ -15,7 +15,7 @@ export function MdxLink({ href, children, ...props }: {
+ export function LocalizedLink({ to, language, ...props }: {
+   [x: string]: any;
+   to: any;
+-  language: any;
++  language?: any;
+ }): JSX.Element;
+ export function LocalizedRouter({ basePath, children, ...props }: {
+   [x: string]: any;
