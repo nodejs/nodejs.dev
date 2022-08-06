@@ -1,8 +1,7 @@
 require('dotenv').config();
 
 const config = require('./src/config.json');
-
-const locales = require('./src/locales.json');
+const { localesAsString, defaultLanguage } = require('./util-node/locales');
 
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX,
@@ -158,22 +157,21 @@ module.exports = {
         filter: node => node.frontmatter.category === 'learn',
       },
     },
+    // @see https://www.gatsbyjs.com/plugins/gatsby-theme-i18n/
     {
-      // @see https://www.gatsbyjs.com/plugins/gatsby-plugin-react-intl/
-      resolve: `gatsby-plugin-react-intl`,
+      resolve: `gatsby-theme-i18n`,
       options: {
-        path: `${__dirname}/src/i18n`,
-        // note: in the future we might want to enable/disable specific languages
-        // once we're actually still translating each page
-        // @todo: create an enabled property on the json schema and filter the array
-        languages: Object.keys(locales),
-        defaultLanguage: 'en',
-        // option to redirect to `/ko` when connecting `/`
-        redirect: true,
-        redirectDefaultLanguageToRoot: false,
-        // paths that you don't want to genereate locale pages, example: ["/dashboard/","/test/**"], string format is from micromatch https://github.com/micromatch/micromatch
-        ignoredPaths: [],
-        fallbackLanguage: `en`,
+        defaultLang: defaultLanguage,
+        configPath: `${__dirname}/src/i18n/config.json`,
+        prefixDefault: true,
+        locales: localesAsString,
+      },
+    },
+    // @see https://www.gatsbyjs.com/plugins/gatsby-theme-i18n-react-intl/
+    {
+      resolve: `gatsby-theme-i18n-react-intl`,
+      options: {
+        defaultLocale: `./src/i18n/locales/${defaultLanguage}.json`,
       },
     },
   ],
