@@ -1,17 +1,17 @@
-import { changeLocale, useIntl } from 'gatsby-plugin-react-intl';
+import { useLocalization } from 'gatsby-theme-i18n';
 
-import locales from '../locales.json';
+import { locales } from '../../util-node/locales';
+import { useNavigateToDifferentLocale } from './useNavigateToDifferentLocale';
 
 export const useLocaleAsDropdown = () => {
-  const { locale: currentLocale } = useIntl();
+  const { locale: currentLocale } = useLocalization();
 
-  return Object.entries(locales).map(([locale, data]) => ({
-    title: data.language,
-    label: data.name,
-    // note: any query string parth and hash (#) are removed
-    // this might become a blocker in the future
-    // @todo create a better helper to replace parts of the url
-    onClick: () => changeLocale(locale),
-    active: currentLocale === locale,
+  const { navigate } = useNavigateToDifferentLocale();
+
+  return locales.map(locale => ({
+    title: locale.localName,
+    label: locale.name,
+    onClick: () => navigate(locale.code),
+    active: currentLocale === locale.code,
   }));
 };
