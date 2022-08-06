@@ -16,5 +16,6 @@
   "twitterCard": "summary",
   "twitterImgAlt": "The Node.js Hexagon Logo",
   "facebook": "https://www.facebook.com/nodejsfoundation/",
-  "bannerBtnText": "Blog post"
+  "bannerBtnText": "Blog post",
+  "nodeGcalId": "nodejs.org_nr77ama8p7d7f9ajrpnu506c98@group.calendar.google.com"
 }
