@@ -62,13 +62,13 @@ const NodeFeature = ({
 const Index = ({
   data: {
     article: {
-      frontmatter: { displayTitle, subTitle, title, description },
+      frontmatter: { displayTitle, subTitle, description },
     },
     nodeReleases: { nodeReleasesLTSVersion },
     banners: { bannersIndex },
   },
 }: HomepageProps): JSX.Element => (
-  <Layout title={title} description={description}>
+  <Layout title={displayTitle} description={description}>
     <main className="home-page">
       <Banner bannersIndex={bannersIndex} />
       <Hero
@@ -125,7 +125,6 @@ export const query = graphql`
       fields: { slug: { eq: "homepage" }, locale: { eq: $locale } }
     ) {
       frontmatter {
-        title
         displayTitle
         subTitle
         description
@@ -143,7 +142,6 @@ export const query = graphql`
       fields: { slug: { eq: "homepage" }, locale: { eq: $defaultLocale } }
     ) {
       frontmatter {
-        title
         displayTitle
         subTitle
         description
