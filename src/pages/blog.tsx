@@ -57,7 +57,7 @@ const groupPostsByCategory = ({ blogs }: BlogPostsList): GroupedPosts => {
   return postsByCategory;
 };
 
-const AllBlogPosts = ({ data }: Props): JSX.Element => {
+const Blog = ({ data }: Props): JSX.Element => {
   const postsByCategory = groupPostsByCategory(data);
 
   const sortedCategories = Object.keys(postsByCategory).sort();
@@ -98,14 +98,14 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
+            blogAuthors {
+              id
+              name
+            }
             category {
               name
               slug
               description
-            }
-            blogAuthors {
-              id
-              name
             }
           }
           fields {
@@ -119,4 +119,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default AllBlogPosts;
+export default Blog;

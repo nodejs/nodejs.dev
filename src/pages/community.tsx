@@ -1,39 +1,35 @@
-import React from 'react';
 import { graphql } from 'gatsby';
-import { Page } from '../types';
-import Layout from '../components/Layout';
-import Article from '../components/Article';
-import '../styles/article-reader.scss';
+import ArticleLayout from '../components/Layout/article';
+import { SideNavBarKeys } from '../components/SideNavBar';
+import connectGraphQlArticle from '../components/connectGraphQlArticle';
+
 import '../styles/community.scss';
-import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
 
-const CommunityPage = ({ data }: Page): JSX.Element => {
-  const { title, description } = data.page.frontmatter;
-  const { body, tableOfContents } = data.page;
-  const { authors } = data.page.fields;
-
-  return (
-    <Layout title={title} description={description}>
-      <main className="grid-container">
-        <SideNavBar pageKey={SideNavBarKeys.community} />
-        <Article
-          title={title}
-          body={body}
-          tableOfContents={tableOfContents}
-          authors={authors}
-          editPath="content/community/index.md"
-        />
-      </main>
-    </Layout>
-  );
-};
-
-export default CommunityPage;
+export default connectGraphQlArticle(ArticleLayout, {
+  editPath: 'content/community/index.md',
+  sidenavKey: SideNavBarKeys.community,
+});
 
 export const query = graphql`
-  query ($locale: String!) {
-    page: mdx(
+  query ($locale: String!, $defaultLocale: String!) {
+    articleCurrentLanguage: mdx(
       fields: { slug: { eq: "nodejs-community" }, locale: { eq: $locale } }
+    ) {
+      body
+      tableOfContents
+      frontmatter {
+        title
+        description
+      }
+      fields {
+        authors
+      }
+    }
+    articleDefaultLanguage: mdx(
+      fields: {
+        slug: { eq: "nodejs-community" }
+        locale: { eq: $defaultLocale }
+      }
     ) {
       body
       tableOfContents

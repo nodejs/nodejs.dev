@@ -2,12 +2,13 @@ import React, { ReactElement } from 'react';
 import { graphql } from 'gatsby';
 import { IoLogoNodejs, IoMdGitPullRequest, IoMdRocket } from 'react-icons/io';
 
-import Hero from '../components/Hero';
 import Layout from '../components/Layout';
+import Hero from '../components/Hero';
 
 import '../util/konami';
 import '../styles/index.scss';
 
+import { connectGraphQlCustom } from '../components/connectGraphQlArticle';
 import { HomepageData, NodeReleaseLTSVersion, BannersIndex } from '../types';
 
 import { ReactComponent as LeafsIllustrationFront } from '../images/illustrations/leafs-front.svg';
@@ -50,61 +51,57 @@ const NodeFeature = ({
   icon,
   heading,
   description,
-}: NodeFeatureProps): JSX.Element => {
-  return (
-    <div className="node-features__feature">
-      {icon}
-      <h4>{heading}</h4>
-      <p>{description}</p>
-    </div>
-  );
-};
+}: NodeFeatureProps): JSX.Element => (
+  <div className="node-features__feature">
+    {icon}
+    <h4>{heading}</h4>
+    <p>{description}</p>
+  </div>
+);
 
 const Index = ({
   data: {
-    page: {
-      frontmatter: { displayTitle, subTitle, description },
+    article: {
+      frontmatter: { displayTitle, subTitle, title, description },
     },
     nodeReleases: { nodeReleasesLTSVersion },
     banners: { bannersIndex },
   },
-}: HomepageProps): JSX.Element => {
-  return (
-    <Layout title={displayTitle} description={description}>
-      <main className="home-page">
-        <Banner bannersIndex={bannersIndex} />
-        <Hero
-          title={displayTitle}
-          subTitle={subTitle}
-          nodeReleasesLTSVersion={nodeReleasesLTSVersion}
-        />
+}: HomepageProps): JSX.Element => (
+  <Layout title={title} description={description}>
+    <main className="home-page">
+      <Banner bannersIndex={bannersIndex} />
+      <Hero
+        title={displayTitle}
+        subTitle={subTitle}
+        nodeReleasesLTSVersion={nodeReleasesLTSVersion}
+      />
 
-        <section className="node-demo-container">
-          <div className="node-demo">
-            <InstallTabs />
-          </div>
-          <LeafsIllustrationFront className="leafs-front animations" />
-          <LeafsIllustrationMiddle className="leafs-middle animations" />
-          <LeafsIllustrationBack className="leafs-back animations" />
-          <DotsIllustration className="dots" />
-        </section>
+      <section className="node-demo-container">
+        <div className="node-demo">
+          <InstallTabs />
+        </div>
+        <LeafsIllustrationFront className="leafs-front animations" />
+        <LeafsIllustrationMiddle className="leafs-middle animations" />
+        <LeafsIllustrationBack className="leafs-back animations" />
+        <DotsIllustration className="dots" />
+      </section>
 
-        <section className="node-features">
-          {features.map(feature => (
-            <NodeFeature
-              key={feature.heading}
-              icon={feature.icon}
-              heading={feature.heading}
-              description={feature.description}
-            />
-          ))}
-        </section>
-      </main>
-    </Layout>
-  );
-};
+      <section className="node-features">
+        {features.map(feature => (
+          <NodeFeature
+            key={feature.heading}
+            icon={feature.icon}
+            heading={feature.heading}
+            description={feature.description}
+          />
+        ))}
+      </section>
+    </main>
+  </Layout>
+);
 
-export default Index;
+export default connectGraphQlCustom(Index);
 
 export interface HomeNodeReleases {
   nodeReleases: {
@@ -123,8 +120,28 @@ interface HomepageProps {
 }
 
 export const query = graphql`
-  query ($locale: String!) {
-    page: mdx(fields: { slug: { eq: "homepage" }, locale: { eq: $locale } }) {
+  query ($locale: String!, $defaultLocale: String!) {
+    articleCurrentLanguage: mdx(
+      fields: { slug: { eq: "homepage" }, locale: { eq: $locale } }
+    ) {
+      frontmatter {
+        title
+        displayTitle
+        subTitle
+        description
+        learnLinkText
+        nodeFeatureHeader1
+        nodeFeatureHeader2
+        nodeFeatureHeader3
+        nodeFeature1
+        nodeFeature2
+        nodeFeature3
+        nodeFeatureAltText
+      }
+    }
+    articleDefaultLanguage: mdx(
+      fields: { slug: { eq: "homepage" }, locale: { eq: $defaultLocale } }
+    ) {
       frontmatter {
         title
         displayTitle
