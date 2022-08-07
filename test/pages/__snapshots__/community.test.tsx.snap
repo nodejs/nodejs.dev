@@ -153,30 +153,6 @@ exports[`Community Page renders correctly 1`] = `
               >
                 <li>
                   <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    العربية
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    Catalan
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    Deutsch
-                  </button>
-                </li>
-                <li>
-                  <button
                     style="font-weight: bold;"
                     type="button"
                   >
@@ -189,110 +165,6 @@ exports[`Community Page renders correctly 1`] = `
                     type="button"
                   >
                     Español
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    زبان فارسی
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    Français
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    Italiano
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    日本語
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    ქართული
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    한국어
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    Português do Brasil
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    limba română
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    Русский
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    Türkçe
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    Українська
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    简体中文
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    繁體中文
                   </button>
                 </li>
               </ul>
@@ -429,9 +301,7 @@ exports[`Community Page renders correctly 1`] = `
           </p>
           <p>
             Official packages for all the major platforms are available at 
-            <a
-              href="https://nodejs.dev/download/"
-            >
+            <a>
               https://nodejs.dev/download/
             </a>
             .
@@ -441,9 +311,7 @@ exports[`Community Page renders correctly 1`] = `
           </p>
           <p>
             Other package managers for MacOS, Linux, and Windows are listed in 
-            <a
-              href="https://nodejs.dev/download/package-manager/"
-            >
+            <a>
               https://nodejs.dev/download/package-manager/
             </a>
           </p>
@@ -460,9 +328,7 @@ exports[`Community Page renders correctly 1`] = `
           </p>
           <p>
             See 
-            <a
-              href="https://github.com/nvm-sh/nvm"
-            >
+            <a>
               https://github.com/nvm-sh/nvm
             </a>
              for more information about this option.
@@ -505,7 +371,7 @@ exports[`Community Page renders correctly 1`] = `
         >
           <a
             class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/main/content/community/index.md"
+            href="https://github.com/nodejs/nodejs.dev/edit/main/content/community/index.en.md"
           >
             <span>
               Edit this page on GitHub

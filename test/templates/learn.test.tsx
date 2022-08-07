@@ -15,7 +15,7 @@ describe('Learn Template', () => {
 
     const { container } = render(
       <LearnTemplate
-        data={learnPageData}
+        data={learnPageData.data}
         pageContext={learnPageContext}
         location={window.location}
       />

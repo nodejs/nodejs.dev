@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Index, { HomeNodeReleases } from '../../src/pages';
-import { HomepageData, BannersIndex } from '../../src/types';
+import { BannersIndex } from '../../src/types';
 import { createNodeReleasesDataDetail } from '../__fixtures__/page';
 import '../__mocks__/intersectionObserverMock';
 
@@ -19,8 +19,8 @@ const mockHomeNodeReleases: HomeNodeReleases = {
   },
 };
 
-const homePageData: HomepageData = {
-  page: {
+const homePageData = {
+  articleCurrentLanguage: {
     id: 'id-mock',
     body: 'body-mock',
     frontmatter: {
