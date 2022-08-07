@@ -1,5 +1,4 @@
 import {
-  LearnPageData,
   PaginationInfo,
   LearnPageContext,
   NavigationSectionData,
