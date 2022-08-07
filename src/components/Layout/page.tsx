@@ -1,9 +1,9 @@
 import React from 'react';
 import Article from '../Article';
 import Layout from '.';
+import { TableOfContents } from '../../types';
 
 import '../../styles/page.scss';
-import { TableOfContents } from '../../types';
 
 interface Page {
   editPath?: string;
@@ -15,29 +15,25 @@ interface Page {
   location?: Location;
 }
 
-const PageLayout = (props: Page): JSX.Element => {
-  const {
-    editPath,
-    body,
-    tableOfContents,
-    title,
-    description,
-    authors,
-    location,
-  } = props;
-  return (
-    <Layout title={title} location={location} description={description}>
-      <main className="page">
-        <Article
-          body={body}
-          title={title}
-          authors={authors}
-          editPath={editPath}
-          tableOfContents={tableOfContents}
-        />
-      </main>
-    </Layout>
-  );
-};
+const PageLayout = ({
+  editPath,
+  body,
+  tableOfContents,
+  title,
+  description,
+  authors,
+}: Page): JSX.Element => (
+  <Layout title={title} description={description}>
+    <main className="page">
+      <Article
+        body={body}
+        title={title}
+        authors={authors}
+        editPath={editPath}
+        tableOfContents={tableOfContents}
+      />
+    </main>
+  </Layout>
+);
 
 export default PageLayout;

@@ -2,7 +2,6 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/themes/prism-okaidia.css';
 
 import React from 'react';
-
 import { MotionConfig } from 'framer-motion';
 import { FeatureToggleProvider } from '../FeatureToggleProvider';
 
@@ -21,7 +20,6 @@ interface Props {
   img?: string;
   href?: string;
   showFooter?: boolean;
-  location?: Location;
 }
 
 const Layout = ({
@@ -30,25 +28,17 @@ const Layout = ({
   description,
   img,
   showFooter = true,
-  location,
-}: Props): JSX.Element => {
-  return (
-    <FeatureToggleProvider>
-      <SEO
-        title={title}
-        description={description}
-        location={location}
-        img={img}
-      />
-      <MotionConfig reducedMotion="user">
-        <div className="layout-container">
-          <Header />
-          {children}
-          {showFooter && <Footer />}
-        </div>
-      </MotionConfig>
-    </FeatureToggleProvider>
-  );
-};
+}: Props): JSX.Element => (
+  <FeatureToggleProvider>
+    <SEO title={title} description={description} img={img} />
+    <MotionConfig reducedMotion="user">
+      <div className="layout-container">
+        <Header />
+        {children}
+        {showFooter && <Footer />}
+      </div>
+    </MotionConfig>
+  </FeatureToggleProvider>
+);
 
 export default Layout;
