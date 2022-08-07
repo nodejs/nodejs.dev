@@ -1,3 +1,137 @@
+diff --git a/node_modules/gatsby-theme-i18n/gatsby-node.js b/node_modules/gatsby-theme-i18n/gatsby-node.js
+index 5e01d30..abb7724 100644
+--- a/node_modules/gatsby-theme-i18n/gatsby-node.js
++++ b/node_modules/gatsby-theme-i18n/gatsby-node.js
+@@ -123,11 +123,15 @@ exports.onCreateNode = ({ node, actions }, themeOptions) => {
+   const { defaultLang } = withDefaults(themeOptions)
+ 
+   if (node.internal.type === `Mdx`) {
+-    const name = path.basename(node.fileAbsolutePath, `.mdx`)
++    const name = path.basename(node.fileAbsolutePath).replace(/\.(mdx|md)/, '')
++    const nameParts = name.split(`.`)
+ 
+-    const isDefault = name === `index`
++    const isDefault =
++      name === 'index' ||
++      nameParts.length === 1 ||
++      nameParts[1] === defaultLang
+ 
+-    const lang = isDefault ? defaultLang : name.split(`.`)[1]
++    const lang = isDefault ? defaultLang : nameParts[1]
+ 
+     createNodeField({ node, name: `locale`, value: lang })
+     createNodeField({ node, name: `isDefault`, value: isDefault })
+@@ -135,9 +139,10 @@ exports.onCreateNode = ({ node, actions }, themeOptions) => {
+ }
+ 
+ exports.onCreatePage = ({ page, actions }, themeOptions) => {
+-  const { createPage, deletePage } = actions
++  const { createPage, deletePage, createRedirect } = actions
+   const { configPath, defaultLang, locales, prefixDefault } =
+     withDefaults(themeOptions)
++
+   // Check if originalPath was already set and bail early as otherwise an infinite loop could occur
+   // as other plugins like gatsby-plugin-mdx could modify this
+   if (page.context.originalPath) {
+@@ -146,8 +151,6 @@ exports.onCreatePage = ({ page, actions }, themeOptions) => {
+ 
+   const originalPath = page.path
+ 
+-  deletePage(page)
+-
+   const configLocales = require(configPath)
+ 
+   const languages = getLanguages({ locales: configLocales, localeStr: locales })
+@@ -156,6 +159,29 @@ exports.onCreatePage = ({ page, actions }, themeOptions) => {
+     defaultLang,
+   })
+ 
++  const pagesToIgnore = [
++    `/404/`,
++    `/404.html`,
++    `/dev-404-page/`,
++    `/offline-plugin-app-shell-fallback/`
++  ]
++
++  if (pagesToIgnore.includes(originalPath)) {
++    return createPage({
++      ...page,
++      context: {
++        ...page.context,
++        locale: defaultLang,
++        defaultLocale: defaultLang,
++        hrefLang: defaultLocale.hrefLang,
++        originalPath,
++        dateFormat: defaultLocale.dateFormat,
++      },
++    })
++  }
++
++  deletePage(page)
++
+   languages.forEach((locale) => {
+     const newPage = {
+       ...page,
+@@ -176,41 +202,33 @@ exports.onCreatePage = ({ page, actions }, themeOptions) => {
+       context: {
+         ...page.context,
+         locale: locale.code,
++        defaultLocale: defaultLang,
+         hrefLang: locale.hrefLang,
+         originalPath,
+         dateFormat: locale.dateFormat,
+       },
+     }
+ 
+-    // Check if the page is a localized 404
+-    if (newPage.path.match(/^\/[a-z]{2}\/404\/$/)) {
+-      // Match all paths starting with this code (apart from other valid paths)
+-      newPage.matchPath = `/${locale.code}/*`
+-    }
+-
+     createPage(newPage)
+   })
+ 
+-  // When prefixDefault is set the default development & production 404 pages
+-  // will be deleted but not re-created in the above `languages.forEach` segment
+-  // Thus we'll re-create them manually here
+-
+-  const notFoundPages = [`/404/`, `/404.html`, `/dev-404-page/`]
+-
+   if (prefixDefault) {
+-    if (notFoundPages.includes(originalPath)) {
+-      const newPage = {
+-        ...page,
+-        context: {
+-          ...page.context,
+-          locale: defaultLocale.code,
+-          hrefLang: defaultLocale.hrefLang,
+-          originalPath,
+-          dateFormat: defaultLocale.dateFormat,
+-        },
+-      }
+-
+-      createPage(newPage)
+-    }
++    // We still want to redirect the old pages without any language to the default language
++    createRedirect({
++      fromPath: originalPath,
++      // This activtates our script to check if a locale for a certain browser exists
++      // Through the `Accept-Language` and `navigator.languages` API
++      toPath: localizedPath({
++        defaultLang,
++        prefixDefault,
++        locale: defaultLang,
++        path: originalPath,
++      }),
++      // We only want to use browser redirects when on development mode
++      // as otherwise it creates small UI issues (content shifts)
++      redirectInBrowser:
++        process.env.NODE_ENV !== `production`,
++      statusCode: 200,
++    });
+   }
+ }
 diff --git a/node_modules/gatsby-theme-i18n/index.d.ts b/node_modules/gatsby-theme-i18n/index.d.ts
 index 2715442..a21ee3a 100644
 --- a/node_modules/gatsby-theme-i18n/index.d.ts
