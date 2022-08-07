@@ -2,8 +2,8 @@ function getYamlPageIdentifier(relativePath) {
   // This attempts to include optional possible language code file extension suffixes
   // eg.: index.en.md, index.md, index.en.mdx, some-blog-post.md, ...
   return relativePath.endsWith('/index.')
-    ? relativePath.replace(/\/index(\.[a-z]+)?\.(md|mdx)/, '')
-    : relativePath.replace(/(\.[a-z]+)?\.(md|mdx)/, '');
+    ? relativePath.replace(/\/index(\.[a-z]+)?\.(mdx|md)/, '')
+    : relativePath.replace(/(\.[a-z]+)?\.(mdx|md)/, '');
 }
 
 function createLearnPages(edges, yamlNavigationData) {
