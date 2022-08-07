@@ -12,40 +12,36 @@ interface Props {
   data: BlogPageData;
   pageContext: BlogPageContext;
 }
+
 const BlogLayout = ({
-  data,
-  pageContext: { next, previous, relativePath },
-}: Props): JSX.Element => {
-  const {
+  data: {
     blog: {
       frontmatter: { title, blogAuthors },
       body,
       excerpt,
       fields: { date },
     },
-    recent,
-  } = data;
+    recent: { edges: recentPosts },
+  },
+  pageContext: { next, previous, relativePath },
+}: Props): JSX.Element => (
+  <Layout title={title} description={excerpt}>
+    <main className="grid-container blog-container">
+      <RecentPosts posts={recentPosts} />
+      <Article
+        title={title}
+        body={body}
+        next={next}
+        authors={blogAuthors}
+        previous={previous}
+        relativePath={relativePath}
+        blog
+        date={date}
+      />
+    </main>
+  </Layout>
+);
 
-  const { edges: recentPosts } = recent;
-
-  return (
-    <Layout title={title} description={excerpt}>
-      <main className="grid-container blog-container">
-        <RecentPosts posts={recentPosts} />
-        <Article
-          title={title}
-          body={body}
-          next={next}
-          authors={blogAuthors}
-          previous={previous}
-          relativePath={relativePath}
-          blog
-          date={date}
-        />
-      </main>
-    </Layout>
-  );
-};
 export default BlogLayout;
 
 export const query = graphql`
