@@ -17,9 +17,12 @@ export const useNavigateToDifferentLocale = () => {
   };
 
   return {
-    navigate: (newLocale: string, replace = false) =>
-      gatsbyNavigate(`/${getLocalePath(newLocale)}${search}${hash}`, {
-        replace,
-      }),
+    navigate: (newLocale: string, replace = false) => {
+      if (newLocale && newLocale !== currentLocale) {
+        const newUrl = `/${getLocalePath(newLocale)}${search}${hash}`;
+
+        gatsbyNavigate(newUrl, { replace });
+      }
+    },
   };
 };
