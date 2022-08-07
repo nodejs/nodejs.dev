@@ -145,3 +145,14 @@ index 2715442..a21ee3a 100644
  }): JSX.Element;
  export function LocalizedRouter({ basePath, children, ...props }: {
    [x: string]: any;
+diff --git a/node_modules/gatsby-theme-i18n/src/components/localized-router.js b/node_modules/gatsby-theme-i18n/src/components/localized-router.js
+index 91c2944..7d833ea 100644
+--- a/node_modules/gatsby-theme-i18n/src/components/localized-router.js
++++ b/node_modules/gatsby-theme-i18n/src/components/localized-router.js
+@@ -1,5 +1,5 @@
+ import * as React from "react"
+-import { Router } from "@reach/router"
++import { Router } from "@gatsbyjs/reach-router"
+ import { useLocalization } from "../hooks/use-localization"
+ 
+ export const LocalizedRouter = ({ basePath, children, ...props }) => {
