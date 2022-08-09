@@ -23,7 +23,7 @@ const useTextContent = ({ text, link }: BannersIndex) => {
             {config.bannerBtnText}
           </button>
         </a>
-        <span>{text}</span>
+        {text}
       </p>
     );
   }
