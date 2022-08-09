@@ -1,25 +1,31 @@
 .banner {
-  border-radius: 5px;
   color: var(--color-text-primary);
   font-size: var(--font-size-display2);
   font-weight: bold;
-  margin-top: 5px;
+  margin: 0 auto;
+  max-width: 90vw;
+  padding-top: var(--space-08);
   position: relative;
-  text-align: center;
 
-  * {
-    max-width: 100%;
+  a {
+    display: block;
   }
 
   img {
     border-radius: 5px;
+    max-width: 100%;
+    object-fit: cover;
   }
 
   p {
+    align-items: center;
     background-color: var(--color-fill-banner);
     border-radius: 5px;
-    padding-bottom: var(--space-08);
-    padding-top: var(--space-08);
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: var(--space-12);
+    text-align: center;
   }
 
   .bannerButton {
@@ -34,5 +40,6 @@
     margin-right: var(--space-32);
     position: relative;
     text-decoration: none;
+    white-space: nowrap;
   }
 }
