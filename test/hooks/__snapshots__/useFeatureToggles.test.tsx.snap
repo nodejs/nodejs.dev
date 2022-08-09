@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useFeatureToggles should contain feature flag 1`] = `
+<div>
+  has:
+  true
+  ,all:
+  feature-flag-mock
+</div>
+`;
+
+exports[`useFeatureToggles should not contain feature flag 1`] = `
+<div>
+  has:
+  false
+  ,all:
+</div>
+`;
+
+exports[`useFeatureToggles should work if localstorage item does not exist  1`] = `
+<div>
+  has:
+  false
+  ,all:
+</div>
+`;
