@@ -22,9 +22,10 @@ describe('Tests for Header component', () => {
 
     render(<Banner bannersIndex={bannersIndex} />);
 
-    const bannerText = screen.getByText(bannersIndex.text);
+    const bannerText = screen.getByText(bannersIndex.text || '');
     expect(bannerText).toBeInTheDocument();
   });
+
   it('does not render when today before startDate', () => {
     const beforeToday = new Date();
     beforeToday.setDate(beforeToday.getDate() + 1);
@@ -36,9 +37,10 @@ describe('Tests for Header component', () => {
 
     render(<Banner bannersIndex={bannersIndex} />);
 
-    const bannerText = screen.queryByText(bannersIndex.text);
+    const bannerText = screen.queryByText(bannersIndex.text || '');
     expect(bannerText).not.toBeInTheDocument();
   });
+
   it('does not render when today after endDate', () => {
     const beforeToday = new Date();
     beforeToday.setDate(beforeToday.getDate() - 2);
@@ -50,7 +52,7 @@ describe('Tests for Header component', () => {
 
     render(<Banner bannersIndex={bannersIndex} />);
 
-    const bannerText = screen.queryByText(bannersIndex.text);
+    const bannerText = screen.queryByText(bannersIndex.text || '');
     expect(bannerText).not.toBeInTheDocument();
   });
 
@@ -66,7 +68,7 @@ describe('Tests for Header component', () => {
 
     render(<Banner bannersIndex={bannersIndex} />);
 
-    const bannerText = screen.getByText(bannersIndex.text);
+    const bannerText = screen.getByText(bannersIndex.text || '');
     expect(bannerText).toBeInTheDocument();
 
     const bannerLink = bannerText.innerHTML;
@@ -85,10 +87,29 @@ describe('Tests for Header component', () => {
 
     render(<Banner bannersIndex={bannersIndex} />);
 
-    const bannerText = screen.getByText(bannersIndex.text);
+    const bannerText = screen.getByText(bannersIndex.text || '');
     expect(bannerText).toBeInTheDocument();
 
     const bannerLink = bannerText.innerHTML;
     expect(bannerLink).toMatch('https://nodejs.org/en/an-absolute-content');
+  });
+
+  it('should display html content correctly', () => {
+    const beforeToday = new Date();
+    beforeToday.setDate(beforeToday.getDate() - 1);
+    const afterToday = new Date();
+    afterToday.setDate(afterToday.getDate() + 1);
+
+    bannersIndex.startDate = beforeToday.toISOString();
+    bannersIndex.endDate = afterToday.toISOString();
+    bannersIndex.link = 'https://nodejs.org/en/an-absolute-content';
+    bannersIndex.text = undefined;
+    bannersIndex.html =
+      '<img src="https://nodejs.org/static/images/logo.svg" alt="Node.js" data-testid="test-image" />';
+
+    render(<Banner bannersIndex={bannersIndex} />);
+
+    const bannerImage = screen.getByTestId('test-image');
+    expect(bannerImage).toBeInTheDocument();
   });
 });

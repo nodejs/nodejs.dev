@@ -16,6 +16,22 @@ const learnYamlNavigationData = yaml.parse(
   fs.readFileSync('./src/data/learn.yaml', 'utf8')
 );
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  const typeDefs = `
+    type BannersIndex implements Node {
+      endDate: String
+      link: String
+      text: String
+      html: String
+      startDate: String
+    }
+  `;
+
+  createTypes(typeDefs);
+};
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage, createRedirect } = actions;
 
