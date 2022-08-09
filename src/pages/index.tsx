@@ -152,6 +152,7 @@ export const query = graphql`
         endDate
         link
         text
+        html
         startDate
       }
     }
