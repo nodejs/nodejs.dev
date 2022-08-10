@@ -218,7 +218,8 @@ export type NodeReleaseLTSNPMVersion = Pick<
 export interface BannersIndex {
   endDate: string;
   link: string;
-  text: string;
+  text?: string;
+  html?: string;
   startDate: string;
 }
 

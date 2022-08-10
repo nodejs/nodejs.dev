@@ -1,35 +1,77 @@
-import React from 'react';
-import './Banner.scss';
+import React, { useMemo } from 'react';
+import DOMPurify from 'isomorphic-dompurify';
 import { dateIsBetween } from '../../util/dateIsBetween';
 import config from '../../config.json';
 import { BannersIndex } from '../../types';
 import { isAbsoluteUrl } from '../../util/isAbsoluteUrl';
 
+import './Banner.scss';
+
 export interface BannerProps {
   bannersIndex: BannersIndex;
 }
 
-const Banner = ({
-  bannersIndex: { startDate, endDate, text, link },
-}: BannerProps): JSX.Element | null => {
-  const showBanner = dateIsBetween(startDate, endDate);
+const useTextContent = ({ text, link }: BannersIndex) => {
+  return useMemo(() => {
+    if (text) {
+      return (
+        <p>
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <button className="bannerButton" type="button">
+              {config.bannerBtnText}
+            </button>
+          </a>
+          {text}
+        </p>
+      );
+    }
 
-  return showBanner ? (
-    <div className="banner">
-      <p>
+    return null;
+  }, [text, link]);
+};
+
+const useHtmlContent = ({ html, link }: BannersIndex) => {
+  return useMemo(() => {
+    if (html) {
+      const sanitizedHtml = DOMPurify.sanitize(html);
+
+      return (
         <a
-          href={isAbsoluteUrl(link) ? link : `http://nodejs.org/${link}`}
+          href={link}
           target="_blank"
           rel="noopener noreferrer"
-        >
-          <button className="bannerButton" type="button">
-            {config.bannerBtnText}
-          </button>
-        </a>
-        {text}
-      </p>
-    </div>
-  ) : null;
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
+        />
+      );
+    }
+
+    return null;
+  }, [html, link]);
+};
+
+const Banner = ({ bannersIndex }: BannerProps): JSX.Element | null => {
+  const showBanner = dateIsBetween(
+    bannersIndex.startDate,
+    bannersIndex.endDate
+  );
+
+  const link = !isAbsoluteUrl(bannersIndex.link)
+    ? `http://nodejs.org/${bannersIndex.link}`
+    : bannersIndex.link;
+
+  const textContent = useTextContent({ ...bannersIndex, link });
+  const htmlContent = useHtmlContent({ ...bannersIndex, link });
+
+  if (showBanner) {
+    return (
+      <div className="banner">
+        {bannersIndex.text ? textContent : htmlContent}
+      </div>
+    );
+  }
+
+  return null;
 };
 
 export default Banner;
