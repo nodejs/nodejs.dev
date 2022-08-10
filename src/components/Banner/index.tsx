@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import DOMPurify from 'dompurify';
 import { dateIsBetween } from '../../util/dateIsBetween';
 import config from '../../config.json';
 import { BannersIndex } from '../../types';
@@ -11,47 +12,42 @@ export interface BannerProps {
 }
 
 const useTextContent = ({ text, link }: BannersIndex) => {
-  if (text) {
-    return (
-      <p>
-        <a
-          href={isAbsoluteUrl(link) ? link : `http://nodejs.org/${link}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button className="bannerButton" type="button">
-            {config.bannerBtnText}
-          </button>
-        </a>
-        {text}
-      </p>
-    );
-  }
+  return useMemo(() => {
+    if (text) {
+      return (
+        <p>
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <button className="bannerButton" type="button">
+              {config.bannerBtnText}
+            </button>
+          </a>
+          {text}
+        </p>
+      );
+    }
 
-  return null;
+    return null;
+  }, [text, link]);
 };
 
 const useHtmlContent = ({ html, link }: BannersIndex) => {
-  if (html) {
-    // @note this is a workaround and it would be better if nodejs.org
-    // repository would provide absolute urls instead of relative for us
-    const replaceLocalLinksToNodejsOrg = html.replace(
-      "'/static/",
-      "'http://nodejs.org/static/"
-    );
+  return useMemo(() => {
+    if (html) {
+      const sanitizedHtml = DOMPurify.sanitize(html);
 
-    return (
-      <a
-        href={isAbsoluteUrl(link) ? link : `http://nodejs.org/${link}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: replaceLocalLinksToNodejsOrg }}
-      />
-    );
-  }
+      return (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
+        />
+      );
+    }
 
-  return null;
+    return null;
+  }, [html, link]);
 };
 
 const Banner = ({ bannersIndex }: BannerProps): JSX.Element | null => {
@@ -60,8 +56,12 @@ const Banner = ({ bannersIndex }: BannerProps): JSX.Element | null => {
     bannersIndex.endDate
   );
 
-  const textContent = useTextContent(bannersIndex);
-  const htmlContent = useHtmlContent(bannersIndex);
+  const link = !isAbsoluteUrl(bannersIndex.link)
+    ? `http://nodejs.org/${bannersIndex.link}`
+    : bannersIndex.link;
+
+  const textContent = useTextContent({ ...bannersIndex, link });
+  const htmlContent = useHtmlContent({ ...bannersIndex, link });
 
   if (showBanner) {
     return (
