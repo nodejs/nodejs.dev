@@ -16,6 +16,14 @@ const learnYamlNavigationData = yaml.parse(
   fs.readFileSync('./src/data/learn.yaml', 'utf8')
 );
 
+exports.onCreateWebpackConfig = ({ plugins, actions }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      plugins.ignore({ resourceRegExp: /canvas/, contextRegExp: /jsdom$/ }),
+    ],
+  });
+};
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
 
