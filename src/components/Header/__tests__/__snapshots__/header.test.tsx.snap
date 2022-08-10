@@ -147,46 +147,6 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
               />
             </a>
           </li>
-          <li
-            class="nav__tabs"
-          >
-            <button
-              class="language-switch"
-              type="button"
-            >
-              <span
-                class="sr-only"
-              >
-                Switch Language
-              </span>
-              <i
-                class="material-icons theme-buttons"
-              >
-                translate
-              </i>
-            </button>
-            <ul
-              class="dropdownList"
-              style="left: -10px; top: -15px; visibility: hidden;"
-            >
-              <li>
-                <button
-                  style="font-weight: bold;"
-                  type="button"
-                >
-                  English
-                </button>
-              </li>
-              <li>
-                <button
-                  style="font-weight: normal;"
-                  type="button"
-                >
-                  Español
-                </button>
-              </li>
-            </ul>
-          </li>
         </ul>
       </div>
     </div>
@@ -341,46 +301,6 @@ exports[`Tests for Header component renders correctly 1`] = `
               />
             </a>
           </li>
-          <li
-            class="nav__tabs"
-          >
-            <button
-              class="language-switch"
-              type="button"
-            >
-              <span
-                class="sr-only"
-              >
-                Switch Language
-              </span>
-              <i
-                class="material-icons theme-buttons"
-              >
-                translate
-              </i>
-            </button>
-            <ul
-              class="dropdownList"
-              style="left: -10px; top: -15px; visibility: hidden;"
-            >
-              <li>
-                <button
-                  style="font-weight: bold;"
-                  type="button"
-                >
-                  English
-                </button>
-              </li>
-              <li>
-                <button
-                  style="font-weight: normal;"
-                  type="button"
-                >
-                  Español
-                </button>
-              </li>
-            </ul>
-          </li>
         </ul>
       </div>
     </div>
@@ -534,46 +454,6 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
                 style="margin-bottom: -3px;"
               />
             </a>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <button
-              class="language-switch"
-              type="button"
-            >
-              <span
-                class="sr-only"
-              >
-                Switch Language
-              </span>
-              <i
-                class="material-icons theme-buttons"
-              >
-                translate
-              </i>
-            </button>
-            <ul
-              class="dropdownList"
-              style="left: -10px; top: -15px; visibility: hidden;"
-            >
-              <li>
-                <button
-                  style="font-weight: bold;"
-                  type="button"
-                >
-                  English
-                </button>
-              </li>
-              <li>
-                <button
-                  style="font-weight: normal;"
-                  type="button"
-                >
-                  Español
-                </button>
-              </li>
-            </ul>
           </li>
         </ul>
       </div>

@@ -65,6 +65,22 @@ describe('Home page', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('renders i18n when feature toggle is present', () => {
+    const localStorageGetSpy = jest
+      .fn()
+      .mockImplementation(() => '["i18n-language-selector"]');
+
+    Object.defineProperty(window, 'localStorage', {
+      writable: true,
+      value: {
+        getItem: localStorageGetSpy,
+      },
+    });
+
+    const { container } = render(<Index data={mockData} />);
+    expect(container).toMatchSnapshot();
+  });
+
   describe('Banner', () => {
     it('renders Banner when today between startDate and endDate', () => {
       const beforeToday = new Date();

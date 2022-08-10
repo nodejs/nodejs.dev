@@ -129,46 +129,6 @@ exports[`Community Page renders correctly 1`] = `
                 />
               </a>
             </li>
-            <li
-              class="nav__tabs"
-            >
-              <button
-                class="language-switch"
-                type="button"
-              >
-                <span
-                  class="sr-only"
-                >
-                  Switch Language
-                </span>
-                <i
-                  class="material-icons theme-buttons"
-                >
-                  translate
-                </i>
-              </button>
-              <ul
-                class="dropdownList"
-                style="left: -10px; top: -15px; visibility: hidden;"
-              >
-                <li>
-                  <button
-                    style="font-weight: bold;"
-                    type="button"
-                  >
-                    English
-                  </button>
-                </li>
-                <li>
-                  <button
-                    style="font-weight: normal;"
-                    type="button"
-                  >
-                    Español
-                  </button>
-                </li>
-              </ul>
-            </li>
           </ul>
         </div>
       </div>
