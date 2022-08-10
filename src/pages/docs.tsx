@@ -3,7 +3,7 @@
 /* eslint-disable react/no-danger, jsx-a11y/no-onchange */
 import React, { useState, useEffect } from 'react';
 import { Link, graphql } from 'gatsby';
-import dompurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 import { useApiData } from '../hooks';
 import { ApiDocsObj, APIResponse } from '../hooks/useApiDocs';
 
@@ -32,7 +32,7 @@ interface Props {
 
 const API_DOCS_OBJ_KEYS = ['events', 'methods', 'properties', 'classes'];
 const DOCUMENT_ELEMENT_TYPES = ['module', 'event', 'method', 'class'];
-const sanitizer = dompurify.sanitize;
+const sanitizer = DOMPurify.sanitize;
 
 function capitalizeFirstLetter(text: string): string {
   return text.charAt(0).toUpperCase() + text.slice(1);

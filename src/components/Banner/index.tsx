@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 import { dateIsBetween } from '../../util/dateIsBetween';
 import config from '../../config.json';
 import { BannersIndex } from '../../types';
