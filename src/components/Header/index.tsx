@@ -8,6 +8,7 @@ import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { useLocaleAsDropdown } from '../../hooks/useLocaleAsDropdown';
 import { useAutoClosableDropdown } from '../../hooks/useAutoClosableDropdown';
 import SearchBar from '../SearchBar';
+import { useFeatureToggles } from '../../hooks';
 
 const Header = (): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
@@ -15,6 +16,8 @@ const Header = (): JSX.Element => {
   const languageButtonRef = useRef<HTMLButtonElement>(null);
 
   const localeDropdownItems = useLocaleAsDropdown();
+
+  const featureToggles = useFeatureToggles();
 
   const { renderDropdown, showDropdown, visible } = useAutoClosableDropdown(
     localeDropdownItems,
@@ -124,18 +127,20 @@ const Header = (): JSX.Element => {
               </a>
             </li>
 
-            <li className="nav__tabs">
-              <button
-                type="button"
-                className="language-switch"
-                ref={languageButtonRef}
-                onClick={() => showDropdown(!visible)}
-              >
-                <span className="sr-only">Switch Language</span>
-                <i className="material-icons theme-buttons">translate</i>
-              </button>
-              {renderDropdown}
-            </li>
+            {featureToggles.has('i18n-language-selector') && (
+              <li className="nav__tabs">
+                <button
+                  type="button"
+                  className="language-switch"
+                  ref={languageButtonRef}
+                  onClick={() => showDropdown(!visible)}
+                >
+                  <span className="sr-only">Switch Language</span>
+                  <i className="material-icons theme-buttons">translate</i>
+                </button>
+                {renderDropdown}
+              </li>
+            )}
           </ul>
         </div>
       </div>
