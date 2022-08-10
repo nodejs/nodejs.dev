@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import React from 'react';
 import { PaginationInfo } from '../../types';
 import './Pagination.scss';

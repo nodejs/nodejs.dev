@@ -1,14 +1,28 @@
-import { Link } from 'gatsby';
-import React from 'react';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import React, { useRef } from 'react';
 import { useTheme } from '@skagami/gatsby-plugin-dark-mode';
 import { ReactComponent as LogoLight } from '../../images/logos/nodejs-logo-light-mode.svg';
 import { ReactComponent as LogoDark } from '../../images/logos/nodejs-logo-dark-mode.svg';
 import { ReactComponent as GitHubLogo } from '../../images/logos/github-logo.svg';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
+import { useLocaleAsDropdown } from '../../hooks/useLocaleAsDropdown';
+import { useAutoClosableDropdown } from '../../hooks/useAutoClosableDropdown';
 import SearchBar from '../SearchBar';
+import { useFeatureToggles } from '../../hooks';
 
 const Header = (): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
+
+  const languageButtonRef = useRef<HTMLButtonElement>(null);
+
+  const localeDropdownItems = useLocaleAsDropdown();
+
+  const featureToggles = useFeatureToggles();
+
+  const { renderDropdown, showDropdown, visible } = useAutoClosableDropdown(
+    localeDropdownItems,
+    languageButtonRef
+  );
 
   const [theme, toggleTheme] = useTheme();
 
@@ -112,6 +126,21 @@ const Header = (): JSX.Element => {
                 />
               </a>
             </li>
+
+            {featureToggles.has('i18n-language-selector') && (
+              <li className="nav__tabs">
+                <button
+                  type="button"
+                  className="language-switch"
+                  ref={languageButtonRef}
+                  onClick={() => showDropdown(!visible)}
+                >
+                  <span className="sr-only">Switch Language</span>
+                  <i className="material-icons theme-buttons">translate</i>
+                </button>
+                {renderDropdown}
+              </li>
+            )}
           </ul>
         </div>
       </div>

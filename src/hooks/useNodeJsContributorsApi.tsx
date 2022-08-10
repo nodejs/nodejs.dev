@@ -121,11 +121,7 @@ export function useNodeJsContributorsApi(
 ): Contributor | null {
   const [contributor, setContributor] = useState<Contributor | null>(null);
   useEffect(() => {
-    if (isVisible) {
-      (async () => {
-        setContributor(await fetchRandomContributor());
-      })();
-    }
+    fetchRandomContributor().then(setContributor).catch();
   }, [isVisible]);
 
   return contributor;

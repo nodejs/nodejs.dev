@@ -261,9 +261,7 @@ exports[`Community Page renders correctly 1`] = `
           </p>
           <p>
             Official packages for all the major platforms are available at 
-            <a
-              href="https://nodejs.dev/download/"
-            >
+            <a>
               https://nodejs.dev/download/
             </a>
             .
@@ -273,9 +271,7 @@ exports[`Community Page renders correctly 1`] = `
           </p>
           <p>
             Other package managers for MacOS, Linux, and Windows are listed in 
-            <a
-              href="https://nodejs.dev/download/package-manager/"
-            >
+            <a>
               https://nodejs.dev/download/package-manager/
             </a>
           </p>
@@ -292,9 +288,7 @@ exports[`Community Page renders correctly 1`] = `
           </p>
           <p>
             See 
-            <a
-              href="https://github.com/nvm-sh/nvm"
-            >
+            <a>
               https://github.com/nvm-sh/nvm
             </a>
              for more information about this option.
@@ -337,7 +331,7 @@ exports[`Community Page renders correctly 1`] = `
         >
           <a
             class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/main/content/community/index.md"
+            href="https://github.com/nodejs/nodejs.dev/edit/main/content/community/index.en.md"
           >
             <span>
               Edit this page on GitHub

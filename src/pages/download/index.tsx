@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { detectOS } from '../../util/detectOS';
 import { getUpcomingReleases } from '../../util/getUpcomingReleases';
 import Layout from '../../components/Layout';
@@ -9,6 +10,7 @@ import DownloadCards from '../../components/DownloadCards';
 import DownloadReleases from '../../components/DownloadReleases';
 import DownloadAdditional from '../../components/DownloadAdditional';
 import { NodeReleaseData, NodeReleaseLTSNPMVersion } from '../../types';
+
 import '../../styles/download.scss';
 
 export interface DownloadNodeReleases {
@@ -23,17 +25,16 @@ interface Props {
   data: DownloadNodeReleases;
 }
 
-const DownloadPage = ({
-  location,
-  data: { nodeReleases },
-}: Props): JSX.Element => {
+const DownloadPage = ({ data: { nodeReleases } }: Props): JSX.Element => {
   const { nodeReleasesData, nodeReleasesLTSNPMVersion } = nodeReleases;
   const [typeRelease, setTypeRelease] = useState('LTS');
 
   const userOS = detectOS();
+
   const lts = nodeReleasesLTSNPMVersion.find(
     (release): boolean => !!release.lts
   );
+
   const current = nodeReleasesLTSNPMVersion.find(
     (release): boolean => release && !release.lts
   );
@@ -46,11 +47,7 @@ const DownloadPage = ({
   const upcomingReleases = getUpcomingReleases(nodeReleasesData);
 
   return (
-    <Layout
-      title="Download Node.js"
-      description="Come get me!"
-      location={location}
-    >
+    <Layout title="Download Node.js" description="Come get me!">
       <span className="home-page -download">
         <DownloadHeader release={selectedType} />
         <p className="release-description">

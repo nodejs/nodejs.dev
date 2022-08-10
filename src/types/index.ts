@@ -1,5 +1,5 @@
 export interface HomepageData {
-  page: {
+  article: {
     id: string;
     body: string;
     frontmatter: {
@@ -39,7 +39,7 @@ export interface TableOfContents {
 }
 
 export interface LearnPageData {
-  doc: {
+  article: {
     id: string;
     body: string;
     tableOfContents: TableOfContents;
@@ -92,23 +92,25 @@ declare global {
   }
 }
 
-export interface DataPage {
-  page: {
-    body: string;
-    tableOfContents: TableOfContents;
-    frontmatter: {
-      title: string;
-      description: string;
-    };
-    fields: { authors: string[] };
+export interface ArticleData {
+  body: string;
+  tableOfContents: TableOfContents;
+  frontmatter: {
+    title: string;
+    description: string;
   };
+  fields: { authors: string[]; slug?: string };
 }
 
-export interface Page {
+export interface ArticleProps {
   editPath?: string;
-  data: DataPage;
+  data: {
+    articleCurrentLanguage?: ArticleData;
+    articleDefaultLanguage?: ArticleData;
+  };
   location?: Location;
 }
+
 export interface CommunityNavigationSection {
   title: string;
   sections: string[];

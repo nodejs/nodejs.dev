@@ -57,7 +57,7 @@ const groupPostsByCategory = ({ blogs }: BlogPostsList): GroupedPosts => {
   return postsByCategory;
 };
 
-const AllBlogPosts = ({ data }: Props): JSX.Element => {
+const Blog = ({ data }: Props): JSX.Element => {
   const postsByCategory = groupPostsByCategory(data);
 
   const sortedCategories = Object.keys(postsByCategory).sort();
@@ -89,26 +89,23 @@ const AllBlogPosts = ({ data }: Props): JSX.Element => {
 };
 
 export const pageQuery = graphql`
-  query AllBlogPostsPageQuery {
+  query {
     blogs: allMdx(
-      filter: {
-        fileAbsolutePath: { regex: "/blog/" }
-        frontmatter: { title: { ne: "mock" } }
-      }
+      filter: { fileAbsolutePath: { regex: "/blog/" } }
       sort: { fields: [fields___date], order: DESC }
     ) {
       edges {
         node {
           frontmatter {
             title
+            blogAuthors {
+              id
+              name
+            }
             category {
               name
               slug
               description
-            }
-            blogAuthors {
-              id
-              name
             }
           }
           fields {
@@ -122,4 +119,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default AllBlogPosts;
+export default Blog;

@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const config = require('./src/config.json');
+const { localesAsString, defaultLanguage } = require('./util-node/locales');
 
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX,
@@ -154,6 +155,23 @@ module.exports = {
           },
         },
         filter: node => node.frontmatter.category === 'learn',
+      },
+    },
+    // @see https://www.gatsbyjs.com/plugins/gatsby-theme-i18n/
+    {
+      resolve: `gatsby-theme-i18n`,
+      options: {
+        defaultLang: defaultLanguage,
+        configPath: `${__dirname}/src/i18n/config.json`,
+        prefixDefault: true,
+        locales: localesAsString,
+      },
+    },
+    // @see https://www.gatsbyjs.com/plugins/gatsby-theme-i18n-react-intl/
+    {
+      resolve: `gatsby-theme-i18n-react-intl`,
+      options: {
+        defaultLocale: `./src/i18n/locales/${defaultLanguage}.json`,
       },
     },
   ],

@@ -55,6 +55,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       fromPath: from,
       toPath: redirects[from],
       isPermanent: true,
+      redirectInBrowser: true,
     });
   });
 
@@ -75,7 +76,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     if (firstSectionPages.length) {
       createPage({
-        path: `/learn`,
+        path: `/learn/`,
         component: docTemplate,
         context: { ...firstSectionPages[0], navigationData },
       });

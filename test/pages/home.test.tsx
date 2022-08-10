@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Index, { HomeNodeReleases } from '../../src/pages';
-import { HomepageData, BannersIndex } from '../../src/types';
+import { BannersIndex } from '../../src/types';
 import { createNodeReleasesDataDetail } from '../__fixtures__/page';
 import '../__mocks__/intersectionObserverMock';
 
@@ -19,8 +19,8 @@ const mockHomeNodeReleases: HomeNodeReleases = {
   },
 };
 
-const homePageData: HomepageData = {
-  page: {
+const homePageData = {
+  articleCurrentLanguage: {
     id: 'id-mock',
     body: 'body-mock',
     frontmatter: {
@@ -61,6 +61,22 @@ const mockData = {
 
 describe('Home page', () => {
   it('renders correctly', () => {
+    const { container } = render(<Index data={mockData} />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders i18n when feature toggle is present', () => {
+    const localStorageGetSpy = jest
+      .fn()
+      .mockImplementation(() => '["i18n-language-selector"]');
+
+    Object.defineProperty(window, 'localStorage', {
+      writable: true,
+      value: {
+        getItem: localStorageGetSpy,
+      },
+    });
+
     const { container } = render(<Index data={mockData} />);
     expect(container).toMatchSnapshot();
   });

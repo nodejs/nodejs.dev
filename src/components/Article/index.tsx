@@ -2,6 +2,7 @@ import React from 'react';
 import { throttle } from 'throttle-debounce';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
+import { MdxLink } from 'gatsby-theme-i18n';
 import { PaginationInfo, BlogPostAuthor, TableOfContents } from '../../types';
 import AuthorsList from '../../containers/AuthorList';
 import EditLink from '../EditLink';
@@ -26,6 +27,8 @@ interface Props {
 }
 
 const NAV_HEIGHT = 72;
+
+const mdxComponents = { pre: Codebox, inlineCode: InlineCode, a: MdxLink };
 
 const Article = ({
   title,
@@ -117,7 +120,7 @@ const Article = ({
         <TOC heading="TABLE OF CONTENTS" tableOfContents={tableOfContents} />
       )}
       <div ref={element}>
-        <MDXProvider components={{ pre: Codebox, inlineCode: InlineCode }}>
+        <MDXProvider components={mdxComponents}>
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
       </div>

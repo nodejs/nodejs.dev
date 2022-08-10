@@ -13,13 +13,16 @@ const getArticleProps = () => {
   const learnPageContext = createLearnPageContext();
 
   const {
-    doc: {
-      frontmatter: { title },
-      body,
-      tableOfContents,
-      fields: { authors },
-    },
+    data: { articleCurrentLanguage },
   } = learnPageData;
+
+  const {
+    frontmatter: { title },
+    body,
+    tableOfContents,
+    fields: { authors },
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  } = articleCurrentLanguage!;
 
   const { relativePath, next, previous } = learnPageContext;
 

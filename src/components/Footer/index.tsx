@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import React from 'react';
 import RandomContributor from '../RandomContributor';
 import { ReactComponent as GitHubLogo } from '../../images/logos/github-logo.svg';

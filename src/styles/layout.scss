@@ -150,7 +150,8 @@ body:not(.dark) .dark-mode-only,
   display: none;
 }
 
-.dark-mode-toggle {
+.dark-mode-toggle,
+.language-switch {
   background: none;
   border: none;
   color: var(--color-text-accent);
@@ -472,7 +473,7 @@ h6:hover .autolink-headers {
   height: 40px;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1050px) {
   .nav__tabs__container {
     margin: 0;
   }
@@ -549,7 +550,7 @@ h6:hover .autolink-headers {
     }
   }
 
-  .dark-mode-toggle {
+  .language-switch {
     padding: 0;
   }
 

@@ -1,11 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Page, NodeReleaseData, DataPage } from '../types';
-import Layout from '../components/Layout';
-import Article from '../components/Article';
-import '../styles/article-reader.scss';
+import ArticleLayout from '../components/Layout/article';
+import { NodeReleaseData } from '../types';
+import { SideNavBarKeys } from '../components/SideNavBar';
 import DownloadTable from '../components/DownloadReleases/DownloadTable';
-import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
+import connectGraphQlArticle from '../components/connectGraphQlArticle';
 
 export interface ReleasesNodeReleases {
   nodeReleases: {
@@ -13,41 +12,32 @@ export interface ReleasesNodeReleases {
   };
 }
 
-interface ReleasesPageProps extends Page {
-  data: ReleasesNodeReleases & DataPage;
-}
-
-const ReleasesPage = ({
-  data: { page, nodeReleases },
-}: ReleasesPageProps): JSX.Element => {
-  const { body, tableOfContents } = page;
-  const { title, description } = page.frontmatter;
-  const { authors } = page.fields;
-  const { nodeReleasesData } = nodeReleases;
-
-  return (
-    <Layout title={title} description={description}>
-      <main className="grid-container">
-        <SideNavBar pageKey={SideNavBarKeys.releases} />
-        <Article
-          title={title}
-          body={body}
-          tableOfContents={tableOfContents}
-          authors={authors}
-          editPath="content/about/releases.md"
-        >
-          <DownloadTable nodeReleasesData={nodeReleasesData} />
-        </Article>
-      </main>
-    </Layout>
-  );
-};
-
-export default ReleasesPage;
+export default connectGraphQlArticle(ArticleLayout, {
+  editPath: 'content/about/releases.md',
+  sidenavKey: SideNavBarKeys.releases,
+  articleContent: (props: ReleasesNodeReleases) => (
+    <DownloadTable nodeReleasesData={props.nodeReleases.nodeReleasesData} />
+  ),
+});
 
 export const query = graphql`
-  query {
-    page: mdx(fields: { slug: { eq: "releases" } }) {
+  query ($locale: String!, $defaultLocale: String!) {
+    articleCurrentLanguage: mdx(
+      fields: { slug: { eq: "releases" }, locale: { eq: $locale } }
+    ) {
+      body
+      tableOfContents
+      frontmatter {
+        title
+        description
+      }
+      fields {
+        authors
+      }
+    }
+    articleDefaultLanguage: mdx(
+      fields: { slug: { eq: "releases" }, locale: { eq: $defaultLocale } }
+    ) {
       body
       tableOfContents
       frontmatter {

@@ -1,35 +1,31 @@
-import React from 'react';
 import { graphql } from 'gatsby';
-import { Page } from '../types';
-import Layout from '../components/Layout';
-import Article from '../components/Article';
-import '../styles/article-reader.scss';
-import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
+import ArticleLayout from '../components/Layout/article';
+import { SideNavBarKeys } from '../components/SideNavBar';
+import connectGraphQlArticle from '../components/connectGraphQlArticle';
 
-const WorkingGroupsPage = ({ data }: Page): JSX.Element => {
-  const { title, description } = data.page.frontmatter;
-  const { body } = data.page;
-  const { authors } = data.page.fields;
-  return (
-    <Layout title={title} description={description}>
-      <main className="grid-container">
-        <SideNavBar pageKey={SideNavBarKeys.workingGroups} />
-        <Article
-          title={title}
-          body={body}
-          authors={authors}
-          editPath="content/about/working-groups.md"
-        />
-      </main>
-    </Layout>
-  );
-};
-
-export default WorkingGroupsPage;
+export default connectGraphQlArticle(ArticleLayout, {
+  editPath: 'content/about/working-groups.md',
+  sidenavKey: SideNavBarKeys.workingGroups,
+});
 
 export const query = graphql`
-  query {
-    page: mdx(fields: { slug: { eq: "working-groups" } }) {
+  query ($locale: String!, $defaultLocale: String!) {
+    articleCurrentLanguage: mdx(
+      fields: { slug: { eq: "working-groups" }, locale: { eq: $locale } }
+    ) {
+      body
+      tableOfContents
+      frontmatter {
+        title
+        description
+      }
+      fields {
+        authors
+      }
+    }
+    articleDefaultLanguage: mdx(
+      fields: { slug: { eq: "working-groups" }, locale: { eq: $defaultLocale } }
+    ) {
       body
       tableOfContents
       frontmatter {

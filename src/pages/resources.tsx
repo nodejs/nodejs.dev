@@ -1,35 +1,31 @@
-import React from 'react';
 import { graphql } from 'gatsby';
-import { Page } from '../types';
-import Layout from '../components/Layout';
-import Article from '../components/Article';
-import '../styles/article-reader.scss';
-import SideNavBar, { SideNavBarKeys } from '../components/SideNavBar';
+import ArticleLayout from '../components/Layout/article';
+import { SideNavBarKeys } from '../components/SideNavBar';
+import connectGraphQlArticle from '../components/connectGraphQlArticle';
 
-const ResourcesPage = ({ data }: Page): JSX.Element => {
-  const { title, description } = data.page.frontmatter;
-  const { body } = data.page;
-  const { authors } = data.page.fields;
-  return (
-    <Layout title={title} description={description}>
-      <main className="grid-container">
-        <SideNavBar pageKey={SideNavBarKeys.resources} />
-        <Article
-          title={title}
-          body={body}
-          authors={authors}
-          editPath="content/resources/resources.md"
-        />
-      </main>
-    </Layout>
-  );
-};
-
-export default ResourcesPage;
+export default connectGraphQlArticle(ArticleLayout, {
+  editPath: 'content/resources/resources.md',
+  sidenavKey: SideNavBarKeys.resources,
+});
 
 export const query = graphql`
-  query {
-    page: mdx(fields: { slug: { eq: "resources" } }) {
+  query ($locale: String!, $defaultLocale: String!) {
+    articleCurrentLanguage: mdx(
+      fields: { slug: { eq: "resources" }, locale: { eq: $locale } }
+    ) {
+      body
+      tableOfContents
+      frontmatter {
+        title
+        description
+      }
+      fields {
+        authors
+      }
+    }
+    articleDefaultLanguage: mdx(
+      fields: { slug: { eq: "resources" }, locale: { eq: $defaultLocale } }
+    ) {
       body
       tableOfContents
       frontmatter {

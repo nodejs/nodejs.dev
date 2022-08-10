@@ -54,19 +54,19 @@ describe('Tests for Header component', () => {
   describe('Theme color switcher', () => {
     it('switches color theme to dark', async () => {
       render(<Header />);
-      const toggle = await screen.findByRole('button');
+      const toggle = await screen.findByText('Toggle Dark Mode');
       await userEvent.click(toggle);
     });
 
     it('switches color theme to light', async () => {
       render(<Header />);
-      const toggle = await screen.findByRole('button');
+      const toggle = await screen.findByText('Toggle Dark Mode');
       await userEvent.click(toggle);
     });
 
     it('ignore key presses on color switcher', async () => {
       render(<Header />);
-      const toggler = screen.getByRole('button');
+      const toggler = screen.getByText('Toggle Dark Mode');
 
       fireEvent.keyPress(toggler, { key: 'Enter', code: 13, charCode: 13 });
 

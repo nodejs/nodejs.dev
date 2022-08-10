@@ -1,37 +1,36 @@
-import React from 'react';
 import { graphql } from 'gatsby';
-import { Page } from '../../types';
-import Layout from '../../components/Layout';
-import Article from '../../components/Article';
-import '../../styles/article-reader.scss';
-import SideNavBar, { SideNavBarKeys } from '../../components/SideNavBar';
+import ArticleLayout from '../../components/Layout/article';
+import { SideNavBarKeys } from '../../components/SideNavBar';
+import connectGraphQlArticle from '../../components/connectGraphQlArticle';
 
-const PackageManagerPage = ({ data }: Page): JSX.Element => {
-  const { title, description } = data.page.frontmatter;
-  const { body, tableOfContents } = data.page;
-  const { authors } = data.page.fields;
-  return (
-    <Layout title={title} description={description}>
-      <main className="grid-container">
-        <SideNavBar pageKey={SideNavBarKeys.packageManager} />
-        <Article
-          title={title}
-          body={body}
-          tableOfContents={tableOfContents}
-          authors={authors}
-          editPath="content/download/package-manager.md"
-        />
-      </main>
-    </Layout>
-  );
-};
-
-export default PackageManagerPage;
+export default connectGraphQlArticle(ArticleLayout, {
+  editPath: 'content/download/package-manager.md',
+  sidenavKey: SideNavBarKeys.packageManager,
+});
 
 export const query = graphql`
-  query {
-    page: mdx(
-      fields: { slug: { eq: "installing-nodejs-via-package-manager" } }
+  query ($locale: String!, $defaultLocale: String!) {
+    articleCurrentLanguage: mdx(
+      fields: {
+        slug: { eq: "installing-nodejs-via-package-manager" }
+        locale: { eq: $locale }
+      }
+    ) {
+      body
+      tableOfContents
+      frontmatter {
+        title
+        description
+      }
+      fields {
+        authors
+      }
+    }
+    articleDefaultLanguage: mdx(
+      fields: {
+        slug: { eq: "installing-nodejs-via-package-manager" }
+        locale: { eq: $defaultLocale }
+      }
     ) {
       body
       tableOfContents

@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import React from 'react';
 import './GetStartedSection.scss';
 import { ReactComponent as BeginnerGuideIllustration } from '../../images/illustrations/beginners-guide-illustration.svg';

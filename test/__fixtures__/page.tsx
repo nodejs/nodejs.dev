@@ -1,12 +1,11 @@
 import {
-  LearnPageData,
   PaginationInfo,
   LearnPageContext,
   NavigationSectionData,
   BlogPostsList,
   BlogPageData,
   BlogPageContext,
-  Page,
+  ArticleProps,
   NodeReleaseDataDetail,
   NodeReleaseData,
   TableOfContents,
@@ -64,10 +63,9 @@ export const createNavigationSectionData = (): NavigationSectionData =>
     },
   } as NavigationSectionData);
 
-export const createLearnPageData = (): LearnPageData =>
-  ({
-    doc: {
-      id: 'test-id',
+export const createLearnPageData = (): ArticleProps => ({
+  data: {
+    articleCurrentLanguage: {
       body: mockMDXBodyContent,
       tableOfContents: mockTableOfContents,
       frontmatter: {
@@ -78,7 +76,8 @@ export const createLearnPageData = (): LearnPageData =>
         authors: ['test-user1', 'test-user2'],
       },
     },
-  } as LearnPageData);
+  },
+});
 
 export const createNodeReleasesDataDetail = (): NodeReleaseDataDetail[] =>
   [
@@ -224,9 +223,9 @@ export const createBlogPageData = (): BlogPageData => ({
   },
 });
 
-export const createGeneralPageData = (): Page => ({
+export const createGeneralPageData = (): ArticleProps => ({
   data: {
-    page: {
+    articleCurrentLanguage: {
       fields: {
         authors: ['author-mock'],
       },
@@ -240,9 +239,9 @@ export const createGeneralPageData = (): Page => ({
   },
 });
 
-export const createResourcesData = (): Page => ({
+export const createResourcesData = (): ArticleProps => ({
   data: {
-    page: {
+    articleCurrentLanguage: {
       fields: {
         authors: ['MrJithil'],
       },
@@ -256,9 +255,9 @@ export const createResourcesData = (): Page => ({
   },
 });
 
-export const createPrivacyData = (): Page => ({
+export const createPrivacyData = (): ArticleProps => ({
   data: {
-    page: {
+    articleCurrentLanguage: {
       fields: {
         authors: ['Author'],
       },
