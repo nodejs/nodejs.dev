@@ -28,7 +28,7 @@ describe('AboutPageSideNavBar', () => {
     );
     const innrerHtml = container.innerHTML;
     const activeLinks = innrerHtml.match('side-nav__item-community--active');
-    expect(activeLinks.length).toBe(1);
+    expect(activeLinks && activeLinks.length).toBe(1);
   });
   it('should set the body oveflow hidden on menu click', async () => {
     render(<AboutPageSideNavBar pageKey={SideNavBarKeys.releases} />);

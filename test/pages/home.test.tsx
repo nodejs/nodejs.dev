@@ -64,6 +64,7 @@ describe('Home page', () => {
     const { container } = render(<Index data={mockData} />);
     expect(container).toMatchSnapshot();
   });
+
   describe('Banner', () => {
     it('renders Banner when today between startDate and endDate', () => {
       const beforeToday = new Date();
@@ -76,9 +77,10 @@ describe('Home page', () => {
 
       render(<Index data={mockData} />);
 
-      const bannerText = screen.getByText(bannersIndex.text);
+      const bannerText = screen.getByText(bannersIndex.text || '');
       expect(bannerText).toBeInTheDocument();
     });
+
     it('does not render Banner when today before startDate', () => {
       const beforeToday = new Date();
       beforeToday.setDate(beforeToday.getDate() + 1);
@@ -90,9 +92,10 @@ describe('Home page', () => {
 
       render(<Index data={mockData} />);
 
-      const bannerText = screen.queryByText(bannersIndex.text);
+      const bannerText = screen.queryByText(bannersIndex.text || '');
       expect(bannerText).not.toBeInTheDocument();
     });
+
     it('does not render Banner when today after endDate', () => {
       const beforeToday = new Date();
       beforeToday.setDate(beforeToday.getDate() - 2);
@@ -104,7 +107,7 @@ describe('Home page', () => {
 
       render(<Index data={mockData} />);
 
-      const bannerText = screen.queryByText(bannersIndex.text);
+      const bannerText = screen.queryByText(bannersIndex.text || '');
       expect(bannerText).not.toBeInTheDocument();
     });
   });
