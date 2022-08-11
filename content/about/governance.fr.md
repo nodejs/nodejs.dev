@@ -1,38 +1,38 @@
 ---
-title: Governance
-description: 'Project Governance | Node.js'
-authors: XhmikosR, fhemberger, thefourtheye, ryanmurakami, refack
-category: governance
+title: Gouvernance
+description: 'Gouvernance de projet  | Node.js'
+authors: XhmikosR, fhemberger, thefourtheye, ryanmurakami, refack, Augustin Mauroy
+category: Gouvernance
 ---
 
-## Consensus Seeking Process
+## Processus de recherche de consensus
 
-The Node.js project follows a [Consensus Seeking][] decision making model.
+Le projet Node.js suit un modèle de prise de décision de type [recherche de consensus][].
 
-## Collaborators
+## Collaborateurs
 
-The [nodejs/node][] core GitHub repository is maintained by the Collaborators
-who are added by the Technical Steering Committee ([TSC][]) on an ongoing basis.
+Le dépôt GitHub de base [nodejs/node][] est maintenu par les collaborateurs.
+qui sont ajoutés par le comité directeur technique ([TSC][]) sur une base continue.
 
-Individuals making significant and valuable contributions are made Collaborators
-and given commit-access to the project. These individuals are identified by the
-TSC and their nomination is discussed with the existing Collaborators.
+Les personnes apportant des contributions significatives et précieuses sont nommées Collaborateurs
+et reçoivent un accès commit au projet. Ces personnes sont identifiées par le
+TSC et leur nomination est discutée avec les collaborateurs existants.
 
-For the current list of Collaborators, see the project's [README.md][].
+Pour la liste actuelle des collaborateurs, voir le [README.md][] du projet.
 
-A guide for Collaborators is maintained at [collaborator-guide.md][].
+Un guide pour les collaborateurs est maintenu à [collaborator-guide.md][].
 
-## Top Level Committees
+## Comités de haut niveau
 
-The project is governed jointly by the [Technical Steering Committee (TSC)][]
-which is responsible for high-level guidance of the project, and the
-[Community Committee (CommComm)][] which is responsible for guiding and
-extending the Node.js community.
+Le projet est dirigé conjointement par le [Comité directeur technique (CDT)][]
+qui est responsable de l'orientation de haut niveau du projet, et le
+[comité de la communauté (CommComm)][] qui est responsable de l'orientation et de l'extension de la communauté Node.js.
+l'extension de la communauté Node.js.
 
-[Community Committee (CommComm)]: https://github.com/nodejs/community-committee/blob/main/Community-Committee-Charter.md
-[Consensus Seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
+[comité de la communauté (CommComm)]: https://github.com/nodejs/community-committee/blob/main/Community-Committee-Charter.md
+[recherche de consensus]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [README.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
 [TSC]: https://github.com/nodejs/TSC
-[Technical Steering Committee (TSC)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
+[Comité directeur technique (CDT)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
 [nodejs/node]: https://github.com/nodejs/node

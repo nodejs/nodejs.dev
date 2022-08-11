@@ -19,7 +19,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Bonjour tout le monde!'); //fin de la réponse http
+  res.end('Bonjour tout le monde!'); // fin de la réponse http
 });
 
 server.listen(port, hostname, () => {
