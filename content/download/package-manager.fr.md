@@ -2,7 +2,7 @@
 title: Installation de Node.js via le gestionnaire de paquets
 description: Installing Node.js via package manager
 authors: fhemberger, XhmikosR, shadowspawn, vsemozhetbyt, nschonni, wildcard, MrJithil, kasicka, cassidyjames, Trott, richardlau, Qantas94Heavy, pierreneter, 0mp, ThePrez, PoojaDurgad, MaledongGit, Megajin, marc-maurer, yodeyer, geek, sudowork, strawbrary, ryanmurakami, rbnswartz, arkwright, oliversalzburg, mweagle, Mohamed3on, Ginden, kapouer, jperkin, jericopulvera, jedsmith, jasonkarns, sonicdoe, mcollina, fornwall, danbev, naskapal, awochna, AdamMajer, ahmetanilgur, bnb, qbit, AugustinMauroy
-category: télécharger
+category: download
 ---
 
 _**Note:**_ Les paquets sur cette page sont maintenus et supportés par leurs mainteneurs respectifs, **non** par l'équipe centrale de Node.js. Veuillez signaler tout problème que vous rencontrez au mainteneur du paquet. S'il s'avère que votre problème est un bogue dans Node.js lui-même, le mainteneur signalera le problème en amont.
@@ -180,7 +180,7 @@ pkgin -y install nodejs
 
 ## Nodenv
 
-`nodenv` est un gestionnaire de version de noeud léger, similaire à `nvm`. Il est simple et prévisible. Un riche écosystème de plugins vous permet de l'adapter à vos besoins. Utilisez `nodenv` pour choisir une version de Node pour votre application et garantir que votre environnement de développement correspond à la production.
+`nodenv` est un gestionnaire de version de node léger, similaire à `nvm`. Il est simple et prévisible. Un riche écosystème de plugins vous permet de l'adapter à vos besoins. Utilisez `nodenv` pour choisir une version de Node pour votre application et garantir que votre environnement de développement correspond à la production.
 
 Les instructions d'installation de Nodenv sont maintenues [sur its Github page](https://github.com/nodenv/nodenv#installation). Veuillez consulter cette page pour vous assurer que vous suivez la dernière version des étapes d'installation.
 
