@@ -1,79 +1,64 @@
 ---
-title: Security
-description: 'This is security page'
-authors: reedloden,XhmikosR,Trott,fhemberger,MaledongGit,yous,sam-github,vdeturckheim,tniessen,richardlau,nschonni,mikeal,e-jigsaw,parthlaw
-category: security
+title: Sécurité
+description: 'C'est la page de sécurité'
+authors: reedloden,XhmikosR,Trott,fhemberger,MaledongGit,yous,sam-github,vdeturckheim,tniessen,richardlau,nschonni,mikeal,e-jigsaw,parthlaw, AugustinMauroy
+category: Sécurité
 ---
 
-## Reporting a Bug in Node.js
+## Signaler un bug dans Node.js
 
-Report security bugs in Node.js via [HackerOne](https://hackerone.com/nodejs).
+Signalez les bogues de sécurité dans Node.js via [HackerOne](https://hackerone.com/nodejs).
 
-Your report will be acknowledged within 24 hours, and you’ll receive a more
-detailed response to your report within 48 hours indicating the next steps in
-handling your submission.
+Votre rapport fera l'objet d'un accusé de réception dans les 24 heures, et vous recevrez une réponse plus détaillée dans les 48 heures.
+réponse plus détaillée à votre rapport dans les 48 heures, indiquant les prochaines étapes de
+traitement de votre demande.
 
-After the initial reply to your report, the security team will endeavor to keep
-you informed of the progress being made towards a fix and full announcement,
-and may ask for additional information or guidance surrounding the reported
-issue.
+Après la réponse initiale à votre rapport, l'équipe de sécurité s'efforcera de vous tenir
+de vous tenir informé des progrès réalisés en vue d'une correction et d'une annonce complète,
+et pourra vous demander des informations supplémentaires ou des conseils sur le problème signalé.
+problème signalé.
 
-### Node.js Bug Bounty Program
+### Programme de primes aux bugs pour Node.js
 
-The Node.js project engages in an official bug bounty program for security
-researchers and responsible public disclosures. The program is managed through
-the HackerOne platform. See <https://hackerone.com/nodejs> for further details.
+Le projet Node.js s'engage dans un programme officiel de prime de bogue pour les chercheurs en sécurité et les divulgations publiques responsables.
+et les divulgations publiques responsables. Le programme est géré par
+la plateforme HackerOne. Voir <https://hackerone.com/nodejs> pour plus de détails.
 
-## Reporting a Bug in a third party module
+## Signaler un bogue dans un module tiers
 
-Security bugs in third party modules should be reported to their respective
-maintainers and should also be coordinated through the Node.js Ecosystem
+Les bogues de sécurité dans les modules tiers doivent être signalés à leurs mainteneurs respectifs.
+mainteneurs respectifs et doivent être coordonnés par l'équipe de sécurité de l'écosystème Node.js
 Security Team via [HackerOne](https://hackerone.com/nodejs-ecosystem).
 
-Details regarding this process can be found in the
-[Security Working Group repository](https://github.com/nodejs/security-wg/tree/main/processes/vuln_db.md).
+Les détails concernant ce processus peuvent être trouvés dans le
+[Dépôt du groupe de travail sur la sécurité](https://github.com/nodejs/security-wg/tree/main/processes/vuln_db.md).
 
-Thank you for improving the security of Node.js and its ecosystem. Your efforts
-and responsible disclosure are greatly appreciated and will be acknowledged.
+Merci d'améliorer la sécurité de Node.js et de son écosystème. Vos efforts
+et la divulgation responsable sont grandement appréciés et seront reconnus.
 
-## Disclosure Policy
+## Politique de divulgation
 
-Here is the security disclosure policy for Node.js
+Voici la politique de divulgation de la sécurité pour Node.js
 
-* The security report is received and is assigned a primary handler. This
-  person will coordinate the fix and release process. The problem is confirmed
-  and a list of all affected versions is determined. Code is audited to find
-  any potential similar problems. Fixes are prepared for all releases which are
-  still under maintenance. These fixes are not committed to the public
-  repository but rather held locally pending the announcement.
+* Le rapport de sécurité est reçu et un gestionnaire principal lui est attribué. Cette personne personne coordonnera le processus de correction et de publication. Le problème est confirmé et une liste de toutes les versions affectées est déterminée. Le code est audité pour trouver tout problème similaire potentiel. Des correctifs sont préparés pour toutes les versions qui sont encore en maintenance. Ces correctifs ne sont pas engagés dans le dépôt public public mais plutôt conservés localement en attendant l'annonce.
 
-* A suggested embargo date for this vulnerability is chosen and a CVE (Common
-  Vulnerabilities and Exposures (CVE®)) is requested for the vulnerability.
+* Une date d'embargo suggérée pour cette vulnérabilité est choisie et un CVE (Common Vulnérabilités et Expositions (CVE®)) est demandé pour cette vulnérabilité.
 
-* On the embargo date, the Node.js security mailing list is sent a copy of the
-  announcement. The changes are pushed to the public repository and new builds
-  are deployed to nodejs.org. Within 6 hours of the mailing list being
-  notified, a copy of the advisory will be published on the Node.js blog.
+* À la date d'embargo, la liste de diffusion de la sécurité de Node.js reçoit une copie de l'annonce. annonce. Les changements sont poussés vers le dépôt public et les nouvelles constructions sont déployées sur nodejs.org. Sont déployées sur nodejs.org. Dans les 6 heures suivant la notification de la liste de diffusion une copie de l'avis sera publiée sur le blog de Node.js.
 
-* Typically the embargo date will be set 72 hours from the time the CVE is
-  issued. However, this may vary depending on the severity of the bug or
-  difficulty in applying a fix.
+* En général, la date d'embargo est fixée à 72 heures à compter de la date de publication du CVE. publié. Cependant, cela peut varier en fonction de la gravité du bogue ou de la difficulté à appliquer un correctif. difficulté à appliquer un correctif.
 
-* This process can take some time, especially when coordination is required
-  with maintainers of other projects. Every effort will be made to handle the
-  bug in as timely a manner as possible; however, it’s important that we follow
-  the release process above to ensure that the disclosure is handled in a
-  consistent manner.
+* Ce processus peut prendre un certain temps, en particulier lorsqu'une coordination est nécessaire avec les mainteneurs d'autres projets. Avec les mainteneurs d'autres projets. Tous les efforts seront faits pour traiter le bogue de la manière la plus opportune possible ; cependant, il est important que nous suivions le processus de publication ci-dessus afin de garantir que la version finale du logiciel soit disponible. Le processus de publication ci-dessus pour s'assurer que la divulgation est traitée d'une manière cohérente.
 
-## Receiving Security Updates
+## Réception des mises à jour de sécurité
 
-Security notifications will be distributed via the following methods.
+Les notifications de sécurité seront distribuées par les méthodes suivantes.
 
 * <https://groups.google.com/group/nodejs-sec>
 * <https://nodejs.org/en/blog/>
 
-## Comments on this Policy
+## Commentaires sur cette politique
 
-If you have suggestions on how this process could be improved please submit a
-[pull request](https://github.com/nodejs/nodejs.dev) or
-[file an issue](https://github.com/nodejs/security-wg/issues/new) to discuss.
+Si vous avez des suggestions sur la façon dont ce processus pourrait être amélioré, veuillez soumettre un formulaire de demande d'accès à l'information.
+[pull request](https://github.com/nodejs/nodejs.dev) ou
+[file an issue](https://github.com/nodejs/security-wg/issues/new) pour discuter.

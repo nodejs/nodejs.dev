@@ -1,7 +1,7 @@
 ---
 title: Politique de confidentialité
 description: 'Politique de confidentialité | Node.js'
-authors: XhmikosR, nschonni, brianwarner, hackygolucky, sindelio, sonicdoe, marsonya, Augustin Mauroy
+authors: XhmikosR, nschonni, brianwarner, hackygolucky, sindelio, sonicdoe, marsonya, AugustinMauroy
 category: Confidentialité
 ---
 

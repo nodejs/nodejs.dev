@@ -1,35 +1,35 @@
 ---
-title: Trademark Policy
-description: "Trademark Policy | Node.js"
-authors: fhemberger, XhmikosR, mikeal,  brianwarner, bf4
-category: trademark
+title: Politique en matière de marques de commerce
+description: "Politique en matière de marques de commerce | Node.js"
+authors: fhemberger, XhmikosR, mikeal,  brianwarner, bf4, AugustinMauroy
+category: marque déposée
 ---
 
-The Node.js trademarks, service marks, and graphics marks are symbols of the
-quality, performance, and ease of use that people have come to associate with
-the Node.js software and project. To ensure that the Node.js marks continue to
-symbolize these qualities, we must ensure that the marks are only used in ways
-that do not mislead people or cause them to confuse Node.js with other software
-of lower quality. If we don’t ensure the marks are used in this way, it cannot
-only confuse users, it can make it impossible to use the mark to protect
-against people who maliciously exploit the mark in the future. The primary goal
-of this policy is to make sure that this doesn’t happen to the Node.js mark, so
-that the community and users of Node.js are always protected in the future.
+Les marques de commerce, marques de service et marques graphiques de Node.js sont des symboles de la
+qualité, de la performance et de la facilité d'utilisation que les gens en sont venus à associer avec
+le logiciel et le projet Node.js. Afin de s'assurer que les marques de Node.js continuent à
+symboliser ces qualités, nous devons nous assurer que les marques ne sont utilisées que d'une manière
+qui ne trompent pas les gens ou les amènent à confondre Node.js avec d'autres logiciels de qualité inférieure.
+de qualité inférieure. Si nous ne nous assurons pas que les marques sont utilisées de cette façon, cela ne peut
+seulement confondre les utilisateurs, cela peut rendre impossible l'utilisation de la marque pour se protéger
+contre les personnes qui exploitent malicieusement la marque à l'avenir. L'objectif principal
+de cette politique est de s'assurer que cela n'arrive pas à la marque Node.js, de sorte que
+que la communauté et les utilisateurs de Node.js soient toujours protégés à l'avenir.
 
-At the same time, we’d like community members to feel comfortable spreading the
-word about Node.js and participating in the Node.js community. Keeping that
-goal in mind, we’ve tried to make the policy as flexible and easy to understand
-as legally possible.
+En même temps, nous aimerions que les membres de la communauté se sentent à l'aise pour répandre la
+mot sur Node.js et de participer à la communauté Node.js. En gardant cet
+objectif à l'esprit, nous avons essayé de rendre la politique aussi flexible et facile à comprendre
+que légalement possible.
 
-The OpenJS Foundation has a perpetual license to use the
-[Node.js marks](https://ip-policy.openjsf.org).
-For more details on using the Node.js mark, please read the
-[full policy](https://trademark-policy.openjsf.org).
-If you have any questions don't hesitate to
-[email us](mailto:trademark@openjsf.org).
+La Fondation OpenJS dispose d'une licence perpétuelle pour l'utilisation des
+[marques Node.js] (https://ip-policy.openjsf.org).
+Pour plus de détails sur l'utilisation de la marque Node.js, veuillez lire la [politique complète]().
+[politique complète](https://trademark-policy.openjsf.org).
+Si vous avez des questions n'hésitez pas à
+[nous envoyer un courriel](mailto:trademark@openjsf.org).
 
 <!--lint disable nodejs-links-->
 
-Guidelines for the visual display of the Node.js mark are described in the [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
+Les directives relatives à l'affichage de la marque Node.js sont décrites dans les [Directives visuelles](/static/documents/foundation-visual-guidelines.pdf).
 
 <!--lint enable nodejs-links-->
