@@ -209,7 +209,7 @@ function final(result) {
         \n${result.failed.join('\n')}\n`);
 }
 
-items.forEach(function (recipient) {
+recipients.forEach(function (recipient) {
   dispatch(recipient, function (err) {
     if (!err) {
       success += 1;
