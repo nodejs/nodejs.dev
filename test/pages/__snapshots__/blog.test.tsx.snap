@@ -171,13 +171,6 @@ exports[`Blog page renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <section
-      class="bottom-info"
-    >
-      <div
-        class="random-contributor"
-      />
-    </section>
     <footer
       class="footer"
     >
@@ -419,13 +412,6 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         </div>
       </div>
     </nav>
-    <section
-      class="bottom-info"
-    >
-      <div
-        class="random-contributor"
-      />
-    </section>
     <footer
       class="footer"
     >

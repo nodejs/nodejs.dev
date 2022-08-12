@@ -135,13 +135,6 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
   >
     mock-children
   </main>
-  <section
-    class="bottom-info"
-  >
-    <div
-      class="random-contributor"
-    />
-  </section>
   <footer
     class="footer"
   >

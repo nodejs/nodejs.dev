@@ -171,22 +171,22 @@ exports[`Community Page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/privacy"
-            id="link-privacy"
+            href="/about/privacy"
+            id="link-about/privacy"
           >
             Privacy Policy
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/governance"
-            id="link-governance"
+            href="/about/governance"
+            id="link-about/governance"
           >
             Project Governance
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/releases"
-            id="link-releases"
+            href="/about/releases"
+            id="link-about/releases"
           >
             Releases
           </a>
@@ -199,22 +199,22 @@ exports[`Community Page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/security"
-            id="link-security"
+            href="/about/security"
+            id="link-about/security"
           >
             Security Reporting
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/trademark"
-            id="link-trademark"
+            href="/about/trademark"
+            id="link-about/trademark"
           >
             Trademark Policy
           </a>
           <a
             class="t-body2 side-nav__item-community"
-            href="/working-groups"
-            id="link-working-groups"
+            href="/about/working-groups"
+            id="link-about/working-groups"
           >
             Working Groups
           </a>
@@ -352,13 +352,6 @@ exports[`Community Page renders correctly 1`] = `
         </div>
       </article>
     </main>
-    <section
-      class="bottom-info"
-    >
-      <div
-        class="random-contributor"
-      />
-    </section>
     <footer
       class="footer"
     >
