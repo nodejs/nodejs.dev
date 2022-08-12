@@ -43,7 +43,7 @@ Pour les mises à jour sociales, [follow @Nodejs on Twitter](https://twitter.com
 
 ### Dépôt d'aide Node.js
 
-Node.js dispose d'un [repository on GitHub](https://github.com/nodejs/help) pour vous aider à résoudre vos problèmes. Si vous êtes confronté à un problème, n'hésitez pas à créer une question, ou à consulter les questions auxquelles il a déjà été répondu pour trouver de l'aide.
+Node.js dispose d'un [dépôt sur Github](https://github.com/nodejs/help) pour vous aider à résoudre vos problèmes. Si vous êtes confronté à un problème, n'hésitez pas à créer une question, ou à consulter les questions auxquelles il a déjà été répondu pour trouver de l'aide.
 
 ### Chat en temps réel
 
