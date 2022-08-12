@@ -142,10 +142,8 @@ Chaque communauté linguistique a ses propres membres.
 Les responsabilités comprennent :
 
 * La construction, la documentation et l'évangélisation de conseils, d'outils et de processus qui facilitent la maintenance des paquets et l'acceptation de l'aide de ceux qui dépendent de leurs paquets.
-  maintenir les paquets et accepter l'aide de ceux qui dépendent de leurs paquets.
 * Gestion des dépôts au sein de l'organisation GitHub [pkgjs](https://github.com/pkgjs)
-  organisation GitHub, y compris, mais sans s'y limiter, les éléments suivants :
-  * Gestion de la liste des propriétaires de l'organisation qui complètent les propriétaires de l'organisation standard de propriétaires d'organisation Node.js comme indiqué dans : <https://github.com/nodejs/admin/blob/main/GITHUB_ORG_MANAGEMENT_POLICY.md#owners>
+  * Gestion de la liste des propriétaires de l'organisation qui complète celle des propriétaires standard de l'organisation Node.js comme indiqué dans: <https://github.com/nodejs/admin/blob/main/GITHUB_ORG_MANAGEMENT_POLICY.md#owners>
   * Supervision des nouveaux dépôts (création, déplacement, suppression)
   * Gérer les équipes de mainteneurs pour tous les dépôts.
   * Politique de contribution pour les dépôts
@@ -157,7 +155,7 @@ Les responsabilités comprennent :
 
 ## [Communiqué de presse](https://github.com/nodejs/Release)
 
-Le groupe de travail sur la libération gère le processus de libération pour Node.js.
+ groupe de travail de publication gère le processus de publication de Node.js
 
 Les responsabilités incluent :
 
@@ -178,11 +176,10 @@ Les responsabilités comprennent :
 * Définir et maintenir les politiques et procédures de sécurité pour :
   * le projet Node.js de base
   * d'autres projets maintenus par le comité de pilotage technique (TSC) de Node.js.
-* Travailler avec la plate-forme de sécurité Node pour apporter les données de vulnérabilité de la communauté dans la fondation comme un atout partagé.
+* Travailler avec la plate-forme de sécurité Node pour consolider dans la fondation les données de vulnérabilité rapportées par la communauté.
   la fondation comme un actif partagé.
 * S'assurer que les données de vulnérabilité sont mises à jour d'une manière efficace et opportune.
   Par exemple, en s'assurant qu'il existe des processus bien documentés pour signaler les vulnérabilités dans les modules communautaires.
-  vulnérabilités dans les modules communautaires.
 * Examiner et recommander des processus pour le traitement des rapports de sécurité (mais pas la
   l'administration proprement dite des rapports de sécurité, qui sont examinés par un groupe de personnes
   directement déléguées par le TSC).
@@ -196,17 +193,15 @@ Les responsabilités comprennent :
 * Promouvoir l'amélioration des pratiques de sécurité au sein de l'écosystème Node.js.
 * Recommander des améliorations de sécurité pour le projet Node.js de base.
 * Faciliter et promouvoir l'expansion d'un écosystème sain de fournisseurs de services et de produits de sécurité.
-  fournisseur de produits et services de sécurité.
 
 ## [Streams](https://github.com/nodejs/readable-stream)
 
 Le groupe de travail Streams est dédié au support et à l'amélioration de l'API
 Streams telle qu'utilisée dans Node.js et l'écosystème npm. Nous cherchons à créer une
 qui résout le problème de la représentation de multiples occurrences d'un événement dans le temps
-d'un événement dans le temps d'une manière humaine et peu coûteuse. Les améliorations de l'API
-l'API seront déterminées par les besoins de l'écosystème, l'interopérabilité et la
-l'interopérabilité et la rétrocompatibilité avec d'autres solutions et versions antérieures sont d'une importance
-en importance.
+d'une manière humaine et peu coûteuse. Les améliorations de l'API
+seront déterminées par les besoins de l'écosystème, l'interopérabilité
+et la rétrocompatibilité avec d'autres solutions et versions antérieures sont d'une importance capitale.
 
 Les responsabilités comprennent :
 
