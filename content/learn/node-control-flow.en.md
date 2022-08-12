@@ -57,7 +57,7 @@ function middleware(someInput, callback) {
 
 function initiate() {
   const someInput = 'hello this is a function ';
-  middleware(function (result) {
+  middleware(someInput, function (result) {
     console.log(result);
     // requires callback to `return` result
   });
