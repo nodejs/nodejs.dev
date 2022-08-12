@@ -7,17 +7,17 @@ category: communauté
 
 ## Introduction
 
-Node.js has one of the largest, most vibrant and innovative open source communities in the world. Node.js is built, used, and maintained by the community. We believe the community to be at the core of Node.js popularity. Amazing people from every part of the world, with a common interest, collaborate and shape this community.
+Node.js possède l'une des communautés open source les plus importantes, les plus dynamiques et les plus innovantes au monde. Node.js est construit, utilisé et maintenu par la communauté. Nous croyons que la communauté est au cœur de la popularité de Node.js. Des personnes étonnantes de toutes les parties du monde, avec un intérêt commun, collaborent et façonnent cette communauté.
 
-## Node.js Contributor Covenant Code of Conduct
+## Code de conduite de la convention des contributeurs Node.js
 
-In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+Afin de favoriser un environnement ouvert et accueillant, nous, contributeurs et responsables, nous engageons à faire de la participation à notre projet et à notre communauté une expérience exempte de harcèlement pour tous, indépendamment de l'âge, de la taille, du handicap, de l'origine ethnique, des caractéristiques sexuelles, de l'identité et de l'expression de genre, du niveau d'expérience, de l'éducation, du statut socio-économique, de la nationalité, de l'apparence personnelle, de la race, de la religion ou de l'identité et de l'orientation sexuelles.
 
-[Read the full code of conduct →](https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md)
+[Lire le code de conduite complet →](https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md)
 
 ## Ways to Contribute
 
-We welcome all kinds of contributions — documentation, bugs reporting, core contribution. Irrespective of the extent of the contribution, we encourage you to be a part of Node.js. If you miss a feature, request it, or maybe help build it.
+Nous accueillons toutes sortes de contributions - documentation, rapports de bogues, contribution au noyau. Indépendamment de l'ampleur de la contribution, nous vous encourageons à faire partie de Node.js. Si une fonctionnalité vous manque, demandez-la, ou peut-être aidez-nous à la construire.
 
 * [Community Discussions](https://nodejs.org/en/get-involved/#community-discussion)
 * [Learning Node.js](https://nodejs.org/en/get-involved/#learning)
@@ -29,37 +29,37 @@ We welcome all kinds of contributions — documentation, bugs reporting, core co
 * [Node.js Meetups](https://nodejs.org/en/get-involved/node-meetups/)
 * [Start Contributing to Node.js](https://dev.to/azure/start-contributing-to-nodejs-in-the-new-year-3dlh)
 
-## Node.js News
+## Nouveauté de Node.js
 
-### Stay in Touch
+### Restez en contact
 
-Subscribe to the [Node.js monthly mailing list](https://us14.campaign-archive.com/home/?u=c7c2e114a827812354112c23b\&id=f006b61f29) to get all the latest updates related to the Node.js.
+Abonnez vous à[Liste de diffusion mensuelle Node.js](https://us14.campaign-archive.com/home/?u=c7c2e114a827812354112c23b\&id=f006b61f29) pour obtenir toutes les dernières mises à jour liées à Node.js.
 
 ### Twitter
 
-For social updates, [follow @Nodejs on Twitter](https://twitter.com/nodejs).
+Pour les mises à jour sociales, [follow @Nodejs on Twitter](https://twitter.com/nodejs).
 
-## Where to Get Support
+## Où trouver de l'aide
 
-### Node.js Help Repository
+### Dépôt d'aide Node.js
 
-Node.js has a dedicated [repository on GitHub](https://github.com/nodejs/help) to help you with your issues. If you are facing a problem, feel free to create an issue, or go through the already answered questions to seek help.
+Node.js dispose d'un [repository on GitHub](https://github.com/nodejs/help) pour vous aider à résoudre vos problèmes. Si vous êtes confronté à un problème, n'hésitez pas à créer une question, ou à consulter les questions auxquelles il a déjà été répondu pour trouver de l'aide.
 
-### Real-time Chat
+### Chat en temps réel
 
-For real-time chat about Node.js development use the [OpenJS Foundation Slack](https://slack-invite.openjsf.org/) or IRC
-For Slack, join the OpenJSF workspace and then join the [#nodejs](https://openjs-foundation.slack.com/archives/CK9Q4MB53) channel or [Node.js Slackers](https://www.nodeslackers.com/)
-For IRC, go to irc.libera.chat in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [Libera Chat's WebChat](https://web.libera.chat/#node.js).
+Pour une discussion en temps réel sur le développement de Node.js, utilisez l'outil [OpenJS Foundation Slack](https://slack-invite.openjsf.org/) ou IRC
+Pour Slack, rejoignez l'espace de travail OpenJSF, puis le groupe de travail [#nodejs](https://openjs-foundation.slack.com/archives/CK9Q4MB53) ou [Node.js Slackers](https://www.nodeslackers.com/)
+Pour l'IRC, allez sur irc.libera.chat dans le canal `#node.js` avec un [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) ou connectez-vous dans votre navigateur web à la chaîne en utilisant [Libera Chat's WebChat](https://web.libera.chat/#node.js).
 
 ### Stack Overflow
 
-Many community members prefer to use Stack Overflow to ask questions. You can browse the [existing questions](https://stackoverflow.com/questions/tagged/node.js) tagged `node.js` or [ask your own](https://stackoverflow.com/questions/ask?tags=node.js).
+De nombreux membres de la communauté préfèrent utiliser Stack Overflow pour poser leurs questions. Vous pouvez parcourir la section [existing questions](https://stackoverflow.com/questions/tagged/node.js) tavex le tag `node.js` ou [ask your own](https://stackoverflow.com/questions/ask?tags=node.js).
 
-### DEV Community
+### Communauté de dévelopement
 
-DEV Community is an excellent platform to ask questions and share your knowledge of Node.js. Read through the [existing questions and posts](https://dev.to/t/node) tagged with `node` or [ask for help](https://dev.to/new/help). You could also [write your post](https://dev.to/new/node) with the `node` tag.
+La Communauté dévelopement est une excellente plateforme pour poser des questions et partager vos connaissances de Node.js. Lisez les [questions et messages existants](https://dev.to/t/node) avec les mots-clés `node` ou [ask for help](https://dev.to/new/help). Vous pouvez également [rédiger votre article](https://dev.to/new/node) avec la balise `node`.
 
-## Learn More About Node.js:
+## En savoir plus sur Node.js :
 
 * [Nodejs.dev](https://nodejs.dev/)
 * [Node.js documentation](https://nodejs.org/en/docs/)
