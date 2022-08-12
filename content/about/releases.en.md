@@ -1,8 +1,9 @@
 ---
-title: Releases
+title: releases
+displayTitle: Releases
 description: "Releases | Node.js"
 authors: ZYSzys, nstanard,  mikeal, fhemberger, garybernhardt, piepmatz, boneskull, bjb568
-category: releases
+category: about
 ---
 
 Major Node.js versions enter _Current_ release status for six months, which gives library authors time to add support for them.
