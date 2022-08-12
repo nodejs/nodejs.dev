@@ -2,7 +2,7 @@
 title: page d'accueil
 displayTitle: Exécuter JavaScript partout.
 subTitle: 'Node.js est un environnement d'exécution JavaScript gratuit, ouvert et multiplateforme qui permet aux développeurs d'écrire des outils en ligne de commande et des scripts côté serveur en dehors d'un navigateur.'
-description: 'Bienvenue à Node.js !'
+description: "Bienvenue à Node.js !"
 leafsIllustrationFront: ./images/illustrations/leafs-front.svg
 leafsIllustrationMiddle: ./images/illustrations/leafs-middle.svg
 leafsIllustrationBack: ./images/illustrations/leafs-back.svg
