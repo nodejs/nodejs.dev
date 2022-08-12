@@ -11,8 +11,8 @@ Le projet Node.js suit un modèle de prise de décision de type [recherche de co
 
 ## Collaborateurs
 
-Le dépôt GitHub de base [nodejs/node][] est maintenu par les collaborateurs.
-qui sont ajoutés par le comité directeur technique ([TSC][]) sur une base continue.
+Le dépôt GitHub de principal [nodejs/node][] est maintenu par les collaborateurs.
+qui sont ajoutés par le comité directeur technique ([TSC][]) au fur et à mesure ou de manière continue.
 
 Les personnes apportant des contributions significatives et précieuses sont nommées Collaborateurs
 et reçoivent un accès commit au projet. Ces personnes sont identifiées par le

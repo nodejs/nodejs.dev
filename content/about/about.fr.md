@@ -5,10 +5,10 @@ authors: XhmikosR, mikeal, fhemberger, Fishrock123, yous, tomgco, tniessen, SMcC
 category: about
 ---
 
-En tant que moteur d'exécution JavaScript asynchrone piloté par les événements, Node.js est conçu pour construire
+En tant que moteur d'exécution JavaScript asynchrone piloté par événements, Node.js est conçu pour construire
 des applications réseau évolutives. Dans l'exemple suivant de "hello world", de nombreuses
 connexions peuvent être traitées simultanément. A chaque connexion, le callback est
-déclenchée, mais s'il n'y a pas de travail à faire, Node.js se met en veille.
+déclenché, mais s'il n'y a pas de travail à faire, Node.js se met en veille.
 
 ```js
 const http = require('http');
@@ -28,8 +28,8 @@ server.listen(port, hostname, () => {
 ```
 
 Cela contraste avec le modèle de concurrence le plus courant aujourd'hui, dans lequel les threads de l'OS
-sont utilisés. La mise en réseau basée sur les threads est relativement inefficace et très difficile à utiliser.
-difficile à utiliser. En outre, les utilisateurs de Node.js n'ont pas à se soucier du blocage du processus, puisqu'il n'y a pas de verrous.
+sont utilisés. La mise en réseau fondée sur les threads est relativement inefficace et très difficile à utiliser.
+En outre, les utilisateurs de Node.js n'ont pas à se soucier du blocage du processus, puisqu'il n'y a pas de verrous.
 blocage du processus, puisqu'il n'y a pas de verrous. Presque aucune fonction de
 Node.js n'effectue directement des E/S, de sorte que le processus ne se bloque jamais. Parce que rien ne bloque, les systèmes évolutifs sont très raisonnables à développer en Node.js.
 
@@ -38,7 +38,7 @@ Si certains de ces termes ne vous sont pas familiers, vous trouverez un article 
 
 ***
 
-Node.js est similaire dans sa conception à, et influencé par, des systèmes comme Ruby's [Event Machine][] et Python [Twisted][].
+Node.js est similaire dans sa conception à, et influencé par, des systèmes comme l'[Event Machine][] en Ruby et [Twisted][] en Python.
 [Event Machine][] de Ruby et [Twisted][] de Python. Node.js prend le modèle d'événement un peu plus loin.
 un peu plus loin. Il présente une [boucle d'événement][] comme une construction d'exécution plutôt que comme une bibliothèque. Dans d'autres systèmes, il y a toujours un appel bloquant pour démarrer la [boucle d'événement][].
 boucle d'événement.
@@ -49,16 +49,15 @@ Node.js entre simplement dans la boucle d'événement après avoir exécuté le 
 sort de la boucle d'événement lorsqu'il n'y a plus de callbacks à exécuter. Ce comportement
 est comme le JavaScript du navigateur - la boucle d'événements est cachée à l'utilisateur.
 
-HTTP est un citoyen de première classe dans Node.js, conçu avec le streaming et une faible latence à l'esprit.
+HTTP est un citoyen de première classe dans Node.js, conçu en gardant à l'esprit streaming et faible latence.
 faible latence à l'esprit. Cela rend Node.js bien adapté pour la fondation d'un web
 bibliothèque ou d'un cadre.
 
 Le fait que Node.js soit conçu sans threads ne veut pas dire que vous ne pouvez pas
 profiter de plusieurs cœurs dans votre environnement. Des processus enfants peuvent être créés
-en utilisant notre API [`child_process.fork()`][], et sont conçus pour être faciles à communiquer.
-communiquer avec. Construit sur cette même interface, le module [`cluster`][],
-qui vous permet de partager des sockets entre les processus pour permettre l'équilibrage de la charge
-sur vos cœurs.
+en utilisant notre API [`child_process.fork()`][], et sont conçus pour être faciles à communiquer avec.
+Construit sur cette même interface, le module [`cluster`][],
+qui vous permet de partager des sockets entre les processus pour équilibrer la charge sur les cœurs.
 
 [Blocage vs. non-blocage]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
 [Event Machine]: https://github.com/eventmachine/eventmachine

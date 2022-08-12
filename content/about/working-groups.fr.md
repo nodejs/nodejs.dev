@@ -23,9 +23,7 @@ Les responsabilités incluent :
 * Maintien du dépôt GitHub [addon-examples](https://github.com/nodejs/node-addon-examples)
   Dépôt GitHub, incluant le code, les problèmes et la documentation.
 * Maintenir l'API C++ Addon au sein du projet Node.js, en subordination avec le TSC Node.js.
-  le TSC Node.js.
 * Maintien de la documentation Addon au sein du projet Node.js, en subordination avec le TSC Node.js.
-  subordonnée au TSC Node.js.
 * Maintenir le paquet _nan_ dans npm, en publiant de nouvelles versions le cas échéant.
 * Messagerie sur l'avenir de l'interface Node.js et NAN pour donner à la communauté un préavis de changement.
   communauté un préavis des changements.
@@ -36,7 +34,6 @@ Les membres actuels peuvent être trouvés dans leur
 ## [Build](https://github.com/nodejs/build)
 
 L'objectif du groupe de travail Build est de créer et de maintenir une infrastructure d'automatisation distribuée.
-d'automatisation distribuée.
 
 Les responsabilités comprennent :
 
@@ -47,8 +44,7 @@ Les responsabilités comprennent :
 
 ## [Diagnostics](https://github.com/nodejs/diagnostics)
 
-L'objectif du groupe de travail sur les diagnostics est de présenter un ensemble d'interfaces de diagnostic complètes, documentées et extensibles pour l'utilisation par les outils Node js et les autres applications,
-documentées et extensibles à utiliser par les outils Node.js et les VMs JavaScript.
+L'objectif du groupe de travail sur les diagnostics est de présenter un ensemble d'interfaces de diagnostic complètes, documentées et extensibles pour l'utilisation par les outils Node js et les autres applications, documentées et extensibles à utiliser par les outils Node.js et les VMs JavaScript.
 JavaScript VMs.
 
 Les responsabilités incluent :
@@ -58,7 +54,7 @@ Les responsabilités incluent :
 * Collaboration avec Core pour affiner `async_wrap` et `async_hooks`.
 * Maintenir et améliorer l'intégration du système de trace OS (par exemple ETW, LTTNG, dtrace).
 * Documenter les capacités de diagnostic et les API de Node.js et de ses composants.
-* Explorer les opportunités et les lacunes, discuter des demandes de fonctionnalités et traiter les conflits dans les diagnostics Node.js. Les conflits dans les diagnostics Node.js.
+* Explorer les opportunités et les lacunes, discuter des demandes de fonctionnalités et traiter les conflits dans les diagnostics Node.js.
 * Encourager un écosystème d'outils de diagnostic pour Node.js.
 * Définir et ajouter des interfaces/API afin de permettre la génération de dumps lorsque cela est nécessaire.
 * Définir et ajouter des structures communes aux dumps générés afin de supporter les outils qui veulent introspecter ces dumps.
@@ -66,7 +62,6 @@ Les responsabilités incluent :
 ## [Docker](https://github.com/nodejs/docker-node)
 
 L'objectif du groupe de travail Docker est de construire, maintenir et améliorer les images Docker officielles pour le projet Node js.
-images Docker officielles pour le projet Node.js.
 
 Les responsabilités comprennent :
 
@@ -76,13 +71,7 @@ Les responsabilités comprennent :
 
 ## [Evangelism](https://github.com/nodejs/evangelism)
 
-L'objectif du groupe de travail Docker est de construire, maintenir et améliorer les images Docker officielles pour le projet Node js.
-images Docker officielles pour le projet Node.js.
-
-Les responsabilités comprennent :
-
-* Maintenir les images Docker officielles à jour en fonction des nouvelles versions de Node.js.
-* Décider et mettre en œuvre des images.
+Le groupe de travail sur l'évangélisation promeut les accomplissements
 de Node.js et fait savoir à la communauté comment elle peut s'impliquer.
 
 Les responsabilités comprennent :
@@ -91,13 +80,12 @@ Les responsabilités comprennent :
 * Gérer les médias sociaux officiels du projet.
 * Gérer la promotion des orateurs pour les réunions et les conférences.
 * Gérer la promotion des événements de la communauté.
-* Publier régulièrement des résumés de mise à jour et d'autres contenus promotionnels.
-  Améliorations et/ou corrections.
-* Maintenir et améliorer la documentation des images.
+* Publier des résumés de mise à jour régulière et d'autres contenus promotionnels.
+  promotionnel.
 
 ## [i18n](https://github.com/nodejs/i18n)
 
-Les groupes de travail i18n ne se limitent pas aux traductions. Ils
+Les groupes de travail i18n ne se limitent pas aux traductions.
 Ils permettent aux membres de la communauté de collaborer entre eux dans la langue de leur choix.
 dans la langue de leur choix.
 
@@ -108,7 +96,6 @@ diverses ressources du projet.
 Les responsabilités comprennent :
 
 * Traduire tout matériel Node.js qu'ils croient pertinent pour leur communauté.
-  communauté.
 * Réviser les processus pour maintenir les traductions à jour et de haute qualité.
 * Gérer et surveiller les canaux de médias sociaux dans leur langue.
 * Promouvoir les intervenants Node.js pour les rencontres et les conférences dans leur langue.

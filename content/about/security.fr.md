@@ -9,25 +9,24 @@ category: security
 
 Signalez les bogues de sécurité dans Node.js via [HackerOne](https://hackerone.com/nodejs).
 
-Votre rapport fera l'objet d'un accusé de réception dans les 24 heures, et vous recevrez une réponse plus détaillée dans les 48 heures.
-réponse plus détaillée à votre rapport dans les 48 heures, indiquant les prochaines étapes de
+Votre rapport fera l'objet d'un accusé de réception dans les 24 heures, et vous recevrez une réponse plus détaillée dans les 48 heures. Réponse plus détaillée à votre rapport dans les 48 heures, indiquant les prochaines étapes de
 traitement de votre demande.
 
 Après la réponse initiale à votre rapport, l'équipe de sécurité s'efforcera de vous tenir
-de vous tenir informé des progrès réalisés en vue d'une correction et d'une annonce complète,
+informé des progrès réalisés en vue d'une correction et d'une annonce complète,
 et pourra vous demander des informations supplémentaires ou des conseils sur le problème signalé.
 problème signalé.
 
 ### Programme de primes aux bugs pour Node.js
 
 Le projet Node.js s'engage dans un programme officiel de prime de bogue pour les chercheurs en sécurité et les divulgations publiques responsables.
-et les divulgations publiques responsables. Le programme est géré par
+responsables. Le programme est géré par
 la plateforme HackerOne. Voir <https://hackerone.com/nodejs> pour plus de détails.
 
 ## Signaler un bogue dans un module tiers
 
 Les bogues de sécurité dans les modules tiers doivent être signalés à leurs mainteneurs respectifs.
-mainteneurs respectifs et doivent être coordonnés par l'équipe de sécurité de l'écosystème Node.js
+et doivent être coordonnés par l'équipe de sécurité de l'écosystème Node.js
 Security Team via [HackerOne](https://hackerone.com/nodejs-ecosystem).
 
 Les détails concernant ce processus peuvent être trouvés dans le
@@ -40,13 +39,13 @@ et la divulgation responsable sont grandement appréciés et seront reconnus.
 
 Voici la politique de divulgation de la sécurité pour Node.js
 
-* Le rapport de sécurité est reçu et un gestionnaire principal lui est attribué. Cette personne personne coordonnera le processus de correction et de publication. Le problème est confirmé et une liste de toutes les versions affectées est déterminée. Le code est audité pour trouver tout problème similaire potentiel. Des correctifs sont préparés pour toutes les versions qui sont encore en maintenance. Ces correctifs ne sont pas engagés dans le dépôt public public mais plutôt conservés localement en attendant l'annonce.
+* Le rapport de sécurité est reçu et un gestionnaire principal lui est attribué. Cette personne coordonnera le processus de correction et de publication. Le problème est confirmé et une liste de toutes les versions affectées est déterminée. Le code est audité pour trouver tout problème similaire potentiel. Des correctifs sont préparés pour toutes les versions qui sont encore en maintenance. Ces correctifs ne sont pas engagés dans le dépôt public public mais plutôt conservés localement en attendant l'annonce.
 
 * Une date d'embargo suggérée pour cette vulnérabilité est choisie et un CVE (Common Vulnérabilités et Expositions (CVE®)) est demandé pour cette vulnérabilité.
 
-* À la date d'embargo, la liste de diffusion de la sécurité de Node.js reçoit une copie de l'annonce. annonce. Les changements sont poussés vers le dépôt public et les nouvelles constructions sont déployées sur nodejs.org. Sont déployées sur nodejs.org. Dans les 6 heures suivant la notification de la liste de diffusion une copie de l'avis sera publiée sur le blog de Node.js.
+* À la date d'embargo, la liste de diffusion de la sécurité de Node.js reçoit une copie de l'annonce. annonce. Les changements sont poussés vers le dépôt public et les nouvelles constructions. Sont déployées sur nodejs.org. Dans les 6 heures suivant la notification de la liste de diffusion une copie de l'avis sera publiée sur le blog de Node.js.
 
-* En général, la date d'embargo est fixée à 72 heures à compter de la date de publication du CVE. publié. Cependant, cela peut varier en fonction de la gravité du bogue ou de la difficulté à appliquer un correctif. difficulté à appliquer un correctif.
+* En général, la date d'embargo est fixée à 72 heures à compter de la date de publication du CVE. Cependant, cela peut varier en fonction de la gravité du bogue ou de la difficulté à appliquer un correctif. 
 
 * Ce processus peut prendre un certain temps, en particulier lorsqu'une coordination est nécessaire avec les mainteneurs d'autres projets. Avec les mainteneurs d'autres projets. Tous les efforts seront faits pour traiter le bogue de la manière la plus opportune possible ; cependant, il est important que nous suivions le processus de publication ci-dessus afin de garantir que la version finale du logiciel soit disponible. Le processus de publication ci-dessus pour s'assurer que la divulgation est traitée d'une manière cohérente.
 

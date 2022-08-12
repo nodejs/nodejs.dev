@@ -1,6 +1,6 @@
 ---
 title: Resources
-description: 'Ressources | Node.js'
+description: "Ressources | Node.js"
 authors: XhmikosR, mikeal, fhemberger, Fishrock123, yous, tomgco, tniessen, SMcCandlish, saadq, Trott, Gornstats, piperchester, naoufal, lpinca, j9t, bnoordhuis, harshadsabne, Chris911, MrJithil, AugustinMauroy
 category: about
 ---

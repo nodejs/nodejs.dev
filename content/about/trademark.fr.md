@@ -10,7 +10,7 @@ qualité, de la performance et de la facilité d'utilisation que les gens en son
 le logiciel et le projet Node.js. Afin de s'assurer que les marques de Node.js continuent à
 symboliser ces qualités, nous devons nous assurer que les marques ne sont utilisées que d'une manière
 qui ne trompent pas les gens ou les amènent à confondre Node.js avec d'autres logiciels de qualité inférieure.
-de qualité inférieure. Si nous ne nous assurons pas que les marques sont utilisées de cette façon, cela ne peut
+Si nous ne nous assurons pas que les marques sont utilisées de cette façon, cela ne peut
 seulement confondre les utilisateurs, cela peut rendre impossible l'utilisation de la marque pour se protéger
 contre les personnes qui exploitent malicieusement la marque à l'avenir. L'objectif principal
 de cette politique est de s'assurer que cela n'arrive pas à la marque Node.js, de sorte que
