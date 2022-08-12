@@ -92,7 +92,7 @@ console.dir(obj, {
 
 If any of those methods seemed complicated, well they are.
 
-The most straighforward way of logging an object is by using the formatting specification `%o`, like so:
+The most straightforward way of logging an object is by using the formatting specification `%o`, like so:
 
 ```js
 // %o tells console.log() to string-format and log obj in its place
