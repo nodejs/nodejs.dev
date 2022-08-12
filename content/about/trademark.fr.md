@@ -1,5 +1,5 @@
 ---
-title: Politique en matière de marques de commerce
+title: Trademark Policy
 description: "Politique en matière de marques de commerce | Node.js"
 authors: fhemberger, XhmikosR, mikeal,  brianwarner, bf4, AugustinMauroy
 category: trademark
