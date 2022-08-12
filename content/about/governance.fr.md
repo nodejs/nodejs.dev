@@ -2,7 +2,7 @@
 title: Gouvernance
 description: 'Gouvernance de projet  | Node.js'
 authors: XhmikosR, fhemberger, thefourtheye, ryanmurakami, refack, AugustinMauroy
-category: Gouvernance
+category: governance
 ---
 
 ## Processus de recherche de consensus

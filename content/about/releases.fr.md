@@ -2,7 +2,7 @@
 title: Sorties
 description: "Sorties | Node.js"
 authors: ZYSzys, nstanard,  mikeal, fhemberger, garybernhardt, piepmatz, boneskull, bjb568, AugustinMauroy
-category: Sorties
+category: releases
 ---
 
 Les versions majeures de Node.js passent au statut de version _Current_ pendant six mois, ce qui donne aux auteurs de bibliothèques le temps d'ajouter la prise en charge de ces versions.

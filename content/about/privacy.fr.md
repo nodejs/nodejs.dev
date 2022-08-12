@@ -2,7 +2,7 @@
 title: Politique de confidentialité
 description: 'Politique de confidentialité | Node.js'
 authors: XhmikosR, nschonni, brianwarner, hackygolucky, sindelio, sonicdoe, marsonya, AugustinMauroy
-category: Confidentialité
+category: privacy
 ---
 
 Date d'entrée en vigueur : 21 novembre 2019

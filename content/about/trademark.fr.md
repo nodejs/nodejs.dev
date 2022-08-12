@@ -2,7 +2,7 @@
 title: Politique en matière de marques de commerce
 description: "Politique en matière de marques de commerce | Node.js"
 authors: fhemberger, XhmikosR, mikeal,  brianwarner, bf4, AugustinMauroy
-category: marque déposée
+category: trademark
 ---
 
 Les marques de commerce, marques de service et marques graphiques de Node.js sont des symboles de la

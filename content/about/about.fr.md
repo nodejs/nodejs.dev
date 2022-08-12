@@ -2,7 +2,7 @@
 title: à propos de
 description: "à propos de | Node.js"
 authors: XhmikosR, mikeal, fhemberger, Fishrock123, yous, tomgco, tniessen, SMcCandlish, saadq, Trott, Gornstats, piperchester, naoufal,  lpinca, j9t, bnoordhuis, harshadsabne, Chris911, benhalverson, AugustinMauroy
-category: à propos de
+category: about
 ---
 
 En tant que moteur d'exécution JavaScript asynchrone piloté par les événements, Node.js est conçu pour construire

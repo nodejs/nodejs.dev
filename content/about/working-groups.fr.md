@@ -2,7 +2,7 @@
 title: Groupes de travail
 description: "Groupes de travail| Node.js"
 authors: williamkapke,Trott,fhemberger,rxmarbles,mhdawson,XhmikosR,ryanmurakami,outsideris,MaledongGit,vsemozhetbyt,wonderdogone,sotayamashita,richardlau,pierreneter,nschonni,marocchino,stevemao,lpinca,phillipj,jasnell,sejaljain123,AugustinMauroy
-category: Groupes de travail
+category: working-groups
 ---
 
 Les groupes de travail principaux sont créés par le
