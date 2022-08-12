@@ -1,7 +1,7 @@
 ---
 title: Security
 description: 'C'est la page de sécurité'
-authors: "reedloden, XhmikosR, Trott, fhemberger, MaledongGit, yous, sam-github, vdeturckheim, tniessen, richardlau, nschonni, mikeal, e-jigsaw, parthlaw, AugustinMauroy"
+authors: reedloden,XhmikosR,Trott,fhemberger,MaledongGit,yous,sam-github,vdeturckheim,tniessen,richardlau,nschonni,mikeal,e-jigsaw,parthlaw,AugustinMauroy
 category: Security
 ---
 
