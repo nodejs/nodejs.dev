@@ -38,10 +38,11 @@ Si certains de ces termes ne vous sont pas familiers, vous trouverez un article 
 
 ***
 
-Node.js est similaire dans sa conception à, et influencé par, des systèmes comme l'[Event Machine][] en Ruby et [Twisted][] en Python.
-[Event Machine][] de Ruby et [Twisted][] de Python. Node.js prend le modèle d'événement un peu plus loin.
-un peu plus loin. Il présente une [boucle d'événement][] comme une construction d'exécution plutôt que comme une bibliothèque. Dans d'autres systèmes, il y a toujours un appel bloquant pour démarrer la [boucle d'événement][].
-boucle d'événement.
+Node.js est similaire dans sa conception à, et influencé par, des systèmes comme
+l'[Event Machine][] de Ruby et [Twisted][] de Python. Node.js présente une
+[boucle d'événement][] comme une construction d'exécution plutôt que comme
+une bibliothèque. Dans d'autres systèmes, il y a toujours un appel bloquant pour
+démarrer la [boucle d'événement][].
 Typiquement, le comportement est défini par des callbacks au début d'un script, et
 à la fin, un serveur est démarré par un appel bloquant tel que
 `EventMachine::run()`. Dans Node.js, il n'y a pas d'appel bloquant comme "start-the-event-loop".
