@@ -16,12 +16,12 @@ const Footer = (): JSX.Element => {
     <footer className="footer">
       <ul className="footer__left">
         <li>
-          <Link className="footer__link" to="/trademark">
+          <Link className="footer__link" to="/about/trademark">
             Trademark Policy
           </Link>
         </li>
         <li>
-          <Link className="footer__link" to="/privacy">
+          <Link className="footer__link" to="/about/privacy">
             Privacy Policy
           </Link>
         </li>
@@ -34,7 +34,7 @@ const Footer = (): JSX.Element => {
           </a>
         </li>
         <li>
-          <Link className="footer__link" to="/security">
+          <Link className="footer__link" to="/about/security">
             Security Reporting
           </Link>
         </li>
@@ -44,6 +44,7 @@ const Footer = (): JSX.Element => {
           </Link>
         </li>
         <li>
+          {/* @TODO: Once our Blog components are completely read, move this link to our Blog page */}
           <a className="footer__link" href="https://nodejs.org/en/blog/">
             Blog
           </a>
