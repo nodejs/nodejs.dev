@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import WorkingGroupsPage from '../../src/pages/working-groups';
+import WorkingGroupsPage from '../../src/pages/about/working-groups';
 import '../__mocks__/intersectionObserverMock';
 import { createGeneralPageData } from '../__fixtures__/page';
 

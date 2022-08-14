@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import TrademarkPage from '../../src/pages/trademark';
+import TrademarkPage from '../../src/pages/about/trademark';
 import '../__mocks__/intersectionObserverMock';
 
 import { createGeneralPageData } from '../__fixtures__/page';

@@ -5,7 +5,9 @@ import {
   createGeneralPageData,
   createNodeReleasesData,
 } from '../__fixtures__/page';
-import ReleasesPage, { ReleasesNodeReleases } from '../../src/pages/releases';
+import ReleasesPage, {
+  ReleasesNodeReleases,
+} from '../../src/pages/about/releases';
 
 const mockNodeReleasesData = createNodeReleasesData();
 const mockReleasesNodeReleases: ReleasesNodeReleases = {

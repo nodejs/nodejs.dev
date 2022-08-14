@@ -316,13 +316,6 @@ exports[`Learn Template renders correctly 1`] = `
         </ul>
       </article>
     </main>
-    <section
-      class="bottom-info"
-    >
-      <div
-        class="random-contributor"
-      />
-    </section>
     <footer
       class="footer"
     >
@@ -332,7 +325,7 @@ exports[`Learn Template renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/trademark"
+            href="/about/trademark"
           >
             Trademark Policy
           </a>
@@ -340,7 +333,7 @@ exports[`Learn Template renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/privacy"
+            href="/about/privacy"
           >
             Privacy Policy
           </a>
@@ -356,7 +349,7 @@ exports[`Learn Template renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/security"
+            href="/about/security"
           >
             Security Reporting
           </a>
