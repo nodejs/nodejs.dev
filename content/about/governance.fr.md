@@ -33,6 +33,6 @@ l'extension de la communauté Node.js.
 [recherche de consensus]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [README.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
 [TSC]: https://github.com/nodejs/TSC
-[Comité directeur technique (CDT)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
+[Comité directeur technique (TSC)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
 [nodejs/node]: https://github.com/nodejs/node
