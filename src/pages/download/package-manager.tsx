@@ -21,6 +21,7 @@ export const query = graphql`
       frontmatter {
         title
         description
+        displayTitle
       }
       fields {
         authors
@@ -37,6 +38,7 @@ export const query = graphql`
       frontmatter {
         title
         description
+        displayTitle
       }
       fields {
         authors

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import SecurityPage from '../../src/pages/security';
+import SecurityPage from '../../src/pages/about/security';
 import '../__mocks__/intersectionObserverMock';
 import { createGeneralPageData } from '../__fixtures__/page';
 

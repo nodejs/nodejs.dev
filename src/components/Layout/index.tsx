@@ -3,6 +3,7 @@ import 'prismjs/themes/prism-okaidia.css';
 
 import React from 'react';
 import { MotionConfig } from 'framer-motion';
+import RandomContributor from '../RandomContributor';
 import { FeatureToggleProvider } from '../FeatureToggleProvider';
 
 import Header from '../Header';
@@ -20,6 +21,7 @@ interface Props {
   img?: string;
   href?: string;
   showFooter?: boolean;
+  showRandomContributor?: boolean;
 }
 
 const Layout = ({
@@ -28,6 +30,7 @@ const Layout = ({
   description,
   img,
   showFooter = true,
+  showRandomContributor = false,
 }: Props): JSX.Element => (
   <FeatureToggleProvider>
     <SEO title={title} description={description} img={img} />
@@ -35,6 +38,11 @@ const Layout = ({
       <div className="layout-container">
         <Header />
         {children}
+        {showRandomContributor && (
+          <section className="bottom-info">
+            <RandomContributor />
+          </section>
+        )}
         {showFooter && <Footer />}
       </div>
     </MotionConfig>

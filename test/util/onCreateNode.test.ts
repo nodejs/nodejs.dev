@@ -3,7 +3,7 @@ import createSlug from '../../util-node/createSlug';
 
 jest.mock('../../util-node/createSlug', () => jest.fn(() => 'slug'));
 
-function createMockNodeOfType(type) {
+function createMockNodeOfType(type: string) {
   return {
     actions: { createNodeField: jest.fn() },
     getNode: jest.fn(),
@@ -16,7 +16,7 @@ function createMockNodeOfType(type) {
 
 describe('Tests for onCreateNode', () => {
   beforeEach(() => {
-    createSlug.mockClear();
+    (createSlug as jest.Mock).mockClear();
   });
   it('generates a slug for Mdx nodes', () => {
     const { node, getNode, actions } = createMockNodeOfType('Mdx');

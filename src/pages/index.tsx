@@ -68,7 +68,7 @@ const Index = ({
     banners: { bannersIndex },
   },
 }: HomepageProps): JSX.Element => (
-  <Layout title={displayTitle} description={description}>
+  <Layout title={displayTitle} description={description} showRandomContributor>
     <main className="home-page">
       <Banner bannersIndex={bannersIndex} />
       <Hero

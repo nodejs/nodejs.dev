@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import PrivacyPage from '../../src/pages/privacy';
+import PrivacyPage from '../../src/pages/about/privacy';
 import '../__mocks__/intersectionObserverMock';
 
 import { createPrivacyData } from '../__fixtures__/page';

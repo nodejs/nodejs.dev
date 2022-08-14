@@ -2,17 +2,7 @@
   "hosting": {
     "target": "nodejs-dev",
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   },
-  "redirects": [
-    {
-      "source": "/en/get-involved",
-      "destination": "/community",
-      "type": "301"
-    }
-  ]
+  "redirects": []
 }

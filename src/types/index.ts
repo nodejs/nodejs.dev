@@ -98,6 +98,7 @@ export interface ArticleData {
   frontmatter: {
     title: string;
     description: string;
+    displayTitle?: string;
   };
   fields: { authors: string[]; slug?: string };
 }
