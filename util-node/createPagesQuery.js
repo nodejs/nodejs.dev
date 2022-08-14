@@ -1,6 +1,6 @@
 module.exports = `
 {
-  allMdx(
+  pages: allMdx(
     filter: {
       fields: {
         slug: {
@@ -62,6 +62,13 @@ module.exports = `
         fields {
           slug
         }
+      }
+    }
+  }
+  categories: allCategoriesYaml {
+    edges {
+      node {
+        name
       }
     }
   }
