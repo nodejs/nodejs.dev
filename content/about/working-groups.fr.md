@@ -155,7 +155,7 @@ Les responsabilités comprennent :
 
 ## [Communiqué de presse](https://github.com/nodejs/Release)
 
- groupe de travail de publication gère le processus de publication de Node.js
+Le groupe de travail de publication gère le processus de publication de Node.js
 
 Les responsabilités incluent :
 
