@@ -171,13 +171,6 @@ exports[`Blog page renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <section
-      class="bottom-info"
-    >
-      <div
-        class="random-contributor"
-      />
-    </section>
     <footer
       class="footer"
     >
@@ -187,7 +180,7 @@ exports[`Blog page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/trademark"
+            href="/about/trademark"
           >
             Trademark Policy
           </a>
@@ -195,7 +188,7 @@ exports[`Blog page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/privacy"
+            href="/about/privacy"
           >
             Privacy Policy
           </a>
@@ -211,7 +204,7 @@ exports[`Blog page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/security"
+            href="/about/security"
           >
             Security Reporting
           </a>
@@ -419,13 +412,6 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         </div>
       </div>
     </nav>
-    <section
-      class="bottom-info"
-    >
-      <div
-        class="random-contributor"
-      />
-    </section>
     <footer
       class="footer"
     >
@@ -435,7 +421,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/trademark"
+            href="/about/trademark"
           >
             Trademark Policy
           </a>
@@ -443,7 +429,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/privacy"
+            href="/about/privacy"
           >
             Privacy Policy
           </a>
@@ -459,7 +445,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/security"
+            href="/about/security"
           >
             Security Reporting
           </a>

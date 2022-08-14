@@ -1,6 +1,7 @@
 ---
-title: Installing Node.js via package manager
-description: Installing Node.js via package manager
+title: installing-node.js-via-package-manager
+displayTitle: Installing Node.js via Package Manager
+description: "Installing Node.js via Package Manager | Node.js"
 authors: fhemberger, XhmikosR, shadowspawn, vsemozhetbyt, nschonni, wildcard, MrJithil, kasicka, cassidyjames, Trott, richardlau, Qantas94Heavy, pierreneter, 0mp, ThePrez, PoojaDurgad, MaledongGit, Megajin, marc-maurer, yodeyer, geek, sudowork, strawbrary, ryanmurakami, rbnswartz, arkwright, oliversalzburg, mweagle, Mohamed3on, Ginden, kapouer, jperkin, jericopulvera, jedsmith, jasonkarns, sonicdoe, mcollina, fornwall, danbev, naskapal, awochna, AdamMajer, ahmetanilgur, bnb, qbit
 category: download
 ---

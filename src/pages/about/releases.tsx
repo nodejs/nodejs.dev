@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import ArticleLayout from '../components/Layout/article';
-import { NodeReleaseData } from '../types';
-import { SideNavBarKeys } from '../components/SideNavBar';
-import DownloadTable from '../components/DownloadReleases/DownloadTable';
-import connectGraphQlArticle from '../components/connectGraphQlArticle';
+import ArticleLayout from '../../components/Layout/article';
+import { NodeReleaseData } from '../../types';
+import { SideNavBarKeys } from '../../components/SideNavBar';
+import DownloadTable from '../../components/DownloadReleases/DownloadTable';
+import connectGraphQlArticle from '../../components/connectGraphQlArticle';
 
 export interface ReleasesNodeReleases {
   nodeReleases: {
@@ -30,6 +30,7 @@ export const query = graphql`
       frontmatter {
         title
         description
+        displayTitle
       }
       fields {
         authors
@@ -43,6 +44,7 @@ export const query = graphql`
       frontmatter {
         title
         description
+        displayTitle
       }
       fields {
         authors

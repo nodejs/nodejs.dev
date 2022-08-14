@@ -53,7 +53,9 @@ describe('SideNavBar', () => {
   it('should contain a href to `~/governance`', () => {
     render(<SideNavBar pageKey={SideNavBarKeys.governance} />);
     const governanceNavBarElement = screen.getByText('Project Governance');
-    expect(governanceNavBarElement.getAttribute('href')).toBe('/governance');
+    expect(governanceNavBarElement.getAttribute('href')).toBe(
+      '/about/governance'
+    );
   });
 
   it('should contain a href to `~/community`', () => {
@@ -66,14 +68,14 @@ describe('SideNavBar', () => {
     render(<SideNavBar pageKey={SideNavBarKeys.workingGroups} />);
     const workingGroupsNavBarElement = screen.getByText('Working Groups');
     expect(workingGroupsNavBarElement.getAttribute('href')).toBe(
-      '/working-groups'
+      '/about/working-groups'
     );
   });
 
   it('should contain a href to `~/releases`', () => {
     render(<SideNavBar pageKey={SideNavBarKeys.releases} />);
     const releasesNavBarElement = screen.getByText('Releases');
-    expect(releasesNavBarElement.getAttribute('href')).toBe('/releases');
+    expect(releasesNavBarElement.getAttribute('href')).toBe('/about/releases');
   });
 
   it('should contain a href to `~/resources`', () => {
@@ -85,19 +87,21 @@ describe('SideNavBar', () => {
   it('should contain a href to `~/trademark`', () => {
     render(<SideNavBar pageKey={SideNavBarKeys.trademark} />);
     const trademarkNavBarElement = screen.getByText('Trademark Policy');
-    expect(trademarkNavBarElement.getAttribute('href')).toBe('/trademark');
+    expect(trademarkNavBarElement.getAttribute('href')).toBe(
+      '/about/trademark'
+    );
   });
 
   it('should contain a href to `~/privacy`', () => {
     render(<SideNavBar pageKey={SideNavBarKeys.privacy} />);
     const privacyNavBarElement = screen.getByText('Privacy Policy');
-    expect(privacyNavBarElement.getAttribute('href')).toBe('/privacy');
+    expect(privacyNavBarElement.getAttribute('href')).toBe('/about/privacy');
   });
 
   it('should contain a href to `~/security`', () => {
     render(<SideNavBar pageKey={SideNavBarKeys.security} />);
     const securityNavBarElement = screen.getByText('Security Reporting');
-    expect(securityNavBarElement.getAttribute('href')).toBe('/security');
+    expect(securityNavBarElement.getAttribute('href')).toBe('/about/security');
   });
 
   it('should contain a href to `~/package-manager`', () => {

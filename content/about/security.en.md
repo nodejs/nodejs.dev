@@ -1,8 +1,9 @@
 ---
-title: Security
-description: 'This is security page'
+title: security
+displayTitle: Security
+description: "Security | Node.js"
 authors: reedloden,XhmikosR,Trott,fhemberger,MaledongGit,yous,sam-github,vdeturckheim,tniessen,richardlau,nschonni,mikeal,e-jigsaw,parthlaw
-category: security
+category: about
 ---
 
 ## Reporting a Bug in Node.js
