@@ -8,7 +8,7 @@ It will also teach you how to update Language metadata and how to enable Languag
 
 Currently, the Nodejs.dev website uses I18N metadatas that follow [this plugin](https://github.com/gatsbyjs/themes/tree/master/packages/gatsby-theme-i18n).
 
-You can see the current (and languages we intent to support in the future) by browsing the `src/i18n/config.json` file.
+You can see the current (and languages we intend to support in the future) by browsing the `src/i18n/config.json` file.
 
 ### How the metadata is structured?
 
@@ -38,7 +38,7 @@ The `src/i18n/config.json` file is a JSON file structured by one single Collecti
 | langDir    | `ltr`         | The direction of text on your language. It could be `ltr` (Left-to-right) or `rtl` (Right-to-left)                                                                                                                                          |                                                       |
 | dateFormat | `MM-DD-YYYY`  | The date format on your regional locale following the ISO-8601                                                                                                                                                                              | https://en.wikipedia.org/wiki/ISO_8601                |
 | hreflang   | `de`          | The 2-character (`de`) or 4-character (`de_AT`) code of your Language. Used my the browser to identify your Language. A two digit code is Country neutral eg.: Portuguese, and a 4 digit code is Country-specific eg.: Brazilian Portuguese | https://hreflang.org/list-of-hreflang-codes/          |
-| enabled    | `false`       | If the Language is enabled and currently supported by the website. Should only be enabled if bothte I18n team and Nodejs.dev team agrees that sufficient content for that page was translated.                                              |                                                       |
+| enabled    | `false`       | If the Language is enabled and currently supported by the website. Should only be enabled if both the I18n team and Nodejs.dev team agrees that sufficient content for that page was translated.                                              |                                                       |
 
 **Note.:** When testing a Language locally on your installation, please change `enabled: false` to `enabled: true`
 
