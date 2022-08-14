@@ -79,6 +79,7 @@ const connectGraphQlArticle = (
 
     const articleLayoutProps = {
       title: article.frontmatter.title,
+      displayTitle: article.frontmatter.displayTitle,
       description: article.frontmatter.description,
       authors: article.fields.authors,
       body: article.body,
@@ -96,7 +97,7 @@ const connectGraphQlArticle = (
 
     return (
       <Component
-        title={articleLayoutProps.title}
+        title={articleLayoutProps.displayTitle || articleLayoutProps.title}
         description={articleLayoutProps.description}
         authors={articleLayoutProps.authors}
         body={articleLayoutProps.body}

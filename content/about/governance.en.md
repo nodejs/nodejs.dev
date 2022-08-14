@@ -1,8 +1,9 @@
 ---
-title: Governance
+title: governance
+displayTitle: Governance
 description: 'Project Governance | Node.js'
 authors: XhmikosR, fhemberger, thefourtheye, ryanmurakami, refack
-category: governance
+category: about
 ---
 
 ## Consensus Seeking Process
