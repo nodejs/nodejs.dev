@@ -29,8 +29,8 @@ server.listen(port, hostname, () => {
 
 Cela contraste avec le modèle de concurrence le plus courant aujourd'hui, dans lequel les threads de l'OS
 sont utilisés. La mise en réseau fondée sur les threads est relativement inefficace et très difficile à utiliser.
-En outre, les utilisateurs de Node.js n'ont pas à se soucier du blocage du processus, puisqu'il n'y a pas de verrous.
-blocage du processus, puisqu'il n'y a pas de verrous. Presque aucune fonction de
+En outre, les utilisateurs de Node.js n'ont pas à se soucier du blocage du processus,
+puisqu'il n'y a pas de verrous. Presque aucune fonction de
 Node.js n'effectue directement des E/S, de sorte que le processus ne se bloque jamais. Parce que rien ne bloque, les systèmes évolutifs sont très raisonnables à développer en Node.js.
 
 Si certains de ces termes ne vous sont pas familiers, vous trouverez un article complet sur le site suivant
