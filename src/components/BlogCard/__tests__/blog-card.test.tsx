@@ -10,7 +10,7 @@ describe('Blog Card component', () => {
         fields: {
           date: '2019-07-11 23:40:56.77',
           slug: '/blog/2019/07/11/sample-blog',
-          categoryName: 'category-mock',
+          readingTime: { text: '1 min read' },
         },
         frontmatter: {
           blogAuthors: [
