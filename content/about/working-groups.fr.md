@@ -6,7 +6,7 @@ category: working-groups
 ---
 
 Les groupes de travail principaux sont créés par le
-[Comité directeur technique (CDT)](https://github.com/nodejs/TSC/blob/main/TSC-Charter.md).
+[Comité directeur technique (TSC)](https://github.com/nodejs/TSC/blob/main/TSC-Charter.md).
 
 ## [API pour les addons](https://github.com/nodejs/nan)
 
