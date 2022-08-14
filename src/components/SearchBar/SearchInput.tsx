@@ -1,4 +1,5 @@
 import React, { useMemo, useEffect, useState, createRef } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -102,7 +103,11 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
       >
         <i className="material-icons searchIcon">travel_explore</i>
         <label htmlFor="searchInput">
-          <span>{!isExpanded && 'Search'}</span>
+          <span>
+            {!isExpanded && (
+              <FormattedMessage id="components.searchBar.placeholder" />
+            )}
+          </span>
           <input
             ref={searchInputRef}
             autoComplete="off"
@@ -137,7 +142,13 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
           {isEmpty && (
             <div className="loadingWrapper">
               <div className="warningMessage">
-                {query.length ? 'No results found' : 'Start typing to Search'}
+                <FormattedMessage
+                  id={
+                    query.length
+                      ? 'components.searchBar.search.title'
+                      : 'components.searchBar.search.title'
+                  }
+                />
               </div>
             </div>
           )}

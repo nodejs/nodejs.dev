@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { detectOS } from '../../util/detectOS';
@@ -51,9 +52,10 @@ const DownloadPage = ({ data: { nodeReleases } }: Props): JSX.Element => {
       <span className="home-page -download">
         <DownloadHeader release={selectedType} />
         <p className="release-description">
-          Download the Node.js source code, a pre-built installer for your
-          platform, or install via{' '}
-          <Link to="/download/package-manager">package manager</Link>.
+          <FormattedMessage id="pages.download.description" />
+          <Link to="/download/package-manager">
+            <FormattedMessage id="pages.download.link" />
+          </Link>
         </p>
         <DownloadToggle
           selected={typeRelease}

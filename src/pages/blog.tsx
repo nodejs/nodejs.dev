@@ -1,5 +1,6 @@
-import { graphql } from 'gatsby';
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+import { graphql } from 'gatsby';
 import BlogCard from '../components/BlogCard';
 import Layout from '../components/Layout';
 import SideNavBar from '../components/SideNavBar';
