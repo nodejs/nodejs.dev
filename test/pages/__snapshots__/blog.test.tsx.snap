@@ -161,34 +161,56 @@ exports[`Blog page renders correctly 1`] = `
         <div
           class="blog-category-header"
         >
-          <h2>
-            Mock Category Slug
-          </h2>
-          <span />
+          <h1>
+            Node.js Blog
+          </h1>
+          <span>
+            The latest Node.js news, case studies, tutorials, and resources.
+          </span>
         </div>
       </div>
       <div
         class="blog-grid-container"
       >
         <div
-          class="blogCard"
+          class="blog-card"
         >
-          <a
+          <div
             class="title"
-            href="Mock blog slug"
           >
-            Mock blog title
-          </a>
-          <h4>
-            Mock date
-          </h4>
-          <p>
-            by
-             
-            <span>
-              Mock author name
-            </span>
-          </p>
+            <a
+              href="Mock blog slug"
+            >
+              Mock blog title
+            </a>
+            <div
+              class="metadata"
+            >
+              <a
+                class="category"
+                href="/blog/mock-category/"
+              >
+                Mock Category Slug
+              </a>
+              <span>
+                1 min read
+              </span>
+            </div>
+          </div>
+          <div
+            class="content"
+          >
+            <h4>
+              Mock date
+            </h4>
+            <p>
+              by
+               
+              <span>
+                Mock author name
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -454,6 +476,35 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         </div>
       </div>
     </nav>
+<<<<<<< HEAD
+=======
+    <div>
+      <div
+        class="blog-category-container"
+      >
+        <div
+          class="blog-category-header"
+        >
+          <h1>
+            Node.js Blog
+          </h1>
+          <span>
+            The latest Node.js news, case studies, tutorials, and resources.
+          </span>
+        </div>
+      </div>
+      <div
+        class="blog-grid-container"
+      />
+    </div>
+    <section
+      class="bottom-info"
+    >
+      <div
+        class="random-contributor"
+      />
+    </section>
+>>>>>>> 9a2012a (chpre(tests): updated tests)
     <footer
       class="footer"
     >
