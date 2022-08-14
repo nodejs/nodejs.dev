@@ -571,11 +571,17 @@ h6:hover .autolink-headers {
 
 .blog-grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-.blog-category-container > div {
-  padding: 40px 0 0 40px;
+.blog-category-container {
+  .blog-category-header {
+    padding: 40px 0 0 40px;
+
+    h1 {
+      margin: 0 0 20px 0;
+    }
+  }
 }
 
 .blog-category-container,
