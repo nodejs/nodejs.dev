@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen, render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '../../test-utils.js';
 import SideNavBar, {
   SideNavBarKeys,
   OverflowTypes,

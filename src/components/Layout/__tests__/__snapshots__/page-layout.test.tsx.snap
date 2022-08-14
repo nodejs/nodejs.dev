@@ -257,11 +257,11 @@ exports[`PageLayout component renders correctly with data 1`] = `
           <a
             class="link"
             href="https://github.com/nodejs/nodejs.dev/edit/main/mock-editPath"
+            style="margin: 0px;"
           >
             <span>
-              Edit this page on GitHub
+              Edit this page on GitHub 
             </span>
-             
             <svg
               class="icon"
               fill="currentColor"

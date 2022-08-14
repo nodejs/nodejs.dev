@@ -1,6 +1,6 @@
 import React from 'react';
-import { render, waitFor, screen } from '@testing-library/react';
 import fetchMock from 'jest-fetch-mock';
+import { render, waitFor, screen } from '../../test-utils.js';
 import {
   isClassObj,
   isEventObj,

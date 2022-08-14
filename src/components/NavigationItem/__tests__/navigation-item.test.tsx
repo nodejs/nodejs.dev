@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { render } from '@testing-library/react';
+import { render } from '../../../../test-utils.js';
 import NavigationItem from '..';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render } from '../../test-utils.js';
 import AllBlogPosts from '../../src/pages/blog';
 import { createBlogData } from '../__fixtures__/page';
 import '../__mocks__/intersectionObserverMock';

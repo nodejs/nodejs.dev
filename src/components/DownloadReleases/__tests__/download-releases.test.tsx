@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render } from '../../../../test-utils.js';
 import DownloadReleases from '..';
 import { getUpcomingReleases } from '../../../util/getUpcomingReleases';
 import { createNodeReleasesData } from '../../../../test/__fixtures__/page';

@@ -184,9 +184,7 @@ exports[`Download page renders correctly 1`] = `
           </span>
         </div>
         <div>
-          LATEST LTS
-           VERSION 
-          mock-version-1
+          LATEST LTS VERSION mock-version-1
         </div>
       </div>
       <div
@@ -200,22 +198,18 @@ exports[`Download page renders correctly 1`] = `
         <div
           class="download-page__navigation--npm"
         >
-          (includes npm 
-          mock-npm
-          )
+          (includes npm mock-npm)
         </div>
       </div>
       <p
         class="release-description"
       >
-        Download the Node.js source code, a pre-built installer for your platform, or install via
-         
+        Download the Node.js source code, a pre-built installer for your platform, or install via 
         <a
           href="/download/package-manager"
         >
-          package manager
+          package manager.
         </a>
-        .
       </p>
       <div
         class="download-toogle"
@@ -492,7 +486,7 @@ exports[`Download page renders correctly 1`] = `
         <p
           class="lts__text"
         >
-          Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general use. LTS release status is "long-term support", which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use Active LTS or Maintenance LTS releases.
+          Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general use. LTS release status is &quot;long-term support&quot;, which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use Active LTS or Maintenance LTS releases.
         </p>
         <div
           class="downloads-table-container"
@@ -1022,8 +1016,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           </span>
         </div>
         <div>
-          CURRENT
-           VERSION 
+          CURRENT VERSION 
         </div>
       </div>
       <div
@@ -1037,21 +1030,18 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         <div
           class="download-page__navigation--npm"
         >
-          (includes npm 
-          )
+          (includes npm )
         </div>
       </div>
       <p
         class="release-description"
       >
-        Download the Node.js source code, a pre-built installer for your platform, or install via
-         
+        Download the Node.js source code, a pre-built installer for your platform, or install via 
         <a
           href="/download/package-manager"
         >
-          package manager
+          package manager.
         </a>
-        .
       </p>
       <div
         class="download-toogle"
@@ -1328,7 +1318,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         <p
           class="lts__text"
         >
-          Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general use. LTS release status is "long-term support", which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use Active LTS or Maintenance LTS releases.
+          Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general use. LTS release status is &quot;long-term support&quot;, which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use Active LTS or Maintenance LTS releases.
         </p>
         <div
           class="downloads-table-container"

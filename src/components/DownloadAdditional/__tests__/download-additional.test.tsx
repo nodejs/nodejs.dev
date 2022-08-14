@@ -1,6 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { render } from '../../../../test-utils.js';
 import DownloadAdditional from '..';
 
 describe('DownloadAdditional component', (): void => {

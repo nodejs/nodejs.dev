@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../test-utils.js';
 import Index, { HomeNodeReleases } from '../../src/pages';
 import { BannersIndex } from '../../src/types';
 import { createNodeReleasesDataDetail } from '../__fixtures__/page';

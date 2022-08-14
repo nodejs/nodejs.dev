@@ -283,11 +283,11 @@ exports[`Learn Template renders correctly 1`] = `
           <a
             class="link"
             href="https://github.com/nodejs/nodejs.dev/edit/main/content/learn/test-path"
+            style="margin: 0px;"
           >
             <span>
-              Edit this page on GitHub
+              Edit this page on GitHub 
             </span>
-             
             <svg
               class="icon"
               fill="currentColor"
@@ -310,7 +310,7 @@ exports[`Learn Template renders correctly 1`] = `
               href="/learn/test-slug"
               rel="prev"
             >
-              ←   Prev
+              ←  Prev
             </a>
           </li>
           <li>
@@ -319,7 +319,7 @@ exports[`Learn Template renders correctly 1`] = `
               href="/learn/test-slug"
               rel="next"
             >
-              Next   →
+              Next →
             </a>
           </li>
         </ul>

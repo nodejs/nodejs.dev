@@ -1,6 +1,6 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { render, fireEvent } from '../../../../test-utils.js';
 
 import DownloadCards from '..';
 import { UserOS } from '../../../util/detectOS';

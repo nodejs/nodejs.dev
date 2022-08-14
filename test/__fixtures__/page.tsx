@@ -168,7 +168,7 @@ export const createBlogData = (): BlogPostsList & BlogCategoriesList => ({
             ],
           },
           fields: {
-            date: 'Mock date',
+            date: '11/11/2022',
             slug: 'Mock blog slug',
             readingTime: {
               text: '1 min read',
@@ -197,7 +197,7 @@ export const createBlogPageData = (): BlogPageData => ({
         },
       ],
     },
-    fields: { slug: 'slug-mock', date: 'date-mock' },
+    fields: { slug: 'slug-mock', date: '11/11/2022' },
   },
   recent: {
     edges: [
@@ -218,7 +218,7 @@ export const createBlogPageData = (): BlogPageData => ({
             ],
           },
           fields: {
-            date: 'date-mock',
+            date: '11/11/2022',
             slug: 'slug-mock',
             readingTime: { text: 'text-mock' },
           },

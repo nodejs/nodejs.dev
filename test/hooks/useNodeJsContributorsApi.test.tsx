@@ -1,6 +1,6 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
 import fetchMock from 'jest-fetch-mock';
+import { render, screen, waitFor } from '../../test-utils.js';
 import { useNodeJsContributorsApi } from '../../src/hooks';
 import { createRandomContributorApiData } from '../__fixtures__/hooks';
 

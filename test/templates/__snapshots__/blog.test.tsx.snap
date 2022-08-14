@@ -205,7 +205,7 @@ exports[`LearnLayout Template renders correctly 1`] = `
         <h5
           class="list"
         >
-          date-mock
+          11/11/2022
            by
            
           <span>

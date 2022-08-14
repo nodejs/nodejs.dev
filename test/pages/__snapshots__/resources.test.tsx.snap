@@ -353,11 +353,11 @@ exports[`About page renders correctly 1`] = `
           <a
             class="link"
             href="https://github.com/nodejs/nodejs.dev/edit/main/content/resources/resources.en.md"
+            style="margin: 0px;"
           >
             <span>
-              Edit this page on GitHub
+              Edit this page on GitHub 
             </span>
-             
             <svg
               class="icon"
               fill="currentColor"

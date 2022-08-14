@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render } from '../../../test-utils.js';
 import PackageManager from '../../../src/pages/download/package-manager';
 import '../../__mocks__/intersectionObserverMock';
 

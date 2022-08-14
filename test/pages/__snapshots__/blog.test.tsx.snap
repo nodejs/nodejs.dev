@@ -207,56 +207,34 @@ exports[`Blog page renders correctly 1`] = `
           <h2>
             Node.js Blog
           </h2>
-          <span>
-            The latest Node.js news, case studies, tutorials, and resources.
-          </span>
-        </div>
-        <div
-          class="blog-items"
-        >
-          <div
-            class="blog-card"
-          >
-            <div
-              class="title"
-            >
-              <a
-                href="Mock blog slug"
-              >
-                Mock blog title
-              </a>
-              <div
-                class="metadata"
-              >
-                <a
-                  class="category"
-                  href="/blog/mock-category/"
-                >
-                  Mock Category Slug
-                </a>
-                <span>
-                  1 min read
-                </span>
-              </div>
-            </div>
-            <div
-              class="content"
-            >
-              <h4>
-                Mock date
-              </h4>
-              <p>
-                by
-                 
-                <span>
-                  Mock author name
-                </span>
-              </p>
-            </div>
-          </div>
+          <span />
         </div>
       </div>
-    </main>
+      <div
+        class="blog-grid-container"
+      >
+        <div
+          class="blogCard"
+        >
+          <a
+            class="title"
+            href="Mock blog slug"
+          >
+            Mock blog title
+          </a>
+          <h4>
+            Mock date
+          </h4>
+          <p>
+            by
+
+            <span>
+              Mock author name
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
     <footer
       class="footer"
     >
