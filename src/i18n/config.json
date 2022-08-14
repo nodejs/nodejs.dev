@@ -50,7 +50,7 @@
     "name": "Persian",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hrefLang": "fr-FR",
+    "hrefLang": "",
     "enabled": false
   },
   {
@@ -59,7 +59,7 @@
     "name": "French",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hrefLang": "",
+    "hrefLang": "fr-FR",
     "enabled": false
   },
   {
