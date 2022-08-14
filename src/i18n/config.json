@@ -60,7 +60,7 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "fr-FR",
-    "enabled": false
+    "enabled": true
   },
   {
     "code": "it",
