@@ -1,8 +1,9 @@
 ---
-title: Privacy Policy
+title: privacy-policy
+displayTitle: Privacy Policy
 description: 'Privacy Policy | Node.js'
 authors: XhmikosR, nschonni, brianwarner, hackygolucky, sindelio, sonicdoe, marsonya
-category: privacy
+category: about
 ---
 
 Effective Date: November 21, 2019

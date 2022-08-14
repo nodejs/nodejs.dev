@@ -6,14 +6,14 @@ import '../../styles/about.scss';
 // eslint-disable-next-line no-shadow
 export enum SideNavBarKeys {
   about = 'about',
-  governance = 'governance',
+  governance = 'about/governance',
   community = 'community',
-  workingGroups = 'working-groups',
-  releases = 'releases',
+  workingGroups = 'about/working-groups',
+  releases = 'about/releases',
   resources = 'resources',
-  trademark = 'trademark',
-  privacy = 'privacy',
-  security = 'security',
+  trademark = 'about/trademark',
+  privacy = 'about/privacy',
+  security = 'about/security',
   packageManager = 'download/package-manager',
 }
 
