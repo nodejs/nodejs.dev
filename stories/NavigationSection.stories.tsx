@@ -13,7 +13,7 @@ const noop = (): null => {
   return null;
 };
 
-export const root = (): JSX.Element => (
+export const Root = (): JSX.Element => (
   <NavigationSection
     key="123"
     title="Introduction"

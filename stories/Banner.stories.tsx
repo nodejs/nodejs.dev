@@ -19,4 +19,4 @@ export default {
   title: 'Banner',
   component: Banner,
 };
-export const root = (): JSX.Element => <Banner bannersIndex={bannersIndex} />;
+export const Root = (): JSX.Element => <Banner bannersIndex={bannersIndex} />;

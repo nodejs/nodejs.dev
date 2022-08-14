@@ -8,4 +8,4 @@ export default {
   title: 'EditLink',
   component: EditLink,
 };
-export const root = (): JSX.Element => <EditLink relativePath="/" />;
+export const Root = (): JSX.Element => <EditLink relativePath="/" />;

@@ -178,7 +178,7 @@ const nodeReleasesLTSVersion: NodeReleaseDataDetail[] = [
   },
 ];
 
-export const root = (): JSX.Element => (
+export const Root = (): JSX.Element => (
   <Hero
     title={title}
     subTitle={subTitle}

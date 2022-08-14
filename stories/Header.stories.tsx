@@ -9,4 +9,4 @@ export default {
   title: 'Header',
   component: Header,
 };
-export const root = (): JSX.Element => <Header />;
+export const Root = (): JSX.Element => <Header />;

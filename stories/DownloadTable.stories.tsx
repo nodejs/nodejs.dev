@@ -61,4 +61,4 @@ const DownloadTableExample = (): JSX.Element => {
   return <DownloadTable nodeReleasesData={nodeReleasesData} />;
 };
 
-export const root = (): JSX.Element => <DownloadTableExample />;
+export const Root = (): JSX.Element => <DownloadTableExample />;

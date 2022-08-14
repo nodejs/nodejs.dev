@@ -9,7 +9,7 @@ export default {
   component: Pagination,
 };
 
-export const root = (): JSX.Element => (
+export const Root = (): JSX.Element => (
   <Pagination
     next={{ slug: 'test-slug', title: 'Next' }}
     previous={{ slug: 'test-slug', title: 'Previous' }}

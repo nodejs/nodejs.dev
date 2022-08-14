@@ -8,4 +8,4 @@ export default {
   title: 'Footer',
   component: Footer,
 };
-export const root = (): JSX.Element => <Footer />;
+export const Root = (): JSX.Element => <Footer />;

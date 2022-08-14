@@ -10,4 +10,4 @@ export default {
   component: InstallTabs,
 };
 
-export const root = (): JSX.Element => <InstallTabs />;
+export const Root = (): JSX.Element => <InstallTabs />;

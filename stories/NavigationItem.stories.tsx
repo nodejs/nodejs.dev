@@ -13,7 +13,7 @@ const noop = (): null => {
   return null;
 };
 
-export const root = (): JSX.Element => (
+export const Root = (): JSX.Element => (
   <NavigationItem
     key="123"
     isRead
