@@ -1,8 +1,9 @@
 ---
-title: Working Groups
-description: "Working Groups| Node.js"
+title: working-groups
+displayTitle: Working Groups
+description: "Working Groups | Node.js"
 authors: williamkapke,Trott,fhemberger,rxmarbles,mhdawson,XhmikosR,ryanmurakami,outsideris,MaledongGit,vsemozhetbyt,wonderdogone,sotayamashita,richardlau,pierreneter,nschonni,marocchino,stevemao,lpinca,phillipj,jasnell,sejaljain123
-category: working-groups
+category: about
 ---
 
 Core Working Groups are created by the

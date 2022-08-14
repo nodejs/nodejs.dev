@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import GovernancePage from '../../src/pages/governance';
+import GovernancePage from '../../src/pages/about/governance';
 import '../__mocks__/intersectionObserverMock';
 
 import { createGeneralPageData } from '../__fixtures__/page';

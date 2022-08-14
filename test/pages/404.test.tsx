@@ -5,7 +5,7 @@ import '../__mocks__/intersectionObserverMock';
 
 describe('404 page', () => {
   it('renders correctly', () => {
-    const { container } = render(<NotFound location={window.location} />);
+    const { container } = render(<NotFound />);
     expect(container).toMatchSnapshot();
   });
 });
