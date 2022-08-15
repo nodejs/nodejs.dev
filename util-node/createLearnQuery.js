@@ -3,22 +3,7 @@ module.exports = `
   allMdx(
     filter: {
       fields: {
-        slug: {
-          nin: [
-            ""
-            "nodejs-community"
-            "homepage"
-            "trademark-policy"
-            "working-groups"
-            "resources"
-            "privacy-policy"
-            "about"
-            "governance"
-            "security"
-            "package-manager"
-          ]
-        }
-        categoryName: { ne: "learn" }
+        categoryName: { eq: "learn" }
       }
     }
     sort: { fields: [fileAbsolutePath], order: ASC }
