@@ -59,8 +59,8 @@
     "name": "French",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hrefLang": "fr-FR",
-    "enabled": true
+    "hrefLang": "",
+    "enabled":false
   },
   {
     "code": "it",
