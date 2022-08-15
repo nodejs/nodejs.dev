@@ -94,14 +94,6 @@ In the case of an objection being raised in a pull request by another collaborat
 * Pull Request must remain open for 72 hours without any objections
 * Once the requirements are met and approved, the pull request can be merged and a member of @nodejs/community-committee will add the new member to the [@nodejs/nodejs-dev team](https://github.com/orgs/nodejs/teams/nodejs-dev)
 
-## 📕 Storybook
-
-This project uses [Storybook][], a tool which provides a sandbox environment for developing UI components. To generate the Storybook locally:
-
-* Run `npm run storybook`
-* Navigate to `localhost:6006`
-
-The production Storybook can be viewed at <https://nodejs.dev/storybook>
 
 ## 🐛 Debugging Failing Checks
 
@@ -135,7 +127,6 @@ By making a contribution to this project, I certify that:
   including my sign-off) is maintained indefinitely and may be redistributed consistent
   with this project or the open source license(s) involved.
 
-[Storybook]: https://storybook.js.org/
 [`squash`]: https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits
 [conventional commits]: https://www.conventionalcommits.org/
 [nodejs.dev repo]: https://github.com/nodejs/nodejs.dev
