@@ -7,6 +7,7 @@ const getNodeReleasesData = require('./util-node/getNodeReleasesData');
 const getBannersData = require('./util-node/getBannersData');
 const getNvmData = require('./util-node/getNvmData');
 const createPagesQuery = require('./util-node/createPagesQuery');
+const createLearnQuery = require('./util-node/createLearnQuery');
 const createMarkdownPages = require('./util-node/createMarkdownPages');
 const redirects = require('./util-node/redirects');
 
@@ -43,13 +44,6 @@ exports.createSchemaCustomization = ({ actions }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage, createRedirect } = actions;
 
-  const result = await graphql(createPagesQuery);
-
-  if (result.errors) {
-    reporter.panicOnBuild('Error while running "createPages" GraphQL query.');
-    return;
-  }
-
   Object.keys(redirects).forEach(from => {
     createRedirect({
       fromPath: from,
@@ -62,26 +56,44 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const docTemplate = path.resolve('./src/templates/learn.tsx');
   const blogTemplate = path.resolve('./src/templates/blog.tsx');
 
-  const { edges } = result.data.allMdx;
+  const [learnResult, pagesResult] = await Promise.all([
+    graphql(createLearnQuery),
+    graphql(createPagesQuery),
+  ]);
 
-  const { markdownPages, navigationData } = createMarkdownPages(
-    edges,
-    learnYamlNavigationData
-  );
-
-  const learnNavigationEntries = Object.keys(navigationData);
-
-  if (learnNavigationEntries.length) {
-    const firstSectionPages = navigationData[learnNavigationEntries[0]].data;
-
-    if (firstSectionPages.length) {
-      createPage({
-        path: `/learn/`,
-        component: docTemplate,
-        context: { ...firstSectionPages[0], navigationData },
-      });
-    }
+  if (pagesResult.errors || learnResult.errors) {
+    reporter.panicOnBuild('Error while running GraphQL queries.');
+    return;
   }
+
+  const { markdownPages, learnPages, firstLearnPage, navigationData } =
+    createMarkdownPages(
+      pagesResult.data.allMdx.edges,
+      learnResult.data.allMdx.edges,
+      learnYamlNavigationData
+    );
+
+  if (firstLearnPage) {
+    createPage({
+      path: `/learn/`,
+      component: docTemplate,
+      context: { ...firstLearnPage, navigationData },
+    });
+  }
+
+  learnPages.forEach(page => {
+    createPage({
+      path: `/learn/${page.slug}`,
+      component: docTemplate,
+      context: { ...page, navigationData },
+    });
+
+    createRedirect({
+      fromPath: `/${page.slug}`,
+      toPath: `/learn/${page.slug}`,
+      isPermanent: true,
+    });
+  });
 
   markdownPages.forEach(page => {
     // Blog Pages don't necessary need to be within the `blog` category
@@ -91,21 +103,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         path: page.slug,
         component: blogTemplate,
         context: page,
-      });
-      return;
-    }
-
-    if (page.category === 'learn') {
-      createPage({
-        path: `/learn/${page.slug}`,
-        component: docTemplate,
-        context: { ...page, navigationData },
-      });
-
-      createRedirect({
-        fromPath: `/${page.slug}`,
-        toPath: `/learn/${page.slug}`,
-        isPermanent: true,
       });
     }
   });
