@@ -167,12 +167,5 @@ module.exports = {
         locales: localesAsString,
       },
     },
-    // @see https://www.gatsbyjs.com/plugins/gatsby-theme-i18n-react-intl/
-    {
-      resolve: `gatsby-theme-i18n-react-intl`,
-      options: {
-        defaultLocale: `./src/i18n/locales/${defaultLanguage}.json`,
-      },
-    },
   ],
 };
