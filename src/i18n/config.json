@@ -3,8 +3,8 @@
     "code": "ar",
     "localName": "العربية",
     "name": "Arabic",
-    "langDir": "ltr",
-    "dateFormat": "DD.MM.YYYY",
+    "langDir": "rtl",
+    "dateFormat": "YYYY.MM.DD",
     "hrefLang": "ar",
     "enabled": false
   },
@@ -31,7 +31,7 @@
     "localName": "English",
     "name": "English",
     "langDir": "ltr",
-    "dateFormat": "MM/DD/YYYY",
+    "dateFormat": "MM.DD.YYYY",
     "hrefLang": "en-US",
     "enabled": true
   },
@@ -48,8 +48,8 @@
     "code": "fa",
     "localName": "زبان فارسی",
     "name": "Persian",
-    "langDir": "ltr",
-    "dateFormat": "DD.MM.YYYY",
+    "langDir": "rtl",
+    "dateFormat": "YYYY.MM.DD",
     "hrefLang": "fa",
     "enabled": false
   },
@@ -76,7 +76,7 @@
     "localName": "日本語",
     "name": "Japanese",
     "langDir": "ltr",
-    "dateFormat": "DD.MM.YYYY",
+    "dateFormat": "YYYY.MM.DD",
     "hrefLang": "ja",
     "enabled": false
   },
@@ -94,7 +94,7 @@
     "localName": "한국어",
     "name": "Korean",
     "langDir": "ltr",
-    "dateFormat": "DD.MM.YYYY",
+    "dateFormat": "YYYY.MM.DD",
     "hrefLang": "ko",
     "enabled": false
   },
@@ -129,7 +129,7 @@
     "code": "tr",
     "localName": "Türkçe",
     "name": "Turkish",
-    "langDir": "ltr",
+    "langDir": "rtl",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "tr",
     "enabled": false
@@ -146,10 +146,10 @@
   {
     "code": "zh-cn",
     "localName": "简体中文",
-    "name": " Chinese",
+    "name": "Chinese",
     "langDir": "ltr",
-    "dateFormat": "DD.MM.YYYY",
-    "hrefLang": "zh-Hans",
+    "dateFormat": "YYYY.MM.DD",
+    "hrefLang": "zh-Hant",
     "enabled": false
   },
   {
@@ -157,8 +157,8 @@
     "localName": "繁體中文",
     "name": "Traditional Chinese",
     "langDir": "ltr",
-    "dateFormat": "DD.MM.YYYY",
-    "hrefLang": "zh-Hant",
+    "dateFormat": "YYYY.MM.DD",
+    "hrefLang": "zh-Hans",
     "enabled": false
   }
 ]
