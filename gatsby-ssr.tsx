@@ -1,10 +1,11 @@
 import * as React from 'react';
 import ReactIntlProvider from './src/containers/ReactIntl';
+import { defaultLanguage } from './util-node/locales';
 import type { WrapPageElementSSR } from './src/types';
 
 // eslint-disable-next-line import/prefer-default-export
 export const wrapPageElement: WrapPageElementSSR = ({ element, props }) => {
-  const { locale, intlMessages } = props.pageContext;
+  const { locale = defaultLanguage, intlMessages = {} } = props.pageContext;
 
   // eslint-disable-next-line react/jsx-props-no-spreading
   return (
