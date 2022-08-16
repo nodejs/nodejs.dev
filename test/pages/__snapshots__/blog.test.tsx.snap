@@ -476,8 +476,6 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         </div>
       </div>
     </nav>
-<<<<<<< HEAD
-=======
     <div>
       <div
         class="blog-category-container"
@@ -497,14 +495,6 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         class="blog-grid-container"
       />
     </div>
-    <section
-      class="bottom-info"
-    >
-      <div
-        class="random-contributor"
-      />
-    </section>
->>>>>>> 9a2012a (chpre(tests): updated tests)
     <footer
       class="footer"
     >
