@@ -13,7 +13,7 @@ Please follow this check list to ensure that you've followed all items before op
 - [ ] I have run `npm run lint:js -- --fix` and/or `npm run lint:md -- --fix` for my JavaScript and/or Markdown changes.
   - This is important as most of the cases your code changes might not be correctly linted
 - [ ] I have run `npm run test` to check if all tests are passing, and/or `npm run test -- -u` to update snapshots if I created and/or updated React Components.
-- [ ] I have checked that the build works locally and that `npm run build` and `npm run build-storybook` work fine.
+- [ ] I have checked that the build works locally and that `npm run build` work fine.
 - [ ] I've covered new added functionality with unit tests if necessary.
 
 ## Description
