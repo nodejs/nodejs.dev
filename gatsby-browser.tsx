@@ -1,5 +1,6 @@
 import * as React from 'react';
 import ReactIntlProvider from './src/containers/ReactIntl';
+import { defaultLanguage } from './util-node/locales';
 import type { WrapPageElementBrowser } from './src/types';
 
 declare global {
@@ -16,7 +17,7 @@ export const onRouteUpdate = () => {
 };
 
 export const wrapPageElement: WrapPageElementBrowser = ({ element, props }) => {
-  const { locale, intlMessages } = props.pageContext;
+  const { locale = defaultLanguage, intlMessages = {} } = props.pageContext;
 
   // eslint-disable-next-line react/jsx-props-no-spreading
   return (
