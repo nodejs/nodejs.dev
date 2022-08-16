@@ -1,26 +1,29 @@
 .edit {
   display: flex;
   flex-wrap: wrap;
-}
 
-.link {
-  color: var(--black7) !important;
-  font-family: var(--sans-serif);
-  font-size: 1.4rem;
-  font-weight: normal;
-  text-decoration: none !important;
-  text-transform: uppercase;
-  vertical-align: middle;
-  span {
+  .link {
+    color: var(--color-text-secondary);
+    font-family: var(--sans-serif);
+    font-size: 1.4rem;
     font-weight: normal;
+    text-decoration: none !important;
+    text-transform: uppercase;
     vertical-align: middle;
-  }
-  &:hover {
-    color: var(--brand-light) !important;
-  }
-}
+    margin-left: 0;
 
-.icon {
-  margin-left: 0.5rem;
-  vertical-align: middle;
+    span {
+      font-weight: normal;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      color: var(--brand-light);
+    }
+
+    .icon {
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+  }
 }

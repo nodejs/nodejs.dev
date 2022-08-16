@@ -15,6 +15,13 @@
   height: 3em;
   position: relative;
   width: 100%;
+
+  label {
+    display: flex;
+    width: 100%;
+    color: var(--color-text-accent);
+    transition: all 250ms ease-in-out;
+  }
 }
 
 .inputText {
@@ -30,14 +37,6 @@
 
   &:focus {
     outline: none;
-    &::placeholder {
-      opacity: 0;
-    }
-  }
-
-  &::placeholder {
-    color: #99cc7d;
-    transition: all 250ms ease-in-out;
   }
 }
 
@@ -46,8 +45,8 @@
 }
 
 .searchIcon {
-  color: var(--color-brand-primary);
-  font-size: 24px;
+  color: var(--color-text-accent);
+  font-size: 24px !important;
   vertical-align: middle;
 }
 

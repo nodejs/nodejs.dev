@@ -38,7 +38,7 @@ const Header = (): JSX.Element => {
     <nav aria-label="Primary" className="nav">
       <div className="nav__container">
         <div className="nav__startwrapper">
-          <Link to="/">
+          <Link to="/" aria-label="Homepage">
             <div className="logo">
               <LogoLight className="nav__logo light-mode-only" />
               <LogoDark className="nav__logo dark-mode-only" />

@@ -84,15 +84,19 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
     >
       <div className="searchInputContainer">
         <i className="material-icons searchIcon">search</i>
-        <input
-          autoComplete="off"
-          className="inputText"
-          name="query"
-          value={query}
-          onChange={changeHandler}
-          placeholder="Search"
-          onFocus={expandContainer}
-        />
+        <label htmlFor="searchInput">
+          {!isExpanded && 'Search'}
+          <input
+            autoComplete="off"
+            className="inputText"
+            id="searchInput"
+            name="query"
+            type="text"
+            value={query}
+            onChange={changeHandler}
+            onFocus={expandContainer}
+          />
+        </label>
         <AnimatePresence>
           {isExpanded && (
             <motion.span
