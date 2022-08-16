@@ -16,6 +16,7 @@ exports[`Home page renders correctly 1`] = `
           class="nav__startwrapper"
         >
           <a
+            aria-label="Homepage"
             href="/"
           >
             <div
@@ -97,13 +98,19 @@ exports[`Home page renders correctly 1`] = `
                   >
                     search
                   </i>
-                  <input
-                    autocomplete="off"
-                    class="inputText"
-                    name="query"
-                    placeholder="Search"
-                    value=""
-                  />
+                  <label
+                    for="searchInput"
+                  >
+                    Search
+                    <input
+                      autocomplete="off"
+                      class="inputText"
+                      id="searchInput"
+                      name="query"
+                      type="text"
+                      value=""
+                    />
+                  </label>
                 </div>
               </div>
             </li>
@@ -622,6 +629,7 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
           class="nav__startwrapper"
         >
           <a
+            aria-label="Homepage"
             href="/"
           >
             <div
@@ -703,13 +711,19 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
                   >
                     search
                   </i>
-                  <input
-                    autocomplete="off"
-                    class="inputText"
-                    name="query"
-                    placeholder="Search"
-                    value=""
-                  />
+                  <label
+                    for="searchInput"
+                  >
+                    Search
+                    <input
+                      autocomplete="off"
+                      class="inputText"
+                      id="searchInput"
+                      name="query"
+                      type="text"
+                      value=""
+                    />
+                  </label>
                 </div>
               </div>
             </li>

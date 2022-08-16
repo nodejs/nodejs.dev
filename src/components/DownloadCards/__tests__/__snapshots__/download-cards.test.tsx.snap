@@ -12,12 +12,12 @@ exports[`DownloadCards component renders correctly 1`] = `
       role="tablist"
     >
       <li
-        aria-controls="panelnull"
+        aria-controls="paneldownload-card-WIN"
         aria-disabled="false"
         aria-selected="false"
         class="download-card download-card--active"
         data-rttab="true"
-        id="tabnull"
+        id="tabdownload-card-WIN"
         role="tab"
         tabindex="0"
       >
@@ -50,12 +50,12 @@ exports[`DownloadCards component renders correctly 1`] = `
         </p>
       </li>
       <li
-        aria-controls="panelnull"
+        aria-controls="paneldownload-card-MAC"
         aria-disabled="false"
         aria-selected="false"
         class="download-card"
         data-rttab="true"
-        id="tabnull"
+        id="tabdownload-card-MAC"
         role="tab"
         tabindex="0"
       >
@@ -78,12 +78,12 @@ exports[`DownloadCards component renders correctly 1`] = `
         </p>
       </li>
       <li
-        aria-controls="panelnull"
+        aria-controls="paneldownload-card-SOURCECODE"
         aria-disabled="false"
         aria-selected="false"
         class="download-card"
         data-rttab="true"
-        id="tabnull"
+        id="tabdownload-card-SOURCECODE"
         role="tab"
         tabindex="0"
       >

@@ -16,6 +16,7 @@ exports[`Download page renders correctly 1`] = `
           class="nav__startwrapper"
         >
           <a
+            aria-label="Homepage"
             href="/"
           >
             <div
@@ -97,13 +98,19 @@ exports[`Download page renders correctly 1`] = `
                   >
                     search
                   </i>
-                  <input
-                    autocomplete="off"
-                    class="inputText"
-                    name="query"
-                    placeholder="Search"
-                    value=""
-                  />
+                  <label
+                    for="searchInput"
+                  >
+                    Search
+                    <input
+                      autocomplete="off"
+                      class="inputText"
+                      id="searchInput"
+                      name="query"
+                      type="text"
+                      value=""
+                    />
+                  </label>
                 </div>
               </div>
             </li>
@@ -247,12 +254,12 @@ exports[`Download page renders correctly 1`] = `
           role="tablist"
         >
           <li
-            aria-controls="panelnull"
+            aria-controls="paneldownload-card-WIN"
             aria-disabled="false"
             aria-selected="false"
             class="download-card"
             data-rttab="true"
-            id="tabnull"
+            id="tabdownload-card-WIN"
             role="tab"
             tabindex="0"
           >
@@ -275,12 +282,12 @@ exports[`Download page renders correctly 1`] = `
             </p>
           </li>
           <li
-            aria-controls="panelnull"
+            aria-controls="paneldownload-card-MAC"
             aria-disabled="false"
             aria-selected="false"
             class="download-card"
             data-rttab="true"
-            id="tabnull"
+            id="tabdownload-card-MAC"
             role="tab"
             tabindex="0"
           >
@@ -303,12 +310,12 @@ exports[`Download page renders correctly 1`] = `
             </p>
           </li>
           <li
-            aria-controls="panelnull"
+            aria-controls="paneldownload-card-SOURCECODE"
             aria-disabled="false"
             aria-selected="false"
             class="download-card download-card--active"
             data-rttab="true"
-            id="tabnull"
+            id="tabdownload-card-SOURCECODE"
             role="tab"
             tabindex="0"
           >
@@ -839,6 +846,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           class="nav__startwrapper"
         >
           <a
+            aria-label="Homepage"
             href="/"
           >
             <div
@@ -920,13 +928,19 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   >
                     search
                   </i>
-                  <input
-                    autocomplete="off"
-                    class="inputText"
-                    name="query"
-                    placeholder="Search"
-                    value=""
-                  />
+                  <label
+                    for="searchInput"
+                  >
+                    Search
+                    <input
+                      autocomplete="off"
+                      class="inputText"
+                      id="searchInput"
+                      name="query"
+                      type="text"
+                      value=""
+                    />
+                  </label>
                 </div>
               </div>
             </li>
@@ -1068,12 +1082,12 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           role="tablist"
         >
           <li
-            aria-controls="panelnull"
+            aria-controls="paneldownload-card-WIN"
             aria-disabled="false"
             aria-selected="false"
             class="download-card"
             data-rttab="true"
-            id="tabnull"
+            id="tabdownload-card-WIN"
             role="tab"
             tabindex="0"
           >
@@ -1096,12 +1110,12 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             </p>
           </li>
           <li
-            aria-controls="panelnull"
+            aria-controls="paneldownload-card-MAC"
             aria-disabled="false"
             aria-selected="false"
             class="download-card"
             data-rttab="true"
-            id="tabnull"
+            id="tabdownload-card-MAC"
             role="tab"
             tabindex="0"
           >
@@ -1124,12 +1138,12 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             </p>
           </li>
           <li
-            aria-controls="panelnull"
+            aria-controls="paneldownload-card-SOURCECODE"
             aria-disabled="false"
             aria-selected="false"
             class="download-card download-card--active"
             data-rttab="true"
-            id="tabnull"
+            id="tabdownload-card-SOURCECODE"
             role="tab"
             tabindex="0"
           >

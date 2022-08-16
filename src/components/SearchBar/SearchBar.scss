@@ -17,10 +17,10 @@
   width: 100%;
 
   label {
-    display: flex;
-    width: 100%;
     color: var(--color-text-accent);
+    display: flex;
     transition: all 250ms ease-in-out;
+    width: 100%;
   }
 }
 

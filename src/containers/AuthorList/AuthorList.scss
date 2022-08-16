@@ -16,12 +16,12 @@
   }
 
   h5 {
+    color: var(--color-text-secondary);
     display: flex;
     flex-wrap: wrap;
     font-size: 1.4rem;
     font-weight: normal;
     margin: 0.5rem 0.5rem 0.5rem 0;
     width: 100%;
-    color: var(--color-text-secondary);
   }
 }

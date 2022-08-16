@@ -13,6 +13,7 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
         class="nav__startwrapper"
       >
         <a
+          aria-label="Homepage"
           href="/"
         >
           <div
@@ -94,13 +95,19 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
                 >
                   search
                 </i>
-                <input
-                  autocomplete="off"
-                  class="inputText"
-                  name="query"
-                  placeholder="Search"
-                  value=""
-                />
+                <label
+                  for="searchInput"
+                >
+                  Search
+                  <input
+                    autocomplete="off"
+                    class="inputText"
+                    id="searchInput"
+                    name="query"
+                    type="text"
+                    value=""
+                  />
+                </label>
               </div>
             </div>
           </li>
@@ -167,6 +174,7 @@ exports[`Tests for Header component renders correctly 1`] = `
         class="nav__startwrapper"
       >
         <a
+          aria-label="Homepage"
           href="/"
         >
           <div
@@ -248,13 +256,19 @@ exports[`Tests for Header component renders correctly 1`] = `
                 >
                   search
                 </i>
-                <input
-                  autocomplete="off"
-                  class="inputText"
-                  name="query"
-                  placeholder="Search"
-                  value=""
-                />
+                <label
+                  for="searchInput"
+                >
+                  Search
+                  <input
+                    autocomplete="off"
+                    class="inputText"
+                    id="searchInput"
+                    name="query"
+                    type="text"
+                    value=""
+                  />
+                </label>
               </div>
             </div>
           </li>
@@ -321,6 +335,7 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
         class="nav__startwrapper"
       >
         <a
+          aria-label="Homepage"
           href="/"
         >
           <div
@@ -402,13 +417,19 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
                 >
                   search
                 </i>
-                <input
-                  autocomplete="off"
-                  class="inputText"
-                  name="query"
-                  placeholder="Search"
-                  value=""
-                />
+                <label
+                  for="searchInput"
+                >
+                  Search
+                  <input
+                    autocomplete="off"
+                    class="inputText"
+                    id="searchInput"
+                    name="query"
+                    type="text"
+                    value=""
+                  />
+                </label>
               </div>
             </div>
           </li>

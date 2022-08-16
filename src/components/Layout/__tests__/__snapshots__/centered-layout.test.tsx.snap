@@ -13,6 +13,7 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
         class="nav__startwrapper"
       >
         <a
+          aria-label="Homepage"
           href="/"
         >
           <div
@@ -94,13 +95,19 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
                 >
                   search
                 </i>
-                <input
-                  autocomplete="off"
-                  class="inputText"
-                  name="query"
-                  placeholder="Search"
-                  value=""
-                />
+                <label
+                  for="searchInput"
+                >
+                  Search
+                  <input
+                    autocomplete="off"
+                    class="inputText"
+                    id="searchInput"
+                    name="query"
+                    type="text"
+                    value=""
+                  />
+                </label>
               </div>
             </div>
           </li>
@@ -276,6 +283,7 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
         class="nav__startwrapper"
       >
         <a
+          aria-label="Homepage"
           href="/"
         >
           <div
@@ -357,13 +365,19 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
                 >
                   search
                 </i>
-                <input
-                  autocomplete="off"
-                  class="inputText"
-                  name="query"
-                  placeholder="Search"
-                  value=""
-                />
+                <label
+                  for="searchInput"
+                >
+                  Search
+                  <input
+                    autocomplete="off"
+                    class="inputText"
+                    id="searchInput"
+                    name="query"
+                    type="text"
+                    value=""
+                  />
+                </label>
               </div>
             </div>
           </li>
