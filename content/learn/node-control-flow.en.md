@@ -57,7 +57,7 @@ function middleware(someInput, callback) {
 
 function initiate() {
   const someInput = 'hello this is a function ';
-  middleware(function (result) {
+  middleware(someInput, function (result) {
     console.log(result);
     // requires callback to `return` result
   });
@@ -209,7 +209,7 @@ function final(result) {
         \n${result.failed.join('\n')}\n`);
 }
 
-items.forEach(function (recipient) {
+recipients.forEach(function (recipient) {
   dispatch(recipient, function (err) {
     if (!err) {
       success += 1;
