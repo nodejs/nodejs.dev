@@ -1,6 +1,6 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import { render } from '../../../../test-utils.js';
+import { render } from '@testing-library/react';
 import DownloadAdditional from '..';
 
 describe('DownloadAdditional component', (): void => {
@@ -40,6 +40,7 @@ describe('DownloadAdditional component', (): void => {
       />
     );
 
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     const downloadItem = container.querySelector(
       '.download-additional__item'
     ) as Element;
@@ -59,6 +60,7 @@ describe('DownloadAdditional component', (): void => {
       />
     );
 
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     const downloadItem = container.querySelector(
       '.download-additional__item'
     ) as Element;

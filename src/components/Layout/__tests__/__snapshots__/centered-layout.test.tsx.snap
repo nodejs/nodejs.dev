@@ -180,7 +180,7 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
       <li>
         <a
           class="footer__link"
-          href="/about/trademark"
+          href="/trademark"
         >
           Trademark Policy
         </a>
@@ -188,7 +188,7 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
       <li>
         <a
           class="footer__link"
-          href="/about/privacy"
+          href="/privacy"
         >
           Privacy Policy
         </a>
@@ -204,7 +204,7 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
       <li>
         <a
           class="footer__link"
-          href="/about/security"
+          href="/security"
         >
           Security Reporting
         </a>

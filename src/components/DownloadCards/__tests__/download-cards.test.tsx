@@ -1,6 +1,6 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import { render, fireEvent } from '../../../../test-utils.js';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 import DownloadCards from '..';
 import { UserOS } from '../../../util/detectOS';
@@ -12,9 +12,9 @@ describe('DownloadCards component', (): void => {
   });
 
   it('check click handler on DownloadCards component', async () => {
-    const { getAllByRole } = render(<DownloadCards userOS={UserOS.MAC} />);
+    render(<DownloadCards userOS={UserOS.MAC} />);
 
-    const listElement = getAllByRole('tab');
+    const listElement = screen.getAllByRole('tab');
 
     expect(listElement[0]).toHaveClass('download-card');
 
@@ -24,12 +24,10 @@ describe('DownloadCards component', (): void => {
   });
 
   it('check left and right arrow click handler on DownloadCards component', (): void => {
-    const { getByRole, getAllByRole } = render(
-      <DownloadCards userOS={UserOS.MAC} />
-    );
+    render(<DownloadCards userOS={UserOS.MAC} />);
 
-    const tabListElement = getByRole('tablist');
-    const listElement = getAllByRole('tab');
+    const tabListElement = screen.getByRole('tablist');
+    const listElement = screen.getAllByRole('tab');
 
     expect(listElement[0]).toHaveClass('download-card');
 

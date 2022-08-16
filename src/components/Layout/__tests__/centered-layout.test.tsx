@@ -1,7 +1,6 @@
 import React from 'react';
-import { render } from '../../../../test-utils.js';
+import { render } from '@testing-library/react';
 import CenteredLayout from '../centered';
-import '../../../../test/__mocks__/intersectionObserverMock';
 
 describe('CenteredLayout component', () => {
   it('renders correctly with footer', () => {

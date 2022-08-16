@@ -1,7 +1,7 @@
 import React from 'react';
-import { render } from '../../../../test-utils.js';
+import { render } from '@testing-library/react';
 import TOC from '..';
-import { mockTableOfContents } from '../../../../test/__fixtures__/page';
+import { mockTableOfContents } from '../../../__fixtures__/page';
 
 describe('TOC component', () => {
   it('renders correctly', () => {

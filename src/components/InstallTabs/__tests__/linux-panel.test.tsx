@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '../../../../test-utils.js';
+import { render } from '@testing-library/react';
 import { PureLinuxPanel as LinuxPanel } from '../LinuxPanel';
 
 describe('Tests for LinuxPanel component', () => {

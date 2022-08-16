@@ -1,9 +1,8 @@
 import React from 'react';
-import '../../../../test/__mocks__/intersectionObserverMock';
-import { render } from '../../../../test-utils.js';
+import { render } from '@testing-library/react';
 import PageLayout from '../page';
-import { mockTableOfContents } from '../../../../test/__fixtures__/page';
-import mockMDXBodyContent from '../../../../test/__fixtures__/mockMDXBodyContent';
+import { mockTableOfContents } from '../../../__fixtures__/page';
+import mockMDXBodyContent from '../../../__fixtures__/mockMDXBodyContent';
 
 describe('PageLayout component', () => {
   it('renders correctly with data', () => {

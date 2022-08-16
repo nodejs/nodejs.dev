@@ -286,7 +286,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/about/trademark"
+            href="/trademark"
           >
             Trademark Policy
           </a>
@@ -294,7 +294,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/about/privacy"
+            href="/privacy"
           >
             Privacy Policy
           </a>
@@ -310,7 +310,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/about/security"
+            href="/security"
           >
             Security Reporting
           </a>

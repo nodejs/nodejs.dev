@@ -1,7 +1,7 @@
 import React from 'react';
-import { render } from '../../../../test-utils.js';
+import { render } from '@testing-library/react';
 import RecentPosts from '..';
-import { createBlogPageData } from '../../../../test/__fixtures__/page';
+import { createBlogPageData } from '../../../__fixtures__/page';
 
 describe('RecentPosts component', (): void => {
   it('should render correctly', (): void => {

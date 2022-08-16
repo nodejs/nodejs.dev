@@ -1,8 +1,8 @@
 import React from 'react';
-import { render } from '../../../../test-utils.js';
+import { render } from '@testing-library/react';
 import DownloadReleases from '..';
 import { getUpcomingReleases } from '../../../util/getUpcomingReleases';
-import { createNodeReleasesData } from '../../../../test/__fixtures__/page';
+import { createNodeReleasesData } from '../../../__fixtures__/page';
 
 const mockNodeReleasesData = createNodeReleasesData();
 const mockUpcomingReleases = getUpcomingReleases(mockNodeReleasesData);

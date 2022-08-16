@@ -1,6 +1,6 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import { render, fireEvent, screen } from '../../../../test-utils.js';
+import { render, fireEvent, screen } from '@testing-library/react';
 import Header from '..';
 import { useMediaQuery } from '../../../hooks/useMediaQuery';
 

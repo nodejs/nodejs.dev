@@ -1,6 +1,6 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import { render } from '../../../../test-utils.js';
+import { render, screen } from '@testing-library/react';
 
 import Codebox from '../index';
 
@@ -34,7 +34,8 @@ describe('Codebox component', (): void => {
 
   it('renders correctly', async () => {
     const textToCopy = <p>text to be copy</p>;
-    const { getByText, findByText } = render(
+
+    render(
       <Codebox>
         {{
           props: {
@@ -47,12 +48,12 @@ describe('Codebox component', (): void => {
 
     navigatorClipboardSpy.mockImplementationOnce(() => Promise.resolve());
 
-    const buttonElement = getByText('copy');
+    const buttonElement = screen.getByText('copy');
     userEvent.click(buttonElement);
 
-    await findByText('copied');
+    await screen.findByText('copied');
 
-    expect(getByText('done')).toBeInTheDocument();
+    expect(screen.getByText('done')).toBeInTheDocument();
     expect(navigatorClipboardSpy).toHaveBeenCalledTimes(1);
     expect(navigatorClipboardSpy).toHaveBeenCalledWith(textToCopy.toString());
   });

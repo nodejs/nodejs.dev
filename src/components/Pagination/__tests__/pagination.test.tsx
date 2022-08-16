@@ -1,7 +1,7 @@
 import React from 'react';
-import { render } from '../../../../test-utils.js';
+import { render } from '@testing-library/react';
 import Pagination from '..';
-import { createPaginationInfo } from '../../../../test/__fixtures__/page';
+import { createPaginationInfo } from '../../../__fixtures__/page';
 
 describe('Pagination component', () => {
   it('renders links to the next and previous page', () => {

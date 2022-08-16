@@ -6,7 +6,7 @@ export const ReactComponent = React.forwardRef<
 >((props, ref) => (
   <svg
     ref={ref}
-    /* eslint-disable-next-line react/jsx-props-no-spreading */
+    // eslint-disable-next-line react/jsx-props-no-spreading
     {...props}
   />
 ));

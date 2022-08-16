@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '../../../../test-utils.js';
+import { render } from '@testing-library/react';
 import DownloadHeader from '..';
 
 describe('DownloadHeader component', (): void => {
