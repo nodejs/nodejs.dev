@@ -71,6 +71,7 @@ const InstallTabs = (): JSX.Element | null => {
     LINUX: [os.linux, os.mac, os.win],
     UNIX: [os.linux, os.mac, os.win],
     UNKNOWN: [os.win, os.mac, os.linux],
+    MOBILE: [],
   };
 
   const panelSwitch = useMemo(() => getOSPanel(userOS), [userOS]);
