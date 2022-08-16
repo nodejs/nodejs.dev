@@ -94,11 +94,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   } = learnResult.data;
 
   const { markdownPages, learnPages, firstLearnPage, navigationData } =
-    createMarkdownPages(
-      pageEdges,
-      learnEdges,
-      learnYamlNavigationData
-    );
+    createMarkdownPages(pageEdges, learnEdges, learnYamlNavigationData);
 
   if (firstLearnPage) {
     createPage({
