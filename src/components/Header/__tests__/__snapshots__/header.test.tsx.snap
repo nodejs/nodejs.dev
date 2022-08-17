@@ -89,16 +89,20 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
             >
               <div
                 class="searchInputContainer"
+                role="button"
+                tabindex="0"
               >
                 <i
                   class="material-icons searchIcon"
                 >
-                  search
+                  travel_explore
                 </i>
                 <label
                   for="searchInput"
                 >
-                  Search
+                  <span>
+                    Search
+                  </span>
                   <input
                     autocomplete="off"
                     class="inputText"
@@ -112,7 +116,7 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
             </div>
           </li>
           <li
-            class="nav__tabs nav__tabs--right"
+            class="nav__tabs"
           >
             <button
               class="dark-mode-toggle"
@@ -126,33 +130,14 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
               <i
                 class="material-icons light-mode-only theme-buttons"
               >
-                nights_stay
+                mode_night
               </i>
               <i
                 class="material-icons dark-mode-only theme-buttons"
               >
-                wb_sunny
+                brightness_medium
               </i>
             </button>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <a
-              href="https://github.com/nodejs/nodejs.dev"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <span
-                class="sr-only"
-              >
-                GitHub
-              </span>
-              <svg
-                fill="var(--color-text-accent)"
-                style="margin-bottom: -3px;"
-              />
-            </a>
           </li>
         </ul>
       </div>
@@ -250,16 +235,20 @@ exports[`Tests for Header component renders correctly 1`] = `
             >
               <div
                 class="searchInputContainer"
+                role="button"
+                tabindex="0"
               >
                 <i
                   class="material-icons searchIcon"
                 >
-                  search
+                  travel_explore
                 </i>
                 <label
                   for="searchInput"
                 >
-                  Search
+                  <span>
+                    Search
+                  </span>
                   <input
                     autocomplete="off"
                     class="inputText"
@@ -273,7 +262,7 @@ exports[`Tests for Header component renders correctly 1`] = `
             </div>
           </li>
           <li
-            class="nav__tabs nav__tabs--right"
+            class="nav__tabs"
           >
             <button
               class="dark-mode-toggle"
@@ -287,33 +276,14 @@ exports[`Tests for Header component renders correctly 1`] = `
               <i
                 class="material-icons light-mode-only theme-buttons"
               >
-                nights_stay
+                mode_night
               </i>
               <i
                 class="material-icons dark-mode-only theme-buttons"
               >
-                wb_sunny
+                brightness_medium
               </i>
             </button>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <a
-              href="https://github.com/nodejs/nodejs.dev"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <span
-                class="sr-only"
-              >
-                GitHub
-              </span>
-              <svg
-                fill="var(--color-text-accent)"
-                style="margin-bottom: -3px;"
-              />
-            </a>
           </li>
         </ul>
       </div>
@@ -411,16 +381,20 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
             >
               <div
                 class="searchInputContainer"
+                role="button"
+                tabindex="0"
               >
                 <i
                   class="material-icons searchIcon"
                 >
-                  search
+                  travel_explore
                 </i>
                 <label
                   for="searchInput"
                 >
-                  Search
+                  <span>
+                    Search
+                  </span>
                   <input
                     autocomplete="off"
                     class="inputText"
@@ -434,7 +408,7 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
             </div>
           </li>
           <li
-            class="nav__tabs nav__tabs--right"
+            class="nav__tabs"
           >
             <button
               class="dark-mode-toggle"
@@ -448,33 +422,14 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
               <i
                 class="material-icons light-mode-only theme-buttons"
               >
-                nights_stay
+                mode_night
               </i>
               <i
                 class="material-icons dark-mode-only theme-buttons"
               >
-                wb_sunny
+                brightness_medium
               </i>
             </button>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <a
-              href="https://github.com/nodejs/nodejs.dev"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <span
-                class="sr-only"
-              >
-                GitHub
-              </span>
-              <svg
-                fill="var(--color-text-accent)"
-                style="margin-bottom: -3px;"
-              />
-            </a>
           </li>
         </ul>
       </div>

@@ -310,9 +310,7 @@ select {
   list-style: none;
   margin: 0;
   padding-left: 0;
-}
 
-.nav .right-container {
   > li:first-child {
     flex-grow: 1;
     height: 3em;

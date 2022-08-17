@@ -89,16 +89,20 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
             >
               <div
                 class="searchInputContainer"
+                role="button"
+                tabindex="0"
               >
                 <i
                   class="material-icons searchIcon"
                 >
-                  search
+                  travel_explore
                 </i>
                 <label
                   for="searchInput"
                 >
-                  Search
+                  <span>
+                    Search
+                  </span>
                   <input
                     autocomplete="off"
                     class="inputText"
@@ -112,7 +116,7 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
             </div>
           </li>
           <li
-            class="nav__tabs nav__tabs--right"
+            class="nav__tabs"
           >
             <button
               class="dark-mode-toggle"
@@ -126,33 +130,14 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
               <i
                 class="material-icons light-mode-only theme-buttons"
               >
-                nights_stay
+                mode_night
               </i>
               <i
                 class="material-icons dark-mode-only theme-buttons"
               >
-                wb_sunny
+                brightness_medium
               </i>
             </button>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <a
-              href="https://github.com/nodejs/nodejs.dev"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <span
-                class="sr-only"
-              >
-                GitHub
-              </span>
-              <svg
-                fill="var(--color-text-accent)"
-                style="margin-bottom: -3px;"
-              />
-            </a>
           </li>
         </ul>
       </div>
@@ -359,16 +344,20 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
             >
               <div
                 class="searchInputContainer"
+                role="button"
+                tabindex="0"
               >
                 <i
                   class="material-icons searchIcon"
                 >
-                  search
+                  travel_explore
                 </i>
                 <label
                   for="searchInput"
                 >
-                  Search
+                  <span>
+                    Search
+                  </span>
                   <input
                     autocomplete="off"
                     class="inputText"
@@ -382,7 +371,7 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
             </div>
           </li>
           <li
-            class="nav__tabs nav__tabs--right"
+            class="nav__tabs"
           >
             <button
               class="dark-mode-toggle"
@@ -396,33 +385,14 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
               <i
                 class="material-icons light-mode-only theme-buttons"
               >
-                nights_stay
+                mode_night
               </i>
               <i
                 class="material-icons dark-mode-only theme-buttons"
               >
-                wb_sunny
+                brightness_medium
               </i>
             </button>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <a
-              href="https://github.com/nodejs/nodejs.dev"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <span
-                class="sr-only"
-              >
-                GitHub
-              </span>
-              <svg
-                fill="var(--color-text-accent)"
-                style="margin-bottom: -3px;"
-              />
-            </a>
           </li>
         </ul>
       </div>

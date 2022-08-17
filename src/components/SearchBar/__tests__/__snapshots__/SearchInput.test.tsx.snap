@@ -11,16 +11,20 @@ Object {
       >
         <div
           class="searchInputContainer"
+          role="button"
+          tabindex="0"
         >
           <i
             class="material-icons searchIcon"
           >
-            search
+            travel_explore
           </i>
           <label
             for="searchInput"
           >
-            Search
+            <span>
+              Search
+            </span>
             <input
               autocomplete="off"
               class="inputText"
@@ -41,16 +45,20 @@ Object {
     >
       <div
         class="searchInputContainer"
+        role="button"
+        tabindex="0"
       >
         <i
           class="material-icons searchIcon"
         >
-          search
+          travel_explore
         </i>
         <label
           for="searchInput"
         >
-          Search
+          <span>
+            Search
+          </span>
           <input
             autocomplete="off"
             class="inputText"

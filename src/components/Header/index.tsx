@@ -3,7 +3,6 @@ import React, { useRef } from 'react';
 import { useTheme } from '@skagami/gatsby-plugin-dark-mode';
 import { ReactComponent as LogoLight } from '../../images/logos/nodejs-logo-light-mode.svg';
 import { ReactComponent as LogoDark } from '../../images/logos/nodejs-logo-dark-mode.svg';
-import { ReactComponent as GitHubLogo } from '../../images/logos/github-logo.svg';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { useLocaleAsDropdown } from '../../hooks/useLocaleAsDropdown';
 import { useAutoClosableDropdown } from '../../hooks/useAutoClosableDropdown';
