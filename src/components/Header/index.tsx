@@ -95,22 +95,20 @@ const Header = (): JSX.Element => {
               <SearchBar />
             </li>
             <li className="nav__tabs nav__tabs--right">
-              {theme && (
-                <button
-                  type="button"
-                  onClick={() => handleThemeOnClick()}
-                  className="dark-mode-toggle"
-                  onKeyPress={() => handleThemeOnClick(true)}
-                >
-                  <span className="sr-only">Toggle Dark Mode</span>
-                  <i className="material-icons light-mode-only theme-buttons">
-                    nights_stay
-                  </i>
-                  <i className="material-icons dark-mode-only theme-buttons">
-                    wb_sunny
-                  </i>
-                </button>
-              )}
+              <button
+                type="button"
+                onClick={() => handleThemeOnClick()}
+                className="dark-mode-toggle"
+                onKeyPress={() => handleThemeOnClick(true)}
+              >
+                <span className="sr-only">Toggle Dark Mode</span>
+                <i className="material-icons light-mode-only theme-buttons">
+                  nights_stay
+                </i>
+                <i className="material-icons dark-mode-only theme-buttons">
+                  wb_sunny
+                </i>
+              </button>
             </li>
 
             <li className="nav__tabs">
