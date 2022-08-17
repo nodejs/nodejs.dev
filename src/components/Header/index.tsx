@@ -94,7 +94,8 @@ const Header = (): JSX.Element => {
             <li className="nav__tabs">
               <SearchBar />
             </li>
-            <li className="nav__tabs nav__tabs--right">
+
+            <li className="nav__tabs">
               <button
                 type="button"
                 onClick={() => handleThemeOnClick()}
@@ -103,26 +104,12 @@ const Header = (): JSX.Element => {
               >
                 <span className="sr-only">Toggle Dark Mode</span>
                 <i className="material-icons light-mode-only theme-buttons">
-                  nights_stay
+                  mode_night
                 </i>
                 <i className="material-icons dark-mode-only theme-buttons">
-                  wb_sunny
+                  brightness_medium
                 </i>
               </button>
-            </li>
-
-            <li className="nav__tabs">
-              <a
-                target="_blank"
-                href="https://github.com/nodejs/nodejs.dev"
-                rel="noopener noreferrer"
-              >
-                <span className="sr-only">GitHub</span>
-                <GitHubLogo
-                  fill="var(--color-text-accent)"
-                  style={{ marginBottom: '-3px' }}
-                />
-              </a>
             </li>
 
             {featureToggles.has('i18n-language-selector') && (

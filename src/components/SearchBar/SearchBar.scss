@@ -21,6 +21,7 @@
     display: flex;
     transition: all 250ms ease-in-out;
     width: 100%;
+    cursor: pointer;
   }
 }
 
@@ -44,9 +45,8 @@
   padding: 0 15px 0 0;
 }
 
-.searchIcon {
+.searchIcon, .closeIcon {
   color: var(--color-text-accent);
-  font-size: 24px !important;
   vertical-align: middle;
 }
 

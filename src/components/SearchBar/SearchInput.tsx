@@ -1,4 +1,5 @@
-import React, { useMemo, useEffect, useState } from 'react';
+import React, { useMemo, useEffect, useState, createRef } from 'react';
+import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from 'react-click-outside-hook';
 import { Index } from 'elasticlunr';
@@ -25,7 +26,7 @@ const containerVariants = {
 const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [noResults, setNoResults] = useState(false);
+  const searchInputRef = createRef<HTMLInputElement>();
 
   const isEmpty = !results || results.length === 0;
   const [isExpanded, setExpanded] = useState(false);
@@ -48,7 +49,6 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
     e.preventDefault();
 
     if (e.target.value === '') {
-      setNoResults(false);
       setResults([]);
     }
 
@@ -63,7 +63,6 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
   const collapseContainer = () => {
     setExpanded(false);
     setQuery('');
-    setNoResults(false);
     setResults([]);
   };
 
@@ -73,28 +72,48 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
     }
   }, [isClickedOutside]);
 
+  const containerClassNames = classNames('searchBarContainer', {
+    expanded: isExpanded,
+  });
+
+  const onKeyPressHandler = () => {
+    if (!isExpanded) {
+      expandContainer();
+    }
+
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  };
+
   return (
     <motion.div
-      className="searchBarContainer"
+      className={containerClassNames}
       animate={isExpanded ? 'expanded' : 'collapsed'}
       initial="collapsed"
       variants={containerVariants}
       transition={containerTransition}
       ref={parentRef}
     >
-      <div className="searchInputContainer">
-        <i className="material-icons searchIcon">search</i>
+      <div
+        className="searchInputContainer"
+        onKeyPress={onKeyPressHandler}
+        role="button"
+        tabIndex={0}
+      >
+        <i className="material-icons searchIcon">travel_explore</i>
         <label htmlFor="searchInput">
-          {!isExpanded && 'Search'}
+          <span>{!isExpanded && 'Search'}</span>
           <input
+            ref={searchInputRef}
             autoComplete="off"
             className="inputText"
             id="searchInput"
             name="query"
             type="text"
             value={query}
-            onChange={changeHandler}
             onFocus={expandContainer}
+            onChange={changeHandler}
           />
         </label>
         <AnimatePresence>
@@ -116,9 +135,11 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
 
       {isExpanded && (
         <div className="searchContent">
-          {isEmpty && !noResults && (
+          {isEmpty && (
             <div className="loadingWrapper">
-              <div className="warningMessage">Start typing to Search</div>
+              <div className="warningMessage">
+                {query.length ? 'No results found' : 'Start typing to Search'}
+              </div>
             </div>
           )}
           {!isEmpty && (
