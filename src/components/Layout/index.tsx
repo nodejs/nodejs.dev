@@ -4,7 +4,7 @@ import 'prismjs/themes/prism-okaidia.css';
 import React from 'react';
 import { MotionConfig } from 'framer-motion';
 import RandomContributor from '../RandomContributor';
-import { FeatureToggleProvider } from '../FeatureToggleProvider';
+import { FeatureToggleProvider } from '../../containers/FeatureToggles';
 
 import Header from '../Header';
 import Footer from '../Footer';

@@ -10,12 +10,28 @@ const createPagesQuery = require('./util-node/createPagesQuery');
 const createLearnQuery = require('./util-node/createLearnQuery');
 const createMarkdownPages = require('./util-node/createMarkdownPages');
 const redirects = require('./util-node/redirects');
+const nodeLocales = require('./util-node/locales');
 
 const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
 
 const learnYamlNavigationData = yaml.parse(
   fs.readFileSync('./src/data/learn.yaml', 'utf8')
 );
+
+// This creates a map of all the locale JSONs that are enabled in the config.json file
+const intlMessages = nodeLocales.locales.reduce((acc, locale) => {
+  const filePath = require.resolve(`./src/i18n/locales/${locale.code}.json`);
+  acc[locale.code] = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  return acc;
+}, {});
+
+const getMessagesForLocale = locale => {
+  if (locale && locale in intlMessages) {
+    return intlMessages[locale];
+  }
+
+  return intlMessages[nodeLocales.defaultLanguage];
+};
 
 exports.onCreateWebpackConfig = ({ plugins, actions }) => {
   actions.setWebpackConfig({
@@ -105,6 +121,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         context: page,
       });
     }
+  });
+};
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
+
+  // Deletes the same page that is created by the createPage action
+  deletePage(page);
+
+  // Recreates the page with the messages that ReactIntl needs
+  // This will be passed to the ReactIntlProvider Component
+  // Used within gatsby-browser.js and gatsby-ssr.js
+  createPage({
+    ...page,
+    context: {
+      ...page.context,
+      intlMessages: getMessagesForLocale(page.context.locale),
+      locale: page.context.locale || nodeLocales.defaultLanguage,
+    },
   });
 };
 

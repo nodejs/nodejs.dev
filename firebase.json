@@ -2,7 +2,52 @@
   "hosting": {
     "target": "nodejs-dev",
     "public": "public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
   },
-  "redirects": []
+  "redirects": [
+    {
+      "source": "/en/get-involved/",
+      "destination": "/community/",
+      "type": "301"
+    },
+    {
+      "source": "/get-involved/",
+      "destination": "/community/",
+      "type": "301"
+    },
+    {
+      "source": "/governance/",
+      "destination": "/about/governance/",
+      "type": "301"
+    },
+    {
+      "source": "/working-groups/",
+      "destination": "/about/working-groups/",
+      "type": "301"
+    },
+    {
+      "source": "/releases/",
+      "destination": "/about/releases/",
+      "type": "301"
+    },
+    {
+      "source": "/trademark/",
+      "destination": "/about/trademark/",
+      "type": "301"
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/about/privacy/",
+      "type": "301"
+    },
+    {
+      "source": "/security/",
+      "destination": "/about/security/",
+      "type": "301"
+    }
+  ]
 }

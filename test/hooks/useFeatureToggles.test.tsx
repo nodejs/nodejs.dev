@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { useFeatureToggles } from '../../src/hooks';
-import { FeatureToggleProvider } from '../../src/components/FeatureToggleProvider';
+import { FeatureToggleProvider } from '../../src/containers/FeatureToggles';
 
 describe('useFeatureToggles', () => {
   const FeatureFlagRenderer = (): JSX.Element => {

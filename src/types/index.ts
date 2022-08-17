@@ -1,3 +1,10 @@
+import type { GatsbyBrowser, GatsbySSR } from 'gatsby';
+
+export interface GenericPageContext {
+  intlMessages: Record<string, string>;
+  locale: string;
+}
+
 export interface HomepageData {
   article: {
     id: string;
@@ -244,3 +251,9 @@ export type SearchResult = {
   slug: string;
   title: string;
 };
+
+export type WrapPageElementBrowser =
+  | GatsbyBrowser<unknown, GenericPageContext>['wrapPageElement'];
+
+export type WrapPageElementSSR =
+  | GatsbySSR<unknown, GenericPageContext>['wrapPageElement'];
