@@ -1,5 +1,6 @@
 ---
 title: Working Groups
+displayTitle: Groupes de travail
 description: "Groupes de travail | Node.js"
 authors: williamkapke,Trott,fhemberger,rxmarbles,mhdawson,XhmikosR,ryanmurakami,outsideris,MaledongGit,vsemozhetbyt,wonderdogone,sotayamashita,richardlau,pierreneter,nschonni,marocchino,stevemao,lpinca,phillipj,jasnell,sejaljain123,AugustinMauroy
 category: working-groups

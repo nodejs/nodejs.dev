@@ -1,5 +1,6 @@
 ---
 title: governance
+displayTitle: Gouvernance de projet
 description: 'Gouvernance de projet | Node.js'
 authors: XhmikosR, fhemberger, thefourtheye, ryanmurakami, refack, AugustinMauroy
 category: governance

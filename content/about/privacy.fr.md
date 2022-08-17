@@ -1,5 +1,6 @@
 ---
 title: Privacy Policy
+displayTitle: Politique de confidentialité
 description: 'Politique de confidentialité | Node.js'
 authors: XhmikosR, nschonni, brianwarner, hackygolucky, sindelio, sonicdoe, marsonya, AugustinMauroy
 category: privacy

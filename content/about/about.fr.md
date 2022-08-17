@@ -1,5 +1,6 @@
 ---
 title: about
+displayTitle: "À propos"
 description: "À propos de | Node.js"
 authors: XhmikosR, mikeal, fhemberger, Fishrock123, yous, tomgco, tniessen, SMcCandlish, saadq, Trott, Gornstats, piperchester, naoufal,  lpinca, j9t, bnoordhuis, harshadsabne, Chris911, benhalverson, AugustinMauroy
 category: about
