@@ -38,7 +38,6 @@
     "gatsby-remark-prismjs": "^6.20.0",
     "gatsby-source-filesystem": "^4.20.0",
     "gatsby-theme-i18n": "^3.0.0",
-    "gatsby-theme-i18n-react-intl": "^3.0.0",
     "gatsby-transformer-remark": "^5.20.0",
     "gatsby-transformer-yaml": "^4.20.0",
     "highlight.js": "^11.6.0",
@@ -154,10 +153,6 @@
       "react": "$react"
     },
     "gatsby-theme-i18n": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    },
-    "gatsby-theme-i18n-react-intl": {
       "react": "$react",
       "react-dom": "$react-dom"
     }
