@@ -1,9 +1,9 @@
 import React, { useMemo, useEffect, useState, createRef } from 'react';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from 'react-click-outside-hook';
 import { Index } from 'elasticlunr';
-import { Link } from 'gatsby';
 import { SearchResult } from '../../types';
 import { SearchProps } from './types';
 

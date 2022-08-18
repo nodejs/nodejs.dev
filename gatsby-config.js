@@ -167,15 +167,24 @@ module.exports = {
         cache_busting_mode: 'none',
       },
     },
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-meta-redirect',
     {
       // This is a temporary solution until (https://github.com/gatsbyjs/gatsby/pull/31542) gets merged
       // So we are able to use the official service worker again. This service worker supports latest Workbox
+      // Note.: This implementation doesn't work with pathPrefixes (eg.: our staging pages)
+      // Which means, that the staging pages will not benefit from a SW
       resolve: 'gatsby-plugin-offline-next',
       options: {
+        precachePages: [
+          '/',
+          '/*/learn/*',
+          '/*/about/*',
+          '/*/download/*',
+          '/*/blog/*',
+        ],
         globPatterns: ['**/icon-path*'],
       },
     },
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-meta-redirect',
   ],
 };
