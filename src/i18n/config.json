@@ -148,7 +148,7 @@
     "localName": "简体中文",
     "name": "Simplified Chinese",
     "langDir": "ltr",
-    "dateFormat": "YYYY.MM.DD",
+    "dateFormat": "YYYY/MM/DD",
     "hrefLang": "zh-Hans",
     "enabled": false
   },
@@ -157,7 +157,7 @@
     "localName": "繁體中文",
     "name": "Traditional Chinese",
     "langDir": "ltr",
-    "dateFormat": "YYYY.MM.DD",
+    "dateFormat": "YYYY/MM/DD",
     "hrefLang": "zh-Hant",
     "enabled": false
   }
