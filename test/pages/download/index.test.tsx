@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe, toHaveNoViolations } from 'jest-axe';
 import DownloadPage, {
   DownloadNodeReleases,
 } from '../../../src/pages/download';
@@ -27,6 +28,7 @@ const nodeReleaseData: DownloadNodeReleases = {
   },
 };
 
+expect.extend(toHaveNoViolations);
 describe('Download page', () => {
   it('renders correctly', () => {
     const { container } = render(
@@ -43,5 +45,14 @@ describe('Download page', () => {
     await userEvent.click(screen.getAllByText('Current')[0]);
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('shold have no a11y violations', async () => {
+    const { container } = render(
+      <DownloadPage location={window.location} data={nodeReleaseData} />
+    );
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
   });
 });
