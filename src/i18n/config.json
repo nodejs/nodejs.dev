@@ -146,10 +146,10 @@
   {
     "code": "zh-cn",
     "localName": "简体中文",
-    "name": "Chinese",
+    "name": "Simplified Chinese",
     "langDir": "ltr",
     "dateFormat": "YYYY.MM.DD",
-    "hrefLang": "zh-Hant",
+    "hrefLang": "zh-Hans",
     "enabled": false
   },
   {
@@ -158,7 +158,7 @@
     "name": "Traditional Chinese",
     "langDir": "ltr",
     "dateFormat": "YYYY.MM.DD",
-    "hrefLang": "zh-Hans",
+    "hrefLang": "zh-Hant",
     "enabled": false
   }
 ]
