@@ -63,7 +63,6 @@ export interface PaginationInfo {
 export interface BlogCategory {
   name: string;
   slug: string;
-  description?: string;
 }
 
 export interface NavigationSectionItem {
@@ -135,15 +134,21 @@ export interface BlogMetaData {
     frontmatter: {
       title: string;
       blogAuthors: BlogPostAuthor[];
-      category: BlogCategory;
+      category?: BlogCategory;
     };
-    fields: { date: string; slug: string; categoryName: string };
+    fields: { date: string; slug: string; readingTime: { text: string } };
   };
 }
 
 export interface BlogPostsList {
-  blogs: {
+  posts: {
     edges: BlogMetaData[];
+  };
+}
+
+export interface BlogCategoriesList {
+  categories: {
+    edges: BlogCategory[];
   };
 }
 
