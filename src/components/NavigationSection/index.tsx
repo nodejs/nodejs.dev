@@ -34,9 +34,11 @@ const NavigationSection = ({
         role="menuitem"
       >
         {title}
-        <i className="material-icons">
-          {isOpen || isMobile ? 'arrow_drop_down' : 'arrow_drop_up'}
-        </i>
+        {!isMobile && (
+          <i className="material-icons">
+            {isOpen ? 'arrow_drop_down' : 'arrow_drop_up'}
+          </i>
+        )}
       </div>
       <div style={{ display: isOpen || isMobile ? 'block' : 'none' }}>
         {section.map((item: NavigationSectionItem): JSX.Element => {

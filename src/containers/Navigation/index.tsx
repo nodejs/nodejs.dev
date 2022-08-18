@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import NavigationSection from '../../components/NavigationSection';
-import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { NavigationSectionData, NavigationSectionItem } from '../../types';
 import { isMobileScreen } from '../../util/isScreenWithinWidth';
 
@@ -18,19 +17,7 @@ const Navigation = ({
   category,
 }: Props): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const navElement = useRef<HTMLElement | null>(null);
-  const isMobile = useMediaQuery('(max-width: 870px)');
   const toggle = (): void => setIsOpen(!isOpen);
-
-  useEffect(() => {
-    if (!isMobile && typeof window !== 'undefined' && navElement.current) {
-      const currentItem = document.getElementById(`link-${currentSlug}`);
-
-      if (currentItem && currentItem.offsetTop) {
-        navElement.current.scrollTo({ top: currentItem.offsetTop });
-      }
-    }
-  }, [currentSlug, isOpen, isMobile]);
 
   const onItemClick = () => {
     if (isMobileScreen()) {
@@ -60,7 +47,7 @@ const Navigation = ({
   });
 
   return (
-    <nav aria-label={label} className={className} ref={navElement}>
+    <nav aria-label={label} className={className}>
       <button type="button" className="side-nav__open" onClick={toggle}>
         Menu
       </button>

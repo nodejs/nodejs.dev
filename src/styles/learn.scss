@@ -14,11 +14,6 @@
   width: 100%;
   z-index: 998;
 
-  & > :last-child {
-    /* To allow side menu to scroll to bottom when not sticky */
-    padding-bottom: 230px;
-  }
-
   &__title {
     align-items: center;
     background-color: var(--color-fill-side-nav);
