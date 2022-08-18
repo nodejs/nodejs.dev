@@ -56,7 +56,7 @@
   }
 
   body {
-    --nav-height: 5.2rem;
+    --nav-height: 4.7rem;
     --banner-clip: polygon(
       0 0,
       100% 0,
@@ -79,8 +79,23 @@
     background-position: 0 calc(-50vh + var(--magic-hero-number) - 32px);
   }
 
-  /* Place top sentinels higher up on mobile */
+  .download-additional {
+    &__header {
+      align-items: center;
+      flex-direction: column;
+    }
 
+    &__title {
+      padding-bottom: var(--space-12);
+    }
+  }
+
+  .download-releases__title {
+    margin: 50px 0 20px 0 !important;
+    text-align: center;
+  }
+
+  /* Place top sentinels higher up on mobile */
   .sticky-sentinel--top {
     top: -92px;
   }
