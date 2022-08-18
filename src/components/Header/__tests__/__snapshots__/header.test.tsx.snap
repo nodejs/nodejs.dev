@@ -83,6 +83,11 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
           <li
             class="nav__tabs"
           >
+            <span
+              class="sr-only"
+            >
+              Search Bar
+            </span>
             <div
               class="searchBarContainer"
               style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
@@ -229,6 +234,11 @@ exports[`Tests for Header component renders correctly 1`] = `
           <li
             class="nav__tabs"
           >
+            <span
+              class="sr-only"
+            >
+              Search Bar
+            </span>
             <div
               class="searchBarContainer"
               style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
@@ -372,41 +382,6 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
         <ul
           class="right-container"
         >
-          <li
-            class="nav__tabs"
-          >
-            <div
-              class="searchBarContainer"
-              style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
-            >
-              <div
-                class="searchInputContainer"
-                role="button"
-                tabindex="0"
-              >
-                <i
-                  class="material-icons searchIcon"
-                >
-                  travel_explore
-                </i>
-                <label
-                  for="searchInput"
-                >
-                  <span>
-                    Search
-                  </span>
-                  <input
-                    autocomplete="off"
-                    class="inputText"
-                    id="searchInput"
-                    name="query"
-                    type="text"
-                    value=""
-                  />
-                </label>
-              </div>
-            </div>
-          </li>
           <li
             class="nav__tabs"
           >

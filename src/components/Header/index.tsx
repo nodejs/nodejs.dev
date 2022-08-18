@@ -90,15 +90,18 @@ const Header = (): JSX.Element => {
 
         <div className="nav__endwrapper">
           <ul className="right-container">
-            <li className="nav__tabs">
-              <SearchBar />
-            </li>
+            {!isMobile && (
+              <li className="nav__tabs">
+                <span className="sr-only">Search Bar</span>
+                <SearchBar />
+              </li>
+            )}
 
             <li className="nav__tabs">
               <button
                 type="button"
-                onClick={() => handleThemeOnClick()}
                 className="dark-mode-toggle"
+                onClick={() => handleThemeOnClick()}
                 onKeyPress={() => handleThemeOnClick(true)}
               >
                 <span className="sr-only">Toggle Dark Mode</span>

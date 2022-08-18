@@ -86,6 +86,11 @@ exports[`Security page renders correctly 1`] = `
             <li
               class="nav__tabs"
             >
+              <span
+                class="sr-only"
+              >
+                Search Bar
+              </span>
               <div
                 class="searchBarContainer"
                 style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
