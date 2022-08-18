@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const yaml = require('yaml');
+const readingTime = require('reading-time');
 const createSlug = require('./util-node/createSlug');
 const getNodeReleasesData = require('./util-node/getNodeReleasesData');
 const getBannersData = require('./util-node/getBannersData');
@@ -71,6 +72,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const docTemplate = path.resolve('./src/templates/learn.tsx');
   const blogTemplate = path.resolve('./src/templates/blog.tsx');
+  const blogCategoryTemplate = path.resolve('./src/templates/blogCategory.tsx');
 
   const [learnResult, pagesResult] = await Promise.all([
     graphql(createLearnQuery),
@@ -82,12 +84,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return;
   }
 
+  const {
+    pages: { edges: pageEdges },
+    categories: { edges: categoryEdges },
+  } = pagesResult.data;
+
+  const {
+    allMdx: { edges: learnEdges },
+  } = learnResult.data;
+
   const { markdownPages, learnPages, firstLearnPage, navigationData } =
-    createMarkdownPages(
-      pagesResult.data.allMdx.edges,
-      learnResult.data.allMdx.edges,
-      learnYamlNavigationData
-    );
+    createMarkdownPages(pageEdges, learnEdges, learnYamlNavigationData);
 
   if (firstLearnPage) {
     createPage({
@@ -108,6 +115,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       fromPath: `/${page.slug}`,
       toPath: `/learn/${page.slug}`,
       isPermanent: true,
+    });
+  });
+
+  categoryEdges.forEach(({ node }) => {
+    createPage({
+      path: `/blog/${node.name}/`,
+      component: blogCategoryTemplate,
+      context: { categoryName: node.name },
     });
   });
 
@@ -172,12 +187,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         name: 'date',
         value: date.toJSON(),
       });
-    } else slug = createSlug(frontmatter.title);
+
+      createNodeField({
+        node,
+        name: `readingTime`,
+        value: readingTime(node.rawBody),
+      });
+    }
 
     createNodeField({
       node,
       name: 'slug',
-      value: slug,
+      value: slug || createSlug(frontmatter.title),
     });
 
     if (frontmatter.authors) {

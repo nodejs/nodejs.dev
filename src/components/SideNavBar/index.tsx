@@ -67,10 +67,15 @@ export enum OverflowTypes {
 }
 
 interface NavBarProps {
-  pageKey: string;
+  pageKey?: string;
+  items?: SideNavBarItem[];
+  title?: string;
 }
 
-const SideNavBar = ({ pageKey }: NavBarProps): JSX.Element => {
+const SideNavBar = ({
+  pageKey,
+  items = sideNavBarItems,
+}: NavBarProps): JSX.Element => {
   const [navOpen, setNavOpen] = useState<boolean>(false);
   const toggle = (): void => setNavOpen(!navOpen);
 
@@ -92,7 +97,7 @@ const SideNavBar = ({ pageKey }: NavBarProps): JSX.Element => {
         Menu
       </button>
       <ul className="community-nav__list">
-        {sideNavBarItems
+        {items
           .sort((a, b) => a.title.localeCompare(b.title))
           .map(({ title: commTitle, slug }) => {
             return (

@@ -15,7 +15,10 @@ describe('Blog page', () => {
     const { container } = render(
       <AllBlogPosts
         data={{
-          blogs: {
+          posts: {
+            edges: [],
+          },
+          categories: {
             edges: [],
           },
         }}

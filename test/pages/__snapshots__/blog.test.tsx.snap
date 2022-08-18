@@ -16,6 +16,7 @@ exports[`Blog page renders correctly 1`] = `
           class="nav__startwrapper"
         >
           <a
+            aria-label="Homepage"
             href="/"
           >
             <div
@@ -85,30 +86,45 @@ exports[`Blog page renders correctly 1`] = `
             <li
               class="nav__tabs"
             >
+              <span
+                class="sr-only"
+              >
+                Search Bar
+              </span>
               <div
                 class="searchBarContainer"
                 style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
+                  role="button"
+                  tabindex="0"
                 >
                   <i
                     class="material-icons searchIcon"
                   >
-                    search
+                    travel_explore
                   </i>
-                  <input
-                    autocomplete="off"
-                    class="inputText"
-                    name="query"
-                    placeholder="Search"
-                    value=""
-                  />
+                  <label
+                    for="searchInput"
+                  >
+                    <span>
+                      Search
+                    </span>
+                    <input
+                      autocomplete="off"
+                      class="inputText"
+                      id="searchInput"
+                      name="query"
+                      type="text"
+                      value=""
+                    />
+                  </label>
                 </div>
               </div>
             </li>
             <li
-              class="nav__tabs nav__tabs--right"
+              class="nav__tabs"
             >
               <button
                 class="dark-mode-toggle"
@@ -122,33 +138,14 @@ exports[`Blog page renders correctly 1`] = `
                 <i
                   class="material-icons light-mode-only theme-buttons"
                 >
-                  nights_stay
+                  mode_night
                 </i>
                 <i
                   class="material-icons dark-mode-only theme-buttons"
                 >
-                  wb_sunny
+                  brightness_medium
                 </i>
               </button>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                href="https://github.com/nodejs/nodejs.dev"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <span
-                  class="sr-only"
-                >
-                  GitHub
-                </span>
-                <svg
-                  fill="var(--color-text-accent)"
-                  style="margin-bottom: -3px;"
-                />
-              </a>
             </li>
           </ul>
         </div>
@@ -161,34 +158,56 @@ exports[`Blog page renders correctly 1`] = `
         <div
           class="blog-category-header"
         >
-          <h2>
-            Mock Category Slug
-          </h2>
-          <span />
+          <h1>
+            Node.js Blog
+          </h1>
+          <span>
+            The latest Node.js news, case studies, tutorials, and resources.
+          </span>
         </div>
       </div>
       <div
         class="blog-grid-container"
       >
         <div
-          class="blogCard"
+          class="blog-card"
         >
-          <a
+          <div
             class="title"
-            href="Mock blog slug"
           >
-            Mock blog title
-          </a>
-          <h4>
-            Mock date
-          </h4>
-          <p>
-            by
-             
-            <span>
-              Mock author name
-            </span>
-          </p>
+            <a
+              href="Mock blog slug"
+            >
+              Mock blog title
+            </a>
+            <div
+              class="metadata"
+            >
+              <a
+                class="category"
+                href="/blog/mock-category/"
+              >
+                Mock Category Slug
+              </a>
+              <span>
+                1 min read
+              </span>
+            </div>
+          </div>
+          <div
+            class="content"
+          >
+            <h4>
+              Mock date
+            </h4>
+            <p>
+              by
+               
+              <span>
+                Mock author name
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -316,6 +335,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
           class="nav__startwrapper"
         >
           <a
+            aria-label="Homepage"
             href="/"
           >
             <div
@@ -385,30 +405,45 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
             <li
               class="nav__tabs"
             >
+              <span
+                class="sr-only"
+              >
+                Search Bar
+              </span>
               <div
                 class="searchBarContainer"
                 style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
+                  role="button"
+                  tabindex="0"
                 >
                   <i
                     class="material-icons searchIcon"
                   >
-                    search
+                    travel_explore
                   </i>
-                  <input
-                    autocomplete="off"
-                    class="inputText"
-                    name="query"
-                    placeholder="Search"
-                    value=""
-                  />
+                  <label
+                    for="searchInput"
+                  >
+                    <span>
+                      Search
+                    </span>
+                    <input
+                      autocomplete="off"
+                      class="inputText"
+                      id="searchInput"
+                      name="query"
+                      type="text"
+                      value=""
+                    />
+                  </label>
                 </div>
               </div>
             </li>
             <li
-              class="nav__tabs nav__tabs--right"
+              class="nav__tabs"
             >
               <button
                 class="dark-mode-toggle"
@@ -422,38 +457,38 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
                 <i
                   class="material-icons light-mode-only theme-buttons"
                 >
-                  nights_stay
+                  mode_night
                 </i>
                 <i
                   class="material-icons dark-mode-only theme-buttons"
                 >
-                  wb_sunny
+                  brightness_medium
                 </i>
               </button>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                href="https://github.com/nodejs/nodejs.dev"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <span
-                  class="sr-only"
-                >
-                  GitHub
-                </span>
-                <svg
-                  fill="var(--color-text-accent)"
-                  style="margin-bottom: -3px;"
-                />
-              </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+    <div>
+      <div
+        class="blog-category-container"
+      >
+        <div
+          class="blog-category-header"
+        >
+          <h1>
+            Node.js Blog
+          </h1>
+          <span>
+            The latest Node.js news, case studies, tutorials, and resources.
+          </span>
+        </div>
+      </div>
+      <div
+        class="blog-grid-container"
+      />
+    </div>
     <footer
       class="footer"
     >

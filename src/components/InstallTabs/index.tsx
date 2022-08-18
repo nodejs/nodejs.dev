@@ -71,7 +71,6 @@ const InstallTabs = (): JSX.Element | null => {
     LINUX: [os.linux, os.mac, os.win],
     UNIX: [os.linux, os.mac, os.win],
     UNKNOWN: [os.win, os.mac, os.linux],
-    MOBILE: [],
   };
 
   const panelSwitch = useMemo(() => getOSPanel(userOS), [userOS]);
@@ -90,11 +89,11 @@ const InstallTabs = (): JSX.Element | null => {
           </div>
         </div>
         <TabList>
-          {installTabSystems[userOS].map((system: string) => (
+          {installTabSystems[userOS]?.map((system: string) => (
             <Tab key={system.toString()}>{system}</Tab>
           ))}
         </TabList>
-        {panelSwitch}
+        {installTabSystems[userOS] && panelSwitch}
       </Tabs>
     </div>
   );
