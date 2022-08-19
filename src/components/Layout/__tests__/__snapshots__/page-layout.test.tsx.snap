@@ -335,7 +335,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://nodejs.org/en/blog/"
+            href="/blog"
           >
             Blog
           </a>

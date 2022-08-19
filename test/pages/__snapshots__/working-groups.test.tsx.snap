@@ -166,6 +166,18 @@ exports[`Working Groups page renders correctly 1`] = `
         <ul
           class="community-nav__list"
         >
+          <li
+            class="t-body2 side-nav__item--title"
+          >
+            <b>
+              Community Pages
+            </b>
+            <i
+              class="material-icons"
+            >
+              arrow_drop_down
+            </i>
+          </li>
           <a
             class="t-body2 side-nav__item-community"
             href="/about"
@@ -419,7 +431,7 @@ exports[`Working Groups page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://nodejs.org/en/blog/"
+            href="/blog"
           >
             Blog
           </a>

@@ -544,7 +544,7 @@ exports[`Home page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://nodejs.org/en/blog/"
+            href="/blog"
           >
             Blog
           </a>
@@ -1187,7 +1187,7 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://nodejs.org/en/blog/"
+            href="/blog"
           >
             Blog
           </a>
