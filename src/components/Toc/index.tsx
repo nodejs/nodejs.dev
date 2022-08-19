@@ -1,5 +1,5 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { TableOfContents } from '../../types';
 
 interface Props {

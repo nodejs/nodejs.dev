@@ -384,6 +384,24 @@ select {
 
 /* End: Article Reader HTML Reset */
 
+.blog-grid-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 840px;
+  padding: var(--space-80) 0 0 var(--space-128);
+
+  .blog-category-header {
+    h2 {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  .blog-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}
+
 /* TOC */
 
 details {
@@ -466,121 +484,10 @@ h6:hover .autolink-headers {
   height: 40px;
 }
 
-@media (max-width: 1050px) {
-  .nav__tabs__container {
-    margin: 0;
-  }
-}
-
-@media (max-width: 800px) {
-  main {
-    display: flex;
-    flex-flow: column;
-  }
-
-  thead {
-    tr {
-      th {
-        padding: var(--space-14) var(--space-12) var(--space-14);
-      }
-    }
-  }
-
-  tbody {
-    tr {
-      td {
-        padding: var(--space-14) var(--space-12) var(--space-14);
-      }
-    }
-  }
-
-  .article-reader {
-    padding: 0 3rem;
-  }
-
-  .nav__container {
-    align-items: start;
-    flex-flow: wrap;
-    min-height: calc(1 * var(--nav-height));
-    padding: 0 var(--space-12);
-  }
-
-  .logo {
-    align-items: center;
-    display: flex;
-    height: var(--nav-height);
-  }
-
-  .nav__logo {
-    height: 2.4rem;
-  }
-
-  .nav__tabs__container {
-    background: var(--color-fill-app);
-    height: var(--nav-height);
-    justify-content: center;
-    order: 3;
-    padding: 0;
-    width: 100%;
-  }
-
-  .nav .right-container {
-    justify-content: center;
-    padding: 0;
-    width: 100%;
-  }
-
-  .nav__tabs {
-    display: flex;
-    margin-left: 0;
-
-    &:not(:last-child) {
-      margin-right: 0.5rem;
-    }
-
-    a {
-      padding: var(--space-08);
-    }
-  }
-
-  .language-switch {
-    padding: 0;
-  }
-}
-
 .layout-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-.blog-grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-}
-
-.blog-category-container {
-  .blog-category-header {
-    padding: 40px 0 0 40px;
-
-    h1 {
-      margin: 0 0 20px 0;
-    }
-  }
-}
-
-.blog-category-container,
-.blog-grid-container {
-  margin: 0 auto;
-  width: 75%;
-
-  @media only screen and (max-width: 1000px) {
-    width: 80%;
-  }
-
-  @media only screen and (max-width: 800px) {
-    width: 100%;
-  }
 }
 
 .blog-container {
@@ -614,4 +521,10 @@ h6:hover .autolink-headers {
   display: flex;
   justify-content: stretch;
   width: fit-content;
+}
+
+@media (max-width: 1050px) {
+  .nav__tabs__container {
+    margin: 0;
+  }
 }

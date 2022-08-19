@@ -49,6 +49,7 @@ const NavigationSection = ({
               key={item.slug}
               title={item.title}
               slug={item.slug}
+              baseUrl={item.baseUrl}
               isRead={isRead}
               isActive={isActive(item)}
               onClick={onItemClick}
