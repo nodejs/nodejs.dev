@@ -16,6 +16,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
           class="nav__startwrapper"
         >
           <a
+            aria-label="Homepage"
             href="/"
           >
             <div
@@ -85,49 +86,66 @@ exports[`PageLayout component renders correctly with data 1`] = `
             <li
               class="nav__tabs"
             >
+              <span
+                class="sr-only"
+              >
+                Search Bar
+              </span>
               <div
                 class="searchBarContainer"
                 style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
+                  role="button"
+                  tabindex="0"
                 >
                   <i
                     class="material-icons searchIcon"
                   >
-                    search
+                    travel_explore
                   </i>
-                  <input
-                    autocomplete="off"
-                    class="inputText"
-                    name="query"
-                    placeholder="Search"
-                    value=""
-                  />
+                  <label
+                    for="searchInput"
+                  >
+                    <span>
+                      Search
+                    </span>
+                    <input
+                      autocomplete="off"
+                      class="inputText"
+                      id="searchInput"
+                      name="query"
+                      type="text"
+                      value=""
+                    />
+                  </label>
                 </div>
               </div>
             </li>
             <li
-              class="nav__tabs nav__tabs--right"
-            />
-            <li
               class="nav__tabs"
             >
-              <a
-                href="https://github.com/nodejs/nodejs.dev"
-                rel="noopener noreferrer"
-                target="_blank"
+              <button
+                class="dark-mode-toggle"
+                type="button"
               >
                 <span
                   class="sr-only"
                 >
-                  GitHub
+                  Toggle Dark Mode
                 </span>
-                <svg
-                  fill="var(--color-text-accent)"
-                  style="margin-bottom: -3px;"
-                />
-              </a>
+                <i
+                  class="material-icons light-mode-only theme-buttons"
+                >
+                  mode_night
+                </i>
+                <i
+                  class="material-icons dark-mode-only theme-buttons"
+                >
+                  brightness_medium
+                </i>
+              </button>
             </li>
           </ul>
         </div>

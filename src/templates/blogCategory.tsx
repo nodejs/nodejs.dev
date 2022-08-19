@@ -2,21 +2,18 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import BlogCard from '../components/BlogCard';
 import Layout from '../components/Layout';
-import { BlogPostsList, BlogCategoriesList } from '../types';
+import { BlogPostsList, BlogCategory } from '../types';
 
 type Props = {
-  data: BlogPostsList & BlogCategoriesList;
+  data: BlogPostsList & { category: BlogCategory };
 };
 
-const Blog = ({ data: { posts } }: Props): JSX.Element => (
+const Blog = ({ data: { posts, category } }: Props): JSX.Element => (
   <Layout title="Blogs at Nodejs">
     <div>
       <div className="blog-category-container">
         <div className="blog-category-header">
-          <h1>Node.js Blog</h1>
-          <span>
-            The latest Node.js news, case studies, tutorials, and resources.
-          </span>
+          <h1>{category.slug}</h1>
         </div>
       </div>
       <div className="blog-grid-container">
@@ -31,9 +28,12 @@ const Blog = ({ data: { posts } }: Props): JSX.Element => (
 export default Blog;
 
 export const pageQuery = graphql`
-  query {
+  query ($categoryName: String!) {
     posts: allMdx(
-      filter: { fileAbsolutePath: { regex: "/blog/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/blog/" }
+        fields: { categoryName: { eq: $categoryName } }
+      }
       sort: { fields: [fields___date], order: DESC }
     ) {
       edges {
@@ -43,10 +43,6 @@ export const pageQuery = graphql`
             blogAuthors {
               id
               name
-            }
-            category {
-              name
-              slug
             }
           }
           fields {
@@ -59,13 +55,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    categories: allCategoriesYaml {
-      edges {
-        node {
-          name
-          slug
-        }
-      }
+    category: categoriesYaml(name: { eq: $categoryName }) {
+      name
+      slug
     }
   }
 `;
