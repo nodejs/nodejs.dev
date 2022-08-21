@@ -19,7 +19,7 @@
 }
 
 .download-toogle__button {
-  background: var(--black2);
+  background: var(--black0);
   border: none;
   border-radius: 32px;
   box-shadow: inset 1px -1px 1px rgba(0, 0, 0, 0.08),
@@ -39,7 +39,7 @@
 
 .download-toogle__button.-active,
 .download-toogle__button.-current.-active {
-  background: var(--brand5);
+  background: var(--brand6);
   color: var(--black0);
   z-index: 99;
 }

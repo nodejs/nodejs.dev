@@ -161,8 +161,6 @@ body:not(.dark) .dark-mode-only,
 
 .theme-buttons {
   font-size: 2rem;
-  padding: calc(var(--space-24) + 1rem) calc(var(--space-16) + 1rem)
-    calc(var(--space-24) - 2px + 1rem) calc(var(--space-16) + 1rem);
 }
 
 /* Start: Syntax Highlight Overrides */
@@ -312,13 +310,17 @@ select {
   list-style: none;
   margin: 0;
   padding-left: 0;
-}
 
-.nav .right-container > li:first-child {
-  flex-grow: 1;
-  height: 3em;
-  justify-content: flex-end;
-  position: relative;
+  > li:first-child {
+    flex-grow: 1;
+    height: 3em;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .nav__tabs {
+    padding: var(--space-24) var(--space-16) var(--space-24) 0;
+  }
 }
 
 .nav__tabs {
@@ -326,12 +328,10 @@ select {
   cursor: pointer;
   display: flex;
   margin-left: var(--space-16);
-  text-decoration: none;
+  padding: var(--space-24) var(--space-16);
 
   > a {
     color: var(--color-text-primary);
-    padding: var(--space-24) var(--space-16) calc(var(--space-24) - 2px)
-      var(--space-16);
     text-decoration: none;
   }
 }
@@ -532,34 +532,27 @@ h6:hover .autolink-headers {
   }
 
   .nav .right-container {
-    display: flex;
-    list-style: none;
-    padding-right: 0;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+
+    .nav__tabs {
+      padding: var(--space-04);
+    }
   }
 
   .nav__tabs {
     display: flex;
     margin-left: 0;
+    padding: var(--space-08);
 
     &:not(:last-child) {
       margin-right: 0.5rem;
-    }
-
-    > a {
-      padding: var(--space-08);
     }
   }
 
   .language-switch {
     padding: 0;
-  }
-
-  .theme-buttons {
-    padding: calc(var(--space-08) + 1rem);
-  }
-
-  .right-container .nav__tabs > a:last-child {
-    padding-right: 0;
   }
 }
 
@@ -571,11 +564,17 @@ h6:hover .autolink-headers {
 
 .blog-grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-.blog-category-container > div {
-  padding: 40px 0 0 40px;
+.blog-category-container {
+  .blog-category-header {
+    padding: 40px 0 0 40px;
+
+    h1 {
+      margin: 0 0 20px 0;
+    }
+  }
 }
 
 .blog-category-container,
