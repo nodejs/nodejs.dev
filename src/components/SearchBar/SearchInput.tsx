@@ -98,8 +98,7 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
       <div
         className="searchInputContainer"
         onKeyPress={onKeyPressHandler}
-        role="button"
-        tabIndex={0}
+        role="presentation"
       >
         <i className="material-icons searchIcon">travel_explore</i>
         <label htmlFor="searchInput">
