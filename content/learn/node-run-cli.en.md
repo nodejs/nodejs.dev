@@ -43,7 +43,7 @@ To execute a string as argument you can use `-e`, `--eval "script"`. Evaluate th
 On Windows, using cmd.exe a single quote will not work correctly because it only recognizes double `"` for quoting. In Powershell or Git bash, both `'` and `"` are usable.
 
 ```bash
-node "console.log(123)"
+node -e "console.log(123)"
 ```
 
 ## Restart the application automatically

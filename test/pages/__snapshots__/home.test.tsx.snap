@@ -16,6 +16,7 @@ exports[`Home page renders correctly 1`] = `
           class="nav__startwrapper"
         >
           <a
+            aria-label="Homepage"
             href="/"
           >
             <div
@@ -85,30 +86,45 @@ exports[`Home page renders correctly 1`] = `
             <li
               class="nav__tabs"
             >
+              <span
+                class="sr-only"
+              >
+                Search Bar
+              </span>
               <div
                 class="searchBarContainer"
                 style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
+                  role="button"
+                  tabindex="0"
                 >
                   <i
                     class="material-icons searchIcon"
                   >
-                    search
+                    travel_explore
                   </i>
-                  <input
-                    autocomplete="off"
-                    class="inputText"
-                    name="query"
-                    placeholder="Search"
-                    value=""
-                  />
+                  <label
+                    for="searchInput"
+                  >
+                    <span>
+                      Search
+                    </span>
+                    <input
+                      autocomplete="off"
+                      class="inputText"
+                      id="searchInput"
+                      name="query"
+                      type="text"
+                      value=""
+                    />
+                  </label>
                 </div>
               </div>
             </li>
             <li
-              class="nav__tabs nav__tabs--right"
+              class="nav__tabs"
             >
               <button
                 class="dark-mode-toggle"
@@ -122,33 +138,14 @@ exports[`Home page renders correctly 1`] = `
                 <i
                   class="material-icons light-mode-only theme-buttons"
                 >
-                  nights_stay
+                  mode_night
                 </i>
                 <i
                   class="material-icons dark-mode-only theme-buttons"
                 >
-                  wb_sunny
+                  brightness_medium
                 </i>
               </button>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                href="https://github.com/nodejs/nodejs.dev"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <span
-                  class="sr-only"
-                >
-                  GitHub
-                </span>
-                <svg
-                  fill="var(--color-text-accent)"
-                  style="margin-bottom: -3px;"
-                />
-              </a>
             </li>
           </ul>
         </div>
@@ -622,6 +619,7 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
           class="nav__startwrapper"
         >
           <a
+            aria-label="Homepage"
             href="/"
           >
             <div
@@ -691,30 +689,45 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
             <li
               class="nav__tabs"
             >
+              <span
+                class="sr-only"
+              >
+                Search Bar
+              </span>
               <div
                 class="searchBarContainer"
                 style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
+                  role="button"
+                  tabindex="0"
                 >
                   <i
                     class="material-icons searchIcon"
                   >
-                    search
+                    travel_explore
                   </i>
-                  <input
-                    autocomplete="off"
-                    class="inputText"
-                    name="query"
-                    placeholder="Search"
-                    value=""
-                  />
+                  <label
+                    for="searchInput"
+                  >
+                    <span>
+                      Search
+                    </span>
+                    <input
+                      autocomplete="off"
+                      class="inputText"
+                      id="searchInput"
+                      name="query"
+                      type="text"
+                      value=""
+                    />
+                  </label>
                 </div>
               </div>
             </li>
             <li
-              class="nav__tabs nav__tabs--right"
+              class="nav__tabs"
             >
               <button
                 class="dark-mode-toggle"
@@ -728,33 +741,14 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
                 <i
                   class="material-icons light-mode-only theme-buttons"
                 >
-                  nights_stay
+                  mode_night
                 </i>
                 <i
                   class="material-icons dark-mode-only theme-buttons"
                 >
-                  wb_sunny
+                  brightness_medium
                 </i>
               </button>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                href="https://github.com/nodejs/nodejs.dev"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <span
-                  class="sr-only"
-                >
-                  GitHub
-                </span>
-                <svg
-                  fill="var(--color-text-accent)"
-                  style="margin-bottom: -3px;"
-                />
-              </a>
             </li>
             <li
               class="nav__tabs"
