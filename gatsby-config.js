@@ -86,19 +86,6 @@ module.exports = {
         path: `${__dirname}/content/download`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: config.title,
-        short_name: config.title,
-        start_url: '/',
-        background_color: config.color,
-        theme_color: config.color,
-        display: config.display,
-        icon: config.icon,
-      },
-    },
-    'gatsby-plugin-offline',
     'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-mdx',
@@ -130,8 +117,6 @@ module.exports = {
         ],
       },
     },
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-meta-redirect',
     {
       resolve: 'gatsby-plugin-svgr',
       options: {
@@ -157,8 +142,10 @@ module.exports = {
         filter: node => node.frontmatter.category === 'learn',
       },
     },
-    // @see https://www.gatsbyjs.com/plugins/gatsby-theme-i18n/
     {
+      // A plugin that introduces i18n support to Gatsby
+      // We also patch this plugin (see /patches/)
+      // @see https://www.gatsbyjs.com/plugins/gatsby-theme-i18n/
       resolve: `gatsby-theme-i18n`,
       options: {
         defaultLang: defaultLanguage,
@@ -167,11 +154,27 @@ module.exports = {
         locales: localesAsString,
       },
     },
-    // @see https://www.gatsbyjs.com/plugins/gatsby-theme-i18n-react-intl/
     {
-      resolve: `gatsby-theme-i18n-react-intl`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        defaultLocale: `./src/i18n/locales/${defaultLanguage}.json`,
+        name: config.title,
+        short_name: config.title,
+        start_url: '/',
+        background_color: config.color,
+        theme_color: config.color,
+        display: config.display,
+        icon: config.icon,
+        cache_busting_mode: 'none',
+      },
+    },
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-meta-redirect',
+    {
+      // This is a temporary solution until (https://github.com/gatsbyjs/gatsby/pull/31542) gets merged
+      // So we are able to use the official service worker again. This service worker supports latest Workbox
+      resolve: 'gatsby-plugin-offline-next',
+      options: {
+        globPatterns: ['**/icon-path*'],
       },
     },
   ],

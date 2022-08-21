@@ -29,6 +29,7 @@ const DownloadCard = ({
   return (
     <Tab
       className={classNames}
+      id={`download-card-${name}`}
       key={name}
       onClick={handleSelectCard}
       tabIndex="0"

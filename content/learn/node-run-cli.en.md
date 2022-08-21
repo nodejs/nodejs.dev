@@ -36,6 +36,16 @@ chmod u+x app.js
 
 While running the command, make sure you are in the same directory which contains the `app.js` file.
 
+## Pass string as argument to `node` instead of file path
+
+To execute a string as argument you can use `-e`, `--eval "script"`. Evaluate the following argument as JavaScript. The modules which are predefined in the REPL can also be used in script.
+
+On Windows, using cmd.exe a single quote will not work correctly because it only recognizes double `"` for quoting. In Powershell or Git bash, both `'` and `"` are usable.
+
+```bash
+node -e "console.log(123)"
+```
+
 ## Restart the application automatically
 
 The `node` command has to be re-executed in bash whenever there is a change in the application. To restart the application automatically, use the `nodemon` module.

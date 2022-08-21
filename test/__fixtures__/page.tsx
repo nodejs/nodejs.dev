@@ -9,6 +9,7 @@ import {
   NodeReleaseDataDetail,
   NodeReleaseData,
   TableOfContents,
+  BlogCategoriesList,
 } from '../../src/types';
 import mockMDXBodyContent from './mockMDXBodyContent';
 
@@ -148,35 +149,39 @@ export const createBlogPageContext = (): BlogPageContext => ({
   navigationData: createNavigationSectionData(),
 });
 
-export const createBlogData = (): BlogPostsList =>
-  ({
-    blogs: {
-      edges: [
-        {
-          node: {
-            frontmatter: {
-              title: 'Mock blog title',
-              category: {
-                name: 'mock-category',
-                slug: 'Mock Category Slug',
-              },
-              blogAuthors: [
-                {
-                  name: 'Mock author name',
-                  website: 'Mock URL',
-                },
-              ],
+export const createBlogData = (): BlogPostsList & BlogCategoriesList => ({
+  posts: {
+    edges: [
+      {
+        node: {
+          frontmatter: {
+            title: 'Mock blog title',
+            category: {
+              name: 'mock-category',
+              slug: 'Mock Category Slug',
             },
-            fields: {
-              date: 'Mock date',
-              slug: 'Mock blog slug',
-              categoryName: 'mock-category',
+            blogAuthors: [
+              {
+                name: 'Mock author name',
+                website: 'Mock URL',
+              },
+            ],
+          },
+          fields: {
+            date: 'Mock date',
+            slug: 'Mock blog slug',
+            readingTime: {
+              text: '1 min read',
             },
           },
         },
-      ],
-    },
-  } as BlogPostsList);
+      },
+    ],
+  },
+  categories: {
+    edges: [],
+  },
+});
 
 export const createBlogPageData = (): BlogPageData => ({
   blog: {
@@ -215,7 +220,7 @@ export const createBlogPageData = (): BlogPageData => ({
           fields: {
             date: 'date-mock',
             slug: 'slug-mock',
-            categoryName: 'category-mock',
+            readingTime: { text: 'text-mock' },
           },
         },
       },
