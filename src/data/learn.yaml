@@ -39,14 +39,14 @@
     - node-process-nexttick
     - node-setimmediate
     - javascript-timers
-    - javascripts-callbacks
+    - javascript-callbacks
     - javascript-promises
     - javascript-async-await
     - node-event-emitter
     - node-http-server
     - node-make-http-requests
     - node-request-data
-    - node-file-descriptions
+    - node-file-descriptors
     - node-file-stats
     - node-file-paths
     - node-reading-files

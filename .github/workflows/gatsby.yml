@@ -20,6 +20,3 @@ jobs:
 
       - name: Run Gatsby Build
         run: npm run build-ci
-
-      - name: Run Storybook Build
-        run: npm run build-storybook

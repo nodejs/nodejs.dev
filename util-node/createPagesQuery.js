@@ -1,6 +1,6 @@
 module.exports = `
 {
-  allMdx(
+  pages: allMdx(
     filter: {
       fields: {
         slug: {
@@ -18,6 +18,7 @@ module.exports = `
             "package-manager"
           ]
         }
+        categoryName: { ne: "learn" }
       }
     }
     sort: { fields: [fileAbsolutePath], order: ASC }
@@ -61,6 +62,13 @@ module.exports = `
         fields {
           slug
         }
+      }
+    }
+  }
+  categories: allCategoriesYaml {
+    edges {
+      node {
+        name
       }
     }
   }

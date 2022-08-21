@@ -1,17 +1,13 @@
 function getYamlPageIdentifier(relativePath) {
-  // This attempts to include optional possible language code file extension suffixes
+  // Include optional possible language code file extension suffixes
   // eg.: index.en.md, index.md, index.en.mdx, some-blog-post.md, ...
-  return relativePath.endsWith('/index.')
+  return relativePath.includes('/index.')
     ? relativePath.replace(/\/index(\.[a-z]+)?\.(mdx|md)/, '')
     : relativePath.replace(/(\.[a-z]+)?\.(mdx|md)/, '');
 }
 
-function createLearnPages(edges, yamlNavigationData) {
-  const navigationData = {};
-  const markdownPages = [];
-
-  // Handles the parsing of all Markdown Pages
-  edges.forEach(({ node }, index) => {
+function iterateEdges(edges) {
+  function updateMarkdownPage({ node }, index) {
     const {
       fields: { slug, categoryName },
       parent: { relativePath },
@@ -42,7 +38,7 @@ function createLearnPages(edges, yamlNavigationData) {
       };
     }
 
-    markdownPages.push({
+    return {
       slug,
       title,
       realPath: fileAbsolutePath || '',
@@ -50,20 +46,21 @@ function createLearnPages(edges, yamlNavigationData) {
       previous: previousNodeData,
       relativePath,
       category: categoryName,
-    });
-  });
+    };
+  }
 
-  // We collect all pages that have category set to Learn
-  // As we want to build a navigation data for learn
-  // Then we get their unique identifiers based on the relativePath
-  // To match the ones defined on `src/data/learn.yaml`
-  const learnPages = markdownPages
-    .filter(page => page.category === 'learn')
-    .reduce((acc, page) => {
-      const pageId = getYamlPageIdentifier(page.relativePath);
+  return edges.map(updateMarkdownPage);
+}
 
-      return { ...acc, [pageId]: page };
-    }, {});
+function createMarkdownPages(pagesEdges, learnEdges, yamlNavigationData) {
+  const learnPages = [];
+  const navigationData = {};
+
+  // Iterates the non-Learn edges and transforms them in Pages
+  const markdownPages = iterateEdges(pagesEdges);
+
+  const getLearnEdgeByPageId = pageId => edge =>
+    getYamlPageIdentifier(edge.node.parent.relativePath) === pageId;
 
   // Handles the Navigation Data only of Learn pages
   yamlNavigationData.forEach(({ section, items }) => {
@@ -74,12 +71,24 @@ function createLearnPages(edges, yamlNavigationData) {
 
     // This adds the items to the navigation section data based on the order defined within the YAML file
     // If the page doesn't exist it will be set as null and then removed via Array.filter()
-    navigationData[section].data = items
-      .map(pageId => learnPages[pageId] || null)
-      .filter(page => page !== null);
+    navigationData[section].data = iterateEdges(
+      items
+        // Iterates the items of the section and retrieve their respective edges
+        // then we transform them into pages and add to the navigation data
+        .map(pageId => learnEdges.find(getLearnEdgeByPageId(pageId)))
+        .filter(edge => edge && edge.node)
+    );
+
+    // Then we push them to the resulting learn pages object
+    learnPages.push(...navigationData[section].data);
   });
 
-  return { markdownPages, navigationData };
+  return {
+    markdownPages,
+    learnPages,
+    navigationData,
+    firstLearnPage: learnPages[0],
+  };
 }
 
-module.exports = createLearnPages;
+module.exports = createMarkdownPages;

@@ -688,7 +688,45 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
 </div>
 `;
 
-exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `<div />`;
+exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `
+<div>
+  <div
+    class="install"
+  >
+    <div
+      class="react-tabs"
+      data-rttabs="true"
+    >
+      <div
+        class="install__header"
+      >
+        <div
+          class="install__header-circles"
+        >
+          <div
+            class="install__header-grey-circle"
+          />
+          <div
+            class="install__header-grey-circle"
+          />
+          <div
+            class="install__header-grey-circle"
+          />
+        </div>
+        <div
+          class="install__header-text"
+        >
+          bash
+        </div>
+      </div>
+      <ul
+        class="react-tabs__tab-list"
+        role="tablist"
+      />
+    </div>
+  </div>
+</div>
+`;
 
 exports[`Tests for InstallTabs component renders correctly for other 1`] = `
 <div>

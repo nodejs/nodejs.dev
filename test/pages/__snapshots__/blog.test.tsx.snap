@@ -16,6 +16,7 @@ exports[`Blog page renders correctly 1`] = `
           class="nav__startwrapper"
         >
           <a
+            aria-label="Homepage"
             href="/"
           >
             <div
@@ -85,49 +86,66 @@ exports[`Blog page renders correctly 1`] = `
             <li
               class="nav__tabs"
             >
+              <span
+                class="sr-only"
+              >
+                Search Bar
+              </span>
               <div
                 class="searchBarContainer"
                 style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
+                  role="button"
+                  tabindex="0"
                 >
                   <i
                     class="material-icons searchIcon"
                   >
-                    search
+                    travel_explore
                   </i>
-                  <input
-                    autocomplete="off"
-                    class="inputText"
-                    name="query"
-                    placeholder="Search"
-                    value=""
-                  />
+                  <label
+                    for="searchInput"
+                  >
+                    <span>
+                      Search
+                    </span>
+                    <input
+                      autocomplete="off"
+                      class="inputText"
+                      id="searchInput"
+                      name="query"
+                      type="text"
+                      value=""
+                    />
+                  </label>
                 </div>
               </div>
             </li>
             <li
-              class="nav__tabs nav__tabs--right"
-            />
-            <li
               class="nav__tabs"
             >
-              <a
-                href="https://github.com/nodejs/nodejs.dev"
-                rel="noopener noreferrer"
-                target="_blank"
+              <button
+                class="dark-mode-toggle"
+                type="button"
               >
                 <span
                   class="sr-only"
                 >
-                  GitHub
+                  Toggle Dark Mode
                 </span>
-                <svg
-                  fill="var(--color-text-accent)"
-                  style="margin-bottom: -3px;"
-                />
-              </a>
+                <i
+                  class="material-icons light-mode-only theme-buttons"
+                >
+                  mode_night
+                </i>
+                <i
+                  class="material-icons dark-mode-only theme-buttons"
+                >
+                  brightness_medium
+                </i>
+              </button>
             </li>
           </ul>
         </div>
@@ -140,44 +158,59 @@ exports[`Blog page renders correctly 1`] = `
         <div
           class="blog-category-header"
         >
-          <h2>
-            Mock Category Slug
-          </h2>
-          <span />
+          <h1>
+            Node.js Blog
+          </h1>
+          <span>
+            The latest Node.js news, case studies, tutorials, and resources.
+          </span>
         </div>
       </div>
       <div
         class="blog-grid-container"
       >
         <div
-          class="blogCard"
+          class="blog-card"
         >
-          <a
+          <div
             class="title"
-            href="Mock blog slug"
           >
-            Mock blog title
-          </a>
-          <h4>
-            Mock date
-          </h4>
-          <p>
-            by
-             
-            <span>
-              Mock author name
-            </span>
-          </p>
+            <a
+              href="Mock blog slug"
+            >
+              Mock blog title
+            </a>
+            <div
+              class="metadata"
+            >
+              <a
+                class="category"
+                href="/blog/mock-category/"
+              >
+                Mock Category Slug
+              </a>
+              <span>
+                1 min read
+              </span>
+            </div>
+          </div>
+          <div
+            class="content"
+          >
+            <h4>
+              Mock date
+            </h4>
+            <p>
+              by
+               
+              <span>
+                Mock author name
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
-    <section
-      class="bottom-info"
-    >
-      <div
-        class="random-contributor"
-      />
-    </section>
     <footer
       class="footer"
     >
@@ -187,7 +220,7 @@ exports[`Blog page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/trademark"
+            href="/about/trademark"
           >
             Trademark Policy
           </a>
@@ -195,7 +228,7 @@ exports[`Blog page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/privacy"
+            href="/about/privacy"
           >
             Privacy Policy
           </a>
@@ -211,7 +244,7 @@ exports[`Blog page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/security"
+            href="/about/security"
           >
             Security Reporting
           </a>
@@ -302,6 +335,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
           class="nav__startwrapper"
         >
           <a
+            aria-label="Homepage"
             href="/"
           >
             <div
@@ -371,61 +405,90 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
             <li
               class="nav__tabs"
             >
+              <span
+                class="sr-only"
+              >
+                Search Bar
+              </span>
               <div
                 class="searchBarContainer"
                 style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
+                  role="button"
+                  tabindex="0"
                 >
                   <i
                     class="material-icons searchIcon"
                   >
-                    search
+                    travel_explore
                   </i>
-                  <input
-                    autocomplete="off"
-                    class="inputText"
-                    name="query"
-                    placeholder="Search"
-                    value=""
-                  />
+                  <label
+                    for="searchInput"
+                  >
+                    <span>
+                      Search
+                    </span>
+                    <input
+                      autocomplete="off"
+                      class="inputText"
+                      id="searchInput"
+                      name="query"
+                      type="text"
+                      value=""
+                    />
+                  </label>
                 </div>
               </div>
             </li>
             <li
-              class="nav__tabs nav__tabs--right"
-            />
-            <li
               class="nav__tabs"
             >
-              <a
-                href="https://github.com/nodejs/nodejs.dev"
-                rel="noopener noreferrer"
-                target="_blank"
+              <button
+                class="dark-mode-toggle"
+                type="button"
               >
                 <span
                   class="sr-only"
                 >
-                  GitHub
+                  Toggle Dark Mode
                 </span>
-                <svg
-                  fill="var(--color-text-accent)"
-                  style="margin-bottom: -3px;"
-                />
-              </a>
+                <i
+                  class="material-icons light-mode-only theme-buttons"
+                >
+                  mode_night
+                </i>
+                <i
+                  class="material-icons dark-mode-only theme-buttons"
+                >
+                  brightness_medium
+                </i>
+              </button>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <section
-      class="bottom-info"
-    >
+    <div>
       <div
-        class="random-contributor"
+        class="blog-category-container"
+      >
+        <div
+          class="blog-category-header"
+        >
+          <h1>
+            Node.js Blog
+          </h1>
+          <span>
+            The latest Node.js news, case studies, tutorials, and resources.
+          </span>
+        </div>
+      </div>
+      <div
+        class="blog-grid-container"
       />
-    </section>
+    </div>
     <footer
       class="footer"
     >
@@ -435,7 +498,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/trademark"
+            href="/about/trademark"
           >
             Trademark Policy
           </a>
@@ -443,7 +506,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/privacy"
+            href="/about/privacy"
           >
             Privacy Policy
           </a>
@@ -459,7 +522,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/security"
+            href="/about/security"
           >
             Security Reporting
           </a>

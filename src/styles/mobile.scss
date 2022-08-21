@@ -65,8 +65,14 @@
     );
   }
 
-  .searchBarContainer {
-    width: 100%;
+  .blog-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .blog-card,
+  .blog-category-container .blog-category-header {
+    padding: 10px 20px !important;
   }
 
   [data-browser='legacy'] .side-nav__title {

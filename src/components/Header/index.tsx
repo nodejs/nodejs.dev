@@ -3,7 +3,6 @@ import React, { useRef } from 'react';
 import { useTheme } from '@skagami/gatsby-plugin-dark-mode';
 import { ReactComponent as LogoLight } from '../../images/logos/nodejs-logo-light-mode.svg';
 import { ReactComponent as LogoDark } from '../../images/logos/nodejs-logo-dark-mode.svg';
-import { ReactComponent as GitHubLogo } from '../../images/logos/github-logo.svg';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { useLocaleAsDropdown } from '../../hooks/useLocaleAsDropdown';
 import { useAutoClosableDropdown } from '../../hooks/useAutoClosableDropdown';
@@ -38,7 +37,7 @@ const Header = (): JSX.Element => {
     <nav aria-label="Primary" className="nav">
       <div className="nav__container">
         <div className="nav__startwrapper">
-          <Link to="/">
+          <Link to="/" aria-label="Homepage">
             <div className="logo">
               <LogoLight className="nav__logo light-mode-only" />
               <LogoDark className="nav__logo dark-mode-only" />
@@ -91,40 +90,28 @@ const Header = (): JSX.Element => {
 
         <div className="nav__endwrapper">
           <ul className="right-container">
-            <li className="nav__tabs">
-              <SearchBar />
-            </li>
-            <li className="nav__tabs nav__tabs--right">
-              {theme && (
-                <button
-                  type="button"
-                  onClick={() => handleThemeOnClick()}
-                  className="dark-mode-toggle"
-                  onKeyPress={() => handleThemeOnClick(true)}
-                >
-                  <span className="sr-only">Toggle Dark Mode</span>
-                  <i className="material-icons light-mode-only theme-buttons">
-                    nights_stay
-                  </i>
-                  <i className="material-icons dark-mode-only theme-buttons">
-                    wb_sunny
-                  </i>
-                </button>
-              )}
-            </li>
+            {!isMobile && (
+              <li className="nav__tabs">
+                <span className="sr-only">Search Bar</span>
+                <SearchBar />
+              </li>
+            )}
 
             <li className="nav__tabs">
-              <a
-                target="_blank"
-                href="https://github.com/nodejs/nodejs.dev"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                className="dark-mode-toggle"
+                onClick={() => handleThemeOnClick()}
+                onKeyPress={() => handleThemeOnClick(true)}
               >
-                <span className="sr-only">GitHub</span>
-                <GitHubLogo
-                  fill="var(--color-text-accent)"
-                  style={{ marginBottom: '-3px' }}
-                />
-              </a>
+                <span className="sr-only">Toggle Dark Mode</span>
+                <i className="material-icons light-mode-only theme-buttons">
+                  mode_night
+                </i>
+                <i className="material-icons dark-mode-only theme-buttons">
+                  brightness_medium
+                </i>
+              </button>
             </li>
 
             {featureToggles.has('i18n-language-selector') && (
