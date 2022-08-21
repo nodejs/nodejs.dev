@@ -94,8 +94,7 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
             >
               <div
                 class="searchInputContainer"
-                role="button"
-                tabindex="0"
+                role="presentation"
               >
                 <i
                   class="material-icons searchIcon"
@@ -354,8 +353,7 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
             >
               <div
                 class="searchInputContainer"
-                role="button"
-                tabindex="0"
+                role="presentation"
               >
                 <i
                   class="material-icons searchIcon"

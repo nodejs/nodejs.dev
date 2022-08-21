@@ -97,8 +97,7 @@ exports[`Download page renders correctly 1`] = `
               >
                 <div
                   class="searchInputContainer"
-                  role="button"
-                  tabindex="0"
+                  role="presentation"
                 >
                   <i
                     class="material-icons searchIcon"
@@ -917,8 +916,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               >
                 <div
                   class="searchInputContainer"
-                  role="button"
-                  tabindex="0"
+                  role="presentation"
                 >
                   <i
                     class="material-icons searchIcon"

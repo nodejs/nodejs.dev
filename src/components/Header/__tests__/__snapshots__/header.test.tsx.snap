@@ -94,8 +94,7 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
             >
               <div
                 class="searchInputContainer"
-                role="button"
-                tabindex="0"
+                role="presentation"
               >
                 <i
                   class="material-icons searchIcon"
@@ -245,8 +244,7 @@ exports[`Tests for Header component renders correctly 1`] = `
             >
               <div
                 class="searchInputContainer"
-                role="button"
-                tabindex="0"
+                role="presentation"
               >
                 <i
                   class="material-icons searchIcon"

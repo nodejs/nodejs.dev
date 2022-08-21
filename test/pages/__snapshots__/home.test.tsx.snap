@@ -97,8 +97,7 @@ exports[`Home page renders correctly 1`] = `
               >
                 <div
                   class="searchInputContainer"
-                  role="button"
-                  tabindex="0"
+                  role="presentation"
                 >
                   <i
                     class="material-icons searchIcon"
@@ -700,8 +699,7 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
               >
                 <div
                   class="searchInputContainer"
-                  role="button"
-                  tabindex="0"
+                  role="presentation"
                 >
                   <i
                     class="material-icons searchIcon"

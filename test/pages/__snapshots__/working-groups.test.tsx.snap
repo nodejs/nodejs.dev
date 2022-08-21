@@ -97,8 +97,7 @@ exports[`Working Groups page renders correctly 1`] = `
               >
                 <div
                   class="searchInputContainer"
-                  role="button"
-                  tabindex="0"
+                  role="presentation"
                 >
                   <i
                     class="material-icons searchIcon"
