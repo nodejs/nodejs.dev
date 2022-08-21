@@ -448,6 +448,6 @@ You have seen in the description above version numbers like these: `~3.0.0` or `
 
 That symbol specifies which updates your package accepts, from that dependency.
 
-Given that using semver (semantic versioning) all versions have 3 digits, the first being the major release, the second the minor release and the third is the patch release, you have these "[Rules](https://nodejs.dev/learn/semantic-versioning-using-npm/)".
+Given that using semver (semantic versioning) all versions have 3 digits, the first being the major release, the second the minor release and the third is the patch release, you have these "[Rules](/learn/semantic-versioning-using-npm/)".
 
 You can combine most of the versions in ranges, like this: `1.0.0 || >=1.1.0 <1.2.0`, to either use 1.0.0 or one release from 1.1.0 up, but lower than 1.2.0.
