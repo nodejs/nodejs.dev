@@ -1,5 +1,5 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
 import { TableOfContents } from '../../types';
 
 interface Props {
@@ -8,16 +8,11 @@ interface Props {
 }
 
 const TOC = ({ heading, tableOfContents }: Props): null | JSX.Element => {
-  if (!tableOfContents?.items) {
-    return null;
-  }
-
-  return (
+  if (tableOfContents?.items) {
     <details className="toc">
       <summary>
         <h6>{heading}</h6>
       </summary>
-      {/* eslint-disable react/no-danger */}
       <ul className="tableOfContents">
         {tableOfContents.items.map(i => (
           <li key={i.url}>
@@ -25,8 +20,10 @@ const TOC = ({ heading, tableOfContents }: Props): null | JSX.Element => {
           </li>
         ))}
       </ul>
-    </details>
-  );
+    </details>;
+  }
+
+  return null;
 };
 
 export default TOC;

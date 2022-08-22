@@ -63,6 +63,7 @@ export interface PaginationInfo {
 export interface BlogCategory {
   name: string;
   slug: string;
+  description?: string;
 }
 
 export interface NavigationSectionItem {
@@ -70,6 +71,7 @@ export interface NavigationSectionItem {
   title: string;
   section: string;
   category: string;
+  baseUrl?: string;
 }
 
 export interface NavigationSectionData {
@@ -148,7 +150,7 @@ export interface BlogPostsList {
 
 export interface BlogCategoriesList {
   categories: {
-    edges: BlogCategory[];
+    edges: { node: BlogCategory }[];
   };
 }
 

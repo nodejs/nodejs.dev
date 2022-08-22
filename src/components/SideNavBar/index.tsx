@@ -75,6 +75,7 @@ interface NavBarProps {
 const SideNavBar = ({
   pageKey,
   items = sideNavBarItems,
+  title,
 }: NavBarProps): JSX.Element => {
   const [navOpen, setNavOpen] = useState<boolean>(false);
   const toggle = (): void => setNavOpen(!navOpen);
@@ -91,12 +92,26 @@ const SideNavBar = ({
 
   const navElement = useRef<HTMLElement | null>(null);
 
+  const renderNavTitle = () => {
+    if (title) {
+      return (
+        <li className="t-body2 side-nav__item--title">
+          <b>{title}</b>
+          <i className="material-icons">arrow_drop_down</i>
+        </li>
+      );
+    }
+
+    return null;
+  };
+
   return (
     <nav className={className} ref={navElement}>
       <button type="button" className="side-nav__open" onClick={toggle}>
         Menu
       </button>
       <ul className="community-nav__list">
+        {renderNavTitle()}
         {items
           .sort((a, b) => a.title.localeCompare(b.title))
           .map(({ title: commTitle, slug }) => {

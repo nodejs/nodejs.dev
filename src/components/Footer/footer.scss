@@ -1,7 +1,7 @@
 .footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0;
   margin-top: auto;
 
@@ -60,7 +60,7 @@
       > li:first-of-type {
         border-right: none;
         margin-right: 0;
-        padding-right: 0;
+        padding: 6px 0;
       }
     }
 
