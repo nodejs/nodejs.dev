@@ -90,12 +90,11 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
             </span>
             <div
               class="searchBarContainer"
-              style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
+              style="min-height: 0em; width: 100%; max-width: 7em; box-shadow: none;"
             >
               <div
                 class="searchInputContainer"
-                role="button"
-                tabindex="0"
+                role="presentation"
               >
                 <i
                   class="material-icons searchIcon"
@@ -143,6 +142,25 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
                 brightness_medium
               </i>
             </button>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              href="https://github.com/nodejs/nodejs.dev"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span
+                class="sr-only"
+              >
+                GitHub
+              </span>
+              <svg
+                fill="var(--color-text-accent)"
+                style="padding: 1rem; width: 2rem; height: 2rem;"
+              />
+            </a>
           </li>
         </ul>
       </div>
@@ -241,12 +259,11 @@ exports[`Tests for Header component renders correctly 1`] = `
             </span>
             <div
               class="searchBarContainer"
-              style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
+              style="min-height: 0em; width: 100%; max-width: 7em; box-shadow: none;"
             >
               <div
                 class="searchInputContainer"
-                role="button"
-                tabindex="0"
+                role="presentation"
               >
                 <i
                   class="material-icons searchIcon"
@@ -294,6 +311,25 @@ exports[`Tests for Header component renders correctly 1`] = `
                 brightness_medium
               </i>
             </button>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              href="https://github.com/nodejs/nodejs.dev"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span
+                class="sr-only"
+              >
+                GitHub
+              </span>
+              <svg
+                fill="var(--color-text-accent)"
+                style="padding: 1rem; width: 2rem; height: 2rem;"
+              />
+            </a>
           </li>
         </ul>
       </div>
@@ -405,6 +441,25 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
                 brightness_medium
               </i>
             </button>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              href="https://github.com/nodejs/nodejs.dev"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span
+                class="sr-only"
+              >
+                GitHub
+              </span>
+              <svg
+                fill="var(--color-text-accent)"
+                style="padding: 1rem; width: 2rem; height: 2rem;"
+              />
+            </a>
           </li>
         </ul>
       </div>

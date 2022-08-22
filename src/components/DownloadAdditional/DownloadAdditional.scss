@@ -6,6 +6,7 @@ $downloadable-item-height: 40px;
   width: 100%;
 
   &__header {
+    align-items: center;
     display: flex;
     justify-content: space-between;
 
@@ -15,8 +16,7 @@ $downloadable-item-height: 40px;
   }
 
   &__title {
-    font-size: var(--font-size-display5);
-    line-height: var(--line-height-display4);
+    margin: 0;
   }
 
   &__body {

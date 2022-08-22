@@ -1,9 +1,9 @@
 import React, { useMemo, useEffect, useState, createRef } from 'react';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from 'react-click-outside-hook';
 import { Index } from 'elasticlunr';
-import { Link } from 'gatsby';
 import { SearchResult } from '../../types';
 import { SearchProps } from './types';
 
@@ -16,7 +16,7 @@ const containerVariants = {
     boxShadow: '0px 2px 12px 3px rgba(153, 204, 125, 0.14)',
   },
   collapsed: {
-    minHeight: '3em',
+    minHeight: '0em',
     width: '100%',
     maxWidth: '7em',
     boxShadow: 'none',
@@ -98,8 +98,7 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
       <div
         className="searchInputContainer"
         onKeyPress={onKeyPressHandler}
-        role="button"
-        tabIndex={0}
+        role="presentation"
       >
         <i className="material-icons searchIcon">travel_explore</i>
         <label htmlFor="searchInput">
