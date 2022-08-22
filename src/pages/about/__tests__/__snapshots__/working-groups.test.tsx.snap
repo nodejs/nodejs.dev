@@ -1,481 +1,207 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Working Groups page renders correctly 1`] = `
-<div>
-  <div
-    class="layout-container"
+<main
+  class="grid-container"
+>
+  <nav
+    class="side-nav-about"
   >
-    <nav
-      aria-label="Primary"
-      class="nav"
+    <button
+      class="side-nav__open"
+      type="button"
     >
-      <div
-        class="nav__container"
-      >
-        <div
-          class="nav__startwrapper"
-        >
-          <a
-            aria-label="Homepage"
-            href="/"
-          >
-            <div
-              class="logo"
-            >
-              <svg
-                class="nav__logo light-mode-only"
-              />
-              <svg
-                class="nav__logo dark-mode-only"
-              />
-            </div>
-          </a>
-        </div>
-        <ul
-          class="nav__tabs__container"
-        >
-          <li
-            class="nav__tabs"
-          >
-            <a
-              class="activeStyleTab"
-              href="/learn"
-            >
-              Learn
-            </a>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <a
-              class="activeStyleTab"
-              href="https://nodejs.org/en/docs/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Documentation
-            </a>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <a
-              class="activeStyleTab"
-              href="/download"
-            >
-              Download
-            </a>
-          </li>
-          <li
-            class="nav__tabs"
-          >
-            <a
-              class="activeStyleTab"
-              href="/community"
-            >
-              Community
-            </a>
-          </li>
-        </ul>
-        <div
-          class="nav__endwrapper"
-        >
-          <ul
-            class="right-container"
-          >
-            <li
-              class="nav__tabs search-bar"
-            >
-              <span
-                class="sr-only"
-              >
-                Search Bar
-              </span>
-              <div
-                class="searchBarContainer"
-                style="min-height: 0em; width: 100%; max-width: 7em; box-shadow: none;"
-              >
-                <div
-                  class="searchInputContainer"
-                  role="presentation"
-                >
-                  <i
-                    class="material-icons searchIcon"
-                  >
-                    travel_explore
-                  </i>
-                  <label
-                    for="searchInput"
-                  >
-                    <span>
-                      Search
-                    </span>
-                    <input
-                      autocomplete="off"
-                      class="inputText"
-                      id="searchInput"
-                      name="query"
-                      type="text"
-                      value=""
-                    />
-                  </label>
-                </div>
-              </div>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <button
-                class="dark-mode-toggle"
-                type="button"
-              >
-                <span
-                  class="sr-only"
-                >
-                  Toggle Dark Mode
-                </span>
-                <i
-                  class="material-icons light-mode-only theme-buttons"
-                >
-                  mode_night
-                </i>
-                <i
-                  class="material-icons dark-mode-only theme-buttons"
-                >
-                  brightness_medium
-                </i>
-              </button>
-            </li>
-            <li
-              class="nav__tabs"
-            >
-              <a
-                href="https://github.com/nodejs/nodejs.dev"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <span
-                  class="sr-only"
-                >
-                  GitHub
-                </span>
-                <svg
-                  fill="var(--color-text-accent)"
-                  style="padding: 1rem; width: 2rem; height: 2rem;"
-                />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <main
-      class="grid-container"
+      Menu
+    </button>
+    <ul
+      class="community-nav__list"
     >
-      <nav
-        class="side-nav-about"
+      <li
+        class="t-body2 side-nav__item--title"
       >
-        <button
-          class="side-nav__open"
-          type="button"
+        <b>
+          Community Pages
+        </b>
+        <i
+          class="material-icons"
         >
-          Menu
-        </button>
-        <ul
-          class="community-nav__list"
-        >
-          <li
-            class="t-body2 side-nav__item--title"
-          >
-            <b>
-              Community Pages
-            </b>
-            <i
-              class="material-icons"
-            >
-              arrow_drop_down
-            </i>
-          </li>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/about"
-            id="link-about"
-          >
-            About
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/community"
-            id="link-community"
-          >
-            Community
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/download/package-manager"
-            id="link-download/package-manager"
-          >
-            Package Manager
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/about/privacy"
-            id="link-about/privacy"
-          >
-            Privacy Policy
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/about/governance"
-            id="link-about/governance"
-          >
-            Project Governance
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/about/releases"
-            id="link-about/releases"
-          >
-            Releases
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/resources"
-            id="link-resources"
-          >
-            Resources
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/about/security"
-            id="link-about/security"
-          >
-            Security Reporting
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/about/trademark"
-            id="link-about/trademark"
-          >
-            Trademark Policy
-          </a>
-          <a
-            class="t-body2 side-nav__item-community side-nav__item-community--active"
-            href="/about/working-groups"
-            id="link-about/working-groups"
-          >
-            Working Groups
-          </a>
-        </ul>
-      </nav>
-      <article
-        class="article-reader"
+          arrow_drop_down
+        </i>
+      </li>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/about"
+        id="link-about"
       >
-        <h1
-          class="article-reader__headline"
-        >
-          Mock Title
-        </h1>
-        <div>
-          <p>
-            Node.js can be installed in different ways. This post highlights the most common and convenient ones.
-          </p>
-          <p>
-            Official packages for all the major platforms are available at 
-            <a>
-              https://nodejs.dev/download/
-            </a>
-            .
-          </p>
-          <p>
-            One very convenient way to install Node.js is through a package manager. In this case, every operating system has its own.
-          </p>
-          <p>
-            Other package managers for MacOS, Linux, and Windows are listed in 
-            <a>
-              https://nodejs.dev/download/package-manager/
-            </a>
-          </p>
-          <p>
-            <code
-              class="language-text"
-            >
-              nvm
-            </code>
-             is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks, for example.
-          </p>
-          <p>
-            It is also very useful to test your code with old Node.js versions.
-          </p>
-          <p>
-            See 
-            <a>
-              https://github.com/nvm-sh/nvm
-            </a>
-             for more information about this option.
-          </p>
-          <p>
-            In any case, when Node.js is installed you'll have access to the 
-            <code
-              class="language-text"
-            >
-              node
-            </code>
-             executable program in the command line.
-          </p>
-        </div>
-        <ul
-          class="list"
-        >
-          <h5>
-            Contributors
-          </h5>
-          <li>
-            <a
-              class="link"
-              href="https://github.com/author-mock"
-              rel="noopener noreferrer"
-              style="margin-left: 0px;"
-              target="_blank"
-              title="author-mock"
-            >
-              <img
-                alt="author-mock"
-                class="img"
-                src="https://github.com/author-mock.png?size=60"
-              />
-            </a>
-          </li>
-        </ul>
-        <div
-          class="edit"
-        >
-          <a
-            class="link"
-            href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/working-groups.en.md"
-          >
-            <span>
-              Edit this page on GitHub
-            </span>
-            <svg
-              class="icon"
-              fill="currentColor"
-              height="1em"
-              viewBox="0 0 40 40"
-              width="1em"
-            >
-              <path
-                d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"
-              />
-            </svg>
-          </a>
-        </div>
-      </article>
-    </main>
-    <footer
-      class="footer"
+        About
+      </a>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/community"
+        id="link-community"
+      >
+        Community
+      </a>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/download/package-manager"
+        id="link-download/package-manager"
+      >
+        Package Manager
+      </a>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/about/privacy"
+        id="link-about/privacy"
+      >
+        Privacy Policy
+      </a>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/about/governance"
+        id="link-about/governance"
+      >
+        Project Governance
+      </a>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/about/releases"
+        id="link-about/releases"
+      >
+        Releases
+      </a>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/resources"
+        id="link-resources"
+      >
+        Resources
+      </a>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/about/security"
+        id="link-about/security"
+      >
+        Security Reporting
+      </a>
+      <a
+        class="t-body2 side-nav__item-community"
+        href="/about/trademark"
+        id="link-about/trademark"
+      >
+        Trademark Policy
+      </a>
+      <a
+        class="t-body2 side-nav__item-community side-nav__item-community--active"
+        href="/about/working-groups"
+        id="link-about/working-groups"
+      >
+        Working Groups
+      </a>
+    </ul>
+  </nav>
+  <article
+    class="article-reader"
+  >
+    <h1
+      class="article-reader__headline"
     >
-      <ul
-        class="footer__left"
+      Mock Title
+    </h1>
+    <div>
+      <p>
+        Node.js can be installed in different ways. This post highlights the most common and convenient ones.
+      </p>
+      <p>
+        Official packages for all the major platforms are available at 
+        <a>
+          https://nodejs.dev/download/
+        </a>
+        .
+      </p>
+      <p>
+        One very convenient way to install Node.js is through a package manager. In this case, every operating system has its own.
+      </p>
+      <p>
+        Other package managers for MacOS, Linux, and Windows are listed in 
+        <a>
+          https://nodejs.dev/download/package-manager/
+        </a>
+      </p>
+      <p>
+        <code
+          class="language-text"
+        >
+          nvm
+        </code>
+         is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks, for example.
+      </p>
+      <p>
+        It is also very useful to test your code with old Node.js versions.
+      </p>
+      <p>
+        See 
+        <a>
+          https://github.com/nvm-sh/nvm
+        </a>
+         for more information about this option.
+      </p>
+      <p>
+        In any case, when Node.js is installed you'll have access to the 
+        <code
+          class="language-text"
+        >
+          node
+        </code>
+         executable program in the command line.
+      </p>
+    </div>
+    <ul
+      class="list"
+    >
+      <h5>
+        Contributors
+      </h5>
+      <li>
+        <a
+          class="link"
+          href="https://github.com/author-mock"
+          rel="noopener noreferrer"
+          style="margin-left: 0px;"
+          target="_blank"
+          title="author-mock"
+        >
+          <img
+            alt="author-mock"
+            class="img"
+            src="https://github.com/author-mock.png?size=60"
+          />
+        </a>
+      </li>
+    </ul>
+    <div
+      class="edit"
+    >
+      <a
+        class="link"
+        href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/working-groups.en.md"
       >
-        <li>
-          <a
-            class="footer__link"
-            href="/about/trademark"
-          >
-            Trademark Policy
-          </a>
-        </li>
-        <li>
-          <a
-            class="footer__link"
-            href="/about/privacy"
-          >
-            Privacy Policy
-          </a>
-        </li>
-        <li>
-          <a
-            class="footer__link"
-            href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
-          >
-            Code of Conduct
-          </a>
-        </li>
-        <li>
-          <a
-            class="footer__link"
-            href="/about/security"
-          >
-            Security Reporting
-          </a>
-        </li>
-        <li>
-          <a
-            class="footer__link"
-            href="/about"
-          >
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            class="footer__link"
-            href="/blog"
-          >
-            Blog
-          </a>
-        </li>
-      </ul>
-      <ul
-        class="footer__right"
-      >
-        <li>
-          © OpenJS Foundation
-        </li>
-        <li>
-          <a
-            aria-label="Node.js Github Page Link"
-            href="https://github.com/nodejs/node"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span
-              class="sr-only"
-            >
-              GitHub
-            </span>
-            <svg
-              fill="var(--color-text-secondary)"
-            />
-          </a>
-        </li>
-        <li>
-          <a
-            aria-label="Node.js Twitter Link"
-            href="https://twitter.com/nodejs"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <svg
-              fill="var(--color-text-secondary)"
-            />
-          </a>
-        </li>
-        <li>
-          <a
-            aria-label="Node.js Slack Link"
-            href="https://slack.openjsf.org"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <svg
-              fill="var(--color-text-secondary)"
-            />
-          </a>
-        </li>
-      </ul>
-    </footer>
-  </div>
-</div>
+        <span>
+          Edit this page on GitHub
+        </span>
+        <svg
+          class="icon"
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 40 40"
+          width="1em"
+        >
+          <path
+            d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"
+          />
+        </svg>
+      </a>
+    </div>
+  </article>
+</main>
 `;
