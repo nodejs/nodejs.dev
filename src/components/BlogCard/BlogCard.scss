@@ -1,7 +1,7 @@
 .blog-card {
   display: flex;
   flex-direction: column;
-  padding: 40px 30px;
+  padding: 40px 30px 40px 0;
 
   .title {
     background-color: var(--color-blog-card-background);
