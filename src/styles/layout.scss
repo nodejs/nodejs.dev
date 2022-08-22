@@ -421,8 +421,9 @@ details {
 .toc {
   cursor: pointer;
 
-  h6 {
+  strong {
     display: inline-block;
+    font-size: 0.67em;
     margin: 0;
   }
 

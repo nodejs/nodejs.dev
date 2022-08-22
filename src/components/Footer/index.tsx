@@ -1,9 +1,12 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import { ReactComponent as GitHubLogo } from '../../images/logos/github-logo.svg';
-import { ReactComponent as TwitterLogo } from '../../images/logos/twitter-logo.svg';
-import { ReactComponent as SlackLogo } from '../../images/logos/slack-logo.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faGithub,
+  faSlack,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 import './footer.scss';
 
 export interface DropDownState {
@@ -64,7 +67,10 @@ const Footer = (): JSX.Element => {
             <span className="sr-only">
               <FormattedMessage id="components.footer.links.github" />
             </span>
-            <GitHubLogo fill="var(--color-text-secondary)" />
+            <FontAwesomeIcon
+              icon={faGithub}
+              color="var(--color-text-secondary)"
+            />
           </a>
         </li>
         <li>
@@ -74,7 +80,10 @@ const Footer = (): JSX.Element => {
             rel="noopener noreferrer"
             aria-label="Node.js Twitter Link"
           >
-            <TwitterLogo fill="var(--color-text-secondary)" />
+            <FontAwesomeIcon
+              icon={faTwitter}
+              color="var(--color-text-secondary)"
+            />
           </a>
         </li>
         <li>
@@ -84,7 +93,10 @@ const Footer = (): JSX.Element => {
             rel="noopener noreferrer"
             aria-label="Node.js Slack Link"
           >
-            <SlackLogo fill="var(--color-text-secondary)" />
+            <FontAwesomeIcon
+              icon={faSlack}
+              color="var(--color-text-secondary)"
+            />
           </a>
         </li>
       </ul>

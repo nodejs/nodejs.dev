@@ -31,7 +31,7 @@ exports[`Working Groups page renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/about"
+          href="/about/"
           id="link-about"
         >
           About
@@ -40,7 +40,7 @@ exports[`Working Groups page renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/community"
+          href="/community/"
           id="link-community"
         >
           Community
@@ -49,7 +49,7 @@ exports[`Working Groups page renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/download/package-manager"
+          href="/download/package-manager/"
           id="link-download/package-manager"
         >
           Package Manager
@@ -58,7 +58,7 @@ exports[`Working Groups page renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/about/privacy"
+          href="/about/privacy/"
           id="link-about/privacy"
         >
           Privacy Policy
@@ -67,7 +67,7 @@ exports[`Working Groups page renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/about/governance"
+          href="/about/governance/"
           id="link-about/governance"
         >
           Project Governance
@@ -76,7 +76,7 @@ exports[`Working Groups page renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/about/releases"
+          href="/about/releases/"
           id="link-about/releases"
         >
           Releases
@@ -85,7 +85,7 @@ exports[`Working Groups page renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/resources"
+          href="/resources/"
           id="link-resources"
         >
           Resources
@@ -94,7 +94,7 @@ exports[`Working Groups page renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/about/security"
+          href="/about/security/"
           id="link-about/security"
         >
           Security Reporting
@@ -103,7 +103,7 @@ exports[`Working Groups page renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/about/trademark"
+          href="/about/trademark/"
           id="link-about/trademark"
         >
           Trademark Policy
@@ -111,8 +111,9 @@ exports[`Working Groups page renders correctly 1`] = `
       </li>
       <li>
         <a
+          aria-current="page"
           class="t-body2 side-nav__item-community side-nav__item-community--active"
-          href="/about/working-groups"
+          href="/about/working-groups/"
           id="link-about/working-groups"
         >
           Working Groups
@@ -128,6 +129,33 @@ exports[`Working Groups page renders correctly 1`] = `
     >
       Mock Title
     </h1>
+    <details
+      class="toc"
+    >
+      <summary>
+        <strong>
+          TABLE OF CONTENTS
+        </strong>
+      </summary>
+      <ul
+        class="tableOfContents"
+      >
+        <li>
+          <a
+            href="#mock-title"
+          >
+            mock-title
+          </a>
+        </li>
+        <li>
+          <a
+            href="#mock-title-2"
+          >
+            mock-title-2
+          </a>
+        </li>
+      </ul>
+    </details>
     <div>
       <p>
         Node.js can be installed in different ways. This post highlights the most common and convenient ones.

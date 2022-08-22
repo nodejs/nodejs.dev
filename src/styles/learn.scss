@@ -202,7 +202,7 @@
       overflow: hidden;
       position: fixed;
       right: 0;
-      top: 86px;
+      top: calc(var(--nav-height) * 2);
 
       &--open {
         height: auto;

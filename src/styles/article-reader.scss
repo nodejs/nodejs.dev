@@ -7,6 +7,10 @@
   cursor: pointer;
 }
 
+.blog-container .article-reader {
+  padding: var(--space-80) 0 0 var(--space-96);
+}
+
 .article-reader {
   padding: var(--space-80) 0 0 var(--space-128);
   width: auto;

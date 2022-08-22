@@ -9,18 +9,20 @@ interface Props {
 
 const TOC = ({ heading, tableOfContents }: Props): null | JSX.Element => {
   if (tableOfContents?.items) {
-    <details className="toc">
-      <summary>
-        <h6>{heading}</h6>
-      </summary>
-      <ul className="tableOfContents">
-        {tableOfContents.items.map(i => (
-          <li key={i.url}>
-            <Link to={i.url}>{i.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </details>;
+    return (
+      <details className="toc">
+        <summary>
+          <strong>{heading}</strong>
+        </summary>
+        <ul className="tableOfContents">
+          {tableOfContents.items.map(i => (
+            <li key={i.url}>
+              <Link to={i.url}>{i.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </details>
+    );
   }
 
   return null;

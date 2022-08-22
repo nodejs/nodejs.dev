@@ -31,13 +31,17 @@ const NavigationItem = ({
         'side-nav__item-community--active': isActive,
       });
 
+  const slugWithoutSlash = slug.endsWith('/') ? slug.slice(0, -1) : slug;
+  const destinationUrl = `${baseUrl || '/learn/'}${slugWithoutSlash}/`;
+
   return (
     <li>
       <Link
-        to={`${baseUrl || '/learn/'}${slug}`}
         id={`link-${slug}`}
+        to={destinationUrl}
         onClick={onClick}
         className={className}
+        aria-current={isActive ? 'page' : undefined}
       >
         {title}
       </Link>
