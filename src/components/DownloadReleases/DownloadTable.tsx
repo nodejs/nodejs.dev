@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { NodeReleaseData } from '../../types';
 import './DownloadTable.scss';
 
@@ -11,13 +12,27 @@ const DownloadTable = ({ nodeReleasesData }: Props): JSX.Element => (
     <table className="downloads-table">
       <thead>
         <tr>
-          <th>Release</th>
-          <th>Status</th>
-          <th>Codename</th>
-          <th>Initial Release</th>
-          <th>Active LTS Start</th>
-          <th>Maintenance LTS Start</th>
-          <th>End of Life</th>
+          <th>
+            <FormattedMessage id="components.downloadTable.header.release" />
+          </th>
+          <th>
+            <FormattedMessage id="components.downloadTable.header.status" />
+          </th>
+          <th>
+            <FormattedMessage id="components.downloadTable.header.codename" />
+          </th>
+          <th>
+            <FormattedMessage id="components.downloadTable.header.initialRelease" />
+          </th>
+          <th>
+            <FormattedMessage id="components.downloadTable.header.ltsStarts" />
+          </th>
+          <th>
+            <FormattedMessage id="components.downloadTable.header.maintenanceStart" />
+          </th>
+          <th>
+            <FormattedMessage id="components.downloadTable.header.endOfLife" />
+          </th>
         </tr>
       </thead>
       <tbody>

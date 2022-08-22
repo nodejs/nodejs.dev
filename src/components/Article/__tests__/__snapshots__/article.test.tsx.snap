@@ -106,7 +106,6 @@ exports[`Article component renders correctly 1`] = `
         <span>
           Edit this page on GitHub
         </span>
-         
         <svg
           class="icon"
           fill="currentColor"
@@ -129,7 +128,7 @@ exports[`Article component renders correctly 1`] = `
           href="/learn/test-slug"
           rel="prev"
         >
-          ←   Prev
+          ←  Prev
         </a>
       </li>
       <li>
@@ -138,7 +137,7 @@ exports[`Article component renders correctly 1`] = `
           href="/learn/test-slug"
           rel="next"
         >
-          Next   →
+          Next →
         </a>
       </li>
     </ul>
@@ -324,7 +323,6 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
         <span>
           Edit this page on GitHub
         </span>
-         
         <svg
           class="icon"
           fill="currentColor"
@@ -347,7 +345,7 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
           href="/learn/test-slug"
           rel="prev"
         >
-          ←   Prev
+          ←  Prev
         </a>
       </li>
       <li>
@@ -356,7 +354,7 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
           href="/learn/test-slug"
           rel="next"
         >
-          Next   →
+          Next →
         </a>
       </li>
     </ul>
@@ -477,7 +475,6 @@ exports[`Article component should accept and render child components 1`] = `
         <span>
           Edit this page on GitHub
         </span>
-         
         <svg
           class="icon"
           fill="currentColor"
@@ -500,7 +497,7 @@ exports[`Article component should accept and render child components 1`] = `
           href="/learn/test-slug"
           rel="prev"
         >
-          ←   Prev
+          ←  Prev
         </a>
       </li>
       <li>
@@ -509,7 +506,7 @@ exports[`Article component should accept and render child components 1`] = `
           href="/learn/test-slug"
           rel="next"
         >
-          Next   →
+          Next →
         </a>
       </li>
     </ul>

@@ -1,5 +1,6 @@
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { PaginationInfo } from '../../types';
 import './Pagination.scss';
 
@@ -16,14 +17,14 @@ const Pagination = ({ previous, next }: Props): JSX.Element | null => {
       <li>
         {previous && previous.title && (
           <Link className="link" to={`/learn/${previous.slug}`} rel="prev">
-            ← &nbsp; Prev
+            <FormattedMessage id="components.pagination.previous" />
           </Link>
         )}
       </li>
       <li>
         {next && next.title && (
           <Link className="link" to={`/learn/${next.slug}`} rel="next">
-            Next &nbsp; →
+            <FormattedMessage id="components.pagination.next" />
           </Link>
         )}
       </li>

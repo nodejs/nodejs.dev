@@ -84,7 +84,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
             class="right-container"
           >
             <li
-              class="nav__tabs"
+              class="nav__tabs search-bar"
             >
               <span
                 class="sr-only"
@@ -261,7 +261,6 @@ exports[`PageLayout component renders correctly with data 1`] = `
             <span>
               Edit this page on GitHub
             </span>
-             
             <svg
               class="icon"
               fill="currentColor"
