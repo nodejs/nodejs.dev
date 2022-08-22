@@ -16,7 +16,7 @@ body {
   /* Set in JavaScript */
   --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 72px), 0 100%);
   --banner-gradient: linear-gradient(to right, var(--accent9), var(--info7));
-  --nav-height: 72px;
+  --nav-height: 73px;
   --hero-height: 36rem;
   --brand-light: var(--brand3);
   --brand: var(--brand5);
@@ -301,13 +301,6 @@ select {
   list-style: none;
   margin: 0;
   padding-left: 0;
-
-  .nav__tabs:first-child {
-    flex-grow: 1;
-    height: 40px;
-    justify-content: flex-end;
-    position: relative;
-  }
 }
 
 .nav__tabs {
@@ -315,6 +308,14 @@ select {
   cursor: pointer;
   display: flex;
   margin-left: var(--space-16);
+
+  &.search-bar {
+    align-items: flex-start;
+    flex-grow: 1;
+    height: 40px;
+    justify-content: flex-end;
+    position: relative;
+  }
 
   &__container {
     align-items: center;

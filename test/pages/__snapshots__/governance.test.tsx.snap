@@ -84,7 +84,7 @@ exports[`Governance Page renders correctly 1`] = `
             class="right-container"
           >
             <li
-              class="nav__tabs"
+              class="nav__tabs search-bar"
             >
               <span
                 class="sr-only"

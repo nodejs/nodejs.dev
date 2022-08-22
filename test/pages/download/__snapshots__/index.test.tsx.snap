@@ -84,7 +84,7 @@ exports[`Download page renders correctly 1`] = `
             class="right-container"
           >
             <li
-              class="nav__tabs"
+              class="nav__tabs search-bar"
             >
               <span
                 class="sr-only"
@@ -922,7 +922,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             class="right-container"
           >
             <li
-              class="nav__tabs"
+              class="nav__tabs search-bar"
             >
               <span
                 class="sr-only"
