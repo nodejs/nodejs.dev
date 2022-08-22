@@ -112,7 +112,8 @@
     padding: 0;
     width: 100%;
 
-    .nav__tabs, .nav__tabs:first-child {
+    .nav__tabs,
+    .nav__tabs:first-child {
       height: 3em;
     }
   }
