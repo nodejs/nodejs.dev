@@ -454,10 +454,9 @@ exports[`Releases page renders correctly 1`] = `
           <a
             class="link"
             href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/releases.en.md"
-            style="margin: 0px;"
           >
             <span>
-              Edit this page on GitHub 
+              Edit this page on GitHub
             </span>
             <svg
               class="icon"
@@ -483,7 +482,7 @@ exports[`Releases page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/trademark"
+            href="/about/trademark"
           >
             Trademark Policy
           </a>
@@ -491,7 +490,7 @@ exports[`Releases page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/privacy"
+            href="/about/privacy"
           >
             Privacy Policy
           </a>
@@ -507,7 +506,7 @@ exports[`Releases page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/security"
+            href="/about/security"
           >
             Security Reporting
           </a>

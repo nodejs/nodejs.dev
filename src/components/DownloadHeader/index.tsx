@@ -14,7 +14,7 @@ const DownloadHeader = ({ release }: Props): JSX.Element => {
     <>
       <div className="download-page__navigation">
         <div>
-          HOME /
+          HOME /{' '}
           <span className="download-page__navigation--active">
             <FormattedMessage id="components.downloadHeader.navigation.activeSection" />
           </span>

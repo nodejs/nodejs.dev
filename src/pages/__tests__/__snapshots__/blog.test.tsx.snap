@@ -207,34 +207,56 @@ exports[`Blog page renders correctly 1`] = `
           <h2>
             Node.js Blog
           </h2>
-          <span />
+          <span>
+            The latest Node.js news, case studies, tutorials, and resources.
+          </span>
         </div>
-      </div>
-      <div
-        class="blog-grid-container"
-      >
         <div
-          class="blogCard"
+          class="blog-items"
         >
-          <a
-            class="title"
-            href="Mock blog slug"
+          <div
+            class="blog-card"
           >
-            Mock blog title
-          </a>
-          <h4>
-            Mock date
-          </h4>
-          <p>
-            by
-
-            <span>
-              Mock author name
-            </span>
-          </p>
+            <div
+              class="title"
+            >
+              <a
+                href="Mock blog slug"
+              >
+                Mock blog title
+              </a>
+              <div
+                class="metadata"
+              >
+                <a
+                  class="category"
+                  href="/blog/mock-category/"
+                >
+                  Mock Category Slug
+                </a>
+                <span>
+                  1 min read
+                </span>
+              </div>
+            </div>
+            <div
+              class="content"
+            >
+              <h4>
+                11/11/2022
+              </h4>
+              <p>
+                by
+                 
+                <span>
+                  Mock author name
+                </span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
     <footer
       class="footer"
     >
@@ -244,7 +266,7 @@ exports[`Blog page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/trademark"
+            href="/about/trademark"
           >
             Trademark Policy
           </a>
@@ -252,7 +274,7 @@ exports[`Blog page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/privacy"
+            href="/about/privacy"
           >
             Privacy Policy
           </a>
@@ -268,7 +290,7 @@ exports[`Blog page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/security"
+            href="/about/security"
           >
             Security Reporting
           </a>
@@ -568,7 +590,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/trademark"
+            href="/about/trademark"
           >
             Trademark Policy
           </a>
@@ -576,7 +598,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/privacy"
+            href="/about/privacy"
           >
             Privacy Policy
           </a>
@@ -592,7 +614,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/security"
+            href="/about/security"
           >
             Security Reporting
           </a>

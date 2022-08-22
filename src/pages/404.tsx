@@ -12,8 +12,9 @@ const NotFoundPage = (): JSX.Element => (
       <FormattedMessage id="pages.notFound.title" tagName="h1" />
       <FormattedMessage id="pages.notFound.description" tagName="p" />
       <p>
-        <FormattedMessage id="pages.notFound.takeMeBack" />
-        <Link to="/">Homepage</Link>
+        <Link to="/">
+          <FormattedMessage id="pages.notFound.takeMeBack" />
+        </Link>
       </p>
     </main>
   </Layout>

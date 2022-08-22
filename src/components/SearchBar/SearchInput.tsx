@@ -145,7 +145,7 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
                 <FormattedMessage
                   id={
                     query.length
-                      ? 'components.searchBar.search.title'
+                      ? 'components.searchBar.search.noResults'
                       : 'components.searchBar.search.title'
                   }
                 />

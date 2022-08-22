@@ -1,6 +1,6 @@
 import React from 'react';
-import * as gatsby from 'gatsby';
 import { render } from '@testing-library/react';
+import * as gatsby from 'gatsby';
 import InstallTabs from '../index';
 import * as detectOSModule from '../../../util/detectOS';
 import { UserOS } from '../../../util/detectOS';

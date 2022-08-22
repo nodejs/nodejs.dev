@@ -257,10 +257,9 @@ exports[`PageLayout component renders correctly with data 1`] = `
           <a
             class="link"
             href="https://github.com/nodejs/nodejs.dev/edit/main/mock-editPath"
-            style="margin: 0px;"
           >
             <span>
-              Edit this page on GitHub 
+              Edit this page on GitHub
             </span>
             <svg
               class="icon"
@@ -286,7 +285,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/trademark"
+            href="/about/trademark"
           >
             Trademark Policy
           </a>
@@ -294,7 +293,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/privacy"
+            href="/about/privacy"
           >
             Privacy Policy
           </a>
@@ -310,7 +309,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/security"
+            href="/about/security"
           >
             Security Reporting
           </a>

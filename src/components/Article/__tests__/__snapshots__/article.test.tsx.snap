@@ -102,10 +102,9 @@ exports[`Article component renders correctly 1`] = `
       <a
         class="link"
         href="https://github.com/nodejs/nodejs.dev/edit/main/content/learn/test-path"
-        style="margin: 0px;"
       >
         <span>
-          Edit this page on GitHub 
+          Edit this page on GitHub
         </span>
         <svg
           class="icon"
@@ -320,10 +319,9 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
       <a
         class="link"
         href="https://github.com/nodejs/nodejs.dev/edit/main/content/learn/test-path"
-        style="margin: 0px;"
       >
         <span>
-          Edit this page on GitHub 
+          Edit this page on GitHub
         </span>
         <svg
           class="icon"
@@ -473,10 +471,9 @@ exports[`Article component should accept and render child components 1`] = `
       <a
         class="link"
         href="https://github.com/nodejs/nodejs.dev/edit/main/content/learn/test-path"
-        style="margin: 0px;"
       >
         <span>
-          Edit this page on GitHub 
+          Edit this page on GitHub
         </span>
         <svg
           class="icon"

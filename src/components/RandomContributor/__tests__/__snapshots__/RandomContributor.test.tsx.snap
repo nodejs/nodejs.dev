@@ -22,23 +22,12 @@ exports[`RandomContributor component should render correctly 1`] = `
     <div
       class="random-contributor__thank"
     >
-      Thank you 
       <a
         href="profileUri_mock"
         rel="nofollow noopener noreferrer"
         target="_blank"
       >
-        login_mock
-      </a>
-       for being a Node.js contributor, with 
-      <a
-        href="commitsListUri_mock"
-        rel="nofollow noopener noreferrer"
-        target="_blank"
-      >
-        <span>
-          0 contributions
-        </span>
+        Thank you, login_mock  for being a Node.js contributor, with 0 contributions
       </a>
     </div>
   </div>

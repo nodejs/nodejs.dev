@@ -8,10 +8,9 @@ exports[`EditLink component renders correctly 1`] = `
     <a
       class="link"
       href="https://github.com/nodejs/nodejs.dev/edit/main/content/learn/0002-node-history/index.md"
-      style="margin: 0px;"
     >
       <span>
-        Edit this page on GitHub 
+        Edit this page on GitHub
       </span>
       <svg
         class="icon"

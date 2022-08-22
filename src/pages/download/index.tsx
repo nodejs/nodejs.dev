@@ -52,10 +52,11 @@ const DownloadPage = ({ data: { nodeReleases } }: Props): JSX.Element => {
       <span className="home-page -download">
         <DownloadHeader release={selectedType} />
         <p className="release-description">
-          <FormattedMessage id="pages.download.description" />
+          <FormattedMessage id="pages.download.description" />{' '}
           <Link to="/download/package-manager">
-            <FormattedMessage id="pages.download.link" />
+            <FormattedMessage id="pages.download.packageManager" />
           </Link>
+          .
         </p>
         <DownloadToggle
           selected={typeRelease}

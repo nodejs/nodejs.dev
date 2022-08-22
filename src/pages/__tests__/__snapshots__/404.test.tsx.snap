@@ -179,11 +179,10 @@ exports[`404 page renders correctly 1`] = `
         The page you're trying to access does not exist. Go back to the Homepage or find what you're looking for in the menu.
       </p>
       <p>
-        Take me back to the 
         <a
           href="/"
         >
-          Homepage
+          Take me back to the Homepage
         </a>
       </p>
     </main>
@@ -196,7 +195,7 @@ exports[`404 page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/trademark"
+            href="/about/trademark"
           >
             Trademark Policy
           </a>
@@ -204,7 +203,7 @@ exports[`404 page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/privacy"
+            href="/about/privacy"
           >
             Privacy Policy
           </a>
@@ -220,7 +219,7 @@ exports[`404 page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/security"
+            href="/about/security"
           >
             Security Reporting
           </a>

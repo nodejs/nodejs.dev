@@ -353,10 +353,9 @@ exports[`Working Groups page renders correctly 1`] = `
           <a
             class="link"
             href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/working-groups.en.md"
-            style="margin: 0px;"
           >
             <span>
-              Edit this page on GitHub 
+              Edit this page on GitHub
             </span>
             <svg
               class="icon"
@@ -382,7 +381,7 @@ exports[`Working Groups page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/trademark"
+            href="/about/trademark"
           >
             Trademark Policy
           </a>
@@ -390,7 +389,7 @@ exports[`Working Groups page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/privacy"
+            href="/about/privacy"
           >
             Privacy Policy
           </a>
@@ -406,7 +405,7 @@ exports[`Working Groups page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="/security"
+            href="/about/security"
           >
             Security Reporting
           </a>

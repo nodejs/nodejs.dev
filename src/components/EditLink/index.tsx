@@ -18,7 +18,7 @@ const EditLink = ({ relativePath, editPath }: Props): JSX.Element | null => {
 
   return (
     <div className="edit">
-      <a className="link" href={href} style={{ margin: 0 }}>
+      <a className="link" href={href}>
         <FormattedMessage id="components.editLink.title" tagName="span" />
         <svg
           className="icon"
