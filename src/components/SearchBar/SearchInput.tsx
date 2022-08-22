@@ -16,7 +16,7 @@ const containerVariants = {
     boxShadow: '0px 2px 12px 3px rgba(153, 204, 125, 0.14)',
   },
   collapsed: {
-    minHeight: '3em',
+    minHeight: '0em',
     width: '100%',
     maxWidth: '7em',
     boxShadow: 'none',

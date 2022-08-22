@@ -167,7 +167,6 @@ const gatsbyConfig = {
         cache_busting_mode: 'none',
       },
     },
-
     'gatsby-plugin-sitemap',
     'gatsby-plugin-meta-redirect',
   ],

@@ -10,7 +10,7 @@
   overflow-x: hidden;
   padding: 0 var(--space-20);
   position: sticky;
-  top: calc(var(--nav-height) + var(--space-12) + 2px);
+  top: var(--nav-height);
   width: 100%;
   z-index: 998;
 

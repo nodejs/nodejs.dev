@@ -56,7 +56,7 @@
   }
 
   body {
-    --nav-height: 4.7rem;
+    --nav-height: 42px;
     --banner-clip: polygon(
       0 0,
       100% 0,
@@ -107,15 +107,6 @@
     height: 2.4rem;
   }
 
-  .nav__tabs__container {
-    background: var(--color-fill-app);
-    height: var(--nav-height);
-    justify-content: center;
-    order: 3;
-    padding: 0;
-    width: 100%;
-  }
-
   .nav .right-container {
     justify-content: center;
     padding: 0;
@@ -126,12 +117,21 @@
     display: flex;
     margin-left: 0;
 
-    &:not(:last-child) {
-      margin-right: 0.5rem;
+    &__container {
+      background: var(--color-fill-app);
+      height: var(--nav-height);
+      justify-content: center;
+      order: 3;
+      padding: 0;
+      width: 100%;
+
+      .nav__tabs > a {
+        padding: var(--space-08);
+      }
     }
 
-    a {
-      padding: var(--space-08);
+    &:not(:last-child) {
+      margin-right: 0.5rem;
     }
   }
 
