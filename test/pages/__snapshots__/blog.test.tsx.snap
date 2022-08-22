@@ -84,7 +84,7 @@ exports[`Blog page renders correctly 1`] = `
             class="right-container"
           >
             <li
-              class="nav__tabs"
+              class="nav__tabs search-bar"
             >
               <span
                 class="sr-only"
@@ -449,7 +449,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
             class="right-container"
           >
             <li
-              class="nav__tabs"
+              class="nav__tabs search-bar"
             >
               <span
                 class="sr-only"

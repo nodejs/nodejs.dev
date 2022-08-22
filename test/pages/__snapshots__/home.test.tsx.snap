@@ -84,7 +84,7 @@ exports[`Home page renders correctly 1`] = `
             class="right-container"
           >
             <li
-              class="nav__tabs"
+              class="nav__tabs search-bar"
             >
               <span
                 class="sr-only"
@@ -705,7 +705,7 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
             class="right-container"
           >
             <li
-              class="nav__tabs"
+              class="nav__tabs search-bar"
             >
               <span
                 class="sr-only"
