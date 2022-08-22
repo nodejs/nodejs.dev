@@ -108,18 +108,13 @@
   }
 
   .nav .right-container {
-    justify-content: center;
     padding: 0;
     width: 100%;
-
-    .nav__tabs,
-    .nav__tabs:first-child {
-      height: 3em;
-    }
   }
 
   .nav__tabs {
     display: flex;
+    height: 3em;
     margin-left: 0;
 
     &__container {

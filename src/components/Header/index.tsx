@@ -99,7 +99,7 @@ const Header = (): JSX.Element => {
         <div className="nav__endwrapper">
           <ul className="right-container">
             {!isMobile && (
-              <li className="nav__tabs">
+              <li className="nav__tabs search-bar">
                 <span className="sr-only">Search Bar</span>
                 <SearchBar />
               </li>
