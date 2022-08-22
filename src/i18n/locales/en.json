@@ -1,4 +1,6 @@
 {
+  "blog.title": "Node.js Blog",
+  "blog.description": "The latest Node.js news, case studies, tutorials, and resources.",
   "blog.authors.list.title.by": "by",
   "blog.authors.list.title.and": "and",
   "components.downloadAdditional.title": "Additional Downloads",

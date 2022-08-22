@@ -27,9 +27,9 @@ const Blog = ({ data: { posts, categories } }: Props): JSX.Element => (
       />
       <div className="blog-grid-container">
         <div className="blog-category-header">
-          <h2>Node.js Blog</h2>
+          <FormattedMessage id="blog.title" tagName="h2" />
           <span>
-            The latest Node.js news, case studies, tutorials, and resources.
+            <FormattedMessage id="blog.description" />
           </span>
         </div>
         <div className="blog-items">
