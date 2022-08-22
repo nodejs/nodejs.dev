@@ -1,12 +1,11 @@
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import React, { Fragment } from 'react';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import { BlogMetaData } from '../../types';
 import { getTerminatingString } from '../../util/getTerminatingString';
 import './BlogCard.scss';
 
-interface Props {
-  data: BlogMetaData;
-}
+type Props = { data: BlogMetaData } & WrappedComponentProps;
 
 const getBlogCategoryUrl = (category: string): string => `/blog/${category}/`;
 
@@ -17,6 +16,7 @@ const BlogCard = ({
       frontmatter: { blogAuthors, title, category },
     },
   },
+  intl,
 }: Props): JSX.Element => (
   <div className="blog-card">
     <div className="title">
@@ -33,11 +33,15 @@ const BlogCard = ({
     <div className="content">
       <h4>{date}</h4>
       <p>
-        by{' '}
+        {intl.formatMessage({ id: 'blog.authors.list.title.by' })}{' '}
         {blogAuthors?.map((author, i) => (
           <Fragment key={author.name}>
             <span>{author.name}</span>
-            {getTerminatingString(i, blogAuthors.length)}
+            {getTerminatingString(
+              i,
+              blogAuthors.length,
+              ` ${intl.formatMessage({ id: 'blog.authors.list.title.and' })} `
+            )}
           </Fragment>
         ))}
       </p>
@@ -45,4 +49,4 @@ const BlogCard = ({
   </div>
 );
 
-export default BlogCard;
+export default injectIntl(BlogCard);

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { render } from '@testing-library/react';
 import NavigationItem from '..';
 
@@ -33,11 +32,13 @@ describe('NavigationItem component', (): void => {
         onClick={noop}
       />
     );
+    // eslint-disable-next-line testing-library/no-node-access
     const sideNavElement = document.getElementsByClassName('side-nav__item')[0];
     expect(sideNavElement).toBeDefined();
     expect(sideNavElement).toBeInTheDocument();
     expect(sideNavElement).toBeVisible();
 
+    // eslint-disable-next-line testing-library/no-node-access
     const communitySideNavElms = document.getElementsByClassName(
       'side-nav__item-community'
     );
@@ -56,6 +57,7 @@ describe('NavigationItem component', (): void => {
         onClick={noop}
       />
     );
+    // eslint-disable-next-line testing-library/no-node-access
     const communitySideNavElement = document.getElementsByClassName(
       'side-nav__item-community'
     )[0];
@@ -63,6 +65,7 @@ describe('NavigationItem component', (): void => {
     expect(communitySideNavElement).toBeInTheDocument();
     expect(communitySideNavElement).toBeVisible();
 
+    // eslint-disable-next-line testing-library/no-node-access
     const sideNavElements = document.getElementsByClassName('side-nav__item');
     expect(sideNavElements.length).toBe(0);
   });

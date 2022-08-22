@@ -12,7 +12,6 @@ exports[`EditLink component renders correctly 1`] = `
       <span>
         Edit this page on GitHub
       </span>
-       
       <svg
         class="icon"
         fill="currentColor"

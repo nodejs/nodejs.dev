@@ -7,16 +7,15 @@ exports[`DownloadHeader component renders correctly 1`] = `
   >
     <div>
       HOME /
+       
       <span
         class="download-page__navigation--active"
       >
-         downloads
+        downloads
       </span>
     </div>
     <div>
-      CURRENT
-       VERSION 
-      v14.11.0
+      CURRENT VERSION v14.11.0
     </div>
   </div>
   <div
@@ -30,9 +29,7 @@ exports[`DownloadHeader component renders correctly 1`] = `
     <div
       class="download-page__navigation--npm"
     >
-      (includes npm 
-      6.14.8
-      )
+      (includes npm 6.14.8)
     </div>
   </div>
 </div>

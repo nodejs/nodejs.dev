@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 import NavigationSection from '../../components/NavigationSection';
 import { NavigationSectionData, NavigationSectionItem } from '../../types';
 import { isMobileScreen } from '../../util/isScreenWithinWidth';
@@ -49,7 +50,7 @@ const Navigation = ({
   return (
     <nav aria-label={label} className={className}>
       <button type="button" className="side-nav__open" onClick={toggle}>
-        Menu
+        <FormattedMessage id="containers.navigation.title" />
       </button>
       {Object.keys(sections).map(
         (sectionKey: string): false | JSX.Element =>

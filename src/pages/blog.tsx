@@ -1,5 +1,6 @@
-import { graphql } from 'gatsby';
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+import { graphql } from 'gatsby';
 import BlogCard from '../components/BlogCard';
 import Layout from '../components/Layout';
 import SideNavBar from '../components/SideNavBar';
@@ -26,9 +27,9 @@ const Blog = ({ data: { posts, categories } }: Props): JSX.Element => (
       />
       <div className="blog-grid-container">
         <div className="blog-category-header">
-          <h2>Node.js Blog</h2>
+          <FormattedMessage id="blog.title" tagName="h2" />
           <span>
-            The latest Node.js news, case studies, tutorials, and resources.
+            <FormattedMessage id="blog.description" />
           </span>
         </div>
         <div className="blog-items">
