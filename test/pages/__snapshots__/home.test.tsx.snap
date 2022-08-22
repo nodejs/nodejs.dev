@@ -93,12 +93,11 @@ exports[`Home page renders correctly 1`] = `
               </span>
               <div
                 class="searchBarContainer"
-                style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
+                style="min-height: 0em; width: 100%; max-width: 7em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
-                  role="button"
-                  tabindex="0"
+                  role="presentation"
                 >
                   <i
                     class="material-icons searchIcon"
@@ -146,6 +145,25 @@ exports[`Home page renders correctly 1`] = `
                   brightness_medium
                 </i>
               </button>
+            </li>
+            <li
+              class="nav__tabs"
+            >
+              <a
+                href="https://github.com/nodejs/nodejs.dev"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  class="sr-only"
+                >
+                  GitHub
+                </span>
+                <svg
+                  fill="var(--color-text-accent)"
+                  style="padding: 1rem; width: 2rem; height: 2rem;"
+                />
+              </a>
             </li>
           </ul>
         </div>
@@ -544,7 +562,7 @@ exports[`Home page renders correctly 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://nodejs.org/en/blog/"
+            href="/blog"
           >
             Blog
           </a>
@@ -696,12 +714,11 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
               </span>
               <div
                 class="searchBarContainer"
-                style="min-height: 3em; width: 100%; max-width: 7em; box-shadow: none;"
+                style="min-height: 0em; width: 100%; max-width: 7em; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
-                  role="button"
-                  tabindex="0"
+                  role="presentation"
                 >
                   <i
                     class="material-icons searchIcon"
@@ -789,6 +806,25 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
                   </button>
                 </li>
               </ul>
+            </li>
+            <li
+              class="nav__tabs"
+            >
+              <a
+                href="https://github.com/nodejs/nodejs.dev"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  class="sr-only"
+                >
+                  GitHub
+                </span>
+                <svg
+                  fill="var(--color-text-accent)"
+                  style="padding: 1rem; width: 2rem; height: 2rem;"
+                />
+              </a>
             </li>
           </ul>
         </div>
@@ -1187,7 +1223,7 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
         <li>
           <a
             class="footer__link"
-            href="https://nodejs.org/en/blog/"
+            href="/blog"
           >
             Blog
           </a>
