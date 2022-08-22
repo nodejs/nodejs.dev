@@ -261,7 +261,6 @@ exports[`PageLayout component renders correctly with data 1`] = `
             <span>
               Edit this page on GitHub
             </span>
-             
             <svg
               class="icon"
               fill="currentColor"

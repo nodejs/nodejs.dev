@@ -1,4 +1,5 @@
 import React, { useState, FC } from 'react';
+import { FormattedMessage } from 'react-intl';
 import DownloadToggle from '../DownloadToggle';
 import { NodeReleaseLTSNPMVersion } from '../../types';
 import { getDownloadableItemsList, Downloadable } from './downloadItems';
@@ -16,7 +17,7 @@ const DownloadButton: FC<DownloadButtonProps> = ({
   className,
   link,
   label,
-}: DownloadButtonProps) => (
+}) => (
   <a className={className} href={link}>
     <i className="material-icons">get_app</i>
     {label}
@@ -33,7 +34,7 @@ const DownloadableItem: FC<DownloadableItemProps> = ({
   item,
   isExpanded,
   setExpandedItem,
-}: DownloadableItemProps) => {
+}) => {
   const onClick = (): void =>
     isExpanded ? setExpandedItem('') : setExpandedItem(item.name);
   const classes = `${CLASS_NAME}__item`.concat(
@@ -84,12 +85,14 @@ const DownloadAdditional: FC<DownloadAdditionalProps> = ({
   line,
   selectedTypeRelease,
   handleTypeReleaseToggle,
-}: DownloadAdditionalProps): JSX.Element => {
+}) => {
   const [expandedItem, setExpandedItem] = useState('');
   return (
     <div className={CLASS_NAME}>
       <div className={`${CLASS_NAME}__header`}>
-        <h3 className={`${CLASS_NAME}__title`}>Additional Downloads</h3>
+        <h3 className={`${CLASS_NAME}__title`}>
+          <FormattedMessage id="components.downloadAdditional.title" />
+        </h3>
         <DownloadToggle
           selected={selectedTypeRelease}
           handleClick={handleTypeReleaseToggle}

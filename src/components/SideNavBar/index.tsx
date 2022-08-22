@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useMemo } from 'react';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { SideNavBarItem } from '../../types';
 import NavigationItem from '../NavigationItem';
 import '../../styles/about.scss';
@@ -19,43 +20,43 @@ export enum SideNavBarKeys {
 
 const sideNavBarItems: SideNavBarItem[] = [
   {
-    title: 'About',
+    title: 'components.sideBar.items.about',
     slug: SideNavBarKeys.about,
   },
   {
-    title: 'Project Governance',
+    title: 'components.sideBar.items.governance',
     slug: SideNavBarKeys.governance,
   },
   {
-    title: 'Community',
+    title: 'components.sideBar.items.community',
     slug: SideNavBarKeys.community,
   },
   {
-    title: 'Working Groups',
+    title: 'components.sideBar.items.workingGroups',
     slug: SideNavBarKeys.workingGroups,
   },
   {
-    title: 'Releases',
+    title: 'components.sideBar.items.releases',
     slug: SideNavBarKeys.releases,
   },
   {
-    title: 'Resources',
+    title: 'components.sideBar.items.resources',
     slug: SideNavBarKeys.resources,
   },
   {
-    title: 'Trademark Policy',
+    title: 'components.sideBar.items.trademark',
     slug: SideNavBarKeys.trademark,
   },
   {
-    title: 'Privacy Policy',
+    title: 'components.sideBar.items.privacy',
     slug: SideNavBarKeys.privacy,
   },
   {
-    title: 'Security Reporting',
+    title: 'components.sideBar.items.security',
     slug: SideNavBarKeys.security,
   },
   {
-    title: 'Package Manager',
+    title: 'components.sideBar.items.packageManager',
     slug: SideNavBarKeys.packageManager,
   },
 ];
@@ -79,6 +80,7 @@ const SideNavBar = ({
 }: NavBarProps): JSX.Element => {
   const [navOpen, setNavOpen] = useState<boolean>(false);
   const toggle = (): void => setNavOpen(!navOpen);
+  const intl = useIntl();
 
   const className = navOpen
     ? 'side-nav-about side-nav--open'
@@ -105,14 +107,23 @@ const SideNavBar = ({
     return null;
   };
 
+  const translatedSidebar = useMemo(
+    () =>
+      items.map(item => ({
+        ...item,
+        title: intl.formatMessage({ id: item.title }),
+      })),
+    [intl, items]
+  );
+
   return (
     <nav className={className} ref={navElement}>
       <button type="button" className="side-nav__open" onClick={toggle}>
-        Menu
+        <FormattedMessage id="components.sideBar.title" />
       </button>
       <ul className="community-nav__list">
         {renderNavTitle()}
-        {items
+        {translatedSidebar
           .sort((a, b) => a.title.localeCompare(b.title))
           .map(({ title: commTitle, slug }) => {
             return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import './EditLink.scss';
 
 interface Props {
@@ -6,10 +7,11 @@ interface Props {
   editPath?: string;
 }
 
+const baseURL = `https://github.com/nodejs/nodejs.dev/edit/main`;
+
 const EditLink = ({ relativePath, editPath }: Props): JSX.Element | null => {
   if (!relativePath && !editPath) return null;
 
-  const baseURL = `https://github.com/nodejs/nodejs.dev/edit/main`;
   const href = relativePath
     ? `${baseURL}/content/learn/${relativePath}`
     : `${baseURL}/${editPath}`;
@@ -17,7 +19,7 @@ const EditLink = ({ relativePath, editPath }: Props): JSX.Element | null => {
   return (
     <div className="edit">
       <a className="link" href={href}>
-        <span>Edit this page on GitHub</span>{' '}
+        <FormattedMessage id="components.editLink.title" tagName="span" />
         <svg
           className="icon"
           fill="currentColor"

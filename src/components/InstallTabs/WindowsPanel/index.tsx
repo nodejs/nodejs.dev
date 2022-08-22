@@ -1,5 +1,6 @@
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import ShellBox from '../../ShellBox';
 import '../InstallTabs.scss';
 
@@ -24,7 +25,7 @@ const WindowsPanel = (): JSX.Element => {
         className="install__docs-button"
         to="/download/package-manager/#nvs"
       >
-        Read documentation
+        <FormattedMessage id="components.installTabs.readDocs" />
       </Link>
     </div>
   );

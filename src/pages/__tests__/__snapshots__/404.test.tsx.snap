@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`404 page renders correctly 1`] = `
+<div>
+  <div
+    class="layout-container"
+  >
+    <nav
+      aria-label="Primary"
+      class="nav"
+    >
+      <div
+        class="nav__container"
+      >
+        <div
+          class="nav__startwrapper"
+        >
+          <a
+            aria-label="Homepage"
+            href="/"
+          >
+            <div
+              class="logo"
+            >
+              <svg
+                class="nav__logo light-mode-only"
+              />
+              <svg
+                class="nav__logo dark-mode-only"
+              />
+            </div>
+          </a>
+        </div>
+        <ul
+          class="nav__tabs__container"
+        >
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/learn"
+            >
+              Learn
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="https://nodejs.org/en/docs/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Documentation
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/download"
+            >
+              Download
+            </a>
+          </li>
+          <li
+            class="nav__tabs"
+          >
+            <a
+              class="activeStyleTab"
+              href="/community"
+            >
+              Community
+            </a>
+          </li>
+        </ul>
+        <div
+          class="nav__endwrapper"
+        >
+          <ul
+            class="right-container"
+          >
+            <li
+              class="nav__tabs search-bar"
+            >
+              <span
+                class="sr-only"
+              >
+                Search Bar
+              </span>
+              <div
+                class="searchBarContainer"
+                style="min-height: 0em; width: 100%; max-width: 7em; box-shadow: none;"
+              >
+                <div
+                  class="searchInputContainer"
+                  role="presentation"
+                >
+                  <i
+                    class="material-icons searchIcon"
+                  >
+                    travel_explore
+                  </i>
+                  <label
+                    for="searchInput"
+                  >
+                    <span>
+                      Search
+                    </span>
+                    <input
+                      autocomplete="off"
+                      class="inputText"
+                      id="searchInput"
+                      name="query"
+                      type="text"
+                      value=""
+                    />
+                  </label>
+                </div>
+              </div>
+            </li>
+            <li
+              class="nav__tabs"
+            >
+              <button
+                class="dark-mode-toggle"
+                type="button"
+              >
+                <span
+                  class="sr-only"
+                >
+                  Toggle Dark Mode
+                </span>
+                <i
+                  class="material-icons light-mode-only theme-buttons"
+                >
+                  mode_night
+                </i>
+                <i
+                  class="material-icons dark-mode-only theme-buttons"
+                >
+                  brightness_medium
+                </i>
+              </button>
+            </li>
+            <li
+              class="nav__tabs"
+            >
+              <a
+                href="https://github.com/nodejs/nodejs.dev"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  class="sr-only"
+                >
+                  GitHub
+                </span>
+                <svg
+                  fill="var(--color-text-accent)"
+                  style="padding: 1rem; width: 2rem; height: 2rem;"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main
+      style="width: 100%; text-align: center; margin-top: 150px;"
+    >
+      <h1>
+        PAGE NOT FOUND
+      </h1>
+      <p>
+        The page you're trying to access does not exist. Go back to the Homepage or find what you're looking for in the menu.
+      </p>
+      <p>
+        <a
+          href="/"
+        >
+          Take me back to the Homepage
+        </a>
+      </p>
+    </main>
+    <footer
+      class="footer"
+    >
+      <ul
+        class="footer__left"
+      >
+        <li>
+          <a
+            class="footer__link"
+            href="/about/trademark"
+          >
+            Trademark Policy
+          </a>
+        </li>
+        <li>
+          <a
+            class="footer__link"
+            href="/about/privacy"
+          >
+            Privacy Policy
+          </a>
+        </li>
+        <li>
+          <a
+            class="footer__link"
+            href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
+          >
+            Code of Conduct
+          </a>
+        </li>
+        <li>
+          <a
+            class="footer__link"
+            href="/about/security"
+          >
+            Security Reporting
+          </a>
+        </li>
+        <li>
+          <a
+            class="footer__link"
+            href="/about"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            class="footer__link"
+            href="/blog"
+          >
+            Blog
+          </a>
+        </li>
+      </ul>
+      <ul
+        class="footer__right"
+      >
+        <li>
+          © OpenJS Foundation
+        </li>
+        <li>
+          <a
+            aria-label="Node.js Github Page Link"
+            href="https://github.com/nodejs/node"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span
+              class="sr-only"
+            >
+              GitHub
+            </span>
+            <svg
+              fill="var(--color-text-secondary)"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            aria-label="Node.js Twitter Link"
+            href="https://twitter.com/nodejs"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <svg
+              fill="var(--color-text-secondary)"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            aria-label="Node.js Slack Link"
+            href="https://slack.openjsf.org"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <svg
+              fill="var(--color-text-secondary)"
+            />
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </div>
+</div>
+`;

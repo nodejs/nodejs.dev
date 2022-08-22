@@ -1,4 +1,8 @@
 {
   "extends": "../tsconfig.json",
-  "include": ["./**/*"]
+  "include": [
+    "./**/*",
+    "../src/util/__tests__/createSlug.test.ts",
+    "../src/hooks/__tests__/useApiDocs.test.tsx"
+  ]
 }
