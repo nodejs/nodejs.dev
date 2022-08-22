@@ -10,33 +10,6 @@ exports[`Article component renders correctly 1`] = `
     >
       test-title
     </h1>
-    <details
-      class="toc"
-    >
-      <summary>
-        <h6>
-          TABLE OF CONTENTS
-        </h6>
-      </summary>
-      <ul
-        class="tableOfContents"
-      >
-        <li>
-          <a
-            href="#mock-title"
-          >
-            mock-title
-          </a>
-        </li>
-        <li>
-          <a
-            href="#mock-title-2"
-          >
-            mock-title-2
-          </a>
-        </li>
-      </ul>
-    </details>
     <div>
       <p>
         Node.js can be installed in different ways. This post highlights the most common and convenient ones.
@@ -255,33 +228,6 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
     >
       test-title
     </h1>
-    <details
-      class="toc"
-    >
-      <summary>
-        <h6>
-          TABLE OF CONTENTS
-        </h6>
-      </summary>
-      <ul
-        class="tableOfContents"
-      >
-        <li>
-          <a
-            href="#mock-title"
-          >
-            mock-title
-          </a>
-        </li>
-        <li>
-          <a
-            href="#mock-title-2"
-          >
-            mock-title-2
-          </a>
-        </li>
-      </ul>
-    </details>
     <div>
       <p>
         Node.js can be installed in different ways. This post highlights the most common and convenient ones.
@@ -428,33 +374,6 @@ exports[`Article component should accept and render child components 1`] = `
     >
       test-title
     </h1>
-    <details
-      class="toc"
-    >
-      <summary>
-        <h6>
-          TABLE OF CONTENTS
-        </h6>
-      </summary>
-      <ul
-        class="tableOfContents"
-      >
-        <li>
-          <a
-            href="#mock-title"
-          >
-            mock-title
-          </a>
-        </li>
-        <li>
-          <a
-            href="#mock-title-2"
-          >
-            mock-title-2
-          </a>
-        </li>
-      </ul>
-    </details>
     <div>
       <p>
         Node.js can be installed in different ways. This post highlights the most common and convenient ones.

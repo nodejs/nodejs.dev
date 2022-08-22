@@ -4,24 +4,21 @@
 # The items property of the section uses the `id` of the files which is interpolated from Gatsby's Node fileAbsolutePath.
 # Note.: If an item here doesn't exist in the content folder it is ignored.
 # Note.: If your Markdown file is inside a subfolder, call it `index.md` and write here the name of the folder
-- section: 'Quick Start'
+- section: 'Getting Started'
   items:
     - node-introduction
     - node-history
     - node-installation
     - node-javascript-language
     - node-difference-browser
-- section: 'Getting Started'
+    - node-difference-dev-prod
+- section: 'Basics & Built-ins'
   items:
-    - v8-engine
-    - node-run-cli
-    - node-terminate-program
-    - node-environment-variables
-    - node-repl
-    - node-cli-args
-    - node-output-to-cli
-    - node-input-from-cli
     - node-export-module
+    - node-exceptions
+    - node-inspect-object
+- section: 'Node.js Package Manager'
+  items:
     - npm
     - where-npm-install-packages
     - how-to-use-npm-package
@@ -35,23 +32,43 @@
     - npm-packages-local-global
     - npm-dependencies-devdependencies
     - npx
+- section: 'Asyhnchronous Work'
+  items:
+    - node-control-flow
     - node-event-loop
     - node-process-nexttick
     - node-setimmediate
-    - javascript-timers
-    - javascript-callbacks
-    - javascript-promises
-    - javascript-async-await
     - node-event-emitter
-    - node-http-server
-    - node-make-http-requests
-    - node-request-data
+- section: 'Manipulating Files'
+  items:
     - node-file-descriptors
     - node-file-stats
     - node-file-paths
     - node-reading-files
     - node-writing-files
     - node-folders
+- section: 'Command Line'
+  items:
+    - node-run-cli
+    - node-terminate-program
+    - node-environment-variables
+    - node-repl
+    - node-cli-args
+    - node-output-to-cli
+    - node-input-from-cli
+- section: 'Node.js Web Server'
+  items:
+    - node-http-server
+    - node-make-http-requests
+    - node-request-data
+- section: 'JavaScript built-ins'
+  items:
+    - javascript-timers
+    - javascript-callbacks
+    - javascript-promises
+    - javascript-async-await
+- section: 'Node.js Modules'
+  items:
     - node-module-fs
     - node-module-path
     - node-module-os
@@ -59,9 +76,8 @@
     - node-module-http
     - node-buffers
     - nodejs-streams
-    - node-difference-dev-prod
-    - node-exceptions
-    - node-inspect-object
+- section: 'Node.js & World'
+  items:
     - node-with-typescript
-    - node-control-flow
     - node-with-web-assembly
+    - v8-engine

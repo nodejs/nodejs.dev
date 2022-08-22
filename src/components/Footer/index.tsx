@@ -44,10 +44,9 @@ const Footer = (): JSX.Element => {
           </Link>
         </li>
         <li>
-          {/* @TODO: Once our Blog components are completely read, move this link to our Blog page */}
-          <a className="footer__link" href="https://nodejs.org/en/blog/">
+          <Link className="footer__link" to="/blog">
             Blog
-          </a>
+          </Link>
         </li>
       </ul>
       <ul className="footer__right">

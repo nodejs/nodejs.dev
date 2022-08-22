@@ -6,17 +6,20 @@
   height: fit-content;
   max-height: 90vh;
   overflow-y: auto;
-  padding-bottom: 10px;
+
+  &.expanded {
+    padding-bottom: 10px;
+  }
 }
 
 .searchInputContainer {
   align-items: center;
   display: flex;
-  height: 3em;
   position: relative;
   width: 100%;
 
   label {
+    align-items: center;
     color: var(--color-text-accent);
     cursor: pointer;
     display: flex;

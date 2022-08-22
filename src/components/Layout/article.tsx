@@ -32,7 +32,9 @@ const ArticleLayout = ({
   return (
     <Layout title={title} description={description}>
       <main className="grid-container">
-        {sidenavKey && <SideNavBar pageKey={sidenavKey} />}
+        {sidenavKey && (
+          <SideNavBar pageKey={sidenavKey} title="Community Pages" />
+        )}
         <Article
           title={title}
           body={body}

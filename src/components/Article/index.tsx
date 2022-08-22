@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { throttle } from 'throttle-debounce';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
@@ -43,15 +43,13 @@ const Article = ({
   date,
   children,
 }: Props): JSX.Element => {
-  const element = React.useRef<HTMLDivElement>(null);
+  const element = useRef<HTMLDivElement>(null);
 
-  React.useEffect((): (() => void) => {
+  useEffect((): (() => void) => {
     const currentElementRef = element;
 
     if (window.history.state && window.history.state.articleScrollTo) {
-      window.scrollTo({
-        top: window.history.state.articleScrollTo,
-      });
+      window.scrollTo({ top: window.history.state.articleScrollTo });
     }
 
     const handleObserverThrottled = throttle(
