@@ -1,12 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '../../../../test/__mocks__/intersectionObserverMock';
-
 import Article from '..';
 import {
   createLearnPageData,
   createLearnPageContext,
-} from '../../../../test/__fixtures__/page';
+} from '../../../__fixtures__/page';
 
 const getArticleProps = () => {
   const learnPageData = createLearnPageData();

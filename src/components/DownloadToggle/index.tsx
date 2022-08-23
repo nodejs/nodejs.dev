@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { FormattedMessage } from 'react-intl';
 import './DownloadToggle.scss';
 
 interface Props {
@@ -31,7 +31,7 @@ const DownloadToggle = ({
               handleClick(selected === 'CURRENT' ? 'LTS' : 'CURRENT')
             }
           >
-            LTS
+            <FormattedMessage id="components.downloadToggle.lts" />
           </button>
           <button
             className={
@@ -47,15 +47,16 @@ const DownloadToggle = ({
               handleClick(selected === 'CURRENT' ? 'LTS' : 'CURRENT')
             }
           >
-            Current
+            <FormattedMessage id="components.downloadToggle.current" />
           </button>
         </div>
       </div>
       {showDescription && (
         <p className="download-toogle__description">
-          {selected === 'LTS'
-            ? 'Recommended for most users'
-            : 'With the latest features'}
+          <FormattedMessage
+            id="components.downloadToggle.recommendation"
+            values={{ selected }}
+          />
         </p>
       )}
     </div>

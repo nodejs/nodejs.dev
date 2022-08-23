@@ -1,5 +1,6 @@
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import React, { useEffect, useRef } from 'react';
+import { FormattedMessage } from 'react-intl';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useTheme } from '@skagami/gatsby-plugin-dark-mode';
 import { ReactComponent as LogoLight } from '../../images/logos/nodejs-logo-light-mode.svg';
 import { ReactComponent as LogoDark } from '../../images/logos/nodejs-logo-dark-mode.svg';
@@ -61,7 +62,7 @@ const Header = (): JSX.Element => {
               activeClassName="active"
               partiallyActive
             >
-              Learn
+              <FormattedMessage id="components.header.links.learn" />
             </Link>
           </li>
           <li className="nav__tabs">
@@ -71,7 +72,10 @@ const Header = (): JSX.Element => {
               href="https://nodejs.org/en/docs/"
               rel="noopener noreferrer"
             >
-              {isMobile ? 'Docs' : 'Documentation'}
+              <FormattedMessage
+                id="components.header.links.docs"
+                values={{ isMobile }}
+              />
             </a>
           </li>
           <li className="nav__tabs">
@@ -81,7 +85,7 @@ const Header = (): JSX.Element => {
               activeClassName="active"
               partiallyActive
             >
-              Download
+              <FormattedMessage id="components.header.links.download" />
             </Link>
           </li>
           <li className="nav__tabs">
@@ -91,7 +95,7 @@ const Header = (): JSX.Element => {
               activeClassName="active"
               partiallyActive
             >
-              Community
+              <FormattedMessage id="components.header.links.community" />
             </Link>
           </li>
         </ul>
@@ -99,7 +103,7 @@ const Header = (): JSX.Element => {
         <div className="nav__endwrapper">
           <ul className="right-container">
             {!isMobile && (
-              <li className="nav__tabs">
+              <li className="nav__tabs search-bar">
                 <span className="sr-only">Search Bar</span>
                 <SearchBar />
               </li>
