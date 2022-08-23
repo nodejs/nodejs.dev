@@ -5,9 +5,9 @@ exports[`AuthorsList component renders correctly 1`] = `
   <ul
     class="list"
   >
-    <h5>
+    <li>
       Contributors
-    </h5>
+    </li>
     <li>
       <a
         class="link"

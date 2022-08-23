@@ -61,9 +61,9 @@ exports[`Article component renders correctly 1`] = `
     <ul
       class="list"
     >
-      <h5>
+      <li>
         Contributors
-      </h5>
+      </li>
       <li>
         <a
           class="link"
@@ -278,9 +278,9 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
     <ul
       class="list"
     >
-      <h5>
+      <li>
         Contributors
-      </h5>
+      </li>
       <li>
         <a
           class="link"
@@ -430,9 +430,9 @@ exports[`Article component should accept and render child components 1`] = `
     <ul
       class="list"
     >
-      <h5>
+      <li>
         Contributors
-      </h5>
+      </li>
       <li>
         <a
           class="link"

@@ -231,9 +231,9 @@ exports[`PageLayout component renders correctly with data 1`] = `
         <ul
           class="list"
         >
-          <h5>
+          <li>
             Contributors
-          </h5>
+          </li>
           <li>
             <a
               class="link"

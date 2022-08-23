@@ -196,76 +196,96 @@ exports[`Package Manager Page renders correctly 1`] = `
               arrow_drop_down
             </i>
           </li>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/about"
-            id="link-about"
-          >
-            About
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/community"
-            id="link-community"
-          >
-            Community
-          </a>
-          <a
-            class="t-body2 side-nav__item-community side-nav__item-community--active"
-            href="/download/package-manager"
-            id="link-download/package-manager"
-          >
-            Package Manager
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/about/privacy"
-            id="link-about/privacy"
-          >
-            Privacy Policy
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/about/governance"
-            id="link-about/governance"
-          >
-            Project Governance
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/about/releases"
-            id="link-about/releases"
-          >
-            Releases
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/resources"
-            id="link-resources"
-          >
-            Resources
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/about/security"
-            id="link-about/security"
-          >
-            Security Reporting
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/about/trademark"
-            id="link-about/trademark"
-          >
-            Trademark Policy
-          </a>
-          <a
-            class="t-body2 side-nav__item-community"
-            href="/about/working-groups"
-            id="link-about/working-groups"
-          >
-            Working Groups
-          </a>
+          <li>
+            <a
+              class="t-body2 side-nav__item-community"
+              href="/about"
+              id="link-about"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              class="t-body2 side-nav__item-community"
+              href="/community"
+              id="link-community"
+            >
+              Community
+            </a>
+          </li>
+          <li>
+            <a
+              class="t-body2 side-nav__item-community side-nav__item-community--active"
+              href="/download/package-manager"
+              id="link-download/package-manager"
+            >
+              Package Manager
+            </a>
+          </li>
+          <li>
+            <a
+              class="t-body2 side-nav__item-community"
+              href="/about/privacy"
+              id="link-about/privacy"
+            >
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a
+              class="t-body2 side-nav__item-community"
+              href="/about/governance"
+              id="link-about/governance"
+            >
+              Project Governance
+            </a>
+          </li>
+          <li>
+            <a
+              class="t-body2 side-nav__item-community"
+              href="/about/releases"
+              id="link-about/releases"
+            >
+              Releases
+            </a>
+          </li>
+          <li>
+            <a
+              class="t-body2 side-nav__item-community"
+              href="/resources"
+              id="link-resources"
+            >
+              Resources
+            </a>
+          </li>
+          <li>
+            <a
+              class="t-body2 side-nav__item-community"
+              href="/about/security"
+              id="link-about/security"
+            >
+              Security Reporting
+            </a>
+          </li>
+          <li>
+            <a
+              class="t-body2 side-nav__item-community"
+              href="/about/trademark"
+              id="link-about/trademark"
+            >
+              Trademark Policy
+            </a>
+          </li>
+          <li>
+            <a
+              class="t-body2 side-nav__item-community"
+              href="/about/working-groups"
+              id="link-about/working-groups"
+            >
+              Working Groups
+            </a>
+          </li>
         </ul>
       </nav>
       <article
@@ -327,9 +347,9 @@ exports[`Package Manager Page renders correctly 1`] = `
         <ul
           class="list"
         >
-          <h5>
+          <li>
             Contributors
-          </h5>
+          </li>
           <li>
             <a
               class="link"
