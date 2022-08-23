@@ -1,21 +1,15 @@
 .list {
-  align-items: center;
-  color: var(--black7);
   display: flex;
   flex-wrap: wrap;
   margin: 5rem 0 2.5rem;
   padding-left: 0;
   text-transform: uppercase;
 
-  li {
-    margin-top: var(--space-08);
-  }
-
   li:first-of-type a {
     margin-left: 0 !important;
   }
 
-  h5 {
+  li {
     color: var(--color-text-secondary);
     display: flex;
     flex-wrap: wrap;
