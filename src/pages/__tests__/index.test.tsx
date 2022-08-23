@@ -61,7 +61,10 @@ const mockData = {
 describe('Home page', () => {
   it('renders correctly', () => {
     const { container } = render(<Index data={mockData} />);
-    expect(container).toMatchSnapshot();
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    const pageContent = container.querySelector('main');
+
+    expect(pageContent).toMatchSnapshot();
   });
 
   it('renders i18n when feature toggle is present', () => {
@@ -77,7 +80,10 @@ describe('Home page', () => {
     });
 
     const { container } = render(<Index data={mockData} />);
-    expect(container).toMatchSnapshot();
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    const pageContent = container.querySelector('main');
+
+    expect(pageContent).toMatchSnapshot();
   });
 
   describe('Banner', () => {
