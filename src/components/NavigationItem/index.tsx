@@ -32,14 +32,16 @@ const NavigationItem = ({
       });
 
   return (
-    <Link
-      to={`${baseUrl || '/learn/'}${slug}`}
-      id={`link-${slug}`}
-      onClick={onClick}
-      className={className}
-    >
-      {title}
-    </Link>
+    <li>
+      <Link
+        to={`${baseUrl || '/learn/'}${slug}`}
+        id={`link-${slug}`}
+        onClick={onClick}
+        className={className}
+      >
+        {title}
+      </Link>
+    </li>
   );
 };
 
