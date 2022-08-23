@@ -30,13 +30,15 @@ exports[`Navigation component renders correctly 1`] = `
       <div
         style="display: block;"
       >
-        <a
-          class="t-body2 side-nav__item side-nav__item--active"
-          href="/learn/intro"
-          id="link-intro"
-        >
-          Section 1
-        </a>
+        <li>
+          <a
+            class="t-body2 side-nav__item side-nav__item--active"
+            href="/learn/intro"
+            id="link-intro"
+          >
+            Section 1
+          </a>
+        </li>
       </div>
     </ul>
   </nav>
