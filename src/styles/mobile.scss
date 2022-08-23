@@ -155,11 +155,6 @@
     }
   }
 
-  .blog-container .recent-posts {
-    /* Place article before recent posts lists on mobile */
-    order: 1;
-  }
-
   [data-browser='legacy'] .side-nav__title {
     background-position: 0 calc(-50vh + var(--magic-hero-number) - 32px);
   }
