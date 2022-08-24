@@ -61,7 +61,7 @@ const os = {
   linux: 'Linux (nvm)',
 };
 
-const installTabSystems: Record<UserOS, Array<string>> = {
+const installTabSystems: Record<UserOS, string[]> = {
   WIN: [os.win, os.mac, os.linux],
   MAC: [os.mac, os.win, os.linux],
   LINUX: [os.linux, os.mac, os.win],
@@ -78,7 +78,7 @@ const InstallTabs = (): JSX.Element | null => {
     const panelSwitch = getOSPanel(userOS);
     const tabLayout = installTabSystems[userOS];
 
-    // This component should be rendered within the client-side onlyn
+    // This component should be rendered within the client-side only.
     setReactTabs(
       <Tabs environment={undefined}>
         <div className="install__header">

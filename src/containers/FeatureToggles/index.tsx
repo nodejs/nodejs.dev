@@ -1,11 +1,10 @@
 import React, { createContext, useMemo } from 'react';
 
 type Props = { children?: React.ReactNode };
-type FeatureToggles = Array<string>;
 
 const FEATURE_FLAGS_STORAGE = 'node_featureFlags';
 
-export const FeatureToggleContext = createContext<FeatureToggles>([]);
+export const FeatureToggleContext = createContext<string[]>([]);
 
 export const FeatureToggleProvider: React.FC<Props> = ({ children }) => {
   const featureFlags = useMemo(() => {
