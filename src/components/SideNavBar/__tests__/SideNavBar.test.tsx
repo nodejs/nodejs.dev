@@ -1,6 +1,6 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import SideNavBar, { SideNavBarKeys, OverflowTypes } from '..';
 
 describe('SideNavBar', () => {
