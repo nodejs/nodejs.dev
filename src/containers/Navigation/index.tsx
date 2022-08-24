@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import NavigationSection from '../../components/NavigationSection';
 import { NavigationSectionData, NavigationSectionItem } from '../../types';
-import { isMobileScreen } from '../../util/isScreenWithinWidth';
 
 interface Props {
   sections: NavigationSectionData;
@@ -19,12 +18,6 @@ const Navigation = ({
 }: Props): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggle = (): void => setIsOpen(!isOpen);
-
-  const onItemClick = () => {
-    if (isMobileScreen()) {
-      toggle();
-    }
-  };
 
   const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
 
@@ -60,7 +53,6 @@ const Navigation = ({
               title={sectionKey}
               section={sections[sectionKey].data}
               currentSlug={currentSlug}
-              onItemClick={onItemClick}
               readSections={readSections}
             />
           )

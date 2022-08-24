@@ -10,7 +10,6 @@ interface Props {
   slug: string;
   title: string;
   baseUrl?: string;
-  onClick?: () => void;
 }
 
 const NavigationItem = ({
@@ -20,7 +19,6 @@ const NavigationItem = ({
   slug,
   title,
   baseUrl,
-  onClick,
 }: Props): JSX.Element => {
   const className = isLearn
     ? classnames('t-body2 side-nav__item', {
@@ -39,7 +37,6 @@ const NavigationItem = ({
       <Link
         id={`link-${slug}`}
         to={destinationUrl}
-        onClick={onClick}
         className={className}
         aria-current={isActive ? 'page' : undefined}
       >
