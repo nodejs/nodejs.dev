@@ -28,7 +28,7 @@ interface Props {
 const mdxComponents = { pre: Codebox, inlineCode: InlineCode, a: MdxLink };
 
 const renderBlogAuthors = (date?: string, authors?: BlogPostAuthor[]) => (
-  <BlogAuthorsList date={date} authors={authors ?? []} />
+  <BlogAuthorsList date={date} authors={authors} />
 );
 
 const renderTOC = (tableOfContents?: TableOfContents) => (
