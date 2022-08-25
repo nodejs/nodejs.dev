@@ -16,7 +16,8 @@ exports[`SideNavBar renders correctly 1`] = `
     >
       <li>
         <a
-          class="t-body2 side-nav__item-community"
+          aria-current="page"
+          class="t-body2 side-nav__item-community side-nav__item-community--active"
           href="/about/"
           id="link-about"
         >
@@ -84,16 +85,6 @@ exports[`SideNavBar renders correctly 1`] = `
           id="link-about/security"
         >
           Security Reporting
-        </a>
-      </li>
-      <li>
-        <a
-          aria-current="page"
-          class="t-body2 side-nav__item-community side-nav__item-community--active"
-          href="/about/trademark/"
-          id="link-about/trademark"
-        >
-          Trademark Policy
         </a>
       </li>
       <li>

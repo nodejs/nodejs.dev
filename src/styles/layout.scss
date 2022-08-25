@@ -418,7 +418,7 @@ details {
   cursor: pointer;
 }
 
-.toc {
+.tableOfContents {
   cursor: pointer;
 
   strong {
@@ -427,20 +427,27 @@ details {
     margin: 0;
   }
 
-  a {
-    font-family: var(--sans-serif);
-    text-decoration: underline;
-    text-decoration-color: var(--black4);
-    transition: all ease-out 0.2s;
+  ul {
+    list-style: none;
+    padding: 0 0 0 var(--space-08);
 
-    &:hover {
-      color: var(--brand-light);
-      text-decoration: none;
+    li {
+      p {
+        margin: 0;
+      }
+
+      a {
+        font-family: var(--sans-serif);
+        text-decoration: underline;
+        text-decoration-color: var(--black4);
+        transition: all ease-out 0.2s;
+
+        &:hover {
+          color: var(--brand-light);
+          text-decoration: none;
+        }
+      }
     }
-  }
-
-  li p {
-    margin: 0;
   }
 }
 

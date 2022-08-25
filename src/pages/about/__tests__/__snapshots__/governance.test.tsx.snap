@@ -104,15 +104,6 @@ exports[`Governance Page renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/about/trademark/"
-          id="link-about/trademark"
-        >
-          Trademark Policy
-        </a>
-      </li>
-      <li>
-        <a
-          class="t-body2 side-nav__item-community"
           href="/about/working-groups/"
           id="link-about/working-groups"
         >
@@ -130,16 +121,14 @@ exports[`Governance Page renders correctly 1`] = `
       Mock Title
     </h1>
     <details
-      class="toc"
+      class="tableOfContents"
     >
       <summary>
         <strong>
           TABLE OF CONTENTS
         </strong>
       </summary>
-      <ul
-        class="tableOfContents"
-      >
+      <ul>
         <li>
           <a
             href="#mock-title"
@@ -204,29 +193,31 @@ exports[`Governance Page renders correctly 1`] = `
          executable program in the command line.
       </p>
     </div>
-    <ul
-      class="list"
+    <div
+      class="authorsList"
     >
-      <li>
-        Contributors
-      </li>
-      <li>
-        <a
-          class="link"
-          href="https://github.com/author-mock"
-          rel="noopener noreferrer"
-          style="margin-left: 0px;"
-          target="_blank"
-          title="author-mock"
-        >
-          <img
-            alt="author-mock"
-            class="img"
-            src="https://github.com/author-mock.png?size=60"
-          />
-        </a>
-      </li>
-    </ul>
+      Contributors
+      <ul
+        class="list"
+      >
+        <li>
+          <a
+            class="link"
+            href="https://github.com/author-mock"
+            rel="noopener noreferrer"
+            style="margin-left: 0px;"
+            target="_blank"
+            title="author-mock"
+          >
+            <img
+              alt="author-mock"
+              class="img"
+              src="https://github.com/author-mock.png?size=60"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
     <div
       class="edit"
     >

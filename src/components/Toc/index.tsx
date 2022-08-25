@@ -10,11 +10,11 @@ interface Props {
 const TOC = ({ heading, tableOfContents }: Props): null | JSX.Element => {
   if (tableOfContents?.items) {
     return (
-      <details className="toc">
+      <details className="tableOfContents">
         <summary>
           <strong>{heading}</strong>
         </summary>
-        <ul className="tableOfContents">
+        <ul>
           {tableOfContents.items.map(i => (
             <li key={i.url}>
               <Link to={i.url}>{i.title}</Link>

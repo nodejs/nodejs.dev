@@ -8,7 +8,9 @@ module.exports = {
   '/governance/': '/about/governance/',
   '/working-groups/': '/about/working-groups/',
   '/releases/': '/about/releases/',
-  '/trademark/': '/about/trademark/',
   '/privacy/': '/about/privacy/',
   '/security/': '/about/security/',
+  // Outside Redirects
+  '/trademark/': 'https://trademark-policy.openjsf.org/',
+  '/about/trademark/': 'https://trademark-policy.openjsf.org/',
 };

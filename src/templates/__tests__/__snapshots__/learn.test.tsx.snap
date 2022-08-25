@@ -205,16 +205,14 @@ exports[`Learn Template renders correctly 1`] = `
           test-title
         </h1>
         <details
-          class="toc"
+          class="tableOfContents"
         >
           <summary>
             <strong>
               TABLE OF CONTENTS
             </strong>
           </summary>
-          <ul
-            class="tableOfContents"
-          >
+          <ul>
             <li>
               <a
                 href="#mock-title"
@@ -279,44 +277,46 @@ exports[`Learn Template renders correctly 1`] = `
              executable program in the command line.
           </p>
         </div>
-        <ul
-          class="list"
+        <div
+          class="authorsList"
         >
-          <li>
-            Contributors
-          </li>
-          <li>
-            <a
-              class="link"
-              href="https://github.com/test-user1"
-              rel="noopener noreferrer"
-              style="margin-left: 0px;"
-              target="_blank"
-              title="test-user1"
-            >
-              <img
-                alt="test-user1"
-                class="img"
-                src="https://github.com/test-user1.png?size=60"
-              />
-            </a>
-          </li>
-          <li>
-            <a
-              class="link"
-              href="https://github.com/test-user2"
-              rel="noopener noreferrer"
-              target="_blank"
-              title="test-user2"
-            >
-              <img
-                alt="test-user2"
-                class="img"
-                src="https://github.com/test-user2.png?size=60"
-              />
-            </a>
-          </li>
-        </ul>
+          Contributors
+          <ul
+            class="list"
+          >
+            <li>
+              <a
+                class="link"
+                href="https://github.com/test-user1"
+                rel="noopener noreferrer"
+                style="margin-left: 0px;"
+                target="_blank"
+                title="test-user1"
+              >
+                <img
+                  alt="test-user1"
+                  class="img"
+                  src="https://github.com/test-user1.png?size=60"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                class="link"
+                href="https://github.com/test-user2"
+                rel="noopener noreferrer"
+                target="_blank"
+                title="test-user2"
+              >
+                <img
+                  alt="test-user2"
+                  class="img"
+                  src="https://github.com/test-user2.png?size=60"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
         <div
           class="edit"
         >
@@ -372,8 +372,11 @@ exports[`Learn Template renders correctly 1`] = `
       >
         <li>
           <a
+            aria-label="Node.js Slack Link"
             class="footer__link"
-            href="/about/trademark"
+            href="https://trademark-policy.openjsf.org/"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Trademark Policy
           </a>

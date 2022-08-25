@@ -12,7 +12,6 @@ export enum SideNavBarKeys {
   workingGroups = 'about/working-groups',
   releases = 'about/releases',
   resources = 'resources',
-  trademark = 'about/trademark',
   privacy = 'about/privacy',
   security = 'about/security',
   packageManager = 'download/package-manager',
@@ -42,10 +41,6 @@ const sideNavBarItems: SideNavBarItem[] = [
   {
     title: 'components.sideBar.items.resources',
     slug: SideNavBarKeys.resources,
-  },
-  {
-    title: 'components.sideBar.items.trademark',
-    slug: SideNavBarKeys.trademark,
   },
   {
     title: 'components.sideBar.items.privacy',

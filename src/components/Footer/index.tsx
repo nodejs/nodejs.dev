@@ -20,9 +20,15 @@ const Footer = (): JSX.Element => {
     <footer className="footer">
       <ul className="footer__left">
         <li>
-          <Link className="footer__link" to="/about/trademark">
+          <a
+            className="footer__link"
+            target="_blank"
+            href="https://trademark-policy.openjsf.org/"
+            rel="noopener noreferrer"
+            aria-label="Node.js Slack Link"
+          >
             <FormattedMessage id="components.footer.links.trademark" />
-          </Link>
+          </a>
         </li>
         <li>
           <Link className="footer__link" to="/about/privacy">

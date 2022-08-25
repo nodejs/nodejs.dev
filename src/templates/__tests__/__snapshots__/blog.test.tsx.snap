@@ -289,8 +289,11 @@ exports[`LearnLayout Template renders correctly 1`] = `
       >
         <li>
           <a
+            aria-label="Node.js Slack Link"
             class="footer__link"
-            href="/about/trademark"
+            href="https://trademark-policy.openjsf.org/"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Trademark Policy
           </a>

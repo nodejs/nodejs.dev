@@ -194,16 +194,14 @@ exports[`PageLayout component renders correctly with data 1`] = `
           mock-title
         </h1>
         <details
-          class="toc"
+          class="tableOfContents"
         >
           <summary>
             <strong>
               TABLE OF CONTENTS
             </strong>
           </summary>
-          <ul
-            class="tableOfContents"
-          >
+          <ul>
             <li>
               <a
                 href="#mock-title"
@@ -268,29 +266,31 @@ exports[`PageLayout component renders correctly with data 1`] = `
              executable program in the command line.
           </p>
         </div>
-        <ul
-          class="list"
+        <div
+          class="authorsList"
         >
-          <li>
-            Contributors
-          </li>
-          <li>
-            <a
-              class="link"
-              href="https://github.com/mock-author"
-              rel="noopener noreferrer"
-              style="margin-left: 0px;"
-              target="_blank"
-              title="mock-author"
-            >
-              <img
-                alt="mock-author"
-                class="img"
-                src="https://github.com/mock-author.png?size=60"
-              />
-            </a>
-          </li>
-        </ul>
+          Contributors
+          <ul
+            class="list"
+          >
+            <li>
+              <a
+                class="link"
+                href="https://github.com/mock-author"
+                rel="noopener noreferrer"
+                style="margin-left: 0px;"
+                target="_blank"
+                title="mock-author"
+              >
+                <img
+                  alt="mock-author"
+                  class="img"
+                  src="https://github.com/mock-author.png?size=60"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
         <div
           class="edit"
         >
@@ -324,8 +324,11 @@ exports[`PageLayout component renders correctly with data 1`] = `
       >
         <li>
           <a
+            aria-label="Node.js Slack Link"
             class="footer__link"
-            href="/about/trademark"
+            href="https://trademark-policy.openjsf.org/"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Trademark Policy
           </a>

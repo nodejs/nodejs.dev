@@ -5,9 +5,7 @@ import SideNavBar, { SideNavBarKeys, OverflowTypes } from '..';
 
 describe('SideNavBar', () => {
   it('renders correctly', () => {
-    const { container } = render(
-      <SideNavBar pageKey={SideNavBarKeys.trademark} />
-    );
+    const { container } = render(<SideNavBar pageKey={SideNavBarKeys.about} />);
     expect(container).toMatchSnapshot();
   });
 
@@ -58,14 +56,6 @@ describe('SideNavBar', () => {
     render(<SideNavBar pageKey={SideNavBarKeys.resources} />);
     const resourcesNavBarElement = screen.getByText('Resources');
     expect(resourcesNavBarElement.getAttribute('href')).toBe('/resources/');
-  });
-
-  it('should contain a href to `~/about/trademark`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.trademark} />);
-    const trademarkNavBarElement = screen.getByText('Trademark Policy');
-    expect(trademarkNavBarElement.getAttribute('href')).toBe(
-      '/about/trademark/'
-    );
   });
 
   it('should contain a href to `~/about/privacy`', () => {
