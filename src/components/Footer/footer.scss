@@ -34,6 +34,11 @@
     justify-content: space-between;
     list-style: none;
     margin-right: 20px;
+
+    > li svg {
+      height: 1.8rem;
+      width: 1.8rem;
+    }
   }
 
   .footer__left > li,

@@ -16,8 +16,9 @@ exports[`SideNavBar renders correctly 1`] = `
     >
       <li>
         <a
-          class="t-body2 side-nav__item-community"
-          href="/about"
+          aria-current="page"
+          class="t-body2 side-nav__item-community side-nav__item-community--active"
+          href="/about/"
           id="link-about"
         >
           About
@@ -26,7 +27,7 @@ exports[`SideNavBar renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/community"
+          href="/community/"
           id="link-community"
         >
           Community
@@ -35,7 +36,7 @@ exports[`SideNavBar renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/download/package-manager"
+          href="/download/package-manager/"
           id="link-download/package-manager"
         >
           Package Manager
@@ -44,7 +45,7 @@ exports[`SideNavBar renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/about/privacy"
+          href="/about/privacy/"
           id="link-about/privacy"
         >
           Privacy Policy
@@ -53,7 +54,7 @@ exports[`SideNavBar renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/about/governance"
+          href="/about/governance/"
           id="link-about/governance"
         >
           Project Governance
@@ -62,7 +63,7 @@ exports[`SideNavBar renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/about/releases"
+          href="/about/releases/"
           id="link-about/releases"
         >
           Releases
@@ -71,7 +72,7 @@ exports[`SideNavBar renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/resources"
+          href="/resources/"
           id="link-resources"
         >
           Resources
@@ -80,7 +81,7 @@ exports[`SideNavBar renders correctly 1`] = `
       <li>
         <a
           class="t-body2 side-nav__item-community"
-          href="/about/security"
+          href="/about/security/"
           id="link-about/security"
         >
           Security Reporting
@@ -88,17 +89,8 @@ exports[`SideNavBar renders correctly 1`] = `
       </li>
       <li>
         <a
-          class="t-body2 side-nav__item-community side-nav__item-community--active"
-          href="/about/trademark"
-          id="link-about/trademark"
-        >
-          Trademark Policy
-        </a>
-      </li>
-      <li>
-        <a
           class="t-body2 side-nav__item-community"
-          href="/about/working-groups"
+          href="/about/working-groups/"
           id="link-about/working-groups"
         >
           Working Groups

@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useTheme } from '@skagami/gatsby-plugin-dark-mode';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { ReactComponent as LogoLight } from '../../images/logos/nodejs-logo-light-mode.svg';
 import { ReactComponent as LogoDark } from '../../images/logos/nodejs-logo-dark-mode.svg';
-import { ReactComponent as GitHubLogo } from '../../images/logos/github-logo.svg';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { useLocaleAsDropdown } from '../../hooks/useLocaleAsDropdown';
 import { useAutoClosableDropdown } from '../../hooks/useAutoClosableDropdown';
@@ -102,12 +103,10 @@ const Header = (): JSX.Element => {
 
         <div className="nav__endwrapper">
           <ul className="right-container">
-            {!isMobile && (
-              <li className="nav__tabs search-bar">
-                <span className="sr-only">Search Bar</span>
-                <SearchBar />
-              </li>
-            )}
+            <li className="nav__tabs search-bar">
+              <span className="sr-only">Search Bar</span>
+              <SearchBar />
+            </li>
 
             <li className="nav__tabs">
               <button
@@ -148,8 +147,9 @@ const Header = (): JSX.Element => {
                 rel="noopener noreferrer"
               >
                 <span className="sr-only">GitHub</span>
-                <GitHubLogo
-                  fill="var(--color-text-accent)"
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  color="var(--color-text-accent)"
                   style={{ padding: '1rem', width: '2rem', height: '2rem' }}
                 />
               </a>

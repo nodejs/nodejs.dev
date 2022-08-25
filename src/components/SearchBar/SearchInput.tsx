@@ -99,6 +99,7 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
       <div
         className="searchInputContainer"
         onKeyPress={onKeyPressHandler}
+        onClick={onKeyPressHandler}
         role="presentation"
       >
         <i className="material-icons searchIcon">travel_explore</i>
@@ -116,7 +117,7 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
             name="query"
             type="text"
             value={query}
-            onFocus={expandContainer}
+            onFocus={onKeyPressHandler}
             onChange={changeHandler}
           />
         </label>
