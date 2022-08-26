@@ -355,6 +355,7 @@ select {
 
 .article-reader {
   max-width: 768px;
+  overflow-wrap: break-word;
   width: calc(100% - 36rem);
 
   hr {

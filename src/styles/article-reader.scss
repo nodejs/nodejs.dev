@@ -77,6 +77,11 @@
   }
 }
 
+.blog-container .recent-posts {
+  /* Place article before recent posts lists on mobile */
+  order: 1;
+}
+
 @media (max-width: 800px) {
   .article-reader {
     box-sizing: border-box;
