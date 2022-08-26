@@ -3,10 +3,10 @@
 exports[`NavigationSection component renders correctly 1`] = `
 <div>
   <div
-    class="sideNavList"
+    class="navigationSection"
   >
     <div
-      class="t-body2 sideNavListItem sideNavListItemTitle"
+      class="t-body2 navigationSectionTitle"
       role="menuitem"
       tabindex="0"
     >
@@ -21,7 +21,7 @@ exports[`NavigationSection component renders correctly 1`] = `
       style="display: none;"
     >
       <a
-        class="t-body2 sideNavListItem"
+        class="t-body2 navigationItem"
         href="/learn/intro/"
         id="link-intro"
       >

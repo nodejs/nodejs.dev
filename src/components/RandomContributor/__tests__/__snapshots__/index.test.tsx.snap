@@ -3,10 +3,10 @@
 exports[`RandomContributor component should render correctly 1`] = `
 <div>
   <div
-    class="random-contributor"
+    class="randomContributor"
   >
     <div
-      class="random-contributor__avatar"
+      class="randomContributorAvatar"
     >
       <a
         href="profileUri_mock"
@@ -19,15 +19,13 @@ exports[`RandomContributor component should render correctly 1`] = `
         />
       </a>
     </div>
-    <div
-      class="random-contributor__thank"
-    >
+    <div>
       <a
         href="profileUri_mock"
         rel="nofollow noopener noreferrer"
         target="_blank"
       >
-        Thank you, login_mock  for being a Node.js contributor, with 0 contributions
+        Thank you login_mock for being a Node.js contributor with 0 contributions
       </a>
     </div>
   </div>
@@ -37,7 +35,7 @@ exports[`RandomContributor component should render correctly 1`] = `
 exports[`RandomContributor component should render loading animation until data will be fetched 1`] = `
 <div>
   <div
-    class="random-contributor"
+    class="randomContributor"
   >
     <div
       class="animatedPlaceholder"

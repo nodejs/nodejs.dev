@@ -3,10 +3,10 @@
 exports[`ShellBox component renders correctly 1`] = `
 <div>
   <pre
-    class="shell-box"
+    class="shellBox"
   >
     <div
-      class="shell-box-top"
+      class="top"
     >
       <span>
         SHELL

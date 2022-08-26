@@ -4,7 +4,7 @@ exports[`NavigationItem component renders correctly 1`] = `
 <div>
   <a
     aria-current="page"
-    class="t-body2 sideNavListItem sideNavListItemDone"
+    class="t-body2 navigationItem navigationItemDone"
     href="/learn/versioning/"
     id="link-versioning"
   >

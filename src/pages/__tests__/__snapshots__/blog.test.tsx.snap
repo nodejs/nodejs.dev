@@ -14,10 +14,10 @@ exports[`Blog page renders correctly 1`] = `
       Menu
     </button>
     <div
-      class="sideNavListCommunity"
+      class="sideNavSection"
     >
       <li
-        class="t-body2 sideNavListItemTitle"
+        class="t-body2 sideNavSectionTitle"
       >
         <b>
           Blog Categories
@@ -105,10 +105,10 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
       Menu
     </button>
     <div
-      class="sideNavListCommunity"
+      class="sideNavSection"
     >
       <li
-        class="t-body2 sideNavListItemTitle"
+        class="t-body2 sideNavSectionTitle"
       >
         <b>
           Blog Categories

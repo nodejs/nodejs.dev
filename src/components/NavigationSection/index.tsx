@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { NavigationSectionItem } from '../../types';
 import NavigationItem from '../NavigationItem';
-import styles from '../../styles/navigation.module.scss';
+import styles from './index.module.scss';
 
 interface Props {
   key: string;
@@ -23,14 +23,10 @@ const NavigationSection = ({
   const [isOpen, setIsOpen] = useState(!!section.find(isActive));
   const isMobile = useMediaQuery('(max-width: 870px)');
   const toggle = (): void => setIsOpen(!isOpen);
-  const titleClassNames = classnames(
-    't-body2',
-    styles.sideNavListItem,
-    styles.sideNavListItemTitle
-  );
+  const titleClassNames = classnames('t-body2', styles.navigationSectionTitle);
 
   return (
-    <div className={styles.sideNavList}>
+    <div className={styles.navigationSection}>
       <div
         className={titleClassNames}
         onClick={toggle}

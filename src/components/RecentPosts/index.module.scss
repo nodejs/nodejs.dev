@@ -21,12 +21,13 @@
       list-style: none;
       margin-bottom: 10px;
 
-      a {
+      .link {
         color: var(--color-text-primary);
         text-decoration: none;
 
-        .active {
-          color: var(--color-text-accent);
+        &__active {
+          color: var(--color-text-accent) !important;
+          font-weight: var(--font-weight-semibold);
         }
       }
     }

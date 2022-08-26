@@ -1,4 +1,4 @@
-.home-page.-download {
+.download-page-container {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -9,22 +9,20 @@
   margin-top: 151px;
   max-width: 936px;
   width: 80%;
-}
-
-.release-description {
-  font-size: var(--font-size-body1);
-  line-height: var(--line-height-body1);
-  margin-top: 40px;
-  text-align: center;
-}
-
-@media (max-width: 975px) {
-  .home-page.-download {
-    margin-top: 40px;
-    width: 90%;
-  }
 
   .release-description {
-    text-align: justify;
+    font-size: var(--font-size-body1);
+    line-height: var(--line-height-body1);
+    margin-top: 40px;
+    text-align: center;
+
+    @media (max-width: 975px) {
+      text-align: justify;
+    }
+  }
+
+  @media (max-width: 975px) {
+    margin-top: 40px;
+    width: 90%;
   }
 }

@@ -26,25 +26,23 @@ const ArticleLayout = ({
   authors,
   sidenavKey,
   children,
-}: ArticleLayoutProps): JSX.Element => {
-  return (
-    <Layout title={title} description={description}>
-      <main className="grid-container">
-        {sidenavKey && (
-          <SideNavBar pageKey={sidenavKey} title="Community Pages" />
-        )}
-        <Article
-          title={title}
-          body={body}
-          authors={authors}
-          editPath={editPath}
-          tableOfContents={tableOfContents}
-        >
-          {children}
-        </Article>
-      </main>
-    </Layout>
-  );
-};
+}: ArticleLayoutProps): JSX.Element => (
+  <Layout title={title} description={description}>
+    <main className="grid-container">
+      {sidenavKey && (
+        <SideNavBar pageKey={sidenavKey} title="Community Pages" />
+      )}
+      <Article
+        title={title}
+        body={body}
+        authors={authors}
+        editPath={editPath}
+        tableOfContents={tableOfContents}
+      >
+        {children}
+      </Article>
+    </main>
+  </Layout>
+);
 
 export default ArticleLayout;

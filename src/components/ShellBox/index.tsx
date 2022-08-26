@@ -1,6 +1,5 @@
-import React from 'react';
-
-import './ShellBox.scss';
+import React, { useEffect } from 'react';
+import styles from './index.module.scss';
 
 interface Props {
   textToCopy: string;
@@ -10,7 +9,7 @@ interface Props {
 const ShellBox = ({ children, textToCopy }: Props): JSX.Element => {
   const [copied, setCopied] = React.useState(false);
 
-  React.useEffect((): (() => void) => {
+  useEffect((): (() => void) => {
     let timer: ReturnType<typeof setTimeout>;
 
     if (copied) {
@@ -27,8 +26,8 @@ const ShellBox = ({ children, textToCopy }: Props): JSX.Element => {
   }, [copied]);
 
   return (
-    <pre className="shell-box">
-      <div className="shell-box-top">
+    <pre className={styles.shellBox}>
+      <div className={styles.top}>
         <span>SHELL</span>
         <button
           type="button"

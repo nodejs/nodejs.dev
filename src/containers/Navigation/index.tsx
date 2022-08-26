@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import classnames from 'classnames';
 import NavigationSection from '../../components/NavigationSection';
 import { NavigationSectionData, NavigationSectionItem } from '../../types';
-import styles from '../../styles/navigation.module.scss';
+import styles from './index.module.scss';
 
 interface Props {
   sections: NavigationSectionData;
@@ -21,8 +21,8 @@ const Navigation = ({
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggle = (): void => setIsOpen(!isOpen);
 
-  const navigationClasses = classnames(styles.sideNav, {
-    [styles.sideNavFixed]: isOpen,
+  const navigationClasses = classnames(styles.navigation, {
+    [styles.navigationFixed]: isOpen,
   });
 
   const readSections: Set<NavigationSectionItem['slug']> = new Set();
@@ -46,7 +46,7 @@ const Navigation = ({
 
   return (
     <nav aria-label={label} className={navigationClasses}>
-      <button type="button" className={styles.sideNavOpen} onClick={toggle}>
+      <button type="button" className={styles.navigationOpen} onClick={toggle}>
         <FormattedMessage id="containers.navigation.title" />
       </button>
       {Object.keys(sections).map(

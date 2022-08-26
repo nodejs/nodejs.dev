@@ -8,6 +8,9 @@ interface Props {
   posts: BlogMetaData[];
 }
 
+const getSlugWithTrailingSlash = (slug: string) =>
+  slug.endsWith('/') ? slug : `${slug}/`;
+
 const RecentPosts = ({ posts }: Props) => (
   <div className={styles.recentPosts}>
     <h2 className={styles.recentPostsHeader}>
@@ -16,7 +19,11 @@ const RecentPosts = ({ posts }: Props) => (
     <ul>
       {posts.map(post => (
         <li key={post.node.fields.slug}>
-          <Link activeClassName={styles.active} to={post.node.fields.slug}>
+          <Link
+            className={styles.link}
+            activeClassName={styles.linkActive}
+            to={getSlugWithTrailingSlash(post.node.fields.slug)}
+          >
             {post.node.frontmatter.title}
           </Link>
         </li>

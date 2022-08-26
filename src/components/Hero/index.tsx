@@ -27,7 +27,7 @@ const Hero = ({
   const currentVersionUrl = getDownloadLink(currentRelease?.version || '');
 
   return (
-    <div className={styles.homePageHero}>
+    <div className={styles.hero}>
       <h1>{title}</h1>
       <h2 className={`${styles.subTitle} t-subheading`}>{subTitle}</h2>
       <div className={styles.btnCtas}>

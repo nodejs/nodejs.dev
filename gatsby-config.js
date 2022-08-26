@@ -102,7 +102,6 @@ const gatsbyConfig = {
       options: {
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
-          sites: require.resolve(`./src/components/Layout/centered.tsx`),
           default: require.resolve(`./src/components/Layout/index.tsx`),
         },
         gatsbyRemarkPlugins: [

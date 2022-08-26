@@ -3,7 +3,7 @@
 exports[`Hero component renders correctly 1`] = `
 <div>
   <div
-    class="homePageHero"
+    class="hero"
   >
     <h1>
       Introduction to Node.js

@@ -3,21 +3,18 @@
 exports[`RecentPosts component should render correctly 1`] = `
 <div>
   <div
-    class="recent-posts"
+    class="recentPosts"
   >
     <h2
-      class="recent-posts-header"
+      class="recentPostsHeader"
     >
       Recent Posts
     </h2>
-    <ul
-      class="recent-post-list"
-    >
-      <li
-        class="recent-post-item"
-      >
+    <ul>
+      <li>
         <a
-          href="slug-mock"
+          class="link"
+          href="slug-mock/"
         >
           title-mock
         </a>

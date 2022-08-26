@@ -6,40 +6,40 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
     class="install"
   >
     <div
-      class="react-tabs"
+      class="reactTabs"
       data-rttabs="true"
     >
       <div
-        class="install__header"
+        class="installHeader"
       >
         <div
-          class="install__header-circles"
+          class="installHeaderCircles"
         >
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
         </div>
         <div
-          class="install__header-text"
+          class="installHeaderText"
         >
           bash
         </div>
       </div>
       <ul
-        class="react-tabs__tab-list"
+        class="reactTabsTabList"
         role="tablist"
       >
         <li
           aria-controls="panel:r0:0"
           aria-disabled="false"
           aria-selected="true"
-          class="react-tabs__tab react-tabs__tab--selected"
+          class="reactTabsTab reactTabsTabSelected"
           data-rttab="true"
           id="tab:r0:0"
           role="tab"
@@ -51,7 +51,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
           aria-controls="panel:r0:1"
           aria-disabled="false"
           aria-selected="false"
-          class="react-tabs__tab"
+          class="reactTabsTab"
           data-rttab="true"
           id="tab:r0:1"
           role="tab"
@@ -62,7 +62,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
           aria-controls="panel:r0:2"
           aria-disabled="false"
           aria-selected="false"
-          class="react-tabs__tab"
+          class="reactTabsTab"
           data-rttab="true"
           id="tab:r0:2"
           role="tab"
@@ -72,16 +72,16 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       </ul>
       <div
         aria-labelledby="tab:r0:0"
-        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        class="reactTabsTabPanel reactTabsTabPanelSelected"
         id="panel:r0:0"
         role="tabpanel"
       >
         <div>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -94,12 +94,12 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 choco 
               </span>
@@ -107,10 +107,10 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
             </code>
           </pre>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -123,12 +123,12 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 nvs 
               </span>
@@ -136,10 +136,10 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
             </code>
           </pre>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -152,12 +152,12 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 nvs 
               </span>
@@ -167,7 +167,7 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
           <br />
           <br />
           <a
-            class="install__docs-button"
+            class="installDocsButton"
             href="/download/package-manager/#nvs"
           >
             Read documentation
@@ -176,13 +176,13 @@ exports[`Tests for InstallTabs component renders correctly 1`] = `
       </div>
       <div
         aria-labelledby="tab:r0:1"
-        class="react-tabs__tab-panel"
+        class="reactTabsTabPanel"
         id="panel:r0:1"
         role="tabpanel"
       />
       <div
         aria-labelledby="tab:r0:2"
-        class="react-tabs__tab-panel"
+        class="reactTabsTabPanel"
         id="panel:r0:2"
         role="tabpanel"
       />
@@ -197,40 +197,40 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
     class="install"
   >
     <div
-      class="react-tabs"
+      class="reactTabs"
       data-rttabs="true"
     >
       <div
-        class="install__header"
+        class="installHeader"
       >
         <div
-          class="install__header-circles"
+          class="installHeaderCircles"
         >
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
         </div>
         <div
-          class="install__header-text"
+          class="installHeaderText"
         >
           bash
         </div>
       </div>
       <ul
-        class="react-tabs__tab-list"
+        class="reactTabsTabList"
         role="tablist"
       >
         <li
           aria-controls="panel:r2:0"
           aria-disabled="false"
           aria-selected="true"
-          class="react-tabs__tab react-tabs__tab--selected"
+          class="reactTabsTab reactTabsTabSelected"
           data-rttab="true"
           id="tab:r2:0"
           role="tab"
@@ -242,7 +242,7 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
           aria-controls="panel:r2:1"
           aria-disabled="false"
           aria-selected="false"
-          class="react-tabs__tab"
+          class="reactTabsTab"
           data-rttab="true"
           id="tab:r2:1"
           role="tab"
@@ -253,7 +253,7 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
           aria-controls="panel:r2:2"
           aria-disabled="false"
           aria-selected="false"
-          class="react-tabs__tab"
+          class="reactTabsTab"
           data-rttab="true"
           id="tab:r2:2"
           role="tab"
@@ -263,16 +263,16 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
       </ul>
       <div
         aria-labelledby="tab:r2:0"
-        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        class="reactTabsTabPanel reactTabsTabPanelSelected"
         id="panel:r2:0"
         role="tabpanel"
       >
         <div>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -285,28 +285,28 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 curl -o- 
               </span>
               https://raw.githubusercontent.com/nvm-sh/nvm/mockVersionString/install.sh
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                  | bash
               </span>
             </code>
           </pre>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -319,12 +319,12 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 nvm
               </span>
@@ -332,7 +332,7 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
             </code>
           </pre>
           <a
-            class="install__docs-button"
+            class="installDocsButton"
             href="/download/package-manager/#nvm"
           >
             Read documentation
@@ -341,13 +341,13 @@ exports[`Tests for InstallTabs component renders correctly for Linux 1`] = `
       </div>
       <div
         aria-labelledby="tab:r2:1"
-        class="react-tabs__tab-panel"
+        class="reactTabsTabPanel"
         id="panel:r2:1"
         role="tabpanel"
       />
       <div
         aria-labelledby="tab:r2:2"
-        class="react-tabs__tab-panel"
+        class="reactTabsTabPanel"
         id="panel:r2:2"
         role="tabpanel"
       />
@@ -362,40 +362,40 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
     class="install"
   >
     <div
-      class="react-tabs"
+      class="reactTabs"
       data-rttabs="true"
     >
       <div
-        class="install__header"
+        class="installHeader"
       >
         <div
-          class="install__header-circles"
+          class="installHeaderCircles"
         >
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
         </div>
         <div
-          class="install__header-text"
+          class="installHeaderText"
         >
           bash
         </div>
       </div>
       <ul
-        class="react-tabs__tab-list"
+        class="reactTabsTabList"
         role="tablist"
       >
         <li
           aria-controls="panel:r3:0"
           aria-disabled="false"
           aria-selected="true"
-          class="react-tabs__tab react-tabs__tab--selected"
+          class="reactTabsTab reactTabsTabSelected"
           data-rttab="true"
           id="tab:r3:0"
           role="tab"
@@ -407,7 +407,7 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
           aria-controls="panel:r3:1"
           aria-disabled="false"
           aria-selected="false"
-          class="react-tabs__tab"
+          class="reactTabsTab"
           data-rttab="true"
           id="tab:r3:1"
           role="tab"
@@ -418,7 +418,7 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
           aria-controls="panel:r3:2"
           aria-disabled="false"
           aria-selected="false"
-          class="react-tabs__tab"
+          class="reactTabsTab"
           data-rttab="true"
           id="tab:r3:2"
           role="tab"
@@ -428,16 +428,16 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
       </ul>
       <div
         aria-labelledby="tab:r3:0"
-        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        class="reactTabsTabPanel reactTabsTabPanelSelected"
         id="panel:r3:0"
         role="tabpanel"
       >
         <div>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -450,28 +450,28 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 curl -o- 
               </span>
               https://raw.githubusercontent.com/nvm-sh/nvm/mockVersionString/install.sh
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                  | bash
               </span>
             </code>
           </pre>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -484,12 +484,12 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 nvm
               </span>
@@ -497,7 +497,7 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
             </code>
           </pre>
           <a
-            class="install__docs-button"
+            class="installDocsButton"
             href="/download/package-manager/#nvm"
           >
             Read documentation
@@ -506,13 +506,13 @@ exports[`Tests for InstallTabs component renders correctly for Unix 1`] = `
       </div>
       <div
         aria-labelledby="tab:r3:1"
-        class="react-tabs__tab-panel"
+        class="reactTabsTabPanel"
         id="panel:r3:1"
         role="tabpanel"
       />
       <div
         aria-labelledby="tab:r3:2"
-        class="react-tabs__tab-panel"
+        class="reactTabsTabPanel"
         id="panel:r3:2"
         role="tabpanel"
       />
@@ -527,40 +527,40 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
     class="install"
   >
     <div
-      class="react-tabs"
+      class="reactTabs"
       data-rttabs="true"
     >
       <div
-        class="install__header"
+        class="installHeader"
       >
         <div
-          class="install__header-circles"
+          class="installHeaderCircles"
         >
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
         </div>
         <div
-          class="install__header-text"
+          class="installHeaderText"
         >
           zsh
         </div>
       </div>
       <ul
-        class="react-tabs__tab-list"
+        class="reactTabsTabList"
         role="tablist"
       >
         <li
           aria-controls="panel:r1:0"
           aria-disabled="false"
           aria-selected="true"
-          class="react-tabs__tab react-tabs__tab--selected"
+          class="reactTabsTab reactTabsTabSelected"
           data-rttab="true"
           id="tab:r1:0"
           role="tab"
@@ -572,7 +572,7 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
           aria-controls="panel:r1:1"
           aria-disabled="false"
           aria-selected="false"
-          class="react-tabs__tab"
+          class="reactTabsTab"
           data-rttab="true"
           id="tab:r1:1"
           role="tab"
@@ -583,7 +583,7 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
           aria-controls="panel:r1:2"
           aria-disabled="false"
           aria-selected="false"
-          class="react-tabs__tab"
+          class="reactTabsTab"
           data-rttab="true"
           id="tab:r1:2"
           role="tab"
@@ -593,16 +593,16 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
       </ul>
       <div
         aria-labelledby="tab:r1:0"
-        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        class="reactTabsTabPanel reactTabsTabPanelSelected"
         id="panel:r1:0"
         role="tabpanel"
       >
         <div>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -615,28 +615,28 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 curl -o- 
               </span>
               https://raw.githubusercontent.com/nvm-sh/nvm/mockVersionString/install.sh
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                  | bash 
               </span>
             </code>
           </pre>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -649,12 +649,12 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 nvm 
               </span>
@@ -664,7 +664,7 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
           <br />
           <br />
           <a
-            class="install__docs-button"
+            class="installDocsButton"
             href="/download/package-manager/#nvm"
           >
             Read documentation
@@ -673,13 +673,13 @@ exports[`Tests for InstallTabs component renders correctly for macOS 1`] = `
       </div>
       <div
         aria-labelledby="tab:r1:1"
-        class="react-tabs__tab-panel"
+        class="reactTabsTabPanel"
         id="panel:r1:1"
         role="tabpanel"
       />
       <div
         aria-labelledby="tab:r1:2"
-        class="react-tabs__tab-panel"
+        class="reactTabsTabPanel"
         id="panel:r1:2"
         role="tabpanel"
       />
@@ -694,40 +694,40 @@ exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `
     class="install"
   >
     <div
-      class="react-tabs"
+      class="reactTabs"
       data-rttabs="true"
     >
       <div
-        class="install__header"
+        class="installHeader"
       >
         <div
-          class="install__header-circles"
+          class="installHeaderCircles"
         >
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
         </div>
         <div
-          class="install__header-text"
+          class="installHeaderText"
         >
           bash
         </div>
       </div>
       <ul
-        class="react-tabs__tab-list"
+        class="reactTabsTabList"
         role="tablist"
       >
         <li
           aria-controls="panel:r5:0"
           aria-disabled="false"
           aria-selected="true"
-          class="react-tabs__tab react-tabs__tab--selected"
+          class="reactTabsTab reactTabsTabSelected"
           data-rttab="true"
           id="tab:r5:0"
           role="tab"
@@ -739,7 +739,7 @@ exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `
           aria-controls="panel:r5:1"
           aria-disabled="false"
           aria-selected="false"
-          class="react-tabs__tab"
+          class="reactTabsTab"
           data-rttab="true"
           id="tab:r5:1"
           role="tab"
@@ -750,7 +750,7 @@ exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `
           aria-controls="panel:r5:2"
           aria-disabled="false"
           aria-selected="false"
-          class="react-tabs__tab"
+          class="reactTabsTab"
           data-rttab="true"
           id="tab:r5:2"
           role="tab"
@@ -760,16 +760,16 @@ exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `
       </ul>
       <div
         aria-labelledby="tab:r5:0"
-        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        class="reactTabsTabPanel reactTabsTabPanelSelected"
         id="panel:r5:0"
         role="tabpanel"
       >
         <div>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -782,12 +782,12 @@ exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 choco 
               </span>
@@ -795,10 +795,10 @@ exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `
             </code>
           </pre>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -811,12 +811,12 @@ exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 nvs 
               </span>
@@ -824,10 +824,10 @@ exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `
             </code>
           </pre>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -840,12 +840,12 @@ exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 nvs 
               </span>
@@ -855,7 +855,7 @@ exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `
           <br />
           <br />
           <a
-            class="install__docs-button"
+            class="installDocsButton"
             href="/download/package-manager/#nvs"
           >
             Read documentation
@@ -864,13 +864,13 @@ exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `
       </div>
       <div
         aria-labelledby="tab:r5:1"
-        class="react-tabs__tab-panel"
+        class="reactTabsTabPanel"
         id="panel:r5:1"
         role="tabpanel"
       />
       <div
         aria-labelledby="tab:r5:2"
-        class="react-tabs__tab-panel"
+        class="reactTabsTabPanel"
         id="panel:r5:2"
         role="tabpanel"
       />
@@ -885,40 +885,40 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
     class="install"
   >
     <div
-      class="react-tabs"
+      class="reactTabs"
       data-rttabs="true"
     >
       <div
-        class="install__header"
+        class="installHeader"
       >
         <div
-          class="install__header-circles"
+          class="installHeaderCircles"
         >
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
           <div
-            class="install__header-grey-circle"
+            class="installHeaderGreyCircle"
           />
         </div>
         <div
-          class="install__header-text"
+          class="installHeaderText"
         >
           bash
         </div>
       </div>
       <ul
-        class="react-tabs__tab-list"
+        class="reactTabsTabList"
         role="tablist"
       >
         <li
           aria-controls="panel:r4:0"
           aria-disabled="false"
           aria-selected="true"
-          class="react-tabs__tab react-tabs__tab--selected"
+          class="reactTabsTab reactTabsTabSelected"
           data-rttab="true"
           id="tab:r4:0"
           role="tab"
@@ -930,7 +930,7 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
           aria-controls="panel:r4:1"
           aria-disabled="false"
           aria-selected="false"
-          class="react-tabs__tab"
+          class="reactTabsTab"
           data-rttab="true"
           id="tab:r4:1"
           role="tab"
@@ -941,7 +941,7 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
           aria-controls="panel:r4:2"
           aria-disabled="false"
           aria-selected="false"
-          class="react-tabs__tab"
+          class="reactTabsTab"
           data-rttab="true"
           id="tab:r4:2"
           role="tab"
@@ -951,16 +951,16 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
       </ul>
       <div
         aria-labelledby="tab:r4:0"
-        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        class="reactTabsTabPanel reactTabsTabPanelSelected"
         id="panel:r4:0"
         role="tabpanel"
       >
         <div>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -973,12 +973,12 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 choco 
               </span>
@@ -986,10 +986,10 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
             </code>
           </pre>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -1002,12 +1002,12 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 nvs 
               </span>
@@ -1015,10 +1015,10 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
             </code>
           </pre>
           <pre
-            class="shell-box"
+            class="shellBox"
           >
             <div
-              class="shell-box-top"
+              class="top"
             >
               <span>
                 SHELL
@@ -1031,12 +1031,12 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
             </div>
             <code>
               <span
-                class="install__text__no-select"
+                class="installTextNoSelect"
               >
                 $
               </span>
               <span
-                class="install__text__command"
+                class="installTextCommand"
               >
                 nvs 
               </span>
@@ -1046,7 +1046,7 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
           <br />
           <br />
           <a
-            class="install__docs-button"
+            class="installDocsButton"
             href="/download/package-manager/#nvs"
           >
             Read documentation
@@ -1055,13 +1055,13 @@ exports[`Tests for InstallTabs component renders correctly for other 1`] = `
       </div>
       <div
         aria-labelledby="tab:r4:1"
-        class="react-tabs__tab-panel"
+        class="reactTabsTabPanel"
         id="panel:r4:1"
         role="tabpanel"
       />
       <div
         aria-labelledby="tab:r4:2"
-        class="react-tabs__tab-panel"
+        class="reactTabsTabPanel"
         id="panel:r4:2"
         role="tabpanel"
       />

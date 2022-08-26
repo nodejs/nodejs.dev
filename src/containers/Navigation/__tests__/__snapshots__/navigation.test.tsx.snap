@@ -4,19 +4,19 @@ exports[`Navigation component renders correctly 1`] = `
 <div>
   <nav
     aria-label=""
-    class="sideNav"
+    class="navigation"
   >
     <button
-      class="sideNavOpen"
+      class="navigationOpen"
       type="button"
     >
       Menu
     </button>
     <div
-      class="sideNavList"
+      class="navigationSection"
     >
       <div
-        class="t-body2 sideNavListItem sideNavListItemTitle"
+        class="t-body2 navigationSectionTitle"
         role="menuitem"
         tabindex="0"
       >
@@ -32,7 +32,7 @@ exports[`Navigation component renders correctly 1`] = `
       >
         <a
           aria-current="page"
-          class="t-body2 sideNavListItem sideNavListItemActive"
+          class="t-body2 navigationItem navigationItemActive"
           href="/learn/intro/"
           id="link-intro"
         >

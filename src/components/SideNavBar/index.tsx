@@ -3,7 +3,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import classnames from 'classnames';
 import { SideNavBarItem } from '../../types';
 import NavigationItem from '../NavigationItem';
-import styles from '../../styles/navigation.module.scss';
+import styles from './index.module.scss';
 
 // eslint-disable-next-line no-shadow
 export enum SideNavBarKeys {
@@ -78,11 +78,9 @@ const SideNavBar = ({
   const toggle = (): void => setNavOpen(!navOpen);
   const intl = useIntl();
 
-  const navigationClasses = classnames(
-    styles.sideNav,
-    styles.sideNavCommunity,
-    { [styles.sideNavFixed]: navOpen, [styles.sideNavCommunityFixed]: navOpen }
-  );
+  const navigationClasses = classnames(styles.sideNav, {
+    [styles.sideNavFixed]: navOpen,
+  });
 
   useEffect(() => {
     if (typeof document === 'object' && document.body) {
@@ -97,7 +95,7 @@ const SideNavBar = ({
   const renderNavTitle = () => {
     if (title) {
       return (
-        <li className={`t-body2 ${styles.sideNavListItemTitle}`}>
+        <li className={`t-body2 ${styles.sideNavSectionTitle}`}>
           <b>{title}</b>
           <i className="material-icons">arrow_drop_down</i>
         </li>
@@ -125,7 +123,7 @@ const SideNavBar = ({
       <button type="button" className={styles.sideNavOpen} onClick={toggle}>
         <FormattedMessage id="components.sideBar.title" />
       </button>
-      <div className={styles.sideNavList}>
+      <div className={styles.sideNavSection}>
         {renderNavTitle()}
         {translatedSidebar
           .sort((a, b) => a.title.localeCompare(b.title))

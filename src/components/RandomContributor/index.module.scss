@@ -8,6 +8,10 @@
   max-width: 360px;
   padding: var(--space-12);
 
+  @media (max-width: 800px) {
+    max-width: 80vw;
+  }
+
   &__avatar {
     margin: 5px 10px 0 5px;
 

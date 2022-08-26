@@ -150,7 +150,6 @@ exports[`Article component renders correctly 1`] = `
     >
       <li>
         <a
-          class="link"
           href="/learn/test-slug"
           rel="prev"
         >
@@ -161,6 +160,7 @@ exports[`Article component renders correctly 1`] = `
             data-prefix="fas"
             focusable="false"
             role="img"
+            style="margin-right: 5px;"
             viewBox="0 0 448 512"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -174,7 +174,6 @@ exports[`Article component renders correctly 1`] = `
       </li>
       <li>
         <a
-          class="link"
           href="/learn/test-slug"
           rel="next"
         >
@@ -186,6 +185,7 @@ exports[`Article component renders correctly 1`] = `
             data-prefix="fas"
             focusable="false"
             role="img"
+            style="margin-left: 5px;"
             viewBox="0 0 448 512"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -423,7 +423,6 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
     >
       <li>
         <a
-          class="link"
           href="/learn/test-slug"
           rel="prev"
         >
@@ -434,6 +433,7 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
             data-prefix="fas"
             focusable="false"
             role="img"
+            style="margin-right: 5px;"
             viewBox="0 0 448 512"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -447,7 +447,6 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
       </li>
       <li>
         <a
-          class="link"
           href="/learn/test-slug"
           rel="next"
         >
@@ -459,6 +458,7 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
             data-prefix="fas"
             focusable="false"
             role="img"
+            style="margin-left: 5px;"
             viewBox="0 0 448 512"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -629,7 +629,6 @@ exports[`Article component should accept and render child components 1`] = `
     >
       <li>
         <a
-          class="link"
           href="/learn/test-slug"
           rel="prev"
         >
@@ -640,6 +639,7 @@ exports[`Article component should accept and render child components 1`] = `
             data-prefix="fas"
             focusable="false"
             role="img"
+            style="margin-right: 5px;"
             viewBox="0 0 448 512"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -653,7 +653,6 @@ exports[`Article component should accept and render child components 1`] = `
       </li>
       <li>
         <a
-          class="link"
           href="/learn/test-slug"
           rel="next"
         >
@@ -665,6 +664,7 @@ exports[`Article component should accept and render child components 1`] = `
             data-prefix="fas"
             focusable="false"
             role="img"
+            style="margin-left: 5px;"
             viewBox="0 0 448 512"
             xmlns="http://www.w3.org/2000/svg"
           >

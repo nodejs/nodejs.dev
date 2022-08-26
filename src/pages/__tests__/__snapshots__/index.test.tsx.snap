@@ -2,10 +2,10 @@
 
 exports[`Home page renders correctly 1`] = `
 <main
-  class="home-page"
+  class="home-container"
 >
   <div
-    class="homePageHero"
+    class="hero"
   >
     <h1>
       displayTitle-mock
@@ -47,49 +47,49 @@ exports[`Home page renders correctly 1`] = `
     </div>
   </div>
   <section
-    class="node-demo-container"
+    class="nodeDemoContainer"
   >
     <div
-      class="node-demo"
+      class="nodeDemo"
     >
       <div
         class="install"
       >
         <div
-          class="react-tabs"
+          class="reactTabs"
           data-rttabs="true"
         >
           <div
-            class="install__header"
+            class="installHeader"
           >
             <div
-              class="install__header-circles"
+              class="installHeaderCircles"
             >
               <div
-                class="install__header-grey-circle"
+                class="installHeaderGreyCircle"
               />
               <div
-                class="install__header-grey-circle"
+                class="installHeaderGreyCircle"
               />
               <div
-                class="install__header-grey-circle"
+                class="installHeaderGreyCircle"
               />
             </div>
             <div
-              class="install__header-text"
+              class="installHeaderText"
             >
               bash
             </div>
           </div>
           <ul
-            class="react-tabs__tab-list"
+            class="reactTabsTabList"
             role="tablist"
           >
             <li
               aria-controls="panel:r0:0"
               aria-disabled="false"
               aria-selected="true"
-              class="react-tabs__tab react-tabs__tab--selected"
+              class="reactTabsTab reactTabsTabSelected"
               data-rttab="true"
               id="tab:r0:0"
               role="tab"
@@ -101,7 +101,7 @@ exports[`Home page renders correctly 1`] = `
               aria-controls="panel:r0:1"
               aria-disabled="false"
               aria-selected="false"
-              class="react-tabs__tab"
+              class="reactTabsTab"
               data-rttab="true"
               id="tab:r0:1"
               role="tab"
@@ -112,7 +112,7 @@ exports[`Home page renders correctly 1`] = `
               aria-controls="panel:r0:2"
               aria-disabled="false"
               aria-selected="false"
-              class="react-tabs__tab"
+              class="reactTabsTab"
               data-rttab="true"
               id="tab:r0:2"
               role="tab"
@@ -122,16 +122,16 @@ exports[`Home page renders correctly 1`] = `
           </ul>
           <div
             aria-labelledby="tab:r0:0"
-            class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+            class="reactTabsTabPanel reactTabsTabPanelSelected"
             id="panel:r0:0"
             role="tabpanel"
           >
             <div>
               <pre
-                class="shell-box"
+                class="shellBox"
               >
                 <div
-                  class="shell-box-top"
+                  class="top"
                 >
                   <span>
                     SHELL
@@ -144,12 +144,12 @@ exports[`Home page renders correctly 1`] = `
                 </div>
                 <code>
                   <span
-                    class="install__text__no-select"
+                    class="installTextNoSelect"
                   >
                     $
                   </span>
                   <span
-                    class="install__text__command"
+                    class="installTextCommand"
                   >
                     choco 
                   </span>
@@ -157,10 +157,10 @@ exports[`Home page renders correctly 1`] = `
                 </code>
               </pre>
               <pre
-                class="shell-box"
+                class="shellBox"
               >
                 <div
-                  class="shell-box-top"
+                  class="top"
                 >
                   <span>
                     SHELL
@@ -173,12 +173,12 @@ exports[`Home page renders correctly 1`] = `
                 </div>
                 <code>
                   <span
-                    class="install__text__no-select"
+                    class="installTextNoSelect"
                   >
                     $
                   </span>
                   <span
-                    class="install__text__command"
+                    class="installTextCommand"
                   >
                     nvs 
                   </span>
@@ -186,10 +186,10 @@ exports[`Home page renders correctly 1`] = `
                 </code>
               </pre>
               <pre
-                class="shell-box"
+                class="shellBox"
               >
                 <div
-                  class="shell-box-top"
+                  class="top"
                 >
                   <span>
                     SHELL
@@ -202,12 +202,12 @@ exports[`Home page renders correctly 1`] = `
                 </div>
                 <code>
                   <span
-                    class="install__text__no-select"
+                    class="installTextNoSelect"
                   >
                     $
                   </span>
                   <span
-                    class="install__text__command"
+                    class="installTextCommand"
                   >
                     nvs 
                   </span>
@@ -217,7 +217,7 @@ exports[`Home page renders correctly 1`] = `
               <br />
               <br />
               <a
-                class="install__docs-button"
+                class="installDocsButton"
                 href="/download/package-manager/#nvs"
               >
                 Read documentation
@@ -226,13 +226,13 @@ exports[`Home page renders correctly 1`] = `
           </div>
           <div
             aria-labelledby="tab:r0:1"
-            class="react-tabs__tab-panel"
+            class="reactTabsTabPanel"
             id="panel:r0:1"
             role="tabpanel"
           />
           <div
             aria-labelledby="tab:r0:2"
-            class="react-tabs__tab-panel"
+            class="reactTabsTabPanel"
             id="panel:r0:2"
             role="tabpanel"
           />
@@ -240,27 +240,27 @@ exports[`Home page renders correctly 1`] = `
       </div>
     </div>
     <svg
-      class="leafs-front animations"
+      class="leafsFront animations"
     />
     <svg
-      class="leafs-middle animations"
+      class="leafsMid animations"
     />
     <svg
-      class="leafs-back animations"
+      class="leafsBack animations"
     />
     <svg
       class="dots"
     />
   </section>
   <section
-    class="node-features"
+    class="nodeFeatures"
   >
     <div
-      class="node-features__feature"
+      class="nodeFeaturesFeature"
     >
       <svg
         alt="Node Feature"
-        class="feature-icon"
+        class="featureIcon"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -284,11 +284,11 @@ exports[`Home page renders correctly 1`] = `
       </p>
     </div>
     <div
-      class="node-features__feature"
+      class="nodeFeaturesFeature"
     >
       <svg
         alt="Node Feature"
-        class="feature-icon"
+        class="featureIcon"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -309,11 +309,11 @@ exports[`Home page renders correctly 1`] = `
       </p>
     </div>
     <div
-      class="node-features__feature"
+      class="nodeFeaturesFeature"
     >
       <svg
         alt="Node Feature"
-        class="feature-icon"
+        class="featureIcon"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -342,10 +342,10 @@ exports[`Home page renders correctly 1`] = `
 
 exports[`Home page renders i18n when feature toggle is present 1`] = `
 <main
-  class="home-page"
+  class="home-container"
 >
   <div
-    class="homePageHero"
+    class="hero"
   >
     <h1>
       displayTitle-mock
@@ -387,49 +387,49 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
     </div>
   </div>
   <section
-    class="node-demo-container"
+    class="nodeDemoContainer"
   >
     <div
-      class="node-demo"
+      class="nodeDemo"
     >
       <div
         class="install"
       >
         <div
-          class="react-tabs"
+          class="reactTabs"
           data-rttabs="true"
         >
           <div
-            class="install__header"
+            class="installHeader"
           >
             <div
-              class="install__header-circles"
+              class="installHeaderCircles"
             >
               <div
-                class="install__header-grey-circle"
+                class="installHeaderGreyCircle"
               />
               <div
-                class="install__header-grey-circle"
+                class="installHeaderGreyCircle"
               />
               <div
-                class="install__header-grey-circle"
+                class="installHeaderGreyCircle"
               />
             </div>
             <div
-              class="install__header-text"
+              class="installHeaderText"
             >
               bash
             </div>
           </div>
           <ul
-            class="react-tabs__tab-list"
+            class="reactTabsTabList"
             role="tablist"
           >
             <li
               aria-controls="panel:r1:0"
               aria-disabled="false"
               aria-selected="true"
-              class="react-tabs__tab react-tabs__tab--selected"
+              class="reactTabsTab reactTabsTabSelected"
               data-rttab="true"
               id="tab:r1:0"
               role="tab"
@@ -441,7 +441,7 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
               aria-controls="panel:r1:1"
               aria-disabled="false"
               aria-selected="false"
-              class="react-tabs__tab"
+              class="reactTabsTab"
               data-rttab="true"
               id="tab:r1:1"
               role="tab"
@@ -452,7 +452,7 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
               aria-controls="panel:r1:2"
               aria-disabled="false"
               aria-selected="false"
-              class="react-tabs__tab"
+              class="reactTabsTab"
               data-rttab="true"
               id="tab:r1:2"
               role="tab"
@@ -462,16 +462,16 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
           </ul>
           <div
             aria-labelledby="tab:r1:0"
-            class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+            class="reactTabsTabPanel reactTabsTabPanelSelected"
             id="panel:r1:0"
             role="tabpanel"
           >
             <div>
               <pre
-                class="shell-box"
+                class="shellBox"
               >
                 <div
-                  class="shell-box-top"
+                  class="top"
                 >
                   <span>
                     SHELL
@@ -484,12 +484,12 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
                 </div>
                 <code>
                   <span
-                    class="install__text__no-select"
+                    class="installTextNoSelect"
                   >
                     $
                   </span>
                   <span
-                    class="install__text__command"
+                    class="installTextCommand"
                   >
                     choco 
                   </span>
@@ -497,10 +497,10 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
                 </code>
               </pre>
               <pre
-                class="shell-box"
+                class="shellBox"
               >
                 <div
-                  class="shell-box-top"
+                  class="top"
                 >
                   <span>
                     SHELL
@@ -513,12 +513,12 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
                 </div>
                 <code>
                   <span
-                    class="install__text__no-select"
+                    class="installTextNoSelect"
                   >
                     $
                   </span>
                   <span
-                    class="install__text__command"
+                    class="installTextCommand"
                   >
                     nvs 
                   </span>
@@ -526,10 +526,10 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
                 </code>
               </pre>
               <pre
-                class="shell-box"
+                class="shellBox"
               >
                 <div
-                  class="shell-box-top"
+                  class="top"
                 >
                   <span>
                     SHELL
@@ -542,12 +542,12 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
                 </div>
                 <code>
                   <span
-                    class="install__text__no-select"
+                    class="installTextNoSelect"
                   >
                     $
                   </span>
                   <span
-                    class="install__text__command"
+                    class="installTextCommand"
                   >
                     nvs 
                   </span>
@@ -557,7 +557,7 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
               <br />
               <br />
               <a
-                class="install__docs-button"
+                class="installDocsButton"
                 href="/download/package-manager/#nvs"
               >
                 Read documentation
@@ -566,13 +566,13 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
           </div>
           <div
             aria-labelledby="tab:r1:1"
-            class="react-tabs__tab-panel"
+            class="reactTabsTabPanel"
             id="panel:r1:1"
             role="tabpanel"
           />
           <div
             aria-labelledby="tab:r1:2"
-            class="react-tabs__tab-panel"
+            class="reactTabsTabPanel"
             id="panel:r1:2"
             role="tabpanel"
           />
@@ -580,27 +580,27 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
       </div>
     </div>
     <svg
-      class="leafs-front animations"
+      class="leafsFront animations"
     />
     <svg
-      class="leafs-middle animations"
+      class="leafsMid animations"
     />
     <svg
-      class="leafs-back animations"
+      class="leafsBack animations"
     />
     <svg
       class="dots"
     />
   </section>
   <section
-    class="node-features"
+    class="nodeFeatures"
   >
     <div
-      class="node-features__feature"
+      class="nodeFeaturesFeature"
     >
       <svg
         alt="Node Feature"
-        class="feature-icon"
+        class="featureIcon"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -624,11 +624,11 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
       </p>
     </div>
     <div
-      class="node-features__feature"
+      class="nodeFeaturesFeature"
     >
       <svg
         alt="Node Feature"
-        class="feature-icon"
+        class="featureIcon"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -649,11 +649,11 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
       </p>
     </div>
     <div
-      class="node-features__feature"
+      class="nodeFeaturesFeature"
     >
       <svg
         alt="Node Feature"
-        class="feature-icon"
+        class="featureIcon"
         fill="currentColor"
         height="1em"
         stroke="currentColor"

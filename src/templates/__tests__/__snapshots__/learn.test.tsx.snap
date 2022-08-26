@@ -183,10 +183,10 @@ exports[`Learn Template renders correctly 1`] = `
     >
       <nav
         aria-label="Secondary"
-        class="sideNav"
+        class="navigation"
       >
         <button
-          class="sideNavOpen"
+          class="navigationOpen"
           type="button"
         >
           Menu
@@ -340,7 +340,6 @@ exports[`Learn Template renders correctly 1`] = `
         >
           <li>
             <a
-              class="link"
               href="/learn/test-slug"
               rel="prev"
             >
@@ -351,6 +350,7 @@ exports[`Learn Template renders correctly 1`] = `
                 data-prefix="fas"
                 focusable="false"
                 role="img"
+                style="margin-right: 5px;"
                 viewBox="0 0 448 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -364,7 +364,6 @@ exports[`Learn Template renders correctly 1`] = `
           </li>
           <li>
             <a
-              class="link"
               href="/learn/test-slug"
               rel="next"
             >
@@ -376,6 +375,7 @@ exports[`Learn Template renders correctly 1`] = `
                 data-prefix="fas"
                 focusable="false"
                 role="img"
+                style="margin-left: 5px;"
                 viewBox="0 0 448 512"
                 xmlns="http://www.w3.org/2000/svg"
               >

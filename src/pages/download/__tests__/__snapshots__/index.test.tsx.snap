@@ -178,8 +178,8 @@ exports[`Download page renders correctly 1`] = `
         </div>
       </div>
     </nav>
-    <span
-      class="home-page -download"
+    <div
+      class="home-container downloadPageContainer"
     >
       <div
         class="downloadPageNavigation"
@@ -212,7 +212,7 @@ exports[`Download page renders correctly 1`] = `
         </div>
       </div>
       <p
-        class="release-description"
+        class="releaseDescription"
       >
         Download the Node.js source code, a pre-built installer for your platform, or install via a
          
@@ -731,7 +731,7 @@ exports[`Download page renders correctly 1`] = `
           </div>
         </div>
       </div>
-    </span>
+    </div>
     <footer
       class="footer"
     >
@@ -1060,8 +1060,8 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </div>
       </div>
     </nav>
-    <span
-      class="home-page -download"
+    <div
+      class="home-container downloadPageContainer"
     >
       <div
         class="downloadPageNavigation"
@@ -1094,7 +1094,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </div>
       </div>
       <p
-        class="release-description"
+        class="releaseDescription"
       >
         Download the Node.js source code, a pre-built installer for your platform, or install via a
          
@@ -1522,7 +1522,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           class="downloadAdditionalBody"
         />
       </div>
-    </span>
+    </div>
     <footer
       class="footer"
     >
