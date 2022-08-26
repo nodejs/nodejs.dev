@@ -11,7 +11,6 @@ import { NodeReleaseDataDetail } from '../types';
 import Layout from '../components/Layout';
 
 import '../styles/docs.scss';
-import '../styles/article-reader.scss';
 
 type NodeReleaseVersion = Pick<NodeReleaseDataDetail, 'version'>;
 

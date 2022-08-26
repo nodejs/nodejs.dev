@@ -5,6 +5,7 @@ import Layout from '../components/Layout';
 import SideNavBar from '../components/SideNavBar';
 import { getNavigationData } from '../pages/blog';
 import { BlogPostsList, BlogCategory, BlogCategoriesList } from '../types';
+import styles from '../styles/blog.module.scss';
 
 type Props = {
   data: BlogPostsList & { category: BlogCategory } & BlogCategoriesList;
@@ -20,12 +21,12 @@ const Blog = ({
         pageKey={`blog/${category.name}/`}
         title="Blog Categories"
       />
-      <div className="blog-grid-container">
-        <div className="blog-category-header">
+      <div className={styles.blogGridContainer}>
+        <div className={styles.blogCategoryHeader}>
           <h2>{category.slug}</h2>
           <span>{category.description}</span>
         </div>
-        <div className="blog-items">
+        <div className={styles.blogItems}>
           {posts.edges.map(edge => (
             <BlogCard key={edge.node.fields.slug} data={edge} />
           ))}

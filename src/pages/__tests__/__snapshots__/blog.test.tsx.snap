@@ -5,19 +5,19 @@ exports[`Blog page renders correctly 1`] = `
   class="grid-container"
 >
   <nav
-    class="side-nav-about"
+    class="sideNav"
   >
     <button
-      class="side-nav__open"
+      class="sideNavOpen"
       type="button"
     >
       Menu
     </button>
-    <ul
-      class="community-nav__list"
+    <div
+      class="sideNavListCommunity"
     >
       <li
-        class="t-body2 side-nav__item--title"
+        class="t-body2 sideNavListItemTitle"
       >
         <b>
           Blog Categories
@@ -28,13 +28,13 @@ exports[`Blog page renders correctly 1`] = `
           arrow_drop_down
         </i>
       </li>
-    </ul>
+    </div>
   </nav>
   <div
-    class="blog-grid-container"
+    class="blogGridContainer"
   >
     <div
-      class="blog-category-header"
+      class="blogCategoryHeader"
     >
       <h2>
         Node.js Blog
@@ -44,10 +44,10 @@ exports[`Blog page renders correctly 1`] = `
       </span>
     </div>
     <div
-      class="blog-items"
+      class="blogItems"
     >
       <div
-        class="blog-card"
+        class="blogCard"
       >
         <div
           class="title"
@@ -96,19 +96,19 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
   class="grid-container"
 >
   <nav
-    class="side-nav-about"
+    class="sideNav"
   >
     <button
-      class="side-nav__open"
+      class="sideNavOpen"
       type="button"
     >
       Menu
     </button>
-    <ul
-      class="community-nav__list"
+    <div
+      class="sideNavListCommunity"
     >
       <li
-        class="t-body2 side-nav__item--title"
+        class="t-body2 sideNavListItemTitle"
       >
         <b>
           Blog Categories
@@ -119,13 +119,13 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
           arrow_drop_down
         </i>
       </li>
-    </ul>
+    </div>
   </nav>
   <div
-    class="blog-grid-container"
+    class="blogGridContainer"
   >
     <div
-      class="blog-category-header"
+      class="blogCategoryHeader"
     >
       <h2>
         Node.js Blog
@@ -135,7 +135,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
       </span>
     </div>
     <div
-      class="blog-items"
+      class="blogItems"
     />
   </div>
 </main>

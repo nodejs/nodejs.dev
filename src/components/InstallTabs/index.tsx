@@ -4,21 +4,29 @@ import { detectOS, UserOS } from '../../util/detectOS';
 import WindowsPanel from './WindowsPanel';
 import MacOSPanel from './MacOSPanel';
 import LinuxPanel from './LinuxPanel';
-
-import './InstallTabs.scss';
+import styles from './index.module.scss';
 
 const getOSPanel = (userOS: UserOS): JSX.Element => {
   switch (userOS) {
     case UserOS.MAC:
       return (
         <>
-          <TabPanel>
+          <TabPanel
+            className={styles.reactTabsTabPanel}
+            selectedClassName={styles.reactTabsTabPanelSelected}
+          >
             <MacOSPanel />
           </TabPanel>
-          <TabPanel>
+          <TabPanel
+            className={styles.reactTabsTabPanel}
+            selectedClassName={styles.reactTabsTabPanelSelected}
+          >
             <WindowsPanel />
           </TabPanel>
-          <TabPanel>
+          <TabPanel
+            className={styles.reactTabsTabPanel}
+            selectedClassName={styles.reactTabsTabPanelSelected}
+          >
             <LinuxPanel />
           </TabPanel>
         </>
@@ -27,13 +35,22 @@ const getOSPanel = (userOS: UserOS): JSX.Element => {
     case UserOS.UNIX:
       return (
         <>
-          <TabPanel>
+          <TabPanel
+            className={styles.reactTabsTabPanel}
+            selectedClassName={styles.reactTabsTabPanelSelected}
+          >
             <LinuxPanel />
           </TabPanel>
-          <TabPanel>
+          <TabPanel
+            className={styles.reactTabsTabPanel}
+            selectedClassName={styles.reactTabsTabPanelSelected}
+          >
             <MacOSPanel />
           </TabPanel>
-          <TabPanel>
+          <TabPanel
+            className={styles.reactTabsTabPanel}
+            selectedClassName={styles.reactTabsTabPanelSelected}
+          >
             <WindowsPanel />
           </TabPanel>
         </>
@@ -41,13 +58,22 @@ const getOSPanel = (userOS: UserOS): JSX.Element => {
     default:
       return (
         <>
-          <TabPanel>
+          <TabPanel
+            className={styles.reactTabsTabPanel}
+            selectedClassName={styles.reactTabsTabPanelSelected}
+          >
             <WindowsPanel />
           </TabPanel>
-          <TabPanel>
+          <TabPanel
+            className={styles.reactTabsTabPanel}
+            selectedClassName={styles.reactTabsTabPanelSelected}
+          >
             <MacOSPanel />
           </TabPanel>
-          <TabPanel>
+          <TabPanel
+            className={styles.reactTabsTabPanel}
+            selectedClassName={styles.reactTabsTabPanelSelected}
+          >
             <LinuxPanel />
           </TabPanel>
         </>
@@ -80,20 +106,26 @@ const InstallTabs = (): JSX.Element | null => {
 
     // This component should be rendered within the client-side only.
     setReactTabs(
-      <Tabs environment={undefined}>
-        <div className="install__header">
-          <div className="install__header-circles">
-            <div className="install__header-grey-circle" />
-            <div className="install__header-grey-circle" />
-            <div className="install__header-grey-circle" />
+      <Tabs className={styles.reactTabs}>
+        <div className={styles.installHeader}>
+          <div className={styles.installHeaderCircles}>
+            <div className={styles.installHeaderGreyCircle} />
+            <div className={styles.installHeaderGreyCircle} />
+            <div className={styles.installHeaderGreyCircle} />
           </div>
-          <div className="install__header-text">
+          <div className={styles.installHeaderText}>
             {userOS === 'MAC' ? 'zsh' : 'bash'}
           </div>
         </div>
-        <TabList>
+        <TabList className={styles.reactTabsTabList}>
           {tabLayout.map(system => (
-            <Tab key={system}>{system}</Tab>
+            <Tab
+              className={styles.reactTabsTab}
+              selectedClassName={styles.reactTabsTabSelected}
+              key={system}
+            >
+              {system}
+            </Tab>
           ))}
         </TabList>
         {tabLayout && panelSwitch}
@@ -101,7 +133,7 @@ const InstallTabs = (): JSX.Element | null => {
     );
   }, []);
 
-  return <div className="install">{reactTabs}</div>;
+  return <div className={styles.install}>{reactTabs}</div>;
 };
 
 export default InstallTabs;

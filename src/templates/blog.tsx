@@ -2,11 +2,9 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
-import { BlogPageData, BlogPageContext } from '../types';
-
-import '../styles/article-reader.scss';
-import '../styles/learn.scss';
 import RecentPosts from '../components/RecentPosts';
+import { BlogPageData, BlogPageContext } from '../types';
+import styles from '../styles/blog.module.scss';
 
 interface Props {
   data: BlogPageData;
@@ -26,7 +24,7 @@ const BlogLayout = ({
   pageContext: { next, previous, relativePath },
 }: Props): JSX.Element => (
   <Layout title={title} description={excerpt}>
-    <main className="grid-container blog-container">
+    <main className={`grid-container ${styles.blogContainer}`}>
       <RecentPosts posts={recentPosts} />
       <Article
         title={title}

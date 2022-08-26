@@ -8,12 +8,12 @@ import {
   ArticleProps,
   NodeReleaseDataDetail,
   NodeReleaseData,
-  TableOfContents,
+  PageTableOfContents,
   BlogCategoriesList,
 } from '../types';
 import mockMDXBodyContent from './mockMDXBodyContent';
 
-export const mockTableOfContents: TableOfContents = {
+export const mockTableOfContents: PageTableOfContents = {
   items: [
     { title: 'mock-title', url: '#mock-title' },
     { title: 'mock-title-2', url: '#mock-title-2' },

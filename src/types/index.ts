@@ -38,7 +38,7 @@ export interface LearnPageContext {
   navigationData: NavigationSectionData;
 }
 
-export interface TableOfContents {
+export interface PageTableOfContents {
   items: {
     title: string;
     url: string;
@@ -49,7 +49,7 @@ export interface LearnPageData {
   article: {
     id: string;
     body: string;
-    tableOfContents: TableOfContents;
+    tableOfContents: PageTableOfContents;
     frontmatter: { title: string; description: string };
     fields: { authors: string[] };
   };
@@ -102,7 +102,7 @@ declare global {
 
 export interface ArticleData {
   body: string;
-  tableOfContents: TableOfContents;
+  tableOfContents: PageTableOfContents;
   frontmatter: {
     title: string;
     description: string;

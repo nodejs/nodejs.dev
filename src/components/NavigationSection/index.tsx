@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import classnames from 'classnames';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { NavigationSectionItem } from '../../types';
 import NavigationItem from '../NavigationItem';
+import styles from '../../styles/navigation.module.scss';
 
 interface Props {
   key: string;
@@ -21,11 +23,16 @@ const NavigationSection = ({
   const [isOpen, setIsOpen] = useState(!!section.find(isActive));
   const isMobile = useMediaQuery('(max-width: 870px)');
   const toggle = (): void => setIsOpen(!isOpen);
+  const titleClassNames = classnames(
+    't-body2',
+    styles.sideNavListItem,
+    styles.sideNavListItemTitle
+  );
 
   return (
-    <ul className="side-nav__list">
+    <div className={styles.sideNavList}>
       <div
-        className="t-body2 side-nav__item side-nav__item--title"
+        className={titleClassNames}
         onClick={toggle}
         onKeyDown={toggle}
         tabIndex={0}
@@ -54,7 +61,7 @@ const NavigationSection = ({
           );
         })}
       </div>
-    </ul>
+    </div>
   );
 };
 

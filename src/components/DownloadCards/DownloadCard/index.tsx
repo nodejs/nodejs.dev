@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tab } from 'react-tabs';
-import './DownloadCard.scss';
 import classnames from 'classnames';
+import styles from './index.module.scss';
 
 interface Props {
   name: string;
@@ -23,9 +23,10 @@ const DownloadCard = ({
   onSelect,
 }: Props): JSX.Element => {
   const handleSelectCard = (): void => onSelect(name);
-  const classNames = classnames('download-card', {
-    'download-card--active': selected,
+  const classNames = classnames(styles.downloadCard, {
+    [styles.downloadCardActive]: selected,
   });
+
   return (
     <Tab
       className={classNames}
@@ -33,18 +34,18 @@ const DownloadCard = ({
       key={name}
       onClick={handleSelectCard}
       tabIndex="0"
-      selectedClassName="download-card--active"
+      selectedClassName={styles.downloadCardActive}
     >
-      <div className="download-card__top">
-        <Icon className="download-card__image" />
+      <div className={styles.downloadCardTop}>
+        <Icon className={styles.downloadCardImage} />
         {selected && (
-          <a className="download-card__link" href={download}>
+          <a className={styles.downloadCardLink} href={download}>
             <i className="material-icons">get_app</i>
           </a>
         )}
       </div>
-      <p className="download-card__label">{label}</p>
-      <p className="download-card__filename">{fileName}</p>
+      <p className={styles.downloadCardLabel}>{label}</p>
+      <p className={styles.downloadCardFilename}>{fileName}</p>
     </Tab>
   );
 };

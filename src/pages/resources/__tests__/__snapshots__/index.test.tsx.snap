@@ -10,10 +10,10 @@ exports[`Resources page renders correctly 1`] = `
       class="nav"
     >
       <div
-        class="nav__container"
+        class="navContainer"
       >
         <div
-          class="nav__startwrapper"
+          class="navStartwrapper"
         >
           <a
             aria-label="Homepage"
@@ -23,32 +23,30 @@ exports[`Resources page renders correctly 1`] = `
               class="logo"
             >
               <svg
-                class="nav__logo light-mode-only"
+                class="navLogo light-mode-only"
               />
               <svg
-                class="nav__logo dark-mode-only"
+                class="navLogo dark-mode-only"
               />
             </div>
           </a>
         </div>
         <ul
-          class="nav__tabs__container"
+          class="navTabsContainer"
         >
           <li
-            class="nav__tabs"
+            class="navTabs"
           >
             <a
-              class="activeStyleTab"
               href="/learn"
             >
               Learn
             </a>
           </li>
           <li
-            class="nav__tabs"
+            class="navTabs"
           >
             <a
-              class="activeStyleTab"
               href="https://nodejs.org/en/docs/"
               rel="noopener noreferrer"
               target="_blank"
@@ -57,20 +55,18 @@ exports[`Resources page renders correctly 1`] = `
             </a>
           </li>
           <li
-            class="nav__tabs"
+            class="navTabs"
           >
             <a
-              class="activeStyleTab"
               href="/download"
             >
               Download
             </a>
           </li>
           <li
-            class="nav__tabs"
+            class="navTabs"
           >
             <a
-              class="activeStyleTab"
               href="/community"
             >
               Community
@@ -78,13 +74,13 @@ exports[`Resources page renders correctly 1`] = `
           </li>
         </ul>
         <div
-          class="nav__endwrapper"
+          class="navEndwrapper"
         >
           <ul
-            class="right-container"
+            class="rightContainer"
           >
             <li
-              class="nav__tabs search-bar"
+              class="navTabs searchBar"
             >
               <span
                 class="sr-only"
@@ -123,10 +119,10 @@ exports[`Resources page renders correctly 1`] = `
               </div>
             </li>
             <li
-              class="nav__tabs"
+              class="navTabs"
             >
               <button
-                class="dark-mode-toggle"
+                class="darkModeToggle"
                 type="button"
               >
                 <span
@@ -135,19 +131,19 @@ exports[`Resources page renders correctly 1`] = `
                   Toggle Dark Mode
                 </span>
                 <i
-                  class="material-icons light-mode-only theme-buttons"
+                  class="material-icons light-mode-only"
                 >
                   mode_night
                 </i>
                 <i
-                  class="material-icons dark-mode-only theme-buttons"
+                  class="material-icons dark-mode-only"
                 >
                   brightness_medium
                 </i>
               </button>
             </li>
             <li
-              class="nav__tabs"
+              class="navTabs"
             >
               <a
                 href="https://github.com/nodejs/nodejs.dev"
@@ -186,19 +182,19 @@ exports[`Resources page renders correctly 1`] = `
       class="grid-container"
     >
       <nav
-        class="side-nav-about"
+        class="sideNav"
       >
         <button
-          class="side-nav__open"
+          class="sideNavOpen"
           type="button"
         >
           Menu
         </button>
-        <ul
-          class="community-nav__list"
+        <div
+          class="sideNavListCommunity"
         >
           <li
-            class="t-body2 side-nav__item--title"
+            class="t-body2 sideNavListItemTitle"
           >
             <b>
               Community Pages
@@ -209,95 +205,77 @@ exports[`Resources page renders correctly 1`] = `
               arrow_drop_down
             </i>
           </li>
-          <li>
-            <a
-              aria-current="page"
-              class="t-body2 side-nav__item-community side-nav__item-community--active"
-              href="/about/"
-              id="link-about"
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              class="t-body2 side-nav__item-community"
-              href="/community/"
-              id="link-community"
-            >
-              Community
-            </a>
-          </li>
-          <li>
-            <a
-              class="t-body2 side-nav__item-community"
-              href="/download/package-manager/"
-              id="link-download/package-manager"
-            >
-              Package Manager
-            </a>
-          </li>
-          <li>
-            <a
-              class="t-body2 side-nav__item-community"
-              href="/about/privacy/"
-              id="link-about/privacy"
-            >
-              Privacy Policy
-            </a>
-          </li>
-          <li>
-            <a
-              class="t-body2 side-nav__item-community"
-              href="/about/governance/"
-              id="link-about/governance"
-            >
-              Project Governance
-            </a>
-          </li>
-          <li>
-            <a
-              class="t-body2 side-nav__item-community"
-              href="/about/releases/"
-              id="link-about/releases"
-            >
-              Releases
-            </a>
-          </li>
-          <li>
-            <a
-              class="t-body2 side-nav__item-community"
-              href="/resources/"
-              id="link-resources"
-            >
-              Resources
-            </a>
-          </li>
-          <li>
-            <a
-              class="t-body2 side-nav__item-community"
-              href="/about/security/"
-              id="link-about/security"
-            >
-              Security Reporting
-            </a>
-          </li>
-          <li>
-            <a
-              class="t-body2 side-nav__item-community"
-              href="/about/working-groups/"
-              id="link-about/working-groups"
-            >
-              Working Groups
-            </a>
-          </li>
-        </ul>
+          <a
+            aria-current="page"
+            class="t-body2 sideNavListItem sideNavListItemActive"
+            href="/about/"
+            id="link-about"
+          >
+            About
+          </a>
+          <a
+            class="t-body2 sideNavListItem"
+            href="/community/"
+            id="link-community"
+          >
+            Community
+          </a>
+          <a
+            class="t-body2 sideNavListItem"
+            href="/download/package-manager/"
+            id="link-download/package-manager"
+          >
+            Package Manager
+          </a>
+          <a
+            class="t-body2 sideNavListItem"
+            href="/about/privacy/"
+            id="link-about/privacy"
+          >
+            Privacy Policy
+          </a>
+          <a
+            class="t-body2 sideNavListItem"
+            href="/about/governance/"
+            id="link-about/governance"
+          >
+            Project Governance
+          </a>
+          <a
+            class="t-body2 sideNavListItem"
+            href="/about/releases/"
+            id="link-about/releases"
+          >
+            Releases
+          </a>
+          <a
+            class="t-body2 sideNavListItem"
+            href="/resources/"
+            id="link-resources"
+          >
+            Resources
+          </a>
+          <a
+            class="t-body2 sideNavListItem"
+            href="/about/security/"
+            id="link-about/security"
+          >
+            Security Reporting
+          </a>
+          <a
+            class="t-body2 sideNavListItem"
+            href="/about/working-groups/"
+            id="link-about/working-groups"
+          >
+            Working Groups
+          </a>
+        </div>
       </nav>
       <article
-        class="article-reader"
+        class="articleReader"
       >
         <h1
-          class="article-reader__headline"
+          class="articleReaderHeadline"
         >
           Mock Title
         </h1>
@@ -306,7 +284,7 @@ exports[`Resources page renders correctly 1`] = `
         >
           <summary>
             <strong>
-              TABLE OF CONTENTS
+              Table of Contents
             </strong>
           </summary>
           <ul>
@@ -375,12 +353,10 @@ exports[`Resources page renders correctly 1`] = `
           </p>
         </div>
         <div
-          class="authorsList"
+          class="authorList"
         >
           Contributors
-          <ul
-            class="list"
-          >
+          <ul>
             <li>
               <a
                 class="link"
@@ -392,7 +368,6 @@ exports[`Resources page renders correctly 1`] = `
               >
                 <img
                   alt="MrJithil"
-                  class="img"
                   src="https://github.com/MrJithil.png?size=60"
                 />
               </a>
@@ -403,21 +378,24 @@ exports[`Resources page renders correctly 1`] = `
           class="edit"
         >
           <a
-            class="link"
             href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/about.en.md"
           >
             <span>
               Edit this page on GitHub
             </span>
             <svg
-              class="icon"
-              fill="currentColor"
-              height="1em"
-              viewBox="0 0 40 40"
-              width="1em"
+              aria-hidden="true"
+              class="svg-inline--fa fa-pencil "
+              data-icon="pencil"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"
+                d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"
+                fill="currentColor"
               />
             </svg>
           </a>
@@ -428,12 +406,12 @@ exports[`Resources page renders correctly 1`] = `
       class="footer"
     >
       <ul
-        class="footer__left"
+        class="footerLeft"
       >
         <li>
           <a
             aria-label="Node.js Slack Link"
-            class="footer__link"
+            class="footerLink"
             href="https://trademark-policy.openjsf.org/"
             rel="noopener noreferrer"
             target="_blank"
@@ -443,7 +421,7 @@ exports[`Resources page renders correctly 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="footerLink"
             href="/about/privacy"
           >
             Privacy Policy
@@ -451,7 +429,7 @@ exports[`Resources page renders correctly 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="footerLink"
             href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
           >
             Code of Conduct
@@ -459,7 +437,7 @@ exports[`Resources page renders correctly 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="footerLink"
             href="/about/security"
           >
             Security Reporting
@@ -467,7 +445,7 @@ exports[`Resources page renders correctly 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="footerLink"
             href="/about"
           >
             About
@@ -475,7 +453,7 @@ exports[`Resources page renders correctly 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="footerLink"
             href="/blog"
           >
             Blog
@@ -483,7 +461,7 @@ exports[`Resources page renders correctly 1`] = `
         </li>
       </ul>
       <ul
-        class="footer__right"
+        class="footerRight"
       >
         <li>
           © OpenJS Foundation

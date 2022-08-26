@@ -2,11 +2,11 @@
 
 exports[`NavigationSection component renders correctly 1`] = `
 <div>
-  <ul
-    class="side-nav__list"
+  <div
+    class="sideNavList"
   >
     <div
-      class="t-body2 side-nav__item side-nav__item--title"
+      class="t-body2 sideNavListItem sideNavListItemTitle"
       role="menuitem"
       tabindex="0"
     >
@@ -20,16 +20,14 @@ exports[`NavigationSection component renders correctly 1`] = `
     <div
       style="display: none;"
     >
-      <li>
-        <a
-          class="t-body2 side-nav__item"
-          href="/learn/intro/"
-          id="link-intro"
-        >
-          Section 1
-        </a>
-      </li>
+      <a
+        class="t-body2 sideNavListItem"
+        href="/learn/intro/"
+        id="link-intro"
+      >
+        Section 1
+      </a>
     </div>
-  </ul>
+  </div>
 </div>
 `;

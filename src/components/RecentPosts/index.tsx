@@ -2,33 +2,25 @@ import React from 'react';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { FormattedMessage } from 'react-intl';
 import { BlogMetaData } from '../../types';
-import './RecentPosts.scss';
+import styles from './index.module.scss';
 
 interface Props {
   posts: BlogMetaData[];
 }
 
 const RecentPosts = ({ posts }: Props) => (
-  <div className="recent-posts">
-    <h2 className="recent-posts-header">
+  <div className={styles.recentPosts}>
+    <h2 className={styles.recentPostsHeader}>
       <FormattedMessage id="components.recentPosts.title" />
     </h2>
-    <ul className="recent-post-list">
-      {posts.map(post => {
-        const {
-          node: {
-            frontmatter: { title },
-            fields: { slug },
-          },
-        } = post;
-        return (
-          <li key={slug} className="recent-post-item">
-            <Link activeClassName="recent-post-item-active" to={slug}>
-              {title}
-            </Link>
-          </li>
-        );
-      })}
+    <ul>
+      {posts.map(post => (
+        <li key={post.node.fields.slug}>
+          <Link activeClassName={styles.active} to={post.node.fields.slug}>
+            {post.node.frontmatter.title}
+          </Link>
+        </li>
+      ))}
     </ul>
   </div>
 );

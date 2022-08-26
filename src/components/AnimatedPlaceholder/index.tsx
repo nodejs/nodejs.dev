@@ -1,5 +1,5 @@
 import React from 'react';
-import './AnimatedPlaceholder.scss';
+import styles from './index.module.scss';
 
 interface Props {
   children?: React.ReactNode;
@@ -7,17 +7,17 @@ interface Props {
 
 const AnimatedPlaceholder = ({ children }: Props): JSX.Element => {
   return (
-    <div className="animated-placeholder">
+    <div className={styles.animatedPlaceholder}>
       {/* Prefer external skeleton structure or render default in case not passed */}
       {children}
       {!children && (
         <>
-          <div className="animated-placeholder__image" />
-          <div className="animated-placeholder__text">
-            <div className="animated-placeholder__text-line" />
-            <div className="animated-placeholder__text-line" />
-            <div className="animated-placeholder__text-line" />
-            <div className="animated-placeholder__text-line" />
+          <div className={styles.animatedPlaceholderImage} />
+          <div className={styles.animatedPlaceholderText}>
+            <div className={styles.animatedPlaceholderTextLine} />
+            <div className={styles.animatedPlaceholderTextLine} />
+            <div className={styles.animatedPlaceholderTextLine} />
+            <div className={styles.animatedPlaceholderTextLine} />
           </div>
         </>
       )}

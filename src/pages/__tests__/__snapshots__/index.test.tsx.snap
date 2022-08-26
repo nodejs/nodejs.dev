@@ -5,24 +5,24 @@ exports[`Home page renders correctly 1`] = `
   class="home-page"
 >
   <div
-    class="home-page-hero"
+    class="homePageHero"
   >
     <h1>
       displayTitle-mock
     </h1>
     <h2
-      class="sub-title t-subheading"
+      class="subTitle t-subheading"
     >
       subTitle-mock
     </h2>
     <div
-      class="btn-ctas"
+      class="btnCtas"
     >
       <div
-        class="download-lts-container"
+        class="downloadLtsContainer"
       >
         <a
-          class="circular-container"
+          class="circularContainer"
           href="https://nodejs.org/dist/mmock-version-2/node-mmock-version-2.tar.gz"
         >
           Download Node (LTS)
@@ -39,7 +39,7 @@ exports[`Home page renders correctly 1`] = `
         </p>
       </div>
       <a
-        class="circular-container inverse"
+        class="inverse circularContainer"
         href="/learn"
       >
         Learn Node
@@ -345,24 +345,24 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
   class="home-page"
 >
   <div
-    class="home-page-hero"
+    class="homePageHero"
   >
     <h1>
       displayTitle-mock
     </h1>
     <h2
-      class="sub-title t-subheading"
+      class="subTitle t-subheading"
     >
       subTitle-mock
     </h2>
     <div
-      class="btn-ctas"
+      class="btnCtas"
     >
       <div
-        class="download-lts-container"
+        class="downloadLtsContainer"
       >
         <a
-          class="circular-container"
+          class="circularContainer"
           href="https://nodejs.org/dist/mmock-version-2/node-mmock-version-2.tar.gz"
         >
           Download Node (LTS)
@@ -379,7 +379,7 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
         </p>
       </div>
       <a
-        class="circular-container inverse"
+        class="inverse circularContainer"
         href="/learn"
       >
         Learn Node

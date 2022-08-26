@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import { BlogMetaData } from '../../types';
 import { getTerminatingString } from '../../util/getTerminatingString';
-import './BlogCard.scss';
+import styles from './index.module.scss';
 
 type Props = { data: BlogMetaData } & WrappedComponentProps;
 
@@ -18,19 +18,22 @@ const BlogCard = ({
   },
   intl,
 }: Props): JSX.Element => (
-  <div className="blog-card">
-    <div className="title">
+  <div className={styles.blogCard}>
+    <div className={styles.title}>
       <Link to={slug}>{title}</Link>
-      <div className="metadata">
+      <div className={styles.metadata}>
         {category && (
-          <Link className="category" to={getBlogCategoryUrl(category.name)}>
+          <Link
+            className={styles.category}
+            to={getBlogCategoryUrl(category.name)}
+          >
             {category.slug}
           </Link>
         )}
         <span>{readingTime.text}</span>
       </div>
     </div>
-    <div className="content">
+    <div className={styles.content}>
       <h4>{date}</h4>
       <p>
         {intl.formatMessage({ id: 'blog.authors.list.title.by' })}{' '}

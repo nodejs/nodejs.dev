@@ -3,8 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useDetectOs } from '../../hooks/useDetectOs';
 import type { NodeReleaseLTSVersion } from '../../types';
-
-import './Hero.scss';
+import styles from './index.module.scss';
 
 interface Props {
   title: string;
@@ -28,12 +27,12 @@ const Hero = ({
   const currentVersionUrl = getDownloadLink(currentRelease?.version || '');
 
   return (
-    <div className="home-page-hero">
+    <div className={styles.homePageHero}>
       <h1>{title}</h1>
-      <h2 className="sub-title t-subheading">{subTitle}</h2>
-      <div className="btn-ctas">
-        <div className="download-lts-container">
-          <a className="circular-container" href={ltsVersionUrl}>
+      <h2 className={`${styles.subTitle} t-subheading`}>{subTitle}</h2>
+      <div className={styles.btnCtas}>
+        <div className={styles.downloadLtsContainer}>
+          <a className={styles.circularContainer} href={ltsVersionUrl}>
             <FormattedMessage id="components.hero.downloadLts" />
           </a>
           <p className="t-caption">
@@ -50,7 +49,10 @@ const Hero = ({
           </p>
         </div>
 
-        <Link className="circular-container inverse" to="/learn">
+        <Link
+          className={`${styles.inverse} ${styles.circularContainer}`}
+          to="/learn"
+        >
           <FormattedMessage id="components.hero.learn" />
         </Link>
       </div>

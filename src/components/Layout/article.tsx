@@ -1,15 +1,13 @@
 import React from 'react';
 
-import { TableOfContents } from '../../types';
+import { PageTableOfContents } from '../../types';
 import Article from '../Article';
 import Layout from '.';
 import SideNavBar, { SideNavBarKeys } from '../SideNavBar';
 
-import '../../styles/article-reader.scss';
-
 export interface ArticleLayoutProps {
   body: string;
-  tableOfContents?: TableOfContents;
+  tableOfContents?: PageTableOfContents;
   title: string;
   description: string;
   authors: string[];

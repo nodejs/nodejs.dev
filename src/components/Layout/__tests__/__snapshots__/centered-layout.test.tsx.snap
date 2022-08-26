@@ -7,10 +7,10 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
     class="nav"
   >
     <div
-      class="nav__container"
+      class="navContainer"
     >
       <div
-        class="nav__startwrapper"
+        class="navStartwrapper"
       >
         <a
           aria-label="Homepage"
@@ -20,32 +20,30 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
             class="logo"
           >
             <svg
-              class="nav__logo light-mode-only"
+              class="navLogo light-mode-only"
             />
             <svg
-              class="nav__logo dark-mode-only"
+              class="navLogo dark-mode-only"
             />
           </div>
         </a>
       </div>
       <ul
-        class="nav__tabs__container"
+        class="navTabsContainer"
       >
         <li
-          class="nav__tabs"
+          class="navTabs"
         >
           <a
-            class="activeStyleTab"
             href="/learn"
           >
             Learn
           </a>
         </li>
         <li
-          class="nav__tabs"
+          class="navTabs"
         >
           <a
-            class="activeStyleTab"
             href="https://nodejs.org/en/docs/"
             rel="noopener noreferrer"
             target="_blank"
@@ -54,20 +52,18 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
           </a>
         </li>
         <li
-          class="nav__tabs"
+          class="navTabs"
         >
           <a
-            class="activeStyleTab"
             href="/download"
           >
             Download
           </a>
         </li>
         <li
-          class="nav__tabs"
+          class="navTabs"
         >
           <a
-            class="activeStyleTab"
             href="/community"
           >
             Community
@@ -75,13 +71,13 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
         </li>
       </ul>
       <div
-        class="nav__endwrapper"
+        class="navEndwrapper"
       >
         <ul
-          class="right-container"
+          class="rightContainer"
         >
           <li
-            class="nav__tabs search-bar"
+            class="navTabs searchBar"
           >
             <span
               class="sr-only"
@@ -120,10 +116,10 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
             </div>
           </li>
           <li
-            class="nav__tabs"
+            class="navTabs"
           >
             <button
-              class="dark-mode-toggle"
+              class="darkModeToggle"
               type="button"
             >
               <span
@@ -132,19 +128,19 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
                 Toggle Dark Mode
               </span>
               <i
-                class="material-icons light-mode-only theme-buttons"
+                class="material-icons light-mode-only"
               >
                 mode_night
               </i>
               <i
-                class="material-icons dark-mode-only theme-buttons"
+                class="material-icons dark-mode-only"
               >
                 brightness_medium
               </i>
             </button>
           </li>
           <li
-            class="nav__tabs"
+            class="navTabs"
           >
             <a
               href="https://github.com/nodejs/nodejs.dev"
@@ -188,12 +184,12 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
     class="footer"
   >
     <ul
-      class="footer__left"
+      class="footerLeft"
     >
       <li>
         <a
           aria-label="Node.js Slack Link"
-          class="footer__link"
+          class="footerLink"
           href="https://trademark-policy.openjsf.org/"
           rel="noopener noreferrer"
           target="_blank"
@@ -203,7 +199,7 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
       </li>
       <li>
         <a
-          class="footer__link"
+          class="footerLink"
           href="/about/privacy"
         >
           Privacy Policy
@@ -211,7 +207,7 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
       </li>
       <li>
         <a
-          class="footer__link"
+          class="footerLink"
           href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
         >
           Code of Conduct
@@ -219,7 +215,7 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
       </li>
       <li>
         <a
-          class="footer__link"
+          class="footerLink"
           href="/about/security"
         >
           Security Reporting
@@ -227,7 +223,7 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
       </li>
       <li>
         <a
-          class="footer__link"
+          class="footerLink"
           href="/about"
         >
           About
@@ -235,7 +231,7 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
       </li>
       <li>
         <a
-          class="footer__link"
+          class="footerLink"
           href="/blog"
         >
           Blog
@@ -243,7 +239,7 @@ exports[`CenteredLayout component renders correctly with footer 1`] = `
       </li>
     </ul>
     <ul
-      class="footer__right"
+      class="footerRight"
     >
       <li>
         © OpenJS Foundation
@@ -340,10 +336,10 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
     class="nav"
   >
     <div
-      class="nav__container"
+      class="navContainer"
     >
       <div
-        class="nav__startwrapper"
+        class="navStartwrapper"
       >
         <a
           aria-label="Homepage"
@@ -353,32 +349,30 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
             class="logo"
           >
             <svg
-              class="nav__logo light-mode-only"
+              class="navLogo light-mode-only"
             />
             <svg
-              class="nav__logo dark-mode-only"
+              class="navLogo dark-mode-only"
             />
           </div>
         </a>
       </div>
       <ul
-        class="nav__tabs__container"
+        class="navTabsContainer"
       >
         <li
-          class="nav__tabs"
+          class="navTabs"
         >
           <a
-            class="activeStyleTab"
             href="/learn"
           >
             Learn
           </a>
         </li>
         <li
-          class="nav__tabs"
+          class="navTabs"
         >
           <a
-            class="activeStyleTab"
             href="https://nodejs.org/en/docs/"
             rel="noopener noreferrer"
             target="_blank"
@@ -387,20 +381,18 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
           </a>
         </li>
         <li
-          class="nav__tabs"
+          class="navTabs"
         >
           <a
-            class="activeStyleTab"
             href="/download"
           >
             Download
           </a>
         </li>
         <li
-          class="nav__tabs"
+          class="navTabs"
         >
           <a
-            class="activeStyleTab"
             href="/community"
           >
             Community
@@ -408,13 +400,13 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
         </li>
       </ul>
       <div
-        class="nav__endwrapper"
+        class="navEndwrapper"
       >
         <ul
-          class="right-container"
+          class="rightContainer"
         >
           <li
-            class="nav__tabs search-bar"
+            class="navTabs searchBar"
           >
             <span
               class="sr-only"
@@ -453,10 +445,10 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
             </div>
           </li>
           <li
-            class="nav__tabs"
+            class="navTabs"
           >
             <button
-              class="dark-mode-toggle"
+              class="darkModeToggle"
               type="button"
             >
               <span
@@ -465,19 +457,19 @@ exports[`CenteredLayout component renders correctly without footer 1`] = `
                 Toggle Dark Mode
               </span>
               <i
-                class="material-icons light-mode-only theme-buttons"
+                class="material-icons light-mode-only"
               >
                 mode_night
               </i>
               <i
-                class="material-icons dark-mode-only theme-buttons"
+                class="material-icons dark-mode-only"
               >
                 brightness_medium
               </i>
             </button>
           </li>
           <li
-            class="nav__tabs"
+            class="navTabs"
           >
             <a
               href="https://github.com/nodejs/nodejs.dev"

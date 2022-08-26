@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DownloadCards component renders correctly 1`] = `
+<div>
+  <div
+    class="downloadCardsWrapper"
+    data-rttabs="true"
+    tabindex="-1"
+  >
+    <ul
+      class="downloadCards"
+      role="tablist"
+    >
+      <li
+        aria-controls="paneldownload-card-WIN"
+        aria-disabled="false"
+        aria-selected="false"
+        class="downloadCard downloadCardActive"
+        data-rttab="true"
+        id="tabdownload-card-WIN"
+        role="tab"
+        tabindex="0"
+      >
+        <div
+          class="downloadCardTop"
+        >
+          <svg
+            class="downloadCardImage"
+          />
+          <a
+            class="downloadCardLink"
+            href="https://nodejs.org/dist/undefined/node-undefined-x86.msi"
+          >
+            <i
+              class="material-icons"
+            >
+              get_app
+            </i>
+          </a>
+        </div>
+        <p
+          class="downloadCardLabel"
+        >
+          Windows Installer
+        </p>
+        <p
+          class="downloadCardFilename"
+        >
+          node-undefined-x86.msi
+        </p>
+      </li>
+      <li
+        aria-controls="paneldownload-card-MAC"
+        aria-disabled="false"
+        aria-selected="false"
+        class="downloadCard"
+        data-rttab="true"
+        id="tabdownload-card-MAC"
+        role="tab"
+        tabindex="0"
+      >
+        <div
+          class="downloadCardTop"
+        >
+          <svg
+            class="downloadCardImage"
+          />
+        </div>
+        <p
+          class="downloadCardLabel"
+        >
+          MAC Installer
+        </p>
+        <p
+          class="downloadCardFilename"
+        >
+          node-undefined.pkg
+        </p>
+      </li>
+      <li
+        aria-controls="paneldownload-card-SOURCECODE"
+        aria-disabled="false"
+        aria-selected="false"
+        class="downloadCard"
+        data-rttab="true"
+        id="tabdownload-card-SOURCECODE"
+        role="tab"
+        tabindex="0"
+      >
+        <div
+          class="downloadCardTop"
+        >
+          <svg
+            class="downloadCardImage"
+          />
+        </div>
+        <p
+          class="downloadCardLabel"
+        >
+          Source Code
+        </p>
+        <p
+          class="downloadCardFilename"
+        >
+          node-undefined.tar.gz
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

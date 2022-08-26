@@ -22,7 +22,6 @@ describe('NavigationItem component', (): void => {
         key="123"
         isRead
         isActive
-        isLearn
         slug="versioning"
         title="Versioning"
       />
@@ -46,7 +45,6 @@ describe('NavigationItem component', (): void => {
         key="123"
         isRead
         isActive
-        isLearn={false}
         slug="versioning"
         title="Versioning"
       />

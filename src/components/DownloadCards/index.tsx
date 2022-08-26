@@ -6,7 +6,7 @@ import { ReactComponent as MicrosoftLogo } from '../../images/logos/microsoft-do
 import { ReactComponent as SourceCodeIcon } from '../../images/logos/source-code-icon.svg';
 import { UserOS } from '../../util/detectOS';
 import DownloadCard from './DownloadCard';
-import './DownloadCards.scss';
+import styles from './index.module.scss';
 
 interface Props {
   line?: NodeReleaseLTSNPMVersion;
@@ -50,9 +50,9 @@ const DownloadCards = ({ line, userOS }: Props): JSX.Element => {
   ];
 
   return (
-    <Tabs tabIndex={-1} className="download-cards-wrapper">
+    <Tabs tabIndex={-1} className={styles.downloadCardsWrapper}>
       <TabList
-        className="download-cards"
+        className={styles.downloadCards}
         role="tablist"
         onKeyDown={(e: React.KeyboardEvent): void => {
           const currentIndex = downloadTypes.findIndex(
@@ -60,16 +60,18 @@ const DownloadCards = ({ line, userOS }: Props): JSX.Element => {
           );
 
           let direction = null;
+
           if (e.key === 'ArrowLeft') {
             direction = 'left';
-          }
-          if (e.key === 'ArrowRight') {
+          } else if (e.key === 'ArrowRight') {
             direction = 'right';
           }
+
           if (!direction) return;
 
           let nextIndex = currentIndex;
           nextIndex += direction === 'left' ? -1 : 1;
+
           if (nextIndex < 0) {
             nextIndex = downloadTypes.length - 1;
           } else if (nextIndex >= downloadTypes.length) {

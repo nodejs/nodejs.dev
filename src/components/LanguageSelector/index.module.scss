@@ -1,0 +1,15 @@
+.language-switch {
+  background: none;
+  border: none;
+  color: var(--color-text-accent);
+  cursor: pointer;
+  padding: 0;
+
+  i {
+    font-size: 2rem !important;
+  }
+
+  @media (max-width: 800px) {
+    padding: 0;
+  }
+}

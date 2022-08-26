@@ -1,0 +1,18 @@
+.list {
+  color: var(--black7);
+  font-size: 1em;
+  margin: 5rem 0 40px;
+  padding-left: 0;
+  text-transform: uppercase;
+
+  span {
+    display: inline-block;
+    margin: 0;
+    margin-left: 3px;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+    }
+  }
+}

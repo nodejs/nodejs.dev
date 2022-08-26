@@ -5,6 +5,7 @@ import BlogCard from '../components/BlogCard';
 import Layout from '../components/Layout';
 import SideNavBar from '../components/SideNavBar';
 import { BlogPostsList, BlogCategoriesList, SideNavBarItem } from '../types';
+import styles from '../styles/blog.module.scss';
 
 type Props = {
   data: BlogPostsList & BlogCategoriesList;
@@ -25,14 +26,14 @@ const Blog = ({ data: { posts, categories } }: Props): JSX.Element => (
         items={getNavigationData(categories)}
         title="Blog Categories"
       />
-      <div className="blog-grid-container">
-        <div className="blog-category-header">
+      <div className={styles.blogGridContainer}>
+        <div className={styles.blogCategoryHeader}>
           <FormattedMessage id="blog.title" tagName="h2" />
           <span>
             <FormattedMessage id="blog.description" />
           </span>
         </div>
-        <div className="blog-items">
+        <div className={styles.blogItems}>
           {posts.edges.map(edge => (
             <BlogCard key={edge.node.fields.slug} data={edge} />
           ))}

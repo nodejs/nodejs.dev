@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import './DownloadToggle.scss';
+import classnames from 'classnames';
+import styles from './index.module.scss';
 
 interface Props {
   handleClick: (type: string) => void;
@@ -13,46 +14,42 @@ const DownloadToggle = ({
   selected,
   showDescription = true,
 }: Props): JSX.Element => {
+  const activeClassNames = classnames({ [styles.active]: selected === 'LTS' });
+  const currentClassNames = classnames(styles.current, {
+    [styles.active]: selected === 'CURRENT',
+  });
+
+  const handleOnClick = () =>
+    handleClick(selected === 'CURRENT' ? 'LTS' : 'CURRENT');
+
   return (
-    <div className="download-toogle">
-      <div className="download-toogle__selector">
-        <div className="download-toogle__switch">
+    <div className={styles.downloadToogle}>
+      <div className={styles.downloadToogleSelector}>
+        <div className={styles.downloadToogleSwitch}>
           <button
-            className={
-              selected === 'LTS'
-                ? 'download-toogle__button -active'
-                : 'download-toogle__button'
-            }
+            className={activeClassNames}
             type="button"
             role="switch"
             aria-label="Show LTS versions"
             aria-checked={selected === 'LTS'}
-            onClick={(): void =>
-              handleClick(selected === 'CURRENT' ? 'LTS' : 'CURRENT')
-            }
+            onClick={handleOnClick}
           >
             <FormattedMessage id="components.downloadToggle.lts" />
           </button>
           <button
-            className={
-              selected === 'CURRENT'
-                ? 'download-toogle__button -current -active'
-                : 'download-toogle__button -current'
-            }
+            className={currentClassNames}
             type="button"
             role="switch"
             aria-label="Show LTS versions"
             aria-checked={selected === 'LTS'}
-            onClick={(): void =>
-              handleClick(selected === 'CURRENT' ? 'LTS' : 'CURRENT')
-            }
+            onClick={handleOnClick}
           >
             <FormattedMessage id="components.downloadToggle.current" />
           </button>
         </div>
       </div>
       {showDescription && (
-        <p className="download-toogle__description">
+        <p className={styles.downloadToogleDescription}>
           <FormattedMessage
             id="components.downloadToggle.recommendation"
             values={{ selected }}

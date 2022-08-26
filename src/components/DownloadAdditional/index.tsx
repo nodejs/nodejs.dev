@@ -1,79 +1,10 @@
 import React, { useState, FC } from 'react';
 import { FormattedMessage } from 'react-intl';
+import DownloadableItem from './DownloadableItem';
 import DownloadToggle from '../DownloadToggle';
 import { NodeReleaseLTSNPMVersion } from '../../types';
-import { getDownloadableItemsList, Downloadable } from './downloadItems';
-import './DownloadAdditional.scss';
-
-const CLASS_NAME = 'download-additional';
-
-interface DownloadButtonProps {
-  className: string;
-  link: string;
-  label: string;
-}
-
-const DownloadButton: FC<DownloadButtonProps> = ({
-  className,
-  link,
-  label,
-}) => (
-  <a className={className} href={link}>
-    <i className="material-icons">get_app</i>
-    {label}
-  </a>
-);
-
-interface DownloadableItemProps {
-  item: Downloadable;
-  isExpanded: boolean;
-  setExpandedItem: (itemName: string) => void;
-}
-
-const DownloadableItem: FC<DownloadableItemProps> = ({
-  item,
-  isExpanded,
-  setExpandedItem,
-}) => {
-  const onClick = (): void =>
-    isExpanded ? setExpandedItem('') : setExpandedItem(item.name);
-  const classes = `${CLASS_NAME}__item`.concat(
-    isExpanded ? ` ${CLASS_NAME}__item__expanded` : ''
-  );
-  return (
-    <div
-      role="button"
-      tabIndex={0}
-      className={classes}
-      onKeyUp={onClick}
-      onClick={onClick}
-    >
-      <div className={`${CLASS_NAME}__item__header`}>
-        <div className={`${CLASS_NAME}__item__header__arrow`}>
-          {isExpanded ? (
-            <div className={`${CLASS_NAME}__item__header__arrow__down`} />
-          ) : (
-            <div className={`${CLASS_NAME}__item__header__arrow__right`} />
-          )}
-        </div>
-        {item.name}
-      </div>
-
-      {isExpanded && (
-        <div className={`${CLASS_NAME}__item__body`}>
-          {item.links.map(link => (
-            <DownloadButton
-              className={`${CLASS_NAME}__item__body__link`}
-              key={link.label}
-              link={link.path}
-              label={link.label}
-            />
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
+import { getDownloadableItemsList } from './DownloadableItem/downloadItems';
+import styles from './index.module.scss';
 
 interface DownloadAdditionalProps {
   line?: NodeReleaseLTSNPMVersion;
@@ -87,10 +18,11 @@ const DownloadAdditional: FC<DownloadAdditionalProps> = ({
   handleTypeReleaseToggle,
 }) => {
   const [expandedItem, setExpandedItem] = useState('');
+
   return (
-    <div className={CLASS_NAME}>
-      <div className={`${CLASS_NAME}__header`}>
-        <h3 className={`${CLASS_NAME}__title`}>
+    <div className={styles.downloadAdditional}>
+      <div className={styles.downloadAdditionalHeader}>
+        <h3 className={styles.downloadAdditionalTitle}>
           <FormattedMessage id="components.downloadAdditional.title" />
         </h3>
         <DownloadToggle
@@ -99,7 +31,7 @@ const DownloadAdditional: FC<DownloadAdditionalProps> = ({
           showDescription={false}
         />
       </div>
-      <div className={`${CLASS_NAME}__body`}>
+      <div className={styles.downloadAdditionalBody}>
         {line &&
           getDownloadableItemsList(line?.version).map(item => (
             <DownloadableItem

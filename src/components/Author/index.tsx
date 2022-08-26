@@ -1,5 +1,5 @@
 import React from 'react';
-import './Author.scss';
+import styles from './index.module.scss';
 
 interface Props {
   index: number;
@@ -27,7 +27,7 @@ const Author = ({
   return (
     <li>
       <a
-        className="link"
+        className={styles.link}
         href={githubLink}
         title={username}
         key={username}
@@ -35,7 +35,7 @@ const Author = ({
         rel="noopener noreferrer"
         style={mleft}
       >
-        <img className="img" src={githubImgLink} alt={username} />
+        <img src={githubImgLink} alt={username} />
       </a>
     </li>
   );
