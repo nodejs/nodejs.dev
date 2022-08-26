@@ -7,8 +7,12 @@
   cursor: pointer;
 }
 
+.blog-container .article-reader {
+  padding: var(--space-80) 0 0 var(--space-96);
+}
+
 .article-reader {
-  padding: var(--space-80) 0 0 var(--space-128);
+  padding: var(--space-80) 0 var(--space-24) var(--space-128);
   width: auto;
 
   hr {
@@ -34,10 +38,6 @@
 
   section {
     margin-bottom: var(--space-48);
-  }
-
-  ul {
-    margin-bottom: var(--space-24);
   }
 
   h4 {
@@ -75,6 +75,11 @@
       margin-top: var(--space-32);
     }
   }
+}
+
+.blog-container .recent-posts {
+  /* Place article before recent posts lists on mobile */
+  order: 1;
 }
 
 @media (max-width: 800px) {

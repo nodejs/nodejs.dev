@@ -1,4 +1,4 @@
-import React, { useRef, useState, useMemo } from 'react';
+import React, { useRef, useState, useMemo, useEffect } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { SideNavBarItem } from '../../types';
 import NavigationItem from '../NavigationItem';
@@ -12,7 +12,6 @@ export enum SideNavBarKeys {
   workingGroups = 'about/working-groups',
   releases = 'about/releases',
   resources = 'resources',
-  trademark = 'about/trademark',
   privacy = 'about/privacy',
   security = 'about/security',
   packageManager = 'download/package-manager',
@@ -42,10 +41,6 @@ const sideNavBarItems: SideNavBarItem[] = [
   {
     title: 'components.sideBar.items.resources',
     slug: SideNavBarKeys.resources,
-  },
-  {
-    title: 'components.sideBar.items.trademark',
-    slug: SideNavBarKeys.trademark,
   },
   {
     title: 'components.sideBar.items.privacy',
@@ -86,11 +81,13 @@ const SideNavBar = ({
     ? 'side-nav-about side-nav--open'
     : 'side-nav-about';
 
-  if (typeof document !== 'undefined') {
-    document.body.style.overflow = navOpen
-      ? OverflowTypes.hidden
-      : OverflowTypes.unset;
-  }
+  useEffect(() => {
+    if (typeof document === 'object' && document.body) {
+      document.body.style.overflow = navOpen
+        ? OverflowTypes.hidden
+        : OverflowTypes.unset;
+    }
+  }, [navOpen]);
 
   const navElement = useRef<HTMLElement | null>(null);
 
@@ -111,7 +108,11 @@ const SideNavBar = ({
     () =>
       items.map(item => ({
         ...item,
-        title: intl.formatMessage({ id: item.title }),
+        // Not all entries necessarily need to be translated
+        // As some are non-translatable bags
+        title: intl.messages[item.title]
+          ? intl.formatMessage({ id: item.title })
+          : item.title,
       })),
     [intl, items]
   );

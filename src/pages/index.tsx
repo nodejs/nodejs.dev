@@ -6,7 +6,6 @@ import { IoLogoNodejs, IoMdGitPullRequest, IoMdRocket } from 'react-icons/io';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 
-import '../util/konami';
 import '../styles/index.scss';
 
 import { connectGraphQlCustom } from '../components/connectGraphQlArticle';
