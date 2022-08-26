@@ -8,7 +8,6 @@ interface Props {
   title: string;
   section: NavigationSectionItem[];
   currentSlug: string;
-  onItemClick: () => void;
   readSections: Set<NavigationSectionItem['slug']>;
 }
 
@@ -16,7 +15,6 @@ const NavigationSection = ({
   title,
   section,
   currentSlug,
-  onItemClick,
   readSections,
 }: Props): JSX.Element => {
   const isActive = (item: NavigationSectionItem) => item.slug === currentSlug;
@@ -52,7 +50,6 @@ const NavigationSection = ({
               baseUrl={item.baseUrl}
               isRead={isRead}
               isActive={isActive(item)}
-              onClick={onItemClick}
             />
           );
         })}

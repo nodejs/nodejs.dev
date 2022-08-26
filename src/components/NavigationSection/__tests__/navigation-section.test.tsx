@@ -2,9 +2,6 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import NavigationSection from '..';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-function noop(): void {}
-
 describe('NavigationSection component', (): void => {
   it('renders correctly', (): void => {
     const { container } = render(
@@ -20,7 +17,6 @@ describe('NavigationSection component', (): void => {
           },
         ]}
         currentSlug=""
-        onItemClick={noop}
         readSections={new Set()}
       />
     );

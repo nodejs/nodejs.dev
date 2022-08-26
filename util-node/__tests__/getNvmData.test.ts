@@ -31,6 +31,6 @@ describe('getLatestNvmVersion', () => {
     const getLatestNvmVersion = (await import('../getNvmData')).default;
     fetchMock.mockResponse(JSON.stringify(response));
 
-    expect(getLatestNvmVersion()).rejects.toThrow('Unable to parse response');
+    expect(await getLatestNvmVersion()).toEqual({ version: 'unknown' });
   });
 });
