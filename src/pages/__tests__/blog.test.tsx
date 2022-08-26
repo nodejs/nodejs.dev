@@ -8,7 +8,10 @@ const mockData = createBlogData();
 describe('Blog page', () => {
   it('renders correctly', () => {
     const { container } = render(<AllBlogPosts data={mockData} />);
-    expect(container).toMatchSnapshot();
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    const pageContent = container.querySelector('main');
+
+    expect(pageContent).toMatchSnapshot();
   });
 
   it('renders correctly for empty blogs list', () => {
@@ -24,6 +27,9 @@ describe('Blog page', () => {
         }}
       />
     );
-    expect(container).toMatchSnapshot();
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    const pageContent = container.querySelector('main');
+
+    expect(pageContent).toMatchSnapshot();
   });
 });

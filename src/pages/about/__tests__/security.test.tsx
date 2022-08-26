@@ -8,6 +8,9 @@ const mockData = createGeneralPageData();
 describe('Security page', () => {
   it('renders correctly', () => {
     const { container } = render(<SecurityPage data={mockData.data} />);
-    expect(container).toMatchSnapshot();
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    const pageContent = container.querySelector('main');
+
+    expect(pageContent).toMatchSnapshot();
   });
 });

@@ -114,8 +114,12 @@
 
   .nav__tabs {
     display: flex;
-    height: 3em;
+    height: 42px;
     margin-left: 0;
+
+    &.search-bar {
+      display: none;
+    }
 
     &__container {
       background: var(--color-fill-app);

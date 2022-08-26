@@ -722,6 +722,157 @@ exports[`Tests for InstallTabs component renders correctly for mobile 1`] = `
       <ul
         class="react-tabs__tab-list"
         role="tablist"
+      >
+        <li
+          aria-controls="panel:r5:0"
+          aria-disabled="false"
+          aria-selected="true"
+          class="react-tabs__tab react-tabs__tab--selected"
+          data-rttab="true"
+          id="tab:r5:0"
+          role="tab"
+          tabindex="0"
+        >
+          Windows (Chocolatey)
+        </li>
+        <li
+          aria-controls="panel:r5:1"
+          aria-disabled="false"
+          aria-selected="false"
+          class="react-tabs__tab"
+          data-rttab="true"
+          id="tab:r5:1"
+          role="tab"
+        >
+          macOS (nvm)
+        </li>
+        <li
+          aria-controls="panel:r5:2"
+          aria-disabled="false"
+          aria-selected="false"
+          class="react-tabs__tab"
+          data-rttab="true"
+          id="tab:r5:2"
+          role="tab"
+        >
+          Linux (nvm)
+        </li>
+      </ul>
+      <div
+        aria-labelledby="tab:r5:0"
+        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        id="panel:r5:0"
+        role="tabpanel"
+      >
+        <div>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                choco 
+              </span>
+              install nvs
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                nvs 
+              </span>
+              add lts
+            </code>
+          </pre>
+          <pre
+            class="shell-box"
+          >
+            <div
+              class="shell-box-top"
+            >
+              <span>
+                SHELL
+              </span>
+              <button
+                type="button"
+              >
+                copy
+              </button>
+            </div>
+            <code>
+              <span
+                class="install__text__no-select"
+              >
+                $
+              </span>
+              <span
+                class="install__text__command"
+              >
+                nvs 
+              </span>
+              use lts
+            </code>
+          </pre>
+          <br />
+          <br />
+          <a
+            class="install__docs-button"
+            href="/download/package-manager/#nvs"
+          >
+            Read documentation
+          </a>
+        </div>
+      </div>
+      <div
+        aria-labelledby="tab:r5:1"
+        class="react-tabs__tab-panel"
+        id="panel:r5:1"
+        role="tabpanel"
+      />
+      <div
+        aria-labelledby="tab:r5:2"
+        class="react-tabs__tab-panel"
+        id="panel:r5:2"
+        role="tabpanel"
       />
     </div>
   </div>

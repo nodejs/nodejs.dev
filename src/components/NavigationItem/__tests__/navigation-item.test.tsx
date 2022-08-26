@@ -2,9 +2,6 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import NavigationItem from '..';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-function noop(): void {}
-
 describe('NavigationItem component', (): void => {
   it('renders correctly', (): void => {
     const { container } = render(
@@ -14,7 +11,6 @@ describe('NavigationItem component', (): void => {
         isActive
         slug="versioning"
         title="Versioning"
-        onClick={noop}
       />
     );
     expect(container).toMatchSnapshot();
@@ -29,7 +25,6 @@ describe('NavigationItem component', (): void => {
         isLearn
         slug="versioning"
         title="Versioning"
-        onClick={noop}
       />
     );
     // eslint-disable-next-line testing-library/no-node-access
@@ -54,7 +49,6 @@ describe('NavigationItem component', (): void => {
         isLearn={false}
         slug="versioning"
         title="Versioning"
-        onClick={noop}
       />
     );
     // eslint-disable-next-line testing-library/no-node-access
