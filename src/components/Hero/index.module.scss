@@ -1,3 +1,5 @@
+@use '../../styles/typography.scss';
+
 .hero {
   align-items: center;
   display: flex;
@@ -22,6 +24,8 @@
   }
 
   .sub-title {
+    @extend .t-subheading;
+
     color: var(--color-text-secondary);
     font-weight: var(--font-weight-light);
     margin: var(--space-32) 0 var(--space-32) 0;
@@ -32,58 +36,63 @@
     }
   }
 
-  .btn-ctas {
+  .buttons-container {
     align-items: flex-start;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-  }
 
-  .download-lts-container {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+    .download-lts-container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      position: relative;
 
-    & > p {
-      margin-top: var(--space-08);
+      & > p {
+        margin-top: var(--space-08);
+      }
+
+      @media (max-width: 640px) {
+        margin-bottom: var(--space-20);
+      }
     }
-
-    @media (max-width: 640px) {
-      margin-bottom: var(--space-20);
-    }
   }
+}
 
-  .circular-container,
-  .circular-container:focus {
-    align-items: center;
-    background-color: var(--brand6);
-    border-radius: 5rem;
-    box-sizing: border-box;
+.download-button {
+  align-items: center;
+  background-color: var(--brand6);
+  border-radius: 5rem;
+  box-sizing: border-box;
+  color: var(--black0);
+  display: flex;
+  font-weight: var(--font-weight-semibold);
+  height: 5.6rem;
+  justify-content: center;
+  margin: 0 var(--space-16);
+  padding: 1.4rem 0;
+  text-decoration: none;
+  transition: background-color 0.2s ease-out;
+  width: 20rem;
+
+  &:hover {
+    background-color: var(--brand7);
     color: var(--black0);
-    display: flex;
-    font-weight: var(--font-weight-semibold);
-    height: 5.6rem;
-    justify-content: center;
-    margin: 0 var(--space-16);
-    padding: 1.4rem 0;
-    text-decoration: none;
+  }
+
+  &:focus {
+    @extend .download-button;
+  }
+
+  &__inverse {
+    @extend .download-button;
+
+    background-color: transparent;
+    border: var(--brand6) var(--space-02) solid;
     transition: background-color 0.2s ease-out;
-    width: 20rem;
 
     &:hover {
-      background-color: var(--brand7);
-      color: var(--black0);
-    }
-
-    &.inverse {
-      background-color: transparent;
-      border: var(--brand6) var(--space-02) solid;
-      transition: background-color 0.2s ease-out;
-    }
-
-    &.inverse:hover {
       background-color: var(--brand7);
       border: var(--brand7) var(--space-02) solid;
     }
@@ -91,20 +100,16 @@
 }
 
 :global(.dark) {
-  .circular-container {
-    &.inverse {
-      color: var(--black0);
-    }
+  .download-button__inverse {
+    color: var(--black0);
   }
 }
 
 :global(.light) {
-  .circular-container {
-    &.inverse {
-      color: var(--brand6);
-    }
+  .download-button__inverse {
+    color: var(--brand6);
 
-    &.inverse:hover {
+    &:hover {
       color: var(--black0);
     }
   }

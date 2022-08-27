@@ -29,10 +29,10 @@ const Hero = ({
   return (
     <div className={styles.hero}>
       <h1>{title}</h1>
-      <h2 className={`${styles.subTitle} t-subheading`}>{subTitle}</h2>
-      <div className={styles.btnCtas}>
+      <h2 className={styles.subTitle}>{subTitle}</h2>
+      <div className={styles.buttonsContainer}>
         <div className={styles.downloadLtsContainer}>
-          <a className={styles.circularContainer} href={ltsVersionUrl}>
+          <a className={styles.downloadButton} href={ltsVersionUrl}>
             <FormattedMessage id="components.hero.downloadLts" />
           </a>
           <p className="t-caption">
@@ -49,10 +49,7 @@ const Hero = ({
           </p>
         </div>
 
-        <Link
-          className={`${styles.inverse} ${styles.circularContainer}`}
-          to="/learn"
-        >
+        <Link className={styles.downloadButtonInverse} to="/learn">
           <FormattedMessage id="components.hero.learn" />
         </Link>
       </div>

@@ -113,7 +113,7 @@ const SearchBar = (): JSX.Element => {
         onClick={onKeyPressHandler}
         role="presentation"
       >
-        <i className={`material-icons ${styles.searchIcon}`}>travel_explore</i>
+        <i className={styles.searchIcon}>travel_explore</i>
         <label htmlFor="searchInput">
           <span>
             {!isExpanded && (
@@ -135,7 +135,7 @@ const SearchBar = (): JSX.Element => {
         <AnimatePresence>
           {isExpanded && (
             <motion.span
-              className={`material-icons ${styles.closeIcon}`}
+              className={styles.closeIcon}
               key="close-icon"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -167,7 +167,7 @@ const SearchBar = (): JSX.Element => {
           {!isEmpty && (
             <ul>
               {results.map((result: SearchResult) => (
-                <li className={styles.resultItem} key={result.id}>
+                <li key={result.id}>
                   <Link to={`/learn/${result.slug}`}>{result.title}</Link>
                 </li>
               ))}

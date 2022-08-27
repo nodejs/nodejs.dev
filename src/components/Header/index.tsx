@@ -22,7 +22,7 @@ const Header = (): JSX.Element => {
         <div className={styles.startWrapper}>
           <Link to="/" aria-label="Homepage">
             <div className={styles.logo}>
-              <LogoLight className="light-mode-only`" />
+              <LogoLight className="light-mode-only" />
               <LogoDark className="dark-mode-only" />
             </div>
           </Link>

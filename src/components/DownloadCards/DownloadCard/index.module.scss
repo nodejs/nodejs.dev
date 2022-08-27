@@ -62,15 +62,15 @@
 
     .label {
       margin-top: 24px;
+
+      @media (max-width: 620px) {
+        font-size: var(--font-size-caption);
+        margin-top: 12px;
+      }
     }
 
     @media (max-width: 620px) {
       width: 130px;
-
-      .label {
-        font-size: var(--font-size-caption);
-        margin-top: 12px;
-      }
     }
 
     @media (max-width: 460px) {
