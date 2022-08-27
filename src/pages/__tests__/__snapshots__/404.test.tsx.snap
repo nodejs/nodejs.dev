@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`404 page renders correctly 1`] = `
+<main
+  style="width: 100%; text-align: center; margin-top: 150px;"
+>
+  <h1>
+    PAGE NOT FOUND
+  </h1>
+  <p>
+    The page you're trying to access does not exist. Go back to the Homepage or find what you're looking for in the menu.
+  </p>
+  <p>
+    <a
+      href="/"
+    >
+      Take me back to the Homepage
+    </a>
+  </p>
+</main>
+`;

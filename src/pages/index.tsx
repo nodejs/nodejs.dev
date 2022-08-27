@@ -1,11 +1,11 @@
 import React, { ReactElement } from 'react';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import { graphql } from 'gatsby';
 import { IoLogoNodejs, IoMdGitPullRequest, IoMdRocket } from 'react-icons/io';
 
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 
-import '../util/konami';
 import '../styles/index.scss';
 
 import { connectGraphQlCustom } from '../components/connectGraphQlArticle';
@@ -30,20 +30,18 @@ const styled = (icon: ReactElement): ReactElement =>
 const features = [
   {
     icon: styled(<IoLogoNodejs />),
-    heading: 'JavaScript',
-    description:
-      'Node.js provides support for the JavaScript programming language',
+    heading: 'pages.index.features.javascript.title',
+    description: 'pages.index.features.javascript.description',
   },
   {
     icon: styled(<IoMdGitPullRequest />),
-    heading: 'Open Source',
-    description:
-      'Node.js is open source and actively maintained by contributors all over the world',
+    heading: 'pages.index.features.openSource.title',
+    description: 'pages.index.features.openSource.description',
   },
   {
     icon: styled(<IoMdRocket />),
-    heading: 'Everywhere',
-    description: 'Node.js has been adapted to work in a wide variety of places',
+    heading: 'pages.index.features.everywhere.title',
+    description: 'pages.index.features.everywhere.description',
   },
 ];
 
@@ -67,7 +65,8 @@ const Index = ({
     nodeReleases: { nodeReleasesLTSVersion },
     banners: { bannersIndex },
   },
-}: HomepageProps): JSX.Element => (
+  intl,
+}: HomepageProps & WrappedComponentProps): JSX.Element => (
   <Layout title={displayTitle} description={description} showRandomContributor>
     <main className="home-page">
       <Banner bannersIndex={bannersIndex} />
@@ -92,8 +91,8 @@ const Index = ({
           <NodeFeature
             key={feature.heading}
             icon={feature.icon}
-            heading={feature.heading}
-            description={feature.description}
+            heading={intl.formatMessage({ id: feature.heading })}
+            description={intl.formatMessage({ id: feature.description })}
           />
         ))}
       </section>
@@ -101,7 +100,7 @@ const Index = ({
   </Layout>
 );
 
-export default connectGraphQlCustom(Index);
+export default connectGraphQlCustom(injectIntl(Index));
 
 export interface HomeNodeReleases {
   nodeReleases: {

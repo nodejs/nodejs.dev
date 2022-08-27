@@ -1,7 +1,6 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { UserOS } from '../../util/detectOS';
-import { useDetectOs } from '../../hooks/useDetectOs';
+import { detectOS, UserOS } from '../../util/detectOS';
 import WindowsPanel from './WindowsPanel';
 import MacOSPanel from './MacOSPanel';
 import LinuxPanel from './LinuxPanel';
@@ -56,28 +55,32 @@ const getOSPanel = (userOS: UserOS): JSX.Element => {
   }
 };
 
+const os = {
+  win: 'Windows (Chocolatey)',
+  mac: 'macOS (nvm)',
+  linux: 'Linux (nvm)',
+};
+
+const installTabSystems: Record<UserOS, string[]> = {
+  WIN: [os.win, os.mac, os.linux],
+  MAC: [os.mac, os.win, os.linux],
+  LINUX: [os.linux, os.mac, os.win],
+  UNIX: [os.linux, os.mac, os.win],
+  UNKNOWN: [os.win, os.mac, os.linux],
+  MOBILE: [os.win, os.mac, os.linux],
+};
+
 const InstallTabs = (): JSX.Element | null => {
-  const { userOS } = useDetectOs();
+  const [reactTabs, setReactTabs] = useState<React.ReactNode>();
 
-  const os = {
-    win: 'Windows (Chocolatey)',
-    mac: 'macOS (nvm)',
-    linux: 'Linux (nvm)',
-  };
+  useEffect(() => {
+    const userOS = detectOS();
+    const panelSwitch = getOSPanel(userOS);
+    const tabLayout = installTabSystems[userOS];
 
-  const installTabSystems = {
-    WIN: [os.win, os.mac, os.linux],
-    MAC: [os.mac, os.win, os.linux],
-    LINUX: [os.linux, os.mac, os.win],
-    UNIX: [os.linux, os.mac, os.win],
-    UNKNOWN: [os.win, os.mac, os.linux],
-  };
-
-  const panelSwitch = useMemo(() => getOSPanel(userOS), [userOS]);
-
-  return (
-    <div className="install">
-      <Tabs>
+    // This component should be rendered within the client-side only.
+    setReactTabs(
+      <Tabs environment={undefined}>
         <div className="install__header">
           <div className="install__header-circles">
             <div className="install__header-grey-circle" />
@@ -89,14 +92,16 @@ const InstallTabs = (): JSX.Element | null => {
           </div>
         </div>
         <TabList>
-          {installTabSystems[userOS]?.map((system: string) => (
-            <Tab key={system.toString()}>{system}</Tab>
+          {tabLayout.map(system => (
+            <Tab key={system}>{system}</Tab>
           ))}
         </TabList>
-        {installTabSystems[userOS] && panelSwitch}
+        {tabLayout && panelSwitch}
       </Tabs>
-    </div>
-  );
+    );
+  }, []);
+
+  return <div className="install">{reactTabs}</div>;
 };
 
 export default InstallTabs;

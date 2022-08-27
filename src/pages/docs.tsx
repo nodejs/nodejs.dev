@@ -1,7 +1,8 @@
-// TODO include into coverage before page release
+// @TODO: Refactor this page to be compiled on gatsby-node instead of using React Hooks
 /* istanbul ignore file */
 /* eslint-disable react/no-danger, jsx-a11y/no-onchange */
 import React, { useState, useEffect } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby';
 import DOMPurify from 'isomorphic-dompurify';
 import { useApiData } from '../hooks';
@@ -249,7 +250,7 @@ const APIDocsPage = ({
             <li className="api-nav__list-item">
               {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
               <label className="sr-only" htmlFor="api-nav__version__select-id">
-                Select API version
+                <FormattedMessage id="pages.docs.apiVersion.select" />
               </label>
               <select
                 id="api-nav__version__select-id"

@@ -32,7 +32,6 @@ describe('Navigation component', (): void => {
             category: 'category2',
           },
         }}
-        previousSlug=""
         label=""
       />
     );

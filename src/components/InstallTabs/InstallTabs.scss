@@ -24,7 +24,7 @@
       width: 100%;
 
       &--selected {
-        background: var(--black9);
+        background: var(--black10);
         border-radius: 5px 5px 0 0;
         color: #fff;
       }
@@ -36,7 +36,7 @@
         outline: none;
 
         &:after {
-          background: var(--black9);
+          background: var(--black10);
           bottom: -5px;
           content: '';
           height: 5px;

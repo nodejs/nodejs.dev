@@ -1,7 +1,8 @@
 import React, { MutableRefObject, useRef } from 'react';
+import { FormattedMessage } from 'react-intl';
+import AnimatedPlaceholder from '../AnimatedPlaceholder';
 import { useNodeJsContributorsApi, useOnScreen } from '../../hooks';
 import './RandomContributor.scss';
-import AnimatedPlaceholder from '../AnimatedPlaceholder';
 
 const RandomContributor = (): JSX.Element => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -26,29 +27,18 @@ const RandomContributor = (): JSX.Element => {
             </a>
           </div>
           <div className="random-contributor__thank">
-            Thank you{' '}
             <a
               href={contributor.profileUri}
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
-              {contributor.login}
-            </a>{' '}
-            for being a{' '}
-            <a
-              href="https://github.com/nodejs/node/graphs/contributors"
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-              title="List of all Node.js contributors"
-            >
-              Node.js contributor
-            </a>{' '}
-            <a
-              href={contributor.commitsListUri}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-            >
-              <span>{contributor.contributionsCount} contributions</span>
+              <FormattedMessage
+                id="components.randomContributor.thankYou"
+                values={{
+                  contributor: contributor.login,
+                  amount: contributor.contributionsCount,
+                }}
+              />
             </a>
           </div>
         </>

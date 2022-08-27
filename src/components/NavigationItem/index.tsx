@@ -10,7 +10,6 @@ interface Props {
   slug: string;
   title: string;
   baseUrl?: string;
-  onClick?: () => void;
 }
 
 const NavigationItem = ({
@@ -20,7 +19,6 @@ const NavigationItem = ({
   slug,
   title,
   baseUrl,
-  onClick,
 }: Props): JSX.Element => {
   const className = isLearn
     ? classnames('t-body2 side-nav__item', {
@@ -31,15 +29,20 @@ const NavigationItem = ({
         'side-nav__item-community--active': isActive,
       });
 
+  const slugWithoutSlash = slug.endsWith('/') ? slug.slice(0, -1) : slug;
+  const destinationUrl = `${baseUrl || '/learn/'}${slugWithoutSlash}/`;
+
   return (
-    <Link
-      to={`${baseUrl || '/learn/'}${slug}`}
-      id={`link-${slug}`}
-      onClick={onClick}
-      className={className}
-    >
-      {title}
-    </Link>
+    <li>
+      <Link
+        id={`link-${slug}`}
+        to={destinationUrl}
+        className={className}
+        aria-current={isActive ? 'page' : undefined}
+      >
+        {title}
+      </Link>
+    </li>
   );
 };
 

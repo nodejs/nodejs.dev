@@ -1,8 +1,12 @@
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import React from 'react';
-import { ReactComponent as GitHubLogo } from '../../images/logos/github-logo.svg';
-import { ReactComponent as TwitterLogo } from '../../images/logos/twitter-logo.svg';
-import { ReactComponent as SlackLogo } from '../../images/logos/slack-logo.svg';
+import { FormattedMessage } from 'react-intl';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faGithub,
+  faSlack,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 import './footer.scss';
 
 export interface DropDownState {
@@ -16,13 +20,19 @@ const Footer = (): JSX.Element => {
     <footer className="footer">
       <ul className="footer__left">
         <li>
-          <Link className="footer__link" to="/about/trademark">
-            Trademark Policy
-          </Link>
+          <a
+            className="footer__link"
+            target="_blank"
+            href="https://trademark-policy.openjsf.org/"
+            rel="noopener noreferrer"
+            aria-label="Node.js Slack Link"
+          >
+            <FormattedMessage id="components.footer.links.trademark" />
+          </a>
         </li>
         <li>
           <Link className="footer__link" to="/about/privacy">
-            Privacy Policy
+            <FormattedMessage id="components.footer.links.privacy" />
           </Link>
         </li>
         <li>
@@ -30,28 +40,29 @@ const Footer = (): JSX.Element => {
             className="footer__link"
             href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
           >
-            Code of Conduct
+            <FormattedMessage id="components.footer.links.codeOfConduct" />
           </a>
         </li>
         <li>
           <Link className="footer__link" to="/about/security">
-            Security Reporting
+            <FormattedMessage id="components.footer.links.security" />
           </Link>
         </li>
         <li>
           <Link className="footer__link" to="/about">
-            About
+            <FormattedMessage id="components.footer.links.about" />
           </Link>
         </li>
         <li>
-          {/* @TODO: Once our Blog components are completely read, move this link to our Blog page */}
-          <a className="footer__link" href="https://nodejs.org/en/blog/">
-            Blog
-          </a>
+          <Link className="footer__link" to="/blog">
+            <FormattedMessage id="components.footer.links.blog" />
+          </Link>
         </li>
       </ul>
       <ul className="footer__right">
-        <li>&copy; OpenJS Foundation</li>
+        <li>
+          <FormattedMessage id="components.footer.links.openJsFoundation" />
+        </li>
         <li>
           <a
             target="_blank"
@@ -59,8 +70,13 @@ const Footer = (): JSX.Element => {
             rel="noopener noreferrer"
             aria-label="Node.js Github Page Link"
           >
-            <span className="sr-only">GitHub</span>
-            <GitHubLogo fill="var(--color-text-secondary)" />
+            <span className="sr-only">
+              <FormattedMessage id="components.footer.links.github" />
+            </span>
+            <FontAwesomeIcon
+              icon={faGithub}
+              color="var(--color-text-secondary)"
+            />
           </a>
         </li>
         <li>
@@ -70,7 +86,10 @@ const Footer = (): JSX.Element => {
             rel="noopener noreferrer"
             aria-label="Node.js Twitter Link"
           >
-            <TwitterLogo fill="var(--color-text-secondary)" />
+            <FontAwesomeIcon
+              icon={faTwitter}
+              color="var(--color-text-secondary)"
+            />
           </a>
         </li>
         <li>
@@ -80,7 +99,10 @@ const Footer = (): JSX.Element => {
             rel="noopener noreferrer"
             aria-label="Node.js Slack Link"
           >
-            <SlackLogo fill="var(--color-text-secondary)" />
+            <FontAwesomeIcon
+              icon={faSlack}
+              color="var(--color-text-secondary)"
+            />
           </a>
         </li>
       </ul>

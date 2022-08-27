@@ -4,7 +4,7 @@ import SearchInput from '../SearchInput';
 
 describe('SearInput component', () => {
   it('should render correctly', () => {
-    const component = render(
+    const view = render(
       <SearchInput
         localSearchLearnPages={{
           index: {
@@ -21,6 +21,6 @@ describe('SearInput component', () => {
         }}
       />
     );
-    expect(component).toMatchSnapshot();
+    expect(view).toMatchSnapshot();
   });
 });

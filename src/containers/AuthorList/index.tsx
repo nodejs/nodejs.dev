@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import Author from '../../components/Author';
 import './AuthorList.scss';
 
@@ -6,10 +7,10 @@ interface Props {
   authors: string[];
 }
 
-const AuthorsList = ({ authors }: Props): null | JSX.Element => {
-  return (
+const AuthorList = ({ authors }: Props): null | JSX.Element => (
+  <div className="authorsList">
+    <FormattedMessage id="containers.authorList.title" />
     <ul className="list">
-      <h5>Contributors</h5>
       {authors.map(
         (author, i): string | JSX.Element =>
           author && (
@@ -17,7 +18,7 @@ const AuthorsList = ({ authors }: Props): null | JSX.Element => {
           )
       )}
     </ul>
-  );
-};
+  </div>
+);
 
-export default AuthorsList;
+export default AuthorList;
