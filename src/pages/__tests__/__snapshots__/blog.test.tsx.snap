@@ -16,8 +16,8 @@ exports[`Blog page renders correctly 1`] = `
     <div
       class="sideNavSection"
     >
-      <li
-        class="t-body2 sideNavSectionTitle"
+      <div
+        class="sideNavSectionTitle"
       >
         <b>
           Blog Categories
@@ -27,7 +27,7 @@ exports[`Blog page renders correctly 1`] = `
         >
           arrow_drop_down
         </i>
-      </li>
+      </div>
     </div>
   </nav>
   <div
@@ -107,8 +107,8 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
     <div
       class="sideNavSection"
     >
-      <li
-        class="t-body2 sideNavSectionTitle"
+      <div
+        class="sideNavSectionTitle"
       >
         <b>
           Blog Categories
@@ -118,7 +118,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
         >
           arrow_drop_down
         </i>
-      </li>
+      </div>
     </div>
   </nav>
   <div

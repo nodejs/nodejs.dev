@@ -29,7 +29,7 @@ describe('DownloadCards component', (): void => {
     const tabListElement = screen.getByRole('tablist');
     const listElement = screen.getAllByRole('tab');
 
-    expect(listElement[0]).toHaveClass('download-card');
+    expect(listElement[0]).toHaveClass('downloadCard');
 
     /**
      * First left click from default OS of MAC
@@ -39,9 +39,9 @@ describe('DownloadCards component', (): void => {
       code: 'LeftArrowKey',
     });
 
-    expect(listElement[0]).toHaveClass('download-card download-card--active');
-    expect(listElement[1]).toHaveClass('download-card');
-    expect(listElement[2]).toHaveClass('download-card');
+    expect(listElement[0]).toHaveClass('downloadCard downloadCardActive');
+    expect(listElement[1]).toHaveClass('downloadCard');
+    expect(listElement[2]).toHaveClass('downloadCard');
 
     /**
      * Left click from WIN
@@ -51,9 +51,9 @@ describe('DownloadCards component', (): void => {
       code: 'LeftArrowKey',
     });
 
-    expect(listElement[0]).toHaveClass('download-card');
-    expect(listElement[1]).toHaveClass('download-card');
-    expect(listElement[2]).toHaveClass('download-card download-card--active');
+    expect(listElement[0]).toHaveClass('downloadCard');
+    expect(listElement[1]).toHaveClass('downloadCard');
+    expect(listElement[2]).toHaveClass('downloadCard downloadCardActive');
 
     /**
      * Right click from SOURCECODE
@@ -64,8 +64,8 @@ describe('DownloadCards component', (): void => {
       code: 'RightArrowKey',
     });
 
-    expect(listElement[0]).toHaveClass('download-card download-card--active');
-    expect(listElement[1]).toHaveClass('download-card');
-    expect(listElement[2]).toHaveClass('download-card');
+    expect(listElement[0]).toHaveClass('downloadCard downloadCardActive');
+    expect(listElement[1]).toHaveClass('downloadCard');
+    expect(listElement[2]).toHaveClass('downloadCard');
   });
 });

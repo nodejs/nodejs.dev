@@ -23,7 +23,7 @@ exports[`Resources page renders correctly 1`] = `
               class="logo"
             >
               <svg
-                class="light-mode-only\`"
+                class="light-mode-only"
               />
               <svg
                 class="dark-mode-only"
@@ -88,7 +88,7 @@ exports[`Resources page renders correctly 1`] = `
                   role="presentation"
                 >
                   <i
-                    class="material-icons searchIcon"
+                    class="searchIcon"
                   >
                     travel_explore
                   </i>
@@ -181,8 +181,8 @@ exports[`Resources page renders correctly 1`] = `
         <div
           class="sideNavSection"
         >
-          <li
-            class="t-body2 sideNavSectionTitle"
+          <div
+            class="sideNavSectionTitle"
           >
             <b>
               Community Pages
@@ -192,7 +192,7 @@ exports[`Resources page renders correctly 1`] = `
             >
               arrow_drop_down
             </i>
-          </li>
+          </div>
           <a
             aria-current="page"
             class="t-body2 navigationItem navigationItemActive"

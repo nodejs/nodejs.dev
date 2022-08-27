@@ -9,18 +9,18 @@ exports[`Hero component renders correctly 1`] = `
       Introduction to Node.js
     </h1>
     <h2
-      class="subTitle t-subheading"
+      class="subTitle"
     >
       Mock SubTitle
     </h2>
     <div
-      class="btnCtas"
+      class="buttonsContainer"
     >
       <div
         class="downloadLtsContainer"
       >
         <a
-          class="circularContainer"
+          class="downloadButton"
           href="https://nodejs.org/dist/mmock-version-2/node-mmock-version-2.tar.gz"
         >
           Download Node (LTS)
@@ -37,7 +37,7 @@ exports[`Hero component renders correctly 1`] = `
         </p>
       </div>
       <a
-        class="inverse circularContainer"
+        class="downloadButtonInverse"
         href="/learn"
       >
         Learn Node

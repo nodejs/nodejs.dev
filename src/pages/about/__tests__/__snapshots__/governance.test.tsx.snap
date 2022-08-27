@@ -16,8 +16,8 @@ exports[`Governance Page renders correctly 1`] = `
     <div
       class="sideNavSection"
     >
-      <li
-        class="t-body2 sideNavSectionTitle"
+      <div
+        class="sideNavSectionTitle"
       >
         <b>
           Community Pages
@@ -27,7 +27,7 @@ exports[`Governance Page renders correctly 1`] = `
         >
           arrow_drop_down
         </i>
-      </li>
+      </div>
       <a
         class="t-body2 navigationItem"
         href="/about/"

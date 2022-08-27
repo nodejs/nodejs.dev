@@ -9,15 +9,6 @@ describe('SideNavBar', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should set the a single page as active', async () => {
-    const { container } = render(
-      <SideNavBar pageKey={SideNavBarKeys.releases} />
-    );
-    const innrerHtml = container.innerHTML;
-    const activeLinks = innrerHtml.match('side-nav__item-community--active');
-    expect(activeLinks && activeLinks.length).toBe(1);
-  });
-
   it('should contain a href to `~/about`', () => {
     render(<SideNavBar pageKey={SideNavBarKeys.about} />);
     const aboutNavBarElement = screen.getByText('About');
@@ -83,7 +74,7 @@ describe('SideNavBar', () => {
       <SideNavBar pageKey={SideNavBarKeys.releases} />
     );
     const innrerHtml = container.innerHTML;
-    const activeLinks = innrerHtml.match('side-nav__item-community--active');
+    const activeLinks = innrerHtml.match('navigationItemActive');
     expect(activeLinks && activeLinks.length).toBe(1);
   });
 

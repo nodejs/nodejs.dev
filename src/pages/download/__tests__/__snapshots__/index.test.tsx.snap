@@ -23,7 +23,7 @@ exports[`Download page renders correctly 1`] = `
               class="logo"
             >
               <svg
-                class="light-mode-only\`"
+                class="light-mode-only"
               />
               <svg
                 class="dark-mode-only"
@@ -88,7 +88,7 @@ exports[`Download page renders correctly 1`] = `
                   role="presentation"
                 >
                   <i
-                    class="material-icons searchIcon"
+                    class="searchIcon"
                   >
                     travel_explore
                   </i>
@@ -893,7 +893,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               class="logo"
             >
               <svg
-                class="light-mode-only\`"
+                class="light-mode-only"
               />
               <svg
                 class="dark-mode-only"
@@ -958,7 +958,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   role="presentation"
                 >
                   <i
-                    class="material-icons searchIcon"
+                    class="searchIcon"
                   >
                     travel_explore
                   </i>

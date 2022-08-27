@@ -20,7 +20,7 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
             class="logo"
           >
             <svg
-              class="light-mode-only\`"
+              class="light-mode-only"
             />
             <svg
               class="dark-mode-only"
@@ -85,7 +85,7 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
                 role="presentation"
               >
                 <i
-                  class="material-icons searchIcon"
+                  class="searchIcon"
                 >
                   travel_explore
                 </i>
@@ -186,7 +186,7 @@ exports[`Tests for Header component renders correctly 1`] = `
             class="logo"
           >
             <svg
-              class="light-mode-only\`"
+              class="light-mode-only"
             />
             <svg
               class="dark-mode-only"
@@ -251,7 +251,7 @@ exports[`Tests for Header component renders correctly 1`] = `
                 role="presentation"
               >
                 <i
-                  class="material-icons searchIcon"
+                  class="searchIcon"
                 >
                   travel_explore
                 </i>
@@ -352,7 +352,7 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
             class="logo"
           >
             <svg
-              class="light-mode-only\`"
+              class="light-mode-only"
             />
             <svg
               class="dark-mode-only"
@@ -417,7 +417,7 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
                 role="presentation"
               >
                 <i
-                  class="material-icons searchIcon"
+                  class="searchIcon"
                 >
                   travel_explore
                 </i>

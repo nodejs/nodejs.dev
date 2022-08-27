@@ -14,7 +14,7 @@ Object {
           role="presentation"
         >
           <i
-            class="material-icons searchIcon"
+            class="searchIcon"
           >
             travel_explore
           </i>
@@ -47,7 +47,7 @@ Object {
         role="presentation"
       >
         <i
-          class="material-icons searchIcon"
+          class="searchIcon"
         >
           travel_explore
         </i>

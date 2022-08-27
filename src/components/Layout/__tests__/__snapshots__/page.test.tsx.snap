@@ -23,7 +23,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
               class="logo"
             >
               <svg
-                class="light-mode-only\`"
+                class="light-mode-only"
               />
               <svg
                 class="dark-mode-only"
@@ -88,7 +88,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
                   role="presentation"
                 >
                   <i
-                    class="material-icons searchIcon"
+                    class="searchIcon"
                   >
                     travel_explore
                   </i>

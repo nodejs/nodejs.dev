@@ -1,3 +1,4 @@
+@import '../../styles/typography.scss';
 @import '../../containers/Navigation/index.module.scss';
 @import '../NavigationSection/index.module.scss';
 @import '../NavigationItem/index.module.scss';
@@ -28,6 +29,7 @@
     padding: 0 var(--space-20);
 
     &__title {
+      @extend .t-body2;
       @extend %navigation-section__pure-title;
 
       margin-left: 0;

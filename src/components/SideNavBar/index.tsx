@@ -95,10 +95,10 @@ const SideNavBar = ({
   const renderNavTitle = () => {
     if (title) {
       return (
-        <li className={`t-body2 ${styles.sideNavSectionTitle}`}>
+        <div className={styles.sideNavSectionTitle}>
           <b>{title}</b>
           <i className="material-icons">arrow_drop_down</i>
-        </li>
+        </div>
       );
     }
 
