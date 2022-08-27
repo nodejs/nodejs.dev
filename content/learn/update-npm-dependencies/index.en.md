@@ -50,7 +50,7 @@ Now those 2 files tell us that we installed version `1.3.1` of cowsay, and our [
 
 If there is a new minor or patch release and we type `npm update`, the installed version is updated, and the `package-lock.json` file diligently filled with the new version.
 
-Since npm version 5.0.0, `npm update` updates `package.json` with newer minor or patch versions. Use `npm update --no-save` to prevent modifying `package.json`.
+Use `npm update --save` to update `package.json` with newer minor or patch versions. Use `npm update --no-save` to prevent modifying `package.json`.
 
 To discover new package releases, use `npm outdated`.
 
