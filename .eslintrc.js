@@ -69,7 +69,14 @@ module.exports = {
       },
     },
     {
-      files: ['test-processor.js', 'test-setup.js', 'test/**'],
+      files: [
+        'test-processor.js',
+        'test-setup.js',
+        'test/**',
+        '**/**.test.js',
+        '**/**.test.ts',
+        '**/**.test.tsx',
+      ],
       extends: ['plugin:testing-library/react'],
       env: {
         jest: true,

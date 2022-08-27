@@ -6,15 +6,26 @@
   height: fit-content;
   max-height: 90vh;
   overflow-y: auto;
-  padding-bottom: 10px;
+
+  &.expanded {
+    padding-bottom: 10px;
+  }
 }
 
 .searchInputContainer {
   align-items: center;
   display: flex;
-  height: 3em;
   position: relative;
   width: 100%;
+
+  label {
+    align-items: center;
+    color: var(--color-text-accent);
+    cursor: pointer;
+    display: flex;
+    transition: all 250ms ease-in-out;
+    width: 100%;
+  }
 }
 
 .inputText {
@@ -30,14 +41,6 @@
 
   &:focus {
     outline: none;
-    &::placeholder {
-      opacity: 0;
-    }
-  }
-
-  &::placeholder {
-    color: #99cc7d;
-    transition: all 250ms ease-in-out;
   }
 }
 
@@ -45,9 +48,9 @@
   padding: 0 15px 0 0;
 }
 
-.searchIcon {
-  color: var(--color-brand-primary);
-  font-size: 24px;
+.searchIcon,
+.closeIcon {
+  color: var(--color-text-accent);
   vertical-align: middle;
 }
 

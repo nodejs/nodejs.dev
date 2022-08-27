@@ -1,8 +1,10 @@
-import React, { useMemo, useEffect, useState } from 'react';
+import React, { useMemo, useEffect, useState, createRef } from 'react';
+import { FormattedMessage } from 'react-intl';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from 'react-click-outside-hook';
 import { Index } from 'elasticlunr';
-import { Link } from 'gatsby';
 import { SearchResult } from '../../types';
 import { SearchProps } from './types';
 
@@ -15,7 +17,7 @@ const containerVariants = {
     boxShadow: '0px 2px 12px 3px rgba(153, 204, 125, 0.14)',
   },
   collapsed: {
-    minHeight: '3em',
+    minHeight: '0em',
     width: '100%',
     maxWidth: '7em',
     boxShadow: 'none',
@@ -25,7 +27,7 @@ const containerVariants = {
 const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [noResults, setNoResults] = useState(false);
+  const searchInputRef = createRef<HTMLInputElement>();
 
   const isEmpty = !results || results.length === 0;
   const [isExpanded, setExpanded] = useState(false);
@@ -48,7 +50,6 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
     e.preventDefault();
 
     if (e.target.value === '') {
-      setNoResults(false);
       setResults([]);
     }
 
@@ -63,7 +64,6 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
   const collapseContainer = () => {
     setExpanded(false);
     setQuery('');
-    setNoResults(false);
     setResults([]);
   };
 
@@ -73,26 +73,54 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
     }
   }, [isClickedOutside]);
 
+  const containerClassNames = classNames('searchBarContainer', {
+    expanded: isExpanded,
+  });
+
+  const onKeyPressHandler = () => {
+    if (!isExpanded) {
+      expandContainer();
+    }
+
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  };
+
   return (
     <motion.div
-      className="searchBarContainer"
+      className={containerClassNames}
       animate={isExpanded ? 'expanded' : 'collapsed'}
       initial="collapsed"
       variants={containerVariants}
       transition={containerTransition}
       ref={parentRef}
     >
-      <div className="searchInputContainer">
-        <i className="material-icons searchIcon">search</i>
-        <input
-          autoComplete="off"
-          className="inputText"
-          name="query"
-          value={query}
-          onChange={changeHandler}
-          placeholder="Search"
-          onFocus={expandContainer}
-        />
+      <div
+        className="searchInputContainer"
+        onKeyPress={onKeyPressHandler}
+        onClick={onKeyPressHandler}
+        role="presentation"
+      >
+        <i className="material-icons searchIcon">travel_explore</i>
+        <label htmlFor="searchInput">
+          <span>
+            {!isExpanded && (
+              <FormattedMessage id="components.searchBar.placeholder" />
+            )}
+          </span>
+          <input
+            ref={searchInputRef}
+            autoComplete="off"
+            className="inputText"
+            id="searchInput"
+            name="query"
+            type="text"
+            value={query}
+            onFocus={onKeyPressHandler}
+            onChange={changeHandler}
+          />
+        </label>
         <AnimatePresence>
           {isExpanded && (
             <motion.span
@@ -112,9 +140,17 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
 
       {isExpanded && (
         <div className="searchContent">
-          {isEmpty && !noResults && (
+          {isEmpty && (
             <div className="loadingWrapper">
-              <div className="warningMessage">Start typing to Search</div>
+              <div className="warningMessage">
+                <FormattedMessage
+                  id={
+                    query.length
+                      ? 'components.searchBar.search.noResults'
+                      : 'components.searchBar.search.title'
+                  }
+                />
+              </div>
             </div>
           )}
           {!isEmpty && (

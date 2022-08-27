@@ -1,96 +1,52 @@
-import { graphql } from 'gatsby';
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+import { graphql } from 'gatsby';
 import BlogCard from '../components/BlogCard';
 import Layout from '../components/Layout';
-import { BlogPostsList, BlogMetaData, BlogCategory } from '../types';
+import SideNavBar from '../components/SideNavBar';
+import { BlogPostsList, BlogCategoriesList, SideNavBarItem } from '../types';
 
 type Props = {
-  data: BlogPostsList;
+  data: BlogPostsList & BlogCategoriesList;
 };
 
-type GroupedPosts = {
-  [key: BlogCategory['name']]: {
-    posts: BlogMetaData[];
-  } & BlogCategory;
-};
+export const getNavigationData = (
+  categories: BlogCategoriesList['categories']
+): SideNavBarItem[] =>
+  categories.edges.map(({ node }) => ({
+    title: node.slug,
+    slug: `blog/${node.name}/`,
+  }));
 
-const unknownAuthor = {
-  name: 'Unknown',
-};
+const Blog = ({ data: { posts, categories } }: Props): JSX.Element => (
+  <Layout title="Blogs at Nodejs">
+    <main className="grid-container">
+      <SideNavBar
+        items={getNavigationData(categories)}
+        title="Blog Categories"
+      />
+      <div className="blog-grid-container">
+        <div className="blog-category-header">
+          <FormattedMessage id="blog.title" tagName="h2" />
+          <span>
+            <FormattedMessage id="blog.description" />
+          </span>
+        </div>
+        <div className="blog-items">
+          {posts.edges.map(edge => (
+            <BlogCard key={edge.node.fields.slug} data={edge} />
+          ))}
+        </div>
+      </div>
+    </main>
+  </Layout>
+);
 
-const getUnknownCategory = (name: string) => ({
-  name,
-  slug: name.charAt(0).toUpperCase() + name.slice(1),
-});
-
-const groupPostsByCategory = ({ blogs }: BlogPostsList): GroupedPosts => {
-  if (blogs.edges.length === 0) {
-    return {};
-  }
-
-  const postsByCategory = blogs.edges.reduce((acc, post) => {
-    const category = post.node.frontmatter.category
-      ? post.node.frontmatter.category
-      : getUnknownCategory(post.node.fields.categoryName || 'uncategorized');
-
-    const blogAuthors = (post.node.frontmatter.blogAuthors || []).map(
-      author => author || unknownAuthor
-    );
-
-    if (!acc[category.name]) {
-      acc[category.name] = {
-        posts: [],
-        ...category,
-      };
-    }
-
-    const clonedPost = { ...post };
-
-    clonedPost.node.frontmatter.blogAuthors = blogAuthors;
-    clonedPost.node.frontmatter.category = category;
-
-    acc[category.name].posts.push(clonedPost);
-
-    return acc;
-  }, {});
-
-  return postsByCategory;
-};
-
-const Blog = ({ data }: Props): JSX.Element => {
-  const postsByCategory = groupPostsByCategory(data);
-
-  const sortedCategories = Object.keys(postsByCategory).sort();
-
-  return (
-    <Layout title="Blogs at Nodejs">
-      {sortedCategories.map(categoryName => {
-        const { posts, ...category } = postsByCategory[categoryName];
-
-        return (
-          <div key={category.name}>
-            <div className="blog-category-container">
-              <div className="blog-category-header">
-                <h2>{category.slug}</h2>
-                <span>{category.description}</span>
-              </div>
-            </div>
-            <div className="blog-grid-container">
-              {!posts.length && <h2>No blog posts under this category.</h2>}
-              {posts.map(edge => (
-                <BlogCard key={edge.node.fields.slug} data={edge} />
-              ))}
-            </div>
-          </div>
-        );
-      })}
-    </Layout>
-  );
-};
+export default Blog;
 
 export const pageQuery = graphql`
   query {
-    blogs: allMdx(
+    posts: allMdx(
       filter: { fileAbsolutePath: { regex: "/blog/" } }
       sort: { fields: [fields___date], order: DESC }
     ) {
@@ -105,18 +61,25 @@ export const pageQuery = graphql`
             category {
               name
               slug
-              description
             }
           }
           fields {
             date(formatString: "MMMM DD, YYYY")
             slug
-            categoryName
+            readingTime {
+              text
+            }
           }
+        }
+      }
+    }
+    categories: allCategoriesYaml {
+      edges {
+        node {
+          name
+          slug
         }
       }
     }
   }
 `;
-
-export default Blog;

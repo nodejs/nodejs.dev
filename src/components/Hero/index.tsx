@@ -1,8 +1,8 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import { detectOS } from '../../util/detectOS';
-import downloadUrlByOS from '../../util/downloadUrlByOS';
-import { NodeReleaseLTSVersion } from '../../types';
+import { useDetectOs } from '../../hooks/useDetectOs';
+import type { NodeReleaseLTSVersion } from '../../types';
 
 import './Hero.scss';
 
@@ -17,20 +17,15 @@ const Hero = ({
   subTitle,
   nodeReleasesLTSVersion,
 }: Props): JSX.Element => {
-  const userOS = detectOS();
+  const { getDownloadLink } = useDetectOs();
+
   const [currentRelease, ...releases] = nodeReleasesLTSVersion;
 
   // find first lts version (first found is last LTS)
   const lastLTSRelease = releases.find((release): boolean => !!release.lts);
 
-  const ltsVersionUrl = downloadUrlByOS(
-    userOS,
-    lastLTSRelease ? lastLTSRelease.version : ''
-  );
-  const currentVersionUrl = downloadUrlByOS(
-    userOS,
-    currentRelease ? currentRelease.version : ''
-  );
+  const ltsVersionUrl = getDownloadLink(lastLTSRelease?.version || '');
+  const currentVersionUrl = getDownloadLink(currentRelease?.version || '');
 
   return (
     <div className="home-page-hero">
@@ -39,16 +34,24 @@ const Hero = ({
       <div className="btn-ctas">
         <div className="download-lts-container">
           <a className="circular-container" href={ltsVersionUrl}>
-            Download Node (LTS)
+            <FormattedMessage id="components.hero.downloadLts" />
           </a>
           <p className="t-caption">
-            {lastLTSRelease ? `Version ${currentRelease.version} - ` : ''}
-            <a href={currentVersionUrl}>Get Current</a>
+            <FormattedMessage
+              id="components.hero.currentVersion"
+              values={{
+                isLts: !!lastLTSRelease,
+                currentVersion: currentRelease.version,
+              }}
+            />
+            <a href={currentVersionUrl}>
+              <FormattedMessage id="components.hero.getCurrent" />
+            </a>
           </p>
         </div>
 
         <Link className="circular-container inverse" to="/learn">
-          Learn Node
+          <FormattedMessage id="components.hero.learn" />
         </Link>
       </div>
     </div>

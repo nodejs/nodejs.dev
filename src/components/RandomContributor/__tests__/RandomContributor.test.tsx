@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import RandomContributor from '..';
 import { useOnScreen } from '../../../hooks/useOnScreen';
 import { useNodeJsContributorsApi } from '../../../hooks/useNodeJsContributorsApi';
-import { createRandomContributorViewData } from '../../../../test/__fixtures__/hooks';
+import { createRandomContributorViewData } from '../../../__fixtures__/hooks';
 
 jest.mock('../../../hooks/useOnScreen');
 jest.mock('../../../hooks/useNodeJsContributorsApi');

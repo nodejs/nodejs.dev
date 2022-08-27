@@ -1,7 +1,6 @@
 import React from 'react';
-
-import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
 
 import ShellBox from '../index';
 
@@ -28,18 +27,17 @@ describe('ShellBox component', (): void => {
 
   it('renders correctly', async () => {
     const textToCopy = 'text to be copy';
-    const { getByText, findByText } = render(
-      <ShellBox textToCopy={textToCopy}>mock-children-code</ShellBox>
-    );
+
+    render(<ShellBox textToCopy={textToCopy}>mock-children-code</ShellBox>);
 
     navigatorClipboardSpy.mockImplementationOnce(() => Promise.resolve());
 
-    const buttonElement = getByText('copy');
+    const buttonElement = screen.getByText('copy');
     userEvent.click(buttonElement);
 
-    await findByText('copied');
+    await screen.findByText('copied');
 
-    expect(getByText('done')).toBeInTheDocument();
+    expect(screen.getByText('done')).toBeInTheDocument();
     expect(navigatorClipboardSpy).toHaveBeenCalledTimes(1);
     expect(navigatorClipboardSpy).toHaveBeenCalledWith(textToCopy);
   });

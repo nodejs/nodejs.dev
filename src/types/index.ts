@@ -1,3 +1,10 @@
+import type { GatsbyBrowser, GatsbySSR } from 'gatsby';
+
+export interface GenericPageContext {
+  intlMessages: Record<string, string>;
+  locale: string;
+}
+
 export interface HomepageData {
   article: {
     id: string;
@@ -64,6 +71,7 @@ export interface NavigationSectionItem {
   title: string;
   section: string;
   category: string;
+  baseUrl?: string;
 }
 
 export interface NavigationSectionData {
@@ -128,15 +136,21 @@ export interface BlogMetaData {
     frontmatter: {
       title: string;
       blogAuthors: BlogPostAuthor[];
-      category: BlogCategory;
+      category?: BlogCategory;
     };
-    fields: { date: string; slug: string; categoryName: string };
+    fields: { date: string; slug: string; readingTime: { text: string } };
   };
 }
 
 export interface BlogPostsList {
-  blogs: {
+  posts: {
     edges: BlogMetaData[];
+  };
+}
+
+export interface BlogCategoriesList {
+  categories: {
+    edges: { node: BlogCategory }[];
   };
 }
 
@@ -244,3 +258,9 @@ export type SearchResult = {
   slug: string;
   title: string;
 };
+
+export type WrapPageElementBrowser =
+  | GatsbyBrowser<unknown, GenericPageContext>['wrapPageElement'];
+
+export type WrapPageElementSSR =
+  | GatsbySSR<unknown, GenericPageContext>['wrapPageElement'];

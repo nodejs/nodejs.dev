@@ -1,31 +1,40 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { NodeReleaseLTSNPMVersion } from '../../types';
 import './DownloadHeader.scss';
 
-interface Props {
-  release?: NodeReleaseLTSNPMVersion;
-}
+type Props = { release?: NodeReleaseLTSNPMVersion };
 
 const DownloadHeader = ({ release }: Props): JSX.Element => {
-  const nodev = release?.version;
-  const npmv = release?.npm;
-  const lts = release?.lts;
+  const nodeVersion = release?.version;
+  const npmVersion = release?.npm;
+  const lts = !!release?.lts;
 
   return (
     <>
       <div className="download-page__navigation">
         <div>
-          HOME /
-          <span className="download-page__navigation--active"> downloads</span>
+          HOME /{' '}
+          <span className="download-page__navigation--active">
+            <FormattedMessage id="components.downloadHeader.navigation.activeSection" />
+          </span>
         </div>
         <div>
-          {lts ? 'LATEST LTS' : 'CURRENT'} VERSION {nodev}
+          <FormattedMessage
+            id="components.downloadHeader.navigation.nodeVersion"
+            values={{ lts, nodeVersion }}
+          />
         </div>
       </div>
       <div className="download-page__navigation">
-        <div className="download-page__navigation--title">Downloads</div>
+        <div className="download-page__navigation--title">
+          <FormattedMessage id="components.downloadHeader.navigation.title" />
+        </div>
         <div className="download-page__navigation--npm">
-          (includes npm {npmv})
+          <FormattedMessage
+            id="components.downloadHeader.navigation.npmVersion"
+            values={{ npmVersion }}
+          />
         </div>
       </div>
     </>

@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blog page renders correctly 1`] = `
+<main
+  class="grid-container"
+>
+  <nav
+    class="side-nav-about"
+  >
+    <button
+      class="side-nav__open"
+      type="button"
+    >
+      Menu
+    </button>
+    <ul
+      class="community-nav__list"
+    >
+      <li
+        class="t-body2 side-nav__item--title"
+      >
+        <b>
+          Blog Categories
+        </b>
+        <i
+          class="material-icons"
+        >
+          arrow_drop_down
+        </i>
+      </li>
+    </ul>
+  </nav>
+  <div
+    class="blog-grid-container"
+  >
+    <div
+      class="blog-category-header"
+    >
+      <h2>
+        Node.js Blog
+      </h2>
+      <span>
+        The latest Node.js news, case studies, tutorials, and resources.
+      </span>
+    </div>
+    <div
+      class="blog-items"
+    >
+      <div
+        class="blog-card"
+      >
+        <div
+          class="title"
+        >
+          <a
+            href="Mock blog slug"
+          >
+            Mock blog title
+          </a>
+          <div
+            class="metadata"
+          >
+            <a
+              class="category"
+              href="/blog/mock-category/"
+            >
+              Mock Category Slug
+            </a>
+            <span>
+              1 min read
+            </span>
+          </div>
+        </div>
+        <div
+          class="content"
+        >
+          <h4>
+            11/11/2022
+          </h4>
+          <p>
+            by
+             
+            <span>
+              Mock author name
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;
+
+exports[`Blog page renders correctly for empty blogs list 1`] = `
+<main
+  class="grid-container"
+>
+  <nav
+    class="side-nav-about"
+  >
+    <button
+      class="side-nav__open"
+      type="button"
+    >
+      Menu
+    </button>
+    <ul
+      class="community-nav__list"
+    >
+      <li
+        class="t-body2 side-nav__item--title"
+      >
+        <b>
+          Blog Categories
+        </b>
+        <i
+          class="material-icons"
+        >
+          arrow_drop_down
+        </i>
+      </li>
+    </ul>
+  </nav>
+  <div
+    class="blog-grid-container"
+  >
+    <div
+      class="blog-category-header"
+    >
+      <h2>
+        Node.js Blog
+      </h2>
+      <span>
+        The latest Node.js news, case studies, tutorials, and resources.
+      </span>
+    </div>
+    <div
+      class="blog-items"
+    />
+  </div>
+</main>
+`;
