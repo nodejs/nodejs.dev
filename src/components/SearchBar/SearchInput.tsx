@@ -1,9 +1,10 @@
 import React, { useMemo, useEffect, useState, createRef } from 'react';
+import { FormattedMessage } from 'react-intl';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from 'react-click-outside-hook';
 import { Index } from 'elasticlunr';
-import { Link } from 'gatsby';
 import { SearchResult } from '../../types';
 import { SearchProps } from './types';
 
@@ -16,7 +17,7 @@ const containerVariants = {
     boxShadow: '0px 2px 12px 3px rgba(153, 204, 125, 0.14)',
   },
   collapsed: {
-    minHeight: '3em',
+    minHeight: '0em',
     width: '100%',
     maxWidth: '7em',
     boxShadow: 'none',
@@ -98,12 +99,16 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
       <div
         className="searchInputContainer"
         onKeyPress={onKeyPressHandler}
-        role="button"
-        tabIndex={0}
+        onClick={onKeyPressHandler}
+        role="presentation"
       >
         <i className="material-icons searchIcon">travel_explore</i>
         <label htmlFor="searchInput">
-          <span>{!isExpanded && 'Search'}</span>
+          <span>
+            {!isExpanded && (
+              <FormattedMessage id="components.searchBar.placeholder" />
+            )}
+          </span>
           <input
             ref={searchInputRef}
             autoComplete="off"
@@ -112,7 +117,7 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
             name="query"
             type="text"
             value={query}
-            onFocus={expandContainer}
+            onFocus={onKeyPressHandler}
             onChange={changeHandler}
           />
         </label>
@@ -138,7 +143,13 @@ const SearchInput = ({ localSearchLearnPages }: SearchProps): JSX.Element => {
           {isEmpty && (
             <div className="loadingWrapper">
               <div className="warningMessage">
-                {query.length ? 'No results found' : 'Start typing to Search'}
+                <FormattedMessage
+                  id={
+                    query.length
+                      ? 'components.searchBar.search.noResults'
+                      : 'components.searchBar.search.title'
+                  }
+                />
               </div>
             </div>
           )}

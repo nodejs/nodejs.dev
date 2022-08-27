@@ -10,14 +10,9 @@
   overflow-x: hidden;
   padding: 0 var(--space-20);
   position: sticky;
-  top: calc(var(--nav-height) + var(--space-12) + 2px);
+  top: var(--nav-height);
   width: 100%;
   z-index: 998;
-
-  & > :last-child {
-    /* To allow side menu to scroll to bottom when not sticky */
-    padding-bottom: 230px;
-  }
 
   &__title {
     align-items: center;
@@ -34,21 +29,26 @@
   }
 
   &__list {
+    list-style: none;
     margin: 0;
     padding: 0;
     position: relative;
+
+    &:first-of-type {
+      margin-top: var(--space-40);
+    }
   }
 
   &__item {
     align-items: center;
     border-radius: 4px;
     box-sizing: border-box;
-    color: var(--color-text-primary);
+    color: var(--color-text-secondary);
     cursor: pointer;
     display: block;
     list-style: none;
     margin: 0 0 0 var(--space-24);
-    padding: calc(var(--space-12) / 2) 0 calc(var(--space-12) / 2)
+    padding: calc(var(--space-12) / 2) 0 calc(var(--space-24) / 2)
       var(--space-08);
     position: relative;
     text-decoration: none;
@@ -60,15 +60,15 @@
     &::before {
       background-size: 2.4rem;
       border-radius: 50%;
-      box-shadow: inset 0 0 0 2px var(--color-border-accent);
+      box-shadow: inset 0 0 0 3px var(--color-border-primary);
       box-sizing: border-box;
+      color: white;
       content: ' ';
       display: block;
       height: 2.4rem;
       left: -2.4rem;
-      line-height: 2.6rem;
       overflow: hidden;
-      padding: 2px 4px;
+      padding: 3px 5px;
       position: absolute;
       top: 0.6rem;
       transition: box-shadow 0.28s;
@@ -76,12 +76,26 @@
     }
 
     &--done::before {
-      content: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDQ0OC44IDQ0OC44IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NDguOCA0NDguODsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnIGlkPSJjaGVjayI+CgkJPHBvbHlnb24gcG9pbnRzPSIxNDIuOCwzMjMuODUgMzUuNywyMTYuNzUgMCwyNTIuNDUgMTQyLjgsMzk1LjI1IDQ0OC44LDg5LjI1IDQxMy4xLDUzLjU1ICAgIiBmaWxsPSIjZjVmNmY3Ii8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==');
+      content: '\e876';
+      font-family: 'Material Icons', sans-serif;
     }
 
     &--active {
       color: var(--color-text-accent);
       font-weight: 600;
+    }
+
+    &--title {
+      color: var(--color-text-primary);
+      display: flex;
+      flex-direction: row;
+      font-weight: 600;
+      justify-content: space-between;
+      margin: var(--space-24) 0 var(--space-16) var(--space-24);
+
+      i {
+        padding: 0;
+      }
     }
 
     &--done::before,
@@ -90,18 +104,31 @@
     }
 
     &:hover::before {
-      box-shadow: inset 0 0 0 2.4rem var(--color-border-accent) !important;
+      box-shadow: inset 0 0 0 2.4rem var(--color-border-accent);
+    }
+
+    &--title::before,
+    &--title:hover::before {
+      box-shadow: inset 0 0 0 3px var(--color-text-primary);
     }
 
     &::after {
-      background: var(--color-border-accent);
+      background: var(--color-border-primary);
       content: ' ';
       display: block;
-      height: calc(100% - 1.2rem - 8px);
+      height: calc(100% - 1.2rem - 12px);
       left: calc(-1.2rem - 1px);
       position: absolute;
-      top: calc(2.4rem + 4px);
+      top: calc(2.4rem + 6px);
       width: 2px;
+    }
+
+    &--done::after {
+      background: var(--color-border-accent);
+    }
+
+    &--title::after {
+      background: transparent;
     }
   }
 
@@ -176,7 +203,7 @@
       overflow: hidden;
       position: fixed;
       right: 0;
-      top: 95px;
+      top: calc(var(--nav-height) * 2);
 
       &--open {
         height: auto;

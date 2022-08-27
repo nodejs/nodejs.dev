@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-
-import { createNodeReleasesDataDetail } from '../../../../test/__fixtures__/page';
+import { createNodeReleasesDataDetail } from '../../../__fixtures__/page';
 
 import Hero from '..';
 

@@ -51,6 +51,15 @@
 .community-nav__list {
   list-style: none;
   padding: 0 var(--space-20);
+
+  .side-nav__item--title {
+    margin-left: 0;
+
+    b {
+      color: var(--color-brand-primary);
+      font-weight: var(--font-weight-semibold);
+    }
+  }
 }
 
 .community-nav__sub-list {

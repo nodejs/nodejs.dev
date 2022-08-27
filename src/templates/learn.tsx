@@ -25,38 +25,27 @@ const LearnLayout = ({
     },
   },
   pageContext: { slug, next, previous, relativePath, navigationData },
-}: Props): JSX.Element => {
-  let previousSlug = '';
-
-  if (typeof window !== 'undefined' && window.previousPath) {
-    previousSlug =
-      window.previousPath.split('/learn')[1]?.substr(1) ||
-      'introduction-to-nodejs';
-  }
-
-  return (
-    <Layout title={title} description={description}>
-      <main className="grid-container">
-        <Navigation
-          currentSlug={slug}
-          previousSlug={previousSlug}
-          label="Secondary"
-          sections={navigationData}
-          category="learn"
-        />
-        <Article
-          title={title}
-          body={body}
-          tableOfContents={tableOfContents}
-          next={next}
-          authors={authors}
-          previous={previous}
-          relativePath={relativePath}
-        />
-      </main>
-    </Layout>
-  );
-};
+}: Props): JSX.Element => (
+  <Layout title={title} description={description}>
+    <main className="grid-container">
+      <Navigation
+        currentSlug={slug}
+        label="Secondary"
+        sections={navigationData}
+        category="learn"
+      />
+      <Article
+        title={title}
+        body={body}
+        tableOfContents={tableOfContents}
+        next={next}
+        authors={authors}
+        previous={previous}
+        relativePath={relativePath}
+      />
+    </main>
+  </Layout>
+);
 
 export default connectGraphQlCustom(LearnLayout);
 
