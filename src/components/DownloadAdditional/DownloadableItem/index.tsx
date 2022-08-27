@@ -38,6 +38,10 @@ const DownloadableItem: FC<DownloadableItemProps> = ({
     [styles.downloadableItemExpanded]: isExpanded,
   });
 
+  const arrowClasses = isExpanded
+    ? styles.headerArrowDown
+    : styles.headerArrowRight;
+
   return (
     <div
       role="button"
@@ -46,24 +50,18 @@ const DownloadableItem: FC<DownloadableItemProps> = ({
       onKeyUp={onClick}
       onClick={onClick}
     >
-      <div className={styles.downloadableItemHeader}>
-        <div className={styles.downloadableItemHeaderArrow}>
-          <div
-            className={
-              isExpanded
-                ? styles.downloadableItemHeaderArrowDown
-                : styles.downloadableItemHeaderArrowRight
-            }
-          />
+      <div className={styles.header}>
+        <div className={styles.headerArrow}>
+          <div className={arrowClasses} />
         </div>
         {item.name}
       </div>
 
       {isExpanded && (
-        <div className={styles.downloadableItemBody}>
+        <div className={styles.body}>
           {item.links.map(link => (
             <DownloadButton
-              className={styles.downloadableItemBodyLink}
+              className={styles.bodyLink}
               key={link.label}
               link={link.path}
               label={link.label}

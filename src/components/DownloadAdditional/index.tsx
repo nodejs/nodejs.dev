@@ -21,8 +21,8 @@ const DownloadAdditional: FC<DownloadAdditionalProps> = ({
 
   return (
     <div className={styles.downloadAdditional}>
-      <div className={styles.downloadAdditionalHeader}>
-        <h3 className={styles.downloadAdditionalTitle}>
+      <div className={styles.header}>
+        <h3 className={styles.title}>
           <FormattedMessage id="components.downloadAdditional.title" />
         </h3>
         <DownloadToggle
@@ -31,7 +31,7 @@ const DownloadAdditional: FC<DownloadAdditionalProps> = ({
           showDescription={false}
         />
       </div>
-      <div className={styles.downloadAdditionalBody}>
+      <div className={styles.body}>
         {line &&
           getDownloadableItemsList(line?.version).map(item => (
             <DownloadableItem

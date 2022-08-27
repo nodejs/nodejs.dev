@@ -1,5 +1,4 @@
 .download-card {
-  $self: &;
   background-color: var(--color-fill-app);
   border: 1px solid var(--color-border-secondary);
   border-radius: 4px;
@@ -13,17 +12,17 @@
   padding: 16px;
   width: 179px;
 
-  &__top {
+  .top {
     display: flex;
     justify-content: space-between;
   }
 
-  &__image {
+  .image {
     height: 48px;
     width: 48px;
   }
 
-  &__link {
+  .link {
     align-items: center;
     color: var(--black5);
     display: grid;
@@ -31,7 +30,7 @@
     width: auto;
   }
 
-  &__label {
+  .label {
     font-weight: var(--font-weight-semibold);
     margin-top: 16px;
 
@@ -41,7 +40,7 @@
     }
   }
 
-  &__filename {
+  .filename {
     font-size: var(--font-size-body3);
     font-weight: normal;
     line-height: 18px;
@@ -56,22 +55,26 @@
     border-radius: 4px 4px 0px 0px;
     border-top: 4px solid var(--brand5);
 
-    #{ $self }__image {
+    .image {
       height: 56px;
       width: 56px;
     }
 
-    #{ $self }__label {
+    .label {
       margin-top: 24px;
     }
 
     @media (max-width: 620px) {
       width: 130px;
 
-      #{ $self }__label {
+      .label {
         font-size: var(--font-size-caption);
         margin-top: 12px;
       }
+    }
+
+    @media (max-width: 460px) {
+      width: 160px;
     }
   }
 
@@ -79,13 +82,5 @@
     margin-top: 16px;
     padding: 8px;
     width: 130px;
-  }
-
-  @media (max-width: 460px) {
-    width: 150px;
-
-    &--active {
-      width: 160px;
-    }
   }
 }

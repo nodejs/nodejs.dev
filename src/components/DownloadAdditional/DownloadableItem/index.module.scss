@@ -25,7 +25,7 @@ $downloadable-item-height: 40px;
     padding-bottom: 5px;
   }
 
-  &__header {
+  .header {
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -53,7 +53,7 @@ $downloadable-item-height: 40px;
     }
   }
 
-  &__body {
+  .body {
     display: flex;
     flex-wrap: wrap;
 

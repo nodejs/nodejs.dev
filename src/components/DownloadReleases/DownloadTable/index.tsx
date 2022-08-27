@@ -8,7 +8,7 @@ interface Props {
 }
 
 const DownloadTable = ({ nodeReleasesData }: Props): JSX.Element => (
-  <div className={styles.downloadsTableContainer}>
+  <div className={styles.downloadTableContainer}>
     <table>
       <thead>
         <tr>

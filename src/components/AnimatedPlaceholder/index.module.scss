@@ -11,7 +11,7 @@
   height: 96px;
   position: relative;
 
-  .animated-placeholder {
+  .placeholder {
     display: flex;
     width: 100%;
 
@@ -26,6 +26,7 @@
 
     &__image {
       @extend %animated-background;
+
       height: 60px;
       margin-right: 5px;
       min-width: 60px;
@@ -37,6 +38,7 @@
 
     &__text-line {
       @extend %animated-background;
+
       height: 10px;
       margin: 4px 0;
       width: 100%;

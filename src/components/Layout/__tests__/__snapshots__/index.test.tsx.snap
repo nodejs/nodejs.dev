@@ -7,13 +7,13 @@ exports[`Layout component renders correctly with data 1`] = `
   >
     <nav
       aria-label="Primary"
-      class="nav"
+      class="header"
     >
       <div
-        class="navContainer"
+        class="container"
       >
         <div
-          class="navStartwrapper"
+          class="startWrapper"
         >
           <a
             aria-label="Homepage"
@@ -23,29 +23,25 @@ exports[`Layout component renders correctly with data 1`] = `
               class="logo"
             >
               <svg
-                class="navLogo light-mode-only"
+                class="light-mode-only\`"
               />
               <svg
-                class="navLogo dark-mode-only"
+                class="dark-mode-only"
               />
             </div>
           </a>
         </div>
         <ul
-          class="navTabsContainer"
+          class="tabs"
         >
-          <li
-            class="navTabs"
-          >
+          <li>
             <a
               href="/learn"
             >
               Learn
             </a>
           </li>
-          <li
-            class="navTabs"
-          >
+          <li>
             <a
               href="https://nodejs.org/en/docs/"
               rel="noopener noreferrer"
@@ -54,18 +50,14 @@ exports[`Layout component renders correctly with data 1`] = `
               Documentation
             </a>
           </li>
-          <li
-            class="navTabs"
-          >
+          <li>
             <a
               href="/download"
             >
               Download
             </a>
           </li>
-          <li
-            class="navTabs"
-          >
+          <li>
             <a
               href="/community"
             >
@@ -74,13 +66,13 @@ exports[`Layout component renders correctly with data 1`] = `
           </li>
         </ul>
         <div
-          class="navEndwrapper"
+          class="endWrapper"
         >
           <ul
             class="rightContainer"
           >
             <li
-              class="navTabs searchBar"
+              class="searchBar"
             >
               <span
                 class="sr-only"
@@ -118,9 +110,7 @@ exports[`Layout component renders correctly with data 1`] = `
                 </div>
               </div>
             </li>
-            <li
-              class="navTabs"
-            >
+            <li>
               <button
                 class="darkModeToggle"
                 type="button"
@@ -142,9 +132,7 @@ exports[`Layout component renders correctly with data 1`] = `
                 </i>
               </button>
             </li>
-            <li
-              class="navTabs"
-            >
+            <li>
               <a
                 href="https://github.com/nodejs/nodejs.dev"
                 rel="noopener noreferrer"

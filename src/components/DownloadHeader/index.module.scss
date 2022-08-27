@@ -1,4 +1,4 @@
-.download-page__navigation {
+.download-header {
   color: var(--color-text-primary);
   display: flex;
   font-size: var(--font-size-overline);
@@ -8,11 +8,11 @@
   text-transform: uppercase;
   width: 100%;
 
-  &--active {
+  .active {
     color: var(--brand4);
   }
 
-  &--title {
+  .title {
     color: var(--color-text-primary);
     font-size: var(--font-size-display3);
     line-height: var(--line-height-display3);
@@ -24,7 +24,7 @@
     }
   }
 
-  &--npm {
+  .npm {
     text-align: right;
     text-transform: lowercase;
     width: 100%;

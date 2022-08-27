@@ -6,12 +6,12 @@ exports[`Tests for Footer component renders correctly 1`] = `
     class="footer"
   >
     <ul
-      class="footerLeft"
+      class="left"
     >
       <li>
         <a
           aria-label="Node.js Slack Link"
-          class="footerLink"
+          class="link"
           href="https://trademark-policy.openjsf.org/"
           rel="noopener noreferrer"
           target="_blank"
@@ -21,7 +21,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
       </li>
       <li>
         <a
-          class="footerLink"
+          class="link"
           href="/about/privacy"
         >
           Privacy Policy
@@ -29,7 +29,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
       </li>
       <li>
         <a
-          class="footerLink"
+          class="link"
           href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
         >
           Code of Conduct
@@ -37,7 +37,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
       </li>
       <li>
         <a
-          class="footerLink"
+          class="link"
           href="/about/security"
         >
           Security Reporting
@@ -45,7 +45,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
       </li>
       <li>
         <a
-          class="footerLink"
+          class="link"
           href="/about"
         >
           About
@@ -53,7 +53,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
       </li>
       <li>
         <a
-          class="footerLink"
+          class="link"
           href="/blog"
         >
           Blog
@@ -61,7 +61,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
       </li>
     </ul>
     <ul
-      class="footerRight"
+      class="right"
     >
       <li>
         © OpenJS Foundation

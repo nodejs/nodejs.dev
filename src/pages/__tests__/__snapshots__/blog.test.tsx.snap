@@ -53,7 +53,7 @@ exports[`Blog page renders correctly 1`] = `
           class="title"
         >
           <a
-            href="Mock blog slug"
+            href="Mock blog slug/"
           >
             Mock blog title
           </a>

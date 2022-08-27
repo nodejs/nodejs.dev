@@ -13,19 +13,17 @@ interface Props {
 const DownloadReleases = ({
   nodeReleasesData,
   upcomingReleases,
-}: Props): JSX.Element => {
-  return (
-    <div className={styles.downloadReleases}>
-      <h2 className={styles.downloadReleasesTitle}>
-        <FormattedMessage id="components.downloadReleases.upcomingReleases.title" />
-      </h2>
-      <UpcomingReleases upcomingReleases={upcomingReleases} />
-      <p>
-        <FormattedMessage id="components.downloadReleases.upcomingReleases.content" />
-      </p>
-      <DownloadTable nodeReleasesData={nodeReleasesData} />
-    </div>
-  );
-};
+}: Props): JSX.Element => (
+  <div className={styles.downloadReleases}>
+    <h2 className={styles.title}>
+      <FormattedMessage id="components.downloadReleases.upcomingReleases.title" />
+    </h2>
+    <UpcomingReleases upcomingReleases={upcomingReleases} />
+    <p>
+      <FormattedMessage id="components.downloadReleases.upcomingReleases.content" />
+    </p>
+    <DownloadTable nodeReleasesData={nodeReleasesData} />
+  </div>
+);
 
 export default DownloadReleases;

@@ -24,8 +24,8 @@ const DownloadToggle = ({
 
   return (
     <div className={styles.downloadToogle}>
-      <div className={styles.downloadToogleSelector}>
-        <div className={styles.downloadToogleSwitch}>
+      <div className={styles.selector}>
+        <div className={styles.switch}>
           <button
             className={activeClassNames}
             type="button"
@@ -49,7 +49,7 @@ const DownloadToggle = ({
         </div>
       </div>
       {showDescription && (
-        <p className={styles.downloadToogleDescription}>
+        <p className={styles.description}>
           <FormattedMessage
             id="components.downloadToggle.recommendation"
             values={{ selected }}

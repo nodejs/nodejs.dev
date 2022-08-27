@@ -6,10 +6,10 @@ exports[`DownloadToggle component renders correctly 1`] = `
     class="downloadToogle"
   >
     <div
-      class="downloadToogleSelector"
+      class="selector"
     >
       <div
-        class="downloadToogleSwitch"
+        class="switch"
       >
         <button
           aria-checked="true"
@@ -32,7 +32,7 @@ exports[`DownloadToggle component renders correctly 1`] = `
       </div>
     </div>
     <p
-      class="downloadToogleDescription"
+      class="description"
     >
       Recommended for most users
     </p>

@@ -6,10 +6,10 @@ exports[`DownloadAdditional component allows to collapse expanded items 1`] = `
     class="downloadAdditional"
   >
     <div
-      class="downloadAdditionalHeader"
+      class="header"
     >
       <h3
-        class="downloadAdditionalTitle"
+        class="title"
       >
         Additional Downloads
       </h3>
@@ -17,10 +17,10 @@ exports[`DownloadAdditional component allows to collapse expanded items 1`] = `
         class="downloadToogle"
       >
         <div
-          class="downloadToogleSelector"
+          class="selector"
         >
           <div
-            class="downloadToogleSwitch"
+            class="switch"
           >
             <button
               aria-checked="true"
@@ -45,7 +45,7 @@ exports[`DownloadAdditional component allows to collapse expanded items 1`] = `
       </div>
     </div>
     <div
-      class="downloadAdditionalBody"
+      class="body"
     >
       <div
         class="downloadableItem"
@@ -53,13 +53,13 @@ exports[`DownloadAdditional component allows to collapse expanded items 1`] = `
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           Windows Installer (.msi)
@@ -71,13 +71,13 @@ exports[`DownloadAdditional component allows to collapse expanded items 1`] = `
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           Windows Binary (.zip)
@@ -89,13 +89,13 @@ exports[`DownloadAdditional component allows to collapse expanded items 1`] = `
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           macOS Installer (.pkg)
@@ -107,13 +107,13 @@ exports[`DownloadAdditional component allows to collapse expanded items 1`] = `
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           macOS Binary (.tar.gz)
@@ -125,13 +125,13 @@ exports[`DownloadAdditional component allows to collapse expanded items 1`] = `
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           Linux (PPC, S390x, AIX, ARMv7, ARMv8)
@@ -148,10 +148,10 @@ exports[`DownloadAdditional component allows to expand items 1`] = `
     class="downloadAdditional"
   >
     <div
-      class="downloadAdditionalHeader"
+      class="header"
     >
       <h3
-        class="downloadAdditionalTitle"
+        class="title"
       >
         Additional Downloads
       </h3>
@@ -159,10 +159,10 @@ exports[`DownloadAdditional component allows to expand items 1`] = `
         class="downloadToogle"
       >
         <div
-          class="downloadToogleSelector"
+          class="selector"
         >
           <div
-            class="downloadToogleSwitch"
+            class="switch"
           >
             <button
               aria-checked="true"
@@ -187,7 +187,7 @@ exports[`DownloadAdditional component allows to expand items 1`] = `
       </div>
     </div>
     <div
-      class="downloadAdditionalBody"
+      class="body"
     >
       <div
         class="downloadableItem"
@@ -195,13 +195,13 @@ exports[`DownloadAdditional component allows to expand items 1`] = `
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           Windows Installer (.msi)
@@ -213,13 +213,13 @@ exports[`DownloadAdditional component allows to expand items 1`] = `
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           Windows Binary (.zip)
@@ -231,13 +231,13 @@ exports[`DownloadAdditional component allows to expand items 1`] = `
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           macOS Installer (.pkg)
@@ -249,13 +249,13 @@ exports[`DownloadAdditional component allows to expand items 1`] = `
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           macOS Binary (.tar.gz)
@@ -267,13 +267,13 @@ exports[`DownloadAdditional component allows to expand items 1`] = `
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           Linux (PPC, S390x, AIX, ARMv7, ARMv8)
@@ -290,10 +290,10 @@ exports[`DownloadAdditional component renders correctly 1`] = `
     class="downloadAdditional"
   >
     <div
-      class="downloadAdditionalHeader"
+      class="header"
     >
       <h3
-        class="downloadAdditionalTitle"
+        class="title"
       >
         Additional Downloads
       </h3>
@@ -301,10 +301,10 @@ exports[`DownloadAdditional component renders correctly 1`] = `
         class="downloadToogle"
       >
         <div
-          class="downloadToogleSelector"
+          class="selector"
         >
           <div
-            class="downloadToogleSwitch"
+            class="switch"
           >
             <button
               aria-checked="true"
@@ -329,7 +329,7 @@ exports[`DownloadAdditional component renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="downloadAdditionalBody"
+      class="body"
     />
   </div>
 </div>
@@ -341,10 +341,10 @@ exports[`DownloadAdditional component renders correctly with release data 1`] = 
     class="downloadAdditional"
   >
     <div
-      class="downloadAdditionalHeader"
+      class="header"
     >
       <h3
-        class="downloadAdditionalTitle"
+        class="title"
       >
         Additional Downloads
       </h3>
@@ -352,10 +352,10 @@ exports[`DownloadAdditional component renders correctly with release data 1`] = 
         class="downloadToogle"
       >
         <div
-          class="downloadToogleSelector"
+          class="selector"
         >
           <div
-            class="downloadToogleSwitch"
+            class="switch"
           >
             <button
               aria-checked="true"
@@ -380,7 +380,7 @@ exports[`DownloadAdditional component renders correctly with release data 1`] = 
       </div>
     </div>
     <div
-      class="downloadAdditionalBody"
+      class="body"
     >
       <div
         class="downloadableItem"
@@ -388,13 +388,13 @@ exports[`DownloadAdditional component renders correctly with release data 1`] = 
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           Windows Installer (.msi)
@@ -406,13 +406,13 @@ exports[`DownloadAdditional component renders correctly with release data 1`] = 
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           Windows Binary (.zip)
@@ -424,13 +424,13 @@ exports[`DownloadAdditional component renders correctly with release data 1`] = 
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           macOS Installer (.pkg)
@@ -442,13 +442,13 @@ exports[`DownloadAdditional component renders correctly with release data 1`] = 
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           macOS Binary (.tar.gz)
@@ -460,13 +460,13 @@ exports[`DownloadAdditional component renders correctly with release data 1`] = 
         tabindex="0"
       >
         <div
-          class="downloadableItemHeader"
+          class="header"
         >
           <div
-            class="downloadableItemHeaderArrow"
+            class="headerArrow"
           >
             <div
-              class="downloadableItemHeaderArrowRight"
+              class="headerArrowRight"
             />
           </div>
           Linux (PPC, S390x, AIX, ARMv7, ARMv8)

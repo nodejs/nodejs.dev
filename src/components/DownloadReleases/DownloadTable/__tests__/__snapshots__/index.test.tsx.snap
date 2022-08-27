@@ -3,7 +3,7 @@
 exports[`DownloadTable component renders correctly 1`] = `
 <div>
   <div
-    class="downloadsTableContainer"
+    class="downloadTableContainer"
   >
     <table>
       <thead>

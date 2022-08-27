@@ -4,13 +4,13 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
 <div>
   <nav
     aria-label="Primary"
-    class="nav"
+    class="header"
   >
     <div
-      class="navContainer"
+      class="container"
     >
       <div
-        class="navStartwrapper"
+        class="startWrapper"
       >
         <a
           aria-label="Homepage"
@@ -20,29 +20,25 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
             class="logo"
           >
             <svg
-              class="navLogo light-mode-only"
+              class="light-mode-only\`"
             />
             <svg
-              class="navLogo dark-mode-only"
+              class="dark-mode-only"
             />
           </div>
         </a>
       </div>
       <ul
-        class="navTabsContainer"
+        class="tabs"
       >
-        <li
-          class="navTabs"
-        >
+        <li>
           <a
             href="/learn"
           >
             Learn
           </a>
         </li>
-        <li
-          class="navTabs"
-        >
+        <li>
           <a
             href="https://nodejs.org/en/docs/"
             rel="noopener noreferrer"
@@ -51,18 +47,14 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
             Documentation
           </a>
         </li>
-        <li
-          class="navTabs"
-        >
+        <li>
           <a
             href="/download"
           >
             Download
           </a>
         </li>
-        <li
-          class="navTabs"
-        >
+        <li>
           <a
             href="/community"
           >
@@ -71,13 +63,13 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
         </li>
       </ul>
       <div
-        class="navEndwrapper"
+        class="endWrapper"
       >
         <ul
           class="rightContainer"
         >
           <li
-            class="navTabs searchBar"
+            class="searchBar"
           >
             <span
               class="sr-only"
@@ -115,9 +107,7 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
               </div>
             </div>
           </li>
-          <li
-            class="navTabs"
-          >
+          <li>
             <button
               class="darkModeToggle"
               type="button"
@@ -139,9 +129,7 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
               </i>
             </button>
           </li>
-          <li
-            class="navTabs"
-          >
+          <li>
             <a
               href="https://github.com/nodejs/nodejs.dev"
               rel="noopener noreferrer"
@@ -182,13 +170,13 @@ exports[`Tests for Header component renders correctly 1`] = `
 <div>
   <nav
     aria-label="Primary"
-    class="nav"
+    class="header"
   >
     <div
-      class="navContainer"
+      class="container"
     >
       <div
-        class="navStartwrapper"
+        class="startWrapper"
       >
         <a
           aria-label="Homepage"
@@ -198,29 +186,25 @@ exports[`Tests for Header component renders correctly 1`] = `
             class="logo"
           >
             <svg
-              class="navLogo light-mode-only"
+              class="light-mode-only\`"
             />
             <svg
-              class="navLogo dark-mode-only"
+              class="dark-mode-only"
             />
           </div>
         </a>
       </div>
       <ul
-        class="navTabsContainer"
+        class="tabs"
       >
-        <li
-          class="navTabs"
-        >
+        <li>
           <a
             href="/learn"
           >
             Learn
           </a>
         </li>
-        <li
-          class="navTabs"
-        >
+        <li>
           <a
             href="https://nodejs.org/en/docs/"
             rel="noopener noreferrer"
@@ -229,18 +213,14 @@ exports[`Tests for Header component renders correctly 1`] = `
             Documentation
           </a>
         </li>
-        <li
-          class="navTabs"
-        >
+        <li>
           <a
             href="/download"
           >
             Download
           </a>
         </li>
-        <li
-          class="navTabs"
-        >
+        <li>
           <a
             href="/community"
           >
@@ -249,13 +229,13 @@ exports[`Tests for Header component renders correctly 1`] = `
         </li>
       </ul>
       <div
-        class="navEndwrapper"
+        class="endWrapper"
       >
         <ul
           class="rightContainer"
         >
           <li
-            class="navTabs searchBar"
+            class="searchBar"
           >
             <span
               class="sr-only"
@@ -293,9 +273,7 @@ exports[`Tests for Header component renders correctly 1`] = `
               </div>
             </div>
           </li>
-          <li
-            class="navTabs"
-          >
+          <li>
             <button
               class="darkModeToggle"
               type="button"
@@ -317,9 +295,7 @@ exports[`Tests for Header component renders correctly 1`] = `
               </i>
             </button>
           </li>
-          <li
-            class="navTabs"
-          >
+          <li>
             <a
               href="https://github.com/nodejs/nodejs.dev"
               rel="noopener noreferrer"
@@ -360,13 +336,13 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
 <div>
   <nav
     aria-label="Primary"
-    class="nav"
+    class="header"
   >
     <div
-      class="navContainer"
+      class="container"
     >
       <div
-        class="navStartwrapper"
+        class="startWrapper"
       >
         <a
           aria-label="Homepage"
@@ -376,29 +352,25 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
             class="logo"
           >
             <svg
-              class="navLogo light-mode-only"
+              class="light-mode-only\`"
             />
             <svg
-              class="navLogo dark-mode-only"
+              class="dark-mode-only"
             />
           </div>
         </a>
       </div>
       <ul
-        class="navTabsContainer"
+        class="tabs"
       >
-        <li
-          class="navTabs"
-        >
+        <li>
           <a
             href="/learn"
           >
             Learn
           </a>
         </li>
-        <li
-          class="navTabs"
-        >
+        <li>
           <a
             href="https://nodejs.org/en/docs/"
             rel="noopener noreferrer"
@@ -407,18 +379,14 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
             Docs
           </a>
         </li>
-        <li
-          class="navTabs"
-        >
+        <li>
           <a
             href="/download"
           >
             Download
           </a>
         </li>
-        <li
-          class="navTabs"
-        >
+        <li>
           <a
             href="/community"
           >
@@ -427,13 +395,13 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
         </li>
       </ul>
       <div
-        class="navEndwrapper"
+        class="endWrapper"
       >
         <ul
           class="rightContainer"
         >
           <li
-            class="navTabs searchBar"
+            class="searchBar"
           >
             <span
               class="sr-only"
@@ -471,9 +439,7 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
               </div>
             </div>
           </li>
-          <li
-            class="navTabs"
-          >
+          <li>
             <button
               class="darkModeToggle"
               type="button"
@@ -495,9 +461,7 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
               </i>
             </button>
           </li>
-          <li
-            class="navTabs"
-          >
+          <li>
             <a
               href="https://github.com/nodejs/nodejs.dev"
               rel="noopener noreferrer"

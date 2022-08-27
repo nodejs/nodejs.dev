@@ -14,28 +14,27 @@ import styles from './index.module.scss';
 
 const Header = (): JSX.Element => {
   const isMobile = useMediaQuery('(max-width: 870px)');
-
   const featureToggles = useFeatureToggles();
 
   return (
-    <nav aria-label="Primary" className={styles.nav}>
-      <div className={styles.navContainer}>
-        <div className={styles.navStartwrapper}>
+    <nav aria-label="Primary" className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.startWrapper}>
           <Link to="/" aria-label="Homepage">
             <div className={styles.logo}>
-              <LogoLight className={`${styles.navLogo} light-mode-only`} />
-              <LogoDark className={`${styles.navLogo} dark-mode-only`} />
+              <LogoLight className="light-mode-only`" />
+              <LogoDark className="dark-mode-only" />
             </div>
           </Link>
         </div>
 
-        <ul className={styles.navTabsContainer}>
-          <li className={styles.navTabs}>
+        <ul className={styles.tabs}>
+          <li>
             <Link to="/learn" activeClassName={styles.active} partiallyActive>
               <FormattedMessage id="components.header.links.learn" />
             </Link>
           </li>
-          <li className={styles.navTabs}>
+          <li>
             <a
               target="_blank"
               href="https://nodejs.org/en/docs/"
@@ -47,7 +46,7 @@ const Header = (): JSX.Element => {
               />
             </a>
           </li>
-          <li className={styles.navTabs}>
+          <li>
             <Link
               to="/download"
               activeClassName={styles.active}
@@ -56,7 +55,7 @@ const Header = (): JSX.Element => {
               <FormattedMessage id="components.header.links.download" />
             </Link>
           </li>
-          <li className={styles.navTabs}>
+          <li>
             <Link
               to="/community"
               activeClassName={styles.active}
@@ -67,24 +66,24 @@ const Header = (): JSX.Element => {
           </li>
         </ul>
 
-        <div className={styles.navEndwrapper}>
+        <div className={styles.endWrapper}>
           <ul className={styles.rightContainer}>
-            <li className={`${styles.navTabs} ${styles.searchBar}`}>
+            <li className={styles.searchBar}>
               <span className="sr-only">Search Bar</span>
               <SearchBar />
             </li>
 
-            <li className={styles.navTabs}>
+            <li>
               <DarkModeToggle />
             </li>
 
             {featureToggles.has('i18n-language-selector') && (
-              <li className={styles.navTabs}>
+              <li>
                 <LanguageSelector />
               </li>
             )}
 
-            <li className={styles.navTabs}>
+            <li>
               <a
                 target="_blank"
                 href="https://github.com/nodejs/nodejs.dev"

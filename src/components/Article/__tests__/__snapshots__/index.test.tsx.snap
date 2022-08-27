@@ -3,10 +3,10 @@
 exports[`Article component renders correctly 1`] = `
 <div>
   <article
-    class="articleReader"
+    class="article"
   >
     <h1
-      class="articleReaderHeadline"
+      class="headline"
     >
       test-title
     </h1>
@@ -204,10 +204,10 @@ exports[`Article component renders correctly 1`] = `
 exports[`Article component renders correctly in blog mode 1`] = `
 <div>
   <article
-    class="articleReader"
+    class="article"
   >
     <h1
-      class="articleReaderHeadline"
+      class="headline"
     >
       test-title
     </h1>
@@ -276,10 +276,10 @@ exports[`Article component renders correctly in blog mode 1`] = `
 exports[`Article component renders correctly in case body ref is null 1`] = `
 <div>
   <article
-    class="articleReader"
+    class="article"
   >
     <h1
-      class="articleReaderHeadline"
+      class="headline"
     >
       test-title
     </h1>
@@ -477,10 +477,10 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
 exports[`Article component should accept and render child components 1`] = `
 <div>
   <article
-    class="articleReader"
+    class="article"
   >
     <h1
-      class="articleReaderHeadline"
+      class="headline"
     >
       test-title
     </h1>

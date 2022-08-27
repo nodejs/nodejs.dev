@@ -1,11 +1,11 @@
 import React from 'react';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { FormattedMessage } from 'react-intl';
-import { BlogMetaData } from '../../types';
+import { BlogPost } from '../../types';
 import styles from './index.module.scss';
 
 interface Props {
-  posts: BlogMetaData[];
+  posts: BlogPost[];
 }
 
 const getSlugWithTrailingSlash = (slug: string) =>

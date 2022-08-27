@@ -3,7 +3,7 @@
   margin-top: 133px;
   width: 100%;
 
-  &__header {
+  .header {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -18,7 +18,7 @@
     }
   }
 
-  &__title {
+  .title {
     margin: 0;
 
     @media (max-width: 800px) {
@@ -26,7 +26,7 @@
     }
   }
 
-  &__body {
+  .body {
     margin-top: 24px;
   }
 }

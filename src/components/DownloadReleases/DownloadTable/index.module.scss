@@ -1,4 +1,4 @@
-.downloads-table-container {
+.download-table-container {
   overflow-x: auto;
 
   table {
@@ -39,7 +39,7 @@
 }
 
 :global(.dark) {
-  .downloads-table-container tbody tr {
+  .download-table-container tbody tr {
     td {
       border-bottom: 1px solid var(--color-border-primary);
     }

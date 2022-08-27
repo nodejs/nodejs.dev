@@ -38,25 +38,25 @@ exports[`RandomContributor component should render loading animation until data 
     class="randomContributor"
   >
     <div
-      class="animatedPlaceholder"
+      class="placeholder"
     >
       <div
-        class="animatedPlaceholderImage"
+        class="placeholderImage"
       />
       <div
-        class="animatedPlaceholderText"
+        class="placeholderText"
       >
         <div
-          class="animatedPlaceholderTextLine"
+          class="placeholderTextLine"
         />
         <div
-          class="animatedPlaceholderTextLine"
+          class="placeholderTextLine"
         />
         <div
-          class="animatedPlaceholderTextLine"
+          class="placeholderTextLine"
         />
         <div
-          class="animatedPlaceholderTextLine"
+          class="placeholderTextLine"
         />
       </div>
     </div>

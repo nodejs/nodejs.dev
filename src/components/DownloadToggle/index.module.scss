@@ -5,19 +5,19 @@
   justify-content: center;
   margin-top: 40px;
 
-  &__selector {
+  .selector {
     display: flex;
     justify-content: center;
   }
 
-  &__switch {
+  .switch {
     border: none;
     height: 42px;
     padding: 0;
     width: 236px;
   }
 
-  &__description {
+  .description {
     font-size: var(--font-size-body1);
     line-height: var(--line-height-body1);
     margin-top: 10px;

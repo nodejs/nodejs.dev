@@ -61,9 +61,11 @@ export interface PaginationInfo {
 }
 
 export interface BlogCategory {
-  name: string;
-  slug: string;
-  description?: string;
+  node: {
+    name: string;
+    slug: string;
+    description?: string;
+  };
 }
 
 export interface NavigationSectionItem {
@@ -131,27 +133,23 @@ export interface BlogPostAuthor {
   website: string;
 }
 
-export interface BlogMetaData {
+export interface BlogPost {
   node: {
     frontmatter: {
       title: string;
       blogAuthors: BlogPostAuthor[];
-      category?: BlogCategory;
+      category?: BlogCategory['node'];
     };
     fields: { date: string; slug: string; readingTime: { text: string } };
   };
 }
 
-export interface BlogPostsList {
-  posts: {
-    edges: BlogMetaData[];
-  };
+export interface BlogPosts {
+  edges: BlogPost[];
 }
 
-export interface BlogCategoriesList {
-  categories: {
-    edges: { node: BlogCategory }[];
-  };
+export interface BlogCategories {
+  edges: BlogCategory[];
 }
 
 export interface BlogPageData {
@@ -162,7 +160,7 @@ export interface BlogPageData {
     fields: { slug: string; date: string };
   };
   recent: {
-    edges: BlogMetaData[];
+    edges: BlogPost[];
   };
 }
 

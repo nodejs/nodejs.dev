@@ -1,37 +1,27 @@
-import { graphql } from 'gatsby';
 import React from 'react';
-import BlogCard from '../components/BlogCard';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import SideNavBar from '../components/SideNavBar';
-import { getNavigationData } from '../pages/blog';
-import { BlogPostsList, BlogCategory, BlogCategoriesList } from '../types';
-import styles from '../styles/blog.module.scss';
+import { BlogPosts, BlogCategory, BlogCategories } from '../types';
+import BlogContainer from '../containers/BlogContainer';
 
-type Props = {
-  data: BlogPostsList & { category: BlogCategory } & BlogCategoriesList;
-};
+interface Props {
+  data: {
+    posts: BlogPosts;
+    categories: BlogCategories;
+    category: BlogCategory['node'];
+  };
+}
 
 const Blog = ({
   data: { posts, category, categories },
 }: Props): JSX.Element => (
   <Layout title="Blogs at Nodejs">
     <main className="grid-container">
-      <SideNavBar
-        items={getNavigationData(categories)}
-        pageKey={`blog/${category.name}/`}
-        title="Blog Categories"
+      <BlogContainer
+        posts={posts.edges}
+        categories={categories.edges}
+        currentCategory={category}
       />
-      <div className={styles.blogGridContainer}>
-        <div className={styles.blogCategoryHeader}>
-          <h2>{category.slug}</h2>
-          <span>{category.description}</span>
-        </div>
-        <div className={styles.blogItems}>
-          {posts.edges.map(edge => (
-            <BlogCard key={edge.node.fields.slug} data={edge} />
-          ))}
-        </div>
-      </div>
     </main>
   </Layout>
 );

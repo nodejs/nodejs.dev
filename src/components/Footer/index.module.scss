@@ -9,7 +9,7 @@
     flex-direction: column;
   }
 
-  &__left {
+  .left {
     display: flex;
     flex-wrap: wrap;
     height: 100%;
@@ -45,7 +45,7 @@
     }
   }
 
-  &__right {
+  .right {
     display: flex;
     flex-wrap: wrap;
     height: 100%;
@@ -72,8 +72,8 @@
     }
   }
 
-  &__left,
-  &__right {
+  .left,
+  .right {
     > li {
       font-size: 12px;
       height: 24px;
@@ -90,7 +90,7 @@
     }
   }
 
-  &__link {
+  .link {
     text-decoration: none;
   }
 }

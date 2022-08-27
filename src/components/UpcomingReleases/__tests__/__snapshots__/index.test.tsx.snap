@@ -3,21 +3,21 @@
 exports[`UpcomingReleases component renders correctly 1`] = `
 <div>
   <div
-    class="upcoming-releases"
+    class="upcomingReleases"
   >
     <div
-      class="react-tabs"
+      class="reactTabs"
       data-rttabs="true"
     >
       <ul
-        class="react-tabs__tab-list"
+        class="reactTabsTabList"
         role="tablist"
       >
         <li
           aria-controls="panel:r0:0"
           aria-disabled="false"
           aria-selected="true"
-          class="react-tabs__tab react-tabs__tab--selected"
+          class="reactTabsTab reactTabsTabSelected"
           data-rttab="true"
           id="tab:r0:0"
           role="tab"
@@ -30,7 +30,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
           aria-controls="panel:r0:1"
           aria-disabled="false"
           aria-selected="false"
-          class="react-tabs__tab"
+          class="reactTabsTab"
           data-rttab="true"
           id="tab:r0:1"
           role="tab"
@@ -41,24 +41,24 @@ exports[`UpcomingReleases component renders correctly 1`] = `
       </ul>
       <div
         aria-labelledby="tab:r0:0"
-        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        class="reactTabsTabPanel reactTabsTabPanelSelected"
         id="panel:r0:0"
         role="tabpanel"
       >
         <div
-          class="upcoming-releases__panel"
+          class="upcomingReleasesPanel"
         >
           <div
-            class="upcoming-releases__item--Current"
+            class="itemCurrent"
           >
             <svg />
             <p
-              class="release-title"
+              class="releaseTitle"
             >
               Current
             </p>
             <p
-              class="release-date"
+              class="releaseDate"
             >
               Released
                
@@ -66,16 +66,16 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             </p>
           </div>
           <div
-            class="upcoming-releases__item--LTS"
+            class="itemLts"
           >
             <svg />
             <p
-              class="release-title"
+              class="releaseTitle"
             >
               LTS
             </p>
             <p
-              class="release-date"
+              class="releaseDate"
             >
               Released
                
@@ -83,16 +83,16 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             </p>
           </div>
           <div
-            class="upcoming-releases__item--Maintenance"
+            class="itemMaintenance"
           >
             <svg />
             <p
-              class="release-title"
+              class="releaseTitle"
             >
               Maintenance
             </p>
             <p
-              class="release-date"
+              class="releaseDate"
             >
               Released
                
@@ -100,16 +100,16 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             </p>
           </div>
           <div
-            class="upcoming-releases__item--End-of-life"
+            class="itemEndoflife"
           >
             <svg />
             <p
-              class="release-title"
+              class="releaseTitle"
             >
               End-of-life
             </p>
             <p
-              class="release-date"
+              class="releaseDate"
             >
               Released
                
@@ -120,7 +120,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
       </div>
       <div
         aria-labelledby="tab:r0:1"
-        class="react-tabs__tab-panel"
+        class="reactTabsTabPanel"
         id="panel:r0:1"
         role="tabpanel"
       />

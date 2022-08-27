@@ -4,7 +4,7 @@ import Article from '../components/Article';
 import Layout from '../components/Layout';
 import RecentPosts from '../components/RecentPosts';
 import { BlogPageData, BlogPageContext } from '../types';
-import styles from '../styles/blog.module.scss';
+import styles from './blog.module.scss';
 
 interface Props {
   data: BlogPageData;

@@ -95,10 +95,10 @@ exports[`Releases page renders correctly 1`] = `
     </div>
   </nav>
   <article
-    class="articleReader"
+    class="article"
   >
     <h1
-      class="articleReaderHeadline"
+      class="headline"
     >
       Mock Title
     </h1>
@@ -177,7 +177,7 @@ exports[`Releases page renders correctly 1`] = `
     </div>
     <div>
       <div
-        class="downloadsTableContainer"
+        class="downloadTableContainer"
       >
         <table>
           <thead>

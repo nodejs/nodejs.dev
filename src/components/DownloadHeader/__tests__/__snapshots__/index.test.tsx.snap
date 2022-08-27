@@ -3,13 +3,13 @@
 exports[`DownloadHeader component renders correctly 1`] = `
 <div>
   <div
-    class="downloadPageNavigation"
+    class="downloadHeader"
   >
     <div>
       HOME /
        
       <span
-        class="downloadPageNavigationActive"
+        class="active"
       >
         downloads
       </span>
@@ -19,15 +19,15 @@ exports[`DownloadHeader component renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="downloadPageNavigation"
+    class="downloadHeader"
   >
     <div
-      class="downloadPageNavigationTitle"
+      class="title"
     >
       Downloads
     </div>
     <div
-      class="downloadPageNavigationNpm"
+      class="npm"
     >
       (includes npm 6.14.8)
     </div>

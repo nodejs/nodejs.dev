@@ -53,8 +53,8 @@ const Article = ({
   date,
   children,
 }: Props): JSX.Element => (
-  <article className={styles.articleReader}>
-    <h1 className={styles.articleReaderHeadline}>{title}</h1>
+  <article className={styles.article}>
+    <h1 className={styles.headline}>{title}</h1>
     {blog
       ? renderBlogAuthors(date, authors as BlogPostAuthor[])
       : renderTOC(tableOfContents)}

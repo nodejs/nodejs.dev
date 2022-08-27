@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { BlogMetaData } from '../../../types';
+import { BlogPost } from '../../../types';
 import BlogCard from '..';
 
 describe('Blog Card component', () => {
   it('renders correctly', () => {
-    const metaData: BlogMetaData = {
+    const metaData: BlogPost = {
       node: {
         fields: {
           date: '2019-07-11 23:40:56.77',

@@ -95,10 +95,10 @@ exports[`Community Page renders correctly 1`] = `
     </div>
   </nav>
   <article
-    class="articleReader"
+    class="article"
   >
     <h1
-      class="articleReaderHeadline"
+      class="headline"
     >
       Mock Title
     </h1>

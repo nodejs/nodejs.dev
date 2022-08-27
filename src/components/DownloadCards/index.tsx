@@ -82,8 +82,8 @@ const DownloadCards = ({ line, userOS }: Props): JSX.Element => {
           setSelected(nextItem);
         }}
       >
-        {downloadTypes.map((os): JSX.Element => {
-          return (
+        {downloadTypes.map(
+          (os): JSX.Element => (
             <DownloadCard
               key={os.name}
               name={os.name}
@@ -94,8 +94,8 @@ const DownloadCards = ({ line, userOS }: Props): JSX.Element => {
               selected={selected === os.name}
               onSelect={setSelected}
             />
-          );
-        })}
+          )
+        )}
       </TabList>
     </Tabs>
   );

@@ -33,19 +33,19 @@ const DownloadCard = ({
       id={`download-card-${name}`}
       key={name}
       onClick={handleSelectCard}
-      tabIndex="0"
       selectedClassName={styles.downloadCardActive}
+      tabIndex="0"
     >
-      <div className={styles.downloadCardTop}>
-        <Icon className={styles.downloadCardImage} />
+      <div className={styles.top}>
+        <Icon className={styles.image} />
         {selected && (
-          <a className={styles.downloadCardLink} href={download}>
+          <a className={styles.link} href={download}>
             <i className="material-icons">get_app</i>
           </a>
         )}
       </div>
-      <p className={styles.downloadCardLabel}>{label}</p>
-      <p className={styles.downloadCardFilename}>{fileName}</p>
+      <p className={styles.label}>{label}</p>
+      <p className={styles.filename}>{fileName}</p>
     </Tab>
   );
 };

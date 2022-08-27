@@ -1,13 +1,18 @@
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import React, { Fragment } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
-import { BlogMetaData } from '../../types';
+import { BlogPost } from '../../types';
 import { getTerminatingString } from '../../util/getTerminatingString';
 import styles from './index.module.scss';
 
-type Props = { data: BlogMetaData } & WrappedComponentProps;
+interface Props {
+  data: BlogPost;
+}
 
 const getBlogCategoryUrl = (category: string): string => `/blog/${category}/`;
+
+const getBlogPostUrl = (slug: string) =>
+  slug.endsWith('/') ? slug : `${slug}/`;
 
 const BlogCard = ({
   data: {
@@ -17,10 +22,10 @@ const BlogCard = ({
     },
   },
   intl,
-}: Props): JSX.Element => (
+}: Props & WrappedComponentProps): JSX.Element => (
   <div className={styles.blogCard}>
     <div className={styles.title}>
-      <Link to={slug}>{title}</Link>
+      <Link to={getBlogPostUrl(slug)}>{title}</Link>
       <div className={styles.metadata}>
         {category && (
           <Link

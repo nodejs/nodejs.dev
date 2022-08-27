@@ -16,11 +16,11 @@ describe('DownloadCards component', (): void => {
 
     const listElement = screen.getAllByRole('tab');
 
-    expect(listElement[0]).toHaveClass('download-card');
+    expect(listElement[0]).toHaveClass('downloadCard');
 
     await userEvent.click(listElement[0]);
 
-    expect(listElement[0]).toHaveClass('download-card download-card--active');
+    expect(listElement[0]).toHaveClass('downloadCard downloadCardActive');
   });
 
   it('check left and right arrow click handler on DownloadCards component', (): void => {

@@ -9,18 +9,12 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import styles from './index.module.scss';
 
-export interface DropDownState {
-  active: number;
-  isOpen: boolean;
-  shouldDropDownBlur: boolean;
-}
-
 const Footer = (): JSX.Element => (
   <footer className={styles.footer}>
-    <ul className={styles.footerLeft}>
+    <ul className={styles.left}>
       <li>
         <a
-          className={styles.footerLink}
+          className={styles.link}
           target="_blank"
           href="https://trademark-policy.openjsf.org/"
           rel="noopener noreferrer"
@@ -30,35 +24,35 @@ const Footer = (): JSX.Element => (
         </a>
       </li>
       <li>
-        <Link className={styles.footerLink} to="/about/privacy">
+        <Link className={styles.link} to="/about/privacy">
           <FormattedMessage id="components.footer.links.privacy" />
         </Link>
       </li>
       <li>
         <a
-          className={styles.footerLink}
+          className={styles.link}
           href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
         >
           <FormattedMessage id="components.footer.links.codeOfConduct" />
         </a>
       </li>
       <li>
-        <Link className={styles.footerLink} to="/about/security">
+        <Link className={styles.link} to="/about/security">
           <FormattedMessage id="components.footer.links.security" />
         </Link>
       </li>
       <li>
-        <Link className={styles.footerLink} to="/about">
+        <Link className={styles.link} to="/about">
           <FormattedMessage id="components.footer.links.about" />
         </Link>
       </li>
       <li>
-        <Link className={styles.footerLink} to="/blog">
+        <Link className={styles.link} to="/blog">
           <FormattedMessage id="components.footer.links.blog" />
         </Link>
       </li>
     </ul>
-    <ul className={styles.footerRight}>
+    <ul className={styles.right}>
       <li>
         <FormattedMessage id="components.footer.links.openJsFoundation" />
       </li>

@@ -9,7 +9,7 @@ exports[`Blog Card component renders correctly 1`] = `
       class="title"
     >
       <a
-        href="/blog/2019/07/11/sample-blog"
+        href="/blog/2019/07/11/sample-blog/"
       >
         Sample Test Blog
       </a>

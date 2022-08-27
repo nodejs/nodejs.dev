@@ -22,13 +22,13 @@ exports[`DownloadCards component renders correctly 1`] = `
         tabindex="0"
       >
         <div
-          class="downloadCardTop"
+          class="top"
         >
           <svg
-            class="downloadCardImage"
+            class="image"
           />
           <a
-            class="downloadCardLink"
+            class="link"
             href="https://nodejs.org/dist/undefined/node-undefined-x86.msi"
           >
             <i
@@ -39,12 +39,12 @@ exports[`DownloadCards component renders correctly 1`] = `
           </a>
         </div>
         <p
-          class="downloadCardLabel"
+          class="label"
         >
           Windows Installer
         </p>
         <p
-          class="downloadCardFilename"
+          class="filename"
         >
           node-undefined-x86.msi
         </p>
@@ -60,19 +60,19 @@ exports[`DownloadCards component renders correctly 1`] = `
         tabindex="0"
       >
         <div
-          class="downloadCardTop"
+          class="top"
         >
           <svg
-            class="downloadCardImage"
+            class="image"
           />
         </div>
         <p
-          class="downloadCardLabel"
+          class="label"
         >
           MAC Installer
         </p>
         <p
-          class="downloadCardFilename"
+          class="filename"
         >
           node-undefined.pkg
         </p>
@@ -88,19 +88,19 @@ exports[`DownloadCards component renders correctly 1`] = `
         tabindex="0"
       >
         <div
-          class="downloadCardTop"
+          class="top"
         >
           <svg
-            class="downloadCardImage"
+            class="image"
           />
         </div>
         <p
-          class="downloadCardLabel"
+          class="label"
         >
           Source Code
         </p>
         <p
-          class="downloadCardFilename"
+          class="filename"
         >
           node-undefined.tar.gz
         </p>
