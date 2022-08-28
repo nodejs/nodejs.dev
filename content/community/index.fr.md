@@ -1,5 +1,6 @@
 ---
-title: Node.js Community
+title: node.js-community
+displayTitle: "Communauté NodeJS"
 description: "Node.js possède l'une des communautés open source les plus importantes, les plus dynamiques et les plus innovantes au monde. Node.js est construit, utilisé et maintenu par la communauté. Nous croyons que la communauté est au cœur de la popularité de Node.js. Des personnes étonnantes de toutes les parties du monde, avec un intérêt commun, collaborent et façonnent cette communauté."
 authors: ahmadawais, maedahbatool, saqibameen, msaaddev, AugustinMauroy
 category: community
