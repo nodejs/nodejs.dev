@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import TranslateIcon from '@mui/icons-material/Translate';
 import { useAutoClosableDropdown } from '../../hooks/useAutoClosableDropdown';
 import { useLocaleAsDropdown } from '../../hooks/useLocaleAsDropdown';
 import styles from './index.module.scss';
@@ -22,7 +23,7 @@ const LanguageSelector = () => {
         onClick={() => showDropdown(!visible)}
       >
         <span className="sr-only">Switch Language</span>
-        <i className="material-icons">translate</i>
+        <TranslateIcon />
       </button>
       {renderDropdown}
     </>

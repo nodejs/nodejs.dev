@@ -11,11 +11,18 @@ exports[`NavigationSection component renders correctly 1`] = `
       tabindex="0"
     >
       Introduction
-      <i
-        class="material-icons"
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        data-testid="ArrowDropUpIcon"
+        focusable="false"
+        style="padding: 0px;"
+        viewBox="0 0 24 24"
       >
-        arrow_drop_up
-      </i>
+        <path
+          d="m7 14 5-5 5 5z"
+        />
+      </svg>
     </div>
     <div
       style="display: none;"

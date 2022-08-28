@@ -95,7 +95,7 @@
       width: 100%;
     }
 
-    li {
+    > li {
       @extend %navItemLi;
 
       > a {
@@ -136,7 +136,7 @@
       width: 100%;
     }
 
-    li {
+    > li {
       @extend %navItemLi;
 
       &.search-bar {

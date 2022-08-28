@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useTheme } from '@skagami/gatsby-plugin-dark-mode';
+import ModeNightIcon from '@mui/icons-material/ModeNight';
+import BrightnessMediumIcon from '@mui/icons-material/BrightnessMedium';
 import styles from './index.module.scss';
 
 const DarkModeToggle = () => {
@@ -28,8 +30,8 @@ const DarkModeToggle = () => {
       onKeyPress={() => handleThemeOnClick(true)}
     >
       <span className="sr-only">Toggle Dark Mode</span>
-      <i className="material-icons light-mode-only">mode_night</i>
-      <i className="material-icons dark-mode-only">brightness_medium</i>
+      <ModeNightIcon className="light-mode-only" />
+      <BrightnessMediumIcon className="dark-mode-only" />
     </button>
   );
 };

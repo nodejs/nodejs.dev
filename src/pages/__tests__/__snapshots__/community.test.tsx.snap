@@ -22,11 +22,17 @@ exports[`Community Page renders correctly 1`] = `
         <b>
           Community Pages
         </b>
-        <i
-          class="material-icons"
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8rv7ug-MuiSvgIcon-root"
+          data-testid="ArrowDropDownIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
         >
-          arrow_drop_down
-        </i>
+          <path
+            d="m7 10 5 5 5-5z"
+          />
+        </svg>
       </div>
       <a
         class="t-body2 navigationItem"

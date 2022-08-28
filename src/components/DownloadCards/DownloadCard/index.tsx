@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tab } from 'react-tabs';
+import GetAppIcon from '@mui/icons-material/GetApp';
 import classnames from 'classnames';
 import styles from './index.module.scss';
 
@@ -40,7 +41,7 @@ const DownloadCard = ({
         <Icon className={styles.image} />
         {selected && (
           <a className={styles.link} href={download}>
-            <i className="material-icons">get_app</i>
+            <GetAppIcon />
           </a>
         )}
       </div>

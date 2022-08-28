@@ -81,17 +81,23 @@ exports[`LearnLayout Template renders correctly 1`] = `
               </span>
               <div
                 class="searchBarContainer"
-                style="min-height: 0em; width: 100%; max-width: 7em; box-shadow: none;"
+                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
                   role="presentation"
                 >
-                  <i
-                    class="searchIcon"
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium searchIcon css-8rv7ug-MuiSvgIcon-root"
+                    data-testid="TravelExploreIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
                   >
-                    travel_explore
-                  </i>
+                    <path
+                      d="M19.3 16.9c.4-.7.7-1.5.7-2.4 0-2.5-2-4.5-4.5-4.5S11 12 11 14.5s2 4.5 4.5 4.5c.9 0 1.7-.3 2.4-.7l3.2 3.2 1.4-1.4-3.2-3.2zm-3.8.1c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5zM12 20v2C6.48 22 2 17.52 2 12S6.48 2 12 2c4.84 0 8.87 3.44 9.8 8h-2.07c-.64-2.46-2.4-4.47-4.73-5.41V5c0 1.1-.9 2-2 2h-2v2c0 .55-.45 1-1 1H8v2h2v3H9l-4.79-4.79C4.08 10.79 4 11.38 4 12c0 4.41 3.59 8 8 8z"
+                    />
+                  </svg>
                   <label
                     for="searchInput"
                   >
@@ -120,16 +126,28 @@ exports[`LearnLayout Template renders correctly 1`] = `
                 >
                   Toggle Dark Mode
                 </span>
-                <i
-                  class="material-icons light-mode-only"
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium light-mode-only css-8rv7ug-MuiSvgIcon-root"
+                  data-testid="ModeNightIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
                 >
-                  mode_night
-                </i>
-                <i
-                  class="material-icons dark-mode-only"
+                  <path
+                    d="M9.5 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65c1.47.85 3.18 1.35 5 1.35 5.52 0 10-4.48 10-10S15.02 2 9.5 2z"
+                  />
+                </svg>
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium dark-mode-only css-8rv7ug-MuiSvgIcon-root"
+                  data-testid="BrightnessMediumIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
                 >
-                  brightness_medium
-                </i>
+                  <path
+                    d="M20 15.31 23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69zM12 18V6c3.31 0 6 2.69 6 6s-2.69 6-6 6z"
+                  />
+                </svg>
               </button>
             </li>
             <li>

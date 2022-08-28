@@ -1,5 +1,6 @@
 import React from 'react';
 import { MotionConfig } from 'framer-motion';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import RandomContributor from '../RandomContributor';
 import { FeatureToggleProvider } from '../../containers/FeatureToggles';
 
@@ -19,6 +20,19 @@ interface Props {
   showRandomContributor?: boolean;
 }
 
+const defaultTheme = createTheme({
+  components: {
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          padding: '1rem',
+          fontSize: '2rem',
+        },
+      },
+    },
+  },
+});
+
 const Layout = ({
   children,
   title,
@@ -28,19 +42,17 @@ const Layout = ({
   showRandomContributor = false,
 }: Props): JSX.Element => (
   <FeatureToggleProvider>
-    <SEO title={title} description={description} img={img} />
-    <MotionConfig reducedMotion="user">
-      <div className="layout-container">
-        <Header />
-        {children}
-        {showRandomContributor && (
-          <section className="bottom-info">
-            <RandomContributor />
-          </section>
-        )}
-        {showFooter && <Footer />}
-      </div>
-    </MotionConfig>
+    <ThemeProvider theme={defaultTheme}>
+      <SEO title={title} description={description} img={img} />
+      <MotionConfig reducedMotion="user">
+        <div className="layout-container">
+          <Header />
+          {children}
+          {showRandomContributor && <RandomContributor />}
+          {showFooter && <Footer />}
+        </div>
+      </MotionConfig>
+    </ThemeProvider>
   </FeatureToggleProvider>
 );
 

@@ -2,6 +2,8 @@ import React, { useMemo, useEffect, useState, createRef } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import CloseIcon from '@mui/icons-material/Close';
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from 'react-click-outside-hook';
@@ -14,16 +16,18 @@ const containerVariants = {
   expanded: {
     minHeight: '5em',
     width: '100%',
-    maxWidth: '30em',
+    maxWidth: '450px',
     boxShadow: '0px 2px 12px 3px rgba(153, 204, 125, 0.14)',
   },
   collapsed: {
     minHeight: '0em',
     width: '100%',
-    maxWidth: '7em',
+    maxWidth: '100px',
     boxShadow: 'none',
   },
 };
+
+const MotionCloseIcon = motion(CloseIcon);
 
 const SearchBar = (): JSX.Element => {
   const { siteSearchIndex } = useStaticQuery(graphql`
@@ -113,7 +117,7 @@ const SearchBar = (): JSX.Element => {
         onClick={onKeyPressHandler}
         role="presentation"
       >
-        <i className={styles.searchIcon}>travel_explore</i>
+        <TravelExploreIcon className={styles.searchIcon} />
         <label htmlFor="searchInput">
           <span>
             {!isExpanded && (
@@ -134,7 +138,7 @@ const SearchBar = (): JSX.Element => {
         </label>
         <AnimatePresence>
           {isExpanded && (
-            <motion.span
+            <MotionCloseIcon
               className={styles.closeIcon}
               key="close-icon"
               initial={{ opacity: 0 }}
@@ -142,9 +146,7 @@ const SearchBar = (): JSX.Element => {
               exit={{ opacity: 0 }}
               onClick={collapseContainer}
               transition={{ duration: 0.2 }}
-            >
-              close
-            </motion.span>
+            />
           )}
         </AnimatePresence>
       </div>

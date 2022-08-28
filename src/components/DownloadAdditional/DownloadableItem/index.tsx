@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
+import GetAppIcon from '@mui/icons-material/GetApp';
 import { Downloadable } from './downloadItems';
 import styles from './index.module.scss';
 
@@ -15,7 +16,7 @@ const DownloadButton: FC<DownloadButtonProps> = ({
   label,
 }) => (
   <a className={className} href={link}>
-    <i className="material-icons">get_app</i>
+    <GetAppIcon />
     {label}
   </a>
 );

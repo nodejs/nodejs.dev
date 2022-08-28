@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { NavigationSectionItem } from '../../types';
 import NavigationItem from '../NavigationItem';
@@ -35,11 +37,12 @@ const NavigationSection = ({
         role="menuitem"
       >
         {title}
-        {!isMobile && (
-          <i className="material-icons">
-            {isOpen ? 'arrow_drop_down' : 'arrow_drop_up'}
-          </i>
-        )}
+        {!isMobile &&
+          (isOpen ? (
+            <ArrowDropDownIcon style={{ padding: 0 }} />
+          ) : (
+            <ArrowDropUpIcon style={{ padding: 0 }} />
+          ))}
       </div>
       <div style={{ display: isOpen || isMobile ? 'block' : 'none' }}>
         {section.map((item: NavigationSectionItem): JSX.Element => {

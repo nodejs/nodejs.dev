@@ -53,7 +53,6 @@ describe('Codebox component', (): void => {
 
     await screen.findByText('copied');
 
-    expect(screen.getByText('done')).toBeInTheDocument();
     expect(navigatorClipboardSpy).toHaveBeenCalledTimes(1);
     expect(navigatorClipboardSpy).toHaveBeenCalledWith(textToCopy.toString());
   });

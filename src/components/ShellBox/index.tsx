@@ -38,7 +38,6 @@ const ShellBox = ({ children, textToCopy }: Props): JSX.Element => {
           }}
         >
           {copied ? 'copied' : 'copy'}
-          {copied ? <i className="material-icons">done</i> : null}
         </button>
       </div>
       <code>{children}</code>

@@ -1,5 +1,3 @@
-@import '../../styles/fonts.scss';
-
 .search-bar-container {
   background-color: var(--color-fill-top-nav);
   border-radius: 6px;
@@ -24,6 +22,7 @@
       color: var(--color-text-accent);
       cursor: pointer;
       display: flex;
+      font-weight: var(--font-weight-semibold);
       transition: all 250ms ease-in-out;
       width: 100%;
     }
@@ -50,8 +49,6 @@
 
     .search-icon,
     .close-icon {
-      @extend .material-icons;
-
       color: var(--color-text-accent);
       vertical-align: middle;
     }

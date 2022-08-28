@@ -95,7 +95,7 @@ body {
   /*for actionable elements*/
 
   /* Typography */
-  --base-type-face: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --base-type-face: var(--sans);
   --font-size-display1: 6rem;
   --font-size-display2: 4.8rem;
   --font-size-display3: 3.4rem;
@@ -146,6 +146,7 @@ body {
   --space-128: 12.8rem;
   --space-160: 16rem;
 }
+
 .dark {
   /* Colors */
   --color-brand-primary: var(--brand5);
@@ -166,6 +167,4 @@ body {
   --color-dropdown-background: var(--black10);
   --color-dropdown-hover: var(--black11);
   --color-blog-card-background: var(--black9);
-
-  /*for actionable elements*/
 }

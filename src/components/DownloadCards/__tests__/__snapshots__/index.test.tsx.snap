@@ -31,11 +31,17 @@ exports[`DownloadCards component renders correctly 1`] = `
             class="link"
             href="https://nodejs.org/dist/undefined/node-undefined-x86.msi"
           >
-            <i
-              class="material-icons"
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="GetAppIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
             >
-              get_app
-            </i>
+              <path
+                d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"
+              />
+            </svg>
           </a>
         </div>
         <p

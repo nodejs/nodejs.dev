@@ -1,5 +1,6 @@
 import React, { useRef, useState, useMemo, useEffect } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import classnames from 'classnames';
 import { SideNavBarItem } from '../../types';
 import NavigationItem from '../NavigationItem';
@@ -97,7 +98,7 @@ const SideNavBar = ({
       return (
         <div className={styles.sideNavSectionTitle}>
           <b>{title}</b>
-          <i className="material-icons">arrow_drop_down</i>
+          <ArrowDropDownIcon />
         </div>
       );
     }

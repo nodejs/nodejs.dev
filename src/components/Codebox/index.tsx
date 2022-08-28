@@ -71,7 +71,6 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
               }}
             >
               {copied ? 'copied' : 'copy'}
-              {copied ? <i className="material-icons">done</i> : null}
             </button>
           </div>
           {tokens.map((line, i) => (
