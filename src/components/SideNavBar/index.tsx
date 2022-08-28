@@ -1,8 +1,10 @@
 import React, { useRef, useState, useMemo, useEffect } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import classnames from 'classnames';
 import { SideNavBarItem } from '../../types';
 import NavigationItem from '../NavigationItem';
-import '../../styles/about.scss';
+import styles from './index.module.scss';
 
 // eslint-disable-next-line no-shadow
 export enum SideNavBarKeys {
@@ -77,9 +79,9 @@ const SideNavBar = ({
   const toggle = (): void => setNavOpen(!navOpen);
   const intl = useIntl();
 
-  const className = navOpen
-    ? 'side-nav-about side-nav--open'
-    : 'side-nav-about';
+  const navigationClasses = classnames(styles.sideNav, {
+    [styles.sideNavFixed]: navOpen,
+  });
 
   useEffect(() => {
     if (typeof document === 'object' && document.body) {
@@ -94,10 +96,10 @@ const SideNavBar = ({
   const renderNavTitle = () => {
     if (title) {
       return (
-        <li className="t-body2 side-nav__item--title">
+        <div className={styles.sideNavSectionTitle}>
           <b>{title}</b>
-          <i className="material-icons">arrow_drop_down</i>
-        </li>
+          <ArrowDropDownIcon />
+        </div>
       );
     }
 
@@ -118,28 +120,25 @@ const SideNavBar = ({
   );
 
   return (
-    <nav className={className} ref={navElement}>
-      <button type="button" className="side-nav__open" onClick={toggle}>
+    <nav className={navigationClasses} ref={navElement}>
+      <button type="button" className={styles.sideNavOpen} onClick={toggle}>
         <FormattedMessage id="components.sideBar.title" />
       </button>
-      <ul className="community-nav__list">
+      <div className={styles.sideNavSection}>
         {renderNavTitle()}
         {translatedSidebar
           .sort((a, b) => a.title.localeCompare(b.title))
-          .map(({ title: commTitle, slug }) => {
-            return (
-              <NavigationItem
-                key={slug}
-                title={commTitle}
-                isLearn={false}
-                isRead={false}
-                isActive={slug === pageKey}
-                slug={slug}
-                baseUrl="/"
-              />
-            );
-          })}
-      </ul>
+          .map(({ title: commTitle, slug }) => (
+            <NavigationItem
+              key={slug}
+              title={commTitle}
+              isRead={false}
+              isActive={slug === pageKey}
+              slug={slug}
+              baseUrl="/"
+            />
+          ))}
+      </div>
     </nav>
   );
 };

@@ -21,15 +21,25 @@ const gatsbyConfig = {
     'gatsby-plugin-catch-links',
     '@skagami/gatsby-plugin-dark-mode',
     'gatsby-transformer-yaml',
-    `gatsby-remark-images`,
+    'gatsby-remark-images',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
         siteUrl: config.siteUrl,
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        cssLoaderOptions: {
+          modules: {
+            namedExport: false,
+            exportLocalsConvention: 'camelCaseOnly',
+          },
+        },
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -92,7 +102,6 @@ const gatsbyConfig = {
       options: {
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
-          sites: require.resolve(`./src/components/Layout/centered.tsx`),
           default: require.resolve(`./src/components/Layout/index.tsx`),
         },
         gatsbyRemarkPlugins: [

@@ -46,11 +46,6 @@
       "type": "301"
     },
     {
-      "source": "/trademark/",
-      "destination": "/about/trademark/",
-      "type": "301"
-    },
-    {
       "source": "/privacy/",
       "destination": "/about/privacy/",
       "type": "301"
@@ -58,6 +53,16 @@
     {
       "source": "/security/",
       "destination": "/about/security/",
+      "type": "301"
+    },
+    {
+      "source": "/trademark/",
+      "destination": "https://trademark-policy.openjsf.org/",
+      "type": "301"
+    },
+    {
+      "source": "/about/trademark/",
+      "destination": "https://trademark-policy.openjsf.org/",
       "type": "301"
     }
   ]

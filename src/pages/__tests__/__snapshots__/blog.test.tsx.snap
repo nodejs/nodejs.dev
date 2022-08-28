@@ -5,36 +5,42 @@ exports[`Blog page renders correctly 1`] = `
   class="grid-container"
 >
   <nav
-    class="side-nav-about"
+    class="sideNav"
   >
     <button
-      class="side-nav__open"
+      class="sideNavOpen"
       type="button"
     >
       Menu
     </button>
-    <ul
-      class="community-nav__list"
+    <div
+      class="sideNavSection"
     >
-      <li
-        class="t-body2 side-nav__item--title"
+      <div
+        class="sideNavSectionTitle"
       >
         <b>
           Blog Categories
         </b>
-        <i
-          class="material-icons"
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8rv7ug-MuiSvgIcon-root"
+          data-testid="ArrowDropDownIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
         >
-          arrow_drop_down
-        </i>
-      </li>
-    </ul>
+          <path
+            d="m7 10 5 5 5-5z"
+          />
+        </svg>
+      </div>
+    </div>
   </nav>
   <div
-    class="blog-grid-container"
+    class="blogGridContainer"
   >
     <div
-      class="blog-category-header"
+      class="blogCategoryHeader"
     >
       <h2>
         Node.js Blog
@@ -44,16 +50,16 @@ exports[`Blog page renders correctly 1`] = `
       </span>
     </div>
     <div
-      class="blog-items"
+      class="blogItems"
     >
       <div
-        class="blog-card"
+        class="blogCard"
       >
         <div
           class="title"
         >
           <a
-            href="Mock blog slug"
+            href="Mock blog slug/"
           >
             Mock blog title
           </a>
@@ -96,36 +102,42 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
   class="grid-container"
 >
   <nav
-    class="side-nav-about"
+    class="sideNav"
   >
     <button
-      class="side-nav__open"
+      class="sideNavOpen"
       type="button"
     >
       Menu
     </button>
-    <ul
-      class="community-nav__list"
+    <div
+      class="sideNavSection"
     >
-      <li
-        class="t-body2 side-nav__item--title"
+      <div
+        class="sideNavSectionTitle"
       >
         <b>
           Blog Categories
         </b>
-        <i
-          class="material-icons"
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8rv7ug-MuiSvgIcon-root"
+          data-testid="ArrowDropDownIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
         >
-          arrow_drop_down
-        </i>
-      </li>
-    </ul>
+          <path
+            d="m7 10 5 5 5-5z"
+          />
+        </svg>
+      </div>
+    </div>
   </nav>
   <div
-    class="blog-grid-container"
+    class="blogGridContainer"
   >
     <div
-      class="blog-category-header"
+      class="blogCategoryHeader"
     >
       <h2>
         Node.js Blog
@@ -135,7 +147,7 @@ exports[`Blog page renders correctly for empty blogs list 1`] = `
       </span>
     </div>
     <div
-      class="blog-items"
+      class="blogItems"
     />
   </div>
 </main>
