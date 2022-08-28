@@ -4,8 +4,7 @@ import { dateIsBetween } from '../../util/dateIsBetween';
 import config from '../../config.json';
 import { BannersIndex } from '../../types';
 import { isAbsoluteUrl } from '../../util/isAbsoluteUrl';
-
-import './Banner.scss';
+import styles from './index.module.scss';
 
 export interface BannerProps {
   bannersIndex: BannersIndex;
@@ -17,9 +16,7 @@ const useTextContent = ({ text, link }: BannersIndex) => {
       return (
         <p>
           <a href={link} target="_blank" rel="noopener noreferrer">
-            <button className="bannerButton" type="button">
-              {config.bannerBtnText}
-            </button>
+            <button type="button">{config.bannerBtnText}</button>
           </a>
           {text}
         </p>
@@ -65,7 +62,7 @@ const Banner = ({ bannersIndex }: BannerProps): JSX.Element | null => {
 
   if (showBanner) {
     return (
-      <div className="banner">
+      <div className={styles.banner}>
         {bannersIndex.text ? textContent : htmlContent}
       </div>
     );

@@ -6,9 +6,6 @@ import Navigation from '../containers/Navigation';
 import { connectGraphQlCustom } from '../components/connectGraphQlArticle';
 import { LearnPageContext, LearnPageData } from '../types';
 
-import '../styles/article-reader.scss';
-import '../styles/learn.scss';
-
 interface Props {
   data: LearnPageData;
   pageContext: LearnPageContext;

@@ -3,8 +3,6 @@ import ArticleLayout from '../components/Layout/article';
 import { SideNavBarKeys } from '../components/SideNavBar';
 import connectGraphQlArticle from '../components/connectGraphQlArticle';
 
-import '../styles/community.scss';
-
 export default connectGraphQlArticle(ArticleLayout, {
   editPath: 'content/community/index.md',
   sidenavKey: SideNavBarKeys.community,

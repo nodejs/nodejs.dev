@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination component only renders links to pages that has a title 1`] = `
+<div>
+  <ul
+    class="pagination"
+  >
+    <li>
+      <a
+        href="/learn/test-slug"
+        rel="prev"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-angles-left "
+          data-icon="angles-left"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style="margin-right: 5px;"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M77.25 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C175.6 444.9 183.8 448 192 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L77.25 256zM269.3 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C367.6 444.9 375.8 448 384 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L269.3 256z"
+            fill="currentColor"
+          />
+        </svg>
+        Prev
+      </a>
+    </li>
+    <li />
+  </ul>
+</div>
+`;
+
+exports[`Pagination component renders correctly when there is no next page 1`] = `
+<div>
+  <ul
+    class="pagination"
+  >
+    <li>
+      <a
+        href="/learn/test-slug"
+        rel="prev"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-angles-left "
+          data-icon="angles-left"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style="margin-right: 5px;"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M77.25 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C175.6 444.9 183.8 448 192 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L77.25 256zM269.3 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C367.6 444.9 375.8 448 384 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L269.3 256z"
+            fill="currentColor"
+          />
+        </svg>
+        Prev
+      </a>
+    </li>
+    <li />
+  </ul>
+</div>
+`;
+
+exports[`Pagination component renders correctly when there is no previous page 1`] = `
+<div>
+  <ul
+    class="pagination"
+  >
+    <li />
+    <li>
+      <a
+        href="/learn/test-slug"
+        rel="next"
+      >
+        Next
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-angles-right "
+          data-icon="angles-right"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style="margin-left: 5px;"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M246.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L178.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C47.63 444.9 55.81 448 64 448s16.38-3.125 22.62-9.375l160-160C259.1 266.1 259.1 245.9 246.6 233.4zM438.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L370.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C239.6 444.9 247.8 448 256 448s16.38-3.125 22.62-9.375l160-160C451.1 266.1 451.1 245.9 438.6 233.4z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Pagination component renders links to the next and previous page 1`] = `
+<div>
+  <ul
+    class="pagination"
+  >
+    <li>
+      <a
+        href="/learn/test-slug"
+        rel="prev"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-angles-left "
+          data-icon="angles-left"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style="margin-right: 5px;"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M77.25 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C175.6 444.9 183.8 448 192 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L77.25 256zM269.3 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C367.6 444.9 375.8 448 384 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L269.3 256z"
+            fill="currentColor"
+          />
+        </svg>
+        Prev
+      </a>
+    </li>
+    <li>
+      <a
+        href="/learn/test-slug"
+        rel="next"
+      >
+        Next
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-angles-right "
+          data-icon="angles-right"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style="margin-left: 5px;"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M246.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L178.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C47.63 444.9 55.81 448 64 448s16.38-3.125 22.62-9.375l160-160C259.1 266.1 259.1 245.9 246.6 233.4zM438.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L370.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C239.6 444.9 247.8 448 256 448s16.38-3.125 22.62-9.375l160-160C451.1 266.1 451.1 245.9 438.6 233.4z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+    </li>
+  </ul>
+</div>
+`;

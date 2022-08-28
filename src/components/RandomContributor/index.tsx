@@ -2,7 +2,7 @@ import React, { MutableRefObject, useRef } from 'react';
 import { FormattedMessage } from 'react-intl';
 import AnimatedPlaceholder from '../AnimatedPlaceholder';
 import { useNodeJsContributorsApi, useOnScreen } from '../../hooks';
-import './RandomContributor.scss';
+import styles from './index.module.scss';
 
 const RandomContributor = (): JSX.Element => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -10,11 +10,11 @@ const RandomContributor = (): JSX.Element => {
   const contributor = useNodeJsContributorsApi(isVisible);
 
   return (
-    <div ref={ref} className="random-contributor">
+    <div ref={ref} className={styles.randomContributor}>
       {!contributor && isVisible && <AnimatedPlaceholder />}
       {contributor && (
         <>
-          <div className="random-contributor__avatar">
+          <div className={styles.randomContributorAvatar}>
             <a
               href={contributor.profileUri}
               target="_blank"
@@ -26,7 +26,7 @@ const RandomContributor = (): JSX.Element => {
               />
             </a>
           </div>
-          <div className="random-contributor__thank">
+          <div>
             <a
               href={contributor.profileUri}
               target="_blank"

@@ -72,7 +72,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const docTemplate = path.resolve('./src/templates/learn.tsx');
   const blogTemplate = path.resolve('./src/templates/blog.tsx');
-  const blogCategoryTemplate = path.resolve('./src/templates/blogCategory.tsx');
+  const blogCategoryTemplate = path.resolve(
+    './src/templates/blog-category.tsx'
+  );
 
   const [learnResult, pagesResult] = await Promise.all([
     graphql(createLearnQuery),

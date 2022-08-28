@@ -1,0 +1,681 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article component renders correctly 1`] = `
+<div>
+  <article
+    class="article"
+  >
+    <h1
+      class="headline"
+    >
+      test-title
+    </h1>
+    <details
+      class="tableOfContents"
+    >
+      <summary>
+        <strong>
+          Table of Contents
+        </strong>
+      </summary>
+      <ul>
+        <li>
+          <a
+            href="#mock-title"
+          >
+            mock-title
+          </a>
+        </li>
+        <li>
+          <a
+            href="#mock-title-2"
+          >
+            mock-title-2
+          </a>
+        </li>
+      </ul>
+    </details>
+    <div>
+      <p>
+        Node.js can be installed in different ways. This post highlights the most common and convenient ones.
+      </p>
+      <p>
+        Official packages for all the major platforms are available at 
+        <a>
+          https://nodejs.dev/download/
+        </a>
+        .
+      </p>
+      <p>
+        One very convenient way to install Node.js is through a package manager. In this case, every operating system has its own.
+      </p>
+      <p>
+        Other package managers for MacOS, Linux, and Windows are listed in 
+        <a>
+          https://nodejs.dev/download/package-manager/
+        </a>
+      </p>
+      <p>
+        <code
+          class="language-text"
+        >
+          nvm
+        </code>
+         is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks, for example.
+      </p>
+      <p>
+        It is also very useful to test your code with old Node.js versions.
+      </p>
+      <p>
+        See 
+        <a>
+          https://github.com/nvm-sh/nvm
+        </a>
+         for more information about this option.
+      </p>
+      <p>
+        In any case, when Node.js is installed you'll have access to the 
+        <code
+          class="language-text"
+        >
+          node
+        </code>
+         executable program in the command line.
+      </p>
+    </div>
+    <div
+      class="authorList"
+    >
+      Contributors
+      <ul>
+        <li>
+          <a
+            class="link"
+            href="https://github.com/test-user1"
+            rel="noopener noreferrer"
+            style="margin-left: 0px;"
+            target="_blank"
+            title="test-user1"
+          >
+            <img
+              alt="test-user1"
+              src="https://github.com/test-user1.png?size=60"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            class="link"
+            href="https://github.com/test-user2"
+            rel="noopener noreferrer"
+            target="_blank"
+            title="test-user2"
+          >
+            <img
+              alt="test-user2"
+              src="https://github.com/test-user2.png?size=60"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="edit"
+    >
+      <a
+        href="https://github.com/nodejs/nodejs.dev/edit/main/content/learn/test-path"
+      >
+        <span>
+          Edit this page on GitHub
+        </span>
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-pencil "
+          data-icon="pencil"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+    </div>
+    <ul
+      class="pagination"
+    >
+      <li>
+        <a
+          href="/learn/test-slug"
+          rel="prev"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-angles-left "
+            data-icon="angles-left"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style="margin-right: 5px;"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M77.25 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C175.6 444.9 183.8 448 192 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L77.25 256zM269.3 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C367.6 444.9 375.8 448 384 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L269.3 256z"
+              fill="currentColor"
+            />
+          </svg>
+          Prev
+        </a>
+      </li>
+      <li>
+        <a
+          href="/learn/test-slug"
+          rel="next"
+        >
+          Next
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-angles-right "
+            data-icon="angles-right"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style="margin-left: 5px;"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M246.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L178.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C47.63 444.9 55.81 448 64 448s16.38-3.125 22.62-9.375l160-160C259.1 266.1 259.1 245.9 246.6 233.4zM438.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L370.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C239.6 444.9 247.8 448 256 448s16.38-3.125 22.62-9.375l160-160C451.1 266.1 451.1 245.9 438.6 233.4z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </article>
+</div>
+`;
+
+exports[`Article component renders correctly in blog mode 1`] = `
+<div>
+  <article
+    class="article"
+  >
+    <h1
+      class="headline"
+    >
+      test-title
+    </h1>
+    <h5
+      class="list"
+    >
+      date string from test
+       by
+       
+      <span>
+        test-user
+      </span>
+    </h5>
+    <div>
+      <p>
+        Node.js can be installed in different ways. This post highlights the most common and convenient ones.
+      </p>
+      <p>
+        Official packages for all the major platforms are available at 
+        <a>
+          https://nodejs.dev/download/
+        </a>
+        .
+      </p>
+      <p>
+        One very convenient way to install Node.js is through a package manager. In this case, every operating system has its own.
+      </p>
+      <p>
+        Other package managers for MacOS, Linux, and Windows are listed in 
+        <a>
+          https://nodejs.dev/download/package-manager/
+        </a>
+      </p>
+      <p>
+        <code
+          class="language-text"
+        >
+          nvm
+        </code>
+         is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks, for example.
+      </p>
+      <p>
+        It is also very useful to test your code with old Node.js versions.
+      </p>
+      <p>
+        See 
+        <a>
+          https://github.com/nvm-sh/nvm
+        </a>
+         for more information about this option.
+      </p>
+      <p>
+        In any case, when Node.js is installed you'll have access to the 
+        <code
+          class="language-text"
+        >
+          node
+        </code>
+         executable program in the command line.
+      </p>
+    </div>
+  </article>
+</div>
+`;
+
+exports[`Article component renders correctly in case body ref is null 1`] = `
+<div>
+  <article
+    class="article"
+  >
+    <h1
+      class="headline"
+    >
+      test-title
+    </h1>
+    <details
+      class="tableOfContents"
+    >
+      <summary>
+        <strong>
+          Table of Contents
+        </strong>
+      </summary>
+      <ul>
+        <li>
+          <a
+            href="#mock-title"
+          >
+            mock-title
+          </a>
+        </li>
+        <li>
+          <a
+            href="#mock-title-2"
+          >
+            mock-title-2
+          </a>
+        </li>
+      </ul>
+    </details>
+    <div>
+      <p>
+        Node.js can be installed in different ways. This post highlights the most common and convenient ones.
+      </p>
+      <p>
+        Official packages for all the major platforms are available at 
+        <a>
+          https://nodejs.dev/download/
+        </a>
+        .
+      </p>
+      <p>
+        One very convenient way to install Node.js is through a package manager. In this case, every operating system has its own.
+      </p>
+      <p>
+        Other package managers for MacOS, Linux, and Windows are listed in 
+        <a>
+          https://nodejs.dev/download/package-manager/
+        </a>
+      </p>
+      <p>
+        <code
+          class="language-text"
+        >
+          nvm
+        </code>
+         is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks, for example.
+      </p>
+      <p>
+        It is also very useful to test your code with old Node.js versions.
+      </p>
+      <p>
+        See 
+        <a>
+          https://github.com/nvm-sh/nvm
+        </a>
+         for more information about this option.
+      </p>
+      <p>
+        In any case, when Node.js is installed you'll have access to the 
+        <code
+          class="language-text"
+        >
+          node
+        </code>
+         executable program in the command line.
+      </p>
+    </div>
+    <div
+      class="authorList"
+    >
+      Contributors
+      <ul>
+        <li>
+          <a
+            class="link"
+            href="https://github.com/test-user1"
+            rel="noopener noreferrer"
+            style="margin-left: 0px;"
+            target="_blank"
+            title="test-user1"
+          >
+            <img
+              alt="test-user1"
+              src="https://github.com/test-user1.png?size=60"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            class="link"
+            href="https://github.com/test-user2"
+            rel="noopener noreferrer"
+            target="_blank"
+            title="test-user2"
+          >
+            <img
+              alt="test-user2"
+              src="https://github.com/test-user2.png?size=60"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="edit"
+    >
+      <a
+        href="https://github.com/nodejs/nodejs.dev/edit/main/content/learn/test-path"
+      >
+        <span>
+          Edit this page on GitHub
+        </span>
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-pencil "
+          data-icon="pencil"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+    </div>
+    <ul
+      class="pagination"
+    >
+      <li>
+        <a
+          href="/learn/test-slug"
+          rel="prev"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-angles-left "
+            data-icon="angles-left"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style="margin-right: 5px;"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M77.25 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C175.6 444.9 183.8 448 192 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L77.25 256zM269.3 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C367.6 444.9 375.8 448 384 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L269.3 256z"
+              fill="currentColor"
+            />
+          </svg>
+          Prev
+        </a>
+      </li>
+      <li>
+        <a
+          href="/learn/test-slug"
+          rel="next"
+        >
+          Next
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-angles-right "
+            data-icon="angles-right"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style="margin-left: 5px;"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M246.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L178.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C47.63 444.9 55.81 448 64 448s16.38-3.125 22.62-9.375l160-160C259.1 266.1 259.1 245.9 246.6 233.4zM438.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L370.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C239.6 444.9 247.8 448 256 448s16.38-3.125 22.62-9.375l160-160C451.1 266.1 451.1 245.9 438.6 233.4z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </article>
+</div>
+`;
+
+exports[`Article component should accept and render child components 1`] = `
+<div>
+  <article
+    class="article"
+  >
+    <h1
+      class="headline"
+    >
+      test-title
+    </h1>
+    <details
+      class="tableOfContents"
+    >
+      <summary>
+        <strong>
+          Table of Contents
+        </strong>
+      </summary>
+      <ul>
+        <li>
+          <a
+            href="#mock-title"
+          >
+            mock-title
+          </a>
+        </li>
+        <li>
+          <a
+            href="#mock-title-2"
+          >
+            mock-title-2
+          </a>
+        </li>
+      </ul>
+    </details>
+    <div>
+      <p>
+        Node.js can be installed in different ways. This post highlights the most common and convenient ones.
+      </p>
+      <p>
+        Official packages for all the major platforms are available at 
+        <a>
+          https://nodejs.dev/download/
+        </a>
+        .
+      </p>
+      <p>
+        One very convenient way to install Node.js is through a package manager. In this case, every operating system has its own.
+      </p>
+      <p>
+        Other package managers for MacOS, Linux, and Windows are listed in 
+        <a>
+          https://nodejs.dev/download/package-manager/
+        </a>
+      </p>
+      <p>
+        <code
+          class="language-text"
+        >
+          nvm
+        </code>
+         is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks, for example.
+      </p>
+      <p>
+        It is also very useful to test your code with old Node.js versions.
+      </p>
+      <p>
+        See 
+        <a>
+          https://github.com/nvm-sh/nvm
+        </a>
+         for more information about this option.
+      </p>
+      <p>
+        In any case, when Node.js is installed you'll have access to the 
+        <code
+          class="language-text"
+        >
+          node
+        </code>
+         executable program in the command line.
+      </p>
+    </div>
+    <div>
+      <div>
+        test child JSX
+      </div>
+    </div>
+    <div
+      class="authorList"
+    >
+      Contributors
+      <ul>
+        <li>
+          <a
+            class="link"
+            href="https://github.com/test-user1"
+            rel="noopener noreferrer"
+            style="margin-left: 0px;"
+            target="_blank"
+            title="test-user1"
+          >
+            <img
+              alt="test-user1"
+              src="https://github.com/test-user1.png?size=60"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            class="link"
+            href="https://github.com/test-user2"
+            rel="noopener noreferrer"
+            target="_blank"
+            title="test-user2"
+          >
+            <img
+              alt="test-user2"
+              src="https://github.com/test-user2.png?size=60"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="edit"
+    >
+      <a
+        href="https://github.com/nodejs/nodejs.dev/edit/main/content/learn/test-path"
+      >
+        <span>
+          Edit this page on GitHub
+        </span>
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-pencil "
+          data-icon="pencil"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+    </div>
+    <ul
+      class="pagination"
+    >
+      <li>
+        <a
+          href="/learn/test-slug"
+          rel="prev"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-angles-left "
+            data-icon="angles-left"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style="margin-right: 5px;"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M77.25 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C175.6 444.9 183.8 448 192 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L77.25 256zM269.3 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C367.6 444.9 375.8 448 384 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L269.3 256z"
+              fill="currentColor"
+            />
+          </svg>
+          Prev
+        </a>
+      </li>
+      <li>
+        <a
+          href="/learn/test-slug"
+          rel="next"
+        >
+          Next
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-angles-right "
+            data-icon="angles-right"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style="margin-left: 5px;"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M246.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L178.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C47.63 444.9 55.81 448 64 448s16.38-3.125 22.62-9.375l160-160C259.1 266.1 259.1 245.9 246.6 233.4zM438.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L370.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C239.6 444.9 247.8 448 256 448s16.38-3.125 22.62-9.375l160-160C451.1 266.1 451.1 245.9 438.6 233.4z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </article>
+</div>
+`;

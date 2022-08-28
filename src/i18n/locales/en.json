@@ -16,7 +16,7 @@
   "components.downloadTable.header.maintenanceStart": "Maintenance LTS Start",
   "components.downloadTable.header.endOfLife": "End of Life",
   "components.downloadReleases.upcomingReleases.title": "Upcoming Releases",
-  "components.downloadReleases.upcomingReleases.content": "Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general use. LTS release status is &quot;long-term support&quot;, which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use Active LTS or Maintenance LTS releases.",
+  "components.downloadReleases.upcomingReleases.content": "Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general use. LTS release status is \"long-term support\", which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use Active LTS or Maintenance LTS releases.",
   "components.downloadToggle.current": "Current",
   "components.downloadToggle.lts": "LTS",
   "components.downloadToggle.recommendation": "{selected, select, LTS {Recommended for most users}other {With the latest features}}",
@@ -38,9 +38,9 @@
   "components.hero.getCurrent": "Get Current",
   "components.hero.learn": "Learn Node",
   "components.installTabs.readDocs": "Read documentation",
-  "components.pagination.previous": "←  Prev",
-  "components.pagination.next": "Next →",
-  "components.randomContributor.thankYou": "Thank you, {contributor}  for being a Node.js contributor, with {amount} contributions",
+  "components.pagination.previous": "Prev",
+  "components.pagination.next": "Next",
+  "components.randomContributor.thankYou": "Thank you {contributor} for being a Node.js contributor with {amount} contributions",
   "components.recentPosts.title": "Recent Posts",
   "components.searchBar.placeholder": "Search",
   "components.searchBar.search.title": "Start typing to Search",
@@ -69,5 +69,6 @@
   "pages.index.features.openSource.title": "Open Source",
   "pages.index.features.openSource.description": "Node.js is open source and actively maintained by contributors all over the world",
   "pages.index.features.everywhere.title": "Everywhere",
-  "pages.index.features.everywhere.description": "Node.js has been adapted to work in a wide variety of places"
+  "pages.index.features.everywhere.description": "Node.js has been adapted to work in a wide variety of places",
+  "components.tableOfContents.heading": "Table of Contents"
 }

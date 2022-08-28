@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationSection component renders correctly 1`] = `
+<div>
+  <div
+    class="navigationSection"
+  >
+    <div
+      class="t-body2 navigationSectionTitle"
+      role="menuitem"
+      tabindex="0"
+    >
+      Introduction
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        data-testid="ArrowDropUpIcon"
+        focusable="false"
+        style="padding: 0px;"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m7 14 5-5 5 5z"
+        />
+      </svg>
+    </div>
+    <div
+      style="display: none;"
+    >
+      <a
+        class="t-body2 navigationItem"
+        href="/learn/intro/"
+        id="link-intro"
+      >
+        Section 1
+      </a>
+    </div>
+  </div>
+</div>
+`;

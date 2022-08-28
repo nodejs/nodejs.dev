@@ -1,0 +1,35 @@
+.recent-posts {
+  max-width: 36rem;
+  padding: var(--space-24);
+  width: 100%;
+
+  @media (max-width: 800px) {
+    order: 1;
+  }
+
+  &__header {
+    margin: 0;
+    padding: var(--space-24) 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-size: var(--font-size-body2);
+      list-style: none;
+      margin-bottom: 10px;
+
+      .link {
+        color: var(--color-text-primary);
+        text-decoration: none;
+
+        &__active {
+          color: var(--color-text-accent) !important;
+          font-weight: var(--font-weight-semibold);
+        }
+      }
+    }
+  }
+}

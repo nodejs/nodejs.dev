@@ -1,9 +1,7 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/jsx-key */
-import React from 'react';
+import React, { useEffect } from 'react';
 import Highlight, { defaultProps, Language } from 'prism-react-renderer';
-
-import './Codebox.scss';
+import classnames from 'classnames';
+import styles from './index.module.scss';
 
 interface Props {
   children: {
@@ -27,7 +25,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   // Actual Code
   const code = props.children?.toString() || '';
 
-  React.useEffect((): (() => void) => {
+  useEffect((): (() => void) => {
     let timer: ReturnType<typeof setTimeout>;
 
     if (copied) {
@@ -45,6 +43,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
 
   return (
     <Highlight
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...defaultProps}
       code={code}
       theme={undefined}
@@ -57,8 +56,11 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
         getLineProps,
         getTokenProps,
       }) => (
-        <pre className={codeClassName} style={style}>
-          <div className="shell-box-top">
+        <pre
+          className={classnames(styles.prismCode, codeClassName)}
+          style={style}
+        >
+          <div className={styles.shellBoxTop}>
             <span>{language.toUpperCase()}</span>
             <button
               type="button"
@@ -69,12 +71,17 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
               }}
             >
               {copied ? 'copied' : 'copy'}
-              {copied ? <i className="material-icons">done</i> : null}
             </button>
           </div>
           {tokens.map((line, i) => (
-            <div {...getLineProps({ line, key: i })}>
+            // eslint-disable-next-line react/jsx-key
+            <div
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...getLineProps({ line, key: i })}
+              className={styles.tokenLine}
+            >
               {line.map((token, key) => (
+                // eslint-disable-next-line react/jsx-key, react/jsx-props-no-spreading
                 <span {...getTokenProps({ token, key })} />
               ))}
             </div>

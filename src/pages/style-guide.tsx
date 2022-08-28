@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/layout.scss';
-import '../styles/mobile.scss';
+
+import '../styles/index.scss';
 
 const StyleGuidePage = (): JSX.Element => (
   <main style={{ maxWidth: `940px`, margin: `0 auto` }}>

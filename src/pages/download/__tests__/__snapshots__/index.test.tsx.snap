@@ -7,13 +7,13 @@ exports[`Download page renders correctly 1`] = `
   >
     <nav
       aria-label="Primary"
-      class="nav"
+      class="header"
     >
       <div
-        class="nav__container"
+        class="container"
       >
         <div
-          class="nav__startwrapper"
+          class="startWrapper"
         >
           <a
             aria-label="Homepage"
@@ -23,32 +23,26 @@ exports[`Download page renders correctly 1`] = `
               class="logo"
             >
               <svg
-                class="nav__logo light-mode-only"
+                class="light-mode-only"
               />
               <svg
-                class="nav__logo dark-mode-only"
+                class="dark-mode-only"
               />
             </div>
           </a>
         </div>
         <ul
-          class="nav__tabs__container"
+          class="tabs"
         >
-          <li
-            class="nav__tabs"
-          >
+          <li>
             <a
-              class="activeStyleTab"
               href="/learn"
             >
               Learn
             </a>
           </li>
-          <li
-            class="nav__tabs"
-          >
+          <li>
             <a
-              class="activeStyleTab"
               href="https://nodejs.org/en/docs/"
               rel="noopener noreferrer"
               target="_blank"
@@ -56,21 +50,15 @@ exports[`Download page renders correctly 1`] = `
               Documentation
             </a>
           </li>
-          <li
-            class="nav__tabs"
-          >
+          <li>
             <a
-              class="activeStyleTab"
               href="/download"
             >
               Download
             </a>
           </li>
-          <li
-            class="nav__tabs"
-          >
+          <li>
             <a
-              class="activeStyleTab"
               href="/community"
             >
               Community
@@ -78,13 +66,13 @@ exports[`Download page renders correctly 1`] = `
           </li>
         </ul>
         <div
-          class="nav__endwrapper"
+          class="endWrapper"
         >
           <ul
-            class="right-container"
+            class="rightContainer"
           >
             <li
-              class="nav__tabs search-bar"
+              class="searchBar"
             >
               <span
                 class="sr-only"
@@ -93,17 +81,23 @@ exports[`Download page renders correctly 1`] = `
               </span>
               <div
                 class="searchBarContainer"
-                style="min-height: 0em; width: 100%; max-width: 7em; box-shadow: none;"
+                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
                   role="presentation"
                 >
-                  <i
-                    class="material-icons searchIcon"
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium searchIcon css-8rv7ug-MuiSvgIcon-root"
+                    data-testid="TravelExploreIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
                   >
-                    travel_explore
-                  </i>
+                    <path
+                      d="M19.3 16.9c.4-.7.7-1.5.7-2.4 0-2.5-2-4.5-4.5-4.5S11 12 11 14.5s2 4.5 4.5 4.5c.9 0 1.7-.3 2.4-.7l3.2 3.2 1.4-1.4-3.2-3.2zm-3.8.1c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5zM12 20v2C6.48 22 2 17.52 2 12S6.48 2 12 2c4.84 0 8.87 3.44 9.8 8h-2.07c-.64-2.46-2.4-4.47-4.73-5.41V5c0 1.1-.9 2-2 2h-2v2c0 .55-.45 1-1 1H8v2h2v3H9l-4.79-4.79C4.08 10.79 4 11.38 4 12c0 4.41 3.59 8 8 8z"
+                    />
+                  </svg>
                   <label
                     for="searchInput"
                   >
@@ -122,11 +116,9 @@ exports[`Download page renders correctly 1`] = `
                 </div>
               </div>
             </li>
-            <li
-              class="nav__tabs"
-            >
+            <li>
               <button
-                class="dark-mode-toggle"
+                class="darkModeToggle"
                 type="button"
               >
                 <span
@@ -134,21 +126,31 @@ exports[`Download page renders correctly 1`] = `
                 >
                   Toggle Dark Mode
                 </span>
-                <i
-                  class="material-icons light-mode-only theme-buttons"
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium light-mode-only css-8rv7ug-MuiSvgIcon-root"
+                  data-testid="ModeNightIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
                 >
-                  mode_night
-                </i>
-                <i
-                  class="material-icons dark-mode-only theme-buttons"
+                  <path
+                    d="M9.5 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65c1.47.85 3.18 1.35 5 1.35 5.52 0 10-4.48 10-10S15.02 2 9.5 2z"
+                  />
+                </svg>
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium dark-mode-only css-8rv7ug-MuiSvgIcon-root"
+                  data-testid="BrightnessMediumIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
                 >
-                  brightness_medium
-                </i>
+                  <path
+                    d="M20 15.31 23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69zM12 18V6c3.31 0 6 2.69 6 6s-2.69 6-6 6z"
+                  />
+                </svg>
               </button>
             </li>
-            <li
-              class="nav__tabs"
-            >
+            <li>
               <a
                 href="https://github.com/nodejs/nodejs.dev"
                 rel="noopener noreferrer"
@@ -182,17 +184,17 @@ exports[`Download page renders correctly 1`] = `
         </div>
       </div>
     </nav>
-    <span
-      class="home-page -download"
+    <div
+      class="home-container downloadPageContainer"
     >
       <div
-        class="download-page__navigation"
+        class="downloadHeader"
       >
         <div>
           HOME /
            
           <span
-            class="download-page__navigation--active"
+            class="active"
           >
             downloads
           </span>
@@ -202,21 +204,21 @@ exports[`Download page renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="download-page__navigation"
+        class="downloadHeader"
       >
         <div
-          class="download-page__navigation--title"
+          class="title"
         >
           Downloads
         </div>
         <div
-          class="download-page__navigation--npm"
+          class="npm"
         >
           (includes npm mock-npm)
         </div>
       </div>
       <p
-        class="release-description"
+        class="releaseDescription"
       >
         Download the Node.js source code, a pre-built installer for your platform, or install via a
          
@@ -228,18 +230,18 @@ exports[`Download page renders correctly 1`] = `
         .
       </p>
       <div
-        class="download-toogle"
+        class="downloadToogle"
       >
         <div
-          class="download-toogle__selector"
+          class="selector"
         >
           <div
-            class="download-toogle__switch"
+            class="switch"
           >
             <button
               aria-checked="true"
               aria-label="Show LTS versions"
-              class="download-toogle__button -active"
+              class="active"
               role="switch"
               type="button"
             >
@@ -248,7 +250,7 @@ exports[`Download page renders correctly 1`] = `
             <button
               aria-checked="true"
               aria-label="Show LTS versions"
-              class="download-toogle__button -current"
+              class="current"
               role="switch"
               type="button"
             >
@@ -257,44 +259,44 @@ exports[`Download page renders correctly 1`] = `
           </div>
         </div>
         <p
-          class="download-toogle__description"
+          class="description"
         >
           Recommended for most users
         </p>
       </div>
       <div
-        class="download-cards-wrapper"
+        class="downloadCardsWrapper"
         data-rttabs="true"
         tabindex="-1"
       >
         <ul
-          class="download-cards"
+          class="downloadCards"
           role="tablist"
         >
           <li
             aria-controls="paneldownload-card-WIN"
             aria-disabled="false"
             aria-selected="false"
-            class="download-card"
+            class="downloadCard"
             data-rttab="true"
             id="tabdownload-card-WIN"
             role="tab"
             tabindex="0"
           >
             <div
-              class="download-card__top"
+              class="top"
             >
               <svg
-                class="download-card__image"
+                class="image"
               />
             </div>
             <p
-              class="download-card__label"
+              class="label"
             >
               Windows Installer
             </p>
             <p
-              class="download-card__filename"
+              class="filename"
             >
               node-mock-version-1-x86.msi
             </p>
@@ -303,26 +305,26 @@ exports[`Download page renders correctly 1`] = `
             aria-controls="paneldownload-card-MAC"
             aria-disabled="false"
             aria-selected="false"
-            class="download-card"
+            class="downloadCard"
             data-rttab="true"
             id="tabdownload-card-MAC"
             role="tab"
             tabindex="0"
           >
             <div
-              class="download-card__top"
+              class="top"
             >
               <svg
-                class="download-card__image"
+                class="image"
               />
             </div>
             <p
-              class="download-card__label"
+              class="label"
             >
               MAC Installer
             </p>
             <p
-              class="download-card__filename"
+              class="filename"
             >
               node-mock-version-1.pkg
             </p>
@@ -331,36 +333,42 @@ exports[`Download page renders correctly 1`] = `
             aria-controls="paneldownload-card-SOURCECODE"
             aria-disabled="false"
             aria-selected="false"
-            class="download-card download-card--active"
+            class="downloadCard downloadCardActive"
             data-rttab="true"
             id="tabdownload-card-SOURCECODE"
             role="tab"
             tabindex="0"
           >
             <div
-              class="download-card__top"
+              class="top"
             >
               <svg
-                class="download-card__image"
+                class="image"
               />
               <a
-                class="download-card__link"
+                class="link"
                 href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
               >
-                <i
-                  class="material-icons"
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8rv7ug-MuiSvgIcon-root"
+                  data-testid="GetAppIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
                 >
-                  get_app
-                </i>
+                  <path
+                    d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"
+                  />
+                </svg>
               </a>
             </div>
             <p
-              class="download-card__label"
+              class="label"
             >
               Source Code
             </p>
             <p
-              class="download-card__filename"
+              class="filename"
             >
               node-mock-version-1.tar.gz
             </p>
@@ -368,29 +376,29 @@ exports[`Download page renders correctly 1`] = `
         </ul>
       </div>
       <div
-        class="download-releases"
+        class="downloadReleases"
       >
         <h2
-          class="download-releases__title"
+          class="title"
         >
           Upcoming Releases
         </h2>
         <div
-          class="upcoming-releases"
+          class="upcomingReleases"
         >
           <div
-            class="react-tabs"
+            class="reactTabs"
             data-rttabs="true"
           >
             <ul
-              class="react-tabs__tab-list"
+              class="reactTabsTabList"
               role="tablist"
             >
               <li
                 aria-controls="panel:r1:0"
                 aria-disabled="false"
                 aria-selected="true"
-                class="react-tabs__tab react-tabs__tab--selected"
+                class="reactTabsTab reactTabsTabSelected"
                 data-rttab="true"
                 id="tab:r1:0"
                 role="tab"
@@ -403,7 +411,7 @@ exports[`Download page renders correctly 1`] = `
                 aria-controls="panel:r1:1"
                 aria-disabled="false"
                 aria-selected="false"
-                class="react-tabs__tab"
+                class="reactTabsTab"
                 data-rttab="true"
                 id="tab:r1:1"
                 role="tab"
@@ -414,24 +422,24 @@ exports[`Download page renders correctly 1`] = `
             </ul>
             <div
               aria-labelledby="tab:r1:0"
-              class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+              class="reactTabsTabPanel reactTabsTabPanelSelected"
               id="panel:r1:0"
               role="tabpanel"
             >
               <div
-                class="upcoming-releases__panel"
+                class="upcomingReleasesPanel"
               >
                 <div
-                  class="upcoming-releases__item--Current"
+                  class="itemCurrent"
                 >
                   <svg />
                   <p
-                    class="release-title"
+                    class="releaseTitle"
                   >
                     Current
                   </p>
                   <p
-                    class="release-date"
+                    class="releaseDate"
                   >
                     Released
                      
@@ -439,16 +447,16 @@ exports[`Download page renders correctly 1`] = `
                   </p>
                 </div>
                 <div
-                  class="upcoming-releases__item--LTS"
+                  class="itemLts"
                 >
                   <svg />
                   <p
-                    class="release-title"
+                    class="releaseTitle"
                   >
                     LTS
                   </p>
                   <p
-                    class="release-date"
+                    class="releaseDate"
                   >
                     Released
                      
@@ -456,16 +464,16 @@ exports[`Download page renders correctly 1`] = `
                   </p>
                 </div>
                 <div
-                  class="upcoming-releases__item--Maintenance"
+                  class="itemMaintenance"
                 >
                   <svg />
                   <p
-                    class="release-title"
+                    class="releaseTitle"
                   >
                     Maintenance
                   </p>
                   <p
-                    class="release-date"
+                    class="releaseDate"
                   >
                     Released
                      
@@ -473,16 +481,16 @@ exports[`Download page renders correctly 1`] = `
                   </p>
                 </div>
                 <div
-                  class="upcoming-releases__item--End-of-life"
+                  class="itemEndoflife"
                 >
                   <svg />
                   <p
-                    class="release-title"
+                    class="releaseTitle"
                   >
                     End-of-life
                   </p>
                   <p
-                    class="release-date"
+                    class="releaseDate"
                   >
                     Released
                      
@@ -493,23 +501,19 @@ exports[`Download page renders correctly 1`] = `
             </div>
             <div
               aria-labelledby="tab:r1:1"
-              class="react-tabs__tab-panel"
+              class="reactTabsTabPanel"
               id="panel:r1:1"
               role="tabpanel"
             />
           </div>
         </div>
-        <p
-          class="lts__text"
-        >
-          Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general use. LTS release status is &quot;long-term support&quot;, which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use Active LTS or Maintenance LTS releases.
+        <p>
+          Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general use. LTS release status is "long-term support", which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use Active LTS or Maintenance LTS releases.
         </p>
         <div
-          class="downloads-table-container"
+          class="downloadTableContainer"
         >
-          <table
-            class="downloads-table"
-          >
+          <table>
             <thead>
               <tr>
                 <th>
@@ -603,29 +607,29 @@ exports[`Download page renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="download-additional"
+        class="downloadAdditional"
       >
         <div
-          class="download-additional__header"
+          class="header"
         >
           <h3
-            class="download-additional__title"
+            class="title"
           >
             Additional Downloads
           </h3>
           <div
-            class="download-toogle"
+            class="downloadToogle"
           >
             <div
-              class="download-toogle__selector"
+              class="selector"
             >
               <div
-                class="download-toogle__switch"
+                class="switch"
               >
                 <button
                   aria-checked="true"
                   aria-label="Show LTS versions"
-                  class="download-toogle__button -active"
+                  class="active"
                   role="switch"
                   type="button"
                 >
@@ -634,7 +638,7 @@ exports[`Download page renders correctly 1`] = `
                 <button
                   aria-checked="true"
                   aria-label="Show LTS versions"
-                  class="download-toogle__button -current"
+                  class="current"
                   role="switch"
                   type="button"
                 >
@@ -645,93 +649,93 @@ exports[`Download page renders correctly 1`] = `
           </div>
         </div>
         <div
-          class="download-additional__body"
+          class="body"
         >
           <div
-            class="download-additional__item"
+            class="downloadableItem"
             role="button"
             tabindex="0"
           >
             <div
-              class="download-additional__item__header"
+              class="header"
             >
               <div
-                class="download-additional__item__header__arrow"
+                class="headerArrow"
               >
                 <div
-                  class="download-additional__item__header__arrow__right"
+                  class="headerArrowRight"
                 />
               </div>
               Windows Installer (.msi)
             </div>
           </div>
           <div
-            class="download-additional__item"
+            class="downloadableItem"
             role="button"
             tabindex="0"
           >
             <div
-              class="download-additional__item__header"
+              class="header"
             >
               <div
-                class="download-additional__item__header__arrow"
+                class="headerArrow"
               >
                 <div
-                  class="download-additional__item__header__arrow__right"
+                  class="headerArrowRight"
                 />
               </div>
               Windows Binary (.zip)
             </div>
           </div>
           <div
-            class="download-additional__item"
+            class="downloadableItem"
             role="button"
             tabindex="0"
           >
             <div
-              class="download-additional__item__header"
+              class="header"
             >
               <div
-                class="download-additional__item__header__arrow"
+                class="headerArrow"
               >
                 <div
-                  class="download-additional__item__header__arrow__right"
+                  class="headerArrowRight"
                 />
               </div>
               macOS Installer (.pkg)
             </div>
           </div>
           <div
-            class="download-additional__item"
+            class="downloadableItem"
             role="button"
             tabindex="0"
           >
             <div
-              class="download-additional__item__header"
+              class="header"
             >
               <div
-                class="download-additional__item__header__arrow"
+                class="headerArrow"
               >
                 <div
-                  class="download-additional__item__header__arrow__right"
+                  class="headerArrowRight"
                 />
               </div>
               macOS Binary (.tar.gz)
             </div>
           </div>
           <div
-            class="download-additional__item"
+            class="downloadableItem"
             role="button"
             tabindex="0"
           >
             <div
-              class="download-additional__item__header"
+              class="header"
             >
               <div
-                class="download-additional__item__header__arrow"
+                class="headerArrow"
               >
                 <div
-                  class="download-additional__item__header__arrow__right"
+                  class="headerArrowRight"
                 />
               </div>
               Linux (PPC, S390x, AIX, ARMv7, ARMv8)
@@ -739,17 +743,17 @@ exports[`Download page renders correctly 1`] = `
           </div>
         </div>
       </div>
-    </span>
+    </div>
     <footer
       class="footer"
     >
       <ul
-        class="footer__left"
+        class="left"
       >
         <li>
           <a
             aria-label="Node.js Slack Link"
-            class="footer__link"
+            class="link"
             href="https://trademark-policy.openjsf.org/"
             rel="noopener noreferrer"
             target="_blank"
@@ -759,7 +763,7 @@ exports[`Download page renders correctly 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="link"
             href="/about/privacy"
           >
             Privacy Policy
@@ -767,7 +771,7 @@ exports[`Download page renders correctly 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="link"
             href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
           >
             Code of Conduct
@@ -775,7 +779,7 @@ exports[`Download page renders correctly 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="link"
             href="/about/security"
           >
             Security Reporting
@@ -783,7 +787,7 @@ exports[`Download page renders correctly 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="link"
             href="/about"
           >
             About
@@ -791,7 +795,7 @@ exports[`Download page renders correctly 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="link"
             href="/blog"
           >
             Blog
@@ -799,7 +803,7 @@ exports[`Download page renders correctly 1`] = `
         </li>
       </ul>
       <ul
-        class="footer__right"
+        class="right"
       >
         <li>
           © OpenJS Foundation
@@ -897,13 +901,13 @@ exports[`Download page should handle LTS to Current switch 1`] = `
   >
     <nav
       aria-label="Primary"
-      class="nav"
+      class="header"
     >
       <div
-        class="nav__container"
+        class="container"
       >
         <div
-          class="nav__startwrapper"
+          class="startWrapper"
         >
           <a
             aria-label="Homepage"
@@ -913,32 +917,26 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               class="logo"
             >
               <svg
-                class="nav__logo light-mode-only"
+                class="light-mode-only"
               />
               <svg
-                class="nav__logo dark-mode-only"
+                class="dark-mode-only"
               />
             </div>
           </a>
         </div>
         <ul
-          class="nav__tabs__container"
+          class="tabs"
         >
-          <li
-            class="nav__tabs"
-          >
+          <li>
             <a
-              class="activeStyleTab"
               href="/learn"
             >
               Learn
             </a>
           </li>
-          <li
-            class="nav__tabs"
-          >
+          <li>
             <a
-              class="activeStyleTab"
               href="https://nodejs.org/en/docs/"
               rel="noopener noreferrer"
               target="_blank"
@@ -946,21 +944,15 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               Documentation
             </a>
           </li>
-          <li
-            class="nav__tabs"
-          >
+          <li>
             <a
-              class="activeStyleTab"
               href="/download"
             >
               Download
             </a>
           </li>
-          <li
-            class="nav__tabs"
-          >
+          <li>
             <a
-              class="activeStyleTab"
               href="/community"
             >
               Community
@@ -968,13 +960,13 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           </li>
         </ul>
         <div
-          class="nav__endwrapper"
+          class="endWrapper"
         >
           <ul
-            class="right-container"
+            class="rightContainer"
           >
             <li
-              class="nav__tabs search-bar"
+              class="searchBar"
             >
               <span
                 class="sr-only"
@@ -983,17 +975,23 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               </span>
               <div
                 class="searchBarContainer"
-                style="min-height: 0em; width: 100%; max-width: 7em; box-shadow: none;"
+                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
                   role="presentation"
                 >
-                  <i
-                    class="material-icons searchIcon"
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium searchIcon css-8rv7ug-MuiSvgIcon-root"
+                    data-testid="TravelExploreIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
                   >
-                    travel_explore
-                  </i>
+                    <path
+                      d="M19.3 16.9c.4-.7.7-1.5.7-2.4 0-2.5-2-4.5-4.5-4.5S11 12 11 14.5s2 4.5 4.5 4.5c.9 0 1.7-.3 2.4-.7l3.2 3.2 1.4-1.4-3.2-3.2zm-3.8.1c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5zM12 20v2C6.48 22 2 17.52 2 12S6.48 2 12 2c4.84 0 8.87 3.44 9.8 8h-2.07c-.64-2.46-2.4-4.47-4.73-5.41V5c0 1.1-.9 2-2 2h-2v2c0 .55-.45 1-1 1H8v2h2v3H9l-4.79-4.79C4.08 10.79 4 11.38 4 12c0 4.41 3.59 8 8 8z"
+                    />
+                  </svg>
                   <label
                     for="searchInput"
                   >
@@ -1012,11 +1010,9 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                 </div>
               </div>
             </li>
-            <li
-              class="nav__tabs"
-            >
+            <li>
               <button
-                class="dark-mode-toggle"
+                class="darkModeToggle"
                 type="button"
               >
                 <span
@@ -1024,21 +1020,31 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                 >
                   Toggle Dark Mode
                 </span>
-                <i
-                  class="material-icons light-mode-only theme-buttons"
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium light-mode-only css-8rv7ug-MuiSvgIcon-root"
+                  data-testid="ModeNightIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
                 >
-                  mode_night
-                </i>
-                <i
-                  class="material-icons dark-mode-only theme-buttons"
+                  <path
+                    d="M9.5 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65c1.47.85 3.18 1.35 5 1.35 5.52 0 10-4.48 10-10S15.02 2 9.5 2z"
+                  />
+                </svg>
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium dark-mode-only css-8rv7ug-MuiSvgIcon-root"
+                  data-testid="BrightnessMediumIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
                 >
-                  brightness_medium
-                </i>
+                  <path
+                    d="M20 15.31 23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69zM12 18V6c3.31 0 6 2.69 6 6s-2.69 6-6 6z"
+                  />
+                </svg>
               </button>
             </li>
-            <li
-              class="nav__tabs"
-            >
+            <li>
               <a
                 href="https://github.com/nodejs/nodejs.dev"
                 rel="noopener noreferrer"
@@ -1072,17 +1078,17 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </div>
       </div>
     </nav>
-    <span
-      class="home-page -download"
+    <div
+      class="home-container downloadPageContainer"
     >
       <div
-        class="download-page__navigation"
+        class="downloadHeader"
       >
         <div>
           HOME /
            
           <span
-            class="download-page__navigation--active"
+            class="active"
           >
             downloads
           </span>
@@ -1092,21 +1098,21 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </div>
       </div>
       <div
-        class="download-page__navigation"
+        class="downloadHeader"
       >
         <div
-          class="download-page__navigation--title"
+          class="title"
         >
           Downloads
         </div>
         <div
-          class="download-page__navigation--npm"
+          class="npm"
         >
           (includes npm )
         </div>
       </div>
       <p
-        class="release-description"
+        class="releaseDescription"
       >
         Download the Node.js source code, a pre-built installer for your platform, or install via a
          
@@ -1118,18 +1124,18 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         .
       </p>
       <div
-        class="download-toogle"
+        class="downloadToogle"
       >
         <div
-          class="download-toogle__selector"
+          class="selector"
         >
           <div
-            class="download-toogle__switch"
+            class="switch"
           >
             <button
               aria-checked="false"
               aria-label="Show LTS versions"
-              class="download-toogle__button"
+              class=""
               role="switch"
               type="button"
             >
@@ -1138,7 +1144,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             <button
               aria-checked="false"
               aria-label="Show LTS versions"
-              class="download-toogle__button -current -active"
+              class="current active"
               role="switch"
               type="button"
             >
@@ -1147,44 +1153,44 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           </div>
         </div>
         <p
-          class="download-toogle__description"
+          class="description"
         >
           With the latest features
         </p>
       </div>
       <div
-        class="download-cards-wrapper"
+        class="downloadCardsWrapper"
         data-rttabs="true"
         tabindex="-1"
       >
         <ul
-          class="download-cards"
+          class="downloadCards"
           role="tablist"
         >
           <li
             aria-controls="paneldownload-card-WIN"
             aria-disabled="false"
             aria-selected="false"
-            class="download-card"
+            class="downloadCard"
             data-rttab="true"
             id="tabdownload-card-WIN"
             role="tab"
             tabindex="0"
           >
             <div
-              class="download-card__top"
+              class="top"
             >
               <svg
-                class="download-card__image"
+                class="image"
               />
             </div>
             <p
-              class="download-card__label"
+              class="label"
             >
               Windows Installer
             </p>
             <p
-              class="download-card__filename"
+              class="filename"
             >
               node-undefined-x86.msi
             </p>
@@ -1193,26 +1199,26 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             aria-controls="paneldownload-card-MAC"
             aria-disabled="false"
             aria-selected="false"
-            class="download-card"
+            class="downloadCard"
             data-rttab="true"
             id="tabdownload-card-MAC"
             role="tab"
             tabindex="0"
           >
             <div
-              class="download-card__top"
+              class="top"
             >
               <svg
-                class="download-card__image"
+                class="image"
               />
             </div>
             <p
-              class="download-card__label"
+              class="label"
             >
               MAC Installer
             </p>
             <p
-              class="download-card__filename"
+              class="filename"
             >
               node-undefined.pkg
             </p>
@@ -1221,36 +1227,42 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             aria-controls="paneldownload-card-SOURCECODE"
             aria-disabled="false"
             aria-selected="false"
-            class="download-card download-card--active"
+            class="downloadCard downloadCardActive"
             data-rttab="true"
             id="tabdownload-card-SOURCECODE"
             role="tab"
             tabindex="0"
           >
             <div
-              class="download-card__top"
+              class="top"
             >
               <svg
-                class="download-card__image"
+                class="image"
               />
               <a
-                class="download-card__link"
+                class="link"
                 href="https://nodejs.org/dist/undefined/node-undefined.tar.gz"
               >
-                <i
-                  class="material-icons"
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8rv7ug-MuiSvgIcon-root"
+                  data-testid="GetAppIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
                 >
-                  get_app
-                </i>
+                  <path
+                    d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"
+                  />
+                </svg>
               </a>
             </div>
             <p
-              class="download-card__label"
+              class="label"
             >
               Source Code
             </p>
             <p
-              class="download-card__filename"
+              class="filename"
             >
               node-undefined.tar.gz
             </p>
@@ -1258,29 +1270,29 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </ul>
       </div>
       <div
-        class="download-releases"
+        class="downloadReleases"
       >
         <h2
-          class="download-releases__title"
+          class="title"
         >
           Upcoming Releases
         </h2>
         <div
-          class="upcoming-releases"
+          class="upcomingReleases"
         >
           <div
-            class="react-tabs"
+            class="reactTabs"
             data-rttabs="true"
           >
             <ul
-              class="react-tabs__tab-list"
+              class="reactTabsTabList"
               role="tablist"
             >
               <li
                 aria-controls="panel:r3:0"
                 aria-disabled="false"
                 aria-selected="true"
-                class="react-tabs__tab react-tabs__tab--selected"
+                class="reactTabsTab reactTabsTabSelected"
                 data-rttab="true"
                 id="tab:r3:0"
                 role="tab"
@@ -1293,7 +1305,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                 aria-controls="panel:r3:1"
                 aria-disabled="false"
                 aria-selected="false"
-                class="react-tabs__tab"
+                class="reactTabsTab"
                 data-rttab="true"
                 id="tab:r3:1"
                 role="tab"
@@ -1304,24 +1316,24 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             </ul>
             <div
               aria-labelledby="tab:r3:0"
-              class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+              class="reactTabsTabPanel reactTabsTabPanelSelected"
               id="panel:r3:0"
               role="tabpanel"
             >
               <div
-                class="upcoming-releases__panel"
+                class="upcomingReleasesPanel"
               >
                 <div
-                  class="upcoming-releases__item--Current"
+                  class="itemCurrent"
                 >
                   <svg />
                   <p
-                    class="release-title"
+                    class="releaseTitle"
                   >
                     Current
                   </p>
                   <p
-                    class="release-date"
+                    class="releaseDate"
                   >
                     Released
                      
@@ -1329,16 +1341,16 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   </p>
                 </div>
                 <div
-                  class="upcoming-releases__item--LTS"
+                  class="itemLts"
                 >
                   <svg />
                   <p
-                    class="release-title"
+                    class="releaseTitle"
                   >
                     LTS
                   </p>
                   <p
-                    class="release-date"
+                    class="releaseDate"
                   >
                     Released
                      
@@ -1346,16 +1358,16 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   </p>
                 </div>
                 <div
-                  class="upcoming-releases__item--Maintenance"
+                  class="itemMaintenance"
                 >
                   <svg />
                   <p
-                    class="release-title"
+                    class="releaseTitle"
                   >
                     Maintenance
                   </p>
                   <p
-                    class="release-date"
+                    class="releaseDate"
                   >
                     Released
                      
@@ -1363,16 +1375,16 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   </p>
                 </div>
                 <div
-                  class="upcoming-releases__item--End-of-life"
+                  class="itemEndoflife"
                 >
                   <svg />
                   <p
-                    class="release-title"
+                    class="releaseTitle"
                   >
                     End-of-life
                   </p>
                   <p
-                    class="release-date"
+                    class="releaseDate"
                   >
                     Released
                      
@@ -1383,23 +1395,19 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             </div>
             <div
               aria-labelledby="tab:r3:1"
-              class="react-tabs__tab-panel"
+              class="reactTabsTabPanel"
               id="panel:r3:1"
               role="tabpanel"
             />
           </div>
         </div>
-        <p
-          class="lts__text"
-        >
-          Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general use. LTS release status is &quot;long-term support&quot;, which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use Active LTS or Maintenance LTS releases.
+        <p>
+          Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general use. LTS release status is "long-term support", which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use Active LTS or Maintenance LTS releases.
         </p>
         <div
-          class="downloads-table-container"
+          class="downloadTableContainer"
         >
-          <table
-            class="downloads-table"
-          >
+          <table>
             <thead>
               <tr>
                 <th>
@@ -1493,29 +1501,29 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </div>
       </div>
       <div
-        class="download-additional"
+        class="downloadAdditional"
       >
         <div
-          class="download-additional__header"
+          class="header"
         >
           <h3
-            class="download-additional__title"
+            class="title"
           >
             Additional Downloads
           </h3>
           <div
-            class="download-toogle"
+            class="downloadToogle"
           >
             <div
-              class="download-toogle__selector"
+              class="selector"
             >
               <div
-                class="download-toogle__switch"
+                class="switch"
               >
                 <button
                   aria-checked="false"
                   aria-label="Show LTS versions"
-                  class="download-toogle__button"
+                  class=""
                   role="switch"
                   type="button"
                 >
@@ -1524,7 +1532,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                 <button
                   aria-checked="false"
                   aria-label="Show LTS versions"
-                  class="download-toogle__button -current -active"
+                  class="current active"
                   role="switch"
                   type="button"
                 >
@@ -1535,20 +1543,20 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           </div>
         </div>
         <div
-          class="download-additional__body"
+          class="body"
         />
       </div>
-    </span>
+    </div>
     <footer
       class="footer"
     >
       <ul
-        class="footer__left"
+        class="left"
       >
         <li>
           <a
             aria-label="Node.js Slack Link"
-            class="footer__link"
+            class="link"
             href="https://trademark-policy.openjsf.org/"
             rel="noopener noreferrer"
             target="_blank"
@@ -1558,7 +1566,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="link"
             href="/about/privacy"
           >
             Privacy Policy
@@ -1566,7 +1574,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="link"
             href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
           >
             Code of Conduct
@@ -1574,7 +1582,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="link"
             href="/about/security"
           >
             Security Reporting
@@ -1582,7 +1590,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="link"
             href="/about"
           >
             About
@@ -1590,7 +1598,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </li>
         <li>
           <a
-            class="footer__link"
+            class="link"
             href="/blog"
           >
             Blog
@@ -1598,7 +1606,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </li>
       </ul>
       <ul
-        class="footer__right"
+        class="right"
       >
         <li>
           © OpenJS Foundation

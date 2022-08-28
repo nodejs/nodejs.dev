@@ -1,14 +1,14 @@
 {
-  "extends": [
-    "stylelint-config-recommended-scss"
-  ],
-  "plugins": [
-    "stylelint-order",
-    "stylelint-selector-bem-pattern"
-  ],
+  "extends": ["stylelint-config-recommended-scss"],
+  "plugins": ["stylelint-order", "stylelint-selector-bem-pattern"],
   "rules": {
     "order/properties-alphabetical-order": true,
     "no-descending-specificity": null,
-    "scss/at-import-partial-extension": "always"
+    "scss/at-extend-no-missing-placeholder": null,
+    "scss/at-import-partial-extension": "always",
+    "selector-pseudo-class-no-unknown": [
+      true,
+      { "ignorePseudoClasses": ["global"] }
+    ]
   }
 }

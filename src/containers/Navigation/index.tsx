@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
+import classnames from 'classnames';
 import NavigationSection from '../../components/NavigationSection';
 import { NavigationSectionData, NavigationSectionItem } from '../../types';
+import styles from './index.module.scss';
 
 interface Props {
   sections: NavigationSectionData;
@@ -19,7 +21,9 @@ const Navigation = ({
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggle = (): void => setIsOpen(!isOpen);
 
-  const className = isOpen ? 'side-nav side-nav--open' : 'side-nav';
+  const navigationClasses = classnames(styles.navigation, {
+    [styles.navigationFixed]: isOpen,
+  });
 
   const readSections: Set<NavigationSectionItem['slug']> = new Set();
 
@@ -41,8 +45,8 @@ const Navigation = ({
   });
 
   return (
-    <nav aria-label={label} className={className}>
-      <button type="button" className="side-nav__open" onClick={toggle}>
+    <nav aria-label={label} className={navigationClasses}>
+      <button type="button" className={styles.navigationOpen} onClick={toggle}>
         <FormattedMessage id="containers.navigation.title" />
       </button>
       {Object.keys(sections).map(

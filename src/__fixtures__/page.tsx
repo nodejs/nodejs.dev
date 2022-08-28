@@ -2,18 +2,18 @@ import {
   PaginationInfo,
   LearnPageContext,
   NavigationSectionData,
-  BlogPostsList,
+  BlogPosts,
   BlogPageData,
   BlogPageContext,
   ArticleProps,
   NodeReleaseDataDetail,
   NodeReleaseData,
-  TableOfContents,
-  BlogCategoriesList,
+  PageTableOfContents,
+  BlogCategories,
 } from '../types';
 import mockMDXBodyContent from './mockMDXBodyContent';
 
-export const mockTableOfContents: TableOfContents = {
+export const mockTableOfContents: PageTableOfContents = {
   items: [
     { title: 'mock-title', url: '#mock-title' },
     { title: 'mock-title-2', url: '#mock-title-2' },
@@ -149,7 +149,10 @@ export const createBlogPageContext = (): BlogPageContext => ({
   navigationData: createNavigationSectionData(),
 });
 
-export const createBlogData = (): BlogPostsList & BlogCategoriesList => ({
+export const createBlogData = (): {
+  posts: BlogPosts;
+  categories: BlogCategories;
+} => ({
   posts: {
     edges: [
       {
