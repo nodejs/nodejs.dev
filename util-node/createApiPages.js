@@ -4,8 +4,6 @@ function createApiPages(pagesEdges, apiTypesNavigationData) {
   const navigationData = {};
   const apiPages = iterateEdges(pagesEdges);
 
-  console.warn(apiPages.filter(page => page.apiType).map(page => page.apiType));
-
   apiTypesNavigationData.forEach(({ name, slug }) => {
     navigationData[slug] = {
       category: 'api',

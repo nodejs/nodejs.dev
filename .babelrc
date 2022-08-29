@@ -1,0 +1,24 @@
+{
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    [
+      "prismjs",
+      {
+        "languages": ["javascript", "css", "jsx", "typescript", "markup"],
+        "plugins": [],
+        "theme": "okaidia",
+        "css": true
+      }
+    ]
+  ],
+  "presets": [
+    [
+      "babel-preset-gatsby",
+      {
+        "targets": {
+          "browsers": [">0.25%", "not dead"]
+        }
+      }
+    ]
+  ]
+}

@@ -71,6 +71,7 @@
 
     &:hover::before,
     &::before {
+      content: none;
       box-shadow: none;
     }
 

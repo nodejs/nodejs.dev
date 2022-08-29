@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import Highlight, { defaultProps, Language } from 'prism-react-renderer';
+import React, { useEffect, useState, createRef } from 'react';
+import Prism from 'prismjs';
 import classnames from 'classnames';
 import styles from './index.module.scss';
 
@@ -13,82 +13,65 @@ interface Props {
 }
 
 const Codebox = ({ children: { props } }: Props): JSX.Element => {
-  const [copied, setCopied] = React.useState(false);
+  const [copied, setCopied] = useState(false);
+  const codeRef = createRef<HTMLDivElement>();
 
   // eslint-disable-next-line react/prop-types
   const className = props.className || '';
 
   // Language Matches in class
   const matches = className.match(/language-(?<lang>.*)/);
-  // Get language from classname
-  const language = (matches?.groups?.lang || '') as Language;
-  // Actual Code
+
+  // Language name from classname
+  const language = matches?.groups?.lang || '';
+
+  // Actual Code into a stringified format
   const code = props.children?.toString() || '';
+
+  const codeClassName = classnames(
+    styles.prismCode,
+    className.replace(/mjs|cjs/, 'js')
+  );
 
   useEffect((): (() => void) => {
     let timer: ReturnType<typeof setTimeout>;
 
     if (copied) {
-      timer = setTimeout((): void => {
-        setCopied(false);
-      }, 3000);
+      timer = setTimeout(() => setCopied(false), 3000);
     }
 
-    return (): void => {
+    return () => {
       if (timer) {
         clearTimeout(timer);
       }
     };
   }, [copied]);
 
+  useEffect(() => {
+    if (codeRef.current) {
+      Prism.highlightElement(codeRef.current);
+    }
+  }, [codeRef]);
+
   return (
-    <Highlight
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...defaultProps}
-      code={code}
-      theme={undefined}
-      language={language}
-    >
-      {({
-        className: codeClassName,
-        style,
-        tokens,
-        getLineProps,
-        getTokenProps,
-      }) => (
-        <pre
-          className={classnames(styles.prismCode, codeClassName)}
-          style={style}
+    <pre className={codeClassName}>
+      <div className={styles.shellBoxTop}>
+        <span>{language.toUpperCase()}</span>
+        <button
+          type="button"
+          onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
+            event.preventDefault();
+            navigator.clipboard.writeText(code);
+            setCopied(true);
+          }}
         >
-          <div className={styles.shellBoxTop}>
-            <span>{language.toUpperCase()}</span>
-            <button
-              type="button"
-              onClick={(event: React.MouseEvent<HTMLButtonElement>): void => {
-                event.preventDefault();
-                navigator.clipboard.writeText(code);
-                setCopied(true);
-              }}
-            >
-              {copied ? 'copied' : 'copy'}
-            </button>
-          </div>
-          {tokens.map((line, i) => (
-            // eslint-disable-next-line react/jsx-key
-            <div
-              // eslint-disable-next-line react/jsx-props-no-spreading
-              {...getLineProps({ line, key: i })}
-              className={styles.tokenLine}
-            >
-              {line.map((token, key) => (
-                // eslint-disable-next-line react/jsx-key, react/jsx-props-no-spreading
-                <span {...getTokenProps({ token, key })} />
-              ))}
-            </div>
-          ))}
-        </pre>
-      )}
-    </Highlight>
+          {copied ? 'copied' : 'copy'}
+        </button>
+      </div>
+      <div className={styles.shellContent} ref={codeRef}>
+        {props.children}
+      </div>
+    </pre>
   );
 };
 
