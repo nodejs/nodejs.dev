@@ -16,6 +16,7 @@ const gatsbyConfig = {
     // gatsby-transformer-yaml transforms the id field into yamlId
     'Mdx.frontmatter.blogAuthors': `AuthorsYaml.yamlId`,
     'Mdx.frontmatter.category': `CategoriesYaml.name`,
+    'Mdx.frontmatter.apiType': `ApiTypesYaml.name`,
   },
   plugins: [
     'gatsby-plugin-catch-links',
@@ -134,17 +135,17 @@ const gatsbyConfig = {
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
-        fields: [`title`, `body`, `description`, `slug`],
+        fields: ['title', 'headings', 'description', 'slug'],
         resolvers: {
           Mdx: {
             id: node => node.id,
             title: node => node.frontmatter.title,
-            body: node => node.rawBody,
+            headings: node => node.headings,
             description: node => node.frontmatter.description,
             slug: node => node.fields.slug,
           },
         },
-        filter: node => node.frontmatter.category === 'learn',
+        filter: node => ['api', 'learn'].includes(node.frontmatter.category),
       },
     },
     {

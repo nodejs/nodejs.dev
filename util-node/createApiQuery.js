@@ -2,20 +2,40 @@ module.exports = `
 {
   allMdx(
     filter: { fields: { categoryName: { eq: "api" } } }
-    sort: { fields: [fields___slug], order: ASC }
+    sort: { fields: [frontmatter___name], order: ASC }
   ) {
     edges {
       node {
         id
         fileAbsolutePath
-        body
+        parent {
+          ... on File {
+            relativePath
+          }
+        }
         frontmatter {
           title
-          description
         }
         fields {
           slug
           categoryName
+          apiTypeName
+        }
+      }
+      next {
+        frontmatter {
+          title
+        }
+        fields {
+          slug
+        }
+      }
+      previous {
+        frontmatter {
+          title
+        }
+        fields {
+          slug
         }
       }
     }

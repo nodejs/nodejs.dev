@@ -4,7 +4,8 @@ const { createFileNodeFromBuffer } = require('gatsby-source-filesystem');
 const createGitHubHeaders = require('./createGitHubHeaders');
 const {
   createApiDocsFrontmatter,
-  transformYamlCodeBlocks,
+  createYamlMetadataParser,
+  replaceUrlReferences,
 } = require('./apiDocsTransformUtils');
 
 async function getApiDocsData(activeReleasesVersions, gatsbyApis) {
@@ -29,7 +30,8 @@ async function getApiDocsData(activeReleasesVersions, gatsbyApis) {
         file => file.name.endsWith('.md') && !file.name.startsWith('index')
       );
 
-      const releaseVersion = activeReleasesVersions[index].split('.')[0];
+      const fullReleaseVersion = activeReleasesVersions[index];
+      const releaseVersion = fullReleaseVersion.split('.')[0];
 
       const promisifiedNodes = await Promise.all(
         markdownFiles.map(async file => {
@@ -37,14 +39,26 @@ async function getApiDocsData(activeReleasesVersions, gatsbyApis) {
             r.text()
           );
 
-          const mdxWithComponents = markdownFile.replace(
-            /^<!--([\s\S]*?)-->$/gm,
-            (_, capture) => transformYamlCodeBlocks(capture, file)
+          const { topLevelMetadata, transformYaml } = createYamlMetadataParser(
+            file,
+            fullReleaseVersion
           );
 
-          const frontmatterYaml = createApiDocsFrontmatter(markdownFile, {
-            version: releaseVersion,
+          const [firstLine, ...markdownContents] = markdownFile.split('\n');
+
+          const markdownWithLinks = replaceUrlReferences(
+            markdownContents.join('\n')
+          );
+
+          const mdxWithComponents = markdownWithLinks.replace(
+            /^<!--([\s\S]*?)-->$/gm,
+            transformYaml
+          );
+
+          const frontmatterYaml = createApiDocsFrontmatter(firstLine, {
+            version: fullReleaseVersion,
             name: getFileName(file),
+            ...topLevelMetadata,
           });
 
           const finalContent = `${frontmatterYaml}${mdxWithComponents}`;

@@ -2,22 +2,47 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
+import DocsApiComponent from '../components/DocsApiComponent';
+import Navigation from '../containers/Navigation';
+import Stability from '../components/Stability';
+import { ApiPageData, LearnPageContext } from '../types';
 
 interface Props {
-  data: {
-    mdx: {
-      body: string;
-      title: string;
-      slug: string;
-    };
-  };
+  data: ApiPageData;
+  pageContext: LearnPageContext;
 }
 
-const Api = ({ data: { mdx } }: Props): JSX.Element => (
-  <Layout title="Blogs at Nodejs">
+const components = { DocsApiComponent, blockquote: Stability };
+
+const Api = ({
+  data: {
+    api: {
+      frontmatter: { title, displayTitle, editPage },
+      body,
+      tableOfContents,
+    },
+  },
+  pageContext: { slug, next, previous, navigationData },
+}: Props): JSX.Element => (
+  <Layout title={displayTitle}>
     <main className="grid-container">
-      <div></div>
-      <Article title={mdx.title} body={mdx.body} authors={[]} />
+      <Navigation
+        currentSlug={slug}
+        label="Secondary"
+        sections={navigationData}
+        category="api"
+        isApiDocs
+      />
+      <Article
+        title={title}
+        tableOfContents={tableOfContents}
+        body={body}
+        next={next}
+        previous={previous}
+        absolutePath={editPage}
+        authors={[]}
+        extraComponents={components}
+      />
     </main>
   </Layout>
 );
@@ -25,11 +50,14 @@ const Api = ({ data: { mdx } }: Props): JSX.Element => (
 export default Api;
 
 export const query = graphql`
-  query ($id: String!) {
-    mdx(id: { eq: $id }) {
+  query ($slug: String!) {
+    api: mdx(fields: { slug: { eq: $slug }, categoryName: { eq: "api" } }) {
       body
+      tableOfContents
       frontmatter {
         title
+        displayTitle
+        editPage
       }
       fields {
         slug

@@ -135,7 +135,6 @@ const SideNavBar = ({
               isRead={false}
               isActive={slug === pageKey}
               slug={slug}
-              baseUrl="/"
             />
           ))}
       </div>

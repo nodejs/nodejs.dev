@@ -10,6 +10,7 @@ interface Props {
   currentSlug: string;
   label: string;
   category: string;
+  isApiDocs?: boolean;
 }
 
 const Navigation = ({
@@ -17,6 +18,7 @@ const Navigation = ({
   currentSlug,
   label,
   category,
+  isApiDocs,
 }: Props): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggle = (): void => setIsOpen(!isOpen);
@@ -58,6 +60,7 @@ const Navigation = ({
               section={sections[sectionKey].data}
               currentSlug={currentSlug}
               readSections={readSections}
+              isApiDocs={isApiDocs}
             />
           )
       )}

@@ -14,7 +14,6 @@ import TableOfContents from '../TableOfContents';
 import BlogAuthorsList from '../BlogAuthorsList';
 import Codebox from '../Codebox';
 import InlineCode from '../Codebox/InlineCode';
-import DocsApiComponent from '../DocsApiComponent';
 import styles from './index.module.scss';
 
 interface Props {
@@ -23,19 +22,20 @@ interface Props {
   tableOfContents?: PageTableOfContents;
   authors: string[] | BlogPostAuthor[];
   relativePath?: string;
+  absolutePath?: string;
   editPath?: string;
   next?: PaginationInfo;
   previous?: PaginationInfo;
   blog?: boolean;
   date?: string;
   children?: React.ReactNode;
+  extraComponents?: Record<string, (...any: any[]) => JSX.Element>;
 }
 
 const mdxComponents = {
   pre: Codebox,
   inlineCode: InlineCode,
   a: MdxLink,
-  DocsApiComponent,
 };
 
 const renderBlogAuthors = (date?: string, authors?: BlogPostAuthor[]) => (
@@ -53,11 +53,13 @@ const Article = ({
   previous,
   next,
   relativePath,
+  absolutePath,
   editPath,
   authors,
   blog,
   date,
   children,
+  extraComponents = {},
 }: Props): JSX.Element => (
   <article className={styles.article}>
     <h1 className={styles.headline}>{title}</h1>
@@ -65,13 +67,21 @@ const Article = ({
       ? renderBlogAuthors(date, authors as BlogPostAuthor[])
       : renderTOC(tableOfContents)}
     <div>
-      <MDXProvider components={mdxComponents}>
+      <MDXProvider components={{ ...mdxComponents, ...extraComponents }}>
         <MDXRenderer>{body}</MDXRenderer>
       </MDXProvider>
     </div>
     {children && <div>{children}</div>}
-    {!blog && <AuthorList authors={authors as string[]} />}
-    {!blog && <EditLink relativePath={relativePath} editPath={editPath} />}
+    {!blog && authors.length > 0 && (
+      <AuthorList authors={authors as string[]} />
+    )}
+    {!blog && (
+      <EditLink
+        absolutePath={absolutePath}
+        relativePath={relativePath}
+        editPath={editPath}
+      />
+    )}
     {!blog && <Pagination previous={previous} next={next} />}
   </article>
 );

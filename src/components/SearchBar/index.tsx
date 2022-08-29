@@ -170,7 +170,7 @@ const SearchBar = (): JSX.Element => {
             <ul>
               {results.map((result: SearchResult) => (
                 <li key={result.id}>
-                  <Link to={`/learn/${result.slug}`}>{result.title}</Link>
+                  <Link to={result.slug}>{result.title}</Link>
                 </li>
               ))}
             </ul>

@@ -1,18 +1,40 @@
 import type { GatsbyBrowser, GatsbySSR } from 'gatsby';
 
-export interface DocsApiChange {
+export interface ApiChange {
   version: string | string[];
   'pr-url': string;
   description: string;
 }
 
-export interface DocsApiData {
+export interface ApiComponentData {
   introduced_in?: string;
   added?: string | string[];
   type?: string;
   name?: string;
   source_link?: string;
-  changes?: DocsApiChange[];
+  changes?: ApiChange[];
+}
+
+export interface ApiType {
+  name: string;
+  slug: string;
+}
+
+export interface ApiPageData {
+  api: {
+    id: string;
+    body: string;
+    tableOfContents: PageTableOfContents;
+    frontmatter: {
+      name: string;
+      title: string;
+      version: string;
+      displayTitle: string;
+      apiType: ApiType;
+      introducedIn: string;
+      editPage: string;
+    };
+  };
 }
 
 export interface GenericPageContext {
@@ -86,9 +108,7 @@ export interface BlogCategory {
 export interface NavigationSectionItem {
   slug: string;
   title: string;
-  section: string;
   category: string;
-  baseUrl?: string;
 }
 
 export interface NavigationSectionData {

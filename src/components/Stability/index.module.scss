@@ -1,0 +1,26 @@
+.stability {
+  color: white;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+  padding: 1rem;
+
+  p {
+    margin: 0;
+  }
+
+  &__level-0 {
+    background-color: #d60027;
+  }
+
+  &__level-1 {
+    background-color: #ca5010;
+  }
+
+  &__level-2 {
+    background-color: #5a8147;
+  }
+
+  &__level-3 {
+    background-color: #00f;
+  }
+}

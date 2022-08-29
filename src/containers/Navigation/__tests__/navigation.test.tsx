@@ -14,7 +14,6 @@ describe('Navigation component', (): void => {
               {
                 slug: 'intro',
                 title: 'Section 1',
-                section: '...',
                 category: 'category1',
               },
             ],
@@ -25,7 +24,6 @@ describe('Navigation component', (): void => {
               {
                 slug: 'version',
                 title: 'Version 1',
-                section: '...',
                 category: 'category2',
               },
             ],

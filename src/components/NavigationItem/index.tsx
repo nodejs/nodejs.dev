@@ -9,7 +9,7 @@ interface Props {
   isActive: boolean;
   slug: string;
   title: string;
-  baseUrl?: string;
+  isApiDocs?: boolean;
 }
 
 const NavigationItem = ({
@@ -17,20 +17,20 @@ const NavigationItem = ({
   isActive,
   slug,
   title,
-  baseUrl,
+  isApiDocs,
 }: Props): JSX.Element => {
   const className = classnames(`t-body2 ${styles.navigationItem}`, {
     [styles.navigationItemDone]: isRead,
     [styles.navigationItemActive]: !isRead && isActive,
+    [styles.navigationItemApi]: isApiDocs,
   });
 
   const slugWithoutSlash = slug.endsWith('/') ? slug.slice(0, -1) : slug;
-  const destinationUrl = `${baseUrl || '/learn/'}${slugWithoutSlash}/`;
 
   return (
     <Link
       id={`link-${slug}`}
-      to={destinationUrl}
+      to={slugWithoutSlash}
       className={className}
       aria-current={isActive ? 'page' : undefined}
     >

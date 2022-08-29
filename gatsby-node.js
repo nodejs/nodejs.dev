@@ -13,6 +13,7 @@ const createPagesQuery = require('./util-node/createPagesQuery');
 const createLearnQuery = require('./util-node/createLearnQuery');
 const createApiQuery = require('./util-node/createApiQuery');
 const createMarkdownPages = require('./util-node/createMarkdownPages');
+const createApiPages = require('./util-node/createApiPages');
 const redirects = require('./util-node/redirects');
 const nodeLocales = require('./util-node/locales');
 
@@ -20,6 +21,10 @@ const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
 
 const learnYamlNavigationData = yaml.parse(
   fs.readFileSync('./src/data/learn.yaml', 'utf8')
+);
+
+const apiTypesNavigationData = yaml.parse(
+  fs.readFileSync('./src/data/apiTypes.yaml', 'utf8')
 );
 
 // This creates a map of all the locale JSONs that are enabled in the config.json file
@@ -104,28 +109,31 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     allMdx: { edges: apiEdges },
   } = apiResult.data;
 
-  const { markdownPages, learnPages, firstLearnPage, navigationData } =
-    createMarkdownPages(pageEdges, learnEdges, learnYamlNavigationData);
+  const {
+    markdownPages,
+    learnPages,
+    firstLearnPage,
+    navigationData: learNavigationData,
+  } = createMarkdownPages(pageEdges, learnEdges, learnYamlNavigationData);
+
+  const { apiPages, navigationData: apiNavigationData } = createApiPages(
+    apiEdges,
+    apiTypesNavigationData
+  );
 
   if (firstLearnPage) {
     createPage({
-      path: `/learn/`,
+      path: '/learn/',
       component: learnTemplate,
-      context: { ...firstLearnPage, navigationData },
+      context: { ...firstLearnPage, navigationData: learNavigationData },
     });
   }
 
   learnPages.forEach(page => {
     createPage({
-      path: `/learn/${page.slug}`,
+      path: page.slug,
       component: learnTemplate,
-      context: { ...page, navigationData },
-    });
-
-    createRedirect({
-      fromPath: `/${page.slug}`,
-      toPath: `/learn/${page.slug}`,
-      isPermanent: true,
+      context: { ...page, navigationData: learNavigationData },
     });
   });
 
@@ -137,16 +145,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
-  apiEdges.forEach(({ node }) => {
+  apiPages.forEach(page => {
     createPage({
-      path: `/api/${node.fields.slug}/`,
+      path: page.slug,
       component: apiTemplate,
-      context: { id: node.id },
+      context: { ...page, navigationData: apiNavigationData },
     });
 
     createRedirect({
-      fromPath: `/api/${node.fields.slug}.html`,
-      toPath: `/api/${node.fields.slug}/`,
+      fromPath: `${page.slug.slice(0, -1)}.html`,
+      toPath: page.slug,
       isPermanent: true,
     });
   });
@@ -221,8 +229,20 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       });
     }
 
+    // Special Handling for Learn Content
+    if (fileAbsolutePath && fileAbsolutePath.includes('/learn/')) {
+      slug = `/learn/${createSlug(frontmatter.title)}/`;
+    }
+
+    // Speicla Handling for Api Docs Pages
     if (fileAbsolutePath && fileAbsolutePath.includes('/internalApiDoc-v')) {
-      slug = createSlug(frontmatter.slug);
+      slug = `/api/${frontmatter.name}/`;
+
+      createNodeField({
+        node,
+        name: 'apiTypeName',
+        value: frontmatter.apiType,
+      });
     }
 
     createNodeField({

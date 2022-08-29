@@ -17,20 +17,20 @@
   }
 
   &::before {
-    background-size: 2.4rem;
+    background-size: 24px;
     border-radius: 50%;
     box-shadow: inset 0 0 0 3px var(--color-border-primary);
     box-sizing: border-box;
     content: ' ';
     display: block;
-    height: 2.4rem;
-    left: -2.4rem;
+    height: 24px;
+    left: -24px;
     overflow: hidden;
     padding: 5px 4px;
     position: absolute;
     top: 0.6rem;
     transition: box-shadow 0.28s;
-    width: 2.4rem;
+    width: 24px;
   }
 
   &--done::before {
@@ -64,5 +64,18 @@
 
   &--done::after {
     background: var(--color-border-accent);
+  }
+
+  &--api {
+    padding: var(--space-08) 0 0 0;
+
+    &:hover::before,
+    &::before {
+      box-shadow: none;
+    }
+
+    &:after {
+      content: none;
+    }
   }
 }
