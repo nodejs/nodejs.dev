@@ -44,19 +44,21 @@ async function getApiDocsData(activeReleasesVersions, gatsbyApis) {
 
           const frontmatterYaml = createApiDocsFrontmatter(markdownFile, {
             version: releaseVersion,
-            name: file.name,
+            name: getFileName(file),
           });
 
           const finalContent = `${frontmatterYaml}${mdxWithComponents}`;
 
-          return createFileNodeFromBuffer({
-            buffer: Buffer.from(finalContent),
-            cache: gatsbyApis.cache,
-            createNode: gatsbyApis.createNode,
-            name: `internalApiDoc-${releaseVersion}-${getFileName(file)}`,
-            createNodeId: gatsbyApis.createNodeId,
-            ext: '.mdx',
-          });
+          if (frontmatterYaml.length) {
+            return createFileNodeFromBuffer({
+              buffer: Buffer.from(finalContent),
+              cache: gatsbyApis.cache,
+              createNode: gatsbyApis.createNode,
+              name: `internalApiDoc-${releaseVersion}-${getFileName(file)}`,
+              createNodeId: gatsbyApis.createNodeId,
+              ext: '.mdx',
+            });
+          }
         })
       );
 

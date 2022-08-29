@@ -6,7 +6,7 @@ function createApiDocsFrontmatter(textFile, metadata) {
   if (firstDocumentLine.startsWith('#')) {
     const pageTitle = `Node.js API ${metadata.version} - ${firstDocumentLine}`;
 
-    return `---\ntitle: '${pageTitle}'\ncategory: 'api'\n---\n\n`;
+    return `---\ntitle: '${pageTitle}'\ncategory: 'api'\nslug: '${metadata.name}'\n---\n\n`;
   }
 
   return '';

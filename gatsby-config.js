@@ -21,7 +21,6 @@ const gatsbyConfig = {
     'gatsby-plugin-catch-links',
     '@skagami/gatsby-plugin-dark-mode',
     'gatsby-transformer-yaml',
-    'gatsby-remark-images',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-canonical-urls',
@@ -101,15 +100,6 @@ const gatsbyConfig = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
-        rehypePlugins: [
-          {
-            resolve: '@starptech/rehype-webparser',
-            options: {
-              decodeEntities: true,
-              insertRequiredParents: true,
-            },
-          },
-        ],
         gatsbyRemarkPlugins: [
           { resolve: 'gatsby-remark-copy-linked-files' },
           {

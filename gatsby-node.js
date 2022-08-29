@@ -11,6 +11,7 @@ const getBannersData = require('./util-node/getBannersData');
 const getNvmData = require('./util-node/getNvmData');
 const createPagesQuery = require('./util-node/createPagesQuery');
 const createLearnQuery = require('./util-node/createLearnQuery');
+const createApiQuery = require('./util-node/createApiQuery');
 const createMarkdownPages = require('./util-node/createMarkdownPages');
 const redirects = require('./util-node/redirects');
 const nodeLocales = require('./util-node/locales');
@@ -72,18 +73,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
+  const apiTemplate = path.resolve('./src/templates/api.tsx');
   const learnTemplate = path.resolve('./src/templates/learn.tsx');
   const blogTemplate = path.resolve('./src/templates/blog.tsx');
   const blogCategoryTemplate = path.resolve(
     './src/templates/blog-category.tsx'
   );
 
-  const [learnResult, pagesResult] = await Promise.all([
+  const [learnResult, pagesResult, apiResult] = await Promise.all([
     graphql(createLearnQuery),
     graphql(createPagesQuery),
+    graphql(createApiQuery),
   ]);
 
-  if (pagesResult.errors || learnResult.errors) {
+  if (pagesResult.errors || learnResult.errors || apiResult.errors) {
     reporter.panicOnBuild('Error while running GraphQL queries.');
     return;
   }
@@ -96,6 +99,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const {
     allMdx: { edges: learnEdges },
   } = learnResult.data;
+
+  const {
+    allMdx: { edges: apiEdges },
+  } = apiResult.data;
 
   const { markdownPages, learnPages, firstLearnPage, navigationData } =
     createMarkdownPages(pageEdges, learnEdges, learnYamlNavigationData);
@@ -127,6 +134,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: `/blog/${node.name}/`,
       component: blogCategoryTemplate,
       context: { categoryName: node.name },
+    });
+  });
+
+  apiEdges.forEach(({ node }) => {
+    createPage({
+      path: `/api/${node.fields.slug}/`,
+      component: apiTemplate,
+      context: { id: node.id },
+    });
+
+    createRedirect({
+      fromPath: `/api/${node.fields.slug}.html`,
+      toPath: `/api/${node.fields.slug}/`,
+      isPermanent: true,
     });
   });
 
@@ -198,6 +219,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         name: `readingTime`,
         value: readingTime(node.rawBody),
       });
+    }
+
+    if (fileAbsolutePath && fileAbsolutePath.includes('/internalApiDoc-v')) {
+      slug = createSlug(frontmatter.slug);
     }
 
     createNodeField({
