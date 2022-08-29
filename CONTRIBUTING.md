@@ -2,7 +2,7 @@
 
 ## 🚀 Get Started
 
-* Fork the [nodejs.dev repo][] using the Fork button on the rop right
+* Fork the [nodejs.dev repo][] using the Fork button on the top right
 
 * Clone your fork using SSH, GitHub CLI, or HTTPS
 
