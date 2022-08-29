@@ -69,6 +69,7 @@ function createYamlMetadataParser(file, version) {
           return `<DocsApiComponent version="${version}" data={${stringifiedData}} />`;
         }
       } catch (e) {
+        // eslint-disable-next-line no-console
         console.warn(
           `YAML failure: ${e.message}, ${replacedContent}, ${file.download_url}`
         );

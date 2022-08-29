@@ -73,6 +73,8 @@ async function getApiDocsData(activeReleasesVersions, gatsbyApis) {
               ext: '.mdx',
             });
           }
+
+          return null;
         })
       );
 

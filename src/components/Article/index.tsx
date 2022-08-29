@@ -30,7 +30,8 @@ interface Props {
   blog?: boolean;
   date?: string;
   children?: React.ReactNode;
-  extraComponents?: Record<string, (...any: any[]) => JSX.Element>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  extraComponents?: Record<string, (...any: any[]) => JSX.Element | null>;
 }
 
 const mdxComponents = {

@@ -10,25 +10,25 @@ interface Props {
   version: string;
 }
 
-const DocsApiComponent = (props: Props) => {
-  if (props.data.changes && props.data.added) {
-    return <Changes added={props.data.added} changes={props.data.changes} />;
+const DocsApiComponent = ({ data, version }: Props): JSX.Element | null => {
+  if (data.changes && data.added) {
+    return <Changes added={data.added} changes={data.changes} />;
   }
 
-  if (props.data.added) {
-    return <AddedIn added={props.data.added} />;
+  if (data.added) {
+    return <AddedIn added={data.added} />;
   }
 
-  if (props.data.source_link) {
+  if (data.source_link) {
     return (
       <SourceLink
-        sourceName={props.data.source_link}
-        sourceLink={`https://github.com/nodejs/node/blob/${props.version}/${props.data.source_link}`}
+        sourceName={data.source_link}
+        sourceLink={`https://github.com/nodejs/node/blob/${version}/${data.source_link}`}
       />
     );
   }
 
-  return <></>;
+  return null;
 };
 
 export default DocsApiComponent;
