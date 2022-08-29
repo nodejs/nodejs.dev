@@ -1,5 +1,20 @@
 import type { GatsbyBrowser, GatsbySSR } from 'gatsby';
 
+export interface DocsApiChange {
+  version: string | string[];
+  'pr-url': string;
+  description: string;
+}
+
+export interface DocsApiData {
+  introduced_in?: string;
+  added?: string | string[];
+  type?: string;
+  name?: string;
+  source_link?: string;
+  changes?: DocsApiChange[];
+}
+
 export interface GenericPageContext {
   intlMessages: Record<string, string>;
   locale: string;

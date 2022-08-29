@@ -25,7 +25,7 @@ async function getApiDocsData(activeReleasesVersions, gatsbyApis) {
   // And thgen `gatsby-node` will execute them all
   const apiDocsFilesPerVersion = await Promise.all(
     apiDocsReleases.map(async (apiDocsFiles, index) => {
-      const markdownFiles = [...apiDocsFiles].filter(
+      const markdownFiles = apiDocsFiles.filter(
         file => file.name.endsWith('.md') && !file.name.startsWith('index')
       );
 
@@ -49,9 +49,8 @@ async function getApiDocsData(activeReleasesVersions, gatsbyApis) {
 
           const finalContent = `${frontmatterYaml}${mdxWithComponents}`;
 
-          createFileNodeFromBuffer({
+          return createFileNodeFromBuffer({
             buffer: Buffer.from(finalContent),
-            store: gatsbyApis.store,
             cache: gatsbyApis.cache,
             createNode: gatsbyApis.createNode,
             name: `internalApiDoc-${releaseVersion}-${getFileName(file)}`,

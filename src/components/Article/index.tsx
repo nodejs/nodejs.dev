@@ -14,6 +14,7 @@ import TableOfContents from '../TableOfContents';
 import BlogAuthorsList from '../BlogAuthorsList';
 import Codebox from '../Codebox';
 import InlineCode from '../Codebox/InlineCode';
+import DocsApiComponent from '../DocsApiComponent';
 import styles from './index.module.scss';
 
 interface Props {
@@ -30,7 +31,12 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const mdxComponents = { pre: Codebox, inlineCode: InlineCode, a: MdxLink };
+const mdxComponents = {
+  pre: Codebox,
+  inlineCode: InlineCode,
+  a: MdxLink,
+  DocsApiComponent,
+};
 
 const renderBlogAuthors = (date?: string, authors?: BlogPostAuthor[]) => (
   <BlogAuthorsList date={date} authors={authors} />

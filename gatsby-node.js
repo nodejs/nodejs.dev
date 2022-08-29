@@ -230,7 +230,6 @@ exports.sourceNodes = async ({
   createContentDigest,
   reporter: { activityTimer },
   cache,
-  store,
 }) => {
   let activity = activityTimer('Fetching Node release data');
 
@@ -265,10 +264,15 @@ exports.sourceNodes = async ({
     const currentActiveReleasesVersions =
       getCurrentActiveReleases(nodeReleasesData);
 
-    const allApiFilesPerVersion = await getApiDocsData(
-      currentActiveReleasesVersions,
-      { createNode, createNodeId, cache, store }
-    );
+    // For now we're only going to parse the latest Node.js docs
+    // As the v14 and v16 docs have some Markdown Errors
+    const [latestNodeRelease] = currentActiveReleasesVersions.reverse();
+
+    await getApiDocsData([latestNodeRelease], {
+      createNode,
+      createNodeId,
+      cache,
+    });
 
     activity.end();
 
