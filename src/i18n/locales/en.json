@@ -30,7 +30,7 @@
   "components.footer.links.openJsFoundation": "© OpenJS Foundation",
   "components.footer.links.github": "GitHub",
   "components.header.links.learn": "Learn",
-  "components.header.links.docs": "{isMobile, select, true {Docs}other {Documentation}}",
+  "components.header.links.docs": "API Docs",
   "components.header.links.download": "Download",
   "components.header.links.community": "Community",
   "components.hero.downloadLts": "Download Node (LTS)",

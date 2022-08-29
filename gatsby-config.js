@@ -1,3 +1,5 @@
+const path = require('path');
+
 require('dotenv').config();
 
 const config = require('./src/config.json');
@@ -44,56 +46,56 @@ const gatsbyConfig = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'learn',
-        path: `${__dirname}/content/learn`,
+        path: path.resolve('./content/learn'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'sites',
-        path: `${__dirname}/src/pages/`,
+        path: path.resolve('./src/pages'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'homepage',
-        path: `${__dirname}/content/homepage`,
+        path: path.resolve('./content/homepage'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'community',
-        path: `${__dirname}/content/community`,
+        path: path.resolve('./content/community'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'blog',
-        path: `${__dirname}/content/blog`,
+        path: path.resolve('./content/blog'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
-        path: `${__dirname}/src/data`,
+        path: path.resolve('./src/data'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'about',
-        path: `${__dirname}/content/about`,
+        path: path.resolve('./content/about'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'download',
-        path: `${__dirname}/content/download`,
+        path: path.resolve('./content/download'),
       },
     },
     'gatsby-plugin-typescript',
@@ -155,7 +157,7 @@ const gatsbyConfig = {
       resolve: `gatsby-theme-i18n`,
       options: {
         defaultLang: defaultLanguage,
-        configPath: `${__dirname}/src/i18n/config.json`,
+        configPath: path.resolve('./src/i18n/config.json'),
         prefixDefault: true,
         locales: localesAsString,
       },

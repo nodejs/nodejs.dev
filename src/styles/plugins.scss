@@ -29,7 +29,7 @@ h6:hover .autolink-headers {
   }
 }
 
-// Plugin: prismjs / prism-react-renderer
+// Plugin: prismjs
 pre[class*='language-'],
 code[class*='language-'] {
   background: var(--black9) !important;
@@ -37,7 +37,7 @@ code[class*='language-'] {
   margin-bottom: var(--space-24);
 }
 
-// Plugin: prismjs / prism-react-renderer
+// Plugin: prismjs
 :not(pre) > code[class*='language-'] {
   background-color: var(--black2) !important;
   color: var(--black9) !important;
@@ -46,12 +46,18 @@ code[class*='language-'] {
   text-shadow: none;
 }
 
-// Plugin: prismjs / prism-react-renderer
+a code[class*='language-'] {
+  color: var(--color-text-accent) !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+// Plugin: prismjs
 pre[class*='language-'] > code[class*='language-'] + h2 {
   margin-top: var(--space-40);
 }
 
-// Plugin: prismjs / prism-react-renderer
+// Plugin: prismjs
 .token {
   &.punctuation,
   &.operator {
