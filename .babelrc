@@ -5,7 +5,7 @@
     [
       "prismjs",
       {
-        "languages": ["javascript", "css", "jsx", "typescript", "markup"],
+        "languages": ["js", "css", "jsx", "bash", "ts", "markup", "cpp", "c"],
         "plugins": [],
         "theme": "okaidia",
         "css": true

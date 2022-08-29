@@ -1,5 +1,5 @@
-import React, { useEffect, useState, createRef } from 'react';
-import { highlightElement } from 'prismjs';
+import React, { useEffect, useState } from 'react';
+import { highlight, languages } from 'prismjs';
 import classnames from 'classnames';
 import styles from './index.module.scss';
 
@@ -14,7 +14,7 @@ interface Props {
 
 const Codebox = ({ children: { props } }: Props): JSX.Element => {
   const [copied, setCopied] = useState(false);
-  const codeRef = createRef<HTMLDivElement>();
+  const [parsedCode, setParsedCode] = useState('');
 
   // eslint-disable-next-line react/prop-types
   const className = props.className || '';
@@ -26,12 +26,13 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   const language = matches?.groups?.lang || '';
 
   // Actual Code into a stringified format
-  const code = props.children?.toString() || '';
+  const stringCode = props.children?.toString() || '';
 
-  const codeClassName = classnames(
-    styles.prismCode,
-    className.replace(/mjs|cjs/, 'js')
-  );
+  const handleCopyCode = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    navigator.clipboard.writeText(stringCode);
+    setCopied(true);
+  };
 
   useEffect((): (() => void) => {
     let timer: ReturnType<typeof setTimeout>;
@@ -48,29 +49,27 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   }, [copied]);
 
   useEffect(() => {
-    if (codeRef.current) {
-      highlightElement(codeRef.current);
-    }
-  }, [codeRef]);
+    const parsedLangauge = language.replace(/mjs|cjs/, 'js');
+
+    const prismLanguage = languages[parsedLangauge] || languages.text;
+
+    setParsedCode(highlight(stringCode, prismLanguage, parsedLangauge));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <pre className={codeClassName}>
-      <div className={styles.shellBoxTop}>
+    <pre className={classnames(styles.pre, className.replace(/mjs|cjs/, 'js'))}>
+      <div className={styles.top}>
         <span>{language.toUpperCase()}</span>
-        <button
-          type="button"
-          onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
-            event.preventDefault();
-            navigator.clipboard.writeText(code);
-            setCopied(true);
-          }}
-        >
+        <button type="button" onClick={handleCopyCode}>
           {copied ? 'copied' : 'copy'}
         </button>
       </div>
-      <div className={styles.shellContent} ref={codeRef}>
-        {props.children}
-      </div>
+      <div
+        className={styles.content}
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: parsedCode }}
+      />
     </pre>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 import { MdxLink } from 'gatsby-theme-i18n';
@@ -14,6 +14,7 @@ import TableOfContents from '../TableOfContents';
 import BlogAuthorsList from '../BlogAuthorsList';
 import Codebox from '../Codebox';
 import InlineCode from '../Codebox/InlineCode';
+import Table from '../Table';
 import styles from './index.module.scss';
 
 interface Props {
@@ -36,6 +37,7 @@ const mdxComponents = {
   pre: Codebox,
   inlineCode: InlineCode,
   a: MdxLink,
+  table: Table,
 };
 
 const renderBlogAuthors = (date?: string, authors?: BlogPostAuthor[]) => (
@@ -60,30 +62,67 @@ const Article = ({
   date,
   children,
   extraComponents = {},
-}: Props): JSX.Element => (
-  <article className={styles.article}>
-    <h1 className={styles.headline}>{title}</h1>
-    {blog
-      ? renderBlogAuthors(date, authors as BlogPostAuthor[])
-      : renderTOC(tableOfContents)}
-    <div>
+}: Props): JSX.Element => {
+  const [mdxRendered, setMdxRendered] = useState<React.ReactElement | null>(
+    null
+  );
+
+  // Due to some pages being enormously big, we don't want to render the whole page on the server-side as it would take too long.
+  // Not to mention it could also lead to crashes and babel optimization issues as there's just too much to bundle on SSR
+  // Instead we render the contents of MDX Pages only within the client-side, and we memoize the remaining components
+  // to avoid re-rendering them on every page change.
+  useEffect(() => {
+    setMdxRendered(
       <MDXProvider components={{ ...mdxComponents, ...extraComponents }}>
         <MDXRenderer>{body}</MDXRenderer>
       </MDXProvider>
-    </div>
-    {children && <div>{children}</div>}
-    {!blog && authors.length > 0 && (
-      <AuthorList authors={authors as string[]} />
-    )}
-    {!blog && (
-      <EditLink
-        absolutePath={absolutePath}
-        relativePath={relativePath}
-        editPath={editPath}
-      />
-    )}
-    {!blog && <Pagination previous={previous} next={next} />}
-  </article>
-);
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const memoizedArticle = useMemo(
+    () => (
+      <>
+        <h1 className={styles.headline}>{title}</h1>
+        {blog
+          ? renderBlogAuthors(date, authors as BlogPostAuthor[])
+          : renderTOC(tableOfContents)}
+        <div>{mdxRendered}</div>
+        {children && <div>{children}</div>}
+        {!blog && authors.length > 0 && (
+          <AuthorList authors={authors as string[]} />
+        )}
+        {!blog && (
+          <EditLink
+            absolutePath={absolutePath}
+            relativePath={relativePath}
+            editPath={editPath}
+          />
+        )}
+        {!blog && <Pagination previous={previous} next={next} />}
+      </>
+    ),
+    [
+      absolutePath,
+      authors,
+      blog,
+      children,
+      date,
+      editPath,
+      mdxRendered,
+      next,
+      previous,
+      relativePath,
+      tableOfContents,
+      title,
+    ]
+  );
+
+  return (
+    <article className={styles.article}>
+      {mdxRendered && memoizedArticle}
+    </article>
+  );
+};
 
 export default Article;

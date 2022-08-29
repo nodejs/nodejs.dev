@@ -190,13 +190,6 @@ if (!gatsbyConfig.pathPrefix) {
     // So we are able to use the official service worker again. This service worker supports latest Workbox
     resolve: 'gatsby-plugin-offline-next',
     options: {
-      precachePages: [
-        '/',
-        '/*/learn/*',
-        '/*/about/*',
-        '/*/download/*',
-        '/*/blog/*',
-      ],
       globPatterns: ['**/icon-path*'],
     },
   });

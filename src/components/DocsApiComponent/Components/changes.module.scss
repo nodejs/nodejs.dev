@@ -7,41 +7,4 @@
     margin: 0;
     text-transform: uppercase;
   }
-
-  table {
-    color: var(--color-text-primary);
-    font-size: var(--font-size-body3);
-    margin-top: var(--space-04);
-
-    thead {
-      th {
-        background: var(--color-fill-body);
-        color: var(--color-text-primary);
-        font-weight: normal;
-        padding: var(--space-08) var(--space-16);
-        text-align: left;
-      }
-      th:first-child {
-        border-radius: 3px 0px 0px 0px;
-      }
-      th:last-child {
-        border-radius: 0px 3px 0px 0px;
-      }
-    }
-
-    tbody {
-      tr {
-        background: var(--color-fill-app);
-
-        td {
-          border-bottom: 1px solid #e2e3e7;
-          padding: var(--space-16) var(--space-16);
-        }
-
-        &:hover {
-          background: var(--brand10);
-        }
-      }
-    }
-  }
 }

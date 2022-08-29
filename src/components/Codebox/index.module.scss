@@ -1,7 +1,7 @@
-.prism-code {
+.pre {
   padding: 0 !important;
 
-  .shell-box-top {
+  .top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -33,7 +33,7 @@
     }
   }
 
-  .shell-content {
+  .content {
     margin: 1em;
   }
 }
