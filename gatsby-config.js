@@ -101,11 +101,17 @@ const gatsbyConfig = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
-        defaultLayouts: {
-          default: require.resolve(`./src/components/Layout/index.tsx`),
-        },
+        rehypePlugins: [
+          {
+            resolve: '@starptech/rehype-webparser',
+            options: {
+              decodeEntities: true,
+              insertRequiredParents: true,
+            },
+          },
+        ],
         gatsbyRemarkPlugins: [
-          'gatsby-remark-copy-linked-files',
+          { resolve: 'gatsby-remark-copy-linked-files' },
           {
             resolve: 'gatsby-remark-autolink-headers',
             options: {

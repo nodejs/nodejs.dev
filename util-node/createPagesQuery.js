@@ -18,7 +18,7 @@ module.exports = `
             "package-manager"
           ]
         }
-        categoryName: { ne: "learn" }
+        categoryName: { nin: ["learn", "api"] }
       }
     }
     sort: { fields: [fileAbsolutePath], order: ASC }

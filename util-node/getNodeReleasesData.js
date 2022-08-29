@@ -4,6 +4,7 @@ const getReleaseStatus = require('./getReleaseStatus');
 async function getNodeReleasesData() {
   try {
     const releasesDataDetailURL = 'https://nodejs.org/dist/index.json';
+
     const releasesDataURL =
       'https://raw.githubusercontent.com/nodejs/Release/main/schedule.json';
 
@@ -12,33 +13,43 @@ async function getNodeReleasesData() {
 
     const releasesDataResponse = await fetch(releasesDataURL);
     const releasesDataResult = await releasesDataResponse.json();
+    const currentReleasesArray = [];
 
-    const mappedReleasesDataDetail = releasesDataDetailResult
-      .map(release => ({
-        ...release,
-        lts: release.lts || '',
-      }))
-      .slice(0, 50);
+    const getNonEolReleases = key => {
+      const release = releasesDataResult[key];
+      return new Date(release.end) >= new Date();
+    };
+
+    const mapReleaseData = key => {
+      const release = releasesDataResult[key];
+
+      currentReleasesArray.push(key);
+
+      return {
+        endOfLife: release.end,
+        maintenanceLTSStart: release.maintenance || '',
+        activeLTSStart: release.lts || '',
+        codename: release.codename || '',
+        initialRelease: release.start,
+        release: key,
+        status: getReleaseStatus(release),
+      };
+    };
 
     const filteredReleasesData = Object.keys(releasesDataResult)
-      .filter(key => {
-        const release = releasesDataResult[key];
-        const end = new Date(release.end);
-        return end >= new Date();
-      })
-      .map(key => {
-        const release = releasesDataResult[key];
+      .filter(getNonEolReleases)
+      .map(mapReleaseData);
 
-        return {
-          endOfLife: release.end,
-          maintenanceLTSStart: release.maintenance || '',
-          activeLTSStart: release.lts || '',
-          codename: release.codename || '',
-          initialRelease: release.start,
-          release: key,
-          status: getReleaseStatus(release),
-        };
-      });
+    const getReleaseDataFromNonEolReleases = release => {
+      const majorVersion = release.version.split('.')[0];
+
+      return currentReleasesArray.includes(majorVersion);
+    };
+
+    const mappedReleasesDataDetail = releasesDataDetailResult
+      .filter(getReleaseDataFromNonEolReleases)
+      .map(release => ({ ...release, lts: release.lts || '' }))
+      .slice(0, 50);
 
     return {
       nodeReleasesDataDetail: mappedReleasesDataDetail,

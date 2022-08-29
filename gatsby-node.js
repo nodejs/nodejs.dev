@@ -4,7 +4,9 @@ const path = require('path');
 const yaml = require('yaml');
 const readingTime = require('reading-time');
 const createSlug = require('./util-node/createSlug');
+const getCurrentActiveReleases = require('./util-node/getCurrentActiveReleases');
 const getNodeReleasesData = require('./util-node/getNodeReleasesData');
+const getApiDocsData = require('./util-node/getApiDocsData');
 const getBannersData = require('./util-node/getBannersData');
 const getNvmData = require('./util-node/getNvmData');
 const createPagesQuery = require('./util-node/createPagesQuery');
@@ -70,7 +72,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
-  const docTemplate = path.resolve('./src/templates/learn.tsx');
+  const learnTemplate = path.resolve('./src/templates/learn.tsx');
   const blogTemplate = path.resolve('./src/templates/blog.tsx');
   const blogCategoryTemplate = path.resolve(
     './src/templates/blog-category.tsx'
@@ -101,7 +103,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (firstLearnPage) {
     createPage({
       path: `/learn/`,
-      component: docTemplate,
+      component: learnTemplate,
       context: { ...firstLearnPage, navigationData },
     });
   }
@@ -109,7 +111,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   learnPages.forEach(page => {
     createPage({
       path: `/learn/${page.slug}`,
-      component: docTemplate,
+      component: learnTemplate,
       context: { ...page, navigationData },
     });
 
@@ -170,6 +172,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
     let slug;
 
+    // Special Handling for Blog Posts
     if (fileAbsolutePath && fileAbsolutePath.includes('/blog/')) {
       const [, year, month, day, filename] =
         BLOG_POST_FILENAME_REGEX.exec(relativePath);
@@ -226,9 +229,13 @@ exports.sourceNodes = async ({
   createNodeId,
   createContentDigest,
   reporter: { activityTimer },
+  cache,
+  store,
 }) => {
   let activity = activityTimer('Fetching Node release data');
+
   activity.start();
+
   try {
     const nodeReleasesData = await getNodeReleasesData();
 
@@ -250,7 +257,23 @@ exports.sourceNodes = async ({
     });
 
     activity.end();
+
+    activity = activityTimer('Fetching API Docs');
+
+    activity.start();
+
+    const currentActiveReleasesVersions =
+      getCurrentActiveReleases(nodeReleasesData);
+
+    const allApiFilesPerVersion = await getApiDocsData(
+      currentActiveReleasesVersions,
+      { createNode, createNodeId, cache, store }
+    );
+
+    activity.end();
+
     activity = activityTimer('Fetching Banners');
+
     activity.start();
 
     const bannersData = await getBannersData();

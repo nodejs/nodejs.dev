@@ -41,10 +41,10 @@ function iterateEdges(edges) {
     return {
       slug,
       title,
-      realPath: fileAbsolutePath || '',
+      relativePath,
       next: nextNodeData,
       previous: previousNodeData,
-      relativePath,
+      realPath: fileAbsolutePath || '',
       category: categoryName,
     };
   }
