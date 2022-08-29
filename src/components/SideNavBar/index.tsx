@@ -8,15 +8,15 @@ import styles from './index.module.scss';
 
 // eslint-disable-next-line no-shadow
 export enum SideNavBarKeys {
-  about = 'about',
-  governance = 'about/governance',
-  community = 'community',
-  workingGroups = 'about/working-groups',
-  releases = 'about/releases',
-  resources = 'resources',
-  privacy = 'about/privacy',
-  security = 'about/security',
-  packageManager = 'download/package-manager',
+  about = '/about/',
+  governance = '/about/governance/',
+  community = '/community/',
+  workingGroups = '/about/working-groups/',
+  releases = '/about/releases/',
+  resources = '/resources/',
+  privacy = '/about/privacy/',
+  security = '/about/security/',
+  packageManager = '/download/package-manager/',
 }
 
 const sideNavBarItems: SideNavBarItem[] = [

@@ -150,7 +150,7 @@ exports[`Article component renders correctly 1`] = `
     >
       <li>
         <a
-          href="/learn/test-slug"
+          href="test-slug"
           rel="prev"
         >
           <svg
@@ -174,7 +174,7 @@ exports[`Article component renders correctly 1`] = `
       </li>
       <li>
         <a
-          href="/learn/test-slug"
+          href="test-slug"
           rel="next"
         >
           Next
@@ -423,7 +423,7 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
     >
       <li>
         <a
-          href="/learn/test-slug"
+          href="test-slug"
           rel="prev"
         >
           <svg
@@ -447,7 +447,7 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
       </li>
       <li>
         <a
-          href="/learn/test-slug"
+          href="test-slug"
           rel="next"
         >
           Next
@@ -629,7 +629,7 @@ exports[`Article component should accept and render child components 1`] = `
     >
       <li>
         <a
-          href="/learn/test-slug"
+          href="test-slug"
           rel="prev"
         >
           <svg
@@ -653,7 +653,7 @@ exports[`Article component should accept and render child components 1`] = `
       </li>
       <li>
         <a
-          href="/learn/test-slug"
+          href="test-slug"
           rel="next"
         >
           Next

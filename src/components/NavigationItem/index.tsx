@@ -25,12 +25,10 @@ const NavigationItem = ({
     [styles.navigationItemApi]: isApiDocs,
   });
 
-  const slugWithoutSlash = slug.endsWith('/') ? slug.slice(0, -1) : slug;
-
   return (
     <Link
       id={`link-${slug}`}
-      to={slugWithoutSlash}
+      to={slug}
       className={className}
       aria-current={isActive ? 'page' : undefined}
     >

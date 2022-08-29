@@ -41,9 +41,13 @@ async function getNodeReleasesData() {
       .map(mapReleaseData);
 
     const getReleaseDataFromNonEolReleases = release => {
-      const majorVersion = release.version.split('.')[0];
+      if (release && release.version) {
+        const majorVersion = release.version.split('.')[0];
 
-      return currentReleasesArray.includes(majorVersion);
+        return currentReleasesArray.includes(majorVersion);
+      }
+
+      return false;
     };
 
     const mappedReleasesDataDetail = releasesDataDetailResult

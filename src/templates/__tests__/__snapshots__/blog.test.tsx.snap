@@ -43,11 +43,9 @@ exports[`LearnLayout Template renders correctly 1`] = `
           </li>
           <li>
             <a
-              href="https://nodejs.org/en/docs/"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/api/documentation"
             >
-              Documentation
+              API Docs
             </a>
           </li>
           <li>

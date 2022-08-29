@@ -1,5 +1,5 @@
 import React, { useEffect, useState, createRef } from 'react';
-import Prism from 'prismjs';
+import { highlightElement } from 'prismjs';
 import classnames from 'classnames';
 import styles from './index.module.scss';
 
@@ -49,7 +49,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
 
   useEffect(() => {
     if (codeRef.current) {
-      Prism.highlightElement(codeRef.current);
+      highlightElement(codeRef.current);
     }
   }, [codeRef]);
 

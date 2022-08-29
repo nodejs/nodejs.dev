@@ -10,7 +10,9 @@ exports[`NavigationSection component renders correctly 1`] = `
       role="menuitem"
       tabindex="0"
     >
-      Introduction
+      <span>
+        Introduction
+      </span>
       <svg
         aria-hidden="true"
         class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
@@ -29,7 +31,7 @@ exports[`NavigationSection component renders correctly 1`] = `
     >
       <a
         class="t-body2 navigationItem"
-        href="/learn/intro/"
+        href="intro"
         id="link-intro"
       >
         Section 1

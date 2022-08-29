@@ -13,6 +13,7 @@ describe('getNodeReleasesData', () => {
     // import dynamically in order to apply mock for node-fetch
     const getNodeReleasesData = (await import('../getNodeReleasesData'))
       .default;
+
     fetchMock.mockResponses(
       // mock first call to index.json
       JSON.stringify([
@@ -32,6 +33,7 @@ describe('getNodeReleasesData', () => {
         },
       })
     );
+
     const releases = await getNodeReleasesData();
 
     expect(releases).toStrictEqual({
@@ -46,12 +48,9 @@ describe('getNodeReleasesData', () => {
           status: 'Current',
         },
       ],
-      nodeReleasesDataDetail: [
-        {
-          lts: true,
-        },
-      ],
+      nodeReleasesDataDetail: [],
     });
+
     expect(fetchMock.mock.calls[0][0]).toBe(
       'https://nodejs.org/dist/index.json'
     );

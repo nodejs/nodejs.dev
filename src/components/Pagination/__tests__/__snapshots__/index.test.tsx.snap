@@ -7,7 +7,7 @@ exports[`Pagination component only renders links to pages that has a title 1`] =
   >
     <li>
       <a
-        href="/learn/test-slug"
+        href="test-slug"
         rel="prev"
       >
         <svg
@@ -41,7 +41,7 @@ exports[`Pagination component renders correctly when there is no next page 1`] =
   >
     <li>
       <a
-        href="/learn/test-slug"
+        href="test-slug"
         rel="prev"
       >
         <svg
@@ -76,7 +76,7 @@ exports[`Pagination component renders correctly when there is no previous page 1
     <li />
     <li>
       <a
-        href="/learn/test-slug"
+        href="test-slug"
         rel="next"
       >
         Next
@@ -109,7 +109,7 @@ exports[`Pagination component renders links to the next and previous page 1`] = 
   >
     <li>
       <a
-        href="/learn/test-slug"
+        href="test-slug"
         rel="prev"
       >
         <svg
@@ -133,7 +133,7 @@ exports[`Pagination component renders links to the next and previous page 1`] = 
     </li>
     <li>
       <a
-        href="/learn/test-slug"
+        href="test-slug"
         rel="next"
       >
         Next
