@@ -47,8 +47,8 @@ code[class*='language-'] {
 }
 
 a code[class*='language-'] {
-  color: var(--color-text-accent) !important;
   background-color: transparent !important;
+  color: var(--color-text-accent) !important;
   padding: 0 !important;
 }
 
