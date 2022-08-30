@@ -237,12 +237,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     // Speicla Handling for Api Docs Pages
     if (fileAbsolutePath && fileAbsolutePath.includes('/internalApiDoc-v')) {
       slug = `/api/${frontmatter.name}/`;
-
-      createNodeField({
-        node,
-        name: 'apiTypeName',
-        value: frontmatter.apiType,
-      });
     }
 
     createNodeField({

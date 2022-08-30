@@ -75,5 +75,6 @@
   "docs.api.history": "History",
   "docs.api.sourceLink": "Source Code:",
   "docs.api.history.version": "Version",
-  "docs.api.history.changes": "Changes"
+  "docs.api.history.changes": "Changes",
+  "docs.api.stability": "Stability: {stability} - {stability, select, 0 {Deprecated}1 {Experimental}2 {Stable}other {Legacy}} {remaining}"
 }

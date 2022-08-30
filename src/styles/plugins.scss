@@ -32,8 +32,8 @@ h6:hover .autolink-headers {
 // Plugin: prismjs
 pre[class*='language-'],
 code[class*='language-'] {
-  background: var(--black9) !important;
-  color: var(--black2) !important;
+  background: var(--black2) !important;
+  border-radius: 4px;
   margin-bottom: var(--space-24);
 }
 
@@ -41,6 +41,7 @@ code[class*='language-'] {
 :not(pre) > code[class*='language-'] {
   background-color: var(--black2) !important;
   color: var(--black9) !important;
+  font-weight: var(--font-weight-light);
   padding: 0 6px !important;
   text-decoration: none;
   text-shadow: none;
@@ -60,24 +61,9 @@ pre[class*='language-'] > code[class*='language-'] + h2 {
 // Plugin: prismjs
 .token {
   &.punctuation,
-  &.operator {
-    color: var(--black2) !important;
-  }
-
-  &.function {
-    color: var(--warning3) !important;
-  }
-
-  &.keyword {
-    color: var(--info3) !important;
-  }
-
+  &.operator,
   &.string {
-    color: var(--brand3) !important;
-  }
-
-  &.number {
-    color: var(--purple3) !important;
+    background-color: var(--black2) !important;
   }
 }
 

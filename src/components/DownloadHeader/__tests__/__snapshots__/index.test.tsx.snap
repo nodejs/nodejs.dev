@@ -5,9 +5,10 @@ exports[`DownloadHeader component renders correctly 1`] = `
   <div
     class="downloadHeader"
   >
-    <div>
-      HOME /
-       
+    <div
+      class="sectionTitle"
+    >
+      home / 
       <span
         class="active"
       >

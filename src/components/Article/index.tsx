@@ -84,12 +84,12 @@ const Article = ({
   const memoizedArticle = useMemo(
     () => (
       <>
+        {children && <div>{children}</div>}
         <h1 className={styles.headline}>{title}</h1>
         {blog
           ? renderBlogAuthors(date, authors as BlogPostAuthor[])
           : renderTOC(tableOfContents)}
         <div>{mdxRendered}</div>
-        {children && <div>{children}</div>}
         {!blog && authors.length > 0 && (
           <AuthorList authors={authors as string[]} />
         )}

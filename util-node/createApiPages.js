@@ -1,20 +1,16 @@
 const { iterateEdges, mapToNavigationData } = require('./createPageUtils');
 
-function createApiPages(pagesEdges, apiTypesNavigationData) {
+function createApiPages(pagesEdges, apiTypes) {
   const navigationData = {};
   const apiPages = iterateEdges(pagesEdges);
 
-  apiTypesNavigationData.forEach(({ name, slug }) => {
+  apiTypes.forEach(({ name, slug }) => {
     navigationData[slug] = {
       category: 'api',
       data: [],
     };
 
-    const filterByApiType = page => page.apiType === name;
-
-    navigationData[slug].data = apiPages
-      .filter(filterByApiType)
-      .map(mapToNavigationData);
+    // navigationData[slug].data = apiPages.map(mapToNavigationData);
   });
 
   return {

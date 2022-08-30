@@ -479,6 +479,11 @@ exports[`Article component should accept and render child components 1`] = `
   <article
     class="article"
   >
+    <div>
+      <div>
+        test child JSX
+      </div>
+    </div>
     <h1
       class="headline"
     >
@@ -556,11 +561,6 @@ exports[`Article component should accept and render child components 1`] = `
         </code>
          executable program in the command line.
       </p>
-    </div>
-    <div>
-      <div>
-        test child JSX
-      </div>
     </div>
     <div
       class="authorList"

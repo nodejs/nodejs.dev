@@ -29,6 +29,9 @@ const mutateChildren = (
 const surroundChildren = (children: JSX.Element[] | JSX.Element, tag: string) =>
   `<${tag}>${mutateChildren(children, '<th', '<td')}</${tag}>`;
 
+// This component exists to normalise HTML tables following the format
+// That always a <thead> and a <tbody> are mandatory
+// It also fixes up Tables that have swapped th's and td's
 const Table = ({ children }: Props): JSX.Element | null => {
   if (children.length === 0) {
     return null;

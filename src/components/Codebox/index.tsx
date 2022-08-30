@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { highlight, languages } from 'prismjs';
+import { sanitize } from 'isomorphic-dompurify';
 import classnames from 'classnames';
 import styles from './index.module.scss';
 
@@ -53,7 +54,9 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
 
     const prismLanguage = languages[parsedLangauge] || languages.text;
 
-    setParsedCode(highlight(stringCode, prismLanguage, parsedLangauge));
+    setParsedCode(
+      sanitize(highlight(stringCode, prismLanguage, parsedLangauge))
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

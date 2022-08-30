@@ -188,9 +188,10 @@ exports[`Download page renders correctly 1`] = `
       <div
         class="downloadHeader"
       >
-        <div>
-          HOME /
-           
+        <div
+          class="sectionTitle"
+        >
+          home / 
           <span
             class="active"
           >
@@ -1080,9 +1081,10 @@ exports[`Download page should handle LTS to Current switch 1`] = `
       <div
         class="downloadHeader"
       >
-        <div>
-          HOME /
-           
+        <div
+          class="sectionTitle"
+        >
+          home / 
           <span
             class="active"
           >

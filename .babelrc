@@ -7,7 +7,7 @@
       {
         "languages": ["js", "css", "jsx", "bash", "ts", "markup", "cpp", "c"],
         "plugins": [],
-        "theme": "okaidia",
+        "theme": "default",
         "css": true
       }
     ]

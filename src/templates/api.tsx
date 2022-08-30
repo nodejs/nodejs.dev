@@ -4,15 +4,15 @@ import Article from '../components/Article';
 import Layout from '../components/Layout';
 import DocsApiComponent from '../components/DocsApiComponent';
 import Navigation from '../containers/Navigation';
-import Stability from '../components/Stability';
 import { ApiPageData, LearnPageContext } from '../types';
+import SectionTitle from '../components/SectionTitle';
 
 interface Props {
   data: ApiPageData;
   pageContext: LearnPageContext;
 }
 
-const components = { DocsApiComponent, blockquote: Stability };
+const components = { DocsApiComponent };
 
 const Api = ({
   data: {
@@ -42,7 +42,9 @@ const Api = ({
         absolutePath={editPage}
         authors={[]}
         extraComponents={components}
-      />
+      >
+        <SectionTitle pathTree={['home', 'documentation', 'name']} />
+      </Article>
     </main>
   </Layout>
 );
@@ -55,6 +57,7 @@ export const query = graphql`
       body
       tableOfContents
       frontmatter {
+        name
         title
         displayTitle
         editPage

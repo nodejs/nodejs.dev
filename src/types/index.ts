@@ -7,11 +7,14 @@ export interface ApiChange {
 }
 
 export interface ApiComponentData {
-  introduced_in?: string;
-  added?: string | string[];
+  introduced_in?: string[];
+  deprecated?: string[];
+  removed?: string[];
+  added?: string[];
   type?: string;
   name?: string;
   source_link?: string;
+  stability?: number;
   changes?: ApiChange[];
 }
 
@@ -30,8 +33,6 @@ export interface ApiPageData {
       title: string;
       version: string;
       displayTitle: string;
-      apiType: ApiType;
-      introducedIn: string;
       editPage: string;
     };
   };

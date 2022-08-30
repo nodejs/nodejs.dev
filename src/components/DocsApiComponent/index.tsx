@@ -4,6 +4,7 @@ import { ApiComponentData } from '../../types';
 import AddedIn from './Components/AddedIn';
 import Changes from './Components/Changes';
 import SourceLink from './Components/SourceLink';
+import Stability from './Components/Stability';
 
 interface Props {
   data: ApiComponentData;
@@ -17,6 +18,14 @@ const DocsApiComponent = ({ data, version }: Props): JSX.Element | null => {
 
   if (data.added) {
     return <AddedIn added={data.added} />;
+  }
+
+  if (data.introduced_in) {
+    return <AddedIn added={data.introduced_in} />;
+  }
+
+  if (data.stability) {
+    return <Stability stability={data.stability} />;
   }
 
   if (data.source_link) {

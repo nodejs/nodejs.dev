@@ -39,7 +39,7 @@ function mapToNavigationData(page) {
 function iterateEdges(edges) {
   function updateMarkdownPage({ node }, index) {
     const {
-      fields: { slug, categoryName, apiTypeName },
+      fields: { slug, categoryName },
       parent: { relativePath },
       frontmatter: { title },
       fileAbsolutePath,
@@ -60,10 +60,6 @@ function iterateEdges(edges) {
       realPath: fileAbsolutePath || '',
       id: node.id,
     };
-
-    if (apiTypeName) {
-      result.apiType = apiTypeName;
-    }
 
     if (categoryName) {
       result.category = categoryName;

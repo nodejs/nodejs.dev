@@ -1,8 +1,8 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { ApiChange } from '../../../types';
-import { parseApiDocsVersion } from '../../../util/parseApiDocsVersion';
-import styles from './changes.module.scss';
+import { ApiChange } from '../../../../types';
+import { parseApiDocsVersion } from '../../../../util/parseApiDocsVersion';
+import styles from './index.module.scss';
 
 interface Props {
   added: string | string[];

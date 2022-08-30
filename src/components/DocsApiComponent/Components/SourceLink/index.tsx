@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import styles from './source-link.module.scss';
+import styles from './index.module.scss';
 
 interface Props {
   sourceName: string;

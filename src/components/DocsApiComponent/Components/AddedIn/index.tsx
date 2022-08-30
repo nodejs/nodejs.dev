@@ -1,11 +1,11 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { parseApiDocsVersion } from '../../../util/parseApiDocsVersion';
-import styles from './added.module.scss';
+import { parseApiDocsVersion } from '../../../../util/parseApiDocsVersion';
+import styles from './index.module.scss';
 
 interface Props {
-  added: string | string[];
+  added: string[];
 }
 
 const AddedIn = ({ added }: Props) => (

@@ -19,7 +19,6 @@ module.exports = `
         fields {
           slug
           categoryName
-          apiTypeName
         }
       }
       next {

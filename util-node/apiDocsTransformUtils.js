@@ -1,5 +1,37 @@
 const yaml = require('yaml');
 
+const typeParser = require('./api-generation/typeParser');
+
+const FEATURES_REGEX = {
+  // Fixes the references to Markdown pages into the API documentation
+  markdownFootnoteUrls: /(?![+a-z]+:)([^#?]+)\.md(#.+)?$/gim,
+  // ReGeX to match the in-line YAML metadatas
+  metadataComponents: /^<!--([\s\S]*?)-->$/gm,
+  // ReGeX to match the {Type} (Structure Type metadatas)
+  // eslint-disable-next-line no-useless-escape
+  structureType: /\{[a-zA-Z.|\[\]\\]+\}/gm,
+  // ReGeX for transforming `<pre>` into JSX snippets
+  removePreCodes: /<pre>|<\/pre>/gim,
+  // ReGeX for increasing the heading level
+  increaseHeadingLevel: /^(#{1,6}\s)/gim,
+  // ReGeX for the Stability Index
+  stabilityIndex: /> Stability: ([0-5])(?:\s*-\s*)?[a-z]+/gim,
+};
+
+const YAML_FEATURES = {
+  arrayOnlyMetadata: [
+    'added',
+    'napiVersion',
+    'deprecated',
+    'removed',
+    'introduced_in',
+  ],
+};
+
+function yamlValueToArray(value) {
+  return Array.isArray(value) ? value : [value];
+}
+
 function createApiDocsFrontmatter(firstLine, metadata) {
   if (firstLine.startsWith('#')) {
     const editPageLink = `https://github.com/nodejs/node/blob/${metadata.version}/doc/api/${metadata.name}.md`;
@@ -11,8 +43,6 @@ function createApiDocsFrontmatter(firstLine, metadata) {
       version: metadata.version,
       category: 'api',
       name: metadata.name,
-      apiType: metadata.type || 'module',
-      introducedIn: metadata.introduced_in || '',
       editPage: editPageLink,
     };
 
@@ -20,34 +50,53 @@ function createApiDocsFrontmatter(firstLine, metadata) {
       ([key, value]) => `${key}: '${value}'`
     );
 
-    return `---\n${result.join('\n')}\n---\n\n`;
+    return `---\n${result.join('\n')}\n---\n`;
   }
 
   return '';
 }
 
-function replaceUrlReferences(markdownContent) {
-  return markdownContent.replace(/(: [a-z_]*)(\.md)/gm, (_, prefix) => {
-    return prefix;
-  });
+function replaceStabilityIndex(markdownContent, metadata) {
+  return markdownContent.replace(
+    FEATURES_REGEX.stabilityIndex,
+    (_, stability) =>
+      `<DocsApiComponent version="${metadata.version}" data={{"stability":${stability}}} />`
+  );
 }
 
-function createYamlMetadataParser(file, version) {
-  const topLevelMetadata = {};
+function replaceUrlReferences(markdownContent) {
+  return markdownContent.replace(
+    FEATURES_REGEX.markdownFootnoteUrls,
+    (_, filename, hash) => `/api/${filename}${hash || ''}`
+  );
+}
 
-  const addTopLevelMetadata = parsedYaml => {
-    if (parsedYaml.introduced_in) {
-      topLevelMetadata.introduced_in = parsedYaml.introduced_in;
+function increaseHeadingLevel(markdownContent) {
+  return markdownContent.replace(
+    FEATURES_REGEX.increaseHeadingLevel,
+    (_, l) => {
+      // trim the string and calculate length as there might be whitespace
+      const level = l.trim().length;
+
+      return `${'#'.repeat(level === 6 ? level : level + 1)} `;
     }
+  );
+}
 
-    if (parsedYaml.type) {
-      topLevelMetadata.type = parsedYaml.type;
-    }
-  };
+function cleanseCodeTags(markdownContent) {
+  return markdownContent.replace(FEATURES_REGEX.removePreCodes, () => `\`\`\``);
+}
 
-  return {
-    topLevelMetadata,
-    transformYaml: (_, yamlString) => {
+function replaceTypeToLinks(markdownContent) {
+  return markdownContent.replace(FEATURES_REGEX.structureType, source =>
+    typeParser(source)
+  );
+}
+
+function replaceMarkdownMetadata(markdownContent, metadata) {
+  return markdownContent.replace(
+    FEATURES_REGEX.metadataComponents,
+    (_, yamlString) => {
       const cleanContent = yamlString.replace('YAML', '');
 
       const replacedContent = cleanContent
@@ -62,26 +111,59 @@ function createYamlMetadataParser(file, version) {
         const parsedYaml = yaml.parse(replacedContent);
 
         if (typeof parsedYaml === 'object') {
-          addTopLevelMetadata(parsedYaml);
+          Object.keys(parsedYaml).forEach(key => {
+            if (YAML_FEATURES.arrayOnlyMetadata.includes(key)) {
+              parsedYaml[key] = yamlValueToArray(parsedYaml[key]);
+            }
+          });
 
           const stringifiedData = JSON.stringify(parsedYaml);
 
-          return `<DocsApiComponent version="${version}" data={${stringifiedData}} />`;
+          return `<DocsApiComponent version="${metadata.version}" data={${stringifiedData}} />`;
         }
       } catch (e) {
         // eslint-disable-next-line no-console
-        console.warn(
-          `YAML failure: ${e.message}, ${replacedContent}, ${file.download_url}`
-        );
+        console.warn(`YAML failure: ${e.message}, ${metadata.downloadUrl}`);
       }
 
       return '';
+    }
+  );
+}
+
+function createMarkdownParser(markdownContent, metadata) {
+  let resultingContent = markdownContent;
+
+  return {
+    replaceMetadata: () => {
+      resultingContent = replaceMarkdownMetadata(resultingContent, metadata);
     },
+    replaceUrlReferences: () => {
+      resultingContent = replaceUrlReferences(resultingContent);
+    },
+    increaseHeadingLevel: () => {
+      resultingContent = increaseHeadingLevel(resultingContent);
+    },
+    replaceTypeToLinks: () => {
+      resultingContent = replaceTypeToLinks(resultingContent);
+    },
+    replaceStabilityIndex: () => {
+      resultingContent = replaceStabilityIndex(resultingContent, metadata);
+    },
+    createFrontmatter: () => {
+      const [firstLine, ...markdownContents] = resultingContent.split('\n');
+
+      const frontmatter = createApiDocsFrontmatter(firstLine, metadata);
+
+      if (frontmatter.length) {
+        resultingContent = `${frontmatter}${markdownContents.join('\n')}`;
+      }
+    },
+    cleanseCodeTags: () => {
+      resultingContent = cleanseCodeTags(resultingContent);
+    },
+    getParsedContent: () => resultingContent,
   };
 }
 
-module.exports = {
-  createApiDocsFrontmatter,
-  createYamlMetadataParser,
-  replaceUrlReferences,
-};
+module.exports = { createMarkdownParser };
