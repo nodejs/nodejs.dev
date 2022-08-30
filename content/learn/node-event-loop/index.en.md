@@ -154,7 +154,7 @@ We don't have to wait for functions like `setTimeout`, fetch or other things to 
 
 ECMAScript 2015 introduced the concept of the Job Queue, which is used by Promises (also introduced in ES6/ES2015). It's a way to execute the result of an async function as soon as possible, rather than being put at the end of the call stack.
 
-Promises that resolve before the current function ends will be executed right after the current function.
+Promises that resolve before the current function ends will be executed right after Call Stack is empty.
 
 Similar to a rollercoaster ride at an amusement park: the message queue puts you at the back of the queue, behind all the other people, where you will have to wait for your turn, while the job queue is the fastpass ticket that lets you take another ride right after you finished the previous one.
 
@@ -162,7 +162,7 @@ Example:
 
 <iframe
   title="ECMAScript 2015 Job Queue"
-  src="https://stackblitz.com/edit/nodejs-dev-0005-01?index.js&zenmode=1&view=editor"
+  src="https://stackblitz.com/edit/nodejs-dev-0005-01-vpufws?file=index.js&index.js&view=editor&zenmode=1"
   alt="nodejs-dev-0005-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
