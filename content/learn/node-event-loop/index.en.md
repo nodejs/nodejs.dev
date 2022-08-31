@@ -168,20 +168,21 @@ Example:
 </iframe>
 
 <!--```js
-const bar = () => console.log('bar')
+const bar = () => console.log('bar');
 
-const baz = () => console.log('baz')
+const baz = () => console.log('baz');
 
 const foo = () => {
-  console.log('foo')
-  setTimeout(bar, 0)
+  console.log('foo');
+  setTimeout(bar, 0);
   new Promise((resolve, reject) =>
-    resolve('should be right after baz, before bar')
-  ).then(resolve => console.log(resolve))
-  baz()
-}
+    resolve('should be after baz, before bar')
+  ).then((resolve) => console.log(resolve));
+  baz();
+};
 
-foo()
+foo();
+console.log('something is left on call stack');
 ```
 
 This prints
@@ -189,7 +190,8 @@ This prints
 ```txt
 foo
 baz
-should be right after baz, before bar
+something is left on call stack
+should be after baz, before bar
 bar
 ```-->
 
