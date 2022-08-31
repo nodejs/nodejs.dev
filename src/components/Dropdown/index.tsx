@@ -3,7 +3,7 @@ import {
   useElementPositionAndSize,
   ElementPositionAndSize,
 } from '../../hooks/useElementPositionAndSize';
-import './Dropdown.scss';
+import styles from './index.module.scss';
 
 export interface DropdownItem {
   title: string;
@@ -82,7 +82,7 @@ const Dropdown = <T extends HTMLElement>({
   );
 
   return (
-    <ul ref={dropdownRef} className="dropdownList" style={listStyle}>
+    <ul ref={dropdownRef} className={styles.dropdownList} style={listStyle}>
       {mappedElements}
     </ul>
   );

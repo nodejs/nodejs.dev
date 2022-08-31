@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import useNvmVersion from '../../../hooks/useNvmVersion';
 import ShellBox from '../../ShellBox';
-import '../InstallTabs.scss';
+import styles from '../index.module.scss';
 
 interface Props {
   nvmVersion: string;
@@ -15,17 +15,17 @@ export const PureLinuxPanel = ({ nvmVersion }: Props): JSX.Element => {
   return (
     <div>
       <ShellBox textToCopy={`curl -o- ${nvmInstallScriptUrl} | bash`}>
-        <span className="install__text__no-select">$</span>
-        <span className="install__text__command">curl -o- </span>
+        <span className={styles.installTextNoSelect}>$</span>
+        <span className={styles.installTextCommand}>curl -o- </span>
         {nvmInstallScriptUrl}
-        <span className="install__text__command"> | bash</span>
+        <span className={styles.installTextCommand}> | bash</span>
       </ShellBox>
       <ShellBox textToCopy="nvm install --lts">
-        <span className="install__text__no-select">$</span>
-        <span className="install__text__command">nvm</span> install --lts
+        <span className={styles.installTextNoSelect}>$</span>
+        <span className={styles.installTextCommand}>nvm</span> install --lts
       </ShellBox>
       <Link
-        className="install__docs-button"
+        className={styles.installDocsButton}
         to="/download/package-manager/#nvm"
       >
         <FormattedMessage id="components.installTabs.readDocs" />

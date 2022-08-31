@@ -1,0 +1,81 @@
+// Plugin: gatsby-remark-autolink-headers plugin
+.autolink-headers {
+  fill: var(--warning3);
+  left: -4px;
+  position: absolute;
+
+  &.before {
+    left: 0;
+    padding-right: 4px;
+    position: absolute;
+    top: 0;
+    transform: translateX(-100%);
+  }
+
+  svg {
+    visibility: hidden;
+  }
+}
+
+// Plugin: gatsby-remark-autolink-headers plugin
+h1:hover .autolink-headers,
+h2:hover .autolink-headers,
+h3:hover .autolink-headers,
+h4:hover .autolink-headers,
+h5:hover .autolink-headers,
+h6:hover .autolink-headers {
+  svg {
+    visibility: visible;
+  }
+}
+
+// Plugin: prismjs / prism-react-renderer
+pre[class*='language-'],
+code[class*='language-'] {
+  background: var(--black9) !important;
+  color: var(--black2) !important;
+  margin-bottom: var(--space-24);
+}
+
+// Plugin: prismjs / prism-react-renderer
+:not(pre) > code[class*='language-'] {
+  background-color: var(--black2) !important;
+  color: var(--black9) !important;
+  padding: 0 6px !important;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+// Plugin: prismjs / prism-react-renderer
+pre[class*='language-'] > code[class*='language-'] + h2 {
+  margin-top: var(--space-40);
+}
+
+// Plugin: prismjs / prism-react-renderer
+.token {
+  &.punctuation,
+  &.operator {
+    color: var(--black2) !important;
+  }
+
+  &.function {
+    color: var(--warning3) !important;
+  }
+
+  &.keyword {
+    color: var(--info3) !important;
+  }
+
+  &.string {
+    color: var(--brand3) !important;
+  }
+
+  &.number {
+    color: var(--purple3) !important;
+  }
+}
+
+// Plugin: gatsby-remark-prismjs
+.gatsby-highlight {
+  display: grid;
+}

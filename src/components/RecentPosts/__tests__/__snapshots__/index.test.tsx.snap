@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecentPosts component should render correctly 1`] = `
+<div>
+  <div
+    class="recentPosts"
+  >
+    <h2
+      class="recentPostsHeader"
+    >
+      Recent Posts
+    </h2>
+    <ul>
+      <li>
+        <a
+          class="link"
+          href="slug-mock/"
+        >
+          title-mock
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

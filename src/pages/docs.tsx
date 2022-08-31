@@ -5,13 +5,13 @@ import React, { useState, useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby';
 import DOMPurify from 'isomorphic-dompurify';
+import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
 import { useApiData } from '../hooks';
 import { ApiDocsObj, APIResponse } from '../hooks/useApiDocs';
 import { NodeReleaseDataDetail } from '../types';
 import Layout from '../components/Layout';
 
 import '../styles/docs.scss';
-import '../styles/article-reader.scss';
 
 type NodeReleaseVersion = Pick<NodeReleaseDataDetail, 'version'>;
 
@@ -162,7 +162,7 @@ const sideBarSection = (
 ): JSX.Element => (
   <li className="api-nav__list-item">
     <h2 className="t-body2 api-nav__list-title">
-      <i className="material-icons">offline_bolt</i>
+      <OfflineBoltIcon />
       {title}
     </h2>
     <ul className="api-nav__sub-list">

@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UpcomingReleases component renders correctly 1`] = `
+<div>
+  <div
+    class="upcomingReleases"
+  >
+    <div
+      class="reactTabs"
+      data-rttabs="true"
+    >
+      <ul
+        class="reactTabsTabList"
+        role="tablist"
+      >
+        <li
+          aria-controls="panel:r0:0"
+          aria-disabled="false"
+          aria-selected="true"
+          class="reactTabsTab reactTabsTabSelected"
+          data-rttab="true"
+          id="tab:r0:0"
+          role="tab"
+          tabindex="0"
+        >
+          Node.js 
+          v12
+        </li>
+        <li
+          aria-controls="panel:r0:1"
+          aria-disabled="false"
+          aria-selected="false"
+          class="reactTabsTab"
+          data-rttab="true"
+          id="tab:r0:1"
+          role="tab"
+        >
+          Node.js 
+          v14
+        </li>
+      </ul>
+      <div
+        aria-labelledby="tab:r0:0"
+        class="reactTabsTabPanel reactTabsTabPanelSelected"
+        id="panel:r0:0"
+        role="tabpanel"
+      >
+        <div
+          class="upcomingReleasesPanel"
+        >
+          <div
+            class="itemCurrent"
+          >
+            <svg />
+            <p
+              class="releaseTitle"
+            >
+              Current
+            </p>
+            <p
+              class="releaseDate"
+            >
+              Released
+               
+              2019-04-23
+            </p>
+          </div>
+          <div
+            class="itemLts"
+          >
+            <svg />
+            <p
+              class="releaseTitle"
+            >
+              LTS
+            </p>
+            <p
+              class="releaseDate"
+            >
+              Released
+               
+              2019-10-21
+            </p>
+          </div>
+          <div
+            class="itemMaintenance"
+          >
+            <svg />
+            <p
+              class="releaseTitle"
+            >
+              Maintenance
+            </p>
+            <p
+              class="releaseDate"
+            >
+              Released
+               
+              2020-11-30
+            </p>
+          </div>
+          <div
+            class="itemEndoflife"
+          >
+            <svg />
+            <p
+              class="releaseTitle"
+            >
+              End-of-life
+            </p>
+            <p
+              class="releaseDate"
+            >
+              Released
+               
+              2022-04-30
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-labelledby="tab:r0:1"
+        class="reactTabsTabPanel"
+        id="panel:r0:1"
+        role="tabpanel"
+      />
+    </div>
+  </div>
+</div>
+`;

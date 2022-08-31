@@ -1,16 +1,16 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import Author from '../../components/Author';
-import './AuthorList.scss';
+import styles from './index.module.scss';
 
 interface Props {
   authors: string[];
 }
 
 const AuthorList = ({ authors }: Props): null | JSX.Element => (
-  <div className="authorsList">
+  <div className={styles.authorList}>
     <FormattedMessage id="containers.authorList.title" />
-    <ul className="list">
+    <ul>
       {authors.map(
         (author, i): string | JSX.Element =>
           author && (
