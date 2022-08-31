@@ -32,7 +32,7 @@
     - npm-packages-local-global
     - npm-dependencies-devdependencies
     - npx
-- section: 'Asyhnchronous Work'
+- section: 'Asynchronous Work'
   items:
     - node-control-flow
     - node-event-loop
