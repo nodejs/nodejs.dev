@@ -18,7 +18,6 @@ const gatsbyConfig = {
     // gatsby-transformer-yaml transforms the id field into yamlId
     'Mdx.frontmatter.blogAuthors': `AuthorsYaml.yamlId`,
     'Mdx.frontmatter.category': `CategoriesYaml.name`,
-    'Mdx.frontmatter.apiType': `ApiTypesYaml.name`,
   },
   plugins: [
     'gatsby-plugin-catch-links',

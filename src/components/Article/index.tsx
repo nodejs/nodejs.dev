@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 import { MdxLink } from 'gatsby-theme-i18n';
@@ -63,67 +63,30 @@ const Article = ({
   date,
   children,
   extraComponents = {},
-}: Props): JSX.Element => {
-  const [mdxRendered, setMdxRendered] = useState<React.ReactElement | null>(
-    null
-  );
-
-  // Due to some pages being enormously big, we don't want to render the whole page on the server-side as it would take too long.
-  // Not to mention it could also lead to crashes and babel optimization issues as there's just too much to bundle on SSR
-  // Instead we render the contents of MDX Pages only within the client-side, and we memoize the remaining components
-  // to avoid re-rendering them on every page change.
-  useEffect(() => {
-    setMdxRendered(
+}: Props): JSX.Element => (
+  <article className={styles.article}>
+    {children && <div>{children}</div>}
+    <h1 className={styles.headline}>{title}</h1>
+    {blog
+      ? renderBlogAuthors(date, authors as BlogPostAuthor[])
+      : renderTOC(tableOfContents)}
+    <div>
       <MDXProvider components={{ ...mdxComponents, ...extraComponents }}>
         <MDXRenderer>{body}</MDXRenderer>
       </MDXProvider>
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const memoizedArticle = useMemo(
-    () => (
-      <>
-        {children && <div>{children}</div>}
-        <h1 className={styles.headline}>{title}</h1>
-        {blog
-          ? renderBlogAuthors(date, authors as BlogPostAuthor[])
-          : renderTOC(tableOfContents)}
-        <div>{mdxRendered}</div>
-        {!blog && authors.length > 0 && (
-          <AuthorList authors={authors as string[]} />
-        )}
-        {!blog && (
-          <EditLink
-            absolutePath={absolutePath}
-            relativePath={relativePath}
-            editPath={editPath}
-          />
-        )}
-        {!blog && <Pagination previous={previous} next={next} />}
-      </>
-    ),
-    [
-      absolutePath,
-      authors,
-      blog,
-      children,
-      date,
-      editPath,
-      mdxRendered,
-      next,
-      previous,
-      relativePath,
-      tableOfContents,
-      title,
-    ]
-  );
-
-  return (
-    <article className={styles.article}>
-      {mdxRendered && memoizedArticle}
-    </article>
-  );
-};
+    </div>
+    {!blog && authors.length > 0 && (
+      <AuthorList authors={authors as string[]} />
+    )}
+    {!blog && (
+      <EditLink
+        absolutePath={absolutePath}
+        relativePath={relativePath}
+        editPath={editPath}
+      />
+    )}
+    {!blog && <Pagination previous={previous} next={next} />}
+  </article>
+);
 
 export default Article;

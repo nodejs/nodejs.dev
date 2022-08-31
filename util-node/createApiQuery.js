@@ -1,9 +1,6 @@
 module.exports = `
 {
-  allMdx(
-    filter: { fields: { categoryName: { eq: "api" } } }
-    sort: { fields: [frontmatter___name], order: ASC }
-  ) {
+  pages: allMdx(filter: { fields: { categoryName: { eq: "api" } } }) {
     edges {
       node {
         id
@@ -14,6 +11,7 @@ module.exports = `
           }
         }
         frontmatter {
+          version
           title
         }
         fields {
@@ -36,6 +34,17 @@ module.exports = `
         fields {
           slug
         }
+      }
+    }
+  }
+  navigation: apiNavigation {
+    apiNavigationEntries: navigationEntries {
+      version
+      items {
+        title
+        slug
+        type
+        name
       }
     }
   }

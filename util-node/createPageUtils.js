@@ -41,7 +41,7 @@ function iterateEdges(edges) {
     const {
       fields: { slug, categoryName },
       parent: { relativePath },
-      frontmatter: { title },
+      frontmatter: { title, version },
       fileAbsolutePath,
     } = node;
 
@@ -63,6 +63,10 @@ function iterateEdges(edges) {
 
     if (categoryName) {
       result.category = categoryName;
+    }
+
+    if (version) {
+      result.version = version;
     }
 
     return result;

@@ -11,6 +11,7 @@ interface Props {
   label: string;
   category: string;
   isApiDocs?: boolean;
+  children?: JSX.Element;
 }
 
 const Navigation = ({
@@ -19,6 +20,7 @@ const Navigation = ({
   label,
   category,
   isApiDocs,
+  children,
 }: Props): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggle = (): void => setIsOpen(!isOpen);
@@ -51,6 +53,7 @@ const Navigation = ({
       <button type="button" className={styles.navigationOpen} onClick={toggle}>
         <FormattedMessage id="containers.navigation.title" />
       </button>
+      {children}
       {Object.keys(sections).map(
         (sectionKey: string): false | JSX.Element =>
           sections[sectionKey].category === category && (

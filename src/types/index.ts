@@ -31,7 +31,6 @@ export interface ApiPageData {
     body: string;
     tableOfContents: PageTableOfContents;
     frontmatter: {
-      name: string;
       title: string;
       version: string;
       displayTitle: string;
@@ -71,6 +70,14 @@ export interface HomepageData {
 }
 
 export interface LearnPageContext {
+  slug: string;
+  relativePath: string;
+  next: PaginationInfo;
+  previous: PaginationInfo;
+  navigationData: NavigationSectionData;
+}
+
+export interface ApiPageContext {
   slug: string;
   relativePath: string;
   next: PaginationInfo;

@@ -2,9 +2,5 @@
   slug: Globals
 - name: module
   slug: Modules
-- name: misc
-  slug: Misc
 - name: class
   slug: Classes
-- name: var
-  slug: Variables

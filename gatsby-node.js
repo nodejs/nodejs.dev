@@ -16,6 +16,7 @@ const createMarkdownPages = require('./util-node/createMarkdownPages');
 const createApiPages = require('./util-node/createApiPages');
 const redirects = require('./util-node/redirects');
 const nodeLocales = require('./util-node/locales');
+const { learnPath, apiPath, blogPath } = require('./pathPrefixes');
 
 const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
 
@@ -106,7 +107,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   } = learnResult.data;
 
   const {
-    allMdx: { edges: apiEdges },
+    pages: { edges: apiEdges },
+    navigation: { apiNavigationEntries },
   } = apiResult.data;
 
   const {
@@ -116,14 +118,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     navigationData: learNavigationData,
   } = createMarkdownPages(pageEdges, learnEdges, learnYamlNavigationData);
 
-  const { apiPages, navigationData: apiNavigationData } = createApiPages(
-    apiEdges,
-    apiTypesNavigationData
-  );
+  const {
+    apiPages,
+    latestVersion,
+    navigationData: apiNavigationData,
+    defaultNavigationRedirects: apiRedirects,
+  } = createApiPages(apiEdges, apiTypesNavigationData, apiNavigationEntries);
 
   if (firstLearnPage) {
     createPage({
-      path: '/learn/',
+      path: learnPath,
       component: learnTemplate,
       context: { ...firstLearnPage, navigationData: learNavigationData },
     });
@@ -139,9 +143,43 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   categoryEdges.forEach(({ node }) => {
     createPage({
-      path: `/blog/${node.name}/`,
+      path: `${blogPath}${node.name}/`,
       component: blogCategoryTemplate,
       context: { categoryName: node.name },
+    });
+  });
+
+  createRedirect({
+    fromPath: apiPath,
+    toPath: `${apiPath}${latestVersion}/documentation/`,
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  createRedirect({
+    fromPath: `${apiPath}${latestVersion}/`,
+    toPath: `${apiPath}${latestVersion}/documentation/`,
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
+
+  // Note.: These Redirects only work when coming from `/` (without language prefix)
+  apiRedirects.forEach(({ from, to }) => {
+    createRedirect({
+      // Redirects from /api/{something} to /api/{version}/{something}
+      fromPath: `${apiPath}${from}`,
+      toPath: `${apiPath}${to}`,
+      redirectInBrowser: true,
+      isPermanent: true,
+    });
+
+    createRedirect({
+      // Redirects from the old API URL schema (Nodejs.org)
+      // To the new URL schema
+      fromPath: `${apiPath}${from.slice(0, -1)}.html`,
+      toPath: `${apiPath}${to}`,
+      redirectInBrowser: true,
+      isPermanent: true,
     });
   });
 
@@ -149,20 +187,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createPage({
       path: page.slug,
       component: apiTemplate,
-      context: { ...page, navigationData: apiNavigationData },
-    });
-
-    createRedirect({
-      fromPath: `${page.slug.slice(0, -1)}.html`,
-      toPath: page.slug,
-      isPermanent: true,
+      context: { ...page, navigationData: apiNavigationData[page.version] },
     });
   });
 
   markdownPages.forEach(page => {
     // Blog Pages don't necessary need to be within the `blog` category
     // But actually inside /content/blog/ section of the repository
-    if (page.realPath.match('/blog/')) {
+    if (page.realPath.match(blogPath)) {
       createPage({
         path: page.slug,
         component: blogTemplate,
@@ -201,42 +233,47 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
     let slug;
 
-    // Special Handling for Blog Posts
-    if (fileAbsolutePath && fileAbsolutePath.includes('/blog/')) {
-      const [, year, month, day, filename] =
-        BLOG_POST_FILENAME_REGEX.exec(relativePath);
+    if (fileAbsolutePath) {
+      // Special Handling for Blog Posts
+      if (fileAbsolutePath.includes(blogPath)) {
+        const [, year, month, day, filename] =
+          BLOG_POST_FILENAME_REGEX.exec(relativePath);
 
-      slug = '/blog/';
+        slug = blogPath;
 
-      if (frontmatter.category) {
-        slug += `${frontmatter.category}/`;
+        if (frontmatter.category) {
+          slug += `${frontmatter.category}/`;
+        }
+
+        slug += `${year}/${month}/${day}/${filename}`;
+
+        const date = new Date(year, month - 1, day);
+
+        createNodeField({
+          node,
+          name: 'date',
+          value: date.toJSON(),
+        });
+
+        createNodeField({
+          node,
+          name: `readingTime`,
+          value: readingTime(node.rawBody),
+        });
       }
 
-      slug += `${year}/${month}/${day}/${filename}`;
+      if (fileAbsolutePath.includes(learnPath)) {
+        // Special Handling for Learn Content
+        slug = `${learnPath}${createSlug(frontmatter.title)}/`;
+      }
 
-      const date = new Date(year, month - 1, day);
-
-      createNodeField({
-        node,
-        name: 'date',
-        value: date.toJSON(),
-      });
-
-      createNodeField({
-        node,
-        name: `readingTime`,
-        value: readingTime(node.rawBody),
-      });
-    }
-
-    // Special Handling for Learn Content
-    if (fileAbsolutePath && fileAbsolutePath.includes('/learn/')) {
-      slug = `/learn/${createSlug(frontmatter.title)}/`;
-    }
-
-    // Speicla Handling for Api Docs Pages
-    if (fileAbsolutePath && fileAbsolutePath.includes('/internalApiDoc-v')) {
-      slug = `/api/${frontmatter.name}/`;
+      // For Nodes created from Buffers the Absolute Path comes differently
+      // From what we would expect of `apiPath`
+      if (fileAbsolutePath.includes('/-api-v')) {
+        // `apiDoc-v` prefix comes from `getApiDocsData.js` and its used to define the file name
+        // Speicla Handling for Api Docs Pages
+        slug = `${apiPath}${frontmatter.version}/${frontmatter.title}/`;
+      }
     }
 
     createNodeField({
@@ -307,10 +344,27 @@ exports.sourceNodes = async ({
     // As the v14 and v16 docs have some Markdown Errors
     const [latestNodeRelease] = currentActiveReleasesVersions.reverse();
 
-    await getApiDocsData([latestNodeRelease], {
+    const apiNavigationData = await getApiDocsData([latestNodeRelease], {
       createNode,
       createNodeId,
       cache,
+    });
+
+    const apiNavigationMeta = {
+      id: createNodeId('api-navigation'),
+      parent: null,
+      children: [],
+      internal: {
+        type: 'ApiNavigation',
+        mediaType: 'application/json',
+        content: JSON.stringify(apiNavigationData),
+        contentDigest: createContentDigest(apiNavigationData),
+      },
+    };
+
+    await createNode({
+      ...apiNavigationData,
+      ...apiNavigationMeta,
     });
 
     activity.end();
@@ -339,7 +393,9 @@ exports.sourceNodes = async ({
     });
 
     activity.end();
+
     activity = activityTimer('Fetching latest NVM version data');
+
     activity.start();
 
     const nvmData = await getNvmData();

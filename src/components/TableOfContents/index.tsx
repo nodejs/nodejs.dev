@@ -14,12 +14,17 @@ const removeApiSpanTagFromItem = (item: TableOfContentsItem) => ({
   title: item.title.replace(/<DataTag tag="(M|C|E)" \/> /, ''),
 });
 
-const traverseTableOfContents = (items: TableOfContentsItem[]) => (
+const traverseTableOfContents = (
+  items: TableOfContentsItem[],
+  depth: number
+) => (
   <ul>
     {items.map(removeApiSpanTagFromItem).map(item => (
       <li key={item.url}>
         <Link to={item.url}>{item.title}</Link>
-        {item.items && traverseTableOfContents(item.items)}
+        {item.items && depth < 2
+          ? traverseTableOfContents(item.items, depth + 1)
+          : null}
       </li>
     ))}
   </ul>
@@ -34,7 +39,7 @@ const TableOfContents = ({ tableOfContents }: Props): null | JSX.Element => {
             <FormattedMessage id="components.tableOfContents.heading" />
           </strong>
         </summary>
-        {traverseTableOfContents(tableOfContents.items)}
+        {traverseTableOfContents(tableOfContents.items, 1)}
       </details>
     );
   }

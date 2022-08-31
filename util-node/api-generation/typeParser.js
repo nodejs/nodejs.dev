@@ -1,5 +1,6 @@
-const jsDocPrefix = 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/';
+const { apiPath } = require('../../pathPrefixes');
 
+const jsDocPrefix = 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/';
 const jsDataStructuresUrl = `${jsDocPrefix}Data_structures`;
 const jsPrimitives = {
   boolean: 'Boolean',
@@ -38,11 +39,10 @@ const jsGlobalTypes = [
 
 const customTypesMap = {
   any: `${jsDataStructuresUrl}#Data_types`,
-
   this: `${jsDocPrefix}Reference/Operators/this`,
 
-  AbortController: 'globals.html#class-abortcontroller',
-  AbortSignal: 'globals.html#class-abortsignal',
+  AbortController: 'globals#abortcontroller',
+  AbortSignal: 'globals#abortsignal',
 
   ArrayBufferView:
     'https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView',
@@ -59,10 +59,9 @@ const customTypesMap = {
   bigint: `${jsDocPrefix}Reference/Global_Objects/BigInt`,
   'WebAssembly.Instance': `${jsDocPrefix}Reference/Global_Objects/WebAssembly/Instance`,
 
-  Blob: 'buffer.html#class-blob',
+  Blob: 'buffer#blob',
 
-  BroadcastChannel:
-    'worker_threads.html#class-broadcastchannel-extends-eventtarget',
+  BroadcastChannel: 'worker_threads#broadcastchannel-extends-eventtarget',
 
   Iterable: `${jsDocPrefix}Reference/Iteration_protocols#The_iterable_protocol`,
   Iterator: `${jsDocPrefix}Reference/Iteration_protocols#The_iterator_protocol`,
@@ -70,189 +69,181 @@ const customTypesMap = {
   'Module Namespace Object':
     'https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects',
 
-  AsyncHook: 'async_hooks.html#async_hookscreatehookcallbacks',
-  AsyncResource: 'async_hooks.html#class-asyncresource',
+  AsyncHook: 'async_hooks#async_hookscreatehookcallbacks',
+  AsyncResource: 'async_hooks#asyncresource',
 
-  'brotli options': 'zlib.html#class-brotlioptions',
+  'brotli options': 'zlib#brotlioptions',
 
-  Buffer: 'buffer.html#class-buffer',
+  Buffer: 'buffer#buffer',
 
-  ChildProcess: 'child_process.html#class-childprocess',
+  ChildProcess: 'child_process#childprocess',
 
-  'cluster.Worker': 'cluster.html#class-worker',
+  'cluster.Worker': 'cluster#worker',
 
-  Cipher: 'crypto.html#class-cipher',
-  Decipher: 'crypto.html#class-decipher',
-  DiffieHellman: 'crypto.html#class-diffiehellman',
-  DiffieHellmanGroup: 'crypto.html#class-diffiehellmangroup',
-  ECDH: 'crypto.html#class-ecdh',
-  Hash: 'crypto.html#class-hash',
-  Hmac: 'crypto.html#class-hmac',
-  KeyObject: 'crypto.html#class-keyobject',
-  Sign: 'crypto.html#class-sign',
-  Verify: 'crypto.html#class-verify',
-  'crypto.constants': 'crypto.html#cryptoconstants',
+  Cipher: 'crypto#cipher',
+  Decipher: 'crypto#decipher',
+  DiffieHellman: 'crypto#diffiehellman',
+  DiffieHellmanGroup: 'crypto#diffiehellmangroup',
+  ECDH: 'crypto#ecdh',
+  Hash: 'crypto#hash',
+  Hmac: 'crypto#hmac',
+  KeyObject: 'crypto#keyobject',
+  Sign: 'crypto#sign',
+  Verify: 'crypto#verify',
+  'crypto.constants': 'crypto#cryptoconstants',
 
-  CryptoKey: 'webcrypto.html#class-cryptokey',
-  CryptoKeyPair: 'webcrypto.html#class-cryptokeypair',
-  Crypto: 'webcrypto.html#class-crypto',
-  SubtleCrypto: 'webcrypto.html#class-subtlecrypto',
-  RsaOaepParams: 'webcrypto.html#class-rsaoaepparams',
-  AlgorithmIdentifier: 'webcrypto.html#class-algorithmidentifier',
-  AesCtrParams: 'webcrypto.html#class-aesctrparams',
-  AesCbcParams: 'webcrypto.html#class-aescbcparams',
-  AesGcmParams: 'webcrypto.html#class-aesgcmparams',
-  EcdhKeyDeriveParams: 'webcrypto.html#class-ecdhkeyderiveparams',
-  HkdfParams: 'webcrypto.html#class-hkdfparams',
-  Pbkdf2Params: 'webcrypto.html#class-pbkdf2params',
-  HmacKeyGenParams: 'webcrypto.html#class-hmackeygenparams',
-  AesKeyGenParams: 'webcrypto.html#class-aeskeygenparams',
-  RsaHashedKeyGenParams: 'webcrypto.html#class-rsahashedkeygenparams',
-  EcKeyGenParams: 'webcrypto.html#class-eckeygenparams',
-  RsaHashedImportParams: 'webcrypto.html#class-rsahashedimportparams',
-  EcKeyImportParams: 'webcrypto.html#class-eckeyimportparams',
-  HmacImportParams: 'webcrypto.html#class-hmacimportparams',
-  EcdsaParams: 'webcrypto.html#class-ecdsaparams',
-  RsaPssParams: 'webcrypto.html#class-rsapssparams',
-  Ed448Params: 'webcrypto.html#class-ed448params',
+  CryptoKey: 'webcrypto#cryptokey',
+  CryptoKeyPair: 'webcrypto#cryptokeypair',
+  Crypto: 'webcrypto#crypto',
+  SubtleCrypto: 'webcrypto#subtlecrypto',
+  RsaOaepParams: 'webcrypto#rsaoaepparams',
+  AlgorithmIdentifier: 'webcrypto#algorithmidentifier',
+  AesCtrParams: 'webcrypto#aesctrparams',
+  AesCbcParams: 'webcrypto#aescbcparams',
+  AesGcmParams: 'webcrypto#aesgcmparams',
+  EcdhKeyDeriveParams: 'webcrypto#ecdhkeyderiveparams',
+  HkdfParams: 'webcrypto#hkdfparams',
+  Pbkdf2Params: 'webcrypto#pbkdf2params',
+  HmacKeyGenParams: 'webcrypto#hmackeygenparams',
+  AesKeyGenParams: 'webcrypto#aeskeygenparams',
+  RsaHashedKeyGenParams: 'webcrypto#rsahashedkeygenparams',
+  EcKeyGenParams: 'webcrypto#eckeygenparams',
+  RsaHashedImportParams: 'webcrypto#rsahashedimportparams',
+  EcKeyImportParams: 'webcrypto#eckeyimportparams',
+  HmacImportParams: 'webcrypto#hmacimportparams',
+  EcdsaParams: 'webcrypto#ecdsaparams',
+  RsaPssParams: 'webcrypto#rsapssparams',
+  Ed448Params: 'webcrypto#ed448params',
 
-  'dgram.Socket': 'dgram.html#class-dgramsocket',
+  'dgram.Socket': 'dgram#dgramsocket',
 
-  Channel: 'diagnostics_channel.html#class-channel',
+  Channel: 'diagnostics_channel#channel',
 
-  Domain: 'domain.html#class-domain',
+  Domain: 'domain#domain',
 
-  'errors.Error': 'errors.html#class-error',
+  'errors.Error': 'errors#error',
 
-  'import.meta': 'esm.html#importmeta',
+  'import.meta': 'esm#importmeta',
 
-  EventEmitter: 'events.html#class-eventemitter',
-  EventTarget: 'events.html#class-eventtarget',
-  Event: 'events.html#class-event',
-  CustomEvent: 'events.html#class-customevent',
-  EventListener: 'events.html#event-listener',
+  EventEmitter: 'events#eventemitter',
+  EventTarget: 'events#eventtarget',
+  Event: 'events#event',
+  CustomEvent: 'events#customevent',
+  EventListener: 'events#listener',
 
-  FileHandle: 'fs.html#class-filehandle',
-  'fs.Dir': 'fs.html#class-fsdir',
-  'fs.Dirent': 'fs.html#class-fsdirent',
-  'fs.FSWatcher': 'fs.html#class-fsfswatcher',
-  'fs.ReadStream': 'fs.html#class-fsreadstream',
-  'fs.Stats': 'fs.html#class-fsstats',
-  'fs.StatWatcher': 'fs.html#class-fsstatwatcher',
-  'fs.WriteStream': 'fs.html#class-fswritestream',
+  FileHandle: 'fs#filehandle',
+  'fs.Dir': 'fs#fsdir',
+  'fs.Dirent': 'fs#fsdirent',
+  'fs.FSWatcher': 'fs#fsfswatcher',
+  'fs.ReadStream': 'fs#fsreadstream',
+  'fs.Stats': 'fs#fsstats',
+  'fs.StatWatcher': 'fs#fsstatwatcher',
+  'fs.WriteStream': 'fs#fswritestream',
 
-  'http.Agent': 'http.html#class-httpagent',
-  'http.ClientRequest': 'http.html#class-httpclientrequest',
-  'http.IncomingMessage': 'http.html#class-httpincomingmessage',
-  'http.OutgoingMessage': 'http.html#class-httpoutgoingmessage',
-  'http.Server': 'http.html#class-httpserver',
-  'http.ServerResponse': 'http.html#class-httpserverresponse',
+  'http.Agent': 'http#httpagent',
+  'http.ClientRequest': 'http#httpclientrequest',
+  'http.IncomingMessage': 'http#httpincomingmessage',
+  'http.OutgoingMessage': 'http#httpoutgoingmessage',
+  'http.Server': 'http#httpserver',
+  'http.ServerResponse': 'http#httpserverresponse',
 
-  ClientHttp2Session: 'http2.html#class-clienthttp2session',
-  ClientHttp2Stream: 'http2.html#class-clienthttp2stream',
-  'HTTP/2 Headers Object': 'http2.html#headers-object',
-  'HTTP/2 Settings Object': 'http2.html#settings-object',
-  'http2.Http2ServerRequest': 'http2.html#class-http2http2serverrequest',
-  'http2.Http2ServerResponse': 'http2.html#class-http2http2serverresponse',
-  Http2SecureServer: 'http2.html#class-http2secureserver',
-  Http2Server: 'http2.html#class-http2server',
-  Http2Session: 'http2.html#class-http2session',
-  Http2Stream: 'http2.html#class-http2stream',
-  ServerHttp2Stream: 'http2.html#class-serverhttp2stream',
-  ServerHttp2Session: 'http2.html#class-serverhttp2session',
+  ClientHttp2Session: 'http2#clienthttp2session',
+  ClientHttp2Stream: 'http2#clienthttp2stream',
+  'HTTP/2 Headers Object': 'http2#headers-object',
+  'HTTP/2 Settings Object': 'http2#settings-object',
+  'http2.Http2ServerRequest': 'http2#http2http2serverrequest',
+  'http2.Http2ServerResponse': 'http2#http2http2serverresponse',
+  Http2SecureServer: 'http2#http2secureserver',
+  Http2Server: 'http2#http2server',
+  Http2Session: 'http2#http2session',
+  Http2Stream: 'http2#http2stream',
+  ServerHttp2Stream: 'http2#serverhttp2stream',
+  ServerHttp2Session: 'http2#serverhttp2session',
 
-  'https.Server': 'https.html#class-httpsserver',
+  'https.Server': 'https#httpsserver',
 
-  module: 'modules.html#the-module-object',
+  module: 'modules#the-module-object',
 
-  'module.SourceMap': 'module.html#class-modulesourcemap',
+  'module.SourceMap': 'module#modulesourcemap',
 
-  require: 'modules.html#requireid',
+  require: 'modules#requireid',
 
-  Handle: 'net.html#serverlistenhandle-backlog-callback',
-  'net.BlockList': 'net.html#class-netblocklist',
-  'net.Server': 'net.html#class-netserver',
-  'net.Socket': 'net.html#class-netsocket',
-  'net.SocketAddress': 'net.html#class-netsocketaddress',
+  Handle: 'net#serverlistenhandle-backlog-callback',
+  'net.BlockList': 'net#netblocklist',
+  'net.Server': 'net#netserver',
+  'net.Socket': 'net#netsocket',
+  'net.SocketAddress': 'net#netsocketaddress',
 
-  NodeEventTarget: 'events.html#class-nodeeventtarget',
+  NodeEventTarget: 'events#nodeeventtarget',
 
-  'os.constants.dlopen': 'os.html#dlopen-constants',
+  'os.constants.dlopen': 'os#dlopen-constants',
 
-  Histogram: 'perf_hooks.html#class-histogram',
-  IntervalHistogram:
-    'perf_hooks.html#class-intervalhistogram-extends-histogram',
-  RecordableHistogram:
-    'perf_hooks.html#class-recordablehistogram-extends-histogram',
-  PerformanceEntry: 'perf_hooks.html#class-performanceentry',
-  PerformanceNodeTiming: 'perf_hooks.html#class-performancenodetiming',
-  PerformanceObserver: 'perf_hooks.html#class-perf_hooksperformanceobserver',
-  PerformanceObserverEntryList:
-    'perf_hooks.html#class-performanceobserverentrylist',
+  Histogram: 'perf_hooks#histogram',
+  IntervalHistogram: 'perf_hooks#intervalhistogram-extends-histogram',
+  RecordableHistogram: 'perf_hooks#recordablehistogram-extends-histogram',
+  PerformanceEntry: 'perf_hooks#performanceentry',
+  PerformanceNodeTiming: 'perf_hooks#performancenodetiming',
+  PerformanceObserver: 'perf_hooks#perf_hooksperformanceobserver',
+  PerformanceObserverEntryList: 'perf_hooks#performanceobserverentrylist',
 
-  'readline.Interface': 'readline.html#class-readlineinterface',
-  'readline.InterfaceConstructor': 'readline.html#class-interfaceconstructor',
-  'readlinePromises.Interface': 'readline.html#class-readlinepromisesinterface',
+  'readline.Interface': 'readline#readlineinterface',
+  'readline.InterfaceConstructor': 'readline#interfaceconstructor',
+  'readlinePromises.Interface': 'readline#readlinepromisesinterface',
 
-  'repl.REPLServer': 'repl.html#class-replserver',
+  'repl.REPLServer': 'repl#replserver',
 
-  Stream: 'stream.html#stream',
-  'stream.Duplex': 'stream.html#class-streamduplex',
-  Duplex: 'stream.html#class-streamduplex',
-  'stream.Readable': 'stream.html#class-streamreadable',
-  Readable: 'stream.html#class-streamreadable',
-  'stream.Transform': 'stream.html#class-streamtransform',
-  Transform: 'stream.html#class-streamtransform',
-  'stream.Writable': 'stream.html#class-streamwritable',
-  Writable: 'stream.html#class-streamwritable',
+  Stream: 'stream#stream',
+  'stream.Duplex': 'stream#streamduplex',
+  Duplex: 'stream#streamduplex',
+  'stream.Readable': 'stream#streamreadable',
+  Readable: 'stream#streamreadable',
+  'stream.Transform': 'stream#streamtransform',
+  Transform: 'stream#streamtransform',
+  'stream.Writable': 'stream#streamwritable',
+  Writable: 'stream#streamwritable',
 
-  Immediate: 'timers.html#class-immediate',
-  Timeout: 'timers.html#class-timeout',
-  Timer: 'timers.html#timers',
+  Immediate: 'timers#immediate',
+  Timeout: 'timers#timeout',
+  Timer: 'timers#timers',
 
-  TapStream: 'test.html#class-tapstream',
+  TapStream: 'test#tapstream',
 
-  'tls.SecureContext': 'tls.html#tlscreatesecurecontextoptions',
-  'tls.Server': 'tls.html#class-tlsserver',
-  'tls.TLSSocket': 'tls.html#class-tlstlssocket',
+  'tls.SecureContext': 'tls#tlscreatesecurecontextoptions',
+  'tls.Server': 'tls#tlsserver',
+  'tls.TLSSocket': 'tls#tlstlssocket',
 
-  Tracing: 'tracing.html#tracing-object',
+  Tracing: 'tracing#tracing-object',
 
-  URL: 'url.html#the-whatwg-url-api',
-  URLSearchParams: 'url.html#class-urlsearchparams',
+  URL: 'url#the-whatwg-url-api',
+  URLSearchParams: 'url#urlsearchparams',
 
-  'vm.Module': 'vm.html#class-vmmodule',
-  'vm.Script': 'vm.html#class-vmscript',
-  'vm.SourceTextModule': 'vm.html#class-vmsourcetextmodule',
+  'vm.Module': 'vm#vmmodule',
+  'vm.Script': 'vm#vmscript',
+  'vm.SourceTextModule': 'vm#vmsourcetextmodule',
 
-  MessagePort: 'worker_threads.html#class-messageport',
-  Worker: 'worker_threads.html#class-worker',
+  MessagePort: 'worker_threads#messageport',
+  Worker: 'worker_threads#worker',
 
-  X509Certificate: 'crypto.html#class-x509certificate',
+  X509Certificate: 'crypto#x509certificate',
 
-  'zlib options': 'zlib.html#class-options',
+  'zlib options': 'zlib#options',
 
-  ReadableStream: 'webstreams.html#class-readablestream',
-  ReadableStreamDefaultReader:
-    'webstreams.html#class-readablestreamdefaultreader',
-  ReadableStreamBYOBReader: 'webstreams.html#class-readablestreambyobreader',
-  ReadableStreamDefaultController:
-    'webstreams.html#class-readablestreamdefaultcontroller',
-  ReadableByteStreamController:
-    'webstreams.html#class-readablebytestreamcontroller',
-  ReadableStreamBYOBRequest: 'webstreams.html#class-readablestreambyobrequest',
-  WritableStream: 'webstreams.html#class-writablestream',
-  WritableStreamDefaultWriter:
-    'webstreams.html#class-writablestreamdefaultwriter',
-  WritableStreamDefaultController:
-    'webstreams.html#class-writablestreamdefaultcontroller',
-  TransformStream: 'webstreams.html#class-transformstream',
+  ReadableStream: 'webstreams#readablestream',
+  ReadableStreamDefaultReader: 'webstreams#readablestreamdefaultreader',
+  ReadableStreamBYOBReader: 'webstreams#readablestreambyobreader',
+  ReadableStreamDefaultController: 'webstreams#readablestreamdefaultcontroller',
+  ReadableByteStreamController: 'webstreams#readablebytestreamcontroller',
+  ReadableStreamBYOBRequest: 'webstreams#readablestreambyobrequest',
+  WritableStream: 'webstreams#writablestream',
+  WritableStreamDefaultWriter: 'webstreams#writablestreamdefaultwriter',
+  WritableStreamDefaultController: 'webstreams#writablestreamdefaultcontroller',
+  TransformStream: 'webstreams#transformstream',
   TransformStreamDefaultController:
-    'webstreams.html#class-transformstreamdefaultcontroller',
-  ByteLengthQueuingStrategy: 'webstreams.html#class-bytelengthqueuingstrategy',
-  CountQueuingStrategy: 'webstreams.html#class-countqueuingstrategy',
-  TextEncoderStream: 'webstreams.html#class-textencoderstream',
-  TextDecoderStream: 'webstreams.html#class-textdecoderstream',
+    'webstreams#transformstreamdefaultcontroller',
+  ByteLengthQueuingStrategy: 'webstreams#bytelengthqueuingstrategy',
+  CountQueuingStrategy: 'webstreams#countqueuingstrategy',
+  TextEncoderStream: 'webstreams#textencoderstream',
+  TextDecoderStream: 'webstreams#textdecoderstream',
 
   FormData: 'https://developer.mozilla.org/en-US/docs/Web/API/FormData',
   Headers: 'https://developer.mozilla.org/en-US/docs/Web/API/Headers',
@@ -284,14 +275,18 @@ function toLink(source) {
       const typeTextFull = typeText;
       typeText = typeText.replace(arrayPart, '');
 
-      const primitive = jsPrimitives[typeText];
+      const primitive = jsPrimitives[typeText.toLowerCase()];
 
       if (primitive !== undefined) {
         typeUrl = `${jsDataStructuresUrl}#${primitive}_type`;
       } else if (jsGlobalTypes.includes(typeText)) {
         typeUrl = `${jsGlobalObjectsUrl}${typeText}`;
-      } else {
-        typeUrl = customTypesMap[typeText];
+      } else if (customTypesMap[typeText]) {
+        // Checks if the URL points to the internal documentation page
+        // Then adds a prefix. Otherwise the link refers to another page
+        typeUrl = /^https?:\/\//.test(customTypesMap[typeText])
+          ? customTypesMap[typeText]
+          : `${apiPath}${customTypesMap[typeText]}`;
       }
 
       if (typeUrl) {

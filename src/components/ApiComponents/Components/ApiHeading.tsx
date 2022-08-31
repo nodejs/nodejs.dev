@@ -1,13 +1,10 @@
 import React from 'react';
+import { replaceDataTag } from './ApiLink';
 
 interface Props {
   id: string;
   [o: string]: unknown;
 }
-
-const replaceDataTag = (href: string) =>
-  href.replace(/datatag-(tagc|tagm|tage)--/, '');
-
 export const H5 = ({ id, ...props }: Props) => (
   // eslint-disable-next-line react/jsx-props-no-spreading, jsx-a11y/heading-has-content
   <h5 id={replaceDataTag(id)} {...props} />

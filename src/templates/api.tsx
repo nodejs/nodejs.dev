@@ -5,13 +5,13 @@ import Layout from '../components/Layout';
 import { Metadata, Components } from '../components/ApiComponents';
 import DataTag from '../components/DataTag';
 import Navigation from '../containers/Navigation';
-import { ApiPageData, LearnPageContext } from '../types';
+import { ApiPageData, ApiPageContext } from '../types';
 import SectionTitle from '../components/SectionTitle';
 import styles from './api.module.scss';
 
 interface Props {
   data: ApiPageData;
-  pageContext: LearnPageContext;
+  pageContext: ApiPageContext;
 }
 
 const components = {
@@ -26,14 +26,14 @@ const components = {
 const Api = ({
   data: {
     api: {
-      frontmatter: { title, displayTitle, editPage, name },
+      frontmatter: { title, displayTitle, editPage, version },
       body,
       tableOfContents,
     },
   },
   pageContext: { slug, next, previous, navigationData },
 }: Props): JSX.Element => (
-  <Layout title={displayTitle}>
+  <Layout title={`${displayTitle} | Node.js ${version} API`}>
     <main className={styles.apiContainer}>
       <Navigation
         currentSlug={slug}
@@ -43,7 +43,7 @@ const Api = ({
         isApiDocs
       />
       <Article
-        title={title}
+        title={displayTitle}
         tableOfContents={tableOfContents}
         body={body}
         next={next}
@@ -52,7 +52,7 @@ const Api = ({
         authors={[]}
         extraComponents={components}
       >
-        <SectionTitle pathTree={['home', 'documentation', name]} />
+        <SectionTitle pathTree={['home', 'documentation', title]} />
       </Article>
     </main>
   </Layout>
@@ -66,13 +66,18 @@ export const query = graphql`
       body
       tableOfContents
       frontmatter {
-        name
         title
         displayTitle
         editPage
+        version
       }
       fields {
         slug
+      }
+    }
+    nodeReleases {
+      nodeReleasesVersion: nodeReleasesDataDetail {
+        version
       }
     }
   }
