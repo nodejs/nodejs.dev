@@ -2,22 +2,31 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
-import DocsApiComponent from '../components/DocsApiComponent';
+import { Metadata, Components } from '../components/ApiComponents';
+import DataTag from '../components/DataTag';
 import Navigation from '../containers/Navigation';
 import { ApiPageData, LearnPageContext } from '../types';
 import SectionTitle from '../components/SectionTitle';
+import styles from './api.module.scss';
 
 interface Props {
   data: ApiPageData;
   pageContext: LearnPageContext;
 }
 
-const components = { DocsApiComponent };
+const components = {
+  Metadata,
+  DataTag,
+  a: Components.ApiLink,
+  h3: Components.H3,
+  h4: Components.H4,
+  h5: Components.H5,
+};
 
 const Api = ({
   data: {
     api: {
-      frontmatter: { title, displayTitle, editPage },
+      frontmatter: { title, displayTitle, editPage, name },
       body,
       tableOfContents,
     },
@@ -25,7 +34,7 @@ const Api = ({
   pageContext: { slug, next, previous, navigationData },
 }: Props): JSX.Element => (
   <Layout title={displayTitle}>
-    <main className="grid-container">
+    <main className={styles.apiContainer}>
       <Navigation
         currentSlug={slug}
         label="Secondary"
@@ -43,7 +52,7 @@ const Api = ({
         authors={[]}
         extraComponents={components}
       >
-        <SectionTitle pathTree={['home', 'documentation', 'name']} />
+        <SectionTitle pathTree={['home', 'documentation', name]} />
       </Article>
     </main>
   </Layout>

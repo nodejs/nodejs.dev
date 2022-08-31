@@ -35,31 +35,16 @@ async function getApiDocsData(activeReleasesVersions, gatsbyApis) {
             r.text()
           );
 
-          const {
-            getParsedContent,
-            replaceUrlReferences,
-            replaceMetadata,
-            cleanseCodeTags,
-            increaseHeadingLevel,
-            replaceStabilityIndex,
-            replaceTypeToLinks,
-            createFrontmatter,
-          } = createMarkdownParser(markdownFile, {
+          const { parseMarkdown } = createMarkdownParser(markdownFile, {
             name: getFileName(file),
             version: fullReleaseVersion,
             downloadUrl: file.download_url,
           });
 
-          replaceTypeToLinks();
-          cleanseCodeTags();
-          replaceUrlReferences();
-          replaceMetadata();
-          increaseHeadingLevel();
-          createFrontmatter();
-          replaceStabilityIndex();
+          const resultingContent = parseMarkdown();
 
           return createFileNodeFromBuffer({
-            buffer: Buffer.from(getParsedContent()),
+            buffer: Buffer.from(resultingContent),
             cache: gatsbyApis.cache,
             createNode: gatsbyApis.createNode,
             name: `internalApiDoc-${releaseVersion}-${getFileName(file)}`,

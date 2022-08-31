@@ -137,7 +137,7 @@ const gatsbyConfig = {
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
-        fields: ['title', 'headings', 'description', 'slug'],
+        fields: ['title', 'headings', 'description', 'slug', 'tableOfContents'],
         resolvers: {
           Mdx: {
             id: node => node.id,
@@ -145,6 +145,7 @@ const gatsbyConfig = {
             headings: node => node.headings,
             description: node => node.frontmatter.description,
             slug: node => node.fields.slug,
+            tableOfContents: node => node.tableOfContents,
           },
         },
         filter: node => ['api', 'learn'].includes(node.frontmatter.category),

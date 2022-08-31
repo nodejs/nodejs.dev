@@ -4,18 +4,20 @@ const typeParser = require('./api-generation/typeParser');
 
 const FEATURES_REGEX = {
   // Fixes the references to Markdown pages into the API documentation
-  markdownFootnoteUrls: /(?![+a-z]+:)([^#?]+)\.md(#.+)?$/gim,
+  markdownFootnoteUrls: /(^\[.+\]:) ([a-z]+)\.md([#-_]+)?/gim,
   // ReGeX to match the in-line YAML metadatas
-  metadataComponents: /^<!--([\s\S]*?)-->$/gm,
+  metadataComponents: /^<!--([\s\S]*?)-->/,
   // ReGeX to match the {Type} (Structure Type metadatas)
   // eslint-disable-next-line no-useless-escape
-  structureType: /\{[a-zA-Z.|\[\]\\]+\}/gm,
+  structureType: /\{[a-zA-Z.|\[\]\\]+\}/g,
   // ReGeX for transforming `<pre>` into JSX snippets
-  removePreCodes: /<pre>|<\/pre>/gim,
+  removePreCodes: /<pre>|<\/pre>/gi,
   // ReGeX for increasing the heading level
-  increaseHeadingLevel: /^(#{1,6}\s)/gim,
+  increaseHeadingLevel: /^(#{1,6}\s)/,
+  // ReGeX for detecting class/event headings
+  classEventHeading: /^(#{3,5}) (Class:|Event:|`.+`)/,
   // ReGeX for the Stability Index
-  stabilityIndex: /> Stability: ([0-5])(?:\s*-\s*)?[a-z]+/gim,
+  stabilityIndex: /^> (.*:)\s*(\d)([\s\S]*)/,
 };
 
 const YAML_FEATURES = {
@@ -25,6 +27,13 @@ const YAML_FEATURES = {
     'deprecated',
     'removed',
     'introduced_in',
+  ],
+  updateMetadatas: [
+    'added',
+    'removed',
+    'deprecated',
+    'introduced_in',
+    'napiVersion',
   ],
 };
 
@@ -50,119 +59,128 @@ function createApiDocsFrontmatter(firstLine, metadata) {
       ([key, value]) => `${key}: '${value}'`
     );
 
-    return `---\n${result.join('\n')}\n---\n`;
+    return `---\n${result.join('\n')}\n---\n\n`;
   }
 
   return '';
 }
 
-function replaceStabilityIndex(markdownContent, metadata) {
-  return markdownContent.replace(
-    FEATURES_REGEX.stabilityIndex,
-    (_, stability) =>
-      `<DocsApiComponent version="${metadata.version}" data={{"stability":${stability}}} />`
-  );
+function replaceStabilityIndex(metadata) {
+  return (_, __, level, text) => {
+    const data = JSON.stringify({ stability: { level: Number(level), text } });
+
+    return `<Metadata version="${metadata.version}" data={${data}} />`;
+  };
 }
 
-function replaceUrlReferences(markdownContent) {
-  return markdownContent.replace(
-    FEATURES_REGEX.markdownFootnoteUrls,
-    (_, filename, hash) => `/api/${filename}${hash || ''}`
-  );
+function increaseHeadingLevel() {
+  return (_, l) => {
+    // trim the string and calculate length as there might be whitespace
+    const level = l.trim().length;
+
+    return `${'#'.repeat(level === 6 ? level : level + 1)} `;
+  };
 }
 
-function increaseHeadingLevel(markdownContent) {
-  return markdownContent.replace(
-    FEATURES_REGEX.increaseHeadingLevel,
-    (_, l) => {
-      // trim the string and calculate length as there might be whitespace
-      const level = l.trim().length;
-
-      return `${'#'.repeat(level === 6 ? level : level + 1)} `;
+function addClassEventHeading() {
+  const getTagPerName = name => {
+    switch (name) {
+      case 'Class:':
+        return `<DataTag tag="C" />`;
+      case 'Event:':
+        return `<DataTag tag="E" />`;
+      default:
+        return `<DataTag tag="M" /> ${name}`;
     }
-  );
+  };
+
+  return (_, prefix, name) => `${prefix} ${getTagPerName(name)}`;
 }
 
-function cleanseCodeTags(markdownContent) {
-  return markdownContent.replace(FEATURES_REGEX.removePreCodes, () => `\`\`\``);
+function replaceTypeToLinks() {
+  return source => typeParser(source);
 }
 
-function replaceTypeToLinks(markdownContent) {
-  return markdownContent.replace(FEATURES_REGEX.structureType, source =>
-    typeParser(source)
-  );
+function cleanseCodeTags() {
+  return () => `\`\`\``;
 }
 
-function replaceMarkdownMetadata(markdownContent, metadata) {
-  return markdownContent.replace(
-    FEATURES_REGEX.metadataComponents,
-    (_, yamlString) => {
-      const cleanContent = yamlString.replace('YAML', '');
+function replaceMarkdownMetadata(metadata) {
+  return (_, yamlString) => {
+    const cleanContent = yamlString.replace('YAML', '');
 
-      const replacedContent = cleanContent
-        // special validations for some non-cool formatted properties
-        // of the docs schema
-        .replace('introduced_in=', 'introduced_in: ')
-        .replace('source_link=', 'source_link: ')
-        .replace('type=', 'type: ')
-        .replace('name=', 'name: ');
+    const replacedContent = cleanContent
+      // special validations for some non-cool formatted properties
+      // of the docs schema
+      .replace('introduced_in=', 'introduced_in: ')
+      .replace('source_link=', 'source_link: ')
+      .replace('type=', 'type: ')
+      .replace('name=', 'name: ');
 
-      try {
-        const parsedYaml = yaml.parse(replacedContent);
+    try {
+      const parsedYaml = yaml.parse(replacedContent);
 
-        if (typeof parsedYaml === 'object') {
-          Object.keys(parsedYaml).forEach(key => {
-            if (YAML_FEATURES.arrayOnlyMetadata.includes(key)) {
-              parsedYaml[key] = yamlValueToArray(parsedYaml[key]);
-            }
-          });
+      if (typeof parsedYaml === 'object') {
+        Object.keys(parsedYaml).forEach(key => {
+          if (YAML_FEATURES.arrayOnlyMetadata.includes(key)) {
+            parsedYaml[key] = yamlValueToArray(parsedYaml[key]);
+          }
 
-          const stringifiedData = JSON.stringify(parsedYaml);
+          if (YAML_FEATURES.updateMetadatas.includes(key)) {
+            parsedYaml.update = { type: key, version: parsedYaml[key] };
 
-          return `<DocsApiComponent version="${metadata.version}" data={${stringifiedData}} />`;
-        }
-      } catch (e) {
-        // eslint-disable-next-line no-console
-        console.warn(`YAML failure: ${e.message}, ${metadata.downloadUrl}`);
+            delete parsedYaml[key];
+          }
+        });
+
+        const stringifiedData = JSON.stringify(parsedYaml);
+
+        return `<Metadata version="${metadata.version}" data={${stringifiedData}} />`;
       }
-
-      return '';
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.warn(`YAML failure: ${e.message}, ${metadata.downloadUrl}`);
     }
-  );
+
+    return '';
+  };
+}
+
+function replaceUrlReferences() {
+  return (_, reference, file, hash) =>
+    `${reference} (/api/${file}${hash || ''})`;
 }
 
 function createMarkdownParser(markdownContent, metadata) {
-  let resultingContent = markdownContent;
+  const metadataComponents = replaceMarkdownMetadata(metadata);
+  const classEventHeading = addClassEventHeading(metadata);
+  const stabilityIndex = replaceStabilityIndex(metadata);
+  const urlReferences = replaceUrlReferences(metadata);
+  const headingLevel = increaseHeadingLevel(metadata);
+  const structureType = replaceTypeToLinks(metadata);
+  const codeTags = cleanseCodeTags(metadata);
 
   return {
-    replaceMetadata: () => {
-      resultingContent = replaceMarkdownMetadata(resultingContent, metadata);
-    },
-    replaceUrlReferences: () => {
-      resultingContent = replaceUrlReferences(resultingContent);
-    },
-    increaseHeadingLevel: () => {
-      resultingContent = increaseHeadingLevel(resultingContent);
-    },
-    replaceTypeToLinks: () => {
-      resultingContent = replaceTypeToLinks(resultingContent);
-    },
-    replaceStabilityIndex: () => {
-      resultingContent = replaceStabilityIndex(resultingContent, metadata);
-    },
-    createFrontmatter: () => {
-      const [firstLine, ...markdownContents] = resultingContent.split('\n');
+    parseMarkdown: () => {
+      const [firstLine, ...markdownContents] = markdownContent.split('\n\n');
 
       const frontmatter = createApiDocsFrontmatter(firstLine, metadata);
 
-      if (frontmatter.length) {
-        resultingContent = `${frontmatter}${markdownContents.join('\n')}`;
-      }
+      // Iterate between chunks of paragraphs instead of the whole document
+      // As this is way more perfomatic for regex queries
+      const parsedContent = markdownContents.map(lines => {
+        return lines
+          .replace(FEATURES_REGEX.stabilityIndex, stabilityIndex)
+          .replace(FEATURES_REGEX.increaseHeadingLevel, headingLevel)
+          .replace(FEATURES_REGEX.classEventHeading, classEventHeading)
+          .replace(FEATURES_REGEX.structureType, structureType)
+          .replace(FEATURES_REGEX.removePreCodes, codeTags)
+          .replace(FEATURES_REGEX.metadataComponents, metadataComponents)
+          .replace(FEATURES_REGEX.markdownFootnoteUrls, urlReferences);
+      });
+
+      return `${frontmatter}${parsedContent.join('\n\n')}`;
     },
-    cleanseCodeTags: () => {
-      resultingContent = cleanseCodeTags(resultingContent);
-    },
-    getParsedContent: () => resultingContent,
   };
 }
 

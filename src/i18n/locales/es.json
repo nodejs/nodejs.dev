@@ -71,10 +71,13 @@
   "pages.index.features.everywhere.title": "Everywhere",
   "pages.index.features.everywhere.description": "Node.js has been adapted to work in a wide variety of places",
   "components.tableOfContents.heading": "Table of Contents",
-  "docs.api.addedIn": "Added in: {added}",
+  "docs.api.addedIn": "Added in: {version}",
+  "docs.api.removedIn": "Removed in: {version}",
+  "docs.api.deprecatedIn": "Deprecated in: {version}",
+  "docs.api.nApiVersion": "N-API version: {version}",
   "docs.api.history": "History",
   "docs.api.sourceLink": "Source Code:",
   "docs.api.history.version": "Version",
   "docs.api.history.changes": "Changes",
-  "docs.api.stability": "Stability: {stability} - {stability, select, 0 {Deprecated}1 {Experimental}2 {Stable}other {Legacy}} {remaining}"
+  "docs.api.stability": "Stability: {level}{text}"
 }

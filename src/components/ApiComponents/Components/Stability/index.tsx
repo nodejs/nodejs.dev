@@ -4,7 +4,10 @@ import { FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
 
 interface Props {
-  stability: number;
+  stability: {
+    level: number;
+    text: string;
+  };
 }
 
 const getStabilityClass = (stability: number) => {
@@ -20,12 +23,10 @@ const getStabilityClass = (stability: number) => {
   }
 };
 
-const Stability = ({ stability }: Props) => {
-  return (
-    <div className={`${styles.stability} ${getStabilityClass(stability)}`}>
-      <FormattedMessage id="docs.api.stability" values={{ stability }} />
-    </div>
-  );
-};
+const Stability = ({ stability: { level, text } }: Props) => (
+  <div className={`${styles.stability} ${getStabilityClass(level)}`}>
+    <FormattedMessage id="docs.api.stability" values={{ level, text }} />
+  </div>
+);
 
 export default Stability;

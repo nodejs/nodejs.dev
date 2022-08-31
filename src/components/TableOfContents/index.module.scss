@@ -8,9 +8,12 @@
     text-transform: uppercase;
   }
 
+  > ul {
+    margin-left: var(--space-08);
+  }
+
   ul {
-    list-style: none;
-    padding: 0 0 0 var(--space-08);
+    padding: var(--space-08) 0 0 var(--space-24);
 
     li {
       p {

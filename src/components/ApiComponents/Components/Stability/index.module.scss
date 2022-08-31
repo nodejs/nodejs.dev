@@ -1,6 +1,6 @@
 .stability {
   border-radius: 4px;
-  color: white;
+  color: #fff;
   line-height: 1.5;
   margin: 0 0 1rem;
   padding: 1rem;
@@ -10,22 +10,22 @@
   }
 
   a {
-    color: white;
+    color: #fff;
   }
 
   &__level-0 {
-    background-color: #d60027;
+    background-color: var(--danger6);
   }
 
   &__level-1 {
-    background-color: #ca5010;
+    background-color: var(--warning5);
   }
 
   &__level-2 {
-    background-color: #5a8147;
+    background-color: var(--brand6);
   }
 
   &__level-3 {
-    background-color: #00f;
+    background-color: var(--info7);
   }
 }

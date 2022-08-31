@@ -1,15 +1,15 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { ApiChange } from '../../../../types';
+import { ApiChange, ApiUpdate } from '../../../../types';
 import { parseApiDocsVersion } from '../../../../util/parseApiDocsVersion';
 import styles from './index.module.scss';
 
 interface Props {
-  added: string | string[];
+  update: ApiUpdate;
   changes: ApiChange[];
 }
 
-const Changes = ({ added, changes }: Props) => (
+const Changes = ({ update, changes }: Props) => (
   <details className={styles.changesComponent}>
     <summary>
       <strong>
@@ -35,11 +35,11 @@ const Changes = ({ added, changes }: Props) => (
           </tr>
         ))}
         <tr>
-          <td>{parseApiDocsVersion(added)}</td>
+          <td>{parseApiDocsVersion(update.version)}</td>
           <td>
             <FormattedMessage
               id="docs.api.addedIn"
-              values={{ added: parseApiDocsVersion(added) }}
+              values={{ version: parseApiDocsVersion(update.version) }}
             />
           </td>
         </tr>

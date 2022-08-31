@@ -6,15 +6,17 @@ export interface ApiChange {
   description: string;
 }
 
+export interface ApiUpdate {
+  type: 'added' | 'removed' | 'deprecated' | 'introduced_in' | 'napiVersion';
+  version: string[];
+}
+
 export interface ApiComponentData {
-  introduced_in?: string[];
-  deprecated?: string[];
-  removed?: string[];
-  added?: string[];
   type?: string;
   name?: string;
   source_link?: string;
-  stability?: number;
+  update?: ApiUpdate;
+  stability?: { level: number; text: string };
   changes?: ApiChange[];
 }
 
@@ -76,11 +78,14 @@ export interface LearnPageContext {
   navigationData: NavigationSectionData;
 }
 
+export interface TableOfContentsItem {
+  title: string;
+  url: string;
+  items?: TableOfContentsItem[];
+}
+
 export interface PageTableOfContents {
-  items: {
-    title: string;
-    url: string;
-  }[];
+  items: TableOfContentsItem[];
 }
 
 export interface LearnPageData {
