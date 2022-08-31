@@ -137,15 +137,18 @@ const gatsbyConfig = {
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
-        fields: ['title', 'headings', 'description', 'slug', 'tableOfContents'],
+        fields: ['title', 'description', 'slug', 'tableOfContents'],
         resolvers: {
           Mdx: {
             id: node => node.id,
             title: node => node.frontmatter.title,
-            headings: node => node.headings,
             description: node => node.frontmatter.description,
             slug: node => node.fields.slug,
-            tableOfContents: node => node.tableOfContents,
+            tableOfContents: node => {
+              return [...node.rawBody.matchAll(/^#{2,5} .*/gm)]
+                .map(match => match[0].replace(/^#{2,5} /, ''))
+                .join('\n');
+            },
           },
         },
         filter: node => ['api', 'learn'].includes(node.frontmatter.category),
