@@ -10,8 +10,12 @@ interface Props {
 
 const removeApiSpanTagFromItem = (item: TableOfContentsItem) => ({
   ...item,
-  url: item.url.replace(/datatag-(tagc|tagm|tage)--/, ''),
-  title: item.title.replace(/<DataTag tag="(M|C|E)" \/> /, ''),
+  url: item.url
+    ? item.url.replace(/datatag-(tagc|tagm|tage)--/, '')
+    : undefined,
+  title: item.title
+    ? item.title.replace(/<DataTag tag="(M|C|E)" \/> /, '')
+    : undefined,
 });
 
 const traverseTableOfContents = (
@@ -21,7 +25,7 @@ const traverseTableOfContents = (
   <ul>
     {items.map(removeApiSpanTagFromItem).map(item => (
       <li key={item.url}>
-        <Link to={item.url}>{item.title}</Link>
+        {item.url && item.title && <Link to={item.url}>{item.title}</Link>}
         {item.items && depth < 2
           ? traverseTableOfContents(item.items, depth + 1)
           : null}
