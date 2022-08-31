@@ -1,8 +1,6 @@
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
-import 'prismjs/themes/prism-okaidia.css';
-
 import React from 'react';
 import { MotionConfig } from 'framer-motion';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import RandomContributor from '../RandomContributor';
 import { FeatureToggleProvider } from '../../containers/FeatureToggles';
 
@@ -10,9 +8,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import SEO from '../Seo';
 
-import '../../styles/tokens.scss';
-import '../../styles/layout.scss';
-import '../../styles/mobile.scss';
+import '../../styles/index.scss';
 
 interface Props {
   children: React.ReactNode;
@@ -24,6 +20,19 @@ interface Props {
   showRandomContributor?: boolean;
 }
 
+const defaultTheme = createTheme({
+  components: {
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          padding: '1rem',
+          fontSize: '2rem',
+        },
+      },
+    },
+  },
+});
+
 const Layout = ({
   children,
   title,
@@ -33,19 +42,17 @@ const Layout = ({
   showRandomContributor = false,
 }: Props): JSX.Element => (
   <FeatureToggleProvider>
-    <SEO title={title} description={description} img={img} />
-    <MotionConfig reducedMotion="user">
-      <div className="layout-container">
-        <Header />
-        {children}
-        {showRandomContributor && (
-          <section className="bottom-info">
-            <RandomContributor />
-          </section>
-        )}
-        {showFooter && <Footer />}
-      </div>
-    </MotionConfig>
+    <ThemeProvider theme={defaultTheme}>
+      <SEO title={title} description={description} img={img} />
+      <MotionConfig reducedMotion="user">
+        <div className="layout-container">
+          <Header />
+          {children}
+          {showRandomContributor && <RandomContributor />}
+          {showFooter && <Footer />}
+        </div>
+      </MotionConfig>
+    </ThemeProvider>
   </FeatureToggleProvider>
 );
 

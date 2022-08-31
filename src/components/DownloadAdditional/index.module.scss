@@ -1,0 +1,32 @@
+.download-additional {
+  font-weight: var(--font-weight-semibold);
+  margin-top: 133px;
+  width: 100%;
+
+  .header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 800px) {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    div {
+      margin-top: 0;
+    }
+  }
+
+  .title {
+    margin: 0;
+
+    @media (max-width: 800px) {
+      padding-bottom: var(--space-12);
+    }
+  }
+
+  .body {
+    margin-top: 24px;
+  }
+}

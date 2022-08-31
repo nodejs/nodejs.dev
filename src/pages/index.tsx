@@ -6,8 +6,6 @@ import { IoLogoNodejs, IoMdGitPullRequest, IoMdRocket } from 'react-icons/io';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 
-import '../styles/index.scss';
-
 import { connectGraphQlCustom } from '../components/connectGraphQlArticle';
 import { HomepageData, NodeReleaseLTSVersion, BannersIndex } from '../types';
 
@@ -17,6 +15,7 @@ import { ReactComponent as LeafsIllustrationBack } from '../images/illustrations
 import { ReactComponent as DotsIllustration } from '../images/illustrations/dots.svg';
 import InstallTabs from '../components/InstallTabs';
 import Banner from '../components/Banner';
+import styles from './index.module.scss';
 
 interface NodeFeatureProps {
   icon?: ReactElement;
@@ -25,7 +24,10 @@ interface NodeFeatureProps {
 }
 
 const styled = (icon: ReactElement): ReactElement =>
-  React.cloneElement(icon, { alt: 'Node Feature', className: 'feature-icon' });
+  React.cloneElement(icon, {
+    alt: 'Node Feature',
+    className: styles.featureIcon,
+  });
 
 const features = [
   {
@@ -50,7 +52,7 @@ const NodeFeature = ({
   heading,
   description,
 }: NodeFeatureProps): JSX.Element => (
-  <div className="node-features__feature">
+  <div className={styles.nodeFeaturesFeature}>
     {icon}
     <h4>{heading}</h4>
     <p>{description}</p>
@@ -68,7 +70,7 @@ const Index = ({
   intl,
 }: HomepageProps & WrappedComponentProps): JSX.Element => (
   <Layout title={displayTitle} description={description} showRandomContributor>
-    <main className="home-page">
+    <main className="home-container">
       <Banner bannersIndex={bannersIndex} />
       <Hero
         title={displayTitle}
@@ -76,17 +78,17 @@ const Index = ({
         nodeReleasesLTSVersion={nodeReleasesLTSVersion}
       />
 
-      <section className="node-demo-container">
-        <div className="node-demo">
+      <section className={styles.nodeDemoContainer}>
+        <div className={styles.nodeDemo}>
           <InstallTabs />
         </div>
-        <LeafsIllustrationFront className="leafs-front animations" />
-        <LeafsIllustrationMiddle className="leafs-middle animations" />
-        <LeafsIllustrationBack className="leafs-back animations" />
-        <DotsIllustration className="dots" />
+        <LeafsIllustrationFront className={`${styles.leafsFront} animations`} />
+        <LeafsIllustrationMiddle className={`${styles.leafsMid} animations`} />
+        <LeafsIllustrationBack className={`${styles.leafsBack} animations`} />
+        <DotsIllustration className={styles.dots} />
       </section>
 
-      <section className="node-features">
+      <section className={styles.nodeFeatures}>
         {features.map(feature => (
           <NodeFeature
             key={feature.heading}

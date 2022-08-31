@@ -4,10 +4,10 @@ exports[`Tests for LinuxPanel component renders correctly 1`] = `
 <div>
   <div>
     <pre
-      class="shell-box"
+      class="shellBox"
     >
       <div
-        class="shell-box-top"
+        class="top"
       >
         <span>
           SHELL
@@ -20,28 +20,28 @@ exports[`Tests for LinuxPanel component renders correctly 1`] = `
       </div>
       <code>
         <span
-          class="install__text__no-select"
+          class="installTextNoSelect"
         >
           $
         </span>
         <span
-          class="install__text__command"
+          class="installTextCommand"
         >
           curl -o- 
         </span>
         https://raw.githubusercontent.com/nvm-sh/nvm/mockVersionString/install.sh
         <span
-          class="install__text__command"
+          class="installTextCommand"
         >
            | bash
         </span>
       </code>
     </pre>
     <pre
-      class="shell-box"
+      class="shellBox"
     >
       <div
-        class="shell-box-top"
+        class="top"
       >
         <span>
           SHELL
@@ -54,12 +54,12 @@ exports[`Tests for LinuxPanel component renders correctly 1`] = `
       </div>
       <code>
         <span
-          class="install__text__no-select"
+          class="installTextNoSelect"
         >
           $
         </span>
         <span
-          class="install__text__command"
+          class="installTextCommand"
         >
           nvm
         </span>
@@ -67,7 +67,7 @@ exports[`Tests for LinuxPanel component renders correctly 1`] = `
       </code>
     </pre>
     <a
-      class="install__docs-button"
+      class="installDocsButton"
       href="/download/package-manager/#nvm"
     >
       Read documentation

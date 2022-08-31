@@ -1,7 +1,8 @@
 import React from 'react';
 import { Tab } from 'react-tabs';
-import './DownloadCard.scss';
+import GetAppIcon from '@mui/icons-material/GetApp';
 import classnames from 'classnames';
+import styles from './index.module.scss';
 
 interface Props {
   name: string;
@@ -23,28 +24,29 @@ const DownloadCard = ({
   onSelect,
 }: Props): JSX.Element => {
   const handleSelectCard = (): void => onSelect(name);
-  const classNames = classnames('download-card', {
-    'download-card--active': selected,
+  const classNames = classnames(styles.downloadCard, {
+    [styles.downloadCardActive]: selected,
   });
+
   return (
     <Tab
       className={classNames}
       id={`download-card-${name}`}
       key={name}
       onClick={handleSelectCard}
+      selectedClassName={styles.downloadCardActive}
       tabIndex="0"
-      selectedClassName="download-card--active"
     >
-      <div className="download-card__top">
-        <Icon className="download-card__image" />
+      <div className={styles.top}>
+        <Icon className={styles.image} />
         {selected && (
-          <a className="download-card__link" href={download}>
-            <i className="material-icons">get_app</i>
+          <a className={styles.link} href={download}>
+            <GetAppIcon />
           </a>
         )}
       </div>
-      <p className="download-card__label">{label}</p>
-      <p className="download-card__filename">{fileName}</p>
+      <p className={styles.label}>{label}</p>
+      <p className={styles.filename}>{fileName}</p>
     </Tab>
   );
 };

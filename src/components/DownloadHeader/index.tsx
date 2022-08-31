@@ -1,9 +1,11 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { NodeReleaseLTSNPMVersion } from '../../types';
-import './DownloadHeader.scss';
+import styles from './index.module.scss';
 
-type Props = { release?: NodeReleaseLTSNPMVersion };
+interface Props {
+  release?: NodeReleaseLTSNPMVersion;
+}
 
 const DownloadHeader = ({ release }: Props): JSX.Element => {
   const nodeVersion = release?.version;
@@ -12,10 +14,10 @@ const DownloadHeader = ({ release }: Props): JSX.Element => {
 
   return (
     <>
-      <div className="download-page__navigation">
+      <div className={styles.downloadHeader}>
         <div>
           HOME /{' '}
-          <span className="download-page__navigation--active">
+          <span className={styles.active}>
             <FormattedMessage id="components.downloadHeader.navigation.activeSection" />
           </span>
         </div>
@@ -26,11 +28,11 @@ const DownloadHeader = ({ release }: Props): JSX.Element => {
           />
         </div>
       </div>
-      <div className="download-page__navigation">
-        <div className="download-page__navigation--title">
+      <div className={styles.downloadHeader}>
+        <div className={styles.title}>
           <FormattedMessage id="components.downloadHeader.navigation.title" />
         </div>
-        <div className="download-page__navigation--npm">
+        <div className={styles.npm}>
           <FormattedMessage
             id="components.downloadHeader.navigation.npmVersion"
             values={{ npmVersion }}

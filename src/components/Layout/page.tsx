@@ -1,14 +1,12 @@
 import React from 'react';
 import Article from '../Article';
 import Layout from '.';
-import { TableOfContents } from '../../types';
-
-import '../../styles/page.scss';
+import { PageTableOfContents } from '../../types';
 
 interface Page {
   editPath?: string;
   body: string;
-  tableOfContents: TableOfContents;
+  tableOfContents: PageTableOfContents;
   title: string;
   description: string;
   authors: string[];

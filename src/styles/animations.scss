@@ -1,0 +1,15 @@
+@keyframes leafs-animation {
+  50% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(8deg);
+  }
+}
+
+.animations {
+  @media (prefers-reduced-motion: reduce) {
+    animation-name: none;
+  }
+}

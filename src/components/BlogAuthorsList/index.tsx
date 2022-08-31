@@ -1,7 +1,7 @@
 import React from 'react';
 import { BlogPostAuthor } from '../../types';
 import { getTerminatingString } from '../../util/getTerminatingString';
-import './BlogAuthorsList.scss';
+import styles from './index.module.scss';
 
 interface Props {
   authors?: BlogPostAuthor[];
@@ -15,27 +15,28 @@ const unknownAuthor = {
 const mapAuthorsList = (authors: BlogPostAuthor[]) =>
   authors.map(author => author || unknownAuthor);
 
+const getAuthorWebsite = (author: BlogPostAuthor) => {
+  if (author.website) {
+    return (
+      <a target="_blank" rel="noopener noreferrer" href={author.website}>
+        {author.name}
+      </a>
+    );
+  }
+
+  return author.name;
+};
+
 const BlogAuthorsList = ({ authors, date }: Props): null | JSX.Element => (
-  <h5 className="list">
+  <h5 className={styles.list}>
     {date} by{' '}
     {mapAuthorsList(authors || []).map(
-      (author, i, array): string | JSX.Element =>
-        author && (
-          <span key={author.id}>
-            {author.website ? (
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={author.website}
-              >
-                {author.name}
-              </a>
-            ) : (
-              author.name
-            )}
-            {getTerminatingString(i, array.length)}
-          </span>
-        )
+      (author, i, array): string | JSX.Element => (
+        <span key={author.id}>
+          {getAuthorWebsite(author)}
+          {getTerminatingString(i, array.length)}
+        </span>
+      )
     )}
   </h5>
 );
