@@ -10,7 +10,7 @@
     "@fontsource/open-sans": "^4.5.11",
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/free-brands-svg-icons": "^6.1.2",
-    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^3.0.2",
     "@mdx-js/mdx": "^1.6.22",
