@@ -28,13 +28,13 @@ const Header = (): JSX.Element => {
 
         <ul className={styles.tabs}>
           <li>
-            <Link to="/learn" activeClassName={styles.active} partiallyActive>
+            <Link to="/learn/" activeClassName={styles.active} partiallyActive>
               <FormattedMessage id="components.header.links.learn" />
             </Link>
           </li>
           <li>
             <Link
-              to="/api/documentation"
+              to="/api/documentation/"
               activeClassName={styles.active}
               partiallyActive
             >
@@ -43,7 +43,7 @@ const Header = (): JSX.Element => {
           </li>
           <li>
             <Link
-              to="/download"
+              to="/download/"
               activeClassName={styles.active}
               partiallyActive
             >
@@ -52,7 +52,7 @@ const Header = (): JSX.Element => {
           </li>
           <li>
             <Link
-              to="/community"
+              to="/community/"
               activeClassName={styles.active}
               partiallyActive
             >

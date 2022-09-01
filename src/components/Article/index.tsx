@@ -35,6 +35,7 @@ interface Props {
 }
 
 const mdxComponents = {
+  code: InlineCode,
   pre: Codebox,
   inlineCode: InlineCode,
   a: MdxLink,

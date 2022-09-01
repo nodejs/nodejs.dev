@@ -7,8 +7,7 @@
       {
         "languages": ["js", "css", "jsx", "bash", "ts", "markup", "cpp", "c"],
         "plugins": [],
-        "theme": "default",
-        "css": true
+        "css": false
       }
     ]
   ],

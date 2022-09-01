@@ -1,5 +1,39 @@
+@import './light.module.scss';
+@import './dark.module.scss';
+
+%baseStyles {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  margin: 0.5em 0 var(--space-24) 0;
+  padding: 0;
+  overflow: auto;
+  border-radius: 0.3rem;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.code {
+  @extend %baseStyles;
+
+  font-weight: var(--font-weight-light);
+  padding: 0 6px;
+}
+
 .pre {
-  padding: 0 !important;
+  @extend %baseStyles;
 
   .top {
     display: flex;
@@ -18,15 +52,16 @@
 
     span {
       background-color: var(--black4);
-      border-radius: 0 0 4px 0;
+      border-radius: 0 0 0.3rem 0;
       color: var(--black9);
     }
 
     button {
       background-color: var(--black9);
-      border-radius: 0 0 0 4px;
+      border-radius: 0 0 0 0.3rem;
       border-width: 0;
       color: white;
+
       i {
         padding: 0;
       }
@@ -35,5 +70,51 @@
 
   .content {
     margin: 1em;
+  }
+}
+
+:global(.light) {
+  .pre {
+    @include lightStyles;
+  }
+
+  .code {
+    background-color: var(--black2);
+    color: var(--black9);
+  }
+
+  a .code {
+    background-color: transparent;
+    color: var(--color-text-accent);
+    padding: 0;
+  }
+}
+
+:global(.dark) {
+  .pre {
+    @include darkStyles;
+
+    .top {
+      span {
+        background-color: var(--black3);
+        color: var(--black9);
+      }
+
+      button {
+        background-color: var(--brand8);
+        color: white;
+      }
+    }
+  }
+
+  .code {
+    background-color: var(--black2);
+    color: var(--black9);
+  }
+
+  a .code {
+    background-color: transparent;
+    color: var(--color-text-accent);
+    padding: 0;
   }
 }

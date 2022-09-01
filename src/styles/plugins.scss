@@ -29,44 +29,6 @@ h6:hover .autolink-headers {
   }
 }
 
-// Plugin: prismjs
-pre[class*='language-'],
-code[class*='language-'] {
-  background: var(--black2) !important;
-  border-radius: 4px;
-  margin-bottom: var(--space-24);
-}
-
-// Plugin: prismjs
-:not(pre) > code[class*='language-'] {
-  background-color: var(--black2) !important;
-  color: var(--black9) !important;
-  font-weight: var(--font-weight-light);
-  padding: 0 6px !important;
-  text-decoration: none;
-  text-shadow: none;
-}
-
-a code[class*='language-'] {
-  background-color: transparent !important;
-  color: var(--color-text-accent) !important;
-  padding: 0 !important;
-}
-
-// Plugin: prismjs
-pre[class*='language-'] > code[class*='language-'] + h2 {
-  margin-top: var(--space-40);
-}
-
-// Plugin: prismjs
-.token {
-  &.punctuation,
-  &.operator,
-  &.string {
-    background-color: var(--black2) !important;
-  }
-}
-
 // Plugin: gatsby-remark-prismjs
 .gatsby-highlight {
   display: grid;
