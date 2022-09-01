@@ -31,7 +31,7 @@
     "gatsby-link": "^4.20.0",
     "gatsby-plugin-canonical-urls": "^4.20.0",
     "gatsby-plugin-catch-links": "^4.20.0",
-    "gatsby-plugin-manifest": "^4.20.0",
+    "gatsby-plugin-manifest": "^4.22.0",
     "gatsby-plugin-mdx": "^3.20.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-offline-next": "^5.2.3",
