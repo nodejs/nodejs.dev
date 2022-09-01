@@ -60,7 +60,7 @@ async function getApiDocsData(releaseVersions, gatsbyApis, callback) {
         fetch(file.download_url)
           .then(response => response.text())
           .then(contents => parseMarkdownCallback(contents));
-      }, 4);
+      }, 8);
 
       // Add files to be Downloaded and Parsed to Text
       apiDocsParser.push([...markdownFiles]);
