@@ -70,7 +70,8 @@ function getNodeReleasesData(nodeReleasesDataCallback) {
       releaseSchedule: fetchNodeReleaseSchedule,
       releaseDetails: fetchNodeReleaseDetail,
     },
-    parseReleaseData
+    parseReleaseData,
+    2
   );
 }
 

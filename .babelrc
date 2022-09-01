@@ -1,14 +1,14 @@
 {
   "generatorOpts": {
-    "compact": false,
-    "comments": false,
-    "overrides": [
-      {
-        "test": "**/**.md",
-        "compact": true
-      }
-    ]
+    "compact": true,
+    "comments": false
   },
+  "overrides": [
+    {
+      "test": "**/**.md",
+      "compact": true
+    }
+  ],
   "plugins": [
     [
       "prismjs",

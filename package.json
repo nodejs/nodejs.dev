@@ -75,7 +75,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "cleanup": "rm -rf .cache build",
+    "cleanup": "gatsby",
     "pre-build": "node scripts/generateRedirects.js",
     "build": "npm run pre-build && gatsby build",
     "build-ci": "npm run cleanup && npm run pre-build && gatsby build --prefix-paths",

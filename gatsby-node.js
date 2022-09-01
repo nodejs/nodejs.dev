@@ -421,7 +421,7 @@ exports.onCreateBabelConfig = ({ actions }) => {
   actions.setBabelOptions({
     options: {
       generatorOpts: {
-        compact: false,
+        compact: true,
         comments: false,
       },
     },
