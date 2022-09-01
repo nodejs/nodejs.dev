@@ -35,7 +35,7 @@
     "gatsby-plugin-mdx": "^3.20.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-offline-next": "^5.2.3",
-    "gatsby-plugin-sass": "^5.20.0",
+    "gatsby-plugin-sass": "^5.22.0",
     "gatsby-plugin-sharp": "^4.20.0",
     "gatsby-plugin-sitemap": "^5.20.0",
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
