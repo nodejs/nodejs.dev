@@ -33,28 +33,28 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
       >
         <li>
           <a
-            href="/learn"
+            href="/learn/"
           >
             Learn
           </a>
         </li>
         <li>
           <a
-            href="/api/documentation"
+            href="/api/documentation/"
           >
             API Docs
           </a>
         </li>
         <li>
           <a
-            href="/download"
+            href="/download/"
           >
             Download
           </a>
         </li>
         <li>
           <a
-            href="/community"
+            href="/community/"
           >
             Community
           </a>
@@ -215,28 +215,28 @@ exports[`Tests for Header component renders correctly 1`] = `
       >
         <li>
           <a
-            href="/learn"
+            href="/learn/"
           >
             Learn
           </a>
         </li>
         <li>
           <a
-            href="/api/documentation"
+            href="/api/documentation/"
           >
             API Docs
           </a>
         </li>
         <li>
           <a
-            href="/download"
+            href="/download/"
           >
             Download
           </a>
         </li>
         <li>
           <a
-            href="/community"
+            href="/community/"
           >
             Community
           </a>
@@ -397,28 +397,28 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
       >
         <li>
           <a
-            href="/learn"
+            href="/learn/"
           >
             Learn
           </a>
         </li>
         <li>
           <a
-            href="/api/documentation"
+            href="/api/documentation/"
           >
             API Docs
           </a>
         </li>
         <li>
           <a
-            href="/download"
+            href="/download/"
           >
             Download
           </a>
         </li>
         <li>
           <a
-            href="/community"
+            href="/community/"
           >
             Community
           </a>

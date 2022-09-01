@@ -36,28 +36,28 @@ exports[`Resources page renders correctly 1`] = `
         >
           <li>
             <a
-              href="/learn"
+              href="/learn/"
             >
               Learn
             </a>
           </li>
           <li>
             <a
-              href="/api/documentation"
+              href="/api/documentation/"
             >
               API Docs
             </a>
           </li>
           <li>
             <a
-              href="/download"
+              href="/download/"
             >
               Download
             </a>
           </li>
           <li>
             <a
-              href="/community"
+              href="/community/"
             >
               Community
             </a>
@@ -336,7 +336,7 @@ exports[`Resources page renders correctly 1`] = `
           </p>
           <p>
             <code
-              class="language-text"
+              class="code"
             >
               nvm
             </code>
@@ -355,7 +355,7 @@ exports[`Resources page renders correctly 1`] = `
           <p>
             In any case, when Node.js is installed you'll have access to the 
             <code
-              class="language-text"
+              class="code"
             >
               node
             </code>

@@ -36,28 +36,28 @@ exports[`Layout component renders correctly with data 1`] = `
         >
           <li>
             <a
-              href="/learn"
+              href="/learn/"
             >
               Learn
             </a>
           </li>
           <li>
             <a
-              href="/api/documentation"
+              href="/api/documentation/"
             >
               API Docs
             </a>
           </li>
           <li>
             <a
-              href="/download"
+              href="/download/"
             >
               Download
             </a>
           </li>
           <li>
             <a
-              href="/community"
+              href="/community/"
             >
               Community
             </a>

@@ -57,7 +57,7 @@ exports[`Article component renders correctly 1`] = `
       </p>
       <p>
         <code
-          class="language-text"
+          class="code"
         >
           nvm
         </code>
@@ -76,7 +76,7 @@ exports[`Article component renders correctly 1`] = `
       <p>
         In any case, when Node.js is installed you'll have access to the 
         <code
-          class="language-text"
+          class="code"
         >
           node
         </code>
@@ -243,7 +243,7 @@ exports[`Article component renders correctly in blog mode 1`] = `
       </p>
       <p>
         <code
-          class="language-text"
+          class="code"
         >
           nvm
         </code>
@@ -262,7 +262,7 @@ exports[`Article component renders correctly in blog mode 1`] = `
       <p>
         In any case, when Node.js is installed you'll have access to the 
         <code
-          class="language-text"
+          class="code"
         >
           node
         </code>
@@ -330,7 +330,7 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
       </p>
       <p>
         <code
-          class="language-text"
+          class="code"
         >
           nvm
         </code>
@@ -349,7 +349,7 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
       <p>
         In any case, when Node.js is installed you'll have access to the 
         <code
-          class="language-text"
+          class="code"
         >
           node
         </code>
@@ -536,7 +536,7 @@ exports[`Article component should accept and render child components 1`] = `
       </p>
       <p>
         <code
-          class="language-text"
+          class="code"
         >
           nvm
         </code>
@@ -555,7 +555,7 @@ exports[`Article component should accept and render child components 1`] = `
       <p>
         In any case, when Node.js is installed you'll have access to the 
         <code
-          class="language-text"
+          class="code"
         >
           node
         </code>
