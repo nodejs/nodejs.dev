@@ -303,6 +303,8 @@ export type SearchResult = {
   id: React.Key | null | undefined;
   slug: string;
   title: string;
+  category: string;
+  displayTitle?: string;
 };
 
 export type WrapPageElementBrowser =

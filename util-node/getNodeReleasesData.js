@@ -1,27 +1,31 @@
 const fetch = require('node-fetch');
+const async = require('async');
 const getReleaseStatus = require('./getReleaseStatus');
+const { nodeReleaseData, nodeReleaseSchedule } = require('../apiUrls');
 
-async function getNodeReleasesData() {
-  try {
-    const releasesDataDetailURL = 'https://nodejs.org/dist/index.json';
+function getNodeReleasesData(nodeReleasesDataCallback) {
+  const fetchNodeReleaseSchedule = callback => {
+    fetch(nodeReleaseSchedule)
+      .then(response => response.json())
+      .then(releaseSchedule => callback(null, releaseSchedule));
+  };
 
-    const releasesDataURL =
-      'https://raw.githubusercontent.com/nodejs/Release/main/schedule.json';
+  const fetchNodeReleaseDetail = callback => {
+    fetch(nodeReleaseData)
+      .then(response => response.json())
+      .then(releaseDetails => callback(null, releaseDetails));
+  };
 
-    const releasesDataDetailResponse = await fetch(releasesDataDetailURL);
-    const releasesDataDetailResult = await releasesDataDetailResponse.json();
+  const parseReleaseData = (_, results) => {
+    const { releaseSchedule, releaseDetails } = results;
 
-    const releasesDataResponse = await fetch(releasesDataURL);
-    const releasesDataResult = await releasesDataResponse.json();
     const currentReleasesArray = [];
 
-    const getNonEolReleases = key => {
-      const release = releasesDataResult[key];
-      return new Date(release.end) >= new Date();
-    };
+    const getNonEolReleases = key =>
+      new Date(releaseSchedule[key].end) >= new Date();
 
     const mapReleaseData = key => {
-      const release = releasesDataResult[key];
+      const release = releaseSchedule[key];
 
       currentReleasesArray.push(key);
 
@@ -36,7 +40,7 @@ async function getNodeReleasesData() {
       };
     };
 
-    const filteredReleasesData = Object.keys(releasesDataResult)
+    const filteredReleasesData = Object.keys(releaseSchedule)
       .filter(getNonEolReleases)
       .map(mapReleaseData);
 
@@ -50,18 +54,24 @@ async function getNodeReleasesData() {
       return false;
     };
 
-    const mappedReleasesDataDetail = releasesDataDetailResult
+    const mappedReleasesDataDetail = releaseDetails
       .filter(getReleaseDataFromNonEolReleases)
       .map(release => ({ ...release, lts: release.lts || '' }))
       .slice(0, 50);
 
-    return {
+    nodeReleasesDataCallback({
       nodeReleasesDataDetail: mappedReleasesDataDetail,
       nodeReleasesData: filteredReleasesData,
-    };
-  } catch (err) {
-    return Promise.reject(err);
-  }
+    });
+  };
+
+  async.parallel(
+    {
+      releaseSchedule: fetchNodeReleaseSchedule,
+      releaseDetails: fetchNodeReleaseDetail,
+    },
+    parseReleaseData
+  );
 }
 
 module.exports = getNodeReleasesData;

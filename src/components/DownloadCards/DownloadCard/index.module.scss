@@ -42,7 +42,7 @@
 
   .filename {
     font-size: var(--font-size-body3);
-    font-weight: normal;
+    font-weight: var(--font-weight-regular);
     line-height: 18px;
 
     @media (max-width: 620px) {

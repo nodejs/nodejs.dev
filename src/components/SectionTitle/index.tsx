@@ -2,23 +2,23 @@ import React from 'react';
 import styles from './index.module.scss';
 
 interface Props {
-  pathTree: string[];
+  path: string[];
 }
 
-const SectionTitle = ({ pathTree }: Props) => (
+const SectionTitle = ({ path }: Props) => (
   <div className={styles.sectionTitle}>
-    {pathTree.map((path, index) => {
-      const isLast = index === pathTree.length - 1;
+    {path.map((item, index) => {
+      const isLast = index === path.length - 1;
 
       if (isLast) {
         return (
-          <span className={styles.active} key={path}>
-            {path}
+          <span className={styles.active} key={item}>
+            {item}
           </span>
         );
       }
 
-      return `${path} / `;
+      return `${item} / `;
     })}
   </div>
 );

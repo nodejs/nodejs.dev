@@ -136,13 +136,22 @@ const gatsbyConfig = {
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
-        fields: ['title', 'description', 'slug', 'tableOfContents'],
+        fields: [
+          'slug',
+          'title',
+          'displayTitle',
+          'description',
+          'category',
+          'tableOfContents',
+        ],
         resolvers: {
           Mdx: {
             id: node => node.id,
             title: node => node.frontmatter.title,
+            displayTitle: node => node.frontmatter.displayTitle,
             description: node => node.frontmatter.description,
             slug: node => node.fields.slug,
+            category: node => node.fields.categoryName,
             tableOfContents: node => {
               return [...node.rawBody.matchAll(/^#{2,5} .*/gm)]
                 .map(match => match[0].replace(/^#{2,5} /, ''))
@@ -163,6 +172,34 @@ const gatsbyConfig = {
         configPath: path.resolve('./src/i18n/config.json'),
         prefixDefault: true,
         locales: localesAsString,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: 'Open Sans',
+              variants: [
+                '300',
+                '300i',
+                '400',
+                '400i',
+                '600',
+                '600i',
+                '900',
+                '900i',
+              ],
+              fontDisplay: 'swap',
+              strategy: 'selfHosted',
+            },
+          ],
+        },
+        formats: ['woff2'],
+        useMinify: true,
+        usePreload: true,
+        usePreconnect: true,
       },
     },
     {

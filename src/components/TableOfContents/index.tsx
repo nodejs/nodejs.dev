@@ -8,13 +8,26 @@ interface Props {
   tableOfContents?: PageTableOfContents;
 }
 
+const tag = (t: string) => {
+  switch (t) {
+    case 'C':
+      return 'Class: ';
+    case 'E':
+      return 'Event: ';
+    case 'M':
+      return 'Method: ';
+    default:
+      return '';
+  }
+};
+
 const removeApiSpanTagFromItem = (item: TableOfContentsItem) => ({
   ...item,
   url: item.url
     ? item.url.replace(/datatag-(tagc|tagm|tage)--/, '')
     : undefined,
   title: item.title
-    ? item.title.replace(/<DataTag tag="(M|C|E)" \/> /, '')
+    ? item.title.replace(/<DataTag tag="(M|C|E)" \/> /, (_, t) => tag(t))
     : undefined,
 });
 

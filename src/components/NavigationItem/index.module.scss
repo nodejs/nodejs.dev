@@ -11,6 +11,7 @@
   padding: calc(var(--space-12) / 2) 0 calc(var(--space-24) / 2) var(--space-08);
   position: relative;
   text-decoration: none;
+  text-transform: capitalize;
 
   &:last-of-type::after {
     display: none;
@@ -39,7 +40,7 @@
 
   &--active {
     color: var(--color-text-accent);
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
   }
 
   &--done::before,

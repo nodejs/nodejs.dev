@@ -23,7 +23,7 @@
     color: var(--color-text-primary);
     display: flex;
     flex-direction: row;
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     justify-content: space-between;
     margin: var(--space-24) 0 var(--space-16) var(--space-24);
 

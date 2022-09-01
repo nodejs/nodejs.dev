@@ -1,7 +1,15 @@
 {
-  "compact": true,
+  "generatorOpts": {
+    "compact": false,
+    "comments": false,
+    "overrides": [
+      {
+        "test": "**/**.md",
+        "compact": true
+      }
+    ]
+  },
   "plugins": [
-    ["@babel/plugin-proposal-decorators", { "legacy": true }],
     [
       "prismjs",
       {
@@ -16,7 +24,7 @@
       "babel-preset-gatsby",
       {
         "targets": {
-          "browsers": [">0.25%", "not dead"]
+          "browsers": ["last 3 versions", "not ie <= 11", "not android 4.4.3"]
         }
       }
     ]

@@ -57,7 +57,7 @@
 
     &.important,
     &.bold {
-      font-weight: bold;
+      font-weight: var(--font-weight-vold);
     }
     &.italic {
       font-style: italic;

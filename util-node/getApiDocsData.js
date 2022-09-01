@@ -1,8 +1,10 @@
 const fetch = require('node-fetch');
+const async = require('async');
 const { createFileNodeFromBuffer } = require('gatsby-source-filesystem');
 
 const createGitHubHeaders = require('./createGitHubHeaders');
 const { createMarkdownParser } = require('./apiDocsTransformUtils');
+const { apiReleaseContents } = require('../apiUrls');
 const { apiPath } = require('../pathPrefixes');
 
 const ignoredFiles = ['index.md', 'README.md'];
@@ -12,26 +14,12 @@ const getFileName = file => file.name.replace('.md', '');
 const filterOutInvalidFiles = file =>
   !ignoredFiles.includes(file.name) && file.name.endsWith('.md');
 
-async function getApiDocsData(releaseVersions, gatsbyApis) {
-  // Retrieves all the Lists of the Documentation files for that Node.js version
-  const requestPromises = releaseVersions.map(releaseVersion => {
-    const endpointUrl = `https://api.github.com/repos/nodejs/node/contents/doc/api?ref=${releaseVersion}`;
-
-    return fetch(endpointUrl, createGitHubHeaders()).then(r => r.json());
-  });
-
-  // Execute the Requests and fetches data from GitHub
-  const apiDocsReleases = await Promise.all(requestPromises);
-
+async function getApiDocsData(releaseVersions, gatsbyApis, callback) {
   const navigationEntries = [];
 
-  // Iterates on each file, and gets only the Markdown files
-  // Then we return a Promise with the createRemoteFileNode
-  // And thgen `gatsby-node` will execute them all
-  await Promise.all(
-    apiDocsReleases.map(async (apiDocsFiles, index) => {
-      const markdownFiles = apiDocsFiles.filter(filterOutInvalidFiles);
-      const fullReleaseVersion = releaseVersions[index];
+  const apiDownloadListQueue = async.queue((fullReleaseVersion, cb) => {
+    const pushToDocsQueue = files => {
+      const markdownFiles = files.filter(filterOutInvalidFiles);
       const releaseVersion = fullReleaseVersion.split('.')[0];
 
       const navigationEntry = {
@@ -39,14 +27,14 @@ async function getApiDocsData(releaseVersions, gatsbyApis) {
         items: [],
       };
 
-      const entries = await Promise.all(
-        markdownFiles.map(async file => {
-          const markdownFile = await fetch(file.download_url).then(r =>
-            r.text()
+      const apiDocsParser = async.queue((file, dCb) => {
+        const parseMarkdownCallback = contents => {
+          gatsbyApis.docsTimer.setStatus(
+            `Parsing API ${file.name}@${fullReleaseVersion}`
           );
 
           const { parseMarkdown, getNavigationEntries } = createMarkdownParser(
-            markdownFile,
+            contents,
             {
               name: getFileName(file),
               version: releaseVersion,
@@ -59,24 +47,43 @@ async function getApiDocsData(releaseVersions, gatsbyApis) {
 
           navigationEntry.items.push(...getNavigationEntries());
 
-          return createFileNodeFromBuffer({
+          createFileNodeFromBuffer({
             buffer: Buffer.from(resultingContent),
             cache: gatsbyApis.cache,
             createNode: gatsbyApis.createNode,
             name: `${apiPath}${releaseVersion}/${getFileName(file)}`,
             createNodeId: gatsbyApis.createNodeId,
             ext: '.md',
-          });
-        })
-      );
+          }).then(() => dCb());
+        };
 
-      navigationEntries.push(navigationEntry);
+        fetch(file.download_url)
+          .then(response => response.text())
+          .then(contents => parseMarkdownCallback(contents));
+      }, 4);
 
-      return entries;
-    })
-  );
+      // Add files to be Downloaded and Parsed to Text
+      apiDocsParser.push([...markdownFiles]);
 
-  return { navigationEntries };
+      // We finished processing all files for this release
+      apiDocsParser.drain(() => {
+        navigationEntries.push(navigationEntry);
+
+        cb();
+      });
+    };
+
+    // This fetches a JSON containing the metadata of the files within the API Folder
+    // @see https://docs.github.com/en/rest/repos/contents#get-repository-content
+    fetch(apiReleaseContents(fullReleaseVersion), createGitHubHeaders())
+      .then(response => response.json())
+      .then(files => pushToDocsQueue(files));
+  }, 2);
+
+  // Retrieves all the Lists of the Documentation files for that Node.js version
+  apiDownloadListQueue.push(...releaseVersions);
+
+  apiDownloadListQueue.drain(() => callback({ navigationEntries }));
 }
 
 module.exports = getApiDocsData;

@@ -19,7 +19,7 @@ const DownloadHeader = ({ release }: Props): JSX.Element => {
     <>
       <div className={styles.downloadHeader}>
         <SectionTitle
-          pathTree={[
+          path={[
             'home',
             intl.formatMessage({
               id: 'components.downloadHeader.navigation.activeSection',

@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('yaml');
 const readingTime = require('reading-time');
+const asyncMethods = require('async');
 const createSlug = require('./util-node/createSlug');
 const getCurrentActiveReleases = require('./util-node/getCurrentActiveReleases');
 const getNodeReleasesData = require('./util-node/getNodeReleasesData');
@@ -175,12 +176,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       });
     });
 
+  // Create Redirects for Pages
   Object.keys(pageRedirects).forEach(from => {
     const metadata = {
       fromPath: from,
       toPath: pageRedirects[from],
       isPermanent: true,
-      redirectInBrowser: process.env.NODE_ENV !== 'production',
+      redirectInBrowser: true,
       statusCode: 200,
     };
 
@@ -294,124 +296,134 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 };
 
 exports.sourceNodes = async ({
-  actions: { createNode },
-  createNodeId,
-  createContentDigest,
   reporter: { activityTimer },
+  actions: { createNode },
+  createContentDigest,
+  createNodeId,
   cache,
 }) => {
-  let activity = activityTimer('Fetching Node release data');
+  const [releaseTimer, docsTimer, bannersTimer, nvmTimer] = [
+    activityTimer('Fetching Node release data'),
+    activityTimer('Fetching API Docs data'),
+    activityTimer('Fetching Banners data'),
+    activityTimer('Fetching latest NVM version data'),
+  ];
 
-  activity.start();
+  await asyncMethods.parallel([
+    callback => {
+      bannersTimer.start();
 
-  try {
-    const nodeReleasesData = await getNodeReleasesData();
+      getBannersData().then(bannersData => {
+        const bannersMeta = {
+          id: createNodeId('banners'),
+          parent: null,
+          children: [],
+          internal: {
+            type: 'Banners',
+            mediaType: 'application/json',
+            content: JSON.stringify(bannersData),
+            contentDigest: createContentDigest(bannersData),
+          },
+        };
 
-    const nodeReleasesMeta = {
-      id: createNodeId('node-releases'),
-      parent: null,
-      children: [],
-      internal: {
-        type: 'NodeReleases',
-        mediaType: 'application/json',
-        content: JSON.stringify(nodeReleasesData),
-        contentDigest: createContentDigest(nodeReleasesData),
+        createNode({ ...bannersData, ...bannersMeta }).then(() => {
+          bannersTimer.end();
+
+          callback();
+        });
+      });
+    },
+    callback => {
+      nvmTimer.start();
+
+      getNvmData().then(nvmData => {
+        const nvmMeta = {
+          id: createNodeId('nvm'),
+          parent: null,
+          children: [],
+          internal: {
+            type: 'Nvm',
+            mediaType: 'application/json',
+            content: JSON.stringify(nvmData),
+            contentDigest: createContentDigest(nvmData),
+          },
+        };
+
+        createNode({ ...nvmData, ...nvmMeta }).then(() => {
+          nvmTimer.end();
+
+          callback();
+        });
+      });
+    },
+  ]);
+
+  await asyncMethods.waterfall([
+    callback => {
+      releaseTimer.start();
+
+      getNodeReleasesData(nodeReleasesData => {
+        const nodeReleasesMeta = {
+          id: createNodeId('node-releases'),
+          parent: null,
+          children: [],
+          internal: {
+            type: 'NodeReleases',
+            mediaType: 'application/json',
+            content: JSON.stringify(nodeReleasesData),
+            contentDigest: createContentDigest(nodeReleasesData),
+          },
+        };
+
+        createNode({ ...nodeReleasesData, ...nodeReleasesMeta }).then(() => {
+          releaseTimer.end();
+
+          callback(null, nodeReleasesData);
+        });
+      });
+    },
+    (nodeReleasesData, callback) => {
+      docsTimer.start();
+
+      const currentActiveReleasesVersions =
+        getCurrentActiveReleases(nodeReleasesData);
+
+      // For now we're only going to parse the latest Node.js docs
+      // As the v14 and v16 docs have some Markdown Errors
+      const [latestNodeRelease] = currentActiveReleasesVersions.reverse();
+
+      const actions = { createNode, createNodeId, cache, docsTimer };
+
+      getApiDocsData([latestNodeRelease], actions, apiNavigationData => {
+        const apiNavigationMeta = {
+          id: createNodeId('api-navigation'),
+          parent: null,
+          children: [],
+          internal: {
+            type: 'ApiNavigation',
+            mediaType: 'application/json',
+            content: JSON.stringify(apiNavigationData),
+            contentDigest: createContentDigest(apiNavigationData),
+          },
+        };
+
+        createNode({ ...apiNavigationData, ...apiNavigationMeta }).then(() => {
+          docsTimer.end();
+
+          callback();
+        });
+      });
+    },
+  ]);
+};
+
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelOptions({
+    options: {
+      generatorOpts: {
+        compact: false,
+        comments: false,
       },
-    };
-
-    await createNode({
-      ...nodeReleasesData,
-      ...nodeReleasesMeta,
-    });
-
-    activity.end();
-
-    activity = activityTimer('Fetching API Docs');
-
-    activity.start();
-
-    const currentActiveReleasesVersions =
-      getCurrentActiveReleases(nodeReleasesData);
-
-    // For now we're only going to parse the latest Node.js docs
-    // As the v14 and v16 docs have some Markdown Errors
-    const [latestNodeRelease] = currentActiveReleasesVersions.reverse();
-
-    const apiNavigationData = await getApiDocsData([latestNodeRelease], {
-      createNode,
-      createNodeId,
-      cache,
-    });
-
-    const apiNavigationMeta = {
-      id: createNodeId('api-navigation'),
-      parent: null,
-      children: [],
-      internal: {
-        type: 'ApiNavigation',
-        mediaType: 'application/json',
-        content: JSON.stringify(apiNavigationData),
-        contentDigest: createContentDigest(apiNavigationData),
-      },
-    };
-
-    await createNode({
-      ...apiNavigationData,
-      ...apiNavigationMeta,
-    });
-
-    activity.end();
-
-    activity = activityTimer('Fetching Banners');
-
-    activity.start();
-
-    const bannersData = await getBannersData();
-
-    const bannersMeta = {
-      id: createNodeId('banners'),
-      parent: null,
-      children: [],
-      internal: {
-        type: 'Banners',
-        mediaType: 'application/json',
-        content: JSON.stringify(bannersData),
-        contentDigest: createContentDigest(bannersData),
-      },
-    };
-
-    await createNode({
-      ...bannersData,
-      ...bannersMeta,
-    });
-
-    activity.end();
-
-    activity = activityTimer('Fetching latest NVM version data');
-
-    activity.start();
-
-    const nvmData = await getNvmData();
-
-    const nvmMeta = {
-      id: createNodeId('nvm'),
-      parent: null,
-      children: [],
-      internal: {
-        type: 'Nvm',
-        mediaType: 'application/json',
-        content: JSON.stringify(nvmData),
-        contentDigest: createContentDigest(nvmData),
-      },
-    };
-
-    await createNode({
-      ...nvmData,
-      ...nvmMeta,
-    });
-
-    activity.end();
-  } catch (err) {
-    activity.panic(err);
-  }
+    },
+  });
 };

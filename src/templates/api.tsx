@@ -52,7 +52,7 @@ const Api = ({
         authors={[]}
         extraComponents={components}
       >
-        <SectionTitle pathTree={['home', 'documentation', title]} />
+        <SectionTitle path={['home', 'documentation', title]} />
       </Article>
     </main>
   </Layout>
