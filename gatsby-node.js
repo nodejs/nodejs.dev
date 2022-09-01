@@ -35,13 +35,13 @@ const intlMessages = nodeLocales.locales.reduce((acc, locale) => {
   return acc;
 }, {});
 
-const getMessagesForLocale = locale => {
-  if (locale && locale in intlMessages) {
-    return intlMessages[locale];
-  }
+const getMessagesForLocale = locale =>
+  locale && locale in intlMessages
+    ? intlMessages[locale]
+    : intlMessages[nodeLocales.defaultLanguage];
 
-  return intlMessages[nodeLocales.defaultLanguage];
-};
+const getRedirectForLocale = (locale, url) =>
+  /^\/\/|https?:\/\//.test(url) ? url : `/${locale}${url}`;
 
 exports.onCreateWebpackConfig = ({ plugins, actions }) => {
   actions.setWebpackConfig({
@@ -70,14 +70,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage, createRedirect } = actions;
 
-  Object.keys(redirects).forEach(from => {
-    createRedirect({
-      fromPath: from,
-      toPath: redirects[from],
-      isPermanent: true,
-      redirectInBrowser: true,
-    });
-  });
+  const pageRedirects = { ...redirects };
 
   const apiTemplate = path.resolve('./src/templates/api.tsx');
   const learnTemplate = path.resolve('./src/templates/learn.tsx');
@@ -149,38 +142,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
-  createRedirect({
-    fromPath: apiPath,
-    toPath: `${apiPath}${latestVersion}/documentation/`,
-    redirectInBrowser: true,
-    isPermanent: true,
-  });
+  const latestApiPath = `${apiPath}${latestVersion}/`;
 
-  createRedirect({
-    fromPath: `${apiPath}${latestVersion}/`,
-    toPath: `${apiPath}${latestVersion}/documentation/`,
-    redirectInBrowser: true,
-    isPermanent: true,
-  });
+  pageRedirects[apiPath] = `${latestApiPath}documentation/`;
+  pageRedirects[latestApiPath] = `${latestApiPath}documentation/`;
 
-  // Note.: These Redirects only work when coming from `/` (without language prefix)
   apiRedirects.forEach(({ from, to }) => {
-    createRedirect({
-      // Redirects from /api/{something} to /api/{version}/{something}
-      fromPath: `${apiPath}${from}`,
-      toPath: `${apiPath}${to}`,
-      redirectInBrowser: true,
-      isPermanent: true,
-    });
+    pageRedirects[`${apiPath}${from}`] = `${apiPath}${to}`;
 
-    createRedirect({
-      // Redirects from the old API URL schema (Nodejs.org)
-      // To the new URL schema
-      fromPath: `${apiPath}${from.slice(0, -1)}.html`,
-      toPath: `${apiPath}${to}`,
-      redirectInBrowser: true,
-      isPermanent: true,
-    });
+    // Redirects from the old API URL schema (Nodejs.org)
+    // To the new URL schema
+    pageRedirects[`${apiPath}${from.slice(0, -1)}.html`] = `${apiPath}${to}`;
   });
 
   apiPages.forEach(page => {
@@ -191,16 +163,37 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
-  markdownPages.forEach(page => {
-    // Blog Pages don't necessary need to be within the `blog` category
-    // But actually inside /content/blog/ section of the repository
-    if (page.realPath.match(blogPath)) {
+  markdownPages
+    .filter(page => page.realPath.match(blogPath))
+    .forEach(page => {
+      // Blog Pages don't necessary need to be within the `blog` category
+      // But actually inside /content/blog/ section of the repository
       createPage({
         path: page.slug,
         component: blogTemplate,
         context: page,
       });
-    }
+    });
+
+  Object.keys(pageRedirects).forEach(from => {
+    const metadata = {
+      fromPath: from,
+      toPath: pageRedirects[from],
+      isPermanent: true,
+      redirectInBrowser: process.env.NODE_ENV !== 'production',
+      statusCode: 200,
+    };
+
+    createRedirect(metadata);
+
+    // Creates Redirects for Locales
+    nodeLocales.locales.forEach(({ code }) =>
+      createRedirect({
+        ...metadata,
+        fromPath: getRedirectForLocale(code, metadata.fromPath),
+        toPath: getRedirectForLocale(code, metadata.toPath),
+      })
+    );
   });
 };
 
