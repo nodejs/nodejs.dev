@@ -1,6 +1,7 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { NodeReleaseLTSNPMVersion } from '../../types';
+import SectionTitle from '../SectionTitle';
 import styles from './index.module.scss';
 
 interface Props {
@@ -12,15 +13,19 @@ const DownloadHeader = ({ release }: Props): JSX.Element => {
   const npmVersion = release?.npm;
   const lts = !!release?.lts;
 
+  const intl = useIntl();
+
   return (
     <>
       <div className={styles.downloadHeader}>
-        <div>
-          HOME /{' '}
-          <span className={styles.active}>
-            <FormattedMessage id="components.downloadHeader.navigation.activeSection" />
-          </span>
-        </div>
+        <SectionTitle
+          path={[
+            'home',
+            intl.formatMessage({
+              id: 'components.downloadHeader.navigation.activeSection',
+            }),
+          ]}
+        />
         <div>
           <FormattedMessage
             id="components.downloadHeader.navigation.nodeVersion"

@@ -18,7 +18,7 @@ const Pagination = ({ previous, next }: Props): JSX.Element | null => {
     <ul className={styles.pagination}>
       <li>
         {previous && previous.title && (
-          <Link to={`/learn/${previous.slug}`} rel="prev">
+          <Link to={previous.slug} rel="prev">
             <FontAwesomeIcon
               icon={faAnglesLeft}
               style={{ marginRight: '5px' }}
@@ -29,7 +29,7 @@ const Pagination = ({ previous, next }: Props): JSX.Element | null => {
       </li>
       <li>
         {next && next.title && (
-          <Link to={`/learn/${next.slug}`} rel="next">
+          <Link to={next.slug} rel="next">
             <FormattedMessage id="components.pagination.next" />
             <FontAwesomeIcon
               icon={faAnglesRight}

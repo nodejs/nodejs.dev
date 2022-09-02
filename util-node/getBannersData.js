@@ -1,17 +1,15 @@
 const fetch = require('node-fetch');
 
-async function getBannersData() {
-  try {
-    const siteResponse = await fetch(
-      'https://raw.githubusercontent.com/nodejs/nodejs.org/main/locale/en/site.json'
-    );
-    const siteData = await siteResponse.json();
-    const { banners: bannersData } = siteData;
+const { nodeBannersData } = require('../apiUrls');
 
-    return bannersData;
-  } catch (err) {
-    return Promise.reject(err);
-  }
+// @TODO: In the future the Banners Data should be stored directly in this Repository
+// If this repository ever replaces the Nodejs.org repository
+function getBannersData() {
+  // This function gets the current Nodejs.org website metadata
+  // And retrieves the `banners` data to display on the website
+  return fetch(nodeBannersData)
+    .then(response => response.json())
+    .then(({ banners }) => banners);
 }
 
 module.exports = getBannersData;

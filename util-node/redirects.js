@@ -2,7 +2,6 @@
 // Note.: Gatsby requires trailing slashes on the path names
 module.exports = {
   // Redirects Node.js Get Involved to Community
-  '/en/get-involved/': '/community/',
   '/get-involved/': '/community/',
   // Redirects old About pages path to the new ones
   '/governance/': '/about/governance/',
@@ -13,4 +12,6 @@ module.exports = {
   // Outside Redirects
   '/trademark/': 'https://trademark-policy.openjsf.org/',
   '/about/trademark/': 'https://trademark-policy.openjsf.org/',
+  // Redirects the Old `/docs` path to `/api`
+  '/docs/*': '/api/',
 };

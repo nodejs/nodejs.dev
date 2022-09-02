@@ -6,14 +6,14 @@
     color: var(--color-text-secondary);
     font-family: var(--sans-serif);
     font-size: 1.4rem;
-    font-weight: normal;
+    font-weight: var(--font-weight-regular);
     margin-left: 0;
     text-decoration: none !important;
     text-transform: uppercase;
     vertical-align: middle;
 
     span {
-      font-weight: normal;
+      font-weight: var(--font-weight-regular);
       vertical-align: middle;
     }
 
