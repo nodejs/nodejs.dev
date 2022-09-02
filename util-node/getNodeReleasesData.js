@@ -65,14 +65,15 @@ function getNodeReleasesData(nodeReleasesDataCallback) {
     });
   };
 
-  async.parallel(
-    {
-      releaseSchedule: fetchNodeReleaseSchedule,
-      releaseDetails: fetchNodeReleaseDetail,
-    },
-    parseReleaseData,
-    2
-  );
+  const asyncTasks = {
+    releaseSchedule: fetchNodeReleaseSchedule,
+    releaseDetails: fetchNodeReleaseDetail,
+  };
+
+  // This creates a parallel worker pool with 2 workers that asynchronously fetches the different
+  // API requests. And then it works towards parsing the data on `parseReleaseData`
+  // When the data gets parsed, it gets returned as a callback to the `getNodeReleasesData` function
+  async.parallel(asyncTasks, parseReleaseData, 2);
 }
 
 module.exports = getNodeReleasesData;

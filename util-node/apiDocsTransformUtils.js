@@ -44,6 +44,10 @@ function yamlValueToArray(value) {
   return Array.isArray(value) ? value : [value];
 }
 
+// This utility allows us to create a Navigation Entry
+// For every file and their respective version
+// As the structure of the Navigation object is "flat"
+// In the sense that we don't group entries by release Version
 function createNavigationCreator({ version, name }) {
   const navigationEntriesForFile = [];
 
@@ -57,12 +61,20 @@ function createNavigationCreator({ version, name }) {
       const headings = [];
 
       return {
+        // The way how this works is that once we're iterating over each Section within a file
+        // Section = a Paragraph (or in other words chunks of text separated by two line breaks)
+        // We use our utilities to identify the type of the Section if possible
+        // And attempts to find pieces of either the current section or previous sections that are Headings.
+        // Within the current Doc specification the Type Metadata could be at least two leves after the heading
         addType: type => metadataTypes.push(type),
         addHeading: lines => headings.push(lines),
         create: () => {
+          // As not necessarily any of these items are a heading, we want to find
+          // the first one that is a heading. The order of this array is (currentIndex, currentIndex - 1, currentIndex - 2)
           const lineWithActualHeading = headings.find(h => h.startsWith('#'));
 
           if (lineWithActualHeading && lineWithActualHeading.length) {
+            // We want to replace any prefix the Heading might have
             const title = lineWithActualHeading.replace(
               /^(#{1,5}) (Class: |Event: )/i,
               ''
@@ -84,6 +96,8 @@ function createNavigationCreator({ version, name }) {
   };
 }
 
+// This utility creates the Frontmatter of the Documentation page
+// It uses the metadata to create a YAML that will be inserted at the top of the page
 function createApiDocsFrontmatter(firstLine, { version, name, fullVersion }) {
   if (firstLine.startsWith('#')) {
     const editPageLink = `https://github.com/nodejs/node/blob/${fullVersion}/doc/api/${name}.md`;
@@ -107,6 +121,8 @@ function createApiDocsFrontmatter(firstLine, { version, name, fullVersion }) {
   return '';
 }
 
+// Utility to replace the `> Stability: XXXXXX` blockquotes and their following lines
+// into a proper metadata with the information (index number) and any other accompanying text
 function replaceStabilityIndex(metadata) {
   return (_, __, level, text) => {
     const data = JSON.stringify({ stability: { level: Number(level), text } });
@@ -115,6 +131,7 @@ function replaceStabilityIndex(metadata) {
   };
 }
 
+// This utility increases any Heading Level by 1 until it reachs Level 6
 function increaseHeadingLevel() {
   return (_, l) => {
     // trim the string and calculate length as there might be whitespace
@@ -124,6 +141,9 @@ function increaseHeadingLevel() {
   };
 }
 
+// This utility inserts the `<DataTag>` component as prefix of the Heading
+// It allows us to render the small "round tags" that identify if the entry
+// is a class, event, method or something else
 function addClassEventHeading(_, navigationCreator) {
   const getTagPerName = name => {
     switch (name) {
@@ -140,14 +160,23 @@ function addClassEventHeading(_, navigationCreator) {
   return (_m, prefix, name) => `${prefix} ${getTagPerName(name)}`;
 }
 
+// This utility replaces any encounter of `{String}`, {Object}` etc
+// Within a proper link referencing either to its MDN specification
+// Or if it is another API doc (e.g.: `fs.something`) then to its
+// respective API page
 function replaceTypeToLinks() {
   return source => typeParser(source);
 }
 
+// This utility replaces `<pre>` tags with ``` so that it is Markdown compatible
+// Otherwise MDX will crash as it attempts to parse the <pre> contents as HTML/JSX
 function cleanseCodeTags() {
   return () => `\`\`\``;
 }
 
+// This utility replaces the YAML metadata sections with our
+// <Metadata> component that will render proper Metadata information
+// for that section. Such as when it ws added, when it was removed, et cetera
 function replaceMarkdownMetadata(metadata, navigationCreator) {
   return (_, yamlString) => {
     const cleanContent = yamlString.replace('YAML', '');
@@ -165,11 +194,13 @@ function replaceMarkdownMetadata(metadata, navigationCreator) {
 
       if (typeof parsedYaml === 'object') {
         Object.keys(parsedYaml).forEach(key => {
+          // Some entries should always be Array for the sake of consistency
           if (YAML_FEATURES.arrayOnlyMetadata.includes(key)) {
             parsedYaml[key] = yamlValueToArray(parsedYaml[key]);
           }
 
           if (YAML_FEATURES.updateMetadatas.includes(key)) {
+            // We transform some entries in a standardized "updates" field
             parsedYaml.update = { type: key, version: parsedYaml[key] };
 
             delete parsedYaml[key];
@@ -193,11 +224,14 @@ function replaceMarkdownMetadata(metadata, navigationCreator) {
   };
 }
 
+// This utility fixes URL references from `.md` files directly to the /api/ path
 function replaceUrlReferences() {
   return (_, reference, file, hash) =>
     `${reference} (${apiPath}${file}${hash || ''})`;
 }
 
+// This function creates our Markdown parser that parses the whole MDX/Markdown file
+// By updating and removing contents to the way we need them to be
 function createMarkdownParser(markdownContent, metadata) {
   const stabilityIndex = replaceStabilityIndex(metadata);
   const urlReferences = replaceUrlReferences(metadata);

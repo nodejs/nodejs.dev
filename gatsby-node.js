@@ -257,16 +257,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         });
       }
 
-      if (fileAbsolutePath.includes(learnPath)) {
-        // Special Handling for Learn Content
+      if (frontmatter.category === 'learn') {
+        // Different type of slug for /learn/ pages
         slug = `${learnPath}${createSlug(frontmatter.title)}/`;
       }
 
-      // For Nodes created from Buffers the Absolute Path comes differently
-      // From what we would expect of `apiPath`
-      if (fileAbsolutePath.includes('/-api-v')) {
-        // `apiDoc-v` prefix comes from `getApiDocsData.js` and its used to define the file name
-        // Speicla Handling for Api Docs Pages
+      if (frontmatter.category === 'api') {
+        // Different type of slug for /api/ pages
         slug = `${apiPath}${frontmatter.version}/${frontmatter.title}/`;
       }
     }

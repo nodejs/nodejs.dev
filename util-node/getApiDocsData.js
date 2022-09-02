@@ -17,6 +17,9 @@ const filterOutInvalidFiles = file =>
 async function getApiDocsData(releaseVersions, gatsbyApis, callback) {
   const navigationEntries = [];
 
+  // This creates an asynchronous queue that fetches the directory listing of the
+  // /doc/api/ directory on the Node.js repository with the contents of a specific version (Git Tag)
+  // Then the worker creates a new queue that dispatches a list of files (their metadata and the release version)
   const apiDownloadListQueue = async.queue((fullReleaseVersion, cb) => {
     const pushToDocsQueue = files => {
       const markdownFiles = files.filter(filterOutInvalidFiles);
@@ -27,12 +30,18 @@ async function getApiDocsData(releaseVersions, gatsbyApis, callback) {
         items: [],
       };
 
+      // Here we create a new queue to parse each one of the Markdown files
+      // We first iterate through the contents with mostly Regex and string interpolation instead of AST
+      // As we don't want to overcomplicate things. There are definitel drawbacks of using ReGeX
       const apiDocsParser = async.queue((file, dCb) => {
         const parseMarkdownCallback = contents => {
           gatsbyApis.docsTimer.setStatus(
             `Parsing API ${file.name}@${fullReleaseVersion}`
           );
 
+          // We create a Markdown Parser that will be responsible of parsing the file
+          // The parser includes utilities to create a Frontmatter, replace the YAML metadata
+          // with JSX Components, fix URL links, update the Headings levels and many other small improvements
           const { parseMarkdown, getNavigationEntries } = createMarkdownParser(
             contents,
             {
@@ -45,8 +54,11 @@ async function getApiDocsData(releaseVersions, gatsbyApis, callback) {
 
           const resultingContent = parseMarkdown();
 
+          // Our Navigation Sidebar is generated from within the Markdown Parser
+          // And it has a format that matches the <NavigationItem> type
           navigationEntry.items.push(...getNavigationEntries());
 
+          // This creates the Gatsby Node based from the Buffer contents.e
           createFileNodeFromBuffer({
             buffer: Buffer.from(resultingContent),
             cache: gatsbyApis.cache,
@@ -83,6 +95,7 @@ async function getApiDocsData(releaseVersions, gatsbyApis, callback) {
   // Retrieves all the Lists of the Documentation files for that Node.js version
   apiDownloadListQueue.push(...releaseVersions);
 
+  // After the whole queue ends we call the callback with our Navigation entries
   apiDownloadListQueue.drain(() => callback({ navigationEntries }));
 }
 

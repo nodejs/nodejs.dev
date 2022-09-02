@@ -12,9 +12,7 @@ function getLatestNvmVersion() {
       return { version: 'unknown' };
     }
 
-    const [latestVersion] = nvmTagsData;
-
-    return { version: latestVersion.name };
+    return { version: nvmTagsData[0].name };
   };
 
   return fetch(nvmTags, createGitHubHeaders())
