@@ -20,7 +20,9 @@ exports[`Navigation component renders correctly 1`] = `
         role="menuitem"
         tabindex="0"
       >
-        Getting Started
+        <span>
+          Getting Started
+        </span>
         <svg
           aria-hidden="true"
           class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
@@ -40,7 +42,7 @@ exports[`Navigation component renders correctly 1`] = `
         <a
           aria-current="page"
           class="t-body2 navigationItem navigationItemActive"
-          href="/learn/intro/"
+          href="intro"
           id="link-intro"
         >
           Section 1

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import DOMPurify from 'isomorphic-dompurify';
+import { sanitize } from 'isomorphic-dompurify';
 import { dateIsBetween } from '../../util/dateIsBetween';
 import config from '../../config.json';
 import { BannersIndex } from '../../types';
@@ -30,7 +30,7 @@ const useTextContent = ({ text, link }: BannersIndex) => {
 const useHtmlContent = ({ html, link }: BannersIndex) => {
   return useMemo(() => {
     if (html) {
-      const sanitizedHtml = DOMPurify.sanitize(html);
+      const sanitizedHtml = sanitize(html);
 
       return (
         <a

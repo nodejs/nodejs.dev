@@ -1,5 +1,44 @@
 import type { GatsbyBrowser, GatsbySSR } from 'gatsby';
 
+export interface ApiChange {
+  version: string | string[];
+  'pr-url': string;
+  description: string;
+}
+
+export interface ApiUpdate {
+  type: 'added' | 'removed' | 'deprecated' | 'introduced_in' | 'napiVersion';
+  version: string[];
+}
+
+export interface ApiComponentData {
+  type?: string;
+  name?: string;
+  source_link?: string;
+  update?: ApiUpdate;
+  stability?: { level: number; text: string };
+  changes?: ApiChange[];
+}
+
+export interface ApiType {
+  name: string;
+  slug: string;
+}
+
+export interface ApiPageData {
+  api: {
+    id: string;
+    body: string;
+    tableOfContents: PageTableOfContents;
+    frontmatter: {
+      title: string;
+      version: string;
+      displayTitle: string;
+      editPage: string;
+    };
+  };
+}
+
 export interface GenericPageContext {
   intlMessages: Record<string, string>;
   locale: string;
@@ -38,11 +77,22 @@ export interface LearnPageContext {
   navigationData: NavigationSectionData;
 }
 
+export interface ApiPageContext {
+  slug: string;
+  relativePath: string;
+  next: PaginationInfo;
+  previous: PaginationInfo;
+  navigationData: NavigationSectionData;
+}
+
+export interface TableOfContentsItem {
+  title: string;
+  url: string;
+  items?: TableOfContentsItem[];
+}
+
 export interface PageTableOfContents {
-  items: {
-    title: string;
-    url: string;
-  }[];
+  items: TableOfContentsItem[];
 }
 
 export interface LearnPageData {
@@ -71,9 +121,7 @@ export interface BlogCategory {
 export interface NavigationSectionItem {
   slug: string;
   title: string;
-  section: string;
   category: string;
-  baseUrl?: string;
 }
 
 export interface NavigationSectionData {
@@ -255,6 +303,8 @@ export type SearchResult = {
   id: React.Key | null | undefined;
   slug: string;
   title: string;
+  category: string;
+  displayTitle?: string;
 };
 
 export type WrapPageElementBrowser =

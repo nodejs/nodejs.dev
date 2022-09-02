@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { ReactComponent as LogoLight } from '../../images/logos/nodejs-logo-light-mode.svg';
 import { ReactComponent as LogoDark } from '../../images/logos/nodejs-logo-dark-mode.svg';
-import { useMediaQuery } from '../../hooks/useMediaQuery';
 import SearchBar from '../SearchBar';
 import DarkModeToggle from '../DarkModeToggle';
 import LanguageSelector from '../LanguageSelector';
@@ -13,7 +12,6 @@ import { useFeatureToggles } from '../../hooks';
 import styles from './index.module.scss';
 
 const Header = (): JSX.Element => {
-  const isMobile = useMediaQuery('(max-width: 870px)');
   const featureToggles = useFeatureToggles();
 
   return (
@@ -30,25 +28,22 @@ const Header = (): JSX.Element => {
 
         <ul className={styles.tabs}>
           <li>
-            <Link to="/learn" activeClassName={styles.active} partiallyActive>
+            <Link to="/learn/" activeClassName={styles.active} partiallyActive>
               <FormattedMessage id="components.header.links.learn" />
             </Link>
           </li>
           <li>
-            <a
-              target="_blank"
-              href="https://nodejs.org/en/docs/"
-              rel="noopener noreferrer"
+            <Link
+              to="/api/documentation/"
+              activeClassName={styles.active}
+              partiallyActive
             >
-              <FormattedMessage
-                id="components.header.links.docs"
-                values={{ isMobile }}
-              />
-            </a>
+              <FormattedMessage id="components.header.links.docs" />
+            </Link>
           </li>
           <li>
             <Link
-              to="/download"
+              to="/download/"
               activeClassName={styles.active}
               partiallyActive
             >
@@ -57,7 +52,7 @@ const Header = (): JSX.Element => {
           </li>
           <li>
             <Link
-              to="/community"
+              to="/community/"
               activeClassName={styles.active}
               partiallyActive
             >

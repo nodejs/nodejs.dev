@@ -62,7 +62,7 @@
 
       &--active {
         color: var(--color-text-accent);
-        font-weight: 600;
+        font-weight: var(--font-weight-semibold);
 
         &::before {
           box-shadow: inset 0 0 0 2.4rem var(--color-border-accent);
