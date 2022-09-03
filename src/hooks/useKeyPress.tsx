@@ -3,30 +3,32 @@
  */
 import { useEffect, useState } from 'react';
 
-function useKeyPress(targetKey: string) {
+function useKeyPress(targetKey: string, cb?: () => void): boolean {
   const [keyPressed, setKeyPressed] = useState(false);
 
-  const downHandler = ({ key }: KeyboardEvent) => {
-    if (key === targetKey) {
-      setKeyPressed(true);
-    }
-  };
-
-  const upHandler = ({ key }: KeyboardEvent) => {
-    if (key === targetKey) {
-      setKeyPressed(false);
-    }
-  };
-
   useEffect(() => {
+    const downHandler = ({ key }: KeyboardEvent) => {
+      if (key === targetKey) {
+        setKeyPressed(true);
+        if (cb) {
+          cb();
+        }
+      }
+    };
+
+    const upHandler = ({ key }: KeyboardEvent) => {
+      if (key === targetKey) {
+        setKeyPressed(false);
+      }
+    };
+
     window.addEventListener('keydown', downHandler);
     window.addEventListener('keyup', upHandler);
     return () => {
       window.removeEventListener('keydown', downHandler);
       window.removeEventListener('keyup', upHandler);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [cb, targetKey]);
   return keyPressed;
 }
 

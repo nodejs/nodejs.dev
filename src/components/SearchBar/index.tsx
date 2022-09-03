@@ -42,8 +42,6 @@ const SearchBar = (): JSX.Element => {
 
   const resultData = siteSearchIndex.index as SerialisedIndexData<SearchResult>;
 
-  const searchKey = useKeyPress('/');
-  const escKey = useKeyPress('Escape');
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const searchInputRef = createRef<HTMLInputElement>();
@@ -96,16 +94,6 @@ const SearchBar = (): JSX.Element => {
     [styles.expanded]: isExpanded,
   });
 
-  useEffect(() => {
-    if (searchKey) {
-      setExpanded(true);
-    }
-
-    if (escKey) {
-      setExpanded(false);
-    }
-  }, [searchKey, escKey]);
-
   const onKeyPressHandler = () => {
     if (!isExpanded) {
       expandContainer();
@@ -115,6 +103,14 @@ const SearchBar = (): JSX.Element => {
       searchInputRef.current.focus();
     }
   };
+
+  useKeyPress('/', () => onKeyPressHandler());
+  useKeyPress('Escape', () => {
+    if (isExpanded) {
+      collapseContainer();
+      searchInputRef.current?.blur();
+    }
+  });
 
   return (
     <motion.div
