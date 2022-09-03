@@ -35,7 +35,7 @@ The most common example Hello World of Node.js is a web server:
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 
-<!--```js
+```js
 const http = require('http')
 
 const hostname = '127.0.0.1'

@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from 'react-click-outside-hook';
 import { Index, SerialisedIndexData } from 'elasticlunr';
+import SectionTitle from '../SectionTitle';
 import { SearchResult } from '../../types';
 import styles from './index.module.scss';
 
@@ -168,11 +169,20 @@ const SearchBar = (): JSX.Element => {
           )}
           {!isEmpty && (
             <ul>
-              {results.map((result: SearchResult) => (
-                <li key={result.id}>
-                  <Link to={`/learn/${result.slug}`}>{result.title}</Link>
-                </li>
-              ))}
+              {results.map((result: SearchResult) => {
+                const sectionPath = result.displayTitle
+                  ? ['home', result.category, result.title]
+                  : ['home', result.category];
+
+                return (
+                  <li key={result.id}>
+                    <Link to={result.slug}>
+                      <span>{result.displayTitle || result.title}</span>
+                    </Link>
+                    <SectionTitle path={sectionPath} />
+                  </li>
+                );
+              })}
             </ul>
           )}
         </div>

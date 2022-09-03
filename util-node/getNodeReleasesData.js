@@ -1,52 +1,79 @@
 const fetch = require('node-fetch');
+const async = require('async');
 const getReleaseStatus = require('./getReleaseStatus');
+const { nodeReleaseData, nodeReleaseSchedule } = require('../apiUrls');
 
-async function getNodeReleasesData() {
-  try {
-    const releasesDataDetailURL = 'https://nodejs.org/dist/index.json';
-    const releasesDataURL =
-      'https://raw.githubusercontent.com/nodejs/Release/main/schedule.json';
+function getNodeReleasesData(nodeReleasesDataCallback) {
+  const fetchNodeReleaseSchedule = callback => {
+    fetch(nodeReleaseSchedule)
+      .then(response => response.json())
+      .then(releaseSchedule => callback(null, releaseSchedule));
+  };
 
-    const releasesDataDetailResponse = await fetch(releasesDataDetailURL);
-    const releasesDataDetailResult = await releasesDataDetailResponse.json();
+  const fetchNodeReleaseDetail = callback => {
+    fetch(nodeReleaseData)
+      .then(response => response.json())
+      .then(releaseDetails => callback(null, releaseDetails));
+  };
 
-    const releasesDataResponse = await fetch(releasesDataURL);
-    const releasesDataResult = await releasesDataResponse.json();
+  const parseReleaseData = (_, results) => {
+    const { releaseSchedule, releaseDetails } = results;
 
-    const mappedReleasesDataDetail = releasesDataDetailResult
-      .map(release => ({
-        ...release,
-        lts: release.lts || '',
-      }))
+    const currentReleasesArray = [];
+
+    const getNonEolReleases = key =>
+      new Date(releaseSchedule[key].end) >= new Date();
+
+    const mapReleaseData = key => {
+      const release = releaseSchedule[key];
+
+      currentReleasesArray.push(key);
+
+      return {
+        endOfLife: release.end,
+        maintenanceLTSStart: release.maintenance || '',
+        activeLTSStart: release.lts || '',
+        codename: release.codename || '',
+        initialRelease: release.start,
+        release: key,
+        status: getReleaseStatus(release),
+      };
+    };
+
+    const filteredReleasesData = Object.keys(releaseSchedule)
+      .filter(getNonEolReleases)
+      .map(mapReleaseData);
+
+    const getReleaseDataFromNonEolReleases = release => {
+      if (release && release.version) {
+        const majorVersion = release.version.split('.')[0];
+
+        return currentReleasesArray.includes(majorVersion);
+      }
+
+      return false;
+    };
+
+    const mappedReleasesDataDetail = releaseDetails
+      .filter(getReleaseDataFromNonEolReleases)
+      .map(release => ({ ...release, lts: release.lts || '' }))
       .slice(0, 50);
 
-    const filteredReleasesData = Object.keys(releasesDataResult)
-      .filter(key => {
-        const release = releasesDataResult[key];
-        const end = new Date(release.end);
-        return end >= new Date();
-      })
-      .map(key => {
-        const release = releasesDataResult[key];
-
-        return {
-          endOfLife: release.end,
-          maintenanceLTSStart: release.maintenance || '',
-          activeLTSStart: release.lts || '',
-          codename: release.codename || '',
-          initialRelease: release.start,
-          release: key,
-          status: getReleaseStatus(release),
-        };
-      });
-
-    return {
+    nodeReleasesDataCallback({
       nodeReleasesDataDetail: mappedReleasesDataDetail,
       nodeReleasesData: filteredReleasesData,
-    };
-  } catch (err) {
-    return Promise.reject(err);
-  }
+    });
+  };
+
+  const asyncTasks = {
+    releaseSchedule: fetchNodeReleaseSchedule,
+    releaseDetails: fetchNodeReleaseDetail,
+  };
+
+  // This creates a parallel worker pool with 2 workers that asynchronously fetches the different
+  // API requests. And then it works towards parsing the data on `parseReleaseData`
+  // When the data gets parsed, it gets returned as a callback to the `getNodeReleasesData` function
+  async.parallel(asyncTasks, parseReleaseData, 2);
 }
 
 module.exports = getNodeReleasesData;

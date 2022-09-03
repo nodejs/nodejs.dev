@@ -1,0 +1,32 @@
+{
+  "generatorOpts": {
+    "compact": true,
+    "comments": false
+  },
+  "overrides": [
+    {
+      "test": "**/**.md",
+      "compact": true
+    }
+  ],
+  "plugins": [
+    [
+      "prismjs",
+      {
+        "languages": ["js", "css", "jsx", "bash", "ts", "markup", "cpp", "c"],
+        "plugins": [],
+        "css": false
+      }
+    ]
+  ],
+  "presets": [
+    [
+      "babel-preset-gatsby",
+      {
+        "targets": {
+          "browsers": ["last 3 versions", "not ie <= 11", "not android 4.4.3"]
+        }
+      }
+    ]
+  ]
+}

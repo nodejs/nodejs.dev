@@ -30,7 +30,7 @@
   "components.footer.links.openJsFoundation": "© OpenJS Foundation",
   "components.footer.links.github": "GitHub",
   "components.header.links.learn": "Learn",
-  "components.header.links.docs": "{isMobile, select, true {Docs}other {Documentation}}",
+  "components.header.links.docs": "API Docs",
   "components.header.links.download": "Download",
   "components.header.links.community": "Community",
   "components.hero.downloadLts": "Download Node (LTS)",
@@ -70,5 +70,14 @@
   "pages.index.features.openSource.description": "Node.js is open source and actively maintained by contributors all over the world",
   "pages.index.features.everywhere.title": "Everywhere",
   "pages.index.features.everywhere.description": "Node.js has been adapted to work in a wide variety of places",
-  "components.tableOfContents.heading": "Table of Contents"
+  "components.tableOfContents.heading": "Table of Contents",
+  "docs.api.addedIn": "Added in: {version}",
+  "docs.api.removedIn": "Removed in: {version}",
+  "docs.api.deprecatedIn": "Deprecated in: {version}",
+  "docs.api.nApiVersion": "N-API version: {version}",
+  "docs.api.history": "History",
+  "docs.api.sourceLink": "Source Code:",
+  "docs.api.history.version": "Version",
+  "docs.api.history.changes": "Changes",
+  "docs.api.stability": "Stability: {level}{text}"
 }
