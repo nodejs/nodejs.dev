@@ -42,8 +42,6 @@ const SearchBar = (): JSX.Element => {
 
   const resultData = siteSearchIndex.index as SerialisedIndexData<SearchResult>;
 
-  const searchKey = useKeyPress('/');
-  const escKey = useKeyPress('Escape');
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const searchInputRef = createRef<HTMLInputElement>();
@@ -95,16 +93,6 @@ const SearchBar = (): JSX.Element => {
   const containerClassNames = classNames(styles.searchBarContainer, {
     [styles.expanded]: isExpanded,
   });
-
-  useEffect(() => {
-    if (searchKey) {
-      setExpanded(true);
-    }
-
-    if (escKey) {
-      setExpanded(false);
-    }
-  }, [searchKey, escKey]);
 
   const onKeyPressHandler = () => {
     if (!isExpanded) {
