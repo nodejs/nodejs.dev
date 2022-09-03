@@ -181,6 +181,10 @@
       "react": "$react",
       "react-dom": "$react-dom",
       "gatsby": "$gatsby"
+    },
+    "@testing-library/react": {
+      "react": "$react",
+      "react-dom": "$react-dom"
     }
   },
   "jest": {

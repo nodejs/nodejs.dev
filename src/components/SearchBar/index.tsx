@@ -11,6 +11,7 @@ import { Index, SerialisedIndexData } from 'elasticlunr';
 import SectionTitle from '../SectionTitle';
 import { SearchResult } from '../../types';
 import styles from './index.module.scss';
+import useKeyPress from '../../hooks/useKeyPress';
 
 const containerTransition = { type: 'spring', damping: 22, stiffness: 150 };
 const containerVariants = {
@@ -41,6 +42,8 @@ const SearchBar = (): JSX.Element => {
 
   const resultData = siteSearchIndex.index as SerialisedIndexData<SearchResult>;
 
+  const searchKey = useKeyPress('/');
+  const escKey = useKeyPress('Escape');
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const searchInputRef = createRef<HTMLInputElement>();
@@ -92,6 +95,16 @@ const SearchBar = (): JSX.Element => {
   const containerClassNames = classNames(styles.searchBarContainer, {
     [styles.expanded]: isExpanded,
   });
+
+  useEffect(() => {
+    if (searchKey) {
+      setExpanded(true);
+    }
+
+    if (escKey) {
+      setExpanded(false);
+    }
+  }, [searchKey, escKey]);
 
   const onKeyPressHandler = () => {
     if (!isExpanded) {
