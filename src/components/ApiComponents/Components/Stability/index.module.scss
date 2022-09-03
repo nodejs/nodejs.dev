@@ -1,0 +1,31 @@
+.stability {
+  border-radius: 4px;
+  color: #fff;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+  padding: 1rem;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  &__level-0 {
+    background-color: var(--danger6);
+  }
+
+  &__level-1 {
+    background-color: var(--warning5);
+  }
+
+  &__level-2 {
+    background-color: var(--brand6);
+  }
+
+  &__level-3 {
+    background-color: var(--info7);
+  }
+}

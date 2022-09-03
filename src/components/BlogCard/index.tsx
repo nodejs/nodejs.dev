@@ -3,13 +3,15 @@ import React, { Fragment } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import { BlogPost } from '../../types';
 import { getTerminatingString } from '../../util/getTerminatingString';
+import { blogPath } from '../../../pathPrefixes';
 import styles from './index.module.scss';
 
 interface Props {
   data: BlogPost;
 }
 
-const getBlogCategoryUrl = (category: string): string => `/blog/${category}/`;
+const getBlogCategoryUrl = (category: string): string =>
+  `${blogPath}${category}/`;
 
 const getBlogPostUrl = (slug: string) =>
   slug.endsWith('/') ? slug : `${slug}/`;

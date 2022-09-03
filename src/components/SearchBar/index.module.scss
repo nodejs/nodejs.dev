@@ -33,7 +33,7 @@
       border-radius: 6px;
       color: var(--color-text-primary);
       font-size: var(--font-size-body1);
-      font-weight: 500;
+      font-weight: var(--font-weight-semibold);
       height: 100%;
       outline: none;
       width: 100%;
@@ -78,12 +78,19 @@
 
     ul {
       list-style: circle;
+      padding: 0 var(--space-24) 0 var(--space-32);
 
       li {
         color: var(--color-text-primary);
         display: list-item;
         margin: 0;
         padding: 5px 0;
+
+        > a {
+          text-decoration: none;
+          text-overflow: ellipsis;
+          text-transform: capitalize;
+        }
       }
     }
   }

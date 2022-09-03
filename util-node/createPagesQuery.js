@@ -18,7 +18,7 @@ module.exports = `
             "package-manager"
           ]
         }
-        categoryName: { ne: "learn" }
+        categoryName: { nin: ["learn", "api"] }
       }
     }
     sort: { fields: [fileAbsolutePath], order: ASC }
@@ -27,7 +27,6 @@ module.exports = `
       node {
         id
         fileAbsolutePath
-        body
         parent {
           ... on File {
             relativePath
@@ -35,12 +34,6 @@ module.exports = `
         }
         frontmatter {
           title
-          description
-          authors
-          section
-          category {
-            name
-          }
         }
         fields {
           slug
