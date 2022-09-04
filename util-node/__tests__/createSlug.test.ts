@@ -19,7 +19,7 @@ describe('Tests for createSlug', () => {
     expect(slugs).toEqual([
       'how-to-install-nodejs',
       'the-v8-javascript-engine',
-      'the-package-json-guide',
+      'the-packagejson-guide',
       'nodejs-and-something',
       'usr-local-nodejs-bin',
       'a-b-c',

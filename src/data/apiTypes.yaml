@@ -1,0 +1,6 @@
+- name: global
+  slug: Globals
+- name: module
+  slug: Modules
+- name: class
+  slug: Classes

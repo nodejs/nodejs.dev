@@ -21,11 +21,6 @@
   ],
   "redirects": [
     {
-      "source": "/en/get-involved/",
-      "destination": "/community/",
-      "type": "301"
-    },
-    {
       "source": "/get-involved/",
       "destination": "/community/",
       "type": "301"

@@ -3,10 +3,10 @@
 exports[`Codebox component renders correctly 1`] = `
 <div>
   <pre
-    class="prismCode prism-code language-html"
+    class="pre language-html"
   >
     <div
-      class="shellBoxTop"
+      class="top"
     >
       <span>
         HTML
@@ -18,13 +18,9 @@ exports[`Codebox component renders correctly 1`] = `
       </button>
     </div>
     <div
-      class="tokenLine"
+      class="content"
     >
-      <span
-        class="token plain"
-      >
-        [object Object]
-      </span>
+      [object Object]
     </div>
   </pre>
 </div>
