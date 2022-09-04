@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DownloadCards component renders correctly 1`] = `
+<div>
+  <div
+    class="downloadCardsWrapper"
+    data-rttabs="true"
+    tabindex="-1"
+  >
+    <ul
+      class="downloadCards"
+      role="tablist"
+    >
+      <li
+        aria-controls="paneldownload-card-WIN"
+        aria-disabled="false"
+        aria-selected="false"
+        class="downloadCard downloadCardActive"
+        data-rttab="true"
+        id="tabdownload-card-WIN"
+        role="tab"
+        tabindex="0"
+      >
+        <div
+          class="top"
+        >
+          <svg
+            class="image"
+          />
+          <a
+            class="link"
+            href="https://nodejs.org/dist/undefined/node-undefined-x86.msi"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="GetAppIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"
+              />
+            </svg>
+          </a>
+        </div>
+        <p
+          class="label"
+        >
+          Windows Installer
+        </p>
+        <p
+          class="filename"
+        >
+          node-undefined-x86.msi
+        </p>
+      </li>
+      <li
+        aria-controls="paneldownload-card-MAC"
+        aria-disabled="false"
+        aria-selected="false"
+        class="downloadCard"
+        data-rttab="true"
+        id="tabdownload-card-MAC"
+        role="tab"
+        tabindex="0"
+      >
+        <div
+          class="top"
+        >
+          <svg
+            class="image"
+          />
+        </div>
+        <p
+          class="label"
+        >
+          MAC Installer
+        </p>
+        <p
+          class="filename"
+        >
+          node-undefined.pkg
+        </p>
+      </li>
+      <li
+        aria-controls="paneldownload-card-SOURCECODE"
+        aria-disabled="false"
+        aria-selected="false"
+        class="downloadCard"
+        data-rttab="true"
+        id="tabdownload-card-SOURCECODE"
+        role="tab"
+        tabindex="0"
+      >
+        <div
+          class="top"
+        >
+          <svg
+            class="image"
+          />
+        </div>
+        <p
+          class="label"
+        >
+          Source Code
+        </p>
+        <p
+          class="filename"
+        >
+          node-undefined.tar.gz
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

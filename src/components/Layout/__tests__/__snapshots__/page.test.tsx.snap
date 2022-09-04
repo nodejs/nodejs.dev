@@ -1,0 +1,467 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageLayout component renders correctly with data 1`] = `
+<div>
+  <div
+    class="layout-container"
+  >
+    <nav
+      aria-label="Primary"
+      class="header"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="startWrapper"
+        >
+          <a
+            aria-label="Homepage"
+            href="/"
+          >
+            <div
+              class="logo"
+            >
+              <svg
+                class="light-mode-only"
+              />
+              <svg
+                class="dark-mode-only"
+              />
+            </div>
+          </a>
+        </div>
+        <ul
+          class="tabs"
+        >
+          <li>
+            <a
+              href="/learn/"
+            >
+              Learn
+            </a>
+          </li>
+          <li>
+            <a
+              href="/api/documentation/"
+            >
+              API Docs
+            </a>
+          </li>
+          <li>
+            <a
+              href="/download/"
+            >
+              Download
+            </a>
+          </li>
+          <li>
+            <a
+              href="/community/"
+            >
+              Community
+            </a>
+          </li>
+        </ul>
+        <div
+          class="endWrapper"
+        >
+          <ul
+            class="rightContainer"
+          >
+            <li
+              class="searchBar"
+            >
+              <span
+                class="sr-only"
+              >
+                Search Bar
+              </span>
+              <div
+                class="searchBarContainer"
+                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
+              >
+                <div
+                  class="searchInputContainer"
+                  role="presentation"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium searchIcon css-8rv7ug-MuiSvgIcon-root"
+                    data-testid="TravelExploreIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19.3 16.9c.4-.7.7-1.5.7-2.4 0-2.5-2-4.5-4.5-4.5S11 12 11 14.5s2 4.5 4.5 4.5c.9 0 1.7-.3 2.4-.7l3.2 3.2 1.4-1.4-3.2-3.2zm-3.8.1c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5zM12 20v2C6.48 22 2 17.52 2 12S6.48 2 12 2c4.84 0 8.87 3.44 9.8 8h-2.07c-.64-2.46-2.4-4.47-4.73-5.41V5c0 1.1-.9 2-2 2h-2v2c0 .55-.45 1-1 1H8v2h2v3H9l-4.79-4.79C4.08 10.79 4 11.38 4 12c0 4.41 3.59 8 8 8z"
+                    />
+                  </svg>
+                  <label
+                    for="searchInput"
+                  >
+                    <span>
+                      Search
+                    </span>
+                    <input
+                      autocomplete="off"
+                      class="inputText"
+                      id="searchInput"
+                      name="query"
+                      type="text"
+                      value=""
+                    />
+                  </label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <button
+                class="darkModeToggle"
+                type="button"
+              >
+                <span
+                  class="sr-only"
+                >
+                  Toggle Dark Mode
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium light-mode-only css-8rv7ug-MuiSvgIcon-root"
+                  data-testid="ModeNightIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M9.5 2c-1.82 0-3.53.5-5 1.35 2.99 1.73 5 4.95 5 8.65s-2.01 6.92-5 8.65c1.47.85 3.18 1.35 5 1.35 5.52 0 10-4.48 10-10S15.02 2 9.5 2z"
+                  />
+                </svg>
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium dark-mode-only css-8rv7ug-MuiSvgIcon-root"
+                  data-testid="BrightnessMediumIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M20 15.31 23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69zM12 18V6c3.31 0 6 2.69 6 6s-2.69 6-6 6z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <a
+                href="https://github.com/nodejs/nodejs.dev"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span
+                  class="sr-only"
+                >
+                  GitHub
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-github "
+                  color="var(--color-text-accent)"
+                  data-icon="github"
+                  data-prefix="fab"
+                  focusable="false"
+                  role="img"
+                  style="padding: 1rem; width: 2rem; height: 2rem;"
+                  viewBox="0 0 496 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main
+      class="page"
+    >
+      <article
+        class="article"
+      >
+        <h1
+          class="headline"
+        >
+          mock-title
+        </h1>
+        <details
+          class="tableOfContents"
+        >
+          <summary>
+            <strong>
+              Table of Contents
+            </strong>
+          </summary>
+          <ul>
+            <li>
+              <a
+                href="#mock-title"
+              >
+                mock-title
+              </a>
+            </li>
+            <li>
+              <a
+                href="#mock-title-2"
+              >
+                mock-title-2
+              </a>
+            </li>
+          </ul>
+        </details>
+        <div>
+          <p>
+            Node.js can be installed in different ways. This post highlights the most common and convenient ones.
+          </p>
+          <p>
+            Official packages for all the major platforms are available at 
+            <a>
+              https://nodejs.dev/download/
+            </a>
+            .
+          </p>
+          <p>
+            One very convenient way to install Node.js is through a package manager. In this case, every operating system has its own.
+          </p>
+          <p>
+            Other package managers for MacOS, Linux, and Windows are listed in 
+            <a>
+              https://nodejs.dev/download/package-manager/
+            </a>
+          </p>
+          <p>
+            <code
+              class="code"
+            >
+              nvm
+            </code>
+             is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks, for example.
+          </p>
+          <p>
+            It is also very useful to test your code with old Node.js versions.
+          </p>
+          <p>
+            See 
+            <a>
+              https://github.com/nvm-sh/nvm
+            </a>
+             for more information about this option.
+          </p>
+          <p>
+            In any case, when Node.js is installed you'll have access to the 
+            <code
+              class="code"
+            >
+              node
+            </code>
+             executable program in the command line.
+          </p>
+        </div>
+        <div
+          class="authorList"
+        >
+          Contributors
+          <ul>
+            <li>
+              <a
+                class="link"
+                href="https://github.com/mock-author"
+                rel="noopener noreferrer"
+                style="margin-left: 0px;"
+                target="_blank"
+                title="mock-author"
+              >
+                <img
+                  alt="mock-author"
+                  src="https://github.com/mock-author.png?size=60"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="edit"
+        >
+          <a
+            href="https://github.com/nodejs/nodejs.dev/edit/main/mock-editPath"
+          >
+            <span>
+              Edit this page on GitHub
+            </span>
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-pencil "
+              data-icon="pencil"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+      </article>
+    </main>
+    <footer
+      class="footer"
+    >
+      <ul
+        class="left"
+      >
+        <li>
+          <a
+            aria-label="Node.js Slack Link"
+            class="link"
+            href="https://trademark-policy.openjsf.org/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Trademark Policy
+          </a>
+        </li>
+        <li>
+          <a
+            class="link"
+            href="/about/privacy"
+          >
+            Privacy Policy
+          </a>
+        </li>
+        <li>
+          <a
+            class="link"
+            href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
+          >
+            Code of Conduct
+          </a>
+        </li>
+        <li>
+          <a
+            class="link"
+            href="/about/security"
+          >
+            Security Reporting
+          </a>
+        </li>
+        <li>
+          <a
+            class="link"
+            href="/about"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            class="link"
+            href="/blog"
+          >
+            Blog
+          </a>
+        </li>
+      </ul>
+      <ul
+        class="right"
+      >
+        <li>
+          © OpenJS Foundation
+        </li>
+        <li>
+          <a
+            aria-label="Node.js Github Page Link"
+            href="https://github.com/nodejs/node"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span
+              class="sr-only"
+            >
+              GitHub
+            </span>
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-github "
+              color="var(--color-text-secondary)"
+              data-icon="github"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              viewBox="0 0 496 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            aria-label="Node.js Twitter Link"
+            href="https://twitter.com/nodejs"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-twitter "
+              color="var(--color-text-secondary)"
+              data-icon="twitter"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            aria-label="Node.js Slack Link"
+            href="https://slack.openjsf.org"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-slack "
+              color="var(--color-text-secondary)"
+              data-icon="slack"
+              data-prefix="fab"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </div>
+</div>
+`;

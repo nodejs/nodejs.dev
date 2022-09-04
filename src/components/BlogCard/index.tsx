@@ -1,13 +1,20 @@
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import React, { Fragment } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
-import { BlogMetaData } from '../../types';
+import { BlogPost } from '../../types';
 import { getTerminatingString } from '../../util/getTerminatingString';
-import './BlogCard.scss';
+import { blogPath } from '../../../pathPrefixes';
+import styles from './index.module.scss';
 
-type Props = { data: BlogMetaData } & WrappedComponentProps;
+interface Props {
+  data: BlogPost;
+}
 
-const getBlogCategoryUrl = (category: string): string => `/blog/${category}/`;
+const getBlogCategoryUrl = (category: string): string =>
+  `${blogPath}${category}/`;
+
+const getBlogPostUrl = (slug: string) =>
+  slug.endsWith('/') ? slug : `${slug}/`;
 
 const BlogCard = ({
   data: {
@@ -17,20 +24,23 @@ const BlogCard = ({
     },
   },
   intl,
-}: Props): JSX.Element => (
-  <div className="blog-card">
-    <div className="title">
-      <Link to={slug}>{title}</Link>
-      <div className="metadata">
+}: Props & WrappedComponentProps): JSX.Element => (
+  <div className={styles.blogCard}>
+    <div className={styles.title}>
+      <Link to={getBlogPostUrl(slug)}>{title}</Link>
+      <div className={styles.metadata}>
         {category && (
-          <Link className="category" to={getBlogCategoryUrl(category.name)}>
+          <Link
+            className={styles.category}
+            to={getBlogCategoryUrl(category.name)}
+          >
             {category.slug}
           </Link>
         )}
         <span>{readingTime.text}</span>
       </div>
     </div>
-    <div className="content">
+    <div className={styles.content}>
       <h4>{date}</h4>
       <p>
         {intl.formatMessage({ id: 'blog.authors.list.title.by' })}{' '}

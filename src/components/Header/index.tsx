@@ -1,99 +1,59 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import { useTheme } from '@skagami/gatsby-plugin-dark-mode';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { ReactComponent as LogoLight } from '../../images/logos/nodejs-logo-light-mode.svg';
 import { ReactComponent as LogoDark } from '../../images/logos/nodejs-logo-dark-mode.svg';
-import { useMediaQuery } from '../../hooks/useMediaQuery';
-import { useLocaleAsDropdown } from '../../hooks/useLocaleAsDropdown';
-import { useAutoClosableDropdown } from '../../hooks/useAutoClosableDropdown';
 import SearchBar from '../SearchBar';
+import DarkModeToggle from '../DarkModeToggle';
+import LanguageSelector from '../LanguageSelector';
 import { useFeatureToggles } from '../../hooks';
+import styles from './index.module.scss';
 
 const Header = (): JSX.Element => {
-  const isMobile = useMediaQuery('(max-width: 870px)');
-
-  const languageButtonRef = useRef<HTMLButtonElement>(null);
-
-  const localeDropdownItems = useLocaleAsDropdown();
-
   const featureToggles = useFeatureToggles();
 
-  const { renderDropdown, showDropdown, visible } = useAutoClosableDropdown(
-    localeDropdownItems,
-    languageButtonRef
-  );
-
-  const [theme, toggleTheme] = useTheme();
-
-  useEffect(() => {
-    // This is responsible for setting the color-scheme of the scroll-bars
-    if (typeof document === 'object' && document.documentElement) {
-      document.documentElement.style['color-scheme'] = theme;
-    }
-  }, [theme]);
-
-  const handleThemeOnClick = (isKeyPress = false): void => {
-    if (isKeyPress) {
-      return;
-    }
-
-    toggleTheme(theme === 'light' ? 'dark' : 'light');
-  };
-
   return (
-    <nav aria-label="Primary" className="nav">
-      <div className="nav__container">
-        <div className="nav__startwrapper">
+    <nav aria-label="Primary" className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.startWrapper}>
           <Link to="/" aria-label="Homepage">
-            <div className="logo">
-              <LogoLight className="nav__logo light-mode-only" />
-              <LogoDark className="nav__logo dark-mode-only" />
+            <div className={styles.logo}>
+              <LogoLight className="light-mode-only" />
+              <LogoDark className="dark-mode-only" />
             </div>
           </Link>
         </div>
 
-        <ul className="nav__tabs__container">
-          <li className="nav__tabs">
-            <Link
-              to="/learn"
-              className="activeStyleTab"
-              activeClassName="active"
-              partiallyActive
-            >
+        <ul className={styles.tabs}>
+          <li>
+            <Link to="/learn/" activeClassName={styles.active} partiallyActive>
               <FormattedMessage id="components.header.links.learn" />
             </Link>
           </li>
-          <li className="nav__tabs">
-            <a
-              className="activeStyleTab"
-              target="_blank"
-              href="https://nodejs.org/en/docs/"
-              rel="noopener noreferrer"
-            >
-              <FormattedMessage
-                id="components.header.links.docs"
-                values={{ isMobile }}
-              />
-            </a>
-          </li>
-          <li className="nav__tabs">
+          <li>
             <Link
-              to="/download"
-              className="activeStyleTab"
-              activeClassName="active"
+              to="/api/documentation/"
+              activeClassName={styles.active}
+              partiallyActive
+            >
+              <FormattedMessage id="components.header.links.docs" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/download/"
+              activeClassName={styles.active}
               partiallyActive
             >
               <FormattedMessage id="components.header.links.download" />
             </Link>
           </li>
-          <li className="nav__tabs">
+          <li>
             <Link
-              to="/community"
-              className="activeStyleTab"
-              activeClassName="active"
+              to="/community/"
+              activeClassName={styles.active}
               partiallyActive
             >
               <FormattedMessage id="components.header.links.community" />
@@ -101,46 +61,24 @@ const Header = (): JSX.Element => {
           </li>
         </ul>
 
-        <div className="nav__endwrapper">
-          <ul className="right-container">
-            <li className="nav__tabs search-bar">
+        <div className={styles.endWrapper}>
+          <ul className={styles.rightContainer}>
+            <li className={styles.searchBar}>
               <span className="sr-only">Search Bar</span>
               <SearchBar />
             </li>
 
-            <li className="nav__tabs">
-              <button
-                type="button"
-                className="dark-mode-toggle"
-                onClick={() => handleThemeOnClick()}
-                onKeyPress={() => handleThemeOnClick(true)}
-              >
-                <span className="sr-only">Toggle Dark Mode</span>
-                <i className="material-icons light-mode-only theme-buttons">
-                  mode_night
-                </i>
-                <i className="material-icons dark-mode-only theme-buttons">
-                  brightness_medium
-                </i>
-              </button>
+            <li>
+              <DarkModeToggle />
             </li>
 
             {featureToggles.has('i18n-language-selector') && (
-              <li className="nav__tabs">
-                <button
-                  type="button"
-                  className="language-switch"
-                  ref={languageButtonRef}
-                  onClick={() => showDropdown(!visible)}
-                >
-                  <span className="sr-only">Switch Language</span>
-                  <i className="material-icons theme-buttons">translate</i>
-                </button>
-                {renderDropdown}
+              <li>
+                <LanguageSelector />
               </li>
             )}
 
-            <li className="nav__tabs">
+            <li>
               <a
                 target="_blank"
                 href="https://github.com/nodejs/nodejs.dev"

@@ -1,24 +1,31 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { NodeReleaseLTSNPMVersion } from '../../types';
-import './DownloadHeader.scss';
+import SectionTitle from '../SectionTitle';
+import styles from './index.module.scss';
 
-type Props = { release?: NodeReleaseLTSNPMVersion };
+interface Props {
+  release?: NodeReleaseLTSNPMVersion;
+}
 
 const DownloadHeader = ({ release }: Props): JSX.Element => {
   const nodeVersion = release?.version;
   const npmVersion = release?.npm;
   const lts = !!release?.lts;
 
+  const intl = useIntl();
+
   return (
     <>
-      <div className="download-page__navigation">
-        <div>
-          HOME /{' '}
-          <span className="download-page__navigation--active">
-            <FormattedMessage id="components.downloadHeader.navigation.activeSection" />
-          </span>
-        </div>
+      <div className={styles.downloadHeader}>
+        <SectionTitle
+          path={[
+            'home',
+            intl.formatMessage({
+              id: 'components.downloadHeader.navigation.activeSection',
+            }),
+          ]}
+        />
         <div>
           <FormattedMessage
             id="components.downloadHeader.navigation.nodeVersion"
@@ -26,11 +33,11 @@ const DownloadHeader = ({ release }: Props): JSX.Element => {
           />
         </div>
       </div>
-      <div className="download-page__navigation">
-        <div className="download-page__navigation--title">
+      <div className={styles.downloadHeader}>
+        <div className={styles.title}>
           <FormattedMessage id="components.downloadHeader.navigation.title" />
         </div>
-        <div className="download-page__navigation--npm">
+        <div className={styles.npm}>
           <FormattedMessage
             id="components.downloadHeader.navigation.npmVersion"
             values={{ npmVersion }}

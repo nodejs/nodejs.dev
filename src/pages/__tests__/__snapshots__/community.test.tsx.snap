@@ -5,118 +5,106 @@ exports[`Community Page renders correctly 1`] = `
   class="grid-container"
 >
   <nav
-    class="side-nav-about"
+    class="sideNav"
   >
     <button
-      class="side-nav__open"
+      class="sideNavOpen"
       type="button"
     >
       Menu
     </button>
-    <ul
-      class="community-nav__list"
+    <div
+      class="sideNavSection"
     >
-      <li
-        class="t-body2 side-nav__item--title"
+      <div
+        class="sideNavSectionTitle"
       >
         <b>
           Community Pages
         </b>
-        <i
-          class="material-icons"
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8rv7ug-MuiSvgIcon-root"
+          data-testid="ArrowDropDownIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
         >
-          arrow_drop_down
-        </i>
-      </li>
-      <li>
-        <a
-          class="t-body2 side-nav__item-community"
-          href="/about/"
-          id="link-about"
-        >
-          About
-        </a>
-      </li>
-      <li>
-        <a
-          aria-current="page"
-          class="t-body2 side-nav__item-community side-nav__item-community--active"
-          href="/community/"
-          id="link-community"
-        >
-          Community
-        </a>
-      </li>
-      <li>
-        <a
-          class="t-body2 side-nav__item-community"
-          href="/download/package-manager/"
-          id="link-download/package-manager"
-        >
-          Package Manager
-        </a>
-      </li>
-      <li>
-        <a
-          class="t-body2 side-nav__item-community"
-          href="/about/privacy/"
-          id="link-about/privacy"
-        >
-          Privacy Policy
-        </a>
-      </li>
-      <li>
-        <a
-          class="t-body2 side-nav__item-community"
-          href="/about/governance/"
-          id="link-about/governance"
-        >
-          Project Governance
-        </a>
-      </li>
-      <li>
-        <a
-          class="t-body2 side-nav__item-community"
-          href="/about/releases/"
-          id="link-about/releases"
-        >
-          Releases
-        </a>
-      </li>
-      <li>
-        <a
-          class="t-body2 side-nav__item-community"
-          href="/resources/"
-          id="link-resources"
-        >
-          Resources
-        </a>
-      </li>
-      <li>
-        <a
-          class="t-body2 side-nav__item-community"
-          href="/about/security/"
-          id="link-about/security"
-        >
-          Security Reporting
-        </a>
-      </li>
-      <li>
-        <a
-          class="t-body2 side-nav__item-community"
-          href="/about/working-groups/"
-          id="link-about/working-groups"
-        >
-          Working Groups
-        </a>
-      </li>
-    </ul>
+          <path
+            d="m7 10 5 5 5-5z"
+          />
+        </svg>
+      </div>
+      <a
+        class="t-body2 navigationItem"
+        href="/about/"
+        id="link-/about/"
+      >
+        About
+      </a>
+      <a
+        aria-current="page"
+        class="t-body2 navigationItem navigationItemActive"
+        href="/community/"
+        id="link-/community/"
+      >
+        Community
+      </a>
+      <a
+        class="t-body2 navigationItem"
+        href="/download/package-manager/"
+        id="link-/download/package-manager/"
+      >
+        Package Manager
+      </a>
+      <a
+        class="t-body2 navigationItem"
+        href="/about/privacy/"
+        id="link-/about/privacy/"
+      >
+        Privacy Policy
+      </a>
+      <a
+        class="t-body2 navigationItem"
+        href="/about/governance/"
+        id="link-/about/governance/"
+      >
+        Project Governance
+      </a>
+      <a
+        class="t-body2 navigationItem"
+        href="/about/releases/"
+        id="link-/about/releases/"
+      >
+        Releases
+      </a>
+      <a
+        class="t-body2 navigationItem"
+        href="/resources/"
+        id="link-/resources/"
+      >
+        Resources
+      </a>
+      <a
+        class="t-body2 navigationItem"
+        href="/about/security/"
+        id="link-/about/security/"
+      >
+        Security Reporting
+      </a>
+      <a
+        class="t-body2 navigationItem"
+        href="/about/working-groups/"
+        id="link-/about/working-groups/"
+      >
+        Working Groups
+      </a>
+    </div>
   </nav>
   <article
-    class="article-reader"
+    class="article"
   >
     <h1
-      class="article-reader__headline"
+      class="headline"
     >
       Mock Title
     </h1>
@@ -125,7 +113,7 @@ exports[`Community Page renders correctly 1`] = `
     >
       <summary>
         <strong>
-          TABLE OF CONTENTS
+          Table of Contents
         </strong>
       </summary>
       <ul>
@@ -167,7 +155,7 @@ exports[`Community Page renders correctly 1`] = `
       </p>
       <p>
         <code
-          class="language-text"
+          class="code"
         >
           nvm
         </code>
@@ -186,7 +174,7 @@ exports[`Community Page renders correctly 1`] = `
       <p>
         In any case, when Node.js is installed you'll have access to the 
         <code
-          class="language-text"
+          class="code"
         >
           node
         </code>
@@ -194,12 +182,10 @@ exports[`Community Page renders correctly 1`] = `
       </p>
     </div>
     <div
-      class="authorsList"
+      class="authorList"
     >
       Contributors
-      <ul
-        class="list"
-      >
+      <ul>
         <li>
           <a
             class="link"
@@ -211,7 +197,6 @@ exports[`Community Page renders correctly 1`] = `
           >
             <img
               alt="author-mock"
-              class="img"
               src="https://github.com/author-mock.png?size=60"
             />
           </a>
@@ -222,21 +207,24 @@ exports[`Community Page renders correctly 1`] = `
       class="edit"
     >
       <a
-        class="link"
         href="https://github.com/nodejs/nodejs.dev/edit/main/content/community/index.en.md"
       >
         <span>
           Edit this page on GitHub
         </span>
         <svg
-          class="icon"
-          fill="currentColor"
-          height="1em"
-          viewBox="0 0 40 40"
-          width="1em"
+          aria-hidden="true"
+          class="svg-inline--fa fa-pencil "
+          data-icon="pencil"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"
+            d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"
+            fill="currentColor"
           />
         </svg>
       </a>

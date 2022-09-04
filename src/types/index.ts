@@ -1,5 +1,44 @@
 import type { GatsbyBrowser, GatsbySSR } from 'gatsby';
 
+export interface ApiChange {
+  version: string | string[];
+  'pr-url': string;
+  description: string;
+}
+
+export interface ApiUpdate {
+  type: 'added' | 'removed' | 'deprecated' | 'introduced_in' | 'napiVersion';
+  version: string[];
+}
+
+export interface ApiComponentData {
+  type?: string;
+  name?: string;
+  source_link?: string;
+  update?: ApiUpdate;
+  stability?: { level: number; text: string };
+  changes?: ApiChange[];
+}
+
+export interface ApiType {
+  name: string;
+  slug: string;
+}
+
+export interface ApiPageData {
+  api: {
+    id: string;
+    body: string;
+    tableOfContents: PageTableOfContents;
+    frontmatter: {
+      title: string;
+      version: string;
+      displayTitle: string;
+      editPage: string;
+    };
+  };
+}
+
 export interface GenericPageContext {
   intlMessages: Record<string, string>;
   locale: string;
@@ -38,18 +77,29 @@ export interface LearnPageContext {
   navigationData: NavigationSectionData;
 }
 
-export interface TableOfContents {
-  items: {
-    title: string;
-    url: string;
-  }[];
+export interface ApiPageContext {
+  slug: string;
+  relativePath: string;
+  next: PaginationInfo;
+  previous: PaginationInfo;
+  navigationData: NavigationSectionData;
+}
+
+export interface TableOfContentsItem {
+  title: string;
+  url: string;
+  items?: TableOfContentsItem[];
+}
+
+export interface PageTableOfContents {
+  items: TableOfContentsItem[];
 }
 
 export interface LearnPageData {
   article: {
     id: string;
     body: string;
-    tableOfContents: TableOfContents;
+    tableOfContents: PageTableOfContents;
     frontmatter: { title: string; description: string };
     fields: { authors: string[] };
   };
@@ -61,17 +111,17 @@ export interface PaginationInfo {
 }
 
 export interface BlogCategory {
-  name: string;
-  slug: string;
-  description?: string;
+  node: {
+    name: string;
+    slug: string;
+    description?: string;
+  };
 }
 
 export interface NavigationSectionItem {
   slug: string;
   title: string;
-  section: string;
   category: string;
-  baseUrl?: string;
 }
 
 export interface NavigationSectionData {
@@ -102,7 +152,7 @@ declare global {
 
 export interface ArticleData {
   body: string;
-  tableOfContents: TableOfContents;
+  tableOfContents: PageTableOfContents;
   frontmatter: {
     title: string;
     description: string;
@@ -131,27 +181,23 @@ export interface BlogPostAuthor {
   website: string;
 }
 
-export interface BlogMetaData {
+export interface BlogPost {
   node: {
     frontmatter: {
       title: string;
       blogAuthors: BlogPostAuthor[];
-      category?: BlogCategory;
+      category?: BlogCategory['node'];
     };
     fields: { date: string; slug: string; readingTime: { text: string } };
   };
 }
 
-export interface BlogPostsList {
-  posts: {
-    edges: BlogMetaData[];
-  };
+export interface BlogPosts {
+  edges: BlogPost[];
 }
 
-export interface BlogCategoriesList {
-  categories: {
-    edges: { node: BlogCategory }[];
-  };
+export interface BlogCategories {
+  edges: BlogCategory[];
 }
 
 export interface BlogPageData {
@@ -162,7 +208,7 @@ export interface BlogPageData {
     fields: { slug: string; date: string };
   };
   recent: {
-    edges: BlogMetaData[];
+    edges: BlogPost[];
   };
 }
 
@@ -257,6 +303,8 @@ export type SearchResult = {
   id: React.Key | null | undefined;
   slug: string;
   title: string;
+  category: string;
+  displayTitle?: string;
 };
 
 export type WrapPageElementBrowser =

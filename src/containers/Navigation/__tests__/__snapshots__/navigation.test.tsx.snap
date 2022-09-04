@@ -4,44 +4,51 @@ exports[`Navigation component renders correctly 1`] = `
 <div>
   <nav
     aria-label=""
-    class="side-nav"
+    class="navigation"
   >
     <button
-      class="side-nav__open"
+      class="navigationOpen"
       type="button"
     >
       Menu
     </button>
-    <ul
-      class="side-nav__list"
+    <div
+      class="navigationSection"
     >
       <div
-        class="t-body2 side-nav__item side-nav__item--title"
+        class="t-body2 navigationSectionTitle"
         role="menuitem"
         tabindex="0"
       >
-        Getting Started
-        <i
-          class="material-icons"
+        <span>
+          Getting Started
+        </span>
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="ArrowDropDownIcon"
+          focusable="false"
+          style="padding: 0px;"
+          viewBox="0 0 24 24"
         >
-          arrow_drop_down
-        </i>
+          <path
+            d="m7 10 5 5 5-5z"
+          />
+        </svg>
       </div>
       <div
         style="display: block;"
       >
-        <li>
-          <a
-            aria-current="page"
-            class="t-body2 side-nav__item side-nav__item--active"
-            href="/learn/intro/"
-            id="link-intro"
-          >
-            Section 1
-          </a>
-        </li>
+        <a
+          aria-current="page"
+          class="t-body2 navigationItem navigationItemActive"
+          href="intro"
+          id="link-intro"
+        >
+          Section 1
+        </a>
       </div>
-    </ul>
+    </div>
   </nav>
 </div>
 `;

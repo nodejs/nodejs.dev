@@ -1,48 +1,37 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import { graphql } from 'gatsby';
-import BlogCard from '../components/BlogCard';
 import Layout from '../components/Layout';
-import SideNavBar from '../components/SideNavBar';
-import { BlogPostsList, BlogCategoriesList, SideNavBarItem } from '../types';
+import { BlogCategories, BlogPosts } from '../types';
+import BlogContainer from '../containers/BlogContainer';
 
-type Props = {
-  data: BlogPostsList & BlogCategoriesList;
-};
+interface Props {
+  data: {
+    posts: BlogPosts;
+    categories: BlogCategories;
+  };
+}
 
-export const getNavigationData = (
-  categories: BlogCategoriesList['categories']
-): SideNavBarItem[] =>
-  categories.edges.map(({ node }) => ({
-    title: node.slug,
-    slug: `blog/${node.name}/`,
-  }));
-
-const Blog = ({ data: { posts, categories } }: Props): JSX.Element => (
+const Blog = ({
+  data: { posts, categories },
+  intl,
+}: Props & WrappedComponentProps): JSX.Element => (
   <Layout title="Blogs at Nodejs">
     <main className="grid-container">
-      <SideNavBar
-        items={getNavigationData(categories)}
-        title="Blog Categories"
+      <BlogContainer
+        posts={posts.edges}
+        categories={categories.edges}
+        currentCategory={{
+          name: intl.formatMessage({ id: 'blog.title' }),
+          slug: intl.formatMessage({ id: 'blog.title' }),
+          description: intl.formatMessage({ id: 'blog.description' }),
+        }}
       />
-      <div className="blog-grid-container">
-        <div className="blog-category-header">
-          <FormattedMessage id="blog.title" tagName="h2" />
-          <span>
-            <FormattedMessage id="blog.description" />
-          </span>
-        </div>
-        <div className="blog-items">
-          {posts.edges.map(edge => (
-            <BlogCard key={edge.node.fields.slug} data={edge} />
-          ))}
-        </div>
-      </div>
     </main>
   </Layout>
 );
 
-export default Blog;
+export default injectIntl(Blog);
 
 export const pageQuery = graphql`
   query {

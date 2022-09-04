@@ -1,9 +1,8 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/jsx-key */
-import React from 'react';
-import Highlight, { defaultProps, Language } from 'prism-react-renderer';
-
-import './Codebox.scss';
+import React, { useEffect, useState } from 'react';
+import { highlight, languages } from 'prismjs';
+import { sanitize } from 'isomorphic-dompurify';
+import classnames from 'classnames';
+import styles from './index.module.scss';
 
 interface Props {
   children: {
@@ -14,74 +13,70 @@ interface Props {
   };
 }
 
+const replaceLanguages = (language: string) =>
+  language.replace(/mjs|cjs/, 'js').replace('console', 'bash');
+
 const Codebox = ({ children: { props } }: Props): JSX.Element => {
-  const [copied, setCopied] = React.useState(false);
+  const [copied, setCopied] = useState(false);
+  const [parsedCode, setParsedCode] = useState('');
 
   // eslint-disable-next-line react/prop-types
   const className = props.className || '';
 
   // Language Matches in class
   const matches = className.match(/language-(?<lang>.*)/);
-  // Get language from classname
-  const language = (matches?.groups?.lang || '') as Language;
-  // Actual Code
-  const code = props.children?.toString() || '';
 
-  React.useEffect((): (() => void) => {
+  // Language name from classname
+  const language = matches?.groups?.lang || '';
+
+  // Actual Code into a stringified format
+  const stringCode = props.children?.toString() || '';
+
+  const handleCopyCode = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    navigator.clipboard.writeText(stringCode);
+    setCopied(true);
+  };
+
+  useEffect((): (() => void) => {
     let timer: ReturnType<typeof setTimeout>;
 
     if (copied) {
-      timer = setTimeout((): void => {
-        setCopied(false);
-      }, 3000);
+      timer = setTimeout(() => setCopied(false), 3000);
     }
 
-    return (): void => {
+    return () => {
       if (timer) {
         clearTimeout(timer);
       }
     };
   }, [copied]);
 
+  useEffect(() => {
+    const parsedLangauge = replaceLanguages(language);
+
+    const prismLanguage = languages[parsedLangauge] || languages.text;
+
+    setParsedCode(
+      sanitize(highlight(stringCode, prismLanguage, parsedLangauge))
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
-    <Highlight
-      {...defaultProps}
-      code={code}
-      theme={undefined}
-      language={language}
-    >
-      {({
-        className: codeClassName,
-        style,
-        tokens,
-        getLineProps,
-        getTokenProps,
-      }) => (
-        <pre className={codeClassName} style={style}>
-          <div className="shell-box-top">
-            <span>{language.toUpperCase()}</span>
-            <button
-              type="button"
-              onClick={(event: React.MouseEvent<HTMLButtonElement>): void => {
-                event.preventDefault();
-                navigator.clipboard.writeText(code);
-                setCopied(true);
-              }}
-            >
-              {copied ? 'copied' : 'copy'}
-              {copied ? <i className="material-icons">done</i> : null}
-            </button>
-          </div>
-          {tokens.map((line, i) => (
-            <div {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span {...getTokenProps({ token, key })} />
-              ))}
-            </div>
-          ))}
-        </pre>
-      )}
-    </Highlight>
+    <pre className={classnames(styles.pre, replaceLanguages(className))}>
+      <div className={styles.top}>
+        <span>{language.toUpperCase()}</span>
+        <button type="button" onClick={handleCopyCode}>
+          {copied ? 'copied' : 'copy'}
+        </button>
+      </div>
+      <div
+        className={styles.content}
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: parsedCode }}
+      />
+    </pre>
   );
 };
 

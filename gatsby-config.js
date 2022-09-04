@@ -1,3 +1,5 @@
+const path = require('path');
+
 require('dotenv').config();
 
 const config = require('./src/config.json');
@@ -21,69 +23,78 @@ const gatsbyConfig = {
     'gatsby-plugin-catch-links',
     '@skagami/gatsby-plugin-dark-mode',
     'gatsby-transformer-yaml',
-    `gatsby-remark-images`,
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
         siteUrl: config.siteUrl,
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        cssLoaderOptions: {
+          modules: {
+            namedExport: false,
+            exportLocalsConvention: 'camelCaseOnly',
+          },
+        },
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'learn',
-        path: `${__dirname}/content/learn`,
+        path: path.resolve('./content/learn'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'sites',
-        path: `${__dirname}/src/pages/`,
+        path: path.resolve('./src/pages'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'homepage',
-        path: `${__dirname}/content/homepage`,
+        path: path.resolve('./content/homepage'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'community',
-        path: `${__dirname}/content/community`,
+        path: path.resolve('./content/community'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'blog',
-        path: `${__dirname}/content/blog`,
+        path: path.resolve('./content/blog'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
-        path: `${__dirname}/src/data`,
+        path: path.resolve('./src/data'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'about',
-        path: `${__dirname}/content/about`,
+        path: path.resolve('./content/about'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'download',
-        path: `${__dirname}/content/download`,
+        path: path.resolve('./content/download'),
       },
     },
     'gatsby-plugin-typescript',
@@ -91,12 +102,8 @@ const gatsbyConfig = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
-        defaultLayouts: {
-          sites: require.resolve(`./src/components/Layout/centered.tsx`),
-          default: require.resolve(`./src/components/Layout/index.tsx`),
-        },
         gatsbyRemarkPlugins: [
-          'gatsby-remark-copy-linked-files',
+          { resolve: 'gatsby-remark-copy-linked-files' },
           {
             resolve: 'gatsby-remark-autolink-headers',
             options: {
@@ -129,17 +136,30 @@ const gatsbyConfig = {
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
-        fields: [`title`, `body`, `description`, `slug`],
+        fields: [
+          'slug',
+          'title',
+          'displayTitle',
+          'description',
+          'category',
+          'tableOfContents',
+        ],
         resolvers: {
           Mdx: {
             id: node => node.id,
             title: node => node.frontmatter.title,
-            body: node => node.rawBody,
+            displayTitle: node => node.frontmatter.displayTitle,
             description: node => node.frontmatter.description,
             slug: node => node.fields.slug,
+            category: node => node.fields.categoryName,
+            tableOfContents: node => {
+              return [...node.rawBody.matchAll(/^#{2,5} .*/gm)]
+                .map(match => match[0].replace(/^#{2,5} /, ''))
+                .join('\n');
+            },
           },
         },
-        filter: node => node.frontmatter.category === 'learn',
+        filter: node => ['api', 'learn'].includes(node.frontmatter.category),
       },
     },
     {
@@ -149,9 +169,37 @@ const gatsbyConfig = {
       resolve: `gatsby-theme-i18n`,
       options: {
         defaultLang: defaultLanguage,
-        configPath: `${__dirname}/src/i18n/config.json`,
+        configPath: path.resolve('./src/i18n/config.json'),
         prefixDefault: true,
         locales: localesAsString,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: 'Open Sans',
+              variants: [
+                '300',
+                '300i',
+                '400',
+                '400i',
+                '600',
+                '600i',
+                '900',
+                '900i',
+              ],
+              fontDisplay: 'swap',
+              strategy: 'selfHosted',
+            },
+          ],
+        },
+        formats: ['woff2'],
+        useMinify: true,
+        usePreload: true,
+        usePreconnect: true,
       },
     },
     {
@@ -182,13 +230,6 @@ if (!gatsbyConfig.pathPrefix) {
     // So we are able to use the official service worker again. This service worker supports latest Workbox
     resolve: 'gatsby-plugin-offline-next',
     options: {
-      precachePages: [
-        '/',
-        '/*/learn/*',
-        '/*/about/*',
-        '/*/download/*',
-        '/*/blog/*',
-      ],
       globPatterns: ['**/icon-path*'],
     },
   });

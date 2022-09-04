@@ -1,15 +1,13 @@
 import React from 'react';
 
-import { TableOfContents } from '../../types';
+import { PageTableOfContents } from '../../types';
 import Article from '../Article';
 import Layout from '.';
 import SideNavBar, { SideNavBarKeys } from '../SideNavBar';
 
-import '../../styles/article-reader.scss';
-
 export interface ArticleLayoutProps {
   body: string;
-  tableOfContents?: TableOfContents;
+  tableOfContents?: PageTableOfContents;
   title: string;
   description: string;
   authors: string[];
@@ -28,25 +26,23 @@ const ArticleLayout = ({
   authors,
   sidenavKey,
   children,
-}: ArticleLayoutProps): JSX.Element => {
-  return (
-    <Layout title={title} description={description}>
-      <main className="grid-container">
-        {sidenavKey && (
-          <SideNavBar pageKey={sidenavKey} title="Community Pages" />
-        )}
-        <Article
-          title={title}
-          body={body}
-          authors={authors}
-          editPath={editPath}
-          tableOfContents={tableOfContents}
-        >
-          {children}
-        </Article>
-      </main>
-    </Layout>
-  );
-};
+}: ArticleLayoutProps): JSX.Element => (
+  <Layout title={title} description={description}>
+    <main className="grid-container">
+      {sidenavKey && (
+        <SideNavBar pageKey={sidenavKey} title="Community Pages" />
+      )}
+      <Article
+        title={title}
+        body={body}
+        authors={authors}
+        editPath={editPath}
+        tableOfContents={tableOfContents}
+      >
+        {children}
+      </Article>
+    </main>
+  </Layout>
+);
 
 export default ArticleLayout;

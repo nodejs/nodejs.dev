@@ -11,8 +11,7 @@ import DownloadCards from '../../components/DownloadCards';
 import DownloadReleases from '../../components/DownloadReleases';
 import DownloadAdditional from '../../components/DownloadAdditional';
 import { NodeReleaseData, NodeReleaseLTSNPMVersion } from '../../types';
-
-import '../../styles/download.scss';
+import styles from './index.module.scss';
 
 export interface DownloadNodeReleases {
   nodeReleases: {
@@ -49,9 +48,9 @@ const DownloadPage = ({ data: { nodeReleases } }: Props): JSX.Element => {
 
   return (
     <Layout title="Download Node.js" description="Come get me!">
-      <span className="home-page -download">
+      <div className={`home-container ${styles.downloadPageContainer}`}>
         <DownloadHeader release={selectedType} />
-        <p className="release-description">
+        <p className={styles.releaseDescription}>
           <FormattedMessage id="pages.download.description" />{' '}
           <Link to="/download/package-manager">
             <FormattedMessage id="pages.download.packageManager" />
@@ -72,7 +71,7 @@ const DownloadPage = ({ data: { nodeReleases } }: Props): JSX.Element => {
           selectedTypeRelease={typeRelease}
           handleTypeReleaseToggle={handleTypeReleaseToggle}
         />
-      </span>
+      </div>
     </Layout>
   );
 };

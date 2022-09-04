@@ -3,12 +3,10 @@
 exports[`AuthorsList component renders correctly 1`] = `
 <div>
   <div
-    class="authorsList"
+    class="authorList"
   >
     Contributors
-    <ul
-      class="list"
-    >
+    <ul>
       <li>
         <a
           class="link"
@@ -20,7 +18,6 @@ exports[`AuthorsList component renders correctly 1`] = `
         >
           <img
             alt="test-author"
-            class="img"
             src="https://github.com/test-author.png?size=60"
           />
         </a>
@@ -35,7 +32,6 @@ exports[`AuthorsList component renders correctly 1`] = `
         >
           <img
             alt="another-test-author"
-            class="img"
             src="https://github.com/another-test-author.png?size=60"
           />
         </a>

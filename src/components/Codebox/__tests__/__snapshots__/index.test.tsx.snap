@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Codebox component renders correctly 1`] = `
+<div>
+  <pre
+    class="pre language-html"
+  >
+    <div
+      class="top"
+    >
+      <span>
+        HTML
+      </span>
+      <button
+        type="button"
+      >
+        copy
+      </button>
+    </div>
+    <div
+      class="content"
+    >
+      [object Object]
+    </div>
+  </pre>
+</div>
+`;

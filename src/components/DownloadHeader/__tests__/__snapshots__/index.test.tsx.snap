@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DownloadHeader component renders correctly 1`] = `
+<div>
+  <div
+    class="downloadHeader"
+  >
+    <div
+      class="sectionTitle"
+    >
+      home / 
+      <span
+        class="active"
+      >
+        downloads
+      </span>
+    </div>
+    <div>
+      CURRENT VERSION v14.11.0
+    </div>
+  </div>
+  <div
+    class="downloadHeader"
+  >
+    <div
+      class="title"
+    >
+      Downloads
+    </div>
+    <div
+      class="npm"
+    >
+      (includes npm 6.14.8)
+    </div>
+  </div>
+</div>
+`;
