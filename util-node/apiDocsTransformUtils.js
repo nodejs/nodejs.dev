@@ -44,6 +44,11 @@ function yamlValueToArray(value) {
   return Array.isArray(value) ? value : [value];
 }
 
+// Utility to remove common tokens from the beginning of a Heading
+function parseHeading(value) {
+  return value.replace(/^(Modules|Class|Event): /, '');
+}
+
 // This utility allows us to create a Navigation Entry
 // For every file and their respective version
 // As the structure of the Navigation object is "flat"
@@ -75,9 +80,8 @@ function createNavigationCreator({ version, name }) {
 
           if (lineWithActualHeading && lineWithActualHeading.length) {
             // We want to replace any prefix the Heading might have
-            const title = lineWithActualHeading.replace(
-              /^(#{1,5}) (Class: |Event: )/i,
-              ''
+            const title = parseHeading(
+              lineWithActualHeading.replace(/^#{1,5} /i, '')
             );
 
             navigationEntriesForFile.push(
@@ -101,7 +105,9 @@ function createNavigationCreator({ version, name }) {
 function createApiDocsFrontmatter(firstLine, { version, name, fullVersion }) {
   if (firstLine.startsWith('#')) {
     const editPageLink = `https://github.com/nodejs/node/blob/${fullVersion}/doc/api/${name}.md`;
-    const pageTitle = firstLine.replace('# ', '');
+
+    // Does some special treatment to the pageTitle
+    const pageTitle = parseHeading(firstLine.replace(/^# /, ''));
 
     const frontmatter = {
       title: name,
