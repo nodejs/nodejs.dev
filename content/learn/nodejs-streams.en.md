@@ -106,8 +106,8 @@ Due to their advantages, many Node.js core modules provide native stream handlin
 
 There are four classes of streams:
 
-* `Readable`: a stream which could be used for read data from it. In other words, its `readonly`.
-* `Writable`: a stream which could be used for write data to it. It is `writeonly`.
+* `Readable`: a stream which could be used to read data from it. In other words, its `readonly`.
+* `Writable`: a stream which could be used for writing data to it. It is `writeonly`.
 * `Duplex`: a stream which can read and write data, basically its a combination of a `Readable` and `Writable` stream.
 * `Transform`: a `Duplex` stream which reads data, transforms the data, and then writes the transformed data in the desired format.
 
