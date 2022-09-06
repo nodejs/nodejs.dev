@@ -4,7 +4,7 @@ on:
   push:
     branches:
     - main
-  # Allow workflow to be manually clalled
+  # Allow workflow to be called manually
   workflow_dispatch:
 
 jobs:
