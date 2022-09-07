@@ -1,0 +1,53 @@
+name: Publish
+
+on:
+  push:
+    branches:
+    - main
+  # Allow workflow to be called manually
+  workflow_dispatch:
+
+jobs:
+  build-and-upload:
+    permissions:
+      contents: read
+      pages: read
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        ref: main
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v1
+
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+
+    # Build the site
+    - name: Install npm packages
+      run: npm ci
+    - name: Build documentation
+      run: npm run build
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: './public'
+
+  deploy:
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-and-upload
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
