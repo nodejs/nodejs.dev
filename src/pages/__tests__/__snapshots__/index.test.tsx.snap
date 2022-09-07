@@ -30,7 +30,7 @@ exports[`Home page renders correctly 1`] = `
         <p
           class="t-caption"
         >
-          Version mock-version-1 - 
+          LTS Version mmock-version-2 - 
           <a
             href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
           >
@@ -370,7 +370,7 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
         <p
           class="t-caption"
         >
-          Version mock-version-1 - 
+          LTS Version mmock-version-2 - 
           <a
             href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
           >

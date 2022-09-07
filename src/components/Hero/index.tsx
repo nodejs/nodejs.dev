@@ -21,7 +21,8 @@ const Hero = ({
   const [currentRelease, ...releases] = nodeReleasesLTSVersion;
 
   // find first lts version (first found is last LTS)
-  const lastLTSRelease = releases.find((release): boolean => !!release.lts);
+  const lastLTSRelease =
+    releases.find((release): boolean => !!release.lts) || currentRelease;
 
   const ltsVersionUrl = getDownloadLink(lastLTSRelease?.version || '');
   const currentVersionUrl = getDownloadLink(currentRelease?.version || '');
@@ -39,8 +40,8 @@ const Hero = ({
             <FormattedMessage
               id="components.hero.currentVersion"
               values={{
-                isLts: !!lastLTSRelease,
-                currentVersion: currentRelease.version,
+                isLts: !!lastLTSRelease.lts,
+                currentVersion: lastLTSRelease.version,
               }}
             />
             <a href={currentVersionUrl}>
