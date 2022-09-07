@@ -1,2 +1,6 @@
+.cache
 public
 content/blog
+content/api
+docs/
+mettings/
