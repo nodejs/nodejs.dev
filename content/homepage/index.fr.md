@@ -16,7 +16,7 @@ nodeFeatureHeader3: Partout
 nodeFeature1: Node.js fournit un support pour le langage de programmation JavaScript.
 nodeFeature2: Node.js est open source et activement maintenu par des contributeurs du monde entier.
 nodeFeature3: Node.js a été adapté pour fonctionner dans une grande variété d'endroits
-nodeFeatureAltText: fonction de nodejs
+nodeFeatureAltText: fonctionnalités de nodejs
 learnLinkText: Commencez à apprendre
 category: home
 ---
