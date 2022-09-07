@@ -1,4 +1,4 @@
-import { localesAsString } from '../../util-node/locales';
+import { localesAsString } from '../../locales';
 
 const localeKeysAsArray = localesAsString.split(' ');
 
