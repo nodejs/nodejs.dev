@@ -38,8 +38,9 @@ module.exports = `
     }
   }
   nodeReleases {
-    nodeReleasesVersion: nodeReleasesDataDetail {
+    nodeReleasesVersion: nodeReleasesData {
       version
+      release
     }
   }
 }

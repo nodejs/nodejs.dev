@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+
 const { iterateEdges, mapToNavigationData } = require('./createPageUtils');
 const { apiPath } = require('../pathPrefixes');
 
@@ -7,11 +8,11 @@ function createApiPages(pagesEdges, apiTypes, nodeReleases) {
   const apiPages = iterateEdges(pagesEdges);
   const navigationData = {};
 
-  const apiDocsPath = path.resolve(`./content${apiPath}`);
+  const apiDocsPath = path.resolve(__dirname, `../content${apiPath}`);
 
   const majorNodeReleases = [
     // Gets all the major releae versions as Array [v18, v16, ...]
-    ...new Set(nodeReleases.map(({ version }) => version.split('.')[0])),
+    ...new Set(nodeReleases.map(({ version }) => version)),
   ];
 
   const navigationEntries = [];
