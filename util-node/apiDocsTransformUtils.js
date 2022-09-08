@@ -1,6 +1,6 @@
 const yaml = require('yaml');
 
-const typeParser = require('./api-generation/typeParser');
+const typeParser = require('./apiDocsTypeParser');
 const createSlug = require('./createSlug');
 const { apiPath } = require('../pathPrefixes');
 

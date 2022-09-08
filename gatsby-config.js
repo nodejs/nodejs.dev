@@ -3,7 +3,7 @@ const path = require('path');
 require('dotenv').config();
 
 const config = require('./src/config.json');
-const { localesAsString, defaultLanguage } = require('./util-node/locales');
+const { localesAsString, defaultLanguage } = require('./locales');
 
 const gatsbyConfig = {
   pathPrefix: process.env.PATH_PREFIX,
@@ -95,6 +95,13 @@ const gatsbyConfig = {
       options: {
         name: 'download',
         path: path.resolve('./content/download'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'api',
+        path: path.resolve('./content/api'),
       },
     },
     'gatsby-plugin-typescript',

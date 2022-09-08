@@ -5,9 +5,7 @@ const yaml = require('yaml');
 const readingTime = require('reading-time');
 const asyncMethods = require('async');
 const createSlug = require('./util-node/createSlug');
-const getCurrentActiveReleases = require('./util-node/getCurrentActiveReleases');
 const getNodeReleasesData = require('./util-node/getNodeReleasesData');
-const getApiDocsData = require('./util-node/getApiDocsData');
 const getBannersData = require('./util-node/getBannersData');
 const getNvmData = require('./util-node/getNvmData');
 const createPagesQuery = require('./util-node/createPagesQuery');
@@ -15,8 +13,8 @@ const createLearnQuery = require('./util-node/createLearnQuery');
 const createApiQuery = require('./util-node/createApiQuery');
 const createMarkdownPages = require('./util-node/createMarkdownPages');
 const createApiPages = require('./util-node/createApiPages');
-const redirects = require('./util-node/redirects');
-const nodeLocales = require('./util-node/locales');
+const redirects = require('./redirects');
+const nodeLocales = require('./locales');
 const { learnPath, apiPath, blogPath } = require('./pathPrefixes');
 
 const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
@@ -102,7 +100,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const {
     pages: { edges: apiEdges },
-    navigation: { apiNavigationEntries },
+    nodeReleases: { nodeReleasesVersion },
   } = apiResult.data;
 
   const {
@@ -117,7 +115,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     latestVersion,
     navigationData: apiNavigationData,
     defaultNavigationRedirects: apiRedirects,
-  } = createApiPages(apiEdges, apiTypesNavigationData, apiNavigationEntries);
+  } = createApiPages(apiEdges, apiTypesNavigationData, nodeReleasesVersion);
 
   if (firstLearnPage) {
     createPage({
@@ -297,11 +295,9 @@ exports.sourceNodes = async ({
   actions: { createNode },
   createContentDigest,
   createNodeId,
-  cache,
 }) => {
-  const [releaseTimer, docsTimer, bannersTimer, nvmTimer] = [
+  const [releaseTimer, bannersTimer, nvmTimer] = [
     activityTimer('Fetching Node release data'),
-    activityTimer('Fetching API Docs data'),
     activityTimer('Fetching Banners data'),
     activityTimer('Fetching latest NVM version data'),
   ];
@@ -353,9 +349,6 @@ exports.sourceNodes = async ({
         });
       });
     },
-  ]);
-
-  await asyncMethods.waterfall([
     callback => {
       releaseTimer.start();
 
@@ -374,38 +367,6 @@ exports.sourceNodes = async ({
 
         createNode({ ...nodeReleasesData, ...nodeReleasesMeta }).then(() => {
           releaseTimer.end();
-
-          callback(null, nodeReleasesData);
-        });
-      });
-    },
-    (nodeReleasesData, callback) => {
-      docsTimer.start();
-
-      const currentActiveReleasesVersions =
-        getCurrentActiveReleases(nodeReleasesData);
-
-      // For now we're only going to parse the latest Node.js docs
-      // As the v14 and v16 docs have some Markdown Errors
-      const [latestNodeRelease] = currentActiveReleasesVersions.reverse();
-
-      const actions = { createNode, createNodeId, cache, docsTimer };
-
-      getApiDocsData([latestNodeRelease], actions, apiNavigationData => {
-        const apiNavigationMeta = {
-          id: createNodeId('api-navigation'),
-          parent: null,
-          children: [],
-          internal: {
-            type: 'ApiNavigation',
-            mediaType: 'application/json',
-            content: JSON.stringify(apiNavigationData),
-            contentDigest: createContentDigest(apiNavigationData),
-          },
-        };
-
-        createNode({ ...apiNavigationData, ...apiNavigationMeta }).then(() => {
-          docsTimer.end();
 
           callback();
         });

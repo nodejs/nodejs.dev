@@ -1,6 +1,6 @@
 import { useLocalization } from 'gatsby-theme-i18n';
 
-import { locales } from '../../util-node/locales';
+import { locales } from '../../locales';
 import { useNavigateToDifferentLocale } from './useNavigateToDifferentLocale';
 
 export const useLocaleAsDropdown = () => {

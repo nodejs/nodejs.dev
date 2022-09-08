@@ -1,8 +1,13 @@
 .article {
-  max-width: 980px;
+  max-width: 768px;
   overflow-wrap: break-word;
-  padding: var(--space-80) 0 var(--space-24) var(--space-128);
+  padding: var(--space-48) var(--space-32) 0 var(--space-32);
   width: calc(100vw - 36rem);
+
+  @media (min-width: 1400px) {
+    max-width: 980px;
+    padding: var(--space-80) var(--space-32) var(--space-24) var(--space-128);
+  }
 
   .headline {
     margin: 0 0 var(--space-40) 0;
