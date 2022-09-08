@@ -28,7 +28,7 @@ describe('getNodeReleasesData', () => {
         );
 
         getNodeReleasesData((releases: unknown) => {
-          expect(releases).toMatchSnapshot();
+          expect(JSON.stringify(releases)).toMatchSnapshot();
 
           expect(fetchMock.mock.calls[0][0]).toBe(
             'https://raw.githubusercontent.com/nodejs/Release/main/schedule.json'
