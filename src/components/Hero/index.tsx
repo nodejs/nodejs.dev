@@ -19,12 +19,9 @@ const Hero = ({
   const { getDownloadLink } = useDetectOs();
 
   const [currentRelease, ...releases] = nodeReleasesLTSVersion;
+  const currentLTS = releases.find(release => !!release.lts) || currentRelease;
 
-  // find first lts version (first found is last LTS)
-  const lastLTSRelease =
-    releases.find((release): boolean => !!release.lts) || currentRelease;
-
-  const ltsVersionUrl = getDownloadLink(lastLTSRelease?.version || '');
+  const ltsVersionUrl = getDownloadLink(currentLTS?.version || '');
   const currentVersionUrl = getDownloadLink(currentRelease?.version || '');
 
   return (
@@ -35,17 +32,19 @@ const Hero = ({
         <div className={styles.downloadLtsContainer}>
           <a className={styles.downloadButton} href={ltsVersionUrl}>
             <FormattedMessage id="components.hero.downloadLts" />
+            <span>
+              <FormattedMessage
+                id="components.hero.currentVersion"
+                values={{ version: currentLTS.version }}
+              />
+            </span>
           </a>
           <p className="t-caption">
-            <FormattedMessage
-              id="components.hero.currentVersion"
-              values={{
-                isLts: !!lastLTSRelease.lts,
-                currentVersion: lastLTSRelease.version,
-              }}
-            />
             <a href={currentVersionUrl}>
-              <FormattedMessage id="components.hero.getCurrent" />
+              <FormattedMessage
+                id="components.hero.getCurrent"
+                values={{ version: currentRelease.version }}
+              />
             </a>
           </p>
         </div>
