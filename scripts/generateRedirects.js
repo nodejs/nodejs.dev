@@ -1,6 +1,6 @@
 const { resolve } = require('path');
 const { readFileSync, writeFile } = require('fs');
-const redirects = require('../util-node/redirects');
+const redirects = require('../redirects');
 
 const firebaseConfig = resolve(__dirname, '../firebase.json');
 

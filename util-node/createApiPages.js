@@ -1,17 +1,37 @@
+const fs = require('fs');
+const path = require('path');
 const { iterateEdges, mapToNavigationData } = require('./createPageUtils');
+const { apiPath } = require('../pathPrefixes');
 
-function createApiPages(pagesEdges, apiTypes, apiNavigationEntries) {
+function createApiPages(pagesEdges, apiTypes, nodeReleases) {
   const apiPages = iterateEdges(pagesEdges);
   const navigationData = {};
 
-  const { items, version } =
-    apiNavigationEntries[apiNavigationEntries.length - 1];
+  const apiDocsPath = path.resolve(`./content${apiPath}`);
 
-  const defaultNavigationRedirects = items
-    .filter(entry => entry.type === 'module')
-    .map(({ name }) => ({ from: `${name}/`, to: `${version}/${name}/` }));
+  const majorNodeReleases = [
+    // Gets all the major releae versions as Array [v18, v16, ...]
+    ...new Set(nodeReleases.map(({ version }) => version.split('.')[0])),
+  ];
 
-  apiNavigationEntries.forEach(entry => {
+  const navigationEntries = [];
+
+  majorNodeReleases.forEach(version => {
+    const navigationFilePath = `${apiDocsPath}/${version}/navigation.json`;
+
+    if (fs.existsSync(navigationFilePath)) {
+      // Fetches the respective NavigationData for each major release
+      // If there's no file we ignore then, as we don't necessarily have all these versions indexed and parsed
+      // Check the `sync-api` script on package.json
+      const navigationFile = fs.readFileSync(navigationFilePath, {
+        encoding: 'utf8',
+      });
+
+      navigationEntries.push(JSON.parse(navigationFile));
+    }
+  });
+
+  navigationEntries.forEach(entry => {
     navigationData[entry.version] = {};
 
     apiTypes.forEach(({ slug, name }) => {
@@ -31,6 +51,13 @@ function createApiPages(pagesEdges, apiTypes, apiNavigationEntries) {
       };
     });
   });
+
+  // Get the Paths for the Latest API version
+  const { items, version } = navigationEntries[0];
+
+  const defaultNavigationRedirects = items
+    .filter(entry => entry.type === 'module')
+    .map(({ name }) => ({ from: `${name}/`, to: `${version}/${name}/` }));
 
   return {
     apiPages,
