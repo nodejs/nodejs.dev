@@ -26,15 +26,17 @@ exports[`Home page renders correctly 1`] = `
           href="https://nodejs.org/dist/mmock-version-2/node-mmock-version-2.tar.gz"
         >
           Download Node (LTS)
+          <span>
+            Version mmock-version-2
+          </span>
         </a>
         <p
           class="t-caption"
         >
-          Version mock-version-1 - 
           <a
             href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
           >
-            Get Current
+            Download Latest (mock-version-1)
           </a>
         </p>
       </div>
@@ -366,15 +368,17 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
           href="https://nodejs.org/dist/mmock-version-2/node-mmock-version-2.tar.gz"
         >
           Download Node (LTS)
+          <span>
+            Version mmock-version-2
+          </span>
         </a>
         <p
           class="t-caption"
         >
-          Version mock-version-1 - 
           <a
             href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
           >
-            Get Current
+            Download Latest (mock-version-1)
           </a>
         </p>
       </div>
