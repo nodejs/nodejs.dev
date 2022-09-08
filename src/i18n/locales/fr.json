@@ -12,7 +12,7 @@
   "components.downloadTable.header.status": "Statut",
   "components.downloadTable.header.codename": "Nom de code",
   "components.downloadTable.header.initialRelease": "Version initiale",
-  "components.downloadTable.header.ltsStarts": "Active LTS Start",
+  "components.downloadTable.header.ltsStarts": "Date de début de LTS",
   "components.downloadTable.header.maintenanceStart": "Maintenance LTS Start",
   "components.downloadTable.header.endOfLife": "Fin de vie",
   "components.downloadReleases.upcomingReleases.title": "Prochaines versions",
