@@ -54,7 +54,7 @@
   "components.sideBar.items.resources": "Ressources",
   "components.sideBar.items.privacy": "Politique de confidentialité",
   "components.sideBar.items.security": "Rapports de sécurité",
-  "components.sideBar.items.packageManager": "Package Manager",
+  "components.sideBar.items.packageManager": "Gestionnaire de paquets",
   "containers.authorList.title": "Contributeurs",
   "containers.navigation.title": "Menu",
   "pages.download.description": "Téléchargez le code source de Node.js, un programme d'installation préconstruit pour votre plateforme, ou installez via un programme d'installation.",
