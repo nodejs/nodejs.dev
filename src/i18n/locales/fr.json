@@ -6,7 +6,7 @@
   "components.downloadAdditional.title": "Téléchargements supplémentaires",
   "components.downloadHeader.navigation.activeSection": "Téléchargements",
   "components.downloadHeader.navigation.title": "Téléchargements",
-  "components.downloadHeader.navigation.nodeVersion": "{lts, sélectionnez, vrai {LATEST LTS}other {CURRENT}} VERSION {nodeVersion}",
+  "components.downloadHeader.navigation.nodeVersion": "{lts, sélectionnez, vrai {LATEST LTS} other {CURRENT}} VERSION {nodeVersion}",
   "components.downloadHeader.navigation.npmVersion": "(comprend npm {npmVersion})",
   "components.downloadTable.header.release": "Publication",
   "components.downloadTable.header.status": "Statut",
