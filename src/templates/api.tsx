@@ -60,6 +60,7 @@ const Api = ({
         absolutePath={editPage}
         authors={[]}
         extraComponents={components}
+        childrenPosition="before"
       >
         <SectionTitle path={['home', 'documentation', version, title]} />
       </Article>

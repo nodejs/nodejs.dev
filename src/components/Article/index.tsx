@@ -32,6 +32,7 @@ interface Props {
   children?: React.ReactNode;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   extraComponents?: Record<string, (...any: any[]) => JSX.Element | null>;
+  childrenPosition?: 'before' | 'after';
 }
 
 const mdxComponents = {
@@ -64,9 +65,10 @@ const Article = ({
   date,
   children,
   extraComponents = {},
+  childrenPosition = 'after',
 }: Props): JSX.Element => (
   <article className={styles.article}>
-    {children && <div>{children}</div>}
+    {childrenPosition === 'before' && children && <div>{children}</div>}
     <h1 className={styles.headline}>{title}</h1>
     {blog
       ? renderBlogAuthors(date, authors as BlogPostAuthor[])
@@ -76,6 +78,7 @@ const Article = ({
         <MDXRenderer>{body}</MDXRenderer>
       </MDXProvider>
     </div>
+    {childrenPosition === 'after' && children && <div>{children}</div>}
     {!blog && authors.length > 0 && (
       <AuthorList authors={authors as string[]} />
     )}

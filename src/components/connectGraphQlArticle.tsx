@@ -10,6 +10,7 @@ interface PageDefaultProps {
   // We explicitly want to allow them to pass any data here that comes from the props
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   articleContent?: (props: any) => JSX.Element;
+  childrenPosition?: 'before' | 'after';
 }
 
 interface ParseGraphqlProps<T extends object> {
@@ -103,6 +104,7 @@ const connectGraphQlArticle = (
         body={articleLayoutProps.body}
         tableOfContents={articleLayoutProps.tableOfContents}
         sidenavKey={articleLayoutProps.sidenavKey}
+        childrenPosition={articleLayoutProps.childrenPosition}
         editPath={editPath}
       >
         {articleLayoutProps.articleContent

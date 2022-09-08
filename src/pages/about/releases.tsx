@@ -16,7 +16,11 @@ export default connectGraphQlArticle(ArticleLayout, {
   editPath: 'content/about/releases.md',
   sidenavKey: SideNavBarKeys.releases,
   articleContent: (props: ReleasesNodeReleases) => (
-    <DownloadTable nodeReleasesData={props.nodeReleases.nodeReleasesData} />
+    <DownloadTable
+      nodeReleasesData={props.nodeReleases.nodeReleasesData.filter(
+        release => release.status !== 'End-of-life'
+      )}
+    />
   ),
 });
 

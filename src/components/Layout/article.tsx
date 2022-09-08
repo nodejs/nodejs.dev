@@ -15,6 +15,7 @@ export interface ArticleLayoutProps {
   editPath?: string;
   sidenavKey?: SideNavBarKeys;
   children?: React.ReactNode;
+  childrenPosition?: 'before' | 'after';
 }
 
 const ArticleLayout = ({
@@ -26,6 +27,7 @@ const ArticleLayout = ({
   authors,
   sidenavKey,
   children,
+  childrenPosition = 'after',
 }: ArticleLayoutProps): JSX.Element => (
   <Layout title={title} description={description}>
     <main className="grid-container">
@@ -38,6 +40,7 @@ const ArticleLayout = ({
         authors={authors}
         editPath={editPath}
         tableOfContents={tableOfContents}
+        childrenPosition={childrenPosition}
       >
         {children}
       </Article>
