@@ -2,12 +2,12 @@ import React, { useState, FC } from 'react';
 import { FormattedMessage } from 'react-intl';
 import DownloadableItem from './DownloadableItem';
 import DownloadToggle from '../DownloadToggle';
-import { NodeReleaseLTSNPMVersion } from '../../types';
+import { NodeReleaseData } from '../../types';
 import { getDownloadableItemsList } from './DownloadableItem/downloadItems';
 import styles from './index.module.scss';
 
 interface DownloadAdditionalProps {
-  line?: NodeReleaseLTSNPMVersion;
+  line?: NodeReleaseData;
   selectedTypeRelease: string;
   handleTypeReleaseToggle: (selected: React.SetStateAction<string>) => void;
 }
@@ -33,7 +33,7 @@ const DownloadAdditional: FC<DownloadAdditionalProps> = ({
       </div>
       <div className={styles.body}>
         {line &&
-          getDownloadableItemsList(line?.version).map(item => (
+          getDownloadableItemsList(line.release).map(item => (
             <DownloadableItem
               key={item.name}
               item={item}

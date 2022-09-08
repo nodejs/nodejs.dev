@@ -52,13 +52,15 @@ export const query = graphql`
     }
     nodeReleases {
       nodeReleasesData {
-        activeLTSStart
-        codename
-        endOfLife
-        initialRelease
-        maintenanceLTSStart
         release
+        version
+        codename
+        isLts
         status
+        initialRelease
+        ltsStart
+        maintenanceStart
+        endOfLife
       }
     }
   }

@@ -1,17 +1,16 @@
 import React from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { NodeReleaseLTSNPMVersion } from '../../types';
+import { NodeReleaseData } from '../../types';
 import SectionTitle from '../SectionTitle';
 import styles from './index.module.scss';
 
 interface Props {
-  release?: NodeReleaseLTSNPMVersion;
+  release?: NodeReleaseData;
 }
 
 const DownloadHeader = ({ release }: Props): JSX.Element => {
-  const nodeVersion = release?.version;
-  const npmVersion = release?.npm;
-  const lts = !!release?.lts;
+  const nodeVersion = release?.release;
+  const lts = release?.isLts;
 
   const intl = useIntl();
 
@@ -38,10 +37,7 @@ const DownloadHeader = ({ release }: Props): JSX.Element => {
           <FormattedMessage id="components.downloadHeader.navigation.title" />
         </div>
         <div className={styles.npm}>
-          <FormattedMessage
-            id="components.downloadHeader.navigation.npmVersion"
-            values={{ npmVersion }}
-          />
+          <FormattedMessage id="components.downloadHeader.navigation.npmVersion" />
         </div>
       </div>
     </>

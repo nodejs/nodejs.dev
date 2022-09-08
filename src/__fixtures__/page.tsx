@@ -6,7 +6,6 @@ import {
   BlogPageData,
   BlogPageContext,
   ArticleProps,
-  NodeReleaseDataDetail,
   NodeReleaseData,
   PageTableOfContents,
   BlogCategories,
@@ -76,55 +75,29 @@ export const createLearnPageData = (): ArticleProps => ({
   },
 });
 
-export const createNodeReleasesDataDetail = (): NodeReleaseDataDetail[] =>
-  [
-    {
-      version: 'mock-version-1',
-      date: 'mock-date',
-      files: ['aix-ppc64', 'headers', 'linux-arm64'],
-      npm: 'mock-npm',
-      v8: 'mock-v8',
-      uv: 'mock-uv',
-      zlib: 'mock-zlib',
-      openssl: 'mock-openssl',
-      modules: 'mock-module',
-      lts: 'fermium',
-      security: false,
-    },
-    {
-      version: 'mmock-version-2',
-      date: 'mock-date',
-      files: ['aix-ppc64', 'headers', 'linux-arm64', 'linux-armv7l'],
-      npm: 'mock-npm',
-      v8: 'mock-v8',
-      uv: 'mock-uv',
-      zlib: 'mock-zlib',
-      openssl: '1.1.1g',
-      modules: '83',
-      lts: 'fermium',
-      security: false,
-    },
-  ] as NodeReleaseDataDetail[];
-
 export const createNodeReleasesData = (): NodeReleaseData[] =>
   [
     {
       endOfLife: '2022-04-30',
-      maintenanceLTSStart: '2020-11-30',
-      activeLTSStart: '2019-10-21',
-      codename: 'Erbium',
+      ltsStart: '2019-10-21',
+      maintenanceStart: '2020-11-30',
       initialRelease: '2019-04-23',
-      release: 'v12',
+      codename: 'Erbium',
+      version: 'v12',
+      release: 'v12.0.0',
       status: 'Maintenance LTS',
+      isLts: false,
     },
     {
       endOfLife: '2023-04-30',
-      maintenanceLTSStart: '2021-10-19',
-      activeLTSStart: '2020-10-27',
-      codename: 'Fermium',
+      ltsStart: '2020-10-17',
+      maintenanceStart: '2021-10-19',
       initialRelease: '2020-04-21',
-      release: 'v14',
+      codename: 'Fermium',
+      version: 'v14',
+      release: 'v14.0.0',
       status: 'Active LTS',
+      isLts: true,
     },
   ] as NodeReleaseData[];
 

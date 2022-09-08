@@ -23,20 +23,20 @@ exports[`Home page renders correctly 1`] = `
       >
         <a
           class="downloadButton"
-          href="https://nodejs.org/dist/mmock-version-2/node-mmock-version-2.tar.gz"
+          href="https://nodejs.org/dist/v14.0.0/node-v14.0.0.tar.gz"
         >
           Download Node (LTS)
           <span>
-            Version mmock-version-2
+            Version v14.0.0
           </span>
         </a>
         <p
           class="t-caption"
         >
           <a
-            href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
+            href="https://nodejs.org/dist//node-.tar.gz"
           >
-            Download Latest (mock-version-1)
+            Download Latest ()
           </a>
         </p>
       </div>
@@ -365,20 +365,20 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
       >
         <a
           class="downloadButton"
-          href="https://nodejs.org/dist/mmock-version-2/node-mmock-version-2.tar.gz"
+          href="https://nodejs.org/dist/v14.0.0/node-v14.0.0.tar.gz"
         >
           Download Node (LTS)
           <span>
-            Version mmock-version-2
+            Version v14.0.0
           </span>
         </a>
         <p
           class="t-caption"
         >
           <a
-            href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
+            href="https://nodejs.org/dist//node-.tar.gz"
           >
-            Download Latest (mock-version-1)
+            Download Latest ()
           </a>
         </p>
       </div>

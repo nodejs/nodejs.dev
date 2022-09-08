@@ -34,21 +34,25 @@ exports[`DownloadTable component renders correctly 1`] = `
       <tbody>
         <tr>
           <td>
-            v15
+            15
           </td>
           <td>
             Pending
           </td>
-          <td />
           <td>
-            2020-10-20
+            <a
+              href="https://nodejs.org/download/release/latest-/"
+            />
+          </td>
+          <td>
+            Tue Oct 20 2020
           </td>
           <td />
           <td>
-            2021-04-01
+            Thu Apr 01 2021
           </td>
           <td>
-            2021-06-01
+            Tue Jun 01 2021
           </td>
         </tr>
       </tbody>

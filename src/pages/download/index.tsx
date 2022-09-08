@@ -10,13 +10,12 @@ import DownloadToggle from '../../components/DownloadToggle';
 import DownloadCards from '../../components/DownloadCards';
 import DownloadReleases from '../../components/DownloadReleases';
 import DownloadAdditional from '../../components/DownloadAdditional';
-import { NodeReleaseData, NodeReleaseLTSNPMVersion } from '../../types';
+import { NodeReleaseData } from '../../types';
 import styles from './index.module.scss';
 
 export interface DownloadNodeReleases {
   nodeReleases: {
     nodeReleasesData: NodeReleaseData[];
-    nodeReleasesLTSNPMVersion: NodeReleaseLTSNPMVersion[];
   };
 }
 
@@ -26,25 +25,27 @@ interface Props {
 }
 
 const DownloadPage = ({ data: { nodeReleases } }: Props): JSX.Element => {
-  const { nodeReleasesData, nodeReleasesLTSNPMVersion } = nodeReleases;
+  const { nodeReleasesData } = nodeReleases;
   const [typeRelease, setTypeRelease] = useState('LTS');
 
   const userOS = detectOS();
 
-  const lts = nodeReleasesLTSNPMVersion.find(
-    (release): boolean => !!release.lts
+  const filteredReleases = nodeReleasesData.filter(
+    release => release.status !== 'End-of-life'
   );
 
-  const current = nodeReleasesLTSNPMVersion.find(
-    (release): boolean => release && !release.lts
+  const lts = filteredReleases.find(release => release.isLts);
+  const current = filteredReleases.find(
+    release => release.status === 'Current'
   );
 
   const selectedType = typeRelease === 'LTS' ? lts : current;
+
   const handleTypeReleaseToggle = (
     selected: React.SetStateAction<string>
   ): void => setTypeRelease(selected);
 
-  const upcomingReleases = getUpcomingReleases(nodeReleasesData);
+  const upcomingReleases = getUpcomingReleases(filteredReleases);
 
   return (
     <Layout title="Download Node.js" description="Come get me!">
@@ -63,7 +64,7 @@ const DownloadPage = ({ data: { nodeReleases } }: Props): JSX.Element => {
         />
         <DownloadCards line={selectedType} userOS={userOS} />
         <DownloadReleases
-          nodeReleasesData={nodeReleasesData}
+          nodeReleasesData={filteredReleases}
           upcomingReleases={upcomingReleases}
         />
         <DownloadAdditional
@@ -82,18 +83,15 @@ export const query = graphql`
   query {
     nodeReleases {
       nodeReleasesData {
-        activeLTSStart
-        codename
-        endOfLife
-        initialRelease
-        maintenanceLTSStart
         release
-        status
-      }
-      nodeReleasesLTSNPMVersion: nodeReleasesDataDetail {
-        lts
         version
-        npm
+        codename
+        isLts
+        status
+        initialRelease
+        ltsStart
+        maintenanceStart
+        endOfLife
       }
     }
   }

@@ -62,7 +62,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             >
               Released
                
-              2019-04-23
+              Tue Apr 23 2019
             </p>
           </div>
           <div
@@ -79,7 +79,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             >
               Released
                
-              2019-10-21
+              Mon Oct 21 2019
             </p>
           </div>
           <div
@@ -96,7 +96,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             >
               Released
                
-              2020-11-30
+              Mon Nov 30 2020
             </p>
           </div>
           <div
@@ -113,7 +113,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             >
               Released
                
-              2022-04-30
+              Sat Apr 30 2022
             </p>
           </div>
         </div>

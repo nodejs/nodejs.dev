@@ -153,16 +153,16 @@ exports[`Releases page renders correctly 1`] = `
                 </a>
               </td>
               <td>
-                2019-04-23
+                Tue Apr 23 2019
               </td>
               <td>
-                2019-10-21
+                Mon Oct 21 2019
               </td>
               <td>
-                2020-11-30
+                Mon Nov 30 2020
               </td>
               <td>
-                2022-04-30
+                Sat Apr 30 2022
               </td>
             </tr>
             <tr>
@@ -184,16 +184,16 @@ exports[`Releases page renders correctly 1`] = `
                 </a>
               </td>
               <td>
-                2020-04-21
+                Tue Apr 21 2020
               </td>
               <td>
-                2020-10-27
+                Sat Oct 17 2020
               </td>
               <td>
-                2021-10-19
+                Tue Oct 19 2021
               </td>
               <td>
-                2023-04-30
+                Sun Apr 30 2023
               </td>
             </tr>
           </tbody>

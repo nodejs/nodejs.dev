@@ -39,17 +39,18 @@ const DownloadTable = ({ nodeReleasesData }: Props): JSX.Element => (
         {nodeReleasesData.map(
           ({
             release,
+            version,
             status,
             codename,
             initialRelease,
-            activeLTSStart,
-            maintenanceLTSStart,
+            ltsStart,
+            maintenanceStart,
             endOfLife,
           }: NodeReleaseData): JSX.Element => {
             // Check if release is pending or not
             const isPending = status === 'Pending';
             // Download hyperlink for release
-            const releaseDownloadLink = `https://nodejs.org/download/release/latest-${release}.x/`;
+            const releaseDownloadLink = `https://nodejs.org/download/release/latest-${version}.x/`;
             // Download hyperlink for codename
             const codenameReleaseLink = `https://nodejs.org/download/release/latest-${codename.toLowerCase()}/`;
 
@@ -57,21 +58,24 @@ const DownloadTable = ({ nodeReleasesData }: Props): JSX.Element => (
               <tr key={release}>
                 <td>
                   {isPending ? (
-                    release
+                    version
                   ) : (
-                    <a href={releaseDownloadLink}>{release}</a>
+                    <a href={releaseDownloadLink}>{version}</a>
                   )}
                 </td>
                 <td>{status || ''}</td>
                 <td>
-                  {codename ? (
+                  {codename !== version ? (
                     <a href={codenameReleaseLink}>{codename}</a>
                   ) : null}
                 </td>
-                <td>{initialRelease}</td>
-                <td>{activeLTSStart}</td>
-                <td>{maintenanceLTSStart}</td>
-                <td>{endOfLife}</td>
+                <td>{new Date(initialRelease).toDateString()}</td>
+                <td>{ltsStart && new Date(ltsStart).toDateString()}</td>
+                <td>
+                  {maintenanceStart &&
+                    new Date(maintenanceStart).toDateString()}
+                </td>
+                <td>{new Date(endOfLife).toDateString()}</td>
               </tr>
             );
           }

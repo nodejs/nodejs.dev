@@ -9,11 +9,13 @@ describe('DownloadTable component', (): void => {
         nodeReleasesData={[
           {
             release: 'v15',
+            version: '15',
             status: 'Pending',
             codename: '',
+            isLts: false,
             initialRelease: '2020-10-20',
-            activeLTSStart: '',
-            maintenanceLTSStart: '2021-04-01',
+            ltsStart: null,
+            maintenanceStart: '2021-04-01',
             endOfLife: '2021-06-01',
           },
         ]}

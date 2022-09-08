@@ -1,14 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { createNodeReleasesDataDetail } from '../../../__fixtures__/page';
+import { createNodeReleasesData } from '../../../__fixtures__/page';
 
 import Hero from '..';
 
-const mockReleaseData = createNodeReleasesDataDetail();
-const mockNodeReleasesLTSVersion = mockReleaseData.map(release => ({
-  version: release.version,
-  lts: release.lts,
-}));
+const mockReleaseData = createNodeReleasesData();
 
 describe('Hero component', () => {
   it('renders correctly', () => {
@@ -18,7 +14,7 @@ describe('Hero component', () => {
       <Hero
         title={title}
         subTitle={subTitle}
-        nodeReleasesLTSVersion={mockNodeReleasesLTSVersion}
+        nodeReleaseData={mockReleaseData}
       />
     );
     expect(container).toMatchSnapshot();
