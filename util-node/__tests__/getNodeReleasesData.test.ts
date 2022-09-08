@@ -24,14 +24,7 @@ describe('getNodeReleasesData', () => {
               start: '2013-03-11',
               end: '9999-01-01',
             },
-          }),
-          // mock first call to index.json
-          JSON.stringify([
-            {
-              lts: true,
-              end: new Date(),
-            },
-          ])
+          })
         );
 
         getNodeReleasesData((releases: unknown) => {
