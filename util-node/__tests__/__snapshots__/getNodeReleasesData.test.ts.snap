@@ -57,7 +57,7 @@ Object {
       "isLts": false,
       "ltsStart": "2022-10-25",
       "maintenanceStart": "2023-10-18",
-      "release": "v18.8.0",
+      "release": "v18.9.0",
       "status": "Current",
       "version": "v18",
     },
