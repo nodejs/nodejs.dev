@@ -418,6 +418,18 @@ exports[`Download page renders correctly 1`] = `
                 Node.js 
                 v14
               </li>
+              <li
+                aria-controls="panel:r1:2"
+                aria-disabled="false"
+                aria-selected="false"
+                class="reactTabsTab"
+                data-rttab="true"
+                id="tab:r1:2"
+                role="tab"
+              >
+                Node.js 
+                v18
+              </li>
             </ul>
             <div
               aria-labelledby="tab:r1:0"
@@ -442,7 +454,7 @@ exports[`Download page renders correctly 1`] = `
                   >
                     Released
                      
-                    Tue Apr 23 2019
+                    2019-04-23
                   </p>
                 </div>
                 <div
@@ -459,7 +471,7 @@ exports[`Download page renders correctly 1`] = `
                   >
                     Released
                      
-                    Mon Oct 21 2019
+                    2019-10-21
                   </p>
                 </div>
                 <div
@@ -476,7 +488,7 @@ exports[`Download page renders correctly 1`] = `
                   >
                     Released
                      
-                    Mon Nov 30 2020
+                    2020-11-30
                   </p>
                 </div>
                 <div
@@ -493,7 +505,7 @@ exports[`Download page renders correctly 1`] = `
                   >
                     Released
                      
-                    Sat Apr 30 2022
+                    2022-04-30
                   </p>
                 </div>
               </div>
@@ -502,6 +514,12 @@ exports[`Download page renders correctly 1`] = `
               aria-labelledby="tab:r1:1"
               class="reactTabsTabPanel"
               id="panel:r1:1"
+              role="tabpanel"
+            />
+            <div
+              aria-labelledby="tab:r1:2"
+              class="reactTabsTabPanel"
+              id="panel:r1:2"
               role="tabpanel"
             />
           </div>
@@ -554,20 +572,20 @@ exports[`Download page renders correctly 1`] = `
                   <a
                     href="https://nodejs.org/download/release/latest-erbium/"
                   >
-                    Erbium
+                    erbium
                   </a>
                 </td>
                 <td>
-                  Tue Apr 23 2019
+                  2019-04-23
                 </td>
                 <td>
-                  Mon Oct 21 2019
+                  2019-10-21
                 </td>
                 <td>
-                  Mon Nov 30 2020
+                  2020-11-30
                 </td>
                 <td>
-                  Sat Apr 30 2022
+                  2022-04-30
                 </td>
               </tr>
               <tr>
@@ -585,20 +603,45 @@ exports[`Download page renders correctly 1`] = `
                   <a
                     href="https://nodejs.org/download/release/latest-fermium/"
                   >
-                    Fermium
+                    fermium
                   </a>
                 </td>
                 <td>
-                  Tue Apr 21 2020
+                  2020-04-21
                 </td>
                 <td>
-                  Sat Oct 17 2020
+                  2020-10-17
                 </td>
                 <td>
-                  Tue Oct 19 2021
+                  2021-10-19
                 </td>
                 <td>
-                  Sun Apr 30 2023
+                  2023-04-30
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://nodejs.org/download/release/latest-v18.x/"
+                  >
+                    v18
+                  </a>
+                </td>
+                <td>
+                  Current
+                </td>
+                <td />
+                <td>
+                  2022-04-19
+                </td>
+                <td>
+                  2022-10-25
+                </td>
+                <td>
+                  2023-10-18
+                </td>
+                <td>
+                  2025-04-30
                 </td>
               </tr>
             </tbody>
@@ -1092,7 +1135,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           </span>
         </div>
         <div>
-          CURRENT VERSION 
+          CURRENT VERSION v18.0.0
         </div>
       </div>
       <div
@@ -1190,7 +1233,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             <p
               class="filename"
             >
-              node-undefined-x86.msi
+              node-v18.0.0-x86.msi
             </p>
           </li>
           <li
@@ -1218,7 +1261,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             <p
               class="filename"
             >
-              node-undefined.pkg
+              node-v18.0.0.pkg
             </p>
           </li>
           <li
@@ -1239,7 +1282,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               />
               <a
                 class="link"
-                href="https://nodejs.org/dist/undefined/node-undefined.tar.gz"
+                href="https://nodejs.org/dist/v18.0.0/node-v18.0.0.tar.gz"
               >
                 <svg
                   aria-hidden="true"
@@ -1262,7 +1305,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             <p
               class="filename"
             >
-              node-undefined.tar.gz
+              node-v18.0.0.tar.gz
             </p>
           </li>
         </ul>
@@ -1311,6 +1354,18 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                 Node.js 
                 v14
               </li>
+              <li
+                aria-controls="panel:r3:2"
+                aria-disabled="false"
+                aria-selected="false"
+                class="reactTabsTab"
+                data-rttab="true"
+                id="tab:r3:2"
+                role="tab"
+              >
+                Node.js 
+                v18
+              </li>
             </ul>
             <div
               aria-labelledby="tab:r3:0"
@@ -1335,7 +1390,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   >
                     Released
                      
-                    Tue Apr 23 2019
+                    2019-04-23
                   </p>
                 </div>
                 <div
@@ -1352,7 +1407,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   >
                     Released
                      
-                    Mon Oct 21 2019
+                    2019-10-21
                   </p>
                 </div>
                 <div
@@ -1369,7 +1424,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   >
                     Released
                      
-                    Mon Nov 30 2020
+                    2020-11-30
                   </p>
                 </div>
                 <div
@@ -1386,7 +1441,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   >
                     Released
                      
-                    Sat Apr 30 2022
+                    2022-04-30
                   </p>
                 </div>
               </div>
@@ -1395,6 +1450,12 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               aria-labelledby="tab:r3:1"
               class="reactTabsTabPanel"
               id="panel:r3:1"
+              role="tabpanel"
+            />
+            <div
+              aria-labelledby="tab:r3:2"
+              class="reactTabsTabPanel"
+              id="panel:r3:2"
               role="tabpanel"
             />
           </div>
@@ -1447,20 +1508,20 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   <a
                     href="https://nodejs.org/download/release/latest-erbium/"
                   >
-                    Erbium
+                    erbium
                   </a>
                 </td>
                 <td>
-                  Tue Apr 23 2019
+                  2019-04-23
                 </td>
                 <td>
-                  Mon Oct 21 2019
+                  2019-10-21
                 </td>
                 <td>
-                  Mon Nov 30 2020
+                  2020-11-30
                 </td>
                 <td>
-                  Sat Apr 30 2022
+                  2022-04-30
                 </td>
               </tr>
               <tr>
@@ -1478,20 +1539,45 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   <a
                     href="https://nodejs.org/download/release/latest-fermium/"
                   >
-                    Fermium
+                    fermium
                   </a>
                 </td>
                 <td>
-                  Tue Apr 21 2020
+                  2020-04-21
                 </td>
                 <td>
-                  Sat Oct 17 2020
+                  2020-10-17
                 </td>
                 <td>
-                  Tue Oct 19 2021
+                  2021-10-19
                 </td>
                 <td>
-                  Sun Apr 30 2023
+                  2023-04-30
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://nodejs.org/download/release/latest-v18.x/"
+                  >
+                    v18
+                  </a>
+                </td>
+                <td>
+                  Current
+                </td>
+                <td />
+                <td>
+                  2022-04-19
+                </td>
+                <td>
+                  2022-10-25
+                </td>
+                <td>
+                  2023-10-18
+                </td>
+                <td>
+                  2025-04-30
                 </td>
               </tr>
             </tbody>
@@ -1542,7 +1628,98 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </div>
         <div
           class="body"
-        />
+        >
+          <div
+            class="downloadableItem"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="headerArrow"
+              >
+                <div
+                  class="headerArrowRight"
+                />
+              </div>
+              Windows Installer (.msi)
+            </div>
+          </div>
+          <div
+            class="downloadableItem"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="headerArrow"
+              >
+                <div
+                  class="headerArrowRight"
+                />
+              </div>
+              Windows Binary (.zip)
+            </div>
+          </div>
+          <div
+            class="downloadableItem"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="headerArrow"
+              >
+                <div
+                  class="headerArrowRight"
+                />
+              </div>
+              macOS Installer (.pkg)
+            </div>
+          </div>
+          <div
+            class="downloadableItem"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="headerArrow"
+              >
+                <div
+                  class="headerArrowRight"
+                />
+              </div>
+              macOS Binary (.tar.gz)
+            </div>
+          </div>
+          <div
+            class="downloadableItem"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="headerArrow"
+              >
+                <div
+                  class="headerArrowRight"
+                />
+              </div>
+              Linux (PPC, S390x, AIX, ARMv7, ARMv8)
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <footer

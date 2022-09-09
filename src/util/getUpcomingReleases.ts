@@ -13,14 +13,14 @@ export const getUpcomingReleases = (
 
     upcomingRelease.releases.push({
       alreadyReleased: new Date() >= new Date(release.initialRelease),
-      releaseDate: new Date(release.initialRelease).toDateString(),
+      releaseDate: release.initialRelease,
       releaseType: ReleaseTypes.current,
     });
 
     if (release.ltsStart) {
       upcomingRelease.releases.push({
         alreadyReleased: new Date() >= new Date(release.ltsStart),
-        releaseDate: new Date(release.ltsStart).toDateString(),
+        releaseDate: release.ltsStart,
         releaseType: ReleaseTypes.lts,
       });
     }
@@ -28,14 +28,14 @@ export const getUpcomingReleases = (
     if (release.maintenanceStart) {
       upcomingRelease.releases.push({
         alreadyReleased: new Date() >= new Date(release.maintenanceStart),
-        releaseDate: new Date(release.maintenanceStart).toDateString(),
+        releaseDate: release.maintenanceStart,
         releaseType: ReleaseTypes.maintenance,
       });
     }
 
     upcomingRelease.releases.push({
       alreadyReleased: new Date() >= new Date(release.endOfLife),
-      releaseDate: new Date(release.endOfLife).toDateString(),
+      releaseDate: release.endOfLife,
       releaseType: ReleaseTypes.endoflife,
     });
 

@@ -34,9 +34,9 @@ exports[`Home page renders correctly 1`] = `
           class="t-caption"
         >
           <a
-            href="https://nodejs.org/dist//node-.tar.gz"
+            href="https://nodejs.org/dist/v18.0.0/node-v18.0.0.tar.gz"
           >
-            Download Latest ()
+            Download Latest (v18.0.0)
           </a>
         </p>
       </div>
@@ -376,9 +376,9 @@ exports[`Home page renders i18n when feature toggle is present 1`] = `
           class="t-caption"
         >
           <a
-            href="https://nodejs.org/dist//node-.tar.gz"
+            href="https://nodejs.org/dist/v18.0.0/node-v18.0.0.tar.gz"
           >
-            Download Latest ()
+            Download Latest (v18.0.0)
           </a>
         </p>
       </div>

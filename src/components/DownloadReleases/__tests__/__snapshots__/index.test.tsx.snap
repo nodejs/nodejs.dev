@@ -46,6 +46,18 @@ exports[`DownloadReleases component renders correctly 1`] = `
             Node.js 
             v14
           </li>
+          <li
+            aria-controls="panel:r0:2"
+            aria-disabled="false"
+            aria-selected="false"
+            class="reactTabsTab"
+            data-rttab="true"
+            id="tab:r0:2"
+            role="tab"
+          >
+            Node.js 
+            v18
+          </li>
         </ul>
         <div
           aria-labelledby="tab:r0:0"
@@ -70,7 +82,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
               >
                 Released
                  
-                Tue Apr 23 2019
+                2019-04-23
               </p>
             </div>
             <div
@@ -87,7 +99,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
               >
                 Released
                  
-                Mon Oct 21 2019
+                2019-10-21
               </p>
             </div>
             <div
@@ -104,7 +116,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
               >
                 Released
                  
-                Mon Nov 30 2020
+                2020-11-30
               </p>
             </div>
             <div
@@ -121,7 +133,7 @@ exports[`DownloadReleases component renders correctly 1`] = `
               >
                 Released
                  
-                Sat Apr 30 2022
+                2022-04-30
               </p>
             </div>
           </div>
@@ -130,6 +142,12 @@ exports[`DownloadReleases component renders correctly 1`] = `
           aria-labelledby="tab:r0:1"
           class="reactTabsTabPanel"
           id="panel:r0:1"
+          role="tabpanel"
+        />
+        <div
+          aria-labelledby="tab:r0:2"
+          class="reactTabsTabPanel"
+          id="panel:r0:2"
           role="tabpanel"
         />
       </div>
@@ -182,20 +200,20 @@ exports[`DownloadReleases component renders correctly 1`] = `
               <a
                 href="https://nodejs.org/download/release/latest-erbium/"
               >
-                Erbium
+                erbium
               </a>
             </td>
             <td>
-              Tue Apr 23 2019
+              2019-04-23
             </td>
             <td>
-              Mon Oct 21 2019
+              2019-10-21
             </td>
             <td>
-              Mon Nov 30 2020
+              2020-11-30
             </td>
             <td>
-              Sat Apr 30 2022
+              2022-04-30
             </td>
           </tr>
           <tr>
@@ -213,20 +231,45 @@ exports[`DownloadReleases component renders correctly 1`] = `
               <a
                 href="https://nodejs.org/download/release/latest-fermium/"
               >
-                Fermium
+                fermium
               </a>
             </td>
             <td>
-              Tue Apr 21 2020
+              2020-04-21
             </td>
             <td>
-              Sat Oct 17 2020
+              2020-10-17
             </td>
             <td>
-              Tue Oct 19 2021
+              2021-10-19
             </td>
             <td>
-              Sun Apr 30 2023
+              2023-04-30
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="https://nodejs.org/download/release/latest-v18.x/"
+              >
+                v18
+              </a>
+            </td>
+            <td>
+              Current
+            </td>
+            <td />
+            <td>
+              2022-04-19
+            </td>
+            <td>
+              2022-10-25
+            </td>
+            <td>
+              2023-10-18
+            </td>
+            <td>
+              2025-04-30
             </td>
           </tr>
         </tbody>

@@ -69,13 +69,10 @@ const DownloadTable = ({ nodeReleasesData }: Props): JSX.Element => (
                     <a href={codenameReleaseLink}>{codename}</a>
                   ) : null}
                 </td>
-                <td>{new Date(initialRelease).toDateString()}</td>
-                <td>{ltsStart && new Date(ltsStart).toDateString()}</td>
-                <td>
-                  {maintenanceStart &&
-                    new Date(maintenanceStart).toDateString()}
-                </td>
-                <td>{new Date(endOfLife).toDateString()}</td>
+                <td>{initialRelease}</td>
+                <td>{ltsStart}</td>
+                <td>{maintenanceStart}</td>
+                <td>{endOfLife}</td>
               </tr>
             );
           }
