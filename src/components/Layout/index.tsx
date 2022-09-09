@@ -8,8 +8,6 @@ import Header from '../Header';
 import Footer from '../Footer';
 import SEO from '../Seo';
 
-import '../../styles/index.scss';
-
 interface Props {
   children: React.ReactNode;
   title?: string;

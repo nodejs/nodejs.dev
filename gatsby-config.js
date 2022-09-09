@@ -8,7 +8,6 @@ const { localesAsString, defaultLanguage } = require('./locales');
 const gatsbyConfig = {
   flags: {
     FAST_DEV: true,
-    DETECT_NODE_MUTATIONS: true,
     PARALLEL_SOURCING: true,
   },
   pathPrefix: process.env.PATH_PREFIX,
@@ -229,6 +228,7 @@ const gatsbyConfig = {
     },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-meta-redirect',
+    'gatsby-plugin-minify-html',
   ],
 };
 
