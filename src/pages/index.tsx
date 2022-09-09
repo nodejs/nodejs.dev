@@ -7,7 +7,7 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 
 import { connectGraphQlCustom } from '../components/connectGraphQlArticle';
-import { HomepageData, NodeReleaseLTSVersion, BannersIndex } from '../types';
+import { HomepageData, BannersIndex, NodeReleaseData } from '../types';
 
 import { ReactComponent as LeafsIllustrationFront } from '../images/illustrations/leafs-front.svg';
 import { ReactComponent as LeafsIllustrationMiddle } from '../images/illustrations/leafs-middle.svg';
@@ -64,7 +64,7 @@ const Index = ({
     article: {
       frontmatter: { displayTitle, subTitle, description },
     },
-    nodeReleases: { nodeReleasesLTSVersion },
+    nodeReleases: { nodeReleasesData },
     banners: { bannersIndex },
   },
   intl,
@@ -75,7 +75,7 @@ const Index = ({
       <Hero
         title={displayTitle}
         subTitle={subTitle}
-        nodeReleasesLTSVersion={nodeReleasesLTSVersion}
+        nodeReleaseData={nodeReleasesData}
       />
 
       <section className={styles.nodeDemoContainer}>
@@ -106,7 +106,7 @@ export default connectGraphQlCustom(injectIntl(Index));
 
 export interface HomeNodeReleases {
   nodeReleases: {
-    nodeReleasesLTSVersion: NodeReleaseLTSVersion[];
+    nodeReleasesData: NodeReleaseData[];
   };
 }
 
@@ -157,9 +157,16 @@ export const query = graphql`
       }
     }
     nodeReleases {
-      nodeReleasesLTSVersion: nodeReleasesDataDetail {
-        lts
+      nodeReleasesData {
+        fullVersion
         version
+        codename
+        isLts
+        status
+        initialRelease
+        ltsStart
+        maintenanceStart
+        endOfLife
       }
     }
     banners {

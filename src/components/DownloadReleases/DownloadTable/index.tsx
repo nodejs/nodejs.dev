@@ -38,39 +38,40 @@ const DownloadTable = ({ nodeReleasesData }: Props): JSX.Element => (
       <tbody>
         {nodeReleasesData.map(
           ({
-            release,
+            fullVersion,
+            version,
             status,
             codename,
             initialRelease,
-            activeLTSStart,
-            maintenanceLTSStart,
+            ltsStart,
+            maintenanceStart,
             endOfLife,
           }: NodeReleaseData): JSX.Element => {
             // Check if release is pending or not
             const isPending = status === 'Pending';
             // Download hyperlink for release
-            const releaseDownloadLink = `https://nodejs.org/download/release/latest-${release}.x/`;
+            const releaseDownloadLink = `https://nodejs.org/download/release/latest-${version}.x/`;
             // Download hyperlink for codename
             const codenameReleaseLink = `https://nodejs.org/download/release/latest-${codename.toLowerCase()}/`;
 
             return (
-              <tr key={release}>
+              <tr key={fullVersion}>
                 <td>
                   {isPending ? (
-                    release
+                    version
                   ) : (
-                    <a href={releaseDownloadLink}>{release}</a>
+                    <a href={releaseDownloadLink}>{version}</a>
                   )}
                 </td>
                 <td>{status || ''}</td>
                 <td>
-                  {codename ? (
+                  {codename !== version ? (
                     <a href={codenameReleaseLink}>{codename}</a>
                   ) : null}
                 </td>
                 <td>{initialRelease}</td>
-                <td>{activeLTSStart}</td>
-                <td>{maintenanceLTSStart}</td>
+                <td>{ltsStart}</td>
+                <td>{maintenanceStart}</td>
                 <td>{endOfLife}</td>
               </tr>
             );

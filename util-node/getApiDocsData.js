@@ -19,18 +19,18 @@ async function getApiDocsData(releaseVersions, callback) {
   // This creates an asynchronous queue that fetches the directory listing of the
   // /doc/api/ directory on the Node.js repository with the contents of a specific version (Git Tag)
   // Then the worker creates a new queue that dispatches a list of files (their metadata and the release version)
-  const apiDownloadListQueue = async.queue((fullReleaseVersion, cb) => {
+  const apiDownloadListQueue = async.queue((releaseData, cb) => {
     const pushToDocsQueue = files => {
       const markdownFiles = files.filter(filterOutInvalidFiles);
-      const releaseVersion = fullReleaseVersion.split('.')[0];
 
       const navigationEntry = {
-        version: releaseVersion,
+        version: releaseData.version,
         items: [],
       };
 
       const currentVersionPath = path.resolve(
-        `./content${apiPath}${releaseVersion}/`
+        __dirname,
+        `../content${apiPath}${releaseData.version}/`
       );
 
       // Creates the API version directory if it doesn't exist
@@ -43,7 +43,7 @@ async function getApiDocsData(releaseVersions, callback) {
       // As we don't want to overcomplicate things. There are definitel drawbacks of using ReGeX
       const apiDocsParser = async.queue((file, dCb) => {
         // eslint-disable-next-line no-console
-        console.log(`Parsing: ${file.name}@${releaseVersion}`);
+        console.log(`Parsing: ${file.name}@${releaseData.version}`);
 
         const parseMarkdownCallback = contents => {
           // We create a Markdown Parser that will be responsible of parsing the file
@@ -53,8 +53,8 @@ async function getApiDocsData(releaseVersions, callback) {
             contents,
             {
               name: getFileName(file),
-              version: releaseVersion,
-              fullVersion: fullReleaseVersion,
+              version: releaseData.version,
+              fullVersion: releaseData.fullVersion,
               downloadUrl: file.download_url,
             }
           );
@@ -106,7 +106,7 @@ async function getApiDocsData(releaseVersions, callback) {
 
     // This fetches a JSON containing the metadata of the files within the API Folder
     // @see https://docs.github.com/en/rest/repos/contents#get-repository-content
-    fetch(apiReleaseContents(fullReleaseVersion), createGitHubHeaders())
+    fetch(apiReleaseContents(releaseData.fullVersion), createGitHubHeaders())
       .then(response => response.json())
       .then(files => pushToDocsQueue(files));
   }, 2);

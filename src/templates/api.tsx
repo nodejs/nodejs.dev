@@ -8,6 +8,7 @@ import Navigation from '../containers/Navigation';
 import { ApiPageData, ApiPageContext } from '../types';
 import SectionTitle from '../components/SectionTitle';
 import styles from './api.module.scss';
+import VersionSelector from '../components/ApiComponents/Components/VersionSelector';
 
 interface Props {
   data: ApiPageData;
@@ -30,6 +31,7 @@ const Api = ({
       body,
       tableOfContents,
     },
+    nodeReleases: { nodeReleasesData, apiAvailableVersions },
   },
   pageContext: { slug, next, previous, navigationData },
 }: Props): JSX.Element => (
@@ -41,7 +43,14 @@ const Api = ({
         sections={navigationData}
         category="api"
         isApiDocs
-      />
+      >
+        <VersionSelector
+          releases={nodeReleasesData}
+          selectedRelease={version}
+          apiAvailableVersions={apiAvailableVersions}
+          currentPage={title}
+        />
+      </Navigation>
       <Article
         title={displayTitle}
         tableOfContents={tableOfContents}
@@ -51,6 +60,7 @@ const Api = ({
         absolutePath={editPage}
         authors={[]}
         extraComponents={components}
+        childrenPosition="before"
       >
         <SectionTitle path={['home', 'documentation', version, title]} />
       </Article>
@@ -76,9 +86,18 @@ export const query = graphql`
       }
     }
     nodeReleases {
-      nodeReleasesVersion: nodeReleasesDataDetail {
+      nodeReleasesData {
+        fullVersion
         version
+        codename
+        isLts
+        status
+        initialRelease
+        ltsStart
+        maintenanceStart
+        endOfLife
       }
+      apiAvailableVersions
     }
   }
 `;
