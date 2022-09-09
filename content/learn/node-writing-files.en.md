@@ -76,6 +76,8 @@ The flags you'll likely use are
 A handy method to append content to the end of a file is `fs.appendFile()` (and its `fs.appendFileSync()` counterpart):
 
 ```js
+const fs = require('fs');
+
 const content = 'Some content!';
 
 fs.appendFile('file.log', content, err => {
