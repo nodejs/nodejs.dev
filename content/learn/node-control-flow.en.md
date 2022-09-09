@@ -260,15 +260,15 @@ function sendOneMillionEmailsOnly() {
       if (!recipient || successCount >= 1000000) return final();
       dispatch(recipient, function (_err) {
         if (!_err) successCount += 1;
-        serial(bigList.shift());
+        serial(bigList.pop());
       });
     }
 
-    serial(bigList.shift());
+    serial(bigList.pop());
   });
 }
 
 sendOneMillionEmailsOnly();
 ```
 
-Each has its own use cases, benefits, and issues you can experiement and read about in more detail. Most importantly, remember to modularize your operations and use callbacks! If you feel any doubt, treat everything as if it were middleware!
+Each has its own use cases, benefits, and issues you can experiment and read about in more detail. Most importantly, remember to modularize your operations and use callbacks! If you feel any doubt, treat everything as if it were middleware!
