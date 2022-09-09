@@ -37,15 +37,10 @@ module.exports = `
       }
     }
   }
-  navigation: apiNavigation {
-    apiNavigationEntries: navigationEntries {
+  nodeReleases {
+    nodeReleasesVersion: nodeReleasesData {
       version
-      items {
-        title
-        slug
-        type
-        name
-      }
+      fullVersion
     }
   }
 }

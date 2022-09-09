@@ -3,6 +3,14 @@ function getReleaseStatus(release) {
   const startDate = new Date(release.start);
   const released = startDate <= currentDate;
 
+  if (release.end) {
+    const EndOfLifeDate = new Date(release.end);
+
+    if (EndOfLifeDate < currentDate) {
+      return 'End-of-life';
+    }
+  }
+
   if (release.maintenance) {
     const MaintenanceDate = new Date(release.maintenance);
 

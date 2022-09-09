@@ -2,13 +2,10 @@ import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render } from '@testing-library/react';
 import DownloadAdditional from '..';
+import { createNodeReleasesData } from '../../../__fixtures__/page';
 
 describe('DownloadAdditional component', (): void => {
-  const releaseData = {
-    version: 'version',
-    lts: '',
-    npm: '6.14.8',
-  };
+  const releaseData = createNodeReleasesData();
 
   it('renders correctly', (): void => {
     const { container } = render(
@@ -23,7 +20,7 @@ describe('DownloadAdditional component', (): void => {
   it('renders correctly with release data', (): void => {
     const { container } = render(
       <DownloadAdditional
-        line={releaseData}
+        line={releaseData[0]}
         selectedTypeRelease="LTS"
         handleTypeReleaseToggle={(): null => null}
       />
@@ -34,7 +31,7 @@ describe('DownloadAdditional component', (): void => {
   it('allows to expand items', async () => {
     const { container } = render(
       <DownloadAdditional
-        line={releaseData}
+        line={releaseData[0]}
         selectedTypeRelease="LTS"
         handleTypeReleaseToggle={(): null => null}
       />
@@ -54,7 +51,7 @@ describe('DownloadAdditional component', (): void => {
   it('allows to collapse expanded items', async () => {
     const { container } = render(
       <DownloadAdditional
-        line={releaseData}
+        line={releaseData[0]}
         selectedTypeRelease="LTS"
         handleTypeReleaseToggle={(): null => null}
       />

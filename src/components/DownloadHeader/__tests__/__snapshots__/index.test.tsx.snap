@@ -16,7 +16,7 @@ exports[`DownloadHeader component renders correctly 1`] = `
       </span>
     </div>
     <div>
-      CURRENT VERSION v14.11.0
+      CURRENT VERSION v12.0.0
     </div>
   </div>
   <div
@@ -30,7 +30,7 @@ exports[`DownloadHeader component renders correctly 1`] = `
     <div
       class="npm"
     >
-      (includes npm 6.14.8)
+      (includes npm)
     </div>
   </div>
 </div>

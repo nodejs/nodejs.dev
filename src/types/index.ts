@@ -37,6 +37,10 @@ export interface ApiPageData {
       editPage: string;
     };
   };
+  nodeReleases: {
+    nodeReleasesData: NodeReleaseData[];
+    apiAvailableVersions: string[];
+  };
 }
 
 export interface GenericPageContext {
@@ -244,39 +248,22 @@ export interface UpcomingRelease {
   releases: UpcomingReleaseData[];
 }
 
-export interface NodeReleaseDataDetail {
-  date: string;
-  version: string;
-  files: string[];
-  lts: string;
-  v8: string;
-  npm?: string;
-  modules?: string;
-  openssl?: string;
-  security?: boolean;
-  uv?: string;
-  zlib?: string;
-}
-
 export interface NodeReleaseData {
-  release: string;
-  status: string;
+  version: string;
+  fullVersion: string;
   codename: string;
+  isLts: boolean;
+  status:
+    | 'Maintenance LTS'
+    | 'Active LTS'
+    | 'Current'
+    | 'End-of-life'
+    | 'Pending';
   initialRelease: string;
-  activeLTSStart: string;
-  maintenanceLTSStart: string;
+  ltsStart: string | null;
+  maintenanceStart: string | null;
   endOfLife: string;
 }
-
-export type NodeReleaseLTSVersion = Pick<
-  NodeReleaseDataDetail,
-  'version' | 'lts'
->;
-
-export type NodeReleaseLTSNPMVersion = Pick<
-  NodeReleaseDataDetail,
-  'lts' | 'npm' | 'version'
->;
 
 export interface BannersIndex {
   endDate: string;

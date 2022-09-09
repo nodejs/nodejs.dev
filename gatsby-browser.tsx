@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ReactIntlProvider from './src/containers/ReactIntl';
-import { defaultLanguage, defaultMessages } from './util-node/locales';
+import { defaultLanguage, defaultMessages } from './locales';
 import type { WrapPageElementBrowser } from './src/types';
 
 // eslint-disable-next-line import/prefer-default-export
