@@ -1,7 +1,18 @@
+const nodeVersions = require('@pkgjs/nv');
+const path = require('path');
 const fetch = require('node-fetch');
 const async = require('async');
+const fs = require('fs');
 const getReleaseStatus = require('./getReleaseStatus');
-const { nodeReleaseData, nodeReleaseSchedule } = require('../apiUrls');
+const { nodeReleaseSchedule } = require('../apiUrls');
+const { apiPath } = require('../pathPrefixes');
+
+const apiDocsDirectory = path.resolve(__dirname, `../content${apiPath}`);
+
+const availableApiVersions = fs
+  .readdirSync(apiDocsDirectory, { withFileTypes: true })
+  .filter(dirent => dirent.isDirectory())
+  .map(dirent => dirent.name);
 
 function getNodeReleasesData(nodeReleasesDataCallback) {
   const fetchNodeReleaseSchedule = callback => {
@@ -11,57 +22,63 @@ function getNodeReleasesData(nodeReleasesDataCallback) {
   };
 
   const fetchNodeReleaseDetail = callback => {
-    fetch(nodeReleaseData)
-      .then(response => response.json())
-      .then(releaseDetails => callback(null, releaseDetails));
+    nodeVersions(['supported']).then(response => callback(null, response));
   };
+
+  const formateReleaseDate = date =>
+    date ? new Date(date).toISOString().split('T')[0] : '';
 
   const parseReleaseData = (_, results) => {
     const { releaseSchedule, releaseDetails } = results;
 
-    const currentReleasesArray = [];
-
-    const getNonEolReleases = key =>
-      new Date(releaseSchedule[key].end) >= new Date();
+    const isReleaseCurrentlyLTS = release =>
+      new Date(release.lts) <= new Date() &&
+      new Date(release.maintenance) >= new Date();
 
     const mapReleaseData = key => {
       const release = releaseSchedule[key];
 
-      currentReleasesArray.push(key);
-
       return {
-        endOfLife: release.end,
-        maintenanceLTSStart: release.maintenance || '',
-        activeLTSStart: release.lts || '',
-        codename: release.codename || '',
-        initialRelease: release.start,
-        release: key,
+        fullVersion: key,
+        version: key,
+        codename: release.codename || key,
+        isLts: release.lts ? isReleaseCurrentlyLTS(release) : false,
         status: getReleaseStatus(release),
+        initialRelease: formateReleaseDate(release.start),
+        ltsStart: formateReleaseDate(release.lts),
+        maintenanceStart: formateReleaseDate(release.maintenance),
+        endOfLife: formateReleaseDate(release.end),
       };
     };
 
+    const mappedReleasesData = releaseDetails.map(release => ({
+      fullVersion: `v${release.version}`,
+      version: release.versionName,
+      codename: release.codename,
+      isLts: isReleaseCurrentlyLTS(release),
+      status: getReleaseStatus(release),
+      initialRelease: formateReleaseDate(release.start),
+      ltsStart: formateReleaseDate(release.lts),
+      maintenanceStart: formateReleaseDate(release.maintenance),
+      endOfLife: formateReleaseDate(release.end),
+    }));
+
+    const removeDuplicatedScheduleEntries = version =>
+      mappedReleasesData.every(entry => entry.version !== version);
+
     const filteredReleasesData = Object.keys(releaseSchedule)
-      .filter(getNonEolReleases)
+      .filter(removeDuplicatedScheduleEntries)
       .map(mapReleaseData);
 
-    const getReleaseDataFromNonEolReleases = release => {
-      if (release && release.version) {
-        const majorVersion = release.version.split('.')[0];
+    mappedReleasesData.push(...filteredReleasesData);
 
-        return currentReleasesArray.includes(majorVersion);
-      }
-
-      return false;
-    };
-
-    const mappedReleasesDataDetail = releaseDetails
-      .filter(getReleaseDataFromNonEolReleases)
-      .map(release => ({ ...release, lts: release.lts || '' }))
-      .slice(0, 50);
+    const sortedReleasesByRelease = mappedReleasesData.sort(
+      (a, b) => new Date(a.initialRelease) - new Date(b.initialRelease)
+    );
 
     nodeReleasesDataCallback({
-      nodeReleasesDataDetail: mappedReleasesDataDetail,
-      nodeReleasesData: filteredReleasesData,
+      nodeReleasesData: sortedReleasesByRelease,
+      apiAvailableVersions: availableApiVersions,
     });
   };
 

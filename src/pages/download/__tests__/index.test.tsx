@@ -3,25 +3,12 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe, toHaveNoViolations } from 'jest-axe';
 import DownloadPage, { DownloadNodeReleases } from '..';
-import {
-  createNodeReleasesData,
-  createNodeReleasesDataDetail,
-} from '../../../__fixtures__/page';
+import { createNodeReleasesData } from '../../../__fixtures__/page';
 
 const mockNodeReleasesData = createNodeReleasesData();
-const mockNodeReleasesDataDetail = createNodeReleasesDataDetail();
-const mockNodeReleasesLTSNPMVersion = mockNodeReleasesDataDetail.map(
-  ({ lts, version, npm }) => ({
-    lts,
-    version,
-    npm,
-  })
-);
-
 const nodeReleaseData: DownloadNodeReleases = {
   nodeReleases: {
     nodeReleasesData: mockNodeReleasesData,
-    nodeReleasesLTSNPMVersion: mockNodeReleasesLTSNPMVersion,
   },
 };
 

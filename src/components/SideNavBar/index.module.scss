@@ -32,6 +32,10 @@
       @extend .t-body2;
       @extend %navigation-section__pure-title;
 
+      svg {
+        padding: 0;
+      }
+
       margin-left: 0;
 
       b {

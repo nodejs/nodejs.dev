@@ -2,29 +2,25 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useDetectOs } from '../../hooks/useDetectOs';
-import type { NodeReleaseLTSVersion } from '../../types';
+import type { NodeReleaseData } from '../../types';
 import styles from './index.module.scss';
 
 interface Props {
   title: string;
   subTitle?: string;
-  nodeReleasesLTSVersion: NodeReleaseLTSVersion[];
+  nodeReleaseData: NodeReleaseData[];
 }
 
-const Hero = ({
-  title,
-  subTitle,
-  nodeReleasesLTSVersion,
-}: Props): JSX.Element => {
+const Hero = ({ title, subTitle, nodeReleaseData }: Props): JSX.Element => {
   const { getDownloadLink } = useDetectOs();
 
-  const [currentRelease, ...releases] = nodeReleasesLTSVersion;
+  const currentLTS = nodeReleaseData.find(release => release.isLts);
+  const currentRelease = nodeReleaseData.find(
+    release => release.status === 'Current'
+  );
 
-  // find first lts version (first found is last LTS)
-  const lastLTSRelease = releases.find((release): boolean => !!release.lts);
-
-  const ltsVersionUrl = getDownloadLink(lastLTSRelease?.version || '');
-  const currentVersionUrl = getDownloadLink(currentRelease?.version || '');
+  const ltsVersionUrl = getDownloadLink(currentLTS?.fullVersion || '');
+  const currentVersionUrl = getDownloadLink(currentRelease?.fullVersion || '');
 
   return (
     <div className={styles.hero}>
@@ -34,17 +30,19 @@ const Hero = ({
         <div className={styles.downloadLtsContainer}>
           <a className={styles.downloadButton} href={ltsVersionUrl}>
             <FormattedMessage id="components.hero.downloadLts" />
+            <span>
+              <FormattedMessage
+                id="components.hero.currentVersion"
+                values={{ version: currentLTS?.fullVersion }}
+              />
+            </span>
           </a>
           <p className="t-caption">
-            <FormattedMessage
-              id="components.hero.currentVersion"
-              values={{
-                isLts: !!lastLTSRelease,
-                currentVersion: currentRelease.version,
-              }}
-            />
             <a href={currentVersionUrl}>
-              <FormattedMessage id="components.hero.getCurrent" />
+              <FormattedMessage
+                id="components.hero.getCurrent"
+                values={{ version: currentRelease?.fullVersion }}
+              />
             </a>
           </p>
         </div>

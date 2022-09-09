@@ -21,18 +21,20 @@ exports[`Hero component renders correctly 1`] = `
       >
         <a
           class="downloadButton"
-          href="https://nodejs.org/dist/mmock-version-2/node-mmock-version-2.tar.gz"
+          href="https://nodejs.org/dist/v14.0.0/node-v14.0.0.tar.gz"
         >
           Download Node (LTS)
+          <span>
+            Version v14.0.0
+          </span>
         </a>
         <p
           class="t-caption"
         >
-          Version mock-version-1 - 
           <a
-            href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
+            href="https://nodejs.org/dist/v18.0.0/node-v18.0.0.tar.gz"
           >
-            Get Current
+            Download Latest (v18.0.0)
           </a>
         </p>
       </div>

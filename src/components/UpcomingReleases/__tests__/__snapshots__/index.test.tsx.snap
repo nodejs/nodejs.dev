@@ -38,6 +38,18 @@ exports[`UpcomingReleases component renders correctly 1`] = `
           Node.js 
           v14
         </li>
+        <li
+          aria-controls="panel:r0:2"
+          aria-disabled="false"
+          aria-selected="false"
+          class="reactTabsTab"
+          data-rttab="true"
+          id="tab:r0:2"
+          role="tab"
+        >
+          Node.js 
+          v18
+        </li>
       </ul>
       <div
         aria-labelledby="tab:r0:0"
@@ -122,6 +134,12 @@ exports[`UpcomingReleases component renders correctly 1`] = `
         aria-labelledby="tab:r0:1"
         class="reactTabsTabPanel"
         id="panel:r0:1"
+        role="tabpanel"
+      />
+      <div
+        aria-labelledby="tab:r0:2"
+        class="reactTabsTabPanel"
+        id="panel:r0:2"
         role="tabpanel"
       />
     </div>
