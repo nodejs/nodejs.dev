@@ -33,7 +33,7 @@ const DownloadAdditional: FC<DownloadAdditionalProps> = ({
       </div>
       <div className={styles.body}>
         {line &&
-          getDownloadableItemsList(line.release).map(item => (
+          getDownloadableItemsList(line.fullVersion).map(item => (
             <DownloadableItem
               key={item.name}
               item={item}

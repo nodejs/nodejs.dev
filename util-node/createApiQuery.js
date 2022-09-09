@@ -40,7 +40,7 @@ module.exports = `
   nodeReleases {
     nodeReleasesVersion: nodeReleasesData {
       version
-      release
+      fullVersion
     }
   }
 }

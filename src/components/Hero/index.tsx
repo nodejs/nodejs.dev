@@ -19,8 +19,8 @@ const Hero = ({ title, subTitle, nodeReleaseData }: Props): JSX.Element => {
     release => release.status === 'Current'
   );
 
-  const ltsVersionUrl = getDownloadLink(currentLTS?.release || '');
-  const currentVersionUrl = getDownloadLink(currentRelease?.release || '');
+  const ltsVersionUrl = getDownloadLink(currentLTS?.fullVersion || '');
+  const currentVersionUrl = getDownloadLink(currentRelease?.fullVersion || '');
 
   return (
     <div className={styles.hero}>
@@ -33,7 +33,7 @@ const Hero = ({ title, subTitle, nodeReleaseData }: Props): JSX.Element => {
             <span>
               <FormattedMessage
                 id="components.hero.currentVersion"
-                values={{ version: currentLTS?.release }}
+                values={{ version: currentLTS?.fullVersion }}
               />
             </span>
           </a>
@@ -41,7 +41,7 @@ const Hero = ({ title, subTitle, nodeReleaseData }: Props): JSX.Element => {
             <a href={currentVersionUrl}>
               <FormattedMessage
                 id="components.hero.getCurrent"
-                values={{ version: currentRelease?.release }}
+                values={{ version: currentRelease?.fullVersion }}
               />
             </a>
           </p>

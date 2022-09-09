@@ -14,7 +14,7 @@ interface Props {
 }
 
 const DownloadCards = ({ line, userOS }: Props): JSX.Element => {
-  const fileName = line?.release;
+  const fileName = line?.fullVersion;
   const [selected, setSelected] = useState('');
 
   useEffect(() => {

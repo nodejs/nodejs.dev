@@ -38,7 +38,7 @@ const DownloadTable = ({ nodeReleasesData }: Props): JSX.Element => (
       <tbody>
         {nodeReleasesData.map(
           ({
-            release,
+            fullVersion,
             version,
             status,
             codename,
@@ -55,7 +55,7 @@ const DownloadTable = ({ nodeReleasesData }: Props): JSX.Element => (
             const codenameReleaseLink = `https://nodejs.org/download/release/latest-${codename.toLowerCase()}/`;
 
             return (
-              <tr key={release}>
+              <tr key={fullVersion}>
                 <td>
                   {isPending ? (
                     version

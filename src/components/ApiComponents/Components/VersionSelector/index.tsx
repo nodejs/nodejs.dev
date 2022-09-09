@@ -39,7 +39,7 @@ const VersionSelector = ({
           .filter(release => release.status !== 'Pending')
           .map(release => (
             <option key={release.version} value={release.version}>
-              {release.release}
+              {release.fullVersion}
             </option>
           ))}
       </select>

@@ -54,7 +54,7 @@ async function getApiDocsData(releaseVersions, callback) {
             {
               name: getFileName(file),
               version: releaseData.version,
-              fullVersion: releaseData.release,
+              fullVersion: releaseData.fullVersion,
               downloadUrl: file.download_url,
             }
           );
@@ -106,7 +106,7 @@ async function getApiDocsData(releaseVersions, callback) {
 
     // This fetches a JSON containing the metadata of the files within the API Folder
     // @see https://docs.github.com/en/rest/repos/contents#get-repository-content
-    fetch(apiReleaseContents(releaseData.release), createGitHubHeaders())
+    fetch(apiReleaseContents(releaseData.fullVersion), createGitHubHeaders())
       .then(response => response.json())
       .then(files => pushToDocsQueue(files));
   }, 2);

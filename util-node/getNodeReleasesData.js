@@ -39,7 +39,7 @@ function getNodeReleasesData(nodeReleasesDataCallback) {
       const release = releaseSchedule[key];
 
       return {
-        release: key,
+        fullVersion: key,
         version: key,
         codename: release.codename || key,
         isLts: release.lts ? isReleaseCurrentlyLTS(release) : false,
@@ -52,7 +52,7 @@ function getNodeReleasesData(nodeReleasesDataCallback) {
     };
 
     const mappedReleasesData = releaseDetails.map(release => ({
-      release: `v${release.version}`,
+      fullVersion: `v${release.version}`,
       version: release.versionName,
       codename: release.codename,
       isLts: isReleaseCurrentlyLTS(release),

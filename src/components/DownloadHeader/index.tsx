@@ -9,7 +9,7 @@ interface Props {
 }
 
 const DownloadHeader = ({ release }: Props): JSX.Element => {
-  const nodeVersion = release?.release;
+  const nodeVersion = release?.fullVersion;
   const lts = release?.isLts;
 
   const intl = useIntl();

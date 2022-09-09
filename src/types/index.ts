@@ -250,7 +250,7 @@ export interface UpcomingRelease {
 
 export interface NodeReleaseData {
   version: string;
-  release: string;
+  fullVersion: string;
   codename: string;
   isLts: boolean;
   status:

@@ -87,7 +87,7 @@ export const query = graphql`
     }
     nodeReleases {
       nodeReleasesData {
-        release
+        fullVersion
         version
         codename
         isLts
