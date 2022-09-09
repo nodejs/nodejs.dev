@@ -57,7 +57,7 @@ async function example() {
     console.log(filehandle.fd);
     console.log(await filehandle.readFile({ encoding: 'utf8' }));
   } finally {
-    await filehandle.close();
+    if (filehandle) await filehandle.close();
   }
 }
 example();

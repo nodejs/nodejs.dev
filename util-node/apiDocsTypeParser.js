@@ -1,4 +1,4 @@
-const { apiPath } = require('../../pathPrefixes');
+const { apiPath } = require('../pathPrefixes');
 
 const jsDocPrefix = 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/';
 const jsDataStructuresUrl = `${jsDocPrefix}Data_structures`;
