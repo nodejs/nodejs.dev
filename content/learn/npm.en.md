@@ -10,7 +10,7 @@ category: learn
 
 `npm` is the standard package manager for Node.js.
 
-In January 2017 over 350000 packages were reported being listed in the npm registry, making it the biggest single language code repository on Earth, and you can be sure there is a package for (almost!) everything.
+In September 2022 over 2.1 million packages were reported being listed in the npm registry, making it the biggest single language code repository on Earth, and you can be sure there is a package for (almost!) everything.
 
 It started as a way to download and manage dependencies of Node.js packages, but it has since become a tool used also in frontend JavaScript.
 
