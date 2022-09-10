@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearInput component should render correctly 1`] = `
+exports[`SearchBar component should render correctly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>

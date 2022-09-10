@@ -16,6 +16,7 @@
     "@mdx-js/react": "^1.6.22",
     "@mui/icons-material": "^5.10.2",
     "@mui/material": "^5.10.2",
+    "@pkgjs/nv": "^0.2.1",
     "@skagami/gatsby-plugin-dark-mode": "^2.0.0",
     "@svgr/webpack": "^6.3.1",
     "@types/dompurify": "^2.3.4",
@@ -35,6 +36,7 @@
     "gatsby-plugin-manifest": "^4.20.0",
     "gatsby-plugin-mdx": "^3.20.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
+    "gatsby-plugin-minify-html": "^1.0.4",
     "gatsby-plugin-offline-next": "^5.2.3",
     "gatsby-plugin-sass": "^5.20.0",
     "gatsby-plugin-sharp": "^4.20.0",
@@ -140,6 +142,7 @@
     "jest-axe": "^6.0.0",
     "jest-environment-jsdom": "^29.0.2",
     "jest-fetch-mock": "^3.0.3",
+    "jest-snapshot-serializer-ansi": "^1.0.0",
     "markdown-yaml-metadata-parser": "^3.0.0",
     "pa11y": "^6.2.3",
     "prettier": "^2.7.1",
@@ -217,6 +220,9 @@
     ],
     "modulePathIgnorePatterns": [
       ".cache"
+    ],
+    "snapshotSerializers": [
+      "jest-snapshot-serializer-ansi"
     ]
   }
 }

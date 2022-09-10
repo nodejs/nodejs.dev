@@ -2,27 +2,25 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useDetectOs } from '../../hooks/useDetectOs';
-import type { NodeReleaseLTSVersion } from '../../types';
+import type { NodeReleaseData } from '../../types';
 import styles from './index.module.scss';
 
 interface Props {
   title: string;
   subTitle?: string;
-  nodeReleasesLTSVersion: NodeReleaseLTSVersion[];
+  nodeReleaseData: NodeReleaseData[];
 }
 
-const Hero = ({
-  title,
-  subTitle,
-  nodeReleasesLTSVersion,
-}: Props): JSX.Element => {
+const Hero = ({ title, subTitle, nodeReleaseData }: Props): JSX.Element => {
   const { getDownloadLink } = useDetectOs();
 
-  const [currentRelease, ...releases] = nodeReleasesLTSVersion;
-  const currentLTS = releases.find(release => !!release.lts) || currentRelease;
+  const currentLTS = nodeReleaseData.find(release => release.isLts);
+  const currentRelease = nodeReleaseData.find(
+    release => release.status === 'Current'
+  );
 
-  const ltsVersionUrl = getDownloadLink(currentLTS?.version || '');
-  const currentVersionUrl = getDownloadLink(currentRelease?.version || '');
+  const ltsVersionUrl = getDownloadLink(currentLTS?.fullVersion || '');
+  const currentVersionUrl = getDownloadLink(currentRelease?.fullVersion || '');
 
   return (
     <div className={styles.hero}>
@@ -35,7 +33,7 @@ const Hero = ({
             <span>
               <FormattedMessage
                 id="components.hero.currentVersion"
-                values={{ version: currentLTS.version }}
+                values={{ version: currentLTS?.fullVersion }}
               />
             </span>
           </a>
@@ -43,7 +41,7 @@ const Hero = ({
             <a href={currentVersionUrl}>
               <FormattedMessage
                 id="components.hero.getCurrent"
-                values={{ version: currentRelease.version }}
+                values={{ version: currentRelease?.fullVersion }}
               />
             </a>
           </p>

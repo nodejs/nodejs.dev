@@ -29,7 +29,10 @@ const apiTypesNavigationData = yaml.parse(
 
 // This creates a map of all the locale JSONs that are enabled in the config.json file
 const intlMessages = nodeLocales.locales.reduce((acc, locale) => {
-  const filePath = require.resolve(`./src/i18n/locales/${locale.code}.json`);
+  const filePath = path.resolve(
+    __dirname,
+    `./src/i18n/locales/${locale.code}.json`
+  );
   acc[locale.code] = JSON.parse(fs.readFileSync(filePath, 'utf8'));
   return acc;
 }, {});
@@ -71,10 +74,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const pageRedirects = { ...redirects };
 
-  const apiTemplate = path.resolve('./src/templates/api.tsx');
-  const learnTemplate = path.resolve('./src/templates/learn.tsx');
-  const blogTemplate = path.resolve('./src/templates/blog.tsx');
+  const apiTemplate = path.resolve(__dirname, './src/templates/api.tsx');
+  const learnTemplate = path.resolve(__dirname, './src/templates/learn.tsx');
+  const blogTemplate = path.resolve(__dirname, './src/templates/blog.tsx');
   const blogCategoryTemplate = path.resolve(
+    __dirname,
     './src/templates/blog-category.tsx'
   );
 

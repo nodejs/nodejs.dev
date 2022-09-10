@@ -6,6 +6,10 @@ const config = require('./src/config.json');
 const { localesAsString, defaultLanguage } = require('./locales');
 
 const gatsbyConfig = {
+  flags: {
+    FAST_DEV: true,
+    PARALLEL_SOURCING: true,
+  },
   pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
     title: config.title,
@@ -45,63 +49,63 @@ const gatsbyConfig = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'learn',
-        path: path.resolve('./content/learn'),
+        path: path.resolve(__dirname, './content/learn'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'sites',
-        path: path.resolve('./src/pages'),
+        path: path.resolve(__dirname, './src/pages'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'homepage',
-        path: path.resolve('./content/homepage'),
+        path: path.resolve(__dirname, './content/homepage'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'community',
-        path: path.resolve('./content/community'),
+        path: path.resolve(__dirname, './content/community'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'blog',
-        path: path.resolve('./content/blog'),
+        path: path.resolve(__dirname, './content/blog'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
-        path: path.resolve('./src/data'),
+        path: path.resolve(__dirname, './src/data'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'about',
-        path: path.resolve('./content/about'),
+        path: path.resolve(__dirname, './content/about'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'download',
-        path: path.resolve('./content/download'),
+        path: path.resolve(__dirname, './content/download'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'api',
-        path: path.resolve('./content/api'),
+        path: path.resolve(__dirname, './content/api'),
       },
     },
     'gatsby-plugin-typescript',
@@ -176,7 +180,7 @@ const gatsbyConfig = {
       resolve: `gatsby-theme-i18n`,
       options: {
         defaultLang: defaultLanguage,
-        configPath: path.resolve('./src/i18n/config.json'),
+        configPath: path.resolve(__dirname, './src/i18n/config.json'),
         prefixDefault: true,
         locales: localesAsString,
       },
@@ -224,6 +228,7 @@ const gatsbyConfig = {
     },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-meta-redirect',
+    'gatsby-plugin-minify-html',
   ],
 };
 

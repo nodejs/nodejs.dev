@@ -16,7 +16,11 @@ export default connectGraphQlArticle(ArticleLayout, {
   editPath: 'content/about/releases.md',
   sidenavKey: SideNavBarKeys.releases,
   articleContent: (props: ReleasesNodeReleases) => (
-    <DownloadTable nodeReleasesData={props.nodeReleases.nodeReleasesData} />
+    <DownloadTable
+      nodeReleasesData={props.nodeReleases.nodeReleasesData.filter(
+        release => release.status !== 'End-of-life'
+      )}
+    />
   ),
 });
 
@@ -52,13 +56,15 @@ export const query = graphql`
     }
     nodeReleases {
       nodeReleasesData {
-        activeLTSStart
+        fullVersion
+        version
         codename
-        endOfLife
-        initialRelease
-        maintenanceLTSStart
-        release
+        isLts
         status
+        initialRelease
+        ltsStart
+        maintenanceStart
+        endOfLife
       }
     }
   }

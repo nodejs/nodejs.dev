@@ -7,7 +7,7 @@
   "components.downloadHeader.navigation.activeSection": "downloads",
   "components.downloadHeader.navigation.title": "Downloads",
   "components.downloadHeader.navigation.nodeVersion": "{lts, select, true {LATEST LTS}other {CURRENT}} VERSION {nodeVersion}",
-  "components.downloadHeader.navigation.npmVersion": "(includes npm {npmVersion})",
+  "components.downloadHeader.navigation.npmVersion": "(includes npm)",
   "components.downloadTable.header.release": "Release",
   "components.downloadTable.header.status": "Status",
   "components.downloadTable.header.codename": "Codename",

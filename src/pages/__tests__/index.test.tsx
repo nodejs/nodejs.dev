@@ -2,19 +2,13 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Index, { HomeNodeReleases } from '..';
 import { BannersIndex } from '../../types';
-import { createNodeReleasesDataDetail } from '../../__fixtures__/page';
+import { createNodeReleasesData } from '../../__fixtures__/page';
 
-const mockNodeReleasesDataDetail = createNodeReleasesDataDetail();
-const mockNodeReleasesLTSVersion = mockNodeReleasesDataDetail.map(
-  ({ lts, version }) => ({
-    lts,
-    version,
-  })
-);
+const mockNodeReleasesData = createNodeReleasesData();
 
 const mockHomeNodeReleases: HomeNodeReleases = {
   nodeReleases: {
-    nodeReleasesLTSVersion: mockNodeReleasesLTSVersion,
+    nodeReleasesData: mockNodeReleasesData,
   },
 };
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Tabs, TabList } from 'react-tabs';
-import { NodeReleaseLTSNPMVersion } from '../../types';
+import { NodeReleaseData } from '../../types';
 import { ReactComponent as AppleLogo } from '../../images/logos/apple-logo.svg';
 import { ReactComponent as MicrosoftLogo } from '../../images/logos/microsoft-download-logo.svg';
 import { ReactComponent as SourceCodeIcon } from '../../images/logos/source-code-icon.svg';
@@ -9,12 +9,12 @@ import DownloadCard from './DownloadCard';
 import styles from './index.module.scss';
 
 interface Props {
-  line?: NodeReleaseLTSNPMVersion;
+  line?: NodeReleaseData;
   userOS: UserOS;
 }
 
 const DownloadCards = ({ line, userOS }: Props): JSX.Element => {
-  const fileName = line?.version;
+  const fileName = line?.fullVersion;
   const [selected, setSelected] = useState('');
 
   useEffect(() => {
