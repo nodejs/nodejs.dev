@@ -11,6 +11,7 @@ import { Index, SerialisedIndexData } from 'elasticlunr';
 import SectionTitle from '../SectionTitle';
 import { SearchResult } from '../../types';
 import styles from './index.module.scss';
+import useKeyPress from '../../hooks/useKeyPress';
 
 const containerTransition = { type: 'spring', damping: 22, stiffness: 150 };
 const containerVariants = {
@@ -102,6 +103,14 @@ const SearchBar = (): JSX.Element => {
       searchInputRef.current.focus();
     }
   };
+
+  useKeyPress('/', () => onKeyPressHandler());
+  useKeyPress('Escape', () => {
+    if (isExpanded) {
+      collapseContainer();
+      searchInputRef.current?.blur();
+    }
+  });
 
   return (
     <motion.div
