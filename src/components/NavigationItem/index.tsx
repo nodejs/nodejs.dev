@@ -25,9 +25,16 @@ const NavigationItem = ({
     [styles.navigationItemApi]: isApiDocs,
   });
 
+  if (slug.startsWith('https')) {
+    return (
+      <a href={slug} className={className}>
+        {title}
+      </a>
+    );
+  }
+
   return (
     <Link
-      id={`link-${slug}`}
       to={slug}
       className={className}
       aria-current={isActive ? 'page' : undefined}

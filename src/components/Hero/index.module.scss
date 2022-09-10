@@ -16,7 +16,7 @@
   h1 {
     max-width: 840px;
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       font-size: var(--font-size-display2);
       line-height: 48px;
       max-width: 90vw;
@@ -31,7 +31,7 @@
     margin: var(--space-32) 0 var(--space-32) 0;
     max-width: 780px;
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       max-width: 90vw;
     }
   }

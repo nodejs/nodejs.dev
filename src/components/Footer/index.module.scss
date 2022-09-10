@@ -5,7 +5,7 @@
   margin: 0;
   margin-top: auto;
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     flex-direction: column;
   }
 
@@ -31,7 +31,7 @@
       padding-top: 0;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       align-items: center;
       flex-direction: column;
       height: 10rem;
@@ -58,7 +58,7 @@
       width: 1.8rem;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       margin: 0;
 
       > li:first-of-type {
@@ -79,13 +79,13 @@
       height: 24px;
       margin-right: 32px;
 
-      @media (max-width: 800px) {
+      @media (max-width: 900px) {
         margin-right: 0;
         padding: 6px 0;
       }
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       padding: 6px 18px;
     }
   }

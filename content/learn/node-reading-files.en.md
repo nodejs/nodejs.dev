@@ -2,7 +2,6 @@
 title: 'Reading files with Node.js'
 description: 'How to read files using Node.js'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99
-section: Getting Started
 category: learn
 ---
 

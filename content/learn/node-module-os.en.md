@@ -2,7 +2,6 @@
 title: 'The Node.js os module'
 description: 'The os module of Node.js provides useful functions to interact with underlying system'
 authors: flaviocopes, potch, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
-section: Getting Started
 category: learn
 ---
 

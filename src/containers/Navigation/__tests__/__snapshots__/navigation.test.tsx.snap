@@ -43,7 +43,6 @@ exports[`Navigation component renders correctly 1`] = `
           aria-current="page"
           class="t-body2 navigationItem navigationItemActive"
           href="intro"
-          id="link-intro"
         >
           Section 1
         </a>

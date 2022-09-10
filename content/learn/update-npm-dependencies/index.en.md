@@ -2,7 +2,6 @@
 title: Update all the Node.js dependencies to their latest version
 description: 'How do you update all the npm dependencies store in the package.json file, to their latest version available?'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
-section: Getting Started
 category: learn
 ---
 

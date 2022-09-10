@@ -32,7 +32,6 @@ exports[`NavigationSection component renders correctly 1`] = `
       <a
         class="t-body2 navigationItem"
         href="intro"
-        id="link-intro"
       >
         Section 1
       </a>
