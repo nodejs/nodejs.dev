@@ -5,11 +5,26 @@ require('dotenv').config();
 const config = require('./src/config.json');
 const { localesAsString, defaultLanguage } = require('./locales');
 
-const gatsbyConfig = {
-  flags: {
-    FAST_DEV: true,
-    PARALLEL_SOURCING: true,
+const markdownSources = [
+  'about',
+  'api',
+  'community',
+  'download',
+  'homepage',
+  'learn',
+  'blog',
+];
+
+const gatsbyFsMarkdownSources = markdownSources.map(name => ({
+  resolve: 'gatsby-source-filesystem',
+  options: {
+    name,
+    path: path.resolve(__dirname, `./content/${name}`),
   },
+}));
+
+const gatsbyConfig = {
+  flags: { FAST_DEV: true },
   pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
     title: config.title,
@@ -24,10 +39,12 @@ const gatsbyConfig = {
     'Mdx.frontmatter.category': `CategoriesYaml.name`,
   },
   plugins: [
+    'gatsby-plugin-typescript',
     'gatsby-plugin-catch-links',
     '@skagami/gatsby-plugin-dark-mode',
     'gatsby-transformer-yaml',
     'gatsby-plugin-sharp',
+    ...gatsbyFsMarkdownSources,
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
@@ -48,67 +65,10 @@ const gatsbyConfig = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'learn',
-        path: path.resolve(__dirname, './content/learn'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'sites',
-        path: path.resolve(__dirname, './src/pages'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'homepage',
-        path: path.resolve(__dirname, './content/homepage'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'community',
-        path: path.resolve(__dirname, './content/community'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'blog',
-        path: path.resolve(__dirname, './content/blog'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
         name: 'data',
         path: path.resolve(__dirname, './src/data'),
       },
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'about',
-        path: path.resolve(__dirname, './content/about'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'download',
-        path: path.resolve(__dirname, './content/download'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'api',
-        path: path.resolve(__dirname, './content/api'),
-      },
-    },
-    'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {

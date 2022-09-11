@@ -4,11 +4,11 @@ import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Navigation from '../containers/Navigation';
 import { connectGraphQlCustom } from '../components/connectGraphQlArticle';
-import { LearnPageContext, LearnPageData } from '../types';
+import { LearnTemplateContext, LearnTemplateData } from '../types';
 
 interface Props {
-  data: LearnPageData;
-  pageContext: LearnPageContext;
+  data: LearnTemplateData;
+  pageContext: LearnTemplateContext;
   location: Location;
 }
 

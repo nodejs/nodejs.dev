@@ -36,12 +36,12 @@ function mapToNavigationData(page) {
   };
 }
 
-function iterateEdges(edges) {
+function iterateEdges(edges, extraProperties = () => ({})) {
   function updateMarkdownPage({ node }, index) {
     const {
       fields: { slug, categoryName },
       parent: { relativePath },
-      frontmatter: { title, version },
+      frontmatter: { title, displayTitle },
       fileAbsolutePath,
     } = node;
 
@@ -54,22 +54,16 @@ function iterateEdges(edges) {
     const result = {
       slug,
       title,
+      categoryName,
       relativePath,
       next: nextNodeData,
       previous: previousNodeData,
+      displayTitle: displayTitle || '',
       realPath: fileAbsolutePath || '',
       id: node.id,
     };
 
-    if (categoryName) {
-      result.category = categoryName;
-    }
-
-    if (version) {
-      result.version = version;
-    }
-
-    return result;
+    return { ...result, ...extraProperties(node) };
   }
 
   return edges.map(updateMarkdownPage);
