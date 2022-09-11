@@ -42,3 +42,7 @@ RFCs that are candidates for inclusion on the Node.js website will enter a "fina
 
 - **Accepted** at the close of its final comment period. A working group member will merge the RFC's associated pull request, at which point the RFC will become 'active', or;
 - **Rejected** by the Website Redesign working group after public discussion has settled and comments have been made summarizing the rationale for rejection. A member of the working group should then close the RFC's associated pull request.
+
+# If you update a learning page 
+
+You will have to delete the translated documents. To avoid having translated documents with out of date content
