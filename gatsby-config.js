@@ -43,7 +43,10 @@ const gatsbyConfig = {
     'gatsby-plugin-catch-links',
     '@skagami/gatsby-plugin-dark-mode',
     'gatsby-transformer-yaml',
-    'gatsby-plugin-sharp',
+    'gatsby-plugin-sitemap',
+    // This generates the redirects for the I18N redirects
+    // It also creates meta redirects for any usage of `createRedirect`
+    'gatsby-plugin-meta-redirect',
     ...gatsbyFsMarkdownSources,
     {
       resolve: 'gatsby-plugin-canonical-urls',
@@ -73,8 +76,9 @@ const gatsbyConfig = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
+        // Disables Babel Loader for MDX which fastens the build time
+        lessBabel: true,
         gatsbyRemarkPlugins: [
-          { resolve: 'gatsby-remark-copy-linked-files' },
           {
             resolve: 'gatsby-remark-autolink-headers',
             options: {
@@ -83,13 +87,6 @@ const gatsbyConfig = {
               className: 'autolink-headers',
               maintainCase: false,
               removeAccents: true,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 590,
-              backgroundColor: 'transparent',
             },
           },
         ],
@@ -186,9 +183,6 @@ const gatsbyConfig = {
         cache_busting_mode: 'none',
       },
     },
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-meta-redirect',
-    'gatsby-plugin-minify-html',
   ],
 };
 

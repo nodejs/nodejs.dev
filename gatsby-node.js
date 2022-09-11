@@ -14,6 +14,7 @@ const createApiQuery = require('./util-node/createApiQuery');
 const createBlogPages = require('./util-node/createBlogPages');
 const createLearnPages = require('./util-node/createLearnPages');
 const createApiPages = require('./util-node/createApiPages');
+const generateRedirects = require('./util-node/generateRedirects');
 const redirects = require('./redirects');
 const nodeLocales = require('./locales');
 const { learnPath, apiPath, blogPath } = require('./pathPrefixes');
@@ -173,6 +174,11 @@ exports.createPages = async ({ graphql, actions }) => {
   pageRedirects[apiPath] = `${latestApiPath}documentation/`;
   pageRedirects[latestApiPath] = `${latestApiPath}documentation/`;
 
+  // Updates `firebase.json` with new redirects
+  // This is used for our static hosting redirects (npm run build)
+  // When using `npm run serve` or `npm run start` this will not be needed
+  generateRedirects(pageRedirects);
+
   apiRedirects.forEach(({ from, to }) => {
     pageRedirects[`${apiPath}${from}`] = `${apiPath}${to}`;
 
@@ -187,7 +193,7 @@ exports.createPages = async ({ graphql, actions }) => {
       fromPath: from,
       toPath: pageRedirects[from],
       isPermanent: true,
-      redirectInBrowser: true,
+      redirectInBrowser: process.env.NODE_ENV === 'development',
       statusCode: 200,
     };
 
