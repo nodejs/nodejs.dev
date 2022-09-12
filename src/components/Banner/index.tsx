@@ -10,8 +10,8 @@ export interface BannerProps {
   bannersIndex: BannersIndex;
 }
 
-const useTextContent = ({ text, link }: BannersIndex) => {
-  return useMemo(() => {
+const useTextContent = ({ text, link }: BannersIndex) =>
+  useMemo(() => {
     if (text) {
       return (
         <p>
@@ -25,10 +25,9 @@ const useTextContent = ({ text, link }: BannersIndex) => {
 
     return null;
   }, [text, link]);
-};
 
-const useHtmlContent = ({ html, link }: BannersIndex) => {
-  return useMemo(() => {
+const useHtmlContent = ({ html, link }: BannersIndex) =>
+  useMemo(() => {
     if (html) {
       const sanitizedHtml = sanitize(html);
 
@@ -45,7 +44,6 @@ const useHtmlContent = ({ html, link }: BannersIndex) => {
 
     return null;
   }, [html, link]);
-};
 
 const Banner = ({ bannersIndex }: BannerProps): JSX.Element | null => {
   const showBanner = dateIsBetween(

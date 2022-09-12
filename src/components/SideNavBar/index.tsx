@@ -15,7 +15,7 @@ export enum SideNavBarKeys {
   governance = '/about/governance/',
   releases = '/about/releases/',
   resources = '/about/resources/',
-  privacy = '/about/privacy/',
+  privacy = 'https://privacy-policy.openjsf.org/',
   security = '/about/security/',
   getInvolved = '/get-involved/',
   codeLearn = '/get-involved/code-learn',

@@ -241,7 +241,7 @@ exports[`Resources page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 navigationItem"
-            href="/about/privacy/"
+            href="https://privacy-policy.openjsf.org/"
           >
             Privacy Policy
           </a>

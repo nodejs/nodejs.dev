@@ -12,12 +12,11 @@ const blogSectionTitle = {
   isTitle: true,
 };
 
-const parseNavigationData = (categories: BlogCategory[]) => {
-  return categories.map(({ node }) => ({
+const parseNavigationData = (categories: BlogCategory[]) =>
+  categories.map(({ node }) => ({
     title: node.slug,
     slug: `/blog/${node.name}/`,
   }));
-};
 
 type Props = {
   posts: BlogPost[];

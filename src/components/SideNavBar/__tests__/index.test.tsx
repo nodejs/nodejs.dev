@@ -40,7 +40,9 @@ describe('SideNavBar', () => {
   it('should contain a href to `~/about/privacy`', () => {
     render(<SideNavBar pageKey={SideNavBarKeys.privacy} />);
     const privacyNavBarElement = screen.getByText('Privacy Policy');
-    expect(privacyNavBarElement.getAttribute('href')).toBe('/about/privacy/');
+    expect(privacyNavBarElement.getAttribute('href')).toBe(
+      'https://privacy-policy.openjsf.org/'
+    );
   });
 
   it('should contain a href to `~/about/security`', () => {
