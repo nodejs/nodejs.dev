@@ -9,7 +9,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  build:
+  generate-preview:
     runs-on: ubuntu-latest
     if: github.event.label.name == 'create-preview'
     steps:

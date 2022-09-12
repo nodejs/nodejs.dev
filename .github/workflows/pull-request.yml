@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  test:
+  test-ci:
     runs-on: ubuntu-latest
     steps:
       - name: Git Checkout
@@ -21,9 +21,15 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Build Gatsby
-        run: npm run build-ci
-  build:
+      - name: Run Lint Checker
+        run: npm run lint
+
+      - name: Run Unit Tests
+        run: npm run test-ci
+
+      - name: Upload Code Coverage
+        uses: codecov/codecov-action@v3
+  build-ci:
     needs: test
     runs-on: ubuntu-latest
     steps:
