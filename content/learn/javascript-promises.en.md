@@ -7,12 +7,7 @@ category: learn
 
 ## Introduction to promises
 
-<iframe
-  title="Introduction to promises"
-  src="https://stackblitz.com/edit/nodejs-dev-0006-01?index.js&zenmode=1&view=editor"
-  alt="nodejs-dev-0006-01 on StackBlitz"
-  style="height: 400px; width: 100%; border: 0;">
-</iframe>
+<iframe title="Introduction to promises" src="https://stackblitz.com/edit/nodejs-dev-0006-01?index.js&zenmode=1&view=editor" alt="nodejs-dev-0006-01 on StackBlitz" style="height: 400px; width: 100%; border: 0;" />
 
 A promise is commonly defined as **a proxy for a value that will eventually become available**.
 
@@ -145,7 +140,7 @@ fetch('/todos.json')
   });
 ```
 
-> [`node-fetch`](https://www.npmjs.com/package/node-fetch) is  minimal code for window\.fetch compatible API on Node.js runtime.
+> [`node-fetch`](https://www.npmjs.com/package/node-fetch) is minimal code for window\.fetch compatible API on Node.js runtime.
 
 In this example, we call `fetch()` to get a list of TODO items from the `todos.json` file found in the domain root, and we create a chain of promises.
 

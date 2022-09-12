@@ -1,7 +1,7 @@
 ---
 title: previous-releases
 displayTitle: 'Previous Releases'
-description: "Previous Releases | Node.js"
+description: 'Previous Releases | Node.js'
 ---
 
 ### io.js & Node.js

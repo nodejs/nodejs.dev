@@ -1,7 +1,7 @@
 ---
 title: 'collab-summit'
 displayTitle: 'Collaborator Summit'
-description: "Collaborator Summit | Node.js"
+description: 'Collaborator Summit | Node.js'
 category: get-involved
 ---
 

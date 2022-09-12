@@ -14,22 +14,6 @@ Here is a sample Hello World HTTP web server:
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 
-<!--```js
-const http = require('http')
-
-const port = process.env.PORT
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200
-  res.setHeader('Content-Type', 'text/html')
-  res.end('<h1>Hello, World!</h1>')
-})
-
-server.listen(port, () => {
-  console.log(`Server running at port ${port}`)
-})
-```-->
-
 Let's analyze it briefly. We include the [`http` module](https://nodejs.org/api/http.html).
 
 We use the module to create an HTTP server.

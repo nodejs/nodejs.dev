@@ -68,7 +68,7 @@ The flags you'll likely use are
 * `a` open the file for writing, positioning the stream at the end of the file. The file is created if it does not exist
 * `a+` open the file for reading and writing, positioning the stream at the end of the file. The file is created if it does not exist
 
-(you can find more flags at <https://nodejs.org/api/fs.html#fs_file_system_flags>)
+(you can find more flags at [https://nodejs.org/api/fs.html#fs_file_system_flags](https://nodejs.org/api/fs.html#fs_file_system_flags))
 
 ## Append to a file
 
