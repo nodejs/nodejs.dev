@@ -59,8 +59,8 @@ exports[`SideNavBar renders correctly 1`] = `
       </a>
       <a
         class="t-body2 navigationItem"
-        href="/resources/"
-        id="link-/resources/"
+        href="/about/resources/"
+        id="link-/about/resources/"
       >
         Resources
       </a>

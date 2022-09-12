@@ -13,7 +13,7 @@ export enum SideNavBarKeys {
   community = '/community/',
   workingGroups = '/about/working-groups/',
   releases = '/about/releases/',
-  resources = '/resources/',
+  resources = '/about/resources/',
   privacy = '/about/privacy/',
   security = '/about/security/',
   packageManager = '/download/package-manager/',
