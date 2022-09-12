@@ -86,7 +86,6 @@
     "lint:scss": "stylelint --config ./.stylelintrc.json \"./src/**/*.{css,sass,scss}\"",
     "lint:fix": "npm run lint -- --fix",
     "serve": "npm run build && clear && gatsby serve",
-    "a11y": "./node_modules/pa11y/bin/pa11y.js localhost:8000",
     "type-check": "tsc --noEmit",
     "postinstall": "patch-package"
   },
@@ -132,7 +131,6 @@
     "jest-fetch-mock": "^3.0.3",
     "jest-snapshot-serializer-ansi": "^1.0.0",
     "markdown-yaml-metadata-parser": "^3.0.0",
-    "pa11y": "^6.2.3",
     "prettier": "^2.7.1",
     "sass": "^1.54.9",
     "sass-loader": "^13.0.2",
