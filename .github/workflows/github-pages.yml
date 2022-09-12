@@ -1,4 +1,4 @@
-name: Publish
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
@@ -8,14 +8,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-upload:
+  build-and-deploy:
     permissions:
       contents: read
       pages: read
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
+    - name: Git Checkout
       uses: actions/checkout@v3
       with:
         ref: main
@@ -23,17 +23,21 @@ jobs:
     - name: Setup Pages
       uses: actions/configure-pages@v2
 
-    - name: Use Node.js
+    - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 16.x
+        cache: 'npm'
 
-    # Build the site
-    - name: Install npm packages
+    - name: Install NPM packages
       run: npm ci
-    - name: Build documentation
-      run: npm run build
-    - name: Upload artifact
+
+    - name: Build Gatsby
+      run: npm run build-ci
+      env:
+        PATH_PREFIX: nodejs.dev/
+
+    - name: Upload Website to Pages
       uses: actions/upload-pages-artifact@v1
       with:
         path: './public'
