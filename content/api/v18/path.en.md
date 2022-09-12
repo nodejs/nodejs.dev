@@ -2,7 +2,6 @@
 title: 'path'
 displayTitle: 'Path'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/path.md'
 version: 'v18'
 ---
 

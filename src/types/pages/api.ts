@@ -11,7 +11,6 @@ export interface ApiTemplateData {
       title: string;
       version: string;
       displayTitle: string;
-      editPage: string;
     };
   };
 }

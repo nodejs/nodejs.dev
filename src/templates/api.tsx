@@ -26,7 +26,7 @@ const components = {
 const Api = ({
   data: {
     mdx: {
-      frontmatter: { title, displayTitle, editPage, version },
+      frontmatter: { title, displayTitle, version },
       body,
       tableOfContents,
     },
@@ -61,7 +61,7 @@ const Api = ({
         body={body}
         next={next}
         previous={previous}
-        absolutePath={editPage}
+        absolutePath={`https://github.com/nodejs/node/edit/main/doc/api/${title}.md`}
         authors={[]}
         extraComponents={components}
         childrenPosition="before"
@@ -82,7 +82,6 @@ export const query = graphql`
       frontmatter {
         title
         displayTitle
-        editPage
         version
       }
       fields {

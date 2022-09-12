@@ -2,7 +2,6 @@
 title: 'synopsis'
 displayTitle: 'Usage and example'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/synopsis.md'
 version: 'v18'
 ---
 

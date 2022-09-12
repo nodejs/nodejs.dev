@@ -2,7 +2,6 @@
 title: 'cli'
 displayTitle: 'Command-line API'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/cli.md'
 version: 'v18'
 ---
 

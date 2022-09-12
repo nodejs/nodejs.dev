@@ -2,7 +2,6 @@
 title: 'tty'
 displayTitle: 'TTY'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/tty.md'
 version: 'v18'
 ---
 

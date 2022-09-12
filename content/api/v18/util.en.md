@@ -2,7 +2,6 @@
 title: 'util'
 displayTitle: 'Util'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/util.md'
 version: 'v18'
 ---
 

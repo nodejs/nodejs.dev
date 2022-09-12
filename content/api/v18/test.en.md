@@ -2,7 +2,6 @@
 title: 'test'
 displayTitle: 'Test runner'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/test.md'
 version: 'v18'
 ---
 

@@ -2,7 +2,6 @@
 title: 'webstreams'
 displayTitle: 'Web Streams API'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/webstreams.md'
 version: 'v18'
 ---
 

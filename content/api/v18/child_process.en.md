@@ -2,7 +2,6 @@
 title: 'child_process'
 displayTitle: 'Child process'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/child_process.md'
 version: 'v18'
 ---
 

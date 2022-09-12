@@ -2,7 +2,6 @@
 title: 'async_context'
 displayTitle: 'Asynchronous context tracking'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/async_context.md'
 version: 'v18'
 ---
 

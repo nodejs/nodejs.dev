@@ -2,7 +2,6 @@
 title: 'stream'
 displayTitle: 'Stream'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/stream.md'
 version: 'v18'
 ---
 

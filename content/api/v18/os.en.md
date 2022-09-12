@@ -2,7 +2,6 @@
 title: 'os'
 displayTitle: 'OS'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/os.md'
 version: 'v18'
 ---
 

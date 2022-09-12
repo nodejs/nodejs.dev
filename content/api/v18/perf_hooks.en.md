@@ -2,7 +2,6 @@
 title: 'perf_hooks'
 displayTitle: 'Performance measurement APIs'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/perf_hooks.md'
 version: 'v18'
 ---
 
