@@ -1,23 +1,38 @@
 const fs = require('fs');
+const yaml = require('yaml');
 const fsPromises = require('fs/promises');
 const path = require('path');
+const dedent = require('dedent');
+
+const blogAuthorsFile = fs.readFileSync(
+  path.join(__dirname, '../src/data/blog/authors.yaml')
+);
+
+const blogAuthors = yaml.parse(blogAuthorsFile);
+
+const applyBlogAuthors = metadataAuthors =>
+  metadataAuthors.split(' and ').map(authorName => {
+    const foundAuthor = blogAuthors.find(author => author.name === authorName);
+
+    return foundAuthor ? foundAuthor.id : authorName;
+  });
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 const metadataParser = require('markdown-yaml-metadata-parser');
 
 const commandLineArgs = process.argv.slice(2);
 
-const getMarkdownFilesPath = args => {
-  return args.length ? args[0] : '.';
-};
+const getMarkdownFilesPath = args => (args.length ? args[0] : '.');
 
-const markdownPath = getMarkdownFilesPath(commandLineArgs);
+const markdownPath = path.join(
+  __dirname,
+  getMarkdownFilesPath(commandLineArgs)
+);
 
-const openMarkdownFile = async filename => {
-  return fsPromises.readFile(path.join(__dirname, markdownPath, filename), {
+const openMarkdownFile = async filename =>
+  fsPromises.readFile(path.join(markdownPath, filename), {
     encoding: 'utf-8',
   });
-};
 
 const processMarkdownFile = (originalSlug, source) => {
   const { content, metadata } = metadataParser(source);
@@ -29,21 +44,22 @@ const processMarkdownFile = (originalSlug, source) => {
   const newFileName = `${dateString}-${originalSlug}.md`;
 
   const blogAuthors = metadata.author
-    ? `['${metadata.author}']`
+    ? `['${applyBlogAuthors(metadata.author)}']`
     : `['node-js-website']`;
 
-  const newContent = `---
-title: ${metadata.title}
-blogAuthors: ${blogAuthors}
-category: '${metadata.category.toLowerCase()}'
----
-${content}`;
+  const newContent = dedent`
+    ---
+    title: ${metadata.title}
+    blogAuthors: ${blogAuthors}
+    category: '${metadata.category.toLowerCase()}'
+    ---
+  `;
 
-  return { content: newContent, filename: newFileName };
+  return { content: `${newContent}\n${content}`, filename: newFileName };
 };
 
 if (fs.existsSync(markdownPath)) {
-  const filenames = fs.readdirSync(path.join(__dirname, markdownPath));
+  const filenames = fs.readdirSync(path.join(markdownPath));
 
   const markdownFilesFromDirectory = filenames.filter(
     filename =>
@@ -51,7 +67,7 @@ if (fs.existsSync(markdownPath)) {
       !filename.toLowerCase().includes('index.md')
   );
 
-  const outDir = path.join(__dirname, markdownPath, 'out');
+  const outDir = path.join(markdownPath, 'out');
 
   fs.mkdirSync(outDir);
 
