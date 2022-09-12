@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version-file: '.nvmrc'
           cache: npm
 
       - name: Install NPM packages
@@ -41,7 +41,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version-file: '.nvmrc'
           cache: npm
 
       - name: Install NPM packages
