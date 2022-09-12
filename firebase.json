@@ -57,11 +57,6 @@
   },
   "redirects": [
     {
-      "source": "/get-involved/",
-      "destination": "/community/",
-      "type": "301"
-    },
-    {
       "source": "/governance/",
       "destination": "/about/governance/",
       "type": "301"
