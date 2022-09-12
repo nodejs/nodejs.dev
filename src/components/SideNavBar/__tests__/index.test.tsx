@@ -11,7 +11,7 @@ describe('SideNavBar', () => {
 
   it('should contain a href to `~/about`', () => {
     render(<SideNavBar pageKey={SideNavBarKeys.about} />);
-    const aboutNavBarElement = screen.getByText('About');
+    const aboutNavBarElement = screen.getByText('About Node.js');
     expect(aboutNavBarElement.getAttribute('href')).toBe('/about/');
   });
 
@@ -20,20 +20,6 @@ describe('SideNavBar', () => {
     const governanceNavBarElement = screen.getByText('Project Governance');
     expect(governanceNavBarElement.getAttribute('href')).toBe(
       '/about/governance/'
-    );
-  });
-
-  it('should contain a href to `~/community`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.community} />);
-    const communityNavBarElement = screen.getByText('Community');
-    expect(communityNavBarElement.getAttribute('href')).toBe('/community/');
-  });
-
-  it('should contain a href to `~/about/working-groups`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.workingGroups} />);
-    const workingGroupsNavBarElement = screen.getByText('Working Groups');
-    expect(workingGroupsNavBarElement.getAttribute('href')).toBe(
-      '/about/working-groups/'
     );
   });
 

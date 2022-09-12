@@ -2,7 +2,6 @@
 title: Semantic Versioning using npm
 description: 'Semantic Versioning is a convention used to provide a meaning to versions'
 authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais
-section: Getting Started
 category: learn
 ---
 

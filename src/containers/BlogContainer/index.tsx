@@ -1,8 +1,16 @@
 import React from 'react';
+import FeedIcon from '@mui/icons-material/Feed';
 import BlogCard from '../../components/BlogCard';
 import SideNavBar from '../../components/SideNavBar';
 import { BlogPost, BlogCategory } from '../../types';
 import styles from './index.module.scss';
+
+const blogSectionTitle = {
+  title: 'components.sideBar.section.blog',
+  slug: '/blog/',
+  icon: FeedIcon,
+  isTitle: true,
+};
 
 const parseNavigationData = (categories: BlogCategory[]) => {
   return categories.map(({ node }) => ({
@@ -20,9 +28,8 @@ type Props = {
 const BlogContainer = ({ categories, posts, currentCategory }: Props) => (
   <>
     <SideNavBar
-      items={parseNavigationData(categories)}
+      items={[blogSectionTitle, ...parseNavigationData(categories)]}
       pageKey={`/blog/${currentCategory.name}/`}
-      title="Blog Categories"
     />
     <div className={styles.blogGridContainer}>
       <div className={styles.blogCategoryHeader}>

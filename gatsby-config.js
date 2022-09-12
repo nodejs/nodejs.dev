@@ -8,7 +8,7 @@ const { localesAsString, defaultLanguage } = require('./locales');
 const markdownSources = [
   'about',
   'api',
-  'community',
+  'get-involved',
   'download',
   'homepage',
   'learn',

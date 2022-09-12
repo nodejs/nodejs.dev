@@ -16,3 +16,6 @@ coverage
 .history
 yarn.lock
 .idea/
+
+# Firebase
+firebase-debug.log

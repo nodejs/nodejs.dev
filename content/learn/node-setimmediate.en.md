@@ -2,7 +2,6 @@
 title: 'Understanding setImmediate()'
 description: 'The Node.js setImmediate function interacts with the event loop in a special way'
 authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais, clean99
-section: Getting Started
 category: learn
 ---
 

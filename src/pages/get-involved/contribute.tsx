@@ -4,14 +4,14 @@ import { SideNavBarKeys } from '../../components/SideNavBar';
 import connectGraphQlArticle from '../../components/connectGraphQlArticle';
 
 export default connectGraphQlArticle(ArticleLayout, {
-  editPath: 'content/about/working-groups.md',
-  sidenavKey: SideNavBarKeys.workingGroups,
+  editPath: 'content/get-involved/contribute.md',
+  sidenavKey: SideNavBarKeys.contribute,
 });
 
 export const query = graphql`
   query ($locale: String!, $defaultLocale: String!) {
     articleCurrentLanguage: mdx(
-      fields: { slug: { eq: "working-groups" }, locale: { eq: $locale } }
+      fields: { slug: { eq: "contributing" }, locale: { eq: $locale } }
     ) {
       body
       tableOfContents
@@ -25,7 +25,7 @@ export const query = graphql`
       }
     }
     articleDefaultLanguage: mdx(
-      fields: { slug: { eq: "working-groups" }, locale: { eq: $defaultLocale } }
+      fields: { slug: { eq: "contributing" }, locale: { eq: $defaultLocale } }
     ) {
       body
       tableOfContents

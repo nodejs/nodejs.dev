@@ -4,7 +4,7 @@
   display: flex;
   margin-left: var(--space-16);
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     display: flex;
     height: 42px;
     margin-left: 0;
@@ -38,7 +38,7 @@
     justify-content: space-between;
     padding: 0 var(--space-08) 0 var(--space-24);
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       align-items: start;
       flex-flow: wrap;
       min-height: calc(1 * var(--nav-height));
@@ -59,7 +59,7 @@
   }
 
   .logo {
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       align-items: center;
       display: flex;
       height: var(--nav-height);
@@ -68,7 +68,7 @@
     svg {
       height: var(--space-32);
 
-      @media (max-width: 800px) {
+      @media (max-width: 900px) {
         height: 2.4rem;
       }
     }
@@ -86,7 +86,7 @@
       margin: 0;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       background: var(--color-fill-app);
       height: var(--nav-height);
       justify-content: center;
@@ -103,7 +103,7 @@
         padding: calc(var(--space-32) + var(--space-04)) var(--space-16);
         text-decoration: none;
 
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
           padding: var(--space-08);
         }
 
@@ -131,7 +131,7 @@
     margin: 0;
     padding-left: 0;
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       padding: 0;
       width: 100%;
     }
