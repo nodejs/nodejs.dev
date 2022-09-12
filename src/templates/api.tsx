@@ -5,14 +5,13 @@ import Layout from '../components/Layout';
 import { Metadata, Components } from '../components/ApiComponents';
 import DataTag from '../components/DataTag';
 import Navigation from '../containers/Navigation';
-import { ApiPageData, ApiPageContext } from '../types';
+import { ApiTemplateData, ApiTemplateContext } from '../types';
 import SectionTitle from '../components/SectionTitle';
-import styles from './api.module.scss';
-import VersionSelector from '../components/ApiComponents/Components/VersionSelector';
+import styles from '../styles/templates/api.module.scss';
 
 interface Props {
-  data: ApiPageData;
-  pageContext: ApiPageContext;
+  data: ApiTemplateData;
+  pageContext: ApiTemplateContext;
 }
 
 const components = {
@@ -26,14 +25,19 @@ const components = {
 
 const Api = ({
   data: {
-    api: {
+    mdx: {
       frontmatter: { title, displayTitle, editPage, version },
       body,
       tableOfContents,
     },
+  },
+  pageContext: {
+    slug,
+    next,
+    previous,
+    navigationData,
     nodeReleases: { nodeReleasesData, apiAvailableVersions },
   },
-  pageContext: { slug, next, previous, navigationData },
 }: Props): JSX.Element => (
   <Layout title={`${displayTitle} | Node.js ${version} API`}>
     <main className={styles.apiContainer}>
@@ -44,7 +48,7 @@ const Api = ({
         category="api"
         isApiDocs
       >
-        <VersionSelector
+        <Components.VersionSelector
           releases={nodeReleasesData}
           selectedRelease={version}
           apiAvailableVersions={apiAvailableVersions}
@@ -72,7 +76,7 @@ export default Api;
 
 export const query = graphql`
   query ($slug: String!) {
-    api: mdx(fields: { slug: { eq: $slug }, categoryName: { eq: "api" } }) {
+    mdx(fields: { slug: { eq: $slug }, categoryName: { eq: "api" } }) {
       body
       tableOfContents
       frontmatter {
@@ -84,20 +88,6 @@ export const query = graphql`
       fields {
         slug
       }
-    }
-    nodeReleases {
-      nodeReleasesData {
-        fullVersion
-        version
-        codename
-        isLts
-        status
-        initialRelease
-        ltsStart
-        maintenanceStart
-        endOfLife
-      }
-      apiAvailableVersions
     }
   }
 `;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import ResourcesPage from '../../about';
+import ResourcesPage from '..';
 import { createResourcesData } from '../../../__fixtures__/page';
 
 const mockData = createResourcesData();

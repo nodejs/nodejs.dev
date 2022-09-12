@@ -8,12 +8,9 @@ function getYamlPageIdentifier(relativePath) {
     : relativePath.replace(/(\.[a-z]+)?\.(mdx|md)/, '');
 }
 
-function createMarkdownPages(pagesEdges, learnEdges, yamlNavigationData) {
+function createLearnPages(learnEdges, yamlNavigationData) {
   const learnPages = [];
   const navigationData = {};
-
-  // Iterates the non-Learn edges and transforms them in Pages
-  const markdownPages = iterateEdges(pagesEdges);
 
   const getLearnEdgeByPageId = pageId => edge =>
     getYamlPageIdentifier(edge.node.parent.relativePath) === pageId;
@@ -41,12 +38,7 @@ function createMarkdownPages(pagesEdges, learnEdges, yamlNavigationData) {
     learnPages.push(...iteratedPages);
   });
 
-  return {
-    markdownPages,
-    learnPages,
-    navigationData,
-    firstLearnPage: learnPages[0],
-  };
+  return { learnPages, navigationData };
 }
 
-module.exports = createMarkdownPages;
+module.exports = createLearnPages;

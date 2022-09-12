@@ -1,80 +1,34 @@
-import { graphql } from 'gatsby';
 import React from 'react';
-import Article from '../components/Article';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import Layout from '../components/Layout';
-import RecentPosts from '../components/RecentPosts';
-import { BlogPageData, BlogPageContext } from '../types';
-import styles from './blog.module.scss';
+import { BlogTemplateContext } from '../types';
+import BlogContainer from '../containers/BlogContainer';
 
 interface Props {
-  data: BlogPageData;
-  pageContext: BlogPageContext;
+  pageContext: BlogTemplateContext;
 }
 
-const BlogLayout = ({
-  data: {
-    blog: {
-      frontmatter: { title, blogAuthors },
-      body,
-      excerpt,
-      fields: { date },
-    },
-    recent: { edges: recentPosts },
-  },
-  pageContext: { next, previous, relativePath },
-}: Props): JSX.Element => (
-  <Layout title={title} description={excerpt}>
-    <main className={`grid-container ${styles.blogContainer}`}>
-      <RecentPosts posts={recentPosts} />
-      <Article
-        title={title}
-        body={body}
-        next={next}
-        authors={blogAuthors}
-        previous={previous}
-        relativePath={relativePath}
-        blog
-        date={date}
-      />
-    </main>
-  </Layout>
-);
+const BlogTemplate = ({
+  pageContext: { posts, category, categories },
+  intl,
+}: Props & WrappedComponentProps): JSX.Element => {
+  const currentCategory = category || {
+    name: intl.formatMessage({ id: 'blog.title' }),
+    slug: intl.formatMessage({ id: 'blog.title' }),
+    description: intl.formatMessage({ id: 'blog.description' }),
+  };
 
-export default BlogLayout;
+  return (
+    <Layout title="Blogs at Nodejs">
+      <main className="grid-container">
+        <BlogContainer
+          posts={posts}
+          categories={categories}
+          currentCategory={currentCategory}
+        />
+      </main>
+    </Layout>
+  );
+};
 
-export const query = graphql`
-  query ($slug: String!) {
-    blog: mdx(fields: { slug: { eq: $slug } }) {
-      body
-      excerpt(pruneLength: 500)
-      frontmatter {
-        title
-        blogAuthors {
-          id
-          name
-          website
-        }
-      }
-      fields {
-        slug
-        date(formatString: "MMMM DD, YYYY")
-      }
-    }
-    recent: allMdx(
-      limit: 10
-      filter: { fileAbsolutePath: { regex: "/blog/" } }
-      sort: { fields: fields___date, order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  }
-`;
+export default injectIntl(BlogTemplate);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import LearnLayout from '../blog';
+import LearnLayout from '../post';
 import {
   createBlogPageContext,
   createBlogPageData,

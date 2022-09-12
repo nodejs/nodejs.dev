@@ -7,7 +7,7 @@ import styles from './index.module.scss';
 const parseNavigationData = (categories: BlogCategory[]) => {
   return categories.map(({ node }) => ({
     title: node.slug,
-    slug: `blog/${node.name}/`,
+    slug: `/blog/${node.name}/`,
   }));
 };
 
@@ -21,7 +21,7 @@ const BlogContainer = ({ categories, posts, currentCategory }: Props) => (
   <>
     <SideNavBar
       items={parseNavigationData(categories)}
-      pageKey={`blog/${currentCategory.name}/`}
+      pageKey={`/blog/${currentCategory.name}/`}
       title="Blog Categories"
     />
     <div className={styles.blogGridContainer}>

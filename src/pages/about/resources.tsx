@@ -4,7 +4,7 @@ import { SideNavBarKeys } from '../../components/SideNavBar';
 import connectGraphQlArticle from '../../components/connectGraphQlArticle';
 
 export default connectGraphQlArticle(ArticleLayout, {
-  editPath: 'content/resources/resources.md',
+  editPath: 'content/about/resources.md',
   sidenavKey: SideNavBarKeys.resources,
 });
 

@@ -1,13 +1,6 @@
 module.exports = `
 {
-  allMdx(
-    filter: {
-      fields: {
-        categoryName: { eq: "learn" }
-      }
-    }
-    sort: { fields: [fileAbsolutePath], order: ASC }
-  ) {
+  allMdx(filter: { fields: { categoryName: { eq: "learn" } } }) {
     edges {
       node {
         id
