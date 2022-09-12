@@ -79,7 +79,7 @@ const Article = ({
       </MDXProvider>
     </div>
     {childrenPosition === 'after' && children && <div>{children}</div>}
-    {!blog && authors.length > 0 && (
+    {!blog && authors && authors.length > 0 && (
       <AuthorList authors={authors as string[]} />
     )}
     {!blog && (
@@ -87,6 +87,7 @@ const Article = ({
         absolutePath={absolutePath}
         relativePath={relativePath}
         editPath={editPath}
+        hasNoAuthors={!authors || !authors.length}
       />
     )}
     {!blog && <Pagination previous={previous} next={next} />}

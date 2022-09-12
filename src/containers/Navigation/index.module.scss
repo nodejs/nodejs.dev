@@ -13,7 +13,7 @@
   width: 100%;
   z-index: 998;
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     height: auto;
     left: 0;
     max-height: 42px;
@@ -61,7 +61,7 @@
     width: 20px;
     z-index: 9999;
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       display: unset;
     }
 
@@ -92,7 +92,7 @@
 
   &--fixed,
   &%--fixed {
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       height: auto;
       max-height: calc(100% - var(--nav-height));
       overflow: visible;

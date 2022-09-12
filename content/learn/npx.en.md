@@ -2,7 +2,6 @@
 title: The npx Node.js Package Runner
 description: 'npx is a very cool way to run Node.js code, and provides many useful features'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, jgb-solutions, ahmadawais
-section: Getting Started
 category: learn
 ---
 

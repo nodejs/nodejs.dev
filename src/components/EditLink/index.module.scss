@@ -2,6 +2,10 @@
   display: flex;
   flex-wrap: wrap;
 
+  &--no-authors {
+    margin-top: var(--space-24);
+  }
+
   a {
     color: var(--color-text-secondary);
     font-family: var(--sans-serif);

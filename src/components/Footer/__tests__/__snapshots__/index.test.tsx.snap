@@ -40,7 +40,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
           class="link"
           href="/about/security"
         >
-          Security Reporting
+          Security
         </a>
       </li>
       <li>
