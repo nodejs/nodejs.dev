@@ -1,6 +1,5 @@
 .cache
 public
-content/blog
-content/api
 docs/
 meetings/
+content/api
