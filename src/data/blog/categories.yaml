@@ -1,6 +1,6 @@
 - name: announcements
   slug: Announcements
   description: 'Blog category for Node.js announcements'
-- name: vulnerabilities
-  slug: Vulnerabilities
-  description: 'Blog category regarding Security Vulnerabilities'
+- name: releases
+  slug: Node.js Releases
+  description: 'Blog category for Node.js Release announcements'
