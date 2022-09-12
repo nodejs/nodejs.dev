@@ -16,56 +16,26 @@ exports[`Releases page renders correctly 1`] = `
     <div
       class="sideNavSection"
     >
-      <div
+      <a
         class="sideNavSectionTitle"
+        href="/about/"
       >
-        <b>
-          Community Pages
-        </b>
+        About Node.js
         <svg
           aria-hidden="true"
           class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8rv7ug-MuiSvgIcon-root"
-          data-testid="ArrowDropDownIcon"
+          data-testid="InfoIcon"
           focusable="false"
           viewBox="0 0 24 24"
         >
           <path
-            d="m7 10 5 5 5-5z"
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
           />
         </svg>
-      </div>
-      <a
-        class="t-body2 navigationItem"
-        href="/about/"
-        id="link-/about/"
-      >
-        About
-      </a>
-      <a
-        class="t-body2 navigationItem"
-        href="/community/"
-        id="link-/community/"
-      >
-        Community
-      </a>
-      <a
-        class="t-body2 navigationItem"
-        href="/download/package-manager/"
-        id="link-/download/package-manager/"
-      >
-        Package Manager
-      </a>
-      <a
-        class="t-body2 navigationItem"
-        href="/about/privacy/"
-        id="link-/about/privacy/"
-      >
-        Privacy Policy
       </a>
       <a
         class="t-body2 navigationItem"
         href="/about/governance/"
-        id="link-/about/governance/"
       >
         Project Governance
       </a>
@@ -73,30 +43,96 @@ exports[`Releases page renders correctly 1`] = `
         aria-current="page"
         class="t-body2 navigationItem navigationItemActive"
         href="/about/releases/"
-        id="link-/about/releases/"
       >
         Releases
       </a>
       <a
         class="t-body2 navigationItem"
-        href="/resources/"
-        id="link-/resources/"
+        href="/about/resources/"
       >
         Resources
       </a>
       <a
         class="t-body2 navigationItem"
+        href="/about/privacy/"
+      >
+        Privacy Policy
+      </a>
+      <a
+        class="t-body2 navigationItem"
         href="/about/security/"
-        id="link-/about/security/"
       >
         Security Reporting
       </a>
       <a
-        class="t-body2 navigationItem"
-        href="/about/working-groups/"
-        id="link-/about/working-groups/"
+        class="sideNavSectionTitle"
+        href="/get-involved/"
       >
-        Working Groups
+        Get Involved
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8rv7ug-MuiSvgIcon-root"
+          data-testid="GroupsIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 12.75c1.63 0 3.07.39 4.24.9 1.08.48 1.76 1.56 1.76 2.73V18H6v-1.61c0-1.18.68-2.26 1.76-2.73 1.17-.52 2.61-.91 4.24-.91zM4 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm1.13 1.1c-.37-.06-.74-.1-1.13-.1-.99 0-1.93.21-2.78.58C.48 14.9 0 15.62 0 16.43V18h4.5v-1.61c0-.83.23-1.61.63-2.29zM20 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm4 3.43c0-.81-.48-1.53-1.22-1.85-.85-.37-1.79-.58-2.78-.58-.39 0-.76.04-1.13.1.4.68.63 1.46.63 2.29V18H24v-1.57zM12 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"
+          />
+        </svg>
+      </a>
+      <a
+        class="t-body2 navigationItem"
+        href="/get-involved/code-learn"
+      >
+        Code + Learn
+      </a>
+      <a
+        class="t-body2 navigationItem"
+        href="/get-involved/collab-summit"
+      >
+        Collab Summit
+      </a>
+      <a
+        class="t-body2 navigationItem"
+        href="/get-involved/contribute"
+      >
+        Contribute
+      </a>
+      <a
+        class="t-body2 navigationItem"
+        href="https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md"
+      >
+        Code of Conduct
+      </a>
+      <a
+        class="sideNavSectionTitle"
+        href="/download/"
+      >
+        Download
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8rv7ug-MuiSvgIcon-root"
+          data-testid="CloudDownloadIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"
+          />
+        </svg>
+      </a>
+      <a
+        class="t-body2 navigationItem"
+        href="/download/package-manager/"
+      >
+        Package Manager
+      </a>
+      <a
+        class="t-body2 navigationItem"
+        href="/download/releases/"
+      >
+        Previous Releases
       </a>
     </div>
   </nav>

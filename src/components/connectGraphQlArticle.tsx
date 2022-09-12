@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocalization } from 'gatsby-theme-i18n';
-import { ArticleProps, ArticleData } from '../types';
+import { ArticleData } from '../types';
 import { ArticleLayoutProps } from './Layout/article';
 import { SideNavBarKeys } from './SideNavBar';
 
@@ -65,6 +65,15 @@ export const connectGraphQlCustom = <T extends object>(Comp: React.FC<T>) => {
 
   return ConnectCustomComponent;
 };
+
+interface ArticleProps {
+  editPath?: string;
+  data: {
+    articleCurrentLanguage?: ArticleData;
+    articleDefaultLanguage?: ArticleData;
+  };
+  location?: Location;
+}
 
 const connectGraphQlArticle = (
   Component: React.FC<ArticleLayoutProps>,

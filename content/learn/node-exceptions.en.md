@@ -2,7 +2,6 @@
 title: Error handling in Node.js
 description: 'How to handle errors during the execution of a Node.js application'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
-section: Getting Started
 category: learn
 ---
 

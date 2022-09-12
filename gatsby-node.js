@@ -8,11 +8,13 @@ const createSlug = require('./util-node/createSlug');
 const getNodeReleasesData = require('./util-node/getNodeReleasesData');
 const getBannersData = require('./util-node/getBannersData');
 const getNvmData = require('./util-node/getNvmData');
-const createPagesQuery = require('./util-node/createPagesQuery');
+const createBlogQuery = require('./util-node/createBlogQuery');
 const createLearnQuery = require('./util-node/createLearnQuery');
 const createApiQuery = require('./util-node/createApiQuery');
-const createMarkdownPages = require('./util-node/createMarkdownPages');
+const createBlogPages = require('./util-node/createBlogPages');
+const createLearnPages = require('./util-node/createLearnPages');
 const createApiPages = require('./util-node/createApiPages');
+const generateRedirects = require('./util-node/generateRedirects');
 const redirects = require('./redirects');
 const nodeLocales = require('./locales');
 const { learnPath, apiPath, blogPath } = require('./pathPrefixes');
@@ -69,34 +71,28 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(typeDefs);
 };
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
 
   const pageRedirects = { ...redirects };
 
-  const apiTemplate = path.resolve(__dirname, './src/templates/api.tsx');
-  const learnTemplate = path.resolve(__dirname, './src/templates/learn.tsx');
-  const blogTemplate = path.resolve(__dirname, './src/templates/blog.tsx');
-  const blogCategoryTemplate = path.resolve(
-    __dirname,
-    './src/templates/blog-category.tsx'
-  );
+  const templates = path.resolve(__dirname, './src/templates/');
 
-  const [learnResult, pagesResult, apiResult] = await Promise.all([
+  const apiTemplate = `${templates}/api.tsx`;
+  const learnTemplate = `${templates}/learn.tsx`;
+  const postTemplate = `${templates}/post.tsx`;
+  const blogTemplate = `${templates}/blog.tsx`;
+
+  const [learnResult, blogResult, apiResult] = await Promise.all([
     graphql(createLearnQuery),
-    graphql(createPagesQuery),
+    graphql(createBlogQuery),
     graphql(createApiQuery),
   ]);
 
-  if (pagesResult.errors || learnResult.errors || apiResult.errors) {
-    reporter.panicOnBuild('Error while running GraphQL queries.');
-    return;
-  }
-
   const {
-    pages: { edges: pageEdges },
+    pages: { edges: blogEdges },
     categories: { edges: categoryEdges },
-  } = pagesResult.data;
+  } = blogResult.data;
 
   const {
     allMdx: { edges: learnEdges },
@@ -104,44 +100,72 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const {
     pages: { edges: apiEdges },
-    nodeReleases: { nodeReleasesVersion },
+    nodeReleases: { nodeReleasesData, apiAvailableVersions },
   } = apiResult.data;
 
-  const {
-    markdownPages,
-    learnPages,
-    firstLearnPage,
-    navigationData: learNavigationData,
-  } = createMarkdownPages(pageEdges, learnEdges, learnYamlNavigationData);
+  const { blogPages } = createBlogPages(blogEdges);
+
+  const { learnPages, navigationData: learnNavigationData } = createLearnPages(
+    learnEdges,
+    learnYamlNavigationData
+  );
 
   const {
     apiPages,
     latestVersion,
     navigationData: apiNavigationData,
     defaultNavigationRedirects: apiRedirects,
-  } = createApiPages(apiEdges, apiTypesNavigationData, nodeReleasesVersion);
+  } = createApiPages(apiEdges, apiTypesNavigationData, nodeReleasesData);
 
-  if (firstLearnPage) {
-    createPage({
-      path: learnPath,
-      component: learnTemplate,
-      context: { ...firstLearnPage, navigationData: learNavigationData },
-    });
-  }
+  createPage({
+    path: learnPath,
+    component: learnTemplate,
+    context: { ...learnPages[0], navigationData: learnNavigationData },
+  });
+
+  createPage({
+    path: blogPath,
+    component: blogTemplate,
+    context: { categories: categoryEdges, posts: blogEdges },
+  });
 
   learnPages.forEach(page => {
     createPage({
       path: page.slug,
       component: learnTemplate,
-      context: { ...page, navigationData: learNavigationData },
+      context: { ...page, navigationData: learnNavigationData },
+    });
+  });
+
+  blogPages.forEach(page => {
+    createPage({
+      path: page.slug,
+      component: postTemplate,
+      context: { ...page, recent: blogEdges.slice(0, 9) },
     });
   });
 
   categoryEdges.forEach(({ node }) => {
+    const posts = blogEdges.filter(
+      ({ node: item }) => item.fields.categoryName === node.name
+    );
+
     createPage({
       path: `${blogPath}${node.name}/`,
-      component: blogCategoryTemplate,
-      context: { categoryName: node.name },
+      component: blogTemplate,
+      context: { categories: categoryEdges, category: node, posts },
+    });
+  });
+
+  apiPages.forEach(page => {
+    createPage({
+      path: page.slug,
+      component: apiTemplate,
+      context: {
+        ...page,
+        navigationData: apiNavigationData[page.version],
+        nodeReleases: { nodeReleasesData, apiAvailableVersions },
+      },
     });
   });
 
@@ -149,6 +173,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   pageRedirects[apiPath] = `${latestApiPath}documentation/`;
   pageRedirects[latestApiPath] = `${latestApiPath}documentation/`;
+
+  // Updates `firebase.json` with new redirects
+  // This is used for our static hosting redirects (npm run build)
+  // When using `npm run serve` or `npm run start` this will not be needed
+  generateRedirects(pageRedirects);
 
   apiRedirects.forEach(({ from, to }) => {
     pageRedirects[`${apiPath}${from}`] = `${apiPath}${to}`;
@@ -158,33 +187,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     pageRedirects[`${apiPath}${from.slice(0, -1)}.html`] = `${apiPath}${to}`;
   });
 
-  apiPages.forEach(page => {
-    createPage({
-      path: page.slug,
-      component: apiTemplate,
-      context: { ...page, navigationData: apiNavigationData[page.version] },
-    });
-  });
-
-  markdownPages
-    .filter(page => page.realPath.match(blogPath))
-    .forEach(page => {
-      // Blog Pages don't necessary need to be within the `blog` category
-      // But actually inside /content/blog/ section of the repository
-      createPage({
-        path: page.slug,
-        component: blogTemplate,
-        context: page,
-      });
-    });
-
   // Create Redirects for Pages
   Object.keys(pageRedirects).forEach(from => {
     const metadata = {
       fromPath: from,
       toPath: pageRedirects[from],
       isPermanent: true,
-      redirectInBrowser: true,
+      redirectInBrowser: process.env.NODE_ENV === 'development',
       statusCode: 200,
     };
 

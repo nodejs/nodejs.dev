@@ -34,18 +34,29 @@ const removeApiSpanTagFromItem = (item: TableOfContentsItem) => ({
 const traverseTableOfContents = (
   items: TableOfContentsItem[],
   depth: number
-) => (
-  <ul>
-    {items.map(removeApiSpanTagFromItem).map(item => (
-      <li key={item.url}>
-        {item.url && item.title && <Link to={item.url}>{item.title}</Link>}
-        {item.items && depth < 2
-          ? traverseTableOfContents(item.items, depth + 1)
-          : null}
-      </li>
-    ))}
-  </ul>
-);
+) => {
+  const filterItems = (subItems: TableOfContentsItem[]) =>
+    subItems.filter(item => item && item.title && item.url);
+
+  const currentItems = filterItems(items);
+
+  if (currentItems) {
+    return (
+      <ul>
+        {currentItems.map(removeApiSpanTagFromItem).map(item => (
+          <li key={item.url}>
+            {item.url && item.title && <Link to={item.url}>{item.title}</Link>}
+            {item.items && depth < 2 && filterItems(item.items).length > 0
+              ? traverseTableOfContents(item.items, depth + 1)
+              : null}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  return null;
+};
 
 const TableOfContents = ({ tableOfContents }: Props): null | JSX.Element => {
   if (tableOfContents?.items) {

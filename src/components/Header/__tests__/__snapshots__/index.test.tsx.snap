@@ -40,6 +40,13 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
         </li>
         <li>
           <a
+            href="/about/"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
             href="/api/"
           >
             API Docs
@@ -54,9 +61,9 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
         </li>
         <li>
           <a
-            href="/community/"
+            href="https://openjsf.org/certification/"
           >
-            Community
+            Certification
           </a>
         </li>
       </ul>
@@ -222,6 +229,13 @@ exports[`Tests for Header component renders correctly 1`] = `
         </li>
         <li>
           <a
+            href="/about/"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
             href="/api/"
           >
             API Docs
@@ -236,9 +250,9 @@ exports[`Tests for Header component renders correctly 1`] = `
         </li>
         <li>
           <a
-            href="/community/"
+            href="https://openjsf.org/certification/"
           >
-            Community
+            Certification
           </a>
         </li>
       </ul>
@@ -404,6 +418,13 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
         </li>
         <li>
           <a
+            href="/about/"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
             href="/api/"
           >
             API Docs
@@ -418,9 +439,9 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
         </li>
         <li>
           <a
-            href="/community/"
+            href="https://openjsf.org/certification/"
           >
-            Community
+            Certification
           </a>
         </li>
       </ul>

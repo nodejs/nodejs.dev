@@ -11,11 +11,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Git Checkout
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
 
-      - name: Setup GCloud
+      - name: Setup G Cloud
         uses: google-github-actions/setup-gcloud@v0
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
@@ -23,5 +24,5 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
-      - name: Remove folder from GCS
+      - name: Remove from G Cloud Storage
         run: gsutil -m rm -f gs://staging.nodejs.dev/${{ github.event.pull_request.number }}/** || true
