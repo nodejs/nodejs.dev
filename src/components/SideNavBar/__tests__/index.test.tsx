@@ -46,7 +46,9 @@ describe('SideNavBar', () => {
   it('should contain a href to `~/about/resources`', () => {
     render(<SideNavBar pageKey={SideNavBarKeys.resources} />);
     const resourcesNavBarElement = screen.getByText('Resources');
-    expect(resourcesNavBarElement.getAttribute('href')).toBe('/resources/');
+    expect(resourcesNavBarElement.getAttribute('href')).toBe(
+      '/about/resources/'
+    );
   });
 
   it('should contain a href to `~/about/privacy`', () => {

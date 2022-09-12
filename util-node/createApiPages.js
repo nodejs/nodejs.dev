@@ -4,9 +4,12 @@ const path = require('path');
 const { iterateEdges, mapToNavigationData } = require('./createPageUtils');
 const { apiPath } = require('../pathPrefixes');
 
-function createApiPages(pagesEdges, apiTypes, nodeReleases) {
-  const apiPages = iterateEdges(pagesEdges);
+function createApiPages(apiEdges, apiTypes, nodeReleases) {
   const navigationData = {};
+
+  const apiPages = iterateEdges(apiEdges, node => ({
+    version: node.frontmatter.version,
+  }));
 
   const apiDocsPath = path.resolve(__dirname, `../content${apiPath}`);
 

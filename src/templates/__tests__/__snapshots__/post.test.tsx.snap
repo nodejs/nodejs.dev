@@ -183,7 +183,7 @@ exports[`LearnLayout Template renders correctly 1`] = `
       </div>
     </nav>
     <main
-      class="grid-container blogContainer"
+      class="grid-container postContainer"
     >
       <div
         class="recentPosts"
