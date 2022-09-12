@@ -2,13 +2,13 @@
 title: 'intl'
 displayTitle: 'Internationalization support'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.8.0/doc/api/intl.md'
+editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/intl.md'
 version: 'v18'
 ---
 
-<Metadata version="v18.8.0" data={{"update":{"type":"introduced_in","version":["v8.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v8.2.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 Node.js has many features that make it easier to write internationalized
 programs. Some of them are:
