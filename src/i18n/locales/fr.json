@@ -34,7 +34,7 @@
   "components.header.links.download": "Télécharger",
   "components.header.links.community": "Communauté",
   "components.hero.downloadLts": "Télécharger Node(LTS)",
-  "components.hero.currentVersion": "{isLts, select, true {Version {currentVersion} - }other {}}",
+  "components.hero.currentVersion": "Version {version}",
   "components.hero.getCurrent": "Obtenir la version courante",
   "components.hero.learn": "Apprendre Node",
   "components.installTabs.readDocs": "Lire la documentation",
