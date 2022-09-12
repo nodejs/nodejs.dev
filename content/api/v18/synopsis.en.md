@@ -7,9 +7,9 @@ version: 'v18'
 
 ### Usage
 
-<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"type":"misc"}} />
+<MC data={{"type":"misc"}} />
 
 `node [options] [V8 options] [script.js | -e "script" | - ] [arguments]`
 
@@ -72,7 +72,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://$hostname:$port/`);
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
 

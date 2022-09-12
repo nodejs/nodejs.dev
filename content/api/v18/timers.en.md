@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.9.0" data={{"source_link":"lib/timers.js"}} />
+<MC data={{"source_link":"lib/timers.js"}} />
 
 The `timer` module exposes a global API for scheduling functions to
 be called at some future period of time. Because the timer functions are
@@ -19,7 +19,7 @@ The timer functions within Node.js implement a similar API as the timers API
 provided by Web Browsers but use a different internal implementation that is
 built around the Node.js [Event Loop][].
 
-### <DataTag tag="C" /> `Immediate`
+### <Tag tag="C" /> `Immediate`
 
 This object is created internally and is returned from [`setImmediate()`][]. It
 can be passed to [`clearImmediate()`][] in order to cancel the scheduled
@@ -30,17 +30,17 @@ running as long as the immediate is active. The `Immediate` object returned by
 [`setImmediate()`][] exports both `immediate.ref()` and `immediate.unref()`
 functions that can be used to control this default behavior.
 
-#### <DataTag tag="M" /> `immediate.hasRef()`
+#### <Tag tag="M" /> `immediate.hasRef()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v11.0.0"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 If true, the `Immediate` object will keep the Node.js event loop active.
 
-#### <DataTag tag="M" /> `immediate.ref()`
+#### <Tag tag="M" /> `immediate.ref()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.7.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.7.0"]}}} />
 
 * Returns: [`Immediate`](/api/timers#immediate) a reference to `immediate`
 
@@ -51,9 +51,9 @@ effect.
 By default, all `Immediate` objects are "ref'ed", making it normally unnecessary
 to call `immediate.ref()` unless `immediate.unref()` had been called previously.
 
-#### <DataTag tag="M" /> `immediate.unref()`
+#### <Tag tag="M" /> `immediate.unref()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.7.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.7.0"]}}} />
 
 * Returns: [`Immediate`](/api/timers#immediate) a reference to `immediate`
 
@@ -62,7 +62,7 @@ loop to remain active. If there is no other activity keeping the event loop
 running, the process may exit before the `Immediate` object's callback is
 invoked. Calling `immediate.unref()` multiple times will have no effect.
 
-### <DataTag tag="C" /> `Timeout`
+### <Tag tag="C" /> `Timeout`
 
 This object is created internally and is returned from [`setTimeout()`][] and
 [`setInterval()`][]. It can be passed to either [`clearTimeout()`][] or
@@ -74,27 +74,27 @@ timer is active. Each of the `Timeout` objects returned by these functions
 export both `timeout.ref()` and `timeout.unref()` functions that can be used to
 control this default behavior.
 
-#### <DataTag tag="M" /> `timeout.close()`
+#### <Tag tag="M" /> `timeout.close()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.1"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use [`clearTimeout()`][] instead."}}} />
+<MC data={{"stability":{"level":3,"text":" - Legacy: Use `clearTimeout()` instead."}}} />
 
 * Returns: [`Timeout`](/api/timers#timeout) a reference to `timeout`
 
 Cancels the timeout.
 
-#### <DataTag tag="M" /> `timeout.hasRef()`
+#### <Tag tag="M" /> `timeout.hasRef()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v11.0.0"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 If true, the `Timeout` object will keep the Node.js event loop active.
 
-#### <DataTag tag="M" /> `timeout.ref()`
+#### <Tag tag="M" /> `timeout.ref()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.1"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
 * Returns: [`Timeout`](/api/timers#timeout) a reference to `timeout`
 
@@ -104,9 +104,9 @@ When called, requests that the Node.js event loop _not_ exit so long as the
 By default, all `Timeout` objects are "ref'ed", making it normally unnecessary
 to call `timeout.ref()` unless `timeout.unref()` had been called previously.
 
-#### <DataTag tag="M" /> `timeout.refresh()`
+#### <Tag tag="M" /> `timeout.refresh()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.2.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v10.2.0"]}}} />
 
 * Returns: [`Timeout`](/api/timers#timeout) a reference to `timeout`
 
@@ -118,9 +118,9 @@ JavaScript object.
 Using this on a timer that has already called its callback will reactivate the
 timer.
 
-#### <DataTag tag="M" /> `timeout.unref()`
+#### <Tag tag="M" /> `timeout.unref()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.1"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
 * Returns: [`Timeout`](/api/timers#timeout) a reference to `timeout`
 
@@ -129,9 +129,9 @@ to remain active. If there is no other activity keeping the event loop running,
 the process may exit before the `Timeout` object's callback is invoked. Calling
 `timeout.unref()` multiple times will have no effect.
 
-#### <DataTag tag="M" /> `timeout[Symbol.toPrimitive]()`
+#### <Tag tag="M" /> `timeout[Symbol.toPrimitive]()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.9.0","v12.19.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v14.9.0","v12.19.0"]}}} />
 
 * Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) a number that can be used to reference this `timeout`
 
@@ -149,9 +149,9 @@ a certain period of time. When a timer's function is called varies depending on
 which method was used to create the timer and what other work the Node.js
 event loop is doing.
 
-#### <DataTag tag="M" /> `setImmediate(callback[, ...args])`
+#### <Tag tag="M" /> `setImmediate(callback[, ...args])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.9.1"]}}} />
+<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.9.1"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to call at the end of this turn of
   the Node.js [Event Loop][]
@@ -172,9 +172,9 @@ If `callback` is not a function, a [`TypeError`][] will be thrown.
 This method has a custom variant for promises that is available using
 [`timersPromises.setImmediate()`][].
 
-#### <DataTag tag="M" /> `setInterval(callback[, delay[, ...args]])`
+#### <Tag tag="M" /> `setInterval(callback[, delay[, ...args]])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.0.1"]}}} />
+<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.0.1"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to call when the timer elapses.
 * `delay` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of milliseconds to wait before calling the
@@ -192,9 +192,9 @@ If `callback` is not a function, a [`TypeError`][] will be thrown.
 This method has a custom variant for promises that is available using
 [`timersPromises.setInterval()`][].
 
-#### <DataTag tag="M" /> `setTimeout(callback[, delay[, ...args]])`
+#### <Tag tag="M" /> `setTimeout(callback[, delay[, ...args]])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.0.1"]}}} />
+<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.0.1"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to call when the timer elapses.
 * `delay` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of milliseconds to wait before calling the
@@ -263,27 +263,27 @@ setTimeoutPromise(1000, 'foobar', { signal })
 ac.abort();
 ```
 
-#### <DataTag tag="M" /> `clearImmediate(immediate)`
+#### <Tag tag="M" /> `clearImmediate(immediate)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.1"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
 * `immediate` [`Immediate`](/api/timers#immediate) An `Immediate` object as returned by
   [`setImmediate()`][].
 
 Cancels an `Immediate` object created by [`setImmediate()`][].
 
-#### <DataTag tag="M" /> `clearInterval(timeout)`
+#### <Tag tag="M" /> `clearInterval(timeout)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.0.1"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.0.1"]}}} />
 
 * `timeout` [`Timeout`](/api/timers#timeout) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A `Timeout` object as returned by [`setInterval()`][]
   or the [primitive][] of the `Timeout` object as a string or a number.
 
 Cancels a `Timeout` object created by [`setInterval()`][].
 
-#### <DataTag tag="M" /> `clearTimeout(timeout)`
+#### <Tag tag="M" /> `clearTimeout(timeout)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.0.1"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.0.1"]}}} />
 
 * `timeout` [`Timeout`](/api/timers#timeout) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A `Timeout` object as returned by [`setTimeout()`][]
   or the [primitive][] of the `Timeout` object as a string or a number.
@@ -292,7 +292,7 @@ Cancels a `Timeout` object created by [`setTimeout()`][].
 
 ### Timers Promises API
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/38112","description":"Graduated from experimental."}],"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/38112","description":"Graduated from experimental."}],"update":{"type":"added","version":["v15.0.0"]}}} />
 
 The `timers/promises` API provides an alternative set of timer functions
 that return `Promise` objects. The API is accessible via
@@ -314,9 +314,9 @@ const {
 } = require('node:timers/promises');
 ```
 
-#### <DataTag tag="M" /> `timersPromises.setTimeout([delay[, value[, options]]])`
+#### <Tag tag="M" /> `timersPromises.setTimeout([delay[, value[, options]]])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * `delay` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of milliseconds to wait before fulfilling the
   promise. **Default:** `1`.
@@ -348,9 +348,9 @@ setTimeout(100, 'result').then((res) => {
 });
 ```
 
-#### <DataTag tag="M" /> `timersPromises.setImmediate([value[, options]])`
+#### <Tag tag="M" /> `timersPromises.setImmediate([value[, options]])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) A value with which the promise is fulfilled.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -380,9 +380,9 @@ setImmediate('result').then((res) => {
 });
 ```
 
-#### <DataTag tag="M" /> `timersPromises.setInterval([delay[, value[, options]]])`
+#### <Tag tag="M" /> `timersPromises.setInterval([delay[, value[, options]]])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.9.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.9.0"]}}} />
 
 Returns an async iterator that generates values in an interval of `delay` ms.
 
@@ -429,11 +429,11 @@ const interval = 100;
 })();
 ```
 
-#### <DataTag tag="M" /> `timersPromises.scheduler.wait(delay[, options])`
+#### <Tag tag="M" /> `timersPromises.scheduler.wait(delay[, options])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.3.0","v16.14.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v17.3.0","v16.14.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `delay` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of milliseconds to wait before resolving the
   promise.
@@ -455,11 +455,11 @@ import { scheduler } from 'node:timers/promises';
 await scheduler.wait(1000); // Wait one second before continuing
 ```
 
-#### <DataTag tag="M" /> `timersPromises.scheduler.yield()`
+#### <Tag tag="M" /> `timersPromises.scheduler.yield()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.3.0","v16.14.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v17.3.0","v16.14.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 

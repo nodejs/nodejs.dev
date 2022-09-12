@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v12.16.0"]}}} />
+<MC data={{"update":{"type":"introduced_in","version":["v12.16.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
-<Metadata version="v18.9.0" data={{"source_link":"lib/wasi.js"}} />
+<MC data={{"source_link":"lib/wasi.js"}} />
 
 The WASI API provides an implementation of the [WebAssembly System Interface][]
 specification. WASI gives sandboxed WebAssembly applications access to the
@@ -111,9 +111,9 @@ $ wat2wasm demo.wat
 The `--experimental-wasi-unstable-preview1` CLI argument is needed for this
 example to run.
 
-### <DataTag tag="C" /> `WASI`
+### <Tag tag="C" /> `WASI`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
 
 The `WASI` class provides the WASI system call API and additional convenience
 methods for working with WASI-based applications. Each `WASI` instance
@@ -121,9 +121,9 @@ represents a distinct sandbox environment. For security purposes, each `WASI`
 instance must have its command-line arguments, environment variables, and
 sandbox directory structure configured explicitly.
 
-#### <DataTag tag="M" /> `new WASI([options])`
+#### <Tag tag="M" /> `new WASI([options])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `args` [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) An array of strings that the WebAssembly application will
@@ -146,9 +146,9 @@ sandbox directory structure configured explicitly.
   * `stderr` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The file descriptor used as standard error in the
     WebAssembly application. **Default:** `2`.
 
-#### <DataTag tag="M" /> `wasi.start(instance)`
+#### <Tag tag="M" /> `wasi.start(instance)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
 
 * `instance` [`WebAssembly.Instance`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Instance)
 
@@ -161,9 +161,9 @@ Attempt to begin execution of `instance` as a WASI command by invoking its
 
 If `start()` is called more than once, an exception is thrown.
 
-#### <DataTag tag="M" /> `wasi.initialize(instance)`
+#### <Tag tag="M" /> `wasi.initialize(instance)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.6.0","v12.19.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v14.6.0","v12.19.0"]}}} />
 
 * `instance` [`WebAssembly.Instance`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Instance)
 
@@ -176,9 +176,9 @@ export, then an exception is thrown.
 
 If `initialize()` is called more than once, an exception is thrown.
 
-#### <DataTag tag="M" /> `wasi.wasiImport`
+#### <Tag tag="M" /> `wasi.wasiImport`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 

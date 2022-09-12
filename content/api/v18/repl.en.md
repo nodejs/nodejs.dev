@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.9.0" data={{"source_link":"lib/repl.js"}} />
+<MC data={{"source_link":"lib/repl.js"}} />
 
 The `node:repl` module provides a Read-Eval-Print-Loop (REPL) implementation
 that is available both as a standalone program or includible in other
@@ -57,7 +57,7 @@ The following special commands are supported by all REPL instances:
 > .editor
 // Entering editor mode (^D to finish, ^C to cancel)
 function welcome(name) {
-  return `Hello $name!`;
+  return `Hello ${name}!`;
 }
 
 welcome('Node.js User');
@@ -154,7 +154,7 @@ global or scoped variable, the input `fs` will be evaluated on-demand as
 
 ##### Global uncaught exceptions
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v12.3.0","pr-url":"https://github.com/nodejs/node/pull/27151","description":"The `'uncaughtException'` event is from now on triggered if the repl is used as standalone program."}]}} />
+<MC data={{"changes":[{"version":"v12.3.0","pr-url":"https://github.com/nodejs/node/pull/27151","description":"The `'uncaughtException'` event is from now on triggered if the repl is used as standalone program."}]}} />
 
 The REPL uses the [`domain`][] module to catch all uncaught exceptions for that
 REPL session.
@@ -181,7 +181,7 @@ This use of the [`domain`][] module in the REPL has these side effects:
 
 ##### Assignment of the `_` (underscore) variable
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v9.8.0","pr-url":"https://github.com/nodejs/node/pull/18919","description":"Added `_error` support."}]}} />
+<MC data={{"changes":[{"version":"v9.8.0","pr-url":"https://github.com/nodejs/node/pull/18919","description":"Added `_error` support."}]}} />
 
 The default evaluator will, by default, assign the result of the most recently
 evaluated expression to the special variable `_` (underscore).
@@ -211,7 +211,7 @@ Error: foo
 'foo'
 ```
 
-##### <DataTag tag="M" /> `await` keyword
+##### <Tag tag="M" /> `await` keyword
 
 Support for the `await` keyword is enabled at the top level.
 
@@ -249,7 +249,7 @@ undefined
 
 #### Reverse-i-search
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.6.0","v12.17.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v13.6.0","v12.17.0"]}}} />
 
 The REPL supports bi-directional reverse-i-search similar to [ZSH][]. It is
 triggered with <kbd>Ctrl</kbd>+<kbd>R</kbd> to search backward
@@ -358,9 +358,9 @@ function myWriter(output) {
 }
 ```
 
-### <DataTag tag="C" /> `REPLServer`
+### <Tag tag="C" /> `REPLServer`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.91"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.1.91"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) See [`repl.start()`][]
 * Extends: [`readline.Interface`](/api/readline#readlineinterface)
@@ -377,9 +377,9 @@ const firstInstance = repl.start(options);
 const secondInstance = new repl.REPLServer(options);
 ```
 
-#### <DataTag tag="E" /> `'exit'`
+#### <Tag tag="E" /> `'exit'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.7.7"]}}} />
 
 The `'exit'` event is emitted when the REPL is exited either by receiving the
 `.exit` command as input, the user pressing <kbd>Ctrl</kbd>+<kbd>C</kbd> twice
@@ -395,9 +395,9 @@ replServer.on('exit', () => {
 });
 ```
 
-#### <DataTag tag="E" /> `'reset'`
+#### <Tag tag="E" /> `'reset'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.11.0"]}}} />
 
 The `'reset'` event is emitted when the REPL's context is reset. This occurs
 whenever the `.clear` command is received as input _unless_ the REPL is using
@@ -439,9 +439,9 @@ Clearing context...
 >
 ```
 
-#### <DataTag tag="M" /> `replServer.defineCommand(keyword, cmd)`
+#### <Tag tag="M" /> `replServer.defineCommand(keyword, cmd)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * `keyword` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The command keyword (_without_ a leading `.` character).
 * `cmd` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to invoke when the command is processed.
@@ -465,7 +465,7 @@ replServer.defineCommand('sayhello', {
   help: 'Say hello',
   action(name) {
     this.clearBufferedCommand();
-    console.log(`Hello, $name!`);
+    console.log(`Hello, ${name}!`);
     this.displayPrompt();
   }
 });
@@ -484,9 +484,9 @@ Hello, Node.js User!
 Goodbye!
 ```
 
-#### <DataTag tag="M" /> `replServer.displayPrompt([preserveCursor])`
+#### <Tag tag="M" /> `replServer.displayPrompt([preserveCursor])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.91"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.1.91"]}}} />
 
 * `preserveCursor` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -503,20 +503,20 @@ The `replServer.displayPrompt` method is primarily intended to be called from
 within the action function for commands registered using the
 `replServer.defineCommand()` method.
 
-#### <DataTag tag="M" /> `replServer.clearBufferedCommand()`
+#### <Tag tag="M" /> `replServer.clearBufferedCommand()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.0.0"]}}} />
 
 The `replServer.clearBufferedCommand()` method clears any command that has been
 buffered but not yet executed. This method is primarily intended to be
 called from within the action function for commands registered using the
 `replServer.defineCommand()` method.
 
-#### <DataTag tag="M" /> `replServer.parseREPLKeyword(keyword[, rest])`
+#### <Tag tag="M" /> `replServer.parseREPLKeyword(keyword[, rest])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v9.0.0"]}}} />
+<MC data={{"update":{"type":"deprecated","version":["v9.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated."}}} />
+<MC data={{"stability":{"level":0,"text":" - Deprecated."}}} />
 
 * `keyword` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) the potential keyword to parse and execute
 * `rest` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) any parameters to the keyword command
@@ -525,9 +525,9 @@ called from within the action function for commands registered using the
 An internal method used to parse and execute `REPLServer` keywords.
 Returns `true` if `keyword` is a valid keyword, otherwise `false`.
 
-#### <DataTag tag="M" /> `replServer.setupHistory(historyPath, callback)`
+#### <Tag tag="M" /> `replServer.setupHistory(historyPath, callback)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
 * `historyPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) the path to the history file
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) called when history writes are ready or upon error
@@ -540,17 +540,17 @@ by default. However, this is not the case when creating a REPL
 programmatically. Use this method to initialize a history log file when working
 with REPL instances programmatically.
 
-### <DataTag tag="M" /> `repl.builtinModules`
+### <Tag tag="M" /> `repl.builtinModules`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * string\[]
 
 A list of the names of all Node.js modules, e.g., `'http'`.
 
-### <DataTag tag="M" /> `repl.start([options])`
+### <Tag tag="M" /> `repl.start([options])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v13.4.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/30811","description":"The `preview` option is now available."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26518","description":"The `terminal` option now follows the default description in all cases and `useColors` checks `hasColors()` if available."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19187","description":"The `REPL_MAGIC_MODE` `replMode` was removed."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakEvalOnSigint` option is supported now."},{"version":"v5.8.0","pr-url":"https://github.com/nodejs/node/pull/5388","description":"The `options` parameter is optional now."}],"update":{"type":"added","version":["v0.1.91"]}}} />
+<MC data={{"changes":[{"version":["v13.4.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/30811","description":"The `preview` option is now available."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26518","description":"The `terminal` option now follows the default description in all cases and `useColors` checks `hasColors()` if available."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19187","description":"The `REPL_MAGIC_MODE` `replMode` was removed."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakEvalOnSigint` option is supported now."},{"version":"v5.8.0","pr-url":"https://github.com/nodejs/node/pull/5388","description":"The `options` parameter is optional now."}],"update":{"type":"added","version":["v0.1.91"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `prompt` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The input prompt to display. **Default:** `'> '`
@@ -719,10 +719,10 @@ possible to connect to a long-running Node.js process without restarting it.
 
 For an example of running a "full-featured" (`terminal`) REPL over
 a `net.Server` and `net.Socket` instance, see:
-<https://gist.github.com/TooTallNate/2209310>.
+(https://gist.github.com/TooTallNate/2209310)[https://gist.github.com/TooTallNate/2209310].
 
 For an example of running a REPL instance over [`curl(1)`][], see:
-<https://gist.github.com/TooTallNate/2053342>.
+(https://gist.github.com/TooTallNate/2053342)[https://gist.github.com/TooTallNate/2053342].
 
 [TTY keybindings]: (/api/readline#tty-keybindings)
 [ZSH]: https://en.wikipedia.org/wiki/Z_shell

@@ -5,13 +5,13 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.9.0" data={{"name":"vm"}} />
+<MC data={{"name":"vm"}} />
 
-<Metadata version="v18.9.0" data={{"source_link":"lib/vm.js"}} />
+<MC data={{"source_link":"lib/vm.js"}} />
 
 The `node:vm` module enables compiling and running code within V8 Virtual
 Machine contexts.
@@ -49,16 +49,16 @@ console.log(context.y); // 17
 console.log(x); // 1; y is not defined.
 ```
 
-### <DataTag tag="C" /> `vm.Script`
+### <Tag tag="C" /> `vm.Script`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.1"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.3.1"]}}} />
 
 Instances of the `vm.Script` class contain precompiled scripts that can be
 executed in specific contexts.
 
-#### <DataTag tag="M" /> `new vm.Script(code[, options])`
+#### <Tag tag="M" /> `new vm.Script(code[, options])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/20300","description":"The `produceCachedData` is deprecated in favour of `script.createCachedData()`."},{"version":"v5.7.0","pr-url":"https://github.com/nodejs/node/pull/4777","description":"The `cachedData` and `produceCachedData` options are supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<MC data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/20300","description":"The `produceCachedData` is deprecated in favour of `script.createCachedData()`."},{"version":"v5.7.0","pr-url":"https://github.com/nodejs/node/pull/4777","description":"The `cachedData` and `produceCachedData` options are supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `code` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The JavaScript code to compile.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -90,7 +90,7 @@ executed in specific contexts.
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: {Module Namespace Object|vm.Module} Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 
@@ -100,9 +100,9 @@ Creating a new `vm.Script` object compiles `code` but does not run it. The
 compiled `vm.Script` can be run later multiple times. The `code` is not bound to
 any global object; rather, it is bound before each run, just for that run.
 
-#### <DataTag tag="M" /> `script.createCachedData()`
+#### <Tag tag="M" /> `script.createCachedData()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * Returns: [`Buffer`](/api/buffer#buffer)
 
@@ -126,9 +126,9 @@ script.runInThisContext();
 const cacheWithX = script.createCachedData();
 ```
 
-#### <DataTag tag="M" /> `script.runInContext(contextifiedObject[, options])`
+#### <Tag tag="M" /> `script.runInContext(contextifiedObject[, options])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<MC data={{"changes":[{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `contextifiedObject` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) A [contextified][] object as returned by the
   `vm.createContext()` method.
@@ -177,9 +177,9 @@ Using the `timeout` or `breakOnSigint` options will result in new event loops
 and corresponding threads being started, which have a non-zero performance
 overhead.
 
-#### <DataTag tag="M" /> `script.runInNewContext([contextObject[, options]])`
+#### <Tag tag="M" /> `script.runInNewContext([contextObject[, options]])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v14.6.0","pr-url":"https://github.com/nodejs/node/pull/34023","description":"The `microtaskMode` option is supported now."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19016","description":"The `contextCodeGeneration` option is supported now."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<MC data={{"changes":[{"version":"v14.6.0","pr-url":"https://github.com/nodejs/node/pull/34023","description":"The `microtaskMode` option is supported now."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19016","description":"The `contextCodeGeneration` option is supported now."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `contextObject` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An object that will be [contextified][]. If
   `undefined`, a new object will be created.
@@ -238,9 +238,9 @@ console.log(contexts);
 // Prints: [{ globalVar: 'set' }, { globalVar: 'set' }, { globalVar: 'set' }]
 ```
 
-#### <DataTag tag="M" /> `script.runInThisContext([options])`
+#### <Tag tag="M" /> `script.runInThisContext([options])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<MC data={{"changes":[{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `displayErrors` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When `true`, if an [`Error`][] occurs
@@ -279,11 +279,11 @@ console.log(globalVar);
 // 1000
 ```
 
-### <DataTag tag="C" /> `vm.Module`
+### <Tag tag="C" /> `vm.Module`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 This feature is only available with the `--experimental-vm-modules` command
 flag enabled.
@@ -364,7 +364,7 @@ async function linker(specifier, referencingModule) {
     // Using `contextifiedObject` instead of `referencingModule.context`
     // here would work as well.
   }
-  throw new Error(`Unable to resolve dependency: $specifier`);
+  throw new Error(`Unable to resolve dependency: ${specifier}`);
 }
 await bar.link(linker);
 
@@ -436,7 +436,7 @@ const contextifiedObject = vm.createContext({
       // Using `contextifiedObject` instead of `referencingModule.context`
       // here would work as well.
     }
-    throw new Error(`Unable to resolve dependency: $specifier`);
+    throw new Error(`Unable to resolve dependency: ${specifier}`);
   }
   await bar.link(linker);
 
@@ -450,7 +450,7 @@ const contextifiedObject = vm.createContext({
 })();
 ```
 
-#### <DataTag tag="M" /> `module.dependencySpecifiers`
+#### <Tag tag="M" /> `module.dependencySpecifiers`
 
 * string\[]
 
@@ -460,7 +460,7 @@ to disallow any changes to it.
 Corresponds to the `[[RequestedModules]]` field of [Cyclic Module Record][]s in
 the ECMAScript specification.
 
-#### <DataTag tag="M" /> `module.error`
+#### <Tag tag="M" /> `module.error`
 
 * [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
@@ -474,7 +474,7 @@ exception due to possible ambiguity with `throw undefined;`.
 Corresponds to the `[[EvaluationError]]` field of [Cyclic Module Record][]s
 in the ECMAScript specification.
 
-#### <DataTag tag="M" /> `module.evaluate([options])`
+#### <Tag tag="M" /> `module.evaluate([options])`
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `timeout` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Specifies the number of milliseconds to evaluate
@@ -501,13 +501,13 @@ This method cannot be called while the module is being evaluated
 Corresponds to the [Evaluate() concrete method][] field of [Cyclic Module
 Record][]s in the ECMAScript specification.
 
-#### <DataTag tag="M" /> `module.identifier`
+#### <Tag tag="M" /> `module.identifier`
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The identifier of the current module, as set in the constructor.
 
-#### <DataTag tag="M" /> `module.link(linker)`
+#### <Tag tag="M" /> `module.link(linker)`
 
 * `linker` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `specifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The specifier of the requested module:
@@ -566,7 +566,7 @@ specification.
 Corresponds to the [Link() concrete method][] field of [Cyclic Module
 Record][]s in the ECMAScript specification.
 
-#### <DataTag tag="M" /> `module.namespace`
+#### <Tag tag="M" /> `module.namespace`
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -576,7 +576,7 @@ The namespace object of the module. This is only available after linking
 Corresponds to the [GetModuleNamespace][] abstract operation in the ECMAScript
 specification.
 
-#### <DataTag tag="M" /> `module.status`
+#### <Tag tag="M" /> `module.status`
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -602,11 +602,11 @@ Other than `'errored'`, this status string corresponds to the specification's
 `'evaluated'` in the specification, but with `[[EvaluationError]]` set to a
 value that is not `undefined`.
 
-### <DataTag tag="C" /> `vm.SourceTextModule`
+### <Tag tag="C" /> `vm.SourceTextModule`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.6.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.6.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 This feature is only available with the `--experimental-vm-modules` command
 flag enabled.
@@ -616,9 +616,9 @@ flag enabled.
 The `vm.SourceTextModule` class provides the [Source Text Module Record][] as
 defined in the ECMAScript specification.
 
-#### <DataTag tag="M" /> `new vm.SourceTextModule(code[, options])`
+#### <Tag tag="M" /> `new vm.SourceTextModule(code[, options])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."}]}} />
+<MC data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."}]}} />
 
 * `code` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) JavaScript Module code to parse
 * `options`
@@ -647,7 +647,7 @@ defined in the ECMAScript specification.
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: {Module Namespace Object|vm.Module} Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 
@@ -712,9 +712,9 @@ const contextifiedObject = vm.createContext({ secret: 42 });
 })();
 ```
 
-#### <DataTag tag="M" /> `sourceTextModule.createCachedData()`
+#### <Tag tag="M" /> `sourceTextModule.createCachedData()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.7.0","v12.17.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v13.7.0","v12.17.0"]}}} />
 
 * Returns: [`Buffer`](/api/buffer#buffer)
 
@@ -733,11 +733,11 @@ const cachedData = module.createCachedData();
 const module2 = new vm.SourceTextModule('const a = 1;', { cachedData });
 ```
 
-### <DataTag tag="C" /> `vm.SyntheticModule`
+### <Tag tag="C" /> `vm.SyntheticModule`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 This feature is only available with the `--experimental-vm-modules` command
 flag enabled.
@@ -761,9 +761,9 @@ const module = new vm.SyntheticModule(['default'], function() {
 // Use `module` in linking...
 ```
 
-#### <DataTag tag="M" /> `new vm.SyntheticModule(exportNames, evaluateCallback[, options])`
+#### <Tag tag="M" /> `new vm.SyntheticModule(exportNames, evaluateCallback[, options])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
 
 * `exportNames` string\[] Array of names that will be exported from the
   module.
@@ -781,9 +781,9 @@ Objects assigned to the exports of this instance may allow importers of
 the module to access information outside the specified `context`. Use
 `vm.runInContext()` to create objects in a specific context.
 
-#### <DataTag tag="M" /> `syntheticModule.setExport(name, value)`
+#### <Tag tag="M" /> `syntheticModule.setExport(name, value)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Name of the export to set.
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The value to set the export to.
@@ -817,9 +817,9 @@ const vm = require('node:vm');
 })();
 ```
 
-### <DataTag tag="M" /> `vm.compileFunction(code[, params[, options]])`
+### <Tag tag="M" /> `vm.compileFunction(code[, params[, options]])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v15.9.0","pr-url":"https://github.com/nodejs/node/pull/35431","description":"Added `importModuleDynamically` option again."},{"version":"v14.3.0","pr-url":"https://github.com/nodejs/node/pull/33364","description":"Removal of `importModuleDynamically` due to compatibility issues."},{"version":["v14.1.0","v13.14.0"],"pr-url":"https://github.com/nodejs/node/pull/32985","description":"The `importModuleDynamically` option is now supported."}],"update":{"type":"added","version":["v10.10.0"]}}} />
+<MC data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v15.9.0","pr-url":"https://github.com/nodejs/node/pull/35431","description":"Added `importModuleDynamically` option again."},{"version":"v14.3.0","pr-url":"https://github.com/nodejs/node/pull/33364","description":"Removal of `importModuleDynamically` due to compatibility issues."},{"version":["v14.1.0","v13.14.0"],"pr-url":"https://github.com/nodejs/node/pull/32985","description":"The `importModuleDynamically` option is now supported."}],"update":{"type":"added","version":["v10.10.0"]}}} />
 
 * `code` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The body of the function to compile.
 * `params` string\[] An array of strings containing all parameters for the
@@ -851,7 +851,7 @@ const vm = require('node:vm');
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: {Module Namespace Object|vm.Module} Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 * Returns: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -860,9 +860,9 @@ Compiles the given code into the provided context (if no context is
 supplied, the current context is used), and returns it wrapped inside a
 function with the given `params`.
 
-### <DataTag tag="M" /> `vm.createContext([contextObject[, options]])`
+### <Tag tag="M" /> `vm.createContext([contextObject[, options]])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v14.6.0","pr-url":"https://github.com/nodejs/node/pull/34023","description":"The `microtaskMode` option is supported now."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19398","description":"The first argument can no longer be a function."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19016","description":"The `codeGeneration` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<MC data={{"changes":[{"version":"v14.6.0","pr-url":"https://github.com/nodejs/node/pull/34023","description":"The `microtaskMode` option is supported now."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19398","description":"The first argument can no longer be a function."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19016","description":"The `codeGeneration` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `contextObject` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -924,9 +924,9 @@ context.
 The provided `name` and `origin` of the context are made visible through the
 Inspector API.
 
-### <DataTag tag="M" /> `vm.isContext(object)`
+### <Tag tag="M" /> `vm.isContext(object)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.7"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.11.7"]}}} />
 
 * `object` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -934,11 +934,11 @@ Inspector API.
 Returns `true` if the given `object` object has been [contextified][] using
 [`vm.createContext()`][].
 
-### <DataTag tag="M" /> `vm.measureMemory([options])`
+### <Tag tag="M" /> `vm.measureMemory([options])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.10.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v13.10.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 Measure the memory known to V8 and used by all contexts known to the
 current V8 isolate, or the main context.
@@ -1008,9 +1008,9 @@ vm.measureMemory({ mode: 'detailed', execution: 'eager' })
   });
 ```
 
-### <DataTag tag="M" /> `vm.runInContext(code, contextifiedObject[, options])`
+### <Tag tag="M" /> `vm.runInContext(code, contextifiedObject[, options])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<MC data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `code` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The JavaScript code to compile and run.
 * `contextifiedObject` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The [contextified][] object that will be used
@@ -1055,7 +1055,7 @@ vm.measureMemory({ mode: 'detailed', execution: 'eager' })
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: {Module Namespace Object|vm.Module} Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 * Returns: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) the result of the very last statement executed in the script.
@@ -1083,9 +1083,9 @@ console.log(contextObject);
 // Prints: { globalVar: 1024 }
 ```
 
-### <DataTag tag="M" /> `vm.runInNewContext(code[, contextObject[, options]])`
+### <Tag tag="M" /> `vm.runInNewContext(code[, contextObject[, options]])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v14.6.0","pr-url":"https://github.com/nodejs/node/pull/34023","description":"The `microtaskMode` option is supported now."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19016","description":"The `contextCodeGeneration` option is supported now."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<MC data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v14.6.0","pr-url":"https://github.com/nodejs/node/pull/34023","description":"The `microtaskMode` option is supported now."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19016","description":"The `contextCodeGeneration` option is supported now."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `code` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The JavaScript code to compile and run.
 * `contextObject` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An object that will be [contextified][]. If
@@ -1145,7 +1145,7 @@ console.log(contextObject);
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: {Module Namespace Object|vm.Module} Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
   * `microtaskMode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If set to `afterEvaluate`, microtasks (tasks
@@ -1177,9 +1177,9 @@ console.log(contextObject);
 // Prints: { animal: 'cat', count: 3, name: 'kitty' }
 ```
 
-### <DataTag tag="M" /> `vm.runInThisContext(code[, options])`
+### <Tag tag="M" /> `vm.runInThisContext(code[, options])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<MC data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `code` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The JavaScript code to compile and run.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -1222,7 +1222,7 @@ console.log(contextObject);
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: {Module Namespace Object|vm.Module} Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 * Returns: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) the result of the very last statement executed in the script.
@@ -1243,11 +1243,11 @@ const vm = require('node:vm');
 let localVar = 'initial value';
 
 const vmResult = vm.runInThisContext('localVar = "vm";');
-console.log(`vmResult: '$vmResult', localVar: '$localVar'`);
+console.log(`vmResult: '${vmResult}', localVar: '${localVar}'`);
 // Prints: vmResult: 'vm', localVar: 'initial value'
 
 const evalResult = eval('localVar = "eval";');
-console.log(`evalResult: '$evalResult', localVar: '$localVar'`);
+console.log(`evalResult: '${evalResult}', localVar: '${localVar}'`);
 // Prints: evalResult: 'eval', localVar: 'eval'
 ```
 

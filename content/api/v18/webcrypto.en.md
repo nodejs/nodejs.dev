@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43310","description":"Removed proprietary `'node.keyObject'` import/export format."},{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43310","description":"Removed proprietary `'NODE-DSA'`, `'NODE-DH'`, and `'NODE-SCRYPT'` algorithms."},{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Added `'Ed25519'`, `'Ed448'`, `'X25519'`, and `'X448'` algorithms."},{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Removed proprietary `'NODE-ED25519'` and `'NODE-ED448'` algorithms."},{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Removed proprietary `'NODE-X25519'` and `'NODE-X448'` named curves from the `'ECDH'` algorithm."}]}} />
+<MC data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43310","description":"Removed proprietary `'node.keyObject'` import/export format."},{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43310","description":"Removed proprietary `'NODE-DSA'`, `'NODE-DH'`, and `'NODE-SCRYPT'` algorithms."},{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Added `'Ed25519'`, `'Ed448'`, `'X25519'`, and `'X448'` algorithms."},{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Removed proprietary `'NODE-ED25519'` and `'NODE-ED448'` algorithms."},{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Removed proprietary `'NODE-X25519'` and `'NODE-X448'` named curves from the `'ECDH'` algorithm."}]}} />
 
-<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"introduced_in","version":["v15.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 Node.js provides an implementation of the standard [Web Crypto API][].
 
@@ -78,7 +78,7 @@ async function generateEcKey(namedCurve = 'P-521') {
 
 ##### Ed25519/Ed448/X25519/X448 key pairs
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 ```js
 const { subtle } = require('node:crypto').webcrypto;
@@ -339,25 +339,25 @@ implementation and the APIs supported for each:
 | `'SHA-384'`           |               |             |             |           |           |           |             |              |             |        |          | ✔        |
 | `'SHA-512'`           |               |             |             |           |           |           |             |              |             |        |          | ✔        |
 
-### <DataTag tag="C" /> `Crypto`
+### <Tag tag="C" /> `Crypto`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 Calling `require('node:crypto').webcrypto` returns an instance of the `Crypto`
 class. `Crypto` is a singleton that provides access to the remainder of the
 crypto API.
 
-#### <DataTag tag="M" /> `crypto.subtle`
+#### <Tag tag="M" /> `crypto.subtle`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`SubtleCrypto`](/api/webcrypto#subtlecrypto)
 
 Provides access to the `SubtleCrypto` API.
 
-#### <DataTag tag="M" /> `crypto.getRandomValues(typedArray)`
+#### <Tag tag="M" /> `crypto.getRandomValues(typedArray)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * `typedArray` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)
 * Returns: [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)
@@ -370,22 +370,22 @@ i.e. `Float32Array` and `Float64Array` are not accepted.
 
 An error will be thrown if the given `typedArray` is larger than 65,536 bytes.
 
-#### <DataTag tag="M" /> `crypto.randomUUID()`
+#### <Tag tag="M" /> `crypto.randomUUID()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Generates a random [RFC 4122][] version 4 UUID. The UUID is generated using a
 cryptographic pseudorandom number generator.
 
-### <DataTag tag="C" /> `CryptoKey`
+### <Tag tag="C" /> `CryptoKey`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-#### <DataTag tag="M" /> `cryptoKey.algorithm`
+#### <Tag tag="M" /> `cryptoKey.algorithm`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 
 
@@ -398,9 +398,9 @@ additional algorithm-specific parameters.
 
 Read-only.
 
-#### <DataTag tag="M" /> `cryptoKey.extractable`
+#### <Tag tag="M" /> `cryptoKey.extractable`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -409,18 +409,18 @@ When `true`, the [`CryptoKey`](/api/webcrypto#cryptokey) can be extracted using 
 
 Read-only.
 
-#### <DataTag tag="M" /> `cryptoKey.type`
+#### <Tag tag="M" /> `cryptoKey.type`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) One of `'secret'`, `'private'`, or `'public'`.
 
 A string identifying whether the key is a symmetric (`'secret'`) or
 asymmetric (`'private'` or `'public'`) key.
 
-#### <DataTag tag="M" /> `cryptoKey.usages`
+#### <Tag tag="M" /> `cryptoKey.usages`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: string\[]
 
@@ -460,32 +460,32 @@ Valid key usages depend on the key algorithm (identified by
 | `'RSA-PSS'`           |             |             | ✔        | ✔          |               |                |             |               |
 | `'RSASSA-PKCS1-v1_5'` |             |             | ✔        | ✔          |               |                |             |               |
 
-### <DataTag tag="C" /> `CryptoKeyPair`
+### <Tag tag="C" /> `CryptoKeyPair`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 The `CryptoKeyPair` is a simple dictionary object with `publicKey` and
 `privateKey` properties, representing an asymmetric key pair.
 
-#### <DataTag tag="M" /> `cryptoKeyPair.privateKey`
+#### <Tag tag="M" /> `cryptoKeyPair.privateKey`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`CryptoKey`](/api/webcrypto#cryptokey) A [`CryptoKey`](/api/webcrypto#cryptokey) whose `type` will be `'private'`.
 
-#### <DataTag tag="M" /> `cryptoKeyPair.publicKey`
+#### <Tag tag="M" /> `cryptoKeyPair.publicKey`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`CryptoKey`](/api/webcrypto#cryptokey) A [`CryptoKey`](/api/webcrypto#cryptokey) whose `type` will be `'public'`.
 
-### <DataTag tag="C" /> `SubtleCrypto`
+### <Tag tag="C" /> `SubtleCrypto`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-#### <DataTag tag="M" /> `subtle.decrypt(algorithm, key, data)`
+#### <Tag tag="M" /> `subtle.decrypt(algorithm, key, data)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * `algorithm`: [`RsaOaepParams`](/api/webcrypto#rsaoaepparams) | [`AesCtrParams`](/api/webcrypto#aesctrparams) | [`AesCbcParams`](/api/webcrypto#aescbcparams) | [`AesGcmParams`](/api/webcrypto#aesgcmparams)
 * `key`: [`CryptoKey`](/api/webcrypto#cryptokey)
@@ -504,13 +504,13 @@ The algorithms currently supported include:
 * `'AES-CBC'`
 * `'AES-GCM`'
 
-#### <DataTag tag="M" /> `subtle.deriveBits(algorithm, baseKey, length)`
+#### <Tag tag="M" /> `subtle.deriveBits(algorithm, baseKey, length)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Added `'X25519'`, and `'X448'` algorithms."}],"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Added `'X25519'`, and `'X448'` algorithms."}],"update":{"type":"added","version":["v15.0.0"]}}} />
 
 
 
-* `algorithm`: {AlgorithmIdentifier|EcdhKeyDeriveParams|HkdfParams|Pbkdf2Params}
+* `algorithm`: [`AlgorithmIdentifier`](/api/webcrypto#algorithmidentifier) | [`EcdhKeyDeriveParams`](/api/webcrypto#ecdhkeyderiveparams) | [`HkdfParams`](/api/webcrypto#hkdfparams) | [`Pbkdf2Params`](/api/webcrypto#pbkdf2params)
 * `baseKey`: [`CryptoKey`](/api/webcrypto#cryptokey)
 * `length`: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) containing [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
@@ -529,13 +529,13 @@ The algorithms currently supported include:
 * `'HKDF'`
 * `'PBKDF2'`
 
-#### <DataTag tag="M" /> `subtle.deriveKey(algorithm, baseKey, derivedKeyAlgorithm, extractable, keyUsages)`
+#### <Tag tag="M" /> `subtle.deriveKey(algorithm, baseKey, derivedKeyAlgorithm, extractable, keyUsages)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Added `'X25519'`, and `'X448'` algorithms."}],"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Added `'X25519'`, and `'X448'` algorithms."}],"update":{"type":"added","version":["v15.0.0"]}}} />
 
 
 
-* `algorithm`: {AlgorithmIdentifier|EcdhKeyDeriveParams|HkdfParams|Pbkdf2Params}
+* `algorithm`: [`AlgorithmIdentifier`](/api/webcrypto#algorithmidentifier) | [`EcdhKeyDeriveParams`](/api/webcrypto#ecdhkeyderiveparams) | [`HkdfParams`](/api/webcrypto#hkdfparams) | [`Pbkdf2Params`](/api/webcrypto#pbkdf2params)
 * `baseKey`: [`CryptoKey`](/api/webcrypto#cryptokey)
 * `derivedKeyAlgorithm`: [`HmacKeyGenParams`](/api/webcrypto#hmackeygenparams) | [`AesKeyGenParams`](/api/webcrypto#aeskeygenparams)
 * `extractable`: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -559,9 +559,9 @@ The algorithms currently supported include:
 * `'HKDF'`
 * `'PBKDF2'`
 
-#### <DataTag tag="M" /> `subtle.digest(algorithm, data)`
+#### <Tag tag="M" /> `subtle.digest(algorithm, data)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * `algorithm`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `data`: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
@@ -581,9 +581,9 @@ If `algorithm` is provided as a [`string`](https://developer.mozilla.org/en-US/d
 If `algorithm` is provided as an [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), it must have a `name` property
 whose value is one of the above.
 
-#### <DataTag tag="M" /> `subtle.encrypt(algorithm, key, data)`
+#### <Tag tag="M" /> `subtle.encrypt(algorithm, key, data)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * `algorithm`: [`RsaOaepParams`](/api/webcrypto#rsaoaepparams) | [`AesCtrParams`](/api/webcrypto#aesctrparams) | [`AesCbcParams`](/api/webcrypto#aescbcparams) | [`AesGcmParams`](/api/webcrypto#aesgcmparams)
 * `key`: [`CryptoKey`](/api/webcrypto#cryptokey)
@@ -601,9 +601,9 @@ The algorithms currently supported include:
 * `'AES-CBC'`
 * `'AES-GCM`'
 
-#### <DataTag tag="M" /> `subtle.exportKey(format, key)`
+#### <Tag tag="M" /> `subtle.exportKey(format, key)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Added `'Ed25519'`, `'Ed448'`, `'X25519'`, and `'X448'` algorithms."},{"version":"v15.9.0","pr-url":"https://github.com/nodejs/node/pull/37203","description":"Removed `'NODE-DSA'` JWK export."}],"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Added `'Ed25519'`, `'Ed448'`, `'X25519'`, and `'X448'` algorithms."},{"version":"v15.9.0","pr-url":"https://github.com/nodejs/node/pull/37203","description":"Removed `'NODE-DSA'` JWK export."}],"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * `format`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be one of `'raw'`, `'pkcs8'`, `'spki'`, or `'jwk'`.
 * `key`: [`CryptoKey`](/api/webcrypto#cryptokey)
@@ -638,9 +638,9 @@ specification.
 | `'RSA-PSS'`           | ✔        | ✔         | ✔       |         |
 | `'RSASSA-PKCS1-v1_5'` | ✔        | ✔         | ✔       |         |
 
-#### <DataTag tag="M" /> `subtle.generateKey(algorithm, extractable, keyUsages)`
+#### <Tag tag="M" /> `subtle.generateKey(algorithm, extractable, keyUsages)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 
 
@@ -677,9 +677,9 @@ The [`CryptoKey`](/api/webcrypto#cryptokey) (secret key) generating algorithms s
 * `'AES-GCM'`
 * `'AES-KW'`
 
-#### <DataTag tag="M" /> `subtle.importKey(format, keyData, algorithm, extractable, keyUsages)`
+#### <Tag tag="M" /> `subtle.importKey(format, keyData, algorithm, extractable, keyUsages)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Added `'Ed25519'`, `'Ed448'`, `'X25519'`, and `'X448'` algorithms."},{"version":"v15.9.0","pr-url":"https://github.com/nodejs/node/pull/37203","description":"Removed `'NODE-DSA'` JWK import."}],"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Added `'Ed25519'`, `'Ed448'`, `'X25519'`, and `'X448'` algorithms."},{"version":"v15.9.0","pr-url":"https://github.com/nodejs/node/pull/37203","description":"Removed `'NODE-DSA'` JWK import."}],"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * `format`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be one of `'raw'`, `'pkcs8'`, `'spki'`, or `'jwk'`.
 * `keyData`: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer) | [`KeyObject`](/api/crypto#keyobject)
@@ -722,13 +722,13 @@ The algorithms currently supported include:
 | `'RSA-PSS'`           | ✔        | ✔         | ✔       |         |
 | `'RSASSA-PKCS1-v1_5'` | ✔        | ✔         | ✔       |         |
 
-#### <DataTag tag="M" /> `subtle.sign(algorithm, key, data)`
+#### <Tag tag="M" /> `subtle.sign(algorithm, key, data)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Added `'Ed25519'`, and `'Ed448'` algorithms."}],"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Added `'Ed25519'`, and `'Ed448'` algorithms."}],"update":{"type":"added","version":["v15.0.0"]}}} />
 
 
 
-* `algorithm`: {AlgorithmIdentifier|RsaPssParams|EcdsaParams|Ed448Params}
+* `algorithm`: [`AlgorithmIdentifier`](/api/webcrypto#algorithmidentifier) | [`RsaPssParams`](/api/webcrypto#rsapssparams) | [`EcdsaParams`](/api/webcrypto#ecdsaparams) | [`Ed448Params`](/api/webcrypto#ed448params)
 * `key`: [`CryptoKey`](/api/webcrypto#cryptokey)
 * `data`: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) containing [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
@@ -749,9 +749,9 @@ The algorithms currently supported include:
 * `'Ed448'`[^1]
 * `'HMAC'`
 
-#### <DataTag tag="M" /> `subtle.unwrapKey(format, wrappedKey, unwrappingKey, unwrapAlgo, unwrappedKeyAlgo, extractable, keyUsages)`
+#### <Tag tag="M" /> `subtle.unwrapKey(format, wrappedKey, unwrappingKey, unwrapAlgo, unwrappedKeyAlgo, extractable, keyUsages)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * `format`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be one of `'raw'`, `'pkcs8'`, `'spki'`, or `'jwk'`.
 * `wrappedKey`: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
@@ -798,13 +798,13 @@ The unwrapped key algorithms supported include:
 * `'AES-GCM'`
 * `'AES-KW'`
 
-#### <DataTag tag="M" /> `subtle.verify(algorithm, key, signature, data)`
+#### <Tag tag="M" /> `subtle.verify(algorithm, key, signature, data)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Added `'Ed25519'`, and `'Ed448'` algorithms."}],"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/42507","description":"Added `'Ed25519'`, and `'Ed448'` algorithms."}],"update":{"type":"added","version":["v15.0.0"]}}} />
 
 
 
-* `algorithm`: {AlgorithmIdentifier|RsaPssParams|EcdsaParams|Ed448Params}
+* `algorithm`: [`AlgorithmIdentifier`](/api/webcrypto#algorithmidentifier) | [`RsaPssParams`](/api/webcrypto#rsapssparams) | [`EcdsaParams`](/api/webcrypto#ecdsaparams) | [`Ed448Params`](/api/webcrypto#ed448params)
 * `key`: [`CryptoKey`](/api/webcrypto#cryptokey)
 * `signature`: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
 * `data`: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
@@ -826,9 +826,9 @@ The algorithms currently supported include:
 * `'Ed448'`[^1]
 * `'HMAC'`
 
-#### <DataTag tag="M" /> `subtle.wrapKey(format, key, wrappingKey, wrapAlgo)`
+#### <Tag tag="M" /> `subtle.wrapKey(format, key, wrappingKey, wrapAlgo)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 
 
@@ -864,42 +864,42 @@ The algorithm parameter objects define the methods and parameters used by
 the various [`SubtleCrypto`](/api/webcrypto#subtlecrypto) methods. While described here as "classes", they
 are simple JavaScript dictionary objects.
 
-#### <DataTag tag="C" /> `AlgorithmIdentifier`
+#### <Tag tag="C" /> `AlgorithmIdentifier`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v18.4.0"]}}} />
 
-##### <DataTag tag="M" /> `algorithmIdentifier.name`
+##### <Tag tag="M" /> `algorithmIdentifier.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v18.4.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
-#### <DataTag tag="C" /> `AesCbcParams`
+#### <Tag tag="C" /> `AesCbcParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `aesCbcParams.iv`
+##### <Tag tag="M" /> `aesCbcParams.iv`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
 
 Provides the initialization vector. It must be exactly 16-bytes in length
 and should be unpredictable and cryptographically random.
 
-##### <DataTag tag="M" /> `aesCbcParams.name`
+##### <Tag tag="M" /> `aesCbcParams.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be `'AES-CBC'`.
 
-#### <DataTag tag="C" /> `AesCtrParams`
+#### <Tag tag="C" /> `AesCtrParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `aesCtrParams.counter`
+##### <Tag tag="M" /> `aesCtrParams.counter`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
 
@@ -908,26 +908,26 @@ The initial value of the counter block. This must be exactly 16 bytes long.
 The `AES-CTR` method uses the rightmost `length` bits of the block as the
 counter and the remaining bits as the nonce.
 
-##### <DataTag tag="M" /> `aesCtrParams.length`
+##### <Tag tag="M" /> `aesCtrParams.length`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of bits in the `aesCtrParams.counter` that are
   to be used as the counter.
 
-##### <DataTag tag="M" /> `aesCtrParams.name`
+##### <Tag tag="M" /> `aesCtrParams.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be `'AES-CTR'`.
 
-#### <DataTag tag="C" /> `AesGcmParams`
+#### <Tag tag="C" /> `AesGcmParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `aesGcmParams.additionalData`
+##### <Tag tag="M" /> `aesGcmParams.additionalData`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -935,9 +935,9 @@ With the AES-GCM method, the `additionalData` is extra input that is not
 encrypted but is included in the authentication of the data. The use of
 `additionalData` is optional.
 
-##### <DataTag tag="M" /> `aesGcmParams.iv`
+##### <Tag tag="M" /> `aesGcmParams.iv`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
 
@@ -950,53 +950,53 @@ Alternatively, the initialization vector may consist of at least 12
 cryptographically random bytes. For more information on constructing
 initialization vectors for AES-GCM, refer to Section 8 of [NIST SP 800-38D][].
 
-##### <DataTag tag="M" /> `aesGcmParams.name`
+##### <Tag tag="M" /> `aesGcmParams.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be `'AES-GCM'`.
 
-##### <DataTag tag="M" /> `aesGcmParams.tagLength`
+##### <Tag tag="M" /> `aesGcmParams.tagLength`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The size in bits of the generated authentication tag.
   This values must be one of `32`, `64`, `96`, `104`, `112`, `120`, or
   `128`. **Default:** `128`.
 
-#### <DataTag tag="C" /> `AesKeyGenParams`
+#### <Tag tag="C" /> `AesKeyGenParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `aesKeyGenParams.length`
+##### <Tag tag="M" /> `aesKeyGenParams.length`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The length of the AES key to be generated. This must be either `128`, `192`,
 or `256`.
 
-##### <DataTag tag="M" /> `aesKeyGenParams.name`
+##### <Tag tag="M" /> `aesKeyGenParams.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be one of `'AES-CBC'`, `'AES-CTR'`, `'AES-GCM'`, or
   `'AES-KW'`
 
-#### <DataTag tag="C" /> `EcdhKeyDeriveParams`
+#### <Tag tag="C" /> `EcdhKeyDeriveParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `ecdhKeyDeriveParams.name`
+##### <Tag tag="M" /> `ecdhKeyDeriveParams.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be `'ECDH'`, `'X25519'`, or `'X448'`.
 
-##### <DataTag tag="M" /> `ecdhKeyDeriveParams.public`
+##### <Tag tag="M" /> `ecdhKeyDeriveParams.public`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`CryptoKey`](/api/webcrypto#cryptokey)
 
@@ -1005,13 +1005,13 @@ another parties public key -- using both to generate a common shared secret.
 The `ecdhKeyDeriveParams.public` property is set to the other parties public
 key.
 
-#### <DataTag tag="C" /> `EcdsaParams`
+#### <Tag tag="C" /> `EcdsaParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `ecdsaParams.hash`
+##### <Tag tag="M" /> `ecdsaParams.hash`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1025,57 +1025,57 @@ If represented as a [`string`](https://developer.mozilla.org/en-US/docs/Web/Java
 If represented as an [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), the object must have a `name` property
 whose value is one of the above listed values.
 
-##### <DataTag tag="M" /> `ecdsaParams.name`
+##### <Tag tag="M" /> `ecdsaParams.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be `'ECDSA'`.
 
-#### <DataTag tag="C" /> `EcKeyGenParams`
+#### <Tag tag="C" /> `EcKeyGenParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `ecKeyGenParams.name`
+##### <Tag tag="M" /> `ecKeyGenParams.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
-
-* Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be one of `'ECDSA'` or `'ECDH'`.
-
-##### <DataTag tag="M" /> `ecKeyGenParams.namedCurve`
-
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
-
-* Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be one of `'P-256'`, `'P-384'`, `'P-521'`.
-
-#### <DataTag tag="C" /> `EcKeyImportParams`
-
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
-
-##### <DataTag tag="M" /> `ecKeyImportParams.name`
-
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be one of `'ECDSA'` or `'ECDH'`.
 
-##### <DataTag tag="M" /> `ecKeyImportParams.namedCurve`
+##### <Tag tag="M" /> `ecKeyGenParams.namedCurve`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be one of `'P-256'`, `'P-384'`, `'P-521'`.
 
-#### <DataTag tag="C" /> `Ed448Params`
+#### <Tag tag="C" /> `EcKeyImportParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `ed448Params.name`
+##### <Tag tag="M" /> `ecKeyImportParams.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+
+* Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be one of `'ECDSA'` or `'ECDH'`.
+
+##### <Tag tag="M" /> `ecKeyImportParams.namedCurve`
+
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+
+* Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be one of `'P-256'`, `'P-384'`, `'P-521'`.
+
+#### <Tag tag="C" /> `Ed448Params`
+
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+
+##### <Tag tag="M" /> `ed448Params.name`
+
+<MC data={{"update":{"type":"added","version":["v18.4.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be `'Ed448'`.
 
-##### <DataTag tag="M" /> `ed448Params.context`
+##### <Tag tag="M" /> `ed448Params.context`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v18.4.0"]}}} />
 
 * Type: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -1084,13 +1084,13 @@ the message.
 The Node.js Web Crypto API implementation only supports zero-length context
 which is equivalent to not providing context at all.
 
-#### <DataTag tag="C" /> `HkdfParams`
+#### <Tag tag="C" /> `HkdfParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `hkdfParams.hash`
+##### <Tag tag="M" /> `hkdfParams.hash`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1104,24 +1104,24 @@ If represented as a [`string`](https://developer.mozilla.org/en-US/docs/Web/Java
 If represented as an [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), the object must have a `name` property
 whose value is one of the above listed values.
 
-##### <DataTag tag="M" /> `hkdfParams.info`
+##### <Tag tag="M" /> `hkdfParams.info`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
 
 Provides application-specific contextual input to the HKDF algorithm.
 This can be zero-length but must be provided.
 
-##### <DataTag tag="M" /> `hkdfParams.name`
+##### <Tag tag="M" /> `hkdfParams.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be `'HKDF'`.
 
-##### <DataTag tag="M" /> `hkdfParams.salt`
+##### <Tag tag="M" /> `hkdfParams.salt`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
 
@@ -1130,13 +1130,13 @@ It should be random or pseudorandom and should be the same length as the
 output of the digest function (for instance, if using `'SHA-256'` as the
 digest, the salt should be 256-bits of random data).
 
-#### <DataTag tag="C" /> `HmacImportParams`
+#### <Tag tag="C" /> `HmacImportParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `hmacImportParams.hash`
+##### <Tag tag="M" /> `hmacImportParams.hash`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1150,28 +1150,28 @@ If represented as a [`string`](https://developer.mozilla.org/en-US/docs/Web/Java
 If represented as an [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), the object must have a `name` property
 whose value is one of the above listed values.
 
-##### <DataTag tag="M" /> `hmacImportParams.length`
+##### <Tag tag="M" /> `hmacImportParams.length`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The optional number of bits in the HMAC key. This is optional and should
 be omitted for most cases.
 
-##### <DataTag tag="M" /> `hmacImportParams.name`
+##### <Tag tag="M" /> `hmacImportParams.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be `'HMAC'`.
 
-#### <DataTag tag="C" /> `HmacKeyGenParams`
+#### <Tag tag="C" /> `HmacKeyGenParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `hmacKeyGenParams.hash`
+##### <Tag tag="M" /> `hmacKeyGenParams.hash`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1185,9 +1185,9 @@ If represented as a [`string`](https://developer.mozilla.org/en-US/docs/Web/Java
 If represented as an [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), the object must have a `name` property
 whose value is one of the above listed values.
 
-##### <DataTag tag="M" /> `hmacKeyGenParams.length`
+##### <Tag tag="M" /> `hmacKeyGenParams.length`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -1195,19 +1195,19 @@ The number of bits to generate for the HMAC key. If omitted,
 the length will be determined by the hash algorithm used.
 This is optional and should be omitted for most cases.
 
-##### <DataTag tag="M" /> `hmacKeyGenParams.name`
+##### <Tag tag="M" /> `hmacKeyGenParams.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be `'HMAC'`.
 
-#### <DataTag tag="C" /> `Pbkdf2Params`
+#### <Tag tag="C" /> `Pbkdf2Params`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `pbkdb2Params.hash`
+##### <Tag tag="M" /> `pbkdb2Params.hash`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1221,35 +1221,35 @@ If represented as a [`string`](https://developer.mozilla.org/en-US/docs/Web/Java
 If represented as an [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), the object must have a `name` property
 whose value is one of the above listed values.
 
-##### <DataTag tag="M" /> `pbkdf2Params.iterations`
+##### <Tag tag="M" /> `pbkdf2Params.iterations`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The number of iterations the PBKDF2 algorithm should make when deriving bits.
 
-##### <DataTag tag="M" /> `pbkdf2Params.name`
+##### <Tag tag="M" /> `pbkdf2Params.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be `'PBKDF2'`.
 
-##### <DataTag tag="M" /> `pbkdf2Params.salt`
+##### <Tag tag="M" /> `pbkdf2Params.salt`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
 
 Should be at least 16 random or pseudorandom bytes.
 
-#### <DataTag tag="C" /> `RsaHashedImportParams`
+#### <Tag tag="C" /> `RsaHashedImportParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `rsaHashedImportParams.hash`
+##### <Tag tag="M" /> `rsaHashedImportParams.hash`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1263,20 +1263,20 @@ If represented as a [`string`](https://developer.mozilla.org/en-US/docs/Web/Java
 If represented as an [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), the object must have a `name` property
 whose value is one of the above listed values.
 
-##### <DataTag tag="M" /> `rsaHashedImportParams.name`
+##### <Tag tag="M" /> `rsaHashedImportParams.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be one of `'RSASSA-PKCS1-v1_5'`, `'RSA-PSS'`, or
   `'RSA-OAEP'`.
 
-#### <DataTag tag="C" /> `RsaHashedKeyGenParams`
+#### <Tag tag="C" /> `RsaHashedKeyGenParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `rsaHashedKeyGenParams.hash`
+##### <Tag tag="M" /> `rsaHashedKeyGenParams.hash`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1290,41 +1290,41 @@ If represented as a [`string`](https://developer.mozilla.org/en-US/docs/Web/Java
 If represented as an [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), the object must have a `name` property
 whose value is one of the above listed values.
 
-##### <DataTag tag="M" /> `rsaHashedKeyGenParams.modulusLength`
+##### <Tag tag="M" /> `rsaHashedKeyGenParams.modulusLength`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The length in bits of the RSA modulus. As a best practice, this should be
 at least `2048`.
 
-##### <DataTag tag="M" /> `rsaHashedKeyGenParams.name`
+##### <Tag tag="M" /> `rsaHashedKeyGenParams.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be one of `'RSASSA-PKCS1-v1_5'`, `'RSA-PSS'`, or
   `'RSA-OAEP'`.
 
-##### <DataTag tag="M" /> `rsaHashedKeyGenParams.publicExponent`
+##### <Tag tag="M" /> `rsaHashedKeyGenParams.publicExponent`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-* Type: {Uint8Array}
+* Type: [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 
-The RSA public exponent. This must be a {Uint8Array} containing a big-endian,
-unsigned integer that must fit within 32-bits. The {Uint8Array} may contain an
+The RSA public exponent. This must be a [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) containing a big-endian,
+unsigned integer that must fit within 32-bits. The [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) may contain an
 arbitrary number of leading zero-bits. The value must be a prime number. Unless
 there is reason to use a different value, use `new Uint8Array([1, 0, 1])`
 (65537) as the public exponent.
 
-#### <DataTag tag="C" /> `RsaOaepParams`
+#### <Tag tag="C" /> `RsaOaepParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 ##### rsaOaepParams.label
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
 
@@ -1335,23 +1335,23 @@ The `rsaOaepParams.label` parameter is optional.
 
 ##### rsaOaepParams.name
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) must be `'RSA-OAEP'`.
 
-#### <DataTag tag="C" /> `RsaPssParams`
+#### <Tag tag="C" /> `RsaPssParams`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-##### <DataTag tag="M" /> `rsaPssParams.name`
+##### <Tag tag="M" /> `rsaPssParams.name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be `'RSA-PSS'`.
 
-##### <DataTag tag="M" /> `rsaPssParams.saltLength`
+##### <Tag tag="M" /> `rsaPssParams.saltLength`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 

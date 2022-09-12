@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.13"]}}} />
+<MC data={{"update":{"type":"introduced_in","version":["v0.10.13"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.9.0" data={{"source_link":"lib/console.js"}} />
+<MC data={{"source_link":"lib/console.js"}} />
 
 The `node:console` module provides a simple debugging console that is similar to
 the JavaScript console mechanism provided by web browsers.
@@ -46,7 +46,7 @@ console.error(new Error('Whoops, something bad happened'));
 //     at node:internal/main/eval_string:23:3
 
 const name = 'Will Robinson';
-console.warn(`Danger $name! Danger!`);
+console.warn(`Danger ${name}! Danger!`);
 // Prints: Danger Will Robinson! Danger!, to stderr
 ```
 
@@ -65,15 +65,15 @@ myConsole.error(new Error('Whoops, something bad happened'));
 // Prints: [Error: Whoops, something bad happened], to err
 
 const name = 'Will Robinson';
-myConsole.warn(`Danger $name! Danger!`);
+myConsole.warn(`Danger ${name}! Danger!`);
 // Prints: Danger Will Robinson! Danger!, to err
 ```
 
-### <DataTag tag="C" /> `Console`
+### <Tag tag="C" /> `Console`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/9744","description":"Errors that occur while writing to the underlying streams will now be ignored by default."}]}} />
+<MC data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/9744","description":"Errors that occur while writing to the underlying streams will now be ignored by default."}]}} />
 
-<Metadata version="v18.9.0" data={{"type":"class"}} />
+<MC data={{"type":"class"}} />
 
 The `Console` class can be used to create a simple logger with configurable
 output streams and can be accessed using either `require('node:console').Console`
@@ -87,11 +87,11 @@ const { Console } = require('node:console');
 const { Console } = console;
 ```
 
-#### <DataTag tag="M" /> `new Console(stdout[, stderr][, ignoreErrors])`
+#### <Tag tag="M" /> `new Console(stdout[, stderr][, ignoreErrors])`
 
-#### <DataTag tag="M" /> `new Console(options)`
+#### <Tag tag="M" /> `new Console(options)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.2.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32964","description":"The `groupIndentation` option was introduced."},{"version":"v11.7.0","pr-url":"https://github.com/nodejs/node/pull/24978","description":"The `inspectOptions` option is introduced."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19372","description":"The `Console` constructor now supports an `options` argument, and the `colorMode` option was introduced."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/9744","description":"The `ignoreErrors` option was introduced."}]}} />
+<MC data={{"changes":[{"version":["v14.2.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32964","description":"The `groupIndentation` option was introduced."},{"version":"v11.7.0","pr-url":"https://github.com/nodejs/node/pull/24978","description":"The `inspectOptions` option is introduced."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19372","description":"The `Console` constructor now supports an `options` argument, and the `colorMode` option was introduced."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/9744","description":"The `ignoreErrors` option was introduced."}]}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `stdout` [`stream.Writable`](/api/stream#streamwritable)
@@ -132,9 +132,9 @@ The global `console` is a special `Console` whose output is sent to
 new Console({ stdout: process.stdout, stderr: process.stderr });
 ```
 
-#### <DataTag tag="M" /> `console.assert(value[, ...message])`
+#### <Tag tag="M" /> `console.assert(value[, ...message])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17706","description":"The implementation is now spec compliant and does not throw anymore."}],"update":{"type":"added","version":["v0.1.101"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17706","description":"The implementation is now spec compliant and does not throw anymore."}],"update":{"type":"added","version":["v0.1.101"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The value tested for being truthy.
 * `...message` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) All arguments besides `value` are used as error message.
@@ -156,9 +156,9 @@ console.assert();
 // Assertion failed
 ```
 
-#### <DataTag tag="M" /> `console.clear()`
+#### <Tag tag="M" /> `console.clear()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.3.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.3.0"]}}} />
 
 When `stdout` is a TTY, calling `console.clear()` will attempt to clear the
 TTY. When `stdout` is not a TTY, this method does nothing.
@@ -169,9 +169,9 @@ operates similarly to the `clear` shell command. On Windows, `console.clear()`
 will clear only the output in the current terminal viewport for the Node.js
 binary.
 
-#### <DataTag tag="M" /> `console.count([label])`
+#### <Tag tag="M" /> `console.count([label])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.3.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.3.0"]}}} />
 
 * `label` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The display label for the counter. **Default:** `'default'`.
 
@@ -202,9 +202,9 @@ undefined
 >
 ```
 
-#### <DataTag tag="M" /> `console.countReset([label])`
+#### <Tag tag="M" /> `console.countReset([label])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.3.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.3.0"]}}} />
 
 * `label` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The display label for the counter. **Default:** `'default'`.
 
@@ -224,18 +224,18 @@ undefined
 >
 ```
 
-#### <DataTag tag="M" /> `console.debug(data[, ...args])`
+#### <Tag tag="M" /> `console.debug(data[, ...args])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.10.0","pr-url":"https://github.com/nodejs/node/pull/17033","description":"`console.debug` is now an alias for `console.log`."}],"update":{"type":"added","version":["v8.0.0"]}}} />
+<MC data={{"changes":[{"version":"v8.10.0","pr-url":"https://github.com/nodejs/node/pull/17033","description":"`console.debug` is now an alias for `console.log`."}],"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `...args` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 The `console.debug()` function is an alias for [`console.log()`][].
 
-#### <DataTag tag="M" /> `console.dir(obj[, options])`
+#### <Tag tag="M" /> `console.dir(obj[, options])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.101"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.1.101"]}}} />
 
 * `obj` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -251,18 +251,18 @@ The `console.debug()` function is an alias for [`console.log()`][].
 Uses [`util.inspect()`][] on `obj` and prints the resulting string to `stdout`.
 This function bypasses any custom `inspect()` function defined on `obj`.
 
-#### <DataTag tag="M" /> `console.dirxml(...data)`
+#### <Tag tag="M" /> `console.dirxml(...data)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v9.3.0","pr-url":"https://github.com/nodejs/node/pull/17152","description":"`console.dirxml` now calls `console.log` for its arguments."}],"update":{"type":"added","version":["v8.0.0"]}}} />
+<MC data={{"changes":[{"version":"v9.3.0","pr-url":"https://github.com/nodejs/node/pull/17152","description":"`console.dirxml` now calls `console.log` for its arguments."}],"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `...data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 This method calls `console.log()` passing it the arguments received.
 This method does not produce any XML formatting.
 
-#### <DataTag tag="M" /> `console.error([data][, ...args])`
+#### <Tag tag="M" /> `console.error([data][, ...args])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.100"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.1.100"]}}} />
 
 * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `...args` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -284,9 +284,9 @@ If formatting elements (e.g. `%d`) are not found in the first string then
 [`util.inspect()`][] is called on each argument and the resulting string
 values are concatenated. See [`util.format()`][] for more information.
 
-#### <DataTag tag="M" /> `console.group([...label])`
+#### <Tag tag="M" /> `console.group([...label])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * `...label` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
@@ -296,31 +296,31 @@ length.
 If one or more `label`s are provided, those are printed first without the
 additional indentation.
 
-#### <DataTag tag="M" /> `console.groupCollapsed()`
+#### <Tag tag="M" /> `console.groupCollapsed()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 An alias for [`console.group()`][].
 
-#### <DataTag tag="M" /> `console.groupEnd()`
+#### <Tag tag="M" /> `console.groupEnd()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 Decreases indentation of subsequent lines by spaces for `groupIndentation`
 length.
 
-#### <DataTag tag="M" /> `console.info([data][, ...args])`
+#### <Tag tag="M" /> `console.info([data][, ...args])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.100"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.1.100"]}}} />
 
 * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `...args` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 The `console.info()` function is an alias for [`console.log()`][].
 
-#### <DataTag tag="M" /> `console.log([data][, ...args])`
+#### <Tag tag="M" /> `console.log([data][, ...args])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.100"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.1.100"]}}} />
 
 * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `...args` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -340,9 +340,9 @@ console.log('count:', count);
 
 See [`util.format()`][] for more information.
 
-#### <DataTag tag="M" /> `console.table(tabularData[, properties])`
+#### <Tag tag="M" /> `console.table(tabularData[, properties])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `tabularData` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `properties` string\[] Alternate properties for constructing the table.
@@ -376,9 +376,9 @@ console.table([{ a: 1, b: 'Y' }, { a: 'Z', b: 2 }], ['a']);
 // └─────────┴─────┘
 ```
 
-#### <DataTag tag="M" /> `console.time([label])`
+#### <Tag tag="M" /> `console.time([label])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.104"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.1.104"]}}} />
 
 * `label` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'default'`
 
@@ -388,9 +388,9 @@ are identified by a unique `label`. Use the same `label` when calling
 suitable time units to `stdout`. For example, if the elapsed
 time is 3869ms, `console.timeEnd()` displays "3.869s".
 
-#### <DataTag tag="M" /> `console.timeEnd([label])`
+#### <Tag tag="M" /> `console.timeEnd([label])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/29251","description":"The elapsed time is displayed with a suitable time unit."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5901","description":"This method no longer supports multiple calls that don't map to individual `console.time()` calls; see below for details."}],"update":{"type":"added","version":["v0.1.104"]}}} />
+<MC data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/29251","description":"The elapsed time is displayed with a suitable time unit."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5901","description":"This method no longer supports multiple calls that don't map to individual `console.time()` calls; see below for details."}],"update":{"type":"added","version":["v0.1.104"]}}} />
 
 * `label` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'default'`
 
@@ -404,9 +404,9 @@ console.timeEnd('bunch-of-stuff');
 // Prints: bunch-of-stuff: 225.438ms
 ```
 
-#### <DataTag tag="M" /> `console.timeLog([label][, ...data])`
+#### <Tag tag="M" /> `console.timeLog([label][, ...data])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.7.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v10.7.0"]}}} />
 
 * `label` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'default'`
 * `...data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -423,9 +423,9 @@ doExpensiveProcess2(value);
 console.timeEnd('process');
 ```
 
-#### <DataTag tag="M" /> `console.trace([message][, ...args])`
+#### <Tag tag="M" /> `console.trace([message][, ...args])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.104"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.1.104"]}}} />
 
 * `message` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `...args` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -449,9 +449,9 @@ console.trace('Show me');
 //    at REPLServer.Interface._ttyWrite (readline.js:826:14)
 ```
 
-#### <DataTag tag="M" /> `console.warn([data][, ...args])`
+#### <Tag tag="M" /> `console.warn([data][, ...args])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.100"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.1.100"]}}} />
 
 * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `...args` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -464,9 +464,9 @@ The following methods are exposed by the V8 engine in the general API but do
 not display anything unless used in conjunction with the [inspector][]
 (`--inspect` flag).
 
-#### <DataTag tag="M" /> `console.profile([label])`
+#### <Tag tag="M" /> `console.profile([label])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `label` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -482,9 +482,9 @@ console.profileEnd('MyLabel');
 // Adds the profile 'MyLabel' to the Profiles panel of the inspector.
 ```
 
-#### <DataTag tag="M" /> `console.profileEnd([label])`
+#### <Tag tag="M" /> `console.profileEnd([label])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `label` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -496,9 +496,9 @@ the report to the **Profiles** panel of the inspector. See
 If this method is called without a label, the most recently started profile is
 stopped.
 
-#### <DataTag tag="M" /> `console.timeStamp([label])`
+#### <Tag tag="M" /> `console.timeStamp([label])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `label` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 

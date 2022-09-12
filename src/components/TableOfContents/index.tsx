@@ -23,11 +23,9 @@ const prefix = (t: string) => {
 
 const removeApiSpanTagFromItem = (item: TableOfContentsItem) => ({
   ...item,
-  url: item.url
-    ? item.url.replace(/datatag-(tagc|tagm|tage)--/, '')
-    : undefined,
+  url: item.url ? item.url.replace(/tag-(tagc|tagm|tage)--/, '') : undefined,
   title: item.title
-    ? item.title.replace(/<DataTag tag="(M|C|E)" \/> /, (_, t) => prefix(t))
+    ? item.title.replace(/<Tag tag="(M|C|E)" \/> /, (_, t) => prefix(t))
     : undefined,
 });
 

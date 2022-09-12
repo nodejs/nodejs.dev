@@ -5,13 +5,13 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.3.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36070","description":"It is possible to abort a request with an AbortSignal."},{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34664","description":"Requests with the `host` header (with or without `:authority`) can now be sent/received."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22466","description":"HTTP/2 is now Stable. Previously, it had been Experimental."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":["v15.3.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36070","description":"It is possible to abort a request with an AbortSignal."},{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34664","description":"Requests with the `host` header (with or without `:authority`) can now be sent/received."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22466","description":"HTTP/2 is now Stable. Previously, it had been Experimental."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"introduced_in","version":["v8.4.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.9.0" data={{"source_link":"lib/http2.js"}} />
+<MC data={{"source_link":"lib/http2.js"}} />
 
 The `node:http2` module provides an implementation of the [HTTP/2][] protocol.
 It can be accessed using:
@@ -119,7 +119,7 @@ const req = client.request({ ':path': '/' });
 
 req.on('response', (headers, flags) => {
   for (const name in headers) {
-    console.log(`$name: $headers[name]`);
+    console.log(`${name}: ${headers[name]}`);
   }
 });
 
@@ -127,15 +127,15 @@ req.setEncoding('utf8');
 let data = '';
 req.on('data', (chunk) => { data += chunk; });
 req.on('end', () => {
-  console.log(`\n$data`);
+  console.log(`\n${data}`);
   client.close();
 });
 req.end();
 ```
 
-#### <DataTag tag="C" /> `Http2Session`
+#### <Tag tag="C" /> `Http2Session`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * Extends: [`EventEmitter`](/api/events#eventemitter)
 
@@ -156,7 +156,7 @@ User code will not create `Http2Session` instances directly. Server-side
 new HTTP/2 connection is received. Client-side `Http2Session` instances are
 created using the `http2.connect()` method.
 
-##### <DataTag tag="M" /> `Http2Session` and sockets
+##### <Tag tag="M" /> `Http2Session` and sockets
 
 Every `Http2Session` instance is associated with exactly one [`net.Socket`][] or
 [`tls.TLSSocket`][] when it is created. When either the `Socket` or the
@@ -171,18 +171,18 @@ the socket to become unusable.
 Once a `Socket` has been bound to an `Http2Session`, user code should rely
 solely on the API of the `Http2Session`.
 
-##### <DataTag tag="E" /> `'close'`
+##### <Tag tag="E" /> `'close'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 The `'close'` event is emitted once the `Http2Session` has been destroyed. Its
 listener does not expect any arguments.
 
-##### <DataTag tag="E" /> `'connect'`
+##### <Tag tag="E" /> `'connect'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* `session` {Http2Session}
+* `session` [`Http2Session`](/api/http2#http2session)
 * `socket` [`net.Socket`](/api/net#netsocket)
 
 The `'connect'` event is emitted once the `Http2Session` has been successfully
@@ -190,18 +190,18 @@ connected to the remote peer and communication may begin.
 
 User code will typically not listen for this event directly.
 
-##### <DataTag tag="E" /> `'error'`
+##### <Tag tag="E" /> `'error'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
 The `'error'` event is emitted when an error occurs during the processing of
 an `Http2Session`.
 
-##### <DataTag tag="E" /> `'frameError'`
+##### <Tag tag="E" /> `'frameError'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `type` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The frame type.
 * `code` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The error code.
@@ -218,9 +218,9 @@ closed and destroyed immediately following the `'frameError'` event. If the
 event is not associated with a stream, the `Http2Session` will be shut down
 immediately following the `'frameError'` event.
 
-##### <DataTag tag="E" /> `'goaway'`
+##### <Tag tag="E" /> `'goaway'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `errorCode` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The HTTP/2 error code specified in the `GOAWAY` frame.
 * `lastStreamID` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The ID of the last stream the remote peer successfully
@@ -233,9 +233,9 @@ The `'goaway'` event is emitted when a `GOAWAY` frame is received.
 The `Http2Session` instance will be shut down automatically when the `'goaway'`
 event is emitted.
 
-##### <DataTag tag="E" /> `'localSettings'`
+##### <Tag tag="E" /> `'localSettings'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `settings` {HTTP/2 Settings Object} A copy of the `SETTINGS` frame received.
 
@@ -253,18 +253,18 @@ session.on('localSettings', (settings) => {
 });
 ```
 
-##### <DataTag tag="E" /> `'ping'`
+##### <Tag tag="E" /> `'ping'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.12.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v10.12.0"]}}} />
 
 * `payload` [`Buffer`](/api/buffer#buffer) The `PING` frame 8-byte payload
 
 The `'ping'` event is emitted whenever a `PING` frame is received from the
 connected peer.
 
-##### <DataTag tag="E" /> `'remoteSettings'`
+##### <Tag tag="E" /> `'remoteSettings'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `settings` {HTTP/2 Settings Object} A copy of the `SETTINGS` frame received.
 
@@ -277,11 +277,11 @@ session.on('remoteSettings', (settings) => {
 });
 ```
 
-##### <DataTag tag="E" /> `'stream'`
+##### <Tag tag="E" /> `'stream'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* `stream` {Http2Stream} A reference to the stream
+* `stream` [`Http2Stream`](/api/http2#http2stream) A reference to the stream
 * `headers` {HTTP/2 Headers Object} An object describing the headers
 * `flags` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The associated numeric flags
 * `rawHeaders` [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) An array containing the raw header names followed by
@@ -331,9 +331,9 @@ Even though HTTP/2 streams and network sockets are not in a 1:1 correspondence,
 a network error will destroy each individual stream and must be handled on the
 stream level, as shown above.
 
-##### <DataTag tag="E" /> `'timeout'`
+##### <Tag tag="E" /> `'timeout'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 After the `http2session.setTimeout()` method is used to set the timeout period
 for this `Http2Session`, the `'timeout'` event is emitted if there is no
@@ -345,9 +345,9 @@ session.setTimeout(2000);
 session.on('timeout', () => { /* .. */ });
 ```
 
-##### <DataTag tag="M" /> `http2session.alpnProtocol`
+##### <Tag tag="M" /> `http2session.alpnProtocol`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -356,9 +356,9 @@ socket, `h2c` if the `Http2Session` is not connected to a `TLSSocket`, or
 will return the value of the connected `TLSSocket`'s own `alpnProtocol`
 property.
 
-##### <DataTag tag="M" /> `http2session.close([callback])`
+##### <Tag tag="M" /> `http2session.close([callback])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
@@ -370,18 +370,18 @@ are no open `Http2Stream` instances.
 If specified, the `callback` function is registered as a handler for the
 `'close'` event.
 
-##### <DataTag tag="M" /> `http2session.closed`
+##### <Tag tag="M" /> `http2session.closed`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Will be `true` if this `Http2Session` instance has been closed, otherwise
 `false`.
 
-##### <DataTag tag="M" /> `http2session.connecting`
+##### <Tag tag="M" /> `http2session.connecting`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -389,9 +389,9 @@ Will be `true` if this `Http2Session` instance is still connecting, will be set
 to `false` before emitting `connect` event and/or calling the `http2.connect`
 callback.
 
-##### <DataTag tag="M" /> `http2session.destroy([error][, code])`
+##### <Tag tag="M" /> `http2session.destroy([error][, code])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) An `Error` object if the `Http2Session` is being destroyed
   due to an error.
@@ -409,18 +409,18 @@ is not undefined, an `'error'` event will be emitted immediately before the
 If there are any remaining open `Http2Streams` associated with the
 `Http2Session`, those will also be destroyed.
 
-##### <DataTag tag="M" /> `http2session.destroyed`
+##### <Tag tag="M" /> `http2session.destroyed`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Will be `true` if this `Http2Session` instance has been destroyed and must no
 longer be used, otherwise `false`.
 
-##### <DataTag tag="M" /> `http2session.encrypted`
+##### <Tag tag="M" /> `http2session.encrypted`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -429,9 +429,9 @@ connected, `true` if the `Http2Session` is connected with a `TLSSocket`,
 and `false` if the `Http2Session` is connected to any other kind of socket
 or stream.
 
-##### <DataTag tag="M" /> `http2session.goaway([code[, lastStreamID[, opaqueData]]])`
+##### <Tag tag="M" /> `http2session.goaway([code[, lastStreamID[, opaqueData]]])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 * `code` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) An HTTP/2 error code
 * `lastStreamID` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The numeric ID of the last processed `Http2Stream`
@@ -441,18 +441,18 @@ or stream.
 Transmits a `GOAWAY` frame to the connected peer _without_ shutting down the
 `Http2Session`.
 
-##### <DataTag tag="M" /> `http2session.localSettings`
+##### <Tag tag="M" /> `http2session.localSettings`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * {HTTP/2 Settings Object}
 
 A prototype-less object describing the current local settings of this
 `Http2Session`. The local settings are local to _this_ `Http2Session` instance.
 
-##### <DataTag tag="M" /> `http2session.originSet`
+##### <Tag tag="M" /> `http2session.originSet`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 * [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -462,9 +462,9 @@ considered authoritative.
 
 The `originSet` property is only available when using a secure TLS connection.
 
-##### <DataTag tag="M" /> `http2session.pendingSettingsAck`
+##### <Tag tag="M" /> `http2session.pendingSettingsAck`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -473,9 +473,9 @@ a sent `SETTINGS` frame. Will be `true` after calling the
 `http2session.settings()` method. Will be `false` once all sent `SETTINGS`
 frames have been acknowledged.
 
-##### <DataTag tag="M" /> `http2session.ping([payload, ]callback)`
+##### <Tag tag="M" /> `http2session.ping([payload, ]callback)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.9.3"]}}} />
+<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.9.3"]}}} />
 
 * `payload` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Optional ping payload.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -501,7 +501,7 @@ payload.
 ```js
 session.ping(Buffer.from('abcdefgh'), (err, duration, payload) => {
   if (!err) {
-    console.log(`Ping acknowledged in $duration milliseconds`);
+    console.log(`Ping acknowledged in ${duration} milliseconds`);
     console.log(`With payload '${payload.toString()}'`);
   }
 });
@@ -510,25 +510,25 @@ session.ping(Buffer.from('abcdefgh'), (err, duration, payload) => {
 If the `payload` argument is not specified, the default payload will be the
 64-bit timestamp (little endian) marking the start of the `PING` duration.
 
-##### <DataTag tag="M" /> `http2session.ref()`
+##### <Tag tag="M" /> `http2session.ref()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 Calls [`ref()`][`net.Socket.prototype.ref()`] on this `Http2Session`
 instance's underlying [`net.Socket`][].
 
-##### <DataTag tag="M" /> `http2session.remoteSettings`
+##### <Tag tag="M" /> `http2session.remoteSettings`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * {HTTP/2 Settings Object}
 
 A prototype-less object describing the current remote settings of this
 `Http2Session`. The remote settings are set by the _connected_ HTTP/2 peer.
 
-##### <DataTag tag="M" /> `http2session.setLocalWindowSize(windowSize)`
+##### <Tag tag="M" /> `http2session.setLocalWindowSize(windowSize)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.3.0","v14.18.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.3.0","v14.18.0"]}}} />
 
 * `windowSize` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -548,9 +548,9 @@ server.on('connect', (session) => {
 });
 ```
 
-##### <DataTag tag="M" /> `http2session.setTimeout(msecs, callback)`
+##### <Tag tag="M" /> `http2session.setTimeout(msecs, callback)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `msecs` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -559,9 +559,9 @@ Used to set a callback function that is called when there is no activity on
 the `Http2Session` after `msecs` milliseconds. The given `callback` is
 registered as a listener on the `'timeout'` event.
 
-##### <DataTag tag="M" /> `http2session.socket`
+##### <Tag tag="M" /> `http2session.socket`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`net.Socket`](/api/net#netsocket) | [`tls.TLSSocket`](/api/tls#tlstlssocket)
 
@@ -576,9 +576,9 @@ an error with code `ERR_HTTP2_NO_SOCKET_MANIPULATION`. See
 
 All other interactions will be routed directly to the socket.
 
-##### <DataTag tag="M" /> `http2session.state`
+##### <Tag tag="M" /> `http2session.state`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 Provides miscellaneous information about the current state of the
 `Http2Session`.
@@ -605,9 +605,9 @@ Provides miscellaneous information about the current state of the
 
 An object describing the current status of this `Http2Session`.
 
-##### <DataTag tag="M" /> `http2session.settings([settings][, callback])`
+##### <Tag tag="M" /> `http2session.settings([settings][, callback])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `settings` {HTTP/2 Settings Object}
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Callback that is called once the session is connected or
@@ -627,9 +627,9 @@ The new settings will not become effective until the `SETTINGS` acknowledgment
 is received and the `'localSettings'` event is emitted. It is possible to send
 multiple `SETTINGS` frames while acknowledgment is still pending.
 
-##### <DataTag tag="M" /> `http2session.type`
+##### <Tag tag="M" /> `http2session.type`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -638,22 +638,22 @@ The `http2session.type` will be equal to
 server, and `http2.constants.NGHTTP2_SESSION_CLIENT` if the instance is a
 client.
 
-##### <DataTag tag="M" /> `http2session.unref()`
+##### <Tag tag="M" /> `http2session.unref()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 Calls [`unref()`][`net.Socket.prototype.unref()`] on this `Http2Session`
 instance's underlying [`net.Socket`][].
 
-#### <DataTag tag="C" /> `ServerHttp2Session`
+#### <Tag tag="C" /> `ServerHttp2Session`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* Extends: {Http2Session}
+* Extends: [`Http2Session`](/api/http2#http2session)
 
-##### <DataTag tag="M" /> `serverhttp2session.altsvc(alt, originOrStream)`
+##### <Tag tag="M" /> `serverhttp2session.altsvc(alt, originOrStream)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 * `alt` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A description of the alternative service configuration as
   defined by [RFC 7838][].
@@ -717,9 +717,9 @@ The protocol identifier (`'h2'` in the examples) may be any valid
 The syntax of these values is not validated by the Node.js implementation and
 are passed through as provided by the user or received from the peer.
 
-##### <DataTag tag="M" /> `serverhttp2session.origin(...origins)`
+##### <Tag tag="M" /> `serverhttp2session.origin(...origins)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.12.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v10.12.0"]}}} />
 
 * `origins` { string | URL | Object } One or more URL Strings passed as
   separate arguments.
@@ -766,15 +766,15 @@ server.on('stream', (stream) => {
 });
 ```
 
-#### <DataTag tag="C" /> `ClientHttp2Session`
+#### <Tag tag="C" /> `ClientHttp2Session`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* Extends: {Http2Session}
+* Extends: [`Http2Session`](/api/http2#http2session)
 
-##### <DataTag tag="E" /> `'altsvc'`
+##### <Tag tag="E" /> `'altsvc'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 * `alt` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `origin` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -796,9 +796,9 @@ client.on('altsvc', (alt, origin, streamId) => {
 });
 ```
 
-##### <DataTag tag="E" /> `'origin'`
+##### <Tag tag="E" /> `'origin'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.12.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v10.12.0"]}}} />
 
 * `origins` string\[]
 
@@ -819,9 +819,9 @@ client.on('origin', (origins) => {
 
 The `'origin'` event is only emitted when using a secure TLS connection.
 
-##### <DataTag tag="M" /> `clienthttp2session.request(headers[, options])`
+##### <Tag tag="M" /> `clienthttp2session.request(headers[, options])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `headers` {HTTP/2 Headers Object}
 
@@ -843,7 +843,7 @@ The `'origin'` event is only emitted when using a secure TLS connection.
   * `signal` [`AbortSignal`](/api/globals#abortsignal) An AbortSignal that may be used to abort an ongoing
     request.
 
-* Returns: {ClientHttp2Stream}
+* Returns: [`ClientHttp2Stream`](/api/http2#clienthttp2stream)
 
 For HTTP/2 Client `Http2Session` instances only, the `http2session.request()`
 creates and returns an `Http2Stream` instance that can be used to send an
@@ -894,9 +894,9 @@ they respectively default to:
 * `:method` = `'GET'`
 * `:path` = `/`
 
-#### <DataTag tag="C" /> `Http2Stream`
+#### <Tag tag="C" /> `Http2Stream`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * Extends: [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -932,7 +932,7 @@ stream.respond({
 });
 ```
 
-##### <DataTag tag="M" /> `Http2Stream` Lifecycle
+##### <Tag tag="M" /> `Http2Stream` Lifecycle
 
 ###### Creation
 
@@ -977,9 +977,9 @@ property will be `true` and the `http2stream.rstCode` property will specify the
 `RST_STREAM` error code. The `Http2Stream` instance is no longer usable once
 destroyed.
 
-##### <DataTag tag="E" /> `'aborted'`
+##### <Tag tag="E" /> `'aborted'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 The `'aborted'` event is emitted whenever a `Http2Stream` instance is
 abnormally aborted in mid-communication.
@@ -988,9 +988,9 @@ Its listener does not expect any arguments.
 The `'aborted'` event will only be emitted if the `Http2Stream` writable side
 has not been ended.
 
-##### <DataTag tag="E" /> `'close'`
+##### <Tag tag="E" /> `'close'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 The `'close'` event is emitted when the `Http2Stream` is destroyed. Once
 this event is emitted, the `Http2Stream` instance is no longer usable.
@@ -999,18 +999,18 @@ The HTTP/2 error code used when closing the stream can be retrieved using
 the `http2stream.rstCode` property. If the code is any value other than
 `NGHTTP2_NO_ERROR` (`0`), an `'error'` event will have also been emitted.
 
-##### <DataTag tag="E" /> `'error'`
+##### <Tag tag="E" /> `'error'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
 The `'error'` event is emitted when an error occurs during the processing of
 an `Http2Stream`.
 
-##### <DataTag tag="E" /> `'frameError'`
+##### <Tag tag="E" /> `'frameError'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `type` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The frame type.
 * `code` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The error code.
@@ -1023,26 +1023,26 @@ argument identifying the frame type, and an integer argument identifying the
 error code. The `Http2Stream` instance will be destroyed immediately after the
 `'frameError'` event is emitted.
 
-##### <DataTag tag="E" /> `'ready'`
+##### <Tag tag="E" /> `'ready'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 The `'ready'` event is emitted when the `Http2Stream` has been opened, has
 been assigned an `id`, and can be used. The listener does not expect any
 arguments.
 
-##### <DataTag tag="E" /> `'timeout'`
+##### <Tag tag="E" /> `'timeout'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 The `'timeout'` event is emitted after no activity is received for this
 `Http2Stream` within the number of milliseconds set using
 `http2stream.setTimeout()`.
 Its listener does not expect any arguments.
 
-##### <DataTag tag="E" /> `'trailers'`
+##### <Tag tag="E" /> `'trailers'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `headers` {HTTP/2 Headers Object} An object describing the headers
 * `flags` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The associated numeric flags
@@ -1061,36 +1061,36 @@ stream.on('trailers', (headers, flags) => {
 });
 ```
 
-##### <DataTag tag="E" /> `'wantTrailers'`
+##### <Tag tag="E" /> `'wantTrailers'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 The `'wantTrailers'` event is emitted when the `Http2Stream` has queued the
 final `DATA` frame to be sent on a frame and the `Http2Stream` is ready to send
 trailing headers. When initiating a request or response, the `waitForTrailers`
 option must be set for this event to be emitted.
 
-##### <DataTag tag="M" /> `http2stream.aborted`
+##### <Tag tag="M" /> `http2stream.aborted`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Set to `true` if the `Http2Stream` instance was aborted abnormally. When set,
 the `'aborted'` event will have been emitted.
 
-##### <DataTag tag="M" /> `http2stream.bufferSize`
+##### <Tag tag="M" /> `http2stream.bufferSize`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.2.0","v10.16.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v11.2.0","v10.16.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 This property shows the number of characters currently buffered to be written.
 See [`net.Socket.bufferSize`][] for details.
 
-##### <DataTag tag="M" /> `http2stream.close(code[, callback])`
+##### <Tag tag="M" /> `http2stream.close(code[, callback])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `code` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Unsigned 32-bit integer identifying the error code.
   **Default:** `http2.constants.NGHTTP2_NO_ERROR` (`0x00`).
@@ -1100,26 +1100,26 @@ See [`net.Socket.bufferSize`][] for details.
 Closes the `Http2Stream` instance by sending an `RST_STREAM` frame to the
 connected HTTP/2 peer.
 
-##### <DataTag tag="M" /> `http2stream.closed`
+##### <Tag tag="M" /> `http2stream.closed`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Set to `true` if the `Http2Stream` instance has been closed.
 
-##### <DataTag tag="M" /> `http2stream.destroyed`
+##### <Tag tag="M" /> `http2stream.destroyed`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Set to `true` if the `Http2Stream` instance has been destroyed and is no longer
 usable.
 
-##### <DataTag tag="M" /> `http2stream.endAfterHeaders`
+##### <Tag tag="M" /> `http2stream.endAfterHeaders`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.11.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v10.11.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1127,27 +1127,27 @@ Set to `true` if the `END_STREAM` flag was set in the request or response
 HEADERS frame received, indicating that no additional data should be received
 and the readable side of the `Http2Stream` will be closed.
 
-##### <DataTag tag="M" /> `http2stream.id`
+##### <Tag tag="M" /> `http2stream.id`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
 The numeric stream identifier of this `Http2Stream` instance. Set to `undefined`
 if the stream identifier has not yet been assigned.
 
-##### <DataTag tag="M" /> `http2stream.pending`
+##### <Tag tag="M" /> `http2stream.pending`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Set to `true` if the `Http2Stream` instance has not yet been assigned a
 numeric stream identifier.
 
-##### <DataTag tag="M" /> `http2stream.priority(options)`
+##### <Tag tag="M" /> `http2stream.priority(options)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `exclusive` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When `true` and `parent` identifies a parent Stream,
@@ -1164,9 +1164,9 @@ numeric stream identifier.
 
 Updates the priority for this `Http2Stream` instance.
 
-##### <DataTag tag="M" /> `http2stream.rstCode`
+##### <Tag tag="M" /> `http2stream.rstCode`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -1175,43 +1175,43 @@ destroyed after either receiving an `RST_STREAM` frame from the connected peer,
 calling `http2stream.close()`, or `http2stream.destroy()`. Will be
 `undefined` if the `Http2Stream` has not been closed.
 
-##### <DataTag tag="M" /> `http2stream.sentHeaders`
+##### <Tag tag="M" /> `http2stream.sentHeaders`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.5.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.5.0"]}}} />
 
 * {HTTP/2 Headers Object}
 
 An object containing the outbound headers sent for this `Http2Stream`.
 
-##### <DataTag tag="M" /> `http2stream.sentInfoHeaders`
+##### <Tag tag="M" /> `http2stream.sentInfoHeaders`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.5.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.5.0"]}}} />
 
 * {HTTP/2 Headers Object\[]}
 
 An array of objects containing the outbound informational (additional) headers
 sent for this `Http2Stream`.
 
-##### <DataTag tag="M" /> `http2stream.sentTrailers`
+##### <Tag tag="M" /> `http2stream.sentTrailers`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.5.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v9.5.0"]}}} />
 
 * {HTTP/2 Headers Object}
 
 An object containing the outbound trailers sent for this `HttpStream`.
 
-##### <DataTag tag="M" /> `http2stream.session`
+##### <Tag tag="M" /> `http2stream.session`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* {Http2Session}
+* [`Http2Session`](/api/http2#http2session)
 
 A reference to the `Http2Session` instance that owns this `Http2Stream`. The
 value will be `undefined` after the `Http2Stream` instance is destroyed.
 
-##### <DataTag tag="M" /> `http2stream.setTimeout(msecs, callback)`
+##### <Tag tag="M" /> `http2stream.setTimeout(msecs, callback)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `msecs` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -1226,9 +1226,9 @@ const req = client.request({ ':path': '/' });
 req.setTimeout(5000, () => req.close(NGHTTP2_CANCEL));
 ```
 
-##### <DataTag tag="M" /> `http2stream.state`
+##### <Tag tag="M" /> `http2stream.state`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 Provides miscellaneous information about the current state of the
 `Http2Stream`.
@@ -1248,9 +1248,9 @@ Provides miscellaneous information about the current state of the
 
 A current state of this `Http2Stream`.
 
-##### <DataTag tag="M" /> `http2stream.sendTrailers(headers)`
+##### <Tag tag="M" /> `http2stream.sendTrailers(headers)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `headers` {HTTP/2 Headers Object}
 
@@ -1276,28 +1276,28 @@ server.on('stream', (stream) => {
 The HTTP/1 specification forbids trailers from containing HTTP/2 pseudo-header
 fields (e.g. `':method'`, `':path'`, etc).
 
-#### <DataTag tag="C" /> `ClientHttp2Stream`
+#### <Tag tag="C" /> `ClientHttp2Stream`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* Extends {Http2Stream}
+* Extends [`Http2Stream`](/api/http2#http2stream)
 
 The `ClientHttp2Stream` class is an extension of `Http2Stream` that is
 used exclusively on HTTP/2 Clients. `Http2Stream` instances on the client
 provide events such as `'response'` and `'push'` that are only relevant on
 the client.
 
-##### <DataTag tag="E" /> `'continue'`
+##### <Tag tag="E" /> `'continue'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 Emitted when the server sends a `100 Continue` status, usually because
 the request contained `Expect: 100-continue`. This is an instruction that
 the client should send the request body.
 
-##### <DataTag tag="E" /> `'headers'`
+##### <Tag tag="E" /> `'headers'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `headers` {HTTP/2 Headers Object}
 * `flags` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -1313,9 +1313,9 @@ stream.on('headers', (headers, flags) => {
 });
 ```
 
-##### <DataTag tag="E" /> `'push'`
+##### <Tag tag="E" /> `'push'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `headers` {HTTP/2 Headers Object}
 * `flags` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -1330,9 +1330,9 @@ stream.on('push', (headers, flags) => {
 });
 ```
 
-##### <DataTag tag="E" /> `'response'`
+##### <Tag tag="E" /> `'response'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `headers` {HTTP/2 Headers Object}
 * `flags` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -1351,36 +1351,36 @@ req.on('response', (headers, flags) => {
 });
 ```
 
-#### <DataTag tag="C" /> `ServerHttp2Stream`
+#### <Tag tag="C" /> `ServerHttp2Stream`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* Extends: {Http2Stream}
+* Extends: [`Http2Stream`](/api/http2#http2stream)
 
 The `ServerHttp2Stream` class is an extension of [`Http2Stream`][] that is
 used exclusively on HTTP/2 Servers. `Http2Stream` instances on the server
 provide additional methods such as `http2stream.pushStream()` and
 `http2stream.respond()` that are only relevant on the server.
 
-##### <DataTag tag="M" /> `http2stream.additionalHeaders(headers)`
+##### <Tag tag="M" /> `http2stream.additionalHeaders(headers)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `headers` {HTTP/2 Headers Object}
 
 Sends an additional informational `HEADERS` frame to the connected HTTP/2 peer.
 
-##### <DataTag tag="M" /> `http2stream.headersSent`
+##### <Tag tag="M" /> `http2stream.headersSent`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 True if headers were sent, false otherwise (read-only).
 
-##### <DataTag tag="M" /> `http2stream.pushAllowed`
+##### <Tag tag="M" /> `http2stream.pushAllowed`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1389,9 +1389,9 @@ client's most recent `SETTINGS` frame. Will be `true` if the remote peer
 accepts push streams, `false` otherwise. Settings are the same for every
 `Http2Stream` in the same `Http2Session`.
 
-##### <DataTag tag="M" /> `http2stream.pushStream(headers[, options], callback)`
+##### <Tag tag="M" /> `http2stream.pushStream(headers[, options], callback)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `headers` {HTTP/2 Headers Object}
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1404,7 +1404,7 @@ accepts push streams, `false` otherwise. Settings are the same for every
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Callback that is called once the push stream has been
   initiated.
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `pushStream` {ServerHttp2Stream} The returned `pushStream` object.
+  * `pushStream` [`ServerHttp2Stream`](/api/http2#serverhttp2stream) The returned `pushStream` object.
   * `headers` {HTTP/2 Headers Object} Headers object the `pushStream` was
     initiated with.
 
@@ -1433,9 +1433,9 @@ a `weight` value to `http2stream.priority` with the `silent` option set to
 Calling `http2stream.pushStream()` from within a pushed stream is not permitted
 and will throw an error.
 
-##### <DataTag tag="M" /> `http2stream.respond([headers[, options]])`
+##### <Tag tag="M" /> `http2stream.respond([headers[, options]])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/33160","description":"Allow explicitly setting date headers."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/33160","description":"Allow explicitly setting date headers."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `headers` {HTTP/2 Headers Object}
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1475,9 +1475,9 @@ server.on('stream', (stream) => {
 });
 ```
 
-##### <DataTag tag="M" /> `http2stream.respondWithFD(fd[, headers[, options]])`
+##### <Tag tag="M" /> `http2stream.respondWithFD(fd[, headers[, options]])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/33160","description":"Allow explicitly setting date headers."},{"version":"v12.12.0","pr-url":"https://github.com/nodejs/node/pull/29876","description":"The `fd` option may now be a `FileHandle`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18936","description":"Any readable file descriptor, not necessarily for a regular file, is supported now."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/33160","description":"Allow explicitly setting date headers."},{"version":"v12.12.0","pr-url":"https://github.com/nodejs/node/pull/29876","description":"The `fd` option may now be a `FileHandle`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18936","description":"Any readable file descriptor, not necessarily for a regular file, is supported now."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `fd` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`FileHandle`](/api/fs#filehandle) A readable file descriptor.
 * `headers` {HTTP/2 Headers Object}
@@ -1564,9 +1564,9 @@ server.on('stream', (stream) => {
 });
 ```
 
-##### <DataTag tag="M" /> `http2stream.respondWithFile(path[, headers[, options]])`
+##### <Tag tag="M" /> `http2stream.respondWithFile(path[, headers[, options]])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/33160","description":"Allow explicitly setting date headers."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18936","description":"Any readable file, not necessarily a regular file, is supported now."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/33160","description":"Allow explicitly setting date headers."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18936","description":"Any readable file, not necessarily a regular file, is supported now."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `headers` {HTTP/2 Headers Object}
@@ -1679,9 +1679,9 @@ server.on('stream', (stream) => {
 });
 ```
 
-#### <DataTag tag="C" /> `Http2Server`
+#### <Tag tag="C" /> `Http2Server`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * Extends: [`net.Server`](/api/net#netserver)
 
@@ -1689,12 +1689,12 @@ Instances of `Http2Server` are created using the `http2.createServer()`
 function. The `Http2Server` class is not exported directly by the
 `node:http2` module.
 
-##### <DataTag tag="E" /> `'checkContinue'`
+##### <Tag tag="E" /> `'checkContinue'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
-* `request` {http2.Http2ServerRequest}
-* `response` {http2.Http2ServerResponse}
+* `request` [`http2.Http2ServerRequest`](/api/http2#http2http2serverrequest)
+* `response` [`http2.Http2ServerResponse`](/api/http2#http2http2serverresponse)
 
 If a [`'request'`][] listener is registered or [`http2.createServer()`][] is
 supplied a callback function, the `'checkContinue'` event is emitted each time
@@ -1710,9 +1710,9 @@ the request body.
 When this event is emitted and handled, the [`'request'`][] event will
 not be emitted.
 
-##### <DataTag tag="E" /> `'connection'`
+##### <Tag tag="E" /> `'connection'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `socket` [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -1723,40 +1723,40 @@ access this event.
 This event can also be explicitly emitted by users to inject connections
 into the HTTP server. In that case, any [`Duplex`][] stream can be passed.
 
-##### <DataTag tag="E" /> `'request'`
+##### <Tag tag="E" /> `'request'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* `request` {http2.Http2ServerRequest}
-* `response` {http2.Http2ServerResponse}
+* `request` [`http2.Http2ServerRequest`](/api/http2#http2http2serverrequest)
+* `response` [`http2.Http2ServerResponse`](/api/http2#http2http2serverresponse)
 
 Emitted each time there is a request. There may be multiple requests
 per session. See the [Compatibility API][].
 
-##### <DataTag tag="E" /> `'session'`
+##### <Tag tag="E" /> `'session'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* `session` {ServerHttp2Session}
+* `session` [`ServerHttp2Session`](/api/http2#serverhttp2session)
 
 The `'session'` event is emitted when a new `Http2Session` is created by the
 `Http2Server`.
 
-##### <DataTag tag="E" /> `'sessionError'`
+##### <Tag tag="E" /> `'sessionError'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-* `session` {ServerHttp2Session}
+* `session` [`ServerHttp2Session`](/api/http2#serverhttp2session)
 
 The `'sessionError'` event is emitted when an `'error'` event is emitted by
 an `Http2Session` object associated with the `Http2Server`.
 
-##### <DataTag tag="E" /> `'stream'`
+##### <Tag tag="E" /> `'stream'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* `stream` {Http2Stream} A reference to the stream
+* `stream` [`Http2Stream`](/api/http2#http2stream) A reference to the stream
 * `headers` {HTTP/2 Headers Object} An object describing the headers
 * `flags` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The associated numeric flags
 * `rawHeaders` [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) An array containing the raw header names followed by
@@ -1790,17 +1790,17 @@ server.on('stream', (stream, headers, flags) => {
 });
 ```
 
-##### <DataTag tag="E" /> `'timeout'`
+##### <Tag tag="E" /> `'timeout'`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27558","description":"The default timeout changed from 120s to 0 (no timeout)."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27558","description":"The default timeout changed from 120s to 0 (no timeout)."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 The `'timeout'` event is emitted when there is no activity on the Server for
 a given number of milliseconds set using `http2server.setTimeout()`.
 **Default:** 0 (no timeout)
 
-##### <DataTag tag="M" /> `server.close([callback])`
+##### <Tag tag="M" /> `server.close([callback])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
@@ -1813,13 +1813,13 @@ If `callback` is provided, it is not invoked until all active sessions have been
 closed, although the server has already stopped allowing new sessions. See
 [`net.Server.close()`][] for more details.
 
-##### <DataTag tag="M" /> `server.setTimeout([msecs][, callback])`
+##### <Tag tag="M" /> `server.setTimeout([msecs][, callback])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27558","description":"The default timeout changed from 120s to 0 (no timeout)."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27558","description":"The default timeout changed from 120s to 0 (no timeout)."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `msecs` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** 0 (no timeout)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: {Http2Server}
+* Returns: [`Http2Server`](/api/http2#http2server)
 
 Used to set the timeout value for http2 server requests,
 and sets a callback function that is called when there is no activity
@@ -1830,9 +1830,9 @@ The given callback is registered as a listener on the `'timeout'` event.
 In case if `callback` is not a function, a new `ERR_INVALID_ARG_TYPE`
 error will be thrown.
 
-##### <DataTag tag="M" /> `server.timeout`
+##### <Tag tag="M" /> `server.timeout`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27558","description":"The default timeout changed from 120s to 0 (no timeout)."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27558","description":"The default timeout changed from 120s to 0 (no timeout)."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Timeout in milliseconds. **Default:** 0 (no timeout)
 
@@ -1844,9 +1844,9 @@ A value of `0` will disable the timeout behavior on incoming connections.
 The socket timeout logic is set up on connection, so changing this
 value only affects new connections to the server, not any existing connections.
 
-##### <DataTag tag="M" /> `server.updateSettings([settings])`
+##### <Tag tag="M" /> `server.updateSettings([settings])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
 
 * `settings` {HTTP/2 Settings Object}
 
@@ -1856,9 +1856,9 @@ Throws `ERR_HTTP2_INVALID_SETTING_VALUE` for invalid `settings` values.
 
 Throws `ERR_INVALID_ARG_TYPE` for invalid `settings` argument.
 
-#### <DataTag tag="C" /> `Http2SecureServer`
+#### <Tag tag="C" /> `Http2SecureServer`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * Extends: [`tls.Server`](/api/tls#tlsserver)
 
@@ -1866,12 +1866,12 @@ Instances of `Http2SecureServer` are created using the
 `http2.createSecureServer()` function. The `Http2SecureServer` class is not
 exported directly by the `node:http2` module.
 
-##### <DataTag tag="E" /> `'checkContinue'`
+##### <Tag tag="E" /> `'checkContinue'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
-* `request` {http2.Http2ServerRequest}
-* `response` {http2.Http2ServerResponse}
+* `request` [`http2.Http2ServerRequest`](/api/http2#http2http2serverrequest)
+* `response` [`http2.Http2ServerResponse`](/api/http2#http2http2serverresponse)
 
 If a [`'request'`][] listener is registered or [`http2.createSecureServer()`][]
 is supplied a callback function, the `'checkContinue'` event is emitted each
@@ -1887,9 +1887,9 @@ the request body.
 When this event is emitted and handled, the [`'request'`][] event will
 not be emitted.
 
-##### <DataTag tag="E" /> `'connection'`
+##### <Tag tag="E" /> `'connection'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `socket` [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -1900,40 +1900,40 @@ Usually users will not want to access this event.
 This event can also be explicitly emitted by users to inject connections
 into the HTTP server. In that case, any [`Duplex`][] stream can be passed.
 
-##### <DataTag tag="E" /> `'request'`
+##### <Tag tag="E" /> `'request'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* `request` {http2.Http2ServerRequest}
-* `response` {http2.Http2ServerResponse}
+* `request` [`http2.Http2ServerRequest`](/api/http2#http2http2serverrequest)
+* `response` [`http2.Http2ServerResponse`](/api/http2#http2http2serverresponse)
 
 Emitted each time there is a request. There may be multiple requests
 per session. See the [Compatibility API][].
 
-##### <DataTag tag="E" /> `'session'`
+##### <Tag tag="E" /> `'session'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* `session` {ServerHttp2Session}
+* `session` [`ServerHttp2Session`](/api/http2#serverhttp2session)
 
 The `'session'` event is emitted when a new `Http2Session` is created by the
 `Http2SecureServer`.
 
-##### <DataTag tag="E" /> `'sessionError'`
+##### <Tag tag="E" /> `'sessionError'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-* `session` {ServerHttp2Session}
+* `session` [`ServerHttp2Session`](/api/http2#serverhttp2session)
 
 The `'sessionError'` event is emitted when an `'error'` event is emitted by
 an `Http2Session` object associated with the `Http2SecureServer`.
 
-##### <DataTag tag="E" /> `'stream'`
+##### <Tag tag="E" /> `'stream'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* `stream` {Http2Stream} A reference to the stream
+* `stream` [`Http2Stream`](/api/http2#http2stream) A reference to the stream
 * `headers` {HTTP/2 Headers Object} An object describing the headers
 * `flags` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The associated numeric flags
 * `rawHeaders` [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) An array containing the raw header names followed by
@@ -1969,17 +1969,17 @@ server.on('stream', (stream, headers, flags) => {
 });
 ```
 
-##### <DataTag tag="E" /> `'timeout'`
+##### <Tag tag="E" /> `'timeout'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 The `'timeout'` event is emitted when there is no activity on the Server for
 a given number of milliseconds set using `http2secureServer.setTimeout()`.
 **Default:** 2 minutes.
 
-##### <DataTag tag="E" /> `'unknownProtocol'`
+##### <Tag tag="E" /> `'unknownProtocol'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `socket` [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -1990,9 +1990,9 @@ the connection is terminated. A timeout may be specified using the
 `'unknownProtocolTimeout'` option passed to [`http2.createSecureServer()`][].
 See the [Compatibility API][].
 
-##### <DataTag tag="M" /> `server.close([callback])`
+##### <Tag tag="M" /> `server.close([callback])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
@@ -2005,13 +2005,13 @@ If `callback` is provided, it is not invoked until all active sessions have been
 closed, although the server has already stopped allowing new sessions. See
 [`tls.Server.close()`][] for more details.
 
-##### <DataTag tag="M" /> `server.setTimeout([msecs][, callback])`
+##### <Tag tag="M" /> `server.setTimeout([msecs][, callback])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `msecs` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `120000` (2 minutes)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: {Http2SecureServer}
+* Returns: [`Http2SecureServer`](/api/http2#http2secureserver)
 
 Used to set the timeout value for http2 secure server requests,
 and sets a callback function that is called when there is no activity
@@ -2022,9 +2022,9 @@ The given callback is registered as a listener on the `'timeout'` event.
 In case if `callback` is not a function, a new `ERR_INVALID_ARG_TYPE`
 error will be thrown.
 
-##### <DataTag tag="M" /> `server.timeout`
+##### <Tag tag="M" /> `server.timeout`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27558","description":"The default timeout changed from 120s to 0 (no timeout)."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27558","description":"The default timeout changed from 120s to 0 (no timeout)."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Timeout in milliseconds. **Default:** 0 (no timeout)
 
@@ -2036,9 +2036,9 @@ A value of `0` will disable the timeout behavior on incoming connections.
 The socket timeout logic is set up on connection, so changing this
 value only affects new connections to the server, not any existing connections.
 
-##### <DataTag tag="M" /> `server.updateSettings([settings])`
+##### <Tag tag="M" /> `server.updateSettings([settings])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
 
 * `settings` {HTTP/2 Settings Object}
 
@@ -2048,9 +2048,9 @@ Throws `ERR_HTTP2_INVALID_SETTING_VALUE` for invalid `settings` values.
 
 Throws `ERR_INVALID_ARG_TYPE` for invalid `settings` argument.
 
-#### <DataTag tag="M" /> `http2.createServer([options][, onRequestHandler])`
+#### <Tag tag="M" /> `http2.createServer([options][, onRequestHandler])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.10.0","v14.16.0","v12.21.0","v10.24.0"],"pr-url":"https://github.com/nodejs-private/node-private/pull/246","description":"Added `unknownProtocolTimeout` option with a default of 10000."},{"version":["v14.4.0","v12.18.0","v10.21.0"],"commit":"3948830ce6408be620b09a70bf66158623022af0","pr-url":"https://github.com/nodejs-private/node-private/pull/204","description":"Added `maxSettings` option with a default of 32."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30534","description":"Added `maxSessionRejectedStreams` option with a default of 100."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30534","description":"Added `maxSessionInvalidFrames` option with a default of 1000."},{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/29144","description":"The `PADDING_STRATEGY_CALLBACK` has been made equivalent to providing `PADDING_STRATEGY_ALIGNED` and `selectPadding` has been removed."},{"version":"v12.4.0","pr-url":"https://github.com/nodejs/node/pull/27782","description":"The `options` parameter now supports `net.createServer()` options."},{"version":"v9.6.0","pr-url":"https://github.com/nodejs/node/pull/15752","description":"Added the `Http1IncomingMessage` and `Http1ServerResponse` option."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/17105","description":"Added the `maxOutstandingPings` option with a default limit of 10."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/16676","description":"Added the `maxHeaderListPairs` option with a default limit of 128 header pairs."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":["v15.10.0","v14.16.0","v12.21.0","v10.24.0"],"pr-url":"https://github.com/nodejs-private/node-private/pull/246","description":"Added `unknownProtocolTimeout` option with a default of 10000."},{"version":["v14.4.0","v12.18.0","v10.21.0"],"commit":"3948830ce6408be620b09a70bf66158623022af0","pr-url":"https://github.com/nodejs-private/node-private/pull/204","description":"Added `maxSettings` option with a default of 32."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30534","description":"Added `maxSessionRejectedStreams` option with a default of 100."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30534","description":"Added `maxSessionInvalidFrames` option with a default of 1000."},{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/29144","description":"The `PADDING_STRATEGY_CALLBACK` has been made equivalent to providing `PADDING_STRATEGY_ALIGNED` and `selectPadding` has been removed."},{"version":"v12.4.0","pr-url":"https://github.com/nodejs/node/pull/27782","description":"The `options` parameter now supports `net.createServer()` options."},{"version":"v9.6.0","pr-url":"https://github.com/nodejs/node/pull/15752","description":"Added the `Http1IncomingMessage` and `Http1ServerResponse` option."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/17105","description":"Added the `maxOutstandingPings` option with a default limit of 10."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/16676","description":"Added the `maxHeaderListPairs` option with a default limit of 128 header pairs."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `maxDeflateDynamicTableSize` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Sets the maximum dynamic table size
@@ -2113,11 +2113,11 @@ Throws `ERR_INVALID_ARG_TYPE` for invalid `settings` argument.
   * `Http1ServerResponse` [`http.ServerResponse`](/api/http#httpserverresponse) Specifies the `ServerResponse`
     class to used for HTTP/1 fallback. Useful for extending the original
     `http.ServerResponse`. **Default:** `http.ServerResponse`.
-  * `Http2ServerRequest` {http2.Http2ServerRequest} Specifies the
+  * `Http2ServerRequest` [`http2.Http2ServerRequest`](/api/http2#http2http2serverrequest) Specifies the
     `Http2ServerRequest` class to use.
     Useful for extending the original `Http2ServerRequest`.
     **Default:** `Http2ServerRequest`.
-  * `Http2ServerResponse` {http2.Http2ServerResponse} Specifies the
+  * `Http2ServerResponse` [`http2.Http2ServerResponse`](/api/http2#http2http2serverresponse) Specifies the
     `Http2ServerResponse` class to use.
     Useful for extending the original `Http2ServerResponse`.
     **Default:** `Http2ServerResponse`.
@@ -2127,7 +2127,7 @@ Throws `ERR_INVALID_ARG_TYPE` for invalid `settings` argument.
     **Default:** `10000`.
   * ...: Any [`net.createServer()`][] option can be provided.
 * `onRequestHandler` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) See [Compatibility API][]
-* Returns: {Http2Server}
+* Returns: [`Http2Server`](/api/http2#http2server)
 
 Returns a `net.Server` instance that creates and manages `Http2Session`
 instances.
@@ -2157,9 +2157,9 @@ server.on('stream', (stream, headers) => {
 server.listen(80);
 ```
 
-#### <DataTag tag="M" /> `http2.createSecureServer(options[, onRequestHandler])`
+#### <Tag tag="M" /> `http2.createSecureServer(options[, onRequestHandler])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.10.0","v14.16.0","v12.21.0","v10.24.0"],"pr-url":"https://github.com/nodejs-private/node-private/pull/246","description":"Added `unknownProtocolTimeout` option with a default of 10000."},{"version":["v14.4.0","v12.18.0","v10.21.0"],"commit":"3948830ce6408be620b09a70bf66158623022af0","pr-url":"https://github.com/nodejs-private/node-private/pull/204","description":"Added `maxSettings` option with a default of 32."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30534","description":"Added `maxSessionRejectedStreams` option with a default of 100."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30534","description":"Added `maxSessionInvalidFrames` option with a default of 1000."},{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/29144","description":"The `PADDING_STRATEGY_CALLBACK` has been made equivalent to providing `PADDING_STRATEGY_ALIGNED` and `selectPadding` has been removed."},{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/22956","description":"Added the `origins` option to automatically send an `ORIGIN` frame on `Http2Session` startup."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/17105","description":"Added the `maxOutstandingPings` option with a default limit of 10."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/16676","description":"Added the `maxHeaderListPairs` option with a default limit of 128 header pairs."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":["v15.10.0","v14.16.0","v12.21.0","v10.24.0"],"pr-url":"https://github.com/nodejs-private/node-private/pull/246","description":"Added `unknownProtocolTimeout` option with a default of 10000."},{"version":["v14.4.0","v12.18.0","v10.21.0"],"commit":"3948830ce6408be620b09a70bf66158623022af0","pr-url":"https://github.com/nodejs-private/node-private/pull/204","description":"Added `maxSettings` option with a default of 32."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30534","description":"Added `maxSessionRejectedStreams` option with a default of 100."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30534","description":"Added `maxSessionInvalidFrames` option with a default of 1000."},{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/29144","description":"The `PADDING_STRATEGY_CALLBACK` has been made equivalent to providing `PADDING_STRATEGY_ALIGNED` and `selectPadding` has been removed."},{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/22956","description":"Added the `origins` option to automatically send an `ORIGIN` frame on `Http2Session` startup."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/17105","description":"Added the `maxOutstandingPings` option with a default limit of 10."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/16676","description":"Added the `maxHeaderListPairs` option with a default limit of 128 header pairs."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `allowHTTP1` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Incoming client connections that do not support
@@ -2226,7 +2226,7 @@ server.listen(80);
     the socket has not been destroyed by that time the server will destroy it.
     **Default:** `10000`.
 * `onRequestHandler` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) See [Compatibility API][]
-* Returns: {Http2SecureServer}
+* Returns: [`Http2SecureServer`](/api/http2#http2secureserver)
 
 Returns a `tls.Server` instance that creates and manages `Http2Session`
 instances.
@@ -2254,9 +2254,9 @@ server.on('stream', (stream, headers) => {
 server.listen(80);
 ```
 
-#### <DataTag tag="M" /> `http2.connect(authority[, options][, listener])`
+#### <Tag tag="M" /> `http2.connect(authority[, options][, listener])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.10.0","v14.16.0","v12.21.0","v10.24.0"],"pr-url":"https://github.com/nodejs-private/node-private/pull/246","description":"Added `unknownProtocolTimeout` option with a default of 10000."},{"version":["v14.4.0","v12.18.0","v10.21.0"],"commit":"3948830ce6408be620b09a70bf66158623022af0","pr-url":"https://github.com/nodejs-private/node-private/pull/204","description":"Added `maxSettings` option with a default of 32."},{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/29144","description":"The `PADDING_STRATEGY_CALLBACK` has been made equivalent to providing `PADDING_STRATEGY_ALIGNED` and `selectPadding` has been removed."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/17105","description":"Added the `maxOutstandingPings` option with a default limit of 10."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/16676","description":"Added the `maxHeaderListPairs` option with a default limit of 128 header pairs."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":["v15.10.0","v14.16.0","v12.21.0","v10.24.0"],"pr-url":"https://github.com/nodejs-private/node-private/pull/246","description":"Added `unknownProtocolTimeout` option with a default of 10000."},{"version":["v14.4.0","v12.18.0","v10.21.0"],"commit":"3948830ce6408be620b09a70bf66158623022af0","pr-url":"https://github.com/nodejs-private/node-private/pull/204","description":"Added `maxSettings` option with a default of 32."},{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/29144","description":"The `PADDING_STRATEGY_CALLBACK` has been made equivalent to providing `PADDING_STRATEGY_ALIGNED` and `selectPadding` has been removed."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/17105","description":"Added the `maxOutstandingPings` option with a default limit of 10."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/16676","description":"Added the `maxHeaderListPairs` option with a default limit of 128 header pairs."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `authority` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) The remote HTTP/2 server to connect to. This must
   be in the form of a minimal, valid URL with the `http://` or `https://`
@@ -2325,7 +2325,7 @@ server.listen(80);
     **Default:** `10000`.
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Will be registered as a one-time listener of the
   [`'connect'`][] event.
-* Returns: {ClientHttp2Session}
+* Returns: [`ClientHttp2Session`](/api/http2#clienthttp2session)
 
 Returns a `ClientHttp2Session` instance.
 
@@ -2338,9 +2338,9 @@ const client = http2.connect('https://localhost:1234');
 client.close();
 ```
 
-#### <DataTag tag="M" /> `http2.constants`
+#### <Tag tag="M" /> `http2.constants`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 ##### Error codes for `RST_STREAM` and `GOAWAY`
 
@@ -2364,9 +2364,9 @@ client.close();
 The `'timeout'` event is emitted when there is no activity on the Server for
 a given number of milliseconds set using `http2server.setTimeout()`.
 
-#### <DataTag tag="M" /> `http2.getDefaultSettings()`
+#### <Tag tag="M" /> `http2.getDefaultSettings()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * Returns: {HTTP/2 Settings Object}
 
@@ -2374,9 +2374,9 @@ Returns an object containing the default settings for an `Http2Session`
 instance. This method returns a new object instance every time it is called
 so instances returned may be safely modified for use.
 
-#### <DataTag tag="M" /> `http2.getPackedSettings([settings])`
+#### <Tag tag="M" /> `http2.getPackedSettings([settings])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `settings` {HTTP/2 Settings Object}
 * Returns: [`Buffer`](/api/buffer#buffer)
@@ -2394,9 +2394,9 @@ console.log(packed.toString('base64'));
 // Prints: AAIAAAAA
 ```
 
-#### <DataTag tag="M" /> `http2.getUnpackedSettings(buf)`
+#### <Tag tag="M" /> `http2.getUnpackedSettings(buf)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `buf` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) The packed settings.
 * Returns: {HTTP/2 Settings Object}
@@ -2404,9 +2404,9 @@ console.log(packed.toString('base64'));
 Returns a [HTTP/2 Settings Object][] containing the deserialized settings from
 the given `Buffer` as generated by `http2.getPackedSettings()`.
 
-#### <DataTag tag="M" /> `http2.sensitiveHeaders`
+#### <Tag tag="M" /> `http2.sensitiveHeaders`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
 
 * [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
 
@@ -2490,7 +2490,7 @@ all headers marked as sensitive, including ones marked that way automatically.
 
 #### Settings object
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v12.12.0","pr-url":"https://github.com/nodejs/node/pull/29833","description":"The `maxConcurrentStreams` setting is stricter."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/16676","description":"The `maxHeaderListSize` setting is now strictly enforced."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":"v12.12.0","pr-url":"https://github.com/nodejs/node/pull/29833","description":"The `maxConcurrentStreams` setting is stricter."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/16676","description":"The `maxHeaderListSize` setting is now strictly enforced."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 The `http2.getDefaultSettings()`, `http2.getPackedSettings()`,
 `http2.createServer()`, `http2.createSecureServer()`,
@@ -2606,7 +2606,7 @@ const server = net.createServer((socket) => {
   let name = '';
   socket.setEncoding('utf8');
   socket.on('data', (chunk) => name += chunk);
-  socket.on('end', () => socket.end(`hello $name`));
+  socket.on('end', () => socket.end(`hello ${name}`));
 });
 
 server.listen(8000);
@@ -2653,7 +2653,7 @@ const client = http2.connect('http://localhost:8001');
 // for CONNECT requests or an error will be thrown.
 const req = client.request({
   ':method': 'CONNECT',
-  ':authority': `localhost:$port`
+  ':authority': `localhost:${port}`
 });
 
 req.on('response', (headers) => {
@@ -2663,7 +2663,7 @@ let data = '';
 req.setEncoding('utf8');
 req.on('data', (chunk) => data += chunk);
 req.on('end', () => {
-  console.log(`The server says: $data`);
+  console.log(`The server says: ${data}`);
   client.close();
 });
 req.end('Jane');
@@ -2767,9 +2767,9 @@ function onRequest(req, res) {
 The `'request'` event works identically on both [HTTPS][] and
 HTTP/2.
 
-#### <DataTag tag="C" /> `http2.Http2ServerRequest`
+#### <Tag tag="C" /> `http2.Http2ServerRequest`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * Extends: [`stream.Readable`](/api/stream#streamreadable)
 
@@ -2778,9 +2778,9 @@ A `Http2ServerRequest` object is created by [`http2.Server`][] or
 [`'request'`][] event. It may be used to access a request status, headers, and
 data.
 
-##### <DataTag tag="E" /> `'aborted'`
+##### <Tag tag="E" /> `'aborted'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 The `'aborted'` event is emitted whenever a `Http2ServerRequest` instance is
 abnormally aborted in mid-communication.
@@ -2788,25 +2788,25 @@ abnormally aborted in mid-communication.
 The `'aborted'` event will only be emitted if the `Http2ServerRequest` writable
 side has not been ended.
 
-##### <DataTag tag="E" /> `'close'`
+##### <Tag tag="E" /> `'close'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 Indicates that the underlying [`Http2Stream`][] was closed.
 Just like `'end'`, this event occurs only once per response.
 
-##### <DataTag tag="M" /> `request.aborted`
+##### <Tag tag="M" /> `request.aborted`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.1.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v10.1.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 The `request.aborted` property will be `true` if the request has
 been aborted.
 
-##### <DataTag tag="M" /> `request.authority`
+##### <Tag tag="M" /> `request.authority`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -2815,28 +2815,28 @@ to set either `:authority` or `host`, this value is derived from
 `req.headers[':authority']` if present. Otherwise, it is derived from
 `req.headers['host']`.
 
-##### <DataTag tag="M" /> `request.complete`
+##### <Tag tag="M" /> `request.complete`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.10.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v12.10.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 The `request.complete` property will be `true` if the request has
 been completed, aborted, or destroyed.
 
-##### <DataTag tag="M" /> `request.connection`
+##### <Tag tag="M" /> `request.connection`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v13.0.0"]}}} />
+<MC data={{"update":{"type":"deprecated","version":["v13.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`request.socket`][]."}}} />
+<MC data={{"stability":{"level":0,"text":" - Deprecated. Use `request.socket`."}}} />
 
 * [`net.Socket`](/api/net#netsocket) | [`tls.TLSSocket`](/api/tls#tlstlssocket)
 
 See [`request.socket`][].
 
-##### <DataTag tag="M" /> `request.destroy([error])`
+##### <Tag tag="M" /> `request.destroy([error])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
@@ -2846,9 +2846,9 @@ is emitted and `error` is passed as an argument to any listeners on the event.
 
 It does nothing if the stream was already destroyed.
 
-##### <DataTag tag="M" /> `request.headers`
+##### <Tag tag="M" /> `request.headers`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -2878,9 +2878,9 @@ removeAllHeaders(request.headers);
 assert(request.url);   // Fails because the :path header has been removed
 ```
 
-##### <DataTag tag="M" /> `request.httpVersion`
+##### <Tag tag="M" /> `request.httpVersion`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -2891,17 +2891,17 @@ client response, the HTTP version of the connected-to server. Returns
 Also `message.httpVersionMajor` is the first integer and
 `message.httpVersionMinor` is the second.
 
-##### <DataTag tag="M" /> `request.method`
+##### <Tag tag="M" /> `request.method`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The request method as a string. Read-only. Examples: `'GET'`, `'DELETE'`.
 
-##### <DataTag tag="M" /> `request.rawHeaders`
+##### <Tag tag="M" /> `request.rawHeaders`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * string\[]
 
@@ -2927,31 +2927,31 @@ Header names are not lowercased, and duplicates are not merged.
 console.log(request.rawHeaders);
 ```
 
-##### <DataTag tag="M" /> `request.rawTrailers`
+##### <Tag tag="M" /> `request.rawTrailers`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * string\[]
 
 The raw request/response trailer keys and values exactly as they were
 received. Only populated at the `'end'` event.
 
-##### <DataTag tag="M" /> `request.scheme`
+##### <Tag tag="M" /> `request.scheme`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The request scheme pseudo header field indicating the scheme
 portion of the target URL.
 
-##### <DataTag tag="M" /> `request.setTimeout(msecs, callback)`
+##### <Tag tag="M" /> `request.setTimeout(msecs, callback)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `msecs` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: {http2.Http2ServerRequest}
+* Returns: [`http2.Http2ServerRequest`](/api/http2#http2http2serverrequest)
 
 Sets the [`Http2Stream`][]'s timeout value to `msecs`. If a callback is
 provided, then it is added as a listener on the `'timeout'` event on
@@ -2962,9 +2962,9 @@ the server, then [`Http2Stream`][]s are destroyed when they time out. If a
 handler is assigned to the request, the response, or the server's `'timeout'`
 events, timed out sockets must be handled explicitly.
 
-##### <DataTag tag="M" /> `request.socket`
+##### <Tag tag="M" /> `request.socket`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`net.Socket`](/api/net#netsocket) | [`tls.TLSSocket`](/api/tls#tlstlssocket)
 
@@ -2987,25 +2987,25 @@ All other interactions will be routed directly to the socket. With TLS support,
 use [`request.socket.getPeerCertificate()`][] to obtain the client's
 authentication details.
 
-##### <DataTag tag="M" /> `request.stream`
+##### <Tag tag="M" /> `request.stream`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* {Http2Stream}
+* [`Http2Stream`](/api/http2#http2stream)
 
 The [`Http2Stream`][] object backing the request.
 
-##### <DataTag tag="M" /> `request.trailers`
+##### <Tag tag="M" /> `request.trailers`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 The request/response trailers object. Only populated at the `'end'` event.
 
-##### <DataTag tag="M" /> `request.url`
+##### <Tag tag="M" /> `request.url`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -3046,25 +3046,25 @@ URL {
 }
 ```
 
-#### <DataTag tag="C" /> `http2.Http2ServerResponse`
+#### <Tag tag="C" /> `http2.Http2ServerResponse`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * Extends: [`Stream`](/api/stream#stream)
 
 This object is created internally by an HTTP server, not by the user. It is
 passed as the second parameter to the [`'request'`][] event.
 
-##### <DataTag tag="E" /> `'close'`
+##### <Tag tag="E" /> `'close'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 Indicates that the underlying [`Http2Stream`][] was terminated before
 [`response.end()`][] was called or able to flush.
 
-##### <DataTag tag="E" /> `'finish'`
+##### <Tag tag="E" /> `'finish'`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 Emitted when the response has been sent. More specifically, this event is
 emitted when the last segment of the response headers and body have been
@@ -3073,9 +3073,9 @@ does not imply that the client has received anything yet.
 
 After this event, no more events will be emitted on the response object.
 
-##### <DataTag tag="M" /> `response.addTrailers(headers)`
+##### <Tag tag="M" /> `response.addTrailers(headers)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `headers` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -3085,19 +3085,19 @@ message) to the response.
 Attempting to set a header field name or value that contains invalid characters
 will result in a [`TypeError`][] being thrown.
 
-##### <DataTag tag="M" /> `response.connection`
+##### <Tag tag="M" /> `response.connection`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v13.0.0"]}}} />
+<MC data={{"update":{"type":"deprecated","version":["v13.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`response.socket`][]."}}} />
+<MC data={{"stability":{"level":0,"text":" - Deprecated. Use `response.socket`."}}} />
 
 * [`net.Socket`](/api/net#netsocket) | [`tls.TLSSocket`](/api/tls#tlstlssocket)
 
 See [`response.socket`][].
 
-##### <DataTag tag="M" /> `response.createPushResponse(headers, callback)`
+##### <Tag tag="M" /> `response.createPushResponse(headers, callback)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `headers` {HTTP/2 Headers Object} An object describing the headers
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called once `http2stream.pushStream()` is finished,
@@ -3105,7 +3105,7 @@ See [`response.socket`][].
   has been rejected, or the state of `Http2ServerRequest` is closed prior to
   calling the `http2stream.pushStream()` method
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `res` {http2.Http2ServerResponse} The newly-created `Http2ServerResponse`
+  * `res` [`http2.Http2ServerResponse`](/api/http2#http2http2serverresponse) The newly-created `Http2ServerResponse`
     object
 
 Call [`http2stream.pushStream()`][] with the given headers, and wrap the
@@ -3113,11 +3113,11 @@ given [`Http2Stream`][] on a newly created `Http2ServerResponse` as the callback
 parameter if successful. When `Http2ServerRequest` is closed, the callback is
 called with an error `ERR_HTTP2_INVALID_STREAM`.
 
-##### <DataTag tag="M" /> `response.end([data[, encoding]][, callback])`
+##### <Tag tag="M" /> `response.end([data[, encoding]][, callback])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18780","description":"This method now returns a reference to `ServerResponse`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18780","description":"This method now returns a reference to `ServerResponse`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* `data` {string|Buffer|Uint8Array}
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -3132,20 +3132,20 @@ If `data` is specified, it is equivalent to calling
 If `callback` is specified, it will be called when the response stream
 is finished.
 
-##### <DataTag tag="M" /> `response.finished`
+##### <Tag tag="M" /> `response.finished`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v13.4.0","v12.16.0"]}}} />
+<MC data={{"update":{"type":"deprecated","version":["v13.4.0","v12.16.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`response.writableEnded`][]."}}} />
+<MC data={{"stability":{"level":0,"text":" - Deprecated. Use `response.writableEnded`."}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Boolean value that indicates whether the response has completed. Starts
 as `false`. After [`response.end()`][] executes, the value will be `true`.
 
-##### <DataTag tag="M" /> `response.getHeader(name)`
+##### <Tag tag="M" /> `response.getHeader(name)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -3157,9 +3157,9 @@ The name is case-insensitive.
 const contentType = response.getHeader('content-type');
 ```
 
-##### <DataTag tag="M" /> `response.getHeaderNames()`
+##### <Tag tag="M" /> `response.getHeaderNames()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * Returns: string\[]
 
@@ -3174,9 +3174,9 @@ const headerNames = response.getHeaderNames();
 // headerNames === ['foo', 'set-cookie']
 ```
 
-##### <DataTag tag="M" /> `response.getHeaders()`
+##### <Tag tag="M" /> `response.getHeaders()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -3199,9 +3199,9 @@ const headers = response.getHeaders();
 // headers === { foo: 'bar', 'set-cookie': ['foo=bar', 'bar=baz'] }
 ```
 
-##### <DataTag tag="M" /> `response.hasHeader(name)`
+##### <Tag tag="M" /> `response.hasHeader(name)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -3213,17 +3213,17 @@ outgoing headers. The header name matching is case-insensitive.
 const hasContentType = response.hasHeader('content-type');
 ```
 
-##### <DataTag tag="M" /> `response.headersSent`
+##### <Tag tag="M" /> `response.headersSent`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 True if headers were sent, false otherwise (read-only).
 
-##### <DataTag tag="M" /> `response.removeHeader(name)`
+##### <Tag tag="M" /> `response.removeHeader(name)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -3233,17 +3233,17 @@ Removes a header that has been queued for implicit sending.
 response.removeHeader('Content-Encoding');
 ```
 
-#### <DataTag tag="M" /> `response.req`
+#### <Tag tag="M" /> `response.req`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.7.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.7.0"]}}} />
 
-* {http2.Http2ServerRequest}
+* [`http2.Http2ServerRequest`](/api/http2#http2http2serverrequest)
 
 A reference to the original HTTP2 `request` object.
 
-##### <DataTag tag="M" /> `response.sendDate`
+##### <Tag tag="M" /> `response.sendDate`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -3253,9 +3253,9 @@ the response if it is not already present in the headers. Defaults to true.
 This should only be disabled for testing; HTTP requires the Date header
 in responses.
 
-##### <DataTag tag="M" /> `response.setHeader(name, value)`
+##### <Tag tag="M" /> `response.setHeader(name, value)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -3291,13 +3291,13 @@ const server = http2.createServer((req, res) => {
 });
 ```
 
-##### <DataTag tag="M" /> `response.setTimeout(msecs[, callback])`
+##### <Tag tag="M" /> `response.setTimeout(msecs[, callback])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `msecs` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: {http2.Http2ServerResponse}
+* Returns: [`http2.Http2ServerResponse`](/api/http2#http2http2serverresponse)
 
 Sets the [`Http2Stream`][]'s timeout value to `msecs`. If a callback is
 provided, then it is added as a listener on the `'timeout'` event on
@@ -3308,9 +3308,9 @@ the server, then [`Http2Stream`][]s are destroyed when they time out. If a
 handler is assigned to the request, the response, or the server's `'timeout'`
 events, timed out sockets must be handled explicitly.
 
-##### <DataTag tag="M" /> `response.socket`
+##### <Tag tag="M" /> `response.socket`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`net.Socket`](/api/net#netsocket) | [`tls.TLSSocket`](/api/tls#tlstlssocket)
 
@@ -3336,13 +3336,13 @@ const http2 = require('node:http2');
 const server = http2.createServer((req, res) => {
   const ip = req.socket.remoteAddress;
   const port = req.socket.remotePort;
-  res.end(`Your IP address is $ip and your source port is $port.`);
+  res.end(`Your IP address is ${ip} and your source port is ${port}.`);
 }).listen(3000);
 ```
 
-##### <DataTag tag="M" /> `response.statusCode`
+##### <Tag tag="M" /> `response.statusCode`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -3357,26 +3357,26 @@ response.statusCode = 404;
 After response header was sent to the client, this property indicates the
 status code which was sent out.
 
-##### <DataTag tag="M" /> `response.statusMessage`
+##### <Tag tag="M" /> `response.statusMessage`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Status message is not supported by HTTP/2 (RFC 7540 8.1.2.4). It returns
 an empty string.
 
-##### <DataTag tag="M" /> `response.stream`
+##### <Tag tag="M" /> `response.stream`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* {Http2Stream}
+* [`Http2Stream`](/api/http2#http2stream)
 
 The [`Http2Stream`][] object backing the response.
 
-##### <DataTag tag="M" /> `response.writableEnded`
+##### <Tag tag="M" /> `response.writableEnded`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.9.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v12.9.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -3384,11 +3384,11 @@ Is `true` after [`response.end()`][] has been called. This property
 does not indicate whether the data has been flushed, for this use
 [`writable.writableFinished`][] instead.
 
-##### <DataTag tag="M" /> `response.write(chunk[, encoding][, callback])`
+##### <Tag tag="M" /> `response.write(chunk[, encoding][, callback])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
-* `chunk` {string|Buffer|Uint8Array}
+* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -3421,22 +3421,22 @@ Returns `true` if the entire data was flushed successfully to the kernel
 buffer. Returns `false` if all or part of the data was queued in user memory.
 `'drain'` will be emitted when the buffer is free again.
 
-##### <DataTag tag="M" /> `response.writeContinue()`
+##### <Tag tag="M" /> `response.writeContinue()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 Sends a status `100 Continue` to the client, indicating that the request body
 should be sent. See the [`'checkContinue'`][] event on `Http2Server` and
 `Http2SecureServer`.
 
-##### <DataTag tag="M" /> `response.writeHead(statusCode[, statusMessage][, headers])`
+##### <Tag tag="M" /> `response.writeHead(statusCode[, statusMessage][, headers])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v11.10.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/25974","description":"Return `this` from `writeHead()` to allow chaining with `end()`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
+<MC data={{"changes":[{"version":["v11.10.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/25974","description":"Return `this` from `writeHead()` to allow chaining with `end()`."}],"update":{"type":"added","version":["v8.4.0"]}}} />
 
 * `statusCode` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `statusMessage` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `headers` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-* Returns: {http2.Http2ServerResponse}
+* Returns: [`http2.Http2ServerResponse`](/api/http2#http2http2serverresponse)
 
 Sends a response header to the request. The status code is a 3-digit HTTP
 status code, like `404`. The last argument, `headers`, are the response headers.

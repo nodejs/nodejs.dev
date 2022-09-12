@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v8.0.0"]}}} />
+<MC data={{"update":{"type":"introduced_in","version":["v8.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"type":"misc"}} />
+<MC data={{"type":"misc"}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
 
 Node-API (formerly N-API) is an API for building native Addons. It is
 independent from the underlying JavaScript runtime (for example, V8) and is
@@ -487,9 +487,9 @@ the addon.
 To this end, Node-API provides a way to allocate data such that its life cycle
 is tied to the life cycle of the Agent.
 
-#### <DataTag tag="M" /> `napi_set_instance_data`
+#### <Tag tag="M" /> `napi_set_instance_data`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_set_instance_data(napi_env env,
@@ -514,9 +514,9 @@ the currently running Agent which was set by means of a previous call to
 `napi_set_instance_data()` will be overwritten. If a `finalize_cb` was provided
 by the previous call, it will not be called.
 
-#### <DataTag tag="M" /> `napi_get_instance_data`
+#### <Tag tag="M" /> `napi_get_instance_data`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_get_instance_data(napi_env env,
@@ -539,9 +539,9 @@ Node-API exposes the following fundamental datatypes as abstractions that are
 consumed by the various APIs. These APIs should be treated as opaque,
 introspectable only with other Node-API calls.
 
-#### <DataTag tag="M" /> `napi_status`
+#### <Tag tag="M" /> `napi_status`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 Integral status code indicating the success or failure of a Node-API call.
 Currently, the following status codes are supported.
@@ -576,9 +576,9 @@ typedef enum {
 If additional information is required upon an API returning a failed status,
 it can be obtained by calling `napi_get_last_error_info`.
 
-#### <DataTag tag="M" /> `napi_extended_error_info`
+#### <Tag tag="M" /> `napi_extended_error_info`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 typedef struct {
@@ -599,7 +599,7 @@ typedef struct {
 
 See the [Error handling][] section for additional information.
 
-#### <DataTag tag="M" /> `napi_env`
+#### <Tag tag="M" /> `napi_env`
 
 `napi_env` is used to represent a context that the underlying Node-API
 implementation can use to persist VM-specific state. This structure is passed
@@ -613,21 +613,21 @@ when an instance of a native addon is unloaded. Notification of this event is
 delivered through the callbacks given to [`napi_add_env_cleanup_hook`][] and
 [`napi_set_instance_data`][].
 
-#### <DataTag tag="M" /> `napi_value`
+#### <Tag tag="M" /> `napi_value`
 
 This is an opaque pointer that is used to represent a JavaScript value.
 
-#### <DataTag tag="M" /> `napi_threadsafe_function`
+#### <Tag tag="M" /> `napi_threadsafe_function`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 This is an opaque pointer that represents a JavaScript function which can be
 called asynchronously from multiple threads via
 `napi_call_threadsafe_function()`.
 
-#### <DataTag tag="M" /> `napi_threadsafe_function_release_mode`
+#### <Tag tag="M" /> `napi_threadsafe_function_release_mode`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 A value to be given to `napi_release_threadsafe_function()` to indicate whether
 the thread-safe function is to be closed immediately (`napi_tsfn_abort`) or
@@ -641,9 +641,9 @@ typedef enum {
 } napi_threadsafe_function_release_mode;
 ```
 
-#### <DataTag tag="M" /> `napi_threadsafe_function_call_mode`
+#### <Tag tag="M" /> `napi_threadsafe_function_call_mode`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 A value to be given to `napi_call_threadsafe_function()` to indicate whether
 the call should block whenever the queue associated with the thread-safe
@@ -658,7 +658,7 @@ typedef enum {
 
 #### Node-API memory management types
 
-##### <DataTag tag="M" /> `napi_handle_scope`
+##### <Tag tag="M" /> `napi_handle_scope`
 
 This is an abstraction used to control and modify the lifetime of objects
 created within a particular scope. In general, Node-API values are created
@@ -677,16 +677,16 @@ longer referenced from the current stack frame.
 
 For more details, review the [Object lifetime management][].
 
-##### <DataTag tag="M" /> `napi_escapable_handle_scope`
+##### <Tag tag="M" /> `napi_escapable_handle_scope`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 Escapable handle scopes are a special type of handle scope to return values
 created within a particular handle scope to a parent scope.
 
-##### <DataTag tag="M" /> `napi_ref`
+##### <Tag tag="M" /> `napi_ref`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 This is the abstraction to use to reference a `napi_value`. This allows for
 users to manage the lifetimes of JavaScript values, including defining their
@@ -694,9 +694,9 @@ minimum lifetimes explicitly.
 
 For more details, review the [Object lifetime management][].
 
-##### <DataTag tag="M" /> `napi_type_tag`
+##### <Tag tag="M" /> `napi_type_tag`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[8]}}} />
 
 A 128-bit value stored as two unsigned 64-bit integers. It serves as a UUID
 with which JavaScript objects can be "tagged" in order to ensure that they are
@@ -714,9 +714,9 @@ typedef struct {
 } napi_type_tag;
 ```
 
-##### <DataTag tag="M" /> `napi_async_cleanup_hook_handle`
+##### <Tag tag="M" /> `napi_async_cleanup_hook_handle`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.10.0","v12.19.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v14.10.0","v12.19.0"]}}} />
 
 An opaque value returned by [`napi_add_async_cleanup_hook`][]. It must be passed
 to [`napi_remove_async_cleanup_hook`][] when the chain of asynchronous cleanup
@@ -724,17 +724,17 @@ events completes.
 
 #### Node-API callback types
 
-##### <DataTag tag="M" /> `napi_callback_info`
+##### <Tag tag="M" /> `napi_callback_info`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 Opaque datatype that is passed to a callback function. It can be used for
 getting additional information about the context in which the callback was
 invoked.
 
-##### <DataTag tag="M" /> `napi_callback`
+##### <Tag tag="M" /> `napi_callback`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 Function pointer type for user-provided native functions which are to be
 exposed to JavaScript via Node-API. Callback functions should satisfy the
@@ -747,9 +747,9 @@ typedef napi_value (*napi_callback)(napi_env, napi_callback_info);
 Unless for reasons discussed in [Object Lifetime Management][], creating a
 handle and/or callback scope inside a `napi_callback` is not necessary.
 
-##### <DataTag tag="M" /> `napi_finalize`
+##### <Tag tag="M" /> `napi_finalize`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 Function pointer type for add-on provided functions that allow the user to be
 notified when externally-owned data is ready to be cleaned up because the
@@ -767,9 +767,9 @@ typedef void (*napi_finalize)(napi_env env,
 Unless for reasons discussed in [Object Lifetime Management][], creating a
 handle and/or callback scope inside the function body is not necessary.
 
-##### <DataTag tag="M" /> `napi_async_execute_callback`
+##### <Tag tag="M" /> `napi_async_execute_callback`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 Function pointer used with functions that support asynchronous
 operations. Callback functions must satisfy the following signature:
@@ -783,9 +783,9 @@ JavaScript or interact with JavaScript objects. Node-API calls should be in the
 `napi_async_complete_callback` instead. Do not use the `napi_env` parameter as
 it will likely result in execution of JavaScript.
 
-##### <DataTag tag="M" /> `napi_async_complete_callback`
+##### <Tag tag="M" /> `napi_async_complete_callback`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 Function pointer used with functions that support asynchronous
 operations. Callback functions must satisfy the following signature:
@@ -799,9 +799,9 @@ typedef void (*napi_async_complete_callback)(napi_env env,
 Unless for reasons discussed in [Object Lifetime Management][], creating a
 handle and/or callback scope inside the function body is not necessary.
 
-##### <DataTag tag="M" /> `napi_threadsafe_function_call_js`
+##### <Tag tag="M" /> `napi_threadsafe_function_call_js`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 Function pointer used with asynchronous thread-safe function calls. The callback
 will be called on the main thread. Its purpose is to use a data item arriving
@@ -843,9 +843,9 @@ typedef void (*napi_threadsafe_function_call_js)(napi_env env,
 Unless for reasons discussed in [Object Lifetime Management][], creating a
 handle and/or callback scope inside the function body is not necessary.
 
-##### <DataTag tag="M" /> `napi_async_cleanup_hook`
+##### <Tag tag="M" /> `napi_async_cleanup_hook`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.10.0","v12.19.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v14.10.0","v12.19.0"]}}} />
 
 Function pointer used with [`napi_add_async_cleanup_hook`][]. It will be called
 when the environment is being torn down.
@@ -899,7 +899,7 @@ In order to retrieve this information [`napi_get_last_error_info`][]
 is provided which returns a `napi_extended_error_info` structure.
 The format of the `napi_extended_error_info` structure is as follows:
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 typedef struct napi_extended_error_info {
@@ -922,9 +922,9 @@ Do not rely on the content or format of any of the extended information as it
 is not subject to SemVer and may change at any time. It is intended only for
 logging purposes.
 
-##### <DataTag tag="M" /> `napi_get_last_error_info`
+##### <Tag tag="M" /> `napi_get_last_error_info`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status
@@ -1034,9 +1034,9 @@ is `'ERR_ERROR_1'` and a `TypeError` is being created the name will be:
 TypeError [ERR_ERROR_1]
 ```
 
-##### <DataTag tag="M" /> `napi_throw`
+##### <Tag tag="M" /> `napi_throw`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_throw(napi_env env, napi_value error);
@@ -1049,9 +1049,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API throws the JavaScript value provided.
 
-##### <DataTag tag="M" /> `napi_throw_error`
+##### <Tag tag="M" /> `napi_throw_error`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_throw_error(napi_env env,
@@ -1067,9 +1067,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API throws a JavaScript `Error` with the text provided.
 
-##### <DataTag tag="M" /> `napi_throw_type_error`
+##### <Tag tag="M" /> `napi_throw_type_error`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_throw_type_error(napi_env env,
@@ -1085,9 +1085,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API throws a JavaScript `TypeError` with the text provided.
 
-##### <DataTag tag="M" /> `napi_throw_range_error`
+##### <Tag tag="M" /> `napi_throw_range_error`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_throw_range_error(napi_env env,
@@ -1103,11 +1103,11 @@ Returns `napi_ok` if the API succeeded.
 
 This API throws a JavaScript `RangeError` with the text provided.
 
-##### <DataTag tag="M" /> `node_api_throw_syntax_error`
+##### <Tag tag="M" /> `node_api_throw_syntax_error`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 ```c
 NAPI_EXTERN napi_status node_api_throw_syntax_error(napi_env env,
@@ -1123,9 +1123,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API throws a JavaScript `SyntaxError` with the text provided.
 
-##### <DataTag tag="M" /> `napi_is_error`
+##### <Tag tag="M" /> `napi_is_error`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_is_error(napi_env env,
@@ -1142,9 +1142,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API queries a `napi_value` to check if it represents an error object.
 
-##### <DataTag tag="M" /> `napi_create_error`
+##### <Tag tag="M" /> `napi_create_error`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_create_error(napi_env env,
@@ -1164,9 +1164,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API returns a JavaScript `Error` with the text provided.
 
-##### <DataTag tag="M" /> `napi_create_type_error`
+##### <Tag tag="M" /> `napi_create_type_error`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_create_type_error(napi_env env,
@@ -1186,9 +1186,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API returns a JavaScript `TypeError` with the text provided.
 
-##### <DataTag tag="M" /> `napi_create_range_error`
+##### <Tag tag="M" /> `napi_create_range_error`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_create_range_error(napi_env env,
@@ -1208,11 +1208,11 @@ Returns `napi_ok` if the API succeeded.
 
 This API returns a JavaScript `RangeError` with the text provided.
 
-##### <DataTag tag="M" /> `node_api_create_syntax_error`
+##### <Tag tag="M" /> `node_api_create_syntax_error`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 ```c
 NAPI_EXTERN napi_status node_api_create_syntax_error(napi_env env,
@@ -1232,9 +1232,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API returns a JavaScript `SyntaxError` with the text provided.
 
-##### <DataTag tag="M" /> `napi_get_and_clear_last_exception`
+##### <Tag tag="M" /> `napi_get_and_clear_last_exception`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_and_clear_last_exception(napi_env env,
@@ -1248,9 +1248,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API can be called even if there is a pending JavaScript exception.
 
-##### <DataTag tag="M" /> `napi_is_exception_pending`
+##### <Tag tag="M" /> `napi_is_exception_pending`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_exception_pending(napi_env env, bool* result);
@@ -1263,9 +1263,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API can be called even if there is a pending JavaScript exception.
 
-##### <DataTag tag="M" /> `napi_fatal_exception`
+##### <Tag tag="M" /> `napi_fatal_exception`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[3]}}} />
 
 ```c
 napi_status napi_fatal_exception(napi_env env, napi_value err);
@@ -1282,9 +1282,9 @@ callback throws an exception with no way to recover.
 In the event of an unrecoverable error in a native addon, a fatal error can be
 thrown to immediately terminate the process.
 
-##### <DataTag tag="M" /> `napi_fatal_error`
+##### <Tag tag="M" /> `napi_fatal_error`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_NO_RETURN void napi_fatal_error(const char* location,
@@ -1395,9 +1395,9 @@ The methods available to open/close escapable scopes are
 The request to promote a handle is made through [`napi_escape_handle`][] which
 can only be called once.
 
-##### <DataTag tag="M" /> `napi_open_handle_scope`
+##### <Tag tag="M" /> `napi_open_handle_scope`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_open_handle_scope(napi_env env,
@@ -1411,9 +1411,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API opens a new scope.
 
-##### <DataTag tag="M" /> `napi_close_handle_scope`
+##### <Tag tag="M" /> `napi_close_handle_scope`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_close_handle_scope(napi_env env,
@@ -1430,9 +1430,9 @@ reverse order from which they were created.
 
 This API can be called even if there is a pending JavaScript exception.
 
-##### <DataTag tag="M" /> `napi_open_escapable_handle_scope`
+##### <Tag tag="M" /> `napi_open_escapable_handle_scope`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -1448,9 +1448,9 @@ Returns `napi_ok` if the API succeeded.
 This API opens a new scope from which one object can be promoted
 to the outer scope.
 
-##### <DataTag tag="M" /> `napi_close_escapable_handle_scope`
+##### <Tag tag="M" /> `napi_close_escapable_handle_scope`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -1468,9 +1468,9 @@ reverse order from which they were created.
 
 This API can be called even if there is a pending JavaScript exception.
 
-##### <DataTag tag="M" /> `napi_escape_handle`
+##### <Tag tag="M" /> `napi_escape_handle`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_escape_handle(napi_env env,
@@ -1540,9 +1540,9 @@ run and the native memory pointed by the earlier persistent reference
 will not be freed. This can be avoided by calling
 `napi_delete_reference` in addition to `napi_reference_unref` when possible.
 
-##### <DataTag tag="M" /> `napi_create_reference`
+##### <Tag tag="M" /> `napi_create_reference`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_create_reference(napi_env env,
@@ -1562,9 +1562,9 @@ Returns `napi_ok` if the API succeeded.
 This API creates a new reference with the specified reference count
 to the `Object` passed in.
 
-##### <DataTag tag="M" /> `napi_delete_reference`
+##### <Tag tag="M" /> `napi_delete_reference`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_delete_reference(napi_env env, napi_ref ref);
@@ -1579,9 +1579,9 @@ This API deletes the reference passed in.
 
 This API can be called even if there is a pending JavaScript exception.
 
-##### <DataTag tag="M" /> `napi_reference_ref`
+##### <Tag tag="M" /> `napi_reference_ref`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_reference_ref(napi_env env,
@@ -1598,9 +1598,9 @@ Returns `napi_ok` if the API succeeded.
 This API increments the reference count for the reference
 passed in and returns the resulting reference count.
 
-##### <DataTag tag="M" /> `napi_reference_unref`
+##### <Tag tag="M" /> `napi_reference_unref`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_reference_unref(napi_env env,
@@ -1617,9 +1617,9 @@ Returns `napi_ok` if the API succeeded.
 This API decrements the reference count for the reference
 passed in and returns the resulting reference count.
 
-##### <DataTag tag="M" /> `napi_get_reference_value`
+##### <Tag tag="M" /> `napi_get_reference_value`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_get_reference_value(napi_env env,
@@ -1651,9 +1651,9 @@ Node-API provides functions for registering and un-registering such callbacks.
 When those callbacks are run, all resources that are being held by the addon
 should be freed up.
 
-##### <DataTag tag="M" /> `napi_add_env_cleanup_hook`
+##### <Tag tag="M" /> `napi_add_env_cleanup_hook`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[3]}}} />
 
 ```c
 NODE_EXTERN napi_status napi_add_env_cleanup_hook(napi_env env,
@@ -1678,9 +1678,9 @@ is being torn down anyway.
 
 For asynchronous cleanup, [`napi_add_async_cleanup_hook`][] is available.
 
-##### <DataTag tag="M" /> `napi_remove_env_cleanup_hook`
+##### <Tag tag="M" /> `napi_remove_env_cleanup_hook`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[3]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_remove_env_cleanup_hook(napi_env env,
@@ -1695,9 +1695,9 @@ need to be exact matches.
 The function must have originally been registered
 with `napi_add_env_cleanup_hook`, otherwise the process will abort.
 
-##### <DataTag tag="M" /> `napi_add_async_cleanup_hook`
+##### <Tag tag="M" /> `napi_add_async_cleanup_hook`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34819","description":"Changed signature of the `hook` callback."}],"update":{"type":"napiVersion","version":[8]}}} />
+<MC data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34819","description":"Changed signature of the `hook` callback."}],"update":{"type":"napiVersion","version":[8]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_add_async_cleanup_hook(
@@ -1727,9 +1727,9 @@ regardless of whether the hook has already been invoked.
 Typically, that happens when the resource for which this hook was added
 is being torn down anyway.
 
-##### <DataTag tag="M" /> `napi_remove_async_cleanup_hook`
+##### <Tag tag="M" /> `napi_remove_async_cleanup_hook`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34819","description":"Removed `env` parameter."}],"update":{"type":"added","version":["v14.8.0","v12.19.0"]}}} />
+<MC data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34819","description":"Removed `env` parameter."}],"update":{"type":"added","version":["v14.8.0","v12.19.0"]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_remove_async_cleanup_hook(
@@ -1881,9 +1881,9 @@ the `napi_value` in question is of the JavaScript type expected by the API.
 
 #### Enum types
 
-##### <DataTag tag="M" /> `napi_key_collection_mode`
+##### <Tag tag="M" /> `napi_key_collection_mode`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 typedef enum {
@@ -1900,9 +1900,9 @@ Describes the `Keys/Properties` filter enums:
 object only. `napi_key_include_prototypes` will include all keys
 of the objects's prototype chain as well.
 
-##### <DataTag tag="M" /> `napi_key_filter`
+##### <Tag tag="M" /> `napi_key_filter`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 typedef enum {
@@ -1917,9 +1917,9 @@ typedef enum {
 
 Property filter bits. They can be or'ed to build a composite filter.
 
-##### <DataTag tag="M" /> `napi_key_conversion`
+##### <Tag tag="M" /> `napi_key_conversion`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 typedef enum {
@@ -1932,7 +1932,7 @@ typedef enum {
 strings. `napi_key_keep_numbers` will return numbers for integer
 indices.
 
-##### <DataTag tag="M" /> `napi_valuetype`
+##### <Tag tag="M" /> `napi_valuetype`
 
 ```c
 typedef enum {
@@ -1958,7 +1958,7 @@ In addition to types in that section, `napi_valuetype` can also represent
 A JavaScript value of type `napi_external` appears in JavaScript as a plain
 object such that no properties can be set on it, and no prototype.
 
-##### <DataTag tag="M" /> `napi_typedarray_type`
+##### <Tag tag="M" /> `napi_typedarray_type`
 
 ```c
 typedef enum {
@@ -1982,9 +1982,9 @@ Elements of this enum correspond to
 
 #### Object creation functions
 
-##### <DataTag tag="M" /> `napi_create_array`
+##### <Tag tag="M" /> `napi_create_array`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_array(napi_env env, napi_value* result)
@@ -1999,9 +1999,9 @@ This API returns a Node-API value corresponding to a JavaScript `Array` type.
 JavaScript arrays are described in
 [Section 22.1][] of the ECMAScript Language Specification.
 
-##### <DataTag tag="M" /> `napi_create_array_with_length`
+##### <Tag tag="M" /> `napi_create_array_with_length`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_array_with_length(napi_env env,
@@ -2026,9 +2026,9 @@ directly read and/or written via C, consider using
 JavaScript arrays are described in
 [Section 22.1][] of the ECMAScript Language Specification.
 
-##### <DataTag tag="M" /> `napi_create_arraybuffer`
+##### <Tag tag="M" /> `napi_create_arraybuffer`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_arraybuffer(napi_env env,
@@ -2058,9 +2058,9 @@ a typed array or `DataView` object would need to be created.
 JavaScript `ArrayBuffer` objects are described in
 [Section 24.1][] of the ECMAScript Language Specification.
 
-##### <DataTag tag="M" /> `napi_create_buffer`
+##### <Tag tag="M" /> `napi_create_buffer`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_buffer(napi_env env,
@@ -2080,9 +2080,9 @@ Returns `napi_ok` if the API succeeded.
 This API allocates a `node::Buffer` object. While this is still a
 fully-supported data structure, in most cases using a `TypedArray` will suffice.
 
-##### <DataTag tag="M" /> `napi_create_buffer_copy`
+##### <Tag tag="M" /> `napi_create_buffer_copy`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_buffer_copy(napi_env env,
@@ -2106,9 +2106,9 @@ This API allocates a `node::Buffer` object and initializes it with data copied
 from the passed-in buffer. While this is still a fully-supported data
 structure, in most cases using a `TypedArray` will suffice.
 
-##### <DataTag tag="M" /> `napi_create_date`
+##### <Tag tag="M" /> `napi_create_date`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[5]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[5]}}} />
 
 ```c
 napi_status napi_create_date(napi_env env,
@@ -2130,9 +2130,9 @@ This API allocates a JavaScript `Date` object.
 JavaScript `Date` objects are described in
 [Section 20.3][] of the ECMAScript Language Specification.
 
-##### <DataTag tag="M" /> `napi_create_external`
+##### <Tag tag="M" /> `napi_create_external`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_external(napi_env env,
@@ -2168,9 +2168,9 @@ The created value is not an object, and therefore does not support additional
 properties. It is considered a distinct value type: calling `napi_typeof()` with
 an external value yields `napi_external`.
 
-##### <DataTag tag="M" /> `napi_create_external_arraybuffer`
+##### <Tag tag="M" /> `napi_create_external_arraybuffer`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status
@@ -2210,9 +2210,9 @@ object just created is ready for garbage collection. It is similar to
 JavaScript `ArrayBuffer`s are described in
 [Section 24.1][] of the ECMAScript Language Specification.
 
-##### <DataTag tag="M" /> `napi_create_external_buffer`
+##### <Tag tag="M" /> `napi_create_external_buffer`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_external_buffer(napi_env env,
@@ -2249,9 +2249,9 @@ object just created is ready for garbage collection. It is similar to
 
 For Node.js >=4 `Buffers` are `Uint8Array`s.
 
-##### <DataTag tag="M" /> `napi_create_object`
+##### <Tag tag="M" /> `napi_create_object`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_object(napi_env env, napi_value* result)
@@ -2268,9 +2268,9 @@ It is the equivalent of doing `new Object()` in JavaScript.
 The JavaScript `Object` type is described in [Section 6.1.7][] of the
 ECMAScript Language Specification.
 
-##### <DataTag tag="M" /> `napi_create_symbol`
+##### <Tag tag="M" /> `napi_create_symbol`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_symbol(napi_env env,
@@ -2290,11 +2290,11 @@ This API creates a JavaScript `symbol` value from a UTF8-encoded C string.
 The JavaScript `symbol` type is described in [Section 19.4][]
 of the ECMAScript Language Specification.
 
-##### <DataTag tag="M" /> `node_api_symbol_for`
+##### <Tag tag="M" /> `node_api_symbol_for`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 ```c
 napi_status node_api_symbol_for(napi_env env,
@@ -2319,9 +2319,9 @@ symbol will be created in the registry.
 The JavaScript `symbol` type is described in [Section 19.4][] of the ECMAScript
 Language Specification.
 
-##### <DataTag tag="M" /> `napi_create_typedarray`
+##### <Tag tag="M" /> `napi_create_typedarray`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_typedarray(napi_env env,
@@ -2354,9 +2354,9 @@ is raised.
 JavaScript `TypedArray` objects are described in
 [Section 22.2][] of the ECMAScript Language Specification.
 
-##### <DataTag tag="M" /> `napi_create_dataview`
+##### <Tag tag="M" /> `napi_create_dataview`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_dataview(napi_env env,
@@ -2388,9 +2388,9 @@ JavaScript `DataView` objects are described in
 
 #### Functions to convert from C types to Node-API
 
-##### <DataTag tag="M" /> `napi_create_int32`
+##### <Tag tag="M" /> `napi_create_int32`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_int32(napi_env env, int32_t value, napi_value* result)
@@ -2408,9 +2408,9 @@ This API is used to convert from the C `int32_t` type to the JavaScript
 The JavaScript `number` type is described in
 [Section 6.1.6][] of the ECMAScript Language Specification.
 
-##### <DataTag tag="M" /> `napi_create_uint32`
+##### <Tag tag="M" /> `napi_create_uint32`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_uint32(napi_env env, uint32_t value, napi_value* result)
@@ -2428,9 +2428,9 @@ This API is used to convert from the C `uint32_t` type to the JavaScript
 The JavaScript `number` type is described in
 [Section 6.1.6][] of the ECMAScript Language Specification.
 
-##### <DataTag tag="M" /> `napi_create_int64`
+##### <Tag tag="M" /> `napi_create_int64`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_int64(napi_env env, int64_t value, napi_value* result)
@@ -2451,9 +2451,9 @@ cannot be represented with full precision in JavaScript. Integer values
 outside the range of [`Number.MIN_SAFE_INTEGER`][] `-(2**53 - 1)` -
 [`Number.MAX_SAFE_INTEGER`][] `(2**53 - 1)` will lose precision.
 
-##### <DataTag tag="M" /> `napi_create_double`
+##### <Tag tag="M" /> `napi_create_double`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_double(napi_env env, double value, napi_value* result)
@@ -2471,9 +2471,9 @@ This API is used to convert from the C `double` type to the JavaScript
 The JavaScript `number` type is described in
 [Section 6.1.6][] of the ECMAScript Language Specification.
 
-##### <DataTag tag="M" /> `napi_create_bigint_int64`
+##### <Tag tag="M" /> `napi_create_bigint_int64`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_create_bigint_int64(napi_env env,
@@ -2489,9 +2489,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API converts the C `int64_t` type to the JavaScript `BigInt` type.
 
-##### <DataTag tag="M" /> `napi_create_bigint_uint64`
+##### <Tag tag="M" /> `napi_create_bigint_uint64`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_create_bigint_uint64(napi_env env,
@@ -2507,9 +2507,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API converts the C `uint64_t` type to the JavaScript `BigInt` type.
 
-##### <DataTag tag="M" /> `napi_create_bigint_words`
+##### <Tag tag="M" /> `napi_create_bigint_words`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_create_bigint_words(napi_env env,
@@ -2534,9 +2534,9 @@ value.
 The resulting `BigInt` is calculated as: (–1)<sup>`sign_bit`</sup> (`words[0]`
 × (2<sup>64</sup>)<sup>0</sup> + `words[1]` × (2<sup>64</sup>)<sup>1</sup> + …)
 
-##### <DataTag tag="M" /> `napi_create_string_latin1`
+##### <Tag tag="M" /> `napi_create_string_latin1`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_string_latin1(napi_env env,
@@ -2559,9 +2559,9 @@ string. The native string is copied.
 The JavaScript `string` type is described in
 [Section 6.1.4][] of the ECMAScript Language Specification.
 
-##### <DataTag tag="M" /> `napi_create_string_utf16`
+##### <Tag tag="M" /> `napi_create_string_utf16`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_string_utf16(napi_env env,
@@ -2584,9 +2584,9 @@ The native string is copied.
 The JavaScript `string` type is described in
 [Section 6.1.4][] of the ECMAScript Language Specification.
 
-##### <DataTag tag="M" /> `napi_create_string_utf8`
+##### <Tag tag="M" /> `napi_create_string_utf8`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_string_utf8(napi_env env,
@@ -2611,9 +2611,9 @@ The JavaScript `string` type is described in
 
 #### Functions to convert from Node-API to C types
 
-##### <DataTag tag="M" /> `napi_get_array_length`
+##### <Tag tag="M" /> `napi_get_array_length`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_array_length(napi_env env,
@@ -2633,9 +2633,9 @@ This API returns the length of an array.
 `Array` length is described in [Section 22.1.4.1][] of the ECMAScript Language
 Specification.
 
-##### <DataTag tag="M" /> `napi_get_arraybuffer_info`
+##### <Tag tag="M" /> `napi_get_arraybuffer_info`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_arraybuffer_info(napi_env env,
@@ -2663,9 +2663,9 @@ lifetime of the `ArrayBuffer`. It's also safe to use the returned data buffer
 within the same callback as long as there are no calls to other APIs that might
 trigger a GC.
 
-##### <DataTag tag="M" /> `napi_get_buffer_info`
+##### <Tag tag="M" /> `napi_get_buffer_info`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_buffer_info(napi_env env,
@@ -2688,9 +2688,9 @@ and its length.
 _Warning_: Use caution while using this API since the underlying data buffer's
 lifetime is not guaranteed if it's managed by the VM.
 
-##### <DataTag tag="M" /> `napi_get_prototype`
+##### <Tag tag="M" /> `napi_get_prototype`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_prototype(napi_env env,
@@ -2706,9 +2706,9 @@ napi_status napi_get_prototype(napi_env env,
 
 Returns `napi_ok` if the API succeeded.
 
-##### <DataTag tag="M" /> `napi_get_typedarray_info`
+##### <Tag tag="M" /> `napi_get_typedarray_info`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_typedarray_info(napi_env env,
@@ -2745,9 +2745,9 @@ Any of the out parameters may be `NULL` if that property is unneeded.
 _Warning_: Use caution while using this API since the underlying data buffer
 is managed by the VM.
 
-##### <DataTag tag="M" /> `napi_get_dataview_info`
+##### <Tag tag="M" /> `napi_get_dataview_info`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_dataview_info(napi_env env,
@@ -2774,9 +2774,9 @@ Any of the out parameters may be `NULL` if that property is unneeded.
 
 This API returns various properties of a `DataView`.
 
-##### <DataTag tag="M" /> `napi_get_date_value`
+##### <Tag tag="M" /> `napi_get_date_value`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[5]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[5]}}} />
 
 ```c
 napi_status napi_get_date_value(napi_env env,
@@ -2798,9 +2798,9 @@ in it returns `napi_date_expected`.
 This API returns the C double primitive of time value for the given JavaScript
 `Date`.
 
-##### <DataTag tag="M" /> `napi_get_value_bool`
+##### <Tag tag="M" /> `napi_get_value_bool`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_bool(napi_env env, napi_value value, bool* result)
@@ -2817,9 +2817,9 @@ passed in it returns `napi_boolean_expected`.
 This API returns the C boolean primitive equivalent of the given JavaScript
 `Boolean`.
 
-##### <DataTag tag="M" /> `napi_get_value_double`
+##### <Tag tag="M" /> `napi_get_value_double`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_double(napi_env env,
@@ -2838,9 +2838,9 @@ in it returns `napi_number_expected`.
 This API returns the C double primitive equivalent of the given JavaScript
 `number`.
 
-##### <DataTag tag="M" /> `napi_get_value_bigint_int64`
+##### <Tag tag="M" /> `napi_get_value_bigint_int64`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_get_value_bigint_int64(napi_env env,
@@ -2862,9 +2862,9 @@ returns `napi_bigint_expected`.
 This API returns the C `int64_t` primitive equivalent of the given JavaScript
 `BigInt`. If needed it will truncate the value, setting `lossless` to `false`.
 
-##### <DataTag tag="M" /> `napi_get_value_bigint_uint64`
+##### <Tag tag="M" /> `napi_get_value_bigint_uint64`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_get_value_bigint_uint64(napi_env env,
@@ -2886,9 +2886,9 @@ returns `napi_bigint_expected`.
 This API returns the C `uint64_t` primitive equivalent of the given JavaScript
 `BigInt`. If needed it will truncate the value, setting `lossless` to `false`.
 
-##### <DataTag tag="M" /> `napi_get_value_bigint_words`
+##### <Tag tag="M" /> `napi_get_value_bigint_words`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_get_value_bigint_words(napi_env env,
@@ -2913,9 +2913,9 @@ This API converts a single `BigInt` value into a sign bit, 64-bit little-endian
 array, and the number of elements in the array. `sign_bit` and `words` may be
 both set to `NULL`, in order to get only `word_count`.
 
-##### <DataTag tag="M" /> `napi_get_value_external`
+##### <Tag tag="M" /> `napi_get_value_external`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_external(napi_env env,
@@ -2933,9 +2933,9 @@ passed in it returns `napi_invalid_arg`.
 This API retrieves the external data pointer that was previously passed to
 `napi_create_external()`.
 
-##### <DataTag tag="M" /> `napi_get_value_int32`
+##### <Tag tag="M" /> `napi_get_value_int32`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_int32(napi_env env,
@@ -2961,9 +2961,9 @@ positive number becoming a negative number if the value is > 2<sup>31</sup> - 1.
 Non-finite number values (`NaN`, `+Infinity`, or `-Infinity`) set the
 result to zero.
 
-##### <DataTag tag="M" /> `napi_get_value_int64`
+##### <Tag tag="M" /> `napi_get_value_int64`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_int64(napi_env env,
@@ -2989,9 +2989,9 @@ precision.
 Non-finite number values (`NaN`, `+Infinity`, or `-Infinity`) set the
 result to zero.
 
-##### <DataTag tag="M" /> `napi_get_value_string_latin1`
+##### <Tag tag="M" /> `napi_get_value_string_latin1`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_string_latin1(napi_env env,
@@ -3017,9 +3017,9 @@ is passed in it returns `napi_string_expected`.
 This API returns the ISO-8859-1-encoded string corresponding the value passed
 in.
 
-##### <DataTag tag="M" /> `napi_get_value_string_utf8`
+##### <Tag tag="M" /> `napi_get_value_string_utf8`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_string_utf8(napi_env env,
@@ -3044,9 +3044,9 @@ is passed in it returns `napi_string_expected`.
 
 This API returns the UTF8-encoded string corresponding the value passed in.
 
-##### <DataTag tag="M" /> `napi_get_value_string_utf16`
+##### <Tag tag="M" /> `napi_get_value_string_utf16`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_string_utf16(napi_env env,
@@ -3071,9 +3071,9 @@ is passed in it returns `napi_string_expected`.
 
 This API returns the UTF16-encoded string corresponding the value passed in.
 
-##### <DataTag tag="M" /> `napi_get_value_uint32`
+##### <Tag tag="M" /> `napi_get_value_uint32`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_uint32(napi_env env,
@@ -3094,9 +3094,9 @@ This API returns the C primitive equivalent of the given `napi_value` as a
 
 #### Functions to get global instances
 
-##### <DataTag tag="M" /> `napi_get_boolean`
+##### <Tag tag="M" /> `napi_get_boolean`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_boolean(napi_env env, bool value, napi_value* result)
@@ -3112,9 +3112,9 @@ Returns `napi_ok` if the API succeeded.
 This API is used to return the JavaScript singleton object that is used to
 represent the given boolean value.
 
-##### <DataTag tag="M" /> `napi_get_global`
+##### <Tag tag="M" /> `napi_get_global`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_global(napi_env env, napi_value* result)
@@ -3127,9 +3127,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API returns the `global` object.
 
-##### <DataTag tag="M" /> `napi_get_null`
+##### <Tag tag="M" /> `napi_get_null`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_null(napi_env env, napi_value* result)
@@ -3142,9 +3142,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API returns the `null` object.
 
-##### <DataTag tag="M" /> `napi_get_undefined`
+##### <Tag tag="M" /> `napi_get_undefined`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_undefined(napi_env env, napi_value* result)
@@ -3170,9 +3170,9 @@ These APIs support doing one of the following:
 2. Check the type of a JavaScript value.
 3. Check for equality between two JavaScript values.
 
-#### <DataTag tag="M" /> `napi_coerce_to_bool`
+#### <Tag tag="M" /> `napi_coerce_to_bool`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_coerce_to_bool(napi_env env,
@@ -3189,9 +3189,9 @@ Returns `napi_ok` if the API succeeded.
 This API implements the abstract operation `ToBoolean()` as defined in
 [Section 7.1.2][] of the ECMAScript Language Specification.
 
-#### <DataTag tag="M" /> `napi_coerce_to_number`
+#### <Tag tag="M" /> `napi_coerce_to_number`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_coerce_to_number(napi_env env,
@@ -3210,9 +3210,9 @@ This API implements the abstract operation `ToNumber()` as defined in
 This function potentially runs JS code if the passed-in value is an
 object.
 
-#### <DataTag tag="M" /> `napi_coerce_to_object`
+#### <Tag tag="M" /> `napi_coerce_to_object`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_coerce_to_object(napi_env env,
@@ -3229,9 +3229,9 @@ Returns `napi_ok` if the API succeeded.
 This API implements the abstract operation `ToObject()` as defined in
 [Section 7.1.13][] of the ECMAScript Language Specification.
 
-#### <DataTag tag="M" /> `napi_coerce_to_string`
+#### <Tag tag="M" /> `napi_coerce_to_string`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_coerce_to_string(napi_env env,
@@ -3250,9 +3250,9 @@ This API implements the abstract operation `ToString()` as defined in
 This function potentially runs JS code if the passed-in value is an
 object.
 
-#### <DataTag tag="M" /> `napi_typeof`
+#### <Tag tag="M" /> `napi_typeof`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_typeof(napi_env env, napi_value value, napi_valuetype* result)
@@ -3277,9 +3277,9 @@ Specification. However, there are some differences:
 
 If `value` has a type that is invalid, an error is returned.
 
-#### <DataTag tag="M" /> `napi_instanceof`
+#### <Tag tag="M" /> `napi_instanceof`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_instanceof(napi_env env,
@@ -3300,9 +3300,9 @@ Returns `napi_ok` if the API succeeded.
 This API represents invoking the `instanceof` Operator on the object as
 defined in [Section 12.10.4][] of the ECMAScript Language Specification.
 
-#### <DataTag tag="M" /> `napi_is_array`
+#### <Tag tag="M" /> `napi_is_array`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_array(napi_env env, napi_value value, bool* result)
@@ -3317,9 +3317,9 @@ Returns `napi_ok` if the API succeeded.
 This API represents invoking the `IsArray` operation on the object
 as defined in [Section 7.2.2][] of the ECMAScript Language Specification.
 
-#### <DataTag tag="M" /> `napi_is_arraybuffer`
+#### <Tag tag="M" /> `napi_is_arraybuffer`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_arraybuffer(napi_env env, napi_value value, bool* result)
@@ -3333,9 +3333,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API checks if the `Object` passed in is an array buffer.
 
-#### <DataTag tag="M" /> `napi_is_buffer`
+#### <Tag tag="M" /> `napi_is_buffer`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_buffer(napi_env env, napi_value value, bool* result)
@@ -3350,9 +3350,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API checks if the `Object` passed in is a buffer.
 
-#### <DataTag tag="M" /> `napi_is_date`
+#### <Tag tag="M" /> `napi_is_date`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[5]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[5]}}} />
 
 ```c
 napi_status napi_is_date(napi_env env, napi_value value, bool* result)
@@ -3367,9 +3367,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API checks if the `Object` passed in is a date.
 
-#### <DataTag tag="M" /> `napi_is_error`
+#### <Tag tag="M" /> `napi_is_error`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_error(napi_env env, napi_value value, bool* result)
@@ -3383,9 +3383,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API checks if the `Object` passed in is an `Error`.
 
-#### <DataTag tag="M" /> `napi_is_typedarray`
+#### <Tag tag="M" /> `napi_is_typedarray`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_typedarray(napi_env env, napi_value value, bool* result)
@@ -3399,9 +3399,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API checks if the `Object` passed in is a typed array.
 
-#### <DataTag tag="M" /> `napi_is_dataview`
+#### <Tag tag="M" /> `napi_is_dataview`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_dataview(napi_env env, napi_value value, bool* result)
@@ -3415,9 +3415,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API checks if the `Object` passed in is a `DataView`.
 
-#### <DataTag tag="M" /> `napi_strict_equals`
+#### <Tag tag="M" /> `napi_strict_equals`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_strict_equals(napi_env env,
@@ -3436,9 +3436,9 @@ Returns `napi_ok` if the API succeeded.
 This API represents the invocation of the Strict Equality algorithm as
 defined in [Section 7.2.14][] of the ECMAScript Language Specification.
 
-#### <DataTag tag="M" /> `napi_detach_arraybuffer`
+#### <Tag tag="M" /> `napi_detach_arraybuffer`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[7]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[7]}}} />
 
 ```c
 napi_status napi_detach_arraybuffer(napi_env env,
@@ -3459,9 +3459,9 @@ that is, created with [`napi_create_external_arraybuffer`][].
 This API represents the invocation of the `ArrayBuffer` detach operation as
 defined in [Section 24.1.1.3][] of the ECMAScript Language Specification.
 
-#### <DataTag tag="M" /> `napi_is_detached_arraybuffer`
+#### <Tag tag="M" /> `napi_is_detached_arraybuffer`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[7]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[7]}}} />
 
 ```c
 napi_status napi_is_detached_arraybuffer(napi_env env,
@@ -3623,9 +3623,9 @@ if (status != napi_ok) return status;
 
 #### Structures
 
-##### <DataTag tag="M" /> `napi_property_attributes`
+##### <Tag tag="M" /> `napi_property_attributes`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v14.12.0","pr-url":"https://github.com/nodejs/node/pull/35214","description":"added `napi_default_method` and `napi_default_property`."}]}} />
+<MC data={{"changes":[{"version":"v14.12.0","pr-url":"https://github.com/nodejs/node/pull/35214","description":"added `napi_default_method` and `napi_default_property`."}]}} />
 
 ```c
 typedef enum {
@@ -3668,7 +3668,7 @@ They can be one or more of the following bitflags:
 * `napi_default_jsproperty`: Like a property set via assignment in JavaScript,
   the property is writable, enumerable, and configurable.
 
-##### <DataTag tag="M" /> `napi_property_descriptor`
+##### <Tag tag="M" /> `napi_property_descriptor`
 
 ```c
 typedef struct {
@@ -3716,9 +3716,9 @@ typedef struct {
 
 #### Functions
 
-##### <DataTag tag="M" /> `napi_get_property_names`
+##### <Tag tag="M" /> `napi_get_property_names`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_property_names(napi_env env,
@@ -3739,9 +3739,9 @@ This API returns the names of the enumerable properties of `object` as an array
 of strings. The properties of `object` whose key is a symbol will not be
 included.
 
-##### <DataTag tag="M" /> `napi_get_all_property_names`
+##### <Tag tag="M" /> `napi_get_all_property_names`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_get_all_property_names(napi_env env,
@@ -3767,9 +3767,9 @@ Returns `napi_ok` if the API succeeded.
 This API returns an array containing the names of the available properties
 of this object.
 
-##### <DataTag tag="M" /> `napi_set_property`
+##### <Tag tag="M" /> `napi_set_property`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_set_property(napi_env env,
@@ -3787,9 +3787,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API set a property on the `Object` passed in.
 
-##### <DataTag tag="M" /> `napi_get_property`
+##### <Tag tag="M" /> `napi_get_property`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_property(napi_env env,
@@ -3807,9 +3807,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API gets the requested property from the `Object` passed in.
 
-##### <DataTag tag="M" /> `napi_has_property`
+##### <Tag tag="M" /> `napi_has_property`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_has_property(napi_env env,
@@ -3827,9 +3827,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API checks if the `Object` passed in has the named property.
 
-##### <DataTag tag="M" /> `napi_delete_property`
+##### <Tag tag="M" /> `napi_delete_property`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_delete_property(napi_env env,
@@ -3848,9 +3848,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API attempts to delete the `key` own property from `object`.
 
-##### <DataTag tag="M" /> `napi_has_own_property`
+##### <Tag tag="M" /> `napi_has_own_property`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_has_own_property(napi_env env,
@@ -3870,9 +3870,9 @@ This API checks if the `Object` passed in has the named own property. `key` must
 be a `string` or a `symbol`, or an error will be thrown. Node-API will not
 perform any conversion between data types.
 
-##### <DataTag tag="M" /> `napi_set_named_property`
+##### <Tag tag="M" /> `napi_set_named_property`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_set_named_property(napi_env env,
@@ -3891,9 +3891,9 @@ Returns `napi_ok` if the API succeeded.
 This method is equivalent to calling [`napi_set_property`][] with a `napi_value`
 created from the string passed in as `utf8Name`.
 
-##### <DataTag tag="M" /> `napi_get_named_property`
+##### <Tag tag="M" /> `napi_get_named_property`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_named_property(napi_env env,
@@ -3912,9 +3912,9 @@ Returns `napi_ok` if the API succeeded.
 This method is equivalent to calling [`napi_get_property`][] with a `napi_value`
 created from the string passed in as `utf8Name`.
 
-##### <DataTag tag="M" /> `napi_has_named_property`
+##### <Tag tag="M" /> `napi_has_named_property`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_has_named_property(napi_env env,
@@ -3933,9 +3933,9 @@ Returns `napi_ok` if the API succeeded.
 This method is equivalent to calling [`napi_has_property`][] with a `napi_value`
 created from the string passed in as `utf8Name`.
 
-##### <DataTag tag="M" /> `napi_set_element`
+##### <Tag tag="M" /> `napi_set_element`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_set_element(napi_env env,
@@ -3953,9 +3953,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API sets an element on the `Object` passed in.
 
-##### <DataTag tag="M" /> `napi_get_element`
+##### <Tag tag="M" /> `napi_get_element`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_element(napi_env env,
@@ -3973,9 +3973,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API gets the element at the requested index.
 
-##### <DataTag tag="M" /> `napi_has_element`
+##### <Tag tag="M" /> `napi_has_element`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_has_element(napi_env env,
@@ -3994,9 +3994,9 @@ Returns `napi_ok` if the API succeeded.
 This API returns if the `Object` passed in has an element at the
 requested index.
 
-##### <DataTag tag="M" /> `napi_delete_element`
+##### <Tag tag="M" /> `napi_delete_element`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_delete_element(napi_env env,
@@ -4015,9 +4015,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API attempts to delete the specified `index` from `object`.
 
-##### <DataTag tag="M" /> `napi_define_properties`
+##### <Tag tag="M" /> `napi_define_properties`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_define_properties(napi_env env,
@@ -4040,9 +4040,9 @@ this API will set the properties on the object one at a time, as defined by
 `DefineOwnProperty()` (described in [Section 9.1.6][] of the ECMA-262
 specification).
 
-##### <DataTag tag="M" /> `napi_object_freeze`
+##### <Tag tag="M" /> `napi_object_freeze`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[8]}}} />
 
 ```c
 napi_status napi_object_freeze(napi_env env,
@@ -4062,9 +4062,9 @@ It also prevents the object's prototype from being changed. This is described
 in [Section 19.1.2.6](https://tc39.es/ecma262/#sec-object.freeze) of the
 ECMA-262 specification.
 
-##### <DataTag tag="M" /> `napi_object_seal`
+##### <Tag tag="M" /> `napi_object_seal`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[8]}}} />
 
 ```c
 napi_status napi_object_seal(napi_env env,
@@ -4105,9 +4105,9 @@ Any non-`NULL` data which is passed to this API via the `data` field of the
 whenever `object` is garbage-collected by passing both `object` and the data to
 [`napi_add_finalizer`][].
 
-#### <DataTag tag="M" /> `napi_call_function`
+#### <Tag tag="M" /> `napi_call_function`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_call_function(napi_env env,
@@ -4173,9 +4173,9 @@ status = napi_get_value_int32(env, return_val, &result);
 if (status != napi_ok) return;
 ```
 
-#### <DataTag tag="M" /> `napi_create_function`
+#### <Tag tag="M" /> `napi_create_function`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_function(napi_env env,
@@ -4252,9 +4252,9 @@ passing both the JavaScript function and the data to [`napi_add_finalizer`][].
 JavaScript `Function`s are described in [Section 19.2][] of the ECMAScript
 Language Specification.
 
-#### <DataTag tag="M" /> `napi_get_cb_info`
+#### <Tag tag="M" /> `napi_get_cb_info`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_cb_info(napi_env env,
@@ -4286,9 +4286,9 @@ Returns `napi_ok` if the API succeeded.
 This method is used within a callback function to retrieve details about the
 call like the arguments and the `this` pointer from a given callback info.
 
-#### <DataTag tag="M" /> `napi_get_new_target`
+#### <Tag tag="M" /> `napi_get_new_target`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_new_target(napi_env env,
@@ -4305,9 +4305,9 @@ Returns `napi_ok` if the API succeeded.
 This API returns the `new.target` of the constructor call. If the current
 callback is not a constructor call, the result is `NULL`.
 
-#### <DataTag tag="M" /> `napi_new_instance`
+#### <Tag tag="M" /> `napi_new_instance`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_new_instance(napi_env env,
@@ -4538,9 +4538,9 @@ query(napi_env env, napi_callback_info info) {
 }
 ```
 
-#### <DataTag tag="M" /> `napi_define_class`
+#### <Tag tag="M" /> `napi_define_class`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_define_class(napi_env env,
@@ -4608,9 +4608,9 @@ with the resulting JavaScript constructor (which is returned in the `result`
 parameter) and freed whenever the class is garbage-collected by passing both
 the JavaScript function and the data to [`napi_add_finalizer`][].
 
-#### <DataTag tag="M" /> `napi_wrap`
+#### <Tag tag="M" /> `napi_wrap`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_wrap(napi_env env,
@@ -4669,9 +4669,9 @@ Calling `napi_wrap()` a second time on an object will return an error. To
 associate another native instance with the object, use `napi_remove_wrap()`
 first.
 
-#### <DataTag tag="M" /> `napi_unwrap`
+#### <Tag tag="M" /> `napi_unwrap`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_unwrap(napi_env env,
@@ -4694,9 +4694,9 @@ method or accessor, then the `this` argument to the callback is the wrapper
 object; the wrapped C++ instance that is the target of the call can be obtained
 then by calling `napi_unwrap()` on the wrapper object.
 
-#### <DataTag tag="M" /> `napi_remove_wrap`
+#### <Tag tag="M" /> `napi_remove_wrap`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_remove_wrap(napi_env env,
@@ -4715,9 +4715,9 @@ object `js_object` using `napi_wrap()` and removes the wrapping. If a finalize
 callback was associated with the wrapping, it will no longer be called when the
 JavaScript object becomes garbage-collected.
 
-#### <DataTag tag="M" /> `napi_type_tag_object`
+#### <Tag tag="M" /> `napi_type_tag_object`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[8]}}} />
 
 ```c
 napi_status napi_type_tag_object(napi_env env,
@@ -4739,9 +4739,9 @@ has the right type.
 If the object already has an associated type tag, this API will return
 `napi_invalid_arg`.
 
-#### <DataTag tag="M" /> `napi_check_object_type_tag`
+#### <Tag tag="M" /> `napi_check_object_type_tag`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[8]}}} />
 
 ```c
 napi_status napi_check_object_type_tag(napi_env env,
@@ -4763,9 +4763,9 @@ Compares the pointer given as `type_tag` with any that can be found on
 not match `type_tag`, then `result` is set to `false`. If a tag is found and it
 matches `type_tag`, then `result` is set to `true`.
 
-#### <DataTag tag="M" /> `napi_add_finalizer`
+#### <Tag tag="M" /> `napi_add_finalizer`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[5]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[5]}}} />
 
 ```c
 napi_status napi_add_finalizer(napi_env env,
@@ -4861,9 +4861,9 @@ will be invoked with a status value of `napi_cancelled`.
 The work should not be deleted before the `complete`
 callback invocation, even when it was cancelled.
 
-#### <DataTag tag="M" /> `napi_create_async_work`
+#### <Tag tag="M" /> `napi_create_async_work`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.6.0","pr-url":"https://github.com/nodejs/node/pull/14697","description":"Added `async_resource` and `async_resource_name` parameters."}],"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"changes":[{"version":"v8.6.0","pr-url":"https://github.com/nodejs/node/pull/14697","description":"Added `async_resource` and `async_resource_name` parameters."}],"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_async_work(napi_env env,
@@ -4905,9 +4905,9 @@ representative of the type of async work being performed. It is also recommended
 to apply namespacing to the identifier, e.g. by including the module name. See
 the [`async_hooks` documentation][async_hooks `type`] for more information.
 
-#### <DataTag tag="M" /> `napi_delete_async_work`
+#### <Tag tag="M" /> `napi_delete_async_work`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_delete_async_work(napi_env env,
@@ -4923,9 +4923,9 @@ This API frees a previously allocated work object.
 
 This API can be called even if there is a pending JavaScript exception.
 
-#### <DataTag tag="M" /> `napi_queue_async_work`
+#### <Tag tag="M" /> `napi_queue_async_work`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_queue_async_work(napi_env env,
@@ -4941,9 +4941,9 @@ This API requests that the previously allocated work be scheduled
 for execution. Once it returns successfully, this API must not be called again
 with the same `napi_async_work` item or the result will be undefined.
 
-#### <DataTag tag="M" /> `napi_cancel_async_work`
+#### <Tag tag="M" /> `napi_cancel_async_work`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_cancel_async_work(napi_env env,
@@ -4971,9 +4971,9 @@ scenario. When using any other asynchronous mechanism, the following APIs
 are necessary to ensure an asynchronous operation is properly tracked by
 the runtime.
 
-#### <DataTag tag="M" /> `napi_async_init`
+#### <Tag tag="M" /> `napi_async_init`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_async_init(napi_env env,
@@ -5009,9 +5009,9 @@ recommended as this will result poor results with  `async_hooks`
 now required by the underlying `async_hooks` implementation in order to provide
 the linkage between async callbacks.
 
-#### <DataTag tag="M" /> `napi_async_destroy`
+#### <Tag tag="M" /> `napi_async_destroy`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_async_destroy(napi_env env,
@@ -5025,9 +5025,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API can be called even if there is a pending JavaScript exception.
 
-#### <DataTag tag="M" /> `napi_make_callback`
+#### <Tag tag="M" /> `napi_make_callback`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.6.0","pr-url":"https://github.com/nodejs/node/pull/15189","description":"Added `async_context` parameter."}],"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"changes":[{"version":"v8.6.0","pr-url":"https://github.com/nodejs/node/pull/15189","description":"Added `async_context` parameter."}],"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_make_callback(napi_env env,
@@ -5073,9 +5073,9 @@ may be required when implementing custom async behavior that does not use
 Any `process.nextTick`s or Promises scheduled on the microtask queue by
 JavaScript during the callback are ran before returning back to C/C++.
 
-#### <DataTag tag="M" /> `napi_open_callback_scope`
+#### <Tag tag="M" /> `napi_open_callback_scope`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[3]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_open_callback_scope(napi_env env,
@@ -5100,9 +5100,9 @@ the stack the [`napi_open_callback_scope`][] and
 [`napi_close_callback_scope`][] functions can be used to open/close
 the required scope.
 
-#### <DataTag tag="M" /> `napi_close_callback_scope`
+#### <Tag tag="M" /> `napi_close_callback_scope`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[3]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_close_callback_scope(napi_env env,
@@ -5116,9 +5116,9 @@ This API can be called even if there is a pending JavaScript exception.
 
 ### Version management
 
-#### <DataTag tag="M" /> `napi_get_node_version`
+#### <Tag tag="M" /> `napi_get_node_version`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 typedef struct {
@@ -5143,9 +5143,9 @@ value of [`process.release.name`][`process.release`].
 
 The returned buffer is statically allocated and does not need to be freed.
 
-#### <DataTag tag="M" /> `napi_get_version`
+#### <Tag tag="M" /> `napi_get_version`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_version(napi_env env,
@@ -5173,9 +5173,9 @@ support it:
 
 ### Memory management
 
-#### <DataTag tag="M" /> `napi_adjust_external_memory`
+#### <Tag tag="M" /> `napi_adjust_external_memory`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_adjust_external_memory(napi_env env,
@@ -5252,9 +5252,9 @@ if (status != napi_ok) return NULL;
 deferred = NULL;
 ```
 
-#### <DataTag tag="M" /> `napi_create_promise`
+#### <Tag tag="M" /> `napi_create_promise`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_promise(napi_env env,
@@ -5272,9 +5272,9 @@ Returns `napi_ok` if the API succeeded.
 
 This API creates a deferred object and a JavaScript promise.
 
-#### <DataTag tag="M" /> `napi_resolve_deferred`
+#### <Tag tag="M" /> `napi_resolve_deferred`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_resolve_deferred(napi_env env,
@@ -5295,9 +5295,9 @@ have been retained in order to be passed to this API.
 
 The deferred object is freed upon successful completion.
 
-#### <DataTag tag="M" /> `napi_reject_deferred`
+#### <Tag tag="M" /> `napi_reject_deferred`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_reject_deferred(napi_env env,
@@ -5318,9 +5318,9 @@ have been retained in order to be passed to this API.
 
 The deferred object is freed upon successful completion.
 
-#### <DataTag tag="M" /> `napi_is_promise`
+#### <Tag tag="M" /> `napi_is_promise`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_promise(napi_env env,
@@ -5338,9 +5338,9 @@ napi_status napi_is_promise(napi_env env,
 Node-API provides an API for executing a string containing JavaScript using the
 underlying JavaScript engine.
 
-#### <DataTag tag="M" /> `napi_run_script`
+#### <Tag tag="M" /> `napi_run_script`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_run_script(napi_env env,
@@ -5370,9 +5370,9 @@ the following caveats:
 Node-API provides a function for getting the current event loop associated with
 a specific `napi_env`.
 
-#### <DataTag tag="M" /> `napi_get_uv_event_loop`
+#### <Tag tag="M" /> `napi_get_uv_event_loop`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[2]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[2]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_get_uv_event_loop(napi_env env,
@@ -5506,9 +5506,9 @@ Neither does `napi_unref_threadsafe_function` mark the thread-safe functions as
 able to be destroyed nor does `napi_ref_threadsafe_function` prevent it from
 being destroyed.
 
-#### <DataTag tag="M" /> `napi_create_threadsafe_function`
+#### <Tag tag="M" /> `napi_create_threadsafe_function`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v12.6.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/27791","description":"Made `func` parameter optional with custom `call_js_cb`."}],"update":{"type":"napiVersion","version":[4]}}} />
+<MC data={{"changes":[{"version":["v12.6.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/27791","description":"Made `func` parameter optional with custom `call_js_cb`."}],"update":{"type":"napiVersion","version":[4]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5549,9 +5549,9 @@ napi_create_threadsafe_function(napi_env env,
   [`napi_threadsafe_function_call_js`][] provides more details.
 * `[out] result`: The asynchronous thread-safe JavaScript function.
 
-#### <DataTag tag="M" /> `napi_get_threadsafe_function_context`
+#### <Tag tag="M" /> `napi_get_threadsafe_function_context`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5564,9 +5564,9 @@ napi_get_threadsafe_function_context(napi_threadsafe_function func,
 
 This API may be called from any thread which makes use of `func`.
 
-#### <DataTag tag="M" /> `napi_call_threadsafe_function`
+#### <Tag tag="M" /> `napi_call_threadsafe_function`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v14.5.0","pr-url":"https://github.com/nodejs/node/pull/33453","description":"Support for `napi_would_deadlock` has been reverted."},{"version":"v14.1.0","pr-url":"https://github.com/nodejs/node/pull/32689","description":"Return `napi_would_deadlock` when called with `napi_tsfn_blocking` from the main thread or a worker thread and the queue is full."}],"update":{"type":"napiVersion","version":[4]}}} />
+<MC data={{"changes":[{"version":"v14.5.0","pr-url":"https://github.com/nodejs/node/pull/33453","description":"Support for `napi_would_deadlock` has been reverted."},{"version":"v14.1.0","pr-url":"https://github.com/nodejs/node/pull/32689","description":"Return `napi_would_deadlock` when called with `napi_tsfn_blocking` from the main thread or a worker thread and the queue is full."}],"update":{"type":"napiVersion","version":[4]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5593,9 +5593,9 @@ added to the queue if the API returns `napi_ok`.
 
 This API may be called from any thread which makes use of `func`.
 
-#### <DataTag tag="M" /> `napi_acquire_threadsafe_function`
+#### <Tag tag="M" /> `napi_acquire_threadsafe_function`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5612,9 +5612,9 @@ it.
 
 This API may be called from any thread which will start making use of `func`.
 
-#### <DataTag tag="M" /> `napi_release_threadsafe_function`
+#### <Tag tag="M" /> `napi_release_threadsafe_function`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5638,9 +5638,9 @@ to any thread-safe APIs after having called this API has undefined results, as
 
 This API may be called from any thread which will stop making use of `func`.
 
-#### <DataTag tag="M" /> `napi_ref_threadsafe_function`
+#### <Tag tag="M" /> `napi_ref_threadsafe_function`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5661,9 +5661,9 @@ being destroyed. `napi_acquire_threadsafe_function` and
 
 This API may only be called from the main thread.
 
-#### <DataTag tag="M" /> `napi_unref_threadsafe_function`
+#### <Tag tag="M" /> `napi_unref_threadsafe_function`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<MC data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5681,11 +5681,11 @@ This API may only be called from the main thread.
 
 ### Miscellaneous utilities
 
-#### <DataTag tag="M" /> `node_api_get_module_file_name`
+#### <Tag tag="M" /> `node_api_get_module_file_name`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.9.0","v14.18.0","v12.22.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.9.0","v14.18.0","v12.22.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5704,7 +5704,7 @@ the add-on's file name during loading.
 
 [ABI Stability]: https://nodejs.org/en/docs/guides/abi-stability/
 [AppVeyor]: https://www.appveyor.com
-[C++ Addons]: (/api/addons)
+[C++ Addons]: addons.md
 [CMake]: https://cmake.org
 [CMake.js]: https://github.com/cmake-js/cmake-js
 [ECMAScript Language Specification]: https://tc39.github.io/ecma262/
@@ -5751,7 +5751,7 @@ the add-on's file name during loading.
 [`Number.MIN_SAFE_INTEGER`]: https://tc39.github.io/ecma262/#sec-number.min_safe_integer
 [`Worker`]: worker_threads.md#class-worker
 [`async_hooks.executionAsyncResource()`]: async_hooks.md#async_hooksexecutionasyncresource
-[`global`]: (/api/globals#global)
+[`global`]: globals.md#global
 [`init` hooks]: async_hooks.md#initasyncid-type-triggerasyncid-resource
 [`napi_add_async_cleanup_hook`]: #napi_add_async_cleanup_hook
 [`napi_add_env_cleanup_hook`]: #napi_add_env_cleanup_hook
@@ -5811,15 +5811,15 @@ the add-on's file name during loading.
 [`node_api.h`]: https://github.com/nodejs/node/blob/HEAD/src/node_api.h
 [`node_api_create_syntax_error`]: #node_api_create_syntax_error
 [`node_api_throw_syntax_error`]: #node_api_throw_syntax_error
-[`process.release`]: (/api/process#processrelease)
+[`process.release`]: process.md#processrelease
 [`uv_ref`]: https://docs.libuv.org/en/v1.x/handle.html#c.uv_ref
 [`uv_unref`]: https://docs.libuv.org/en/v1.x/handle.html#c.uv_unref
 [async_hooks `type`]: async_hooks.md#type
-[context-aware addons]: (/api/addons#context-aware-addons)
+[context-aware addons]: addons.md#context-aware-addons
 [docs]: https://github.com/nodejs/node-addon-api#api-documentation
-[global scope]: (/api/globals)
+[global scope]: globals.md
 [gyp-next]: https://github.com/nodejs/gyp-next
-[module scope]: (/api/modules#the-module-scope)
+[module scope]: modules.md#the-module-scope
 [node-gyp]: https://github.com/nodejs/node-gyp
 [node-pre-gyp]: https://github.com/mapbox/node-pre-gyp
 [prebuild]: https://github.com/prebuild/prebuild

@@ -5,17 +5,17 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v8.5.0"]}}} />
+<MC data={{"update":{"type":"introduced_in","version":["v8.5.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"type":"misc"}} />
+<MC data={{"type":"misc"}} />
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v18.6.0"],"pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining loaders."},{"version":["v17.1.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40250","description":"Add support for import assertions."},{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/37468","description":"Consolidate loader hooks, removed `getFormat`, `getSource`, `transformSource`, and `getGlobalPreloadCode` hooks added `load` and `globalPreload` hooks allowed returning `format` from either `resolve` or `load` hooks."},{"version":["v15.3.0","v14.17.0","v12.22.0"],"pr-url":"https://github.com/nodejs/node/pull/35781","description":"Stabilize modules implementation."},{"version":["v14.13.0","v12.20.0"],"pr-url":"https://github.com/nodejs/node/pull/35249","description":"Support for detection of CommonJS named exports."},{"version":"v14.8.0","pr-url":"https://github.com/nodejs/node/pull/34558","description":"Unflag Top-Level Await."},{"version":["v14.0.0","v13.14.0","v12.20.0"],"pr-url":"https://github.com/nodejs/node/pull/31974","description":"Remove experimental modules warning."},{"version":["v13.2.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29866","description":"Loading ECMAScript modules no longer requires a command-line flag."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26745","description":"Add support for ES modules using `.js` file extension via `package.json` `\"type\"` field."}],"update":{"type":"added","version":["v8.5.0"]}}} />
+<MC data={{"changes":[{"version":["v18.6.0"],"pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining loaders."},{"version":["v17.1.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40250","description":"Add support for import assertions."},{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/37468","description":"Consolidate loader hooks, removed `getFormat`, `getSource`, `transformSource`, and `getGlobalPreloadCode` hooks added `load` and `globalPreload` hooks allowed returning `format` from either `resolve` or `load` hooks."},{"version":["v15.3.0","v14.17.0","v12.22.0"],"pr-url":"https://github.com/nodejs/node/pull/35781","description":"Stabilize modules implementation."},{"version":["v14.13.0","v12.20.0"],"pr-url":"https://github.com/nodejs/node/pull/35249","description":"Support for detection of CommonJS named exports."},{"version":"v14.8.0","pr-url":"https://github.com/nodejs/node/pull/34558","description":"Unflag Top-Level Await."},{"version":["v14.0.0","v13.14.0","v12.20.0"],"pr-url":"https://github.com/nodejs/node/pull/31974","description":"Remove experimental modules warning."},{"version":["v13.2.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29866","description":"Loading ECMAScript modules no longer requires a command-line flag."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26745","description":"Add support for ES modules using `.js` file extension via `package.json` `\"type\"` field."}],"update":{"type":"added","version":["v8.5.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
 
 ### Introduction
 
-<Metadata version="v18.9.0" data={{"name":"esm"}} />
+<MC data={{"name":"esm"}} />
 
 ECMAScript modules are [the official standard format][] to package JavaScript
 code for reuse. Modules are defined using a variety of [`import`][] and
@@ -52,7 +52,7 @@ provides interoperability between them and its original module format,
 
 ### Enabling
 
-<Metadata version="v18.9.0" data={{"type":"misc"}} />
+<MC data={{"type":"misc"}} />
 
 Node.js has two module systems: [CommonJS][] modules and ECMAScript modules.
 
@@ -69,7 +69,7 @@ module loader. See [Determining module system][] for more details.
 
 This section was moved to [Modules: Packages](packages.md).
 
-### <DataTag tag="M" /> `import` Specifiers
+### <Tag tag="M" /> `import` Specifiers
 
 #### Terminology
 
@@ -123,7 +123,7 @@ must be [percent-encoded][], such as `#` with `%23` and `?` with `%3F`.
 `'https://example.com/app.js'` is not supported natively in Node.js unless using
 a [custom HTTPS loader][].
 
-##### <DataTag tag="M" /> `file:` URLs
+##### <Tag tag="M" /> `file:` URLs
 
 Modules are loaded multiple times if the `import` specifier used to resolve
 them has a different query or fragment.
@@ -137,9 +137,9 @@ The volume root may be referenced via `/`, `//`, or `file:///`. Given the
 differences between [URL][] and path resolution (such as percent encoding
 details), it is recommended to use [url.pathToFileURL][] when importing a path.
 
-##### <DataTag tag="M" /> `data:` imports
+##### <Tag tag="M" /> `data:` imports
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.10.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v12.10.0"]}}} />
 
 [`data:` URLs][] are supported for importing with the following MIME types:
 
@@ -159,9 +159,9 @@ and [absolute specifiers][Terminology]. Resolving
 from `data:text/javascript,import "./foo";` fails to resolve because there
 is no concept of relative resolution for `data:` URLs.
 
-##### <DataTag tag="M" /> `node:` imports
+##### <Tag tag="M" /> `node:` imports
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v16.0.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37246","description":"Added `node:` import support to `require(...)`."}],"update":{"type":"added","version":["v14.13.1","v12.20.0"]}}} />
+<MC data={{"changes":[{"version":["v16.0.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37246","description":"Added `node:` import support to `require(...)`."}],"update":{"type":"added","version":["v14.13.1","v12.20.0"]}}} />
 
 `node:` URLs are supported as an alternative means to load Node.js builtin
 modules. This URL scheme allows for builtin modules to be referenced by valid
@@ -173,9 +173,9 @@ import fs from 'node:fs/promises';
 
 ### Import assertions
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.1.0","v16.14.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v17.1.0","v16.14.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 The [Import Assertions proposal][] adds an inline syntax for module import
 statements to pass on more information alongside the module specifier.
@@ -229,19 +229,19 @@ syncBuiltinESMExports();
 fs.readFileSync === readFileSync;
 ```
 
-### <DataTag tag="M" /> `import()` expressions
+### <Tag tag="M" /> `import()` expressions
 
 [Dynamic `import()`][] is supported in both CommonJS and ES modules. In CommonJS
 modules it can be used to load ES modules.
 
-### <DataTag tag="M" /> `import.meta`
+### <Tag tag="M" /> `import.meta`
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 The `import.meta` meta property is an `Object` that contains the following
 properties.
 
-#### <DataTag tag="M" /> `import.meta.url`
+#### <Tag tag="M" /> `import.meta.url`
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The absolute `file:` URL of the module.
 
@@ -255,11 +255,11 @@ import { readFileSync } from 'node:fs';
 const buffer = readFileSync(new URL('./data.proto', import.meta.url));
 ```
 
-#### <DataTag tag="M" /> `import.meta.resolve(specifier[, parent])`
+#### <Tag tag="M" /> `import.meta.resolve(specifier[, parent])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v16.2.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38587","description":"Add support for WHATWG `URL` object to `parentURL` parameter."}],"update":{"type":"added","version":["v13.9.0","v12.16.2"]}}} />
+<MC data={{"changes":[{"version":["v16.2.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38587","description":"Add support for WHATWG `URL` object to `parentURL` parameter."}],"update":{"type":"added","version":["v13.9.0","v12.16.2"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 This feature is only available with the `--experimental-import-meta-resolve`
 command flag enabled.
@@ -292,7 +292,7 @@ allowed to be asynchronous.
 
 ### Interoperability with CommonJS
 
-#### <DataTag tag="M" /> `import` statements
+#### <Tag tag="M" /> `import` statements
 
 An `import` statement can reference an ES module or a CommonJS module.
 `import` statements are permitted only in ES modules, but dynamic [`import()`][]
@@ -303,7 +303,7 @@ When importing [CommonJS modules](#commonjs-namespaces), the
 available, provided by static analysis as a convenience for better ecosystem
 compatibility.
 
-#### <DataTag tag="M" /> `require`
+#### <Tag tag="M" /> `require`
 
 The CommonJS module `require` always treats the files it references as CommonJS.
 
@@ -448,7 +448,7 @@ separate cache.
 
 ### JSON modules
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 JSON files can be referenced by `import`:
 
@@ -467,7 +467,7 @@ imported from the same path.
 
 ### Wasm modules
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 Importing WebAssembly modules is supported under the
 `--experimental-wasm-modules` flag, allowing any `.wasm` files to be
@@ -495,7 +495,7 @@ would provide the exports interface for the instantiation of `module.wasm`.
 
 ### Top-level `await`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.8.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v14.8.0"]}}} />
 
 The `await` keyword may be used in the top level body of an ECMAScript module.
 
@@ -536,7 +536,7 @@ spawn(execPath, [
 
 ### HTTPS and HTTP imports
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 Importing network based modules using `https:` and `http:` is supported under
 the `--experimental-network-imports` flag. This allows web browser-like imports
@@ -603,13 +603,13 @@ of Node.js applications.
 
 ### Loaders
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v18.6.0"],"pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining loaders."},{"version":"v16.12.0","pr-url":"https://github.com/nodejs/node/pull/37468","description":"Removed `getFormat`, `getSource`, `transformSource`, and `globalPreload`; added `load` hook and `getGlobalPreload` hook."}],"update":{"type":"added","version":["v8.8.0"]}}} />
+<MC data={{"changes":[{"version":["v18.6.0"],"pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining loaders."},{"version":"v16.12.0","pr-url":"https://github.com/nodejs/node/pull/37468","description":"Removed `getFormat`, `getSource`, `transformSource`, and `globalPreload`; added `load` hook and `getGlobalPreload` hook."}],"update":{"type":"added","version":["v8.8.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 > This API is currently being redesigned and will still change.
 
-<Metadata version="v18.9.0" data={{"type":"misc"}} />
+<MC data={{"type":"misc"}} />
 
 To customize the default module resolution, loader hooks can optionally be
 provided via a `--experimental-loader ./loader-name.mjs` argument to Node.js.
@@ -642,9 +642,9 @@ A hook that returns without calling `next<hookName>()` _and_ without returning
 `shortCircuit: true` also triggers an exception. These errors are to help
 prevent unintentional breaks in the chain.
 
-##### <DataTag tag="M" /> `resolve(specifier, context, nextResolve)`
+##### <Tag tag="M" /> `resolve(specifier, context, nextResolve)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.6.0","pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining resolve hooks. Each hook must either call `nextResolve()` or include a `shortCircuit` property set to `true` in its return."},{"version":["v17.1.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40250","description":"Add support for import assertions."}]}} />
+<MC data={{"changes":[{"version":"v18.6.0","pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining resolve hooks. Each hook must either call `nextResolve()` or include a `shortCircuit` property set to `true` in its return."},{"version":["v17.1.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40250","description":"Add support for import assertions."}]}} />
 
 > The loaders API is being redesigned. This hook may disappear or its
 > signature may change. Do not rely on the API described below.
@@ -722,9 +722,9 @@ export async function resolve(specifier, context, nextResolve) {
 }
 ```
 
-##### <DataTag tag="M" /> `load(url, context, nextLoad)`
+##### <Tag tag="M" /> `load(url, context, nextLoad)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.6.0","pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining load hooks. Each hook must either call `nextLoad()` or include a `shortCircuit` property set to `true` in its return."}]}} />
+<MC data={{"changes":[{"version":"v18.6.0","pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining load hooks. Each hook must either call `nextLoad()` or include a `shortCircuit` property set to `true` in its return."}]}} />
 
 > The loaders API is being redesigned. This hook may disappear or its
 > signature may change. Do not rely on the API described below.
@@ -813,9 +813,9 @@ export async function load(url, context, nextLoad) {
 In a more advanced scenario, this can also be used to transform an unsupported
 source to a supported one (see [Examples](#examples) below).
 
-##### <DataTag tag="M" /> `globalPreload()`
+##### <Tag tag="M" /> `globalPreload()`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.6.0","pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining globalPreload hooks."}]}} />
+<MC data={{"changes":[{"version":"v18.6.0","pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining globalPreload hooks."}]}} />
 
 > The loaders API is being redesigned. This hook may disappear or its
 > signature may change. Do not rely on the API described below.
@@ -1073,7 +1073,7 @@ import { scream } from './scream.coffee'
 console.log scream 'hello, world'
 
 import { version } from 'node:process'
-console.log "Brought to you by Node.js version #version"
+console.log "Brought to you by Node.js version #{version}"
 ```
 
 ```coffee
@@ -1407,7 +1407,7 @@ _internal_, _conditions_)
 
 #### Customizing ESM specifier resolution algorithm
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 > Do not rely on this flag. We plan to remove it once the
 > [Loaders API][] has advanced to the point that equivalent functionality can
@@ -1433,7 +1433,7 @@ $ node --experimental-specifier-resolution=node index
 success!
 ```
 
-<Metadata version="v18.9.0" data={{"Note":"The cjs-module-lexer link should be kept in-sync with the deps version"}} />
+<MC data={{"Note":"The cjs-module-lexer link should be kept in-sync with the deps version"}} />
 
 [6.1.7 Array Index]: https://tc39.es/ecma262/#integer-index
 [CommonJS]: (/api/modules)

@@ -11,7 +11,7 @@ const FEATURES_REGEX = {
   metadataComponents: /^<!--([\s\S]*?)-->/,
   // ReGeX to match the {Type}<Type> (Structure Type metadatas)
   // eslint-disable-next-line no-useless-escape
-  structureType: /(\{|<)[a-zA-Z.|\[\]\\]+(\}|>)/gm,
+  structureType: /(\{|<)(?! )[a-z0-9.| \n\[\]\\]+(?! )(\}|>)/gim,
   // ReGeX for transforming `<pre>` into JSX snippets
   removePreCodes: /<pre>|<\/pre>/gi,
   // ReGeX for increasing the heading level
@@ -20,6 +20,8 @@ const FEATURES_REGEX = {
   classEventHeading: /^(#{3,5}) (Class:|Event:|`.+`)/,
   // ReGeX for the Stability Index
   stabilityIndex: /^> (.*:)\s*(\d)([\s\S]*)/,
+  // ReGeX for non-valid Markdown Links
+  fixLinks: /<(https:\/\/.+)>/gm,
 };
 
 const YAML_FEATURES = {
@@ -126,11 +128,17 @@ function createApiDocsFrontmatter(firstLine, { version, name }) {
 
 // Utility to replace the `> Stability: XXXXXX` blockquotes and their following lines
 // into a proper metadata with the information (index number) and any other accompanying text
-function replaceStabilityIndex(metadata) {
+function replaceStabilityIndex() {
   return (_, __, level, text) => {
-    const data = JSON.stringify({ stability: { level: Number(level), text } });
+    const sanitizedText = text
+      .replace('\n>', '')
+      .replace(/\[(.+)\]\[\]/g, (___, piece) => piece);
 
-    return `<Metadata version="${metadata.fullVersion}" data={${data}} />`;
+    const data = JSON.stringify({
+      stability: { level: Number(level), text: sanitizedText },
+    });
+
+    return `<MC data={${data}} />`;
   };
 }
 
@@ -144,7 +152,7 @@ function increaseHeadingLevel() {
   };
 }
 
-// This utility inserts the `<DataTag>` component as prefix of the Heading
+// This utility inserts the `<Tag>` component as prefix of the Heading
 // It allows us to render the small "round tags" that identify if the entry
 // is a class, event, method or something else
 function addClassEventHeading(_, navigationCreator) {
@@ -152,15 +160,21 @@ function addClassEventHeading(_, navigationCreator) {
     switch (name) {
       case 'Class:':
         navigationCreator.addType('class');
-        return `<DataTag tag="C" />`;
+        return `<Tag tag="C" />`;
       case 'Event:':
-        return `<DataTag tag="E" />`;
+        return `<Tag tag="E" />`;
       default:
-        return `<DataTag tag="M" /> ${name}`;
+        return `<Tag tag="M" /> ${name}`;
     }
   };
 
   return (_m, prefix, name) => `${prefix} ${getTagPerName(name)}`;
+}
+
+// This Utility replace links in the <https://example.org>
+// Into [https://example.org](https://example.oirg)
+function replaceLinksToMarkdownLinks() {
+  return (_, link) => `(${link})[${link}]`;
 }
 
 // This utility replaces any encounter of `{String}`, {Object}` etc
@@ -216,7 +230,7 @@ function replaceMarkdownMetadata(metadata, navigationCreator) {
 
         const stringifiedData = JSON.stringify(parsedYaml);
 
-        return `<Metadata version="${metadata.fullVersion}" data={${stringifiedData}} />`;
+        return `<MC data={${stringifiedData}} />`;
       }
     } catch (e) {
       // eslint-disable-next-line no-console
@@ -233,9 +247,44 @@ function replaceUrlReferences() {
     `${reference} (${apiPath}${file}${hash || ''})`;
 }
 
+function calculateCodeBlockIntersection() {
+  let codeBlockEndingIndex = -1;
+
+  return (lines, index) => {
+    const lineStartsWithACodeblock = lines.startsWith('```');
+    const lineEndsTheCodeblock = lines.endsWith('```');
+
+    if (lineStartsWithACodeblock) {
+      if (!lineEndsTheCodeblock) {
+        // If the current block starts with a codeblock but doesn't end with one
+        // We have a multiple line code block then
+        codeBlockEndingIndex = index;
+      }
+
+      return true;
+    }
+
+    if (codeBlockEndingIndex !== -1) {
+      // This means we're currently iterating inside a code block
+      // We should ignore parsing all lines until we reach the
+      // end of the code block
+      if (lineEndsTheCodeblock) {
+        // If we have a ending code block, stop ignoring the code loop
+        // And go back to normal business starting the next block
+        codeBlockEndingIndex = -1;
+      }
+
+      return true;
+    }
+
+    return false;
+  };
+}
+
 // This function creates our Markdown parser that parses the whole MDX/Markdown file
 // By updating and removing contents to the way we need them to be
 function createMarkdownParser(markdownContent, metadata) {
+  const invalidLinkFormat = replaceLinksToMarkdownLinks(metadata);
   const stabilityIndex = replaceStabilityIndex(metadata);
   const urlReferences = replaceUrlReferences(metadata);
   const headingLevel = increaseHeadingLevel(metadata);
@@ -259,6 +308,8 @@ function createMarkdownParser(markdownContent, metadata) {
       moduleCreator.addType('module');
       moduleCreator.create();
 
+      const calculateBlockIntersection = calculateCodeBlockIntersection();
+
       // Iterate between chunks of paragraphs instead of the whole document
       // As this is way more perfomatic for regex queries
       const [, ...parsedContent] = [firstLines, ...markdownContents].map(
@@ -272,22 +323,43 @@ function createMarkdownParser(markdownContent, metadata) {
             navigation
           );
 
-          const parsedLines = lines
-            .replace(FEATURES_REGEX.structureType, structureType)
-            .replace(FEATURES_REGEX.stabilityIndex, stabilityIndex)
-            .replace(FEATURES_REGEX.increaseHeadingLevel, headingLevel)
-            .replace(FEATURES_REGEX.classEventHeading, classEventHeading)
-            .replace(FEATURES_REGEX.removePreCodes, codeTags)
-            .replace(FEATURES_REGEX.metadataComponents, metadataComponents)
-            .replace(FEATURES_REGEX.markdownFootnoteUrls, urlReferences);
+          // This verifies if the current lines are part of a multi-line code block
+          // This allows us to simply ignore any modification during this time
+          if (calculateBlockIntersection(lines, index)) {
+            return lines;
+          }
+
+          // In this case the lines are either a YAML metadata or a code block
+          if (lines.startsWith('<!--') || lines.startsWith('<pre>')) {
+            return lines
+              .replace(FEATURES_REGEX.removePreCodes, codeTags)
+              .replace(FEATURES_REGEX.metadataComponents, metadataComponents);
+          }
 
           // If the current item is a Heading then we add it itself
           if (lines.startsWith('#')) {
+            const parsedLines = lines
+              // This means the current line is a Heading
+              .replace(FEATURES_REGEX.increaseHeadingLevel, headingLevel)
+              .replace(FEATURES_REGEX.classEventHeading, classEventHeading);
+
             navigation.addHeading(lines);
             navigation.create();
 
             return parsedLines;
           }
+
+          if (lines.startsWith('> ')) {
+            // This means the current line is a Stability Index
+            return lines.replace(FEATURES_REGEX.stabilityIndex, stabilityIndex);
+          }
+
+          const parsedLines = lines
+            // This is the last scenario where lines are text
+            .replace(FEATURES_REGEX.fixLinks, invalidLinkFormat)
+            .replace(FEATURES_REGEX.structureType, structureType)
+            .replace(FEATURES_REGEX.stabilityIndex, stabilityIndex)
+            .replace(FEATURES_REGEX.markdownFootnoteUrls, urlReferences);
 
           // Otherwise it might be in the previous lines (Maximum depth of 3)
           // As the header should be on maximum 3 levels away from the current item

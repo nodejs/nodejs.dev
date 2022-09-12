@@ -5,13 +5,13 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15695","description":"Any `Promise`s created in VM contexts no longer have a `.domain` property. Their handlers are still executed in the proper domain, however, and `Promise`s created in the main context still possess a `.domain` property."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12489","description":"Handlers for `Promise`s are now invoked in the domain in which the first promise of a chain was created."}],"update":{"type":"deprecated","version":["v1.4.2"]}}} />
+<MC data={{"changes":[{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15695","description":"Any `Promise`s created in VM contexts no longer have a `.domain` property. Their handlers are still executed in the proper domain, however, and `Promise`s created in the main context still possess a `.domain` property."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12489","description":"Handlers for `Promise`s are now invoked in the domain in which the first promise of a chain was created."}],"update":{"type":"deprecated","version":["v1.4.2"]}}} />
 
-<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated"}}} />
+<MC data={{"stability":{"level":0,"text":" - Deprecated"}}} />
 
-<Metadata version="v18.9.0" data={{"source_link":"lib/domain.js"}} />
+<MC data={{"source_link":"lib/domain.js"}} />
 
 **This module is pending deprecation.** Once a replacement API has been
 finalized, this module will be fully deprecated. Most developers should
@@ -29,7 +29,7 @@ exit immediately with an error code.
 
 ### Warning: Don't ignore errors!
 
-<Metadata version="v18.9.0" data={{"type":"misc"}} />
+<MC data={{"type":"misc"}} />
 
 Domain error handlers are not a substitute for closing down a
 process when an error occurs.
@@ -64,7 +64,7 @@ d.on('error', (er) => {
   // Though we've prevented abrupt process restarting, we are leaking
   // a lot of resources if this ever happens.
   // This is no better than process.on('uncaughtException')!
-  console.log(`error, but oh well $er.message`);
+  console.log(`error, but oh well ${er.message}`);
 });
 d.run(() => {
   require('node:http').createServer((req, res) => {
@@ -117,7 +117,7 @@ if (cluster.isPrimary) {
   const server = require('node:http').createServer((req, res) => {
     const d = domain.create();
     d.on('error', (er) => {
-      console.error(`error $er.stack`);
+      console.error(`error ${er.stack}`);
 
       // We're in dangerous territory!
       // By definition, something unexpected occurred,
@@ -183,7 +183,7 @@ function handleRequest(req, res) {
 
 ### Additions to `Error` objects
 
-<Metadata version="v18.9.0" data={{"type":"misc"}} />
+<MC data={{"type":"misc"}} />
 
 Any time an `Error` object is routed through a domain, a few extra fields
 are added to it.
@@ -198,7 +198,7 @@ are added to it.
 
 ### Implicit binding
 
-<Metadata version="v18.9.0" data={{"type":"misc"}} />
+<MC data={{"type":"misc"}} />
 
 If domains are in use, then all **new** `EventEmitter` objects (including
 Stream objects, requests, responses, etc.) will be implicitly bound to
@@ -224,7 +224,7 @@ Implicit binding only takes care of thrown errors and `'error'` events.
 
 ### Explicit binding
 
-<Metadata version="v18.9.0" data={{"type":"misc"}} />
+<MC data={{"type":"misc"}} />
 
 Sometimes, the domain in use is not the one that ought to be used for a
 specific event emitter. Or, the event emitter could have been created
@@ -264,11 +264,11 @@ serverDomain.run(() => {
 });
 ```
 
-### <DataTag tag="M" /> `domain.create()`
+### <Tag tag="M" /> `domain.create()`
 
 * Returns: [`Domain`](/api/domain#domain)
 
-### <DataTag tag="C" /> `Domain`
+### <Tag tag="C" /> `Domain`
 
 * Extends: [`EventEmitter`](/api/events#eventemitter)
 
@@ -277,14 +277,14 @@ uncaught exceptions to the active `Domain` object.
 
 To handle the errors that it catches, listen to its `'error'` event.
 
-#### <DataTag tag="M" /> `domain.members`
+#### <Tag tag="M" /> `domain.members`
 
 * [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 An array of timers and event emitters that have been explicitly added
 to the domain.
 
-#### <DataTag tag="M" /> `domain.add(emitter)`
+#### <Tag tag="M" /> `domain.add(emitter)`
 
 * `emitter` [`EventEmitter`](/api/events#eventemitter) | [`Timer`](/api/timers#timers) emitter or timer to be added to the domain
 
@@ -300,7 +300,7 @@ the domain `'error'` handler.
 If the Timer or `EventEmitter` was already bound to a domain, it is removed
 from that one, and bound to this one instead.
 
-#### <DataTag tag="M" /> `domain.bind(callback)`
+#### <Tag tag="M" /> `domain.bind(callback)`
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The callback function
 * Returns: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The bound function
@@ -325,7 +325,7 @@ d.on('error', (er) => {
 });
 ```
 
-#### <DataTag tag="M" /> `domain.enter()`
+#### <Tag tag="M" /> `domain.enter()`
 
 The `enter()` method is plumbing used by the `run()`, `bind()`, and
 `intercept()` methods to set the active domain. It sets `domain.active` and
@@ -338,7 +338,7 @@ Calling `enter()` changes only the active domain, and does not alter the domain
 itself. `enter()` and `exit()` can be called an arbitrary number of times on a
 single domain.
 
-#### <DataTag tag="M" /> `domain.exit()`
+#### <Tag tag="M" /> `domain.exit()`
 
 The `exit()` method exits the current domain, popping it off the domain stack.
 Any time execution is going to switch to the context of a different chain of
@@ -353,7 +353,7 @@ Calling `exit()` changes only the active domain, and does not alter the domain
 itself. `enter()` and `exit()` can be called an arbitrary number of times on a
 single domain.
 
-#### <DataTag tag="M" /> `domain.intercept(callback)`
+#### <Tag tag="M" /> `domain.intercept(callback)`
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The callback function
 * Returns: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The intercepted function
@@ -388,14 +388,14 @@ d.on('error', (er) => {
 });
 ```
 
-#### <DataTag tag="M" /> `domain.remove(emitter)`
+#### <Tag tag="M" /> `domain.remove(emitter)`
 
 * `emitter` [`EventEmitter`](/api/events#eventemitter) | [`Timer`](/api/timers#timers) emitter or timer to be removed from the domain
 
 The opposite of [`domain.add(emitter)`][]. Removes domain handling from the
 specified emitter.
 
-#### <DataTag tag="M" /> `domain.run(fn[, ...args])`
+#### <Tag tag="M" /> `domain.run(fn[, ...args])`
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * `...args` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)

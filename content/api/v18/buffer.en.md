@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.1.90"]}}} />
+<MC data={{"update":{"type":"introduced_in","version":["v0.1.90"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.9.0" data={{"source_link":"lib/buffer.js"}} />
+<MC data={{"source_link":"lib/buffer.js"}} />
 
 `Buffer` objects are used to represent a fixed-length sequence of bytes. Many
 Node.js APIs support `Buffer`s.
@@ -89,7 +89,7 @@ const buf7 = Buffer.from('tést', 'latin1');
 
 ### Buffers and character encodings
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.7.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/36952","description":"Introduced `base64url` encoding."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7111","description":"Introduced `latin1` as an alias for `binary`."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2859","description":"Removed the deprecated `raw` and `raws` encodings."}]}} />
+<MC data={{"changes":[{"version":["v15.7.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/36952","description":"Introduced `base64url` encoding."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7111","description":"Introduced `latin1` as an alias for `binary`."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2859","description":"Removed the deprecated `raw` and `raws` encodings."}]}} />
 
 When converting between `Buffer`s and strings, a character encoding may be
 specified. If no character encoding is specified, UTF-8 will be used as the
@@ -227,7 +227,7 @@ the characters.
 
 ### Buffers and TypedArrays
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v3.0.0","pr-url":"https://github.com/nodejs/node/pull/2002","description":"The `Buffer`s class now inherits from `Uint8Array`."}]}} />
+<MC data={{"changes":[{"version":"v3.0.0","pr-url":"https://github.com/nodejs/node/pull/2002","description":"The `Buffer`s class now inherits from `Uint8Array`."}]}} />
 
 `Buffer` instances are also JavaScript [`Uint8Array`][] and [`TypedArray`][]
 instances. All [`TypedArray`][] methods are available on `Buffer`s. There are,
@@ -437,16 +437,16 @@ for (const b of buf) {
 Additionally, the [`buf.values()`][], [`buf.keys()`][], and
 [`buf.entries()`][] methods can be used to create iterators.
 
-### <DataTag tag="C" /> `Blob`
+### <Tag tag="C" /> `Blob`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41270","description":"No longer experimental."}],"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
+<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41270","description":"No longer experimental."}],"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
 
 A [`Blob`][] encapsulates immutable, raw data that can be safely shared across
 multiple worker threads.
 
-#### <DataTag tag="M" /> `new buffer.Blob([sources[, options]])`
+#### <Tag tag="M" /> `new buffer.Blob([sources[, options]])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.7.0","pr-url":"https://github.com/nodejs/node/pull/39708","description":"Added the standard `endings` option to replace line-endings, and removed the non-standard `encoding` option."}],"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
+<MC data={{"changes":[{"version":"v16.7.0","pr-url":"https://github.com/nodejs/node/pull/39708","description":"Added the standard `endings` option to replace line-endings, and removed the non-standard `encoding` option."}],"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
 
 * `sources` string\[]|ArrayBuffer\[]|TypedArray\[]|DataView\[]|Blob\[] An
   array of string, [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer), [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray), [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView), or [`Blob`](/api/buffer#blob) objects,
@@ -468,24 +468,24 @@ String sources are encoded as UTF-8 byte sequences and copied into the Blob.
 Unmatched surrogate pairs within each string part will be replaced by Unicode
 U+FFFD replacement characters.
 
-#### <DataTag tag="M" /> `blob.arrayBuffer()`
+#### <Tag tag="M" /> `blob.arrayBuffer()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
 
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 Returns a promise that fulfills with an [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) containing a copy of
 the `Blob` data.
 
-#### <DataTag tag="M" /> `blob.size`
+#### <Tag tag="M" /> `blob.size`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
 
 The total size of the `Blob` in bytes.
 
-#### <DataTag tag="M" /> `blob.slice([start[, end[, type]]])`
+#### <Tag tag="M" /> `blob.slice([start[, end[, type]]])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
 
 * `start` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The starting index.
 * `end` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The ending index.
@@ -494,32 +494,32 @@ The total size of the `Blob` in bytes.
 Creates and returns a new `Blob` containing a subset of this `Blob` objects
 data. The original `Blob` is not altered.
 
-#### <DataTag tag="M" /> `blob.stream()`
+#### <Tag tag="M" /> `blob.stream()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 * Returns: [`ReadableStream`](/api/webstreams#readablestream)
 
 Returns a new `ReadableStream` that allows the content of the `Blob` to be read.
 
-#### <DataTag tag="M" /> `blob.text()`
+#### <Tag tag="M" /> `blob.text()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
 
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 Returns a promise that fulfills with the contents of the `Blob` decoded as a
 UTF-8 string.
 
-#### <DataTag tag="M" /> `blob.type`
+#### <Tag tag="M" /> `blob.type`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The content-type of the `Blob`.
 
-#### <DataTag tag="M" /> `Blob` objects and `MessageChannel`
+#### <Tag tag="M" /> `Blob` objects and `MessageChannel`
 
 Once a [`Blob`](/api/buffer#blob) object is created, it can be sent via `MessagePort` to multiple
 destinations without transferring or immediately copying the data. The data
@@ -580,17 +580,17 @@ mc2.port2.postMessage(blob);
 blob.text().then(console.log);
 ```
 
-### <DataTag tag="C" /> `Buffer`
+### <Tag tag="C" /> `Buffer`
 
 The `Buffer` class is a global type for dealing with binary data directly.
 It can be constructed in a variety of ways.
 
 #### Static method: `Buffer.alloc(size[, fill[, encoding]])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34682","description":"Throw ERR_INVALID_ARG_VALUE instead of ERR_INVALID_OPT_VALUE for invalid input arguments."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18129","description":"Attempting to fill a non-zero length buffer with a zero length buffer triggers a thrown exception."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17427","description":"Specifying an invalid string for `fill` triggers a thrown exception."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/17428","description":"Specifying an invalid string for `fill` now results in a zero-filled buffer."}],"update":{"type":"added","version":["v5.10.0"]}}} />
+<MC data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34682","description":"Throw ERR_INVALID_ARG_VALUE instead of ERR_INVALID_OPT_VALUE for invalid input arguments."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18129","description":"Attempting to fill a non-zero length buffer with a zero length buffer triggers a thrown exception."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17427","description":"Specifying an invalid string for `fill` triggers a thrown exception."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/17428","description":"Specifying an invalid string for `fill` now results in a zero-filled buffer."}],"update":{"type":"added","version":["v5.10.0"]}}} />
 
 * `size` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The desired length of the new `Buffer`.
-* `fill` {string|Buffer|Uint8Array|integer} A value to pre-fill the new `Buffer`
+* `fill` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A value to pre-fill the new `Buffer`
   with. **Default:** `0`.
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If `fill` is a string, this is its encoding.
   **Default:** `'utf8'`.
@@ -671,7 +671,7 @@ A `TypeError` will be thrown if `size` is not a number.
 
 #### Static method: `Buffer.allocUnsafe(size)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34682","description":"Throw ERR_INVALID_ARG_VALUE instead of ERR_INVALID_OPT_VALUE for invalid input arguments."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7079","description":"Passing a negative `size` will now throw an error."}],"update":{"type":"added","version":["v5.10.0"]}}} />
+<MC data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34682","description":"Throw ERR_INVALID_ARG_VALUE instead of ERR_INVALID_OPT_VALUE for invalid input arguments."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7079","description":"Passing a negative `size` will now throw an error."}],"update":{"type":"added","version":["v5.10.0"]}}} />
 
 * `size` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The desired length of the new `Buffer`.
 
@@ -731,7 +731,7 @@ additional performance that [`Buffer.allocUnsafe()`][] provides.
 
 #### Static method: `Buffer.allocUnsafeSlow(size)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34682","description":"Throw ERR_INVALID_ARG_VALUE instead of ERR_INVALID_OPT_VALUE for invalid input arguments."}],"update":{"type":"added","version":["v5.12.0"]}}} />
+<MC data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34682","description":"Throw ERR_INVALID_ARG_VALUE instead of ERR_INVALID_OPT_VALUE for invalid input arguments."}],"update":{"type":"added","version":["v5.12.0"]}}} />
 
 * `size` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The desired length of the new `Buffer`.
 
@@ -800,7 +800,7 @@ A `TypeError` will be thrown if `size` is not a number.
 
 #### Static method: `Buffer.byteLength(string[, encoding])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8946","description":"Passing invalid input will now throw an error."},{"version":"v5.10.0","pr-url":"https://github.com/nodejs/node/pull/5255","description":"The `string` parameter can now be any `TypedArray`, `DataView` or `ArrayBuffer`."}],"update":{"type":"added","version":["v0.1.90"]}}} />
+<MC data={{"changes":[{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8946","description":"Passing invalid input will now throw an error."},{"version":"v5.10.0","pr-url":"https://github.com/nodejs/node/pull/5255","description":"The `string` parameter can now be any `TypedArray`, `DataView` or `ArrayBuffer`."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) A
   value to calculate the length of.
@@ -822,7 +822,7 @@ import { Buffer } from 'node:buffer';
 
 const str = '\u00bd + \u00bc = \u00be';
 
-console.log(`$str: $str.length characters, ` +
+console.log(`${str}: ${str.length} characters, ` +
             `${Buffer.byteLength(str, 'utf8')} bytes`);
 // Prints: ½ + ¼ = ¾: 9 characters, 12 bytes
 ```
@@ -832,7 +832,7 @@ const { Buffer } = require('node:buffer');
 
 const str = '\u00bd + \u00bc = \u00be';
 
-console.log(`$str: $str.length characters, ` +
+console.log(`${str}: ${str.length} characters, ` +
             `${Buffer.byteLength(str, 'utf8')} bytes`);
 // Prints: ½ + ¼ = ¾: 9 characters, 12 bytes
 ```
@@ -843,10 +843,10 @@ is returned.
 
 #### Static method: `Buffer.compare(buf1, buf2)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The arguments can now be `Uint8Array`s."}],"update":{"type":"added","version":["v0.11.13"]}}} />
+<MC data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The arguments can now be `Uint8Array`s."}],"update":{"type":"added","version":["v0.11.13"]}}} />
 
-* `buf1` {Buffer|Uint8Array}
-* `buf2` {Buffer|Uint8Array}
+* `buf1` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
+* `buf2` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Either `-1`, `0`, or `1`, depending on the result of the
   comparison. See [`buf.compare()`][] for details.
 
@@ -880,9 +880,9 @@ console.log(arr.sort(Buffer.compare));
 
 #### Static method: `Buffer.concat(list[, totalLength])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The elements of `list` can now be `Uint8Array`s."}],"update":{"type":"added","version":["v0.7.11"]}}} />
+<MC data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The elements of `list` can now be `Uint8Array`s."}],"update":{"type":"added","version":["v0.7.11"]}}} />
 
-* `list` {Buffer\[] | Uint8Array\[]} List of `Buffer` or [`Uint8Array`][]
+* `list` Buffer\[] | Uint8Array\[] List of `Buffer` or [`Uint8Array`][]
   instances to concatenate.
 * `totalLength` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Total length of the `Buffer` instances in `list`
   when concatenated.
@@ -948,7 +948,7 @@ console.log(bufA.length);
 
 #### Static method: `Buffer.from(array)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v5.10.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v5.10.0"]}}} />
 
 * `array` integer\[]
 
@@ -977,7 +977,7 @@ appropriate for `Buffer.from()` variants.
 
 #### Static method: `Buffer.from(arrayBuffer[, byteOffset[, length]])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v5.10.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v5.10.0"]}}} />
 
 * `arrayBuffer` [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) An [`ArrayBuffer`][],
   [`SharedArrayBuffer`][], for example the `.buffer` property of a
@@ -1091,9 +1091,9 @@ console.log(buf);
 
 #### Static method: `Buffer.from(buffer)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v5.10.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v5.10.0"]}}} />
 
-* `buffer` {Buffer|Uint8Array} An existing `Buffer` or [`Uint8Array`][] from
+* `buffer` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) An existing `Buffer` or [`Uint8Array`][] from
   which to copy data.
 
 Copies the passed `buffer` data onto a new `Buffer` instance.
@@ -1131,7 +1131,7 @@ appropriate for `Buffer.from()` variants.
 
 #### Static method: `Buffer.from(object[, offsetOrEncoding[, length]])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.2.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.2.0"]}}} />
 
 * `object` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An object supporting `Symbol.toPrimitive` or `valueOf()`.
 * `offsetOrEncoding` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A byte-offset or encoding.
@@ -1188,7 +1188,7 @@ is not of another type appropriate for `Buffer.from()` variants.
 
 #### Static method: `Buffer.from(string[, encoding])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v5.10.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v5.10.0"]}}} />
 
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A string to encode.
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The encoding of `string`. **Default:** `'utf8'`.
@@ -1229,7 +1229,7 @@ appropriate for `Buffer.from()` variants.
 
 #### Static method: `Buffer.isBuffer(obj)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.101"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.1.101"]}}} />
 
 * `obj` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1258,7 +1258,7 @@ Buffer.isBuffer(new Uint8Array(1024)); // false
 
 #### Static method: `Buffer.isEncoding(encoding)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.1"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A character encoding name to check.
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1300,14 +1300,14 @@ console.log(Buffer.isEncoding(''));
 
 #### Class property: `Buffer.poolSize`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.3"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.11.3"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `8192`
 
 This is the size (in bytes) of pre-allocated internal `Buffer` instances used
 for pooling. This value may be modified.
 
-#### <DataTag tag="M" /> `buf[index]`
+#### <Tag tag="M" /> `buf[index]`
 
 * `index` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -1357,7 +1357,7 @@ console.log(buf.toString('utf8'));
 // Prints: Node.js
 ```
 
-#### <DataTag tag="M" /> `buf.buffer`
+#### <Tag tag="M" /> `buf.buffer`
 
 * [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) The underlying `ArrayBuffer` object based on which this `Buffer`
   object is created.
@@ -1385,7 +1385,7 @@ console.log(buffer.buffer === arrayBuffer);
 // Prints: true
 ```
 
-#### <DataTag tag="M" /> `buf.byteOffset`
+#### <Tag tag="M" /> `buf.byteOffset`
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The `byteOffset` of the `Buffer`s underlying `ArrayBuffer` object.
 
@@ -1424,11 +1424,11 @@ const nodeBuffer = Buffer.from([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
 new Int8Array(nodeBuffer.buffer, nodeBuffer.byteOffset, nodeBuffer.length);
 ```
 
-#### <DataTag tag="M" /> `buf.compare(target[, targetStart[, targetEnd[, sourceStart[, sourceEnd]]]])`
+#### <Tag tag="M" /> `buf.compare(target[, targetStart[, targetEnd[, sourceStart[, sourceEnd]]]])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The `target` parameter can now be a `Uint8Array`."},{"version":"v5.11.0","pr-url":"https://github.com/nodejs/node/pull/5880","description":"Additional parameters for specifying offsets are supported now."}],"update":{"type":"added","version":["v0.11.13"]}}} />
+<MC data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The `target` parameter can now be a `Uint8Array`."},{"version":"v5.11.0","pr-url":"https://github.com/nodejs/node/pull/5880","description":"Additional parameters for specifying offsets are supported now."}],"update":{"type":"added","version":["v0.11.13"]}}} />
 
-* `target` {Buffer|Uint8Array} A `Buffer` or [`Uint8Array`][] with which to
+* `target` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) A `Buffer` or [`Uint8Array`][] with which to
   compare `buf`.
 * `targetStart` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The offset within `target` at which to begin
   comparison. **Default:** `0`.
@@ -1527,11 +1527,11 @@ console.log(buf1.compare(buf2, 5, 6, 5));
 [`ERR_OUT_OF_RANGE`][] is thrown if `targetStart < 0`, `sourceStart < 0`,
 `targetEnd > target.byteLength`, or `sourceEnd > source.byteLength`.
 
-#### <DataTag tag="M" /> `buf.copy(target[, targetStart[, sourceStart[, sourceEnd]]])`
+#### <Tag tag="M" /> `buf.copy(target[, targetStart[, sourceStart[, sourceEnd]]])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* `target` {Buffer|Uint8Array} A `Buffer` or [`Uint8Array`][] to copy into.
+* `target` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) A `Buffer` or [`Uint8Array`][] to copy into.
 * `targetStart` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The offset within `target` at which to begin
   writing. **Default:** `0`.
 * `sourceStart` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The offset within `buf` from which to begin copying.
@@ -1627,9 +1627,9 @@ console.log(buf.toString());
 // Prints: efghijghijklmnopqrstuvwxyz
 ```
 
-#### <DataTag tag="M" /> `buf.entries()`
+#### <Tag tag="M" /> `buf.entries()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v1.1.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v1.1.0"]}}} />
 
 * Returns: [`Iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol)
 
@@ -1674,11 +1674,11 @@ for (const pair of buf.entries()) {
 //   [5, 114]
 ```
 
-#### <DataTag tag="M" /> `buf.equals(otherBuffer)`
+#### <Tag tag="M" /> `buf.equals(otherBuffer)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The arguments can now be `Uint8Array`s."}],"update":{"type":"added","version":["v0.11.13"]}}} />
+<MC data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The arguments can now be `Uint8Array`s."}],"update":{"type":"added","version":["v0.11.13"]}}} />
 
-* `otherBuffer` {Buffer|Uint8Array} A `Buffer` or [`Uint8Array`][] with which to
+* `otherBuffer` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) A `Buffer` or [`Uint8Array`][] with which to
   compare `buf`.
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1712,11 +1712,11 @@ console.log(buf1.equals(buf3));
 // Prints: false
 ```
 
-#### <DataTag tag="M" /> `buf.fill(value[, offset[, end]][, encoding])`
+#### <Tag tag="M" /> `buf.fill(value[, offset[, end]][, encoding])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22969","description":"Throws `ERR_OUT_OF_RANGE` instead of `ERR_INDEX_OUT_OF_RANGE`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18790","description":"Negative `end` values throw an `ERR_INDEX_OUT_OF_RANGE` error."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18129","description":"Attempting to fill a non-zero length buffer with a zero length buffer triggers a thrown exception."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17427","description":"Specifying an invalid string for `value` triggers a thrown exception."},{"version":"v5.7.0","pr-url":"https://github.com/nodejs/node/pull/4935","description":"The `encoding` parameter is supported now."}],"update":{"type":"added","version":["v0.5.0"]}}} />
+<MC data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22969","description":"Throws `ERR_OUT_OF_RANGE` instead of `ERR_INDEX_OUT_OF_RANGE`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18790","description":"Negative `end` values throw an `ERR_INDEX_OUT_OF_RANGE` error."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18129","description":"Attempting to fill a non-zero length buffer with a zero length buffer triggers a thrown exception."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17427","description":"Specifying an invalid string for `value` triggers a thrown exception."},{"version":"v5.7.0","pr-url":"https://github.com/nodejs/node/pull/4935","description":"The `encoding` parameter is supported now."}],"update":{"type":"added","version":["v0.5.0"]}}} />
 
-* `value` {string|Buffer|Uint8Array|integer} The value with which to fill `buf`.
+* `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The value with which to fill `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to fill `buf`.
   **Default:** `0`.
 * `end` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where to stop filling `buf` (not inclusive). **Default:**
@@ -1804,11 +1804,11 @@ console.log(buf.fill('zz', 'hex'));
 // Throws an exception.
 ```
 
-#### <DataTag tag="M" /> `buf.includes(value[, byteOffset][, encoding])`
+#### <Tag tag="M" /> `buf.includes(value[, byteOffset][, encoding])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v5.3.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v5.3.0"]}}} />
 
-* `value` {string|Buffer|Uint8Array|integer} What to search for.
+* `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) What to search for.
 * `byteOffset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where to begin searching in `buf`. If negative, then
   offset is calculated from the end of `buf`. **Default:** `0`.
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If `value` is a string, this is its encoding.
@@ -1859,11 +1859,11 @@ console.log(buf.includes('this', 4));
 // Prints: false
 ```
 
-#### <DataTag tag="M" /> `buf.indexOf(value[, byteOffset][, encoding])`
+#### <Tag tag="M" /> `buf.indexOf(value[, byteOffset][, encoding])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The `value` can now be a `Uint8Array`."},{"version":["v5.7.0","v4.4.0"],"pr-url":"https://github.com/nodejs/node/pull/4803","description":"When `encoding` is being passed, the `byteOffset` parameter is no longer required."}],"update":{"type":"added","version":["v1.5.0"]}}} />
+<MC data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The `value` can now be a `Uint8Array`."},{"version":["v5.7.0","v4.4.0"],"pr-url":"https://github.com/nodejs/node/pull/4803","description":"When `encoding` is being passed, the `byteOffset` parameter is no longer required."}],"update":{"type":"added","version":["v1.5.0"]}}} />
 
-* `value` {string|Buffer|Uint8Array|integer} What to search for.
+* `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) What to search for.
 * `byteOffset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where to begin searching in `buf`. If negative, then
   offset is calculated from the end of `buf`. **Default:** `0`.
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If `value` is a string, this is the encoding used to
@@ -1981,9 +1981,9 @@ If `value` is an empty string or empty `Buffer` and `byteOffset` is less
 than `buf.length`, `byteOffset` will be returned. If `value` is empty and
 `byteOffset` is at least `buf.length`, `buf.length` will be returned.
 
-#### <DataTag tag="M" /> `buf.keys()`
+#### <Tag tag="M" /> `buf.keys()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v1.1.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v1.1.0"]}}} />
 
 * Returns: [`Iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol)
 
@@ -2023,11 +2023,11 @@ for (const key of buf.keys()) {
 //   5
 ```
 
-#### <DataTag tag="M" /> `buf.lastIndexOf(value[, byteOffset][, encoding])`
+#### <Tag tag="M" /> `buf.lastIndexOf(value[, byteOffset][, encoding])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The `value` can now be a `Uint8Array`."}],"update":{"type":"added","version":["v6.0.0"]}}} />
+<MC data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The `value` can now be a `Uint8Array`."}],"update":{"type":"added","version":["v6.0.0"]}}} />
 
-* `value` {string|Buffer|Uint8Array|integer} What to search for.
+* `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) What to search for.
 * `byteOffset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where to begin searching in `buf`. If negative, then
   offset is calculated from the end of `buf`. **Default:**
   `buf.length - 1`.
@@ -2148,9 +2148,9 @@ console.log(b.lastIndexOf('b', []));
 
 If `value` is an empty string or empty `Buffer`, `byteOffset` will be returned.
 
-#### <DataTag tag="M" /> `buf.length`
+#### <Tag tag="M" /> `buf.length`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -2188,17 +2188,17 @@ console.log(buf.length);
 // Prints: 1234
 ```
 
-#### <DataTag tag="M" /> `buf.parent`
+#### <Tag tag="M" /> `buf.parent`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v8.0.0"]}}} />
+<MC data={{"update":{"type":"deprecated","version":["v8.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`buf.buffer`][] instead."}}} />
+<MC data={{"stability":{"level":0,"text":" - Deprecated: Use `buf.buffer` instead."}}} />
 
 The `buf.parent` property is a deprecated alias for `buf.buffer`.
 
-#### <DataTag tag="M" /> `buf.readBigInt64BE([offset])`
+#### <Tag tag="M" /> `buf.readBigInt64BE([offset])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy: `0 <= offset <= buf.length - 8`. **Default:** `0`.
@@ -2209,9 +2209,9 @@ Reads a signed, big-endian 64-bit integer from `buf` at the specified `offset`.
 Integers read from a `Buffer` are interpreted as two's complement signed
 values.
 
-#### <DataTag tag="M" /> `buf.readBigInt64LE([offset])`
+#### <Tag tag="M" /> `buf.readBigInt64LE([offset])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy: `0 <= offset <= buf.length - 8`. **Default:** `0`.
@@ -2223,9 +2223,9 @@ Reads a signed, little-endian 64-bit integer from `buf` at the specified
 Integers read from a `Buffer` are interpreted as two's complement signed
 values.
 
-#### <DataTag tag="M" /> `buf.readBigUInt64BE([offset])`
+#### <Tag tag="M" /> `buf.readBigUInt64BE([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34960","description":"This function is also available as `buf.readBigUint64BE()`."}],"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
+<MC data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34960","description":"This function is also available as `buf.readBigUint64BE()`."}],"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy: `0 <= offset <= buf.length - 8`. **Default:** `0`.
@@ -2254,9 +2254,9 @@ console.log(buf.readBigUInt64BE(0));
 // Prints: 4294967295n
 ```
 
-#### <DataTag tag="M" /> `buf.readBigUInt64LE([offset])`
+#### <Tag tag="M" /> `buf.readBigUInt64LE([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34960","description":"This function is also available as `buf.readBigUint64LE()`."}],"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
+<MC data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34960","description":"This function is also available as `buf.readBigUint64LE()`."}],"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy: `0 <= offset <= buf.length - 8`. **Default:** `0`.
@@ -2285,9 +2285,9 @@ console.log(buf.readBigUInt64LE(0));
 // Prints: 18446744069414584320n
 ```
 
-#### <DataTag tag="M" /> `buf.readDoubleBE([offset])`
+#### <Tag tag="M" /> `buf.readDoubleBE([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - 8`. **Default:** `0`.
@@ -2313,9 +2313,9 @@ console.log(buf.readDoubleBE(0));
 // Prints: 8.20788039913184e-304
 ```
 
-#### <DataTag tag="M" /> `buf.readDoubleLE([offset])`
+#### <Tag tag="M" /> `buf.readDoubleLE([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - 8`. **Default:** `0`.
@@ -2345,9 +2345,9 @@ console.log(buf.readDoubleLE(1));
 // Throws ERR_OUT_OF_RANGE.
 ```
 
-#### <DataTag tag="M" /> `buf.readFloatBE([offset])`
+#### <Tag tag="M" /> `buf.readFloatBE([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - 4`. **Default:** `0`.
@@ -2373,9 +2373,9 @@ console.log(buf.readFloatBE(0));
 // Prints: 2.387939260590663e-38
 ```
 
-#### <DataTag tag="M" /> `buf.readFloatLE([offset])`
+#### <Tag tag="M" /> `buf.readFloatLE([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - 4`. **Default:** `0`.
@@ -2405,9 +2405,9 @@ console.log(buf.readFloatLE(1));
 // Throws ERR_OUT_OF_RANGE.
 ```
 
-#### <DataTag tag="M" /> `buf.readInt8([offset])`
+#### <Tag tag="M" /> `buf.readInt8([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.0"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - 1`. **Default:** `0`.
@@ -2443,9 +2443,9 @@ console.log(buf.readInt8(2));
 // Throws ERR_OUT_OF_RANGE.
 ```
 
-#### <DataTag tag="M" /> `buf.readInt16BE([offset])`
+#### <Tag tag="M" /> `buf.readInt16BE([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - 2`. **Default:** `0`.
@@ -2473,9 +2473,9 @@ console.log(buf.readInt16BE(0));
 // Prints: 5
 ```
 
-#### <DataTag tag="M" /> `buf.readInt16LE([offset])`
+#### <Tag tag="M" /> `buf.readInt16LE([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - 2`. **Default:** `0`.
@@ -2508,9 +2508,9 @@ console.log(buf.readInt16LE(1));
 // Throws ERR_OUT_OF_RANGE.
 ```
 
-#### <DataTag tag="M" /> `buf.readInt32BE([offset])`
+#### <Tag tag="M" /> `buf.readInt32BE([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - 4`. **Default:** `0`.
@@ -2538,9 +2538,9 @@ console.log(buf.readInt32BE(0));
 // Prints: 5
 ```
 
-#### <DataTag tag="M" /> `buf.readInt32LE([offset])`
+#### <Tag tag="M" /> `buf.readInt32LE([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - 4`. **Default:** `0`.
@@ -2573,9 +2573,9 @@ console.log(buf.readInt32LE(1));
 // Throws ERR_OUT_OF_RANGE.
 ```
 
-#### <DataTag tag="M" /> `buf.readIntBE(offset, byteLength)`
+#### <Tag tag="M" /> `buf.readIntBE(offset, byteLength)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - byteLength`.
@@ -2613,9 +2613,9 @@ console.log(buf.readIntBE(1, 0).toString(16));
 // Throws ERR_OUT_OF_RANGE.
 ```
 
-#### <DataTag tag="M" /> `buf.readIntLE(offset, byteLength)`
+#### <Tag tag="M" /> `buf.readIntLE(offset, byteLength)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - byteLength`.
@@ -2645,9 +2645,9 @@ console.log(buf.readIntLE(0, 6).toString(16));
 // Prints: -546f87a9cbee
 ```
 
-#### <DataTag tag="M" /> `buf.readUInt8([offset])`
+#### <Tag tag="M" /> `buf.readUInt8([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.readUint8()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.0"]}}} />
+<MC data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.readUint8()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - 1`. **Default:** `0`.
@@ -2683,9 +2683,9 @@ console.log(buf.readUInt8(2));
 // Throws ERR_OUT_OF_RANGE.
 ```
 
-#### <DataTag tag="M" /> `buf.readUInt16BE([offset])`
+#### <Tag tag="M" /> `buf.readUInt16BE([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.readUint16BE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.readUint16BE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - 2`. **Default:** `0`.
@@ -2718,9 +2718,9 @@ console.log(buf.readUInt16BE(1).toString(16));
 // Prints: 3456
 ```
 
-#### <DataTag tag="M" /> `buf.readUInt16LE([offset])`
+#### <Tag tag="M" /> `buf.readUInt16LE([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.readUint16LE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.readUint16LE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - 2`. **Default:** `0`.
@@ -2757,9 +2757,9 @@ console.log(buf.readUInt16LE(2).toString(16));
 // Throws ERR_OUT_OF_RANGE.
 ```
 
-#### <DataTag tag="M" /> `buf.readUInt32BE([offset])`
+#### <Tag tag="M" /> `buf.readUInt32BE([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.readUint32BE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.readUint32BE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - 4`. **Default:** `0`.
@@ -2788,9 +2788,9 @@ console.log(buf.readUInt32BE(0).toString(16));
 // Prints: 12345678
 ```
 
-#### <DataTag tag="M" /> `buf.readUInt32LE([offset])`
+#### <Tag tag="M" /> `buf.readUInt32LE([offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.readUint32LE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.readUint32LE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - 4`. **Default:** `0`.
@@ -2823,9 +2823,9 @@ console.log(buf.readUInt32LE(1).toString(16));
 // Throws ERR_OUT_OF_RANGE.
 ```
 
-#### <DataTag tag="M" /> `buf.readUIntBE(offset, byteLength)`
+#### <Tag tag="M" /> `buf.readUIntBE(offset, byteLength)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.readUintBE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<MC data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.readUintBE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - byteLength`.
@@ -2861,9 +2861,9 @@ console.log(buf.readUIntBE(1, 6).toString(16));
 // Throws ERR_OUT_OF_RANGE.
 ```
 
-#### <DataTag tag="M" /> `buf.readUIntLE(offset, byteLength)`
+#### <Tag tag="M" /> `buf.readUIntLE(offset, byteLength)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.readUintLE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<MC data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.readUintLE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to read. Must
   satisfy `0 <= offset <= buf.length - byteLength`.
@@ -2895,9 +2895,9 @@ console.log(buf.readUIntLE(0, 6).toString(16));
 // Prints: ab9078563412
 ```
 
-#### <DataTag tag="M" /> `buf.subarray([start[, end]])`
+#### <Tag tag="M" /> `buf.subarray([start[, end]])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v3.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v3.0.0"]}}} />
 
 * `start` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where the new `Buffer` will start. **Default:** `0`.
 * `end` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where the new `Buffer` will end (not inclusive).
@@ -3002,16 +3002,16 @@ console.log(buf.subarray(-5, -2).toString());
 // (Equivalent to buf.subarray(1, 4).)
 ```
 
-#### <DataTag tag="M" /> `buf.slice([start[, end]])`
+#### <Tag tag="M" /> `buf.slice([start[, end]])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v17.5.0","pr-url":"https://github.com/nodejs/node/pull/41596","description":"The buf.slice() method has been deprecated."},{"version":["v7.1.0","v6.9.2"],"pr-url":"https://github.com/nodejs/node/pull/9341","description":"Coercing the offsets to integers now handles values outside the 32-bit integer range properly."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/9101","description":"All offsets are now coerced to integers before doing any calculations with them."}],"update":{"type":"added","version":["v0.3.0"]}}} />
+<MC data={{"changes":[{"version":"v17.5.0","pr-url":"https://github.com/nodejs/node/pull/41596","description":"The buf.slice() method has been deprecated."},{"version":["v7.1.0","v6.9.2"],"pr-url":"https://github.com/nodejs/node/pull/9341","description":"Coercing the offsets to integers now handles values outside the 32-bit integer range properly."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/9101","description":"All offsets are now coerced to integers before doing any calculations with them."}],"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * `start` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where the new `Buffer` will start. **Default:** `0`.
 * `end` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where the new `Buffer` will end (not inclusive).
   **Default:** [`buf.length`][].
 * Returns: [`Buffer`](/api/buffer#buffer)
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`buf.subarray`][] instead."}}} />
+<MC data={{"stability":{"level":0,"text":" - Deprecated: Use `buf.subarray` instead."}}} />
 
 Returns a new `Buffer` that references the same memory as the original, but
 offset and cropped by the `start` and `end` indices.
@@ -3064,9 +3064,9 @@ console.log(buf.toString());
 // Also prints: cuffer (!)
 ```
 
-#### <DataTag tag="M" /> `buf.swap16()`
+#### <Tag tag="M" /> `buf.swap16()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v5.10.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v5.10.0"]}}} />
 
 * Returns: [`Buffer`](/api/buffer#buffer) A reference to `buf`.
 
@@ -3129,9 +3129,9 @@ const buf = Buffer.from('This is little-endian UTF-16', 'utf16le');
 buf.swap16(); // Convert to big-endian UTF-16 text.
 ```
 
-#### <DataTag tag="M" /> `buf.swap32()`
+#### <Tag tag="M" /> `buf.swap32()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v5.10.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v5.10.0"]}}} />
 
 * Returns: [`Buffer`](/api/buffer#buffer) A reference to `buf`.
 
@@ -3177,9 +3177,9 @@ buf2.swap32();
 // Throws ERR_INVALID_BUFFER_SIZE.
 ```
 
-#### <DataTag tag="M" /> `buf.swap64()`
+#### <Tag tag="M" /> `buf.swap64()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v6.3.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v6.3.0"]}}} />
 
 * Returns: [`Buffer`](/api/buffer#buffer) A reference to `buf`.
 
@@ -3224,9 +3224,9 @@ buf2.swap64();
 // Throws ERR_INVALID_BUFFER_SIZE.
 ```
 
-#### <DataTag tag="M" /> `buf.toJSON()`
+#### <Tag tag="M" /> `buf.toJSON()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.2"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.9.2"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -3274,9 +3274,9 @@ console.log(copy);
 // Prints: <Buffer 01 02 03 04 05>
 ```
 
-#### <DataTag tag="M" /> `buf.toString([encoding[, start[, end]]])`
+#### <Tag tag="M" /> `buf.toString([encoding[, start[, end]]])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The character encoding to use. **Default:** `'utf8'`.
 * `start` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The byte offset to start decoding at. **Default:** `0`.
@@ -3343,9 +3343,9 @@ console.log(buf2.toString(undefined, 0, 3));
 // Prints: té
 ```
 
-#### <DataTag tag="M" /> `buf.values()`
+#### <Tag tag="M" /> `buf.values()`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v1.1.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v1.1.0"]}}} />
 
 * Returns: [`Iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol)
 
@@ -3408,9 +3408,9 @@ for (const value of buf) {
 //   114
 ```
 
-#### <DataTag tag="M" /> `buf.write(string[, offset[, length]][, encoding])`
+#### <Tag tag="M" /> `buf.write(string[, offset[, length]][, encoding])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) String to write to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write `string`.
@@ -3432,14 +3432,14 @@ const buf = Buffer.alloc(256);
 
 const len = buf.write('\u00bd + \u00bc = \u00be', 0);
 
-console.log(`$len bytes: ${buf.toString('utf8', 0, len)}`);
+console.log(`${len} bytes: ${buf.toString('utf8', 0, len)}`);
 // Prints: 12 bytes: ½ + ¼ = ¾
 
 const buffer = Buffer.alloc(10);
 
 const length = buffer.write('abcd', 8);
 
-console.log(`$length bytes: ${buffer.toString('utf8', 8, 10)}`);
+console.log(`${length} bytes: ${buffer.toString('utf8', 8, 10)}`);
 // Prints: 2 bytes : ab
 ```
 
@@ -3450,20 +3450,20 @@ const buf = Buffer.alloc(256);
 
 const len = buf.write('\u00bd + \u00bc = \u00be', 0);
 
-console.log(`$len bytes: ${buf.toString('utf8', 0, len)}`);
+console.log(`${len} bytes: ${buf.toString('utf8', 0, len)}`);
 // Prints: 12 bytes: ½ + ¼ = ¾
 
 const buffer = Buffer.alloc(10);
 
 const length = buffer.write('abcd', 8);
 
-console.log(`$length bytes: ${buffer.toString('utf8', 8, 10)}`);
+console.log(`${length} bytes: ${buffer.toString('utf8', 8, 10)}`);
 // Prints: 2 bytes : ab
 ```
 
-#### <DataTag tag="M" /> `buf.writeBigInt64BE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeBigInt64BE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
 
 * `value` [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -3496,9 +3496,9 @@ console.log(buf);
 // Prints: <Buffer 01 02 03 04 05 06 07 08>
 ```
 
-#### <DataTag tag="M" /> `buf.writeBigInt64LE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeBigInt64LE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
 
 * `value` [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -3531,9 +3531,9 @@ console.log(buf);
 // Prints: <Buffer 08 07 06 05 04 03 02 01>
 ```
 
-#### <DataTag tag="M" /> `buf.writeBigUInt64BE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeBigUInt64BE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34960","description":"This function is also available as `buf.writeBigUint64BE()`."}],"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
+<MC data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34960","description":"This function is also available as `buf.writeBigUint64BE()`."}],"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
 
 * `value` [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -3566,9 +3566,9 @@ console.log(buf);
 // Prints: <Buffer de ca fa fe ca ce fa de>
 ```
 
-#### <DataTag tag="M" /> `buf.writeBigUInt64LE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeBigUInt64LE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34960","description":"This function is also available as `buf.writeBigUint64LE()`."}],"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
+<MC data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34960","description":"This function is also available as `buf.writeBigUint64LE()`."}],"update":{"type":"added","version":["v12.0.0","v10.20.0"]}}} />
 
 * `value` [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -3601,9 +3601,9 @@ console.log(buf);
 
 This function is also available under the `writeBigUint64LE` alias.
 
-#### <DataTag tag="M" /> `buf.writeDoubleBE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeDoubleBE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `value` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -3636,9 +3636,9 @@ console.log(buf);
 // Prints: <Buffer 40 5e dd 2f 1a 9f be 77>
 ```
 
-#### <DataTag tag="M" /> `buf.writeDoubleLE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeDoubleLE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `value` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -3671,9 +3671,9 @@ console.log(buf);
 // Prints: <Buffer 77 be 9f 1a 2f dd 5e 40>
 ```
 
-#### <DataTag tag="M" /> `buf.writeFloatBE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeFloatBE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `value` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -3705,9 +3705,9 @@ console.log(buf);
 // Prints: <Buffer 4f 4a fe bb>
 ```
 
-#### <DataTag tag="M" /> `buf.writeFloatLE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeFloatLE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `value` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -3739,9 +3739,9 @@ console.log(buf);
 // Prints: <Buffer bb fe 4a 4f>
 ```
 
-#### <DataTag tag="M" /> `buf.writeInt8(value[, offset])`
+#### <Tag tag="M" /> `buf.writeInt8(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.0"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * `value` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -3778,9 +3778,9 @@ console.log(buf);
 // Prints: <Buffer 02 fe>
 ```
 
-#### <DataTag tag="M" /> `buf.writeInt16BE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeInt16BE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `value` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -3815,9 +3815,9 @@ console.log(buf);
 // Prints: <Buffer 01 02>
 ```
 
-#### <DataTag tag="M" /> `buf.writeInt16LE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeInt16LE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `value` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -3852,9 +3852,9 @@ console.log(buf);
 // Prints: <Buffer 04 03>
 ```
 
-#### <DataTag tag="M" /> `buf.writeInt32BE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeInt32BE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `value` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -3889,9 +3889,9 @@ console.log(buf);
 // Prints: <Buffer 01 02 03 04>
 ```
 
-#### <DataTag tag="M" /> `buf.writeInt32LE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeInt32LE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `value` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -3926,9 +3926,9 @@ console.log(buf);
 // Prints: <Buffer 08 07 06 05>
 ```
 
-#### <DataTag tag="M" /> `buf.writeIntBE(value, offset, byteLength)`
+#### <Tag tag="M" /> `buf.writeIntBE(value, offset, byteLength)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `value` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -3963,9 +3963,9 @@ console.log(buf);
 // Prints: <Buffer 12 34 56 78 90 ab>
 ```
 
-#### <DataTag tag="M" /> `buf.writeIntLE(value, offset, byteLength)`
+#### <Tag tag="M" /> `buf.writeIntLE(value, offset, byteLength)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `value` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -4000,9 +4000,9 @@ console.log(buf);
 // Prints: <Buffer ab 90 78 56 34 12>
 ```
 
-#### <DataTag tag="M" /> `buf.writeUInt8(value[, offset])`
+#### <Tag tag="M" /> `buf.writeUInt8(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.writeUint8()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.0"]}}} />
+<MC data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.writeUint8()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * `value` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -4043,9 +4043,9 @@ console.log(buf);
 // Prints: <Buffer 03 04 23 42>
 ```
 
-#### <DataTag tag="M" /> `buf.writeUInt16BE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeUInt16BE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.writeUint16BE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.writeUint16BE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `value` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -4082,9 +4082,9 @@ console.log(buf);
 // Prints: <Buffer de ad be ef>
 ```
 
-#### <DataTag tag="M" /> `buf.writeUInt16LE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeUInt16LE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.writeUint16LE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.writeUint16LE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `value` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -4121,9 +4121,9 @@ console.log(buf);
 // Prints: <Buffer ad de ef be>
 ```
 
-#### <DataTag tag="M" /> `buf.writeUInt32BE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeUInt32BE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.writeUint32BE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.writeUint32BE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `value` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -4158,9 +4158,9 @@ console.log(buf);
 // Prints: <Buffer fe ed fa ce>
 ```
 
-#### <DataTag tag="M" /> `buf.writeUInt32LE(value[, offset])`
+#### <Tag tag="M" /> `buf.writeUInt32LE(value[, offset])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.writeUint32LE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.writeUint32LE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `value` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -4195,9 +4195,9 @@ console.log(buf);
 // Prints: <Buffer ce fa ed fe>
 ```
 
-#### <DataTag tag="M" /> `buf.writeUIntBE(value, offset, byteLength)`
+#### <Tag tag="M" /> `buf.writeUIntBE(value, offset, byteLength)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.writeUintBE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.writeUintBE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `value` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -4234,9 +4234,9 @@ console.log(buf);
 // Prints: <Buffer 12 34 56 78 90 ab>
 ```
 
-#### <DataTag tag="M" /> `buf.writeUIntLE(value, offset, byteLength)`
+#### <Tag tag="M" /> `buf.writeUIntLE(value, offset, byteLength)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.writeUintLE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
+<MC data={{"changes":[{"version":["v14.9.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34729","description":"This function is also available as `buf.writeUintLE()`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"Removed `noAssert` and no implicit coercion of the offset and `byteLength` to `uint32` anymore."}],"update":{"type":"added","version":["v0.5.5"]}}} />
 
 * `value` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number to be written to `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to write. Must
@@ -4273,21 +4273,21 @@ console.log(buf);
 // Prints: <Buffer ab 90 78 56 34 12>
 ```
 
-#### <DataTag tag="M" /> `new Buffer(array)`
+#### <Tag tag="M" /> `new Buffer(array)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Calling this constructor emits a deprecation warning when run from code outside the `node_modules` directory."},{"version":"v7.2.1","pr-url":"https://github.com/nodejs/node/pull/9529","description":"Calling this constructor no longer emits a deprecation warning."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8169","description":"Calling this constructor emits a deprecation warning now."}],"update":{"type":"deprecated","version":["v6.0.0"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Calling this constructor emits a deprecation warning when run from code outside the `node_modules` directory."},{"version":"v7.2.1","pr-url":"https://github.com/nodejs/node/pull/9529","description":"Calling this constructor no longer emits a deprecation warning."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8169","description":"Calling this constructor emits a deprecation warning now."}],"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.from(array)`][] instead."}}} />
+<MC data={{"stability":{"level":0,"text":" - Deprecated: Use `Buffer.from(array)` instead."}}} />
 
 * `array` integer\[] An array of bytes to copy from.
 
 See [`Buffer.from(array)`][].
 
-#### <DataTag tag="M" /> `new Buffer(arrayBuffer[, byteOffset[, length]])`
+#### <Tag tag="M" /> `new Buffer(arrayBuffer[, byteOffset[, length]])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Calling this constructor emits a deprecation warning when run from code outside the `node_modules` directory."},{"version":"v7.2.1","pr-url":"https://github.com/nodejs/node/pull/9529","description":"Calling this constructor no longer emits a deprecation warning."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8169","description":"Calling this constructor emits a deprecation warning now."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4682","description":"The `byteOffset` and `length` parameters are supported now."}],"update":{"type":"deprecated","version":["v6.0.0"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Calling this constructor emits a deprecation warning when run from code outside the `node_modules` directory."},{"version":"v7.2.1","pr-url":"https://github.com/nodejs/node/pull/9529","description":"Calling this constructor no longer emits a deprecation warning."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8169","description":"Calling this constructor emits a deprecation warning now."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4682","description":"The `byteOffset` and `length` parameters are supported now."}],"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use\n> [`Buffer.from(arrayBuffer[, byteOffset[, length]])`][`Buffer.from(arrayBuf)`]\n> instead."}}} />
+<MC data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.from(arrayBuffer[, byteOffset[, length]])`][`Buffer.from(arrayBuf)`]\n> instead."}}} />
 
 * `arrayBuffer` [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) An [`ArrayBuffer`][],
   [`SharedArrayBuffer`][] or the `.buffer` property of a [`TypedArray`][].
@@ -4298,50 +4298,50 @@ See [`Buffer.from(array)`][].
 See
 [`Buffer.from(arrayBuffer[, byteOffset[, length]])`][`Buffer.from(arrayBuf)`].
 
-#### <DataTag tag="M" /> `new Buffer(buffer)`
+#### <Tag tag="M" /> `new Buffer(buffer)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Calling this constructor emits a deprecation warning when run from code outside the `node_modules` directory."},{"version":"v7.2.1","pr-url":"https://github.com/nodejs/node/pull/9529","description":"Calling this constructor no longer emits a deprecation warning."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8169","description":"Calling this constructor emits a deprecation warning now."}],"update":{"type":"deprecated","version":["v6.0.0"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Calling this constructor emits a deprecation warning when run from code outside the `node_modules` directory."},{"version":"v7.2.1","pr-url":"https://github.com/nodejs/node/pull/9529","description":"Calling this constructor no longer emits a deprecation warning."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8169","description":"Calling this constructor emits a deprecation warning now."}],"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.from(buffer)`][] instead."}}} />
+<MC data={{"stability":{"level":0,"text":" - Deprecated: Use `Buffer.from(buffer)` instead."}}} />
 
-* `buffer` {Buffer|Uint8Array} An existing `Buffer` or [`Uint8Array`][] from
+* `buffer` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) An existing `Buffer` or [`Uint8Array`][] from
   which to copy data.
 
 See [`Buffer.from(buffer)`][].
 
-#### <DataTag tag="M" /> `new Buffer(size)`
+#### <Tag tag="M" /> `new Buffer(size)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Calling this constructor emits a deprecation warning when run from code outside the `node_modules` directory."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12141","description":"The `new Buffer(size)` will return zero-filled memory by default."},{"version":"v7.2.1","pr-url":"https://github.com/nodejs/node/pull/9529","description":"Calling this constructor no longer emits a deprecation warning."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8169","description":"Calling this constructor emits a deprecation warning now."}],"update":{"type":"deprecated","version":["v6.0.0"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Calling this constructor emits a deprecation warning when run from code outside the `node_modules` directory."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12141","description":"The `new Buffer(size)` will return zero-filled memory by default."},{"version":"v7.2.1","pr-url":"https://github.com/nodejs/node/pull/9529","description":"Calling this constructor no longer emits a deprecation warning."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8169","description":"Calling this constructor emits a deprecation warning now."}],"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.alloc()`][] instead (also see\n> [`Buffer.allocUnsafe()`][])."}}} />
+<MC data={{"stability":{"level":0,"text":" - Deprecated: Use `Buffer.alloc()`][] instead (also see [`Buffer.allocUnsafe()`)."}}} />
 
 * `size` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The desired length of the new `Buffer`.
 
 See [`Buffer.alloc()`][] and [`Buffer.allocUnsafe()`][]. This variant of the
 constructor is equivalent to [`Buffer.alloc()`][].
 
-#### <DataTag tag="M" /> `new Buffer(string[, encoding])`
+#### <Tag tag="M" /> `new Buffer(string[, encoding])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Calling this constructor emits a deprecation warning when run from code outside the `node_modules` directory."},{"version":"v7.2.1","pr-url":"https://github.com/nodejs/node/pull/9529","description":"Calling this constructor no longer emits a deprecation warning."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8169","description":"Calling this constructor emits a deprecation warning now."}],"update":{"type":"deprecated","version":["v6.0.0"]}}} />
+<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Calling this constructor emits a deprecation warning when run from code outside the `node_modules` directory."},{"version":"v7.2.1","pr-url":"https://github.com/nodejs/node/pull/9529","description":"Calling this constructor no longer emits a deprecation warning."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8169","description":"Calling this constructor emits a deprecation warning now."}],"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated:\n> Use [`Buffer.from(string[, encoding])`][`Buffer.from(string)`] instead."}}} />
+<MC data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.from(string[, encoding])`][`Buffer.from(string)`] instead."}}} />
 
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) String to encode.
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The encoding of `string`. **Default:** `'utf8'`.
 
 See [`Buffer.from(string[, encoding])`][`Buffer.from(string)`].
 
-### <DataTag tag="M" /> `node:buffer` module APIs
+### <Tag tag="M" /> `node:buffer` module APIs
 
 While, the `Buffer` object is available as a global, there are additional
 `Buffer`-related APIs that are available only via the `node:buffer` module
 accessed using `require('node:buffer')`.
 
-#### <DataTag tag="M" /> `buffer.atob(data)`
+#### <Tag tag="M" /> `buffer.atob(data)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.13.0","v14.17.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.13.0","v14.17.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy. Use `Buffer.from(data, 'base64')` instead."}}} />
+<MC data={{"stability":{"level":3,"text":" - Legacy. Use `Buffer.from(data, 'base64')` instead."}}} />
 
 * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The Base64-encoded input string.
 
@@ -4357,11 +4357,11 @@ For code running using Node.js APIs, converting between base64-encoded strings
 and binary data should be performed using `Buffer.from(str, 'base64')` and
 `buf.toString('base64')`.**
 
-#### <DataTag tag="M" /> `buffer.btoa(data)`
+#### <Tag tag="M" /> `buffer.btoa(data)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.13.0","v14.17.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v15.13.0","v14.17.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy. Use `buf.toString('base64')` instead."}}} />
+<MC data={{"stability":{"level":3,"text":" - Legacy. Use `buf.toString('base64')` instead."}}} />
 
 * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) An ASCII (Latin1) string.
 
@@ -4377,9 +4377,9 @@ For code running using Node.js APIs, converting between base64-encoded strings
 and binary data should be performed using `Buffer.from(str, 'base64')` and
 `buf.toString('base64')`.**
 
-#### <DataTag tag="M" /> `buffer.INSPECT_MAX_BYTES`
+#### <Tag tag="M" /> `buffer.INSPECT_MAX_BYTES`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.4"]}}} />
+<MC data={{"update":{"type":"added","version":["v0.5.4"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `50`
 
@@ -4387,27 +4387,27 @@ Returns the maximum number of bytes that will be returned when
 `buf.inspect()` is called. This can be overridden by user modules. See
 [`util.inspect()`][] for more details on `buf.inspect()` behavior.
 
-#### <DataTag tag="M" /> `buffer.kMaxLength`
+#### <Tag tag="M" /> `buffer.kMaxLength`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v3.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v3.0.0"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The largest size allowed for a single `Buffer` instance.
 
 An alias for [`buffer.constants.MAX_LENGTH`][].
 
-#### <DataTag tag="M" /> `buffer.kStringMaxLength`
+#### <Tag tag="M" /> `buffer.kStringMaxLength`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v3.0.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v3.0.0"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The largest length allowed for a single `string` instance.
 
 An alias for [`buffer.constants.MAX_STRING_LENGTH`][].
 
-#### <DataTag tag="M" /> `buffer.resolveObjectURL(id)`
+#### <Tag tag="M" /> `buffer.resolveObjectURL(id)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `id` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A `'blob:nodedata:...` URL string returned by a prior call to
   `URL.createObjectURL()`.
@@ -4416,11 +4416,11 @@ An alias for [`buffer.constants.MAX_STRING_LENGTH`][].
 Resolves a `'blob:nodedata:...'` an associated [`Blob`](/api/buffer#blob) object registered using
 a prior call to `URL.createObjectURL()`.
 
-#### <DataTag tag="M" /> `buffer.transcode(source, fromEnc, toEnc)`
+#### <Tag tag="M" /> `buffer.transcode(source, fromEnc, toEnc)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The `source` parameter can now be a `Uint8Array`."}],"update":{"type":"added","version":["v7.1.0"]}}} />
+<MC data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The `source` parameter can now be a `Uint8Array`."}],"update":{"type":"added","version":["v7.1.0"]}}} />
 
-* `source` {Buffer|Uint8Array} A `Buffer` or `Uint8Array` instance.
+* `source` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) A `Buffer` or `Uint8Array` instance.
 * `fromEnc` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The current encoding.
 * `toEnc` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) To target encoding.
 * Returns: [`Buffer`](/api/buffer#buffer)
@@ -4456,21 +4456,21 @@ console.log(newBuf.toString('ascii'));
 Because the Euro (`€`) sign is not representable in US-ASCII, it is replaced
 with `?` in the transcoded `Buffer`.
 
-#### <DataTag tag="C" /> `SlowBuffer`
+#### <Tag tag="C" /> `SlowBuffer`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v6.0.0"]}}} />
+<MC data={{"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.allocUnsafeSlow()`][] instead."}}} />
+<MC data={{"stability":{"level":0,"text":" - Deprecated: Use `Buffer.allocUnsafeSlow()` instead."}}} />
 
 See [`Buffer.allocUnsafeSlow()`][]. This was never a class in the sense that
 the constructor always returned a `Buffer` instance, rather than a `SlowBuffer`
 instance.
 
-##### <DataTag tag="M" /> `new SlowBuffer(size)`
+##### <Tag tag="M" /> `new SlowBuffer(size)`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v6.0.0"]}}} />
+<MC data={{"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.allocUnsafeSlow()`][] instead."}}} />
+<MC data={{"stability":{"level":0,"text":" - Deprecated: Use `Buffer.allocUnsafeSlow()` instead."}}} />
 
 * `size` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The desired length of the new `SlowBuffer`.
 
@@ -4478,11 +4478,11 @@ See [`Buffer.allocUnsafeSlow()`][].
 
 #### Buffer constants
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.2.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.2.0"]}}} />
 
-##### <DataTag tag="M" /> `buffer.constants.MAX_LENGTH`
+##### <Tag tag="M" /> `buffer.constants.MAX_LENGTH`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35415","description":"Value is changed to 2<sup>32</sup> on 64-bit architectures."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/32116","description":"Value is changed from 2<sup>31</sup> - 1 to 2<sup>32</sup> - 1 on 64-bit architectures."}],"update":{"type":"added","version":["v8.2.0"]}}} />
+<MC data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35415","description":"Value is changed to 2<sup>32</sup> on 64-bit architectures."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/32116","description":"Value is changed from 2<sup>31</sup> - 1 to 2<sup>32</sup> - 1 on 64-bit architectures."}],"update":{"type":"added","version":["v8.2.0"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The largest size allowed for a single `Buffer` instance.
 
@@ -4495,9 +4495,9 @@ It reflects [`v8::TypedArray::kMaxLength`][] under the hood.
 
 This value is also available as [`buffer.kMaxLength`][].
 
-##### <DataTag tag="M" /> `buffer.constants.MAX_STRING_LENGTH`
+##### <Tag tag="M" /> `buffer.constants.MAX_STRING_LENGTH`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.2.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v8.2.0"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The largest length allowed for a single `string` instance.
 
@@ -4506,7 +4506,7 @@ in UTF-16 code units.
 
 This value may depend on the JS engine that is being used.
 
-### <DataTag tag="M" /> `Buffer.from()`, `Buffer.alloc()`, and `Buffer.allocUnsafe()`
+### <Tag tag="M" /> `Buffer.from()`, `Buffer.alloc()`, and `Buffer.allocUnsafe()`
 
 In versions of Node.js prior to 6.0.0, `Buffer` instances were created using the
 `Buffer` constructor function, which allocates the returned `Buffer`
@@ -4583,7 +4583,7 @@ memory pool.
 
 #### The `--zero-fill-buffers` command-line option
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v5.10.0"]}}} />
+<MC data={{"update":{"type":"added","version":["v5.10.0"]}}} />
 
 Node.js can be started using the `--zero-fill-buffers` command-line option to
 cause all newly-allocated `Buffer` instances to be zero-filled upon creation by
