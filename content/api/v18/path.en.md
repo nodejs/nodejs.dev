@@ -2,15 +2,15 @@
 title: 'path'
 displayTitle: 'Path'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.8.0/doc/api/path.md'
+editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/path.md'
 version: 'v18'
 ---
 
-<Metadata version="v18.8.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.8.0" data={{"source_link":"lib/path.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/path.js"}} />
 
 The `node:path` module provides utilities for working with file and directory
 paths. It can be accessed using:
@@ -70,7 +70,7 @@ example, `path.resolve('C:\\')` can potentially return a different result than
 
 ### <DataTag tag="M" /> `path.basename(path[, ext])`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5348","description":"Passing a non-string as the `path` argument will throw now."}],"update":{"type":"added","version":["v0.1.25"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5348","description":"Passing a non-string as the `path` argument will throw now."}],"update":{"type":"added","version":["v0.1.25"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `ext` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) An optional file extension
@@ -106,7 +106,7 @@ and is not a string.
 
 ### <DataTag tag="M" /> `path.delimiter`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.9.3"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.3"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -137,7 +137,7 @@ process.env.PATH.split(path.delimiter);
 
 ### <DataTag tag="M" /> `path.dirname(path)`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5348","description":"Passing a non-string as the `path` argument will throw now."}],"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5348","description":"Passing a non-string as the `path` argument will throw now."}],"update":{"type":"added","version":["v0.1.16"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -155,7 +155,7 @@ A [`TypeError`][] is thrown if `path` is not a string.
 
 ### <DataTag tag="M" /> `path.extname(path)`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5348","description":"Passing a non-string as the `path` argument will throw now."}],"update":{"type":"added","version":["v0.1.25"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5348","description":"Passing a non-string as the `path` argument will throw now."}],"update":{"type":"added","version":["v0.1.25"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -190,7 +190,7 @@ A [`TypeError`][] is thrown if `path` is not a string.
 
 ### <DataTag tag="M" /> `path.format(pathObject)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.11.15"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `pathObject` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Any JavaScript object having the following properties:
   * `dir` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -253,7 +253,7 @@ path.format({
 
 ### <DataTag tag="M" /> `path.isAbsolute(path)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.11.2"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.2"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -287,7 +287,7 @@ A [`TypeError`][] is thrown if `path` is not a string.
 
 ### <DataTag tag="M" /> `path.join([...paths])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.16"]}}} />
 
 * `...paths` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A sequence of path segments
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -311,7 +311,7 @@ A [`TypeError`][] is thrown if any of the path segments is not a string.
 
 ### <DataTag tag="M" /> `path.normalize(path)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.1.23"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.23"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -353,7 +353,7 @@ A [`TypeError`][] is thrown if `path` is not a string.
 
 ### <DataTag tag="M" /> `path.parse(path)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.11.15"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -418,7 +418,7 @@ A [`TypeError`][] is thrown if `path` is not a string.
 
 ### <DataTag tag="M" /> `path.posix`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v15.3.0","pr-url":"https://github.com/nodejs/node/pull/34962","description":"Exposed as `require('path/posix')`."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.3.0","pr-url":"https://github.com/nodejs/node/pull/34962","description":"Exposed as `require('path/posix')`."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -429,7 +429,7 @@ The API is accessible via `require('node:path').posix` or `require('node:path/po
 
 ### <DataTag tag="M" /> `path.relative(from, to)`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v6.8.0","pr-url":"https://github.com/nodejs/node/pull/8523","description":"On Windows, the leading slashes for UNC paths are now included in the return value."}],"update":{"type":"added","version":["v0.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v6.8.0","pr-url":"https://github.com/nodejs/node/pull/8523","description":"On Windows, the leading slashes for UNC paths are now included in the return value."}],"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * `from` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `to` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -460,7 +460,7 @@ A [`TypeError`][] is thrown if either `from` or `to` is not a string.
 
 ### <DataTag tag="M" /> `path.resolve([...paths])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.3.4"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.4"]}}} />
 
 * `...paths` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A sequence of paths or path segments
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -501,7 +501,7 @@ A [`TypeError`][] is thrown if any of the arguments is not a string.
 
 ### <DataTag tag="M" /> `path.sep`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.7.9"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.9"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -530,7 +530,7 @@ slashes (`\`).
 
 ### <DataTag tag="M" /> `path.toNamespacedPath(path)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v9.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -544,7 +544,7 @@ method is non-operational and always returns `path` without modifications.
 
 ### <DataTag tag="M" /> `path.win32`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v15.3.0","pr-url":"https://github.com/nodejs/node/pull/34962","description":"Exposed as `require('path/win32')`."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.3.0","pr-url":"https://github.com/nodejs/node/pull/34962","description":"Exposed as `require('path/win32')`."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
