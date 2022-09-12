@@ -43,6 +43,13 @@ exports[`Download page renders correctly 1`] = `
           </li>
           <li>
             <a
+              href="/about/"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
               href="/api/"
             >
               API Docs
@@ -57,9 +64,9 @@ exports[`Download page renders correctly 1`] = `
           </li>
           <li>
             <a
-              href="/community/"
+              href="https://openjsf.org/certification/"
             >
-              Community
+              Certification
             </a>
           </li>
         </ul>
@@ -824,7 +831,7 @@ exports[`Download page renders correctly 1`] = `
             class="link"
             href="/about/security"
           >
-            Security Reporting
+            Security
           </a>
         </li>
         <li>
@@ -979,6 +986,13 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           </li>
           <li>
             <a
+              href="/about/"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
               href="/api/"
             >
               API Docs
@@ -993,9 +1007,9 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           </li>
           <li>
             <a
-              href="/community/"
+              href="https://openjsf.org/certification/"
             >
-              Community
+              Certification
             </a>
           </li>
         </ul>
@@ -1760,7 +1774,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             class="link"
             href="/about/security"
           >
-            Security Reporting
+            Security
           </a>
         </li>
         <li>

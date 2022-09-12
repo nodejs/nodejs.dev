@@ -31,9 +31,7 @@ const ArticleLayout = ({
 }: ArticleLayoutProps): JSX.Element => (
   <Layout title={title} description={description}>
     <main className="grid-container">
-      {sidenavKey && (
-        <SideNavBar pageKey={sidenavKey} title="Community Pages" />
-      )}
+      {sidenavKey && <SideNavBar pageKey={sidenavKey} />}
       <Article
         title={title}
         body={body}

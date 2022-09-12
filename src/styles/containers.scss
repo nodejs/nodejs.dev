@@ -9,7 +9,7 @@
     max-width: 800px;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     --section-margin-bottom: 40px;
     margin: 0 auto;
     margin-bottom: var(--space-80);
@@ -31,7 +31,7 @@
 .grid-container {
   display: grid;
 
-  @media (min-width: 800px) {
+  @media (min-width: 900px) {
     grid-template-columns: 28.8rem auto;
   }
 }

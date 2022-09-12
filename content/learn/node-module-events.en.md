@@ -2,7 +2,6 @@
 title: 'The Node.js events module'
 description: 'The events module of Node.js provides the EventEmitter class'
 authors: flaviocopes, ZYSzys, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
-section: Getting Started
 category: learn
 ---
 

@@ -1,3 +1,5 @@
+import type SvgIcon from '@mui/material/SvgIcon';
+
 export interface NavigationSectionItem {
   slug: string;
   title: string;
@@ -11,4 +13,6 @@ export interface NavigationSectionData {
 export interface SideNavBarItem {
   title: string;
   slug: string;
+  icon?: typeof SvgIcon;
+  isTitle?: boolean;
 }

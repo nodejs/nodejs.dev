@@ -12,6 +12,7 @@
     - node-javascript-language
     - node-difference-browser
     - node-difference-dev-prod
+    - node-es6
 - section: 'Basics & Built-ins'
   items:
     - node-export-module
@@ -39,6 +40,7 @@
     - node-process-nexttick
     - node-setimmediate
     - node-event-emitter
+    - blocking-vs-non-blocking
 - section: 'Manipulating Files'
   items:
     - node-file-descriptors

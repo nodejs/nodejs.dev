@@ -1,17 +1,17 @@
 import { graphql } from 'gatsby';
-import ArticleLayout from '../components/Layout/article';
-import { SideNavBarKeys } from '../components/SideNavBar';
-import connectGraphQlArticle from '../components/connectGraphQlArticle';
+import ArticleLayout from '../../components/Layout/article';
+import { SideNavBarKeys } from '../../components/SideNavBar';
+import connectGraphQlArticle from '../../components/connectGraphQlArticle';
 
 export default connectGraphQlArticle(ArticleLayout, {
-  editPath: 'content/community/index.md',
-  sidenavKey: SideNavBarKeys.community,
+  editPath: 'content/get-involved/index.md',
+  sidenavKey: SideNavBarKeys.getInvolved,
 });
 
 export const query = graphql`
   query ($locale: String!, $defaultLocale: String!) {
     articleCurrentLanguage: mdx(
-      fields: { slug: { eq: "nodejs-community" }, locale: { eq: $locale } }
+      fields: { slug: { eq: "get-involved" }, locale: { eq: $locale } }
     ) {
       body
       tableOfContents
@@ -25,10 +25,7 @@ export const query = graphql`
       }
     }
     articleDefaultLanguage: mdx(
-      fields: {
-        slug: { eq: "nodejs-community" }
-        locale: { eq: $defaultLocale }
-      }
+      fields: { slug: { eq: "get-involved" }, locale: { eq: $defaultLocale } }
     ) {
       body
       tableOfContents

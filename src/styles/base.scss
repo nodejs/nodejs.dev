@@ -9,7 +9,7 @@ html {
   height: 100%;
   margin: 0;
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     font-size: 0.5625rem;
   }
 }
@@ -32,11 +32,11 @@ body {
   --brand: var(--brand5);
   --brand-dark: var(--brand7);
 
-  @media (max-width: 1262px) and (min-width: 800px) {
+  @media (max-width: 1262px) and (min-width: 900px) {
     --banner-clip: polygon(0 0, 100% 0, 100% calc(100% - 52px), 0 100%);
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     --nav-height: 42px;
     --banner-clip: polygon(
       0 0,
@@ -48,7 +48,7 @@ body {
 }
 
 main {
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     display: flex;
     flex-flow: column;
   }
@@ -83,7 +83,7 @@ table {
   width: 100%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   thead {
     tr {
       th {

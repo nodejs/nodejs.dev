@@ -1,6 +1,9 @@
 import React, { useRef, useState, useMemo, useEffect } from 'react';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { FormattedMessage, useIntl } from 'react-intl';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import GroupsIcon from '@mui/icons-material/Groups';
+import InfoIcon from '@mui/icons-material/Info';
+import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import classnames from 'classnames';
 import { SideNavBarItem } from '../../types';
 import NavigationItem from '../NavigationItem';
@@ -10,31 +13,30 @@ import styles from './index.module.scss';
 export enum SideNavBarKeys {
   about = '/about/',
   governance = '/about/governance/',
-  community = '/community/',
-  workingGroups = '/about/working-groups/',
   releases = '/about/releases/',
   resources = '/about/resources/',
   privacy = '/about/privacy/',
   security = '/about/security/',
+  getInvolved = '/get-involved/',
+  codeLearn = '/get-involved/code-learn',
+  collabSummit = '/get-involved/collab-summit',
+  contribute = '/get-involved/contribute',
+  download = '/download/',
   packageManager = '/download/package-manager/',
+  previousReleases = '/download/releases/',
+  codeOfConduct = 'https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md',
 }
 
 const sideNavBarItems: SideNavBarItem[] = [
   {
-    title: 'components.sideBar.items.about',
+    title: 'components.sideBar.section.about',
     slug: SideNavBarKeys.about,
+    icon: InfoIcon,
+    isTitle: true,
   },
   {
     title: 'components.sideBar.items.governance',
     slug: SideNavBarKeys.governance,
-  },
-  {
-    title: 'components.sideBar.items.community',
-    slug: SideNavBarKeys.community,
-  },
-  {
-    title: 'components.sideBar.items.workingGroups',
-    slug: SideNavBarKeys.workingGroups,
   },
   {
     title: 'components.sideBar.items.releases',
@@ -53,8 +55,40 @@ const sideNavBarItems: SideNavBarItem[] = [
     slug: SideNavBarKeys.security,
   },
   {
+    title: 'components.sideBar.section.getInvolved',
+    slug: SideNavBarKeys.getInvolved,
+    icon: GroupsIcon,
+    isTitle: true,
+  },
+  {
+    title: 'components.sideBar.items.codeLearn',
+    slug: SideNavBarKeys.codeLearn,
+  },
+  {
+    title: 'components.sideBar.items.collabSummit',
+    slug: SideNavBarKeys.collabSummit,
+  },
+  {
+    title: 'components.sideBar.items.contribute',
+    slug: SideNavBarKeys.contribute,
+  },
+  {
+    title: 'components.sideBar.items.codeOfConduct',
+    slug: SideNavBarKeys.codeOfConduct,
+  },
+  {
+    title: 'components.sideBar.section.download',
+    slug: SideNavBarKeys.download,
+    icon: CloudDownloadIcon,
+    isTitle: true,
+  },
+  {
     title: 'components.sideBar.items.packageManager',
     slug: SideNavBarKeys.packageManager,
+  },
+  {
+    title: 'components.sideBar.items.previousReleases',
+    slug: SideNavBarKeys.previousReleases,
   },
 ];
 
@@ -67,14 +101,9 @@ export enum OverflowTypes {
 interface NavBarProps {
   pageKey?: string;
   items?: SideNavBarItem[];
-  title?: string;
 }
 
-const SideNavBar = ({
-  pageKey,
-  items = sideNavBarItems,
-  title,
-}: NavBarProps): JSX.Element => {
+const SideNavBar = ({ pageKey, items = sideNavBarItems }: NavBarProps) => {
   const [navOpen, setNavOpen] = useState<boolean>(false);
   const toggle = (): void => setNavOpen(!navOpen);
   const intl = useIntl();
@@ -93,18 +122,38 @@ const SideNavBar = ({
 
   const navElement = useRef<HTMLElement | null>(null);
 
-  const renderNavTitle = () => {
-    if (title) {
+  const renderTitle = ({ title, slug, icon: Icon }: SideNavBarItem) => {
+    const titleContent = (
+      <>
+        {title}
+        {Icon && <Icon />}
+      </>
+    );
+
+    if (slug.startsWith('https')) {
       return (
-        <div className={styles.sideNavSectionTitle}>
-          <b>{title}</b>
-          <ArrowDropDownIcon />
-        </div>
+        <a key={slug} href={slug} className={styles.sideNavSectionTitle}>
+          {titleContent}
+        </a>
       );
     }
 
-    return null;
+    return (
+      <Link key={slug} to={slug} className={styles.sideNavSectionTitle}>
+        {titleContent}
+      </Link>
+    );
   };
+
+  const renderItem = ({ title, slug }: SideNavBarItem) => (
+    <NavigationItem
+      key={slug}
+      title={title}
+      isRead={false}
+      isActive={slug === pageKey}
+      slug={slug}
+    />
+  );
 
   const translatedSidebar = useMemo(
     () =>
@@ -125,18 +174,9 @@ const SideNavBar = ({
         <FormattedMessage id="components.sideBar.title" />
       </button>
       <div className={styles.sideNavSection}>
-        {renderNavTitle()}
-        {translatedSidebar
-          .sort((a, b) => a.title.localeCompare(b.title))
-          .map(({ title: commTitle, slug }) => (
-            <NavigationItem
-              key={slug}
-              title={commTitle}
-              isRead={false}
-              isActive={slug === pageKey}
-              slug={slug}
-            />
-          ))}
+        {translatedSidebar.map(({ isTitle, ...props }) =>
+          isTitle ? renderTitle(props) : renderItem(props)
+        )}
       </div>
     </nav>
   );

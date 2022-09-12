@@ -2,7 +2,6 @@
 title: How to use or execute a package installed using npm
 description: 'How to include and use in your code a package installed in your node_modules folder'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
-section: Getting Started
 category: learn
 ---
 
