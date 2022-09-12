@@ -2,15 +2,15 @@
 title: 'debugger'
 displayTitle: 'Debugger'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.8.0/doc/api/debugger.md'
+editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/debugger.md'
 version: 'v18'
 ---
 
-<Metadata version="v18.8.0" data={{"update":{"type":"introduced_in","version":["v0.9.12"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.9.12"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.8.0" data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 Node.js includes a command-line debugging utility. The Node.js debugger client
 is not a full-featured debugger, but simple stepping and inspection are
