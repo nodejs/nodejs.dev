@@ -66,6 +66,7 @@
   "scripts": {
     "cleanup": "gatsby clean",
     "sync-api": "node scripts/syncApiDocs.js",
+    "generate-blog": "node scripts/transformNodeBlogPosts.js",
     "build": "gatsby build",
     "build-ci": "gatsby build --prefix-paths",
     "start": "gatsby develop",
