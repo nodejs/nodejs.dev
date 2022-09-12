@@ -97,6 +97,11 @@
       "type": "301"
     },
     {
+      "source": "/blog/release/*",
+      "destination": "/blog/releases/*",
+      "type": "301"
+    },
+    {
       "source": "/api/",
       "destination": "/api/v18/documentation/",
       "type": "301"

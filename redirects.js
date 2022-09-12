@@ -10,6 +10,8 @@ module.exports = {
   // Outside Redirects
   '/trademark/': 'https://trademark-policy.openjsf.org/',
   '/about/trademark/': 'https://trademark-policy.openjsf.org/',
-  // Redirects the Old `/docs` path to `/api`
+  // Redirects the old `/docs` path to `/api`
   '/docs/*': '/api/',
+  // Redirects `release` blog pages to `releases`
+  '/blog/release/*': '/blog/releases/*',
 };
