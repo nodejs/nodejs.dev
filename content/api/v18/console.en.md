@@ -46,7 +46,7 @@ console.error(new Error('Whoops, something bad happened'));
 //     at node:internal/main/eval_string:23:3
 
 const name = 'Will Robinson';
-console.warn(`Danger $name! Danger!`);
+console.warn(`Danger ${name}! Danger!`);
 // Prints: Danger Will Robinson! Danger!, to stderr
 ```
 
@@ -65,7 +65,7 @@ myConsole.error(new Error('Whoops, something bad happened'));
 // Prints: [Error: Whoops, something bad happened], to err
 
 const name = 'Will Robinson';
-myConsole.warn(`Danger $name! Danger!`);
+myConsole.warn(`Danger ${name}! Danger!`);
 // Prints: Danger Will Robinson! Danger!, to err
 ```
 

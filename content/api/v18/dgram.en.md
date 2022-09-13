@@ -21,17 +21,17 @@ import dgram from 'node:dgram';
 const server = dgram.createSocket('udp4');
 
 server.on('error', (err) => {
-  console.log(`server error:\n$err.stack`);
+  console.log(`server error:\n${err.stack}`);
   server.close();
 });
 
 server.on('message', (msg, rinfo) => {
-  console.log(`server got: $msg from $rinfo.address:$rinfo.port`);
+  console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
 });
 
 server.on('listening', () => {
   const address = server.address();
-  console.log(`server listening $address.address:$address.port`);
+  console.log(`server listening ${address.address}:${address.port}`);
 });
 
 server.bind(41234);
@@ -43,17 +43,17 @@ const dgram = require('node:dgram');
 const server = dgram.createSocket('udp4');
 
 server.on('error', (err) => {
-  console.log(`server error:\n$err.stack`);
+  console.log(`server error:\n${err.stack}`);
   server.close();
 });
 
 server.on('message', (msg, rinfo) => {
-  console.log(`server got: $msg from $rinfo.address:$rinfo.port`);
+  console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
 });
 
 server.on('listening', () => {
   const address = server.address();
-  console.log(`server listening $address.address:$address.port`);
+  console.log(`server listening ${address.address}:${address.port}`);
 });
 
 server.bind(41234);
@@ -238,17 +238,17 @@ import dgram from 'node:dgram';
 const server = dgram.createSocket('udp4');
 
 server.on('error', (err) => {
-  console.log(`server error:\n$err.stack`);
+  console.log(`server error:\n${err.stack}`);
   server.close();
 });
 
 server.on('message', (msg, rinfo) => {
-  console.log(`server got: $msg from $rinfo.address:$rinfo.port`);
+  console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
 });
 
 server.on('listening', () => {
   const address = server.address();
-  console.log(`server listening $address.address:$address.port`);
+  console.log(`server listening ${address.address}:${address.port}`);
 });
 
 server.bind(41234);
@@ -260,17 +260,17 @@ const dgram = require('node:dgram');
 const server = dgram.createSocket('udp4');
 
 server.on('error', (err) => {
-  console.log(`server error:\n$err.stack`);
+  console.log(`server error:\n${err.stack}`);
   server.close();
 });
 
 server.on('message', (msg, rinfo) => {
-  console.log(`server got: $msg from $rinfo.address:$rinfo.port`);
+  console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
 });
 
 server.on('listening', () => {
   const address = server.address();
-  console.log(`server listening $address.address:$address.port`);
+  console.log(`server listening ${address.address}:${address.port}`);
 });
 
 server.bind(41234);
@@ -829,7 +829,7 @@ const controller = new AbortController();
 const { signal } = controller;
 const server = dgram.createSocket({ type: 'udp4', signal });
 server.on('message', (msg, rinfo) => {
-  console.log(`server got: $msg from $rinfo.address:$rinfo.port`);
+  console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
 });
 // Later, when you want to close the server.
 controller.abort();

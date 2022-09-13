@@ -61,7 +61,7 @@ const { unlink } = require('node:fs/promises');
 (async function(path) {
   try {
     await unlink(path);
-    console.log(`successfully deleted $path`);
+    console.log(`successfully deleted ${path}`);
   } catch (error) {
     console.error('there was an error:', error.message);
   }
@@ -917,7 +917,7 @@ try {
   const projectFolder = new URL('./test/project/', import.meta.url);
   const createDir = await mkdir(path, { recursive: true });
 
-  console.log(`created $createDir`);
+  console.log(`created ${createDir}`);
 } catch (err) {
   console.error(err.message);
 }
@@ -1437,22 +1437,22 @@ const file = 'package.json';
 
 // Check if the file exists in the current directory.
 access(file, constants.F_OK, (err) => {
-  console.log(`$file ${err ? 'does not exist' : 'exists'}`);
+  console.log(`${file} ${err ? 'does not exist' : 'exists'}`);
 });
 
 // Check if the file is readable.
 access(file, constants.R_OK, (err) => {
-  console.log(`$file ${err ? 'is not readable' : 'is readable'}`);
+  console.log(`${file} ${err ? 'is not readable' : 'is readable'}`);
 });
 
 // Check if the file is writable.
 access(file, constants.W_OK, (err) => {
-  console.log(`$file ${err ? 'is not writable' : 'is writable'}`);
+  console.log(`${file} ${err ? 'is not writable' : 'is writable'}`);
 });
 
 // Check if the file is readable and writable.
 access(file, constants.R_OK | constants.W_OK, (err) => {
-  console.log(`$file ${err ? 'is not' : 'is'} readable and writable`);
+  console.log(`${file} ${err ? 'is not' : 'is'} readable and writable`);
 });
 ```
 
@@ -1958,7 +1958,7 @@ If `options` is a string, then it specifies the encoding.
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"deprecated","version":["v1.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`fs.stat()`][] or [`fs.access()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `fs.stat()`][] or [`fs.access()` instead."}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -2413,7 +2413,7 @@ mkdtemp(tmpDir, (err, directory) => {
 
 // This method is *CORRECT*:
 import { sep } from 'node:path';
-mkdtemp(`$tmpDir$sep`, (err, directory) => {
+mkdtemp(`${tmpDir}${sep}`, (err, directory) => {
   if (err) throw err;
   console.log(directory);
   // Will print something similar to `/tmp/abc123`.
@@ -3203,9 +3203,9 @@ always provided in the callback, and have some fallback logic if it is `null`.
 ```mjs
 import { watch } from 'node:fs';
 watch('somedir', (eventType, filename) => {
-  console.log(`event type is: $eventType`);
+  console.log(`event type is: ${eventType}`);
   if (filename) {
-    console.log(`filename provided: $filename`);
+    console.log(`filename provided: ${filename}`);
   } else {
     console.log('filename not provided');
   }
@@ -3242,8 +3242,8 @@ stat object:
 import { watchFile } from 'node:fs';
 
 watchFile('message.text', (curr, prev) => {
-  console.log(`the current mtime is: $curr.mtime`);
-  console.log(`the previous mtime was: $prev.mtime`);
+  console.log(`the current mtime is: ${curr.mtime}`);
+  console.log(`the previous mtime was: ${prev.mtime}`);
 });
 ```
 

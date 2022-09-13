@@ -90,7 +90,7 @@ executed in specific contexts.
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: {Module Namespace Object|vm.Module} Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 
@@ -364,7 +364,7 @@ async function linker(specifier, referencingModule) {
     // Using `contextifiedObject` instead of `referencingModule.context`
     // here would work as well.
   }
-  throw new Error(`Unable to resolve dependency: $specifier`);
+  throw new Error(`Unable to resolve dependency: ${specifier}`);
 }
 await bar.link(linker);
 
@@ -436,7 +436,7 @@ const contextifiedObject = vm.createContext({
       // Using `contextifiedObject` instead of `referencingModule.context`
       // here would work as well.
     }
-    throw new Error(`Unable to resolve dependency: $specifier`);
+    throw new Error(`Unable to resolve dependency: ${specifier}`);
   }
   await bar.link(linker);
 
@@ -647,7 +647,7 @@ defined in the ECMAScript specification.
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: {Module Namespace Object|vm.Module} Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 
@@ -851,7 +851,7 @@ const vm = require('node:vm');
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: {Module Namespace Object|vm.Module} Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 * Returns: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -1055,7 +1055,7 @@ vm.measureMemory({ mode: 'detailed', execution: 'eager' })
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: {Module Namespace Object|vm.Module} Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 * Returns: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) the result of the very last statement executed in the script.
@@ -1145,7 +1145,7 @@ console.log(contextObject);
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: {Module Namespace Object|vm.Module} Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
   * `microtaskMode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If set to `afterEvaluate`, microtasks (tasks
@@ -1222,7 +1222,7 @@ console.log(contextObject);
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: {Module Namespace Object|vm.Module} Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 * Returns: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) the result of the very last statement executed in the script.
@@ -1243,11 +1243,11 @@ const vm = require('node:vm');
 let localVar = 'initial value';
 
 const vmResult = vm.runInThisContext('localVar = "vm";');
-console.log(`vmResult: '$vmResult', localVar: '$localVar'`);
+console.log(`vmResult: '${vmResult}', localVar: '${localVar}'`);
 // Prints: vmResult: 'vm', localVar: 'initial value'
 
 const evalResult = eval('localVar = "eval";');
-console.log(`evalResult: '$evalResult', localVar: '$localVar'`);
+console.log(`evalResult: '${evalResult}', localVar: '${localVar}'`);
 // Prints: evalResult: 'eval', localVar: 'eval'
 ```
 

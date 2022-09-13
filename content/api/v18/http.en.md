@@ -412,7 +412,7 @@ const proxy = http.createServer((req, res) => {
 });
 proxy.on('connect', (req, clientSocket, head) => {
   // Connect to an origin server
-  const { port, hostname } = new URL(`http://$req.url`);
+  const { port, hostname } = new URL(`http://${req.url}`);
   const serverSocket = net.connect(port || 80, hostname, () => {
     clientSocket.write('HTTP/1.1 200 Connection Established\r\n' +
                     'Proxy-agent: Node.js-Proxy\r\n' +
@@ -504,7 +504,7 @@ const req = http.request(options);
 req.end();
 
 req.on('information', (info) => {
-  console.log(`Got information prior to main response: $info.statusCode`);
+  console.log(`Got information prior to main response: ${info.statusCode}`);
 });
 ```
 
@@ -605,7 +605,7 @@ server.listen(1337, '127.0.0.1', () => {
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v14.1.0","v13.14.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`request.destroy()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `request.destroy()` instead."}}} />
 
 Marks the request as aborting. Calling this will cause remaining data
 in the response to be dropped and the socket to be destroyed.
@@ -614,7 +614,7 @@ in the response to be dropped and the socket to be destroyed.
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/20230","description":"The `aborted` property is no longer a timestamp number."}],"update":{"type":"deprecated","version":["v17.0.0","v16.12.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Check [`request.destroyed`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Check `request.destroyed` instead."}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -625,7 +625,7 @@ been aborted.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v13.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`request.socket`][]."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `request.socket`."}}} />
 
 * [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -683,7 +683,7 @@ See [`writable.destroyed`][] for further details.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v13.4.0","v12.16.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`request.writableEnded`][]."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `request.writableEnded`."}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -983,7 +983,7 @@ req.end();
 req.once('response', (res) => {
   const ip = req.socket.localAddress;
   const port = req.socket.localPort;
-  console.log(`Your IP address is $ip and your source port is $port.`);
+  console.log(`Your IP address is ${ip} and your source port is ${port}.`);
   // Consume response object
 });
 ```
@@ -1433,7 +1433,7 @@ will result in a [`TypeError`][] being thrown.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v13.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`response.socket`][]."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `response.socket`."}}} />
 
 * [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -1468,7 +1468,7 @@ is finished.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v13.4.0","v12.16.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`response.writableEnded`][]."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `response.writableEnded`."}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1685,7 +1685,7 @@ const http = require('node:http');
 const server = http.createServer((req, res) => {
   const ip = res.socket.remoteAddress;
   const port = res.socket.remotePort;
-  res.end(`Your IP address is $ip and your source port is $port.`);
+  res.end(`Your IP address is ${ip} and your source port is ${port}.`);
 }).listen(3000);
 ```
 
@@ -1904,7 +1904,7 @@ Emitted when the request has been completed.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v17.0.0","v16.12.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Check `message.destroyed` from [`stream.Readable`](/api/stream#streamreadable)."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Check `message.destroyed` from {stream.Readable}."}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1942,7 +1942,7 @@ const req = http.request({
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v16.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`message.socket`][]."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `message.socket`."}}} />
 
 Alias for [`message.socket`][].
 
@@ -2252,7 +2252,7 @@ a single time with values joined using `; `.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v15.12.0","v14.17.1"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`outgoingMessage.socket`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `outgoingMessage.socket` instead."}}} />
 
 Alias of [`outgoingMessage.socket`][].
 
@@ -2276,7 +2276,7 @@ and is connected, that socket will be destroyed as well.
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v0.11.6","description":"add `callback` argument."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* `chunk` {string | Buffer}
+* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Optional, **Default**: `utf8`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Optional
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -2312,7 +2312,7 @@ bypasses the optimization and kickstarts the message.
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.4.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Name of header
-* Returns {string | undefined}
+* Returns [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
 Gets the value of the HTTP header with the given name. If that header is not
 set, the returned value will be `undefined`.
@@ -2491,7 +2491,7 @@ Always `false`.
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v0.11.6","description":"The `callback` argument was added."}],"update":{"type":"added","version":["v0.1.29"]}}} />
 
-* `chunk` {string | Buffer}
+* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default**: `utf8`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * Returns [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2621,7 +2621,7 @@ server.listen(8000);
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
 
-* `url` {string | URL}
+* `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Accepts the same `options` as
   [`http.request()`][], with the `method` always set to `GET`.
   Properties that are inherited from the prototype are ignored.
@@ -2649,10 +2649,10 @@ http.get('http://localhost:8000/', (res) => {
   // here we're only checking for 200.
   if (statusCode !== 200) {
     error = new Error('Request Failed.\n' +
-                      `Status Code: $statusCode`);
+                      `Status Code: ${statusCode}`);
   } else if (!/^application\/json/.test(contentType)) {
     error = new Error('Invalid content-type.\n' +
-                      `Expected application/json but received $contentType`);
+                      `Expected application/json but received ${contentType}`);
   }
   if (error) {
     console.error(error.message);
@@ -2673,7 +2673,7 @@ http.get('http://localhost:8000/', (res) => {
     }
   });
 }).on('error', (e) => {
-  console.error(`Got error: $e.message`);
+  console.error(`Got error: ${e.message}`);
 });
 
 // Create a local server to receive data from
@@ -2715,9 +2715,9 @@ This can be overridden for servers and client requests by passing the
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":["v16.7.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39310","description":"When using a `URL` object parsed username and password will now be properly URI decoded."},{"version":["v15.3.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36048","description":"It is possible to abort a request with an AbortSignal."},{"version":["v13.8.0","v12.15.0","v10.19.0"],"pr-url":"https://github.com/nodejs/node/pull/31448","description":"The `insecureHTTPParser` option is supported now."},{"version":"v13.3.0","pr-url":"https://github.com/nodejs/node/pull/30570","description":"The `maxHeaderSize` option is supported now."},{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
 
-* `url` {string | URL}
+* `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `agent` {http.Agent | boolean} Controls [`Agent`][] behavior. Possible
+  * `agent` [`http.Agent`](/api/http#httpagent) | [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Controls [`Agent`][] behavior. Possible
     values:
     * `undefined` (default): use [`http.globalAgent`][] for this host and port.
     * `Agent` object: explicitly use the passed in `Agent`.
@@ -2812,11 +2812,11 @@ const options = {
 };
 
 const req = http.request(options, (res) => {
-  console.log(`STATUS: $res.statusCode`);
+  console.log(`STATUS: ${res.statusCode}`);
   console.log(`HEADERS: ${JSON.stringify(res.headers)}`);
   res.setEncoding('utf8');
   res.on('data', (chunk) => {
-    console.log(`BODY: $chunk`);
+    console.log(`BODY: ${chunk}`);
   });
   res.on('end', () => {
     console.log('No more data in response.');
@@ -2824,7 +2824,7 @@ const req = http.request(options, (res) => {
 });
 
 req.on('error', (e) => {
-  console.error(`problem with request: $e.message`);
+  console.error(`problem with request: ${e.message}`);
 });
 
 // Write data to request body

@@ -45,7 +45,7 @@ const rl = readline.createInterface({ input, output });
 
 const answer = await rl.question('What do you think of Node.js? ');
 
-console.log(`Thank you for your valuable feedback: $answer`);
+console.log(`Thank you for your valuable feedback: ${answer}`);
 
 rl.close();
 ```
@@ -58,7 +58,7 @@ const rl = readline.createInterface({ input, output });
 
 rl.question('What do you think of Node.js? ', (answer) => {
   // TODO: Log the answer in a database
-  console.log(`Thank you for your valuable feedback: $answer`);
+  console.log(`Thank you for your valuable feedback: ${answer}`);
 
   rl.close();
 });
@@ -119,7 +119,7 @@ received input.
 
 ```js
 rl.on('line', (input) => {
-  console.log(`Received: $input`);
+  console.log(`Received: ${input}`);
 });
 ```
 
@@ -140,7 +140,7 @@ a password.
 
 ```js
 rl.on('history', (history) => {
-  console.log(`Received: $history`);
+  console.log(`Received: ${history}`);
 });
 ```
 
@@ -314,7 +314,7 @@ Example usage:
 
 ```js
 rl.question('What is your favorite food? ', (answer) => {
-  console.log(`Oh, so your favorite food is $answer`);
+  console.log(`Oh, so your favorite food is ${answer}`);
 });
 ```
 
@@ -325,7 +325,7 @@ const ac = new AbortController();
 const signal = ac.signal;
 
 rl.question('What is your favorite food? ', { signal }, (answer) => {
-  console.log(`Oh, so your favorite food is $answer`);
+  console.log(`Oh, so your favorite food is ${answer}`);
 });
 
 signal.addEventListener('abort', () => {
@@ -532,7 +532,7 @@ Example usage:
 
 ```mjs
 const answer = await rl.question('What is your favorite food? ');
-console.log(`Oh, so your favorite food is $answer`);
+console.log(`Oh, so your favorite food is ${answer}`);
 ```
 
 Using an `AbortSignal` to cancel a question.
@@ -545,7 +545,7 @@ signal.addEventListener('abort', () => {
 }, { once: true });
 
 const answer = await rl.question('What is your favorite food? ', { signal });
-console.log(`Oh, so your favorite food is $answer`);
+console.log(`Oh, so your favorite food is ${answer}`);
 ```
 
 #### <DataTag tag="C" /> `readlinePromises.Readline`
@@ -690,7 +690,7 @@ is to listen for the `'line'` event:
 
 ```js
 rl.on('line', (line) => {
-  console.log(`Received: $line`);
+  console.log(`Received: ${line}`);
 });
 ```
 
@@ -775,7 +775,7 @@ Example usage:
 
 ```js
 rl.question('What is your favorite food? ', (answer) => {
-  console.log(`Oh, so your favorite food is $answer`);
+  console.log(`Oh, so your favorite food is ${answer}`);
 });
 ```
 
@@ -786,7 +786,7 @@ const ac = new AbortController();
 const signal = ac.signal;
 
 rl.question('What is your favorite food? ', { signal }, (answer) => {
-  console.log(`Oh, so your favorite food is $answer`);
+  console.log(`Oh, so your favorite food is ${answer}`);
 });
 
 signal.addEventListener('abort', () => {
@@ -885,7 +885,7 @@ listen for the `'line'` event:
 
 ```js
 rl.on('line', (line) => {
-  console.log(`Received: $line`);
+  console.log(`Received: ${line}`);
 });
 ```
 
@@ -1034,7 +1034,7 @@ async function processLineByLine() {
 
   for await (const line of rl) {
     // Each line in input.txt will be successively available here as `line`.
-    console.log(`Line from file: $line`);
+    console.log(`Line from file: ${line}`);
   }
 }
 
@@ -1053,7 +1053,7 @@ const rl = readline.createInterface({
 });
 
 rl.on('line', (line) => {
-  console.log(`Line from file: $line`);
+  console.log(`Line from file: ${line}`);
 });
 ```
 

@@ -163,7 +163,7 @@ const server = http.createServer((req, res) => {
     } catch (er) {
       // uh oh! bad json!
       res.statusCode = 400;
-      return res.end(`error: $er.message`);
+      return res.end(`error: ${er.message}`);
     }
   });
 });
@@ -310,7 +310,7 @@ has been called, and all data has been flushed to the underlying system.
 ```js
 const writer = getWritableStreamSomehow();
 for (let i = 0; i < 100; i++) {
-  writer.write(`hello, #$i!\n`);
+  writer.write(`hello, #${i}!\n`);
 }
 writer.on('finish', () => {
   console.log('All writes are now complete.');
@@ -462,7 +462,7 @@ console.log(myStream.destroyed); // true
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34101","description":"The `callback` is invoked before 'finish' or on error."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/29747","description":"The `callback` is invoked if 'finish' or 'error' is emitted."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18780","description":"This method now returns a reference to `writable`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."}],"update":{"type":"added","version":["v0.9.4"]}}} />
 
-* `chunk` {string|Buffer|Uint8Array|any} Optional data to write. For streams
+* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Optional data to write. For streams
   not operating in object mode, `chunk` must be a string, `Buffer` or
   `Uint8Array`. For object mode streams, `chunk` may be any JavaScript value
   other than `null`.
@@ -626,7 +626,7 @@ Getter for the property `objectMode` of a given `Writable` stream.
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6170","description":"Passing `null` as the `chunk` parameter will always be considered invalid now, even in object mode."}],"update":{"type":"added","version":["v0.9.4"]}}} />
 
-* `chunk` {string|Buffer|Uint8Array|any} Optional data to write. For streams
+* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Optional data to write. For streams
   not operating in object mode, `chunk` must be a string, `Buffer` or
   `Uint8Array`. For object mode streams, `chunk` may be any JavaScript value
   other than `null`.
@@ -855,7 +855,7 @@ encoding has been specified for the stream using the
 ```js
 const readable = getReadableStreamSomehow();
 readable.on('data', (chunk) => {
-  console.log(`Received $chunk.length bytes of data.`);
+  console.log(`Received ${chunk.length} bytes of data.`);
 });
 ```
 
@@ -874,7 +874,7 @@ consumed.
 ```js
 const readable = getReadableStreamSomehow();
 readable.on('data', (chunk) => {
-  console.log(`Received $chunk.length bytes of data.`);
+  console.log(`Received ${chunk.length} bytes of data.`);
 });
 readable.on('end', () => {
   console.log('There will be no more data.');
@@ -1036,7 +1036,7 @@ becomes available will remain in the internal buffer.
 ```js
 const readable = getReadableStreamSomehow();
 readable.on('data', (chunk) => {
-  console.log(`Received $chunk.length bytes of data.`);
+  console.log(`Received ${chunk.length} bytes of data.`);
   readable.pause();
   console.log('There will be no additional data for 1 second.');
   setTimeout(() => {
@@ -1147,7 +1147,7 @@ readable.on('readable', () => {
   console.log('Stream is readable (new data received in buffer)');
   // Use a loop to make sure we read all currently available data
   while (null !== (chunk = readable.read())) {
-    console.log(`Read $chunk.length bytes of data...`);
+    console.log(`Read ${chunk.length} bytes of data...`);
   }
 });
 
@@ -1370,7 +1370,7 @@ setTimeout(() => {
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."}],"update":{"type":"added","version":["v0.9.11"]}}} />
 
-* `chunk` {Buffer|Uint8Array|string|null|any} Chunk of data to unshift onto the
+* `chunk` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Chunk of data to unshift onto the
   read queue. For streams not operating in object mode, `chunk` must be a
   string, `Buffer`, `Uint8Array` or `null`. For object mode streams, `chunk`
   may be any JavaScript value.
@@ -2546,8 +2546,7 @@ Returns whether the stream is readable.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.8.0"]}}} />
 
-* `src` {Stream|Blob|ArrayBuffer|string|Iterable|AsyncIterable|
-  AsyncGeneratorFunction|AsyncFunction|Promise|Object}
+* `src` [`Stream`](/api/stream#stream) | [`Blob`](/api/buffer#blob) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`AsyncGeneratorFunction`](https://tc39.es/proposal-async-iteration/#sec-asyncgeneratorfunction-constructor) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) | [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 A utility method for creating duplex streams.
 
@@ -3379,7 +3378,7 @@ It can be overridden by child classes but it **must not** be called directly.
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."}]}} />
 
-* `chunk` {Buffer|Uint8Array|string|null|any} Chunk of data to push into the
+* `chunk` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Chunk of data to push into the
   read queue. For streams not operating in object mode, `chunk` must be a
   string, `Buffer` or `Uint8Array`. For object mode streams, `chunk` may be
   any JavaScript value.

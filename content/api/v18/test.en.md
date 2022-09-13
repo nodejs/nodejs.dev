@@ -642,7 +642,7 @@ before each subtest of the current test.
 
 ```js
 test('top level test', async (t) => {
-  t.beforeEach((t) => t.diagnostic(`about to run $t.name`));
+  t.beforeEach((t) => t.diagnostic(`about to run ${t.name}`));
   await t.test(
     'This is a subtest',
     (t) => {
@@ -672,7 +672,7 @@ after each subtest of the current test.
 
 ```js
 test('top level test', async (t) => {
-  t.afterEach((t) => t.diagnostic(`finished running $t.name`));
+  t.afterEach((t) => t.diagnostic(`finished running ${t.name}`));
   await t.test(
     'This is a subtest',
     (t) => {

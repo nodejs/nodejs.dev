@@ -78,7 +78,7 @@ control this default behavior.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use [`clearTimeout()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use `clearTimeout()` instead."}}} />
 
 * Returns: [`Timeout`](/api/timers#timeout) a reference to `timeout`
 

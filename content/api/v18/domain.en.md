@@ -64,7 +64,7 @@ d.on('error', (er) => {
   // Though we've prevented abrupt process restarting, we are leaking
   // a lot of resources if this ever happens.
   // This is no better than process.on('uncaughtException')!
-  console.log(`error, but oh well $er.message`);
+  console.log(`error, but oh well ${er.message}`);
 });
 d.run(() => {
   require('node:http').createServer((req, res) => {
@@ -117,7 +117,7 @@ if (cluster.isPrimary) {
   const server = require('node:http').createServer((req, res) => {
     const d = domain.create();
     d.on('error', (er) => {
-      console.error(`error $er.stack`);
+      console.error(`error ${er.stack}`);
 
       // We're in dangerous territory!
       // By definition, something unexpected occurred,

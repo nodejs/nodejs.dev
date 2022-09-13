@@ -196,7 +196,7 @@ explicitly via error event handlers set on the domain instead.
 Type: End-of-Life
 
 Calling an asynchronous function without a callback throws a `TypeError`
-in Node.js 10.0.0 onwards. See <https://github.com/nodejs/node/pull/12562>.
+in Node.js 10.0.0 onwards. See [https://github.com/nodejs/node/pull/12562](https://github.com/nodejs/node/pull/12562).
 
 #### DEP0014: `fs.read` legacy String interface
 
@@ -892,7 +892,7 @@ Type: End-of-Life
 
 The AsyncHooks sensitive API was never documented and had various minor issues.
 Use the `AsyncResource` API instead. See
-<https://github.com/nodejs/node/issues/15572>.
+[https://github.com/nodejs/node/issues/15572](https://github.com/nodejs/node/issues/15572).
 
 #### DEP0086: Remove `runInAsyncIdScope`
 
@@ -901,7 +901,7 @@ Use the `AsyncResource` API instead. See
 Type: End-of-Life
 
 `runInAsyncIdScope` doesn't emit the `'before'` or `'after'` event and can thus
-cause a lot of issues. See <https://github.com/nodejs/node/issues/14328>.
+cause a lot of issues. See [https://github.com/nodejs/node/issues/14328](https://github.com/nodejs/node/issues/14328).
 
 
 
@@ -1007,7 +1007,7 @@ to unrecoverable errors.
 
 Use [`asyncResource.runInAsyncScope()`][] API instead which provides a much
 safer, and more convenient, alternative. See
-<https://github.com/nodejs/node/pull/18513>.
+[https://github.com/nodejs/node/pull/18513](https://github.com/nodejs/node/pull/18513).
 
 #### DEP0099: Async context-unaware `node::MakeCallback` C++ APIs
 
@@ -1255,7 +1255,7 @@ The undocumented `net._setSimultaneousAccepts()` function was originally
 intended for debugging and performance tuning when using the
 `node:child_process` and `node:cluster` modules on Windows. The function is not
 generally useful and is being removed. See discussion here:
-<https://github.com/nodejs/node/issues/18391>
+[https://github.com/nodejs/node/issues/18391](https://github.com/nodejs/node/issues/18391)
 
 #### DEP0122: `tls` `Server.prototype.setOptions()`
 

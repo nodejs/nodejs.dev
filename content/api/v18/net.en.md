@@ -652,7 +652,7 @@ socket as reported by the operating system:
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v14.6.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`writable.writableLength`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `writable.writableLength` instead."}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -757,7 +757,7 @@ For both types, available `options` include:
   The socket will emit events like `'error'`, `'end'`, and `'close'`
   as usual. Methods like `pause()` and `resume()` will also behave as
   expected.
-  * `buffer` {Buffer|Uint8Array|Function} Either a reusable chunk of memory to
+  * `buffer` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Either a reusable chunk of memory to
     use for storing incoming data or a function that returns such.
   * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) This function is called for every chunk of incoming
     data. Two arguments are passed to it: the number of bytes written to
@@ -849,7 +849,7 @@ See [`writable.destroyed`][] for further details.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* `data` {string|Buffer|Uint8Array}
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Only used when data is `string`. **Default:** `'utf8'`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Optional callback for when the socket is finished.
 * Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
@@ -1058,7 +1058,7 @@ active socket in the event system. If the socket is already `unref`ed calling
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* `data` {string|Buffer|Uint8Array}
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Only used when data is `string`. **Default:** `utf8`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)

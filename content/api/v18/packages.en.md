@@ -951,9 +951,9 @@ CommonJS and ES module instances of the package:
    ```js
    // ./node_modules/pkg/index.mjs
    import state from './state.cjs';
-   export {
+   export 
      state
-   };
+   ;
    ```
 
    Even if `pkg` is used via both `require` and `import` in an application (for

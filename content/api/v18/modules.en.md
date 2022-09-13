@@ -286,7 +286,7 @@ RESOLVE_ESM_MATCH(MATCH)
    a. LOAD_AS_FILE(RESOLVED_PATH)
    b. LOAD_AS_DIRECTORY(RESOLVED_PATH)
 5. THROW "not found"
-```
+</pre>
 
 ### Caching
 
@@ -440,7 +440,7 @@ If the given path does not exist, `require()` will throw a
 
 <Metadata version="v18.9.0" data={{"type":"misc"}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use [subpath exports][] or [subpath imports][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use subpath exports][] or [subpath imports instead."}}} />
 
 There are three ways in which a folder may be passed to `require()` as
 an argument.
@@ -738,7 +738,7 @@ extensions gets slower with each registered extension.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.17"]}}} />
 
-* {module | undefined}
+* [`module`](/api/modules#the-module-object) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
 The `Module` object representing the entry script loaded when the Node.js
 process launched, or `undefined` if the entry point of the program is not a
@@ -962,9 +962,9 @@ loading.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v14.6.0","v12.19.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Please use [`require.main`][] and\n> [`module.children`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Please use `require.main`][] and [`module.children` instead."}}} />
 
-* {module | null | undefined}
+* [`module`](/api/modules#the-module-object) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
 The module that first required this one, or `null` if the current module is the
 entry point of the current process, or `undefined` if the module was loaded by

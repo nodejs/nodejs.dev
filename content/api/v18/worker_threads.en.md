@@ -41,7 +41,7 @@ if (isMainThread) {
       worker.on('error', reject);
       worker.on('exit', (code) => {
         if (code !== 0)
-          reject(new Error(`Worker stopped with exit code $code`));
+          reject(new Error(`Worker stopped with exit code ${code}`));
       });
     });
   };
@@ -509,7 +509,7 @@ In particular, the significant differences to `JSON` are:
   * [`MessagePort`](/api/worker_threads#messageport)s,
   * [`net.BlockList`](/api/net#netblocklist)s,
   * [`net.SocketAddress`](/api/net#netsocketaddress)es,
-  * {X509Certificate}s.
+  * [`X509Certificate`](/api/crypto#x509certificate)s.
 
 ```js
 const { MessageChannel } = require('node:worker_threads');

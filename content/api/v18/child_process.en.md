@@ -20,15 +20,15 @@ const { spawn } = require('node:child_process');
 const ls = spawn('ls', ['-lh', '/usr']);
 
 ls.stdout.on('data', (data) => {
-  console.log(`stdout: $data`);
+  console.log(`stdout: ${data}`);
 });
 
 ls.stderr.on('data', (data) => {
-  console.error(`stderr: $data`);
+  console.error(`stderr: ${data}`);
 });
 
 ls.on('close', (code) => {
-  console.log(`child process exited with code $code`);
+  console.log(`child process exited with code ${code}`);
 });
 ```
 
@@ -127,7 +127,7 @@ bat.stderr.on('data', (data) => {
 });
 
 bat.on('exit', (code) => {
-  console.log(`Child exited with code $code`);
+  console.log(`Child exited with code ${code}`);
 });
 ```
 
@@ -219,11 +219,11 @@ encoding, `Buffer` objects will be passed to the callback instead.
 const { exec } = require('node:child_process');
 exec('cat *.js missing_file | wc -l', (error, stdout, stderr) => {
   if (error) {
-    console.error(`exec error: $error`);
+    console.error(`exec error: ${error}`);
     return;
   }
-  console.log(`stdout: $stdout`);
-  console.error(`stderr: $stderr`);
+  console.log(`stdout: ${stdout}`);
+  console.error(`stderr: ${stderr}`);
 });
 ```
 
@@ -523,15 +523,15 @@ const { spawn } = require('node:child_process');
 const ls = spawn('ls', ['-lh', '/usr']);
 
 ls.stdout.on('data', (data) => {
-  console.log(`stdout: $data`);
+  console.log(`stdout: ${data}`);
 });
 
 ls.stderr.on('data', (data) => {
-  console.error(`stderr: $data`);
+  console.error(`stderr: ${data}`);
 });
 
 ls.on('close', (code) => {
-  console.log(`child process exited with code $code`);
+  console.log(`child process exited with code ${code}`);
 });
 ```
 
@@ -547,12 +547,12 @@ ps.stdout.on('data', (data) => {
 });
 
 ps.stderr.on('data', (data) => {
-  console.error(`ps stderr: $data`);
+  console.error(`ps stderr: ${data}`);
 });
 
 ps.on('close', (code) => {
   if (code !== 0) {
-    console.log(`ps process exited with code $code`);
+    console.log(`ps process exited with code ${code}`);
   }
   grep.stdin.end();
 });
@@ -562,12 +562,12 @@ grep.stdout.on('data', (data) => {
 });
 
 grep.stderr.on('data', (data) => {
-  console.error(`grep stderr: $data`);
+  console.error(`grep stderr: ${data}`);
 });
 
 grep.on('close', (code) => {
   if (code !== 0) {
-    console.log(`grep process exited with code $code`);
+    console.log(`grep process exited with code ${code}`);
   }
 });
 ```
@@ -963,15 +963,15 @@ const { spawn } = require('node:child_process');
 const ls = spawn('ls', ['-lh', '/usr']);
 
 ls.stdout.on('data', (data) => {
-  console.log(`stdout: $data`);
+  console.log(`stdout: ${data}`);
 });
 
 ls.on('close', (code) => {
-  console.log(`child process close all stdio with code $code`);
+  console.log(`child process close all stdio with code ${code}`);
 });
 
 ls.on('exit', (code) => {
-  console.log(`child process exited with code $code`);
+  console.log(`child process exited with code ${code}`);
 });
 ```
 
@@ -1134,7 +1134,7 @@ const grep = spawn('grep', ['ssh']);
 
 grep.on('close', (code, signal) => {
   console.log(
-    `child process terminated due to receipt of signal $signal`);
+    `child process terminated due to receipt of signal ${signal}`);
 });
 
 // Send SIGHUP to process.
@@ -1207,7 +1207,7 @@ emitted.
 const { spawn } = require('node:child_process');
 const grep = spawn('grep', ['ssh']);
 
-console.log(`Spawned child pid: $grep.pid`);
+console.log(`Spawned child pid: ${grep.pid}`);
 grep.stdin.end();
 ```
 
@@ -1525,7 +1525,7 @@ const { spawn } = require('node:child_process');
 const subprocess = spawn('ls');
 
 subprocess.stdout.on('data', (data) => {
-  console.log(`Received chunk $data`);
+  console.log(`Received chunk ${data}`);
 });
 ```
 

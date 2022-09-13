@@ -21,13 +21,13 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   const [parsedCode, setParsedCode] = useState('');
 
   // eslint-disable-next-line react/prop-types
-  const className = props.className || '';
+  const className = props.className || 'text';
 
   // Language Matches in class
   const matches = className.match(/language-(?<lang>.*)/);
 
   // Language name from classname
-  const language = matches?.groups?.lang || '';
+  const language = matches?.groups?.lang || 'text';
 
   // Actual Code into a stringified format
   const stringCode = props.children?.toString() || '';

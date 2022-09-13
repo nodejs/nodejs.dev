@@ -510,7 +510,7 @@ The algorithms currently supported include:
 
 
 
-* `algorithm`: {AlgorithmIdentifier|EcdhKeyDeriveParams|HkdfParams|Pbkdf2Params}
+* `algorithm`: [`AlgorithmIdentifier`](/api/webcrypto#algorithmidentifier) | [`EcdhKeyDeriveParams`](/api/webcrypto#ecdhkeyderiveparams) | [`HkdfParams`](/api/webcrypto#hkdfparams) | [`Pbkdf2Params`](/api/webcrypto#pbkdf2params)
 * `baseKey`: [`CryptoKey`](/api/webcrypto#cryptokey)
 * `length`: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) containing [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
@@ -535,7 +535,7 @@ The algorithms currently supported include:
 
 
 
-* `algorithm`: {AlgorithmIdentifier|EcdhKeyDeriveParams|HkdfParams|Pbkdf2Params}
+* `algorithm`: [`AlgorithmIdentifier`](/api/webcrypto#algorithmidentifier) | [`EcdhKeyDeriveParams`](/api/webcrypto#ecdhkeyderiveparams) | [`HkdfParams`](/api/webcrypto#hkdfparams) | [`Pbkdf2Params`](/api/webcrypto#pbkdf2params)
 * `baseKey`: [`CryptoKey`](/api/webcrypto#cryptokey)
 * `derivedKeyAlgorithm`: [`HmacKeyGenParams`](/api/webcrypto#hmackeygenparams) | [`AesKeyGenParams`](/api/webcrypto#aeskeygenparams)
 * `extractable`: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -728,7 +728,7 @@ The algorithms currently supported include:
 
 
 
-* `algorithm`: {AlgorithmIdentifier|RsaPssParams|EcdsaParams|Ed448Params}
+* `algorithm`: [`AlgorithmIdentifier`](/api/webcrypto#algorithmidentifier) | [`RsaPssParams`](/api/webcrypto#rsapssparams) | [`EcdsaParams`](/api/webcrypto#ecdsaparams) | [`Ed448Params`](/api/webcrypto#ed448params)
 * `key`: [`CryptoKey`](/api/webcrypto#cryptokey)
 * `data`: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) containing [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
@@ -804,7 +804,7 @@ The unwrapped key algorithms supported include:
 
 
 
-* `algorithm`: {AlgorithmIdentifier|RsaPssParams|EcdsaParams|Ed448Params}
+* `algorithm`: [`AlgorithmIdentifier`](/api/webcrypto#algorithmidentifier) | [`RsaPssParams`](/api/webcrypto#rsapssparams) | [`EcdsaParams`](/api/webcrypto#ecdsaparams) | [`Ed448Params`](/api/webcrypto#ed448params)
 * `key`: [`CryptoKey`](/api/webcrypto#cryptokey)
 * `signature`: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
 * `data`: [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Buffer`](/api/buffer#buffer)
@@ -1310,10 +1310,10 @@ at least `2048`.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-* Type: {Uint8Array}
+* Type: [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 
-The RSA public exponent. This must be a {Uint8Array} containing a big-endian,
-unsigned integer that must fit within 32-bits. The {Uint8Array} may contain an
+The RSA public exponent. This must be a [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) containing a big-endian,
+unsigned integer that must fit within 32-bits. The [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) may contain an
 arbitrary number of leading zero-bits. The value must be a prime number. Unless
 there is reason to use a different value, use `new Uint8Array([1, 0, 1])`
 (65537) as the public exponent.

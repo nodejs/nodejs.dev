@@ -114,7 +114,7 @@ by the [`process.exitCode`][] property, or the `exitCode` argument passed to the
 import process from 'node:process';
 
 process.on('exit', (code) => {
-  console.log(`About to exit with code: $code`);
+  console.log(`About to exit with code: ${code}`);
 });
 ```
 
@@ -122,7 +122,7 @@ process.on('exit', (code) => {
 const process = require('node:process');
 
 process.on('exit', (code) => {
-  console.log(`About to exit with code: $code`);
+  console.log(`About to exit with code: ${code}`);
 });
 ```
 
@@ -346,8 +346,8 @@ import process from 'node:process';
 process.on('uncaughtException', (err, origin) => {
   fs.writeSync(
     process.stderr.fd,
-    `Caught exception: $err\n` +
-    `Exception origin: $origin`
+    `Caught exception: ${err}\n` +
+    `Exception origin: ${origin}`
   );
 });
 
@@ -366,8 +366,8 @@ const process = require('node:process');
 process.on('uncaughtException', (err, origin) => {
   fs.writeSync(
     process.stderr.fd,
-    `Caught exception: $err\n` +
-    `Exception origin: $origin`
+    `Caught exception: ${err}\n` +
+    `Exception origin: ${origin}`
   );
 });
 
@@ -679,7 +679,7 @@ process.on('SIGINT', () => {
 
 // Using a single function to handle multiple signals
 function handle(signal) {
-  console.log(`Received $signal`);
+  console.log(`Received ${signal}`);
 }
 
 process.on('SIGINT', handle);
@@ -698,7 +698,7 @@ process.on('SIGINT', () => {
 
 // Using a single function to handle multiple signals
 function handle(signal) {
-  console.log(`Received $signal`);
+  console.log(`Received ${signal}`);
 }
 
 process.on('SIGINT', handle);
@@ -832,13 +832,13 @@ Possible values are: `'arm'`, `'arm64'`, `'ia32'`, `'mips'`,`'mipsel'`, `'ppc'`,
 ```mjs
 import { arch } from 'node:process';
 
-console.log(`This processor architecture is $arch`);
+console.log(`This processor architecture is ${arch}`);
 ```
 
 ```cjs
 const { arch } = require('node:process');
 
-console.log(`This processor architecture is $arch`);
+console.log(`This processor architecture is ${arch}`);
 ```
 
 ### <DataTag tag="M" /> `process.argv`
@@ -861,7 +861,7 @@ import { argv } from 'node:process';
 
 // print process.argv
 argv.forEach((val, index) => {
-  console.log(`$index: $val`);
+  console.log(`${index}: ${val}`);
 });
 ```
 
@@ -870,7 +870,7 @@ const { argv } = require('node:process');
 
 // print process.argv
 argv.forEach((val, index) => {
-  console.log(`$index: $val`);
+  console.log(`${index}: ${val}`);
 });
 ```
 
@@ -958,7 +958,7 @@ try {
   chdir('/tmp');
   console.log(`New directory: ${cwd()}`);
 } catch (err) {
-  console.error(`chdir: $err`);
+  console.error(`chdir: ${err}`);
 }
 ```
 
@@ -970,7 +970,7 @@ try {
   chdir('/tmp');
   console.log(`New directory: ${cwd()}`);
 } catch (err) {
-  console.error(`chdir: $err`);
+  console.error(`chdir: ${err}`);
 }
 ```
 
@@ -1910,7 +1910,7 @@ Indicates whether a callback has been set using
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.6"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy. Use [`process.hrtime.bigint()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy. Use `process.hrtime.bigint()` instead."}}} />
 
 * `time` integer\[] The result of a previous call to `process.hrtime()`
 * Returns: integer\[]
@@ -2105,7 +2105,7 @@ debugger. See [Signal Events][].
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v14.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`require.main`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `require.main` instead."}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -2446,13 +2446,13 @@ The `process.pid` property returns the PID of the process.
 ```mjs
 import { pid } from 'node:process';
 
-console.log(`This process is pid $pid`);
+console.log(`This process is pid ${pid}`);
 ```
 
 ```cjs
 const { pid } = require('node:process');
 
-console.log(`This process is pid $pid`);
+console.log(`This process is pid ${pid}`);
 ```
 
 ### <DataTag tag="M" /> `process.platform`
@@ -2477,13 +2477,13 @@ Currently possible values are:
 ```mjs
 import { platform } from 'node:process';
 
-console.log(`This platform is $platform`);
+console.log(`This platform is ${platform}`);
 ```
 
 ```cjs
 const { platform } = require('node:process');
 
-console.log(`This platform is $platform`);
+console.log(`This platform is ${platform}`);
 ```
 
 The value `'android'` may also be returned if the Node.js is built on the
@@ -2502,13 +2502,13 @@ current process.
 ```mjs
 import { ppid } from 'node:process';
 
-console.log(`The parent process is pid $ppid`);
+console.log(`The parent process is pid ${ppid}`);
 ```
 
 ```cjs
 const { ppid } = require('node:process');
 
-console.log(`The parent process is pid $ppid`);
+console.log(`The parent process is pid ${ppid}`);
 ```
 
 ### <DataTag tag="M" /> `process.release`
@@ -2582,13 +2582,13 @@ human consumption.
 ```mjs
 import { report } from 'node:process';
 
-console.log(`Reports are compact? $report.compact`);
+console.log(`Reports are compact? ${report.compact}`);
 ```
 
 ```cjs
 const { report } = require('node:process');
 
-console.log(`Reports are compact? $report.compact`);
+console.log(`Reports are compact? ${report.compact}`);
 ```
 
 #### <DataTag tag="M" /> `process.report.directory`
@@ -2604,13 +2604,13 @@ Node.js process.
 ```mjs
 import { report } from 'node:process';
 
-console.log(`Report directory is $report.directory`);
+console.log(`Report directory is ${report.directory}`);
 ```
 
 ```cjs
 const { report } = require('node:process');
 
-console.log(`Report directory is $report.directory`);
+console.log(`Report directory is ${report.directory}`);
 ```
 
 #### <DataTag tag="M" /> `process.report.filename`
@@ -2629,13 +2629,13 @@ the report is written to the stdout or stderr of the process respectively.
 ```mjs
 import { report } from 'node:process';
 
-console.log(`Report filename is $report.filename`);
+console.log(`Report filename is ${report.filename}`);
 ```
 
 ```cjs
 const { report } = require('node:process');
 
-console.log(`Report filename is $report.filename`);
+console.log(`Report filename is ${report.filename}`);
 ```
 
 #### <DataTag tag="M" /> `process.report.getReport([err])`
@@ -2685,13 +2685,13 @@ memory errors or failed C++ assertions.
 ```mjs
 import { report } from 'node:process';
 
-console.log(`Report on fatal error: $report.reportOnFatalError`);
+console.log(`Report on fatal error: ${report.reportOnFatalError}`);
 ```
 
 ```cjs
 const { report } = require('node:process');
 
-console.log(`Report on fatal error: $report.reportOnFatalError`);
+console.log(`Report on fatal error: ${report.reportOnFatalError}`);
 ```
 
 #### <DataTag tag="M" /> `process.report.reportOnSignal`
@@ -2706,13 +2706,13 @@ signal specified by `process.report.signal`.
 ```mjs
 import { report } from 'node:process';
 
-console.log(`Report on signal: $report.reportOnSignal`);
+console.log(`Report on signal: ${report.reportOnSignal}`);
 ```
 
 ```cjs
 const { report } = require('node:process');
 
-console.log(`Report on signal: $report.reportOnSignal`);
+console.log(`Report on signal: ${report.reportOnSignal}`);
 ```
 
 #### <DataTag tag="M" /> `process.report.reportOnUncaughtException`
@@ -2726,13 +2726,13 @@ If `true`, a diagnostic report is generated on uncaught exception.
 ```mjs
 import { report } from 'node:process';
 
-console.log(`Report on exception: $report.reportOnUncaughtException`);
+console.log(`Report on exception: ${report.reportOnUncaughtException}`);
 ```
 
 ```cjs
 const { report } = require('node:process');
 
-console.log(`Report on exception: $report.reportOnUncaughtException`);
+console.log(`Report on exception: ${report.reportOnUncaughtException}`);
 ```
 
 #### <DataTag tag="M" /> `process.report.signal`
@@ -2747,13 +2747,13 @@ The signal used to trigger the creation of a diagnostic report. Defaults to
 ```mjs
 import { report } from 'node:process';
 
-console.log(`Report signal: $report.signal`);
+console.log(`Report signal: ${report.signal}`);
 ```
 
 ```cjs
 const { report } = require('node:process');
 
-console.log(`Report signal: $report.signal`);
+console.log(`Report signal: ${report.signal}`);
 ```
 
 #### <DataTag tag="M" /> `process.report.writeReport([filename][, err])`
@@ -2935,7 +2935,7 @@ if (process.getegid && process.setegid) {
     process.setegid(501);
     console.log(`New gid: ${process.getegid()}`);
   } catch (err) {
-    console.log(`Failed to set gid: $err`);
+    console.log(`Failed to set gid: ${err}`);
   }
 }
 ```
@@ -2949,7 +2949,7 @@ if (process.getegid && process.setegid) {
     process.setegid(501);
     console.log(`New gid: ${process.getegid()}`);
   } catch (err) {
-    console.log(`Failed to set gid: $err`);
+    console.log(`Failed to set gid: ${err}`);
   }
 }
 ```
@@ -2978,7 +2978,7 @@ if (process.geteuid && process.seteuid) {
     process.seteuid(501);
     console.log(`New uid: ${process.geteuid()}`);
   } catch (err) {
-    console.log(`Failed to set uid: $err`);
+    console.log(`Failed to set uid: ${err}`);
   }
 }
 ```
@@ -2992,7 +2992,7 @@ if (process.geteuid && process.seteuid) {
     process.seteuid(501);
     console.log(`New uid: ${process.geteuid()}`);
   } catch (err) {
-    console.log(`Failed to set uid: $err`);
+    console.log(`Failed to set uid: ${err}`);
   }
 }
 ```
@@ -3021,7 +3021,7 @@ if (process.getgid && process.setgid) {
     process.setgid(501);
     console.log(`New gid: ${process.getgid()}`);
   } catch (err) {
-    console.log(`Failed to set gid: $err`);
+    console.log(`Failed to set gid: ${err}`);
   }
 }
 ```
@@ -3035,7 +3035,7 @@ if (process.getgid && process.setgid) {
     process.setgid(501);
     console.log(`New gid: ${process.getgid()}`);
   } catch (err) {
-    console.log(`Failed to set gid: $err`);
+    console.log(`Failed to set gid: ${err}`);
   }
 }
 ```
@@ -3064,7 +3064,7 @@ if (process.getgroups && process.setgroups) {
     process.setgroups([501]);
     console.log(process.getgroups()); // new groups
   } catch (err) {
-    console.log(`Failed to set groups: $err`);
+    console.log(`Failed to set groups: ${err}`);
   }
 }
 ```
@@ -3077,7 +3077,7 @@ if (process.getgroups && process.setgroups) {
     process.setgroups([501]);
     console.log(process.getgroups()); // new groups
   } catch (err) {
-    console.log(`Failed to set groups: $err`);
+    console.log(`Failed to set groups: ${err}`);
   }
 }
 ```
@@ -3090,7 +3090,7 @@ This feature is not available in [`Worker`][] threads.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.28"]}}} />
 
-* `id` {integer | string}
+* `id` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The `process.setuid(id)` method sets the user identity of the process. (See
 setuid(2).) The `id` can be passed as either a numeric ID or a username string.
@@ -3106,7 +3106,7 @@ if (process.getuid && process.setuid) {
     process.setuid(501);
     console.log(`New uid: ${process.getuid()}`);
   } catch (err) {
-    console.log(`Failed to set uid: $err`);
+    console.log(`Failed to set uid: ${err}`);
   }
 }
 ```
@@ -3120,7 +3120,7 @@ if (process.getuid && process.setuid) {
     process.setuid(501);
     console.log(`New uid: ${process.getuid()}`);
   } catch (err) {
-    console.log(`Failed to set uid: $err`);
+    console.log(`Failed to set uid: ${err}`);
   }
 }
 ```
@@ -3376,7 +3376,7 @@ changes:
 
 -->
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Calling `process.umask()` with no argument causes\n> the process-wide umask to be written twice. This introduces a race condition\n> between threads, and is a potential security vulnerability. There is no safe,\n> cross-platform alternative API."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Calling `process.umask()` with no argument causes the process-wide umask to be written twice. This introduces a race condition\n> between threads, and is a potential security vulnerability. There is no safe,\n> cross-platform alternative API."}}} />
 
 `process.umask()` returns the Node.js process's file mode creation mask. Child
 processes inherit the mask from the parent process.
@@ -3435,14 +3435,14 @@ The `process.version` property contains the Node.js version string.
 ```mjs
 import { version } from 'node:process';
 
-console.log(`Version: $version`);
+console.log(`Version: ${version}`);
 // Version: v14.8.0
 ```
 
 ```cjs
 const { version } = require('node:process');
 
-console.log(`Version: $version`);
+console.log(`Version: ${version}`);
 // Version: v14.8.0
 ```
 

@@ -610,7 +610,7 @@ be used in pipes and similar stream operations.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v10.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`zlib.bytesWritten`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `zlib.bytesWritten` instead."}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -683,7 +683,7 @@ Provides an object enumerating Zlib-related constants.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.7.0","v10.16.0"]}}} />
 
-* `options` {brotli options}
+* `options` [`brotli options`](/api/zlib#brotlioptions)
 
 Creates and returns a new [`BrotliCompress`][] object.
 
@@ -691,7 +691,7 @@ Creates and returns a new [`BrotliCompress`][] object.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.7.0","v10.16.0"]}}} />
 
-* `options` {brotli options}
+* `options` [`brotli options`](/api/zlib#brotlioptions)
 
 Creates and returns a new [`BrotliDecompress`][] object.
 
@@ -699,7 +699,7 @@ Creates and returns a new [`BrotliDecompress`][] object.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 
 Creates and returns a new [`Deflate`][] object.
 
@@ -707,7 +707,7 @@ Creates and returns a new [`Deflate`][] object.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 
 Creates and returns a new [`DeflateRaw`][] object.
 
@@ -722,7 +722,7 @@ that effectively uses an 8-bit window only.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 
 Creates and returns a new [`Gunzip`][] object.
 
@@ -730,7 +730,7 @@ Creates and returns a new [`Gunzip`][] object.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 
 Creates and returns a new [`Gzip`][] object.
 See [example][zlib.createGzip example].
@@ -739,7 +739,7 @@ See [example][zlib.createGzip example].
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 
 Creates and returns a new [`Inflate`][] object.
 
@@ -747,7 +747,7 @@ Creates and returns a new [`Inflate`][] object.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 
 Creates and returns a new [`InflateRaw`][] object.
 
@@ -755,7 +755,7 @@ Creates and returns a new [`InflateRaw`][] object.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 
 Creates and returns a new [`Unzip`][] object.
 
@@ -776,7 +776,7 @@ without a callback.
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.7.0","v10.16.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {brotli options}
+* `options` [`brotli options`](/api/zlib#brotlioptions)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 #### <DataTag tag="M" /> `zlib.brotliCompressSync(buffer[, options])`
@@ -784,7 +784,7 @@ without a callback.
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.7.0","v10.16.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {brotli options}
+* `options` [`brotli options`](/api/zlib#brotlioptions)
 
 Compress a chunk of data with [`BrotliCompress`][].
 
@@ -793,7 +793,7 @@ Compress a chunk of data with [`BrotliCompress`][].
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.7.0","v10.16.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {brotli options}
+* `options` [`brotli options`](/api/zlib#brotlioptions)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 #### <DataTag tag="M" /> `zlib.brotliDecompressSync(buffer[, options])`
@@ -801,7 +801,7 @@ Compress a chunk of data with [`BrotliCompress`][].
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.7.0","v10.16.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {brotli options}
+* `options` [`brotli options`](/api/zlib#brotlioptions)
 
 Decompress a chunk of data with [`BrotliDecompress`][].
 
@@ -810,7 +810,7 @@ Decompress a chunk of data with [`BrotliDecompress`][].
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/16042","description":"The `buffer` parameter can be an `ArrayBuffer`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12223","description":"The `buffer` parameter can be any `TypedArray` or `DataView`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12001","description":"The `buffer` parameter can be an `Uint8Array` now."}],"update":{"type":"added","version":["v0.6.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 #### <DataTag tag="M" /> `zlib.deflateSync(buffer[, options])`
@@ -818,7 +818,7 @@ Decompress a chunk of data with [`BrotliDecompress`][].
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/16042","description":"The `buffer` parameter can be an `ArrayBuffer`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12223","description":"The `buffer` parameter can be any `TypedArray` or `DataView`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12001","description":"The `buffer` parameter can be an `Uint8Array` now."}],"update":{"type":"added","version":["v0.11.12"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 
 Compress a chunk of data with [`Deflate`][].
 
@@ -827,7 +827,7 @@ Compress a chunk of data with [`Deflate`][].
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12223","description":"The `buffer` parameter can be any `TypedArray` or `DataView`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12001","description":"The `buffer` parameter can be an `Uint8Array` now."}],"update":{"type":"added","version":["v0.6.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 #### <DataTag tag="M" /> `zlib.deflateRawSync(buffer[, options])`
@@ -835,7 +835,7 @@ Compress a chunk of data with [`Deflate`][].
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/16042","description":"The `buffer` parameter can be an `ArrayBuffer`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12223","description":"The `buffer` parameter can be any `TypedArray` or `DataView`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12001","description":"The `buffer` parameter can be an `Uint8Array` now."}],"update":{"type":"added","version":["v0.11.12"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 
 Compress a chunk of data with [`DeflateRaw`][].
 
@@ -844,7 +844,7 @@ Compress a chunk of data with [`DeflateRaw`][].
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/16042","description":"The `buffer` parameter can be an `ArrayBuffer`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12223","description":"The `buffer` parameter can be any `TypedArray` or `DataView`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12001","description":"The `buffer` parameter can be an `Uint8Array` now."}],"update":{"type":"added","version":["v0.6.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 #### <DataTag tag="M" /> `zlib.gunzipSync(buffer[, options])`
@@ -852,7 +852,7 @@ Compress a chunk of data with [`DeflateRaw`][].
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/16042","description":"The `buffer` parameter can be an `ArrayBuffer`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12223","description":"The `buffer` parameter can be any `TypedArray` or `DataView`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12001","description":"The `buffer` parameter can be an `Uint8Array` now."}],"update":{"type":"added","version":["v0.11.12"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 
 Decompress a chunk of data with [`Gunzip`][].
 
@@ -861,7 +861,7 @@ Decompress a chunk of data with [`Gunzip`][].
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/16042","description":"The `buffer` parameter can be an `ArrayBuffer`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12223","description":"The `buffer` parameter can be any `TypedArray` or `DataView`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12001","description":"The `buffer` parameter can be an `Uint8Array` now."}],"update":{"type":"added","version":["v0.6.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 #### <DataTag tag="M" /> `zlib.gzipSync(buffer[, options])`
@@ -869,7 +869,7 @@ Decompress a chunk of data with [`Gunzip`][].
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/16042","description":"The `buffer` parameter can be an `ArrayBuffer`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12223","description":"The `buffer` parameter can be any `TypedArray` or `DataView`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12001","description":"The `buffer` parameter can be an `Uint8Array` now."}],"update":{"type":"added","version":["v0.11.12"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 
 Compress a chunk of data with [`Gzip`][].
 
@@ -878,7 +878,7 @@ Compress a chunk of data with [`Gzip`][].
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/16042","description":"The `buffer` parameter can be an `ArrayBuffer`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12223","description":"The `buffer` parameter can be any `TypedArray` or `DataView`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12001","description":"The `buffer` parameter can be an `Uint8Array` now."}],"update":{"type":"added","version":["v0.6.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 #### <DataTag tag="M" /> `zlib.inflateSync(buffer[, options])`
@@ -886,7 +886,7 @@ Compress a chunk of data with [`Gzip`][].
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/16042","description":"The `buffer` parameter can be an `ArrayBuffer`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12223","description":"The `buffer` parameter can be any `TypedArray` or `DataView`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12001","description":"The `buffer` parameter can be an `Uint8Array` now."}],"update":{"type":"added","version":["v0.11.12"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 
 Decompress a chunk of data with [`Inflate`][].
 
@@ -895,7 +895,7 @@ Decompress a chunk of data with [`Inflate`][].
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/16042","description":"The `buffer` parameter can be an `ArrayBuffer`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12223","description":"The `buffer` parameter can be any `TypedArray` or `DataView`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12001","description":"The `buffer` parameter can be an `Uint8Array` now."}],"update":{"type":"added","version":["v0.6.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 #### <DataTag tag="M" /> `zlib.inflateRawSync(buffer[, options])`
@@ -903,7 +903,7 @@ Decompress a chunk of data with [`Inflate`][].
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/16042","description":"The `buffer` parameter can be an `ArrayBuffer`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12223","description":"The `buffer` parameter can be any `TypedArray` or `DataView`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12001","description":"The `buffer` parameter can be an `Uint8Array` now."}],"update":{"type":"added","version":["v0.11.12"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 
 Decompress a chunk of data with [`InflateRaw`][].
 
@@ -912,7 +912,7 @@ Decompress a chunk of data with [`InflateRaw`][].
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/16042","description":"The `buffer` parameter can be an `ArrayBuffer`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12223","description":"The `buffer` parameter can be any `TypedArray` or `DataView`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12001","description":"The `buffer` parameter can be an `Uint8Array` now."}],"update":{"type":"added","version":["v0.6.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 #### <DataTag tag="M" /> `zlib.unzipSync(buffer[, options])`
@@ -920,7 +920,7 @@ Decompress a chunk of data with [`InflateRaw`][].
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/16042","description":"The `buffer` parameter can be an `ArrayBuffer`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12223","description":"The `buffer` parameter can be any `TypedArray` or `DataView`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12001","description":"The `buffer` parameter can be an `Uint8Array` now."}],"update":{"type":"added","version":["v0.11.12"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {zlib options}
+* `options` [`zlib options`](/api/zlib#options)
 
 Decompress a chunk of data with [`Unzip`][].
 

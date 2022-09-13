@@ -85,5 +85,6 @@ if (fs.existsSync(markdownPath)) {
 
   blogQueue.push([...markdownFilesFromDirectory]);
 
+  // eslint-disable-next-line no-console
   blogQueue.drain(() => console.log('Finished Processing'));
 }

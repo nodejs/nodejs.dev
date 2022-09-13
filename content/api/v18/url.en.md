@@ -98,7 +98,7 @@ myURL.hash = '#fgh';
 const pathname = '/a/b/c';
 const search = '?d=e';
 const hash = '#fgh';
-const myURL = new URL(`https://example.org$pathname$search$hash`);
+const myURL = new URL(`https://example.org${pathname}${search}${hash}`);
 ```
 
 To get the constructed URL string, use the `href` property accessor:
@@ -1022,7 +1022,7 @@ console.log(url.domainToUnicode('xn--iñvalid.com'));
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.12.0"]}}} />
 
-* `url` {URL | string} The file URL string or URL object to convert to a path.
+* `url` [`URL`](/api/url#the-whatwg-url-api) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The file URL string or URL object to convert to a path.
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The fully-resolved platform-specific Node.js file path.
 
 This function ensures the correct decodings of percent-encoded characters as

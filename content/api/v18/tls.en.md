@@ -452,7 +452,7 @@ has the property `code` which can take one of the following values:
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v0.11.3"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`tls.TLSSocket`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `tls.TLSSocket` instead."}}} />
 
 The `tls.CryptoStream` class represents a stream of encrypted data. This class
 is deprecated and should no longer be used.
@@ -469,7 +469,7 @@ implementation of the TLS protocol.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v0.11.3"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`tls.TLSSocket`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `tls.TLSSocket` instead."}}} />
 
 Returned by [`tls.createSecurePair()`][].
 
@@ -1172,9 +1172,9 @@ to implement the `tls-unique` channel binding from [RFC 5929][].
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.9.0"]}}} />
 
-* Returns: {X509Certificate}
+* Returns: [`X509Certificate`](/api/crypto#x509certificate)
 
-Returns the peer certificate as an {X509Certificate} object.
+Returns the peer certificate as an [`X509Certificate`](/api/crypto#x509certificate) object.
 
 If there is no peer certificate, or the socket has been destroyed,
 `undefined` will be returned.
@@ -1244,9 +1244,9 @@ See [Session Resumption][] for more information.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.9.0"]}}} />
 
-* Returns: {X509Certificate}
+* Returns: [`X509Certificate`](/api/crypto#x509certificate)
 
-Returns the local certificate as an {X509Certificate} object.
+Returns the local certificate as an [`X509Certificate`](/api/crypto#x509certificate) object.
 
 If there is no local certificate, or the socket has been destroyed,
 `undefined` will be returned.
@@ -1430,8 +1430,7 @@ was present (see [CVE-2021-44531][]). Applications that wish to accept
     of the server against the certificate but that's not applicable for PSK
     because there won't be a certificate present.
     More information can be found in the [RFC 4279][].
-  * `ALPNProtocols`: {string\[]|Buffer\[]|TypedArray\[]|DataView\[]|Buffer|
-    TypedArray|DataView}
+  * `ALPNProtocols`: [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
     An array of strings, `Buffer`s, `TypedArray`s, or `DataView`s, or a
     single `Buffer`, `TypedArray`, or `DataView` containing the supported ALPN
     protocols. `Buffer`s should have the format `[len][name][len][name]...`
@@ -1688,7 +1687,7 @@ If the `ca` option is not given, then Node.js will default to using
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2564","description":"ALPN options are supported now."}],"update":{"type":"deprecated","version":["v0.11.3"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`tls.TLSSocket`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `tls.TLSSocket` instead."}}} />
 
 * `context` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) A secure context object as returned by
   `tls.createSecureContext()`
@@ -1746,8 +1745,7 @@ where `secureSocket` has the same API as `pair.cleartext`.
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v12.3.0","pr-url":"https://github.com/nodejs/node/pull/27665","description":"The `options` parameter now supports `net.createServer()` options."},{"version":"v9.3.0","pr-url":"https://github.com/nodejs/node/pull/14903","description":"The `options` parameter can now include `clientCertEngine`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11984","description":"The `ALPNProtocols` option can be a `TypedArray` or `DataView` now."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2564","description":"ALPN options are supported now."}],"update":{"type":"added","version":["v0.3.2"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `ALPNProtocols`: {string\[]|Buffer\[]|TypedArray\[]|DataView\[]|Buffer|
-    TypedArray|DataView}
+  * `ALPNProtocols`: [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
     An array of strings, `Buffer`s, `TypedArray`s, or `DataView`s, or a single
     `Buffer`, `TypedArray`, or `DataView` containing the supported ALPN
     protocols. `Buffer`s should have the format `[len][name][len][name]...`

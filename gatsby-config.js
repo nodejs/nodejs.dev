@@ -120,10 +120,17 @@ const gatsbyConfig = {
             description: node => node.frontmatter.description,
             slug: node => node.fields.slug,
             category: node => node.fields.categoryName,
-            tableOfContents: node =>
-              [...node.rawBody.matchAll(/^#{2,5} .*/gm)]
-                .map(match => match[0].replace(/^#{2,5} /, ''))
-                .join('\n'),
+            tableOfContents: node => {
+              if (node.frontmatter.category === 'api') {
+                // We only do the Table of Contents resolution for API pages as for Learn pages searching by the title and description should be enough
+                // We should probably do a better way of calculating the Table of Contents for API pages as maybe creating a field in the frontmatter
+                return [...node.internal.content.matchAll(/^#{2,5} .*/gm)]
+                  .map(match => match[0].replace(/^#{2,5} /, ''))
+                  .join('\n');
+              }
+
+              return '';
+            },
           },
         },
         filter: node => ['api', 'learn'].includes(node.frontmatter.category),

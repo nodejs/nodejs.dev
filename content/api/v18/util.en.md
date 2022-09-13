@@ -397,7 +397,7 @@ console.log(stream instanceof EventEmitter); // true
 console.log(MyStream.super_ === EventEmitter); // true
 
 stream.on('data', (data) => {
-  console.log(`Received data: "$data"`);
+  console.log(`Received data: "${data}"`);
 });
 stream.write('It works!'); // Received data: "It works!"
 ```
@@ -416,7 +416,7 @@ class MyStream extends EventEmitter {
 const stream = new MyStream();
 
 stream.on('data', (data) => {
-  console.log(`Received data: "$data"`);
+  console.log(`Received data: "${data}"`);
 });
 stream.write('With ES6');
 ```
@@ -763,8 +763,8 @@ class Box {
     // Five space padding because that's the size of "Box< ".
     const padding = ' '.repeat(5);
     const inner = inspect(this.value, newOptions)
-                  .replace(/\n/g, `\n$padding`);
-    return `${options.stylize('Box', 'special')}< $inner >`;
+                  .replace(/\n/g, `\n${padding}`);
+    return `${options.stylize('Box', 'special')}< ${inner} >`;
   }
 }
 
@@ -896,7 +896,7 @@ equality.
   * `values` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) A mapping of parsed option names with their [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
     or [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) values.
   * `positionals` string\[] Positional arguments.
-  * `tokens` {Object\[] | undefined} See [parseArgs tokens](#parseargs-tokens)
+  * `tokens` [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) See [parseArgs tokens](#parseargs-tokens)
     section. Only returned if `config` includes `tokens: true`.
 
 Provides a higher level API for command-line argument parsing than interacting
@@ -959,9 +959,9 @@ The returned tokens have properties describing:
 * option tokens
   * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Long name of option.
   * `rawName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) How option used in args, like `-f` of `--foo`.
-  * `value` {string | undefined} Option value specified in args.
+  * `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) Option value specified in args.
     Undefined for boolean options.
-  * `inlineValue` {boolean | undefined} Whether option value specified inline,
+  * `inlineValue` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) Whether option value specified inline,
     like `--foo=bar`.
 * positional tokens
   * `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The value of the positional argument in args (i.e. `args[index]`).
@@ -1087,7 +1087,7 @@ const stat = util.promisify(fs.stat);
 
 async function callStat() {
   const stats = await stat('.');
-  console.log(`This directory is owned by $stats.uid`);
+  console.log(`This directory is owned by ${stats.uid}`);
 }
 ```
 
@@ -1355,7 +1355,7 @@ The `TextEncoder` class is also available on the global object.
 #### <DataTag tag="M" /> `textEncoder.encode([input])`
 
 * `input` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The text to encode. **Default:** an empty string.
-* Returns: {Uint8Array}
+* Returns: [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 
 UTF-8 encodes the `input` string and returns a `Uint8Array` containing the
 encoded bytes.
@@ -1363,7 +1363,7 @@ encoded bytes.
 #### <DataTag tag="M" /> `textEncoder.encodeInto(src, dest)`
 
 * `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The text to encode.
-* `dest` {Uint8Array} The array to hold the encode result.
+* `dest` [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) The array to hold the encode result.
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `read` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The read Unicode code units of src.
   * `written` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The written UTF-8 bytes of dest.
@@ -2092,7 +2092,7 @@ applications and modules should be updated to find alternative approaches.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Object.assign()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `Object.assign()` instead."}}} />
 
 * `target` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `source` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2107,7 +2107,7 @@ similar built-in functionality through [`Object.assign()`][].
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Array.isArray()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `Array.isArray()` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2153,7 +2153,7 @@ util.isBoolean(false);
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.isBuffer()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `Buffer.isBuffer()` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2175,7 +2175,7 @@ util.isBuffer(Buffer.from('hello world'));
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`util.types.isDate()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `util.types.isDate()` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2197,7 +2197,7 @@ util.isDate({});
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`util.types.isNativeError()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `util.types.isNativeError()` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2284,7 +2284,7 @@ util.isNull(null);
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use\n> `value === undefined || value === null` instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `value === undefined || value === null` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2331,7 +2331,7 @@ util.isNumber(NaN);
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated:\n> Use `value !== null && typeof value === 'object'` instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `value !== null && typeof value === 'object'` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2357,7 +2357,7 @@ util.isObject(() => {});
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use\n> `(typeof value !== 'object' && typeof value !== 'function') || value === null`\n> instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `(typeof value !== 'object' && typeof value !== 'function') || value === null`\n> instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)

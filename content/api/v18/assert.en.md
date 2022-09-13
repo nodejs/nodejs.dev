@@ -509,7 +509,7 @@ An alias of [`assert.deepStrictEqual()`][].
 
 **Legacy assertion mode**
 
-<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use [`assert.deepStrictEqual()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use `assert.deepStrictEqual()` instead."}}} />
 
 Tests for deep equality between the `actual` and `expected` parameters. Consider
 using [`assert.deepStrictEqual()`][] instead. [`assert.deepEqual()`][] can have
@@ -1091,7 +1091,7 @@ An alias of [`assert.strictEqual()`][].
 
 **Legacy assertion mode**
 
-<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use [`assert.strictEqual()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use `assert.strictEqual()` instead."}}} />
 
 Tests shallow, coercive equality between the `actual` and `expected` parameters
 using the [`==` operator][]. `NaN` is specially handled
@@ -1178,7 +1178,7 @@ See below for further details.
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18418","description":"Calling `assert.fail()` with more than one argument is deprecated and emits a warning."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `assert.fail([message])` or other assert\n> functions instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `assert.fail([message])` or other assert functions instead."}}} />
 
 * `actual` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `expected` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -1384,7 +1384,7 @@ An alias of [`assert.notDeepStrictEqual()`][].
 
 **Legacy assertion mode**
 
-<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use [`assert.notDeepStrictEqual()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use `assert.notDeepStrictEqual()` instead."}}} />
 
 Tests for any deep inequality. Opposite of [`assert.deepEqual()`][].
 
@@ -1504,7 +1504,7 @@ An alias of [`assert.notStrictEqual()`][].
 
 **Legacy assertion mode**
 
-<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use [`assert.notStrictEqual()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use `assert.notStrictEqual()` instead."}}} />
 
 Tests shallow, coercive inequality with the [`!=` operator][]. `NaN` is
 specially handled and treated as being identical if both sides are `NaN`.
@@ -1890,7 +1890,7 @@ assert.strictEqual('Hello foobar', 'Hello World!');
 
 const apples = 1;
 const oranges = 2;
-assert.strictEqual(apples, oranges, `apples $apples !== oranges $oranges`);
+assert.strictEqual(apples, oranges, `apples ${apples} !== oranges ${oranges}`);
 // AssertionError [ERR_ASSERTION]: apples 1 !== oranges 2
 
 assert.strictEqual(1, '1', new TypeError('Inputs are not identical'));
@@ -1918,7 +1918,7 @@ assert.strictEqual('Hello foobar', 'Hello World!');
 
 const apples = 1;
 const oranges = 2;
-assert.strictEqual(apples, oranges, `apples $apples !== oranges $oranges`);
+assert.strictEqual(apples, oranges, `apples ${apples} !== oranges ${oranges}`);
 // AssertionError [ERR_ASSERTION]: apples 1 !== oranges 2
 
 assert.strictEqual(1, '1', new TypeError('Inputs are not identical'));

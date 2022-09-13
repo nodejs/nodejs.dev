@@ -373,7 +373,7 @@ createHook({
     const eid = executionAsyncId();
     fs.writeSync(
       stdout.fd,
-      `$type($asyncId): trigger: $triggerAsyncId execution: $eid\n`);
+      `${type}(${asyncId}): trigger: ${triggerAsyncId} execution: ${eid}\n`);
   }
 }).enable();
 
@@ -390,7 +390,7 @@ createHook({
     const eid = executionAsyncId();
     fs.writeSync(
       stdout.fd,
-      `$type($asyncId): trigger: $triggerAsyncId execution: $eid\n`);
+      `${type}(${asyncId}): trigger: ${triggerAsyncId} execution: ${eid}\n`);
   }
 }).enable();
 
@@ -448,22 +448,22 @@ async_hooks.createHook({
     const indentStr = ' '.repeat(indent);
     fs.writeSync(
       fd,
-      `$indentStr$type($asyncId):` +
-      ` trigger: $triggerAsyncId execution: $eid\n`);
+      `${indentStr}${type}(${asyncId}):` +
+      ` trigger: ${triggerAsyncId} execution: ${eid}\n`);
   },
   before(asyncId) {
     const indentStr = ' '.repeat(indent);
-    fs.writeSync(fd, `$indentStrbefore:  $asyncId\n`);
+    fs.writeSync(fd, `${indentStr}before:  ${asyncId}\n`);
     indent += 2;
   },
   after(asyncId) {
     indent -= 2;
     const indentStr = ' '.repeat(indent);
-    fs.writeSync(fd, `$indentStrafter:  $asyncId\n`);
+    fs.writeSync(fd, `${indentStr}after:  ${asyncId}\n`);
   },
   destroy(asyncId) {
     const indentStr = ' '.repeat(indent);
-    fs.writeSync(fd, `$indentStrdestroy:  $asyncId\n`);
+    fs.writeSync(fd, `${indentStr}destroy:  ${asyncId}\n`);
   },
 }).enable();
 

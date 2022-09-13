@@ -212,7 +212,7 @@ For example, on POSIX:
 
 ```js
 // If `dir`, `root` and `base` are provided,
-// `$dir$path.sep$base`
+// `${dir}${path.sep}${base}`
 // will be returned. `root` is ignored.
 path.format({
   root: '/ignored',
