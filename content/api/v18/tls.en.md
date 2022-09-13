@@ -1922,7 +1922,7 @@ information.
 [Modifying the default TLS cipher suite]: #modifying-the-default-tls-cipher-suite
 [Mozilla's publicly trusted list of CAs]: https://hg.mozilla.org/mozilla-central/raw-file/tip/security/nss/lib/ckfw/builtins/certdata.txt
 [OCSP request]: https://en.wikipedia.org/wiki/OCSP_stapling
-[OpenSSL Options]: (/api/crypto#openssl-options)
+[OpenSSL Options]: /api/v18/crypto#openssl-options
 [RFC 2246]: https://www.ietf.org/rfc/rfc2246.txt
 [RFC 4086]: https://tools.ietf.org/html/rfc4086
 [RFC 4279]: https://tools.ietf.org/html/rfc4279
@@ -1930,29 +1930,29 @@ information.
 [RFC 5929]: https://tools.ietf.org/html/rfc5929
 [SSL_METHODS]: https://www.openssl.org/docs/man1.1.1/man7/ssl.html#Dealing-with-Protocol-Methods
 [Session Resumption]: #session-resumption
-[Stream]: (/api/stream#stream)
+[Stream]: /api/v18/stream#stream
 [TLS recommendations]: https://wiki.mozilla.org/Security/Server_Side_TLS
 [`'newSession'`]: #event-newsession
 [`'resumeSession'`]: #event-resumesession
 [`'secureConnect'`]: #event-secureconnect
 [`'secureConnection'`]: #event-secureconnection
 [`'session'`]: #event-session
-[`--tls-cipher-list`]: (/api/cli#--tls-cipher-listlist)
-[`Duplex`]: (/api/stream#class-streamduplex)
-[`NODE_OPTIONS`]: (/api/cli#node_optionsoptions)
+[`--tls-cipher-list`]: /api/v18/cli#--tls-cipher-listlist
+[`Duplex`]: /api/v18/stream#class-streamduplex
+[`NODE_OPTIONS`]: /api/v18/cli#node_optionsoptions
 [`SSL_export_keying_material`]: https://www.openssl.org/docs/man1.1.1/man3/SSL_export_keying_material.html
 [`SSL_get_version`]: https://www.openssl.org/docs/man1.1.1/man3/SSL_get_version.html
-[`crypto.getCurves()`]: (/api/crypto#cryptogetcurves)
+[`crypto.getCurves()`]: /api/v18/crypto#cryptogetcurves
 [`import()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import
-[`net.Server.address()`]: (/api/net#serveraddress)
-[`net.Server`]: (/api/net#class-netserver)
-[`net.Socket`]: (/api/net#class-netsocket)
-[`net.createServer()`]: (/api/net#netcreateserveroptions-connectionlistener)
+[`net.Server.address()`]: /api/v18/net#serveraddress
+[`net.Server`]: /api/v18/net#class-netserver
+[`net.Socket`]: /api/v18/net#class-netsocket
+[`net.createServer()`]: /api/v18/net#netcreateserveroptions-connectionlistener
 [`server.addContext()`]: #serveraddcontexthostname-context
 [`server.getTicketKeys()`]: #servergetticketkeys
-[`server.listen()`]: (/api/net#serverlisten)
+[`server.listen()`]: /api/v18/net#serverlisten
 [`server.setTicketKeys()`]: #serversetticketkeyskeys
-[`socket.connect()`]: (/api/net#socketconnectoptions-connectlistener)
+[`socket.connect()`]: /api/v18/net#socketconnectoptions-connectlistener
 [`tls.DEFAULT_ECDH_CURVE`]: #tlsdefault_ecdh_curve
 [`tls.DEFAULT_MAX_VERSION`]: #tlsdefault_max_version
 [`tls.DEFAULT_MIN_VERSION`]: #tlsdefault_min_version
@@ -1969,7 +1969,7 @@ information.
 [`tls.createServer()`]: #tlscreateserveroptions-secureconnectionlistener
 [`tls.getCiphers()`]: #tlsgetciphers
 [`tls.rootCertificates`]: #tlsrootcertificates
-[`x509.checkHost()`]: (/api/crypto#x509checkhostname-options)
+[`x509.checkHost()`]: /api/v18/crypto#x509checkhostname-options
 [asn1.js]: https://www.npmjs.com/package/asn1.js
 [certificate object]: #certificate-object
 [cipher list format]: https://www.openssl.org/docs/man1.1.1/man1/ciphers.html#CIPHER-LIST-FORMAT

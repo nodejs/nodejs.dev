@@ -244,5 +244,5 @@ session.post('HeapProfiler.takeHeapSnapshot', null, (err, r) => {
 [Heap Profiler]: https://chromedevtools.github.io/devtools-protocol/v8/HeapProfiler
 [`'Debugger.paused'`]: https://chromedevtools.github.io/devtools-protocol/v8/Debugger#event-paused
 [`session.connect()`]: #sessionconnect
-[security warning]: (/api/cli#warning-binding-inspector-to-a-public-ipport-combination-is-insecure)
+[security warning]: /api/v18/cli#warning-binding-inspector-to-a-public-ipport-combination-is-insecure
 [worker threads]: worker_threads.md

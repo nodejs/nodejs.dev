@@ -1383,7 +1383,7 @@ net.isIPv6('fhqwhgads'); // returns false
 
 [IPC]: #ipc-support
 [Identifying paths for IPC connections]: #identifying-paths-for-ipc-connections
-[Readable Stream]: (/api/stream#class-streamreadable)
+[Readable Stream]: /api/v18/stream#class-streamreadable
 [`'close'`]: #event-close
 [`'connect'`]: #event-connect
 [`'connection'`]: #event-connection
@@ -1393,10 +1393,10 @@ net.isIPv6('fhqwhgads'); // returns false
 [`'error'`]: #event-error_1
 [`'listening'`]: #event-listening
 [`'timeout'`]: #event-timeout
-[`EventEmitter`]: (/api/events#class-eventemitter)
+[`EventEmitter`]: /api/v18/events#class-eventemitter
 [`child_process.fork()`]: child_process.md#child_processforkmodulepath-args-options
-[`dns.lookup()`]: (/api/dns#dnslookuphostname-options-callback)
-[`dns.lookup()` hints]: (/api/dns#supported-getaddrinfo-flags)
+[`dns.lookup()`]: /api/v18/dns#dnslookuphostname-options-callback
+[`dns.lookup()` hints]: /api/v18/dns#supported-getaddrinfo-flags
 [`net.Server`]: #class-netserver
 [`net.Socket`]: #class-netsocket
 [`net.connect()`]: #netconnect
@@ -1409,7 +1409,7 @@ net.isIPv6('fhqwhgads'); // returns false
 [`net.createConnection(port, host)`]: #netcreateconnectionport-host-connectlistener
 [`net.createServer()`]: #netcreateserveroptions-connectionlistener
 [`new net.Socket(options)`]: #new-netsocketoptions
-[`readable.setEncoding()`]: (/api/stream#readablesetencodingencoding)
+[`readable.setEncoding()`]: /api/v18/stream#readablesetencodingencoding
 [`server.close()`]: #serverclosecallback
 [`server.listen()`]: #serverlisten
 [`server.listen(handle)`]: #serverlistenhandle-backlog-callback
@@ -1430,12 +1430,12 @@ net.isIPv6('fhqwhgads'); // returns false
 [`socket.setKeepAlive(enable, initialDelay)`]: #socketsetkeepaliveenable-initialdelay
 [`socket.setTimeout()`]: #socketsettimeouttimeout-callback
 [`socket.setTimeout(timeout)`]: #socketsettimeouttimeout-callback
-[`writable.destroy()`]: (/api/stream#writabledestroyerror)
-[`writable.destroyed`]: (/api/stream#writabledestroyed)
-[`writable.end()`]: (/api/stream#writableendchunk-encoding-callback)
-[`writable.writableLength`]: (/api/stream#writablewritablelength)
+[`writable.destroy()`]: /api/v18/stream#writabledestroyerror
+[`writable.destroyed`]: /api/v18/stream#writabledestroyed
+[`writable.end()`]: /api/v18/stream#writableendchunk-encoding-callback
+[`writable.writableLength`]: /api/v18/stream#writablewritablelength
 [dot-decimal notation]: https://en.wikipedia.org/wiki/Dot-decimal_notation
 [half-closed]: https://tools.ietf.org/html/rfc1122
-[stream_writable_write]: (/api/stream#writablewritechunk-encoding-callback)
+[stream_writable_write]: /api/v18/stream#writablewritechunk-encoding-callback
 [unspecified IPv4 address]: https://en.wikipedia.org/wiki/0.0.0.0
 [unspecified IPv6 address]: https://en.wikipedia.org/wiki/IPv6_address#Unspecified_address

@@ -1221,10 +1221,10 @@ uses. For instance, _they do not use the configuration from `/etc/hosts`_.
 [Implementation considerations section]: #implementation-considerations
 [RFC 5952]: https://tools.ietf.org/html/rfc5952#section-6
 [RFC 8482]: https://tools.ietf.org/html/rfc8482
-[`--dns-result-order`]: (/api/cli#--dns-result-orderorder)
-[`Error`]: (/api/errors#class-error)
-[`UV_THREADPOOL_SIZE`]: (/api/cli#uv_threadpool_sizesize)
-[`dgram.createSocket()`]: (/api/dgram#dgramcreatesocketoptions-callback)
+[`--dns-result-order`]: /api/v18/cli#--dns-result-orderorder
+[`Error`]: /api/v18/errors#class-error
+[`UV_THREADPOOL_SIZE`]: /api/v18/cli#uv_threadpool_sizesize
+[`dgram.createSocket()`]: /api/v18/dgram#dgramcreatesocketoptions-callback
 [`dns.getServers()`]: #dnsgetservers
 [`dns.lookup()`]: #dnslookuphostname-options-callback
 [`dns.resolve()`]: #dnsresolvehostname-rrtype-callback
@@ -1261,7 +1261,7 @@ uses. For instance, _they do not use the configuration from `/etc/hosts`_.
 [`dnsPromises.reverse()`]: #dnspromisesreverseip
 [`dnsPromises.setDefaultResultOrder()`]: #dnspromisessetdefaultresultorderorder
 [`dnsPromises.setServers()`]: #dnspromisessetserversservers
-[`socket.connect()`]: (/api/net#socketconnectoptions-connectlistener)
-[`util.promisify()`]: (/api/util#utilpromisifyoriginal)
+[`socket.connect()`]: /api/v18/net#socketconnectoptions-connectlistener
+[`util.promisify()`]: /api/v18/util#utilpromisifyoriginal
 [supported `getaddrinfo` flags]: #supported-getaddrinfo-flags
 [worker threads]: worker_threads.md

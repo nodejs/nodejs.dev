@@ -1267,7 +1267,7 @@ The following process scheduling constants are exported by
 
 [Android building]: https://github.com/nodejs/node/blob/HEAD/BUILDING.md#androidandroid-based-devices-eg-firefox-os
 [EUID]: https://en.wikipedia.org/wiki/User_identifier#Effective_user_ID
-[`SystemError`]: (/api/errors#class-systemerror)
-[`process.arch`]: (/api/process#processarch)
-[`process.platform`]: (/api/process#processplatform)
+[`SystemError`]: /api/v18/errors#class-systemerror
+[`process.arch`]: /api/v18/process#processarch
+[`process.platform`]: /api/v18/process#processplatform
 [`uname(3)`]: https://linux.die.net/man/3/uname

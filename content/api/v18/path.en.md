@@ -553,7 +553,7 @@ of the `path` methods.
 The API is accessible via `require('node:path').win32` or `require('node:path/win32')`.
 
 [MSDN-Rel-Path]: https://docs.microsoft.com/en-us/windows/desktop/FileIO/naming-a-file#fully-qualified-vs-relative-paths
-[`TypeError`]: (/api/errors#class-typeerror)
+[`TypeError`]: /api/v18/errors#class-typeerror
 [`path.parse()`]: #pathparsepath
 [`path.posix`]: #pathposix
 [`path.sep`]: #pathsep

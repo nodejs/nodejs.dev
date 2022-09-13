@@ -263,7 +263,7 @@ The `tty.isatty()` method returns `true` if the given `fd` is associated with
 a TTY and `false` if it is not, including whenever `fd` is not a non-negative
 integer.
 
-[`process.stderr`]: (/api/process#processstderr)
-[`process.stdin`]: (/api/process#processstdin)
-[`process.stdout`]: (/api/process#processstdout)
+[`process.stderr`]: /api/v18/process#processstderr
+[`process.stdin`]: /api/v18/process#processstdin
+[`process.stdout`]: /api/v18/process#processstdout
 [`writeStream.getColorDepth()`]: #writestreamgetcolordepthenv

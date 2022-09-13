@@ -2496,22 +2496,22 @@ const util = require('node:util');
 util.log('Timestamped message.');
 ```
 
-[Common System Errors]: (/api/errors#common-system-errors)
+[Common System Errors]: /api/v18/errors#common-system-errors
 [Custom inspection functions on objects]: #custom-inspection-functions-on-objects
 [Custom promisified functions]: #custom-promisified-functions
 [Customizing `util.inspect` colors]: #customizing-utilinspect-colors
-[Internationalization]: (/api/intl)
+[Internationalization]: /api/v18/intl
 [Module Namespace Object]: https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects
 [WHATWG Encoding Standard]: https://encoding.spec.whatwg.org/
-[`'uncaughtException'`]: (/api/process#event-uncaughtexception)
-[`'warning'`]: (/api/process#event-warning)
+[`'uncaughtException'`]: /api/v18/process#event-uncaughtexception
+[`'warning'`]: /api/v18/process#event-warning
 [`Array.isArray()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
 [`ArrayBuffer.isView()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/isView
 [`ArrayBuffer`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
-[`Buffer.isBuffer()`]: (/api/buffer#static-method-bufferisbufferobj)
+[`Buffer.isBuffer()`]: /api/v18/buffer#static-method-bufferisbufferobj
 [`DataView`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView
 [`Date`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-[`Error`]: (/api/errors#class-error)
+[`Error`]: /api/v18/errors#class-error
 [`Float32Array`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array
 [`Float64Array`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array
 [`Int16Array`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array
@@ -2532,11 +2532,11 @@ util.log('Timestamped message.');
 [`WeakMap`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap
 [`WeakSet`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet
 [`WebAssembly.Module`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module
-[`assert.deepStrictEqual()`]: (/api/assert#assertdeepstrictequalactual-expected-message)
-[`console.error()`]: (/api/console#consoleerrordata-args)
+[`assert.deepStrictEqual()`]: /api/v18/assert#assertdeepstrictequalactual-expected-message
+[`console.error()`]: /api/v18/console#consoleerrordata-args
 [`napi_create_external()`]: n-api.md#napi_create_external
 [`target` and `handler`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#Terminology
-[`tty.hasColors()`]: (/api/tty#writestreamhascolorscount-env)
+[`tty.hasColors()`]: /api/v18/tty#writestreamhascolorscount-env
 [`util.format()`]: #utilformatformat-args
 [`util.inspect()`]: #utilinspectobject-options
 [`util.promisify()`]: #utilpromisifyoriginal
@@ -2550,7 +2550,7 @@ util.log('Timestamped message.');
 [constructor]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor
 [default sort]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 [global symbol registry]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/for
-[list of deprecated APIS]: (/api/deprecations#list-of-deprecated-apis)
+[list of deprecated APIS]: /api/v18/deprecations#list-of-deprecated-apis
 [pkgjs/parseargs]: https://github.com/pkgjs/parseargs
 [semantically incompatible]: https://github.com/nodejs/node/issues/4179
 [util.inspect.custom]: #utilinspectcustom

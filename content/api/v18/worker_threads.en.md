@@ -1118,24 +1118,24 @@ from the running process and will preload the same preload scripts as the main
 thread. If the preload script unconditionally launches a worker thread, every
 thread spawned will spawn another until the application crashes.
 
-[Addons worker support]: (/api/addons#worker-support)
-[ECMAScript module loader]: (/api/esm#data-imports)
+[Addons worker support]: /api/v18/addons#worker-support
+[ECMAScript module loader]: /api/v18/esm#data-imports
 [HTML structured clone algorithm]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm
-[Signals events]: (/api/process#signal-events)
+[Signals events]: /api/v18/process#signal-events
 [Web Workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API
 [`'close'` event]: #event-close
 [`'exit'` event]: #event-exit
 [`'online'` event]: #event-online
-[`--max-old-space-size`]: (/api/cli#--max-old-space-sizesize-in-megabytes)
-[`--max-semi-space-size`]: (/api/cli#--max-semi-space-sizesize-in-megabytes)
+[`--max-old-space-size`]: /api/v18/cli#--max-old-space-sizesize-in-megabytes
+[`--max-semi-space-size`]: /api/v18/cli#--max-semi-space-sizesize-in-megabytes
 [`ArrayBuffer`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
 [`AsyncResource`]: async_hooks.md#class-asyncresource
-[`Buffer.allocUnsafe()`]: (/api/buffer#static-method-bufferallocunsafesize)
-[`Buffer`]: (/api/buffer)
-[`ERR_MISSING_MESSAGE_PORT_IN_TRANSFER_LIST`]: (/api/errors#err_missing_message_port_in_transfer_list)
-[`ERR_WORKER_NOT_RUNNING`]: (/api/errors#err_worker_not_running)
+[`Buffer.allocUnsafe()`]: /api/v18/buffer#static-method-bufferallocunsafesize
+[`Buffer`]: /api/v18/buffer
+[`ERR_MISSING_MESSAGE_PORT_IN_TRANSFER_LIST`]: /api/v18/errors#err_missing_message_port_in_transfer_list
+[`ERR_WORKER_NOT_RUNNING`]: /api/v18/errors#err_worker_not_running
 [`EventTarget`]: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget
-[`FileHandle`]: (/api/fs#class-filehandle)
+[`FileHandle`]: /api/v18/fs#class-filehandle
 [`MessagePort`]: #class-messageport
 [`SharedArrayBuffer`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer
 [`Uint8Array`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array
@@ -1143,33 +1143,33 @@ thread spawned will spawn another until the application crashes.
 [`Worker constructor options`]: #new-workerfilename-options
 [`Worker`]: #class-worker
 [`data:` URL]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs
-[`fs.close()`]: (/api/fs#fsclosefd-callback)
-[`fs.open()`]: (/api/fs#fsopenpath-flags-mode-callback)
+[`fs.close()`]: /api/v18/fs#fsclosefd-callback
+[`fs.open()`]: /api/v18/fs#fsopenpath-flags-mode-callback
 [`markAsUntransferable()`]: #workermarkasuntransferableobject
-[`node:cluster` module]: (/api/cluster)
+[`node:cluster` module]: /api/v18/cluster
 [`perf_hooks.performance`]: perf_hooks.md#perf_hooksperformance
 [`perf_hooks` `eventLoopUtilization()`]: perf_hooks.md#performanceeventlooputilizationutilization1-utilization2
 [`port.on('message')`]: #event-message
 [`port.onmessage()`]: https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/onmessage
 [`port.postMessage()`]: #portpostmessagevalue-transferlist
-[`process.abort()`]: (/api/process#processabort)
-[`process.chdir()`]: (/api/process#processchdirdirectory)
-[`process.env`]: (/api/process#processenv)
-[`process.execArgv`]: (/api/process#processexecargv)
-[`process.exit()`]: (/api/process#processexitcode)
-[`process.stderr`]: (/api/process#processstderr)
-[`process.stdin`]: (/api/process#processstdin)
-[`process.stdout`]: (/api/process#processstdout)
-[`process.title`]: (/api/process#processtitle)
+[`process.abort()`]: /api/v18/process#processabort
+[`process.chdir()`]: /api/v18/process#processchdirdirectory
+[`process.env`]: /api/v18/process#processenv
+[`process.execArgv`]: /api/v18/process#processexecargv
+[`process.exit()`]: /api/v18/process#processexitcode
+[`process.stderr`]: /api/v18/process#processstderr
+[`process.stdin`]: /api/v18/process#processstdin
+[`process.stdout`]: /api/v18/process#processstdout
+[`process.title`]: /api/v18/process#processtitle
 [`require('node:worker_threads').isMainThread`]: #workerismainthread
 [`require('node:worker_threads').parentPort.on('message')`]: #event-message
 [`require('node:worker_threads').parentPort.postMessage()`]: #workerpostmessagevalue-transferlist
 [`require('node:worker_threads').parentPort`]: #workerparentport
 [`require('node:worker_threads').threadId`]: #workerthreadid
 [`require('node:worker_threads').workerData`]: #workerworkerdata
-[`trace_events`]: (/api/tracing)
+[`trace_events`]: /api/v18/tracing
 [`v8.getHeapSnapshot()`]: v8.md#v8getheapsnapshot
-[`vm`]: (/api/vm)
+[`vm`]: /api/v18/vm
 [`worker.SHARE_ENV`]: #workershare_env
 [`worker.on('message')`]: #event-message_1
 [`worker.postMessage()`]: #workerpostmessagevalue-transferlist
@@ -1178,5 +1178,5 @@ thread spawned will spawn another until the application crashes.
 [async-resource-worker-pool]: async_context.md#using-asyncresource-for-a-worker-thread-pool
 [browser `MessagePort`]: https://developer.mozilla.org/en-US/docs/Web/API/MessagePort
 [child processes]: child_process.md
-[contextified]: (/api/vm#what-does-it-mean-to-contextify-an-object)
+[contextified]: /api/v18/vm#what-does-it-mean-to-contextify-an-object
 [v8.serdes]: v8.md#serialization-api

@@ -77,4 +77,4 @@ be unavoidable.
 [semantic versioning]: https://semver.org/
 [the contributing guide]: https://github.com/nodejs/node/blob/HEAD/CONTRIBUTING.md
 [the issue tracker]: https://github.com/nodejs/node/issues/new
-[warning]: (/api/process#event-warning)
+[warning]: /api/v18/process#event-warning

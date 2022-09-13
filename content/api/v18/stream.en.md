@@ -4078,9 +4078,9 @@ contain multi-byte characters.
 [API for stream consumers]: #api-for-stream-consumers
 [API for stream implementers]: #api-for-stream-implementers
 [Compatibility]: #compatibility-with-older-nodejs-versions
-[HTTP requests, on the client]: (/api/http#class-httpclientrequest)
-[HTTP responses, on the server]: (/api/http#class-httpserverresponse)
-[TCP sockets]: (/api/net#class-netsocket)
+[HTTP requests, on the client]: /api/v18/http#class-httpclientrequest
+[HTTP responses, on the server]: /api/v18/http#class-httpserverresponse
+[TCP sockets]: /api/v18/net#class-netsocket
 [Three states]: #three-states
 [`'data'`]: #event-data
 [`'drain'`]: #event-drain
@@ -4088,17 +4088,17 @@ contain multi-byte characters.
 [`'finish'`]: #event-finish
 [`'readable'`]: #event-readable
 [`Duplex`]: #class-streamduplex
-[`EventEmitter`]: (/api/events#class-eventemitter)
+[`EventEmitter`]: /api/v18/events#class-eventemitter
 [`Readable`]: #class-streamreadable
 [`Symbol.hasInstance`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/hasInstance
 [`Transform`]: #class-streamtransform
 [`Writable`]: #class-streamwritable
-[`fs.createReadStream()`]: (/api/fs#fscreatereadstreampath-options)
-[`fs.createWriteStream()`]: (/api/fs#fscreatewritestreampath-options)
-[`net.Socket`]: (/api/net#class-netsocket)
-[`process.stderr`]: (/api/process#processstderr)
-[`process.stdin`]: (/api/process#processstdin)
-[`process.stdout`]: (/api/process#processstdout)
+[`fs.createReadStream()`]: /api/v18/fs#fscreatereadstreampath-options
+[`fs.createWriteStream()`]: /api/v18/fs#fscreatewritestreampath-options
+[`net.Socket`]: /api/v18/net#class-netsocket
+[`process.stderr`]: /api/v18/process#processstderr
+[`process.stdin`]: /api/v18/process#processstdin
+[`process.stdout`]: /api/v18/process#processstdout
 [`readable._read()`]: #readable_readsize
 [`readable.map`]: #readablemapfn-options
 [`readable.push('')`]: #readablepush
@@ -4119,13 +4119,13 @@ contain multi-byte characters.
 [`writable.end()`]: #writableendchunk-encoding-callback
 [`writable.uncork()`]: #writableuncork
 [`writable.writableFinished`]: #writablewritablefinished
-[`zlib.createDeflate()`]: (/api/zlib#zlibcreatedeflateoptions)
+[`zlib.createDeflate()`]: /api/v18/zlib#zlibcreatedeflateoptions
 [child process stdin]: child_process.md#subprocessstdin
 [child process stdout and stderr]: child_process.md#subprocessstdout
-[crypto]: (/api/crypto)
-[fs read streams]: (/api/fs#class-fsreadstream)
-[fs write streams]: (/api/fs#class-fswritestream)
-[http-incoming-message]: (/api/http#class-httpincomingmessage)
+[crypto]: /api/v18/crypto
+[fs read streams]: /api/v18/fs#class-fsreadstream
+[fs write streams]: /api/v18/fs#class-fswritestream
+[http-incoming-message]: /api/v18/http#class-httpincomingmessage
 [hwm-gotcha]: #highwatermark-discrepancy-after-calling-readablesetencoding
 [object-mode]: #object-mode
 [readable-_construct]: #readable_constructcallback
@@ -4148,4 +4148,4 @@ contain multi-byte characters.
 [writable-_destroy]: #writable_destroyerr-callback
 [writable-destroy]: #writabledestroyerror
 [writable-new]: #new-streamwritableoptions
-[zlib]: (/api/zlib)
+[zlib]: /api/v18/zlib

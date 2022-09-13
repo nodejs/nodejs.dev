@@ -1436,10 +1436,10 @@ success!
 <Metadata version="v18.9.0" data={{"Note":"The cjs-module-lexer link should be kept in-sync with the deps version"}} />
 
 [6.1.7 Array Index]: https://tc39.es/ecma262/#integer-index
-[CommonJS]: (/api/modules)
-[Conditional exports]: (/api/packages#conditional-exports)
-[Core modules]: (/api/modules#core-modules)
-[Determining module system]: (/api/packages#determining-module-system)
+[CommonJS]: /api/v18/modules
+[Conditional exports]: /api/v18/packages#conditional-exports
+[Core modules]: /api/v18/modules#core-modules
+[Determining module system]: /api/v18/packages#determining-module-system
 [Dynamic `import()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import
 [ES Module Integration Proposal for WebAssembly]: https://github.com/webassembly/esm-integration
 [HTTPS and HTTP imports]: #https-and-http-imports
@@ -1450,9 +1450,9 @@ success!
 [Node.js Module Resolution Algorithm]: #resolver-algorithm-specification
 [Terminology]: #terminology
 [URL]: https://url.spec.whatwg.org/
-[`"exports"`]: (/api/packages#exports)
-[`"type"`]: (/api/packages#type)
-[`--input-type`]: (/api/cli#--input-typetype)
+[`"exports"`]: /api/v18/packages#exports
+[`"type"`]: /api/v18/packages#type
+[`--input-type`]: /api/v18/cli#--input-typetype
 [`ArrayBuffer`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
 [`SharedArrayBuffer`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer
 [`TypedArray`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
@@ -1463,20 +1463,20 @@ success!
 [`import.meta.resolve`]: #importmetaresolvespecifier-parent
 [`import.meta.url`]: #importmetaurl
 [`import`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
-[`module.createRequire()`]: (/api/module#modulecreaterequirefilename)
-[`module.syncBuiltinESMExports()`]: (/api/module#modulesyncbuiltinesmexports)
-[`package.json`]: (/api/packages#nodejs-packagejson-field-definitions)
+[`module.createRequire()`]: /api/v18/module#modulecreaterequirefilename
+[`module.syncBuiltinESMExports()`]: /api/v18/module#modulesyncbuiltinesmexports
+[`package.json`]: /api/v18/packages#nodejs-packagejson-field-definitions
 [`port.ref()`]: https://nodejs.org/dist/latest-v17.x/docs/api/worker_threads.html#portref
 [`port.unref()`]: https://nodejs.org/dist/latest-v17.x/docs/api/worker_threads.html#portunref
-[`process.dlopen`]: (/api/process#processdlopenmodule-filename-flags)
+[`process.dlopen`]: /api/v18/process#processdlopenmodule-filename-flags
 [`string`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[`util.TextDecoder`]: (/api/util#class-utiltextdecoder)
+[`util.TextDecoder`]: /api/v18/util#class-utiltextdecoder
 [cjs-module-lexer]: https://github.com/nodejs/cjs-module-lexer/tree/1.2.2
 [custom https loader]: #https-loader
 [load hook]: #loadurl-context-nextload
-[percent-encoded]: (/api/url#percent-encoding-in-urls)
+[percent-encoded]: /api/v18/url#percent-encoding-in-urls
 [resolve hook]: #resolvespecifier-context-nextresolve
 [special scheme]: https://url.spec.whatwg.org/#special-scheme
-[status code]: (/api/process#exit-codes)
+[status code]: /api/v18/process#exit-codes
 [the official standard format]: https://tc39.github.io/ecma262/#sec-modules
-[url.pathToFileURL]: (/api/url#urlpathtofileurlpath)
+[url.pathToFileURL]: /api/v18/url#urlpathtofileurlpath

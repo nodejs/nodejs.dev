@@ -1244,5 +1244,5 @@ const {
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with the contents of the stream parsed as a
   UTF-8 encoded string.
 
-[Streams]: (/api/stream)
+[Streams]: /api/v18/stream
 [WHATWG Streams Standard]: https://streams.spec.whatwg.org/

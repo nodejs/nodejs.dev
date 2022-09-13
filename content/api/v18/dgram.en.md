@@ -855,18 +855,18 @@ and `udp6` sockets). The bound address and port can be retrieved using
 [IPv6 Zone Indices]: https://en.wikipedia.org/wiki/IPv6_address#Scoped_literal_IPv6_addresses
 [RFC 4007]: https://tools.ietf.org/html/rfc4007
 [`'close'`]: #event-close
-[`ERR_SOCKET_BAD_PORT`]: (/api/errors#err_socket_bad_port)
-[`ERR_SOCKET_BUFFER_SIZE`]: (/api/errors#err_socket_buffer_size)
-[`ERR_SOCKET_DGRAM_IS_CONNECTED`]: (/api/errors#err_socket_dgram_is_connected)
-[`ERR_SOCKET_DGRAM_NOT_CONNECTED`]: (/api/errors#err_socket_dgram_not_connected)
-[`Error`]: (/api/errors#class-error)
-[`System Error`]: (/api/errors#class-systemerror)
+[`ERR_SOCKET_BAD_PORT`]: /api/v18/errors#err_socket_bad_port
+[`ERR_SOCKET_BUFFER_SIZE`]: /api/v18/errors#err_socket_buffer_size
+[`ERR_SOCKET_DGRAM_IS_CONNECTED`]: /api/v18/errors#err_socket_dgram_is_connected
+[`ERR_SOCKET_DGRAM_NOT_CONNECTED`]: /api/v18/errors#err_socket_dgram_not_connected
+[`Error`]: /api/v18/errors#class-error
+[`System Error`]: /api/v18/errors#class-systemerror
 [`close()`]: #socketclosecallback
-[`cluster`]: (/api/cluster)
+[`cluster`]: /api/v18/cluster
 [`connect()`]: #socketconnectport-address-callback
 [`dgram.createSocket()`]: #dgramcreatesocketoptions-callback
-[`dns.lookup()`]: (/api/dns#dnslookuphostname-options-callback)
+[`dns.lookup()`]: /api/v18/dns#dnslookuphostname-options-callback
 [`socket.address().address`]: #socketaddress
 [`socket.address().port`]: #socketaddress
 [`socket.bind()`]: #socketbindport-address-callback
-[byte length]: (/api/buffer#static-method-bufferbytelengthstring-encoding)
+[byte length]: /api/v18/buffer#static-method-bufferbytelengthstring-encoding

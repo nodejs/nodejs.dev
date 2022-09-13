@@ -3265,91 +3265,91 @@ closed.
 
 The native call from `process.cpuUsage` could not be processed.
 
-[ES Module]: (/api/esm)
-[ICU]: (/api/intl#internationalization-support)
+[ES Module]: /api/v18/esm
+[ICU]: /api/v18/intl#internationalization-support
 [JSON Web Key Elliptic Curve Registry]: https://www.iana.org/assignments/jose/jose.xhtml#web-key-elliptic-curve
 [JSON Web Key Types Registry]: https://www.iana.org/assignments/jose/jose.xhtml#web-key-types
 [Node.js error codes]: #nodejs-error-codes
 [RFC 7230 Section 3]: https://tools.ietf.org/html/rfc7230#section-3
 [Subresource Integrity specification]: https://www.w3.org/TR/SRI/#the-integrity-attribute
 [V8's stack trace API]: https://v8.dev/docs/stack-trace-api
-[WHATWG Supported Encodings]: (/api/util#whatwg-supported-encodings)
-[WHATWG URL API]: (/api/url#the-whatwg-url-api)
-[`"exports"`]: (/api/packages#exports)
-[`"imports"`]: (/api/packages#imports)
-[`'uncaughtException'`]: (/api/process#event-uncaughtexception)
-[`--disable-proto=throw`]: (/api/cli#--disable-protomode)
-[`--force-fips`]: (/api/cli#--force-fips)
-[`--no-addons`]: (/api/cli#--no-addons)
-[`Class: assert.AssertionError`]: (/api/assert#class-assertassertionerror)
+[WHATWG Supported Encodings]: /api/v18/util#whatwg-supported-encodings
+[WHATWG URL API]: /api/v18/url#the-whatwg-url-api
+[`"exports"`]: /api/v18/packages#exports
+[`"imports"`]: /api/v18/packages#imports
+[`'uncaughtException'`]: /api/v18/process#event-uncaughtexception
+[`--disable-proto=throw`]: /api/v18/cli#--disable-protomode
+[`--force-fips`]: /api/v18/cli#--force-fips
+[`--no-addons`]: /api/v18/cli#--no-addons
+[`Class: assert.AssertionError`]: /api/v18/assert#class-assertassertionerror
 [`ERR_INVALID_ARG_TYPE`]: #err_invalid_arg_type
 [`ERR_MISSING_MESSAGE_PORT_IN_TRANSFER_LIST`]: #err_missing_message_port_in_transfer_list
 [`ERR_MISSING_TRANSFERABLE_IN_TRANSFER_LIST`]: #err_missing_transferable_in_transfer_list
-[`EventEmitter`]: (/api/events#class-eventemitter)
+[`EventEmitter`]: /api/v18/events#class-eventemitter
 [`MessagePort`]: worker_threads.md#class-messageport
 [`Object.getPrototypeOf`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf
 [`Object.setPrototypeOf`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf
-[`REPL`]: (/api/repl)
-[`Writable`]: (/api/stream#class-streamwritable)
+[`REPL`]: /api/v18/repl
+[`Writable`]: /api/v18/stream#class-streamwritable
 [`child_process`]: child_process.md
-[`cipher.getAuthTag()`]: (/api/crypto#ciphergetauthtag)
-[`crypto.getDiffieHellman()`]: (/api/crypto#cryptogetdiffiehellmangroupname)
-[`crypto.scrypt()`]: (/api/crypto#cryptoscryptpassword-salt-keylen-options-callback)
-[`crypto.scryptSync()`]: (/api/crypto#cryptoscryptsyncpassword-salt-keylen-options)
-[`crypto.timingSafeEqual()`]: (/api/crypto#cryptotimingsafeequala-b)
-[`dgram.connect()`]: (/api/dgram#socketconnectport-address-callback)
-[`dgram.createSocket()`]: (/api/dgram#dgramcreatesocketoptions-callback)
-[`dgram.disconnect()`]: (/api/dgram#socketdisconnect)
-[`dgram.remoteAddress()`]: (/api/dgram#socketremoteaddress)
+[`cipher.getAuthTag()`]: /api/v18/crypto#ciphergetauthtag
+[`crypto.getDiffieHellman()`]: /api/v18/crypto#cryptogetdiffiehellmangroupname
+[`crypto.scrypt()`]: /api/v18/crypto#cryptoscryptpassword-salt-keylen-options-callback
+[`crypto.scryptSync()`]: /api/v18/crypto#cryptoscryptsyncpassword-salt-keylen-options
+[`crypto.timingSafeEqual()`]: /api/v18/crypto#cryptotimingsafeequala-b
+[`dgram.connect()`]: /api/v18/dgram#socketconnectport-address-callback
+[`dgram.createSocket()`]: /api/v18/dgram#dgramcreatesocketoptions-callback
+[`dgram.disconnect()`]: /api/v18/dgram#socketdisconnect
+[`dgram.remoteAddress()`]: /api/v18/dgram#socketremoteaddress
 [`errno`(3) man page]: https://man7.org/linux/man-pages/man3/errno.3.html
-[`fs.Dir`]: (/api/fs#class-fsdir)
-[`fs.cp()`]: (/api/fs#fscpsrc-dest-options-callback)
-[`fs.readFileSync`]: (/api/fs#fsreadfilesyncpath-options)
-[`fs.readdir`]: (/api/fs#fsreaddirpath-options-callback)
-[`fs.symlink()`]: (/api/fs#fssymlinktarget-path-type-callback)
-[`fs.symlinkSync()`]: (/api/fs#fssymlinksynctarget-path-type)
-[`fs.unlink`]: (/api/fs#fsunlinkpath-callback)
-[`fs`]: (/api/fs)
-[`hash.digest()`]: (/api/crypto#hashdigestencoding)
-[`hash.update()`]: (/api/crypto#hashupdatedata-inputencoding)
-[`http`]: (/api/http)
-[`https`]: (/api/https)
+[`fs.Dir`]: /api/v18/fs#class-fsdir
+[`fs.cp()`]: /api/v18/fs#fscpsrc-dest-options-callback
+[`fs.readFileSync`]: /api/v18/fs#fsreadfilesyncpath-options
+[`fs.readdir`]: /api/v18/fs#fsreaddirpath-options-callback
+[`fs.symlink()`]: /api/v18/fs#fssymlinktarget-path-type-callback
+[`fs.symlinkSync()`]: /api/v18/fs#fssymlinksynctarget-path-type
+[`fs.unlink`]: /api/v18/fs#fsunlinkpath-callback
+[`fs`]: /api/v18/fs
+[`hash.digest()`]: /api/v18/crypto#hashdigestencoding
+[`hash.update()`]: /api/v18/crypto#hashupdatedata-inputencoding
+[`http`]: /api/v18/http
+[`https`]: /api/v18/https
 [`libuv Error handling`]: https://docs.libuv.org/en/v1.x/errors.html
-[`net`]: (/api/net)
-[`new URL(input)`]: (/api/url#new-urlinput-base)
-[`new URLSearchParams(iterable)`]: (/api/url#new-urlsearchparamsiterable)
-[`package.json`]: (/api/packages#nodejs-packagejson-field-definitions)
+[`net`]: /api/v18/net
+[`new URL(input)`]: /api/v18/url#new-urlinput-base
+[`new URLSearchParams(iterable)`]: /api/v18/url#new-urlsearchparamsiterable
+[`package.json`]: /api/v18/packages#nodejs-packagejson-field-definitions
 [`postMessage()`]: worker_threads.md#portpostmessagevalue-transferlist
-[`process.on('exit')`]: (/api/process#event-exit)
-[`process.send()`]: (/api/process#processsendmessage-sendhandle-options-callback)
-[`process.setUncaughtExceptionCaptureCallback()`]: (/api/process#processsetuncaughtexceptioncapturecallbackfn)
-[`readable._read()`]: (/api/stream#readable_readsize)
-[`require('node:crypto').setEngine()`]: (/api/crypto#cryptosetengineengine-flags)
-[`require()`]: (/api/modules#requireid)
-[`server.close()`]: (/api/net#serverclosecallback)
-[`server.listen()`]: (/api/net#serverlisten)
-[`sign.sign()`]: (/api/crypto#signsignprivatekey-outputencoding)
-[`stream.pipe()`]: (/api/stream#readablepipedestination-options)
-[`stream.push()`]: (/api/stream#readablepushchunk-encoding)
-[`stream.unshift()`]: (/api/stream#readableunshiftchunk-encoding)
-[`stream.write()`]: (/api/stream#writablewritechunk-encoding-callback)
+[`process.on('exit')`]: /api/v18/process#event-exit
+[`process.send()`]: /api/v18/process#processsendmessage-sendhandle-options-callback
+[`process.setUncaughtExceptionCaptureCallback()`]: /api/v18/process#processsetuncaughtexceptioncapturecallbackfn
+[`readable._read()`]: /api/v18/stream#readable_readsize
+[`require('node:crypto').setEngine()`]: /api/v18/crypto#cryptosetengineengine-flags
+[`require()`]: /api/v18/modules#requireid
+[`server.close()`]: /api/v18/net#serverclosecallback
+[`server.listen()`]: /api/v18/net#serverlisten
+[`sign.sign()`]: /api/v18/crypto#signsignprivatekey-outputencoding
+[`stream.pipe()`]: /api/v18/stream#readablepipedestination-options
+[`stream.push()`]: /api/v18/stream#readablepushchunk-encoding
+[`stream.unshift()`]: /api/v18/stream#readableunshiftchunk-encoding
+[`stream.write()`]: /api/v18/stream#writablewritechunk-encoding-callback
 [`subprocess.kill()`]: child_process.md#subprocesskillsignal
 [`subprocess.send()`]: child_process.md#subprocesssendmessage-sendhandle-options-callback
-[`url.parse()`]: (/api/url#urlparseurlstring-parsequerystring-slashesdenotehost)
-[`util.getSystemErrorName(error.errno)`]: (/api/util#utilgetsystemerrornameerr)
-[`util.inspect()`]: (/api/util#utilinspectobject-options)
-[`util.parseArgs()`]: (/api/util#utilparseargsconfig)
+[`url.parse()`]: /api/v18/url#urlparseurlstring-parsequerystring-slashesdenotehost
+[`util.getSystemErrorName(error.errno)`]: /api/v18/util#utilgetsystemerrornameerr
+[`util.inspect()`]: /api/v18/util#utilinspectobject-options
+[`util.parseArgs()`]: /api/v18/util#utilparseargsconfig
 [`v8.startupSnapshot.setDeserializeMainFunction()`]: v8.md#v8startupsnapshotsetdeserializemainfunctioncallback-data
-[`zlib`]: (/api/zlib)
-[crypto digest algorithm]: (/api/crypto#cryptogethashes)
-[debugger]: (/api/debugger)
-[define a custom subpath]: (/api/packages#subpath-exports)
-[domains]: (/api/domain)
-[event emitter-based]: (/api/events#class-eventemitter)
+[`zlib`]: /api/v18/zlib
+[crypto digest algorithm]: /api/v18/crypto#cryptogethashes
+[debugger]: /api/v18/debugger
+[define a custom subpath]: /api/v18/packages#subpath-exports
+[domains]: /api/v18/domain
+[event emitter-based]: /api/v18/events#class-eventemitter
 [file descriptors]: https://en.wikipedia.org/wiki/File_descriptor
-[policy]: (/api/policy)
-[self-reference a package using its name]: (/api/packages#self-referencing-a-package-using-its-name)
-[stream-based]: (/api/stream)
+[policy]: /api/v18/policy
+[self-reference a package using its name]: /api/v18/packages#self-referencing-a-package-using-its-name
+[stream-based]: /api/v18/stream
 [syscall]: https://man7.org/linux/man-pages/man2/syscalls.2.html
 [try-catch]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
-[vm]: (/api/vm)
+[vm]: /api/v18/vm

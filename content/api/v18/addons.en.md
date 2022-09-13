@@ -1377,5 +1377,5 @@ console.log(result);
 [installation instructions]: https://github.com/nodejs/node-gyp#installation
 [libuv]: https://github.com/libuv/libuv
 [node-gyp]: https://github.com/nodejs/node-gyp
-[require]: (/api/modules#requireid)
+[require]: /api/v18/modules#requireid
 [v8-docs]: https://v8docs.nodesource.com/

@@ -1026,27 +1026,27 @@ This section was moved to
   * <a id="modules_sourcemap_payload" href="module.html#sourcemappayload">`sourceMap.payload`</a>
   * <a id="modules_sourcemap_findentry_linenumber_columnnumber" href="module.html#sourcemapfindentrylinenumber-columnnumber">`sourceMap.findEntry(lineNumber, columnNumber)`</a>
 
-[Determining module system]: (/api/packages#determining-module-system)
-[ECMAScript Modules]: (/api/esm)
+[Determining module system]: /api/v18/packages#determining-module-system
+[ECMAScript Modules]: /api/v18/esm
 [GLOBAL_FOLDERS]: #loading-from-the-global-folders
-[`"main"`]: (/api/packages#main)
-[`"type"`]: (/api/packages#type)
-[`ERR_REQUIRE_ESM`]: (/api/errors#err_require_esm)
-[`ERR_UNSUPPORTED_DIR_IMPORT`]: (/api/errors#err_unsupported_dir_import)
-[`MODULE_NOT_FOUND`]: (/api/errors#module_not_found)
+[`"main"`]: /api/v18/packages#main
+[`"type"`]: /api/v18/packages#type
+[`ERR_REQUIRE_ESM`]: /api/v18/errors#err_require_esm
+[`ERR_UNSUPPORTED_DIR_IMPORT`]: /api/v18/errors#err_unsupported_dir_import
+[`MODULE_NOT_FOUND`]: /api/v18/errors#module_not_found
 [`__dirname`]: #__dirname
 [`__filename`]: #__filename
 [`import()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import
-[`module.builtinModules`]: (/api/module#modulebuiltinmodules)
+[`module.builtinModules`]: /api/v18/module#modulebuiltinmodules
 [`module.children`]: #modulechildren
 [`module.id`]: #moduleid
-[`module` core module]: (/api/module)
+[`module` core module]: /api/v18/module
 [`module` object]: #the-module-object
-[`package.json`]: (/api/packages#nodejs-packagejson-field-definitions)
-[`path.dirname()`]: (/api/path#pathdirnamepath)
+[`package.json`]: /api/v18/packages#nodejs-packagejson-field-definitions
+[`path.dirname()`]: /api/v18/path#pathdirnamepath
 [`require.main`]: #requiremain
 [exports shortcut]: #exports-shortcut
 [module resolution]: #all-together
-[native addons]: (/api/addons)
-[subpath exports]: (/api/packages#subpath-exports)
-[subpath imports]: (/api/packages#subpath-imports)
+[native addons]: /api/v18/addons
+[subpath exports]: /api/v18/packages#subpath-exports
+[subpath imports]: /api/v18/packages#subpath-imports

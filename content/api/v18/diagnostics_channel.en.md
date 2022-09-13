@@ -408,7 +408,7 @@ Emitted when a new TCP or pipe connection is received.
 
 Emitted when a new UDP socket is created.
 
-[`'uncaughtException'`]: (/api/process#event-uncaughtexception)
+[`'uncaughtException'`]: /api/v18/process#event-uncaughtexception
 [`channel.subscribe(onMessage)`]: #channelsubscribeonmessage
 [`diagnostics_channel.channel(name)`]: #diagnostics_channelchannelname
 [`diagnostics_channel.subscribe(name, onMessage)`]: #diagnostics_channelsubscribename-onmessage

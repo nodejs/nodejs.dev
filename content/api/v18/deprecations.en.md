@@ -1755,150 +1755,150 @@ Type: Documentation-only
 
 The [`--trace-atomics-wait`][] flag is deprecated.
 
-[Legacy URL API]: (/api/url#legacy-url-api)
+[Legacy URL API]: /api/v18/url#legacy-url-api
 [NIST SP 800-38D]: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38d.pdf
 [RFC 6066]: https://tools.ietf.org/html/rfc6066#section-3
-[WHATWG URL API]: (/api/url#the-whatwg-url-api)
-[`"exports"` or `"main"` entry]: (/api/packages#main-entry-point-export)
-[`--pending-deprecation`]: (/api/cli#--pending-deprecation)
-[`--throw-deprecation`]: (/api/cli#--throw-deprecation)
-[`--trace-atomics-wait`]: (/api/cli#--trace-atomics-wait)
-[`--unhandled-rejections`]: (/api/cli#--unhandled-rejectionsmode)
-[`Buffer.allocUnsafeSlow(size)`]: (/api/buffer#static-method-bufferallocunsafeslowsize)
-[`Buffer.from(array)`]: (/api/buffer#static-method-bufferfromarray)
-[`Buffer.from(buffer)`]: (/api/buffer#static-method-bufferfrombuffer)
-[`Buffer.isBuffer()`]: (/api/buffer#static-method-bufferisbufferobj)
-[`Cipher`]: (/api/crypto#class-cipher)
-[`Decipher`]: (/api/crypto#class-decipher)
-[`REPLServer.clearBufferedCommand()`]: (/api/repl#replserverclearbufferedcommand)
-[`ReadStream.open()`]: (/api/fs#class-fsreadstream)
-[`Server.getConnections()`]: (/api/net#servergetconnectionscallback)
-[`Server.listen({fd: <number>})`]: (/api/net#serverlistenhandle-backlog-callback)
-[`SlowBuffer`]: (/api/buffer#class-slowbuffer)
-[`WriteStream.open()`]: (/api/fs#class-fswritestream)
-[`assert`]: (/api/assert)
+[WHATWG URL API]: /api/v18/url#the-whatwg-url-api
+[`"exports"` or `"main"` entry]: /api/v18/packages#main-entry-point-export
+[`--pending-deprecation`]: /api/v18/cli#--pending-deprecation
+[`--throw-deprecation`]: /api/v18/cli#--throw-deprecation
+[`--trace-atomics-wait`]: /api/v18/cli#--trace-atomics-wait
+[`--unhandled-rejections`]: /api/v18/cli#--unhandled-rejectionsmode
+[`Buffer.allocUnsafeSlow(size)`]: /api/v18/buffer#static-method-bufferallocunsafeslowsize
+[`Buffer.from(array)`]: /api/v18/buffer#static-method-bufferfromarray
+[`Buffer.from(buffer)`]: /api/v18/buffer#static-method-bufferfrombuffer
+[`Buffer.isBuffer()`]: /api/v18/buffer#static-method-bufferisbufferobj
+[`Cipher`]: /api/v18/crypto#class-cipher
+[`Decipher`]: /api/v18/crypto#class-decipher
+[`REPLServer.clearBufferedCommand()`]: /api/v18/repl#replserverclearbufferedcommand
+[`ReadStream.open()`]: /api/v18/fs#class-fsreadstream
+[`Server.getConnections()`]: /api/v18/net#servergetconnectionscallback
+[`Server.listen({fd: <number>})`]: /api/v18/net#serverlistenhandle-backlog-callback
+[`SlowBuffer`]: /api/v18/buffer#class-slowbuffer
+[`WriteStream.open()`]: /api/v18/fs#class-fswritestream
+[`assert`]: /api/v18/assert
 [`asyncResource.runInAsyncScope()`]: async_context.md#asyncresourceruninasyncscopefn-thisarg-args
-[`buffer.subarray`]: (/api/buffer#bufsubarraystart-end)
+[`buffer.subarray`]: /api/v18/buffer#bufsubarraystart-end
 [`child_process`]: child_process.md
-[`clearInterval()`]: (/api/timers#clearintervaltimeout)
-[`clearTimeout()`]: (/api/timers#cleartimeouttimeout)
-[`console.error()`]: (/api/console#consoleerrordata-args)
-[`console.log()`]: (/api/console#consolelogdata-args)
-[`crypto.Certificate()` constructor]: (/api/crypto#legacy-api)
-[`crypto.DEFAULT_ENCODING`]: (/api/crypto#cryptodefault_encoding)
-[`crypto.createCipher()`]: (/api/crypto#cryptocreatecipheralgorithm-password-options)
-[`crypto.createCipheriv()`]: (/api/crypto#cryptocreatecipherivalgorithm-key-iv-options)
-[`crypto.createDecipher()`]: (/api/crypto#cryptocreatedecipheralgorithm-password-options)
-[`crypto.createDecipheriv()`]: (/api/crypto#cryptocreatedecipherivalgorithm-key-iv-options)
-[`crypto.fips`]: (/api/crypto#cryptofips)
-[`crypto.pbkdf2()`]: (/api/crypto#cryptopbkdf2password-salt-iterations-keylen-digest-callback)
-[`crypto.randomBytes()`]: (/api/crypto#cryptorandombytessize-callback)
-[`crypto.scrypt()`]: (/api/crypto#cryptoscryptpassword-salt-keylen-options-callback)
-[`decipher.final()`]: (/api/crypto#decipherfinaloutputencoding)
-[`decipher.setAuthTag()`]: (/api/crypto#deciphersetauthtagbuffer-encoding)
+[`clearInterval()`]: /api/v18/timers#clearintervaltimeout
+[`clearTimeout()`]: /api/v18/timers#cleartimeouttimeout
+[`console.error()`]: /api/v18/console#consoleerrordata-args
+[`console.log()`]: /api/v18/console#consolelogdata-args
+[`crypto.Certificate()` constructor]: /api/v18/crypto#legacy-api
+[`crypto.DEFAULT_ENCODING`]: /api/v18/crypto#cryptodefault_encoding
+[`crypto.createCipher()`]: /api/v18/crypto#cryptocreatecipheralgorithm-password-options
+[`crypto.createCipheriv()`]: /api/v18/crypto#cryptocreatecipherivalgorithm-key-iv-options
+[`crypto.createDecipher()`]: /api/v18/crypto#cryptocreatedecipheralgorithm-password-options
+[`crypto.createDecipheriv()`]: /api/v18/crypto#cryptocreatedecipherivalgorithm-key-iv-options
+[`crypto.fips`]: /api/v18/crypto#cryptofips
+[`crypto.pbkdf2()`]: /api/v18/crypto#cryptopbkdf2password-salt-iterations-keylen-digest-callback
+[`crypto.randomBytes()`]: /api/v18/crypto#cryptorandombytessize-callback
+[`crypto.scrypt()`]: /api/v18/crypto#cryptoscryptpassword-salt-keylen-options-callback
+[`decipher.final()`]: /api/v18/crypto#decipherfinaloutputencoding
+[`decipher.setAuthTag()`]: /api/v18/crypto#deciphersetauthtagbuffer-encoding
 [`diagnostics_channel.subscribe(name, onMessage)`]: diagnostics_channel.md#diagnostics_channelsubscribename-onmessage
 [`diagnostics_channel.unsubscribe(name, onMessage)`]: diagnostics_channel.md#diagnostics_channelunsubscribename-onmessage
-[`dns.lookup()`]: (/api/dns#dnslookuphostname-options-callback)
-[`dnsPromises.lookup()`]: (/api/dns#dnspromiseslookuphostname-options)
-[`domain`]: (/api/domain)
-[`ecdh.setPublicKey()`]: (/api/crypto#ecdhsetpublickeypublickey-encoding)
-[`emitter.listenerCount(eventName)`]: (/api/events#emitterlistenercounteventname)
-[`events.listenerCount(emitter, eventName)`]: (/api/events#eventslistenercountemitter-eventname)
-[`fs.FileHandle`]: (/api/fs#class-filehandle)
-[`fs.access()`]: (/api/fs#fsaccesspath-mode-callback)
-[`fs.appendFile()`]: (/api/fs#fsappendfilepath-data-options-callback)
-[`fs.appendFileSync()`]: (/api/fs#fsappendfilesyncpath-data-options)
-[`fs.createReadStream()`]: (/api/fs#fscreatereadstreampath-options)
-[`fs.createWriteStream()`]: (/api/fs#fscreatewritestreampath-options)
-[`fs.exists(path, callback)`]: (/api/fs#fsexistspath-callback)
-[`fs.lchmod(path, mode, callback)`]: (/api/fs#fslchmodpath-mode-callback)
-[`fs.lchmodSync(path, mode)`]: (/api/fs#fslchmodsyncpath-mode)
-[`fs.lchown(path, uid, gid, callback)`]: (/api/fs#fslchownpath-uid-gid-callback)
-[`fs.lchownSync(path, uid, gid)`]: (/api/fs#fslchownsyncpath-uid-gid)
-[`fs.read()`]: (/api/fs#fsreadfd-buffer-offset-length-position-callback)
-[`fs.readSync()`]: (/api/fs#fsreadsyncfd-buffer-offset-length-position)
-[`fs.stat()`]: (/api/fs#fsstatpath-options-callback)
-[`fs.write()`]: (/api/fs#fswritefd-buffer-offset-length-position-callback)
-[`fs.writeFile()`]: (/api/fs#fswritefilefile-data-options-callback)
-[`fs.writeFileSync()`]: (/api/fs#fswritefilesyncfile-data-options)
-[`http.ClientRequest`]: (/api/http#class-httpclientrequest)
-[`http.IncomingMessage`]: (/api/http#class-httpincomingmessage)
-[`http.ServerResponse`]: (/api/http#class-httpserverresponse)
-[`http.get()`]: (/api/http#httpgetoptions-callback)
-[`http.request()`]: (/api/http#httprequestoptions-callback)
-[`https.get()`]: (/api/https#httpsgetoptions-callback)
-[`https.request()`]: (/api/https#httpsrequestoptions-callback)
-[`message.connection`]: (/api/http#messageconnection)
-[`message.socket`]: (/api/http#messagesocket)
-[`module.createRequire()`]: (/api/module#modulecreaterequirefilename)
-[`os.networkInterfaces()`]: (/api/os#osnetworkinterfaces)
-[`os.tmpdir()`]: (/api/os#ostmpdir)
-[`process.env`]: (/api/process#processenv)
-[`process.exit()`]: (/api/process#processexitcode)
-[`process.getActiveResourcesInfo()`]: (/api/process#processgetactiveresourcesinfo)
-[`process.mainModule`]: (/api/process#processmainmodule)
-[`punycode`]: (/api/punycode)
-[`readable.readableEnded`]: (/api/stream#readablereadableended)
-[`request.abort()`]: (/api/http#requestabort)
-[`request.connection`]: (/api/http#requestconnection)
-[`request.destroy()`]: (/api/http#requestdestroyerror)
-[`request.socket`]: (/api/http#requestsocket)
-[`require.extensions`]: (/api/modules#requireextensions)
-[`require.main`]: (/api/modules#accessing-the-main-module)
-[`response.connection`]: (/api/http#responseconnection)
-[`response.end()`]: (/api/http#responseenddata-encoding-callback)
-[`response.finished`]: (/api/http#responsefinished)
-[`response.socket`]: (/api/http#responsesocket)
-[`response.writableEnded`]: (/api/http#responsewritableended)
-[`response.writableFinished`]: (/api/http#responsewritablefinished)
-[`script.createCachedData()`]: (/api/vm#scriptcreatecacheddata)
-[`setInterval()`]: (/api/timers#setintervalcallback-delay-args)
-[`setTimeout()`]: (/api/timers#settimeoutcallback-delay-args)
-[`socket.bufferSize`]: (/api/net#socketbuffersize)
-[`timeout.ref()`]: (/api/timers#timeoutref)
-[`timeout.refresh()`]: (/api/timers#timeoutrefresh)
-[`timeout.unref()`]: (/api/timers#timeoutunref)
-[`tls.CryptoStream`]: (/api/tls#class-tlscryptostream)
-[`tls.SecureContext`]: (/api/tls#tlscreatesecurecontextoptions)
-[`tls.SecurePair`]: (/api/tls#class-tlssecurepair)
-[`tls.TLSSocket`]: (/api/tls#class-tlstlssocket)
-[`tls.checkServerIdentity()`]: (/api/tls#tlscheckserveridentityhostname-cert)
-[`tls.createSecureContext()`]: (/api/tls#tlscreatesecurecontextoptions)
-[`url.format()`]: (/api/url#urlformaturlobject)
-[`url.parse()`]: (/api/url#urlparseurlstring-parsequerystring-slashesdenotehost)
-[`url.resolve()`]: (/api/url#urlresolvefrom-to)
-[`util._extend()`]: (/api/util#util_extendtarget-source)
-[`util.getSystemErrorName()`]: (/api/util#utilgetsystemerrornameerr)
-[`util.inspect()`]: (/api/util#utilinspectobject-options)
-[`util.inspect.custom`]: (/api/util#utilinspectcustom)
-[`util.isArray()`]: (/api/util#utilisarrayobject)
-[`util.isBoolean()`]: (/api/util#utilisbooleanobject)
-[`util.isBuffer()`]: (/api/util#utilisbufferobject)
-[`util.isDate()`]: (/api/util#utilisdateobject)
-[`util.isError()`]: (/api/util#utiliserrorobject)
-[`util.isFunction()`]: (/api/util#utilisfunctionobject)
-[`util.isNull()`]: (/api/util#utilisnullobject)
-[`util.isNullOrUndefined()`]: (/api/util#utilisnullorundefinedobject)
-[`util.isNumber()`]: (/api/util#utilisnumberobject)
-[`util.isObject()`]: (/api/util#utilisobjectobject)
-[`util.isPrimitive()`]: (/api/util#utilisprimitiveobject)
-[`util.isRegExp()`]: (/api/util#utilisregexpobject)
-[`util.isString()`]: (/api/util#utilisstringobject)
-[`util.isSymbol()`]: (/api/util#utilissymbolobject)
-[`util.isUndefined()`]: (/api/util#utilisundefinedobject)
-[`util.log()`]: (/api/util#utillogstring)
-[`util.types`]: (/api/util#utiltypes)
-[`util`]: (/api/util)
-[`worker.exitedAfterDisconnect`]: (/api/cluster#workerexitedafterdisconnect)
+[`dns.lookup()`]: /api/v18/dns#dnslookuphostname-options-callback
+[`dnsPromises.lookup()`]: /api/v18/dns#dnspromiseslookuphostname-options
+[`domain`]: /api/v18/domain
+[`ecdh.setPublicKey()`]: /api/v18/crypto#ecdhsetpublickeypublickey-encoding
+[`emitter.listenerCount(eventName)`]: /api/v18/events#emitterlistenercounteventname
+[`events.listenerCount(emitter, eventName)`]: /api/v18/events#eventslistenercountemitter-eventname
+[`fs.FileHandle`]: /api/v18/fs#class-filehandle
+[`fs.access()`]: /api/v18/fs#fsaccesspath-mode-callback
+[`fs.appendFile()`]: /api/v18/fs#fsappendfilepath-data-options-callback
+[`fs.appendFileSync()`]: /api/v18/fs#fsappendfilesyncpath-data-options
+[`fs.createReadStream()`]: /api/v18/fs#fscreatereadstreampath-options
+[`fs.createWriteStream()`]: /api/v18/fs#fscreatewritestreampath-options
+[`fs.exists(path, callback)`]: /api/v18/fs#fsexistspath-callback
+[`fs.lchmod(path, mode, callback)`]: /api/v18/fs#fslchmodpath-mode-callback
+[`fs.lchmodSync(path, mode)`]: /api/v18/fs#fslchmodsyncpath-mode
+[`fs.lchown(path, uid, gid, callback)`]: /api/v18/fs#fslchownpath-uid-gid-callback
+[`fs.lchownSync(path, uid, gid)`]: /api/v18/fs#fslchownsyncpath-uid-gid
+[`fs.read()`]: /api/v18/fs#fsreadfd-buffer-offset-length-position-callback
+[`fs.readSync()`]: /api/v18/fs#fsreadsyncfd-buffer-offset-length-position
+[`fs.stat()`]: /api/v18/fs#fsstatpath-options-callback
+[`fs.write()`]: /api/v18/fs#fswritefd-buffer-offset-length-position-callback
+[`fs.writeFile()`]: /api/v18/fs#fswritefilefile-data-options-callback
+[`fs.writeFileSync()`]: /api/v18/fs#fswritefilesyncfile-data-options
+[`http.ClientRequest`]: /api/v18/http#class-httpclientrequest
+[`http.IncomingMessage`]: /api/v18/http#class-httpincomingmessage
+[`http.ServerResponse`]: /api/v18/http#class-httpserverresponse
+[`http.get()`]: /api/v18/http#httpgetoptions-callback
+[`http.request()`]: /api/v18/http#httprequestoptions-callback
+[`https.get()`]: /api/v18/https#httpsgetoptions-callback
+[`https.request()`]: /api/v18/https#httpsrequestoptions-callback
+[`message.connection`]: /api/v18/http#messageconnection
+[`message.socket`]: /api/v18/http#messagesocket
+[`module.createRequire()`]: /api/v18/module#modulecreaterequirefilename
+[`os.networkInterfaces()`]: /api/v18/os#osnetworkinterfaces
+[`os.tmpdir()`]: /api/v18/os#ostmpdir
+[`process.env`]: /api/v18/process#processenv
+[`process.exit()`]: /api/v18/process#processexitcode
+[`process.getActiveResourcesInfo()`]: /api/v18/process#processgetactiveresourcesinfo
+[`process.mainModule`]: /api/v18/process#processmainmodule
+[`punycode`]: /api/v18/punycode
+[`readable.readableEnded`]: /api/v18/stream#readablereadableended
+[`request.abort()`]: /api/v18/http#requestabort
+[`request.connection`]: /api/v18/http#requestconnection
+[`request.destroy()`]: /api/v18/http#requestdestroyerror
+[`request.socket`]: /api/v18/http#requestsocket
+[`require.extensions`]: /api/v18/modules#requireextensions
+[`require.main`]: /api/v18/modules#accessing-the-main-module
+[`response.connection`]: /api/v18/http#responseconnection
+[`response.end()`]: /api/v18/http#responseenddata-encoding-callback
+[`response.finished`]: /api/v18/http#responsefinished
+[`response.socket`]: /api/v18/http#responsesocket
+[`response.writableEnded`]: /api/v18/http#responsewritableended
+[`response.writableFinished`]: /api/v18/http#responsewritablefinished
+[`script.createCachedData()`]: /api/v18/vm#scriptcreatecacheddata
+[`setInterval()`]: /api/v18/timers#setintervalcallback-delay-args
+[`setTimeout()`]: /api/v18/timers#settimeoutcallback-delay-args
+[`socket.bufferSize`]: /api/v18/net#socketbuffersize
+[`timeout.ref()`]: /api/v18/timers#timeoutref
+[`timeout.refresh()`]: /api/v18/timers#timeoutrefresh
+[`timeout.unref()`]: /api/v18/timers#timeoutunref
+[`tls.CryptoStream`]: /api/v18/tls#class-tlscryptostream
+[`tls.SecureContext`]: /api/v18/tls#tlscreatesecurecontextoptions
+[`tls.SecurePair`]: /api/v18/tls#class-tlssecurepair
+[`tls.TLSSocket`]: /api/v18/tls#class-tlstlssocket
+[`tls.checkServerIdentity()`]: /api/v18/tls#tlscheckserveridentityhostname-cert
+[`tls.createSecureContext()`]: /api/v18/tls#tlscreatesecurecontextoptions
+[`url.format()`]: /api/v18/url#urlformaturlobject
+[`url.parse()`]: /api/v18/url#urlparseurlstring-parsequerystring-slashesdenotehost
+[`url.resolve()`]: /api/v18/url#urlresolvefrom-to
+[`util._extend()`]: /api/v18/util#util_extendtarget-source
+[`util.getSystemErrorName()`]: /api/v18/util#utilgetsystemerrornameerr
+[`util.inspect()`]: /api/v18/util#utilinspectobject-options
+[`util.inspect.custom`]: /api/v18/util#utilinspectcustom
+[`util.isArray()`]: /api/v18/util#utilisarrayobject
+[`util.isBoolean()`]: /api/v18/util#utilisbooleanobject
+[`util.isBuffer()`]: /api/v18/util#utilisbufferobject
+[`util.isDate()`]: /api/v18/util#utilisdateobject
+[`util.isError()`]: /api/v18/util#utiliserrorobject
+[`util.isFunction()`]: /api/v18/util#utilisfunctionobject
+[`util.isNull()`]: /api/v18/util#utilisnullobject
+[`util.isNullOrUndefined()`]: /api/v18/util#utilisnullorundefinedobject
+[`util.isNumber()`]: /api/v18/util#utilisnumberobject
+[`util.isObject()`]: /api/v18/util#utilisobjectobject
+[`util.isPrimitive()`]: /api/v18/util#utilisprimitiveobject
+[`util.isRegExp()`]: /api/v18/util#utilisregexpobject
+[`util.isString()`]: /api/v18/util#utilisstringobject
+[`util.isSymbol()`]: /api/v18/util#utilissymbolobject
+[`util.isUndefined()`]: /api/v18/util#utilisundefinedobject
+[`util.log()`]: /api/v18/util#utillogstring
+[`util.types`]: /api/v18/util#utiltypes
+[`util`]: /api/v18/util
+[`worker.exitedAfterDisconnect`]: /api/v18/cluster#workerexitedafterdisconnect
 [`worker.terminate()`]: worker_threads.md#workerterminate
-[`writable.writableLength`]: (/api/stream#writablewritablelength)
-[`zlib.bytesWritten`]: (/api/zlib#zlibbyteswritten)
-[alloc]: (/api/buffer#static-method-bufferallocsize-fill-encoding)
-[alloc_unsafe_size]: (/api/buffer#static-method-bufferallocunsafesize)
-[from_arraybuffer]: (/api/buffer#static-method-bufferfromarraybuffer-byteoffset-length)
-[from_string_encoding]: (/api/buffer#static-method-bufferfromstring-encoding)
-[legacy `urlObject`]: (/api/url#legacy-urlobject)
-[static methods of `crypto.Certificate()`]: (/api/crypto#class-certificate)
-[subpath exports]: (/api/packages#subpath-exports)
-[subpath imports]: (/api/packages#subpath-imports)
-[subpath patterns]: (/api/packages#subpath-patterns)
+[`writable.writableLength`]: /api/v18/stream#writablewritablelength
+[`zlib.bytesWritten`]: /api/v18/zlib#zlibbyteswritten
+[alloc]: /api/v18/buffer#static-method-bufferallocsize-fill-encoding
+[alloc_unsafe_size]: /api/v18/buffer#static-method-bufferallocunsafesize
+[from_arraybuffer]: /api/v18/buffer#static-method-bufferfromarraybuffer-byteoffset-length
+[from_string_encoding]: /api/v18/buffer#static-method-bufferfromstring-encoding
+[legacy `urlObject`]: /api/v18/url#legacy-urlobject
+[static methods of `crypto.Certificate()`]: /api/v18/crypto#class-certificate
+[subpath exports]: /api/v18/packages#subpath-exports
+[subpath imports]: /api/v18/packages#subpath-imports
+[subpath patterns]: /api/v18/packages#subpath-patterns

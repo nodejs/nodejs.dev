@@ -3547,36 +3547,36 @@ cases:
 [Advanced serialization for `child_process`]: child_process.md#advanced-serialization
 [Android building]: https://github.com/nodejs/node/blob/HEAD/BUILDING.md#androidandroid-based-devices-eg-firefox-os
 [Child Process]: child_process.md
-[Cluster]: (/api/cluster)
-[Duplex]: (/api/stream#duplex-and-transform-streams)
+[Cluster]: /api/v18/cluster
+[Duplex]: /api/v18/stream#duplex-and-transform-streams
 [Event Loop]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#process-nexttick
 [LTS]: https://github.com/nodejs/Release
-[Readable]: (/api/stream#readable-streams)
+[Readable]: /api/v18/stream#readable-streams
 [Signal Events]: #signal-events
 [Source Map]: https://sourcemaps.info/spec.html
-[Stream compatibility]: (/api/stream#compatibility-with-older-nodejs-versions)
-[TTY]: (/api/tty#tty)
-[Writable]: (/api/stream#writable-streams)
+[Stream compatibility]: /api/v18/stream#compatibility-with-older-nodejs-versions
+[TTY]: /api/v18/tty#tty
+[Writable]: /api/v18/stream#writable-streams
 [`'exit'`]: #event-exit
 [`'message'`]: child_process.md#event-message
 [`'uncaughtException'`]: #event-uncaughtexception
-[`--unhandled-rejections`]: (/api/cli#--unhandled-rejectionsmode)
-[`Buffer`]: (/api/buffer)
+[`--unhandled-rejections`]: /api/v18/cli#--unhandled-rejectionsmode
+[`Buffer`]: /api/v18/buffer
 [`ChildProcess.disconnect()`]: child_process.md#subprocessdisconnect
 [`ChildProcess.send()`]: child_process.md#subprocesssendmessage-sendhandle-options-callback
 [`ChildProcess`]: child_process.md#class-childprocess
-[`Error`]: (/api/errors#class-error)
-[`EventEmitter`]: (/api/events#class-eventemitter)
-[`NODE_OPTIONS`]: (/api/cli#node_optionsoptions)
+[`Error`]: /api/v18/errors#class-error
+[`EventEmitter`]: /api/v18/events#class-eventemitter
+[`NODE_OPTIONS`]: /api/v18/cli#node_optionsoptions
 [`Promise.race()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race
 [`Worker`]: worker_threads.md#class-worker
 [`Worker` constructor]: worker_threads.md#new-workerfilename-options
-[`console.error()`]: (/api/console#consoleerrordata-args)
-[`console.log()`]: (/api/console#consolelogdata-args)
-[`domain`]: (/api/domain)
-[`net.Server`]: (/api/net#class-netserver)
-[`net.Socket`]: (/api/net#class-netsocket)
-[`os.constants.dlopen`]: (/api/os#dlopen-constants)
+[`console.error()`]: /api/v18/console#consoleerrordata-args
+[`console.log()`]: /api/v18/console#consolelogdata-args
+[`domain`]: /api/v18/domain
+[`net.Server`]: /api/v18/net#class-netserver
+[`net.Socket`]: /api/v18/net#class-netsocket
+[`os.constants.dlopen`]: /api/v18/os#dlopen-constants
 [`process.argv`]: #processargv
 [`process.config`]: #processconfig
 [`process.execPath`]: #processexecpath
@@ -3587,20 +3587,20 @@ cases:
 [`process.kill()`]: #processkillpid-signal
 [`process.setUncaughtExceptionCaptureCallback()`]: #processsetuncaughtexceptioncapturecallbackfn
 [`promise.catch()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch
-[`queueMicrotask()`]: (/api/globals#queuemicrotaskcallback)
-[`readable.read()`]: (/api/stream#readablereadsize)
-[`require()`]: (/api/globals#require)
-[`require.main`]: (/api/modules#accessing-the-main-module)
+[`queueMicrotask()`]: /api/v18/globals#queuemicrotaskcallback
+[`readable.read()`]: /api/v18/stream#readablereadsize
+[`require()`]: /api/v18/globals#require
+[`require.main`]: /api/v18/modules#accessing-the-main-module
 [`subprocess.kill()`]: child_process.md#subprocesskillsignal
 [`v8.setFlagsFromString()`]: v8.md#v8setflagsfromstringflags
-[debugger]: (/api/debugger)
-[deprecation code]: (/api/deprecations)
+[debugger]: /api/v18/debugger
+[deprecation code]: /api/v18/deprecations
 [note on process I/O]: #a-note-on-process-io
 [process.cpuUsage]: #processcpuusagepreviousvalue
 [process_emit_warning]: #processemitwarningwarning-type-code-ctor
 [process_warning]: #event-warning
-[report documentation]: (/api/report)
-[terminal raw mode]: (/api/tty#readstreamsetrawmodemode)
+[report documentation]: /api/v18/report
+[terminal raw mode]: /api/v18/tty#readstreamsetrawmodemode
 [uv_rusage_t]: https://docs.libuv.org/en/v1.x/misc.html#c.uv_rusage_t
 [wikipedia_major_fault]: https://en.wikipedia.org/wiki/Page_fault#Major
 [wikipedia_minor_fault]: https://en.wikipedia.org/wiki/Page_fault#Minor

@@ -5241,14 +5241,14 @@ See the [list of SSL OP Flags][] for details.
 [RFC 4122]: https://www.rfc-editor.org/rfc/rfc4122.txt
 [RFC 5208]: https://www.rfc-editor.org/rfc/rfc5208.txt
 [RFC 5280]: https://www.rfc-editor.org/rfc/rfc5280.txt
-[Web Crypto API documentation]: (/api/webcrypto)
+[Web Crypto API documentation]: /api/v18/webcrypto
 [`BN_is_prime_ex`]: https://www.openssl.org/docs/man1.1.1/man3/BN_is_prime_ex.html
-[`Buffer`]: (/api/buffer)
+[`Buffer`]: /api/v18/buffer
 [`EVP_BytesToKey`]: https://www.openssl.org/docs/man1.1.0/crypto/EVP_BytesToKey.html
 [`KeyObject`]: #class-keyobject
 [`Sign`]: #class-sign
 [`String.prototype.normalize()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize
-[`UV_THREADPOOL_SIZE`]: (/api/cli#uv_threadpool_sizesize)
+[`UV_THREADPOOL_SIZE`]: /api/v18/cli#uv_threadpool_sizesize
 [`Verify`]: #class-verify
 [`cipher.final()`]: #cipherfinaloutputencoding
 [`cipher.update()`]: #cipherupdatedata-inputencoding-outputencoding
@@ -5275,8 +5275,8 @@ See the [list of SSL OP Flags][] for details.
 [`crypto.randomBytes()`]: #cryptorandombytessize-callback
 [`crypto.randomFill()`]: #cryptorandomfillbuffer-offset-size-callback
 [`crypto.scrypt()`]: #cryptoscryptpassword-salt-keylen-options-callback
-[`crypto.webcrypto.getRandomValues()`]: (/api/webcrypto#cryptogetrandomvaluestypedarray)
-[`crypto.webcrypto.subtle`]: (/api/webcrypto#class-subtlecrypto)
+[`crypto.webcrypto.getRandomValues()`]: /api/v18/webcrypto#cryptogetrandomvaluestypedarray
+[`crypto.webcrypto.subtle`]: /api/v18/webcrypto#class-subtlecrypto
 [`decipher.final()`]: #decipherfinaloutputencoding
 [`decipher.update()`]: #decipherupdatedata-inputencoding-outputencoding
 [`diffieHellman.setPublicKey()`]: #diffiehellmansetpublickeypublickey-encoding
@@ -5291,20 +5291,20 @@ See the [list of SSL OP Flags][] for details.
 [`postMessage()`]: worker_threads.md#portpostmessagevalue-transferlist
 [`sign.sign()`]: #signsignprivatekey-outputencoding
 [`sign.update()`]: #signupdatedata-inputencoding
-[`stream.Writable` options]: (/api/stream#new-streamwritableoptions)
-[`stream.transform` options]: (/api/stream#new-streamtransformoptions)
-[`util.promisify()`]: (/api/util#utilpromisifyoriginal)
+[`stream.Writable` options]: /api/v18/stream#new-streamwritableoptions
+[`stream.transform` options]: /api/v18/stream#new-streamtransformoptions
+[`util.promisify()`]: /api/v18/util#utilpromisifyoriginal
 [`verify.update()`]: #verifyupdatedata-inputencoding
 [`verify.verify()`]: #verifyverifyobject-signature-signatureencoding
 [`x509.fingerprint256`]: #x509fingerprint256
 [caveats when using strings as inputs to cryptographic APIs]: #using-strings-as-inputs-to-cryptographic-apis
-[certificate object]: (/api/tls#certificate-object)
-[encoding]: (/api/buffer#buffers-and-character-encodings)
+[certificate object]: /api/v18/tls#certificate-object
+[encoding]: /api/v18/buffer#buffers-and-character-encodings
 [initialization vector]: https://en.wikipedia.org/wiki/Initialization_vector
-[legacy provider]: (/api/cli#--openssl-legacy-provider)
+[legacy provider]: /api/v18/cli#--openssl-legacy-provider
 [list of SSL OP Flags]: https://wiki.openssl.org/index.php/List_of_SSL_OP_Flags#Table_of_Options
 [modulo bias]: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#Modulo_bias
 [safe integers]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger
 [scrypt]: https://en.wikipedia.org/wiki/Scrypt
-[stream]: (/api/stream)
-[stream-writable-write]: (/api/stream#writablewritechunk-encoding-callback)
+[stream]: /api/v18/stream
+[stream-writable-write]: /api/v18/stream#writablewritechunk-encoding-callback

@@ -513,12 +513,12 @@ This method does not display anything unless used in the inspector. The
 [`console.profileEnd()`]: #consoleprofileendlabel
 [`console.time()`]: #consoletimelabel
 [`console.timeEnd()`]: #consoletimeendlabel
-[`process.stderr`]: (/api/process#processstderr)
-[`process.stdout`]: (/api/process#processstdout)
-[`util.format()`]: (/api/util#utilformatformat-args)
-[`util.inspect()`]: (/api/util#utilinspectobject-options)
-[customizing `util.inspect()` colors]: (/api/util#customizing-utilinspect-colors)
+[`process.stderr`]: /api/v18/process#processstderr
+[`process.stdout`]: /api/v18/process#processstdout
+[`util.format()`]: /api/v18/util#utilformatformat-args
+[`util.inspect()`]: /api/v18/util#utilinspectobject-options
+[customizing `util.inspect()` colors]: /api/v18/util#customizing-utilinspect-colors
 [falsy]: https://developer.mozilla.org/en-US/docs/Glossary/Falsy
-[inspector]: (/api/debugger)
-[note on process I/O]: (/api/process#a-note-on-process-io)
+[inspector]: /api/v18/debugger
+[note on process I/O]: /api/v18/process#a-note-on-process-io
 [truthy]: https://developer.mozilla.org/en-US/docs/Glossary/Truthy
