@@ -14,29 +14,12 @@
   z-index: 998;
 
   @media (max-width: 900px) {
-    height: auto;
-    left: 0;
-    max-height: 42px;
+    transition: all .5s cubic-bezier(.23,1,.32,1);
+    height: 42px;
     max-width: unset;
     overflow: hidden;
-    position: fixed;
-    right: 0;
-    top: calc(var(--nav-height) * 2);
-
-    > :last-child {
-      padding-bottom: 2.4rem;
-    }
-
-    &::before {
-      background-color: var(--color-fill-side-nav);
-      content: '';
-      height: 60px;
-      margin-bottom: -92px;
-      position: fixed;
-      top: var(--nav-height);
-      width: 110%;
-      z-index: 100;
-    }
+    position: relative;
+    top: 0;
   }
 
   &__open,
@@ -93,22 +76,18 @@
   &--fixed,
   &%--fixed {
     @media (max-width: 900px) {
-      height: auto;
-      max-height: calc(100% - var(--nav-height));
-      overflow: visible;
+      height: 100vh;
+      overflow-x: hidden;
       overflow-y: scroll;
-      padding-bottom: var(--space-20);
-      position: fixed;
-      top: var(--nav-height);
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
   }
 
   &--fixed &__open {
     background-color: transparent;
     color: transparent;
-    margin-bottom: -35px;
-    margin-top: 16px;
-    top: calc(var(--nav-height) + 1.6rem);
 
     &::before {
       transform: rotate(-45deg);
