@@ -62,7 +62,8 @@ function createNavigationCreator({ version, name }) {
     type === 'module' ? '' : `#${createSlug(title)}`;
 
   return {
-    getNavigationEntries: () => navigationEntriesForFile,
+    getNavigationEntries: () =>
+      navigationEntriesForFile.sort((a, b) => a.slug.localeCompare(b.slug)),
     navigationCreator: () => {
       const metadataTypes = [];
       const headings = [];
