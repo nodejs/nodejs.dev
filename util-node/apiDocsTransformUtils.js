@@ -246,9 +246,9 @@ function replaceMarkdownMetadata(metadata, navigationCreator) {
 }
 
 // This utility fixes URL references from `.md` files directly to the /api/ path
-function replaceUrlReferences() {
+function replaceUrlReferences(metadata) {
   return (_, reference, file, hash) =>
-    `${reference} (${apiPath}${file}${hash || ''})`;
+    `${reference} ${apiPath}${metadata.version}/${file}${hash || ''}`;
 }
 
 function calculateCodeBlockIntersection() {
@@ -333,11 +333,25 @@ function createMarkdownParser(markdownContent, metadata) {
             return lines;
           }
 
+          const addHeadingFromPreviousLines = () => {
+            // Otherwise it might be in the previous lines (Maximum depth of 3)
+            // As the header should be on maximum 3 levels away from the current item
+            // We use index + 1 as reference for markdownContents as the firstLine is not part
+            // of the markdownContents array
+            navigation.addHeading(index > 1 ? markdownContents[index - 2] : '');
+            navigation.addHeading(index > 2 ? markdownContents[index - 3] : '');
+            navigation.create();
+          };
+
           // In this case the lines are either a YAML metadata or a code block
           if (lines.startsWith('<!--') || lines.startsWith('<pre>')) {
-            return lines
+            const parsedLines = lines
               .replace(FEATURES_REGEX.removePreCodes, codeTags)
               .replace(FEATURES_REGEX.metadataComponents, metadataComponents);
+
+            addHeadingFromPreviousLines();
+
+            return parsedLines;
           }
 
           // If the current item is a Heading then we add it itself
@@ -365,13 +379,7 @@ function createMarkdownParser(markdownContent, metadata) {
             .replace(FEATURES_REGEX.stabilityIndex, stabilityIndex)
             .replace(FEATURES_REGEX.markdownFootnoteUrls, urlReferences);
 
-          // Otherwise it might be in the previous lines (Maximum depth of 3)
-          // As the header should be on maximum 3 levels away from the current item
-          // We use index + 1 as reference for markdownContents as the firstLine is not part
-          // of the markdownContents array
-          navigation.addHeading(index > 1 ? markdownContents[index - 2] : '');
-          navigation.addHeading(index > 2 ? markdownContents[index - 3] : '');
-          navigation.create();
+          addHeadingFromPreviousLines();
 
           return parsedLines;
         }
