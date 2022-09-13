@@ -14,12 +14,12 @@
   z-index: 998;
 
   @media (max-width: 900px) {
-    transition: all .5s cubic-bezier(.23,1,.32,1);
     height: 42px;
     max-width: unset;
     overflow: hidden;
     position: relative;
     top: 0;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   &__open,
