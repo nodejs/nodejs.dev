@@ -62,8 +62,7 @@ function createNavigationCreator({ version, name }) {
     type === 'module' ? '' : `#${createSlug(title)}`;
 
   return {
-    getNavigationEntries: () =>
-      navigationEntriesForFile.sort((a, b) => a.slug.localeCompare(b.slug)),
+    getNavigationEntries: () => navigationEntriesForFile,
     navigationCreator: () => {
       const metadataTypes = [];
       const headings = [];
@@ -75,7 +74,8 @@ function createNavigationCreator({ version, name }) {
         // And attempts to find pieces of either the current section or previous sections that are Headings.
         // Within the current Doc specification the Type Metadata could be at least two leves after the heading
         addType: type => metadataTypes.push(type),
-        addHeading: lines => headings.push(lines),
+        // We want to only get the first line to be added as part of the heading
+        addHeading: lines => headings.push(lines.split('\n', 1)[0]),
         create: () => {
           // As not necessarily any of these items are a heading, we want to find
           // the first one that is a heading. The order of this array is (currentIndex, currentIndex - 1, currentIndex - 2)
@@ -200,7 +200,7 @@ function cleanseCodeTags() {
 // for that section. Such as when it ws added, when it was removed, et cetera
 function replaceMarkdownMetadata(metadata, navigationCreator) {
   return (_, yamlString) => {
-    const cleanContent = yamlString.replace('YAML', '');
+    const cleanContent = yamlString.replace(/YAML| YAML/, '');
 
     const replacedContent = cleanContent
       // special validations for some non-cool formatted properties
@@ -255,11 +255,11 @@ function calculateCodeBlockIntersection() {
   let codeBlockEndingIndex = -1;
 
   return (lines, index) => {
-    const lineStartsWithACodeblock = lines.startsWith('```');
-    const lineEndsTheCodeblock = lines.endsWith('```');
+    const liensStartWithCodeBlock = lines.startsWith('```');
+    const linesEndsWithCodeBlock = lines.endsWith('```');
 
-    if (lineStartsWithACodeblock) {
-      if (!lineEndsTheCodeblock) {
+    if (liensStartWithCodeBlock) {
+      if (!linesEndsWithCodeBlock) {
         // If the current block starts with a codeblock but doesn't end with one
         // We have a multiple line code block then
         codeBlockEndingIndex = index;
@@ -272,7 +272,7 @@ function calculateCodeBlockIntersection() {
       // This means we're currently iterating inside a code block
       // We should ignore parsing all lines until we reach the
       // end of the code block
-      if (lineEndsTheCodeblock) {
+      if (linesEndsWithCodeBlock) {
         // If we have a ending code block, stop ignoring the code loop
         // And go back to normal business starting the next block
         codeBlockEndingIndex = -1;
@@ -301,14 +301,16 @@ function createMarkdownParser(markdownContent, metadata) {
   return {
     getNavigationEntries,
     parseMarkdown: () => {
-      const [firstLines, ...markdownContents] = markdownContent.split('\n\n');
+      const [, ...markdownContents] = markdownContent.split('\n\n');
 
-      const frontmatter = createApiDocsFrontmatter(firstLines, metadata);
+      const firstLine = markdownContent.split('\n', 1)[0];
+
+      const frontmatter = createApiDocsFrontmatter(firstLine, metadata);
 
       // Create Navigation for the Modules Entries
       const moduleCreator = navigationCreator();
 
-      moduleCreator.addHeading(firstLines);
+      moduleCreator.addHeading(firstLine);
       moduleCreator.addType('module');
       moduleCreator.create();
 
@@ -316,76 +318,77 @@ function createMarkdownParser(markdownContent, metadata) {
 
       // Iterate between chunks of paragraphs instead of the whole document
       // As this is way more perfomatic for regex queries
-      const [, ...parsedContent] = [firstLines, ...markdownContents].map(
-        (lines, index) => {
-          const navigation = navigationCreator();
+      const parsedContent = markdownContents.map((lines, index) => {
+        const navigation = navigationCreator();
 
-          const classEventHeading = addClassEventHeading(metadata, navigation);
+        const classEventHeading = addClassEventHeading(metadata, navigation);
 
-          const metadataComponents = replaceMarkdownMetadata(
-            metadata,
-            navigation
-          );
+        const metadataComponents = replaceMarkdownMetadata(
+          metadata,
+          navigation
+        );
 
-          // This verifies if the current lines are part of a multi-line code block
-          // This allows us to simply ignore any modification during this time
-          if (calculateBlockIntersection(lines, index)) {
-            return lines;
-          }
+        // This verifies if the current lines are part of a multi-line code block
+        // This allows us to simply ignore any modification during this time
+        if (calculateBlockIntersection(lines, index)) {
+          return lines;
+        }
 
-          const addHeadingFromPreviousLines = () => {
-            // Otherwise it might be in the previous lines (Maximum depth of 3)
-            // As the header should be on maximum 3 levels away from the current item
-            // We use index + 1 as reference for markdownContents as the firstLine is not part
-            // of the markdownContents array
-            navigation.addHeading(index > 1 ? markdownContents[index - 2] : '');
-            navigation.addHeading(index > 2 ? markdownContents[index - 3] : '');
-            navigation.create();
-          };
+        const addHeadingFromPreviousLines = () => {
+          // Otherwise it might be in the previous lines (Maximum depth of 3)
+          // As the header should be on maximum 3 levels away from the current item
+          // We use index + 1 as reference for markdownContents as the firstLine is not part
+          // of the markdownContents array
+          navigation.addHeading(index > 1 ? markdownContents[index - 2] : '');
+          navigation.addHeading(index > 2 ? markdownContents[index - 3] : '');
+          navigation.create();
+        };
 
-          // In this case the lines are either a YAML metadata or a code block
-          if (lines.startsWith('<!--') || lines.startsWith('<pre>')) {
-            const parsedLines = lines
-              .replace(FEATURES_REGEX.removePreCodes, codeTags)
-              .replace(FEATURES_REGEX.metadataComponents, metadataComponents);
-
-            addHeadingFromPreviousLines();
-
-            return parsedLines;
-          }
-
-          // If the current item is a Heading then we add it itself
-          if (lines.startsWith('#')) {
-            const parsedLines = lines
-              // This means the current line is a Heading
-              .replace(FEATURES_REGEX.increaseHeadingLevel, headingLevel)
-              .replace(FEATURES_REGEX.classEventHeading, classEventHeading);
-
-            navigation.addHeading(lines);
-            navigation.create();
-
-            return parsedLines;
-          }
-
-          if (lines.startsWith('> ')) {
-            // This means the current line is a Stability Index
-            return lines.replace(FEATURES_REGEX.stabilityIndex, stabilityIndex);
-          }
-
+        // In this case the lines are either a YAML metadata or a code block
+        if (lines.startsWith('<!--') || lines.startsWith('<pre>')) {
           const parsedLines = lines
-            // This is the last scenario where lines are text
-            .replace(FEATURES_REGEX.fixLinks, invalidLinkFormat)
-            .replace(FEATURES_REGEX.structureType, structureType)
-            .replace(FEATURES_REGEX.stabilityIndex, stabilityIndex)
-            .replace(FEATURES_REGEX.markdownFootnoteUrls, urlReferences);
+            .replace(FEATURES_REGEX.removePreCodes, codeTags)
+            .replace(FEATURES_REGEX.metadataComponents, metadataComponents);
 
           addHeadingFromPreviousLines();
 
           return parsedLines;
         }
-      );
 
-      return `${frontmatter}${parsedContent.join('\n\n')}`;
+        // If the current item is a Heading then we add it itself
+        if (lines.startsWith('#')) {
+          const parsedLines = lines
+            // This means the current line is a Heading
+            .replace(FEATURES_REGEX.increaseHeadingLevel, headingLevel)
+            .replace(FEATURES_REGEX.classEventHeading, classEventHeading);
+
+          navigation.addHeading(lines);
+          navigation.create();
+
+          return parsedLines;
+        }
+
+        if (lines.startsWith('> ')) {
+          // This means the current line is a Stability Index
+          return lines.replace(FEATURES_REGEX.stabilityIndex, stabilityIndex);
+        }
+
+        const parsedLines = lines
+          // This is the last scenario where lines are text
+          .replace(FEATURES_REGEX.fixLinks, invalidLinkFormat)
+          .replace(FEATURES_REGEX.structureType, structureType)
+          .replace(FEATURES_REGEX.stabilityIndex, stabilityIndex)
+          .replace(FEATURES_REGEX.markdownFootnoteUrls, urlReferences);
+
+        addHeadingFromPreviousLines();
+
+        return parsedLines;
+      });
+
+      // Removes empty lines to reduce the footprint of the Markdown file
+      const filteredContent = parsedContent.filter(l => l.trim().length);
+
+      return `${frontmatter}${filteredContent.join('\n\n')}`;
     },
   };
 }
