@@ -51,7 +51,7 @@ const Api = ({
   );
 
   const components = {
-    DataTag: DataTag,
+    DataTag,
     Metadata: getApiComponents({ fullVersion }),
     a: Components.ApiLink,
     h3: Components.H3,
