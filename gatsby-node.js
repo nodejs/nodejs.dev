@@ -265,7 +265,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         createNodeField({
           node,
           name: `readingTime`,
-          value: readingTime(node.rawBody),
+          value: readingTime(node.internal.content),
         });
       }
 
