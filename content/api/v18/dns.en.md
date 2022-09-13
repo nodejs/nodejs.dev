@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<MC data={{"source_link":"lib/dns.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/dns.js"}} />
 
 The `node:dns` module enables name resolution. For example, use it to look up IP
 addresses of host names.
@@ -56,9 +56,9 @@ dns.resolve4('archive.org', (err, addresses) => {
 
 See the [Implementation considerations section][] for more information.
 
-### <Tag tag="C" /> `dns.Resolver`
+### <DataTag tag="C" /> `dns.Resolver`
 
-<MC data={{"update":{"type":"added","version":["v8.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.3.0"]}}} />
 
 An independent resolver for DNS requests.
 
@@ -97,9 +97,9 @@ The following methods from the `node:dns` module are available:
 * [`resolver.reverse()`][`dns.reverse()`]
 * [`resolver.setServers()`][`dns.setServers()`]
 
-#### <Tag tag="M" /> `Resolver([options])`
+#### <DataTag tag="M" /> `Resolver([options])`
 
-<MC data={{"changes":[{"version":["v16.7.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39610","description":"The `options` object now accepts a `tries` option."},{"version":"v12.18.3","pr-url":"https://github.com/nodejs/node/pull/33472","description":"The constructor now accepts an `options` object. The single supported option is `timeout`."}],"update":{"type":"added","version":["v8.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v16.7.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39610","description":"The `options` object now accepts a `tries` option."},{"version":"v12.18.3","pr-url":"https://github.com/nodejs/node/pull/33472","description":"The constructor now accepts an `options` object. The single supported option is `timeout`."}],"update":{"type":"added","version":["v8.3.0"]}}} />
 
 Create a new resolver.
 
@@ -109,16 +109,16 @@ Create a new resolver.
   * `tries` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of tries the resolver will try contacting
     each name server before giving up. **Default:** `4`
 
-#### <Tag tag="M" /> `resolver.cancel()`
+#### <DataTag tag="M" /> `resolver.cancel()`
 
-<MC data={{"update":{"type":"added","version":["v8.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.3.0"]}}} />
 
 Cancel all outstanding DNS queries made by this resolver. The corresponding
 callbacks will be called with an error with code `ECANCELLED`.
 
-#### <Tag tag="M" /> `resolver.setLocalAddress([ipv4][, ipv6])`
+#### <DataTag tag="M" /> `resolver.setLocalAddress([ipv4][, ipv6])`
 
-<MC data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
 
 * `ipv4` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A string representation of an IPv4 address.
   **Default:** `'0.0.0.0'`
@@ -136,9 +136,9 @@ The resolver will use the v4 local address when making requests to IPv4 DNS
 servers, and the v6 local address when making requests to IPv6 DNS servers.
 The `rrtype` of resolution requests has no impact on the local address used.
 
-### <Tag tag="M" /> `dns.getServers()`
+### <DataTag tag="M" /> `dns.getServers()`
 
-<MC data={{"update":{"type":"added","version":["v0.11.3"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.3"]}}} />
 
 * Returns: string\[]
 
@@ -157,9 +157,9 @@ section if a custom port is used.
 ]
 ```
 
-### <Tag tag="M" /> `dns.lookup(hostname[, options], callback)`
+### <DataTag tag="M" /> `dns.lookup(hostname[, options], callback)`
 
-<MC data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43054","description":"For compatibility with `node:net`, when passing an option object the `family` option can be the string `'IPv4'` or the string `'IPv6'`."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/39987","description":"The `verbatim` options defaults to `true` now."},{"version":"v8.5.0","pr-url":"https://github.com/nodejs/node/pull/14731","description":"The `verbatim` option is supported now."},{"version":"v1.2.0","pr-url":"https://github.com/nodejs/node/pull/744","description":"The `all` option is supported now."}],"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43054","description":"For compatibility with `node:net`, when passing an option object the `family` option can be the string `'IPv4'` or the string `'IPv6'`."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/39987","description":"The `verbatim` options defaults to `true` now."},{"version":"v8.5.0","pr-url":"https://github.com/nodejs/node/pull/14731","description":"The `verbatim` option is supported now."},{"version":"v1.2.0","pr-url":"https://github.com/nodejs/node/pull/744","description":"The `all` option is supported now."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `options` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -230,7 +230,7 @@ is not set to `true`, it returns a `Promise` for an `Object` with `address` and
 
 #### Supported getaddrinfo flags
 
-<MC data={{"changes":[{"version":["v13.13.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32183","description":"Added support for the `dns.ALL` flag."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v13.13.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32183","description":"Added support for the `dns.ALL` flag."}]}} />
 
 The following flags can be passed as hints to [`dns.lookup()`][].
 
@@ -243,9 +243,9 @@ The following flags can be passed as hints to [`dns.lookup()`][].
 * `dns.ALL`: If `dns.V4MAPPED` is specified, return resolved IPv6 addresses as
   well as IPv4 mapped IPv6 addresses.
 
-### <Tag tag="M" /> `dns.lookupService(address, port, callback)`
+### <DataTag tag="M" /> `dns.lookupService(address, port, callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.11.14"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.11.14"]}}} />
 
 * `address` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `port` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -274,9 +274,9 @@ dns.lookupService('127.0.0.1', 22, (err, hostname, service) => {
 If this method is invoked as its [`util.promisify()`][]ed version, it returns a
 `Promise` for an `Object` with `hostname` and `service` properties.
 
-### <Tag tag="M" /> `dns.resolve(hostname[, rrtype], callback)`
+### <DataTag tag="M" /> `dns.resolve(hostname[, rrtype], callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.1.27"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.1.27"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Host name to resolve.
 * `rrtype` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Resource record type. **Default:** `'A'`.
@@ -307,9 +307,9 @@ records. The type and structure of individual results varies based on `rrtype`:
 On error, `err` is an [`Error`][] object, where `err.code` is one of the
 [DNS error codes][].
 
-### <Tag tag="M" /> `dns.resolve4(hostname[, options], callback)`
+### <DataTag tag="M" /> `dns.resolve4(hostname[, options], callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/9296","description":"This method now supports passing `options`, specifically `options.ttl`."}],"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/9296","description":"This method now supports passing `options`, specifically `options.ttl`."}],"update":{"type":"added","version":["v0.1.16"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Host name to resolve.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -326,9 +326,9 @@ Uses the DNS protocol to resolve a IPv4 addresses (`A` records) for the
 will contain an array of IPv4 addresses (e.g.
 `['74.125.79.104', '74.125.79.105', '74.125.79.106']`).
 
-### <Tag tag="M" /> `dns.resolve6(hostname[, options], callback)`
+### <DataTag tag="M" /> `dns.resolve6(hostname[, options], callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/9296","description":"This method now supports passing `options`, specifically `options.ttl`."}],"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/9296","description":"This method now supports passing `options`, specifically `options.ttl`."}],"update":{"type":"added","version":["v0.1.16"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Host name to resolve.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -344,9 +344,9 @@ Uses the DNS protocol to resolve IPv6 addresses (`AAAA` records) for the
 `hostname`. The `addresses` argument passed to the `callback` function
 will contain an array of IPv6 addresses.
 
-### <Tag tag="M" /> `dns.resolveAny(hostname, callback)`
+### <DataTag tag="M" /> `dns.resolveAny(hostname, callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}]}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -396,9 +396,9 @@ DNS server operators may choose not to respond to `ANY`
 queries. It may be better to call individual methods like [`dns.resolve4()`][],
 [`dns.resolveMx()`][], and so on. For more details, see [RFC 8482][].
 
-### <Tag tag="M" /> `dns.resolveCname(hostname, callback)`
+### <DataTag tag="M" /> `dns.resolveCname(hostname, callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.3.2"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.3.2"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -410,9 +410,9 @@ Uses the DNS protocol to resolve `CNAME` records for the `hostname`. The
 will contain an array of canonical name records available for the `hostname`
 (e.g. `['bar.example.com']`).
 
-### <Tag tag="M" /> `dns.resolveCaa(hostname, callback)`
+### <DataTag tag="M" /> `dns.resolveCaa(hostname, callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -425,9 +425,9 @@ will contain an array of certification authority authorization records
 available for the `hostname` (e.g. `[{critical: 0, iodef:
 'mailto:pki@example.com'}, {critical: 128, issue: 'pki.example.com'}]`).
 
-### <Tag tag="M" /> `dns.resolveMx(hostname, callback)`
+### <DataTag tag="M" /> `dns.resolveMx(hostname, callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.1.27"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.1.27"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -439,9 +439,9 @@ Uses the DNS protocol to resolve mail exchange records (`MX` records) for the
 contain an array of objects containing both a `priority` and `exchange`
 property (e.g. `[{priority: 10, exchange: 'mx.example.com'}, ...]`).
 
-### <Tag tag="M" /> `dns.resolveNaptr(hostname, callback)`
+### <DataTag tag="M" /> `dns.resolveNaptr(hostname, callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.9.12"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.9.12"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -472,9 +472,9 @@ function will contain an array of objects with the following properties:
 }
 ```
 
-### <Tag tag="M" /> `dns.resolveNs(hostname, callback)`
+### <DataTag tag="M" /> `dns.resolveNs(hostname, callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -486,9 +486,9 @@ Uses the DNS protocol to resolve name server records (`NS` records) for the
 contain an array of name server records available for `hostname`
 (e.g. `['ns1.example.com', 'ns2.example.com']`).
 
-### <Tag tag="M" /> `dns.resolvePtr(hostname, callback)`
+### <DataTag tag="M" /> `dns.resolvePtr(hostname, callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v6.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v6.0.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -499,9 +499,9 @@ Uses the DNS protocol to resolve pointer records (`PTR` records) for the
 `hostname`. The `addresses` argument passed to the `callback` function will
 be an array of strings containing the reply records.
 
-### <Tag tag="M" /> `dns.resolveSoa(hostname, callback)`
+### <DataTag tag="M" /> `dns.resolveSoa(hostname, callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.11.10"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.11.10"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -534,9 +534,9 @@ be an object with the following properties:
 }
 ```
 
-### <Tag tag="M" /> `dns.resolveSrv(hostname, callback)`
+### <DataTag tag="M" /> `dns.resolveSrv(hostname, callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.1.27"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.1.27"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -563,9 +563,9 @@ be an array of objects with the following properties:
 }
 ```
 
-### <Tag tag="M" /> `dns.resolveTxt(hostname, callback)`
+### <DataTag tag="M" /> `dns.resolveTxt(hostname, callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.1.27"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.1.27"]}}} />
 
 
 
@@ -583,9 +583,9 @@ two-dimensional array of the text records available for `hostname` (e.g.
 one record. Depending on the use case, these could be either joined together or
 treated separately.
 
-### <Tag tag="M" /> `dns.reverse(ip, callback)`
+### <DataTag tag="M" /> `dns.reverse(ip, callback)`
 
-<MC data={{"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.16"]}}} />
 
 * `ip` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -598,9 +598,9 @@ array of host names.
 On error, `err` is an [`Error`][] object, where `err.code` is
 one of the [DNS error codes][].
 
-### <Tag tag="M" /> `dns.setDefaultResultOrder(order)`
+### <DataTag tag="M" /> `dns.setDefaultResultOrder(order)`
 
-<MC data={{"update":{"type":"added","version":["v16.4.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.4.0","v14.18.0"]}}} />
 
 * `order` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) must be `'ipv4first'` or `'verbatim'`.
 
@@ -615,9 +615,9 @@ priority than [`--dns-result-order`][]. When using [worker threads][],
 [`dns.setDefaultResultOrder()`][] from the main thread won't affect the default
 dns orders in workers.
 
-### <Tag tag="M" /> `dns.setServers(servers)`
+### <DataTag tag="M" /> `dns.setServers(servers)`
 
-<MC data={{"update":{"type":"added","version":["v0.11.3"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.3"]}}} />
 
 * `servers` string\[] array of [RFC 5952][] formatted addresses
 
@@ -652,15 +652,15 @@ earlier ones time out or result in some other error.
 
 ### DNS promises API
 
-<MC data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/32953","description":"Exposed as `require('dns/promises')`."},{"version":["v11.14.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/26592","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/32953","description":"Exposed as `require('dns/promises')`."},{"version":["v11.14.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/26592","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v10.6.0"]}}} />
 
 The `dns.promises` API provides an alternative set of asynchronous DNS methods
 that return `Promise` objects rather than using callbacks. The API is accessible
 via `require('node:dns').promises` or `require('node:dns/promises')`.
 
-#### <Tag tag="C" /> `dnsPromises.Resolver`
+#### <DataTag tag="C" /> `dnsPromises.Resolver`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 An independent resolver for DNS requests.
 
@@ -704,16 +704,16 @@ The following methods from the `dnsPromises` API are available:
 * [`resolver.reverse()`][`dnsPromises.reverse()`]
 * [`resolver.setServers()`][`dnsPromises.setServers()`]
 
-#### <Tag tag="M" /> `resolver.cancel()`
+#### <DataTag tag="M" /> `resolver.cancel()`
 
-<MC data={{"update":{"type":"added","version":["v15.3.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.3.0","v14.17.0"]}}} />
 
 Cancel all outstanding DNS queries made by this resolver. The corresponding
 promises will be rejected with an error with the code `ECANCELLED`.
 
-#### <Tag tag="M" /> `dnsPromises.getServers()`
+#### <DataTag tag="M" /> `dnsPromises.getServers()`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * Returns: string\[]
 
@@ -732,9 +732,9 @@ section if a custom port is used.
 ]
 ```
 
-#### <Tag tag="M" /> `dnsPromises.lookup(hostname[, options])`
+#### <DataTag tag="M" /> `dnsPromises.lookup(hostname[, options])`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `options` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -797,9 +797,9 @@ dnsPromises.lookup('example.com', options).then((result) => {
 });
 ```
 
-#### <Tag tag="M" /> `dnsPromises.lookupService(address, port)`
+#### <DataTag tag="M" /> `dnsPromises.lookupService(address, port)`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `address` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `port` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -822,9 +822,9 @@ dnsPromises.lookupService('127.0.0.1', 22).then((result) => {
 });
 ```
 
-#### <Tag tag="M" /> `dnsPromises.resolve(hostname[, rrtype])`
+#### <DataTag tag="M" /> `dnsPromises.resolve(hostname[, rrtype])`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Host name to resolve.
 * `rrtype` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Resource record type. **Default:** `'A'`.
@@ -852,9 +852,9 @@ based on `rrtype`:
 On error, the `Promise` is rejected with an [`Error`][] object, where `err.code`
 is one of the [DNS error codes][].
 
-#### <Tag tag="M" /> `dnsPromises.resolve4(hostname[, options])`
+#### <DataTag tag="M" /> `dnsPromises.resolve4(hostname[, options])`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Host name to resolve.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -867,9 +867,9 @@ Uses the DNS protocol to resolve IPv4 addresses (`A` records) for the
 `hostname`. On success, the `Promise` is resolved with an array of IPv4
 addresses (e.g. `['74.125.79.104', '74.125.79.105', '74.125.79.106']`).
 
-#### <Tag tag="M" /> `dnsPromises.resolve6(hostname[, options])`
+#### <DataTag tag="M" /> `dnsPromises.resolve6(hostname[, options])`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Host name to resolve.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -882,9 +882,9 @@ Uses the DNS protocol to resolve IPv6 addresses (`AAAA` records) for the
 `hostname`. On success, the `Promise` is resolved with an array of IPv6
 addresses.
 
-#### <Tag tag="M" /> `dnsPromises.resolveAny(hostname)`
+#### <DataTag tag="M" /> `dnsPromises.resolveAny(hostname)`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -927,9 +927,9 @@ Here is an example of the result object:
     minttl: 60 } ]
 ```
 
-#### <Tag tag="M" /> `dnsPromises.resolveCaa(hostname)`
+#### <DataTag tag="M" /> `dnsPromises.resolveCaa(hostname)`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -939,9 +939,9 @@ certification authority authorization records available for the `hostname`
 (e.g. `[{critical: 0, iodef: 'mailto:pki@example.com'},{critical: 128, issue:
 'pki.example.com'}]`).
 
-#### <Tag tag="M" /> `dnsPromises.resolveCname(hostname)`
+#### <DataTag tag="M" /> `dnsPromises.resolveCname(hostname)`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -949,9 +949,9 @@ Uses the DNS protocol to resolve `CNAME` records for the `hostname`. On success,
 the `Promise` is resolved with an array of canonical name records available for
 the `hostname` (e.g. `['bar.example.com']`).
 
-#### <Tag tag="M" /> `dnsPromises.resolveMx(hostname)`
+#### <DataTag tag="M" /> `dnsPromises.resolveMx(hostname)`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -960,9 +960,9 @@ Uses the DNS protocol to resolve mail exchange records (`MX` records) for the
 containing both a `priority` and `exchange` property (e.g.
 `[{priority: 10, exchange: 'mx.example.com'}, ...]`).
 
-#### <Tag tag="M" /> `dnsPromises.resolveNaptr(hostname)`
+#### <DataTag tag="M" /> `dnsPromises.resolveNaptr(hostname)`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -990,9 +990,9 @@ of objects with the following properties:
 }
 ```
 
-#### <Tag tag="M" /> `dnsPromises.resolveNs(hostname)`
+#### <DataTag tag="M" /> `dnsPromises.resolveNs(hostname)`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1001,9 +1001,9 @@ Uses the DNS protocol to resolve name server records (`NS` records) for the
 records available for `hostname` (e.g.
 `['ns1.example.com', 'ns2.example.com']`).
 
-#### <Tag tag="M" /> `dnsPromises.resolvePtr(hostname)`
+#### <DataTag tag="M" /> `dnsPromises.resolvePtr(hostname)`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1011,9 +1011,9 @@ Uses the DNS protocol to resolve pointer records (`PTR` records) for the
 `hostname`. On success, the `Promise` is resolved with an array of strings
 containing the reply records.
 
-#### <Tag tag="M" /> `dnsPromises.resolveSoa(hostname)`
+#### <DataTag tag="M" /> `dnsPromises.resolveSoa(hostname)`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1043,9 +1043,9 @@ following properties:
 }
 ```
 
-#### <Tag tag="M" /> `dnsPromises.resolveSrv(hostname)`
+#### <DataTag tag="M" /> `dnsPromises.resolveSrv(hostname)`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1069,9 +1069,9 @@ the following properties:
 }
 ```
 
-#### <Tag tag="M" /> `dnsPromises.resolveTxt(hostname)`
+#### <DataTag tag="M" /> `dnsPromises.resolveTxt(hostname)`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1082,9 +1082,9 @@ of the text records available for `hostname` (e.g.
 one record. Depending on the use case, these could be either joined together or
 treated separately.
 
-#### <Tag tag="M" /> `dnsPromises.reverse(ip)`
+#### <DataTag tag="M" /> `dnsPromises.reverse(ip)`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `ip` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1094,9 +1094,9 @@ array of host names.
 On error, the `Promise` is rejected with an [`Error`][] object, where `err.code`
 is one of the [DNS error codes][].
 
-#### <Tag tag="M" /> `dnsPromises.setDefaultResultOrder(order)`
+#### <DataTag tag="M" /> `dnsPromises.setDefaultResultOrder(order)`
 
-<MC data={{"update":{"type":"added","version":["v16.4.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.4.0","v14.18.0"]}}} />
 
 * `order` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) must be `'ipv4first'` or `'verbatim'`.
 
@@ -1111,9 +1111,9 @@ higher priority than [`--dns-result-order`][]. When using [worker threads][],
 [`dnsPromises.setDefaultResultOrder()`][] from the main thread won't affect the
 default dns orders in workers.
 
-#### <Tag tag="M" /> `dnsPromises.setServers(servers)`
+#### <DataTag tag="M" /> `dnsPromises.setServers(servers)`
 
-<MC data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `servers` string\[] array of [RFC 5952][] formatted addresses
 
@@ -1181,7 +1181,7 @@ address (or vice versa), their behavior is quite different. These differences
 can have subtle but significant consequences on the behavior of Node.js
 programs.
 
-#### <Tag tag="M" /> `dns.lookup()`
+#### <DataTag tag="M" /> `dns.lookup()`
 
 Under the hood, [`dns.lookup()`][] uses the same operating system facilities
 as most other programs. For instance, [`dns.lookup()`][] will almost always
@@ -1203,7 +1203,7 @@ using `dns.resolve()` and using the address instead of a host name. Also, some
 networking APIs (such as [`socket.connect()`][] and [`dgram.createSocket()`][])
 allow the default resolver, `dns.lookup()`, to be replaced.
 
-#### <Tag tag="M" /> `dns.resolve()`, `dns.resolve*()`, and `dns.reverse()`
+#### <DataTag tag="M" /> `dns.resolve()`, `dns.resolve*()`, and `dns.reverse()`
 
 These functions are implemented quite differently than [`dns.lookup()`][]. They
 do not use getaddrinfo(3) and they _always_ perform a DNS query on the

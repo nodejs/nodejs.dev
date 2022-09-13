@@ -5,13 +5,13 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v0.1.25"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.1.25"]}}} />
 
-<MC data={{"stability":{"level":3,"text":" - Legacy"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy"}}} />
 
-<MC data={{"name":"querystring"}} />
+<Metadata version="v18.9.0" data={{"name":"querystring"}} />
 
-<MC data={{"source_link":"lib/querystring.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/querystring.js"}} />
 
 The `node:querystring` module provides utilities for parsing and formatting URL
 query strings. It can be accessed using:
@@ -23,21 +23,21 @@ const querystring = require('node:querystring');
 The `querystring` API is considered Legacy. While it is still maintained,
 new code should use the [`URLSearchParams`](/api/url#urlsearchparams) API instead.
 
-### <Tag tag="M" /> `querystring.decode()`
+### <DataTag tag="M" /> `querystring.decode()`
 
-<MC data={{"update":{"type":"added","version":["v0.1.99"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.99"]}}} />
 
 The `querystring.decode()` function is an alias for `querystring.parse()`.
 
-### <Tag tag="M" /> `querystring.encode()`
+### <DataTag tag="M" /> `querystring.encode()`
 
-<MC data={{"update":{"type":"added","version":["v0.1.99"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.99"]}}} />
 
 The `querystring.encode()` function is an alias for `querystring.stringify()`.
 
-### <Tag tag="M" /> `querystring.escape(str)`
+### <DataTag tag="M" /> `querystring.escape(str)`
 
-<MC data={{"update":{"type":"added","version":["v0.1.25"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.25"]}}} />
 
 * `str` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -50,9 +50,9 @@ generally not expected to be used directly. It is exported primarily to allow
 application code to provide a replacement percent-encoding implementation if
 necessary by assigning `querystring.escape` to an alternative function.
 
-### <Tag tag="M" /> `querystring.parse(str[, sep[, eq[, options]]])`
+### <DataTag tag="M" /> `querystring.parse(str[, sep[, eq[, options]]])`
 
-<MC data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10967","description":"Multiple empty entries are now parsed correctly (e.g. `&=&=`)."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6055","description":"The returned object no longer inherits from `Object.prototype`."},{"version":["v6.0.0","v4.2.4"],"pr-url":"https://github.com/nodejs/node/pull/3807","description":"The `eq` parameter may now have a length of more than `1`."}],"update":{"type":"added","version":["v0.1.25"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10967","description":"Multiple empty entries are now parsed correctly (e.g. `&=&=`)."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6055","description":"The returned object no longer inherits from `Object.prototype`."},{"version":["v6.0.0","v4.2.4"],"pr-url":"https://github.com/nodejs/node/pull/3807","description":"The `eq` parameter may now have a length of more than `1`."}],"update":{"type":"added","version":["v0.1.25"]}}} />
 
 * `str` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The URL query string to parse
 * `sep` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The substring used to delimit key and value pairs in the
@@ -96,9 +96,9 @@ querystring.parse('w=%D6%D0%CE%C4&foo=bar', null, null,
                   { decodeURIComponent: gbkDecodeURIComponent });
 ```
 
-### <Tag tag="M" /> `querystring.stringify(obj[, sep[, eq[, options]]])`
+### <DataTag tag="M" /> `querystring.stringify(obj[, sep[, eq[, options]]])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.25"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.25"]}}} />
 
 * `obj` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The object to serialize into a URL query string
 * `sep` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The substring used to delimit key and value pairs in the
@@ -137,9 +137,9 @@ querystring.stringify({ w: '中文', foo: 'bar' }, null, null,
                       { encodeURIComponent: gbkEncodeURIComponent });
 ```
 
-### <Tag tag="M" /> `querystring.unescape(str)`
+### <DataTag tag="M" /> `querystring.unescape(str)`
 
-<MC data={{"update":{"type":"added","version":["v0.1.25"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.25"]}}} />
 
 * `str` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 

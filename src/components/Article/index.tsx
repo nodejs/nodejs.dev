@@ -5,7 +5,7 @@ import { MdxLink } from 'gatsby-theme-i18n';
 import {
   PaginationInfo,
   BlogPostAuthor,
-  PageTableOfContents,
+  TableOfContentsItem,
 } from '../../types';
 import AuthorList from '../../containers/AuthorList';
 import EditLink from '../EditLink';
@@ -20,7 +20,7 @@ import styles from './index.module.scss';
 interface Props {
   title: string;
   body: string;
-  tableOfContents?: PageTableOfContents;
+  tableOfContents: TableOfContentsItem[];
   authors: string[] | BlogPostAuthor[];
   relativePath?: string;
   absolutePath?: string;
@@ -47,7 +47,7 @@ const renderBlogAuthors = (date?: string, authors?: BlogPostAuthor[]) => (
   <BlogAuthorsList date={date} authors={authors} />
 );
 
-const renderTOC = (tableOfContents?: PageTableOfContents) => (
+const renderTOC = (tableOfContents: TableOfContentsItem[]) => (
   <TableOfContents tableOfContents={tableOfContents} />
 );
 

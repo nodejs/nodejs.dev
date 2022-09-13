@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<MC data={{"name":"module"}} />
+<Metadata version="v18.9.0" data={{"name":"module"}} />
 
 CommonJS modules are the original way to package JavaScript code for Node.js.
 Node.js also supports the [ECMAScript modules][] standard used by browsers
@@ -74,7 +74,7 @@ The CommonJS module system is implemented in the [`module` core module][].
 
 ### Enabling
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 Node.js has two module systems: CommonJS modules and [ECMAScript modules][].
 
@@ -105,7 +105,7 @@ always use the ECMAScript module loader.
 
 ### Accessing the main module
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 When a file is run directly from Node.js, `require.main` is set to its
 `module`. That means that it is possible to determine whether a file has been
@@ -119,7 +119,7 @@ and the main module is out of reach.
 
 ### Package manager tips
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 The semantics of the Node.js `require()` function were designed to be general
 enough to support reasonable directory structures. Package manager programs
@@ -182,7 +182,7 @@ regarding which files are parsed as ECMAScript modules.
 
 ### All together
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 To get the exact filename that will be loaded when `require()` is called, use
 the `require.resolve()` function.
@@ -290,7 +290,7 @@ RESOLVE_ESM_MATCH(MATCH)
 
 ### Caching
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 Modules are cached after the first time they are loaded. This means (among other
 things) that every call to `require('foo')` will get exactly the same object
@@ -306,7 +306,7 @@ function.
 
 #### Module caching caveats
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 Modules are cached based on their resolved filename. Since modules may resolve
 to a different filename based on the location of the calling module (loading
@@ -321,9 +321,9 @@ irrespective of whether or not `./foo` and `./FOO` are the same file.
 
 ### Core modules
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
-<MC data={{"changes":[{"version":["v16.0.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37246","description":"Added `node:` import support to `require(...)`."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v16.0.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37246","description":"Added `node:` import support to `require(...)`."}]}} />
 
 Node.js has several modules compiled into the binary. These modules are
 described in greater detail elsewhere in this documentation.
@@ -344,7 +344,7 @@ as [`module.builtinModules`][].
 
 ### Cycles
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 When there are circular `require()` calls, a module might not have finished
 executing when it is returned.
@@ -408,7 +408,7 @@ correctly within an application.
 
 ### File modules
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 If the exact filename is not found, then Node.js will attempt to load the
 required filename with the added extensions: `.js`, `.json`, and finally
@@ -438,9 +438,9 @@ If the given path does not exist, `require()` will throw a
 
 ### Folders as modules
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
-<MC data={{"stability":{"level":3,"text":" - Legacy: Use subpath exports][] or [subpath imports instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use subpath exports][] or [subpath imports instead."}}} />
 
 There are three ways in which a folder may be passed to `require()` as
 an argument.
@@ -481,7 +481,7 @@ folders as modules, and work for both `require` and `import`.
 
 ### Loading from `node_modules` folders
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 If the module identifier passed to `require()` is not a
 [core](#core-modules) module, and does not begin with `'/'`, `'../'`, or
@@ -513,7 +513,7 @@ same module resolution semantics.
 
 ### Loading from the global folders
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 If the `NODE_PATH` environment variable is set to a colon-delimited list
 of absolute paths, then Node.js will search those paths for modules if they
@@ -547,7 +547,7 @@ folder. These will be loaded faster, and more reliably.
 
 ### The module wrapper
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 Before a module's code is executed, Node.js will wrap it with a function
 wrapper that looks like the following:
@@ -571,11 +571,11 @@ By doing this, Node.js achieves a few things:
 
 ### The module scope
 
-#### <Tag tag="M" /> `__dirname`
+#### <DataTag tag="M" /> `__dirname`
 
-<MC data={{"update":{"type":"added","version":["v0.1.27"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.27"]}}} />
 
-<MC data={{"type":"var"}} />
+<Metadata version="v18.9.0" data={{"type":"var"}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -591,11 +591,11 @@ console.log(path.dirname(__filename));
 // Prints: /Users/mjr
 ```
 
-#### <Tag tag="M" /> `__filename`
+#### <DataTag tag="M" /> `__filename`
 
-<MC data={{"update":{"type":"added","version":["v0.0.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.0.1"]}}} />
 
-<MC data={{"type":"var"}} />
+<Metadata version="v18.9.0" data={{"type":"var"}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -628,11 +628,11 @@ References to `__filename` within `b.js` will return
 `/Users/mjr/app/node_modules/b/b.js` while references to `__filename` within
 `a.js` will return `/Users/mjr/app/a.js`.
 
-#### <Tag tag="M" /> `exports`
+#### <DataTag tag="M" /> `exports`
 
-<MC data={{"update":{"type":"added","version":["v0.1.12"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.12"]}}} />
 
-<MC data={{"type":"var"}} />
+<Metadata version="v18.9.0" data={{"type":"var"}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -640,11 +640,11 @@ A reference to the `module.exports` that is shorter to type.
 See the section about the [exports shortcut][] for details on when to use
 `exports` and when to use `module.exports`.
 
-#### <Tag tag="M" /> `module`
+#### <DataTag tag="M" /> `module`
 
-<MC data={{"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.16"]}}} />
 
-<MC data={{"type":"var"}} />
+<Metadata version="v18.9.0" data={{"type":"var"}} />
 
 * [`module`](/api/modules#the-module-object)
 
@@ -652,11 +652,11 @@ A reference to the current module, see the section about the
 [`module` object][]. In particular, `module.exports` is used for defining what
 a module exports and makes available through `require()`.
 
-#### <Tag tag="M" /> `require(id)`
+#### <DataTag tag="M" /> `require(id)`
 
-<MC data={{"update":{"type":"added","version":["v0.1.13"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.13"]}}} />
 
-<MC data={{"type":"var"}} />
+<Metadata version="v18.9.0" data={{"type":"var"}} />
 
 * `id` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) module name or path
 * Returns: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) exported module content
@@ -681,9 +681,9 @@ const jsonData = require('./path/filename.json');
 const crypto = require('node:crypto');
 ```
 
-##### <Tag tag="M" /> `require.cache`
+##### <DataTag tag="M" /> `require.cache`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -710,11 +710,11 @@ assert.strictEqual(require('node:fs'), fakeFs);
 assert.strictEqual(require('node:fs'), realFs);
 ```
 
-##### <Tag tag="M" /> `require.extensions`
+##### <DataTag tag="M" /> `require.extensions`
 
-<MC data={{"update":{"type":"deprecated","version":["v0.10.6"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v0.10.6"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated"}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -734,9 +734,9 @@ program, or compiling them to JavaScript ahead of time.
 Avoid using `require.extensions`. Use could cause subtle bugs and resolving the
 extensions gets slower with each registered extension.
 
-##### <Tag tag="M" /> `require.main`
+##### <DataTag tag="M" /> `require.main`
 
-<MC data={{"update":{"type":"added","version":["v0.1.17"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.17"]}}} />
 
 * [`module`](/api/modules#the-module-object) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -772,9 +772,9 @@ Module {
      '/node_modules' ] }
 ```
 
-##### <Tag tag="M" /> `require.resolve(request[, options])`
+##### <DataTag tag="M" /> `require.resolve(request[, options])`
 
-<MC data={{"changes":[{"version":"v8.9.0","pr-url":"https://github.com/nodejs/node/pull/16397","description":"The `paths` option is now supported."}],"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.9.0","pr-url":"https://github.com/nodejs/node/pull/16397","description":"The `paths` option is now supported."}],"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * `request` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The module path to resolve.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -793,7 +793,7 @@ If the module can not be found, a `MODULE_NOT_FOUND` error is thrown.
 
 ###### `require.resolve.paths(request)`
 
-<MC data={{"update":{"type":"added","version":["v8.9.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.9.0"]}}} />
 
 * `request` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The module path whose lookup paths are being retrieved.
 * Returns: [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type)
@@ -804,11 +804,11 @@ Returns an array containing the paths searched during resolution of `request` or
 
 ### The `module` object
 
-<MC data={{"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.16"]}}} />
 
-<MC data={{"type":"var"}} />
+<Metadata version="v18.9.0" data={{"type":"var"}} />
 
-<MC data={{"name":"module"}} />
+<Metadata version="v18.9.0" data={{"name":"module"}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -817,17 +817,17 @@ representing the current module. For convenience, `module.exports` is
 also accessible via the `exports` module-global. `module` is not actually
 a global but rather local to each module.
 
-#### <Tag tag="M" /> `module.children`
+#### <DataTag tag="M" /> `module.children`
 
-<MC data={{"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.16"]}}} />
 
 * module\[]
 
 The module objects required for the first time by this one.
 
-#### <Tag tag="M" /> `module.exports`
+#### <DataTag tag="M" /> `module.exports`
 
-<MC data={{"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.16"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -878,9 +878,9 @@ const x = require('./x');
 console.log(x.a);
 ```
 
-##### <Tag tag="M" /> `exports` shortcut
+##### <DataTag tag="M" /> `exports` shortcut
 
-<MC data={{"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.16"]}}} />
 
 The `exports` variable is available within a module's file-level scope, and is
 assigned the value of `module.exports` before the module is evaluated.
@@ -925,44 +925,44 @@ function require(/* ... */) {
 }
 ```
 
-#### <Tag tag="M" /> `module.filename`
+#### <DataTag tag="M" /> `module.filename`
 
-<MC data={{"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.16"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The fully resolved filename of the module.
 
-#### <Tag tag="M" /> `module.id`
+#### <DataTag tag="M" /> `module.id`
 
-<MC data={{"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.16"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The identifier for the module. Typically this is the fully resolved
 filename.
 
-#### <Tag tag="M" /> `module.isPreloading`
+#### <DataTag tag="M" /> `module.isPreloading`
 
-<MC data={{"update":{"type":"added","version":["v15.4.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.4.0","v14.17.0"]}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` if the module is running during the Node.js preload
   phase.
 
-#### <Tag tag="M" /> `module.loaded`
+#### <DataTag tag="M" /> `module.loaded`
 
-<MC data={{"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.16"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Whether or not the module is done loading, or is in the process of
 loading.
 
-#### <Tag tag="M" /> `module.parent`
+#### <DataTag tag="M" /> `module.parent`
 
-<MC data={{"update":{"type":"deprecated","version":["v14.6.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v14.6.0","v12.19.0"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated: Please use `require.main`][] and [`module.children` instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Please use `require.main`][] and [`module.children` instead."}}} />
 
 * [`module`](/api/modules#the-module-object) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -970,26 +970,26 @@ The module that first required this one, or `null` if the current module is the
 entry point of the current process, or `undefined` if the module was loaded by
 something that is not a CommonJS module (E.G.: REPL or `import`).
 
-#### <Tag tag="M" /> `module.path`
+#### <DataTag tag="M" /> `module.path`
 
-<MC data={{"update":{"type":"added","version":["v11.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.14.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The directory name of the module. This is usually the same as the
 [`path.dirname()`][] of the [`module.id`][].
 
-#### <Tag tag="M" /> `module.paths`
+#### <DataTag tag="M" /> `module.paths`
 
-<MC data={{"update":{"type":"added","version":["v0.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.4.0"]}}} />
 
 * string\[]
 
 The search paths for the module.
 
-#### <Tag tag="M" /> `module.require(id)`
+#### <DataTag tag="M" /> `module.require(id)`
 
-<MC data={{"update":{"type":"added","version":["v0.5.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.1"]}}} />
 
 * `id` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) exported module content

@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<MC data={{"source_link":"lib/cluster.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/cluster.js"}} />
 
 Clusters of Node.js processes can be used to run multiple instances of Node.js
 that can distribute workloads among their application threads. When process
@@ -94,7 +94,7 @@ On Windows, it is not yet possible to set up a named pipe server in a worker.
 
 ### How it works
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 The worker processes are spawned using the [`child_process.fork()`][] method,
 so that they can communicate with the parent via IPC and pass server
@@ -151,9 +151,9 @@ responsibility to manage the worker pool based on its own needs.
 Although a primary use case for the `node:cluster` module is networking, it can
 also be used for other use cases requiring worker processes.
 
-### <Tag tag="C" /> `Worker`
+### <DataTag tag="C" /> `Worker`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * Extends: [`EventEmitter`](/api/events#eventemitter)
 
@@ -161,9 +161,9 @@ A `Worker` object contains all public information and method about a worker.
 In the primary it can be obtained using `cluster.workers`. In a worker
 it can be obtained using `cluster.worker`.
 
-#### <Tag tag="E" /> `'disconnect'`
+#### <DataTag tag="E" /> `'disconnect'`
 
-<MC data={{"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
 
 Similar to the `cluster.on('disconnect')` event, but specific to this worker.
 
@@ -173,17 +173,17 @@ cluster.fork().on('disconnect', () => {
 });
 ```
 
-#### <Tag tag="E" /> `'error'`
+#### <DataTag tag="E" /> `'error'`
 
-<MC data={{"update":{"type":"added","version":["v0.7.3"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.3"]}}} />
 
 This event is the same as the one provided by [`child_process.fork()`][].
 
 Within a worker, `process.on('error')` may also be used.
 
-#### <Tag tag="E" /> `'exit'`
+#### <DataTag tag="E" /> `'exit'`
 
-<MC data={{"update":{"type":"added","version":["v0.11.2"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.2"]}}} />
 
 * `code` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The exit code, if it exited normally.
 * `signal` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name of the signal (e.g. `'SIGHUP'`) that caused
@@ -225,9 +225,9 @@ if (cluster.isPrimary) {
 }
 ```
 
-#### <Tag tag="E" /> `'listening'`
+#### <DataTag tag="E" /> `'listening'`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * `address` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -247,9 +247,9 @@ cluster.fork().on('listening', (address) => {
 
 It is not emitted in the worker.
 
-#### <Tag tag="E" /> `'message'`
+#### <DataTag tag="E" /> `'message'`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * `message` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `handle` [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -350,9 +350,9 @@ if (cluster.isPrimary) {
 }
 ```
 
-#### <Tag tag="E" /> `'online'`
+#### <DataTag tag="E" /> `'online'`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 Similar to the `cluster.on('online')` event, but specific to this worker.
 
@@ -364,9 +364,9 @@ cluster.fork().on('online', () => {
 
 It is not emitted in the worker.
 
-#### <Tag tag="M" /> `worker.disconnect()`
+#### <DataTag tag="M" /> `worker.disconnect()`
 
-<MC data={{"changes":[{"version":"v7.3.0","pr-url":"https://github.com/nodejs/node/pull/10019","description":"This method now returns a reference to `worker`."}],"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v7.3.0","pr-url":"https://github.com/nodejs/node/pull/10019","description":"This method now returns a reference to `worker`."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * Returns: [`cluster.Worker`](/api/cluster#worker) A reference to `worker`.
 
@@ -429,9 +429,9 @@ if (cluster.isPrimary) {
 }
 ```
 
-#### <Tag tag="M" /> `worker.exitedAfterDisconnect`
+#### <DataTag tag="M" /> `worker.exitedAfterDisconnect`
 
-<MC data={{"update":{"type":"added","version":["v6.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -454,9 +454,9 @@ cluster.on('exit', (worker, code, signal) => {
 worker.kill();
 ```
 
-#### <Tag tag="M" /> `worker.id`
+#### <DataTag tag="M" /> `worker.id`
 
-<MC data={{"update":{"type":"added","version":["v0.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.8.0"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -466,17 +466,17 @@ Each new worker is given its own unique id, this id is stored in the
 While a worker is alive, this is the key that indexes it in
 `cluster.workers`.
 
-#### <Tag tag="M" /> `worker.isConnected()`
+#### <DataTag tag="M" /> `worker.isConnected()`
 
-<MC data={{"update":{"type":"added","version":["v0.11.14"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.14"]}}} />
 
 This function returns `true` if the worker is connected to its primary via its
 IPC channel, `false` otherwise. A worker is connected to its primary after it
 has been created. It is disconnected after the `'disconnect'` event is emitted.
 
-#### <Tag tag="M" /> `worker.isDead()`
+#### <DataTag tag="M" /> `worker.isDead()`
 
-<MC data={{"update":{"type":"added","version":["v0.11.14"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.14"]}}} />
 
 This function returns `true` if the worker's process has terminated (either
 because of exiting or being signaled). Otherwise, it returns `false`.
@@ -545,9 +545,9 @@ if (cluster.isPrimary) {
 }
 ```
 
-#### <Tag tag="M" /> `worker.kill([signal])`
+#### <DataTag tag="M" /> `worker.kill([signal])`
 
-<MC data={{"update":{"type":"added","version":["v0.9.12"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.12"]}}} />
 
 * `signal` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Name of the kill signal to send to the worker
   process. **Default:** `'SIGTERM'`
@@ -564,9 +564,9 @@ This method is aliased as `worker.destroy()` for backwards compatibility.
 In a worker, `process.kill()` exists, but it is not this function;
 it is [`kill()`][].
 
-#### <Tag tag="M" /> `worker.process`
+#### <DataTag tag="M" /> `worker.process`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * [`ChildProcess`](/api/child_process#childprocess)
 
@@ -580,9 +580,9 @@ Workers will call `process.exit(0)` if the `'disconnect'` event occurs
 on `process` and `.exitedAfterDisconnect` is not `true`. This protects against
 accidental disconnection.
 
-#### <Tag tag="M" /> `worker.send(message[, sendHandle[, options]][, callback])`
+#### <DataTag tag="M" /> `worker.send(message[, sendHandle[, options]][, callback])`
 
-<MC data={{"changes":[{"version":"v4.0.0","pr-url":"https://github.com/nodejs/node/pull/2620","description":"The `callback` parameter is supported now."}],"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v4.0.0","pr-url":"https://github.com/nodejs/node/pull/2620","description":"The `callback` parameter is supported now."}],"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * `message` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `sendHandle` [`Handle`](/api/net#serverlistenhandle-backlog-callback)
@@ -617,9 +617,9 @@ if (cluster.isPrimary) {
 }
 ```
 
-### <Tag tag="E" /> `'disconnect'`
+### <DataTag tag="E" /> `'disconnect'`
 
-<MC data={{"update":{"type":"added","version":["v0.7.9"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.9"]}}} />
 
 * `worker` [`cluster.Worker`](/api/cluster#worker)
 
@@ -637,9 +637,9 @@ cluster.on('disconnect', (worker) => {
 });
 ```
 
-### <Tag tag="E" /> `'exit'`
+### <DataTag tag="E" /> `'exit'`
 
-<MC data={{"update":{"type":"added","version":["v0.7.9"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.9"]}}} />
 
 * `worker` [`cluster.Worker`](/api/cluster#worker)
 * `code` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The exit code, if it exited normally.
@@ -660,9 +660,9 @@ cluster.on('exit', (worker, code, signal) => {
 
 See [`child_process` event: `'exit'`][].
 
-### <Tag tag="E" /> `'fork'`
+### <DataTag tag="E" /> `'fork'`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * `worker` [`cluster.Worker`](/api/cluster#worker)
 
@@ -687,9 +687,9 @@ cluster.on('exit', (worker, code, signal) => {
 });
 ```
 
-### <Tag tag="E" /> `'listening'`
+### <DataTag tag="E" /> `'listening'`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * `worker` [`cluster.Worker`](/api/cluster#worker)
 * `address` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -717,9 +717,9 @@ The `addressType` is one of:
 * `-1` (Unix domain socket)
 * `'udp4'` or `'udp6'` (UDPv4 or UDPv6)
 
-### <Tag tag="E" /> `'message'`
+### <DataTag tag="E" /> `'message'`
 
-<MC data={{"changes":[{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5361","description":"The `worker` parameter is passed now; see below for details."}],"update":{"type":"added","version":["v2.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5361","description":"The `worker` parameter is passed now; see below for details."}],"update":{"type":"added","version":["v2.5.0"]}}} />
 
 * `worker` [`cluster.Worker`](/api/cluster#worker)
 * `message` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -729,9 +729,9 @@ Emitted when the cluster primary receives a message from any worker.
 
 See [`child_process` event: `'message'`][].
 
-### <Tag tag="E" /> `'online'`
+### <DataTag tag="E" /> `'online'`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * `worker` [`cluster.Worker`](/api/cluster#worker)
 
@@ -746,9 +746,9 @@ cluster.on('online', (worker) => {
 });
 ```
 
-### <Tag tag="E" /> `'setup'`
+### <DataTag tag="E" /> `'setup'`
 
-<MC data={{"update":{"type":"added","version":["v0.7.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.1"]}}} />
 
 * `settings` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -760,9 +760,9 @@ The `settings` object is the `cluster.settings` object at the time
 
 If accuracy is important, use `cluster.settings`.
 
-### <Tag tag="M" /> `cluster.disconnect([callback])`
+### <DataTag tag="M" /> `cluster.disconnect([callback])`
 
-<MC data={{"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called when all workers are disconnected and handles are
   closed.
@@ -777,9 +777,9 @@ finished.
 
 This can only be called from the primary process.
 
-### <Tag tag="M" /> `cluster.fork([env])`
+### <DataTag tag="M" /> `cluster.fork([env])`
 
-<MC data={{"update":{"type":"added","version":["v0.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.6.0"]}}} />
 
 * `env` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Key/value pairs to add to worker process environment.
 * Returns: [`cluster.Worker`](/api/cluster#worker)
@@ -788,15 +788,15 @@ Spawn a new worker process.
 
 This can only be called from the primary process.
 
-### <Tag tag="M" /> `cluster.isMaster`
+### <DataTag tag="M" /> `cluster.isMaster`
 
-<MC data={{"update":{"type":"deprecated","version":["v16.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v16.0.0"]}}} />
 
 Deprecated alias for [`cluster.isPrimary`][].
 
-### <Tag tag="M" /> `cluster.isPrimary`
+### <DataTag tag="M" /> `cluster.isPrimary`
 
-<MC data={{"update":{"type":"added","version":["v16.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.0.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -804,17 +804,17 @@ True if the process is a primary. This is determined
 by the `process.env.NODE_UNIQUE_ID`. If `process.env.NODE_UNIQUE_ID` is
 undefined, then `isPrimary` is `true`.
 
-### <Tag tag="M" /> `cluster.isWorker`
+### <DataTag tag="M" /> `cluster.isWorker`
 
-<MC data={{"update":{"type":"added","version":["v0.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.6.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 True if the process is not a primary (it is the negation of `cluster.isPrimary`).
 
-### <Tag tag="M" /> `cluster.schedulingPolicy`
+### <DataTag tag="M" /> `cluster.schedulingPolicy`
 
-<MC data={{"update":{"type":"added","version":["v0.11.2"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.2"]}}} />
 
 The scheduling policy, either `cluster.SCHED_RR` for round-robin or
 `cluster.SCHED_NONE` to leave it to the operating system. This is a
@@ -829,9 +829,9 @@ distribute IOCP handles without incurring a large performance hit.
 `NODE_CLUSTER_SCHED_POLICY` environment variable. Valid
 values are `'rr'` and `'none'`.
 
-### <Tag tag="M" /> `cluster.settings`
+### <DataTag tag="M" /> `cluster.settings`
 
-<MC data={{"changes":[{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30162","description":"The `serialization` option is supported now."},{"version":"v9.5.0","pr-url":"https://github.com/nodejs/node/pull/18399","description":"The `cwd` option is supported now."},{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/17412","description":"The `windowsHide` option is supported now."},{"version":"v8.2.0","pr-url":"https://github.com/nodejs/node/pull/14140","description":"The `inspectPort` option is supported now."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7838","description":"The `stdio` option is supported now."}],"update":{"type":"added","version":["v0.7.1"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30162","description":"The `serialization` option is supported now."},{"version":"v9.5.0","pr-url":"https://github.com/nodejs/node/pull/18399","description":"The `cwd` option is supported now."},{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/17412","description":"The `windowsHide` option is supported now."},{"version":"v8.2.0","pr-url":"https://github.com/nodejs/node/pull/14140","description":"The `inspectPort` option is supported now."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7838","description":"The `stdio` option is supported now."}],"update":{"type":"added","version":["v0.7.1"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `execArgv` string\[] List of string arguments passed to the Node.js
@@ -864,15 +864,15 @@ contain the settings, including the default values.
 
 This object is not intended to be changed or set manually.
 
-### <Tag tag="M" /> `cluster.setupMaster([settings])`
+### <DataTag tag="M" /> `cluster.setupMaster([settings])`
 
-<MC data={{"changes":[{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7838","description":"The `stdio` option is supported now."}],"update":{"type":"deprecated","version":["v16.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7838","description":"The `stdio` option is supported now."}],"update":{"type":"deprecated","version":["v16.0.0"]}}} />
 
 Deprecated alias for [`.setupPrimary()`][].
 
-### <Tag tag="M" /> `cluster.setupPrimary([settings])`
+### <DataTag tag="M" /> `cluster.setupPrimary([settings])`
 
-<MC data={{"update":{"type":"added","version":["v16.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.0.0"]}}} />
 
 * `settings` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) See [`cluster.settings`][].
 
@@ -922,9 +922,9 @@ cluster.fork(); // http worker
 
 This can only be called from the primary process.
 
-### <Tag tag="M" /> `cluster.worker`
+### <DataTag tag="M" /> `cluster.worker`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -954,9 +954,9 @@ if (cluster.isPrimary) {
 }
 ```
 
-### <Tag tag="M" /> `cluster.workers`
+### <DataTag tag="M" /> `cluster.workers`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 

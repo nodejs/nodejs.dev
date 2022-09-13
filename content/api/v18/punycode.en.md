@@ -5,13 +5,13 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"deprecated","version":["v7.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v7.0.0"]}}} />
 
-<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated"}}} />
 
-<MC data={{"source_link":"lib/punycode.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/punycode.js"}} />
 
 **The version of the punycode module bundled in Node.js is being deprecated.**
 In a future major version of Node.js this module will be removed. Users
@@ -42,9 +42,9 @@ The `punycode` module is a third-party dependency used by Node.js and
 made available to developers as a convenience. Fixes or other modifications to
 the module must be directed to the [Punycode.js][] project.
 
-### <Tag tag="M" /> `punycode.decode(string)`
+### <DataTag tag="M" /> `punycode.decode(string)`
 
-<MC data={{"update":{"type":"added","version":["v0.5.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.1"]}}} />
 
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -56,9 +56,9 @@ punycode.decode('maana-pta'); // 'mañana'
 punycode.decode('--dqo34k'); // '☃-⌘'
 ```
 
-### <Tag tag="M" /> `punycode.encode(string)`
+### <DataTag tag="M" /> `punycode.encode(string)`
 
-<MC data={{"update":{"type":"added","version":["v0.5.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.1"]}}} />
 
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -70,9 +70,9 @@ punycode.encode('mañana'); // 'maana-pta'
 punycode.encode('☃-⌘'); // '--dqo34k'
 ```
 
-### <Tag tag="M" /> `punycode.toASCII(domain)`
+### <DataTag tag="M" /> `punycode.toASCII(domain)`
 
-<MC data={{"update":{"type":"added","version":["v0.6.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.6.1"]}}} />
 
 * `domain` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -88,9 +88,9 @@ punycode.toASCII('☃-⌘.com');   // 'xn----dqo34k.com'
 punycode.toASCII('example.com'); // 'example.com'
 ```
 
-### <Tag tag="M" /> `punycode.toUnicode(domain)`
+### <DataTag tag="M" /> `punycode.toUnicode(domain)`
 
-<MC data={{"update":{"type":"added","version":["v0.6.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.6.1"]}}} />
 
 * `domain` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -105,13 +105,13 @@ punycode.toUnicode('xn----dqo34k.com');  // '☃-⌘.com'
 punycode.toUnicode('example.com');       // 'example.com'
 ```
 
-### <Tag tag="M" /> `punycode.ucs2`
+### <DataTag tag="M" /> `punycode.ucs2`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
-#### <Tag tag="M" /> `punycode.ucs2.decode(string)`
+#### <DataTag tag="M" /> `punycode.ucs2.decode(string)`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -124,9 +124,9 @@ punycode.ucs2.decode('abc'); // [0x61, 0x62, 0x63]
 punycode.ucs2.decode('\uD834\uDF06'); // [0x1D306]
 ```
 
-#### <Tag tag="M" /> `punycode.ucs2.encode(codePoints)`
+#### <DataTag tag="M" /> `punycode.ucs2.encode(codePoints)`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * `codePoints` integer\[]
 
@@ -138,9 +138,9 @@ punycode.ucs2.encode([0x61, 0x62, 0x63]); // 'abc'
 punycode.ucs2.encode([0x1D306]); // '\uD834\uDF06'
 ```
 
-### <Tag tag="M" /> `punycode.version`
+### <DataTag tag="M" /> `punycode.version`
 
-<MC data={{"update":{"type":"added","version":["v0.6.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.6.1"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 

@@ -5,17 +5,27 @@ import Layout from '../components/Layout';
 import { getApiComponents, Components } from '../components/ApiComponents';
 import DataTag from '../components/DataTag';
 import Navigation from '../containers/Navigation';
-import { ApiTemplateData, ApiTemplateContext } from '../types';
+import {
+  ApiTemplateData,
+  ApiTemplateContext,
+  TableOfContentsItem,
+} from '../types';
 import SectionTitle from '../components/SectionTitle';
 import styles from '../styles/templates/api.module.scss';
+import { replaceDataTagFromString } from '../util/replaceDataTag';
 
 interface Props {
   data: ApiTemplateData;
   pageContext: ApiTemplateContext;
 }
 
-const getEditPath = (name: string, version: string) =>
-  `https://github.com/nodejs/node/blob/${version}/doc/api/${name}.md`;
+const filterTableOfContentsFromDataTag = (
+  item: TableOfContentsItem
+): TableOfContentsItem => ({
+  title: item.title ? replaceDataTagFromString(item.title) : item.title,
+  url: item.url ? replaceDataTagFromString(item.url) : item.url,
+  items: item.items ? item.items.map(filterTableOfContentsFromDataTag) : [],
+});
 
 const Api = ({
   data: {
@@ -36,13 +46,17 @@ const Api = ({
   const currentRelease = nodeReleasesData.find(r => r.version === version);
   const fullVersion = currentRelease ? currentRelease.fullVersion : version;
 
+  const filteredTableOfContets = tableOfContents.items.map(
+    filterTableOfContentsFromDataTag
+  );
+
   const components = {
-    Tag: DataTag,
+    DataTag: DataTag,
+    Metadata: getApiComponents({ fullVersion }),
     a: Components.ApiLink,
     h3: Components.H3,
     h4: Components.H4,
     h5: Components.H5,
-    MC: getApiComponents({ fullVersion }),
   };
 
   return (
@@ -64,11 +78,11 @@ const Api = ({
         </Navigation>
         <Article
           title={displayTitle}
-          tableOfContents={tableOfContents}
+          tableOfContents={filteredTableOfContets}
           body={body}
           next={next}
           previous={previous}
-          absolutePath={getEditPath(title, fullVersion)}
+          absolutePath={`https://github.com/nodejs/node/edit/main/doc/api/${title}.md`}
           authors={[]}
           extraComponents={components}
           childrenPosition="before"

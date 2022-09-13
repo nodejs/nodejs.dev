@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<MC data={{"source_link":"lib/url.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/url.js"}} />
 
 The `node:url` module provides utilities for URL resolution and parsing. It can
 be accessed using:
@@ -109,9 +109,9 @@ console.log(myURL.href);
 
 ### The WHATWG URL API
 
-#### <Tag tag="C" /> `URL`
+#### <DataTag tag="C" /> `URL`
 
-<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18281","description":"The class is now available on the global object."}],"update":{"type":"added","version":["v7.0.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18281","description":"The class is now available on the global object."}],"update":{"type":"added","version":["v7.0.0","v6.13.0"]}}} />
 
 Browser-compatible `URL` class, implemented by following the WHATWG URL
 Standard. [Examples of parsed URLs][] may be found in the Standard itself.
@@ -124,7 +124,7 @@ using the `delete` keyword on any properties of `URL` objects (e.g. `delete
 myURL.protocol`, `delete myURL.pathname`, etc) has no effect but will still
 return `true`.
 
-##### <Tag tag="M" /> `new URL(input[, base])`
+##### <DataTag tag="M" /> `new URL(input[, base])`
 
 * `input` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The absolute or relative input URL to parse. If `input`
   is relative, then `base` is required. If `input` is absolute, the `base`
@@ -196,7 +196,7 @@ myURL = new URL('foo:Example.com/', 'https://example.org/');
 // foo:Example.com/
 ```
 
-##### <Tag tag="M" /> `url.hash`
+##### <DataTag tag="M" /> `url.hash`
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -217,7 +217,7 @@ are [percent-encoded][]. The selection of which characters to
 percent-encode may vary somewhat from what the [`url.parse()`][] and
 [`url.format()`][] methods would produce.
 
-##### <Tag tag="M" /> `url.host`
+##### <DataTag tag="M" /> `url.host`
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -235,7 +235,7 @@ console.log(myURL.href);
 
 Invalid host values assigned to the `host` property are ignored.
 
-##### <Tag tag="M" /> `url.hostname`
+##### <DataTag tag="M" /> `url.hostname`
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -261,7 +261,7 @@ console.log(myURL.href);
 
 Invalid host name values assigned to the `hostname` property are ignored.
 
-##### <Tag tag="M" /> `url.href`
+##### <DataTag tag="M" /> `url.href`
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -287,9 +287,9 @@ object's properties will be modified.
 If the value assigned to the `href` property is not a valid URL, a `TypeError`
 will be thrown.
 
-##### <Tag tag="M" /> `url.origin`
+##### <DataTag tag="M" /> `url.origin`
 
-<MC data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33325","description":"The scheme \"gopher\" is no longer special and `url.origin` now returns `'null'` for it."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33325","description":"The scheme \"gopher\" is no longer special and `url.origin` now returns `'null'` for it."}]}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -310,7 +310,7 @@ console.log(idnURL.hostname);
 // Prints xn--g6w251d
 ```
 
-##### <Tag tag="M" /> `url.password`
+##### <DataTag tag="M" /> `url.password`
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -331,7 +331,7 @@ are [percent-encoded][]. The selection of which characters to
 percent-encode may vary somewhat from what the [`url.parse()`][] and
 [`url.format()`][] methods would produce.
 
-##### <Tag tag="M" /> `url.pathname`
+##### <DataTag tag="M" /> `url.pathname`
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -352,9 +352,9 @@ property are [percent-encoded][]. The selection of which characters
 to percent-encode may vary somewhat from what the [`url.parse()`][] and
 [`url.format()`][] methods would produce.
 
-##### <Tag tag="M" /> `url.port`
+##### <DataTag tag="M" /> `url.port`
 
-<MC data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33325","description":"The scheme \"gopher\" is no longer special."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33325","description":"The scheme \"gopher\" is no longer special."}]}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -437,7 +437,7 @@ console.log(myURL.port);
 // Prints 4 (because it is the leading number in the string '4.567e21')
 ```
 
-##### <Tag tag="M" /> `url.protocol`
+##### <DataTag tag="M" /> `url.protocol`
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -457,7 +457,7 @@ Invalid URL protocol values assigned to the `protocol` property are ignored.
 
 ###### Special schemes
 
-<MC data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33325","description":"The scheme \"gopher\" is no longer special."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33325","description":"The scheme \"gopher\" is no longer special."}]}} />
 
 The [WHATWG URL Standard][] considers a handful of URL protocol schemes to be
 _special_ in terms of how they are parsed and serialized. When a URL is
@@ -497,7 +497,7 @@ console.log(u.href);
 According to the WHATWG URL Standard, special protocol schemes are `ftp`,
 `file`, `http`, `https`, `ws`, and `wss`.
 
-##### <Tag tag="M" /> `url.search`
+##### <DataTag tag="M" /> `url.search`
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -518,7 +518,7 @@ property will be [percent-encoded][]. The selection of which
 characters to percent-encode may vary somewhat from what the [`url.parse()`][]
 and [`url.format()`][] methods would produce.
 
-##### <Tag tag="M" /> `url.searchParams`
+##### <DataTag tag="M" /> `url.searchParams`
 
 * [`URLSearchParams`](/api/url#urlsearchparams)
 
@@ -545,7 +545,7 @@ myUrl.searchParams.sort();
 console.log(myUrl.search);  // prints ?foo=%7Ebar
 ```
 
-##### <Tag tag="M" /> `url.username`
+##### <DataTag tag="M" /> `url.username`
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -566,14 +566,14 @@ property will be [percent-encoded][]. The selection of which
 characters to percent-encode may vary somewhat from what the [`url.parse()`][]
 and [`url.format()`][] methods would produce.
 
-##### <Tag tag="M" /> `url.toString()`
+##### <DataTag tag="M" /> `url.toString()`
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The `toString()` method on the `URL` object returns the serialized URL. The
 value returned is equivalent to that of [`url.href`][] and [`url.toJSON()`][].
 
-##### <Tag tag="M" /> `url.toJSON()`
+##### <DataTag tag="M" /> `url.toJSON()`
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -593,11 +593,11 @@ console.log(JSON.stringify(myURLs));
 // Prints ["https://www.example.com/","https://test.example.org/"]
 ```
 
-##### <Tag tag="M" /> `URL.createObjectURL(blob)`
+##### <DataTag tag="M" /> `URL.createObjectURL(blob)`
 
-<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `blob` [`Blob`](/api/buffer#blob)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -627,11 +627,11 @@ The data stored by the registered [`Blob`](/api/buffer#blob) will be retained in
 Threads, `Blob` objects registered within one Worker will not be available
 to other workers or the main thread.
 
-##### <Tag tag="M" /> `URL.revokeObjectURL(id)`
+##### <DataTag tag="M" /> `URL.revokeObjectURL(id)`
 
-<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `id` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A `'blob:nodedata:...` URL string returned by a prior call to
   `URL.createObjectURL()`.
@@ -639,9 +639,9 @@ to other workers or the main thread.
 Removes the stored [`Blob`](/api/buffer#blob) identified by the given ID. Attempting to revoke a
 ID that isn't registered will silently fail.
 
-#### <Tag tag="C" /> `URLSearchParams`
+#### <DataTag tag="C" /> `URLSearchParams`
 
-<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18281","description":"The class is now available on the global object."}],"update":{"type":"added","version":["v7.5.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18281","description":"The class is now available on the global object."}],"update":{"type":"added","version":["v7.5.0","v6.13.0"]}}} />
 
 The `URLSearchParams` API provides read and write access to the query of a
 `URL`. The `URLSearchParams` class can also be used standalone with one of the
@@ -686,11 +686,11 @@ console.log(myURL.href);
 // Prints https://example.org/?a=b&a=c
 ```
 
-##### <Tag tag="M" /> `new URLSearchParams()`
+##### <DataTag tag="M" /> `new URLSearchParams()`
 
 Instantiate a new empty `URLSearchParams` object.
 
-##### <Tag tag="M" /> `new URLSearchParams(string)`
+##### <DataTag tag="M" /> `new URLSearchParams(string)`
 
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A query string
 
@@ -711,9 +711,9 @@ console.log(params.toString());
 // Prints 'user=abc&query=xyz'
 ```
 
-##### <Tag tag="M" /> `new URLSearchParams(obj)`
+##### <DataTag tag="M" /> `new URLSearchParams(obj)`
 
-<MC data={{"update":{"type":"added","version":["v7.10.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.10.0","v6.13.0"]}}} />
 
 * `obj` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An object representing a collection of key-value pairs
 
@@ -735,9 +735,9 @@ console.log(params.toString());
 // Prints 'user=abc&query=first%2Csecond'
 ```
 
-##### <Tag tag="M" /> `new URLSearchParams(iterable)`
+##### <DataTag tag="M" /> `new URLSearchParams(iterable)`
 
-<MC data={{"update":{"type":"added","version":["v7.10.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.10.0","v6.13.0"]}}} />
 
 * `iterable` [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) An iterable object whose elements are key-value pairs
 
@@ -788,20 +788,20 @@ new URLSearchParams([
 //        Each query pair must be an iterable [name, value] tuple
 ```
 
-##### <Tag tag="M" /> `urlSearchParams.append(name, value)`
+##### <DataTag tag="M" /> `urlSearchParams.append(name, value)`
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Append a new name-value pair to the query string.
 
-##### <Tag tag="M" /> `urlSearchParams.delete(name)`
+##### <DataTag tag="M" /> `urlSearchParams.delete(name)`
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Remove all name-value pairs whose name is `name`.
 
-##### <Tag tag="M" /> `urlSearchParams.entries()`
+##### <DataTag tag="M" /> `urlSearchParams.entries()`
 
 * Returns: [`Iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol)
 
@@ -811,9 +811,9 @@ is the `name`, the second item of the `Array` is the `value`.
 
 Alias for [`urlSearchParams[@@iterator]()`][`urlSearchParams@@iterator()`].
 
-##### <Tag tag="M" /> `urlSearchParams.forEach(fn[, thisArg])`
+##### <DataTag tag="M" /> `urlSearchParams.forEach(fn[, thisArg])`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `fn` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `fn` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}]}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Invoked for each name-value pair in the query
 * `thisArg` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) To be used as `this` value for when `fn` is called
@@ -830,7 +830,7 @@ myURL.searchParams.forEach((value, name, searchParams) => {
 //   c d true
 ```
 
-##### <Tag tag="M" /> `urlSearchParams.get(name)`
+##### <DataTag tag="M" /> `urlSearchParams.get(name)`
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) or `null` if there is no name-value pair with the given
@@ -839,7 +839,7 @@ myURL.searchParams.forEach((value, name, searchParams) => {
 Returns the value of the first name-value pair whose name is `name`. If there
 are no such pairs, `null` is returned.
 
-##### <Tag tag="M" /> `urlSearchParams.getAll(name)`
+##### <DataTag tag="M" /> `urlSearchParams.getAll(name)`
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: string\[]
@@ -847,14 +847,14 @@ are no such pairs, `null` is returned.
 Returns the values of all name-value pairs whose name is `name`. If there are
 no such pairs, an empty array is returned.
 
-##### <Tag tag="M" /> `urlSearchParams.has(name)`
+##### <DataTag tag="M" /> `urlSearchParams.has(name)`
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Returns `true` if there is at least one name-value pair whose name is `name`.
 
-##### <Tag tag="M" /> `urlSearchParams.keys()`
+##### <DataTag tag="M" /> `urlSearchParams.keys()`
 
 * Returns: [`Iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol)
 
@@ -870,7 +870,7 @@ for (const name of params.keys()) {
 //   foo
 ```
 
-##### <Tag tag="M" /> `urlSearchParams.set(name, value)`
+##### <DataTag tag="M" /> `urlSearchParams.set(name, value)`
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -894,9 +894,9 @@ console.log(params.toString());
 // Prints foo=def&abc=def&xyz=opq
 ```
 
-##### <Tag tag="M" /> `urlSearchParams.sort()`
+##### <DataTag tag="M" /> `urlSearchParams.sort()`
 
-<MC data={{"update":{"type":"added","version":["v7.7.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.7.0","v6.13.0"]}}} />
 
 Sort all existing name-value pairs in-place by their names. Sorting is done
 with a [stable sorting algorithm][], so relative order between name-value pairs
@@ -911,20 +911,20 @@ console.log(params.toString());
 // Prints query%5B%5D=abc&query%5B%5D=123&type=search
 ```
 
-##### <Tag tag="M" /> `urlSearchParams.toString()`
+##### <DataTag tag="M" /> `urlSearchParams.toString()`
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Returns the search parameters serialized as a string, with characters
 percent-encoded where necessary.
 
-##### <Tag tag="M" /> `urlSearchParams.values()`
+##### <DataTag tag="M" /> `urlSearchParams.values()`
 
 * Returns: [`Iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol)
 
 Returns an ES6 `Iterator` over the values of each name-value pair.
 
-##### <Tag tag="M" /> `urlSearchParams[Symbol.iterator]()`
+##### <DataTag tag="M" /> `urlSearchParams[Symbol.iterator]()`
 
 * Returns: [`Iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol)
 
@@ -944,9 +944,9 @@ for (const [name, value] of params) {
 //   xyz baz
 ```
 
-#### <Tag tag="M" /> `url.domainToASCII(domain)`
+#### <DataTag tag="M" /> `url.domainToASCII(domain)`
 
-<MC data={{"update":{"type":"added","version":["v7.4.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.4.0","v6.13.0"]}}} />
 
 * `domain` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -981,9 +981,9 @@ console.log(url.domainToASCII('xn--iñvalid.com'));
 // Prints an empty string
 ```
 
-#### <Tag tag="M" /> `url.domainToUnicode(domain)`
+#### <DataTag tag="M" /> `url.domainToUnicode(domain)`
 
-<MC data={{"update":{"type":"added","version":["v7.4.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.4.0","v6.13.0"]}}} />
 
 * `domain` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -1018,9 +1018,9 @@ console.log(url.domainToUnicode('xn--iñvalid.com'));
 // Prints an empty string
 ```
 
-#### <Tag tag="M" /> `url.fileURLToPath(url)`
+#### <DataTag tag="M" /> `url.fileURLToPath(url)`
 
-<MC data={{"update":{"type":"added","version":["v10.12.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.12.0"]}}} />
 
 * `url` [`URL`](/api/url#the-whatwg-url-api) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The file URL string or URL object to convert to a path.
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The fully-resolved platform-specific Node.js file path.
@@ -1061,9 +1061,9 @@ new URL('file:///hello world').pathname;   // Incorrect: /hello%20world
 fileURLToPath('file:///hello world');      // Correct:   /hello world (POSIX)
 ```
 
-#### <Tag tag="M" /> `url.format(URL[, options])`
+#### <DataTag tag="M" /> `url.format(URL[, options])`
 
-<MC data={{"update":{"type":"added","version":["v7.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.6.0"]}}} />
 
 * `URL` [`URL`](/api/url#the-whatwg-url-api) A [WHATWG URL][] object
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1114,9 +1114,9 @@ console.log(url.format(myURL, { fragment: false, unicode: true, auth: false }));
 // Prints 'https://測試/?abc'
 ```
 
-#### <Tag tag="M" /> `url.pathToFileURL(path)`
+#### <DataTag tag="M" /> `url.pathToFileURL(path)`
 
-<MC data={{"update":{"type":"added","version":["v10.12.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.12.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The path to convert to a File URL.
 * Returns: [`URL`](/api/url#the-whatwg-url-api) The file URL object.
@@ -1148,9 +1148,9 @@ new URL('/some/path%.c', 'file:');    // Incorrect: file:///some/path%.c
 pathToFileURL('/some/path%.c');       // Correct:   file:///some/path%25.c (POSIX)
 ```
 
-#### <Tag tag="M" /> `url.urlToHttpOptions(url)`
+#### <DataTag tag="M" /> `url.urlToHttpOptions(url)`
 
-<MC data={{"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
 
 * `url` [`URL`](/api/url#the-whatwg-url-api) The [WHATWG URL][] object to convert to an options object.
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Options object
@@ -1212,21 +1212,21 @@ console.log(urlToHttpOptions(myUrl));
 
 ### Legacy URL API
 
-<MC data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"This API is deprecated."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"This API is deprecated."}]}} />
 
-<MC data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
 
 #### Legacy `urlObject`
 
-<MC data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."}]}} />
 
-<MC data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
 
 The legacy `urlObject` (`require('node:url').Url` or
 `import { Url } from 'node:url'`) is
 created and returned by the `url.parse()` function.
 
-##### <Tag tag="M" /> `urlObject.auth`
+##### <DataTag tag="M" /> `urlObject.auth`
 
 The `auth` property is the username and password portion of the URL, also
 referred to as _userinfo_. This string subset follows the `protocol` and
@@ -1236,35 +1236,35 @@ by `:`.
 
 For example: `'user:pass'`.
 
-##### <Tag tag="M" /> `urlObject.hash`
+##### <DataTag tag="M" /> `urlObject.hash`
 
 The `hash` property is the fragment identifier portion of the URL including the
 leading `#` character.
 
 For example: `'#hash'`.
 
-##### <Tag tag="M" /> `urlObject.host`
+##### <DataTag tag="M" /> `urlObject.host`
 
 The `host` property is the full lower-cased host portion of the URL, including
 the `port` if specified.
 
 For example: `'sub.example.com:8080'`.
 
-##### <Tag tag="M" /> `urlObject.hostname`
+##### <DataTag tag="M" /> `urlObject.hostname`
 
 The `hostname` property is the lower-cased host name portion of the `host`
 component _without_ the `port` included.
 
 For example: `'sub.example.com'`.
 
-##### <Tag tag="M" /> `urlObject.href`
+##### <DataTag tag="M" /> `urlObject.href`
 
 The `href` property is the full URL string that was parsed with both the
 `protocol` and `host` components converted to lower-case.
 
 For example: `'http://user:pass@sub.example.com:8080/p/a/t/h?query=string#hash'`.
 
-##### <Tag tag="M" /> `urlObject.path`
+##### <DataTag tag="M" /> `urlObject.path`
 
 The `path` property is a concatenation of the `pathname` and `search`
 components.
@@ -1273,7 +1273,7 @@ For example: `'/p/a/t/h?query=string'`.
 
 No decoding of the `path` is performed.
 
-##### <Tag tag="M" /> `urlObject.pathname`
+##### <DataTag tag="M" /> `urlObject.pathname`
 
 The `pathname` property consists of the entire path section of the URL. This
 is everything following the `host` (including the `port`) and before the start
@@ -1284,19 +1284,19 @@ For example: `'/p/a/t/h'`.
 
 No decoding of the path string is performed.
 
-##### <Tag tag="M" /> `urlObject.port`
+##### <DataTag tag="M" /> `urlObject.port`
 
 The `port` property is the numeric port portion of the `host` component.
 
 For example: `'8080'`.
 
-##### <Tag tag="M" /> `urlObject.protocol`
+##### <DataTag tag="M" /> `urlObject.protocol`
 
 The `protocol` property identifies the URL's lower-cased protocol scheme.
 
 For example: `'http:'`.
 
-##### <Tag tag="M" /> `urlObject.query`
+##### <DataTag tag="M" /> `urlObject.query`
 
 The `query` property is either the query string without the leading ASCII
 question mark (`?`), or an object returned by the [`querystring`][] module's
@@ -1308,7 +1308,7 @@ For example: `'query=string'` or `{'query': 'string'}`.
 If returned as a string, no decoding of the query string is performed. If
 returned as an object, both keys and values are decoded.
 
-##### <Tag tag="M" /> `urlObject.search`
+##### <DataTag tag="M" /> `urlObject.search`
 
 The `search` property consists of the entire "query string" portion of the
 URL, including the leading ASCII question mark (`?`) character.
@@ -1317,17 +1317,17 @@ For example: `'?query=string'`.
 
 No decoding of the query string is performed.
 
-##### <Tag tag="M" /> `urlObject.slashes`
+##### <DataTag tag="M" /> `urlObject.slashes`
 
 The `slashes` property is a `boolean` with a value of `true` if two ASCII
 forward-slash characters (`/`) are required following the colon in the
 `protocol`.
 
-#### <Tag tag="M" /> `url.format(urlObject)`
+#### <DataTag tag="M" /> `url.format(urlObject)`
 
-<MC data={{"changes":[{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/38631","description":"Now throws an `ERR_INVALID_URL` exception when Punycode conversion of a hostname introduces changes that could cause the URL to be re-parsed differently."},{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7234","description":"URLs with a `file:` scheme will now always use the correct number of slashes regardless of `slashes` option. A falsy `slashes` option with no protocol is now also respected at all times."}],"update":{"type":"added","version":["v0.1.25"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/38631","description":"Now throws an `ERR_INVALID_URL` exception when Punycode conversion of a hostname introduces changes that could cause the URL to be re-parsed differently."},{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7234","description":"URLs with a `file:` scheme will now always use the correct number of slashes regardless of `slashes` option. A falsy `slashes` option with no protocol is now also respected at all times."}],"update":{"type":"added","version":["v0.1.25"]}}} />
 
-<MC data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
 
 * `urlObject` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A URL object (as returned by `url.parse()` or
   constructed otherwise). If a string, it is converted to an object by passing
@@ -1406,11 +1406,11 @@ The formatting process operates as follows:
   string, an [`Error`][] is thrown.
 * `result` is returned.
 
-#### <Tag tag="M" /> `url.parse(urlString[, parseQueryString[, slashesDenoteHost]])`
+#### <DataTag tag="M" /> `url.parse(urlString[, parseQueryString[, slashesDenoteHost]])`
 
-<MC data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.14.0","pr-url":"https://github.com/nodejs/node/pull/26941","description":"The `pathname` property on the returned URL object is now `/` when there is no path and the protocol scheme is `ws:` or `wss:`."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/13606","description":"The `search` property on the returned URL object is now `null` when no query string is present."}],"update":{"type":"added","version":["v0.1.25"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.14.0","pr-url":"https://github.com/nodejs/node/pull/26941","description":"The `pathname` property on the returned URL object is now `/` when there is no path and the protocol scheme is `ws:` or `wss:`."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/13606","description":"The `search` property on the returned URL object is now `null` when no query string is present."}],"update":{"type":"added","version":["v0.1.25"]}}} />
 
-<MC data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
 
 * `urlString` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The URL string to parse.
 * `parseQueryString` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If `true`, the `query` property will always
@@ -1443,11 +1443,11 @@ concerns, it is legacy and not deprecated because it is:
 
 Use with caution.
 
-#### <Tag tag="M" /> `url.resolve(from, to)`
+#### <DataTag tag="M" /> `url.resolve(from, to)`
 
-<MC data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."},{"version":"v6.6.0","pr-url":"https://github.com/nodejs/node/pull/8215","description":"The `auth` fields are now kept intact when `from` and `to` refer to the same host."},{"version":["v6.5.0","v4.6.2"],"pr-url":"https://github.com/nodejs/node/pull/8214","description":"The `port` field is copied correctly now."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/1480","description":"The `auth` fields is cleared now the `to` parameter contains a hostname."}],"update":{"type":"added","version":["v0.1.25"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."},{"version":"v6.6.0","pr-url":"https://github.com/nodejs/node/pull/8215","description":"The `auth` fields are now kept intact when `from` and `to` refer to the same host."},{"version":["v6.5.0","v4.6.2"],"pr-url":"https://github.com/nodejs/node/pull/8214","description":"The `port` field is copied correctly now."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/1480","description":"The `auth` fields is cleared now the `to` parameter contains a hostname."}],"update":{"type":"added","version":["v0.1.25"]}}} />
 
-<MC data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
 
 * `from` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The base URL to use if `to` is a relative URL.
 * `to` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The target URL to resolve.

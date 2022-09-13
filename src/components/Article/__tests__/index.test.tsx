@@ -63,7 +63,7 @@ describe('Article component', () => {
     const { container } = render(
       <Article
         title={title}
-        tableOfContents={tableOfContents}
+        tableOfContents={tableOfContents.items}
         body={body}
         next={next}
         previous={previous}
@@ -93,7 +93,7 @@ describe('Article component', () => {
     const { container } = render(
       <Article
         title={title}
-        tableOfContents={tableOfContents}
+        tableOfContents={tableOfContents.items}
         body={body}
         next={next}
         previous={previous}
@@ -120,7 +120,7 @@ describe('Article component', () => {
     const { container } = render(
       <Article
         title={title}
-        tableOfContents={tableOfContents}
+        tableOfContents={tableOfContents.items}
         body={body}
         next={next}
         previous={previous}
@@ -178,7 +178,7 @@ describe('Article component', () => {
     render(
       <Article
         title={title}
-        tableOfContents={tableOfContents}
+        tableOfContents={tableOfContents.items}
         body={body}
         next={next}
         previous={previous}
@@ -204,7 +204,7 @@ describe('Article component', () => {
     const { container } = render(
       <Article
         title={title}
-        tableOfContents={tableOfContents}
+        tableOfContents={tableOfContents.items}
         body={body}
         next={next}
         previous={previous}

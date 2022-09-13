@@ -128,7 +128,7 @@ function createApiDocsFrontmatter(firstLine, { version, name }) {
 
 // Utility to replace the `> Stability: XXXXXX` blockquotes and their following lines
 // into a proper metadata with the information (index number) and any other accompanying text
-function replaceStabilityIndex() {
+function replaceStabilityIndex(metadata) {
   return (_, __, level, text) => {
     const sanitizedText = text
       .replace('\n>', '')
@@ -138,7 +138,7 @@ function replaceStabilityIndex() {
       stability: { level: Number(level), text: sanitizedText },
     });
 
-    return `<MC data={${data}} />`;
+    return `<Metadata version="${metadata.fullVersion}" data={${data}} />`;
   };
 }
 
@@ -160,11 +160,14 @@ function addClassEventHeading(_, navigationCreator) {
     switch (name) {
       case 'Class:':
         navigationCreator.addType('class');
-        return `<Tag tag="C" />`;
+        // @TODO: Replace to <Tag>
+        return `<DataTag tag="C" />`;
       case 'Event:':
-        return `<Tag tag="E" />`;
+        // @TODO: Replace to <Tag>
+        return `<DataTag tag="E" />`;
       default:
-        return `<Tag tag="M" /> ${name}`;
+        // @TODO: Replace to <Tag>
+        return `<DataTag tag="M" /> ${name}`;
     }
   };
 
@@ -230,7 +233,7 @@ function replaceMarkdownMetadata(metadata, navigationCreator) {
 
         const stringifiedData = JSON.stringify(parsedYaml);
 
-        return `<MC data={${stringifiedData}} />`;
+        return `<Metadata version="${metadata.fullVersion}" data={${stringifiedData}} />`;
       }
     } catch (e) {
       // eslint-disable-next-line no-console

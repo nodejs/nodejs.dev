@@ -5,13 +5,13 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v11.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v11.8.0"]}}} />
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
-<MC data={{"name":"policy"}} />
+<Metadata version="v18.9.0" data={{"name":"policy"}} />
 
 Node.js contains experimental support for creating policies on loading code.
 
@@ -29,7 +29,7 @@ and granting read permissions to the user id running Node.js.
 
 ### Enabling
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 The `--experimental-policy` flag can be used to enable features for policies
 when loading modules.

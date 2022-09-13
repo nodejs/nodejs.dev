@@ -5,13 +5,13 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
 
 
-<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<MC data={{"source_link":"lib/net.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/net.js"}} />
 
 The `node:net` module provides an asynchronous network API for creating stream-based
 TCP or [IPC][] servers ([`net.createServer()`][]) and clients
@@ -61,26 +61,26 @@ net.createServer().listen(
   path.join('\\\\?\\pipe', process.cwd(), 'myctl'));
 ```
 
-### <Tag tag="C" /> `net.BlockList`
+### <DataTag tag="C" /> `net.BlockList`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
 
 The `BlockList` object can be used with some network APIs to specify rules for
 disabling inbound or outbound access to specific IP addresses, IP ranges, or
 IP subnets.
 
-#### <Tag tag="M" /> `blockList.addAddress(address[, type])`
+#### <DataTag tag="M" /> `blockList.addAddress(address[, type])`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
 
 * `address` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`net.SocketAddress`](/api/net#netsocketaddress) An IPv4 or IPv6 address.
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Either `'ipv4'` or `'ipv6'`. **Default:** `'ipv4'`.
 
 Adds a rule to block the given IP address.
 
-#### <Tag tag="M" /> `blockList.addRange(start, end[, type])`
+#### <DataTag tag="M" /> `blockList.addRange(start, end[, type])`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
 
 * `start` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`net.SocketAddress`](/api/net#netsocketaddress) The starting IPv4 or IPv6 address in the
   range.
@@ -90,9 +90,9 @@ Adds a rule to block the given IP address.
 Adds a rule to block a range of IP addresses from `start` (inclusive) to
 `end` (inclusive).
 
-#### <Tag tag="M" /> `blockList.addSubnet(net, prefix[, type])`
+#### <DataTag tag="M" /> `blockList.addSubnet(net, prefix[, type])`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
 
 * `net` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`net.SocketAddress`](/api/net#netsocketaddress) The network IPv4 or IPv6 address.
 * `prefix` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of CIDR prefix bits. For IPv4, this
@@ -102,9 +102,9 @@ Adds a rule to block a range of IP addresses from `start` (inclusive) to
 
 Adds a rule to block a range of IP addresses specified as a subnet mask.
 
-#### <Tag tag="M" /> `blockList.check(address[, type])`
+#### <DataTag tag="M" /> `blockList.check(address[, type])`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
 
 * `address` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`net.SocketAddress`](/api/net#netsocketaddress) The IP address to check
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Either `'ipv4'` or `'ipv6'`. **Default:** `'ipv4'`.
@@ -128,21 +128,21 @@ console.log(blockList.check('::ffff:7b7b:7b7b', 'ipv6')); // Prints: true
 console.log(blockList.check('::ffff:123.123.123.123', 'ipv6')); // Prints: true
 ```
 
-#### <Tag tag="M" /> `blockList.rules`
+#### <DataTag tag="M" /> `blockList.rules`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
 
 * Type: string\[]
 
 The list of rules added to the blocklist.
 
-### <Tag tag="C" /> `net.SocketAddress`
+### <DataTag tag="C" /> `net.SocketAddress`
 
-<MC data={{"update":{"type":"added","version":["v15.14.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.14.0","v14.18.0"]}}} />
 
-#### <Tag tag="M" /> `new net.SocketAddress([options])`
+#### <DataTag tag="M" /> `new net.SocketAddress([options])`
 
-<MC data={{"update":{"type":"added","version":["v15.14.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.14.0","v14.18.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `address` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The network address as either an IPv4 or IPv6 string.
@@ -153,39 +153,39 @@ The list of rules added to the blocklist.
   * `flowlabel` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) An IPv6 flow-label used only if `family` is `'ipv6'`.
   * `port` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) An IP port.
 
-#### <Tag tag="M" /> `socketaddress.address`
+#### <DataTag tag="M" /> `socketaddress.address`
 
-<MC data={{"update":{"type":"added","version":["v15.14.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.14.0","v14.18.0"]}}} />
 
 * Type [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
-#### <Tag tag="M" /> `socketaddress.family`
+#### <DataTag tag="M" /> `socketaddress.family`
 
-<MC data={{"update":{"type":"added","version":["v15.14.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.14.0","v14.18.0"]}}} />
 
 * Type [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Either `'ipv4'` or `'ipv6'`.
 
-#### <Tag tag="M" /> `socketaddress.flowlabel`
+#### <DataTag tag="M" /> `socketaddress.flowlabel`
 
-<MC data={{"update":{"type":"added","version":["v15.14.0","v14.18.0"]}}} />
-
-* Type [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-
-#### <Tag tag="M" /> `socketaddress.port`
-
-<MC data={{"update":{"type":"added","version":["v15.14.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.14.0","v14.18.0"]}}} />
 
 * Type [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-### <Tag tag="C" /> `net.Server`
+#### <DataTag tag="M" /> `socketaddress.port`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.14.0","v14.18.0"]}}} />
+
+* Type [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
+
+### <DataTag tag="C" /> `net.Server`
+
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * Extends: [`EventEmitter`](/api/events#eventemitter)
 
 This class is used to create a TCP or [IPC][] server.
 
-#### <Tag tag="M" /> `new net.Server([options][, connectionListener])`
+#### <DataTag tag="M" /> `new net.Server([options][, connectionListener])`
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) See
   [`net.createServer([options][, connectionListener])`][`net.createServer()`].
@@ -195,25 +195,25 @@ This class is used to create a TCP or [IPC][] server.
 
 `net.Server` is an [`EventEmitter`][] with the following events:
 
-#### <Tag tag="E" /> `'close'`
+#### <DataTag tag="E" /> `'close'`
 
-<MC data={{"update":{"type":"added","version":["v0.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
 
 Emitted when the server closes. If connections exist, this
 event is not emitted until all connections are ended.
 
-#### <Tag tag="E" /> `'connection'`
+#### <DataTag tag="E" /> `'connection'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * [`net.Socket`](/api/net#netsocket) The connection object
 
 Emitted when a new connection is made. `socket` is an instance of
 `net.Socket`.
 
-#### <Tag tag="E" /> `'error'`
+#### <DataTag tag="E" /> `'error'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
@@ -222,15 +222,15 @@ event will **not** be emitted directly following this event unless
 [`server.close()`][] is manually called. See the example in discussion of
 [`server.listen()`][].
 
-#### <Tag tag="E" /> `'listening'`
+#### <DataTag tag="E" /> `'listening'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 Emitted when the server has been bound after calling [`server.listen()`][].
 
-#### <Tag tag="E" /> `'drop'`
+#### <DataTag tag="E" /> `'drop'`
 
-<MC data={{"update":{"type":"added","version":["v18.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.6.0"]}}} />
 
 When the number of connections reaches the threshold of `server.maxConnections`,
 the server will drop new connections and emit `'drop'` event instead. If it is a
@@ -244,9 +244,9 @@ TCP server, the argument is as follows, otherwise the argument is `undefined`.
   * `remotePort` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Remote port.
   * `remoteFamily` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Remote IP family. `'IPv4'` or `'IPv6'`.
 
-#### <Tag tag="M" /> `server.address()`
+#### <DataTag tag="M" /> `server.address()`
 
-<MC data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43054","description":"The `family` property now returns a string instead of a number."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41431","description":"The `family` property now returns a number instead of a string."}],"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43054","description":"The `family` property now returns a string instead of a number."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41431","description":"The `family` property now returns a number instead of a string."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type)
 
@@ -275,9 +275,9 @@ server.listen(() => {
 `server.address()` returns `null` before the `'listening'` event has been
 emitted or after calling `server.close()`.
 
-#### <Tag tag="M" /> `server.close([callback])`
+#### <DataTag tag="M" /> `server.close([callback])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called when the server is closed.
 * Returns: [`net.Server`](/api/net#netserver)
@@ -289,9 +289,9 @@ The optional `callback` will be called once the `'close'` event occurs. Unlike
 that event, it will be called with an `Error` as its only argument if the server
 was not open when it was closed.
 
-#### <Tag tag="M" /> `server.getConnections(callback)`
+#### <DataTag tag="M" /> `server.getConnections(callback)`
 
-<MC data={{"update":{"type":"added","version":["v0.9.7"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.7"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * Returns: [`net.Server`](/api/net#netserver)
@@ -301,7 +301,7 @@ when sockets were sent to forks.
 
 Callback should take two arguments `err` and `count`.
 
-#### <Tag tag="M" /> `server.listen()`
+#### <DataTag tag="M" /> `server.listen()`
 
 Start a server listening for connections. A `net.Server` can be a TCP or
 an [IPC][] server depending on what it listens to.
@@ -348,9 +348,9 @@ server.on('error', (e) => {
 });
 ```
 
-##### <Tag tag="M" /> `server.listen(handle[, backlog][, callback])`
+##### <DataTag tag="M" /> `server.listen(handle[, backlog][, callback])`
 
-<MC data={{"update":{"type":"added","version":["v0.5.10"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.10"]}}} />
 
 * `handle` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `backlog` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Common parameter of [`server.listen()`][] functions
@@ -366,9 +366,9 @@ valid file descriptor.
 
 Listening on a file descriptor is not supported on Windows.
 
-##### <Tag tag="M" /> `server.listen(options[, callback])`
+##### <DataTag tag="M" /> `server.listen(options[, callback])`
 
-<MC data={{"changes":[{"version":"v15.6.0","pr-url":"https://github.com/nodejs/node/pull/36623","description":"AbortSignal support was added."},{"version":"v11.4.0","pr-url":"https://github.com/nodejs/node/pull/23798","description":"The `ipv6Only` option is supported."}],"update":{"type":"added","version":["v0.11.14"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.6.0","pr-url":"https://github.com/nodejs/node/pull/36623","description":"AbortSignal support was added."},{"version":"v11.4.0","pr-url":"https://github.com/nodejs/node/pull/23798","description":"The `ipv6Only` option is supported."}],"update":{"type":"added","version":["v0.11.14"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Required. Supports the following properties:
   * `port` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -432,9 +432,9 @@ server.listen({
 controller.abort();
 ```
 
-##### <Tag tag="M" /> `server.listen(path[, backlog][, callback])`
+##### <DataTag tag="M" /> `server.listen(path[, backlog][, callback])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Path the server should listen to. See
   [Identifying paths for IPC connections][].
@@ -444,9 +444,9 @@ controller.abort();
 
 Start an [IPC][] server listening for connections on the given `path`.
 
-##### <Tag tag="M" /> `server.listen([port[, host[, backlog]]][, callback])`
+##### <DataTag tag="M" /> `server.listen([port[, host[, backlog]]][, callback])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `port` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `host` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -468,15 +468,15 @@ In most operating systems, listening to the [unspecified IPv6 address][] (`::`)
 may cause the `net.Server` to also listen on the [unspecified IPv4 address][]
 (`0.0.0.0`).
 
-#### <Tag tag="M" /> `server.listening`
+#### <DataTag tag="M" /> `server.listening`
 
-<MC data={{"update":{"type":"added","version":["v5.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v5.7.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Indicates whether or not the server is listening for connections.
 
-#### <Tag tag="M" /> `server.maxConnections`
+#### <DataTag tag="M" /> `server.maxConnections`
 
-<MC data={{"update":{"type":"added","version":["v0.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.2.0"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -486,9 +486,9 @@ high.
 It is not recommended to use this option once a socket has been sent to a child
 with [`child_process.fork()`][].
 
-#### <Tag tag="M" /> `server.ref()`
+#### <DataTag tag="M" /> `server.ref()`
 
-<MC data={{"update":{"type":"added","version":["v0.9.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
 * Returns: [`net.Server`](/api/net#netserver)
 
@@ -496,9 +496,9 @@ Opposite of `unref()`, calling `ref()` on a previously `unref`ed server will
 _not_ let the program exit if it's the only server left (the default behavior).
 If the server is `ref`ed calling `ref()` again will have no effect.
 
-#### <Tag tag="M" /> `server.unref()`
+#### <DataTag tag="M" /> `server.unref()`
 
-<MC data={{"update":{"type":"added","version":["v0.9.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
 * Returns: [`net.Server`](/api/net#netserver)
 
@@ -506,9 +506,9 @@ Calling `unref()` on a server will allow the program to exit if this is the only
 active server in the event system. If the server is already `unref`ed calling
 `unref()` again will have no effect.
 
-### <Tag tag="C" /> `net.Socket`
+### <DataTag tag="C" /> `net.Socket`
 
-<MC data={{"update":{"type":"added","version":["v0.3.4"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.4"]}}} />
 
 * Extends: [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -525,9 +525,9 @@ is received. For example, it is passed to the listeners of a
 [`'connection'`][] event emitted on a [`net.Server`][], so the user can use
 it to interact with the client.
 
-#### <Tag tag="M" /> `new net.Socket([options])`
+#### <DataTag tag="M" /> `new net.Socket([options])`
 
-<MC data={{"changes":[{"version":"v15.14.0","pr-url":"https://github.com/nodejs/node/pull/37735","description":"AbortSignal support was added."}],"update":{"type":"added","version":["v0.3.4"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.14.0","pr-url":"https://github.com/nodejs/node/pull/37735","description":"AbortSignal support was added."}],"update":{"type":"added","version":["v0.3.4"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Available options are:
   * `fd` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) If specified, wrap around an existing socket with
@@ -549,25 +549,25 @@ Creates a new socket object.
 The newly created socket can be either a TCP socket or a streaming [IPC][]
 endpoint, depending on what it [`connect()`][`socket.connect()`] to.
 
-#### <Tag tag="E" /> `'close'`
+#### <DataTag tag="E" /> `'close'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `hadError` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` if the socket had a transmission error.
 
 Emitted once the socket is fully closed. The argument `hadError` is a boolean
 which says if the socket was closed due to a transmission error.
 
-#### <Tag tag="E" /> `'connect'`
+#### <DataTag tag="E" /> `'connect'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 Emitted when a socket connection is successfully established.
 See [`net.createConnection()`][].
 
-#### <Tag tag="E" /> `'data'`
+#### <DataTag tag="E" /> `'data'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -577,17 +577,17 @@ Emitted when data is received. The argument `data` will be a `Buffer` or
 The data will be lost if there is no listener when a `Socket`
 emits a `'data'` event.
 
-#### <Tag tag="E" /> `'drain'`
+#### <DataTag tag="E" /> `'drain'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 Emitted when the write buffer becomes empty. Can be used to throttle uploads.
 
 See also: the return values of `socket.write()`.
 
-#### <Tag tag="E" /> `'end'`
+#### <DataTag tag="E" /> `'end'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 Emitted when the other end of the socket signals the end of transmission, thus
 ending the readable side of the socket.
@@ -600,18 +600,18 @@ allowing the user to write arbitrary amounts of data. The user must call
 [`end()`][`socket.end()`] explicitly to close the connection (i.e. sending a
 FIN packet back).
 
-#### <Tag tag="E" /> `'error'`
+#### <DataTag tag="E" /> `'error'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
 Emitted when an error occurs. The `'close'` event will be called directly
 following this event.
 
-#### <Tag tag="E" /> `'lookup'`
+#### <DataTag tag="E" /> `'lookup'`
 
-<MC data={{"changes":[{"version":"v5.10.0","pr-url":"https://github.com/nodejs/node/pull/5598","description":"The `host` parameter is supported now."}],"update":{"type":"added","version":["v0.11.3"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v5.10.0","pr-url":"https://github.com/nodejs/node/pull/5598","description":"The `host` parameter is supported now."}],"update":{"type":"added","version":["v0.11.3"]}}} />
 
 Emitted after resolving the host name but before connecting.
 Not applicable to Unix sockets.
@@ -621,26 +621,26 @@ Not applicable to Unix sockets.
 * `family` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) The address type. See [`dns.lookup()`][].
 * `host` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The host name.
 
-#### <Tag tag="E" /> `'ready'`
+#### <DataTag tag="E" /> `'ready'`
 
-<MC data={{"update":{"type":"added","version":["v9.11.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.11.0"]}}} />
 
 Emitted when a socket is ready to be used.
 
 Triggered immediately after `'connect'`.
 
-#### <Tag tag="E" /> `'timeout'`
+#### <DataTag tag="E" /> `'timeout'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 Emitted if the socket times out from inactivity. This is only to notify that
 the socket has been idle. The user must manually close the connection.
 
 See also: [`socket.setTimeout()`][].
 
-#### <Tag tag="M" /> `socket.address()`
+#### <DataTag tag="M" /> `socket.address()`
 
-<MC data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43054","description":"The `family` property now returns a string instead of a number."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41431","description":"The `family` property now returns a number instead of a string."}],"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43054","description":"The `family` property now returns a string instead of a number."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41431","description":"The `family` property now returns a number instead of a string."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -648,11 +648,11 @@ Returns the bound `address`, the address `family` name and `port` of the
 socket as reported by the operating system:
 `{ port: 12346, family: 'IPv4', address: '127.0.0.1' }`
 
-#### <Tag tag="M" /> `socket.bufferSize`
+#### <DataTag tag="M" /> `socket.bufferSize`
 
-<MC data={{"update":{"type":"deprecated","version":["v14.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v14.6.0"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated: Use `writable.writableLength` instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `writable.writableLength` instead."}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -671,23 +671,23 @@ Users who experience large or growing `bufferSize` should attempt to
 "throttle" the data flows in their program with
 [`socket.pause()`][] and [`socket.resume()`][].
 
-#### <Tag tag="M" /> `socket.bytesRead`
+#### <DataTag tag="M" /> `socket.bytesRead`
 
-<MC data={{"update":{"type":"added","version":["v0.5.3"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.3"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The amount of received bytes.
 
-#### <Tag tag="M" /> `socket.bytesWritten`
+#### <DataTag tag="M" /> `socket.bytesWritten`
 
-<MC data={{"update":{"type":"added","version":["v0.5.3"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.3"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The amount of bytes sent.
 
-#### <Tag tag="M" /> `socket.connect()`
+#### <DataTag tag="M" /> `socket.connect()`
 
 Initiate a connection on a given socket.
 
@@ -711,9 +711,9 @@ This function should only be used for reconnecting a socket after
 `'close'` has been emitted or otherwise it may lead to undefined
 behavior.
 
-##### <Tag tag="M" /> `socket.connect(options[, connectListener])`
+##### <DataTag tag="M" /> `socket.connect(options[, connectListener])`
 
-<MC data={{"changes":[{"version":"v17.7.0","pr-url":"https://github.com/nodejs/node/pull/41310","description":"The `noDelay`, `keepAlive`, and `keepAliveInitialDelay` options are supported now."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/25436","description":"Added `onread` option."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6021","description":"The `hints` option defaults to `0` in all cases now. Previously, in the absence of the `family` option it would default to `dns.ADDRCONFIG | dns.V4MAPPED`."},{"version":"v5.11.0","pr-url":"https://github.com/nodejs/node/pull/6000","description":"The `hints` option is supported now."}],"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v17.7.0","pr-url":"https://github.com/nodejs/node/pull/41310","description":"The `noDelay`, `keepAlive`, and `keepAliveInitialDelay` options are supported now."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/25436","description":"Added `onread` option."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6021","description":"The `hints` option defaults to `0` in all cases now. Previously, in the absence of the `family` option it would default to `dns.ADDRCONFIG | dns.V4MAPPED`."},{"version":"v5.11.0","pr-url":"https://github.com/nodejs/node/pull/6000","description":"The `hints` option is supported now."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `connectListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Common parameter of [`socket.connect()`][]
@@ -782,7 +782,7 @@ net.connect({
 });
 ```
 
-##### <Tag tag="M" /> `socket.connect(path[, connectListener])`
+##### <DataTag tag="M" /> `socket.connect(path[, connectListener])`
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Path the client should connect to. See
   [Identifying paths for IPC connections][].
@@ -796,9 +796,9 @@ Alias to
 [`socket.connect(options[, connectListener])`][`socket.connect(options)`]
 called with `{ path: path }` as `options`.
 
-##### <Tag tag="M" /> `socket.connect(port[, host][, connectListener])`
+##### <DataTag tag="M" /> `socket.connect(port[, host][, connectListener])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `port` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Port the client should connect to.
 * `host` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Host the client should connect to.
@@ -812,9 +812,9 @@ Alias to
 [`socket.connect(options[, connectListener])`][`socket.connect(options)`]
 called with `{port: port, host: host}` as `options`.
 
-#### <Tag tag="M" /> `socket.connecting`
+#### <DataTag tag="M" /> `socket.connecting`
 
-<MC data={{"update":{"type":"added","version":["v6.1.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v6.1.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -826,9 +826,9 @@ that the
 [`socket.connect(options[, connectListener])`][`socket.connect(options)`]
 callback is a listener for the `'connect'` event.
 
-#### <Tag tag="M" /> `socket.destroy([error])`
+#### <DataTag tag="M" /> `socket.destroy([error])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `error` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * Returns: [`net.Socket`](/api/net#netsocket)
@@ -838,16 +838,16 @@ Destroys the stream and closes the connection.
 
 See [`writable.destroy()`][] for further details.
 
-#### <Tag tag="M" /> `socket.destroyed`
+#### <DataTag tag="M" /> `socket.destroyed`
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Indicates if the connection is destroyed or not. Once a
   connection is destroyed no further data can be transferred using it.
 
 See [`writable.destroyed`][] for further details.
 
-#### <Tag tag="M" /> `socket.end([data[, encoding]][, callback])`
+#### <DataTag tag="M" /> `socket.end([data[, encoding]][, callback])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Only used when data is `string`. **Default:** `'utf8'`.
@@ -859,9 +859,9 @@ server will still send some data.
 
 See [`writable.end()`][] for further details.
 
-#### <Tag tag="M" /> `socket.localAddress`
+#### <DataTag tag="M" /> `socket.localAddress`
 
-<MC data={{"update":{"type":"added","version":["v0.9.6"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.6"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -870,32 +870,32 @@ connecting on. For example, in a server listening on `'0.0.0.0'`, if a client
 connects on `'192.168.1.1'`, the value of `socket.localAddress` would be
 `'192.168.1.1'`.
 
-#### <Tag tag="M" /> `socket.localPort`
+#### <DataTag tag="M" /> `socket.localPort`
 
-<MC data={{"update":{"type":"added","version":["v0.9.6"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.6"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The numeric representation of the local port. For example, `80` or `21`.
 
-#### <Tag tag="M" /> `socket.localFamily`
+#### <DataTag tag="M" /> `socket.localFamily`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The string representation of the local IP family. `'IPv4'` or `'IPv6'`.
 
-#### <Tag tag="M" /> `socket.pause()`
+#### <DataTag tag="M" /> `socket.pause()`
 
 * Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
 
 Pauses the reading of data. That is, [`'data'`][] events will not be emitted.
 Useful to throttle back an upload.
 
-#### <Tag tag="M" /> `socket.pending`
+#### <DataTag tag="M" /> `socket.pending`
 
-<MC data={{"update":{"type":"added","version":["v11.2.0","v10.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.2.0","v10.16.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -903,9 +903,9 @@ This is `true` if the socket is not connected yet, either because `.connect()`
 has not yet been called or because it is still in the process of connecting
 (see [`socket.connecting`][]).
 
-#### <Tag tag="M" /> `socket.ref()`
+#### <DataTag tag="M" /> `socket.ref()`
 
-<MC data={{"update":{"type":"added","version":["v0.9.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
 * Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
 
@@ -913,9 +913,9 @@ Opposite of `unref()`, calling `ref()` on a previously `unref`ed socket will
 _not_ let the program exit if it's the only socket left (the default behavior).
 If the socket is `ref`ed calling `ref` again will have no effect.
 
-#### <Tag tag="M" /> `socket.remoteAddress`
+#### <DataTag tag="M" /> `socket.remoteAddress`
 
-<MC data={{"update":{"type":"added","version":["v0.5.10"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.10"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -923,25 +923,25 @@ The string representation of the remote IP address. For example,
 `'74.125.127.100'` or `'2001:4860:a005::68'`. Value may be `undefined` if
 the socket is destroyed (for example, if the client disconnected).
 
-#### <Tag tag="M" /> `socket.remoteFamily`
+#### <DataTag tag="M" /> `socket.remoteFamily`
 
-<MC data={{"update":{"type":"added","version":["v0.11.14"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.14"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The string representation of the remote IP family. `'IPv4'` or `'IPv6'`.
 
-#### <Tag tag="M" /> `socket.remotePort`
+#### <DataTag tag="M" /> `socket.remotePort`
 
-<MC data={{"update":{"type":"added","version":["v0.5.10"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.10"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The numeric representation of the remote port. For example, `80` or `21`.
 
-#### <Tag tag="M" /> `socket.resetAndDestroy()`
+#### <DataTag tag="M" /> `socket.resetAndDestroy()`
 
-<MC data={{"update":{"type":"added","version":["v18.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.3.0"]}}} />
 
 * Returns: [`net.Socket`](/api/net#netsocket)
 
@@ -950,15 +950,15 @@ If this TCP socket is in connecting status, it will send an RST packet and destr
 Otherwise, it will call `socket.destroy` with an `ERR_SOCKET_CLOSED` Error.
 If this is not a TCP socket (for example, a pipe), calling this method will immediately throw an `ERR_INVALID_HANDLE_TYPE` Error.
 
-#### <Tag tag="M" /> `socket.resume()`
+#### <DataTag tag="M" /> `socket.resume()`
 
 * Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
 
 Resumes reading after a call to [`socket.pause()`][].
 
-#### <Tag tag="M" /> `socket.setEncoding([encoding])`
+#### <DataTag tag="M" /> `socket.setEncoding([encoding])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
@@ -966,9 +966,9 @@ Resumes reading after a call to [`socket.pause()`][].
 Set the encoding for the socket as a [Readable Stream][]. See
 [`readable.setEncoding()`][] for more information.
 
-#### <Tag tag="M" /> `socket.setKeepAlive([enable][, initialDelay])`
+#### <DataTag tag="M" /> `socket.setKeepAlive([enable][, initialDelay])`
 
-<MC data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32204","description":"New defaults for `TCP_KEEPCNT` and `TCP_KEEPINTVL` socket options were added."}],"update":{"type":"added","version":["v0.1.92"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32204","description":"New defaults for `TCP_KEEPCNT` and `TCP_KEEPINTVL` socket options were added."}],"update":{"type":"added","version":["v0.1.92"]}}} />
 
 * `enable` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `false`
 * `initialDelay` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
@@ -989,9 +989,9 @@ Enabling the keep-alive functionality will set the following socket options:
 * `TCP_KEEPCNT=10`
 * `TCP_KEEPINTVL=1`
 
-#### <Tag tag="M" /> `socket.setNoDelay([noDelay])`
+#### <DataTag tag="M" /> `socket.setNoDelay([noDelay])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `noDelay` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `true`
 * Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
@@ -1007,9 +1007,9 @@ Passing `true` for `noDelay` or not passing an argument will disable Nagle's
 algorithm for the socket. Passing `false` for `noDelay` will enable Nagle's
 algorithm.
 
-#### <Tag tag="M" /> `socket.setTimeout(timeout[, callback])`
+#### <DataTag tag="M" /> `socket.setTimeout(timeout[, callback])`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -1035,18 +1035,18 @@ If `timeout` is 0, then the existing idle timeout is disabled.
 The optional `callback` parameter will be added as a one-time listener for the
 [`'timeout'`][] event.
 
-#### <Tag tag="M" /> `socket.timeout`
+#### <DataTag tag="M" /> `socket.timeout`
 
-<MC data={{"update":{"type":"added","version":["v10.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.7.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
 The socket timeout in milliseconds as set by [`socket.setTimeout()`][].
 It is `undefined` if a timeout has not been set.
 
-#### <Tag tag="M" /> `socket.unref()`
+#### <DataTag tag="M" /> `socket.unref()`
 
-<MC data={{"update":{"type":"added","version":["v0.9.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
 * Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
 
@@ -1054,9 +1054,9 @@ Calling `unref()` on a socket will allow the program to exit if this is the only
 active socket in the event system. If the socket is already `unref`ed calling
 `unref()` again will have no effect.
 
-#### <Tag tag="M" /> `socket.write(data[, encoding][, callback])`
+#### <DataTag tag="M" /> `socket.write(data[, encoding][, callback])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Only used when data is `string`. **Default:** `utf8`.
@@ -1076,9 +1076,9 @@ written out, which may not be immediately.
 See `Writable` stream [`write()`][stream_writable_write] method for more
 information.
 
-#### <Tag tag="M" /> `socket.readyState`
+#### <DataTag tag="M" /> `socket.readyState`
 
-<MC data={{"update":{"type":"added","version":["v0.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1089,7 +1089,7 @@ This property represents the state of the connection as a string.
 * If the stream is readable and not writable, it is `readOnly`.
 * If the stream is not readable and writable, it is `writeOnly`.
 
-### <Tag tag="M" /> `net.connect()`
+### <DataTag tag="M" /> `net.connect()`
 
 Aliases to
 [`net.createConnection()`][`net.createConnection()`].
@@ -1102,9 +1102,9 @@ Possible signatures:
 * [`net.connect(port[, host][, connectListener])`][`net.connect(port, host)`]
   for TCP connections.
 
-#### <Tag tag="M" /> `net.connect(options[, connectListener])`
+#### <DataTag tag="M" /> `net.connect(options[, connectListener])`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `connectListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -1113,9 +1113,9 @@ Possible signatures:
 Alias to
 [`net.createConnection(options[, connectListener])`][`net.createConnection(options)`].
 
-#### <Tag tag="M" /> `net.connect(path[, connectListener])`
+#### <DataTag tag="M" /> `net.connect(path[, connectListener])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `connectListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -1124,9 +1124,9 @@ Alias to
 Alias to
 [`net.createConnection(path[, connectListener])`][`net.createConnection(path)`].
 
-#### <Tag tag="M" /> `net.connect(port[, host][, connectListener])`
+#### <DataTag tag="M" /> `net.connect(port[, host][, connectListener])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `port` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `host` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -1136,7 +1136,7 @@ Alias to
 Alias to
 [`net.createConnection(port[, host][, connectListener])`][`net.createConnection(port, host)`].
 
-### <Tag tag="M" /> `net.createConnection()`
+### <DataTag tag="M" /> `net.createConnection()`
 
 A factory function, which creates a new [`net.Socket`][],
 immediately initiates connection with [`socket.connect()`][],
@@ -1156,9 +1156,9 @@ Possible signatures:
 
 The [`net.connect()`][] function is an alias to this function.
 
-#### <Tag tag="M" /> `net.createConnection(options[, connectListener])`
+#### <DataTag tag="M" /> `net.createConnection(options[, connectListener])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Required. Will be passed to both the
   [`new net.Socket([options])`][`new net.Socket(options)`] call and the
@@ -1204,9 +1204,9 @@ To connect on the socket `/tmp/echo.sock`:
 const client = net.createConnection({ path: '/tmp/echo.sock' });
 ```
 
-#### <Tag tag="M" /> `net.createConnection(path[, connectListener])`
+#### <DataTag tag="M" /> `net.createConnection(path[, connectListener])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Path the socket should connect to. Will be passed to
   [`socket.connect(path[, connectListener])`][`socket.connect(path)`].
@@ -1224,9 +1224,9 @@ immediately initiates connection with
 [`socket.connect(path[, connectListener])`][`socket.connect(path)`],
 then returns the `net.Socket` that starts the connection.
 
-#### <Tag tag="M" /> `net.createConnection(port[, host][, connectListener])`
+#### <DataTag tag="M" /> `net.createConnection(port[, host][, connectListener])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `port` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Port the socket should connect to. Will be passed to
   [`socket.connect(port[, host][, connectListener])`][`socket.connect(port)`].
@@ -1246,9 +1246,9 @@ immediately initiates connection with
 [`socket.connect(port[, host][, connectListener])`][`socket.connect(port)`],
 then returns the `net.Socket` that starts the connection.
 
-### <Tag tag="M" /> `net.createServer([options][, connectionListener])`
+### <DataTag tag="M" /> `net.createServer([options][, connectionListener])`
 
-<MC data={{"changes":[{"version":["v17.7.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41310","description":"The `noDelay`, `keepAlive`, and `keepAliveInitialDelay` options are supported now."}],"update":{"type":"added","version":["v0.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v17.7.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41310","description":"The `noDelay`, `keepAlive`, and `keepAliveInitialDelay` options are supported now."}],"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `allowHalfOpen` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If set to `false`, then the socket will
@@ -1331,9 +1331,9 @@ Use `nc` to connect to a Unix domain socket server:
 $ nc -U /tmp/echo.sock
 ```
 
-### <Tag tag="M" /> `net.isIP(input)`
+### <DataTag tag="M" /> `net.isIP(input)`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * `input` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -1350,9 +1350,9 @@ net.isIP('127.0.0.1/24'); // returns 0
 net.isIP('fhqwhgads'); // returns 0
 ```
 
-### <Tag tag="M" /> `net.isIPv4(input)`
+### <DataTag tag="M" /> `net.isIPv4(input)`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * `input` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1367,9 +1367,9 @@ net.isIPv4('127.0.0.1/24'); // returns false
 net.isIPv4('fhqwhgads'); // returns false
 ```
 
-### <Tag tag="M" /> `net.isIPv6(input)`
+### <DataTag tag="M" /> `net.isIPv6(input)`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * `input` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)

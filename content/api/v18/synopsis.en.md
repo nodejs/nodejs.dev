@@ -7,9 +7,9 @@ version: 'v18'
 
 ### Usage
 
-<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 `node [options] [V8 options] [script.js | -e "script" | - ] [arguments]`
 

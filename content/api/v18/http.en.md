@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<MC data={{"source_link":"lib/http.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/http.js"}} />
 
 To use the HTTP server and client one must `require('node:http')`.
 
@@ -56,9 +56,9 @@ list like the following:
   'accepT', '*/*' ]
 ```
 
-### <Tag tag="C" /> `http.Agent`
+### <DataTag tag="C" /> `http.Agent`
 
-<MC data={{"update":{"type":"added","version":["v0.3.4"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.4"]}}} />
 
 An `Agent` is responsible for managing connection persistence
 and reuse for HTTP clients. It maintains a queue of pending requests
@@ -115,9 +115,9 @@ http.get({
 });
 ```
 
-#### <Tag tag="M" /> `new Agent([options])`
+#### <DataTag tag="M" /> `new Agent([options])`
 
-<MC data={{"changes":[{"version":["v15.6.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36685","description":"Change the default scheduling from 'fifo' to 'lifo'."},{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/33617","description":"Add `maxTotalSockets` option to agent constructor."},{"version":["v14.5.0","v12.20.0"],"pr-url":"https://github.com/nodejs/node/pull/33278","description":"Add `scheduling` option to specify the free socket scheduling strategy."}],"update":{"type":"added","version":["v0.3.4"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.6.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36685","description":"Change the default scheduling from 'fifo' to 'lifo'."},{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/33617","description":"Add `maxTotalSockets` option to agent constructor."},{"version":["v14.5.0","v12.20.0"],"pr-url":"https://github.com/nodejs/node/pull/33278","description":"Add `scheduling` option to specify the free socket scheduling strategy."}],"update":{"type":"added","version":["v0.3.4"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Set of configurable options to set on the agent.
   Can have the following fields:
@@ -178,9 +178,9 @@ options.agent = keepAliveAgent;
 http.request(options, onResponseCallback);
 ```
 
-#### <Tag tag="M" /> `agent.createConnection(options[, callback])`
+#### <DataTag tag="M" /> `agent.createConnection(options[, callback])`
 
-<MC data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Options containing connection details. Check
   [`net.createConnection()`][] for the format of the options
@@ -201,9 +201,9 @@ type other than [`net.Socket`](/api/net#netsocket).
 
 `callback` has a signature of `(err, stream)`.
 
-#### <Tag tag="M" /> `agent.keepSocketAlive(socket)`
+#### <DataTag tag="M" /> `agent.keepSocketAlive(socket)`
 
-<MC data={{"update":{"type":"added","version":["v8.1.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.1.0"]}}} />
 
 * `socket` [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -223,9 +223,9 @@ it for use with the next request.
 The `socket` argument can be an instance of [`net.Socket`](/api/net#netsocket), a subclass of
 [`stream.Duplex`](/api/stream#streamduplex).
 
-#### <Tag tag="M" /> `agent.reuseSocket(socket, request)`
+#### <DataTag tag="M" /> `agent.reuseSocket(socket, request)`
 
-<MC data={{"update":{"type":"added","version":["v8.1.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.1.0"]}}} />
 
 * `socket` [`stream.Duplex`](/api/stream#streamduplex)
 * `request` [`http.ClientRequest`](/api/http#httpclientrequest)
@@ -242,9 +242,9 @@ This method can be overridden by a particular `Agent` subclass.
 The `socket` argument can be an instance of [`net.Socket`](/api/net#netsocket), a subclass of
 [`stream.Duplex`](/api/stream#streamduplex).
 
-#### <Tag tag="M" /> `agent.destroy()`
+#### <DataTag tag="M" /> `agent.destroy()`
 
-<MC data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 Destroy any sockets that are currently in use by the agent.
 
@@ -254,9 +254,9 @@ the agent when it is no longer needed. Otherwise,
 sockets might stay open for quite a long time before the server
 terminates them.
 
-#### <Tag tag="M" /> `agent.freeSockets`
+#### <DataTag tag="M" /> `agent.freeSockets`
 
-<MC data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36409","description":"The property now has a `null` prototype."}],"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36409","description":"The property now has a `null` prototype."}],"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -266,9 +266,9 @@ the agent when `keepAlive` is enabled. Do not modify.
 Sockets in the `freeSockets` list will be automatically destroyed and
 removed from the array on `'timeout'`.
 
-#### <Tag tag="M" /> `agent.getName([options])`
+#### <DataTag tag="M" /> `agent.getName([options])`
 
-<MC data={{"changes":[{"version":"v17.7.0","pr-url":"https://github.com/nodejs/node/pull/41906","description":"The `options` parameter is now optional."}],"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v17.7.0","pr-url":"https://github.com/nodejs/node/pull/41906","description":"The `options` parameter is now optional."}],"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) A set of options providing information for name generation
   * `host` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A domain name or IP address of the server to issue the
@@ -285,9 +285,9 @@ connection can be reused. For an HTTP agent, this returns
 the name includes the CA, cert, ciphers, and other HTTPS/TLS-specific options
 that determine socket reusability.
 
-#### <Tag tag="M" /> `agent.maxFreeSockets`
+#### <DataTag tag="M" /> `agent.maxFreeSockets`
 
-<MC data={{"update":{"type":"added","version":["v0.11.7"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.7"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -295,45 +295,45 @@ By default set to 256. For agents with `keepAlive` enabled, this
 sets the maximum number of sockets that will be left open in the free
 state.
 
-#### <Tag tag="M" /> `agent.maxSockets`
+#### <DataTag tag="M" /> `agent.maxSockets`
 
-<MC data={{"update":{"type":"added","version":["v0.3.6"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.6"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 By default set to `Infinity`. Determines how many concurrent sockets the agent
 can have open per origin. Origin is the returned value of [`agent.getName()`][].
 
-#### <Tag tag="M" /> `agent.maxTotalSockets`
+#### <DataTag tag="M" /> `agent.maxTotalSockets`
 
-<MC data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 By default set to `Infinity`. Determines how many concurrent sockets the agent
 can have open. Unlike `maxSockets`, this parameter applies across all origins.
 
-#### <Tag tag="M" /> `agent.requests`
+#### <DataTag tag="M" /> `agent.requests`
 
-<MC data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36409","description":"The property now has a `null` prototype."}],"update":{"type":"added","version":["v0.5.9"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36409","description":"The property now has a `null` prototype."}],"update":{"type":"added","version":["v0.5.9"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 An object which contains queues of requests that have not yet been assigned to
 sockets. Do not modify.
 
-#### <Tag tag="M" /> `agent.sockets`
+#### <DataTag tag="M" /> `agent.sockets`
 
-<MC data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36409","description":"The property now has a `null` prototype."}],"update":{"type":"added","version":["v0.3.6"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36409","description":"The property now has a `null` prototype."}],"update":{"type":"added","version":["v0.3.6"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 An object which contains arrays of sockets currently in use by the
 agent. Do not modify.
 
-### <Tag tag="C" /> `http.ClientRequest`
+### <DataTag tag="C" /> `http.ClientRequest`
 
-<MC data={{"update":{"type":"added","version":["v0.1.17"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.17"]}}} />
 
 * Extends: [`http.OutgoingMessage`](/api/http#httpoutgoingmessage)
 
@@ -366,25 +366,25 @@ For backward compatibility, `res` will only emit `'error'` if there is an
 Node.js does not check whether Content-Length and the length of the
 body which has been transmitted are equal or not.
 
-#### <Tag tag="E" /> `'abort'`
+#### <DataTag tag="E" /> `'abort'`
 
-<MC data={{"update":{"type":"deprecated","version":["v17.0.0","v16.12.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v17.0.0","v16.12.0"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated. Listen for the `'close'` event instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Listen for the `'close'` event instead."}}} />
 
 Emitted when the request has been aborted by the client. This event is only
 emitted on the first call to `abort()`.
 
-#### <Tag tag="E" /> `'close'`
+#### <DataTag tag="E" /> `'close'`
 
-<MC data={{"update":{"type":"added","version":["v0.5.4"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.4"]}}} />
 
 Indicates that the request is completed, or its underlying connection was
 terminated prematurely (before the response completion).
 
-#### <Tag tag="E" /> `'connect'`
+#### <DataTag tag="E" /> `'connect'`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * `response` [`http.IncomingMessage`](/api/http#httpincomingmessage)
 * `socket` [`stream.Duplex`](/api/stream#streamduplex)
@@ -455,26 +455,26 @@ proxy.listen(1337, '127.0.0.1', () => {
 });
 ```
 
-#### <Tag tag="E" /> `'continue'`
+#### <DataTag tag="E" /> `'continue'`
 
-<MC data={{"update":{"type":"added","version":["v0.3.2"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.2"]}}} />
 
 Emitted when the server sends a '100 Continue' HTTP response, usually because
 the request contained 'Expect: 100-continue'. This is an instruction that
 the client should send the request body.
 
-#### <Tag tag="E" /> `'finish'`
+#### <DataTag tag="E" /> `'finish'`
 
-<MC data={{"update":{"type":"added","version":["v0.3.6"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.6"]}}} />
 
 Emitted when the request has been sent. More specifically, this event is emitted
 when the last segment of the response headers and body have been handed off to
 the operating system for transmission over the network. It does not imply that
 the server has received anything yet.
 
-#### <Tag tag="E" /> `'information'`
+#### <DataTag tag="E" /> `'information'`
 
-<MC data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `info` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `httpVersion` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -513,18 +513,18 @@ traditional HTTP request/response chain, such as web sockets, in-place TLS
 upgrades, or HTTP 2.0. To be notified of 101 Upgrade notices, listen for the
 [`'upgrade'`][] event instead.
 
-#### <Tag tag="E" /> `'response'`
+#### <DataTag tag="E" /> `'response'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.0"]}}} />
 
 * `response` [`http.IncomingMessage`](/api/http#httpincomingmessage)
 
 Emitted when a response is received to this request. This event is emitted only
 once.
 
-#### <Tag tag="E" /> `'socket'`
+#### <DataTag tag="E" /> `'socket'`
 
-<MC data={{"update":{"type":"added","version":["v0.5.3"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.3"]}}} />
 
 * `socket` [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -532,18 +532,18 @@ This event is guaranteed to be passed an instance of the [`net.Socket`](/api/net
 a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specifies a socket
 type other than [`net.Socket`](/api/net#netsocket).
 
-#### <Tag tag="E" /> `'timeout'`
+#### <DataTag tag="E" /> `'timeout'`
 
-<MC data={{"update":{"type":"added","version":["v0.7.8"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.8"]}}} />
 
 Emitted when the underlying socket times out from inactivity. This only notifies
 that the socket has been idle. The request must be destroyed manually.
 
 See also: [`request.setTimeout()`][].
 
-#### <Tag tag="E" /> `'upgrade'`
+#### <DataTag tag="E" /> `'upgrade'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.94"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.94"]}}} />
 
 * `response` [`http.IncomingMessage`](/api/http#httpincomingmessage)
 * `socket` [`stream.Duplex`](/api/stream#streamduplex)
@@ -601,45 +601,45 @@ server.listen(1337, '127.0.0.1', () => {
 });
 ```
 
-#### <Tag tag="M" /> `request.abort()`
+#### <DataTag tag="M" /> `request.abort()`
 
-<MC data={{"update":{"type":"deprecated","version":["v14.1.0","v13.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v14.1.0","v13.14.0"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated: Use `request.destroy()` instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `request.destroy()` instead."}}} />
 
 Marks the request as aborting. Calling this will cause remaining data
 in the response to be dropped and the socket to be destroyed.
 
-#### <Tag tag="M" /> `request.aborted`
+#### <DataTag tag="M" /> `request.aborted`
 
-<MC data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/20230","description":"The `aborted` property is no longer a timestamp number."}],"update":{"type":"deprecated","version":["v17.0.0","v16.12.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/20230","description":"The `aborted` property is no longer a timestamp number."}],"update":{"type":"deprecated","version":["v17.0.0","v16.12.0"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated. Check `request.destroyed` instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Check `request.destroyed` instead."}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 The `request.aborted` property will be `true` if the request has
 been aborted.
 
-#### <Tag tag="M" /> `request.connection`
+#### <DataTag tag="M" /> `request.connection`
 
-<MC data={{"update":{"type":"deprecated","version":["v13.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v13.0.0"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated. Use `request.socket`."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `request.socket`."}}} />
 
 * [`stream.Duplex`](/api/stream#streamduplex)
 
 See [`request.socket`][].
 
-#### <Tag tag="M" /> `request.cork()`
+#### <DataTag tag="M" /> `request.cork()`
 
-<MC data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
 
 See [`writable.cork()`][].
 
-#### <Tag tag="M" /> `request.end([data[, encoding]][, callback])`
+#### <DataTag tag="M" /> `request.end([data[, encoding]][, callback])`
 
-<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18780","description":"This method now returns a reference to `ClientRequest`."}],"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18780","description":"This method now returns a reference to `ClientRequest`."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -656,9 +656,9 @@ If `data` is specified, it is equivalent to calling
 If `callback` is specified, it will be called when the request stream
 is finished.
 
-#### <Tag tag="M" /> `request.destroy([error])`
+#### <DataTag tag="M" /> `request.destroy([error])`
 
-<MC data={{"changes":[{"version":"v14.5.0","pr-url":"https://github.com/nodejs/node/pull/32789","description":"The function returns `this` for consistency with other Readable streams."}],"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v14.5.0","pr-url":"https://github.com/nodejs/node/pull/32789","description":"The function returns `this` for consistency with other Readable streams."}],"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) Optional, an error to emit with `'error'` event.
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -669,9 +669,9 @@ in the response to be dropped and the socket to be destroyed.
 
 See [`writable.destroy()`][] for further details.
 
-##### <Tag tag="M" /> `request.destroyed`
+##### <DataTag tag="M" /> `request.destroyed`
 
-<MC data={{"update":{"type":"added","version":["v14.1.0","v13.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.1.0","v13.14.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -679,11 +679,11 @@ Is `true` after [`request.destroy()`][] has been called.
 
 See [`writable.destroyed`][] for further details.
 
-#### <Tag tag="M" /> `request.finished`
+#### <DataTag tag="M" /> `request.finished`
 
-<MC data={{"update":{"type":"deprecated","version":["v13.4.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v13.4.0","v12.16.0"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated. Use `request.writableEnded`."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `request.writableEnded`."}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -691,9 +691,9 @@ The `request.finished` property will be `true` if [`request.end()`][]
 has been called. `request.end()` will automatically be called if the
 request was initiated via [`http.get()`][].
 
-#### <Tag tag="M" /> `request.flushHeaders()`
+#### <DataTag tag="M" /> `request.flushHeaders()`
 
-<MC data={{"update":{"type":"added","version":["v1.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v1.6.0"]}}} />
 
 Flushes the request headers.
 
@@ -705,9 +705,9 @@ That's usually desired (it saves a TCP round-trip), but not when the first
 data is not sent until possibly much later. `request.flushHeaders()` bypasses
 the optimization and kickstarts the request.
 
-#### <Tag tag="M" /> `request.getHeader(name)`
+#### <DataTag tag="M" /> `request.getHeader(name)`
 
-<MC data={{"update":{"type":"added","version":["v1.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v1.6.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -728,9 +728,9 @@ const cookie = request.getHeader('Cookie');
 // 'cookie' is of type string[]
 ```
 
-#### <Tag tag="M" /> `request.getHeaderNames()`
+#### <DataTag tag="M" /> `request.getHeaderNames()`
 
-<MC data={{"update":{"type":"added","version":["v7.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.7.0"]}}} />
 
 * Returns: string\[]
 
@@ -745,9 +745,9 @@ const headerNames = request.getHeaderNames();
 // headerNames === ['foo', 'cookie']
 ```
 
-#### <Tag tag="M" /> `request.getHeaders()`
+#### <DataTag tag="M" /> `request.getHeaders()`
 
-<MC data={{"update":{"type":"added","version":["v7.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.7.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -770,9 +770,9 @@ const headers = response.getHeaders();
 // headers === { foo: 'bar', 'cookie': ['foo=bar', 'bar=baz'] }
 ```
 
-#### <Tag tag="M" /> `request.getRawHeaderNames()`
+#### <DataTag tag="M" /> `request.getRawHeaderNames()`
 
-<MC data={{"update":{"type":"added","version":["v15.13.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.13.0","v14.17.0"]}}} />
 
 * Returns: string\[]
 
@@ -787,9 +787,9 @@ const headerNames = request.getRawHeaderNames();
 // headerNames === ['Foo', 'Set-Cookie']
 ```
 
-#### <Tag tag="M" /> `request.hasHeader(name)`
+#### <DataTag tag="M" /> `request.hasHeader(name)`
 
-<MC data={{"update":{"type":"added","version":["v7.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.7.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -801,39 +801,39 @@ outgoing headers. The header name matching is case-insensitive.
 const hasContentType = request.hasHeader('content-type');
 ```
 
-#### <Tag tag="M" /> `request.maxHeadersCount`
+#### <DataTag tag="M" /> `request.maxHeadersCount`
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `2000`
 
 Limits maximum response headers count. If set to 0, no limit will be applied.
 
-#### <Tag tag="M" /> `request.path`
+#### <DataTag tag="M" /> `request.path`
 
-<MC data={{"update":{"type":"added","version":["v0.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.4.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The request path.
 
-#### <Tag tag="M" /> `request.method`
+#### <DataTag tag="M" /> `request.method`
 
-<MC data={{"update":{"type":"added","version":["v0.1.97"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.97"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The request method.
 
-#### <Tag tag="M" /> `request.host`
+#### <DataTag tag="M" /> `request.host`
 
-<MC data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The request host.
 
-#### <Tag tag="M" /> `request.protocol`
+#### <DataTag tag="M" /> `request.protocol`
 
-<MC data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The request protocol.
 
-#### <Tag tag="M" /> `request.removeHeader(name)`
+#### <DataTag tag="M" /> `request.removeHeader(name)`
 
-<MC data={{"update":{"type":"added","version":["v1.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v1.6.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -843,9 +843,9 @@ Removes a header that's already defined into headers object.
 request.removeHeader('Content-Type');
 ```
 
-#### <Tag tag="M" /> `request.reusedSocket`
+#### <DataTag tag="M" /> `request.reusedSocket`
 
-<MC data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the request is send through a reused socket.
 
@@ -897,9 +897,9 @@ function retriableRequest() {
 retriableRequest();
 ```
 
-#### <Tag tag="M" /> `request.setHeader(name, value)`
+#### <DataTag tag="M" /> `request.setHeader(name, value)`
 
-<MC data={{"update":{"type":"added","version":["v1.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v1.6.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -932,18 +932,18 @@ const filename = 'Rock 🎵.txt';
 request.setHeader('Content-Disposition', `attachment; filename*=utf-8''${encodeURIComponent(filename)}`);
 ```
 
-#### <Tag tag="M" /> `request.setNoDelay([noDelay])`
+#### <DataTag tag="M" /> `request.setNoDelay([noDelay])`
 
-<MC data={{"update":{"type":"added","version":["v0.5.9"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.9"]}}} />
 
 * `noDelay` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Once a socket is assigned to this request and is connected
 [`socket.setNoDelay()`][] will be called.
 
-#### <Tag tag="M" /> `request.setSocketKeepAlive([enable][, initialDelay])`
+#### <DataTag tag="M" /> `request.setSocketKeepAlive([enable][, initialDelay])`
 
-<MC data={{"update":{"type":"added","version":["v0.5.9"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.9"]}}} />
 
 * `enable` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 * `initialDelay` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -951,9 +951,9 @@ Once a socket is assigned to this request and is connected
 Once a socket is assigned to this request and is connected
 [`socket.setKeepAlive()`][] will be called.
 
-#### <Tag tag="M" /> `request.setTimeout(timeout[, callback])`
+#### <DataTag tag="M" /> `request.setTimeout(timeout[, callback])`
 
-<MC data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/8895","description":"Consistently set socket timeout only when the socket connects."}],"update":{"type":"added","version":["v0.5.9"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/8895","description":"Consistently set socket timeout only when the socket connects."}],"update":{"type":"added","version":["v0.5.9"]}}} />
 
 * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Milliseconds before a request times out.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Optional function to be called when a timeout occurs.
@@ -963,9 +963,9 @@ Once a socket is assigned to this request and is connected
 Once a socket is assigned to this request and is connected
 [`socket.setTimeout()`][] will be called.
 
-#### <Tag tag="M" /> `request.socket`
+#### <DataTag tag="M" /> `request.socket`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -992,15 +992,15 @@ This property is guaranteed to be an instance of the [`net.Socket`](/api/net#net
 a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specified a socket
 type other than [`net.Socket`](/api/net#netsocket).
 
-#### <Tag tag="M" /> `request.uncork()`
+#### <DataTag tag="M" /> `request.uncork()`
 
-<MC data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
 
 See [`writable.uncork()`][].
 
-#### <Tag tag="M" /> `request.writableEnded`
+#### <DataTag tag="M" /> `request.writableEnded`
 
-<MC data={{"update":{"type":"added","version":["v12.9.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.9.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1008,18 +1008,18 @@ Is `true` after [`request.end()`][] has been called. This property
 does not indicate whether the data has been flushed, for this use
 [`request.writableFinished`][] instead.
 
-#### <Tag tag="M" /> `request.writableFinished`
+#### <DataTag tag="M" /> `request.writableFinished`
 
-<MC data={{"update":{"type":"added","version":["v12.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.7.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Is `true` if all data has been flushed to the underlying system, immediately
 before the [`'finish'`][] event is emitted.
 
-#### <Tag tag="M" /> `request.write(chunk[, encoding][, callback])`
+#### <DataTag tag="M" /> `request.write(chunk[, encoding][, callback])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.29"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.29"]}}} />
 
 * `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -1045,15 +1045,15 @@ buffer. Returns `false` if all or part of the data was queued in user memory.
 When `write` function is called with empty string or buffer, it does
 nothing and waits for more input.
 
-### <Tag tag="C" /> `http.Server`
+### <DataTag tag="C" /> `http.Server`
 
-<MC data={{"update":{"type":"added","version":["v0.1.17"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.17"]}}} />
 
 * Extends: [`net.Server`](/api/net#netserver)
 
-#### <Tag tag="E" /> `'checkContinue'`
+#### <DataTag tag="E" /> `'checkContinue'`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * `request` [`http.IncomingMessage`](/api/http#httpincomingmessage)
 * `response` [`http.ServerResponse`](/api/http#httpserverresponse)
@@ -1070,9 +1070,9 @@ the request body.
 When this event is emitted and handled, the [`'request'`][] event will
 not be emitted.
 
-#### <Tag tag="E" /> `'checkExpectation'`
+#### <DataTag tag="E" /> `'checkExpectation'`
 
-<MC data={{"update":{"type":"added","version":["v5.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v5.5.0"]}}} />
 
 * `request` [`http.IncomingMessage`](/api/http#httpincomingmessage)
 * `response` [`http.ServerResponse`](/api/http#httpserverresponse)
@@ -1084,9 +1084,9 @@ automatically respond with a `417 Expectation Failed` as appropriate.
 When this event is emitted and handled, the [`'request'`][] event will
 not be emitted.
 
-#### <Tag tag="E" /> `'clientError'`
+#### <DataTag tag="E" /> `'clientError'`
 
-<MC data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25605","description":"The default behavior will return a 431 Request Header Fields Too Large if a HPE_HEADER_OVERFLOW error occurs."},{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/17672","description":"The `rawPacket` is the current buffer that just parsed. Adding this buffer to the error object of `'clientError'` event is to make it possible that developers can log the broken packet."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4557","description":"The default action of calling `.destroy()` on the `socket` will no longer take place if there are listeners attached for `'clientError'`."}],"update":{"type":"added","version":["v0.1.94"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25605","description":"The default behavior will return a 431 Request Header Fields Too Large if a HPE_HEADER_OVERFLOW error occurs."},{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/17672","description":"The `rawPacket` is the current buffer that just parsed. Adding this buffer to the error object of `'clientError'` event is to make it possible that developers can log the broken packet."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4557","description":"The default action of calling `.destroy()` on the `socket` will no longer take place if there are listeners attached for `'clientError'`."}],"update":{"type":"added","version":["v0.1.94"]}}} />
 
 * `exception` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 * `socket` [`stream.Duplex`](/api/stream#streamduplex)
@@ -1145,15 +1145,15 @@ server.on('clientError', (err, socket) => {
 });
 ```
 
-#### <Tag tag="E" /> `'close'`
+#### <DataTag tag="E" /> `'close'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.4"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.4"]}}} />
 
 Emitted when the server closes.
 
-#### <Tag tag="E" /> `'connect'`
+#### <DataTag tag="E" /> `'connect'`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * `request` [`http.IncomingMessage`](/api/http#httpincomingmessage) Arguments for the HTTP request, as it is in
   the [`'request'`][] event
@@ -1172,9 +1172,9 @@ After this event is emitted, the request's socket will not have a `'data'`
 event listener, meaning it will need to be bound in order to handle data
 sent to the server on that socket.
 
-#### <Tag tag="E" /> `'connection'`
+#### <DataTag tag="E" /> `'connection'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.0"]}}} />
 
 * `socket` [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -1195,9 +1195,9 @@ This event is guaranteed to be passed an instance of the [`net.Socket`](/api/net
 a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specifies a socket
 type other than [`net.Socket`](/api/net#netsocket).
 
-#### <Tag tag="E" /> `'dropRequest'`
+#### <DataTag tag="E" /> `'dropRequest'`
 
-<MC data={{"update":{"type":"added","version":["v18.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.7.0"]}}} />
 
 * `request` [`http.IncomingMessage`](/api/http#httpincomingmessage) Arguments for the HTTP request, as it is in
   the [`'request'`][] event
@@ -1207,9 +1207,9 @@ When the number of requests on a socket reaches the threshold of
 `server.maxRequestsPerSocket`, the server will drop new requests
 and emit `'dropRequest'` event instead, then send `503` to client.
 
-#### <Tag tag="E" /> `'request'`
+#### <DataTag tag="E" /> `'request'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.0"]}}} />
 
 * `request` [`http.IncomingMessage`](/api/http#httpincomingmessage)
 * `response` [`http.ServerResponse`](/api/http#httpserverresponse)
@@ -1217,9 +1217,9 @@ and emit `'dropRequest'` event instead, then send `503` to client.
 Emitted each time there is a request. There may be multiple requests
 per connection (in the case of HTTP Keep-Alive connections).
 
-#### <Tag tag="E" /> `'upgrade'`
+#### <DataTag tag="E" /> `'upgrade'`
 
-<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19981","description":"Not listening to this event no longer causes the socket to be destroyed if a client sends an Upgrade header."}],"update":{"type":"added","version":["v0.1.94"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19981","description":"Not listening to this event no longer causes the socket to be destroyed if a client sends an Upgrade header."}],"update":{"type":"added","version":["v0.1.94"]}}} />
 
 * `request` [`http.IncomingMessage`](/api/http#httpincomingmessage) Arguments for the HTTP request, as it is in
   the [`'request'`][] event
@@ -1237,30 +1237,30 @@ This event is guaranteed to be passed an instance of the [`net.Socket`](/api/net
 a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specifies a socket
 type other than [`net.Socket`](/api/net#netsocket).
 
-#### <Tag tag="M" /> `server.close([callback])`
+#### <DataTag tag="M" /> `server.close([callback])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 Stops the server from accepting new connections. See [`net.Server.close()`][].
 
-#### <Tag tag="M" /> `server.closeAllConnections()`
+#### <DataTag tag="M" /> `server.closeAllConnections()`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 Closes all connections connected to this server.
 
-#### <Tag tag="M" /> `server.closeIdleConnections()`
+#### <DataTag tag="M" /> `server.closeIdleConnections()`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 Closes all connections connected to this server which are not sending a request
 or waiting for a response.
 
-#### <Tag tag="M" /> `server.headersTimeout`
+#### <DataTag tag="M" /> `server.headersTimeout`
 
-<MC data={{"update":{"type":"added","version":["v11.3.0","v10.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.3.0","v10.14.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `60000`
 
@@ -1274,28 +1274,28 @@ It must be set to a non-zero value (e.g. 120 seconds) to protect against
 potential Denial-of-Service attacks in case the server is deployed without a
 reverse proxy in front.
 
-#### <Tag tag="M" /> `server.listen()`
+#### <DataTag tag="M" /> `server.listen()`
 
 Starts the HTTP server listening for connections.
 This method is identical to [`server.listen()`][] from [`net.Server`][].
 
-#### <Tag tag="M" /> `server.listening`
+#### <DataTag tag="M" /> `server.listening`
 
-<MC data={{"update":{"type":"added","version":["v5.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v5.7.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Indicates whether or not the server is listening for connections.
 
-#### <Tag tag="M" /> `server.maxHeadersCount`
+#### <DataTag tag="M" /> `server.maxHeadersCount`
 
-<MC data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `2000`
 
 Limits maximum incoming headers count. If set to 0, no limit will be applied.
 
-#### <Tag tag="M" /> `server.requestTimeout`
+#### <DataTag tag="M" /> `server.requestTimeout`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41263","description":"The default request timeout changed from no timeout to 300s (5 minutes)."}],"update":{"type":"added","version":["v14.11.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41263","description":"The default request timeout changed from no timeout to 300s (5 minutes)."}],"update":{"type":"added","version":["v14.11.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `300000`
 
@@ -1309,9 +1309,9 @@ It must be set to a non-zero value (e.g. 120 seconds) to protect against
 potential Denial-of-Service attacks in case the server is deployed without a
 reverse proxy in front.
 
-#### <Tag tag="M" /> `server.setTimeout([msecs][, callback])`
+#### <DataTag tag="M" /> `server.setTimeout([msecs][, callback])`
 
-<MC data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27558","description":"The default timeout changed from 120s to 0 (no timeout)."}],"update":{"type":"added","version":["v0.9.12"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27558","description":"The default timeout changed from 120s to 0 (no timeout)."}],"update":{"type":"added","version":["v0.9.12"]}}} />
 
 * `msecs` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** 0 (no timeout)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -1328,9 +1328,9 @@ By default, the Server does not timeout sockets. However, if a callback
 is assigned to the Server's `'timeout'` event, timeouts must be handled
 explicitly.
 
-#### <Tag tag="M" /> `server.maxRequestsPerSocket`
+#### <DataTag tag="M" /> `server.maxRequestsPerSocket`
 
-<MC data={{"update":{"type":"added","version":["v16.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.10.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Requests per socket. **Default:** 0 (no limit)
 
@@ -1343,9 +1343,9 @@ When the limit is reached it will set the `Connection` header value to `close`,
 but will not actually close the connection, subsequent requests sent
 after the limit is reached will get `503 Service Unavailable` as a response.
 
-#### <Tag tag="M" /> `server.timeout`
+#### <DataTag tag="M" /> `server.timeout`
 
-<MC data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27558","description":"The default timeout changed from 120s to 0 (no timeout)."}],"update":{"type":"added","version":["v0.9.12"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27558","description":"The default timeout changed from 120s to 0 (no timeout)."}],"update":{"type":"added","version":["v0.9.12"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Timeout in milliseconds. **Default:** 0 (no timeout)
 
@@ -1357,9 +1357,9 @@ A value of `0` will disable the timeout behavior on incoming connections.
 The socket timeout logic is set up on connection, so changing this
 value only affects new connections to the server, not any existing connections.
 
-#### <Tag tag="M" /> `server.keepAliveTimeout`
+#### <DataTag tag="M" /> `server.keepAliveTimeout`
 
-<MC data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Timeout in milliseconds. **Default:** `5000` (5 seconds).
 
@@ -1377,34 +1377,34 @@ to 8.0.0, which did not have a keep-alive timeout.
 The socket timeout logic is set up on connection, so changing this value only
 affects new connections to the server, not any existing connections.
 
-### <Tag tag="C" /> `http.ServerResponse`
+### <DataTag tag="C" /> `http.ServerResponse`
 
-<MC data={{"update":{"type":"added","version":["v0.1.17"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.17"]}}} />
 
 * Extends: [`http.OutgoingMessage`](/api/http#httpoutgoingmessage)
 
 This object is created internally by an HTTP server, not by the user. It is
 passed as the second parameter to the [`'request'`][] event.
 
-#### <Tag tag="E" /> `'close'`
+#### <DataTag tag="E" /> `'close'`
 
-<MC data={{"update":{"type":"added","version":["v0.6.7"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.6.7"]}}} />
 
 Indicates that the response is completed, or its underlying connection was
 terminated prematurely (before the response completion).
 
-#### <Tag tag="E" /> `'finish'`
+#### <DataTag tag="E" /> `'finish'`
 
-<MC data={{"update":{"type":"added","version":["v0.3.6"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.6"]}}} />
 
 Emitted when the response has been sent. More specifically, this event is
 emitted when the last segment of the response headers and body have been
 handed off to the operating system for transmission over the network. It
 does not imply that the client has received anything yet.
 
-#### <Tag tag="M" /> `response.addTrailers(headers)`
+#### <DataTag tag="M" /> `response.addTrailers(headers)`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * `headers` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1429,25 +1429,25 @@ response.end();
 Attempting to set a header field name or value that contains invalid characters
 will result in a [`TypeError`][] being thrown.
 
-#### <Tag tag="M" /> `response.connection`
+#### <DataTag tag="M" /> `response.connection`
 
-<MC data={{"update":{"type":"deprecated","version":["v13.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v13.0.0"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated. Use `response.socket`."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `response.socket`."}}} />
 
 * [`stream.Duplex`](/api/stream#streamduplex)
 
 See [`response.socket`][].
 
-#### <Tag tag="M" /> `response.cork()`
+#### <DataTag tag="M" /> `response.cork()`
 
-<MC data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
 
 See [`writable.cork()`][].
 
-#### <Tag tag="M" /> `response.end([data[, encoding]][, callback])`
+#### <DataTag tag="M" /> `response.end([data[, encoding]][, callback])`
 
-<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18780","description":"This method now returns a reference to `ServerResponse`."}],"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18780","description":"This method now returns a reference to `ServerResponse`."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -1464,26 +1464,26 @@ If `data` is specified, it is similar in effect to calling
 If `callback` is specified, it will be called when the response stream
 is finished.
 
-#### <Tag tag="M" /> `response.finished`
+#### <DataTag tag="M" /> `response.finished`
 
-<MC data={{"update":{"type":"deprecated","version":["v13.4.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v13.4.0","v12.16.0"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated. Use `response.writableEnded`."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `response.writableEnded`."}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 The `response.finished` property will be `true` if [`response.end()`][]
 has been called.
 
-#### <Tag tag="M" /> `response.flushHeaders()`
+#### <DataTag tag="M" /> `response.flushHeaders()`
 
-<MC data={{"update":{"type":"added","version":["v1.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v1.6.0"]}}} />
 
 Flushes the response headers. See also: [`request.flushHeaders()`][].
 
-#### <Tag tag="M" /> `response.getHeader(name)`
+#### <DataTag tag="M" /> `response.getHeader(name)`
 
-<MC data={{"update":{"type":"added","version":["v0.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.4.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -1504,9 +1504,9 @@ const setCookie = response.getHeader('set-cookie');
 // setCookie is of type string[]
 ```
 
-#### <Tag tag="M" /> `response.getHeaderNames()`
+#### <DataTag tag="M" /> `response.getHeaderNames()`
 
-<MC data={{"update":{"type":"added","version":["v7.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.7.0"]}}} />
 
 * Returns: string\[]
 
@@ -1521,9 +1521,9 @@ const headerNames = response.getHeaderNames();
 // headerNames === ['foo', 'set-cookie']
 ```
 
-#### <Tag tag="M" /> `response.getHeaders()`
+#### <DataTag tag="M" /> `response.getHeaders()`
 
-<MC data={{"update":{"type":"added","version":["v7.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.7.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1546,9 +1546,9 @@ const headers = response.getHeaders();
 // headers === { foo: 'bar', 'set-cookie': ['foo=bar', 'bar=baz'] }
 ```
 
-#### <Tag tag="M" /> `response.hasHeader(name)`
+#### <DataTag tag="M" /> `response.hasHeader(name)`
 
-<MC data={{"update":{"type":"added","version":["v7.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.7.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1560,17 +1560,17 @@ outgoing headers. The header name matching is case-insensitive.
 const hasContentType = response.hasHeader('content-type');
 ```
 
-#### <Tag tag="M" /> `response.headersSent`
+#### <DataTag tag="M" /> `response.headersSent`
 
-<MC data={{"update":{"type":"added","version":["v0.9.3"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.3"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Boolean (read-only). True if headers were sent, false otherwise.
 
-#### <Tag tag="M" /> `response.removeHeader(name)`
+#### <DataTag tag="M" /> `response.removeHeader(name)`
 
-<MC data={{"update":{"type":"added","version":["v0.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.4.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1580,17 +1580,17 @@ Removes a header that's queued for implicit sending.
 response.removeHeader('Content-Encoding');
 ```
 
-#### <Tag tag="M" /> `response.req`
+#### <DataTag tag="M" /> `response.req`
 
-<MC data={{"update":{"type":"added","version":["v15.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.7.0"]}}} />
 
 * [`http.IncomingMessage`](/api/http#httpincomingmessage)
 
 A reference to the original HTTP `request` object.
 
-#### <Tag tag="M" /> `response.sendDate`
+#### <DataTag tag="M" /> `response.sendDate`
 
-<MC data={{"update":{"type":"added","version":["v0.7.5"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.7.5"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1600,9 +1600,9 @@ the response if it is not already present in the headers. Defaults to true.
 This should only be disabled for testing; HTTP requires the Date header
 in responses.
 
-#### <Tag tag="M" /> `response.setHeader(name, value)`
+#### <DataTag tag="M" /> `response.setHeader(name, value)`
 
-<MC data={{"update":{"type":"added","version":["v0.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.4.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -1652,9 +1652,9 @@ header will not yield the expected result. If progressive population of headers
 is desired with potential future retrieval and modification, use
 [`response.setHeader()`][] instead of [`response.writeHead()`][].
 
-#### <Tag tag="M" /> `response.setTimeout(msecs[, callback])`
+#### <DataTag tag="M" /> `response.setTimeout(msecs[, callback])`
 
-<MC data={{"update":{"type":"added","version":["v0.9.12"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.12"]}}} />
 
 * `msecs` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -1669,9 +1669,9 @@ the server, then sockets are destroyed when they time out. If a handler is
 assigned to the request, the response, or the server's `'timeout'` events,
 timed out sockets must be handled explicitly.
 
-#### <Tag tag="M" /> `response.socket`
+#### <DataTag tag="M" /> `response.socket`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -1693,9 +1693,9 @@ This property is guaranteed to be an instance of the [`net.Socket`](/api/net#net
 a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specified a socket
 type other than [`net.Socket`](/api/net#netsocket).
 
-#### <Tag tag="M" /> `response.statusCode`
+#### <DataTag tag="M" /> `response.statusCode`
 
-<MC data={{"update":{"type":"added","version":["v0.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.4.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `200`
 
@@ -1710,9 +1710,9 @@ response.statusCode = 404;
 After response header was sent to the client, this property indicates the
 status code which was sent out.
 
-#### <Tag tag="M" /> `response.statusMessage`
+#### <DataTag tag="M" /> `response.statusMessage`
 
-<MC data={{"update":{"type":"added","version":["v0.11.8"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.8"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1728,15 +1728,15 @@ response.statusMessage = 'Not found';
 After response header was sent to the client, this property indicates the
 status message which was sent out.
 
-#### <Tag tag="M" /> `response.uncork()`
+#### <DataTag tag="M" /> `response.uncork()`
 
-<MC data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
 
 See [`writable.uncork()`][].
 
-#### <Tag tag="M" /> `response.writableEnded`
+#### <DataTag tag="M" /> `response.writableEnded`
 
-<MC data={{"update":{"type":"added","version":["v12.9.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.9.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1744,18 +1744,18 @@ Is `true` after [`response.end()`][] has been called. This property
 does not indicate whether the data has been flushed, for this use
 [`response.writableFinished`][] instead.
 
-#### <Tag tag="M" /> `response.writableFinished`
+#### <DataTag tag="M" /> `response.writableFinished`
 
-<MC data={{"update":{"type":"added","version":["v12.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.7.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Is `true` if all data has been flushed to the underlying system, immediately
 before the [`'finish'`][] event is emitted.
 
-#### <Tag tag="M" /> `response.write(chunk[, encoding][, callback])`
+#### <DataTag tag="M" /> `response.write(chunk[, encoding][, callback])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.29"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.29"]}}} />
 
 * `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
@@ -1789,17 +1789,17 @@ Returns `true` if the entire data was flushed successfully to the kernel
 buffer. Returns `false` if all or part of the data was queued in user memory.
 `'drain'` will be emitted when the buffer is free again.
 
-#### <Tag tag="M" /> `response.writeContinue()`
+#### <DataTag tag="M" /> `response.writeContinue()`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 Sends a HTTP/1.1 100 Continue message to the client, indicating that
 the request body should be sent. See the [`'checkContinue'`][] event on
 `Server`.
 
-#### <Tag tag="M" /> `response.writeHead(statusCode[, statusMessage][, headers])`
+#### <DataTag tag="M" /> `response.writeHead(statusCode[, statusMessage][, headers])`
 
-<MC data={{"changes":[{"version":"v14.14.0","pr-url":"https://github.com/nodejs/node/pull/35274","description":"Allow passing headers as an array."},{"version":["v11.10.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/25974","description":"Return `this` from `writeHead()` to allow chaining with `end()`."},{"version":["v5.11.0","v4.4.5"],"pr-url":"https://github.com/nodejs/node/pull/6291","description":"A `RangeError` is thrown if `statusCode` is not a number in the range `[100, 999]`."}],"update":{"type":"added","version":["v0.1.30"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v14.14.0","pr-url":"https://github.com/nodejs/node/pull/35274","description":"Allow passing headers as an array."},{"version":["v11.10.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/25974","description":"Return `this` from `writeHead()` to allow chaining with `end()`."},{"version":["v5.11.0","v4.4.5"],"pr-url":"https://github.com/nodejs/node/pull/6291","description":"A `RangeError` is thrown if `statusCode` is not a number in the range `[100, 999]`."}],"update":{"type":"added","version":["v0.1.30"]}}} />
 
 * `statusCode` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `statusMessage` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -1863,16 +1863,16 @@ been transmitted are equal or not.
 Attempting to set a header field name or value that contains invalid characters
 will result in a [`TypeError`][] being thrown.
 
-#### <Tag tag="M" /> `response.writeProcessing()`
+#### <DataTag tag="M" /> `response.writeProcessing()`
 
-<MC data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 Sends a HTTP/1.1 102 Processing message to the client, indicating that
 the request body should be sent.
 
-### <Tag tag="C" /> `http.IncomingMessage`
+### <DataTag tag="C" /> `http.IncomingMessage`
 
-<MC data={{"changes":[{"version":"v15.5.0","pr-url":"https://github.com/nodejs/node/pull/33035","description":"The `destroyed` value returns `true` after the incoming data is consumed."},{"version":["v13.1.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30135","description":"The `readableHighWaterMark` value mirrors that of the socket."}],"update":{"type":"added","version":["v0.1.17"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.5.0","pr-url":"https://github.com/nodejs/node/pull/33035","description":"The `destroyed` value returns `true` after the incoming data is consumed."},{"version":["v13.1.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30135","description":"The `readableHighWaterMark` value mirrors that of the socket."}],"update":{"type":"added","version":["v0.1.17"]}}} />
 
 * Extends: [`stream.Readable`](/api/stream#streamreadable)
 
@@ -1886,34 +1886,34 @@ Different from its `socket` value which is a subclass of [`stream.Duplex`](/api/
 parse and emit the incoming HTTP headers and payload, as the underlying socket
 may be reused multiple times in case of keep-alive.
 
-#### <Tag tag="E" /> `'aborted'`
+#### <DataTag tag="E" /> `'aborted'`
 
-<MC data={{"update":{"type":"deprecated","version":["v17.0.0","v16.12.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v17.0.0","v16.12.0"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated. Listen for `'close'` event instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Listen for `'close'` event instead."}}} />
 
 Emitted when the request has been aborted.
 
-#### <Tag tag="E" /> `'close'`
+#### <DataTag tag="E" /> `'close'`
 
-<MC data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/33035","description":"The close event is now emitted when the request has been completed and not when the underlying socket is closed."}],"update":{"type":"added","version":["v0.4.2"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/33035","description":"The close event is now emitted when the request has been completed and not when the underlying socket is closed."}],"update":{"type":"added","version":["v0.4.2"]}}} />
 
 Emitted when the request has been completed.
 
-#### <Tag tag="M" /> `message.aborted`
+#### <DataTag tag="M" /> `message.aborted`
 
-<MC data={{"update":{"type":"deprecated","version":["v17.0.0","v16.12.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v17.0.0","v16.12.0"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated. Check `message.destroyed` from {stream.Readable}."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Check `message.destroyed` from {stream.Readable}."}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 The `message.aborted` property will be `true` if the request has
 been aborted.
 
-#### <Tag tag="M" /> `message.complete`
+#### <DataTag tag="M" /> `message.complete`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1938,17 +1938,17 @@ const req = http.request({
 });
 ```
 
-#### <Tag tag="M" /> `message.connection`
+#### <DataTag tag="M" /> `message.connection`
 
-<MC data={{"update":{"type":"deprecated","version":["v16.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v16.0.0"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated. Use `message.socket`."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `message.socket`."}}} />
 
 Alias for [`message.socket`][].
 
-#### <Tag tag="M" /> `message.destroy([error])`
+#### <DataTag tag="M" /> `message.destroy([error])`
 
-<MC data={{"changes":[{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/32789","description":"The function returns `this` for consistency with other Readable streams."}],"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/32789","description":"The function returns `this` for consistency with other Readable streams."}],"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -1957,9 +1957,9 @@ Calls `destroy()` on the socket that received the `IncomingMessage`. If `error`
 is provided, an `'error'` event is emitted on the socket and `error` is passed
 as an argument to any listeners on the event.
 
-#### <Tag tag="M" /> `message.headers`
+#### <DataTag tag="M" /> `message.headers`
 
-<MC data={{"changes":[{"version":"v15.1.0","pr-url":"https://github.com/nodejs/node/pull/35281","description":"`message.headers` is now lazily computed using an accessor property on the prototype and is no longer enumerable."}],"update":{"type":"added","version":["v0.1.5"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.1.0","pr-url":"https://github.com/nodejs/node/pull/35281","description":"`message.headers` is now lazily computed using an accessor property on the prototype and is no longer enumerable."}],"update":{"type":"added","version":["v0.1.5"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1987,9 +1987,9 @@ header name:
 * For duplicate `cookie` headers, the values are joined together with `; `.
 * For all other headers, the values are joined together with `, `.
 
-#### <Tag tag="M" /> `message.headersDistinct`
+#### <DataTag tag="M" /> `message.headersDistinct`
 
-<MC data={{"update":{"type":"added","version":["v18.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.3.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -2005,9 +2005,9 @@ always arrays of strings, even for headers received just once.
 console.log(request.headersDistinct);
 ```
 
-#### <Tag tag="M" /> `message.httpVersion`
+#### <DataTag tag="M" /> `message.httpVersion`
 
-<MC data={{"update":{"type":"added","version":["v0.1.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.1"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -2018,9 +2018,9 @@ Probably either `'1.1'` or `'1.0'`.
 Also `message.httpVersionMajor` is the first integer and
 `message.httpVersionMinor` is the second.
 
-#### <Tag tag="M" /> `message.method`
+#### <DataTag tag="M" /> `message.method`
 
-<MC data={{"update":{"type":"added","version":["v0.1.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.1"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -2028,9 +2028,9 @@ Also `message.httpVersionMajor` is the first integer and
 
 The request method as a string. Read only. Examples: `'GET'`, `'DELETE'`.
 
-#### <Tag tag="M" /> `message.rawHeaders`
+#### <DataTag tag="M" /> `message.rawHeaders`
 
-<MC data={{"update":{"type":"added","version":["v0.11.6"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.6"]}}} />
 
 * string\[]
 
@@ -2056,18 +2056,18 @@ Header names are not lowercased, and duplicates are not merged.
 console.log(request.rawHeaders);
 ```
 
-#### <Tag tag="M" /> `message.rawTrailers`
+#### <DataTag tag="M" /> `message.rawTrailers`
 
-<MC data={{"update":{"type":"added","version":["v0.11.6"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.6"]}}} />
 
 * string\[]
 
 The raw request/response trailer keys and values exactly as they were
 received. Only populated at the `'end'` event.
 
-#### <Tag tag="M" /> `message.setTimeout(msecs[, callback])`
+#### <DataTag tag="M" /> `message.setTimeout(msecs[, callback])`
 
-<MC data={{"update":{"type":"added","version":["v0.5.9"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.9"]}}} />
 
 * `msecs` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -2075,9 +2075,9 @@ received. Only populated at the `'end'` event.
 
 Calls `message.socket.setTimeout(msecs, callback)`.
 
-#### <Tag tag="M" /> `message.socket`
+#### <DataTag tag="M" /> `message.socket`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -2090,9 +2090,9 @@ This property is guaranteed to be an instance of the [`net.Socket`](/api/net#net
 a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specified a socket
 type other than [`net.Socket`](/api/net#netsocket) or internally nulled.
 
-#### <Tag tag="M" /> `message.statusCode`
+#### <DataTag tag="M" /> `message.statusCode`
 
-<MC data={{"update":{"type":"added","version":["v0.1.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.1"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -2100,9 +2100,9 @@ type other than [`net.Socket`](/api/net#netsocket) or internally nulled.
 
 The 3-digit HTTP response status code. E.G. `404`.
 
-#### <Tag tag="M" /> `message.statusMessage`
+#### <DataTag tag="M" /> `message.statusMessage`
 
-<MC data={{"update":{"type":"added","version":["v0.11.10"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.10"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -2111,17 +2111,17 @@ The 3-digit HTTP response status code. E.G. `404`.
 The HTTP response status message (reason phrase). E.G. `OK` or `Internal Server
 Error`.
 
-#### <Tag tag="M" /> `message.trailers`
+#### <DataTag tag="M" /> `message.trailers`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 The request/response trailers object. Only populated at the `'end'` event.
 
-#### <Tag tag="M" /> `message.trailersDistinct`
+#### <DataTag tag="M" /> `message.trailersDistinct`
 
-<MC data={{"update":{"type":"added","version":["v18.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.3.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -2129,9 +2129,9 @@ Similar to [`message.trailers`][], but there is no join logic and the values are
 always arrays of strings, even for headers received just once.
 Only populated at the `'end'` event.
 
-#### <Tag tag="M" /> `message.url`
+#### <DataTag tag="M" /> `message.url`
 
-<MC data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -2173,9 +2173,9 @@ URL {
 }
 ```
 
-### <Tag tag="C" /> `http.OutgoingMessage`
+### <DataTag tag="C" /> `http.OutgoingMessage`
 
-<MC data={{"update":{"type":"added","version":["v0.1.17"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.17"]}}} />
 
 * Extends: [`Stream`](/api/stream#stream)
 
@@ -2183,29 +2183,29 @@ This class serves as the parent class of [`http.ClientRequest`][]
 and [`http.ServerResponse`][]. It is an abstract outgoing message from
 the perspective of the participants of an HTTP transaction.
 
-#### <Tag tag="E" /> `'drain'`
+#### <DataTag tag="E" /> `'drain'`
 
-<MC data={{"update":{"type":"added","version":["v0.3.6"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.6"]}}} />
 
 Emitted when the buffer of the message is free again.
 
-#### <Tag tag="E" /> `'finish'`
+#### <DataTag tag="E" /> `'finish'`
 
-<MC data={{"update":{"type":"added","version":["v0.1.17"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.17"]}}} />
 
 Emitted when the transmission is finished successfully.
 
-#### <Tag tag="E" /> `'prefinish'`
+#### <DataTag tag="E" /> `'prefinish'`
 
-<MC data={{"update":{"type":"added","version":["v0.11.6"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.6"]}}} />
 
 Emitted after `outgoingMessage.end()` is called.
 When the event is emitted, all data has been processed but not necessarily
 completely flushed.
 
-#### <Tag tag="M" /> `outgoingMessage.addTrailers(headers)`
+#### <DataTag tag="M" /> `outgoingMessage.addTrailers(headers)`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * `headers` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -2228,9 +2228,9 @@ message.end();
 Attempting to set a header field name or value that contains invalid characters
 will result in a `TypeError` being thrown.
 
-#### <Tag tag="M" /> `outgoingMessage.appendHeader(name, value)`
+#### <DataTag tag="M" /> `outgoingMessage.appendHeader(name, value)`
 
-<MC data={{"update":{"type":"added","version":["v18.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.3.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Header name
 * `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Header value
@@ -2248,23 +2248,23 @@ Depending of the value of `options.uniqueHeaders` when the client request or the
 server were created, this will end up in the header being sent multiple times or
 a single time with values joined using `; `.
 
-#### <Tag tag="M" /> `outgoingMessage.connection`
+#### <DataTag tag="M" /> `outgoingMessage.connection`
 
-<MC data={{"update":{"type":"deprecated","version":["v15.12.0","v14.17.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v15.12.0","v14.17.1"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated: Use `outgoingMessage.socket` instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `outgoingMessage.socket` instead."}}} />
 
 Alias of [`outgoingMessage.socket`][].
 
-#### <Tag tag="M" /> `outgoingMessage.cork()`
+#### <DataTag tag="M" /> `outgoingMessage.cork()`
 
-<MC data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
 
 See [`writable.cork()`][].
 
-#### <Tag tag="M" /> `outgoingMessage.destroy([error])`
+#### <DataTag tag="M" /> `outgoingMessage.destroy([error])`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) Optional, an error to emit with `error` event
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -2272,9 +2272,9 @@ See [`writable.cork()`][].
 Destroys the message. Once a socket is associated with the message
 and is connected, that socket will be destroyed as well.
 
-#### <Tag tag="M" /> `outgoingMessage.end(chunk[, encoding][, callback])`
+#### <DataTag tag="M" /> `outgoingMessage.end(chunk[, encoding][, callback])`
 
-<MC data={{"changes":[{"version":"v0.11.6","description":"add `callback` argument."}],"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v0.11.6","description":"add `callback` argument."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Optional, **Default**: `utf8`
@@ -2292,9 +2292,9 @@ If `chunk` is specified, it is equivalent to calling
 If `callback` is provided, it will be called when the message is finished
 (equivalent to a listener of the `'finish'` event).
 
-#### <Tag tag="M" /> `outgoingMessage.flushHeaders()`
+#### <DataTag tag="M" /> `outgoingMessage.flushHeaders()`
 
-<MC data={{"update":{"type":"added","version":["v1.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v1.6.0"]}}} />
 
 Flushes the message headers.
 
@@ -2307,9 +2307,9 @@ It is usually desired (it saves a TCP round-trip), but not when the first
 data is not sent until possibly much later. `outgoingMessage.flushHeaders()`
 bypasses the optimization and kickstarts the message.
 
-#### <Tag tag="M" /> `outgoingMessage.getHeader(name)`
+#### <DataTag tag="M" /> `outgoingMessage.getHeader(name)`
 
-<MC data={{"update":{"type":"added","version":["v0.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.4.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Name of header
 * Returns [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
@@ -2317,18 +2317,18 @@ bypasses the optimization and kickstarts the message.
 Gets the value of the HTTP header with the given name. If that header is not
 set, the returned value will be `undefined`.
 
-#### <Tag tag="M" /> `outgoingMessage.getHeaderNames()`
+#### <DataTag tag="M" /> `outgoingMessage.getHeaderNames()`
 
-<MC data={{"update":{"type":"added","version":["v7.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.7.0"]}}} />
 
 * Returns string\[]
 
 Returns an array containing the unique names of the current outgoing headers.
 All names are lowercase.
 
-#### <Tag tag="M" /> `outgoingMessage.getHeaders()`
+#### <DataTag tag="M" /> `outgoingMessage.getHeaders()`
 
-<MC data={{"update":{"type":"added","version":["v7.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.7.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -2351,9 +2351,9 @@ const headers = outgoingMessage.getHeaders();
 // headers === { foo: 'bar', 'set-cookie': ['foo=bar', 'bar=baz'] }
 ```
 
-#### <Tag tag="M" /> `outgoingMessage.hasHeader(name)`
+#### <DataTag tag="M" /> `outgoingMessage.hasHeader(name)`
 
-<MC data={{"update":{"type":"added","version":["v7.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.7.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2365,17 +2365,17 @@ outgoing headers. The header name is case-insensitive.
 const hasContentType = outgoingMessage.hasHeader('content-type');
 ```
 
-#### <Tag tag="M" /> `outgoingMessage.headersSent`
+#### <DataTag tag="M" /> `outgoingMessage.headersSent`
 
-<MC data={{"update":{"type":"added","version":["v0.9.3"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.3"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Read-only. `true` if the headers were sent, otherwise `false`.
 
-#### <Tag tag="M" /> `outgoingMessage.pipe()`
+#### <DataTag tag="M" /> `outgoingMessage.pipe()`
 
-<MC data={{"update":{"type":"added","version":["v9.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.0.0"]}}} />
 
 Overrides the `stream.pipe()` method inherited from the legacy `Stream` class
 which is the parent class of `http.OutgoingMessage`.
@@ -2383,9 +2383,9 @@ which is the parent class of `http.OutgoingMessage`.
 Calling this method will throw an `Error` because `outgoingMessage` is a
 write-only stream.
 
-#### <Tag tag="M" /> `outgoingMessage.removeHeader(name)`
+#### <DataTag tag="M" /> `outgoingMessage.removeHeader(name)`
 
-<MC data={{"update":{"type":"added","version":["v0.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.4.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Header name
 
@@ -2395,9 +2395,9 @@ Removes a header that is queued for implicit sending.
 outgoingMessage.removeHeader('Content-Encoding');
 ```
 
-#### <Tag tag="M" /> `outgoingMessage.setHeader(name, value)`
+#### <DataTag tag="M" /> `outgoingMessage.setHeader(name, value)`
 
-<MC data={{"update":{"type":"added","version":["v0.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.4.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Header name
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Header value
@@ -2407,9 +2407,9 @@ Sets a single header value. If the header already exists in the to-be-sent
 headers, its value will be replaced. Use an array of strings to send multiple
 headers with the same name.
 
-#### <Tag tag="M" /> `outgoingMessage.setTimeout(msesc[, callback])`
+#### <DataTag tag="M" /> `outgoingMessage.setTimeout(msesc[, callback])`
 
-<MC data={{"update":{"type":"added","version":["v0.9.12"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.12"]}}} />
 
 * `msesc` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Optional function to be called when a timeout
@@ -2419,9 +2419,9 @@ headers with the same name.
 Once a socket is associated with the message and is connected,
 [`socket.setTimeout()`][] will be called with `msecs` as the first parameter.
 
-#### <Tag tag="M" /> `outgoingMessage.socket`
+#### <DataTag tag="M" /> `outgoingMessage.socket`
 
-<MC data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -2430,23 +2430,23 @@ this property.
 
 After calling `outgoingMessage.end()`, this property will be nulled.
 
-#### <Tag tag="M" /> `outgoingMessage.uncork()`
+#### <DataTag tag="M" /> `outgoingMessage.uncork()`
 
-<MC data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
 
 See [`writable.uncork()`][]
 
-#### <Tag tag="M" /> `outgoingMessage.writableCorked`
+#### <DataTag tag="M" /> `outgoingMessage.writableCorked`
 
-<MC data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The number of times `outgoingMessage.cork()` has been called.
 
-#### <Tag tag="M" /> `outgoingMessage.writableEnded`
+#### <DataTag tag="M" /> `outgoingMessage.writableEnded`
 
-<MC data={{"update":{"type":"added","version":["v12.9.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.9.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -2454,42 +2454,42 @@ Is `true` if `outgoingMessage.end()` has been called. This property does
 not indicate whether the data has been flushed. For that purpose, use
 `message.writableFinished` instead.
 
-#### <Tag tag="M" /> `outgoingMessage.writableFinished`
+#### <DataTag tag="M" /> `outgoingMessage.writableFinished`
 
-<MC data={{"update":{"type":"added","version":["v12.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.7.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Is `true` if all data has been flushed to the underlying system.
 
-#### <Tag tag="M" /> `outgoingMessage.writableHighWaterMark`
+#### <DataTag tag="M" /> `outgoingMessage.writableHighWaterMark`
 
-<MC data={{"update":{"type":"added","version":["v12.9.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.9.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The `highWaterMark` of the underlying socket if assigned. Otherwise, the default
 buffer level when [`writable.write()`][] starts returning false (`16384`).
 
-#### <Tag tag="M" /> `outgoingMessage.writableLength`
+#### <DataTag tag="M" /> `outgoingMessage.writableLength`
 
-<MC data={{"update":{"type":"added","version":["v12.9.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.9.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The number of buffered bytes.
 
-#### <Tag tag="M" /> `outgoingMessage.writableObjectMode`
+#### <DataTag tag="M" /> `outgoingMessage.writableObjectMode`
 
-<MC data={{"update":{"type":"added","version":["v12.9.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.9.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Always `false`.
 
-#### <Tag tag="M" /> `outgoingMessage.write(chunk[, encoding][, callback])`
+#### <DataTag tag="M" /> `outgoingMessage.write(chunk[, encoding][, callback])`
 
-<MC data={{"changes":[{"version":"v0.11.6","description":"The `callback` argument was added."}],"update":{"type":"added","version":["v0.1.29"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v0.11.6","description":"The `callback` argument was added."}],"update":{"type":"added","version":["v0.1.29"]}}} />
 
 * `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default**: `utf8`
@@ -2508,17 +2508,17 @@ Returns `true` if the entire data was flushed successfully to the kernel
 buffer. Returns `false` if all or part of the data was queued in the user
 memory. The `'drain'` event will be emitted when the buffer is free again.
 
-### <Tag tag="M" /> `http.METHODS`
+### <DataTag tag="M" /> `http.METHODS`
 
-<MC data={{"update":{"type":"added","version":["v0.11.8"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.8"]}}} />
 
 * string\[]
 
 A list of the HTTP methods that are supported by the parser.
 
-### <Tag tag="M" /> `http.STATUS_CODES`
+### <DataTag tag="M" /> `http.STATUS_CODES`
 
-<MC data={{"update":{"type":"added","version":["v0.1.22"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.22"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -2526,9 +2526,9 @@ A collection of all the standard HTTP response status codes, and the
 short description of each. For example, `http.STATUS_CODES[404] === 'Not
 Found'`.
 
-### <Tag tag="M" /> `http.createServer([options][, requestListener])`
+### <DataTag tag="M" /> `http.createServer([options][, requestListener])`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41263","description":"The `requestTimeout`, `headersTimeout`, `keepAliveTimeout`, and `connectionsCheckingInterval` options are supported now."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42163","description":"The `noDelay` option now defaults to `true`."},{"version":"v17.7.0","pr-url":"https://github.com/nodejs/node/pull/41310","description":"The `noDelay`, `keepAlive` and `keepAliveInitialDelay` options are supported now."},{"version":["v13.8.0","v12.15.0","v10.19.0"],"pr-url":"https://github.com/nodejs/node/pull/31448","description":"The `insecureHTTPParser` option is supported now."},{"version":"v13.3.0","pr-url":"https://github.com/nodejs/node/pull/30570","description":"The `maxHeaderSize` option is supported now."},{"version":["v9.6.0","v8.12.0"],"pr-url":"https://github.com/nodejs/node/pull/15752","description":"The `options` argument is supported now."}],"update":{"type":"added","version":["v0.1.13"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41263","description":"The `requestTimeout`, `headersTimeout`, `keepAliveTimeout`, and `connectionsCheckingInterval` options are supported now."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42163","description":"The `noDelay` option now defaults to `true`."},{"version":"v17.7.0","pr-url":"https://github.com/nodejs/node/pull/41310","description":"The `noDelay`, `keepAlive` and `keepAliveInitialDelay` options are supported now."},{"version":["v13.8.0","v12.15.0","v10.19.0"],"pr-url":"https://github.com/nodejs/node/pull/31448","description":"The `insecureHTTPParser` option is supported now."},{"version":"v13.3.0","pr-url":"https://github.com/nodejs/node/pull/30570","description":"The `maxHeaderSize` option is supported now."},{"version":["v9.6.0","v8.12.0"],"pr-url":"https://github.com/nodejs/node/pull/15752","description":"The `options` argument is supported now."}],"update":{"type":"added","version":["v0.1.13"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `IncomingMessage` [`http.IncomingMessage`](/api/http#httpincomingmessage) Specifies the `IncomingMessage`
@@ -2615,11 +2615,11 @@ server.on('request', (request, res) => {
 server.listen(8000);
 ```
 
-### <Tag tag="M" /> `http.get(options[, callback])`
+### <DataTag tag="M" /> `http.get(options[, callback])`
 
-### <Tag tag="M" /> `http.get(url[, options][, callback])`
+### <DataTag tag="M" /> `http.get(url[, options][, callback])`
 
-<MC data={{"changes":[{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
 
 * `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Accepts the same `options` as
@@ -2687,18 +2687,18 @@ const server = http.createServer((req, res) => {
 server.listen(8000);
 ```
 
-### <Tag tag="M" /> `http.globalAgent`
+### <DataTag tag="M" /> `http.globalAgent`
 
-<MC data={{"update":{"type":"added","version":["v0.5.9"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.9"]}}} />
 
 * [`http.Agent`](/api/http#httpagent)
 
 Global instance of `Agent` which is used as the default for all HTTP client
 requests.
 
-### <Tag tag="M" /> `http.maxHeaderSize`
+### <DataTag tag="M" /> `http.maxHeaderSize`
 
-<MC data={{"update":{"type":"added","version":["v11.6.0","v10.15.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.6.0","v10.15.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -2709,11 +2709,11 @@ option.
 This can be overridden for servers and client requests by passing the
 `maxHeaderSize` option.
 
-### <Tag tag="M" /> `http.request(options[, callback])`
+### <DataTag tag="M" /> `http.request(options[, callback])`
 
-### <Tag tag="M" /> `http.request(url[, options][, callback])`
+### <DataTag tag="M" /> `http.request(url[, options][, callback])`
 
-<MC data={{"changes":[{"version":["v16.7.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39310","description":"When using a `URL` object parsed username and password will now be properly URI decoded."},{"version":["v15.3.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36048","description":"It is possible to abort a request with an AbortSignal."},{"version":["v13.8.0","v12.15.0","v10.19.0"],"pr-url":"https://github.com/nodejs/node/pull/31448","description":"The `insecureHTTPParser` option is supported now."},{"version":"v13.3.0","pr-url":"https://github.com/nodejs/node/pull/30570","description":"The `maxHeaderSize` option is supported now."},{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v16.7.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39310","description":"When using a `URL` object parsed username and password will now be properly URI decoded."},{"version":["v15.3.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36048","description":"It is possible to abort a request with an AbortSignal."},{"version":["v13.8.0","v12.15.0","v10.19.0"],"pr-url":"https://github.com/nodejs/node/pull/31448","description":"The `insecureHTTPParser` option is supported now."},{"version":"v13.3.0","pr-url":"https://github.com/nodejs/node/pull/30570","description":"The `maxHeaderSize` option is supported now."},{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
 
 * `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2972,9 +2972,9 @@ Passing an `AbortSignal` and then calling `abort` on the corresponding
 `AbortController` will behave the same way as calling `.destroy()` on the
 request itself.
 
-### <Tag tag="M" /> `http.validateHeaderName(name)`
+### <DataTag tag="M" /> `http.validateHeaderName(name)`
 
-<MC data={{"update":{"type":"added","version":["v14.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.3.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -3002,9 +3002,9 @@ try {
 }
 ```
 
-### <Tag tag="M" /> `http.validateHeaderValue(name, value)`
+### <DataTag tag="M" /> `http.validateHeaderValue(name, value)`
 
-<MC data={{"update":{"type":"added","version":["v14.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.3.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -3042,9 +3042,9 @@ try {
 }
 ```
 
-### <Tag tag="M" /> `http.setMaxIdleHTTPParsers`
+### <DataTag tag="M" /> `http.setMaxIdleHTTPParsers`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 

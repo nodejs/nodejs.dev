@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v16.5.0"]}}} />
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"Use of this API no longer emit a runtime warning."}],"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"Use of this API no longer emit a runtime warning."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 An implementation of the [WHATWG Streams Standard][].
 
@@ -88,13 +88,13 @@ const stream = new ReadableStream({
 
 ### API
 
-#### <Tag tag="C" /> `ReadableStream`
+#### <DataTag tag="C" /> `ReadableStream`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
-##### <Tag tag="M" /> `new ReadableStream([underlyingSource [, strategy]])`
+##### <DataTag tag="M" /> `new ReadableStream([underlyingSource [, strategy]])`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 
 
@@ -126,9 +126,9 @@ const stream = new ReadableStream({
 
 
 
-##### <Tag tag="M" /> `readableStream.locked`
+##### <DataTag tag="M" /> `readableStream.locked`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Set to `true` if there is an active reader for this
   [`ReadableStream`](/api/webstreams#readablestream).
@@ -137,17 +137,17 @@ The `readableStream.locked` property is `false` by default, and is
 switched to `true` while there is an active reader consuming the
 stream's data.
 
-##### <Tag tag="M" /> `readableStream.cancel([reason])`
+##### <DataTag tag="M" /> `readableStream.cancel([reason])`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `reason` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: A promise fulfilled with `undefined` once cancelation has
   been completed.
 
-##### <Tag tag="M" /> `readableStream.getReader([options])`
+##### <DataTag tag="M" /> `readableStream.getReader([options])`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) `'byob'` or `undefined`
@@ -175,9 +175,9 @@ reader.read().then(console.log);
 
 Causes the `readableStream.locked` to be `true`.
 
-##### <Tag tag="M" /> `readableStream.pipeThrough(transform[, options])`
+##### <DataTag tag="M" /> `readableStream.pipeThrough(transform[, options])`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `transform` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `readable` [`ReadableStream`](/api/webstreams#readablestream) The `ReadableStream` to which
@@ -256,9 +256,9 @@ const transformedStream = stream.pipeThrough(transform);
 })();
 ```
 
-##### <Tag tag="M" /> `readableStream.pipeTo(destination, options)`
+##### <DataTag tag="M" /> `readableStream.pipeTo(destination, options)`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `destination` [`WritableStream`](/api/webstreams#writablestream) A [`WritableStream`](/api/webstreams#writablestream) to which this
   `ReadableStream`'s data will be written.
@@ -276,9 +276,9 @@ const transformedStream = stream.pipeThrough(transform);
 Causes the `readableStream.locked` to be `true` while the pipe operation
 is active.
 
-##### <Tag tag="M" /> `readableStream.tee()`
+##### <DataTag tag="M" /> `readableStream.tee()`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Returns: ReadableStream\[]
 
@@ -288,9 +288,9 @@ same data.
 
 Causes the `readableStream.locked` to be `true`.
 
-##### <Tag tag="M" /> `readableStream.values([options])`
+##### <DataTag tag="M" /> `readableStream.values([options])`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `preventCancel` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When `true`, prevents the [`ReadableStream`](/api/webstreams#readablestream)
@@ -355,9 +355,9 @@ port1.onmessage = ({ data }) => {
 port2.postMessage(stream, [stream]);
 ```
 
-#### <Tag tag="C" /> `ReadableStreamDefaultReader`
+#### <DataTag tag="C" /> `ReadableStreamDefaultReader`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
 By default, calling `readableStream.getReader()` with no arguments
 will return an instance of `ReadableStreamDefaultReader`. The default
@@ -365,18 +365,18 @@ reader treats the chunks of data passed through the stream as opaque
 values, which allows the [`ReadableStream`](/api/webstreams#readablestream) to work with generally any
 JavaScript value.
 
-##### <Tag tag="M" /> `new ReadableStreamDefaultReader(stream)`
+##### <DataTag tag="M" /> `new ReadableStreamDefaultReader(stream)`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `stream` [`ReadableStream`](/api/webstreams#readablestream)
 
 Creates a new [`ReadableStreamDefaultReader`](/api/webstreams#readablestreamdefaultreader) that is locked to the
 given [`ReadableStream`](/api/webstreams#readablestream).
 
-##### <Tag tag="M" /> `readableStreamDefaultReader.cancel([reason])`
+##### <DataTag tag="M" /> `readableStreamDefaultReader.cancel([reason])`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `reason` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: A promise fulfilled with `undefined`.
@@ -384,17 +384,17 @@ given [`ReadableStream`](/api/webstreams#readablestream).
 Cancels the [`ReadableStream`](/api/webstreams#readablestream) and returns a promise that is fulfilled
 when the underlying stream has been canceled.
 
-##### <Tag tag="M" /> `readableStreamDefaultReader.closed`
+##### <DataTag tag="M" /> `readableStreamDefaultReader.closed`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfilled with `undefined` when the associated
   [`ReadableStream`](/api/webstreams#readablestream) is closed or rejected if the stream errors or the reader's
   lock is released before the stream finishes closing.
 
-##### <Tag tag="M" /> `readableStreamDefaultReader.read()`
+##### <DataTag tag="M" /> `readableStreamDefaultReader.read()`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Returns: A promise fulfilled with an object:
   * `value` [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
@@ -404,15 +404,15 @@ Requests the next chunk of data from the underlying [`ReadableStream`](/api/webs
 and returns a promise that is fulfilled with the data once it is
 available.
 
-##### <Tag tag="M" /> `readableStreamDefaultReader.releaseLock()`
+##### <DataTag tag="M" /> `readableStreamDefaultReader.releaseLock()`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 Releases this reader's lock on the underlying [`ReadableStream`](/api/webstreams#readablestream).
 
-#### <Tag tag="C" /> `ReadableStreamBYOBReader`
+#### <DataTag tag="C" /> `ReadableStreamBYOBReader`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
 The `ReadableStreamBYOBReader` is an alternative consumer for
 byte-oriented [`ReadableStream`](/api/webstreams#readablestream)s (those that are created with
@@ -481,18 +481,18 @@ const data = await read(stream);
 console.log(Buffer.from(data).toString());
 ```
 
-##### <Tag tag="M" /> `new ReadableStreamBYOBReader(stream)`
+##### <DataTag tag="M" /> `new ReadableStreamBYOBReader(stream)`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `stream` [`ReadableStream`](/api/webstreams#readablestream)
 
 Creates a new `ReadableStreamBYOBReader` that is locked to the
 given [`ReadableStream`](/api/webstreams#readablestream).
 
-##### <Tag tag="M" /> `readableStreamBYOBReader.cancel([reason])`
+##### <DataTag tag="M" /> `readableStreamBYOBReader.cancel([reason])`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `reason` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: A promise fulfilled with `undefined`.
@@ -500,17 +500,17 @@ given [`ReadableStream`](/api/webstreams#readablestream).
 Cancels the [`ReadableStream`](/api/webstreams#readablestream) and returns a promise that is fulfilled
 when the underlying stream has been canceled.
 
-##### <Tag tag="M" /> `readableStreamBYOBReader.closed`
+##### <DataTag tag="M" /> `readableStreamBYOBReader.closed`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfilled with `undefined` when the associated
   [`ReadableStream`](/api/webstreams#readablestream) is closed or rejected if the stream errors or the reader's
   lock is released before the stream finishes closing.
 
-##### <Tag tag="M" /> `readableStreamBYOBReader.read(view)`
+##### <DataTag tag="M" /> `readableStreamBYOBReader.read(view)`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `view` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * Returns: A promise fulfilled with an object:
@@ -532,100 +532,100 @@ the view's underlying `ArrayBuffer` is _detached_, invalidating
 all existing views that may exist on that `ArrayBuffer`. This
 can have disastrous consequences for your application.
 
-##### <Tag tag="M" /> `readableStreamBYOBReader.releaseLock()`
+##### <DataTag tag="M" /> `readableStreamBYOBReader.releaseLock()`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 Releases this reader's lock on the underlying [`ReadableStream`](/api/webstreams#readablestream).
 
-#### <Tag tag="C" /> `ReadableStreamDefaultController`
+#### <DataTag tag="C" /> `ReadableStreamDefaultController`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 Every [`ReadableStream`](/api/webstreams#readablestream) has a controller that is responsible for
 the internal state and management of the stream's queue. The
 `ReadableStreamDefaultController` is the default controller
 implementation for `ReadableStream`s that are not byte-oriented.
 
-##### <Tag tag="M" /> `readableStreamDefaultController.close()`
+##### <DataTag tag="M" /> `readableStreamDefaultController.close()`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 Closes the [`ReadableStream`](/api/webstreams#readablestream) to which this controller is associated.
 
-##### <Tag tag="M" /> `readableStreamDefaultController.desiredSize`
+##### <DataTag tag="M" /> `readableStreamDefaultController.desiredSize`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 Returns the amount of data remaining to fill the [`ReadableStream`](/api/webstreams#readablestream)'s
 queue.
 
-##### <Tag tag="M" /> `readableStreamDefaultController.enqueue(chunk)`
+##### <DataTag tag="M" /> `readableStreamDefaultController.enqueue(chunk)`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `chunk` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 Appends a new chunk of data to the [`ReadableStream`](/api/webstreams#readablestream)'s queue.
 
-##### <Tag tag="M" /> `readableStreamDefaultController.error(error)`
+##### <DataTag tag="M" /> `readableStreamDefaultController.error(error)`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `error` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 Signals an error that causes the [`ReadableStream`](/api/webstreams#readablestream) to error and close.
 
-#### <Tag tag="C" /> `ReadableByteStreamController`
+#### <DataTag tag="C" /> `ReadableByteStreamController`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 Every [`ReadableStream`](/api/webstreams#readablestream) has a controller that is responsible for
 the internal state and management of the stream's queue. The
 `ReadableByteStreamController` is for byte-oriented `ReadableStream`s.
 
-##### <Tag tag="M" /> `readableByteStreamController.byobRequest`
+##### <DataTag tag="M" /> `readableByteStreamController.byobRequest`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`ReadableStreamBYOBRequest`](/api/webstreams#readablestreambyobrequest)
 
-##### <Tag tag="M" /> `readableByteStreamController.close()`
+##### <DataTag tag="M" /> `readableByteStreamController.close()`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 Closes the [`ReadableStream`](/api/webstreams#readablestream) to which this controller is associated.
 
-##### <Tag tag="M" /> `readableByteStreamController.desiredSize`
+##### <DataTag tag="M" /> `readableByteStreamController.desiredSize`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 Returns the amount of data remaining to fill the [`ReadableStream`](/api/webstreams#readablestream)'s
 queue.
 
-##### <Tag tag="M" /> `readableByteStreamController.enqueue(chunk)`
+##### <DataTag tag="M" /> `readableByteStreamController.enqueue(chunk)`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `chunk`: [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 
 Appends a new chunk of data to the [`ReadableStream`](/api/webstreams#readablestream)'s queue.
 
-##### <Tag tag="M" /> `readableByteStreamController.error(error)`
+##### <DataTag tag="M" /> `readableByteStreamController.error(error)`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `error` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 Signals an error that causes the [`ReadableStream`](/api/webstreams#readablestream) to error and close.
 
-#### <Tag tag="C" /> `ReadableStreamBYOBRequest`
+#### <DataTag tag="C" /> `ReadableStreamBYOBRequest`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
 When using `ReadableByteStreamController` in byte-oriented
 streams, and when using the `ReadableStreamBYOBReader`,
@@ -637,33 +637,33 @@ that has been provided for the read request to fill,
 and provides methods for signaling that the data has
 been provided.
 
-##### <Tag tag="M" /> `readableStreamBYOBRequest.respond(bytesWritten)`
+##### <DataTag tag="M" /> `readableStreamBYOBRequest.respond(bytesWritten)`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `bytesWritten` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 Signals that a `bytesWritten` number of bytes have been written
 to `readableStreamBYOBRequest.view`.
 
-##### <Tag tag="M" /> `readableStreamBYOBRequest.respondWithNewView(view)`
+##### <DataTag tag="M" /> `readableStreamBYOBRequest.respondWithNewView(view)`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `view` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 
 Signals that the request has been fulfilled with bytes written
 to a new `Buffer`, `TypedArray`, or `DataView`.
 
-##### <Tag tag="M" /> `readableStreamBYOBRequest.view`
+##### <DataTag tag="M" /> `readableStreamBYOBRequest.view`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 
-#### <Tag tag="C" /> `WritableStream`
+#### <DataTag tag="C" /> `WritableStream`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
 The `WritableStream` is a destination to which stream data is sent.
 
@@ -681,9 +681,9 @@ const stream = new WritableStream({
 await stream.getWriter().write('Hello World');
 ```
 
-##### <Tag tag="M" /> `new WritableStream([underlyingSink[, strategy]])`
+##### <DataTag tag="M" /> `new WritableStream([underlyingSink[, strategy]])`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `underlyingSink` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `start` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A user-defined function that is invoked immediately when
@@ -712,9 +712,9 @@ await stream.getWriter().write('Hello World');
     * `chunk` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
     * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-##### <Tag tag="M" /> `writableStream.abort([reason])`
+##### <DataTag tag="M" /> `writableStream.abort([reason])`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `reason` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: A promise fulfilled with `undefined`.
@@ -722,26 +722,26 @@ await stream.getWriter().write('Hello World');
 Abruptly terminates the `WritableStream`. All queued writes will be
 canceled with their associated promises rejected.
 
-##### <Tag tag="M" /> `writableStream.close()`
+##### <DataTag tag="M" /> `writableStream.close()`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Returns: A promise fulfilled with `undefined`.
 
 Closes the `WritableStream` when no additional writes are expected.
 
-##### <Tag tag="M" /> `writableStream.getWriter()`
+##### <DataTag tag="M" /> `writableStream.getWriter()`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Returns: [`WritableStreamDefaultWriter`](/api/webstreams#writablestreamdefaultwriter)
 
 Creates and creates a new writer instance that can be used to write
 data into the `WritableStream`.
 
-##### <Tag tag="M" /> `writableStream.locked`
+##### <DataTag tag="M" /> `writableStream.locked`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -765,22 +765,22 @@ port1.onmessage = ({ data }) => {
 port2.postMessage(stream, [stream]);
 ```
 
-#### <Tag tag="C" /> `WritableStreamDefaultWriter`
+#### <DataTag tag="C" /> `WritableStreamDefaultWriter`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
-##### <Tag tag="M" /> `new WritableStreamDefaultWriter(stream)`
+##### <DataTag tag="M" /> `new WritableStreamDefaultWriter(stream)`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `stream` [`WritableStream`](/api/webstreams#writablestream)
 
 Creates a new `WritableStreamDefaultWriter` that is locked to the given
 `WritableStream`.
 
-##### <Tag tag="M" /> `writableStreamDefaultWriter.abort([reason])`
+##### <DataTag tag="M" /> `writableStreamDefaultWriter.abort([reason])`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `reason` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: A promise fulfilled with `undefined`.
@@ -788,66 +788,66 @@ Creates a new `WritableStreamDefaultWriter` that is locked to the given
 Abruptly terminates the `WritableStream`. All queued writes will be
 canceled with their associated promises rejected.
 
-##### <Tag tag="M" /> `writableStreamDefaultWriter.close()`
+##### <DataTag tag="M" /> `writableStreamDefaultWriter.close()`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Returns: A promise fulfilled with `undefined`.
 
 Closes the `WritableStream` when no additional writes are expected.
 
-##### <Tag tag="M" /> `writableStreamDefaultWriter.closed`
+##### <DataTag tag="M" /> `writableStreamDefaultWriter.closed`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfilled with `undefined` when the associated
   [`WritableStream`](/api/webstreams#writablestream) is closed or rejected if the stream errors or the writer's
   lock is released before the stream finishes closing.
 
-##### <Tag tag="M" /> `writableStreamDefaultWriter.desiredSize`
+##### <DataTag tag="M" /> `writableStreamDefaultWriter.desiredSize`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The amount of data required to fill the [`WritableStream`](/api/webstreams#writablestream)'s queue.
 
-##### <Tag tag="M" /> `writableStreamDefaultWriter.ready`
+##### <DataTag tag="M" /> `writableStreamDefaultWriter.ready`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * type: A promise that is fulfilled with `undefined` when the
   writer is ready to be used.
 
-##### <Tag tag="M" /> `writableStreamDefaultWriter.releaseLock()`
+##### <DataTag tag="M" /> `writableStreamDefaultWriter.releaseLock()`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 Releases this writer's lock on the underlying [`ReadableStream`](/api/webstreams#readablestream).
 
-##### <Tag tag="M" /> `writableStreamDefaultWriter.write([chunk])`
+##### <DataTag tag="M" /> `writableStreamDefaultWriter.write([chunk])`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `chunk`: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: A promise fulfilled with `undefined`.
 
 Appends a new chunk of data to the [`WritableStream`](/api/webstreams#writablestream)'s queue.
 
-#### <Tag tag="C" /> `WritableStreamDefaultController`
+#### <DataTag tag="C" /> `WritableStreamDefaultController`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
 The `WritableStreamDefaultController` manage's the [`WritableStream`](/api/webstreams#writablestream)'s
 internal state.
 
-##### <Tag tag="M" /> `writableStreamDefaultController.abortReason`
+##### <DataTag tag="M" /> `writableStreamDefaultController.abortReason`
 
 * Type: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The `reason` value passed to `writableStream.abort()`.
 
-##### <Tag tag="M" /> `writableStreamDefaultController.error(error)`
+##### <DataTag tag="M" /> `writableStreamDefaultController.error(error)`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `error` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
@@ -855,14 +855,14 @@ Called by user-code to signal that an error has occurred while processing
 the `WritableStream` data. When called, the [`WritableStream`](/api/webstreams#writablestream) will be aborted,
 with currently pending writes canceled.
 
-##### <Tag tag="M" /> `writableStreamDefaultController.signal`
+##### <DataTag tag="M" /> `writableStreamDefaultController.signal`
 
 * Type: [`AbortSignal`](/api/globals#abortsignal) An `AbortSignal` that can be used to cancel pending
   write or close operations when a [`WritableStream`](/api/webstreams#writablestream) is aborted.
 
-#### <Tag tag="C" /> `TransformStream`
+#### <DataTag tag="C" /> `TransformStream`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
 A `TransformStream` consists of a [`ReadableStream`](/api/webstreams#readablestream) and a [`WritableStream`](/api/webstreams#writablestream) that
 are connected such that the data written to the `WritableStream` is received,
@@ -886,9 +886,9 @@ await Promise.all([
 ]);
 ```
 
-##### <Tag tag="M" /> `new TransformStream([transformer[, writableStrategy[, readableStrategy]]])`
+##### <DataTag tag="M" /> `new TransformStream([transformer[, writableStrategy[, readableStrategy]]])`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `transformer` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `start` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A user-defined function that is invoked immediately when
@@ -925,15 +925,15 @@ await Promise.all([
     * `chunk` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
     * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-##### <Tag tag="M" /> `transformStream.readable`
+##### <DataTag tag="M" /> `transformStream.readable`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`ReadableStream`](/api/webstreams#readablestream)
 
-##### <Tag tag="M" /> `transformStream.writable`
+##### <DataTag tag="M" /> `transformStream.writable`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`WritableStream`](/api/webstreams#writablestream)
 
@@ -954,32 +954,32 @@ port1.onmessage = ({ data }) => {
 port2.postMessage(stream, [stream]);
 ```
 
-#### <Tag tag="C" /> `TransformStreamDefaultController`
+#### <DataTag tag="C" /> `TransformStreamDefaultController`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
 The `TransformStreamDefaultController` manages the internal state
 of the `TransformStream`.
 
-##### <Tag tag="M" /> `transformStreamDefaultController.desiredSize`
+##### <DataTag tag="M" /> `transformStreamDefaultController.desiredSize`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The amount of data required to fill the readable side's queue.
 
-##### <Tag tag="M" /> `transformStreamDefaultController.enqueue([chunk])`
+##### <DataTag tag="M" /> `transformStreamDefaultController.enqueue([chunk])`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `chunk` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 Appends a chunk of data to the readable side's queue.
 
-##### <Tag tag="M" /> `transformStreamDefaultController.error([reason])`
+##### <DataTag tag="M" /> `transformStreamDefaultController.error([reason])`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `reason` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
@@ -987,100 +987,100 @@ Signals to both the readable and writable side that an error has occurred
 while processing the transform data, causing both sides to be abruptly
 closed.
 
-##### <Tag tag="M" /> `transformStreamDefaultController.terminate()`
+##### <DataTag tag="M" /> `transformStreamDefaultController.terminate()`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 Closes the readable side of the transport and causes the writable side
 to be abruptly closed with an error.
 
-#### <Tag tag="C" /> `ByteLengthQueuingStrategy`
+#### <DataTag tag="C" /> `ByteLengthQueuingStrategy`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
-##### <Tag tag="M" /> `new ByteLengthQueuingStrategy(options)`
+##### <DataTag tag="M" /> `new ByteLengthQueuingStrategy(options)`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `highWaterMark` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-##### <Tag tag="M" /> `byteLengthQueuingStrategy.highWaterMark`
+##### <DataTag tag="M" /> `byteLengthQueuingStrategy.highWaterMark`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-##### <Tag tag="M" /> `byteLengthQueuingStrategy.size`
+##### <DataTag tag="M" /> `byteLengthQueuingStrategy.size`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `chunk` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
   * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-#### <Tag tag="C" /> `CountQueuingStrategy`
+#### <DataTag tag="C" /> `CountQueuingStrategy`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
-##### <Tag tag="M" /> `new CountQueuingStrategy(options)`
+##### <DataTag tag="M" /> `new CountQueuingStrategy(options)`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `highWaterMark` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-##### <Tag tag="M" /> `countQueuingStrategy.highWaterMark`
+##### <DataTag tag="M" /> `countQueuingStrategy.highWaterMark`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-##### <Tag tag="M" /> `countQueuingStrategy.size`
+##### <DataTag tag="M" /> `countQueuingStrategy.size`
 
-<MC data={{"update":{"type":"added","version":["v16.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `chunk` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
   * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-#### <Tag tag="C" /> `TextEncoderStream`
+#### <DataTag tag="C" /> `TextEncoderStream`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.6.0"]}}} />
 
-##### <Tag tag="M" /> `new TextEncoderStream()`
+##### <DataTag tag="M" /> `new TextEncoderStream()`
 
-<MC data={{"update":{"type":"added","version":["v16.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.6.0"]}}} />
 
 Creates a new `TextEncoderStream` instance.
 
-##### <Tag tag="M" /> `textEncoderStream.encoding`
+##### <DataTag tag="M" /> `textEncoderStream.encoding`
 
-<MC data={{"update":{"type":"added","version":["v16.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.6.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The encoding supported by the `TextEncoderStream` instance.
 
-##### <Tag tag="M" /> `textEncoderStream.readable`
+##### <DataTag tag="M" /> `textEncoderStream.readable`
 
-<MC data={{"update":{"type":"added","version":["v16.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.6.0"]}}} />
 
 * Type: [`ReadableStream`](/api/webstreams#readablestream)
 
-##### <Tag tag="M" /> `textEncoderStream.writable`
+##### <DataTag tag="M" /> `textEncoderStream.writable`
 
-<MC data={{"update":{"type":"added","version":["v16.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.6.0"]}}} />
 
 * Type: [`WritableStream`](/api/webstreams#writablestream)
 
-#### <Tag tag="C" /> `TextDecoderStream`
+#### <DataTag tag="C" /> `TextDecoderStream`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.6.0"]}}} />
 
-##### <Tag tag="M" /> `new TextDecoderStream([encoding[, options]])`
+##### <DataTag tag="M" /> `new TextDecoderStream([encoding[, options]])`
 
-<MC data={{"update":{"type":"added","version":["v16.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.6.0"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Identifies the `encoding` that this `TextDecoder` instance
   supports. **Default:** `'utf-8'`.
@@ -1093,91 +1093,91 @@ The encoding supported by the `TextEncoderStream` instance.
 
 Creates a new `TextDecoderStream` instance.
 
-##### <Tag tag="M" /> `textDecoderStream.encoding`
+##### <DataTag tag="M" /> `textDecoderStream.encoding`
 
-<MC data={{"update":{"type":"added","version":["v16.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.6.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The encoding supported by the `TextDecoderStream` instance.
 
-##### <Tag tag="M" /> `textDecoderStream.fatal`
+##### <DataTag tag="M" /> `textDecoderStream.fatal`
 
-<MC data={{"update":{"type":"added","version":["v16.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.6.0"]}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 The value will be `true` if decoding errors result in a `TypeError` being
 thrown.
 
-##### <Tag tag="M" /> `textDecoderStream.ignoreBOM`
+##### <DataTag tag="M" /> `textDecoderStream.ignoreBOM`
 
-<MC data={{"update":{"type":"added","version":["v16.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.6.0"]}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 The value will be `true` if the decoding result will include the byte order
 mark.
 
-##### <Tag tag="M" /> `textDecoderStream.readable`
+##### <DataTag tag="M" /> `textDecoderStream.readable`
 
-<MC data={{"update":{"type":"added","version":["v16.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.6.0"]}}} />
 
 * Type: [`ReadableStream`](/api/webstreams#readablestream)
 
-##### <Tag tag="M" /> `textDecoderStream.writable`
+##### <DataTag tag="M" /> `textDecoderStream.writable`
 
-<MC data={{"update":{"type":"added","version":["v16.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.6.0"]}}} />
 
 * Type: [`WritableStream`](/api/webstreams#writablestream)
 
-#### <Tag tag="C" /> `CompressionStream`
+#### <DataTag tag="C" /> `CompressionStream`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v17.0.0"]}}} />
 
-##### <Tag tag="M" /> `new CompressionStream(format)`
+##### <DataTag tag="M" /> `new CompressionStream(format)`
 
-<MC data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * `format` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) One of either `'deflate'` or `'gzip'`.
 
-##### <Tag tag="M" /> `compressionStream.readable`
+##### <DataTag tag="M" /> `compressionStream.readable`
 
-<MC data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * Type: [`ReadableStream`](/api/webstreams#readablestream)
 
-##### <Tag tag="M" /> `compressionStream.writable`
+##### <DataTag tag="M" /> `compressionStream.writable`
 
-<MC data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * Type: [`WritableStream`](/api/webstreams#writablestream)
 
-#### <Tag tag="C" /> `DecompressionStream`
+#### <DataTag tag="C" /> `DecompressionStream`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v17.0.0"]}}} />
 
-##### <Tag tag="M" /> `new DecompressionStream(format)`
+##### <DataTag tag="M" /> `new DecompressionStream(format)`
 
-<MC data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * `format` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) One of either `'deflate'` or `'gzip'`.
 
-##### <Tag tag="M" /> `decompressionStream.readable`
+##### <DataTag tag="M" /> `decompressionStream.readable`
 
-<MC data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * Type: [`ReadableStream`](/api/webstreams#readablestream)
 
-##### <Tag tag="M" /> `decompressionStream.writable`
+##### <DataTag tag="M" /> `decompressionStream.writable`
 
-<MC data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * Type: [`WritableStream`](/api/webstreams#writablestream)
 
 #### Utility Consumers
 
-<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 The utility consumer functions provide common options for consuming
 streams.
@@ -1204,41 +1204,41 @@ const {
 } = require('node:stream/consumers');
 ```
 
-##### <Tag tag="M" /> `streamConsumers.arrayBuffer(stream)`
+##### <DataTag tag="M" /> `streamConsumers.arrayBuffer(stream)`
 
-<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 * `stream` [`ReadableStream`](/api/webstreams#readablestream) | [`stream.Readable`](/api/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with an `ArrayBuffer` containing the full
   contents of the stream.
 
-##### <Tag tag="M" /> `streamConsumers.blob(stream)`
+##### <DataTag tag="M" /> `streamConsumers.blob(stream)`
 
-<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 * `stream` [`ReadableStream`](/api/webstreams#readablestream) | [`stream.Readable`](/api/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with a [`Blob`](/api/buffer#blob) containing the full contents
   of the stream.
 
-##### <Tag tag="M" /> `streamConsumers.buffer(stream)`
+##### <DataTag tag="M" /> `streamConsumers.buffer(stream)`
 
-<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 * `stream` [`ReadableStream`](/api/webstreams#readablestream) | [`stream.Readable`](/api/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with a [`Buffer`](/api/buffer#buffer) containing the full
   contents of the stream.
 
-##### <Tag tag="M" /> `streamConsumers.json(stream)`
+##### <DataTag tag="M" /> `streamConsumers.json(stream)`
 
-<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 * `stream` [`ReadableStream`](/api/webstreams#readablestream) | [`stream.Readable`](/api/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with the contents of the stream parsed as a
   UTF-8 encoded string that is then passed through `JSON.parse()`.
 
-##### <Tag tag="M" /> `streamConsumers.text(stream)`
+##### <DataTag tag="M" /> `streamConsumers.text(stream)`
 
-<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 * `stream` [`ReadableStream`](/api/webstreams#readablestream) | [`stream.Readable`](/api/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with the contents of the stream parsed as a

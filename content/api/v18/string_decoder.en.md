@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<MC data={{"source_link":"lib/string_decoder.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/string_decoder.js"}} />
 
 The `node:string_decoder` module provides an API for decoding `Buffer` objects
 into strings in a manner that preserves encoded multi-byte UTF-8 and UTF-16
@@ -49,20 +49,20 @@ decoder.write(Buffer.from([0x82]));
 console.log(decoder.end(Buffer.from([0xAC])));
 ```
 
-### <Tag tag="C" /> `StringDecoder`
+### <DataTag tag="C" /> `StringDecoder`
 
-#### <Tag tag="M" /> `new StringDecoder([encoding])`
+#### <DataTag tag="M" /> `new StringDecoder([encoding])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.99"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.99"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The character [encoding][] the `StringDecoder` will use.
   **Default:** `'utf8'`.
 
 Creates a new `StringDecoder` instance.
 
-#### <Tag tag="M" /> `stringDecoder.end([buffer])`
+#### <DataTag tag="M" /> `stringDecoder.end([buffer])`
 
-<MC data={{"update":{"type":"added","version":["v0.9.3"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.3"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A `Buffer`, or `TypedArray`, or
   `DataView` containing the bytes to decode.
@@ -76,9 +76,9 @@ If the `buffer` argument is provided, one final call to `stringDecoder.write()`
 is performed before returning the remaining input.
 After `end()` is called, the `stringDecoder` object can be reused for new input.
 
-#### <Tag tag="M" /> `stringDecoder.write(buffer)`
+#### <DataTag tag="M" /> `stringDecoder.write(buffer)`
 
-<MC data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/9618","description":"Each invalid character is now replaced by a single replacement character instead of one for each individual byte."}],"update":{"type":"added","version":["v0.1.99"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/9618","description":"Each invalid character is now replaced by a single replacement character instead of one for each individual byte."}],"update":{"type":"added","version":["v0.1.99"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A `Buffer`, or `TypedArray`, or
   `DataView` containing the bytes to decode.

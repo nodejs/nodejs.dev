@@ -5,18 +5,18 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v0.1.21"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.1.21"]}}} />
 
-<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<MC data={{"source_link":"lib/assert.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/assert.js"}} />
 
 The `node:assert` module provides a set of assertion functions for verifying
 invariants.
 
 ### Strict assertion mode
 
-<MC data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34001","description":"Exposed as `require('node:assert/strict')`."},{"version":["v13.9.0","v12.16.2"],"pr-url":"https://github.com/nodejs/node/pull/31635","description":"Changed \"strict mode\" to \"strict assertion mode\" and \"legacy mode\" to \"legacy assertion mode\" to avoid confusion with the more usual meaning of \"strict mode\"."},{"version":"v9.9.0","pr-url":"https://github.com/nodejs/node/pull/17615","description":"Added error diffs to the strict assertion mode."},{"version":"v9.9.0","pr-url":"https://github.com/nodejs/node/pull/17002","description":"Added strict assertion mode to the assert module."}],"update":{"type":"added","version":["v9.9.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34001","description":"Exposed as `require('node:assert/strict')`."},{"version":["v13.9.0","v12.16.2"],"pr-url":"https://github.com/nodejs/node/pull/31635","description":"Changed \"strict mode\" to \"strict assertion mode\" and \"legacy mode\" to \"legacy assertion mode\" to avoid confusion with the more usual meaning of \"strict mode\"."},{"version":"v9.9.0","pr-url":"https://github.com/nodejs/node/pull/17615","description":"Added error diffs to the strict assertion mode."},{"version":"v9.9.0","pr-url":"https://github.com/nodejs/node/pull/17002","description":"Added strict assertion mode to the assert module."}],"update":{"type":"added","version":["v9.9.0"]}}} />
 
 In strict assertion mode, non-strict methods behave like their corresponding
 strict methods. For example, [`assert.deepEqual()`][] will behave like
@@ -115,16 +115,16 @@ Legacy assertion mode may have surprising results, especially when using
 assert.deepEqual(/a/gi, new Date());
 ```
 
-### <Tag tag="C" /> assert.AssertionError
+### <DataTag tag="C" /> assert.AssertionError
 
 * Extends: [`errors.Error`](/api/errors#error)
 
 Indicates the failure of an assertion. All errors thrown by the `node:assert`
 module will be instances of the `AssertionError` class.
 
-#### <Tag tag="M" /> `new assert.AssertionError(options)`
+#### <DataTag tag="M" /> `new assert.AssertionError(options)`
 
-<MC data={{"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If provided, the error message is set to this value.
@@ -199,17 +199,17 @@ try {
 }
 ```
 
-### <Tag tag="C" /> `assert.CallTracker`
+### <DataTag tag="C" /> `assert.CallTracker`
 
-<MC data={{"update":{"type":"added","version":["v14.2.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.2.0","v12.19.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 This feature is currently experimental and behavior might still change.
 
-#### <Tag tag="M" /> `new assert.CallTracker()`
+#### <DataTag tag="M" /> `new assert.CallTracker()`
 
-<MC data={{"update":{"type":"added","version":["v14.2.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.2.0","v12.19.0"]}}} />
 
 Creates a new [`CallTracker`][] object which can be used to track if functions
 were called a specific number of times. The `tracker.verify()` must be called
@@ -255,9 +255,9 @@ process.on('exit', () => {
 });
 ```
 
-#### <Tag tag="M" /> `tracker.calls([fn][, exact])`
+#### <DataTag tag="M" /> `tracker.calls([fn][, exact])`
 
-<MC data={{"update":{"type":"added","version":["v14.2.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.2.0","v12.19.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) **Default:** A no-op function.
 * `exact` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `1`.
@@ -294,9 +294,9 @@ function func() {}
 const callsfunc = tracker.calls(func);
 ```
 
-#### <Tag tag="M" /> `tracker.getCalls(fn)`
+#### <DataTag tag="M" /> `tracker.getCalls(fn)`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function).
 
@@ -333,9 +333,9 @@ assert.deepStrictEqual(tracker.getCalls(callsfunc),
                        [{ thisArg: this, arguments: [1, 2, 3 ] }]);
 ```
 
-#### <Tag tag="M" /> `tracker.report()`
+#### <DataTag tag="M" /> `tracker.report()`
 
-<MC data={{"update":{"type":"added","version":["v14.2.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.2.0","v12.19.0"]}}} />
 
 * Returns: [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) of objects containing information about the wrapper functions
   returned by [`tracker.calls()`][].
@@ -402,9 +402,9 @@ tracker.report();
 // ]
 ```
 
-#### <Tag tag="M" /> `tracker.reset([fn])`
+#### <DataTag tag="M" /> `tracker.reset([fn])`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) a tracked function to reset.
 
@@ -442,9 +442,9 @@ tracker.reset(callsfunc);
 tracker.getCalls(callsfunc).length === 0;
 ```
 
-#### <Tag tag="M" /> `tracker.verify()`
+#### <DataTag tag="M" /> `tracker.verify()`
 
-<MC data={{"update":{"type":"added","version":["v14.2.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.2.0","v12.19.0"]}}} />
 
 Iterates through the list of functions passed to
 [`tracker.calls()`][] and will throw an error for functions that
@@ -486,18 +486,18 @@ callsfunc();
 tracker.verify();
 ```
 
-### <Tag tag="M" /> `assert(value[, message])`
+### <DataTag tag="M" /> `assert(value[, message])`
 
-<MC data={{"update":{"type":"added","version":["v0.5.9"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.9"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The input that is checked for being truthy.
 * `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
 An alias of [`assert.ok()`][].
 
-### <Tag tag="M" /> `assert.deepEqual(actual, expected[, message])`
+### <DataTag tag="M" /> `assert.deepEqual(actual, expected[, message])`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41020","description":"Regular expressions lastIndex property is now compared as well."},{"version":["v16.0.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38113","description":"In Legacy assertion mode, changed status from Deprecated to Legacy."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30766","description":"NaN is now treated as being identical if both sides are NaN."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25008","description":"The type tags are now properly compared and there are a couple minor comparison adjustments to make the check less surprising."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15001","description":"The `Error` names and messages are now properly compared."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12142","description":"The `Set` and `Map` content is also compared."},{"version":["v6.4.0","v4.7.1"],"pr-url":"https://github.com/nodejs/node/pull/8002","description":"Typed array slices are handled correctly now."},{"version":["v6.1.0","v4.5.0"],"pr-url":"https://github.com/nodejs/node/pull/6432","description":"Objects with circular references can be used as inputs now."},{"version":["v5.10.1","v4.4.3"],"pr-url":"https://github.com/nodejs/node/pull/5910","description":"Handle non-`Uint8Array` typed arrays correctly."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41020","description":"Regular expressions lastIndex property is now compared as well."},{"version":["v16.0.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38113","description":"In Legacy assertion mode, changed status from Deprecated to Legacy."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30766","description":"NaN is now treated as being identical if both sides are NaN."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25008","description":"The type tags are now properly compared and there are a couple minor comparison adjustments to make the check less surprising."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15001","description":"The `Error` names and messages are now properly compared."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12142","description":"The `Set` and `Map` content is also compared."},{"version":["v6.4.0","v4.7.1"],"pr-url":"https://github.com/nodejs/node/pull/8002","description":"Typed array slices are handled correctly now."},{"version":["v6.1.0","v4.5.0"],"pr-url":"https://github.com/nodejs/node/pull/6432","description":"Objects with circular references can be used as inputs now."},{"version":["v5.10.1","v4.4.3"],"pr-url":"https://github.com/nodejs/node/pull/5910","description":"Handle non-`Uint8Array` typed arrays correctly."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `actual` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `expected` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -509,7 +509,7 @@ An alias of [`assert.deepStrictEqual()`][].
 
 **Legacy assertion mode**
 
-<MC data={{"stability":{"level":3,"text":" - Legacy: Use `assert.deepStrictEqual()` instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use `assert.deepStrictEqual()` instead."}}} />
 
 Tests for deep equality between the `actual` and `expected` parameters. Consider
 using [`assert.deepStrictEqual()`][] instead. [`assert.deepEqual()`][] can have
@@ -635,9 +635,9 @@ parameter is undefined, a default error message is assigned. If the `message`
 parameter is an instance of an [`Error`][] then it will be thrown instead of the
 [`AssertionError`][].
 
-### <Tag tag="M" /> `assert.deepStrictEqual(actual, expected[, message])`
+### <DataTag tag="M" /> `assert.deepStrictEqual(actual, expected[, message])`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41020","description":"Regular expressions lastIndex property is now compared as well."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15169","description":"Enumerable symbol properties are now compared."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15036","description":"The `NaN` is now compared using the [SameValueZero](https://tc39.github.io/ecma262/#sec-samevaluezero) comparison."},{"version":"v8.5.0","pr-url":"https://github.com/nodejs/node/pull/15001","description":"The `Error` names and messages are now properly compared."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12142","description":"The `Set` and `Map` content is also compared."},{"version":["v6.4.0","v4.7.1"],"pr-url":"https://github.com/nodejs/node/pull/8002","description":"Typed array slices are handled correctly now."},{"version":"v6.1.0","pr-url":"https://github.com/nodejs/node/pull/6432","description":"Objects with circular references can be used as inputs now."},{"version":["v5.10.1","v4.4.3"],"pr-url":"https://github.com/nodejs/node/pull/5910","description":"Handle non-`Uint8Array` typed arrays correctly."}],"update":{"type":"added","version":["v1.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41020","description":"Regular expressions lastIndex property is now compared as well."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15169","description":"Enumerable symbol properties are now compared."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15036","description":"The `NaN` is now compared using the [SameValueZero](https://tc39.github.io/ecma262/#sec-samevaluezero) comparison."},{"version":"v8.5.0","pr-url":"https://github.com/nodejs/node/pull/15001","description":"The `Error` names and messages are now properly compared."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12142","description":"The `Set` and `Map` content is also compared."},{"version":["v6.4.0","v4.7.1"],"pr-url":"https://github.com/nodejs/node/pull/8002","description":"Typed array slices are handled correctly now."},{"version":"v6.1.0","pr-url":"https://github.com/nodejs/node/pull/6432","description":"Objects with circular references can be used as inputs now."},{"version":["v5.10.1","v4.4.3"],"pr-url":"https://github.com/nodejs/node/pull/5910","description":"Handle non-`Uint8Array` typed arrays correctly."}],"update":{"type":"added","version":["v1.2.0"]}}} />
 
 * `actual` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `expected` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -857,9 +857,9 @@ parameter is undefined, a default error message is assigned. If the `message`
 parameter is an instance of an [`Error`][] then it will be thrown instead of the
 `AssertionError`.
 
-### <Tag tag="M" /> `assert.doesNotMatch(string, regexp[, message])`
+### <DataTag tag="M" /> `assert.doesNotMatch(string, regexp[, message])`
 
-<MC data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/38111","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v13.6.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/38111","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v13.6.0","v12.16.0"]}}} />
 
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `regexp` [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
@@ -900,9 +900,9 @@ undefined, a default error message is assigned. If the `message` parameter is an
 instance of an [`Error`][] then it will be thrown instead of the
 [`AssertionError`][].
 
-### <Tag tag="M" /> `assert.doesNotReject(asyncFn[, error][, message])`
+### <DataTag tag="M" /> `assert.doesNotReject(asyncFn[, error][, message])`
 
-<MC data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `asyncFn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 * `error` [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -971,9 +971,9 @@ assert.doesNotReject(Promise.reject(new TypeError('Wrong value')))
   });
 ```
 
-### <Tag tag="M" /> `assert.doesNotThrow(fn[, error][, message])`
+### <DataTag tag="M" /> `assert.doesNotThrow(fn[, error][, message])`
 
-<MC data={{"changes":[{"version":["v5.11.0","v4.4.5"],"pr-url":"https://github.com/nodejs/node/pull/2407","description":"The `message` parameter is respected now."},{"version":"v4.2.0","pr-url":"https://github.com/nodejs/node/pull/3276","description":"The `error` parameter can now be an arrow function."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v5.11.0","v4.4.5"],"pr-url":"https://github.com/nodejs/node/pull/2407","description":"The `message` parameter is respected now."},{"version":"v4.2.0","pr-url":"https://github.com/nodejs/node/pull/3276","description":"The `error` parameter can now be an arrow function."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * `error` [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -1077,9 +1077,9 @@ assert.doesNotThrow(
 // Throws: AssertionError: Got unwanted exception: Whoops
 ```
 
-### <Tag tag="M" /> `assert.equal(actual, expected[, message])`
+### <DataTag tag="M" /> `assert.equal(actual, expected[, message])`
 
-<MC data={{"changes":[{"version":["v16.0.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38113","description":"In Legacy assertion mode, changed status from Deprecated to Legacy."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30766","description":"NaN is now treated as being identical if both sides are NaN."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v16.0.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38113","description":"In Legacy assertion mode, changed status from Deprecated to Legacy."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30766","description":"NaN is now treated as being identical if both sides are NaN."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `actual` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `expected` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -1091,7 +1091,7 @@ An alias of [`assert.strictEqual()`][].
 
 **Legacy assertion mode**
 
-<MC data={{"stability":{"level":3,"text":" - Legacy: Use `assert.strictEqual()` instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use `assert.strictEqual()` instead."}}} />
 
 Tests shallow, coercive equality between the `actual` and `expected` parameters
 using the [`==` operator][]. `NaN` is specially handled
@@ -1135,9 +1135,9 @@ parameter is undefined, a default error message is assigned. If the `message`
 parameter is an instance of an [`Error`][] then it will be thrown instead of the
 `AssertionError`.
 
-### <Tag tag="M" /> `assert.fail([message])`
+### <DataTag tag="M" /> `assert.fail([message])`
 
-<MC data={{"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) **Default:** `'Failed'`
 
@@ -1174,11 +1174,11 @@ assert.fail(new TypeError('need array'));
 Using `assert.fail()` with more than two arguments is possible but deprecated.
 See below for further details.
 
-### <Tag tag="M" /> `assert.fail(actual, expected[, message[, operator[, stackStartFn]]])`
+### <DataTag tag="M" /> `assert.fail(actual, expected[, message[, operator[, stackStartFn]]])`
 
-<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18418","description":"Calling `assert.fail()` with more than one argument is deprecated and emits a warning."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18418","description":"Calling `assert.fail()` with more than one argument is deprecated and emits a warning."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
-<MC data={{"stability":{"level":0,"text":" - Deprecated: Use `assert.fail([message])` or other assert functions instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `assert.fail([message])` or other assert functions instead."}}} />
 
 * `actual` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `expected` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -1264,9 +1264,9 @@ suppressFrame();
 //     ...
 ```
 
-### <Tag tag="M" /> `assert.ifError(value)`
+### <DataTag tag="M" /> `assert.ifError(value)`
 
-<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18247","description":"Instead of throwing the original error it is now wrapped into an [`AssertionError`][] that contains the full stack trace."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18247","description":"Value may now only be `undefined` or `null`. Before all falsy values were handled the same as `null` and did not throw."}],"update":{"type":"added","version":["v0.1.97"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18247","description":"Instead of throwing the original error it is now wrapped into an [`AssertionError`][] that contains the full stack trace."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18247","description":"Value may now only be `undefined` or `null`. Before all falsy values were handled the same as `null` and did not throw."}],"update":{"type":"added","version":["v0.1.97"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
@@ -1327,9 +1327,9 @@ let err;
 //     at errorFrame
 ```
 
-### <Tag tag="M" /> `assert.match(string, regexp[, message])`
+### <DataTag tag="M" /> `assert.match(string, regexp[, message])`
 
-<MC data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/38111","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v13.6.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/38111","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v13.6.0","v12.16.0"]}}} />
 
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `regexp` [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
@@ -1370,9 +1370,9 @@ undefined, a default error message is assigned. If the `message` parameter is an
 instance of an [`Error`][] then it will be thrown instead of the
 [`AssertionError`][].
 
-### <Tag tag="M" /> `assert.notDeepEqual(actual, expected[, message])`
+### <DataTag tag="M" /> `assert.notDeepEqual(actual, expected[, message])`
 
-<MC data={{"changes":[{"version":["v16.0.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38113","description":"In Legacy assertion mode, changed status from Deprecated to Legacy."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30766","description":"NaN is now treated as being identical if both sides are NaN."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15001","description":"The `Error` names and messages are now properly compared."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12142","description":"The `Set` and `Map` content is also compared."},{"version":["v6.4.0","v4.7.1"],"pr-url":"https://github.com/nodejs/node/pull/8002","description":"Typed array slices are handled correctly now."},{"version":["v6.1.0","v4.5.0"],"pr-url":"https://github.com/nodejs/node/pull/6432","description":"Objects with circular references can be used as inputs now."},{"version":["v5.10.1","v4.4.3"],"pr-url":"https://github.com/nodejs/node/pull/5910","description":"Handle non-`Uint8Array` typed arrays correctly."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v16.0.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38113","description":"In Legacy assertion mode, changed status from Deprecated to Legacy."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30766","description":"NaN is now treated as being identical if both sides are NaN."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15001","description":"The `Error` names and messages are now properly compared."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12142","description":"The `Set` and `Map` content is also compared."},{"version":["v6.4.0","v4.7.1"],"pr-url":"https://github.com/nodejs/node/pull/8002","description":"Typed array slices are handled correctly now."},{"version":["v6.1.0","v4.5.0"],"pr-url":"https://github.com/nodejs/node/pull/6432","description":"Objects with circular references can be used as inputs now."},{"version":["v5.10.1","v4.4.3"],"pr-url":"https://github.com/nodejs/node/pull/5910","description":"Handle non-`Uint8Array` typed arrays correctly."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `actual` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `expected` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -1384,7 +1384,7 @@ An alias of [`assert.notDeepStrictEqual()`][].
 
 **Legacy assertion mode**
 
-<MC data={{"stability":{"level":3,"text":" - Legacy: Use `assert.notDeepStrictEqual()` instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use `assert.notDeepStrictEqual()` instead."}}} />
 
 Tests for any deep inequality. Opposite of [`assert.deepEqual()`][].
 
@@ -1460,9 +1460,9 @@ If the values are deeply equal, an [`AssertionError`][] is thrown with a
 `message` parameter is an instance of an [`Error`][] then it will be thrown
 instead of the `AssertionError`.
 
-### <Tag tag="M" /> `assert.notDeepStrictEqual(actual, expected[, message])`
+### <DataTag tag="M" /> `assert.notDeepStrictEqual(actual, expected[, message])`
 
-<MC data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15398","description":"The `-0` and `+0` are not considered equal anymore."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15036","description":"The `NaN` is now compared using the [SameValueZero](https://tc39.github.io/ecma262/#sec-samevaluezero) comparison."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15001","description":"The `Error` names and messages are now properly compared."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12142","description":"The `Set` and `Map` content is also compared."},{"version":["v6.4.0","v4.7.1"],"pr-url":"https://github.com/nodejs/node/pull/8002","description":"Typed array slices are handled correctly now."},{"version":"v6.1.0","pr-url":"https://github.com/nodejs/node/pull/6432","description":"Objects with circular references can be used as inputs now."},{"version":["v5.10.1","v4.4.3"],"pr-url":"https://github.com/nodejs/node/pull/5910","description":"Handle non-`Uint8Array` typed arrays correctly."}],"update":{"type":"added","version":["v1.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15398","description":"The `-0` and `+0` are not considered equal anymore."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15036","description":"The `NaN` is now compared using the [SameValueZero](https://tc39.github.io/ecma262/#sec-samevaluezero) comparison."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15001","description":"The `Error` names and messages are now properly compared."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12142","description":"The `Set` and `Map` content is also compared."},{"version":["v6.4.0","v4.7.1"],"pr-url":"https://github.com/nodejs/node/pull/8002","description":"Typed array slices are handled correctly now."},{"version":"v6.1.0","pr-url":"https://github.com/nodejs/node/pull/6432","description":"Objects with circular references can be used as inputs now."},{"version":["v5.10.1","v4.4.3"],"pr-url":"https://github.com/nodejs/node/pull/5910","description":"Handle non-`Uint8Array` typed arrays correctly."}],"update":{"type":"added","version":["v1.2.0"]}}} />
 
 * `actual` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `expected` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -1490,9 +1490,9 @@ the `message` parameter is undefined, a default error message is assigned. If
 the `message` parameter is an instance of an [`Error`][] then it will be thrown
 instead of the [`AssertionError`][].
 
-### <Tag tag="M" /> `assert.notEqual(actual, expected[, message])`
+### <DataTag tag="M" /> `assert.notEqual(actual, expected[, message])`
 
-<MC data={{"changes":[{"version":["v16.0.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38113","description":"In Legacy assertion mode, changed status from Deprecated to Legacy."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30766","description":"NaN is now treated as being identical if both sides are NaN."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v16.0.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38113","description":"In Legacy assertion mode, changed status from Deprecated to Legacy."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30766","description":"NaN is now treated as being identical if both sides are NaN."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `actual` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `expected` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -1504,7 +1504,7 @@ An alias of [`assert.notStrictEqual()`][].
 
 **Legacy assertion mode**
 
-<MC data={{"stability":{"level":3,"text":" - Legacy: Use `assert.notStrictEqual()` instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use `assert.notStrictEqual()` instead."}}} />
 
 Tests shallow, coercive inequality with the [`!=` operator][]. `NaN` is
 specially handled and treated as being identical if both sides are `NaN`.
@@ -1541,9 +1541,9 @@ parameter is undefined, a default error message is assigned. If the `message`
 parameter is an instance of an [`Error`][] then it will be thrown instead of the
 `AssertionError`.
 
-### <Tag tag="M" /> `assert.notStrictEqual(actual, expected[, message])`
+### <DataTag tag="M" /> `assert.notStrictEqual(actual, expected[, message])`
 
-<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17003","description":"Used comparison changed from Strict Equality to `Object.is()`."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17003","description":"Used comparison changed from Strict Equality to `Object.is()`."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `actual` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `expected` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -1588,9 +1588,9 @@ If the values are strictly equal, an [`AssertionError`][] is thrown with a
 `message` parameter is an instance of an [`Error`][] then it will be thrown
 instead of the `AssertionError`.
 
-### <Tag tag="M" /> `assert.ok(value[, message])`
+### <DataTag tag="M" /> `assert.ok(value[, message])`
 
-<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18319","description":"The `assert.ok()` (no arguments) will now use a predefined error message."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18319","description":"The `assert.ok()` (no arguments) will now use a predefined error message."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
@@ -1699,9 +1699,9 @@ assert(0);
 //   assert(0)
 ```
 
-### <Tag tag="M" /> `assert.rejects(asyncFn[, error][, message])`
+### <DataTag tag="M" /> `assert.rejects(asyncFn[, error][, message])`
 
-<MC data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `asyncFn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 * `error` [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
@@ -1818,11 +1818,11 @@ argument, then `error` is assumed to be omitted and the string will be used for
 example in [`assert.throws()`][] carefully if using a string as the second
 argument gets considered.
 
-### <Tag tag="M" /> `assert.snapshot(value, name)`
+### <DataTag tag="M" /> `assert.snapshot(value, name)`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) the value to snapshot.
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) the name of the snapshot.
@@ -1858,9 +1858,9 @@ const assert = require('node:assert/strict');
 })();
 ```
 
-### <Tag tag="M" /> `assert.strictEqual(actual, expected[, message])`
+### <DataTag tag="M" /> `assert.strictEqual(actual, expected[, message])`
 
-<MC data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17003","description":"Used comparison changed from Strict Equality to `Object.is()`."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17003","description":"Used comparison changed from Strict Equality to `Object.is()`."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `actual` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `expected` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -1931,9 +1931,9 @@ If the values are not strictly equal, an [`AssertionError`][] is thrown with a
 `message` parameter is an instance of an [`Error`][] then it will be thrown
 instead of the [`AssertionError`][].
 
-### <Tag tag="M" /> `assert.throws(fn[, error][, message])`
+### <DataTag tag="M" /> `assert.throws(fn[, error][, message])`
 
-<MC data={{"changes":[{"version":"v10.2.0","pr-url":"https://github.com/nodejs/node/pull/20485","description":"The `error` parameter can be an object containing regular expressions now."},{"version":"v9.9.0","pr-url":"https://github.com/nodejs/node/pull/17584","description":"The `error` parameter can now be an object as well."},{"version":"v4.2.0","pr-url":"https://github.com/nodejs/node/pull/3276","description":"The `error` parameter can now be an arrow function."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.2.0","pr-url":"https://github.com/nodejs/node/pull/20485","description":"The `error` parameter can be an object containing regular expressions now."},{"version":"v9.9.0","pr-url":"https://github.com/nodejs/node/pull/17584","description":"The `error` parameter can now be an object as well."},{"version":"v4.2.0","pr-url":"https://github.com/nodejs/node/pull/3276","description":"The `error` parameter can now be an arrow function."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * `error` [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)

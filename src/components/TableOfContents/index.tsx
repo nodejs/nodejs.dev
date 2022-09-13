@@ -1,33 +1,12 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'gatsby';
-import { PageTableOfContents, TableOfContentsItem } from '../../types';
+import { TableOfContentsItem } from '../../types';
 import styles from './index.module.scss';
 
 interface Props {
-  tableOfContents?: PageTableOfContents;
+  tableOfContents: TableOfContentsItem[];
 }
-
-// This adds the Class and Event prefixes
-// To the Headings of Table of Contents
-const prefix = (t: string) => {
-  switch (t) {
-    case 'C':
-      return 'Class: ';
-    case 'E':
-      return 'Event: ';
-    default:
-      return '';
-  }
-};
-
-const removeApiSpanTagFromItem = (item: TableOfContentsItem) => ({
-  ...item,
-  url: item.url ? item.url.replace(/tag-(tagc|tagm|tage)--/, '') : undefined,
-  title: item.title
-    ? item.title.replace(/<Tag tag="(M|C|E)" \/> /, (_, t) => prefix(t))
-    : undefined,
-});
 
 const traverseTableOfContents = (
   items: TableOfContentsItem[],
@@ -41,7 +20,7 @@ const traverseTableOfContents = (
   if (currentItems) {
     return (
       <ul>
-        {currentItems.map(removeApiSpanTagFromItem).map(item => (
+        {currentItems.map(item => (
           <li key={item.url}>
             {item.url && item.title && <Link to={item.url}>{item.title}</Link>}
             {item.items && depth < 2 && filterItems(item.items).length > 0
@@ -56,8 +35,8 @@ const traverseTableOfContents = (
   return null;
 };
 
-const TableOfContents = ({ tableOfContents }: Props): null | JSX.Element => {
-  if (tableOfContents?.items) {
+const TableOfContents = ({ tableOfContents }: Props): JSX.Element => {
+  if (tableOfContents) {
     return (
       <details className={styles.tableOfContents}>
         <summary>
@@ -65,12 +44,12 @@ const TableOfContents = ({ tableOfContents }: Props): null | JSX.Element => {
             <FormattedMessage id="components.tableOfContents.heading" />
           </strong>
         </summary>
-        {traverseTableOfContents(tableOfContents.items, 1)}
+        {traverseTableOfContents(tableOfContents, 1)}
       </details>
     );
   }
 
-  return null;
+  return <div />;
 };
 
 export default TableOfContents;

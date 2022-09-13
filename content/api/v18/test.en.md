@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
-<MC data={{"source_link":"lib/test.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/test.js"}} />
 
 The `node:test` module facilitates the creation of JavaScript tests that
 report results in [TAP][] format. To access it:
@@ -153,7 +153,7 @@ test('skip() method with message', (t) => {
 });
 ```
 
-### <Tag tag="M" /> `describe`/`it` syntax
+### <DataTag tag="M" /> `describe`/`it` syntax
 
 Running tests can also be done using `describe` to declare a suite
 and `it` to declare a test.
@@ -189,7 +189,7 @@ import { describe, it } from 'node:test';
 const { describe, it } = require('node:test');
 ```
 
-#### <Tag tag="M" /> `only` tests
+#### <DataTag tag="M" /> `only` tests
 
 If Node.js is started with the [`--test-only`][] command-line option, it is
 possible to skip all top level tests except for a selected subset by passing
@@ -321,9 +321,9 @@ Otherwise, the test is considered to be a failure. Test files must be
 executable by Node.js, but are not required to use the `node:test` module
 internally.
 
-### <Tag tag="M" /> `run([options])`
+### <DataTag tag="M" /> `run([options])`
 
-<MC data={{"update":{"type":"added","version":["v18.9.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.9.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for running tests. The following
   properties are supported:
@@ -348,9 +348,9 @@ run({ files: [path.resolve('./tests/test.js')] })
   .pipe(process.stdout);
 ```
 
-### <Tag tag="M" /> `test([name][, options][, fn])`
+### <DataTag tag="M" /> `test([name][, options][, fn])`
 
-<MC data={{"changes":[{"version":"v18.8.0","pr-url":"https://github.com/nodejs/node/pull/43554","description":"Add a `signal` option."},{"version":"v18.7.0","pr-url":"https://github.com/nodejs/node/pull/43505","description":"Add a `timeout` option."}],"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.8.0","pr-url":"https://github.com/nodejs/node/pull/43554","description":"Add a `signal` option."},{"version":"v18.7.0","pr-url":"https://github.com/nodejs/node/pull/43505","description":"Add a `timeout` option."}],"update":{"type":"added","version":["v18.0.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name of the test, which is displayed when reporting test
   results. **Default:** The `name` property of `fn`, or `'<anonymous>'` if `fn`
@@ -415,7 +415,7 @@ The `timeout` option can be used to fail the test if it takes longer than
 canceling tests because a running test might block the application thread and
 thus prevent the scheduled cancellation.
 
-### <Tag tag="M" /> `describe([name][, options][, fn])`
+### <DataTag tag="M" /> `describe([name][, options][, fn])`
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name of the suite, which is displayed when reporting test
   results. **Default:** The `name` property of `fn`, or `'<anonymous>'` if `fn`
@@ -434,16 +434,16 @@ and a test point in the TAP output.
 After invocation of top level `describe` functions,
 all top level tests and suites will execute.
 
-### <Tag tag="M" /> `describe.skip([name][, options][, fn])`
+### <DataTag tag="M" /> `describe.skip([name][, options][, fn])`
 
 Shorthand for skipping a suite, same as [`describe([name], { skip: true }[, fn])`][describe options].
 
-### <Tag tag="M" /> `describe.todo([name][, options][, fn])`
+### <DataTag tag="M" /> `describe.todo([name][, options][, fn])`
 
 Shorthand for marking a suite as `TODO`, same as
 [`describe([name], { todo: true }[, fn])`][describe options].
 
-### <Tag tag="M" /> `it([name][, options][, fn])`
+### <DataTag tag="M" /> `it([name][, options][, fn])`
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name of the test, which is displayed when reporting test
   results. **Default:** The `name` property of `fn`, or `'<anonymous>'` if `fn`
@@ -459,19 +459,19 @@ The `it()` function is the value imported from the `node:test` module.
 Each invocation of this function results in the creation of a test point in the
 TAP output.
 
-### <Tag tag="M" /> `it.skip([name][, options][, fn])`
+### <DataTag tag="M" /> `it.skip([name][, options][, fn])`
 
 Shorthand for skipping a test,
 same as [`it([name], { skip: true }[, fn])`][it options].
 
-### <Tag tag="M" /> `it.todo([name][, options][, fn])`
+### <DataTag tag="M" /> `it.todo([name][, options][, fn])`
 
 Shorthand for marking a test as `TODO`,
 same as [`it([name], { todo: true }[, fn])`][it options].
 
-#### <Tag tag="M" /> `before([, fn][, options])`
+#### <DataTag tag="M" /> `before([, fn][, options])`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function.
   If the hook uses callbacks,
@@ -495,9 +495,9 @@ describe('tests', async () => {
 });
 ```
 
-#### <Tag tag="M" /> `after([, fn][, options])`
+#### <DataTag tag="M" /> `after([, fn][, options])`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function.
   If the hook uses callbacks,
@@ -521,9 +521,9 @@ describe('tests', async () => {
 });
 ```
 
-#### <Tag tag="M" /> `beforeEach([, fn][, options])`
+#### <DataTag tag="M" /> `beforeEach([, fn][, options])`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function.
   If the hook uses callbacks,
@@ -548,9 +548,9 @@ describe('tests', async () => {
 });
 ```
 
-#### <Tag tag="M" /> `afterEach([, fn][, options])`
+#### <DataTag tag="M" /> `afterEach([, fn][, options])`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function.
   If the hook uses callbacks,
@@ -575,9 +575,9 @@ describe('tests', async () => {
 });
 ```
 
-### <Tag tag="C" /> `TapStream`
+### <DataTag tag="C" /> `TapStream`
 
-<MC data={{"update":{"type":"added","version":["v18.9.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.9.0"]}}} />
 
 * Extends [`ReadableStream`](/api/webstreams#readablestream)
 
@@ -585,13 +585,13 @@ A successful call to [`run()`][] method will return a new [`TapStream`](/api/tes
 object, streaming a [TAP][] output
 `TapStream` will emit events, in the order of the tests definition
 
-#### <Tag tag="E" /> `'test:diagnostic'`
+#### <DataTag tag="E" /> `'test:diagnostic'`
 
 * `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The diagnostic message.
 
 Emitted when [`context.diagnostic`][] is called.
 
-#### <Tag tag="E" /> `'test:fail'`
+#### <DataTag tag="E" /> `'test:fail'`
 
 * `data` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `duration` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The test duration.
@@ -603,7 +603,7 @@ Emitted when [`context.diagnostic`][] is called.
 
 Emitted when a test fails.
 
-#### <Tag tag="E" /> `'test:pass'`
+#### <DataTag tag="E" /> `'test:pass'`
 
 * `data` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `duration` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The test duration.
@@ -614,17 +614,17 @@ Emitted when a test fails.
 
 Emitted when a test passes.
 
-### <Tag tag="C" /> `TestContext`
+### <DataTag tag="C" /> `TestContext`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
 An instance of `TestContext` is passed to each test function in order to
 interact with the test runner. However, the `TestContext` constructor is not
 exposed as part of the API.
 
-#### <Tag tag="M" /> `context.beforeEach([, fn][, options])`
+#### <DataTag tag="M" /> `context.beforeEach([, fn][, options])`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function. The first argument
   to this function is a [`TestContext`][] object. If the hook uses callbacks,
@@ -652,9 +652,9 @@ test('top level test', async (t) => {
 });
 ```
 
-#### <Tag tag="M" /> `context.afterEach([, fn][, options])`
+#### <DataTag tag="M" /> `context.afterEach([, fn][, options])`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function. The first argument
   to this function is a [`TestContext`][] object. If the hook uses callbacks,
@@ -682,9 +682,9 @@ test('top level test', async (t) => {
 });
 ```
 
-#### <Tag tag="M" /> `context.diagnostic(message)`
+#### <DataTag tag="M" /> `context.diagnostic(message)`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
 * `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Message to be displayed as a TAP diagnostic.
 
@@ -698,15 +698,15 @@ test('top level test', (t) => {
 });
 ```
 
-#### <Tag tag="M" /> `context.name`
+#### <DataTag tag="M" /> `context.name`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
 The name of the test.
 
-#### <Tag tag="M" /> `context.runOnly(shouldRunOnlyTests)`
+#### <DataTag tag="M" /> `context.runOnly(shouldRunOnlyTests)`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
 * `shouldRunOnlyTests` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether or not to run `only` tests.
 
@@ -726,9 +726,9 @@ test('top level test', (t) => {
 });
 ```
 
-#### <Tag tag="M" /> `context.signal`
+#### <DataTag tag="M" /> `context.signal`
 
-<MC data={{"update":{"type":"added","version":["v18.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.7.0"]}}} />
 
 * [`AbortSignal`](/api/globals#abortsignal) Can be used to abort test subtasks when the test has been
   aborted.
@@ -739,9 +739,9 @@ test('top level test', async (t) => {
 });
 ```
 
-#### <Tag tag="M" /> `context.skip([message])`
+#### <DataTag tag="M" /> `context.skip([message])`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
 * `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Optional skip message to be displayed in TAP output.
 
@@ -757,9 +757,9 @@ test('top level test', (t) => {
 });
 ```
 
-#### <Tag tag="M" /> `context.todo([message])`
+#### <DataTag tag="M" /> `context.todo([message])`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
 * `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Optional `TODO` message to be displayed in TAP output.
 
@@ -774,9 +774,9 @@ test('top level test', (t) => {
 });
 ```
 
-#### <Tag tag="M" /> `context.test([name][, options][, fn])`
+#### <DataTag tag="M" /> `context.test([name][, options][, fn])`
 
-<MC data={{"changes":[{"version":"v18.8.0","pr-url":"https://github.com/nodejs/node/pull/43554","description":"Add a `signal` option."},{"version":"v18.7.0","pr-url":"https://github.com/nodejs/node/pull/43505","description":"Add a `timeout` option."}],"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.8.0","pr-url":"https://github.com/nodejs/node/pull/43554","description":"Add a `signal` option."},{"version":"v18.7.0","pr-url":"https://github.com/nodejs/node/pull/43505","description":"Add a `timeout` option."}],"update":{"type":"added","version":["v18.0.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name of the subtest, which is displayed when reporting
   test results. **Default:** The `name` property of `fn`, or `'<anonymous>'` if
@@ -820,23 +820,23 @@ test('top level test', async (t) => {
 });
 ```
 
-### <Tag tag="C" /> `SuiteContext`
+### <DataTag tag="C" /> `SuiteContext`
 
-<MC data={{"update":{"type":"added","version":["v18.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.7.0"]}}} />
 
 An instance of `SuiteContext` is passed to each suite function in order to
 interact with the test runner. However, the `SuiteContext` constructor is not
 exposed as part of the API.
 
-#### <Tag tag="M" /> `context.name`
+#### <DataTag tag="M" /> `context.name`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
 The name of the suite.
 
-#### <Tag tag="M" /> `context.signal`
+#### <DataTag tag="M" /> `context.signal`
 
-<MC data={{"update":{"type":"added","version":["v18.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.7.0"]}}} />
 
 * [`AbortSignal`](/api/globals#abortsignal) Can be used to abort test subtasks when the test has been
   aborted.

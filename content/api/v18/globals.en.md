@@ -5,9 +5,9 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<MC data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 These objects are available in all modules. The following variables may appear
 to be global but are not. They exist only in the scope of modules, see the
@@ -23,11 +23,11 @@ The objects listed here are specific to Node.js. There are [built-in objects][]
 that are part of the JavaScript language itself, which are also globally
 accessible.
 
-### <Tag tag="C" /> `AbortController`
+### <DataTag tag="C" /> `AbortController`
 
-<MC data={{"changes":[{"version":"v15.4.0","pr-url":"https://github.com/nodejs/node/pull/35949","description":"No longer experimental."}],"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.4.0","pr-url":"https://github.com/nodejs/node/pull/35949","description":"No longer experimental."}],"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 A utility class used to signal cancelation in selected `Promise`-based APIs.
 The API is based on the Web API [`AbortController`][].
@@ -43,9 +43,9 @@ ac.abort();
 console.log(ac.signal.aborted);  // Prints True
 ```
 
-#### <Tag tag="M" /> `abortController.abort([reason])`
+#### <DataTag tag="M" /> `abortController.abort([reason])`
 
-<MC data={{"changes":[{"version":["v17.2.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40807","description":"Added the new optional reason argument."}],"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v17.2.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40807","description":"Added the new optional reason argument."}],"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
 
 * `reason` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) An optional reason, retrievable on the `AbortSignal`'s
   `reason` property.
@@ -53,15 +53,15 @@ console.log(ac.signal.aborted);  // Prints True
 Triggers the abort signal, causing the `abortController.signal` to emit
 the `'abort'` event.
 
-#### <Tag tag="M" /> `abortController.signal`
+#### <DataTag tag="M" /> `abortController.signal`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
 
 * Type: [`AbortSignal`](/api/globals#abortsignal)
 
-#### <Tag tag="C" /> `AbortSignal`
+#### <DataTag tag="C" /> `AbortSignal`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
 
 * Extends: [`EventTarget`](/api/events#eventtarget)
 
@@ -70,7 +70,7 @@ The `AbortSignal` is used to notify observers when the
 
 ##### Static method: `AbortSignal.abort([reason])`
 
-<MC data={{"changes":[{"version":["v17.2.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40807","description":"Added the new optional reason argument."}],"update":{"type":"added","version":["v15.12.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v17.2.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40807","description":"Added the new optional reason argument."}],"update":{"type":"added","version":["v15.12.0","v14.17.0"]}}} />
 
 * `reason`: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`AbortSignal`](/api/globals#abortsignal)
@@ -79,16 +79,16 @@ Returns a new already aborted `AbortSignal`.
 
 ##### Static method: `AbortSignal.timeout(delay)`
 
-<MC data={{"update":{"type":"added","version":["v17.3.0","v16.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.3.0","v16.14.0"]}}} />
 
 * `delay` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of milliseconds to wait before triggering
   the AbortSignal.
 
 Returns a new `AbortSignal` which will be aborted in `delay` milliseconds.
 
-##### <Tag tag="E" /> `'abort'`
+##### <DataTag tag="E" /> `'abort'`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
 
 The `'abort'` event is emitted when the `abortController.abort()` method
 is called. The callback is invoked with a single object argument with a
@@ -119,24 +119,24 @@ listener, use the `once()` method) to ensure that the event listener is
 removed as soon as the `'abort'` event is handled. Failure to do so may
 result in memory leaks.
 
-##### <Tag tag="M" /> `abortSignal.aborted`
+##### <DataTag tag="M" /> `abortSignal.aborted`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) True after the `AbortController` has been aborted.
 
-##### <Tag tag="M" /> `abortSignal.onabort`
+##### <DataTag tag="M" /> `abortSignal.onabort`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
 
 * Type: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 An optional callback function that may be set by user code to be notified
 when the `abortController.abort()` function has been called.
 
-##### <Tag tag="M" /> `abortSignal.reason`
+##### <DataTag tag="M" /> `abortSignal.reason`
 
-<MC data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
 
 * Type: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
@@ -148,207 +148,207 @@ ac.abort(new Error('boom!'));
 console.log(ac.signal.reason);  // Error('boom!');
 ```
 
-##### <Tag tag="M" /> `abortSignal.throwIfAborted()`
+##### <DataTag tag="M" /> `abortSignal.throwIfAborted()`
 
-<MC data={{"update":{"type":"added","version":["v17.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.3.0"]}}} />
 
 If `abortSignal.aborted` is `true`, throws `abortSignal.reason`.
 
-### <Tag tag="C" /> `Blob`
+### <DataTag tag="C" /> `Blob`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 See [`Blob`](/api/buffer#blob).
 
-### <Tag tag="C" /> `Buffer`
+### <DataTag tag="C" /> `Buffer`
 
-<MC data={{"update":{"type":"added","version":["v0.1.103"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.103"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 * [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 Used to handle binary data. See the [buffer section][].
 
-### <Tag tag="C" /> `ByteLengthQueuingStrategy`
+### <DataTag tag="C" /> `ByteLengthQueuingStrategy`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`ByteLengthQueuingStrategy`][].
 
-### <Tag tag="M" /> `__dirname`
+### <DataTag tag="M" /> `__dirname`
 
 This variable may appear to be global but is not. See [`__dirname`][].
 
-### <Tag tag="M" /> `__filename`
+### <DataTag tag="M" /> `__filename`
 
 This variable may appear to be global but is not. See [`__filename`][].
 
-### <Tag tag="M" /> `atob(data)`
+### <DataTag tag="M" /> `atob(data)`
 
-<MC data={{"update":{"type":"added","version":["v16.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.0.0"]}}} />
 
-<MC data={{"stability":{"level":3,"text":" - Legacy. Use `Buffer.from(data, 'base64')` instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy. Use `Buffer.from(data, 'base64')` instead."}}} />
 
 Global alias for [`buffer.atob()`][].
 
-### <Tag tag="M" /> `BroadcastChannel`
+### <DataTag tag="M" /> `BroadcastChannel`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
 See [`BroadcastChannel`](/api/worker_threads#broadcastchannel-extends-eventtarget).
 
-### <Tag tag="M" /> `btoa(data)`
+### <DataTag tag="M" /> `btoa(data)`
 
-<MC data={{"update":{"type":"added","version":["v16.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.0.0"]}}} />
 
-<MC data={{"stability":{"level":3,"text":" - Legacy. Use `buf.toString('base64')` instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy. Use `buf.toString('base64')` instead."}}} />
 
 Global alias for [`buffer.btoa()`][].
 
-### <Tag tag="M" /> `clearImmediate(immediateObject)`
+### <DataTag tag="M" /> `clearImmediate(immediateObject)`
 
-<MC data={{"update":{"type":"added","version":["v0.9.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 [`clearImmediate`][] is described in the [timers][] section.
 
-### <Tag tag="M" /> `clearInterval(intervalObject)`
+### <DataTag tag="M" /> `clearInterval(intervalObject)`
 
-<MC data={{"update":{"type":"added","version":["v0.0.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.0.1"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 [`clearInterval`][] is described in the [timers][] section.
 
-### <Tag tag="M" /> `clearTimeout(timeoutObject)`
+### <DataTag tag="M" /> `clearTimeout(timeoutObject)`
 
-<MC data={{"update":{"type":"added","version":["v0.0.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.0.1"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 [`clearTimeout`][] is described in the [timers][] section.
 
-### <Tag tag="C" /> `CompressionStream`
+### <DataTag tag="C" /> `CompressionStream`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`CompressionStream`][].
 
-### <Tag tag="M" /> `console`
+### <DataTag tag="M" /> `console`
 
-<MC data={{"update":{"type":"added","version":["v0.1.100"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.100"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 Used to print to stdout and stderr. See the [`console`][] section.
 
-### <Tag tag="C" /> `CountQueuingStrategy`
+### <DataTag tag="C" /> `CountQueuingStrategy`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`CountQueuingStrategy`][].
 
-### <Tag tag="M" /> `Crypto`
+### <DataTag tag="M" /> `Crypto`
 
-<MC data={{"update":{"type":"added","version":["v17.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.6.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-webcrypto` CLI flag."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-webcrypto` CLI flag."}}} />
 
 A browser-compatible implementation of [`Crypto`](/api/webcrypto#crypto). This global is available
 only if the Node.js binary was compiled with including support for the
 `node:crypto` module.
 
-### <Tag tag="M" /> `crypto`
+### <DataTag tag="M" /> `crypto`
 
-<MC data={{"update":{"type":"added","version":["v17.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.6.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-webcrypto` CLI flag."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-webcrypto` CLI flag."}}} />
 
 A browser-compatible implementation of the [Web Crypto API][].
 
-### <Tag tag="M" /> `CryptoKey`
+### <DataTag tag="M" /> `CryptoKey`
 
-<MC data={{"update":{"type":"added","version":["v17.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.6.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-webcrypto` CLI flag."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-webcrypto` CLI flag."}}} />
 
 A browser-compatible implementation of [`CryptoKey`](/api/webcrypto#cryptokey). This global is available
 only if the Node.js binary was compiled with including support for the
 `node:crypto` module.
 
-### <Tag tag="M" /> `CustomEvent`
+### <DataTag tag="M" /> `CustomEvent`
 
-<MC data={{"update":{"type":"added","version":["v18.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.7.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-customevent` CLI flag."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-customevent` CLI flag."}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 A browser-compatible implementation of the [`CustomEvent` Web API][].
 
-### <Tag tag="C" /> `DecompressionStream`
+### <DataTag tag="C" /> `DecompressionStream`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`DecompressionStream`][].
 
-### <Tag tag="M" /> `Event`
+### <DataTag tag="M" /> `Event`
 
-<MC data={{"changes":[{"version":"v15.4.0","pr-url":"https://github.com/nodejs/node/pull/35949","description":"No longer experimental."}],"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.4.0","pr-url":"https://github.com/nodejs/node/pull/35949","description":"No longer experimental."}],"update":{"type":"added","version":["v15.0.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 A browser-compatible implementation of the `Event` class. See
 [`EventTarget` and `Event` API][] for more details.
 
-### <Tag tag="M" /> `EventTarget`
+### <DataTag tag="M" /> `EventTarget`
 
-<MC data={{"changes":[{"version":"v15.4.0","pr-url":"https://github.com/nodejs/node/pull/35949","description":"No longer experimental."}],"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.4.0","pr-url":"https://github.com/nodejs/node/pull/35949","description":"No longer experimental."}],"update":{"type":"added","version":["v15.0.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 A browser-compatible implementation of the `EventTarget` class. See
 [`EventTarget` and `Event` API][] for more details.
 
-### <Tag tag="M" /> `exports`
+### <DataTag tag="M" /> `exports`
 
 This variable may appear to be global but is not. See [`exports`][].
 
-### <Tag tag="M" /> `fetch`
+### <DataTag tag="M" /> `fetch`
 
-<MC data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental. Disable this API with the `--no-experimental-fetch` CLI flag."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental. Disable this API with the `--no-experimental-fetch` CLI flag."}}} />
 
 A browser-compatible implementation of the [`fetch()`][] function.
 
 ### Class `FormData`
 
-<MC data={{"update":{"type":"added","version":["v17.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.6.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental. Disable this API with the `--no-experimental-fetch` CLI flag."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental. Disable this API with the `--no-experimental-fetch` CLI flag."}}} />
 
 A browser-compatible implementation of [`FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData).
 
-### <Tag tag="M" /> `global`
+### <DataTag tag="M" /> `global`
 
-<MC data={{"update":{"type":"added","version":["v0.1.27"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.27"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The global namespace object.
 
@@ -359,61 +359,61 @@ Node.js this is different. The top-level scope is not the global scope;
 
 ### Class `Headers`
 
-<MC data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental. Disable this API with the `--no-experimental-fetch` CLI flag."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental. Disable this API with the `--no-experimental-fetch` CLI flag."}}} />
 
 A browser-compatible implementation of [`Headers`](https://developer.mozilla.org/en-US/docs/Web/API/Headers).
 
-### <Tag tag="M" /> `MessageChannel`
+### <DataTag tag="M" /> `MessageChannel`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 The `MessageChannel` class. See [`MessageChannel`][] for more details.
 
-### <Tag tag="M" /> `MessageEvent`
+### <DataTag tag="M" /> `MessageEvent`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 The `MessageEvent` class. See [`MessageEvent`][] for more details.
 
-### <Tag tag="M" /> `MessagePort`
+### <DataTag tag="M" /> `MessagePort`
 
-<MC data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 The `MessagePort` class. See [`MessagePort`][] for more details.
 
-### <Tag tag="M" /> `module`
+### <DataTag tag="M" /> `module`
 
 This variable may appear to be global but is not. See [`module`][].
 
-### <Tag tag="M" /> `performance`
+### <DataTag tag="M" /> `performance`
 
-<MC data={{"update":{"type":"added","version":["v16.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.0.0"]}}} />
 
 The [`perf_hooks.performance`][] object.
 
-### <Tag tag="M" /> `process`
+### <DataTag tag="M" /> `process`
 
-<MC data={{"update":{"type":"added","version":["v0.1.7"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.7"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 The process object. See the [`process` object][] section.
 
-### <Tag tag="M" /> `queueMicrotask(callback)`
+### <DataTag tag="M" /> `queueMicrotask(callback)`
 
-<MC data={{"update":{"type":"added","version":["v11.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.0.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Function to be queued.
 
@@ -447,193 +447,193 @@ DataHandler.prototype.load = async function load(key) {
 };
 ```
 
-### <Tag tag="C" /> `ReadableByteStreamController`
+### <DataTag tag="C" /> `ReadableByteStreamController`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`ReadableByteStreamController`][].
 
-### <Tag tag="C" /> `ReadableStream`
+### <DataTag tag="C" /> `ReadableStream`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`ReadableStream`][].
 
-### <Tag tag="C" /> `ReadableStreamBYOBReader`
+### <DataTag tag="C" /> `ReadableStreamBYOBReader`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`ReadableStreamBYOBReader`][].
 
-### <Tag tag="C" /> `ReadableStreamBYOBRequest`
+### <DataTag tag="C" /> `ReadableStreamBYOBRequest`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`ReadableStreamBYOBRequest`][].
 
-### <Tag tag="C" /> `ReadableStreamDefaultController`
+### <DataTag tag="C" /> `ReadableStreamDefaultController`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`ReadableStreamDefaultController`][].
 
-### <Tag tag="C" /> `ReadableStreamDefaultReader`
+### <DataTag tag="C" /> `ReadableStreamDefaultReader`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`ReadableStreamDefaultReader`][].
 
-### <Tag tag="M" /> `require()`
+### <DataTag tag="M" /> `require()`
 
 This variable may appear to be global but is not. See [`require()`][].
 
-### <Tag tag="M" /> `Response`
+### <DataTag tag="M" /> `Response`
 
-<MC data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental. Disable this API with the `--no-experimental-fetch` CLI flag."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental. Disable this API with the `--no-experimental-fetch` CLI flag."}}} />
 
 A browser-compatible implementation of [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response).
 
-### <Tag tag="M" /> `Request`
+### <DataTag tag="M" /> `Request`
 
-<MC data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental. Disable this API with the `--no-experimental-fetch` CLI flag."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental. Disable this API with the `--no-experimental-fetch` CLI flag."}}} />
 
 A browser-compatible implementation of [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request).
 
-### <Tag tag="M" /> `setImmediate(callback[, ...args])`
+### <DataTag tag="M" /> `setImmediate(callback[, ...args])`
 
-<MC data={{"update":{"type":"added","version":["v0.9.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 [`setImmediate`][] is described in the [timers][] section.
 
-### <Tag tag="M" /> `setInterval(callback, delay[, ...args])`
+### <DataTag tag="M" /> `setInterval(callback, delay[, ...args])`
 
-<MC data={{"update":{"type":"added","version":["v0.0.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.0.1"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 [`setInterval`][] is described in the [timers][] section.
 
-### <Tag tag="M" /> `setTimeout(callback, delay[, ...args])`
+### <DataTag tag="M" /> `setTimeout(callback, delay[, ...args])`
 
-<MC data={{"update":{"type":"added","version":["v0.0.1"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.0.1"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 [`setTimeout`][] is described in the [timers][] section.
 
-### <Tag tag="M" /> `structuredClone(value[, options])`
+### <DataTag tag="M" /> `structuredClone(value[, options])`
 
-<MC data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 The WHATWG [`structuredClone`][] method.
 
-### <Tag tag="M" /> `SubtleCrypto`
+### <DataTag tag="M" /> `SubtleCrypto`
 
-<MC data={{"update":{"type":"added","version":["v17.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.6.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-webcrypto` CLI flag."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-webcrypto` CLI flag."}}} />
 
 A browser-compatible implementation of [`SubtleCrypto`](/api/webcrypto#subtlecrypto). This global is available
 only if the Node.js binary was compiled with including support for the
 `node:crypto` module.
 
-### <Tag tag="M" /> `DOMException`
+### <DataTag tag="M" /> `DOMException`
 
-<MC data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 The WHATWG `DOMException` class. See [`DOMException`][] for more details.
 
-### <Tag tag="M" /> `TextDecoder`
+### <DataTag tag="M" /> `TextDecoder`
 
-<MC data={{"update":{"type":"added","version":["v11.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.0.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 The WHATWG `TextDecoder` class. See the [`TextDecoder`][] section.
 
-### <Tag tag="C" /> `TextDecoderStream`
+### <DataTag tag="C" /> `TextDecoderStream`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`TextDecoderStream`][].
 
-### <Tag tag="M" /> `TextEncoder`
+### <DataTag tag="M" /> `TextEncoder`
 
-<MC data={{"update":{"type":"added","version":["v11.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.0.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 The WHATWG `TextEncoder` class. See the [`TextEncoder`][] section.
 
-### <Tag tag="C" /> `TextEncoderStream`
+### <DataTag tag="C" /> `TextEncoderStream`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`TextEncoderStream`][].
 
-### <Tag tag="C" /> `TransformStream`
+### <DataTag tag="C" /> `TransformStream`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`TransformStream`][].
 
-### <Tag tag="C" /> `TransformStreamDefaultController`
+### <DataTag tag="C" /> `TransformStreamDefaultController`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`TransformStreamDefaultController`][].
 
-### <Tag tag="M" /> `URL`
+### <DataTag tag="M" /> `URL`
 
-<MC data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 The WHATWG `URL` class. See the [`URL`][] section.
 
-### <Tag tag="M" /> `URLSearchParams`
+### <DataTag tag="M" /> `URLSearchParams`
 
-<MC data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 The WHATWG `URLSearchParams` class. See the [`URLSearchParams`][] section.
 
-### <Tag tag="M" /> `WebAssembly`
+### <DataTag tag="M" /> `WebAssembly`
 
-<MC data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
-<MC data={{"type":"global"}} />
+<Metadata version="v18.9.0" data={{"type":"global"}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -641,27 +641,27 @@ The object that acts as the namespace for all W3C
 [WebAssembly][webassembly-org] related functionality. See the
 [Mozilla Developer Network][webassembly-mdn] for usage and compatibility.
 
-### <Tag tag="C" /> `WritableStream`
+### <DataTag tag="C" /> `WritableStream`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`WritableStream`][].
 
-### <Tag tag="C" /> `WritableStreamDefaultController`
+### <DataTag tag="C" /> `WritableStreamDefaultController`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`WritableStreamDefaultController`][].
 
-### <Tag tag="C" /> `WritableStreamDefaultWriter`
+### <DataTag tag="C" /> `WritableStreamDefaultWriter`
 
-<MC data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 A browser-compatible implementation of [`WritableStreamDefaultWriter`][].
 

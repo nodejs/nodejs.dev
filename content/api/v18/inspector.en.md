@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v8.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v8.0.0"]}}} />
 
-<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<MC data={{"source_link":"lib/inspector.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/inspector.js"}} />
 
 The `node:inspector` module provides an API for interacting with the V8
 inspector.
@@ -20,13 +20,13 @@ It can be accessed using:
 const inspector = require('node:inspector');
 ```
 
-### <Tag tag="M" /> `inspector.close()`
+### <DataTag tag="M" /> `inspector.close()`
 
 Deactivate the inspector. Blocks until there are no active connections.
 
 This function is not available in [worker threads][].
 
-### <Tag tag="M" /> `inspector.console`
+### <DataTag tag="M" /> `inspector.console`
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An object to send messages to the remote inspector console.
 
@@ -37,7 +37,7 @@ require('node:inspector').console.log('a message');
 The inspector console does not have API parity with Node.js
 console.
 
-### <Tag tag="M" /> `inspector.open([port[, host[, wait]]])`
+### <DataTag tag="M" /> `inspector.open([port[, host[, wait]]])`
 
 * `port` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Port to listen on for inspector connections. Optional.
   **Default:** what was specified on the CLI.
@@ -56,7 +56,7 @@ and flow control has been passed to the debugger client.
 See the [security warning][] regarding the `host`
 parameter usage.
 
-### <Tag tag="M" /> `inspector.url()`
+### <DataTag tag="M" /> `inspector.url()`
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -77,33 +77,33 @@ $ node -p 'inspector.url()'
 undefined
 ```
 
-### <Tag tag="M" /> `inspector.waitForDebugger()`
+### <DataTag tag="M" /> `inspector.waitForDebugger()`
 
-<MC data={{"update":{"type":"added","version":["v12.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.7.0"]}}} />
 
 Blocks until a client (existing or connected later) has sent
 `Runtime.runIfWaitingForDebugger` command.
 
 An exception will be thrown if there is no active inspector.
 
-### <Tag tag="C" /> `inspector.Session`
+### <DataTag tag="C" /> `inspector.Session`
 
 * Extends: [`EventEmitter`](/api/events#eventemitter)
 
 The `inspector.Session` is used for dispatching messages to the V8 inspector
 back-end and receiving message responses and notifications.
 
-#### <Tag tag="M" /> `new inspector.Session()`
+#### <DataTag tag="M" /> `new inspector.Session()`
 
-<MC data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 Create a new instance of the `inspector.Session` class. The inspector session
 needs to be connected through [`session.connect()`][] before the messages
 can be dispatched to the inspector backend.
 
-#### <Tag tag="E" /> `'inspectorNotification'`
+#### <DataTag tag="E" /> `'inspectorNotification'`
 
-<MC data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The notification message object
 
@@ -117,9 +117,9 @@ session.on('inspectorNotification', (message) => console.log(message.method));
 
 It is also possible to subscribe only to notifications with specific method:
 
-#### <Tag tag="E" /> `<inspector-protocol-method>`;
+#### <DataTag tag="E" /> `<inspector-protocol-method>`;
 
-<MC data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The notification message object
 
@@ -137,31 +137,31 @@ session.on('Debugger.paused', ({ params }) => {
 // [ '/the/file/that/has/the/breakpoint.js:11:0' ]
 ```
 
-#### <Tag tag="M" /> `session.connect()`
+#### <DataTag tag="M" /> `session.connect()`
 
-<MC data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 Connects a session to the inspector back-end.
 
-#### <Tag tag="M" /> `session.connectToMainThread()`
+#### <DataTag tag="M" /> `session.connectToMainThread()`
 
-<MC data={{"update":{"type":"added","version":["v12.11.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.11.0"]}}} />
 
 Connects a session to the main thread inspector back-end. An exception will
 be thrown if this API was not called on a Worker thread.
 
-#### <Tag tag="M" /> `session.disconnect()`
+#### <DataTag tag="M" /> `session.disconnect()`
 
-<MC data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 Immediately close the session. All pending message callbacks will be called
 with an error. [`session.connect()`][] will need to be called to be able to send
 messages again. Reconnected session will lose all inspector state, such as
 enabled agents or configured breakpoints.
 
-#### <Tag tag="M" /> `session.post(method[, params][, callback])`
+#### <DataTag tag="M" /> `session.post(method[, params][, callback])`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `method` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `params` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)

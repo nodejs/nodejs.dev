@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v8.5.0"]}}} />
 
-<MC data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<MC data={{"source_link":"lib/perf_hooks.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/perf_hooks.js"}} />
 
 This module provides an implementation of a subset of the W3C
 [Web Performance APIs][] as well as additional APIs for
@@ -41,43 +41,43 @@ doSomeLongRunningProcess(() => {
 });
 ```
 
-### <Tag tag="M" /> `perf_hooks.performance`
+### <DataTag tag="M" /> `perf_hooks.performance`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 An object that can be used to collect performance metrics from the current
 Node.js instance. It is similar to [`window.performance`][] in browsers.
 
-#### <Tag tag="M" /> `performance.clearMarks([name])`
+#### <DataTag tag="M" /> `performance.clearMarks([name])`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 If `name` is not provided, removes all `PerformanceMark` objects from the
 Performance Timeline. If `name` is provided, removes only the named mark.
 
-#### <Tag tag="M" /> `performance.clearMeasures([name])`
+#### <DataTag tag="M" /> `performance.clearMeasures([name])`
 
-<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 If `name` is not provided, removes all `PerformanceMeasure` objects from the
 Performance Timeline. If `name` is provided, removes only the named measure.
 
-#### <Tag tag="M" /> `performance.clearResourceTimings([name])`
+#### <DataTag tag="M" /> `performance.clearResourceTimings([name])`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 If `name` is not provided, removes all `PerformanceResourceTiming` objects from
 the Resource Timeline. If `name` is provided, removes only the named resource.
 
-#### <Tag tag="M" /> `performance.eventLoopUtilization([utilization1[, utilization2]])`
+#### <DataTag tag="M" /> `performance.eventLoopUtilization([utilization1[, utilization2]])`
 
-<MC data={{"update":{"type":"added","version":["v14.10.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.10.0","v12.19.0"]}}} />
 
 * `utilization1` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The result of a previous call to
   `eventLoopUtilization()`.
@@ -134,9 +134,9 @@ Passing in a user-defined object instead of the result of a previous call to
 `eventLoopUtilization()` will lead to undefined behavior. The return values
 are not guaranteed to reflect any correct state of the event loop.
 
-#### <Tag tag="M" /> `performance.getEntries()`
+#### <DataTag tag="M" /> `performance.getEntries()`
 
-<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 * Returns: PerformanceEntry\[]
 
@@ -145,9 +145,9 @@ respect to `performanceEntry.startTime`. If you are only interested in
 performance entries of certain types or that have certain names, see
 `performance.getEntriesByType()` and `performance.getEntriesByName()`.
 
-#### <Tag tag="M" /> `performance.getEntriesByName(name[, type])`
+#### <DataTag tag="M" /> `performance.getEntriesByName(name[, type])`
 
-<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -158,9 +158,9 @@ with respect to `performanceEntry.startTime` whose `performanceEntry.name` is
 equal to `name`, and optionally, whose `performanceEntry.entryType` is equal to
 `type`.
 
-#### <Tag tag="M" /> `performance.getEntriesByType(type)`
+#### <DataTag tag="M" /> `performance.getEntriesByType(type)`
 
-<MC data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: PerformanceEntry\[]
@@ -169,9 +169,9 @@ Returns a list of `PerformanceEntry` objects in chronological order
 with respect to `performanceEntry.startTime` whose `performanceEntry.entryType`
 is equal to `type`.
 
-#### <Tag tag="M" /> `performance.mark([name[, options]])`
+#### <DataTag tag="M" /> `performance.mark([name[, options]])`
 
-<MC data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Updated to conform to the User Timing Level 3 specification."}],"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Updated to conform to the User Timing Level 3 specification."}],"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -191,9 +191,9 @@ and can be queried with `performance.getEntries`,
 observation is performed, the entries should be cleared from the global
 Performance Timeline manually with `performance.clearMarks`.
 
-#### <Tag tag="M" /> `performance.markResourceTiming(timingInfo, requestedUrl, initiatorType, global, cacheMode)`
+#### <DataTag tag="M" /> `performance.markResourceTiming(timingInfo, requestedUrl, initiatorType, global, cacheMode)`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * `timingInfo` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) [Fetch Timing Info][]
 * `requestedUrl` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The resource url
@@ -214,9 +214,9 @@ and can be queried with `performance.getEntries`,
 observation is performed, the entries should be cleared from the global
 Performance Timeline manually with `performance.clearResourceTimings`.
 
-#### <Tag tag="M" /> `performance.measure(name[, startMarkOrOptions[, endMark]])`
+#### <DataTag tag="M" /> `performance.measure(name[, startMarkOrOptions[, endMark]])`
 
-<MC data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Updated to conform to the User Timing Level 3 specification."},{"version":["v13.13.0","v12.16.3"],"pr-url":"https://github.com/nodejs/node/pull/32651","description":"Make `startMark` and `endMark` parameters optional."}],"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Updated to conform to the User Timing Level 3 specification."},{"version":["v13.13.0","v12.16.3"],"pr-url":"https://github.com/nodejs/node/pull/32651","description":"Make `startMark` and `endMark` parameters optional."}],"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `startMarkOrOptions` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Optional.
@@ -252,9 +252,9 @@ and can be queried with `performance.getEntries`,
 observation is performed, the entries should be cleared from the global
 Performance Timeline manually with `performance.clearMeasures`.
 
-#### <Tag tag="M" /> `performance.nodeTiming`
+#### <DataTag tag="M" /> `performance.nodeTiming`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * [`PerformanceNodeTiming`](/api/perf_hooks#performancenodetiming)
 
@@ -263,36 +263,36 @@ _This property is an extension by Node.js. It is not available in Web browsers._
 An instance of the `PerformanceNodeTiming` class that provides performance
 metrics for specific Node.js operational milestones.
 
-#### <Tag tag="M" /> `performance.now()`
+#### <DataTag tag="M" /> `performance.now()`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 Returns the current high resolution millisecond timestamp, where 0 represents
 the start of the current `node` process.
 
-#### <Tag tag="M" /> `performance.setResourceTimingBufferSize(maxSize)`
+#### <DataTag tag="M" /> `performance.setResourceTimingBufferSize(maxSize)`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
 Sets the global performance resource timing buffer size to the specified number
 of "resource" type performance entry objects.
 
 By default the max buffer size is set to 250.
 
-#### <Tag tag="M" /> `performance.timeOrigin`
+#### <DataTag tag="M" /> `performance.timeOrigin`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The [`timeOrigin`][] specifies the high resolution millisecond timestamp at
 which the current `node` process began, measured in Unix time.
 
-#### <Tag tag="M" /> `performance.timerify(fn[, options])`
+#### <DataTag tag="M" /> `performance.timerify(fn[, options])`
 
-<MC data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37475","description":"Added the histogram option."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Re-implemented to use pure-JavaScript and the ability to time async functions."}],"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37475","description":"Added the histogram option."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Re-implemented to use pure-JavaScript and the ability to time async functions."}],"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -335,16 +335,16 @@ If the wrapped function returns a promise, a finally handler will be attached
 to the promise and the duration will be reported once the finally handler is
 invoked.
 
-#### <Tag tag="M" /> `performance.toJSON()`
+#### <DataTag tag="M" /> `performance.toJSON()`
 
-<MC data={{"update":{"type":"added","version":["v16.1.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.1.0"]}}} />
 
 An object which is JSON representation of the `performance` object. It
 is similar to [`window.performance.toJSON`][] in browsers.
 
-##### <Tag tag="E" /> `'resourcetimingbufferfull'`
+##### <DataTag tag="E" /> `'resourcetimingbufferfull'`
 
-<MC data={{"update":{"type":"added","version":["v18.8.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.8.0"]}}} />
 
 The `'resourcetimingbufferfull'` event is fired when the global performance
 resource timing buffer is full. Adjust resource timing buffer size with
@@ -352,30 +352,30 @@ resource timing buffer is full. Adjust resource timing buffer size with
 `performance.clearResourceTimings()` in the event listener to allow
 more entries to be added to the performance timeline buffer.
 
-### <Tag tag="C" /> `PerformanceEntry`
+### <DataTag tag="C" /> `PerformanceEntry`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
-#### <Tag tag="M" /> `performanceEntry.detail`
+#### <DataTag tag="M" /> `performanceEntry.detail`
 
-<MC data={{"update":{"type":"added","version":["v16.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.0.0"]}}} />
 
 * [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 Additional detail specific to the `entryType`.
 
-#### <Tag tag="M" /> `performanceEntry.duration`
+#### <DataTag tag="M" /> `performanceEntry.duration`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The total number of milliseconds elapsed for this entry. This value will not
 be meaningful for all Performance Entry types.
 
-#### <Tag tag="M" /> `performanceEntry.entryType`
+#### <DataTag tag="M" /> `performanceEntry.entryType`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -389,9 +389,9 @@ The type of the performance entry. It may be one of:
 * `'http2'` (Node.js only)
 * `'http'` (Node.js only)
 
-#### <Tag tag="M" /> `performanceEntry.flags`
+#### <DataTag tag="M" /> `performanceEntry.flags`
 
-<MC data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Runtime deprecated. Now moved to the detail property when entryType is 'gc'."}],"update":{"type":"added","version":["v13.9.0","v12.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Runtime deprecated. Now moved to the detail property when entryType is 'gc'."}],"update":{"type":"added","version":["v13.9.0","v12.17.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -409,17 +409,17 @@ The value may be one of:
 * `perf_hooks.constants.NODE_PERFORMANCE_GC_FLAGS_ALL_EXTERNAL_MEMORY`
 * `perf_hooks.constants.NODE_PERFORMANCE_GC_FLAGS_SCHEDULE_IDLE`
 
-#### <Tag tag="M" /> `performanceEntry.name`
+#### <DataTag tag="M" /> `performanceEntry.name`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 The name of the performance entry.
 
-#### <Tag tag="M" /> `performanceEntry.kind`
+#### <DataTag tag="M" /> `performanceEntry.kind`
 
-<MC data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Runtime deprecated. Now moved to the detail property when entryType is 'gc'."}],"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Runtime deprecated. Now moved to the detail property when entryType is 'gc'."}],"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -434,9 +434,9 @@ The value may be one of:
 * `perf_hooks.constants.NODE_PERFORMANCE_GC_INCREMENTAL`
 * `perf_hooks.constants.NODE_PERFORMANCE_GC_WEAKCB`
 
-#### <Tag tag="M" /> `performanceEntry.startTime`
+#### <DataTag tag="M" /> `performanceEntry.startTime`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -553,9 +553,9 @@ If `performanceEntry.name` is equal to `queryxxx` or `getHostByAddr`, the `detai
 contain the following properties: `host`, `ttl`, `result`. The value of `result` is
 same as the result of `queryxxx` or `getHostByAddr`.
 
-### <Tag tag="C" /> `PerformanceNodeTiming`
+### <DataTag tag="C" /> `PerformanceNodeTiming`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * Extends: [`PerformanceEntry`](/api/perf_hooks#performanceentry)
 
@@ -564,9 +564,9 @@ _This property is an extension by Node.js. It is not available in Web browsers._
 Provides timing details for Node.js itself. The constructor of this class
 is not exposed to users.
 
-#### <Tag tag="M" /> `performanceNodeTiming.bootstrapComplete`
+#### <DataTag tag="M" /> `performanceNodeTiming.bootstrapComplete`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -574,18 +574,18 @@ The high resolution millisecond timestamp at which the Node.js process
 completed bootstrapping. If bootstrapping has not yet finished, the property
 has the value of -1.
 
-#### <Tag tag="M" /> `performanceNodeTiming.environment`
+#### <DataTag tag="M" /> `performanceNodeTiming.environment`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The high resolution millisecond timestamp at which the Node.js environment was
 initialized.
 
-#### <Tag tag="M" /> `performanceNodeTiming.idleTime`
+#### <DataTag tag="M" /> `performanceNodeTiming.idleTime`
 
-<MC data={{"update":{"type":"added","version":["v14.10.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.10.0","v12.19.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -595,9 +595,9 @@ does not take CPU usage into consideration. If the event loop has not yet
 started (e.g., in the first tick of the main script), the property has the
 value of 0.
 
-#### <Tag tag="M" /> `performanceNodeTiming.loopExit`
+#### <DataTag tag="M" /> `performanceNodeTiming.loopExit`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -605,9 +605,9 @@ The high resolution millisecond timestamp at which the Node.js event loop
 exited. If the event loop has not yet exited, the property has the value of -1.
 It can only have a value of not -1 in a handler of the [`'exit'`][] event.
 
-#### <Tag tag="M" /> `performanceNodeTiming.loopStart`
+#### <DataTag tag="M" /> `performanceNodeTiming.loopStart`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -615,27 +615,27 @@ The high resolution millisecond timestamp at which the Node.js event loop
 started. If the event loop has not yet started (e.g., in the first tick of the
 main script), the property has the value of -1.
 
-#### <Tag tag="M" /> `performanceNodeTiming.nodeStart`
+#### <DataTag tag="M" /> `performanceNodeTiming.nodeStart`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The high resolution millisecond timestamp at which the Node.js process was
 initialized.
 
-#### <Tag tag="M" /> `performanceNodeTiming.v8Start`
+#### <DataTag tag="M" /> `performanceNodeTiming.v8Start`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The high resolution millisecond timestamp at which the V8 platform was
 initialized.
 
-### <Tag tag="C" /> `PerformanceResourceTiming`
+### <DataTag tag="C" /> `PerformanceResourceTiming`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * Extends: [`PerformanceEntry`](/api/perf_hooks#performanceentry)
 
@@ -644,9 +644,9 @@ resources.
 
 The constructor of this class is not exposed to users directly.
 
-#### <Tag tag="M" /> `performanceResourceTiming.workerStart`
+#### <DataTag tag="M" /> `performanceResourceTiming.workerStart`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -654,54 +654,54 @@ The high resolution millisecond timestamp at immediately before dispatching
 the `fetch` request. If the resource is not intercepted by a worker the property
 will always return 0.
 
-#### <Tag tag="M" /> `performanceResourceTiming.redirectStart`
+#### <DataTag tag="M" /> `performanceResourceTiming.redirectStart`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The high resolution millisecond timestamp that represents the start time
 of the fetch which initiates the redirect.
 
-#### <Tag tag="M" /> `performanceResourceTiming.redirectEnd`
+#### <DataTag tag="M" /> `performanceResourceTiming.redirectEnd`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The high resolution millisecond timestamp that will be created immediately after
 receiving the last byte of the response of the last redirect.
 
-#### <Tag tag="M" /> `performanceResourceTiming.fetchStart`
+#### <DataTag tag="M" /> `performanceResourceTiming.fetchStart`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The high resolution millisecond timestamp immediately before the Node.js starts
 to fetch the resource.
 
-#### <Tag tag="M" /> `performanceResourceTiming.domainLookupStart`
+#### <DataTag tag="M" /> `performanceResourceTiming.domainLookupStart`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The high resolution millisecond timestamp immediately before the Node.js starts
 the domain name lookup for the resource.
 
-#### <Tag tag="M" /> `performanceResourceTiming.domainLookupEnd`
+#### <DataTag tag="M" /> `performanceResourceTiming.domainLookupEnd`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The high resolution millisecond timestamp representing the time immediately
 after the Node.js finished the domain name lookup for the resource.
 
-#### <Tag tag="M" /> `performanceResourceTiming.connectStart`
+#### <DataTag tag="M" /> `performanceResourceTiming.connectStart`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -709,9 +709,9 @@ The high resolution millisecond timestamp representing the time immediately
 before Node.js starts to establish the connection to the server to retrieve
 the resource.
 
-#### <Tag tag="M" /> `performanceResourceTiming.connectEnd`
+#### <DataTag tag="M" /> `performanceResourceTiming.connectEnd`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -719,27 +719,27 @@ The high resolution millisecond timestamp representing the time immediately
 after Node.js finishes establishing the connection to the server to retrieve
 the resource.
 
-#### <Tag tag="M" /> `performanceResourceTiming.secureConnectionStart`
+#### <DataTag tag="M" /> `performanceResourceTiming.secureConnectionStart`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The high resolution millisecond timestamp representing the time immediately
 before Node.js starts the handshake process to secure the current connection.
 
-#### <Tag tag="M" /> `performanceResourceTiming.requestStart`
+#### <DataTag tag="M" /> `performanceResourceTiming.requestStart`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The high resolution millisecond timestamp representing the time immediately
 before Node.js receives the first byte of the response from the server.
 
-#### <Tag tag="M" /> `performanceResourceTiming.responseEnd`
+#### <DataTag tag="M" /> `performanceResourceTiming.responseEnd`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -747,18 +747,18 @@ The high resolution millisecond timestamp representing the time immediately
 after Node.js receives the last byte of the resource or immediately before
 the transport connection is closed, whichever comes first.
 
-#### <Tag tag="M" /> `performanceResourceTiming.transferSize`
+#### <DataTag tag="M" /> `performanceResourceTiming.transferSize`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 A number representing the size (in octets) of the fetched resource. The size
 includes the response header fields plus the response payload body.
 
-#### <Tag tag="M" /> `performanceResourceTiming.encodedBodySize`
+#### <DataTag tag="M" /> `performanceResourceTiming.encodedBodySize`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -766,9 +766,9 @@ A number representing the size (in octets) received from the fetch
 (HTTP or cache), of the payload body, before removing any applied
 content-codings.
 
-#### <Tag tag="M" /> `performanceResourceTiming.decodedBodySize`
+#### <DataTag tag="M" /> `performanceResourceTiming.decodedBodySize`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -776,18 +776,18 @@ A number representing the size (in octets) received from the fetch
 (HTTP or cache), of the message body, after removing any applied
 content-codings.
 
-#### <Tag tag="M" /> `performanceResourceTiming.toJSON()`
+#### <DataTag tag="M" /> `performanceResourceTiming.toJSON()`
 
-<MC data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 Returns a `object` that is the JSON representation of the
 `PerformanceResourceTiming` object
 
-### <Tag tag="C" /> `perf_hooks.PerformanceObserver`
+### <DataTag tag="C" /> `perf_hooks.PerformanceObserver`
 
-#### <Tag tag="M" /> `new PerformanceObserver(callback)`
+#### <DataTag tag="M" /> `new PerformanceObserver(callback)`
 
-<MC data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `list` [`PerformanceObserverEntryList`](/api/perf_hooks#performanceobserverentrylist)
@@ -824,15 +824,15 @@ notified about new `PerformanceEntry` instances. The callback receives a
 `PerformanceObserverEntryList` instance and a reference to the
 `PerformanceObserver`.
 
-#### <Tag tag="M" /> `performanceObserver.disconnect()`
+#### <DataTag tag="M" /> `performanceObserver.disconnect()`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 Disconnects the `PerformanceObserver` instance from all notifications.
 
-#### <Tag tag="M" /> `performanceObserver.observe(options)`
+#### <DataTag tag="M" /> `performanceObserver.observe(options)`
 
-<MC data={{"changes":[{"version":"v16.7.0","pr-url":"https://github.com/nodejs/node/pull/39297","description":"Updated to conform to Performance Timeline Level 2. The buffered option has been added back."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Updated to conform to User Timing Level 3. The buffered option has been removed."}],"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.7.0","pr-url":"https://github.com/nodejs/node/pull/39297","description":"Updated to conform to Performance Timeline Level 2. The buffered option has been added back."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Updated to conform to User Timing Level 3. The buffered option has been removed."}],"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A single [`PerformanceEntry`](/api/perf_hooks#performanceentry) type. Must not be given
@@ -864,17 +864,17 @@ for (let n = 0; n < 3; n++)
   performance.mark(`test${n}`);
 ```
 
-### <Tag tag="C" /> `PerformanceObserverEntryList`
+### <DataTag tag="C" /> `PerformanceObserverEntryList`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 The `PerformanceObserverEntryList` class is used to provide access to the
 `PerformanceEntry` instances passed to a `PerformanceObserver`.
 The constructor of this class is not exposed to users.
 
-#### <Tag tag="M" /> `performanceObserverEntryList.getEntries()`
+#### <DataTag tag="M" /> `performanceObserverEntryList.getEntries()`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * Returns: PerformanceEntry\[]
 
@@ -916,9 +916,9 @@ performance.mark('test');
 performance.mark('meow');
 ```
 
-#### <Tag tag="M" /> `performanceObserverEntryList.getEntriesByName(name[, type])`
+#### <DataTag tag="M" /> `performanceObserverEntryList.getEntriesByName(name[, type])`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -972,9 +972,9 @@ performance.mark('test');
 performance.mark('meow');
 ```
 
-#### <Tag tag="M" /> `performanceObserverEntryList.getEntriesByType(type)`
+#### <DataTag tag="M" /> `performanceObserverEntryList.getEntriesByType(type)`
 
-<MC data={{"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: PerformanceEntry\[]
@@ -1017,9 +1017,9 @@ performance.mark('test');
 performance.mark('meow');
 ```
 
-### <Tag tag="M" /> `perf_hooks.createHistogram([options])`
+### <DataTag tag="M" /> `perf_hooks.createHistogram([options])`
 
-<MC data={{"update":{"type":"added","version":["v15.9.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.9.0","v14.18.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `lowest` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) The lowest discernible value. Must be an integer
@@ -1033,9 +1033,9 @@ performance.mark('meow');
 
 Returns a [`RecordableHistogram`](/api/perf_hooks#recordablehistogram-extends-histogram).
 
-### <Tag tag="M" /> `perf_hooks.monitorEventLoopDelay([options])`
+### <DataTag tag="M" /> `perf_hooks.monitorEventLoopDelay([options])`
 
-<MC data={{"update":{"type":"added","version":["v11.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `resolution` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The sampling rate in milliseconds. Must be greater
@@ -1068,148 +1068,148 @@ console.log(h.percentile(50));
 console.log(h.percentile(99));
 ```
 
-### <Tag tag="C" /> `Histogram`
+### <DataTag tag="C" /> `Histogram`
 
-<MC data={{"update":{"type":"added","version":["v11.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
-#### <Tag tag="M" /> `histogram.count`
+#### <DataTag tag="M" /> `histogram.count`
 
-<MC data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The number of samples recorded by the histogram.
 
-#### <Tag tag="M" /> `histogram.countBigInt`
+#### <DataTag tag="M" /> `histogram.countBigInt`
 
-<MC data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
 
 * [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
 The number of samples recorded by the histogram.
 
-#### <Tag tag="M" /> `histogram.exceeds`
+#### <DataTag tag="M" /> `histogram.exceeds`
 
-<MC data={{"update":{"type":"added","version":["v11.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The number of times the event loop delay exceeded the maximum 1 hour event
 loop delay threshold.
 
-#### <Tag tag="M" /> `histogram.exceedsBigInt`
+#### <DataTag tag="M" /> `histogram.exceedsBigInt`
 
-<MC data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
 
 * [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
 The number of times the event loop delay exceeded the maximum 1 hour event
 loop delay threshold.
 
-#### <Tag tag="M" /> `histogram.max`
+#### <DataTag tag="M" /> `histogram.max`
 
-<MC data={{"update":{"type":"added","version":["v11.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The maximum recorded event loop delay.
 
-#### <Tag tag="M" /> `histogram.maxBigInt`
+#### <DataTag tag="M" /> `histogram.maxBigInt`
 
-<MC data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
 
 * [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
 The maximum recorded event loop delay.
 
-#### <Tag tag="M" /> `histogram.mean`
+#### <DataTag tag="M" /> `histogram.mean`
 
-<MC data={{"update":{"type":"added","version":["v11.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The mean of the recorded event loop delays.
 
-#### <Tag tag="M" /> `histogram.min`
+#### <DataTag tag="M" /> `histogram.min`
 
-<MC data={{"update":{"type":"added","version":["v11.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The minimum recorded event loop delay.
 
-#### <Tag tag="M" /> `histogram.minBigInt`
+#### <DataTag tag="M" /> `histogram.minBigInt`
 
-<MC data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
 
 * [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
 The minimum recorded event loop delay.
 
-#### <Tag tag="M" /> `histogram.percentile(percentile)`
+#### <DataTag tag="M" /> `histogram.percentile(percentile)`
 
-<MC data={{"update":{"type":"added","version":["v11.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
 * `percentile` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A percentile value in the range (0, 100].
 * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 Returns the value at the given percentile.
 
-#### <Tag tag="M" /> `histogram.percentileBigInt(percentile)`
+#### <DataTag tag="M" /> `histogram.percentileBigInt(percentile)`
 
-<MC data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
 
 * `percentile` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A percentile value in the range (0, 100].
 * Returns: [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
 Returns the value at the given percentile.
 
-#### <Tag tag="M" /> `histogram.percentiles`
+#### <DataTag tag="M" /> `histogram.percentiles`
 
-<MC data={{"update":{"type":"added","version":["v11.10.0"]}}} />
-
-* [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
-
-Returns a `Map` object detailing the accumulated percentile distribution.
-
-#### <Tag tag="M" /> `histogram.percentilesBigInt`
-
-<MC data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
 * [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 
 Returns a `Map` object detailing the accumulated percentile distribution.
 
-#### <Tag tag="M" /> `histogram.reset()`
+#### <DataTag tag="M" /> `histogram.percentilesBigInt`
 
-<MC data={{"update":{"type":"added","version":["v11.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
+
+* [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+
+Returns a `Map` object detailing the accumulated percentile distribution.
+
+#### <DataTag tag="M" /> `histogram.reset()`
+
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
 Resets the collected histogram data.
 
-#### <Tag tag="M" /> `histogram.stddev`
+#### <DataTag tag="M" /> `histogram.stddev`
 
-<MC data={{"update":{"type":"added","version":["v11.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 The standard deviation of the recorded event loop delays.
 
-### <Tag tag="C" /> `IntervalHistogram extends Histogram`
+### <DataTag tag="C" /> `IntervalHistogram extends Histogram`
 
 A `Histogram` that is periodically updated on a given interval.
 
-#### <Tag tag="M" /> `histogram.disable()`
+#### <DataTag tag="M" /> `histogram.disable()`
 
-<MC data={{"update":{"type":"added","version":["v11.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Disables the update interval timer. Returns `true` if the timer was
 stopped, `false` if it was already stopped.
 
-#### <Tag tag="M" /> `histogram.enable()`
+#### <DataTag tag="M" /> `histogram.enable()`
 
-<MC data={{"update":{"type":"added","version":["v11.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1222,27 +1222,27 @@ started, `false` if it was already started.
 end, the histogram is cloned as a plain [`Histogram`](/api/perf_hooks#histogram) object that does not
 implement the `enable()` and `disable()` methods.
 
-### <Tag tag="C" /> `RecordableHistogram extends Histogram`
+### <DataTag tag="C" /> `RecordableHistogram extends Histogram`
 
-<MC data={{"update":{"type":"added","version":["v15.9.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.9.0","v14.18.0"]}}} />
 
-#### <Tag tag="M" /> `histogram.add(other)`
+#### <DataTag tag="M" /> `histogram.add(other)`
 
-<MC data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
 
 * `other` [`RecordableHistogram`](/api/perf_hooks#recordablehistogram-extends-histogram)
 
 Adds the values from `other` to this histogram.
 
-#### <Tag tag="M" /> `histogram.record(val)`
+#### <DataTag tag="M" /> `histogram.record(val)`
 
-<MC data={{"update":{"type":"added","version":["v15.9.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.9.0","v14.18.0"]}}} />
 
 * `val` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) The amount to record in the histogram.
 
-#### <Tag tag="M" /> `histogram.recordDelta()`
+#### <DataTag tag="M" /> `histogram.recordDelta()`
 
-<MC data={{"update":{"type":"added","version":["v15.9.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.9.0","v14.18.0"]}}} />
 
 Calculates the amount of time (in nanoseconds) that has passed since the
 previous call to `recordDelta()` and records that amount in the histogram.

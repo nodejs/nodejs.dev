@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<MC data={{"update":{"type":"introduced_in","version":["v8.1.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v8.1.0"]}}} />
 
-<MC data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
-<MC data={{"source_link":"lib/async_hooks.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/async_hooks.js"}} />
 
 The `node:async_hooks` module provides an API to track asynchronous resources.
 It can be accessed using:
@@ -134,9 +134,9 @@ function destroy(asyncId) { }
 function promiseResolve(asyncId) { }
 ```
 
-### <Tag tag="M" /> `async_hooks.createHook(callbacks)`
+### <DataTag tag="M" /> `async_hooks.createHook(callbacks)`
 
-<MC data={{"update":{"type":"added","version":["v8.1.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.1.0"]}}} />
 
 * `callbacks` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The [Hook Callbacks][] to register
   * `init` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The [`init` callback][].
@@ -248,12 +248,12 @@ provided by `AsyncHook` itself. The logging should then be skipped when
 it was the logging itself that caused the `AsyncHook` callback to be called. By
 doing this, the otherwise infinite recursion is broken.
 
-### <Tag tag="C" /> `AsyncHook`
+### <DataTag tag="C" /> `AsyncHook`
 
 The class `AsyncHook` exposes an interface for tracking lifetime events
 of asynchronous operations.
 
-#### <Tag tag="M" /> `asyncHook.enable()`
+#### <DataTag tag="M" /> `asyncHook.enable()`
 
 * Returns: [`AsyncHook`](/api/async_hooks#async_hookscreatehookcallbacks) A reference to `asyncHook`.
 
@@ -275,7 +275,7 @@ const async_hooks = require('node:async_hooks');
 const hook = async_hooks.createHook(callbacks).enable();
 ```
 
-#### <Tag tag="M" /> `asyncHook.disable()`
+#### <DataTag tag="M" /> `asyncHook.disable()`
 
 * Returns: [`AsyncHook`](/api/async_hooks#async_hookscreatehookcallbacks) A reference to `asyncHook`.
 
@@ -291,7 +291,7 @@ Key events in the lifetime of asynchronous events have been categorized into
 four areas: instantiation, before/after the callback is called, and when the
 instance is destroyed.
 
-##### <Tag tag="M" /> `init(asyncId, type, triggerAsyncId, resource)`
+##### <DataTag tag="M" /> `init(asyncId, type, triggerAsyncId, resource)`
 
 * `asyncId` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A unique ID for the async resource.
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The type of the async resource.
@@ -532,7 +532,7 @@ TCPSERVERWRAP(5)
   Timeout(7)
 ```
 
-##### <Tag tag="M" /> `before(asyncId)`
+##### <DataTag tag="M" /> `before(asyncId)`
 
 * `asyncId` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -549,7 +549,7 @@ asynchronous resources like a TCP server will typically call the `before`
 callback multiple times, while other operations like `fs.open()` will call
 it only once.
 
-##### <Tag tag="M" /> `after(asyncId)`
+##### <DataTag tag="M" /> `after(asyncId)`
 
 * `asyncId` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -559,7 +559,7 @@ If an uncaught exception occurs during execution of the callback, then `after`
 will run _after_ the `'uncaughtException'` event is emitted or a `domain`'s
 handler runs.
 
-##### <Tag tag="M" /> `destroy(asyncId)`
+##### <DataTag tag="M" /> `destroy(asyncId)`
 
 * `asyncId` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -571,9 +571,9 @@ made to the `resource` object passed to `init` it is possible that `destroy`
 will never be called, causing a memory leak in the application. If the resource
 does not depend on garbage collection, then this will not be an issue.
 
-##### <Tag tag="M" /> `promiseResolve(asyncId)`
+##### <DataTag tag="M" /> `promiseResolve(asyncId)`
 
-<MC data={{"update":{"type":"added","version":["v8.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.6.0"]}}} />
 
 * `asyncId` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -600,9 +600,9 @@ init for PROMISE with id 6, trigger id: 5  # the Promise returned by then()
   after 6
 ```
 
-#### <Tag tag="M" /> `async_hooks.executionAsyncResource()`
+#### <DataTag tag="M" /> `async_hooks.executionAsyncResource()`
 
-<MC data={{"update":{"type":"added","version":["v13.9.0","v12.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.9.0","v12.17.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The resource representing the current execution.
   Useful to store data within the resource.
@@ -690,9 +690,9 @@ const server = createServer((req, res) => {
 }).listen(3000);
 ```
 
-#### <Tag tag="M" /> `async_hooks.executionAsyncId()`
+#### <DataTag tag="M" /> `async_hooks.executionAsyncId()`
 
-<MC data={{"changes":[{"version":"v8.2.0","pr-url":"https://github.com/nodejs/node/pull/13490","description":"Renamed from `currentId`."}],"update":{"type":"added","version":["v8.1.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.2.0","pr-url":"https://github.com/nodejs/node/pull/13490","description":"Renamed from `currentId`."}],"update":{"type":"added","version":["v8.1.0"]}}} />
 
 * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The `asyncId` of the current execution context. Useful to
   track when something calls.
@@ -734,7 +734,7 @@ const server = net.createServer((conn) => {
 Promise contexts may not get precise `executionAsyncIds` by default.
 See the section on [promise execution tracking][].
 
-#### <Tag tag="M" /> `async_hooks.triggerAsyncId()`
+#### <DataTag tag="M" /> `async_hooks.triggerAsyncId()`
 
 * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The ID of the resource responsible for calling the callback
   that is currently being executed.
@@ -757,9 +757,9 @@ const server = net.createServer((conn) => {
 Promise contexts may not get valid `triggerAsyncId`s by default. See
 the section on [promise execution tracking][].
 
-#### <Tag tag="M" /> `async_hooks.asyncWrapProviders`
+#### <DataTag tag="M" /> `async_hooks.asyncWrapProviders`
 
-<MC data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
 
 * Returns: A map of provider types to the corresponding numeric id.
   This map contains all the event types that might be emitted by the `async_hooks.init()` event.
@@ -842,11 +842,11 @@ Library developers that handle their own asynchronous resources performing tasks
 like I/O, connection pooling, or managing callback queues may use the
 `AsyncResource` JavaScript API so that all the appropriate callbacks are called.
 
-#### <Tag tag="C" /> `AsyncResource`
+#### <DataTag tag="C" /> `AsyncResource`
 
 The documentation for this class has moved [`AsyncResource`][].
 
-### <Tag tag="C" /> `AsyncLocalStorage`
+### <DataTag tag="C" /> `AsyncLocalStorage`
 
 The documentation for this class has moved [`AsyncLocalStorage`][].
 
