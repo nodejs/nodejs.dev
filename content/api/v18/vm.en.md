@@ -1236,8 +1236,6 @@ If `options` is a string, then it specifies the filename.
 The following example illustrates using both `vm.runInThisContext()` and
 the JavaScript [`eval()`][] function to run the same code:
 
-
-
 ```js
 const vm = require('node:vm');
 let localVar = 'initial value';

@@ -3019,8 +3019,6 @@ Accept: text/plain
 
 Then `request.url` will be:
 
-
-
 ```js
 '/status?name=ryan'
 ```

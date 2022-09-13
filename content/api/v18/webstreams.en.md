@@ -96,8 +96,6 @@ const stream = new ReadableStream({
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-
-
 * `underlyingSource` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `start` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A user-defined function that is invoked immediately when
     the `ReadableStream` is created.
@@ -123,8 +121,6 @@ const stream = new ReadableStream({
     chunk of data.
     * `chunk` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
     * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-
-
 
 ##### <DataTag tag="M" /> `readableStream.locked`
 

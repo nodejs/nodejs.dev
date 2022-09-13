@@ -146,8 +146,6 @@ Returns an array of IP address strings, formatted according to [RFC 5952][],
 that are currently configured for DNS resolution. A string will include a port
 section if a custom port is used.
 
-
-
 ```js
 [
   '4.4.4.4',
@@ -374,8 +372,6 @@ will be present on the object:
 
 Here is an example of the `ret` object passed to the callback:
 
-
-
 ```js
 [ { type: 'A', address: '127.0.0.1', ttl: 299 },
   { type: 'CNAME', value: 'example.com' },
@@ -459,8 +455,6 @@ function will contain an array of objects with the following properties:
 * `order`
 * `preference`
 
-
-
 ```js
 {
   flags: 's',
@@ -520,8 +514,6 @@ be an object with the following properties:
 * `expire`
 * `minttl`
 
-
-
 ```js
 {
   nsname: 'ns.example.com',
@@ -552,8 +544,6 @@ be an array of objects with the following properties:
 * `port`
 * `name`
 
-
-
 ```js
 {
   priority: 10,
@@ -567,14 +557,10 @@ be an array of objects with the following properties:
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.1.27"]}}} />
 
-
-
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
   * `records` <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">\<string\[]\[]></a>
-
-
 
 Uses the DNS protocol to resolve text queries (`TXT` records) for the
 `hostname`. The `records` argument passed to the `callback` function is a
@@ -720,8 +706,6 @@ promises will be rejected with an error with the code `ECANCELLED`.
 Returns an array of IP address strings, formatted according to [RFC 5952][],
 that are currently configured for DNS resolution. A string will include a port
 section if a custom port is used.
-
-
 
 ```js
 [
@@ -909,8 +893,6 @@ present on the object:
 
 Here is an example of the result object:
 
-
-
 ```js
 [ { type: 'A', address: '127.0.0.1', ttl: 299 },
   { type: 'CNAME', value: 'example.com' },
@@ -977,8 +959,6 @@ of objects with the following properties:
 * `order`
 * `preference`
 
-
-
 ```js
 {
   flags: 's',
@@ -1029,8 +1009,6 @@ following properties:
 * `expire`
 * `minttl`
 
-
-
 ```js
 {
   nsname: 'ns.example.com',
@@ -1057,8 +1035,6 @@ the following properties:
 * `weight`
 * `port`
 * `name`
-
-
 
 ```js
 {

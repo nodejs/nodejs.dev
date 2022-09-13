@@ -989,8 +989,6 @@ running the `./configure` script.
 
 An example of the possible output looks like:
 
-
-
 ```js
 {
   target_defaults:
@@ -1445,8 +1443,6 @@ See environ(7).
 
 An example of this object looks like:
 
-
-
 ```js
 {
   TERM: 'xterm-256color',
@@ -1577,15 +1573,11 @@ $ node --harmony script.js --version
 
 Results in `process.execArgv`:
 
-
-
 ```js
 ['--harmony']
 ```
 
 And `process.argv`:
-
-
 
 ```js
 ['/usr/local/bin/node', 'script.js', '--version']
@@ -1602,8 +1594,6 @@ threads with this property.
 
 The `process.execPath` property returns the absolute pathname of the executable
 that started the Node.js process. Symbolic links, if any, are resolved.
-
-
 
 ```js
 '/usr/local/bin/node'
@@ -2542,8 +2532,6 @@ tarball.
   * `'Dubnium'` for the 10.x LTS line beginning with 10.13.0.
   * `'Erbium'` for the 12.x LTS line beginning with 12.13.0.
     For other LTS Release code names, see [Node.js Changelog Archive](https://github.com/nodejs/node/blob/HEAD/doc/changelogs/CHANGELOG_ARCHIVE.md)
-
-
 
 ```js
 {

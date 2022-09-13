@@ -269,8 +269,6 @@ From `zlib/zconf.h`, modified for Node.js usage:
 
 The memory requirements for deflate are (in bytes):
 
-
-
 ```js
 (1 << (windowBits + 2)) + (1 << (memLevel + 9))
 ```

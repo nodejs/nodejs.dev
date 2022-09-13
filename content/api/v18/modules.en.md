@@ -697,8 +697,6 @@ built-in modules and if a name matching a built-in module is added to the cache,
 only `node:`-prefixed require calls are going to receive the built-in module.
 Use with care!
 
-
-
 ```js
 const assert = require('node:assert');
 const realFs = require('node:fs');
@@ -754,8 +752,6 @@ console.log(require.main);
 ```bash
 node entry.js
 ```
-
-
 
 ```js
 Module {
@@ -897,8 +893,6 @@ exports = { hello: false };  // Not exported, only available in the module
 When the `module.exports` property is being completely replaced by a new
 object, it is common to also reassign `exports`:
 
-
-
 ```js
 module.exports = exports = function Constructor() {
   // ... etc.
@@ -1007,8 +1001,6 @@ in order to be used.
 This section was moved to
 [Modules: `module` core module](module.md#the-module-object).
 
-
-
 * <a id="modules_module_builtinmodules" href="module.html#modulebuiltinmodules">`module.builtinModules`</a>
 * <a id="modules_module_createrequire_filename" href="module.html#modulecreaterequirefilename">`module.createRequire(filename)`</a>
 * <a id="modules_module_syncbuiltinesmexports" href="module.html#modulesyncbuiltinesmexports">`module.syncBuiltinESMExports()`</a>
@@ -1017,8 +1009,6 @@ This section was moved to
 
 This section was moved to
 [Modules: `module` core module](module.md#source-map-v3-support).
-
-
 
 * <a id="modules_module_findsourcemap_path_error" href="module.html#modulefindsourcemappath">`module.findSourceMap(path)`</a>
 * <a id="modules_class_module_sourcemap" href="module.html#class-modulesourcemap">Class: `module.SourceMap`</a>

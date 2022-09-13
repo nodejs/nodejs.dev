@@ -572,8 +572,6 @@ V8 inspector integration allows tools such as Chrome DevTools and IDEs to debug
 and profile Node.js instances. The tools attach to Node.js instances via a
 tcp port and communicate using the [Chrome DevTools Protocol][].
 
-
-
 <a id="inspector_security"></a>
 
 ##### Warning: binding inspector to a public IP:port combination is insecure
@@ -1347,8 +1345,6 @@ node --require "./a.js" --require "./b.js"
 
 Node.js options that are allowed are:
 
-
-
 * `--conditions`, `-C`
 * `--diagnostic-dir`
 * `--disable-proto`
@@ -1445,11 +1441,7 @@ Node.js options that are allowed are:
 * `--v8-pool-size`
 * `--zero-fill-buffers`
 
-
-
 V8 options that are allowed are:
-
-
 
 * `--abort-on-uncaught-exception`
 * `--disallow-code-generation-from-strings`
@@ -1462,8 +1454,6 @@ V8 options that are allowed are:
 * `--perf-prof-unwinding-info`
 * `--perf-prof`
 * `--stack-trace-limit`
-
-
 
 `--perf-basic-prof-only-functions`, `--perf-basic-prof`,
 `--perf-prof-unwinding-info`, and `--perf-prof` are only available on Linux.

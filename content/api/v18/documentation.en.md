@@ -30,15 +30,9 @@ The stability indices are as follows:
 
 <Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. The feature may emit warnings. Backward compatibility is not guaranteed."}}} />
 
-
-
 <Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental. The feature is not subject to semantic versioning rules. Non-backward compatible changes or removal may\n> occur in any future release. Use of the feature is not recommended in\n> production environments."}}} />
 
-
-
 <Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable. Compatibility with the npm ecosystem is a high priority."}}} />
-
-
 
 <Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy. Although this feature is unlikely to be removed and is still covered by semantic versioning guarantees, it is no longer actively\n> maintained, and other alternatives are available."}}} />
 
@@ -53,10 +47,6 @@ modifications occur. To avoid surprises, use of an Experimental feature may need
 a command-line flag. Experimental features may also emit a [warning][].
 
 ### Stability overview
-
-
-
-
 
 ### JSON output
 

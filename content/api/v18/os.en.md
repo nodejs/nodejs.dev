@@ -70,8 +70,6 @@ The properties included on each object include:
   * `idle` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of milliseconds the CPU has spent in idle mode.
   * `irq` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of milliseconds the CPU has spent in irq mode.
 
-
-
 ```js
 [
   {
@@ -226,8 +224,6 @@ The properties available on the assigned network address object include:
 * `cidr` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The assigned IPv4 or IPv6 address with the routing prefix
   in CIDR notation. If the `netmask` is invalid, this property is set
   to `null`.
-
-
 
 ```js
 {

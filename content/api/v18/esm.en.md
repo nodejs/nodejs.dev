@@ -46,8 +46,6 @@ Node.js fully supports ECMAScript modules as they are currently specified and
 provides interoperability between them and its original module format,
 [CommonJS][].
 
-
-
 <i id="esm_package_json_type_field"></i><i id="esm_package_scope_and_file_extensions"></i><i id="esm_input_type_flag"></i>
 
 ### Enabling
@@ -60,8 +58,6 @@ Authors can tell Node.js to use the ECMAScript modules loader
 via the `.mjs` file extension, the `package.json` [`"type"`][] field, or the
 [`--input-type`][] flag. Outside of those cases, Node.js will use the CommonJS
 module loader. See [Determining module system][] for more details.
-
-
 
 <i id="esm_package_entry_points"></i><i id="esm_main_entry_point_export"></i><i id="esm_subpath_exports"></i><i id="esm_package_exports_fallbacks"></i><i id="esm_exports_sugar"></i><i id="esm_conditional_exports"></i><i id="esm_nested_conditions"></i><i id="esm_self_referencing_a_package_using_its_name"></i><i id="esm_internal_package_imports"></i><i id="esm_dual_commonjs_es_module_packages"></i><i id="esm_dual_package_hazard"></i><i id="esm_writing_dual_packages_while_avoiding_or_minimizing_hazards"></i><i id="esm_approach_1_use_an_es_module_wrapper"></i><i id="esm_approach_2_isolate_state"></i>
 
@@ -272,16 +268,12 @@ command flag enabled.
 Provides a module-relative resolution function scoped to each module, returning
 the URL string.
 
-
-
 ```js
 const dependencyAsset = await import.meta.resolve('component-lib/asset.css');
 ```
 
 `import.meta.resolve` also accepts a second argument which is the parent module
 from which to resolve from:
-
-
 
 ```js
 await import.meta.resolve('./dep', import.meta.url);
@@ -318,8 +310,6 @@ CommonJS modules consist of a `module.exports` object which can be of any type.
 When importing a CommonJS module, it can be reliably imported using the ES
 module default import or its corresponding sugar syntax:
 
-
-
 ```js
 import { default as cjs } from 'cjs';
 
@@ -340,8 +330,6 @@ a namespace with a `default` export key pointing to the CommonJS
 
 This Module Namespace Exotic Object can be directly observed either when using
 `import * as m from 'cjs'` or a dynamic import:
-
-
 
 ```js
 import * as m from 'cjs';
@@ -365,8 +353,6 @@ exports.name = 'exported';
 ```
 
 The preceding module supports named imports in ES modules:
-
-
 
 ```js
 import { name } from './cjs.cjs';

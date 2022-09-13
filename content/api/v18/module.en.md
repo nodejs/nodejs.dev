@@ -135,8 +135,6 @@ import { findSourceMap, SourceMap } from 'node:module';
 const { findSourceMap, SourceMap } = require('node:module');
 ```
 
-
-
 <a id="module_module_findsourcemap_path_error"></a>
 
 #### <DataTag tag="M" /> `module.findSourceMap(path)`

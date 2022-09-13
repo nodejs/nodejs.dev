@@ -27,8 +27,6 @@ calling `require('node:tls')` will result in an error being thrown.
 
 When using CommonJS, the error thrown can be caught using try/catch:
 
-
-
 ```cjs
 let tls;
 try {
@@ -413,8 +411,6 @@ are not enabled by default since they offer less security.
 Multiple functions can fail due to certificate errors that are reported by
 OpenSSL. In such a case, the function provides an [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) via its callback that
 has the property `code` which can take one of the following values:
-
-
 
 * `'UNABLE_TO_GET_ISSUER_CERT'`: Unable to get issuer certificate.
 * `'UNABLE_TO_GET_CRL'`: Unable to get certificate CRL.
@@ -1121,8 +1117,6 @@ For EC keys, the following properties may be defined:
   `'P-256'`.
 
 Example certificate:
-
-
 
 ```js
 { subject:

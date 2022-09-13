@@ -21,8 +21,6 @@ user is able to stream data.
 
 HTTP message headers are represented by an object like this:
 
-
-
 ```js
 { 'content-length': '123',
   'content-type': 'text/plain',
@@ -44,8 +42,6 @@ The raw headers as they were received are retained in the `rawHeaders`
 property, which is an array of `[key, value, key2, value2, ...]`. For
 example, the previous message header object might have a `rawHeaders`
 list like the following:
-
-
 
 ```js
 [ 'ConTent-Length', '123456',

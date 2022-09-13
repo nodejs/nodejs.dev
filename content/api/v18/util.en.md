@@ -1454,8 +1454,6 @@ util.types.isArrayBufferView(new ArrayBuffer());  // false
 
 Returns `true` if the value is an `arguments` object.
 
-
-
 ```js
 function foo() {
   util.types.isArgumentsObject(arguments);  // Returns true
@@ -1804,8 +1802,6 @@ util.types.isMapIterator(map[Symbol.iterator]());  // Returns true
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Returns `true` if the value is an instance of a [Module Namespace Object][].
-
-
 
 ```js
 import * as ns from './a.js';

@@ -7,8 +7,6 @@ version: 'v18'
 
 <Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-
-
 <Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
 <Metadata version="v18.9.0" data={{"source_link":"lib/net.js"}} />

@@ -1299,8 +1299,6 @@ setTimeout(() => {}, 1000);
 The following example measures the duration of `require()` operations to load
 dependencies:
 
-
-
 ```js
 'use strict';
 const {

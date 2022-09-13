@@ -2765,8 +2765,6 @@ of the four basic stream classes (`stream.Writable`, `stream.Readable`,
 `stream.Duplex`, or `stream.Transform`), making sure they call the appropriate
 parent class constructor:
 
-
-
 ```js
 const { Writable } = require('node:stream');
 
@@ -2877,8 +2875,6 @@ method.
   * `autoDestroy` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether this stream should automatically call
     `.destroy()` on itself after ending. **Default:** `true`.
   * `signal` [`AbortSignal`](/api/globals#abortsignal) A signal representing possible cancellation.
-
-
 
 ```js
 const { Writable } = require('node:stream');
@@ -3213,8 +3209,6 @@ constructor and implement the [`readable._read()`][] method.
     `.destroy()` on itself after ending. **Default:** `true`.
   * `signal` [`AbortSignal`](/api/globals#abortsignal) A signal representing possible cancellation.
 
-
-
 ```js
 const { Readable } = require('node:stream');
 
@@ -3535,8 +3529,6 @@ constructor and implement _both_ the [`readable._read()`][] and
   * `writableHighWaterMark` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Sets `highWaterMark` for the writable side
     of the stream. Has no effect if `highWaterMark` is provided.
 
-
-
 ```js
 const { Duplex } = require('node:stream');
 
@@ -3731,8 +3723,6 @@ output on the `Readable` side is not consumed.
     [`stream._transform()`][stream-_transform] method.
   * `flush` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Implementation for the [`stream._flush()`][stream-_flush]
     method.
-
-
 
 ```js
 const { Transform } = require('node:stream');

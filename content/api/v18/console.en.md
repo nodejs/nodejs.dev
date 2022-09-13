@@ -178,8 +178,6 @@ binary.
 Maintains an internal counter specific to `label` and outputs to `stdout` the
 number of times `console.count()` has been called with the given `label`.
 
-
-
 ```js
 > console.count()
 default: 1
@@ -209,8 +207,6 @@ undefined
 * `label` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The display label for the counter. **Default:** `'default'`.
 
 Resets the internal counter specific to `label`.
-
-
 
 ```js
 > console.count('abc');

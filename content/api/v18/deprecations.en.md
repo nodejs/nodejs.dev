@@ -903,10 +903,6 @@ Type: End-of-Life
 `runInAsyncIdScope` doesn't emit the `'before'` or `'after'` event and can thus
 cause a lot of issues. See [https://github.com/nodejs/node/issues/14328](https://github.com/nodejs/node/issues/14328).
 
-
-
-
-
 #### DEP0089: `require('node:assert')`
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v12.8.0","pr-url":"https://github.com/nodejs/node/pull/28892","description":"Deprecation revoked."},{"version":["v9.9.0","v8.13.0"],"pr-url":"https://github.com/nodejs/node/pull/17002","description":"Documentation-only deprecation."}]}} />
@@ -1175,15 +1171,11 @@ Type: End-of-Life
 The `crypto._toBuf()` function was not designed to be used by modules outside
 of Node.js core and was removed.
 
-
-
 #### DEP0115: `crypto.prng()`, `crypto.pseudoRandomBytes()`, `crypto.rng()`
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v11.0.0","pr-url":["https://github.com/nodejs/node/pull/22519","https://github.com/nodejs/node/pull/23017"],"description":"Added documentation-only deprecation with `--pending-deprecation` support."}]}} />
 
 Type: Documentation-only (supports [`--pending-deprecation`][])
-
-
 
 In recent versions of Node.js, there is no difference between
 [`crypto.randomBytes()`][] and `crypto.pseudoRandomBytes()`. The latter is
