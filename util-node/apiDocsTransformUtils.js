@@ -178,7 +178,7 @@ function addClassEventHeading(_, navigationCreator) {
 // This Utility replace links in the <https://example.org>
 // Into [https://example.org](https://example.oirg)
 function replaceLinksToMarkdownLinks() {
-  return (_, link) => `(${link})[${link}]`;
+  return (_, link) => `[${link}](${link})`;
 }
 
 // This utility replaces any encounter of `{String}`, {Object}` etc

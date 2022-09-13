@@ -298,7 +298,7 @@ Returns the operating system as a string.
 
 On POSIX systems, the operating system release is determined by calling
 [`uname(3)`][]. On Windows, `GetVersionExW()` is used. See
-(https://en.wikipedia.org/wiki/Uname#Examples)[https://en.wikipedia.org/wiki/Uname#Examples] for more information.
+[https://en.wikipedia.org/wiki/Uname#Examples](https://en.wikipedia.org/wiki/Uname#Examples) for more information.
 
 ### <DataTag tag="M" /> `os.setPriority([pid, ]priority)`
 
@@ -348,7 +348,7 @@ Returns the total amount of system memory in bytes as an integer.
 Returns the operating system name as returned by [`uname(3)`][]. For example, it
 returns `'Linux'` on Linux, `'Darwin'` on macOS, and `'Windows_NT'` on Windows.
 
-See (https://en.wikipedia.org/wiki/Uname#Examples)[https://en.wikipedia.org/wiki/Uname#Examples] for additional information
+See [https://en.wikipedia.org/wiki/Uname#Examples](https://en.wikipedia.org/wiki/Uname#Examples) for additional information
 about the output of running [`uname(3)`][] on various operating systems.
 
 ### <DataTag tag="M" /> `os.uptime()`
@@ -392,7 +392,7 @@ Returns a string identifying the kernel version.
 On POSIX systems, the operating system release is determined by calling
 [`uname(3)`][]. On Windows, `RtlGetVersion()` is used, and if it is not
 available, `GetVersionExW()` will be used. See
-(https://en.wikipedia.org/wiki/Uname#Examples)[https://en.wikipedia.org/wiki/Uname#Examples] for more information.
+[https://en.wikipedia.org/wiki/Uname#Examples](https://en.wikipedia.org/wiki/Uname#Examples) for more information.
 
 ### <DataTag tag="M" /> `os.machine()`
 
@@ -406,7 +406,7 @@ Returns the machine type as a string, such as `arm`, `aarch64`, `mips`,
 On POSIX systems, the machine type is determined by calling
 [`uname(3)`][]. On Windows, `RtlGetVersion()` is used, and if it is not
 available, `GetVersionExW()` will be used. See
-(https://en.wikipedia.org/wiki/Uname#Examples)[https://en.wikipedia.org/wiki/Uname#Examples] for more information.
+[https://en.wikipedia.org/wiki/Uname#Examples](https://en.wikipedia.org/wiki/Uname#Examples) for more information.
 
 ### OS constants
 
