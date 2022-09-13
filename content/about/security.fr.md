@@ -22,7 +22,7 @@ problème signalé.
 
 Le projet Node.js s'engage dans un programme officiel de prime de bogue pour les chercheurs en sécurité et les divulgations publiques responsables.
 responsables. Le programme est géré par
-la plateforme HackerOne. Voir <https://hackerone.com/nodejs> pour plus de détails.
+la plateforme HackerOne. Voir [https://hackerone.com/nodejs](https://hackerone.com/nodejs) pour plus de détails.
 
 ## Signaler un bogue dans un module tiers
 
@@ -46,7 +46,7 @@ Voici la politique de divulgation de la sécurité pour Node.js
 
 * À la date d'embargo, la liste de diffusion de la sécurité de Node.js reçoit une copie de l'annonce. annonce. Les changements sont poussés vers le dépôt public et les nouvelles constructions. Sont déployées sur nodejs.org. Dans les 6 heures suivant la notification de la liste de diffusion une copie de l'avis sera publiée sur le blog de Node.js.
 
-* En général, la date d'embargo est fixée à 72 heures à compter de la date de publication du CVE. Cependant, cela peut varier en fonction de la gravité du bogue ou de la difficulté à appliquer un correctif. 
+* En général, la date d'embargo est fixée à 72 heures à compter de la date de publication du CVE. Cependant, cela peut varier en fonction de la gravité du bogue ou de la difficulté à appliquer un correctif.
 
 * Ce processus peut prendre un certain temps, en particulier lorsqu'une coordination est nécessaire avec les mainteneurs d'autres projets. Avec les mainteneurs d'autres projets. Tous les efforts seront faits pour traiter le bogue de la manière la plus opportune possible ; cependant, il est important que nous suivions le processus de publication ci-dessus afin de garantir que la version finale du logiciel soit disponible. Le processus de publication ci-dessus pour s'assurer que la divulgation est traitée d'une manière cohérente.
 
@@ -54,8 +54,8 @@ Voici la politique de divulgation de la sécurité pour Node.js
 
 Les notifications de sécurité seront distribuées par les méthodes suivantes.
 
-* <https://groups.google.com/group/nodejs-sec>
-* <https://nodejs.org/en/blog/>
+* [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
+* [https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
 
 ## Commentaires sur cette politique
 

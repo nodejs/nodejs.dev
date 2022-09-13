@@ -8,17 +8,9 @@ category: about
 
 ## Logo Downloads
 
-<!--lint disable nodejs-links-->
-
 Please review the [trademark policy](/trademark) for information about permissible use of Node.js® logos and marks.
 
-<!--lint enable nodejs-links-->
-
-<!--lint disable nodejs-links-->
-
 Guidelines for the visual display of the Node.js mark are described in the [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
-
-<!--lint enable nodejs-links-->
 
 <table class="resources-logos">
   <tr>

@@ -27,12 +27,10 @@ describe('useOnScreen', () => {
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    window.IntersectionObserver = jest.fn(() => {
-      return {
-        disconnect: jest.fn,
-        observe: observeMock,
-      };
-    });
+    window.IntersectionObserver = jest.fn(() => ({
+      disconnect: jest.fn,
+      observe: observeMock,
+    }));
 
     render(<OnScreenRenderer />);
     expect(observeMock).toHaveBeenCalledTimes(1);
@@ -43,23 +41,21 @@ describe('useOnScreen', () => {
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    window.IntersectionObserver = jest.fn(cb => {
-      return {
-        disconnect: disconnectMock,
-        observe: () => {
-          cb(
-            [
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore
-              {
-                isIntersecting: true,
-              },
-            ],
-            jest.fn() as unknown as IntersectionObserver
-          );
-        },
-      };
-    });
+    window.IntersectionObserver = jest.fn(cb => ({
+      disconnect: disconnectMock,
+      observe: () => {
+        cb(
+          [
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            {
+              isIntersecting: true,
+            },
+          ],
+          jest.fn() as unknown as IntersectionObserver
+        );
+      },
+    }));
 
     const { unmount } = render(<OnScreenRenderer observeOnce />);
     // unmount component in order to fire useEffect return function
@@ -73,23 +69,21 @@ describe('useOnScreen', () => {
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    window.IntersectionObserver = jest.fn(cb => {
-      return {
-        disconnect: disconnectMock,
-        observe: () => {
-          cb(
-            [
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore
-              {
-                isIntersecting: true,
-              },
-            ],
-            jest.fn() as unknown as IntersectionObserver
-          );
-        },
-      };
-    });
+    window.IntersectionObserver = jest.fn(cb => ({
+      disconnect: disconnectMock,
+      observe: () => {
+        cb(
+          [
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            {
+              isIntersecting: true,
+            },
+          ],
+          jest.fn() as unknown as IntersectionObserver
+        );
+      },
+    }));
 
     render(<OnScreenRenderer observeOnce={false} />);
     expect(disconnectMock).toHaveBeenCalledTimes(0);

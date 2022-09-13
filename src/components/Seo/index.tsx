@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { useLocation } from '@gatsbyjs/reach-router';
 import config from '../../config.json';
 

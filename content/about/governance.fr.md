@@ -30,8 +30,8 @@ Le projet est dirigé par le [Comité directeur technique (TSC)][]
 qui est responsable de l'orientation de haut niveau du projet
 
 [recherche de consensus]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
-[README.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
-[TSC]: https://github.com/nodejs/TSC
-[Comité directeur technique (TSC)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
+[readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
+[tsc]: https://github.com/nodejs/TSC
+[comité directeur technique (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
 [nodejs/node]: https://github.com/nodejs/node

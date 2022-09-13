@@ -120,11 +120,10 @@ const gatsbyConfig = {
             description: node => node.frontmatter.description,
             slug: node => node.fields.slug,
             category: node => node.fields.categoryName,
-            tableOfContents: node => {
-              return [...node.rawBody.matchAll(/^#{2,5} .*/gm)]
+            tableOfContents: node =>
+              [...node.rawBody.matchAll(/^#{2,5} .*/gm)]
                 .map(match => match[0].replace(/^#{2,5} /, ''))
-                .join('\n');
-            },
+                .join('\n'),
           },
         },
         filter: node => ['api', 'learn'].includes(node.frontmatter.category),
