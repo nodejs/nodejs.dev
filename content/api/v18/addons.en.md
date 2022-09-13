@@ -2,20 +2,19 @@
 title: 'addons'
 displayTitle: 'C++ addons'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.8.0/doc/api/addons.md'
 version: 'v18'
 ---
 
-<Metadata version="v18.8.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
 _Addons_ are dynamically-linked shared objects written in C++. The
 [`require()`][require] function can load addons as ordinary Node.js modules.
 Addons provide an interface between JavaScript and C/C++ libraries.
 
 There are three options for implementing addons: Node-API, nan, or direct
-use of internal V8, libuv and Node.js libraries. Unless there is a need for
+use of internal V8, libuv, and Node.js libraries. Unless there is a need for
 direct access to functionality which is not exposed by Node-API, use Node-API.
 Refer to [C/C++ addons with Node-API](n-api.md) for more information on
 Node-API.
@@ -46,7 +45,7 @@ involving knowledge of several components and APIs:
 
 * Node.js includes other statically linked libraries including OpenSSL. These
   other libraries are located in the `deps/` directory in the Node.js source
-  tree. Only the libuv, OpenSSL, V8 and zlib symbols are purposefully
+  tree. Only the libuv, OpenSSL, V8, and zlib symbols are purposefully
   re-exported by Node.js and may be used to various extents by addons. See
   [Linking to libraries included with Node.js][] for additional information.
 
@@ -242,7 +241,7 @@ NODE_MODULE_INIT(/* exports, module, context */) {
 
 ##### Worker support
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v14.8.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34572","description":"Cleanup hooks may now be asynchronous."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.8.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34572","description":"Cleanup hooks may now be asynchronous."}]}} />
 
 In order to be loaded from multiple Node.js environments,
 such as a main thread and a Worker thread, an add-on needs to either:
@@ -392,7 +391,7 @@ try {
 
 #### Linking to libraries included with Node.js
 
-Node.js uses statically linked libraries such as V8, libuv and OpenSSL. All
+Node.js uses statically linked libraries such as V8, libuv, and OpenSSL. All
 addons are required to link to V8 and may link to any of the other dependencies
 as well. Typically, this is as simple as including the appropriate
 `#include <...>` statements (e.g. `#include <v8.h>`) and `node-gyp` will locate
@@ -441,7 +440,7 @@ illustration of how it can be used.
 
 ### Node-API
 
-<Metadata version="v18.8.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
 Node-API is an API for building native addons. It is independent from
 the underlying JavaScript runtime (e.g. V8) and is maintained as part of

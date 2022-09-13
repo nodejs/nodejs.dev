@@ -2,15 +2,14 @@
 title: 'https'
 displayTitle: 'HTTPS'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.8.0/doc/api/https.md'
 version: 'v18'
 ---
 
-<Metadata version="v18.8.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.8.0" data={{"source_link":"lib/https.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/https.js"}} />
 
 HTTPS is the HTTP protocol over TLS/SSL. In Node.js this is implemented as a
 separate module.
@@ -54,14 +53,14 @@ try {
 
 ### <DataTag tag="C" /> `https.Agent`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v5.3.0","pr-url":"https://github.com/nodejs/node/pull/4252","description":"support `0` `maxCachedSessions` to disable TLS session caching."},{"version":"v2.5.0","pr-url":"https://github.com/nodejs/node/pull/2228","description":"parameter `maxCachedSessions` added to `options` for TLS sessions reuse."}],"update":{"type":"added","version":["v0.4.5"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v5.3.0","pr-url":"https://github.com/nodejs/node/pull/4252","description":"support `0` `maxCachedSessions` to disable TLS session caching."},{"version":"v2.5.0","pr-url":"https://github.com/nodejs/node/pull/2228","description":"parameter `maxCachedSessions` added to `options` for TLS sessions reuse."}],"update":{"type":"added","version":["v0.4.5"]}}} />
 
 An [`Agent`][] object for HTTPS similar to [`http.Agent`][]. See
 [`https.request()`][] for more information.
 
 #### <DataTag tag="M" /> `new Agent([options])`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v12.5.0","pr-url":"https://github.com/nodejs/node/pull/28209","description":"do not automatically set servername if the target host was specified using an IP address."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v12.5.0","pr-url":"https://github.com/nodejs/node/pull/28209","description":"do not automatically set servername if the target host was specified using an IP address."}]}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Set of configurable options to set on the agent.
   Can have the same fields as for [`http.Agent(options)`][], and
@@ -78,7 +77,7 @@ An [`Agent`][] object for HTTPS similar to [`http.Agent`][]. See
 
 ##### <DataTag tag="E" /> `'keylog'`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
 
 * `line` [`Buffer`](/api/buffer#buffer) Line of ASCII text, in NSS `SSLKEYLOGFILE` format.
 * `tlsSocket` [`tls.TLSSocket`](/api/tls#tlstlssocket) The `tls.TLSSocket` instance on which it was
@@ -102,7 +101,7 @@ https.globalAgent.on('keylog', (line, tlsSocket) => {
 
 ### <DataTag tag="C" /> `https.Server`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.3.4"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.4"]}}} />
 
 * Extends: [`tls.Server`](/api/tls#tlsserver)
 
@@ -110,7 +109,7 @@ See [`http.Server`][] for more information.
 
 #### <DataTag tag="M" /> `server.close([callback])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * Returns: [`https.Server`](/api/https#httpsserver)
@@ -119,19 +118,19 @@ See [`server.close()`][] in the `node:http` module.
 
 #### <DataTag tag="M" /> `server.closeAllConnections()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 See [`server.closeAllConnections()`][] in the `node:http` module.
 
 #### <DataTag tag="M" /> `server.closeIdleConnections()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
 See [`server.closeIdleConnections()`][] in the `node:http` module.
 
 #### <DataTag tag="M" /> `server.headersTimeout`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v11.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.3.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `60000`
 
@@ -150,7 +149,7 @@ See [`server.maxHeadersCount`][] in the `node:http` module.
 
 #### <DataTag tag="M" /> `server.requestTimeout`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.11.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.11.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
 
@@ -158,7 +157,7 @@ See [`server.requestTimeout`][] in the `node:http` module.
 
 #### <DataTag tag="M" /> `server.setTimeout([msecs][, callback])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.11.2"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.2"]}}} />
 
 * `msecs` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `120000` (2 minutes)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -168,7 +167,7 @@ See [`server.setTimeout()`][] in the `node:http` module.
 
 #### <DataTag tag="M" /> `server.timeout`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27558","description":"The default timeout changed from 120s to 0 (no timeout)."}],"update":{"type":"added","version":["v0.11.2"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27558","description":"The default timeout changed from 120s to 0 (no timeout)."}],"update":{"type":"added","version":["v0.11.2"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** 0 (no timeout)
 
@@ -176,7 +175,7 @@ See [`server.timeout`][] in the `node:http` module.
 
 #### <DataTag tag="M" /> `server.keepAliveTimeout`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `5000` (5 seconds)
 
@@ -184,7 +183,7 @@ See [`server.keepAliveTimeout`][] in the `node:http` module.
 
 ### <DataTag tag="M" /> `https.createServer([options][, requestListener])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.3.4"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.4"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Accepts `options` from [`tls.createServer()`][],
   [`tls.createSecureContext()`][] and [`http.createServer()`][].
@@ -228,7 +227,7 @@ https.createServer(options, (req, res) => {
 
 ### <DataTag tag="M" /> `https.get(url[, options][, callback])`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
 
 * `url` {string | URL}
 * `options` {Object | string | URL} Accepts the same `options` as
@@ -259,7 +258,7 @@ https.get('https://encrypted.google.com/', (res) => {
 
 ### <DataTag tag="M" /> `https.globalAgent`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.5.9"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.9"]}}} />
 
 Global instance of [`https.Agent`][] for all HTTPS client requests.
 
@@ -267,7 +266,7 @@ Global instance of [`https.Agent`][] for all HTTPS client requests.
 
 ### <DataTag tag="M" /> `https.request(url[, options][, callback])`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v16.7.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39310","description":"When using a `URL` object parsed username and password will now be properly URI decoded."},{"version":["v14.1.0","v13.14.0"],"pr-url":"https://github.com/nodejs/node/pull/32786","description":"The `highWaterMark` option is accepted now."},{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v9.3.0","pr-url":"https://github.com/nodejs/node/pull/14903","description":"The `options` parameter can now include `clientCertEngine`."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v16.7.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39310","description":"When using a `URL` object parsed username and password will now be properly URI decoded."},{"version":["v14.1.0","v13.14.0"],"pr-url":"https://github.com/nodejs/node/pull/32786","description":"The `highWaterMark` option is accepted now."},{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v9.3.0","pr-url":"https://github.com/nodejs/node/pull/14903","description":"The `options` parameter can now include `clientCertEngine`."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
 
 * `url` {string | URL}
 * `options` {Object | string | URL} Accepts all `options` from

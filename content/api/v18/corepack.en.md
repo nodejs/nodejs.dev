@@ -2,17 +2,16 @@
 title: 'corepack'
 displayTitle: 'Corepack'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.8.0/doc/api/corepack.md'
 version: 'v18'
 ---
 
-<Metadata version="v18.8.0" data={{"update":{"type":"introduced_in","version":["v14.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v14.19.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v16.9.0","v14.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.9.0","v14.19.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 _[Corepack][]_ is an experimental tool to help with
 managing versions of your package managers. It exposes binary proxies for

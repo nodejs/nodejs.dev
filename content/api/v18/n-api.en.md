@@ -2,15 +2,14 @@
 title: 'n-api'
 displayTitle: 'Node-API'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.8.0/doc/api/n-api.md'
 version: 'v18'
 ---
 
-<Metadata version="v18.8.0" data={{"update":{"type":"introduced_in","version":["v8.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v8.0.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"type":"misc"}} />
+<Metadata version="v18.9.0" data={{"type":"misc"}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
 Node-API (formerly N-API) is an API for building native Addons. It is
 independent from the underlying JavaScript runtime (for example, V8) and is
@@ -490,7 +489,7 @@ is tied to the life cycle of the Agent.
 
 #### <DataTag tag="M" /> `napi_set_instance_data`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_set_instance_data(napi_env env,
@@ -517,7 +516,7 @@ by the previous call, it will not be called.
 
 #### <DataTag tag="M" /> `napi_get_instance_data`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_get_instance_data(napi_env env,
@@ -542,7 +541,7 @@ introspectable only with other Node-API calls.
 
 #### <DataTag tag="M" /> `napi_status`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 Integral status code indicating the success or failure of a Node-API call.
 Currently, the following status codes are supported.
@@ -579,7 +578,7 @@ it can be obtained by calling `napi_get_last_error_info`.
 
 #### <DataTag tag="M" /> `napi_extended_error_info`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 typedef struct {
@@ -620,7 +619,7 @@ This is an opaque pointer that is used to represent a JavaScript value.
 
 #### <DataTag tag="M" /> `napi_threadsafe_function`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 This is an opaque pointer that represents a JavaScript function which can be
 called asynchronously from multiple threads via
@@ -628,7 +627,7 @@ called asynchronously from multiple threads via
 
 #### <DataTag tag="M" /> `napi_threadsafe_function_release_mode`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 A value to be given to `napi_release_threadsafe_function()` to indicate whether
 the thread-safe function is to be closed immediately (`napi_tsfn_abort`) or
@@ -644,7 +643,7 @@ typedef enum {
 
 #### <DataTag tag="M" /> `napi_threadsafe_function_call_mode`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 A value to be given to `napi_call_threadsafe_function()` to indicate whether
 the call should block whenever the queue associated with the thread-safe
@@ -680,14 +679,14 @@ For more details, review the [Object lifetime management][].
 
 ##### <DataTag tag="M" /> `napi_escapable_handle_scope`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 Escapable handle scopes are a special type of handle scope to return values
 created within a particular handle scope to a parent scope.
 
 ##### <DataTag tag="M" /> `napi_ref`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 This is the abstraction to use to reference a `napi_value`. This allows for
 users to manage the lifetimes of JavaScript values, including defining their
@@ -697,7 +696,7 @@ For more details, review the [Object lifetime management][].
 
 ##### <DataTag tag="M" /> `napi_type_tag`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
 
 A 128-bit value stored as two unsigned 64-bit integers. It serves as a UUID
 with which JavaScript objects can be "tagged" in order to ensure that they are
@@ -717,7 +716,7 @@ typedef struct {
 
 ##### <DataTag tag="M" /> `napi_async_cleanup_hook_handle`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.10.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.10.0","v12.19.0"]}}} />
 
 An opaque value returned by [`napi_add_async_cleanup_hook`][]. It must be passed
 to [`napi_remove_async_cleanup_hook`][] when the chain of asynchronous cleanup
@@ -727,7 +726,7 @@ events completes.
 
 ##### <DataTag tag="M" /> `napi_callback_info`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 Opaque datatype that is passed to a callback function. It can be used for
 getting additional information about the context in which the callback was
@@ -735,7 +734,7 @@ invoked.
 
 ##### <DataTag tag="M" /> `napi_callback`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 Function pointer type for user-provided native functions which are to be
 exposed to JavaScript via Node-API. Callback functions should satisfy the
@@ -750,7 +749,7 @@ handle and/or callback scope inside a `napi_callback` is not necessary.
 
 ##### <DataTag tag="M" /> `napi_finalize`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 Function pointer type for add-on provided functions that allow the user to be
 notified when externally-owned data is ready to be cleaned up because the
@@ -770,7 +769,7 @@ handle and/or callback scope inside the function body is not necessary.
 
 ##### <DataTag tag="M" /> `napi_async_execute_callback`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 Function pointer used with functions that support asynchronous
 operations. Callback functions must satisfy the following signature:
@@ -786,7 +785,7 @@ it will likely result in execution of JavaScript.
 
 ##### <DataTag tag="M" /> `napi_async_complete_callback`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 Function pointer used with functions that support asynchronous
 operations. Callback functions must satisfy the following signature:
@@ -802,7 +801,7 @@ handle and/or callback scope inside the function body is not necessary.
 
 ##### <DataTag tag="M" /> `napi_threadsafe_function_call_js`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 Function pointer used with asynchronous thread-safe function calls. The callback
 will be called on the main thread. Its purpose is to use a data item arriving
@@ -846,7 +845,7 @@ handle and/or callback scope inside the function body is not necessary.
 
 ##### <DataTag tag="M" /> `napi_async_cleanup_hook`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.10.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.10.0","v12.19.0"]}}} />
 
 Function pointer used with [`napi_add_async_cleanup_hook`][]. It will be called
 when the environment is being torn down.
@@ -900,7 +899,7 @@ In order to retrieve this information [`napi_get_last_error_info`][]
 is provided which returns a `napi_extended_error_info` structure.
 The format of the `napi_extended_error_info` structure is as follows:
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 typedef struct napi_extended_error_info {
@@ -925,7 +924,7 @@ logging purposes.
 
 ##### <DataTag tag="M" /> `napi_get_last_error_info`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status
@@ -1037,7 +1036,7 @@ TypeError [ERR_ERROR_1]
 
 ##### <DataTag tag="M" /> `napi_throw`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_throw(napi_env env, napi_value error);
@@ -1052,7 +1051,7 @@ This API throws the JavaScript value provided.
 
 ##### <DataTag tag="M" /> `napi_throw_error`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_throw_error(napi_env env,
@@ -1070,7 +1069,7 @@ This API throws a JavaScript `Error` with the text provided.
 
 ##### <DataTag tag="M" /> `napi_throw_type_error`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_throw_type_error(napi_env env,
@@ -1088,7 +1087,7 @@ This API throws a JavaScript `TypeError` with the text provided.
 
 ##### <DataTag tag="M" /> `napi_throw_range_error`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_throw_range_error(napi_env env,
@@ -1106,11 +1105,11 @@ This API throws a JavaScript `RangeError` with the text provided.
 
 ##### <DataTag tag="M" /> `node_api_throw_syntax_error`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
-````c
+```c
 NAPI_EXTERN napi_status node_api_throw_syntax_error(napi_env env,
                                                     const char* code,
                                                     const char* msg);
@@ -1126,13 +1125,13 @@ This API throws a JavaScript `SyntaxError` with the text provided.
 
 ##### <DataTag tag="M" /> `napi_is_error`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_is_error(napi_env env,
                                       napi_value value,
                                       bool* result);
-````
+```
 
 * `[in] env`: The environment that the API is invoked under.
 * `[in] value`: The `napi_value` to be checked.
@@ -1145,7 +1144,7 @@ This API queries a `napi_value` to check if it represents an error object.
 
 ##### <DataTag tag="M" /> `napi_create_error`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_create_error(napi_env env,
@@ -1167,7 +1166,7 @@ This API returns a JavaScript `Error` with the text provided.
 
 ##### <DataTag tag="M" /> `napi_create_type_error`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_create_type_error(napi_env env,
@@ -1189,7 +1188,7 @@ This API returns a JavaScript `TypeError` with the text provided.
 
 ##### <DataTag tag="M" /> `napi_create_range_error`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_create_range_error(napi_env env,
@@ -1211,9 +1210,9 @@ This API returns a JavaScript `RangeError` with the text provided.
 
 ##### <DataTag tag="M" /> `node_api_create_syntax_error`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 ```c
 NAPI_EXTERN napi_status node_api_create_syntax_error(napi_env env,
@@ -1235,7 +1234,7 @@ This API returns a JavaScript `SyntaxError` with the text provided.
 
 ##### <DataTag tag="M" /> `napi_get_and_clear_last_exception`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_and_clear_last_exception(napi_env env,
@@ -1251,7 +1250,7 @@ This API can be called even if there is a pending JavaScript exception.
 
 ##### <DataTag tag="M" /> `napi_is_exception_pending`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_exception_pending(napi_env env, bool* result);
@@ -1266,7 +1265,7 @@ This API can be called even if there is a pending JavaScript exception.
 
 ##### <DataTag tag="M" /> `napi_fatal_exception`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
 
 ```c
 napi_status napi_fatal_exception(napi_env env, napi_value err);
@@ -1285,7 +1284,7 @@ thrown to immediately terminate the process.
 
 ##### <DataTag tag="M" /> `napi_fatal_error`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_NO_RETURN void napi_fatal_error(const char* location,
@@ -1398,7 +1397,7 @@ can only be called once.
 
 ##### <DataTag tag="M" /> `napi_open_handle_scope`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_open_handle_scope(napi_env env,
@@ -1414,7 +1413,7 @@ This API opens a new scope.
 
 ##### <DataTag tag="M" /> `napi_close_handle_scope`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_close_handle_scope(napi_env env,
@@ -1433,7 +1432,7 @@ This API can be called even if there is a pending JavaScript exception.
 
 ##### <DataTag tag="M" /> `napi_open_escapable_handle_scope`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -1451,7 +1450,7 @@ to the outer scope.
 
 ##### <DataTag tag="M" /> `napi_close_escapable_handle_scope`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -1471,7 +1470,7 @@ This API can be called even if there is a pending JavaScript exception.
 
 ##### <DataTag tag="M" /> `napi_escape_handle`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_escape_handle(napi_env env,
@@ -1543,7 +1542,7 @@ will not be freed. This can be avoided by calling
 
 ##### <DataTag tag="M" /> `napi_create_reference`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_create_reference(napi_env env,
@@ -1565,7 +1564,7 @@ to the `Object` passed in.
 
 ##### <DataTag tag="M" /> `napi_delete_reference`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_delete_reference(napi_env env, napi_ref ref);
@@ -1582,7 +1581,7 @@ This API can be called even if there is a pending JavaScript exception.
 
 ##### <DataTag tag="M" /> `napi_reference_ref`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_reference_ref(napi_env env,
@@ -1601,7 +1600,7 @@ passed in and returns the resulting reference count.
 
 ##### <DataTag tag="M" /> `napi_reference_unref`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_reference_unref(napi_env env,
@@ -1620,7 +1619,7 @@ passed in and returns the resulting reference count.
 
 ##### <DataTag tag="M" /> `napi_get_reference_value`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_get_reference_value(napi_env env,
@@ -1654,7 +1653,7 @@ should be freed up.
 
 ##### <DataTag tag="M" /> `napi_add_env_cleanup_hook`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
 
 ```c
 NODE_EXTERN napi_status napi_add_env_cleanup_hook(napi_env env,
@@ -1681,7 +1680,7 @@ For asynchronous cleanup, [`napi_add_async_cleanup_hook`][] is available.
 
 ##### <DataTag tag="M" /> `napi_remove_env_cleanup_hook`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_remove_env_cleanup_hook(napi_env env,
@@ -1698,7 +1697,7 @@ with `napi_add_env_cleanup_hook`, otherwise the process will abort.
 
 ##### <DataTag tag="M" /> `napi_add_async_cleanup_hook`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34819","description":"Changed signature of the `hook` callback."}],"update":{"type":"napiVersion","version":[8]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34819","description":"Changed signature of the `hook` callback."}],"update":{"type":"napiVersion","version":[8]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_add_async_cleanup_hook(
@@ -1730,7 +1729,7 @@ is being torn down anyway.
 
 ##### <DataTag tag="M" /> `napi_remove_async_cleanup_hook`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34819","description":"Removed `env` parameter."}],"update":{"type":"added","version":["v14.8.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.10.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34819","description":"Removed `env` parameter."}],"update":{"type":"added","version":["v14.8.0","v12.19.0"]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_remove_async_cleanup_hook(
@@ -1884,7 +1883,7 @@ the `napi_value` in question is of the JavaScript type expected by the API.
 
 ##### <DataTag tag="M" /> `napi_key_collection_mode`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 typedef enum {
@@ -1903,7 +1902,7 @@ of the objects's prototype chain as well.
 
 ##### <DataTag tag="M" /> `napi_key_filter`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 typedef enum {
@@ -1920,7 +1919,7 @@ Property filter bits. They can be or'ed to build a composite filter.
 
 ##### <DataTag tag="M" /> `napi_key_conversion`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 typedef enum {
@@ -1985,7 +1984,7 @@ Elements of this enum correspond to
 
 ##### <DataTag tag="M" /> `napi_create_array`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_array(napi_env env, napi_value* result)
@@ -2002,7 +2001,7 @@ JavaScript arrays are described in
 
 ##### <DataTag tag="M" /> `napi_create_array_with_length`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_array_with_length(napi_env env,
@@ -2029,7 +2028,7 @@ JavaScript arrays are described in
 
 ##### <DataTag tag="M" /> `napi_create_arraybuffer`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_arraybuffer(napi_env env,
@@ -2061,7 +2060,7 @@ JavaScript `ArrayBuffer` objects are described in
 
 ##### <DataTag tag="M" /> `napi_create_buffer`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_buffer(napi_env env,
@@ -2083,7 +2082,7 @@ fully-supported data structure, in most cases using a `TypedArray` will suffice.
 
 ##### <DataTag tag="M" /> `napi_create_buffer_copy`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_buffer_copy(napi_env env,
@@ -2109,7 +2108,7 @@ structure, in most cases using a `TypedArray` will suffice.
 
 ##### <DataTag tag="M" /> `napi_create_date`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[5]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[5]}}} />
 
 ```c
 napi_status napi_create_date(napi_env env,
@@ -2133,7 +2132,7 @@ JavaScript `Date` objects are described in
 
 ##### <DataTag tag="M" /> `napi_create_external`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_external(napi_env env,
@@ -2171,7 +2170,7 @@ an external value yields `napi_external`.
 
 ##### <DataTag tag="M" /> `napi_create_external_arraybuffer`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status
@@ -2213,7 +2212,7 @@ JavaScript `ArrayBuffer`s are described in
 
 ##### <DataTag tag="M" /> `napi_create_external_buffer`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_external_buffer(napi_env env,
@@ -2252,7 +2251,7 @@ For Node.js >=4 `Buffers` are `Uint8Array`s.
 
 ##### <DataTag tag="M" /> `napi_create_object`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_object(napi_env env, napi_value* result)
@@ -2271,7 +2270,7 @@ ECMAScript Language Specification.
 
 ##### <DataTag tag="M" /> `napi_create_symbol`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_symbol(napi_env env,
@@ -2293,9 +2292,9 @@ of the ECMAScript Language Specification.
 
 ##### <DataTag tag="M" /> `node_api_symbol_for`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 ```c
 napi_status node_api_symbol_for(napi_env env,
@@ -2322,7 +2321,7 @@ Language Specification.
 
 ##### <DataTag tag="M" /> `napi_create_typedarray`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_typedarray(napi_env env,
@@ -2357,7 +2356,7 @@ JavaScript `TypedArray` objects are described in
 
 ##### <DataTag tag="M" /> `napi_create_dataview`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_dataview(napi_env env,
@@ -2391,7 +2390,7 @@ JavaScript `DataView` objects are described in
 
 ##### <DataTag tag="M" /> `napi_create_int32`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_int32(napi_env env, int32_t value, napi_value* result)
@@ -2411,7 +2410,7 @@ The JavaScript `number` type is described in
 
 ##### <DataTag tag="M" /> `napi_create_uint32`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_uint32(napi_env env, uint32_t value, napi_value* result)
@@ -2431,7 +2430,7 @@ The JavaScript `number` type is described in
 
 ##### <DataTag tag="M" /> `napi_create_int64`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_int64(napi_env env, int64_t value, napi_value* result)
@@ -2454,7 +2453,7 @@ outside the range of [`Number.MIN_SAFE_INTEGER`][] `-(2**53 - 1)` -
 
 ##### <DataTag tag="M" /> `napi_create_double`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_double(napi_env env, double value, napi_value* result)
@@ -2474,7 +2473,7 @@ The JavaScript `number` type is described in
 
 ##### <DataTag tag="M" /> `napi_create_bigint_int64`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_create_bigint_int64(napi_env env,
@@ -2492,7 +2491,7 @@ This API converts the C `int64_t` type to the JavaScript `BigInt` type.
 
 ##### <DataTag tag="M" /> `napi_create_bigint_uint64`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_create_bigint_uint64(napi_env env,
@@ -2510,7 +2509,7 @@ This API converts the C `uint64_t` type to the JavaScript `BigInt` type.
 
 ##### <DataTag tag="M" /> `napi_create_bigint_words`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_create_bigint_words(napi_env env,
@@ -2537,7 +2536,7 @@ The resulting `BigInt` is calculated as: (–1)<sup>`sign_bit`</sup> (`words[0]`
 
 ##### <DataTag tag="M" /> `napi_create_string_latin1`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_string_latin1(napi_env env,
@@ -2562,7 +2561,7 @@ The JavaScript `string` type is described in
 
 ##### <DataTag tag="M" /> `napi_create_string_utf16`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_string_utf16(napi_env env,
@@ -2587,7 +2586,7 @@ The JavaScript `string` type is described in
 
 ##### <DataTag tag="M" /> `napi_create_string_utf8`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_string_utf8(napi_env env,
@@ -2614,7 +2613,7 @@ The JavaScript `string` type is described in
 
 ##### <DataTag tag="M" /> `napi_get_array_length`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_array_length(napi_env env,
@@ -2636,7 +2635,7 @@ Specification.
 
 ##### <DataTag tag="M" /> `napi_get_arraybuffer_info`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_arraybuffer_info(napi_env env,
@@ -2666,7 +2665,7 @@ trigger a GC.
 
 ##### <DataTag tag="M" /> `napi_get_buffer_info`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_buffer_info(napi_env env,
@@ -2691,7 +2690,7 @@ lifetime is not guaranteed if it's managed by the VM.
 
 ##### <DataTag tag="M" /> `napi_get_prototype`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_prototype(napi_env env,
@@ -2709,7 +2708,7 @@ Returns `napi_ok` if the API succeeded.
 
 ##### <DataTag tag="M" /> `napi_get_typedarray_info`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_typedarray_info(napi_env env,
@@ -2748,7 +2747,7 @@ is managed by the VM.
 
 ##### <DataTag tag="M" /> `napi_get_dataview_info`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_dataview_info(napi_env env,
@@ -2777,7 +2776,7 @@ This API returns various properties of a `DataView`.
 
 ##### <DataTag tag="M" /> `napi_get_date_value`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[5]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[5]}}} />
 
 ```c
 napi_status napi_get_date_value(napi_env env,
@@ -2801,7 +2800,7 @@ This API returns the C double primitive of time value for the given JavaScript
 
 ##### <DataTag tag="M" /> `napi_get_value_bool`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_bool(napi_env env, napi_value value, bool* result)
@@ -2820,7 +2819,7 @@ This API returns the C boolean primitive equivalent of the given JavaScript
 
 ##### <DataTag tag="M" /> `napi_get_value_double`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_double(napi_env env,
@@ -2841,7 +2840,7 @@ This API returns the C double primitive equivalent of the given JavaScript
 
 ##### <DataTag tag="M" /> `napi_get_value_bigint_int64`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_get_value_bigint_int64(napi_env env,
@@ -2865,7 +2864,7 @@ This API returns the C `int64_t` primitive equivalent of the given JavaScript
 
 ##### <DataTag tag="M" /> `napi_get_value_bigint_uint64`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_get_value_bigint_uint64(napi_env env,
@@ -2889,7 +2888,7 @@ This API returns the C `uint64_t` primitive equivalent of the given JavaScript
 
 ##### <DataTag tag="M" /> `napi_get_value_bigint_words`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_status napi_get_value_bigint_words(napi_env env,
@@ -2916,7 +2915,7 @@ both set to `NULL`, in order to get only `word_count`.
 
 ##### <DataTag tag="M" /> `napi_get_value_external`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_external(napi_env env,
@@ -2936,7 +2935,7 @@ This API retrieves the external data pointer that was previously passed to
 
 ##### <DataTag tag="M" /> `napi_get_value_int32`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_int32(napi_env env,
@@ -2964,7 +2963,7 @@ result to zero.
 
 ##### <DataTag tag="M" /> `napi_get_value_int64`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_int64(napi_env env,
@@ -2992,7 +2991,7 @@ result to zero.
 
 ##### <DataTag tag="M" /> `napi_get_value_string_latin1`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_string_latin1(napi_env env,
@@ -3020,7 +3019,7 @@ in.
 
 ##### <DataTag tag="M" /> `napi_get_value_string_utf8`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_string_utf8(napi_env env,
@@ -3047,7 +3046,7 @@ This API returns the UTF8-encoded string corresponding the value passed in.
 
 ##### <DataTag tag="M" /> `napi_get_value_string_utf16`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_string_utf16(napi_env env,
@@ -3074,7 +3073,7 @@ This API returns the UTF16-encoded string corresponding the value passed in.
 
 ##### <DataTag tag="M" /> `napi_get_value_uint32`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_value_uint32(napi_env env,
@@ -3097,7 +3096,7 @@ This API returns the C primitive equivalent of the given `napi_value` as a
 
 ##### <DataTag tag="M" /> `napi_get_boolean`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_boolean(napi_env env, bool value, napi_value* result)
@@ -3115,7 +3114,7 @@ represent the given boolean value.
 
 ##### <DataTag tag="M" /> `napi_get_global`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_global(napi_env env, napi_value* result)
@@ -3130,7 +3129,7 @@ This API returns the `global` object.
 
 ##### <DataTag tag="M" /> `napi_get_null`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_null(napi_env env, napi_value* result)
@@ -3145,7 +3144,7 @@ This API returns the `null` object.
 
 ##### <DataTag tag="M" /> `napi_get_undefined`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_undefined(napi_env env, napi_value* result)
@@ -3173,7 +3172,7 @@ These APIs support doing one of the following:
 
 #### <DataTag tag="M" /> `napi_coerce_to_bool`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_coerce_to_bool(napi_env env,
@@ -3192,7 +3191,7 @@ This API implements the abstract operation `ToBoolean()` as defined in
 
 #### <DataTag tag="M" /> `napi_coerce_to_number`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_coerce_to_number(napi_env env,
@@ -3213,7 +3212,7 @@ object.
 
 #### <DataTag tag="M" /> `napi_coerce_to_object`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_coerce_to_object(napi_env env,
@@ -3232,7 +3231,7 @@ This API implements the abstract operation `ToObject()` as defined in
 
 #### <DataTag tag="M" /> `napi_coerce_to_string`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_coerce_to_string(napi_env env,
@@ -3253,7 +3252,7 @@ object.
 
 #### <DataTag tag="M" /> `napi_typeof`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_typeof(napi_env env, napi_value value, napi_valuetype* result)
@@ -3280,7 +3279,7 @@ If `value` has a type that is invalid, an error is returned.
 
 #### <DataTag tag="M" /> `napi_instanceof`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_instanceof(napi_env env,
@@ -3303,7 +3302,7 @@ defined in [Section 12.10.4][] of the ECMAScript Language Specification.
 
 #### <DataTag tag="M" /> `napi_is_array`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_array(napi_env env, napi_value value, bool* result)
@@ -3320,7 +3319,7 @@ as defined in [Section 7.2.2][] of the ECMAScript Language Specification.
 
 #### <DataTag tag="M" /> `napi_is_arraybuffer`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_arraybuffer(napi_env env, napi_value value, bool* result)
@@ -3336,7 +3335,7 @@ This API checks if the `Object` passed in is an array buffer.
 
 #### <DataTag tag="M" /> `napi_is_buffer`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_buffer(napi_env env, napi_value value, bool* result)
@@ -3353,7 +3352,7 @@ This API checks if the `Object` passed in is a buffer.
 
 #### <DataTag tag="M" /> `napi_is_date`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[5]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[5]}}} />
 
 ```c
 napi_status napi_is_date(napi_env env, napi_value value, bool* result)
@@ -3370,7 +3369,7 @@ This API checks if the `Object` passed in is a date.
 
 #### <DataTag tag="M" /> `napi_is_error`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_error(napi_env env, napi_value value, bool* result)
@@ -3386,7 +3385,7 @@ This API checks if the `Object` passed in is an `Error`.
 
 #### <DataTag tag="M" /> `napi_is_typedarray`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_typedarray(napi_env env, napi_value value, bool* result)
@@ -3402,7 +3401,7 @@ This API checks if the `Object` passed in is a typed array.
 
 #### <DataTag tag="M" /> `napi_is_dataview`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_dataview(napi_env env, napi_value value, bool* result)
@@ -3418,7 +3417,7 @@ This API checks if the `Object` passed in is a `DataView`.
 
 #### <DataTag tag="M" /> `napi_strict_equals`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_strict_equals(napi_env env,
@@ -3439,7 +3438,7 @@ defined in [Section 7.2.14][] of the ECMAScript Language Specification.
 
 #### <DataTag tag="M" /> `napi_detach_arraybuffer`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[7]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[7]}}} />
 
 ```c
 napi_status napi_detach_arraybuffer(napi_env env,
@@ -3462,7 +3461,7 @@ defined in [Section 24.1.1.3][] of the ECMAScript Language Specification.
 
 #### <DataTag tag="M" /> `napi_is_detached_arraybuffer`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[7]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[7]}}} />
 
 ```c
 napi_status napi_is_detached_arraybuffer(napi_env env,
@@ -3626,7 +3625,7 @@ if (status != napi_ok) return status;
 
 ##### <DataTag tag="M" /> `napi_property_attributes`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v14.12.0","pr-url":"https://github.com/nodejs/node/pull/35214","description":"added `napi_default_method` and `napi_default_property`."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v14.12.0","pr-url":"https://github.com/nodejs/node/pull/35214","description":"added `napi_default_method` and `napi_default_property`."}]}} />
 
 ```c
 typedef enum {
@@ -3719,7 +3718,7 @@ typedef struct {
 
 ##### <DataTag tag="M" /> `napi_get_property_names`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_property_names(napi_env env,
@@ -3742,7 +3741,7 @@ included.
 
 ##### <DataTag tag="M" /> `napi_get_all_property_names`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[6]}}} />
 
 ```c
 napi_get_all_property_names(napi_env env,
@@ -3770,7 +3769,7 @@ of this object.
 
 ##### <DataTag tag="M" /> `napi_set_property`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_set_property(napi_env env,
@@ -3790,7 +3789,7 @@ This API set a property on the `Object` passed in.
 
 ##### <DataTag tag="M" /> `napi_get_property`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_property(napi_env env,
@@ -3810,7 +3809,7 @@ This API gets the requested property from the `Object` passed in.
 
 ##### <DataTag tag="M" /> `napi_has_property`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_has_property(napi_env env,
@@ -3830,7 +3829,7 @@ This API checks if the `Object` passed in has the named property.
 
 ##### <DataTag tag="M" /> `napi_delete_property`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_delete_property(napi_env env,
@@ -3851,7 +3850,7 @@ This API attempts to delete the `key` own property from `object`.
 
 ##### <DataTag tag="M" /> `napi_has_own_property`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_has_own_property(napi_env env,
@@ -3873,7 +3872,7 @@ perform any conversion between data types.
 
 ##### <DataTag tag="M" /> `napi_set_named_property`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_set_named_property(napi_env env,
@@ -3894,7 +3893,7 @@ created from the string passed in as `utf8Name`.
 
 ##### <DataTag tag="M" /> `napi_get_named_property`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_named_property(napi_env env,
@@ -3915,7 +3914,7 @@ created from the string passed in as `utf8Name`.
 
 ##### <DataTag tag="M" /> `napi_has_named_property`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_has_named_property(napi_env env,
@@ -3936,7 +3935,7 @@ created from the string passed in as `utf8Name`.
 
 ##### <DataTag tag="M" /> `napi_set_element`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_set_element(napi_env env,
@@ -3956,7 +3955,7 @@ This API sets an element on the `Object` passed in.
 
 ##### <DataTag tag="M" /> `napi_get_element`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_element(napi_env env,
@@ -3976,7 +3975,7 @@ This API gets the element at the requested index.
 
 ##### <DataTag tag="M" /> `napi_has_element`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_has_element(napi_env env,
@@ -3997,7 +3996,7 @@ requested index.
 
 ##### <DataTag tag="M" /> `napi_delete_element`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_delete_element(napi_env env,
@@ -4018,7 +4017,7 @@ This API attempts to delete the specified `index` from `object`.
 
 ##### <DataTag tag="M" /> `napi_define_properties`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_define_properties(napi_env env,
@@ -4043,7 +4042,7 @@ specification).
 
 ##### <DataTag tag="M" /> `napi_object_freeze`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
 
 ```c
 napi_status napi_object_freeze(napi_env env,
@@ -4065,7 +4064,7 @@ ECMA-262 specification.
 
 ##### <DataTag tag="M" /> `napi_object_seal`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
 
 ```c
 napi_status napi_object_seal(napi_env env,
@@ -4108,7 +4107,7 @@ whenever `object` is garbage-collected by passing both `object` and the data to
 
 #### <DataTag tag="M" /> `napi_call_function`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_call_function(napi_env env,
@@ -4176,7 +4175,7 @@ if (status != napi_ok) return;
 
 #### <DataTag tag="M" /> `napi_create_function`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_function(napi_env env,
@@ -4255,7 +4254,7 @@ Language Specification.
 
 #### <DataTag tag="M" /> `napi_get_cb_info`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_cb_info(napi_env env,
@@ -4289,7 +4288,7 @@ call like the arguments and the `this` pointer from a given callback info.
 
 #### <DataTag tag="M" /> `napi_get_new_target`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_new_target(napi_env env,
@@ -4308,7 +4307,7 @@ callback is not a constructor call, the result is `NULL`.
 
 #### <DataTag tag="M" /> `napi_new_instance`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_new_instance(napi_env env,
@@ -4541,7 +4540,7 @@ query(napi_env env, napi_callback_info info) {
 
 #### <DataTag tag="M" /> `napi_define_class`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_define_class(napi_env env,
@@ -4611,7 +4610,7 @@ the JavaScript function and the data to [`napi_add_finalizer`][].
 
 #### <DataTag tag="M" /> `napi_wrap`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_wrap(napi_env env,
@@ -4672,7 +4671,7 @@ first.
 
 #### <DataTag tag="M" /> `napi_unwrap`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_unwrap(napi_env env,
@@ -4697,7 +4696,7 @@ then by calling `napi_unwrap()` on the wrapper object.
 
 #### <DataTag tag="M" /> `napi_remove_wrap`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_remove_wrap(napi_env env,
@@ -4718,7 +4717,7 @@ JavaScript object becomes garbage-collected.
 
 #### <DataTag tag="M" /> `napi_type_tag_object`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
 
 ```c
 napi_status napi_type_tag_object(napi_env env,
@@ -4742,7 +4741,7 @@ If the object already has an associated type tag, this API will return
 
 #### <DataTag tag="M" /> `napi_check_object_type_tag`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[8]}}} />
 
 ```c
 napi_status napi_check_object_type_tag(napi_env env,
@@ -4766,7 +4765,7 @@ matches `type_tag`, then `result` is set to `true`.
 
 #### <DataTag tag="M" /> `napi_add_finalizer`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[5]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[5]}}} />
 
 ```c
 napi_status napi_add_finalizer(napi_env env,
@@ -4864,7 +4863,7 @@ callback invocation, even when it was cancelled.
 
 #### <DataTag tag="M" /> `napi_create_async_work`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v8.6.0","pr-url":"https://github.com/nodejs/node/pull/14697","description":"Added `async_resource` and `async_resource_name` parameters."}],"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.6.0","pr-url":"https://github.com/nodejs/node/pull/14697","description":"Added `async_resource` and `async_resource_name` parameters."}],"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_async_work(napi_env env,
@@ -4908,7 +4907,7 @@ the [`async_hooks` documentation][async_hooks `type`] for more information.
 
 #### <DataTag tag="M" /> `napi_delete_async_work`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_delete_async_work(napi_env env,
@@ -4926,7 +4925,7 @@ This API can be called even if there is a pending JavaScript exception.
 
 #### <DataTag tag="M" /> `napi_queue_async_work`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_queue_async_work(napi_env env,
@@ -4944,7 +4943,7 @@ with the same `napi_async_work` item or the result will be undefined.
 
 #### <DataTag tag="M" /> `napi_cancel_async_work`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_cancel_async_work(napi_env env,
@@ -4974,7 +4973,7 @@ the runtime.
 
 #### <DataTag tag="M" /> `napi_async_init`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_async_init(napi_env env,
@@ -5012,7 +5011,7 @@ the linkage between async callbacks.
 
 #### <DataTag tag="M" /> `napi_async_destroy`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_async_destroy(napi_env env,
@@ -5028,7 +5027,7 @@ This API can be called even if there is a pending JavaScript exception.
 
 #### <DataTag tag="M" /> `napi_make_callback`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v8.6.0","pr-url":"https://github.com/nodejs/node/pull/15189","description":"Added `async_context` parameter."}],"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v8.6.0","pr-url":"https://github.com/nodejs/node/pull/15189","description":"Added `async_context` parameter."}],"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_make_callback(napi_env env,
@@ -5076,7 +5075,7 @@ JavaScript during the callback are ran before returning back to C/C++.
 
 #### <DataTag tag="M" /> `napi_open_callback_scope`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_open_callback_scope(napi_env env,
@@ -5103,7 +5102,7 @@ the required scope.
 
 #### <DataTag tag="M" /> `napi_close_callback_scope`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[3]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_close_callback_scope(napi_env env,
@@ -5119,7 +5118,7 @@ This API can be called even if there is a pending JavaScript exception.
 
 #### <DataTag tag="M" /> `napi_get_node_version`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 typedef struct {
@@ -5146,7 +5145,7 @@ The returned buffer is statically allocated and does not need to be freed.
 
 #### <DataTag tag="M" /> `napi_get_version`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_get_version(napi_env env,
@@ -5176,7 +5175,7 @@ support it:
 
 #### <DataTag tag="M" /> `napi_adjust_external_memory`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_adjust_external_memory(napi_env env,
@@ -5255,7 +5254,7 @@ deferred = NULL;
 
 #### <DataTag tag="M" /> `napi_create_promise`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_create_promise(napi_env env,
@@ -5275,7 +5274,7 @@ This API creates a deferred object and a JavaScript promise.
 
 #### <DataTag tag="M" /> `napi_resolve_deferred`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_resolve_deferred(napi_env env,
@@ -5298,7 +5297,7 @@ The deferred object is freed upon successful completion.
 
 #### <DataTag tag="M" /> `napi_reject_deferred`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_reject_deferred(napi_env env,
@@ -5321,7 +5320,7 @@ The deferred object is freed upon successful completion.
 
 #### <DataTag tag="M" /> `napi_is_promise`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 napi_status napi_is_promise(napi_env env,
@@ -5341,7 +5340,7 @@ underlying JavaScript engine.
 
 #### <DataTag tag="M" /> `napi_run_script`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[1]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_run_script(napi_env env,
@@ -5373,7 +5372,7 @@ a specific `napi_env`.
 
 #### <DataTag tag="M" /> `napi_get_uv_event_loop`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[2]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[2]}}} />
 
 ```c
 NAPI_EXTERN napi_status napi_get_uv_event_loop(napi_env env,
@@ -5509,7 +5508,7 @@ being destroyed.
 
 #### <DataTag tag="M" /> `napi_create_threadsafe_function`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v12.6.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/27791","description":"Made `func` parameter optional with custom `call_js_cb`."}],"update":{"type":"napiVersion","version":[4]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v12.6.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/27791","description":"Made `func` parameter optional with custom `call_js_cb`."}],"update":{"type":"napiVersion","version":[4]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5552,7 +5551,7 @@ napi_create_threadsafe_function(napi_env env,
 
 #### <DataTag tag="M" /> `napi_get_threadsafe_function_context`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5567,7 +5566,7 @@ This API may be called from any thread which makes use of `func`.
 
 #### <DataTag tag="M" /> `napi_call_threadsafe_function`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v14.5.0","pr-url":"https://github.com/nodejs/node/pull/33453","description":"Support for `napi_would_deadlock` has been reverted."},{"version":"v14.1.0","pr-url":"https://github.com/nodejs/node/pull/32689","description":"Return `napi_would_deadlock` when called with `napi_tsfn_blocking` from the main thread or a worker thread and the queue is full."}],"update":{"type":"napiVersion","version":[4]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v14.5.0","pr-url":"https://github.com/nodejs/node/pull/33453","description":"Support for `napi_would_deadlock` has been reverted."},{"version":"v14.1.0","pr-url":"https://github.com/nodejs/node/pull/32689","description":"Return `napi_would_deadlock` when called with `napi_tsfn_blocking` from the main thread or a worker thread and the queue is full."}],"update":{"type":"napiVersion","version":[4]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5596,7 +5595,7 @@ This API may be called from any thread which makes use of `func`.
 
 #### <DataTag tag="M" /> `napi_acquire_threadsafe_function`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5615,7 +5614,7 @@ This API may be called from any thread which will start making use of `func`.
 
 #### <DataTag tag="M" /> `napi_release_threadsafe_function`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5641,7 +5640,7 @@ This API may be called from any thread which will stop making use of `func`.
 
 #### <DataTag tag="M" /> `napi_ref_threadsafe_function`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5664,7 +5663,7 @@ This API may only be called from the main thread.
 
 #### <DataTag tag="M" /> `napi_unref_threadsafe_function`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"napiVersion","version":[4]}}} />
 
 ```c
 NAPI_EXTERN napi_status
@@ -5684,9 +5683,9 @@ This API may only be called from the main thread.
 
 #### <DataTag tag="M" /> `node_api_get_module_file_name`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v15.9.0","v14.18.0","v12.22.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.9.0","v14.18.0","v12.22.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 ```c
 NAPI_EXTERN napi_status
