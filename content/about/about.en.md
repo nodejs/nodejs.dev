@@ -1,7 +1,7 @@
 ---
 title: about
 displayTitle: About
-description: "About | Node.js"
+description: 'About | Node.js'
 authors: XhmikosR, mikeal, fhemberger, Fishrock123, yous, tomgco, tniessen, SMcCandlish, saadq, Trott, Gornstats, piperchester, naoufal,  lpinca, j9t, bnoordhuis, harshadsabne, Chris911, benhalverson
 category: about
 ---
@@ -24,6 +24,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, hostname, () => {
+  // eslint-disable-next-line no-console
   console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
@@ -39,7 +40,7 @@ reasonable to develop in Node.js.
 If some of this language is unfamiliar, there is a full article on
 [Blocking vs. Non-Blocking][].
 
----
+***
 
 Node.js is similar in design to, and influenced by, systems like Ruby's
 [Event Machine][] and Python's [Twisted][]. Node.js takes the event model a bit
@@ -62,9 +63,9 @@ communicate with. Built upon that same interface is the [`cluster`][] module,
 which allows you to share sockets between processes to enable load balancing
 over your cores.
 
-[Blocking vs. Non-Blocking]: /learn/overview-of-blocking-vs-non-blocking/
+[blocking vs. non-blocking]: /learn/overview-of-blocking-vs-non-blocking/
 [`child_process.fork()`]: /api/child_process/
 [`cluster`]: https://nodejs.org/api/cluster.html
 [event loop]: /learn/the-nodejs-event-loop/
-[Event Machine]: https://github.com/eventmachine/eventmachine
-[Twisted]: https://twistedmatrix.com/trac/
+[event machine]: https://github.com/eventmachine/eventmachine
+[twisted]: https://twistedmatrix.com/trac/

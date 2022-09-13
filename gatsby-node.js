@@ -141,7 +141,8 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: page.slug,
       component: postTemplate,
-      context: { ...page, recent: blogEdges.slice(0, 9) },
+      // Get the latest 10 blog posts
+      context: { ...page, recent: blogEdges.slice(0, 10) },
     });
   });
 
@@ -251,7 +252,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           slug += `${frontmatter.category}/`;
         }
 
-        slug += `${year}/${month}/${day}/${filename}`;
+        slug += filename;
 
         const date = new Date(year, month - 1, day);
 

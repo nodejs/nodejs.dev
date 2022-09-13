@@ -19,7 +19,7 @@ The website [node.green](https://node.green/) provides an excellent overview ove
 
 New features are constantly being added to the V8 engine. Generally speaking, expect them to land on a future Node.js release, although timing is unknown.
 
-You may list all the *in progress* features available on each Node.js release by grepping through the `--v8-options` argument. Please note that these are incomplete and possibly broken features of V8, so use them at your own risk:
+You may list all the _in progress_ features available on each Node.js release by grepping through the `--v8-options` argument. Please note that these are incomplete and possibly broken features of V8, so use them at your own risk:
 
 ```bash
 node --v8-options | grep "in progress"

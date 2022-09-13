@@ -1,7 +1,7 @@
 ---
 title: contributing
 displayTitle: 'Contributing'
-description: "Contributing | Node.js"
+description: 'Contributing | Node.js'
 category: get-involved
 ---
 

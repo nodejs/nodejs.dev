@@ -1,7 +1,7 @@
 ---
 title: get-involved
 displayTitle: 'Get Involved'
-description: "Get Involved | Node.js"
+description: 'Get Involved | Node.js'
 category: get-involved
 ---
 
