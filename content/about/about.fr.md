@@ -1,7 +1,7 @@
 ---
 title: about
-displayTitle: "À propos"
-description: "À propos de | Node.js"
+displayTitle: 'À propos'
+description: 'À propos de | Node.js'
 authors: XhmikosR, mikeal, fhemberger, Fishrock123, yous, tomgco, tniessen, SMcCandlish, saadq, Trott, Gornstats, piperchester, naoufal,  lpinca, j9t, bnoordhuis, harshadsabne, Chris911, benhalverson, AugustinMauroy
 category: about
 ---
@@ -24,6 +24,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, hostname, () => {
+  // eslint-disable-next-line no-console
   console.log(`Le serveur fonctionne à http://${hostname}:${port}/`);
 });
 ```
@@ -37,7 +38,7 @@ Node.js n'effectue directement des E/S, de sorte que le processus ne se bloque j
 Si certains de ces termes ne vous sont pas familiers, vous trouverez un article complet sur le site suivant
 [Blocage vs. non-blocage][].
 
-***
+---
 
 Node.js est similaire dans sa conception à, et influencé par, des systèmes comme
 l'[Event Machine][] de Ruby et [Twisted][] de Python. Node.js présente une
@@ -61,9 +62,9 @@ en utilisant notre API [`child_process.fork()`][], et sont conçus pour être fa
 Construit sur cette même interface, le module [`cluster`][],
 qui vous permet de partager des sockets entre les processus pour équilibrer la charge sur les cœurs.
 
-[Blocage vs. non-blocage]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
-[Event Machine]: https://github.com/eventmachine/eventmachine
-[Twisted]: https://twistedmatrix.com/trac/
+[blocage vs. non-blocage]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
+[event machine]: https://github.com/eventmachine/eventmachine
+[twisted]: https://twistedmatrix.com/trac/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
 [boucle d'événement]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/

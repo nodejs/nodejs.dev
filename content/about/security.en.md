@@ -23,7 +23,7 @@ issue.
 
 The Node.js project engages in an official bug bounty program for security
 researchers and responsible public disclosures.  The program is managed through
-the HackerOne platform. See <https://hackerone.com/nodejs> for further details.
+the HackerOne platform. See [https://hackerone.com/nodejs](https://hackerone.com/nodejs) for further details.
 
 ## Reporting a bug in a third party module
 
@@ -63,8 +63,8 @@ Here is the security disclosure policy for Node.js
 
 Security notifications will be distributed via the following methods.
 
-* <https://groups.google.com/group/nodejs-sec>
-* <https://nodejs.org/en/blog/>
+* [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
+* [https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
 
 ## Comments on this policy
 

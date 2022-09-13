@@ -1,6 +1,6 @@
 ---
 title: resources
-displayTitle: Ressources 
+displayTitle: Ressources
 description: "Ressources | Node.js"
 authors: XhmikosR, mikeal, fhemberger, Fishrock123, yous, tomgco, tniessen, SMcCandlish, saadq, Trott, Gornstats, piperchester, naoufal, lpinca, j9t, bnoordhuis, harshadsabne, Chris911, MrJithil, AugustinMauroy
 category: about
@@ -8,17 +8,9 @@ category: about
 
 ## Téléchargements de logos
 
-<!--lint disable nodejs-links-->
-
 Veuillez consulter la [politique de marque](/trademark) pour obtenir des informations sur l'utilisation autorisée des logos et des marques de Node.js®.
 
-<!--lint enable nodejs-links-->
-
-<!--lint disable nodejs-links-->
-
 Les directives relatives à l'affichage de la marque Node.js sont décrites dans les [Directives visuelles] (/static/documents/foundation-visual-guidelines.pdf).
-
-<!--lint enable nodejs-links-->
 
 <table class="resources-logos">
   <tr>

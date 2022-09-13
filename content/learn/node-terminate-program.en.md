@@ -25,7 +25,7 @@ process.exit(1);
 
 By default the exit code is `0`, which means success. Different exit codes have different meaning, which you might want to use in your own system to have the program communicate to other programs.
 
-You can read more on exit codes at <https://nodejs.org/api/process.html#process_exit_codes>
+You can read more on exit codes at [https://nodejs.org/api/process.html#process_exit_codes](https://nodejs.org/api/process.html#process_exit_codes)
 
 You can also set the `process.exitCode` property:
 

@@ -1,7 +1,7 @@
 ---
 title: code-learn
 displayTitle: 'Code + Learn'
-description: "Code + Learn | Node.js"
+description: 'Code + Learn | Node.js'
 category: get-involved
 ---
 

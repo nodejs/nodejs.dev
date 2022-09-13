@@ -1,7 +1,7 @@
 ---
 title: releases
 displayTitle: Sorties
-description: "Sorties | Node.js"
+description: 'Sorties | Node.js'
 authors: ZYSzys, nstanard,  mikeal, fhemberger, garybernhardt, piepmatz, boneskull, bjb568, AugustinMauroy
 category: about
 ---

@@ -19,7 +19,7 @@ There are a few useful properties that tell us some key things related to handli
 
 `os.constants.errno` sets the constants for error reporting, like EADDRINUSE, EOVERFLOW and more.
 
-You can read them all on <https://nodejs.org/api/os.html#os_signal_constants>.
+You can read them all on [https://nodejs.org/api/os.html#os_signal_constants](https://nodejs.org/api/os.html#os_signal_constants).
 
 Let's now see the main methods that `os` provides:
 

@@ -54,30 +54,6 @@ This is a simple example of async/await used to run a function asynchronously:
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 
-<!--```js
-const doSomethingAsync = () => {
-  return new Promise(resolve => {
-    setTimeout(() => resolve('I did something'), 3000)
-  })
-}
-
-const doSomething = async () => {
-  console.log(await doSomethingAsync())
-}
-
-console.log('Before')
-doSomething()
-console.log('After')
-```
-
-The above code will print the following to the browser console:
-
-```
-Before
-After
-I did something //after 3s
-```-->
-
 ## Promise all the things
 
 Prepending the `async` keyword to any function means that the function will return a promise.
@@ -149,34 +125,6 @@ Async functions can be chained very easily, and the syntax is much more readable
   alt="nodejs-dev-0008-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
-
-<!--```js
-const promiseToDoSomething = () => {
-  return new Promise(resolve => {
-    setTimeout(() => resolve('I did something'), 10000)
-  })
-}
-
-const watchOverSomeoneDoingSomething = async () => {
-  const something = await promiseToDoSomething()
-  return something + ' and I watched'
-}
-
-const watchOverSomeoneWatchingSomeoneDoingSomething = async () => {
-  const something = await watchOverSomeoneDoingSomething()
-  return something + ' and I watched as well'
-}
-
-watchOverSomeoneWatchingSomeoneDoingSomething().then(res => {
-  console.log(res)
-})
-```
-
-Will print:
-
-```
-I did something and I watched and I watched as well
-```-->
 
 ## Easier debugging
 

@@ -52,30 +52,6 @@ Let's pick an example:
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 
-<!--```js
-const bar = () => console.log('bar')
-
-const baz = () => console.log('baz')
-
-const foo = () => {
-  console.log('foo')
-  bar()
-  baz()
-}
-
-foo()
-```
-
-This code prints
-
-```txt
-foo
-bar
-baz
-```
-
-as expected.-->
-
 When this code runs, first `foo()` is called. Inside `foo()` we first call `bar()`, then we call `baz()`.
 
 At this point the call stack looks like this:
@@ -104,20 +80,6 @@ Take this example:
   alt="nodejs-dev-0004-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
-
-<!--```js
-const bar = () => console.log('bar')
-
-const baz = () => console.log('baz')
-
-const foo = () => {
-  console.log('foo')
-  setTimeout(bar, 0)
-  baz()
-}
-
-foo()
-```-->
 
 This code prints, maybe surprisingly:
 
@@ -165,34 +127,6 @@ Example:
   alt="nodejs-dev-0005-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
-
-<!--```js
-const bar = () => console.log('bar');
-
-const baz = () => console.log('baz');
-
-const foo = () => {
-  console.log('foo');
-  setTimeout(bar, 0);
-  new Promise((resolve, reject) =>
-    resolve('should be after baz, before bar')
-  ).then((resolve) => console.log(resolve));
-  baz();
-};
-
-foo();
-console.log('something is left on call stack');
-```
-
-This prints
-
-```txt
-foo
-baz
-something is left on call stack
-should be after baz, before bar
-bar
-```-->
 
 That's a big difference between Promises (and Async/await, which is built on promises) and plain old asynchronous functions through `setTimeout()` or other platform APIs.
 
