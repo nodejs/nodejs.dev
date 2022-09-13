@@ -15,44 +15,44 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Git Checkout
-      uses: actions/checkout@v3
-      with:
-        ref: main
+      - name: Git Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
 
-    - name: Setup Pages
-      uses: actions/configure-pages@v2
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version-file: '.nvmrc'
-        cache: 'npm'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
 
-    - name: Install NPM packages
-      run: npm ci
+      - name: Install NPM packages
+        run: npm ci
 
-    - name: Gatsby Cache Folder
-      uses: actions/cache@v3
-      with:
-        key: cache-folder
-        path: .cache
+      - name: Gatsby Cache Folder
+        uses: actions/cache@v3
+        with:
+          key: cache-folder
+          path: .cache
 
-    - name: Gatsby Public Folder
-      uses: actions/cache@v3
-      with:
-        key: public-folder
-        path: public
+      - name: Gatsby Public Folder
+        uses: actions/cache@v3
+        with:
+          key: public-folder
+          path: public
 
-    - name: Build Gatsby
-      run: npm run build-ci
-      env:
-        PATH_PREFIX: nodejs.dev/
+      - name: Build Gatsby
+        run: npm run build-ci
+        env:
+          PATH_PREFIX: nodejs.dev/
 
-    - name: Upload Website to Pages
-      uses: actions/upload-pages-artifact@v1
-      with:
-        path: './public'
+      - name: Upload Website to Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: './public'
 
   deploy:
     permissions:
@@ -64,6 +64,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-and-deploy
     steps:
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v1
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
