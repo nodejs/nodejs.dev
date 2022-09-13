@@ -1,0 +1,48 @@
+diff --git a/node_modules/gatsby-plugin-mdx/gatsby/on-create-node.js b/node_modules/gatsby-plugin-mdx/gatsby/on-create-node.js
+index 0f7488e..6abd45e 100644
+--- a/node_modules/gatsby-plugin-mdx/gatsby/on-create-node.js
++++ b/node_modules/gatsby-plugin-mdx/gatsby/on-create-node.js
+@@ -188,6 +188,7 @@ export default { ${scopeIdentifiers.join(`, `)} }`
+       cache: cache,
+     })
+     const result = babel.transform(scopeFileContent, {
++      compact: true,
+       configFile: false,
+       plugins: [instance.plugin],
+     })
+diff --git a/node_modules/gatsby-plugin-mdx/loaders/mdx-loader.js b/node_modules/gatsby-plugin-mdx/loaders/mdx-loader.js
+index af3c6a3..cfdccf4 100644
+--- a/node_modules/gatsby-plugin-mdx/loaders/mdx-loader.js
++++ b/node_modules/gatsby-plugin-mdx/loaders/mdx-loader.js
+@@ -241,6 +241,7 @@ ${contentWithoutFrontmatter}`
+   try {
+     const result = babel.transform(rawMDXOutput, {
+       configFile: false,
++      compact: true,
+       plugins: [
+         requireFromMDX(`@babel/plugin-syntax-jsx`),
+         requireFromMDX(`@babel/plugin-syntax-object-rest-spread`),
+diff --git a/node_modules/gatsby-plugin-mdx/utils/extract-exports.js b/node_modules/gatsby-plugin-mdx/utils/extract-exports.js
+index ff28b21..43267df 100644
+--- a/node_modules/gatsby-plugin-mdx/utils/extract-exports.js
++++ b/node_modules/gatsby-plugin-mdx/utils/extract-exports.js
+@@ -9,6 +9,7 @@ module.exports = (code, filename) => {
+   babel.transform(code, {
+     // Note: filename is a mandatory field
+     filename,
++    compact: true,
+     presets: [babelReact],
+     plugins: [instance.plugin, objRestSpread],
+   })
+diff --git a/node_modules/gatsby-plugin-mdx/utils/gen-mdx.js b/node_modules/gatsby-plugin-mdx/utils/gen-mdx.js
+index e558745..0fca07e 100644
+--- a/node_modules/gatsby-plugin-mdx/utils/gen-mdx.js
++++ b/node_modules/gatsby-plugin-mdx/utils/gen-mdx.js
+@@ -151,6 +151,7 @@ ${code}`
+     const instance = new BabelPluginPluckImports()
+     const result = babel.transform(code, {
+       configFile: false,
++      compact: true,
+       plugins: [
+         instance.plugin,
+         objRestSpread,
