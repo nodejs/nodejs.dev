@@ -12,6 +12,4 @@ module.exports = {
   '/about/trademark/': 'https://trademark-policy.openjsf.org/',
   // Redirects the old `/docs` path to `/api`
   '/docs/*': '/api/',
-  // Redirects `release` blog pages to `releases`
-  '/blog/release/*': '/blog/releases/*',
 };
