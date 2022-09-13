@@ -2,18 +2,6 @@
   "version": "v18",
   "items": [
     {
-      "slug": "/api/v18/cluster/",
-      "title": "Cluster",
-      "type": "module",
-      "name": "cluster"
-    },
-    {
-      "slug": "/api/v18/cluster/#worker",
-      "title": "Worker",
-      "type": "class",
-      "name": "cluster"
-    },
-    {
       "slug": "/api/v18/assert/",
       "title": "Assert",
       "type": "module",
@@ -30,6 +18,42 @@
       "title": "assertCallTracker",
       "type": "class",
       "name": "assert"
+    },
+    {
+      "slug": "/api/v18/async_context/",
+      "title": "Asynchronous context tracking",
+      "type": "module",
+      "name": "async_context"
+    },
+    {
+      "slug": "/api/v18/async_context/#asynclocalstorage",
+      "title": "AsyncLocalStorage",
+      "type": "class",
+      "name": "async_context"
+    },
+    {
+      "slug": "/api/v18/async_context/#asyncresource",
+      "title": "AsyncResource",
+      "type": "class",
+      "name": "async_context"
+    },
+    {
+      "slug": "/api/v18/addons/",
+      "title": "C addons",
+      "type": "module",
+      "name": "addons"
+    },
+    {
+      "slug": "/api/v18/child_process/",
+      "title": "Child process",
+      "type": "module",
+      "name": "child_process"
+    },
+    {
+      "slug": "/api/v18/child_process/#childprocess",
+      "title": "ChildProcess",
+      "type": "class",
+      "name": "child_process"
     },
     {
       "slug": "/api/v18/buffer/",
@@ -56,46 +80,16 @@
       "name": "buffer"
     },
     {
-      "slug": "/api/v18/cli/",
-      "title": "Command-line API",
+      "slug": "/api/v18/cluster/",
+      "title": "Cluster",
       "type": "module",
-      "name": "cli"
+      "name": "cluster"
     },
     {
-      "slug": "/api/v18/child_process/",
-      "title": "Child process",
-      "type": "module",
-      "name": "child_process"
-    },
-    {
-      "slug": "/api/v18/child_process/#childprocess",
-      "title": "ChildProcess",
+      "slug": "/api/v18/cluster/#worker",
+      "title": "Worker",
       "type": "class",
-      "name": "child_process"
-    },
-    {
-      "slug": "/api/v18/addons/",
-      "title": "C addons",
-      "type": "module",
-      "name": "addons"
-    },
-    {
-      "slug": "/api/v18/async_context/",
-      "title": "Asynchronous context tracking",
-      "type": "module",
-      "name": "async_context"
-    },
-    {
-      "slug": "/api/v18/async_context/#asynclocalstorage",
-      "title": "AsyncLocalStorage",
-      "type": "class",
-      "name": "async_context"
-    },
-    {
-      "slug": "/api/v18/async_context/#asyncresource",
-      "title": "AsyncResource",
-      "type": "class",
-      "name": "async_context"
+      "name": "cluster"
     },
     {
       "slug": "/api/v18/async_hooks/",
@@ -122,6 +116,12 @@
       "name": "async_hooks"
     },
     {
+      "slug": "/api/v18/cli/",
+      "title": "Command-line API",
+      "type": "module",
+      "name": "cli"
+    },
+    {
       "slug": "/api/v18/console/",
       "title": "Console",
       "type": "module",
@@ -140,6 +140,18 @@
       "name": "corepack"
     },
     {
+      "slug": "/api/v18/debugger/",
+      "title": "Debugger",
+      "type": "module",
+      "name": "debugger"
+    },
+    {
+      "slug": "/api/v18/deprecations/",
+      "title": "Deprecated APIs",
+      "type": "module",
+      "name": "deprecations"
+    },
+    {
       "slug": "/api/v18/diagnostics_channel/",
       "title": "Diagnostics Channel",
       "type": "module",
@@ -150,12 +162,6 @@
       "title": "Channel",
       "type": "class",
       "name": "diagnostics_channel"
-    },
-    {
-      "slug": "/api/v18/deprecations/",
-      "title": "Deprecated APIs",
-      "type": "module",
-      "name": "deprecations"
     },
     {
       "slug": "/api/v18/crypto/",
@@ -236,24 +242,6 @@
       "name": "crypto"
     },
     {
-      "slug": "/api/v18/dgram/",
-      "title": "UDPdatagram sockets",
-      "type": "module",
-      "name": "dgram"
-    },
-    {
-      "slug": "/api/v18/dgram/#dgramsocket",
-      "title": "dgramSocket",
-      "type": "class",
-      "name": "dgram"
-    },
-    {
-      "slug": "/api/v18/debugger/",
-      "title": "Debugger",
-      "type": "module",
-      "name": "debugger"
-    },
-    {
       "slug": "/api/v18/dns/",
       "title": "DNS",
       "type": "module",
@@ -272,16 +260,22 @@
       "name": "dns"
     },
     {
+      "slug": "/api/v18/dgram/",
+      "title": "UDPdatagram sockets",
+      "type": "module",
+      "name": "dgram"
+    },
+    {
+      "slug": "/api/v18/dgram/#dgramsocket",
+      "title": "dgramSocket",
+      "type": "class",
+      "name": "dgram"
+    },
+    {
       "slug": "/api/v18/documentation/",
       "title": "About this documentation",
       "type": "module",
       "name": "documentation"
-    },
-    {
-      "slug": "/api/v18/embedding/",
-      "title": "C embedder API",
-      "type": "module",
-      "name": "embedding"
     },
     {
       "slug": "/api/v18/domain/",
@@ -296,58 +290,106 @@
       "name": "domain"
     },
     {
-      "slug": "/api/v18/fs/",
-      "title": "File system",
+      "slug": "/api/v18/esm/",
+      "title": "ECMAScript modules",
       "type": "module",
-      "name": "fs"
+      "name": "esm"
     },
     {
-      "slug": "/api/v18/fs/#filehandle",
-      "title": "FileHandle",
-      "type": "class",
-      "name": "fs"
+      "slug": "/api/v18/errors/",
+      "title": "Errors",
+      "type": "module",
+      "name": "errors"
     },
     {
-      "slug": "/api/v18/fs/#fsdir",
-      "title": "fsDir",
+      "slug": "/api/v18/errors/#error",
+      "title": "Error",
       "type": "class",
-      "name": "fs"
+      "name": "errors"
     },
     {
-      "slug": "/api/v18/fs/#fsdirent",
-      "title": "fsDirent",
+      "slug": "/api/v18/errors/#assertionerror",
+      "title": "AssertionError",
       "type": "class",
-      "name": "fs"
+      "name": "errors"
     },
     {
-      "slug": "/api/v18/fs/#fsfswatcher",
-      "title": "fsFSWatcher",
+      "slug": "/api/v18/errors/#rangeerror",
+      "title": "RangeError",
       "type": "class",
-      "name": "fs"
+      "name": "errors"
     },
     {
-      "slug": "/api/v18/fs/#fsstatwatcher",
-      "title": "fsStatWatcher",
+      "slug": "/api/v18/errors/#referenceerror",
+      "title": "ReferenceError",
       "type": "class",
-      "name": "fs"
+      "name": "errors"
     },
     {
-      "slug": "/api/v18/fs/#fsreadstream",
-      "title": "fsReadStream",
+      "slug": "/api/v18/errors/#syntaxerror",
+      "title": "SyntaxError",
       "type": "class",
-      "name": "fs"
+      "name": "errors"
     },
     {
-      "slug": "/api/v18/fs/#fsstats",
-      "title": "fsStats",
+      "slug": "/api/v18/errors/#systemerror",
+      "title": "SystemError",
       "type": "class",
-      "name": "fs"
+      "name": "errors"
     },
     {
-      "slug": "/api/v18/fs/#fswritestream",
-      "title": "fsWriteStream",
+      "slug": "/api/v18/errors/#typeerror",
+      "title": "TypeError",
       "type": "class",
-      "name": "fs"
+      "name": "errors"
+    },
+    {
+      "slug": "/api/v18/embedding/",
+      "title": "C embedder API",
+      "type": "module",
+      "name": "embedding"
+    },
+    {
+      "slug": "/api/v18/events/",
+      "title": "Events",
+      "type": "module",
+      "name": "events"
+    },
+    {
+      "slug": "/api/v18/events/#eventemitter",
+      "title": "EventEmitter",
+      "type": "class",
+      "name": "events"
+    },
+    {
+      "slug": "/api/v18/events/#eventseventemitterasyncresource-extends-eventemitter",
+      "title": "eventsEventEmitterAsyncResource extends EventEmitter",
+      "type": "class",
+      "name": "events"
+    },
+    {
+      "slug": "/api/v18/events/#event",
+      "title": "Event",
+      "type": "class",
+      "name": "events"
+    },
+    {
+      "slug": "/api/v18/events/#eventtarget",
+      "title": "EventTarget",
+      "type": "class",
+      "name": "events"
+    },
+    {
+      "slug": "/api/v18/events/#customevent",
+      "title": "CustomEvent",
+      "type": "class",
+      "name": "events"
+    },
+    {
+      "slug": "/api/v18/events/#nodeeventtarget",
+      "title": "NodeEventTarget",
+      "type": "class",
+      "name": "events"
     },
     {
       "slug": "/api/v18/globals/",
@@ -468,7 +510,6 @@
       "title": "WritableStream",
       "type": "class",
       "name": "globals"
-<<<<<<< HEAD
     },
     {
       "slug": "/api/v18/globals/#writablestreamdefaultcontroller",
@@ -537,122 +578,6 @@
       "name": "fs"
     },
     {
-      "slug": "/api/v18/https/",
-      "title": "HTTPS",
-      "type": "module",
-      "name": "https"
-=======
->>>>>>> 64d7e90c (fix(transformer): fixed a few issues and reduced contend size)
-    },
-    {
-      "slug": "/api/v18/globals/#writablestreamdefaultcontroller",
-      "title": "WritableStreamDefaultController",
-      "type": "class",
-      "name": "globals"
-    },
-    {
-      "slug": "/api/v18/globals/#writablestreamdefaultwriter",
-      "title": "WritableStreamDefaultWriter",
-      "type": "class",
-      "name": "globals"
-    },
-    {
-      "slug": "/api/v18/events/",
-      "title": "Events",
-      "type": "module",
-      "name": "events"
-    },
-    {
-      "slug": "/api/v18/events/#eventemitter",
-      "title": "EventEmitter",
-      "type": "class",
-      "name": "events"
-    },
-    {
-      "slug": "/api/v18/events/#eventseventemitterasyncresource-extends-eventemitter",
-      "title": "eventsEventEmitterAsyncResource extends EventEmitter",
-      "type": "class",
-      "name": "events"
-    },
-    {
-      "slug": "/api/v18/events/#event",
-      "title": "Event",
-      "type": "class",
-      "name": "events"
-    },
-    {
-      "slug": "/api/v18/events/#eventtarget",
-      "title": "EventTarget",
-      "type": "class",
-      "name": "events"
-    },
-    {
-      "slug": "/api/v18/events/#customevent",
-      "title": "CustomEvent",
-      "type": "class",
-      "name": "events"
-    },
-    {
-      "slug": "/api/v18/events/#nodeeventtarget",
-      "title": "NodeEventTarget",
-      "type": "class",
-      "name": "events"
-    },
-    {
-      "slug": "/api/v18/esm/",
-      "title": "ECMAScript modules",
-      "type": "module",
-      "name": "esm"
-    },
-    {
-      "slug": "/api/v18/errors/",
-      "title": "Errors",
-      "type": "module",
-      "name": "errors"
-    },
-    {
-      "slug": "/api/v18/errors/#error",
-      "title": "Error",
-      "type": "class",
-      "name": "errors"
-    },
-    {
-      "slug": "/api/v18/errors/#assertionerror",
-      "title": "AssertionError",
-      "type": "class",
-      "name": "errors"
-    },
-    {
-      "slug": "/api/v18/errors/#rangeerror",
-      "title": "RangeError",
-      "type": "class",
-      "name": "errors"
-    },
-    {
-      "slug": "/api/v18/errors/#referenceerror",
-      "title": "ReferenceError",
-      "type": "class",
-      "name": "errors"
-    },
-    {
-      "slug": "/api/v18/errors/#syntaxerror",
-      "title": "SyntaxError",
-      "type": "class",
-      "name": "errors"
-    },
-    {
-      "slug": "/api/v18/errors/#systemerror",
-      "title": "SystemError",
-      "type": "class",
-      "name": "errors"
-    },
-    {
-      "slug": "/api/v18/errors/#typeerror",
-      "title": "TypeError",
-      "type": "class",
-      "name": "errors"
-    },
-    {
       "slug": "/api/v18/http/",
       "title": "HTTP",
       "type": "module",
@@ -693,24 +618,6 @@
       "title": "httpOutgoingMessage",
       "type": "class",
       "name": "http"
-    },
-    {
-      "slug": "/api/v18/https/",
-      "title": "HTTPS",
-      "type": "module",
-      "name": "https"
-    },
-    {
-      "slug": "/api/v18/https/#httpsagent",
-      "title": "httpsAgent",
-      "type": "class",
-      "name": "https"
-    },
-    {
-      "slug": "/api/v18/https/#httpsserver",
-      "title": "httpsServer",
-      "type": "class",
-      "name": "https"
     },
     {
       "slug": "/api/v18/http2/",
@@ -779,22 +686,28 @@
       "name": "http2"
     },
     {
-      "slug": "/api/v18/module/",
-      "title": "nodemodule API",
+      "slug": "/api/v18/https/",
+      "title": "HTTPS",
       "type": "module",
-      "name": "module"
+      "name": "https"
     },
     {
-      "slug": "/api/v18/module/#modulesourcemap",
-      "title": "moduleSourceMap",
+      "slug": "/api/v18/https/#httpsagent",
+      "title": "httpsAgent",
       "type": "class",
-      "name": "module"
+      "name": "https"
+    },
+    {
+      "slug": "/api/v18/https/#httpsserver",
+      "title": "httpsServer",
+      "type": "class",
+      "name": "https"
     },
     {
       "slug": "/api/v18/intl/",
       "title": "Internationalization support",
       "type": "module",
-      "name": "os"
+      "name": "intl"
     },
     {
       "slug": "/api/v18/inspector/",
@@ -809,10 +722,22 @@
       "name": "inspector"
     },
     {
+      "slug": "/api/v18/module/",
+      "title": "nodemodule API",
+      "type": "module",
+      "name": "module"
+    },
+    {
+      "slug": "/api/v18/module/#modulesourcemap",
+      "title": "moduleSourceMap",
+      "type": "class",
+      "name": "module"
+    },
+    {
       "slug": "/api/v18/modules/",
       "title": "CommonJS modules",
       "type": "module",
-      "name": "path"
+      "name": "modules"
     },
     {
       "slug": "/api/v18/n-api/",
@@ -824,7 +749,7 @@
       "slug": "/api/v18/os/",
       "title": "OS",
       "type": "module",
-      "name": "policy"
+      "name": "os"
     },
     {
       "slug": "/api/v18/net/",
@@ -863,16 +788,16 @@
       "name": "packages"
     },
     {
-      "slug": "/api/v18/path/",
-      "title": "Path",
-      "type": "module",
-      "name": "path"
-    },
-    {
       "slug": "/api/v18/policy/",
       "title": "Policies",
       "type": "module",
       "name": "policy"
+    },
+    {
+      "slug": "/api/v18/path/",
+      "title": "Path",
+      "type": "module",
+      "name": "path"
     },
     {
       "slug": "/api/v18/perf_hooks/",
@@ -941,12 +866,6 @@
       "name": "punycode"
     },
     {
-      "slug": "/api/v18/querystring/",
-      "title": "Query string",
-      "type": "module",
-      "name": "querystring"
-    },
-    {
       "slug": "/api/v18/readline/",
       "title": "Readline",
       "type": "module",
@@ -980,31 +899,13 @@
       "slug": "/api/v18/report/",
       "title": "Diagnostic report",
       "type": "module",
+      "name": "report"
+    },
+    {
+      "slug": "/api/v18/querystring/",
+      "title": "Query string",
+      "type": "module",
       "name": "querystring"
-    },
-    {
-      "slug": "/api/v18/repl/",
-      "title": "REPL",
-      "type": "module",
-      "name": "repl"
-    },
-    {
-      "slug": "/api/v18/repl/#replserver",
-      "title": "REPLServer",
-      "type": "class",
-      "name": "repl"
-    },
-    {
-      "slug": "/api/v18/string_decoder/",
-      "title": "String decoder",
-      "type": "module",
-      "name": "string_decoder"
-    },
-    {
-      "slug": "/api/v18/string_decoder/#stringdecoder",
-      "title": "StringDecoder",
-      "type": "class",
-      "name": "string_decoder"
     },
     {
       "slug": "/api/v18/stream/",
@@ -1041,6 +942,30 @@
       "title": "streamPassThrough",
       "type": "class",
       "name": "stream"
+    },
+    {
+      "slug": "/api/v18/repl/",
+      "title": "REPL",
+      "type": "module",
+      "name": "repl"
+    },
+    {
+      "slug": "/api/v18/repl/#replserver",
+      "title": "REPLServer",
+      "type": "class",
+      "name": "repl"
+    },
+    {
+      "slug": "/api/v18/string_decoder/",
+      "title": "String decoder",
+      "type": "module",
+      "name": "string_decoder"
+    },
+    {
+      "slug": "/api/v18/string_decoder/#stringdecoder",
+      "title": "StringDecoder",
+      "type": "class",
+      "name": "string_decoder"
     },
     {
       "slug": "/api/v18/test/",
@@ -1163,6 +1088,24 @@
       "name": "url"
     },
     {
+      "slug": "/api/v18/util/",
+      "title": "Util",
+      "type": "module",
+      "name": "util"
+    },
+    {
+      "slug": "/api/v18/util/#utiltextdecoder",
+      "title": "utilTextDecoder",
+      "type": "class",
+      "name": "util"
+    },
+    {
+      "slug": "/api/v18/util/#utiltextencoder",
+      "title": "utilTextEncoder",
+      "type": "class",
+      "name": "util"
+    },
+    {
       "slug": "/api/v18/v8/",
       "title": "V8",
       "type": "module",
@@ -1233,24 +1176,6 @@
       "title": "WASI",
       "type": "class",
       "name": "wasi"
-    },
-    {
-      "slug": "/api/v18/util/",
-      "title": "Util",
-      "type": "module",
-      "name": "util"
-    },
-    {
-      "slug": "/api/v18/util/#utiltextdecoder",
-      "title": "utilTextDecoder",
-      "type": "class",
-      "name": "util"
-    },
-    {
-      "slug": "/api/v18/util/#utiltextencoder",
-      "title": "utilTextEncoder",
-      "type": "class",
-      "name": "util"
     },
     {
       "slug": "/api/v18/webstreams/",
