@@ -2,7 +2,6 @@
 title: 'process'
 displayTitle: 'Process'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/process.md'
 version: 'v18'
 ---
 

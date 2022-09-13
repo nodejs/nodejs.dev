@@ -2,7 +2,6 @@
 title: 'console'
 displayTitle: 'Console'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/console.md'
 version: 'v18'
 ---
 

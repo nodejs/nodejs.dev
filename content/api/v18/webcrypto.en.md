@@ -2,7 +2,6 @@
 title: 'webcrypto'
 displayTitle: 'Web Crypto API'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/webcrypto.md'
 version: 'v18'
 ---
 

@@ -2,7 +2,6 @@
 title: 'report'
 displayTitle: 'Diagnostic report'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/report.md'
 version: 'v18'
 ---
 

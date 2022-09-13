@@ -2,7 +2,6 @@
 title: 'vm'
 displayTitle: 'VM (executing JavaScript)'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/vm.md'
 version: 'v18'
 ---
 

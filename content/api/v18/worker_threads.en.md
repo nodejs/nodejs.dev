@@ -2,7 +2,6 @@
 title: 'worker_threads'
 displayTitle: 'Worker threads'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/worker_threads.md'
 version: 'v18'
 ---
 

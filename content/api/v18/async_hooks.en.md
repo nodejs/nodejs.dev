@@ -2,7 +2,6 @@
 title: 'async_hooks'
 displayTitle: 'Async hooks'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/async_hooks.md'
 version: 'v18'
 ---
 

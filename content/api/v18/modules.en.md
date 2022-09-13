@@ -2,7 +2,6 @@
 title: 'modules'
 displayTitle: 'CommonJS modules'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/modules.md'
 version: 'v18'
 ---
 

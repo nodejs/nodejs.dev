@@ -2,7 +2,6 @@
 title: 'corepack'
 displayTitle: 'Corepack'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/corepack.md'
 version: 'v18'
 ---
 

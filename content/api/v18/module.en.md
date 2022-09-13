@@ -2,7 +2,6 @@
 title: 'module'
 displayTitle: '`node:module` API'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/module.md'
 version: 'v18'
 ---
 

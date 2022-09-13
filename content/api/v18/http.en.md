@@ -2,7 +2,6 @@
 title: 'http'
 displayTitle: 'HTTP'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/http.md'
 version: 'v18'
 ---
 
