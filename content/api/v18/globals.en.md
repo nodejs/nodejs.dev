@@ -2,7 +2,6 @@
 title: 'globals'
 displayTitle: 'Global objects'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/globals.md'
 version: 'v18'
 ---
 

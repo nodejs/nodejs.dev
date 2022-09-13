@@ -2,7 +2,6 @@
 title: 'wasi'
 displayTitle: 'WebAssembly System Interface (WASI)'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/wasi.md'
 version: 'v18'
 ---
 

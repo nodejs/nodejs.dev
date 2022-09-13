@@ -2,7 +2,6 @@
 title: 'diagnostics_channel'
 displayTitle: 'Diagnostics Channel'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/diagnostics_channel.md'
 version: 'v18'
 ---
 

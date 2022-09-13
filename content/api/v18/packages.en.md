@@ -2,7 +2,6 @@
 title: 'packages'
 displayTitle: 'Packages'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/packages.md'
 version: 'v18'
 ---
 

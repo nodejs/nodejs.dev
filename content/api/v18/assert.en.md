@@ -2,7 +2,6 @@
 title: 'assert'
 displayTitle: 'Assert'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/assert.md'
 version: 'v18'
 ---
 

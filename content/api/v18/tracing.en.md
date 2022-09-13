@@ -2,7 +2,6 @@
 title: 'tracing'
 displayTitle: 'Trace events'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/tracing.md'
 version: 'v18'
 ---
 

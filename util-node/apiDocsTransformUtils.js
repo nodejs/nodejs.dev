@@ -102,10 +102,8 @@ function createNavigationCreator({ version, name }) {
 
 // This utility creates the Frontmatter of the Documentation page
 // It uses the metadata to create a YAML that will be inserted at the top of the page
-function createApiDocsFrontmatter(firstLine, { version, name, fullVersion }) {
+function createApiDocsFrontmatter(firstLine, { version, name }) {
   if (firstLine.startsWith('#')) {
-    const editPageLink = `https://github.com/nodejs/node/blob/${fullVersion}/doc/api/${name}.md`;
-
     // Does some special treatment to the pageTitle
     const pageTitle = parseHeading(firstLine.replace(/^# /, ''));
 
@@ -113,7 +111,6 @@ function createApiDocsFrontmatter(firstLine, { version, name, fullVersion }) {
       title: name,
       displayTitle: pageTitle,
       category: 'api',
-      editPage: editPageLink,
       version,
     };
 

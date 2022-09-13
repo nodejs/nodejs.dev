@@ -2,7 +2,6 @@
 title: 'fs'
 displayTitle: 'File system'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/fs.md'
 version: 'v18'
 ---
 

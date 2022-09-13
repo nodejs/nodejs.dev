@@ -2,7 +2,6 @@
 title: 'string_decoder'
 displayTitle: 'String decoder'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/string_decoder.md'
 version: 'v18'
 ---
 

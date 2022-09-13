@@ -2,7 +2,6 @@
 title: 'n-api'
 displayTitle: 'Node-API'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/n-api.md'
 version: 'v18'
 ---
 

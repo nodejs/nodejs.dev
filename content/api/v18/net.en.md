@@ -2,7 +2,6 @@
 title: 'net'
 displayTitle: 'Net'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.9.0/doc/api/net.md'
 version: 'v18'
 ---
 
