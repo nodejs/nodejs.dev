@@ -255,10 +255,10 @@ function calculateCodeBlockIntersection() {
   let codeBlockEndingIndex = -1;
 
   return (lines, index) => {
-    const liensStartWithCodeBlock = lines.startsWith('```');
+    const linesStartWithCodeBlock = lines.startsWith('```');
     const linesEndsWithCodeBlock = lines.endsWith('```');
 
-    if (liensStartWithCodeBlock) {
+    if (linesStartWithCodeBlock) {
       if (!linesEndsWithCodeBlock) {
         // If the current block starts with a codeblock but doesn't end with one
         // We have a multiple line code block then
