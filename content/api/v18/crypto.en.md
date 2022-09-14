@@ -503,7 +503,7 @@ scrypt(password, 'salt', 24, (err, key) => {
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.94"]}}} />
 
 * `outputEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string} Any remaining enciphered contents.
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Any remaining enciphered contents.
   If `outputEncoding` is specified, a string is
   returned. If an `outputEncoding` is not provided, a [`Buffer`][] is returned.
 
@@ -574,7 +574,7 @@ The `cipher.setAutoPadding()` method must be called before
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `inputEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the data.
 * `outputEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string}
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Updates the cipher with `data`. If the `inputEncoding` argument is given,
 the `data`
@@ -797,7 +797,7 @@ console.log(decrypted);
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.94"]}}} />
 
 * `outputEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string} Any remaining deciphered contents.
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Any remaining deciphered contents.
   If `outputEncoding` is specified, a string is
   returned. If an `outputEncoding` is not provided, a [`Buffer`][] is returned.
 
@@ -878,7 +878,7 @@ The `decipher.setAutoPadding()` method must be called before
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `inputEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the `data` string.
 * `outputEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string}
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Updates the decipher with `data`. If the `inputEncoding` argument is given,
 the `data`
@@ -958,7 +958,7 @@ assert.strictEqual(aliceSecret.toString('hex'), bobSecret.toString('hex'));
 * `otherPublicKey` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `inputEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of an `otherPublicKey` string.
 * `outputEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string}
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Computes the shared secret using `otherPublicKey` as the other
 party's public key and returns the computed shared secret. The supplied
@@ -976,7 +976,7 @@ If `outputEncoding` is given a string is returned; otherwise, a
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string}
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Generates private and public Diffie-Hellman key values, and returns
 the public key in the specified `encoding`. This key should be
@@ -989,7 +989,7 @@ If `encoding` is provided a string is returned; otherwise a
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string}
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Returns the Diffie-Hellman generator in the specified `encoding`.
 If `encoding` is provided a string is
@@ -1000,7 +1000,7 @@ returned; otherwise a [`Buffer`][] is returned.
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string}
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Returns the Diffie-Hellman prime in the specified `encoding`.
 If `encoding` is provided a string is
@@ -1011,7 +1011,7 @@ returned; otherwise a [`Buffer`][] is returned.
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string}
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Returns the Diffie-Hellman private key in the specified `encoding`.
 If `encoding` is provided a
@@ -1022,7 +1022,7 @@ string is returned; otherwise a [`Buffer`][] is returned.
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string}
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Returns the Diffie-Hellman public key in the specified `encoding`.
 If `encoding` is provided a
@@ -1161,7 +1161,7 @@ assert.strictEqual(aliceSecret.toString('hex'), bobSecret.toString('hex'));
 * `inputEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the `key` string.
 * `outputEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
 * `format` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'uncompressed'`
-* Returns: {Buffer | string}
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Converts the EC Diffie-Hellman public key specified by `key` and `curve` to the
 format specified by `format`. The `format` argument specifies point encoding
@@ -1230,7 +1230,7 @@ console.log(uncompressedKey === ecdh.getPublicKey('hex'));
 * `otherPublicKey` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `inputEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the `otherPublicKey` string.
 * `outputEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string}
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Computes the shared secret using `otherPublicKey` as the other
 party's public key and returns the computed shared secret. The supplied
@@ -1255,7 +1255,7 @@ be sure to handle this exception accordingly.
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
 * `format` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'uncompressed'`
-* Returns: {Buffer | string}
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Generates private and public EC Diffie-Hellman key values, and returns
 the public key in the specified `format` and `encoding`. This key should be
@@ -1273,7 +1273,7 @@ is returned.
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.14"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string} The EC Diffie-Hellman in the specified `encoding`.
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The EC Diffie-Hellman in the specified `encoding`.
 
 If `encoding` is specified, a string is returned; otherwise a [`Buffer`][] is
 returned.
@@ -1284,7 +1284,7 @@ returned.
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
 * `format` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'uncompressed'`
-* Returns: {Buffer | string} The EC Diffie-Hellman public key in the specified
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The EC Diffie-Hellman public key in the specified
   `encoding` and `format`.
 
 The `format` argument specifies point encoding and can be `'compressed'` or
@@ -1563,7 +1563,7 @@ console.log(hash.copy().digest('hex'));
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.92"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string}
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Calculates the digest of all of the data passed to be hashed (using the
 [`hash.update()`][] method).
@@ -1714,7 +1714,7 @@ console.log(hmac.digest('hex'));
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.94"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string}
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Calculates the HMAC digest of all of the data passed using [`hmac.update()`][].
 If `encoding` is
@@ -1853,7 +1853,7 @@ keys.
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v15.9.0","pr-url":"https://github.com/nodejs/node/pull/37081","description":"Added support for `'jwk'` format."}],"update":{"type":"added","version":["v11.6.0"]}}} />
 
 * `options`: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-* Returns: {string | Buffer | Object}
+* Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 For symmetric keys, the following encoding options can be used:
 
@@ -1872,7 +1872,7 @@ For private keys, the following encoding options can be used:
 * `cipher`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If specified, the private key will be encrypted with
   the given `cipher` and `passphrase` using PKCS#5 v2.0 password based
   encryption.
-* `passphrase`: {string | Buffer} The passphrase to use for encryption, see
+* `passphrase`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) The passphrase to use for encryption, see
   `cipher`.
 
 The result type depends on the selected encoding format, when PEM the
@@ -2048,7 +2048,7 @@ console.log(verify.verify(publicKey, signature));
   * `padding` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
   * `saltLength` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `outputEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
-* Returns: {Buffer | string}
+* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 
 
@@ -2302,7 +2302,7 @@ well as the subject field of the certificate are ignored.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.6.0"]}}} />
 
-* `otherCert` {X509Certificate}
+* `otherCert` [`X509Certificate`](/api/crypto#x509certificate)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Checks whether this certificate was issued by the given `otherCert`.
@@ -2382,7 +2382,7 @@ The issuer identification included in this certificate.
 
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.9.0"]}}} />
 
-* Type: {X509Certificate}
+* Type: [`X509Certificate`](/api/crypto#x509certificate)
 
 The issuer certificate or `undefined` if the issuer certificate is not
 available.
@@ -2592,7 +2592,7 @@ Checks the primality of the `candidate`.
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v17.9.0","pr-url":"https://github.com/nodejs/node/pull/42427","description":"The `authTagLength` option is now optional when using the `chacha20-poly1305` cipher and defaults to 16 bytes."},{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35093","description":"The password argument can be an ArrayBuffer and is limited to a maximum of 2 ** 31 - 1 bytes."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/21447","description":"Ciphers in OCB mode are now supported."},{"version":"v10.2.0","pr-url":"https://github.com/nodejs/node/pull/20235","description":"The `authTagLength` option can now be used to produce shorter authentication tags in GCM mode and defaults to 16 bytes."}],"update":{"type":"deprecated","version":["v10.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`crypto.createCipheriv()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `crypto.createCipheriv()` instead."}}} />
 
 * `algorithm` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `password` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
@@ -2679,7 +2679,7 @@ given IV will be.
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v17.9.0","pr-url":"https://github.com/nodejs/node/pull/42427","description":"The `authTagLength` option is now optional when using the `chacha20-poly1305` cipher and defaults to 16 bytes."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/21447","description":"Ciphers in OCB mode are now supported."}],"update":{"type":"deprecated","version":["v10.0.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`crypto.createDecipheriv()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `crypto.createDecipheriv()` instead."}}} />
 
 * `algorithm` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `password` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
@@ -2846,7 +2846,7 @@ input.on('readable', () => {
   if (data)
     hash.update(data);
   else {
-    console.log(`${hash.digest('hex')} $filename`);
+    console.log(`${hash.digest('hex')} ${filename}`);
   }
 });
 ```
@@ -2872,7 +2872,7 @@ input.on('readable', () => {
   if (data)
     hash.update(data);
   else {
-    console.log(`${hash.digest('hex')} $filename`);
+    console.log(`${hash.digest('hex')} ${filename}`);
   }
 });
 ```
@@ -2921,7 +2921,7 @@ input.on('readable', () => {
   if (data)
     hmac.update(data);
   else {
-    console.log(`${hmac.digest('hex')} $filename`);
+    console.log(`${hmac.digest('hex')} ${filename}`);
   }
 });
 ```
@@ -2947,7 +2947,7 @@ input.on('readable', () => {
   if (data)
     hmac.update(data);
   else {
-    console.log(`${hmac.digest('hex')} $filename`);
+    console.log(`${hmac.digest('hex')} ${filename}`);
   }
 });
 ```
@@ -2965,7 +2965,7 @@ input.on('readable', () => {
     **Default:** `'pem'`.
   * `type`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Must be `'pkcs1'`, `'pkcs8'` or `'sec1'`. This option is
     required only if the `format` is `'der'` and ignored otherwise.
-  * `passphrase`: {string | Buffer} The passphrase to use for decryption.
+  * `passphrase`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) The passphrase to use for decryption.
   * `encoding`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The string encoding to use when `key` is a string.
 * Returns: [`KeyObject`](/api/crypto#keyobject)
 
@@ -3138,8 +3138,8 @@ generateKey('hmac', { length: 64 }, (err, key) => {
   * `privateKeyEncoding`: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) See [`keyObject.export()`][].
 * `callback`: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err`: [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `publicKey`: {string | Buffer | KeyObject}
-  * `privateKey`: {string | Buffer | KeyObject}
+  * `publicKey`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`KeyObject`](/api/crypto#keyobject)
+  * `privateKey`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`KeyObject`](/api/crypto#keyobject)
 
 Generates a new asymmetric key pair of the given `type`. RSA, RSA-PSS, DSA, EC,
 Ed25519, Ed448, X25519, X448, and DH are currently supported.
@@ -3224,8 +3224,8 @@ a `Promise` for an `Object` with `publicKey` and `privateKey` properties.
   * `publicKeyEncoding`: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) See [`keyObject.export()`][].
   * `privateKeyEncoding`: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) See [`keyObject.export()`][].
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `publicKey`: {string | Buffer | KeyObject}
-  * `privateKey`: {string | Buffer | KeyObject}
+  * `publicKey`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`KeyObject`](/api/crypto#keyobject)
+  * `privateKey`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`KeyObject`](/api/crypto#keyobject)
 
 Generates a new asymmetric key pair of the given `type`. RSA, RSA-PSS, DSA, EC,
 Ed25519, Ed448, X25519, X448, and DH are currently supported.
@@ -3982,7 +3982,7 @@ const {
 
 randomBytes(256, (err, buf) => {
   if (err) throw err;
-  console.log(`$buf.length bytes of random data: ${buf.toString('hex')}`);
+  console.log(`${buf.length} bytes of random data: ${buf.toString('hex')}`);
 });
 ```
 
@@ -3994,7 +3994,7 @@ const {
 
 randomBytes(256, (err, buf) => {
   if (err) throw err;
-  console.log(`$buf.length bytes of random data: ${buf.toString('hex')}`);
+  console.log(`${buf.length} bytes of random data: ${buf.toString('hex')}`);
 });
 ```
 
@@ -4010,7 +4010,7 @@ const {
 
 const buf = randomBytes(256);
 console.log(
-  `$buf.length bytes of random data: ${buf.toString('hex')}`);
+  `${buf.length} bytes of random data: ${buf.toString('hex')}`);
 ```
 
 ```cjs
@@ -4021,7 +4021,7 @@ const {
 
 const buf = randomBytes(256);
 console.log(
-  `$buf.length bytes of random data: ${buf.toString('hex')}`);
+  `${buf.length} bytes of random data: ${buf.toString('hex')}`);
 ```
 
 The `crypto.randomBytes()` method will not complete until there is
@@ -4272,7 +4272,7 @@ const {
 
 randomInt(3, (err, n) => {
   if (err) throw err;
-  console.log(`Random number chosen from (0, 1, 2): $n`);
+  console.log(`Random number chosen from (0, 1, 2): ${n}`);
 });
 ```
 
@@ -4284,7 +4284,7 @@ const {
 
 randomInt(3, (err, n) => {
   if (err) throw err;
-  console.log(`Random number chosen from (0, 1, 2): $n`);
+  console.log(`Random number chosen from (0, 1, 2): ${n}`);
 });
 ```
 
@@ -4295,7 +4295,7 @@ const {
 } = await import('node:crypto');
 
 const n = randomInt(3);
-console.log(`Random number chosen from (0, 1, 2): $n`);
+console.log(`Random number chosen from (0, 1, 2): ${n}`);
 ```
 
 ```cjs
@@ -4305,7 +4305,7 @@ const {
 } = require('node:crypto');
 
 const n = randomInt(3);
-console.log(`Random number chosen from (0, 1, 2): $n`);
+console.log(`Random number chosen from (0, 1, 2): ${n}`);
 ```
 
 ```mjs
@@ -4315,7 +4315,7 @@ const {
 } = await import('node:crypto');
 
 const n = randomInt(1, 7);
-console.log(`The dice rolled: $n`);
+console.log(`The dice rolled: ${n}`);
 ```
 
 ```cjs
@@ -4325,7 +4325,7 @@ const {
 } = require('node:crypto');
 
 const n = randomInt(1, 7);
-console.log(`The dice rolled: $n`);
+console.log(`The dice rolled: ${n}`);
 ```
 
 #### <DataTag tag="M" /> `crypto.randomUUID([options])`
@@ -4538,7 +4538,7 @@ Throws an error if FIPS mode is not available.
 
 
 
-* `algorithm` {string | null | undefined}
+* `algorithm` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 * `data` [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `key` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`KeyObject`](/api/crypto#keyobject) | [`CryptoKey`](/api/webcrypto#cryptokey)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -4625,7 +4625,7 @@ not introduce timing vulnerabilities.
 
 
 * `algorithm` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
-* `data` {ArrayBuffer| Buffer|TypedArray|DataView}
+* `data` [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `key` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`KeyObject`](/api/crypto#keyobject) | [`CryptoKey`](/api/webcrypto#cryptokey)
 * `signature` [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)

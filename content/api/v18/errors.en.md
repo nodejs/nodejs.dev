@@ -1771,7 +1771,7 @@ the worker thread.
 #### <DataTag tag="M" /> `ERR_INTERNAL_ASSERTION`
 
 There was a bug in Node.js or incorrect usage of Node.js internals.
-To fix the error, open an issue at <https://github.com/nodejs/node/issues>.
+To fix the error, open an issue at [https://github.com/nodejs/node/issues](https://github.com/nodejs/node/issues).
 
 <a id="ERR_INVALID_ADDRESS_FAMILY"></a>
 
@@ -2969,7 +2969,7 @@ attempting a [`require()`][] operation or when loading the program entry point.
 
 ### Legacy Node.js error codes
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. These error codes are either inconsistent, or have\n> been removed."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated. These error codes are either inconsistent, or have been removed."}}} />
 
 <a id="ERR_CANNOT_TRANSFER_OBJECT"></a>
 

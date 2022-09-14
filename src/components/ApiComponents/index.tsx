@@ -3,36 +3,38 @@ import React from 'react';
 import { ApiComponentData } from '../../types';
 import * as Components from './Components';
 
-interface Props {
+interface MetadataProps {
   data: ApiComponentData;
-  version: string;
 }
 
-const Metadata = ({ data, version }: Props): JSX.Element | null => {
-  if (data.changes && data.update) {
-    return <Components.Changes changes={data.changes} update={data.update} />;
-  }
+interface ApiComponentsProps {
+  fullVersion: string;
+}
 
-  if (data.update) {
-    return (
-      <Components.Span version={data.update.version} type={data.update.type} />
-    );
-  }
+const getApiComponents = ({ fullVersion }: ApiComponentsProps) => {
+  const Metadata = ({ data }: MetadataProps): JSX.Element | null => {
+    const { changes, update, stability, source_link: sourceLink } = data;
 
-  if (data.stability) {
-    return <Components.Stability stability={data.stability} />;
-  }
+    if (changes && update) {
+      return <Components.Changes changes={changes} update={update} />;
+    }
 
-  if (data.source_link) {
-    return (
-      <Components.SourceLink
-        sourceName={data.source_link}
-        sourceLink={`https://github.com/nodejs/node/blob/${version}/${data.source_link}`}
-      />
-    );
-  }
+    if (update) {
+      return <Components.Span version={update.version} type={update.type} />;
+    }
 
-  return null;
+    if (stability) {
+      return <Components.Stability stability={stability} />;
+    }
+
+    if (sourceLink) {
+      return <Components.SourceLink version={fullVersion} link={sourceLink} />;
+    }
+
+    return null;
+  };
+
+  return Metadata;
 };
 
-export { Metadata, Components };
+export { getApiComponents, Components };

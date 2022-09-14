@@ -28,7 +28,7 @@ import process from 'node:process';
 const numCPUs = cpus().length;
 
 if (cluster.isPrimary) {
-  console.log(`Primary $process.pid is running`);
+  console.log(`Primary ${process.pid} is running`);
 
   // Fork workers.
   for (let i = 0; i < numCPUs; i++) {
@@ -36,7 +36,7 @@ if (cluster.isPrimary) {
   }
 
   cluster.on('exit', (worker, code, signal) => {
-    console.log(`worker $worker.process.pid died`);
+    console.log(`worker ${worker.process.pid} died`);
   });
 } else {
   // Workers can share any TCP connection
@@ -46,7 +46,7 @@ if (cluster.isPrimary) {
     res.end('hello world\n');
   }).listen(8000);
 
-  console.log(`Worker $process.pid started`);
+  console.log(`Worker ${process.pid} started`);
 }
 ```
 
@@ -57,7 +57,7 @@ const numCPUs = require('node:os').cpus().length;
 const process = require('node:process');
 
 if (cluster.isPrimary) {
-  console.log(`Primary $process.pid is running`);
+  console.log(`Primary ${process.pid} is running`);
 
   // Fork workers.
   for (let i = 0; i < numCPUs; i++) {
@@ -65,7 +65,7 @@ if (cluster.isPrimary) {
   }
 
   cluster.on('exit', (worker, code, signal) => {
-    console.log(`worker $worker.process.pid died`);
+    console.log(`worker ${worker.process.pid} died`);
   });
 } else {
   // Workers can share any TCP connection
@@ -75,7 +75,7 @@ if (cluster.isPrimary) {
     res.end('hello world\n');
   }).listen(8000);
 
-  console.log(`Worker $process.pid started`);
+  console.log(`Worker ${process.pid} started`);
 }
 ```
 
@@ -198,9 +198,9 @@ if (cluster.isPrimary) {
   const worker = cluster.fork();
   worker.on('exit', (code, signal) => {
     if (signal) {
-      console.log(`worker was killed by signal: $signal`);
+      console.log(`worker was killed by signal: ${signal}`);
     } else if (code !== 0) {
-      console.log(`worker exited with error code: $code`);
+      console.log(`worker exited with error code: ${code}`);
     } else {
       console.log('worker success!');
     }
@@ -215,9 +215,9 @@ if (cluster.isPrimary) {
   const worker = cluster.fork();
   worker.on('exit', (code, signal) => {
     if (signal) {
-      console.log(`worker was killed by signal: $signal`);
+      console.log(`worker was killed by signal: ${signal}`);
     } else if (code !== 0) {
-      console.log(`worker exited with error code: $code`);
+      console.log(`worker exited with error code: ${code}`);
     } else {
       console.log('worker success!');
     }
@@ -274,7 +274,7 @@ if (cluster.isPrimary) {
   // Keep track of http requests
   let numReqs = 0;
   setInterval(() => {
-    console.log(`numReqs = $numReqs`);
+    console.log(`numReqs = ${numReqs}`);
   }, 1000);
 
   // Count requests
@@ -317,7 +317,7 @@ if (cluster.isPrimary) {
   // Keep track of http requests
   let numReqs = 0;
   setInterval(() => {
-    console.log(`numReqs = $numReqs`);
+    console.log(`numReqs = ${numReqs}`);
   }, 1000);
 
   // Count requests
@@ -490,7 +490,7 @@ import process from 'node:process';
 const numCPUs = cpus().length;
 
 if (cluster.isPrimary) {
-  console.log(`Primary $process.pid is running`);
+  console.log(`Primary ${process.pid} is running`);
 
   // Fork workers.
   for (let i = 0; i < numCPUs; i++) {
@@ -508,7 +508,7 @@ if (cluster.isPrimary) {
   // Workers can share any TCP connection. In this case, it is an HTTP server.
   http.createServer((req, res) => {
     res.writeHead(200);
-    res.end(`Current process\n $process.pid`);
+    res.end(`Current process\n ${process.pid}`);
     process.kill(process.pid);
   }).listen(8000);
 }
@@ -521,7 +521,7 @@ const numCPUs = require('node:os').cpus().length;
 const process = require('node:process');
 
 if (cluster.isPrimary) {
-  console.log(`Primary $process.pid is running`);
+  console.log(`Primary ${process.pid} is running`);
 
   // Fork workers.
   for (let i = 0; i < numCPUs; i++) {
@@ -539,7 +539,7 @@ if (cluster.isPrimary) {
   // Workers can share any TCP connection. In this case, it is an HTTP server.
   http.createServer((req, res) => {
     res.writeHead(200);
-    res.end(`Current process\n $process.pid`);
+    res.end(`Current process\n ${process.pid}`);
     process.kill(process.pid);
   }).listen(8000);
 }
@@ -633,7 +633,7 @@ are long-living connections.
 
 ```js
 cluster.on('disconnect', (worker) => {
-  console.log(`The worker #$worker.id has disconnected`);
+  console.log(`The worker #${worker.id} has disconnected`);
 });
 ```
 
@@ -706,7 +706,7 @@ worker is listening on more than one address.
 ```js
 cluster.on('listening', (worker, address) => {
   console.log(
-    `A worker is now connected to $address.address:$address.port`);
+    `A worker is now connected to ${address.address}:${address.port}`);
 });
 ```
 
@@ -938,7 +938,7 @@ if (cluster.isPrimary) {
   cluster.fork();
   cluster.fork();
 } else if (cluster.isWorker) {
-  console.log(`I am worker #$cluster.worker.id`);
+  console.log(`I am worker #${cluster.worker.id}`);
 }
 ```
 
@@ -950,7 +950,7 @@ if (cluster.isPrimary) {
   cluster.fork();
   cluster.fork();
 } else if (cluster.isWorker) {
-  console.log(`I am worker #$cluster.worker.id`);
+  console.log(`I am worker #${cluster.worker.id}`);
 }
 ```
 

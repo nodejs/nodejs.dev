@@ -34,7 +34,7 @@ const LearnLayout = ({
       <Article
         title={title}
         body={body}
-        tableOfContents={tableOfContents}
+        tableOfContents={tableOfContents ? tableOfContents.items : []}
         next={next}
         authors={authors}
         previous={previous}

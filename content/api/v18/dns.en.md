@@ -48,7 +48,7 @@ dns.resolve4('archive.org', (err, addresses) => {
       if (err) {
         throw err;
       }
-      console.log(`reverse for $a: ${JSON.stringify(hostnames)}`);
+      console.log(`reverse for ${a}: ${JSON.stringify(hostnames)}`);
     });
   });
 });
@@ -162,7 +162,7 @@ section if a custom port is used.
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43054","description":"For compatibility with `node:net`, when passing an option object the `family` option can be the string `'IPv4'` or the string `'IPv6'`."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/39987","description":"The `verbatim` options defaults to `true` now."},{"version":"v8.5.0","pr-url":"https://github.com/nodejs/node/pull/14731","description":"The `verbatim` option is supported now."},{"version":"v1.2.0","pr-url":"https://github.com/nodejs/node/pull/744","description":"The `all` option is supported now."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {integer | Object}
+* `options` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `family` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The record family. Must be `4`, `6`, or `0`. For
     backward compatibility reasons,`'IPv4'` and `'IPv6'` are interpreted as `4`
     and `6` respectively. The value `0` indicates that IPv4 and IPv6 addresses
@@ -282,7 +282,7 @@ If this method is invoked as its [`util.promisify()`][]ed version, it returns a
 * `rrtype` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Resource record type. **Default:** `'A'`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `records` {string\[] | Object\[] | Object}
+  * `records` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 Uses the DNS protocol to resolve a host name (e.g. `'nodejs.org'`) into an array
 of the resource records. The `callback` function has arguments
@@ -319,7 +319,7 @@ On error, `err` is an [`Error`][] object, where `err.code` is one of the
     with the TTL expressed in seconds.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `addresses` {string\[] | Object\[]}
+  * `addresses` string\[] | Object\[]
 
 Uses the DNS protocol to resolve a IPv4 addresses (`A` records) for the
 `hostname`. The `addresses` argument passed to the `callback` function
@@ -338,7 +338,7 @@ will contain an array of IPv4 addresses (e.g.
     strings, with the TTL expressed in seconds.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `addresses` {string\[] | Object\[]}
+  * `addresses` string\[] | Object\[]
 
 Uses the DNS protocol to resolve IPv6 addresses (`AAAA` records) for the
 `hostname`. The `addresses` argument passed to the `callback` function
@@ -737,7 +737,7 @@ section if a custom port is used.
 <Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `options` {integer | Object}
+* `options` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `family` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The record family. Must be `4`, `6`, or `0`. The value
     `0` indicates that IPv4 and IPv6 addresses are both returned. **Default:**
     `0`.

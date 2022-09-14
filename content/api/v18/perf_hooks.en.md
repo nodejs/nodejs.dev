@@ -861,7 +861,7 @@ const obs = new PerformanceObserver((list, observer) => {
 obs.observe({ type: 'mark' });
 
 for (let n = 0; n < 3; n++)
-  performance.mark(`test$n`);
+  performance.mark(`test${n}`);
 ```
 
 ### <DataTag tag="C" /> `PerformanceObserverEntryList`
@@ -1267,17 +1267,17 @@ const set = new Set();
 const hook = async_hooks.createHook({
   init(id, type) {
     if (type === 'Timeout') {
-      performance.mark(`Timeout-$id-Init`);
+      performance.mark(`Timeout-${id}-Init`);
       set.add(id);
     }
   },
   destroy(id) {
     if (set.has(id)) {
       set.delete(id);
-      performance.mark(`Timeout-$id-Destroy`);
-      performance.measure(`Timeout-$id`,
-                          `Timeout-$id-Init`,
-                          `Timeout-$id-Destroy`);
+      performance.mark(`Timeout-${id}-Destroy`);
+      performance.measure(`Timeout-${id}`,
+                          `Timeout-${id}-Init`,
+                          `Timeout-${id}-Destroy`);
     }
   }
 });
@@ -1355,7 +1355,7 @@ const PORT = 8080;
 http.createServer((req, res) => {
   res.end('ok');
 }).listen(PORT, () => {
-  http.get(`http://127.0.0.1:$PORT`);
+  http.get(`http://127.0.0.1:${PORT}`);
 });
 ```
 

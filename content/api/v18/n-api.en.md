@@ -5704,7 +5704,7 @@ the add-on's file name during loading.
 
 [ABI Stability]: https://nodejs.org/en/docs/guides/abi-stability/
 [AppVeyor]: https://www.appveyor.com
-[C++ Addons]: (/api/addons)
+[C++ Addons]: addons.md
 [CMake]: https://cmake.org
 [CMake.js]: https://github.com/cmake-js/cmake-js
 [ECMAScript Language Specification]: https://tc39.github.io/ecma262/
@@ -5751,7 +5751,7 @@ the add-on's file name during loading.
 [`Number.MIN_SAFE_INTEGER`]: https://tc39.github.io/ecma262/#sec-number.min_safe_integer
 [`Worker`]: worker_threads.md#class-worker
 [`async_hooks.executionAsyncResource()`]: async_hooks.md#async_hooksexecutionasyncresource
-[`global`]: (/api/globals#global)
+[`global`]: globals.md#global
 [`init` hooks]: async_hooks.md#initasyncid-type-triggerasyncid-resource
 [`napi_add_async_cleanup_hook`]: #napi_add_async_cleanup_hook
 [`napi_add_env_cleanup_hook`]: #napi_add_env_cleanup_hook
@@ -5811,15 +5811,15 @@ the add-on's file name during loading.
 [`node_api.h`]: https://github.com/nodejs/node/blob/HEAD/src/node_api.h
 [`node_api_create_syntax_error`]: #node_api_create_syntax_error
 [`node_api_throw_syntax_error`]: #node_api_throw_syntax_error
-[`process.release`]: (/api/process#processrelease)
+[`process.release`]: process.md#processrelease
 [`uv_ref`]: https://docs.libuv.org/en/v1.x/handle.html#c.uv_ref
 [`uv_unref`]: https://docs.libuv.org/en/v1.x/handle.html#c.uv_unref
 [async_hooks `type`]: async_hooks.md#type
-[context-aware addons]: (/api/addons#context-aware-addons)
+[context-aware addons]: addons.md#context-aware-addons
 [docs]: https://github.com/nodejs/node-addon-api#api-documentation
-[global scope]: (/api/globals)
+[global scope]: globals.md
 [gyp-next]: https://github.com/nodejs/gyp-next
-[module scope]: (/api/modules#the-module-scope)
+[module scope]: modules.md#the-module-scope
 [node-gyp]: https://github.com/nodejs/node-gyp
 [node-pre-gyp]: https://github.com/mapbox/node-pre-gyp
 [prebuild]: https://github.com/prebuild/prebuild

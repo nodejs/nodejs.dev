@@ -62,7 +62,7 @@ flag to enable trace events. This requirement has been removed. However, the
 ```bash
 node --trace-events-enabled
 
-## is equivalent to
+# is equivalent to
 
 node --trace-event-categories v8,node,node.async_hooks
 ```
@@ -89,7 +89,7 @@ be specified with `--trace-event-file-pattern` that accepts a template
 string that supports `$rotation` and `$pid`:
 
 ```bash
-node --trace-event-categories v8 --trace-event-file-pattern '$pid-$rotation.log' server.js
+node --trace-event-categories v8 --trace-event-file-pattern '${pid}-${rotation}.log' server.js
 ```
 
 To guarantee that the log file is properly generated after signal events like

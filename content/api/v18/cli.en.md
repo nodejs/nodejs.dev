@@ -110,13 +110,13 @@ the path specified by `--snapshot-blob`.
 ```console
 $ echo "globalThis.foo = 'I am from the snapshot'" > snapshot.js
 
-## Run snapshot.js to intialize the application and snapshot the
+# Run snapshot.js to intialize the application and snapshot the
 # state of it into snapshot.blob.
 $ node --snapshot-blob snapshot.blob --build-snapshot snapshot.js
 
 $ echo "console.log(globalThis.foo)" > index.js
 
-## Load the generated snapshot and start the application from index.js.
+# Load the generated snapshot and start the application from index.js.
 $ node --snapshot-blob snapshot.blob index.js
 I am from the snapshot
 ```
@@ -745,11 +745,11 @@ illustrated in the example below, the default behavior causes an exception to
 be thrown if `moduleA` attempts to require `moduleB` as a peer dependency:
 
 ```text
-appDir
+{appDir}
  ├── app
  │   ├── index.js
  │   └── node_modules
- │       ├── moduleA -> appDir/moduleA
+ │       ├── moduleA -> {appDir}/moduleA
  │       └── moduleB
  │           ├── index.js
  │           └── package.json

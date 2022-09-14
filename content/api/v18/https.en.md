@@ -229,8 +229,8 @@ https.createServer(options, (req, res) => {
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
 
-* `url` {string | URL}
-* `options` {Object | string | URL} Accepts the same `options` as
+* `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api)
+* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) Accepts the same `options` as
   [`https.request()`][], with the `method` always set to `GET`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
@@ -268,8 +268,8 @@ Global instance of [`https.Agent`][] for all HTTPS client requests.
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":["v16.7.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39310","description":"When using a `URL` object parsed username and password will now be properly URI decoded."},{"version":["v14.1.0","v13.14.0"],"pr-url":"https://github.com/nodejs/node/pull/32786","description":"The `highWaterMark` option is accepted now."},{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v9.3.0","pr-url":"https://github.com/nodejs/node/pull/14903","description":"The `options` parameter can now include `clientCertEngine`."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
 
-* `url` {string | URL}
-* `options` {Object | string | URL} Accepts all `options` from
+* `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api)
+* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) Accepts all `options` from
   [`http.request()`][], with some differences in default values:
   * `protocol` **Default:** `'https:'`
   * `port` **Default:** `443`
@@ -391,7 +391,7 @@ const options = {
     const pubkey256 = 'pL1+qb9HTMRZJmuC/bB/ZI9d302BYrrqiVuRyW+DGrU=';
     if (sha256(cert.pubkey) !== pubkey256) {
       const msg = 'Certificate verification error: ' +
-        `The public key of '$cert.subject.CN' ` +
+        `The public key of '${cert.subject.CN}' ` +
         'does not match our pinned fingerprint';
       return new Error(msg);
     }
@@ -401,7 +401,7 @@ const options = {
       'D8:3E:4C:1D:98:DB:71:E4:1A:48:03:98:EA:22:6A:BD:8B:93:16';
     if (cert.fingerprint256 !== cert256) {
       const msg = 'Certificate verification error: ' +
-        `The certificate of '$cert.subject.CN' ` +
+        `The certificate of '${cert.subject.CN}' ` +
         'does not match our pinned fingerprint';
       return new Error(msg);
     }

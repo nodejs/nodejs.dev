@@ -373,7 +373,7 @@ myEmitter.on('event', function secondListener(arg1, arg2) {
 // Third listener
 myEmitter.on('event', function thirdListener(...args) {
   const parameters = args.join(', ');
-  console.log(`event with parameters $parameters in third listener`);
+  console.log(`event with parameters ${parameters} in third listener`);
 });
 
 console.log(myEmitter.listeners('event'));
@@ -406,7 +406,7 @@ myEmitter.on('event', function secondListener(arg1, arg2) {
 // Third listener
 myEmitter.on('event', function thirdListener(...args) {
   const parameters = args.join(', ');
-  console.log(`event with parameters $parameters in third listener`);
+  console.log(`event with parameters ${parameters} in third listener`);
 });
 
 console.log(myEmitter.listeners('event'));
@@ -1196,7 +1196,7 @@ See how to write a custom [rejection handler][rejection].
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v3.2.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`emitter.listenerCount()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `emitter.listenerCount()` instead."}}} />
 
 * `emitter` [`EventEmitter`](/api/events#eventemitter) The emitter to query
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The event name

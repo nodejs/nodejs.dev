@@ -285,7 +285,7 @@ channel.publish({
 
 <Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v18.7.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`diagnostics_channel.subscribe(name, onMessage)`][]"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `diagnostics_channel.subscribe(name, onMessage)`"}}} />
 
 * `onMessage` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The handler to receive channel messages
   * `message` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The message data
@@ -319,7 +319,7 @@ channel.subscribe((message, name) => {
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":["v17.1.0","v16.14.0","v14.19.0"],"pr-url":"https://github.com/nodejs/node/pull/40433","description":"Added return value. Added to channels without subscribers."}],"update":{"type":"deprecated","version":["v18.7.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`diagnostics_channel.unsubscribe(name, onMessage)`][]"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `diagnostics_channel.unsubscribe(name, onMessage)`"}}} />
 
 * `onMessage` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The previous subscribed handler to remove
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` if the handler was found, `false` otherwise.
