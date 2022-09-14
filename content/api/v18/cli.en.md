@@ -572,8 +572,6 @@ V8 inspector integration allows tools such as Chrome DevTools and IDEs to debug
 and profile Node.js instances. The tools attach to Node.js instances via a
 tcp port and communicate using the [Chrome DevTools Protocol][].
 
-
-
 <a id="inspector_security"></a>
 
 ##### Warning: binding inspector to a public IP:port combination is insecure
@@ -1347,8 +1345,6 @@ node --require "./a.js" --require "./b.js"
 
 Node.js options that are allowed are:
 
-
-
 * `--conditions`, `-C`
 * `--diagnostic-dir`
 * `--disable-proto`
@@ -1445,11 +1441,7 @@ Node.js options that are allowed are:
 * `--v8-pool-size`
 * `--zero-fill-buffers`
 
-
-
 V8 options that are allowed are:
-
-
 
 * `--abort-on-uncaught-exception`
 * `--disallow-code-generation-from-strings`
@@ -1462,8 +1454,6 @@ V8 options that are allowed are:
 * `--perf-prof-unwinding-info`
 * `--perf-prof`
 * `--stack-trace-limit`
-
-
 
 `--perf-basic-prof-only-functions`, `--perf-basic-prof`,
 `--perf-prof-unwinding-info`, and `--perf-prof` are only available on Linux.
@@ -1745,20 +1735,20 @@ done
 
 [#42511]: https://github.com/nodejs/node/issues/42511
 [Chrome DevTools Protocol]: https://chromedevtools.github.io/devtools-protocol/
-[CommonJS]: (/api/modules)
+[CommonJS]: /api/v18/modules
 [CustomEvent Web API]: https://dom.spec.whatwg.org/#customevent
-[ECMAScript module loader]: (/api/esm#loaders)
+[ECMAScript module loader]: /api/v18/esm#loaders
 [Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-[Modules loaders]: (/api/packages#modules-loaders)
+[Modules loaders]: /api/v18/packages#modules-loaders
 [Node.js issue tracker]: https://github.com/nodejs/node/issues
 [OSSL_PROVIDER-legacy]: https://www.openssl.org/docs/man3.0/man7/OSSL_PROVIDER-legacy.html
-[REPL]: (/api/repl)
+[REPL]: /api/v18/repl
 [ScriptCoverage]: https://chromedevtools.github.io/devtools-protocol/tot/Profiler#type-ScriptCoverage
 [Source Map]: https://sourcemaps.info/spec.html
 [Subresource Integrity]: https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity
 [V8 JavaScript code coverage]: https://v8project.blogspot.com/2017/12/javascript-code-coverage.html
-[Web Crypto API]: (/api/webcrypto)
-[`"type"`]: (/api/packages#type)
+[Web Crypto API]: /api/v18/webcrypto
+[`"type"`]: /api/v18/packages#type
 [`--cpu-prof-dir`]: #--cpu-prof-dir
 [`--diagnostic-dir`]: #--diagnostic-dirdirectory
 [`--experimental-wasm-modules`]: #--experimental-wasm-modules
@@ -1766,33 +1756,33 @@ done
 [`--openssl-config`]: #--openssl-configfile
 [`--redirect-warnings`]: #--redirect-warningsfile
 [`Atomics.wait()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/wait
-[`Buffer`]: (/api/buffer#class-buffer)
+[`Buffer`]: /api/v18/buffer#class-buffer
 [`CRYPTO_secure_malloc_init`]: https://www.openssl.org/docs/man1.1.0/man3/CRYPTO_secure_malloc_init.html
 [`NODE_OPTIONS`]: #node_optionsoptions
 [`NO_COLOR`]: https://no-color.org
-[`SlowBuffer`]: (/api/buffer#class-slowbuffer)
+[`SlowBuffer`]: /api/v18/buffer#class-slowbuffer
 [`YoungGenerationSizeFromSemiSpaceSize`]: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/10.3.129/src/heap/heap.cc#328
-[`assert.snapshot()`]: (/api/assert#assertsnapshotvalue-name)
-[`dns.lookup()`]: (/api/dns#dnslookuphostname-options-callback)
-[`dns.setDefaultResultOrder()`]: (/api/dns#dnssetdefaultresultorderorder)
-[`dnsPromises.lookup()`]: (/api/dns#dnspromiseslookuphostname-options)
-[`import` specifier]: (/api/esm#import-specifiers)
-[`process.setUncaughtExceptionCaptureCallback()`]: (/api/process#processsetuncaughtexceptioncapturecallbackfn)
-[`tls.DEFAULT_MAX_VERSION`]: (/api/tls#tlsdefault_max_version)
-[`tls.DEFAULT_MIN_VERSION`]: (/api/tls#tlsdefault_min_version)
-[`unhandledRejection`]: (/api/process#event-unhandledrejection)
+[`assert.snapshot()`]: /api/v18/assert#assertsnapshotvalue-name
+[`dns.lookup()`]: /api/v18/dns#dnslookuphostname-options-callback
+[`dns.setDefaultResultOrder()`]: /api/v18/dns#dnssetdefaultresultorderorder
+[`dnsPromises.lookup()`]: /api/v18/dns#dnspromiseslookuphostname-options
+[`import` specifier]: /api/v18/esm#import-specifiers
+[`process.setUncaughtExceptionCaptureCallback()`]: /api/v18/process#processsetuncaughtexceptioncapturecallbackfn
+[`tls.DEFAULT_MAX_VERSION`]: /api/v18/tls#tlsdefault_max_version
+[`tls.DEFAULT_MIN_VERSION`]: /api/v18/tls#tlsdefault_min_version
+[`unhandledRejection`]: /api/v18/process#event-unhandledrejection
 [`v8.startupSnapshot` API]: v8.md#startup-snapshot-api
 [`worker_threads.threadId`]: worker_threads.md#workerthreadid
-[conditional exports]: (/api/packages#conditional-exports)
-[context-aware]: (/api/addons#context-aware-addons)
-[customizing ESM specifier resolution]: (/api/esm#customizing-esm-specifier-resolution-algorithm)
-[debugger]: (/api/debugger)
+[conditional exports]: /api/v18/packages#conditional-exports
+[context-aware]: /api/v18/addons#context-aware-addons
+[customizing ESM specifier resolution]: /api/v18/esm#customizing-esm-specifier-resolution-algorithm
+[debugger]: /api/v18/debugger
 [debugging security implications]: https://nodejs.org/en/docs/guides/debugging-getting-started/#security-implications
-[emit_warning]: (/api/process#processemitwarningwarning-options)
+[emit_warning]: /api/v18/process#processemitwarningwarning-options
 [jitless]: https://v8.dev/blog/jitless
 [libuv threadpool documentation]: https://docs.libuv.org/en/latest/threadpool.html
 [remote code execution]: https://www.owasp.org/index.php/Code_Injection
-[running tests from the command line]: (/api/test#running-tests-from-the-command-line)
+[running tests from the command line]: /api/v18/test#running-tests-from-the-command-line
 [scavenge garbage collector]: https://v8.dev/blog/orinoco-parallel-scavenger
 [security warning]: #warning-binding-inspector-to-a-public-ipport-combination-is-insecure
 [semi-space]: https://www.memorymanagement.org/glossary/s.html#semi.space

@@ -471,8 +471,8 @@ Calling `timersPromises.scheduler.yield()` is equivalent to calling
 
 [Event Loop]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#setimmediate-vs-settimeout
 [Scheduling APIs]: https://github.com/WICG/scheduling-apis
-[`AbortController`]: (/api/globals#class-abortcontroller)
-[`TypeError`]: (/api/errors#class-typeerror)
+[`AbortController`]: /api/v18/globals#class-abortcontroller
+[`TypeError`]: /api/v18/errors#class-typeerror
 [`clearImmediate()`]: #clearimmediateimmediate
 [`clearInterval()`]: #clearintervaltimeout
 [`clearTimeout()`]: #cleartimeouttimeout

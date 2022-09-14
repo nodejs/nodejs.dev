@@ -1598,14 +1598,14 @@ or [`child_process.fork()`][].
 [Default Windows shell]: #default-windows-shell
 [HTML structured clone algorithm]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm
 [Shell requirements]: #shell-requirements
-[Signal Events]: (/api/process#signal-events)
-[`'disconnect'`]: (/api/process#event-disconnect)
+[Signal Events]: /api/v18/process#signal-events
+[`'disconnect'`]: /api/v18/process#event-disconnect
 [`'error'`]: #event-error
 [`'exit'`]: #event-exit
-[`'message'`]: (/api/process#event-message)
+[`'message'`]: /api/v18/process#event-message
 [`ChildProcess`]: #class-childprocess
-[`Error`]: (/api/errors#class-error)
-[`EventEmitter`]: (/api/events#class-eventemitter)
+[`Error`]: /api/v18/errors#class-error
+[`EventEmitter`]: /api/v18/events#class-eventemitter
 [`child_process.exec()`]: #child_processexeccommand-options-callback
 [`child_process.execFile()`]: #child_processexecfilefile-args-options-callback
 [`child_process.execFileSync()`]: #child_processexecfilesyncfile-args-options
@@ -1614,13 +1614,13 @@ or [`child_process.fork()`][].
 [`child_process.spawn()`]: #child_processspawncommand-args-options
 [`child_process.spawnSync()`]: #child_processspawnsynccommand-args-options
 [`maxBuffer` and Unicode]: #maxbuffer-and-unicode
-[`net.Server`]: (/api/net#class-netserver)
-[`net.Socket`]: (/api/net#class-netsocket)
+[`net.Server`]: /api/v18/net#class-netserver
+[`net.Socket`]: /api/v18/net#class-netsocket
 [`options.detached`]: #optionsdetached
-[`process.disconnect()`]: (/api/process#processdisconnect)
-[`process.env`]: (/api/process#processenv)
-[`process.execPath`]: (/api/process#processexecpath)
-[`process.send()`]: (/api/process#processsendmessage-sendhandle-options-callback)
+[`process.disconnect()`]: /api/v18/process#processdisconnect
+[`process.env`]: /api/v18/process#processenv
+[`process.execPath`]: /api/v18/process#processexecpath
+[`process.send()`]: /api/v18/process#processsendmessage-sendhandle-options-callback
 [`stdio`]: #optionsstdio
 [`subprocess.connected`]: #subprocessconnected
 [`subprocess.disconnect()`]: #subprocessdisconnect
@@ -1630,6 +1630,6 @@ or [`child_process.fork()`][].
 [`subprocess.stdin`]: #subprocessstdin
 [`subprocess.stdio`]: #subprocessstdio
 [`subprocess.stdout`]: #subprocessstdout
-[`util.promisify()`]: (/api/util#utilpromisifyoriginal)
+[`util.promisify()`]: /api/v18/util#utilpromisifyoriginal
 [synchronous counterparts]: #synchronous-process-creation
 [v8.serdes]: v8.md#serialization-api

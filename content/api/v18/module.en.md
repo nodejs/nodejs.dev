@@ -135,8 +135,6 @@ import { findSourceMap, SourceMap } from 'node:module';
 const { findSourceMap, SourceMap } = require('node:module');
 ```
 
-
-
 <a id="module_module_findsourcemap_path_error"></a>
 
 #### <DataTag tag="M" /> `module.findSourceMap(path)`
@@ -193,12 +191,12 @@ consists of the following keys:
 * originalColumn: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * name: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
-[CommonJS]: (/api/modules)
-[ES Modules]: (/api/esm)
+[CommonJS]: /api/v18/modules
+[ES Modules]: /api/v18/esm
 [Source map v3 format]: https://sourcemaps.info/spec.html#h.mofvlxcwqzej
-[`--enable-source-maps`]: (/api/cli#--enable-source-maps)
-[`NODE_V8_COVERAGE=dir`]: (/api/cli#node_v8_coveragedir)
+[`--enable-source-maps`]: /api/v18/cli#--enable-source-maps
+[`NODE_V8_COVERAGE=dir`]: /api/v18/cli#node_v8_coveragedir
 [`SourceMap`]: #class-modulesourcemap
-[`module`]: (/api/modules#the-module-object)
-[module wrapper]: (/api/modules#the-module-wrapper)
+[`module`]: /api/v18/modules#the-module-object
+[module wrapper]: /api/v18/modules#the-module-wrapper
 [source map include directives]: https://sourcemaps.info/spec.html#h.lmz475t4mvbx

@@ -751,7 +751,7 @@ const server = createServer((req, res) => {
 ```
 
 [`AsyncResource`]: #class-asyncresource
-[`EventEmitter`]: (/api/events#class-eventemitter)
-[`Stream`]: (/api/stream#stream)
+[`EventEmitter`]: /api/v18/events#class-eventemitter
+[`Stream`]: /api/v18/stream#stream
 [`Worker`]: worker_threads.md#class-worker
-[`util.promisify()`]: (/api/util#utilpromisifyoriginal)
+[`util.promisify()`]: /api/v18/util#utilpromisifyoriginal

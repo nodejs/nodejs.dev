@@ -201,23 +201,23 @@ to be helpful:
 [ECMA-262]: https://tc39.github.io/ecma262/
 [ECMA-402]: https://tc39.github.io/ecma402/
 [ICU]: http://site.icu-project.org/
-[Legacy URL parser]: (/api/url#legacy-url-api)
-[REPL]: (/api/repl#repl)
+[Legacy URL parser]: /api/v18/url#legacy-url-api
+[REPL]: /api/v18/repl#repl
 [Test262]: https://github.com/tc39/test262/tree/HEAD/test/intl402
-[WHATWG URL parser]: (/api/url#the-whatwg-url-api)
-[`--icu-data-dir`]: (/api/cli#--icu-data-dirfile)
+[WHATWG URL parser]: /api/v18/url#the-whatwg-url-api
+[`--icu-data-dir`]: /api/v18/cli#--icu-data-dirfile
 [`Date.prototype.toLocaleString()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
 [`Intl.DateTimeFormat`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
 [`Intl`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl
-[`NODE_ICU_DATA`]: (/api/cli#node_icu_datafile)
+[`NODE_ICU_DATA`]: /api/v18/cli#node_icu_datafile
 [`Number.prototype.toLocaleString()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString
 [`RegExp` Unicode Property Escapes]: https://github.com/tc39/proposal-regexp-unicode-property-escapes
 [`String.prototype.localeCompare()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
 [`String.prototype.normalize()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize
 [`String.prototype.toLowerCase()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
 [`String.prototype.toUpperCase()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
-[`require('node:buffer').transcode()`]: (/api/buffer#buffertranscodesource-fromenc-toenc)
-[`require('node:util').TextDecoder`]: (/api/util#class-utiltextdecoder)
+[`require('node:buffer').transcode()`]: /api/v18/buffer#buffertranscodesource-fromenc-toenc
+[`require('node:util').TextDecoder`]: /api/v18/util#class-utiltextdecoder
 [btest402]: https://github.com/srl295/btest402
 [full-icu]: https://www.npmjs.com/package/full-icu
 [internationalized domain names]: https://en.wikipedia.org/wiki/Internationalized_domain_name

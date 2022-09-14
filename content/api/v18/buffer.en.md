@@ -4631,9 +4631,9 @@ introducing security vulnerabilities into an application.
 [`Buffer.from(string)`]: #static-method-bufferfromstring-encoding
 [`Buffer.poolSize`]: #class-property-bufferpoolsize
 [`DataView`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView
-[`ERR_INVALID_ARG_VALUE`]: (/api/errors#err_invalid_arg_value)
-[`ERR_INVALID_BUFFER_SIZE`]: (/api/errors#err_invalid_buffer_size)
-[`ERR_OUT_OF_RANGE`]: (/api/errors#err_out_of_range)
+[`ERR_INVALID_ARG_VALUE`]: /api/v18/errors#err_invalid_arg_value
+[`ERR_INVALID_BUFFER_SIZE`]: /api/v18/errors#err_invalid_buffer_size
+[`ERR_OUT_OF_RANGE`]: /api/v18/errors#err_out_of_range
 [`JSON.stringify()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
 [`SharedArrayBuffer`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer
 [`String.prototype.indexOf()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
@@ -4659,7 +4659,7 @@ introducing security vulnerabilities into an application.
 [`buffer.constants.MAX_LENGTH`]: #bufferconstantsmax_length
 [`buffer.constants.MAX_STRING_LENGTH`]: #bufferconstantsmax_string_length
 [`buffer.kMaxLength`]: #bufferkmaxlength
-[`util.inspect()`]: (/api/util#utilinspectobject-options)
+[`util.inspect()`]: /api/v18/util#utilinspectobject-options
 [`v8::TypedArray::kMaxLength`]: https://v8.github.io/api/head/classv8_1_1TypedArray.html#a54a48f4373da0850663c4393d843b9b0
 [base64url]: https://tools.ietf.org/html/rfc4648#section-5
 [binary strings]: https://developer.mozilla.org/en-US/docs/Web/API/DOMString/Binary

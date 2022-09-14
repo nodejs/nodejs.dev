@@ -47,8 +47,6 @@ calling `require('node:crypto')` will result in an error being thrown.
 
 When using CommonJS, the error thrown can be caught using try/catch:
 
-
-
 ```cjs
 let crypto;
 try {
@@ -2041,16 +2039,12 @@ console.log(verify.verify(publicKey, signature));
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35093","description":"The privateKey can also be an ArrayBuffer and CryptoKey."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/29292","description":"This function now supports IEEE-P1363 DSA and ECDSA signatures."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26960","description":"This function now supports RSA-PSS keys."},{"version":"v11.6.0","pr-url":"https://github.com/nodejs/node/pull/24234","description":"This function now supports key objects."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11705","description":"Support for RSASSA-PSS and additional options was added."}],"update":{"type":"added","version":["v0.1.92"]}}} />
 
-
-
 * `privateKey` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`KeyObject`](/api/crypto#keyobject) | [`CryptoKey`](/api/webcrypto#cryptokey)
   * `dsaEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `padding` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
   * `saltLength` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `outputEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
 * Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-
-
 
 Calculates the signature on all the data passed through using either
 [`sign.update()`][] or [`sign.write()`][stream-writable-write].
@@ -2137,8 +2131,6 @@ This can be called many times with new data as it is streamed.
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35093","description":"The object can also be an ArrayBuffer and CryptoKey."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/29292","description":"This function now supports IEEE-P1363 DSA and ECDSA signatures."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26960","description":"This function now supports RSA-PSS keys."},{"version":"v11.7.0","pr-url":"https://github.com/nodejs/node/pull/25217","description":"The key can now be a private key."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11705","description":"Support for RSASSA-PSS and additional options was added."}],"update":{"type":"added","version":["v0.1.92"]}}} />
 
-
-
 * `object` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`KeyObject`](/api/crypto#keyobject) | [`CryptoKey`](/api/webcrypto#cryptokey)
   * `dsaEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `padding` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -2147,8 +2139,6 @@ This can be called many times with new data as it is streamed.
 * `signatureEncoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the `signature` string.
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` or `false` depending on the validity of the
   signature for the data and public key.
-
-
 
 Verifies the provided data using the given `object` and `signature`.
 
@@ -2956,8 +2946,6 @@ input.on('readable', () => {
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v15.12.0","pr-url":"https://github.com/nodejs/node/pull/37254","description":"The key can also be a JWK object."},{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35093","description":"The key can also be an ArrayBuffer. The encoding option was added. The key cannot contain more than 2 ** 32 - 1 bytes."}],"update":{"type":"added","version":["v11.6.0"]}}} />
 
-
-
 * `key` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
   * `key`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The key
     material, either in PEM, DER, or JWK format.
@@ -2968,8 +2956,6 @@ input.on('readable', () => {
   * `passphrase`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) The passphrase to use for decryption.
   * `encoding`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The string encoding to use when `key` is a string.
 * Returns: [`KeyObject`](/api/crypto#keyobject)
-
-
 
 Creates and returns a new key object containing a private key. If `key` is a
 string or `Buffer`, `format` is assumed to be `'pem'`; otherwise, `key`
@@ -2982,8 +2968,6 @@ of the passphrase is limited to 1024 bytes.
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v15.12.0","pr-url":"https://github.com/nodejs/node/pull/37254","description":"The key can also be a JWK object."},{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35093","description":"The key can also be an ArrayBuffer. The encoding option was added. The key cannot contain more than 2 ** 32 - 1 bytes."},{"version":"v11.13.0","pr-url":"https://github.com/nodejs/node/pull/26278","description":"The `key` argument can now be a `KeyObject` with type `private`."},{"version":"v11.7.0","pr-url":"https://github.com/nodejs/node/pull/25217","description":"The `key` argument can now be a private key."}],"update":{"type":"added","version":["v11.6.0"]}}} />
 
-
-
 * `key` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
   * `key`: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The key
     material, either in PEM, DER, or JWK format.
@@ -2993,8 +2977,6 @@ of the passphrase is limited to 1024 bytes.
     required only if the `format` is `'der'` and ignored otherwise.
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The string encoding to use when `key` is a string.
 * Returns: [`KeyObject`](/api/crypto#keyobject)
-
-
 
 Creates and returns a new key object containing a public key. If `key` is a
 string or `Buffer`, `format` is assumed to be `'pem'`; if `key` is a `KeyObject`
@@ -3834,8 +3816,6 @@ An array of supported digest functions can be retrieved using
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35093","description":"Added string, ArrayBuffer, and CryptoKey as allowable key types. The oaepLabel can be an ArrayBuffer. The buffer can be a string or ArrayBuffer. All types that accept buffers are limited to a maximum of 2 ** 31 - 1 bytes."},{"version":"v12.11.0","pr-url":"https://github.com/nodejs/node/pull/29489","description":"The `oaepLabel` option was added."},{"version":"v12.9.0","pr-url":"https://github.com/nodejs/node/pull/28335","description":"The `oaepHash` option was added."},{"version":"v11.6.0","pr-url":"https://github.com/nodejs/node/pull/24234","description":"This function now supports key objects."}],"update":{"type":"added","version":["v0.11.14"]}}} />
 
-
-
 * `privateKey` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`KeyObject`](/api/crypto#keyobject) | [`CryptoKey`](/api/webcrypto#cryptokey)
   * `oaepHash` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The hash function to use for OAEP padding and MGF1.
     **Default:** `'sha1'`
@@ -3848,8 +3828,6 @@ An array of supported digest functions can be retrieved using
 * `buffer` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * Returns: [`Buffer`](/api/buffer#buffer) A new `Buffer` with the decrypted content.
 
-
-
 Decrypts `buffer` with `privateKey`. `buffer` was previously encrypted using
 the corresponding public key, for example using [`crypto.publicEncrypt()`][].
 
@@ -3861,8 +3839,6 @@ object, the `padding` property can be passed. Otherwise, this function uses
 #### <DataTag tag="M" /> `crypto.privateEncrypt(privateKey, buffer)`
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35093","description":"Added string, ArrayBuffer, and CryptoKey as allowable key types. The passphrase can be an ArrayBuffer. The buffer can be a string or ArrayBuffer. All types that accept buffers are limited to a maximum of 2 ** 31 - 1 bytes."},{"version":"v11.6.0","pr-url":"https://github.com/nodejs/node/pull/24234","description":"This function now supports key objects."}],"update":{"type":"added","version":["v1.1.0"]}}} />
-
-
 
 * `privateKey` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`KeyObject`](/api/crypto#keyobject) | [`CryptoKey`](/api/webcrypto#cryptokey)
   * `key` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`KeyObject`](/api/crypto#keyobject) | [`CryptoKey`](/api/webcrypto#cryptokey)
@@ -3877,8 +3853,6 @@ object, the `padding` property can be passed. Otherwise, this function uses
 * `buffer` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * Returns: [`Buffer`](/api/buffer#buffer) A new `Buffer` with the encrypted content.
 
-
-
 Encrypts `buffer` with `privateKey`. The returned data can be decrypted using
 the corresponding public key, for example using [`crypto.publicDecrypt()`][].
 
@@ -3891,8 +3865,6 @@ object, the `padding` property can be passed. Otherwise, this function uses
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35093","description":"Added string, ArrayBuffer, and CryptoKey as allowable key types. The passphrase can be an ArrayBuffer. The buffer can be a string or ArrayBuffer. All types that accept buffers are limited to a maximum of 2 ** 31 - 1 bytes."},{"version":"v11.6.0","pr-url":"https://github.com/nodejs/node/pull/24234","description":"This function now supports key objects."}],"update":{"type":"added","version":["v1.1.0"]}}} />
 
-
-
 * `key` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`KeyObject`](/api/crypto#keyobject) | [`CryptoKey`](/api/webcrypto#cryptokey)
   * `passphrase` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) An optional
     passphrase for the private key.
@@ -3903,8 +3875,6 @@ object, the `padding` property can be passed. Otherwise, this function uses
     or `passphrase` are strings.
 * `buffer` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * Returns: [`Buffer`](/api/buffer#buffer) A new `Buffer` with the decrypted content.
-
-
 
 Decrypts `buffer` with `key`.`buffer` was previously encrypted using
 the corresponding private key, for example using [`crypto.privateEncrypt()`][].
@@ -3920,8 +3890,6 @@ be passed instead of a public key.
 #### <DataTag tag="M" /> `crypto.publicEncrypt(key, buffer)`
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35093","description":"Added string, ArrayBuffer, and CryptoKey as allowable key types. The oaepLabel and passphrase can be ArrayBuffers. The buffer can be a string or ArrayBuffer. All types that accept buffers are limited to a maximum of 2 ** 31 - 1 bytes."},{"version":"v12.11.0","pr-url":"https://github.com/nodejs/node/pull/29489","description":"The `oaepLabel` option was added."},{"version":"v12.9.0","pr-url":"https://github.com/nodejs/node/pull/28335","description":"The `oaepHash` option was added."},{"version":"v11.6.0","pr-url":"https://github.com/nodejs/node/pull/24234","description":"This function now supports key objects."}],"update":{"type":"added","version":["v0.11.14"]}}} />
-
-
 
 * `key` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`KeyObject`](/api/crypto#keyobject) | [`CryptoKey`](/api/webcrypto#cryptokey)
   * `key` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`KeyObject`](/api/crypto#keyobject) | [`CryptoKey`](/api/webcrypto#cryptokey)
@@ -3940,8 +3908,6 @@ be passed instead of a public key.
     `oaepLabel`, or `passphrase` are strings.
 * `buffer` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * Returns: [`Buffer`](/api/buffer#buffer) A new `Buffer` with the encrypted content.
-
-
 
 Encrypts the content of `buffer` with `key` and returns a new
 [`Buffer`][] with encrypted content. The returned data can be decrypted using
@@ -4536,8 +4502,6 @@ Throws an error if FIPS mode is not available.
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v15.12.0","pr-url":"https://github.com/nodejs/node/pull/37500","description":"Optional callback argument added."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/29292","description":"This function now supports IEEE-P1363 DSA and ECDSA signatures."}],"update":{"type":"added","version":["v12.0.0"]}}} />
 
-
-
 * `algorithm` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 * `data` [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `key` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`KeyObject`](/api/crypto#keyobject) | [`CryptoKey`](/api/webcrypto#cryptokey)
@@ -4545,8 +4509,6 @@ Throws an error if FIPS mode is not available.
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
   * `signature` [`Buffer`](/api/buffer#buffer)
 * Returns: [`Buffer`](/api/buffer#buffer) if the `callback` function is not provided.
-
-
 
 Calculates and returns the signature for `data` using the given private key and
 algorithm. If `algorithm` is `null` or `undefined`, then the algorithm is
@@ -4622,8 +4584,6 @@ not introduce timing vulnerabilities.
 
 <Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v15.12.0","pr-url":"https://github.com/nodejs/node/pull/37500","description":"Optional callback argument added."},{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35093","description":"The data, key, and signature arguments can also be ArrayBuffer."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/29292","description":"This function now supports IEEE-P1363 DSA and ECDSA signatures."}],"update":{"type":"added","version":["v12.0.0"]}}} />
 
-
-
 * `algorithm` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 * `data` [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `key` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`KeyObject`](/api/crypto#keyobject) | [`CryptoKey`](/api/webcrypto#cryptokey)
@@ -4634,8 +4594,6 @@ not introduce timing vulnerabilities.
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` or `false` depending on the validity of the
   signature for the data and public key if the `callback` function is not
   provided.
-
-
 
 Verifies the given signature for `data` using the given key and algorithm. If
 `algorithm` is `null` or `undefined`, then the algorithm is dependent upon the
@@ -5241,14 +5199,14 @@ See the [list of SSL OP Flags][] for details.
 [RFC 4122]: https://www.rfc-editor.org/rfc/rfc4122.txt
 [RFC 5208]: https://www.rfc-editor.org/rfc/rfc5208.txt
 [RFC 5280]: https://www.rfc-editor.org/rfc/rfc5280.txt
-[Web Crypto API documentation]: (/api/webcrypto)
+[Web Crypto API documentation]: /api/v18/webcrypto
 [`BN_is_prime_ex`]: https://www.openssl.org/docs/man1.1.1/man3/BN_is_prime_ex.html
-[`Buffer`]: (/api/buffer)
+[`Buffer`]: /api/v18/buffer
 [`EVP_BytesToKey`]: https://www.openssl.org/docs/man1.1.0/crypto/EVP_BytesToKey.html
 [`KeyObject`]: #class-keyobject
 [`Sign`]: #class-sign
 [`String.prototype.normalize()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize
-[`UV_THREADPOOL_SIZE`]: (/api/cli#uv_threadpool_sizesize)
+[`UV_THREADPOOL_SIZE`]: /api/v18/cli#uv_threadpool_sizesize
 [`Verify`]: #class-verify
 [`cipher.final()`]: #cipherfinaloutputencoding
 [`cipher.update()`]: #cipherupdatedata-inputencoding-outputencoding
@@ -5275,8 +5233,8 @@ See the [list of SSL OP Flags][] for details.
 [`crypto.randomBytes()`]: #cryptorandombytessize-callback
 [`crypto.randomFill()`]: #cryptorandomfillbuffer-offset-size-callback
 [`crypto.scrypt()`]: #cryptoscryptpassword-salt-keylen-options-callback
-[`crypto.webcrypto.getRandomValues()`]: (/api/webcrypto#cryptogetrandomvaluestypedarray)
-[`crypto.webcrypto.subtle`]: (/api/webcrypto#class-subtlecrypto)
+[`crypto.webcrypto.getRandomValues()`]: /api/v18/webcrypto#cryptogetrandomvaluestypedarray
+[`crypto.webcrypto.subtle`]: /api/v18/webcrypto#class-subtlecrypto
 [`decipher.final()`]: #decipherfinaloutputencoding
 [`decipher.update()`]: #decipherupdatedata-inputencoding-outputencoding
 [`diffieHellman.setPublicKey()`]: #diffiehellmansetpublickeypublickey-encoding
@@ -5291,20 +5249,20 @@ See the [list of SSL OP Flags][] for details.
 [`postMessage()`]: worker_threads.md#portpostmessagevalue-transferlist
 [`sign.sign()`]: #signsignprivatekey-outputencoding
 [`sign.update()`]: #signupdatedata-inputencoding
-[`stream.Writable` options]: (/api/stream#new-streamwritableoptions)
-[`stream.transform` options]: (/api/stream#new-streamtransformoptions)
-[`util.promisify()`]: (/api/util#utilpromisifyoriginal)
+[`stream.Writable` options]: /api/v18/stream#new-streamwritableoptions
+[`stream.transform` options]: /api/v18/stream#new-streamtransformoptions
+[`util.promisify()`]: /api/v18/util#utilpromisifyoriginal
 [`verify.update()`]: #verifyupdatedata-inputencoding
 [`verify.verify()`]: #verifyverifyobject-signature-signatureencoding
 [`x509.fingerprint256`]: #x509fingerprint256
 [caveats when using strings as inputs to cryptographic APIs]: #using-strings-as-inputs-to-cryptographic-apis
-[certificate object]: (/api/tls#certificate-object)
-[encoding]: (/api/buffer#buffers-and-character-encodings)
+[certificate object]: /api/v18/tls#certificate-object
+[encoding]: /api/v18/buffer#buffers-and-character-encodings
 [initialization vector]: https://en.wikipedia.org/wiki/Initialization_vector
-[legacy provider]: (/api/cli#--openssl-legacy-provider)
+[legacy provider]: /api/v18/cli#--openssl-legacy-provider
 [list of SSL OP Flags]: https://wiki.openssl.org/index.php/List_of_SSL_OP_Flags#Table_of_Options
 [modulo bias]: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#Modulo_bias
 [safe integers]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger
 [scrypt]: https://en.wikipedia.org/wiki/Scrypt
-[stream]: (/api/stream)
-[stream-writable-write]: (/api/stream#writablewritechunk-encoding-callback)
+[stream]: /api/v18/stream
+[stream-writable-write]: /api/v18/stream#writablewritechunk-encoding-callback

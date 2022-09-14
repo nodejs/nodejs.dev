@@ -21,8 +21,6 @@ user is able to stream data.
 
 HTTP message headers are represented by an object like this:
 
-
-
 ```js
 { 'content-length': '123',
   'content-type': 'text/plain',
@@ -44,8 +42,6 @@ The raw headers as they were received are retained in the `rawHeaders`
 property, which is an array of `[key, value, key2, value2, ...]`. For
 example, the previous message header object might have a `rawHeaders`
 list like the following:
-
-
 
 ```js
 [ 'ConTent-Length', '123456',
@@ -3056,19 +3052,19 @@ Set the maximum number of idle HTTP parsers. **Default:** `1000`.
 [`'request'`]: #event-request
 [`'response'`]: #event-response
 [`'upgrade'`]: #event-upgrade
-[`--insecure-http-parser`]: (/api/cli#--insecure-http-parser)
-[`--max-http-header-size`]: (/api/cli#--max-http-header-sizesize)
+[`--insecure-http-parser`]: /api/v18/cli#--insecure-http-parser
+[`--max-http-header-size`]: /api/v18/cli#--max-http-header-sizesize
 [`Agent`]: #class-httpagent
-[`Buffer.byteLength()`]: (/api/buffer#static-method-bufferbytelengthstring-encoding)
-[`Duplex`]: (/api/stream#class-streamduplex)
-[`HPE_HEADER_OVERFLOW`]: (/api/errors#hpe_header_overflow)
-[`TypeError`]: (/api/errors#class-typeerror)
-[`URL`]: (/api/url#the-whatwg-url-api)
+[`Buffer.byteLength()`]: /api/v18/buffer#static-method-bufferbytelengthstring-encoding
+[`Duplex`]: /api/v18/stream#class-streamduplex
+[`HPE_HEADER_OVERFLOW`]: /api/v18/errors#hpe_header_overflow
+[`TypeError`]: /api/v18/errors#class-typeerror
+[`URL`]: /api/v18/url#the-whatwg-url-api
 [`agent.createConnection()`]: #agentcreateconnectionoptions-callback
 [`agent.getName()`]: #agentgetnameoptions
 [`destroy()`]: #agentdestroy
-[`dns.lookup()`]: (/api/dns#dnslookuphostname-options-callback)
-[`dns.lookup()` hints]: (/api/dns#supported-getaddrinfo-flags)
+[`dns.lookup()`]: /api/v18/dns#dnslookuphostname-options-callback
+[`dns.lookup()` hints]: /api/v18/dns#supported-getaddrinfo-flags
 [`getHeader(name)`]: #requestgetheadername
 [`http.Agent`]: #class-httpagent
 [`http.ClientRequest`]: #class-httpclientrequest
@@ -3081,11 +3077,11 @@ Set the maximum number of idle HTTP parsers. **Default:** `1000`.
 [`message.headers`]: #messageheaders
 [`message.socket`]: #messagesocket
 [`message.trailers`]: #messagetrailers
-[`net.Server.close()`]: (/api/net#serverclosecallback)
-[`net.Server`]: (/api/net#class-netserver)
-[`net.Socket`]: (/api/net#class-netsocket)
-[`net.createConnection()`]: (/api/net#netcreateconnectionoptions-connectlistener)
-[`new URL()`]: (/api/url#new-urlinput-base)
+[`net.Server.close()`]: /api/v18/net#serverclosecallback
+[`net.Server`]: /api/v18/net#class-netserver
+[`net.Socket`]: /api/v18/net#class-netsocket
+[`net.createConnection()`]: /api/v18/net#netcreateconnectionoptions-connectlistener
+[`new URL()`]: /api/v18/url#new-urlinput-base
 [`outgoingMessage.setHeader(name, value)`]: #outgoingmessagesetheadername-value
 [`outgoingMessage.socket`]: #outgoingmessagesocket
 [`removeHeader(name)`]: #requestremoveheadername
@@ -3096,7 +3092,7 @@ Set the maximum number of idle HTTP parsers. **Default:** `1000`.
 [`request.getHeader()`]: #requestgetheadername
 [`request.setHeader()`]: #requestsetheadername-value
 [`request.setTimeout()`]: #requestsettimeouttimeout-callback
-[`request.socket.getPeerCertificate()`]: (/api/tls#tlssocketgetpeercertificatedetailed)
+[`request.socket.getPeerCertificate()`]: /api/v18/tls#tlssocketgetpeercertificatedetailed
 [`request.socket`]: #requestsocket
 [`request.writableEnded`]: #requestwritableended
 [`request.writableFinished`]: #requestwritablefinished
@@ -3113,19 +3109,19 @@ Set the maximum number of idle HTTP parsers. **Default:** `1000`.
 [`response.writeHead()`]: #responsewriteheadstatuscode-statusmessage-headers
 [`server.headersTimeout`]: #serverheaderstimeout
 [`server.keepAliveTimeout`]: #serverkeepalivetimeout
-[`server.listen()`]: (/api/net#serverlisten)
+[`server.listen()`]: /api/v18/net#serverlisten
 [`server.requestTimeout`]: #serverrequesttimeout
 [`server.timeout`]: #servertimeout
 [`setHeader(name, value)`]: #requestsetheadername-value
-[`socket.connect()`]: (/api/net#socketconnectoptions-connectlistener)
-[`socket.setKeepAlive()`]: (/api/net#socketsetkeepaliveenable-initialdelay)
-[`socket.setNoDelay()`]: (/api/net#socketsetnodelaynodelay)
-[`socket.setTimeout()`]: (/api/net#socketsettimeouttimeout-callback)
-[`socket.unref()`]: (/api/net#socketunref)
-[`url.parse()`]: (/api/url#urlparseurlstring-parsequerystring-slashesdenotehost)
-[`writable.cork()`]: (/api/stream#writablecork)
-[`writable.destroy()`]: (/api/stream#writabledestroyerror)
-[`writable.destroyed`]: (/api/stream#writabledestroyed)
-[`writable.uncork()`]: (/api/stream#writableuncork)
-[`writable.write()`]: (/api/stream#writablewritechunk-encoding-callback)
-[initial delay]: (/api/net#socketsetkeepaliveenable-initialdelay)
+[`socket.connect()`]: /api/v18/net#socketconnectoptions-connectlistener
+[`socket.setKeepAlive()`]: /api/v18/net#socketsetkeepaliveenable-initialdelay
+[`socket.setNoDelay()`]: /api/v18/net#socketsetnodelaynodelay
+[`socket.setTimeout()`]: /api/v18/net#socketsettimeouttimeout-callback
+[`socket.unref()`]: /api/v18/net#socketunref
+[`url.parse()`]: /api/v18/url#urlparseurlstring-parsequerystring-slashesdenotehost
+[`writable.cork()`]: /api/v18/stream#writablecork
+[`writable.destroy()`]: /api/v18/stream#writabledestroyerror
+[`writable.destroyed`]: /api/v18/stream#writabledestroyed
+[`writable.uncork()`]: /api/v18/stream#writableuncork
+[`writable.write()`]: /api/v18/stream#writablewritechunk-encoding-callback
+[initial delay]: /api/v18/net#socketsetkeepaliveenable-initialdelay

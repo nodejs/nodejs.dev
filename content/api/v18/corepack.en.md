@@ -116,11 +116,11 @@ install. To avoid this problem, consider one of the following options:
 [Corepack documentation]: https://github.com/nodejs/corepack#readme
 [Corepack repository]: https://github.com/nodejs/corepack
 [Yarn]: https://yarnpkg.com
-[`"packageManager"`]: (/api/packages#packagemanager)
+[`"packageManager"`]: /api/v18/packages#packagemanager
 [`corepack disable`]: https://github.com/nodejs/corepack#corepack-disable--name
 [`corepack enable`]: https://github.com/nodejs/corepack#corepack-enable--name
 [`corepack prepare`]: https://github.com/nodejs/corepack#corepack-prepare--nameversion
-[`package.json`]: (/api/packages#nodejs-packagejson-field-definitions)
+[`package.json`]: /api/v18/packages#nodejs-packagejson-field-definitions
 [pnpm]: https://pnpm.js.org
 [supported binaries]: #supported-package-managers
 [supported package manager]: #supported-package-managers

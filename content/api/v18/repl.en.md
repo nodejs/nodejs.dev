@@ -724,18 +724,18 @@ a `net.Server` and `net.Socket` instance, see:
 For an example of running a REPL instance over [`curl(1)`][], see:
 [https://gist.github.com/TooTallNate/2053342](https://gist.github.com/TooTallNate/2053342).
 
-[TTY keybindings]: (/api/readline#tty-keybindings)
+[TTY keybindings]: /api/v18/readline#tty-keybindings
 [ZSH]: https://en.wikipedia.org/wiki/Z_shell
-[`'uncaughtException'`]: (/api/process#event-uncaughtexception)
-[`--no-experimental-repl-await`]: (/api/cli#--no-experimental-repl-await)
-[`ERR_DOMAIN_CANNOT_SET_UNCAUGHT_EXCEPTION_CAPTURE`]: (/api/errors#err_domain_cannot_set_uncaught_exception_capture)
-[`ERR_INVALID_REPL_INPUT`]: (/api/errors#err_invalid_repl_input)
+[`'uncaughtException'`]: /api/v18/process#event-uncaughtexception
+[`--no-experimental-repl-await`]: /api/v18/cli#--no-experimental-repl-await
+[`ERR_DOMAIN_CANNOT_SET_UNCAUGHT_EXCEPTION_CAPTURE`]: /api/v18/errors#err_domain_cannot_set_uncaught_exception_capture
+[`ERR_INVALID_REPL_INPUT`]: /api/v18/errors#err_invalid_repl_input
 [`curl(1)`]: https://curl.haxx.se/docs/manpage.html
-[`domain`]: (/api/domain)
-[`process.setUncaughtExceptionCaptureCallback()`]: (/api/process#processsetuncaughtexceptioncapturecallbackfn)
-[`readline.InterfaceCompleter`]: (/api/readline#use-of-the-completer-function)
+[`domain`]: /api/v18/domain
+[`process.setUncaughtExceptionCaptureCallback()`]: /api/v18/process#processsetuncaughtexceptioncapturecallbackfn
+[`readline.InterfaceCompleter`]: /api/v18/readline#use-of-the-completer-function
 [`repl.ReplServer`]: #class-replserver
 [`repl.start()`]: #replstartoptions
 [`reverse-i-search`]: #reverse-i-search
-[`util.inspect()`]: (/api/util#utilinspectobject-options)
-[stream]: (/api/stream)
+[`util.inspect()`]: /api/v18/util#utilinspectobject-options
+[stream]: /api/v18/stream
