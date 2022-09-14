@@ -37,7 +37,7 @@ const ArticleLayout = ({
         body={body}
         authors={authors}
         editPath={editPath}
-        tableOfContents={tableOfContents}
+        tableOfContents={tableOfContents ? tableOfContents.items : []}
         childrenPosition={childrenPosition}
       >
         {children}

@@ -63,7 +63,7 @@ describe('Article component', () => {
     const { container } = render(
       <Article
         title={title}
-        tableOfContents={tableOfContents}
+        tableOfContents={tableOfContents.items}
         body={body}
         next={next}
         previous={previous}
@@ -93,7 +93,7 @@ describe('Article component', () => {
     const { container } = render(
       <Article
         title={title}
-        tableOfContents={tableOfContents}
+        tableOfContents={tableOfContents.items}
         body={body}
         next={next}
         previous={previous}
@@ -120,7 +120,7 @@ describe('Article component', () => {
     const { container } = render(
       <Article
         title={title}
-        tableOfContents={tableOfContents}
+        tableOfContents={tableOfContents.items}
         body={body}
         next={next}
         previous={previous}
@@ -150,35 +150,33 @@ describe('Article component', () => {
     // mock IntersectionObserver
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    window.IntersectionObserver = jest.fn(callback => {
-      return {
-        unobserve: jest.fn(),
-        observe: jest.fn(() => {
-          callback(
-            [
-              {
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-ignore
-                boundingClientRect: {
-                  y: 100, // title still in view, not scrolled
-                },
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-ignore
-                target: {
-                  previousElementSibling: null,
-                },
+    window.IntersectionObserver = jest.fn(callback => ({
+      unobserve: jest.fn(),
+      observe: jest.fn(() => {
+        callback(
+          [
+            {
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              boundingClientRect: {
+                y: 100, // title still in view, not scrolled
               },
-            ],
-            jest.fn() as unknown as IntersectionObserver
-          );
-        }),
-      };
-    });
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              target: {
+                previousElementSibling: null,
+              },
+            },
+          ],
+          jest.fn() as unknown as IntersectionObserver
+        );
+      }),
+    }));
 
     render(
       <Article
         title={title}
-        tableOfContents={tableOfContents}
+        tableOfContents={tableOfContents.items}
         body={body}
         next={next}
         previous={previous}
@@ -204,7 +202,7 @@ describe('Article component', () => {
     const { container } = render(
       <Article
         title={title}
-        tableOfContents={tableOfContents}
+        tableOfContents={tableOfContents.items}
         body={body}
         next={next}
         previous={previous}

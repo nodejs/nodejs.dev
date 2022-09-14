@@ -2,13 +2,12 @@
 title: 'module'
 displayTitle: '`node:module` API'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.8.0/doc/api/module.md'
 version: 'v18'
 ---
 
-<Metadata version="v18.8.0" data={{"update":{"type":"introduced_in","version":["v12.20.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v12.20.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.3.7"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.7"]}}} />
 
 ### The `Module` object
 
@@ -20,7 +19,7 @@ via `import 'node:module'` or `require('node:module')`.
 
 #### <DataTag tag="M" /> `module.builtinModules`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v9.3.0","v8.10.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.3.0","v8.10.0","v6.13.0"]}}} />
 
 * string\[]
 
@@ -44,7 +43,7 @@ const builtin = require('node:module').builtinModules;
 
 #### <DataTag tag="M" /> `module.createRequire(filename)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v12.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.2.0"]}}} />
 
 * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) Filename to be used to construct the require
   function. Must be a file URL object, file URL string, or absolute path
@@ -61,7 +60,7 @@ const siblingModule = require('./sibling-module');
 
 #### <DataTag tag="M" /> `module.isBuiltin(moduleName)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v18.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.6.0"]}}} />
 
 * `moduleName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) name of the module
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) returns true if the module is builtin else returns false
@@ -75,7 +74,7 @@ isBuiltin('wss'); // false
 
 #### <DataTag tag="M" /> `module.syncBuiltinESMExports()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v12.12.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.12.0"]}}} />
 
 The `module.syncBuiltinESMExports()` method updates all the live bindings for
 builtin [ES Modules][] to match the properties of the [CommonJS][] exports. It
@@ -112,9 +111,9 @@ import('node:fs').then((esmFS) => {
 
 ### Source map v3 support
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v13.7.0","v12.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.7.0","v12.17.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 Helpers for interacting with the source map cache. This cache is
 populated when source map parsing is enabled and
@@ -142,17 +141,18 @@ const { findSourceMap, SourceMap } = require('node:module');
 
 #### <DataTag tag="M" /> `module.findSourceMap(path)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v13.7.0","v12.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.7.0","v12.17.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* Returns: [`module.SourceMap`](/api/module#modulesourcemap)
+* Returns: [`module.SourceMap`](/api/module#modulesourcemap) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) Returns `module.SourceMap` if a source
+  map is found, `undefined` otherwise.
 
 `path` is the resolved path for the file for which a corresponding source map
 should be fetched.
 
 #### <DataTag tag="C" /> `module.SourceMap`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v13.7.0","v12.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.7.0","v12.17.0"]}}} />
 
 ##### <DataTag tag="M" /> `new SourceMap(payload)`
 

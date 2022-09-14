@@ -2,15 +2,14 @@
 title: 'worker_threads'
 displayTitle: 'Worker threads'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.8.0/doc/api/worker_threads.md'
 version: 'v18'
 ---
 
-<Metadata version="v18.8.0" data={{"update":{"type":"introduced_in","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v10.5.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.8.0" data={{"source_link":"lib/worker_threads.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/worker_threads.js"}} />
 
 The `node:worker_threads` module enables the use of threads that execute
 JavaScript in parallel. To access it:
@@ -42,7 +41,7 @@ if (isMainThread) {
       worker.on('error', reject);
       worker.on('exit', (code) => {
         if (code !== 0)
-          reject(new Error(`Worker stopped with exit code $code`));
+          reject(new Error(`Worker stopped with exit code ${code}`));
       });
     });
   };
@@ -69,7 +68,7 @@ specifically `argv` and `execArgv` options.
 
 ### <DataTag tag="M" /> `worker.getEnvironmentData(key)`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v17.5.0","pr-url":"https://github.com/nodejs/node/pull/41272","description":"No longer experimental."}],"update":{"type":"added","version":["v15.12.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v17.5.0","pr-url":"https://github.com/nodejs/node/pull/41272","description":"No longer experimental."}],"update":{"type":"added","version":["v15.12.0","v14.18.0"]}}} />
 
 * `key` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Any arbitrary, cloneable JavaScript value that can be used as a
   [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) key.
@@ -98,7 +97,7 @@ if (isMainThread) {
 
 ### <DataTag tag="M" /> `worker.isMainThread`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -118,7 +117,7 @@ if (isMainThread) {
 
 ### <DataTag tag="M" /> `worker.markAsUntransferable(object)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
 
 Mark an object as not transferable. If `object` occurs in the transfer list of
 a [`port.postMessage()`][] call, it is ignored.
@@ -154,7 +153,7 @@ There is no equivalent to this API in browsers.
 
 ### <DataTag tag="M" /> `worker.moveMessagePortToContext(port, contextifiedSandbox)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v11.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.13.0"]}}} />
 
 * `port` [`MessagePort`](/api/worker_threads#messageport) The message port to transfer.
 
@@ -178,7 +177,7 @@ events using it.
 
 ### <DataTag tag="M" /> `worker.parentPort`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`MessagePort`](/api/worker_threads#messageport)
 
@@ -208,7 +207,7 @@ if (isMainThread) {
 
 ### <DataTag tag="M" /> `worker.receiveMessageOnPort(port)`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v15.12.0","pr-url":"https://github.com/nodejs/node/pull/37535","description":"The port argument can also refer to a `BroadcastChannel` now."}],"update":{"type":"added","version":["v12.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.12.0","pr-url":"https://github.com/nodejs/node/pull/37535","description":"The port argument can also refer to a `BroadcastChannel` now."}],"update":{"type":"added","version":["v12.3.0"]}}} />
 
 * `port` [`MessagePort`](/api/worker_threads#messageport) | [`BroadcastChannel`](/api/worker_threads#broadcastchannel-extends-eventtarget)
 
@@ -235,7 +234,7 @@ When this function is used, no `'message'` event is emitted and the
 
 ### <DataTag tag="M" /> `worker.resourceLimits`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `maxYoungGenerationSizeMb` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -251,7 +250,7 @@ If this is used in the main thread, its value is an empty object.
 
 ### <DataTag tag="M" /> `worker.SHARE_ENV`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v11.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v11.14.0"]}}} />
 
 * [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
 
@@ -269,7 +268,7 @@ new Worker('process.env.SET_IN_WORKER = "foo"', { eval: true, env: SHARE_ENV })
 
 ### <DataTag tag="M" /> `worker.setEnvironmentData(key[, value])`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v17.5.0","pr-url":"https://github.com/nodejs/node/pull/41272","description":"No longer experimental."}],"update":{"type":"added","version":["v15.12.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v17.5.0","pr-url":"https://github.com/nodejs/node/pull/41272","description":"No longer experimental."}],"update":{"type":"added","version":["v15.12.0","v14.18.0"]}}} />
 
 * `key` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Any arbitrary, cloneable JavaScript value that can be used as a
   [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) key.
@@ -283,7 +282,7 @@ instances spawned from the current context.
 
 ### <DataTag tag="M" /> `worker.threadId`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -293,7 +292,7 @@ This value is unique for each [`Worker`][] instance inside a single process.
 
 ### <DataTag tag="M" /> `worker.workerData`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 An arbitrary JavaScript value that contains a clone of the data passed
 to this thread's `Worker` constructor.
@@ -313,7 +312,7 @@ if (isMainThread) {
 
 ### <DataTag tag="C" /> `BroadcastChannel extends EventTarget`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41271","description":"No longer experimental."}],"update":{"type":"added","version":["v15.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41271","description":"No longer experimental."}],"update":{"type":"added","version":["v15.4.0"]}}} />
 
 Instances of `BroadcastChannel` allow asynchronous one-to-many communication
 with all other `BroadcastChannel` instances bound to the same channel name.
@@ -345,40 +344,40 @@ if (isMainThread) {
 
 #### <DataTag tag="M" /> `new BroadcastChannel(name)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
 
 * `name` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The name of the channel to connect to. Any JavaScript value
   that can be converted to a string using `` `$name` `` is permitted.
 
 #### <DataTag tag="M" /> `broadcastChannel.close()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
 
 Closes the `BroadcastChannel` connection.
 
 #### <DataTag tag="M" /> `broadcastChannel.onmessage`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
 
 * Type: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Invoked with a single `MessageEvent` argument
   when a message is received.
 
 #### <DataTag tag="M" /> `broadcastChannel.onmessageerror`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
 
 * Type: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Invoked with a received message cannot be
   deserialized.
 
 #### <DataTag tag="M" /> `broadcastChannel.postMessage(message)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
 
 * `message` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Any cloneable JavaScript value.
 
 #### <DataTag tag="M" /> `broadcastChannel.ref()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
 
 Opposite of `unref()`. Calling `ref()` on a previously `unref()`ed
 BroadcastChannel does _not_ let the program exit if it's the only active handle
@@ -387,7 +386,7 @@ has no effect.
 
 #### <DataTag tag="M" /> `broadcastChannel.unref()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
 
 Calling `unref()` on a BroadcastChannel allows the thread to exit if this
 is the only active handle in the event system. If the BroadcastChannel is
@@ -395,7 +394,7 @@ already `unref()`ed calling `unref()` again has no effect.
 
 ### <DataTag tag="C" /> `MessageChannel`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 Instances of the `worker.MessageChannel` class represent an asynchronous,
 two-way communications channel.
@@ -414,7 +413,7 @@ port2.postMessage({ foo: 'bar' });
 
 ### <DataTag tag="C" /> `MessagePort`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v14.7.0"],"pr-url":"https://github.com/nodejs/node/pull/34057","description":"This class now inherits from `EventTarget` rather than from `EventEmitter`."}],"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v14.7.0"],"pr-url":"https://github.com/nodejs/node/pull/34057","description":"This class now inherits from `EventTarget` rather than from `EventEmitter`."}],"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * Extends: [`EventTarget`](/api/events#eventtarget)
 
@@ -427,7 +426,7 @@ This implementation matches [browser `MessagePort`][]s.
 
 #### <DataTag tag="E" /> `'close'`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 The `'close'` event is emitted once either side of the channel has been
 disconnected.
@@ -448,7 +447,7 @@ port1.close();
 
 #### <DataTag tag="E" /> `'message'`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The transmitted value
 
@@ -460,7 +459,7 @@ to `postMessage()` and no further arguments.
 
 #### <DataTag tag="E" /> `'messageerror'`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) An Error object
 
@@ -474,7 +473,7 @@ unavailable).
 
 #### <DataTag tag="M" /> `port.close()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 Disables further sending of messages on either side of the connection.
 This method can be called when no further communication will happen over this
@@ -485,7 +484,7 @@ are part of the channel.
 
 #### <DataTag tag="M" /> `port.postMessage(value[, transferList])`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v15.14.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37917","description":"Add 'BlockList' to the list of cloneable types."},{"version":["v15.9.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37155","description":"Add 'Histogram' types to the list of cloneable types."},{"version":"v15.6.0","pr-url":"https://github.com/nodejs/node/pull/36804","description":"Added `X509Certificate` to the list of cloneable types."},{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35093","description":"Added `CryptoKey` to the list of cloneable types."},{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/33360","description":"Added `KeyObject` to the list of cloneable types."},{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/33772","description":"Added `FileHandle` to the list of transferable types."}],"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.14.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37917","description":"Add 'BlockList' to the list of cloneable types."},{"version":["v15.9.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37155","description":"Add 'Histogram' types to the list of cloneable types."},{"version":"v15.6.0","pr-url":"https://github.com/nodejs/node/pull/36804","description":"Added `X509Certificate` to the list of cloneable types."},{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35093","description":"Added `CryptoKey` to the list of cloneable types."},{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/33360","description":"Added `KeyObject` to the list of cloneable types."},{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/33772","description":"Added `FileHandle` to the list of transferable types."}],"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `transferList` Object\[]
@@ -510,7 +509,7 @@ In particular, the significant differences to `JSON` are:
   * [`MessagePort`](/api/worker_threads#messageport)s,
   * [`net.BlockList`](/api/net#netblocklist)s,
   * [`net.SocketAddress`](/api/net#netsocketaddress)es,
-  * {X509Certificate}s.
+  * [`X509Certificate`](/api/crypto#x509certificate)s.
 
 ```js
 const { MessageChannel } = require('node:worker_threads');
@@ -660,9 +659,9 @@ port2.postMessage(new URL('https://example.org'));
 
 #### <DataTag tag="M" /> `port.hasRef()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v18.1.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.1.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -670,7 +669,7 @@ If true, the `MessagePort` object will keep the Node.js event loop active.
 
 #### <DataTag tag="M" /> `port.ref()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 Opposite of `unref()`. Calling `ref()` on a previously `unref()`ed port does
 _not_ let the program exit if it's the only active handle left (the default
@@ -682,7 +681,7 @@ listeners for the event exist.
 
 #### <DataTag tag="M" /> `port.start()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 Starts receiving messages on this `MessagePort`. When using this port
 as an event emitter, this is called automatically once `'message'`
@@ -696,7 +695,7 @@ until a new handler is set or the port is discarded.
 
 #### <DataTag tag="M" /> `port.unref()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 Calling `unref()` on a port allows the thread to exit if this is the only
 active handle in the event system. If the port is already `unref()`ed calling
@@ -708,7 +707,7 @@ listeners for the event exist.
 
 ### <DataTag tag="C" /> `Worker`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * Extends: [`EventEmitter`](/api/events#eventemitter)
 
@@ -782,7 +781,7 @@ if (isMainThread) {
 
 #### <DataTag tag="M" /> `new Worker(filename[, options])`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v14.9.0","pr-url":"https://github.com/nodejs/node/pull/34584","description":"The `filename` parameter can be a WHATWG `URL` object using `data:` protocol."},{"version":"v14.9.0","pr-url":"https://github.com/nodejs/node/pull/34394","description":"The `trackUnmanagedFds` option was set to `true` by default."},{"version":["v14.6.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34303","description":"The `trackUnmanagedFds` option was introduced."},{"version":["v13.13.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32278","description":"The `transferList` option was introduced."},{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31664","description":"The `filename` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":["v13.4.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30559","description":"The `argv` option was introduced."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/26628","description":"The `resourceLimits` option was introduced."}],"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v14.9.0","pr-url":"https://github.com/nodejs/node/pull/34584","description":"The `filename` parameter can be a WHATWG `URL` object using `data:` protocol."},{"version":"v14.9.0","pr-url":"https://github.com/nodejs/node/pull/34394","description":"The `trackUnmanagedFds` option was set to `true` by default."},{"version":["v14.6.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34303","description":"The `trackUnmanagedFds` option was introduced."},{"version":["v13.13.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32278","description":"The `transferList` option was introduced."},{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31664","description":"The `filename` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":["v13.4.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30559","description":"The `argv` option was introduced."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/26628","description":"The `resourceLimits` option was introduced."}],"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) The path to the Worker's main script or module. Must
   be either an absolute path or a relative path (i.e. relative to the
@@ -832,14 +831,17 @@ if (isMainThread) {
     are passed in `workerData`, a `transferList` is required for those
     items or [`ERR_MISSING_MESSAGE_PORT_IN_TRANSFER_LIST`][] is thrown.
     See [`port.postMessage()`][] for more information.
-  * `resourceLimits` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An optional set of resource limits for the new
-    JS engine instance. Reaching these limits leads to termination of the
-    `Worker` instance. These limits only affect the JS engine, and no external
-    data, including no `ArrayBuffer`s. Even if these limits are set, the process
-    may still abort if it encounters a global out-of-memory situation.
-    * `maxOldGenerationSizeMb` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The maximum size of the main heap in MB.
+  * `resourceLimits` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An optional set of resource limits for the new JS
+    engine instance. Reaching these limits leads to termination of the `Worker`
+    instance. These limits only affect the JS engine, and no external data,
+    including no `ArrayBuffer`s. Even if these limits are set, the process may
+    still abort if it encounters a global out-of-memory situation.
+    * `maxOldGenerationSizeMb` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The maximum size of the main heap in
+      MB. If the command-line argument [`--max-old-space-size`][] is set, it
+      overrides this setting.
     * `maxYoungGenerationSizeMb` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The maximum size of a heap space for
-      recently created objects.
+      recently created objects. If the command-line argument
+      [`--max-semi-space-size`][] is set, it overrides this setting.
     * `codeRangeSizeMb` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The size of a pre-allocated memory range
       used for generated code.
     * `stackSizeMb` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The default maximum stack size for the thread.
@@ -847,7 +849,7 @@ if (isMainThread) {
 
 #### <DataTag tag="E" /> `'error'`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
@@ -856,7 +858,7 @@ exception. In that case, the worker is terminated.
 
 #### <DataTag tag="E" /> `'exit'`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * `exitCode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -869,7 +871,7 @@ This is the final event emitted by any `Worker` instance.
 
 #### <DataTag tag="E" /> `'message'`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The transmitted value
 
@@ -882,7 +884,7 @@ All messages sent from the worker thread are emitted before the
 
 #### <DataTag tag="E" /> `'messageerror'`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) An Error object
 
@@ -890,14 +892,14 @@ The `'messageerror'` event is emitted when deserializing a message failed.
 
 #### <DataTag tag="E" /> `'online'`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 The `'online'` event is emitted when the worker thread has started executing
 JavaScript code.
 
 #### <DataTag tag="M" /> `worker.getHeapSnapshot()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v13.9.0","v12.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.9.0","v12.17.0"]}}} />
 
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) A promise for a Readable Stream containing
   a V8 heap snapshot
@@ -911,14 +913,14 @@ immediately with an [`ERR_WORKER_NOT_RUNNING`][] error.
 
 #### <DataTag tag="M" /> `worker.performance`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0","v12.22.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0","v12.22.0"]}}} />
 
 An object that can be used to query performance information from a worker
 instance. Similar to [`perf_hooks.performance`][].
 
 ##### <DataTag tag="M" /> `performance.eventLoopUtilization([utilization1[, utilization2]])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0","v12.22.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0","v12.22.0"]}}} />
 
 * `utilization1` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The result of a previous call to
   `eventLoopUtilization()`.
@@ -968,7 +970,7 @@ event][], then all properties have the value of `0`.
 
 #### <DataTag tag="M" /> `worker.postMessage(value[, transferList])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `transferList` Object\[]
@@ -979,7 +981,7 @@ See [`port.postMessage()`][] for more details.
 
 #### <DataTag tag="M" /> `worker.ref()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 Opposite of `unref()`, calling `ref()` on a previously `unref()`ed worker does
 _not_ let the program exit if it's the only active handle left (the default
@@ -988,7 +990,7 @@ no effect.
 
 #### <DataTag tag="M" /> `worker.resourceLimits`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `maxYoungGenerationSizeMb` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -1004,7 +1006,7 @@ If the worker has stopped, the return value is an empty object.
 
 #### <DataTag tag="M" /> `worker.stderr`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * [`stream.Readable`](/api/stream#streamreadable)
 
@@ -1015,7 +1017,7 @@ inside the worker thread. If `stderr: true` was not passed to the
 
 #### <DataTag tag="M" /> `worker.stdin`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`stream.Writable`](/api/stream#streamwritable)
 
@@ -1025,7 +1027,7 @@ the worker thread as [`process.stdin`][].
 
 #### <DataTag tag="M" /> `worker.stdout`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * [`stream.Readable`](/api/stream#streamreadable)
 
@@ -1036,7 +1038,7 @@ inside the worker thread. If `stdout: true` was not passed to the
 
 #### <DataTag tag="M" /> `worker.terminate()`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v12.5.0","pr-url":"https://github.com/nodejs/node/pull/28021","description":"This function now returns a Promise. Passing a callback is deprecated, and was useless up to this version, as the Worker was actually terminated synchronously. Terminating is now a fully asynchronous operation."}],"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v12.5.0","pr-url":"https://github.com/nodejs/node/pull/28021","description":"This function now returns a Promise. Passing a callback is deprecated, and was useless up to this version, as the Worker was actually terminated synchronously. Terminating is now a fully asynchronous operation."}],"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
@@ -1046,7 +1048,7 @@ Returns a Promise for the exit code that is fulfilled when the
 
 #### <DataTag tag="M" /> `worker.threadId`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -1056,7 +1058,7 @@ This value is unique for each `Worker` instance inside a single process.
 
 #### <DataTag tag="M" /> `worker.unref()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
 Calling `unref()` on a worker allows the thread to exit if this is the only
 active handle in the event system. If the worker is already `unref()`ed calling
@@ -1124,6 +1126,8 @@ thread spawned will spawn another until the application crashes.
 [`'close'` event]: #event-close
 [`'exit'` event]: #event-exit
 [`'online'` event]: #event-online
+[`--max-old-space-size`]: (/api/cli#--max-old-space-sizesize-in-megabytes)
+[`--max-semi-space-size`]: (/api/cli#--max-semi-space-sizesize-in-megabytes)
 [`ArrayBuffer`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
 [`AsyncResource`]: async_hooks.md#class-asyncresource
 [`Buffer.allocUnsafe()`]: (/api/buffer#static-method-bufferallocunsafesize)

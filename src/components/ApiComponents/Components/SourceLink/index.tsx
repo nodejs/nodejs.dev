@@ -4,14 +4,16 @@ import { FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
 
 interface Props {
-  sourceName: string;
-  sourceLink: string;
+  link: string;
+  version: string;
 }
 
-const SourceLink = ({ sourceName, sourceLink }: Props) => (
+const SourceLink = ({ version, link }: Props) => (
   <p className={styles.sourceLinkComponent}>
     <FormattedMessage id="docs.api.sourceLink" />{' '}
-    <a href={sourceLink}>{sourceName}</a>
+    <a href={`https://github.com/nodejs/node/blob/${version}/${link}`}>
+      {link}
+    </a>
   </p>
 );
 

@@ -1,6 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TOC component render empty div without a table of contents 1`] = `<div />`;
+exports[`TOC component render empty div without a table of contents 1`] = `
+<div>
+  <details
+    class="tableOfContents"
+  >
+    <summary>
+      <strong>
+        Table of Contents
+      </strong>
+    </summary>
+    <ul />
+  </details>
+</div>
+`;
 
 exports[`TOC component renders correctly 1`] = `
 <div>

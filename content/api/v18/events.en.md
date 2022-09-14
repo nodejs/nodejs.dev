@@ -2,17 +2,16 @@
 title: 'events'
 displayTitle: 'Events'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.8.0/doc/api/events.md'
 version: 'v18'
 ---
 
-<Metadata version="v18.8.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.8.0" data={{"type":"module"}} />
+<Metadata version="v18.9.0" data={{"type":"module"}} />
 
-<Metadata version="v18.8.0" data={{"source_link":"lib/events.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/events.js"}} />
 
 Much of the Node.js core API is built around an idiomatic asynchronous
 event-driven architecture in which certain kinds of objects (called "emitters")
@@ -266,7 +265,7 @@ recommendation is to **not use `async` functions as `'error'` event handlers**.
 
 ### <DataTag tag="C" /> `EventEmitter`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v13.4.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/27867","description":"Added captureRejections option."}],"update":{"type":"added","version":["v0.1.26"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v13.4.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/27867","description":"Added captureRejections option."}],"update":{"type":"added","version":["v0.1.26"]}}} />
 
 The `EventEmitter` class is defined and exposed by the `node:events` module:
 
@@ -289,7 +288,7 @@ It supports the following option:
 
 #### <DataTag tag="E" /> `'newListener'`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.1.26"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.26"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The name of the event being listened for
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The event handler function
@@ -329,7 +328,7 @@ myEmitter.emit('event');
 
 #### <DataTag tag="E" /> `'removeListener'`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v6.1.0","v4.7.0"],"pr-url":"https://github.com/nodejs/node/pull/6394","description":"For listeners attached using `.once()`, the `listener` argument now yields the original listener function."}],"update":{"type":"added","version":["v0.9.3"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v6.1.0","v4.7.0"],"pr-url":"https://github.com/nodejs/node/pull/6394","description":"For listeners attached using `.once()`, the `listener` argument now yields the original listener function."}],"update":{"type":"added","version":["v0.9.3"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The event name
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The event handler function
@@ -338,7 +337,7 @@ The `'removeListener'` event is emitted _after_ the `listener` is removed.
 
 #### <DataTag tag="M" /> `emitter.addListener(eventName, listener)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.1.26"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.26"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -347,7 +346,7 @@ Alias for `emitter.on(eventName, listener)`.
 
 #### <DataTag tag="M" /> `emitter.emit(eventName[, ...args])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.1.26"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.26"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
 * `...args` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -374,7 +373,7 @@ myEmitter.on('event', function secondListener(arg1, arg2) {
 // Third listener
 myEmitter.on('event', function thirdListener(...args) {
   const parameters = args.join(', ');
-  console.log(`event with parameters $parameters in third listener`);
+  console.log(`event with parameters ${parameters} in third listener`);
 });
 
 console.log(myEmitter.listeners('event'));
@@ -407,7 +406,7 @@ myEmitter.on('event', function secondListener(arg1, arg2) {
 // Third listener
 myEmitter.on('event', function thirdListener(...args) {
   const parameters = args.join(', ');
-  console.log(`event with parameters $parameters in third listener`);
+  console.log(`event with parameters ${parameters} in third listener`);
 });
 
 console.log(myEmitter.listeners('event'));
@@ -427,7 +426,7 @@ myEmitter.emit('event', 1, 2, 3, 4, 5);
 
 #### <DataTag tag="M" /> `emitter.eventNames()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
 
 * Returns: [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
@@ -464,7 +463,7 @@ console.log(myEE.eventNames());
 
 #### <DataTag tag="M" /> `emitter.getMaxListeners()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v1.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v1.0.0"]}}} />
 
 * Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -474,7 +473,7 @@ set by [`emitter.setMaxListeners(n)`][] or defaults to
 
 #### <DataTag tag="M" /> `emitter.listenerCount(eventName)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v3.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v3.2.0"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The name of the event being listened for
 * Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -483,7 +482,7 @@ Returns the number of listeners listening to the event named `eventName`.
 
 #### <DataTag tag="M" /> `emitter.listeners(eventName)`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/6881","description":"For listeners attached using `.once()` this returns the original listeners instead of wrapper functions now."}],"update":{"type":"added","version":["v0.1.26"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/6881","description":"For listeners attached using `.once()` this returns the original listeners instead of wrapper functions now."}],"update":{"type":"added","version":["v0.1.26"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
 * Returns: Function\[]
@@ -500,7 +499,7 @@ console.log(util.inspect(server.listeners('connection')));
 
 #### <DataTag tag="M" /> `emitter.off(eventName, listener)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -510,7 +509,7 @@ Alias for [`emitter.removeListener()`][].
 
 #### <DataTag tag="M" /> `emitter.on(eventName, listener)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.1.101"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.101"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The name of the event.
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The callback function
@@ -546,7 +545,7 @@ myEE.emit('foo');
 
 #### <DataTag tag="M" /> `emitter.once(eventName, listener)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The name of the event.
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The callback function
@@ -579,7 +578,7 @@ myEE.emit('foo');
 
 #### <DataTag tag="M" /> `emitter.prependListener(eventName, listener)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The name of the event.
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The callback function
@@ -601,7 +600,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### <DataTag tag="M" /> `emitter.prependOnceListener(eventName, listener)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The name of the event.
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The callback function
@@ -621,7 +620,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### <DataTag tag="M" /> `emitter.removeAllListeners([eventName])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.1.26"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.26"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
 * Returns: [`EventEmitter`](/api/events#eventemitter)
@@ -636,7 +635,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### <DataTag tag="M" /> `emitter.removeListener(eventName, listener)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.1.26"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.1.26"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -725,7 +724,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### <DataTag tag="M" /> `emitter.setMaxListeners(n)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.3.5"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.3.5"]}}} />
 
 * `n` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * Returns: [`EventEmitter`](/api/events#eventemitter)
@@ -740,7 +739,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 #### <DataTag tag="M" /> `emitter.rawListeners(eventName)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
 * Returns: Function\[]
@@ -774,7 +773,7 @@ emitter.emit('log');
 
 #### <DataTag tag="M" /> `emitter[Symbol.for('nodejs.rejection')](err, eventName[, ...args])`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v17.4.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41267","description":"No longer experimental."}],"update":{"type":"added","version":["v13.4.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v17.4.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41267","description":"No longer experimental."}],"update":{"type":"added","version":["v13.4.0","v12.16.0"]}}} />
 
 * `err` Error
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
@@ -826,7 +825,7 @@ class MyClass extends EventEmitter {
 
 ### <DataTag tag="M" /> `events.defaultMaxListeners`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v0.11.2"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v0.11.2"]}}} />
 
 By default, a maximum of `10` listeners can be registered for any single
 event. This limit can be changed for individual `EventEmitter` instances
@@ -865,7 +864,7 @@ Its `name` property is set to `'MaxListenersExceededWarning'`.
 
 ### <DataTag tag="M" /> `events.errorMonitor`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v13.6.0","v12.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.6.0","v12.17.0"]}}} />
 
 This symbol shall be used to install a listener for only monitoring `'error'`
 events. Listeners installed using this symbol are called before the regular
@@ -877,7 +876,7 @@ regular `'error'` listener is installed.
 
 ### <DataTag tag="M" /> `events.getEventListeners(emitterOrTarget, eventName)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v15.2.0","v14.17.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.2.0","v14.17.0"]}}} />
 
 * `emitterOrTarget` [`EventEmitter`](/api/events#eventemitter) | [`EventTarget`](/api/events#eventtarget)
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
@@ -927,7 +926,7 @@ const { getEventListeners, EventEmitter } = require('node:events');
 
 ### <DataTag tag="M" /> `events.once(emitter, name[, options])`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34912","description":"The `signal` option is supported now."}],"update":{"type":"added","version":["v11.13.0","v10.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34912","description":"The `signal` option is supported now."}],"update":{"type":"added","version":["v11.13.0","v10.16.0"]}}} />
 
 * `emitter` [`EventEmitter`](/api/events#eventemitter)
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -1179,7 +1178,7 @@ foo().then(() => console.log('done'));
 
 ### <DataTag tag="M" /> `events.captureRejections`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v17.4.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41267","description":"No longer experimental."}],"update":{"type":"added","version":["v13.4.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v17.4.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41267","description":"No longer experimental."}],"update":{"type":"added","version":["v13.4.0","v12.16.0"]}}} />
 
 Value: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1187,7 +1186,7 @@ Change the default `captureRejections` option on all new `EventEmitter` objects.
 
 ### <DataTag tag="M" /> `events.captureRejectionSymbol`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v17.4.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41267","description":"No longer experimental."}],"update":{"type":"added","version":["v13.4.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v17.4.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41267","description":"No longer experimental."}],"update":{"type":"added","version":["v13.4.0","v12.16.0"]}}} />
 
 Value: `Symbol.for('nodejs.rejection')`
 
@@ -1195,9 +1194,9 @@ See how to write a custom [rejection handler][rejection].
 
 ### <DataTag tag="M" /> `events.listenerCount(emitter, eventName)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"deprecated","version":["v3.2.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"deprecated","version":["v3.2.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`emitter.listenerCount()`][] instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `emitter.listenerCount()` instead."}}} />
 
 * `emitter` [`EventEmitter`](/api/events#eventemitter) The emitter to query
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The event name
@@ -1227,7 +1226,7 @@ console.log(listenerCount(myEmitter, 'event'));
 
 ### <DataTag tag="M" /> `events.on(emitter, eventName[, options])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v13.6.0","v12.16.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v13.6.0","v12.16.0"]}}} />
 
 * `emitter` [`EventEmitter`](/api/events#eventemitter)
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The name of the event being listened for
@@ -1340,7 +1339,7 @@ process.nextTick(() => ac.abort());
 
 ### <DataTag tag="M" /> `events.setMaxListeners(n[, ...eventTargets])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
 
 * `n` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A non-negative number. The maximum number of listeners per
   `EventTarget` event.
@@ -1371,16 +1370,16 @@ setMaxListeners(5, target, emitter);
 
 ### <DataTag tag="C" /> `events.EventEmitterAsyncResource extends EventEmitter`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
 
 Integrates `EventEmitter` with [`AsyncResource`](/api/async_hooks#asyncresource) for `EventEmitter`s that
 require manual async tracking. Specifically, all events emitted by instances
 of `events.EventEmitterAsyncResource` will run within its [async context][].
 
 ```mjs
-import { EventEmitterAsyncResource } from 'node:events';
+import { EventEmitterAsyncResource, EventEmitter } from 'node:events';
 import { notStrictEqual, strictEqual } from 'node:assert';
-import { executionAsyncId } from 'node:async_hooks';
+import { executionAsyncId, triggerAsyncId } from 'node:async_hooks';
 
 // Async tracking tooling will identify this as 'Q'.
 const ee1 = new EventEmitterAsyncResource({ name: 'Q' });
@@ -1407,9 +1406,9 @@ Promise.resolve().then(() => {
 ```
 
 ```cjs
-const { EventEmitterAsyncResource } = require('node:events');
+const { EventEmitterAsyncResource, EventEmitter } = require('node:events');
 const { notStrictEqual, strictEqual } = require('node:assert');
-const { executionAsyncId } = require('node:async_hooks');
+const { executionAsyncId, triggerAsyncId } = require('node:async_hooks');
 
 // Async tracking tooling will identify this as 'Q'.
 const ee1 = new EventEmitterAsyncResource({ name: 'Q' });
@@ -1483,7 +1482,7 @@ never be called.
 
 ### <DataTag tag="M" /> `EventTarget` and `Event` API
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37237","description":"changed EventTarget error handling."},{"version":"v15.4.0","pr-url":"https://github.com/nodejs/node/pull/35949","description":"No longer experimental."},{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35496","description":"The `EventTarget` and `Event` classes are now available as globals."}],"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37237","description":"changed EventTarget error handling."},{"version":"v15.4.0","pr-url":"https://github.com/nodejs/node/pull/35949","description":"No longer experimental."},{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35496","description":"The `EventTarget` and `Event` classes are now available as globals."}],"update":{"type":"added","version":["v14.5.0"]}}} />
 
 The `EventTarget` and `Event` objects are a Node.js-specific implementation
 of the [`EventTarget` Web API][] that are exposed by some Node.js core APIs.
@@ -1604,14 +1603,14 @@ be aligned with the new behavior.
 
 #### <DataTag tag="C" /> `Event`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35496","description":"The `Event` class is now available through the global object."}],"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35496","description":"The `Event` class is now available through the global object."}],"update":{"type":"added","version":["v14.5.0"]}}} />
 
 The `Event` object is an adaptation of the [`Event` Web API][]. Instances
 are created internally by Node.js.
 
 ##### <DataTag tag="M" /> `event.bubbles`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Always returns `false`.
 
@@ -1619,20 +1618,20 @@ This is not used in Node.js and is provided purely for completeness.
 
 ##### <DataTag tag="M" /> `event.cancelBubble()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 Alias for `event.stopPropagation()`. This is not used in Node.js and is
 provided purely for completeness.
 
 ##### <DataTag tag="M" /> `event.cancelable`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) True if the event was created with the `cancelable` option.
 
 ##### <DataTag tag="M" /> `event.composed`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Always returns `false`.
 
@@ -1640,7 +1639,7 @@ This is not used in Node.js and is provided purely for completeness.
 
 ##### <DataTag tag="M" /> `event.composedPath()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 Returns an array containing the current `EventTarget` as the only entry or
 empty if the event is not being dispatched. This is not used in
@@ -1648,7 +1647,7 @@ Node.js and is provided purely for completeness.
 
 ##### <DataTag tag="M" /> `event.currentTarget`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * Type: [`EventTarget`](/api/events#eventtarget) The `EventTarget` dispatching the event.
 
@@ -1656,7 +1655,7 @@ Alias for `event.target`.
 
 ##### <DataTag tag="M" /> `event.defaultPrevented`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1665,7 +1664,7 @@ called.
 
 ##### <DataTag tag="M" /> `event.eventPhase`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Returns `0` while an event is not being dispatched, `2` while
   it is being dispatched.
@@ -1674,7 +1673,7 @@ This is not used in Node.js and is provided purely for completeness.
 
 ##### <DataTag tag="M" /> `event.isTrusted`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1683,13 +1682,13 @@ value is `false` in all other cases.
 
 ##### <DataTag tag="M" /> `event.preventDefault()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 Sets the `defaultPrevented` property to `true` if `cancelable` is `true`.
 
 ##### <DataTag tag="M" /> `event.returnValue`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) True if the event has not been canceled.
 
@@ -1697,7 +1696,7 @@ This is not used in Node.js and is provided purely for completeness.
 
 ##### <DataTag tag="M" /> `event.srcElement`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * Type: [`EventTarget`](/api/events#eventtarget) The `EventTarget` dispatching the event.
 
@@ -1705,25 +1704,25 @@ Alias for `event.target`.
 
 ##### <DataTag tag="M" /> `event.stopImmediatePropagation()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 Stops the invocation of event listeners after the current one completes.
 
 ##### <DataTag tag="M" /> `event.stopPropagation()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 This is not used in Node.js and is provided purely for completeness.
 
 ##### <DataTag tag="M" /> `event.target`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * Type: [`EventTarget`](/api/events#eventtarget) The `EventTarget` dispatching the event.
 
 ##### <DataTag tag="M" /> `event.timeStamp`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -1731,7 +1730,7 @@ The millisecond timestamp when the `Event` object was created.
 
 ##### <DataTag tag="M" /> `event.type`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1739,11 +1738,11 @@ The event type identifier.
 
 #### <DataTag tag="C" /> `EventTarget`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35496","description":"The `EventTarget` class is now available through the global object."}],"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35496","description":"The `EventTarget` class is now available through the global object."}],"update":{"type":"added","version":["v14.5.0"]}}} />
 
 ##### <DataTag tag="M" /> `eventTarget.addEventListener(type, listener[, options])`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v15.4.0","pr-url":"https://github.com/nodejs/node/pull/36258","description":"add support for `signal` option."}],"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.4.0","pr-url":"https://github.com/nodejs/node/pull/36258","description":"add support for `signal` option."}],"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/events#listener)
@@ -1786,7 +1785,7 @@ target.removeEventListener('foo', handler, { capture: true });
 
 ##### <DataTag tag="M" /> `eventTarget.dispatchEvent(event)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * `event` [`Event`](/api/events#event)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` if either event's `cancelable` attribute value is
@@ -1799,7 +1798,7 @@ were registered.
 
 ##### <DataTag tag="M" /> `eventTarget.removeEventListener(type, listener)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/events#listener)
@@ -1810,9 +1809,9 @@ Removes the `listener` from the list of handlers for event `type`.
 
 #### <DataTag tag="C" /> `CustomEvent`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v18.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.7.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 * Extends: [`Event`](/api/events#event)
 
@@ -1821,9 +1820,9 @@ Instances are created internally by Node.js.
 
 ##### <DataTag tag="M" /> `event.detail`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v18.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v18.7.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental."}}} />
 
 * Type: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Returns custom data passed when initializing.
 
@@ -1831,7 +1830,7 @@ Read-only.
 
 #### <DataTag tag="C" /> `NodeEventTarget`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * Extends: [`EventTarget`](/api/events#eventtarget)
 
@@ -1840,7 +1839,7 @@ that emulates a subset of the `EventEmitter` API.
 
 ##### <DataTag tag="M" /> `nodeEventTarget.addListener(type, listener[, options])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1858,7 +1857,7 @@ equivalent `EventEmitter` API. The only difference between `addListener()` and
 
 ##### <DataTag tag="M" /> `nodeEventTarget.eventNames()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * Returns: string\[]
 
@@ -1867,7 +1866,7 @@ of event `type` names for which event listeners are registered.
 
 ##### <DataTag tag="M" /> `nodeEventTarget.listenerCount(type)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1878,7 +1877,7 @@ of event listeners registered for the `type`.
 
 ##### <DataTag tag="M" /> `nodeEventTarget.off(type, listener)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1890,7 +1889,7 @@ Node.js-specific alias for `eventTarget.removeListener()`.
 
 ##### <DataTag tag="M" /> `nodeEventTarget.on(type, listener[, options])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1905,7 +1904,7 @@ Node.js-specific alias for `eventTarget.addListener()`.
 
 ##### <DataTag tag="M" /> `nodeEventTarget.once(type, listener[, options])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1921,7 +1920,7 @@ with the `once` option set to `true`.
 
 ##### <DataTag tag="M" /> `nodeEventTarget.removeAllListeners([type])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1933,7 +1932,7 @@ listeners.
 
 ##### <DataTag tag="M" /> `nodeEventTarget.removeListener(type, listener)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 

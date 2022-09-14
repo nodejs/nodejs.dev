@@ -1,7 +1,7 @@
 ---
 title: releases
 displayTitle: Releases
-description: "Releases | Node.js"
+description: 'Releases | Node.js'
 authors: ZYSzys, nstanard,  mikeal, fhemberger, garybernhardt, piepmatz, boneskull, bjb568
 category: about
 ---

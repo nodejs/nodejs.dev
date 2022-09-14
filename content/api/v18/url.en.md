@@ -2,15 +2,14 @@
 title: 'url'
 displayTitle: 'URL'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.8.0/doc/api/url.md'
 version: 'v18'
 ---
 
-<Metadata version="v18.8.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.8.0" data={{"source_link":"lib/url.js"}} />
+<Metadata version="v18.9.0" data={{"source_link":"lib/url.js"}} />
 
 The `node:url` module provides utilities for URL resolution and parsing. It can
 be accessed using:
@@ -99,7 +98,7 @@ myURL.hash = '#fgh';
 const pathname = '/a/b/c';
 const search = '?d=e';
 const hash = '#fgh';
-const myURL = new URL(`https://example.org$pathname$search$hash`);
+const myURL = new URL(`https://example.org${pathname}${search}${hash}`);
 ```
 
 To get the constructed URL string, use the `href` property accessor:
@@ -112,7 +111,7 @@ console.log(myURL.href);
 
 #### <DataTag tag="C" /> `URL`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18281","description":"The class is now available on the global object."}],"update":{"type":"added","version":["v7.0.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18281","description":"The class is now available on the global object."}],"update":{"type":"added","version":["v7.0.0","v6.13.0"]}}} />
 
 Browser-compatible `URL` class, implemented by following the WHATWG URL
 Standard. [Examples of parsed URLs][] may be found in the Standard itself.
@@ -290,7 +289,7 @@ will be thrown.
 
 ##### <DataTag tag="M" /> `url.origin`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33325","description":"The scheme \"gopher\" is no longer special and `url.origin` now returns `'null'` for it."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33325","description":"The scheme \"gopher\" is no longer special and `url.origin` now returns `'null'` for it."}]}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -355,7 +354,7 @@ to percent-encode may vary somewhat from what the [`url.parse()`][] and
 
 ##### <DataTag tag="M" /> `url.port`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33325","description":"The scheme \"gopher\" is no longer special."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33325","description":"The scheme \"gopher\" is no longer special."}]}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -458,7 +457,7 @@ Invalid URL protocol values assigned to the `protocol` property are ignored.
 
 ###### Special schemes
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33325","description":"The scheme \"gopher\" is no longer special."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33325","description":"The scheme \"gopher\" is no longer special."}]}} />
 
 The [WHATWG URL Standard][] considers a handful of URL protocol schemes to be
 _special_ in terms of how they are parsed and serialized. When a URL is
@@ -596,9 +595,9 @@ console.log(JSON.stringify(myURLs));
 
 ##### <DataTag tag="M" /> `URL.createObjectURL(blob)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `blob` [`Blob`](/api/buffer#blob)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -630,9 +629,9 @@ to other workers or the main thread.
 
 ##### <DataTag tag="M" /> `URL.revokeObjectURL(id)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `id` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A `'blob:nodedata:...` URL string returned by a prior call to
   `URL.createObjectURL()`.
@@ -642,7 +641,7 @@ ID that isn't registered will silently fail.
 
 #### <DataTag tag="C" /> `URLSearchParams`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18281","description":"The class is now available on the global object."}],"update":{"type":"added","version":["v7.5.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18281","description":"The class is now available on the global object."}],"update":{"type":"added","version":["v7.5.0","v6.13.0"]}}} />
 
 The `URLSearchParams` API provides read and write access to the query of a
 `URL`. The `URLSearchParams` class can also be used standalone with one of the
@@ -714,7 +713,7 @@ console.log(params.toString());
 
 ##### <DataTag tag="M" /> `new URLSearchParams(obj)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v7.10.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.10.0","v6.13.0"]}}} />
 
 * `obj` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An object representing a collection of key-value pairs
 
@@ -738,7 +737,7 @@ console.log(params.toString());
 
 ##### <DataTag tag="M" /> `new URLSearchParams(iterable)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v7.10.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.10.0","v6.13.0"]}}} />
 
 * `iterable` [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) An iterable object whose elements are key-value pairs
 
@@ -814,7 +813,7 @@ Alias for [`urlSearchParams[@@iterator]()`][`urlSearchParams@@iterator()`].
 
 ##### <DataTag tag="M" /> `urlSearchParams.forEach(fn[, thisArg])`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `fn` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `fn` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}]}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Invoked for each name-value pair in the query
 * `thisArg` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) To be used as `this` value for when `fn` is called
@@ -897,7 +896,7 @@ console.log(params.toString());
 
 ##### <DataTag tag="M" /> `urlSearchParams.sort()`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v7.7.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.7.0","v6.13.0"]}}} />
 
 Sort all existing name-value pairs in-place by their names. Sorting is done
 with a [stable sorting algorithm][], so relative order between name-value pairs
@@ -947,7 +946,7 @@ for (const [name, value] of params) {
 
 #### <DataTag tag="M" /> `url.domainToASCII(domain)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v7.4.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.4.0","v6.13.0"]}}} />
 
 * `domain` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -984,7 +983,7 @@ console.log(url.domainToASCII('xn--iñvalid.com'));
 
 #### <DataTag tag="M" /> `url.domainToUnicode(domain)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v7.4.0","v6.13.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.4.0","v6.13.0"]}}} />
 
 * `domain` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -1021,9 +1020,9 @@ console.log(url.domainToUnicode('xn--iñvalid.com'));
 
 #### <DataTag tag="M" /> `url.fileURLToPath(url)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.12.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.12.0"]}}} />
 
-* `url` {URL | string} The file URL string or URL object to convert to a path.
+* `url` [`URL`](/api/url#the-whatwg-url-api) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The file URL string or URL object to convert to a path.
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The fully-resolved platform-specific Node.js file path.
 
 This function ensures the correct decodings of percent-encoded characters as
@@ -1064,7 +1063,7 @@ fileURLToPath('file:///hello world');      // Correct:   /hello world (POSIX)
 
 #### <DataTag tag="M" /> `url.format(URL[, options])`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v7.6.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v7.6.0"]}}} />
 
 * `URL` [`URL`](/api/url#the-whatwg-url-api) A [WHATWG URL][] object
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1117,7 +1116,7 @@ console.log(url.format(myURL, { fragment: false, unicode: true, auth: false }));
 
 #### <DataTag tag="M" /> `url.pathToFileURL(path)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v10.12.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v10.12.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The path to convert to a File URL.
 * Returns: [`URL`](/api/url#the-whatwg-url-api) The file URL object.
@@ -1151,7 +1150,7 @@ pathToFileURL('/some/path%.c');       // Correct:   file:///some/path%25.c (POSI
 
 #### <DataTag tag="M" /> `url.urlToHttpOptions(url)`
 
-<Metadata version="v18.8.0" data={{"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v15.7.0","v14.18.0"]}}} />
 
 * `url` [`URL`](/api/url#the-whatwg-url-api) The [WHATWG URL][] object to convert to an options object.
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Options object
@@ -1213,15 +1212,15 @@ console.log(urlToHttpOptions(myUrl));
 
 ### Legacy URL API
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"This API is deprecated."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"This API is deprecated."}]}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
 
 #### Legacy `urlObject`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."}]}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
 
 The legacy `urlObject` (`require('node:url').Url` or
 `import { Url } from 'node:url'`) is
@@ -1326,9 +1325,9 @@ forward-slash characters (`/`) are required following the colon in the
 
 #### <DataTag tag="M" /> `url.format(urlObject)`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/38631","description":"Now throws an `ERR_INVALID_URL` exception when Punycode conversion of a hostname introduces changes that could cause the URL to be re-parsed differently."},{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7234","description":"URLs with a `file:` scheme will now always use the correct number of slashes regardless of `slashes` option. A falsy `slashes` option with no protocol is now also respected at all times."}],"update":{"type":"added","version":["v0.1.25"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/38631","description":"Now throws an `ERR_INVALID_URL` exception when Punycode conversion of a hostname introduces changes that could cause the URL to be re-parsed differently."},{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7234","description":"URLs with a `file:` scheme will now always use the correct number of slashes regardless of `slashes` option. A falsy `slashes` option with no protocol is now also respected at all times."}],"update":{"type":"added","version":["v0.1.25"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
 
 * `urlObject` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A URL object (as returned by `url.parse()` or
   constructed otherwise). If a string, it is converted to an object by passing
@@ -1409,9 +1408,9 @@ The formatting process operates as follows:
 
 #### <DataTag tag="M" /> `url.parse(urlString[, parseQueryString[, slashesDenoteHost]])`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.14.0","pr-url":"https://github.com/nodejs/node/pull/26941","description":"The `pathname` property on the returned URL object is now `/` when there is no path and the protocol scheme is `ws:` or `wss:`."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/13606","description":"The `search` property on the returned URL object is now `null` when no query string is present."}],"update":{"type":"added","version":["v0.1.25"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.14.0","pr-url":"https://github.com/nodejs/node/pull/26941","description":"The `pathname` property on the returned URL object is now `/` when there is no path and the protocol scheme is `ws:` or `wss:`."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/13606","description":"The `search` property on the returned URL object is now `null` when no query string is present."}],"update":{"type":"added","version":["v0.1.25"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
 
 * `urlString` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The URL string to parse.
 * `parseQueryString` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If `true`, the `query` property will always
@@ -1446,9 +1445,9 @@ Use with caution.
 
 #### <DataTag tag="M" /> `url.resolve(from, to)`
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."},{"version":"v6.6.0","pr-url":"https://github.com/nodejs/node/pull/8215","description":"The `auth` fields are now kept intact when `from` and `to` refer to the same host."},{"version":["v6.5.0","v4.6.2"],"pr-url":"https://github.com/nodejs/node/pull/8214","description":"The `port` field is copied correctly now."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/1480","description":"The `auth` fields is cleared now the `to` parameter contains a hostname."}],"update":{"type":"added","version":["v0.1.25"]}}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"The Legacy URL API is deprecated. Use the WHATWG URL API."},{"version":"v6.6.0","pr-url":"https://github.com/nodejs/node/pull/8215","description":"The `auth` fields are now kept intact when `from` and `to` refer to the same host."},{"version":["v6.5.0","v4.6.2"],"pr-url":"https://github.com/nodejs/node/pull/8214","description":"The `port` field is copied correctly now."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/1480","description":"The `auth` fields is cleared now the `to` parameter contains a hostname."}],"update":{"type":"added","version":["v0.1.25"]}}} />
 
-<Metadata version="v18.8.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
+<Metadata version="v18.9.0" data={{"stability":{"level":3,"text":" - Legacy: Use the WHATWG URL API instead."}}} />
 
 * `from` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The base URL to use if `to` is a relative URL.
 * `to` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The target URL to resolve.

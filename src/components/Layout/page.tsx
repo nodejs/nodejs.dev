@@ -28,7 +28,7 @@ const PageLayout = ({
         title={title}
         authors={authors}
         editPath={editPath}
-        tableOfContents={tableOfContents}
+        tableOfContents={tableOfContents ? tableOfContents.items : []}
       />
     </main>
   </Layout>

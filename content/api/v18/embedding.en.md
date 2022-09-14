@@ -2,11 +2,10 @@
 title: 'embedding'
 displayTitle: 'C++ embedder API'
 category: 'api'
-editPage: 'https://github.com/nodejs/node/blob/v18.8.0/doc/api/embedding.md'
 version: 'v18'
 ---
 
-<Metadata version="v18.8.0" data={{"update":{"type":"introduced_in","version":["v12.19.0"]}}} />
+<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v12.19.0"]}}} />
 
 Node.js provides a number of C++ APIs that can be used to execute JavaScript
 in a Node.js environment from other C++ software.
@@ -74,7 +73,7 @@ int main(int argc, char** argv) {
 
 #### Per-instance state
 
-<Metadata version="v18.8.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35597","description":"The `CommonEnvironmentSetup` and `SpinEventLoop` utilities were added."}]}} />
+<Metadata version="v18.9.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35597","description":"The `CommonEnvironmentSetup` and `SpinEventLoop` utilities were added."}]}} />
 
 Node.js has a concept of a “Node.js instance”, that is commonly being referred
 to as `node::Environment`. Each `node::Environment` is associated with:

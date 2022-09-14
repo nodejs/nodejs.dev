@@ -32,6 +32,7 @@ const PostTemplate = ({
         authors={blogAuthors}
         previous={previous}
         relativePath={relativePath}
+        tableOfContents={[]}
         blog
         date={date}
       />
