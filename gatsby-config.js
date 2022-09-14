@@ -44,6 +44,7 @@ const gatsbyConfig = {
     '@skagami/gatsby-plugin-dark-mode',
     'gatsby-transformer-yaml',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-sharp',
     // This generates the redirects for the I18N redirects
     // It also creates meta redirects for any usage of `createRedirect`
     'gatsby-plugin-meta-redirect',
@@ -87,6 +88,13 @@ const gatsbyConfig = {
               className: 'autolink-headers',
               maintainCase: false,
               removeAccents: true,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 590,
+              backgroundColor: 'transparent',
             },
           },
         ],

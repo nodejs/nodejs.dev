@@ -996,8 +996,8 @@ for (const worker of Object.values(cluster.workers)) {
 [`cluster.isPrimary`]: #clusterisprimary
 [`cluster.settings`]: #clustersettings
 [`disconnect()`]: child_process.md#subprocessdisconnect
-[`kill()`]: (/api/process#processkillpid-signal)
-[`process` event: `'message'`]: (/api/process#event-message)
-[`server.close()`]: (/api/net#event-close)
+[`kill()`]: /api/v18/process#processkillpid-signal
+[`process` event: `'message'`]: /api/v18/process#event-message
+[`server.close()`]: /api/v18/net#event-close
 [`worker.exitedAfterDisconnect`]: #workerexitedafterdisconnect
 [`worker_threads`]: worker_threads.md

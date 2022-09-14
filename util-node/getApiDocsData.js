@@ -95,10 +95,19 @@ async function getApiDocsData(releaseVersions, callback) {
           'navigation.json'
         );
 
+        const sortedNavigationEntry = {
+          ...navigationEntry,
+          // Sorts the items alphabetically to avoid on every run having a different order
+          // of the items, so that we keep consistency
+          items: navigationEntry.items.sort((a, b) =>
+            a.slug.localeCompare(b.slug)
+          ),
+        };
+
         fs.writeFile(
           navigationDataPath,
           // Stringifies and Pretty-Prints the JSON
-          JSON.stringify(navigationEntry, null, 2),
+          JSON.stringify(sortedNavigationEntry, null, 2),
           cb
         );
       });
@@ -112,7 +121,7 @@ async function getApiDocsData(releaseVersions, callback) {
   }, 2);
 
   // Retrieves all the Lists of the Documentation files for that Node.js version
-  apiDownloadListQueue.push(...releaseVersions);
+  apiDownloadListQueue.push([...releaseVersions]);
 
   // After the whole queue ends we call the callback with our Navigation entries
   apiDownloadListQueue.drain(() => callback());

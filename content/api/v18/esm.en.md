@@ -46,8 +46,6 @@ Node.js fully supports ECMAScript modules as they are currently specified and
 provides interoperability between them and its original module format,
 [CommonJS][].
 
-
-
 <i id="esm_package_json_type_field"></i><i id="esm_package_scope_and_file_extensions"></i><i id="esm_input_type_flag"></i>
 
 ### Enabling
@@ -60,8 +58,6 @@ Authors can tell Node.js to use the ECMAScript modules loader
 via the `.mjs` file extension, the `package.json` [`"type"`][] field, or the
 [`--input-type`][] flag. Outside of those cases, Node.js will use the CommonJS
 module loader. See [Determining module system][] for more details.
-
-
 
 <i id="esm_package_entry_points"></i><i id="esm_main_entry_point_export"></i><i id="esm_subpath_exports"></i><i id="esm_package_exports_fallbacks"></i><i id="esm_exports_sugar"></i><i id="esm_conditional_exports"></i><i id="esm_nested_conditions"></i><i id="esm_self_referencing_a_package_using_its_name"></i><i id="esm_internal_package_imports"></i><i id="esm_dual_commonjs_es_module_packages"></i><i id="esm_dual_package_hazard"></i><i id="esm_writing_dual_packages_while_avoiding_or_minimizing_hazards"></i><i id="esm_approach_1_use_an_es_module_wrapper"></i><i id="esm_approach_2_isolate_state"></i>
 
@@ -272,16 +268,12 @@ command flag enabled.
 Provides a module-relative resolution function scoped to each module, returning
 the URL string.
 
-
-
 ```js
 const dependencyAsset = await import.meta.resolve('component-lib/asset.css');
 ```
 
 `import.meta.resolve` also accepts a second argument which is the parent module
 from which to resolve from:
-
-
 
 ```js
 await import.meta.resolve('./dep', import.meta.url);
@@ -318,8 +310,6 @@ CommonJS modules consist of a `module.exports` object which can be of any type.
 When importing a CommonJS module, it can be reliably imported using the ES
 module default import or its corresponding sugar syntax:
 
-
-
 ```js
 import { default as cjs } from 'cjs';
 
@@ -340,8 +330,6 @@ a namespace with a `default` export key pointing to the CommonJS
 
 This Module Namespace Exotic Object can be directly observed either when using
 `import * as m from 'cjs'` or a dynamic import:
-
-
 
 ```js
 import * as m from 'cjs';
@@ -365,8 +353,6 @@ exports.name = 'exported';
 ```
 
 The preceding module supports named imports in ES modules:
-
-
 
 ```js
 import { name } from './cjs.cjs';
@@ -1436,10 +1422,10 @@ success!
 <Metadata version="v18.9.0" data={{"Note":"The cjs-module-lexer link should be kept in-sync with the deps version"}} />
 
 [6.1.7 Array Index]: https://tc39.es/ecma262/#integer-index
-[CommonJS]: (/api/modules)
-[Conditional exports]: (/api/packages#conditional-exports)
-[Core modules]: (/api/modules#core-modules)
-[Determining module system]: (/api/packages#determining-module-system)
+[CommonJS]: /api/v18/modules
+[Conditional exports]: /api/v18/packages#conditional-exports
+[Core modules]: /api/v18/modules#core-modules
+[Determining module system]: /api/v18/packages#determining-module-system
 [Dynamic `import()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import
 [ES Module Integration Proposal for WebAssembly]: https://github.com/webassembly/esm-integration
 [HTTPS and HTTP imports]: #https-and-http-imports
@@ -1450,9 +1436,9 @@ success!
 [Node.js Module Resolution Algorithm]: #resolver-algorithm-specification
 [Terminology]: #terminology
 [URL]: https://url.spec.whatwg.org/
-[`"exports"`]: (/api/packages#exports)
-[`"type"`]: (/api/packages#type)
-[`--input-type`]: (/api/cli#--input-typetype)
+[`"exports"`]: /api/v18/packages#exports
+[`"type"`]: /api/v18/packages#type
+[`--input-type`]: /api/v18/cli#--input-typetype
 [`ArrayBuffer`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer
 [`SharedArrayBuffer`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer
 [`TypedArray`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
@@ -1463,20 +1449,20 @@ success!
 [`import.meta.resolve`]: #importmetaresolvespecifier-parent
 [`import.meta.url`]: #importmetaurl
 [`import`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
-[`module.createRequire()`]: (/api/module#modulecreaterequirefilename)
-[`module.syncBuiltinESMExports()`]: (/api/module#modulesyncbuiltinesmexports)
-[`package.json`]: (/api/packages#nodejs-packagejson-field-definitions)
+[`module.createRequire()`]: /api/v18/module#modulecreaterequirefilename
+[`module.syncBuiltinESMExports()`]: /api/v18/module#modulesyncbuiltinesmexports
+[`package.json`]: /api/v18/packages#nodejs-packagejson-field-definitions
 [`port.ref()`]: https://nodejs.org/dist/latest-v17.x/docs/api/worker_threads.html#portref
 [`port.unref()`]: https://nodejs.org/dist/latest-v17.x/docs/api/worker_threads.html#portunref
-[`process.dlopen`]: (/api/process#processdlopenmodule-filename-flags)
+[`process.dlopen`]: /api/v18/process#processdlopenmodule-filename-flags
 [`string`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[`util.TextDecoder`]: (/api/util#class-utiltextdecoder)
+[`util.TextDecoder`]: /api/v18/util#class-utiltextdecoder
 [cjs-module-lexer]: https://github.com/nodejs/cjs-module-lexer/tree/1.2.2
 [custom https loader]: #https-loader
 [load hook]: #loadurl-context-nextload
-[percent-encoded]: (/api/url#percent-encoding-in-urls)
+[percent-encoded]: /api/v18/url#percent-encoding-in-urls
 [resolve hook]: #resolvespecifier-context-nextresolve
 [special scheme]: https://url.spec.whatwg.org/#special-scheme
-[status code]: (/api/process#exit-codes)
+[status code]: /api/v18/process#exit-codes
 [the official standard format]: https://tc39.github.io/ecma262/#sec-modules
-[url.pathToFileURL]: (/api/url#urlpathtofileurlpath)
+[url.pathToFileURL]: /api/v18/url#urlpathtofileurlpath

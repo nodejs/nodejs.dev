@@ -1541,20 +1541,20 @@ console.log(myURL.origin);
 // Prints https://xn--1xa.example.com
 ```
 
-[ICU]: (/api/intl#options-for-building-nodejs)
+[ICU]: /api/v18/intl#options-for-building-nodejs
 [Punycode]: https://tools.ietf.org/html/rfc5891#section-4.4
 [WHATWG URL]: #the-whatwg-url-api
 [WHATWG URL Standard]: https://url.spec.whatwg.org/
-[`Error`]: (/api/errors#class-error)
+[`Error`]: /api/v18/errors#class-error
 [`JSON.stringify()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
 [`Map`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
-[`TypeError`]: (/api/errors#class-typeerror)
+[`TypeError`]: /api/v18/errors#class-typeerror
 [`URLSearchParams`]: #class-urlsearchparams
 [`array.toString()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString
-[`http.request()`]: (/api/http#httprequestoptions-callback)
-[`https.request()`]: (/api/https#httpsrequestoptions-callback)
+[`http.request()`]: /api/v18/http#httprequestoptions-callback
+[`https.request()`]: /api/v18/https#httpsrequestoptions-callback
 [`new URL()`]: #new-urlinput-base
-[`querystring`]: (/api/querystring)
+[`querystring`]: /api/v18/querystring
 [`url.domainToASCII()`]: #urldomaintoasciidomain
 [`url.domainToUnicode()`]: #urldomaintounicodedomain
 [`url.format()`]: #urlformaturlobject

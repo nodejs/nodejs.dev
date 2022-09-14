@@ -10,6 +10,7 @@ interface Props {
   slug: string;
   title: string;
   isApiDocs?: boolean;
+  onClick?: (event: React.MouseEvent<HTMLLinkElement>) => void;
 }
 
 const NavigationItem = ({
@@ -18,6 +19,7 @@ const NavigationItem = ({
   slug,
   title,
   isApiDocs,
+  onClick,
 }: Props): JSX.Element => {
   const className = classnames(`t-body2 ${styles.navigationItem}`, {
     [styles.navigationItemDone]: isRead,
@@ -35,6 +37,7 @@ const NavigationItem = ({
 
   return (
     <Link
+      onClick={onClick}
       to={slug}
       className={className}
       aria-current={isActive ? 'page' : undefined}

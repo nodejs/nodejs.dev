@@ -12,11 +12,6 @@
 
   &--fixed {
     @extend %navigation--fixed;
-
-    height: 100vh;
-    top: calc(var(--nav-height) * 2);
-    touch-action: none;
-    width: 100%;
   }
 
   &--fixed &__open {

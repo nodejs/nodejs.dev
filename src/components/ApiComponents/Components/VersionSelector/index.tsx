@@ -1,8 +1,9 @@
 import React, { ChangeEvent } from 'react';
 
-import styles from './index.module.scss';
 import { NodeReleaseData } from '../../../../types';
 import { apiPath } from '../../../../../pathPrefixes';
+import { useLocalizedPath } from '../../../../hooks/useLocalizedPath';
+import styles from './index.module.scss';
 
 interface Props {
   releases: NodeReleaseData[];
@@ -17,11 +18,13 @@ const VersionSelector = ({
   apiAvailableVersions,
   currentPage,
 }: Props) => {
+  const localizedPath = useLocalizedPath();
+
   const redirectToRelease = (event: ChangeEvent<HTMLSelectElement>) => {
     const version = event.target.value;
 
     const redirectUrl = apiAvailableVersions.includes(version)
-      ? `${apiPath}${version}/${currentPage}`
+      ? localizedPath(`${apiPath}${version}/${currentPage}`)
       : `https://nodejs.org/docs/latest-${version}.x/api/index.html`;
 
     window.location.href = redirectUrl;

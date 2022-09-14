@@ -3019,8 +3019,6 @@ Accept: text/plain
 
 Then `request.url` will be:
 
-
-
 ```js
 '/status?name=ryan'
 ```
@@ -3561,12 +3559,12 @@ you need to implement any fall-back behavior yourself.
 [ALPN Protocol ID]: https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids
 [ALPN negotiation]: #alpn-negotiation
 [Compatibility API]: #compatibility-api
-[HTTP/1]: (/api/http)
+[HTTP/1]: /api/v18/http
 [HTTP/2]: https://tools.ietf.org/html/rfc7540
 [HTTP/2 Headers Object]: #headers-object
 [HTTP/2 Settings Object]: #settings-object
 [HTTP/2 Unencrypted]: https://http2.github.io/faq/#does-http2-require-encryption
-[HTTPS]: (/api/https)
+[HTTPS]: /api/v18/https
 [Performance Observer]: perf_hooks.md
 [RFC 7838]: https://tools.ietf.org/html/rfc7838
 [RFC 8336]: https://tools.ietf.org/html/rfc8336
@@ -3577,14 +3575,14 @@ you need to implement any fall-back behavior yourself.
 [`'request'`]: #event-request
 [`'unknownProtocol'`]: #event-unknownprotocol
 [`ClientHttp2Stream`]: #class-clienthttp2stream
-[`Duplex`]: (/api/stream#class-streamduplex)
+[`Duplex`]: /api/v18/stream#class-streamduplex
 [`Http2ServerRequest`]: #class-http2http2serverrequest
 [`Http2ServerResponse`]: #class-http2http2serverresponse
 [`Http2Session` and Sockets]: #http2session-and-sockets
 [`Http2Session`'s `'stream'` event]: #event-stream
 [`Http2Stream`]: #class-http2stream
 [`ServerHttp2Stream`]: #class-serverhttp2stream
-[`TypeError`]: (/api/errors#class-typeerror)
+[`TypeError`]: /api/v18/errors#class-typeerror
 [`http2.SecureServer`]: #class-http2secureserver
 [`http2.Server`]: #class-http2server
 [`http2.createSecureServer()`]: #http2createsecureserveroptions-onrequesthandler
@@ -3592,29 +3590,29 @@ you need to implement any fall-back behavior yourself.
 [`http2session.close()`]: #http2sessionclosecallback
 [`http2stream.pushStream()`]: #http2streampushstreamheaders-options-callback
 [`import()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import
-[`net.Server.close()`]: (/api/net#serverclosecallback)
-[`net.Socket.bufferSize`]: (/api/net#socketbuffersize)
-[`net.Socket.prototype.ref()`]: (/api/net#socketref)
-[`net.Socket.prototype.unref()`]: (/api/net#socketunref)
-[`net.Socket`]: (/api/net#class-netsocket)
-[`net.connect()`]: (/api/net#netconnect)
-[`net.createServer()`]: (/api/net#netcreateserveroptions-connectionlistener)
+[`net.Server.close()`]: /api/v18/net#serverclosecallback
+[`net.Socket.bufferSize`]: /api/v18/net#socketbuffersize
+[`net.Socket.prototype.ref()`]: /api/v18/net#socketref
+[`net.Socket.prototype.unref()`]: /api/v18/net#socketunref
+[`net.Socket`]: /api/v18/net#class-netsocket
+[`net.connect()`]: /api/v18/net#netconnect
+[`net.createServer()`]: /api/v18/net#netcreateserveroptions-connectionlistener
 [`request.authority`]: #requestauthority
-[`request.maxHeadersCount`]: (/api/http#requestmaxheaderscount)
-[`request.socket.getPeerCertificate()`]: (/api/tls#tlssocketgetpeercertificatedetailed)
+[`request.maxHeadersCount`]: /api/v18/http#requestmaxheaderscount
+[`request.socket.getPeerCertificate()`]: /api/v18/tls#tlssocketgetpeercertificatedetailed
 [`request.socket`]: #requestsocket
 [`response.end()`]: #responseenddata-encoding-callback
 [`response.setHeader()`]: #responsesetheadername-value
 [`response.socket`]: #responsesocket
 [`response.writableEnded`]: #responsewritableended
 [`response.write()`]: #responsewritechunk-encoding-callback
-[`response.write(data, encoding)`]: (/api/http#responsewritechunk-encoding-callback)
+[`response.write(data, encoding)`]: /api/v18/http#responsewritechunk-encoding-callback
 [`response.writeContinue()`]: #responsewritecontinue
 [`response.writeHead()`]: #responsewriteheadstatuscode-statusmessage-headers
-[`server.maxHeadersCount`]: (/api/http#servermaxheaderscount)
-[`tls.Server.close()`]: (/api/tls#serverclosecallback)
-[`tls.TLSSocket`]: (/api/tls#class-tlstlssocket)
-[`tls.connect()`]: (/api/tls#tlsconnectoptions-callback)
-[`tls.createServer()`]: (/api/tls#tlscreateserveroptions-secureconnectionlistener)
-[`writable.writableFinished`]: (/api/stream#writablewritablefinished)
+[`server.maxHeadersCount`]: /api/v18/http#servermaxheaderscount
+[`tls.Server.close()`]: /api/v18/tls#serverclosecallback
+[`tls.TLSSocket`]: /api/v18/tls#class-tlstlssocket
+[`tls.connect()`]: /api/v18/tls#tlsconnectoptions-callback
+[`tls.createServer()`]: /api/v18/tls#tlscreateserveroptions-secureconnectionlistener
+[`writable.writableFinished`]: /api/v18/stream#writablewritablefinished
 [error code]: #error-codes-for-rst_stream-and-goaway

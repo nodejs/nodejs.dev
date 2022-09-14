@@ -1236,8 +1236,6 @@ If `options` is a string, then it specifies the filename.
 The following example illustrates using both `vm.runInThisContext()` and
 the JavaScript [`eval()`][] function to run the same code:
 
-
-
 ```js
 const vm = require('node:vm');
 let localVar = 'initial value';
@@ -1371,7 +1369,7 @@ which are shared by all contexts. Therefore, callbacks passed to those functions
 are not controllable through the timeout either.
 
 [Cyclic Module Record]: https://tc39.es/ecma262/#sec-cyclic-module-records
-[ECMAScript Module Loader]: (/api/esm#modules-ecmascript-modules)
+[ECMAScript Module Loader]: /api/v18/esm#modules-ecmascript-modules
 [Evaluate() concrete method]: https://tc39.es/ecma262/#sec-moduleevaluation
 [GetModuleNamespace]: https://tc39.es/ecma262/#sec-getmodulenamespace
 [HostResolveImportedModule]: https://tc39.es/ecma262/#sec-hostresolveimportedmodule
@@ -1380,15 +1378,15 @@ are not controllable through the timeout either.
 [Source Text Module Record]: https://tc39.es/ecma262/#sec-source-text-module-records
 [Synthetic Module Record]: https://heycam.github.io/webidl/#synthetic-module-records
 [V8 Embedder's Guide]: https://v8.dev/docs/embed#contexts
-[`ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING`]: (/api/errors#err_vm_dynamic_import_callback_missing)
-[`ERR_VM_MODULE_STATUS`]: (/api/errors#err_vm_module_status)
-[`Error`]: (/api/errors#class-error)
-[`URL`]: (/api/url#class-url)
+[`ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING`]: /api/v18/errors#err_vm_dynamic_import_callback_missing
+[`ERR_VM_MODULE_STATUS`]: /api/v18/errors#err_vm_module_status
+[`Error`]: /api/v18/errors#class-error
+[`URL`]: /api/v18/url#class-url
 [`eval()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
 [`optionsExpression`]: https://tc39.es/proposal-import-assertions/#sec-evaluate-import-call
 [`script.runInContext()`]: #scriptrunincontextcontextifiedobject-options
 [`script.runInThisContext()`]: #scriptruninthiscontextoptions
-[`url.origin`]: (/api/url#urlorigin)
+[`url.origin`]: /api/v18/url#urlorigin
 [`vm.createContext()`]: #vmcreatecontextcontextobject-options
 [`vm.runInContext()`]: #vmrunincontextcode-contextifiedobject-options
 [`vm.runInThisContext()`]: #vmruninthiscontextcode-options

@@ -2275,21 +2275,21 @@ argument.
 [Object wrappers]: https://developer.mozilla.org/en-US/docs/Glossary/Primitive#Primitive_wrapper_objects_in_JavaScript
 [Object.prototype.toString()]: https://tc39.github.io/ecma262/#sec-object.prototype.tostring
 [`!=` operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Inequality
-[`--update-assert-snapshot`]: (/api/cli#--update-assert-snapshot)
+[`--update-assert-snapshot`]: /api/v18/cli#--update-assert-snapshot
 [`===` operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality
 [`==` operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality
 [`AssertionError`]: #class-assertassertionerror
 [`CallTracker`]: #class-assertcalltracker
 [`Class`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
-[`ERR_INVALID_RETURN_VALUE`]: (/api/errors#err_invalid_return_value)
-[`Error.captureStackTrace`]: (/api/errors#errorcapturestacktracetargetobject-constructoropt)
-[`Error`]: (/api/errors#class-error)
+[`ERR_INVALID_RETURN_VALUE`]: /api/v18/errors#err_invalid_return_value
+[`Error.captureStackTrace`]: /api/v18/errors#errorcapturestacktracetargetobject-constructoropt
+[`Error`]: /api/v18/errors#class-error
 [`Map`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
 [`Object.is()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
 [`RegExp`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 [`Set`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
 [`Symbol`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
-[`TypeError`]: (/api/errors#class-typeerror)
+[`TypeError`]: /api/v18/errors#class-typeerror
 [`WeakMap`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap
 [`WeakSet`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet
 [`assert.deepEqual()`]: #assertdeepequalactual-expected-message
@@ -2303,10 +2303,10 @@ argument.
 [`assert.ok()`]: #assertokvalue-message
 [`assert.strictEqual()`]: #assertstrictequalactual-expected-message
 [`assert.throws()`]: #assertthrowsfn-error-message
-[`getColorDepth()`]: (/api/tty#writestreamgetcolordepthenv)
-[`process.on('exit')`]: (/api/process#event-exit)
+[`getColorDepth()`]: /api/v18/tty#writestreamgetcolordepthenv
+[`process.on('exit')`]: /api/v18/process#event-exit
 [`tracker.calls()`]: #trackercallsfn-exact
 [`tracker.verify()`]: #trackerverify
-[`util.inspect()`]: (/api/util#utilinspectobject-options)
+[`util.inspect()`]: /api/v18/util#utilinspectobject-options
 [enumerable "own" properties]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties
 [prototype-spec]: https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots

@@ -16,6 +16,10 @@
 
   &:first-of-type {
     margin-top: var(--space-40);
+
+    @media (max-width: 900px) {
+      margin-top: 0;
+    }
   }
 
   &__pure-title,

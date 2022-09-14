@@ -665,60 +665,60 @@ A browser-compatible implementation of [`WritableStreamDefaultController`][].
 
 A browser-compatible implementation of [`WritableStreamDefaultWriter`][].
 
-[Web Crypto API]: (/api/webcrypto)
-[`--experimental-global-customevent`]: (/api/cli#--experimental-global-customevent)
-[`--experimental-global-webcrypto`]: (/api/cli#--experimental-global-webcrypto)
-[`--no-experimental-fetch`]: (/api/cli#--no-experimental-fetch)
+[Web Crypto API]: /api/v18/webcrypto
+[`--experimental-global-customevent`]: /api/v18/cli#--experimental-global-customevent
+[`--experimental-global-webcrypto`]: /api/v18/cli#--experimental-global-webcrypto
+[`--no-experimental-fetch`]: /api/v18/cli#--no-experimental-fetch
 [`AbortController`]: https://developer.mozilla.org/en-US/docs/Web/API/AbortController
-[`ByteLengthQueuingStrategy`]: (/api/webstreams#class-bytelengthqueuingstrategy)
-[`CompressionStream`]: (/api/webstreams#class-compressionstream)
-[`CountQueuingStrategy`]: (/api/webstreams#class-countqueuingstrategy)
+[`ByteLengthQueuingStrategy`]: /api/v18/webstreams#class-bytelengthqueuingstrategy
+[`CompressionStream`]: /api/v18/webstreams#class-compressionstream
+[`CountQueuingStrategy`]: /api/v18/webstreams#class-countqueuingstrategy
 [`CustomEvent` Web API]: https://dom.spec.whatwg.org/#customevent
 [`DOMException`]: https://developer.mozilla.org/en-US/docs/Web/API/DOMException
-[`DecompressionStream`]: (/api/webstreams#class-decompressionstream)
-[`EventTarget` and `Event` API]: (/api/events#eventtarget-and-event-api)
+[`DecompressionStream`]: /api/v18/webstreams#class-decompressionstream
+[`EventTarget` and `Event` API]: /api/v18/events#eventtarget-and-event-api
 [`MessageChannel`]: worker_threads.md#class-messagechannel
 [`MessageEvent`]: https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/MessageEvent
 [`MessagePort`]: worker_threads.md#class-messageport
-[`ReadableByteStreamController`]: (/api/webstreams#class-readablebytestreamcontroller)
-[`ReadableStreamBYOBReader`]: (/api/webstreams#class-readablestreambyobreader)
-[`ReadableStreamBYOBRequest`]: (/api/webstreams#class-readablestreambyobrequest)
-[`ReadableStreamDefaultController`]: (/api/webstreams#class-readablestreamdefaultcontroller)
-[`ReadableStreamDefaultReader`]: (/api/webstreams#class-readablestreamdefaultreader)
-[`ReadableStream`]: (/api/webstreams#class-readablestream)
-[`TextDecoderStream`]: (/api/webstreams#class-textdecoderstream)
-[`TextDecoder`]: (/api/util#class-utiltextdecoder)
-[`TextEncoderStream`]: (/api/webstreams#class-textencoderstream)
-[`TextEncoder`]: (/api/util#class-utiltextencoder)
-[`TransformStreamDefaultController`]: (/api/webstreams#class-transformstreamdefaultcontroller)
-[`TransformStream`]: (/api/webstreams#class-transformstream)
-[`URLSearchParams`]: (/api/url#class-urlsearchparams)
-[`URL`]: (/api/url#class-url)
-[`WritableStreamDefaultController`]: (/api/webstreams#class-writablestreamdefaultcontroller)
-[`WritableStreamDefaultWriter`]: (/api/webstreams#class-writablestreamdefaultwriter)
-[`WritableStream`]: (/api/webstreams#class-writablestream)
-[`__dirname`]: (/api/modules#__dirname)
-[`__filename`]: (/api/modules#__filename)
-[`buffer.atob()`]: (/api/buffer#bufferatobdata)
-[`buffer.btoa()`]: (/api/buffer#bufferbtoadata)
-[`clearImmediate`]: (/api/timers#clearimmediateimmediate)
-[`clearInterval`]: (/api/timers#clearintervaltimeout)
-[`clearTimeout`]: (/api/timers#cleartimeouttimeout)
-[`console`]: (/api/console)
-[`exports`]: (/api/modules#exports)
+[`ReadableByteStreamController`]: /api/v18/webstreams#class-readablebytestreamcontroller
+[`ReadableStreamBYOBReader`]: /api/v18/webstreams#class-readablestreambyobreader
+[`ReadableStreamBYOBRequest`]: /api/v18/webstreams#class-readablestreambyobrequest
+[`ReadableStreamDefaultController`]: /api/v18/webstreams#class-readablestreamdefaultcontroller
+[`ReadableStreamDefaultReader`]: /api/v18/webstreams#class-readablestreamdefaultreader
+[`ReadableStream`]: /api/v18/webstreams#class-readablestream
+[`TextDecoderStream`]: /api/v18/webstreams#class-textdecoderstream
+[`TextDecoder`]: /api/v18/util#class-utiltextdecoder
+[`TextEncoderStream`]: /api/v18/webstreams#class-textencoderstream
+[`TextEncoder`]: /api/v18/util#class-utiltextencoder
+[`TransformStreamDefaultController`]: /api/v18/webstreams#class-transformstreamdefaultcontroller
+[`TransformStream`]: /api/v18/webstreams#class-transformstream
+[`URLSearchParams`]: /api/v18/url#class-urlsearchparams
+[`URL`]: /api/v18/url#class-url
+[`WritableStreamDefaultController`]: /api/v18/webstreams#class-writablestreamdefaultcontroller
+[`WritableStreamDefaultWriter`]: /api/v18/webstreams#class-writablestreamdefaultwriter
+[`WritableStream`]: /api/v18/webstreams#class-writablestream
+[`__dirname`]: /api/v18/modules#__dirname
+[`__filename`]: /api/v18/modules#__filename
+[`buffer.atob()`]: /api/v18/buffer#bufferatobdata
+[`buffer.btoa()`]: /api/v18/buffer#bufferbtoadata
+[`clearImmediate`]: /api/v18/timers#clearimmediateimmediate
+[`clearInterval`]: /api/v18/timers#clearintervaltimeout
+[`clearTimeout`]: /api/v18/timers#cleartimeouttimeout
+[`console`]: /api/v18/console
+[`exports`]: /api/v18/modules#exports
 [`fetch()`]: https://developer.mozilla.org/en-US/docs/Web/API/fetch
-[`module`]: (/api/modules#module)
+[`module`]: /api/v18/modules#module
 [`perf_hooks.performance`]: perf_hooks.md#perf_hooksperformance
-[`process.nextTick()`]: (/api/process#processnexttickcallback-args)
-[`process` object]: (/api/process#process)
-[`require()`]: (/api/modules#requireid)
-[`setImmediate`]: (/api/timers#setimmediatecallback-args)
-[`setInterval`]: (/api/timers#setintervalcallback-delay-args)
-[`setTimeout`]: (/api/timers#settimeoutcallback-delay-args)
+[`process.nextTick()`]: /api/v18/process#processnexttickcallback-args
+[`process` object]: /api/v18/process#process
+[`require()`]: /api/v18/modules#requireid
+[`setImmediate`]: /api/v18/timers#setimmediatecallback-args
+[`setInterval`]: /api/v18/timers#setintervalcallback-delay-args
+[`setTimeout`]: /api/v18/timers#settimeoutcallback-delay-args
 [`structuredClone`]: https://developer.mozilla.org/en-US/docs/Web/API/structuredClone
-[buffer section]: (/api/buffer)
+[buffer section]: /api/v18/buffer
 [built-in objects]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
-[module system documentation]: (/api/modules)
-[timers]: (/api/timers)
+[module system documentation]: /api/v18/modules
+[timers]: /api/v18/timers
 [webassembly-mdn]: https://developer.mozilla.org/en-US/docs/WebAssembly
 [webassembly-org]: https://webassembly.org

@@ -145,6 +145,9 @@ const SideNavBar = ({ pageKey, items = sideNavBarItems }: NavBarProps) => {
     );
   };
 
+  // When clicking on a link gracefully close the Navigation
+  const onClick = () => setNavOpen(false);
+
   const renderItem = ({ title, slug }: SideNavBarItem) => (
     <NavigationItem
       key={slug}
@@ -152,6 +155,7 @@ const SideNavBar = ({ pageKey, items = sideNavBarItems }: NavBarProps) => {
       isRead={false}
       isActive={slug === pageKey}
       slug={slug}
+      onClick={onClick}
     />
   );
 

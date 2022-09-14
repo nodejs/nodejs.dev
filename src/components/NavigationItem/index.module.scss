@@ -61,6 +61,11 @@
     position: absolute;
     top: calc(2.4rem + 6px);
     width: 2px;
+
+    @media (max-width: 900px) {
+      left: calc(-1.2rem - 2px);
+      top: calc(2.4rem + 7px);
+    }
   }
 
   &--done::after {
