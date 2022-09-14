@@ -1179,11 +1179,11 @@ Package imports permit mapping to external packages.
 This field defines [subpath imports][] for the current package.
 
 [Babel]: https://babeljs.io/
-[CommonJS]: (/api/modules)
+[CommonJS]: /api/v18/modules
 [Conditional exports]: #conditional-exports
-[Corepack]: (/api/corepack)
-[ES module]: (/api/esm)
-[ES modules]: (/api/esm)
+[Corepack]: /api/v18/corepack
+[ES module]: /api/v18/esm
+[ES modules]: /api/v18/esm
 [Node.js documentation for this section]: https://github.com/nodejs/node/blob/HEAD/doc/api/packages.md#conditions-definitions
 [`"exports"`]: #exports
 [`"imports"`]: #imports
@@ -1192,19 +1192,19 @@ This field defines [subpath imports][] for the current package.
 [`"packageManager"`]: #packagemanager
 [`"type"`]: #type
 [`--conditions` / `-C` flag]: #resolving-user-conditions
-[`--no-addons` flag]: (/api/cli#--no-addons)
-[`ERR_PACKAGE_PATH_NOT_EXPORTED`]: (/api/errors#err_package_path_not_exported)
+[`--no-addons` flag]: /api/v18/cli#--no-addons
+[`ERR_PACKAGE_PATH_NOT_EXPORTED`]: /api/v18/errors#err_package_path_not_exported
 [`esm`]: https://github.com/standard-things/esm#readme
 [`package.json`]: #nodejs-packagejson-field-definitions
 [entry points]: #package-entry-points
-[folders as modules]: (/api/modules#folders-as-modules)
+[folders as modules]: /api/v18/modules#folders-as-modules
 [import maps]: https://github.com/WICG/import-maps
-[load ECMASCript modules from CommonJS modules]: (/api/modules#the-mjs-extension)
-[loader hooks]: (/api/esm#loaders)
+[load ECMASCript modules from CommonJS modules]: /api/v18/modules#the-mjs-extension
+[loader hooks]: /api/v18/esm#loaders
 [packages folder mapping]: https://github.com/WICG/import-maps#packages-via-trailing-slashes
 [self-reference]: #self-referencing-a-package-using-its-name
 [subpath exports]: #subpath-exports
 [subpath imports]: #subpath-imports
-[supported package managers]: (/api/corepack#supported-package-managers)
+[supported package managers]: /api/v18/corepack#supported-package-managers
 [the dual CommonJS/ES module packages section]: #dual-commonjses-module-packages
-[the full specifier path]: (/api/esm#mandatory-file-extensions)
+[the full specifier path]: /api/v18/esm#mandatory-file-extensions

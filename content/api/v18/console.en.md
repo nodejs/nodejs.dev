@@ -178,8 +178,6 @@ binary.
 Maintains an internal counter specific to `label` and outputs to `stdout` the
 number of times `console.count()` has been called with the given `label`.
 
-
-
 ```js
 > console.count()
 default: 1
@@ -209,8 +207,6 @@ undefined
 * `label` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The display label for the counter. **Default:** `'default'`.
 
 Resets the internal counter specific to `label`.
-
-
 
 ```js
 > console.count('abc');
@@ -513,12 +509,12 @@ This method does not display anything unless used in the inspector. The
 [`console.profileEnd()`]: #consoleprofileendlabel
 [`console.time()`]: #consoletimelabel
 [`console.timeEnd()`]: #consoletimeendlabel
-[`process.stderr`]: (/api/process#processstderr)
-[`process.stdout`]: (/api/process#processstdout)
-[`util.format()`]: (/api/util#utilformatformat-args)
-[`util.inspect()`]: (/api/util#utilinspectobject-options)
-[customizing `util.inspect()` colors]: (/api/util#customizing-utilinspect-colors)
+[`process.stderr`]: /api/v18/process#processstderr
+[`process.stdout`]: /api/v18/process#processstdout
+[`util.format()`]: /api/v18/util#utilformatformat-args
+[`util.inspect()`]: /api/v18/util#utilinspectobject-options
+[customizing `util.inspect()` colors]: /api/v18/util#customizing-utilinspect-colors
 [falsy]: https://developer.mozilla.org/en-US/docs/Glossary/Falsy
-[inspector]: (/api/debugger)
-[note on process I/O]: (/api/process#a-note-on-process-io)
+[inspector]: /api/v18/debugger
+[note on process I/O]: /api/v18/process#a-note-on-process-io
 [truthy]: https://developer.mozilla.org/en-US/docs/Glossary/Truthy

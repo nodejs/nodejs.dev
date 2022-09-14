@@ -249,8 +249,6 @@ from version 3 with some additions. This means that it is not necessary
 to recompile for new versions of Node.js which are
 listed as supporting a later version.
 
-
-
 <table>
   <tr>
     <td></td>

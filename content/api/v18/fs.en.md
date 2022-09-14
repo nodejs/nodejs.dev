@@ -5808,7 +5808,7 @@ A call to `fs.ftruncate()` or `filehandle.truncate()` can be used to reset
 the file contents.
 
 [#25741]: https://github.com/nodejs/node/issues/25741
-[Common System Errors]: (/api/errors#common-system-errors)
+[Common System Errors]: /api/v18/errors#common-system-errors
 [FS constants]: #fs-constants
 [File access constants]: #file-access-constants
 [MDN-Date]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
@@ -5817,11 +5817,11 @@ the file contents.
 [MSDN-Using-Streams]: https://docs.microsoft.com/en-us/windows/desktop/FileIO/using-streams
 [Naming Files, Paths, and Namespaces]: https://docs.microsoft.com/en-us/windows/desktop/FileIO/naming-a-file
 [`AHAFS`]: https://developer.ibm.com/articles/au-aix_event_infrastructure/
-[`Buffer.byteLength`]: (/api/buffer#static-method-bufferbytelengthstring-encoding)
+[`Buffer.byteLength`]: /api/v18/buffer#static-method-bufferbytelengthstring-encoding
 [`FSEvents`]: https://developer.apple.com/documentation/coreservices/file_system_events
 [`Number.MAX_SAFE_INTEGER`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER
 [`ReadDirectoryChangesW`]: https://docs.microsoft.com/en-us/windows/desktop/api/winbase/nf-winbase-readdirectorychangesw
-[`UV_THREADPOOL_SIZE`]: (/api/cli#uv_threadpool_sizesize)
+[`UV_THREADPOOL_SIZE`]: /api/v18/cli#uv_threadpool_sizesize
 [`event ports`]: https://illumos.org/man/port_create
 [`filehandle.createWriteStream()`]: #filehandlecreatewritestreamoptions
 [`filehandle.writeFile()`]: #filehandlewritefiledata-options
@@ -5869,7 +5869,7 @@ the file contents.
 [`fsPromises.utimes()`]: #fspromisesutimespath-atime-mtime
 [`inotify(7)`]: https://man7.org/linux/man-pages/man7/inotify.7.html
 [`kqueue(2)`]: https://www.freebsd.org/cgi/man.cgi?query=kqueue&sektion=2
-[`util.promisify()`]: (/api/util#utilpromisifyoriginal)
+[`util.promisify()`]: /api/v18/util#utilpromisifyoriginal
 [bigints]: https://tc39.github.io/proposal-bigint
 [caveats]: #caveats
 [chcp]: https://ss64.com/nt/chcp.html

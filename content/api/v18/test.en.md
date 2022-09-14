@@ -842,8 +842,8 @@ The name of the suite.
   aborted.
 
 [TAP]: https://testanything.org/
-[`--test-only`]: (/api/cli#--test-only)
-[`--test`]: (/api/cli#--test)
+[`--test-only`]: /api/v18/cli#--test-only
+[`--test`]: /api/v18/cli#--test
 [`SuiteContext`]: #class-suitecontext
 [`TestContext`]: #class-testcontext
 [`context.diagnostic`]: #contextdiagnosticmessage

@@ -15,6 +15,7 @@ interface Props {
   currentSlug: string;
   readSections: Set<NavigationSectionItem['slug']>;
   isApiDocs?: boolean;
+  onClick?: (event: React.MouseEvent<HTMLLinkElement>) => void;
 }
 
 const NavigationSection = ({
@@ -23,6 +24,7 @@ const NavigationSection = ({
   currentSlug,
   readSections,
   isApiDocs,
+  onClick,
 }: Props): JSX.Element => {
   const isActive = (item: NavigationSectionItem) => item.slug === currentSlug;
   const [isOpen, setIsOpen] = useState(!!section.find(isActive));
@@ -67,6 +69,7 @@ const NavigationSection = ({
               isRead={isRead}
               isActive={isActive(item)}
               isApiDocs={isApiDocs}
+              onClick={onClick}
             />
           );
         })}
