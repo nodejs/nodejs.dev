@@ -1299,8 +1299,6 @@ setTimeout(() => {}, 1000);
 The following example measures the duration of `require()` operations to load
 dependencies:
 
-
-
 ```js
 'use strict';
 const {
@@ -1403,9 +1401,9 @@ dns.promises.resolve('localhost');
 [User Timing]: https://www.w3.org/TR/user-timing/
 [Web Performance APIs]: https://w3c.github.io/perf-timing-primer/
 [Worker threads]: worker_threads.md#worker-threads
-[`'exit'`]: (/api/process#event-exit)
+[`'exit'`]: /api/v18/process#event-exit
 [`child_process.spawnSync()`]: child_process.md#child_processspawnsynccommand-args-options
-[`process.hrtime()`]: (/api/process#processhrtimetime)
+[`process.hrtime()`]: /api/v18/process#processhrtimetime
 [`timeOrigin`]: https://w3c.github.io/hr-time/#dom-performance-timeorigin
 [`window.performance.toJSON`]: https://developer.mozilla.org/en-US/docs/Web/API/Performance/toJSON
 [`window.performance`]: https://developer.mozilla.org/en-US/docs/Web/API/Window/performance

@@ -88,7 +88,7 @@
 
     @media (max-width: 900px) {
       background: var(--color-fill-app);
-      height: var(--nav-height);
+      flex-flow: row wrap;
       justify-content: center;
       order: 3;
       padding: 0;

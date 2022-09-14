@@ -159,8 +159,8 @@ int RunNodeInstance(MultiIsolatePlatform* platform,
 }
 ```
 
-[CLI options]: (/api/cli)
-[`process.memoryUsage()`]: (/api/process#processmemoryusage)
-[deprecation policy]: (/api/deprecations)
+[CLI options]: /api/v18/cli
+[`process.memoryUsage()`]: /api/v18/process#processmemoryusage
+[deprecation policy]: /api/v18/deprecations
 [embedtest.cc]: https://github.com/nodejs/node/blob/HEAD/test/embedding/embedtest.cc
 [src/node.h]: https://github.com/nodejs/node/blob/HEAD/src/node.h

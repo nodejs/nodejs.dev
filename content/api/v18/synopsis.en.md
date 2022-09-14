@@ -93,6 +93,6 @@ Now, open any preferred web browser and visit `http://127.0.0.1:3000`.
 If the browser displays the string `Hello, World!`, that indicates
 the server is working.
 
-[Command-line options]: (/api/cli#options)
+[Command-line options]: /api/v18/cli#options
 [Installing Node.js via package manager]: https://nodejs.org/en/download/package-manager/
-[web server]: (/api/http)
+[web server]: /api/v18/http

@@ -22,7 +22,7 @@ const Navigation = ({
   isApiDocs,
   children,
 }: Props): JSX.Element => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
   const toggle = (): void => setIsOpen(!isOpen);
 
   const navigationClasses = classnames(styles.navigation, {
@@ -48,6 +48,9 @@ const Navigation = ({
     return isCurrentSlug;
   });
 
+  // When clicking on a link gracefully close the Navigation
+  const onClick = () => setIsOpen(false);
+
   return (
     <nav aria-label={label} className={navigationClasses}>
       <button type="button" className={styles.navigationOpen} onClick={toggle}>
@@ -64,6 +67,7 @@ const Navigation = ({
               currentSlug={currentSlug}
               readSections={readSections}
               isApiDocs={isApiDocs}
+              onClick={onClick}
             />
           )
       )}

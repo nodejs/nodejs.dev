@@ -148,5 +148,5 @@ Returns a string identifying the current [Punycode.js][] version number.
 
 [Punycode]: https://tools.ietf.org/html/rfc3492
 [Punycode.js]: https://github.com/bestiejs/punycode.js
-[WHATWG URL API]: (/api/url#the-whatwg-url-api)
-[`url.domainToASCII`]: (/api/url#urldomaintoasciidomain)
+[WHATWG URL API]: /api/v18/url#the-whatwg-url-api
+[`url.domainToASCII`]: /api/v18/url#urldomaintoasciidomain

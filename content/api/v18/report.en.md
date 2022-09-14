@@ -609,4 +609,4 @@ threads to finish. However, the latency for this will usually be low, as both
 running JavaScript and the event loop are interrupted to generate the report.
 
 [`Worker`]: worker_threads.md
-[`process API documentation`]: (/api/process)
+[`process API documentation`]: /api/v18/process

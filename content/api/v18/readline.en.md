@@ -1236,15 +1236,15 @@ const { createInterface } = require('node:readline');
 </table>
 
 [EOF character]: https://en.wikipedia.org/wiki/End-of-file#EOF_character
-[Readable]: (/api/stream#readable-streams)
-[TTY]: (/api/tty)
+[Readable]: /api/v18/stream#readable-streams
+[TTY]: /api/v18/tty
 [TTY keybindings]: #tty-keybindings
-[Writable]: (/api/stream#writable-streams)
+[Writable]: /api/v18/stream#writable-streams
 [`'SIGCONT'`]: #event-sigcont
 [`'SIGTSTP'`]: #event-sigtstp
 [`'line'`]: #event-line
-[`fs.ReadStream`]: (/api/fs#class-fsreadstream)
-[`process.stdin`]: (/api/process#processstdin)
-[`process.stdout`]: (/api/process#processstdout)
+[`fs.ReadStream`]: /api/v18/fs#class-fsreadstream
+[`process.stdin`]: /api/v18/process#processstdin
+[`process.stdout`]: /api/v18/process#processstdout
 [`rl.close()`]: #rlclose
 [reading files]: #example-read-file-stream-line-by-line

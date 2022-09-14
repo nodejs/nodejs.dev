@@ -1946,23 +1946,23 @@ and `removeEventListener()` is that `removeListener()` will return a reference
 to the `EventTarget`.
 
 [WHATWG-EventTarget]: https://dom.spec.whatwg.org/#interface-eventtarget
-[`--trace-warnings`]: (/api/cli#--trace-warnings)
+[`--trace-warnings`]: /api/v18/cli#--trace-warnings
 [`CustomEvent` Web API]: https://dom.spec.whatwg.org/#customevent
 [`EventTarget` Web API]: https://dom.spec.whatwg.org/#eventtarget
 [`EventTarget` error handling]: #eventtarget-error-handling
 [`Event` Web API]: https://dom.spec.whatwg.org/#event
-[`domain`]: (/api/domain)
+[`domain`]: /api/v18/domain
 [`emitter.listenerCount()`]: #emitterlistenercounteventname
 [`emitter.removeListener()`]: #emitterremovelistenereventname-listener
 [`emitter.setMaxListeners(n)`]: #emittersetmaxlistenersn
 [`events.defaultMaxListeners`]: #eventsdefaultmaxlisteners
-[`fs.ReadStream`]: (/api/fs#class-fsreadstream)
-[`net.Server`]: (/api/net#class-netserver)
+[`fs.ReadStream`]: /api/v18/fs#class-fsreadstream
+[`net.Server`]: /api/v18/net#class-netserver
 [`new.target.name`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target
-[`process.on('warning')`]: (/api/process#event-warning)
+[`process.on('warning')`]: /api/v18/process#event-warning
 [async context]: async_context.md
 [capturerejections]: #capture-rejections-of-promises
 [error]: #error-events
 [rejection]: #emittersymbolfornodejsrejectionerr-eventname-args
 [rejectionsymbol]: #eventscapturerejectionsymbol
-[stream]: (/api/stream)
+[stream]: /api/v18/stream

@@ -56,7 +56,7 @@
   grid-gap: 1.5rem;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   justify-content: center;
-  margin-bottom: 5em;
+  margin: 0 auto 5em auto;
 
   &__feature {
     margin: 0 2em;

@@ -22,8 +22,6 @@ calling `require('node:https')` will result in an error being thrown.
 
 When using CommonJS, the error thrown can be caught using try/catch:
 
-
-
 ```cjs
 let https;
 try {
@@ -459,31 +457,31 @@ headers: max-age=0; pin-sha256="WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18="; p
 ```
 
 [`Agent`]: #class-httpsagent
-[`Session Resumption`]: (/api/tls#session-resumption)
-[`URL`]: (/api/url#the-whatwg-url-api)
-[`http.Agent(options)`]: (/api/http#new-agentoptions)
-[`http.Agent`]: (/api/http#class-httpagent)
-[`http.ClientRequest`]: (/api/http#class-httpclientrequest)
-[`http.Server`]: (/api/http#class-httpserver)
-[`http.createServer()`]: (/api/http#httpcreateserveroptions-requestlistener)
-[`http.get()`]: (/api/http#httpgetoptions-callback)
-[`http.request()`]: (/api/http#httprequestoptions-callback)
+[`Session Resumption`]: /api/v18/tls#session-resumption
+[`URL`]: /api/v18/url#the-whatwg-url-api
+[`http.Agent(options)`]: /api/v18/http#new-agentoptions
+[`http.Agent`]: /api/v18/http#class-httpagent
+[`http.ClientRequest`]: /api/v18/http#class-httpclientrequest
+[`http.Server`]: /api/v18/http#class-httpserver
+[`http.createServer()`]: /api/v18/http#httpcreateserveroptions-requestlistener
+[`http.get()`]: /api/v18/http#httpgetoptions-callback
+[`http.request()`]: /api/v18/http#httprequestoptions-callback
 [`https.Agent`]: #class-httpsagent
 [`https.request()`]: #httpsrequestoptions-callback
 [`import()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import
-[`net.Server`]: (/api/net#class-netserver)
-[`new URL()`]: (/api/url#new-urlinput-base)
-[`server.close()`]: (/api/http#serverclosecallback)
-[`server.closeAllConnections()`]: (/api/http#servercloseallconnections)
-[`server.closeIdleConnections()`]: (/api/http#servercloseidleconnections)
-[`server.headersTimeout`]: (/api/http#serverheaderstimeout)
-[`server.keepAliveTimeout`]: (/api/http#serverkeepalivetimeout)
-[`server.listen()`]: (/api/net#serverlisten)
-[`server.maxHeadersCount`]: (/api/http#servermaxheaderscount)
-[`server.requestTimeout`]: (/api/http#serverrequesttimeout)
-[`server.setTimeout()`]: (/api/http#serversettimeoutmsecs-callback)
-[`server.timeout`]: (/api/http#servertimeout)
-[`tls.connect()`]: (/api/tls#tlsconnectoptions-callback)
-[`tls.createSecureContext()`]: (/api/tls#tlscreatesecurecontextoptions)
-[`tls.createServer()`]: (/api/tls#tlscreateserveroptions-secureconnectionlistener)
+[`net.Server`]: /api/v18/net#class-netserver
+[`new URL()`]: /api/v18/url#new-urlinput-base
+[`server.close()`]: /api/v18/http#serverclosecallback
+[`server.closeAllConnections()`]: /api/v18/http#servercloseallconnections
+[`server.closeIdleConnections()`]: /api/v18/http#servercloseidleconnections
+[`server.headersTimeout`]: /api/v18/http#serverheaderstimeout
+[`server.keepAliveTimeout`]: /api/v18/http#serverkeepalivetimeout
+[`server.listen()`]: /api/v18/net#serverlisten
+[`server.maxHeadersCount`]: /api/v18/http#servermaxheaderscount
+[`server.requestTimeout`]: /api/v18/http#serverrequesttimeout
+[`server.setTimeout()`]: /api/v18/http#serversettimeoutmsecs-callback
+[`server.timeout`]: /api/v18/http#servertimeout
+[`tls.connect()`]: /api/v18/tls#tlsconnectoptions-callback
+[`tls.createSecureContext()`]: /api/v18/tls#tlscreatesecurecontextoptions
+[`tls.createServer()`]: /api/v18/tls#tlscreateserveroptions-secureconnectionlistener
 [sni wiki]: https://en.wikipedia.org/wiki/Server_Name_Indication
