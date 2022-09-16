@@ -1,32 +1,32 @@
 ---
 title: Introduction to Node.js
 description: "Getting started guide to Node.js, the server-side JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to just that."
-authors: flaviocopes, potch, MylesBorins, RomainLanz, virkt25, Trott, onel0p3z, ollelauribostrom, MarkPieszak, fhemberger, LaRuaNa, FrozenPandaz, mcollina, amiller-gh, ahmadawais, saqibameen, dangen-effy, aymen94
+authors: flaviocopes, potch, MylesBorins, RomainLanz, virkt25, Trott, onel0p3z, ollelauribostrom, MarkPieszak, fhemberger, LaRuaNa, FrozenPandaz, mcollina, amiller-gh, ahmadawais, saqibameen, dangen-effy, aymen94, AugustinMauroy
 section: Quick Start
 category: learn
 ---
 
-Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project!
+Node.js est un environnement d'exécution JavaScript open-source et multiplateforme. Il s'agit d'un outil populaire pour presque tous les types de projets !
 
-Node.js runs the V8 JavaScript engine, the core of Google Chrome, outside of the browser. This allows Node.js to be very performant.
+Node.js exécute le moteur JavaScript V8, le cœur de Google Chrome, en dehors du navigateur. Cela permet à Node.js d'être très performant.
 
-A Node.js app runs in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.
+Une application Node.js s'exécute dans un seul processus, sans créer un nouveau thread pour chaque requête. Node.js fournit un ensemble de primitives d'E/S asynchrones dans sa bibliothèque standard qui empêche le code JavaScript de se bloquer et, en général, les bibliothèques de Node.js sont écrites en utilisant des paradigmes non bloquants, ce qui fait du comportement bloquant l'exception plutôt que la norme.
 
-When Node.js performs an I/O operation, like reading from the network, accessing a database or the filesystem, instead of blocking the thread and wasting CPU cycles waiting, Node.js will resume the operations when the response comes back.
+Lorsque Node.js effectue une opération d'E/S, comme la lecture du réseau, l'accès à une base de données ou au système de fichiers, au lieu de bloquer le fil et de gaspiller des cycles de CPU en attendant, Node.js reprendra les opérations lorsque la réponse reviendra.
 
-This allows Node.js to handle thousands of concurrent connections with a single server without introducing the burden of managing thread concurrency, which could be a significant source of bugs.
+Cela permet à Node.js de gérer des milliers de connexions simultanées avec un seul serveur sans avoir à gérer la concurrence des threads, ce qui pourrait être une source importante de bogues.
 
-Node.js has a unique advantage because millions of frontend developers that write JavaScript for the browser are now able to write the server-side code in addition to the client-side code without the need to learn a completely different language.
+Node.js présente un avantage unique car des millions de développeurs frontaux qui écrivent du JavaScript pour le navigateur sont désormais en mesure d'écrire le code côté serveur en plus du code côté client sans avoir à apprendre un langage complètement différent.
 
-In Node.js the new ECMAScript standards can be used without problems, as you don't have to wait for all your users to update their browsers - you are in charge of deciding which ECMAScript version to use by changing the Node.js version, and you can also enable specific experimental features by running Node.js with flags.
+Dans Node.js, les nouvelles normes ECMAScript peuvent être utilisées sans problème, car vous n'avez pas besoin d'attendre que tous vos utilisateurs mettent à jour leurs navigateurs - vous êtes en charge de décider quelle version ECMAScript utiliser en changeant la version de Node.js, et vous pouvez également activer des fonctionnalités expérimentales spécifiques en exécutant Node.js avec des drapeaux.
 
-## A Vast Number of Libraries
+## Un grand nombre de bibliothèques
 
-npm with its simple structure helped the ecosystem of Node.js proliferate, and now the npm registry hosts over 1,000,000 open source packages you can freely use.
+Avec sa structure simple, npm a contribué à la prolifération de l'écosystème de Node.js. Aujourd'hui, le registre npm héberge plus d'un million de paquets open source que vous pouvez utiliser librement.
 
-## An Example Node.js Application
+## Un exemple d'application Node.js
 
-The most common example Hello World of Node.js is a web server:
+L'exemple le plus courant Hello World de Node.js est un serveur web :
 
 <iframe title="Hello world web server" src="https://stackblitz.com/edit/nodejs-dev-0001-01?embed=1&file=index.js&zenmode=1" alt="nodejs-dev-0001-01 on StackBlitz" style="height: 400px; width: 100%; border: 0;" />
 
@@ -39,73 +39,72 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+  res.end('Bonjour touts le mondes!\n');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`Serveur fonctionnant à http://${hostname}:${port}/`);
 });
 ```
 
-To run this snippet, save it as a `server.js` file and run `node server.js` in your terminal.-->
+Pour exécuter cet extrait, sauvegardez-le en tant que fichier `server.js` et exécutez `node server.js` dans votre terminal.-->
 
-This code first includes the Node.js [`http` module](https://nodejs.org/api/http.html).
+Ce code inclut d'abord le  [`http` module](https://nodejs.org/api/http.html) de Node.js.
 
-Node.js has a fantastic [standard library](https://nodejs.org/api/), including first-class support for networking.
+Node.js dispose d'une fantastique [bibliothèque standard](https://nodejs.org/api/), y compris un support de première classe pour les réseaux.
 
-The `createServer()` method of `http` creates a new HTTP server and returns it.
+La méthode `createServer()` de `http` crée un nouveau serveur HTTP et le renvoie.
 
-The server is set to listen on the specified port and host name. When the server is ready, the callback function is called, in this case informing us that the server is running.
+Le serveur est configuré pour écouter sur le port et le nom d'hôte spécifiés. Lorsque le serveur est prêt, la fonction de rappel est appelée, dans ce cas, pour nous informer que le serveur est en cours d'exécution.
 
-Whenever a new request is received, the [`request` event](https://nodejs.org/api/http.html#http_event_request) is called, providing two objects: a request (an [`http.IncomingMessage`](https://nodejs.org/api/http.html#http_class_http_incomingmessage) object) and a response (an [`http.ServerResponse`](https://nodejs.org/api/http.html#http_class_http_serverresponse) object).
+Chaque fois qu'une nouvelle demande est reçue, l'événement [`request`](https://nodejs.org/api/http.html#http_event_request) est appelé, fournissant deux objets : une demande (un objet [`http.IncomingMessage`](https://nodejs.org/api/http.html#http_class_http_incomingmessage)) et une réponse (un objet [`http.ServerResponse`](https://nodejs.org/api/http.html#http_class_http_serverresponse)).
 
-Those 2 objects are essential to handle the HTTP call.
+Ces 2 objets sont essentiels pour gérer l'appel HTTP.
 
-The first provides the request details. In this simple example, this is not used, but you could access the request headers and request data.
+Le premier fournit les détails de la demande. Dans cet exemple simple, il n'est pas utilisé, mais vous pourriez accéder aux en-têtes et aux données de la requête.
 
-The second is used to return data to the caller.
+La seconde est utilisée pour retourner les données à l'appelant.
 
-In this case with:
+Dans ce cas, avec :
 
 ```js
 res.statusCode = 200;
 ```
 
-we set the statusCode property to 200, to indicate a successful response.
+nous définissons la propriété statusCode à 200, pour indiquer une réponse réussie.
 
-We set the Content-Type header:
+Nous définissons l'en-tête Content-Type :
 
 ```js
 res.setHeader('Content-Type', 'text/plain');
 ```
 
-and we close the response, adding the content as an argument to `end()`:
+et nous fermons la réponse, en ajoutant le contenu comme argument à `end()` :
 
 ```js
 res.end('Hello World\n');
 ```
 
-## Node.js Frameworks and Tools
+## Frameworks et outils Node.js
+Node.js est une plateforme de bas niveau. Afin de rendre les choses faciles et passionnantes pour les développeurs, des milliers de bibliothèques ont été construites sur Node.js par la communauté.
 
-Node.js is a low-level platform. In order to make things easy and exciting for developers, thousands of libraries were built upon Node.js by the community.
+Beaucoup d'entre elles se sont imposées au fil du temps comme des options populaires. Voici une liste non exhaustive de ceux qui méritent d'être appris :
 
-Many of those established over time as popular options. Here is a non-comprehensive list of the ones worth learning:
-
-* [**AdonisJS**](https://adonisjs.com/): A TypeScript-based fully featured framework highly focused on developer ergonomics, stability, and confidence. Adonis is one of the fastest Node.js web frameworks.
-* [**Egg.js**](https://eggjs.org): A framework to build better enterprise frameworks and apps with Node.js & Koa.
-* [**Express**](https://expressjs.com/): It provides one of the most simple yet powerful ways to create a web server. Its minimalist approach, unopinionated, focused on the core features of a server, is key to its success.
-* [**Fastify**](https://fastify.io/): A web framework highly focused on providing the best developer experience with the least overhead and a powerful plugin architecture. Fastify is one of the fastest Node.js web frameworks.
-* [**FeatherJS**](https://feathersjs.com/): Feathers is a lightweight web-framework for creating real-time applications and REST APIs using JavaScript or TypeScript. Build prototypes in minutes and production-ready apps in days.
-* [**Gatsby**](https://www.gatsbyjs.com/): A [React](https://reactjs.org/)-based, [GraphQL](https://graphql.org/) powered, static site generator with a very rich ecosystem of plugins and starters.
-* [**hapi**](https://hapi.dev): A rich framework for building applications and services that enables developers to focus on writing reusable application logic instead of spending time building infrastructure.
-* [**koa**](http://koajs.com/): It is built by the same team behind Express, aims to be even simpler and smaller, building on top of years of knowledge. The new project born out of the need to create incompatible changes without disrupting the existing community.
-* [**Loopback.io**](https://loopback.io/): Makes it easy to build modern applications that require complex integrations.
-* [**Meteor**](https://meteor.com): An incredibly powerful full-stack framework, powering you with an isomorphic approach to building apps with JavaScript, sharing code on the client and the server. Once an off-the-shelf tool that provided everything, now integrates with frontend libs [React](https://reactjs.org/), [Vue](https://vuejs.org/), and [Angular](https://angular.io). Can be used to create mobile apps as well.
-* [**Micro**](https://github.com/zeit/micro): It provides a very lightweight server to create asynchronous HTTP microservices.
-* [**NestJS**](https://nestjs.com/): A TypeScript based progressive Node.js framework for building enterprise-grade efficient, reliable and scalable server-side applications.
-* [**Next.js**](https://nextjs.org/): [React](https://reactjs.org) framework that gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more.
-* [**Nx**](https://nx.dev/): A toolkit for full-stack monorepo development using NestJS, Express, [React](https://reactjs.org/), [Angular](https://angular.io), and more! Nx helps scale your development from one team building one application to many teams collaborating on multiple applications!
-* [**Remix**](https://remix.run): Remix is a fullstack web framework for building excellent user experiences for the web. It comes out of the box with everything you need to build modern web applications (both frontend and backend) and deploy them to any JavaScript-based runtime environment (including Node.js).
-* [**Sapper**](https://sapper.svelte.dev/): Sapper is a framework for building web applications of all sizes, with a beautiful development experience and flexible filesystem-based routing. Offers SSR and more!
-* [**Socket.io**](https://socket.io/): A real-time communication engine to build network applications.
-* [**Strapi**](https://strapi.io/): Strapi is a flexible, open-source Headless CMS that gives developers the freedom to choose their favorite tools and frameworks while also allowing editors to easily manage and distribute their content. By making the admin panel and API extensible through a plugin system, Strapi enables the world's largest companies to accelerate content delivery while building beautiful digital experiences.
+* [**AdonisJS**] (https://adonisjs.com/) : Un framework complet basé sur TypeScript, fortement axé sur l'ergonomie, la stabilité et la confiance des développeurs. Adonis est l'un des frameworks web Node.js les plus rapides.
+* [**Egg.js**](https://eggjs.org) : Un cadre pour construire de meilleurs cadres et applications d'entreprise avec Node.js et Koa.
+* [**Express**](https://expressjs.com/) : Il fournit l'un des moyens les plus simples et les plus puissants de créer un serveur Web. Son approche minimaliste, sans préjugés, centrée sur les fonctionnalités de base d'un serveur, est la clé de son succès.
+* [**Fastify**] (https://fastify.io/) : Un framework web très axé sur la fourniture de la meilleure expérience pour le développeur avec le moins de frais généraux possible et une architecture de plugins puissante. Fastify est l'un des frameworks web Node.js les plus rapides.
+* [**FeatherJS**](https://feathersjs.com/) : Feathers est un framework web léger pour créer des applications en temps réel et des API REST en utilisant JavaScript ou TypeScript. Créez des prototypes en quelques minutes et des applications prêtes pour la production en quelques jours.
+* [**Gatsby**](https://www.gatsbyjs.com/) : Un générateur de sites statiques basé sur [React](https://reactjs.org/), alimenté par [GraphQL](https://graphql.org/) et doté d'un très riche écosystème de plugins et de modules de démarrage.
+* [**hapi**](https://hapi.dev) : Un cadre riche pour la création d'applications et de services qui permet aux développeurs de se concentrer sur l'écriture d'une logique d'application réutilisable au lieu de passer du temps à construire une infrastructure.
+* [**koa**](http://koajs.com/) : Construit par la même équipe qu'Express, il se veut encore plus simple et plus petit, en s'appuyant sur des années de connaissances. Ce nouveau projet est né de la nécessité de créer des changements incompatibles sans perturber la communauté existante.
+* [**Loopback.io**] (https://loopback.io/) : Facilite la création d'applications modernes qui nécessitent des intégrations complexes.
+* [**Meteor**](https://meteor.com) : Un framework full-stack incroyablement puissant, qui vous permet d'adopter une approche isomorphique de la création d'applications avec JavaScript, en partageant le code sur le client et le serveur. Autrefois un outil standard qui fournissait tout, il s'intègre désormais aux librairies frontales [React](https://reactjs.org/), [Vue](https://vuejs.org/) et [Angular](https://angular.io). Peut également être utilisé pour créer des applications mobiles.
+* [**Micro**](https://github.com/zeit/micro) : Il fournit un serveur très léger pour créer des microservices HTTP asynchrones.
+* [**NestJS**](https://nestjs.com/) : Un framework Node.js progressif basé sur TypeScript pour créer des applications côté serveur efficaces, fiables et évolutives de niveau entreprise.
+**Next.js**](https://nextjs.org/) : Framework [React](https://reactjs.org) qui vous offre la meilleure expérience de développement avec toutes les fonctionnalités dont vous avez besoin pour la production : rendu hybride statique et serveur, prise en charge de TypeScript, bundling intelligent, route pre-fetching, et plus encore.
+* [**Nx**](https://nx.dev/) : Une boîte à outils pour le développement monorepo complet à l'aide de NestJS, Express, [React](https://reactjs.org/), [Angular](https://angular.io), et plus encore ! Nx vous aide à faire évoluer votre développement d'une équipe créant une application à plusieurs équipes collaborant sur plusieurs applications !
+* [**Remix**] (https://remix.run) : Remix est un framework web complet permettant de créer d'excellentes expériences utilisateur sur le web. Il est livré prêt à l'emploi avec tout ce dont vous avez besoin pour créer des applications web modernes (à la fois frontales et dorsales) et les déployer dans n'importe quel environnement d'exécution basé sur JavaScript (y compris Node.js).
+* [**Sapper**] (https://sapper.svelte.dev/) : Sapper est un framework pour construire des applications web de toutes tailles, avec une belle expérience de développement et un routage flexible basé sur le système de fichiers. Offre SSR et plus encore !
+* [**Socket.io**](https://socket.io/) : Un moteur de communication en temps réel pour construire des applications réseau.
+* [**Strapi**](https://strapi.io/) : Strapi est un CMS Headless flexible et open-source qui donne aux développeurs la liberté de choisir leurs outils et frameworks préférés tout en permettant aux éditeurs de gérer et distribuer facilement leur contenu. En rendant le panneau d'administration et l'API extensibles grâce à un système de plugins, Strapi permet aux plus grandes entreprises du monde d'accélérer la diffusion de contenu tout en créant de magnifiques expériences numériques.

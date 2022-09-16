@@ -1,39 +1,39 @@
 ---
 title: Node.js, the difference between development and production
 description: 'Learn how to set up different configurations for production and development environments'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, RenanTKN
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, RenanTKN, AugustinMauroy
 category: learn
 ---
 
-You can have different configurations for production and development environments.
+Vous pouvez avoir des configurations différentes pour les environnements de production et de développement.
 
-Node.js assumes it's always running in a development environment.
-You can signal Node.js that you are running in production by setting the `NODE_ENV=production` environment variable.
+Node.js suppose qu'il fonctionne toujours dans un environnement de développement.
+Vous pouvez signaler à Node.js que vous êtes en production en définissant la variable d'environnement `NODE_ENV=production`.
 
-This is usually done by executing the command
+Cela se fait généralement en exécutant la commande
 
 ```bash
 export NODE_ENV=production
 ```
 
-in the shell, but it's better to put it in your shell configuration file (e.g. `.bash_profile` with the Bash shell) because otherwise the setting does not persist in case of a system restart.
+dans l'interpréteur de commandes, mais il est préférable de le mettre dans le fichier de configuration de votre interpréteur de commandes (par exemple `.bash_profile` avec l'interpréteur de commandes Bash) car sinon le paramètre ne persiste pas en cas de redémarrage du système.
 
-You can also apply the environment variable by prepending it to your application initialization command:
+Vous pouvez également appliquer la variable d'environnement en la faisant précéder de la commande d'initialisation de votre application :
 
 ```bash
 NODE_ENV=production node app.js
 ```
 
-This environment variable is a convention that is widely used in external libraries as well.
+Cette variable d'environnement est une convention qui est largement utilisée dans les bibliothèques externes également.
 
-Setting the environment to `production` generally ensures that
+Définir l'environnement à `production` garantit généralement que
 
-* logging is kept to a minimum, essential level
-* more caching levels take place to optimize performance
+* la journalisation est maintenue à un niveau minimal et essentiel
+* plus de niveaux de cache sont mis en place pour optimiser les performances.
 
-For example Pug, the templating library used by Express, compiles in debug mode if `NODE_ENV` is not set to `production`. Express views are compiled in every request in development mode, while in production they are cached. There are many more examples.
+Par exemple, Pug, la bibliothèque de templating utilisée par Express, se compile en mode débogage si `NODE_ENV` n'est pas défini comme `production`. Les vues Express sont compilées à chaque requête en mode développement, alors qu'en production elles sont mises en cache. Il y a beaucoup d'autres exemples.
 
-You can use conditional statements to execute code in different environments:
+Vous pouvez utiliser des instructions conditionnelles pour exécuter du code dans différents environnements :
 
 ```js
 if (process.env.NODE_ENV === 'development') {
@@ -47,7 +47,7 @@ if (['production', 'staging'].includes(process.env.NODE_ENV)) {
 }
 ```
 
-For example, in an Express app, you can use this to set different error handlers per environment:
+Par exemple, dans une application Express, vous pouvez l'utiliser pour définir différents gestionnaires d'erreurs par environnement :
 
 ```js
 if (process.env.NODE_ENV === 'development') {

@@ -1,7 +1,7 @@
 ---
 title: A brief history of Node.js
 description: 'A look back on the history of Node.js from 2009 to today'
-authors: flaviocopes, onel0p3z, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, kevjin, keywordnew, karlhorky, bdharrington7, MalachiCunliffe
+authors: flaviocopes, onel0p3z, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, kevjin, keywordnew, karlhorky, bdharrington7, MalachiCunliffe, AugustinMauroy
 section: Quick Start
 category: learn
 ---
@@ -9,87 +9,87 @@ category: learn
 import { getAgeInYears } from '../../src/util/getAgeInYears';
 
 <p>
-  Believe it or not, Node.js is only {getAgeInYears('19 May, 2009')} years old.
+  Croyez-le ou non, Node.js est seulement âgé de {getAgeInYears('19 May, 2009')}.
 </p>
 
 <p>
-  In comparison, JavaScript is {getAgeInYears('04 December, 1995')} years old
-  and the Web is {getAgeInYears('01 January, 1989')} years old .
+  En comparaison, JavaScript est âgé de {getAgeInYears('04 December, 1995')}
+  et le Web est âgé de {getAgeInYears('01 January, 1989')}.
 </p>
 
 <p>
-  {getAgeInYears('19 May, 2009')} years isn't a very long time in tech, but
-  Node.js seems to have been around forever.
+  {getAgeInYears('19 May, 2009')} ans n'est pas un temps très long dans la technologie, mais
+  Node.js semble être là depuis toujours.
 </p>
 
-In this post, we draw the big picture of Node.js in its history, to put things in perspective.
+Dans ce billet, nous dressons le tableau général de Node.js dans son histoire, pour mettre les choses en perspective.
 
-## A little bit of history
+## Un peu d'histoire
 
-JavaScript is a programming language that was created at Netscape as a scripting tool to manipulate web pages inside their browser, [Netscape Navigator](https://en.wikipedia.org/wiki/Netscape_Navigator).
+JavaScript est un langage de programmation qui a été créé par Netscape en tant qu'outil de script pour manipuler les pages web dans leur navigateur, [Netscape Navigator](https://en.wikipedia.org/wiki/Netscape_Navigator).
 
-Part of the business model of Netscape was to sell Web Servers, which included an environment called _Netscape LiveWire_ that could create dynamic pages using server-side JavaScript. Unfortunately, _Netscape LiveWire_ wasn't very successful and server-side JavaScript wasn't popularized until recently, by the introduction of Node.js.
+Une partie du modèle économique de Netscape consistait à vendre des serveurs Web, qui comprenaient un environnement appelé _Netscape LiveWire_ permettant de créer des pages dynamiques en utilisant JavaScript côté serveur. Malheureusement, _Netscape LiveWire_ n'a pas eu beaucoup de succès et le JavaScript côté serveur n'a été popularisé que récemment, avec l'introduction de Node.js.
 
-One key factor that led to the rise of Node.js was the timing. Just a few years earlier, JavaScript had started to be considered as a more serious language, thanks to "Web 2.0" applications (such as Flickr, Gmail, etc.) that showed the world what a modern experience on the web could be like.
+Un facteur clé qui a conduit à l'essor de Node.js a été le timing. Quelques années auparavant, JavaScript avait commencé à être considéré comme un langage plus sérieux, grâce aux applications "Web 2.0" (telles que Flickr, Gmail, etc.) qui ont montré au monde ce que pouvait être une expérience moderne sur le Web.
 
-JavaScript engines also became considerably better as many browsers competed to offer users the best performance. Development teams behind major browsers worked hard to offer better support for JavaScript and find ways to make JavaScript run faster. The engine that Node.js uses under the hood, V8 (also known as Chrome V8 for being the open-source JavaScript engine of The Chromium Project), improved significantly due to this competition.
+Les moteurs JavaScript se sont également considérablement améliorés, car de nombreux navigateurs sont en concurrence pour offrir aux utilisateurs les meilleures performances. Les équipes de développement derrière les principaux navigateurs ont travaillé dur pour offrir un meilleur support pour JavaScript et trouver des moyens de rendre JavaScript plus rapide. Le moteur que Node.js utilise sous le capot, V8 (également connu sous le nom de Chrome V8 pour être le moteur JavaScript open-source du projet Chromium), s'est considérablement amélioré grâce à cette concurrence.
 
-Node.js happened to be built in the right place and right time, but luck isn't the only reason why it is popular today. It introduces a lot of innovative thinking and approaches for JavaScript server-side development that have already helped many developers.
+Node.js a été construit au bon endroit et au bon moment, mais la chance n'est pas la seule raison de sa popularité actuelle. Il introduit un grand nombre de réflexions et d'approches innovantes pour le développement JavaScript côté serveur qui ont déjà aidé de nombreux développeurs.
 
 ## 2009
 
-- Node.js is born
-- The first form of [npm](https://www.npmjs.com/) is created
+- Node.js est né
+- La première forme de [npm](https://www.npmjs.com/) est créée.
 
 ## 2010
 
-- [Express](https://expressjs.com/) is born
-- [Socket.io](https://socket.io) is born
+- [Express](https://expressjs.com/) est né
+- [Socket.io](https://socket.io) est né
 
 ## 2011
 
 - npm hits version 1.0
-- Larger companies start adopting Node.js: LinkedIn, Uber, etc.
-- [hapi](https://hapi.dev) is born
+- Les grandes entreprises commencent à adopter Node.js : LinkedIn, Uber, etc.
+- [hapi](https://hapi.dev) est né
 
 ## 2012
 
-- Adoption continues very rapidly
+- L'adoption se poursuit très rapidement
 
 ## 2013
 
-- First big blogging platform using Node.js: [Ghost](https://ghost.org/)
-- [Koa](https://koajs.com/) is born
+- Première grande plateforme de blogs utilisant Node.js : [Ghost](https://ghost.org/)
+- [Koa](https://koajs.com/) est né
 
 ## 2014
 
-- The Big Fork: [io.js](https://iojs.org/) is a major fork of Node.js, with the goal of introducing ES6 support and moving faster
+- The Big Fork : [io.js](https://iojs.org/) est un fork majeur de Node.js, dont l'objectif est d'introduire le support ES6 et d'aller plus vite.
 
 ## 2015
 
 - The [Node.js Foundation](https://foundation.nodejs.org/) is born
-- IO.js is merged back into Node.js
-- npm introduces private modules
-- Node.js 4 (versions 1, 2 and 3 never previously released)
+- IO.js est fusionné de nouveau dans Node.js
+- npm introduit les modules privés
+- Node.js 4 (versions 1, 2 et 3 jamais publiées)
 
 ## 2016
 
 - The [leftpad incident](https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm)
-- [Yarn](https://yarnpkg.com/en/) is born
+- [Yarn](https://yarnpkg.com/en/) est né
 - Node.js 6
 
 ## 2017
 
-- npm focuses more on security
+- npm se concentre davantage sur la sécurité
 - Node.js 8
 - HTTP/2
-- V8 introduces Node.js in its testing suite, officially making Node.js a target for the JS engine, in addition to Chrome
-- 3 billion npm downloads every week
+- V8 introduit Node.js dans sa suite de tests, faisant officiellement de Node.js une cible pour le moteur JS, en plus de Chrome.
+- 3 milliards de téléchargements de npm chaque semaine
 
 ## 2018
 
 - Node.js 10
-- [ES modules](https://nodejs.org/api/esm.html) .mjs experimental support
+- [ES modules](https://nodejs.org/api/esm.html) Support expérimental .mjs
 - Node.js 11
 
 ## 2019

@@ -1,16 +1,16 @@
 ---
 title: How much JavaScript do you need to know to use Node.js?
 description: 'If you are just starting out with JavaScript, how deeply do you need to know the language?'
-authors: flaviocopes, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, elanandkumar
+authors: flaviocopes, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, elanandkumar, AustinMauroy
 section: Quick Start
 category: learn
 ---
 
-As a beginner, it's hard to get to a point where you are confident enough in your programming abilities.
+En tant que débutant, il est difficile d'arriver à un point où vous êtes suffisamment confiant dans vos capacités de programmation.
 
-While learning to code, you might also be confused at where does JavaScript end, and where Node.js begins, and vice versa.
+Tout en apprenant à coder, vous pouvez également être confus quant à la fin de JavaScript et au début de Node.js, et vice versa.
 
-I would recommend you to have a good grasp of the main JavaScript concepts before diving into Node.js:
+Je vous recommande d'avoir une bonne maîtrise des principaux concepts de JavaScript avant de plonger dans Node.js :
 
 * Lexical Structure
 * Expressions
@@ -28,9 +28,9 @@ I would recommend you to have a good grasp of the main JavaScript concepts befor
 * Strict Mode
 * ECMAScript 6, 2016, 2017
 
-With those concepts in mind, you are well on your road to become a proficient JavaScript developer, in both the browser and in Node.js.
+Avec ces concepts en tête, vous êtes sur la bonne voie pour devenir un développeur JavaScript compétent, à la fois dans le navigateur et dans Node.js.
 
-The following concepts are also key to understand asynchronous programming, which is one of the fundamental parts of Node.js:
+Les concepts suivants sont également essentiels pour comprendre la programmation asynchrone, qui est l'une des parties fondamentales de Node.js :
 
 * [Asynchronous programming and callbacks](/learn/javascript-asynchronous-programming-and-callbacks)
 * [Timers](/learn/discover-javascript-timers)
