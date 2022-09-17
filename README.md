@@ -68,11 +68,13 @@ also have committer rights on the repo.
 * [@ovflowd](https://github.com/ovflowd) - Claudio Wunder
 * [@rodion-arr](https://github.com/rodion-arr) - Rodion Abdurakhimov
 
+<!-- ncu-team-sync end -->
+
 <details>
   <summary>Previous Members</summary>
-  
+
   These are previous members that were part of the **Nodejs.dev** Team:
-  
+
   * [@ahmadawais](https://github.com/ahmadawais) - Ahmad Awais ⚡️
   * [@alexandrtovmach](https://github.com/alexandrtovmach) - Alexandr Tovmach
   * [@amiller-gh](https://github.com/amiller-gh) - Adam Miller
@@ -100,10 +102,8 @@ also have committer rights on the repo.
   * [@timothyis](https://github.com/timothyis) - Timothy
   * [@tstreamDOTh](https://github.com/tstreamDOTh) - T Thiyagaraj
   * [@ZYSzys](https://github.com/ZYSzys) - ZYSzys
-  
-</details>
 
-<!-- ncu-team-sync end -->
+</details>
 
 #### The Website Redesign Teams
 
