@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Index, { HomeNodeReleases } from '..';
 import { BannersIndex } from '../../types';
 import { createNodeReleasesData } from '../../__fixtures__/page';
+import { axe, toHaveNoViolations } from 'jest-axe';
 
 const mockNodeReleasesData = createNodeReleasesData();
 
@@ -51,6 +52,7 @@ const mockData = {
     bannersIndex,
   },
 };
+expect.extend(toHaveNoViolations);
 
 describe('Home page', () => {
   it('renders correctly', () => {
@@ -125,5 +127,11 @@ describe('Home page', () => {
       const bannerText = screen.queryByText(bannersIndex.text || '');
       expect(bannerText).not.toBeInTheDocument();
     });
+  });
+
+  it('has no accessibility violations', async () => {
+    const { container } = render(<Index data={mockData} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
