@@ -205,7 +205,6 @@ participated in that process.
 [Query issues for "Meeting"][]
 
 [code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
-[community committee]: https://github.com/nodejs/community-committee
 [contributing guidelines]: ./CONTRIBUTING.md
 [figma design]: https://www.figma.com/file/lOxAGGg5KXb6nwie7zXkz6/NJ---Design-System?node-id=22%3A6086
 [meeting notes]: ./meetings

@@ -1,12 +1,26 @@
 ---
 title: installing-node.js-via-package-manager
 displayTitle: Installing Node.js via Package Manager
-description: "Installing Node.js via Package Manager | Node.js"
+description: 'Installing Node.js via Package Manager | Node.js'
 authors: fhemberger, XhmikosR, shadowspawn, vsemozhetbyt, nschonni, wildcard, MrJithil, kasicka, cassidyjames, Trott, richardlau, Qantas94Heavy, pierreneter, 0mp, ThePrez, PoojaDurgad, MaledongGit, Megajin, marc-maurer, yodeyer, geek, sudowork, strawbrary, ryanmurakami, rbnswartz, arkwright, oliversalzburg, mweagle, Mohamed3on, Ginden, kapouer, jperkin, jericopulvera, jedsmith, jasonkarns, sonicdoe, mcollina, fornwall, danbev, naskapal, awochna, AdamMajer, ahmetanilgur, bnb, qbit
 category: download
 ---
 
-_**Note:**_ The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
+**_Note:_** The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
+
+## Alpine Linux
+
+Node.js LTS and npm packages are available in the Main Repository.
+
+```bash
+apk add nodejs npm
+```
+
+Node.js Current can be installed from the Community Repository.
+
+```bash
+apk add nodejs-current
+```
 
 ## Android
 
@@ -51,18 +65,18 @@ dnf module install nodejs:12
 
 For CentOS/RHEL 7 Node.js is available via [Software Collections](https://www.softwarecollections.org/en/scls/?search=NodeJS).
 
-### Alternatives
+##### Alternatives
 
 These resources provide packages compatible with CentOS, Fedora, and RHEL.
 
-* [Node.js snaps](#snap) maintained and supported at [https://github.com/nodejs/snap]()
+* [Node.js snaps](#snap) maintained and supported at [https://github.com/nodejs/snap](https://github.com/nodejs/snap)
 * [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
 
 ## Debian and Ubuntu based Linux distributions
 
 [Node.js binary distributions](https://github.com/nodesource/distributions/blob/master/README.md) are available from NodeSource.
 
-### Alternatives
+##### Alternatives
 
 Packages compatible with Debian and Ubuntu based Linux distributions are available via [Node.js snaps](#snap).
 
@@ -71,8 +85,8 @@ Packages compatible with Debian and Ubuntu based Linux distributions are availab
 Fast and simple Node.js version manager built in Rust used to manage multiple released Node.js versions. It allows you to perform operations like install, uninstall, switch Node versions automatically based on the current directory, etc.
 To install fnm, use this [install script](https://github.com/Schniz/fnm#using-a-script-macoslinux).
 
-fnm has cross-platform support (macOS, Windows, Linux) & all popular shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt)
-it's built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
+fnm has cross-platform support (macOS, Windows, Linux) & all popular shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
+fnm is built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
 
 ## FreeBSD
 
@@ -120,7 +134,7 @@ _If you want to download the package with bash:_
 curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
 ```
 
-### Alternatives
+##### Alternatives
 
 Using **[Homebrew](https://brew.sh/)**:
 
@@ -333,7 +347,18 @@ xbps-install -Sy nodejs
 
 Download the [Windows Installer](https://nodejs.org/en/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
 
-### Alternatives
+##### Alternatives
+
+Using **[Winget](https://aka.ms/winget-cli)**:
+
+```bash
+winget install OpenJS.NodeJS
+# or for LTS
+winget install OpenJS.NodeJS.LTS
+```
+
+After running one of the two commands above, it may be necessary to restart the
+terminal emulator before the `node` CLI command becomes available.
 
 Using **[Chocolatey](https://chocolatey.org/)**:
 
@@ -347,6 +372,8 @@ Using **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs
+# or for LTS
+scoop install nodejs-lts
 ```
 
 ## z/OS
@@ -354,5 +381,5 @@ scoop install nodejs
 IBM® SDK for Node.js - z/OS® is available in two installation formats,
 SMP/E and PAX. Select the installation format that applies to you:
 
-* [Installing and configuring SMP/E edition of Node.js on z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/smpe.htm)
-* [Installing and configuring PAX edition of Node.js on z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/paxz.htm)
+* [Installing and configuring SMP/E edition of Node.js on z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
+* [Installing and configuring PAX edition of Node.js on z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)

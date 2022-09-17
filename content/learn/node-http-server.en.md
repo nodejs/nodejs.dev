@@ -2,7 +2,6 @@
 title: 'Build an HTTP Server'
 description: 'How to build an HTTP server with Node.js'
 authors: flaviocopes, potch, MylesBorins, LaRuaNa, ahmadawais, dogafincan
-section: Getting Started
 category: learn
 ---
 
@@ -14,22 +13,6 @@ Here is a sample Hello World HTTP web server:
   alt="nodejs-dev-0009-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
-
-<!--```js
-const http = require('http')
-
-const port = process.env.PORT
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200
-  res.setHeader('Content-Type', 'text/html')
-  res.end('<h1>Hello, World!</h1>')
-})
-
-server.listen(port, () => {
-  console.log(`Server running at port ${port}`)
-})
-```-->
 
 Let's analyze it briefly. We include the [`http` module](https://nodejs.org/api/http.html).
 

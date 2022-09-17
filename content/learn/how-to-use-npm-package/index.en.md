@@ -2,7 +2,6 @@
 title: How to use or execute a package installed using npm
 description: 'How to include and use in your code a package installed in your node_modules folder'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
-section: Getting Started
 category: learn
 ---
 
@@ -32,7 +31,7 @@ The cowsay package provides a command line program that can be executed to make 
 
 When you install the package using `npm install cowsay`, it will install itself and a few dependencies in the `node_modules` folder:
 
-![The node\_modules folder content](node_modules-content.png)
+![The node_modules folder content](node_modules-content.png)
 
 There is a hidden `.bin` folder, which contains symbolic links to the cowsay binaries:
 

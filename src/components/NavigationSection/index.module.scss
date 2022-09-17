@@ -8,7 +8,7 @@
   padding: 0;
   position: relative;
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     height: auto;
     overflow: visible;
     top: 24px;
@@ -16,6 +16,10 @@
 
   &:first-of-type {
     margin-top: var(--space-40);
+
+    @media (max-width: 900px) {
+      margin-top: 0;
+    }
   }
 
   &__pure-title,

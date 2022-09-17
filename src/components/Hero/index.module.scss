@@ -16,7 +16,7 @@
   h1 {
     max-width: 840px;
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       font-size: var(--font-size-display2);
       line-height: 48px;
       max-width: 90vw;
@@ -31,7 +31,7 @@
     margin: var(--space-32) 0 var(--space-32) 0;
     max-width: 780px;
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       max-width: 90vw;
     }
   }
@@ -67,6 +67,7 @@
   box-sizing: border-box;
   color: var(--black0);
   display: flex;
+  flex-direction: column;
   font-weight: var(--font-weight-semibold);
   height: 5.6rem;
   justify-content: center;
@@ -75,6 +76,11 @@
   text-decoration: none;
   transition: background-color 0.2s ease-out;
   width: 20rem;
+
+  span {
+    color: var(--black4);
+    font-size: var(--font-size-body3);
+  }
 
   &:hover {
     background-color: var(--brand7);
@@ -100,17 +106,21 @@
 }
 
 :global(.dark) {
-  .download-button__inverse {
-    color: var(--black0);
+  .download-button {
+    &__inverse {
+      color: var(--black0);
+    }
   }
 }
 
 :global(.light) {
-  .download-button__inverse {
-    color: var(--brand6);
+  .download-button {
+    &__inverse {
+      color: var(--brand6);
 
-    &:hover {
-      color: var(--black0);
+      &:hover {
+        color: var(--black0);
+      }
     }
   }
 }

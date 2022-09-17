@@ -2,11 +2,15 @@ module.exports = {
   parallel: (entries, callback) => {
     const results = {};
 
-    Object.entries(entries).forEach(([key, value], index, array) => {
+    let totalExecuted = 0;
+
+    Object.entries(entries).forEach(([key, value], __, array) => {
       value((_, item) => {
         results[key] = item;
 
-        if (index === array.length - 1) {
+        totalExecuted += 1;
+
+        if (totalExecuted === array.length) {
           callback(null, results);
         }
       });

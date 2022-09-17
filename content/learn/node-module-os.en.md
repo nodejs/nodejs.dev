@@ -2,7 +2,6 @@
 title: 'The Node.js os module'
 description: 'The os module of Node.js provides useful functions to interact with underlying system'
 authors: flaviocopes, potch, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
-section: Getting Started
 category: learn
 ---
 
@@ -20,7 +19,7 @@ There are a few useful properties that tell us some key things related to handli
 
 `os.constants.errno` sets the constants for error reporting, like EADDRINUSE, EOVERFLOW and more.
 
-You can read them all on <https://nodejs.org/api/os.html#os_signal_constants>.
+You can read them all on [https://nodejs.org/api/os.html#os_signal_constants](https://nodejs.org/api/os.html#os_signal_constants).
 
 Let's now see the main methods that `os` provides:
 

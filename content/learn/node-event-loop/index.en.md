@@ -2,7 +2,6 @@
 title: 'The Node.js Event Loop'
 description: 'The Event Loop is one of the most important aspects to understand about Node.js'
 authors: flaviocopes, potch, ZYSzys, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
-section: Getting Started
 category: learn
 ---
 
@@ -53,30 +52,6 @@ Let's pick an example:
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
 
-<!--```js
-const bar = () => console.log('bar')
-
-const baz = () => console.log('baz')
-
-const foo = () => {
-  console.log('foo')
-  bar()
-  baz()
-}
-
-foo()
-```
-
-This code prints
-
-```txt
-foo
-bar
-baz
-```
-
-as expected.-->
-
 When this code runs, first `foo()` is called. Inside `foo()` we first call `bar()`, then we call `baz()`.
 
 At this point the call stack looks like this:
@@ -105,20 +80,6 @@ Take this example:
   alt="nodejs-dev-0004-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
-
-<!--```js
-const bar = () => console.log('bar')
-
-const baz = () => console.log('baz')
-
-const foo = () => {
-  console.log('foo')
-  setTimeout(bar, 0)
-  baz()
-}
-
-foo()
-```-->
 
 This code prints, maybe surprisingly:
 
@@ -154,7 +115,7 @@ We don't have to wait for functions like `setTimeout`, fetch or other things to 
 
 ECMAScript 2015 introduced the concept of the Job Queue, which is used by Promises (also introduced in ES6/ES2015). It's a way to execute the result of an async function as soon as possible, rather than being put at the end of the call stack.
 
-Promises that resolve before the current function ends will be executed right after the current function.
+Promises that resolve before the current function ends will be executed right after Call Stack is empty.
 
 Similar to a rollercoaster ride at an amusement park: the message queue puts you at the back of the queue, behind all the other people, where you will have to wait for your turn, while the job queue is the fastpass ticket that lets you take another ride right after you finished the previous one.
 
@@ -162,36 +123,10 @@ Example:
 
 <iframe
   title="ECMAScript 2015 Job Queue"
-  src="https://stackblitz.com/edit/nodejs-dev-0005-01?index.js&zenmode=1&view=editor"
+  src="https://stackblitz.com/edit/nodejs-dev-0005-01-vpufws?file=index.js&index.js&view=editor&zenmode=1"
   alt="nodejs-dev-0005-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
-
-<!--```js
-const bar = () => console.log('bar')
-
-const baz = () => console.log('baz')
-
-const foo = () => {
-  console.log('foo')
-  setTimeout(bar, 0)
-  new Promise((resolve, reject) =>
-    resolve('should be right after baz, before bar')
-  ).then(resolve => console.log(resolve))
-  baz()
-}
-
-foo()
-```
-
-This prints
-
-```txt
-foo
-baz
-should be right after baz, before bar
-bar
-```-->
 
 That's a big difference between Promises (and Async/await, which is built on promises) and plain old asynchronous functions through `setTimeout()` or other platform APIs.
 

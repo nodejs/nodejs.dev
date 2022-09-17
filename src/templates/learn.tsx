@@ -4,11 +4,11 @@ import Article from '../components/Article';
 import Layout from '../components/Layout';
 import Navigation from '../containers/Navigation';
 import { connectGraphQlCustom } from '../components/connectGraphQlArticle';
-import { LearnPageContext, LearnPageData } from '../types';
+import { LearnTemplateContext, LearnTemplateData } from '../types';
 
 interface Props {
-  data: LearnPageData;
-  pageContext: LearnPageContext;
+  data: LearnTemplateData;
+  pageContext: LearnTemplateContext;
   location: Location;
 }
 
@@ -34,7 +34,7 @@ const LearnLayout = ({
       <Article
         title={title}
         body={body}
-        tableOfContents={tableOfContents}
+        tableOfContents={tableOfContents ? tableOfContents.items : []}
         next={next}
         authors={authors}
         previous={previous}

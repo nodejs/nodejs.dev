@@ -2,7 +2,6 @@
 title: The package.json guide
 description: 'The package.json file is a key element in lots of app codebases based on the Node.js ecosystem.'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, jgb-solutions, amiller-gh, ahmadawais
-section: Getting Started
 category: learn
 ---
 
@@ -132,7 +131,7 @@ All those properties are used by either `npm` or other tools that we can use.
 
 This section describes the properties you can use in detail. We refer to "package" but the same thing applies to local applications which you do not use as packages.
 
-Most of those properties are only used on <https://www.npmjs.com/>, others by scripts that interact with your code, like `npm` or others.
+Most of those properties are only used on [https://www.npmjs.com/](https://www.npmjs.com/), others by scripts that interact with your code, like `npm` or others.
 
 ### name
 
@@ -264,7 +263,7 @@ Example:
 ]
 ```
 
-This helps people find your package when navigating similar packages, or when browsing the <https://www.npmjs.com/> website.
+This helps people find your package when navigating similar packages, or when browsing the [https://www.npmjs.com/](https://www.npmjs.com/) website.
 
 ### description
 

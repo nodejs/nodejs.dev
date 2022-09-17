@@ -3,9 +3,28 @@ const path = require('path');
 require('dotenv').config();
 
 const config = require('./src/config.json');
-const { localesAsString, defaultLanguage } = require('./util-node/locales');
+const { localesAsString, defaultLanguage } = require('./locales');
+
+const markdownSources = [
+  'about',
+  'api',
+  'get-involved',
+  'download',
+  'homepage',
+  'learn',
+  'blog',
+];
+
+const gatsbyFsMarkdownSources = markdownSources.map(name => ({
+  resolve: 'gatsby-source-filesystem',
+  options: {
+    name,
+    path: path.resolve(__dirname, `./content/${name}`),
+  },
+}));
 
 const gatsbyConfig = {
+  flags: { FAST_DEV: true },
   pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
     title: config.title,
@@ -20,10 +39,16 @@ const gatsbyConfig = {
     'Mdx.frontmatter.category': `CategoriesYaml.name`,
   },
   plugins: [
+    'gatsby-plugin-typescript',
     'gatsby-plugin-catch-links',
     '@skagami/gatsby-plugin-dark-mode',
     'gatsby-transformer-yaml',
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-sharp',
+    // This generates the redirects for the I18N redirects
+    // It also creates meta redirects for any usage of `createRedirect`
+    'gatsby-plugin-meta-redirect',
+    ...gatsbyFsMarkdownSources,
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
@@ -44,66 +69,17 @@ const gatsbyConfig = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'learn',
-        path: path.resolve('./content/learn'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'sites',
-        path: path.resolve('./src/pages'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'homepage',
-        path: path.resolve('./content/homepage'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'community',
-        path: path.resolve('./content/community'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'blog',
-        path: path.resolve('./content/blog'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
         name: 'data',
-        path: path.resolve('./src/data'),
+        path: path.resolve(__dirname, './src/data'),
       },
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'about',
-        path: path.resolve('./content/about'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'download',
-        path: path.resolve('./content/download'),
-      },
-    },
-    'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
+        // Disables Babel Loader for MDX which fastens the build time
+        lessBabel: true,
         gatsbyRemarkPlugins: [
-          { resolve: 'gatsby-remark-copy-linked-files' },
           {
             resolve: 'gatsby-remark-autolink-headers',
             options: {
@@ -153,9 +129,15 @@ const gatsbyConfig = {
             slug: node => node.fields.slug,
             category: node => node.fields.categoryName,
             tableOfContents: node => {
-              return [...node.rawBody.matchAll(/^#{2,5} .*/gm)]
-                .map(match => match[0].replace(/^#{2,5} /, ''))
-                .join('\n');
+              if (node.frontmatter.category === 'api') {
+                // We only do the Table of Contents resolution for API pages as for Learn pages searching by the title and description should be enough
+                // We should probably do a better way of calculating the Table of Contents for API pages as maybe creating a field in the frontmatter
+                return [...node.internal.content.matchAll(/^#{2,5} .*/gm)]
+                  .map(match => match[0].replace(/^#{2,5} /, ''))
+                  .join('\n');
+              }
+
+              return '';
             },
           },
         },
@@ -169,7 +151,7 @@ const gatsbyConfig = {
       resolve: `gatsby-theme-i18n`,
       options: {
         defaultLang: defaultLanguage,
-        configPath: path.resolve('./src/i18n/config.json'),
+        configPath: path.resolve(__dirname, './src/i18n/config.json'),
         prefixDefault: true,
         locales: localesAsString,
       },
@@ -215,8 +197,6 @@ const gatsbyConfig = {
         cache_busting_mode: 'none',
       },
     },
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-meta-redirect',
   ],
 };
 

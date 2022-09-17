@@ -2,7 +2,6 @@
 title: An introduction to the npm package manager
 description: 'A quick guide to npm, the powerful package manager key to the success of Node.js. In January 2017 over 350000 packages were reported being listed in the npm registry, making it the biggest single language code repository on Earth, and you can be sure there is a package for (almost!) everything.'
 authors: flaviocopes, MylesBorins, LaRuaNa, jgb-solutions, amiller-gh, ahmadawais
-section: Getting Started
 category: learn
 ---
 
@@ -10,7 +9,7 @@ category: learn
 
 `npm` is the standard package manager for Node.js.
 
-In January 2017 over 350000 packages were reported being listed in the npm registry, making it the biggest single language code repository on Earth, and you can be sure there is a package for (almost!) everything.
+In September 2022 over 2.1 million packages were reported being listed in the npm registry, making it the biggest single language code repository on Earth, and you can be sure there is a package for (almost!) everything.
 
 It started as a way to download and manage dependencies of Node.js packages, but it has since become a tool used also in frontend JavaScript.
 
@@ -119,7 +118,7 @@ It's very common to use this feature to run Webpack:
   "scripts": {
     "watch": "webpack --watch --progress --colors --config webpack.conf.js",
     "dev": "webpack --progress --colors --config webpack.conf.js",
-    "prod": "NODE_ENV=production webpack -p --config webpack.conf.js",
+    "prod": "NODE_ENV=production webpack -p --config webpack.conf.js"
   }
 }
 ```

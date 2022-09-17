@@ -1,15 +1,14 @@
 import {
   PaginationInfo,
-  LearnPageContext,
+  LearnTemplateContext,
   NavigationSectionData,
-  BlogPosts,
-  BlogPageData,
-  BlogPageContext,
-  ArticleProps,
-  NodeReleaseDataDetail,
+  PostTemplateData,
+  PostTemplateContext,
   NodeReleaseData,
   PageTableOfContents,
-  BlogCategories,
+  BlogCategory,
+  BlogPost,
+  ArticleData,
 } from '../types';
 import mockMDXBodyContent from './mockMDXBodyContent';
 
@@ -60,7 +59,7 @@ export const createNavigationSectionData = (): NavigationSectionData =>
     },
   } as NavigationSectionData);
 
-export const createLearnPageData = (): ArticleProps => ({
+export const createLearnPageData = () => ({
   data: {
     articleCurrentLanguage: {
       body: mockMDXBodyContent,
@@ -72,82 +71,92 @@ export const createLearnPageData = (): ArticleProps => ({
       fields: {
         authors: ['test-user1', 'test-user2'],
       },
-    },
+    } as ArticleData,
   },
 });
-
-export const createNodeReleasesDataDetail = (): NodeReleaseDataDetail[] =>
-  [
-    {
-      version: 'mock-version-1',
-      date: 'mock-date',
-      files: ['aix-ppc64', 'headers', 'linux-arm64'],
-      npm: 'mock-npm',
-      v8: 'mock-v8',
-      uv: 'mock-uv',
-      zlib: 'mock-zlib',
-      openssl: 'mock-openssl',
-      modules: 'mock-module',
-      lts: 'fermium',
-      security: false,
-    },
-    {
-      version: 'mmock-version-2',
-      date: 'mock-date',
-      files: ['aix-ppc64', 'headers', 'linux-arm64', 'linux-armv7l'],
-      npm: 'mock-npm',
-      v8: 'mock-v8',
-      uv: 'mock-uv',
-      zlib: 'mock-zlib',
-      openssl: '1.1.1g',
-      modules: '83',
-      lts: 'fermium',
-      security: false,
-    },
-  ] as NodeReleaseDataDetail[];
 
 export const createNodeReleasesData = (): NodeReleaseData[] =>
   [
     {
       endOfLife: '2022-04-30',
-      maintenanceLTSStart: '2020-11-30',
-      activeLTSStart: '2019-10-21',
-      codename: 'Erbium',
+      ltsStart: '2019-10-21',
+      maintenanceStart: '2020-11-30',
       initialRelease: '2019-04-23',
-      release: 'v12',
+      codename: 'erbium',
+      version: 'v12',
+      fullVersion: 'v12.0.0',
       status: 'Maintenance LTS',
+      isLts: false,
     },
     {
       endOfLife: '2023-04-30',
-      maintenanceLTSStart: '2021-10-19',
-      activeLTSStart: '2020-10-27',
-      codename: 'Fermium',
+      ltsStart: '2020-10-17',
+      maintenanceStart: '2021-10-19',
       initialRelease: '2020-04-21',
-      release: 'v14',
+      codename: 'fermium',
+      version: 'v14',
+      fullVersion: 'v14.0.0',
       status: 'Active LTS',
+      isLts: true,
+    },
+    {
+      endOfLife: '2025-04-30',
+      ltsStart: '2022-10-25',
+      maintenanceStart: '2023-10-18',
+      initialRelease: '2022-04-19',
+      codename: 'v18',
+      version: 'v18',
+      fullVersion: 'v18.0.0',
+      status: 'Current',
+      isLts: false,
     },
   ] as NodeReleaseData[];
 
-export const createLearnPageContext = (): LearnPageContext =>
+export const createLearnPageContext = (): LearnTemplateContext =>
   ({
     slug: 'test-slug',
     relativePath: 'test-path',
     next: createPaginationInfo(),
     previous: createPaginationInfo(),
     navigationData: createNavigationSectionData(),
-  } as LearnPageContext);
+  } as LearnTemplateContext);
 
-export const createBlogPageContext = (): BlogPageContext => ({
+export const createBlogPageContext = (): PostTemplateContext => ({
   slug: 'test-slug',
   relativePath: 'test-path',
   next: createPaginationInfo(),
   previous: createPaginationInfo(),
   navigationData: createNavigationSectionData(),
+  recent: [
+    {
+      node: {
+        frontmatter: {
+          title: 'title-mock',
+          category: {
+            name: 'category-mock',
+            slug: 'category-mock-slug',
+          },
+          blogAuthors: [
+            {
+              id: 'id-mock',
+              name: 'name-mock',
+              website: 'url-mock',
+            },
+          ],
+        },
+        fields: {
+          date: '11/11/2022',
+          slug: 'slug-mock',
+          readingTime: { text: 'text-mock' },
+        },
+      },
+    },
+  ],
 });
 
 export const createBlogData = (): {
-  posts: BlogPosts;
-  categories: BlogCategories;
+  posts: { edges: BlogPost[] };
+  categories: { edges: BlogCategory[] };
 } => ({
   posts: {
     edges: [
@@ -182,8 +191,8 @@ export const createBlogData = (): {
   },
 });
 
-export const createBlogPageData = (): BlogPageData => ({
-  blog: {
+export const createBlogPageData = (): PostTemplateData => ({
+  mdx: {
     body: mockMDXBodyContent,
     excerpt: 'excerpt-mock',
     frontmatter: {
@@ -198,36 +207,9 @@ export const createBlogPageData = (): BlogPageData => ({
     },
     fields: { slug: 'slug-mock', date: '11/11/2022' },
   },
-  recent: {
-    edges: [
-      {
-        node: {
-          frontmatter: {
-            title: 'title-mock',
-            category: {
-              name: 'category-mock',
-              slug: 'category-mock-slug',
-            },
-            blogAuthors: [
-              {
-                id: 'id-mock',
-                name: 'name-mock',
-                website: 'url-mock',
-              },
-            ],
-          },
-          fields: {
-            date: '11/11/2022',
-            slug: 'slug-mock',
-            readingTime: { text: 'text-mock' },
-          },
-        },
-      },
-    ],
-  },
 });
 
-export const createGeneralPageData = (): ArticleProps => ({
+export const createGeneralPageData = () => ({
   data: {
     articleCurrentLanguage: {
       fields: {
@@ -239,11 +221,11 @@ export const createGeneralPageData = (): ArticleProps => ({
       },
       body: mockMDXBodyContent,
       tableOfContents: mockTableOfContents,
-    },
+    } as ArticleData,
   },
 });
 
-export const createResourcesData = (): ArticleProps => ({
+export const createResourcesData = () => ({
   data: {
     articleCurrentLanguage: {
       fields: {
@@ -255,11 +237,11 @@ export const createResourcesData = (): ArticleProps => ({
       },
       body: mockMDXBodyContent,
       tableOfContents: mockTableOfContents,
-    },
+    } as ArticleData,
   },
 });
 
-export const createPrivacyData = (): ArticleProps => ({
+export const createPrivacyData = () => ({
   data: {
     articleCurrentLanguage: {
       fields: {
@@ -271,6 +253,6 @@ export const createPrivacyData = (): ArticleProps => ({
       },
       body: mockMDXBodyContent,
       tableOfContents: mockTableOfContents,
-    },
+    } as ArticleData,
   },
 });

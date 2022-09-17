@@ -5,7 +5,7 @@ import { MdxLink } from 'gatsby-theme-i18n';
 import {
   PaginationInfo,
   BlogPostAuthor,
-  PageTableOfContents,
+  TableOfContentsItem,
 } from '../../types';
 import AuthorList from '../../containers/AuthorList';
 import EditLink from '../EditLink';
@@ -20,7 +20,7 @@ import styles from './index.module.scss';
 interface Props {
   title: string;
   body: string;
-  tableOfContents?: PageTableOfContents;
+  tableOfContents: TableOfContentsItem[];
   authors: string[] | BlogPostAuthor[];
   relativePath?: string;
   absolutePath?: string;
@@ -32,6 +32,7 @@ interface Props {
   children?: React.ReactNode;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   extraComponents?: Record<string, (...any: any[]) => JSX.Element | null>;
+  childrenPosition?: 'before' | 'after';
 }
 
 const mdxComponents = {
@@ -46,7 +47,7 @@ const renderBlogAuthors = (date?: string, authors?: BlogPostAuthor[]) => (
   <BlogAuthorsList date={date} authors={authors} />
 );
 
-const renderTOC = (tableOfContents?: PageTableOfContents) => (
+const renderTOC = (tableOfContents: TableOfContentsItem[]) => (
   <TableOfContents tableOfContents={tableOfContents} />
 );
 
@@ -64,9 +65,10 @@ const Article = ({
   date,
   children,
   extraComponents = {},
+  childrenPosition = 'after',
 }: Props): JSX.Element => (
   <article className={styles.article}>
-    {children && <div>{children}</div>}
+    {childrenPosition === 'before' && children && <div>{children}</div>}
     <h1 className={styles.headline}>{title}</h1>
     {blog
       ? renderBlogAuthors(date, authors as BlogPostAuthor[])
@@ -76,7 +78,8 @@ const Article = ({
         <MDXRenderer>{body}</MDXRenderer>
       </MDXProvider>
     </div>
-    {!blog && authors.length > 0 && (
+    {childrenPosition === 'after' && children && <div>{children}</div>}
+    {!blog && authors && authors.length > 0 && (
       <AuthorList authors={authors as string[]} />
     )}
     {!blog && (
@@ -84,6 +87,7 @@ const Article = ({
         absolutePath={absolutePath}
         relativePath={relativePath}
         editPath={editPath}
+        hasNoAuthors={!authors || !authors.length}
       />
     )}
     {!blog && <Pagination previous={previous} next={next} />}

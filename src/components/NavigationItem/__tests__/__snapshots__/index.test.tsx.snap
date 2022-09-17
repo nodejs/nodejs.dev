@@ -6,7 +6,6 @@ exports[`NavigationItem component renders correctly 1`] = `
     aria-current="page"
     class="t-body2 navigationItem navigationItemDone"
     href="versioning"
-    id="link-versioning"
   >
     Versioning
   </a>

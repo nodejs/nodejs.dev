@@ -1,6 +1,7 @@
+const fs = require('fs');
+const path = require('path');
 const fetch = require('node-fetch');
 const async = require('async');
-const { createFileNodeFromBuffer } = require('gatsby-source-filesystem');
 
 const createGitHubHeaders = require('./createGitHubHeaders');
 const { createMarkdownParser } = require('./apiDocsTransformUtils');
@@ -14,31 +15,37 @@ const getFileName = file => file.name.replace('.md', '');
 const filterOutInvalidFiles = file =>
   !ignoredFiles.includes(file.name) && file.name.endsWith('.md');
 
-async function getApiDocsData(releaseVersions, gatsbyApis, callback) {
-  const navigationEntries = [];
-
+async function getApiDocsData(releaseVersions, callback) {
   // This creates an asynchronous queue that fetches the directory listing of the
   // /doc/api/ directory on the Node.js repository with the contents of a specific version (Git Tag)
   // Then the worker creates a new queue that dispatches a list of files (their metadata and the release version)
-  const apiDownloadListQueue = async.queue((fullReleaseVersion, cb) => {
+  const apiDownloadListQueue = async.queue((releaseData, cb) => {
     const pushToDocsQueue = files => {
       const markdownFiles = files.filter(filterOutInvalidFiles);
-      const releaseVersion = fullReleaseVersion.split('.')[0];
 
       const navigationEntry = {
-        version: releaseVersion,
+        version: releaseData.version,
         items: [],
       };
+
+      const currentVersionPath = path.resolve(
+        __dirname,
+        `../content${apiPath}${releaseData.version}/`
+      );
+
+      // Creates the API version directory if it doesn't exist
+      if (!fs.existsSync(currentVersionPath)) {
+        fs.mkdirSync(currentVersionPath);
+      }
 
       // Here we create a new queue to parse each one of the Markdown files
       // We first iterate through the contents with mostly Regex and string interpolation instead of AST
       // As we don't want to overcomplicate things. There are definitel drawbacks of using ReGeX
       const apiDocsParser = async.queue((file, dCb) => {
-        const parseMarkdownCallback = contents => {
-          gatsbyApis.docsTimer.setStatus(
-            `Parsing API ${file.name}@${fullReleaseVersion}`
-          );
+        // eslint-disable-next-line no-console
+        console.log(`Parsing: ${file.name}@${releaseData.version}`);
 
+        const parseMarkdownCallback = contents => {
           // We create a Markdown Parser that will be responsible of parsing the file
           // The parser includes utilities to create a Frontmatter, replace the YAML metadata
           // with JSX Components, fix URL links, update the Headings levels and many other small improvements
@@ -46,8 +53,8 @@ async function getApiDocsData(releaseVersions, gatsbyApis, callback) {
             contents,
             {
               name: getFileName(file),
-              version: releaseVersion,
-              fullVersion: fullReleaseVersion,
+              version: releaseData.version,
+              fullVersion: releaseData.fullVersion,
               downloadUrl: file.download_url,
             }
           );
@@ -58,15 +65,19 @@ async function getApiDocsData(releaseVersions, gatsbyApis, callback) {
           // And it has a format that matches the <NavigationItem> type
           navigationEntry.items.push(...getNavigationEntries());
 
-          // This creates the Gatsby Node based from the Buffer contents.e
-          createFileNodeFromBuffer({
-            buffer: Buffer.from(resultingContent),
-            cache: gatsbyApis.cache,
-            createNode: gatsbyApis.createNode,
-            name: `${apiPath}${releaseVersion}/${getFileName(file)}`,
-            createNodeId: gatsbyApis.createNodeId,
-            ext: '.md',
-          }).then(() => dCb());
+          const currentFilePath = path.resolve(
+            currentVersionPath,
+            // Creates the file path for English version of the file
+            `${getFileName(file)}.en.md`
+          );
+
+          // Creates the File within the File System
+          fs.writeFile(
+            currentFilePath,
+            resultingContent,
+            { encoding: 'utf8' },
+            dCb
+          );
         };
 
         fetch(file.download_url)
@@ -79,24 +90,41 @@ async function getApiDocsData(releaseVersions, gatsbyApis, callback) {
 
       // We finished processing all files for this release
       apiDocsParser.drain(() => {
-        navigationEntries.push(navigationEntry);
+        const navigationDataPath = path.resolve(
+          currentVersionPath,
+          'navigation.json'
+        );
 
-        cb();
+        const sortedNavigationEntry = {
+          ...navigationEntry,
+          // Sorts the items alphabetically to avoid on every run having a different order
+          // of the items, so that we keep consistency
+          items: navigationEntry.items.sort((a, b) =>
+            a.slug.localeCompare(b.slug)
+          ),
+        };
+
+        fs.writeFile(
+          navigationDataPath,
+          // Stringifies and Pretty-Prints the JSON
+          JSON.stringify(sortedNavigationEntry, null, 2),
+          cb
+        );
       });
     };
 
     // This fetches a JSON containing the metadata of the files within the API Folder
     // @see https://docs.github.com/en/rest/repos/contents#get-repository-content
-    fetch(apiReleaseContents(fullReleaseVersion), createGitHubHeaders())
+    fetch(apiReleaseContents(releaseData.fullVersion), createGitHubHeaders())
       .then(response => response.json())
       .then(files => pushToDocsQueue(files));
   }, 2);
 
   // Retrieves all the Lists of the Documentation files for that Node.js version
-  apiDownloadListQueue.push(...releaseVersions);
+  apiDownloadListQueue.push([...releaseVersions]);
 
   // After the whole queue ends we call the callback with our Navigation entries
-  apiDownloadListQueue.drain(() => callback({ navigationEntries }));
+  apiDownloadListQueue.drain(() => callback());
 }
 
 module.exports = getApiDocsData;

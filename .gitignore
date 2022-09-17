@@ -8,6 +8,7 @@ yarn-error.log
 .DS_Store
 build
 
+# Cache and Local files
 .env
 .env.production
 .firebase/*
@@ -16,3 +17,8 @@ coverage
 .history
 yarn.lock
 .idea/
+.eslintmdcache
+.eslintjscache
+
+# Firebase
+firebase-debug.log

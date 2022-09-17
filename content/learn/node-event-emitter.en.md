@@ -2,7 +2,6 @@
 title: The Node.js Event emitter
 description: 'How to work with custom events in Node.js'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
-section: Getting Started
 category: learn
 ---
 
@@ -67,4 +66,4 @@ The EventEmitter object also exposes several other methods to interact with even
 * `removeListener()` / `off()`: remove an event listener from an event
 * `removeAllListeners()`: remove all listeners for an event
 
-You can read all their details on the events module page at <https://nodejs.org/api/events.html>
+You can read all their details on the events module page at [https://nodejs.org/api/events.html](https://nodejs.org/api/events.html)

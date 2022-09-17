@@ -1,4 +1,5 @@
 import { navigate as gatsbyNavigate, withPrefix } from 'gatsby';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { useLocation } from '@gatsbyjs/reach-router';
 import { useLocalization } from 'gatsby-theme-i18n';
 

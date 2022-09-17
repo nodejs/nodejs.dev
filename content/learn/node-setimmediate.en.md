@@ -2,7 +2,6 @@
 title: 'Understanding setImmediate()'
 description: 'The Node.js setImmediate function interacts with the event loop in a special way'
 authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais, clean99
-section: Getting Started
 category: learn
 ---
 
@@ -30,8 +29,7 @@ Here is an example to show the order between `setImmediate()`, `process.nextTick
 
 <iframe
   title="A simple example for showing difference between setImmediate nextTick Promise"
-  src="https://stackblitz.com/edit/nodejs-dev-setimmediate?file=index.js
-  &zenmode=1&view=editor"
+  src="https://stackblitz.com/edit/nodejs-dev-setimmediate?file=index.js&zenmode=1&view=editor"
   alt="nodejs-dev-setimmediate-example on StackBlitz"
   style="height: 500px; width: 100%; border: 0;">
 </iframe>

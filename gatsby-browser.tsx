@@ -1,7 +1,9 @@
 import * as React from 'react';
 import ReactIntlProvider from './src/containers/ReactIntl';
-import { defaultLanguage, defaultMessages } from './util-node/locales';
+import { defaultLanguage, defaultMessages } from './locales';
 import type { WrapPageElementBrowser } from './src/types';
+
+import './src/styles/index.scss';
 
 // eslint-disable-next-line import/prefer-default-export
 export const wrapPageElement: WrapPageElementBrowser = ({ element, props }) => {

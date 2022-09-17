@@ -10,6 +10,7 @@ interface Props {
   slug: string;
   title: string;
   isApiDocs?: boolean;
+  onClick?: (event: React.MouseEvent<HTMLLinkElement>) => void;
 }
 
 const NavigationItem = ({
@@ -18,6 +19,7 @@ const NavigationItem = ({
   slug,
   title,
   isApiDocs,
+  onClick,
 }: Props): JSX.Element => {
   const className = classnames(`t-body2 ${styles.navigationItem}`, {
     [styles.navigationItemDone]: isRead,
@@ -25,9 +27,17 @@ const NavigationItem = ({
     [styles.navigationItemApi]: isApiDocs,
   });
 
+  if (slug.startsWith('https')) {
+    return (
+      <a href={slug} className={className}>
+        {title}
+      </a>
+    );
+  }
+
   return (
     <Link
-      id={`link-${slug}`}
+      onClick={onClick}
       to={slug}
       className={className}
       aria-current={isActive ? 'page' : undefined}

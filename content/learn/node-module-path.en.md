@@ -2,11 +2,10 @@
 title: 'The Node.js path module'
 description: 'The path module of Node.js provides useful functions to interact with file paths'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, 19shubham11
-section: Getting Started
 category: learn
 ---
 
-The `path` module provides a lot of very useful functionality to access and interact with the file system.
+The `path` module provides utilities for working with file and directory paths.
 
 There is no need to install it. Being part of the Node.js core, it can be used by simply requiring it:
 
@@ -48,7 +47,7 @@ require('path').extname('/test/something/file.txt'); // '.txt'
 
 ### `path.format()`
 
-Returns a path string from an object, This is the opposite of `path.parse`<br/>
+Returns a path string from an object, This is the opposite of `path.parse`<br />
 `path.format` accepts an object as argument with the following keys:
 
 * `root`: the root
@@ -57,7 +56,7 @@ Returns a path string from an object, This is the opposite of `path.parse`<br/>
 * `name`: the file name
 * `ext`: the file extension
 
-`root` is ignored if `dir` is provided<br/>
+`root` is ignored if `dir` is provided<br />
 `ext` and `name` are ignored if `base` exists
 
 ```js

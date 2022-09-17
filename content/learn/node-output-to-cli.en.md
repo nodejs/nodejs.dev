@@ -2,7 +2,6 @@
 title: Output to the command line using Node.js
 description: 'How to print to the command line console using Node.js, from the basic console.log to more complex scenarios'
 authors: flaviocopes, potch, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
-section: Getting Started
 category: learn
 ---
 
@@ -61,23 +60,6 @@ Take this code:
   alt="nodejs-dev-0002-01 on StackBlitz"
   style="height: 400px; width: 100%; border: 0;">
 </iframe>
-
-<!--
-```js
-const x = 1
-const y = 2
-const z = 3
-console.count(
-  'The value of x is ' + x + ' and has been checked .. how many times?'
-)
-console.count(
-  'The value of x is ' + x + ' and has been checked .. how many times?'
-)
-console.count(
-  'The value of y is ' + y + ' and has been checked .. how many times?'
-)
-```
--->
 
 What happens is that `console.count()` will count the number of times a string is printed, and print the count next to it:
 

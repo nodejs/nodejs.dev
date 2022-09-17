@@ -43,6 +43,13 @@ exports[`Download page renders correctly 1`] = `
           </li>
           <li>
             <a
+              href="/about/"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
               href="/api/"
             >
               API Docs
@@ -57,9 +64,9 @@ exports[`Download page renders correctly 1`] = `
           </li>
           <li>
             <a
-              href="/community/"
+              href="https://openjsf.org/certification/"
             >
-              Community
+              Certification
             </a>
           </li>
         </ul>
@@ -199,7 +206,7 @@ exports[`Download page renders correctly 1`] = `
           </span>
         </div>
         <div>
-          LATEST LTS VERSION mock-version-1
+          LATEST LTS VERSION v14.0.0
         </div>
       </div>
       <div
@@ -213,7 +220,7 @@ exports[`Download page renders correctly 1`] = `
         <div
           class="npm"
         >
-          (includes npm mock-npm)
+          (includes npm)
         </div>
       </div>
       <p
@@ -297,7 +304,7 @@ exports[`Download page renders correctly 1`] = `
             <p
               class="filename"
             >
-              node-mock-version-1-x86.msi
+              node-v14.0.0-x86.msi
             </p>
           </li>
           <li
@@ -325,7 +332,7 @@ exports[`Download page renders correctly 1`] = `
             <p
               class="filename"
             >
-              node-mock-version-1.pkg
+              node-v14.0.0.pkg
             </p>
           </li>
           <li
@@ -346,7 +353,7 @@ exports[`Download page renders correctly 1`] = `
               />
               <a
                 class="link"
-                href="https://nodejs.org/dist/mock-version-1/node-mock-version-1.tar.gz"
+                href="https://nodejs.org/dist/v14.0.0/node-v14.0.0.tar.gz"
               >
                 <svg
                   aria-hidden="true"
@@ -369,7 +376,7 @@ exports[`Download page renders correctly 1`] = `
             <p
               class="filename"
             >
-              node-mock-version-1.tar.gz
+              node-v14.0.0.tar.gz
             </p>
           </li>
         </ul>
@@ -417,6 +424,18 @@ exports[`Download page renders correctly 1`] = `
               >
                 Node.js 
                 v14
+              </li>
+              <li
+                aria-controls="panel:r1:2"
+                aria-disabled="false"
+                aria-selected="false"
+                class="reactTabsTab"
+                data-rttab="true"
+                id="tab:r1:2"
+                role="tab"
+              >
+                Node.js 
+                v18
               </li>
             </ul>
             <div
@@ -504,6 +523,12 @@ exports[`Download page renders correctly 1`] = `
               id="panel:r1:1"
               role="tabpanel"
             />
+            <div
+              aria-labelledby="tab:r1:2"
+              class="reactTabsTabPanel"
+              id="panel:r1:2"
+              role="tabpanel"
+            />
           </div>
         </div>
         <p>
@@ -554,7 +579,7 @@ exports[`Download page renders correctly 1`] = `
                   <a
                     href="https://nodejs.org/download/release/latest-erbium/"
                   >
-                    Erbium
+                    erbium
                   </a>
                 </td>
                 <td>
@@ -585,20 +610,45 @@ exports[`Download page renders correctly 1`] = `
                   <a
                     href="https://nodejs.org/download/release/latest-fermium/"
                   >
-                    Fermium
+                    fermium
                   </a>
                 </td>
                 <td>
                   2020-04-21
                 </td>
                 <td>
-                  2020-10-27
+                  2020-10-17
                 </td>
                 <td>
                   2021-10-19
                 </td>
                 <td>
                   2023-04-30
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://nodejs.org/download/release/latest-v18.x/"
+                  >
+                    v18
+                  </a>
+                </td>
+                <td>
+                  Current
+                </td>
+                <td />
+                <td>
+                  2022-04-19
+                </td>
+                <td>
+                  2022-10-25
+                </td>
+                <td>
+                  2023-10-18
+                </td>
+                <td>
+                  2025-04-30
                 </td>
               </tr>
             </tbody>
@@ -781,7 +831,7 @@ exports[`Download page renders correctly 1`] = `
             class="link"
             href="/about/security"
           >
-            Security Reporting
+            Security
           </a>
         </li>
         <li>
@@ -936,6 +986,13 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           </li>
           <li>
             <a
+              href="/about/"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
               href="/api/"
             >
               API Docs
@@ -950,9 +1007,9 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           </li>
           <li>
             <a
-              href="/community/"
+              href="https://openjsf.org/certification/"
             >
-              Community
+              Certification
             </a>
           </li>
         </ul>
@@ -1092,7 +1149,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           </span>
         </div>
         <div>
-          CURRENT VERSION 
+          CURRENT VERSION v18.0.0
         </div>
       </div>
       <div
@@ -1106,7 +1163,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         <div
           class="npm"
         >
-          (includes npm )
+          (includes npm)
         </div>
       </div>
       <p
@@ -1190,7 +1247,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             <p
               class="filename"
             >
-              node-undefined-x86.msi
+              node-v18.0.0-x86.msi
             </p>
           </li>
           <li
@@ -1218,7 +1275,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             <p
               class="filename"
             >
-              node-undefined.pkg
+              node-v18.0.0.pkg
             </p>
           </li>
           <li
@@ -1239,7 +1296,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               />
               <a
                 class="link"
-                href="https://nodejs.org/dist/undefined/node-undefined.tar.gz"
+                href="https://nodejs.org/dist/v18.0.0/node-v18.0.0.tar.gz"
               >
                 <svg
                   aria-hidden="true"
@@ -1262,7 +1319,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             <p
               class="filename"
             >
-              node-undefined.tar.gz
+              node-v18.0.0.tar.gz
             </p>
           </li>
         </ul>
@@ -1310,6 +1367,18 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               >
                 Node.js 
                 v14
+              </li>
+              <li
+                aria-controls="panel:r3:2"
+                aria-disabled="false"
+                aria-selected="false"
+                class="reactTabsTab"
+                data-rttab="true"
+                id="tab:r3:2"
+                role="tab"
+              >
+                Node.js 
+                v18
               </li>
             </ul>
             <div
@@ -1397,6 +1466,12 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               id="panel:r3:1"
               role="tabpanel"
             />
+            <div
+              aria-labelledby="tab:r3:2"
+              class="reactTabsTabPanel"
+              id="panel:r3:2"
+              role="tabpanel"
+            />
           </div>
         </div>
         <p>
@@ -1447,7 +1522,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   <a
                     href="https://nodejs.org/download/release/latest-erbium/"
                   >
-                    Erbium
+                    erbium
                   </a>
                 </td>
                 <td>
@@ -1478,20 +1553,45 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   <a
                     href="https://nodejs.org/download/release/latest-fermium/"
                   >
-                    Fermium
+                    fermium
                   </a>
                 </td>
                 <td>
                   2020-04-21
                 </td>
                 <td>
-                  2020-10-27
+                  2020-10-17
                 </td>
                 <td>
                   2021-10-19
                 </td>
                 <td>
                   2023-04-30
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://nodejs.org/download/release/latest-v18.x/"
+                  >
+                    v18
+                  </a>
+                </td>
+                <td>
+                  Current
+                </td>
+                <td />
+                <td>
+                  2022-04-19
+                </td>
+                <td>
+                  2022-10-25
+                </td>
+                <td>
+                  2023-10-18
+                </td>
+                <td>
+                  2025-04-30
                 </td>
               </tr>
             </tbody>
@@ -1542,7 +1642,98 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </div>
         <div
           class="body"
-        />
+        >
+          <div
+            class="downloadableItem"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="headerArrow"
+              >
+                <div
+                  class="headerArrowRight"
+                />
+              </div>
+              Windows Installer (.msi)
+            </div>
+          </div>
+          <div
+            class="downloadableItem"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="headerArrow"
+              >
+                <div
+                  class="headerArrowRight"
+                />
+              </div>
+              Windows Binary (.zip)
+            </div>
+          </div>
+          <div
+            class="downloadableItem"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="headerArrow"
+              >
+                <div
+                  class="headerArrowRight"
+                />
+              </div>
+              macOS Installer (.pkg)
+            </div>
+          </div>
+          <div
+            class="downloadableItem"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="headerArrow"
+              >
+                <div
+                  class="headerArrowRight"
+                />
+              </div>
+              macOS Binary (.tar.gz)
+            </div>
+          </div>
+          <div
+            class="downloadableItem"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="headerArrow"
+              >
+                <div
+                  class="headerArrowRight"
+                />
+              </div>
+              Linux (PPC, S390x, AIX, ARMv7, ARMv8)
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <footer
@@ -1583,7 +1774,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             class="link"
             href="/about/security"
           >
-            Security Reporting
+            Security
           </a>
         </li>
         <li>

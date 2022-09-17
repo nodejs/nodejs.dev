@@ -2,7 +2,6 @@
 title: Asynchronous flow control
 description: 'JavaScript control flow is all about callback handling. Here are strategies to help your development.'
 authors: aug2uag
-section: Getting Started
 category: learn
 ---
 
@@ -30,7 +29,7 @@ async1(function (input, result1) {
 
 Of course, in real life there would most likely be additional lines of code to handle `result1`, `result2`, etc., thus, the length and complexity of this issue usually results in code that looks much more messy than the example above.
 
-This is where *functions* come in to great use. More complex operations are made up of many functions:
+This is where _functions_ come in to great use. More complex operations are made up of many functions:
 
 1. initiator style / input
 2. middleware
@@ -146,8 +145,8 @@ The same situation arises in dealing with file systems and network requests. The
 
 You will be able to perform almost all of your operations with the following 3 patterns:
 
-1. *In series*:
-    functions will be executed in a strict sequential order, this one is most similar to `for` loops.
+1. _In series_:
+   functions will be executed in a strict sequential order, this one is most similar to `for` loops.
 
 ```js
 // operations defined elsewhere and ready to execute
@@ -174,8 +173,8 @@ function serialProcedure(operation) {
 serialProcedure(operations.shift());
 ```
 
-2. *Full parallel*:
-    when ordering is not an issue, such as emailing a list of 1,000,000 email recipients.
+2. _Full parallel_:
+   when ordering is not an issue, such as emailing a list of 1,000,000 email recipients.
 
 ```js
 let count = 0;
@@ -229,8 +228,8 @@ recipients.forEach(function (recipient) {
 });
 ```
 
-3. *Limited parallel*:
-    parallel with limit, such as successfully emailing 1,000,000 recipients from a list of 10E7 users.
+3. _Limited parallel_:
+   parallel with limit, such as successfully emailing 1,000,000 recipients from a list of 10E7 users.
 
 ```js
 let successCount = 0;
@@ -260,15 +259,15 @@ function sendOneMillionEmailsOnly() {
       if (!recipient || successCount >= 1000000) return final();
       dispatch(recipient, function (_err) {
         if (!_err) successCount += 1;
-        serial(bigList.shift());
+        serial(bigList.pop());
       });
     }
 
-    serial(bigList.shift());
+    serial(bigList.pop());
   });
 }
 
 sendOneMillionEmailsOnly();
 ```
 
-Each has its own use cases, benefits, and issues you can experiement and read about in more detail. Most importantly, remember to modularize your operations and use callbacks! If you feel any doubt, treat everything as if it were middleware!
+Each has its own use cases, benefits, and issues you can experiment and read about in more detail. Most importantly, remember to modularize your operations and use callbacks! If you feel any doubt, treat everything as if it were middleware!

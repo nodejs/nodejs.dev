@@ -14,14 +14,12 @@ const render = (
   { locale = 'en', ...renderOptions } = {}
 ) => {
   // eslint-disable-next-line react/prop-types
-  const ProviderComponent = ({ children }: { children: React.ReactNode }) => {
-    return (
-      // eslint-disable-next-line react/jsx-filename-extension
-      <IntlProvider locale={locale} messages={messages}>
-        {children}
-      </IntlProvider>
-    );
-  };
+  const ProviderComponent = ({ children }: { children: React.ReactNode }) => (
+    // eslint-disable-next-line react/jsx-filename-extension
+    <IntlProvider locale={locale} messages={messages}>
+      {children}
+    </IntlProvider>
+  );
 
   return rtlRender(ui, {
     wrapper: ProviderComponent,

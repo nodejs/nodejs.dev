@@ -1,7 +1,7 @@
 ---
 title: installing-node.js-via-package-manager
-displayTitle:  Installer Node.js via le gestionnaire de paquets
-description:  Installer Node.js via le gestionnaire de paquets
+displayTitle: Installer Node.js via le gestionnaire de paquets
+description: Installer Node.js via le gestionnaire de paquets
 authors: fhemberger, XhmikosR, shadowspawn, vsemozhetbyt, nschonni, wildcard, MrJithil, kasicka, cassidyjames, Trott, richardlau, Qantas94Heavy, pierreneter, 0mp, ThePrez, PoojaDurgad, MaledongGit, Megajin, marc-maurer, yodeyer, geek, sudowork, strawbrary, ryanmurakami, rbnswartz, arkwright, oliversalzburg, mweagle, Mohamed3on, Ginden, kapouer, jperkin, jericopulvera, jedsmith, jasonkarns, sonicdoe, mcollina, fornwall, danbev, naskapal, awochna, AdamMajer, ahmetanilgur, bnb, qbit, AugustinMauroy
 category: download
 ---
@@ -54,6 +54,7 @@ Pour CentOS/RHEL 7, Node.js est disponible via [Software Collections](https://ww
 ### Alternatives
 
 Ces ressources fournissent des paquets compatibles avec CentOS, Fedora et RHEL.
+
 * [Node.js snaps](#snap) maintenue et soutenue à [https://github.com/nodejs/snap]()
 * [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
 

@@ -19,34 +19,21 @@ module.exports = `
           categoryName
         }
       }
-      next {
-        frontmatter {
-          title
-        }
-        fields {
-          slug
-        }
-      }
-      previous {
-        frontmatter {
-          title
-        }
-        fields {
-          slug
-        }
-      }
     }
   }
-  navigation: apiNavigation {
-    apiNavigationEntries: navigationEntries {
+  nodeReleases {
+    nodeReleasesData {
+      fullVersion
       version
-      items {
-        title
-        slug
-        type
-        name
-      }
+      codename
+      isLts
+      status
+      initialRelease
+      ltsStart
+      maintenanceStart
+      endOfLife
     }
+    apiAvailableVersions
   }
 }
 `;

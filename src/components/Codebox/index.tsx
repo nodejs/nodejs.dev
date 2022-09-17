@@ -14,20 +14,20 @@ interface Props {
 }
 
 const replaceLanguages = (language: string) =>
-  language.replace(/mjs|cjs/, 'js').replace('console', 'bash');
+  language.replace(/mjs|cjs|javascript/i, 'js').replace('console', 'bash');
 
 const Codebox = ({ children: { props } }: Props): JSX.Element => {
   const [copied, setCopied] = useState(false);
   const [parsedCode, setParsedCode] = useState('');
 
   // eslint-disable-next-line react/prop-types
-  const className = props.className || '';
+  const className = props.className || 'text';
 
   // Language Matches in class
   const matches = className.match(/language-(?<lang>.*)/);
 
   // Language name from classname
-  const language = matches?.groups?.lang || '';
+  const language = matches?.groups?.lang || 'text';
 
   // Actual Code into a stringified format
   const stringCode = props.children?.toString() || '';
@@ -66,7 +66,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   return (
     <pre className={classnames(styles.pre, replaceLanguages(className))}>
       <div className={styles.top}>
-        <span>{language.toUpperCase()}</span>
+        <span>{replaceLanguages(language).toUpperCase()}</span>
         <button type="button" onClick={handleCopyCode}>
           {copied ? 'copied' : 'copy'}
         </button>

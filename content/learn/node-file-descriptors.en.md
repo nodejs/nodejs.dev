@@ -2,7 +2,6 @@
 title: 'Working with file descriptors in Node.js'
 description: 'How to interact with file descriptors using Node.js'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99
-section: Getting Started
 category: learn
 ---
 
@@ -57,7 +56,7 @@ async function example() {
     console.log(filehandle.fd);
     console.log(await filehandle.readFile({ encoding: 'utf8' }));
   } finally {
-    await filehandle.close();
+    if (filehandle) await filehandle.close();
   }
 }
 example();

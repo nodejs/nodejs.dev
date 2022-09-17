@@ -2,7 +2,6 @@
 title: 'The Node.js http module'
 description: 'The http module of Node.js provides useful functions and classes to build an HTTP server'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, BeniCheni, amiller-gh, ahmadawais
-section: Getting Started
 category: learn
 ---
 

@@ -1,0 +1,21 @@
+.version-selector {
+  color: var(--color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-body2);
+  margin-bottom: -20px;
+  padding-top: var(--space-24);
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+
+  span {
+    padding-bottom: var(--space-04);
+  }
+
+  select {
+    text-transform: uppercase;
+    width: 100%;
+  }
+}

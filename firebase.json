@@ -6,25 +6,56 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "headers": [
+      {
+        "source": "**/*",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "public, max-age=0, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "static/**",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(css|js)",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "sw.js",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "public, max-age=0, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "page-data/**",
+        "headers": [
+          {
+            "key": "cache-control",
+            "value": "public, max-age=0, must-revalidate"
+          }
+        ]
+      }
     ]
   },
-  "headers": [
-    {
-      "source": "**/sw.js",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
-    }
-  ],
   "redirects": [
-    {
-      "source": "/get-involved/",
-      "destination": "/community/",
-      "type": "301"
-    },
     {
       "source": "/governance/",
       "destination": "/about/governance/",
@@ -58,6 +89,21 @@
     {
       "source": "/about/trademark/",
       "destination": "https://trademark-policy.openjsf.org/",
+      "type": "301"
+    },
+    {
+      "source": "/docs/*",
+      "destination": "/api/",
+      "type": "301"
+    },
+    {
+      "source": "/api/",
+      "destination": "/api/v18/documentation/",
+      "type": "301"
+    },
+    {
+      "source": "/api/v18/",
+      "destination": "/api/v18/documentation/",
       "type": "301"
     }
   ]

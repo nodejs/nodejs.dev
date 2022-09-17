@@ -5,18 +5,18 @@ const yaml = require('yaml');
 const readingTime = require('reading-time');
 const asyncMethods = require('async');
 const createSlug = require('./util-node/createSlug');
-const getCurrentActiveReleases = require('./util-node/getCurrentActiveReleases');
 const getNodeReleasesData = require('./util-node/getNodeReleasesData');
-const getApiDocsData = require('./util-node/getApiDocsData');
 const getBannersData = require('./util-node/getBannersData');
 const getNvmData = require('./util-node/getNvmData');
-const createPagesQuery = require('./util-node/createPagesQuery');
+const createBlogQuery = require('./util-node/createBlogQuery');
 const createLearnQuery = require('./util-node/createLearnQuery');
 const createApiQuery = require('./util-node/createApiQuery');
-const createMarkdownPages = require('./util-node/createMarkdownPages');
+const createBlogPages = require('./util-node/createBlogPages');
+const createLearnPages = require('./util-node/createLearnPages');
 const createApiPages = require('./util-node/createApiPages');
-const redirects = require('./util-node/redirects');
-const nodeLocales = require('./util-node/locales');
+const generateRedirects = require('./util-node/generateRedirects');
+const redirects = require('./redirects');
+const nodeLocales = require('./locales');
 const { learnPath, apiPath, blogPath } = require('./pathPrefixes');
 
 const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
@@ -31,7 +31,10 @@ const apiTypesNavigationData = yaml.parse(
 
 // This creates a map of all the locale JSONs that are enabled in the config.json file
 const intlMessages = nodeLocales.locales.reduce((acc, locale) => {
-  const filePath = require.resolve(`./src/i18n/locales/${locale.code}.json`);
+  const filePath = path.resolve(
+    __dirname,
+    `./src/i18n/locales/${locale.code}.json`
+  );
   acc[locale.code] = JSON.parse(fs.readFileSync(filePath, 'utf8'));
   return acc;
 }, {});
@@ -68,33 +71,28 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(typeDefs);
 };
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
 
   const pageRedirects = { ...redirects };
 
-  const apiTemplate = path.resolve('./src/templates/api.tsx');
-  const learnTemplate = path.resolve('./src/templates/learn.tsx');
-  const blogTemplate = path.resolve('./src/templates/blog.tsx');
-  const blogCategoryTemplate = path.resolve(
-    './src/templates/blog-category.tsx'
-  );
+  const templates = path.resolve(__dirname, './src/templates/');
 
-  const [learnResult, pagesResult, apiResult] = await Promise.all([
+  const apiTemplate = `${templates}/api.tsx`;
+  const learnTemplate = `${templates}/learn.tsx`;
+  const postTemplate = `${templates}/post.tsx`;
+  const blogTemplate = `${templates}/blog.tsx`;
+
+  const [learnResult, blogResult, apiResult] = await Promise.all([
     graphql(createLearnQuery),
-    graphql(createPagesQuery),
+    graphql(createBlogQuery),
     graphql(createApiQuery),
   ]);
 
-  if (pagesResult.errors || learnResult.errors || apiResult.errors) {
-    reporter.panicOnBuild('Error while running GraphQL queries.');
-    return;
-  }
-
   const {
-    pages: { edges: pageEdges },
+    pages: { edges: blogEdges },
     categories: { edges: categoryEdges },
-  } = pagesResult.data;
+  } = blogResult.data;
 
   const {
     allMdx: { edges: learnEdges },
@@ -102,44 +100,73 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const {
     pages: { edges: apiEdges },
-    navigation: { apiNavigationEntries },
+    nodeReleases: { nodeReleasesData, apiAvailableVersions },
   } = apiResult.data;
 
-  const {
-    markdownPages,
-    learnPages,
-    firstLearnPage,
-    navigationData: learNavigationData,
-  } = createMarkdownPages(pageEdges, learnEdges, learnYamlNavigationData);
+  const { blogPages } = createBlogPages(blogEdges);
+
+  const { learnPages, navigationData: learnNavigationData } = createLearnPages(
+    learnEdges,
+    learnYamlNavigationData
+  );
 
   const {
     apiPages,
     latestVersion,
     navigationData: apiNavigationData,
     defaultNavigationRedirects: apiRedirects,
-  } = createApiPages(apiEdges, apiTypesNavigationData, apiNavigationEntries);
+  } = createApiPages(apiEdges, apiTypesNavigationData, nodeReleasesData);
 
-  if (firstLearnPage) {
-    createPage({
-      path: learnPath,
-      component: learnTemplate,
-      context: { ...firstLearnPage, navigationData: learNavigationData },
-    });
-  }
+  createPage({
+    path: learnPath,
+    component: learnTemplate,
+    context: { ...learnPages[0], navigationData: learnNavigationData },
+  });
+
+  createPage({
+    path: blogPath,
+    component: blogTemplate,
+    context: { categories: categoryEdges, posts: blogEdges },
+  });
 
   learnPages.forEach(page => {
     createPage({
       path: page.slug,
       component: learnTemplate,
-      context: { ...page, navigationData: learNavigationData },
+      context: { ...page, navigationData: learnNavigationData },
+    });
+  });
+
+  blogPages.forEach(page => {
+    createPage({
+      path: page.slug,
+      component: postTemplate,
+      // Get the latest 10 blog posts
+      context: { ...page, recent: blogEdges.slice(0, 10) },
     });
   });
 
   categoryEdges.forEach(({ node }) => {
+    const posts = blogEdges.filter(
+      ({ node: item }) => item.fields.categoryName === node.name
+    );
+
     createPage({
       path: `${blogPath}${node.name}/`,
-      component: blogCategoryTemplate,
-      context: { categoryName: node.name },
+      component: blogTemplate,
+      context: { categories: categoryEdges, category: node, posts },
+    });
+  });
+
+  apiPages.forEach(page => {
+    createPage({
+      path: page.slug,
+      component: apiTemplate,
+      context: {
+        ...page,
+        navigationData: apiNavigationData[page.version],
+        nodeReleases: { nodeReleasesData, apiAvailableVersions },
+      },
     });
   });
 
@@ -147,6 +174,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   pageRedirects[apiPath] = `${latestApiPath}documentation/`;
   pageRedirects[latestApiPath] = `${latestApiPath}documentation/`;
+
+  // Updates `firebase.json` with new redirects
+  // This is used for our static hosting redirects (npm run build)
+  // When using `npm run serve` or `npm run start` this will not be needed
+  generateRedirects(pageRedirects);
 
   apiRedirects.forEach(({ from, to }) => {
     pageRedirects[`${apiPath}${from}`] = `${apiPath}${to}`;
@@ -156,33 +188,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     pageRedirects[`${apiPath}${from.slice(0, -1)}.html`] = `${apiPath}${to}`;
   });
 
-  apiPages.forEach(page => {
-    createPage({
-      path: page.slug,
-      component: apiTemplate,
-      context: { ...page, navigationData: apiNavigationData[page.version] },
-    });
-  });
-
-  markdownPages
-    .filter(page => page.realPath.match(blogPath))
-    .forEach(page => {
-      // Blog Pages don't necessary need to be within the `blog` category
-      // But actually inside /content/blog/ section of the repository
-      createPage({
-        path: page.slug,
-        component: blogTemplate,
-        context: page,
-      });
-    });
-
   // Create Redirects for Pages
   Object.keys(pageRedirects).forEach(from => {
     const metadata = {
       fromPath: from,
       toPath: pageRedirects[from],
       isPermanent: true,
-      redirectInBrowser: true,
+      redirectInBrowser: process.env.NODE_ENV === 'development',
       statusCode: 200,
     };
 
@@ -240,7 +252,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           slug += `${frontmatter.category}/`;
         }
 
-        slug += `${year}/${month}/${day}/${filename}`;
+        slug += filename;
 
         const date = new Date(year, month - 1, day);
 
@@ -253,7 +265,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         createNodeField({
           node,
           name: `readingTime`,
-          value: readingTime(node.rawBody),
+          value: readingTime(node.internal.content),
         });
       }
 
@@ -297,11 +309,9 @@ exports.sourceNodes = async ({
   actions: { createNode },
   createContentDigest,
   createNodeId,
-  cache,
 }) => {
-  const [releaseTimer, docsTimer, bannersTimer, nvmTimer] = [
+  const [releaseTimer, bannersTimer, nvmTimer] = [
     activityTimer('Fetching Node release data'),
-    activityTimer('Fetching API Docs data'),
     activityTimer('Fetching Banners data'),
     activityTimer('Fetching latest NVM version data'),
   ];
@@ -353,9 +363,6 @@ exports.sourceNodes = async ({
         });
       });
     },
-  ]);
-
-  await asyncMethods.waterfall([
     callback => {
       releaseTimer.start();
 
@@ -374,38 +381,6 @@ exports.sourceNodes = async ({
 
         createNode({ ...nodeReleasesData, ...nodeReleasesMeta }).then(() => {
           releaseTimer.end();
-
-          callback(null, nodeReleasesData);
-        });
-      });
-    },
-    (nodeReleasesData, callback) => {
-      docsTimer.start();
-
-      const currentActiveReleasesVersions =
-        getCurrentActiveReleases(nodeReleasesData);
-
-      // For now we're only going to parse the latest Node.js docs
-      // As the v14 and v16 docs have some Markdown Errors
-      const [latestNodeRelease] = currentActiveReleasesVersions.reverse();
-
-      const actions = { createNode, createNodeId, cache, docsTimer };
-
-      getApiDocsData([latestNodeRelease], actions, apiNavigationData => {
-        const apiNavigationMeta = {
-          id: createNodeId('api-navigation'),
-          parent: null,
-          children: [],
-          internal: {
-            type: 'ApiNavigation',
-            mediaType: 'application/json',
-            content: JSON.stringify(apiNavigationData),
-            contentDigest: createContentDigest(apiNavigationData),
-          },
-        };
-
-        createNode({ ...apiNavigationData, ...apiNavigationMeta }).then(() => {
-          docsTimer.end();
 
           callback();
         });

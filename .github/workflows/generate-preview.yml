@@ -9,17 +9,17 @@ permissions:
   pull-requests: write
 
 jobs:
-  build:
+  generate-preview:
     runs-on: ubuntu-latest
     if: github.event.label.name == 'create-preview'
     steps:
-
-      - uses: actions/checkout@v3
+      - name: Git Checkout
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Setup GCloud
+      - name: Setup G Cloud
         uses: google-github-actions/setup-gcloud@v0
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
@@ -27,7 +27,7 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
-      - name: Remove create-preview label
+      - name: Remove the PR Label
         uses: actions/github-script@v6
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -39,15 +39,21 @@ jobs:
               name: ['create-preview']
             })
 
-      - name: Install Dependencies
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install NPM packages
         run: npm ci
 
-      - name: Run Gatsby Build
+      - name: Build Gatsby
         run: npm run build-ci
         env:
           PATH_PREFIX: ${{ github.event.pull_request.number }}/
 
-      - name: Upload to GCS
+      - name: Upload to G Cloud Storage
         run: gsutil -m rsync -R public gs://staging.nodejs.dev/${{ github.event.pull_request.number }}/
 
       - name: Comment on PR

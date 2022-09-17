@@ -12,11 +12,6 @@
 
   &--fixed {
     @extend %navigation--fixed;
-
-    height: 100vh;
-    top: calc(var(--nav-height) * 2);
-    touch-action: none;
-    width: 100%;
   }
 
   &--fixed &__open {
@@ -31,12 +26,15 @@
     &__title {
       @extend .t-body2;
       @extend %navigation-section__pure-title;
+      color: var(--color-brand-primary);
+      font-weight: var(--font-weight-bold);
 
       margin-left: 0;
+      text-decoration: none;
 
-      b {
-        color: var(--color-brand-primary);
-        font-weight: var(--font-weight-semibold);
+      svg {
+        color: var(--color-text-primary);
+        padding: 0;
       }
     }
 
