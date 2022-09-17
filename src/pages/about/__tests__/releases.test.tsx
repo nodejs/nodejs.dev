@@ -5,6 +5,7 @@ import {
   createNodeReleasesData,
 } from '../../../__fixtures__/page';
 import ReleasesPage, { ReleasesNodeReleases } from '../releases';
+import { axe, toHaveNoViolations } from 'jest-axe';
 
 const mockNodeReleasesData = createNodeReleasesData();
 const mockReleasesNodeReleases: ReleasesNodeReleases = {
@@ -20,6 +21,7 @@ const mockData = {
     ...mockReleasesNodeReleases,
   },
 };
+expect.extend(toHaveNoViolations);
 
 describe('Releases page', () => {
   it('renders correctly', () => {
@@ -28,5 +30,10 @@ describe('Releases page', () => {
     const pageContent = container.querySelector('main');
 
     expect(pageContent).toMatchSnapshot();
+  });
+  it('should have no a11y violations', async () => {
+    const { container } = render(<ReleasesPage data={mockData.data} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
