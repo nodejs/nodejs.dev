@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import StyleGuidePage from '../style-guide';
 import { axe, toHaveNoViolations } from 'jest-axe';
+import StyleGuidePage from '../style-guide';
 
 expect.extend(toHaveNoViolations);
 

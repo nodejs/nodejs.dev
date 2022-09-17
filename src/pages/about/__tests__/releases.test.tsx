@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { axe, toHaveNoViolations } from 'jest-axe';
 import {
   createGeneralPageData,
   createNodeReleasesData,
 } from '../../../__fixtures__/page';
 import ReleasesPage, { ReleasesNodeReleases } from '../releases';
-import { axe, toHaveNoViolations } from 'jest-axe';
 
 const mockNodeReleasesData = createNodeReleasesData();
 const mockReleasesNodeReleases: ReleasesNodeReleases = {

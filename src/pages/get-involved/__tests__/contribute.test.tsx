@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { axe, toHaveNoViolations } from 'jest-axe';
 import ContributePage from '..';
 import { createGeneralPageData } from '../../../__fixtures__/page';
-import { axe, toHaveNoViolations } from 'jest-axe';
 
 const mockData = createGeneralPageData();
 expect.extend(toHaveNoViolations);

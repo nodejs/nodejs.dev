@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { axe, toHaveNoViolations } from 'jest-axe';
 import Index, { HomeNodeReleases } from '..';
 import { BannersIndex } from '../../types';
 import { createNodeReleasesData } from '../../__fixtures__/page';
-import { axe, toHaveNoViolations } from 'jest-axe';
 
 const mockNodeReleasesData = createNodeReleasesData();
 
