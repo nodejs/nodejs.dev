@@ -188,11 +188,6 @@ participated in that process.
 * [@BeniCheni](https://github.com/BeniCheni) - Benjamin Chen
 * [@kevjin](https://github.com/kevjin) - Kevin Jin
 
-## Thanks to all the contributors ❤
-<a href = "https://github.com/nodejs/nodejs.dev/graphs/contributors">
-   <img src = "https://contrib.rocks/image?repo=nodejs/nodejs.dev"/>
- </a>
-
 ## 🔗 Links
 
 [Code of Conduct][]
@@ -206,6 +201,11 @@ participated in that process.
 [Project Overview][]
 
 [Query issues for "Meeting"][]
+
+## Thanks to all the contributors ❤
+<a href = "https://github.com/nodejs/nodejs.dev/graphs/contributors">
+   <img src = "https://contrib.rocks/image?repo=nodejs/nodejs.dev"/>
+ </a>
 
 [code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
 [contributing guidelines]: ./CONTRIBUTING.md
