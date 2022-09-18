@@ -16,8 +16,8 @@
   <a title="Follow on Twitter" href="https://twitter.com/Nodejs">
     <img src="https://img.shields.io/twitter/follow/Nodejs.svg?style=social&label=Follow%20@Nodejs">
   </a>
-  <br />
-  <br />
+  <br/>
+  <br/>
 </p>
 
 ## 🚀 Quick Start
