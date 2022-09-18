@@ -190,8 +190,6 @@ participated in that process.
 
 ## 🔗 Links
 
-[Community Committee][]
-
 [Code of Conduct][]
 
 [Contributing Guidelines][]
