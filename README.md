@@ -205,7 +205,7 @@ participated in that process.
 ## Thanks to all the contributors ❤
 <a href = "https://github.com/nodejs/nodejs.dev/graphs/contributors">
    <img src = "https://contrib.rocks/image?repo=nodejs/nodejs.dev"/>
- </a>
+</a>
 
 [code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
 [contributing guidelines]: ./CONTRIBUTING.md
