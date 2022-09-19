@@ -67,19 +67,19 @@ path.resolve('joe.txt'); // '/Users/joe/joe.txt' si elle est exécutée à parti
 Dans ce cas, Node.js ajoutera simplement `/joe.txt` au répertoire de travail actuel. Si vous spécifiez un second dossier en paramètre, `resolve` utilisera le premier comme base pour le second :
 
 ```js
-path.resolve('tmp', 'joe.txt'); // '/Users/joe/tmp/joe.txt' if run from my home folder
+path.resolve('tmp', 'joe.txt'); // '/Users/joe/tmp/joe.txt' si elle est exécutée à partir de mon dossier personnel
 ```
 
-If the first parameter starts with a slash, that means it's an absolute path:
+Si le premier paramètre commence par une barre oblique, cela signifie qu'il s'agit d'un chemin absolu :
 
 ```js
 path.resolve('/etc', 'joe.txt'); // '/etc/joe.txt'
 ```
 
-`path.normalize()` is another useful function, that will try and calculate the actual path, when it contains relative specifiers like `.` or `..`, or double slashes:
+`path.normalize()` est une autre fonction utile, qui essaiera de calculer le chemin réel, quand il contient des spécificateurs relatifs comme `.` ou `..`, ou des doubles slashs :
 
 ```js
 path.normalize('/users/joe/..//test.txt'); // '/users/test.txt'
 ```
 
-**Neither resolve nor normalize will check if the path exists**. They just calculate a path based on the information they got.
+**Ni resolve ni normalize ne vérifieront si le chemin existe**. Ils calculent simplement un chemin basé sur les informations qu'ils ont obtenues.

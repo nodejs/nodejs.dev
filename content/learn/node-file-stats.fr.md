@@ -10,6 +10,7 @@ Chaque fichier est livré avec un ensemble de détails que nous pouvons inspecte
 En particulier, en utilisant la méthode `stat()` fournie par le module `fs`.
 
 Vous l'appelez en passant un chemin de fichier, et une fois que Node.js obtient les détails du fichier, il appellera la fonction de rappel que vous passez, avec 2 paramètres : un message d'erreur, et les statistiques du fichier :
+
 ```js
 const fs = require('fs');
 

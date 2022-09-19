@@ -1,7 +1,7 @@
 ---
 title: 'Writing files with Node.js'
 description: 'How to write files using Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, AugustinMauroy
 category: learn
 ---
 
