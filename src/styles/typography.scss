@@ -34,6 +34,14 @@ h3 {
   margin: 0 0 var(--space-08) 0;
 }
 
+.t-subheading2,
+h4 {
+  font-size: var(--font-size-body1);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-subheading);
+  margin: var(--space-20) 0;
+}
+
 .t-body1,
 p {
   font-size: var(--font-size-body1);
