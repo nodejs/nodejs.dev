@@ -81,7 +81,7 @@
     "test-watch": "jest --watch",
     "test-ci": "npm run test -- --coverage",
     "lint": "npm run type-check && npm run lint:js && npm run lint:md && npm run lint:scss",
-    "lint:js": "eslint \"**/*.{js,jsx,ts,tsx}\" --cache --cache-file .eslintjscache",
+    "lint:js": "eslint \"**/*.{js,jsx,ts,tsx}\" --cache --cache-file .eslintjscache --report-unused-disable-directives",
     "lint:md": "eslint \"content/**/*.{md,mdx}\" --cache --cache-file .eslintmdcache",
     "lint:scss": "stylelint --config ./.stylelintrc.json \"./src/**/*.{css,sass,scss}\"",
     "lint:fix": "npm run lint -- --fix",
