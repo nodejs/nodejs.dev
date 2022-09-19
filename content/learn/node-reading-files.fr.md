@@ -1,11 +1,11 @@
 ---
 title: 'Reading files with Node.js'
 description: 'How to read files using Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, AugustinMauroy
 category: learn
 ---
 
-The simplest way to read a file in Node.js is to use the `fs.readFile()` method, passing it the file path, encoding and a callback function that will be called with the file data (and the error):
+La façon la plus simple de lire un fichier dans Node.js est d'utiliser la méthode `fs.readFile()`, en lui passant le chemin du fichier, l'encodage et une fonction de rappel qui sera appelée avec les données du fichier (et l'erreur) :
 
 ```js
 const fs = require('fs');
@@ -19,7 +19,7 @@ fs.readFile('/Users/joe/test.txt', 'utf8', (err, data) => {
 });
 ```
 
-Alternatively, you can use the synchronous version `fs.readFileSync()`:
+Alternativement, vous pouvez utiliser la version synchrone `fs.readFileSync()` :
 
 ```js
 const fs = require('fs');
@@ -32,7 +32,7 @@ try {
 }
 ```
 
-You can also use the promise-based `fsPromises.readFile()` method offered by the `fs/promises` module:
+Vous pouvez également utiliser la méthode basée sur les promesses `fsPromises.readFile()` proposée par le module `fs/promises` :
 
 ```js
 const fs = require('fs/promises');
@@ -48,8 +48,8 @@ async function example() {
 example();
 ```
 
-All three of `fs.readFile()`, `fs.readFileSync()` and `fsPromises.readFile()` read the full content of the file in memory before returning the data.
+Les trois fonctions `fs.readFile()`, `fs.readFileSync()` et `fsPromises.readFile()` lisent le contenu complet du fichier en mémoire avant de retourner les données.
 
-This means that big files are going to have a major impact on your memory consumption and speed of execution of the program.
+Cela signifie que les gros fichiers vont avoir un impact majeur sur votre consommation de mémoire et la vitesse d'exécution du programme.
 
-In this case, a better option is to read the file content using streams.
+Dans ce cas, une meilleure option consiste à lire le contenu du fichier en utilisant des flux.

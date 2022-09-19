@@ -1,16 +1,15 @@
 ---
 title: 'Node.js file stats'
 description: 'How to get the details of a file using Node.js'
-authors: flaviocopes, ZYSzys, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99
+authors: flaviocopes, ZYSzys, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, AugustinMauroy
 category: learn
 ---
 
-Every file comes with a set of details that we can inspect using Node.js.
+Chaque fichier est livré avec un ensemble de détails que nous pouvons inspecter en utilisant Node.js.
 
-In particular, using the `stat()` method provided by the `fs` module.
+En particulier, en utilisant la méthode `stat()` fournie par le module `fs`.
 
-You call it passing a file path, and once Node.js gets the file details it will call the callback function you pass, with 2 parameters: an error message, and the file stats:
-
+Vous l'appelez en passant un chemin de fichier, et une fois que Node.js obtient les détails du fichier, il appellera la fonction de rappel que vous passez, avec 2 paramètres : un message d'erreur, et les statistiques du fichier :
 ```js
 const fs = require('fs');
 
@@ -22,7 +21,7 @@ fs.stat('/Users/joe/test.txt', (err, stats) => {
 });
 ```
 
-Node.js also provides a sync method, which blocks the thread until the file stats are ready:
+Node.js fournit également une méthode de synchronisation, qui bloque le thread jusqu'à ce que les statistiques du fichier soient prêtes :
 
 ```js
 const fs = require('fs');
@@ -34,15 +33,15 @@ try {
 }
 ```
 
-The file information is included in the stats variable. What kind of information can we extract using the stats?
+Les informations sur le fichier sont incluses dans la variable stats. Quel genre d'informations peut-on extraire en utilisant les stats ?
 
-A lot, including:
+Beaucoup, y compris :
 
-* if the file is a directory or a file, using `stats.isFile()` and `stats.isDirectory()`
-* if the file is a symbolic link using `stats.isSymbolicLink()`
-* the file size in bytes using `stats.size`.
+* si le fichier est un répertoire ou un fichier, en utilisant `stats.isFile()` et `stats.isDirectory()`
+* si le fichier est un lien symbolique en utilisant `stats.isSymbolicLink()`
+* la taille du fichier en octets en utilisant `stats.size`.
 
-There are other advanced methods, but the bulk of what you'll use in your day-to-day programming is this.
+Il existe d'autres méthodes avancées, mais l'essentiel de ce que vous utiliserez dans votre programmation quotidienne est ceci.
 
 ```js
 const fs = require('fs');
@@ -60,7 +59,7 @@ fs.stat('/Users/joe/test.txt', (err, stats) => {
 });
 ```
 
-You can also use promise-based `fsPromises.stat()` method offered by the `fs/promises` module if you like:
+Vous pouvez également utiliser la méthode `fsPromises.stat()` basée sur les promesses proposée par le module `fs/promises` si vous le souhaitez :
 
 ```js
 const fs = require('fs/promises');

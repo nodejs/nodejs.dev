@@ -5,9 +5,9 @@ authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99
 category: learn
 ---
 
-The easiest way to write to files in Node.js is to use the `fs.writeFile()` API.
+La façon la plus simple d'écrire dans des fichiers en Node.js est d'utiliser l'API `fs.writeFile()`.
 
-Example:
+Exemple :
 
 ```js
 const fs = require('fs');
@@ -18,11 +18,11 @@ fs.writeFile('/Users/joe/test.txt', content, err => {
   if (err) {
     console.error(err);
   }
-  // file written successfully
+  // le fichier a été écrit avec succès
 });
 ```
 
-Alternatively, you can use the synchronous version `fs.writeFileSync()`:
+Alternativement, vous pouvez utiliser la version synchrone `fs.writeFileSync()` :
 
 ```js
 const fs = require('fs');
@@ -31,13 +31,13 @@ const content = 'Some content!';
 
 try {
   fs.writeFileSync('/Users/joe/test.txt', content);
-  // file written successfully
+  // le fichier a été écrit avec succès
 } catch (err) {
   console.error(err);
 }
 ```
 
-You can also use the promise-based `fsPromises.writeFile()` method offered by the `fs/promises` module:
+Vous pouvez également utiliser la méthode basée sur les promesses `fsPromises.writeFile()` proposée par le module `fs/promises` :
 
 ```js
 const fs = require('fs/promises');
@@ -53,26 +53,26 @@ async function example() {
 example();
 ```
 
-By default, this API will **replace the contents of the file** if it does already exist.
+Par défaut, cette API **remplacera le contenu du fichier** s'il existe déjà.
 
-You can modify the default by specifying a flag:
+Vous pouvez modifier cette valeur par défaut en spécifiant un indicateur :
 
 ```js
 fs.writeFile('/Users/joe/test.txt', content, { flag: 'a+' }, err => {});
 ```
 
-The flags you'll likely use are
+Les drapeaux que vous utiliserez probablement sont
 
-* `r+` open the file for reading and writing
-* `w+` open the file for reading and writing, positioning the stream at the beginning of the file. The file is created if it does not exist
-* `a` open the file for writing, positioning the stream at the end of the file. The file is created if it does not exist
-* `a+` open the file for reading and writing, positioning the stream at the end of the file. The file is created if it does not exist
+* `r+` ouvre le fichier pour la lecture et l'écriture
+* `w+` ouvre le fichier pour la lecture et l'écriture, en positionnant le flux au début du fichier. Le fichier est créé s'il n'existe pas
+* `a` ouvre le fichier en écriture, en positionnant le flux à la fin du fichier. Le fichier est créé s'il n'existe pas
+* `a+` ouvre le fichier en lecture et en écriture, en positionnant le flux à la fin du fichier. Le fichier est créé s'il n'existe pas.
 
-(you can find more flags at [https://nodejs.org/api/fs.html#fs_file_system_flags](https://nodejs.org/api/fs.html#fs_file_system_flags))
+(vous trouverez d'autres drapeaux sur [https://nodejs.org/api/fs.html#fs_file_system_flags](https://nodejs.org/api/fs.html#fs_file_system_flags))
 
-## Append to a file
+## Ajouter à un fichier
 
-A handy method to append content to the end of a file is `fs.appendFile()` (and its `fs.appendFileSync()` counterpart):
+Une méthode pratique pour ajouter du contenu à la fin d'un fichier est `fs.appendFile()` (et son équivalent `fs.appendFileSync()`) :
 
 ```js
 const fs = require('fs');
@@ -83,11 +83,11 @@ fs.appendFile('file.log', content, err => {
   if (err) {
     console.error(err);
   }
-  // done!
+  // Fait!
 });
 ```
 
-Here is a `fsPromises.appendFile()` example:
+Voici un exemple de `fsPromises.appendFile()` :
 
 ```js
 const fs = require('fs/promises');
@@ -103,8 +103,8 @@ async function example() {
 example();
 ```
 
-## Using streams
+## Utilisation des flux
 
-All those methods write the full content to the file before returning the control back to your program (in the async version, this means executing the callback)
+Toutes ces méthodes écrivent le contenu complet du fichier avant de renvoyer le contrôle à votre programme (dans la version async, cela signifie exécuter la callback).
 
-In this case, a better option is to write the file content using streams.
+Dans ce cas, une meilleure option est d'écrire le contenu du fichier en utilisant des flux.

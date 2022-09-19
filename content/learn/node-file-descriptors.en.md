@@ -1,34 +1,34 @@
 ---
 title: 'Working with file descriptors in Node.js'
 description: 'How to interact with file descriptors using Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, AugustinMauroy
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99
 category: learn
 ---
 
-Avant de pouvoir interagir avec un fichier qui se trouve dans votre système de fichiers, vous devez obtenir un descripteur de fichier.
+Before you're able to interact with a file that sits in your filesystem, you must get a file descriptor.
 
-Un descripteur de fichier est une référence à un fichier ouvert, un numéro (fd) renvoyé par l'ouverture du fichier en utilisant la méthode `open()` proposée par le module `fs`. Ce numéro (`fd`) identifie de façon unique un fichier ouvert dans le système d'exploitation :
+A file descriptor is a reference to an open file, a number (fd) returned by opening the file using the `open()` method offered by the `fs` module. This number (`fd`) uniquely identifies an open file in operating system:
 
 ```js
 const fs = require('fs');
 
 fs.open('/Users/joe/test.txt', 'r', (err, fd) => {
-  // fd est notre descripteur de fichier
+  // fd is our file descriptor
 });
 ```
 
-Remarquez le `r` que nous avons utilisé comme deuxième paramètre de l'appel `fs.open()`.
+Notice the `r` we used as the second parameter to the `fs.open()` call.
 
-Ce drapeau signifie que nous ouvrons le fichier en lecture.
+That flag means we open the file for reading.
 
-D'autres drapeaux que vous utiliserez couramment sont :
+Other flags you'll commonly use are:
 
-* `r+` ouvre le fichier pour la lecture et l'écriture, si le fichier n'existe pas, il ne sera pas créé.
-* `w+` ouvre le fichier pour la lecture et l'écriture, en positionnant le flux au début du fichier. Le fichier est créé s'il n'existe pas.
-* `a` ouvre le fichier en écriture, en positionnant le flux à la fin du fichier. Le fichier est créé s'il n'existe pas.
-* `a+` ouvre le fichier pour la lecture et l'écriture, en positionnant le flux à la fin du fichier. Le fichier est créé s'il n'existe pas.
+* `r+` open the file for reading and writing, if file doesn't exist it won't be created.
+* `w+` open the file for reading and writing, positioning the stream at the beginning of the file. The file is created if not existing.
+* `a` open the file for writing, positioning the stream at the end of the file. The file is created if not existing.
+* `a+` open the file for reading and writing, positioning the stream at the end of the file. The file is created if not existing.
 
-Vous pouvez également ouvrir le fichier en utilisant la méthode `fs.openSync`, qui retourne le descripteur de fichier, au lieu de le fournir dans un callback :
+You can also open the file by using the `fs.openSync` method, which returns the file descriptor, instead of providing it in a callback:
 
 ```js
 const fs = require('fs');
@@ -40,15 +40,15 @@ try {
 }
 ```
 
-Une fois que vous avez obtenu le descripteur de fichier, de quelque manière que ce soit, vous pouvez effectuer toutes les opérations qui le nécessitent, comme appeler `fs.close()` et de nombreuses autres opérations qui interagissent avec le système de fichiers.
+Once you get the file descriptor, in whatever way you choose, you can perform all the operations that require it, like calling `fs.close()` and many other operations that interact with the filesystem.
 
-Vous pouvez également ouvrir le fichier en utilisant la méthode `fsPromises.open`, basée sur les promesses, proposée par le module `fs/promises`.
+You can also open the file by using the promise-based `fsPromises.open` method offered by the `fs/promises` module.
 
-Le module `fs/promises` n'est disponible qu'à partir de Node.js v14. Avant la v14, après la v10, vous pouvez utiliser `require('fs').promises` à la place. Avant la v10, après la v8, vous pouvez utiliser `util.promisify` pour convertir les méthodes `fs` en méthodes basées sur des promesses.
+The `fs/promises` module is available starting only from Node.js v14. Before v14, after v10, you can use `require('fs').promises` instead. Before v10, after v8, you can use `util.promisify` to convert `fs` methods into promise-based methods.
 
 ```js
 const fs = require('fs/promises');
-// Ou const fs = require('fs').promises avant nodejs v14.
+// Or const fs = require('fs').promises before v14.
 async function example() {
   let filehandle;
   try {
@@ -62,7 +62,8 @@ async function example() {
 example();
 ```
 
-Voici un exemple de `util.promisify` :
+Here is an example of `util.promisify`:
+
 ```js
 const fs = require('fs');
 const util = require('util');
@@ -74,4 +75,4 @@ async function example() {
 example();
 ```
 
-Pour plus de détails sur le module `fs/promises`, veuillez consulter [fs/promises API](https://nodejs.org/docs/latest-v17.x/api/fs.html#promises-api).
+To see more details about the `fs/promises` module, please check [fs/promises API](https://nodejs.org/docs/latest-v17.x/api/fs.html#promises-api).

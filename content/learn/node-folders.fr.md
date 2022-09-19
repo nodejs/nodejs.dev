@@ -1,19 +1,19 @@
 ---
 title: 'Working with folders in Node.js'
 description: 'How to interact with folders using Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais, clean99
+authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais, clean99, AugustinMauroy
 category: learn
 ---
 
-The Node.js `fs` core module provides many handy methods you can use to work with folders.
+Le module principal `fs` de Node.js fournit de nombreuses méthodes pratiques que vous pouvez utiliser pour travailler avec des dossiers.
 
-## Check if a folder exists
+## Vérifier si un dossier existe
 
-Use `fs.access()` (and its promise-based `fsPromises.access()` counterpart) to check if the folder exists and Node.js can access it with its permissions.
+Utilisez `fs.access()` (et sa contrepartie `fsPromises.access()` basée sur les promesses) pour vérifier si le dossier existe et si Node.js peut y accéder avec ses permissions.
 
-## Create a new folder
+## Créer un nouveau dossier
 
-Use `fs.mkdir()` or `fs.mkdirSync()` or `fsPromises.mkdir()` to create a new folder.
+Utilisez `fs.mkdir()` ou `fs.mkdirSync()` ou `fsPromises.mkdir()` pour créer un nouveau dossier.
 
 ```js
 const fs = require('fs');
@@ -29,11 +29,11 @@ try {
 }
 ```
 
-## Read the content of a directory
+## Lire le contenu d'un répertoire
 
-Use `fs.readdir()` or `fs.readdirSync()` or `fsPromises.readdir()` to read the contents of a directory.
+Utilisez `fs.readdir()` ou `fs.readdirSync()` ou `fsPromises.readdir()` pour lire le contenu d'un répertoire.
 
-This piece of code reads the content of a folder, both files and subfolders, and returns their relative path:
+Ce morceau de code lit le contenu d'un dossier, à la fois les fichiers et les sous-dossiers, et renvoie leur chemin relatif :
 
 ```js
 const fs = require('fs');
@@ -43,7 +43,7 @@ const folderPath = '/Users/joe';
 fs.readdirSync(folderPath);
 ```
 
-You can get the full path:
+Vous pouvez obtenir le chemin complet :
 
 ```js
 fs.readdirSync(folderPath).map(fileName => {
@@ -51,7 +51,7 @@ fs.readdirSync(folderPath).map(fileName => {
 });
 ```
 
-You can also filter the results to only return the files, and exclude the folders:
+Vous pouvez également filtrer les résultats pour n'afficher que les fichiers et exclure les dossiers :
 
 ```js
 const isFile = fileName => {
@@ -65,9 +65,9 @@ fs.readdirSync(folderPath)
   .filter(isFile);
 ```
 
-## Rename a folder
+## Renommer un dossier
 
-Use `fs.rename()` or `fs.renameSync()` or `fsPromises.rename()` to rename folder. The first parameter is the current path, the second the new path:
+Utilisez `fs.rename()` ou `fs.renameSync()` ou `fsPromises.rename()` pour renommer un dossier. Le premier paramètre est le chemin actuel, le second le nouveau chemin :
 
 ```js
 const fs = require('fs');
@@ -76,11 +76,11 @@ fs.rename('/Users/joe', '/Users/roger', err => {
   if (err) {
     console.error(err);
   }
-  // done
+  // Fait
 });
 ```
 
-`fs.renameSync()` is the synchronous version:
+`fs.renameSync()` est la version synchrone :
 
 ```js
 const fs = require('fs');
@@ -92,7 +92,7 @@ try {
 }
 ```
 
-`fsPromises.rename()` is the promise-based version:
+`fsPromises.rename()` est la version basée sur les promesses :
 
 ```js
 const fs = require('fs/promises');
@@ -107,11 +107,11 @@ async function example() {
 example();
 ```
 
-## Remove a folder
+## Supprimer un dossier
 
-Use `fs.rmdir()` or `fs.rmdirSync()` or `fsPromises.rmdir()` to remove a folder.
+Utilisez `fs.rmdir()` ou `fs.rmdirSync()` ou `fsPromises.rmdir()` pour supprimer un dossier.
 
-Removing a folder that has content can be more complicated than you need. You can pass the option `{ recursive: true }` to recursively remove the contents.
+La suppression d'un dossier qui a du contenu peut être plus compliquée que nécessaire. Vous pouvez passer l'option `{ recursive : true }` pour supprimer récursivement le contenu.
 
 ```js
 const fs = require('fs');
@@ -125,7 +125,7 @@ fs.rmdir(dir, { recursive: true }, err => {
 });
 ```
 
-> **NOTE:** In Node `v16.x` the option `recursive` is **deprecated** for `fs.rmdir` of callback API, instead use `fs.rm` to delete folders that have content in them:
+> **NOTE:** Dans Node `v16.x` l'option `recursive` est **dépréciée** pour `fs.rmdir` de l'API de callback, utilisez plutôt `fs.rm` pour supprimer les dossiers qui ont du contenu dedans :
 
 ```js
 const fs = require('fs');
@@ -139,17 +139,17 @@ fs.rm(dir, { recursive: true, force: true }, err => {
 });
 ```
 
-Or you can install and make use of the [`fs-extra`](https://www.npmjs.com/package/fs-extra) module, which is very popular and well maintained. It's a drop-in replacement of the `fs` module, which provides more features on top of it.
+Vous pouvez aussi installer et utiliser le module [`fs-extra`](https://www.npmjs.com/package/fs-extra), qui est très populaire et bien maintenu. Il s'agit d'un module de remplacement du module `fs`, qui fournit plus de fonctionnalités par dessus.
 
-In this case the `remove()` method is what you want.
+Dans ce cas, la méthode `remove()` est ce que vous voulez.
 
-Install it using
+Installez-le en utilisant
 
 ```bash
 npm install fs-extra
 ```
 
-and use it like this:
+et l'utiliser comme ceci :
 
 ```js
 const fs = require('fs-extra');
@@ -161,7 +161,7 @@ fs.remove(folder, err => {
 });
 ```
 
-It can also be used with promises:
+Il peut également être utilisé avec des promesses :
 
 ```js
 fs.remove(folder)
@@ -173,7 +173,7 @@ fs.remove(folder)
   });
 ```
 
-or with async/await:
+ou avec async/await :
 
 ```js
 async function removeFolder(folder) {

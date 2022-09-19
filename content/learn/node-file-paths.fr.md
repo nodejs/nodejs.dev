@@ -1,39 +1,39 @@
 ---
 title: 'Node.js File Paths'
 description: 'How to interact with file paths and manipulate them in Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, AugustinMauroy
 category: learn
 ---
 
-Every file in the system has a path.
+Chaque fichier du système a un chemin d'accès.
 
-On Linux and macOS, a path might look like:
+Sous Linux et macOS, un chemin peut ressembler à :
 
-`/users/joe/file.txt`
+`/utilisateurs/joe/file.txt`
 
-while Windows computers are different, and have a structure such as:
+alors que les ordinateurs Windows sont différents, et ont une structure telle que :
 
 `C:\users\joe\file.txt`
 
-You need to pay attention when using paths in your applications, as this difference must be taken into account.
+Vous devez faire attention lorsque vous utilisez des chemins dans vos applications, car cette différence doit être prise en compte.
 
-You include this module in your files using
+Vous incluez ce module dans vos fichiers en utilisant
 
 ```js
 const path = require('path');
 ```
 
-and you can start using its methods.
+et vous pouvez commencer à utiliser ses méthodes.
 
-## Getting information out of a path
+## Extraire des informations d'un chemin
 
-Given a path, you can extract information out of it using those methods:
+Étant donné un chemin, vous pouvez extraire des informations de celui-ci en utilisant ces méthodes :
 
-* `dirname`: get the parent folder of a file
-* `basename`: get the filename part
-* `extname`: get the file extension
+* `dirname` : récupère le dossier parent d'un fichier
+* `basename` : récupère la partie du nom de fichier
+* `extname` : récupère l'extension du fichier
 
-Example:
+Exemple :
 
 ```js
 const notes = '/users/joe/notes.txt';
@@ -43,28 +43,28 @@ path.basename(notes); // notes.txt
 path.extname(notes); // .txt
 ```
 
-You can get the file name without the extension by specifying a second argument to `basename`:
+Vous pouvez obtenir le nom du fichier sans l'extension en spécifiant un second argument à `basename` :
 
 ```js
 path.basename(notes, path.extname(notes)); // notes
 ```
 
-## Working with paths
+## Travailler avec des chemins
 
-You can join two or more parts of a path by using `path.join()`:
+Vous pouvez joindre deux ou plusieurs parties d'un chemin en utilisant `path.join()` :
 
 ```js
 const name = 'joe';
 path.join('/', 'users', name, 'notes.txt'); // '/users/joe/notes.txt'
 ```
 
-You can get the absolute path calculation of a relative path using `path.resolve()`:
+Vous pouvez obtenir le calcul du chemin absolu d'un chemin relatif en utilisant `path.resolve()` :
 
 ```js
-path.resolve('joe.txt'); // '/Users/joe/joe.txt' if run from my home folder
+path.resolve('joe.txt'); // '/Users/joe/joe.txt' si elle est exécutée à partir de mon dossier personnel
 ```
 
-In this case Node.js will simply append `/joe.txt` to the current working directory. If you specify a second parameter folder, `resolve` will use the first as a base for the second:
+Dans ce cas, Node.js ajoutera simplement `/joe.txt` au répertoire de travail actuel. Si vous spécifiez un second dossier en paramètre, `resolve` utilisera le premier comme base pour le second :
 
 ```js
 path.resolve('tmp', 'joe.txt'); // '/Users/joe/tmp/joe.txt' if run from my home folder
