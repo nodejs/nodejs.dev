@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Dropdown, { DropdownItem } from '../components/Dropdown';
 
-// eslint-disable-next-line import/prefer-default-export
 export const useAutoClosableDropdown = <T extends HTMLElement>(
   items: Array<DropdownItem>,
   elementRef: React.RefObject<T>
