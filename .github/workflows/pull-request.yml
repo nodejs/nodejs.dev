@@ -31,7 +31,14 @@ jobs:
         uses: codecov/codecov-action@v3
   build-ci:
     needs: test-ci
-    runs-on: ubuntu-latest
+    name: Node on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
     steps:
       - name: Git Checkout
         uses: actions/checkout@v3
@@ -50,13 +57,13 @@ jobs:
       - name: Gatsby Cache Folder
         uses: actions/cache@v3
         with:
-          key: cache-folder
+          key: cache-folder-${{ matrix.os }}
           path: .cache
 
       - name: Gatsby Public Folder
         uses: actions/cache@v3
         with:
-          key: public-folder
+          key: public-folder-${{ matrix.os }}
           path: public
 
       - name: Build Gatsby
