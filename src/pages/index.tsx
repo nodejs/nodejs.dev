@@ -54,7 +54,7 @@ const NodeFeature = ({
 }: NodeFeatureProps): JSX.Element => (
   <div className={styles.nodeFeaturesFeature}>
     {icon}
-    <h4>{heading}</h4>
+    <h2 className="t-subheading2">{heading}</h2>
     <p>{description}</p>
   </div>
 );
