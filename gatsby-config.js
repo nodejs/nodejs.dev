@@ -47,7 +47,10 @@ const gatsbyConfig = {
     'gatsby-plugin-sharp',
     // This generates the redirects for the I18N redirects
     // It also creates meta redirects for any usage of `createRedirect`
-    'gatsby-plugin-meta-redirect',
+    // 'gatsby-plugin-meta-redirect', replaced by local plugin because it breaks on windows
+    {
+      resolve: 'redirect',
+    },
     ...gatsbyFsMarkdownSources,
     {
       resolve: 'gatsby-plugin-canonical-urls',
