@@ -90,7 +90,6 @@ function createNavigationCreator({ version, name }) {
             navigationEntriesForFile.push(
               ...metadataTypes.map(type => ({
                 slug: `${apiPath}${version}/${name}/${getHash(type, title)}`,
-                // eslint-disable-next-line no-useless-escape
                 title: title.split('(')[0].replace(/[^\w\- ]+/g, ''),
                 type,
                 name,

@@ -9,9 +9,9 @@ If there's one great thing in Node.js packages, it's that they all agreed on usi
 
 The Semantic Versioning concept is simple: all versions have 3 digits: `x.y.z`.
 
-* the first digit is the major version
-* the second digit is the minor version
-* the third digit is the patch version
+* the first digit `x` is the major version
+* the second digit `y` is the minor version
+* the third digit `z` is the patch version
 
 When you make a new release, you don't just up a number as you please, but you have rules:
 
@@ -27,8 +27,8 @@ Because `npm` set some rules we can use in the `package.json` file to choose whi
 
 The rules use these symbols:
 
-* `^`
-* `~`
+* `^`: Caret Character
+* `~`: Tilde Character
 * `>`
 * `>=`
 * `<`
