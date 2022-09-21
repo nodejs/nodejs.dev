@@ -12,7 +12,7 @@ A buffer is an area of memory. Most JavaScript developers are much less familiar
 
 It represents a fixed-size chunk of memory (can't be resized) allocated outside of the V8 JavaScript engine.
 
-You can think of a buffer like an array of integers, which each represent a byte of data.
+You can think of a buffer like an array of integers, which each represent a byte of data. With Buffers interacting with binary data becomes easier. Things like file uploads, image manipulation were intially very difficult to do using just strings. 
 
 It is implemented by the Node.js [Buffer class](https://nodejs.org/api/buffer.html).
 
@@ -137,7 +137,7 @@ const bufcopy = Buffer.alloc(4); // allocate 4 bytes
 bufcopy.set(buf);
 ```
 
-By default you copy the whole buffer. If you only want to copy a part of the buffer, you can use `.subarray()` and the `offset` argument that specifies an offset to write to:
+By default, you copy the whole buffer. If you only want to copy a part of the buffer, you can use `.subarray()` and the `offset` argument that specifies an offset to write to:
 
 ```js
 const buf = Buffer.from('Hey?');
