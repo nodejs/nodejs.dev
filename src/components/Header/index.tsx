@@ -38,7 +38,11 @@ const Header = (): JSX.Element => {
             </Link>
           </li>
           <li>
-            <Link to="/api/" activeClassName={styles.active} partiallyActive>
+            <Link
+              to="/api/latest/"
+              activeClassName={styles.active}
+              partiallyActive
+            >
               <FormattedMessage id="components.header.links.docs" />
             </Link>
           </li>

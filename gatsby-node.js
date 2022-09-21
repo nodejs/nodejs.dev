@@ -171,9 +171,11 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   const latestApiPath = `${apiPath}${latestVersion}/`;
+  const apiPathWithLatest = `${apiPath}latest/`;
 
   pageRedirects[apiPath] = `${latestApiPath}documentation/`;
   pageRedirects[latestApiPath] = `${latestApiPath}documentation/`;
+  pageRedirects[apiPathWithLatest] = `${latestApiPath}documentation/`;
 
   // Updates `firebase.json` with new redirects
   // This is used for our static hosting redirects (npm run build)
@@ -194,7 +196,7 @@ exports.createPages = async ({ graphql, actions }) => {
       fromPath: from,
       toPath: pageRedirects[from],
       isPermanent: true,
-      redirectInBrowser: process.env.NODE_ENV === 'development',
+      redirectInBrowser: true,
       statusCode: 200,
     };
 

@@ -105,6 +105,11 @@
       "source": "/api/v18/",
       "destination": "/api/v18/documentation/",
       "type": "301"
+    },
+    {
+      "source": "/api/latest/",
+      "destination": "/api/v18/documentation/",
+      "type": "301"
     }
   ]
 }
