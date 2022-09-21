@@ -14,7 +14,7 @@ export interface LearnTemplateData {
     id: string;
     body: string;
     tableOfContents: PageTableOfContents;
-    frontmatter: { title: string; description: string };
+    frontmatter: { displayTitle: string; description: string };
     fields: { authors: string[] };
   };
 }
