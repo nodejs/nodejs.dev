@@ -1,6 +1,6 @@
 ---
 title: 'Node.js File Paths'
-displayTitle: 'Chemins d'accès aux fichiers Node.js'
+displayTitle: "Chemins d'accès aux fichiers Node.js"
 description: 'How to interact with file paths and manipulate them in Node.js'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, AugustinMauroy
 category: learn
