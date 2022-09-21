@@ -1,5 +1,6 @@
 ---
 title: 'Working with file descriptors in Node.js'
+displayTitle: 'Travailler avec des descripteurs de fichiers dans Node.js'
 description: 'How to interact with file descriptors using Node.js'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, AugustinMauroy
 category: learn

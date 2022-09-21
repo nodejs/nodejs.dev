@@ -1,5 +1,6 @@
 ---
 title: 'Reading files with Node.js'
+displayTitle: 'Lire des fichiers avec Node.js'
 description: 'How to read files using Node.js'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, AugustinMauroy
 category: learn
