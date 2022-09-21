@@ -15,7 +15,7 @@ interface Props {
 const LearnLayout = ({
   data: {
     article: {
-      frontmatter: { title, description },
+      frontmatter: { displayTitle, description },
       body,
       tableOfContents,
       fields: { authors },
@@ -23,7 +23,7 @@ const LearnLayout = ({
   },
   pageContext: { slug, next, previous, relativePath, navigationData },
 }: Props): JSX.Element => (
-  <Layout title={title} description={description}>
+  <Layout title={displayTitle} description={description}>
     <main className="grid-container">
       <Navigation
         currentSlug={slug}
@@ -32,7 +32,7 @@ const LearnLayout = ({
         category="learn"
       />
       <Article
-        title={title}
+        title={displayTitle}
         body={body}
         tableOfContents={tableOfContents ? tableOfContents.items : []}
         next={next}
@@ -58,7 +58,7 @@ export const query = graphql`
       body
       tableOfContents
       frontmatter {
-        title
+        displayTitle
         description
       }
       fields {
@@ -76,7 +76,7 @@ export const query = graphql`
       body
       tableOfContents
       frontmatter {
-        title
+        displayTitle
         description
       }
       fields {
