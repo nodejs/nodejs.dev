@@ -1,6 +1,6 @@
 ---
 title: ECMAScript 2015 (ES6) and beyond
-displayTitle: 'ECMAScript 2015 (ES6) et au-delà'
+displayTitle: "ECMAScript 2015 (ES6) et au-delà"
 category: learn
 ---
 
