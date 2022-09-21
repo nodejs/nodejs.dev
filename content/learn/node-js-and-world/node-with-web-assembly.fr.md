@@ -1,5 +1,6 @@
 ---
 title: 'Node.js with WebAssembly'
+displayTitle: 'Node.js avec WebAssembly'
 description: 'Find out why WebAssembly is an awesome tool and learn to use it by yourself.'
 authors: lancemccluskey, AugustinMauroy
 category: learn

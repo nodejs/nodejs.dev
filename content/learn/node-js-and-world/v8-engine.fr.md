@@ -1,5 +1,6 @@
 ---
 title: The V8 JavaScript Engine
+displayTitle: 'Le moteur V8 JavaScript'
 description: "V8 is the name of the JavaScript engine that powers Google Chrome. It's the thing that takes our JavaScript and executes it while browsing with Chrome. V8 provides the runtime environment in which JavaScript executes. The DOM and the other Web Platform APIs are provided by the browser."
 authors: flaviocopes, smfoote, co16353sidak, MylesBorins, LaRuaNa, andys8, ahmadawais, karlhorky, aymen94, AugustinMauroy
 category: learn
