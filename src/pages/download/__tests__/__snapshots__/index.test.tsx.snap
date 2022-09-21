@@ -50,7 +50,7 @@ exports[`Download page renders correctly 1`] = `
           </li>
           <li>
             <a
-              href="/api/"
+              href="/api/latest/"
             >
               API Docs
             </a>
@@ -86,7 +86,7 @@ exports[`Download page renders correctly 1`] = `
               </span>
               <div
                 class="searchBarContainer"
-                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
+                style="min-height: 0; width: 100%; max-width: 100px; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
@@ -993,7 +993,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           </li>
           <li>
             <a
-              href="/api/"
+              href="/api/latest/"
             >
               API Docs
             </a>
@@ -1029,7 +1029,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               </span>
               <div
                 class="searchBarContainer"
-                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
+                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none; min-height: 0em;"
               >
                 <div
                   class="searchInputContainer"
