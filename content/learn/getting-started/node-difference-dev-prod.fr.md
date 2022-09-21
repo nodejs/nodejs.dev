@@ -1,6 +1,6 @@
 ---
 title: Node.js, the difference between development and production
-displayTitle: 'Node.js, la différence entre le développement et la production'
+displayTitle: "Node.js, la différence entre le développement et la production"
 description: 'Learn how to set up different configurations for production and development environments'
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, RenanTKN, AugustinMauroy
 category: learn
