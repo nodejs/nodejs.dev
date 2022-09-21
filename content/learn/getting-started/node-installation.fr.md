@@ -1,7 +1,8 @@
 ---
 title: How to install Node.js
+displayTitle: 'Comment installer Node.js'
 description: 'How you can install Node.js on your system: a package manager, the official website installer or nvm'
-authors: flaviocopes, ZYSzys, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, benhalverson
+authors: flaviocopes, ZYSzys, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, benhalverson, AugustinMauroy
 section: Quick Start
 category: learn
 ---
