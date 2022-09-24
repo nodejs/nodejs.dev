@@ -28,7 +28,6 @@ const NavigationSection = ({
 }: Props): JSX.Element => {
   const isActive = (item: NavigationSectionItem) => item.slug === currentSlug;
   const [isOpen, setIsOpen] = useState(!!section.find(isActive));
-  const isMobile = useMediaQuery('(max-width: 870px)');
   const toggle = (): void => setIsOpen(!isOpen);
 
   const titleClassNames = classnames('t-body2', styles.navigationSectionTitle, {
@@ -39,25 +38,22 @@ const NavigationSection = ({
 
   return (
     <div className={navigationSectionClasses}>
-      <div
+      <button
         className={titleClassNames}
         onClick={toggle}
-        onKeyDown={toggle}
-        tabIndex={0}
-        role="menuitem"
+        aria-expanded={isOpen}
       >
         <span>
           {isApiDocs && <OfflineBoltIcon />}
           {title}
         </span>
-        {!isMobile &&
-          (isOpen ? (
-            <ArrowDropDownIcon style={{ padding: 0 }} />
-          ) : (
-            <ArrowDropUpIcon style={{ padding: 0 }} />
-          ))}
-      </div>
-      <div style={{ display: isOpen || isMobile ? 'block' : 'none' }}>
+        {isOpen ? (
+          <ArrowDropDownIcon style={{ padding: 0 }} />
+        ) : (
+          <ArrowDropUpIcon style={{ padding: 0 }} />
+        )}
+      </button>
+      <div role="region" style={{ display: isOpen ? 'block' : 'none' }}>
         {section.map((item: NavigationSectionItem): JSX.Element => {
           const isRead: boolean = readSections.has(item.slug);
 

@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   position: relative;
+  
 
   @media (max-width: 900px) {
     height: auto;
@@ -30,6 +31,8 @@
     font-weight: var(--font-weight-semibold);
     justify-content: space-between;
     margin: var(--space-24) 0 var(--space-16) var(--space-24);
+    border: none;
+    width: 100%;
 
     span {
       align-items: center;
