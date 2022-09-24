@@ -49,7 +49,7 @@ const DownloadPage = ({ data: { nodeReleases } }: Props): JSX.Element => {
 
   return (
     <Layout title="Download Node.js" description="Come get me!">
-      <div className={`home-container ${styles.downloadPageContainer}`}>
+      <main className={`home-container ${styles.downloadPageContainer}`}>
         <DownloadHeader release={selectedType} />
         <p className={styles.releaseDescription}>
           <FormattedMessage id="pages.download.description" />{' '}
@@ -72,7 +72,7 @@ const DownloadPage = ({ data: { nodeReleases } }: Props): JSX.Element => {
           selectedTypeRelease={typeRelease}
           handleTypeReleaseToggle={handleTypeReleaseToggle}
         />
-      </div>
+      </main>
     </Layout>
   );
 };
