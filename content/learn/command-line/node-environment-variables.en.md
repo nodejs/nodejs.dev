@@ -31,8 +31,8 @@ If you have multiple environment variables in your node project, you can also cr
 
 ```bash
 # .env file
-USER_ID="239482"
-USER_KEY="foobar"
+USER_ID="123456"
+USER_KEY="thatsthekey"
 NODE_ENV="development"
 ```
 
@@ -41,8 +41,8 @@ In your js file
 ```js
 require('dotenv').config();
 
-process.env.USER_ID; // "239482"
-process.env.USER_KEY; // "foobar"
+process.env.USER_ID; // "123456"
+process.env.USER_KEY; // "thatsthekey"
 process.env.NODE_ENV; // "development"
 ```
 
