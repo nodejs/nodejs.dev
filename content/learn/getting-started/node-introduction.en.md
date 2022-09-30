@@ -2,7 +2,7 @@
 title: introduction-to-nodejs
 displayTitle: 'Introduction to Node.js'
 description: "Getting started guide to Node.js, the server-side JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to just that."
-authors: flaviocopes, potch, MylesBorins, RomainLanz, virkt25, Trott, onel0p3z, ollelauribostrom, MarkPieszak, fhemberger, LaRuaNa, FrozenPandaz, mcollina, amiller-gh, ahmadawais, saqibameen, dangen-effy, aymen94
+authors: flaviocopes, potch, MylesBorins, RomainLanz, virkt25, Trott, onel0p3z, ollelauribostrom, MarkPieszak, fhemberger, LaRuaNa, FrozenPandaz, mcollina, amiller-gh, ahmadawais, saqibameen, dangen-effy, aymen94, benhalverson
 section: Quick Start
 category: learn
 ---
@@ -86,8 +86,6 @@ and we close the response, adding the content as an argument to `end()`:
 res.end('Hello World\n');
 ```
 
-## Node.js Frameworks and Tools
+## More Examples
 
-Node.js is a low-level platform. In order to make things easy and exciting for developers, thousands of libraries were built upon Node.js by the community.
-
-Here is a non-comprehensive list of the ones worth [learning](https://googlethatforyou.com?q=nodejs%20libraries%202022):
+See https://github.com/nodejs/examples for a list of Node.js examples that go beyond hello world.

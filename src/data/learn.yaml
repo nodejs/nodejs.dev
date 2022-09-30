@@ -7,9 +7,7 @@
 - section: 'Getting Started'
   items:
     - getting-started/node-introduction
-    - getting-started/node-history
     - getting-started/node-installation
     - getting-started/node-javascript-language
     - getting-started/node-difference-browser
     - getting-started/node-difference-dev-prod
-    - getting-started/node-examples
