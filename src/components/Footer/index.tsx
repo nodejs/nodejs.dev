@@ -26,7 +26,7 @@ const Footer = (): JSX.Element => (
       <li>
       <a 
           className={styles.link} 
-          href="https://openjsf.org/wp-content/uploads/sites/84/2021/04/OpenJS-Foundation-Privacy-Policy-2019-11-15.pdf"
+          href="https://privacy-policy.openjsf.org/"
           >
           <FormattedMessage id="components.footer.links.privacy" />
         </a>
