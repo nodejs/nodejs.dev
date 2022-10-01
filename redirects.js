@@ -18,8 +18,12 @@ module.exports = {
   '/en/learn/get-http-request-body-data-using-nodejs/': '/en/learn/',
   '/en/learn/a-brief-history-of-nodejs/': '/en/learn/',
   '/en/learn/nodejs-file-paths/': '/en/learn/',
-  '/learn/asynchronous-work/blocking-vs-non-blocking': 'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing',
-  '/learn/discover-javascript-timers': 'https://developer.mozilla.org/en-US/docs/Web/API/setTimeout',
-  '/learn/modern-asynchronous-javascript-with-async-and-await': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises',
-  '/learn/the-nodejs-event-loop': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises',
+  '/learn/asynchronous-work/blocking-vs-non-blocking':
+    'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing',
+  '/learn/discover-javascript-timers':
+    'https://developer.mozilla.org/en-US/docs/Web/API/setTimeout',
+  '/learn/modern-asynchronous-javascript-with-async-and-await':
+    'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises',
+  '/learn/the-nodejs-event-loop':
+    'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises',
 };
