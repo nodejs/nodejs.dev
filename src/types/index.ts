@@ -41,6 +41,7 @@ export type SearchResult = {
   title: string;
   category: string;
   displayTitle?: string;
+  tableOfContents?: string;
 };
 
 export type WrapPageElementBrowser =

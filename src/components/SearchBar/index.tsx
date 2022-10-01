@@ -10,8 +10,10 @@ import { useClickOutside } from 'react-click-outside-hook';
 import { Index, SerialisedIndexData } from 'elasticlunr';
 import SectionTitle from '../SectionTitle';
 import { SearchResult } from '../../types';
-import styles from './index.module.scss';
 import useKeyPress from '../../hooks/useKeyPress';
+import createSlug from '../../../util-node/createSlug';
+import styles from './index.module.scss';
+import { replaceDataTagFromString } from '../../util/replaceDataTag';
 
 const containerTransition = { type: 'spring', damping: 22, stiffness: 150 };
 const containerVariants = {
@@ -61,6 +63,27 @@ const SearchBar = (): JSX.Element => {
       .map(({ ref }) => storeIndex.documentStore.getDoc(ref) as SearchResult);
 
     setResults(currentResults.slice(0, 20));
+  };
+
+  const getHashtagFromQuery = (tableOfContents?: string) => {
+    if (tableOfContents) {
+      const slugifiedQuery = createSlug(query);
+
+      const tableArray = tableOfContents.split('\n');
+
+      if (tableArray.length) {
+        const match = tableArray
+          .map(replaceDataTagFromString)
+          .map(createSlug)
+          .find(item => item.includes(slugifiedQuery));
+
+        if (match) {
+          return `#${match}`;
+        }
+      }
+    }
+
+    return '';
   };
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -183,12 +206,15 @@ const SearchBar = (): JSX.Element => {
                   ? ['home', result.category, result.title]
                   : ['home', result.category];
 
+                const hashtag = getHashtagFromQuery(result.tableOfContents);
+                const destination = `${result.slug}${hashtag}`;
+
                 return (
                   <li key={result.id}>
-                    <Link to={result.slug}>
+                    <Link to={destination}>
                       <span>{result.displayTitle || result.title}</span>
+                      <SectionTitle path={sectionPath} />
                     </Link>
-                    <SectionTitle path={sectionPath} />
                   </li>
                 );
               })}
