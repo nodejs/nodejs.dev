@@ -126,7 +126,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.0.3",
     "jest-axe": "^6.0.0",
-    "jest-environment-jsdom": "^29.0.3",
+    "jest-environment-jsdom": "^29.1.2",
     "jest-fetch-mock": "^3.0.3",
     "jest-snapshot-serializer-ansi": "^1.0.0",
     "markdown-yaml-metadata-parser": "^3.0.0",
