@@ -27,10 +27,10 @@
 
 .code {
   @extend %baseStyles;
-
-  white-space: break-spaces;
   font-weight: var(--font-weight-light);
   padding: 0 6px;
+
+  white-space: break-spaces;
 }
 
 .pre {
