@@ -148,13 +148,6 @@
     "@mdx-js/react": {
       "react": "$react"
     },
-    "react-element-to-jsx-string": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    },
-    "react-inspector": {
-      "react": "$react"
-    },
     "gatsby-theme-i18n": {
       "react": "$react",
       "react-dom": "$react-dom"
