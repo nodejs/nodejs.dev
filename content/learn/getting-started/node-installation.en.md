@@ -9,11 +9,11 @@ category: learn
 
 Node.js can be installed in different ways. This post highlights the most common and convenient ones.
 
-Official packages for all the major platforms are available at [https://nodejs.dev/download/](https://nodejs.dev/download/).
+Official packages for all the major platforms are available at [https://nodejs.dev/download/](/download/).
 
 One very convenient way to install Node.js is through a package manager. In this case, every operating system has its own.
 
-Other package managers for MacOS, Linux, and Windows are listed in [https://nodejs.dev/download/package-manager/](https://nodejs.dev/download/package-manager/)
+Other package managers for MacOS, Linux, and Windows are listed in [https://nodejs.dev/download/package-manager/](/download/package-manager/)
 
 `nvm` is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks.
 
