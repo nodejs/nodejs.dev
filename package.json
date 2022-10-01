@@ -133,7 +133,7 @@
     "prettier": "^2.7.1",
     "sass": "^1.54.9",
     "sass-loader": "^13.0.2",
-    "stylelint": "^14.11.0",
+    "stylelint": "^14.13.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended-scss": "^7.0.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
