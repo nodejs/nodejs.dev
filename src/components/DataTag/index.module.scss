@@ -10,6 +10,7 @@
   margin-right: 0.8rem;
   text-align: center;
   width: 2.4rem;
+  min-width: 2.4rem;
 
   &[data-tag='C'] {
     background-color: var(--warning4);

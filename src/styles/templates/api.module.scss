@@ -10,26 +10,53 @@
     h5,
     h6 {
       margin: 1.5rem 0 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      code {
+        margin: 0;
+      }
     }
 
     h2 {
       font-size: 28px;
+
+      @media (max-width: 900px) {
+        font-size: 22px;
+      }
     }
 
     h3 {
       font-size: 25px;
+
+      @media (max-width: 900px) {
+        font-size: 20px;
+      }
     }
 
     h4 {
       font-size: 20px;
+
+      @media (max-width: 900px) {
+        font-size: 18px;
+      }
     }
 
     h5 {
       font-size: 18px;
+
+      @media (max-width: 900px) {
+        font-size: 16px;
+      }
     }
 
     h6 {
       font-size: 16px;
+
+      @media (max-width: 900px) {
+        font-size: 14px;
+      }
     }
   }
 }
