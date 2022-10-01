@@ -35,7 +35,7 @@
     "gatsby-plugin-offline-next": "^5.2.3",
     "gatsby-plugin-sass": "^5.22.0",
     "gatsby-plugin-sharp": "^4.23.0",
-    "gatsby-plugin-sitemap": "^5.22.0",
+    "gatsby-plugin-sitemap": "^5.24.0",
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
     "gatsby-plugin-typescript": "^4.22.0",
     "gatsby-plugin-webfonts": "^2.2.2",
