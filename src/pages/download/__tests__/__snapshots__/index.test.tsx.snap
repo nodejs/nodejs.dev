@@ -189,7 +189,7 @@ exports[`Download page renders correctly 1`] = `
         </div>
       </div>
     </nav>
-    <div
+    <main
       class="home-container downloadPageContainer"
     >
       <div
@@ -792,7 +792,7 @@ exports[`Download page renders correctly 1`] = `
           </div>
         </div>
       </div>
-    </div>
+    </main>
     <footer
       class="footer"
     >
@@ -1127,7 +1127,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </div>
       </div>
     </nav>
-    <div
+    <main
       class="home-container downloadPageContainer"
     >
       <div
@@ -1730,7 +1730,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           </div>
         </div>
       </div>
-    </div>
+    </main>
     <footer
       class="footer"
     >
