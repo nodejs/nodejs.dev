@@ -23,7 +23,7 @@
     "async": "^3.2.4",
     "classnames": "^2.3.1",
     "dedent": "^0.7.0",
-    "dotenv": "^16.0.2",
+    "dotenv": "^16.0.3",
     "elasticlunr": "^0.9.5",
     "framer-motion": "^7.3.2",
     "gatsby": "^4.22.1",
