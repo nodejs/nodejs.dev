@@ -1,6 +1,6 @@
 name: Deploy to Firebase Production
 
-'on':
+on:
   push:
     branches:
       - main
