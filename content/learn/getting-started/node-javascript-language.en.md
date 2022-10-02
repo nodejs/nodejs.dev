@@ -27,15 +27,15 @@ I would recommend you to have a good grasp of the main JavaScript concepts befor
 * Template Literals
 * Semicolons
 * Strict Mode
-* ECMAScript 6, 2016, 2017
+* ECMAScript 2015 and beyond
 
 With those concepts in mind, you are well on your road to become a proficient JavaScript developer, in both the browser and in Node.js.
 
 The following concepts are also key to understand asynchronous programming, which is one of the fundamental parts of Node.js:
 
-* [Asynchronous programming and callbacks](/learn/javascript-asynchronous-programming-and-callbacks)
-* [Timers](/learn/discover-javascript-timers)
-* [Promises](/learn/understanding-javascript-promises)
-* [Async and Await](/learn/modern-asynchronous-javascript-with-async-and-await)
+* [Asynchronous programming and callbacks](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing)
+* [Timers](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout)
+* [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
+* [Async and Await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 * [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
-* [The Event Loop](/learn/the-nodejs-event-loop)
+* [The Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
