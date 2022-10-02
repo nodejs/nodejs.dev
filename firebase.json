@@ -97,6 +97,56 @@
       "type": "301"
     },
     {
+      "source": "/en/learn/the-packagejson-guide/",
+      "destination": "/en/learn/",
+      "type": "301"
+    },
+    {
+      "source": "/en/learn/how-to-exit-from-a-nodejs-program/",
+      "destination": "/en/learn/",
+      "type": "301"
+    },
+    {
+      "source": "/en/learn/where-does-npm-install-the-packages/",
+      "destination": "/en/learn/",
+      "type": "301"
+    },
+    {
+      "source": "/en/learn/get-http-request-body-data-using-nodejs/",
+      "destination": "/en/learn/",
+      "type": "301"
+    },
+    {
+      "source": "/en/learn/a-brief-history-of-nodejs/",
+      "destination": "/en/learn/",
+      "type": "301"
+    },
+    {
+      "source": "/en/learn/nodejs-file-paths/",
+      "destination": "/en/learn/",
+      "type": "301"
+    },
+    {
+      "source": "/learn/asynchronous-work/blocking-vs-non-blocking",
+      "destination": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing",
+      "type": "301"
+    },
+    {
+      "source": "/learn/discover-javascript-timers",
+      "destination": "https://developer.mozilla.org/en-US/docs/Web/API/setTimeout",
+      "type": "301"
+    },
+    {
+      "source": "/learn/modern-asynchronous-javascript-with-async-and-await",
+      "destination": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises",
+      "type": "301"
+    },
+    {
+      "source": "/learn/the-nodejs-event-loop",
+      "destination": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises",
+      "type": "301"
+    },
+    {
       "source": "/api/",
       "destination": "/api/v18/documentation/",
       "type": "301"

@@ -1,5 +1,4 @@
 import React, { useMemo, useEffect, useState, createRef } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
@@ -7,11 +6,11 @@ import CloseIcon from '@mui/icons-material/Close';
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from 'react-click-outside-hook';
-import { Index, SerialisedIndexData } from 'elasticlunr';
 import SectionTitle from '../SectionTitle';
 import { SearchResult } from '../../types';
-import styles from './index.module.scss';
 import useKeyPress from '../../hooks/useKeyPress';
+import { useSearchResults } from '../../hooks/useSearchResults';
+import styles from './index.module.scss';
 
 const containerTransition = { type: 'spring', damping: 22, stiffness: 150 };
 const containerVariants = {
@@ -32,46 +31,22 @@ const containerVariants = {
 const MotionCloseIcon = motion(CloseIcon);
 
 const SearchBar = (): JSX.Element => {
-  const { siteSearchIndex } = useStaticQuery(graphql`
-    query localSearchLearnPages {
-      siteSearchIndex {
-        index
-      }
-    }
-  `);
-
-  const resultData = siteSearchIndex.index as SerialisedIndexData<SearchResult>;
-
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState<SearchResult[]>([]);
   const searchInputRef = createRef<HTMLInputElement>();
 
-  const isEmpty = !results || results.length === 0;
   const [isExpanded, setExpanded] = useState(false);
   const [parentRef, isClickedOutside] = useClickOutside();
 
-  const storeIndex = useMemo(
-    () => Index.load<SearchResult>(resultData),
-    [resultData]
-  );
+  const search = useSearchResults();
 
-  const searchForResults = (currentQuery: string) => {
-    const currentResults = storeIndex
-      .search(currentQuery, { expand: true })
-      .map(({ ref }) => storeIndex.documentStore.getDoc(ref) as SearchResult);
+  const results = useMemo(() => search(query), [query, search]);
 
-    setResults(currentResults.slice(0, 20));
-  };
+  const isEmpty = !results || results.length === 0;
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
 
-    if (e.target.value === '') {
-      setResults([]);
-    }
-
     setQuery(e.target.value);
-    searchForResults(e.target.value);
   };
 
   const expandContainer = () => {
@@ -81,7 +56,6 @@ const SearchBar = (): JSX.Element => {
   const collapseContainer = () => {
     setExpanded(false);
     setQuery('');
-    setResults([]);
   };
 
   useEffect(() => {
@@ -179,14 +153,19 @@ const SearchBar = (): JSX.Element => {
           {!isEmpty && (
             <ul>
               {results.map((result: SearchResult) => {
-                const sectionPath = result.displayTitle
-                  ? ['home', result.category, result.title]
-                  : ['home', result.category];
+                const sectionPath =
+                  result.category === 'api'
+                    ? ['home', result.category, result.title]
+                    : ['home', result.category];
+
+                const displayTitle = result.displayTitle || result.title;
 
                 return (
                   <li key={result.id}>
                     <Link to={result.slug}>
-                      <span>{result.displayTitle || result.title}</span>
+                      {(result.wrapInCode && <code>{displayTitle}</code>) || (
+                        <span>{displayTitle}</span>
+                      )}
                     </Link>
                     <SectionTitle path={sectionPath} />
                   </li>
