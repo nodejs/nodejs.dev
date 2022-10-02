@@ -94,8 +94,28 @@
           span {
             text-transform: capitalize;
           }
+
+          code {
+            border-radius: 0.3rem;
+            font-weight: var(--font-weight-light);
+            padding: 0 6px;
+          }
         }
       }
     }
+  }
+}
+
+:global(.light) {
+  .search-content ul li > a > code {
+    background-color: var(--black2);
+    color: var(--black9);
+  }
+}
+
+:global(.dark) {
+  .search-content ul li > a > code {
+    background-color: var(--black9);
+    color: var(--black2);
   }
 }
