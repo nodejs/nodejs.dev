@@ -5,7 +5,7 @@
   flex-direction: column;
   height: fit-content;
   max-height: 90vh;
-  overflow-y: auto;
+  overflow-y: hidden;
 
   &.expanded {
     padding-bottom: 10px;
@@ -58,6 +58,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow-y: scroll;
     width: 100%;
 
     .loading-wrapper {
@@ -89,9 +90,32 @@
         > a {
           text-decoration: none;
           text-overflow: ellipsis;
-          text-transform: capitalize;
+
+          span {
+            text-transform: capitalize;
+          }
+
+          code {
+            border-radius: 0.3rem;
+            font-weight: var(--font-weight-light);
+            padding: 0 6px;
+          }
         }
       }
     }
+  }
+}
+
+:global(.light) {
+  .search-content ul li > a > code {
+    background-color: var(--black2);
+    color: var(--black9);
+  }
+}
+
+:global(.dark) {
+  .search-content ul li > a > code {
+    background-color: var(--black9);
+    color: var(--black2);
   }
 }

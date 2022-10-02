@@ -57,6 +57,7 @@
     "react-intl": "^6.1.1",
     "react-tabs": "5.1.0",
     "reading-time": "^1.5.0",
+    "string-similarity": "^4.0.4",
     "typescript": "^4.8.3",
     "yaml": "^2.1.1"
   },
@@ -105,6 +106,7 @@
     "@types/react-click-outside-hook": "^1.0.0",
     "@types/react-dom": "^18.0.6",
     "@types/react-helmet": "^6.1.5",
+    "@types/string-similarity": "^4.0.0",
     "@types/throttle-debounce": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
@@ -146,13 +148,6 @@
   },
   "overrides": {
     "@mdx-js/react": {
-      "react": "$react"
-    },
-    "react-element-to-jsx-string": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    },
-    "react-inspector": {
       "react": "$react"
     },
     "gatsby-theme-i18n": {
