@@ -1,7 +1,8 @@
 import React, { MutableRefObject, useRef } from 'react';
 import { FormattedMessage } from 'react-intl';
 import AnimatedPlaceholder from '../AnimatedPlaceholder';
-import { useNodeJsContributorsApi, useOnScreen } from '../../hooks';
+import { useOnScreen } from '../../hooks/useOnScreen';
+import { useNodeJsContributorsApi } from '../../hooks/useNodeJsContributorsApi';
 import styles from './index.module.scss';
 
 const RandomContributor = (): JSX.Element => {
