@@ -40,8 +40,9 @@ export type SearchResult = {
   slug: string;
   title: string;
   category: string;
-  displayTitle?: string;
+  displayTitle?: string | JSX.Element;
   tableOfContents?: string;
+  wrapInCode?: boolean;
 };
 
 export type WrapPageElementBrowser =

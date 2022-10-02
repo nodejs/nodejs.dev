@@ -5,7 +5,7 @@
   flex-direction: column;
   height: fit-content;
   max-height: 90vh;
-  overflow-y: auto;
+  overflow-y: hidden;
 
   &.expanded {
     padding-bottom: 10px;
@@ -58,6 +58,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow-y: scroll;
     width: 100%;
 
     .loading-wrapper {
@@ -89,7 +90,10 @@
         > a {
           text-decoration: none;
           text-overflow: ellipsis;
-          text-transform: capitalize;
+
+          span {
+            text-transform: capitalize;
+          }
         }
       }
     }
