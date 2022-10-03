@@ -18,7 +18,7 @@ const Footer = (): JSX.Element => (
           target="_blank"
           href="https://trademark-policy.openjsf.org/"
           rel="noopener noreferrer"
-          aria-label="Node.js Slack Link"
+          aria-label="Node.js Trademark Policy - PDF (Opens in new tab)"
         >
           <FormattedMessage id="components.footer.links.trademark" />
         </a>
@@ -61,11 +61,8 @@ const Footer = (): JSX.Element => (
           target="_blank"
           href="https://github.com/nodejs/node"
           rel="noopener noreferrer"
-          aria-label="Node.js Github Page Link"
+          aria-label="Node.js Github Page (opens in new tab)"
         >
-          <span className="sr-only">
-            <FormattedMessage id="components.footer.links.github" />
-          </span>
           <FontAwesomeIcon
             icon={faGithub}
             color="var(--color-text-secondary)"
@@ -77,7 +74,7 @@ const Footer = (): JSX.Element => (
           target="_blank"
           href="https://twitter.com/nodejs"
           rel="noopener noreferrer"
-          aria-label="Node.js Twitter Link"
+          aria-label="Node.js Twitter (opens in new tab)"
         >
           <FontAwesomeIcon
             icon={faTwitter}
@@ -90,7 +87,7 @@ const Footer = (): JSX.Element => (
           target="_blank"
           href="https://slack.openjsf.org"
           rel="noopener noreferrer"
-          aria-label="Node.js Slack Link"
+          aria-label="Node.js Slack (opens in new tab)"
         >
           <FontAwesomeIcon icon={faSlack} color="var(--color-text-secondary)" />
         </a>
