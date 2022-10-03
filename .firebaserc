@@ -1,6 +1,7 @@
 {
   "projects": {
-    "staging": "nodejs-infrastructure"
+    "staging": "nodejs-infrastructure",
+    "default": "nodejs-infrastructure"
   },
   "targets": {
     "nodejs-infrastructure": {
