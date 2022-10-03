@@ -1,0 +1,44 @@
+name: Deploy to Firebase Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install NPM packages
+        run: npm ci
+
+      - name: Gatsby Cache Folder
+        uses: actions/cache@v3
+        with:
+          key: cache-folder-ubuntu-latest
+          path: .cache
+
+      - name: Gatsby Public Folder
+        uses: actions/cache@v3
+        with:
+          key: public-folder-ubuntu-latest
+          path: public
+
+      - name: Build Gatsby
+        run: npm run build-ci
+
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NODEJS_INFRASTRUCTURE }}'
+          channelId: live
+          projectId: nodejs-infrastructure

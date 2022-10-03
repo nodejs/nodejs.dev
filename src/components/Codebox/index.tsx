@@ -66,7 +66,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   return (
     <pre className={classnames(styles.pre, replaceLanguages(className))}>
       <div className={styles.top}>
-        <span>{replaceLanguages(language).toUpperCase()}</span>
+        <span>{language.toUpperCase()}</span>
         <button type="button" onClick={handleCopyCode}>
           {copied ? 'copied' : 'copy'}
         </button>
