@@ -58,7 +58,7 @@ This project follows the [Conventional Commits][] specification.
 
 Basic rules:
 
-* Commit messages must be prefixed with the name of the changed subsystem, followed by a colon and a space and start with an imperative verb. Check the output of `git log --oneline files/you/changed` to find out what subsystems your changes touch.
+* Commit messages must be prefixed with the name of the changed subsystem, followed by a colon and a space, and start with an imperative verb. Check the output of `git log --oneline files/you/changed` to find out what subsystems your changes touch.
 
   Supported subsystems:
 
@@ -74,7 +74,7 @@ Basic rules:
 
 * Pull Requests must be open for at least 48 hours unless changes include errata fixes, infrastructure maintenance, or tests
 * There must be no objections after a 48 hour period
-* Pull Requests for a new feature or bug fix must include tests
+* Tests must be included in Pull Requests for new features or bug fixes
 
 The default for each contribution is that it is accepted once no collaborator has an objection. During review collaborators may also request that a specific contributor who is most versed in a particular area gives a "LGTM" before the PR can be merged.
 
@@ -82,7 +82,7 @@ In the case of an objection being raised in a pull request by another collaborat
 
 ## When Landing
 
-* Do not use merge button
+* Do not use the merge button
 * [`squash`][] pull-requests made up of multiple commits
 * Land how you like as long as there are no merge commits
 
