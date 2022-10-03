@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
-import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { NavigationSectionItem } from '../../types';
 import NavigationItem from '../NavigationItem';
 import styles from './index.module.scss';
@@ -39,6 +38,7 @@ const NavigationSection = ({
   return (
     <div className={navigationSectionClasses}>
       <button
+        type="button"
         className={titleClassNames}
         onClick={toggle}
         aria-expanded={isOpen}

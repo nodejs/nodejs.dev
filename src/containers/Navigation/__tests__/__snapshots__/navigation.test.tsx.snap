@@ -19,6 +19,7 @@ exports[`Navigation component renders correctly 1`] = `
       <button
         aria-expanded="true"
         class="t-body2 navigationSectionTitle"
+        type="button"
       >
         <span>
           Getting Started
