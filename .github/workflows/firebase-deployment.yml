@@ -18,6 +18,9 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
 
+      - name: Install NPM packages
+        run: npm ci
+
       - name: Gatsby Cache Folder
         uses: actions/cache@v3
         with:
