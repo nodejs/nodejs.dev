@@ -463,7 +463,7 @@ exports[`Package Manager Page renders correctly 1`] = `
       >
         <li>
           <a
-            aria-label="Node.js Slack Link"
+            aria-label="Node.js Trademark Policy - PDF (Opens in new tab)"
             class="link"
             href="https://trademark-policy.openjsf.org/"
             rel="noopener noreferrer"
@@ -521,16 +521,11 @@ exports[`Package Manager Page renders correctly 1`] = `
         </li>
         <li>
           <a
-            aria-label="Node.js Github Page Link"
+            aria-label="Node.js Github Page (opens in new tab)"
             href="https://github.com/nodejs/node"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <span
-              class="sr-only"
-            >
-              GitHub
-            </span>
             <svg
               aria-hidden="true"
               class="svg-inline--fa fa-github "
@@ -551,7 +546,7 @@ exports[`Package Manager Page renders correctly 1`] = `
         </li>
         <li>
           <a
-            aria-label="Node.js Twitter Link"
+            aria-label="Node.js Twitter (opens in new tab)"
             href="https://twitter.com/nodejs"
             rel="noopener noreferrer"
             target="_blank"
@@ -576,7 +571,7 @@ exports[`Package Manager Page renders correctly 1`] = `
         </li>
         <li>
           <a
-            aria-label="Node.js Slack Link"
+            aria-label="Node.js Slack (opens in new tab)"
             href="https://slack.openjsf.org"
             rel="noopener noreferrer"
             target="_blank"
