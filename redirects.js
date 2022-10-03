@@ -113,6 +113,6 @@ module.exports = {
     '/fr/learn',
   '/fr/learn/working-with-folders-in-nodejs/': '/fr/learn',
   '/fr/learn/writing-files-with-nodejs/': '/fr/learn',
-  '/learn/introduction-to-nodejs/': '/en/learn/',
+  '/en/learn/introduction-to-nodejs/': '/en/learn/',
   '/learn/the-nodejs-http-module/': '/en/learn/',
 };
