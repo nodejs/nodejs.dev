@@ -4,79 +4,79 @@ import { render, screen } from '@testing-library/react';
 import SideNavBar, { SideNavBarKeys, OverflowTypes } from '..';
 import { SideNavBarItem } from '../../../types';
 
-
 const navbarButtons = [
   {
     pageKey: SideNavBarKeys.about,
     expectedText: 'About Node.js',
-    expectedHref: '/about/'
+    expectedHref: '/about/',
   },
   {
     pageKey: SideNavBarKeys.governance,
     expectedText: 'Project Governance',
-    expectedHref: '/about/governance/'
+    expectedHref: '/about/governance/',
   },
   {
     pageKey: SideNavBarKeys.releases,
     expectedText: 'Releases',
-    expectedHref: '/about/releases/'
+    expectedHref: '/about/releases/',
   },
   {
     pageKey: SideNavBarKeys.resources,
     expectedText: 'Resources',
-    expectedHref: '/about/resources/'
+    expectedHref: '/about/resources/',
   },
   {
     pageKey: SideNavBarKeys.privacy,
     expectedText: 'Privacy Policy',
-    expectedHref: 'https://privacy-policy.openjsf.org/'
+    expectedHref: 'https://privacy-policy.openjsf.org/',
   },
   {
     pageKey: SideNavBarKeys.security,
     expectedText: 'Security Reporting',
-    expectedHref: '/about/security/'
+    expectedHref: '/about/security/',
   },
   {
     pageKey: SideNavBarKeys.getInvolved,
     expectedText: 'Get Involved',
-    expectedHref: '/get-involved/'
+    expectedHref: '/get-involved/',
   },
   {
     pageKey: SideNavBarKeys.codeLearn,
     expectedText: 'Code + Learn',
-    expectedHref: '/get-involved/code-learn'
+    expectedHref: '/get-involved/code-learn',
   },
   {
     pageKey: SideNavBarKeys.collabSummit,
     expectedText: 'Collab Summit',
-    expectedHref: '/get-involved/collab-summit'
+    expectedHref: '/get-involved/collab-summit',
   },
   {
     pageKey: SideNavBarKeys.contribute,
     expectedText: 'Contribute',
-    expectedHref: '/get-involved/contribute'
+    expectedHref: '/get-involved/contribute',
   },
   {
     pageKey: SideNavBarKeys.codeOfConduct,
     expectedText: 'Code of Conduct',
-    expectedHref: 'https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md'
+    expectedHref:
+      'https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md',
   },
   {
     pageKey: SideNavBarKeys.download,
     expectedText: 'Download',
-    expectedHref: '/download/'
+    expectedHref: '/download/',
   },
   {
     pageKey: SideNavBarKeys.packageManager,
     expectedText: 'Package Manager',
-    expectedHref: '/download/package-manager/'
+    expectedHref: '/download/package-manager/',
   },
   {
     pageKey: SideNavBarKeys.previousReleases,
     expectedText: 'Previous Releases',
-    expectedHref: '/download/releases/'
+    expectedHref: '/download/releases/',
   },
-]
+];
 
 describe('SideNavBar', () => {
   it('renders correctly', () => {
@@ -84,7 +84,7 @@ describe('SideNavBar', () => {
     expect(container).toMatchSnapshot();
   });
 
-  navbarButtons.forEach((button) => {
+  navbarButtons.forEach(button => {
     it(`should contain a href to '~${button.expectedHref}'`, () => {
       render(<SideNavBar pageKey={button.pageKey} />);
       const aboutNavBarElement = screen.getByText(button.expectedText);
