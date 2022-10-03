@@ -21,13 +21,13 @@ jobs:
       - name: Gatsby Cache Folder
         uses: actions/cache@v3
         with:
-          key: cache-folder-${{ matrix.os }}
+          key: cache-folder-ubuntu-latest
           path: .cache
 
       - name: Gatsby Public Folder
         uses: actions/cache@v3
         with:
-          key: public-folder-${{ matrix.os }}
+          key: public-folder-ubuntu-latest
           path: public
 
       - name: Build Gatsby
