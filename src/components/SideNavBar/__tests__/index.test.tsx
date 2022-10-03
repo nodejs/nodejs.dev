@@ -4,113 +4,92 @@ import { render, screen } from '@testing-library/react';
 import SideNavBar, { SideNavBarKeys, OverflowTypes } from '..';
 import { SideNavBarItem } from '../../../types';
 
+
+const navbarButtons = [
+  {
+    pageKey: SideNavBarKeys.about,
+    expectedText: 'About Node.js',
+    expectedHref: '/about/'
+  },
+  {
+    pageKey: SideNavBarKeys.governance,
+    expectedText: 'Project Governance',
+    expectedHref: '/about/governance/'
+  },
+  {
+    pageKey: SideNavBarKeys.releases,
+    expectedText: 'Releases',
+    expectedHref: '/about/releases/'
+  },
+  {
+    pageKey: SideNavBarKeys.resources,
+    expectedText: 'Resources',
+    expectedHref: '/about/resources/'
+  },
+  {
+    pageKey: SideNavBarKeys.privacy,
+    expectedText: 'Privacy Policy',
+    expectedHref: 'https://privacy-policy.openjsf.org/'
+  },
+  {
+    pageKey: SideNavBarKeys.security,
+    expectedText: 'Security Reporting',
+    expectedHref: '/about/security/'
+  },
+  {
+    pageKey: SideNavBarKeys.getInvolved,
+    expectedText: 'Get Involved',
+    expectedHref: '/get-involved/'
+  },
+  {
+    pageKey: SideNavBarKeys.codeLearn,
+    expectedText: 'Code + Learn',
+    expectedHref: '/get-involved/code-learn'
+  },
+  {
+    pageKey: SideNavBarKeys.collabSummit,
+    expectedText: 'Collab Summit',
+    expectedHref: '/get-involved/collab-summit'
+  },
+  {
+    pageKey: SideNavBarKeys.contribute,
+    expectedText: 'Contribute',
+    expectedHref: '/get-involved/contribute'
+  },
+  {
+    pageKey: SideNavBarKeys.codeOfConduct,
+    expectedText: 'Code of Conduct',
+    expectedHref: 'https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md'
+  },
+  {
+    pageKey: SideNavBarKeys.download,
+    expectedText: 'Download',
+    expectedHref: '/download/'
+  },
+  {
+    pageKey: SideNavBarKeys.packageManager,
+    expectedText: 'Package Manager',
+    expectedHref: '/download/package-manager/'
+  },
+  {
+    pageKey: SideNavBarKeys.previousReleases,
+    expectedText: 'Previous Releases',
+    expectedHref: '/download/releases/'
+  },
+]
+
 describe('SideNavBar', () => {
   it('renders correctly', () => {
     const { container } = render(<SideNavBar pageKey={SideNavBarKeys.about} />);
     expect(container).toMatchSnapshot();
   });
 
-  it('should contain a href to `~/about`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.about} />);
-    const aboutNavBarElement = screen.getByText('About Node.js');
-    expect(aboutNavBarElement.getAttribute('href')).toBe('/about/');
-  });
-
-  it('should contain a href to `~/about/governance`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.governance} />);
-    const governanceNavBarElement = screen.getByText('Project Governance');
-    expect(governanceNavBarElement.getAttribute('href')).toBe(
-      '/about/governance/'
-    );
-  });
-
-  it('should contain a href to `~/about/releases`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.releases} />);
-    const releasesNavBarElement = screen.getByText('Releases');
-    expect(releasesNavBarElement.getAttribute('href')).toBe('/about/releases/');
-  });
-
-  it('should contain a href to `~/about/resources`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.resources} />);
-    const resourcesNavBarElement = screen.getByText('Resources');
-    expect(resourcesNavBarElement.getAttribute('href')).toBe(
-      '/about/resources/'
-    );
-  });
-
-  it('should contain a href to `~/about/privacy`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.privacy} />);
-    const privacyNavBarElement = screen.getByText('Privacy Policy');
-    expect(privacyNavBarElement.getAttribute('href')).toBe(
-      'https://privacy-policy.openjsf.org/'
-    );
-  });
-
-  it('should contain a href to `~/about/security`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.security} />);
-    const securityNavBarElement = screen.getByText('Security Reporting');
-    expect(securityNavBarElement.getAttribute('href')).toBe('/about/security/');
-  });
-
-  it('should contain a href to `~/get-involved`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.getInvolved} />);
-    const getInvolvedNavBarElement = screen.getByText('Get Involved');
-    expect(getInvolvedNavBarElement.getAttribute('href')).toBe(
-      '/get-involved/'
-    );
-  });
-
-  it('should contain a href to `~/get-involved/code-learn`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.codeLearn} />);
-    const codeLearnNavBarElement = screen.getByText('Code + Learn');
-    expect(codeLearnNavBarElement.getAttribute('href')).toBe(
-      '/get-involved/code-learn'
-    );
-  });
-
-  it('should contain a href to `~/get-involved/collab-summit`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.collabSummit} />);
-    const collabSummitNavBarElement = screen.getByText('Collab Summit');
-    expect(collabSummitNavBarElement.getAttribute('href')).toBe(
-      '/get-involved/collab-summit'
-    );
-  });
-
-  it('should contain a href to `~/get-involved/contribute`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.contribute} />);
-    const contributeNavBarElement = screen.getByText('Contribute');
-    expect(contributeNavBarElement.getAttribute('href')).toBe(
-      '/get-involved/contribute'
-    );
-  });
-
-  it('should contain a href to Code of Conduct', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.codeOfConduct} />);
-    const codeOfConductNavBarElement = screen.getByText('Code of Conduct');
-    const href = codeOfConductNavBarElement.getAttribute('href');
-    expect((href || '').includes('code-of-conduct.md')).toBe(true);
-  });
-
-  it('should contain a href to `~/download`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.download} />);
-    const downloadNavBarElement = screen.getByText('Download');
-    expect(downloadNavBarElement.getAttribute('href')).toBe('/download/');
-  });
-
-  it('should contain a href to `~/download/package-manager`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.packageManager} />);
-    const packageManagerNavBarElement = screen.getByText('Package Manager');
-    expect(packageManagerNavBarElement.getAttribute('href')).toBe(
-      '/download/package-manager/'
-    );
-  });
-
-  it('should contain a href to `~/download/releases`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.previousReleases} />);
-    const previousReleasesNavBarElement = screen.getByText('Previous Releases');
-    expect(previousReleasesNavBarElement.getAttribute('href')).toBe(
-      '/download/releases/'
-    );
+  navbarButtons.forEach((button) => {
+    it(`should contain a href to '~${button.expectedHref}'`, () => {
+      render(<SideNavBar pageKey={button.pageKey} />);
+      const aboutNavBarElement = screen.getByText(button.expectedText);
+      expect(aboutNavBarElement.getAttribute('href')).toBe(button.expectedHref);
+    });
   });
 
   it('should set the a single page as active', () => {
@@ -120,14 +99,6 @@ describe('SideNavBar', () => {
     const innrerHtml = container.innerHTML;
     const activeLinks = innrerHtml.match('navigationItemActive');
     expect(activeLinks && activeLinks.length).toBe(1);
-  });
-
-  it('should set the body overflow hidden on menu click', async () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.releases} />);
-    const downloadItem: Element = screen.getAllByRole('button')[0] as Element;
-    expect(document.body.style.overflow).toBe(OverflowTypes.unset);
-    await userEvent.click(downloadItem);
-    expect(document.body.style.overflow).toBe(OverflowTypes.hidden);
   });
 
   it('should set the body overflow hidden/unset on toggling', async () => {
