@@ -74,7 +74,7 @@
     "build-ci": "gatsby build --prefix-paths",
     "start": "gatsby develop",
     "format": "prettier --write \"**/*.{ts,tsx,js,scss,yml}\" && npm run lint:fix",
-    "format-check": "prettier --check \"**/*.{ts,tsx,js,scss}\"",
+    "format-check": "prettier --check \"**/*.{ts,tsx,js,scss,yml\"",
     "update-snapshot": "npm run test -- --updateSnapshot",
     "pretest": "npm run format-check && npm run lint",
     "test": "jest",
