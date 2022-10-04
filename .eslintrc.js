@@ -97,5 +97,5 @@ module.exports = {
       extends: ['plugin:yml/base'],
     },
   ],
-  ignorePatterns: ['!.github']
+  ignorePatterns: ['!.github'],
 };
