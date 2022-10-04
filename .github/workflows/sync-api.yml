@@ -8,11 +8,14 @@ on:
 jobs:
   sync-api-docs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Git Checkout
         uses: actions/checkout@v3
         with:
           ref: main
+          token: ${{ secrets.ACCESS_TOKEN_ACTIONS }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -28,9 +31,8 @@ jobs:
         run: |
           npm run sync-api
 
-      - name: Check for file changes & commit files
+      - name: Commit API changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'chore(api): sync auto-generated docs'
-          github_token: ${{ github.token }}
           branch: 'main'
