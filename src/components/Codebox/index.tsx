@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { highlight, languages } from 'prismjs';
 import { sanitize } from 'isomorphic-dompurify';
 import classnames from 'classnames';
+import { useClipboardCopy } from '../../hooks/useClipboardCopy';
 import styles from './index.module.scss';
 
 interface Props {
@@ -17,7 +18,7 @@ const replaceLanguages = (language: string) =>
   language.replace(/mjs|cjs|javascript/i, 'js').replace('console', 'bash');
 
 const Codebox = ({ children: { props } }: Props): JSX.Element => {
-  const [copied, setCopied] = useState(false);
+  const { copied, copy } = useClipboardCopy();
   const [parsedCode, setParsedCode] = useState('');
 
   // eslint-disable-next-line react/prop-types
@@ -34,23 +35,8 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
 
   const handleCopyCode = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    navigator.clipboard.writeText(stringCode);
-    setCopied(true);
+    copy(stringCode);
   };
-
-  useEffect((): (() => void) => {
-    let timer: ReturnType<typeof setTimeout>;
-
-    if (copied) {
-      timer = setTimeout(() => setCopied(false), 3000);
-    }
-
-    return () => {
-      if (timer) {
-        clearTimeout(timer);
-      }
-    };
-  }, [copied]);
 
   useEffect(() => {
     const parsedLangauge = replaceLanguages(language);
