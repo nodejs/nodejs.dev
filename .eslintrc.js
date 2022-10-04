@@ -92,10 +92,5 @@ module.exports = {
         'prefer-promise-reject-errors': 'off',
       },
     },
-    {
-      files: ['*.{yml,yaml}'],
-      extends: ['plugin:yml/base'],
-    },
   ],
-  ignorePatterns: ['!.github'],
 };
