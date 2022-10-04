@@ -1,7 +1,9 @@
 name: Syncing API docs
+
 on:
   schedule:
     - cron: "0 * * * *"
+
 jobs:
   sync_api_docs:
     runs-on: ubuntu-latest
@@ -20,6 +22,6 @@ jobs:
       - name: Check for file changes & commit files
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "chore: update Sync API docs"
+          commit_message: "chore(api): sync auto-generated docs"
           github_token: ${{ github.token }}
           branch: "main"
