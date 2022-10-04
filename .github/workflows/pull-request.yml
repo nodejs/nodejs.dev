@@ -21,7 +21,6 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-
       - name: Run Format Check
         run: npm run format-check
 
