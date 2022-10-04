@@ -24,9 +24,15 @@ const Footer = (): JSX.Element => (
         </a>
       </li>
       <li>
-        <Link className={styles.link} to="/about/privacy">
+        <a
+          className={styles.link}
+          target="_blank"
+          href="https://privacy-policy.openjsf.org/"
+          rel="noopener noreferrer"
+          aria-label="Node.js Privacy Policy - PDF (Opens in new tab)"
+        >
           <FormattedMessage id="components.footer.links.privacy" />
-        </Link>
+        </a>
       </li>
       <li>
         <a
