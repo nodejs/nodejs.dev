@@ -31,6 +31,24 @@ jobs:
         run: |
           npm run sync-api
 
+      - name: Lint Markdown files
+        run: npm run lint:md
+
+      - name: Gatsby Cache Folder
+        uses: actions/cache@v3
+        with:
+          key: cache-folder-ubuntu-latest
+          path: .cache
+
+      - name: Gatsby Public Folder
+        uses: actions/cache@v3
+        with:
+          key: public-folder-ubuntu-latest
+          path: public
+
+      - name: Build Gatsby
+        run: npm run build-ci
+
       - name: Commit API changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
