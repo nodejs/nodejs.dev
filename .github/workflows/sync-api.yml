@@ -1,0 +1,27 @@
+name: Syncing API docs
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+
+jobs:
+  sync_api_docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v3
+
+      - name: Set up node
+        uses: actions/setup-node@v3
+
+      - name: "Retrieve Sync API specifications"
+        shell: bash
+        run: |
+          npm run sync-api
+
+      - name: Check for file changes & commit files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore(api): sync auto-generated docs"
+          github_token: ${{ github.token }}
+          branch: "main"
