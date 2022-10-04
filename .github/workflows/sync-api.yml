@@ -13,9 +13,6 @@ jobs:
         with:
           ref: main
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -25,7 +22,7 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: 'Retrieve Sync API specifications'
+      - name: 'Sync API specifications'
         shell: bash
         run: |
           npm run sync-api
