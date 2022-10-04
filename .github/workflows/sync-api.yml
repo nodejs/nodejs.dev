@@ -2,19 +2,30 @@ name: Syncing API docs
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: '0 0 * * *'
 
 jobs:
-  sync_api_docs:
+  sync-api-docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout project
+      - name: Git Checkout
         uses: actions/checkout@v3
+        with:
+          ref: main
 
-      - name: Set up node
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+
+      - name: Setup Node.js
         uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
 
-      - name: "Retrieve Sync API specifications"
+      - name: Install NPM packages
+        run: npm ci
+
+      - name: 'Retrieve Sync API specifications'
         shell: bash
         run: |
           npm run sync-api
@@ -22,6 +33,6 @@ jobs:
       - name: Check for file changes & commit files
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "chore(api): sync auto-generated docs"
+          commit_message: 'chore(api): sync auto-generated docs'
           github_token: ${{ github.token }}
-          branch: "main"
+          branch: 'main'
