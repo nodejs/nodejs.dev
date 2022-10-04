@@ -111,6 +111,11 @@ module.exports = {
     '/fr/learn',
   '/fr/learn/working-with-folders-in-nodejs/': '/fr/learn',
   '/fr/learn/writing-files-with-nodejs/': '/fr/learn',
+<<<<<<< HEAD
   '/learn/introduction-to-nodejs/': '/learn/',
   '/learn/the-nodejs-http-module/': '/learn/',
+=======
+  '/en/learn/introduction-to-nodejs/': '/en/learn/',
+  '/learn/the-nodejs-http-module/': '/en/learn/',
+>>>>>>> d0bf06174d4b2b6a9102a21da5ce3ad25db04ac8
 };

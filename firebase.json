@@ -512,8 +512,13 @@
       "type": "301"
     },
     {
+<<<<<<< HEAD
       "source": "/learn/introduction-to-nodejs/",
       "destination": "/learn/",
+=======
+      "source": "/en/learn/introduction-to-nodejs/",
+      "destination": "/en/learn/",
+>>>>>>> d0bf06174d4b2b6a9102a21da5ce3ad25db04ac8
       "type": "301"
     },
     {
