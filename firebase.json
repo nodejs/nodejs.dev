@@ -152,11 +152,6 @@
       "type": "301"
     },
     {
-      "source": "/blog/",
-      "destination": "/blog",
-      "type": "301"
-    },
-    {
       "source": "/blog/advisory-board/2014/12/05/listening-to-the-community",
       "destination": "/blog",
       "type": "301"
@@ -463,11 +458,6 @@
     },
     {
       "source": "/learn/introduction-to-nodejs/",
-      "destination": "/learn/",
-      "type": "301"
-    },
-    {
-      "source": "/learn/the-nodejs-http-module/",
       "destination": "/learn/",
       "type": "301"
     },

@@ -33,7 +33,6 @@ module.exports = {
     'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises',
   '/learn/the-nodejs-event-loop':
     'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises',
-  '/blog/': '/blog',
   '/blog/advisory-board/2014/12/05/listening-to-the-community': '/blog',
   '/blog/community/2015/05/15/foundation-benefits-all/': '/blog',
   '/blog/community/2016/09/06/v5-to-v7': '/blog',
@@ -99,5 +98,4 @@ module.exports = {
   '/learn/working-with-folders-in-nodejs/': '/learn',
   '/learn/writing-files-with-nodejs/': '/learn',
   '/learn/introduction-to-nodejs/': '/learn/',
-  '/learn/the-nodejs-http-module/': '/learn/',
 };
