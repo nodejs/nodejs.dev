@@ -10,7 +10,7 @@ body:
         something related to your suggestion.
   - type: textarea
     attributes:
-      label: "Enter your suggestions in details:"
+      label: 'Enter your suggestions in details:'
       placeholder: |
         1. What I expected to happen.
         2. Your reason (if possible, images or videos are welcome).
