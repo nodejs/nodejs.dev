@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  cleanup-staging:
     runs-on: ubuntu-latest
     steps:
       - name: Git Checkout

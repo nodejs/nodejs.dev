@@ -1,27 +1,56 @@
-name: Syncing API docs
+name: Sync API docs
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
-  sync_api_docs:
+  sync-api-docs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Checkout project
+      - name: Git Checkout
         uses: actions/checkout@v3
+        with:
+          ref: main
+          token: ${{ secrets.ACCESS_TOKEN_ACTIONS }}
 
-      - name: Set up node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
 
-      - name: "Retrieve Sync API specifications"
+      - name: Install NPM packages
+        run: npm ci
+
+      - name: 'Sync API specifications'
         shell: bash
         run: |
           npm run sync-api
 
-      - name: Check for file changes & commit files
+      - name: Lint Markdown files
+        run: npm run lint:md
+
+      - name: Gatsby Cache Folder
+        uses: actions/cache@v3
+        with:
+          key: cache-folder-ubuntu-latest
+          path: .cache
+
+      - name: Gatsby Public Folder
+        uses: actions/cache@v3
+        with:
+          key: public-folder-ubuntu-latest
+          path: public
+
+      - name: Build Gatsby
+        run: npm run build-ci
+
+      - name: Commit API changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "chore(api): sync auto-generated docs"
-          github_token: ${{ github.token }}
-          branch: "main"
+          commit_message: 'chore(api): sync auto-generated docs'
+          branch: 'main'

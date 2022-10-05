@@ -304,8 +304,11 @@ exports[`LearnLayout Template renders correctly 1`] = `
         </li>
         <li>
           <a
+            aria-label="Node.js Privacy Policy - PDF (Opens in new tab)"
             class="link"
-            href="/about/privacy"
+            href="https://privacy-policy.openjsf.org/"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Privacy Policy
           </a>
