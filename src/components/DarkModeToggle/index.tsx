@@ -1,18 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTheme } from '@skagami/gatsby-plugin-dark-mode';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
 import BrightnessMediumIcon from '@mui/icons-material/BrightnessMedium';
+import { useSetDocumentColorScheme } from '../../hooks/useSetDocumentColorScheme';
 import styles from './index.module.scss';
 
 const DarkModeToggle = () => {
   const [theme, toggleTheme] = useTheme();
 
-  useEffect(() => {
-    // This is responsible for setting the color-scheme of the scroll-bars
-    if (typeof document === 'object' && document.documentElement) {
-      document.documentElement.style['color-scheme'] = theme;
-    }
-  }, [theme]);
+  useSetDocumentColorScheme(theme);
 
   const handleThemeOnClick = (isKeyPress = false): void => {
     if (isKeyPress) {
