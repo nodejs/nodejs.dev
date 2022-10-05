@@ -5,17 +5,17 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v8.5.0"]}}} />
+<Metadata version="v18.10.0" data={{"update":{"type":"introduced_in","version":["v8.5.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"type":"misc"}} />
+<Metadata version="v18.10.0" data={{"type":"misc"}} />
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v18.6.0"],"pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining loaders."},{"version":["v17.1.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40250","description":"Add support for import assertions."},{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/37468","description":"Consolidate loader hooks, removed `getFormat`, `getSource`, `transformSource`, and `getGlobalPreloadCode` hooks added `load` and `globalPreload` hooks allowed returning `format` from either `resolve` or `load` hooks."},{"version":["v15.3.0","v14.17.0","v12.22.0"],"pr-url":"https://github.com/nodejs/node/pull/35781","description":"Stabilize modules implementation."},{"version":["v14.13.0","v12.20.0"],"pr-url":"https://github.com/nodejs/node/pull/35249","description":"Support for detection of CommonJS named exports."},{"version":"v14.8.0","pr-url":"https://github.com/nodejs/node/pull/34558","description":"Unflag Top-Level Await."},{"version":["v14.0.0","v13.14.0","v12.20.0"],"pr-url":"https://github.com/nodejs/node/pull/31974","description":"Remove experimental modules warning."},{"version":["v13.2.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29866","description":"Loading ECMAScript modules no longer requires a command-line flag."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26745","description":"Add support for ES modules using `.js` file extension via `package.json` `\"type\"` field."}],"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata version="v18.10.0" data={{"changes":[{"version":["v18.6.0"],"pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining loaders."},{"version":["v17.1.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40250","description":"Add support for import assertions."},{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/37468","description":"Consolidate loader hooks, removed `getFormat`, `getSource`, `transformSource`, and `getGlobalPreloadCode` hooks added `load` and `globalPreload` hooks allowed returning `format` from either `resolve` or `load` hooks."},{"version":["v15.3.0","v14.17.0","v12.22.0"],"pr-url":"https://github.com/nodejs/node/pull/35781","description":"Stabilize modules implementation."},{"version":["v14.13.0","v12.20.0"],"pr-url":"https://github.com/nodejs/node/pull/35249","description":"Support for detection of CommonJS named exports."},{"version":"v14.8.0","pr-url":"https://github.com/nodejs/node/pull/34558","description":"Unflag Top-Level Await."},{"version":["v14.0.0","v13.14.0","v12.20.0"],"pr-url":"https://github.com/nodejs/node/pull/31974","description":"Remove experimental modules warning."},{"version":["v13.2.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29866","description":"Loading ECMAScript modules no longer requires a command-line flag."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26745","description":"Add support for ES modules using `.js` file extension via `package.json` `\"type\"` field."}],"update":{"type":"added","version":["v8.5.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.10.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
 ### Introduction
 
-<Metadata version="v18.9.0" data={{"name":"esm"}} />
+<Metadata version="v18.10.0" data={{"name":"esm"}} />
 
 ECMAScript modules are [the official standard format][] to package JavaScript
 code for reuse. Modules are defined using a variety of [`import`][] and
@@ -50,7 +50,7 @@ provides interoperability between them and its original module format,
 
 ### Enabling
 
-<Metadata version="v18.9.0" data={{"type":"misc"}} />
+<Metadata version="v18.10.0" data={{"type":"misc"}} />
 
 Node.js has two module systems: [CommonJS][] modules and ECMAScript modules.
 
@@ -135,7 +135,7 @@ details), it is recommended to use [url.pathToFileURL][] when importing a path.
 
 ##### <DataTag tag="M" /> `data:` imports
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v12.10.0"]}}} />
+<Metadata version="v18.10.0" data={{"update":{"type":"added","version":["v12.10.0"]}}} />
 
 [`data:` URLs][] are supported for importing with the following MIME types:
 
@@ -157,7 +157,7 @@ is no concept of relative resolution for `data:` URLs.
 
 ##### <DataTag tag="M" /> `node:` imports
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v16.0.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37246","description":"Added `node:` import support to `require(...)`."}],"update":{"type":"added","version":["v14.13.1","v12.20.0"]}}} />
+<Metadata version="v18.10.0" data={{"changes":[{"version":["v16.0.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37246","description":"Added `node:` import support to `require(...)`."}],"update":{"type":"added","version":["v14.13.1","v12.20.0"]}}} />
 
 `node:` URLs are supported as an alternative means to load Node.js builtin
 modules. This URL scheme allows for builtin modules to be referenced by valid
@@ -169,9 +169,9 @@ import fs from 'node:fs/promises';
 
 ### Import assertions
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v17.1.0","v16.14.0"]}}} />
+<Metadata version="v18.10.0" data={{"update":{"type":"added","version":["v17.1.0","v16.14.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.10.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 The [Import Assertions proposal][] adds an inline syntax for module import
 statements to pass on more information alongside the module specifier.
@@ -253,9 +253,9 @@ const buffer = readFileSync(new URL('./data.proto', import.meta.url));
 
 #### <DataTag tag="M" /> `import.meta.resolve(specifier[, parent])`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v16.2.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38587","description":"Add support for WHATWG `URL` object to `parentURL` parameter."}],"update":{"type":"added","version":["v13.9.0","v12.16.2"]}}} />
+<Metadata version="v18.10.0" data={{"changes":[{"version":["v16.2.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38587","description":"Add support for WHATWG `URL` object to `parentURL` parameter."}],"update":{"type":"added","version":["v13.9.0","v12.16.2"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.10.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 This feature is only available with the `--experimental-import-meta-resolve`
 command flag enabled.
@@ -434,7 +434,7 @@ separate cache.
 
 ### JSON modules
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.10.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 JSON files can be referenced by `import`:
 
@@ -453,7 +453,7 @@ imported from the same path.
 
 ### Wasm modules
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.10.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 Importing WebAssembly modules is supported under the
 `--experimental-wasm-modules` flag, allowing any `.wasm` files to be
@@ -481,7 +481,7 @@ would provide the exports interface for the instantiation of `module.wasm`.
 
 ### Top-level `await`
 
-<Metadata version="v18.9.0" data={{"update":{"type":"added","version":["v14.8.0"]}}} />
+<Metadata version="v18.10.0" data={{"update":{"type":"added","version":["v14.8.0"]}}} />
 
 The `await` keyword may be used in the top level body of an ECMAScript module.
 
@@ -522,7 +522,7 @@ spawn(execPath, [
 
 ### HTTPS and HTTP imports
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.10.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 Importing network based modules using `https:` and `http:` is supported under
 the `--experimental-network-imports` flag. This allows web browser-like imports
@@ -589,13 +589,13 @@ of Node.js applications.
 
 ### Loaders
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v18.6.0"],"pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining loaders."},{"version":"v16.12.0","pr-url":"https://github.com/nodejs/node/pull/37468","description":"Removed `getFormat`, `getSource`, `transformSource`, and `globalPreload`; added `load` hook and `getGlobalPreload` hook."}],"update":{"type":"added","version":["v8.8.0"]}}} />
+<Metadata version="v18.10.0" data={{"changes":[{"version":["v18.6.0"],"pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining loaders."},{"version":"v16.12.0","pr-url":"https://github.com/nodejs/node/pull/37468","description":"Removed `getFormat`, `getSource`, `transformSource`, and `globalPreload`; added `load` hook and `getGlobalPreload` hook."}],"update":{"type":"added","version":["v8.8.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.10.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 > This API is currently being redesigned and will still change.
 
-<Metadata version="v18.9.0" data={{"type":"misc"}} />
+<Metadata version="v18.10.0" data={{"type":"misc"}} />
 
 To customize the default module resolution, loader hooks can optionally be
 provided via a `--experimental-loader ./loader-name.mjs` argument to Node.js.
@@ -630,7 +630,7 @@ prevent unintentional breaks in the chain.
 
 ##### <DataTag tag="M" /> `resolve(specifier, context, nextResolve)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.6.0","pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining resolve hooks. Each hook must either call `nextResolve()` or include a `shortCircuit` property set to `true` in its return."},{"version":["v17.1.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40250","description":"Add support for import assertions."}]}} />
+<Metadata version="v18.10.0" data={{"changes":[{"version":"v18.6.0","pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining resolve hooks. Each hook must either call `nextResolve()` or include a `shortCircuit` property set to `true` in its return."},{"version":["v17.1.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40250","description":"Add support for import assertions."}]}} />
 
 > The loaders API is being redesigned. This hook may disappear or its
 > signature may change. Do not rely on the API described below.
@@ -710,7 +710,7 @@ export async function resolve(specifier, context, nextResolve) {
 
 ##### <DataTag tag="M" /> `load(url, context, nextLoad)`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.6.0","pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining load hooks. Each hook must either call `nextLoad()` or include a `shortCircuit` property set to `true` in its return."}]}} />
+<Metadata version="v18.10.0" data={{"changes":[{"version":"v18.6.0","pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining load hooks. Each hook must either call `nextLoad()` or include a `shortCircuit` property set to `true` in its return."}]}} />
 
 > The loaders API is being redesigned. This hook may disappear or its
 > signature may change. Do not rely on the API described below.
@@ -801,7 +801,7 @@ source to a supported one (see [Examples](#examples) below).
 
 ##### <DataTag tag="M" /> `globalPreload()`
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":"v18.6.0","pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining globalPreload hooks."}]}} />
+<Metadata version="v18.10.0" data={{"changes":[{"version":"v18.6.0","pr-url":"https://github.com/nodejs/node/pull/42623","description":"Add support for chaining globalPreload hooks."}]}} />
 
 > The loaders API is being redesigned. This hook may disappear or its
 > signature may change. Do not rely on the API described below.
@@ -1226,8 +1226,7 @@ The resolver can throw the following errors:
 >       1. Set _mainExport_ to _exports_\[_"."_].
 >    4. If _mainExport_ is not **undefined**, then
 >       1. Let _resolved_ be the result of **PACKAGE\_TARGET\_RESOLVE**(
->          _packageURL_, _mainExport_, _""_, **false**, **false**,
->          _conditions_).
+>          _packageURL_, _mainExport_, **null**, **false**, _conditions_).
 >       2. If _resolved_ is not **null** or **undefined**, return _resolved_.
 > 3. Otherwise, if _exports_ is an Object and all keys of _exports_ start with
 >    _"."_, then
@@ -1258,7 +1257,7 @@ _isImports_, _conditions_)
 > 1. If _matchKey_ is a key of _matchObj_ and does not contain _"\*"_, then
 >    1. Let _target_ be the value of _matchObj_\[_matchKey_].
 >    2. Return the result of **PACKAGE\_TARGET\_RESOLVE**(_packageURL_,
->       _target_, _""_, **false**, _isImports_, _conditions_).
+>       _target_, **null**, _isImports_, _conditions_).
 > 2. Let _expansionKeys_ be the list of keys of _matchObj_ containing only a
 >    single _"\*"_, sorted by the sorting function **PATTERN\_KEY\_COMPARE**
 >    which orders in descending order of specificity.
@@ -1272,11 +1271,11 @@ _isImports_, _conditions_)
 >          _patternTrailer_ and the length of _matchKey_ is greater than or
 >          equal to the length of _expansionKey_, then
 >          1. Let _target_ be the value of _matchObj_\[_expansionKey_].
->          2. Let _subpath_ be the substring of _matchKey_ starting at the
+>          2. Let _patternMatch_ be the substring of _matchKey_ starting at the
 >             index of the length of _patternBase_ up to the length of
 >             _matchKey_ minus the length of _patternTrailer_.
 >          3. Return the result of **PACKAGE\_TARGET\_RESOLVE**(_packageURL_,
->             _target_, _subpath_, **true**, _isImports_, _conditions_).
+>             _target_, _patternMatch_, _isImports_, _conditions_).
 > 4. Return **null**.
 
 **PATTERN\_KEY\_COMPARE**(_keyA_, _keyB_)
@@ -1295,37 +1294,32 @@ _isImports_, _conditions_)
 > 10. If the length of _keyB_ is greater than the length of _keyA_, return 1.
 > 11. Return 0.
 
-**PACKAGE\_TARGET\_RESOLVE**(_packageURL_, _target_, _subpath_, _pattern_,
-_internal_, _conditions_)
+**PACKAGE\_TARGET\_RESOLVE**(_packageURL_, _target_, _patternMatch_,
+_isImports_, _conditions_)
 
 > 1. If _target_ is a String, then
->    1. If _pattern_ is **false**, _subpath_ has non-zero length and _target_
->       does not end with _"/"_, throw an _Invalid Module Specifier_ error.
->    2. If _target_ does not start with _"./"_, then
->       1. If _internal_ is **true** and _target_ does not start with _"../"_ or
->          _"/"_ and is not a valid URL, then
->          1. If _pattern_ is **true**, then
->             1. Return **PACKAGE\_RESOLVE**(_target_ with every instance of
->                _"\*"_ replaced by _subpath_, _packageURL_ + _"/"_).
->          2. Return **PACKAGE\_RESOLVE**(_target_ + _subpath_,
->             _packageURL_ + _"/"_).
->       2. Otherwise, throw an _Invalid Package Target_ error.
->    3. If _target_ split on _"/"_ or _"\\"_ contains any _"."_, _".."_, or
->       _"node\_modules"_ segments after the first segment, case insensitive and
->       including percent encoded variants, throw an _Invalid Package Target_
->       error.
->    4. Let _resolvedTarget_ be the URL resolution of the concatenation of
+>    1. If _target_ does not start with _"./"_, then
+>       1. If _isImports_ is **false**, or if _target_ starts with _"../"_ or
+>          _"/"_, or if _target_ is a valid URL, then
+>          1. Throw an _Invalid Package Target_ error.
+>       2. If _patternMatch_ is a String, then
+>          1. Return **PACKAGE\_RESOLVE**(_target_ with every instance of _"\*"_
+>             replaced by _patternMatch_, _packageURL_ + _"/"_).
+>       3. Return **PACKAGE\_RESOLVE**(_target_, _packageURL_ + _"/"_).
+>    2. If _target_ split on _"/"_ or _"\\"_ contains any _""_, _"."_, _".."_,
+>       or _"node\_modules"_ segments after the first _"."_ segment, case
+>       insensitive and including percent encoded variants, throw an _Invalid
+>       Package Target_ error.
+>    3. Let _resolvedTarget_ be the URL resolution of the concatenation of
 >       _packageURL_ and _target_.
->    5. Assert: _resolvedTarget_ is contained in _packageURL_.
->    6. If _subpath_ split on _"/"_ or _"\\"_ contains any _"."_, _".."_, or
->       _"node\_modules"_ segments, case insensitive and including percent
->       encoded variants, throw an _Invalid Module Specifier_ error.
->    7. If _pattern_ is **true**, then
->       1. Return the URL resolution of _resolvedTarget_ with every instance of
->          _"\*"_ replaced with _subpath_.
->    8. Otherwise,
->       1. Return the URL resolution of the concatenation of _subpath_ and
->          _resolvedTarget_.
+>    4. Assert: _resolvedTarget_ is contained in _packageURL_.
+>    5. If _patternMatch_ is **null**, then
+>       1. Return _resolvedTarget_.
+>    6. If _patternMatch_ split on _"/"_ or _"\\"_ contains any _""_, _"."_,
+>       _".."_, or _"node\_modules"_ segments, case insensitive and including
+>       percent encoded variants, throw an _Invalid Module Specifier_ error.
+>    7. Return the URL resolution of _resolvedTarget_ with every instance of
+>       _"\*"_ replaced with _patternMatch_.
 > 2. Otherwise, if _target_ is a non-null Object, then
 >    1. If _exports_ contains any index property keys, as defined in ECMA-262
 >       [6.1.7 Array Index][], throw an _Invalid Package Configuration_ error.
@@ -1334,7 +1328,7 @@ _internal_, _conditions_)
 >          then
 >          1. Let _targetValue_ be the value of the _p_ property in _target_.
 >          2. Let _resolved_ be the result of **PACKAGE\_TARGET\_RESOLVE**(
->             _packageURL_, _targetValue_, _subpath_, _pattern_, _internal_,
+>             _packageURL_, _targetValue_, _patternMatch_, _isImports_,
 >             _conditions_).
 >          3. If _resolved_ is equal to **undefined**, continue the loop.
 >          4. Return _resolved_.
@@ -1343,7 +1337,7 @@ _internal_, _conditions_)
 >    1. If \_target.length is zero, return **null**.
 >    2. For each item _targetValue_ in _target_, do
 >       1. Let _resolved_ be the result of **PACKAGE\_TARGET\_RESOLVE**(
->          _packageURL_, _targetValue_, _subpath_, _pattern_, _internal_,
+>          _packageURL_, _targetValue_, _patternMatch_, _isImports_,
 >          _conditions_), continuing the loop on any _Invalid Package Target_
 >          error.
 >       2. If _resolved_ is **undefined**, continue the loop.
@@ -1393,7 +1387,7 @@ _internal_, _conditions_)
 
 #### Customizing ESM specifier resolution algorithm
 
-<Metadata version="v18.9.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.10.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 > Do not rely on this flag. We plan to remove it once the
 > [Loaders API][] has advanced to the point that equivalent functionality can
@@ -1419,7 +1413,7 @@ $ node --experimental-specifier-resolution=node index
 success!
 ```
 
-<Metadata version="v18.9.0" data={{"Note":"The cjs-module-lexer link should be kept in-sync with the deps version"}} />
+<Metadata version="v18.10.0" data={{"Note":"The cjs-module-lexer link should be kept in-sync with the deps version"}} />
 
 [6.1.7 Array Index]: https://tc39.es/ecma262/#integer-index
 [CommonJS]: /api/v18/modules

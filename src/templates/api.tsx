@@ -46,9 +46,8 @@ const Api = ({
   const currentRelease = nodeReleasesData.find(r => r.version === version);
   const fullVersion = currentRelease ? currentRelease.fullVersion : version;
 
-  const filteredTableOfContets = tableOfContents.items.map(
-    filterTableOfContentsFromDataTag
-  );
+  const filteredTableOfContets =
+    tableOfContents.items?.map(filterTableOfContentsFromDataTag) || [];
 
   const components = {
     DataTag,
