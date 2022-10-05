@@ -1,10 +1,11 @@
-import React, { useRef, useState, useMemo, useEffect } from 'react';
+import React, { useRef, useState, useMemo } from 'react';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { FormattedMessage, useIntl } from 'react-intl';
 import GroupsIcon from '@mui/icons-material/Groups';
 import InfoIcon from '@mui/icons-material/Info';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import classnames from 'classnames';
+import { useSetBodyOverflow } from '../../hooks/useSetBodyOverflow';
 import { SideNavBarItem } from '../../types';
 import NavigationItem from '../NavigationItem';
 import styles from './index.module.scss';
@@ -112,13 +113,7 @@ const SideNavBar = ({ pageKey, items = sideNavBarItems }: NavBarProps) => {
     [styles.sideNavFixed]: navOpen,
   });
 
-  useEffect(() => {
-    if (typeof document === 'object' && document.body) {
-      document.body.style.overflow = navOpen
-        ? OverflowTypes.hidden
-        : OverflowTypes.unset;
-    }
-  }, [navOpen]);
+  useSetBodyOverflow(navOpen ? OverflowTypes.hidden : OverflowTypes.unset);
 
   const navElement = useRef<HTMLElement | null>(null);
 
