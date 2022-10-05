@@ -1,4 +1,4 @@
-import React, { useRef, useState, useMemo, useEffect } from 'react';
+import React, { useRef, useState, useMemo } from 'react';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { FormattedMessage, useIntl } from 'react-intl';
 import GroupsIcon from '@mui/icons-material/Groups';
@@ -92,12 +92,6 @@ const sideNavBarItems: SideNavBarItem[] = [
   },
 ];
 
-// eslint-disable-next-line no-shadow
-export enum OverflowTypes {
-  unset = 'unset',
-  hidden = 'hidden',
-}
-
 interface NavBarProps {
   pageKey?: string;
   items?: SideNavBarItem[];
@@ -111,14 +105,6 @@ const SideNavBar = ({ pageKey, items = sideNavBarItems }: NavBarProps) => {
   const navigationClasses = classnames(styles.sideNav, {
     [styles.sideNavFixed]: navOpen,
   });
-
-  useEffect(() => {
-    if (typeof document === 'object' && document.body) {
-      document.body.style.overflow = navOpen
-        ? OverflowTypes.hidden
-        : OverflowTypes.unset;
-    }
-  }, [navOpen]);
 
   const navElement = useRef<HTMLElement | null>(null);
 

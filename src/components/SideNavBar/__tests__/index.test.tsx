@@ -1,7 +1,7 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
-import SideNavBar, { SideNavBarKeys, OverflowTypes } from '..';
+import SideNavBar, { SideNavBarKeys } from '..';
 import { SideNavBarItem } from '../../../types';
 
 describe('SideNavBar', () => {
@@ -120,28 +120,6 @@ describe('SideNavBar', () => {
     const innrerHtml = container.innerHTML;
     const activeLinks = innrerHtml.match('navigationItemActive');
     expect(activeLinks && activeLinks.length).toBe(1);
-  });
-
-  it('should set the body overflow hidden on menu click', async () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.releases} />);
-    const downloadItem: Element = screen.getAllByRole('button')[0] as Element;
-    expect(document.body.style.overflow).toBe(OverflowTypes.unset);
-    await userEvent.click(downloadItem);
-    expect(document.body.style.overflow).toBe(OverflowTypes.hidden);
-  });
-
-  it('should set the body overflow hidden/unset on toggling', async () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.releases} />);
-    const downloadItem: Element = screen.getAllByRole('button')[0] as Element;
-    expect(document.body.style.overflow).toBe(OverflowTypes.unset);
-    await userEvent.click(downloadItem);
-    expect(document.body.style.overflow).toBe(OverflowTypes.hidden);
-    await userEvent.click(downloadItem);
-    expect(document.body.style.overflow).toBe(OverflowTypes.unset);
-    await userEvent.click(downloadItem);
-    expect(document.body.style.overflow).toBe(OverflowTypes.hidden);
-    await userEvent.click(downloadItem);
-    expect(document.body.style.overflow).toBe(OverflowTypes.unset);
   });
 
   it('should contain a href to https link', () => {
