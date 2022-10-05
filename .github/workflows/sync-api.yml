@@ -1,18 +1,21 @@
-name: Deploy to Firebase Production
+name: Sync API docs
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  sync-api-docs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: main
+          token: ${{ secrets.ACCESS_TOKEN_ACTIONS }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -22,6 +25,14 @@ jobs:
 
       - name: Install NPM packages
         run: npm ci
+
+      - name: 'Sync API specifications'
+        shell: bash
+        run: |
+          npm run sync-api
+
+      - name: Lint Markdown files
+        run: npm run lint:md
 
       - name: Gatsby Cache Folder
         uses: actions/cache@v3
@@ -38,9 +49,8 @@ jobs:
       - name: Build Gatsby
         run: npm run build-ci
 
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Commit API changes
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NODEJS_INFRASTRUCTURE }}'
-          channelId: live
-          projectId: nodejs-infrastructure
+          commit_message: 'chore(api): sync auto-generated docs'
+          branch: 'main'
