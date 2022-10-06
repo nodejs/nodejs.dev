@@ -5,6 +5,7 @@ interface NvmData {
     version: string;
   };
 }
+
 const useNvmVersion = () => {
   const { nvm }: NvmData = useStaticQuery(
     graphql`
@@ -15,6 +16,7 @@ const useNvmVersion = () => {
       }
     `
   );
+
   return nvm.version;
 };
 

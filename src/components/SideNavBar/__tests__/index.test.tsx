@@ -1,7 +1,82 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
-import SideNavBar, { SideNavBarKeys, OverflowTypes } from '..';
+import SideNavBar, { SideNavBarKeys } from '..';
+import { SideNavBarItem } from '../../../types';
+
+const navbarButtons = [
+  {
+    pageKey: SideNavBarKeys.about,
+    expectedText: 'About Node.js',
+    expectedHref: '/about/',
+  },
+  {
+    pageKey: SideNavBarKeys.governance,
+    expectedText: 'Project Governance',
+    expectedHref: '/about/governance/',
+  },
+  {
+    pageKey: SideNavBarKeys.releases,
+    expectedText: 'Releases',
+    expectedHref: '/about/releases/',
+  },
+  {
+    pageKey: SideNavBarKeys.resources,
+    expectedText: 'Resources',
+    expectedHref: '/about/resources/',
+  },
+  {
+    pageKey: SideNavBarKeys.privacy,
+    expectedText: 'Privacy Policy',
+    expectedHref: 'https://privacy-policy.openjsf.org/',
+  },
+  {
+    pageKey: SideNavBarKeys.security,
+    expectedText: 'Security Reporting',
+    expectedHref: '/about/security/',
+  },
+  {
+    pageKey: SideNavBarKeys.getInvolved,
+    expectedText: 'Get Involved',
+    expectedHref: '/get-involved/',
+  },
+  {
+    pageKey: SideNavBarKeys.codeLearn,
+    expectedText: 'Code + Learn',
+    expectedHref: '/get-involved/code-learn',
+  },
+  {
+    pageKey: SideNavBarKeys.collabSummit,
+    expectedText: 'Collab Summit',
+    expectedHref: '/get-involved/collab-summit',
+  },
+  {
+    pageKey: SideNavBarKeys.contribute,
+    expectedText: 'Contribute',
+    expectedHref: '/get-involved/contribute',
+  },
+  {
+    pageKey: SideNavBarKeys.codeOfConduct,
+    expectedText: 'Code of Conduct',
+    expectedHref:
+      'https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md',
+  },
+  {
+    pageKey: SideNavBarKeys.download,
+    expectedText: 'Download',
+    expectedHref: '/download/',
+  },
+  {
+    pageKey: SideNavBarKeys.packageManager,
+    expectedText: 'Package Manager',
+    expectedHref: '/download/package-manager/',
+  },
+  {
+    pageKey: SideNavBarKeys.previousReleases,
+    expectedText: 'Previous Releases',
+    expectedHref: '/download/releases/',
+  },
+];
 
 describe('SideNavBar', () => {
   it('renders correctly', () => {
@@ -9,54 +84,12 @@ describe('SideNavBar', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should contain a href to `~/about`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.about} />);
-    const aboutNavBarElement = screen.getByText('About Node.js');
-    expect(aboutNavBarElement.getAttribute('href')).toBe('/about/');
-  });
-
-  it('should contain a href to `~/about/governance`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.governance} />);
-    const governanceNavBarElement = screen.getByText('Project Governance');
-    expect(governanceNavBarElement.getAttribute('href')).toBe(
-      '/about/governance/'
-    );
-  });
-
-  it('should contain a href to `~/about/releases`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.releases} />);
-    const releasesNavBarElement = screen.getByText('Releases');
-    expect(releasesNavBarElement.getAttribute('href')).toBe('/about/releases/');
-  });
-
-  it('should contain a href to `~/about/resources`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.resources} />);
-    const resourcesNavBarElement = screen.getByText('Resources');
-    expect(resourcesNavBarElement.getAttribute('href')).toBe(
-      '/about/resources/'
-    );
-  });
-
-  it('should contain a href to `~/about/privacy`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.privacy} />);
-    const privacyNavBarElement = screen.getByText('Privacy Policy');
-    expect(privacyNavBarElement.getAttribute('href')).toBe(
-      'https://privacy-policy.openjsf.org/'
-    );
-  });
-
-  it('should contain a href to `~/about/security`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.security} />);
-    const securityNavBarElement = screen.getByText('Security Reporting');
-    expect(securityNavBarElement.getAttribute('href')).toBe('/about/security/');
-  });
-
-  it('should contain a href to `~/download/package-manager`', () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.packageManager} />);
-    const packageManagerNavBarElement = screen.getByText('Package Manager');
-    expect(packageManagerNavBarElement.getAttribute('href')).toBe(
-      '/download/package-manager/'
-    );
+  navbarButtons.forEach(button => {
+    it(`should contain a href to '~${button.expectedHref}'`, () => {
+      render(<SideNavBar pageKey={button.pageKey} />);
+      const aboutNavBarElement = screen.getByText(button.expectedText);
+      expect(aboutNavBarElement.getAttribute('href')).toBe(button.expectedHref);
+    });
   });
 
   it('should set the a single page as active', () => {
@@ -68,25 +101,23 @@ describe('SideNavBar', () => {
     expect(activeLinks && activeLinks.length).toBe(1);
   });
 
-  it('should set the body overflow hidden on menu click', async () => {
-    render(<SideNavBar pageKey={SideNavBarKeys.releases} />);
-    const downloadItem: Element = screen.getAllByRole('button')[0] as Element;
-    expect(document.body.style.overflow).toBe(OverflowTypes.unset);
-    await userEvent.click(downloadItem);
-    expect(document.body.style.overflow).toBe(OverflowTypes.hidden);
+  it('should contain a href to https link', () => {
+    const title = 'title';
+    const slug = 'https://test.domain';
+    const items: SideNavBarItem[] = [{ title, slug, isTitle: true }];
+    render(<SideNavBar pageKey={SideNavBarKeys.releases} items={items} />);
+    const navBarElement = screen.getByText(title);
+    expect(navBarElement.getAttribute('href')).toBe(slug);
   });
 
-  it('should set the body overflow hidden/unset on toggling', async () => {
+  it('should close the Navigation when a link is clicked', async () => {
+    const activeClassName = 'navigationItemActive';
     render(<SideNavBar pageKey={SideNavBarKeys.releases} />);
-    const downloadItem: Element = screen.getAllByRole('button')[0] as Element;
-    expect(document.body.style.overflow).toBe(OverflowTypes.unset);
-    await userEvent.click(downloadItem);
-    expect(document.body.style.overflow).toBe(OverflowTypes.hidden);
-    await userEvent.click(downloadItem);
-    expect(document.body.style.overflow).toBe(OverflowTypes.unset);
-    await userEvent.click(downloadItem);
-    expect(document.body.style.overflow).toBe(OverflowTypes.hidden);
-    await userEvent.click(downloadItem);
-    expect(document.body.style.overflow).toBe(OverflowTypes.unset);
+    const releasesNavBarElement = screen.getByText('Releases');
+    expect(releasesNavBarElement.classList).toContain(activeClassName);
+    await userEvent.click(releasesNavBarElement);
+    expect(releasesNavBarElement.classList).toEqual(
+      expect.not.arrayContaining([activeClassName])
+    );
   });
 });

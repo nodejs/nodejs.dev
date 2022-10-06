@@ -7,6 +7,7 @@ exports[`Navigation component renders correctly 1`] = `
     class="navigation"
   >
     <button
+      aria-expanded="false"
       class="navigationOpen"
       type="button"
     >
@@ -15,10 +16,10 @@ exports[`Navigation component renders correctly 1`] = `
     <div
       class="navigationSection"
     >
-      <div
+      <button
+        aria-expanded="true"
         class="t-body2 navigationSectionTitle"
-        role="menuitem"
-        tabindex="0"
+        type="button"
       >
         <span>
           Getting Started
@@ -35,8 +36,9 @@ exports[`Navigation component renders correctly 1`] = `
             d="m7 10 5 5 5-5z"
           />
         </svg>
-      </div>
+      </button>
       <div
+        role="region"
         style="display: block;"
       >
         <a
