@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VersionSelector component renders correctly 1`] = `
+<div>
+  <label
+    class="versionSelector"
+    for="versionSelector"
+  >
+    <span>
+      Version
+    </span>
+    <select
+      id="versionSelector"
+    >
+      <option
+        value="v0"
+      >
+        v0
+      </option>
+    </select>
+  </label>
+</div>
+`;

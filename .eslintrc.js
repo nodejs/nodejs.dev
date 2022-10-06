@@ -56,7 +56,6 @@ module.exports = {
       env: { jest: true, node: true, browser: true },
     },
     {
-      // Disable linting for API as some parts are just not compatible with MDXv2
       files: ['content/**/*.{md,mdx}'],
       extends: ['plugin:mdx/recommended'],
       settings: { 'mdx/code-blocks': false },
