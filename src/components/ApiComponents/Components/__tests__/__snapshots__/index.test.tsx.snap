@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApiComponents Components renders ApiLink component correctly 1`] = `
+<div>
+  <a>
+    <br />
+  </a>
+</div>
+`;
+
+exports[`ApiComponents Components renders H3 component correctly 1`] = `
+<div>
+  <h3
+    id="<Tag tag="C" />"
+  />
+</div>
+`;
+
+exports[`ApiComponents Components renders H4 component correctly 1`] = `
+<div>
+  <h4
+    id="<DataTag tag="M" />"
+  />
+</div>
+`;
+
+exports[`ApiComponents Components renders H5 component correctly 1`] = `
+<div>
+  <h5
+    id="/test/"
+  />
+</div>
+`;

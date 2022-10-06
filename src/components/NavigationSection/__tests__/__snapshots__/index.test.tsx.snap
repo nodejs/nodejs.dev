@@ -5,10 +5,10 @@ exports[`NavigationSection component renders correctly 1`] = `
   <div
     class="navigationSection"
   >
-    <div
+    <button
+      aria-expanded="false"
       class="t-body2 navigationSectionTitle"
-      role="menuitem"
-      tabindex="0"
+      type="button"
     >
       <span>
         Introduction
@@ -25,8 +25,9 @@ exports[`NavigationSection component renders correctly 1`] = `
           d="m7 14 5-5 5 5z"
         />
       </svg>
-    </div>
+    </button>
     <div
+      role="region"
       style="display: none;"
     >
       <a

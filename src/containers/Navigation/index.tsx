@@ -53,7 +53,12 @@ const Navigation = ({
 
   return (
     <nav aria-label={label} className={navigationClasses}>
-      <button type="button" className={styles.navigationOpen} onClick={toggle}>
+      <button
+        type="button"
+        className={styles.navigationOpen}
+        onClick={toggle}
+        aria-expanded={isOpen}
+      >
         <FormattedMessage id="containers.navigation.title" />
       </button>
       {children}
