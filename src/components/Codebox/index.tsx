@@ -15,7 +15,15 @@ interface Props {
 }
 
 const replaceLanguages = (language: string) =>
-  language.replace(/mjs|cjs|javascript/i, 'js').replace('console', 'bash');
+  language
+    .replace(/mjs|cjs|javascript/i, 'js')
+    .replace(/console|shell/i, 'bash');
+
+const replaceLabelLanguages = (language: string) =>
+  language
+    .replace(/javascript/i, 'cjs')
+    .replace(/console|shell/i, 'bash')
+    .toUpperCase();
 
 const Codebox = ({ children: { props } }: Props): JSX.Element => {
   const [copied, setCopied] = useState(false);
@@ -66,7 +74,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   return (
     <pre className={classnames(styles.pre, replaceLanguages(className))}>
       <div className={styles.top}>
-        <span>{language.toUpperCase()}</span>
+        <span>{replaceLabelLanguages(language)}</span>
         <button type="button" onClick={handleCopyCode}>
           {copied ? 'copied' : 'copy'}
         </button>
