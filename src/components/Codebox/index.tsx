@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { highlight, languages } from 'prismjs';
 import { sanitize } from 'isomorphic-dompurify';
 import classnames from 'classnames';
-import { useClipboardCopy } from '../../hooks/useClipboardCopy';
+import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
 import styles from './index.module.scss';
 
 interface Props {
@@ -18,8 +18,10 @@ const replaceLanguages = (language: string) =>
   language.replace(/mjs|cjs|javascript/i, 'js').replace('console', 'bash');
 
 const Codebox = ({ children: { props } }: Props): JSX.Element => {
-  const { copied, copy } = useClipboardCopy();
+  const [copied, setCopied] = useState(false);
   const [parsedCode, setParsedCode] = useState('');
+
+  const copy = useCopyToClipboard();
 
   // eslint-disable-next-line react/prop-types
   const className = props.className || 'text';
@@ -33,10 +35,24 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   // Actual Code into a stringified format
   const stringCode = props.children?.toString() || '';
 
-  const handleCopyCode = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    copy(stringCode);
+    setCopied(await copy(stringCode));
   };
+
+  useEffect((): (() => void) => {
+    let timer: ReturnType<typeof setTimeout>;
+
+    if (copied) {
+      timer = setTimeout(() => setCopied(false), 3000);
+    }
+
+    return () => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+    };
+  }, [copied]);
 
   useEffect(() => {
     const parsedLangauge = replaceLanguages(language);
