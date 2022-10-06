@@ -5,7 +5,7 @@ import DarkModeToggle from '../index';
 
 let mockCurrentTheme = '';
 const mockToggleTheme = jest.fn().mockImplementation((newTheme: string) => {
-  mockCurrentTheme = newTheme === 'light' ? 'dark' : 'light';
+  mockCurrentTheme = newTheme;
 });
 
 // mock dark mode module for controlling dark mode HOC behavior
@@ -25,6 +25,7 @@ describe('DarkModeToggle Component', () => {
     render(<DarkModeToggle />);
     const toggle = await screen.findByText('Toggle Dark Mode');
     await userEvent.click(toggle);
+    expect(mockCurrentTheme).toBe('light');
   });
 
   it('switches light theme to dark theme', async () => {
@@ -32,5 +33,6 @@ describe('DarkModeToggle Component', () => {
     render(<DarkModeToggle />);
     const toggle = await screen.findByText('Toggle Dark Mode');
     await userEvent.click(toggle);
+    expect(mockCurrentTheme).toBe('dark');
   });
 });
