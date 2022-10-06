@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
-export const useUpdateDocumentColorScheme = (defaultTheme: string | null = null) => {
+export const useUpdateDocumentColorScheme = (
+  defaultTheme: string | null = null
+) => {
   const [currentTheme, setCurrentTheme] = useState(defaultTheme);
 
   useEffect(() => {
@@ -11,4 +13,4 @@ export const useUpdateDocumentColorScheme = (defaultTheme: string | null = null)
   }, [currentTheme]);
 
   return (theme: string | null) => setCurrentTheme(theme);
-}
+};
