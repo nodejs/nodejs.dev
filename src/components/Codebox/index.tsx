@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { highlight, languages } from 'prismjs';
 import { sanitize } from 'isomorphic-dompurify';
 import classnames from 'classnames';
-import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
+import { copyTextToClipboard } from '../../util/copyTextToClipboard';
 import styles from './index.module.scss';
 
 interface Props {
@@ -21,8 +21,6 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   const [copied, setCopied] = useState(false);
   const [parsedCode, setParsedCode] = useState('');
 
-  const copy = useCopyToClipboard();
-
   // eslint-disable-next-line react/prop-types
   const className = props.className || 'text';
 
@@ -37,7 +35,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
 
   const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    setCopied(await copy(stringCode));
+    setCopied(await copyTextToClipboard(stringCode));
   };
 
   useEffect((): (() => void) => {
