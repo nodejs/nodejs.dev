@@ -58,7 +58,7 @@
   "redirects": [
     {
       "source": "/governance/",
-      "destination": "/about/governance/",
+      "destination": "/en/about/governance/",
       "type": "301"
     },
     {
@@ -68,12 +68,22 @@
     },
     {
       "source": "/releases/",
-      "destination": "/about/releases/",
+      "destination": "/en/about/releases/",
+      "type": "301"
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/en/",
+      "type": "301"
+    },
+    {
+      "source": "/en/about/privacy/",
+      "destination": "/en/",
       "type": "301"
     },
     {
       "source": "/security/",
-      "destination": "/about/security/",
+      "destination": "/en/about/security/",
       "type": "301"
     },
     {
@@ -87,17 +97,22 @@
       "type": "301"
     },
     {
+      "source": "/en/about/trademark/",
+      "destination": "https://trademark-policy.openjsf.org/",
+      "type": "301"
+    },
+    {
       "source": "/docs/*",
       "destination": "/api/",
       "type": "301"
     },
     {
       "source": "/storybook/*",
-      "destination": "/",
+      "destination": "/en/",
       "type": "301"
     },
     {
-      "source": "/learn/the-package-json-guide/",
+      "source": "/en/learn/the-package-json-guide/",
       "destination": "https://docs.npmjs.com/cli/v8/configuring-npm/package-json",
       "type": "301"
     },
@@ -107,28 +122,33 @@
       "type": "301"
     },
     {
-      "source": "/learn/the-package-lockjson-file/",
+      "source": "/en/learn/the-package-lockjson-file/",
       "destination": "https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json",
       "type": "301"
     },
     {
-      "source": "/learn/how-to-exit-from-a-nodejs-program/",
-      "destination": "/learn/",
+      "source": "/en/learn/how-to-exit-from-a-nodejs-program/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/where-does-npm-install-the-packages/",
-      "destination": "/learn/",
+      "source": "/en/learn/where-does-npm-install-the-packages/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/get-http-request-body-data-using-nodejs/",
-      "destination": "/learn/",
+      "source": "/en/learn/get-http-request-body-data-using-nodejs/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/nodejs-file-paths/",
-      "destination": "/learn/",
+      "source": "/en/learn/a-brief-history-of-nodejs/",
+      "destination": "/en/learn/",
+      "type": "301"
+    },
+    {
+      "source": "/en/learn/nodejs-file-paths/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
@@ -152,313 +172,373 @@
       "type": "301"
     },
     {
+      "source": "/blog/",
+      "destination": "/en/blog",
+      "type": "301"
+    },
+    {
       "source": "/blog/advisory-board/2014/12/05/listening-to-the-community",
-      "destination": "/blog/",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
       "source": "/blog/community/2015/05/15/foundation-benefits-all/",
-      "destination": "/blog/",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
       "source": "/blog/community/2016/09/06/v5-to-v7",
-      "destination": "/blog/",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
       "source": "/blog/npm/2011/03/24/npm-1-0-global-vs-local-installation",
-      "destination": "/blog/",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
       "source": "/blog/vulnerabilities/2017/01/27/openssl-january-2017",
-      "destination": "/blog/",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
       "source": "/blog/vulnerabilities/2017/09/29/september-2017-path-validation",
-      "destination": "/blog/",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
       "source": "/blog/weekly-updates/2015/04/24/weekly-update.2015-04-24",
-      "destination": "/blog/",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
       "source": "/blog/weekly-updates/2015/05/29/weekly-update.2015-05-29",
-      "destination": "/blog/",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
       "source": "/blog/weekly-updates/2015/07/31/weekly-update.2015-07-31",
-      "destination": "/blog/",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
       "source": "/blog/weekly-updates/2016/02/15/weekly-update.2016-02-15",
-      "destination": "/blog/",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
       "source": "/blog/weekly-updates/2016/03/07/weekly-update.2016-03-07",
-      "destination": "/blog/",
-      "type": "301"
-    },
-    {
-      "source": "/blog/announcements/2021/10/07/retiring-the-node-js-community-committee",
-      "destination": "/blog/",
-      "type": "301"
-    },
-    {
-      "source": "/blog/announcements/2022/02/14/nodejs-trademarks-transferred-to-openjs-foundation",
-      "destination": "/blog/",
-      "type": "301"
-    },
-    {
-      "source": "/blog/announcements/2022/04/19/v18-release-announce",
-      "destination": "/blog/",
-      "type": "301"
-    },
-    {
-      "source": "/blog/announcements/2022/06/08/nodejs16-eol",
-      "destination": "/blog/",
-      "type": "301"
-    },
-    {
-      "source": "/blog/community/2016/12/03/update-v8-5.4",
-      "destination": "/blog/",
-      "type": "301"
-    },
-    {
-      "source": "/blog/vulnerabilities/2018/06/12/june-2018-security-releases",
-      "destination": "/blog/",
-      "type": "301"
-    },
-    {
-      "source": "/blog/weekly-updates/2015/07/17/weekly-update.2015-07-17",
-      "destination": "/blog/",
-      "type": "301"
-    },
-    {
-      "source": "/blog/weekly-updates/2016/04/29/weekly-update.2016-04-29",
-      "destination": "/blog/",
-      "type": "301"
-    },
-    {
-      "source": "/blog/weekly-updates/2016/07/22/weekly-update.2016-07-22",
-      "destination": "/blog/",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
       "source": "/blog/weekly-updates/2016/08/15/weekly-update.2016-08-15",
-      "destination": "/blog/",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
-      "source": "/learn/accept-input-from-the-command-line-in-nodejs/",
-      "destination": "/learn/",
+      "source": "/en/blog/announcements/2021/10/07/retiring-the-node-js-community-committee",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
-      "source": "/learn/asynchronous-flow-control/",
-      "destination": "/learn/",
+      "source": "/en/blog/announcements/2022/02/14/nodejs-trademarks-transferred-to-openjs-foundation",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
-      "source": "/learn/build-an-http-server/",
-      "destination": "/learn/",
+      "source": "/en/blog/announcements/2022/04/19/v18-release-announce",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
-      "source": "/learn/discover-javascript-timers/",
-      "destination": "/learn/",
+      "source": "/en/blog/announcements/2022/06/08/nodejs16-eol",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
-      "source": "/learn/expose-functionality-from-a-nodejs-file-using-exports/",
-      "destination": "/learn/",
+      "source": "/en/blog/community/2016/12/03/update-v8-5.4",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
-      "source": "/learn/how-to-log-an-object-in-nodejs/",
-      "destination": "/learn/",
+      "source": "/en/blog/vulnerabilities/2018/06/12/june-2018-security-releases",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
-      "source": "/learn/how-to-read-environment-variables-from-nodejs/",
-      "destination": "/learn/",
+      "source": "/en/blog/weekly-updates/2015/07/17/weekly-update.2015-07-17",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
-      "source": "/learn/how-to-use-the-nodejs-repl/",
-      "destination": "/learn/",
+      "source": "/en/blog/weekly-updates/2016/04/29/weekly-update.2016-04-29",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
-      "source": "/learn/install-an-older-version-of-an-npm-package/",
-      "destination": "/learn/",
+      "source": "/en/blog/weekly-updates/2016/07/22/weekly-update.2016-07-22",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
-      "source": "/learn/making-http-requests-with-nodejs/",
-      "destination": "/learn/",
+      "source": "/en/blog/weekly-updates/2016/08/15/weekly-update.2016-08-15",
+      "destination": "/en/blog",
       "type": "301"
     },
     {
-      "source": "/learn/modern-asynchronous-javascript-with-async-and-await/",
-      "destination": "/learn/",
+      "source": "/en/learn/accept-input-from-the-command-line-in-nodejs/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/nodejs-accept-arguments-from-the-command-line/",
-      "destination": "/learn/",
+      "source": "/en/learn/asynchronous-flow-control/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/nodejs-streams/",
-      "destination": "/learn/",
+      "source": "/en/learn/build-an-http-server/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/nodejs-with-typescript/",
-      "destination": "/learn/",
+      "source": "/en/learn/discover-javascript-timers/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/nodejs-with-webassembly/",
-      "destination": "/learn/",
+      "source": "/en/learn/ecmascript-2015-es6-and-beyond/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/output-to-the-command-line-using-nodejs/",
-      "destination": "/learn/",
+      "source": "/en/learn/expose-functionality-from-a-nodejs-file-using-exports/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/overview-of-blocking-vs-non-blocking/",
-      "destination": "/learn/",
+      "source": "/en/learn/find-the-installed-version-of-an-npm-package/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/reading-files-with-nodejs/",
-      "destination": "/learn/",
+      "source": "/en/learn/how-to-log-an-object-in-nodejs/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/semantic-versioning-using-npm/",
-      "destination": "/learn/",
+      "source": "/en/learn/how-to-read-environment-variables-from-nodejs/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/the-nodejs-event-loop/",
-      "destination": "/learn/",
+      "source": "/en/learn/how-to-use-the-nodejs-repl/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/the-nodejs-events-module/",
-      "destination": "/learn/",
+      "source": "/en/learn/install-an-older-version-of-an-npm-package/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/the-npx-nodejs-package-runner/",
-      "destination": "/learn/",
+      "source": "/en/learn/making-http-requests-with-nodejs/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/the-v8-javascript-engine/",
-      "destination": "/learn/",
+      "source": "/en/learn/modern-asynchronous-javascript-with-async-and-await/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/understanding-javascript-promises/",
-      "destination": "/learn/",
+      "source": "/en/learn/nodejs-accept-arguments-from-the-command-line/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/understanding-setimmediate/",
-      "destination": "/learn/",
+      "source": "/en/learn/nodejs-buffers/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/uninstalling-npm-packages/",
-      "destination": "/learn/",
+      "source": "/en/learn/nodejs-streams/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/working-with-folders-in-nodejs",
-      "destination": "/learn/",
+      "source": "/en/learn/nodejs-with-typescript/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/a-brief-history-of-nodejs/",
-      "destination": "/learn/",
+      "source": "/en/learn/nodejs-with-webassembly/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/ecmascript-2015-es6-and-beyond/",
-      "destination": "/learn/",
+      "source": "/en/learn/output-to-the-command-line-using-nodejs/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/error-handling-in-nodejs/",
-      "destination": "/learn/",
+      "source": "/en/learn/overview-of-blocking-vs-non-blocking/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/find-the-installed-version-of-an-npm-package/",
-      "destination": "/learn/",
+      "source": "/en/learn/reading-files-with-nodejs/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/javascript-asynchronous-programming-and-callbacks/",
-      "destination": "/learn/",
+      "source": "/en/learn/run-nodejs-scripts-from-the-command-line/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/nodejs-buffers/",
-      "destination": "/learn/",
+      "source": "/en/learn/semantic-versioning-using-npm/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/npm-dependencies-and-devdependencies/",
-      "destination": "/learn/",
+      "source": "/en/learn/the-nodejs-event-loop/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/run-nodejs-scripts-from-the-command-line/",
-      "destination": "/learn/",
+      "source": "/en/learn/the-nodejs-events-module/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/the-nodejs-event-emitter/",
-      "destination": "/learn/",
+      "source": "/en/learn/the-npx-nodejs-package-runner/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/the-nodejs-path-module/",
-      "destination": "/learn/",
+      "source": "/en/learn/the-v8-javascript-engine/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/update-all-the-nodejs-dependencies-to-their-latest-version/",
-      "destination": "/learn/",
+      "source": "/en/learn/understanding-javascript-promises/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/working-with-folders-in-nodejs/",
-      "destination": "/learn/",
+      "source": "/en/learn/understanding-setimmediate/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
-      "source": "/learn/writing-files-with-nodejs/",
-      "destination": "/learn/",
+      "source": "/en/learn/uninstalling-npm-packages/",
+      "destination": "/en/learn/",
+      "type": "301"
+    },
+    {
+      "source": "/en/learn/update-all-the-nodejs-dependencies-to-their-latest-version/",
+      "destination": "/en/learn/",
+      "type": "301"
+    },
+    {
+      "source": "/en/learn/working-with-folders-in-nodejs",
+      "destination": "/en/learn/",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/a-brief-history-of-nodejs/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/build-an-http-server/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/ecmascript-2015-es6-and-beyond/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/error-handling-in-nodejs/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/find-the-installed-version-of-an-npm-package/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/javascript-asynchronous-programming-and-callbacks/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/making-http-requests-with-nodejs/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/nodejs-buffers/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/nodejs-file-paths/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/npm-dependencies-and-devdependencies/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/run-nodejs-scripts-from-the-command-line/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/the-nodejs-event-emitter/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/the-nodejs-events-module/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/the-nodejs-path-module/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/update-all-the-nodejs-dependencies-to-their-latest-version/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/working-with-folders-in-nodejs/",
+      "destination": "/fr/learn",
+      "type": "301"
+    },
+    {
+      "source": "/fr/learn/writing-files-with-nodejs/",
+      "destination": "/fr/learn",
       "type": "301"
     },
     {
       "source": "/learn/introduction-to-nodejs/",
-      "destination": "/learn/",
+      "destination": "/en/learn/",
+      "type": "301"
+    },
+    {
+      "source": "/learn/the-nodejs-http-module/",
+      "destination": "/en/learn/",
       "type": "301"
     },
     {
