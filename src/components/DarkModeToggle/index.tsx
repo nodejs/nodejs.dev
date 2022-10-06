@@ -2,20 +2,22 @@ import React from 'react';
 import { useTheme } from '@skagami/gatsby-plugin-dark-mode';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
 import BrightnessMediumIcon from '@mui/icons-material/BrightnessMedium';
-import { useSetDocumentColorScheme } from '../../hooks/useSetDocumentColorScheme';
+import { useUpdateDocumentColorScheme } from '../../hooks/useUpdateDocumentColorScheme';
 import styles from './index.module.scss';
 
 const DarkModeToggle = () => {
   const [theme, toggleTheme] = useTheme();
-
-  useSetDocumentColorScheme(theme);
+  const updateColorScheme = useUpdateDocumentColorScheme(theme);
 
   const handleThemeOnClick = (isKeyPress = false): void => {
     if (isKeyPress) {
       return;
     }
 
-    toggleTheme(theme === 'light' ? 'dark' : 'light');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+
+    toggleTheme(newTheme);
+    updateColorScheme(newTheme);
   };
 
   return (
