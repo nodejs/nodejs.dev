@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApiComponents component renders Components Changes correctly 1`] = `
+<Changes
+  changes={
+    [
+      {
+        "description": "test",
+        "pr-url": "https://test.com",
+        "version": "v0",
+      },
+    ]
+  }
+  update={
+    {
+      "type": "added",
+      "version": [
+        "v0",
+      ],
+    }
+  }
+/>
+`;
+
+exports[`ApiComponents component renders Components SourceLink correctly 1`] = `
+<SourceLink
+  link="https://test.com"
+  version="v0"
+/>
+`;
+
+exports[`ApiComponents component renders Components Span correctly 1`] = `
+<Span
+  type="added"
+  version={
+    [
+      "v0",
+    ]
+  }
+/>
+`;
+
+exports[`ApiComponents component renders Components Stability correctly 1`] = `
+<Stability
+  stability={
+    {
+      "level": 0,
+      "text": "test",
+    }
+  }
+/>
+`;
