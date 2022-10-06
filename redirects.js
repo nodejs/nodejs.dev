@@ -101,5 +101,4 @@ module.exports = {
     '/learn/',
   '/learn/working-with-folders-in-nodejs/': '/learn/',
   '/learn/writing-files-with-nodejs/': '/learn/',
-  '/learn/introduction-to-nodejs/': '/learn/',
 };
