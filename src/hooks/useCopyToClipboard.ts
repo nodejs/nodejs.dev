@@ -7,9 +7,9 @@ export const useCopyToClipboard = () => {
       await navigator.clipboard.writeText(value);
       return true;
     } catch (__noop) {
-      return false
+      return false;
     }
   };
 
   return copy;
-}
+};
