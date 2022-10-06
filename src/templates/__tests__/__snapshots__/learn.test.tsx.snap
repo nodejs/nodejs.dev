@@ -197,6 +197,7 @@ exports[`Learn Template renders correctly 1`] = `
         class="navigation"
       >
         <button
+          aria-expanded="false"
           class="navigationOpen"
           type="button"
         >
