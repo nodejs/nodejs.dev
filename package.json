@@ -32,7 +32,7 @@
     "gatsby-plugin-catch-links": "^4.22.0",
     "gatsby-plugin-manifest": "^4.22.0",
     "gatsby-plugin-mdx": "^3.20.0",
-    "gatsby-plugin-offline-next": "^5.2.3",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-sass": "^5.22.0",
     "gatsby-plugin-sharp": "^4.23.0",
     "gatsby-plugin-sitemap": "^5.22.0",
@@ -147,17 +147,22 @@
     "url": "https://github.com/nodejs/nodejs.dev"
   },
   "overrides": {
+    "@mdx-js/mdx": {
+      "trim": "1.0.1"
+    },
     "@mdx-js/react": {
       "react": "$react"
+    },
+    "gatsby-plugin-mdx": {
+      "trim": "1.0.1",
+      "nth-check": "2.1.1"
     },
     "gatsby-theme-i18n": {
       "react": "$react",
       "react-dom": "$react-dom"
     },
-    "gatsby-plugin-offline-next": {
-      "react": "$react",
-      "react-dom": "$react-dom",
-      "gatsby": "$gatsby"
+    "gatsby-transformer-yaml": {
+      "nth-check": "2.1.1"
     }
   },
   "jest": {

@@ -39,6 +39,7 @@ const gatsbyConfig = {
     'Mdx.frontmatter.category': `CategoriesYaml.name`,
   },
   plugins: [
+    'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-typescript',
     'gatsby-plugin-catch-links',
     '@skagami/gatsby-plugin-dark-mode',
@@ -202,20 +203,5 @@ const gatsbyConfig = {
     },
   ],
 };
-
-// Note.: This implementation doesn't work with pathPrefixes (eg.: our staging pages)
-// Which means, that the staging pages will not benefit from a SW
-// It also makes sense to not use SW on Staging Pages as we want to keep testing them from time-to-time
-// This will still work when building & serving gatsby locally
-if (!gatsbyConfig.pathPrefix) {
-  gatsbyConfig.plugins.push({
-    // This is a temporary solution until (https://github.com/gatsbyjs/gatsby/pull/31542) gets merged
-    // So we are able to use the official service worker again. This service worker supports latest Workbox
-    resolve: 'gatsby-plugin-offline-next',
-    options: {
-      globPatterns: ['**/icon-path*'],
-    },
-  });
-}
 
 module.exports = gatsbyConfig;
