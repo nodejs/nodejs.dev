@@ -457,11 +457,6 @@
       "type": "301"
     },
     {
-      "source": "/learn/introduction-to-nodejs/",
-      "destination": "/learn/",
-      "type": "301"
-    },
-    {
       "source": "/api/",
       "destination": "/api/v18/documentation/",
       "type": "301"
