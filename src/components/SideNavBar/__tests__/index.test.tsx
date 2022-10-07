@@ -96,8 +96,8 @@ describe('SideNavBar', () => {
     const { container } = render(
       <SideNavBar pageKey={SideNavBarKeys.releases} />
     );
-    const innrerHtml = container.innerHTML;
-    const activeLinks = innrerHtml.match('navigationItemActive');
+    const innerHtml = container.innerHTML;
+    const activeLinks = innerHtml.match('navigationItemActive');
     expect(activeLinks && activeLinks.length).toBe(1);
   });
 

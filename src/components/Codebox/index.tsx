@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { highlight, languages } from 'prismjs';
 import { sanitize } from 'isomorphic-dompurify';
 import classnames from 'classnames';
+import { copyTextToClipboard } from '../../util/copyTextToClipboard';
 import styles from './index.module.scss';
 
 interface Props {
@@ -40,10 +41,9 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   // Actual Code into a stringified format
   const stringCode = props.children?.toString() || '';
 
-  const handleCopyCode = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    navigator.clipboard.writeText(stringCode);
-    setCopied(true);
+    setCopied(await copyTextToClipboard(stringCode));
   };
 
   useEffect((): (() => void) => {

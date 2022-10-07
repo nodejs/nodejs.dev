@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { copyTextToClipboard } from '../../util/copyTextToClipboard';
 import styles from './index.module.scss';
 
 interface Props {
@@ -7,18 +8,21 @@ interface Props {
 }
 
 const ShellBox = ({ children, textToCopy }: Props): JSX.Element => {
-  const [copied, setCopied] = React.useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    setCopied(await copyTextToClipboard(textToCopy));
+  };
 
   useEffect((): (() => void) => {
     let timer: ReturnType<typeof setTimeout>;
 
     if (copied) {
-      timer = setTimeout((): void => {
-        setCopied(false);
-      }, 3000);
+      timer = setTimeout(() => setCopied(false), 3000);
     }
 
-    return (): void => {
+    return () => {
       if (timer) {
         clearTimeout(timer);
       }
@@ -29,14 +33,7 @@ const ShellBox = ({ children, textToCopy }: Props): JSX.Element => {
     <pre className={styles.shellBox}>
       <div className={styles.top}>
         <span>SHELL</span>
-        <button
-          type="button"
-          onClick={(event: React.MouseEvent<HTMLButtonElement>): void => {
-            event.preventDefault();
-            navigator.clipboard.writeText(textToCopy);
-            setCopied(true);
-          }}
-        >
+        <button type="button" onClick={handleCopyCode}>
           {copied ? 'copied' : 'copy'}
         </button>
       </div>
