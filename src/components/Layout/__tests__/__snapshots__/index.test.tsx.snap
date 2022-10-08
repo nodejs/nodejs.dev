@@ -123,6 +123,7 @@ exports[`Layout component renders correctly with data 1`] = `
             </li>
             <li>
               <button
+                aria-pressed="false"
                 class="darkModeToggle"
                 type="button"
               >
