@@ -123,6 +123,7 @@ exports[`Package Manager Page renders correctly 1`] = `
             </li>
             <li>
               <button
+                aria-pressed="false"
                 class="darkModeToggle"
                 type="button"
               >

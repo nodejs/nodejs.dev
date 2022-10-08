@@ -120,6 +120,7 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
           </li>
           <li>
             <button
+              aria-pressed="true"
               class="darkModeToggle"
               type="button"
             >
@@ -309,6 +310,7 @@ exports[`Tests for Header component renders correctly 1`] = `
           </li>
           <li>
             <button
+              aria-pressed="true"
               class="darkModeToggle"
               type="button"
             >
@@ -498,6 +500,7 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
           </li>
           <li>
             <button
+              aria-pressed="true"
               class="darkModeToggle"
               type="button"
             >
