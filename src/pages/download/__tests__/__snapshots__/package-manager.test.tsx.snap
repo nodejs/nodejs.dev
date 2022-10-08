@@ -412,15 +412,15 @@ exports[`Package Manager Page renders correctly 1`] = `
           <ul>
             <li>
               <a
+                aria-label="author-mock Github - opens in new tab"
                 class="link"
                 href="https://github.com/author-mock"
                 rel="noopener noreferrer"
                 style="margin-left: 0px;"
                 target="_blank"
-                title="author-mock"
               >
                 <img
-                  alt="author-mock"
+                  alt=""
                   src="https://github.com/author-mock.png?size=60"
                 />
               </a>
