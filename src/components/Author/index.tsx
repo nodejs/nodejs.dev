@@ -26,13 +26,13 @@ const Author = ({
         <a
           className={styles.link}
           href={githubLink}
-          title={username}
+          aria-label={`${username} Github - opens in new tab`}
           key={username}
           target="_blank"
           rel="noopener noreferrer"
           style={mleft}
         >
-          <img src={githubImgLink} alt={username} />
+          <img src={githubImgLink} alt="" />
         </a>
       </li>
     );
