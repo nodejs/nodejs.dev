@@ -3,6 +3,7 @@
 exports[`DarkModeToggle Component render dark mode toggle 1`] = `
 <div>
   <button
+    aria-pressed="false"
     class="darkModeToggle"
     type="button"
   >
