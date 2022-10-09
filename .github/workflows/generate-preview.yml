@@ -11,7 +11,7 @@ permissions:
 jobs:
   generate-preview:
     environment:
-      name: firebase
+      name: firebase-staging
       url: 'https://staging.nodejs.dev/${{ github.event.pull_request.number }}/'
     runs-on: ubuntu-latest
     if: github.event.label.name == 'create-preview'
