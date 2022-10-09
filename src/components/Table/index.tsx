@@ -1,13 +1,6 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 
-interface MdxChildren {
-  props: {
-    children: JSX.Element[] | JSX.Element;
-    mdxType: string;
-  };
-}
-
 const mutateChildren = (
   children: JSX.Element[] | JSX.Element,
   oldTag: string,
