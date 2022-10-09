@@ -58,12 +58,6 @@ const Banner = ({ bannersIndex }: BannerProps): JSX.Element | null => {
   const textContent = useTextContent({ ...bannersIndex, link });
   const htmlContent = useHtmlContent({ ...bannersIndex, link });
 
-  return (
-    <div className={styles.banner}>
-      {bannersIndex.text ? textContent : htmlContent}
-    </div>
-  );
-
   if (showBanner) {
     return (
       <div className={styles.banner}>

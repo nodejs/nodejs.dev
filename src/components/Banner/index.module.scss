@@ -5,7 +5,8 @@
   padding-top: var(--space-08);
   position: relative;
 
-  &, p {
+  &,
+  p {
     font-size: var(--font-size-body1);
     font-weight: var(--font-weight-bold);
   }
