@@ -3,6 +3,7 @@
   "blog.description": "最近的 Node.js 新闻、案例研究、教程及资源。",
   "blog.authors.list.title.by": "作者",
   "blog.authors.list.title.and": "and",
+  "components.author.githubLinkLabel": "{username} Github - opens in new tab",
   "components.downloadAdditional.title": "额外下载",
   "components.downloadHeader.navigation.activeSection": "下载",
   "components.downloadHeader.navigation.title": "下载",
