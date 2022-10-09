@@ -83,12 +83,6 @@ exports[`Security page renders correctly 1`] = `
       </a>
       <a
         class="t-body2 navigationItem"
-        href="/get-involved/code-learn"
-      >
-        Code + Learn
-      </a>
-      <a
-        class="t-body2 navigationItem"
         href="/get-involved/collab-summit"
       >
         Collab Summit
@@ -174,7 +168,7 @@ exports[`Security page renders correctly 1`] = `
         Node.js can be installed in different ways. This post highlights the most common and convenient ones.
       </p>
       <p>
-        Official packages for all the major platforms are available at 
+        Official packages for all the major platforms are available at
         <a>
           https://nodejs.dev/download/
         </a>
@@ -184,7 +178,7 @@ exports[`Security page renders correctly 1`] = `
         One very convenient way to install Node.js is through a package manager. In this case, every operating system has its own.
       </p>
       <p>
-        Other package managers for MacOS, Linux, and Windows are listed in 
+        Other package managers for MacOS, Linux, and Windows are listed in
         <a>
           https://nodejs.dev/download/package-manager/
         </a>
@@ -201,14 +195,14 @@ exports[`Security page renders correctly 1`] = `
         It is also very useful to test your code with old Node.js versions.
       </p>
       <p>
-        See 
+        See
         <a>
           https://github.com/nvm-sh/nvm
         </a>
          for more information about this option.
       </p>
       <p>
-        In any case, when Node.js is installed you'll have access to the 
+        In any case, when Node.js is installed you'll have access to the
         <code
           class="code"
         >
