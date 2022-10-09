@@ -101,6 +101,7 @@ async function fetchRandomContributor() {
         Math.floor(Math.random() * Math.floor(maxContributors)) + 1
       );
     }
+
     const [randomPage, lastPage] = await getMaxContributors();
 
     const contributor = await getContributor(randomPage);
@@ -120,8 +121,11 @@ export function useNodeJsContributorsApi(
   isVisible: boolean
 ): Contributor | null {
   const [contributor, setContributor] = useState<Contributor | null>(null);
+
   useEffect(() => {
-    fetchRandomContributor().then(setContributor).catch();
+    if (isVisible) {
+      fetchRandomContributor().then(setContributor).catch();
+    }
   }, [isVisible]);
 
   return contributor;

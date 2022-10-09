@@ -27,21 +27,19 @@ const RandomContributor = (): JSX.Element => {
               />
             </a>
           </div>
-          <div>
-            <a
-              href={contributor.profileUri}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-            >
-              <FormattedMessage
-                id="components.randomContributor.thankYou"
-                values={{
-                  contributor: contributor.login,
-                  amount: contributor.contributionsCount,
-                }}
-              />
-            </a>
-          </div>
+          <a
+            href={contributor.profileUri}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            <FormattedMessage
+              id="components.randomContributor.thankYou"
+              values={{
+                contributor: contributor.login,
+                amount: contributor.contributionsCount,
+              }}
+            />
+          </a>
         </>
       )}
     </div>

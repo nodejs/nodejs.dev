@@ -15,6 +15,8 @@ import BlogAuthorsList from '../BlogAuthorsList';
 import Codebox from '../Codebox';
 import InlineCode from '../Codebox/InlineCode';
 import Table from '../Table';
+import Alert from '../Alert';
+import BlockQuote from '../BlockQuote';
 import styles from './index.module.scss';
 
 interface Props {
@@ -41,6 +43,8 @@ const mdxComponents = {
   inlineCode: InlineCode,
   a: MdxLink,
   table: Table,
+  blockquote: BlockQuote,
+  Alert,
 };
 
 const renderBlogAuthors = (date?: string, authors?: BlogPostAuthor[]) => (

@@ -47,11 +47,7 @@ const NavigationSection = ({
           {isApiDocs && <OfflineBoltIcon />}
           {title}
         </span>
-        {isOpen ? (
-          <ArrowDropDownIcon style={{ padding: 0 }} />
-        ) : (
-          <ArrowDropUpIcon style={{ padding: 0 }} />
-        )}
+        {isOpen ? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}
       </button>
       <div role="region" style={{ display: isOpen ? 'block' : 'none' }}>
         {section.map((item: NavigationSectionItem): JSX.Element => {
