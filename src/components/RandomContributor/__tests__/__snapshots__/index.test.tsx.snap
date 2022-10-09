@@ -19,15 +19,13 @@ exports[`RandomContributor component should render correctly 1`] = `
         />
       </a>
     </div>
-    <div>
-      <a
-        href="profileUri_mock"
-        rel="nofollow noopener noreferrer"
-        target="_blank"
-      >
-        Thank you login_mock for being a Node.js contributor with 0 contributions
-      </a>
-    </div>
+    <a
+      href="profileUri_mock"
+      rel="nofollow noopener noreferrer"
+      target="_blank"
+    >
+      Thank you login_mock for being a Node.js contributor with 0 contributions
+    </a>
   </div>
 </div>
 `;
