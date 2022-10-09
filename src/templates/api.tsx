@@ -11,8 +11,8 @@ import {
   TableOfContentsItem,
 } from '../types';
 import SectionTitle from '../components/SectionTitle';
-import styles from '../styles/templates/api.module.scss';
 import { replaceDataTagFromString } from '../util/replaceDataTag';
+import styles from '../styles/templates/api.module.scss';
 
 interface Props {
   data: ApiTemplateData;

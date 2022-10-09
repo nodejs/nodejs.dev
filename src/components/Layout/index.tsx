@@ -9,7 +9,6 @@ import Footer from '../Footer';
 import SEO from '../Seo';
 
 interface Props {
-  children: React.ReactNode;
   title?: string;
   description?: string;
   img?: string;
@@ -38,7 +37,7 @@ const Layout = ({
   img,
   showFooter = true,
   showRandomContributor = false,
-}: Props): JSX.Element => (
+}: React.PropsWithChildren<Props>): JSX.Element => (
   <FeatureToggleProvider>
     <ThemeProvider theme={defaultTheme}>
       <SEO title={title} description={description} img={img} />

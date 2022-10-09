@@ -2,14 +2,18 @@
   align-items: center;
   background-color: var(--color-fill-banner);
   border-radius: 5px;
-  color: var(--color-text-primary);
   display: flex;
   margin: 0 auto;
-  max-width: 360px;
+  max-width: 400px;
   padding: var(--space-12);
 
   @media (max-width: 900px) {
     max-width: 80vw;
+  }
+
+  a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
   }
 
   &__avatar {

@@ -3,7 +3,6 @@ title: introduction-to-nodejs
 displayTitle: 'Introduction to Node.js'
 description: "Getting started guide to Node.js, the server-side JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to just that."
 authors: flaviocopes, potch, MylesBorins, RomainLanz, virkt25, Trott, onel0p3z, ollelauribostrom, MarkPieszak, fhemberger, LaRuaNa, FrozenPandaz, mcollina, amiller-gh, ahmadawais, saqibameen, dangen-effy, aymen94, benhalverson
-section: Quick Start
 category: learn
 ---
 
@@ -20,10 +19,6 @@ This allows Node.js to handle thousands of concurrent connections with a single 
 Node.js has a unique advantage because millions of frontend developers that write JavaScript for the browser are now able to write the server-side code in addition to the client-side code without the need to learn a completely different language.
 
 In Node.js the new ECMAScript standards can be used without problems, as you don't have to wait for all your users to update their browsers - you are in charge of deciding which ECMAScript version to use by changing the Node.js version, and you can also enable specific experimental features by running Node.js with flags.
-
-## A Vast Number of Libraries
-
-npm with its simple structure helped the ecosystem of Node.js proliferate, and now the npm registry hosts over 1,000,000 open source packages you can freely use.
 
 ## An Example Node.js Application
 
@@ -86,6 +81,6 @@ and we close the response, adding the content as an argument to `end()`:
 res.end('Hello World\n');
 ```
 
-## More Examples
+### More Examples
 
 See https://github.com/nodejs/examples for a list of Node.js examples that go beyond hello world.
