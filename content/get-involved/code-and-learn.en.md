@@ -16,7 +16,6 @@ Code & Learn events allow you to get started (or go further) with Node.js core c
 * Vancouver, BC at [Node Interactive](https://events.linuxfoundation.org/events/node-js-interactive-2018/): October 12, 2018
 * [Oakland on April 22, 2017](https://medium.com/the-node-js-collection/code-learn-learn-how-to-contribute-to-node-js-core-8a2dbdf9be45)
 * Shanghai at JSConf.CN: July 2017
-* Vancouver, BC at [Node Interactive](http://events.linuxfoundation.org/events/node-interactive): October 6, 2017
 * Kilkenny, Ireland at [NodeConfEU](http://www.nodeconf.eu/): November 5, 2017
 * Austin in December 2016
 * Tokyo in November 2016
