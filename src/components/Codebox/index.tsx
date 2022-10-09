@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { highlight, languages } from 'prismjs';
 import { sanitize } from 'isomorphic-dompurify';
 import classnames from 'classnames';
+import { copyTextToClipboard } from '../../util/copyTextToClipboard';
 import styles from './index.module.scss';
 
 interface Props {
@@ -14,7 +15,15 @@ interface Props {
 }
 
 const replaceLanguages = (language: string) =>
-  language.replace(/mjs|cjs|javascript/i, 'js').replace('console', 'bash');
+  language
+    .replace(/mjs|cjs|javascript/i, 'js')
+    .replace(/console|shell/i, 'bash');
+
+const replaceLabelLanguages = (language: string) =>
+  language
+    .replace(/javascript/i, 'cjs')
+    .replace(/console|shell/i, 'bash')
+    .toUpperCase();
 
 const Codebox = ({ children: { props } }: Props): JSX.Element => {
   const [copied, setCopied] = useState(false);
@@ -32,10 +41,9 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   // Actual Code into a stringified format
   const stringCode = props.children?.toString() || '';
 
-  const handleCopyCode = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    navigator.clipboard.writeText(stringCode);
-    setCopied(true);
+    setCopied(await copyTextToClipboard(stringCode));
   };
 
   useEffect((): (() => void) => {
@@ -66,7 +74,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   return (
     <pre className={classnames(styles.pre, replaceLanguages(className))}>
       <div className={styles.top}>
-        <span>{replaceLanguages(language).toUpperCase()}</span>
+        <span>{replaceLabelLanguages(language)}</span>
         <button type="button" onClick={handleCopyCode}>
           {copied ? 'copied' : 'copy'}
         </button>

@@ -12,6 +12,7 @@ module.exports = `
         }
         frontmatter {
           title
+          displayTitle
         }
         fields {
           slug
@@ -21,6 +22,7 @@ module.exports = `
       next {
         frontmatter {
           title
+          displayTitle
         }
         fields {
           slug
@@ -29,6 +31,7 @@ module.exports = `
       previous {
         frontmatter {
           title
+          displayTitle
         }
         fields {
           slug

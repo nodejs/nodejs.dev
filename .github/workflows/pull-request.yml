@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.1.0
         with:
           persist-credentials: false
 
@@ -21,6 +21,9 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
+      - name: Run Format Check
+        run: npm run format-check
+
       - name: Run Lint Checker
         run: npm run lint
 
@@ -29,12 +32,20 @@ jobs:
 
       - name: Upload Code Coverage
         uses: codecov/codecov-action@v3
+
   build-ci:
     needs: test-ci
-    runs-on: ubuntu-latest
+    name: Node on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.1.0
         with:
           persist-credentials: false
 
@@ -50,13 +61,13 @@ jobs:
       - name: Gatsby Cache Folder
         uses: actions/cache@v3
         with:
-          key: cache-folder
+          key: cache-folder-${{ matrix.os }}
           path: .cache
 
       - name: Gatsby Public Folder
         uses: actions/cache@v3
         with:
-          key: public-folder
+          key: public-folder-${{ matrix.os }}
           path: public
 
       - name: Build Gatsby

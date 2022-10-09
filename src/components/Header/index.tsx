@@ -8,7 +8,7 @@ import { ReactComponent as LogoDark } from '../../images/logos/nodejs-logo-dark-
 import SearchBar from '../SearchBar';
 import DarkModeToggle from '../DarkModeToggle';
 import LanguageSelector from '../LanguageSelector';
-import { useFeatureToggles } from '../../hooks';
+import { useFeatureToggles } from '../../hooks/useFeatureToggles';
 import styles from './index.module.scss';
 
 const Header = (): JSX.Element => {
@@ -38,7 +38,11 @@ const Header = (): JSX.Element => {
             </Link>
           </li>
           <li>
-            <Link to="/api/" activeClassName={styles.active} partiallyActive>
+            <Link
+              to="/api/latest/"
+              activeClassName={styles.active}
+              partiallyActive
+            >
               <FormattedMessage id="components.header.links.docs" />
             </Link>
           </li>

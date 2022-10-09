@@ -6,7 +6,8 @@ function createPreviousNextNodeData(edges, index, categoryName) {
   if (previousNode && previousNode.fields.categoryName === categoryName) {
     previousNodeData = {
       slug: previousNode.fields.slug,
-      title: previousNode.frontmatter.title,
+      title:
+        previousNode.frontmatter.displayTitle || previousNode.frontmatter.title,
     };
   }
 
@@ -18,7 +19,7 @@ function createPreviousNextNodeData(edges, index, categoryName) {
   if (nextNode && nextNode.fields.categoryName === categoryName) {
     nextNodeData = {
       slug: nextNode.fields.slug,
-      title: nextNode.frontmatter.title,
+      title: nextNode.frontmatter.displayTitle || nextNode.frontmatter.title,
     };
   }
 
@@ -30,7 +31,7 @@ function createPreviousNextNodeData(edges, index, categoryName) {
 
 function mapToNavigationData(page) {
   return {
-    title: page.title,
+    title: page.displayTitle || page.title,
     slug: page.slug,
     category: page.category,
   };

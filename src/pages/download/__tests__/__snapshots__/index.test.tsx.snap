@@ -50,7 +50,7 @@ exports[`Download page renders correctly 1`] = `
           </li>
           <li>
             <a
-              href="/api/"
+              href="/api/latest/"
             >
               API Docs
             </a>
@@ -86,7 +86,7 @@ exports[`Download page renders correctly 1`] = `
               </span>
               <div
                 class="searchBarContainer"
-                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
+                style="min-height: 0; width: 100%; max-width: 100px; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
@@ -123,6 +123,7 @@ exports[`Download page renders correctly 1`] = `
             </li>
             <li>
               <button
+                aria-pressed="false"
                 class="darkModeToggle"
                 type="button"
               >
@@ -189,7 +190,7 @@ exports[`Download page renders correctly 1`] = `
         </div>
       </div>
     </nav>
-    <div
+    <main
       class="home-container downloadPageContainer"
     >
       <div
@@ -792,7 +793,7 @@ exports[`Download page renders correctly 1`] = `
           </div>
         </div>
       </div>
-    </div>
+    </main>
     <footer
       class="footer"
     >
@@ -801,7 +802,7 @@ exports[`Download page renders correctly 1`] = `
       >
         <li>
           <a
-            aria-label="Node.js Slack Link"
+            aria-label="Node.js Trademark Policy - PDF (Opens in new tab)"
             class="link"
             href="https://trademark-policy.openjsf.org/"
             rel="noopener noreferrer"
@@ -812,8 +813,11 @@ exports[`Download page renders correctly 1`] = `
         </li>
         <li>
           <a
+            aria-label="Node.js Privacy Policy - PDF (Opens in new tab)"
             class="link"
-            href="/about/privacy"
+            href="https://privacy-policy.openjsf.org/"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Privacy Policy
           </a>
@@ -859,16 +863,11 @@ exports[`Download page renders correctly 1`] = `
         </li>
         <li>
           <a
-            aria-label="Node.js Github Page Link"
+            aria-label="Node.js Github Page (opens in new tab)"
             href="https://github.com/nodejs/node"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <span
-              class="sr-only"
-            >
-              GitHub
-            </span>
             <svg
               aria-hidden="true"
               class="svg-inline--fa fa-github "
@@ -889,7 +888,7 @@ exports[`Download page renders correctly 1`] = `
         </li>
         <li>
           <a
-            aria-label="Node.js Twitter Link"
+            aria-label="Node.js Twitter (opens in new tab)"
             href="https://twitter.com/nodejs"
             rel="noopener noreferrer"
             target="_blank"
@@ -914,7 +913,7 @@ exports[`Download page renders correctly 1`] = `
         </li>
         <li>
           <a
-            aria-label="Node.js Slack Link"
+            aria-label="Node.js Slack (opens in new tab)"
             href="https://slack.openjsf.org"
             rel="noopener noreferrer"
             target="_blank"
@@ -993,7 +992,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           </li>
           <li>
             <a
-              href="/api/"
+              href="/api/latest/"
             >
               API Docs
             </a>
@@ -1029,7 +1028,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               </span>
               <div
                 class="searchBarContainer"
-                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
+                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none; min-height: 0em;"
               >
                 <div
                   class="searchInputContainer"
@@ -1066,6 +1065,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             </li>
             <li>
               <button
+                aria-pressed="false"
                 class="darkModeToggle"
                 type="button"
               >
@@ -1132,7 +1132,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </div>
       </div>
     </nav>
-    <div
+    <main
       class="home-container downloadPageContainer"
     >
       <div
@@ -1735,7 +1735,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           </div>
         </div>
       </div>
-    </div>
+    </main>
     <footer
       class="footer"
     >
@@ -1744,7 +1744,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
       >
         <li>
           <a
-            aria-label="Node.js Slack Link"
+            aria-label="Node.js Trademark Policy - PDF (Opens in new tab)"
             class="link"
             href="https://trademark-policy.openjsf.org/"
             rel="noopener noreferrer"
@@ -1755,8 +1755,11 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </li>
         <li>
           <a
+            aria-label="Node.js Privacy Policy - PDF (Opens in new tab)"
             class="link"
-            href="/about/privacy"
+            href="https://privacy-policy.openjsf.org/"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Privacy Policy
           </a>
@@ -1802,16 +1805,11 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </li>
         <li>
           <a
-            aria-label="Node.js Github Page Link"
+            aria-label="Node.js Github Page (opens in new tab)"
             href="https://github.com/nodejs/node"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <span
-              class="sr-only"
-            >
-              GitHub
-            </span>
             <svg
               aria-hidden="true"
               class="svg-inline--fa fa-github "
@@ -1832,7 +1830,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </li>
         <li>
           <a
-            aria-label="Node.js Twitter Link"
+            aria-label="Node.js Twitter (opens in new tab)"
             href="https://twitter.com/nodejs"
             rel="noopener noreferrer"
             target="_blank"
@@ -1857,7 +1855,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
         </li>
         <li>
           <a
-            aria-label="Node.js Slack Link"
+            aria-label="Node.js Slack (opens in new tab)"
             href="https://slack.openjsf.org"
             rel="noopener noreferrer"
             target="_blank"

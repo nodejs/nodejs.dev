@@ -133,7 +133,6 @@ export interface ContributorApiResponse {
   url: string;
   type: string;
   contributions: number;
-  /* eslint-disable camelcase */
   node_id: string;
   avatar_url: string;
   gravatar_id: string;

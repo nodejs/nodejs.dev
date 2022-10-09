@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { axe, toHaveNoViolations } from 'jest-axe';
 import {
   createGeneralPageData,
   createNodeReleasesData,
@@ -20,6 +21,7 @@ const mockData = {
     ...mockReleasesNodeReleases,
   },
 };
+expect.extend(toHaveNoViolations);
 
 describe('Releases page', () => {
   it('renders correctly', () => {
@@ -28,5 +30,10 @@ describe('Releases page', () => {
     const pageContent = container.querySelector('main');
 
     expect(pageContent).toMatchSnapshot();
+  });
+  it('should have no a11y violations', async () => {
+    const { container } = render(<ReleasesPage data={mockData.data} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

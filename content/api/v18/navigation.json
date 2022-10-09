@@ -1010,6 +1010,12 @@
       "name": "perf_hooks"
     },
     {
+      "slug": "/api/v18/permissions/",
+      "title": "Permissions",
+      "type": "module",
+      "name": "permissions"
+    },
+    {
       "slug": "/api/v18/policy/",
       "title": "Policies",
       "type": "module",

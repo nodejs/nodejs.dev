@@ -60,42 +60,50 @@ also have committer rights on the repo.
 
 <!-- ncu-team-sync.team(nodejs/nodejs-dev) -->
 
-* [@ahmadawais](https://github.com/ahmadawais) - Ahmad Awais ⚡️
-* [@alexandrtovmach](https://github.com/alexandrtovmach) - Alexandr Tovmach
-* [@amiller-gh](https://github.com/amiller-gh) - Adam Miller
-* [@argyleink](https://github.com/argyleink) - Adam Argyle
 * [@benhalverson](https://github.com/benhalverson) - Ben Halverson
-* [@BeniCheni](https://github.com/BeniCheni) - Benjamin Chen
-* [@codeekage](https://github.com/codeekage) - Abraham Jr. Agiri
 * [@darcyclarke](https://github.com/darcyclarke) - Darcy Clarke
-* [@designMoreWeb](https://github.com/designMoreWeb) - Divy Tolia
-* [@imbhargav5](https://github.com/imbhargav5) - Bhargav Ponnapalli
-* [@jemjam](https://github.com/jemjam) - j'em bones
 * [@joesepi](https://github.com/joesepi) - Joe Sepi
-* [@jonchurch](https://github.com/jonchurch) - Jonathan Church
-* [@kasicka](https://github.com/kasicka) - Zuzana Svetlíková
-* [@keywordnew](https://github.com/keywordnew) - Manil Chowdhury
-* [@lancemccluskey](https://github.com/lancemccluskey) - Lance McCluskey
-* [@LaRuaNa](https://github.com/LaRuaNa) - Onur Laru
-* [@maddhruv](https://github.com/maddhruv) - Dhruv Jain
 * [@manishprivet](https://github.com/manishprivet) - Manish Kumar
-* [@marcustisater](https://github.com/marcustisater) - Marcus Tisäter
-* [@mbj36](https://github.com/mbj36) - Mohit kumar Bajoria
 * [@MylesBorins](https://github.com/MylesBorins) - Myles Borins
-* [@ogonzal87](https://github.com/ogonzal87) - Oscar Gonzalez
-* [@ollelauribostrom](https://github.com/ollelauribostrom) - Olle Lauri Boström
 * [@ovflowd](https://github.com/ovflowd) - Claudio Wunder
-* [@pierreneter](https://github.com/pierreneter) - Nguyễn J Huỳnh Long
 * [@rodion-arr](https://github.com/rodion-arr) - Rodion Abdurakhimov
-* [@sagirk](https://github.com/sagirk) - Sagir Khan
-* [@saulonunesdev](https://github.com/saulonunesdev) - Saulo Nunes
-* [@skllcrn](https://github.com/skllcrn) - Christopher
-* [@SMotaal](https://github.com/SMotaal) - Saleh Abdel Motaal
-* [@timothyis](https://github.com/timothyis) - Timothy
-* [@tstreamDOTh](https://github.com/tstreamDOTh) - T Thiyagaraj
-* [@ZYSzys](https://github.com/ZYSzys) - ZYSzys
 
 <!-- ncu-team-sync end -->
+
+<details>
+  <summary>Previous Members</summary>
+
+  These are previous members that were part of the **Nodejs.dev** Team:
+
+  * [@ahmadawais](https://github.com/ahmadawais) - Ahmad Awais ⚡️
+  * [@alexandrtovmach](https://github.com/alexandrtovmach) - Alexandr Tovmach
+  * [@amiller-gh](https://github.com/amiller-gh) - Adam Miller
+  * [@argyleink](https://github.com/argyleink) - Adam Argyle
+  * [@BeniCheni](https://github.com/BeniCheni) - Benjamin Chen
+  * [@codeekage](https://github.com/codeekage) - Abraham Jr. Agiri
+  * [@designMoreWeb](https://github.com/designMoreWeb) - Divy Tolia
+  * [@imbhargav5](https://github.com/imbhargav5) - Bhargav Ponnapalli
+  * [@jemjam](https://github.com/jemjam) - j'em bones
+  * [@jonchurch](https://github.com/jonchurch) - Jonathan Church
+  * [@kasicka](https://github.com/kasicka) - Zuzana Svetlíková
+  * [@keywordnew](https://github.com/keywordnew) - Manil Chowdhury
+  * [@lancemccluskey](https://github.com/lancemccluskey) - Lance McCluskey
+  * [@LaRuaNa](https://github.com/LaRuaNa) - Onur Laru
+  * [@maddhruv](https://github.com/maddhruv) - Dhruv Jain
+  * [@marcustisater](https://github.com/marcustisater) - Marcus Tisäter
+  * [@mbj36](https://github.com/mbj36) - Mohit kumar Bajoria
+  * [@ogonzal87](https://github.com/ogonzal87) - Oscar Gonzalez
+  * [@ollelauribostrom](https://github.com/ollelauribostrom) - Olle Lauri Boström
+  * [@pierreneter](https://github.com/pierreneter) - Nguyễn J Huỳnh Long
+  * [@sagirk](https://github.com/sagirk) - Sagir Khan
+  * [@saulonunesdev](https://github.com/saulonunesdev) - Saulo Nunes
+  * [@skllcrn](https://github.com/skllcrn) - Christopher
+  * [@SMotaal](https://github.com/SMotaal) - Saleh Abdel Motaal
+  * [@timothyis](https://github.com/timothyis) - Timothy
+  * [@tstreamDOTh](https://github.com/tstreamDOTh) - T Thiyagaraj
+  * [@ZYSzys](https://github.com/ZYSzys) - ZYSzys
+
+</details>
 
 #### The Website Redesign Teams
 
@@ -181,8 +189,6 @@ participated in that process.
 * [@kevjin](https://github.com/kevjin) - Kevin Jin
 
 ## 🔗 Links
-
-[Community Committee][]
 
 [Code of Conduct][]
 

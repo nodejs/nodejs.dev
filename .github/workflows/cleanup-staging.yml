@@ -8,11 +8,11 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  cleanup-staging:
     runs-on: ubuntu-latest
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.1.0
         with:
           persist-credentials: false
 

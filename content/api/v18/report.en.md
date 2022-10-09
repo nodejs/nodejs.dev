@@ -5,17 +5,17 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.9.0" data={{"update":{"type":"introduced_in","version":["v11.8.0"]}}} />
+<Metadata version="v18.10.0" data={{"update":{"type":"introduced_in","version":["v11.8.0"]}}} />
 
-<Metadata version="v18.9.0" data={{"type":"misc"}} />
+<Metadata version="v18.10.0" data={{"type":"misc"}} />
 
-<Metadata version="v18.9.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.10.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.9.0" data={{"name":"report"}} />
+<Metadata version="v18.10.0" data={{"name":"report"}} />
 
 Delivers a JSON-formatted diagnostic summary, written to a file.
 
-The report is intended for development, test and production use, to capture
+The report is intended for development, test, and production use, to capture
 and preserve information for problem determination. It includes JavaScript
 and native stack traces, heap statistics, platform information, resource
 usage etc. With the report option enabled, diagnostic reports can be triggered
@@ -513,9 +513,9 @@ the application, in expectation of self-adjusting the resource consumption,
 load balancing, monitoring etc.
 
 The content of the report consists of a header section containing the event
-type, date, time, PID and Node.js version, sections containing JavaScript and
+type, date, time, PID, and Node.js version, sections containing JavaScript and
 native stack traces, a section containing V8 heap information, a section
-containing `libuv` handle information and an OS platform information section
+containing `libuv` handle information, and an OS platform information section
 showing CPU and memory usage and system limits. An example report can be
 triggered using the Node.js REPL:
 
@@ -595,7 +595,7 @@ Specific API documentation can be found under
 
 ### Interaction with workers
 
-<Metadata version="v18.9.0" data={{"changes":[{"version":["v13.9.0","v12.16.2"],"pr-url":"https://github.com/nodejs/node/pull/31386","description":"Workers are now included in the report."}]}} />
+<Metadata version="v18.10.0" data={{"changes":[{"version":["v13.9.0","v12.16.2"],"pr-url":"https://github.com/nodejs/node/pull/31386","description":"Workers are now included in the report."}]}} />
 
 [`Worker`][] threads can create reports in the same way that the main thread
 does.
