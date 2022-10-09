@@ -9,8 +9,7 @@
   padding: var(--space-12);
   position: relative;
 
-  a {
+  a, a:hover {
     color: white;
-    text-decoration: none;
   }
 }
