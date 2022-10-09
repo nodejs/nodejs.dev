@@ -8,10 +8,6 @@ interface MdxChildren {
   };
 }
 
-interface Props {
-  children: MdxChildren[];
-}
-
 const mutateChildren = (
   children: JSX.Element[] | JSX.Element,
   oldTag: string,
@@ -32,7 +28,11 @@ const surroundChildren = (children: JSX.Element[] | JSX.Element, tag: string) =>
 // This component exists to normalise HTML tables following the format
 // That always a <thead> and a <tbody> are mandatory
 // It also fixes up Tables that have swapped th's and td's
-const Table = ({ children }: Props): JSX.Element | null => {
+const Table = ({ children }: React.PropsWithChildren): JSX.Element | null => {
+  if (!children || !Array.isArray(children)) {
+    return null;
+  }
+
   const filteredChildren = children.filter(c => typeof c === 'object');
 
   if (filteredChildren.length === 0) {

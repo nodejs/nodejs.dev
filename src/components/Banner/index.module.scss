@@ -1,11 +1,14 @@
 .banner {
   color: var(--color-text-primary);
-  font-size: var(--font-size-display2);
-  font-weight: var(--font-weight-bold);
   margin: 0 auto;
   max-width: 90vw;
   padding-top: var(--space-08);
   position: relative;
+
+  &, p {
+    font-size: var(--font-size-body1);
+    font-weight: var(--font-weight-bold);
+  }
 
   a {
     display: block;

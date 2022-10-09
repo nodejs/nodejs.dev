@@ -1,0 +1,16 @@
+.alert {
+  font-size: var(--font-size-body1);
+  font-weight: var(--font-weight-bold);
+  margin: var(--space-16) auto;
+  max-width: 90vw;
+  position: relative;
+  background: var(--purple5);
+  color: var(--color-fill-top-nav);
+  border-radius: 5px;
+  padding: var(--space-12);
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
