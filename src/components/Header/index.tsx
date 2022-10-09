@@ -8,96 +8,85 @@ import { ReactComponent as LogoDark } from '../../images/logos/nodejs-logo-dark-
 import SearchBar from '../SearchBar';
 import DarkModeToggle from '../DarkModeToggle';
 import LanguageSelector from '../LanguageSelector';
-import { useFeatureToggles } from '../../hooks/useFeatureToggles';
 import styles from './index.module.scss';
 
-const Header = (): JSX.Element => {
-  const featureToggles = useFeatureToggles();
+const Header = (): JSX.Element => (
+  <nav aria-label="Primary" className={styles.header}>
+    <div className={styles.container}>
+      <div className={styles.startWrapper}>
+        <Link to="/" aria-label="Homepage">
+          <div className={styles.logo}>
+            <LogoLight className="light-mode-only" />
+            <LogoDark className="dark-mode-only" />
+          </div>
+        </Link>
+      </div>
 
-  return (
-    <nav aria-label="Primary" className={styles.header}>
-      <div className={styles.container}>
-        <div className={styles.startWrapper}>
-          <Link to="/" aria-label="Homepage">
-            <div className={styles.logo}>
-              <LogoLight className="light-mode-only" />
-              <LogoDark className="dark-mode-only" />
-            </div>
+      <ul className={styles.tabs}>
+        <li>
+          <Link to="/learn/" activeClassName={styles.active} partiallyActive>
+            <FormattedMessage id="components.header.links.learn" />
           </Link>
-        </div>
+        </li>
+        <li>
+          <Link to="/about/" activeClassName={styles.active} partiallyActive>
+            <FormattedMessage id="components.header.links.about" />
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/api/latest/"
+            activeClassName={styles.active}
+            partiallyActive
+          >
+            <FormattedMessage id="components.header.links.docs" />
+          </Link>
+        </li>
+        <li>
+          <Link to="/download/" activeClassName={styles.active} partiallyActive>
+            <FormattedMessage id="components.header.links.download" />
+          </Link>
+        </li>
+        <li>
+          <a href="https://openjsf.org/certification/">
+            <FormattedMessage id="components.header.links.certification" />
+          </a>
+        </li>
+      </ul>
 
-        <ul className={styles.tabs}>
-          <li>
-            <Link to="/learn/" activeClassName={styles.active} partiallyActive>
-              <FormattedMessage id="components.header.links.learn" />
-            </Link>
+      <div className={styles.endWrapper}>
+        <ul className={styles.rightContainer}>
+          <li className={styles.searchBar}>
+            <span className="sr-only">Search Bar</span>
+            <SearchBar />
           </li>
+
           <li>
-            <Link to="/about/" activeClassName={styles.active} partiallyActive>
-              <FormattedMessage id="components.header.links.about" />
-            </Link>
+            <DarkModeToggle />
           </li>
+
           <li>
-            <Link
-              to="/api/latest/"
-              activeClassName={styles.active}
-              partiallyActive
+            <LanguageSelector />
+          </li>
+
+          <li>
+            <a
+              target="_blank"
+              href="https://github.com/nodejs/nodejs.dev"
+              rel="noopener noreferrer"
             >
-              <FormattedMessage id="components.header.links.docs" />
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/download/"
-              activeClassName={styles.active}
-              partiallyActive
-            >
-              <FormattedMessage id="components.header.links.download" />
-            </Link>
-          </li>
-          <li>
-            <a href="https://openjsf.org/certification/">
-              <FormattedMessage id="components.header.links.certification" />
+              <span className="sr-only">GitHub</span>
+              <FontAwesomeIcon
+                icon={faGithub}
+                color="var(--color-text-accent)"
+                style={{ padding: '1rem', width: '2rem', height: '2rem' }}
+              />
             </a>
           </li>
         </ul>
-
-        <div className={styles.endWrapper}>
-          <ul className={styles.rightContainer}>
-            <li className={styles.searchBar}>
-              <span className="sr-only">Search Bar</span>
-              <SearchBar />
-            </li>
-
-            <li>
-              <DarkModeToggle />
-            </li>
-
-            {featureToggles.has('i18n-language-selector') && (
-              <li>
-                <LanguageSelector />
-              </li>
-            )}
-
-            <li>
-              <a
-                target="_blank"
-                href="https://github.com/nodejs/nodejs.dev"
-                rel="noopener noreferrer"
-              >
-                <span className="sr-only">GitHub</span>
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  color="var(--color-text-accent)"
-                  style={{ padding: '1rem', width: '2rem', height: '2rem' }}
-                />
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
-    </nav>
-  );
-};
+    </div>
+  </nav>
+);
 
 export default Header;

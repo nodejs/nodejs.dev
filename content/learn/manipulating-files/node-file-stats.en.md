@@ -37,7 +37,7 @@ try {
 
 The file information is included in the stats variable. What kind of information can we extract using the stats?
 
-A lot, including:
+**A lot, including:**
 
 * if the file is a directory or a file, using `stats.isFile()` and `stats.isDirectory()`
 * if the file is a symbolic link using `stats.isSymbolicLink()`

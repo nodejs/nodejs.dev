@@ -27,9 +27,9 @@
     - asynchronous-work/node-event-emitter
 - section: 'Manipulating Files'
   items:
-    - manipulating-files/node-file-descriptors
     - manipulating-files/node-file-stats
     - manipulating-files/node-file-paths
+    - manipulating-files/node-file-descriptors
     - manipulating-files/node-reading-files
     - manipulating-files/node-writing-files
     - manipulating-files/node-folders

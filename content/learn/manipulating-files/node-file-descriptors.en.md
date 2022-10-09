@@ -22,7 +22,7 @@ Notice the `r` we used as the second parameter to the `fs.open()` call.
 
 That flag means we open the file for reading.
 
-Other flags you'll commonly use are:
+**Other flags you'll commonly use are:**
 
 * `r+` open the file for reading and writing, if file doesn't exist it won't be created.
 * `w+` open the file for reading and writing, positioning the stream at the beginning of the file. The file is created if not existing.
