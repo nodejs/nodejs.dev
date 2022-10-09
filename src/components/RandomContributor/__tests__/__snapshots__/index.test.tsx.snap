@@ -37,6 +37,7 @@ exports[`RandomContributor component should render loading animation until data 
   >
     <div
       class="placeholder"
+      style="width: 400px; height: 50px;"
     >
       <div
         class="placeholderImage"
@@ -44,12 +45,6 @@ exports[`RandomContributor component should render loading animation until data 
       <div
         class="placeholderText"
       >
-        <div
-          class="placeholderTextLine"
-        />
-        <div
-          class="placeholderTextLine"
-        />
         <div
           class="placeholderTextLine"
         />
