@@ -29,7 +29,6 @@ exports[`Navigation component renders correctly 1`] = `
           class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
           data-testid="ArrowDropDownIcon"
           focusable="false"
-          style="padding: 0px;"
           viewBox="0 0 24 24"
         >
           <path

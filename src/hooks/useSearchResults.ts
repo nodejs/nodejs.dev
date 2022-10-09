@@ -50,6 +50,6 @@ export const useSearchResults = () => {
       return result;
     };
 
-    return currentResults.slice(0, 20).map(mapResult).flat();
+    return currentResults.slice(0, 20).map(mapResult).flat().slice(0, 20);
   };
 };

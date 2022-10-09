@@ -19,15 +19,13 @@ exports[`RandomContributor component should render correctly 1`] = `
         />
       </a>
     </div>
-    <div>
-      <a
-        href="profileUri_mock"
-        rel="nofollow noopener noreferrer"
-        target="_blank"
-      >
-        Thank you login_mock for being a Node.js contributor with 0 contributions
-      </a>
-    </div>
+    <a
+      href="profileUri_mock"
+      rel="nofollow noopener noreferrer"
+      target="_blank"
+    >
+      Thank you login_mock for being a Node.js contributor with 0 contributions
+    </a>
   </div>
 </div>
 `;
@@ -39,6 +37,7 @@ exports[`RandomContributor component should render loading animation until data 
   >
     <div
       class="placeholder"
+      style="width: 400px; height: 50px;"
     >
       <div
         class="placeholderImage"
@@ -46,12 +45,6 @@ exports[`RandomContributor component should render loading animation until data 
       <div
         class="placeholderText"
       >
-        <div
-          class="placeholderTextLine"
-        />
-        <div
-          class="placeholderTextLine"
-        />
         <div
           class="placeholderTextLine"
         />

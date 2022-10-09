@@ -4,10 +4,12 @@ import styles from './index.module.scss';
 
 interface Props {
   textToCopy: string;
-  children: React.ReactNode;
 }
 
-const ShellBox = ({ children, textToCopy }: Props): JSX.Element => {
+const ShellBox = ({
+  children,
+  textToCopy,
+}: React.PropsWithChildren<Props>): JSX.Element => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>) => {

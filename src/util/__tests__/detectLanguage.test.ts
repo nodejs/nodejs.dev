@@ -21,14 +21,6 @@ describe('detectLanguage', (): void => {
     expect(detectLanguage()).toBe('en');
   });
 
-  it('should detect Spanish (es) or Español', (): void => {
-    Object.defineProperty(window.navigator, 'languages', {
-      writable: true,
-      value: ['es-ES'],
-    });
-    expect(detectLanguage()).toBe('es');
-  });
-
   it('should detect French (fr) or Français', (): void => {
     Object.defineProperty(window.navigator, 'languages', {
       writable: true,
