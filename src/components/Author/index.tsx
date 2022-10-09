@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './index.module.scss';
 import { defineMessages, useIntl } from 'react-intl';
+import styles from './index.module.scss';
 
 interface Props {
   index: number;
@@ -13,19 +13,18 @@ const Author = ({
   username,
   size = '64',
 }: Props): null | JSX.Element => {
+  const intl = useIntl();
+
+  const translate = defineMessages({
+    ariaLabel: {
+      id: 'components.author.githubLinkLabel',
+    },
+  });
   if (username) {
     // Clean up username and build links.
     const githubUserName = username.trim();
     const githubLink = `https://github.com/${githubUserName}`;
     const githubImgLink = `https://github.com/${githubUserName}.png?size=${size}`;
-
-    const intl = useIntl();
-
-    const translate = defineMessages({
-      ariaLabel: {
-        id: 'components.author.githubLinkLabel',
-      },
-    });
 
     // If it's the first author then no margin left.
     const mleft = index === 0 ? { marginLeft: 0 } : {};
@@ -36,7 +35,7 @@ const Author = ({
           className={styles.link}
           href={githubLink}
           aria-label={intl.formatMessage(translate.ariaLabel, {
-            username: username,
+            username,
           })}
           key={username}
           target="_blank"
