@@ -20,7 +20,7 @@
   }
 
   .leafs-front {
-    animation: leafs-animation 10s infinite alternate ease-in-out;
+    animation: 'leafs-animation' 10s infinite alternate ease-in-out;
     position: absolute;
     right: -16px;
     top: 145px;
@@ -28,16 +28,16 @@
   }
 
   .leafs-mid {
-    animation: leafs-animation 15s infinite alternate ease-in-out;
+    animation: 'leafs-animation' 15s infinite alternate ease-in-out;
     position: absolute;
-    right: 20px;
+    right: 120px;
     top: -32px;
     z-index: -2;
   }
 
   .leafs-back {
-    animation: leafs-animation 18s infinite alternate ease-in-out;
-    left: -62px;
+    animation: 'leafs-animation' 18s infinite alternate ease-in-out;
+    left: 300px;
     position: absolute;
     top: -48px;
     z-index: -3;
