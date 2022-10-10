@@ -8,9 +8,9 @@ Node.js est construit avec des versions modernes de [V8](https://v8.dev/). En re
 
 Toutes les fonctionnalités ECMAScript 2015 (ES6) sont réparties en trois groupes pour les fonctionnalités **en cours d'exécution**, **établies** et **en cours de réalisation** :
 
-* Toutes les fonctionnalités **shipping**, que V8 considère comme stables, sont activées **par défaut sur Node.js** et ne nécessitent **PAS** d'indicateur d'exécution.
-* Les fonctionnalités **Staged**, qui sont des fonctionnalités presque achevées et qui ne sont pas considérées comme stables par l'équipe V8, nécessitent un indicateur d'exécution : `--harmony`.
-* Les fonctionnalités **en cours** peuvent être activées individuellement par leur drapeau d'harmonie respectif, bien que cela soit fortement déconseillé, sauf à des fins de test. Note : ces drapeaux sont exposés par V8 et seront potentiellement modifiés sans aucune notification de dépréciation.ce.
+* Toutes les fonctionnalités **en cours d'exécution** (_shipping_), que V8 considère comme stables, sont activées **par défaut sur Node.js** et ne nécessitent **PAS** d'indicateur d'exécution.
+* Les fonctionnalités **établies** (_staged_), qui sont des fonctionnalités presque achevées et qui ne sont pas considérées comme stables par l'équipe V8, nécessitent un indicateur d'exécution : `--harmony`.
+* Les fonctionnalités **en cours** (_in progress_) peuvent être activées individuellement par leur drapeau d'harmonie respectif, bien que cela soit fortement déconseillé, sauf à des fins de test. Note : ces drapeaux sont exposés par V8 et seront potentiellement modifiés sans aucune notification de dépréciation.
 
 ### Quelles fonctionnalités sont livrées avec quelle version de Node.js par défaut ?
 
