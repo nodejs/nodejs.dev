@@ -8,3 +8,4 @@ export * from './learn';
 export * from './post';
 export * from './blog';
 export * from './about';
+export * from './calendar';
