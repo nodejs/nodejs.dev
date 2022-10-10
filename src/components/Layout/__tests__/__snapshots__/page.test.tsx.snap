@@ -325,15 +325,15 @@ exports[`PageLayout component renders correctly with data 1`] = `
           <ul>
             <li>
               <a
+                aria-label="mock-author Github - opens in new tab"
                 class="link"
                 href="https://github.com/mock-author"
                 rel="noopener noreferrer"
                 style="margin-left: 0px;"
                 target="_blank"
-                title="mock-author"
               >
                 <img
-                  alt="mock-author"
+                  alt=""
                   src="https://github.com/mock-author.png?size=60"
                 />
               </a>

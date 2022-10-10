@@ -85,5 +85,6 @@
   "components.sideBar.section.download": "Download",
   "components.sideBar.items.previousReleases": "Previous Releases",
   "components.sideBar.items.codeOfConduct": "Code of Conduct",
-  "components.sideBar.section.blog": "Node.js Blog"
+  "components.sideBar.section.blog": "Node.js Blog",
+  "components.author.githubLinkLabel": "{username} Github - opens in new tab"
 }
