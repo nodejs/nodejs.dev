@@ -41,11 +41,6 @@ const navbarButtons = [
     expectedHref: '/get-involved/',
   },
   {
-    pageKey: SideNavBarKeys.codeLearn,
-    expectedText: 'Code + Learn',
-    expectedHref: '/get-involved/code-learn',
-  },
-  {
     pageKey: SideNavBarKeys.collabSummit,
     expectedText: 'Collab Summit',
     expectedHref: '/get-involved/collab-summit',
