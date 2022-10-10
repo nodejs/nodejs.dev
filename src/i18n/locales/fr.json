@@ -3,7 +3,6 @@
   "blog.description": "Les dernières nouvelles sur Node.js, des études de cas, des tutoriels et des ressources.",
   "blog.authors.list.title.by": "par",
   "blog.authors.list.title.and": "et",
-  "components.author.githubLinkLabel": "{username} Github - opens in new tab",
   "components.downloadAdditional.title": "Téléchargements supplémentaires",
   "components.downloadHeader.navigation.activeSection": "Téléchargements",
   "components.downloadHeader.navigation.title": "Téléchargements",
@@ -87,5 +86,6 @@
   "components.sideBar.section.download": "Télécharger",
   "components.sideBar.items.previousReleases": "Anciennes versions",
   "components.sideBar.items.codeOfConduct": "Code de conduite",
-  "components.sideBar.section.blog": "Node.js Blog"
+  "components.sideBar.section.blog": "Node.js Blog",
+  "components.author.githubLinkLabel": "{username} Github - opens in new tab"
 }
