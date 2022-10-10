@@ -12,7 +12,7 @@ Construire des applications qui fonctionnent dans le navigateur est une chose co
 
 Bien qu'il s'agisse toujours de JavaScript, il existe quelques différences essentielles qui rendent l'expérience radicalement différente.
 
-Du point de vue d'un développeur frontal qui utilise intensivement JavaScript, les applications Node.js présentent un avantage considérable : le confort de pouvoir tout programmer - le frontal et le backend - dans un seul langage.
+Du point de vue d'un développeur "frontend" qui utilise intensivement JavaScript, les applications Node.js présentent un avantage considérable : le confort de pouvoir tout programmer - le "frontend" et le "backend" - dans un seul langage.
 
 Vous avez une opportunité énorme parce que nous savons combien il est difficile d'apprendre complètement, profondément, un langage de programmation, et en utilisant le même langage pour effectuer tout votre travail sur le web - à la fois sur le client et sur le serveur, vous êtes dans une position unique d'avantage.
 
