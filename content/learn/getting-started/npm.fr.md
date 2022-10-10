@@ -6,7 +6,7 @@ authors: flaviocopes, MylesBorins, LaRuaNa, jgb-solutions, amiller-gh, ahmadawai
 category: learn
 ---
 
-<Alert>Keep in mind that this is a short introduction to <code>NPM</code>. For a more in-depth guide, check out the <a href="https://docs.npmjs.com/">NPM documentation</a>.</Alert>
+<Alert>Gardez à l'esprit qu'il s'agit d'une brève introduction à <code>NPM</code>. Pour un guide plus approfondi, consultez le <a href="https://docs.npmjs.com/">NPM documentation</a>.</Alert>
 
 ## Introduction à npm
 
