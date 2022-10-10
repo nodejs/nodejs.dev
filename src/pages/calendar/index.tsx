@@ -6,6 +6,7 @@ import { usePopper } from 'react-popper';
 import Layout from '../../components/Layout';
 import { CalendarEvent } from '../../types';
 import { useGCalAPI } from '../../hooks/useGCalAPI';
+import style from './index.module.scss';
 
 const localizer = momentLocalizer(moment);
 
@@ -26,9 +27,9 @@ const CalendarPage = (): JSX.Element => {
       return;
     }
 
-    const selectedElements = document.getElementsByClassName('rbc-selected');
+    const selectedElements = document.getElementsByClassName(`${style.rbcSeleted}`);
     Array.from(selectedElements).forEach(elm => {
-      elm.classList.remove('rbc-selected');
+      elm.classList.remove(`${style.rbcSelected}`);
     });
     setReferenceElement(null);
   };
@@ -71,7 +72,7 @@ const CalendarPage = (): JSX.Element => {
 
   return (
     <Layout title="Node.js Calendar" description="Node.js upcoming events">
-      <div className="rbc-calendar-container">
+      <div className={style.rbcCalendarContainer}>
         <Calendar
           localizer={localizer}
           events={events}
@@ -88,7 +89,7 @@ const CalendarPage = (): JSX.Element => {
         // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
         <div
           role="tooltip"
-          className="rbc-tooltip"
+          className={style.rbcTooltip}
           ref={setPopperElement}
           style={{ ...styles.popper }}
           onClick={e => e.stopPropagation()}
