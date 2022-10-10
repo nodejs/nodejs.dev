@@ -315,12 +315,6 @@ exports[`Resources page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 navigationItem"
-            href="/get-involved/code-learn"
-          >
-            Code + Learn
-          </a>
-          <a
-            class="t-body2 navigationItem"
             href="/get-involved/collab-summit"
           >
             Collab Summit
