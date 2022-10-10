@@ -8,7 +8,7 @@ category: about
 
 ## Logo Downloads
 
-Please review the [trademark policy](https://openjsf.org/wp-content/uploads/sites/84/2021/01/OpenJS-Foundation-Trademark-Policy-2021-01-12.docx.pdf) for information about permissible use of Node.js® logos and marks.
+Please review the [trademark policy](https://trademark-policy.openjsf.org/) for information about permissible use of Node.js® logos and marks.
 
 Guidelines for the visual display of the Node.js mark are described in the [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
 
