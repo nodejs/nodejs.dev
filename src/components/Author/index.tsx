@@ -1,5 +1,5 @@
 import React from 'react';
-import { defineMessages, useIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 import styles from './index.module.scss';
 
 interface Props {
@@ -15,11 +15,6 @@ const Author = ({
 }: Props): null | JSX.Element => {
   const intl = useIntl();
 
-  const translate = defineMessages({
-    ariaLabel: {
-      id: 'components.author.githubLinkLabel',
-    },
-  });
   if (username) {
     // Clean up username and build links.
     const githubUserName = username.trim();
@@ -34,9 +29,14 @@ const Author = ({
         <a
           className={styles.link}
           href={githubLink}
-          aria-label={intl.formatMessage(translate.ariaLabel, {
-            username,
-          })}
+          aria-label={intl.formatMessage(
+            {
+              id: 'components.author.githubLinkLabel',
+            },
+            {
+              username,
+            }
+          )}
           key={username}
           target="_blank"
           rel="noopener noreferrer"
