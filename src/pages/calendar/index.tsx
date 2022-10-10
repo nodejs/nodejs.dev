@@ -27,7 +27,9 @@ const CalendarPage = (): JSX.Element => {
       return;
     }
 
-    const selectedElements = document.getElementsByClassName(`${style.rbcSeleted}`);
+    const selectedElements = document.getElementsByClassName(
+      `${style.rbcSeleted}`
+    );
     Array.from(selectedElements).forEach(elm => {
       elm.classList.remove(`${style.rbcSelected}`);
     });
