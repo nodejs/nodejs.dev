@@ -72,9 +72,16 @@ Basic rules:
 
 ### Before landing
 
-* Pull Requests must be open for at least 48 hours unless changes include errata fixes, infrastructure maintenance, or tests
+* Pull Requests must be open for at least 48 hours.
+  * Pull Requests might be fast-tracked to then 8 hours with at least one approval if they're bug fixes, pre-discussed content-removal, or general content update that had no prior objections before the creation of the PR.
+    * If objections are raised after its merge, collaborators have the right to revert said changes.
+  * Pull reuqests might be immediately merged if they contain critical bug fixes, short erratas (e.g. typos from previous PRs) or any critical change that is considered a "showstopper" for the operation of the website.
+    * These kind of PRs should only be done by existing collaborators that have write-access and/or signed-off by administrators/maintainers.
 * There must be no objections after a 48 hour period
-* Tests must be included in Pull Requests for new features or bug fixes
+* Tests should be included in Pull Requests for new features or bug fixes
+  * It is a general recommendation that you add tests for your features, with the exception of:
+    * The features are temporary and expected to be removed
+    * The author opts into adding tests later using good judgement that the current features are functional
 
 The default for each contribution is that it is accepted once no collaborator has an objection. During review collaborators may also request that a specific contributor who is most versed in a particular area gives a "LGTM" before the PR can be merged.
 
