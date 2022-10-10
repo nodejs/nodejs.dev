@@ -9,7 +9,6 @@ import {
 } from '../util/gcalUtils';
 import config from '../config.json';
 
-// eslint-disable-next-line import/prefer-default-export
 export function useGCalAPI(): [CalendarEvent[], (date: Date) => void] {
   const [gcalEvents, setGcalEvents] = useState<CalendarEvent[]>([]);
   const [renderedEvents, setRenderedEvents] = useState<CalendarEvent[]>([]);

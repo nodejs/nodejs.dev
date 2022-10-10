@@ -2,13 +2,13 @@ import { Event } from 'react-big-calendar';
 import { Moment } from 'moment';
 
 export interface CalendarEvent extends Event {
-  description: string;
+  description?: string;
   location?: string;
   id: string;
-  recurrence?: string;
-  changedEvents?: CalendarEvent[];
-  cancelledEvents?: CalendarEvent[];
-  calendarName: string;
+  recurrence?: string[];
+  changedEvents?: ChangedCalendarEvent[];
+  cancelledEvents?: CancelledCalendarEvent[];
+  calendarName?: string;
   startTime: Moment;
   endTime: Moment;
 }

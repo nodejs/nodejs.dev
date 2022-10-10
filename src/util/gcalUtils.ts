@@ -49,7 +49,9 @@ export function processEvents(
   items: GCalEvent[],
   calendarName: string
 ): CalendarEvent[] {
-  const events: CalendarEvent[] = [];
+  const events: CalendarEvent[] &
+    ChangedCalendarEvent[] &
+    CancelledCalendarEvent[] = [];
   const changed: ChangedCalendarEvent[] = [];
   const cancelled: CancelledCalendarEvent[] = [];
 
@@ -217,7 +219,7 @@ export function getRenderedEvents(
 
 export function getCalendarURL(event: CalendarEvent): string {
   const url = new URL('https://calendar.google.com/calendar/r/eventedit');
-  url.searchParams.append('text', event.title || '');
+  url.searchParams.append('text', (event.title as string) || '');
 
   if (event.allDay) {
     url.searchParams.append(

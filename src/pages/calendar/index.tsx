@@ -64,6 +64,11 @@ const CalendarPage = (): JSX.Element => {
     setReferenceElement(null);
   };
 
+  const titleAccessor = (event: CalendarEvent) =>
+    view === Views.MONTH
+      ? `${event.startTime.format('ha')} ${event.title} || '' `
+      : `${event.title} || '' `;
+
   return (
     <Layout title="Node.js Calendar" description="Node.js upcoming events">
       <div className="rbc-calendar-container">
@@ -75,9 +80,7 @@ const CalendarPage = (): JSX.Element => {
           endAccessor={endAccessor}
           onNavigate={onNavigate}
           onView={onView}
-          titleAccessor={(event: CalendarEvent) =>
-            `${event.startTime.format('ha')} ${event.title} || '' `
-          }
+          titleAccessor={titleAccessor}
           popup
         />
       </div>

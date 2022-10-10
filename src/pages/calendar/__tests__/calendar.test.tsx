@@ -76,5 +76,4 @@ describe('Calendar page', () => {
     const events = await screen.findAllByTitle('Mock Event');
     expect(events.length).toBe(4);
   });
-
 });
