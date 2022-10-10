@@ -24,19 +24,17 @@ const Author = ({
     // If it's the first author then no margin left.
     const mleft = index === 0 ? { marginLeft: 0 } : {};
 
+    const translation = intl.formatMessage(
+      { id: 'components.author.githubLinkLabel' },
+      { username }
+    );
+
     return (
       <li>
         <a
           className={styles.link}
           href={githubLink}
-          aria-label={intl.formatMessage(
-            {
-              id: 'components.author.githubLinkLabel',
-            },
-            {
-              username,
-            }
-          )}
+          aria-label={translation}
           key={username}
           target="_blank"
           rel="noopener noreferrer"
