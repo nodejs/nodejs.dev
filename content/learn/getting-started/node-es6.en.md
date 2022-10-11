@@ -1,6 +1,7 @@
 ---
 title: ecmascript-2015-es6-and-beyond
 displayTitle: 'ECMAScript 2015 (ES6) and beyond'
+authors: ovflowd
 category: learn
 ---
 

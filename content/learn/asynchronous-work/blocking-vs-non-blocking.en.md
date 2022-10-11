@@ -1,6 +1,7 @@
 ---
 title: overview-of-blocking-vs-non-blocking
 displayTitle: 'Overview of Blocking vs Non-Blocking'
+authors: ovflowd
 category: learn
 ---
 
