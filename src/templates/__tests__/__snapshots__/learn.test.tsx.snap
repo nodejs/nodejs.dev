@@ -347,6 +347,42 @@ exports[`Learn Template renders correctly 1`] = `
         <h1
           class="headline"
         />
+        <div
+          class="authorList"
+        >
+          Article Authors
+          <ul>
+            <li>
+              <a
+                aria-label="test-user1 Github - opens in new tab"
+                class="link"
+                href="https://github.com/test-user1"
+                rel="noopener noreferrer"
+                style="margin-left: 0px;"
+                target="_blank"
+              >
+                <img
+                  alt=""
+                  src="https://github.com/test-user1.png?size=60"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                aria-label="test-user2 Github - opens in new tab"
+                class="link"
+                href="https://github.com/test-user2"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  alt=""
+                  src="https://github.com/test-user2.png?size=60"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
         <details
           class="tableOfContents"
         >
@@ -419,42 +455,6 @@ exports[`Learn Template renders correctly 1`] = `
             </code>
              executable program in the command line.
           </p>
-        </div>
-        <div
-          class="authorList"
-        >
-          Contributors
-          <ul>
-            <li>
-              <a
-                aria-label="test-user1 Github - opens in new tab"
-                class="link"
-                href="https://github.com/test-user1"
-                rel="noopener noreferrer"
-                style="margin-left: 0px;"
-                target="_blank"
-              >
-                <img
-                  alt=""
-                  src="https://github.com/test-user1.png?size=60"
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                aria-label="test-user2 Github - opens in new tab"
-                class="link"
-                href="https://github.com/test-user2"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <img
-                  alt=""
-                  src="https://github.com/test-user2.png?size=60"
-                />
-              </a>
-            </li>
-          </ul>
         </div>
         <div
           class="edit"

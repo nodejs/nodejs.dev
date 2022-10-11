@@ -1,9 +1,13 @@
 .table-of-contents {
   cursor: pointer;
+  background-color: var(--color-fill-banner);
+  border-radius: 5px;
+  padding: var(--space-12);
 
   strong {
     display: inline-block;
-    font-size: var(--font-size-body3);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-body2);
     margin: 0;
     text-transform: uppercase;
   }
@@ -14,6 +18,7 @@
 
   ul {
     padding: var(--space-08) 0 0 var(--space-24);
+    margin-top: var(--space-04);
 
     li {
       p {

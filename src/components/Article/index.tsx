@@ -55,6 +55,10 @@ const renderTOC = (tableOfContents: TableOfContentsItem[]) => (
   <TableOfContents tableOfContents={tableOfContents} />
 );
 
+const renderArticleAuthors = (authors: string[]) => (
+  <AuthorList authors={authors as string[]} />
+);
+
 const Article = ({
   title,
   body,
@@ -76,25 +80,24 @@ const Article = ({
     <h1 className={styles.headline}>{title}</h1>
     {blog
       ? renderBlogAuthors(date, authors as BlogPostAuthor[])
-      : renderTOC(tableOfContents)}
+      : renderArticleAuthors(authors as string[])}
+    {renderTOC(tableOfContents)}
     <div>
       <MDXProvider components={{ ...mdxComponents, ...extraComponents }}>
         <MDXRenderer>{body}</MDXRenderer>
       </MDXProvider>
     </div>
     {childrenPosition === 'after' && children && <div>{children}</div>}
-    {!blog && authors && authors.length > 0 && (
-      <AuthorList authors={authors as string[]} />
-    )}
     {!blog && (
-      <EditLink
-        absolutePath={absolutePath}
-        relativePath={relativePath}
-        editPath={editPath}
-        hasNoAuthors={!authors || !authors.length}
-      />
+      <>
+        <EditLink
+          absolutePath={absolutePath}
+          relativePath={relativePath}
+          editPath={editPath}
+        />
+        <Pagination previous={previous} next={next} />
+      </>
     )}
-    {!blog && <Pagination previous={previous} next={next} />}
   </article>
 );
 

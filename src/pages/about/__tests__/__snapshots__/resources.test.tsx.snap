@@ -374,6 +374,28 @@ exports[`Resources page renders correctly 1`] = `
         >
           Mock Title
         </h1>
+        <div
+          class="authorList"
+        >
+          Article Authors
+          <ul>
+            <li>
+              <a
+                aria-label="MrJithil Github - opens in new tab"
+                class="link"
+                href="https://github.com/MrJithil"
+                rel="noopener noreferrer"
+                style="margin-left: 0px;"
+                target="_blank"
+              >
+                <img
+                  alt=""
+                  src="https://github.com/MrJithil.png?size=60"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
         <details
           class="tableOfContents"
         >
@@ -446,28 +468,6 @@ exports[`Resources page renders correctly 1`] = `
             </code>
              executable program in the command line.
           </p>
-        </div>
-        <div
-          class="authorList"
-        >
-          Contributors
-          <ul>
-            <li>
-              <a
-                aria-label="MrJithil Github - opens in new tab"
-                class="link"
-                href="https://github.com/MrJithil"
-                rel="noopener noreferrer"
-                style="margin-left: 0px;"
-                target="_blank"
-              >
-                <img
-                  alt=""
-                  src="https://github.com/MrJithil.png?size=60"
-                />
-              </a>
-            </li>
-          </ul>
         </div>
         <div
           class="edit"
