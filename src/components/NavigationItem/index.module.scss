@@ -17,7 +17,6 @@ $checkSvg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
   }
 
   &--active {
-
     animation: 'blink-animation' 5s linear;
     color: var(--color-text-accent);
     font-weight: var(--font-weight-semibold);
