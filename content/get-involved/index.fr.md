@@ -24,13 +24,3 @@ category: get-involved
 * [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) recueille chaque jour de nouvelles informations.
 * [The DEV Community Node.js tag](https://dev.to/t/node) est un endroit pour partager des projets, des articles et des tutoriels Node.js, ainsi que pour lancer des discussions et demander des commentaires sur des sujets liés à Node.js. Les développeurs de tous niveaux de compétence sont les bienvenus.
 * [Nodeiflux](https://discordapp.com/invite/vUsrbjd) est une communauté amicale de développeurs backend Node.js qui se soutiennent mutuellement sur Discord.
-
-## Sites et projets communautaires internationaux
-
-* [Chinese community](https://cnodejs.org/)
-* [Hungarian (Magyar) community](https://nodehun.blogspot.com/)
-* [Israeli Facebook group for Node.js](https://www.facebook.com/groups/node.il/)
-* [Japanese user group](https://nodejs.jp/)
-* [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
-* [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
-* [Uzbekistan group for Node.js](https://t.me/nodejs_uz)
