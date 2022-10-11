@@ -34,7 +34,7 @@ const BlogContainer = ({ categories, posts, currentCategory }: Props) => (
     />
     <div className={styles.blogGridContainer}>
       <div className={styles.blogCategoryHeader}>
-        <h1 style={{ marginBottom: 0 }}>{currentCategory.slug}</h1>
+        <h1>{currentCategory.slug}</h1>
         <BlockQuote>
           <span>{currentCategory.description}</span>
         </BlockQuote>
