@@ -85,5 +85,6 @@
   "components.sideBar.section.download": "下载",
   "components.sideBar.items.previousReleases": "以前的版本",
   "components.sideBar.items.codeOfConduct": "行为准则",
-  "components.sideBar.section.blog": "Node.js 博客"
+  "components.sideBar.section.blog": "Node.js 博客",
+  "components.author.githubLinkLabel": "{username} Github - opens in new tab"
 }

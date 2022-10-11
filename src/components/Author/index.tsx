@@ -1,4 +1,5 @@
 import React from 'react';
+import { useIntl } from 'react-intl';
 import styles from './index.module.scss';
 
 interface Props {
@@ -12,6 +13,8 @@ const Author = ({
   username,
   size = '64',
 }: Props): null | JSX.Element => {
+  const intl = useIntl();
+
   if (username) {
     // Clean up username and build links.
     const githubUserName = username.trim();
@@ -21,18 +24,23 @@ const Author = ({
     // If it's the first author then no margin left.
     const mleft = index === 0 ? { marginLeft: 0 } : {};
 
+    const translation = intl.formatMessage(
+      { id: 'components.author.githubLinkLabel' },
+      { username }
+    );
+
     return (
       <li>
         <a
           className={styles.link}
           href={githubLink}
-          title={username}
+          aria-label={translation}
           key={username}
           target="_blank"
           rel="noopener noreferrer"
           style={mleft}
         >
-          <img src={githubImgLink} alt={username} />
+          <img src={githubImgLink} alt="" />
         </a>
       </li>
     );
