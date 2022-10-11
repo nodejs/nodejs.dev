@@ -9,61 +9,61 @@ import { NavigationSectionData } from '../types';
 import styles from './about.module.scss';
 
 const aboutNavigation = {
-  'components.sideBar.section.about': [
+  'navigation.about.section.about': [
     {
-      title: 'components.sideBar.section.about',
+      title: 'navigation.about.section.about',
       slug: AboutNavigationKeys.about,
     },
     {
-      title: 'components.sideBar.items.governance',
+      title: 'navigation.about.items.governance',
       slug: AboutNavigationKeys.governance,
     },
     {
-      title: 'components.sideBar.items.releases',
+      title: 'navigation.about.items.releases',
       slug: AboutNavigationKeys.releases,
     },
     {
-      title: 'components.sideBar.items.resources',
+      title: 'navigation.about.items.resources',
       slug: AboutNavigationKeys.resources,
     },
     {
-      title: 'components.sideBar.items.privacy',
+      title: 'navigation.about.items.privacy',
       slug: AboutNavigationKeys.privacy,
     },
     {
-      title: 'components.sideBar.items.security',
+      title: 'navigation.about.items.security',
       slug: AboutNavigationKeys.security,
     },
   ],
-  'components.sideBar.section.getInvolved': [
+  'navigation.about.section.getInvolved': [
     {
-      title: 'components.sideBar.section.getInvolved',
+      title: 'navigation.about.section.getInvolved',
       slug: AboutNavigationKeys.getInvolved,
     },
     {
-      title: 'components.sideBar.items.collabSummit',
+      title: 'navigation.about.items.collabSummit',
       slug: AboutNavigationKeys.collabSummit,
     },
     {
-      title: 'components.sideBar.items.contribute',
+      title: 'navigation.about.items.contribute',
       slug: AboutNavigationKeys.contribute,
     },
     {
-      title: 'components.sideBar.items.codeOfConduct',
+      title: 'navigation.about.items.codeOfConduct',
       slug: AboutNavigationKeys.codeOfConduct,
     },
   ],
-  'components.sideBar.section.download': [
+  'navigation.about.section.download': [
     {
-      title: 'components.sideBar.section.download',
+      title: 'navigation.about.section.download',
       slug: AboutNavigationKeys.download,
     },
     {
-      title: 'components.sideBar.items.packageManager',
+      title: 'navigation.about.items.packageManager',
       slug: AboutNavigationKeys.packageManager,
     },
     {
-      title: 'components.sideBar.items.previousReleases',
+      title: 'navigation.about.items.previousReleases',
       slug: AboutNavigationKeys.previousReleases,
     },
   ],

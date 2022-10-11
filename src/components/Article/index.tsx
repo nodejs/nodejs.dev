@@ -22,8 +22,8 @@ import styles from './index.module.scss';
 interface Props {
   title: string;
   body: string;
-  tableOfContents: TableOfContentsItem[];
-  authors: string[] | BlogPostAuthor[];
+  authors?: string[] | BlogPostAuthor[];
+  tableOfContents?: TableOfContentsItem[];
   relativePath?: string;
   absolutePath?: string;
   editPath?: string;
@@ -47,16 +47,17 @@ const mdxComponents = {
   Alert,
 };
 
-const renderBlogAuthors = (date?: string, authors?: BlogPostAuthor[]) => (
-  <BlogAuthorsList date={date} authors={authors || []} />
-);
-
-const renderTOC = (tableOfContents: TableOfContentsItem[]) => (
-  <TableOfContents tableOfContents={tableOfContents || []} />
-);
+const renderBlogAuthors = (
+  date: string | undefined,
+  authors: BlogPostAuthor[] | undefined
+) => <BlogAuthorsList date={date} authors={authors || []} />;
 
 const renderArticleAuthors = (authors: string[]) => (
   <AuthorList authors={authors || []} />
+);
+
+const renderTOC = (tableOfContents: TableOfContentsItem[] | undefined) => (
+  <TableOfContents tableOfContents={tableOfContents || []} />
 );
 
 const Article = ({

@@ -10,5 +10,8 @@ interface Props {
 }
 
 export const useScrollToElement = ({ element, isActive, ...p }: Props) => {
-  useEffect(() => (isActive ? scroller.scrollTo(element, p) : undefined), []);
+  useEffect(
+    () => (isActive ? scroller.scrollTo(element, p) : undefined),
+    [isActive]
+  );
 };

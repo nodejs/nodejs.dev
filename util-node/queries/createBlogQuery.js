@@ -18,6 +18,7 @@ module.exports = `
           category {
             slug
             name
+            description
           }
           blogAuthors {
             id
@@ -40,6 +41,7 @@ module.exports = `
       node {
         slug
         name
+        description
       }
     }
   }

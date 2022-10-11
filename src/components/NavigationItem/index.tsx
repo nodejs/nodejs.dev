@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
-import styles from './index.module.scss';
 import { useScrollToElement } from '../../hooks/useScrollToElement';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
+import styles from './index.module.scss';
 
 interface Props {
   slug: string;
@@ -23,12 +24,16 @@ const NavigationItem = ({
     [styles.navigationItemActive]: isActive,
   });
 
+  const isMobile = useMediaQuery('(max-width: 900px)');
+
   useScrollToElement({
     element: slug,
     smooth: true,
     containerId: 'main-navigation',
     offset: -100,
-    isActive,
+    // This needs to be a strict `===false` as
+    // the initial value is `undefined` as being CSR
+    isActive: isActive && isMobile === false,
   });
 
   const linkElement = useMemo(() => {
