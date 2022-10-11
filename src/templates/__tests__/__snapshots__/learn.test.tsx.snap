@@ -240,6 +240,7 @@ exports[`Learn Template renders correctly 1`] = `
       <nav
         aria-label="Learn Navigation"
         class="navigation"
+        id="main-navigation"
       >
         <button
           aria-expanded="false"
@@ -280,18 +281,26 @@ exports[`Learn Template renders correctly 1`] = `
             role="region"
             style="display: none;"
           >
-            <a
-              class="t-body2 navigationItem item itemDone"
-              href="test-slug-1"
+            <span
+              id="test-slug-1"
             >
-              test-title-1
-            </a>
-            <a
-              class="t-body2 navigationItem item itemDone"
-              href="test-slug-2"
+              <a
+                class="t-body2 navigationItem item itemDone"
+                href="test-slug-1"
+              >
+                test-title-1
+              </a>
+            </span>
+            <span
+              id="test-slug-2"
             >
-              test-title-2
-            </a>
+              <a
+                class="t-body2 navigationItem item itemDone"
+                href="test-slug-2"
+              >
+                test-title-2
+              </a>
+            </span>
           </div>
         </div>
         <div
@@ -326,18 +335,26 @@ exports[`Learn Template renders correctly 1`] = `
             role="region"
             style="display: none;"
           >
-            <a
-              class="t-body2 navigationItem item itemDone"
-              href="test-slug-3"
+            <span
+              id="test-slug-3"
             >
-              test-title-3
-            </a>
-            <a
-              class="t-body2 navigationItem item itemDone"
-              href="test-slug-4"
+              <a
+                class="t-body2 navigationItem item itemDone"
+                href="test-slug-3"
+              >
+                test-title-3
+              </a>
+            </span>
+            <span
+              id="test-slug-4"
             >
-              test-title-4
-            </a>
+              <a
+                class="t-body2 navigationItem item itemDone"
+                href="test-slug-4"
+              >
+                test-title-4
+              </a>
+            </span>
           </div>
         </div>
       </nav>

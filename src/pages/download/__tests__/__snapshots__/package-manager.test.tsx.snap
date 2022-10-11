@@ -240,6 +240,7 @@ exports[`Package Manager Page renders correctly 1`] = `
       <nav
         aria-label="About Navigation"
         class="navigation"
+        id="main-navigation"
       >
         <button
           aria-expanded="false"
@@ -265,36 +266,56 @@ exports[`Package Manager Page renders correctly 1`] = `
             role="region"
             style="display: block;"
           >
-            <a
-              class="t-body2 navigationItem"
-              href="/about/governance/"
+            <span
+              id="/about/governance/"
             >
-              Project Governance
-            </a>
-            <a
-              class="t-body2 navigationItem"
-              href="/about/releases/"
+              <a
+                class="t-body2 navigationItem"
+                href="/about/governance/"
+              >
+                Project Governance
+              </a>
+            </span>
+            <span
+              id="/about/releases/"
             >
-              Releases
-            </a>
-            <a
-              class="t-body2 navigationItem"
-              href="/about/resources/"
+              <a
+                class="t-body2 navigationItem"
+                href="/about/releases/"
+              >
+                Releases
+              </a>
+            </span>
+            <span
+              id="/about/resources/"
             >
-              Resources
-            </a>
-            <a
-              class="t-body2 navigationItem"
-              href="https://privacy-policy.openjsf.org/"
+              <a
+                class="t-body2 navigationItem"
+                href="/about/resources/"
+              >
+                Resources
+              </a>
+            </span>
+            <span
+              id="https://privacy-policy.openjsf.org/"
             >
-              Privacy Policy
-            </a>
-            <a
-              class="t-body2 navigationItem"
-              href="/about/security/"
+              <a
+                class="t-body2 navigationItem"
+                href="https://privacy-policy.openjsf.org/"
+              >
+                Privacy Policy
+              </a>
+            </span>
+            <span
+              id="/about/security/"
             >
-              Security Reporting
-            </a>
+              <a
+                class="t-body2 navigationItem"
+                href="/about/security/"
+              >
+                Security Reporting
+              </a>
+            </span>
           </div>
         </div>
         <div
@@ -314,24 +335,36 @@ exports[`Package Manager Page renders correctly 1`] = `
             role="region"
             style="display: block;"
           >
-            <a
-              class="t-body2 navigationItem"
-              href="/get-involved/collab-summit"
+            <span
+              id="/get-involved/collab-summit"
             >
-              Collab Summit
-            </a>
-            <a
-              class="t-body2 navigationItem"
-              href="/get-involved/contribute"
+              <a
+                class="t-body2 navigationItem"
+                href="/get-involved/collab-summit"
+              >
+                Collab Summit
+              </a>
+            </span>
+            <span
+              id="/get-involved/contribute"
             >
-              Contribute
-            </a>
-            <a
-              class="t-body2 navigationItem"
-              href="https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md"
+              <a
+                class="t-body2 navigationItem"
+                href="/get-involved/contribute"
+              >
+                Contribute
+              </a>
+            </span>
+            <span
+              id="https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md"
             >
-              Code of Conduct
-            </a>
+              <a
+                class="t-body2 navigationItem"
+                href="https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md"
+              >
+                Code of Conduct
+              </a>
+            </span>
           </div>
         </div>
         <div
@@ -351,19 +384,27 @@ exports[`Package Manager Page renders correctly 1`] = `
             role="region"
             style="display: block;"
           >
-            <a
-              aria-current="page"
-              class="t-body2 navigationItem navigationItemActive"
-              href="/download/package-manager/"
+            <span
+              id="/download/package-manager/"
             >
-              Package Manager
-            </a>
-            <a
-              class="t-body2 navigationItem"
-              href="/download/releases/"
+              <a
+                aria-current="page"
+                class="t-body2 navigationItem navigationItemActive"
+                href="/download/package-manager/"
+              >
+                Package Manager
+              </a>
+            </span>
+            <span
+              id="/download/releases/"
             >
-              Previous Releases
-            </a>
+              <a
+                class="t-body2 navigationItem"
+                href="/download/releases/"
+              >
+                Previous Releases
+              </a>
+            </span>
           </div>
         </div>
       </nav>
