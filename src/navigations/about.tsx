@@ -63,21 +63,13 @@ const AboutNavigationSection = ({
 }: React.PropsWithChildren<NavigationSectionData>) => {
   const titleClassNames = classnames('t-body2', styles.title);
 
-  return (
-    <NavigationSection
-      isOpen
-      title={
-        <button type="button" className={titleClassNames} aria-expanded>
-          <span>{title}</span>
-        </button>
-      }
-      content={
-        <div role="region" style={{ display: 'block' }}>
-          {children}
-        </div>
-      }
-    />
+  const sectionTitle = (
+    <button type="button" className={titleClassNames} aria-expanded>
+      <span>{title}</span>
+    </button>
   );
+
+  return <NavigationSection isOpen title={sectionTitle} content={children} />;
 };
 
 interface Props {

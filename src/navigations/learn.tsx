@@ -23,27 +23,23 @@ const LearnNavigationSection = ({
 
   const titleClassNames = classnames('t-body2', styles.title);
 
-  const contentStyle = { display: isSectionOpen ? 'block' : 'none' };
+  const sectionTitle = (
+    <button
+      type="button"
+      className={titleClassNames}
+      onClick={toggleSection}
+      aria-expanded={isSectionOpen}
+    >
+      <span>{title}</span>
+      <FontAwesomeIcon icon={isSectionOpen ? faCaretDown : faCaretUp} />
+    </button>
+  );
 
   return (
     <NavigationSection
       isOpen={isSectionOpen}
-      title={
-        <button
-          type="button"
-          className={titleClassNames}
-          onClick={toggleSection}
-          aria-expanded={isSectionOpen}
-        >
-          <span>{title}</span>
-          <FontAwesomeIcon icon={isSectionOpen ? faCaretDown : faCaretUp} />
-        </button>
-      }
-      content={
-        <div role="region" style={contentStyle}>
-          {children}
-        </div>
-      }
+      title={sectionTitle}
+      content={children}
     />
   );
 };
