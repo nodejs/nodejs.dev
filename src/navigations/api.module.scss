@@ -1,12 +1,11 @@
-
 @import '../components/NavigationSection/index.module.scss';
 
 .title {
   @extend %navigation-section-title;
+  margin: 0;
 
   padding-bottom: 0;
   padding-left: 0;
-  margin: 0;
 
   > span svg {
     font-size: 20px;
@@ -20,9 +19,9 @@
 
 .item {
   margin: 0 0 0 var(--space-32);
+  overflow: hidden;
   padding: var(--space-08) 0 0 0;
 
   text-overflow: ellipsis;
-  overflow: hidden;
   white-space: nowrap;
 }

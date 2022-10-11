@@ -7,9 +7,9 @@ $checkSvg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
   @include navigationItemBase;
 
   color: var(--color-text-secondary);
-  margin: 0 0 0 var(--space-24);
   cursor: pointer;
   display: block;
+  margin: 0 0 0 var(--space-24);
 
   @media (max-width: 900px) {
     padding-top: var(--space-08);

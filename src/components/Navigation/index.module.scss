@@ -5,8 +5,8 @@
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   height: calc(100vh - var(--nav-height));
   max-width: 36rem;
-  overflow-y: scroll;
   overflow-x: hidden;
+  overflow-y: scroll;
   padding: 0 var(--space-20);
   position: sticky;
   top: var(--nav-height);
@@ -17,10 +17,10 @@
     height: 42px;
     max-width: unset;
     overflow: hidden;
+    padding-bottom: var(--space-48);
     position: relative;
     top: 0;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    padding-bottom: var(--space-48);
   }
 
   &__open,
