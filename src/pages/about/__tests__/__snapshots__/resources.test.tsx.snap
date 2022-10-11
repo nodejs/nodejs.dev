@@ -315,12 +315,6 @@ exports[`Resources page renders correctly 1`] = `
           </a>
           <a
             class="t-body2 navigationItem"
-            href="/get-involved/code-learn"
-          >
-            Code + Learn
-          </a>
-          <a
-            class="t-body2 navigationItem"
             href="/get-involved/collab-summit"
           >
             Collab Summit
@@ -456,15 +450,15 @@ exports[`Resources page renders correctly 1`] = `
           <ul>
             <li>
               <a
+                aria-label="MrJithil Github - opens in new tab"
                 class="link"
                 href="https://github.com/MrJithil"
                 rel="noopener noreferrer"
                 style="margin-left: 0px;"
                 target="_blank"
-                title="MrJithil"
               >
                 <img
-                  alt="MrJithil"
+                  alt=""
                   src="https://github.com/MrJithil.png?size=60"
                 />
               </a>

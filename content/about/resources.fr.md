@@ -8,7 +8,7 @@ category: about
 
 ## Téléchargements de logos
 
-Veuillez consulter la [politique de marque](/trademark) pour obtenir des informations sur l'utilisation autorisée des logos et des marques de Node.js®.
+Veuillez consulter la [politique de marque](https://trademark-policy.openjsf.org/) pour obtenir des informations sur l'utilisation autorisée des logos et des marques de Node.js®.
 
 Les directives relatives à l'affichage de la marque Node.js sont décrites dans les [Directives visuelles] (/static/documents/foundation-visual-guidelines.pdf).
 
