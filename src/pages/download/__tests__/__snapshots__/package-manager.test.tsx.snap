@@ -261,6 +261,7 @@ exports[`Package Manager Page renders correctly 1`] = `
             </span>
           </button>
           <div
+            aria-label="About Node.js"
             role="region"
             style="display: block;"
           >
@@ -309,6 +310,7 @@ exports[`Package Manager Page renders correctly 1`] = `
             </span>
           </button>
           <div
+            aria-label="Get Involved"
             role="region"
             style="display: block;"
           >
@@ -345,6 +347,7 @@ exports[`Package Manager Page renders correctly 1`] = `
             </span>
           </button>
           <div
+            aria-label="Download"
             role="region"
             style="display: block;"
           >

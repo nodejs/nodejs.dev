@@ -69,7 +69,14 @@ const AboutNavigationSection = ({
     </button>
   );
 
-  return <NavigationSection isOpen title={sectionTitle} content={children} />;
+  return (
+    <NavigationSection
+      isOpen
+      label={title}
+      title={sectionTitle}
+      content={children}
+    />
+  );
 };
 
 interface Props {

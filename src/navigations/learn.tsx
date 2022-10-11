@@ -37,6 +37,7 @@ const LearnNavigationSection = ({
 
   return (
     <NavigationSection
+      label={title}
       isOpen={isSectionOpen}
       title={sectionTitle}
       content={children}

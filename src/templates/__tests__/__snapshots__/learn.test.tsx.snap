@@ -276,6 +276,7 @@ exports[`Learn Template renders correctly 1`] = `
             </svg>
           </button>
           <div
+            aria-label="test-section"
             role="region"
             style="display: none;"
           >
@@ -321,6 +322,7 @@ exports[`Learn Template renders correctly 1`] = `
             </svg>
           </button>
           <div
+            aria-label="test-section2"
             role="region"
             style="display: none;"
           >
