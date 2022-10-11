@@ -26,7 +26,7 @@ Lorsque vous apprenez à coder, vous pouvez aussi vous demander où s'arrête Ja
 * Template Literals
 * Semicolons
 * Strict Mode
-* ECMAScript 2015 and beyond
+* ECMAScript 2015 et plus
 
 Avec ces concepts en tête, vous êtes sur la bonne voie pour devenir un développeur JavaScript compétent, à la fois dans le navigateur et dans Node.js.
 
