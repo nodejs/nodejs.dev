@@ -48,7 +48,7 @@ const mdxComponents = {
 };
 
 const renderBlogAuthors = (date?: string, authors?: BlogPostAuthor[]) => (
-  <BlogAuthorsList date={date} authors={authors} />
+  <BlogAuthorsList date={date} authors={authors || []} />
 );
 
 const renderTOC = (tableOfContents: TableOfContentsItem[]) => (
@@ -56,7 +56,7 @@ const renderTOC = (tableOfContents: TableOfContentsItem[]) => (
 );
 
 const renderArticleAuthors = (authors: string[]) => (
-  <AuthorList authors={authors as string[]} />
+  <AuthorList authors={authors || []} />
 );
 
 const Article = ({
