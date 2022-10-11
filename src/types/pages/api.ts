@@ -1,5 +1,5 @@
 import { PageTableOfContents, PaginationInfo } from '../markdown';
-import { NavigationSectionData } from '../navigation';
+import { NavigationData } from '../navigation';
 import { NodeReleaseData } from '../releases';
 
 export interface ApiTemplateData {
@@ -20,7 +20,7 @@ export interface ApiTemplateContext {
   relativePath: string;
   next: PaginationInfo;
   previous: PaginationInfo;
-  navigationData: NavigationSectionData;
+  navigationData: NavigationData;
   nodeReleases: {
     nodeReleasesData: NodeReleaseData[];
     apiAvailableVersions: string[];

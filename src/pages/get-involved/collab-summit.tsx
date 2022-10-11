@@ -1,11 +1,11 @@
 import { graphql } from 'gatsby';
 import ArticleLayout from '../../components/Layout/article';
-import { SideNavBarKeys } from '../../components/SideNavBar';
 import connectGraphQlArticle from '../../components/connectGraphQlArticle';
+import { AboutNavigationKeys } from '../../types';
 
 export default connectGraphQlArticle(ArticleLayout, {
   editPath: 'content/get-involved/collab-summit.md',
-  sidenavKey: SideNavBarKeys.collabSummit,
+  currentSlug: AboutNavigationKeys.collabSummit,
 });
 
 export const query = graphql`

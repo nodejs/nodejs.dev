@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
-import Navigation from '../containers/Navigation';
+import LearnNavigation from '../navigations/learn';
 import { connectGraphQlCustom } from '../components/connectGraphQlArticle';
 import { LearnTemplateContext, LearnTemplateData } from '../types';
 
@@ -25,12 +25,7 @@ const LearnLayout = ({
 }: Props): JSX.Element => (
   <Layout title={displayTitle} description={description}>
     <main className="grid-container">
-      <Navigation
-        currentSlug={slug}
-        label="Secondary"
-        sections={navigationData}
-        category="learn"
-      />
+      <LearnNavigation sections={navigationData} currentSlug={slug} />
       <Article
         title={displayTitle}
         body={body}

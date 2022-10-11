@@ -4,27 +4,22 @@ import classnames from 'classnames';
 import styles from './index.module.scss';
 
 interface Props {
-  key: string;
-  isRead: boolean;
-  isActive: boolean;
   slug: string;
   title: string;
-  isApiDocs?: boolean;
+  isActive: boolean;
+  extraClasses?: string;
   onClick?: (event: React.MouseEvent<HTMLLinkElement>) => void;
 }
 
 const NavigationItem = ({
-  isRead,
-  isActive,
   slug,
   title,
-  isApiDocs,
   onClick,
+  isActive,
+  extraClasses,
 }: Props): JSX.Element => {
-  const className = classnames(`t-body2 ${styles.navigationItem}`, {
-    [styles.navigationItemDone]: isRead,
-    [styles.navigationItemActive]: !isRead && isActive,
-    [styles.navigationItemApi]: isApiDocs,
+  const className = classnames('t-body2', styles.navigationItem, extraClasses, {
+    [styles.navigationItemActive]: isActive,
   });
 
   if (slug.startsWith('https')) {
