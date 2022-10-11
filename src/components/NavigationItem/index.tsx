@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
 import styles from './index.module.scss';
+import { useScrollToElement } from '../../hooks/useScrollToElement';
 
 interface Props {
   slug: string;
@@ -22,24 +23,38 @@ const NavigationItem = ({
     [styles.navigationItemActive]: isActive,
   });
 
-  if (slug.startsWith('https')) {
-    return (
-      <a href={slug} className={className}>
-        {title}
-      </a>
-    );
-  }
+  useScrollToElement({
+    element: slug,
+    smooth: true,
+    containerId: 'main-navigation',
+    offset: -100,
+    isActive,
+  });
 
-  return (
-    <Link
-      onClick={onClick}
-      to={slug}
-      className={className}
-      aria-current={isActive ? 'page' : undefined}
-    >
-      {title}
-    </Link>
-  );
+  const linkElement = useMemo(() => {
+    if (slug.startsWith('https')) {
+      return (
+        <a href={slug} className={className}>
+          {title}
+        </a>
+      );
+    }
+
+    const ariaCurrent = isActive ? 'page' : undefined;
+
+    return (
+      <Link
+        to={slug}
+        className={className}
+        onClick={onClick}
+        aria-current={ariaCurrent}
+      >
+        {title}
+      </Link>
+    );
+  }, [slug, onClick, isActive, className, title]);
+
+  return <span id={slug}>{linkElement}</span>;
 };
 
 export default NavigationItem;

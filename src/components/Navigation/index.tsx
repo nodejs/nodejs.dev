@@ -20,7 +20,7 @@ const NavigationContainer = ({
   });
 
   return (
-    <nav aria-label={label} className={navigationClasses}>
+    <nav aria-label={label} className={navigationClasses} id="main-navigation">
       <button
         type="button"
         className={styles.navigationOpen}
