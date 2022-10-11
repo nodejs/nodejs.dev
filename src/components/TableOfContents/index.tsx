@@ -36,7 +36,7 @@ const traverseTableOfContents = (
 };
 
 const TableOfContents = ({ tableOfContents }: Props): JSX.Element => {
-  if (tableOfContents) {
+  if (tableOfContents.length) {
     return (
       <details className={styles.tableOfContents}>
         <summary>

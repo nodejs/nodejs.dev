@@ -11,6 +11,10 @@ import styles from './about.module.scss';
 const aboutNavigation = {
   'components.sideBar.section.about': [
     {
+      title: 'components.sideBar.section.about',
+      slug: AboutNavigationKeys.about,
+    },
+    {
       title: 'components.sideBar.items.governance',
       slug: AboutNavigationKeys.governance,
     },
@@ -33,6 +37,10 @@ const aboutNavigation = {
   ],
   'components.sideBar.section.getInvolved': [
     {
+      title: 'components.sideBar.section.getInvolved',
+      slug: AboutNavigationKeys.getInvolved,
+    },
+    {
       title: 'components.sideBar.items.collabSummit',
       slug: AboutNavigationKeys.collabSummit,
     },
@@ -46,6 +54,10 @@ const aboutNavigation = {
     },
   ],
   'components.sideBar.section.download': [
+    {
+      title: 'components.sideBar.section.download',
+      slug: AboutNavigationKeys.download,
+    },
     {
       title: 'components.sideBar.items.packageManager',
       slug: AboutNavigationKeys.packageManager,

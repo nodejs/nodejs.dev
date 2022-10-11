@@ -6,6 +6,7 @@ import { AboutNavigationKeys } from '../../types';
 export default connectGraphQlArticle(ArticleLayout, {
   editPath: 'content/download/package-manager.md',
   currentSlug: AboutNavigationKeys.packageManager,
+  hideArticleComponents: true,
 });
 
 export const query = graphql`

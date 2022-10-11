@@ -14,6 +14,7 @@ export interface ReleasesNodeReleases {
 export default connectGraphQlArticle(ArticleLayout, {
   editPath: 'content/download/releases.md',
   currentSlug: AboutNavigationKeys.previousReleases,
+  hideArticleComponents: true,
   articleContent: (props: ReleasesNodeReleases) => (
     <DownloadTable
       nodeReleasesData={props.nodeReleases.nodeReleasesData.filter(

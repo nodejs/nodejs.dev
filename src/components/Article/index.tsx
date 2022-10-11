@@ -52,7 +52,7 @@ const renderBlogAuthors = (date?: string, authors?: BlogPostAuthor[]) => (
 );
 
 const renderTOC = (tableOfContents: TableOfContentsItem[]) => (
-  <TableOfContents tableOfContents={tableOfContents} />
+  <TableOfContents tableOfContents={tableOfContents || []} />
 );
 
 const renderArticleAuthors = (authors: string[]) => (

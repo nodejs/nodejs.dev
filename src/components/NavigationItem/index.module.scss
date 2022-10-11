@@ -1,5 +1,4 @@
 @import '../../styles/mixins.scss';
-@import '../../styles/animations.scss';
 
 $checkSvg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'%3E%3C/path%3E%3C/svg%3E");
 
@@ -17,7 +16,6 @@ $checkSvg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
   }
 
   &--active {
-    animation: 'blink-animation' 5s linear;
     color: var(--color-text-accent);
     font-weight: var(--font-weight-semibold);
   }

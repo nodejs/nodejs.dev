@@ -34,6 +34,17 @@ exports[`About page renders correctly 1`] = `
         style="display: block;"
       >
         <span
+          id="/about/"
+        >
+          <a
+            aria-current="page"
+            class="t-body2 navigationItem navigationItemActive"
+            href="/about/"
+          >
+            About Node.js
+          </a>
+        </span>
+        <span
           id="/about/governance/"
         >
           <a
@@ -103,6 +114,16 @@ exports[`About page renders correctly 1`] = `
         style="display: block;"
       >
         <span
+          id="/get-involved/"
+        >
+          <a
+            class="t-body2 navigationItem"
+            href="/get-involved/"
+          >
+            Get Involved
+          </a>
+        </span>
+        <span
           id="/get-involved/collab-summit"
         >
           <a
@@ -152,6 +173,16 @@ exports[`About page renders correctly 1`] = `
         style="display: block;"
       >
         <span
+          id="/download/"
+        >
+          <a
+            class="t-body2 navigationItem"
+            href="/download/"
+          >
+            Download
+          </a>
+        </span>
+        <span
           id="/download/package-manager/"
         >
           <a
@@ -182,53 +213,8 @@ exports[`About page renders correctly 1`] = `
     >
       Mock Title
     </h1>
-    <div
-      class="authorList"
-    >
-      Article Authors
-      <ul>
-        <li>
-          <a
-            aria-label="author-mock Github - opens in new tab"
-            class="link"
-            href="https://github.com/author-mock"
-            rel="noopener noreferrer"
-            style="margin-left: 0px;"
-            target="_blank"
-          >
-            <img
-              alt=""
-              src="https://github.com/author-mock.png?size=60"
-            />
-          </a>
-        </li>
-      </ul>
-    </div>
-    <details
-      class="tableOfContents"
-    >
-      <summary>
-        <strong>
-          Table of Contents
-        </strong>
-      </summary>
-      <ul>
-        <li>
-          <a
-            href="#mock-title"
-          >
-            mock-title
-          </a>
-        </li>
-        <li>
-          <a
-            href="#mock-title-2"
-          >
-            mock-title-2
-          </a>
-        </li>
-      </ul>
-    </details>
+    <div />
+    <div />
     <div>
       <p>
         Node.js can be installed in different ways. This post highlights the most common and convenient ones.

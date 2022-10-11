@@ -11,6 +11,7 @@ interface PageDefaultProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   articleContent?: (props: any) => JSX.Element;
   childrenPosition?: 'before' | 'after';
+  hideArticleComponents?: boolean;
 }
 
 interface ParseGraphqlProps<T extends object> {
@@ -97,6 +98,13 @@ const connectGraphQlArticle = (
       ...extraProps,
       ...extraData,
     };
+
+    // In some pages we don't want to show these extra components
+    // Like, for example, the about pages that aren't really "articles"
+    if (articleLayoutProps.hideArticleComponents) {
+      articleLayoutProps.tableOfContents = undefined;
+      articleLayoutProps.authors = [];
+    }
 
     // Attempt to modify the editPath adding the locale prefix to the extension file
     // If the current Article is fallbacking in the current language, it creates an opportunity

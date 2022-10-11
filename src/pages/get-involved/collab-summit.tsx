@@ -6,6 +6,7 @@ import { AboutNavigationKeys } from '../../types';
 export default connectGraphQlArticle(ArticleLayout, {
   editPath: 'content/get-involved/collab-summit.md',
   currentSlug: AboutNavigationKeys.collabSummit,
+  hideArticleComponents: true,
 });
 
 export const query = graphql`
