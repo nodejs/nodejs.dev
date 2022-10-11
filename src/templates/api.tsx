@@ -77,8 +77,10 @@ const Api = ({
         </Navigation>
         <Article
           title={displayTitle}
+          fileTitle={title}
           tableOfContents={filteredTableOfContets}
           body={body}
+          version={version}
           next={next}
           previous={previous}
           absolutePath={`https://github.com/nodejs/node/edit/main/doc/api/${title}.md`}

@@ -18,10 +18,13 @@ import Table from '../Table';
 import Alert from '../Alert';
 import BlockQuote from '../BlockQuote';
 import styles from './index.module.scss';
+import JsonLink from '../JsonLink';
 
 interface Props {
   title: string;
   body: string;
+  version?: string;
+  fileTitle?: string;
   tableOfContents: TableOfContentsItem[];
   authors: string[] | BlogPostAuthor[];
   relativePath?: string;
@@ -57,7 +60,9 @@ const renderTOC = (tableOfContents: TableOfContentsItem[]) => (
 
 const Article = ({
   title,
+  fileTitle,
   body,
+  version,
   tableOfContents,
   previous,
   next,
@@ -93,6 +98,9 @@ const Article = ({
         editPath={editPath}
         hasNoAuthors={!authors || !authors.length}
       />
+    )}
+    {version && fileTitle && (
+      <JsonLink version={version} fileTitle={fileTitle} />
     )}
     {!blog && <Pagination previous={previous} next={next} />}
   </article>
