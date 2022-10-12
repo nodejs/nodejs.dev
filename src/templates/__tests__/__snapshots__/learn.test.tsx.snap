@@ -335,29 +335,29 @@ exports[`Learn Template renders correctly 1`] = `
           <ul>
             <li>
               <a
+                aria-label="test-user1 Github - opens in new tab"
                 class="link"
                 href="https://github.com/test-user1"
                 rel="noopener noreferrer"
                 style="margin-left: 0px;"
                 target="_blank"
-                title="test-user1"
               >
                 <img
-                  alt="test-user1"
+                  alt=""
                   src="https://github.com/test-user1.png?size=60"
                 />
               </a>
             </li>
             <li>
               <a
+                aria-label="test-user2 Github - opens in new tab"
                 class="link"
                 href="https://github.com/test-user2"
                 rel="noopener noreferrer"
                 target="_blank"
-                title="test-user2"
               >
                 <img
-                  alt="test-user2"
+                  alt=""
                   src="https://github.com/test-user2.png?size=60"
                 />
               </a>

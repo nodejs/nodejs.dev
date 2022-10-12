@@ -80,11 +80,11 @@
   "components.header.links.certification": "Certification",
   "components.sideBar.section.about": "A propos de Node.js",
   "components.sideBar.section.getInvolved": "S'impliquer",
-  "components.sideBar.items.codeLearn": "Code + Apprendre",
   "components.sideBar.items.collabSummit": "Sommet de la collaboration",
   "components.sideBar.items.contribute": "Contribuer",
   "components.sideBar.section.download": "Télécharger",
   "components.sideBar.items.previousReleases": "Anciennes versions",
   "components.sideBar.items.codeOfConduct": "Code de conduite",
-  "components.sideBar.section.blog": "Node.js Blog"
+  "components.sideBar.section.blog": "Node.js Blog",
+  "components.author.githubLinkLabel": "{username} Github - opens in new tab"
 }

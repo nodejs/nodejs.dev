@@ -18,7 +18,6 @@ export enum SideNavBarKeys {
   privacy = 'https://privacy-policy.openjsf.org/',
   security = '/about/security/',
   getInvolved = '/get-involved/',
-  codeLearn = '/get-involved/code-learn',
   collabSummit = '/get-involved/collab-summit',
   contribute = '/get-involved/contribute',
   download = '/download/',
@@ -59,10 +58,6 @@ const sideNavBarItems: SideNavBarItem[] = [
     slug: SideNavBarKeys.getInvolved,
     icon: GroupsIcon,
     isTitle: true,
-  },
-  {
-    title: 'components.sideBar.items.codeLearn',
-    slug: SideNavBarKeys.codeLearn,
   },
   {
     title: 'components.sideBar.items.collabSummit',
