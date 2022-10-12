@@ -60,6 +60,7 @@ also have committer rights on the repo.
 
 <!-- ncu-team-sync.team(nodejs/nodejs-dev) -->
 
+* [@aymen94](https://github.com/aymen94) - Aymen Naghmouchi
 * [@benhalverson](https://github.com/benhalverson) - Ben Halverson
 * [@darcyclarke](https://github.com/darcyclarke) - Darcy Clarke
 * [@joesepi](https://github.com/joesepi) - Joe Sepi
@@ -67,7 +68,6 @@ also have committer rights on the repo.
 * [@MylesBorins](https://github.com/MylesBorins) - Myles Borins
 * [@ovflowd](https://github.com/ovflowd) - Claudio Wunder
 * [@rodion-arr](https://github.com/rodion-arr) - Rodion Abdurakhimov
-* [@aymen94](https://github.com/aymen94) - Aymen Naghmouchi
 * [@Trott](https://github.com/Trott) - Rich Trott
 
 <!-- ncu-team-sync end -->
