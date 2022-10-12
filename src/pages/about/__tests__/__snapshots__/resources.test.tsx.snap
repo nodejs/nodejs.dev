@@ -266,67 +266,49 @@ exports[`Resources page renders correctly 1`] = `
             role="region"
             style="display: block;"
           >
-            <span
+            <a
+              aria-current="page"
+              class="t-body2 navigationItem navigationItemActive"
+              href="/about/"
               id="/about/"
             >
-              <a
-                aria-current="page"
-                class="t-body2 navigationItem navigationItemActive"
-                href="/about/"
-              >
-                About Node.js
-              </a>
-            </span>
-            <span
+              About Node.js
+            </a>
+            <a
+              class="t-body2 navigationItem"
+              href="/about/governance/"
               id="/about/governance/"
             >
-              <a
-                class="t-body2 navigationItem"
-                href="/about/governance/"
-              >
-                Project Governance
-              </a>
-            </span>
-            <span
+              Project Governance
+            </a>
+            <a
+              class="t-body2 navigationItem"
+              href="/about/releases/"
               id="/about/releases/"
             >
-              <a
-                class="t-body2 navigationItem"
-                href="/about/releases/"
-              >
-                Releases
-              </a>
-            </span>
-            <span
+              Releases
+            </a>
+            <a
+              class="t-body2 navigationItem"
+              href="/about/resources/"
               id="/about/resources/"
             >
-              <a
-                class="t-body2 navigationItem"
-                href="/about/resources/"
-              >
-                Resources
-              </a>
-            </span>
-            <span
+              Resources
+            </a>
+            <a
+              class="t-body2 navigationItem"
+              href="https://privacy-policy.openjsf.org/"
               id="https://privacy-policy.openjsf.org/"
             >
-              <a
-                class="t-body2 navigationItem"
-                href="https://privacy-policy.openjsf.org/"
-              >
-                Privacy Policy
-              </a>
-            </span>
-            <span
+              Privacy Policy
+            </a>
+            <a
+              class="t-body2 navigationItem"
+              href="/about/security/"
               id="/about/security/"
             >
-              <a
-                class="t-body2 navigationItem"
-                href="/about/security/"
-              >
-                Security Reporting
-              </a>
-            </span>
+              Security Reporting
+            </a>
           </div>
         </div>
         <div
@@ -346,46 +328,34 @@ exports[`Resources page renders correctly 1`] = `
             role="region"
             style="display: block;"
           >
-            <span
+            <a
+              class="t-body2 navigationItem"
+              href="/get-involved/"
               id="/get-involved/"
             >
-              <a
-                class="t-body2 navigationItem"
-                href="/get-involved/"
-              >
-                Get Involved
-              </a>
-            </span>
-            <span
+              Get Involved
+            </a>
+            <a
+              class="t-body2 navigationItem"
+              href="/get-involved/collab-summit"
               id="/get-involved/collab-summit"
             >
-              <a
-                class="t-body2 navigationItem"
-                href="/get-involved/collab-summit"
-              >
-                Collab Summit
-              </a>
-            </span>
-            <span
+              Collab Summit
+            </a>
+            <a
+              class="t-body2 navigationItem"
+              href="/get-involved/contribute"
               id="/get-involved/contribute"
             >
-              <a
-                class="t-body2 navigationItem"
-                href="/get-involved/contribute"
-              >
-                Contribute
-              </a>
-            </span>
-            <span
+              Contribute
+            </a>
+            <a
+              class="t-body2 navigationItem"
+              href="https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md"
               id="https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md"
             >
-              <a
-                class="t-body2 navigationItem"
-                href="https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md"
-              >
-                Code of Conduct
-              </a>
-            </span>
+              Code of Conduct
+            </a>
           </div>
         </div>
         <div
@@ -405,36 +375,27 @@ exports[`Resources page renders correctly 1`] = `
             role="region"
             style="display: block;"
           >
-            <span
+            <a
+              class="t-body2 navigationItem"
+              href="/download/"
               id="/download/"
             >
-              <a
-                class="t-body2 navigationItem"
-                href="/download/"
-              >
-                Download
-              </a>
-            </span>
-            <span
+              Download
+            </a>
+            <a
+              class="t-body2 navigationItem"
+              href="/download/package-manager/"
               id="/download/package-manager/"
             >
-              <a
-                class="t-body2 navigationItem"
-                href="/download/package-manager/"
-              >
-                Package Manager
-              </a>
-            </span>
-            <span
+              Package Manager
+            </a>
+            <a
+              class="t-body2 navigationItem"
+              href="/download/releases/"
               id="/download/releases/"
             >
-              <a
-                class="t-body2 navigationItem"
-                href="/download/releases/"
-              >
-                Previous Releases
-              </a>
-            </span>
+              Previous Releases
+            </a>
           </div>
         </div>
       </nav>

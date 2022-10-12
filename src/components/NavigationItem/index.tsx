@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
 import { useScrollToElement } from '../../hooks/useScrollToElement';
@@ -36,30 +36,25 @@ const NavigationItem = ({
     isActive: isActive && isMobile === false,
   });
 
-  const linkElement = useMemo(() => {
-    if (slug.startsWith('https')) {
-      return (
-        <a href={slug} className={className}>
-          {title}
-        </a>
-      );
-    }
-
-    const ariaCurrent = isActive ? 'page' : undefined;
-
+  if (slug.startsWith('https')) {
     return (
-      <Link
-        to={slug}
-        className={className}
-        onClick={onClick}
-        aria-current={ariaCurrent}
-      >
+      <a id={slug} href={slug} className={className}>
         {title}
-      </Link>
+      </a>
     );
-  }, [slug, onClick, isActive, className, title]);
+  }
 
-  return <span id={slug}>{linkElement}</span>;
+  return (
+    <Link
+      id={slug}
+      to={slug}
+      className={className}
+      onClick={onClick}
+      aria-current={isActive ? 'page' : undefined}
+    >
+      {title}
+    </Link>
+  );
 };
 
 export default NavigationItem;

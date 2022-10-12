@@ -16,7 +16,7 @@ describe('Blog Card component', () => {
           blogAuthors: [
             { name: 'Batman', website: 'https://bat.man', id: 'batman' },
           ],
-          category: { name: 'category-mock', slug: 'category-mock-slug' },
+          category: { name: 'category-mock', slug: 'blog.title' },
           title: 'Sample Test Blog',
         },
       },

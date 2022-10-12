@@ -1,8 +1,26 @@
 import React, { useMemo } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import Layout from '../components/Layout';
-import { BlogTemplateContext } from '../types';
-import BlogContainer from '../containers/BlogContainer';
+import BlogCard from '../components/BlogCard';
+import BlockQuote from '../components/BlockQuote';
+import BlogNavigation from '../navigations/blog';
+import { blogPath } from '../../pathPrefixes';
+import { BlogCategory, BlogTemplateContext } from '../types';
+import styles from '../styles/templates/blog.module.scss';
+
+const blogHomeSection = {
+  title: 'blog.categories.all',
+  slug: blogPath,
+};
+
+const getCategoryName = (category: string) =>
+  category.length ? `${blogPath}${category}/` : blogPath;
+
+const parseNavigationData = (categories: BlogCategory[]) =>
+  categories.map(({ node }) => ({
+    title: node.slug,
+    slug: `${blogPath}${node.name}/`,
+  }));
 
 interface Props {
   pageContext: BlogTemplateContext;
@@ -31,11 +49,23 @@ const BlogTemplate = ({
   return (
     <Layout title="Blogs at Nodejs">
       <main className="grid-container">
-        <BlogContainer
-          posts={posts}
-          categories={categories}
-          currentCategory={currentCategory}
+        <BlogNavigation
+          currentCategory={getCategoryName(currentCategory.name)}
+          categories={[blogHomeSection, ...parseNavigationData(categories)]}
         />
+        <div className={styles.blogGridContainer}>
+          <div className={styles.blogCategoryHeader}>
+            <h1>{currentCategory.slug}</h1>
+            <BlockQuote>
+              <span>{currentCategory.description}</span>
+            </BlockQuote>
+          </div>
+          <div className={styles.blogItems}>
+            {posts.map(edge => (
+              <BlogCard key={edge.node.fields.slug} data={edge} />
+            ))}
+          </div>
+        </div>
       </main>
     </Layout>
   );

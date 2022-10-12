@@ -24,7 +24,6 @@ const gatsbyFsMarkdownSources = markdownSources.map(name => ({
 }));
 
 const gatsbyConfig = {
-  flags: { FAST_DEV: true },
   pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
     title: config.title,

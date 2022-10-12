@@ -281,26 +281,20 @@ exports[`Learn Template renders correctly 1`] = `
             role="region"
             style="display: none;"
           >
-            <span
+            <a
+              class="t-body2 navigationItem item itemDone"
+              href="test-slug-1"
               id="test-slug-1"
             >
-              <a
-                class="t-body2 navigationItem item itemDone"
-                href="test-slug-1"
-              >
-                test-title-1
-              </a>
-            </span>
-            <span
+              test-title-1
+            </a>
+            <a
+              class="t-body2 navigationItem item itemDone"
+              href="test-slug-2"
               id="test-slug-2"
             >
-              <a
-                class="t-body2 navigationItem item itemDone"
-                href="test-slug-2"
-              >
-                test-title-2
-              </a>
-            </span>
+              test-title-2
+            </a>
           </div>
         </div>
         <div
@@ -335,26 +329,20 @@ exports[`Learn Template renders correctly 1`] = `
             role="region"
             style="display: none;"
           >
-            <span
+            <a
+              class="t-body2 navigationItem item itemDone"
+              href="test-slug-3"
               id="test-slug-3"
             >
-              <a
-                class="t-body2 navigationItem item itemDone"
-                href="test-slug-3"
-              >
-                test-title-3
-              </a>
-            </span>
-            <span
+              test-title-3
+            </a>
+            <a
+              class="t-body2 navigationItem item itemDone"
+              href="test-slug-4"
               id="test-slug-4"
             >
-              <a
-                class="t-body2 navigationItem item itemDone"
-                href="test-slug-4"
-              >
-                test-title-4
-              </a>
-            </span>
+              test-title-4
+            </a>
           </div>
         </div>
       </nav>

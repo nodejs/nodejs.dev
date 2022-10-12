@@ -124,7 +124,7 @@ export const createBlogPageContext = (): PostTemplateContext => ({
           title: 'title-mock',
           category: {
             name: 'category-mock',
-            slug: 'category-mock-slug',
+            slug: 'blog.title',
           },
           blogAuthors: [
             {

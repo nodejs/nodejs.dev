@@ -47,12 +47,27 @@ const getMessagesForLocale = locale =>
 const getRedirectForLocale = (locale, url) =>
   /^\/\/|https?:\/\//.test(url) ? url : `/${locale}${url}`;
 
-exports.onCreateWebpackConfig = ({ plugins, actions }) => {
+exports.onCreateWebpackConfig = ({ plugins, actions, stage, getConfig }) => {
   actions.setWebpackConfig({
     plugins: [
       plugins.ignore({ resourceRegExp: /canvas/, contextRegExp: /jsdom$/ }),
     ],
   });
+
+  if (stage === 'develop' || stage === 'build-javascript') {
+    const config = getConfig();
+
+    const miniCssExtractPlugin = config.plugins.find(
+      plugin => plugin.constructor.name === 'MiniCssExtractPlugin'
+    );
+
+    if (miniCssExtractPlugin) {
+      // We don't care about the order of CSS imports as we use CSS Modules
+      miniCssExtractPlugin.options.ignoreOrder = true;
+    }
+
+    actions.replaceWebpackConfig(config);
+  }
 };
 
 exports.createSchemaCustomization = ({ actions }) => {
@@ -103,7 +118,8 @@ exports.createPages = async ({ graphql, actions }) => {
     nodeReleases: { nodeReleasesData, apiAvailableVersions },
   } = apiResult.data;
 
-  const { blogPages } = createBlogPages(blogEdges);
+  const { blogPages, blogPosts, getPaginatedPosts } =
+    createBlogPages(blogEdges);
 
   const { learnPages, navigationData: learnNavigationData } = createLearnPages(
     learnEdges,
@@ -123,12 +139,6 @@ exports.createPages = async ({ graphql, actions }) => {
     context: { ...learnPages[0], navigationData: learnNavigationData },
   });
 
-  createPage({
-    path: blogPath,
-    component: blogTemplate,
-    context: { categories: categoryEdges, posts: blogEdges },
-  });
-
   learnPages.forEach(page => {
     createPage({
       path: page.slug,
@@ -141,20 +151,40 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: page.slug,
       component: postTemplate,
-      // Get the latest 10 blog posts
-      context: { ...page, recent: blogEdges.slice(0, 10) },
+      // Get the latest 10 blog posts for the Recent Posts section
+      context: { ...page, recent: blogPosts.slice(0, 10) },
     });
   });
 
-  categoryEdges.forEach(({ node }) => {
-    const posts = blogEdges.filter(
-      ({ node: item }) => item.fields.categoryName === node.name
-    );
+  // This default category acts as a "hack" for creating the default
+  // `/blog` page (aka the "Everything" category)
+  const defaultCategory = { node: { name: null } };
 
-    createPage({
-      path: `${blogPath}${node.name}/`,
-      component: blogTemplate,
-      context: { categories: categoryEdges, category: node, posts },
+  [defaultCategory, ...categoryEdges].forEach(({ node }) => {
+    const paginatedPosts = getPaginatedPosts(node.name);
+
+    const getPaginationData = current => ({
+      current: current + 1,
+      total: paginatedPosts.length,
+    });
+
+    const getBlogPagePath = index => {
+      const categoryPath = node.name ? `${blogPath}${node.name}/` : blogPath;
+
+      return index === 0 ? categoryPath : `${categoryPath}page/${index + 1}/`;
+    };
+
+    paginatedPosts.forEach((currentPagePosts, index) => {
+      createPage({
+        path: getBlogPagePath(index),
+        component: blogTemplate,
+        context: {
+          category: node.name ? node : null,
+          categories: categoryEdges,
+          posts: currentPagePosts,
+          pagination: getPaginationData(index),
+        },
+      });
     });
   });
 
