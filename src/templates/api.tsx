@@ -1,11 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Article from '../components/Article';
-import Layout from '../components/Layout';
-import DataTag from '../components/DataTag';
-import SectionTitle from '../components/SectionTitle';
+import Article from '../sections/Article';
+import Layout from '../layouts/default';
+import { ApiComponents, CommonComponents } from '../components';
+import { getApiComponents } from '../components/ApiComponents';
 import ApiNavigation from '../navigations/api';
-import { getApiComponents, Components } from '../components/ApiComponents';
 import { replaceDataTagFromString } from '../util/replaceDataTag';
 import type {
   ApiTemplateData,
@@ -50,19 +49,14 @@ const Api = ({
     tableOfContents.items?.map(filterTableOfContentsFromDataTag) || [];
 
   const components = {
-    DataTag,
     Metadata: getApiComponents({ fullVersion }),
-    a: Components.ApiLink,
-    h3: Components.H3,
-    h4: Components.H4,
-    h5: Components.H5,
   };
 
   return (
     <Layout title={`${displayTitle} | Node.js ${version} API`}>
       <main className={styles.apiContainer}>
         <ApiNavigation sections={navigationData} currentSlug={slug}>
-          <Components.VersionSelector
+          <ApiComponents.VersionSelector
             releases={nodeReleasesData}
             selectedRelease={version}
             apiAvailableVersions={apiAvailableVersions}
@@ -80,7 +74,9 @@ const Api = ({
           extraComponents={components}
           childrenPosition="before"
         >
-          <SectionTitle path={['home', 'documentation', version, title]} />
+          <CommonComponents.SectionTitle
+            path={['home', 'documentation', version, title]}
+          />
         </Article>
       </main>
     </Layout>

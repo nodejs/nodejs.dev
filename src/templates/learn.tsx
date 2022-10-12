@@ -1,9 +1,9 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import Article from '../components/Article';
-import Layout from '../components/Layout';
+import Article from '../sections/Article';
+import DefaultLayout from '../layouts/default';
 import LearnNavigation from '../navigations/learn';
-import { connectGraphQlCustom } from '../components/connectGraphQlArticle';
+import { connectGraphQlCustom } from '../connectGraphQlArticle';
 import { LearnTemplateContext, LearnTemplateData } from '../types';
 
 interface Props {
@@ -23,7 +23,7 @@ const LearnLayout = ({
   },
   pageContext: { slug, next, previous, relativePath, navigationData },
 }: Props): JSX.Element => (
-  <Layout title={displayTitle} description={description}>
+  <DefaultLayout title={displayTitle} description={description}>
     <main className="grid-container">
       <LearnNavigation sections={navigationData} currentSlug={slug} />
       <Article
@@ -36,7 +36,7 @@ const LearnLayout = ({
         relativePath={relativePath}
       />
     </main>
-  </Layout>
+  </DefaultLayout>
 );
 
 export default connectGraphQlCustom(LearnLayout);

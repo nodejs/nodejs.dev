@@ -1,8 +1,7 @@
 import React from 'react';
-import { useIntl } from 'react-intl';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import classnames from 'classnames';
-import NavigationItem from '../components/NavigationItem';
-import NavigationSection from '../components/NavigationSection';
+import { NavigationComponents } from '../components';
 import { useNavigationContainer } from '../hooks/useNavigationContainer';
 import { AboutNavigationKeys } from '../types/pages/about';
 import { NavigationSectionData } from '../types';
@@ -82,7 +81,7 @@ const AboutNavigationSection = ({
   );
 
   return (
-    <NavigationSection
+    <NavigationComponents.NavigationSection
       isOpen
       label={title}
       title={sectionTitle}
@@ -95,11 +94,12 @@ interface Props {
   currentSlug: string;
 }
 
-const AboutNavigation = ({ currentSlug }: Props) => {
+const AboutNavigation = ({
+  currentSlug,
+  intl,
+}: Props & WrappedComponentProps) => {
   const { onClick, renderContainer, renderSections } =
     useNavigationContainer('About Navigation');
-
-  const intl = useIntl();
 
   const navigationSections = renderSections(aboutNavigation).map(
     ([key, data]) => (
@@ -110,7 +110,7 @@ const AboutNavigation = ({ currentSlug }: Props) => {
         currentSlug={currentSlug}
       >
         {data.map(item => (
-          <NavigationItem
+          <NavigationComponents.NavigationItem
             key={item.slug}
             title={intl.formatMessage({ id: item.title })}
             slug={item.slug}
@@ -125,4 +125,4 @@ const AboutNavigation = ({ currentSlug }: Props) => {
   return renderContainer({ children: navigationSections });
 };
 
-export default AboutNavigation;
+export default injectIntl(AboutNavigation);

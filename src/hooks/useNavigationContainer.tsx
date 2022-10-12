@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navigation from '../components/Navigation';
+import { NavigationComponents } from '../components';
 import type { NavigationData, NavigationItemData } from '../types';
 
 type SectionTuple = [string, NavigationItemData[]][];
@@ -12,9 +12,13 @@ export const useNavigationContainer = (label: string) => {
   const onClick = () => setIsOpen(false);
 
   const renderContainer = ({ children }: React.PropsWithChildren) => (
-    <Navigation isOpen={isOpen} toggleNavigation={toggle} label={label}>
+    <NavigationComponents.Navigation
+      isOpen={isOpen}
+      toggleNavigation={toggle}
+      label={label}
+    >
       {children}
-    </Navigation>
+    </NavigationComponents.Navigation>
   );
 
   const renderSections = (sections: NavigationData): SectionTuple =>
