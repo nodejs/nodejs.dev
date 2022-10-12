@@ -32,6 +32,7 @@
   "components.header.links.learn": "Learn",
   "components.header.links.docs": "API Docs",
   "components.header.links.download": "Download",
+  "components.header.links.blog": "Blog",
   "components.hero.downloadLts": "Download Node (LTS)",
   "components.hero.currentVersion": "Version {version}",
   "components.hero.getCurrent": "Download Latest ({version})",

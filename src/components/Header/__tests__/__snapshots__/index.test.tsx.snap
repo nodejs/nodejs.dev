@@ -61,6 +61,13 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
         </li>
         <li>
           <a
+            href="/blog/"
+          >
+            Blog
+          </a>
+        </li>
+        <li>
+          <a
             href="https://openjsf.org/certification/"
           >
             Certification
@@ -295,6 +302,13 @@ exports[`Tests for Header component renders correctly 1`] = `
         </li>
         <li>
           <a
+            href="/blog/"
+          >
+            Blog
+          </a>
+        </li>
+        <li>
+          <a
             href="https://openjsf.org/certification/"
           >
             Certification
@@ -525,6 +539,13 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
             href="/download/"
           >
             Download
+          </a>
+        </li>
+        <li>
+          <a
+            href="/blog/"
+          >
+            Blog
           </a>
         </li>
         <li>

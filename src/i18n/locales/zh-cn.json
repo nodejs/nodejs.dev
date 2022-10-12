@@ -32,6 +32,7 @@
   "components.header.links.learn": "学习",
   "components.header.links.docs": "API 文档",
   "components.header.links.download": "下载",
+  "components.header.links.blog": "博客",
   "components.hero.downloadLts": "Node (LTS) 下载",
   "components.hero.currentVersion": "版本 {version}",
   "components.hero.getCurrent": "最新版本 ({version}) 下载",

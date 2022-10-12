@@ -64,6 +64,13 @@ exports[`LearnLayout Template renders correctly 1`] = `
           </li>
           <li>
             <a
+              href="/blog/"
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a
               href="https://openjsf.org/certification/"
             >
               Certification

@@ -44,6 +44,11 @@ const Header = (): JSX.Element => (
           </Link>
         </li>
         <li>
+          <Link to="/blog/" activeClassName={styles.active} partiallyActive>
+            <FormattedMessage id="components.header.links.blog" />
+          </Link>
+        </li>
+        <li>
           <a href="https://openjsf.org/certification/">
             <FormattedMessage id="components.header.links.certification" />
           </a>
