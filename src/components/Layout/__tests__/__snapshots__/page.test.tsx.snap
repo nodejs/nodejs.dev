@@ -245,6 +245,28 @@ exports[`PageLayout component renders correctly with data 1`] = `
         >
           mock-title
         </h1>
+        <div
+          class="authorList"
+        >
+          Article Authors
+          <ul>
+            <li>
+              <a
+                aria-label="mock-author Github - opens in new tab"
+                class="link"
+                href="https://github.com/mock-author"
+                rel="noopener noreferrer"
+                style="margin-left: 0px;"
+                target="_blank"
+              >
+                <img
+                  alt=""
+                  src="https://github.com/mock-author.png?size=60"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
         <details
           class="tableOfContents"
         >
@@ -317,28 +339,6 @@ exports[`PageLayout component renders correctly with data 1`] = `
             </code>
              executable program in the command line.
           </p>
-        </div>
-        <div
-          class="authorList"
-        >
-          Contributors
-          <ul>
-            <li>
-              <a
-                aria-label="mock-author Github - opens in new tab"
-                class="link"
-                href="https://github.com/mock-author"
-                rel="noopener noreferrer"
-                style="margin-left: 0px;"
-                target="_blank"
-              >
-                <img
-                  alt=""
-                  src="https://github.com/mock-author.png?size=60"
-                />
-              </a>
-            </li>
-          </ul>
         </div>
         <div
           class="edit"

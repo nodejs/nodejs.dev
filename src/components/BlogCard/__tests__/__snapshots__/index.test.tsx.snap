@@ -20,7 +20,7 @@ exports[`Blog Card component renders correctly 1`] = `
           class="category"
           href="/blog/category-mock/"
         >
-          category-mock-slug
+          Node.js Blog
         </a>
         <span>
           1 min read

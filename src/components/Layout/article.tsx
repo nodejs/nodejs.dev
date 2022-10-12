@@ -1,9 +1,8 @@
 import React from 'react';
-
-import { PageTableOfContents } from '../../types';
 import Article from '../Article';
-import Layout from '.';
-import SideNavBar, { SideNavBarKeys } from '../SideNavBar';
+import Layout from './index';
+import AboutNavigation from '../../navigations/about';
+import { AboutNavigationKeys, PageTableOfContents } from '../../types';
 
 export interface ArticleLayoutProps {
   body: string;
@@ -13,7 +12,7 @@ export interface ArticleLayoutProps {
   authors: string[];
   location?: Location;
   editPath?: string;
-  sidenavKey?: SideNavBarKeys;
+  currentSlug?: AboutNavigationKeys;
   children?: React.ReactNode;
   childrenPosition?: 'before' | 'after';
 }
@@ -25,19 +24,19 @@ const ArticleLayout = ({
   title,
   description,
   authors,
-  sidenavKey,
+  currentSlug,
   children,
   childrenPosition = 'after',
 }: ArticleLayoutProps): JSX.Element => (
   <Layout title={title} description={description}>
     <main className="grid-container">
-      {sidenavKey && <SideNavBar pageKey={sidenavKey} />}
+      {currentSlug && <AboutNavigation currentSlug={currentSlug} />}
       <Article
         title={title}
         body={body}
         authors={authors}
         editPath={editPath}
-        tableOfContents={tableOfContents ? tableOfContents.items : []}
+        tableOfContents={tableOfContents?.items || []}
         childrenPosition={childrenPosition}
       >
         {children}

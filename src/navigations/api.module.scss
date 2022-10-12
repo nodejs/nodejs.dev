@@ -1,0 +1,27 @@
+@import '../components/NavigationSection/index.module.scss';
+
+.title {
+  @extend %navigation-section-title;
+  margin: 0;
+
+  padding-bottom: 0;
+  padding-left: 0;
+
+  > span svg {
+    font-size: 20px;
+    padding-left: 0;
+  }
+
+  > svg {
+    padding: 0;
+  }
+}
+
+.item {
+  margin: 0 0 0 var(--space-32);
+  overflow: hidden;
+  padding: var(--space-08) 0 0 0;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

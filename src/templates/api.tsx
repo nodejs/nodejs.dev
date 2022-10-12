@@ -2,16 +2,16 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Article from '../components/Article';
 import Layout from '../components/Layout';
-import { getApiComponents, Components } from '../components/ApiComponents';
 import DataTag from '../components/DataTag';
-import Navigation from '../containers/Navigation';
-import {
+import SectionTitle from '../components/SectionTitle';
+import ApiNavigation from '../navigations/api';
+import { getApiComponents, Components } from '../components/ApiComponents';
+import { replaceDataTagFromString } from '../util/replaceDataTag';
+import type {
   ApiTemplateData,
   ApiTemplateContext,
   TableOfContentsItem,
 } from '../types';
-import SectionTitle from '../components/SectionTitle';
-import { replaceDataTagFromString } from '../util/replaceDataTag';
 import styles from '../styles/templates/api.module.scss';
 
 interface Props {
@@ -61,20 +61,14 @@ const Api = ({
   return (
     <Layout title={`${displayTitle} | Node.js ${version} API`}>
       <main className={styles.apiContainer}>
-        <Navigation
-          currentSlug={slug}
-          label="Secondary"
-          sections={navigationData}
-          category="api"
-          isApiDocs
-        >
+        <ApiNavigation sections={navigationData} currentSlug={slug}>
           <Components.VersionSelector
             releases={nodeReleasesData}
             selectedRelease={version}
             apiAvailableVersions={apiAvailableVersions}
             currentPage={title}
           />
-        </Navigation>
+        </ApiNavigation>
         <Article
           title={displayTitle}
           tableOfContents={filteredTableOfContets}

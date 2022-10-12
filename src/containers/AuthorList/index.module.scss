@@ -2,9 +2,10 @@
   color: var(--color-text-secondary);
   display: flex;
   flex-direction: column;
-  font-size: 1.4rem;
-  font-weight: var(--font-weight-regular);
-  margin: 5rem 0 2.5rem;
+  font-size: var(--font-size-body2);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-24);
+  max-width: 600px;
   text-transform: uppercase;
 
   ul {

@@ -1,35 +1,44 @@
 import React from 'react';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
+import { useScrollToElement } from '../../hooks/useScrollToElement';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 import styles from './index.module.scss';
 
 interface Props {
-  key: string;
-  isRead: boolean;
-  isActive: boolean;
   slug: string;
   title: string;
-  isApiDocs?: boolean;
+  isActive: boolean;
+  extraClasses?: string;
   onClick?: (event: React.MouseEvent<HTMLLinkElement>) => void;
 }
 
 const NavigationItem = ({
-  isRead,
-  isActive,
   slug,
   title,
-  isApiDocs,
   onClick,
+  isActive,
+  extraClasses,
 }: Props): JSX.Element => {
-  const className = classnames(`t-body2 ${styles.navigationItem}`, {
-    [styles.navigationItemDone]: isRead,
-    [styles.navigationItemActive]: !isRead && isActive,
-    [styles.navigationItemApi]: isApiDocs,
+  const className = classnames('t-body2', styles.navigationItem, extraClasses, {
+    [styles.navigationItemActive]: isActive,
+  });
+
+  const isMobile = useMediaQuery('(max-width: 900px)');
+
+  useScrollToElement({
+    element: slug,
+    smooth: true,
+    containerId: 'main-navigation',
+    offset: -100,
+    // This needs to be a strict `===false` as
+    // the initial value is `undefined` as being CSR
+    isActive: isActive && isMobile === false,
   });
 
   if (slug.startsWith('https')) {
     return (
-      <a href={slug} className={className}>
+      <a id={slug} href={slug} className={className}>
         {title}
       </a>
     );
@@ -37,9 +46,10 @@ const NavigationItem = ({
 
   return (
     <Link
-      onClick={onClick}
+      id={slug}
       to={slug}
       className={className}
+      onClick={onClick}
       aria-current={isActive ? 'page' : undefined}
     >
       {title}

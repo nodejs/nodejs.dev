@@ -238,8 +238,9 @@ exports[`Learn Template renders correctly 1`] = `
       class="grid-container"
     >
       <nav
-        aria-label="Secondary"
+        aria-label="Learn Navigation"
         class="navigation"
+        id="main-navigation"
       >
         <button
           aria-expanded="false"
@@ -248,6 +249,102 @@ exports[`Learn Template renders correctly 1`] = `
         >
           Menu
         </button>
+        <div
+          class="navigationSection"
+        >
+          <button
+            aria-expanded="false"
+            class="t-body2 title"
+            type="button"
+          >
+            <span>
+              test-section
+            </span>
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-caret-up "
+              data-icon="caret-up"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          <div
+            aria-label="test-section"
+            role="region"
+            style="display: none;"
+          >
+            <a
+              class="t-body2 navigationItem item itemDone"
+              href="test-slug-1"
+              id="test-slug-1"
+            >
+              test-title-1
+            </a>
+            <a
+              class="t-body2 navigationItem item itemDone"
+              href="test-slug-2"
+              id="test-slug-2"
+            >
+              test-title-2
+            </a>
+          </div>
+        </div>
+        <div
+          class="navigationSection"
+        >
+          <button
+            aria-expanded="false"
+            class="t-body2 title"
+            type="button"
+          >
+            <span>
+              test-section2
+            </span>
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-caret-up "
+              data-icon="caret-up"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          <div
+            aria-label="test-section2"
+            role="region"
+            style="display: none;"
+          >
+            <a
+              class="t-body2 navigationItem item itemDone"
+              href="test-slug-3"
+              id="test-slug-3"
+            >
+              test-title-3
+            </a>
+            <a
+              class="t-body2 navigationItem item itemDone"
+              href="test-slug-4"
+              id="test-slug-4"
+            >
+              test-title-4
+            </a>
+          </div>
+        </div>
       </nav>
       <article
         class="article"
@@ -255,6 +352,42 @@ exports[`Learn Template renders correctly 1`] = `
         <h1
           class="headline"
         />
+        <div
+          class="authorList"
+        >
+          Article Authors
+          <ul>
+            <li>
+              <a
+                aria-label="test-user1 Github - opens in new tab"
+                class="link"
+                href="https://github.com/test-user1"
+                rel="noopener noreferrer"
+                style="margin-left: 0px;"
+                target="_blank"
+              >
+                <img
+                  alt=""
+                  src="https://github.com/test-user1.png?size=60"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                aria-label="test-user2 Github - opens in new tab"
+                class="link"
+                href="https://github.com/test-user2"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  alt=""
+                  src="https://github.com/test-user2.png?size=60"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
         <details
           class="tableOfContents"
         >
@@ -327,42 +460,6 @@ exports[`Learn Template renders correctly 1`] = `
             </code>
              executable program in the command line.
           </p>
-        </div>
-        <div
-          class="authorList"
-        >
-          Contributors
-          <ul>
-            <li>
-              <a
-                aria-label="test-user1 Github - opens in new tab"
-                class="link"
-                href="https://github.com/test-user1"
-                rel="noopener noreferrer"
-                style="margin-left: 0px;"
-                target="_blank"
-              >
-                <img
-                  alt=""
-                  src="https://github.com/test-user1.png?size=60"
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                aria-label="test-user2 Github - opens in new tab"
-                class="link"
-                href="https://github.com/test-user2"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <img
-                  alt=""
-                  src="https://github.com/test-user2.png?size=60"
-                />
-              </a>
-            </li>
-          </ul>
         </div>
         <div
           class="edit"
