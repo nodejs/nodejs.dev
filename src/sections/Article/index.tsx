@@ -8,8 +8,9 @@ import {
   BlogPostAuthor,
   TableOfContentsItem,
 } from '../../types';
+import Pagination from '../../components/ArticleComponents/Pagination';
 import styles from './index.module.scss';
-import JsonLink from '../JsonLink';
+import JsonLink from '../../components/JsonLink';
 
 interface Props {
   title: string;
