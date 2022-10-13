@@ -23,7 +23,7 @@ describe('DownloadableItem component', (): void => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders correctly expanded state', (): void => {
+  it('renders correctly with expanded state', (): void => {
     const { container } = render(
       <DownloadableItem
         item={downloadableItem}
@@ -35,7 +35,7 @@ describe('DownloadableItem component', (): void => {
     expect(container).toMatchSnapshot();
   });
 
-  it('calls callback with correct item name on click when not expanded', async () => {
+  it('calls callback with correct item name onclick when not expanded', async () => {
     const setExpendedItemSpy = jest
       .fn()
       .mockImplementation(itemName => itemName);
@@ -58,7 +58,7 @@ describe('DownloadableItem component', (): void => {
     expect(setExpendedItemSpy).toHaveBeenCalledWith(downloadableItem.name);
   });
 
-  it('calls callback with empty item name on click when expanded', async () => {
+  it('calls callback with empty item name onclick when expanded', async () => {
     const setExpendedItemSpy = jest
       .fn()
       .mockImplementation(itemName => itemName);
