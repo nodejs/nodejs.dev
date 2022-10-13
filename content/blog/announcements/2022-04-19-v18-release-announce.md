@@ -8,9 +8,9 @@ We’re excited to announce that Node.js 18 was released today! Highlights inclu
 
 Initially, Node.js 18 will replace Node.js 17 as our ‘Current’ release line. As per the release schedule, Node.js 18 will be the 'Current' release for the next 6 months and then promoted to Long-term Support (LTS) in October 2022. Once promoted to long-term support the release will be designated the codename 'Hydrogen'. Node.js 18 will be supported until April 2025.
 
-You can read more about our release policy at <https://github.com/nodejs/release>.
+You can read more about our release policy at https://github.com/nodejs/release.
 
-To download Node.js 18.0.0, visit: <https://nodejs.org/en/download/current/>. You can find the release post at <https://nodejs.org/en/blog/release/v18.0.0>, which contains the full list of commits included in this release.
+To download Node.js 18.0.0, visit: https://nodejs.org/en/download/current/. You can find the release post at https://nodejs.org/en/blog/release/v18.0.0, which contains the full list of commits included in this release.
 
 ## New globally available browser-compatible APIs
 
@@ -47,7 +47,6 @@ Contributed James Snell in [#39062](https://github.com/nodejs/node/pull/39062), 
 ### Other global APIs
 
 Additionally, the following APIs are now exposed on the global scope:
-
 * `Blob` - <https://nodejs.org/api/buffer.html#class-blob>
 * `BroadcastChannel` - <https://nodejs.org/api/worker_threads.html#class-broadcastchannel-extends-eventtarget>
 
@@ -153,7 +152,7 @@ Contributed by Michaël Zasso in [#42657](https://github.com/nodejs/node/pull/42
 
 While not new in Node.js 18, over the past months the project has continued to develop its ECMAScript modules implementation. Notable milestones include adding experimental support for [JSON Import Assertions](https://github.com/tc39/proposal-import-assertions), the unflagging of JSON modules (experimental), and experimental support for HTTPS and HTTP imports. The [Node.js Loaders team](https://github.com/nodejs/loaders) is also continuing to develop the ECMAScript Modules Loaders implementation in Node.js.
 
-The project is also continuing its [‘Next 10’](https://github.com/nodejs/next-10) effort. The goal of this effort is to reflect on what led to success in the first 10 years of Node.js and set the direction for success in the next 10. Several meetings have been held to discuss the next steps on the agreed [technical priorities](https://github.com/nodejs/node/blob/master/doc/contributing/technical-priorities.md). There have already been great discussions on Modern HTTP, WebAssembly, and Types. The next sessions on ECMAScript modules and Observability are planned to be part of the collaborator summit at the upcoming [OpenJS World](https://events.linuxfoundation.org/openjs-world/) conference in June.
+The project is also continuing its [‘Next 10’](https://github.com/nodejs/next-10) effort. The goal of this effort is to reflect on what led to success in the first 10 years of Node.js and set the direction for success in the next 10. Several meetings have been held to discuss the next steps on the agreed [technical priorities](https://github.com/nodejs/node/blob/main/doc/contributing/technical-priorities.md). There have already been great discussions on Modern HTTP, WebAssembly, and Types. The next sessions on ECMAScript modules and Observability are planned to be part of the collaborator summit at the upcoming [OpenJS World](https://events.linuxfoundation.org/openjs-world/) conference in June.
 
 ## Call to action!
 

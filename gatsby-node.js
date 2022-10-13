@@ -273,10 +273,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     let slug;
 
     if (fileAbsolutePath) {
-      // Special Handling for Blog Posts
       if (fileAbsolutePath.includes(blogPath)) {
-        const [, year, month, day, filename] =
-          BLOG_POST_FILENAME_REGEX.exec(relativePath);
+        const regexResult = BLOG_POST_FILENAME_REGEX.exec(relativePath);
+
+        if (regexResult === null) {
+          // eslint-disable-next-line no-console
+          console.error(`File does not met blog filename: ${relativePath}`);
+        }
+
+        const [, year, month, day, filename] = regexResult;
 
         slug = blogPath;
 

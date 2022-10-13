@@ -11,15 +11,21 @@ const blogAuthorsFile = fs.readFileSync(
 
 const blogAuthors = yaml.parse(blogAuthorsFile);
 
+const notFoundAuthors = new Set();
+
 const applyBlogAuthors = metadataAuthors =>
   metadataAuthors
     .split(' and ')
     .map(authorName => {
       const foundAuthor = blogAuthors.find(
-        author => author.name === authorName
+        author => author.name === authorName || author.id === authorName
       );
 
-      return foundAuthor ? `'${foundAuthor.id}'` : authorName;
+      if (!foundAuthor) {
+        notFoundAuthors.add(authorName);
+      }
+
+      return foundAuthor ? `'${foundAuthor.id}'` : `'${authorName}'`;
     })
     .join(', ');
 
@@ -85,6 +91,16 @@ if (fs.existsSync(markdownPath)) {
 
   blogQueue.push([...markdownFilesFromDirectory]);
 
-  // eslint-disable-next-line no-console
-  blogQueue.drain(() => console.log('Finished Processing'));
+  blogQueue.drain(() => {
+    // eslint-disable-next-line no-console
+    console.log('Finished Processing');
+
+    if (notFoundAuthors.size) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'Found authors that are not in authors.yaml:',
+        [...notFoundAuthors].join('; ')
+      );
+    }
+  });
 }
