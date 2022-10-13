@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { FeatureToggleContext } from '../containers/FeatureToggles';
+import { FeatureToggleContext } from '../providers';
 
 export const useFeatureToggles = () => {
   const featureFlagContext = useContext(FeatureToggleContext);

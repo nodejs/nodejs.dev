@@ -1,11 +1,12 @@
 import { graphql } from 'gatsby';
-import ArticleLayout from '../../components/Layout/article';
-import { SideNavBarKeys } from '../../components/SideNavBar';
-import connectGraphQlArticle from '../../components/connectGraphQlArticle';
+import ArticleLayout from '../../layouts/article';
+import connectGraphQlArticle from '../../connectGraphQlArticle';
+import { AboutNavigationKeys } from '../../types';
 
 export default connectGraphQlArticle(ArticleLayout, {
   editPath: 'content/about/about.md',
-  sidenavKey: SideNavBarKeys.about,
+  currentSlug: AboutNavigationKeys.about,
+  hideArticleComponents: true,
 });
 
 export const query = graphql`

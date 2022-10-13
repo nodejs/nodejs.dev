@@ -280,6 +280,7 @@ exports[`LearnLayout Template renders correctly 1`] = `
             </a>
           </span>
         </h5>
+        <div />
         <div>
           <p>
             Node.js can be installed in different ways. This post highlights the most common and convenient ones.
