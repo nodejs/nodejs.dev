@@ -2,8 +2,12 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Article from '../sections/Article';
 import Layout from '../layouts/default';
-import { ApiComponents, CommonComponents } from '../components';
-import { getApiComponents } from '../components/ApiComponents';
+import {
+  ApiComponents,
+  CommonComponents,
+  getApiComponents,
+} from '../components';
+import { apiMdxComponents } from '../mdxComponents';
 import ApiNavigation from '../navigations/api';
 import { replaceDataTagFromString } from '../util/replaceDataTag';
 import type {
@@ -50,6 +54,7 @@ const Api = ({
 
   const components = {
     Metadata: getApiComponents({ fullVersion }),
+    ...apiMdxComponents,
   };
 
   return (
