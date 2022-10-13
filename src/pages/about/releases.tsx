@@ -1,10 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import ArticleLayout from '../../components/Layout/article';
-import { NodeReleaseData } from '../../types';
-import { SideNavBarKeys } from '../../components/SideNavBar';
 import DownloadTable from '../../components/DownloadReleases/DownloadTable';
 import connectGraphQlArticle from '../../components/connectGraphQlArticle';
+import { NodeReleaseData, AboutNavigationKeys } from '../../types';
 
 export interface ReleasesNodeReleases {
   nodeReleases: {
@@ -14,7 +13,8 @@ export interface ReleasesNodeReleases {
 
 export default connectGraphQlArticle(ArticleLayout, {
   editPath: 'content/about/releases.md',
-  sidenavKey: SideNavBarKeys.releases,
+  currentSlug: AboutNavigationKeys.releases,
+  hideArticleComponents: true,
   articleContent: (props: ReleasesNodeReleases) => (
     <DownloadTable
       nodeReleasesData={props.nodeReleases.nodeReleasesData.filter(

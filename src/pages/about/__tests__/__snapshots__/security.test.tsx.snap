@@ -5,129 +5,165 @@ exports[`Security page renders correctly 1`] = `
   class="grid-container"
 >
   <nav
-    class="sideNav"
+    aria-label="About Navigation"
+    class="navigation"
+    id="main-navigation"
   >
     <button
-      class="sideNavOpen"
+      aria-expanded="false"
+      class="navigationOpen"
       type="button"
     >
       Menu
     </button>
     <div
-      class="sideNavSection"
+      class="navigationSection"
     >
-      <a
-        class="sideNavSectionTitle"
-        href="/about/"
+      <button
+        aria-expanded="true"
+        class="t-body2 title"
+        type="button"
       >
-        About Node.js
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8rv7ug-MuiSvgIcon-root"
-          data-testid="InfoIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <span>
+          About Node.js
+        </span>
+      </button>
+      <div
+        aria-label="About Node.js"
+        role="region"
+        style="display: block;"
+      >
+        <a
+          class="t-body2 navigationItem"
+          href="/about/"
+          id="/about/"
         >
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-          />
-        </svg>
-      </a>
-      <a
-        class="t-body2 navigationItem"
-        href="/about/governance/"
-      >
-        Project Governance
-      </a>
-      <a
-        class="t-body2 navigationItem"
-        href="/about/releases/"
-      >
-        Releases
-      </a>
-      <a
-        class="t-body2 navigationItem"
-        href="/about/resources/"
-      >
-        Resources
-      </a>
-      <a
-        class="t-body2 navigationItem"
-        href="https://privacy-policy.openjsf.org/"
-      >
-        Privacy Policy
-      </a>
-      <a
-        aria-current="page"
-        class="t-body2 navigationItem navigationItemActive"
-        href="/about/security/"
-      >
-        Security Reporting
-      </a>
-      <a
-        class="sideNavSectionTitle"
-        href="/get-involved/"
-      >
-        Get Involved
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8rv7ug-MuiSvgIcon-root"
-          data-testid="GroupsIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
+          About Node.js
+        </a>
+        <a
+          class="t-body2 navigationItem"
+          href="/about/governance/"
+          id="/about/governance/"
         >
-          <path
-            d="M12 12.75c1.63 0 3.07.39 4.24.9 1.08.48 1.76 1.56 1.76 2.73V18H6v-1.61c0-1.18.68-2.26 1.76-2.73 1.17-.52 2.61-.91 4.24-.91zM4 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm1.13 1.1c-.37-.06-.74-.1-1.13-.1-.99 0-1.93.21-2.78.58C.48 14.9 0 15.62 0 16.43V18h4.5v-1.61c0-.83.23-1.61.63-2.29zM20 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm4 3.43c0-.81-.48-1.53-1.22-1.85-.85-.37-1.79-.58-2.78-.58-.39 0-.76.04-1.13.1.4.68.63 1.46.63 2.29V18H24v-1.57zM12 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"
-          />
-        </svg>
-      </a>
-      <a
-        class="t-body2 navigationItem"
-        href="/get-involved/collab-summit"
-      >
-        Collab Summit
-      </a>
-      <a
-        class="t-body2 navigationItem"
-        href="/get-involved/contribute"
-      >
-        Contribute
-      </a>
-      <a
-        class="t-body2 navigationItem"
-        href="https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md"
-      >
-        Code of Conduct
-      </a>
-      <a
-        class="sideNavSectionTitle"
-        href="/download/"
-      >
-        Download
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8rv7ug-MuiSvgIcon-root"
-          data-testid="CloudDownloadIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
+          Project Governance
+        </a>
+        <a
+          class="t-body2 navigationItem"
+          href="/about/releases/"
+          id="/about/releases/"
         >
-          <path
-            d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"
-          />
-        </svg>
-      </a>
-      <a
-        class="t-body2 navigationItem"
-        href="/download/package-manager/"
+          Releases
+        </a>
+        <a
+          class="t-body2 navigationItem"
+          href="/about/resources/"
+          id="/about/resources/"
+        >
+          Resources
+        </a>
+        <a
+          class="t-body2 navigationItem"
+          href="https://privacy-policy.openjsf.org/"
+          id="https://privacy-policy.openjsf.org/"
+        >
+          Privacy Policy
+        </a>
+        <a
+          aria-current="page"
+          class="t-body2 navigationItem navigationItemActive"
+          href="/about/security/"
+          id="/about/security/"
+        >
+          Security Reporting
+        </a>
+      </div>
+    </div>
+    <div
+      class="navigationSection"
+    >
+      <button
+        aria-expanded="true"
+        class="t-body2 title"
+        type="button"
       >
-        Package Manager
-      </a>
-      <a
-        class="t-body2 navigationItem"
-        href="/download/releases/"
+        <span>
+          Get Involved
+        </span>
+      </button>
+      <div
+        aria-label="Get Involved"
+        role="region"
+        style="display: block;"
       >
-        Previous Releases
-      </a>
+        <a
+          class="t-body2 navigationItem"
+          href="/get-involved/"
+          id="/get-involved/"
+        >
+          Get Involved
+        </a>
+        <a
+          class="t-body2 navigationItem"
+          href="/get-involved/collab-summit"
+          id="/get-involved/collab-summit"
+        >
+          Collab Summit
+        </a>
+        <a
+          class="t-body2 navigationItem"
+          href="/get-involved/contribute"
+          id="/get-involved/contribute"
+        >
+          Contribute
+        </a>
+        <a
+          class="t-body2 navigationItem"
+          href="https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md"
+          id="https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md"
+        >
+          Code of Conduct
+        </a>
+      </div>
+    </div>
+    <div
+      class="navigationSection"
+    >
+      <button
+        aria-expanded="true"
+        class="t-body2 title"
+        type="button"
+      >
+        <span>
+          Download
+        </span>
+      </button>
+      <div
+        aria-label="Download"
+        role="region"
+        style="display: block;"
+      >
+        <a
+          class="t-body2 navigationItem"
+          href="/download/"
+          id="/download/"
+        >
+          Download
+        </a>
+        <a
+          class="t-body2 navigationItem"
+          href="/download/package-manager/"
+          id="/download/package-manager/"
+        >
+          Package Manager
+        </a>
+        <a
+          class="t-body2 navigationItem"
+          href="/download/releases/"
+          id="/download/releases/"
+        >
+          Previous Releases
+        </a>
+      </div>
     </div>
   </nav>
   <article
@@ -138,31 +174,8 @@ exports[`Security page renders correctly 1`] = `
     >
       Mock Title
     </h1>
-    <details
-      class="tableOfContents"
-    >
-      <summary>
-        <strong>
-          Table of Contents
-        </strong>
-      </summary>
-      <ul>
-        <li>
-          <a
-            href="#mock-title"
-          >
-            mock-title
-          </a>
-        </li>
-        <li>
-          <a
-            href="#mock-title-2"
-          >
-            mock-title-2
-          </a>
-        </li>
-      </ul>
-    </details>
+    <div />
+    <div />
     <div>
       <p>
         Node.js can be installed in different ways. This post highlights the most common and convenient ones.
@@ -210,28 +223,6 @@ exports[`Security page renders correctly 1`] = `
         </code>
          executable program in the command line.
       </p>
-    </div>
-    <div
-      class="authorList"
-    >
-      Contributors
-      <ul>
-        <li>
-          <a
-            aria-label="author-mock Github - opens in new tab"
-            class="link"
-            href="https://github.com/author-mock"
-            rel="noopener noreferrer"
-            style="margin-left: 0px;"
-            target="_blank"
-          >
-            <img
-              alt=""
-              src="https://github.com/author-mock.png?size=60"
-            />
-          </a>
-        </li>
-      </ul>
     </div>
     <div
       class="edit"

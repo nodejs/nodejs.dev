@@ -15,6 +15,11 @@ module.exports = `
         }
         frontmatter {
           title
+          category {
+            slug
+            name
+            description
+          }
           blogAuthors {
             id
             name
@@ -36,6 +41,7 @@ module.exports = `
       node {
         slug
         name
+        description
       }
     }
   }

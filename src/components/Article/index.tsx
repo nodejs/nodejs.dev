@@ -22,8 +22,8 @@ import styles from './index.module.scss';
 interface Props {
   title: string;
   body: string;
-  tableOfContents: TableOfContentsItem[];
-  authors: string[] | BlogPostAuthor[];
+  authors?: string[] | BlogPostAuthor[];
+  tableOfContents?: TableOfContentsItem[];
   relativePath?: string;
   absolutePath?: string;
   editPath?: string;
@@ -47,12 +47,17 @@ const mdxComponents = {
   Alert,
 };
 
-const renderBlogAuthors = (date?: string, authors?: BlogPostAuthor[]) => (
-  <BlogAuthorsList date={date} authors={authors} />
+const renderBlogAuthors = (
+  date: string | undefined,
+  authors: BlogPostAuthor[] | undefined
+) => <BlogAuthorsList date={date} authors={authors || []} />;
+
+const renderArticleAuthors = (authors: string[]) => (
+  <AuthorList authors={authors || []} />
 );
 
-const renderTOC = (tableOfContents: TableOfContentsItem[]) => (
-  <TableOfContents tableOfContents={tableOfContents} />
+const renderTOC = (tableOfContents: TableOfContentsItem[] | undefined) => (
+  <TableOfContents tableOfContents={tableOfContents || []} />
 );
 
 const Article = ({
@@ -76,25 +81,24 @@ const Article = ({
     <h1 className={styles.headline}>{title}</h1>
     {blog
       ? renderBlogAuthors(date, authors as BlogPostAuthor[])
-      : renderTOC(tableOfContents)}
+      : renderArticleAuthors(authors as string[])}
+    {renderTOC(tableOfContents)}
     <div>
       <MDXProvider components={{ ...mdxComponents, ...extraComponents }}>
         <MDXRenderer>{body}</MDXRenderer>
       </MDXProvider>
     </div>
     {childrenPosition === 'after' && children && <div>{children}</div>}
-    {!blog && authors && authors.length > 0 && (
-      <AuthorList authors={authors as string[]} />
-    )}
     {!blog && (
-      <EditLink
-        absolutePath={absolutePath}
-        relativePath={relativePath}
-        editPath={editPath}
-        hasNoAuthors={!authors || !authors.length}
-      />
+      <>
+        <EditLink
+          absolutePath={absolutePath}
+          relativePath={relativePath}
+          editPath={editPath}
+        />
+        <Pagination previous={previous} next={next} />
+      </>
     )}
-    {!blog && <Pagination previous={previous} next={next} />}
   </article>
 );
 

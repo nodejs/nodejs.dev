@@ -5,8 +5,8 @@
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   height: calc(100vh - var(--nav-height));
   max-width: 36rem;
-  overflow: auto;
   overflow-x: hidden;
+  overflow-y: scroll;
   padding: 0 var(--space-20);
   position: sticky;
   top: var(--nav-height);
@@ -16,10 +16,15 @@
   @media (max-width: 900px) {
     height: 42px;
     max-width: unset;
-    overflow: hidden;
+    overflow-y: hidden;
+    padding-bottom: var(--space-48);
     position: relative;
     top: 0;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+
+    > div {
+      display: none;
+    }
   }
 
   &__open,
@@ -32,16 +37,14 @@
     font-weight: var(--font-weight-light);
     height: calc(24px + 3px);
     line-height: 0;
-    margin-left: -0.8rem;
+    margin: var(--space-08) 0 0 calc(var(--space-08) * -1);
     overflow: visible;
     padding: 12px 0;
     position: sticky;
     text-indent: 3.2rem;
-    top: 0.8rem;
     transition: color 0.28s, background-color 0.28s;
     user-select: none;
     width: 20px;
-    z-index: 9999;
 
     @media (max-width: 900px) {
       display: unset;
@@ -76,11 +79,14 @@
   &%--fixed {
     @media (max-width: 900px) {
       height: 100vh;
-      overflow-x: hidden;
       overflow-y: scroll;
       position: sticky;
       top: 0;
       z-index: 999;
+
+      > div {
+        display: block;
+      }
     }
   }
 

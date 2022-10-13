@@ -34,7 +34,7 @@ const BlogCard = ({
             className={styles.category}
             to={getBlogCategoryUrl(category.name)}
           >
-            {category.slug}
+            {intl.formatMessage({ id: category.slug })}
           </Link>
         )}
         <span>{readingTime.text}</span>

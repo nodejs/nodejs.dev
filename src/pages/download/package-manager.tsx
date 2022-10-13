@@ -1,11 +1,12 @@
 import { graphql } from 'gatsby';
 import ArticleLayout from '../../components/Layout/article';
-import { SideNavBarKeys } from '../../components/SideNavBar';
 import connectGraphQlArticle from '../../components/connectGraphQlArticle';
+import { AboutNavigationKeys } from '../../types';
 
 export default connectGraphQlArticle(ArticleLayout, {
   editPath: 'content/download/package-manager.md',
-  sidenavKey: SideNavBarKeys.packageManager,
+  currentSlug: AboutNavigationKeys.packageManager,
+  hideArticleComponents: true,
 });
 
 export const query = graphql`

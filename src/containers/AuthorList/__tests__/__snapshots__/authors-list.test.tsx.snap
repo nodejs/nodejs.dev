@@ -5,7 +5,7 @@ exports[`AuthorsList component renders correctly 1`] = `
   <div
     class="authorList"
   >
-    Contributors
+    Article Authors
     <ul>
       <li>
         <a

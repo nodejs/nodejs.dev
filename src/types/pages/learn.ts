@@ -1,12 +1,12 @@
 import { PageTableOfContents, PaginationInfo } from '../markdown';
-import { NavigationSectionData } from '../navigation';
+import { NavigationData } from '../navigation';
 
 export interface LearnTemplateContext {
   slug: string;
   relativePath: string;
   next: PaginationInfo;
   previous: PaginationInfo;
-  navigationData: NavigationSectionData;
+  navigationData: NavigationData;
 }
 
 export interface LearnTemplateData {

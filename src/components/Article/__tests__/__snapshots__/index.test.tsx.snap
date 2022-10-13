@@ -10,6 +10,42 @@ exports[`Article component renders correctly 1`] = `
     >
       test-title
     </h1>
+    <div
+      class="authorList"
+    >
+      Article Authors
+      <ul>
+        <li>
+          <a
+            aria-label="test-user1 Github - opens in new tab"
+            class="link"
+            href="https://github.com/test-user1"
+            rel="noopener noreferrer"
+            style="margin-left: 0px;"
+            target="_blank"
+          >
+            <img
+              alt=""
+              src="https://github.com/test-user1.png?size=60"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            aria-label="test-user2 Github - opens in new tab"
+            class="link"
+            href="https://github.com/test-user2"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt=""
+              src="https://github.com/test-user2.png?size=60"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
     <details
       class="tableOfContents"
     >
@@ -82,42 +118,6 @@ exports[`Article component renders correctly 1`] = `
         </code>
          executable program in the command line.
       </p>
-    </div>
-    <div
-      class="authorList"
-    >
-      Contributors
-      <ul>
-        <li>
-          <a
-            aria-label="test-user1 Github - opens in new tab"
-            class="link"
-            href="https://github.com/test-user1"
-            rel="noopener noreferrer"
-            style="margin-left: 0px;"
-            target="_blank"
-          >
-            <img
-              alt=""
-              src="https://github.com/test-user1.png?size=60"
-            />
-          </a>
-        </li>
-        <li>
-          <a
-            aria-label="test-user2 Github - opens in new tab"
-            class="link"
-            href="https://github.com/test-user2"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img
-              alt=""
-              src="https://github.com/test-user2.png?size=60"
-            />
-          </a>
-        </li>
-      </ul>
     </div>
     <div
       class="edit"
@@ -221,68 +221,6 @@ exports[`Article component renders correctly in blog mode 1`] = `
         test-user
       </span>
     </h5>
-    <div>
-      <p>
-        Node.js can be installed in different ways. This post highlights the most common and convenient ones.
-      </p>
-      <p>
-        Official packages for all the major platforms are available at 
-        <a>
-          https://nodejs.dev/download/
-        </a>
-        .
-      </p>
-      <p>
-        One very convenient way to install Node.js is through a package manager. In this case, every operating system has its own.
-      </p>
-      <p>
-        Other package managers for MacOS, Linux, and Windows are listed in 
-        <a>
-          https://nodejs.dev/download/package-manager/
-        </a>
-      </p>
-      <p>
-        <code
-          class="code"
-        >
-          nvm
-        </code>
-         is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks, for example.
-      </p>
-      <p>
-        It is also very useful to test your code with old Node.js versions.
-      </p>
-      <p>
-        See 
-        <a>
-          https://github.com/nvm-sh/nvm
-        </a>
-         for more information about this option.
-      </p>
-      <p>
-        In any case, when Node.js is installed you'll have access to the 
-        <code
-          class="code"
-        >
-          node
-        </code>
-         executable program in the command line.
-      </p>
-    </div>
-  </article>
-</div>
-`;
-
-exports[`Article component renders correctly in case body ref is null 1`] = `
-<div>
-  <article
-    class="article"
-  >
-    <h1
-      class="headline"
-    >
-      test-title
-    </h1>
     <details
       class="tableOfContents"
     >
@@ -356,10 +294,24 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
          executable program in the command line.
       </p>
     </div>
+  </article>
+</div>
+`;
+
+exports[`Article component renders correctly in case body ref is null 1`] = `
+<div>
+  <article
+    class="article"
+  >
+    <h1
+      class="headline"
+    >
+      test-title
+    </h1>
     <div
       class="authorList"
     >
-      Contributors
+      Article Authors
       <ul>
         <li>
           <a
@@ -391,6 +343,79 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
           </a>
         </li>
       </ul>
+    </div>
+    <details
+      class="tableOfContents"
+    >
+      <summary>
+        <strong>
+          Table of Contents
+        </strong>
+      </summary>
+      <ul>
+        <li>
+          <a
+            href="#mock-title"
+          >
+            mock-title
+          </a>
+        </li>
+        <li>
+          <a
+            href="#mock-title-2"
+          >
+            mock-title-2
+          </a>
+        </li>
+      </ul>
+    </details>
+    <div>
+      <p>
+        Node.js can be installed in different ways. This post highlights the most common and convenient ones.
+      </p>
+      <p>
+        Official packages for all the major platforms are available at 
+        <a>
+          https://nodejs.dev/download/
+        </a>
+        .
+      </p>
+      <p>
+        One very convenient way to install Node.js is through a package manager. In this case, every operating system has its own.
+      </p>
+      <p>
+        Other package managers for MacOS, Linux, and Windows are listed in 
+        <a>
+          https://nodejs.dev/download/package-manager/
+        </a>
+      </p>
+      <p>
+        <code
+          class="code"
+        >
+          nvm
+        </code>
+         is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks, for example.
+      </p>
+      <p>
+        It is also very useful to test your code with old Node.js versions.
+      </p>
+      <p>
+        See 
+        <a>
+          https://github.com/nvm-sh/nvm
+        </a>
+         for more information about this option.
+      </p>
+      <p>
+        In any case, when Node.js is installed you'll have access to the 
+        <code
+          class="code"
+        >
+          node
+        </code>
+         executable program in the command line.
+      </p>
     </div>
     <div
       class="edit"
@@ -484,6 +509,42 @@ exports[`Article component should accept and render child components 1`] = `
     >
       test-title
     </h1>
+    <div
+      class="authorList"
+    >
+      Article Authors
+      <ul>
+        <li>
+          <a
+            aria-label="test-user1 Github - opens in new tab"
+            class="link"
+            href="https://github.com/test-user1"
+            rel="noopener noreferrer"
+            style="margin-left: 0px;"
+            target="_blank"
+          >
+            <img
+              alt=""
+              src="https://github.com/test-user1.png?size=60"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            aria-label="test-user2 Github - opens in new tab"
+            class="link"
+            href="https://github.com/test-user2"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt=""
+              src="https://github.com/test-user2.png?size=60"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
     <details
       class="tableOfContents"
     >
@@ -561,42 +622,6 @@ exports[`Article component should accept and render child components 1`] = `
       <div>
         test child JSX
       </div>
-    </div>
-    <div
-      class="authorList"
-    >
-      Contributors
-      <ul>
-        <li>
-          <a
-            aria-label="test-user1 Github - opens in new tab"
-            class="link"
-            href="https://github.com/test-user1"
-            rel="noopener noreferrer"
-            style="margin-left: 0px;"
-            target="_blank"
-          >
-            <img
-              alt=""
-              src="https://github.com/test-user1.png?size=60"
-            />
-          </a>
-        </li>
-        <li>
-          <a
-            aria-label="test-user2 Github - opens in new tab"
-            class="link"
-            href="https://github.com/test-user2"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img
-              alt=""
-              src="https://github.com/test-user2.png?size=60"
-            />
-          </a>
-        </li>
-      </ul>
     </div>
     <div
       class="edit"

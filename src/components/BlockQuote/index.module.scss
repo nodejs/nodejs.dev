@@ -8,6 +8,10 @@
   padding: var(--space-12);
   position: relative;
 
+  @media (max-width: 900px) {
+    margin: var(--space-08) auto;
+  }
+
   p:last-child {
     margin: 0;
   }

@@ -2,16 +2,7 @@
 
 exports[`TOC component render empty div without a table of contents 1`] = `
 <div>
-  <details
-    class="tableOfContents"
-  >
-    <summary>
-      <strong>
-        Table of Contents
-      </strong>
-    </summary>
-    <ul />
-  </details>
+  <div />
 </div>
 `;
 

@@ -17,10 +17,7 @@ function createLearnPages(learnEdges, yamlNavigationData) {
 
   // Handles the Navigation Data only of Learn pages
   yamlNavigationData.forEach(({ section, items }) => {
-    navigationData[section] = {
-      category: 'learn',
-      data: [],
-    };
+    navigationData[section] = [];
 
     // This adds the items to the navigation section data based on the order defined within the YAML file
     // If the page doesn't exist it will be set as null and then removed via Array.filter()
@@ -32,7 +29,7 @@ function createLearnPages(learnEdges, yamlNavigationData) {
         .filter(edge => edge && edge.node)
     );
 
-    navigationData[section].data = iteratedPages.map(mapToNavigationData);
+    navigationData[section] = iteratedPages.map(mapToNavigationData);
 
     // Then we push them to the resulting learn pages object
     learnPages.push(...iteratedPages);

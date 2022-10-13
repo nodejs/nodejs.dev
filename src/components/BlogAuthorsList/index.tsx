@@ -4,7 +4,7 @@ import { getTerminatingString } from '../../util/getTerminatingString';
 import styles from './index.module.scss';
 
 interface Props {
-  authors?: BlogPostAuthor[];
+  authors: BlogPostAuthor[];
   date?: string;
 }
 
@@ -27,18 +27,24 @@ const getAuthorWebsite = (author: BlogPostAuthor) => {
   return author.name;
 };
 
-const BlogAuthorsList = ({ authors, date }: Props): null | JSX.Element => (
-  <h5 className={styles.list}>
-    {date} by{' '}
-    {mapAuthorsList(authors || []).map(
-      (author, i, array): string | JSX.Element => (
-        <span key={author.id}>
-          {getAuthorWebsite(author)}
-          {getTerminatingString(i, array.length)}
-        </span>
-      )
-    )}
-  </h5>
-);
+const BlogAuthorsList = ({ authors, date }: Props): JSX.Element => {
+  if (authors.length) {
+    return (
+      <h5 className={styles.list}>
+        {date} by{' '}
+        {mapAuthorsList(authors).map(
+          (author, i, array): string | JSX.Element => (
+            <span key={author.id}>
+              {getAuthorWebsite(author)}
+              {getTerminatingString(i, array.length)}
+            </span>
+          )
+        )}
+      </h5>
+    );
+  }
+
+  return <div />;
+};
 
 export default BlogAuthorsList;

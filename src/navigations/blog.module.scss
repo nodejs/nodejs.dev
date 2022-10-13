@@ -1,0 +1,14 @@
+.title {
+  display: block;
+  margin-bottom: var(--space-12);
+}
+
+.item {
+  margin: 0;
+  padding: var(--space-12);
+
+  &--active {
+    background-color: var(--color-fill-banner);
+    border-radius: 5px;
+  }
+}

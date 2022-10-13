@@ -1,0 +1,14 @@
+@import '../components/NavigationItem/index.module.scss';
+@import '../components/NavigationSection/index.module.scss';
+
+.title {
+  @extend %navigation-item--with-bullet;
+  @extend %navigation-section-title;
+
+  padding-bottom: 0;
+
+  &::before,
+  &:hover::before {
+    box-shadow: inset 0 0 0 3px var(--color-text-primary);
+  }
+}
