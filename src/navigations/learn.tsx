@@ -2,8 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
-import NavigationItem from '../components/NavigationItem';
-import NavigationSection from '../components/NavigationSection';
+import { NavigationComponents } from '../components';
 import { useNavigationContainer } from '../hooks/useNavigationContainer';
 import { useNavigationSection } from '../hooks/useNavigationSection';
 import { useReadSections } from '../hooks/useReadSections';
@@ -36,7 +35,7 @@ const LearnNavigationSection = ({
   );
 
   return (
-    <NavigationSection
+    <NavigationComponents.NavigationSection
       label={title}
       isOpen={isSectionOpen}
       title={sectionTitle}
@@ -70,7 +69,7 @@ const LearnNavigation = ({ sections, currentSlug }: Props) => {
       currentSlug={currentSlug}
     >
       {data.map(item => (
-        <NavigationItem
+        <NavigationComponents.NavigationItem
           key={item.slug}
           title={item.title}
           slug={item.slug}

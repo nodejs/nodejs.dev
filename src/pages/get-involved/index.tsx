@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
-import ArticleLayout from '../../components/Layout/article';
-import connectGraphQlArticle from '../../components/connectGraphQlArticle';
+import ArticleLayout from '../../layouts/article';
+import connectGraphQlArticle from '../../connectGraphQlArticle';
 import { AboutNavigationKeys } from '../../types';
 
 export default connectGraphQlArticle(ArticleLayout, {

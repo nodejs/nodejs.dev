@@ -1,5 +1,5 @@
-@import '../components/NavigationItem/index.module.scss';
-@import '../components/NavigationSection/index.module.scss';
+@import '../components/NavigationComponents/NavigationItem/index.module.scss';
+@import '../components/NavigationComponents/NavigationSection/index.module.scss';
 
 .title {
   @extend %navigation-item--with-bullet;

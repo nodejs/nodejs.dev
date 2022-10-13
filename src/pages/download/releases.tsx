@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import ArticleLayout from '../../components/Layout/article';
-import DownloadTable from '../../components/DownloadReleases/DownloadTable';
-import connectGraphQlArticle from '../../components/connectGraphQlArticle';
+import ArticleLayout from '../../layouts/article';
+import { DownloadComponents } from '../../components';
+import connectGraphQlArticle from '../../connectGraphQlArticle';
 import { NodeReleaseData, AboutNavigationKeys } from '../../types';
 
 export interface ReleasesNodeReleases {
@@ -16,7 +16,7 @@ export default connectGraphQlArticle(ArticleLayout, {
   currentSlug: AboutNavigationKeys.previousReleases,
   hideArticleComponents: true,
   articleContent: (props: ReleasesNodeReleases) => (
-    <DownloadTable
+    <DownloadComponents.DownloadTable
       nodeReleasesData={props.nodeReleases.nodeReleasesData.filter(
         release => release.status !== 'Pending'
       )}

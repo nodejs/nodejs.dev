@@ -1,8 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
-import NavigationItem from '../components/NavigationItem';
-import NavigationSection from '../components/NavigationSection';
+import { NavigationComponents } from '../components';
 import { useNavigationContainer } from '../hooks/useNavigationContainer';
 import { NavigationData, NavigationSectionData } from '../types';
 import styles from './api.module.scss';
@@ -28,7 +27,7 @@ const ApiNavigationSection = ({
   );
 
   return (
-    <NavigationSection
+    <NavigationComponents.NavigationSection
       isOpen
       label={title}
       title={sectionTitle}
@@ -53,7 +52,7 @@ const ApiNavigation = ({
       currentSlug={currentSlug}
     >
       {data.map(item => (
-        <NavigationItem
+        <NavigationComponents.NavigationItem
           key={item.slug}
           title={item.title}
           slug={item.slug}

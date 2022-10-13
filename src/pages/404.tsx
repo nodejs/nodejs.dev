@@ -1,10 +1,10 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import Layout from '../components/Layout';
+import DefaultLayout from '../layouts/default';
 
 const NotFoundPage = (): JSX.Element => (
-  <Layout
+  <DefaultLayout
     title="Page not found"
     description="You have hit a route that does not exist."
   >
@@ -17,7 +17,7 @@ const NotFoundPage = (): JSX.Element => (
         </Link>
       </p>
     </main>
-  </Layout>
+  </DefaultLayout>
 );
 
 export default NotFoundPage;
