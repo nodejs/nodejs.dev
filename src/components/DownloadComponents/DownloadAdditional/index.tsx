@@ -1,4 +1,4 @@
-import React, { useState, FC } from 'react';
+import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import DownloadableItem from './DownloadableItem';
 import DownloadToggle from '../DownloadToggle';
