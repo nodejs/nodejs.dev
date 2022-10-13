@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DownloadableItem component calls callback with correct item name on click when not expanded 1`] = `
+<div>
+  <div
+    class="downloadableItem"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="header"
+    >
+      <div
+        class="headerArrow"
+      >
+        <div
+          class="headerArrowRight"
+        />
+      </div>
+      Windows Installer (.msi)
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DownloadableItem component calls callback with empty item name on click when expanded 1`] = `
+<div>
+  <div
+    class="downloadableItem downloadableItemExpanded"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="header"
+    >
+      <div
+        class="headerArrow"
+      >
+        <div
+          class="headerArrowDown"
+        />
+      </div>
+      Windows Installer (.msi)
+    </div>
+    <div
+      class="body"
+    >
+      <a
+        class="bodyLink"
+        href="https://nodejs.org/dist/latest-v12.x/node-v12.0.0-x86.msi"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="GetAppIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"
+          />
+        </svg>
+        32-bit
+      </a>
+      <a
+        class="bodyLink"
+        href="https://nodejs.org/dist/latest-v12.x/node-v12.0.0-x64.msi"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="GetAppIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"
+          />
+        </svg>
+        64-bit
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DownloadableItem component renders correctly expanded state 1`] = `
+<div>
+  <div
+    class="downloadableItem downloadableItemExpanded"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="header"
+    >
+      <div
+        class="headerArrow"
+      >
+        <div
+          class="headerArrowDown"
+        />
+      </div>
+      Windows Installer (.msi)
+    </div>
+    <div
+      class="body"
+    >
+      <a
+        class="bodyLink"
+        href="https://nodejs.org/dist/latest-v12.x/node-v12.0.0-x86.msi"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="GetAppIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"
+          />
+        </svg>
+        32-bit
+      </a>
+      <a
+        class="bodyLink"
+        href="https://nodejs.org/dist/latest-v12.x/node-v12.0.0-x64.msi"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="GetAppIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"
+          />
+        </svg>
+        64-bit
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DownloadableItem component renders correctly with downloadable item 1`] = `
+<div>
+  <div
+    class="downloadableItem"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="header"
+    >
+      <div
+        class="headerArrow"
+      >
+        <div
+          class="headerArrowRight"
+        />
+      </div>
+      Windows Installer (.msi)
+    </div>
+  </div>
+</div>
+`;
