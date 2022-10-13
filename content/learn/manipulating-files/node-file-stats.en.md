@@ -2,13 +2,11 @@
 title: nodejs-file-stats
 displayTitle: 'Node.js file stats'
 description: 'How to get the details of a file using Node.js'
-authors: flaviocopes, ZYSzys, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99
+authors: flaviocopes, ZYSzys, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, ovflowd
 category: learn
 ---
 
-Every file comes with a set of details that we can inspect using Node.js.
-
-In particular, using the `stat()` method provided by the `fs` module.
+Every file comes with a set of details that we can inspect using Node.js. In particular, using the `stat()` method provided by the `fs` module.
 
 You call it passing a file path, and once Node.js gets the file details it will call the callback function you pass, with 2 parameters: an error message, and the file stats:
 
