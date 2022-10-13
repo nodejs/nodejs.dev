@@ -2,7 +2,7 @@ import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import DownloadableItem from '..';
-import { createNodeReleasesData } from '../../../../__fixtures__/page';
+import { createNodeReleasesData } from '../../../../../__fixtures__/page';
 import { getDownloadableItemsList } from '../downloadItems';
 
 describe('DownloadableItem component', (): void => {
