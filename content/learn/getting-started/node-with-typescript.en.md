@@ -2,7 +2,7 @@
 title: nodejs-with-typescript
 displayTitle: 'Node.js with TypeScript'
 description: 'Find out why TypeScript is an awesome tool and learn to use it by yourself.'
-authors: sbielenica
+authors: sbielenica, ovflowd
 category: learn
 ---
 
@@ -14,7 +14,7 @@ Basically, it's a superset of JavaScript that adds new capabilities to the langu
 
 We can talk about other TypeScript benefits later, let's see some examples now!
 
-## Examples
+### Examples
 
 Take a look at this code snippet and then we can unpack it together:
 
@@ -42,7 +42,7 @@ There are additional things about this example that you should know. Firstly, if
 
 Okay, so we have some TypeScript code. Now how do we run it?
 
-First thing to do is to install TypeScript in our project:
+**First thing to do is to install TypeScript in our project:**
 
 ```bash
 npm i -D typescript
@@ -50,7 +50,7 @@ npm i -D typescript
 
 Now we can compile it to JavaScript using `tsc` command in the terminal. Let's do it!
 
-Assuming that our file is named `example.ts`, the command would look like:
+**Assuming that our file is named `example.ts`, the command would look like:**
 
 ```bash
 npx tsc example.ts
@@ -59,7 +59,7 @@ npx tsc example.ts
 This command will result in a new file named `example.js` that we can run using Node.js.
 Now when we know how to compile and run TypeScript code let's see TypeScript bug-preventing capabilities in action!
 
-This is how we will modify our code:
+**This is how we will modify our code:**
 
 ```ts
 type User = {
@@ -79,7 +79,7 @@ const justine: User = {
 const isJustineAnAdult: string = isAdult(justine, "I shouldn't be here!");
 ```
 
-And this is what TypeScript has to say about this:
+**And this is what TypeScript has to say about this:**
 
 ```console
 example.ts:12:3 - error TS2322: Type 'string' is not assignable to type 'number'.

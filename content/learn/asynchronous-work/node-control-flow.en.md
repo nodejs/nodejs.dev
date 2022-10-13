@@ -2,7 +2,7 @@
 title: asynchronous-flow-control
 displayTitle: 'Asynchronous flow control'
 description: 'JavaScript control flow is all about callback handling. Here are strategies to help your development.'
-authors: aug2uag
+authors: aug2uag, ovflowd
 category: learn
 ---
 

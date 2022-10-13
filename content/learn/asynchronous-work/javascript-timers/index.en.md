@@ -2,7 +2,7 @@
 title: discover-javascript-timers
 displayTitle: 'Discover JavaScript Timers'
 description: 'When writing JavaScript code, you might want to delay the execution of a function. Learn how to use setTimeout and setInterval to schedule functions in the future'
-authors: flaviocopes, MylesBorins, LaRuaNa, amiller-gh, ahmadawais
+authors: flaviocopes, MylesBorins, LaRuaNa, amiller-gh, ahmadawais, ovflowd
 category: learn
 ---
 

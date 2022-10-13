@@ -2,7 +2,7 @@
 title: how-to-install-nodejs
 displayTitle: 'How to install Node.js'
 description: 'How you can install Node.js on your system: a package manager, the official website installer or nvm'
-authors: flaviocopes, ZYSzys, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, benhalverson
+authors: flaviocopes, ZYSzys, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, benhalverson, ovflowd
 category: learn
 ---
 
@@ -10,9 +10,7 @@ Node.js can be installed in different ways. This post highlights the most common
 
 One very convenient way to install Node.js is through a package manager. In this case, every operating system has its own. Other package managers for MacOS, Linux, and Windows are listed in [https://nodejs.dev/download/package-manager/](/download/package-manager/)
 
-`nvm` is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks.
-
-It is also very useful to test your code with old Node.js versions.
+`nvm` is a popular way to run Node.js. It allows you to easily switch the Node.js version, and install new versions to try and easily rollback if something breaks. It is also very useful to test your code with old Node.js versions.
 
 > See [https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm) for more information about this option.
 
