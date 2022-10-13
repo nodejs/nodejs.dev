@@ -16,7 +16,7 @@ interface Props {
   title: string;
   body: string;
   version?: string;
-  fileTitle?: string;
+  fileName?: string;
   authors: string[] | BlogPostAuthor[];
   tableOfContents: TableOfContentsItem[];
   relativePath?: string;
@@ -47,7 +47,7 @@ const renderTOC = (tableOfContents: TableOfContentsItem[] | undefined) => (
 
 const Article = ({
   title,
-  fileTitle,
+  fileName,
   body,
   version,
   tableOfContents,
@@ -83,13 +83,12 @@ const Article = ({
           relativePath={relativePath}
           editPath={editPath}
         />
-        <ArticleComponents.Pagination previous={previous} next={next} />
+        {version && fileName && (
+          <JsonLink version={version} fileName={fileName} />
+        )}
+        <Pagination previous={previous} next={next} />
       </>
     )}
-    {version && fileTitle && (
-      <JsonLink version={version} fileTitle={fileTitle} />
-    )}
-    {!blog && <Pagination previous={previous} next={next} />}
   </article>
 );
 

@@ -70,7 +70,7 @@ const Api = ({
         </ApiNavigation>
         <Article
           title={displayTitle}
-          fileTitle={title}
+          fileName={title}
           tableOfContents={filteredTableOfContets}
           body={body}
           version={version}

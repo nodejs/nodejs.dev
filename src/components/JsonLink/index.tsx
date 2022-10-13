@@ -5,14 +5,14 @@ import { faRobot } from '@fortawesome/free-solid-svg-icons';
 import styles from './index.module.scss';
 
 interface Props {
-  fileTitle: string;
+  fileName: string;
   version: string;
 }
 
 const baseURL = `https://nodejs.org/docs/latest-`;
 
-const JsonLink = ({ fileTitle, version }: Props): JSX.Element | null => {
-  const href = `${baseURL}${version}.x/api/${fileTitle}.json`;
+const JsonLink = ({ fileName, version }: Props): JSX.Element | null => {
+  const href = `${baseURL}${version}.x/api/${fileName}.json`;
 
   return (
     <div className={styles.json}>

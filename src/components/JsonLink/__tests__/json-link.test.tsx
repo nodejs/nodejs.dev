@@ -4,7 +4,7 @@ import JsonLink from '..';
 
 describe('EditLink component', () => {
   it('renders correctly', () => {
-    const { container } = render(<JsonLink fileTitle="cli" version="v18" />);
+    const { container } = render(<JsonLink fileName="cli" version="v18" />);
     expect(container).toMatchSnapshot();
   });
 });
