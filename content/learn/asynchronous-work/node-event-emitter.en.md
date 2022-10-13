@@ -2,7 +2,7 @@
 title: the-nodejs-event-emitter
 displayTitle: 'The Node.js Event emitter'
 description: 'How to work with custom events in Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, ovflowd
 category: learn
 ---
 

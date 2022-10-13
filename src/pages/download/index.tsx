@@ -2,14 +2,10 @@ import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import DefaultLayout from '../../layouts/default';
+import { DownloadComponents } from '../../components';
 import { detectOS } from '../../util/detectOS';
 import { getUpcomingReleases } from '../../util/getUpcomingReleases';
-import Layout from '../../components/Layout';
-import DownloadHeader from '../../components/DownloadHeader';
-import DownloadToggle from '../../components/DownloadToggle';
-import DownloadCards from '../../components/DownloadCards';
-import DownloadReleases from '../../components/DownloadReleases';
-import DownloadAdditional from '../../components/DownloadAdditional';
 import { NodeReleaseData } from '../../types';
 import styles from './index.module.scss';
 
@@ -48,9 +44,9 @@ const DownloadPage = ({ data: { nodeReleases } }: Props): JSX.Element => {
   const upcomingReleases = getUpcomingReleases(filteredReleases);
 
   return (
-    <Layout title="Download Node.js" description="Come get me!">
+    <DefaultLayout title="Download Node.js" description="Come get me!">
       <main className={`home-container ${styles.downloadPageContainer}`}>
-        <DownloadHeader release={selectedType} />
+        <DownloadComponents.DownloadHeader release={selectedType} />
         <p className={styles.releaseDescription}>
           <FormattedMessage id="pages.download.description" />{' '}
           <Link to="/download/package-manager">
@@ -58,22 +54,22 @@ const DownloadPage = ({ data: { nodeReleases } }: Props): JSX.Element => {
           </Link>
           .
         </p>
-        <DownloadToggle
+        <DownloadComponents.DownloadToggle
           selected={typeRelease}
           handleClick={handleTypeReleaseToggle}
         />
-        <DownloadCards line={selectedType} userOS={userOS} />
-        <DownloadReleases
+        <DownloadComponents.DownloadCards line={selectedType} userOS={userOS} />
+        <DownloadComponents.DownloadReleases
           nodeReleasesData={filteredReleases}
           upcomingReleases={upcomingReleases}
         />
-        <DownloadAdditional
+        <DownloadComponents.DownloadAdditional
           line={selectedType}
           selectedTypeRelease={typeRelease}
           handleTypeReleaseToggle={handleTypeReleaseToggle}
         />
       </main>
-    </Layout>
+    </DefaultLayout>
   );
 };
 

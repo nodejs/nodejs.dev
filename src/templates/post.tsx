@@ -1,8 +1,8 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import Article from '../components/Article';
-import Layout from '../components/Layout';
-import RecentPosts from '../components/RecentPosts';
+import Article from '../sections/Article';
+import DefaultLayout from '../layouts/default';
+import { ArticleComponents } from '../components';
 import { PostTemplateData, PostTemplateContext } from '../types';
 import styles from '../styles/templates/post.module.scss';
 
@@ -22,9 +22,9 @@ const PostTemplate = ({
   },
   pageContext: { next, previous, relativePath, recent },
 }: Props): JSX.Element => (
-  <Layout title={title} description={excerpt}>
+  <DefaultLayout title={title} description={excerpt}>
     <main className={`grid-container ${styles.postContainer}`}>
-      <RecentPosts posts={recent} />
+      <ArticleComponents.RecentPosts posts={recent} />
       <Article
         title={title}
         body={body}
@@ -37,7 +37,7 @@ const PostTemplate = ({
         date={date}
       />
     </main>
-  </Layout>
+  </DefaultLayout>
 );
 
 export default PostTemplate;
