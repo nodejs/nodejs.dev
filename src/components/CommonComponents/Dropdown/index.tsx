@@ -26,7 +26,7 @@ const Dropdown = <T extends HTMLElement>({
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
       if (e.key === 'Enter' || e.key === ' ') {
-        item.onClick;
+        item.onClick();
       }
     };
 
