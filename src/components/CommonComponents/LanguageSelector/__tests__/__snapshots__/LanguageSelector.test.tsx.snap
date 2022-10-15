@@ -3,6 +3,7 @@
 exports[`LanguageSelector component renders correctly 1`] = `
 <div>
   <button
+    aria-expanded="false"
     class="languageSwitch"
     type="button"
   >
