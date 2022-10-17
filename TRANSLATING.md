@@ -94,6 +94,20 @@ Most of our Pages contents reside within the `content/` folder. Our pages are wr
 
 Please refer to the Markdown and MDX guides mentioned above if you're struggling with the Syntax or inner-workings of these Idiomatic Languages/Syntaxes.
 
+## Adding Translations of Components
+
+When adding new translations towards a JSON file, we recommend always to add them in the bottom of the file. This allows contributors to easily see changesets, and see the diff between one translation file from another.
+
+**Note.:** We recommend to use a similar pattern when creating translation keys 👀
+
+### Adding React-Intl to a Component
+
+We recommend using [`injectIntl`](https://formatjs.io/docs/react-intl/api/#injectintl-hoc) HOC (High-order-Component) to bundle the `intl` object within your Component.
+
+We also recommend using the [`<FormattedMessage />`](https://formatjs.io/docs/react-intl/components/#formattedmessage) Component when possible, which doesn't require you to use `injectIntl`, as usually `injectIntl` is used when you need to have access to Imperative APIs such as `intl.formatMessage()`.
+
+This method `intl.formatMessage` should usually be used when you need a translated text on a part of the code that is not JSX. For example, within a Component Prop (Common example.: `aria-label`) or somewhere else.
+
 ### How to translate a page?
 
 As mentioned above the content of the pages are within the `content/` folder and all the files contain `.md` or `.mdx` extensions. These files support JSX(MDX), Markdown and plain HTML syntax. We of course, recommend not doing plain HTML, only when needed.
