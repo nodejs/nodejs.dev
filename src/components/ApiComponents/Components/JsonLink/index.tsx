@@ -2,6 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRobot } from '@fortawesome/free-solid-svg-icons';
+import { jsonLink } from '../../../../../apiUrls';
 import styles from './index.module.scss';
 
 interface Props {
@@ -9,10 +10,8 @@ interface Props {
   version: string;
 }
 
-const baseURL = `https://nodejs.org/docs/latest-`;
-
 const JsonLink = ({ fileName, version }: Props): JSX.Element | null => {
-  const href = `${baseURL}${version}.x/api/${fileName}.json`;
+  const href = jsonLink(fileName, version);
 
   return (
     <div className={styles.json}>
