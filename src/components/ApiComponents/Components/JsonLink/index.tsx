@@ -10,17 +10,13 @@ interface Props {
   version: string;
 }
 
-const JsonLink = ({ fileName, version }: Props): JSX.Element | null => {
-  const href = jsonLink(fileName, version);
-
-  return (
-    <div className={styles.json}>
-      <a href={href}>
-        <FormattedMessage id="components.jsonLink.title" tagName="span" />
-        <FontAwesomeIcon icon={faRobot} />
-      </a>
-    </div>
-  );
-};
+const JsonLink = ({ fileName, version }: Props): JSX.Element | null => (
+  <div className={styles.json}>
+    <a href={jsonLink(fileName, version)}>
+      <FormattedMessage id="components.jsonLink.title" tagName="span" />
+      <FontAwesomeIcon icon={faRobot} />
+    </a>
+  </div>
+);
 
 export default JsonLink;
