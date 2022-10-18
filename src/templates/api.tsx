@@ -77,7 +77,7 @@ const Api = ({
           previous={previous}
           absolutePath={`https://github.com/nodejs/node/edit/main/doc/api/${title}.md`}
           authors={[]}
-          extraLinks={[<JsonLink version={version} fileName={title} />]}
+          extraLinks={[<JsonLink key={0} version={version} fileName={title} />]}
           extraComponents={components}
           childrenPosition="before"
         >
