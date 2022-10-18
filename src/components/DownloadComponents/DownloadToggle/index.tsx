@@ -1,5 +1,9 @@
 import React from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
+import {
+  FormattedMessage,
+  injectIntl,
+  WrappedComponentProps,
+} from 'react-intl';
 import classnames from 'classnames';
 import styles from './index.module.scss';
 
@@ -13,13 +17,13 @@ const DownloadToggle = ({
   handleClick,
   selected,
   showDescription = true,
-}: Props): JSX.Element => {
+  intl,
+}: Props & WrappedComponentProps): JSX.Element => {
   const activeClassNames = classnames({ [styles.active]: selected === 'LTS' });
   const currentClassNames = classnames(styles.current, {
     [styles.active]: selected === 'CURRENT',
   });
 
-  const intl = useIntl();
   const handleOnClick = () =>
     handleClick(selected === 'CURRENT' ? 'LTS' : 'CURRENT');
 
@@ -65,4 +69,4 @@ const DownloadToggle = ({
   );
 };
 
-export default DownloadToggle;
+export default injectIntl(DownloadToggle);
