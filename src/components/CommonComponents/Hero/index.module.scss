@@ -121,6 +121,10 @@
       &:hover {
         color: var(--black0);
       }
+
+      &:focus {
+        color: var(--black0);
+      }
     }
   }
 }
