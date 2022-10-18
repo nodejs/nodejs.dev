@@ -10,13 +10,10 @@ import {
 } from '../../types';
 import Pagination from '../../components/ArticleComponents/Pagination';
 import styles from './index.module.scss';
-import JsonLink from '../../components/JsonLink';
 
 interface Props {
   title: string;
   body: string;
-  version?: string;
-  fileName?: string;
   authors: string[] | BlogPostAuthor[];
   tableOfContents: TableOfContentsItem[];
   relativePath?: string;
@@ -26,6 +23,7 @@ interface Props {
   previous?: PaginationInfo;
   blog?: boolean;
   date?: string;
+  extraLinks?: JSX.Element[];
   children?: React.ReactNode;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   extraComponents?: Record<string, (...any: any[]) => JSX.Element | null>;
@@ -47,9 +45,7 @@ const renderTOC = (tableOfContents: TableOfContentsItem[] | undefined) => (
 
 const Article = ({
   title,
-  fileName,
   body,
-  version,
   tableOfContents,
   previous,
   next,
@@ -60,6 +56,7 @@ const Article = ({
   blog,
   date,
   children,
+  extraLinks = [],
   extraComponents = {},
   childrenPosition = 'after',
 }: Props): JSX.Element => (
@@ -83,9 +80,7 @@ const Article = ({
           relativePath={relativePath}
           editPath={editPath}
         />
-        {version && fileName && (
-          <JsonLink version={version} fileName={fileName} />
-        )}
+        {extraLinks}
         <Pagination previous={previous} next={next} />
       </>
     )}
