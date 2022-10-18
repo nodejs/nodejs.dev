@@ -41,7 +41,7 @@
   "components.pagination.next": "Suivant",
   "components.randomContributor.thankYou": "Merci {contributor} d'être un contributeur Node.js avec {amount}  de contributions.",
   "components.recentPosts.title": "Recent Posts",
-  "components.searchBar.placeholder": "Recherche",
+  "components.searchBar.placeholder": "Search",
   "components.searchBar.search.title": "Commencez à taper pour rechercher",
   "components.searchBar.search.noResults": "Aucun résultat ne correspond à votre requête.",
   "containers.authorList.title": "Contributeurs",
