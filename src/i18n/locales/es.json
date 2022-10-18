@@ -93,5 +93,7 @@
   "blog.categories.vulnerability": "Vulnerabilities",
   "blog.categories.announcements.description": "Blog category for Node.js announcements",
   "blog.categories.release.description": "Blog category for Node.js Release announcements",
-  "blog.categories.vulnerability.description": "Blog category regarding Security Vulnerabilities"
+  "blog.categories.vulnerability.description": "Blog category regarding Security Vulnerabilities",
+  "components.downloadToggle.ltsVersions": "LTS Versions",
+  "components.downloadToggle.currentVersions": "Current Versions"
 }
