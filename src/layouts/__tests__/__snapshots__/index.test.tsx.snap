@@ -158,6 +158,7 @@ exports[`Layout component renders correctly with data 1`] = `
             </li>
             <li>
               <button
+                aria-expanded="false"
                 class="languageSwitch"
                 type="button"
               >

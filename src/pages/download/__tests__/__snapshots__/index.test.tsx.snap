@@ -158,6 +158,7 @@ exports[`Download page renders correctly 1`] = `
             </li>
             <li>
               <button
+                aria-expanded="false"
                 class="languageSwitch"
                 type="button"
               >
@@ -1144,6 +1145,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             </li>
             <li>
               <button
+                aria-expanded="false"
                 class="languageSwitch"
                 type="button"
               >
