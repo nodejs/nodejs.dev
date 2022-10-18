@@ -9,7 +9,7 @@ import {
 } from '../components';
 import { apiMdxComponents } from '../mdxComponents';
 import ApiNavigation from '../navigations/api';
-import JsonLink from '../components/JsonLink';
+import JsonLink from '../components/ApiComponents/Components/JsonLink';
 import { replaceDataTagFromString } from '../util/replaceDataTag';
 import type {
   ApiTemplateData,
