@@ -8,7 +8,6 @@ import {
   BlogPostAuthor,
   TableOfContentsItem,
 } from '../../types';
-import Pagination from '../../components/ArticleComponents/Pagination';
 import styles from './index.module.scss';
 
 interface Props {
@@ -81,7 +80,7 @@ const Article = ({
           editPath={editPath}
         />
         {extraLinks}
-        <Pagination previous={previous} next={next} />
+        <ArticleComponents.Pagination previous={previous} next={next} />
       </>
     )}
   </article>
