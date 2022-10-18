@@ -9,7 +9,6 @@ import {
 } from '../components';
 import { apiMdxComponents } from '../mdxComponents';
 import ApiNavigation from '../navigations/api';
-import JsonLink from '../components/ApiComponents/Components/JsonLink';
 import { replaceDataTagFromString } from '../util/replaceDataTag';
 import type {
   ApiTemplateData,
@@ -77,7 +76,13 @@ const Api = ({
           previous={previous}
           absolutePath={`https://github.com/nodejs/node/edit/main/doc/api/${title}.md`}
           authors={[]}
-          extraLinks={[<JsonLink key={0} version={version} fileName={title} />]}
+          extraLinks={[
+            <ApiComponents.JsonLink
+              key={0}
+              version={version}
+              fileName={title}
+            />,
+          ]}
           extraComponents={components}
           childrenPosition="before"
         >
