@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
 import classnames from 'classnames';
 import styles from './index.module.scss';
 
@@ -19,6 +19,7 @@ const DownloadToggle = ({
     [styles.active]: selected === 'CURRENT',
   });
 
+  const Intl = injectIntl();
   const handleOnClick = () =>
     handleClick(selected === 'CURRENT' ? 'LTS' : 'CURRENT');
 
