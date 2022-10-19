@@ -6,35 +6,34 @@ authors: flaviocopes, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmada
 category: learn
 ---
 
-En tant que débutant, il est difficile d'arriver à un point où vous êtes suffisamment confiant dans vos capacités de programmation.
+ous avez suffisamment confiance en vos capacités de programmation. Tout en apprenant à coder, vous pouvez également être confus quant à la fin de JavaScript et au début de Node.js, et vice versa.
 
-Lorsque vous apprenez à coder, vous pouvez aussi vous demander où s'arrête JavaScript et où commence Node.js, et vice versa.
+### Qu'est-il recommandé d'apprendre avant de plonger dans Node.js ?
 
-**Je vous recommande d'avoir une bonne maîtrise des principaux concepts JavaScript avant de plonger dans Node.js:**.
-
-* Lexical Structure
-* Expressions
-* Types
-* Classes
+* [Structure lexicale](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar)
+* [Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
+* [Types de données](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+* [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 * Variables
-* Functions
-* this
-* Arrow Functions
-* Loops
-* Scopes
-* Arrays
-* Template Literals
-* Semicolons
-* Strict Mode
-* ECMAScript 2015 et plus
+* Fonctions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+* [Opérateur `this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+* [Fonctions fléchées](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+* [Boucles](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
+* [Scopes](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
+* [Tableaux](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+* [Littérature des modèles](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+* [Strict Mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
+* ECMAScript 2015 (ES6) et au-delà](/learn/ecmascript-2015-es6-and-beyond/)
 
 Avec ces concepts en tête, vous êtes sur la bonne voie pour devenir un développeur JavaScript compétent, à la fois dans le navigateur et dans Node.js.
 
-**Les concepts suivants sont également essentiels à la compréhension de la programmation asynchrone, qui est l'un des éléments fondamentaux de Node.js:**
+#### Programmation asynchrone
 
-* [Asynchronous programming and callbacks](https://developer.mozilla.org/fr/docs/Learn/JavaScript/Asynchronous/Introducing)
-* [Timers](https://developer.mozilla.org/fr/docs/Web/API/setTimeout)
-* [Promises](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Using_promises)
-* [Async and Await](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/async_function)
-* [Closures](https://developer.mozilla.org/fr/docs/Web/JavaScript/Closures)
-* [The Event Loop](https://developer.mozilla.org/fr/docs/Web/JavaScript/EventLoop)
+Les concepts suivants sont également essentiels pour comprendre la programmation asynchrone, qui est l'une des parties fondamentales de Node.js :
+
+* [Programmation asynchrone et callbacks](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing)
+* [Timers](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout)
+* [Promesses](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
+* [Async et Await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+* [Fermetures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+* [La boucle d'événement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
