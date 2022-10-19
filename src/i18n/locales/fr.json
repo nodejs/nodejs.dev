@@ -21,6 +21,7 @@
   "components.downloadToggle.lts": "LTS",
   "components.downloadToggle.recommendation": "{selected, select, LTS {Recommended for most users}other {With the latest features}}",
   "components.editLink.title": "Modifier cette page sur GitHub",
+  "components.jsonLink.title": "Afficher en JSON",
   "components.footer.links.trademark": "Politique en matière de marques",
   "components.footer.links.privacy": "Politique de confidentialité",
   "components.footer.links.codeOfConduct": "Code de conduite",
