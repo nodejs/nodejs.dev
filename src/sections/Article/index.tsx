@@ -13,8 +13,8 @@ import styles from './index.module.scss';
 interface Props {
   title: string;
   body: string;
-  authors?: string[] | BlogPostAuthor[];
-  tableOfContents?: TableOfContentsItem[];
+  authors: string[] | BlogPostAuthor[];
+  tableOfContents: TableOfContentsItem[];
   relativePath?: string;
   absolutePath?: string;
   editPath?: string;
@@ -22,6 +22,7 @@ interface Props {
   previous?: PaginationInfo;
   blog?: boolean;
   date?: string;
+  extraLinks?: JSX.Element[];
   children?: React.ReactNode;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   extraComponents?: Record<string, (...any: any[]) => JSX.Element | null>;
@@ -54,6 +55,7 @@ const Article = ({
   blog,
   date,
   children,
+  extraLinks = [],
   extraComponents = {},
   childrenPosition = 'after',
 }: Props): JSX.Element => (
@@ -77,6 +79,7 @@ const Article = ({
           relativePath={relativePath}
           editPath={editPath}
         />
+        {extraLinks}
         <ArticleComponents.Pagination previous={previous} next={next} />
       </>
     )}
