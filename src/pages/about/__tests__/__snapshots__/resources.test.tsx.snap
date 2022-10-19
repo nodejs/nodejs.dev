@@ -158,6 +158,7 @@ exports[`Resources page renders correctly 1`] = `
             </li>
             <li>
               <button
+                aria-expanded="false"
                 class="languageSwitch"
                 type="button"
               >
