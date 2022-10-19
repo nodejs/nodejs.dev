@@ -54,7 +54,7 @@
 .node-features {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   margin: 0 auto 5em auto;
 
