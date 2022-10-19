@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { ApiLink, H5, H4, H3 } from '..';
+import { ApiLink, H5, H4, H3, JsonLink } from '..';
 
 describe('ApiComponents Components', (): void => {
   it('renders ApiLink component correctly', () => {
@@ -26,6 +26,11 @@ describe('ApiComponents Components', (): void => {
   it('renders H3 component correctly', () => {
     const id = '<Tag tag="C" />';
     const { container } = render(<H3 id={id} />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders JsonLink component correctly', () => {
+    const { container } = render(<JsonLink fileName="cli" version="v18" />);
     expect(container).toMatchSnapshot();
   });
 });
