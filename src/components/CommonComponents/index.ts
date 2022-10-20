@@ -4,6 +4,7 @@ export { default as DarkModeToggle } from './DarkModeToggle';
 export { default as Dropdown } from './Dropdown';
 export { default as Hero } from './Hero';
 export { default as LanguageSelector } from './LanguageSelector';
+export { default as Pagination } from './Pagination';
 export { default as RandomContributor } from './RandomContributor';
 export { default as SearchBar } from './SearchBar';
 export { default as SectionTitle } from './SectionTitle';

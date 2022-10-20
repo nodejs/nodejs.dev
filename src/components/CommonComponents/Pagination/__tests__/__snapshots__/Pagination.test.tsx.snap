@@ -1,0 +1,339 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination component handles hrefBuilder 1`] = `
+<div>
+  <nav
+    aria-label="Pagination"
+    class="wrapper"
+  >
+    <ul
+      class="pagination"
+    >
+      <li>
+        <a
+          aria-label="Previous Page"
+          class="paginationButton prev"
+          href="/page/1"
+          rel="prev"
+        >
+          Prev
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 1"
+          class="paginationButton"
+          href="/page/1"
+        >
+          1
+        </a>
+      </li>
+      <li>
+        <em
+          aria-current="page"
+          class="paginationButton"
+        >
+          2
+        </em>
+      </li>
+      <li>
+        <a
+          aria-label="Page 3"
+          class="paginationButton"
+          href="/page/3"
+        >
+          3
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 4"
+          class="paginationButton"
+          href="/page/4"
+        >
+          4
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 5"
+          class="paginationButton"
+          href="/page/5"
+        >
+          5
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 6"
+          class="paginationButton"
+          href="/page/6"
+        >
+          6
+        </a>
+      </li>
+      <li>
+        <span
+          aria-disabled="true"
+          class="paginationButton"
+        >
+          …
+        </span>
+      </li>
+      <li>
+        <a
+          aria-label="Page 10"
+          class="paginationButton"
+          href="/page/10"
+        >
+          10
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Next Page"
+          class="paginationButton next"
+          href="/page/3"
+          rel="next"
+        >
+          Next
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
+exports[`Pagination component renders correctly 1`] = `
+<div>
+  <nav
+    aria-label="Pagination"
+  >
+    <ul
+      class="pagination"
+    >
+      <li>
+        <span
+          aria-disabled="true"
+          class="paginationButton prev"
+        >
+          Prev
+        </span>
+      </li>
+      <li>
+        <em
+          aria-current="page"
+          class="paginationButton"
+        >
+          1
+        </em>
+      </li>
+      <li>
+        <a
+          aria-label="Page 2"
+          class="paginationButton"
+          href="#2"
+        >
+          2
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 3"
+          class="paginationButton"
+          href="#3"
+        >
+          3
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 4"
+          class="paginationButton"
+          href="#4"
+        >
+          4
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 5"
+          class="paginationButton"
+          href="#5"
+        >
+          5
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 6"
+          class="paginationButton"
+          href="#6"
+        >
+          6
+        </a>
+      </li>
+      <li>
+        <span
+          aria-disabled="true"
+          class="paginationButton"
+        >
+          …
+        </span>
+      </li>
+      <li>
+        <a
+          aria-label="Page 10"
+          class="paginationButton"
+          href="#10"
+        >
+          10
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Next Page"
+          class="paginationButton next"
+          href="#2"
+          rel="next"
+        >
+          Next
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
+exports[`Pagination component renders only next prev buttons 1`] = `
+<div>
+  <nav
+    aria-label="Pagination"
+  >
+    <ul
+      class="pagination"
+    >
+      <li>
+        <span
+          aria-disabled="true"
+          class="paginationButton prev"
+        >
+          Prev
+        </span>
+      </li>
+      <li>
+        <a
+          aria-label="Next Page"
+          class="paginationButton next"
+          href="#2"
+          rel="next"
+        >
+          Next
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
+exports[`Pagination component renders with wrapperClassName 1`] = `
+<div>
+  <nav
+    aria-label="Pagination"
+    class="wrapper"
+  >
+    <ul
+      class="pagination"
+    >
+      <li>
+        <span
+          aria-disabled="true"
+          class="paginationButton prev"
+        >
+          Prev
+        </span>
+      </li>
+      <li>
+        <em
+          aria-current="page"
+          class="paginationButton"
+        >
+          1
+        </em>
+      </li>
+      <li>
+        <a
+          aria-label="Page 2"
+          class="paginationButton"
+          href="#2"
+        >
+          2
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 3"
+          class="paginationButton"
+          href="#3"
+        >
+          3
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 4"
+          class="paginationButton"
+          href="#4"
+        >
+          4
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 5"
+          class="paginationButton"
+          href="#5"
+        >
+          5
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 6"
+          class="paginationButton"
+          href="#6"
+        >
+          6
+        </a>
+      </li>
+      <li>
+        <span
+          aria-disabled="true"
+          class="paginationButton"
+        >
+          …
+        </span>
+      </li>
+      <li>
+        <a
+          aria-label="Page 10"
+          class="paginationButton"
+          href="#10"
+        >
+          10
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Next Page"
+          class="paginationButton next"
+          href="#2"
+          rel="next"
+        >
+          Next
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
