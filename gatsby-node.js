@@ -15,6 +15,7 @@ const createBlogPages = require('./util-node/createBlogPages');
 const createLearnPages = require('./util-node/createLearnPages');
 const createApiPages = require('./util-node/createApiPages');
 const generateRedirects = require('./util-node/generateRedirects');
+const getPaginationPath = require('./util-node/getPaginationPath');
 const redirects = require('./redirects');
 const nodeLocales = require('./locales');
 const { learnPath, apiPath, blogPath } = require('./pathPrefixes');
@@ -168,15 +169,11 @@ exports.createPages = async ({ graphql, actions }) => {
       total: paginatedPosts.length,
     });
 
-    const getBlogPagePath = index => {
-      const categoryPath = node.name ? `${blogPath}${node.name}/` : blogPath;
-
-      return index === 0 ? categoryPath : `${categoryPath}page/${index + 1}/`;
-    };
+    const getBlogPagePath = getPaginationPath(blogPath, node.name);
 
     paginatedPosts.forEach((currentPagePosts, index) => {
       createPage({
-        path: getBlogPagePath(index),
+        path: getBlogPagePath(index + 1),
         component: blogTemplate,
         context: {
           category: node.name ? node : null,
