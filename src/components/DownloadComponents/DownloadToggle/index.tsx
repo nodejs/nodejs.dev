@@ -1,5 +1,9 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import {
+  FormattedMessage,
+  injectIntl,
+  WrappedComponentProps,
+} from 'react-intl';
 import classnames from 'classnames';
 import styles from './index.module.scss';
 
@@ -13,7 +17,8 @@ const DownloadToggle = ({
   handleClick,
   selected,
   showDescription = true,
-}: Props): JSX.Element => {
+  intl,
+}: Props & WrappedComponentProps): JSX.Element => {
   const activeClassNames = classnames({ [styles.active]: selected === 'LTS' });
   const currentClassNames = classnames(styles.current, {
     [styles.active]: selected === 'CURRENT',
@@ -30,7 +35,9 @@ const DownloadToggle = ({
             className={activeClassNames}
             type="button"
             role="switch"
-            aria-label="Show LTS versions"
+            aria-label={intl.formatMessage({
+              id: 'components.downloadToggle.ltsVersions',
+            })}
             aria-checked={selected === 'LTS'}
             onClick={handleOnClick}
           >
@@ -40,8 +47,10 @@ const DownloadToggle = ({
             className={currentClassNames}
             type="button"
             role="switch"
-            aria-label="Show LTS versions"
-            aria-checked={selected === 'LTS'}
+            aria-label={intl.formatMessage({
+              id: 'components.downloadToggle.currentVersions',
+            })}
+            aria-checked={selected === 'CURRENT'}
             onClick={handleOnClick}
           >
             <FormattedMessage id="components.downloadToggle.current" />
@@ -60,4 +69,4 @@ const DownloadToggle = ({
   );
 };
 
-export default DownloadToggle;
+export default injectIntl(DownloadToggle);
