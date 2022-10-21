@@ -72,7 +72,7 @@ const BlogTemplate = ({
           </div>
           {shouldShowPagination && (
             <CommonComponents.Pagination
-              hrefBuilder={getPaginationPath(blogPath, category.name)}
+              hrefBuilder={getPaginationPath(blogPath, category?.name)}
               pageCount={pagination.total}
               currentPage={pagination.current}
               marginPageCount={1}
