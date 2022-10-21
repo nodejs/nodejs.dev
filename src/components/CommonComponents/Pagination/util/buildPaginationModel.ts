@@ -1,6 +1,14 @@
-export interface PageType {
+// eslint-disable-next-line no-shadow
+export enum PageType {
+  BREAK = 'BREAK',
+  NEXT = 'NEXT',
+  NUM = 'NUM',
+  PREV = 'PREV',
+}
+
+export interface PageModel {
   className?: string;
-  type: string;
+  type: PageType;
   num: number;
   disabled?: boolean;
   selected?: boolean;
@@ -12,7 +20,7 @@ export function buildPaginationModel(
   showPages: boolean,
   marginPageCount: number,
   surroundingPageCount: number
-): PageType[] {
+): PageModel[] {
   const pages = [];
 
   if (showPages) {
@@ -78,12 +86,13 @@ export function buildPaginationModel(
           // If the first page isn't page one,
           // we need to add a break
           pages.push({
-            type: 'BREAK',
+            disabled: true,
+            type: PageType.BREAK,
             num: 1,
           });
         }
         pages.push({
-          type: 'NUM',
+          type: PageType.NUM,
           num,
           selected,
         });
@@ -92,18 +101,19 @@ export function buildPaginationModel(
         const delta = num - last;
         if (delta === 1) {
           pages.push({
-            type: 'NUM',
+            type: PageType.NUM,
             num,
             selected,
           });
         } else {
           // We skipped some, so add a break
           pages.push({
-            type: 'BREAK',
+            disabled: true,
+            type: PageType.BREAK,
             num: num - 1,
           });
           pages.push({
-            type: 'NUM',
+            type: PageType.NUM,
             num,
             selected,
           });
@@ -112,24 +122,24 @@ export function buildPaginationModel(
     }
 
     const lastPage = pages[pages.length - 1];
-    if (lastPage.type === 'NUM' && lastPage.num !== pageCount) {
+    if (lastPage.type === PageType.NUM && lastPage.num !== pageCount) {
       // The last page we rendered wasn't the actual last page,
       // so we need an additional break
       pages.push({
-        type: 'BREAK',
+        type: PageType.BREAK,
         num: pageCount,
       });
     }
   }
 
   const prev = {
-    type: 'PREV',
+    type: PageType.PREV,
     num: currentPage - 1,
     disabled: currentPage === 1,
     className: 'prev',
   };
   const next = {
-    type: 'NEXT',
+    type: PageType.NEXT,
     num: currentPage + 1,
     disabled: currentPage === pageCount,
     className: 'next',

@@ -1,25 +1,7 @@
-import React, {
-  createElement,
-  FC,
-  MouseEvent,
-  ReactElement,
-  useCallback,
-  useMemo,
-} from 'react';
-import classnames from 'classnames';
-import { buildPaginationModel } from './utils/buildPaginationModel';
-import { buildComponentData } from './utils/buildComponentData';
+import React, { FC, MouseEvent, useCallback, useMemo } from 'react';
+import { buildPaginationModel } from './util/buildPaginationModel';
+import Page from './Page';
 import styles from './index.module.scss';
-
-interface UsePaginationPagesParameters {
-  pageCount: number;
-  currentPage: number;
-  onPageChange?: (e: MouseEvent, n: number) => void;
-  hrefBuilder: (n: number) => string;
-  marginPageCount: number;
-  showPages?: boolean;
-  surroundingPageCount: number;
-}
 
 interface Props {
   currentPage: number;
@@ -32,15 +14,18 @@ interface Props {
   wrapperClassName?: string;
 }
 
-function usePaginationPages({
+const defaultHrefBuilder = (pageNum: number): string => `#${pageNum}`;
+
+const Pagination: FC<Props> = ({
   pageCount,
   currentPage,
   onPageChange,
-  hrefBuilder,
-  marginPageCount,
-  showPages,
-  surroundingPageCount,
-}: UsePaginationPagesParameters): ReactElement[] {
+  hrefBuilder = defaultHrefBuilder,
+  marginPageCount = 1,
+  showPages = true,
+  surroundingPageCount = 2,
+  wrapperClassName,
+}) => {
   const pageChange = useCallback(
     (n: number) => (e: MouseEvent) => onPageChange && onPageChange(e, n),
     [onPageChange]
@@ -58,57 +43,21 @@ function usePaginationPages({
     [pageCount, currentPage, showPages, marginPageCount, surroundingPageCount]
   );
 
-  const children = useMemo(
+  const pageElements = useMemo(
     () =>
-      model.map(page => {
-        const { props, key, content } = buildComponentData(
-          page,
-          hrefBuilder,
-          pageChange(page.num)
-        );
-        const { as, className, ...restProps } = props;
-        const button = createElement(
-          as,
-          {
-            ...restProps,
-            className: classnames(
-              styles.paginationButton,
-              styles[className as string]
-            ),
-          },
-          content
-        );
-        return <li key={key}>{button}</li>;
-      }),
+      model.map(page => (
+        <li key={`${page.type}${page.num}`}>
+          <Page
+            className={styles.paginationPage}
+            hrefBuilder={hrefBuilder}
+            page={page}
+            onPageChange={pageChange(page.num)}
+          />
+        </li>
+      )),
     [model, hrefBuilder, pageChange]
   );
 
-  return children;
-}
-
-function defaultHrefBuilder(pageNum: number): string {
-  return `#${pageNum}`;
-}
-
-const Pagination: FC<Props> = ({
-  pageCount,
-  currentPage,
-  onPageChange,
-  hrefBuilder = defaultHrefBuilder,
-  marginPageCount = 1,
-  showPages = true,
-  surroundingPageCount = 2,
-  wrapperClassName,
-}) => {
-  const pageElements = usePaginationPages({
-    pageCount,
-    currentPage,
-    onPageChange,
-    hrefBuilder,
-    marginPageCount,
-    showPages,
-    surroundingPageCount,
-  });
   return (
     <nav aria-label="Pagination" className={wrapperClassName}>
       <ul className={styles.pagination}>{pageElements}</ul>
