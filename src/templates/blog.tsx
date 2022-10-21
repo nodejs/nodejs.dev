@@ -46,7 +46,7 @@ const BlogTemplate = ({
       description: intl.formatMessage({ id: 'blog.description' }),
     };
   }, [category, intl]);
-  const shouldShowPagination = category && pagination.total > 1;
+  const shouldShowPagination = pagination.total > 1;
 
   return (
     <DefaultLayout title="Blogs at Nodejs">
