@@ -33,8 +33,10 @@ function getNodeReleasesData(nodeReleasesDataCallback) {
 
     const isReleaseCurrentlyLTS = release =>
       (new Date(release.lts) <= new Date() &&
-      new Date(release.maintenance) >= new Date()) ||
-      getReleaseStatus(release) === 'Maintenance LTS';
+        new Date(release.maintenance) >= new Date()) ||
+      (getReleaseStatus(release) === 'Maintenance LTS' &&
+        formateReleaseDate(release.end) >=
+          new Date().toISOString().split('T')[0]);
 
     const mapReleaseData = key => {
       const release = releaseSchedule[key];
@@ -78,6 +80,8 @@ function getNodeReleasesData(nodeReleasesDataCallback) {
     const sortedReleasesByRelease = mappedReleasesData.sort(
       (a, b) => new Date(a.initialRelease) - new Date(b.initialRelease)
     );
+
+    sortedReleasesByRelease.reverse();
 
     nodeReleasesDataCallback({
       nodeReleasesData: sortedReleasesByRelease,
