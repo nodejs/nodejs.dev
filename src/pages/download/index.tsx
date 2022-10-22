@@ -30,7 +30,12 @@ const DownloadPage = ({ data: { nodeReleases } }: Props): JSX.Element => {
     release => release.status !== 'End-of-life'
   );
 
-  const lts = filteredReleases.find(release => release.isLts);
+  console.log(filteredReleases);
+
+  const lts = filteredReleases
+    .slice()
+    .reverse()
+    .find(release => release.isLts);
   const current = filteredReleases.find(
     release => release.status === 'Current'
   );
