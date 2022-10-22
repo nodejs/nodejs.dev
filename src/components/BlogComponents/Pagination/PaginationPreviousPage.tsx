@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { FormattedMessage } from 'react-intl';
+import styles from './index.module.scss';
 
 interface Props {
   className: string;
@@ -16,7 +17,7 @@ const PaginationPreviousPage = ({
   hrefBuilder,
   onPageChange,
 }: Props) => {
-  const componentClassName = classnames(className, 'prev');
+  const componentClassName = classnames(className, styles.prev);
   const content = <FormattedMessage id="components.pagination.previous" />;
   const disabled = currentPage === 1;
 

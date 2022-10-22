@@ -1,5 +1,6 @@
 import React, { MouseEvent, useCallback } from 'react';
-import { generatePageList, PageType } from './util/generatePageList';
+import { generatePageList } from './util/generatePageList';
+import { PageType } from '../../../types/pagination';
 import PaginationPreviousPage from './PaginationPreviousPage';
 import PaginationNextPage from './PaginationNextPage';
 import PaginationPage from './PaginationPage';

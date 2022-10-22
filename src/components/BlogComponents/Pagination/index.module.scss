@@ -9,13 +9,12 @@
     align-items: center;
     background-color: var(--brand0);
     color: var(--black9);
-    cursor: pointer;
     display: inline-flex;
     font-size: var(--font-size-caption);
     font-style: normal;
     justify-content: center;
     line-height: var(--line-height-caption);
-    padding: 0.7rem 1.3rem;
+    padding: var(--space-07) var(--space-13);
     text-align: center;
     text-decoration: none;
     transition: background-color 0.2s ease-in-out;
@@ -30,8 +29,8 @@
       transition-duration: 0.1s;
     }
 
-    &[rel='prev'],
-    &[rel='next'] {
+    &.prev,
+    &.next {
       background-color: var(--black2);
       color: var(--black9);
     }
@@ -42,13 +41,11 @@
       color: var(--black0);
     }
 
-    &[rel='prev'],
-    &.prev[aria-disabled] {
+    &.prev {
       border-radius: 4px 0 0 4px;
     }
 
-    &[rel='next'],
-    &.next[aria-disabled] {
+    &.next {
       border-radius: 0 4px 4px 0;
     }
 
@@ -57,6 +54,17 @@
       background-color: var(--black1);
       color: var(--black9);
       cursor: not-allowed;
+    }
+  }
+}
+
+:global(.dark) {
+  .pagination-page {
+    color: var(--black0);
+
+    &:hover,
+    &:focus {
+      color: var(--black9);
     }
   }
 }

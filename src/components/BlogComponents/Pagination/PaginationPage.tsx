@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import { PageModel } from './util/generatePageList';
+import { PageModel } from '../../../types/pagination';
 
 interface Props {
   className: string;

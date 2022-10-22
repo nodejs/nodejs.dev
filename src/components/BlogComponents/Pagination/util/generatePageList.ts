@@ -1,17 +1,4 @@
-// eslint-disable-next-line no-shadow
-export enum PageType {
-  NEXT = 'NEXT',
-  NUM = 'NUM',
-  PREV = 'PREV',
-}
-
-export interface PageModel {
-  className?: string;
-  type: PageType;
-  num: number;
-  disabled?: boolean;
-  selected?: boolean;
-}
+import { PageModel, PageType } from '../../../../types/pagination';
 
 export function generatePageList(
   pageCount: number,
@@ -20,12 +7,11 @@ export function generatePageList(
 ): PageModel[] {
   const pages: PageModel[] = [];
   if (showPages) {
-    for (let i = 0; i < pageCount; i += 1) {
-      const num = i + 1;
-      const selected = num === currentPage;
+    for (let i = 1; i <= pageCount; i += 1) {
+      const selected = i === currentPage;
       pages.push({
         type: PageType.NUM,
-        num,
+        num: i,
         selected,
       });
     }
