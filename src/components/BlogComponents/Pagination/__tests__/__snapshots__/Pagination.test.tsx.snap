@@ -73,12 +73,31 @@ exports[`Pagination component handles hrefBuilder 1`] = `
         </a>
       </li>
       <li>
-        <span
-          aria-disabled="true"
+        <a
+          aria-label="Page 7"
           class="paginationPage"
+          href="/page/7"
         >
-          …
-        </span>
+          7
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 8"
+          class="paginationPage"
+          href="/page/8"
+        >
+          8
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 9"
+          class="paginationPage"
+          href="/page/9"
+        >
+          9
+        </a>
       </li>
       <li>
         <a
@@ -174,12 +193,31 @@ exports[`Pagination component renders correctly 1`] = `
         </a>
       </li>
       <li>
-        <span
-          aria-disabled="true"
+        <a
+          aria-label="Page 7"
           class="paginationPage"
+          href="#7"
         >
-          …
-        </span>
+          7
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 8"
+          class="paginationPage"
+          href="#8"
+        >
+          8
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 9"
+          class="paginationPage"
+          href="#9"
+        >
+          9
+        </a>
       </li>
       <li>
         <a
@@ -205,7 +243,127 @@ exports[`Pagination component renders correctly 1`] = `
 </div>
 `;
 
-exports[`Pagination component renders only next prev buttons 1`] = `
+exports[`Pagination component renders with disabled next link 1`] = `
+<div>
+  <nav
+    aria-label="Pagination"
+  >
+    <ul
+      class="pagination"
+    >
+      <li>
+        <a
+          aria-label="Previous Page"
+          class="paginationPage prev"
+          href="#9"
+          rel="prev"
+        >
+          Prev
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 1"
+          class="paginationPage"
+          href="#1"
+        >
+          1
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 2"
+          class="paginationPage"
+          href="#2"
+        >
+          2
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 3"
+          class="paginationPage"
+          href="#3"
+        >
+          3
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 4"
+          class="paginationPage"
+          href="#4"
+        >
+          4
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 5"
+          class="paginationPage"
+          href="#5"
+        >
+          5
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 6"
+          class="paginationPage"
+          href="#6"
+        >
+          6
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 7"
+          class="paginationPage"
+          href="#7"
+        >
+          7
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 8"
+          class="paginationPage"
+          href="#8"
+        >
+          8
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 9"
+          class="paginationPage"
+          href="#9"
+        >
+          9
+        </a>
+      </li>
+      <li>
+        <em
+          aria-current="page"
+          class="paginationPage"
+        >
+          10
+        </em>
+      </li>
+      <li>
+        <span
+          aria-disabled="true"
+          class="paginationPage next"
+        >
+          Next
+        </span>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
+exports[`Pagination component renders with only next and prev link 1`] = `
 <div>
   <nav
     aria-label="Pagination"
@@ -307,12 +465,31 @@ exports[`Pagination component renders with wrapperClassName 1`] = `
         </a>
       </li>
       <li>
-        <span
-          aria-disabled="true"
+        <a
+          aria-label="Page 7"
           class="paginationPage"
+          href="#7"
         >
-          …
-        </span>
+          7
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 8"
+          class="paginationPage"
+          href="#8"
+        >
+          8
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 9"
+          class="paginationPage"
+          href="#9"
+        >
+          9
+        </a>
       </li>
       <li>
         <a
