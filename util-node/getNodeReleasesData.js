@@ -47,7 +47,9 @@ function getNodeReleasesData(nodeReleasesDataCallback) {
         codename: release.codename || key,
         isLts: release.lts
           ? isReleaseCurrentlyLTS(release)
-          : getReleaseStatus(release) === 'Maintenance LTS',
+          : getReleaseStatus(release) === 'Maintenance LTS' &&
+            formateReleaseDate(release.end) >=
+              new Date().toISOString().split('T')[0],
         status: getReleaseStatus(release),
         initialRelease: formateReleaseDate(release.start),
         ltsStart: formateReleaseDate(release.lts),
