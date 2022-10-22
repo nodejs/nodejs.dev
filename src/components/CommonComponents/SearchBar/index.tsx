@@ -69,10 +69,7 @@ const SearchBar = (): JSX.Element => {
   });
 
   const onBlurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
-    if (e.currentTarget.contains(e.relatedTarget)) {
-      if (isEmpty) {
-        collapseContainer();
-      }
+    if (e.currentTarget.contains(e.relatedTarget) && !isEmpty) {
       return;
     }
     collapseContainer();
