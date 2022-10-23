@@ -50,7 +50,7 @@ exports[`Learn Template renders correctly 1`] = `
           </li>
           <li>
             <a
-              href="/api/latest/"
+              href="/api/"
             >
               API Docs
             </a>
@@ -86,7 +86,7 @@ exports[`Learn Template renders correctly 1`] = `
               </span>
               <div
                 class="searchBarContainer"
-                style="min-height: 0; width: 100%; max-width: 100px; box-shadow: none;"
+                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
@@ -157,6 +157,51 @@ exports[`Learn Template renders correctly 1`] = `
               </button>
             </li>
             <li>
+              <button
+                aria-expanded="false"
+                class="languageSwitch"
+                type="button"
+              >
+                <span
+                  class="sr-only"
+                >
+                  Switch Language
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8rv7ug-MuiSvgIcon-root"
+                  data-testid="TranslateIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m12.87 15.07-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7 1.62-4.33L19.12 17h-3.24z"
+                  />
+                </svg>
+              </button>
+              <ul
+                class="dropdownList"
+                style="left: -10px; top: -15px; visibility: hidden;"
+              >
+                <li>
+                  <button
+                    style="font-weight: bold;"
+                    type="button"
+                  >
+                    English
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Français
+                  </button>
+                </li>
+              </ul>
+            </li>
+            <li>
               <a
                 href="https://github.com/nodejs/nodejs.dev"
                 rel="noopener noreferrer"
@@ -194,8 +239,9 @@ exports[`Learn Template renders correctly 1`] = `
       class="grid-container"
     >
       <nav
-        aria-label="Secondary"
+        aria-label="Learn Navigation"
         class="navigation"
+        id="main-navigation"
       >
         <button
           aria-expanded="false"
@@ -204,6 +250,102 @@ exports[`Learn Template renders correctly 1`] = `
         >
           Menu
         </button>
+        <div
+          class="navigationSection"
+        >
+          <button
+            aria-expanded="false"
+            class="t-body2 title"
+            type="button"
+          >
+            <span>
+              test-section
+            </span>
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-caret-down "
+              data-icon="caret-down"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          <div
+            aria-label="test-section"
+            role="region"
+            style="display: none;"
+          >
+            <a
+              class="t-body2 navigationItem item itemDone"
+              href="test-slug-1"
+              id="test-slug-1"
+            >
+              test-title-1
+            </a>
+            <a
+              class="t-body2 navigationItem item itemDone"
+              href="test-slug-2"
+              id="test-slug-2"
+            >
+              test-title-2
+            </a>
+          </div>
+        </div>
+        <div
+          class="navigationSection"
+        >
+          <button
+            aria-expanded="false"
+            class="t-body2 title"
+            type="button"
+          >
+            <span>
+              test-section2
+            </span>
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-caret-down "
+              data-icon="caret-down"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          <div
+            aria-label="test-section2"
+            role="region"
+            style="display: none;"
+          >
+            <a
+              class="t-body2 navigationItem item itemDone"
+              href="test-slug-3"
+              id="test-slug-3"
+            >
+              test-title-3
+            </a>
+            <a
+              class="t-body2 navigationItem item itemDone"
+              href="test-slug-4"
+              id="test-slug-4"
+            >
+              test-title-4
+            </a>
+          </div>
+        </div>
       </nav>
       <article
         class="article"
@@ -211,6 +353,42 @@ exports[`Learn Template renders correctly 1`] = `
         <h1
           class="headline"
         />
+        <div
+          class="authorList"
+        >
+          Article Authors
+          <ul>
+            <li>
+              <a
+                aria-label="test-user1 Github - opens in new tab"
+                class="link"
+                href="https://github.com/test-user1"
+                rel="noopener noreferrer"
+                style="margin-left: 0px;"
+                target="_blank"
+              >
+                <img
+                  alt=""
+                  src="https://github.com/test-user1.png?size=60"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                aria-label="test-user2 Github - opens in new tab"
+                class="link"
+                href="https://github.com/test-user2"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  alt=""
+                  src="https://github.com/test-user2.png?size=60"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
         <details
           class="tableOfContents"
         >
@@ -283,42 +461,6 @@ exports[`Learn Template renders correctly 1`] = `
             </code>
              executable program in the command line.
           </p>
-        </div>
-        <div
-          class="authorList"
-        >
-          Contributors
-          <ul>
-            <li>
-              <a
-                class="link"
-                href="https://github.com/test-user1"
-                rel="noopener noreferrer"
-                style="margin-left: 0px;"
-                target="_blank"
-                title="test-user1"
-              >
-                <img
-                  alt="test-user1"
-                  src="https://github.com/test-user1.png?size=60"
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                class="link"
-                href="https://github.com/test-user2"
-                rel="noopener noreferrer"
-                target="_blank"
-                title="test-user2"
-              >
-                <img
-                  alt="test-user2"
-                  src="https://github.com/test-user2.png?size=60"
-                />
-              </a>
-            </li>
-          </ul>
         </div>
         <div
           class="edit"

@@ -1,18 +1,14 @@
-import type SvgIcon from '@mui/material/SvgIcon';
-
-export interface NavigationSectionItem {
-  slug: string;
-  title: string;
-  category: string;
-}
-
 export interface NavigationSectionData {
-  [index: string]: { category: string; data: NavigationSectionItem[] };
+  title: string;
+  section: NavigationItemData[];
+  currentSlug: string;
 }
 
-export interface SideNavBarItem {
-  title: string;
+export interface NavigationItemData {
   slug: string;
-  icon?: typeof SvgIcon;
-  isTitle?: boolean;
+  title: string;
+}
+
+export interface NavigationData {
+  [index: string]: NavigationItemData[];
 }

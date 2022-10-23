@@ -1,0 +1,9 @@
+@mixin navigationItemBase {
+  align-items: center;
+  border-radius: 4px;
+  box-sizing: border-box;
+  list-style: none;
+  padding: calc(var(--space-12) / 2) 0 calc(var(--space-24) / 2) var(--space-08);
+  position: relative;
+  text-decoration: none;
+}

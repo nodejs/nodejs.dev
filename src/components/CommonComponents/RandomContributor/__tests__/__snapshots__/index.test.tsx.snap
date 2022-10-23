@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RandomContributor component should render correctly 1`] = `
+<div>
+  <div
+    class="randomContributor"
+  >
+    <div
+      class="randomContributorAvatar"
+    >
+      <a
+        href="profileUri_mock"
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="Avatar of a Node.js contributor"
+          src="avatarUri_mock"
+        />
+      </a>
+    </div>
+    <a
+      href="profileUri_mock"
+      rel="nofollow noopener noreferrer"
+      target="_blank"
+    >
+      Thank you login_mock for being a Node.js contributor with 0 contributions
+    </a>
+  </div>
+</div>
+`;
+
+exports[`RandomContributor component should render loading animation until data will be fetched 1`] = `
+<div>
+  <div
+    class="randomContributor"
+  >
+    <div
+      class="placeholder"
+      style="width: 400px; height: 50px;"
+    >
+      <div
+        class="placeholderImage"
+      />
+      <div
+        class="placeholderText"
+      >
+        <div
+          class="placeholderTextLine"
+        />
+        <div
+          class="placeholderTextLine"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

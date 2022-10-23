@@ -10,4 +10,33 @@
     - getting-started/node-installation
     - getting-started/node-javascript-language
     - getting-started/node-difference-browser
+    - getting-started/v8-engine
+    - getting-started/npm
+    - getting-started/node-es6
     - getting-started/node-difference-dev-prod
+    - getting-started/node-with-typescript
+    - getting-started/node-with-web-assembly
+- section: 'Asynchronous Work'
+  items:
+    - asynchronous-work/node-control-flow
+    - asynchronous-work/blocking-vs-non-blocking
+    - asynchronous-work/javascript-callbacks
+    - asynchronous-work/node-process-nexttick
+    - asynchronous-work/javascript-timers
+    - asynchronous-work/node-setimmediate
+    - asynchronous-work/node-event-emitter
+- section: 'Manipulating Files'
+  items:
+    - manipulating-files/node-file-stats
+    - manipulating-files/node-file-paths
+    - manipulating-files/node-file-descriptors
+    - manipulating-files/node-reading-files
+    - manipulating-files/node-writing-files
+    - manipulating-files/node-folders
+- section: 'Command Line'
+  items:
+    - command-line/node-run-cli
+    - command-line/node-environment-variables
+    - command-line/node-repl
+    - command-line/node-output-to-cli
+    - command-line/node-input-from-cli
