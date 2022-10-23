@@ -3,6 +3,7 @@
   cursor: pointer;
   display: flex;
   margin-left: var(--space-16);
+  white-space: nowrap;
 
   @media (max-width: 900px) {
     display: flex;
