@@ -31,14 +31,14 @@ const apiTypesNavigationData = yaml.parse(
 );
 
 // This creates a map of all the locale JSONs that are enabled in the config.json file
-const intlMessages = nodeLocales.locales.reduce((acc, locale) => {
-  const filePath = path.resolve(
-    __dirname,
-    `./src/i18n/locales/${locale.code}.json`
-  );
-  acc[locale.code] = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  return acc;
-}, {});
+const intlMessages = nodeLocales.locales.reduce(
+  (acc, locale) => ({
+    ...acc,
+    // eslint-disable-next-line import/no-dynamic-require, global-require
+    [locale.code]: require(`./src/i18n/locales/${locale.code}.json`),
+  }),
+  {}
+);
 
 const getMessagesForLocale = locale =>
   locale && locale in intlMessages
@@ -47,29 +47,6 @@ const getMessagesForLocale = locale =>
 
 const getRedirectForLocale = (locale, url) =>
   /^\/\/|https?:\/\//.test(url) ? url : `/${locale}${url}`;
-
-exports.onCreateWebpackConfig = ({ plugins, actions, stage, getConfig }) => {
-  actions.setWebpackConfig({
-    plugins: [
-      plugins.ignore({ resourceRegExp: /canvas/, contextRegExp: /jsdom$/ }),
-    ],
-  });
-
-  if (stage === 'develop' || stage === 'build-javascript') {
-    const config = getConfig();
-
-    const miniCssExtractPlugin = config.plugins.find(
-      plugin => plugin.constructor.name === 'MiniCssExtractPlugin'
-    );
-
-    if (miniCssExtractPlugin) {
-      // We don't care about the order of CSS imports as we use CSS Modules
-      miniCssExtractPlugin.options.ignoreOrder = true;
-    }
-
-    actions.replaceWebpackConfig(config);
-  }
-};
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
@@ -427,4 +404,27 @@ exports.onCreateBabelConfig = ({ actions }) => {
       },
     },
   });
+};
+
+exports.onCreateWebpackConfig = ({ plugins, actions, stage, getConfig }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      plugins.ignore({ resourceRegExp: /canvas/, contextRegExp: /jsdom$/ }),
+    ],
+  });
+
+  if (stage === 'develop' || stage === 'build-javascript') {
+    const config = getConfig();
+
+    const miniCssExtractPlugin = config.plugins.find(
+      plugin => plugin.constructor.name === 'MiniCssExtractPlugin'
+    );
+
+    if (miniCssExtractPlugin) {
+      // We don't care about the order of CSS imports as we use CSS Modules
+      miniCssExtractPlugin.options.ignoreOrder = true;
+    }
+
+    actions.replaceWebpackConfig(config);
+  }
 };

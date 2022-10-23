@@ -1,6 +1,5 @@
 const nodeVersions = require('@pkgjs/nv');
 const path = require('path');
-const fetch = require('node-fetch');
 const async = require('async');
 const fs = require('fs');
 const getReleaseStatus = require('./getReleaseStatus');

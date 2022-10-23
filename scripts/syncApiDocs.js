@@ -6,11 +6,9 @@ getNodeReleasesData(nodeReleasesData => {
   const currentActiveReleasesVersions =
     getCurrentActiveReleases(nodeReleasesData);
 
-  // For now we're only going to parse the latest Node.js docs
-  // As the v14 and v16 docs have some Markdown Errors
-  const [latestNodeRelease] = currentActiveReleasesVersions.reverse();
+  const nodeReleases = currentActiveReleasesVersions.reverse();
 
-  getApiDocsData([latestNodeRelease], () => {
+  getApiDocsData(nodeReleases, () => {
     // eslint-disable-next-line no-console
     console.log('Finished Syncing Pages');
   });
