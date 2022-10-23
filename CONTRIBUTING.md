@@ -1,64 +1,95 @@
-# Contributing Guide
+# Contributing guide
 
-## 🚀 Get Started
+Thank you for your interest in contributing to [nodejs.dev](https://nodejs.dev). Before you proceed, briefly go through the following:
 
-* Fork the [nodejs.dev repo][] using the Fork button on the top right
+  [Code of Conduct](https://github.com/nodejs/node/blob/HEAD/CODE_OF_CONDUCT.md)
 
-* Clone your fork using SSH, GitHub CLI, or HTTPS
+* [🚀 Getting started](#-getting-started)
+  * [Vocabulary](#vocabulary)
+  * [📝 Commit message guidelines](#-commit-message-guidelines)
+  * [📜 Pull Request Policy](#-pull-request-policy)
+    * [Before merging](#before-merging)
+    * [When merging](#when-merging)
+  * [Becoming a collaborator](#becoming-a-collaborator)
+  * [🐛 Debugging failing checks](#-debugging-failing-checks)
+  * [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
+  * [Remarks](#remarks)
+
+## 🚀 Getting started
+
+1. Click the fork button in the top right to clone the [nodejs.dev repo][]
+
+2. Clone your fork using SSH, GitHub CLI, or HTTPS. Assuming that your GitHub username is jane, do the following:
 
   ```bash
-  git clone git@github.com:<GITHUB_ID>/nodejs.dev.git # SSH
-  gh repo clone <GITHUB_ID>/nodejs.dev # GitHub CLI
-  git clone https://github.com/<GITHUB_ID>/nodejs.dev.git # HTTPS
+  git clone git@github.com:jane/nodejs.dev.git # SSH
+  gh repo clone jane/nodejs.dev # GitHub CLI
+  git clone https://github.com/jane/nodejs.dev.git # HTTPS
   ```
 
-* Change into the nodejs.dev project directory
+3. Change into the nodejs.dev directory.
 
   ```bash
   cd nodejs.dev
   ```
 
-* Add nodejs/nodejs.dev as your upstream remote branch
+4. Create a remote for keeping your fork as well as your local clone up-to-date.
 
   ```bash
   git remote add upstream git@github.com:nodejs/nodejs.dev.git
   ```
 
-* Create a new branch for your awesome work
+5. Create a new branch for your work.
 
   ```bash
-  git checkout -b <BRANCH_NAME>
+  git checkout -b name-of-your-branch
   ```
 
-* Confirm tests, linting, and formatting are passing. See [here](#-debugging-failing-checks) to fix failures
+6. Run the following to install the dependencies and start a local preview of your work.
 
   ```bash
-  npm test # Runs formatter and linter also
+  npm install # installs this project's dependencies
+  npm start # starts a preview of your local changes
   ```
 
-* Commit your work. See [Commit Guidelines](#-commit-message-guidelines)
+7. Perform a merge to sync your current branch with the upstream branch.
 
-* Push to your branch
+ ```bash
+git fetch upstream
+git merge upstream/main
+```
 
-  ```bash
-  git push -u origin <YOUR_BRANCH>
-  ```
+8. Run `npm test` to confirm that tests, linting, and formatting are passing. See [here](#-debugging-failing-checks) to fix failures. Ensure that your tests are passing before making a PR.
 
-* Open a pull request. See [PR Policy](#-pull-request-policy)
+```bash
+npm test
+```
 
-## Vocabulary
+9. Once you're happy with your changes, add and commit them to your branch,
+then push the branch to your fork.
 
-* A **Contributor** is any individual creating or commenting on an issue or pull request,
-  or contributing in some other way.
-* A **Collaborator** is a contributor who has been given write access to the repository. See [here](#how-to-become-a-collaborator) on how to become a collaborator.
+    ```sh
+    cd ~/nodejs.dev
+    git add .
+    git commit
+    git push -u origin name-of-your-branch
+    ```
 
-## 📝 Commit Message Guidelines
+10. Create a Pull Request. See [PR Policy](#-pull-request-policy)
+
+> **Note**: Go through our [Commit](#-commit-message-guidelines) and Pull Request(#-pull-request-policy) guidelines outlined below.
+
+## 📝 Commit message guidelines
 
 This project follows the [Conventional Commits][] specification.
 
 Basic rules:
 
-* Commit messages must be prefixed with the name of the changed subsystem, followed by a colon and a space, and start with an imperative verb. Check the output of `git log --oneline files/you/changed` to find out what subsystems your changes touch.
+* Commit messages must be prefixed with the name of the changed subsystem, followed by a colon and a space, and start with an imperative verb. Check the output of `git log --oneline files/you/changed` to find out what subsystems your changes touch. For example:
+`
+fix(index.js): fix non-responsive navbar
+docs(CONTRIBUTING.md): correct typo errors
+`
 
   Supported subsystems:
 
@@ -70,38 +101,43 @@ Basic rules:
 
 ## 📜 Pull Request Policy
 
-### Before landing
+### Before merging
 
-* Pull Requests must be open for at least 48 hours unless changes include errata fixes, infrastructure maintenance, or tests
-* There must be no objections after a 48 hour period
-* Tests must be included in Pull Requests for new features or bug fixes
+* Pull Requests must be open for at least 48 hours unless changes include errata fixes, infrastructure maintenance, or tests.
+* There must be no objections after 48 hours.
+* Tests must be included in Pull Requests for new features or bug fixes. If any test(s) are failing, you are responsible for fixing them.
 
-The default for each contribution is that it is accepted once no collaborator has an objection. During review collaborators may also request that a specific contributor who is most versed in a particular area gives a "LGTM" before the PR can be merged.
+Each contribution is accepted only if there is no objection to it by a collaborator. During the review, collaborators may request that a specific contributor who is an expert in a particular area give an "LGTM" before the PR can be merged.
 
-In the case of an objection being raised in a pull request by another collaborator, all involved collaborators should seek to arrive at a consensus by way of addressing concerns being expressed by discussion, compromise on the proposed change, or withdrawal of the proposed change.
+In the case that an objection is raised in a pull request by another collaborator, all collaborators involved should try to arrive at a consensus by addressing the concerns through discussion, compromise, or withdrawal of the proposed change(s).
 
-## When Landing
+### When merging
 
-* Do not use the merge button
-* [`squash`][] pull-requests made up of multiple commits
-* Land how you like as long as there are no merge commits
+* Do not use the **merge** option
+* [`squash`][] pull requests made up of multiple commits
 
-## How to become a collaborator
+## Vocabulary
+
+* A **Contributor** is any individual who creates an issue/PR, comments on an issue/PR
+  or contributes in some other way.
+* A **Collaborator** is a contributor with write access to the repository. See [here](#becoming-a-collaborator) on how to become a collaborator.
+
+## Becoming a collaborator
 
 * Collaborators must be actively contributing to the project
 * A Pull Request must be opened on the @nodejs/nodejs.dev README file adding the new collaborator to the list (note the order of names)
 * The Pull Request must be approved by at least two members of @nodejs/nodejs.dev, @nodejs/website, or @nodejs/website-redesign
-* Pull Request must remain open for 72 hours without any objections
+* The Pull Request must remain open for 72 hours without any objections
 
-## 🐛 Debugging Failing Checks
+## 🐛 Debugging failing checks
 
-For failing formatting or linting, you can try running:
+* For failing formatting or linting, try running:
 
-```bash
-npm run format
-```
+  ```bash
+  npm run format
+  ```
 
-Tests sometimes fail when adding or updating HTML. To update snapshots you can run:
+* Tests sometimes fail when you add or update HTML. Run the following to update snapshots:
 
 ```bash
 npm run update-snapshot
@@ -109,7 +145,7 @@ npm run update-snapshot
 
 ## Developer's Certificate of Origin 1.1
 
-By making a contribution to this project, I certify that:
+By contributing to this project, I certify that:
 
 * (a) The contribution was created in whole or in part by me and I have the right to
   submit it under the open source license indicated in the file; or
@@ -125,6 +161,10 @@ By making a contribution to this project, I certify that:
   including my sign-off) is maintained indefinitely and may be redistributed consistent
   with this project or the open source license(s) involved.
 
+## Remarks
+
+If something is missing here, or you feel something is not well described, feel free to create a PR.
+
 [`squash`]: https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits
-[conventional commits]: https://www.conventionalcommits.org/
-[nodejs.dev repo]: https://github.com/nodejs/nodejs.dev
+[Conventional Commits]: https://www.conventionalcommits.org/
+[nodejs.dev repo]: https://github.com/nodejs/nodejs.dev/fork
