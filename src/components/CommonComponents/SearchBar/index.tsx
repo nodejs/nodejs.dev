@@ -68,6 +68,13 @@ const SearchBar = (): JSX.Element => {
     [styles.expanded]: isExpanded,
   });
 
+  const onBlurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
+    if (e.currentTarget.contains(e.relatedTarget) && !isEmpty) {
+      return;
+    }
+    collapseContainer();
+  };
+
   const onKeyPressHandler = () => {
     if (!isExpanded) {
       expandContainer();
@@ -94,6 +101,7 @@ const SearchBar = (): JSX.Element => {
       variants={containerVariants}
       transition={containerTransition}
       ref={parentRef}
+      onBlur={onBlurHandler}
     >
       <div
         className={styles.searchInputContainer}
