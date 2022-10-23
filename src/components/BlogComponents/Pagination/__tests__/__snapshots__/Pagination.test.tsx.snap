@@ -1,0 +1,516 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination component handles hrefBuilder 1`] = `
+<div>
+  <nav
+    aria-label="Pagination"
+    class="wrapper"
+  >
+    <ul
+      class="pagination"
+    >
+      <li>
+        <a
+          aria-label="Previous Page"
+          class="paginationPage prev"
+          href="/page/1"
+          rel="prev"
+        >
+          Prev
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 1"
+          class="paginationPage"
+          href="/page/1"
+        >
+          1
+        </a>
+      </li>
+      <li>
+        <em
+          aria-current="page"
+          class="paginationPage"
+        >
+          2
+        </em>
+      </li>
+      <li>
+        <a
+          aria-label="Page 3"
+          class="paginationPage"
+          href="/page/3"
+        >
+          3
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 4"
+          class="paginationPage"
+          href="/page/4"
+        >
+          4
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 5"
+          class="paginationPage"
+          href="/page/5"
+        >
+          5
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 6"
+          class="paginationPage"
+          href="/page/6"
+        >
+          6
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 7"
+          class="paginationPage"
+          href="/page/7"
+        >
+          7
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 8"
+          class="paginationPage"
+          href="/page/8"
+        >
+          8
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 9"
+          class="paginationPage"
+          href="/page/9"
+        >
+          9
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 10"
+          class="paginationPage"
+          href="/page/10"
+        >
+          10
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Next Page"
+          class="paginationPage next"
+          href="/page/3"
+          rel="next"
+        >
+          Next
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
+exports[`Pagination component renders correctly 1`] = `
+<div>
+  <nav
+    aria-label="Pagination"
+  >
+    <ul
+      class="pagination"
+    >
+      <li>
+        <span
+          aria-disabled="true"
+          class="paginationPage prev"
+        >
+          Prev
+        </span>
+      </li>
+      <li>
+        <em
+          aria-current="page"
+          class="paginationPage"
+        >
+          1
+        </em>
+      </li>
+      <li>
+        <a
+          aria-label="Page 2"
+          class="paginationPage"
+          href="#2"
+        >
+          2
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 3"
+          class="paginationPage"
+          href="#3"
+        >
+          3
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 4"
+          class="paginationPage"
+          href="#4"
+        >
+          4
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 5"
+          class="paginationPage"
+          href="#5"
+        >
+          5
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 6"
+          class="paginationPage"
+          href="#6"
+        >
+          6
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 7"
+          class="paginationPage"
+          href="#7"
+        >
+          7
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 8"
+          class="paginationPage"
+          href="#8"
+        >
+          8
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 9"
+          class="paginationPage"
+          href="#9"
+        >
+          9
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 10"
+          class="paginationPage"
+          href="#10"
+        >
+          10
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Next Page"
+          class="paginationPage next"
+          href="#2"
+          rel="next"
+        >
+          Next
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
+exports[`Pagination component renders with disabled next link 1`] = `
+<div>
+  <nav
+    aria-label="Pagination"
+  >
+    <ul
+      class="pagination"
+    >
+      <li>
+        <a
+          aria-label="Previous Page"
+          class="paginationPage prev"
+          href="#9"
+          rel="prev"
+        >
+          Prev
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 1"
+          class="paginationPage"
+          href="#1"
+        >
+          1
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 2"
+          class="paginationPage"
+          href="#2"
+        >
+          2
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 3"
+          class="paginationPage"
+          href="#3"
+        >
+          3
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 4"
+          class="paginationPage"
+          href="#4"
+        >
+          4
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 5"
+          class="paginationPage"
+          href="#5"
+        >
+          5
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 6"
+          class="paginationPage"
+          href="#6"
+        >
+          6
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 7"
+          class="paginationPage"
+          href="#7"
+        >
+          7
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 8"
+          class="paginationPage"
+          href="#8"
+        >
+          8
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 9"
+          class="paginationPage"
+          href="#9"
+        >
+          9
+        </a>
+      </li>
+      <li>
+        <em
+          aria-current="page"
+          class="paginationPage"
+        >
+          10
+        </em>
+      </li>
+      <li>
+        <span
+          aria-disabled="true"
+          class="paginationPage next"
+        >
+          Next
+        </span>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
+exports[`Pagination component renders with only next and prev link 1`] = `
+<div>
+  <nav
+    aria-label="Pagination"
+  >
+    <ul
+      class="pagination"
+    >
+      <li>
+        <span
+          aria-disabled="true"
+          class="paginationPage prev"
+        >
+          Prev
+        </span>
+      </li>
+      <li>
+        <a
+          aria-label="Next Page"
+          class="paginationPage next"
+          href="#2"
+          rel="next"
+        >
+          Next
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
+exports[`Pagination component renders with wrapperClassName 1`] = `
+<div>
+  <nav
+    aria-label="Pagination"
+    class="wrapper"
+  >
+    <ul
+      class="pagination"
+    >
+      <li>
+        <span
+          aria-disabled="true"
+          class="paginationPage prev"
+        >
+          Prev
+        </span>
+      </li>
+      <li>
+        <em
+          aria-current="page"
+          class="paginationPage"
+        >
+          1
+        </em>
+      </li>
+      <li>
+        <a
+          aria-label="Page 2"
+          class="paginationPage"
+          href="#2"
+        >
+          2
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 3"
+          class="paginationPage"
+          href="#3"
+        >
+          3
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 4"
+          class="paginationPage"
+          href="#4"
+        >
+          4
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 5"
+          class="paginationPage"
+          href="#5"
+        >
+          5
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 6"
+          class="paginationPage"
+          href="#6"
+        >
+          6
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 7"
+          class="paginationPage"
+          href="#7"
+        >
+          7
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 8"
+          class="paginationPage"
+          href="#8"
+        >
+          8
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 9"
+          class="paginationPage"
+          href="#9"
+        >
+          9
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Page 10"
+          class="paginationPage"
+          href="#10"
+        >
+          10
+        </a>
+      </li>
+      <li>
+        <a
+          aria-label="Next Page"
+          class="paginationPage next"
+          href="#2"
+          rel="next"
+        >
+          Next
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

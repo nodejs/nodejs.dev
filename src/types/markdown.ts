@@ -12,3 +12,8 @@ export interface PaginationInfo {
   slug: string;
   title: string;
 }
+
+export interface PagePaginationInfo {
+  current: number;
+  total: number;
+}
