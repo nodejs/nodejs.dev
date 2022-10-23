@@ -7,7 +7,7 @@ export const useUpdateDocumentColorScheme = (
 
   useEffect(() => {
     // This is responsible for setting the color-scheme of the scroll-bars
-    if (typeof document === 'object' && document.documentElement) {
+    if (typeof document !== 'undefined' && document.documentElement) {
       document.documentElement.style['color-scheme'] = currentTheme;
     }
   }, [currentTheme]);
