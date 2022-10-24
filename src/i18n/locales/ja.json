@@ -81,7 +81,7 @@
   "docs.api.history.changes": "変更",
   "docs.api.stability": "安定性: {level}{text}",
   "components.header.links.about": "Node.js とは",
-  "components.header.links.certification": "認証",
+  "components.header.links.certification": "認定",
   "components.sideBar.section.about": "Node.js について",
   "components.sideBar.section.getInvolved": "参加する",
   "components.sideBar.items.codeLearn": "Code + Learn",
