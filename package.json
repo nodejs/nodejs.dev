@@ -67,6 +67,10 @@
     "gatsby",
     "node.js"
   ],
+  "engines": {
+    "node": "v18"
+  },
+  "engineStrict": true,
   "license": "MIT",
   "scripts": {
     "cleanup": "gatsby clean",
