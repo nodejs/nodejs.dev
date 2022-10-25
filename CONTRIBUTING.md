@@ -19,12 +19,12 @@ Thank you for your interest in contributing to [nodejs.dev](https://nodejs.dev).
 
 1. Click the fork button in the top right to clone the [nodejs.dev repo][]
 
-2. Clone your fork using SSH, GitHub CLI, or HTTPS. Assuming that your GitHub username is jane, do the following:
+2. Clone your fork using SSH, GitHub CLI, or HTTPS.
 
   ```bash
-  git clone git@github.com:jane/nodejs.dev.git # SSH
-  gh repo clone jane/nodejs.dev # GitHub CLI
-  git clone https://github.com/jane/nodejs.dev.git # HTTPS
+  git clone git@github.com:<GITHUB_ID>/nodejs.dev.git # SSH
+  gh repo clone <GITHUB_ID>/nodejs.dev # GitHub CLI
+  git clone https://github.com/<GITHUB_ID>/nodejs.dev.git # HTTPS
   ```
 
 3. Change into the nodejs.dev directory.
