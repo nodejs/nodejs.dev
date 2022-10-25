@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 const { nodeBannersData } = require('../apiUrls');
 
 // @TODO: In the future the Banners Data should be stored directly in this Repository

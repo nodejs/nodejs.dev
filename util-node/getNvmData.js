@@ -1,4 +1,3 @@
-const fetch = require('node-fetch');
 const createGitHubHeaders = require('./createGitHubHeaders');
 const { nvmTags } = require('../apiUrls');
 

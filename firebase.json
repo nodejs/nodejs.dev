@@ -203,17 +203,17 @@
     },
     {
       "source": "/api/",
-      "destination": "/api/v18/documentation/",
+      "destination": "/api/v19/documentation/",
       "type": "301"
     },
     {
-      "source": "/api/v18/",
-      "destination": "/api/v18/documentation/",
+      "source": "/api/v19/",
+      "destination": "/api/v19/documentation/",
       "type": "301"
     },
     {
       "source": "/api/latest/",
-      "destination": "/api/v18/documentation/",
+      "destination": "/api/v19/documentation/",
       "type": "301"
     }
   ]

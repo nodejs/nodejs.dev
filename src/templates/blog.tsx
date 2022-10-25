@@ -1,10 +1,11 @@
 import React, { useMemo } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import DefaultLayout from '../layouts/default';
-import { BlogComponents, ArticleComponents } from '../components';
+import { ArticleComponents, BlogComponents } from '../components';
 import BlogNavigation from '../navigations/blog';
 import { blogPath } from '../../pathPrefixes';
 import { BlogCategory, BlogTemplateContext } from '../types';
+import getPaginationPath from '../../util-node/getPaginationPath';
 import styles from '../styles/templates/blog.module.scss';
 
 const blogHomeSection = {
@@ -23,7 +24,7 @@ interface Props {
 }
 
 const BlogTemplate = ({
-  pageContext: { posts, category, categories },
+  pageContext: { category, categories, pagination, posts },
   intl,
 }: Props & WrappedComponentProps): JSX.Element => {
   const currentCategory = useMemo(() => {
@@ -41,6 +42,8 @@ const BlogTemplate = ({
       description: intl.formatMessage({ id: 'blog.description' }),
     };
   }, [category, intl]);
+
+  const shouldShowPagination = pagination.total > 1;
 
   return (
     <DefaultLayout title="Blogs at Nodejs">
@@ -64,6 +67,14 @@ const BlogTemplate = ({
               />
             ))}
           </div>
+          {shouldShowPagination && (
+            <BlogComponents.Pagination
+              currentPage={pagination.current}
+              hrefBuilder={getPaginationPath(blogPath, category?.name)}
+              pageCount={pagination.total}
+              wrapperClassName={styles.blogPaginationWrapper}
+            />
+          )}
         </div>
       </main>
     </DefaultLayout>
