@@ -85,11 +85,6 @@ This project follows the [Conventional Commits][] specification.
 
 Basic rules:
 
-* Commit messages must be prefixed with the name of the changed subsystem, followed by a colon and a space, and start with an imperative verb. Check the output of `git log --oneline files/you/changed` to find out what subsystems your changes touch. For example:
-`
-fix(index.js): fix non-responsive navbar
-docs(CONTRIBUTING.md): correct typo errors
-`
 
   Supported subsystems:
 
@@ -113,7 +108,6 @@ In the case that an objection is raised in a pull request by another collaborato
 
 ### When merging
 
-* Do not use the **merge** option
 * [`squash`][] pull requests made up of multiple commits
 
 ## Vocabulary
@@ -163,7 +157,7 @@ By contributing to this project, I certify that:
 
 ## Remarks
 
-If something is missing here, or you feel something is not well described, feel free to create a PR.
+If something is missing here, or you feel something is not well described, feel free to open an [issue](https://github.com/nodejs/nodejs.dev/issues) to discuss it.
 
 [`squash`]: https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits
 [Conventional Commits]: https://www.conventionalcommits.org/
