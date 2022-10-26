@@ -10,7 +10,7 @@ Le module principal `fs` de Node.js fournit de nombreuses méthodes pratiques qu
 
 ## Vérifier si un dossier existe
 
-Utilisez `fs.access()` (et sa contrepartie `fsPromises.access()` basée sur les promesses) pour vérifier si le dossier existe et si Node.js peut y accéder avec ses permissions.
+Utilisez `fs.access()` (et son équivalent `fsPromises.access()` basée sur les promesses) pour vérifier si le dossier existe et si Node.js peut y accéder avec ses permissions.
 
 ## Créer un nouveau dossier
 

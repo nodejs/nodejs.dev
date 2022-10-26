@@ -63,7 +63,7 @@ Si le premier paramètre commence par une barre oblique, cela signifie qu'il s'a
 path.resolve('/etc', 'joe.txt'); // '/etc/joe.txt'
 ```
 
-`path.normalize()` est une autre fonction utile, qui essaiera de calculer le chemin réel, quand il contient des spécificateurs relatifs comme `.` ou `..`, ou des doubles slashs :
+`path.normalize()` est une autre fonction utile, qui essaiera de calculer le chemin réel, quand il contient des spécificateurs relatifs comme `.` ou `..`, ou des doubles barres obliques :
 
 ```js
 path.normalize('/users/joe/..//test.txt'); // '/users/test.txt'

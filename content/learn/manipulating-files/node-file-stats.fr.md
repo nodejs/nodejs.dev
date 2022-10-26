@@ -1,6 +1,6 @@
 ---
 title: nodejs-file-stats
-displayTitle: 'tatistiques des fichiers Node.js'
+displayTitle: 'Statistiques des fichiers Node.js'
 description: 'Comment obtenir les détails d'un fichier en utilisant Node.js'
 authors: flaviocopes, ZYSzys, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, ovflowd, AugustinMauroy
 category: learn
@@ -21,7 +21,7 @@ fs.stat('/Users/joe/test.txt', (err, stats) => {
 });
 ```
 
-Node.js fournit également une méthode de synchronisation, qui bloque le thread jusqu'à ce que les statistiques du fichier soient prêtes :
+Node.js fournit également une méthode de synchronisation, qui bloque le fil d'exécution jusqu'à ce que les statistiques du fichier soient prêtes :
 
 ```js
 const fs = require('fs');
@@ -33,7 +33,7 @@ try {
 }
 ```
 
-Les informations sur le fichier sont incluses dans la variable stats. Quel type d'information peut-on extraire en utilisant les stats ?
+Les informations sur le fichier sont incluses dans la variable stats. Quel type d'information peut-on extraire en utilisant les `stats` ?
 
 **Beaucoup, notamment :**
 
@@ -41,7 +41,7 @@ Les informations sur le fichier sont incluses dans la variable stats. Quel type 
 * si le fichier est un lien symbolique en utilisant `stats.isSymbolicLink()`
 * la taille du fichier en octets avec `stats.size`.
 
-Il existe d'autres méthodes avancées, mais l'essentiel de ce que vous utiliserez dans votre programmation quotidienne est ceci.
+Il existe d'autres méthodes avancées, mais l'essentiel de ce que vous utiliserez dans votre programmation au quotidien est ceci.
 
 ```js
 const fs = require('fs');

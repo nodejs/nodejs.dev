@@ -64,14 +64,14 @@ Par défaut, cette API **remplacera le contenu du fichier** s'il existe déjà.
 fs.writeFile('/Users/joe/test.txt', content, { flag: 'a+' }, err => {});
 ```
 
-#### Les drapeaux que vous utiliserez probablement sont
+#### Les indicateurs que vous utiliserez probablement sont
 
 * `r+` ouvre le fichier pour la lecture et l'écriture
 * `w+` ouvre le fichier pour la lecture et l'écriture, en positionnant le flux au début du fichier. Le fichier est créé s'il n'existe pas
 * `a` ouvre le fichier en écriture, en positionnant le flux à la fin du fichier. Le fichier est créé s'il n'existe pas
 * `a+` ouvre le fichier en lecture et en écriture, en positionnant le flux à la fin du fichier. Le fichier est créé s'il n'existe pas.
 
-(vous trouverez d'autres drapeaux sur [https://nodejs.org/api/fs.html#fs_file_system_flags](https://nodejs.org/api/fs.html#fs_file_system_flags))
+(vous trouverez d'autres indicateurs sur [https://nodejs.org/api/fs.html#fs_file_system_flags](https://nodejs.org/api/fs.html#fs_file_system_flags))
 
 ## Appending content to a file
 

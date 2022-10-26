@@ -20,16 +20,16 @@ fs.open('/Users/joe/test.txt', 'r', (err, fd) => {
 
 Remarquez le `r` que nous avons utilisé comme second paramètre de l'appel `fs.open()`.
 
-Ce drapeau signifie que nous ouvrons le fichier en lecture.
+Ce indicateurs signifie que nous ouvrons le fichier en lecture.
 
-**Les autres drapeaux que vous utiliserez couramment sont:**
+**Les autres indicateurs que vous utiliserez couramment sont:**
 
 * `r+` ouvre le fichier pour la lecture et l'écriture, si le fichier n'existe pas, il ne sera pas créé.
 * `w+` ouvre le fichier pour la lecture et l'écriture, en positionnant le flux au début du fichier. Le fichier est créé s'il n'existe pas.
 * `a` ouvre le fichier en écriture, en positionnant le flux à la fin du fichier. Le fichier est créé s'il n'existe pas.
 * `a+` ouvre le fichier pour la lecture et l'écriture, en positionnant le flux à la fin du fichier. Le fichier est créé s'il n'existe pas.
 
-Vous pouvez également ouvrir le fichier en utilisant la méthode `fs.openSync`, qui renvoie le descripteur de fichier, au lieu de le fournir dans un callback :
+Vous pouvez également ouvrir le fichier en utilisant la méthode `fs.openSync`, qui renvoie le descripteur de fichier, au lieu de le fournir dans une fonction de rappel :
 
 ```js
 const fs = require('fs');
