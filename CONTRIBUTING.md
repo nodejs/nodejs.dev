@@ -68,10 +68,10 @@ npm test
 9. Once you're happy with your changes, add and commit them to your branch,
 then push the branch to your fork.
 
-    ```sh
+    ```bash
     cd ~/nodejs.dev
     git add .
-    git commit
+    git commit -m "some message"
     git push -u origin name-of-your-branch
     ```
 
