@@ -40,3 +40,8 @@
     - command-line/node-repl
     - command-line/node-output-to-cli
     - command-line/node-input-from-cli
+- section: 'static website'
+  items:
+    - static-website/introduction
+    - static-website/front-end
+    - static-website/back-end
