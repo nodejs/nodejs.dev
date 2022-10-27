@@ -1,7 +1,7 @@
 ---
 title: how-to-install-nodejs
 displayTitle: 'Comment installer Node.js'
-description: 'Comment installer Node.js sur votre système : un gestionnaire de paquets, le programme d'installation du site officiel ou nvm.'
+description: "Comment installer Node.js sur votre système : un gestionnaire de paquets, le programme d'installation du site officiel ou nvm."
 authors: flaviocopes, ZYSzys, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, benhalverson, AugustinMauroy
 category: learn
 ---

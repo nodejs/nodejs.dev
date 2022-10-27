@@ -1,7 +1,7 @@
 ---
 title: an-introduction-to-the-npm-package-manager
 displayTitle: 'Introduction au gestionnaire de paquets NPM'
-description: 'Un guide rapide de npm, le puissant gestionnaire de paquets clé du succès de Node.js. En janvier 2017, plus de 350000 paquets ont été signalés comme étant répertoriés dans le registre npm, ce qui en fait le plus grand dépôt de code monolingue sur Terre, et vous pouvez être sûr qu'il y a un paquet pour (presque !) tout.'
+description: "Un guide rapide de npm, le puissant gestionnaire de paquets clé du succès de Node.js. En janvier 2017, plus de 350000 paquets ont été signalés comme étant répertoriés dans le registre npm, ce qui en fait le plus grand dépôt de code monolingue sur Terre, et vous pouvez être sûr qu'il y a un paquet pour (presque !) tout."
 authors: flaviocopes, MylesBorins, LaRuaNa, jgb-solutions, amiller-gh, ahmadawais, AugustinMaurou
 category: learn
 ---

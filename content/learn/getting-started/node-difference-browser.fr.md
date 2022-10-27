@@ -1,7 +1,7 @@
 ---
 title: differences-between-nodejs-and-the-browser
-displayTitle: 'Différences entre Node.js et le navigateur'
-description: 'En quoi l\'écriture d'une application JavaScript dans Node.js diffère de la programmation pour le Web à l\'intérieur du navigateur.'
+displayTitle: "Différences entre Node.js et le navigateur"
+description: "En quoi l'écriture d'une application JavaScript dans Node.js diffère de la programmation pour le Web à l'intérieur du navigateur."
 authors: flaviocopes, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, karlhorky, AugustinMauroy
 category: learn
 ---

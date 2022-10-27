@@ -1,7 +1,7 @@
 ---
 title: nodejs-with-typescript
 displayTitle: 'Node.js avec TypeScript'
-description: 'Découvrez pourquoi TypeScript est un outil génial et apprenez à l'utiliser par vous-même.'
+description: "Découvrez pourquoi TypeScript est un outil génial et apprenez à l'utiliser par vous-même."
 authors: sbielenica, AugustinMauroy
 category: learn
 ---
