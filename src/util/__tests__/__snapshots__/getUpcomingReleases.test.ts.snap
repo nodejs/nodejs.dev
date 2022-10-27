@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getUpcomingReleases should compute upcoming releases correctly 1`] = `
+[
+  {
+    "releases": [
+      {
+        "alreadyReleased": true,
+        "releaseDate": "2019-04-23",
+        "releaseType": "Current",
+      },
+      {
+        "alreadyReleased": true,
+        "releaseDate": "2019-10-21",
+        "releaseType": "LTS",
+      },
+      {
+        "alreadyReleased": true,
+        "releaseDate": "2020-11-30",
+        "releaseType": "Maintenance",
+      },
+      {
+        "alreadyReleased": true,
+        "releaseDate": "2022-04-30",
+        "releaseType": "End-of-life",
+      },
+    ],
+    "title": "v12",
+  },
+  {
+    "releases": [
+      {
+        "alreadyReleased": true,
+        "releaseDate": "2020-04-21",
+        "releaseType": "Current",
+      },
+      {
+        "alreadyReleased": true,
+        "releaseDate": "2020-10-17",
+        "releaseType": "LTS",
+      },
+      {
+        "alreadyReleased": true,
+        "releaseDate": "2021-10-19",
+        "releaseType": "Maintenance",
+      },
+      {
+        "alreadyReleased": false,
+        "releaseDate": "2023-04-30",
+        "releaseType": "End-of-life",
+      },
+    ],
+    "title": "v14",
+  },
+  {
+    "releases": [
+      {
+        "alreadyReleased": true,
+        "releaseDate": "2022-04-19",
+        "releaseType": "Current",
+      },
+      {
+        "alreadyReleased": true,
+        "releaseDate": "2022-10-25",
+        "releaseType": "LTS",
+      },
+      {
+        "alreadyReleased": false,
+        "releaseDate": "2023-10-18",
+        "releaseType": "Maintenance",
+      },
+      {
+        "alreadyReleased": false,
+        "releaseDate": "2025-04-30",
+        "releaseType": "End-of-life",
+      },
+    ],
+    "title": "v18",
+  },
+]
+`;

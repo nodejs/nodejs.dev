@@ -12,7 +12,14 @@
   }
 
   a {
-    display: block;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
 
     img {
       border-radius: 5px;
