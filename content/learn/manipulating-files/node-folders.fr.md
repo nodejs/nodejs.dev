@@ -1,6 +1,6 @@
 ---
 title: working-with-folders-in-nodejs
-displayTitle: 'Working with folders in Node.js'
+displayTitle: 'Travailler avec des dossiers dans Node.js'
 description: 'Comment interagir avec les dossiers en utilisant Node.js'
 authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais, clean99
 category: learn

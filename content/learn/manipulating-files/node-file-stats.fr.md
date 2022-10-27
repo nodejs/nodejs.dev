@@ -1,7 +1,7 @@
 ---
 title: nodejs-file-stats
 displayTitle: 'Statistiques des fichiers Node.js'
-description: 'Comment obtenir les détails d'un fichier en utilisant Node.js'
+description: "Comment obtenir les détails d'un fichier en utilisant Node.js"
 authors: flaviocopes, ZYSzys, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, ovflowd, AugustinMauroy
 category: learn
 ---
