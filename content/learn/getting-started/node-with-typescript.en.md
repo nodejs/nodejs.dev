@@ -2,13 +2,13 @@
 title: nodejs-with-typescript
 displayTitle: 'Node.js with TypeScript'
 description: 'Find out why TypeScript is an awesome tool and learn to use it by yourself.'
-authors: sbielenica, ovflowd
+authors: sbielenica, ovflowd, vaishnav-mk
 category: learn
 ---
 
 ## What is TypeScript
 
-TypeScript is a very popular open-source language maintained and developed by Microsoft, it's loved and used by a lot of software developers around the world.
+[**TypeScript**](https://www.typescriptlang.org) is a very popular open-source language maintained and developed by Microsoft, it's loved and used by a lot of software developers around the world.
 
 Basically, it's a superset of JavaScript that adds new capabilities to the language. The most notable addition is static type definitions, something that is not present in plain JavaScript. Thanks to types, it's possible, for example, to declare what kind of arguments we are expecting and what is returned exactly in our functions or what's the exact shape of the object that we are creating. TypeScript is a really powerful tool and opens a new world of possibilities in JavaScript projects. It makes our code more secure and robust by preventing many bugs before the code is even shipped - it catches problems during code development and integrates wonderfully with code editors like Visual Studio Code.
 
@@ -55,9 +55,13 @@ Now we can compile it to JavaScript using `tsc` command in the terminal. Let's d
 ```bash
 npx tsc example.ts
 ```
+<Info><a href="https://www.npmjs.com/package/npx">npx</a> here stands for Node Package Execute. This tool allows us to run TypeScript's compiler without having to install it globally.</Info>
+
+`tsc` is the TypeScript compiler which will take our TypeScript code and compile it to JavaScript.
 
 This command will result in a new file named `example.js` that we can run using Node.js.
 Now when we know how to compile and run TypeScript code let's see TypeScript bug-preventing capabilities in action!
+
 
 **This is how we will modify our code:**
 
