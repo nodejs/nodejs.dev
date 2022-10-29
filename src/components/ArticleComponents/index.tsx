@@ -1,4 +1,5 @@
 export { default as Alert } from './Alert';
+export { default as Info } from './Info';
 export { default as BlockQuote } from './BlockQuote';
 export { default as AuthorList } from './AuthorList';
 export { default as Codebox } from './Codebox';

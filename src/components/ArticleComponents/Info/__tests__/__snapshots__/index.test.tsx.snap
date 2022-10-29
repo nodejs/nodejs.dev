@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Info component should render correctly 1`] = `
+<div>
+  <div
+    class="Info"
+  />
+</div>
+`;
+
+exports[`Info component should support passing children into the component 1`] = `
+<div>
+  <div
+    class="Info"
+  >
+    This is an Info
+  </div>
+</div>
+`;
