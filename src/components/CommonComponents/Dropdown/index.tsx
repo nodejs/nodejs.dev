@@ -24,12 +24,18 @@ const Dropdown = <T extends HTMLElement>({
       fontWeight: (item.active ? 'bold' : 'normal') as 'bold' | 'normal',
     };
 
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        item.onClick();
+      }
+    };
+
     return (
       <li key={`dropdown-item-${item.label}`}>
         <button
           style={extraStyles}
           onClick={item.onClick}
-          onKeyDown={item.onClick}
+          onKeyDown={handleKeyPress}
           type="button"
         >
           {item.title}

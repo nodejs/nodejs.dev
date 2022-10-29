@@ -7,4 +7,6 @@ module.exports = {
   nodeReleaseData: 'https://nodejs.org/dist/index.json',
   nodeBannersData:
     'https://raw.githubusercontent.com/nodejs/nodejs.org/main/locale/en/site.json',
+  jsonLink: (fileName, version) =>
+    `https://nodejs.org/docs/latest-${version}.x/api/${fileName}.json`,
 };

@@ -30,7 +30,7 @@ const LearnNavigationSection = ({
       aria-expanded={isSectionOpen}
     >
       <span>{title}</span>
-      <FontAwesomeIcon icon={isSectionOpen ? faCaretDown : faCaretUp} />
+      <FontAwesomeIcon icon={isSectionOpen ? faCaretUp : faCaretDown} />
     </button>
   );
 

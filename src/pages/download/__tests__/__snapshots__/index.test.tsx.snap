@@ -158,6 +158,7 @@ exports[`Download page renders correctly 1`] = `
             </li>
             <li>
               <button
+                aria-expanded="false"
                 class="languageSwitch"
                 type="button"
               >
@@ -291,7 +292,7 @@ exports[`Download page renders correctly 1`] = `
           >
             <button
               aria-checked="true"
-              aria-label="Show LTS versions"
+              aria-label="LTS Versions"
               class="active"
               role="switch"
               type="button"
@@ -299,8 +300,8 @@ exports[`Download page renders correctly 1`] = `
               LTS
             </button>
             <button
-              aria-checked="true"
-              aria-label="Show LTS versions"
+              aria-checked="false"
+              aria-label="Current Versions"
               class="current"
               role="switch"
               type="button"
@@ -722,7 +723,7 @@ exports[`Download page renders correctly 1`] = `
               >
                 <button
                   aria-checked="true"
-                  aria-label="Show LTS versions"
+                  aria-label="LTS Versions"
                   class="active"
                   role="switch"
                   type="button"
@@ -730,8 +731,8 @@ exports[`Download page renders correctly 1`] = `
                   LTS
                 </button>
                 <button
-                  aria-checked="true"
-                  aria-label="Show LTS versions"
+                  aria-checked="false"
+                  aria-label="Current Versions"
                   class="current"
                   role="switch"
                   type="button"
@@ -1144,6 +1145,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
             </li>
             <li>
               <button
+                aria-expanded="false"
                 class="languageSwitch"
                 type="button"
               >
@@ -1277,7 +1279,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
           >
             <button
               aria-checked="false"
-              aria-label="Show LTS versions"
+              aria-label="LTS Versions"
               class=""
               role="switch"
               type="button"
@@ -1285,8 +1287,8 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               LTS
             </button>
             <button
-              aria-checked="false"
-              aria-label="Show LTS versions"
+              aria-checked="true"
+              aria-label="Current Versions"
               class="current active"
               role="switch"
               type="button"
@@ -1708,7 +1710,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               >
                 <button
                   aria-checked="false"
-                  aria-label="Show LTS versions"
+                  aria-label="LTS Versions"
                   class=""
                   role="switch"
                   type="button"
@@ -1716,8 +1718,8 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   LTS
                 </button>
                 <button
-                  aria-checked="false"
-                  aria-label="Show LTS versions"
+                  aria-checked="true"
+                  aria-label="Current Versions"
                   class="current active"
                   role="switch"
                   type="button"

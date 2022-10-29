@@ -21,6 +21,7 @@ const LanguageSelector = () => {
         className={styles.languageSwitch}
         ref={languageButtonRef}
         onClick={() => showDropdown(!visible)}
+        aria-expanded={visible}
       >
         <span className="sr-only">Switch Language</span>
         <TranslateIcon />

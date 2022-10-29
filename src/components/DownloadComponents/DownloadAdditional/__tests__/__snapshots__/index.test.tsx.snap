@@ -24,7 +24,7 @@ exports[`DownloadAdditional component allows to collapse expanded items 1`] = `
           >
             <button
               aria-checked="true"
-              aria-label="Show LTS versions"
+              aria-label="LTS Versions"
               class="active"
               role="switch"
               type="button"
@@ -32,8 +32,8 @@ exports[`DownloadAdditional component allows to collapse expanded items 1`] = `
               LTS
             </button>
             <button
-              aria-checked="true"
-              aria-label="Show LTS versions"
+              aria-checked="false"
+              aria-label="Current Versions"
               class="current"
               role="switch"
               type="button"
@@ -166,7 +166,7 @@ exports[`DownloadAdditional component allows to expand items 1`] = `
           >
             <button
               aria-checked="true"
-              aria-label="Show LTS versions"
+              aria-label="LTS Versions"
               class="active"
               role="switch"
               type="button"
@@ -174,8 +174,8 @@ exports[`DownloadAdditional component allows to expand items 1`] = `
               LTS
             </button>
             <button
-              aria-checked="true"
-              aria-label="Show LTS versions"
+              aria-checked="false"
+              aria-label="Current Versions"
               class="current"
               role="switch"
               type="button"
@@ -308,7 +308,7 @@ exports[`DownloadAdditional component renders correctly 1`] = `
           >
             <button
               aria-checked="true"
-              aria-label="Show LTS versions"
+              aria-label="LTS Versions"
               class="active"
               role="switch"
               type="button"
@@ -316,8 +316,8 @@ exports[`DownloadAdditional component renders correctly 1`] = `
               LTS
             </button>
             <button
-              aria-checked="true"
-              aria-label="Show LTS versions"
+              aria-checked="false"
+              aria-label="Current Versions"
               class="current"
               role="switch"
               type="button"
@@ -359,7 +359,7 @@ exports[`DownloadAdditional component renders correctly with release data 1`] = 
           >
             <button
               aria-checked="true"
-              aria-label="Show LTS versions"
+              aria-label="LTS Versions"
               class="active"
               role="switch"
               type="button"
@@ -367,8 +367,8 @@ exports[`DownloadAdditional component renders correctly with release data 1`] = 
               LTS
             </button>
             <button
-              aria-checked="true"
-              aria-label="Show LTS versions"
+              aria-checked="false"
+              aria-label="Current Versions"
               class="current"
               role="switch"
               type="button"

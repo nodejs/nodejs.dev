@@ -59,6 +59,12 @@ const SearchBar = (): JSX.Element => {
   };
 
   useEffect(() => {
+    if (isExpanded) {
+      searchInputRef.current?.focus();
+    }
+  }, [isExpanded, searchInputRef]);
+
+  useEffect(() => {
     if (isClickedOutside) {
       collapseContainer();
     }
@@ -72,17 +78,23 @@ const SearchBar = (): JSX.Element => {
     if (!isExpanded) {
       expandContainer();
     }
+  };
 
-    if (searchInputRef.current) {
-      searchInputRef.current.focus();
+  const onBlurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
+    if (!e.currentTarget.contains(e.target) || isEmpty) collapseContainer();
+  };
+
+  const onCloseHandler = (e: React.MouseEvent<SVGSVGElement>) => {
+    e.stopPropagation();
+    if (isExpanded) {
+      collapseContainer();
     }
   };
 
-  useKeyPress('/', () => onKeyPressHandler());
+  useKeyPress('/', () => expandContainer());
   useKeyPress('Escape', () => {
     if (isExpanded) {
       collapseContainer();
-      searchInputRef.current?.blur();
     }
   });
 
@@ -94,11 +106,12 @@ const SearchBar = (): JSX.Element => {
       variants={containerVariants}
       transition={containerTransition}
       ref={parentRef}
+      onBlur={onBlurHandler}
     >
       <div
         className={styles.searchInputContainer}
         onKeyPress={onKeyPressHandler}
-        onClick={onKeyPressHandler}
+        onClick={expandContainer}
         role="presentation"
       >
         <TravelExploreIcon className={styles.searchIcon} />
@@ -116,7 +129,7 @@ const SearchBar = (): JSX.Element => {
             name="query"
             type="text"
             value={query}
-            onFocus={onKeyPressHandler}
+            onFocus={expandContainer}
             onChange={changeHandler}
           />
         </label>
@@ -128,7 +141,7 @@ const SearchBar = (): JSX.Element => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={collapseContainer}
+              onClick={onCloseHandler}
               transition={{ duration: 0.2 }}
             />
           )}
