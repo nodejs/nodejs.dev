@@ -2,7 +2,7 @@
 title: working-with-folders-in-nodejs
 displayTitle: 'Working with folders in Node.js'
 description: 'How to interact with folders using Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais, clean99
+authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais, clean99, vaishnav-mk
 category: learn
 ---
 
@@ -126,7 +126,7 @@ fs.rmdir(dir, { recursive: true }, err => {
 });
 ```
 
-> **NOTE:** In Node `v16.x` the option `recursive` is **deprecated** for `fs.rmdir` of callback API, instead use `fs.rm` to delete folders that have content in them:
+<Alert> <b>NOTE:</b> In Node <code>v16.x</code> the option <code>recursive</code> is <b>deprecated</b> for <code>fs.mdir</code> of callback API, instead use <code>fs.rm</code> to delete folders that have content in them</Alert>
 
 ```js
 const fs = require('fs');
