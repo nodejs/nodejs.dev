@@ -2,7 +2,7 @@
 title: how-to-use-the-nodejs-repl
 displayTitle: 'How to use the Node.js REPL'
 description: "REPL stands for Read-Evaluate-Print-Loop, and it's a great way to explore the Node.js features in a quick way"
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, vaishnav-mk
 category: learn
 ---
 
@@ -18,7 +18,7 @@ If we run the `node` command without any script to execute or without any argume
 node
 ```
 
-> <b>Note:</b> REPL stands for Read Evaluate Print Loop, and it is a programming language environment (basically a console window) that takes single expression as user input and returns the result back to the console after execution. The REPL session provides a convenient way to quickly test simple JavaScript code.
+<Info><b>Note:</b> <code>REPL</code> stands for Read Evaluate Print Loop, and it is a programming language environment (basically a console window) that takes single expression as user input and returns the result back to the console after execution. The REPL session provides a convenient way to quickly test simple JavaScript code.</Info>
 
 If you try it now in your terminal, this is what happens:
 
@@ -148,3 +148,5 @@ local.on('exit', () => {
   process.exit();
 });
 ```
+
+You can read more about the REPL module in the [repl documentation](/api/v19/repl).
