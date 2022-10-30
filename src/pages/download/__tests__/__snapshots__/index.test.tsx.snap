@@ -526,7 +526,7 @@ exports[`Download page renders correctly 1`] = `
                   </p>
                 </div>
                 <div
-                  class="itemLts itemToBeReleased"
+                  class="itemLts"
                 >
                   <svg />
                   <p
@@ -537,6 +537,7 @@ exports[`Download page renders correctly 1`] = `
                   <p
                     class="releaseDate"
                   >
+                    Released
                      
                     2022-10-25
                   </p>
@@ -1562,7 +1563,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   </p>
                 </div>
                 <div
-                  class="itemLts itemToBeReleased"
+                  class="itemLts"
                 >
                   <svg />
                   <p
@@ -1573,6 +1574,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                   <p
                     class="releaseDate"
                   >
+                    Released
                      
                     2022-10-25
                   </p>
