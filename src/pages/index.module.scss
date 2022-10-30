@@ -54,19 +54,38 @@
 .node-features {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   margin: 0 auto 5em auto;
 
+  @media (min-width: 870px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   &__feature {
-    margin: 0 2em;
+    border-radius: var(--space-04);
+    box-shadow: 5px 10px 50px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
     max-width: 248px;
+    outline: 0.25rem;
+    outline-color: var(--brand7);
+    outline-style: solid;
+    padding: 1.5em 2.5em;
+    position: relative;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+    width: 90vw;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    @media (max-width: 870px) {
+      margin-top: 2em;
+    }
 
     img {
       width: 65%;
     }
-
     .feature-icon {
       height: auto;
       min-width: 120px;
