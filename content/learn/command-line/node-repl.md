@@ -18,7 +18,7 @@ If we run the `node` command without any script to execute or without any argume
 node
 ```
 
-<Info><b>Note:</b> <code>REPL</code> stands for Read Evaluate Print Loop, and it is a programming language environment (basically a console window) that takes single expression as user input and returns the result back to the console after execution. The REPL session provides a convenient way to quickly test simple JavaScript code.</Info>
+> <b>Note:</b> <code>REPL</code> stands for Read Evaluate Print Loop, and it is a programming language environment (basically a console window) that takes single expression as user input and returns the result back to the console after execution. The REPL session provides a convenient way to quickly test simple JavaScript code.
 
 If you try it now in your terminal, this is what happens:
 
