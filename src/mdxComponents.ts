@@ -9,7 +9,6 @@ export const mdxComponents = {
   table: ArticleComponents.Table,
   blockquote: ArticleComponents.BlockQuote,
   Alert: ArticleComponents.Alert,
-  Info: ArticleComponents.Info,
 };
 
 export const apiMdxComponents = {
