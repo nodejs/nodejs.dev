@@ -55,7 +55,7 @@ Now we can compile it to JavaScript using `tsc` command in the terminal. Let's d
 ```bash
 npx tsc example.ts
 ```
-> <a href="https://www.npmjs.com/package/npx">npx</a> here stands for Node Package Execute. This tool allows us to run TypeScript's compiler without having to install it globally.
+> [npx](https://www.npmjs.com/package/npx) here stands for Node Package Execute. This tool allows us to run TypeScript's compiler without installing it globally.
 
 `tsc` is the TypeScript compiler which will take our TypeScript code and compile it to JavaScript.
 
