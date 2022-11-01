@@ -99,4 +99,4 @@ async function example() {
 example();
 ```
 
-To see more details about the `fs/promises` module, please check [fs/promises API](/api/v19/fs#promise-example).
+To see more details about the `fs/promises` module, please check [fs/promises API](/api/fs/#promise-example).
