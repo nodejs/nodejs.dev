@@ -27,7 +27,7 @@
 .header {
   background: var(--color-fill-app);
   border-bottom: var(--space-01) solid var(--black2);
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
