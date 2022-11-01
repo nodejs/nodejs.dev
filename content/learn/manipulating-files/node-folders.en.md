@@ -2,7 +2,7 @@
 title: working-with-folders-in-nodejs
 displayTitle: 'Working with folders in Node.js'
 description: 'How to interact with folders using Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais, clean99, vaishnav-mk
+authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais, clean99
 category: learn
 ---
 
@@ -112,12 +112,10 @@ example();
 
 Use `fs.rmdir()` or `fs.rmdirSync()` or `fsPromises.rmdir()` to remove a folder.
 
-Removing a folder that has content can be more complicated than you need. You can pass the option `{ recursive: true }` to recursively remove the contents.
-
 ```js
 const fs = require('fs');
 
-fs.rmdir(dir, { recursive: true }, err => {
+fs.rmdir(dir, err => {
   if (err) {
     throw err;
   }
@@ -126,7 +124,9 @@ fs.rmdir(dir, { recursive: true }, err => {
 });
 ```
 
-<Alert> <b>NOTE:</b> In Node <code>v16.x</code> the option <code>recursive</code> is <b>deprecated</b> for <code>fs.mdir</code> of callback API, instead use <code>fs.rm</code> to delete folders that have content in them</Alert>
+Removing a folder that has content can be more complicated than you need. Use `fs.rm()` and pass the option `{ recursive: true }` to recursively remove the contents.
+
+`{ recursive: true, force: true }` makes it so that exceptions will be ignored if the folder does not exist.
 
 ```js
 const fs = require('fs');
