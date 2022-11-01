@@ -78,4 +78,4 @@ async function example() {
 example();
 ```
 
-You can read more about the `fs` module in the [official documentation](/api/v19/fs).
+You can read more about the `fs` module in the [official documentation](/api/fs/).
