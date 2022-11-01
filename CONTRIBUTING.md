@@ -73,8 +73,6 @@ Basic rules:
 ### Before landing
 
 * Pull Requests must be open for at least 48 hours.
-  * Pull Requests might be fast-tracked to then 8 hours with at least one approval if they're bug fixes, pre-discussed content-removal, or general content update that had no prior objections before the creation of the PR.
-    * If objections are raised after its merge, collaborators have the right to revert said changes.
   * Pull reuqests might be immediately merged if they contain critical bug fixes, short erratas (e.g. typos from previous PRs) or any critical change that is considered a "showstopper" for the operation of the website.
     * These kind of PRs should only be done by existing collaborators that have write-access and/or signed-off by administrators/maintainers.
 * There must be no objections after a 48 hour period
