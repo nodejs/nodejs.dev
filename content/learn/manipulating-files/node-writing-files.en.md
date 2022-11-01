@@ -94,7 +94,7 @@ fs.writeFile('/Users/joe/test.txt', content, { flag: 'a+' }, err => {});
   </tr>
 </table>
 
-* You can find more information about the flags in the [fs documentation](/api/v19/fs#file-system-flags).
+* You can find more information about the flags in the [fs documentation](/api/fs/#file-system-flags).
 
 ## Appending content to a file
 
