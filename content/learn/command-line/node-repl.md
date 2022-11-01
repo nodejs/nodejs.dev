@@ -149,4 +149,4 @@ local.on('exit', () => {
 });
 ```
 
-You can read more about the REPL module in the [repl documentation](/api/v19/repl).
+You can read more about the REPL module in the [repl documentation](/api/repl/).
