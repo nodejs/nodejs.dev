@@ -67,4 +67,4 @@ The EventEmitter object also exposes several other methods to interact with even
 * `removeListener()` / `off()`: remove an event listener from an event
 * `removeAllListeners()`: remove all listeners for an event
 
-You can read more about these methods in the [official documentation](/api/v19/events).
+You can read more about these methods in the [official documentation](/api/events/).
