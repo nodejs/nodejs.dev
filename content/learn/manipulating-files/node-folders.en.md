@@ -124,7 +124,7 @@ fs.rmdir(dir, err => {
 });
 ```
 
-Removing a folder that has content can be more complicated than you need. Use `fs.rm()` and pass the option `{ recursive: true }` to recursively remove the contents.
+To remove a folder that has contents use `fs.rm()` with the option `{ recursive: true }` to recursively remove the contents.
 
 `{ recursive: true, force: true }` makes it so that exceptions will be ignored if the folder does not exist.
 
