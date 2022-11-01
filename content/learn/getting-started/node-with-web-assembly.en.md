@@ -6,7 +6,7 @@ authors: lancemccluskey, ovflowd
 category: learn
 ---
 
-[**WebAssembly**](https://webassembly.org) is a high-performance assembly-like language that can be compiled from a myriad of languages including C/C++, Rust, and AssemblyScript. As of right now, it is supported by Chrome, Firefox, Safari, Edge, and Node.js!
+**[WebAssembly](https://webassembly.org)** is a high-performance assembly-like language that can be compiled from various languages, including C/C++, Rust, and AssemblyScript. Currently, it is supported by Chrome, Firefox, Safari, Edge, and Node.js!
 
 The WebAssembly specification details two file formats, a binary format called a WebAssembly Module with a `.wasm` extension and corresponding text representation called WebAssembly Text format with a `.wat` extension.
 
