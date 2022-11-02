@@ -21,7 +21,7 @@ fs.stat('/Users/joe/test.txt', (err, stats) => {
 });
 ```
 
-Node.js fournit également une méthode de synchronisation, qui bloque le fil d'exécution jusqu'à ce que les statistiques du fichier soient prêtes :
+Node.js fournit également une méthode synchrone, qui bloque le fil d'exécution jusqu'à ce que les statistiques du fichier soient prêtes :
 
 ```js
 const fs = require('fs');
