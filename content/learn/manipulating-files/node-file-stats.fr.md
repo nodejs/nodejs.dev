@@ -41,7 +41,7 @@ Les informations sur le fichier sont incluses dans la variable stats. Quel type 
 * si le fichier est un lien symbolique en utilisant `stats.isSymbolicLink()`
 * la taille du fichier en octets avec `stats.size`.
 
-Il existe d'autres méthodes avancées, mais l'essentiel de ce que vous utiliserez dans votre programmation au quotidien est ceci.
+Il existe d'autres méthodes avancées, mais ceci est l'essentiel de ce que vous utiliserez au quotidien dans votre programmation.
 
 ```js
 const fs = require('fs');
