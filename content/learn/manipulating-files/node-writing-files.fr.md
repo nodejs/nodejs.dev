@@ -79,7 +79,7 @@ L'ajout aux fichiers est pratique lorsque vous ne voulez pas écraser un fichier
 
 ### Exemples
 
-Une méthode pratique pour ajouter du contenu à la fin d'un fichier est `fs.appendFile()` (et son équivalent `fs.appendFileSync()`) :
+Une méthode pratique pour ajouter du contenu à la fin d'un fichier est `fs.appendFile()` (et son équivalent synchrone `fs.appendFileSync()`) :
 
 ```js
 const fs = require('fs');
