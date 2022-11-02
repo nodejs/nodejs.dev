@@ -8,13 +8,14 @@ const createSlug = require('./util-node/createSlug');
 const getNodeReleasesData = require('./util-node/getNodeReleasesData');
 const getBannersData = require('./util-node/getBannersData');
 const getNvmData = require('./util-node/getNvmData');
-const createBlogQuery = require('./util-node/createBlogQuery');
-const createLearnQuery = require('./util-node/createLearnQuery');
-const createApiQuery = require('./util-node/createApiQuery');
+const createBlogQuery = require('./util-node/queries/createBlogQuery');
+const createLearnQuery = require('./util-node/queries/createLearnQuery');
+const createApiQuery = require('./util-node/queries/createApiQuery');
 const createBlogPages = require('./util-node/createBlogPages');
 const createLearnPages = require('./util-node/createLearnPages');
 const createApiPages = require('./util-node/createApiPages');
 const generateRedirects = require('./util-node/generateRedirects');
+const getPaginationPath = require('./util-node/getPaginationPath');
 const redirects = require('./redirects');
 const nodeLocales = require('./locales');
 const { learnPath, apiPath, blogPath } = require('./pathPrefixes');
@@ -30,14 +31,14 @@ const apiTypesNavigationData = yaml.parse(
 );
 
 // This creates a map of all the locale JSONs that are enabled in the config.json file
-const intlMessages = nodeLocales.locales.reduce((acc, locale) => {
-  const filePath = path.resolve(
-    __dirname,
-    `./src/i18n/locales/${locale.code}.json`
-  );
-  acc[locale.code] = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  return acc;
-}, {});
+const intlMessages = nodeLocales.locales.reduce(
+  (acc, locale) => ({
+    ...acc,
+    // eslint-disable-next-line import/no-dynamic-require, global-require
+    [locale.code]: require(`./src/i18n/locales/${locale.code}.json`),
+  }),
+  {}
+);
 
 const getMessagesForLocale = locale =>
   locale && locale in intlMessages
@@ -46,14 +47,6 @@ const getMessagesForLocale = locale =>
 
 const getRedirectForLocale = (locale, url) =>
   /^\/\/|https?:\/\//.test(url) ? url : `/${locale}${url}`;
-
-exports.onCreateWebpackConfig = ({ plugins, actions }) => {
-  actions.setWebpackConfig({
-    plugins: [
-      plugins.ignore({ resourceRegExp: /canvas/, contextRegExp: /jsdom$/ }),
-    ],
-  });
-};
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
@@ -103,7 +96,8 @@ exports.createPages = async ({ graphql, actions }) => {
     nodeReleases: { nodeReleasesData, apiAvailableVersions },
   } = apiResult.data;
 
-  const { blogPages } = createBlogPages(blogEdges);
+  const { blogPages, blogPosts, getPaginatedPosts } =
+    createBlogPages(blogEdges);
 
   const { learnPages, navigationData: learnNavigationData } = createLearnPages(
     learnEdges,
@@ -123,12 +117,6 @@ exports.createPages = async ({ graphql, actions }) => {
     context: { ...learnPages[0], navigationData: learnNavigationData },
   });
 
-  createPage({
-    path: blogPath,
-    component: blogTemplate,
-    context: { categories: categoryEdges, posts: blogEdges },
-  });
-
   learnPages.forEach(page => {
     createPage({
       path: page.slug,
@@ -141,20 +129,36 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: page.slug,
       component: postTemplate,
-      // Get the latest 10 blog posts
-      context: { ...page, recent: blogEdges.slice(0, 10) },
+      // Get the latest 10 blog posts for the Recent Posts section
+      context: { ...page, recent: blogPosts.slice(0, 10) },
     });
   });
 
-  categoryEdges.forEach(({ node }) => {
-    const posts = blogEdges.filter(
-      ({ node: item }) => item.fields.categoryName === node.name
-    );
+  // This default category acts as a "hack" for creating the default
+  // `/blog` page (aka the "Everything" category)
+  const defaultCategory = { node: { name: null } };
 
-    createPage({
-      path: `${blogPath}${node.name}/`,
-      component: blogTemplate,
-      context: { categories: categoryEdges, category: node, posts },
+  [defaultCategory, ...categoryEdges].forEach(({ node }) => {
+    const paginatedPosts = getPaginatedPosts(node.name);
+
+    const getPaginationData = current => ({
+      current: current + 1,
+      total: paginatedPosts.length,
+    });
+
+    const getBlogPagePath = getPaginationPath(blogPath, node.name);
+
+    paginatedPosts.forEach((currentPagePosts, index) => {
+      createPage({
+        path: getBlogPagePath(index + 1),
+        component: blogTemplate,
+        context: {
+          category: node.name ? node : null,
+          categories: categoryEdges,
+          posts: currentPagePosts,
+          pagination: getPaginationData(index),
+        },
+      });
     });
   });
 
@@ -400,4 +404,27 @@ exports.onCreateBabelConfig = ({ actions }) => {
       },
     },
   });
+};
+
+exports.onCreateWebpackConfig = ({ plugins, actions, stage, getConfig }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      plugins.ignore({ resourceRegExp: /canvas/, contextRegExp: /jsdom$/ }),
+    ],
+  });
+
+  if (stage === 'develop' || stage === 'build-javascript') {
+    const config = getConfig();
+
+    const miniCssExtractPlugin = config.plugins.find(
+      plugin => plugin.constructor.name === 'MiniCssExtractPlugin'
+    );
+
+    if (miniCssExtractPlugin) {
+      // We don't care about the order of CSS imports as we use CSS Modules
+      miniCssExtractPlugin.options.ignoreOrder = true;
+    }
+
+    actions.replaceWebpackConfig(config);
+  }
 };

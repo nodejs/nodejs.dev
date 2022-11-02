@@ -3,18 +3,16 @@ import { injectIntl, WrappedComponentProps } from 'react-intl';
 import { graphql } from 'gatsby';
 import { IoLogoNodejs, IoMdGitPullRequest, IoMdRocket } from 'react-icons/io';
 
-import Layout from '../components/Layout';
-import Hero from '../components/Hero';
+import DefaultLayout from '../layouts/default';
+import { CommonComponents, DownloadComponents } from '../components';
 
-import { connectGraphQlCustom } from '../components/connectGraphQlArticle';
+import { connectGraphQlCustom } from '../connectGraphQlArticle';
 import { HomepageData, BannersIndex, NodeReleaseData } from '../types';
 
 import { ReactComponent as LeafsIllustrationFront } from '../images/illustrations/leafs-front.svg';
 import { ReactComponent as LeafsIllustrationMiddle } from '../images/illustrations/leafs-middle.svg';
 import { ReactComponent as LeafsIllustrationBack } from '../images/illustrations/leafs-back.svg';
 import { ReactComponent as DotsIllustration } from '../images/illustrations/dots.svg';
-import InstallTabs from '../components/InstallTabs';
-import Banner from '../components/Banner';
 import styles from './index.module.scss';
 
 interface NodeFeatureProps {
@@ -69,10 +67,14 @@ const Index = ({
   },
   intl,
 }: HomepageProps & WrappedComponentProps): JSX.Element => (
-  <Layout title={displayTitle} description={description} showRandomContributor>
+  <DefaultLayout
+    title={displayTitle}
+    description={description}
+    showRandomContributor
+  >
     <main className="home-container">
-      <Banner bannersIndex={bannersIndex} />
-      <Hero
+      <CommonComponents.Banner bannersIndex={bannersIndex} />
+      <CommonComponents.Hero
         title={displayTitle}
         subTitle={subTitle}
         nodeReleaseData={nodeReleasesData}
@@ -80,7 +82,7 @@ const Index = ({
 
       <section className={styles.nodeDemoContainer}>
         <div className={styles.nodeDemo}>
-          <InstallTabs />
+          <DownloadComponents.InstallTabs />
         </div>
         <LeafsIllustrationFront className={`${styles.leafsFront} animations`} />
         <LeafsIllustrationMiddle className={`${styles.leafsMid} animations`} />
@@ -99,7 +101,7 @@ const Index = ({
         ))}
       </section>
     </main>
-  </Layout>
+  </DefaultLayout>
 );
 
 export default connectGraphQlCustom(injectIntl(Index));

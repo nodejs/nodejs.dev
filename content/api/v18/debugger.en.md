@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.10.0" data={{"update":{"type":"introduced_in","version":["v0.9.12"]}}} />
+<Metadata version="v18.12.0" data={{"update":{"type":"introduced_in","version":["v0.9.12"]}}} />
 
-<Metadata version="v18.10.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.12.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.10.0" data={{"type":"misc"}} />
+<Metadata version="v18.12.0" data={{"type":"misc"}} />
 
 Node.js includes a command-line debugging utility. The Node.js debugger client
 is not a full-featured debugger, but simple stepping and inspection are

@@ -24,7 +24,6 @@ const gatsbyFsMarkdownSources = markdownSources.map(name => ({
 }));
 
 const gatsbyConfig = {
-  flags: { FAST_DEV: true },
   pathPrefix: process.env.PATH_PREFIX,
   siteMetadata: {
     title: config.title,
@@ -145,7 +144,12 @@ const gatsbyConfig = {
             },
           },
         },
-        filter: node => ['api', 'learn'].includes(node.frontmatter.category),
+        filter: node =>
+          node.frontmatter.category === 'learn' ||
+          (node.frontmatter.category === 'api' &&
+            // This is a hack so that we don't index every version of the docs on our search engine whose would be overwhelming
+            // TODO: Find a better way to index statically what is the latest version. We could do similarly as we do on `locales.js`
+            node.frontmatter.version === 'v19'),
       },
     },
     {

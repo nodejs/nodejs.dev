@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import Dropdown, { DropdownItem } from '../components/Dropdown';
+import { CommonComponents } from '../components';
+import { DropdownItem } from '../types';
 
 export const useAutoClosableDropdown = <T extends HTMLElement>(
   items: Array<DropdownItem>,
@@ -31,7 +32,11 @@ export const useAutoClosableDropdown = <T extends HTMLElement>(
 
   return {
     renderDropdown: (
-      <Dropdown items={items} elementRef={elementRef} shouldShow={shouldShow} />
+      <CommonComponents.Dropdown
+        items={items}
+        elementRef={elementRef}
+        shouldShow={shouldShow}
+      />
     ),
     visible: shouldShow,
     showDropdown: updateVisibility,

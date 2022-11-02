@@ -44,20 +44,17 @@ function createApiPages(apiEdges, apiTypes, nodeReleases) {
         .map(item => ({ ...item, category: 'api' }))
         .map(mapToNavigationData);
 
-      navigationData[entry.version][slug] = {
-        category: 'api',
-        // There might be small chances of duplication of entries, so we attempt
-        // to remove all the possible duplicates from the Navigation
-        // And then it sorts by the title of the entry
-        data: [...new Map(entries.map(v => [v.slug, v])).values()].sort(
-          (a, b) => a.title.localeCompare(b.title)
-        ),
-      };
+      // There might be small chances of duplication of entries, so we attempt
+      // to remove all the possible duplicates from the Navigation
+      // And then it sorts by the title of the entry
+      navigationData[entry.version][slug] = [
+        ...new Map(entries.map(v => [v.slug, v])).values(),
+      ].sort((a, b) => a.title.localeCompare(b.title));
     });
   });
 
   // Get the Paths for the Latest API version
-  const { items, version } = navigationEntries[0];
+  const { items, version } = navigationEntries.reverse()[0];
 
   const defaultNavigationRedirects = items
     .filter(entry => entry.type === 'module')

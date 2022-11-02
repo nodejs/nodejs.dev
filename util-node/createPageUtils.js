@@ -33,7 +33,6 @@ function mapToNavigationData(page) {
   return {
     title: page.displayTitle || page.title,
     slug: page.slug,
-    category: page.category,
   };
 }
 

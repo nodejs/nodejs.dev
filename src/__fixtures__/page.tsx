@@ -1,7 +1,7 @@
 import {
   PaginationInfo,
   LearnTemplateContext,
-  NavigationSectionData,
+  NavigationData,
   PostTemplateData,
   PostTemplateContext,
   NodeReleaseData,
@@ -25,39 +25,29 @@ export const createPaginationInfo = (): PaginationInfo =>
     title: 'test-title',
   } as PaginationInfo);
 
-export const createNavigationSectionData = (): NavigationSectionData =>
+export const createNavigationSectionData = (): NavigationData =>
   ({
-    'test-section': {
-      data: [
-        {
-          slug: 'test-slug-1',
-          title: 'test-title-1',
-          category: 'test1',
-        },
-        {
-          title: 'test-title-2',
-          slug: 'test-slug-2',
-          category: 'test1',
-        },
-      ],
-      category: 'test1',
-    },
-    'test-section2': {
-      data: [
-        {
-          slug: 'test-slug-3',
-          title: 'test-title-3',
-          category: 'test2',
-        },
-        {
-          title: 'test-title-4',
-          slug: 'test-slug-4',
-          category: 'test2',
-        },
-      ],
-      category: 'test2',
-    },
-  } as NavigationSectionData);
+    'test-section': [
+      {
+        slug: 'test-slug-1',
+        title: 'test-title-1',
+      },
+      {
+        title: 'test-title-2',
+        slug: 'test-slug-2',
+      },
+    ],
+    'test-section2': [
+      {
+        slug: 'test-slug-3',
+        title: 'test-title-3',
+      },
+      {
+        title: 'test-title-4',
+        slug: 'test-slug-4',
+      },
+    ],
+  } as NavigationData);
 
 export const createLearnPageData = () => ({
   data: {
@@ -134,7 +124,7 @@ export const createBlogPageContext = (): PostTemplateContext => ({
           title: 'title-mock',
           category: {
             name: 'category-mock',
-            slug: 'category-mock-slug',
+            slug: 'blog.title',
           },
           blogAuthors: [
             {
