@@ -19,7 +19,7 @@
     "@mui/material": "^5.10.4",
     "@pkgjs/nv": "^0.2.1",
     "@skagami/gatsby-plugin-dark-mode": "^2.0.0",
-    "@svgr/webpack": "^6.3.1",
+    "@svgr/webpack": "^6.5.1",
     "async": "^3.2.4",
     "classnames": "^2.3.1",
     "cli-progress": "^3.11.2",
