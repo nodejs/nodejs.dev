@@ -20,7 +20,7 @@ fs.open('/Users/joe/test.txt', 'r', (err, fd) => {
 
 Remarquez le `r` que nous avons utilisé comme second paramètre de l'appel `fs.open()`.
 
-Ce indicateurs signifie que nous ouvrons le fichier en lecture.
+Cet indicateurs signifie que nous ouvrons le fichier en lecture.
 
 **Les autres indicateurs que vous utiliserez couramment sont:**
 
