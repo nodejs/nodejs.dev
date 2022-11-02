@@ -54,7 +54,7 @@ function createApiPages(apiEdges, apiTypes, nodeReleases) {
   });
 
   // Get the Paths for the Latest API version
-  const { items, version } = navigationEntries.reverse()[0];
+  const { items, version } = navigationEntries[0];
 
   const defaultNavigationRedirects = items
     .filter(entry => entry.type === 'module')
