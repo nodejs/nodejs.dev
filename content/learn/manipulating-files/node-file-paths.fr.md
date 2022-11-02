@@ -6,7 +6,7 @@ authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, 
 category: learn
 ---
 
-Chaque fichier du système a un chemin d'accès. Sous Linux et macOS, un chemin peut ressembler à : `/utilisateurs/joe/file.txt` tandis que les ordinateurs Windows sont différents, et ont une structure telle que : `C:\users\joe\file.txt`
+Chaque fichier du système a un chemin d'accès. Sous Linux et macOS, un chemin peut ressembler à : `/utilisateurs/joe/file.txt` tandis que les ordinateurs sous Windows sont différents, et ont une structure de chemin d'accès telle que : `C:\users\joe\file.txt`
 
 Vous devez faire attention lorsque vous utilisez des chemins dans vos applications, car cette différence doit être prise en compte.
 
