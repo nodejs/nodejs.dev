@@ -40,4 +40,11 @@ describe('Download page', () => {
 
     expect(results).toHaveNoViolations();
   });
+
+  it('should render the correct LTS version', () => {
+    render(<DownloadPage location={window.location} data={nodeReleaseData} />);
+    expect(screen.getAllByTestId('lts')[0]).toHaveTextContent(
+      'node-v16.18.0-x86.msi'
+    );
+  });
 });

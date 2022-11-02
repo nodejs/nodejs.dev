@@ -24,7 +24,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
           tabindex="0"
         >
           Node.js 
-          v12
+          v18
         </li>
         <li
           aria-controls="panel:r0:1"
@@ -36,7 +36,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
           role="tab"
         >
           Node.js 
-          v14
+          v16
         </li>
         <li
           aria-controls="panel:r0:2"
@@ -48,7 +48,19 @@ exports[`UpcomingReleases component renders correctly 1`] = `
           role="tab"
         >
           Node.js 
-          v18
+          v14
+        </li>
+        <li
+          aria-controls="panel:r0:3"
+          aria-disabled="false"
+          aria-selected="false"
+          class="reactTabsTab"
+          data-rttab="true"
+          id="tab:r0:3"
+          role="tab"
+        >
+          Node.js 
+          v12
         </li>
       </ul>
       <div
@@ -74,7 +86,7 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             >
               Released
                
-              2019-04-23
+              2022-04-19
             </p>
           </div>
           <div
@@ -91,11 +103,11 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             >
               Released
                
-              2019-10-21
+              2022-10-25
             </p>
           </div>
           <div
-            class="itemMaintenance"
+            class="itemMaintenance itemToBeReleased"
           >
             <svg />
             <p
@@ -106,13 +118,12 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             <p
               class="releaseDate"
             >
-              Released
                
-              2020-11-30
+              2023-10-18
             </p>
           </div>
           <div
-            class="itemEndoflife"
+            class="itemEndoflife itemToBeReleased"
           >
             <svg />
             <p
@@ -123,9 +134,8 @@ exports[`UpcomingReleases component renders correctly 1`] = `
             <p
               class="releaseDate"
             >
-              Released
                
-              2022-04-30
+              2025-04-30
             </p>
           </div>
         </div>
@@ -140,6 +150,12 @@ exports[`UpcomingReleases component renders correctly 1`] = `
         aria-labelledby="tab:r0:2"
         class="reactTabsTabPanel"
         id="panel:r0:2"
+        role="tabpanel"
+      />
+      <div
+        aria-labelledby="tab:r0:3"
+        class="reactTabsTabPanel"
+        id="panel:r0:3"
         role="tabpanel"
       />
     </div>

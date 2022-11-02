@@ -51,6 +51,7 @@ exports[`DownloadCards component renders correctly 1`] = `
         </p>
         <p
           class="filename"
+          data-testid="lts"
         >
           node-undefined-x86.msi
         </p>
@@ -79,6 +80,7 @@ exports[`DownloadCards component renders correctly 1`] = `
         </p>
         <p
           class="filename"
+          data-testid="lts"
         >
           node-undefined.pkg
         </p>
@@ -107,6 +109,7 @@ exports[`DownloadCards component renders correctly 1`] = `
         </p>
         <p
           class="filename"
+          data-testid="lts"
         >
           node-undefined.tar.gz
         </p>
