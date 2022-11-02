@@ -58,7 +58,6 @@ npx tsc example.ts
 > [npx](https://www.npmjs.com/package/npx) here stands for Node Package Execute. This tool allows us to run TypeScript's compiler without installing it globally.
 
 `tsc` is the TypeScript compiler which will take our TypeScript code and compile it to JavaScript.
-
 This command will result in a new file named `example.js` that we can run using Node.js.
 Now when we know how to compile and run TypeScript code let's see TypeScript bug-preventing capabilities in action!
 
