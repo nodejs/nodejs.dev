@@ -33,7 +33,7 @@ try {
 }
 ```
 
-Les informations sur le fichier sont incluses dans la variable stats. Quel type d'information peut-on extraire en utilisant les `stats` ?
+Les informations sur le fichier sont incluses dans la variable `stats`. Quel type d'information peut-on extraire en utilisant `stats` ?
 
 **Beaucoup, notamment :**
 
