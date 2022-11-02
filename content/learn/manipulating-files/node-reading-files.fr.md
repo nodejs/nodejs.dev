@@ -6,7 +6,7 @@ authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, Aug
 category: learn
 ---
 
-La façon la plus simple de lire un fichier dans Node.js est d'utiliser la méthode `fs.readFile()`, en lui passant le chemin du fichier, l'encodage et une fonction de rappel qui sera appelée avec les données du fichier (et l'erreur) :
+La façon la plus simple de lire un fichier dans Node.js est d'utiliser la méthode `fs.readFile()`, en lui passant le chemin du fichier, l'encodage et une fonction de rappel qui sera appelée avec les données du fichier (et l'erreur le cas échéant) :
 
 ```js
 const fs = require('fs');
