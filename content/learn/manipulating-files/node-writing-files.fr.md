@@ -73,7 +73,7 @@ fs.writeFile('/Users/joe/test.txt', content, { flag: 'a+' }, err => {});
 
 (vous trouverez d'autres indicateurs sur [https://nodejs.org/api/fs.html#fs_file_system_flags](https://nodejs.org/api/fs.html#fs_file_system_flags))
 
-## Appending content to a file
+## Ajouter un contenu à la fin d'un fichier
 
 L'ajout aux fichiers est pratique lorsque vous ne voulez pas écraser un fichier avec du nouveau contenu, mais plutôt l'enrichir.
 
