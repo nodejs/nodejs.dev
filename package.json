@@ -67,14 +67,17 @@
     "gatsby",
     "node.js"
   ],
+  "engines": {
+    "node": "v18"
+  },
   "license": "MIT",
   "scripts": {
     "cleanup": "gatsby clean",
     "sync-api": "node scripts/syncApiDocs.js",
     "generate-blog": "node scripts/transformNodeBlogPosts.js",
-    "build": "gatsby build",
-    "build-ci": "gatsby build --prefix-paths",
-    "start": "gatsby develop",
+    "build": "node --max-old-space-size=8192 ./node_modules/gatsby/cli.js build",
+    "build-ci": "node --max-old-space-size=8192 ./node_modules/gatsby/cli.js build --prefix-paths",
+    "start": "node --max-old-space-size=8192 ./node_modules/gatsby/cli.js develop",
     "format": "prettier --write \"**/*.{ts,tsx,js,scss,yml}\" && npm run lint:fix",
     "format-check": "prettier --check \"**/*.{ts,tsx,js,scss,yml}\"",
     "update-snapshot": "npm run test -- --updateSnapshot",

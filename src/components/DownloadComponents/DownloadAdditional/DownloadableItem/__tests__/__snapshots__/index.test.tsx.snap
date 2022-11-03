@@ -47,7 +47,7 @@ exports[`DownloadableItem component calls callback with empty item name onclick 
     >
       <a
         class="bodyLink"
-        href="https://nodejs.org/dist/latest-v12.x/node-v12.0.0-x86.msi"
+        href="https://nodejs.org/dist/latest-v18.x/node-v18.0.0-x86.msi"
       >
         <svg
           aria-hidden="true"
@@ -64,7 +64,7 @@ exports[`DownloadableItem component calls callback with empty item name onclick 
       </a>
       <a
         class="bodyLink"
-        href="https://nodejs.org/dist/latest-v12.x/node-v12.0.0-x64.msi"
+        href="https://nodejs.org/dist/latest-v18.x/node-v18.0.0-x64.msi"
       >
         <svg
           aria-hidden="true"
@@ -131,7 +131,7 @@ exports[`DownloadableItem component renders correctly with expanded state 1`] = 
     >
       <a
         class="bodyLink"
-        href="https://nodejs.org/dist/latest-v12.x/node-v12.0.0-x86.msi"
+        href="https://nodejs.org/dist/latest-v18.x/node-v18.0.0-x86.msi"
       >
         <svg
           aria-hidden="true"
@@ -148,7 +148,7 @@ exports[`DownloadableItem component renders correctly with expanded state 1`] = 
       </a>
       <a
         class="bodyLink"
-        href="https://nodejs.org/dist/latest-v12.x/node-v12.0.0-x64.msi"
+        href="https://nodejs.org/dist/latest-v18.x/node-v18.0.0-x64.msi"
       >
         <svg
           aria-hidden="true"
