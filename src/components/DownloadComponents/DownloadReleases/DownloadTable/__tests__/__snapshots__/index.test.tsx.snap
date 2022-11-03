@@ -35,9 +35,34 @@ exports[`DownloadTable component renders correctly 1`] = `
         <tr>
           <td>
             <a
-              href="https://nodejs.org/download/release/latest-v12.x/"
+              href="https://nodejs.org/download/release/latest-v18.x/"
             >
-              v12
+              v18
+            </a>
+          </td>
+          <td>
+            Current
+          </td>
+          <td />
+          <td>
+            2022-04-19
+          </td>
+          <td>
+            2022-10-25
+          </td>
+          <td>
+            2023-10-18
+          </td>
+          <td>
+            2025-04-30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a
+              href="https://nodejs.org/download/release/latest-v16.x/"
+            >
+              v16
             </a>
           </td>
           <td>
@@ -45,22 +70,22 @@ exports[`DownloadTable component renders correctly 1`] = `
           </td>
           <td>
             <a
-              href="https://nodejs.org/download/release/latest-erbium/"
+              href="https://nodejs.org/download/release/latest-gallium/"
             >
-              erbium
+              gallium
             </a>
           </td>
           <td>
-            2019-04-23
+            2021-04-20
           </td>
           <td>
-            2019-10-21
+            2021-10-26
           </td>
           <td>
-            2020-11-30
+            2022-10-18
           </td>
           <td>
-            2022-04-30
+            2023-09-11
           </td>
         </tr>
         <tr>
@@ -97,26 +122,32 @@ exports[`DownloadTable component renders correctly 1`] = `
         <tr>
           <td>
             <a
-              href="https://nodejs.org/download/release/latest-v18.x/"
+              href="https://nodejs.org/download/release/latest-v12.x/"
             >
-              v18
+              v12
             </a>
           </td>
           <td>
-            Current
-          </td>
-          <td />
-          <td>
-            2022-04-19
+            Maintenance LTS
           </td>
           <td>
-            2022-10-25
+            <a
+              href="https://nodejs.org/download/release/latest-erbium/"
+            >
+              erbium
+            </a>
           </td>
           <td>
-            2023-10-18
+            2019-04-23
           </td>
           <td>
-            2025-04-30
+            2019-10-21
+          </td>
+          <td>
+            2020-11-30
+          </td>
+          <td>
+            2022-04-30
           </td>
         </tr>
       </tbody>
