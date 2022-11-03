@@ -18,7 +18,10 @@ export default connectGraphQlArticle(ArticleLayout, {
   articleContent: (props: ReleasesNodeReleases) => (
     <DownloadComponents.DownloadTable
       nodeReleasesData={props.nodeReleases.nodeReleasesData.filter(
-        release => release.status !== 'Pending'
+        release =>
+          release.status !== 'Pending' &&
+          release.status !== 'Current' &&
+          release.status !== 'Active LTS'
       )}
     />
   ),
