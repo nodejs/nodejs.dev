@@ -7,9 +7,9 @@ version: 'v18'
 
 ### Usage
 
-<Metadata version="v18.12.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.12.1" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.12.0" data={{"type":"misc"}} />
+<Metadata version="v18.12.1" data={{"type":"misc"}} />
 
 `node [options] [V8 options] [script.js | -e "script" | - ] [arguments]`
 

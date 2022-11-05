@@ -8,7 +8,7 @@ category: learn
 
 If you worked with JavaScript in the browser, you know how much of the interaction of the user is handled through events: mouse clicks, keyboard button presses, reacting to mouse movements, and so on.
 
-On the backend side, Node.js offers us the option to build a similar system using the [`events` module](https://nodejs.org/api/events.html).
+On the backend side, Node.js offers us the option to build a similar system using the [`events` module](/api/events/).
 
 This module, in particular, offers the `EventEmitter` class, which we'll use to handle our events.
 
@@ -67,4 +67,4 @@ The EventEmitter object also exposes several other methods to interact with even
 * `removeListener()` / `off()`: remove an event listener from an event
 * `removeAllListeners()`: remove all listeners for an event
 
-You can read all their details on the events module page at [https://nodejs.org/api/events.html](https://nodejs.org/api/events.html)
+You can read more about these methods in the [official documentation](/api/events/).
