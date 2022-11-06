@@ -5,11 +5,11 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.0.0" data={{"update":{"type":"introduced_in","version":["v8.1.0"]}}} />
+<Metadata version="v19.0.1" data={{"update":{"type":"introduced_in","version":["v8.1.0"]}}} />
 
-<Metadata version="v19.0.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v19.0.1" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
-<Metadata version="v19.0.0" data={{"source_link":"lib/async_hooks.js"}} />
+<Metadata version="v19.0.1" data={{"source_link":"lib/async_hooks.js"}} />
 
 The `node:async_hooks` module provides an API to track asynchronous resources.
 It can be accessed using:
@@ -136,7 +136,7 @@ function promiseResolve(asyncId) { }
 
 ### <DataTag tag="M" /> `async_hooks.createHook(callbacks)`
 
-<Metadata version="v19.0.0" data={{"update":{"type":"added","version":["v8.1.0"]}}} />
+<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v8.1.0"]}}} />
 
 * `callbacks` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The [Hook Callbacks][] to register
   * `init` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The [`init` callback][].
@@ -573,7 +573,7 @@ does not depend on garbage collection, then this will not be an issue.
 
 ##### <DataTag tag="M" /> `promiseResolve(asyncId)`
 
-<Metadata version="v19.0.0" data={{"update":{"type":"added","version":["v8.6.0"]}}} />
+<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v8.6.0"]}}} />
 
 * `asyncId` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -602,7 +602,7 @@ init for PROMISE with id 6, trigger id: 5  # the Promise returned by then()
 
 #### <DataTag tag="M" /> `async_hooks.executionAsyncResource()`
 
-<Metadata version="v19.0.0" data={{"update":{"type":"added","version":["v13.9.0","v12.17.0"]}}} />
+<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v13.9.0","v12.17.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The resource representing the current execution.
   Useful to store data within the resource.
@@ -692,7 +692,7 @@ const server = createServer((req, res) => {
 
 #### <DataTag tag="M" /> `async_hooks.executionAsyncId()`
 
-<Metadata version="v19.0.0" data={{"changes":[{"version":"v8.2.0","pr-url":"https://github.com/nodejs/node/pull/13490","description":"Renamed from `currentId`."}],"update":{"type":"added","version":["v8.1.0"]}}} />
+<Metadata version="v19.0.1" data={{"changes":[{"version":"v8.2.0","pr-url":"https://github.com/nodejs/node/pull/13490","description":"Renamed from `currentId`."}],"update":{"type":"added","version":["v8.1.0"]}}} />
 
 * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The `asyncId` of the current execution context. Useful to
   track when something calls.
@@ -759,7 +759,7 @@ the section on [promise execution tracking][].
 
 #### <DataTag tag="M" /> `async_hooks.asyncWrapProviders`
 
-<Metadata version="v19.0.0" data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
+<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
 
 * Returns: A map of provider types to the corresponding numeric id.
   This map contains all the event types that might be emitted by the `async_hooks.init()` event.
