@@ -91,7 +91,13 @@ const SearchBar = (): JSX.Element => {
     }
   };
 
-  useKeyPress('/', () => expandContainer());
+  useKeyPress('k', evt => {
+    if (evt.metaKey || evt.ctrlKey) {
+      evt.preventDefault();
+      expandContainer();
+    }
+  });
+
   useKeyPress('Escape', () => {
     if (isExpanded) {
       collapseContainer();
