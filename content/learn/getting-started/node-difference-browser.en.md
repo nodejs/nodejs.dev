@@ -6,22 +6,22 @@ authors: flaviocopes, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmada
 category: learn
 ---
 
-Le navigateur et Node.js utilisent tous deux JavaScript comme langage de programmation. Construire des applications qui fonctionnent dans le navigateur est une chose complètement différente de la construction d'une application Node.js. Malgré le fait qu'il s'agit toujours de JavaScript, il y a quelques différences clés qui rendent l'expérience radicalement différente.
+Both the browser and Node.js use JavaScript as their programming language. Building apps that run in the browser is a completely different thing than building a Node.js application. Despite the fact that it's always JavaScript, there are some key differences that make the experience radically different.
 
-Du point de vue d'un développeur frontal qui utilise intensivement JavaScript, les applications Node.js présentent un avantage énorme : le confort de pouvoir tout programmer - le frontal et le backend - dans un seul langage.
+From the perspective of a frontend developer who extensively uses JavaScript, Node.js apps bring with them a huge advantage: the comfort of programming everything - the frontend and the backend - in a single language.
 
-Vous avez une énorme opportunité car nous savons à quel point il est difficile d'apprendre complètement, profondément un langage de programmation, et en utilisant le même langage pour effectuer tout votre travail sur le web - à la fois sur le client et sur le serveur, vous êtes dans une position unique d'avantage.
+You have a huge opportunity because we know how hard it is to fully, deeply learn a programming language, and by using the same language to perform all your work on the web - both on the client and on the server, you're in a unique position of advantage.
 
-**Ce qui change, c'est l'écosystème.**
+> **What changes is the ecosystem.**
 
-Dans le navigateur, la plupart du temps, ce que vous faites, c'est interagir avec le DOM, ou d'autres API de la plate-forme Web comme les cookies. Ceux-ci n'existent pas dans Node.js, bien sûr. Vous n'avez pas le `document`, `window` et tous les autres objets qui sont fournis par le navigateur.
+In the browser, most of the time what you are doing is interacting with the DOM, or other Web Platform APIs like Cookies. Those do not exist in Node.js, of course. You don't have the `document`, `window` and all the other objects that are provided by the browser.
 
-Et dans le navigateur, nous n'avons pas toutes les belles API que Node.js fournit à travers ses modules, comme la fonctionnalité d'accès au système de fichiers.
+And in the browser, we don't have all the nice APIs that Node.js provides through its modules, like the filesystem access functionality.
 
-Une autre grande différence est que dans Node.js vous contrôlez l'environnement. À moins que vous ne construisiez une application open source que tout le monde peut déployer n'importe où, vous savez sur quelle version de Node.js vous allez exécuter l'application. Comparé à l'environnement du navigateur, où vous n'avez pas le luxe de choisir quel navigateur vos visiteurs utiliseront, ceci est très pratique.
+Another big difference is that in Node.js you control the environment. Unless you are building an open source application that anyone can deploy anywhere, you know which version of Node.js you will run the application on. Compared to the browser environment, where you don't get the luxury to choose what browser your visitors will use, this is very convenient.
 
-Cela signifie que vous pouvez écrire tout le JavaScript moderne ES2015+ que votre version de Node.js supporte. Puisque JavaScript évolue si rapidement, mais que les navigateurs peuvent être un peu lents à se mettre à jour, il arrive que sur le web, vous soyez coincé avec l'utilisation d'anciennes versions de JavaScript / ECMAScript. Vous pouvez utiliser Babel pour transformer votre code afin qu'il soit compatible avec ES5 avant de l'envoyer au navigateur, mais avec Node.js, vous n'en aurez pas besoin.
+This means that you can write all the modern ES2015+ JavaScript that your Node.js version supports. Since JavaScript moves so fast, but browsers can be a bit slow to upgrade, sometimes on the web you are stuck with using older JavaScript / ECMAScript releases. You can use Babel to transform your code to be ES5-compatible before shipping it to the browser, but in Node.js, you won't need that.
 
-Une autre différence est que Node.js prend en charge les systèmes de modules CommonJS et ES (depuis Node.js v12), tandis que dans le navigateur, nous commençons à voir la norme des modules ES mise en œuvre.
+Another difference is that Node.js supports both the CommonJS and ES module systems (since Node.js v12), while in the browser we are starting to see the ES Modules standard being implemented.
 
-En pratique, cela signifie que vous pouvez utiliser à la fois `require()` et `import` dans Node.js, alors que vous êtes limité à `import` dans le navigateur.
+In practice, this means that you can use both `require()` and `import` in Node.js, while you are limited to `import` in the browser.
