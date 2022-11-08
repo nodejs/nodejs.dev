@@ -66,7 +66,6 @@ fs.writeFile('/Users/joe/test.txt', content, { flag: 'a+' }, err => {});
 
 #### The flags you'll likely use are
 
-    <td><code>a</code></td>
 |Flag|Description|File gets created if it doesn't exist|
 |------|------|------|
 |`r+`|This flag opens the file for **reading** and **writing**|<p style="text-align: center;">❌</p>|
