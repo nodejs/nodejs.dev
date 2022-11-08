@@ -16,7 +16,7 @@ La méthode la plus basique et la plus utilisée est `console.log()`, qui imprim
 
 Si vous passez un objet, il le rendra sous forme de chaîne.
 
-Vous pouvez passer plusieurs variables à `console.log`, par exemple :
+Vous pouvez passer plusieurs arguments à `console.log`, par exemple :
 
 ```js
 const x = 'x';
