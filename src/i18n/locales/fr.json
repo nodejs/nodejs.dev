@@ -70,7 +70,7 @@
   "docs.api.history.version": "Version",
   "docs.api.history.changes": "Changements",
   "docs.api.stability": "Stabilité: {level}{text}",
-  "components.header.links.about": "A propos",
+  "components.header.links.about": "À propos",
   "components.header.links.certification": "Certification",
   "components.author.githubLinkLabel": "{username} Github - s'ouvre dans un nouvel onglet",
   "navigation.about.section.about": "A propos de Node.js",
