@@ -64,6 +64,6 @@ Les modules WebAssembly ne peuvent pas accéder directement aux fonctionnalités
 
 ## Ressources
 
-* Informations générales sur WebAssembly](https://webassembly.org/)
+* [Informations générales sur WebAssembly](https://webassembly.org/)
 * [Docs MDN](https://developer.mozilla.org/en-US/docs/WebAssembly)
 * [Écrire WebAssembly à la main](https://webassembly.github.io/spec/core/text/index.html)

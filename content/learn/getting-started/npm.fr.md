@@ -57,7 +57,7 @@ Des raccourcis des drapeaux peuvent également être utilisés :
 
 La différence entre _devDependencies_ et _dependencies_ est que le premier contient des outils de développement, comme une bibliothèque de test, tandis que le second est fourni avec l'application en production.
 
-Quant à _optionalDependencies_, la différence est que l'échec de la construction de la dépendance ne fera pas échouer l'installation. Mais c'est à votre programme qu'il incombe de gérer l'absence de cette dépendance. En savoir plus sur [optional dependencies](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#optionaldependencies).
+Quant à _optionalDependencies_, la différence est que l'échec de la construction de la dépendance ne fera pas échouer l'installation. Mais c'est à votre programme qu'il incombe de gérer l'absence de cette dépendance. En savoir plus sur [dépendances optionnelles](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#optionaldependencies).
 
 ### Mise à jour des paquets
 

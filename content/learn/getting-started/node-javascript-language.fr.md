@@ -14,8 +14,8 @@ ous avez suffisamment confiance en vos capacités de programmation. Tout en appr
 * [Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
 * [Types de données](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
 * [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
-* Variables
-* Fonctions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+* [Variables](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables#what_is_a_variable)
+* [Fonctions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
 * [Opérateur `this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 * [Fonctions fléchées](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 * [Boucles](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
@@ -23,7 +23,7 @@ ous avez suffisamment confiance en vos capacités de programmation. Tout en appr
 * [Tableaux](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 * [Littérature des modèles](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 * [Strict Mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
-* ECMAScript 2015 (ES6) et au-delà](/learn/ecmascript-2015-es6-and-beyond/)
+* [ECMAScript 2015 (ES6) et au-delà](/learn/ecmascript-2015-es6-and-beyond/)
 
 Avec ces concepts en tête, vous êtes sur la bonne voie pour devenir un développeur JavaScript compétent, à la fois dans le navigateur et dans Node.js.
 
