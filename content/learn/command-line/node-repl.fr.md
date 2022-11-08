@@ -18,16 +18,16 @@ Si nous lançons la commande `node` sans aucun script à exécuter ou sans aucun
 node
 ```
 
-> <b>Remarque :</b> <code>REPL</code> L'acronyme REPL signifie Read Evaluate Print Loop (lecture, évaluation, impression, boucle). Il s'agit d'un environnement de langage de programmation (essentiellement une fenêtre de console) qui prend une seule expression comme entrée utilisateur et renvoie le résultat à la console après exécution. The REPL session provides a convenient way to quickly test simple JavaScript code.
+> <b>Remarque :</b> <code>REPL</code> L'acronyme REPL signifie Read Evaluate Print Loop (lecture, évaluation, impression, boucle). Il s'agit d'un environnement de langage de programmation (essentiellement une fenêtre de console) qui prend une seule expression comme entrée utilisateur et renvoie le résultat à la console après exécution. La session REPL offre un moyen pratique de tester rapidement un code JavaScript simple.
 
-If you try it now in your terminal, this is what happens:
+Si vous essayez maintenant dans votre terminal, voici ce qui se passe :
 
 ```bash
 ❯ node
 >
 ```
 
-The command stays in idle mode and waits for us to enter something.
+La commande reste en mode inactif et attend que nous entrions quelque chose.
 
 > <b>Conseil :</b> si vous n'êtes pas sûr de savoir comment ouvrir votre terminal, cherchez dans Google "Comment ouvrir un terminal sur votre système d'exploitation".
 
@@ -71,7 +71,7 @@ function generateRandom() {
 undefined
 ```
 
-### The `_` special variable
+### ### La variable spéciale `_`
 
 Si après un certain code vous tapez `_`, cela va imprimer le résultat de la dernière opération.
 

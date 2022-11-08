@@ -2,7 +2,7 @@
 title: run-nodejs-scripts-from-the-command-line
 displayTitle: 'Exécuter des scripts Node.js à partir de la ligne de commande'
 description: "Comment exécuter n'importe quel script Node.js à partir du CLI"
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, akazyti
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, akazyti, Augustinmauroy
 category: learn
 ---
 

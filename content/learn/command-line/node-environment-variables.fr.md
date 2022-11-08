@@ -1,12 +1,12 @@
 ---
 title: how-to-read-environment-variables-from-nodejs
-displayTitle: 'Comment lire les variables d'environnement de Node.js'
+displayTitle: "Comment lire les variables d'environnement de Node.js"
 description: "Apprenez à lire et à utiliser les variables d'environnement dans un programme Node.js."
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, manishprivet
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, manishprivet, augustinmauroy
 category: learn
 ---
 
-Le module central `process` de Node.js fournit la propriété `env` qui héberge toutes les variables d'environnement qui ont été définies au moment où le processus a été la
+Le module central `process` de Node.js fournit la propriété `env` qui héberge toutes les variables d'environnement qui ont été définies au moment où le processus a été lancé.
 
 Le code ci-dessous exécute `app.js` et définit `USER_ID` et `USER_KEY`.
 

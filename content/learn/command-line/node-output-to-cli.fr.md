@@ -104,8 +104,7 @@ Remarquez comment l'appel à `console.countReset('orange')` remet le compteur de
 
 ### Imprimer la trace de la pile
 
-Il peut y avoir des cas où il est utile d'imprimer la trace de la pile d'appels d'une fonction, peut-être pour répondre à la question
-_comment avez-vous atteint cette partie du code ?_
+Il peut y avoir des cas où il est utile d'imprimer la trace de la pile d'appels d'une fonction, peut-être pour répondre à la question _comment avez-vous atteint cette partie du code ?_
 
 You can do so using `console.trace()`:
 
