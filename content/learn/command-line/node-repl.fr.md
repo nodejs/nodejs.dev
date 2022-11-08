@@ -79,7 +79,7 @@ Si après un certain code vous tapez `_`, cela va imprimer le résultat de la de
 
 Si vous appuyez sur la flèche `up`, vous aurez accès à l'historique des lignes de code précédentes exécutées dans la session REPL actuelle, et même dans les sessions précédentes.
 
-### Commandes par points
+### Commandes commençant par un point
 
 Le REPL possède quelques commandes spéciales, qui commencent toutes par un point `.`. Elles sont
 
