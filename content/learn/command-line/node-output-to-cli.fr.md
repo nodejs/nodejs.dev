@@ -79,7 +79,7 @@ apples.forEach(fruit => {
 
 ### Remise à zéro du comptage
 
-La méthode console.countReset() remet à zéro le compteur utilisé avec console.count().
+La méthode `console.countReset()` remet à zéro le compteur utilisé avec console.count().
 
 Nous utiliserons l'exemple des pommes et des oranges pour le démontrer.
 
