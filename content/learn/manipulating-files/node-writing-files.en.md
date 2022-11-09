@@ -66,12 +66,12 @@ fs.writeFile('/Users/joe/test.txt', content, { flag: 'a+' }, err => {});
 
 #### The flags you'll likely use are
 
-| Flag | Description | File gets created if it doesn't exist                                              |
-|------|-------------|------------------------------------------------------------------------------------|
-| `r+` | This flag opens the file for **reading** and **writing** | <p style="text-align: center;">❌</p> |
-| `w+` | This flag opens the file for **reading** and **writing** and it also positions the stream at the **beginning** of the file | <p style="text-align: center;">✅</p>                                                          |
-| `a`  | This flag opens the file for **writing** and it also positions the stream at the **end** of the file | <p style="text-align: center;">✅</p>                                                                        |
-| `a+` | This flag opens the file for **reading** and **writing** and it also positions the stream at the **end** of the file | <p style="text-align: center;">✅</p>                                                              |
+| Flag | Description | File gets created if it doesn't exist           |
+|------|-------------|:-----------------------------------------------:|
+| `r+` | This flag opens the file for **reading** and **writing** | ❌ |
+| `w+` | This flag opens the file for **reading** and **writing** and it also positions the stream at the **beginning** of the file | ✅                                                          |
+| `a`  | This flag opens the file for **writing** and it also positions the stream at the **end** of the file | ✅                                                                     |
+| `a+` | This flag opens the file for **reading** and **writing** and it also positions the stream at the **end** of the file | ✅                                                              |
 
 * You can find more information about the flags in the [fs documentation](/api/fs/#file-system-flags).
 
