@@ -12,6 +12,7 @@ import styles from './index.module.scss';
 
 interface Props {
   title: string;
+  description?: string;
   body: string;
   authors: string[] | BlogPostAuthor[];
   tableOfContents: TableOfContentsItem[];
@@ -44,6 +45,7 @@ const renderTOC = (tableOfContents: TableOfContentsItem[] | undefined) => (
 
 const Article = ({
   title,
+  description,
   body,
   tableOfContents,
   previous,
@@ -61,7 +63,10 @@ const Article = ({
 }: Props): JSX.Element => (
   <article className={styles.article}>
     {childrenPosition === 'before' && children && <div>{children}</div>}
-    <h1 className={styles.headline}>{title}</h1>
+    <div className='index-module--header--2ba93'>
+      <h1 className={styles.headline}>{title}</h1>
+      <p>{description}</p>
+    </div>
     {blog
       ? renderBlogAuthors(date, authors as BlogPostAuthor[])
       : renderArticleAuthors(authors as string[])}
