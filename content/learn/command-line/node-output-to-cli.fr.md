@@ -24,7 +24,7 @@ const y = 'y';
 console.log(x, y);
 ```
 
-et Node.js imprimera les deux.
+et Node.js affichera les deux.
 
 Nous pouvons également formater de jolies phrases en passant des variables et un spécificateur de format.
 
@@ -106,7 +106,7 @@ Remarquez comment l'appel à `console.countReset('orange')` remet le compteur de
 
 Il peut y avoir des cas où il est utile d'imprimer la trace de la pile d'appels d'une fonction, peut-être pour répondre à la question _comment avez-vous atteint cette partie du code ?_
 
-You can do so using `console.trace()`:
+Vous pouvez le faire en utilisant `console.trace()` :
 
 ```js
 const function2 = () => console.trace();
@@ -183,7 +183,7 @@ Consultez le lien du projet affiché ci-dessus pour plus d'exemples d'utilisatio
 
 [Progress](https://www.npmjs.com/package/progress) est un paquet génial pour créer une barre de progression dans la console. Installez-le en utilisant `npm install progress`.
 
-Ce snippet crée une barre de progression de 10 étapes, et toutes les 100 ms une étape est complétée. Lorsque la barre est terminée, nous effaçons l'intervalle :
+Ce bout de code crée une barre de progression de 10 étapes, et toutes les 100 ms une étape est complétée. Lorsque la barre est terminée, nous supprimons l'action répétée :
 
 ```js
 const ProgressBar = require('progress');
