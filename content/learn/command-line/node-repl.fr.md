@@ -18,7 +18,7 @@ Si nous lançons la commande `node` sans aucun script à exécuter ou sans aucun
 node
 ```
 
-> <b>Remarque :</b> <code>REPL</code> L'acronyme REPL signifie Read Evaluate Print Loop (lecture, évaluation, impression, boucle). Il s'agit d'un environnement de langage de programmation (essentiellement une fenêtre de console) qui prend une seule expression comme entrée utilisateur et renvoie le résultat à la console après exécution. La session REPL offre un moyen pratique de tester rapidement un code JavaScript simple.
+> **Remarque :** `REPL` L'acronyme REPL signifie Read Evaluate Print Loop (lecture, évaluation, impression, boucle). Il s'agit d'un environnement de langage de programmation (essentiellement une fenêtre de console) qui prend une seule expression comme entrée utilisateur et renvoie le résultat à la console après exécution. La session REPL offre un moyen pratique de tester rapidement un code JavaScript simple.
 
 Si vous essayez maintenant dans votre terminal, voici ce qui se passe :
 
@@ -29,7 +29,7 @@ Si vous essayez maintenant dans votre terminal, voici ce qui se passe :
 
 La commande reste en mode inactif et attend que nous entrions quelque chose.
 
-> <b>Conseil :</b> si vous n'êtes pas sûr de savoir comment ouvrir votre terminal, cherchez dans Google "Comment ouvrir un terminal sur votre système d'exploitation".
+> **Conseil :** si vous n'êtes pas sûr de savoir comment ouvrir votre terminal, cherchez dans Google "Comment ouvrir un terminal sur votre système d'exploitation".
 
 Le REPL attend que nous entrions du code JavaScript, pour être plus précis.
 
