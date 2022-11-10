@@ -8,7 +8,7 @@ category: learn
 
 ## What is TypeScript
 
-**[TypeScript](https://www.typescriptlang.org)** is a trendy open-source language maintained and developed by Microsoft, it's loved and used by a lot of software developers around the world.
+**[TypeScript](https://www.typescriptlang.org)** is a trendy open-source language maintained and developed by Microsoft. It's loved and used by a lot of software developers around the world.
 
 Basically, it's a superset of JavaScript that adds new capabilities to the language. The most notable addition is static type definitions, something that is not present in plain JavaScript. Thanks to types, it's possible, for example, to declare what kind of arguments we are expecting and what is returned exactly in our functions or what's the exact shape of the object that we are creating. TypeScript is a really powerful tool and opens a new world of possibilities in JavaScript projects. It makes our code more secure and robust by preventing many bugs before the code is even shipped - it catches problems during code development and integrates wonderfully with code editors like Visual Studio Code.
 
@@ -36,7 +36,7 @@ const justine: User = {
 const isJustineAnAdult: boolean = isAdult(justine);
 ```
 
-First part with `type` keyword is responsible for declaring our custom type of objects representing users. Later we utilize this newly created type to create function `isAdult` that accepts one argument of type `User` and returns `boolean`. After this we create `justine`, our example data that can be used for calling previously defined function. Finally, we create new variable with information whether `justine` is an adult or not.
+The first part (with the `type` keyword) is responsible for declaring our custom object type representing users. Later we utilize this newly created type to create function `isAdult` that accepts one argument of type `User` and returns `boolean`. After this, we create `justine`, our example data that can be used for calling the previously defined function. Finally, we create a new variable with information on whether `justine` is an adult.
 
 There are additional things about this example that you should know. Firstly, if we would not comply with declared types, TypeScript would alarm us that something is wrong and prevent misuse. Secondly, not everything must be typed explicitly - TypeScript is very smart and can deduce types for us. For example, variable `isJustineAnAdult` would be of type `boolean` even if we didn't type it explicitly or `justine` would be valid argument for our function even if we didn't declare this variable as of `User` type.
 
