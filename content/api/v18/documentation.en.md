@@ -5,9 +5,9 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.12.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.12.1" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.12.0" data={{"type":"misc"}} />
+<Metadata version="v18.12.1" data={{"type":"misc"}} />
 
 Welcome to the official API reference documentation for Node.js!
 
@@ -20,7 +20,7 @@ Report errors in this documentation in [the issue tracker][]. See
 
 ### Stability index
 
-<Metadata version="v18.12.0" data={{"type":"misc"}} />
+<Metadata version="v18.12.1" data={{"type":"misc"}} />
 
 Throughout the documentation are indications of a section's stability. Some APIs
 are so proven and so relied upon that they are unlikely to ever change at all.
@@ -28,13 +28,13 @@ Others are brand new and experimental, or known to be hazardous.
 
 The stability indices are as follows:
 
-<Metadata version="v18.12.0" data={{"stability":{"level":0,"text":" - Deprecated. The feature may emit warnings. Backward compatibility is not guaranteed."}}} />
+<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated. The feature may emit warnings. Backward compatibility is not guaranteed."}}} />
 
-<Metadata version="v18.12.0" data={{"stability":{"level":1,"text":" - Experimental. The feature is not subject to semantic versioning rules. Non-backward compatible changes or removal may\n> occur in any future release. Use of the feature is not recommended in\n> production environments."}}} />
+<Metadata version="v18.12.1" data={{"stability":{"level":1,"text":" - Experimental. The feature is not subject to semantic versioning rules. Non-backward compatible changes or removal may\n> occur in any future release. Use of the feature is not recommended in\n> production environments."}}} />
 
-<Metadata version="v18.12.0" data={{"stability":{"level":2,"text":" - Stable. Compatibility with the npm ecosystem is a high priority."}}} />
+<Metadata version="v18.12.1" data={{"stability":{"level":2,"text":" - Stable. Compatibility with the npm ecosystem is a high priority."}}} />
 
-<Metadata version="v18.12.0" data={{"stability":{"level":3,"text":" - Legacy. Although this feature is unlikely to be removed and is still covered by semantic versioning guarantees, it is no longer actively\n> maintained, and other alternatives are available."}}} />
+<Metadata version="v18.12.1" data={{"stability":{"level":3,"text":" - Legacy. Although this feature is unlikely to be removed and is still covered by semantic versioning guarantees, it is no longer actively\n> maintained, and other alternatives are available."}}} />
 
 Features are marked as legacy rather than being deprecated if their use does no
 harm, and they are widely relied upon within the npm ecosystem. Bugs found in
@@ -50,7 +50,7 @@ a command-line flag. Experimental features may also emit a [warning][].
 
 ### JSON output
 
-<Metadata version="v18.12.0" data={{"update":{"type":"added","version":["v0.6.12"]}}} />
+<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v0.6.12"]}}} />
 
 Every `.html` document has a corresponding `.json` document. This is for IDEs
 and other utilities that consume the documentation.
