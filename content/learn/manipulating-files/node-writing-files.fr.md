@@ -66,33 +66,12 @@ fs.writeFile('/Users/joe/test.txt', content, { flag: 'a+' }, err => {});
 
 #### Les indicateurs que vous utiliserez probablement sont
 
-<table>
-  <tr>
-    <th>indicateur</th>
-    <th>Description</th>
-    <th>Le fichier est créé s'il n'existe pas</th>
-  </tr>
-  <tr>
-    <td><code>r+</code></td>
-    <td>This flag opens the file for <b>reading</b> and <b>writing</b></td>
-    <td style="text-align: center;">❌</td>
-  </tr>
-  <tr>
-    <td><code>w+</code></td>
-    <td>Cette option ouvre le fichier pour la <b>lecture</b> et l'*écriture* et positionne également le flux au <b>début</b> du fichier.</td>
-    <td style="text-align: center;">✅</td>
-  </tr>
-  <tr>
-    <td><code>a</code></td>
-    <td>Cette option ouvre le fichier pour <b>écrire</b> et positionne également le flux à la <b>fin</b> du fichier.</td>
-    <td style="text-align: center;">✅</td>
-  </tr>
-  <tr>
-    <td><code>a+</code></td>
-    <td>This flag opens the file for <b>reading</b> and *writing* and it also positions the stream at the <b>end</b> of the file</td>
-    <td style="text-align: center;">✅</td>
-  </tr>
-</table>
+| Indicateur | Description | Le fichier est créé s'il n'existe pas           |
+|------|-------------|:-----------------------------------------------:|
+| `r+` | Cette indication ouvre le fichier pour la **lecture** et la **écriture**. | ❌ |
+| `w+` | Cette indication ouvre le fichier pour la **lecture** et la **écriture** et positionne également le flux au **début** du fichier. | ✅                                                          |
+| `a`  | Cette indication ouvre le fichier pour **écrire** et positionne également le flux à la **fin** du fichier. | ✅                                                                     |
+| `a+` | Cette indication ouvre le fichier pour **lire** et **écrire** et positionne également le flux à la **fin** du fichier. | ✅                                                              |
 
 * Vous pouvez trouver plus d'informations sur les drapeaux dans la [documentation fs](/api/fs/#file-system-flags).
 
