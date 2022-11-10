@@ -66,33 +66,12 @@ fs.writeFile('/Users/joe/test.txt', content, { flag: 'a+' }, err => {});
 
 #### The flags you'll likely use are
 
-<table>
-  <tr>
-    <th>Flag</th>
-    <th>Description</th>
-    <th>File gets created if it doesn't exist</th>
-  </tr>
-  <tr>
-    <td><code>r+</code></td>
-    <td>This flag opens the file for <b>reading</b> and <b>writing</b></td>
-    <td style="text-align: center;">❌</td>
-  </tr>
-  <tr>
-    <td><code>w+</code></td>
-    <td>This flag opens the file for <b>reading</b> and <b>writing</b> and it also positions the stream at the <b>beginning</b> of the file</td>
-    <td style="text-align: center;">✅</td>
-  </tr>
-  <tr>
-    <td><code>a</code></td>
-    <td>This flag opens the file for <b>writing</b> and it also positions the stream at the <b>end</b> of the file</td>
-    <td style="text-align: center;">✅</td>
-  </tr>
-  <tr>
-    <td><code>a+</code></td>
-    <td>This flag opens the file for <b>reading</b> and <b>writing</b> and it also positions the stream at the <b>end</b> of the file</td>
-    <td style="text-align: center;">✅</td>
-  </tr>
-</table>
+| Flag | Description | File gets created if it doesn't exist           |
+|------|-------------|:-----------------------------------------------:|
+| `r+` | This flag opens the file for **reading** and **writing** | ❌ |
+| `w+` | This flag opens the file for **reading** and **writing** and it also positions the stream at the **beginning** of the file | ✅                                                          |
+| `a`  | This flag opens the file for **writing** and it also positions the stream at the **end** of the file | ✅                                                                     |
+| `a+` | This flag opens the file for **reading** and **writing** and it also positions the stream at the **end** of the file | ✅                                                              |
 
 * You can find more information about the flags in the [fs documentation](/api/fs/#file-system-flags).
 
