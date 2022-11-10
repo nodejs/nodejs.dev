@@ -91,17 +91,24 @@ const SearchBar = (): JSX.Element => {
     }
   };
 
-  useKeyPress('k', evt => {
-    if (evt.metaKey || evt.ctrlKey) {
-      evt.preventDefault();
-      expandContainer();
-    }
+  useKeyPress({
+    targetKey: 'ctrl+k',
+    callback: expandContainer,
+    preventDefault: true,
+  });
+  useKeyPress({
+    targetKey: 'meta+k',
+    callback: expandContainer,
+    preventDefault: true,
   });
 
-  useKeyPress('Escape', () => {
-    if (isExpanded) {
-      collapseContainer();
-    }
+  useKeyPress({
+    targetKey: 'Escape',
+    callback: () => {
+      if (isExpanded) {
+        collapseContainer();
+      }
+    },
   });
 
   return (
