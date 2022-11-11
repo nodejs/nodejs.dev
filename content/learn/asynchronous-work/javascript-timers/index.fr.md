@@ -56,7 +56,7 @@ setTimeout(() => {
 console.log(' avant ');
 ```
 
-Ce code va imprimer
+Ce code va s'afficher
 
 ```bash
 avant
