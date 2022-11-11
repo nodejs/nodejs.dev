@@ -96,6 +96,7 @@ const SearchBar = (): JSX.Element => {
     callback: expandContainer,
     preventDefault: true,
   });
+
   useKeyPress({
     targetKey: 'meta+k',
     callback: expandContainer,

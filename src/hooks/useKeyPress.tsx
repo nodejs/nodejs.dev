@@ -30,10 +30,10 @@ function useKeyPress({
 
   useEffect(() => {
     const downHandler = (e: KeyboardEvent) => {
-      if (preventDefault) {
-        e.preventDefault();
-      }
       if (decorateKey(e) === targetKey) {
+        if (preventDefault) {
+          e.preventDefault();
+        }
         setKeyPressed(true);
         if (typeof callback === 'function') {
           callback();
