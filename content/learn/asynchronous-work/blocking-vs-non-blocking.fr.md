@@ -5,15 +5,13 @@ authors: ovflowd, thomasbnt
 category: learn
 ---
 
-Cette présentation couvre la différence entre les appels **bloquantes** et **non-bloquantes** dans Node.js. Cet aperçu fera référence à la boucle d'événement et à libuv mais aucune connaissance préalable de ces sujets n'est requise. Les lecteurs sont supposés avoir une compréhension de base du langage JavaScript et du [callback pattern](/learn/javascript-asynchronous-programming-and-callbacks/) de Node.js.
+Cette présentation couvre la différence entre les appels **bloquants** et **non-bloquants** dans Node.js. Cet aperçu fera référence à la boucle d'événement et à libuv mais aucune connaissance préalable de ces sujets n'est requise. Les lecteurs sont supposés avoir une compréhension de base du langage JavaScript et du [callback pattern](/learn/javascript-asynchronous-programming-and-callbacks/) de Node.js.
 
 > Le terme "I/O" fait principalement référence à l'interaction avec le disque et le réseau du système réseau supporté par [libuv](https://libuv.org/).
 
 ## Bloquant
 
-On parle de **bloquants** lorsque l'exécution de JavaScript supplémentaire dans le processus Node.js doit attendre qu'une opération non-JavaScript se termine. Cela se produit
-car la boucle d'événement ne peut pas continuer à exécuter JavaScript pendant qu'une
-**bloquantes** est en cours.
+On parle d'opérations **bloquantes** lorsque l'exécution de JavaScript supplémentaire dans le processus Node.js doit attendre qu'une opération non-JavaScript se termine. Cela se produit car la boucle d'événement ne peut pas continuer à exécuter JavaScript pendant qu'une opération **bloquantes** est en cours.
 
 Dans Node.js, le JavaScript qui présente des performances médiocres en raison de l'intensité du CPU plutôt que d'attendre une opération non-JavaScript, comme les I/O, n'est généralement pas généralement pas qualifié de **bloquantes**. Les méthodes synchrones de la bibliothèque standard Node.js qui utilisent libuv sont les opérations **bloquantes** les plus couramment utilisées. Les modules natifs de peuvent aussi avoir des méthodes **bloquantes**.
 
