@@ -110,7 +110,7 @@ Comme vous pouvez le constater, TypeScript nous empêche avec succès d'envoyer 
 
 ## Plus d'informations sur TypeScript
 
-TypeScript offre un grand nombre d'autres mécanismes intéressants tels que les interfaces, les classes, les types utilitaires, etc. De plus, sur des projets plus importants, vous pouvez déclarer la configuration de votre compilateur TypeScript dans un fichier séparé et ajuster de manière granulaire son mode de fonctionnement, sa rigueur et l'endroit où il stocke les fichiers compilés, par exemple. Vous pouvez en savoir plus sur toutes ces fonctionnalités dans [la documentation officielle de TypeScript] (https://www.typescriptlang.org/docs).
+TypeScript offre un grand nombre d'autres mécanismes intéressants tels que les interfaces, les classes, les types utilitaires, etc. De plus, sur des projets plus importants, vous pouvez déclarer la configuration de votre compilateur TypeScript dans un fichier séparé et ajuster de manière granulaire son mode de fonctionnement, sa rigueur et l'endroit où il stocke les fichiers compilés, par exemple. Vous pouvez en savoir plus sur toutes ces fonctionnalités dans [la documentation officielle de TypeScript](https://www.typescriptlang.org/docs).
 
 Parmi les autres avantages de TypeScript qui méritent d'être mentionnés, citons le fait qu'il peut être adopté progressivement, qu'il contribue à rendre le code plus lisible et plus compréhensible et qu'il permet aux développeurs d'utiliser les fonctionnalités du langage moderne tout en envoyant du code pour les anciennes versions de Node.js.
 
@@ -124,6 +124,6 @@ Certains des exemples notables de projets open-source utilisant TypeScript sont 
 * [Prisma](https://prisma.io/) - ORM de nouvelle génération avec un modèle de données déclaratif, des migrations générées et des requêtes de base de données entièrement sûres.
 * [RxJS](https://rxjs.dev/) - bibliothèque largement utilisée pour la programmation réactive.
 * [AdonisJS](https://adonisjs.com) - Un framework web complet avec Node.js.
-* [FoalTs](https://foalts.org/) - Le cadre élégant de Nodejs.
+* [FoalTs](https://foalts.org/) - L'élégant framework de Nodejs.
 
 Et beaucoup, beaucoup d'autres grands projets... Peut-être même votre prochain !

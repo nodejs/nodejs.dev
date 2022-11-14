@@ -6,7 +6,7 @@ authors: flaviocopes, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmada
 category: learn
 ---
 
-ous avez suffisamment confiance en vos capacités de programmation. Tout en apprenant à coder, vous pouvez également être confus quant à la fin de JavaScript et au début de Node.js, et vice versa.
+En tant que débutant, il est difficile d'arriver à un point où vous êtes suffisamment confiant dans vos capacités de programmation. En apprenant à coder, vous pouvez aussi vous demander où s'arrête JavaScript et où commence Node.js, et vice versa.
 
 ### Qu'est-il recommandé d'apprendre avant de plonger dans Node.js ?
 
