@@ -30,7 +30,7 @@ Cette variable d'environnement est une convention qui est largement utilisée da
 Définir l'environnement à `production` assure généralement que
 
 * la journalisation est maintenue à un niveau minimal et essentiel
-* plus de niveaux de cache sont mis en place pour optimiser les performances.
+* davantage de niveaux de cache sont mis en place pour optimiser les performances.
 
 Par exemple, Pug, la bibliothèque de templating utilisée par Express, se compile en mode débogage si `NODE_ENV` n'est pas défini comme `production`. Les vues Express sont compilées à chaque requête en mode développement, alors qu'en production elles sont mises en cache. Il existe de nombreux autres exemples.
 
