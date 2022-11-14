@@ -6,7 +6,7 @@ authors: flaviocopes, ZYSzys, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa
 category: learn
 ---
 
-Node.js peut être installé de différentes manières. Ce billet met en évidence les plus courantes et les plus pratiques. Les paquets officiels pour toutes les principales plateformes sont disponibles à l'adresse [https://nodejs.dev/download/](/download/).
+Node.js peut être installé de différentes manières. Ce document met en évidence les plus courantes et les plus pratiques. Les paquets officiels pour toutes les principales plateformes sont disponibles à l'adresse [https://nodejs.dev/download/](/download/).
 
 Un moyen très pratique d'installer Node.js est de passer par un gestionnaire de paquets. Dans ce cas, chaque système d'exploitation a le sien. D'autres gestionnaires de paquets pour MacOS, Linux et Windows sont listés dans [https://nodejs.dev/download/package-manager/](/download/package-manager/).
 
