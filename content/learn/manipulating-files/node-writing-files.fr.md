@@ -68,7 +68,7 @@ fs.writeFile('/Users/joe/test.txt', content, { flag: 'a+' }, err => {});
 
 | Indicateur | Description | Le fichier est créé s'il n'existe pas           |
 |------|-------------|:-----------------------------------------------:|
-| `r+` | Cette indication ouvre le fichier pour la **lecture** et la **écriture**. | ❌ |
+| `r+` | Cet  indicateur ouvre le fichier pour la **lecture** et la **écriture**. | ❌ |
 | `w+` | Cette indication ouvre le fichier pour la **lecture** et la **écriture** et positionne également le flux au **début** du fichier. | ✅                                                          |
 | `a`  | Cette indication ouvre le fichier pour **écrire** et positionne également le flux à la **fin** du fichier. | ✅                                                                     |
 | `a+` | Cette indication ouvre le fichier pour **lire** et **écrire** et positionne également le flux à la **fin** du fichier. | ✅                                                              |
