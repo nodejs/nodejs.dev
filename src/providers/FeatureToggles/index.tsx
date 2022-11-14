@@ -1,4 +1,5 @@
 import React, { createContext, useMemo } from 'react';
+import { useStorage } from '../../hooks/useStorage';
 
 type Props = { children?: React.ReactNode };
 
@@ -7,11 +8,11 @@ const FEATURE_FLAGS_STORAGE = 'node_featureFlags';
 export const FeatureToggleContext = createContext<string[]>([]);
 
 export const FeatureToggleProvider: React.FC<Props> = ({ children }) => {
+  const { getItem } = useStorage();
+
   const featureFlags = useMemo(() => {
     try {
-      const storageItem = localStorage.getItem(FEATURE_FLAGS_STORAGE) || '[]';
-
-      const parsedItem = JSON.parse(storageItem);
+      const parsedItem = getItem(FEATURE_FLAGS_STORAGE) || [];
 
       // We want to guarantee the parsedItem is truthy and and Array
       if (parsedItem && Array.isArray(parsedItem)) {
@@ -26,7 +27,7 @@ export const FeatureToggleProvider: React.FC<Props> = ({ children }) => {
       // as we will just disable the feature flags then
       return [];
     }
-  }, []);
+  }, [getItem]);
 
   return (
     <FeatureToggleContext.Provider value={featureFlags}>
