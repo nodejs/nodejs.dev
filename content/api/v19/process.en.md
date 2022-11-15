@@ -5,11 +5,11 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.0.1" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v19.0.1" data={{"type":"global"}} />
+<Metadata version="v19.1.0" data={{"type":"global"}} />
 
-<Metadata version="v19.0.1" data={{"source_link":"lib/process.js"}} />
+<Metadata version="v19.1.0" data={{"source_link":"lib/process.js"}} />
 
 The `process` object provides information about, and control over, the current
 Node.js process.
@@ -28,7 +28,7 @@ The `process` object is an instance of [`EventEmitter`][].
 
 #### <DataTag tag="E" /> `'beforeExit'`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.11.12"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.11.12"]}}} />
 
 The `'beforeExit'` event is emitted when Node.js empties its event loop and has
 no additional work to schedule. Normally, the Node.js process will exit when
@@ -85,7 +85,7 @@ console.log('This message is displayed first.');
 
 #### <DataTag tag="E" /> `'disconnect'`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
 
 If the Node.js process is spawned with an IPC channel (see the [Child Process][]
 and [Cluster][] documentation), the `'disconnect'` event will be emitted when
@@ -93,7 +93,7 @@ the IPC channel is closed.
 
 #### <DataTag tag="E" /> `'exit'`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.7"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.7"]}}} />
 
 * `code` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -153,7 +153,7 @@ process.on('exit', (code) => {
 
 #### <DataTag tag="E" /> `'message'`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.5.10"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.5.10"]}}} />
 
 * `message` { Object | boolean | number | string | null } a parsed JSON object
   or a serializable primitive value.
@@ -175,9 +175,9 @@ See [Advanced serialization for `child_process`][] for more details.
 
 #### <DataTag tag="E" /> `'multipleResolves'`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"deprecated","version":["v17.6.0","v16.15.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"deprecated","version":["v17.6.0","v16.15.0"]}}} />
 
-<Metadata version="v19.0.1" data={{"stability":{"level":0,"text":" - Deprecated"}}} />
+<Metadata version="v19.1.0" data={{"stability":{"level":0,"text":" - Deprecated"}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The resolution type. One of `'resolve'` or `'reject'`.
 * `promise` [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) The promise that resolved or rejected more than once.
@@ -259,7 +259,7 @@ main().then(console.log);
 
 #### <DataTag tag="E" /> `'rejectionHandled'`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v1.4.1"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v1.4.1"]}}} />
 
 * `promise` [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) The late handled promise.
 
@@ -319,7 +319,7 @@ most convenient for scripts).
 
 #### <DataTag tag="E" /> `'uncaughtException'`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":["v12.0.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/26599","description":"Added the `origin` argument."}],"update":{"type":"added","version":["v0.1.18"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":["v12.0.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/26599","description":"Added the `origin` argument."}],"update":{"type":"added","version":["v0.1.18"]}}} />
 
 * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) The uncaught exception.
 * `origin` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Indicates if the exception originates from an unhandled
@@ -413,7 +413,7 @@ needed.
 
 #### <DataTag tag="E" /> `'uncaughtExceptionMonitor'`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v13.7.0","v12.17.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v13.7.0","v12.17.0"]}}} />
 
 * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) The uncaught exception.
 * `origin` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Indicates if the exception originates from an unhandled
@@ -458,7 +458,7 @@ nonexistentFunc();
 
 #### <DataTag tag="E" /> `'unhandledRejection'`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8217","description":"Not handling `Promise` rejections is deprecated."},{"version":"v6.6.0","pr-url":"https://github.com/nodejs/node/pull/8223","description":"Unhandled `Promise` rejections will now emit a process warning."}],"update":{"type":"added","version":["v1.4.1"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8217","description":"Not handling `Promise` rejections is deprecated."},{"version":"v6.6.0","pr-url":"https://github.com/nodejs/node/pull/8223","description":"Unhandled `Promise` rejections will now emit a process warning."}],"update":{"type":"added","version":["v1.4.1"]}}} />
 
 * `reason` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The object with which the promise was rejected
   (typically an [`Error`][] object).
@@ -534,7 +534,7 @@ being emitted.
 
 #### <DataTag tag="E" /> `'warning'`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
 
 * `warning` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) Key properties of the warning are:
   * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name of the warning. **Default:** `'Warning'`.
@@ -615,7 +615,7 @@ The `*-deprecation` command-line flags only affect warnings that use the name
 
 #### <DataTag tag="E" /> `'worker'`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v16.2.0","v14.18.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v16.2.0","v14.18.0"]}}} />
 
 * `worker` [`Worker`](/api/worker_threads#worker) The [`Worker`](/api/worker_threads#worker) that was created.
 
@@ -651,9 +651,9 @@ A few of the warning types that are most common include:
 
 #### Signal events
 
-<Metadata version="v19.0.1" data={{"type":"event"}} />
+<Metadata version="v19.1.0" data={{"type":"event"}} />
 
-<Metadata version="v19.0.1" data={{"name":"SIGINT, SIGHUP, etc."}} />
+<Metadata version="v19.1.0" data={{"name":"SIGINT, SIGHUP, etc."}} />
 
 Signal events will be emitted when the Node.js process receives a signal. Please
 refer to signal(7) for a listing of standard POSIX signal names such as
@@ -751,7 +751,7 @@ but Node.js offers some emulation with [`process.kill()`][], and
 
 ### <DataTag tag="M" /> `process.abort()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
 The `process.abort()` method causes the Node.js process to exit immediately and
 generate a core file.
@@ -760,7 +760,7 @@ This feature is not available in [`Worker`][] threads.
 
 ### <DataTag tag="M" /> `process.allowedNodeEnvironmentFlags`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
 * [`Set`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
 
@@ -821,7 +821,7 @@ contain what _would have_ been allowable.
 
 ### <DataTag tag="M" /> `process.arch`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -843,7 +843,7 @@ console.log(`This processor architecture is ${arch}`);
 
 ### <DataTag tag="M" /> `process.argv`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.27"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.27"]}}} />
 
 * string\[]
 
@@ -892,7 +892,7 @@ Would generate the output:
 
 ### <DataTag tag="M" /> `process.argv0`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v6.4.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v6.4.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -909,7 +909,7 @@ $ bash -c 'exec -a customArgv0 ./node'
 
 ### <DataTag tag="M" /> `process.channel`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30165","description":"The object no longer accidentally exposes native C++ bindings."}],"update":{"type":"added","version":["v7.1.0"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30165","description":"The object no longer accidentally exposes native C++ bindings."}],"update":{"type":"added","version":["v7.1.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -920,7 +920,7 @@ property is `undefined`.
 
 #### <DataTag tag="M" /> `process.channel.ref()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v7.1.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v7.1.0"]}}} />
 
 This method makes the IPC channel keep the event loop of the process
 running if `.unref()` has been called before.
@@ -931,7 +931,7 @@ explicitly request a specific behavior.
 
 #### <DataTag tag="M" /> `process.channel.unref()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v7.1.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v7.1.0"]}}} />
 
 This method makes the IPC channel not keep the event loop of the process
 running, and lets it finish even while the channel is open.
@@ -942,7 +942,7 @@ explicitly request a specific behavior.
 
 ### <DataTag tag="M" /> `process.chdir(directory)`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.17"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.17"]}}} />
 
 * `directory` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -978,7 +978,7 @@ This feature is not available in [`Worker`][] threads.
 
 ### <DataTag tag="M" /> `process.config`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/43627","description":"The `process.config` object is now frozen."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36902","description":"Modifying process.config has been deprecated."}],"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/43627","description":"The `process.config` object is now frozen."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36902","description":"Modifying process.config has been deprecated."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1018,7 +1018,7 @@ An example of the possible output looks like:
 
 ### <DataTag tag="M" /> `process.connected`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.7.2"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.7.2"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1032,7 +1032,7 @@ over the IPC channel using `process.send()`.
 
 ### <DataTag tag="M" /> `process.cpuUsage([previousValue])`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v6.1.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v6.1.0"]}}} />
 
 * `previousValue` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) A previous return value from calling
   `process.cpuUsage()`
@@ -1079,7 +1079,7 @@ console.log(cpuUsage(startUsage));
 
 ### <DataTag tag="M" /> `process.cwd()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.8"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.8"]}}} />
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1100,7 +1100,7 @@ console.log(`Current directory: ${cwd()}`);
 
 ### <DataTag tag="M" /> `process.debugPort`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.7.2"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.7.2"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -1120,7 +1120,7 @@ process.debugPort = 5858;
 
 ### <DataTag tag="M" /> `process.disconnect()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.7.2"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.7.2"]}}} />
 
 If the Node.js process is spawned with an IPC channel (see the [Child Process][]
 and [Cluster][] documentation), the `process.disconnect()` method will close the
@@ -1135,7 +1135,7 @@ If the Node.js process was not spawned with an IPC channel,
 
 ### <DataTag tag="M" /> `process.dlopen(module, filename[, flags])`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/12794","description":"Added support for the `flags` argument."}],"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/12794","description":"Added support for the `flags` argument."}],"update":{"type":"added","version":["v0.1.16"]}}} />
 
 * `module` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -1182,7 +1182,7 @@ module.exports.foo();
 
 ### <DataTag tag="M" /> `process.emitWarning(warning[, options])`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `warning` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) The warning to emit.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1256,7 +1256,7 @@ If `warning` is passed as an `Error` object, the `options` argument is ignored.
 
 ### <DataTag tag="M" /> `process.emitWarning(warning[, type[, code]][, ctor])`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
 
 * `warning` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) The warning to emit.
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) When `warning` is a `String`, `type` is the name to use
@@ -1425,7 +1425,7 @@ emitMyWarning();
 
 ### <DataTag tag="M" /> `process.env`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":"v11.14.0","pr-url":"https://github.com/nodejs/node/pull/26544","description":"Worker threads will now use a copy of the parent thread's `process.env` by default, configurable through the `env` option of the `Worker` constructor."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18990","description":"Implicit conversion of variable value to string is deprecated."}],"update":{"type":"added","version":["v0.1.27"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":"v11.14.0","pr-url":"https://github.com/nodejs/node/pull/26544","description":"Worker threads will now use a copy of the parent thread's `process.env` by default, configurable through the `env` option of the `Worker` constructor."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18990","description":"Implicit conversion of variable value to string is deprecated."}],"update":{"type":"added","version":["v0.1.27"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1547,7 +1547,7 @@ are visible to the operating system or to native add-ons.
 
 ### <DataTag tag="M" /> `process.execArgv`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * string\[]
 
@@ -1579,7 +1579,7 @@ threads with this property.
 
 ### <DataTag tag="M" /> `process.execPath`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.100"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.100"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1592,7 +1592,7 @@ that started the Node.js process. Symbolic links, if any, are resolved.
 
 ### <DataTag tag="M" /> `process.exit([code])`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.13"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.13"]}}} />
 
 * `code` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The exit code. **Default:** `0`.
 
@@ -1692,7 +1692,7 @@ than the current process.
 
 ### <DataTag tag="M" /> `process.exitCode`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.11.8"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.11.8"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -1705,9 +1705,9 @@ previous setting of `process.exitCode`.
 
 ### <DataTag tag="M" /> `process.getActiveResourcesInfo()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v17.3.0","v16.14.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v17.3.0","v16.14.0"]}}} />
 
-<Metadata version="v19.0.1" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v19.1.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * Returns: string\[]
 
@@ -1741,7 +1741,7 @@ console.log('After:', getActiveResourcesInfo());
 
 ### <DataTag tag="M" /> `process.getegid()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v2.0.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v2.0.0"]}}} />
 
 The `process.getegid()` method returns the numerical effective group identity
 of the Node.js process. (See getegid(2).)
@@ -1767,7 +1767,7 @@ Android).
 
 ### <DataTag tag="M" /> `process.geteuid()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v2.0.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v2.0.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1795,7 +1795,7 @@ Android).
 
 ### <DataTag tag="M" /> `process.getgid()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.31"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.31"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1823,7 +1823,7 @@ Android).
 
 ### <DataTag tag="M" /> `process.getgroups()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * Returns: integer\[]
 
@@ -1852,7 +1852,7 @@ Android).
 
 ### <DataTag tag="M" /> `process.getuid()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.28"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.28"]}}} />
 
 * Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -1880,7 +1880,7 @@ Android).
 
 ### <DataTag tag="M" /> `process.hasUncaughtExceptionCaptureCallback()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v9.3.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v9.3.0"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1889,9 +1889,9 @@ Indicates whether a callback has been set using
 
 ### <DataTag tag="M" /> `process.hrtime([time])`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.7.6"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.7.6"]}}} />
 
-<Metadata version="v19.0.1" data={{"stability":{"level":3,"text":" - Legacy. Use `process.hrtime.bigint()` instead."}}} />
+<Metadata version="v19.1.0" data={{"stability":{"level":3,"text":" - Legacy. Use `process.hrtime.bigint()` instead."}}} />
 
 * `time` integer\[] The result of a previous call to `process.hrtime()`
 * Returns: integer\[]
@@ -1947,7 +1947,7 @@ setTimeout(() => {
 
 ### <DataTag tag="M" /> `process.hrtime.bigint()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v10.7.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v10.7.0"]}}} />
 
 * Returns: [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -1990,7 +1990,7 @@ setTimeout(() => {
 
 ### <DataTag tag="M" /> `process.initgroups(user, extraGroup)`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `user` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The user name or numeric identifier.
 * `extraGroup` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A group name or numeric identifier.
@@ -2028,7 +2028,7 @@ This feature is not available in [`Worker`][] threads.
 
 ### <DataTag tag="M" /> `process.kill(pid[, signal])`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.0.6"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.0.6"]}}} />
 
 * `pid` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A process ID
 * `signal` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The signal to send, either as a string or number.
@@ -2084,9 +2084,9 @@ debugger. See [Signal Events][].
 
 ### <DataTag tag="M" /> `process.mainModule`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"deprecated","version":["v14.0.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"deprecated","version":["v14.0.0"]}}} />
 
-<Metadata version="v19.0.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `require.main` instead."}}} />
+<Metadata version="v19.1.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `require.main` instead."}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -2101,7 +2101,7 @@ is no entry script.
 
 ### <DataTag tag="M" /> `process.memoryUsage()`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":["v13.9.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31550","description":"Added `arrayBuffers` to the returned object."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/9587","description":"Added `external` to the returned object."}],"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":["v13.9.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31550","description":"Added `arrayBuffers` to the returned object."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/9587","description":"Added `external` to the returned object."}],"update":{"type":"added","version":["v0.1.16"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `rss` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -2162,7 +2162,7 @@ program memory allocations.
 
 ### <DataTag tag="M" /> `process.memoryUsage.rss()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v15.6.0","v14.18.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v15.6.0","v14.18.0"]}}} />
 
 * Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -2192,7 +2192,7 @@ console.log(memoryUsage.rss());
 
 ### <DataTag tag="M" /> `process.nextTick(callback[, ...args])`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v1.8.1","pr-url":"https://github.com/nodejs/node/pull/1077","description":"Additional arguments after `callback` are now supported."}],"update":{"type":"added","version":["v0.1.26"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v1.8.1","pr-url":"https://github.com/nodejs/node/pull/1077","description":"Additional arguments after `callback` are now supported."}],"update":{"type":"added","version":["v0.1.26"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * `...args` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Additional arguments to pass when invoking the `callback`
@@ -2406,7 +2406,7 @@ needed, use `queueMicrotask()`.
 
 ### <DataTag tag="M" /> `process.noDeprecation`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.8.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.8.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -2418,7 +2418,7 @@ flag's behavior.
 
 ### <DataTag tag="M" /> `process.pid`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.15"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.15"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -2438,7 +2438,7 @@ console.log(`This process is pid ${pid}`);
 
 ### <DataTag tag="M" /> `process.platform`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.16"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.16"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -2473,7 +2473,7 @@ Android operating system. However, Android support in Node.js
 
 ### <DataTag tag="M" /> `process.ppid`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v9.2.0","v8.10.0","v6.13.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v9.2.0","v8.10.0","v6.13.0"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -2494,7 +2494,7 @@ console.log(`The parent process is pid ${ppid}`);
 
 ### <DataTag tag="M" /> `process.release`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":"v4.2.0","pr-url":"https://github.com/nodejs/node/pull/3212","description":"The `lts` property is now supported."}],"update":{"type":"added","version":["v3.0.0"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":"v4.2.0","pr-url":"https://github.com/nodejs/node/pull/3212","description":"The `lts` property is now supported."}],"update":{"type":"added","version":["v3.0.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -2511,26 +2511,26 @@ tarball.
   only the source header files for the current release. This file is
   significantly smaller than the full source file and can be used for compiling
   Node.js native add-ons.
-* `libUrl` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) an absolute URL pointing to a _`node.lib`_ file matching the
-  architecture and version of the current release. This file is used for
-  compiling Node.js native add-ons. _This property is only present on Windows
-  builds of Node.js and will be missing on all other platforms._
-* `lts` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) a string label identifying the [LTS][] label for this release.
-  This property only exists for LTS releases and is `undefined` for all other
-  release types, including _Current_ releases.
-  Valid values include the LTS Release code names (including those
-  that are no longer supported).
-  * `'Dubnium'` for the 10.x LTS line beginning with 10.13.0.
-  * `'Erbium'` for the 12.x LTS line beginning with 12.13.0.
+* `libUrl` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) an absolute URL pointing to a _`node.lib`_ file
+  matching the architecture and version of the current release. This file is
+  used for compiling Node.js native add-ons. _This property is only present on
+  Windows builds of Node.js and will be missing on all other platforms._
+* `lts` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) a string label identifying the [LTS][] label for this
+  release. This property only exists for LTS releases and is `undefined` for all
+  other release types, including _Current_ releases. Valid values include the
+  LTS Release code names (including those that are no longer supported).
+  * `'Fermium'` for the 14.x LTS line beginning with 14.15.0.
+  * `'Gallium'` for the 16.x LTS line beginning with 16.13.0.
+  * `'Hydrogen'` for the 18.x LTS line beginning with 18.12.0.
     For other LTS Release code names, see [Node.js Changelog Archive](https://github.com/nodejs/node/blob/HEAD/doc/changelogs/CHANGELOG_ARCHIVE.md)
 
 ```js
 {
   name: 'node',
-  lts: 'Erbium',
-  sourceUrl: 'https://nodejs.org/download/release/v12.18.1/node-v12.18.1.tar.gz',
-  headersUrl: 'https://nodejs.org/download/release/v12.18.1/node-v12.18.1-headers.tar.gz',
-  libUrl: 'https://nodejs.org/download/release/v12.18.1/win-x64/node.lib'
+  lts: 'Hydrogen',
+  sourceUrl: 'https://nodejs.org/download/release/v18.12.0/node-v18.12.0.tar.gz',
+  headersUrl: 'https://nodejs.org/download/release/v18.12.0/node-v18.12.0-headers.tar.gz',
+  libUrl: 'https://nodejs.org/download/release/v18.12.0/win-x64/node.lib'
 }
 ```
 
@@ -2540,7 +2540,7 @@ relied upon to exist.
 
 ### <DataTag tag="M" /> `process.report`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.8.0"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.8.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -2550,7 +2550,7 @@ reports for the current process. Additional documentation is available in the
 
 #### <DataTag tag="M" /> `process.report.compact`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v13.12.0","v12.17.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v13.12.0","v12.17.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -2572,7 +2572,7 @@ console.log(`Reports are compact? ${report.compact}`);
 
 #### <DataTag tag="M" /> `process.report.directory`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.12.0"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.12.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -2594,7 +2594,7 @@ console.log(`Report directory is ${report.directory}`);
 
 #### <DataTag tag="M" /> `process.report.filename`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.12.0"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.12.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -2619,7 +2619,7 @@ console.log(`Report filename is ${report.filename}`);
 
 #### <DataTag tag="M" /> `process.report.getReport([err])`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.8.0"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.8.0"]}}} />
 
 * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) A custom error used for reporting the JavaScript stack.
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2654,7 +2654,7 @@ Additional documentation is available in the [report documentation][].
 
 #### <DataTag tag="M" /> `process.report.reportOnFatalError`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":["v15.0.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/35654","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.12.0"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":["v15.0.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/35654","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.12.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -2675,7 +2675,7 @@ console.log(`Report on fatal error: ${report.reportOnFatalError}`);
 
 #### <DataTag tag="M" /> `process.report.reportOnSignal`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.12.0"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.12.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -2696,7 +2696,7 @@ console.log(`Report on signal: ${report.reportOnSignal}`);
 
 #### <DataTag tag="M" /> `process.report.reportOnUncaughtException`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.12.0"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.12.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -2716,7 +2716,7 @@ console.log(`Report on exception: ${report.reportOnUncaughtException}`);
 
 #### <DataTag tag="M" /> `process.report.signal`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.12.0"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.12.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -2737,7 +2737,7 @@ console.log(`Report signal: ${report.signal}`);
 
 #### <DataTag tag="M" /> `process.report.writeReport([filename][, err])`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.8.0"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32242","description":"This API is no longer experimental."}],"update":{"type":"added","version":["v11.8.0"]}}} />
 
 * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Name of the file where the report is written. This
   should be a relative path, that will be appended to the directory specified in
@@ -2771,7 +2771,7 @@ Additional documentation is available in the [report documentation][].
 
 ### <DataTag tag="M" /> `process.resourceUsage()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v12.6.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v12.6.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) the resource usage for the current process. All of these
   values come from the `uv_getrusage` call which returns
@@ -2872,7 +2872,7 @@ console.log(resourceUsage());
 
 ### <DataTag tag="M" /> `process.send(message[, sendHandle[, options]][, callback])`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.5.9"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.5.9"]}}} />
 
 * `message` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `sendHandle` [`net.Server`](/api/net#netserver) | [`net.Socket`](/api/net#netsocket)
@@ -2896,7 +2896,7 @@ not be the same as what is originally sent.
 
 ### <DataTag tag="M" /> `process.setegid(id)`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v2.0.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v2.0.0"]}}} />
 
 * `id` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A group name or ID
 
@@ -2939,7 +2939,7 @@ This feature is not available in [`Worker`][] threads.
 
 ### <DataTag tag="M" /> `process.seteuid(id)`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v2.0.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v2.0.0"]}}} />
 
 * `id` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A user name or ID
 
@@ -2982,7 +2982,7 @@ This feature is not available in [`Worker`][] threads.
 
 ### <DataTag tag="M" /> `process.setgid(id)`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.31"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.31"]}}} />
 
 * `id` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The group name or ID
 
@@ -3025,7 +3025,7 @@ This feature is not available in [`Worker`][] threads.
 
 ### <DataTag tag="M" /> `process.setgroups(groups)`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `groups` integer\[]
 
@@ -3067,7 +3067,7 @@ This feature is not available in [`Worker`][] threads.
 
 ### <DataTag tag="M" /> `process.setuid(id)`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.28"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.28"]}}} />
 
 * `id` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -3110,9 +3110,9 @@ This feature is not available in [`Worker`][] threads.
 
 ### <DataTag tag="M" /> `process.setSourceMapsEnabled(val)`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v16.6.0","v14.18.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v16.6.0","v14.18.0"]}}} />
 
-<Metadata version="v19.0.1" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v19.1.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `val` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -3127,7 +3127,7 @@ enabled will be parsed and loaded.
 
 ### <DataTag tag="M" /> `process.setUncaughtExceptionCaptureCallback(fn)`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v9.3.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v9.3.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type)
 
@@ -3280,7 +3280,7 @@ See the [TTY][] documentation for more information.
 
 ### <DataTag tag="M" /> `process.throwDeprecation`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.9.12"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.9.12"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -3309,7 +3309,7 @@ Thrown:
 
 ### <DataTag tag="M" /> `process.title`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.104"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.104"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -3332,7 +3332,7 @@ Services Manager.
 
 ### <DataTag tag="M" /> `process.traceDeprecation`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.8.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.8.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -3344,16 +3344,16 @@ flag's behavior.
 
 ### <DataTag tag="M" /> `process.umask()`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":["v14.0.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/32499","description":"Calling `process.umask()` with no arguments is deprecated."}],"update":{"type":"added","version":["v0.1.19"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":["v14.0.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/32499","description":"Calling `process.umask()` with no arguments is deprecated."}],"update":{"type":"added","version":["v0.1.19"]}}} />
 
-<Metadata version="v19.0.1" data={{"stability":{"level":0,"text":" - Deprecated. Calling `process.umask()` with no argument causes the process-wide umask to be written twice. This introduces a race condition\n> between threads, and is a potential security vulnerability. There is no safe,\n> cross-platform alternative API."}}} />
+<Metadata version="v19.1.0" data={{"stability":{"level":0,"text":" - Deprecated. Calling `process.umask()` with no argument causes the process-wide umask to be written twice. This introduces a race condition\n> between threads, and is a potential security vulnerability. There is no safe,\n> cross-platform alternative API."}}} />
 
 `process.umask()` returns the Node.js process's file mode creation mask. Child
 processes inherit the mask from the parent process.
 
 ### <DataTag tag="M" /> `process.umask(mask)`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.19"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.19"]}}} />
 
 * `mask` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -3384,7 +3384,7 @@ In [`Worker`][] threads, `process.umask(mask)` will throw an exception.
 
 ### <DataTag tag="M" /> `process.uptime()`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -3396,7 +3396,7 @@ seconds.
 
 ### <DataTag tag="M" /> `process.version`
 
-<Metadata version="v19.0.1" data={{"update":{"type":"added","version":["v0.1.3"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.1.3"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -3421,7 +3421,7 @@ To get the version string without the prepended _v_, use
 
 ### <DataTag tag="M" /> `process.versions`
 
-<Metadata version="v19.0.1" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15785","description":"The `v8` property now includes a Node.js specific suffix."},{"version":"v4.2.0","pr-url":"https://github.com/nodejs/node/pull/3102","description":"The `icu` property is now supported."}],"update":{"type":"added","version":["v0.2.0"]}}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15785","description":"The `v8` property now includes a Node.js specific suffix."},{"version":"v4.2.0","pr-url":"https://github.com/nodejs/node/pull/3102","description":"The `icu` property is now supported."}],"update":{"type":"added","version":["v0.2.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
