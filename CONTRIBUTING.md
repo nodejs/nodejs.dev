@@ -98,8 +98,10 @@ Basic rules:
 
 ### Before merging
 
-* Pull Requests must be open for at least 48 hours unless changes include errata fixes, infrastructure maintenance, or tests.
-* There must be no objections after 48 hours.
+* Pull Requests must be open for at least 48 hours.
+  * Pull reuqests might be immediately merged if they contain critical bug fixes, short erratas (e.g. typos from previous PRs) or any critical change that is considered a "showstopper" for the operation of the website.
+    * These kind of PRs should only be done by existing collaborators that have write-access and/or signed-off by administrators/maintainers.
+* There must be no objections after a 48 hour period
 * Tests must be included in Pull Requests for new features or bug fixes. If any test(s) are failing, you are responsible for fixing them.
 
 Each contribution is accepted only if there is no objection to it by a collaborator. During the review, collaborators may request that a specific contributor who is an expert in a particular area give an "LGTM" before the PR can be merged.
