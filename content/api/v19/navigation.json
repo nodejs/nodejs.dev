@@ -1232,6 +1232,18 @@
       "name": "test"
     },
     {
+      "slug": "/api/v19/test/#mockfunctioncontext",
+      "title": "MockFunctionContext",
+      "type": "class",
+      "name": "test"
+    },
+    {
+      "slug": "/api/v19/test/#mocktracker",
+      "title": "MockTracker",
+      "type": "class",
+      "name": "test"
+    },
+    {
       "slug": "/api/v19/test/#suitecontext",
       "title": "SuiteContext",
       "type": "class",
@@ -1343,6 +1355,18 @@
       "slug": "/api/v19/util/",
       "title": "Util",
       "type": "module",
+      "name": "util"
+    },
+    {
+      "slug": "/api/v19/util/#utilmimeparams",
+      "title": "utilMIMEParams",
+      "type": "class",
+      "name": "util"
+    },
+    {
+      "slug": "/api/v19/util/#utilmimetype",
+      "title": "utilMIMEType",
+      "type": "class",
       "name": "util"
     },
     {
