@@ -36,7 +36,7 @@ export const useStorage = () => {
     // On the App Storage that will either be the value from the Web Storage if it exists
     // Or `undefined`. This is an interesting approach as it will ensure that all requested keys
     // at one point will exist in the Web Storage, and keeps things in sync.
-    if (!appStorage.has(key)) {
+    if (!appStorage.has(key) && parsedValue) {
       setItem(key, parsedValue);
     }
 
