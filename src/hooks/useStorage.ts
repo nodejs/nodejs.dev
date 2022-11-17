@@ -3,14 +3,13 @@ import { useEffect } from 'react';
 // Creates a permanent storage to be used between all the parts of the Application
 // So it doesn't matter where this hook gets created it will be global.
 // Note.: This could be moved within a Provider to move it to a React-isolated context-tree instead of a global runtime one.
-const appStorage = new Map<string, string>();
+export const appStorage = new Map<string, string>();
 
 const syncWithBrowser = () => {
   if (typeof localStorage === 'object') {
     return {
-      sendToBrowser: (key: string, value: string) =>
-        localStorage.setItem(key, value),
-      getFromBrowser: (key: string) => localStorage.getItem(key) || undefined,
+      sendToBrowser: (k: string, v: string) => localStorage.setItem(k, v),
+      getFromBrowser: (k: string) => localStorage.getItem(k) || undefined,
     };
   }
 
