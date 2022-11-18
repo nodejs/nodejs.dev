@@ -199,6 +199,14 @@ exports[`Resources page renders correctly 1`] = `
                     Français
                   </button>
                 </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    简体中文
+                  </button>
+                </li>
               </ul>
             </li>
             <li>
