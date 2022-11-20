@@ -4,6 +4,7 @@ const path = require('path');
 const yaml = require('yaml');
 const readingTime = require('reading-time');
 const asyncMethods = require('async');
+const safeJSON = require('./util-node/safeJSON');
 const createSlug = require('./util-node/createSlug');
 const getNodeReleasesData = require('./util-node/getNodeReleasesData');
 const getBannersData = require('./util-node/getBannersData');
@@ -334,7 +335,7 @@ exports.sourceNodes = async ({
           internal: {
             type: 'Banners',
             mediaType: 'application/json',
-            content: JSON.stringify(bannersData),
+            content: safeJSON.toString(bannersData),
             contentDigest: createContentDigest(bannersData),
           },
         };
@@ -357,7 +358,7 @@ exports.sourceNodes = async ({
           internal: {
             type: 'Nvm',
             mediaType: 'application/json',
-            content: JSON.stringify(nvmData),
+            content: safeJSON.toString(nvmData),
             contentDigest: createContentDigest(nvmData),
           },
         };
@@ -380,7 +381,7 @@ exports.sourceNodes = async ({
           internal: {
             type: 'NodeReleases',
             mediaType: 'application/json',
-            content: JSON.stringify(nodeReleasesData),
+            content: safeJSON.toString(nodeReleasesData),
             contentDigest: createContentDigest(nodeReleasesData),
           },
         };
