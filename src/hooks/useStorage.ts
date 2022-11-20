@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+import safeJSON from '../../util-node/safeJSON';
+
 // Creates a permanent storage to be used between all the parts of the Application
 // So it doesn't matter where this hook gets created it will be global.
 // Note.: This could be moved within a Provider to move it to a React-isolated context-tree instead of a global runtime one.
@@ -23,14 +25,14 @@ export const useStorage = () => {
   const { sendToBrowser, getFromBrowser } = syncWithBrowser();
 
   const setItem = (key: string, value: unknown) =>
-    appStorage.set(key, JSON.stringify(value));
+    appStorage.set(key, safeJSON.toString(value));
 
   const getItem = (key: string) => {
     // Attempts to retrieve items from the App Storage, but if they don't exist yet
     // They might exist in the Browser Local Storage. This is useful as we retrieve things
     // From the Web Storage API only if they don't exist in the App Storage
     const storageItem = appStorage.get(key) || getFromBrowser(key);
-    const parsedValue = storageItem ? JSON.parse(storageItem) : undefined;
+    const parsedValue = storageItem ? safeJSON.parse(storageItem) : undefined;
 
     // If a said item doesn't exist in the App Storage we will create one
     // On the App Storage that will either be the value from the Web Storage if it exists
