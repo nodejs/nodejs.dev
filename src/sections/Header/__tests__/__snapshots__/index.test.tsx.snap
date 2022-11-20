@@ -196,6 +196,14 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
                   Français
                 </button>
               </li>
+              <li>
+                <button
+                  style="font-weight: normal;"
+                  type="button"
+                >
+                  简体中文
+                </button>
+              </li>
             </ul>
           </li>
           <li>
@@ -431,6 +439,14 @@ exports[`Tests for Header component renders correctly 1`] = `
                   Français
                 </button>
               </li>
+              <li>
+                <button
+                  style="font-weight: normal;"
+                  type="button"
+                >
+                  简体中文
+                </button>
+              </li>
             </ul>
           </li>
           <li>
@@ -664,6 +680,14 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
                   type="button"
                 >
                   Français
+                </button>
+              </li>
+              <li>
+                <button
+                  style="font-weight: normal;"
+                  type="button"
+                >
+                  简体中文
                 </button>
               </li>
             </ul>
