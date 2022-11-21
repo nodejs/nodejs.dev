@@ -157,18 +157,15 @@
       "trim": "1.0.1"
     },
     "@mdx-js/react": {
-      "react": "$react"
+      "react": "^18.2.0"
     },
     "gatsby-plugin-mdx": {
       "trim": "1.0.1",
       "nth-check": "2.1.1"
     },
     "gatsby-theme-i18n": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    },
-    "gatsby-transformer-yaml": {
-      "nth-check": "2.1.1"
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
     }
   },
   "jest": {

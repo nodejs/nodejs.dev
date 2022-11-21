@@ -1,5 +1,6 @@
 const yaml = require('yaml');
 
+const safeJSON = require('./safeJSON');
 const typeParser = require('./apiDocsTypeParser');
 const createSlug = require('./createSlug');
 const { apiPath } = require('../pathPrefixes');
@@ -134,7 +135,7 @@ function replaceStabilityIndex(metadata) {
       .replace('\n>', '')
       .replace(/\[(.+)\]\[\]/g, (___, piece) => piece);
 
-    const data = JSON.stringify({
+    const data = safeJSON.toString({
       stability: { level: Number(level), text: sanitizedText },
     });
 
@@ -231,7 +232,7 @@ function replaceMarkdownMetadata(metadata, navigationCreator) {
           navigationCreator.addType(parsedYaml.type);
         }
 
-        const stringifiedData = JSON.stringify(parsedYaml);
+        const stringifiedData = safeJSON.toString(parsedYaml);
 
         return `<Metadata version="${metadata.fullVersion}" data={${stringifiedData}} />`;
       }

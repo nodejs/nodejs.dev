@@ -5,6 +5,7 @@ import { CommonComponents } from '../components';
 import Header from '../sections/Header';
 import Footer from '../sections/Footer';
 import { FeatureToggleProvider } from '../providers';
+import { useBrowserLanguageDetection } from '../hooks/useBrowserLanguageDetection';
 
 interface Props {
   title?: string;
@@ -35,20 +36,28 @@ const Layout = ({
   img,
   showFooter = true,
   showRandomContributor = false,
-}: React.PropsWithChildren<Props>): JSX.Element => (
-  <FeatureToggleProvider>
-    <ThemeProvider theme={defaultTheme}>
-      <CommonComponents.SEO title={title} description={description} img={img} />
-      <MotionConfig reducedMotion="user">
-        <div className="layout-container">
-          <Header />
-          {children}
-          {showRandomContributor && <CommonComponents.RandomContributor />}
-          {showFooter && <Footer />}
-        </div>
-      </MotionConfig>
-    </ThemeProvider>
-  </FeatureToggleProvider>
-);
+}: React.PropsWithChildren<Props>): JSX.Element => {
+  useBrowserLanguageDetection();
+
+  return (
+    <FeatureToggleProvider>
+      <ThemeProvider theme={defaultTheme}>
+        <CommonComponents.SEO
+          title={title}
+          description={description}
+          img={img}
+        />
+        <MotionConfig reducedMotion="user">
+          <div className="layout-container">
+            <Header />
+            {children}
+            {showRandomContributor && <CommonComponents.RandomContributor />}
+            {showFooter && <Footer />}
+          </div>
+        </MotionConfig>
+      </ThemeProvider>
+    </FeatureToggleProvider>
+  );
+};
 
 export default Layout;
