@@ -1,7 +1,7 @@
 ---
 title: about
 displayTitle: Node.js について
-description: 'About | Node.js'
+description: 'Node.js について | Node.js'
 authors: XhmikosR, mikeal, fhemberger, Fishrock123, yous, tomgco, tniessen, SMcCandlish, saadq, Trott, Gornstats, piperchester, naoufal,  lpinca, j9t, bnoordhuis, harshadsabne, Chris911, benhalverson, e-jigsaw
 category: about
 ---
