@@ -1,9 +1,11 @@
 const { resolve } = require('path');
 const { readFileSync, writeFileSync } = require('fs');
 
+const safeJSON = require('./safeJSON');
+
 const updateRedirects = redirects => {
   const firebaseConfig = resolve(__dirname, '../firebase.json');
-  const firebaseJSON = JSON.parse(readFileSync(firebaseConfig));
+  const firebaseJSON = safeJSON.parse(readFileSync(firebaseConfig));
 
   // Map data as firebase expects it to be
   const firebaseRedirects = {};
@@ -34,7 +36,7 @@ const updateRedirects = redirects => {
 
   writeFileSync(
     firebaseConfig,
-    JSON.stringify({ ...firebaseJSON, redirects: newRedirects }, null, 2)
+    safeJSON.toString({ ...firebaseJSON, redirects: newRedirects }, null, 2)
   );
 };
 
