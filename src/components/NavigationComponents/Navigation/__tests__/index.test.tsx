@@ -4,9 +4,15 @@ import { render, screen } from '@testing-library/react';
 import NavigationContainer from '../index';
 
 describe('Navigation component', (): void => {
+  let isOpen: boolean;
+  let label: string;
+
+  beforeEach(() => {
+    isOpen = false;
+    label = 'API Navigation';
+  });
+
   it('renders correctly', (): void => {
-    const isOpen = false;
-    const label = 'API Navigation';
     const { container } = render(
       <NavigationContainer
         isOpen={isOpen}
@@ -19,8 +25,6 @@ describe('Navigation component', (): void => {
   });
 
   it('utilizes click handler correctly', async () => {
-    const isOpen = false;
-    const label = 'API Navigation';
     const mockHandler = jest.fn();
 
     render(

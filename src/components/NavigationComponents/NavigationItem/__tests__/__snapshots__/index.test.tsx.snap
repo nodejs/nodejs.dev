@@ -1,1 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`NavigationSection component renders correctly 1`] = `
+<div>
+  <a
+    class="t-body2 navigationItem"
+    href="/blog/anouncements/"
+    id="/blog/anouncements/"
+  >
+    Anouncements
+  </a>
+</div>
+`;
