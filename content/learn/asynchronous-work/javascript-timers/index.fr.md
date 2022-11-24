@@ -77,7 +77,7 @@ setInterval(() => {
 }, 2000);
 ```
 
-The function above runs every 2 seconds unless you tell it to stop, using `clearInterval`, passing it the interval id that `setInterval` returned:
+La fonction ci-dessus s'exécute toutes les 2 secondes à moins que vous ne lui demandiez de s'arrêter, en utilisant `clearInterval`, en lui passant l'identifiant d'intervalle que `setInterval` a retourné :
 
 ```js
 const id = setInterval(() => {
