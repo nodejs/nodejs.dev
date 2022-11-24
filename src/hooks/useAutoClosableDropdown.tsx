@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { CommonComponents } from '../components';
 import { DropdownItem } from '../types';
 
@@ -8,27 +8,22 @@ export const useAutoClosableDropdown = <T extends HTMLElement>(
 ) => {
   const [shouldShow, setShouldShow] = React.useState(false);
 
-  // this is used as an event listener doesn't have access to the state
-  const shouldShowRef = useRef(shouldShow);
-
-  const updateVisibility = (value: boolean) => {
+  const updateVisibility = useCallback((value: boolean) => {
     setShouldShow(value);
-    shouldShowRef.current = value;
-  };
+  }, []);
 
-  const hideDropdownIfVisible = () => {
-    if (shouldShowRef.current === true) {
+  const hideDropdownIfVisible = useCallback(() => {
+    if (shouldShow) {
       updateVisibility(false);
     }
-  };
+  }, [updateVisibility, shouldShow]);
 
   useEffect(() => {
     document.addEventListener('click', hideDropdownIfVisible, true);
 
     return () =>
       document.removeEventListener('click', hideDropdownIfVisible, true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [hideDropdownIfVisible]);
 
   return {
     renderDropdown: (
