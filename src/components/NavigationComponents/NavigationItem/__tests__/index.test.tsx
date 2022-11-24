@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import NavigationItem from '../index';
 
-describe('NavigationSection component', (): void => {
+describe('NavigationItem component', (): void => {
   it('renders correctly', (): void => {
     const slug = '/blog/anouncements/';
     const title = 'Anouncements';
