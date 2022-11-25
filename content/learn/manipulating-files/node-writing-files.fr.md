@@ -2,7 +2,7 @@
 title: writing-files-with-nodejs
 displayTitle: 'Écrire des fichiers avec Node.js'
 description: 'Comment écrire des fichiers en utilisant Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, ovflowd
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, ovflowd, augustinmauroy
 category: learn
 ---
 
@@ -66,12 +66,14 @@ fs.writeFile('/Users/joe/test.txt', content, { flag: 'a+' }, err => {});
 
 #### Les indicateurs que vous utiliserez probablement sont
 
-* `r+` ouvre le fichier pour la lecture et l'écriture
-* `w+` ouvre le fichier pour la lecture et l'écriture, en positionnant le flux au début du fichier. Le fichier est créé s'il n'existe pas
-* `a` ouvre le fichier en écriture, en positionnant le flux à la fin du fichier. Le fichier est créé s'il n'existe pas
-* `a+` ouvre le fichier en lecture et en écriture, en positionnant le flux à la fin du fichier. Le fichier est créé s'il n'existe pas.
+| Indicateur | Description | Le fichier est créé s'il n'existe pas           |
+|------|-------------|:-----------------------------------------------:|
+| `r+` | Cet  indicateur ouvre le fichier pour la **lecture** et la **écriture**. | ❌ |
+| `w+` | Cette indication ouvre le fichier pour la **lecture** et la **écriture** et positionne également le flux au **début** du fichier. | ✅                                                          |
+| `a`  | Cette indication ouvre le fichier pour **écrire** et positionne également le flux à la **fin** du fichier. | ✅                                                                     |
+| `a+` | Cette indication ouvre le fichier pour **lire** et **écrire** et positionne également le flux à la **fin** du fichier. | ✅                                                              |
 
-(vous trouverez d'autres indicateurs sur [https://nodejs.org/api/fs.html#fs_file_system_flags](https://nodejs.org/api/fs.html#fs_file_system_flags))
+* Vous pouvez trouver plus d'informations sur les drapeaux dans la [documentation fs](/api/fs/#file-system-flags).
 
 ## Ajouter un contenu à la fin d'un fichier
 
