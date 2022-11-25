@@ -117,7 +117,7 @@
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "babel-jest": "^29.0.3",
-    "babel-loader": "^8.2.5",
+    "babel-loader": "^9.1.0",
     "babel-plugin-prismjs": "^2.1.0",
     "babel-preset-gatsby": "^2.22.1",
     "eslint": "^8.23.1",
