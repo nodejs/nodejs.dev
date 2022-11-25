@@ -58,17 +58,9 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Gatsby Cache Folder
-        uses: actions/cache@v3
+      - uses: jongwooo/gatsby-cache@v1.1.0
         with:
-          key: cache-folder-${{ matrix.os }}
-          path: .cache
-
-      - name: Gatsby Public Folder
-        uses: actions/cache@v3
-        with:
-          key: public-folder-${{ matrix.os }}
-          path: public
+          key: pull-request-gatsby-ubuntu-latest
 
       - name: Build Gatsby
         run: npm run build-ci
