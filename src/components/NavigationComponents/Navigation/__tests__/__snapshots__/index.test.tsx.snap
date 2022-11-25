@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation component renders correctly 1`] = `
+<div>
+  <nav
+    aria-label="API Navigation"
+    class="navigation"
+    id="main-navigation"
+  >
+    <button
+      aria-expanded="false"
+      class="navigationOpen"
+      type="button"
+    >
+      Menu
+    </button>
+  </nav>
+</div>
+`;
+
