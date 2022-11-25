@@ -91,15 +91,23 @@ const SearchBar = (): JSX.Element => {
     }
   };
 
+  const toggleContainer = () => {
+    if (isExpanded) {
+      collapseContainer();
+    } else {
+      expandContainer();
+    }
+  };
+
   useKeyPress({
     targetKey: 'ctrl+k',
-    callback: expandContainer,
+    callback: toggleContainer,
     preventDefault: true,
   });
 
   useKeyPress({
     targetKey: 'meta+k',
-    callback: expandContainer,
+    callback: toggleContainer,
     preventDefault: true,
   });
 
