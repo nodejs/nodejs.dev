@@ -3,21 +3,46 @@
  */
 import { useEffect, useState } from 'react';
 
-function useKeyPress(targetKey: string, cb?: () => void): boolean {
+const decorateKey = ({ metaKey, ctrlKey, key }: KeyboardEvent) => {
+  if (metaKey) {
+    return `meta+${key}`;
+  }
+
+  if (ctrlKey) {
+    return `ctrl+${key}`;
+  }
+
+  return key;
+};
+
+interface UseKeyPressProps {
+  targetKey: string;
+  callback?: () => void;
+  preventDefault?: boolean;
+}
+
+function useKeyPress({
+  targetKey,
+  callback,
+  preventDefault = false,
+}: UseKeyPressProps): boolean {
   const [keyPressed, setKeyPressed] = useState(false);
 
   useEffect(() => {
-    const downHandler = ({ key }: KeyboardEvent) => {
-      if (key === targetKey) {
+    const downHandler = (e: KeyboardEvent) => {
+      if (decorateKey(e) === targetKey) {
+        if (preventDefault) {
+          e.preventDefault();
+        }
         setKeyPressed(true);
-        if (cb) {
-          cb();
+        if (typeof callback === 'function') {
+          callback();
         }
       }
     };
 
-    const upHandler = ({ key }: KeyboardEvent) => {
-      if (key === targetKey) {
+    const upHandler = (e: KeyboardEvent) => {
+      if (decorateKey(e) === targetKey) {
         setKeyPressed(false);
       }
     };
@@ -28,7 +53,7 @@ function useKeyPress(targetKey: string, cb?: () => void): boolean {
       window.removeEventListener('keydown', downHandler);
       window.removeEventListener('keyup', upHandler);
     };
-  }, [cb, targetKey]);
+  }, [callback, targetKey, preventDefault]);
   return keyPressed;
 }
 

@@ -4,6 +4,7 @@ const path = require('path');
 const async = require('async');
 const cliProgress = require('cli-progress');
 
+const safeJSON = require('./safeJSON');
 const createGitHubHeaders = require('./createGitHubHeaders');
 const { createMarkdownParser } = require('./apiDocsTransformUtils');
 const { apiReleaseContents } = require('../apiUrls');
@@ -135,7 +136,7 @@ async function getApiDocsData(releaseVersions, callback) {
         fs.writeFile(
           navigationDataPath,
           // Stringifies and Pretty-Prints the JSON
-          JSON.stringify(sortedNavigationEntry, null, 2),
+          safeJSON.toString(sortedNavigationEntry, null, 2),
           cb
         );
       });

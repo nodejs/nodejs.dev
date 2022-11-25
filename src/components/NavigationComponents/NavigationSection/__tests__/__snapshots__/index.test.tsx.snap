@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationSection component renders correctly 1`] = `
+<div>
+  <div
+    class="navigationSection"
+  >
+    <h1>
+      Mock Title
+    </h1>
+    <div
+      aria-label="API Navigation Section"
+      role="region"
+      style="display: none;"
+    >
+      <p>
+        Mock content
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -90,6 +90,17 @@ export const createNodeReleasesData = (): NodeReleaseData[] =>
       isLts: true,
     },
     {
+      endOfLife: '2023-09-11',
+      ltsStart: '2021-10-26',
+      maintenanceStart: '2022-10-18',
+      initialRelease: '2021-04-20',
+      codename: 'gallium',
+      version: 'v16',
+      fullVersion: 'v16.18.0',
+      status: 'Maintenance LTS',
+      isLts: true,
+    },
+    {
       endOfLife: '2025-04-30',
       ltsStart: '2022-10-25',
       maintenanceStart: '2023-10-18',
@@ -100,7 +111,7 @@ export const createNodeReleasesData = (): NodeReleaseData[] =>
       status: 'Current',
       isLts: false,
     },
-  ] as NodeReleaseData[];
+  ].reverse() as NodeReleaseData[];
 
 export const createLearnPageContext = (): LearnTemplateContext =>
   ({

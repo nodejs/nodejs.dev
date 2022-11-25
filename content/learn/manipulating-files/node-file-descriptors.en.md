@@ -2,7 +2,7 @@
 title: working-with-file-descriptors-in-nodejs
 displayTitle: 'Working with file descriptors in Node.js'
 description: 'How to interact with file descriptors using Node.js'
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, vaishnav-mk
 category: learn
 ---
 
@@ -24,10 +24,33 @@ That flag means we open the file for reading.
 
 **Other flags you'll commonly use are:**
 
-* `r+` open the file for reading and writing, if file doesn't exist it won't be created.
-* `w+` open the file for reading and writing, positioning the stream at the beginning of the file. The file is created if not existing.
-* `a` open the file for writing, positioning the stream at the end of the file. The file is created if not existing.
-* `a+` open the file for reading and writing, positioning the stream at the end of the file. The file is created if not existing.
+<table>
+  <tr>
+    <th>Flag</th>
+    <th>Description</th>
+    <th>File gets created if it doesn't exist</th>
+  </tr>
+  <tr>
+    <td><code>r+</code></td>
+    <td>This flag opens the file for <b>reading</b> and <b>writing</b></td>
+    <td style="text-align: center;">❌</td>
+  </tr>
+  <tr>
+    <td><code>w+</code></td>
+    <td>This flag opens the file for <b>reading</b> and <b>writing</b> and it also positions the stream at the <b>beginning</b> of the file</td>
+    <td style="text-align: center;">✅</td>
+  </tr>
+  <tr>
+    <td><code>a</code></td>
+    <td>This flag opens the file for <b>writing</b> and it also positions the stream at the <b>end</b> of the file</td>
+    <td style="text-align: center;">✅</td>
+  </tr>
+  <tr>
+    <td><code>a+</code></td>
+    <td>This flag opens the file for <b>reading</b> and <b>writing</b> and it also positions the stream at the <b>end</b> of the file</td>
+    <td style="text-align: center;">✅</td>
+  </tr>
+</table>
 
 You can also open the file by using the `fs.openSync` method, which returns the file descriptor, instead of providing it in a callback:
 
@@ -76,4 +99,4 @@ async function example() {
 example();
 ```
 
-To see more details about the `fs/promises` module, please check [fs/promises API](https://nodejs.org/docs/latest-v17.x/api/fs.html#promises-api).
+To see more details about the `fs/promises` module, please check [fs/promises API](/api/fs/#promise-example).

@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useState, createRef } from 'react';
+import React, { useMemo, useEffect, useState, useRef } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
@@ -32,7 +32,7 @@ const MotionCloseIcon = motion(CloseIcon);
 
 const SearchBar = (): JSX.Element => {
   const [query, setQuery] = useState('');
-  const searchInputRef = createRef<HTMLInputElement>();
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
 
   const [isExpanded, setExpanded] = useState(false);
   const [parentRef, isClickedOutside] = useClickOutside();
@@ -91,11 +91,25 @@ const SearchBar = (): JSX.Element => {
     }
   };
 
-  useKeyPress('/', () => expandContainer());
-  useKeyPress('Escape', () => {
-    if (isExpanded) {
-      collapseContainer();
-    }
+  useKeyPress({
+    targetKey: 'ctrl+k',
+    callback: expandContainer,
+    preventDefault: true,
+  });
+
+  useKeyPress({
+    targetKey: 'meta+k',
+    callback: expandContainer,
+    preventDefault: true,
+  });
+
+  useKeyPress({
+    targetKey: 'Escape',
+    callback: () => {
+      if (isExpanded) {
+        collapseContainer();
+      }
+    },
   });
 
   return (

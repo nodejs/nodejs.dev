@@ -5,13 +5,13 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.0.0" data={{"update":{"type":"introduced_in","version":["v11.8.0"]}}} />
+<Metadata version="v19.1.0" data={{"update":{"type":"introduced_in","version":["v11.8.0"]}}} />
 
-<Metadata version="v19.0.0" data={{"type":"misc"}} />
+<Metadata version="v19.1.0" data={{"type":"misc"}} />
 
-<Metadata version="v19.0.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v19.1.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v19.0.0" data={{"name":"report"}} />
+<Metadata version="v19.1.0" data={{"name":"report"}} />
 
 Delivers a JSON-formatted diagnostic summary, written to a file.
 
@@ -28,7 +28,7 @@ is provided below for reference.
 ```json
 {
   "header": {
-    "reportVersion": 1,
+    "reportVersion": 3,
     "event": "exception",
     "trigger": "Exception",
     "filename": "report.20181221.005011.8974.0.001.json",
@@ -203,10 +203,17 @@ is provided below for reference.
     }
   },
   "resourceUsage": {
-    "userCpuSeconds": 0.069595,
-    "kernelCpuSeconds": 0.019163,
-    "cpuConsumptionPercent": 0.000000,
-    "maxRss": 18079744,
+    "rss": "35766272",
+    "free_memory": "1598337024",
+    "total_memory": "17179869184",
+    "available_memory": "1598337024",
+    "maxRss": "36624662528",
+    "constrained_memory": "36624662528",
+    "userCpuSeconds": 0.040072,
+    "kernelCpuSeconds": 0.016029,
+    "cpuConsumptionPercent": 5.6101,
+    "userCpuConsumptionPercent": 4.0072,
+    "kernelCpuConsumptionPercent": 1.6029,
     "pageFaults": {
       "IORequired": 0,
       "IONotRequired": 4610
@@ -217,9 +224,11 @@ is provided below for reference.
     }
   },
   "uvthreadResourceUsage": {
-    "userCpuSeconds": 0.068457,
-    "kernelCpuSeconds": 0.019127,
-    "cpuConsumptionPercent": 0.000000,
+    "userCpuSeconds": 0.039843,
+    "kernelCpuSeconds": 0.015937,
+    "cpuConsumptionPercent": 5.578,
+    "userCpuConsumptionPercent": 3.9843,
+    "kernelCpuConsumptionPercent": 1.5937,
     "fsActivity": {
       "reads": 0,
       "writes": 0
@@ -533,6 +542,11 @@ includes the date, time, PID, and a sequence number. The sequence number helps
 in associating the report dump with the runtime state if generated multiple
 times for the same Node.js process.
 
+Diagnostic report has an associated single-digit version number (`report.header.reportVersion`),
+uniquely representing the report format. The version number is bumped
+when new key is added or removed, or the data type of a value is changed.
+Report version definitions are consistent across LTS releases.
+
 ### Configuration
 
 Additional runtime configuration of report generation is available via
@@ -595,7 +609,7 @@ Specific API documentation can be found under
 
 ### Interaction with workers
 
-<Metadata version="v19.0.0" data={{"changes":[{"version":["v13.9.0","v12.16.2"],"pr-url":"https://github.com/nodejs/node/pull/31386","description":"Workers are now included in the report."}]}} />
+<Metadata version="v19.1.0" data={{"changes":[{"version":["v13.9.0","v12.16.2"],"pr-url":"https://github.com/nodejs/node/pull/31386","description":"Workers are now included in the report."}]}} />
 
 [`Worker`][] threads can create reports in the same way that the main thread
 does.

@@ -21,11 +21,11 @@ exports[`Hero component renders correctly 1`] = `
       >
         <a
           class="downloadButton"
-          href="https://nodejs.org/dist/v14.0.0/node-v14.0.0.tar.gz"
+          href="https://nodejs.org/dist/v16.18.0/node-v16.18.0.tar.gz"
         >
           Download Node (LTS)
           <span>
-            Version v14.0.0
+            Version v16.18.0
           </span>
         </a>
         <p

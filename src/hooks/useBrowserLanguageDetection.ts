@@ -1,33 +1,30 @@
 import { useEffect } from 'react';
 import { useLocalization } from 'gatsby-theme-i18n';
+import { useStorage } from './useStorage';
 import { useNavigateToDifferentLocale } from './useNavigateToDifferentLocale';
 import { detectLanguage } from '../util/detectLanguage';
 
-const languageStorageKey = 'NODE_DEV_LAST_LANGUAGE';
-
-const lastLanguageStorage = {
-  getItem: () => window.localStorage.getItem(languageStorageKey),
-  setItem: (currentLocale: string) =>
-    window.localStorage.setItem(languageStorageKey, currentLocale),
-};
+const languageStorageKey = 'node_currentLocale';
 
 export const useBrowserLanguageDetection = () => {
   const { locale: currentLocale } = useLocalization();
   const { navigate } = useNavigateToDifferentLocale();
+  const { getItem, setItem } = useStorage();
 
   useEffect(() => {
-    if (lastLanguageStorage.getItem() === null) {
+    if (getItem(languageStorageKey) === undefined) {
       // Attempts to retrieve a Language that we suport that is accepted by the user
       // We use navigator.languages to identify the language preference of an user
       const matchingBrowserLanguage = detectLanguage();
 
       if (matchingBrowserLanguage) {
-        lastLanguageStorage.setItem(matchingBrowserLanguage);
+        setItem(languageStorageKey, matchingBrowserLanguage);
 
         navigate(matchingBrowserLanguage);
+        return;
       }
-    } else if (lastLanguageStorage.getItem() !== currentLocale) {
-      lastLanguageStorage.setItem(currentLocale);
     }
+
+    setItem(languageStorageKey, currentLocale);
   }, [currentLocale]);
 };
