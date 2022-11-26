@@ -27,6 +27,15 @@
     "enabled": false
   },
   {
+    "code": "he",
+    "localName": "עברית",
+    "name": "Hebrew",
+    "langDir": "rtl",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "he-IL",
+    "enabled": false
+  },
+  {
     "code": "en",
     "localName": "English",
     "name": "English",
