@@ -51,6 +51,10 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
+      - uses: jongwooo/gatsby-cache@v1.1.0
+        with:
+          key: generate-preview-gatsby-ubuntu-latest
+
       - name: Build Gatsby
         run: npm run build-ci
         env:
