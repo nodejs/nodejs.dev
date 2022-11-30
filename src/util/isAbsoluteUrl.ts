@@ -1,3 +1,1 @@
-export const isAbsoluteUrl = (link: string) => {
-  return /^https?:\/\//.test(link);
-};
+export const isAbsoluteUrl = (link: string) => /^https?:\/\//.test(link);
