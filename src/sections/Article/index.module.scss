@@ -4,10 +4,10 @@
   padding: var(--space-48) var(--space-32) var(--space-48) var(--space-32);
   width: calc(100vw - 36rem);
 
-  background: url(/static/images/header.svg);
-  background-repeat: no-repeat;
-  background-size:contain;
-
+    background: url(/static/images/header.svg);
+    background-repeat: no-repeat;
+    background-size:contain;
+    
   .headline {
     margin: 0 0 var(--space-40) 0;
     padding: 0;
