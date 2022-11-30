@@ -5,11 +5,11 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.1.0" data={{"update":{"type":"introduced_in","version":["v8.1.0"]}}} />
+<Metadata version="v19.2.0" data={{"update":{"type":"introduced_in","version":["v8.1.0"]}}} />
 
-<Metadata version="v19.1.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v19.2.0" data={{"stability":{"level":1,"text":" - Experimental. Please migrate away from this API, if you can. We do not recommend using the `createHook`][], [`AsyncHook`, and\n> `executionAsyncResource` APIs as they have usability issues, safety risks,\n> and performance implications. Async context tracking use cases are better\n> served by the stable `AsyncLocalStorage` API. If you have a use case for\n> `createHook`, `AsyncHook`, or `executionAsyncResource` beyond the context\n> tracking need solved by `AsyncLocalStorage` or diagnostics data currently\n> provided by Diagnostics Channel, please open an issue at\n> <https://github.com/nodejs/node/issues> describing your use case so we can\n> create a more purpose-focused API."}}} />
 
-<Metadata version="v19.1.0" data={{"source_link":"lib/async_hooks.js"}} />
+<Metadata version="v19.2.0" data={{"source_link":"lib/async_hooks.js"}} />
 
 We strongly discourage the use of the `async_hooks` API.
 Other APIs that can cover most of its use cases include:
@@ -142,7 +142,7 @@ function promiseResolve(asyncId) { }
 
 ### <DataTag tag="M" /> `async_hooks.createHook(callbacks)`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v8.1.0"]}}} />
+<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v8.1.0"]}}} />
 
 * `callbacks` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The [Hook Callbacks][] to register
   * `init` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The [`init` callback][].
@@ -168,7 +168,7 @@ import { createHook } from 'node:async_hooks';
 
 const asyncHook = createHook({
   init(asyncId, type, triggerAsyncId, resource) { },
-  destroy(asyncId) { }
+  destroy(asyncId) { },
 });
 ```
 
@@ -177,7 +177,7 @@ const async_hooks = require('node:async_hooks');
 
 const asyncHook = async_hooks.createHook({
   init(asyncId, type, triggerAsyncId, resource) { },
-  destroy(asyncId) { }
+  destroy(asyncId) { },
 });
 ```
 
@@ -376,7 +376,7 @@ createHook({
     fs.writeSync(
       stdout.fd,
       `${type}(${asyncId}): trigger: ${triggerAsyncId} execution: ${eid}\n`);
-  }
+  },
 }).enable();
 
 net.createServer((conn) => {}).listen(8080);
@@ -393,7 +393,7 @@ createHook({
     fs.writeSync(
       stdout.fd,
       `${type}(${asyncId}): trigger: ${triggerAsyncId} execution: ${eid}\n`);
-  }
+  },
 }).enable();
 
 net.createServer((conn) => {}).listen(8080);
@@ -578,7 +578,7 @@ tracking of `Promise` instances via the garbage collector.
 
 ##### <DataTag tag="M" /> `promiseResolve(asyncId)`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v8.6.0"]}}} />
+<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v8.6.0"]}}} />
 
 * `asyncId` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -607,7 +607,7 @@ init for PROMISE with id 6, trigger id: 5  # the Promise returned by then()
 
 #### <DataTag tag="M" /> `async_hooks.executionAsyncResource()`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v13.9.0","v12.17.0"]}}} />
+<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v13.9.0","v12.17.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The resource representing the current execution.
   Useful to store data within the resource.
@@ -648,7 +648,7 @@ import { createServer } from 'node:http';
 import {
   executionAsyncId,
   executionAsyncResource,
-  createHook
+  createHook,
 } from 'async_hooks';
 const sym = Symbol('state'); // Private symbol to avoid pollution
 
@@ -658,7 +658,7 @@ createHook({
     if (cr) {
       resource[sym] = cr[sym];
     }
-  }
+  },
 }).enable();
 
 const server = createServer((req, res) => {
@@ -674,7 +674,7 @@ const { createServer } = require('node:http');
 const {
   executionAsyncId,
   executionAsyncResource,
-  createHook
+  createHook,
 } = require('node:async_hooks');
 const sym = Symbol('state'); // Private symbol to avoid pollution
 
@@ -684,7 +684,7 @@ createHook({
     if (cr) {
       resource[sym] = cr[sym];
     }
-  }
+  },
 }).enable();
 
 const server = createServer((req, res) => {
@@ -697,7 +697,7 @@ const server = createServer((req, res) => {
 
 #### <DataTag tag="M" /> `async_hooks.executionAsyncId()`
 
-<Metadata version="v19.1.0" data={{"changes":[{"version":"v8.2.0","pr-url":"https://github.com/nodejs/node/pull/13490","description":"Renamed from `currentId`."}],"update":{"type":"added","version":["v8.1.0"]}}} />
+<Metadata version="v19.2.0" data={{"changes":[{"version":"v8.2.0","pr-url":"https://github.com/nodejs/node/pull/13490","description":"Renamed from `currentId`."}],"update":{"type":"added","version":["v8.1.0"]}}} />
 
 * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The `asyncId` of the current execution context. Useful to
   track when something calls.
@@ -764,7 +764,7 @@ the section on [promise execution tracking][].
 
 #### <DataTag tag="M" /> `async_hooks.asyncWrapProviders`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
+<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v17.2.0","v16.14.0"]}}} />
 
 * Returns: A map of provider types to the corresponding numeric id.
   This map contains all the event types that might be emitted by the `async_hooks.init()` event.
@@ -856,14 +856,18 @@ The documentation for this class has moved [`AsyncResource`][].
 The documentation for this class has moved [`AsyncLocalStorage`][].
 
 [DEP0111]: /api/v19/deprecations#dep0111-processbinding
+[Diagnostics Channel]: diagnostics_channel.md
 [Hook Callbacks]: #hook-callbacks
 [PromiseHooks]: https://docs.google.com/document/d/1rda3yKGHimKIhg5YeoAmCOtyURgsbTH_qaYR79FELlk/edit
+[`AsyncHook`]: #class-asynchook
 [`AsyncLocalStorage`]: async_context.md#class-asynclocalstorage
 [`AsyncResource`]: async_context.md#class-asyncresource
 [`Worker`]: worker_threads.md#class-worker
 [`after` callback]: #afterasyncid
 [`before` callback]: #beforeasyncid
+[`createHook`]: #async_hookscreatehookcallbacks
 [`destroy` callback]: #destroyasyncid
+[`executionAsyncResource`]: #async_hooksexecutionasyncresource
 [`init` callback]: #initasyncid-type-triggerasyncid-resource
 [`process.getActiveResourcesInfo()`]: /api/v19/process#processgetactiveresourcesinfo
 [`promiseResolve` callback]: #promiseresolveasyncid
