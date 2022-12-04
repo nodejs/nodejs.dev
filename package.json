@@ -138,7 +138,7 @@
     "jest-fetch-mock": "^3.0.3",
     "jest-snapshot-serializer-ansi": "^1.0.0",
     "markdown-yaml-metadata-parser": "^3.0.0",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.0",
     "sass": "^1.54.9",
     "sass-loader": "^13.0.2",
     "stylelint": "^14.11.0",
