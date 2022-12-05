@@ -144,6 +144,15 @@
     "enabled": false
   },
   {
+    "code": "uz",
+    "localName": "O‘zbekcha",
+    "name": "Uzbekish",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "uz",
+    "enabled": false
+  },
+  {
     "code": "zh-cn",
     "localName": "简体中文",
     "name": "Simplified Chinese",
