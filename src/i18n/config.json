@@ -150,7 +150,7 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "uz",
-    "enabled": false
+    "enabled": true
   },
   {
     "code": "zh-cn",
