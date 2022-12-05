@@ -12,3 +12,9 @@ export interface NavigationItemData {
 export interface NavigationData {
   [index: string]: NavigationItemData[];
 }
+
+export interface NavigationDataWithLocale {
+  [index: string]: {
+    [locale: string]: NavigationItemData[];
+  }
+}

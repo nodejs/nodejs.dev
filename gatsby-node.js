@@ -100,7 +100,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const { blogPages, blogPosts, getPaginatedPosts } =
     createBlogPages(blogEdges);
 
-  // TODO: slugs are language independent
   const { learnPages, navigationData: learnNavigationData } = createLearnPages(
     learnEdges,
     learnYamlNavigationData

@@ -9,10 +9,28 @@ function getYamlPageIdentifier(relativePath) {
     : relativePath.replace(/(\.[a-z]+)?\.(mdx|md)/, '');
 }
 
+function getIteratedPagesForLocale(items, localeEdgeMap, locale = defaultLanguage) {
+  const getLearnEdgeByPageId = pageId => edge =>
+  getYamlPageIdentifier(edge.node.parent.relativePath) === pageId;
+
+  const defaultLocaleEdges = localeEdgeMap.get(locale)
+  // This adds the items to the navigation section data based on the order defined within the YAML file
+  // If the page doesn't exist it will be set as null and then removed via Array.filter()
+  const iteratedPages = iterateEdges(
+    items
+      // Iterates the items of the section and retrieve their respective edges
+      // then we transform them into pages and add to the navigation data
+      // since learnPages are language independent we will use default edges
+      .map(pageId => defaultLocaleEdges.find(getLearnEdgeByPageId(pageId)))
+      .filter(edge => edge && edge.node)
+  );
+  return iteratedPages;
+}
+
 function createLearnPages(learnEdges, yamlNavigationData) {
   const learnPages = [];
   const navigationData = {};
-  // TODO: group locale : pagID edges
+
   const localeEdgeMap = new Map();
 
   learnEdges.forEach(edge => {
@@ -24,28 +42,18 @@ function createLearnPages(learnEdges, yamlNavigationData) {
     localeEdgeMap.set(edgeLocale, localeEdges.concat(edge));
   });
 
-  const defaultLocaleEdges = localeEdgeMap.get(defaultLanguage)
-
-  const getLearnEdgeByPageId = pageId => edge =>
-    getYamlPageIdentifier(edge.node.parent.relativePath) === pageId;
-
   // Handles the Navigation Data only of Learn pages
   yamlNavigationData.forEach(({ section, items }) => {
-    navigationData[section] = [];
+    const iteratedPages = getIteratedPagesForLocale(items, localeEdgeMap, defaultLanguage);
 
-    // This adds the items to the navigation section data based on the order defined within the YAML file
-    // If the page doesn't exist it will be set as null and then removed via Array.filter()
-    const iteratedPages = iterateEdges(
-      items
-        // Iterates the items of the section and retrieve their respective edges
-        // then we transform them into pages and add to the navigation data
-        // since learnPages are language independent we will use default edges
-        .map(pageId => defaultLocaleEdges.find(getLearnEdgeByPageId(pageId)))
-        .filter(edge => edge && edge.node)
-    );
-
-    // TODO: locale based navigation data
-    navigationData[section] = iteratedPages.map(mapToNavigationData);
+    navigationData[section] = {};
+    localeEdgeMap.forEach((_, locale) => {
+      if(!(locale in navigationData[section])) {
+        navigationData[section][locale] = {};
+      }
+      const localeIteratedPages = getIteratedPagesForLocale(items, localeEdgeMap, locale);
+      navigationData[section][locale] = localeIteratedPages.map(mapToNavigationData);
+    })
 
     // Then we push them to the resulting learn pages object
     learnPages.push(...iteratedPages);
