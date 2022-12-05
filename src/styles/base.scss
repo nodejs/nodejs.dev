@@ -125,7 +125,7 @@ select {
 }
 
 :focus {
-  outline: var(--brand3) dotted 2px;
+  outline: solid var(--purple6);
 }
 
 [data-is-focused='true'] {
