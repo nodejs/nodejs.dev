@@ -100,17 +100,11 @@ exports.createPages = async ({ graphql, actions }) => {
   const { blogPages, blogPosts, getPaginatedPosts } =
     createBlogPages(blogEdges);
 
+  // TODO: slugs are language independent
   const { learnPages, navigationData: learnNavigationData } = createLearnPages(
     learnEdges,
     learnYamlNavigationData
   );
-
-  const {
-    apiPages,
-    latestVersion,
-    navigationData: apiNavigationData,
-    defaultNavigationRedirects: apiRedirects,
-  } = createApiPages(apiEdges, apiTypesNavigationData, nodeReleasesData);
 
   createPage({
     path: learnPath,
@@ -163,6 +157,13 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
+  const {
+    apiPages,
+    latestVersion,
+    navigationData: apiNavigationData,
+    defaultNavigationRedirects: apiRedirects,
+  } = createApiPages(apiEdges, apiTypesNavigationData, nodeReleasesData);
+  
   apiPages.forEach(page => {
     createPage({
       path: page.slug,

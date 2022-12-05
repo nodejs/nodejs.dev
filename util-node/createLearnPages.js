@@ -1,3 +1,4 @@
+const { defaultLanguage } = require('../locales');
 const { iterateEdges, mapToNavigationData } = require('./createPageUtils');
 
 function getYamlPageIdentifier(relativePath) {
@@ -11,6 +12,19 @@ function getYamlPageIdentifier(relativePath) {
 function createLearnPages(learnEdges, yamlNavigationData) {
   const learnPages = [];
   const navigationData = {};
+  // TODO: group locale : pagID edges
+  const localeEdgeMap = new Map();
+
+  learnEdges.forEach(edge => {
+    const edgeLocale = edge.node.fields.locale;
+    if(!localeEdgeMap.has(edgeLocale)) {
+      localeEdgeMap.set(edgeLocale, []);
+    }
+    const localeEdges = localeEdgeMap.get(edgeLocale);
+    localeEdgeMap.set(edgeLocale, localeEdges.concat(edge));
+  });
+
+  const defaultLocaleEdges = localeEdgeMap.get(defaultLanguage)
 
   const getLearnEdgeByPageId = pageId => edge =>
     getYamlPageIdentifier(edge.node.parent.relativePath) === pageId;
@@ -25,10 +39,12 @@ function createLearnPages(learnEdges, yamlNavigationData) {
       items
         // Iterates the items of the section and retrieve their respective edges
         // then we transform them into pages and add to the navigation data
-        .map(pageId => learnEdges.find(getLearnEdgeByPageId(pageId)))
+        // since learnPages are language independent we will use default edges
+        .map(pageId => defaultLocaleEdges.find(getLearnEdgeByPageId(pageId)))
         .filter(edge => edge && edge.node)
     );
 
+    // TODO: locale based navigation data
     navigationData[section] = iteratedPages.map(mapToNavigationData);
 
     // Then we push them to the resulting learn pages object
