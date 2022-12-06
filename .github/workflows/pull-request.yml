@@ -19,7 +19,7 @@ jobs:
           cache: npm
 
       - name: Install NPM packages
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Run Format Check
         run: npm run format-check
@@ -56,7 +56,7 @@ jobs:
           cache: npm
 
       - name: Install NPM packages
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - uses: jongwooo/gatsby-cache@v1.2.1
         with:
