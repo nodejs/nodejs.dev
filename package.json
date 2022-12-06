@@ -16,7 +16,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@mui/icons-material": "^5.10.3",
-    "@mui/material": "^5.10.4",
+    "@mui/material": "^5.10.16",
     "@pkgjs/nv": "^0.2.1",
     "@skagami/gatsby-plugin-dark-mode": "^2.0.0",
     "@svgr/webpack": "^6.3.1",
