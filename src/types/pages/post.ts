@@ -1,6 +1,6 @@
 import { BlogPost, BlogPostAuthor } from '../blog';
 import { PaginationInfo } from '../markdown';
-import { NavigationData } from '../navigation';
+import { NavigationDataWithLocale } from '../navigation';
 
 export interface PostTemplateData {
   mdx: {
@@ -16,6 +16,6 @@ export interface PostTemplateContext {
   relativePath: string;
   next: PaginationInfo;
   previous: PaginationInfo;
-  navigationData: NavigationData;
+  navigationData: NavigationDataWithLocale;
   recent: BlogPost[];
 }

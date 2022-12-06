@@ -24,11 +24,17 @@ const LearnLayout = ({
   },
   pageContext: { slug, next, previous, relativePath, navigationData, locale },
 }: Props): JSX.Element => {
-  const currLocaleNavigationData = useLocaleBasedNavigation(navigationData, locale);
+  const currLocaleNavigationData = useLocaleBasedNavigation(
+    navigationData,
+    locale
+  );
   return (
     <DefaultLayout title={displayTitle} description={description}>
       <main className="grid-container">
-        <LearnNavigation sections={currLocaleNavigationData} currentSlug={slug} />
+        <LearnNavigation
+          sections={currLocaleNavigationData}
+          currentSlug={slug}
+        />
         <Article
           title={displayTitle}
           body={body}
@@ -40,7 +46,7 @@ const LearnLayout = ({
         />
       </main>
     </DefaultLayout>
-  )
+  );
 };
 
 export default connectGraphQlCustom(LearnLayout);

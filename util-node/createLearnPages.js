@@ -9,11 +9,15 @@ function getYamlPageIdentifier(relativePath) {
     : relativePath.replace(/(\.[a-z]+)?\.(mdx|md)/, '');
 }
 
-function getIteratedPagesForLocale(items, localeEdgeMap, locale = defaultLanguage) {
+function getIteratedPagesForLocale(
+  items,
+  localeEdgeMap,
+  locale = defaultLanguage
+) {
   const getLearnEdgeByPageId = pageId => edge =>
-  getYamlPageIdentifier(edge.node.parent.relativePath) === pageId;
+    getYamlPageIdentifier(edge.node.parent.relativePath) === pageId;
 
-  const defaultLocaleEdges = localeEdgeMap.get(locale)
+  const defaultLocaleEdges = localeEdgeMap.get(locale);
   // This adds the items to the navigation section data based on the order defined within the YAML file
   // If the page doesn't exist it will be set as null and then removed via Array.filter()
   const iteratedPages = iterateEdges(
@@ -35,7 +39,7 @@ function createLearnPages(learnEdges, yamlNavigationData) {
 
   learnEdges.forEach(edge => {
     const edgeLocale = edge.node.fields.locale;
-    if(!localeEdgeMap.has(edgeLocale)) {
+    if (!localeEdgeMap.has(edgeLocale)) {
       localeEdgeMap.set(edgeLocale, []);
     }
     const localeEdges = localeEdgeMap.get(edgeLocale);
@@ -44,16 +48,25 @@ function createLearnPages(learnEdges, yamlNavigationData) {
 
   // Handles the Navigation Data only of Learn pages
   yamlNavigationData.forEach(({ section, items }) => {
-    const iteratedPages = getIteratedPagesForLocale(items, localeEdgeMap, defaultLanguage);
+    const iteratedPages = getIteratedPagesForLocale(
+      items,
+      localeEdgeMap,
+      defaultLanguage
+    );
 
     navigationData[section] = {};
     localeEdgeMap.forEach((_, locale) => {
-      if(!(locale in navigationData[section])) {
+      if (!(locale in navigationData[section])) {
         navigationData[section][locale] = {};
       }
-      const localeIteratedPages = getIteratedPagesForLocale(items, localeEdgeMap, locale);
-      navigationData[section][locale] = localeIteratedPages.map(mapToNavigationData);
-    })
+      const localeIteratedPages = getIteratedPagesForLocale(
+        items,
+        localeEdgeMap,
+        locale
+      );
+      navigationData[section][locale] =
+        localeIteratedPages.map(mapToNavigationData);
+    });
 
     // Then we push them to the resulting learn pages object
     learnPages.push(...iteratedPages);

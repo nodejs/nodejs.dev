@@ -16,5 +16,5 @@ export interface NavigationData {
 export interface NavigationDataWithLocale {
   [index: string]: {
     [locale: string]: NavigationItemData[];
-  }
+  };
 }

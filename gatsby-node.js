@@ -162,7 +162,7 @@ exports.createPages = async ({ graphql, actions }) => {
     navigationData: apiNavigationData,
     defaultNavigationRedirects: apiRedirects,
   } = createApiPages(apiEdges, apiTypesNavigationData, nodeReleasesData);
-  
+
   apiPages.forEach(page => {
     createPage({
       path: page.slug,

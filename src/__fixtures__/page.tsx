@@ -1,7 +1,6 @@
 import {
   PaginationInfo,
   LearnTemplateContext,
-  NavigationData,
   PostTemplateData,
   PostTemplateContext,
   NodeReleaseData,
@@ -9,6 +8,7 @@ import {
   BlogCategory,
   BlogPost,
   ArticleData,
+  NavigationDataWithLocale,
 } from '../types';
 import mockMDXBodyContent from './mockMDXBodyContent';
 
@@ -25,29 +25,33 @@ export const createPaginationInfo = (): PaginationInfo =>
     title: 'test-title',
   } as PaginationInfo);
 
-export const createNavigationSectionData = (): NavigationData =>
+export const createNavigationSectionData = (): NavigationDataWithLocale =>
   ({
-    'test-section': [
-      {
-        slug: 'test-slug-1',
-        title: 'test-title-1',
-      },
-      {
-        title: 'test-title-2',
-        slug: 'test-slug-2',
-      },
-    ],
-    'test-section2': [
-      {
-        slug: 'test-slug-3',
-        title: 'test-title-3',
-      },
-      {
-        title: 'test-title-4',
-        slug: 'test-slug-4',
-      },
-    ],
-  } as NavigationData);
+    'test-section': {
+      en: [
+        {
+          slug: 'test-slug-1',
+          title: 'test-title-1',
+        },
+        {
+          title: 'test-title-2',
+          slug: 'test-slug-2',
+        },
+      ],
+    },
+    'test-section2': {
+      en: [
+        {
+          slug: 'test-slug-3',
+          title: 'test-title-3',
+        },
+        {
+          title: 'test-title-4',
+          slug: 'test-slug-4',
+        },
+      ],
+    },
+  } as NavigationDataWithLocale);
 
 export const createLearnPageData = () => ({
   data: {
@@ -120,6 +124,7 @@ export const createLearnPageContext = (): LearnTemplateContext =>
     next: createPaginationInfo(),
     previous: createPaginationInfo(),
     navigationData: createNavigationSectionData(),
+    locale: 'en',
   } as LearnTemplateContext);
 
 export const createBlogPageContext = (): PostTemplateContext => ({
