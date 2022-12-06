@@ -5,7 +5,6 @@ import DefaultLayout from '../layouts/default';
 import LearnNavigation from '../navigations/learn';
 import { connectGraphQlCustom } from '../connectGraphQlArticle';
 import { LearnTemplateContext, LearnTemplateData } from '../types';
-import { useLocaleBasedNavigation } from '../hooks/useLocaleBasedNavigation';
 
 interface Props {
   data: LearnTemplateData;
@@ -22,32 +21,23 @@ const LearnLayout = ({
       fields: { authors },
     },
   },
-  pageContext: { slug, next, previous, relativePath, navigationData, locale },
-}: Props): JSX.Element => {
-  const currLocaleNavigationData = useLocaleBasedNavigation(
-    navigationData,
-    locale
-  );
-  return (
-    <DefaultLayout title={displayTitle} description={description}>
-      <main className="grid-container">
-        <LearnNavigation
-          sections={currLocaleNavigationData}
-          currentSlug={slug}
-        />
-        <Article
-          title={displayTitle}
-          body={body}
-          tableOfContents={tableOfContents ? tableOfContents.items : []}
-          next={next}
-          authors={authors}
-          previous={previous}
-          relativePath={relativePath}
-        />
-      </main>
-    </DefaultLayout>
-  );
-};
+  pageContext: { slug, next, previous, relativePath, navigationData },
+}: Props): JSX.Element => (
+  <DefaultLayout title={displayTitle} description={description}>
+    <main className="grid-container">
+      <LearnNavigation sections={navigationData} currentSlug={slug} />
+      <Article
+        title={displayTitle}
+        body={body}
+        tableOfContents={tableOfContents ? tableOfContents.items : []}
+        next={next}
+        authors={authors}
+        previous={previous}
+        relativePath={relativePath}
+      />
+    </main>
+  </DefaultLayout>
+);
 
 export default connectGraphQlCustom(LearnLayout);
 

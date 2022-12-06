@@ -108,14 +108,22 @@ exports.createPages = async ({ graphql, actions }) => {
   createPage({
     path: learnPath,
     component: learnTemplate,
-    context: { ...learnPages[0], navigationData: learnNavigationData },
+    context: {
+      ...learnPages[0],
+      navigationData: learnNavigationData,
+      isLearnPage: true,
+    },
   });
 
   learnPages.forEach(page => {
     createPage({
       path: page.slug,
       component: learnTemplate,
-      context: { ...page, navigationData: learnNavigationData },
+      context: {
+        ...page,
+        navigationData: learnNavigationData,
+        isLearnPage: true,
+      },
     });
   });
 
@@ -227,12 +235,20 @@ exports.onCreatePage = ({ page, actions }) => {
   // Recreates the page with the messages that ReactIntl needs
   // This will be passed to the ReactIntlProvider Component
   // Used within gatsby-browser.js and gatsby-ssr.js
+  const context = { ...page.context };
+  const locale = context.locale || nodeLocales.defaultLanguage;
+  if (context.isLearnPage) {
+    const navigationLocale = context.navigationData[locale]
+      ? locale
+      : nodeLocales.defaultLanguage;
+    context.navigationData = context.navigationData[navigationLocale];
+  }
   createPage({
     ...page,
     context: {
-      ...page.context,
-      intlMessages: getMessagesForLocale(page.context.locale),
-      locale: page.context.locale || nodeLocales.defaultLanguage,
+      ...context,
+      intlMessages: getMessagesForLocale(context.locale),
+      locale,
     },
   });
 };

@@ -54,17 +54,19 @@ function createLearnPages(learnEdges, yamlNavigationData) {
       defaultLanguage
     );
 
-    navigationData[section] = {};
     localeEdgeMap.forEach((_, locale) => {
-      if (!(locale in navigationData[section])) {
-        navigationData[section][locale] = {};
+      if (!navigationData[locale]) {
+        navigationData[locale] = {};
+      }
+      if (!navigationData[locale][section]) {
+        navigationData[locale][section] = {};
       }
       const localeIteratedPages = getIteratedPagesForLocale(
         items,
         localeEdgeMap,
         locale
       );
-      navigationData[section][locale] =
+      navigationData[locale][section] =
         localeIteratedPages.map(mapToNavigationData);
     });
 

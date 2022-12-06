@@ -8,7 +8,7 @@ import {
   BlogCategory,
   BlogPost,
   ArticleData,
-  NavigationDataWithLocale,
+  NavigationData,
 } from '../types';
 import mockMDXBodyContent from './mockMDXBodyContent';
 
@@ -25,33 +25,29 @@ export const createPaginationInfo = (): PaginationInfo =>
     title: 'test-title',
   } as PaginationInfo);
 
-export const createNavigationSectionData = (): NavigationDataWithLocale =>
+export const createNavigationSectionData = (): NavigationData =>
   ({
-    'test-section': {
-      en: [
-        {
-          slug: 'test-slug-1',
-          title: 'test-title-1',
-        },
-        {
-          title: 'test-title-2',
-          slug: 'test-slug-2',
-        },
-      ],
-    },
-    'test-section2': {
-      en: [
-        {
-          slug: 'test-slug-3',
-          title: 'test-title-3',
-        },
-        {
-          title: 'test-title-4',
-          slug: 'test-slug-4',
-        },
-      ],
-    },
-  } as NavigationDataWithLocale);
+    'test-section': [
+      {
+        slug: 'test-slug-1',
+        title: 'test-title-1',
+      },
+      {
+        title: 'test-title-2',
+        slug: 'test-slug-2',
+      },
+    ],
+    'test-section2': [
+      {
+        slug: 'test-slug-3',
+        title: 'test-title-3',
+      },
+      {
+        title: 'test-title-4',
+        slug: 'test-slug-4',
+      },
+    ],
+  } as NavigationData);
 
 export const createLearnPageData = () => ({
   data: {
