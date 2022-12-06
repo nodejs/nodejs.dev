@@ -108,22 +108,14 @@ exports.createPages = async ({ graphql, actions }) => {
   createPage({
     path: learnPath,
     component: learnTemplate,
-    context: {
-      ...learnPages[0],
-      navigationData: learnNavigationData,
-      isLearnPage: true,
-    },
+    context: { ...learnPages[0], navigationData: learnNavigationData },
   });
 
   learnPages.forEach(page => {
     createPage({
       path: page.slug,
       component: learnTemplate,
-      context: {
-        ...page,
-        navigationData: learnNavigationData,
-        isLearnPage: true,
-      },
+      context: { ...page, navigationData: learnNavigationData },
     });
   });
 
@@ -237,7 +229,8 @@ exports.onCreatePage = ({ page, actions }) => {
   // Used within gatsby-browser.js and gatsby-ssr.js
   const context = { ...page.context };
   const locale = context.locale || nodeLocales.defaultLanguage;
-  if (context.isLearnPage) {
+  const isLearnPage = context.categoryName === 'learn';
+  if (isLearnPage) {
     const navigationLocale = context.navigationData[locale]
       ? locale
       : nodeLocales.defaultLanguage;
