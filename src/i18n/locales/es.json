@@ -86,6 +86,7 @@
   "navigation.about.items.privacy": "Privacy Policy",
   "navigation.about.items.security": "Security Reporting",
   "navigation.about.items.packageManager": "Package Manager",
+  "navigation.about.items.history": "Nodejs History",
   "navigation.blog.categories": "Categories",
   "blog.categories.all": "Everything",
   "blog.categories.announcements": "Announcements",

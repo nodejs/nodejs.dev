@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-shadow
 export enum AboutNavigationKeys {
   about = '/about/',
+  history = '/about/history/',
   governance = '/about/governance/',
   releases = '/about/releases/',
   resources = '/about/resources/',

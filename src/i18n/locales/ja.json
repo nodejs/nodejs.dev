@@ -87,6 +87,7 @@
   "navigation.about.items.security": "セキュリティ報告",
   "navigation.about.items.packageManager": "パッケージマネージャー",
   "navigation.blog.categories": "カテゴリー",
+  "navigation.about.items.history": "Nodejs History",
   "blog.categories.all": "全て",
   "blog.categories.announcements": "アナウンス",
   "blog.categories.release": "リリース",

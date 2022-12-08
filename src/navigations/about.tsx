@@ -33,6 +33,10 @@ const aboutNavigation = {
       title: 'navigation.about.items.security',
       slug: AboutNavigationKeys.security,
     },
+    {
+      title: 'navigation.about.items.history',
+      slug: AboutNavigationKeys.history,
+    },
   ],
   'navigation.about.section.getInvolved': [
     {

@@ -86,6 +86,7 @@
   "navigation.about.items.privacy": "隐私政策",
   "navigation.about.items.security": "安全隐患报告",
   "navigation.about.items.packageManager": "包管理",
+  "navigation.about.items.history": "Nodejs History",
   "navigation.blog.categories": "所有分类",
   "blog.categories.all": "全部",
   "blog.categories.announcements": "通告",
