@@ -4,4 +4,3 @@ export const getAgeInYears = (date: string): number =>
 export const isBirthdayToday = (date: string): boolean =>
   new Date().getDate() === new Date(date).getDate() &&
   new Date().getMonth() === new Date(date).getMonth();
-
