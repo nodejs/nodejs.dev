@@ -76,6 +76,13 @@ exports[`Governance Page renders correctly 1`] = `
         >
           Security Reporting
         </a>
+        <a
+          class="t-body2 navigationItem"
+          href="/about/history/"
+          id="/about/history/"
+        >
+          Nodejs History
+        </a>
       </div>
     </div>
     <div

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Releases page renders correctly 1`] = `
+exports[`History Page renders correctly 1`] = `
 <main
   class="grid-container"
 >
@@ -48,8 +48,7 @@ exports[`Releases page renders correctly 1`] = `
           Project Governance
         </a>
         <a
-          aria-current="page"
-          class="t-body2 navigationItem navigationItemActive"
+          class="t-body2 navigationItem"
           href="/about/releases/"
           id="/about/releases/"
         >
@@ -77,7 +76,8 @@ exports[`Releases page renders correctly 1`] = `
           Security Reporting
         </a>
         <a
-          class="t-body2 navigationItem"
+          aria-current="page"
+          class="t-body2 navigationItem navigationItemActive"
           href="/about/history/"
           id="/about/history/"
         >
@@ -231,164 +231,11 @@ exports[`Releases page renders correctly 1`] = `
          executable program in the command line.
       </p>
     </div>
-    <div>
-      <div
-        class="downloadTableContainer"
-      >
-        <table>
-          <thead>
-            <tr>
-              <th>
-                Release
-              </th>
-              <th>
-                Status
-              </th>
-              <th>
-                Codename
-              </th>
-              <th>
-                Initial Release
-              </th>
-              <th>
-                Active LTS Start
-              </th>
-              <th>
-                Maintenance LTS Start
-              </th>
-              <th>
-                End of Life
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <a
-                  href="https://nodejs.org/download/release/latest-v18.x/"
-                >
-                  v18
-                </a>
-              </td>
-              <td>
-                Current
-              </td>
-              <td />
-              <td>
-                2022-04-19
-              </td>
-              <td>
-                2022-10-25
-              </td>
-              <td>
-                2023-10-18
-              </td>
-              <td>
-                2025-04-30
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a
-                  href="https://nodejs.org/download/release/latest-v16.x/"
-                >
-                  v16
-                </a>
-              </td>
-              <td>
-                Maintenance LTS
-              </td>
-              <td>
-                <a
-                  href="https://nodejs.org/download/release/latest-gallium/"
-                >
-                  gallium
-                </a>
-              </td>
-              <td>
-                2021-04-20
-              </td>
-              <td>
-                2021-10-26
-              </td>
-              <td>
-                2022-10-18
-              </td>
-              <td>
-                2023-09-11
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a
-                  href="https://nodejs.org/download/release/latest-v14.x/"
-                >
-                  v14
-                </a>
-              </td>
-              <td>
-                Active LTS
-              </td>
-              <td>
-                <a
-                  href="https://nodejs.org/download/release/latest-fermium/"
-                >
-                  fermium
-                </a>
-              </td>
-              <td>
-                2020-04-21
-              </td>
-              <td>
-                2020-10-17
-              </td>
-              <td>
-                2021-10-19
-              </td>
-              <td>
-                2023-04-30
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a
-                  href="https://nodejs.org/download/release/latest-v12.x/"
-                >
-                  v12
-                </a>
-              </td>
-              <td>
-                Maintenance LTS
-              </td>
-              <td>
-                <a
-                  href="https://nodejs.org/download/release/latest-erbium/"
-                >
-                  erbium
-                </a>
-              </td>
-              <td>
-                2019-04-23
-              </td>
-              <td>
-                2019-10-21
-              </td>
-              <td>
-                2020-11-30
-              </td>
-              <td>
-                2022-04-30
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
     <div
       class="edit"
     >
       <a
-        href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/releases.en.md"
+        href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/history.en.md"
       >
         <span>
           Edit this page on GitHub
