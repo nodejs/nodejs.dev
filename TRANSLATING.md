@@ -42,20 +42,6 @@ The `src/i18n/config.json` file is a JSON file structured by one single Collecti
 
 **Note.:** When testing a Language locally on your installation, please change `enabled: false` to `enabled: true`
 
-## Enabling the I18N Language Selector
-
-Currently the Language selector is disabled globally, as the Languages are still being translated. This is a work-in-progress. 
-
-For development and translation purposes you can enable it on your local installation or on Nodejs.dev by injecting the following snippet in your browser DevTools:
-
-```js
-window.localStorage.node_featureFlags = '["i18n-language-selector"]';
-```
-
-**Note.:** This only enables the Language Selector. By default you don't need to use it to switch between languages. 
-You can simply on the current URL of the page, change the default `/en/` prefix into `/{yourlanguage}/` (e.g.: `/es/`). 
-Please remember to enable the language first, if disabled on the `src/i18n/config.json` file.
-
 ## Translating in-App Texts (Translations that are shown in UI Elements/Components)
 
 As you might have noticed, some of the translations/pieces of text from this website, are used directly within UI Components and do not come from Markdown files.

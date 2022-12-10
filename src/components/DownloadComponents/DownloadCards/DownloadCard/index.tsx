@@ -46,7 +46,9 @@ const DownloadCard = ({
         )}
       </div>
       <p className={styles.label}>{label}</p>
-      <p className={styles.filename}>{fileName}</p>
+      <p className={styles.filename} data-testid="lts">
+        {fileName}
+      </p>
     </Tab>
   );
 };

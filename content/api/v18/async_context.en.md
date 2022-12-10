@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.11.0" data={{"update":{"type":"introduced_in","version":["v16.4.0"]}}} />
+<Metadata version="v18.12.1" data={{"update":{"type":"introduced_in","version":["v16.4.0"]}}} />
 
-<Metadata version="v18.11.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.12.1" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.11.0" data={{"source_link":"lib/async_hooks.js"}} />
+<Metadata version="v18.12.1" data={{"source_link":"lib/async_hooks.js"}} />
 
 ### Introduction
 
@@ -32,7 +32,7 @@ const { AsyncLocalStorage, AsyncResource } = require('node:async_hooks');
 
 ### <DataTag tag="C" /> `AsyncLocalStorage`
 
-<Metadata version="v18.11.0" data={{"changes":[{"version":"v16.4.0","pr-url":"https://github.com/nodejs/node/pull/37675","description":"AsyncLocalStorage is now Stable. Previously, it had been Experimental."}],"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
+<Metadata version="v18.12.1" data={{"changes":[{"version":"v16.4.0","pr-url":"https://github.com/nodejs/node/pull/37675","description":"AsyncLocalStorage is now Stable. Previously, it had been Experimental."}],"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
 This class creates stores that stay coherent through asynchronous operations.
 
@@ -115,16 +115,16 @@ with each other's data.
 
 #### <DataTag tag="M" /> `new AsyncLocalStorage()`
 
-<Metadata version="v18.11.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
+<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
 Creates a new instance of `AsyncLocalStorage`. Store is only provided within a
 `run()` call or after an `enterWith()` call.
 
 #### <DataTag tag="M" /> `asyncLocalStorage.disable()`
 
-<Metadata version="v18.11.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
+<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
-<Metadata version="v18.11.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.12.1" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 Disables the instance of `AsyncLocalStorage`. All subsequent calls
 to `asyncLocalStorage.getStore()` will return `undefined` until
@@ -143,7 +143,7 @@ in the current process.
 
 #### <DataTag tag="M" /> `asyncLocalStorage.getStore()`
 
-<Metadata version="v18.11.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
+<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
 * Returns: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
@@ -154,9 +154,9 @@ returns `undefined`.
 
 #### <DataTag tag="M" /> `asyncLocalStorage.enterWith(store)`
 
-<Metadata version="v18.11.0" data={{"update":{"type":"added","version":["v13.11.0","v12.17.0"]}}} />
+<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v13.11.0","v12.17.0"]}}} />
 
-<Metadata version="v18.11.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.12.1" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `store` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
@@ -200,7 +200,7 @@ asyncLocalStorage.getStore(); // Returns the same object
 
 #### <DataTag tag="M" /> `asyncLocalStorage.run(store, callback[, ...args])`
 
-<Metadata version="v18.11.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
+<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
 * `store` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -236,9 +236,9 @@ try {
 
 #### <DataTag tag="M" /> `asyncLocalStorage.exit(callback[, ...args])`
 
-<Metadata version="v18.11.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
+<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
-<Metadata version="v18.11.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.12.1" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * `...args` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -305,7 +305,7 @@ probably responsible for the context loss.
 
 ### <DataTag tag="C" /> `AsyncResource`
 
-<Metadata version="v18.11.0" data={{"changes":[{"version":"v16.4.0","pr-url":"https://github.com/nodejs/node/pull/37675","description":"AsyncResource is now Stable. Previously, it had been Experimental."}]}} />
+<Metadata version="v18.12.1" data={{"changes":[{"version":"v16.4.0","pr-url":"https://github.com/nodejs/node/pull/37675","description":"AsyncResource is now Stable. Previously, it had been Experimental."}]}} />
 
 The class `AsyncResource` is designed to be extended by the embedder's async
 resources. Using this, users can easily trigger the lifetime events of their
@@ -409,7 +409,7 @@ class DBQuery extends AsyncResource {
 
 #### Static method: `AsyncResource.bind(fn[, type[, thisArg]])`
 
-<Metadata version="v18.11.0" data={{"changes":[{"version":"v17.8.0","pr-url":"https://github.com/nodejs/node/pull/42177","description":"Changed the default when `thisArg` is undefined to use `this` from the caller."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36782","description":"Added optional thisArg."}],"update":{"type":"added","version":["v14.8.0","v12.19.0"]}}} />
+<Metadata version="v18.12.1" data={{"changes":[{"version":"v17.8.0","pr-url":"https://github.com/nodejs/node/pull/42177","description":"Changed the default when `thisArg` is undefined to use `this` from the caller."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36782","description":"Added optional thisArg."}],"update":{"type":"added","version":["v14.8.0","v12.19.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to bind to the current execution context.
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) An optional name to associate with the underlying
@@ -423,7 +423,7 @@ the `AsyncResource` to which the function is bound.
 
 #### <DataTag tag="M" /> `asyncResource.bind(fn[, thisArg])`
 
-<Metadata version="v18.11.0" data={{"changes":[{"version":"v17.8.0","pr-url":"https://github.com/nodejs/node/pull/42177","description":"Changed the default when `thisArg` is undefined to use `this` from the caller."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36782","description":"Added optional thisArg."}],"update":{"type":"added","version":["v14.8.0","v12.19.0"]}}} />
+<Metadata version="v18.12.1" data={{"changes":[{"version":"v17.8.0","pr-url":"https://github.com/nodejs/node/pull/42177","description":"Changed the default when `thisArg` is undefined to use `this` from the caller."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36782","description":"Added optional thisArg."}],"update":{"type":"added","version":["v14.8.0","v12.19.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to bind to the current `AsyncResource`.
 * `thisArg` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -435,7 +435,7 @@ the `AsyncResource` to which the function is bound.
 
 #### <DataTag tag="M" /> `asyncResource.runInAsyncScope(fn[, thisArg, ...args])`
 
-<Metadata version="v18.11.0" data={{"update":{"type":"added","version":["v9.6.0"]}}} />
+<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v9.6.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to call in the execution context of this async
   resource.

@@ -1,7 +1,7 @@
 .node-demo-container {
   position: relative;
 
-  @media (max-width: 870px) {
+  @media (max-width: 900px) {
     display: none;
   }
 
@@ -54,9 +54,13 @@
 .node-features {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   margin: 0 auto 5em auto;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 
   &__feature {
     margin: 0 2em;
@@ -72,7 +76,7 @@
       min-width: 120px;
       opacity: 0.75;
 
-      @media (max-width: 870px) {
+      @media (max-width: 900px) {
         min-width: 60px;
       }
     }

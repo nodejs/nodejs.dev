@@ -1,8 +1,10 @@
 const fs = require('fs');
+const fsPromises = require('fs/promises');
 const path = require('path');
-const fetch = require('node-fetch');
 const async = require('async');
+const cliProgress = require('cli-progress');
 
+const safeJSON = require('./safeJSON');
 const createGitHubHeaders = require('./createGitHubHeaders');
 const { createMarkdownParser } = require('./apiDocsTransformUtils');
 const { apiReleaseContents } = require('../apiUrls');
@@ -15,7 +17,19 @@ const getFileName = file => file.name.replace('.md', '');
 const filterOutInvalidFiles = file =>
   !ignoredFiles.includes(file.name) && file.name.endsWith('.md');
 
+const progressBarOptions = {
+  format:
+    'Syncing API || {bar} {percentage}% || Remaining: {remaining} || Processing: {started} || Finished: {finished}',
+};
+
 async function getApiDocsData(releaseVersions, callback) {
+  const progressBar = new cliProgress.SingleBar(
+    progressBarOptions,
+    cliProgress.Presets.shades_classic
+  );
+
+  let remainingFilesToParse = 0;
+
   // This creates an asynchronous queue that fetches the directory listing of the
   // /doc/api/ directory on the Node.js repository with the contents of a specific version (Git Tag)
   // Then the worker creates a new queue that dispatches a list of files (their metadata and the release version)
@@ -42,8 +56,12 @@ async function getApiDocsData(releaseVersions, callback) {
       // We first iterate through the contents with mostly Regex and string interpolation instead of AST
       // As we don't want to overcomplicate things. There are definitel drawbacks of using ReGeX
       const apiDocsParser = async.queue((file, dCb) => {
-        // eslint-disable-next-line no-console
-        console.log(`Parsing: ${file.name}@${releaseData.version}`);
+        remainingFilesToParse += 1;
+
+        progressBar.update({
+          remaining: remainingFilesToParse,
+          started: `${file.name}@${releaseData.version}`,
+        });
 
         const parseMarkdownCallback = contents => {
           // We create a Markdown Parser that will be responsible of parsing the file
@@ -72,17 +90,26 @@ async function getApiDocsData(releaseVersions, callback) {
           );
 
           // Creates the File within the File System
-          fs.writeFile(
-            currentFilePath,
-            resultingContent,
-            { encoding: 'utf8' },
-            dCb
-          );
+          return fsPromises.writeFile(currentFilePath, resultingContent, {
+            encoding: 'utf8',
+          });
+        };
+
+        const finishedItemCallback = () => {
+          remainingFilesToParse -= 1;
+
+          progressBar.update({
+            remaining: remainingFilesToParse,
+            finished: `${file.name}@${releaseData.version}`,
+          });
+
+          dCb();
         };
 
         fetch(file.download_url)
           .then(response => response.text())
-          .then(contents => parseMarkdownCallback(contents));
+          .then(parseMarkdownCallback)
+          .finally(finishedItemCallback);
       }, 8);
 
       // Add files to be Downloaded and Parsed to Text
@@ -104,10 +131,12 @@ async function getApiDocsData(releaseVersions, callback) {
           ),
         };
 
+        progressBar.increment();
+
         fs.writeFile(
           navigationDataPath,
           // Stringifies and Pretty-Prints the JSON
-          JSON.stringify(sortedNavigationEntry, null, 2),
+          safeJSON.toString(sortedNavigationEntry, null, 2),
           cb
         );
       });
@@ -117,14 +146,26 @@ async function getApiDocsData(releaseVersions, callback) {
     // @see https://docs.github.com/en/rest/repos/contents#get-repository-content
     fetch(apiReleaseContents(releaseData.fullVersion), createGitHubHeaders())
       .then(response => response.json())
-      .then(files => pushToDocsQueue(files));
+      .then(files => (Array.isArray(files) ? files : []))
+      .then(pushToDocsQueue)
+      .catch(cb);
   }, 2);
+
+  progressBar.start(releaseVersions.length, 0, {
+    remaining: 0,
+    started: 'N/A',
+    finished: 'N/A',
+  });
 
   // Retrieves all the Lists of the Documentation files for that Node.js version
   apiDownloadListQueue.push([...releaseVersions]);
 
   // After the whole queue ends we call the callback with our Navigation entries
-  apiDownloadListQueue.drain(() => callback());
+  apiDownloadListQueue.drain(() => {
+    progressBar.stop();
+
+    callback();
+  });
 }
 
 module.exports = getApiDocsData;

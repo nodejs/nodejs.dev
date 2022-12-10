@@ -2,7 +2,7 @@
 title: how-much-javascript-do-you-need-to-know-to-use-nodejs
 displayTitle: 'How much JavaScript do you need to know to use Node.js?'
 description: 'If you are just starting out with JavaScript, how deeply do you need to know the language?'
-authors: flaviocopes, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, elanandkumar, ovflowd
+authors: flaviocopes, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, elanandkumar, ovflowd, vaishnav-mk
 category: learn
 ---
 
@@ -14,7 +14,7 @@ As a beginner, it's hard to get to a point where you are confident enough in you
 * [Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
 * [Data Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
 * [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
-* Variables
+* [Variables](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables#what_is_a_variable)
 * [Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
 * [`this` operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 * [Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)

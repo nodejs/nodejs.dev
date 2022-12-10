@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useState, createRef } from 'react';
+import React, { useMemo, useEffect, useState, useRef } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
@@ -32,7 +32,7 @@ const MotionCloseIcon = motion(CloseIcon);
 
 const SearchBar = (): JSX.Element => {
   const [query, setQuery] = useState('');
-  const searchInputRef = createRef<HTMLInputElement>();
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
 
   const [isExpanded, setExpanded] = useState(false);
   const [parentRef, isClickedOutside] = useClickOutside();
@@ -59,6 +59,12 @@ const SearchBar = (): JSX.Element => {
   };
 
   useEffect(() => {
+    if (isExpanded) {
+      searchInputRef.current?.focus();
+    }
+  }, [isExpanded, searchInputRef]);
+
+  useEffect(() => {
     if (isClickedOutside) {
       collapseContainer();
     }
@@ -72,18 +78,41 @@ const SearchBar = (): JSX.Element => {
     if (!isExpanded) {
       expandContainer();
     }
+  };
 
-    if (searchInputRef.current) {
-      searchInputRef.current.focus();
+  const onBlurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
+    if (!e.currentTarget.contains(e.target) || isEmpty) collapseContainer();
+  };
+
+  const onCloseHandler = (e: React.MouseEvent<SVGSVGElement>) => {
+    e.stopPropagation();
+    if (isExpanded) {
+      collapseContainer();
     }
   };
 
-  useKeyPress('/', () => onKeyPressHandler());
-  useKeyPress('Escape', () => {
-    if (isExpanded) {
-      collapseContainer();
-      searchInputRef.current?.blur();
-    }
+  const toggleContainer = () =>
+    isExpanded ? collapseContainer() : expandContainer();
+
+  useKeyPress({
+    targetKey: 'ctrl+k',
+    callback: toggleContainer,
+    preventDefault: true,
+  });
+
+  useKeyPress({
+    targetKey: 'meta+k',
+    callback: toggleContainer,
+    preventDefault: true,
+  });
+
+  useKeyPress({
+    targetKey: 'Escape',
+    callback: () => {
+      if (isExpanded) {
+        collapseContainer();
+      }
+    },
   });
 
   return (
@@ -94,11 +123,12 @@ const SearchBar = (): JSX.Element => {
       variants={containerVariants}
       transition={containerTransition}
       ref={parentRef}
+      onBlur={onBlurHandler}
     >
       <div
         className={styles.searchInputContainer}
         onKeyPress={onKeyPressHandler}
-        onClick={onKeyPressHandler}
+        onClick={expandContainer}
         role="presentation"
       >
         <TravelExploreIcon className={styles.searchIcon} />
@@ -116,7 +146,7 @@ const SearchBar = (): JSX.Element => {
             name="query"
             type="text"
             value={query}
-            onFocus={onKeyPressHandler}
+            onFocus={expandContainer}
             onChange={changeHandler}
           />
         </label>
@@ -128,7 +158,7 @@ const SearchBar = (): JSX.Element => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={collapseContainer}
+              onClick={onCloseHandler}
               transition={{ duration: 0.2 }}
             />
           )}

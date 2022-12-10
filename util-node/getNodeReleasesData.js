@@ -1,6 +1,5 @@
 const nodeVersions = require('@pkgjs/nv');
 const path = require('path');
-const fetch = require('node-fetch');
 const async = require('async');
 const fs = require('fs');
 const getReleaseStatus = require('./getReleaseStatus');
@@ -32,8 +31,11 @@ function getNodeReleasesData(nodeReleasesDataCallback) {
     const { releaseSchedule, releaseDetails } = results;
 
     const isReleaseCurrentlyLTS = release =>
-      new Date(release.lts) <= new Date() &&
-      new Date(release.maintenance) >= new Date();
+      (new Date(release.lts) <= new Date() &&
+        new Date(release.maintenance) >= new Date()) ||
+      (getReleaseStatus(release) === 'Maintenance LTS' &&
+        formateReleaseDate(release.end) >=
+          new Date().toISOString().split('T')[0]);
 
     const mapReleaseData = key => {
       const release = releaseSchedule[key];
@@ -42,7 +44,11 @@ function getNodeReleasesData(nodeReleasesDataCallback) {
         fullVersion: key,
         version: key,
         codename: release.codename || key,
-        isLts: release.lts ? isReleaseCurrentlyLTS(release) : false,
+        isLts: release.lts
+          ? isReleaseCurrentlyLTS(release)
+          : getReleaseStatus(release) === 'Maintenance LTS' &&
+            formateReleaseDate(release.end) >=
+              new Date().toISOString().split('T')[0],
         status: getReleaseStatus(release),
         initialRelease: formateReleaseDate(release.start),
         ltsStart: formateReleaseDate(release.lts),
@@ -75,6 +81,8 @@ function getNodeReleasesData(nodeReleasesDataCallback) {
     const sortedReleasesByRelease = mappedReleasesData.sort(
       (a, b) => new Date(a.initialRelease) - new Date(b.initialRelease)
     );
+
+    sortedReleasesByRelease.reverse();
 
     nodeReleasesDataCallback({
       nodeReleasesData: sortedReleasesByRelease,

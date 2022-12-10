@@ -4,6 +4,7 @@ const path = require('path');
 const yaml = require('yaml');
 const readingTime = require('reading-time');
 const asyncMethods = require('async');
+const safeJSON = require('./util-node/safeJSON');
 const createSlug = require('./util-node/createSlug');
 const getNodeReleasesData = require('./util-node/getNodeReleasesData');
 const getBannersData = require('./util-node/getBannersData');
@@ -15,6 +16,7 @@ const createBlogPages = require('./util-node/createBlogPages');
 const createLearnPages = require('./util-node/createLearnPages');
 const createApiPages = require('./util-node/createApiPages');
 const generateRedirects = require('./util-node/generateRedirects');
+const getPaginationPath = require('./util-node/getPaginationPath');
 const redirects = require('./redirects');
 const nodeLocales = require('./locales');
 const { learnPath, apiPath, blogPath } = require('./pathPrefixes');
@@ -30,14 +32,14 @@ const apiTypesNavigationData = yaml.parse(
 );
 
 // This creates a map of all the locale JSONs that are enabled in the config.json file
-const intlMessages = nodeLocales.locales.reduce((acc, locale) => {
-  const filePath = path.resolve(
-    __dirname,
-    `./src/i18n/locales/${locale.code}.json`
-  );
-  acc[locale.code] = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  return acc;
-}, {});
+const intlMessages = nodeLocales.locales.reduce(
+  (acc, locale) => ({
+    ...acc,
+    // eslint-disable-next-line import/no-dynamic-require, global-require
+    [locale.code]: require(`./src/i18n/locales/${locale.code}.json`),
+  }),
+  {}
+);
 
 const getMessagesForLocale = locale =>
   locale && locale in intlMessages
@@ -46,29 +48,6 @@ const getMessagesForLocale = locale =>
 
 const getRedirectForLocale = (locale, url) =>
   /^\/\/|https?:\/\//.test(url) ? url : `/${locale}${url}`;
-
-exports.onCreateWebpackConfig = ({ plugins, actions, stage, getConfig }) => {
-  actions.setWebpackConfig({
-    plugins: [
-      plugins.ignore({ resourceRegExp: /canvas/, contextRegExp: /jsdom$/ }),
-    ],
-  });
-
-  if (stage === 'develop' || stage === 'build-javascript') {
-    const config = getConfig();
-
-    const miniCssExtractPlugin = config.plugins.find(
-      plugin => plugin.constructor.name === 'MiniCssExtractPlugin'
-    );
-
-    if (miniCssExtractPlugin) {
-      // We don't care about the order of CSS imports as we use CSS Modules
-      miniCssExtractPlugin.options.ignoreOrder = true;
-    }
-
-    actions.replaceWebpackConfig(config);
-  }
-};
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
@@ -168,15 +147,11 @@ exports.createPages = async ({ graphql, actions }) => {
       total: paginatedPosts.length,
     });
 
-    const getBlogPagePath = index => {
-      const categoryPath = node.name ? `${blogPath}${node.name}/` : blogPath;
-
-      return index === 0 ? categoryPath : `${categoryPath}page/${index + 1}/`;
-    };
+    const getBlogPagePath = getPaginationPath(blogPath, node.name);
 
     paginatedPosts.forEach((currentPagePosts, index) => {
       createPage({
-        path: getBlogPagePath(index),
+        path: getBlogPagePath(index + 1),
         component: blogTemplate,
         context: {
           category: node.name ? node : null,
@@ -360,7 +335,7 @@ exports.sourceNodes = async ({
           internal: {
             type: 'Banners',
             mediaType: 'application/json',
-            content: JSON.stringify(bannersData),
+            content: safeJSON.toString(bannersData),
             contentDigest: createContentDigest(bannersData),
           },
         };
@@ -383,7 +358,7 @@ exports.sourceNodes = async ({
           internal: {
             type: 'Nvm',
             mediaType: 'application/json',
-            content: JSON.stringify(nvmData),
+            content: safeJSON.toString(nvmData),
             contentDigest: createContentDigest(nvmData),
           },
         };
@@ -406,7 +381,7 @@ exports.sourceNodes = async ({
           internal: {
             type: 'NodeReleases',
             mediaType: 'application/json',
-            content: JSON.stringify(nodeReleasesData),
+            content: safeJSON.toString(nodeReleasesData),
             contentDigest: createContentDigest(nodeReleasesData),
           },
         };
@@ -430,4 +405,27 @@ exports.onCreateBabelConfig = ({ actions }) => {
       },
     },
   });
+};
+
+exports.onCreateWebpackConfig = ({ plugins, actions, stage, getConfig }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      plugins.ignore({ resourceRegExp: /canvas/, contextRegExp: /jsdom$/ }),
+    ],
+  });
+
+  if (stage === 'develop' || stage === 'build-javascript') {
+    const config = getConfig();
+
+    const miniCssExtractPlugin = config.plugins.find(
+      plugin => plugin.constructor.name === 'MiniCssExtractPlugin'
+    );
+
+    if (miniCssExtractPlugin) {
+      // We don't care about the order of CSS imports as we use CSS Modules
+      miniCssExtractPlugin.options.ignoreOrder = true;
+    }
+
+    actions.replaceWebpackConfig(config);
+  }
 };
