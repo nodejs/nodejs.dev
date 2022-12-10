@@ -43,6 +43,10 @@ const SearchBar = (): JSX.Element => {
 
   const isEmpty = !results || results.length === 0;
 
+  const listRef = useRef<HTMLUListElement | null>(null);
+
+  const activeIndexRef = useRef<number>(-1);
+
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
 
@@ -56,6 +60,7 @@ const SearchBar = (): JSX.Element => {
   const collapseContainer = () => {
     setExpanded(false);
     setQuery('');
+    activeIndexRef.current = -1;
   };
 
   useEffect(() => {
@@ -94,6 +99,15 @@ const SearchBar = (): JSX.Element => {
   const toggleContainer = () =>
     isExpanded ? collapseContainer() : expandContainer();
 
+  const focusSearchResult = () => {
+    if (listRef.current) {
+      const el =
+        listRef.current.children[activeIndexRef.current];
+      el?.querySelector('a')?.focus();
+      el?.scrollIntoView();
+    }
+  };
+
   useKeyPress({
     targetKey: 'ctrl+k',
     callback: toggleContainer,
@@ -111,6 +125,35 @@ const SearchBar = (): JSX.Element => {
     callback: () => {
       if (isExpanded) {
         collapseContainer();
+      }
+    },
+  });
+
+  useKeyPress({
+    targetKey: 'ArrowDown',
+    preventDefault: true,
+    callback: () => {
+      if (isExpanded && !isEmpty && listRef.current) {
+        activeIndexRef.current =  activeIndexRef.current + 1 > listRef.current.children.length - 1
+          ? 0
+          : activeIndexRef.current + 1;
+
+        focusSearchResult();
+      }
+    },
+  });
+
+  useKeyPress({
+    targetKey: 'ArrowUp',
+    preventDefault: true,
+    callback: () => {
+      if (isExpanded && !isEmpty && listRef.current) {
+        activeIndexRef.current =
+          activeIndexRef.current - 1 < 0
+            ? listRef.current.children.length - 1
+            : activeIndexRef.current - 1;
+
+        focusSearchResult();
       }
     },
   });
@@ -181,7 +224,7 @@ const SearchBar = (): JSX.Element => {
             </div>
           )}
           {!isEmpty && (
-            <ul>
+            <ul ref={listRef}>
               {results.map((result: SearchResult) => {
                 const sectionPath =
                   result.category === 'api'
