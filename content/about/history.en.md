@@ -53,78 +53,95 @@ Node.js happened to be built in the right place and right time, but luck isn't t
 
 ## 2009
 
-- Node.js is born by *Ryan Dahl* on May 19th
-- The first form of [npm](https://www.npmjs.com/) is created by *Isaac Z. Schlueter* on May 21st
+- Node.js is born by _Ryan Dahl_ on May 19th.
+- The first presentation on Node.js from _Ryan Dahl_ at JSConf.
+- The first form of [npm](https://www.npmjs.com/) is created by _Isaac Z. Schlueter_ on May 21st.
 
 ## 2010
 
-- [Express](https://expressjs.com/) is born
-- [Socket.io](https://socket.io) is born
+- [Express](https://expressjs.com/) is born. _"Fast, unopinionated, minimalist web framework for Node.js"_ from their official website.
+- [Socket.io](https://socket.io) is born.
 
 ## 2011
 
 - npm hits version 1.0
 - Larger companies start adopting Node.js: LinkedIn, Uber, etc.
-- [hapi](https://hapi.dev) is born
+- [hapi](https://hapi.dev) is born.
 
 ## 2012
 
 - Adoption continues very rapidly
+- Node.js 0.10 named "Stable"
 
 ## 2013
 
-- First big blogging platform using Node.js: [Ghost](https://ghost.org/)
-- [Koa](https://koajs.com/) is born
+- First big blogging platform using Node.js: [Ghost](https://ghost.org/).
+- [Koa](https://koajs.com/) is born. _"Next generation web framework for Node.js"_ from their official website.
 
 ## 2014
 
-- The Big Fork: [io.js](https://iojs.org/) is a major fork of Node.js, with the goal of introducing ES6 support and moving faster than Node.js (which was still on version 0.12)
+- The Big Fork: [io.js](https://iojs.org/) is a major fork of Node.js, with the goal of introducing ES6 support and moving faster than Node.js (which was still on version 0.12).
+- [Meteor](https://www.meteor.com/) is born on 28 octobre 2014. Meteor is a full-stack JavaScript framework.
 
 ## 2015
 
-- The [Node.js Foundation](https://foundation.nodejs.org/) is born (a non-profit organization to support Node.js)
-- IO.js is merged back into Node.js (the name "io.js" is dropped)
-- npm introduces private modules
-- Node.js 4 (versions 1, 2 and 3 never previously released)
+- Joyent Moves to Establish [Node.js Foundation](https://foundation.nodejs.org/) is born is a non-profit organization to support Node.js.
+- IO.js is merged back into Node.js (the name "io.js" is dropped).
+- npm introduces private modules.
+- Node.js 4 (versions 1, 2 and 3 never previously released) named "Argon".
+- Node.js 5
+- Collaborator summit in San Francisco (USA) is first Node.js Foundation event. The event is now called [Node.js Interactive](https://events.linuxfoundation.org/events/node-interactive-2019/). There were 2 session.
 
 ## 2016
 
-- The [leftpad incident](https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm)
-- [Yarn](https://yarnpkg.com/en/) is born (a new package manager for Node.js)
-- Node.js 6
+- The leftpad incident happened. For more information see this [blog post](https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm).
+- [Yarn](https://yarnpkg.com/en/) is born. Yarn is a new package manager for Node.js.
+- Node.js 6 named "Boron".
+- Google Cloud Platform joins the Node.js Foundation.
 
 ## 2017
 
-- npm focuses more on security and introduces [npm audit](https://docs.npmjs.com/auditing-package-dependencies-for-security-vulnerabilities)
-- Node.js 8
-- HTTP/2
-- V8 introduces Node.js in its testing suite, officially making Node.js a target for the JS engine, in addition to Chrome
-- 3 billion npm downloads every week
-- Creation of ayo.js (a big fork of Node.js)
+- npm focuses more on security and introduces [npm audit](https://docs.npmjs.com/auditing-package-dependencies-for-security-vulnerabilities).
+- Node.js 8 named "Carbon".
+- HTTP/2 is introduced in Node.js 8.4.0 .
+- V8 introduces Node.js in its testing suite, officially making Node.js a target for the JS engine, in addition to Chrome.
+- 3 billion npm downloads every week.
+- Creation of ayo.js is a big fork of Node.js, with the goal of introducing ES modules support and moving faster than Node.js (which was still on version 6).
+- Node.js certified developer program is launched by the Node.js Foundation. The program is now managed by the [OpenJS Foundation](https://openjsf.org/).
+- Node.js Collaborator Summit, 2017-10-06 - 2017-10-07, Vancouver, BC, Canada.
 
 ## 2018
 
-- Node.js 10
-- [ES modules](https://nodejs.org/api/esm.html) .mjs experimental support
+- Node.js 10 named "Dubnium".
+- [ES modules](https://nodejs.org/api/esm.html) .mjs experimental support is added to Node.js.
 - Node.js 11
+- Node.js Collaborator Summit, 2018-05-31 - 2018-06-01, Berlin, Germany.
+- Collaborator Summit Vancouver 2018 - October 12th and 13th 2018.
 
 ## 2019
 
-- Node.js interactive conference in Montréal (Canada)
-- Node.js 12
+- Node.js interactive conference in Montréal (Canada).
+- Node.js 12 named "Erbium".
 - Node.js 13
+- Collaborator Summit Berlin 2019 - May 30th and 31th. [Here](https://github.com/openjs-foundation/summit/blob/main/2019-05-Berlin/retro.md) the retrospective of this collaborator submit.
+- Collaborator Summit Montreal 2019 - December 13th and 14th.
 
 ## 2020
 
-- Node.js 14 (Maintenance) Released 2020-04-21
+- Node.js 14 named "Fermium". (Maintenance) Released 2020-04-21.
 - Node.js 15
 
 ## 2021
 
-- Node.js 16 (Maintenance) Released 2021-04-20
-- Node.js 17
+- Node.js 16 named "Gallium". (Maintenance) Released 2021-04-20.
+- Node.js 17 2022-06-01 beginning of the end of life.
 
 ## 2022
 
-- Node.js 18 (LTS) Released 2022-04-19
-- Node.js 19 (Current) Released 2022-10-18
+- Node.js 18 named "Hydrogen". (LTS) Released 2022-04-19.
+- Node.js 19 (Current) Released 2022-10-18.
+- OpenJS Collaborator Summit on 2022-10-01 at Dublin.
+
+## 2023
+
+- Node.js 20 will be released on 2023-04-18. No code name has been assigned as of today.
