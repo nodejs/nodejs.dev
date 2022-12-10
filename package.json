@@ -119,7 +119,7 @@
     "babel-jest": "^29.0.3",
     "babel-loader": "^9.1.0",
     "babel-plugin-prismjs": "^2.1.0",
-    "babel-preset-gatsby": "^2.22.1",
+    "babel-preset-gatsby": "^3.2.0",
     "eslint": "^8.29.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
