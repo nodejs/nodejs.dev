@@ -101,10 +101,9 @@ const SearchBar = (): JSX.Element => {
 
   const focusSearchResult = () => {
     if (listRef.current) {
-      const el =
-        listRef.current.children[activeIndexRef.current];
+      const el = listRef.current.children[activeIndexRef.current];
       el?.querySelector('a')?.focus();
-      el?.scrollIntoView({behavior: "smooth", block: "nearest"});
+      el?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   };
 
@@ -134,9 +133,10 @@ const SearchBar = (): JSX.Element => {
     preventDefault: true,
     callback: () => {
       if (isExpanded && !isEmpty && listRef.current) {
-        activeIndexRef.current =  activeIndexRef.current + 1 > listRef.current.children.length - 1
-          ? 0
-          : activeIndexRef.current + 1;
+        activeIndexRef.current =
+          activeIndexRef.current + 1 > listRef.current.children.length - 1
+            ? 0
+            : activeIndexRef.current + 1;
 
         focusSearchResult();
       }
