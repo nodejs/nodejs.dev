@@ -104,7 +104,7 @@ const SearchBar = (): JSX.Element => {
       const el =
         listRef.current.children[activeIndexRef.current];
       el?.querySelector('a')?.focus();
-      el?.scrollIntoView();
+      el?.scrollIntoView({behavior: "smooth", block: "nearest"});
     }
   };
 
