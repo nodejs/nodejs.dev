@@ -130,7 +130,7 @@ const SearchBar = (): JSX.Element => {
 
   useKeyPress({
     targetKey: 'ArrowDown',
-    preventDefault: true,
+    preventDefault: isExpanded && !isEmpty,
     callback: () => {
       if (isExpanded && !isEmpty && listRef.current) {
         activeIndexRef.current =
@@ -145,7 +145,7 @@ const SearchBar = (): JSX.Element => {
 
   useKeyPress({
     targetKey: 'ArrowUp',
-    preventDefault: true,
+    preventDefault: isExpanded && !isEmpty,
     callback: () => {
       if (isExpanded && !isEmpty && listRef.current) {
         activeIndexRef.current =
