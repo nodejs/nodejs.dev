@@ -3,7 +3,7 @@ import { Calendar, momentLocalizer, Views, View } from 'react-big-calendar';
 import { sanitize } from 'isomorphic-dompurify';
 import moment from 'moment';
 import { usePopper } from 'react-popper';
-import Layout from '../../components/Layout';
+import Layout from '../../layouts/default';
 import { CalendarEvent } from '../../types';
 import { useGCalAPI } from '../../hooks/useGCalAPI';
 import style from './index.module.scss';
