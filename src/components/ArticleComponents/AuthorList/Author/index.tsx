@@ -19,6 +19,10 @@ const Author = ({
   const githubUserName = username.trim();
   const githubLink = `https://github.com/${githubUserName}`;
   const githubImgLink = `https://github.com/${githubUserName}.png?size=${size}`;
+  
+  const authorImg = {
+    backgroundImage: `url(${githubImgLink}), url(${authorPlaceholderImg})`,
+  };
 
   // If it's the first author then no margin left.
   const mleft = index === 0 ? { marginLeft: 0 } : {};
@@ -40,9 +44,7 @@ const Author = ({
         style={mleft}
       >
         <span
-          style={{
-            backgroundImage: `url(${githubImgLink}), url(${authorPlaceholderImg})`,
-          }}
+          style={authorImg}
         />
       </a>
     </li>
