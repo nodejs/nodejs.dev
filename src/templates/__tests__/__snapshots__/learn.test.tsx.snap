@@ -375,10 +375,7 @@ exports[`Learn Template renders correctly 1`] = `
                 style="margin-left: 0px;"
                 target="_blank"
               >
-                <img
-                  alt=""
-                  src="https://github.com/test-user1.png?size=60"
-                />
+                <span />
               </a>
             </li>
             <li>
@@ -389,10 +386,7 @@ exports[`Learn Template renders correctly 1`] = `
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <img
-                  alt=""
-                  src="https://github.com/test-user2.png?size=60"
-                />
+                <span />
               </a>
             </li>
           </ul>
