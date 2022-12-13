@@ -6,15 +6,13 @@ describe('Author component', () => {
   it('renders correctly', () => {
     const username = 'test-author';
     const { container } = render(
-      <Author index={1} username={username} githubImgLink="" />
+      <Author index={1} username={username} size="60" />
     );
     expect(container).toMatchSnapshot();
   });
 
   it('does not render without a username', () => {
-    const { container } = render(
-      <Author index={0} username="" githubImgLink="" />
-    );
+    const { container } = render(<Author index={0} username="" size="" />);
     expect(container).toMatchSnapshot();
   });
 });
