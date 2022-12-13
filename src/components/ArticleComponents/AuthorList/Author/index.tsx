@@ -19,7 +19,7 @@ const Author = ({
   const githubUserName = username.trim();
   const githubLink = `https://github.com/${githubUserName}`;
   const githubImgLink = `https://github.com/${githubUserName}.png?size=${size}`;
-  
+
   const authorImg = {
     backgroundImage: `url(${githubImgLink}), url(${authorPlaceholderImg})`,
   };
@@ -43,9 +43,7 @@ const Author = ({
         rel="noopener noreferrer"
         style={mleft}
       >
-        <span
-          style={authorImg}
-        />
+        <span style={authorImg} />
       </a>
     </li>
   );

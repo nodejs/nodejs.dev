@@ -11,10 +11,7 @@ exports[`Author component does not render without a username 1`] = `
       style="margin-left: 0px;"
       target="_blank"
     >
-      <img
-        alt=""
-        src="https://github.com/.png?size="
-      />
+      <span />
     </a>
   </li>
 </div>
@@ -30,10 +27,7 @@ exports[`Author component renders correctly 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
-      <img
-        alt=""
-        src="https://github.com/test-author.png?size=60"
-      />
+      <span />
     </a>
   </li>
 </div>
