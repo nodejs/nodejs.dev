@@ -1,6 +1,7 @@
 import React from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import styles from './index.module.scss';
+import authorPlaceholderImg from '../../../../images/placeholder-img.png';
 
 interface Props {
   index: number;
@@ -38,7 +39,11 @@ const Author = ({
         rel="noopener noreferrer"
         style={mleft}
       >
-        <img src={githubImgLink} alt="" />
+        <span
+          style={{
+            backgroundImage: `url(${githubImgLink}), url(${authorPlaceholderImg})`,
+          }}
+        />
       </a>
     </li>
   );
