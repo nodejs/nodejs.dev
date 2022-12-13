@@ -2,7 +2,7 @@
 title: security
 displayTitle: Security
 description: "Security | Node.js"
-authors: reedloden,XhmikosR,Trott,fhemberger,MaledongGit,yous,sam-github,vdeturckheim,tniessen,richardlau,nschonni,mikeal,e-jigsaw,parthlaw
+authors: reedloden, XhmikosR, Trott, fhemberger, MaledongGit, yous, sam-github, vdeturckheim, tniessen,richardlau, nschonni, mikeal, e-jigsaw, parthlaw
 category: about
 ---
 
