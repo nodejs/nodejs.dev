@@ -99,7 +99,7 @@ const SearchBar = (): JSX.Element => {
   const toggleContainer = () =>
     isExpanded ? collapseContainer() : expandContainer();
 
-  const focusSearchResult = () => {
+  const focusActiveSearchItem = () => {
     if (listRef.current) {
       const el = listRef.current.children[activeIndexRef.current];
       el?.querySelector('a')?.focus();
@@ -128,35 +128,30 @@ const SearchBar = (): JSX.Element => {
     },
   });
 
-  useKeyPress({
-    targetKey: 'ArrowDown',
-    preventDefault: isExpanded && !isEmpty,
-    callback: () => {
-      if (isExpanded && !isEmpty && listRef.current) {
-        activeIndexRef.current =
-          activeIndexRef.current + 1 > listRef.current.children.length - 1
-            ? 0
-            : activeIndexRef.current + 1;
+  const handleSearchResultFocus = (e: React.KeyboardEvent) => {
+    if (!isExpanded || isEmpty || !listRef.current) return;
 
-        focusSearchResult();
-      }
-    },
-  });
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      activeIndexRef.current =
+        activeIndexRef.current + 1 > listRef.current.children.length - 1
+          ? 0
+          : activeIndexRef.current + 1;
 
-  useKeyPress({
-    targetKey: 'ArrowUp',
-    preventDefault: isExpanded && !isEmpty,
-    callback: () => {
-      if (isExpanded && !isEmpty && listRef.current) {
-        activeIndexRef.current =
-          activeIndexRef.current - 1 < 0
-            ? listRef.current.children.length - 1
-            : activeIndexRef.current - 1;
+      focusActiveSearchItem();
+    }
 
-        focusSearchResult();
-      }
-    },
-  });
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+
+      activeIndexRef.current =
+        activeIndexRef.current - 1 < 0
+          ? listRef.current.children.length - 1
+          : activeIndexRef.current - 1;
+
+      focusActiveSearchItem();
+    }
+  };
 
   return (
     <motion.div
@@ -167,6 +162,7 @@ const SearchBar = (): JSX.Element => {
       transition={containerTransition}
       ref={parentRef}
       onBlur={onBlurHandler}
+      onKeyDown={handleSearchResultFocus}
     >
       <div
         className={styles.searchInputContainer}
