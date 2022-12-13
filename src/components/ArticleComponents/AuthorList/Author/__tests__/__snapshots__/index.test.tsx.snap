@@ -13,7 +13,7 @@ exports[`Author component does not render without a username 1`] = `
     >
       <img
         alt=""
-        src=""
+        src="https://github.com/.png?size="
       />
     </a>
   </li>
@@ -32,7 +32,7 @@ exports[`Author component renders correctly 1`] = `
     >
       <img
         alt=""
-        src=""
+        src="https://github.com/test-author.png?size=60"
       />
     </a>
   </li>

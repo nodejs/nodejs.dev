@@ -377,6 +377,7 @@ exports[`Learn Template renders correctly 1`] = `
               >
                 <img
                   alt=""
+                  src="https://github.com/test-user1.png?size=60"
                 />
               </a>
             </li>
@@ -390,6 +391,7 @@ exports[`Learn Template renders correctly 1`] = `
               >
                 <img
                   alt=""
+                  src="https://github.com/test-user2.png?size=60"
                 />
               </a>
             </li>
