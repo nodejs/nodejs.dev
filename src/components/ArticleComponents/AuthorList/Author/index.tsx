@@ -5,16 +5,19 @@ import styles from './index.module.scss';
 interface Props {
   index: number;
   username: string;
-  githubImgLink: string;
+  size: string;
 }
 
 const Author = ({
   index,
   username,
+  size = '64',
   intl,
-  githubImgLink,
 }: Props & WrappedComponentProps) => {
-  const githubLink = `https://github.com/${username}`;
+  // Clean up username and build links.
+  const githubUserName = username.trim();
+  const githubLink = `https://github.com/${githubUserName}`;
+  const githubImgLink = `https://github.com/${githubUserName}.png?size=${size}`;
 
   // If it's the first author then no margin left.
   const mleft = index === 0 ? { marginLeft: 0 } : {};
