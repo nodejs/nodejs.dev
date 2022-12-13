@@ -411,11 +411,16 @@ exports[`Package Manager Page renders correctly 1`] = `
       <article
         class="article"
       >
-        <h1
-          class="headline"
+        <div
+          class="header"
         >
-          Mock Title
-        </h1>
+          <h1
+            class="headline"
+          >
+            Mock Title
+          </h1>
+          <p />
+        </div>
         <div />
         <div />
         <div>

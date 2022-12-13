@@ -249,11 +249,16 @@ exports[`PageLayout component renders correctly with data 1`] = `
       <article
         class="article"
       >
-        <h1
-          class="headline"
+        <div
+          class="header"
         >
-          mock-title
-        </h1>
+          <h1
+            class="headline"
+          >
+            mock-title
+          </h1>
+          <p />
+        </div>
         <div
           class="authorList"
         >

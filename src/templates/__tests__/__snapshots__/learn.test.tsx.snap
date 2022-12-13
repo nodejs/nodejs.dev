@@ -358,9 +358,16 @@ exports[`Learn Template renders correctly 1`] = `
       <article
         class="article"
       >
-        <h1
-          class="headline"
-        />
+        <div
+          class="header"
+        >
+          <h1
+            class="headline"
+          />
+          <p>
+            test-description
+          </p>
+        </div>
         <div
           class="authorList"
         >
