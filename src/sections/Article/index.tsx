@@ -63,7 +63,7 @@ const Article = ({
 }: Props): JSX.Element => (
   <article className={styles.article}>
     {childrenPosition === 'before' && children && <div>{children}</div>}
-    <div className="header">
+    <div>
       <h1 className={styles.headline}>{title}</h1>
       <p>{description}</p>
     </div>
