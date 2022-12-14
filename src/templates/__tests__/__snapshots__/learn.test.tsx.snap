@@ -372,7 +372,6 @@ exports[`Learn Template renders correctly 1`] = `
                 class="link"
                 href="https://github.com/test-user1"
                 rel="noopener noreferrer"
-                style="margin-left: 0px;"
                 target="_blank"
               >
                 <span />

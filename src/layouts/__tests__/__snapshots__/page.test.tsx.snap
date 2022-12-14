@@ -265,7 +265,6 @@ exports[`PageLayout component renders correctly with data 1`] = `
                 class="link"
                 href="https://github.com/mock-author"
                 rel="noopener noreferrer"
-                style="margin-left: 0px;"
                 target="_blank"
               >
                 <span />

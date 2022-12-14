@@ -8,7 +8,6 @@ exports[`Author component does not render without a username 1`] = `
       class="link"
       href="https://github.com/"
       rel="noopener noreferrer"
-      style="margin-left: 0px;"
       target="_blank"
     >
       <span />

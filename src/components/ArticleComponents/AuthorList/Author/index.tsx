@@ -4,13 +4,11 @@ import styles from './index.module.scss';
 import authorPlaceholderImg from '../../../../images/placeholder-img.png';
 
 interface Props {
-  index: number;
   username: string;
   size: string;
 }
 
 const Author = ({
-  index,
   username,
   size = '64',
   intl,
@@ -23,9 +21,6 @@ const Author = ({
   const authorImg = {
     backgroundImage: `url(${githubImgLink}), url(${authorPlaceholderImg})`,
   };
-
-  // If it's the first author then no margin left.
-  const mleft = index === 0 ? { marginLeft: 0 } : {};
 
   const translation = intl.formatMessage(
     { id: 'components.author.githubLinkLabel' },
@@ -41,7 +36,6 @@ const Author = ({
         key={username}
         target="_blank"
         rel="noopener noreferrer"
-        style={mleft}
       >
         <span style={authorImg} />
       </a>

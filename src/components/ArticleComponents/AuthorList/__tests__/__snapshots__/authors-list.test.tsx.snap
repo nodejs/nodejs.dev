@@ -13,7 +13,6 @@ exports[`AuthorsList component renders correctly 1`] = `
           class="link"
           href="https://github.com/test-author"
           rel="noopener noreferrer"
-          style="margin-left: 0px;"
           target="_blank"
         >
           <span />
