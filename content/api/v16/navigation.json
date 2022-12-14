@@ -1034,6 +1034,12 @@
       "name": "test"
     },
     {
+      "slug": "/api/v16/test/#tapstream",
+      "title": "TapStream",
+      "type": "class",
+      "name": "test"
+    },
+    {
       "slug": "/api/v16/test/#testcontext",
       "title": "TestContext",
       "type": "class",
