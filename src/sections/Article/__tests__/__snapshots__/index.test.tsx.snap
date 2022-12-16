@@ -21,13 +21,9 @@ exports[`Article component renders correctly 1`] = `
             class="link"
             href="https://github.com/test-user1"
             rel="noopener noreferrer"
-            style="margin-left: 0px;"
             target="_blank"
           >
-            <img
-              alt=""
-              src="https://github.com/test-user1.png?size=60"
-            />
+            <span />
           </a>
         </li>
         <li>
@@ -38,10 +34,7 @@ exports[`Article component renders correctly 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            <img
-              alt=""
-              src="https://github.com/test-user2.png?size=60"
-            />
+            <span />
           </a>
         </li>
       </ul>
@@ -319,13 +312,9 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
             class="link"
             href="https://github.com/test-user1"
             rel="noopener noreferrer"
-            style="margin-left: 0px;"
             target="_blank"
           >
-            <img
-              alt=""
-              src="https://github.com/test-user1.png?size=60"
-            />
+            <span />
           </a>
         </li>
         <li>
@@ -336,10 +325,7 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            <img
-              alt=""
-              src="https://github.com/test-user2.png?size=60"
-            />
+            <span />
           </a>
         </li>
       </ul>
@@ -520,13 +506,9 @@ exports[`Article component should accept and render child components 1`] = `
             class="link"
             href="https://github.com/test-user1"
             rel="noopener noreferrer"
-            style="margin-left: 0px;"
             target="_blank"
           >
-            <img
-              alt=""
-              src="https://github.com/test-user1.png?size=60"
-            />
+            <span />
           </a>
         </li>
         <li>
@@ -537,10 +519,7 @@ exports[`Article component should accept and render child components 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            <img
-              alt=""
-              src="https://github.com/test-user2.png?size=60"
-            />
+            <span />
           </a>
         </li>
       </ul>
