@@ -5,13 +5,13 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.2.0" data={{"update":{"type":"introduced_in","version":["v11.8.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"introduced_in","version":["v11.8.0"]}}} />
 
-<Metadata version="v19.2.0" data={{"type":"misc"}} />
+<Metadata version="v19.3.0" data={{"type":"misc"}} />
 
-<Metadata version="v19.2.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v19.3.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v19.2.0" data={{"name":"report"}} />
+<Metadata version="v19.3.0" data={{"name":"report"}} />
 
 Delivers a JSON-formatted diagnostic summary, written to a file.
 
@@ -609,7 +609,7 @@ Specific API documentation can be found under
 
 ### Interaction with workers
 
-<Metadata version="v19.2.0" data={{"changes":[{"version":["v13.9.0","v12.16.2"],"pr-url":"https://github.com/nodejs/node/pull/31386","description":"Workers are now included in the report."}]}} />
+<Metadata version="v19.3.0" data={{"changes":[{"version":["v13.9.0","v12.16.2"],"pr-url":"https://github.com/nodejs/node/pull/31386","description":"Workers are now included in the report."}]}} />
 
 [`Worker`][] threads can create reports in the same way that the main thread
 does.

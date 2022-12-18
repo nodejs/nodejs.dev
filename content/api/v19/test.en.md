@@ -5,11 +5,11 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.2.0" data={{"update":{"type":"introduced_in","version":["v18.0.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"introduced_in","version":["v18.0.0"]}}} />
 
-<Metadata version="v19.2.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v19.3.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
-<Metadata version="v19.2.0" data={{"source_link":"lib/test.js"}} />
+<Metadata version="v19.3.0" data={{"source_link":"lib/test.js"}} />
 
 The `node:test` module facilitates the creation of JavaScript tests that
 report results in [TAP][] format. To access it:
@@ -298,9 +298,9 @@ test('a test that creates asynchronous activity', (t) => {
 
 ### Watch mode
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v19.2.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.2.0"]}}} />
 
-<Metadata version="v19.2.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v19.3.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 The Node.js test runner supports running in watch mode by passing the `--watch` flag:
 
@@ -459,7 +459,7 @@ test('spies on an object method', (t) => {
 
 ### <DataTag tag="M" /> `run([options])`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.9.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.9.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for running tests. The following
   properties are supported:
@@ -491,7 +491,7 @@ run({ files: [path.resolve('./tests/test.js')] })
 
 ### <DataTag tag="M" /> `test([name][, options][, fn])`
 
-<Metadata version="v19.2.0" data={{"changes":[{"version":["v18.8.0","v16.18.0"],"pr-url":"https://github.com/nodejs/node/pull/43554","description":"Add a `signal` option."},{"version":["v18.7.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/43505","description":"Add a `timeout` option."}],"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+<Metadata version="v19.3.0" data={{"changes":[{"version":["v18.8.0","v16.18.0"],"pr-url":"https://github.com/nodejs/node/pull/43554","description":"Add a `signal` option."},{"version":["v18.7.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/43505","description":"Add a `timeout` option."}],"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name of the test, which is displayed when reporting test
   results. **Default:** The `name` property of `fn`, or `'<anonymous>'` if `fn`
@@ -612,7 +612,7 @@ same as [`it([name], { todo: true }[, fn])`][it options].
 
 ### <DataTag tag="M" /> `before([fn][, options])`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function.
   If the hook uses callbacks,
@@ -638,7 +638,7 @@ describe('tests', async () => {
 
 ### <DataTag tag="M" /> `after([fn][, options])`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function.
   If the hook uses callbacks,
@@ -664,7 +664,7 @@ describe('tests', async () => {
 
 ### <DataTag tag="M" /> `beforeEach([fn][, options])`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function.
   If the hook uses callbacks,
@@ -691,7 +691,7 @@ describe('tests', async () => {
 
 ### <DataTag tag="M" /> `afterEach([fn][, options])`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function.
   If the hook uses callbacks,
@@ -718,14 +718,14 @@ describe('tests', async () => {
 
 ### <DataTag tag="C" /> `MockFunctionContext`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 The `MockFunctionContext` class is used to inspect or manipulate the behavior of
 mocks created via the [`MockTracker`][] APIs.
 
 #### <DataTag tag="M" /> `ctx.calls`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 * [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
@@ -745,7 +745,7 @@ mock. Each entry in the array is an object with the following properties.
 
 #### <DataTag tag="M" /> `ctx.callCount()`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 * Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of times that this mock has been invoked.
 
@@ -755,7 +755,7 @@ is a getter that creates a copy of the internal call tracking array.
 
 #### <DataTag tag="M" /> `ctx.mockImplementation(implementation)`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 * `implementation` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The function to be used as the
   mock's new implementation.
@@ -790,7 +790,7 @@ test('changes a mock behavior', (t) => {
 
 #### <DataTag tag="M" /> `ctx.mockImplementationOnce(implementation[, onCall])`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 * `implementation` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The function to be used as the
   mock's implementation for the invocation number specified by `onCall`.
@@ -830,16 +830,22 @@ test('changes a mock behavior once', (t) => {
 });
 ```
 
+#### <DataTag tag="M" /> `ctx.resetCalls()`
+
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.3.0"]}}} />
+
+Resets the call history of the mock function.
+
 #### <DataTag tag="M" /> `ctx.restore()`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 Resets the implementation of the mock function to its original behavior. The
 mock can still be used after calling this function.
 
 ### <DataTag tag="C" /> `MockTracker`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 The `MockTracker` class is used to manage mocking functionality. The test runner
 module provides a top level `mock` export which is a `MockTracker` instance.
@@ -848,7 +854,7 @@ Each test also provides its own `MockTracker` instance via the test context's
 
 #### <DataTag tag="M" /> `mock.fn([original[, implementation]][, options])`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 * `original` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) An optional function to create a mock on.
   **Default:** A no-op function.
@@ -895,9 +901,16 @@ test('mocks a counting function', (t) => {
 });
 ```
 
+#### <DataTag tag="M" /> `mock.getter(object, methodName[, implementation][, options])`
+
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.3.0"]}}} />
+
+This function is syntax sugar for [`MockTracker.method`][] with `options.getter`
+set to `true`.
+
 #### <DataTag tag="M" /> `mock.method(object, methodName[, implementation][, options])`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 * `object` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The object whose method is being mocked.
 * `methodName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The identifier of the method on `object` to mock.
@@ -949,7 +962,7 @@ test('spies on an object method', (t) => {
 
 #### <DataTag tag="M" /> `mock.reset()`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 This function restores the default behavior of all mocks that were previously
 created by this `MockTracker` and disassociates the mocks from the
@@ -963,15 +976,22 @@ function manually is recommended.
 
 #### <DataTag tag="M" /> `mock.restoreAll()`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 This function restores the default behavior of all mocks that were previously
 created by this `MockTracker`. Unlike `mock.reset()`, `mock.restoreAll()` does
 not disassociate the mocks from the `MockTracker` instance.
 
+#### <DataTag tag="M" /> `mock.setter(object, methodName[, implementation][, options])`
+
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.3.0"]}}} />
+
+This function is syntax sugar for [`MockTracker.method`][] with `options.setter`
+set to `true`.
+
 ### <DataTag tag="C" /> `TapStream`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.9.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.9.0"]}}} />
 
 * Extends [`ReadableStream`](/api/webstreams#readablestream)
 
@@ -1009,7 +1029,7 @@ Emitted when a test passes.
 
 ### <DataTag tag="C" /> `TestContext`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
 
 An instance of `TestContext` is passed to each test function in order to
 interact with the test runner. However, the `TestContext` constructor is not
@@ -1017,7 +1037,7 @@ exposed as part of the API.
 
 #### <DataTag tag="M" /> `context.beforeEach([fn][, options])`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function. The first argument
   to this function is a [`TestContext`][] object. If the hook uses callbacks,
@@ -1045,9 +1065,34 @@ test('top level test', async (t) => {
 });
 ```
 
+#### <DataTag tag="M" /> `context.after([fn][, options])`
+
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v19.3.0"]}}} />
+
+* `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function. The first argument
+  to this function is a [`TestContext`][] object. If the hook uses callbacks,
+  the callback function is passed as the second argument. **Default:** A no-op
+  function.
+* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
+  properties are supported:
+  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
+    If unspecified, subtests inherit this value from their parent.
+    **Default:** `Infinity`.
+
+This function is used to create a hook that runs after the current test
+finishes.
+
+```js
+test('top level test', async (t) => {
+  t.after((t) => t.diagnostic(`finished running ${t.name}`));
+  assert.ok('some relevant assertion here');
+});
+```
+
 #### <DataTag tag="M" /> `context.afterEach([fn][, options])`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function. The first argument
   to this function is a [`TestContext`][] object. If the hook uses callbacks,
@@ -1077,7 +1122,7 @@ test('top level test', async (t) => {
 
 #### <DataTag tag="M" /> `context.diagnostic(message)`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
 
 * `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Message to be displayed as a TAP diagnostic.
 
@@ -1093,13 +1138,13 @@ test('top level test', (t) => {
 
 #### <DataTag tag="M" /> `context.name`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 The name of the test.
 
 #### <DataTag tag="M" /> `context.runOnly(shouldRunOnlyTests)`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
 
 * `shouldRunOnlyTests` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether or not to run `only` tests.
 
@@ -1121,7 +1166,7 @@ test('top level test', (t) => {
 
 #### <DataTag tag="M" /> `context.signal`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.7.0","v16.17.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.7.0","v16.17.0"]}}} />
 
 * [`AbortSignal`](/api/globals#abortsignal) Can be used to abort test subtasks when the test has been
   aborted.
@@ -1134,7 +1179,7 @@ test('top level test', async (t) => {
 
 #### <DataTag tag="M" /> `context.skip([message])`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
 
 * `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Optional skip message to be displayed in TAP output.
 
@@ -1152,7 +1197,7 @@ test('top level test', (t) => {
 
 #### <DataTag tag="M" /> `context.todo([message])`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
 
 * `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Optional `TODO` message to be displayed in TAP output.
 
@@ -1169,7 +1214,7 @@ test('top level test', (t) => {
 
 #### <DataTag tag="M" /> `context.test([name][, options][, fn])`
 
-<Metadata version="v19.2.0" data={{"changes":[{"version":["v18.8.0","v16.18.0"],"pr-url":"https://github.com/nodejs/node/pull/43554","description":"Add a `signal` option."},{"version":["v18.7.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/43505","description":"Add a `timeout` option."}],"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+<Metadata version="v19.3.0" data={{"changes":[{"version":["v18.8.0","v16.18.0"],"pr-url":"https://github.com/nodejs/node/pull/43554","description":"Add a `signal` option."},{"version":["v18.7.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/43505","description":"Add a `timeout` option."}],"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name of the subtest, which is displayed when reporting
   test results. **Default:** The `name` property of `fn`, or `'<anonymous>'` if
@@ -1215,7 +1260,7 @@ test('top level test', async (t) => {
 
 ### <DataTag tag="C" /> `SuiteContext`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.7.0","v16.17.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.7.0","v16.17.0"]}}} />
 
 An instance of `SuiteContext` is passed to each suite function in order to
 interact with the test runner. However, the `SuiteContext` constructor is not
@@ -1223,13 +1268,13 @@ exposed as part of the API.
 
 #### <DataTag tag="M" /> `context.name`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 The name of the suite.
 
 #### <DataTag tag="M" /> `context.signal`
 
-<Metadata version="v19.2.0" data={{"update":{"type":"added","version":["v18.7.0","v16.17.0"]}}} />
+<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v18.7.0","v16.17.0"]}}} />
 
 * [`AbortSignal`](/api/globals#abortsignal) Can be used to abort test subtasks when the test has been
   aborted.
@@ -1239,6 +1284,7 @@ The name of the suite.
 [`--test-only`]: /api/v19/cli#--test-only
 [`--test`]: /api/v19/cli#--test
 [`MockFunctionContext`]: #class-mockfunctioncontext
+[`MockTracker.method`]: #mockmethodobject-methodname-implementation-options
 [`MockTracker`]: #class-mocktracker
 [`SuiteContext`]: #class-suitecontext
 [`TestContext`]: #class-testcontext
