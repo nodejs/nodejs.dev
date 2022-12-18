@@ -263,7 +263,7 @@ exports[`Learn Template renders correctly 1`] = `
         >
           <button
             aria-expanded="false"
-            class="t-body2 title"
+            class="t-body2 title titleDone"
             type="button"
           >
             <span>
@@ -311,7 +311,7 @@ exports[`Learn Template renders correctly 1`] = `
         >
           <button
             aria-expanded="false"
-            class="t-body2 title"
+            class="t-body2 title titleDone"
             type="button"
           >
             <span>
