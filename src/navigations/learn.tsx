@@ -14,13 +14,16 @@ const LearnNavigationSection = ({
   section,
   children,
   currentSlug,
+  isAllRead,
 }: React.PropsWithChildren<NavigationSectionData>) => {
   const { isSectionOpen, toggleSection } = useNavigationSection({
     section,
     currentSlug,
   });
 
-  const titleClassNames = classnames('t-body2', styles.title);
+  const titleClassNames = classnames('t-body2', styles.title, {
+    [styles.titleDone]: isAllRead,
+  });
 
   const sectionTitle = (
     <button
@@ -67,6 +70,7 @@ const LearnNavigation = ({ sections, currentSlug }: Props) => {
       title={key}
       section={data}
       currentSlug={currentSlug}
+      isAllRead={data.every(({ slug }) => isRead(slug))}
     >
       {data.map(item => (
         <NavigationComponents.NavigationItem
