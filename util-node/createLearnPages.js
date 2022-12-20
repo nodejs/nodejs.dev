@@ -10,29 +10,29 @@ function getYamlPageIdentifier(relativePath) {
 }
 
 function getEdgesToLocaleMap(edges) {
-  const mapEdgesToLocale  = new Map();
+  const mapEdgesToLocale = new Map();
   edges.forEach(edge => {
-    const {locale} = edge.node.fields;
+    const { locale } = edge.node.fields;
 
-    if(!mapEdgesToLocale.has(locale)) {
+    if (!mapEdgesToLocale.has(locale)) {
       mapEdgesToLocale.set(locale, []);
     }
 
     const localeEdges = mapEdgesToLocale.get(locale);
     localeEdges.push(edge);
     mapEdgesToLocale.set(locale, localeEdges);
-  })
+  });
   return mapEdgesToLocale;
 }
 
 const getLearnEdgeByPageId = pageId => edge =>
-    getYamlPageIdentifier(edge.node.parent.relativePath) === pageId;
+  getYamlPageIdentifier(edge.node.parent.relativePath) === pageId;
 
 const getIteratedPagesForYaml = (yamlNavigation, edges) => {
-  const iteratedPagesForSection = {}
+  const iteratedPagesForSection = {};
   yamlNavigation.forEach(({ section, items }) => {
     iteratedPagesForSection[section] = [];
-    
+
     // This adds the items to the navigation section data based on the order defined within the YAML file
     // If the page doesn't exist it will be set as null and then removed via Array.filter()
     const iteratedPages = iterateEdges(
@@ -44,39 +44,42 @@ const getIteratedPagesForYaml = (yamlNavigation, edges) => {
         .filter(edge => edge && edge.node)
     );
 
-    iteratedPagesForSection[section] = iteratedPages
-  })
-  return iteratedPagesForSection
-}
+    iteratedPagesForSection[section] = iteratedPages;
+  });
+  return iteratedPagesForSection;
+};
 
 function getNavigationData(yamlNavigation, edges) {
   const navigationData = {};
   const iteratedPageForYaml = getIteratedPagesForYaml(yamlNavigation, edges);
   Object.entries(iteratedPageForYaml).forEach(([section, iteratedPages]) => {
-    navigationData[section] = iteratedPages.map(mapToNavigationData)
+    navigationData[section] = iteratedPages.map(mapToNavigationData);
   });
-  return navigationData
+  return navigationData;
 }
 
 function getLearnPages(yamlNavigation, edges) {
   const learnPages = [];
   const iteratedPageForYaml = getIteratedPagesForYaml(yamlNavigation, edges);
-  Object.values(iteratedPageForYaml).forEach((iteratedPages) => {
-    learnPages.push(...iteratedPages)
+  Object.values(iteratedPageForYaml).forEach(iteratedPages => {
+    learnPages.push(...iteratedPages);
   });
   return learnPages;
 }
 
 function createLearnPages(learnEdges, yamlNavigationData) {
   const mapEdgesToLocale = getEdgesToLocaleMap(learnEdges);
-  const learnPages = getLearnPages(yamlNavigationData, mapEdgesToLocale.get(defaultLanguage));
+  const learnPages = getLearnPages(
+    yamlNavigationData,
+    mapEdgesToLocale.get(defaultLanguage)
+  );
 
   const navigationData = {};
-  
+
   mapEdgesToLocale.forEach((edges, locale) => {
     navigationData[locale] = getNavigationData(yamlNavigationData, edges);
-  })
-  
+  });
+
   return { learnPages, navigationData };
 }
 
