@@ -51,7 +51,7 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - uses: jongwooo/gatsby-cache@v1.2.1
+      - uses: jongwooo/gatsby-cache@v1.2.3
         with:
           key: generate-preview-gatsby-ubuntu-latest
 
