@@ -12,7 +12,7 @@ jobs:
       contents: write
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.2.0
         with:
           ref: main
           token: ${{ secrets.ACCESS_TOKEN_ACTIONS }}
