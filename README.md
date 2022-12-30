@@ -68,6 +68,7 @@ also have committer rights on the repo.
 * [@MylesBorins](https://github.com/MylesBorins) - Myles Borins
 * [@ovflowd](https://github.com/ovflowd) - Claudio Wunder
 * [@rodion-arr](https://github.com/rodion-arr) - Rodion Abdurakhimov
+* [@shanpriyan](https://github.com/shanpriyan) - Shanmughapriyan S
 * [@Trott](https://github.com/Trott) - Rich Trott
 
 <!-- ncu-team-sync end -->
