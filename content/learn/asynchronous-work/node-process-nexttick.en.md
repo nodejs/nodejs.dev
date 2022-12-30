@@ -42,7 +42,7 @@ process.nextTick(() => {
 
 ```
 #### Output:
-```
+```bash
 Hello => number 1
 Running at next tick => number 2
 Running before the timeout => number 3
