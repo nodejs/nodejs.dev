@@ -26,11 +26,12 @@ Use `nextTick()` when you want to make sure that in the next event loop iteratio
 
 #### An Example of the order of events:
 ```js
-console.log("hello => number 1");
+console.log("Hello => number 1");
 
 setTimeout(() => {
-  console.log("the timeout running last => number 4");
+  console.log("The timeout running last => number 4");
 }, 0);
+
 setImmediate(() => {
   console.log("Running before the timeout => number 3");
 });
