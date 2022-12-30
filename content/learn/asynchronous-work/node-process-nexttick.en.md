@@ -43,8 +43,8 @@ process.nextTick(() => {
 ```
 #### Output:
 ```
-hello => number 1
+Hello => number 1
 Running at next tick => number 2
 Running before the timeout => number 3
-the timeout running last => number 4
+The timeout running last => number 4
 ```
