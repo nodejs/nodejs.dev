@@ -270,13 +270,9 @@ exports[`PageLayout component renders correctly with data 1`] = `
                 class="link"
                 href="https://github.com/mock-author"
                 rel="noopener noreferrer"
-                style="margin-left: 0px;"
                 target="_blank"
               >
-                <img
-                  alt=""
-                  src="https://github.com/mock-author.png?size=60"
-                />
+                <span />
               </a>
             </li>
           </ul>

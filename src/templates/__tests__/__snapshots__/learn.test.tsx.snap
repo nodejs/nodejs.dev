@@ -263,7 +263,7 @@ exports[`Learn Template renders correctly 1`] = `
         >
           <button
             aria-expanded="false"
-            class="t-body2 title"
+            class="t-body2 title titleDone"
             type="button"
           >
             <span>
@@ -311,7 +311,7 @@ exports[`Learn Template renders correctly 1`] = `
         >
           <button
             aria-expanded="false"
-            class="t-body2 title"
+            class="t-body2 title titleDone"
             type="button"
           >
             <span>
@@ -379,13 +379,9 @@ exports[`Learn Template renders correctly 1`] = `
                 class="link"
                 href="https://github.com/test-user1"
                 rel="noopener noreferrer"
-                style="margin-left: 0px;"
                 target="_blank"
               >
-                <img
-                  alt=""
-                  src="https://github.com/test-user1.png?size=60"
-                />
+                <span />
               </a>
             </li>
             <li>
@@ -396,10 +392,7 @@ exports[`Learn Template renders correctly 1`] = `
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <img
-                  alt=""
-                  src="https://github.com/test-user2.png?size=60"
-                />
+                <span />
               </a>
             </li>
           </ul>

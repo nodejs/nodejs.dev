@@ -13,13 +13,9 @@ exports[`AuthorsList component renders correctly 1`] = `
           class="link"
           href="https://github.com/test-author"
           rel="noopener noreferrer"
-          style="margin-left: 0px;"
           target="_blank"
         >
-          <img
-            alt=""
-            src="https://github.com/test-author.png?size=60"
-          />
+          <span />
         </a>
       </li>
       <li>
@@ -30,10 +26,7 @@ exports[`AuthorsList component renders correctly 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <img
-            alt=""
-            src="https://github.com/another-test-author.png?size=60"
-          />
+          <span />
         </a>
       </li>
     </ul>

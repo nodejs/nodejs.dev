@@ -17,6 +17,7 @@ module.exports = `
         fields {
           slug
           categoryName
+          locale
         }
       }
       next {
