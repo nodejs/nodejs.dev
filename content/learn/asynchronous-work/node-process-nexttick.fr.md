@@ -27,12 +27,15 @@ Utilisez `nextTick()` lorsque vous voulez vous assurer que ce code sera déjà e
 #### Un exemple de l'ordre des événements :
 ```js
 console.log("Bonjour => Numéro 1");
+
 setTimeout(() => {
   console.log("Le timeout s'exécutant en dernier => Numéro 4");
 }, 0);
+
 setImmediate(() => {
   console.log("Exécution avant le timeout => Numéro 3");
 });
+
 process.nextTick(() => {
   console.log("Exécution au prochain tick => Numéro 2");
 });
