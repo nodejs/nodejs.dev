@@ -4,6 +4,7 @@ const path = require('path');
 const yaml = require('yaml');
 const readingTime = require('reading-time');
 const asyncMethods = require('async');
+const safeJSON = require('./util-node/safeJSON');
 const createSlug = require('./util-node/createSlug');
 const getNodeReleasesData = require('./util-node/getNodeReleasesData');
 const getBannersData = require('./util-node/getBannersData');
@@ -104,13 +105,6 @@ exports.createPages = async ({ graphql, actions }) => {
     learnYamlNavigationData
   );
 
-  const {
-    apiPages,
-    latestVersion,
-    navigationData: apiNavigationData,
-    defaultNavigationRedirects: apiRedirects,
-  } = createApiPages(apiEdges, apiTypesNavigationData, nodeReleasesData);
-
   createPage({
     path: learnPath,
     component: learnTemplate,
@@ -161,6 +155,13 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     });
   });
+
+  const {
+    apiPages,
+    latestVersion,
+    navigationData: apiNavigationData,
+    defaultNavigationRedirects: apiRedirects,
+  } = createApiPages(apiEdges, apiTypesNavigationData, nodeReleasesData);
 
   apiPages.forEach(page => {
     createPage({
@@ -226,12 +227,21 @@ exports.onCreatePage = ({ page, actions }) => {
   // Recreates the page with the messages that ReactIntl needs
   // This will be passed to the ReactIntlProvider Component
   // Used within gatsby-browser.js and gatsby-ssr.js
+  const context = { ...page.context };
+  const locale = context.locale || nodeLocales.defaultLanguage;
+  const isLearnPage = context.categoryName === 'learn';
+  if (isLearnPage) {
+    const navigationLocale = context.navigationData[locale]
+      ? locale
+      : nodeLocales.defaultLanguage;
+    context.navigationData = context.navigationData[navigationLocale];
+  }
   createPage({
     ...page,
     context: {
-      ...page.context,
-      intlMessages: getMessagesForLocale(page.context.locale),
-      locale: page.context.locale || nodeLocales.defaultLanguage,
+      ...context,
+      intlMessages: getMessagesForLocale(context.locale),
+      locale,
     },
   });
 };
@@ -334,7 +344,7 @@ exports.sourceNodes = async ({
           internal: {
             type: 'Banners',
             mediaType: 'application/json',
-            content: JSON.stringify(bannersData),
+            content: safeJSON.toString(bannersData),
             contentDigest: createContentDigest(bannersData),
           },
         };
@@ -357,7 +367,7 @@ exports.sourceNodes = async ({
           internal: {
             type: 'Nvm',
             mediaType: 'application/json',
-            content: JSON.stringify(nvmData),
+            content: safeJSON.toString(nvmData),
             contentDigest: createContentDigest(nvmData),
           },
         };
@@ -380,7 +390,7 @@ exports.sourceNodes = async ({
           internal: {
             type: 'NodeReleases',
             mediaType: 'application/json',
-            content: JSON.stringify(nodeReleasesData),
+            content: safeJSON.toString(nodeReleasesData),
             contentDigest: createContentDigest(nodeReleasesData),
           },
         };

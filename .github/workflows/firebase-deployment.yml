@@ -26,22 +26,14 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Gatsby Cache Folder
-        uses: actions/cache@v3
+      - uses: jongwooo/gatsby-cache@v1.2.1
         with:
-          key: cache-folder-ubuntu-latest
-          path: .cache
-
-      - name: Gatsby Public Folder
-        uses: actions/cache@v3
-        with:
-          key: public-folder-ubuntu-latest
-          path: public
+          key: firebase-deployment-gatsby-ubuntu-latest
 
       - name: Build Gatsby
         run: npm run build-ci
 
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: FirebaseExtended/action-hosting-deploy@v0.7.0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NODEJS_INFRASTRUCTURE }}'

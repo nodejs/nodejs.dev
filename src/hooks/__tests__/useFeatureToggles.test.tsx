@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { useFeatureToggles } from '../useFeatureToggles';
+import { appStorage } from '../useStorage';
 import { FeatureToggleProvider } from '../../providers';
 
 describe('useFeatureToggles', () => {
@@ -15,17 +16,23 @@ describe('useFeatureToggles', () => {
     );
   };
 
-  it('should contain feature flag', () => {
-    const localStorageGetSpy = jest
-      .fn()
-      .mockImplementation(() => '["feature-flag-mock"]');
+  const setItemMock = jest.fn();
+  const getItemMock = jest.fn();
 
-    Object.defineProperty(window, 'localStorage', {
-      writable: true,
-      value: {
-        getItem: localStorageGetSpy,
-      },
-    });
+  beforeEach(() => {
+    Storage.prototype.setItem = setItemMock;
+    Storage.prototype.getItem = getItemMock;
+
+    appStorage.clear();
+  });
+
+  afterEach(() => {
+    setItemMock.mockRestore();
+    getItemMock.mockRestore();
+  });
+
+  it('should contain feature flag', () => {
+    getItemMock.mockReturnValue('["feature-flag-mock"]');
 
     const { container } = render(
       <FeatureToggleProvider>
@@ -33,19 +40,12 @@ describe('useFeatureToggles', () => {
       </FeatureToggleProvider>
     );
 
-    expect(localStorageGetSpy).toHaveBeenCalledWith('node_featureFlags');
+    expect(getItemMock).toHaveBeenCalledWith('node_featureFlags');
     expect(container).toMatchSnapshot();
   });
 
   it('should not contain feature flag', () => {
-    const localStorageGetSpy = jest.fn().mockImplementation(() => '[]');
-
-    Object.defineProperty(window, 'localStorage', {
-      writable: true,
-      value: {
-        getItem: localStorageGetSpy,
-      },
-    });
+    getItemMock.mockReturnValue('[]');
 
     const { container } = render(
       <FeatureToggleProvider>
@@ -53,19 +53,12 @@ describe('useFeatureToggles', () => {
       </FeatureToggleProvider>
     );
 
-    expect(localStorageGetSpy).toHaveBeenCalledWith('node_featureFlags');
+    expect(getItemMock).toHaveBeenCalledWith('node_featureFlags');
     expect(container).toMatchSnapshot();
   });
 
   it('should work if localstorage item does not exist ', () => {
-    const localStorageGetSpy = jest.fn().mockImplementation(() => null);
-
-    Object.defineProperty(window, 'localStorage', {
-      writable: true,
-      value: {
-        getItem: localStorageGetSpy,
-      },
-    });
+    getItemMock.mockReturnValue(null);
 
     const { container } = render(
       <FeatureToggleProvider>
@@ -73,7 +66,7 @@ describe('useFeatureToggles', () => {
       </FeatureToggleProvider>
     );
 
-    expect(localStorageGetSpy).toHaveBeenCalledWith('node_featureFlags');
+    expect(getItemMock).toHaveBeenCalledWith('node_featureFlags');
     expect(container).toMatchSnapshot();
   });
 });

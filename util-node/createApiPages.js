@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+const safeJSON = require('./safeJSON');
 const { iterateEdges, mapToNavigationData } = require('./createPageUtils');
 const { apiPath } = require('../pathPrefixes');
 
@@ -31,7 +32,7 @@ function createApiPages(apiEdges, apiTypes, nodeReleases) {
         encoding: 'utf8',
       });
 
-      navigationEntries.push(JSON.parse(navigationFile));
+      navigationEntries.push(safeJSON.parse(navigationFile));
     }
   });
 

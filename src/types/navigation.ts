@@ -2,6 +2,7 @@ export interface NavigationSectionData {
   title: string;
   section: NavigationItemData[];
   currentSlug: string;
+  isAllRead?: boolean;
 }
 
 export interface NavigationItemData {

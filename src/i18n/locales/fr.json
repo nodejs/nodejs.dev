@@ -19,7 +19,7 @@
   "components.downloadReleases.upcomingReleases.content": "Les versions majeures de Node.js entrent dans le statut Current release pendant six mois, ce qui donne aux auteurs de bibliothèques le temps d'ajouter la prise en charge de ces versions. Après six mois, les versions impaires (9, 11, etc.) ne sont plus prises en charge et les versions paires (10, 12, etc.) passent au statut Active LTS et sont prêtes pour une utilisation générale. Le statut de la version LTS est un \"support à long terme\", qui garantit généralement que les bogues critiques seront corrigés pendant un total de 30 mois. Les applications de production ne doivent utiliser que les versions Active LTS ou Maintenance LTS.",
   "components.downloadToggle.current": "Actuel",
   "components.downloadToggle.lts": "LTS",
-  "components.downloadToggle.recommendation": "{selected, select, LTS {Recommended for most users}other {With the latest features}}",
+  "components.downloadToggle.recommendation": "{selected, select, LTS {Recommandé pour la plupart des utilisateurs}other {Avec les dernières fonctionnalités}}",
   "components.editLink.title": "Modifier cette page sur GitHub",
   "components.jsonLink.title": "Afficher en JSON",
   "components.footer.links.trademark": "Politique en matière de marques",

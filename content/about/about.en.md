@@ -44,7 +44,7 @@ If some of this language is unfamiliar, there is a full article on
 
 Node.js is similar in design to, and influenced by, systems like Ruby's
 [Event Machine][] and Python's [Twisted][]. Node.js takes the event model a bit
-further. It presents an [event loop][] as a runtime construct instead of as a library. In other systems,
+further. It presents an event loop as a runtime construct instead of as a library. In other systems,
 there is always a blocking call to start the event-loop.
 Typically, behavior is defined through callbacks at the beginning of a script, and
 at the end a server is started through a blocking call like `EventMachine::run()`.
@@ -66,6 +66,5 @@ over your cores.
 [blocking vs. non-blocking]: /learn/overview-of-blocking-vs-non-blocking/
 [`child_process.fork()`]: /api/child_process/
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: /learn/the-nodejs-event-loop/
 [event machine]: https://github.com/eventmachine/eventmachine
 [twisted]: https://twistedmatrix.com/trac/

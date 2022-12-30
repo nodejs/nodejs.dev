@@ -43,6 +43,10 @@ const SearchBar = (): JSX.Element => {
 
   const isEmpty = !results || results.length === 0;
 
+  const listRef = useRef<HTMLUListElement | null>(null);
+
+  const activeIndexRef = useRef<number>(-1);
+
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
 
@@ -56,6 +60,7 @@ const SearchBar = (): JSX.Element => {
   const collapseContainer = () => {
     setExpanded(false);
     setQuery('');
+    activeIndexRef.current = -1;
   };
 
   useEffect(() => {
@@ -91,15 +96,26 @@ const SearchBar = (): JSX.Element => {
     }
   };
 
+  const toggleContainer = () =>
+    isExpanded ? collapseContainer() : expandContainer();
+
+  const focusActiveSearchItem = () => {
+    if (listRef.current) {
+      const el = listRef.current.children[activeIndexRef.current];
+      el?.querySelector('a')?.focus();
+      el?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  };
+
   useKeyPress({
     targetKey: 'ctrl+k',
-    callback: expandContainer,
+    callback: toggleContainer,
     preventDefault: true,
   });
 
   useKeyPress({
     targetKey: 'meta+k',
-    callback: expandContainer,
+    callback: toggleContainer,
     preventDefault: true,
   });
 
@@ -112,6 +128,31 @@ const SearchBar = (): JSX.Element => {
     },
   });
 
+  const handleSearchResultFocus = (e: React.KeyboardEvent) => {
+    if (!isExpanded || isEmpty || !listRef.current) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      activeIndexRef.current =
+        activeIndexRef.current + 1 > listRef.current.children.length - 1
+          ? 0
+          : activeIndexRef.current + 1;
+
+      focusActiveSearchItem();
+    }
+
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+
+      activeIndexRef.current =
+        activeIndexRef.current - 1 < 0
+          ? listRef.current.children.length - 1
+          : activeIndexRef.current - 1;
+
+      focusActiveSearchItem();
+    }
+  };
+
   return (
     <motion.div
       className={containerClassNames}
@@ -121,6 +162,7 @@ const SearchBar = (): JSX.Element => {
       transition={containerTransition}
       ref={parentRef}
       onBlur={onBlurHandler}
+      onKeyDown={handleSearchResultFocus}
     >
       <div
         className={styles.searchInputContainer}
@@ -178,7 +220,7 @@ const SearchBar = (): JSX.Element => {
             </div>
           )}
           {!isEmpty && (
-            <ul>
+            <ul ref={listRef}>
               {results.map((result: SearchResult) => {
                 const sectionPath =
                   result.category === 'api'
