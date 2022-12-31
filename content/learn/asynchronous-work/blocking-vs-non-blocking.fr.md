@@ -1,7 +1,7 @@
 ---
 title: overview-of-blocking-vs-non-blocking
 displayTitle: "Vue d'ensemble du blocage et du non-blocage"
-authors: ovflowd, thomasbnt
+authors: ovflowd, thomasbnt, HassanBahati
 category: learn
 ---
 
