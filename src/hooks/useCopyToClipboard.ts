@@ -30,6 +30,5 @@ export const useCopyToClipboard = (): [
     };
   }, [copied]);
 
-
   return [copied, copyText];
 };
