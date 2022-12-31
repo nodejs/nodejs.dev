@@ -107,4 +107,3 @@ Ce qui précède place un appel **non-bloquant** à `fs.unlink()` dans le callba
 ## Ressources supplémentaires
 
 * [libuv](https://libuv.org/)
-* [A propos de Node.js](/fr/about/)
