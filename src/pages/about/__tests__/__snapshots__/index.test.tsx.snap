@@ -169,9 +169,7 @@ exports[`About page renders correctly 1`] = `
   <article
     class="article"
   >
-    <div
-      class="header"
-    >
+    <div>
       <h1
         class="headline"
       >

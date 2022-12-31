@@ -5,9 +5,7 @@ exports[`Article component renders correctly 1`] = `
   <article
     class="article"
   >
-    <div
-      class="header"
-    >
+    <div>
       <h1
         class="headline"
       >
@@ -204,9 +202,7 @@ exports[`Article component renders correctly in blog mode 1`] = `
   <article
     class="article"
   >
-    <div
-      class="header"
-    >
+    <div>
       <h1
         class="headline"
       >
@@ -306,9 +302,7 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
   <article
     class="article"
   >
-    <div
-      class="header"
-    >
+    <div>
       <h1
         class="headline"
       >
@@ -505,9 +499,7 @@ exports[`Article component should accept and render child components 1`] = `
   <article
     class="article"
   >
-    <div
-      class="header"
-    >
+    <div>
       <h1
         class="headline"
       >

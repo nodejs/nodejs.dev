@@ -249,9 +249,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
       <article
         class="article"
       >
-        <div
-          class="header"
-        >
+        <div>
           <h1
             class="headline"
           >
