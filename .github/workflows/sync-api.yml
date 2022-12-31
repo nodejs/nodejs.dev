@@ -34,7 +34,7 @@ jobs:
       - name: Lint Markdown files
         run: npm run lint:md
 
-      - uses: jongwooo/gatsby-cache@v1.2.1
+      - uses: jongwooo/gatsby-cache@v1.4.0
         with:
           key: sync-api-gatsby-ubuntu-latest
 

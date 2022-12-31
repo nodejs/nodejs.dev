@@ -2,7 +2,7 @@
 title: understanding-processnexttick
 displayTitle: 'Understanding process.nextTick()'
 description: 'The Node.js process.nextTick function interacts with the event loop in a special way'
-authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais, ovflowd
+authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais, ovflowd, marksist300
 category: learn
 ---
 
@@ -23,3 +23,28 @@ It's the way we can tell the JS engine to process a function asynchronously (aft
 Calling `setTimeout(() => {}, 0)` will execute the function at the end of next tick, much later than when using `nextTick()` which prioritizes the call and executes it just before the beginning of the next tick.
 
 Use `nextTick()` when you want to make sure that in the next event loop iteration that code is already executed.
+
+#### An Example of the order of events:
+```js
+console.log("Hello => number 1");
+
+setTimeout(() => {
+  console.log("The timeout running last => number 4");
+}, 0);
+
+setImmediate(() => {
+  console.log("Running before the timeout => number 3");
+});
+
+process.nextTick(() => {
+  console.log("Running at next tick => number 2");
+});
+
+```
+#### Output:
+```bash
+Hello => number 1
+Running at next tick => number 2
+Running before the timeout => number 3
+The timeout running last => number 4
+```
