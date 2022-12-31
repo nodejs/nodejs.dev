@@ -24,7 +24,7 @@ export const useCopyToClipboard = (): [
   useEffect(() => {
     if (!copied) return undefined;
 
-    const timerId = setTimeout(() => setCopied(false), 300);
+    const timerId = setTimeout(() => setCopied(false), 3000);
     return () => {
       clearTimeout(timerId);
     };
