@@ -32,6 +32,7 @@ describe('useCopyToClipboard', () => {
   });
 
   it('should change to `copied` when copy succeeded', async () => {
+    jest.useFakeTimers();
     const navigatorClipboardWriteTextSpy = jest
       .fn()
       .mockImplementation(() => Promise.resolve());
@@ -49,6 +50,7 @@ describe('useCopyToClipboard', () => {
     await waitFor(() => {
       expect(button).toHaveTextContent('copied');
     });
+    jest.advanceTimersByTime(3000);
     await waitFor(() => {
       expect(button).toHaveTextContent('copy');
     });
