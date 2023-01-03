@@ -14,7 +14,11 @@ const UpcomingReleasesItem = ({
   alreadyReleased,
 }: Props): JSX.Element => {
   const Image = alreadyReleased ? HexagonFilled : HexagonOutline;
-  const Released = alreadyReleased ? <FormattedMessage id="components.UpcomingReleasesItem" /> : '';
+  const Released = alreadyReleased ? (
+    <FormattedMessage id="components.UpcomingReleasesItem" />
+  ) : (
+    ''
+  );
 
   const className = classnames({
     [styles.itemCurrent]: releaseType === 'Current',
