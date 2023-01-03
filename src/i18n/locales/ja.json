@@ -95,5 +95,6 @@
   "blog.categories.release.description": "Node.jsのリリース案内カテゴリ",
   "blog.categories.vulnerability.description": "セキュリティや脆弱性カテゴリ",
   "components.downloadToggle.ltsVersions": "LTSバージョン",
-  "components.downloadToggle.currentVersions": "現在のバージョン"
+  "components.downloadToggle.currentVersions": "現在のバージョン",
+  "components.UpcomingReleasesItem": "Released"
 }
