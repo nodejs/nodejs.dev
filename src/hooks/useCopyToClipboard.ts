@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 
-export const copyToClipboard = async (value: string) => {
-  try {
-    await navigator.clipboard.writeText(value);
-    return true;
-  } catch {
-    return false;
+const copyToClipboard = (value: string) => {
+  if (typeof window === 'undefined') {
+    return Promise.resolve(false);
   }
+
+  return navigator.clipboard
+    .writeText(value)
+    .then(() => true)
+    .catch(() => false);
 };
 
 export const useCopyToClipboard = (): [
@@ -22,12 +24,13 @@ export const useCopyToClipboard = (): [
   }
 
   useEffect(() => {
-    if (!copied) return undefined;
+    if (!copied) {
+      return undefined;
+    }
 
     const timerId = setTimeout(() => setCopied(false), 3000);
-    return () => {
-      clearTimeout(timerId);
-    };
+
+    return () => clearTimeout(timerId);
   }, [copied]);
 
   return [copied, copyText];
