@@ -96,5 +96,5 @@
   "blog.categories.vulnerability.description": "涉及到安全隐患方面的所有信息",
   "components.downloadToggle.ltsVersions": "长期维护版（LTS）",
   "components.downloadToggle.currentVersions": "尝鲜版",
-  "components.UpcomingReleasesItem": "Released"
+  "components.upcomingReleasesItem.releaseStatus": "Released"
 }

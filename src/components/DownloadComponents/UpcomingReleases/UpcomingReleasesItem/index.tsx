@@ -15,7 +15,7 @@ const UpcomingReleasesItem = ({
 }: Props): JSX.Element => {
   const Image = alreadyReleased ? HexagonFilled : HexagonOutline;
   const Released = alreadyReleased ? (
-    <FormattedMessage id="components.UpcomingReleasesItem" />
+    <FormattedMessage id="components.upcomingReleasesItem.releaseStatus" />
   ) : (
     ''
   );
