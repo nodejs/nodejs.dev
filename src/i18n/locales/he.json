@@ -96,5 +96,5 @@
   "blog.categories.vulnerability.description": "קטגוריית בלוג בנושא פגיעויות אבטחה",
   "components.downloadToggle.ltsVersions": "גרסאות LTS",
   "components.downloadToggle.currentVersions": "גרסאות נוכחיות",
-  "components.upcomingReleasesItem.releaseStatus": "Released"
+  "components.UpcomingReleasesItem": "Released"
 }

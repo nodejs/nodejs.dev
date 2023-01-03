@@ -96,5 +96,5 @@
   "blog.categories.vulnerability.description": "Catégorie de blog concernant les vulnérabilités de sécurité",
   "components.downloadToggle.ltsVersions": "LTS Versions",
   "components.downloadToggle.currentVersions": "Versions actuelles",
-  "components.upcomingReleasesItem.releaseStatus": "Released"
+  "components.UpcomingReleasesItem": "Released"
 }

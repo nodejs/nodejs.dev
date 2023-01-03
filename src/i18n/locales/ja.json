@@ -96,5 +96,5 @@
   "blog.categories.vulnerability.description": "セキュリティや脆弱性カテゴリ",
   "components.downloadToggle.ltsVersions": "LTSバージョン",
   "components.downloadToggle.currentVersions": "現在のバージョン",
-  "components.upcomingReleasesItem.releaseStatus": "Released"
+  "components.UpcomingReleasesItem": "Released"
 }
