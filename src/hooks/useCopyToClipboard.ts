@@ -11,17 +11,10 @@ const copyToClipboard = (value: string) => {
     .catch(() => false);
 };
 
-export const useCopyToClipboard = (): [
-  boolean,
-  (text: string) => Promise<boolean>
-] => {
+export const useCopyToClipboard = (): [boolean, (text: string) => void] => {
   const [copied, setCopied] = useState(false);
 
-  async function copyText(text: string) {
-    const isCopied = await copyToClipboard(text);
-    setCopied(isCopied);
-    return isCopied;
-  }
+  const copyText = (text: string) => copyToClipboard(text).then(setCopied);
 
   useEffect(() => {
     if (!copied) {
