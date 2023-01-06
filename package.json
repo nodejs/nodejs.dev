@@ -39,7 +39,7 @@
     "gatsby-plugin-sitemap": "^5.22.0",
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
     "gatsby-plugin-typescript": "^4.22.0",
-    "gatsby-plugin-webfonts": "^2.2.2",
+    "gatsby-plugin-webfonts": "^2.3.2",
     "gatsby-remark-autolink-headers": "^5.22.0",
     "gatsby-remark-images": "^6.23.0",
     "gatsby-remark-prismjs": "^6.22.0",
