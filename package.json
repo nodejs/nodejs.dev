@@ -30,7 +30,7 @@
     "gatsby": "^4.22.1",
     "gatsby-link": "^4.22.0",
     "gatsby-plugin-canonical-urls": "^4.22.0",
-    "gatsby-plugin-catch-links": "^4.22.0",
+    "gatsby-plugin-catch-links": "^4.25.0",
     "gatsby-plugin-manifest": "^4.22.0",
     "gatsby-plugin-mdx": "^3.20.0",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
