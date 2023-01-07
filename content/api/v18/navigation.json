@@ -86,6 +86,12 @@
       "name": "buffer"
     },
     {
+      "slug": "/api/v18/buffer/#file",
+      "title": "File",
+      "type": "class",
+      "name": "buffer"
+    },
+    {
       "slug": "/api/v18/buffer/#slowbuffer",
       "title": "SlowBuffer",
       "type": "class",
@@ -1172,6 +1178,18 @@
       "name": "test"
     },
     {
+      "slug": "/api/v18/test/#mockfunctioncontext",
+      "title": "MockFunctionContext",
+      "type": "class",
+      "name": "test"
+    },
+    {
+      "slug": "/api/v18/test/#mocktracker",
+      "title": "MockTracker",
+      "type": "class",
+      "name": "test"
+    },
+    {
       "slug": "/api/v18/test/#suitecontext",
       "title": "SuiteContext",
       "type": "class",
@@ -1283,6 +1301,18 @@
       "slug": "/api/v18/util/",
       "title": "Util",
       "type": "module",
+      "name": "util"
+    },
+    {
+      "slug": "/api/v18/util/#utilmimeparams",
+      "title": "utilMIMEParams",
+      "type": "class",
+      "name": "util"
+    },
+    {
+      "slug": "/api/v18/util/#utilmimetype",
+      "title": "utilMIMEType",
+      "type": "class",
       "name": "util"
     },
     {
