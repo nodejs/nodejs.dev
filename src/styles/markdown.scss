@@ -2,10 +2,6 @@
 
 // used on content/about/resources.xx.md
 .resources-logos {
-  img {
-    width: 100%;
-  }
-
   td {
     padding: 20px;
   }
@@ -13,10 +9,10 @@
 
 // used on content/about/resources.xx.md
 .bg-white {
-  background-color: #fff;
+  background-color: #F9F9F9;
 }
 
 // used on content/about/resources.xx.md
-.bg-node-gray {
-  background-color: #333;
+.bg-dark {
+  background-color: #090C15;;
 }
