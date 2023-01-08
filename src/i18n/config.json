@@ -113,8 +113,8 @@
     "name": "Brazilian Portuguese",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hrefLang": "",
-    "enabled": false
+    "hrefLang": "pt-BR",
+    "enabled": true
   },
   {
     "code": "ro",
