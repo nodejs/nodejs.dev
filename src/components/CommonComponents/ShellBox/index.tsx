@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 import styles from './index.module.scss';
 
@@ -22,7 +23,10 @@ const ShellBox = ({
       <div className={styles.top}>
         <span>SHELL</span>
         <button type="button" onClick={handleCopyCode}>
-          {copied ? 'copied' : 'copy'}
+          <FormattedMessage
+            id='components.shellBox.copy'
+            values={{ copied }}
+          />
         </button>
       </div>
       <code>{children}</code>
