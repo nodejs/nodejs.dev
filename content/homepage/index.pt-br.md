@@ -1,8 +1,7 @@
 ---
 title: homepage
 displayTitle: Rode JavaScript em qualquer lugar.
-subTitle: 'Node.js é um runtime JavaScript gratuito, open-source e multiplaforma que permite que desenvolvedores
-escrevam CLIs e execute JavaScript no servidor sem a utilização de um browser.'
+subTitle: 'Node.js é um runtime JavaScript gratuito, open-source e multiplaforma que permite que desenvolvedores escrevam CLIs e execute JavaScript no servidor sem a utilização de um browser.'
 description: Bem-vindo ao Node.js!
 leafsIllustrationFront: ./images/illustrations/leafs-front.svg
 leafsIllustrationMiddle: ./images/illustrations/leafs-middle.svg
