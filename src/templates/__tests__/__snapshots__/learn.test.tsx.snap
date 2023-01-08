@@ -204,6 +204,14 @@ exports[`Learn Template renders correctly 1`] = `
                     style="font-weight: normal;"
                     type="button"
                   >
+                    Português do Brasil
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
                     简体中文
                   </button>
                 </li>

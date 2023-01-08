@@ -204,6 +204,14 @@ exports[`Download page renders correctly 1`] = `
                     style="font-weight: normal;"
                     type="button"
                   >
+                    Português do Brasil
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
                     简体中文
                   </button>
                 </li>
@@ -1242,6 +1250,14 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                     type="button"
                   >
                     Français
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Português do Brasil
                   </button>
                 </li>
                 <li>
