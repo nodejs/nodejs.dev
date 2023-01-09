@@ -96,6 +96,6 @@
   "blog.categories.vulnerability.description": "קטגוריית בלוג בנושא פגיעויות אבטחה",
   "components.downloadToggle.ltsVersions": "גרסאות LTS",
   "components.downloadToggle.currentVersions": "גרסאות נוכחיות",
-  "components.shellBox.copy": "{copied, select, true {מוּעֲתָק}other {עותק}}",
-  "components.codeBox.copy": "{copied, select, true {מוּעֲתָק}other {עותק}}"
+  "components.shellBox.copy": "{copied, select, true {copied}other {copy}}",
+  "components.codeBox.copy": "{copied, select, true {copied}other {copy}}"
 }

@@ -96,6 +96,6 @@
   "blog.categories.vulnerability.description": "セキュリティや脆弱性カテゴリ",
   "components.downloadToggle.ltsVersions": "LTSバージョン",
   "components.downloadToggle.currentVersions": "現在のバージョン",
-  "components.shellBox.copy": "{copied, select, true {コピーした}other {コピー}}",
-  "components.codeBox.copy": "{copied, select, true {コピーした}other {コピー}}"
+  "components.shellBox.copy": "{copied, select, true {copied}other {copy}}",
+  "components.codeBox.copy": "{copied, select, true {copied}other {copy}}"
 }
