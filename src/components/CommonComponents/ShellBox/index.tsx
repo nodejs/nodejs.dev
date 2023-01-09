@@ -23,10 +23,7 @@ const ShellBox = ({
       <div className={styles.top}>
         <span>SHELL</span>
         <button type="button" onClick={handleCopyCode}>
-          <FormattedMessage
-            id='components.shellBox.copy'
-            values={{ copied }}
-          />
+          <FormattedMessage id="components.shellBox.copy" values={{ copied }} />
         </button>
       </div>
       <code>{children}</code>

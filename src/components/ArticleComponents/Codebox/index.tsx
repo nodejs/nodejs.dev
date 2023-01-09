@@ -63,10 +63,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
       <div className={styles.top}>
         <span>{replaceLabelLanguages(language)}</span>
         <button type="button" onClick={handleCopyCode}>
-          <FormattedMessage
-            id='components.codeBox.copy'
-            values={{ copied }}
-          />
+          <FormattedMessage id="components.codeBox.copy" values={{ copied }} />
         </button>
       </div>
       <div
