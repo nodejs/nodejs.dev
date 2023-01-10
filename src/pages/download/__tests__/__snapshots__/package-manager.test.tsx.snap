@@ -471,6 +471,8 @@ exports[`Package Manager Page renders correctly 1`] = `
         >
           <a
             href="https://github.com/nodejs/nodejs.dev/edit/main/content/download/package-manager.en.md"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <span>
               Edit this page on GitHub

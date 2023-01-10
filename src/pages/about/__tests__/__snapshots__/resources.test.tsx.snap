@@ -471,6 +471,8 @@ exports[`Resources page renders correctly 1`] = `
         >
           <a
             href="https://github.com/nodejs/nodejs.dev/edit/main/content/about/about.en.md"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <span>
               Edit this page on GitHub

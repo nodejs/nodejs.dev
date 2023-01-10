@@ -350,6 +350,8 @@ exports[`PageLayout component renders correctly with data 1`] = `
         >
           <a
             href="https://github.com/nodejs/nodejs.dev/edit/main/mock-editPath"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <span>
               Edit this page on GitHub

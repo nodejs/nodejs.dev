@@ -117,6 +117,8 @@ exports[`Article component renders correctly 1`] = `
     >
       <a
         href="https://github.com/nodejs/nodejs.dev/edit/main/content/learn/test-path"
+        rel="noopener noreferrer"
+        target="_blank"
       >
         <span>
           Edit this page on GitHub
@@ -408,6 +410,8 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
     >
       <a
         href="https://github.com/nodejs/nodejs.dev/edit/main/content/learn/test-path"
+        rel="noopener noreferrer"
+        target="_blank"
       >
         <span>
           Edit this page on GitHub
@@ -607,6 +611,8 @@ exports[`Article component should accept and render child components 1`] = `
     >
       <a
         href="https://github.com/nodejs/nodejs.dev/edit/main/content/learn/test-path"
+        rel="noopener noreferrer"
+        target="_blank"
       >
         <span>
           Edit this page on GitHub

@@ -27,7 +27,7 @@ const EditLink = ({
 
   return (
     <div className={styles.edit}>
-      <a href={href}>
+      <a href={href} target="_blank" rel="noopener noreferrer">
         <FormattedMessage id="components.editLink.title" tagName="span" />
         <FontAwesomeIcon icon={faPencil} />
       </a>
