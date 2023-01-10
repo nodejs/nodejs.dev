@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { copyTextToClipboard } from '../../../util/copyTextToClipboard';
+import React from 'react';
+import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 import styles from './index.module.scss';
 
 interface Props {
@@ -10,26 +10,12 @@ const ShellBox = ({
   children,
   textToCopy,
 }: React.PropsWithChildren<Props>): JSX.Element => {
-  const [copied, setCopied] = useState(false);
+  const [copied, copyText] = useCopyToClipboard();
 
   const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    setCopied(await copyTextToClipboard(textToCopy));
+    copyText(textToCopy);
   };
-
-  useEffect((): (() => void) => {
-    let timer: ReturnType<typeof setTimeout>;
-
-    if (copied) {
-      timer = setTimeout(() => setCopied(false), 3000);
-    }
-
-    return () => {
-      if (timer) {
-        clearTimeout(timer);
-      }
-    };
-  }, [copied]);
 
   return (
     <pre className={styles.shellBox}>
