@@ -5,11 +5,11 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.1.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v19.1.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v19.4.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v19.1.0" data={{"source_link":"lib/os.js"}} />
+<Metadata version="v19.4.0" data={{"source_link":"lib/os.js"}} />
 
 The `node:os` module provides operating system-related utility methods and
 properties. It can be accessed using:
@@ -20,7 +20,7 @@ const os = require('node:os');
 
 ### <DataTag tag="M" /> `os.EOL`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.7.8"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.7.8"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -29,9 +29,20 @@ The operating system-specific end-of-line marker.
 * `\n` on POSIX
 * `\r\n` on Windows
 
+### <DataTag tag="M" /> `os.availableParallelism()`
+
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.4.0"]}}} />
+
+* Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
+
+Returns an estimate of the default amount of parallelism a program should use.
+Always returns a value greater than zero.
+
+This function is a small wrapper about libuv's [`uv_available_parallelism()`][].
+
 ### <DataTag tag="M" /> `os.arch()`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -43,7 +54,7 @@ The return value is equivalent to [`process.arch`][].
 
 ### <DataTag tag="M" /> `os.constants`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v6.3.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v6.3.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -53,7 +64,7 @@ process signals, and so on. The specific constants defined are described in
 
 ### <DataTag tag="M" /> `os.cpus()`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
 
 * Returns: Object\[]
 
@@ -80,8 +91,8 @@ The properties included on each object include:
       nice: 0,
       sys: 30340,
       idle: 1070356870,
-      irq: 0
-    }
+      irq: 0,
+    },
   },
   {
     model: 'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz',
@@ -91,8 +102,8 @@ The properties included on each object include:
       nice: 0,
       sys: 26980,
       idle: 1071569080,
-      irq: 0
-    }
+      irq: 0,
+    },
   },
   {
     model: 'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz',
@@ -102,8 +113,8 @@ The properties included on each object include:
       nice: 0,
       sys: 21750,
       idle: 1070919370,
-      irq: 0
-    }
+      irq: 0,
+    },
   },
   {
     model: 'Intel(R) Core(TM) i7 CPU         860  @ 2.80GHz',
@@ -113,8 +124,8 @@ The properties included on each object include:
       nice: 0,
       sys: 19430,
       idle: 1070905480,
-      irq: 20
-    }
+      irq: 20,
+    },
   },
 ]
 ```
@@ -122,9 +133,13 @@ The properties included on each object include:
 `nice` values are POSIX-only. On Windows, the `nice` values of all processors
 are always 0.
 
+`os.cpus().length` should not be used to calculate the amount of parallelism
+available to an application. Use
+[`os.availableParallelism()`](#osavailableparallelism) for this purpose.
+
 ### <DataTag tag="M" /> `os.devNull`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v16.3.0","v14.18.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v16.3.0","v14.18.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -135,7 +150,7 @@ The platform-specific file path of the null device.
 
 ### <DataTag tag="M" /> `os.endianness()`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -146,7 +161,7 @@ Possible values are `'BE'` for big endian and `'LE'` for little endian.
 
 ### <DataTag tag="M" /> `os.freemem()`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
 
 * Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -154,7 +169,7 @@ Returns the amount of free system memory in bytes as an integer.
 
 ### <DataTag tag="M" /> `os.getPriority([pid])`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
 * `pid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The process ID to retrieve scheduling priority for.
   **Default:** `0`.
@@ -165,7 +180,7 @@ not provided or is `0`, the priority of the current process is returned.
 
 ### <DataTag tag="M" /> `os.homedir()`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v2.3.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v2.3.0"]}}} />
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -179,7 +194,7 @@ Otherwise it uses the path to the profile directory of the current user.
 
 ### <DataTag tag="M" /> `os.hostname()`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -187,7 +202,7 @@ Returns the host name of the operating system as a string.
 
 ### <DataTag tag="M" /> `os.loadavg()`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
 
 * Returns: number\[]
 
@@ -199,9 +214,23 @@ system and expressed as a fractional number.
 The load average is a Unix-specific concept. On Windows, the return value is
 always `[0, 0, 0]`.
 
+### <DataTag tag="M" /> `os.machine()`
+
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.9.0","v16.18.0"]}}} />
+
+* Returns [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
+
+Returns the machine type as a string, such as `arm`, `arm64`, `aarch64`,
+`mips`, `mips64`, `ppc64`, `ppc64le`, `s390`, `s390x`, `i386`, `i686`, `x86_64`.
+
+On POSIX systems, the machine type is determined by calling
+[`uname(3)`][]. On Windows, `RtlGetVersion()` is used, and if it is not
+available, `GetVersionExW()` will be used. See
+[https://en.wikipedia.org/wiki/Uname#Examples](https://en.wikipedia.org/wiki/Uname#Examples) for more information.
+
 ### <DataTag tag="M" /> `os.networkInterfaces()`
 
-<Metadata version="v19.1.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43054","description":"The `family` property now returns a string instead of a number."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41431","description":"The `family` property now returns a number instead of a string."}],"update":{"type":"added","version":["v0.6.0"]}}} />
+<Metadata version="v19.4.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43054","description":"The `family` property now returns a string instead of a number."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41431","description":"The `family` property now returns a number instead of a string."}],"update":{"type":"added","version":["v0.6.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -270,7 +299,7 @@ The properties available on the assigned network address object include:
 
 ### <DataTag tag="M" /> `os.platform()`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -286,7 +315,7 @@ operating system. [Android support is experimental][Android building].
 
 ### <DataTag tag="M" /> `os.release()`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -298,7 +327,7 @@ On POSIX systems, the operating system release is determined by calling
 
 ### <DataTag tag="M" /> `os.setPriority([pid, ]priority)`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
 * `pid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The process ID to set scheduling priority for.
   **Default:** `0`.
@@ -320,7 +349,7 @@ privileges. Otherwise the set priority will be silently reduced to
 
 ### <DataTag tag="M" /> `os.tmpdir()`
 
-<Metadata version="v19.1.0" data={{"changes":[{"version":"v2.0.0","pr-url":"https://github.com/nodejs/node/pull/747","description":"This function is now cross-platform consistent and no longer returns a path with a trailing slash on any platform."}],"update":{"type":"added","version":["v0.9.9"]}}} />
+<Metadata version="v19.4.0" data={{"changes":[{"version":"v2.0.0","pr-url":"https://github.com/nodejs/node/pull/747","description":"This function is now cross-platform consistent and no longer returns a path with a trailing slash on any platform."}],"update":{"type":"added","version":["v0.9.9"]}}} />
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -329,7 +358,7 @@ string.
 
 ### <DataTag tag="M" /> `os.totalmem()`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
 
 * Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -337,7 +366,7 @@ Returns the total amount of system memory in bytes as an integer.
 
 ### <DataTag tag="M" /> `os.type()`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -349,7 +378,7 @@ about the output of running [`uname(3)`][] on various operating systems.
 
 ### <DataTag tag="M" /> `os.uptime()`
 
-<Metadata version="v19.1.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/20129","description":"The result of this function no longer contains a fraction component on Windows."}],"update":{"type":"added","version":["v0.3.3"]}}} />
+<Metadata version="v19.4.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/20129","description":"The result of this function no longer contains a fraction component on Windows."}],"update":{"type":"added","version":["v0.3.3"]}}} />
 
 * Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -357,7 +386,7 @@ Returns the system uptime in number of seconds.
 
 ### <DataTag tag="M" /> `os.userInfo([options])`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Character encoding used to interpret resulting strings.
@@ -379,27 +408,13 @@ Throws a [`SystemError`][] if a user has no `username` or `homedir`.
 
 ### <DataTag tag="M" /> `os.version()`
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v13.11.0","v12.17.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v13.11.0","v12.17.0"]}}} />
 
 * Returns [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Returns a string identifying the kernel version.
 
 On POSIX systems, the operating system release is determined by calling
-[`uname(3)`][]. On Windows, `RtlGetVersion()` is used, and if it is not
-available, `GetVersionExW()` will be used. See
-[https://en.wikipedia.org/wiki/Uname#Examples](https://en.wikipedia.org/wiki/Uname#Examples) for more information.
-
-### <DataTag tag="M" /> `os.machine()`
-
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v18.9.0","v16.18.0"]}}} />
-
-* Returns [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-
-Returns the machine type as a string, such as `arm`, `aarch64`, `mips`,
-`mips64`, `ppc64`, `ppc64le`, `s390`, `s390x`, `i386`, `i686`, `x86_64`.
-
-On POSIX systems, the machine type is determined by calling
 [`uname(3)`][]. On Windows, `RtlGetVersion()` is used, and if it is not
 available, `GetVersionExW()` will be used. See
 [https://en.wikipedia.org/wiki/Uname#Examples](https://en.wikipedia.org/wiki/Uname#Examples) for more information.
@@ -412,7 +427,7 @@ Not all constants will be available on every operating system.
 
 #### Signal constants
 
-<Metadata version="v19.1.0" data={{"changes":[{"version":"v5.11.0","pr-url":"https://github.com/nodejs/node/pull/6093","description":"Added support for `SIGINFO`."}]}} />
+<Metadata version="v19.4.0" data={{"changes":[{"version":"v5.11.0","pr-url":"https://github.com/nodejs/node/pull/6093","description":"Added support for `SIGINFO`."}]}} />
 
 The following signal constants are exported by `os.constants.signals`.
 
@@ -1197,7 +1212,7 @@ information.
 
 #### Priority constants
 
-<Metadata version="v19.1.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
 The following process scheduling constants are exported by
 `os.constants.priority`.
@@ -1267,3 +1282,4 @@ The following process scheduling constants are exported by
 [`process.arch`]: /api/v19/process#processarch
 [`process.platform`]: /api/v19/process#processplatform
 [`uname(3)`]: https://linux.die.net/man/3/uname
+[`uv_available_parallelism()`]: https://docs.libuv.org/en/v1.x/misc.html#c.uv_available_parallelism

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { highlight, languages } from 'prismjs';
 import { sanitize } from 'isomorphic-dompurify';
 import classnames from 'classnames';
-import { copyTextToClipboard } from '../../../util/copyTextToClipboard';
+import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 import styles from './index.module.scss';
 
 interface Props {
@@ -26,8 +27,8 @@ const replaceLabelLanguages = (language: string) =>
     .toUpperCase();
 
 const Codebox = ({ children: { props } }: Props): JSX.Element => {
-  const [copied, setCopied] = useState(false);
   const [parsedCode, setParsedCode] = useState('');
+  const [copied, copyText] = useCopyToClipboard();
 
   // eslint-disable-next-line react/prop-types
   const className = props.className || 'text';
@@ -43,30 +44,16 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
 
   const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    setCopied(await copyTextToClipboard(stringCode));
+    copyText(stringCode);
   };
 
-  useEffect((): (() => void) => {
-    let timer: ReturnType<typeof setTimeout>;
-
-    if (copied) {
-      timer = setTimeout(() => setCopied(false), 3000);
-    }
-
-    return () => {
-      if (timer) {
-        clearTimeout(timer);
-      }
-    };
-  }, [copied]);
-
   useEffect(() => {
-    const parsedLangauge = replaceLanguages(language);
+    const parsedLanguage = replaceLanguages(language);
 
-    const prismLanguage = languages[parsedLangauge] || languages.text;
+    const prismLanguage = languages[parsedLanguage] || languages.text;
 
     setParsedCode(
-      sanitize(highlight(stringCode, prismLanguage, parsedLangauge))
+      sanitize(highlight(stringCode, prismLanguage, parsedLanguage))
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -76,7 +63,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
       <div className={styles.top}>
         <span>{replaceLabelLanguages(language)}</span>
         <button type="button" onClick={handleCopyCode}>
-          {copied ? 'copied' : 'copy'}
+          <FormattedMessage id="components.codeBox.copy" values={{ copied }} />
         </button>
       </div>
       <div

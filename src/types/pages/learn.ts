@@ -7,6 +7,7 @@ export interface LearnTemplateContext {
   next: PaginationInfo;
   previous: PaginationInfo;
   navigationData: NavigationData;
+  locale: string;
 }
 
 export interface LearnTemplateData {

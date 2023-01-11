@@ -1,7 +1,6 @@
 import {
   PaginationInfo,
   LearnTemplateContext,
-  NavigationData,
   PostTemplateData,
   PostTemplateContext,
   NodeReleaseData,
@@ -9,6 +8,7 @@ import {
   BlogCategory,
   BlogPost,
   ArticleData,
+  NavigationData,
 } from '../types';
 import mockMDXBodyContent from './mockMDXBodyContent';
 
@@ -120,6 +120,7 @@ export const createLearnPageContext = (): LearnTemplateContext =>
     next: createPaginationInfo(),
     previous: createPaginationInfo(),
     navigationData: createNavigationSectionData(),
+    locale: 'en',
   } as LearnTemplateContext);
 
 export const createBlogPageContext = (): PostTemplateContext => ({

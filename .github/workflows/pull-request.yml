@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.3.0
         with:
           persist-credentials: false
 
@@ -45,7 +45,7 @@ jobs:
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.3.0
         with:
           persist-credentials: false
 
@@ -58,17 +58,9 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Gatsby Cache Folder
-        uses: actions/cache@v3
+      - uses: jongwooo/gatsby-cache@v1.4.0
         with:
-          key: cache-folder-${{ matrix.os }}
-          path: .cache
-
-      - name: Gatsby Public Folder
-        uses: actions/cache@v3
-        with:
-          key: public-folder-${{ matrix.os }}
-          path: public
+          key: pull-request-gatsby-ubuntu-latest
 
       - name: Build Gatsby
         run: npm run build-ci

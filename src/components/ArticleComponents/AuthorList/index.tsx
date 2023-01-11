@@ -14,8 +14,8 @@ const AuthorList = ({ authors }: Props): JSX.Element => {
         <FormattedMessage id="containers.authorList.title" />
         <ul>
           {authors.map(
-            (author, i): JSX.Element => (
-              <Author index={i} username={author} key={author} size="60" />
+            (author): JSX.Element => (
+              <Author username={author} key={author} size="60" />
             )
           )}
         </ul>

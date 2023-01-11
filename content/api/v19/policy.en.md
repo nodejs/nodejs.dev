@@ -5,11 +5,11 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.1.0" data={{"update":{"type":"introduced_in","version":["v11.8.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"introduced_in","version":["v11.8.0"]}}} />
 
-<Metadata version="v19.1.0" data={{"type":"misc"}} />
+<Metadata version="v19.4.0" data={{"type":"misc"}} />
 
-<Metadata version="v19.1.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v19.4.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 The former Policies documentation is now at [Permissions documentation][]
 

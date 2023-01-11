@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.3.0
         with:
           ref: main
 
@@ -30,17 +30,9 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Gatsby Cache Folder
-        uses: actions/cache@v3
+      - uses: jongwooo/gatsby-cache@v1.4.0
         with:
-          key: cache-folder-ubuntu-latest
-          path: .cache
-
-      - name: Gatsby Public Folder
-        uses: actions/cache@v3
-        with:
-          key: public-folder-ubuntu-latest
-          path: public
+          key: github-pages-gatsby-ubuntu-latest
 
       - name: Build Gatsby
         run: npm run build-ci

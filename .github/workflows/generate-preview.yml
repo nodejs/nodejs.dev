@@ -17,7 +17,7 @@ jobs:
     if: github.event.label.name == 'create-preview'
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.3.0
         with:
           persist-credentials: false
           ref: ${{ github.event.pull_request.head.sha }}
@@ -50,6 +50,10 @@ jobs:
 
       - name: Install NPM packages
         run: npm ci
+
+      - uses: jongwooo/gatsby-cache@v1.4.0
+        with:
+          key: generate-preview-gatsby-ubuntu-latest
 
       - name: Build Gatsby
         run: npm run build-ci

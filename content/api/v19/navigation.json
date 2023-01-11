@@ -86,6 +86,12 @@
       "name": "buffer"
     },
     {
+      "slug": "/api/v19/buffer/#file",
+      "title": "File",
+      "type": "class",
+      "name": "buffer"
+    },
+    {
       "slug": "/api/v19/buffer/#slowbuffer",
       "title": "SlowBuffer",
       "type": "class",
