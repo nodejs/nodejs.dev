@@ -1,7 +1,7 @@
 ---
 title: overview-of-blocking-vs-non-blocking
 displayTitle: "Vue d'ensemble du blocage et du non-blocage"
-authors: ovflowd, thomasbnt
+authors: ovflowd, thomasbnt, HassanBahati
 category: learn
 ---
 
@@ -107,4 +107,3 @@ Ce qui précède place un appel **non-bloquant** à `fs.unlink()` dans le callba
 ## Ressources supplémentaires
 
 * [libuv](https://libuv.org/)
-* [A propos de Node.js](/fr/about/)

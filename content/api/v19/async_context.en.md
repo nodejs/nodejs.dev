@@ -5,11 +5,11 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.3.0" data={{"update":{"type":"introduced_in","version":["v16.4.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"introduced_in","version":["v16.4.0"]}}} />
 
-<Metadata version="v19.3.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v19.4.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v19.3.0" data={{"source_link":"lib/async_hooks.js"}} />
+<Metadata version="v19.4.0" data={{"source_link":"lib/async_hooks.js"}} />
 
 ### Introduction
 
@@ -32,7 +32,7 @@ const { AsyncLocalStorage, AsyncResource } = require('node:async_hooks');
 
 ### <DataTag tag="C" /> `AsyncLocalStorage`
 
-<Metadata version="v19.3.0" data={{"changes":[{"version":"v16.4.0","pr-url":"https://github.com/nodejs/node/pull/37675","description":"AsyncLocalStorage is now Stable. Previously, it had been Experimental."}],"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
+<Metadata version="v19.4.0" data={{"changes":[{"version":"v16.4.0","pr-url":"https://github.com/nodejs/node/pull/37675","description":"AsyncLocalStorage is now Stable. Previously, it had been Experimental."}],"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
 This class creates stores that stay coherent through asynchronous operations.
 
@@ -115,9 +115,9 @@ with each other's data.
 
 #### <DataTag tag="M" /> `new AsyncLocalStorage([options])`
 
-<Metadata version="v19.3.0" data={{"changes":[{"version":"v19.2.0","pr-url":"https://github.com/nodejs/node/pull/45386","description":"Add option onPropagate."}],"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
+<Metadata version="v19.4.0" data={{"changes":[{"version":"v19.2.0","pr-url":"https://github.com/nodejs/node/pull/45386","description":"Add option onPropagate."}],"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
-<Metadata version="v19.3.0" data={{"stability":{"level":1,"text":" - `options.onPropagate` is experimental."}}} />
+<Metadata version="v19.4.0" data={{"stability":{"level":1,"text":" - `options.onPropagate` is experimental."}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `onPropagate` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Optional callback invoked before a store is
@@ -136,9 +136,9 @@ a recursive call to `onPropagate`.
 
 #### <DataTag tag="M" /> `asyncLocalStorage.disable()`
 
-<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
-<Metadata version="v19.3.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v19.4.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 Disables the instance of `AsyncLocalStorage`. All subsequent calls
 to `asyncLocalStorage.getStore()` will return `undefined` until
@@ -157,7 +157,7 @@ in the current process.
 
 #### <DataTag tag="M" /> `asyncLocalStorage.getStore()`
 
-<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
 * Returns: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
@@ -168,9 +168,9 @@ returns `undefined`.
 
 #### <DataTag tag="M" /> `asyncLocalStorage.enterWith(store)`
 
-<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v13.11.0","v12.17.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v13.11.0","v12.17.0"]}}} />
 
-<Metadata version="v19.3.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v19.4.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `store` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
@@ -214,7 +214,7 @@ asyncLocalStorage.getStore(); // Returns the same object
 
 #### <DataTag tag="M" /> `asyncLocalStorage.run(store, callback[, ...args])`
 
-<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
 * `store` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -250,9 +250,9 @@ try {
 
 #### <DataTag tag="M" /> `asyncLocalStorage.exit(callback[, ...args])`
 
-<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
-<Metadata version="v19.3.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v19.4.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * `...args` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -319,7 +319,7 @@ probably responsible for the context loss.
 
 ### <DataTag tag="C" /> `AsyncResource`
 
-<Metadata version="v19.3.0" data={{"changes":[{"version":"v16.4.0","pr-url":"https://github.com/nodejs/node/pull/37675","description":"AsyncResource is now Stable. Previously, it had been Experimental."}]}} />
+<Metadata version="v19.4.0" data={{"changes":[{"version":"v16.4.0","pr-url":"https://github.com/nodejs/node/pull/37675","description":"AsyncResource is now Stable. Previously, it had been Experimental."}]}} />
 
 The class `AsyncResource` is designed to be extended by the embedder's async
 resources. Using this, users can easily trigger the lifetime events of their
@@ -423,7 +423,7 @@ class DBQuery extends AsyncResource {
 
 #### Static method: `AsyncResource.bind(fn[, type[, thisArg]])`
 
-<Metadata version="v19.3.0" data={{"changes":[{"version":["v17.8.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/42177","description":"Changed the default when `thisArg` is undefined to use `this` from the caller."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36782","description":"Added optional thisArg."}],"update":{"type":"added","version":["v14.8.0","v12.19.0"]}}} />
+<Metadata version="v19.4.0" data={{"changes":[{"version":["v17.8.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/42177","description":"Changed the default when `thisArg` is undefined to use `this` from the caller."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36782","description":"Added optional thisArg."}],"update":{"type":"added","version":["v14.8.0","v12.19.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to bind to the current execution context.
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) An optional name to associate with the underlying
@@ -437,7 +437,7 @@ the `AsyncResource` to which the function is bound.
 
 #### <DataTag tag="M" /> `asyncResource.bind(fn[, thisArg])`
 
-<Metadata version="v19.3.0" data={{"changes":[{"version":["v17.8.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/42177","description":"Changed the default when `thisArg` is undefined to use `this` from the caller."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36782","description":"Added optional thisArg."}],"update":{"type":"added","version":["v14.8.0","v12.19.0"]}}} />
+<Metadata version="v19.4.0" data={{"changes":[{"version":["v17.8.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/42177","description":"Changed the default when `thisArg` is undefined to use `this` from the caller."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36782","description":"Added optional thisArg."}],"update":{"type":"added","version":["v14.8.0","v12.19.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to bind to the current `AsyncResource`.
 * `thisArg` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -449,7 +449,7 @@ the `AsyncResource` to which the function is bound.
 
 #### <DataTag tag="M" /> `asyncResource.runInAsyncScope(fn[, thisArg, ...args])`
 
-<Metadata version="v19.3.0" data={{"update":{"type":"added","version":["v9.6.0"]}}} />
+<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v9.6.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to call in the execution context of this async
   resource.
@@ -696,7 +696,7 @@ This pool could be used as follows:
 import WorkerPool from './worker_pool.js';
 import os from 'node:os';
 
-const pool = new WorkerPool(os.cpus().length);
+const pool = new WorkerPool(os.availableParallelism());
 
 let finished = 0;
 for (let i = 0; i < 10; i++) {
@@ -712,7 +712,7 @@ for (let i = 0; i < 10; i++) {
 const WorkerPool = require('./worker_pool.js');
 const os = require('node:os');
 
-const pool = new WorkerPool(os.cpus().length);
+const pool = new WorkerPool(os.availableParallelism());
 
 let finished = 0;
 for (let i = 0; i < 10; i++) {

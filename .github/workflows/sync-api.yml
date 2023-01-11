@@ -12,7 +12,7 @@ jobs:
       contents: write
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.3.0
         with:
           ref: main
           token: ${{ secrets.ACCESS_TOKEN_ACTIONS }}
@@ -34,7 +34,7 @@ jobs:
       - name: Lint Markdown files
         run: npm run lint:md
 
-      - uses: jongwooo/gatsby-cache@v1.2.1
+      - uses: jongwooo/gatsby-cache@v1.4.0
         with:
           key: sync-api-gatsby-ubuntu-latest
 
