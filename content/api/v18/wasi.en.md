@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.12.1" data={{"update":{"type":"introduced_in","version":["v12.16.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"introduced_in","version":["v12.16.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
-<Metadata version="v18.12.1" data={{"source_link":"lib/wasi.js"}} />
+<Metadata version="v18.13.0" data={{"source_link":"lib/wasi.js"}} />
 
 The WASI API provides an implementation of the [WebAssembly System Interface][]
 specification. WASI gives sandboxed WebAssembly applications access to the
@@ -24,8 +24,8 @@ const wasi = new WASI({
   args: argv,
   env,
   preopens: {
-    '/sandbox': '/some/real/path/that/wasm/can/access'
-  }
+    '/sandbox': '/some/real/path/that/wasm/can/access',
+  },
 });
 
 // Some WASI binaries require:
@@ -33,7 +33,7 @@ const wasi = new WASI({
 const importObject = { wasi_snapshot_preview1: wasi.wasiImport };
 
 const wasm = await WebAssembly.compile(
-  await readFile(new URL('./demo.wasm', import.meta.url))
+  await readFile(new URL('./demo.wasm', import.meta.url)),
 );
 const instance = await WebAssembly.instantiate(wasm, importObject);
 
@@ -51,8 +51,8 @@ const wasi = new WASI({
   args: argv,
   env,
   preopens: {
-    '/sandbox': '/some/real/path/that/wasm/can/access'
-  }
+    '/sandbox': '/some/real/path/that/wasm/can/access',
+  },
 });
 
 // Some WASI binaries require:
@@ -61,7 +61,7 @@ const importObject = { wasi_snapshot_preview1: wasi.wasiImport };
 
 (async () => {
   const wasm = await WebAssembly.compile(
-    await readFile(join(__dirname, 'demo.wasm'))
+    await readFile(join(__dirname, 'demo.wasm')),
   );
   const instance = await WebAssembly.instantiate(wasm, importObject);
 
@@ -113,7 +113,7 @@ example to run.
 
 ### <DataTag tag="C" /> `WASI`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
 
 The `WASI` class provides the WASI system call API and additional convenience
 methods for working with WASI-based applications. Each `WASI` instance
@@ -123,7 +123,7 @@ sandbox directory structure configured explicitly.
 
 #### <DataTag tag="M" /> `new WASI([options])`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `args` [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) An array of strings that the WebAssembly application will
@@ -148,7 +148,7 @@ sandbox directory structure configured explicitly.
 
 #### <DataTag tag="M" /> `wasi.start(instance)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
 
 * `instance` [`WebAssembly.Instance`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Instance)
 
@@ -163,7 +163,7 @@ If `start()` is called more than once, an exception is thrown.
 
 #### <DataTag tag="M" /> `wasi.initialize(instance)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v14.6.0","v12.19.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v14.6.0","v12.19.0"]}}} />
 
 * `instance` [`WebAssembly.Instance`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Instance)
 
@@ -178,7 +178,7 @@ If `initialize()` is called more than once, an exception is thrown.
 
 #### <DataTag tag="M" /> `wasi.wasiImport`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 

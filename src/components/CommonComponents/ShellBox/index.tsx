@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { copyTextToClipboard } from '../../../util/copyTextToClipboard';
+import React from 'react';
+import { FormattedMessage } from 'react-intl';
+import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 import styles from './index.module.scss';
 
 interface Props {
@@ -10,33 +11,19 @@ const ShellBox = ({
   children,
   textToCopy,
 }: React.PropsWithChildren<Props>): JSX.Element => {
-  const [copied, setCopied] = useState(false);
+  const [copied, copyText] = useCopyToClipboard();
 
   const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    setCopied(await copyTextToClipboard(textToCopy));
+    copyText(textToCopy);
   };
-
-  useEffect((): (() => void) => {
-    let timer: ReturnType<typeof setTimeout>;
-
-    if (copied) {
-      timer = setTimeout(() => setCopied(false), 3000);
-    }
-
-    return () => {
-      if (timer) {
-        clearTimeout(timer);
-      }
-    };
-  }, [copied]);
 
   return (
     <pre className={styles.shellBox}>
       <div className={styles.top}>
         <span>SHELL</span>
         <button type="button" onClick={handleCopyCode}>
-          {copied ? 'copied' : 'copy'}
+          <FormattedMessage id="components.shellBox.copy" values={{ copied }} />
         </button>
       </div>
       <code>{children}</code>

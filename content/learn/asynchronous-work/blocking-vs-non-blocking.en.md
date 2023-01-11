@@ -1,7 +1,7 @@
 ---
 title: overview-of-blocking-vs-non-blocking
 displayTitle: 'Overview of Blocking vs Non-Blocking'
-authors: ovflowd
+authors: ovflowd, HassanBahati
 category: learn
 ---
 
@@ -145,4 +145,3 @@ The above places a **non-blocking** call to `fs.unlink()` within the callback of
 ## Additional Resources
 
 * [libuv](https://libuv.org/)
-* [About Node.js](/about/)

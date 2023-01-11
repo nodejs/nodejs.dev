@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.12.1" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.12.1" data={{"source_link":"lib/util.js"}} />
+<Metadata version="v18.13.0" data={{"source_link":"lib/util.js"}} />
 
 The `node:util` module supports the needs of Node.js internal APIs. Many of the
 utilities are useful for application and module developers as well. To access
@@ -21,7 +21,7 @@ const util = require('node:util');
 
 ### <DataTag tag="M" /> `util.callbackify(original)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v8.2.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v8.2.0"]}}} />
 
 * `original` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) An `async` function
 * Returns: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) a callback style function
@@ -76,7 +76,7 @@ callbackFunction((err, ret) => {
 
 ### <DataTag tag="M" /> `util.debuglog(section[, callback])`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v0.11.3"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.11.3"]}}} />
 
 * `section` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A string identifying the portion of the application for
   which the `debuglog` function is being created.
@@ -141,7 +141,7 @@ let debuglog = util.debuglog('internals', (debug) => {
 
 #### <DataTag tag="M" /> `debuglog().enabled`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v14.9.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v14.9.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -168,14 +168,14 @@ hello from foo [123]
 
 ### <DataTag tag="M" /> `util.debug(section)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v14.9.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v14.9.0"]}}} />
 
 Alias for `util.debuglog`. Usage allows for readability of that doesn't imply
 logging when only using `util.debuglog().enabled`.
 
 ### <DataTag tag="M" /> `util.deprecate(fn, msg[, code])`
 
-<Metadata version="v18.12.1" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/16393","description":"Deprecation warnings are only emitted once for each code."}],"update":{"type":"added","version":["v0.8.0"]}}} />
+<Metadata version="v18.13.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/16393","description":"Deprecation warnings are only emitted once for each code."}],"update":{"type":"added","version":["v0.8.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function that is being deprecated.
 * `msg` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A warning message to display when the deprecated function is
@@ -232,7 +232,7 @@ property take precedence over `--trace-deprecation` and
 
 ### <DataTag tag="M" /> `util.format(format[, ...args])`
 
-<Metadata version="v18.12.1" data={{"changes":[{"version":"v12.11.0","pr-url":"https://github.com/nodejs/node/pull/29606","description":"The `%c` specifier is ignored now."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23162","description":"The `format` argument is now only taken as such if it actually contains format specifiers."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23162","description":"If the `format` argument is not a format string, the output string's formatting is no longer dependent on the type of the first argument. This change removes previously present quotes from strings that were being output when the first argument was not a string."},{"version":"v11.4.0","pr-url":"https://github.com/nodejs/node/pull/23708","description":"The `%d`, `%f`, and `%i` specifiers now support Symbols properly."},{"version":"v11.4.0","pr-url":"https://github.com/nodejs/node/pull/24806","description":"The `%o` specifier's `depth` has default depth of 4 again."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/17907","description":"The `%o` specifier's `depth` option will now fall back to the default depth."},{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/22097","description":"The `%d` and `%i` specifiers now support BigInt."},{"version":"v8.4.0","pr-url":"https://github.com/nodejs/node/pull/14558","description":"The `%o` and `%O` specifiers are supported now."}],"update":{"type":"added","version":["v0.5.3"]}}} />
+<Metadata version="v18.13.0" data={{"changes":[{"version":"v12.11.0","pr-url":"https://github.com/nodejs/node/pull/29606","description":"The `%c` specifier is ignored now."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23162","description":"The `format` argument is now only taken as such if it actually contains format specifiers."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23162","description":"If the `format` argument is not a format string, the output string's formatting is no longer dependent on the type of the first argument. This change removes previously present quotes from strings that were being output when the first argument was not a string."},{"version":"v11.4.0","pr-url":"https://github.com/nodejs/node/pull/23708","description":"The `%d`, `%f`, and `%i` specifiers now support Symbols properly."},{"version":"v11.4.0","pr-url":"https://github.com/nodejs/node/pull/24806","description":"The `%o` specifier's `depth` has default depth of 4 again."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/17907","description":"The `%o` specifier's `depth` option will now fall back to the default depth."},{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/22097","description":"The `%d` and `%i` specifiers now support BigInt."},{"version":"v8.4.0","pr-url":"https://github.com/nodejs/node/pull/14558","description":"The `%o` and `%O` specifiers are supported now."}],"update":{"type":"added","version":["v0.5.3"]}}} />
 
 * `format` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A `printf`-like format string.
 
@@ -304,7 +304,7 @@ event loop. Use this function with care and never in a hot code path.
 
 ### <DataTag tag="M" /> `util.formatWithOptions(inspectOptions, format[, ...args])`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `inspectOptions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `format` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -321,7 +321,7 @@ util.formatWithOptions({ colors: true }, 'See object %O', { foo: 42 });
 
 ### <DataTag tag="M" /> `util.getSystemErrorName(err)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v9.7.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v9.7.0"]}}} />
 
 * `err` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -339,7 +339,7 @@ fs.access('file/that/does/not/exist', (err) => {
 
 ### <DataTag tag="M" /> `util.getSystemErrorMap()`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v16.0.0","v14.17.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v16.0.0","v14.17.0"]}}} />
 
 * Returns: [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 
@@ -357,9 +357,9 @@ fs.access('file/that/does/not/exist', (err) => {
 
 ### <DataTag tag="M" /> `util.inherits(constructor, superConstructor)`
 
-<Metadata version="v18.12.1" data={{"changes":[{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3455","description":"The `constructor` parameter can refer to an ES6 class now."}],"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.13.0" data={{"changes":[{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3455","description":"The `constructor` parameter can refer to an ES6 class now."}],"update":{"type":"added","version":["v0.3.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":3,"text":" - Legacy: Use ES2015 class syntax and `extends` keyword instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":3,"text":" - Legacy: Use ES2015 class syntax and `extends` keyword instead."}}} />
 
 * `constructor` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * `superConstructor` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -425,7 +425,7 @@ stream.write('With ES6');
 
 ### <DataTag tag="M" /> `util.inspect(object[, showHidden[, depth[, colors]]])`
 
-<Metadata version="v18.12.1" data={{"changes":[{"version":["v17.3.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41003","description":"The `numericSeparator` option is supported now."},{"version":["v14.6.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/33690","description":"If `object` is from a different `vm.Context` now, a custom inspection function on it will not receive context-specific arguments anymore."},{"version":["v13.13.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32392","description":"The `maxStringLength` option is supported now."},{"version":["v13.5.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30768","description":"User defined prototype properties are inspected in case `showHidden` is `true`."},{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27685","description":"Circular references now include a marker to the reference."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/27109","description":"The `compact` options default is changed to `3` and the `breakLength` options default is changed to `80`."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/24971","description":"Internal properties no longer appear in the context argument of a custom inspection function."},{"version":"v11.11.0","pr-url":"https://github.com/nodejs/node/pull/26269","description":"The `compact` option accepts numbers for a new output mode."},{"version":"v11.7.0","pr-url":"https://github.com/nodejs/node/pull/25006","description":"ArrayBuffers now also show their binary contents."},{"version":"v11.5.0","pr-url":"https://github.com/nodejs/node/pull/24852","description":"The `getters` option is supported now."},{"version":"v11.4.0","pr-url":"https://github.com/nodejs/node/pull/24326","description":"The `depth` default changed back to `2`."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22846","description":"The `depth` default changed to `20`."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22756","description":"The inspection output is now limited to about 128 MiB. Data above that size will not be fully inspected."},{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/22788","description":"The `sorted` option is supported now."},{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/20725","description":"Inspecting linked lists and similar objects is now possible up to the maximum call stack size."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19259","description":"The `WeakMap` and `WeakSet` entries can now be inspected as well."},{"version":"v9.9.0","pr-url":"https://github.com/nodejs/node/pull/17576","description":"The `compact` option is supported now."},{"version":"v6.6.0","pr-url":"https://github.com/nodejs/node/pull/8174","description":"Custom inspection functions can now return `this`."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/7499","description":"The `breakLength` option is supported now."},{"version":"v6.1.0","pr-url":"https://github.com/nodejs/node/pull/6334","description":"The `maxArrayLength` option is supported now; in particular, long arrays are truncated by default."},{"version":"v6.1.0","pr-url":"https://github.com/nodejs/node/pull/6465","description":"The `showProxy` option is supported now."}],"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata version="v18.13.0" data={{"changes":[{"version":["v17.3.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41003","description":"The `numericSeparator` option is supported now."},{"version":["v14.6.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/33690","description":"If `object` is from a different `vm.Context` now, a custom inspection function on it will not receive context-specific arguments anymore."},{"version":["v13.13.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32392","description":"The `maxStringLength` option is supported now."},{"version":["v13.5.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30768","description":"User defined prototype properties are inspected in case `showHidden` is `true`."},{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27685","description":"Circular references now include a marker to the reference."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/27109","description":"The `compact` options default is changed to `3` and the `breakLength` options default is changed to `80`."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/24971","description":"Internal properties no longer appear in the context argument of a custom inspection function."},{"version":"v11.11.0","pr-url":"https://github.com/nodejs/node/pull/26269","description":"The `compact` option accepts numbers for a new output mode."},{"version":"v11.7.0","pr-url":"https://github.com/nodejs/node/pull/25006","description":"ArrayBuffers now also show their binary contents."},{"version":"v11.5.0","pr-url":"https://github.com/nodejs/node/pull/24852","description":"The `getters` option is supported now."},{"version":"v11.4.0","pr-url":"https://github.com/nodejs/node/pull/24326","description":"The `depth` default changed back to `2`."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22846","description":"The `depth` default changed to `20`."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22756","description":"The inspection output is now limited to about 128 MiB. Data above that size will not be fully inspected."},{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/22788","description":"The `sorted` option is supported now."},{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/20725","description":"Inspecting linked lists and similar objects is now possible up to the maximum call stack size."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19259","description":"The `WeakMap` and `WeakSet` entries can now be inspected as well."},{"version":"v9.9.0","pr-url":"https://github.com/nodejs/node/pull/17576","description":"The `compact` option is supported now."},{"version":"v6.6.0","pr-url":"https://github.com/nodejs/node/pull/8174","description":"Custom inspection functions can now return `this`."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/7499","description":"The `breakLength` option is supported now."},{"version":"v6.1.0","pr-url":"https://github.com/nodejs/node/pull/6334","description":"The `maxArrayLength` option is supported now; in particular, long arrays are truncated by default."},{"version":"v6.1.0","pr-url":"https://github.com/nodejs/node/pull/6465","description":"The `showProxy` option is supported now."}],"update":{"type":"added","version":["v0.3.0"]}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Any JavaScript primitive or `Object`.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -536,7 +536,7 @@ const o = {
       'eiusmod \ntempor incididunt ut labore et dolore magna aliqua.',
     'test',
     'foo']], 4],
-  b: new Map([['za', 1], ['zb', 'test']])
+  b: new Map([['za', 1], ['zb', 'test']]),
 };
 console.log(util.inspect(o, { compact: true, depth: 5, breakLength: 80 }));
 
@@ -604,7 +604,7 @@ const assert = require('node:assert');
 const o1 = {
   b: [2, 3, 1],
   a: '`a` comes before `b`',
-  c: new Set([2, 3, 1])
+  c: new Set([2, 3, 1]),
 };
 console.log(inspect(o1, { sorted: true }));
 // { a: '`a` comes before `b`', b: [ 2, 3, 1 ], c: Set(3) { 1, 2, 3 } }
@@ -614,11 +614,11 @@ console.log(inspect(o1, { sorted: (a, b) => b.localeCompare(a) }));
 const o2 = {
   c: new Set([2, 1, 3]),
   a: '`a` comes before `b`',
-  b: [2, 3, 1]
+  b: [2, 3, 1],
 };
 assert.strict.equal(
   inspect(o1, { sorted: true }),
-  inspect(o2, { sorted: true })
+  inspect(o2, { sorted: true }),
 );
 ```
 
@@ -643,7 +643,7 @@ be truncated.
 
 #### Customizing `util.inspect` colors
 
-<Metadata version="v18.12.1" data={{"type":"misc"}} />
+<Metadata version="v18.13.0" data={{"type":"misc"}} />
 
 Color output (if enabled) of `util.inspect` is customizable globally
 via the `util.inspect.styles` and `util.inspect.colors` properties.
@@ -734,9 +734,9 @@ ignored, if not supported.
 
 #### Custom inspection functions on objects
 
-<Metadata version="v18.12.1" data={{"type":"misc"}} />
+<Metadata version="v18.13.0" data={{"type":"misc"}} />
 
-<Metadata version="v18.12.1" data={{"changes":[{"version":["v17.3.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41019","description":"The inspect argument is added for more interoperability."}],"update":{"type":"added","version":["v0.1.97"]}}} />
+<Metadata version="v18.13.0" data={{"changes":[{"version":["v17.3.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41019","description":"The inspect argument is added for more interoperability."}],"update":{"type":"added","version":["v0.1.97"]}}} />
 
 Objects may also define their own
 [`[util.inspect.custom](depth, opts, inspect)`][util.inspect.custom] function,
@@ -757,7 +757,7 @@ class Box {
     }
 
     const newOptions = Object.assign({}, options, {
-      depth: options.depth === null ? null : options.depth - 1
+      depth: options.depth === null ? null : options.depth - 1,
     });
 
     // Five space padding because that's the size of "Box< ".
@@ -792,7 +792,7 @@ util.inspect(obj);
 
 #### <DataTag tag="M" /> `util.inspect.custom`
 
-<Metadata version="v18.12.1" data={{"changes":[{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/20857","description":"This is now defined as a shared symbol."}],"update":{"type":"added","version":["v6.6.0"]}}} />
+<Metadata version="v18.13.0" data={{"changes":[{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/20857","description":"This is now defined as a shared symbol."}],"update":{"type":"added","version":["v6.6.0"]}}} />
 
 * [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) that can be used to declare custom inspect functions.
 
@@ -831,7 +831,7 @@ See [Custom inspection functions on Objects][] for more details.
 
 #### <DataTag tag="M" /> `util.inspect.defaultOptions`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v6.4.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v6.4.0"]}}} />
 
 The `defaultOptions` value allows customization of the default options used by
 `util.inspect`. This is useful for functions like `console.log` or
@@ -850,7 +850,7 @@ console.log(arr); // logs the full array
 
 ### <DataTag tag="M" /> `util.isDeepStrictEqual(val1, val2)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v9.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v9.0.0"]}}} />
 
 * `val1` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * `val2` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -862,11 +862,356 @@ Otherwise, returns `false`.
 See [`assert.deepStrictEqual()`][] for more information about deep strict
 equality.
 
+### <DataTag tag="C" /> `util.MIMEType`
+
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v18.13.0"]}}} />
+
+<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+
+An implementation of [the MIMEType class](https://bmeck.github.io/node-proposal-mime-api/).
+
+In accordance with browser conventions, all properties of `MIMEType` objects
+are implemented as getters and setters on the class prototype, rather than as
+data properties on the object itself.
+
+A MIME string is a structured string containing multiple meaningful
+components. When parsed, a `MIMEType` object is returned containing
+properties for each of these components.
+
+#### Constructor: `new MIMEType(input)`
+
+* `input` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The input MIME to parse
+
+Creates a new `MIMEType` object by parsing the `input`.
+
+```mjs
+import { MIMEType } from 'node:util';
+
+const myMIME = new MIMEType('text/plain');
+```
+
+```cjs
+const { MIMEType } = require('node:util');
+
+const myMIME = new MIMEType('text/plain');
+```
+
+A `TypeError` will be thrown if the `input` is not a valid MIME. Note
+that an effort will be made to coerce the given values into strings. For
+instance:
+
+```mjs
+import { MIMEType } from 'node:util';
+const myMIME = new MIMEType({ toString: () => 'text/plain' });
+console.log(String(myMIME));
+// Prints: text/plain
+```
+
+```cjs
+const { MIMEType } = require('node:util');
+const myMIME = new MIMEType({ toString: () => 'text/plain' });
+console.log(String(myMIME));
+// Prints: text/plain
+```
+
+##### <DataTag tag="M" /> `mime.type`
+
+* [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
+
+Gets and sets the type portion of the MIME.
+
+```mjs
+import { MIMEType } from 'node:util';
+
+const myMIME = new MIMEType('text/javascript');
+console.log(myMIME.type);
+// Prints: text
+myMIME.type = 'application';
+console.log(myMIME.type);
+// Prints: application
+console.log(String(myMIME));
+// Prints: application/javascript
+```
+
+```cjs
+const { MIMEType } = require('node:util');
+
+const myMIME = new MIMEType('text/javascript');
+console.log(myMIME.type);
+// Prints: text
+myMIME.type = 'application';
+console.log(myMIME.type);
+// Prints: application
+console.log(String(myMIME));
+// Prints: application/javascript/javascript
+```
+
+##### <DataTag tag="M" /> `mime.subtype`
+
+* [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
+
+Gets and sets the subtype portion of the MIME.
+
+```mjs
+import { MIMEType } from 'node:util';
+
+const myMIME = new MIMEType('text/ecmascript');
+console.log(myMIME.subtype);
+// Prints: ecmascript
+myMIME.subtype = 'javascript';
+console.log(myMIME.subtype);
+// Prints: javascript
+console.log(String(myMIME));
+// Prints: text/javascript
+```
+
+```cjs
+const { MIMEType } = require('node:util');
+
+const myMIME = new MIMEType('text/ecmascript');
+console.log(myMIME.subtype);
+// Prints: ecmascript
+myMIME.subtype = 'javascript';
+console.log(myMIME.subtype);
+// Prints: javascript
+console.log(String(myMIME));
+// Prints: text/javascript
+```
+
+##### <DataTag tag="M" /> `mime.essence`
+
+* [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
+
+Gets the essence of the MIME. This property is read only.
+Use `mime.type` or `mime.subtype` to alter the MIME.
+
+```mjs
+import { MIMEType } from 'node:util';
+
+const myMIME = new MIMEType('text/javascript;key=value');
+console.log(myMIME.essence);
+// Prints: text/javascript
+myMIME.type = 'application';
+console.log(myMIME.essence);
+// Prints: application/javascript
+console.log(String(myMIME));
+// Prints: application/javascript;key=value
+```
+
+```cjs
+const { MIMEType } = require('node:util');
+
+const myMIME = new MIMEType('text/javascript;key=value');
+console.log(myMIME.essence);
+// Prints: text/javascript
+myMIME.type = 'application';
+console.log(myMIME.essence);
+// Prints: application/javascript
+console.log(String(myMIME));
+// Prints: application/javascript;key=value
+```
+
+##### <DataTag tag="M" /> `mime.params`
+
+* MIMEParams
+
+Gets the [`MIMEParams`][] object representing the
+parameters of the MIME. This property is read-only. See
+[`MIMEParams`][] documentation for details.
+
+##### <DataTag tag="M" /> `mime.toString()`
+
+* Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
+
+The `toString()` method on the `MIMEType` object returns the serialized MIME.
+
+Because of the need for standard compliance, this method does not allow users
+to customize the serialization process of the MIME.
+
+##### <DataTag tag="M" /> `mime.toJSON()`
+
+* Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
+
+Alias for [`mime.toString()`][].
+
+This method is automatically called when an `MIMEType` object is serialized
+with [`JSON.stringify()`][].
+
+```mjs
+import { MIMEType } from 'node:util';
+
+const myMIMES = [
+  new MIMEType('image/png'),
+  new MIMEType('image/gif'),
+];
+console.log(JSON.stringify(myMIMES));
+// Prints: ["image/png", "image/gif"]
+```
+
+```cjs
+const { MIMEType } = require('node:util');
+
+const myMIMES = [
+  new MIMEType('image/png'),
+  new MIMEType('image/gif'),
+];
+console.log(JSON.stringify(myMIMES));
+// Prints: ["image/png", "image/gif"]
+```
+
+#### <DataTag tag="C" /> `util.MIMEParams`
+
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v18.13.0"]}}} />
+
+The `MIMEParams` API provides read and write access to the parameters of a
+`MIMEType`.
+
+##### Constructor: `new MIMEParams()`
+
+Creates a new `MIMEParams` object by with empty parameters
+
+```mjs
+import { MIMEParams } from 'node:util';
+
+const myParams = new MIMEParams();
+```
+
+```cjs
+const { MIMEParams } = require('node:util');
+
+const myParams = new MIMEParams();
+```
+
+##### <DataTag tag="M" /> `mimeParams.delete(name)`
+
+* `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
+
+Remove all name-value pairs whose name is `name`.
+
+##### <DataTag tag="M" /> `mimeParams.entries()`
+
+* Returns: [`Iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol)
+
+Returns an iterator over each of the name-value pairs in the parameters.
+Each item of the iterator is a JavaScript `Array`. The first item of the array
+is the `name`, the second item of the array is the `value`.
+
+##### <DataTag tag="M" /> `mimeParams.get(name)`
+
+* `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
+* Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) or `null` if there is no name-value pair with the given
+  `name`.
+
+Returns the value of the first name-value pair whose name is `name`. If there
+are no such pairs, `null` is returned.
+
+##### <DataTag tag="M" /> `mimeParams.has(name)`
+
+* `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
+* Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
+
+Returns `true` if there is at least one name-value pair whose name is `name`.
+
+##### <DataTag tag="M" /> `mimeParams.keys()`
+
+* Returns: [`Iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol)
+
+Returns an iterator over the names of each name-value pair.
+
+```mjs
+import { MIMEType } from 'node:util';
+
+const { params } = new MIMEType('text/plain;foo=0;bar=1');
+for (const name of params.keys()) {
+  console.log(name);
+}
+// Prints:
+//   foo
+//   bar
+```
+
+```cjs
+const { MIMEType } = require('node:util');
+
+const { params } = new MIMEType('text/plain;foo=0;bar=1');
+for (const name of params.keys()) {
+  console.log(name);
+}
+// Prints:
+//   foo
+//   bar
+```
+
+##### <DataTag tag="M" /> `mimeParams.set(name, value)`
+
+* `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
+* `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
+
+Sets the value in the `MIMEParams` object associated with `name` to
+`value`. If there are any pre-existing name-value pairs whose names are `name`,
+set the first such pair's value to `value`.
+
+```mjs
+import { MIMEType } from 'node:util';
+
+const { params } = new MIMEType('text/plain;foo=0;bar=1');
+params.set('foo', 'def');
+params.set('baz', 'xyz');
+console.log(params.toString());
+// Prints: foo=def&bar=1&baz=xyz
+```
+
+```cjs
+const { MIMEType } = require('node:util');
+
+const { params } = new MIMEType('text/plain;foo=0;bar=1');
+params.set('foo', 'def');
+params.set('baz', 'xyz');
+console.log(params.toString());
+// Prints: foo=def&bar=1&baz=xyz
+```
+
+##### <DataTag tag="M" /> `mimeParams.values()`
+
+* Returns: [`Iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol)
+
+Returns an iterator over the values of each name-value pair.
+
+##### <DataTag tag="M" /> `mimeParams[@@iterator]()`
+
+* Returns: [`Iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol)
+
+Alias for [`mimeParams.entries()`][].
+
+```mjs
+import { MIMEType } from 'node:util';
+
+const { params } = new MIMEType('text/plain;foo=bar;xyz=baz');
+for (const [name, value] of params) {
+  console.log(name, value);
+}
+// Prints:
+//   foo bar
+//   xyz baz
+```
+
+```cjs
+const { MIMEType } = require('node:util');
+
+const { params } = new MIMEType('text/plain;foo=bar;xyz=baz');
+for (const [name, value] of params) {
+  console.log(name, value);
+}
+// Prints:
+//   foo bar
+//   xyz baz
+```
+
 ### <DataTag tag="M" /> `util.parseArgs([config])`
 
-<Metadata version="v18.12.1" data={{"changes":[{"version":"v18.11.0","pr-url":"https://github.com/nodejs/node/pull/44631","description":"Add support for default values in input `config`."},{"version":["v18.7.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/43459","description":"add support for returning detailed parse information using `tokens` in input `config` and returned properties."}],"update":{"type":"added","version":["v18.3.0"]}}} />
+<Metadata version="v18.13.0" data={{"changes":[{"version":"v18.11.0","pr-url":"https://github.com/nodejs/node/pull/44631","description":"Add support for default values in input `config`."},{"version":["v18.7.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/43459","description":"add support for returning detailed parse information using `tokens` in input `config` and returned properties."}],"update":{"type":"added","version":["v18.3.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `config` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Used to provide arguments for parsing and to configure
   the parser. `config` supports the following properties:
@@ -882,7 +1227,7 @@ equality.
     * `short` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A single character alias for the option.
     * `default` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) The default option
       value when it is not set by args. It must be of the same type as the
-      the `type` property. When `multiple` is `true`, it must be an array.
+      `type` property. When `multiple` is `true`, it must be an array.
   * `strict` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Should an error be thrown when unknown arguments
     are encountered, or when arguments are passed that do not match the
     `type` configured in `options`.
@@ -912,15 +1257,15 @@ const args = ['-f', '--bar', 'b'];
 const options = {
   foo: {
     type: 'boolean',
-    short: 'f'
+    short: 'f',
   },
   bar: {
-    type: 'string'
-  }
+    type: 'string',
+  },
 };
 const {
   values,
-  positionals
+  positionals,
 } = parseArgs({ args, options });
 console.log(values, positionals);
 // Prints: [Object: null prototype] { foo: true, bar: 'b' } []
@@ -932,15 +1277,15 @@ const args = ['-f', '--bar', 'b'];
 const options = {
   foo: {
     type: 'boolean',
-    short: 'f'
+    short: 'f',
   },
   bar: {
-    type: 'string'
-  }
+    type: 'string',
+  },
 };
 const {
   values,
-  positionals
+  positionals,
 } = parseArgs({ args, options });
 console.log(values, positionals);
 // Prints: [Object: null prototype] { foo: true, bar: 'b' } []
@@ -1059,7 +1404,7 @@ $ node negate.js --no-logfile --logfile=test.log --color --no-color
 
 ### <DataTag tag="M" /> `util.promisify(original)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `original` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * Returns: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -1171,7 +1516,7 @@ throw an error.
 
 #### <DataTag tag="M" /> `util.promisify.custom`
 
-<Metadata version="v18.12.1" data={{"changes":[{"version":["v13.12.0","v12.16.2"],"pr-url":"https://github.com/nodejs/node/pull/31672","description":"This is now defined as a shared symbol."}],"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"changes":[{"version":["v13.12.0","v12.16.2"],"pr-url":"https://github.com/nodejs/node/pull/31672","description":"This is now defined as a shared symbol."}],"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) that can be used to declare custom promisified variants of functions,
   see [Custom promisified functions][].
@@ -1195,7 +1540,7 @@ doSomething[kCustomPromisifiedSymbol] = (foo) => {
 
 ### <DataTag tag="M" /> `util.stripVTControlCharacters(str)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v16.11.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v16.11.0"]}}} />
 
 * `str` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -1209,7 +1554,7 @@ console.log(util.stripVTControlCharacters('\u001B[4mvalue\u001B[0m'));
 
 ### <DataTag tag="C" /> `util.TextDecoder`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v8.3.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v8.3.0"]}}} />
 
 An implementation of the [WHATWG Encoding Standard][] `TextDecoder` API.
 
@@ -1287,7 +1632,7 @@ is not supported.
 
 #### <DataTag tag="M" /> `new TextDecoder([encoding[, options]])`
 
-<Metadata version="v18.12.1" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22281","description":"The class is now available on the global object."}],"update":{"type":"added","version":["v8.3.0"]}}} />
+<Metadata version="v18.13.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22281","description":"The class is now available on the global object."}],"update":{"type":"added","version":["v8.3.0"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Identifies the `encoding` that this `TextDecoder` instance
   supports. **Default:** `'utf-8'`.
@@ -1343,7 +1688,7 @@ mark.
 
 ### <DataTag tag="C" /> `util.TextEncoder`
 
-<Metadata version="v18.12.1" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22281","description":"The class is now available on the global object."}],"update":{"type":"added","version":["v8.3.0"]}}} />
+<Metadata version="v18.13.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22281","description":"The class is now available on the global object."}],"update":{"type":"added","version":["v8.3.0"]}}} />
 
 An implementation of the [WHATWG Encoding Standard][] `TextEncoder` API. All
 instances of `TextEncoder` only support UTF-8 encoding.
@@ -1389,7 +1734,7 @@ The encoding supported by the `TextEncoder` instance. Always set to `'utf-8'`.
 
 ### <DataTag tag="M" /> `util.toUSVString(string)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v16.8.0","v14.18.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v16.8.0","v14.18.0"]}}} />
 
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1399,18 +1744,18 @@ Unicode "replacement character" U+FFFD.
 
 ### <DataTag tag="M" /> `util.transferableAbortController()`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v18.11.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v18.11.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 Creates and returns an [`AbortController`](/api/globals#abortcontroller) instance whose [`AbortSignal`](/api/globals#abortsignal) is marked
 as transferable and can be used with `structuredClone()` or `postMessage()`.
 
 ### <DataTag tag="M" /> `util.transferableAbortSignal(signal)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v18.11.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v18.11.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `signal` [`AbortSignal`](/api/globals#abortsignal)
 * Returns: [`AbortSignal`](/api/globals#abortsignal)
@@ -1426,7 +1771,7 @@ channel.port2.postMessage(signal, [signal]);
 
 ### <DataTag tag="M" /> `util.types`
 
-<Metadata version="v18.12.1" data={{"changes":[{"version":"v15.3.0","pr-url":"https://github.com/nodejs/node/pull/34055","description":"Exposed as `require('util/types')`."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"changes":[{"version":"v15.3.0","pr-url":"https://github.com/nodejs/node/pull/34055","description":"Exposed as `require('util/types')`."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 `util.types` provides type checks for different kinds of built-in objects.
 Unlike `instanceof` or `Object.prototype.toString.call(value)`, these checks do
@@ -1441,7 +1786,7 @@ The API is accessible via `require('node:util').types` or `require('node:util/ty
 
 #### <DataTag tag="M" /> `util.types.isAnyArrayBuffer(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1459,7 +1804,7 @@ util.types.isAnyArrayBuffer(new SharedArrayBuffer());  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isArrayBufferView(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1477,7 +1822,7 @@ util.types.isArrayBufferView(new ArrayBuffer());  // false
 
 #### <DataTag tag="M" /> `util.types.isArgumentsObject(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1492,7 +1837,7 @@ function foo() {
 
 #### <DataTag tag="M" /> `util.types.isArrayBuffer(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1508,7 +1853,7 @@ util.types.isArrayBuffer(new SharedArrayBuffer());  // Returns false
 
 #### <DataTag tag="M" /> `util.types.isAsyncFunction(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1525,7 +1870,7 @@ util.types.isAsyncFunction(async function foo() {});  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isBigInt64Array(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1539,7 +1884,7 @@ util.types.isBigInt64Array(new BigUint64Array());  // Returns false
 
 #### <DataTag tag="M" /> `util.types.isBigUint64Array(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1553,7 +1898,7 @@ util.types.isBigUint64Array(new BigUint64Array());  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isBooleanObject(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1572,7 +1917,7 @@ util.types.isBooleanObject(Boolean(true));  // Returns false
 
 #### <DataTag tag="M" /> `util.types.isBoxedPrimitive(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.11.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.11.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1592,7 +1937,7 @@ util.types.isBoxedPrimitive(Object(BigInt(5))); // Returns true
 
 #### <DataTag tag="M" /> `util.types.isCryptoKey(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v16.2.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v16.2.0"]}}} />
 
 * `value` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1601,7 +1946,7 @@ Returns `true` if `value` is a [`CryptoKey`](/api/webcrypto#cryptokey), `false` 
 
 #### <DataTag tag="M" /> `util.types.isDataView(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1618,7 +1963,7 @@ See also [`ArrayBuffer.isView()`][].
 
 #### <DataTag tag="M" /> `util.types.isDate(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1631,7 +1976,7 @@ util.types.isDate(new Date());  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isExternal(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1675,7 +2020,7 @@ For further information on `napi_create_external`, refer to
 
 #### <DataTag tag="M" /> `util.types.isFloat32Array(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1690,7 +2035,7 @@ util.types.isFloat32Array(new Float64Array());  // Returns false
 
 #### <DataTag tag="M" /> `util.types.isFloat64Array(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1705,7 +2050,7 @@ util.types.isFloat64Array(new Float64Array());  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isGeneratorFunction(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1722,7 +2067,7 @@ util.types.isGeneratorFunction(function* foo() {});  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isGeneratorObject(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1741,7 +2086,7 @@ util.types.isGeneratorObject(generator);  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isInt8Array(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1756,7 +2101,7 @@ util.types.isInt8Array(new Float64Array());  // Returns false
 
 #### <DataTag tag="M" /> `util.types.isInt16Array(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1771,7 +2116,7 @@ util.types.isInt16Array(new Float64Array());  // Returns false
 
 #### <DataTag tag="M" /> `util.types.isInt32Array(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1786,7 +2131,7 @@ util.types.isInt32Array(new Float64Array());  // Returns false
 
 #### <DataTag tag="M" /> `util.types.isKeyObject(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v16.2.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v16.2.0"]}}} />
 
 * `value` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1795,7 +2140,7 @@ Returns `true` if `value` is a [`KeyObject`](/api/crypto#keyobject), `false` oth
 
 #### <DataTag tag="M" /> `util.types.isMap(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1808,7 +2153,7 @@ util.types.isMap(new Map());  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isMapIterator(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1826,7 +2171,7 @@ util.types.isMapIterator(map[Symbol.iterator]());  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isModuleNamespaceObject(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1841,7 +2186,7 @@ util.types.isModuleNamespaceObject(ns);  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isNativeError(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1856,7 +2201,7 @@ util.types.isNativeError(new RangeError());  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isNumberObject(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1871,7 +2216,7 @@ util.types.isNumberObject(new Number(0));   // Returns true
 
 #### <DataTag tag="M" /> `util.types.isPromise(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1884,7 +2229,7 @@ util.types.isPromise(Promise.resolve(42));  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isProxy(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1900,7 +2245,7 @@ util.types.isProxy(proxy);  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isRegExp(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1914,7 +2259,7 @@ util.types.isRegExp(new RegExp('abc'));  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isSet(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1927,7 +2272,7 @@ util.types.isSet(new Set());  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isSetIterator(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1945,7 +2290,7 @@ util.types.isSetIterator(set[Symbol.iterator]());  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isSharedArrayBuffer(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1961,7 +2306,7 @@ util.types.isSharedArrayBuffer(new SharedArrayBuffer());  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isStringObject(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1976,7 +2321,7 @@ util.types.isStringObject(new String('foo'));   // Returns true
 
 #### <DataTag tag="M" /> `util.types.isSymbolObject(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1992,7 +2337,7 @@ util.types.isSymbolObject(Object(symbol));   // Returns true
 
 #### <DataTag tag="M" /> `util.types.isTypedArray(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2009,7 +2354,7 @@ See also [`ArrayBuffer.isView()`][].
 
 #### <DataTag tag="M" /> `util.types.isUint8Array(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2024,7 +2369,7 @@ util.types.isUint8Array(new Float64Array());  // Returns false
 
 #### <DataTag tag="M" /> `util.types.isUint8ClampedArray(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2039,7 +2384,7 @@ util.types.isUint8ClampedArray(new Float64Array());  // Returns false
 
 #### <DataTag tag="M" /> `util.types.isUint16Array(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2054,7 +2399,7 @@ util.types.isUint16Array(new Float64Array());  // Returns false
 
 #### <DataTag tag="M" /> `util.types.isUint32Array(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2069,7 +2414,7 @@ util.types.isUint32Array(new Float64Array());  // Returns false
 
 #### <DataTag tag="M" /> `util.types.isWeakMap(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2082,7 +2427,7 @@ util.types.isWeakMap(new WeakMap());  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isWeakSet(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2095,9 +2440,9 @@ util.types.isWeakSet(new WeakSet());  // Returns true
 
 #### <DataTag tag="M" /> `util.types.isWebAssemblyCompiledModule(value)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v14.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v14.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `value instanceof WebAssembly.Module` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `value instanceof WebAssembly.Module` instead."}}} />
 
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2116,9 +2461,9 @@ applications and modules should be updated to find alternative approaches.
 
 #### <DataTag tag="M" /> `util._extend(target, source)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v6.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `Object.assign()` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `Object.assign()` instead."}}} />
 
 * `target` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `source` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2131,9 +2476,9 @@ similar built-in functionality through [`Object.assign()`][].
 
 #### <DataTag tag="M" /> `util.isArray(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `Array.isArray()` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `Array.isArray()` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2155,9 +2500,9 @@ util.isArray({});
 
 #### <DataTag tag="M" /> `util.isBoolean(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `typeof value === 'boolean'` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `typeof value === 'boolean'` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2177,9 +2522,9 @@ util.isBoolean(false);
 
 #### <DataTag tag="M" /> `util.isBuffer(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `Buffer.isBuffer()` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `Buffer.isBuffer()` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2199,9 +2544,9 @@ util.isBuffer(Buffer.from('hello world'));
 
 #### <DataTag tag="M" /> `util.isDate(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `util.types.isDate()` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `util.types.isDate()` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2221,9 +2566,9 @@ util.isDate({});
 
 #### <DataTag tag="M" /> `util.isError(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `util.types.isNativeError()` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `util.types.isNativeError()` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2259,9 +2604,9 @@ util.isError(obj);
 
 #### <DataTag tag="M" /> `util.isFunction(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `typeof value === 'function'` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `typeof value === 'function'` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2285,9 +2630,9 @@ util.isFunction(Bar);
 
 #### <DataTag tag="M" /> `util.isNull(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `value === null` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `value === null` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2308,9 +2653,9 @@ util.isNull(null);
 
 #### <DataTag tag="M" /> `util.isNullOrUndefined(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `value === undefined || value === null` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `value === undefined || value === null` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2331,9 +2676,9 @@ util.isNullOrUndefined(null);
 
 #### <DataTag tag="M" /> `util.isNumber(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `typeof value === 'number'` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `typeof value === 'number'` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2355,9 +2700,9 @@ util.isNumber(NaN);
 
 #### <DataTag tag="M" /> `util.isObject(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `value !== null && typeof value === 'object'` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `value !== null && typeof value === 'object'` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2381,9 +2726,9 @@ util.isObject(() => {});
 
 #### <DataTag tag="M" /> `util.isPrimitive(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `(typeof value !== 'object' && typeof value !== 'function') || value === null`\n> instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `(typeof value !== 'object' && typeof value !== 'function') || value === null`\n> instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2416,9 +2761,9 @@ util.isPrimitive(new Date());
 
 #### <DataTag tag="M" /> `util.isRegExp(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated"}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated"}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2438,9 +2783,9 @@ util.isRegExp({});
 
 #### <DataTag tag="M" /> `util.isString(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `typeof value === 'string'` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `typeof value === 'string'` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2462,9 +2807,9 @@ util.isString(5);
 
 #### <DataTag tag="M" /> `util.isSymbol(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `typeof value === 'symbol'` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `typeof value === 'symbol'` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2484,9 +2829,9 @@ util.isSymbol(Symbol('foo'));
 
 #### <DataTag tag="M" /> `util.isUndefined(object)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use `value === undefined` instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `value === undefined` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2507,9 +2852,9 @@ util.isUndefined(null);
 
 #### <DataTag tag="M" /> `util.log(string)`
 
-<Metadata version="v18.12.1" data={{"update":{"type":"deprecated","version":["v6.0.0"]}}} />
+<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v18.12.1" data={{"stability":{"level":0,"text":" - Deprecated: Use a third party module instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use a third party module instead."}}} />
 
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -2543,6 +2888,8 @@ util.log('Timestamped message.');
 [`Int16Array`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array
 [`Int32Array`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array
 [`Int8Array`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array
+[`JSON.stringify()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+[`MIMEparams`]: #class-utilmimeparams
 [`Map`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
 [`Object.assign()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 [`Object.freeze()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
@@ -2560,6 +2907,8 @@ util.log('Timestamped message.');
 [`WebAssembly.Module`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module
 [`assert.deepStrictEqual()`]: /api/v18/assert#assertdeepstrictequalactual-expected-message
 [`console.error()`]: /api/v18/console#consoleerrordata-args
+[`mime.toString()`]: #mimetostring
+[`mimeParams.entries()`]: #mimeparamsentries
 [`napi_create_external()`]: n-api.md#napi_create_external
 [`target` and `handler`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#Terminology
 [`tty.hasColors()`]: /api/v18/tty#writestreamhascolorscount-env
