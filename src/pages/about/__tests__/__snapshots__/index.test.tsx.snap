@@ -169,14 +169,14 @@ exports[`About page renders correctly 1`] = `
   <article
     class="article"
   >
-    <div>
+    <header>
       <h1
         class="headline"
       >
         Mock Title
       </h1>
       <p />
-    </div>
+    </header>
     <div />
     <div />
     <div>
