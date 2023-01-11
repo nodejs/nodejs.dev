@@ -48,12 +48,12 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   };
 
   useEffect(() => {
-    const parsedLangauge = replaceLanguages(language);
+    const parsedLanguage = replaceLanguages(language);
 
-    const prismLanguage = languages[parsedLangauge] || languages.text;
+    const prismLanguage = languages[parsedLanguage] || languages.text;
 
     setParsedCode(
-      sanitize(highlight(stringCode, prismLanguage, parsedLangauge))
+      sanitize(highlight(stringCode, prismLanguage, parsedLanguage))
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
