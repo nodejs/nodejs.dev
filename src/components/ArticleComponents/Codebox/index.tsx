@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { highlight, languages } from 'prismjs';
 import { sanitize } from 'isomorphic-dompurify';
 import classnames from 'classnames';
@@ -62,7 +63,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
       <div className={styles.top}>
         <span>{replaceLabelLanguages(language)}</span>
         <button type="button" onClick={handleCopyCode}>
-          {copied ? 'copied' : 'copy'}
+          <FormattedMessage id="components.codeBox.copy" values={{ copied }} />
         </button>
       </div>
       <div
