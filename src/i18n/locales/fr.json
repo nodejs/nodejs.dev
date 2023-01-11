@@ -95,5 +95,7 @@
   "blog.categories.release.description": "Catégorie de blog pour les annonces des versions de Node.js",
   "blog.categories.vulnerability.description": "Catégorie de blog concernant les vulnérabilités de sécurité",
   "components.downloadToggle.ltsVersions": "LTS Versions",
-  "components.downloadToggle.currentVersions": "Versions actuelles"
+  "components.downloadToggle.currentVersions": "Versions actuelles",
+  "components.shellBox.copy": "{copied, select, true {copied}other {copy}}",
+  "components.codeBox.copy": "{copied, select, true {copied}other {copy}}"
 }
