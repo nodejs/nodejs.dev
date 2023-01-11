@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import { FormattedMessage } from 'react-intl';
 import { useCopyToClipboard } from '../useCopyToClipboard';
 
 describe('useCopyToClipboard', () => {
@@ -8,7 +9,7 @@ describe('useCopyToClipboard', () => {
 
     return (
       <button onClick={() => copyText(text)} type="button">
-        {copied ? 'copied' : 'copy'}
+        <FormattedMessage id="components.codeBox.copy" values={{ copied }} />
       </button>
     );
   };
