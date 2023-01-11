@@ -96,5 +96,7 @@
   "blog.categories.vulnerability.description": "Blog category regarding Security Vulnerabilities",
   "components.downloadToggle.ltsVersions": "LTS Versions",
   "components.downloadToggle.currentVersions": "Current Versions",
-  "components.upcomingReleasesItem.releaseStatus": "Released"
-}
+  "components.upcomingReleasesItem.releaseStatus": "Released",
+  "components.shellBox.copy": "{copied, select, true {copied}other {copy}}",
+  "components.codeBox.copy": "{copied, select, true {copied}other {copy}}"
+  }
