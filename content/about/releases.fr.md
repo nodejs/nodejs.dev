@@ -11,4 +11,6 @@ Après six mois, les versions impaires (9, 11, etc.) ne sont plus prises en char
 Le statut de la version _LTS_ est un "support à long terme", qui garantit généralement que les bogues critiques seront corrigés pendant un total de 30 mois.
 Il est recommandé aux applications de production d'utiliser que les versions _Active LTS_ ou _Maintenance LTS_.
 
+<Alert>The abbreviation LTS stands for `Long time support`.</Alert>
+
 ![Sorties](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)
