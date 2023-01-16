@@ -133,6 +133,7 @@ async function getApiDocsData(releaseVersions, callback) {
 
         progressBar.increment();
 
+        if (sortedNavigationEntry.items.length === 0) process.exit(1);
         fs.writeFile(
           navigationDataPath,
           // Stringifies and Pretty-Prints the JSON
