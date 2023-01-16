@@ -28,10 +28,26 @@ const UpcomingReleasesItem = ({
     [styles.itemToBeReleased]: !alreadyReleased,
   });
 
+  const releaseTitle = () => {
+    if (releaseType === 'Current') {
+      return <FormattedMessage id="components.current" />;
+    }
+    if (releaseType === 'LTS') {
+      return <FormattedMessage id="components.lts" />;
+    } 
+    if (releaseType === 'Maintenance') {
+      return <FormattedMessage id="components.maintenance" />;
+    }
+    if (releaseType === 'End-of-life') {
+      return <FormattedMessage id="components.endOfLife" />;
+    }
+    return 'Error';
+  };
+
   return (
     <div className={className}>
       <Image />
-      <p className={styles.releaseTitle}>{releaseType}</p>
+      <p className={styles.releaseTitle}>{releaseTitle()}</p>
       <p className={styles.releaseDate}>
         {Released} {releaseDate}
       </p>

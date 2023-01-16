@@ -98,5 +98,9 @@
   "components.downloadToggle.currentVersions": "現在のバージョン",
   "components.upcomingReleasesItem.releaseStatus": "Released",
   "components.shellBox.copy": "{copied, select, true {copied}other {copy}}",
-  "components.codeBox.copy": "{copied, select, true {copied}other {copy}}"
+  "components.codeBox.copy": "{copied, select, true {copied}other {copy}}",
+  "components.current": "Current",
+  "components.lts": "LTS",
+  "components.maintenance": "Maintenance",
+  "components.eol": "End-of-life"
   }
