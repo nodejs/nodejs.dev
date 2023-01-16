@@ -34,7 +34,7 @@ const UpcomingReleasesItem = ({
     }
     if (releaseType === 'LTS') {
       return <FormattedMessage id="components.lts" />;
-    } 
+    }
     if (releaseType === 'Maintenance') {
       return <FormattedMessage id="components.maintenance" />;
     }
