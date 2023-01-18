@@ -10,7 +10,7 @@ Please review the [trademark policy](https://trademark-policy.openjsf.org/) for 
 
 ## Color
 
-The following colors are the color palette for the nodejs website. And should be used for other documents.
+The following colors are the color palette for the Node.js website. And should be used for other documents.
 
 ### Brand colors
 
