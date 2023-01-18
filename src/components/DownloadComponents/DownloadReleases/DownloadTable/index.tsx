@@ -2,8 +2,14 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { NodeReleaseData } from '../../../../types';
 import styles from './index.module.scss';
-import { toCamelCaseStatus } from '../../../../util/strings';
 
+const STATUS_TRANSLATION_MAP = {
+  'End-of-life': 'components.downloadTable.status.endOfLife',
+  'Maintenance LTS': 'components.downloadTable.status.maintenanceLts',
+  'Active LTS': 'components.downloadTable.status.activeLts',
+  Current: 'components.downloadTable.status.current',
+  Pending: 'components.downloadTable.status.pending',
+};
 interface Props {
   nodeReleasesData: NodeReleaseData[];
 }
@@ -65,11 +71,7 @@ const DownloadTable = ({ nodeReleasesData }: Props): JSX.Element => (
                   )}
                 </td>
                 <td>
-                  <FormattedMessage
-                    id={`components.downloadTable.status.${toCamelCaseStatus(
-                      status
-                    )}`}
-                  />
+                  <FormattedMessage id={STATUS_TRANSLATION_MAP[status]} />
                 </td>
                 <td>
                   {codename !== version ? (
