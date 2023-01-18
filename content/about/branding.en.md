@@ -18,7 +18,6 @@ The following colors are the color palette for the Node.js website. And should b
 
 ### Neutral colors
 
-
 ![Neutral colors](/static/images/brand/colors/neutral-colors.svg)
 
 ### Status colors
