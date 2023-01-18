@@ -59,7 +59,7 @@ The following colors are the color palette for the nodejs website. And should be
     <!-- logo dark -->
     <tr>
         <td><a href="/static/images/brand/logos-js-right/dark-no-background.svg">Nodejs logo dark without background</a></td>
-        <td><a href="/static/images/brand/logos-js-right/dark-background.svg">Nodejs logo dark with background</a></td>
+        <td><a href="/static/images/brand/logos-js-right/dark-background.svg">Node.js logo dark with background</a></td>
     </tr>
     <tr>
         <td><a href="/static/images/brand/logos-js-right/dark-background.svg" download><img src="/static/images/brand/logos-js-right/dark-no-background.svg"></a></td>
