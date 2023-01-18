@@ -43,7 +43,7 @@ server.listen(port, hostname, () => {
 });
 ```
 
-To run this snippet, save it as a `server.js` file and run `node server.js` in your terminal.-->
+To run this snippet, save it as a `server.js` file and run `node server.js` in your terminal.
 
 This code first includes the Node.js [`http` module](https://nodejs.org/api/http.html).
 
