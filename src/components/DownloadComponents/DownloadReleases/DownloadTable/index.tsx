@@ -2,6 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { NodeReleaseData } from '../../../../types';
 import styles from './index.module.scss';
+import { toCamelCaseStatus } from '../../../../util/strings';
 
 interface Props {
   nodeReleasesData: NodeReleaseData[];
@@ -63,7 +64,13 @@ const DownloadTable = ({ nodeReleasesData }: Props): JSX.Element => (
                     <a href={releaseDownloadLink}>{version}</a>
                   )}
                 </td>
-                <td>{status || ''}</td>
+                <td>
+                  <FormattedMessage
+                    id={`components.downloadTable.status.${toCamelCaseStatus(
+                      status
+                    )}`}
+                  />
+                </td>
                 <td>
                   {codename !== version ? (
                     <a href={codenameReleaseLink}>{codename}</a>
