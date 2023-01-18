@@ -133,7 +133,7 @@ The following colors are the color palette for the nodejs website. And should be
 
 ![Black hexagon](/static/images/brand/hexagon/black.svg)
 
-### Js form nodejs logo
+### JS from Node.js logo
 
 **Green JS**
 
