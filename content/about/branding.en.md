@@ -2,7 +2,7 @@
 title: branding
 displayTitle: Branding of Node.js
 description: 'Branding | Node.js'
-authors: AugustinMauroy
+authors: AugustinMauroy, XhmikosR, mikeal, fhemberger, Fishrock123, yous, tomgco, tniessen, SMcCandlish, saadq, Trott, Gornstats, piperchester, naoufal, lpinca, j9t, bnoordhuis, harshadsabne, Chris911, MrJithil
 category: about
 ---
 
