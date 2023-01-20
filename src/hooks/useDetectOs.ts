@@ -7,14 +7,16 @@ export const useDetectOs = () => {
   const [bitness, setBitness] = useState<string>('');
 
   useEffect(() => {
-    setUserOS(detectOS)
+    setUserOS(detectOS);
     try {
       // This is necessary to detect Windows 11 on Edge.
       // [MDN](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/getHighEntropyValues)
       // [MSFT](https://learn.microsoft.com/en-us/microsoft-edge/web-platform/how-to-detect-win11)
       // @ts-expect-error no types yet because this API is experimental
-      const ua = await navigator.userAgentData.getHighEntropyValues(['bitness'])
-      setBitness(ua.bitness)
+      const ua = await navigator.userAgentData.getHighEntropyValues([
+        'bitness',
+      ]);
+      setBitness(ua.bitness);
     } catch (e) {
       // Ignore errors since not every browser supports this API
     }
@@ -22,6 +24,7 @@ export const useDetectOs = () => {
 
   return {
     userOS,
-    getDownloadLink: (version: string) => downloadUrlByOS(userOS, version, bitness),
+    getDownloadLink: (version: string) =>
+      downloadUrlByOS(userOS, version, bitness),
   };
 };
