@@ -36,7 +36,7 @@ describe('downloadUrlByOS', () => {
 
     it('should return correct url for Windows general', () => {
       expect(downloadUrlByOS(UserOS.WIN, 'version-mock')).toBe(
-        'https://nodejs.org/dist/version-mock/node-version-mock-x64.msi'
+        'https://nodejs.org/dist/version-mock/node-version-mock-x86.msi'
       );
     });
   });
