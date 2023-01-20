@@ -65,7 +65,7 @@ const Article = ({
     {childrenPosition === 'before' && children && <div>{children}</div>}
     <header>
       <h1 className={styles.headline}>{title}</h1>
-      <p>{description}</p>
+    {description && <p>{description}</p>}
     </header>
     {blog
       ? renderBlogAuthors(date, authors as BlogPostAuthor[])
