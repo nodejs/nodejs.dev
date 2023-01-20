@@ -272,9 +272,8 @@ exports[`LearnLayout Template renders correctly 1`] = `
           <h1
             class="headline"
           >
-            title-mock
+            t,itle-mock
           </h1>
-          <p />
         </header>
         <h5
           class="list"

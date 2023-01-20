@@ -255,7 +255,6 @@ exports[`PageLayout component renders correctly with data 1`] = `
           >
             mock-title
           </h1>
-          <p />
         </header>
         <div
           class="authorList"

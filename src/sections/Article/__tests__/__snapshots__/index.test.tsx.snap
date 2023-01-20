@@ -11,7 +11,6 @@ exports[`Article component renders correctly 1`] = `
       >
         test-title
       </h1>
-      <p />
     </header>
     <div
       class="authorList"
@@ -208,7 +207,6 @@ exports[`Article component renders correctly in blog mode 1`] = `
       >
         test-title
       </h1>
-      <p />
     </header>
     <h5
       class="list"
@@ -308,7 +306,6 @@ exports[`Article component renders correctly in case body ref is null 1`] = `
       >
         test-title
       </h1>
-      <p />
     </header>
     <div
       class="authorList"
@@ -505,7 +502,6 @@ exports[`Article component should accept and render child components 1`] = `
       >
         test-title
       </h1>
-      <p />
     </header>
     <div
       class="authorList"

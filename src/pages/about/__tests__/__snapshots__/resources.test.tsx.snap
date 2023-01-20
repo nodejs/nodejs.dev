@@ -417,7 +417,6 @@ exports[`Resources page renders correctly 1`] = `
           >
             Mock Title
           </h1>
-          <p />
         </header>
         <div />
         <div />
