@@ -13,10 +13,11 @@ export const useDetectOs = () => {
       // [MDN](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/getHighEntropyValues)
       // [MSFT](https://learn.microsoft.com/en-us/microsoft-edge/web-platform/how-to-detect-win11)
       // @ts-expect-error no types yet because this API is experimental
-      const ua = await navigator.userAgentData.getHighEntropyValues([
-        'bitness',
-      ]);
-      setBitness(ua.bitness);
+      navigator.userAgentData
+        .getHighEntropyValues(['bitness'])
+        .then((ua: { bitness: string }) => {
+          setBitness(ua.bitness);
+        });
     } catch (e) {
       // Ignore errors since not every browser supports this API
     }
