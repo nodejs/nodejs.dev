@@ -39,6 +39,12 @@ describe('downloadUrlByOS', () => {
         'https://nodejs.org/dist/version-mock/node-version-mock-x86.msi'
       );
     });
+
+    it('should return correct url for Windows 11 on Edge', () => {
+      expect(downloadUrlByOS(UserOS.WIN, 'version-mock', '64')).toBe(
+        'https://nodejs.org/dist/version-mock/node-version-mock-x64.msi'
+      );
+    });
   });
 
   it('should return correct url for Mobile', () => {
