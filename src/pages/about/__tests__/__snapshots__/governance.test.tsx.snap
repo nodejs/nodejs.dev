@@ -175,7 +175,6 @@ exports[`Governance Page renders correctly 1`] = `
       >
         Mock Title
       </h1>
-      <p />
     </header>
     <div />
     <div />
