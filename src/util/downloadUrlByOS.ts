@@ -15,14 +15,7 @@ export default function downloadUrlByOS(
   }
 
   if (userOS === UserOS.WIN) {
-    if (
-      navigator.appVersion.includes('WOW64') ||
-      navigator.appVersion.includes('Win64')
-    ) {
-      return `${baseURL}/node-${version}-x64.msi`;
-    }
-
-    return `${baseURL}/node-${version}-x86.msi`;
+    return `${baseURL}/node-${version}-x64.msi`;
   }
 
   return `${baseURL}/node-${version}.tar.gz`;
