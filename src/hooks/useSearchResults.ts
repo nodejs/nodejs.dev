@@ -1,12 +1,15 @@
 import { useMemo, useCallback } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Index, SerialisedIndexData } from 'elasticlunr';
+import { useLocalization } from 'gatsby-theme-i18n';
 import { compareTwoStrings } from 'string-similarity';
 import { replaceDataTagFromString } from '../util/replaceDataTag';
 import createSlug from '../../util-node/createSlug';
 import { SearchResult } from '../types';
 
 export const useSearchResults = () => {
+  const { locale } = useLocalization();
+
   const { siteSearchIndex } = useStaticQuery(graphql`
     query localSearchLearnPages {
       siteSearchIndex {
@@ -45,13 +48,19 @@ export const useSearchResults = () => {
             slug: `${result.slug}#${createSlug(item)}`,
             category: result.category,
             wrapInCode: item.startsWith('`'),
+            locale: result.locale,
           }));
         }
 
         return result;
       };
 
-      return currentResults.slice(0, 20).map(mapResult).flat().slice(0, 20);
+      return currentResults
+        .filter(item => item.locale === locale)
+        .slice(0, 20)
+        .map(mapResult)
+        .flat()
+        .slice(0, 20);
     },
     [storeIndex]
   );

@@ -44,6 +44,8 @@ export type SearchResult = {
   displayTitle?: string | JSX.Element;
   tableOfContents?: string;
   wrapInCode?: boolean;
+
+  locale: string;
 };
 
 export type WrapPageElementBrowser =
