@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { highlight, languages } from 'prismjs';
 import { sanitize } from 'isomorphic-dompurify';
 import classnames from 'classnames';
@@ -47,12 +48,12 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   };
 
   useEffect(() => {
-    const parsedLangauge = replaceLanguages(language);
+    const parsedLanguage = replaceLanguages(language);
 
-    const prismLanguage = languages[parsedLangauge] || languages.text;
+    const prismLanguage = languages[parsedLanguage] || languages.text;
 
     setParsedCode(
-      sanitize(highlight(stringCode, prismLanguage, parsedLangauge))
+      sanitize(highlight(stringCode, prismLanguage, parsedLanguage))
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -62,7 +63,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
       <div className={styles.top}>
         <span>{replaceLabelLanguages(language)}</span>
         <button type="button" onClick={handleCopyCode}>
-          {copied ? 'copied' : 'copy'}
+          <FormattedMessage id="components.codeBox.copy" values={{ copied }} />
         </button>
       </div>
       <div
