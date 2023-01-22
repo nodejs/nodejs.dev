@@ -2729,7 +2729,7 @@ util.isObject(() => {});
 
 <Metadata version="v19.4.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v19.4.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `(typeof value !== 'object' && typeof value !== 'function') || value === null`\n> instead."}}} />
+<Metadata version="v19.4.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `(typeof value !== 'object' && typeof value !== 'function') || value === null` instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
