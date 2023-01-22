@@ -4300,7 +4300,7 @@ See [`Buffer.from(array)`][].
 
 <Metadata version="v18.13.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Calling this constructor emits a deprecation warning when run from code outside the `node_modules` directory."},{"version":"v7.2.1","pr-url":"https://github.com/nodejs/node/pull/9529","description":"Calling this constructor no longer emits a deprecation warning."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8169","description":"Calling this constructor emits a deprecation warning now."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4682","description":"The `byteOffset` and `length` parameters are supported now."}],"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.from(arrayBuffer[, byteOffset[, length]])`][`Buffer.from(arrayBuf)`]\n> instead."}}} />
+<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.from(arrayBuffer[, byteOffset[, length]])`][`Buffer.from(arrayBuf)`] instead."}}} />
 
 * `arrayBuffer` [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) An [`ArrayBuffer`][],
   [`SharedArrayBuffer`][] or the `.buffer` property of a [`TypedArray`][].
