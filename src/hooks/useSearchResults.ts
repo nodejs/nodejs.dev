@@ -33,7 +33,7 @@ export const useSearchResults = () => {
         const result = storeIndex.documentStore.getDoc(ref) as SearchResult;
         if (result.locale === locale) {
           localeResults.push(result);
-        } else {
+        } else if (result.locale === 'en') {
           fallbackResults.push(result);
         }
       });
