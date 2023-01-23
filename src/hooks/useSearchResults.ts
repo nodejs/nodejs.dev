@@ -55,12 +55,13 @@ export const useSearchResults = () => {
         return result;
       };
 
-      return currentResults
-        .filter(item => item.locale === locale)
-        .slice(0, 20)
-        .map(mapResult)
-        .flat()
-        .slice(0, 20);
+      const localeResults = currentResults.filter(
+        item => item.locale === locale
+      );
+
+      const results = localeResults.length > 0 ? localeResults : currentResults;
+
+      return results.slice(0, 20).map(mapResult).flat().slice(0, 20);
     },
     [storeIndex]
   );
