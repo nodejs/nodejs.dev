@@ -27,9 +27,19 @@ export const useSearchResults = () => {
 
   const searchResults = useCallback(
     (currentQuery: string) => {
-      const currentResults = storeIndex
-        .search(currentQuery, { expand: true })
-        .map(({ ref }) => storeIndex.documentStore.getDoc(ref) as SearchResult);
+      const localeResults: SearchResult[] = [];
+      const fallbackResults: SearchResult[] = [];
+      storeIndex.search(currentQuery, { expand: true }).forEach(({ ref }) => {
+        const result = storeIndex.documentStore.getDoc(ref) as SearchResult;
+        if (result.locale === locale) {
+          localeResults.push(result);
+        } else {
+          fallbackResults.push(result);
+        }
+      });
+
+      const currentResults =
+        localeResults.length > 0 ? localeResults : fallbackResults;
 
       const mapResult = (result: SearchResult) => {
         if (result.tableOfContents) {
@@ -55,13 +65,7 @@ export const useSearchResults = () => {
         return result;
       };
 
-      const localeResults = currentResults.filter(
-        item => item.locale === locale
-      );
-
-      const results = localeResults.length > 0 ? localeResults : currentResults;
-
-      return results.slice(0, 20).map(mapResult).flat().slice(0, 20);
+      return currentResults.slice(0, 20).map(mapResult).flat().slice(0, 20);
     },
     [storeIndex]
   );
