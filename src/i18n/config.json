@@ -108,13 +108,13 @@
     "enabled": false
   },
   {
-    "code": "pt-br",
-    "localName": "Português do Brasil",
-    "name": "Brazilian Portuguese",
+    "code": "pt",
+    "localName": "Português",
+    "name": "Portuguese",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hrefLang": "",
-    "enabled": false
+    "hrefLang": "pt",
+    "enabled": true
   },
   {
     "code": "ro",
