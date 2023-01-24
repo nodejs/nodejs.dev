@@ -55,7 +55,9 @@ Shorthands of the flags can also be used:
 - \-D: `--save-dev`
 - \-O: `--save-optional`
 
-The difference between _devDependencies_ and _dependencies_ is that the former contains development tools, like a testing library, while the latter is bundled with the app in production.
+The difference between _dependencies_ and _devDependencies_ is that _dependencies_ are required to run for the production, _devDependencies_ only during development.
+_dependencies_ are installed transitively: if A requires B, and B requires C, then C gets installed, otherwise, B could not work, and neither would A.
+_devDependencies_ is not installed transitively. E.g. we don't need to test B to test A, so B's testing dependencies can be left out.
 
 As for the _optionalDependencies_ the difference is that build failure of the dependency will not cause installation to fail. But it is your program's responsibility to handle the lack of the dependency. Read more about [optional dependencies](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#optionaldependencies).
 
