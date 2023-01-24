@@ -108,6 +108,15 @@
     "enabled": false
   },
   {
+    "code": "pt-br",
+    "localName": "Português do Brasil",
+    "name": "Brazilian Portuguese",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "pt-br",
+    "enabled": false
+  },
+  {
     "code": "pt",
     "localName": "Português",
     "name": "Portuguese",
