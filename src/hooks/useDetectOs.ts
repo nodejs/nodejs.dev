@@ -4,7 +4,7 @@ import downloadUrlByOS from '../util/downloadUrlByOS';
 
 export const useDetectOs = () => {
   const [userOS, setUserOS] = useState<UserOS>(UserOS.UNKNOWN);
-  const [bitness, setBitness] = useState<string>('');
+  const [bitness, setBitness] = useState('');
 
   useEffect(() => {
     setUserOS(detectOS);
@@ -13,14 +13,13 @@ export const useDetectOs = () => {
     // [MDN](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/getHighEntropyValues)
     // [MSFT](https://learn.microsoft.com/en-us/microsoft-edge/web-platform/how-to-detect-win11)
     // @ts-expect-error no types for "userAgentData" because this API is experimental
-    navigator?.userAgentData
-      ?.getHighEntropyValues(['bitness'])
-      .then((ua: { bitness: string }) => {
-        setBitness(ua.bitness);
-      })
-      .catch(() => {
-        // Ignore errors since not every browser supports this API
-      });
+    if (typeof navigator.userAgentData?.getHighEntropyValues === 'function') {
+      // @ts-expect-error no types for "userAgentData" because this API is experimental
+      navigator.userAgentData
+        .getHighEntropyValues(['bitness'])
+        .then((ua: { bitness: string }) => setBitness(ua.bitness))
+        .catch();
+    }
   }, []);
 
   return {
