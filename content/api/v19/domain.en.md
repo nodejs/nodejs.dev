@@ -5,13 +5,13 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15695","description":"Any `Promise`s created in VM contexts no longer have a `.domain` property. Their handlers are still executed in the proper domain, however, and `Promise`s created in the main context still possess a `.domain` property."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12489","description":"Handlers for `Promise`s are now invoked in the domain in which the first promise of a chain was created."}],"update":{"type":"deprecated","version":["v1.4.2"]}}} />
+<Metadata version="v19.5.0" data={{"changes":[{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15695","description":"Any `Promise`s created in VM contexts no longer have a `.domain` property. Their handlers are still executed in the proper domain, however, and `Promise`s created in the main context still possess a `.domain` property."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12489","description":"Handlers for `Promise`s are now invoked in the domain in which the first promise of a chain was created."}],"update":{"type":"deprecated","version":["v1.4.2"]}}} />
 
-<Metadata version="v19.4.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v19.5.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v19.4.0" data={{"stability":{"level":0,"text":" - Deprecated"}}} />
+<Metadata version="v19.5.0" data={{"stability":{"level":0,"text":" - Deprecated"}}} />
 
-<Metadata version="v19.4.0" data={{"source_link":"lib/domain.js"}} />
+<Metadata version="v19.5.0" data={{"source_link":"lib/domain.js"}} />
 
 **This module is pending deprecation.** Once a replacement API has been
 finalized, this module will be fully deprecated. Most developers should
@@ -29,7 +29,7 @@ exit immediately with an error code.
 
 ### Warning: Don't ignore errors!
 
-<Metadata version="v19.4.0" data={{"type":"misc"}} />
+<Metadata version="v19.5.0" data={{"type":"misc"}} />
 
 Domain error handlers are not a substitute for closing down a
 process when an error occurs.
@@ -183,7 +183,7 @@ function handleRequest(req, res) {
 
 ### Additions to `Error` objects
 
-<Metadata version="v19.4.0" data={{"type":"misc"}} />
+<Metadata version="v19.5.0" data={{"type":"misc"}} />
 
 Any time an `Error` object is routed through a domain, a few extra fields
 are added to it.
@@ -198,7 +198,7 @@ are added to it.
 
 ### Implicit binding
 
-<Metadata version="v19.4.0" data={{"type":"misc"}} />
+<Metadata version="v19.5.0" data={{"type":"misc"}} />
 
 If domains are in use, then all **new** `EventEmitter` objects (including
 Stream objects, requests, responses, etc.) will be implicitly bound to
@@ -224,7 +224,7 @@ Implicit binding only takes care of thrown errors and `'error'` events.
 
 ### Explicit binding
 
-<Metadata version="v19.4.0" data={{"type":"misc"}} />
+<Metadata version="v19.5.0" data={{"type":"misc"}} />
 
 Sometimes, the domain in use is not the one that ought to be used for a
 specific event emitter. Or, the event emitter could have been created
