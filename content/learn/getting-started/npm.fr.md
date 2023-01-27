@@ -55,7 +55,9 @@ Des raccourcis des drapeaux peuvent également être utilisés :
 - \-D : `--save-dev`
 - \-O : `--save-optional` (enregistrement facultatif)
 
-La différence entre _devDependencies_ et _dependencies_ est que le premier contient des outils de développement, comme une bibliothèque de test, tandis que le second est fourni avec l'application en production.
+La différence entre _dependencies_ et _devDependencies_ est que les _dependencies_ doivent s'exécuter pour la production, _devDependencies_ uniquement pendant le développement.
+Les _dépendances_ sont installées de manière transitive : si A nécessite B, et B nécessite C, alors C est installé, sinon, B ne pourrait pas fonctionner, et A non plus.
+_devDependencies_ n'est pas installé de manière transitive. Par exemple. nous n'avons pas besoin de tester B pour tester A, donc les dépendances de test de B peuvent être laissées de côté.
 
 Quant à _optionalDependencies_, la différence est que l'échec de la construction de la dépendance ne fera pas échouer l'installation. Mais c'est à votre programme qu'il incombe de gérer l'absence de cette dépendance. En savoir plus sur [dépendances optionnelles](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#optionaldependencies).
 
