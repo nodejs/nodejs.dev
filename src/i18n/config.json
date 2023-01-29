@@ -117,12 +117,12 @@
     "enabled": false
   },
   {
-    "code": "pt",
+    "code": "pt-pt",
     "localName": "Português",
     "name": "Portuguese",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hrefLang": "pt",
+    "hrefLang": "pt-pt",
     "enabled": true
   },
   {
