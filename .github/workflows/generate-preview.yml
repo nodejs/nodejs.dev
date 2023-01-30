@@ -21,13 +21,14 @@ jobs:
         with:
           persist-credentials: false
           ref: ${{ github.event.pull_request.head.sha }}
+          
+      - name: Auth G Cloud
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
       - name: Setup G Cloud
-        uses: google-github-actions/setup-gcloud@v0
-        with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_NODEJS_INFRASTRUCTURE }}
-          export_default_credentials: true
+        uses: google-github-actions/setup-gcloud@v1
 
       - name: Remove the PR Label
         uses: actions/github-script@v6
