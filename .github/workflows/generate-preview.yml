@@ -21,7 +21,7 @@ jobs:
         with:
           persist-credentials: false
           ref: ${{ github.event.pull_request.head.sha }}
-          
+
       - name: Auth G Cloud
         uses: 'google-github-actions/auth@v1'
         with:
