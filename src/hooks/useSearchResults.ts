@@ -29,8 +29,10 @@ export const useSearchResults = () => {
     (currentQuery: string) => {
       const localeResults: SearchResult[] = [];
       const fallbackResults: SearchResult[] = [];
+
       storeIndex.search(currentQuery, { expand: true }).forEach(({ ref }) => {
         const result = storeIndex.documentStore.getDoc(ref) as SearchResult;
+
         if (result.locale === locale) {
           localeResults.push(result);
         } else if (result.locale === 'en') {
