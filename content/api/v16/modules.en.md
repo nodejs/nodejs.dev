@@ -440,7 +440,7 @@ If the given path does not exist, `require()` will throw a
 
 <Metadata version="v16.19.0" data={{"type":"misc"}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":3,"text":" - Legacy: Use subpath exports][] or [subpath imports instead."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":3,"text":" - Legacy: Use [subpath exports][] or [subpath imports][] instead."}}} />
 
 There are three ways in which a folder may be passed to `require()` as
 an argument.
