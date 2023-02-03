@@ -5,9 +5,9 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.4.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v19.4.0" data={{"type":"misc"}} />
+<Metadata version="v19.6.0" data={{"type":"misc"}} />
 
 _Addons_ are dynamically-linked shared objects written in C++. The
 [`require()`][require] function can load addons as ordinary Node.js modules.
@@ -32,7 +32,7 @@ involving knowledge of several components and APIs:
   threads and all of the asynchronous behaviors of the platform. It also
   serves as a cross-platform abstraction library, giving easy, POSIX-like
   access across all major operating systems to many common system tasks, such
-  as interacting with the filesystem, sockets, timers, and system events. libuv
+  as interacting with the file system, sockets, timers, and system events. libuv
   also provides a threading abstraction similar to POSIX threads for
   more sophisticated asynchronous addons that need to move beyond the
   standard event loop. Addon authors should
@@ -244,7 +244,7 @@ NODE_MODULE_INIT(/* exports, module, context */) {
 
 ##### Worker support
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":["v14.8.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34572","description":"Cleanup hooks may now be asynchronous."}]}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":["v14.8.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34572","description":"Cleanup hooks may now be asynchronous."}]}} />
 
 In order to be loaded from multiple Node.js environments,
 such as a main thread and a Worker thread, an add-on needs to either:
@@ -443,7 +443,7 @@ illustration of how it can be used.
 
 ### Node-API
 
-<Metadata version="v19.4.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
 Node-API is an API for building native addons. It is independent from
 the underlying JavaScript runtime (e.g. V8) and is maintained as part of

@@ -132,7 +132,7 @@ function createApiDocsFrontmatter(firstLine, { version, name }) {
 function replaceStabilityIndex(metadata) {
   return (_, __, level, text) => {
     const sanitizedText = text
-      .replace('\n>', '')
+      .replace(/(\n)>/g, '')
       .replace(/\[(.+)\]\[\]/g, (___, piece) => piece);
 
     const data = safeJSON.toString({

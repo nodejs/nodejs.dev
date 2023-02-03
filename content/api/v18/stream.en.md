@@ -5,11 +5,11 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.13.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.13.0" data={{"source_link":"lib/stream.js"}} />
+<Metadata version="v18.14.0" data={{"source_link":"lib/stream.js"}} />
 
 A stream is an abstract interface for working with streaming data in Node.js.
 The `node:stream` module provides an API for implementing the stream interface.
@@ -55,12 +55,229 @@ and [`stream.addAbortSignal()`][].
 
 #### Streams Promises API
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 The `stream/promises` API provides an alternative set of asynchronous utility
 functions for streams that return `Promise` objects rather than using
 callbacks. The API is accessible via `require('node:stream/promises')`
 or `require('node:stream').promises`.
+
+#### <DataTag tag="M" /> `stream.pipeline(source[, ...transforms], destination[, options])`
+
+#### <DataTag tag="M" /> `stream.pipeline(streams[, options])`
+
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+
+* `streams` Stream\[]|Iterable\[]|AsyncIterable\[]|Function\[]
+* `source` [`Stream`](/api/stream#stream) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+  * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
+* `...transforms` [`Stream`](/api/stream#stream) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+  * `source` [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
+  * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
+* `destination` [`Stream`](/api/stream#stream) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+  * `source` [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
+  * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
+* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+  * `signal` [`AbortSignal`](/api/globals#abortsignal)
+  * `end` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
+* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills when the pipeline is complete.
+
+```cjs
+const { pipeline } = require('node:stream/promises');
+const fs = require('node:fs');
+const zlib = require('node:zlib');
+
+async function run() {
+  await pipeline(
+    fs.createReadStream('archive.tar'),
+    zlib.createGzip(),
+    fs.createWriteStream('archive.tar.gz'),
+  );
+  console.log('Pipeline succeeded.');
+}
+
+run().catch(console.error);
+```
+
+```mjs
+import { pipeline } from 'node:stream/promises';
+import { createReadStream, createWriteStream } from 'node:fs';
+import { createGzip } from 'node:zlib';
+
+await pipeline(
+  createReadStream('archive.tar'),
+  createGzip(),
+  createWriteStream('archive.tar.gz'),
+);
+console.log('Pipeline succeeded.');
+```
+
+To use an `AbortSignal`, pass it inside an options object, as the last argument.
+When the signal is aborted, `destroy` will be called on the underlying pipeline,
+with an `AbortError`.
+
+```cjs
+const { pipeline } = require('node:stream/promises');
+const fs = require('node:fs');
+const zlib = require('node:zlib');
+
+async function run() {
+  const ac = new AbortController();
+  const signal = ac.signal;
+
+  setImmediate(() => ac.abort());
+  await pipeline(
+    fs.createReadStream('archive.tar'),
+    zlib.createGzip(),
+    fs.createWriteStream('archive.tar.gz'),
+    { signal },
+  );
+}
+
+run().catch(console.error); // AbortError
+```
+
+```mjs
+import { pipeline } from 'node:stream/promises';
+import { createReadStream, createWriteStream } from 'node:fs';
+import { createGzip } from 'node:zlib';
+
+const ac = new AbortController();
+const { signal } = ac;
+setImmediate(() => ac.abort());
+try {
+  await pipeline(
+    createReadStream('archive.tar'),
+    createGzip(),
+    createWriteStream('archive.tar.gz'),
+    { signal },
+  );
+} catch (err) {
+  console.error(err); // AbortError
+}
+```
+
+The `pipeline` API also supports async generators:
+
+```cjs
+const { pipeline } = require('node:stream/promises');
+const fs = require('node:fs');
+
+async function run() {
+  await pipeline(
+    fs.createReadStream('lowercase.txt'),
+    async function* (source, { signal }) {
+      source.setEncoding('utf8');  // Work with strings rather than `Buffer`s.
+      for await (const chunk of source) {
+        yield await processChunk(chunk, { signal });
+      }
+    },
+    fs.createWriteStream('uppercase.txt'),
+  );
+  console.log('Pipeline succeeded.');
+}
+
+run().catch(console.error);
+```
+
+```mjs
+import { pipeline } from 'node:stream/promises';
+import { createReadStream, createWriteStream } from 'node:fs';
+
+await pipeline(
+  createReadStream('lowercase.txt'),
+  async function* (source, { signal }) {
+    source.setEncoding('utf8');  // Work with strings rather than `Buffer`s.
+    for await (const chunk of source) {
+      yield await processChunk(chunk, { signal });
+    }
+  },
+  createWriteStream('uppercase.txt'),
+);
+console.log('Pipeline succeeded.');
+```
+
+Remember to handle the `signal` argument passed into the async generator.
+Especially in the case where the async generator is the source for the
+pipeline (i.e. first argument) or the pipeline will never complete.
+
+```cjs
+const { pipeline } = require('node:stream/promises');
+const fs = require('node:fs');
+
+async function run() {
+  await pipeline(
+    async function* ({ signal }) {
+      await someLongRunningfn({ signal });
+      yield 'asd';
+    },
+    fs.createWriteStream('uppercase.txt'),
+  );
+  console.log('Pipeline succeeded.');
+}
+
+run().catch(console.error);
+```
+
+```mjs
+import { pipeline } from 'node:stream/promises';
+import fs from 'node:fs';
+await pipeline(
+  async function* ({ signal }) {
+    await someLongRunningfn({ signal });
+    yield 'asd';
+  },
+  fs.createWriteStream('uppercase.txt'),
+);
+console.log('Pipeline succeeded.');
+```
+
+The `pipeline` API provides [callback version][stream-pipeline]:
+
+#### <DataTag tag="M" /> `stream.finished(stream[, options])`
+
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+
+* `stream` [`Stream`](/api/stream#stream)
+* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+  * `error` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
+  * `readable` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
+  * `writable` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
+  * `signal`: [`AbortSignal`](/api/globals#abortsignal) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
+* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills when the stream is no
+  longer readable or writable.
+
+```cjs
+const { finished } = require('node:stream/promises');
+const fs = require('node:fs');
+
+const rs = fs.createReadStream('archive.tar');
+
+async function run() {
+  await finished(rs);
+  console.log('Stream is done reading.');
+}
+
+run().catch(console.error);
+rs.resume(); // Drain the stream.
+```
+
+```mjs
+import { finished } from 'node:stream/promises';
+import { createReadStream } from 'node:fs';
+
+const rs = createReadStream('archive.tar');
+
+async function run() {
+  await finished(rs);
+  console.log('Stream is done reading.');
+}
+
+run().catch(console.error);
+rs.resume(); // Drain the stream.
+```
+
+The `finished` API provides [callback version][stream-finished]:
 
 #### Object mode
 
@@ -76,7 +293,7 @@ object mode is not safe.
 
 #### Buffering
 
-<Metadata version="v18.13.0" data={{"type":"misc"}} />
+<Metadata version="v18.14.0" data={{"type":"misc"}} />
 
 Both [`Writable`][] and [`Readable`][] streams will store data in an internal
 buffer.
@@ -130,7 +347,7 @@ the internal buffers can be retrieved using `writable.writableBuffer` or
 
 ### API for stream consumers
 
-<Metadata version="v18.13.0" data={{"type":"misc"}} />
+<Metadata version="v18.14.0" data={{"type":"misc"}} />
 
 Almost all Node.js applications, no matter how simple, use streams in some
 manner. The following is an example of using streams in a Node.js application
@@ -233,13 +450,13 @@ myStream.end('done writing data');
 
 ##### <DataTag tag="C" /> `stream.Writable`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
-<Metadata version="v18.13.0" data={{"type":"class"}} />
+<Metadata version="v18.14.0" data={{"type":"class"}} />
 
 ###### Event: `'close'`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18438","description":"Add `emitClose` option to specify if `'close'` is emitted on destroy."}],"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18438","description":"Add `emitClose` option to specify if `'close'` is emitted on destroy."}],"update":{"type":"added","version":["v0.9.4"]}}} />
 
 The `'close'` event is emitted when the stream and any of its underlying
 resources (a file descriptor, for example) have been closed. The event indicates
@@ -250,7 +467,7 @@ created with the `emitClose` option.
 
 ###### Event: `'drain'`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 If a call to [`stream.write(chunk)`][stream-write] returns `false`, the
 `'drain'` event will be emitted when it is appropriate to resume writing data
@@ -286,7 +503,7 @@ function writeOneMillionTimes(writer, data, encoding, callback) {
 
 ###### Event: `'error'`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
@@ -302,7 +519,7 @@ After `'error'`, no further events other than `'close'` _should_ be emitted
 
 ###### Event: `'finish'`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 The `'finish'` event is emitted after the [`stream.end()`][stream-end] method
 has been called, and all data has been flushed to the underlying system.
@@ -320,7 +537,7 @@ writer.end('This is the end\n');
 
 ###### Event: `'pipe'`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `src` [`stream.Readable`](/api/stream#streamreadable) source stream that is piping to this writable
 
@@ -339,7 +556,7 @@ reader.pipe(writer);
 
 ###### Event: `'unpipe'`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `src` [`stream.Readable`](/api/stream#streamreadable) The source stream that
   [unpiped][`stream.unpipe()`] this writable
@@ -364,7 +581,7 @@ reader.unpipe(writer);
 
 ###### `writable.cork()`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.11.2"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.11.2"]}}} />
 
 The `writable.cork()` method forces all written data to be buffered in memory.
 The buffered data will be flushed when either the [`stream.uncork()`][] or
@@ -383,7 +600,7 @@ See also: [`writable.uncork()`][], [`writable._writev()`][stream-_writev].
 
 ###### `writable.destroy([error])`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/29197","description":"Work as a no-op on a stream that has already been destroyed."}],"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/29197","description":"Work as a no-op on a stream that has already been destroyed."}],"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) Optional, an error to emit with `'error'` event.
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -434,7 +651,7 @@ but instead implement [`writable._destroy()`][writable-_destroy].
 
 ###### `writable.closed`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -442,7 +659,7 @@ Is `true` after `'close'` has been emitted.
 
 ###### `writable.destroyed`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -460,7 +677,7 @@ console.log(myStream.destroyed); // true
 
 ###### `writable.end([chunk[, encoding]][, callback])`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34101","description":"The `callback` is invoked before 'finish' or on error."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/29747","description":"The `callback` is invoked if 'finish' or 'error' is emitted."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18780","description":"This method now returns a reference to `writable`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."}],"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34101","description":"The `callback` is invoked before 'finish' or on error."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/29747","description":"The `callback` is invoked if 'finish' or 'error' is emitted."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18780","description":"This method now returns a reference to `writable`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."}],"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Optional data to write. For streams
   not operating in object mode, `chunk` must be a string, `Buffer` or
@@ -489,7 +706,7 @@ file.end('world!');
 
 ###### `writable.setDefaultEncoding(encoding)`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v6.1.0","pr-url":"https://github.com/nodejs/node/pull/5040","description":"This method now returns a reference to `writable`."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v6.1.0","pr-url":"https://github.com/nodejs/node/pull/5040","description":"This method now returns a reference to `writable`."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The new default encoding
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -499,7 +716,7 @@ The `writable.setDefaultEncoding()` method sets the default `encoding` for a
 
 ###### `writable.uncork()`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.11.2"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.11.2"]}}} />
 
 The `writable.uncork()` method flushes all data buffered since
 [`stream.cork()`][] was called.
@@ -536,7 +753,7 @@ See also: [`writable.cork()`][].
 
 ###### `writable.writable`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v11.4.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v11.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -545,9 +762,9 @@ the stream has not been destroyed, errored, or ended.
 
 ###### `writable.writableAborted`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -555,7 +772,7 @@ Returns whether the stream was destroyed or errored before emitting `'finish'`.
 
 ###### `writable.writableEnded`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v12.9.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v12.9.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -565,7 +782,7 @@ does not indicate whether the data has been flushed, for this use
 
 ###### `writable.writableCorked`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -574,7 +791,7 @@ called in order to fully uncork the stream.
 
 ###### `writable.errored`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
 * [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
@@ -582,7 +799,7 @@ Returns error if the stream has been destroyed with an error.
 
 ###### `writable.writableFinished`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v12.6.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v12.6.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -590,7 +807,7 @@ Is set to `true` immediately before the [`'finish'`][] event is emitted.
 
 ###### `writable.writableHighWaterMark`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v9.3.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v9.3.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -598,7 +815,7 @@ Return the value of `highWaterMark` passed when creating this `Writable`.
 
 ###### `writable.writableLength`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -608,7 +825,7 @@ the status of the `highWaterMark`.
 
 ###### `writable.writableNeedDrain`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v15.2.0","v14.17.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.2.0","v14.17.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -616,7 +833,7 @@ Is `true` if the stream's buffer has been full and stream will emit `'drain'`.
 
 ###### `writable.writableObjectMode`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v12.3.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v12.3.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -624,7 +841,7 @@ Getter for the property `objectMode` of a given `Writable` stream.
 
 ###### `writable.write(chunk[, encoding][, callback])`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6170","description":"Passing `null` as the `chunk` parameter will always be considered invalid now, even in object mode."}],"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6170","description":"Passing `null` as the `chunk` parameter will always be considered invalid now, even in object mode."}],"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Optional data to write. For streams
   not operating in object mode, `chunk` must be a string, `Buffer` or
@@ -814,13 +1031,13 @@ lead to unintuitive behavior.
 
 ##### <DataTag tag="C" /> `stream.Readable`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
-<Metadata version="v18.13.0" data={{"type":"class"}} />
+<Metadata version="v18.14.0" data={{"type":"class"}} />
 
 ###### Event: `'close'`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18438","description":"Add `emitClose` option to specify if `'close'` is emitted on destroy."}],"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18438","description":"Add `emitClose` option to specify if `'close'` is emitted on destroy."}],"update":{"type":"added","version":["v0.9.4"]}}} />
 
 The `'close'` event is emitted when the stream and any of its underlying
 resources (a file descriptor, for example) have been closed. The event indicates
@@ -831,7 +1048,7 @@ created with the `emitClose` option.
 
 ###### Event: `'data'`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `chunk` [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The chunk of data. For streams that are not
   operating in object mode, the chunk will be either a string or `Buffer`.
@@ -863,7 +1080,7 @@ readable.on('data', (chunk) => {
 
 ###### Event: `'end'`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 The `'end'` event is emitted when there is no more data to be consumed from
 the stream.
@@ -885,7 +1102,7 @@ readable.on('end', () => {
 
 ###### Event: `'error'`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
@@ -898,14 +1115,14 @@ The listener callback will be passed a single `Error` object.
 
 ###### Event: `'pause'`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 The `'pause'` event is emitted when [`stream.pause()`][stream-pause] is called
 and `readableFlowing` is not `false`.
 
 ###### Event: `'readable'`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17979","description":"The `'readable'` is always emitted in the next tick after `.push()` is called."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18994","description":"Using `'readable'` requires calling `.read()`."}],"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17979","description":"The `'readable'` is always emitted in the next tick after `.push()` is called."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18994","description":"Using `'readable'` requires calling `.read()`."}],"update":{"type":"added","version":["v0.9.4"]}}} />
 
 The `'readable'` event is emitted when there is data available to be read from
 the stream or when the end of the stream has been reached. Effectively, the
@@ -965,14 +1182,14 @@ will start flowing, i.e. `'data'` events will be emitted without calling
 
 ###### Event: `'resume'`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 The `'resume'` event is emitted when [`stream.resume()`][stream-resume] is
 called and `readableFlowing` is not `true`.
 
 ###### `readable.destroy([error])`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/29197","description":"Work as a no-op on a stream that has already been destroyed."}],"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/29197","description":"Work as a no-op on a stream that has already been destroyed."}],"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) Error which will be passed as payload in `'error'` event
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -990,7 +1207,7 @@ Implementors should not override this method, but instead implement
 
 ###### `readable.closed`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -998,7 +1215,7 @@ Is `true` after `'close'` has been emitted.
 
 ###### `readable.destroyed`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1006,7 +1223,7 @@ Is `true` after [`readable.destroy()`][readable-destroy] has been called.
 
 ###### `readable.isPaused()`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.11.14"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.11.14"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1027,7 +1244,7 @@ readable.isPaused(); // === false
 
 ###### `readable.pause()`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
@@ -1053,7 +1270,7 @@ event listener.
 
 ###### `readable.pipe(destination[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `destination` [`stream.Writable`](/api/stream#streamwritable) The destination for writing data
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Pipe options
@@ -1115,7 +1332,7 @@ closed until the Node.js process exits, regardless of the specified options.
 
 ###### `readable.read([size])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `size` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Optional argument to specify how much data to read.
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
@@ -1197,7 +1414,7 @@ been emitted will return `null`. No runtime error will be raised.
 
 ###### `readable.readable`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v11.4.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v11.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1206,9 +1423,9 @@ the stream has not been destroyed or emitted `'error'` or `'end'`.
 
 ###### `readable.readableAborted`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v16.8.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.8.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1216,9 +1433,9 @@ Returns whether the stream was destroyed or errored before emitting `'end'`.
 
 ###### `readable.readableDidRead`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v16.7.0","v14.18.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.7.0","v14.18.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1226,7 +1443,7 @@ Returns whether `'data'` has been emitted.
 
 ###### `readable.readableEncoding`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v12.7.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v12.7.0"]}}} />
 
 * [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1235,7 +1452,7 @@ property can be set using the [`readable.setEncoding()`][] method.
 
 ###### `readable.readableEnded`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v12.9.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v12.9.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1243,7 +1460,7 @@ Becomes `true` when [`'end'`][] event is emitted.
 
 ###### `readable.errored`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
 * [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
@@ -1251,7 +1468,7 @@ Returns error if the stream has been destroyed with an error.
 
 ###### `readable.readableFlowing`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1260,7 +1477,7 @@ in the [Three states][] section.
 
 ###### `readable.readableHighWaterMark`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v9.3.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v9.3.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -1268,7 +1485,7 @@ Returns the value of `highWaterMark` passed when creating this `Readable`.
 
 ###### `readable.readableLength`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v9.4.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -1278,7 +1495,7 @@ the status of the `highWaterMark`.
 
 ###### `readable.readableObjectMode`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v12.3.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v12.3.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1286,7 +1503,7 @@ Getter for the property `objectMode` of a given `Readable` stream.
 
 ###### `readable.resume()`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18994","description":"The `resume()` has no effect if there is a `'readable'` event listening."}],"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18994","description":"The `resume()` has no effect if there is a `'readable'` event listening."}],"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
@@ -1309,7 +1526,7 @@ event listener.
 
 ###### `readable.setEncoding(encoding)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The encoding to use.
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -1340,7 +1557,7 @@ readable.on('data', (chunk) => {
 
 ###### `readable.unpipe([destination])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `destination` [`stream.Writable`](/api/stream#streamwritable) Optional specific stream to unpipe
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -1370,7 +1587,7 @@ setTimeout(() => {
 
 ###### `readable.unshift(chunk[, encoding])`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."}],"update":{"type":"added","version":["v0.9.11"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."}],"update":{"type":"added","version":["v0.9.11"]}}} />
 
 * `chunk` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Chunk of data to unshift onto the
   read queue. For streams not operating in object mode, `chunk` must be a
@@ -1443,7 +1660,7 @@ process of performing a read.
 
 ###### `readable.wrap(stream)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `stream` [`Stream`](/api/stream#stream) An "old style" readable stream
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -1474,7 +1691,7 @@ myReader.on('readable', () => {
 
 ###### `readable[Symbol.asyncIterator]()`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v11.14.0","pr-url":"https://github.com/nodejs/node/pull/26989","description":"Symbol.asyncIterator support is no longer experimental."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.14.0","pr-url":"https://github.com/nodejs/node/pull/26989","description":"Symbol.asyncIterator support is no longer experimental."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * Returns: [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface) to fully consume the stream.
 
@@ -1502,9 +1719,9 @@ has less then 64 KiB of data because no `highWaterMark` option is provided to
 
 ###### `readable.compose(stream[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v18.13.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v18.13.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `stream` [`Stream`](/api/stream#stream) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1535,9 +1752,9 @@ See [`stream.compose`][] for more information.
 
 ###### `readable.iterator([options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v16.3.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.3.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `destroyOnReturn` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When set to `false`, calling `return` on the
@@ -1587,9 +1804,9 @@ showBoth();
 
 ###### `readable.map(fn[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) a function to map over every chunk in the
   stream.
@@ -1630,9 +1847,9 @@ for await (const result of dnsResults) {
 
 ###### `readable.filter(fn[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) a function to filter chunks from the stream.
   * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) a chunk of data from the stream.
@@ -1677,9 +1894,9 @@ for await (const result of dnsResults) {
 
 ###### `readable.forEach(fn[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) a function to call on each chunk of the stream.
   * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) a chunk of data from the stream.
@@ -1734,9 +1951,9 @@ console.log('done'); // Stream has finished
 
 ###### `readable.toArray([options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `signal` [`AbortSignal`](/api/globals#abortsignal) allows cancelling the toArray operation if the
@@ -1770,9 +1987,9 @@ const dnsResults = await Readable.from([
 
 ###### `readable.some(fn[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) a function to call on each chunk of the stream.
   * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) a chunk of data from the stream.
@@ -1817,9 +2034,9 @@ console.log('done'); // Stream has finished
 
 ###### `readable.find(fn[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) a function to call on each chunk of the stream.
   * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) a chunk of data from the stream.
@@ -1865,9 +2082,9 @@ console.log('done'); // Stream has finished
 
 ###### `readable.every(fn[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) a function to call on each chunk of the stream.
   * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) a chunk of data from the stream.
@@ -1912,9 +2129,9 @@ console.log('done'); // Stream has finished
 
 ###### `readable.flatMap(fn[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncGeneratorFunction`](https://tc39.es/proposal-async-iteration/#sec-asyncgeneratorfunction-constructor) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) a function to map over
   every chunk in the stream.
@@ -1959,9 +2176,9 @@ for await (const result of concatResult) {
 
 ###### `readable.drop(limit[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `limit` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the number of chunks to drop from the readable.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1979,9 +2196,9 @@ await Readable.from([1, 2, 3, 4]).drop(2).toArray(); // [3, 4]
 
 ###### `readable.take(limit[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `limit` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the number of chunks to take from the readable.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1999,9 +2216,9 @@ await Readable.from([1, 2, 3, 4]).take(2).toArray(); // [1, 2]
 
 ###### `readable.asIndexedPairs([options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `signal` [`AbortSignal`](/api/globals#abortsignal) allows destroying the stream if the signal is
@@ -2021,9 +2238,9 @@ console.log(pairs); // [[0, 'a'], [1, 'b'], [2, 'c']]
 
 ###### `readable.reduce(fn[, initial[, options]])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.5.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) a reducer function to call over every chunk
   in the stream.
@@ -2064,9 +2281,9 @@ console.log(ten); // 10
 
 ##### <DataTag tag="C" /> `stream.Duplex`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v6.8.0","pr-url":"https://github.com/nodejs/node/pull/8834","description":"Instances of `Duplex` now return `true` when checking `instanceof stream.Writable`."}],"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v6.8.0","pr-url":"https://github.com/nodejs/node/pull/8834","description":"Instances of `Duplex` now return `true` when checking `instanceof stream.Writable`."}],"update":{"type":"added","version":["v0.9.4"]}}} />
 
-<Metadata version="v18.13.0" data={{"type":"class"}} />
+<Metadata version="v18.14.0" data={{"type":"class"}} />
 
 Duplex streams are streams that implement both the [`Readable`][] and
 [`Writable`][] interfaces.
@@ -2079,7 +2296,7 @@ Examples of `Duplex` streams include:
 
 ###### `duplex.allowHalfOpen`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -2093,9 +2310,9 @@ emitted.
 
 ##### <DataTag tag="C" /> `stream.Transform`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
-<Metadata version="v18.13.0" data={{"type":"class"}} />
+<Metadata version="v18.14.0" data={{"type":"class"}} />
 
 Transform streams are [`Duplex`][] streams where the output is in some way
 related to the input. Like all [`Duplex`][] streams, `Transform` streams
@@ -2108,7 +2325,7 @@ Examples of `Transform` streams include:
 
 ###### `transform.destroy([error])`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/29197","description":"Work as a no-op on a stream that has already been destroyed."}],"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/29197","description":"Work as a no-op on a stream that has already been destroyed."}],"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -2125,7 +2342,7 @@ further errors except from `_destroy()` may be emitted as `'error'`.
 
 #### <DataTag tag="M" /> `stream.finished(stream[, options], callback)`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v15.11.0","pr-url":"https://github.com/nodejs/node/pull/37354","description":"The `signal` option was added."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/32158","description":"The `finished(stream, cb)` will wait for the `'close'` event before invoking the callback. The implementation tries to detect legacy streams and only apply this behavior to streams which are expected to emit `'close'`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31545","description":"Emitting `'close'` before `'end'` on a `Readable` stream will cause an `ERR_STREAM_PREMATURE_CLOSE` error."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31509","description":"Callback will be invoked on streams which have already finished before the call to `finished(stream, cb)`."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v15.11.0","pr-url":"https://github.com/nodejs/node/pull/37354","description":"The `signal` option was added."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/32158","description":"The `finished(stream, cb)` will wait for the `'close'` event before invoking the callback. The implementation tries to detect legacy streams and only apply this behavior to streams which are expected to emit `'close'`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31545","description":"Emitting `'close'` before `'end'` on a `Readable` stream will cause an `ERR_STREAM_PREMATURE_CLOSE` error."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31509","description":"Callback will be invoked on streams which have already finished before the call to `finished(stream, cb)`."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `stream` [`Stream`](/api/stream#stream) A readable and/or writable stream.
 
@@ -2175,22 +2392,7 @@ Especially useful in error handling scenarios where a stream is destroyed
 prematurely (like an aborted HTTP request), and will not emit `'end'`
 or `'finish'`.
 
-The `finished` API provides promise version:
-
-```js
-const { finished } = require('node:stream/promises');
-const fs = require('node:fs');
-
-const rs = fs.createReadStream('archive.tar');
-
-async function run() {
-  await finished(rs);
-  console.log('Stream is done reading.');
-}
-
-run().catch(console.error);
-rs.resume(); // Drain the stream.
-```
+The `finished` API provides [promise version][stream-finished-promise].
 
 `stream.finished()` leaves dangling event listeners (in particular
 `'error'`, `'end'`, `'finish'` and `'close'`) after `callback` has been
@@ -2210,7 +2412,7 @@ const cleanup = finished(rs, (err) => {
 
 #### <DataTag tag="M" /> `stream.pipeline(streams, callback)`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/32158","description":"The `pipeline(..., cb)` will wait for the `'close'` event before invoking the callback. The implementation tries to detect legacy streams and only apply this behavior to streams which are expected to emit `'close'`."},{"version":"v13.10.0","pr-url":"https://github.com/nodejs/node/pull/31223","description":"Add support for async generators."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/32158","description":"The `pipeline(..., cb)` will wait for the `'close'` event before invoking the callback. The implementation tries to detect legacy streams and only apply this behavior to streams which are expected to emit `'close'`."},{"version":"v13.10.0","pr-url":"https://github.com/nodejs/node/pull/31223","description":"Add support for async generators."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `streams` Stream\[]|Iterable\[]|AsyncIterable\[]|Function\[]
 * `source` [`Stream`](/api/stream#stream) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -2253,97 +2455,7 @@ pipeline(
 );
 ```
 
-The `pipeline` API provides a promise version, which can also
-receive an options argument as the last parameter with a
-`signal` [`AbortSignal`](/api/globals#abortsignal) property. When the signal is aborted,
-`destroy` will be called on the underlying pipeline, with an
-`AbortError`.
-
-```js
-const { pipeline } = require('node:stream/promises');
-const fs = require('node:fs');
-const zlib = require('node:zlib');
-
-async function run() {
-  await pipeline(
-    fs.createReadStream('archive.tar'),
-    zlib.createGzip(),
-    fs.createWriteStream('archive.tar.gz'),
-  );
-  console.log('Pipeline succeeded.');
-}
-
-run().catch(console.error);
-```
-
-To use an `AbortSignal`, pass it inside an options object,
-as the last argument:
-
-```js
-const { pipeline } = require('node:stream/promises');
-const fs = require('node:fs');
-const zlib = require('node:zlib');
-
-async function run() {
-  const ac = new AbortController();
-  const signal = ac.signal;
-
-  setTimeout(() => ac.abort(), 1);
-  await pipeline(
-    fs.createReadStream('archive.tar'),
-    zlib.createGzip(),
-    fs.createWriteStream('archive.tar.gz'),
-    { signal },
-  );
-}
-
-run().catch(console.error); // AbortError
-```
-
-The `pipeline` API also supports async generators:
-
-```js
-const { pipeline } = require('node:stream/promises');
-const fs = require('node:fs');
-
-async function run() {
-  await pipeline(
-    fs.createReadStream('lowercase.txt'),
-    async function* (source, { signal }) {
-      source.setEncoding('utf8');  // Work with strings rather than `Buffer`s.
-      for await (const chunk of source) {
-        yield await processChunk(chunk, { signal });
-      }
-    },
-    fs.createWriteStream('uppercase.txt'),
-  );
-  console.log('Pipeline succeeded.');
-}
-
-run().catch(console.error);
-```
-
-Remember to handle the `signal` argument passed into the async generator.
-Especially in the case where the async generator is the source for the
-pipeline (i.e. first argument) or the pipeline will never complete.
-
-```js
-const { pipeline } = require('node:stream/promises');
-const fs = require('node:fs');
-
-async function run() {
-  await pipeline(
-    async function* ({ signal }) {
-      await someLongRunningfn({ signal });
-      yield 'asd';
-    },
-    fs.createWriteStream('uppercase.txt'),
-  );
-  console.log('Pipeline succeeded.');
-}
-
-run().catch(console.error);
-```
+The `pipeline` API provides a [promise version][stream-pipeline-promise].
 
 `stream.pipeline()` will call `stream.destroy(err)` on all streams except:
 
@@ -2380,9 +2492,9 @@ const server = http.createServer((req, res) => {
 
 #### <DataTag tag="M" /> `stream.compose(...streams)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v16.9.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.9.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - `stream.compose` is experimental."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - `stream.compose` is experimental."}}} />
 
 * `streams` Stream\[]|Iterable\[]|AsyncIterable\[]|Function\[]
 * Returns: [`stream.Duplex`](/api/stream#streamduplex)
@@ -2470,7 +2582,7 @@ See [`readable.compose(stream)`][] for `stream.compose` as operator.
 
 #### <DataTag tag="M" /> `stream.Readable.from(iterable[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v12.3.0","v10.17.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v12.3.0","v10.17.0"]}}} />
 
 * `iterable` [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) Object implementing the `Symbol.asyncIterator` or
   `Symbol.iterator` iterable protocol. Emits an 'error' event if a null
@@ -2501,11 +2613,23 @@ Calling `Readable.from(string)` or `Readable.from(buffer)` will not have
 the strings or buffers be iterated to match the other streams semantics
 for performance reasons.
 
+If an `Iterable` object containing promises is passed as an argument,
+it might result in unhandled rejection.
+
+```js
+const { Readable } = require('node:stream');
+
+Readable.from([
+  new Promise((resolve) => setTimeout(resolve('1'), 1500)),
+  new Promise((_, reject) => setTimeout(reject(new Error('2')), 1000)), // Unhandled rejection
+]);
+```
+
 #### <DataTag tag="M" /> `stream.Readable.fromWeb(readableStream[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `readableStream` [`ReadableStream`](/api/webstreams#readablestream)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2517,9 +2641,9 @@ for performance reasons.
 
 #### <DataTag tag="M" /> `stream.Readable.isDisturbed(stream)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v16.8.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.8.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `stream` [`stream.Readable`](/api/stream#streamreadable) | [`ReadableStream`](/api/webstreams#readablestream)
 * Returns: `boolean`
@@ -2528,9 +2652,9 @@ Returns whether the stream has been read from or cancelled.
 
 #### <DataTag tag="M" /> `stream.isErrored(stream)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.3.0","v16.14.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.3.0","v16.14.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `stream` [`Readable`](/api/stream#streamreadable) | [`Writable`](/api/stream#streamwritable) | [`Duplex`](/api/stream#streamduplex) | [`WritableStream`](/api/webstreams#writablestream) | [`ReadableStream`](/api/webstreams#readablestream)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2539,9 +2663,9 @@ Returns whether the stream has encountered an error.
 
 #### <DataTag tag="M" /> `stream.isReadable(stream)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `stream` [`Readable`](/api/stream#streamreadable) | [`Duplex`](/api/stream#streamduplex) | [`ReadableStream`](/api/webstreams#readablestream)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2550,9 +2674,9 @@ Returns whether the stream is readable.
 
 #### <DataTag tag="M" /> `stream.Readable.toWeb(streamReadable[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `streamReadable` [`stream.Readable`](/api/stream#streamreadable)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2563,9 +2687,9 @@ Returns whether the stream is readable.
 
 #### <DataTag tag="M" /> `stream.Writable.fromWeb(writableStream[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `writableStream` [`WritableStream`](/api/webstreams#writablestream)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2577,16 +2701,16 @@ Returns whether the stream is readable.
 
 #### <DataTag tag="M" /> `stream.Writable.toWeb(streamWritable)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `streamWritable` [`stream.Writable`](/api/stream#streamwritable)
 * Returns: [`WritableStream`](/api/webstreams#writablestream)
 
 #### <DataTag tag="M" /> `stream.Duplex.from(src)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v16.8.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.8.0"]}}} />
 
 * `src` [`Stream`](/api/stream#stream) | [`Blob`](/api/buffer#blob) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`AsyncGeneratorFunction`](https://tc39.es/proposal-async-iteration/#sec-asyncgeneratorfunction-constructor) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) | [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -2610,11 +2734,23 @@ A utility method for creating duplex streams.
 * `Promise` converts into readable `Duplex`. Value `null` is ignored.
 * Returns: [`stream.Duplex`](/api/stream#streamduplex)
 
+If an `Iterable` object containing promises is passed as an argument,
+it might result in unhandled rejection.
+
+```js
+const { Duplex } = require('node:stream');
+
+Duplex.from([
+  new Promise((resolve) => setTimeout(resolve('1'), 1500)),
+  new Promise((_, reject) => setTimeout(reject(new Error('2')), 1000)), // Unhandled rejection
+]);
+```
+
 #### <DataTag tag="M" /> `stream.Duplex.fromWeb(pair[, options])`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `pair` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `readable` [`ReadableStream`](/api/webstreams#readablestream)
@@ -2691,9 +2827,9 @@ duplex.once('readable', () => console.log('readable', duplex.read()));
 
 #### <DataTag tag="M" /> `stream.Duplex.toWeb(streamDuplex)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 * `streamDuplex` [`stream.Duplex`](/api/stream#streamduplex)
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2747,7 +2883,7 @@ readable.getReader().read().then((result) => {
 
 #### <DataTag tag="M" /> `stream.addAbortSignal(signal, stream)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
 
 * `signal` [`AbortSignal`](/api/globals#abortsignal) A signal representing possible cancellation
 * `stream` [`Stream`](/api/stream#stream) a stream to attach a signal to
@@ -2797,7 +2933,7 @@ const stream = addAbortSignal(
 
 ### API for stream implementers
 
-<Metadata version="v18.13.0" data={{"type":"misc"}} />
+<Metadata version="v18.14.0" data={{"type":"misc"}} />
 
 The `node:stream` module API has been designed to make it possible to easily
 implement streams using JavaScript's prototypal inheritance model.
@@ -2849,7 +2985,7 @@ expectations.
 
 #### Simplified construction
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v1.2.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v1.2.0"]}}} />
 
 For many simple cases, it is possible to create a stream without relying on
 inheritance. This can be accomplished by directly creating instances of the
@@ -2882,7 +3018,7 @@ method.
 
 ##### <DataTag tag="M" /> `new stream.Writable([options])`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v15.5.0","pr-url":"https://github.com/nodejs/node/pull/36431","description":"support passing in an AbortSignal."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30623","description":"Change `autoDestroy` option default to `true`."},{"version":["v11.2.0","v10.16.0"],"pr-url":"https://github.com/nodejs/node/pull/22795","description":"Add `autoDestroy` option to automatically `destroy()` the stream when it emits `'finish'` or errors."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18438","description":"Add `emitClose` option to specify if `'close'` is emitted on destroy."}]}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v15.5.0","pr-url":"https://github.com/nodejs/node/pull/36431","description":"support passing in an AbortSignal."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30623","description":"Change `autoDestroy` option default to `true`."},{"version":["v11.2.0","v10.16.0"],"pr-url":"https://github.com/nodejs/node/pull/22795","description":"Add `autoDestroy` option to automatically `destroy()` the stream when it emits `'finish'` or errors."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18438","description":"Add `emitClose` option to specify if `'close'` is emitted on destroy."}]}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `highWaterMark` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Buffer level when
@@ -2982,7 +3118,7 @@ controller.abort();
 
 ##### <DataTag tag="M" /> `writable._construct(callback)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Call this function (optionally with an error
   argument) when the stream has finished initializing.
@@ -3031,7 +3167,7 @@ class WriteStream extends Writable {
 
 ##### <DataTag tag="M" /> `writable._write(chunk, encoding, callback)`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v12.11.0","pr-url":"https://github.com/nodejs/node/pull/29639","description":"_write() is optional when providing _writev()."}]}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.11.0","pr-url":"https://github.com/nodejs/node/pull/29639","description":"_write() is optional when providing _writev()."}]}} />
 
 * `chunk` [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The `Buffer` to be written, converted from the
   `string` passed to [`stream.write()`][stream-write]. If the stream's
@@ -3107,7 +3243,7 @@ user programs.
 
 ##### <DataTag tag="M" /> `writable._destroy(err, callback)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) A possible error.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A callback function that takes an optional error
@@ -3120,7 +3256,7 @@ once it is executed when a promise is resolved.
 
 ##### <DataTag tag="M" /> `writable._final(callback)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Call this function (optionally with an error
   argument) when finished writing any remaining data.
@@ -3228,7 +3364,7 @@ constructor and implement the [`readable._read()`][] method.
 
 ##### <DataTag tag="M" /> `new stream.Readable([options])`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v15.5.0","pr-url":"https://github.com/nodejs/node/pull/36431","description":"support passing in an AbortSignal."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30623","description":"Change `autoDestroy` option default to `true`."},{"version":["v11.2.0","v10.16.0"],"pr-url":"https://github.com/nodejs/node/pull/22795","description":"Add `autoDestroy` option to automatically `destroy()` the stream when it emits `'end'` or errors."}]}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v15.5.0","pr-url":"https://github.com/nodejs/node/pull/36431","description":"support passing in an AbortSignal."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30623","description":"Change `autoDestroy` option default to `true`."},{"version":["v11.2.0","v10.16.0"],"pr-url":"https://github.com/nodejs/node/pull/22795","description":"Add `autoDestroy` option to automatically `destroy()` the stream when it emits `'end'` or errors."}]}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `highWaterMark` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The maximum [number of bytes][hwm-gotcha] to store
@@ -3308,7 +3444,7 @@ controller.abort();
 
 ##### <DataTag tag="M" /> `readable._construct(callback)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Call this function (optionally with an error
   argument) when the stream has finished initializing.
@@ -3364,7 +3500,7 @@ class ReadStream extends Readable {
 
 ##### <DataTag tag="M" /> `readable._read(size)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `size` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to read asynchronously
 
@@ -3401,7 +3537,7 @@ user programs.
 
 ##### <DataTag tag="M" /> `readable._destroy(err, callback)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) A possible error.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A callback function that takes an optional error
@@ -3412,7 +3548,7 @@ It can be overridden by child classes but it **must not** be called directly.
 
 ##### <DataTag tag="M" /> `readable.push(chunk[, encoding])`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."}]}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."}]}} />
 
 * `chunk` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Chunk of data to push into the
   read queue. For streams not operating in object mode, `chunk` must be a
@@ -3503,7 +3639,7 @@ const myReadable = new Readable({
 
 ##### An example counting stream
 
-<Metadata version="v18.13.0" data={{"type":"example"}} />
+<Metadata version="v18.14.0" data={{"type":"example"}} />
 
 The following is a basic example of a `Readable` stream that emits the numerals
 from 1 to 1,000,000 in ascending order, and then ends.
@@ -3551,7 +3687,7 @@ constructor and implement _both_ the [`readable._read()`][] and
 
 ##### <DataTag tag="M" /> `new stream.Duplex(options)`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v8.4.0","pr-url":"https://github.com/nodejs/node/pull/14636","description":"The `readableHighWaterMark` and `writableHighWaterMark` options are supported now."}]}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v8.4.0","pr-url":"https://github.com/nodejs/node/pull/14636","description":"The `readableHighWaterMark` and `writableHighWaterMark` options are supported now."}]}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Passed to both `Writable` and `Readable`
   constructors. Also has the following fields:
@@ -3908,7 +4044,7 @@ primarily for examples and testing, but there are some use cases where
 
 ### Additional notes
 
-<Metadata version="v18.13.0" data={{"type":"misc"}} />
+<Metadata version="v18.14.0" data={{"type":"misc"}} />
 
 #### Streams compatibility with async generators and async iterators
 
@@ -4000,11 +4136,11 @@ pipelinePromise(iterator, writable)
   });
 ```
 
-<Metadata version="v18.13.0" data={{"type":"misc"}} />
+<Metadata version="v18.14.0" data={{"type":"misc"}} />
 
 #### Compatibility with older Node.js versions
 
-<Metadata version="v18.13.0" data={{"type":"misc"}} />
+<Metadata version="v18.14.0" data={{"type":"misc"}} />
 
 Prior to Node.js 0.10, the `Readable` stream interface was simpler, but also
 less powerful and less useful.
@@ -4172,7 +4308,11 @@ contain multi-byte characters.
 [stream-_write]: #writable_writechunk-encoding-callback
 [stream-_writev]: #writable_writevchunks-callback
 [stream-end]: #writableendchunk-encoding-callback
+[stream-finished]: #streamfinishedstream-options-callback
+[stream-finished-promise]: #streamfinishedstream-options
 [stream-pause]: #readablepause
+[stream-pipeline]: #streampipelinesource-transforms-destination-callback
+[stream-pipeline-promise]: #streampipelinesource-transforms-destination-options
 [stream-push]: #readablepushchunk-encoding
 [stream-read]: #readablereadsize
 [stream-resume]: #readableresume

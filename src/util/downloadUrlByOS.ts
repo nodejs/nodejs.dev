@@ -2,7 +2,8 @@ import { UserOS } from './detectOS';
 
 export default function downloadUrlByOS(
   userOS: UserOS,
-  version: string
+  version: string,
+  bitness?: string
 ): string {
   const baseURL = `https://nodejs.org/dist/${version}`;
 
@@ -16,6 +17,7 @@ export default function downloadUrlByOS(
 
   if (userOS === UserOS.WIN) {
     if (
+      bitness === '64' ||
       navigator.appVersion.includes('WOW64') ||
       navigator.appVersion.includes('Win64')
     ) {

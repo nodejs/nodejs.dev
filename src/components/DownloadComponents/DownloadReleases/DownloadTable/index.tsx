@@ -3,6 +3,13 @@ import { FormattedMessage } from 'react-intl';
 import { NodeReleaseData } from '../../../../types';
 import styles from './index.module.scss';
 
+const STATUS_TRANSLATION_MAP = {
+  'End-of-life': 'components.downloadTable.status.endOfLife',
+  'Maintenance LTS': 'components.downloadTable.status.maintenanceLts',
+  'Active LTS': 'components.downloadTable.status.activeLts',
+  Current: 'components.downloadTable.status.current',
+  Pending: 'components.downloadTable.status.pending',
+};
 interface Props {
   nodeReleasesData: NodeReleaseData[];
 }
@@ -63,7 +70,9 @@ const DownloadTable = ({ nodeReleasesData }: Props): JSX.Element => (
                     <a href={releaseDownloadLink}>{version}</a>
                   )}
                 </td>
-                <td>{status || ''}</td>
+                <td>
+                  <FormattedMessage id={STATUS_TRANSLATION_MAP[status]} />
+                </td>
                 <td>
                   {codename !== version ? (
                     <a href={codenameReleaseLink}>{codename}</a>

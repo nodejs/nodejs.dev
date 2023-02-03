@@ -1,12 +1,15 @@
 import { useMemo, useCallback } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Index, SerialisedIndexData } from 'elasticlunr';
+import { useLocalization } from 'gatsby-theme-i18n';
 import { compareTwoStrings } from 'string-similarity';
 import { replaceDataTagFromString } from '../util/replaceDataTag';
 import createSlug from '../../util-node/createSlug';
 import { SearchResult } from '../types';
 
 export const useSearchResults = () => {
+  const { locale } = useLocalization();
+
   const { siteSearchIndex } = useStaticQuery(graphql`
     query localSearchLearnPages {
       siteSearchIndex {
@@ -24,9 +27,21 @@ export const useSearchResults = () => {
 
   const searchResults = useCallback(
     (currentQuery: string) => {
-      const currentResults = storeIndex
-        .search(currentQuery, { expand: true })
-        .map(({ ref }) => storeIndex.documentStore.getDoc(ref) as SearchResult);
+      const localeResults: SearchResult[] = [];
+      const fallbackResults: SearchResult[] = [];
+
+      storeIndex.search(currentQuery, { expand: true }).forEach(({ ref }) => {
+        const result = storeIndex.documentStore.getDoc(ref) as SearchResult;
+
+        if (result.locale === locale) {
+          localeResults.push(result);
+        } else if (result.locale === 'en') {
+          fallbackResults.push(result);
+        }
+      });
+
+      const currentResults =
+        localeResults.length > 0 ? localeResults : fallbackResults;
 
       const mapResult = (result: SearchResult) => {
         if (result.tableOfContents) {
@@ -45,6 +60,7 @@ export const useSearchResults = () => {
             slug: `${result.slug}#${createSlug(item)}`,
             category: result.category,
             wrapInCode: item.startsWith('`'),
+            locale: result.locale,
           }));
         }
 
