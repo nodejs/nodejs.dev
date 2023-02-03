@@ -114,7 +114,7 @@
     "@types/react-scroll": "^1.8.4",
     "@types/string-similarity": "^4.0.0",
     "@types/throttle-debounce": "^5.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.36.2",
     "babel-jest": "^29.0.3",
     "babel-loader": "^9.1.0",
