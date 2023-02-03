@@ -125,7 +125,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "3.5.2",
     "eslint-mdx": "^2.0.5",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-mdx": "^2.0.5",
     "eslint-plugin-react": "^7.31.11",
