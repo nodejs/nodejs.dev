@@ -60,7 +60,7 @@
     "react-tabs": "6.0.0",
     "reading-time": "^1.5.0",
     "string-similarity": "^4.0.4",
-    "typescript": "^4.8.3",
+    "typescript": "^4.9.5",
     "yaml": "^2.1.1"
   },
   "keywords": [
