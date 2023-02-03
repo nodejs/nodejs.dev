@@ -22,13 +22,13 @@ jobs:
           persist-credentials: false
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Setup G Cloud
-        uses: google-github-actions/setup-gcloud@v0
+      - name: Auth G Cloud
+        uses: 'google-github-actions/auth@v1'
         with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_email: ${{ secrets.GCP_SA_EMAIL }}
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
-          export_default_credentials: true
+          credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NODEJS_INFRASTRUCTURE }}'
+
+      - name: Setup G Cloud
+        uses: google-github-actions/setup-gcloud@v1
 
       - name: Remove the PR Label
         uses: actions/github-script@v6
@@ -51,7 +51,7 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - uses: jongwooo/gatsby-cache@v1.4.0
+      - uses: jongwooo/gatsby-cache@v1.4.1
         with:
           key: generate-preview-gatsby-ubuntu-latest
 
