@@ -15,14 +15,14 @@ jobs:
         uses: actions/checkout@v3.3.0
         with:
           persist-credentials: false
+          
+      - name: Auth G Cloud
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NODEJS_INFRASTRUCTURE }}'
 
       - name: Setup G Cloud
-        uses: google-github-actions/setup-gcloud@v0
-        with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_email: ${{ secrets.GCP_SA_EMAIL }}
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
-          export_default_credentials: true
+        uses: google-github-actions/setup-gcloud@v1
 
       - name: Remove from G Cloud Storage
         run: gsutil -m rm -f gs://staging.nodejs.dev/${{ github.event.pull_request.number }}/** || true
