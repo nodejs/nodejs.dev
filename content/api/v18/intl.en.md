@@ -5,9 +5,9 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.13.0" data={{"update":{"type":"introduced_in","version":["v8.2.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"introduced_in","version":["v8.2.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"type":"misc"}} />
+<Metadata version="v18.14.0" data={{"type":"misc"}} />
 
 Node.js has many features that make it easier to write internationalized
 programs. Some of them are:
