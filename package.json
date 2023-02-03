@@ -55,7 +55,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.7.1",
-    "react-intl": "^6.1.1",
+    "react-intl": "^6.2.7",
     "react-scroll": "^1.8.7",
     "react-tabs": "6.0.0",
     "reading-time": "^1.5.0",
