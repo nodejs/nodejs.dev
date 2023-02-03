@@ -5,11 +5,11 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.5.0" data={{"update":{"type":"introduced_in","version":["v8.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"introduced_in","version":["v8.0.0"]}}} />
 
-<Metadata version="v19.5.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v19.5.0" data={{"source_link":"lib/inspector.js"}} />
+<Metadata version="v19.6.0" data={{"source_link":"lib/inspector.js"}} />
 
 The `node:inspector` module provides an API for interacting with the V8
 inspector.
@@ -36,9 +36,9 @@ const inspector = require('node:inspector');
 
 ### Promises API
 
-<Metadata version="v19.5.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v19.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v19.0.0"]}}} />
 
 #### <DataTag tag="C" /> `inspector.Session`
 
@@ -49,7 +49,7 @@ back-end and receiving message responses and notifications.
 
 ##### <DataTag tag="M" /> `new inspector.Session()`
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 Create a new instance of the `inspector.Session` class. The inspector session
 needs to be connected through [`session.connect()`][] before the messages
@@ -57,7 +57,7 @@ can be dispatched to the inspector backend.
 
 ##### <DataTag tag="E" /> `'inspectorNotification'`
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The notification message object
 
@@ -73,7 +73,7 @@ It is also possible to subscribe only to notifications with specific method:
 
 ##### <DataTag tag="E" /> `<inspector-protocol-method>`;
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The notification message object
 
@@ -93,20 +93,20 @@ session.on('Debugger.paused', ({ params }) => {
 
 ##### <DataTag tag="M" /> `session.connect()`
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 Connects a session to the inspector back-end.
 
 ##### <DataTag tag="M" /> `session.connectToMainThread()`
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v12.11.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.11.0"]}}} />
 
 Connects a session to the main thread inspector back-end. An exception will
 be thrown if this API was not called on a Worker thread.
 
 ##### <DataTag tag="M" /> `session.disconnect()`
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 Immediately close the session. All pending message callbacks will be called
 with an error. [`session.connect()`][] will need to be called to be able to send
@@ -115,7 +115,7 @@ enabled agents or configured breakpoints.
 
 ##### <DataTag tag="M" /> `session.post(method[, params])`
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v19.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v19.0.0"]}}} />
 
 * `method` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `params` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -204,7 +204,7 @@ back-end and receiving message responses and notifications.
 
 ##### <DataTag tag="M" /> `new inspector.Session()`
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 Create a new instance of the `inspector.Session` class. The inspector session
 needs to be connected through [`session.connect()`][] before the messages
@@ -212,7 +212,7 @@ can be dispatched to the inspector backend.
 
 ##### <DataTag tag="E" /> `'inspectorNotification'`
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The notification message object
 
@@ -228,7 +228,7 @@ It is also possible to subscribe only to notifications with specific method:
 
 ##### <DataTag tag="E" /> `<inspector-protocol-method>`;
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The notification message object
 
@@ -248,20 +248,20 @@ session.on('Debugger.paused', ({ params }) => {
 
 ##### <DataTag tag="M" /> `session.connect()`
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 Connects a session to the inspector back-end.
 
 ##### <DataTag tag="M" /> `session.connectToMainThread()`
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v12.11.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.11.0"]}}} />
 
 Connects a session to the main thread inspector back-end. An exception will
 be thrown if this API was not called on a Worker thread.
 
 ##### <DataTag tag="M" /> `session.disconnect()`
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.0.0"]}}} />
 
 Immediately close the session. All pending message callbacks will be called
 with an error. [`session.connect()`][] will need to be called to be able to send
@@ -270,7 +270,7 @@ enabled agents or configured breakpoints.
 
 ##### <DataTag tag="M" /> `session.post(method[, params][, callback])`
 
-<Metadata version="v19.5.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.0.0"]}}} />
 
 * `method` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `params` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -293,6 +293,10 @@ Node.js inspector supports all the Chrome DevTools Protocol domains declared
 by V8. Chrome DevTools Protocol domain provides an interface for interacting
 with one of the runtime agents used to inspect the application state and listen
 to the run-time events.
+
+You can not set `reportProgress` to `true` when sending a
+`HeapProfiler.takeHeapSnapshot` or `HeapProfiler.stopTrackingHeapObjects`
+command to V8.
 
 ##### Example usage
 
@@ -352,7 +356,7 @@ session.post('HeapProfiler.takeHeapSnapshot', null, (err, r) => {
 
 #### <DataTag tag="M" /> `inspector.close()`
 
-<Metadata version="v19.5.0" data={{"changes":[{"version":"v18.10.0","pr-url":"https://github.com/nodejs/node/pull/44489","description":"The API is exposed in the worker threads."}],"update":{"type":"added","version":["v9.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.10.0","pr-url":"https://github.com/nodejs/node/pull/44489","description":"The API is exposed in the worker threads."}],"update":{"type":"added","version":["v9.0.0"]}}} />
 
 Deactivate the inspector. Blocks until there are no active connections.
 
@@ -409,7 +413,7 @@ undefined
 
 #### <DataTag tag="M" /> `inspector.waitForDebugger()`
 
-<Metadata version="v19.5.0" data={{"update":{"type":"added","version":["v12.7.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.7.0"]}}} />
 
 Blocks until a client (existing or connected later) has sent
 `Runtime.runIfWaitingForDebugger` command.
