@@ -26,7 +26,7 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - uses: jongwooo/gatsby-cache@v1.4.0
+      - uses: jongwooo/gatsby-cache@v1.4.1
         with:
           key: firebase-deployment-gatsby-ubuntu-latest
 
@@ -38,4 +38,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NODEJS_INFRASTRUCTURE }}'
           channelId: live
-          projectId: nodejs-infrastructure
+          projectId: '${{ secrets.GCP_PROJECT_ID }}'

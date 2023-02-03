@@ -5,9 +5,9 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.13.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"type":"misc"}} />
+<Metadata version="v18.14.0" data={{"type":"misc"}} />
 
 _Addons_ are dynamically-linked shared objects written in C++. The
 [`require()`][require] function can load addons as ordinary Node.js modules.
@@ -32,7 +32,7 @@ involving knowledge of several components and APIs:
   threads and all of the asynchronous behaviors of the platform. It also
   serves as a cross-platform abstraction library, giving easy, POSIX-like
   access across all major operating systems to many common system tasks, such
-  as interacting with the filesystem, sockets, timers, and system events. libuv
+  as interacting with the file system, sockets, timers, and system events. libuv
   also provides a threading abstraction similar to POSIX threads for
   more sophisticated asynchronous addons that need to move beyond the
   standard event loop. Addon authors should
@@ -111,6 +111,9 @@ and the addon module name is `addon`.
 When building addons with `node-gyp`, using the macro `NODE_GYP_MODULE_NAME` as
 the first parameter of `NODE_MODULE()` will ensure that the name of the final
 binary will be passed to `NODE_MODULE()`.
+
+Addons defined with `NODE_MODULE()` can not be loaded in multiple contexts or
+multiple threads at the same time.
 
 #### Context-aware addons
 
@@ -241,7 +244,7 @@ NODE_MODULE_INIT(/* exports, module, context */) {
 
 ##### Worker support
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":["v14.8.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34572","description":"Cleanup hooks may now be asynchronous."}]}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":["v14.8.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34572","description":"Cleanup hooks may now be asynchronous."}]}} />
 
 In order to be loaded from multiple Node.js environments,
 such as a main thread and a Worker thread, an add-on needs to either:
@@ -440,7 +443,7 @@ illustration of how it can be used.
 
 ### Node-API
 
-<Metadata version="v18.13.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
 Node-API is an API for building native addons. It is independent from
 the underlying JavaScript runtime (e.g. V8) and is maintained as part of

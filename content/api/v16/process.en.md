@@ -3355,7 +3355,7 @@ flag's behavior.
 
 <Metadata version="v16.19.0" data={{"changes":[{"version":["v14.0.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/32499","description":"Calling `process.umask()` with no arguments is deprecated."}],"update":{"type":"added","version":["v0.1.19"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated. Calling `process.umask()` with no argument causes the process-wide umask to be written twice. This introduces a race condition\n> between threads, and is a potential security vulnerability. There is no safe,\n> cross-platform alternative API."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated. Calling `process.umask()` with no argument causes the process-wide umask to be written twice. This introduces a race condition between threads, and is a potential security vulnerability. There is no safe, cross-platform alternative API."}}} />
 
 `process.umask()` returns the Node.js process's file mode creation mask. Child
 processes inherit the mask from the parent process.

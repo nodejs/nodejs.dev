@@ -5,13 +5,13 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":"v18.13.0","pr-url":"https://github.com/nodejs/node/pull/45290","description":"diagnostics_channel is now Stable."}],"update":{"type":"added","version":["v15.1.0"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":"v18.13.0","pr-url":"https://github.com/nodejs/node/pull/45290","description":"diagnostics_channel is now Stable."}],"update":{"type":"added","version":["v15.1.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"update":{"type":"introduced_in","version":["v15.1.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"introduced_in","version":["v15.1.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v18.13.0" data={{"source_link":"lib/diagnostics_channel.js"}} />
+<Metadata version="v18.14.0" data={{"source_link":"lib/diagnostics_channel.js"}} />
 
 The `node:diagnostics_channel` module provides an API to create named channels
 to report arbitrary message data for diagnostics purposes.
@@ -96,7 +96,7 @@ diagnostics_channel.unsubscribe('my-channel', onMessage);
 
 ##### <DataTag tag="M" /> `diagnostics_channel.hasSubscribers(name)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The channel name
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If there are active subscribers
@@ -125,7 +125,7 @@ if (diagnostics_channel.hasSubscribers('my-channel')) {
 
 ##### <DataTag tag="M" /> `diagnostics_channel.channel(name)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The channel name
 * Returns: [`Channel`](/api/diagnostics_channel#channel) The named channel object
@@ -148,7 +148,7 @@ const channel = diagnostics_channel.channel('my-channel');
 
 ##### <DataTag tag="M" /> `diagnostics_channel.subscribe(name, onMessage)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v18.7.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v18.7.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The channel name
 * `onMessage` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The handler to receive channel messages
@@ -177,7 +177,7 @@ diagnostics_channel.subscribe('my-channel', (message, name) => {
 
 ##### <DataTag tag="M" /> `diagnostics_channel.unsubscribe(name, onMessage)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v18.7.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v18.7.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The channel name
 * `onMessage` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The previous subscribed handler to remove
@@ -212,7 +212,7 @@ diagnostics_channel.unsubscribe('my-channel', onMessage);
 
 #### <DataTag tag="C" /> `Channel`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
 
 The class `Channel` represents an individual named channel within the data
 pipeline. It is used to track subscribers and to publish messages when there
@@ -224,7 +224,7 @@ with `new Channel(name)` is not supported.
 
 ##### <DataTag tag="M" /> `channel.hasSubscribers`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If there are active subscribers
 
@@ -256,7 +256,7 @@ if (channel.hasSubscribers) {
 
 ##### <DataTag tag="M" /> `channel.publish(message)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
 
 * `message` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The message to send to the channel subscribers
 
@@ -285,9 +285,9 @@ channel.publish({
 
 ##### <DataTag tag="M" /> `channel.subscribe(onMessage)`
 
-<Metadata version="v18.13.0" data={{"update":{"type":"deprecated","version":["v18.7.0"]}}} />
+<Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v18.7.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `diagnostics_channel.subscribe(name, onMessage)`"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `diagnostics_channel.subscribe(name, onMessage)`"}}} />
 
 * `onMessage` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The handler to receive channel messages
   * `message` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The message data
@@ -319,9 +319,9 @@ channel.subscribe((message, name) => {
 
 ##### <DataTag tag="M" /> `channel.unsubscribe(onMessage)`
 
-<Metadata version="v18.13.0" data={{"changes":[{"version":["v17.1.0","v16.14.0","v14.19.0"],"pr-url":"https://github.com/nodejs/node/pull/40433","description":"Added return value. Added to channels without subscribers."}],"update":{"type":"deprecated","version":["v18.7.0"]}}} />
+<Metadata version="v18.14.0" data={{"changes":[{"version":["v17.1.0","v16.14.0","v14.19.0"],"pr-url":"https://github.com/nodejs/node/pull/40433","description":"Added return value. Added to channels without subscribers."}],"update":{"type":"deprecated","version":["v18.7.0"]}}} />
 
-<Metadata version="v18.13.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `diagnostics_channel.unsubscribe(name, onMessage)`"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `diagnostics_channel.unsubscribe(name, onMessage)`"}}} />
 
 * `onMessage` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The previous subscribed handler to remove
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` if the handler was found, `false` otherwise.
@@ -359,7 +359,7 @@ channel.unsubscribe(onMessage);
 
 #### Built-in Channels
 
-<Metadata version="v18.13.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
 
 While the diagnostics\_channel API is now considered stable, the built-in
 channels currently available are not. Each channel must be declared stable

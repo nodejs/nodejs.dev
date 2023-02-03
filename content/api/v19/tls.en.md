@@ -5,11 +5,11 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.4.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v19.4.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
 
-<Metadata version="v19.4.0" data={{"source_link":"lib/tls.js"}} />
+<Metadata version="v19.6.0" data={{"source_link":"lib/tls.js"}} />
 
 The `node:tls` module provides an implementation of the Transport Layer Security
 (TLS) and Secure Socket Layer (SSL) protocols that is built on top of OpenSSL.
@@ -109,7 +109,7 @@ Where:
 
 #### Perfect forward secrecy
 
-<Metadata version="v19.4.0" data={{"type":"misc"}} />
+<Metadata version="v19.6.0" data={{"type":"misc"}} />
 
 The term _[forward secrecy][]_ or _perfect forward secrecy_ describes a feature
 of key-agreement (i.e., key-exchange) methods. That is, the server and client
@@ -144,12 +144,12 @@ not required and a default ECDHE curve will be used. The `ecdhCurve` property
 can be used when creating a TLS Server to specify the list of names of supported
 curves to use, see [`tls.createServer()`][] for more info.
 
-Perfect forward secrecy was optional up to TLSv1.2, but it is not optional for
-TLSv1.3, because all TLSv1.3 cipher suites use ECDHE.
+Perfect forward secrecy was optional up to TLSv1.2. As of TLSv1.3, (EC)DHE is
+always used (with the exception of PSK-only connections).
 
 #### ALPN and SNI
 
-<Metadata version="v19.4.0" data={{"type":"misc"}} />
+<Metadata version="v19.6.0" data={{"type":"misc"}} />
 
 ALPN (Application-Layer Protocol Negotiation Extension) and
 SNI (Server Name Indication) are TLS handshake extensions:
@@ -160,7 +160,7 @@ SNI (Server Name Indication) are TLS handshake extensions:
 
 #### Pre-shared keys
 
-<Metadata version="v19.4.0" data={{"type":"misc"}} />
+<Metadata version="v19.6.0" data={{"type":"misc"}} />
 
 TLS-PSK support is available as an alternative to normal certificate-based
 authentication. It uses a pre-shared key instead of certificates to
@@ -194,7 +194,7 @@ limitations of the underlying OpenSSL API.
 
 #### Client-initiated renegotiation attack mitigation
 
-<Metadata version="v19.4.0" data={{"type":"misc"}} />
+<Metadata version="v19.6.0" data={{"type":"misc"}} />
 
 The TLS protocol allows clients to renegotiate certain aspects of the TLS
 session. Unfortunately, session renegotiation requires a disproportionate amount
@@ -446,16 +446,16 @@ has the property `code` which can take one of the following values:
 
 ### <DataTag tag="C" /> `tls.CryptoStream`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"deprecated","version":["v0.11.3"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"deprecated","version":["v0.11.3"]}}} />
 
-<Metadata version="v19.4.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `tls.TLSSocket` instead."}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `tls.TLSSocket` instead."}}} />
 
 The `tls.CryptoStream` class represents a stream of encrypted data. This class
 is deprecated and should no longer be used.
 
 #### <DataTag tag="M" /> `cryptoStream.bytesWritten`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"deprecated","version":["v0.11.3"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"deprecated","version":["v0.11.3"]}}} />
 
 The `cryptoStream.bytesWritten` property returns the total number of bytes
 written to the underlying socket _including_ the bytes required for the
@@ -463,15 +463,15 @@ implementation of the TLS protocol.
 
 ### <DataTag tag="C" /> `tls.SecurePair`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"deprecated","version":["v0.11.3"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"deprecated","version":["v0.11.3"]}}} />
 
-<Metadata version="v19.4.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `tls.TLSSocket` instead."}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `tls.TLSSocket` instead."}}} />
 
 Returned by [`tls.createSecurePair()`][].
 
 #### <DataTag tag="E" /> `'secure'`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"deprecated","version":["v0.11.3"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"deprecated","version":["v0.11.3"]}}} />
 
 The `'secure'` event is emitted by the `SecurePair` object once a secure
 connection has been established.
@@ -483,7 +483,7 @@ certificate used is properly authorized.
 
 ### <DataTag tag="C" /> `tls.Server`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.3.2"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.3.2"]}}} />
 
 * Extends: [`net.Server`](/api/net#netserver)
 
@@ -491,7 +491,7 @@ Accepts encrypted connections using TLS or SSL.
 
 #### <DataTag tag="E" /> `'connection'`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.3.2"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.3.2"]}}} />
 
 * `socket` [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -505,7 +505,7 @@ into the TLS server. In that case, any [`Duplex`][] stream can be passed.
 
 #### <DataTag tag="E" /> `'keylog'`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v12.3.0","v10.20.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.3.0","v10.20.0"]}}} />
 
 * `line` [`Buffer`](/api/buffer#buffer) Line of ASCII text, in NSS `SSLKEYLOGFILE` format.
 * `tlsSocket` [`tls.TLSSocket`](/api/tls#tlstlssocket) The `tls.TLSSocket` instance on which it was
@@ -532,7 +532,7 @@ server.on('keylog', (line, tlsSocket) => {
 
 #### <DataTag tag="E" /> `'newSession'`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":"v0.11.12","pr-url":"https://github.com/nodejs/node-v0.x-archive/pull/7118","description":"The `callback` argument is now supported."}],"update":{"type":"added","version":["v0.9.2"]}}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":"v0.11.12","pr-url":"https://github.com/nodejs/node-v0.x-archive/pull/7118","description":"The `callback` argument is now supported."}],"update":{"type":"added","version":["v0.9.2"]}}} />
 
 The `'newSession'` event is emitted upon creation of a new TLS session. This may
 be used to store sessions in external storage. The data should be provided to
@@ -550,7 +550,7 @@ after the addition of the event listener.
 
 #### <DataTag tag="E" /> `'OCSPRequest'`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.13"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.13"]}}} />
 
 The `'OCSPRequest'` event is emitted when the client sends a certificate status
 request. The listener callback is passed three arguments when called:
@@ -596,7 +596,7 @@ An npm module like [asn1.js][] may be used to parse the certificates.
 
 #### <DataTag tag="E" /> `'resumeSession'`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.9.2"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.9.2"]}}} />
 
 The `'resumeSession'` event is emitted when the client requests to resume a
 previous TLS session. The listener callback is passed two arguments when
@@ -634,7 +634,7 @@ server.on('resumeSession', (id, cb) => {
 
 #### <DataTag tag="E" /> `'secureConnection'`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.3.2"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.3.2"]}}} />
 
 The `'secureConnection'` event is emitted after the handshaking process for a
 new connection has successfully completed. The listener callback is passed a
@@ -657,7 +657,7 @@ requested via SNI.
 
 #### <DataTag tag="E" /> `'tlsClientError'`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v6.0.0"]}}} />
 
 The `'tlsClientError'` event is emitted when an error occurs before a secure
 connection is established. The listener callback is passed two arguments when
@@ -669,7 +669,7 @@ called:
 
 #### <DataTag tag="M" /> `server.addContext(hostname, context)`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.5.3"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.5.3"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A SNI host name or wildcard (e.g. `'*'`)
 * `context` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An object containing any of the possible properties
@@ -684,7 +684,7 @@ used.
 
 #### <DataTag tag="M" /> `server.address()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.6.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.6.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -694,7 +694,7 @@ more information.
 
 #### <DataTag tag="M" /> `server.close([callback])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.3.2"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.3.2"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A listener callback that will be registered to listen
   for the server instance's `'close'` event.
@@ -707,7 +707,7 @@ when the server has no more open connections.
 
 #### <DataTag tag="M" /> `server.getTicketKeys()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v3.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v3.0.0"]}}} />
 
 * Returns: [`Buffer`](/api/buffer#buffer) A 48-byte buffer containing the session ticket keys.
 
@@ -722,7 +722,7 @@ This method is identical to [`server.listen()`][] from [`net.Server`][].
 
 #### <DataTag tag="M" /> `server.setSecureContext(options)`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v11.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v11.0.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An object containing any of the possible properties from
   the [`tls.createSecureContext()`][] `options` arguments (e.g. `key`, `cert`,
@@ -733,7 +733,7 @@ existing server. Existing connections to the server are not interrupted.
 
 #### <DataTag tag="M" /> `server.setTicketKeys(keys)`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v3.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v3.0.0"]}}} />
 
 * `keys` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A 48-byte buffer containing the session
   ticket keys.
@@ -747,7 +747,7 @@ See [Session Resumption][] for more information.
 
 ### <DataTag tag="C" /> `tls.TLSSocket`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * Extends: [`net.Socket`](/api/net#netsocket)
 
@@ -762,7 +762,7 @@ connection is open.
 
 #### <DataTag tag="M" /> `new tls.TLSSocket(socket[, options])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":"v12.2.0","pr-url":"https://github.com/nodejs/node/pull/27497","description":"The `enableTrace` option is now supported."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2564","description":"ALPN options are supported now."}],"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":"v12.2.0","pr-url":"https://github.com/nodejs/node/pull/27497","description":"The `enableTrace` option is now supported."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2564","description":"ALPN options are supported now."}],"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * `socket` [`net.Socket`](/api/net#netsocket) | [`stream.Duplex`](/api/stream#streamduplex)
   On the server side, any `Duplex` stream. On the client side, any
@@ -796,7 +796,7 @@ Construct a new `tls.TLSSocket` object from an existing TCP socket.
 
 #### <DataTag tag="E" /> `'keylog'`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v12.3.0","v10.20.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.3.0","v10.20.0"]}}} />
 
 * `line` [`Buffer`](/api/buffer#buffer) Line of ASCII text, in NSS `SSLKEYLOGFILE` format.
 
@@ -816,7 +816,7 @@ tlsSocket.on('keylog', (line) => logFile.write(line));
 
 #### <DataTag tag="E" /> `'OCSPResponse'`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.13"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.13"]}}} />
 
 The `'OCSPResponse'` event is emitted if the `requestOCSP` option was set
 when the `tls.TLSSocket` was created and an OCSP response has been received.
@@ -829,7 +829,7 @@ contains information about server's certificate revocation status.
 
 #### <DataTag tag="E" /> `'secureConnect'`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 The `'secureConnect'` event is emitted after the handshaking process for a new
 connection has successfully completed. The listener callback will be called
@@ -846,7 +846,7 @@ using the `new tls.TLSSocket()` constructor.
 
 #### <DataTag tag="E" /> `'session'`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
 * `session` [`Buffer`](/api/buffer#buffer)
 
@@ -884,7 +884,7 @@ tlsSocket.once('session', (session) => {
 
 #### <DataTag tag="M" /> `tlsSocket.address()`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43054","description":"The `family` property now returns a string instead of a number."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41431","description":"The `family` property now returns a number instead of a string."}],"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.4.0","pr-url":"https://github.com/nodejs/node/pull/43054","description":"The `family` property now returns a string instead of a number."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41431","description":"The `family` property now returns a number instead of a string."}],"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -894,14 +894,14 @@ underlying socket as reported by the operating system:
 
 #### <DataTag tag="M" /> `tlsSocket.authorizationError`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 Returns the reason why the peer's certificate was not been verified. This
 property is set only when `tlsSocket.authorized === false`.
 
 #### <DataTag tag="M" /> `tlsSocket.authorized`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -910,14 +910,14 @@ specified when creating the `tls.TLSSocket` instance, otherwise `false`.
 
 #### <DataTag tag="M" /> `tlsSocket.disableRenegotiation()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.4.0"]}}} />
 
 Disables TLS renegotiation for this `TLSSocket` instance. Once called, attempts
 to renegotiate will trigger an `'error'` event on the `TLSSocket`.
 
 #### <DataTag tag="M" /> `tlsSocket.enableTrace()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v12.2.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.2.0"]}}} />
 
 When enabled, TLS packet trace information is written to `stderr`. This can be
 used to debug TLS connection problems.
@@ -929,14 +929,14 @@ without notice, and should not be relied on.
 
 #### <DataTag tag="M" /> `tlsSocket.encrypted`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 Always returns `true`. This may be used to distinguish TLS sockets from regular
 `net.Socket` instances.
 
 #### <DataTag tag="M" /> `tlsSocket.exportKeyingMaterial(length, label[, context])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
 * `length` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) number of bytes to retrieve from keying material
 
@@ -971,7 +971,7 @@ information.
 
 #### <DataTag tag="M" /> `tlsSocket.getCertificate()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v11.2.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v11.2.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -986,7 +986,7 @@ socket has been destroyed, `null` will be returned.
 
 #### <DataTag tag="M" /> `tlsSocket.getCipher()`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":["v13.4.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30637","description":"Return the IETF cipher name as `standardName`."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26625","description":"Return the minimum cipher version, instead of a fixed string (`'TLSv1/SSLv3'`)."}],"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":["v13.4.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30637","description":"Return the IETF cipher name as `standardName`."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26625","description":"Return the minimum cipher version, instead of a fixed string (`'TLSv1/SSLv3'`)."}],"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) OpenSSL name for the cipher suite.
@@ -1012,7 +1012,7 @@ for more information.
 
 #### <DataTag tag="M" /> `tlsSocket.getEphemeralKeyInfo()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v5.0.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v5.0.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1027,7 +1027,7 @@ For example: `{ type: 'ECDH', name: 'prime256v1', size: 256 }`.
 
 #### <DataTag tag="M" /> `tlsSocket.getFinished()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v9.9.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v9.9.0"]}}} />
 
 * Returns: [`Buffer`](/api/buffer#buffer) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) The latest `Finished` message that has been
   sent to the socket as part of a SSL/TLS handshake, or `undefined` if
@@ -1043,7 +1043,7 @@ to implement the `tls-unique` channel binding from [RFC 5929][].
 
 #### <DataTag tag="M" /> `tlsSocket.getPeerCertificate([detailed])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * `detailed` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Include the full certificate chain if `true`, otherwise
   include just the peer's certificate.
@@ -1059,7 +1059,7 @@ certificate.
 
 ##### Certificate object
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":"v19.1.0","pr-url":"https://github.com/nodejs/node/pull/44935","description":"Add \"ca\" property."},{"version":["v17.2.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/39809","description":"Add fingerprint512."},{"version":"v11.4.0","pr-url":"https://github.com/nodejs/node/pull/24358","description":"Support Elliptic Curve public key info."}]}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":"v19.1.0","pr-url":"https://github.com/nodejs/node/pull/44935","description":"Add \"ca\" property."},{"version":["v17.2.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/39809","description":"Add fingerprint512."},{"version":"v11.4.0","pr-url":"https://github.com/nodejs/node/pull/24358","description":"Support Elliptic Curve public key info."}]}} />
 
 A certificate object has properties corresponding to the fields of the
 certificate.
@@ -1149,7 +1149,7 @@ Example certificate:
 
 #### <DataTag tag="M" /> `tlsSocket.getPeerFinished()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v9.9.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v9.9.0"]}}} />
 
 * Returns: [`Buffer`](/api/buffer#buffer) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) The latest `Finished` message that is expected
   or has actually been received from the socket as part of a SSL/TLS handshake,
@@ -1165,7 +1165,7 @@ to implement the `tls-unique` channel binding from [RFC 5929][].
 
 #### <DataTag tag="M" /> `tlsSocket.getPeerX509Certificate()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v15.9.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v15.9.0"]}}} />
 
 * Returns: [`X509Certificate`](/api/crypto#x509certificate)
 
@@ -1176,7 +1176,7 @@ If there is no peer certificate, or the socket has been destroyed,
 
 #### <DataTag tag="M" /> `tlsSocket.getProtocol()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v5.7.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v5.7.0"]}}} />
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type)
 
@@ -1197,7 +1197,7 @@ See the OpenSSL [`SSL_get_version`][] documentation for more information.
 
 #### <DataTag tag="M" /> `tlsSocket.getSession()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * [`Buffer`](/api/buffer#buffer)
 
@@ -1213,7 +1213,7 @@ must use the [`'session'`][] event (it also works for TLSv1.2 and below).
 
 #### <DataTag tag="M" /> `tlsSocket.getSharedSigalgs()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v12.11.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.11.0"]}}} />
 
 * Returns: [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) List of signature algorithms shared between the server and
   the client in the order of decreasing preference.
@@ -1224,7 +1224,7 @@ for more information.
 
 #### <DataTag tag="M" /> `tlsSocket.getTLSTicket()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * [`Buffer`](/api/buffer#buffer)
 
@@ -1237,7 +1237,7 @@ See [Session Resumption][] for more information.
 
 #### <DataTag tag="M" /> `tlsSocket.getX509Certificate()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v15.9.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v15.9.0"]}}} />
 
 * Returns: [`X509Certificate`](/api/crypto#x509certificate)
 
@@ -1248,7 +1248,7 @@ If there is no local certificate, or the socket has been destroyed,
 
 #### <DataTag tag="M" /> `tlsSocket.isSessionReused()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.5.6"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.5.6"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` if the session was reused, `false` otherwise.
 
@@ -1256,7 +1256,7 @@ See [Session Resumption][] for more information.
 
 #### <DataTag tag="M" /> `tlsSocket.localAddress`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1264,7 +1264,7 @@ Returns the string representation of the local IP address.
 
 #### <DataTag tag="M" /> `tlsSocket.localPort`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -1272,7 +1272,7 @@ Returns the numeric representation of the local port.
 
 #### <DataTag tag="M" /> `tlsSocket.remoteAddress`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1281,7 +1281,7 @@ Returns the string representation of the remote IP address. For example,
 
 #### <DataTag tag="M" /> `tlsSocket.remoteFamily`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1289,7 +1289,7 @@ Returns the string representation of the remote IP family. `'IPv4'` or `'IPv6'`.
 
 #### <DataTag tag="M" /> `tlsSocket.remotePort`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -1297,7 +1297,7 @@ Returns the numeric representation of the remote port. For example, `443`.
 
 #### <DataTag tag="M" /> `tlsSocket.renegotiate(options, callback)`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.11.8"]}}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v0.11.8"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `rejectUnauthorized` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If not `false`, the server certificate is
@@ -1329,7 +1329,7 @@ protocol.
 
 #### <DataTag tag="M" /> `tlsSocket.setMaxSendFragment(size)`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.11"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.11"]}}} />
 
 * `size` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The maximum TLS fragment size. The maximum value is `16384`.
   **Default:** `16384`.
@@ -1347,7 +1347,7 @@ decrease overall server throughput.
 
 ### <DataTag tag="M" /> `tls.checkServerIdentity(hostname, cert)`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":["v17.3.1","v16.13.2","v14.18.3","v12.22.9"],"pr-url":"https://github.com/nodejs-private/node-private/pull/300","description":"Support for `uniformResourceIdentifier` subject alternative names has been disabled in response to CVE-2021-44531."}],"update":{"type":"added","version":["v0.8.4"]}}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":["v17.3.1","v16.13.2","v14.18.3","v12.22.9"],"pr-url":"https://github.com/nodejs-private/node-private/pull/300","description":"Support for `uniformResourceIdentifier` subject alternative names has been disabled in response to CVE-2021-44531."}],"update":{"type":"added","version":["v0.8.4"]}}} />
 
 * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The host name or IP address to verify the certificate
   against.
@@ -1380,7 +1380,7 @@ was present (see [CVE-2021-44531][]). Applications that wish to accept
 
 ### <DataTag tag="M" /> `tls.connect(options[, callback])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":["v15.1.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/35753","description":"Added `onread` option."},{"version":["v14.1.0","v13.14.0"],"pr-url":"https://github.com/nodejs/node/pull/32786","description":"The `highWaterMark` option is accepted now."},{"version":["v13.6.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/23188","description":"The `pskCallback` option is now supported."},{"version":"v12.9.0","pr-url":"https://github.com/nodejs/node/pull/27836","description":"Support the `allowHalfOpen` option."},{"version":"v12.4.0","pr-url":"https://github.com/nodejs/node/pull/27816","description":"The `hints` option is now supported."},{"version":"v12.2.0","pr-url":"https://github.com/nodejs/node/pull/27497","description":"The `enableTrace` option is now supported."},{"version":["v11.8.0","v10.16.0"],"pr-url":"https://github.com/nodejs/node/pull/25517","description":"The `timeout` option is supported now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12839","description":"The `lookup` option is supported now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11984","description":"The `ALPNProtocols` option can be a `TypedArray` or `DataView` now."},{"version":["v5.3.0","v4.7.0"],"pr-url":"https://github.com/nodejs/node/pull/4246","description":"The `secureContext` option is supported now."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2564","description":"ALPN options are supported now."}],"update":{"type":"added","version":["v0.11.3"]}}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":["v15.1.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/35753","description":"Added `onread` option."},{"version":["v14.1.0","v13.14.0"],"pr-url":"https://github.com/nodejs/node/pull/32786","description":"The `highWaterMark` option is accepted now."},{"version":["v13.6.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/23188","description":"The `pskCallback` option is now supported."},{"version":"v12.9.0","pr-url":"https://github.com/nodejs/node/pull/27836","description":"Support the `allowHalfOpen` option."},{"version":"v12.4.0","pr-url":"https://github.com/nodejs/node/pull/27816","description":"The `hints` option is now supported."},{"version":"v12.2.0","pr-url":"https://github.com/nodejs/node/pull/27497","description":"The `enableTrace` option is now supported."},{"version":["v11.8.0","v10.16.0"],"pr-url":"https://github.com/nodejs/node/pull/25517","description":"The `timeout` option is supported now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12839","description":"The `lookup` option is supported now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11984","description":"The `ALPNProtocols` option can be a `TypedArray` or `DataView` now."},{"version":["v5.3.0","v4.7.0"],"pr-url":"https://github.com/nodejs/node/pull/4246","description":"The `secureContext` option is supported now."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2564","description":"ALPN options are supported now."}],"update":{"type":"added","version":["v0.11.3"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `enableTrace`: See [`tls.createServer()`][]
@@ -1513,7 +1513,7 @@ socket.on('end', () => {
 
 ### <DataTag tag="M" /> `tls.connect(path[, options][, callback])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.3"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.3"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Default value for `options.path`.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) See [`tls.connect()`][].
@@ -1527,7 +1527,7 @@ A path option, if specified, will take precedence over the path argument.
 
 ### <DataTag tag="M" /> `tls.connect(port[, host][, options][, callback])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.3"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.3"]}}} />
 
 * `port` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Default value for `options.port`.
 * `host` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Default value for `options.host`.
@@ -1543,7 +1543,7 @@ argument.
 
 ### <DataTag tag="M" /> `tls.createSecureContext([options])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":"v12.12.0","pr-url":"https://github.com/nodejs/node/pull/28973","description":"Added `privateKeyIdentifier` and `privateKeyEngine` options to get private key from an OpenSSL engine."},{"version":"v12.11.0","pr-url":"https://github.com/nodejs/node/pull/29598","description":"Added `sigalgs` option to override supported signature algorithms."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26209","description":"TLSv1.3 support added."},{"version":"v11.5.0","pr-url":"https://github.com/nodejs/node/pull/24733","description":"The `ca:` option now supports `BEGIN TRUSTED CERTIFICATE`."},{"version":["v11.4.0","v10.16.0"],"pr-url":"https://github.com/nodejs/node/pull/24405","description":"The `minVersion` and `maxVersion` can be used to restrict the allowed TLS protocol versions."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19794","description":"The `ecdhCurve` cannot be set to `false` anymore due to a change in OpenSSL."},{"version":"v9.3.0","pr-url":"https://github.com/nodejs/node/pull/14903","description":"The `options` parameter can now include `clientCertEngine`."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15206","description":"The `ecdhCurve` option can now be multiple `':'` separated curve names or `'auto'`."},{"version":"v7.3.0","pr-url":"https://github.com/nodejs/node/pull/10294","description":"If the `key` option is an array, individual entries do not need a `passphrase` property anymore. `Array` entries can also just be `string`s or `Buffer`s now."},{"version":"v5.2.0","pr-url":"https://github.com/nodejs/node/pull/4099","description":"The `ca` option can now be a single string containing multiple CA certificates."}],"update":{"type":"added","version":["v0.11.13"]}}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":"v12.12.0","pr-url":"https://github.com/nodejs/node/pull/28973","description":"Added `privateKeyIdentifier` and `privateKeyEngine` options to get private key from an OpenSSL engine."},{"version":"v12.11.0","pr-url":"https://github.com/nodejs/node/pull/29598","description":"Added `sigalgs` option to override supported signature algorithms."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26209","description":"TLSv1.3 support added."},{"version":"v11.5.0","pr-url":"https://github.com/nodejs/node/pull/24733","description":"The `ca:` option now supports `BEGIN TRUSTED CERTIFICATE`."},{"version":["v11.4.0","v10.16.0"],"pr-url":"https://github.com/nodejs/node/pull/24405","description":"The `minVersion` and `maxVersion` can be used to restrict the allowed TLS protocol versions."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19794","description":"The `ecdhCurve` cannot be set to `false` anymore due to a change in OpenSSL."},{"version":"v9.3.0","pr-url":"https://github.com/nodejs/node/pull/14903","description":"The `options` parameter can now include `clientCertEngine`."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15206","description":"The `ecdhCurve` option can now be multiple `':'` separated curve names or `'auto'`."},{"version":"v7.3.0","pr-url":"https://github.com/nodejs/node/pull/10294","description":"If the `key` option is an array, individual entries do not need a `passphrase` property anymore. `Array` entries can also just be `string`s or `Buffer`s now."},{"version":"v5.2.0","pr-url":"https://github.com/nodejs/node/pull/4099","description":"The `ca` option can now be a single string containing multiple CA certificates."}],"update":{"type":"added","version":["v0.11.13"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `ca` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) Optionally override the trusted CA
@@ -1669,8 +1669,9 @@ from `process.argv` as the default value of the `sessionIdContext` option, other
 APIs that create secure contexts have no default value.
 
 The `tls.createSecureContext()` method creates a `SecureContext` object. It is
-usable as an argument to several `tls` APIs, such as [`tls.createServer()`][]
-and [`server.addContext()`][], but has no public methods.
+usable as an argument to several `tls` APIs, such as [`server.addContext()`][],
+but has no public methods. The [`tls.Server`][] constructor and the
+[`tls.createServer()`][] method do not support the `secureContext` option.
 
 A key is _required_ for ciphers that use certificates. Either `key` or
 `pfx` can be used to provide it.
@@ -1680,9 +1681,9 @@ If the `ca` option is not given, then Node.js will default to using
 
 ### <DataTag tag="M" /> `tls.createSecurePair([context][, isServer][, requestCert][, rejectUnauthorized][, options])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2564","description":"ALPN options are supported now."}],"update":{"type":"deprecated","version":["v0.11.3"]}}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2564","description":"ALPN options are supported now."}],"update":{"type":"deprecated","version":["v0.11.3"]}}} />
 
-<Metadata version="v19.4.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `tls.TLSSocket` instead."}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `tls.TLSSocket` instead."}}} />
 
 * `context` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) A secure context object as returned by
   `tls.createSecureContext()`
@@ -1737,7 +1738,7 @@ where `secureSocket` has the same API as `pair.cleartext`.
 
 ### <DataTag tag="M" /> `tls.createServer([options][, secureConnectionListener])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/44031","description":"If `ALPNProtocols` is set, incoming connections that send an ALPN extension with no supported protocols are terminated with a fatal `no_application_protocol` alert."},{"version":"v12.3.0","pr-url":"https://github.com/nodejs/node/pull/27665","description":"The `options` parameter now supports `net.createServer()` options."},{"version":"v9.3.0","pr-url":"https://github.com/nodejs/node/pull/14903","description":"The `options` parameter can now include `clientCertEngine`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11984","description":"The `ALPNProtocols` option can be a `TypedArray` or `DataView` now."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2564","description":"ALPN options are supported now."}],"update":{"type":"added","version":["v0.3.2"]}}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/44031","description":"If `ALPNProtocols` is set, incoming connections that send an ALPN extension with no supported protocols are terminated with a fatal `no_application_protocol` alert."},{"version":"v12.3.0","pr-url":"https://github.com/nodejs/node/pull/27665","description":"The `options` parameter now supports `net.createServer()` options."},{"version":"v9.3.0","pr-url":"https://github.com/nodejs/node/pull/14903","description":"The `options` parameter can now include `clientCertEngine`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11984","description":"The `ALPNProtocols` option can be a `TypedArray` or `DataView` now."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2564","description":"ALPN options are supported now."}],"update":{"type":"added","version":["v0.3.2"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `ALPNProtocols`: [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
@@ -1847,7 +1848,7 @@ The server can be tested by connecting to it using the example client from
 
 ### <DataTag tag="M" /> `tls.getCiphers()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.10.2"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.10.2"]}}} />
 
 * Returns: string\[]
 
@@ -1867,7 +1868,7 @@ console.log(tls.getCiphers()); // ['aes128-gcm-sha256', 'aes128-sha', ...]
 
 ### <DataTag tag="M" /> `tls.rootCertificates`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v12.3.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.3.0"]}}} />
 
 * string\[]
 
@@ -1879,7 +1880,7 @@ that is fixed at release time. It is identical on all supported platforms.
 
 ### <DataTag tag="M" /> `tls.DEFAULT_ECDH_CURVE`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/16853","description":"Default value changed to `'auto'`."}],"update":{"type":"added","version":["v0.11.13"]}}} />
+<Metadata version="v19.6.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/16853","description":"Default value changed to `'auto'`."}],"update":{"type":"added","version":["v0.11.13"]}}} />
 
 The default curve name to use for ECDH key agreement in a tls server. The
 default value is `'auto'`. See [`tls.createSecureContext()`][] for further
@@ -1887,7 +1888,7 @@ information.
 
 ### <DataTag tag="M" /> `tls.DEFAULT_MAX_VERSION`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v11.4.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v11.4.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The default value of the `maxVersion` option of
   [`tls.createSecureContext()`][]. It can be assigned any of the supported TLS
@@ -1899,7 +1900,7 @@ information.
 
 ### <DataTag tag="M" /> `tls.DEFAULT_MIN_VERSION`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v11.4.0"]}}} />
+<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v11.4.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The default value of the `minVersion` option of
   [`tls.createSecureContext()`][]. It can be assigned any of the supported TLS
