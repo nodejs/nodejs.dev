@@ -47,7 +47,7 @@
     "gatsby-theme-i18n": "^3.0.0",
     "gatsby-transformer-yaml": "^4.22.0",
     "isomorphic-dompurify": "^0.24.0",
-    "node-fetch": "~2.6.7",
+    "node-fetch": "~2.6.9",
     "patch-package": "^6.4.7",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
