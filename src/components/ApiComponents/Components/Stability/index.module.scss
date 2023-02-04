@@ -7,10 +7,15 @@
 
   p {
     margin: 0;
+    display: inline;
   }
 
   a {
     color: #fff;
+
+    code {
+      color: #fff !important;
+    }
   }
 
   &__level-0 {
