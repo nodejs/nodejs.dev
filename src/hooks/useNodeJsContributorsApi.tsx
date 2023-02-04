@@ -1,7 +1,12 @@
+/* eslint-disable camelcase */
 import { useEffect, useState } from 'react';
+import type {
+  Contributor,
+  ContributorApiResponse,
+} from '../types/nodejsContributors';
 
-const CONTRIBUTORS_API_URI =
-  'https://api.github.com/repos/nodejs/node/contributors?per_page=1';
+const limitContributors = 5;
+const CONTRIBUTORS_API_URI = `https://api.github.com/repos/nodejs/node/contributors?per_page=${limitContributors}`;
 
 /**
  * Parses "Link" response header from node/contributors API
@@ -14,7 +19,10 @@ function linkParser(linkHeader: string): {
     page: number;
   };
 } {
-  const regex = /<([^?]+\?per_page=1&[a-z]+=([\d]+))>;[\s]*rel="([a-z]+)"/g;
+  const regex = new RegExp(
+    `<([^?]+\\?per_page=${limitContributors}&[a-z]+=([\\d]+))>;[\\s]*rel="([a-z]+)"`,
+    'g'
+  );
   let array: RegExpExecArray | null = null;
   const object = {};
 
@@ -57,26 +65,41 @@ async function getMaxContributors(): Promise<[number, number]> {
  * @param randomPage
  */
 async function getContributor(randomPage: number): Promise<Contributor> {
-  const response = await fetch(`${CONTRIBUTORS_API_URI}&page=${randomPage}`);
-  const contributor = (await response.json())[0] as ContributorApiResponse;
+  const response = await fetch(
+    `${CONTRIBUTORS_API_URI}&page=${randomPage}`
+  ).then(data => data.json() as Promise<ContributorApiResponse[]>);
 
-  return {
-    avatarUri: contributor.avatar_url,
-    commitsListUri: `https://github.com/nodejs/node/commits?author=${contributor.login}`,
-    contributionsCount: contributor.contributions,
-    login: contributor.login,
-    profileUri: contributor.html_url,
-  };
+  const contributorData: Contributor[] = response.map(
+    ({ avatar_url, login, contributions, html_url }) => ({
+      avatarUri: avatar_url,
+      login,
+      contributionsCount: contributions,
+      profileUri: html_url,
+      commitsListUri: `https://github.com/nodejs/node/commits?author=${login}`,
+    })
+  );
+
+  const contributor = contributorData.shift() as Contributor;
+
+  if (window.localStorage) {
+    window.localStorage.setItem(
+      'contributors',
+      JSON.stringify(contributorData)
+    );
+  }
+
+  return contributor;
 }
 
 /**
  * Calls relative APIs and returns random contributor for Node.js main repo.
  * Trying to store cached data in localStorage in order to do less consequent requests
  */
-async function fetchRandomContributor() {
+async function fetchRandomContributor(): Promise<Contributor> {
   let maxContributors: number | null = null;
   let fetchDate: number | null = null;
   let needToRefetch = false;
+  let contributors: Contributor[] = [];
   const ONE_MONTH_MS = 2592000000;
 
   if (window.localStorage) {
@@ -84,80 +107,65 @@ async function fetchRandomContributor() {
       window.localStorage.getItem('max_contributors');
     const fetchDateStored = window.localStorage.getItem('fetch_date');
 
+    contributors = JSON.parse(
+      window.localStorage.getItem('contributors') || '[]'
+    );
+
     maxContributors = maxContributorsStored
       ? parseInt(maxContributorsStored, 10)
       : null;
     fetchDate = fetchDateStored ? parseInt(fetchDateStored, 10) : null;
   }
 
-  if (fetchDate && Date.now() - fetchDate >= ONE_MONTH_MS) {
-    needToRefetch = true;
-  }
+  if (fetchDate && Date.now() - fetchDate >= ONE_MONTH_MS) needToRefetch = true;
 
-  // If localStorage and data is less than 1 month old, fetch 1 time
-  try {
-    if (maxContributors && !needToRefetch) {
-      return await getContributor(
-        Math.floor(Math.random() * Math.floor(maxContributors)) + 1
-      );
+  return new Promise((resolve, reject) => {
+    try {
+      if (contributors && contributors.length > 0 && !needToRefetch) {
+        const contributor: any = contributors.shift();
+        if (window.localStorage) {
+          localStorage.setItem('contributors', JSON.stringify(contributors));
+        }
+        resolve(contributor);
+      }
+
+      if (maxContributors && !needToRefetch) {
+        getContributor(
+          Math.floor(Math.random() * Math.floor(maxContributors)) + 1
+        ).then(contributor => resolve(contributor));
+      }
+
+      getMaxContributors()
+        .then(([randomPage]) => getContributor(randomPage))
+        .then(contributor => {
+          if (window.localStorage) {
+            window.localStorage.setItem('fetch_date', String(Date.now()));
+          }
+          resolve(contributor);
+        });
+    } catch {
+      reject(new Error('Failed to fetch random contributor'));
     }
-
-    const [randomPage, lastPage] = await getMaxContributors();
-
-    const contributor = await getContributor(randomPage);
-
-    if (window.localStorage) {
-      window.localStorage.setItem('fetch_date', String(Date.now()));
-      window.localStorage.setItem('max_contributors', String(lastPage));
-    }
-
-    return contributor;
-  } catch {
-    return null;
-  }
+  });
 }
 
 export function useNodeJsContributorsApi(
   isVisible: boolean
-): Contributor | null {
-  const [contributor, setContributor] = useState<Contributor | null>(null);
+): Contributor | null | undefined {
+  const [contributor, setContributor] = useState<
+    Contributor | null | undefined
+  >(null);
 
   useEffect(() => {
     if (isVisible) {
-      fetchRandomContributor().then(setContributor).catch();
+      fetchRandomContributor()
+        .then(contributorList => {
+          setContributor(contributorList);
+        })
+        .catch(() => {
+          setContributor(null);
+        });
     }
   }, [isVisible]);
-
   return contributor;
-}
-
-export interface ContributorApiResponse {
-  login: string;
-  id: number;
-  url: string;
-  type: string;
-  contributions: number;
-  node_id: string;
-  avatar_url: string;
-  gravatar_id: string;
-  html_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  starred_url: string;
-  subscriptions_url: string;
-  organizations_url: string;
-  repos_url: string;
-  events_url: string;
-  received_events_url: string;
-  site_admin: boolean;
-  /* eslint-enable camelcase */
-}
-
-export interface Contributor {
-  avatarUri: string;
-  profileUri: string;
-  login: string;
-  contributionsCount: number;
-  commitsListUri: string;
 }

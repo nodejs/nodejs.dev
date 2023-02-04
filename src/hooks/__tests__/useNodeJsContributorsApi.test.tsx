@@ -12,7 +12,7 @@ describe('useNodeJsContributorsApi', () => {
   };
 
   const linkResponseHeaderMock =
-    '<https://api.github.com/repositories/27193779/contributors?per_page=1&page=2>; rel="next", <https://api.github.com/repositories/27193779/contributors?per_page=1&page=438>; rel="last"';
+    '<https://api.github.com/repositories/27193779/contributors?per_page=5&page=2>; rel="next", <https://api.github.com/repositories/27193779/contributors?per_page=5&page=438>; rel="last"';
 
   beforeEach(() => {
     fetchMock.enableMocks();
@@ -54,13 +54,13 @@ describe('useNodeJsContributorsApi', () => {
     });
     await waitFor(() => {
       expect(fetchMock.mock.calls[0][0]).toBe(
-        'https://api.github.com/repos/nodejs/node/contributors?per_page=1'
+        'https://api.github.com/repos/nodejs/node/contributors?per_page=5'
       );
     });
     await waitFor(() => {
       expect(
         (fetchMock.mock.calls[1][0] as string).includes(
-          'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page='
+          'https://api.github.com/repos/nodejs/node/contributors?per_page=5&page='
         )
       ).toBe(true);
     });
@@ -86,7 +86,7 @@ describe('useNodeJsContributorsApi', () => {
     await waitFor(() => {
       expect(
         (fetchMock.mock.calls[0][0] as string).includes(
-          'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page='
+          'https://api.github.com/repos/nodejs/node/contributors?per_page=5&page='
         )
       ).toBe(true);
     });
@@ -118,13 +118,13 @@ describe('useNodeJsContributorsApi', () => {
     });
     await waitFor(() => {
       expect(fetchMock.mock.calls[0][0]).toBe(
-        'https://api.github.com/repos/nodejs/node/contributors?per_page=1'
+        'https://api.github.com/repos/nodejs/node/contributors?per_page=5'
       );
     });
     await waitFor(() => {
       expect(
         (fetchMock.mock.calls[1][0] as string).includes(
-          'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page='
+          'https://api.github.com/repos/nodejs/node/contributors?per_page=5&page='
         )
       ).toBe(true);
     });
