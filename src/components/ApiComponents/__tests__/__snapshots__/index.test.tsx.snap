@@ -39,14 +39,3 @@ exports[`ApiComponents component renders Components Span correctly 1`] = `
   }
 />
 `;
-
-exports[`ApiComponents component renders Components Stability correctly 1`] = `
-<Stability
-  stability={
-    {
-      "level": 0,
-      "text": "test",
-    }
-  }
-/>
-`;

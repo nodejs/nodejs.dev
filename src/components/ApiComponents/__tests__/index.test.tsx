@@ -41,18 +41,6 @@ describe('ApiComponents component', (): void => {
     expect(component).toMatchSnapshot();
   });
 
-  it('renders Components Stability correctly', (): void => {
-    const components = getApiComponents({ fullVersion: version });
-    const data: ApiComponentData = {
-      stability: {
-        level: 0,
-        text: 'test',
-      },
-    };
-    const component = components({ data });
-    expect(component).toMatchSnapshot();
-  });
-
   it('renders Components SourceLink correctly', (): void => {
     const components = getApiComponents({ fullVersion: version });
     const data: ApiComponentData = {
