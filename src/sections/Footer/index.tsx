@@ -6,6 +6,7 @@ import {
   faGithub,
   faSlack,
   faTwitter,
+  faMastodon,
 } from '@fortawesome/free-brands-svg-icons';
 import styles from './index.module.scss';
 
@@ -78,13 +79,26 @@ const Footer = (): JSX.Element => (
       <li>
         <a
           target="_blank"
+          href="https://mastodon.social/@nodejs@social.lfx.dev"
+          rel="noopener noreferrer"
+          aria-label="Node.js Mastodon (opens in new tab)"
+        >
+          <FontAwesomeIcon
+            icon={faMastodon}
+            color="var(--color-text-secondary)"
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          target="_blank"
           href="https://twitter.com/nodejs"
           rel="noopener noreferrer"
           aria-label="Node.js Twitter (opens in new tab)"
         >
-          <FontAwesomeIcon
-            icon={faTwitter}
-            color="var(--color-text-secondary)"
+          <FontAwesomeIcon 
+          icon={faTwitter}
+          color="var(--color-text-secondary)"
           />
         </a>
       </li>
@@ -95,7 +109,10 @@ const Footer = (): JSX.Element => (
           rel="noopener noreferrer"
           aria-label="Node.js Slack (opens in new tab)"
         >
-          <FontAwesomeIcon icon={faSlack} color="var(--color-text-secondary)" />
+          <FontAwesomeIcon
+          icon={faSlack}
+          color="var(--color-text-secondary)"
+          />
         </a>
       </li>
     </ul>
