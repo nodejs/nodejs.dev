@@ -276,11 +276,13 @@ exports[`LearnLayout Template renders correctly 1`] = `
       <article
         class="article"
       >
-        <h1
-          class="headline"
-        >
-          t,itle-mock
-        </h1>
+        <header>
+          <h1
+            class="headline"
+          >
+            t,itle-mock
+          </h1>
+        </header>
         <h5
           class="list"
         >

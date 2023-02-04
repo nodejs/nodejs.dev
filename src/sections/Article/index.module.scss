@@ -4,6 +4,14 @@
   padding: var(--space-48) var(--space-32) var(--space-48) var(--space-32);
   width: calc(100vw - 36rem);
 
+  header {
+    background: url('/static/images/header.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: -50px -25px;
+    padding: 50px 25px;
+  }
+
   .headline {
     margin: 0 0 var(--space-40) 0;
     padding: 0;

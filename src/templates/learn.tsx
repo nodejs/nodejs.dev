@@ -28,6 +28,7 @@ const LearnLayout = ({
       <LearnNavigation sections={navigationData} currentSlug={slug} />
       <Article
         title={displayTitle}
+        description={description}
         body={body}
         tableOfContents={tableOfContents ? tableOfContents.items : []}
         next={next}
