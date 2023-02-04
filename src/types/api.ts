@@ -14,7 +14,6 @@ export interface ApiComponentData {
   name?: string;
   source_link?: string;
   update?: ApiUpdate;
-  stability?: { level: number; text: string };
   changes?: ApiChange[];
 }
 
