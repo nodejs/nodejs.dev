@@ -96,9 +96,9 @@ const Footer = (): JSX.Element => (
           rel="noopener noreferrer"
           aria-label="Node.js Twitter (opens in new tab)"
         >
-          <FontAwesomeIcon 
-          icon={faTwitter}
-          color="var(--color-text-secondary)"
+          <FontAwesomeIcon
+            icon={faTwitter}
+            color="var(--color-text-secondary)"
           />
         </a>
       </li>
@@ -109,10 +109,7 @@ const Footer = (): JSX.Element => (
           rel="noopener noreferrer"
           aria-label="Node.js Slack (opens in new tab)"
         >
-          <FontAwesomeIcon
-          icon={faSlack}
-          color="var(--color-text-secondary)"
-          />
+          <FontAwesomeIcon icon={faSlack} color="var(--color-text-secondary)" />
         </a>
       </li>
     </ul>
