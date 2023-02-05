@@ -5,11 +5,15 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.6.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Stability stability={2}>
 
-<Metadata version="v19.6.0" data={{"name":"fs"}} />
+Stable
+
+</Stability>
+
+<Metadata data={{"name":"fs"}} />
 
 <Metadata version="v19.6.0" data={{"source_link":"lib/fs.js"}} />
 
@@ -128,7 +132,7 @@ try {
 
 ### Promises API
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31553","description":"Exposed as `require('fs/promises')`."},{"version":["v11.14.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/26581","description":"This API is no longer experimental."},{"version":"v10.1.0","pr-url":"https://github.com/nodejs/node/pull/20504","description":"The API is accessible via `require('fs').promises` only."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31553","description":"Exposed as `require('fs/promises')`."},{"version":["v11.14.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/26581","description":"This API is no longer experimental."},{"version":"v10.1.0","pr-url":"https://github.com/nodejs/node/pull/20504","description":"The API is accessible via `require('fs').promises` only."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 The `fs/promises` API provides asynchronous file system methods that return
 promises.
@@ -140,7 +144,7 @@ concurrent modifications on the same file or data corruption may occur.
 
 #### <DataTag tag="C" /> `FileHandle`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 A [`FileHandle`](/api/fs#filehandle) object is an object wrapper for a numeric file descriptor.
 
@@ -157,14 +161,14 @@ close [`FileHandle`](/api/fs#filehandle)s. Node.js may change this behavior in t
 
 ##### <DataTag tag="E" /> `'close'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v15.4.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.4.0"]}}} />
 
 The `'close'` event is emitted when the [`FileHandle`](/api/fs#filehandle) has been closed and can no
 longer be used.
 
 ##### <DataTag tag="M" /> `filehandle.appendFile(data[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v15.14.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37490","description":"The `data` argument supports `AsyncIterable`, `Iterable`, and `Stream`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":["v15.14.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37490","description":"The `data` argument supports `AsyncIterable`, `Iterable`, and `Stream`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`Stream`](/api/stream#stream)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -179,7 +183,7 @@ to with [`fsPromises.open()`][]. Therefore, this is equivalent to
 
 ##### <DataTag tag="M" /> `filehandle.chmod(mode)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the file mode bit mask.
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
@@ -188,7 +192,7 @@ Modifies the permissions on the file. See chmod(2).
 
 ##### <DataTag tag="M" /> `filehandle.chown(uid, gid)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The file's new owner's user id.
 * `gid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The file's new group's group id.
@@ -198,7 +202,7 @@ Changes the ownership of the file. A wrapper for chown(2).
 
 ##### <DataTag tag="M" /> `filehandle.close()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
 
@@ -218,7 +222,7 @@ try {
 
 ##### <DataTag tag="M" /> `filehandle.createReadStream([options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v16.11.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.11.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `null`
@@ -283,7 +287,7 @@ fd.createReadStream({ start: 90, end: 99 });
 
 ##### <DataTag tag="M" /> `filehandle.createWriteStream([options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v16.11.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.11.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
@@ -309,7 +313,7 @@ destroyed.  Set the `emitClose` option to `false` to change this behavior.
 
 ##### <DataTag tag="M" /> `filehandle.datasync()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
 
@@ -321,13 +325,13 @@ Unlike `filehandle.sync` this method does not flush modified metadata.
 
 ##### <DataTag tag="M" /> `filehandle.fd`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The numeric file descriptor managed by the [`FileHandle`](/api/fs#filehandle) object.
 
 ##### <DataTag tag="M" /> `filehandle.read(buffer, offset, length, position)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A buffer that will be filled with the
   file data read.
@@ -349,7 +353,7 @@ number of bytes read is zero.
 
 ##### <DataTag tag="M" /> `filehandle.read([options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v13.11.0","v12.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.11.0","v12.17.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A buffer that will be filled with the
@@ -374,7 +378,7 @@ number of bytes read is zero.
 
 ##### <DataTag tag="M" /> `filehandle.read(buffer[, options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v18.2.0","v16.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.2.0","v16.17.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A buffer that will be filled with the
   file data read.
@@ -399,9 +403,13 @@ number of bytes read is zero.
 
 ##### <DataTag tag="M" /> `filehandle.readableWebStream()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 * Returns: [`ReadableStream`](/api/webstreams#readablestream)
 
@@ -444,7 +452,7 @@ close the `FileHandle` automatically. User code must still call the
 
 ##### <DataTag tag="M" /> `filehandle.readFile(options)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `null`
@@ -466,7 +474,7 @@ of the file.
 
 ##### <DataTag tag="M" /> `filehandle.readLines([options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v18.11.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.11.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `null`
@@ -504,7 +512,7 @@ const { open } = require('node:fs/promises');
 
 ##### <DataTag tag="M" /> `filehandle.readv(buffers[, position])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v13.13.0","v12.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.13.0","v12.17.0"]}}} />
 
 * `buffers` Buffer\[]|TypedArray\[]|DataView\[]
 * `position` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) The offset from the beginning of the file where
@@ -519,7 +527,7 @@ Read from a file and write to an array of [`ArrayBufferView`](https://developer.
 
 ##### <DataTag tag="M" /> `filehandle.stat([options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the numeric values in the returned
@@ -528,7 +536,7 @@ Read from a file and write to an array of [`ArrayBufferView`](https://developer.
 
 ##### <DataTag tag="M" /> `filehandle.sync()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
 
@@ -538,7 +546,7 @@ Refer to the POSIX fsync(2) documentation for more detail.
 
 ##### <DataTag tag="M" /> `filehandle.truncate(len)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `len` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
@@ -569,7 +577,7 @@ If `len` is negative then `0` will be used.
 
 ##### <DataTag tag="M" /> `filehandle.utimes(atime, mtime)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * `mtime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
@@ -580,7 +588,7 @@ then resolves the promise with no arguments upon success.
 
 ##### <DataTag tag="M" /> `filehandle.write(buffer, offset[, length[, position]])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `buffer` parameter won't coerce unsupported input to buffers anymore."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `buffer` parameter won't coerce unsupported input to buffers anymore."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The start position from within `buffer` where the data
@@ -611,7 +619,7 @@ the end of the file.
 
 ##### <DataTag tag="M" /> `filehandle.write(buffer[, options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v18.3.0","v16.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.3.0","v16.17.0"]}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -628,7 +636,7 @@ default with the above values.
 
 ##### <DataTag tag="M" /> `filehandle.write(string[, position[, encoding]])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `string` parameter won't coerce unsupported input to strings anymore."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `string` parameter won't coerce unsupported input to strings anymore."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `position` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) The offset from the beginning of the file where the
@@ -656,7 +664,7 @@ the end of the file.
 
 ##### <DataTag tag="M" /> `filehandle.writeFile(data, options)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v15.14.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37490","description":"The `data` argument supports `AsyncIterable`, `Iterable`, and `Stream`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":["v15.14.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37490","description":"The `data` argument supports `AsyncIterable`, `Iterable`, and `Stream`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`Stream`](/api/stream#stream)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -682,7 +690,7 @@ beginning of the file.
 
 ##### <DataTag tag="M" /> `filehandle.writev(buffers[, position])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.9.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.9.0"]}}} />
 
 * `buffers` Buffer\[]|TypedArray\[]|DataView\[]
 * `position` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) The offset from the beginning of the file where the
@@ -707,7 +715,7 @@ the end of the file.
 
 #### <DataTag tag="M" /> `fsPromises.access(path[, mode])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `fs.constants.F_OK`
@@ -745,7 +753,7 @@ the error raised if the file is not accessible.
 
 #### <DataTag tag="M" /> `fsPromises.appendFile(path, data[, options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`FileHandle`](/api/fs#filehandle) filename or [`FileHandle`](/api/fs#filehandle)
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
@@ -768,7 +776,7 @@ for appending (using `fsPromises.open()`).
 
 #### <DataTag tag="M" /> `fsPromises.chmod(path, mode)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -778,7 +786,7 @@ Changes the permissions of a file.
 
 #### <DataTag tag="M" /> `fsPromises.chown(path, uid, gid)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -789,7 +797,7 @@ Changes the ownership of a file.
 
 #### <DataTag tag="M" /> `fsPromises.copyFile(src, dest[, mode])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/27044","description":"Changed `flags` argument to `mode` and imposed stricter type validation."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/27044","description":"Changed `flags` argument to `mode` and imposed stricter type validation."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) source filename to copy
 * `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) destination filename of the copy operation
@@ -836,9 +844,13 @@ try {
 
 #### <DataTag tag="M" /> `fsPromises.cp(src, dest[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v17.6.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41819","description":"Accepts an additional `verbatimSymlinks` option to specify whether to perform path resolution for symlinks."}],"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata data={{"changes":[{"version":["v17.6.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41819","description":"Accepts an additional `verbatimSymlinks` option to specify whether to perform path resolution for symlinks."}],"update":{"type":"added","version":["v16.7.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 * `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) source path to copy.
 * `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) destination path to copy to.
@@ -871,7 +883,7 @@ behavior is similar to `cp dir1/ dir2/`.
 
 #### <DataTag tag="M" /> `fsPromises.lchmod(path, mode)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"deprecated","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"deprecated","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -883,7 +895,7 @@ This method is only implemented on macOS.
 
 #### <DataTag tag="M" /> `fsPromises.lchown(path, uid, gid)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/21498","description":"This API is no longer deprecated."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/21498","description":"This API is no longer deprecated."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -894,7 +906,7 @@ Changes the ownership on a symbolic link.
 
 #### <DataTag tag="M" /> `fsPromises.lutimes(path, atime, mtime)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
@@ -908,7 +920,7 @@ the symbolic link itself are changed.
 
 #### <DataTag tag="M" /> `fsPromises.link(existingPath, newPath)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `existingPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
@@ -919,7 +931,7 @@ link(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fsPromises.lstat(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -934,7 +946,7 @@ Refer to the POSIX lstat(2) document for more detail.
 
 #### <DataTag tag="M" /> `fsPromises.mkdir(path[, options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -981,7 +993,7 @@ makeDirectory().catch(console.error);
 
 #### <DataTag tag="M" /> `fsPromises.mkdtemp(prefix[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v16.5.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39028","description":"The `prefix` parameter now accepts an empty string."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":["v16.5.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39028","description":"The `prefix` parameter now accepts an empty string."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `prefix` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1016,7 +1028,7 @@ characters directly to the `prefix` string. For instance, given a directory
 
 #### <DataTag tag="M" /> `fsPromises.open(path, flags[, mode])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v11.1.0","pr-url":"https://github.com/nodejs/node/pull/23767","description":"The `flags` argument is now optional and defaults to `'r'`."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":"v11.1.0","pr-url":"https://github.com/nodejs/node/pull/23767","description":"The `flags` argument is now optional and defaults to `'r'`."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `flags` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) See [support of file system `flags`][].
@@ -1036,7 +1048,7 @@ a colon, Node.js will open a file system stream, as described by
 
 #### <DataTag tag="M" /> `fsPromises.opendir(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v13.1.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30114","description":"The `bufferSize` option was introduced."}],"update":{"type":"added","version":["v12.12.0"]}}} />
+<Metadata data={{"changes":[{"version":["v13.1.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30114","description":"The `bufferSize` option was introduced."}],"update":{"type":"added","version":["v12.12.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1074,7 +1086,7 @@ closed after the iterator exits.
 
 #### <DataTag tag="M" /> `fsPromises.readdir(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v10.11.0","pr-url":"https://github.com/nodejs/node/pull/22020","description":"New option `withFileTypes` was added."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":"v10.11.0","pr-url":"https://github.com/nodejs/node/pull/22020","description":"New option `withFileTypes` was added."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1107,7 +1119,7 @@ try {
 
 #### <DataTag tag="M" /> `fsPromises.readFile(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v15.2.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/35911","description":"The options argument may include an AbortSignal to abort an ongoing readFile request."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":["v15.2.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/35911","description":"The options argument may include an AbortSignal to abort an ongoing readFile request."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`FileHandle`](/api/fs#filehandle) filename or `FileHandle`
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -1185,7 +1197,7 @@ Any specified [`FileHandle`](/api/fs#filehandle) has to support reading.
 
 #### <DataTag tag="M" /> `fsPromises.readlink(path[, options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1203,7 +1215,7 @@ returned will be passed as a [`Buffer`](/api/buffer#buffer) object.
 
 #### <DataTag tag="M" /> `fsPromises.realpath(path[, options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1226,7 +1238,7 @@ this restriction.
 
 #### <DataTag tag="M" /> `fsPromises.rename(oldPath, newPath)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `oldPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
@@ -1236,7 +1248,7 @@ Renames `oldPath` to `newPath`.
 
 #### <DataTag tag="M" /> `fsPromises.rmdir(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fsPromises.rmdir(path, { recursive: true })` on a `path` that is a file is no longer permitted and results in an `ENOENT` error on Windows and an `ENOTDIR` error on POSIX."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fsPromises.rmdir(path, { recursive: true })` on a `path` that does not exist is no longer permitted and results in a `ENOENT` error."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37302","description":"The `recursive` option is deprecated, using it triggers a deprecation warning."},{"version":"v14.14.0","pr-url":"https://github.com/nodejs/node/pull/35579","description":"The `recursive` option is deprecated, use `fsPromises.rm` instead."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30644","description":"The `maxBusyTries` option is renamed to `maxRetries`, and its default is 0. The `emfileWait` option has been removed, and `EMFILE` errors use the same retry logic as other errors. The `retryDelay` option is now supported. `ENFILE` errors are now retried."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29168","description":"The `recursive`, `maxBusyTries`, and `emfileWait` options are now supported."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fsPromises.rmdir(path, { recursive: true })` on a `path` that is a file is no longer permitted and results in an `ENOENT` error on Windows and an `ENOTDIR` error on POSIX."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fsPromises.rmdir(path, { recursive: true })` on a `path` that does not exist is no longer permitted and results in a `ENOENT` error."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37302","description":"The `recursive` option is deprecated, using it triggers a deprecation warning."},{"version":"v14.14.0","pr-url":"https://github.com/nodejs/node/pull/35579","description":"The `recursive` option is deprecated, use `fsPromises.rm` instead."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30644","description":"The `maxBusyTries` option is renamed to `maxRetries`, and its default is 0. The `emfileWait` option has been removed, and `EMFILE` errors use the same retry logic as other errors. The `retryDelay` option is now supported. `ENFILE` errors are now retried."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29168","description":"The `recursive`, `maxBusyTries`, and `emfileWait` options are now supported."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1264,7 +1276,7 @@ To get a behavior similar to the `rm -rf` Unix command, use
 
 #### <DataTag tag="M" /> `fsPromises.rm(path[, options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v14.14.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v14.14.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1286,7 +1298,7 @@ Removes files and directories (modeled on the standard POSIX `rm` utility).
 
 #### <DataTag tag="M" /> `fsPromises.stat(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1297,7 +1309,7 @@ Removes files and directories (modeled on the standard POSIX `rm` utility).
 
 #### <DataTag tag="M" /> `fsPromises.statfs(path[, options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v19.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.6.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1335,7 +1347,7 @@ automatically be normalized to absolute path.
 
 #### <DataTag tag="M" /> `fsPromises.truncate(path[, len])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `len` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
@@ -1346,7 +1358,7 @@ bytes.
 
 #### <DataTag tag="M" /> `fsPromises.unlink(path)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
@@ -1358,7 +1370,7 @@ documentation for more detail.
 
 #### <DataTag tag="M" /> `fsPromises.utimes(path, atime, mtime)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
@@ -1376,7 +1388,7 @@ The `atime` and `mtime` arguments follow these rules:
 
 #### <DataTag tag="M" /> `fsPromises.watch(filename[, options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v15.9.0","v14.18.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.9.0","v14.18.0"]}}} />
 
 * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1424,7 +1436,7 @@ All the [caveats][] for `fs.watch()` also apply to `fsPromises.watch()`.
 
 #### <DataTag tag="M" /> `fsPromises.writeFile(file, data[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v15.14.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37490","description":"The `data` argument supports `AsyncIterable`, `Iterable`, and `Stream`."},{"version":["v15.2.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/35993","description":"The options argument may include an AbortSignal to abort an ongoing writeFile request."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":["v15.14.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37490","description":"The `data` argument supports `AsyncIterable`, `Iterable`, and `Stream`."},{"version":["v15.2.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/35993","description":"The options argument may include an AbortSignal to abort an ongoing writeFile request."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`FileHandle`](/api/fs#filehandle) filename or `FileHandle`
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`Stream`](/api/stream#stream)
@@ -1484,7 +1496,7 @@ system requests but rather the internal buffering `fs.writeFile` performs.
 
 #### <DataTag tag="M" /> `fsPromises.constants`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v18.4.0","v16.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.4.0","v16.17.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -1504,7 +1516,7 @@ concurrent modifications on the same file or data corruption may occur.
 
 #### <DataTag tag="M" /> `fs.access(path[, mode], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6534","description":"The constants like `fs.R_OK`, etc which were present directly on `fs` were moved into `fs.constants` as a soft deprecation. Thus for Node.js `< v6.3.0` use `fs` to access those constants, or do something like `(fs.constants || fs).R_OK` to work with all versions."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6534","description":"The constants like `fs.R_OK`, etc which were present directly on `fs` were moved into `fs.constants` as a soft deprecation. Thus for Node.js `< v6.3.0` use `fs` to access those constants, or do something like `(fs.constants || fs).R_OK` to work with all versions."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `fs.constants.F_OK`
@@ -1674,7 +1686,7 @@ the user from reading or writing to it.
 
 #### <DataTag tag="M" /> `fs.appendFile(path, data[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `file` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.6.7"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `file` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.6.7"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
@@ -1738,7 +1750,7 @@ open('message.txt', 'a', (err, fd) => {
 
 #### <DataTag tag="M" /> `fs.chmod(path, mode, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.30"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.30"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -1811,7 +1823,7 @@ implemented.
 
 #### <DataTag tag="M" /> `fs.chown(path, uid, gid, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.97"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.97"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -1826,7 +1838,7 @@ See the POSIX chown(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fs.close(fd[, callback])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":["v15.9.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37174","description":"A default callback is now used if one is not provided."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":["v15.9.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37174","description":"A default callback is now used if one is not provided."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -1842,7 +1854,7 @@ See the POSIX close(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fs.copyFile(src, dest[, mode], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/27044","description":"Changed `flags` argument to `mode` and imposed stricter type validation."}],"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/27044","description":"Changed `flags` argument to `mode` and imposed stricter type validation."}],"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) source filename to copy
 * `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) destination filename of the copy operation
@@ -1886,9 +1898,13 @@ copyFile('source.txt', 'destination.txt', constants.COPYFILE_EXCL, callback);
 
 #### <DataTag tag="M" /> `fs.cp(src, dest[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":["v17.6.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41819","description":"Accepts an additional `verbatimSymlinks` option to specify whether to perform path resolution for symlinks."}],"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":["v17.6.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41819","description":"Accepts an additional `verbatimSymlinks` option to specify whether to perform path resolution for symlinks."}],"update":{"type":"added","version":["v16.7.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 * `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) source path to copy.
 * `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) destination path to copy to.
@@ -1921,7 +1937,7 @@ behavior is similar to `cp dir1/ dir2/`.
 
 #### <DataTag tag="M" /> `fs.createReadStream(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/40013","description":"The `fs` option does not need `open` method if an `fd` was provided."},{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/40013","description":"The `fs` option does not need `close` method if `autoClose` is `false`."},{"version":["v15.4.0"],"pr-url":"https://github.com/nodejs/node/pull/35922","description":"The `fd` option accepts FileHandle arguments."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31408","description":"Change `emitClose` default to `true`."},{"version":["v13.6.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29083","description":"The `fs` options allow overriding the used `fs` implementation."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29212","description":"Enable `emitClose` option."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/19898","description":"Impose new restrictions on `start` and `end`, throwing more appropriate errors in cases when we cannot reasonably handle the input values."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."},{"version":"v2.3.0","pr-url":"https://github.com/nodejs/node/pull/1845","description":"The passed `options` object can be a string now."}],"update":{"type":"added","version":["v0.1.31"]}}} />
+<Metadata data={{"changes":[{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/40013","description":"The `fs` option does not need `open` method if an `fd` was provided."},{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/40013","description":"The `fs` option does not need `close` method if `autoClose` is `false`."},{"version":["v15.4.0"],"pr-url":"https://github.com/nodejs/node/pull/35922","description":"The `fd` option accepts FileHandle arguments."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31408","description":"Change `emitClose` default to `true`."},{"version":["v13.6.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29083","description":"The `fs` options allow overriding the used `fs` implementation."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29212","description":"Enable `emitClose` option."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/19898","description":"Impose new restrictions on `start` and `end`, throwing more appropriate errors in cases when we cannot reasonably handle the input values."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."},{"version":"v2.3.0","pr-url":"https://github.com/nodejs/node/pull/1845","description":"The passed `options` object can be a string now."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2006,7 +2022,7 @@ If `options` is a string, then it specifies the encoding.
 
 #### <DataTag tag="M" /> `fs.createWriteStream(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/40013","description":"The `fs` option does not need `open` method if an `fd` was provided."},{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/40013","description":"The `fs` option does not need `close` method if `autoClose` is `false`."},{"version":["v15.4.0"],"pr-url":"https://github.com/nodejs/node/pull/35922","description":"The `fd` option accepts FileHandle arguments."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31408","description":"Change `emitClose` default to `true`."},{"version":["v13.6.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29083","description":"The `fs` options allow overriding the used `fs` implementation."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29212","description":"Enable `emitClose` option."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."},{"version":"v5.5.0","pr-url":"https://github.com/nodejs/node/pull/3679","description":"The `autoClose` option is supported now."},{"version":"v2.3.0","pr-url":"https://github.com/nodejs/node/pull/1845","description":"The passed `options` object can be a string now."}],"update":{"type":"added","version":["v0.1.31"]}}} />
+<Metadata data={{"changes":[{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/40013","description":"The `fs` option does not need `open` method if an `fd` was provided."},{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/40013","description":"The `fs` option does not need `close` method if `autoClose` is `false`."},{"version":["v15.4.0"],"pr-url":"https://github.com/nodejs/node/pull/35922","description":"The `fd` option accepts FileHandle arguments."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31408","description":"Change `emitClose` default to `true`."},{"version":["v13.6.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29083","description":"The `fs` options allow overriding the used `fs` implementation."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29212","description":"Enable `emitClose` option."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."},{"version":"v5.5.0","pr-url":"https://github.com/nodejs/node/pull/3679","description":"The `autoClose` option is supported now."},{"version":"v2.3.0","pr-url":"https://github.com/nodejs/node/pull/1845","description":"The passed `options` object can be a string now."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2053,9 +2069,13 @@ If `options` is a string, then it specifies the encoding.
 
 #### <DataTag tag="M" /> `fs.exists(path, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"deprecated","version":["v1.0.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"deprecated","version":["v1.0.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `fs.stat()`][] or [`fs.access()` instead."}}} />
+<Stability stability={0}>
+
+Deprecated: Use [`fs.stat()`][] or [`fs.access()`][] instead.
+
+</Stability>
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -2191,7 +2211,7 @@ process.
 
 #### <DataTag tag="M" /> `fs.fchmod(fd, mode, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.4.7"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.4.7"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -2205,7 +2225,7 @@ See the POSIX fchmod(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fs.fchown(fd, uid, gid, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.4.7"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.4.7"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -2220,7 +2240,7 @@ See the POSIX fchown(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fs.fdatasync(fd, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.96"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.96"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -2233,7 +2253,7 @@ exception are given to the completion callback.
 
 #### <DataTag tag="M" /> `fs.fstat(fd[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.95"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.95"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2249,7 +2269,7 @@ See the POSIX fstat(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fs.fsync(fd, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.96"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.96"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -2262,7 +2282,7 @@ than a possible exception are given to the completion callback.
 
 #### <DataTag tag="M" /> `fs.ftruncate(fd[, len], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.8.6"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.8.6"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `len` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
@@ -2311,7 +2331,7 @@ If `len` is negative then `0` will be used.
 
 #### <DataTag tag="M" /> `fs.futimes(fd, atime, mtime, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v4.1.0","pr-url":"https://github.com/nodejs/node/pull/2387","description":"Numeric strings, `NaN`, and `Infinity` are now allowed time specifiers."}],"update":{"type":"added","version":["v0.4.2"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v4.1.0","pr-url":"https://github.com/nodejs/node/pull/2387","description":"Numeric strings, `NaN`, and `Infinity` are now allowed time specifiers."}],"update":{"type":"added","version":["v0.4.2"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
@@ -2324,7 +2344,7 @@ descriptor. See [`fs.utimes()`][].
 
 #### <DataTag tag="M" /> `fs.lchmod(path, mode, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37460","description":"The error returned may be an `AggregateError` if more than one error is returned."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"deprecated","version":["v0.4.7"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37460","description":"The error returned may be an `AggregateError` if more than one error is returned."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"deprecated","version":["v0.4.7"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -2340,7 +2360,7 @@ See the POSIX lchmod(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fs.lchown(path, uid, gid, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/21498","description":"This API is no longer deprecated."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v0.4.7","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/21498","description":"This API is no longer deprecated."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v0.4.7","description":"Documentation-only deprecation."}]}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -2355,7 +2375,7 @@ See the POSIX lchown(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fs.lutimes(path, atime, mtime, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
@@ -2373,7 +2393,7 @@ callback.
 
 #### <DataTag tag="M" /> `fs.link(existingPath, newPath, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `existingPath` and `newPath` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.31"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `existingPath` and `newPath` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
 * `existingPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
@@ -2386,7 +2406,7 @@ exception are given to the completion callback.
 
 #### <DataTag tag="M" /> `fs.lstat(path[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.30"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.30"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2405,7 +2425,7 @@ See the POSIX lstat(2) documentation for more details.
 
 #### <DataTag tag="M" /> `fs.mkdir(path[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":["v13.11.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31530","description":"In `recursive` mode, the callback now receives the first created path as an argument."},{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/21875","description":"The second argument can now be an `options` object with `recursive` and `mode` properties."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.8"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":["v13.11.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31530","description":"In `recursive` mode, the callback now receives the first created path as an argument."},{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/21875","description":"The second argument can now be an `options` object with `recursive` and `mode` properties."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.8"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -2453,7 +2473,7 @@ See the POSIX mkdir(2) documentation for more details.
 
 #### <DataTag tag="M" /> `fs.mkdtemp(prefix[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":["v16.5.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39028","description":"The `prefix` parameter now accepts an empty string."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v6.2.1","pr-url":"https://github.com/nodejs/node/pull/6828","description":"The `callback` parameter is optional now."}],"update":{"type":"added","version":["v5.10.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":["v16.5.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39028","description":"The `prefix` parameter now accepts an empty string."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v6.2.1","pr-url":"https://github.com/nodejs/node/pull/6828","description":"The `callback` parameter is optional now."}],"update":{"type":"added","version":["v5.10.0"]}}} />
 
 * `prefix` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2521,7 +2541,7 @@ mkdtemp(`${tmpDir}${sep}`, (err, directory) => {
 
 #### <DataTag tag="M" /> `fs.open(path[, flags[, mode]], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v11.1.0","pr-url":"https://github.com/nodejs/node/pull/23767","description":"The `flags` argument is now optional and defaults to `'r'`."},{"version":"v9.9.0","pr-url":"https://github.com/nodejs/node/pull/18801","description":"The `as` and `as+` flags are supported now."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.0.2"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v11.1.0","pr-url":"https://github.com/nodejs/node/pull/23767","description":"The `flags` argument is now optional and defaults to `'r'`."},{"version":"v9.9.0","pr-url":"https://github.com/nodejs/node/pull/18801","description":"The `as` and `as+` flags are supported now."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `flags` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) See [support of file system `flags`][].
@@ -2549,7 +2569,7 @@ Functions based on `fs.open()` exhibit this behavior as well:
 
 #### <DataTag tag="M" /> `fs.opendir(path[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":["v13.1.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30114","description":"The `bufferSize` option was introduced."}],"update":{"type":"added","version":["v12.12.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":["v13.1.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30114","description":"The `bufferSize` option was introduced."}],"update":{"type":"added","version":["v12.12.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2572,7 +2592,7 @@ directory and subsequent read operations.
 
 #### <DataTag tag="M" /> `fs.read(fd, buffer, offset, length, position, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `buffer` parameter can now be any `TypedArray`, or a `DataView`."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `buffer` parameter can now be a `Uint8Array`."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4518","description":"The `length` parameter can now be `0`."}],"update":{"type":"added","version":["v0.0.2"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `buffer` parameter can now be any `TypedArray`, or a `DataView`."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `buffer` parameter can now be a `Uint8Array`."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4518","description":"The `length` parameter can now be `0`."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) The buffer that the data will be
@@ -2600,7 +2620,7 @@ a promise for an `Object` with `bytesRead` and `buffer` properties.
 
 #### <DataTag tag="M" /> `fs.read(fd[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v13.11.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31402","description":"Options object can be passed in to make buffer, offset, length, and position optional."}],"update":{"type":"added","version":["v13.11.0","v12.17.0"]}}} />
+<Metadata data={{"changes":[{"version":["v13.11.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31402","description":"Options object can be passed in to make buffer, offset, length, and position optional."}],"update":{"type":"added","version":["v13.11.0","v12.17.0"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2619,7 +2639,7 @@ above values.
 
 #### <DataTag tag="M" /> `fs.read(fd, buffer[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v18.2.0","v16.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.2.0","v16.17.0"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) The buffer that the data will be
@@ -2639,7 +2659,7 @@ above values.
 
 #### <DataTag tag="M" /> `fs.readdir(path[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22020","description":"New option `withFileTypes` was added."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5616","description":"The `options` parameter was added."}],"update":{"type":"added","version":["v0.1.8"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22020","description":"New option `withFileTypes` was added."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5616","description":"The `options` parameter was added."}],"update":{"type":"added","version":["v0.1.8"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2665,7 +2685,7 @@ If `options.withFileTypes` is set to `true`, the `files` array will contain
 
 #### <DataTag tag="M" /> `fs.readFile(path[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37460","description":"The error returned may be an `AggregateError` if more than one error is returned."},{"version":["v15.2.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/35911","description":"The options argument may include an AbortSignal to abort an ongoing readFile request."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v5.1.0","pr-url":"https://github.com/nodejs/node/pull/3740","description":"The `callback` will always be called with `null` as the `error` parameter in case of success."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `path` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.1.29"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37460","description":"The error returned may be an `AggregateError` if more than one error is returned."},{"version":["v15.2.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/35911","description":"The options argument may include an AbortSignal to abort an ongoing readFile request."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v5.1.0","pr-url":"https://github.com/nodejs/node/pull/3740","description":"The `callback` will always be called with `null` as the `error` parameter in case of success."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `path` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.1.29"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -2774,7 +2794,7 @@ different Node.js versions.
 
 #### <DataTag tag="M" /> `fs.readlink(path[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.31"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2795,7 +2815,7 @@ the link path returned will be passed as a [`Buffer`](/api/buffer#buffer) object
 
 #### <DataTag tag="M" /> `fs.readv(fd, buffers[, position], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v13.13.0","v12.17.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v13.13.0","v12.17.0"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `buffers` ArrayBufferView\[]
@@ -2820,7 +2840,7 @@ a promise for an `Object` with `bytesRead` and `buffers` properties.
 
 #### <DataTag tag="M" /> `fs.realpath(path[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/13028","description":"Pipe/Socket resolve support was added."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7899","description":"Calling `realpath` now works again for various edge cases on Windows."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/3594","description":"The `cache` parameter was removed."}],"update":{"type":"added","version":["v0.1.31"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/13028","description":"Pipe/Socket resolve support was added."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7899","description":"Calling `realpath` now works again for various edge cases on Windows."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/3594","description":"The `cache` parameter was removed."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2857,7 +2877,7 @@ dependent name for that object.
 
 #### <DataTag tag="M" /> `fs.realpath.native(path[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v9.2.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v9.2.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2883,7 +2903,7 @@ this restriction.
 
 #### <DataTag tag="M" /> `fs.rename(oldPath, newPath, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `oldPath` and `newPath` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `oldPath` and `newPath` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
 * `oldPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
@@ -2909,7 +2929,7 @@ rename('oldFile.txt', 'newFile.txt', (err) => {
 
 #### <DataTag tag="M" /> `fs.rmdir(path[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fs.rmdir(path, { recursive: true })` on a `path` that is a file is no longer permitted and results in an `ENOENT` error on Windows and an `ENOTDIR` error on POSIX."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fs.rmdir(path, { recursive: true })` on a `path` that does not exist is no longer permitted and results in a `ENOENT` error."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37302","description":"The `recursive` option is deprecated, using it triggers a deprecation warning."},{"version":"v14.14.0","pr-url":"https://github.com/nodejs/node/pull/35579","description":"The `recursive` option is deprecated, use `fs.rm` instead."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30644","description":"The `maxBusyTries` option is renamed to `maxRetries`, and its default is 0. The `emfileWait` option has been removed, and `EMFILE` errors use the same retry logic as other errors. The `retryDelay` option is now supported. `ENFILE` errors are now retried."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29168","description":"The `recursive`, `maxBusyTries`, and `emfileWait` options are now supported."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameters can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fs.rmdir(path, { recursive: true })` on a `path` that is a file is no longer permitted and results in an `ENOENT` error on Windows and an `ENOTDIR` error on POSIX."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fs.rmdir(path, { recursive: true })` on a `path` that does not exist is no longer permitted and results in a `ENOENT` error."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37302","description":"The `recursive` option is deprecated, using it triggers a deprecation warning."},{"version":"v14.14.0","pr-url":"https://github.com/nodejs/node/pull/35579","description":"The `recursive` option is deprecated, use `fs.rm` instead."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30644","description":"The `maxBusyTries` option is renamed to `maxRetries`, and its default is 0. The `emfileWait` option has been removed, and `EMFILE` errors use the same retry logic as other errors. The `retryDelay` option is now supported. `ENFILE` errors are now retried."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29168","description":"The `recursive`, `maxBusyTries`, and `emfileWait` options are now supported."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameters can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2938,7 +2958,7 @@ with options `{ recursive: true, force: true }`.
 
 #### <DataTag tag="M" /> `fs.rm(path[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v17.3.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41132","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v14.14.0"]}}} />
+<Metadata data={{"changes":[{"version":["v17.3.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41132","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v14.14.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2963,7 +2983,7 @@ completion callback.
 
 #### <DataTag tag="M" /> `fs.stat(path[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -3058,7 +3078,7 @@ Stats {
 
 #### <DataTag tag="M" /> `fs.statfs(path[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v19.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.6.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -3076,7 +3096,7 @@ In case of an error, the `err.code` will be one of [Common System Errors][].
 
 #### <DataTag tag="M" /> `fs.symlink(target, path[, type], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23724","description":"If the `type` argument is left undefined, Node will autodetect `target` type and automatically select `dir` or `file`."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `target` and `path` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."}],"update":{"type":"added","version":["v0.1.31"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23724","description":"If the `type` argument is left undefined, Node will autodetect `target` type and automatically select `dir` or `file`."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `target` and `path` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
 * `target` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
@@ -3116,7 +3136,7 @@ $ tree .
 
 #### <DataTag tag="M" /> `fs.truncate(path[, len], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37460","description":"The error returned may be an `AggregateError` if more than one error is returned."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.8.6"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37460","description":"The error returned may be an `AggregateError` if more than one error is returned."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.8.6"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `len` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
@@ -3152,7 +3172,7 @@ See the POSIX truncate(2) documentation for more details.
 
 #### <DataTag tag="M" /> `fs.unlink(path, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -3177,7 +3197,7 @@ See the POSIX unlink(2) documentation for more details.
 
 #### <DataTag tag="M" /> `fs.unwatchFile(filename[, listener])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.31"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.31"]}}} />
 
 * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Optional, a listener previously attached using
@@ -3196,7 +3216,7 @@ and `fs.unwatchFile()` when possible.
 
 #### <DataTag tag="M" /> `fs.utimes(path, atime, mtime, callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11919","description":"`NaN`, `Infinity`, and `-Infinity` are no longer valid time specifiers."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v4.1.0","pr-url":"https://github.com/nodejs/node/pull/2387","description":"Numeric strings, `NaN`, and `Infinity` are now allowed time specifiers."}],"update":{"type":"added","version":["v0.4.2"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11919","description":"`NaN`, `Infinity`, and `-Infinity` are no longer valid time specifiers."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v4.1.0","pr-url":"https://github.com/nodejs/node/pull/2387","description":"Numeric strings, `NaN`, and `Infinity` are now allowed time specifiers."}],"update":{"type":"added","version":["v0.4.2"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
@@ -3215,7 +3235,7 @@ The `atime` and `mtime` arguments follow these rules:
 
 #### <DataTag tag="M" /> `fs.watch(filename[, options][, listener])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v19.1.0","pr-url":"https://github.com/nodejs/node/pull/45098","description":"Added recursive support for Linux, AIX and IBMi."},{"version":["v15.9.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37190","description":"Added support for closing the watcher with an AbortSignal."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `filename` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."}],"update":{"type":"added","version":["v0.5.10"]}}} />
+<Metadata data={{"changes":[{"version":"v19.1.0","pr-url":"https://github.com/nodejs/node/pull/45098","description":"Added recursive support for Linux, AIX and IBMi."},{"version":["v15.9.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37190","description":"Added support for closing the watcher with an AbortSignal."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `filename` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."}],"update":{"type":"added","version":["v0.5.10"]}}} />
 
 * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -3255,7 +3275,7 @@ the returned [`fs.FSWatcher`](/api/fs#fsfswatcher).
 
 ##### Caveats
 
-<Metadata version="v19.6.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
 The `fs.watch` API is not 100% consistent across platforms, and is
 unavailable in some situations.
@@ -3265,7 +3285,7 @@ renamed. An `EPERM` error is reported when the watched directory is deleted.
 
 ###### Availability
 
-<Metadata version="v19.6.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
 This feature depends on the underlying operating system providing a way
 to be notified of file system changes.
@@ -3290,7 +3310,7 @@ this method is slower and less reliable.
 
 ###### Inodes
 
-<Metadata version="v19.6.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
 On Linux and macOS systems, `fs.watch()` resolves the path to an [inode][] and
 watches the inode. If the watched path is deleted and recreated, it is assigned
@@ -3304,7 +3324,7 @@ content, and one for truncation).
 
 ###### Filename argument
 
-<Metadata version="v19.6.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
 Providing `filename` argument in the callback is only supported on Linux,
 macOS, Windows, and AIX. Even on supported platforms, `filename` is not always
@@ -3325,7 +3345,7 @@ watch('somedir', (eventType, filename) => {
 
 #### <DataTag tag="M" /> `fs.watchFile(filename[, options], listener)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"The `bigint` option is now supported."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `filename` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.31"]}}} />
+<Metadata data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"The `bigint` option is now supported."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `filename` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
 * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -3386,7 +3406,7 @@ This happens when:
 
 #### <DataTag tag="M" /> `fs.write(fd, buffer, offset[, length[, position]], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `buffer` parameter won't coerce unsupported input to strings anymore."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `buffer` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `buffer` parameter can now be a `Uint8Array`."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/7856","description":"The `offset` and `length` parameters are optional now."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `buffer` parameter won't coerce unsupported input to strings anymore."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `buffer` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `buffer` parameter can now be a `Uint8Array`."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/7856","description":"The `offset` and `length` parameters are optional now."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
@@ -3423,7 +3443,7 @@ the end of the file.
 
 #### <DataTag tag="M" /> `fs.write(fd, buffer[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v18.3.0","v16.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.3.0","v16.17.0"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
@@ -3444,7 +3464,7 @@ default with the above values.
 
 #### <DataTag tag="M" /> `fs.write(fd, string[, position[, encoding]], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/42796","description":"Passing to the `string` parameter an object with an own `toString` function is no longer supported."},{"version":"v17.8.0","pr-url":"https://github.com/nodejs/node/pull/42149","description":"Passing to the `string` parameter an object with an own `toString` function is deprecated."},{"version":"v14.12.0","pr-url":"https://github.com/nodejs/node/pull/34993","description":"The `string` parameter will stringify an object with an explicit `toString` function."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `string` parameter won't coerce unsupported input to strings anymore."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/7856","description":"The `position` parameter is optional now."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.11.5"]}}} />
+<Metadata data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/42796","description":"Passing to the `string` parameter an object with an own `toString` function is no longer supported."},{"version":"v17.8.0","pr-url":"https://github.com/nodejs/node/pull/42149","description":"Passing to the `string` parameter an object with an own `toString` function is deprecated."},{"version":"v14.12.0","pr-url":"https://github.com/nodejs/node/pull/34993","description":"The `string` parameter will stringify an object with an explicit `toString` function."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `string` parameter won't coerce unsupported input to strings anymore."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/7856","description":"The `position` parameter is optional now."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.11.5"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -3486,7 +3506,7 @@ details.
 
 #### <DataTag tag="M" /> `fs.writeFile(file, data[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/42796","description":"Passing to the `string` parameter an object with an own `toString` function is no longer supported."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v17.8.0","pr-url":"https://github.com/nodejs/node/pull/42149","description":"Passing to the `string` parameter an object with an own `toString` function is deprecated."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37460","description":"The error returned may be an `AggregateError` if more than one error is returned."},{"version":["v15.2.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/35993","description":"The options argument may include an AbortSignal to abort an ongoing writeFile request."},{"version":"v14.12.0","pr-url":"https://github.com/nodejs/node/pull/34993","description":"The `data` parameter will stringify an object with an explicit `toString` function."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `data` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `data` parameter can now be a `Uint8Array`."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `file` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.1.29"]}}} />
+<Metadata data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/42796","description":"Passing to the `string` parameter an object with an own `toString` function is no longer supported."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v17.8.0","pr-url":"https://github.com/nodejs/node/pull/42149","description":"Passing to the `string` parameter an object with an own `toString` function is deprecated."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37460","description":"The error returned may be an `AggregateError` if more than one error is returned."},{"version":["v15.2.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/35993","description":"The options argument may include an AbortSignal to abort an ongoing writeFile request."},{"version":"v14.12.0","pr-url":"https://github.com/nodejs/node/pull/34993","description":"The `data` parameter will stringify an object with an explicit `toString` function."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `data` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `data` parameter can now be a `Uint8Array`."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `file` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.1.29"]}}} />
 
 * `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
@@ -3589,7 +3609,7 @@ to contain only `', World'`.
 
 #### <DataTag tag="M" /> `fs.writev(fd, buffers[, position], callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v12.9.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v12.9.0"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `buffers` ArrayBufferView\[]
@@ -3626,7 +3646,7 @@ event loop until the operation completes or fails.
 
 #### <DataTag tag="M" /> `fs.accessSync(path[, mode])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.11.15"]}}} />
+<Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `fs.constants.F_OK`
@@ -3655,7 +3675,7 @@ try {
 
 #### <DataTag tag="M" /> `fs.appendFileSync(path, data[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `file` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.6.7"]}}} />
+<Metadata data={{"changes":[{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `file` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.6.7"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
@@ -3711,7 +3731,7 @@ try {
 
 #### <DataTag tag="M" /> `fs.chmodSync(path, mode)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.6.7"]}}} />
+<Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.6.7"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -3723,7 +3743,7 @@ See the POSIX chmod(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fs.chownSync(path, uid, gid)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.97"]}}} />
+<Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.97"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -3736,7 +3756,7 @@ See the POSIX chown(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fs.closeSync(fd)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -3749,7 +3769,7 @@ See the POSIX close(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fs.copyFileSync(src, dest[, mode])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/27044","description":"Changed `flags` argument to `mode` and imposed stricter type validation."}],"update":{"type":"added","version":["v8.5.0"]}}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/27044","description":"Changed `flags` argument to `mode` and imposed stricter type validation."}],"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) source filename to copy
 * `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) destination filename of the copy operation
@@ -3787,9 +3807,13 @@ copyFileSync('source.txt', 'destination.txt', constants.COPYFILE_EXCL);
 
 #### <DataTag tag="M" /> `fs.cpSync(src, dest[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v17.6.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41819","description":"Accepts an additional `verbatimSymlinks` option to specify whether to perform path resolution for symlinks."}],"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata data={{"changes":[{"version":["v17.6.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41819","description":"Accepts an additional `verbatimSymlinks` option to specify whether to perform path resolution for symlinks."}],"update":{"type":"added","version":["v16.7.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 * `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) source path to copy.
 * `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) destination path to copy to.
@@ -3820,7 +3844,7 @@ behavior is similar to `cp dir1/ dir2/`.
 
 #### <DataTag tag="M" /> `fs.existsSync(path)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -3843,7 +3867,7 @@ if (existsSync('/etc/passwd'))
 
 #### <DataTag tag="M" /> `fs.fchmodSync(fd, mode)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.4.7"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.4.7"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -3854,7 +3878,7 @@ See the POSIX fchmod(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fs.fchownSync(fd, uid, gid)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.4.7"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.4.7"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The file's new owner's user id.
@@ -3866,7 +3890,7 @@ See the POSIX fchown(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fs.fdatasyncSync(fd)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.96"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.96"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -3876,7 +3900,7 @@ fdatasync(2) documentation for details. Returns `undefined`.
 
 #### <DataTag tag="M" /> `fs.fstatSync(fd[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."}],"update":{"type":"added","version":["v0.1.95"]}}} />
+<Metadata data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."}],"update":{"type":"added","version":["v0.1.95"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -3890,7 +3914,7 @@ See the POSIX fstat(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fs.fsyncSync(fd)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.96"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.96"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -3900,7 +3924,7 @@ Refer to the POSIX fsync(2) documentation for more detail. Returns `undefined`.
 
 #### <DataTag tag="M" /> `fs.ftruncateSync(fd[, len])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.8.6"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.8.6"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `len` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
@@ -3912,7 +3936,7 @@ this API: [`fs.ftruncate()`][].
 
 #### <DataTag tag="M" /> `fs.futimesSync(fd, atime, mtime)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v4.1.0","pr-url":"https://github.com/nodejs/node/pull/2387","description":"Numeric strings, `NaN`, and `Infinity` are now allowed time specifiers."}],"update":{"type":"added","version":["v0.4.2"]}}} />
+<Metadata data={{"changes":[{"version":"v4.1.0","pr-url":"https://github.com/nodejs/node/pull/2387","description":"Numeric strings, `NaN`, and `Infinity` are now allowed time specifiers."}],"update":{"type":"added","version":["v0.4.2"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
@@ -3922,7 +3946,7 @@ Synchronous version of [`fs.futimes()`][]. Returns `undefined`.
 
 #### <DataTag tag="M" /> `fs.lchmodSync(path, mode)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"deprecated","version":["v0.4.7"]}}} />
+<Metadata data={{"update":{"type":"deprecated","version":["v0.4.7"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -3935,7 +3959,7 @@ See the POSIX lchmod(2) documentation for more detail.
 
 #### <DataTag tag="M" /> `fs.lchownSync(path, uid, gid)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/21498","description":"This API is no longer deprecated."},{"version":"v0.4.7","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/21498","description":"This API is no longer deprecated."},{"version":"v0.4.7","description":"Documentation-only deprecation."}]}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The file's new owner's user id.
@@ -3947,7 +3971,7 @@ See the POSIX lchown(2) documentation for more details.
 
 #### <DataTag tag="M" /> `fs.lutimesSync(path, atime, mtime)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
@@ -3959,7 +3983,7 @@ the operation fails. This is the synchronous version of [`fs.lutimes()`][].
 
 #### <DataTag tag="M" /> `fs.linkSync(existingPath, newPath)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `existingPath` and `newPath` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."}],"update":{"type":"added","version":["v0.1.31"]}}} />
+<Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `existingPath` and `newPath` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
 * `existingPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
@@ -3969,7 +3993,7 @@ link(2) documentation for more detail. Returns `undefined`.
 
 #### <DataTag tag="M" /> `fs.lstatSync(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v15.3.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/33716","description":"Accepts a `throwIfNoEntry` option to specify whether an exception should be thrown if the entry does not exist."},{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.30"]}}} />
+<Metadata data={{"changes":[{"version":["v15.3.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/33716","description":"Accepts a `throwIfNoEntry` option to specify whether an exception should be thrown if the entry does not exist."},{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.30"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -3986,7 +4010,7 @@ See the POSIX lstat(2) documentation for more details.
 
 #### <DataTag tag="M" /> `fs.mkdirSync(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v13.11.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31530","description":"In `recursive` mode, the first created path is returned now."},{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/21875","description":"The second argument can now be an `options` object with `recursive` and `mode` properties."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata data={{"changes":[{"version":["v13.11.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31530","description":"In `recursive` mode, the first created path is returned now."},{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/21875","description":"The second argument can now be an `options` object with `recursive` and `mode` properties."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -4002,7 +4026,7 @@ See the POSIX mkdir(2) documentation for more details.
 
 #### <DataTag tag="M" /> `fs.mkdtempSync(prefix[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v16.5.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39028","description":"The `prefix` parameter now accepts an empty string."}],"update":{"type":"added","version":["v5.10.0"]}}} />
+<Metadata data={{"changes":[{"version":["v16.5.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39028","description":"The `prefix` parameter now accepts an empty string."}],"update":{"type":"added","version":["v5.10.0"]}}} />
 
 * `prefix` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -4019,7 +4043,7 @@ object with an `encoding` property specifying the character encoding to use.
 
 #### <DataTag tag="M" /> `fs.opendirSync(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v13.1.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30114","description":"The `bufferSize` option was introduced."}],"update":{"type":"added","version":["v12.12.0"]}}} />
+<Metadata data={{"changes":[{"version":["v13.1.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30114","description":"The `bufferSize` option was introduced."}],"update":{"type":"added","version":["v12.12.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -4039,7 +4063,7 @@ directory and subsequent read operations.
 
 #### <DataTag tag="M" /> `fs.openSync(path[, flags[, mode]])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v11.1.0","pr-url":"https://github.com/nodejs/node/pull/23767","description":"The `flags` argument is now optional and defaults to `'r'`."},{"version":"v9.9.0","pr-url":"https://github.com/nodejs/node/pull/18801","description":"The `as` and `as+` flags are supported now."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata data={{"changes":[{"version":"v11.1.0","pr-url":"https://github.com/nodejs/node/pull/23767","description":"The `flags` argument is now optional and defaults to `'r'`."},{"version":"v9.9.0","pr-url":"https://github.com/nodejs/node/pull/18801","description":"The `as` and `as+` flags are supported now."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `flags` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `'r'`.
@@ -4054,7 +4078,7 @@ this API: [`fs.open()`][].
 
 #### <DataTag tag="M" /> `fs.readdirSync(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22020","description":"New option `withFileTypes` was added."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata data={{"changes":[{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22020","description":"New option `withFileTypes` was added."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -4076,7 +4100,7 @@ If `options.withFileTypes` is set to `true`, the result will contain
 
 #### <DataTag tag="M" /> `fs.readFileSync(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `path` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.1.8"]}}} />
+<Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `path` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.1.8"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -4108,7 +4132,7 @@ readFileSync('<directory>'); // => <data>
 
 #### <DataTag tag="M" /> `fs.readlinkSync(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.31"]}}} />
+<Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -4126,7 +4150,7 @@ the link path returned will be passed as a [`Buffer`](/api/buffer#buffer) object
 
 #### <DataTag tag="M" /> `fs.readSync(fd, buffer, offset, length[, position])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `buffer` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4518","description":"The `length` parameter can now be `0`."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata data={{"changes":[{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `buffer` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4518","description":"The `length` parameter can now be `0`."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
@@ -4142,7 +4166,7 @@ this API: [`fs.read()`][].
 
 #### <DataTag tag="M" /> `fs.readSync(fd, buffer[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v13.13.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32460","description":"Options object can be passed in to make offset, length, and position optional."}],"update":{"type":"added","version":["v13.13.0","v12.17.0"]}}} />
+<Metadata data={{"changes":[{"version":["v13.13.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32460","description":"Options object can be passed in to make offset, length, and position optional."}],"update":{"type":"added","version":["v13.13.0","v12.17.0"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
@@ -4162,7 +4186,7 @@ this API: [`fs.read()`][].
 
 #### <DataTag tag="M" /> `fs.readvSync(fd, buffers[, position])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v13.13.0","v12.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.13.0","v12.17.0"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `buffers` ArrayBufferView\[]
@@ -4174,7 +4198,7 @@ this API: [`fs.readv()`][].
 
 #### <DataTag tag="M" /> `fs.realpathSync(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/13028","description":"Pipe/Socket resolve support was added."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7899","description":"Calling `realpathSync` now works again for various edge cases on Windows."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/3594","description":"The `cache` parameter was removed."}],"update":{"type":"added","version":["v0.1.31"]}}} />
+<Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/13028","description":"Pipe/Socket resolve support was added."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7899","description":"Calling `realpathSync` now works again for various edge cases on Windows."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/3594","description":"The `cache` parameter was removed."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -4188,7 +4212,7 @@ this API: [`fs.realpath()`][].
 
 #### <DataTag tag="M" /> `fs.realpathSync.native(path[, options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v9.2.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v9.2.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -4210,7 +4234,7 @@ this restriction.
 
 #### <DataTag tag="M" /> `fs.renameSync(oldPath, newPath)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `oldPath` and `newPath` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `oldPath` and `newPath` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `oldPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
@@ -4221,7 +4245,7 @@ See the POSIX rename(2) documentation for more details.
 
 #### <DataTag tag="M" /> `fs.rmdirSync(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fs.rmdirSync(path, { recursive: true })` on a `path` that is a file is no longer permitted and results in an `ENOENT` error on Windows and an `ENOTDIR` error on POSIX."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fs.rmdirSync(path, { recursive: true })` on a `path` that does not exist is no longer permitted and results in a `ENOENT` error."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37302","description":"The `recursive` option is deprecated, using it triggers a deprecation warning."},{"version":"v14.14.0","pr-url":"https://github.com/nodejs/node/pull/35579","description":"The `recursive` option is deprecated, use `fs.rmSync` instead."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30644","description":"The `maxBusyTries` option is renamed to `maxRetries`, and its default is 0. The `emfileWait` option has been removed, and `EMFILE` errors use the same retry logic as other errors. The `retryDelay` option is now supported. `ENFILE` errors are now retried."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29168","description":"The `recursive`, `maxBusyTries`, and `emfileWait` options are now supported."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameters can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fs.rmdirSync(path, { recursive: true })` on a `path` that is a file is no longer permitted and results in an `ENOENT` error on Windows and an `ENOTDIR` error on POSIX."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fs.rmdirSync(path, { recursive: true })` on a `path` that does not exist is no longer permitted and results in a `ENOENT` error."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37302","description":"The `recursive` option is deprecated, using it triggers a deprecation warning."},{"version":"v14.14.0","pr-url":"https://github.com/nodejs/node/pull/35579","description":"The `recursive` option is deprecated, use `fs.rmSync` instead."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30644","description":"The `maxBusyTries` option is renamed to `maxRetries`, and its default is 0. The `emfileWait` option has been removed, and `EMFILE` errors use the same retry logic as other errors. The `retryDelay` option is now supported. `ENFILE` errors are now retried."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29168","description":"The `recursive`, `maxBusyTries`, and `emfileWait` options are now supported."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameters can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -4247,7 +4271,7 @@ with options `{ recursive: true, force: true }`.
 
 #### <DataTag tag="M" /> `fs.rmSync(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v17.3.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41132","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v14.14.0"]}}} />
+<Metadata data={{"changes":[{"version":["v17.3.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41132","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v14.14.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -4269,7 +4293,7 @@ utility). Returns `undefined`.
 
 #### <DataTag tag="M" /> `fs.statSync(path[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v15.3.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/33716","description":"Accepts a `throwIfNoEntry` option to specify whether an exception should be thrown if the entry does not exist."},{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata data={{"changes":[{"version":["v15.3.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/33716","description":"Accepts a `throwIfNoEntry` option to specify whether an exception should be thrown if the entry does not exist."},{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -4284,7 +4308,7 @@ Retrieves the [`fs.Stats`](/api/fs#fsstats) for the path.
 
 #### <DataTag tag="M" /> `fs.statfsSync(path[, options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v19.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.6.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -4299,7 +4323,7 @@ In case of an error, the `err.code` will be one of [Common System Errors][].
 
 #### <DataTag tag="M" /> `fs.symlinkSync(target, path[, type])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23724","description":"If the `type` argument is left undefined, Node will autodetect `target` type and automatically select `dir` or `file`."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `target` and `path` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."}],"update":{"type":"added","version":["v0.1.31"]}}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23724","description":"If the `type` argument is left undefined, Node will autodetect `target` type and automatically select `dir` or `file`."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `target` and `path` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
 * `target` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
@@ -4312,7 +4336,7 @@ this API: [`fs.symlink()`][].
 
 #### <DataTag tag="M" /> `fs.truncateSync(path[, len])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.8.6"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.8.6"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `len` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
@@ -4325,7 +4349,7 @@ in the future.
 
 #### <DataTag tag="M" /> `fs.unlinkSync(path)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 
@@ -4333,7 +4357,7 @@ Synchronous unlink(2). Returns `undefined`.
 
 #### <DataTag tag="M" /> `fs.utimesSync(path, atime, mtime)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11919","description":"`NaN`, `Infinity`, and `-Infinity` are no longer valid time specifiers."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v4.1.0","pr-url":"https://github.com/nodejs/node/pull/2387","description":"Numeric strings, `NaN`, and `Infinity` are now allowed time specifiers."}],"update":{"type":"added","version":["v0.4.2"]}}} />
+<Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11919","description":"`NaN`, `Infinity`, and `-Infinity` are no longer valid time specifiers."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v4.1.0","pr-url":"https://github.com/nodejs/node/pull/2387","description":"Numeric strings, `NaN`, and `Infinity` are now allowed time specifiers."}],"update":{"type":"added","version":["v0.4.2"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
@@ -4346,7 +4370,7 @@ this API: [`fs.utimes()`][].
 
 #### <DataTag tag="M" /> `fs.writeFileSync(file, data[, options])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/42796","description":"Passing to the `data` parameter an object with an own `toString` function is no longer supported."},{"version":"v17.8.0","pr-url":"https://github.com/nodejs/node/pull/42149","description":"Passing to the `data` parameter an object with an own `toString` function is deprecated."},{"version":"v14.12.0","pr-url":"https://github.com/nodejs/node/pull/34993","description":"The `data` parameter will stringify an object with an explicit `toString` function."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `data` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `data` parameter can now be a `Uint8Array`."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `file` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.1.29"]}}} />
+<Metadata data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/42796","description":"Passing to the `data` parameter an object with an own `toString` function is no longer supported."},{"version":"v17.8.0","pr-url":"https://github.com/nodejs/node/pull/42149","description":"Passing to the `data` parameter an object with an own `toString` function is deprecated."},{"version":"v14.12.0","pr-url":"https://github.com/nodejs/node/pull/34993","description":"The `data` parameter will stringify an object with an explicit `toString` function."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `data` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `data` parameter can now be a `Uint8Array`."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `file` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.1.29"]}}} />
 
 * `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
@@ -4365,7 +4389,7 @@ this API: [`fs.writeFile()`][].
 
 #### <DataTag tag="M" /> `fs.writeSync(fd, buffer, offset[, length[, position]])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `buffer` parameter won't coerce unsupported input to strings anymore."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `buffer` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `buffer` parameter can now be a `Uint8Array`."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/7856","description":"The `offset` and `length` parameters are optional now."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `buffer` parameter won't coerce unsupported input to strings anymore."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `buffer` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `buffer` parameter can now be a `Uint8Array`."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/7856","description":"The `offset` and `length` parameters are optional now."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
@@ -4379,7 +4403,7 @@ this API: [`fs.write(fd, buffer...)`][].
 
 #### <DataTag tag="M" /> `fs.writeSync(fd, buffer[, options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v18.3.0","v16.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.3.0","v16.17.0"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
@@ -4394,7 +4418,7 @@ this API: [`fs.write(fd, buffer...)`][].
 
 #### <DataTag tag="M" /> `fs.writeSync(fd, string[, position[, encoding]])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `string` parameter won't coerce unsupported input to strings anymore."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/7856","description":"The `position` parameter is optional now."}],"update":{"type":"added","version":["v0.11.5"]}}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `string` parameter won't coerce unsupported input to strings anymore."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/7856","description":"The `position` parameter is optional now."}],"update":{"type":"added","version":["v0.11.5"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -4407,7 +4431,7 @@ this API: [`fs.write(fd, string...)`][].
 
 #### <DataTag tag="M" /> `fs.writevSync(fd, buffers[, position])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.9.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.9.0"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `buffers` ArrayBufferView\[]
@@ -4424,7 +4448,7 @@ The common objects are shared by all of the file system API variants
 
 #### <DataTag tag="C" /> `fs.Dir`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.12.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.12.0"]}}} />
 
 A class representing a directory stream.
 
@@ -4448,7 +4472,7 @@ closed after the iterator exits.
 
 ##### <DataTag tag="M" /> `dir.close()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.12.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.12.0"]}}} />
 
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
@@ -4460,7 +4484,7 @@ closed.
 
 ##### <DataTag tag="M" /> `dir.close(callback)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v12.12.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v12.12.0"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
@@ -4472,14 +4496,14 @@ The `callback` will be called after the resource handle has been closed.
 
 ##### <DataTag tag="M" /> `dir.closeSync()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.12.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.12.0"]}}} />
 
 Synchronously close the directory's underlying resource handle.
 Subsequent reads will result in errors.
 
 ##### <DataTag tag="M" /> `dir.path`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.12.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.12.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -4488,7 +4512,7 @@ The read-only path of this directory as was provided to [`fs.opendir()`][],
 
 ##### <DataTag tag="M" /> `dir.read()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.12.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.12.0"]}}} />
 
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) containing [`fs.Dirent`](/api/fs#fsdirent) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type)
 
@@ -4505,7 +4529,7 @@ included in the iteration results.
 
 ##### <DataTag tag="M" /> `dir.read(callback)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.12.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.12.0"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
@@ -4524,7 +4548,7 @@ included in the iteration results.
 
 ##### <DataTag tag="M" /> `dir.readSync()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.12.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.12.0"]}}} />
 
 * Returns: [`fs.Dirent`](/api/fs#fsdirent) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type)
 
@@ -4540,7 +4564,7 @@ included in the iteration results.
 
 ##### <DataTag tag="M" /> `dir[Symbol.asyncIterator]()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.12.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.12.0"]}}} />
 
 * Returns: [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface) of [`fs.Dirent`](/api/fs#fsdirent)
 
@@ -4559,7 +4583,7 @@ included in the iteration results.
 
 #### <DataTag tag="C" /> `fs.Dirent`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
 A representation of a directory entry, which can be a file or a subdirectory
 within the directory, as returned by reading from an [`fs.Dir`](/api/fs#fsdir). The
@@ -4571,7 +4595,7 @@ the `withFileTypes` option set to `true`, the resulting array is filled with
 
 ##### <DataTag tag="M" /> `dirent.isBlockDevice()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -4579,7 +4603,7 @@ Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a block d
 
 ##### <DataTag tag="M" /> `dirent.isCharacterDevice()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -4587,7 +4611,7 @@ Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a charact
 
 ##### <DataTag tag="M" /> `dirent.isDirectory()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -4596,7 +4620,7 @@ directory.
 
 ##### <DataTag tag="M" /> `dirent.isFIFO()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -4605,7 +4629,7 @@ Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a first-i
 
 ##### <DataTag tag="M" /> `dirent.isFile()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -4613,7 +4637,7 @@ Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a regular
 
 ##### <DataTag tag="M" /> `dirent.isSocket()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -4621,7 +4645,7 @@ Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a socket.
 
 ##### <DataTag tag="M" /> `dirent.isSymbolicLink()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -4629,7 +4653,7 @@ Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a symboli
 
 ##### <DataTag tag="M" /> `dirent.name`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
 
@@ -4639,7 +4663,7 @@ value is determined by the `options.encoding` passed to [`fs.readdir()`][] or
 
 #### <DataTag tag="C" /> `fs.FSWatcher`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
 * Extends [`EventEmitter`](/api/events#eventemitter)
 
@@ -4651,7 +4675,7 @@ file is modified.
 
 ##### <DataTag tag="E" /> `'change'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
 * `eventType` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The type of change event that has occurred
 * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) The filename that changed (if relevant/available)
@@ -4677,14 +4701,14 @@ watch('./tmp', { encoding: 'buffer' }, (eventType, filename) => {
 
 ##### <DataTag tag="E" /> `'close'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 Emitted when the watcher stops watching for changes. The closed
 [`fs.FSWatcher`](/api/fs#fsfswatcher) object is no longer usable in the event handler.
 
 ##### <DataTag tag="E" /> `'error'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
@@ -4693,14 +4717,14 @@ Emitted when an error occurs while watching the file. The errored
 
 ##### <DataTag tag="M" /> `watcher.close()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
 Stop watching for changes on the given [`fs.FSWatcher`](/api/fs#fsfswatcher). Once stopped, the
 [`fs.FSWatcher`](/api/fs#fsfswatcher) object is no longer usable.
 
 ##### <DataTag tag="M" /> `watcher.ref()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
 
 * Returns: [`fs.FSWatcher`](/api/fs#fsfswatcher)
 
@@ -4714,7 +4738,7 @@ called previously.
 
 ##### <DataTag tag="M" /> `watcher.unref()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
 
 * Returns: [`fs.FSWatcher`](/api/fs#fsfswatcher)
 
@@ -4726,7 +4750,7 @@ no effect.
 
 #### <DataTag tag="C" /> `fs.StatWatcher`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
 
 * Extends [`EventEmitter`](/api/events#eventemitter)
 
@@ -4735,7 +4759,7 @@ object.
 
 ##### <DataTag tag="M" /> `watcher.ref()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
 
 * Returns: [`fs.StatWatcher`](/api/fs#fsstatwatcher)
 
@@ -4749,7 +4773,7 @@ called previously.
 
 ##### <DataTag tag="M" /> `watcher.unref()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
 
 * Returns: [`fs.StatWatcher`](/api/fs#fsstatwatcher)
 
@@ -4761,7 +4785,7 @@ no effect.
 
 #### <DataTag tag="C" /> `fs.ReadStream`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.93"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
 * Extends: [`stream.Readable`](/api/stream#streamreadable)
 
@@ -4770,13 +4794,13 @@ Instances of [`fs.ReadStream`](/api/fs#fsreadstream) are created and returned us
 
 ##### <DataTag tag="E" /> `'close'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.93"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
 Emitted when the [`fs.ReadStream`](/api/fs#fsreadstream)'s underlying file descriptor has been closed.
 
 ##### <DataTag tag="E" /> `'open'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.93"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Integer file descriptor used by the [`fs.ReadStream`](/api/fs#fsreadstream).
 
@@ -4784,7 +4808,7 @@ Emitted when the [`fs.ReadStream`](/api/fs#fsreadstream)'s file descriptor has b
 
 ##### <DataTag tag="E" /> `'ready'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v9.11.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v9.11.0"]}}} />
 
 Emitted when the [`fs.ReadStream`](/api/fs#fsreadstream) is ready to be used.
 
@@ -4792,7 +4816,7 @@ Fires immediately after `'open'`.
 
 ##### <DataTag tag="M" /> `readStream.bytesRead`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v6.4.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v6.4.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -4800,7 +4824,7 @@ The number of bytes that have been read so far.
 
 ##### <DataTag tag="M" /> `readStream.path`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.93"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
 
@@ -4812,7 +4836,7 @@ argument to `fs.createReadStream()`. If `path` is passed as a string, then
 
 ##### <DataTag tag="M" /> `readStream.pending`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v11.2.0","v10.16.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v11.2.0","v10.16.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -4821,7 +4845,7 @@ i.e. before the `'ready'` event is emitted.
 
 #### <DataTag tag="C" /> `fs.Stats`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v8.1.0","pr-url":"https://github.com/nodejs/node/pull/13173","description":"Added times as numbers."}],"update":{"type":"added","version":["v0.1.21"]}}} />
+<Metadata data={{"changes":[{"version":"v8.1.0","pr-url":"https://github.com/nodejs/node/pull/13173","description":"Added times as numbers."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 A [`fs.Stats`](/api/fs#fsstats) object provides information about a file.
 
@@ -4883,7 +4907,7 @@ BigIntStats {
 
 ##### <DataTag tag="M" /> `stats.isBlockDevice()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.10"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.10"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -4891,7 +4915,7 @@ Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a block dev
 
 ##### <DataTag tag="M" /> `stats.isCharacterDevice()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.10"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.10"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -4899,7 +4923,7 @@ Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a character
 
 ##### <DataTag tag="M" /> `stats.isDirectory()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.10"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.10"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -4911,7 +4935,7 @@ about a symbolic link itself and not the path it resolves to.
 
 ##### <DataTag tag="M" /> `stats.isFIFO()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.10"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.10"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -4920,7 +4944,7 @@ pipe.
 
 ##### <DataTag tag="M" /> `stats.isFile()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.10"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.10"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -4928,7 +4952,7 @@ Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a regular f
 
 ##### <DataTag tag="M" /> `stats.isSocket()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.10"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.10"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -4936,7 +4960,7 @@ Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a socket.
 
 ##### <DataTag tag="M" /> `stats.isSymbolicLink()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.10"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.10"]}}} />
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -5009,7 +5033,7 @@ The number of blocks allocated for this file.
 
 ##### <DataTag tag="M" /> `stats.atimeMs`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v8.1.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5018,7 +5042,7 @@ milliseconds since the POSIX Epoch.
 
 ##### <DataTag tag="M" /> `stats.mtimeMs`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v8.1.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5027,7 +5051,7 @@ milliseconds since the POSIX Epoch.
 
 ##### <DataTag tag="M" /> `stats.ctimeMs`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v8.1.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5036,7 +5060,7 @@ in milliseconds since the POSIX Epoch.
 
 ##### <DataTag tag="M" /> `stats.birthtimeMs`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v8.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v8.1.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5045,7 +5069,7 @@ milliseconds since the POSIX Epoch.
 
 ##### <DataTag tag="M" /> `stats.atimeNs`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.10.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.10.0"]}}} />
 
 * [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5056,7 +5080,7 @@ nanoseconds since the POSIX Epoch.
 
 ##### <DataTag tag="M" /> `stats.mtimeNs`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.10.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.10.0"]}}} />
 
 * [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5067,7 +5091,7 @@ nanoseconds since the POSIX Epoch.
 
 ##### <DataTag tag="M" /> `stats.ctimeNs`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.10.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.10.0"]}}} />
 
 * [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5078,7 +5102,7 @@ in nanoseconds since the POSIX Epoch.
 
 ##### <DataTag tag="M" /> `stats.birthtimeNs`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.10.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.10.0"]}}} />
 
 * [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5089,7 +5113,7 @@ nanoseconds since the POSIX Epoch.
 
 ##### <DataTag tag="M" /> `stats.atime`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.13"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.11.13"]}}} />
 
 * [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
@@ -5097,7 +5121,7 @@ The timestamp indicating the last time this file was accessed.
 
 ##### <DataTag tag="M" /> `stats.mtime`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.13"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.11.13"]}}} />
 
 * [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
@@ -5105,7 +5129,7 @@ The timestamp indicating the last time this file was modified.
 
 ##### <DataTag tag="M" /> `stats.ctime`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.13"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.11.13"]}}} />
 
 * [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
@@ -5113,7 +5137,7 @@ The timestamp indicating the last time the file status was changed.
 
 ##### <DataTag tag="M" /> `stats.birthtime`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.11.13"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.11.13"]}}} />
 
 * [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
@@ -5161,7 +5185,7 @@ of 0.12, `ctime` is not "creation time", and on Unix systems, it never was.
 
 #### <DataTag tag="C" /> `fs.StatFs`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v19.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.6.0"]}}} />
 
 Provides information about a mounted file system.
 
@@ -5197,7 +5221,7 @@ StatFs {
 
 ##### <DataTag tag="M" /> `statfs.bavail`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v19.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.6.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5205,7 +5229,7 @@ Free blocks available to unprivileged users.
 
 ##### <DataTag tag="M" /> `statfs.bfree`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v19.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.6.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5213,7 +5237,7 @@ Free blocks in file system.
 
 ##### <DataTag tag="M" /> `statfs.blocks`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v19.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.6.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5221,7 +5245,7 @@ Total data blocks in file system.
 
 ##### <DataTag tag="M" /> `statfs.bsize`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v19.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.6.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5229,7 +5253,7 @@ Optimal transfer block size.
 
 ##### <DataTag tag="M" /> `statfs.ffree`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v19.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.6.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5237,7 +5261,7 @@ Free file nodes in file system.
 
 ##### <DataTag tag="M" /> `statfs.files`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v19.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.6.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5245,7 +5269,7 @@ Total file nodes in file system.
 
 ##### <DataTag tag="M" /> `statfs.type`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v19.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.6.0"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
@@ -5253,7 +5277,7 @@ Type of file system.
 
 #### <DataTag tag="C" /> `fs.WriteStream`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.93"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
 * Extends [`stream.Writable`](/api/stream#streamwritable)
 
@@ -5262,13 +5286,13 @@ Instances of [`fs.WriteStream`](/api/fs#fswritestream) are created and returned 
 
 ##### <DataTag tag="E" /> `'close'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.93"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
 Emitted when the [`fs.WriteStream`](/api/fs#fswritestream)'s underlying file descriptor has been closed.
 
 ##### <DataTag tag="E" /> `'open'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.93"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Integer file descriptor used by the [`fs.WriteStream`](/api/fs#fswritestream).
 
@@ -5276,7 +5300,7 @@ Emitted when the [`fs.WriteStream`](/api/fs#fswritestream)'s file is opened.
 
 ##### <DataTag tag="E" /> `'ready'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v9.11.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v9.11.0"]}}} />
 
 Emitted when the [`fs.WriteStream`](/api/fs#fswritestream) is ready to be used.
 
@@ -5284,14 +5308,14 @@ Fires immediately after `'open'`.
 
 ##### <DataTag tag="M" /> `writeStream.bytesWritten`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.4.7"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.4.7"]}}} />
 
 The number of bytes written so far. Does not include data that is still queued
 for writing.
 
 ##### <DataTag tag="M" /> `writeStream.close([callback])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.9.4"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
@@ -5302,7 +5326,7 @@ is closed.
 
 ##### <DataTag tag="M" /> `writeStream.path`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.93"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
 The path to the file the stream is writing to as specified in the first
 argument to [`fs.createWriteStream()`][]. If `path` is passed as a string, then
@@ -5311,7 +5335,7 @@ argument to [`fs.createWriteStream()`][]. If `path` is passed as a string, then
 
 ##### <DataTag tag="M" /> `writeStream.pending`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v11.2.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v11.2.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -5746,7 +5770,7 @@ try {
 
 ##### File URL paths
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v7.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v7.6.0"]}}} />
 
 For most `node:fs` module functions, the `path` or `filename` argument may be
 passed as a [`URL`](/api/url#the-whatwg-url-api) object using the `file:` protocol.

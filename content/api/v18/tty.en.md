@@ -5,9 +5,13 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.14.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Stability stability={2}>
+
+Stable
+
+</Stability>
 
 <Metadata version="v18.14.0" data={{"source_link":"lib/tty.js"}} />
 
@@ -39,7 +43,7 @@ classes.
 
 ### <DataTag tag="C" /> `tty.ReadStream`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
 * Extends: [`net.Socket`](/api/net#netsocket)
 
@@ -49,20 +53,20 @@ process and there should be no reason to create additional instances.
 
 #### <DataTag tag="M" /> `readStream.isRaw`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.7"]}}} />
 
 A `boolean` that is `true` if the TTY is currently configured to operate as a
 raw device. Defaults to `false`.
 
 #### <DataTag tag="M" /> `readStream.isTTY`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
 A `boolean` that is always `true` for `tty.ReadStream` instances.
 
 #### <DataTag tag="M" /> `readStream.setRawMode(mode)`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * `mode` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If `true`, configures the `tty.ReadStream` to operate as a
   raw device. If `false`, configures the `tty.ReadStream` to operate in its
@@ -80,7 +84,7 @@ in this mode.
 
 ### <DataTag tag="C" /> `tty.WriteStream`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
 * Extends: [`net.Socket`](/api/net#netsocket)
 
@@ -91,7 +95,7 @@ should be no reason to create additional instances.
 
 #### <DataTag tag="E" /> `'resize'`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.7"]}}} />
 
 The `'resize'` event is emitted whenever either of the `writeStream.columns`
 or `writeStream.rows` properties have changed. No arguments are passed to the
@@ -106,7 +110,7 @@ process.stdout.on('resize', () => {
 
 #### <DataTag tag="M" /> `writeStream.clearLine(dir[, callback])`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28721","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"changes":[{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28721","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * `dir` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
   * `-1`: to the left from cursor
@@ -122,7 +126,7 @@ direction identified by `dir`.
 
 #### <DataTag tag="M" /> `writeStream.clearScreenDown([callback])`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28721","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"changes":[{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28721","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Invoked once the operation completes.
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `false` if the stream wishes for the calling code to wait
@@ -134,14 +138,14 @@ cursor down.
 
 #### <DataTag tag="M" /> `writeStream.columns`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.7"]}}} />
 
 A `number` specifying the number of columns the TTY currently has. This property
 is updated whenever the `'resize'` event is emitted.
 
 #### <DataTag tag="M" /> `writeStream.cursorTo(x[, y][, callback])`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28721","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"changes":[{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28721","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * `x` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `y` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -155,7 +159,7 @@ position.
 
 #### <DataTag tag="M" /> `writeStream.getColorDepth([env])`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v9.9.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v9.9.0"]}}} />
 
 * `env` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An object containing the environment variables to check. This
   enables simulating the usage of a specific terminal. **Default:**
@@ -188,7 +192,7 @@ Disabling color support is also possible by using the `NO_COLOR` and
 
 #### <DataTag tag="M" /> `writeStream.getWindowSize()`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * Returns: number\[]
 
@@ -199,7 +203,7 @@ of columns and rows in the corresponding TTY.
 
 #### <DataTag tag="M" /> `writeStream.hasColors([count][, env])`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v11.13.0","v10.16.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v11.13.0","v10.16.0"]}}} />
 
 * `count` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of colors that are requested (minimum 2).
   **Default:** 16.
@@ -227,13 +231,13 @@ process.stdout.hasColors(2 ** 24, { TMUX: '1' });
 
 #### <DataTag tag="M" /> `writeStream.isTTY`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
 A `boolean` that is always `true`.
 
 #### <DataTag tag="M" /> `writeStream.moveCursor(dx, dy[, callback])`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28721","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"changes":[{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28721","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * `dx` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `dy` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -247,14 +251,14 @@ current position.
 
 #### <DataTag tag="M" /> `writeStream.rows`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.7"]}}} />
 
 A `number` specifying the number of rows the TTY currently has. This property
 is updated whenever the `'resize'` event is emitted.
 
 ### <DataTag tag="M" /> `tty.isatty(fd)`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.5.8"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
 * `fd` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A numeric file descriptor
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)

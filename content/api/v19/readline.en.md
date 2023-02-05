@@ -5,9 +5,13 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.6.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Stability stability={2}>
+
+Stable
+
+</Stability>
 
 <Metadata version="v19.6.0" data={{"source_link":"lib/readline.js"}} />
 
@@ -72,7 +76,7 @@ received on the `input` stream.
 
 ### <DataTag tag="C" /> `InterfaceConstructor`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.104"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.104"]}}} />
 
 * Extends: [`EventEmitter`](/api/events#eventemitter)
 
@@ -85,7 +89,7 @@ and is read from, the `input` stream.
 
 #### <DataTag tag="E" /> `'close'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.98"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.98"]}}} />
 
 The `'close'` event is emitted when one of the following occur:
 
@@ -105,7 +109,7 @@ emitted.
 
 #### <DataTag tag="E" /> `'line'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.98"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.98"]}}} />
 
 The `'line'` event is emitted whenever the `input` stream receives an
 end-of-line input (`\n`, `\r`, or `\r\n`). This usually occurs when the user
@@ -125,7 +129,7 @@ rl.on('line', (input) => {
 
 #### <DataTag tag="E" /> `'history'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v15.8.0","v14.18.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.8.0","v14.18.0"]}}} />
 
 The `'history'` event is emitted whenever the history array has changed.
 
@@ -146,7 +150,7 @@ rl.on('history', (history) => {
 
 #### <DataTag tag="E" /> `'pause'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.7.5"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.5"]}}} />
 
 The `'pause'` event is emitted when one of the following occur:
 
@@ -164,7 +168,7 @@ rl.on('pause', () => {
 
 #### <DataTag tag="E" /> `'resume'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.7.5"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.5"]}}} />
 
 The `'resume'` event is emitted whenever the `input` stream is resumed.
 
@@ -178,7 +182,7 @@ rl.on('resume', () => {
 
 #### <DataTag tag="E" /> `'SIGCONT'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.7.5"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.5"]}}} />
 
 The `'SIGCONT'` event is emitted when a Node.js process previously moved into
 the background using <kbd>Ctrl</kbd>+<kbd>Z</kbd> (i.e. `SIGTSTP`) is then
@@ -200,7 +204,7 @@ The `'SIGCONT'` event is _not_ supported on Windows.
 
 #### <DataTag tag="E" /> `'SIGINT'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.3.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
 The `'SIGINT'` event is emitted whenever the `input` stream receives
 a <kbd>Ctrl+C</kbd> input, known typically as `SIGINT`. If there are no
@@ -219,7 +223,7 @@ rl.on('SIGINT', () => {
 
 #### <DataTag tag="E" /> `'SIGTSTP'`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.7.5"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.5"]}}} />
 
 The `'SIGTSTP'` event is emitted when the `input` stream receives
 a <kbd>Ctrl</kbd>+<kbd>Z</kbd> input, typically known as `SIGTSTP`. If there are
@@ -246,7 +250,7 @@ The `'SIGTSTP'` event is _not_ supported on Windows.
 
 #### <DataTag tag="M" /> `rl.close()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.98"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.98"]}}} />
 
 The `rl.close()` method closes the `InterfaceConstructor` instance and
 relinquishes control over the `input` and `output` streams. When called,
@@ -257,7 +261,7 @@ from being emitted by the `InterfaceConstructor` instance.
 
 #### <DataTag tag="M" /> `rl.pause()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.3.4"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.3.4"]}}} />
 
 The `rl.pause()` method pauses the `input` stream, allowing it to be resumed
 later if necessary.
@@ -267,7 +271,7 @@ Calling `rl.pause()` does not immediately pause other events (including
 
 #### <DataTag tag="M" /> `rl.prompt([preserveCursor])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.98"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.98"]}}} />
 
 * `preserveCursor` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If `true`, prevents the cursor placement from
   being reset to `0`.
@@ -284,13 +288,13 @@ If the `InterfaceConstructor` was created with `output` set to `null` or
 
 #### <DataTag tag="M" /> `rl.resume()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.3.4"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.3.4"]}}} />
 
 The `rl.resume()` method resumes the `input` stream if it has been paused.
 
 #### <DataTag tag="M" /> `rl.setPrompt(prompt)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.98"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.98"]}}} />
 
 * `prompt` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -299,7 +303,7 @@ whenever `rl.prompt()` is called.
 
 #### <DataTag tag="M" /> `rl.getPrompt()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v15.3.0","v14.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.3.0","v14.17.0"]}}} />
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) the current prompt string
 
@@ -307,7 +311,7 @@ The `rl.getPrompt()` method returns the current prompt used by `rl.prompt()`.
 
 #### <DataTag tag="M" /> `rl.write(data[, key])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.98"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.98"]}}} />
 
 * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `key` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -340,7 +344,7 @@ The `rl.write()` method will write the data to the `readline` `Interface`'s
 
 #### <DataTag tag="M" /> `rl[Symbol.asyncIterator]()`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v11.14.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/26989","description":"Symbol.asyncIterator support is no longer experimental."}],"update":{"type":"added","version":["v11.4.0","v10.16.0"]}}} />
+<Metadata data={{"changes":[{"version":["v11.14.0","v10.17.0"],"pr-url":"https://github.com/nodejs/node/pull/26989","description":"Symbol.asyncIterator support is no longer experimental."}],"update":{"type":"added","version":["v11.4.0","v10.16.0"]}}} />
 
 * Returns: [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
 
@@ -376,7 +380,7 @@ asynchronous iteration may result in missed lines.
 
 #### <DataTag tag="M" /> `rl.line`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v15.8.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/33676","description":"Value will always be a string, never undefined."}],"update":{"type":"added","version":["v0.1.98"]}}} />
+<Metadata data={{"changes":[{"version":["v15.8.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/33676","description":"Value will always be a string, never undefined."}],"update":{"type":"added","version":["v0.1.98"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -410,7 +414,7 @@ process.stdin.on('keypress', (c, k) => {
 
 #### <DataTag tag="M" /> `rl.cursor`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.98"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.98"]}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -423,7 +427,7 @@ as well as the column where the terminal caret will be rendered.
 
 #### <DataTag tag="M" /> `rl.getCursorPos()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v13.5.0","v12.16.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.5.0","v12.16.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `rows` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the row of the prompt the cursor currently lands on
@@ -435,13 +439,17 @@ line prompts are included in the calculations.
 
 ### Promises API
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 #### <DataTag tag="C" /> `readlinePromises.Interface`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * Extends: [`readline.InterfaceConstructor`](/api/readline#interfaceconstructor)
 
@@ -453,7 +461,7 @@ and is read from, the `input` stream.
 
 ##### <DataTag tag="M" /> `rl.question(query[, options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * `query` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A statement or query to write to `output`, prepended to the
   prompt.
@@ -497,11 +505,11 @@ console.log(`Oh, so your favorite food is ${answer}`);
 
 #### <DataTag tag="C" /> `readlinePromises.Readline`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 ##### <DataTag tag="M" /> `new readlinePromises.Readline(stream[, options])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * `stream` [`stream.Writable`](/api/stream#streamwritable) A [TTY][] stream.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -509,7 +517,7 @@ console.log(`Oh, so your favorite food is ${answer}`);
 
 ##### <DataTag tag="M" /> `rl.clearLine(dir)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * `dir` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
   * `-1`: to the left from cursor
@@ -525,7 +533,7 @@ was passed to the constructor.
 
 ##### <DataTag tag="M" /> `rl.clearScreenDown()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * Returns: this
 
@@ -537,7 +545,7 @@ was passed to the constructor.
 
 ##### <DataTag tag="M" /> `rl.commit()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
@@ -546,7 +554,7 @@ The `rl.commit()` method sends all the pending actions to the associated
 
 ##### <DataTag tag="M" /> `rl.cursorTo(x[, y])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * `x` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `y` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -559,7 +567,7 @@ was passed to the constructor.
 
 ##### <DataTag tag="M" /> `rl.moveCursor(dx, dy)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * `dx` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `dy` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -573,7 +581,7 @@ was passed to the constructor.
 
 ##### <DataTag tag="M" /> `rl.rollback()`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * Returns: this
 
@@ -582,7 +590,7 @@ sending it to the associated `stream`.
 
 #### <DataTag tag="M" /> `readlinePromises.createInterface(options)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v17.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `input` [`stream.Readable`](/api/stream#streamreadable) The [Readable][] stream to listen to. This option
@@ -676,11 +684,11 @@ async function completer(linePartial) {
 
 ### Callback API
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.1.104"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.104"]}}} />
 
 #### <DataTag tag="C" /> `readline.Interface`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/37947","description":"The class `readline.Interface` now inherits from `Interface`."}],"update":{"type":"added","version":["v0.1.104"]}}} />
+<Metadata data={{"changes":[{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/37947","description":"The class `readline.Interface` now inherits from `Interface`."}],"update":{"type":"added","version":["v0.1.104"]}}} />
 
 * Extends: [`readline.InterfaceConstructor`](/api/readline#interfaceconstructor)
 
@@ -692,7 +700,7 @@ and is read from, the `input` stream.
 
 ##### <DataTag tag="M" /> `rl.question(query[, options], callback)`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.3.3"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.3.3"]}}} />
 
 * `query` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A statement or query to write to `output`, prepended to the
   prompt.
@@ -745,7 +753,7 @@ setTimeout(() => ac.abort(), 10000);
 
 #### <DataTag tag="M" /> `readline.clearLine(stream, dir[, callback])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28674","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28674","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * `stream` [`stream.Writable`](/api/stream#streamwritable)
 * `dir` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -762,7 +770,7 @@ in a specified direction identified by `dir`.
 
 #### <DataTag tag="M" /> `readline.clearScreenDown(stream[, callback])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28641","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28641","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * `stream` [`stream.Writable`](/api/stream#streamwritable)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Invoked once the operation completes.
@@ -775,7 +783,7 @@ the current position of the cursor down.
 
 #### <DataTag tag="M" /> `readline.createInterface(options)`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v15.14.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37932","description":"The `signal` option is supported now."},{"version":["v15.8.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/33662","description":"The `history` option is supported now."},{"version":"v13.9.0","pr-url":"https://github.com/nodejs/node/pull/31318","description":"The `tabSize` option is supported now."},{"version":["v8.3.0","v6.11.4"],"pr-url":"https://github.com/nodejs/node/pull/13497","description":"Remove max limit of `crlfDelay` option."},{"version":"v6.6.0","pr-url":"https://github.com/nodejs/node/pull/8109","description":"The `crlfDelay` option is supported now."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/7125","description":"The `prompt` option is supported now."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6352","description":"The `historySize` option can be `0` now."}],"update":{"type":"added","version":["v0.1.98"]}}} />
+<Metadata data={{"changes":[{"version":["v15.14.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37932","description":"The `signal` option is supported now."},{"version":["v15.8.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/33662","description":"The `history` option is supported now."},{"version":"v13.9.0","pr-url":"https://github.com/nodejs/node/pull/31318","description":"The `tabSize` option is supported now."},{"version":["v8.3.0","v6.11.4"],"pr-url":"https://github.com/nodejs/node/pull/13497","description":"Remove max limit of `crlfDelay` option."},{"version":"v6.6.0","pr-url":"https://github.com/nodejs/node/pull/8109","description":"The `crlfDelay` option is supported now."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/7125","description":"The `prompt` option is supported now."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6352","description":"The `historySize` option can be `0` now."}],"update":{"type":"added","version":["v0.1.98"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `input` [`stream.Readable`](/api/stream#streamreadable) The [Readable][] stream to listen to. This option
@@ -875,7 +883,7 @@ function completer(linePartial, callback) {
 
 #### <DataTag tag="M" /> `readline.cursorTo(stream, x[, y][, callback])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28674","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28674","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * `stream` [`stream.Writable`](/api/stream#streamwritable)
 * `x` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -890,7 +898,7 @@ given [TTY][] `stream`.
 
 #### <DataTag tag="M" /> `readline.moveCursor(stream, dx, dy[, callback])`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28674","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28674","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * `stream` [`stream.Writable`](/api/stream#streamwritable)
 * `dx` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -905,7 +913,7 @@ position in a given [TTY][] `stream`.
 
 ### <DataTag tag="M" /> `readline.emitKeypressEvents(stream[, interface])`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * `stream` [`stream.Readable`](/api/stream#streamreadable)
 * `interface` [`readline.InterfaceConstructor`](/api/readline#interfaceconstructor)

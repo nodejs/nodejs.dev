@@ -5,9 +5,13 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.14.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Stability stability={2}>
+
+Stable
+
+</Stability>
 
 <Metadata version="v18.14.0" data={{"source_link":"lib/child_process.js"}} />
 
@@ -152,7 +156,7 @@ exec('"my script.cmd" a b', (err, stdout, stderr) => {
 
 #### <DataTag tag="M" /> `child_process.exec(command[, options][, callback])`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":"v15.4.0","pr-url":"https://github.com/nodejs/node/pull/36308","description":"AbortSignal support was added."},{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15380","description":"The `windowsHide` option is supported now."}],"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata data={{"changes":[{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":"v15.4.0","pr-url":"https://github.com/nodejs/node/pull/36308","description":"AbortSignal support was added."},{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15380","description":"The `windowsHide` option is supported now."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `command` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The command to run, with space-separated arguments.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -269,7 +273,7 @@ controller.abort();
 
 #### <DataTag tag="M" /> `child_process.execFile(file[, args][, options][, callback])`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":["v15.4.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36308","description":"AbortSignal support was added."},{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15380","description":"The `windowsHide` option is supported now."}],"update":{"type":"added","version":["v0.1.91"]}}} />
+<Metadata data={{"changes":[{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":["v15.4.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36308","description":"AbortSignal support was added."},{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15380","description":"The `windowsHide` option is supported now."}],"update":{"type":"added","version":["v0.1.91"]}}} />
 
 * `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name or path of the executable file to run.
 * `args` string\[] List of string arguments.
@@ -364,7 +368,7 @@ controller.abort();
 
 #### <DataTag tag="M" /> `child_process.fork(modulePath[, args][, options])`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v17.4.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41225","description":"The `modulePath` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":["v15.13.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37256","description":"timeout was added."},{"version":["v15.11.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37325","description":"killSignal for AbortSignal was added."},{"version":["v15.6.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36603","description":"AbortSignal support was added."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30162","description":"The `serialization` option is supported now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10866","description":"The `stdio` option can now be a string."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7811","description":"The `stdio` option is supported now."}],"update":{"type":"added","version":["v0.5.0"]}}} />
+<Metadata data={{"changes":[{"version":["v17.4.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41225","description":"The `modulePath` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":["v15.13.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37256","description":"timeout was added."},{"version":["v15.11.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37325","description":"killSignal for AbortSignal was added."},{"version":["v15.6.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36603","description":"AbortSignal support was added."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30162","description":"The `serialization` option is supported now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10866","description":"The `stdio` option can now be a string."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7811","description":"The `stdio` option is supported now."}],"update":{"type":"added","version":["v0.5.0"]}}} />
 
 * `modulePath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) The module to run in the child.
 * `args` string\[] List of string arguments.
@@ -451,7 +455,7 @@ if (process.argv[2] === 'child') {
 
 #### <DataTag tag="M" /> `child_process.spawn(command[, args][, options])`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":["v15.13.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37256","description":"timeout was added."},{"version":["v15.11.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37325","description":"killSignal for AbortSignal was added."},{"version":["v15.5.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36432","description":"AbortSignal support was added."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30162","description":"The `serialization` option is supported now."},{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15380","description":"The `windowsHide` option is supported now."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7696","description":"The `argv0` option is supported now."},{"version":"v5.7.0","pr-url":"https://github.com/nodejs/node/pull/4598","description":"The `shell` option is supported now."}],"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata data={{"changes":[{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":["v15.13.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37256","description":"timeout was added."},{"version":["v15.11.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37325","description":"killSignal for AbortSignal was added."},{"version":["v15.5.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36432","description":"AbortSignal support was added."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30162","description":"The `serialization` option is supported now."},{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15380","description":"The `windowsHide` option is supported now."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7696","description":"The `argv0` option is supported now."},{"version":"v5.7.0","pr-url":"https://github.com/nodejs/node/pull/4598","description":"The `shell` option is supported now."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `command` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The command to run.
 * `args` string\[] List of string arguments.
@@ -608,7 +612,7 @@ controller.abort(); // Stops the child process
 
 ##### <DataTag tag="M" /> `options.detached`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.10"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.10"]}}} />
 
 On Windows, setting `options.detached` to `true` makes it possible for the
 child process to continue running after the parent exits. The child will have
@@ -665,7 +669,7 @@ subprocess.unref();
 
 ##### <DataTag tag="M" /> `options.stdio`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v15.6.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/29412","description":"Added the `overlapped` stdio flag."},{"version":"v3.3.1","pr-url":"https://github.com/nodejs/node/pull/2727","description":"The value `0` is now accepted as a file descriptor."}],"update":{"type":"added","version":["v0.7.10"]}}} />
+<Metadata data={{"changes":[{"version":["v15.6.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/29412","description":"Added the `overlapped` stdio flag."},{"version":"v3.3.1","pr-url":"https://github.com/nodejs/node/pull/2727","description":"The value `0` is now accepted as a file descriptor."}],"update":{"type":"added","version":["v0.7.10"]}}} />
 
 The `options.stdio` option is used to configure the pipes that are established
 between the parent and child process. By default, the child's stdin, stdout,
@@ -775,7 +779,7 @@ configuration at startup.
 
 #### <DataTag tag="M" /> `child_process.execFileSync(file[, args][, options])`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22409","description":"The `input` option can now be any `TypedArray` or a `DataView`."},{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15380","description":"The `windowsHide` option is supported now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10653","description":"The `input` option can now be a `Uint8Array`."},{"version":["v6.2.1","v4.5.0"],"pr-url":"https://github.com/nodejs/node/pull/6939","description":"The `encoding` option can now explicitly be set to `buffer`."}],"update":{"type":"added","version":["v0.11.12"]}}} />
+<Metadata data={{"changes":[{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22409","description":"The `input` option can now be any `TypedArray` or a `DataView`."},{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15380","description":"The `windowsHide` option is supported now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10653","description":"The `input` option can now be a `Uint8Array`."},{"version":["v6.2.1","v4.5.0"],"pr-url":"https://github.com/nodejs/node/pull/6939","description":"The `encoding` option can now explicitly be set to `buffer`."}],"update":{"type":"added","version":["v0.11.12"]}}} />
 
 * `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name or path of the executable file to run.
 * `args` string\[] List of string arguments.
@@ -827,7 +831,7 @@ arbitrary command execution.**
 
 #### <DataTag tag="M" /> `child_process.execSync(command[, options])`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22409","description":"The `input` option can now be any `TypedArray` or a `DataView`."},{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15380","description":"The `windowsHide` option is supported now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10653","description":"The `input` option can now be a `Uint8Array`."}],"update":{"type":"added","version":["v0.11.12"]}}} />
+<Metadata data={{"changes":[{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22409","description":"The `input` option can now be any `TypedArray` or a `DataView`."},{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15380","description":"The `windowsHide` option is supported now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10653","description":"The `input` option can now be a `Uint8Array`."}],"update":{"type":"added","version":["v0.11.12"]}}} />
 
 * `command` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The command to run.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -875,7 +879,7 @@ metacharacters may be used to trigger arbitrary command execution.**
 
 #### <DataTag tag="M" /> `child_process.spawnSync(command[, args][, options])`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22409","description":"The `input` option can now be any `TypedArray` or a `DataView`."},{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15380","description":"The `windowsHide` option is supported now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10653","description":"The `input` option can now be a `Uint8Array`."},{"version":["v6.2.1","v4.5.0"],"pr-url":"https://github.com/nodejs/node/pull/6939","description":"The `encoding` option can now explicitly be set to `buffer`."},{"version":"v5.7.0","pr-url":"https://github.com/nodejs/node/pull/4598","description":"The `shell` option is supported now."}],"update":{"type":"added","version":["v0.11.12"]}}} />
+<Metadata data={{"changes":[{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22409","description":"The `input` option can now be any `TypedArray` or a `DataView`."},{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15380","description":"The `windowsHide` option is supported now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10653","description":"The `input` option can now be a `Uint8Array`."},{"version":["v6.2.1","v4.5.0"],"pr-url":"https://github.com/nodejs/node/pull/6939","description":"The `encoding` option can now explicitly be set to `buffer`."},{"version":"v5.7.0","pr-url":"https://github.com/nodejs/node/pull/4598","description":"The `shell` option is supported now."}],"update":{"type":"added","version":["v0.11.12"]}}} />
 
 * `command` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The command to run.
 * `args` string\[] List of string arguments.
@@ -934,7 +938,7 @@ arbitrary command execution.**
 
 ### <DataTag tag="C" /> `ChildProcess`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v2.2.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v2.2.0"]}}} />
 
 * Extends: [`EventEmitter`](/api/events#eventemitter)
 
@@ -947,7 +951,7 @@ instances of `ChildProcess`.
 
 #### <DataTag tag="E" /> `'close'`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.7"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.7"]}}} />
 
 * `code` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The exit code if the child exited on its own.
 * `signal` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The signal by which the child process was terminated.
@@ -977,7 +981,7 @@ ls.on('exit', (code) => {
 
 #### <DataTag tag="E" /> `'disconnect'`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.2"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.2"]}}} />
 
 The `'disconnect'` event is emitted after calling the
 [`subprocess.disconnect()`][] method in parent process or
@@ -1004,7 +1008,7 @@ See also [`subprocess.kill()`][] and [`subprocess.send()`][].
 
 #### <DataTag tag="E" /> `'exit'`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `code` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The exit code if the child exited on its own.
 * `signal` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The signal by which the child process was terminated.
@@ -1026,7 +1030,7 @@ See waitpid(2).
 
 #### <DataTag tag="E" /> `'message'`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.5.9"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.5.9"]}}} />
 
 * `message` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) A parsed JSON object or primitive value.
 * `sendHandle` [`Handle`](/api/net#serverlistenhandle-backlog-callback) A [`net.Socket`][] or [`net.Server`][] object, or
@@ -1045,7 +1049,7 @@ See [Advanced serialization][] for more details.
 
 #### <DataTag tag="E" /> `'spawn'`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
 
 The `'spawn'` event is emitted once the child process has spawned successfully.
 If the child process does not spawn successfully, the `'spawn'` event is not
@@ -1061,7 +1065,7 @@ This caveat also applies when using `{ shell: true }`.
 
 #### <DataTag tag="M" /> `subprocess.channel`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30165","description":"The object no longer accidentally exposes native C++ bindings."}],"update":{"type":"added","version":["v7.1.0"]}}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/30165","description":"The object no longer accidentally exposes native C++ bindings."}],"update":{"type":"added","version":["v7.1.0"]}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) A pipe representing the IPC channel to the child process.
 
@@ -1070,21 +1074,21 @@ no IPC channel exists, this property is `undefined`.
 
 ##### <DataTag tag="M" /> `subprocess.channel.ref()`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v7.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v7.1.0"]}}} />
 
 This method makes the IPC channel keep the event loop of the parent process
 running if `.unref()` has been called before.
 
 ##### <DataTag tag="M" /> `subprocess.channel.unref()`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v7.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v7.1.0"]}}} />
 
 This method makes the IPC channel not keep the event loop of the parent process
 running, and lets it finish even while the channel is open.
 
 #### <DataTag tag="M" /> `subprocess.connected`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.2"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.2"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Set to `false` after `subprocess.disconnect()` is called.
 
@@ -1094,7 +1098,7 @@ send and receive messages from a child process. When `subprocess.connected` is
 
 #### <DataTag tag="M" /> `subprocess.disconnect()`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.2"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.2"]}}} />
 
 Closes the IPC channel between parent and child, allowing the child to exit
 gracefully once there are no other connections keeping it alive. After calling
@@ -1119,7 +1123,7 @@ If the child process is still running, the field will be `null`.
 
 #### <DataTag tag="M" /> `subprocess.kill([signal])`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `signal` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1185,7 +1189,7 @@ setTimeout(() => {
 
 #### <DataTag tag="M" /> `subprocess.killed`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.5.10"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.5.10"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Set to `true` after `subprocess.kill()` is used to successfully
   send a signal to the child process.
@@ -1196,7 +1200,7 @@ does not indicate that the child process has been terminated.
 
 #### <DataTag tag="M" /> `subprocess.pid`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -1214,7 +1218,7 @@ grep.stdin.end();
 
 #### <DataTag tag="M" /> `subprocess.ref()`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.10"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.10"]}}} />
 
 Calling `subprocess.ref()` after making a call to `subprocess.unref()` will
 restore the removed reference count for the child process, forcing the parent
@@ -1234,7 +1238,7 @@ subprocess.ref();
 
 #### <DataTag tag="M" /> `subprocess.send(message[, sendHandle[, options]][, callback])`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v5.8.0","pr-url":"https://github.com/nodejs/node/pull/5283","description":"The `options` parameter, and the `keepOpen` option in particular, is supported now."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3516","description":"This method returns a boolean for flow control now."},{"version":"v4.0.0","pr-url":"https://github.com/nodejs/node/pull/2620","description":"The `callback` parameter is supported now."}],"update":{"type":"added","version":["v0.5.9"]}}} />
+<Metadata data={{"changes":[{"version":"v5.8.0","pr-url":"https://github.com/nodejs/node/pull/5283","description":"The `options` parameter, and the `keepOpen` option in particular, is supported now."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3516","description":"This method returns a boolean for flow control now."},{"version":"v4.0.0","pr-url":"https://github.com/nodejs/node/pull/2620","description":"The `callback` parameter is supported now."}],"update":{"type":"added","version":["v0.5.9"]}}} />
 
 * `message` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `sendHandle` [`Handle`](/api/net#serverlistenhandle-backlog-callback)
@@ -1429,7 +1433,7 @@ in which the child process is launched.
 
 #### <DataTag tag="M" /> `subprocess.stderr`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * [`stream.Readable`](/api/stream#streamreadable) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -1446,7 +1450,7 @@ if the child process could not be successfully spawned.
 
 #### <DataTag tag="M" /> `subprocess.stdin`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * [`stream.Writable`](/api/stream#streamwritable) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -1466,7 +1470,7 @@ if the child process could not be successfully spawned.
 
 #### <DataTag tag="M" /> `subprocess.stdio`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.10"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.10"]}}} />
 
 * [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
@@ -1508,7 +1512,7 @@ not be successfully spawned.
 
 #### <DataTag tag="M" /> `subprocess.stdout`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.1.90"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * [`stream.Readable`](/api/stream#streamreadable) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -1535,7 +1539,7 @@ if the child process could not be successfully spawned.
 
 #### <DataTag tag="M" /> `subprocess.unref()`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.10"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.7.10"]}}} />
 
 By default, the parent will wait for the detached child to exit. To prevent the
 parent from waiting for a given `subprocess` to exit, use the
@@ -1579,7 +1583,7 @@ unavailable.
 
 ### Advanced serialization
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
 
 Child processes support a serialization mechanism for IPC that is based on the
 [serialization API of the `node:v8` module][v8.serdes], based on the
