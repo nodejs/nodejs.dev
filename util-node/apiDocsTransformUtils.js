@@ -180,8 +180,8 @@ function replaceLinksToMarkdownLinks() {
 // Within a proper link referencing either to its MDN specification
 // Or if it is another API doc (e.g.: `fs.something`) then to its
 // respective API page
-function replaceTypeToLinks() {
-  return source => typeParser(source);
+function replaceTypeToLinks(metadata) {
+  return source => typeParser(metadata, source);
 }
 
 // This utility replaces `<pre>` tags with ``` so that it is Markdown compatible
