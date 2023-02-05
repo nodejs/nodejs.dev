@@ -1462,7 +1462,7 @@ See how to write a custom [rejection handler][rejection].
 
 <Metadata version="v19.6.0" data={{"update":{"type":"deprecated","version":["v3.2.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `emitter.listenerCount()` instead."}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`emitter.listenerCount()`][] instead."}}} />
 
 * `emitter` [`EventEmitter`](/api/events#eventemitter) The emitter to query
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The event name
@@ -1885,7 +1885,7 @@ This is not used in Node.js and is provided purely for completeness.
 
 <Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":3,"text":" - Legacy: Use `event.stopPropagation()` instead."}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":3,"text":" - Legacy: Use [`event.stopPropagation()`][] instead."}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1972,7 +1972,7 @@ Sets the `defaultPrevented` property to `true` if `cancelable` is `true`.
 
 <Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":3,"text":" - Legacy: Use `event.defaultPrevented` instead."}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":3,"text":" - Legacy: Use [`event.defaultPrevented`][] instead."}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) True if the event has not been canceled.
 
@@ -1983,7 +1983,7 @@ This is not used in Node.js and is provided purely for completeness.
 
 <Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":3,"text":" - Legacy: Use `event.target` instead."}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":3,"text":" - Legacy: Use [`event.target`][] instead."}}} />
 
 * Type: [`EventTarget`](/api/events#eventtarget) The `EventTarget` dispatching the event.
 

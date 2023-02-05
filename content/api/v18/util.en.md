@@ -2463,7 +2463,7 @@ applications and modules should be updated to find alternative approaches.
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `Object.assign()` instead."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Object.assign()`][] instead."}}} />
 
 * `target` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `source` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -2478,7 +2478,7 @@ similar built-in functionality through [`Object.assign()`][].
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `Array.isArray()` instead."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Array.isArray()`][] instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2524,7 +2524,7 @@ util.isBoolean(false);
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `Buffer.isBuffer()` instead."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.isBuffer()`][] instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2546,7 +2546,7 @@ util.isBuffer(Buffer.from('hello world'));
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `util.types.isDate()` instead."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`util.types.isDate()`][] instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2568,7 +2568,7 @@ util.isDate({});
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `util.types.isNativeError()` instead."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`util.types.isNativeError()`][] instead."}}} />
 
 * `object` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)

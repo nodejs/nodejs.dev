@@ -662,7 +662,7 @@ then the last address is the one that the socket is currently connected to.
 
 <Metadata version="v19.6.0" data={{"update":{"type":"deprecated","version":["v14.6.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `writable.writableLength` instead."}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`writable.writableLength`][] instead."}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 

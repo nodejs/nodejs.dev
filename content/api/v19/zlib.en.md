@@ -608,7 +608,7 @@ be used in pipes and similar stream operations.
 
 <Metadata version="v19.6.0" data={{"update":{"type":"deprecated","version":["v10.0.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `zlib.bytesWritten` instead."}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`zlib.bytesWritten`][] instead."}}} />
 
 * [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 

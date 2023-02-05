@@ -2583,7 +2583,7 @@ Checks the primality of the `candidate`.
 
 <Metadata version="v19.6.0" data={{"changes":[{"version":["v17.9.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/42427","description":"The `authTagLength` option is now optional when using the `chacha20-poly1305` cipher and defaults to 16 bytes."},{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35093","description":"The password argument can be an ArrayBuffer and is limited to a maximum of 2 ** 31 - 1 bytes."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/21447","description":"Ciphers in OCB mode are now supported."},{"version":"v10.2.0","pr-url":"https://github.com/nodejs/node/pull/20235","description":"The `authTagLength` option can now be used to produce shorter authentication tags in GCM mode and defaults to 16 bytes."}],"update":{"type":"deprecated","version":["v10.0.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `crypto.createCipheriv()` instead."}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`crypto.createCipheriv()`][] instead."}}} />
 
 * `algorithm` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `password` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
@@ -2674,7 +2674,7 @@ given IV will be.
 
 <Metadata version="v19.6.0" data={{"changes":[{"version":["v17.9.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/42427","description":"The `authTagLength` option is now optional when using the `chacha20-poly1305` cipher and defaults to 16 bytes."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/21447","description":"Ciphers in OCB mode are now supported."}],"update":{"type":"deprecated","version":["v10.0.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `crypto.createDecipheriv()` instead."}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`crypto.createDecipheriv()`][] instead."}}} />
 
 * `algorithm` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `password` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)

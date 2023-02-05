@@ -2192,7 +2192,7 @@ console.log(buf.length);
 
 <Metadata version="v16.19.0" data={{"update":{"type":"deprecated","version":["v8.0.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `buf.buffer` instead."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`buf.buffer`][] instead."}}} />
 
 The `buf.parent` property is a deprecated alias for `buf.buffer`.
 
@@ -3011,7 +3011,7 @@ console.log(buf.subarray(-5, -2).toString());
   **Default:** [`buf.length`][].
 * Returns: [`Buffer`](/api/buffer#buffer)
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `buf.subarray` instead."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`buf.subarray`][] instead."}}} />
 
 Returns a new `Buffer` that references the same memory as the original, but
 offset and cropped by the `start` and `end` indices.
@@ -4277,7 +4277,7 @@ console.log(buf);
 
 <Metadata version="v16.19.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Calling this constructor emits a deprecation warning when run from code outside the `node_modules` directory."},{"version":"v7.2.1","pr-url":"https://github.com/nodejs/node/pull/9529","description":"Calling this constructor no longer emits a deprecation warning."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8169","description":"Calling this constructor emits a deprecation warning now."}],"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `Buffer.from(array)` instead."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.from(array)`][] instead."}}} />
 
 * `array` integer\[] An array of bytes to copy from.
 
@@ -4302,7 +4302,7 @@ See
 
 <Metadata version="v16.19.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Calling this constructor emits a deprecation warning when run from code outside the `node_modules` directory."},{"version":"v7.2.1","pr-url":"https://github.com/nodejs/node/pull/9529","description":"Calling this constructor no longer emits a deprecation warning."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8169","description":"Calling this constructor emits a deprecation warning now."}],"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `Buffer.from(buffer)` instead."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.from(buffer)`][] instead."}}} />
 
 * `buffer` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) An existing `Buffer` or [`Uint8Array`][] from
   which to copy data.
@@ -4313,7 +4313,7 @@ See [`Buffer.from(buffer)`][].
 
 <Metadata version="v16.19.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Calling this constructor emits a deprecation warning when run from code outside the `node_modules` directory."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12141","description":"The `new Buffer(size)` will return zero-filled memory by default."},{"version":"v7.2.1","pr-url":"https://github.com/nodejs/node/pull/9529","description":"Calling this constructor no longer emits a deprecation warning."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8169","description":"Calling this constructor emits a deprecation warning now."}],"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `Buffer.alloc()`][] instead (also see [`Buffer.allocUnsafe()`)."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.alloc()`][] instead (also see [`Buffer.allocUnsafe()`][])."}}} />
 
 * `size` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The desired length of the new `Buffer`.
 
@@ -4460,7 +4460,7 @@ with `?` in the transcoded `Buffer`.
 
 <Metadata version="v16.19.0" data={{"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `Buffer.allocUnsafeSlow()` instead."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.allocUnsafeSlow()`][] instead."}}} />
 
 See [`Buffer.allocUnsafeSlow()`][]. This was never a class in the sense that
 the constructor always returned a `Buffer` instance, rather than a `SlowBuffer`
@@ -4470,7 +4470,7 @@ instance.
 
 <Metadata version="v16.19.0" data={{"update":{"type":"deprecated","version":["v6.0.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `Buffer.allocUnsafeSlow()` instead."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`Buffer.allocUnsafeSlow()`][] instead."}}} />
 
 * `size` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The desired length of the new `SlowBuffer`.
 

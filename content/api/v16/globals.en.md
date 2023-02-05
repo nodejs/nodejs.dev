@@ -226,7 +226,7 @@ Used to print to stdout and stderr. See the [`console`][] section.
 
 <Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v16.15.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-webcrypto` CLI flag."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the [`--experimental-global-webcrypto`][] CLI flag."}}} />
 
 A browser-compatible implementation of [`Crypto`](/api/webcrypto#crypto). This global is available
 only if the Node.js binary was compiled with including support for the
@@ -236,7 +236,7 @@ only if the Node.js binary was compiled with including support for the
 
 <Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v16.15.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-webcrypto` CLI flag."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the [`--experimental-global-webcrypto`][] CLI flag."}}} />
 
 A browser-compatible implementation of the [Web Crypto API][].
 
@@ -244,7 +244,7 @@ A browser-compatible implementation of the [Web Crypto API][].
 
 <Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v16.15.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-webcrypto` CLI flag."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the [`--experimental-global-webcrypto`][] CLI flag."}}} />
 
 A browser-compatible implementation of [`CryptoKey`](/api/webcrypto#cryptokey). This global is available
 only if the Node.js binary was compiled with including support for the
@@ -254,7 +254,7 @@ only if the Node.js binary was compiled with including support for the
 
 <Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v16.17.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-customevent` CLI flag."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the [`--experimental-global-customevent`][] CLI flag."}}} />
 
 <Metadata version="v16.19.0" data={{"type":"global"}} />
 
@@ -286,7 +286,7 @@ This variable may appear to be global but is not. See [`exports`][].
 
 <Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v16.15.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-fetch` CLI flag."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the [`--experimental-fetch`][] CLI flag."}}} />
 
 A browser-compatible implementation of the [`fetch()`][] function.
 
@@ -294,7 +294,7 @@ A browser-compatible implementation of the [`fetch()`][] function.
 
 <Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v16.15.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-fetch` CLI flag."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the [`--experimental-fetch`][] CLI flag."}}} />
 
 A browser-compatible implementation of [`FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData).
 
@@ -315,7 +315,7 @@ Node.js this is different. The top-level scope is not the global scope;
 
 <Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v16.15.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-fetch` CLI flag."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the [`--experimental-fetch`][] CLI flag."}}} />
 
 A browser-compatible implementation of [`Headers`](https://developer.mozilla.org/en-US/docs/Web/API/Headers).
 
@@ -409,7 +409,7 @@ This variable may appear to be global but is not. See [`require()`][].
 
 <Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v16.15.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-fetch` CLI flag."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the [`--experimental-fetch`][] CLI flag."}}} />
 
 A browser-compatible implementation of [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response).
 
@@ -417,7 +417,7 @@ A browser-compatible implementation of [`Response`](https://developer.mozilla.or
 
 <Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v16.15.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-fetch` CLI flag."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the [`--experimental-fetch`][] CLI flag."}}} />
 
 A browser-compatible implementation of [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request).
 
@@ -449,7 +449,7 @@ A browser-compatible implementation of [`Request`](https://developer.mozilla.org
 
 <Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v16.15.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the `--experimental-global-webcrypto` CLI flag."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental. Enable this API with the [`--experimental-global-webcrypto`][] CLI flag."}}} />
 
 A browser-compatible implementation of [`SubtleCrypto`](/api/webcrypto#subtlecrypto). This global is available
 only if the Node.js binary was compiled with including support for the

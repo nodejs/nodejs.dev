@@ -956,7 +956,7 @@ loading.
 
 <Metadata version="v16.19.0" data={{"update":{"type":"deprecated","version":["v14.6.0","v12.19.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Please use `require.main`][] and [`module.children` instead."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Please use [`require.main`][] and [`module.children`][] instead."}}} />
 
 * [`module`](/api/modules#the-module-object) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 

@@ -605,7 +605,7 @@ server.listen(1337, '127.0.0.1', () => {
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v14.1.0","v13.14.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `request.destroy()` instead."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`request.destroy()`][] instead."}}} />
 
 Marks the request as aborting. Calling this will cause remaining data
 in the response to be dropped and the socket to be destroyed.
@@ -614,7 +614,7 @@ in the response to be dropped and the socket to be destroyed.
 
 <Metadata version="v18.14.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/20230","description":"The `aborted` property is no longer a timestamp number."}],"update":{"type":"deprecated","version":["v17.0.0","v16.12.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated. Check `request.destroyed` instead."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated. Check [`request.destroyed`][] instead."}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -625,7 +625,7 @@ been aborted.
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v13.0.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `request.socket`."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`request.socket`][]."}}} />
 
 * [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -683,7 +683,7 @@ See [`writable.destroyed`][] for further details.
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v13.4.0","v12.16.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `request.writableEnded`."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`request.writableEnded`][]."}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1434,7 +1434,7 @@ will result in a [`TypeError`][] being thrown.
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v13.0.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `response.socket`."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`response.socket`][]."}}} />
 
 * [`stream.Duplex`](/api/stream#streamduplex)
 
@@ -1469,7 +1469,7 @@ is finished.
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v13.4.0","v12.16.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `response.writableEnded`."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`response.writableEnded`][]."}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1979,7 +1979,7 @@ const req = http.request({
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v16.0.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `message.socket`."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`message.socket`][]."}}} />
 
 Alias for [`message.socket`][].
 
@@ -2293,7 +2293,7 @@ a single time with values joined using `; `.
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v15.12.0","v14.17.1"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `outgoingMessage.socket` instead."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`outgoingMessage.socket`][] instead."}}} />
 
 Alias of [`outgoingMessage.socket`][].
 

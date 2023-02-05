@@ -650,7 +650,7 @@ socket as reported by the operating system:
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v14.6.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `writable.writableLength` instead."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`writable.writableLength`][] instead."}}} />
 
 * [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 

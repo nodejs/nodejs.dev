@@ -2055,7 +2055,7 @@ If `options` is a string, then it specifies the encoding.
 
 <Metadata version="v19.6.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"deprecated","version":["v1.0.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `fs.stat()`][] or [`fs.access()` instead."}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`fs.stat()`][] or [`fs.access()`][] instead."}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)

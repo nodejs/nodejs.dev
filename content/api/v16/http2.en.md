@@ -2828,7 +2828,7 @@ been completed, aborted, or destroyed.
 
 <Metadata version="v16.19.0" data={{"update":{"type":"deprecated","version":["v13.0.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `request.socket`."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`request.socket`][]."}}} />
 
 * [`net.Socket`](/api/net#netsocket) | [`tls.TLSSocket`](/api/tls#tlstlssocket)
 
@@ -3087,7 +3087,7 @@ will result in a [`TypeError`][] being thrown.
 
 <Metadata version="v16.19.0" data={{"update":{"type":"deprecated","version":["v13.0.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `response.socket`."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`response.socket`][]."}}} />
 
 * [`net.Socket`](/api/net#netsocket) | [`tls.TLSSocket`](/api/tls#tlstlssocket)
 
@@ -3134,7 +3134,7 @@ is finished.
 
 <Metadata version="v16.19.0" data={{"update":{"type":"deprecated","version":["v13.4.0","v12.16.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated. Use `response.writableEnded`."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated. Use [`response.writableEnded`][]."}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 

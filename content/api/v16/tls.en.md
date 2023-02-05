@@ -448,7 +448,7 @@ has the property `code` which can take one of the following values:
 
 <Metadata version="v16.19.0" data={{"update":{"type":"deprecated","version":["v0.11.3"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `tls.TLSSocket` instead."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`tls.TLSSocket`][] instead."}}} />
 
 The `tls.CryptoStream` class represents a stream of encrypted data. This class
 is deprecated and should no longer be used.
@@ -465,7 +465,7 @@ implementation of the TLS protocol.
 
 <Metadata version="v16.19.0" data={{"update":{"type":"deprecated","version":["v0.11.3"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `tls.TLSSocket` instead."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`tls.TLSSocket`][] instead."}}} />
 
 Returned by [`tls.createSecurePair()`][].
 
@@ -1681,7 +1681,7 @@ If the `ca` option is not given, then Node.js will default to using
 
 <Metadata version="v16.19.0" data={{"changes":[{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2564","description":"ALPN options are supported now."}],"update":{"type":"deprecated","version":["v0.11.3"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `tls.TLSSocket` instead."}}} />
+<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`tls.TLSSocket`][] instead."}}} />
 
 * `context` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) A secure context object as returned by
   `tls.createSecureContext()`

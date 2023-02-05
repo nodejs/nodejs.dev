@@ -435,7 +435,7 @@ If the given path does not exist, `require()` will throw a
 
 <Metadata version="v18.14.0" data={{"type":"misc"}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":3,"text":" - Legacy: Use subpath exports][] or [subpath imports instead."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":3,"text":" - Legacy: Use [subpath exports][] or [subpath imports][] instead."}}} />
 
 There are three ways in which a folder may be passed to `require()` as
 an argument.
@@ -951,7 +951,7 @@ loading.
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v14.6.0","v12.19.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Please use `require.main`][] and [`module.children` instead."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Please use [`require.main`][] and [`module.children`][] instead."}}} />
 
 * [`module`](/api/modules#the-module-object) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 

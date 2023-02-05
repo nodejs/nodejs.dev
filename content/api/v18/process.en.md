@@ -1900,7 +1900,7 @@ Indicates whether a callback has been set using
 
 <Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v0.7.6"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":3,"text":" - Legacy. Use `process.hrtime.bigint()` instead."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":3,"text":" - Legacy. Use [`process.hrtime.bigint()`][] instead."}}} />
 
 * `time` integer\[] The result of a previous call to `process.hrtime()`
 * Returns: integer\[]
@@ -2095,7 +2095,7 @@ debugger. See [Signal Events][].
 
 <Metadata version="v18.14.0" data={{"update":{"type":"deprecated","version":["v14.0.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use `require.main` instead."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated: Use [`require.main`][] instead."}}} />
 
 * [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 

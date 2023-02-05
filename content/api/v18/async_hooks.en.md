@@ -7,7 +7,7 @@ version: 'v18'
 
 <Metadata version="v18.14.0" data={{"update":{"type":"introduced_in","version":["v8.1.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental. Please migrate away from this API, if you can. We do not recommend using the `createHook`][], [`AsyncHook`][], and [`executionAsyncResource`][] APIs as they have usability issues, safety risks, and performance implications. Async context tracking use cases are better served by the stable [`AsyncLocalStorage`][] API. If you have a use case for `createHook`, `AsyncHook`, or `executionAsyncResource` beyond the context tracking need solved by [`AsyncLocalStorage`][] or diagnostics data currently provided by [Diagnostics Channel, please open an issue at <https://github.com/nodejs/node/issues> describing your use case so we can create a more purpose-focused API."}}} />
+<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental. Please migrate away from this API, if you can. We do not recommend using the [`createHook`][], [`AsyncHook`][], and [`executionAsyncResource`][] APIs as they have usability issues, safety risks, and performance implications. Async context tracking use cases are better served by the stable [`AsyncLocalStorage`][] API. If you have a use case for `createHook`, `AsyncHook`, or `executionAsyncResource` beyond the context tracking need solved by [`AsyncLocalStorage`][] or diagnostics data currently provided by [Diagnostics Channel][], please open an issue at <https://github.com/nodejs/node/issues> describing your use case so we can create a more purpose-focused API."}}} />
 
 <Metadata version="v18.14.0" data={{"source_link":"lib/async_hooks.js"}} />
 

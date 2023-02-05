@@ -131,9 +131,7 @@ function createApiDocsFrontmatter(firstLine, { version, name }) {
 // into a proper metadata with the information (index number) and any other accompanying text
 function replaceStabilityIndex(metadata) {
   return (_, __, level, text) => {
-    const sanitizedText = text
-      .replace(/(\n)>/g, '')
-      .replace(/\[(.+)\]\[\]/g, (___, piece) => piece);
+    const sanitizedText = text.replace(/(\n)>/g, '');
 
     const data = safeJSON.toString({
       stability: { level: Number(level), text: sanitizedText },

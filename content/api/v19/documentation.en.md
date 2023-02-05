@@ -30,7 +30,7 @@ The stability indices are as follows:
 
 <Metadata version="v19.6.0" data={{"stability":{"level":0,"text":" - Deprecated. The feature may emit warnings. Backward compatibility is not guaranteed."}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":1,"text":" - Experimental. The feature is not subject to semantic versioning rules. Non-backward compatible changes or removal may occur in any future release. Use of the feature is not recommended in production environments."}}} />
+<Metadata version="v19.6.0" data={{"stability":{"level":1,"text":" - Experimental. The feature is not subject to [semantic versioning][] rules. Non-backward compatible changes or removal may occur in any future release. Use of the feature is not recommended in production environments."}}} />
 
 <Metadata version="v19.6.0" data={{"stability":{"level":2,"text":" - Stable. Compatibility with the npm ecosystem is a high priority."}}} />
 
