@@ -649,7 +649,7 @@ See the section about the [exports shortcut][] for details on when to use
 
 <Metadata data={{"type":"var"}} />
 
-* [`module`](/api/modules#the-module-object)
+* [`module`](/api/v19/modules#the-module-object)
 
 A reference to the current module, see the section about the
 [`module` object][]. In particular, `module.exports` is used for defining what
@@ -743,7 +743,7 @@ extensions gets slower with each registered extension.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.17"]}}} />
 
-* [`module`](/api/modules#the-module-object) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
+* [`module`](/api/v19/modules#the-module-object) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
 The `Module` object representing the entry script loaded when the Node.js
 process launched, or `undefined` if the entry point of the program is not a
@@ -969,7 +969,7 @@ Deprecated: Please use [`require.main`][] and [`module.children`][] instead.
 
 </Stability>
 
-* [`module`](/api/modules#the-module-object) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
+* [`module`](/api/v19/modules#the-module-object) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
 The module that first required this one, or `null` if the current module is the
 entry point of the current process, or `undefined` if the module was loaded by

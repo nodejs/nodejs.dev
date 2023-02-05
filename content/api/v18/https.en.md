@@ -81,8 +81,8 @@ An [`Agent`][] object for HTTPS similar to [`http.Agent`][]. See
 
 <Metadata data={{"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
 
-* `line` [`Buffer`](/api/buffer#buffer) Line of ASCII text, in NSS `SSLKEYLOGFILE` format.
-* `tlsSocket` [`tls.TLSSocket`](/api/tls#tlstlssocket) The `tls.TLSSocket` instance on which it was
+* `line` [`Buffer`](/api/v18/buffer#buffer) Line of ASCII text, in NSS `SSLKEYLOGFILE` format.
+* `tlsSocket` [`tls.TLSSocket`](/api/v18/tls#tlstlssocket) The `tls.TLSSocket` instance on which it was
   generated.
 
 The `keylog` event is emitted when key material is generated or received by a
@@ -105,7 +105,7 @@ https.globalAgent.on('keylog', (line, tlsSocket) => {
 
 <Metadata data={{"update":{"type":"added","version":["v0.3.4"]}}} />
 
-* Extends: [`tls.Server`](/api/tls#tlsserver)
+* Extends: [`tls.Server`](/api/v18/tls#tlsserver)
 
 See [`http.Server`][] for more information.
 
@@ -114,7 +114,7 @@ See [`http.Server`][] for more information.
 <Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`https.Server`](/api/https#httpsserver)
+* Returns: [`https.Server`](/api/v18/https#httpsserver)
 
 See [`server.close()`][] in the `node:http` module.
 
@@ -163,7 +163,7 @@ See [`server.requestTimeout`][] in the `node:http` module.
 
 * `msecs` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `120000` (2 minutes)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`https.Server`](/api/https#httpsserver)
+* Returns: [`https.Server`](/api/v18/https#httpsserver)
 
 See [`server.setTimeout()`][] in the `node:http` module.
 
@@ -190,7 +190,7 @@ See [`server.keepAliveTimeout`][] in the `node:http` module.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Accepts `options` from [`tls.createServer()`][],
   [`tls.createSecureContext()`][] and [`http.createServer()`][].
 * `requestListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A listener to be added to the `'request'` event.
-* Returns: [`https.Server`](/api/https#httpsserver)
+* Returns: [`https.Server`](/api/v18/https#httpsserver)
 
 ```js
 // curl -k https://localhost:8000/
@@ -231,8 +231,8 @@ https.createServer(options, (req, res) => {
 
 <Metadata data={{"changes":[{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
 
-* `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api)
-* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) Accepts the same `options` as
+* `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api)
+* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api) Accepts the same `options` as
   [`https.request()`][], with the `method` always set to `GET`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
@@ -270,14 +270,14 @@ Global instance of [`https.Agent`][] for all HTTPS client requests.
 
 <Metadata data={{"changes":[{"version":["v16.7.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39310","description":"When using a `URL` object parsed username and password will now be properly URI decoded."},{"version":["v14.1.0","v13.14.0"],"pr-url":"https://github.com/nodejs/node/pull/32786","description":"The `highWaterMark` option is accepted now."},{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v9.3.0","pr-url":"https://github.com/nodejs/node/pull/14903","description":"The `options` parameter can now include `clientCertEngine`."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
 
-* `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api)
-* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) Accepts all `options` from
+* `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api)
+* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api) Accepts all `options` from
   [`http.request()`][], with some differences in default values:
   * `protocol` **Default:** `'https:'`
   * `port` **Default:** `443`
   * `agent` **Default:** `https.globalAgent`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`http.ClientRequest`](/api/http#httpclientrequest)
+* Returns: [`http.ClientRequest`](/api/v18/http#httpclientrequest)
 
 Makes a request to a secure web server.
 

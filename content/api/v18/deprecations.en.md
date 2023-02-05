@@ -1587,7 +1587,7 @@ an explicit [`"exports"` or `"main"` entry][] with the exact file extension.
 
 Type: Runtime
 
-The `'gc'`, `'http2'`, and `'http'` [`PerformanceEntry`](/api/perf_hooks#performanceentry) object types have
+The `'gc'`, `'http2'`, and `'http'` [`PerformanceEntry`](/api/v18/perf_hooks#performanceentry) object types have
 additional properties assigned to them that provide additional information.
 These properties are now available within the standard `detail` property
 of the `PerformanceEntry` object. The existing accessors have been
@@ -1629,7 +1629,7 @@ for package `"exports"` and `"imports"` pattern resolutions.
 
 Type: Documentation-only
 
-Move to [`Stream`](/api/stream#stream) API instead, as the [`http.ClientRequest`][],
+Move to [`Stream`](/api/v18/stream#stream) API instead, as the [`http.ClientRequest`][],
 [`http.ServerResponse`][], and [`http.IncomingMessage`][] are all stream-based.
 Check `stream.destroyed` instead of the `.aborted` property, and listen for
 `'close'` instead of `'abort'`, `'aborted'` event.

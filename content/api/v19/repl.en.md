@@ -367,7 +367,7 @@ function myWriter(output) {
 <Metadata data={{"update":{"type":"added","version":["v0.1.91"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) See [`repl.start()`][]
-* Extends: [`readline.Interface`](/api/readline#readlineinterface)
+* Extends: [`readline.Interface`](/api/v19/readline#readlineinterface)
 
 Instances of `repl.REPLServer` are created using the [`repl.start()`][] method
 or directly using the JavaScript `new` keyword.
@@ -540,7 +540,7 @@ Returns `true` if `keyword` is a valid keyword, otherwise `false`.
 * `historyPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) the path to the history file
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) called when history writes are ready or upon error
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `repl` [`repl.REPLServer`](/api/repl#replserver)
+  * `repl` [`repl.REPLServer`](/api/v19/repl#replserver)
 
 Initializes a history log file for the REPL instance. When executing the
 Node.js binary and using the command-line REPL, a history file is initialized
@@ -563,9 +563,9 @@ A list of the names of all Node.js modules, e.g., `'http'`.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `prompt` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The input prompt to display. **Default:** `'> '`
     (with a trailing space).
-  * `input` [`stream.Readable`](/api/stream#streamreadable) The `Readable` stream from which REPL input will
+  * `input` [`stream.Readable`](/api/v19/stream#streamreadable) The `Readable` stream from which REPL input will
     be read. **Default:** `process.stdin`.
-  * `output` [`stream.Writable`](/api/stream#streamwritable) The `Writable` stream to which REPL output will
+  * `output` [`stream.Writable`](/api/v19/stream#streamwritable) The `Writable` stream to which REPL output will
     be written. **Default:** `process.stdout`.
   * `terminal` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If `true`, specifies that the `output` should be
     treated as a TTY terminal.
@@ -605,7 +605,7 @@ A list of the names of all Node.js modules, e.g., `'http'`.
     previews or not. **Default:** `true` with the default eval function and
     `false` in case a custom eval function is used. If `terminal` is falsy, then
     there are no previews and the value of `preview` has no effect.
-* Returns: [`repl.REPLServer`](/api/repl#replserver)
+* Returns: [`repl.REPLServer`](/api/v19/repl#replserver)
 
 The `repl.start()` method creates and starts a [`repl.REPLServer`][] instance.
 

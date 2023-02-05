@@ -159,12 +159,12 @@ There is no equivalent to this API in browsers.
 
 <Metadata data={{"update":{"type":"added","version":["v11.13.0"]}}} />
 
-* `port` [`MessagePort`](/api/worker_threads#messageport) The message port to transfer.
+* `port` [`MessagePort`](/api/v19/worker_threads#messageport) The message port to transfer.
 
 * `contextifiedSandbox` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) A [contextified][] object as returned by the
   `vm.createContext()` method.
 
-* Returns: [`MessagePort`](/api/worker_threads#messageport)
+* Returns: [`MessagePort`](/api/v19/worker_threads#messageport)
 
 Transfer a `MessagePort` to a different [`vm`][] Context. The original `port`
 object is rendered unusable, and the returned `MessagePort` instance
@@ -183,7 +183,7 @@ events using it.
 
 <Metadata data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
-* [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`MessagePort`](/api/worker_threads#messageport)
+* [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`MessagePort`](/api/v19/worker_threads#messageport)
 
 If this thread is a [`Worker`][], this is a [`MessagePort`][]
 allowing communication with the parent thread. Messages sent using
@@ -213,7 +213,7 @@ if (isMainThread) {
 
 <Metadata data={{"changes":[{"version":"v15.12.0","pr-url":"https://github.com/nodejs/node/pull/37535","description":"The port argument can also refer to a `BroadcastChannel` now."}],"update":{"type":"added","version":["v12.3.0"]}}} />
 
-* `port` [`MessagePort`](/api/worker_threads#messageport) | [`BroadcastChannel`](/api/worker_threads#broadcastchannel-extends-eventtarget)
+* `port` [`MessagePort`](/api/v19/worker_threads#messageport) | [`BroadcastChannel`](/api/v19/worker_threads#broadcastchannel-extends-eventtarget)
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -419,7 +419,7 @@ port2.postMessage({ foo: 'bar' });
 
 <Metadata data={{"changes":[{"version":["v14.7.0"],"pr-url":"https://github.com/nodejs/node/pull/34057","description":"This class now inherits from `EventTarget` rather than from `EventEmitter`."}],"update":{"type":"added","version":["v10.5.0"]}}} />
 
-* Extends: [`EventTarget`](/api/events#eventtarget)
+* Extends: [`EventTarget`](/api/v19/events#eventtarget)
 
 Instances of the `worker.MessagePort` class represent one end of an
 asynchronous, two-way communications channel. It can be used to transfer
@@ -506,14 +506,14 @@ In particular, the significant differences to `JSON` are:
   and `SharedArrayBuffer`s.
 * `value` may contain [`WebAssembly.Module`][] instances.
 * `value` may not contain native (C++-backed) objects other than:
-  * [`CryptoKey`](/api/webcrypto#cryptokey)s,
-  * [`FileHandle`](/api/fs#filehandle)s,
-  * [`Histogram`](/api/perf_hooks#histogram)s,
-  * [`KeyObject`](/api/crypto#keyobject)s,
-  * [`MessagePort`](/api/worker_threads#messageport)s,
-  * [`net.BlockList`](/api/net#netblocklist)s,
-  * [`net.SocketAddress`](/api/net#netsocketaddress)es,
-  * [`X509Certificate`](/api/crypto#x509certificate)s.
+  * [`CryptoKey`](/api/v19/webcrypto#cryptokey)s,
+  * [`FileHandle`](/api/v19/fs#filehandle)s,
+  * [`Histogram`](/api/v19/perf_hooks#histogram)s,
+  * [`KeyObject`](/api/v19/crypto#keyobject)s,
+  * [`MessagePort`](/api/v19/worker_threads#messageport)s,
+  * [`net.BlockList`](/api/v19/net#netblocklist)s,
+  * [`net.SocketAddress`](/api/v19/net#netsocketaddress)es,
+  * [`X509Certificate`](/api/v19/crypto#x509certificate)s.
 
 ```js
 const { MessageChannel } = require('node:worker_threads');
@@ -717,7 +717,7 @@ listeners for the event exist.
 
 <Metadata data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
-* Extends: [`EventEmitter`](/api/events#eventemitter)
+* Extends: [`EventEmitter`](/api/v19/events#eventemitter)
 
 The `Worker` class represents an independent JavaScript execution thread.
 Most Node.js APIs are available inside of it.
@@ -791,7 +791,7 @@ if (isMainThread) {
 
 <Metadata data={{"changes":[{"version":"v14.9.0","pr-url":"https://github.com/nodejs/node/pull/34584","description":"The `filename` parameter can be a WHATWG `URL` object using `data:` protocol."},{"version":"v14.9.0","pr-url":"https://github.com/nodejs/node/pull/34394","description":"The `trackUnmanagedFds` option was set to `true` by default."},{"version":["v14.6.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34303","description":"The `trackUnmanagedFds` option was introduced."},{"version":["v13.13.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32278","description":"The `transferList` option was introduced."},{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31664","description":"The `filename` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":["v13.4.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30559","description":"The `argv` option was introduced."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/26628","description":"The `resourceLimits` option was introduced."}],"update":{"type":"added","version":["v10.5.0"]}}} />
 
-* `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) The path to the Worker's main script or module. Must
+* `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v19/url#the-whatwg-url-api) The path to the Worker's main script or module. Must
   be either an absolute path or a relative path (i.e. relative to the
   current working directory) starting with `./` or `../`, or a WHATWG `URL`
   object using `file:` or `data:` protocol.
@@ -1021,7 +1021,7 @@ If the worker has stopped, the return value is an empty object.
 
 <Metadata data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
-* [`stream.Readable`](/api/stream#streamreadable)
+* [`stream.Readable`](/api/v19/stream#streamreadable)
 
 This is a readable stream which contains data written to [`process.stderr`][]
 inside the worker thread. If `stderr: true` was not passed to the
@@ -1032,7 +1032,7 @@ inside the worker thread. If `stderr: true` was not passed to the
 
 <Metadata data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
-* [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`stream.Writable`](/api/stream#streamwritable)
+* [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`stream.Writable`](/api/v19/stream#streamwritable)
 
 If `stdin: true` was passed to the [`Worker`][] constructor, this is a
 writable stream. The data written to this stream will be made available in
@@ -1042,7 +1042,7 @@ the worker thread as [`process.stdin`][].
 
 <Metadata data={{"update":{"type":"added","version":["v10.5.0"]}}} />
 
-* [`stream.Readable`](/api/stream#streamreadable)
+* [`stream.Readable`](/api/v19/stream#streamreadable)
 
 This is a readable stream which contains data written to [`process.stdout`][]
 inside the worker thread. If `stdout: true` was not passed to the
@@ -1081,7 +1081,7 @@ active handle in the event system. If the worker is already `unref()`ed calling
 
 #### Synchronous blocking of stdio
 
-`Worker`s utilize message passing via [`MessagePort`](/api/worker_threads#messageport) to implement interactions
+`Worker`s utilize message passing via [`MessagePort`](/api/v19/worker_threads#messageport) to implement interactions
 with `stdio`. This means that `stdio` output originating from a `Worker` can
 get blocked by synchronous code on the receiving end that is blocking the
 Node.js event loop.

@@ -159,7 +159,7 @@ also be used for other use cases requiring worker processes.
 
 <Metadata data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
-* Extends: [`EventEmitter`](/api/events#eventemitter)
+* Extends: [`EventEmitter`](/api/v16/events#eventemitter)
 
 A `Worker` object contains all public information and method about a worker.
 In the primary it can be obtained using `cluster.workers`. In a worker
@@ -372,7 +372,7 @@ It is not emitted in the worker.
 
 <Metadata data={{"changes":[{"version":"v7.3.0","pr-url":"https://github.com/nodejs/node/pull/10019","description":"This method now returns a reference to `worker`."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
-* Returns: [`cluster.Worker`](/api/cluster#worker) A reference to `worker`.
+* Returns: [`cluster.Worker`](/api/v16/cluster#worker) A reference to `worker`.
 
 In a worker, this function will close all servers, wait for the `'close'` event
 on those servers, and then disconnect the IPC channel.
@@ -577,7 +577,7 @@ it is [`kill()`][].
 
 <Metadata data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
-* [`ChildProcess`](/api/child_process#childprocess)
+* [`ChildProcess`](/api/v16/child_process#childprocess)
 
 All workers are created using [`child_process.fork()`][], the returned object
 from this function is stored as `.process`. In a worker, the global `process`
@@ -594,7 +594,7 @@ accidental disconnection.
 <Metadata data={{"changes":[{"version":"v4.0.0","pr-url":"https://github.com/nodejs/node/pull/2620","description":"The `callback` parameter is supported now."}],"update":{"type":"added","version":["v0.7.0"]}}} />
 
 * `message` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-* `sendHandle` [`Handle`](/api/net#serverlistenhandle-backlog-callback)
+* `sendHandle` [`Handle`](/api/v16/net#serverlistenhandle-backlog-callback)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `options` argument, if present, is an object used to
   parameterize the sending of certain types of handles. `options` supports
   the following properties:
@@ -630,7 +630,7 @@ if (cluster.isPrimary) {
 
 <Metadata data={{"update":{"type":"added","version":["v0.7.9"]}}} />
 
-* `worker` [`cluster.Worker`](/api/cluster#worker)
+* `worker` [`cluster.Worker`](/api/v16/cluster#worker)
 
 Emitted after the worker IPC channel has disconnected. This can occur when a
 worker exits gracefully, is killed, or is disconnected manually (such as with
@@ -650,7 +650,7 @@ cluster.on('disconnect', (worker) => {
 
 <Metadata data={{"update":{"type":"added","version":["v0.7.9"]}}} />
 
-* `worker` [`cluster.Worker`](/api/cluster#worker)
+* `worker` [`cluster.Worker`](/api/v16/cluster#worker)
 * `code` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The exit code, if it exited normally.
 * `signal` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name of the signal (e.g. `'SIGHUP'`) that caused
   the process to be killed.
@@ -673,7 +673,7 @@ See [`child_process` event: `'exit'`][].
 
 <Metadata data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
-* `worker` [`cluster.Worker`](/api/cluster#worker)
+* `worker` [`cluster.Worker`](/api/v16/cluster#worker)
 
 When a new worker is forked the cluster module will emit a `'fork'` event.
 This can be used to log worker activity, and create a custom timeout.
@@ -700,7 +700,7 @@ cluster.on('exit', (worker, code, signal) => {
 
 <Metadata data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
-* `worker` [`cluster.Worker`](/api/cluster#worker)
+* `worker` [`cluster.Worker`](/api/v16/cluster#worker)
 * `address` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 After calling `listen()` from a worker, when the `'listening'` event is emitted
@@ -730,7 +730,7 @@ The `addressType` is one of:
 
 <Metadata data={{"changes":[{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5361","description":"The `worker` parameter is passed now; see below for details."}],"update":{"type":"added","version":["v2.5.0"]}}} />
 
-* `worker` [`cluster.Worker`](/api/cluster#worker)
+* `worker` [`cluster.Worker`](/api/v16/cluster#worker)
 * `message` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `handle` [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -742,7 +742,7 @@ See [`child_process` event: `'message'`][].
 
 <Metadata data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
-* `worker` [`cluster.Worker`](/api/cluster#worker)
+* `worker` [`cluster.Worker`](/api/v16/cluster#worker)
 
 After forking a new worker, the worker should respond with an online message.
 When the primary receives an online message it will emit this event.
@@ -791,7 +791,7 @@ This can only be called from the primary process.
 <Metadata data={{"update":{"type":"added","version":["v0.6.0"]}}} />
 
 * `env` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Key/value pairs to add to worker process environment.
-* Returns: [`cluster.Worker`](/api/cluster#worker)
+* Returns: [`cluster.Worker`](/api/v16/cluster#worker)
 
 Spawn a new worker process.
 

@@ -25,7 +25,7 @@ const querystring = require('node:querystring');
 ```
 
 The `querystring` API is considered Legacy. While it is still maintained,
-new code should use the [`URLSearchParams`](/api/url#urlsearchparams) API instead.
+new code should use the [`URLSearchParams`](/api/v16/url#urlsearchparams) API instead.
 
 ### <DataTag tag="M" /> `querystring.decode()`
 

@@ -75,7 +75,7 @@ IP subnets.
 
 <Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-* `address` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`net.SocketAddress`](/api/net#netsocketaddress) An IPv4 or IPv6 address.
+* `address` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`net.SocketAddress`](/api/v16/net#netsocketaddress) An IPv4 or IPv6 address.
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Either `'ipv4'` or `'ipv6'`. **Default:** `'ipv4'`.
 
 Adds a rule to block the given IP address.
@@ -84,9 +84,9 @@ Adds a rule to block the given IP address.
 
 <Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-* `start` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`net.SocketAddress`](/api/net#netsocketaddress) The starting IPv4 or IPv6 address in the
+* `start` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`net.SocketAddress`](/api/v16/net#netsocketaddress) The starting IPv4 or IPv6 address in the
   range.
-* `end` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`net.SocketAddress`](/api/net#netsocketaddress) The ending IPv4 or IPv6 address in the range.
+* `end` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`net.SocketAddress`](/api/v16/net#netsocketaddress) The ending IPv4 or IPv6 address in the range.
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Either `'ipv4'` or `'ipv6'`. **Default:** `'ipv4'`.
 
 Adds a rule to block a range of IP addresses from `start` (inclusive) to
@@ -96,7 +96,7 @@ Adds a rule to block a range of IP addresses from `start` (inclusive) to
 
 <Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-* `net` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`net.SocketAddress`](/api/net#netsocketaddress) The network IPv4 or IPv6 address.
+* `net` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`net.SocketAddress`](/api/v16/net#netsocketaddress) The network IPv4 or IPv6 address.
 * `prefix` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of CIDR prefix bits. For IPv4, this
   must be a value between `0` and `32`. For IPv6, this must be between
   `0` and `128`.
@@ -108,7 +108,7 @@ Adds a rule to block a range of IP addresses specified as a subnet mask.
 
 <Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-* `address` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`net.SocketAddress`](/api/net#netsocketaddress) The IP address to check
+* `address` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`net.SocketAddress`](/api/v16/net#netsocketaddress) The IP address to check
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Either `'ipv4'` or `'ipv6'`. **Default:** `'ipv4'`.
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -183,7 +183,7 @@ The list of rules added to the blocklist.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* Extends: [`EventEmitter`](/api/events#eventemitter)
+* Extends: [`EventEmitter`](/api/v16/events#eventemitter)
 
 This class is used to create a TCP or [IPC][] server.
 
@@ -193,7 +193,7 @@ This class is used to create a TCP or [IPC][] server.
   [`net.createServer([options][, connectionListener])`][`net.createServer()`].
 * `connectionListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Automatically set as a listener for the
   [`'connection'`][] event.
-* Returns: [`net.Server`](/api/net#netserver)
+* Returns: [`net.Server`](/api/v16/net#netserver)
 
 `net.Server` is an [`EventEmitter`][] with the following events:
 
@@ -208,7 +208,7 @@ event is not emitted until all connections are ended.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* [`net.Socket`](/api/net#netsocket) The connection object
+* [`net.Socket`](/api/v16/net#netsocket) The connection object
 
 Emitted when a new connection is made. `socket` is an instance of
 `net.Socket`.
@@ -282,7 +282,7 @@ emitted or after calling `server.close()`.
 <Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called when the server is closed.
-* Returns: [`net.Server`](/api/net#netserver)
+* Returns: [`net.Server`](/api/v16/net#netserver)
 
 Stops the server from accepting new connections and keeps existing
 connections. This function is asynchronous, the server is finally closed
@@ -296,7 +296,7 @@ was not open when it was closed.
 <Metadata data={{"update":{"type":"added","version":["v0.9.7"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`net.Server`](/api/net#netserver)
+* Returns: [`net.Server`](/api/v16/net#netserver)
 
 Asynchronously get the number of concurrent connections on the server. Works
 when sockets were sent to forks.
@@ -357,7 +357,7 @@ server.on('error', (e) => {
 * `handle` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `backlog` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Common parameter of [`server.listen()`][] functions
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`net.Server`](/api/net#netserver)
+* Returns: [`net.Server`](/api/v16/net#netserver)
 
 Start a server listening for connections on a given `handle` that has
 already been bound to a port, a Unix domain socket, or a Windows named pipe.
@@ -387,10 +387,10 @@ Listening on a file descriptor is not supported on Windows.
   * `ipv6Only` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) For TCP servers, setting `ipv6Only` to `true` will
     disable dual-stack support, i.e., binding to host `::` won't make
     `0.0.0.0` be bound. **Default:** `false`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) An AbortSignal that may be used to close a listening server.
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) An AbortSignal that may be used to close a listening server.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   functions.
-* Returns: [`net.Server`](/api/net#netserver)
+* Returns: [`net.Server`](/api/v16/net#netserver)
 
 If `port` is specified, it behaves the same as
 [`server.listen([port[, host[, backlog]]][, callback])`][`server.listen(port)`].
@@ -442,7 +442,7 @@ controller.abort();
   [Identifying paths for IPC connections][].
 * `backlog` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Common parameter of [`server.listen()`][] functions.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function).
-* Returns: [`net.Server`](/api/net#netserver)
+* Returns: [`net.Server`](/api/v16/net#netserver)
 
 Start an [IPC][] server listening for connections on the given `path`.
 
@@ -454,7 +454,7 @@ Start an [IPC][] server listening for connections on the given `path`.
 * `host` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `backlog` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Common parameter of [`server.listen()`][] functions.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function).
-* Returns: [`net.Server`](/api/net#netserver)
+* Returns: [`net.Server`](/api/v16/net#netserver)
 
 Start a TCP server listening for connections on the given `port` and `host`.
 
@@ -492,7 +492,7 @@ with [`child_process.fork()`][].
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-* Returns: [`net.Server`](/api/net#netserver)
+* Returns: [`net.Server`](/api/v16/net#netserver)
 
 Opposite of `unref()`, calling `ref()` on a previously `unref`ed server will
 _not_ let the program exit if it's the only server left (the default behavior).
@@ -502,7 +502,7 @@ If the server is `ref`ed calling `ref()` again will have no effect.
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-* Returns: [`net.Server`](/api/net#netserver)
+* Returns: [`net.Server`](/api/v16/net#netserver)
 
 Calling `unref()` on a server will allow the program to exit if this is the only
 active server in the event system. If the server is already `unref`ed calling
@@ -512,7 +512,7 @@ active server in the event system. If the server is already `unref`ed calling
 
 <Metadata data={{"update":{"type":"added","version":["v0.3.4"]}}} />
 
-* Extends: [`stream.Duplex`](/api/stream#streamduplex)
+* Extends: [`stream.Duplex`](/api/v16/stream#streamduplex)
 
 This class is an abstraction of a TCP socket or a streaming [IPC][] endpoint
 (uses named pipes on Windows, and Unix domain sockets otherwise). It is also
@@ -542,9 +542,9 @@ it to interact with the client.
     otherwise ignored. **Default:** `false`.
   * `writable` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Allow writes on the socket when an `fd` is passed,
     otherwise ignored. **Default:** `false`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) An Abort signal that may be used to destroy the
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) An Abort signal that may be used to destroy the
     socket.
-* Returns: [`net.Socket`](/api/net#netsocket)
+* Returns: [`net.Socket`](/api/v16/net#netsocket)
 
 Creates a new socket object.
 
@@ -571,7 +571,7 @@ See [`net.createConnection()`][].
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
+* [`Buffer`](/api/v16/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
 Emitted when data is received. The argument `data` will be a `Buffer` or
 `String`. Encoding of data is set by [`socket.setEncoding()`][].
@@ -704,7 +704,7 @@ Possible signatures:
   for [IPC][] connections.
 * [`socket.connect(port[, host][, connectListener])`][`socket.connect(port)`]
   for TCP connections.
-* Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The socket itself.
 
 This function is asynchronous. When the connection is established, the
 [`'connect'`][] event will be emitted. If there is a problem connecting,
@@ -724,7 +724,7 @@ behavior.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `connectListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Common parameter of [`socket.connect()`][]
   methods. Will be added as a listener for the [`'connect'`][] event once.
-* Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The socket itself.
 
 Initiate a connection on a given socket. Normally this method is not needed,
 the socket should be created and opened with [`net.createConnection()`][]. Use
@@ -763,7 +763,7 @@ For both types, available `options` include:
   The socket will emit events like `'error'`, `'end'`, and `'close'`
   as usual. Methods like `pause()` and `resume()` will also behave as
   expected.
-  * `buffer` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Either a reusable chunk of memory to
+  * `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Either a reusable chunk of memory to
     use for storing incoming data or a function that returns such.
   * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) This function is called for every chunk of incoming
     data. Two arguments are passed to it: the number of bytes written to
@@ -794,7 +794,7 @@ net.connect({
   [Identifying paths for IPC connections][].
 * `connectListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Common parameter of [`socket.connect()`][]
   methods. Will be added as a listener for the [`'connect'`][] event once.
-* Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The socket itself.
 
 Initiate an [IPC][] connection on the given socket.
 
@@ -810,7 +810,7 @@ called with `{ path: path }` as `options`.
 * `host` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Host the client should connect to.
 * `connectListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Common parameter of [`socket.connect()`][]
   methods. Will be added as a listener for the [`'connect'`][] event once.
-* Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The socket itself.
 
 Initiate a TCP connection on the given socket.
 
@@ -837,7 +837,7 @@ callback is a listener for the `'connect'` event.
 <Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `error` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-* Returns: [`net.Socket`](/api/net#netsocket)
+* Returns: [`net.Socket`](/api/v16/net#netsocket)
 
 Ensures that no more I/O activity happens on this socket.
 Destroys the stream and closes the connection.
@@ -855,10 +855,10 @@ See [`writable.destroyed`][] for further details.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Only used when data is `string`. **Default:** `'utf8'`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Optional callback for when the socket is finished.
-* Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The socket itself.
 
 Half-closes the socket. i.e., it sends a FIN packet. It is possible the
 server will still send some data.
@@ -894,7 +894,7 @@ The string representation of the local IP family. `'IPv4'` or `'IPv6'`.
 
 #### <DataTag tag="M" /> `socket.pause()`
 
-* Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The socket itself.
 
 Pauses the reading of data. That is, [`'data'`][] events will not be emitted.
 Useful to throttle back an upload.
@@ -913,7 +913,7 @@ has not yet been called or because it is still in the process of connecting
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-* Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The socket itself.
 
 Opposite of `unref()`, calling `ref()` on a previously `unref`ed socket will
 _not_ let the program exit if it's the only socket left (the default behavior).
@@ -949,7 +949,7 @@ The numeric representation of the remote port. For example, `80` or `21`.
 
 <Metadata data={{"update":{"type":"added","version":["v16.17.0"]}}} />
 
-* Returns: [`net.Socket`](/api/net#netsocket)
+* Returns: [`net.Socket`](/api/v16/net#netsocket)
 
 Close the TCP connection by sending an RST packet and destroy the stream.
 If this TCP socket is in connecting status, it will send an RST packet and destroy this TCP socket once it is connected.
@@ -958,7 +958,7 @@ If this is not a TCP socket (for example, a pipe), calling this method will imme
 
 #### <DataTag tag="M" /> `socket.resume()`
 
-* Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The socket itself.
 
 Resumes reading after a call to [`socket.pause()`][].
 
@@ -967,7 +967,7 @@ Resumes reading after a call to [`socket.pause()`][].
 <Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The socket itself.
 
 Set the encoding for the socket as a [Readable Stream][]. See
 [`readable.setEncoding()`][] for more information.
@@ -978,7 +978,7 @@ Set the encoding for the socket as a [Readable Stream][]. See
 
 * `enable` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `false`
 * `initialDelay` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
-* Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The socket itself.
 
 Enable/disable keep-alive functionality, and optionally set the initial
 delay before the first keepalive probe is sent on an idle socket.
@@ -1000,7 +1000,7 @@ Enabling the keep-alive functionality will set the following socket options:
 <Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
 * `noDelay` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `true`
-* Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The socket itself.
 
 Enable/disable the use of Nagle's algorithm.
 
@@ -1019,7 +1019,7 @@ algorithm.
 
 * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The socket itself.
 
 Sets the socket to timeout after `timeout` milliseconds of inactivity on
 the socket. By default `net.Socket` do not have a timeout.
@@ -1054,7 +1054,7 @@ It is `undefined` if a timeout has not been set.
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-* Returns: [`net.Socket`](/api/net#netsocket) The socket itself.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The socket itself.
 
 Calling `unref()` on a socket will allow the program to exit if this is the only
 active socket in the event system. If the socket is already `unref`ed calling
@@ -1064,7 +1064,7 @@ active socket in the event system. If the socket is already `unref`ed calling
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Only used when data is `string`. **Default:** `utf8`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1114,7 +1114,7 @@ Possible signatures:
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `connectListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`net.Socket`](/api/net#netsocket)
+* Returns: [`net.Socket`](/api/v16/net#netsocket)
 
 Alias to
 [`net.createConnection(options[, connectListener])`][`net.createConnection(options)`].
@@ -1125,7 +1125,7 @@ Alias to
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `connectListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`net.Socket`](/api/net#netsocket)
+* Returns: [`net.Socket`](/api/v16/net#netsocket)
 
 Alias to
 [`net.createConnection(path[, connectListener])`][`net.createConnection(path)`].
@@ -1137,7 +1137,7 @@ Alias to
 * `port` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `host` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `connectListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`net.Socket`](/api/net#netsocket)
+* Returns: [`net.Socket`](/api/v16/net#netsocket)
 
 Alias to
 [`net.createConnection(port[, host][, connectListener])`][`net.createConnection(port, host)`].
@@ -1173,7 +1173,7 @@ The [`net.connect()`][] function is an alias to this function.
 * `connectListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Common parameter of the
   [`net.createConnection()`][] functions. If supplied, will be added as
   a listener for the [`'connect'`][] event on the returned socket once.
-* Returns: [`net.Socket`](/api/net#netsocket) The newly created socket used to start the connection.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The newly created socket used to start the connection.
 
 For available options, see
 [`new net.Socket([options])`][`new net.Socket(options)`]
@@ -1221,7 +1221,7 @@ const client = net.createConnection({ path: '/tmp/echo.sock' });
   [`net.createConnection()`][] functions, an "once" listener for the
   `'connect'` event on the initiating socket. Will be passed to
   [`socket.connect(path[, connectListener])`][`socket.connect(path)`].
-* Returns: [`net.Socket`](/api/net#netsocket) The newly created socket used to start the connection.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The newly created socket used to start the connection.
 
 Initiates an [IPC][] connection.
 
@@ -1243,7 +1243,7 @@ then returns the `net.Socket` that starts the connection.
   [`net.createConnection()`][] functions, an "once" listener for the
   `'connect'` event on the initiating socket. Will be passed to
   [`socket.connect(port[, host][, connectListener])`][`socket.connect(port)`].
-* Returns: [`net.Socket`](/api/net#netsocket) The newly created socket used to start the connection.
+* Returns: [`net.Socket`](/api/v16/net#netsocket) The newly created socket used to start the connection.
 
 Initiates a TCP connection.
 
@@ -1274,7 +1274,7 @@ then returns the `net.Socket` that starts the connection.
 * `connectionListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Automatically set as a listener for the
   [`'connection'`][] event.
 
-* Returns: [`net.Server`](/api/net#netserver)
+* Returns: [`net.Server`](/api/v16/net#netserver)
 
 Creates a new TCP or [IPC][] server.
 

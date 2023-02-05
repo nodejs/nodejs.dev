@@ -73,16 +73,16 @@ or `require('node:stream').promises`.
 <Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 * `streams` Stream\[]|Iterable\[]|AsyncIterable\[]|Function\[]
-* `source` [`Stream`](/api/stream#stream) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+* `source` [`Stream`](/api/v18/stream#stream) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
-* `...transforms` [`Stream`](/api/stream#stream) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+* `...transforms` [`Stream`](/api/v18/stream#stream) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `source` [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
   * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
-* `destination` [`Stream`](/api/stream#stream) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+* `destination` [`Stream`](/api/v18/stream#stream) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `source` [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
   * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal)
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal)
   * `end` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills when the pipeline is complete.
 
@@ -242,12 +242,12 @@ The `pipeline` API provides [callback version][stream-pipeline]:
 
 <Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-* `stream` [`Stream`](/api/stream#stream)
+* `stream` [`Stream`](/api/v18/stream#stream)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `error` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
   * `readable` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
   * `writable` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
-  * `signal`: [`AbortSignal`](/api/globals#abortsignal) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
+  * `signal`: [`AbortSignal`](/api/v18/globals#abortsignal) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills when the stream is no
   longer readable or writable.
 
@@ -543,7 +543,7 @@ writer.end('This is the end\n');
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
-* `src` [`stream.Readable`](/api/stream#streamreadable) source stream that is piping to this writable
+* `src` [`stream.Readable`](/api/v18/stream#streamreadable) source stream that is piping to this writable
 
 The `'pipe'` event is emitted when the [`stream.pipe()`][] method is called on
 a readable stream, adding this writable to its set of destinations.
@@ -562,7 +562,7 @@ reader.pipe(writer);
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
-* `src` [`stream.Readable`](/api/stream#streamreadable) The source stream that
+* `src` [`stream.Readable`](/api/v18/stream#streamreadable) The source stream that
   [unpiped][`stream.unpipe()`] this writable
 
 The `'unpipe'` event is emitted when the [`stream.unpipe()`][] method is called
@@ -683,7 +683,7 @@ console.log(myStream.destroyed); // true
 
 <Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34101","description":"The `callback` is invoked before 'finish' or on error."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/29747","description":"The `callback` is invoked if 'finish' or 'error' is emitted."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18780","description":"This method now returns a reference to `writable`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."}],"update":{"type":"added","version":["v0.9.4"]}}} />
 
-* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Optional data to write. For streams
+* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Optional data to write. For streams
   not operating in object mode, `chunk` must be a string, `Buffer` or
   `Uint8Array`. For object mode streams, `chunk` may be any JavaScript value
   other than `null`.
@@ -851,7 +851,7 @@ Getter for the property `objectMode` of a given `Writable` stream.
 
 <Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6170","description":"Passing `null` as the `chunk` parameter will always be considered invalid now, even in object mode."}],"update":{"type":"added","version":["v0.9.4"]}}} />
 
-* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Optional data to write. For streams
+* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Optional data to write. For streams
   not operating in object mode, `chunk` must be a string, `Buffer` or
   `Uint8Array`. For object mode streams, `chunk` may be any JavaScript value
   other than `null`.
@@ -1058,7 +1058,7 @@ created with the `emitClose` option.
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
-* `chunk` [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The chunk of data. For streams that are not
+* `chunk` [`Buffer`](/api/v18/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The chunk of data. For streams that are not
   operating in object mode, the chunk will be either a string or `Buffer`.
   For streams that are in object mode, the chunk can be any JavaScript value
   other than `null`.
@@ -1280,10 +1280,10 @@ event listener.
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
-* `destination` [`stream.Writable`](/api/stream#streamwritable) The destination for writing data
+* `destination` [`stream.Writable`](/api/v18/stream#streamwritable) The destination for writing data
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Pipe options
   * `end` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) End the writer when the reader ends. **Default:** `true`.
-* Returns: [`stream.Writable`](/api/stream#streamwritable) The _destination_, allowing for a chain of pipes if
+* Returns: [`stream.Writable`](/api/v18/stream#streamwritable) The _destination_, allowing for a chain of pipes if
   it is a [`Duplex`][] or a [`Transform`][] stream
 
 The `readable.pipe()` method attaches a [`Writable`][] stream to the `readable`,
@@ -1343,7 +1343,7 @@ closed until the Node.js process exits, regardless of the specified options.
 <Metadata data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
 * `size` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Optional argument to specify how much data to read.
-* Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
+* Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 The `readable.read()` method reads data out of the internal buffer and
 returns it. If no data is available to be read, `null` is returned. By default,
@@ -1575,7 +1575,7 @@ readable.on('data', (chunk) => {
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
-* `destination` [`stream.Writable`](/api/stream#streamwritable) Optional specific stream to unpipe
+* `destination` [`stream.Writable`](/api/v18/stream#streamwritable) Optional specific stream to unpipe
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
 The `readable.unpipe()` method detaches a `Writable` stream previously attached
@@ -1605,7 +1605,7 @@ setTimeout(() => {
 
 <Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."}],"update":{"type":"added","version":["v0.9.11"]}}} />
 
-* `chunk` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Chunk of data to unshift onto the
+* `chunk` [`Buffer`](/api/v18/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Chunk of data to unshift onto the
   read queue. For streams not operating in object mode, `chunk` must be a
   string, `Buffer`, `Uint8Array`, or `null`. For object mode streams, `chunk`
   may be any JavaScript value.
@@ -1678,7 +1678,7 @@ process of performing a read.
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.4"]}}} />
 
-* `stream` [`Stream`](/api/stream#stream) An "old style" readable stream
+* `stream` [`Stream`](/api/v18/stream#stream) An "old style" readable stream
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
 Prior to Node.js 0.10, streams did not implement the entire `node:stream`
@@ -1743,11 +1743,11 @@ Experimental
 
 </Stability>
 
-* `stream` [`Stream`](/api/stream#stream) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+* `stream` [`Stream`](/api/v18/stream#stream) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows destroying the stream if the signal is
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows destroying the stream if the signal is
     aborted.
-* Returns: [`Duplex`](/api/stream#streamduplex) a stream composed with the stream `stream`.
+* Returns: [`Duplex`](/api/v18/stream#streamduplex) a stream composed with the stream `stream`.
 
 ```mjs
 import { Readable } from 'node:stream';
@@ -1840,14 +1840,14 @@ Experimental
   stream.
   * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) a chunk of data from the stream.
   * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-    * `signal` [`AbortSignal`](/api/globals#abortsignal) aborted if the stream is destroyed allowing to
+    * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) aborted if the stream is destroyed allowing to
       abort the `fn` call early.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `concurrency` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the maximum concurrent invocation of `fn` to call
     on the stream at once. **Default:** `1`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows destroying the stream if the signal is
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows destroying the stream if the signal is
     aborted.
-* Returns: [`Readable`](/api/stream#streamreadable) a stream mapped with the function `fn`.
+* Returns: [`Readable`](/api/v18/stream#streamreadable) a stream mapped with the function `fn`.
 
 This method allows mapping over the stream. The `fn` function will be called
 for every chunk in the stream. If the `fn` function returns a promise - that
@@ -1886,14 +1886,14 @@ Experimental
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) a function to filter chunks from the stream.
   * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) a chunk of data from the stream.
   * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-    * `signal` [`AbortSignal`](/api/globals#abortsignal) aborted if the stream is destroyed allowing to
+    * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) aborted if the stream is destroyed allowing to
       abort the `fn` call early.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `concurrency` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the maximum concurrent invocation of `fn` to call
     on the stream at once. **Default:** `1`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows destroying the stream if the signal is
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows destroying the stream if the signal is
     aborted.
-* Returns: [`Readable`](/api/stream#streamreadable) a stream filtered with the predicate `fn`.
+* Returns: [`Readable`](/api/v18/stream#streamreadable) a stream filtered with the predicate `fn`.
 
 This method allows filtering the stream. For each chunk in the stream the `fn`
 function will be called and if it returns a truthy value, the chunk will be
@@ -1937,12 +1937,12 @@ Experimental
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) a function to call on each chunk of the stream.
   * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) a chunk of data from the stream.
   * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-    * `signal` [`AbortSignal`](/api/globals#abortsignal) aborted if the stream is destroyed allowing to
+    * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) aborted if the stream is destroyed allowing to
       abort the `fn` call early.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `concurrency` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the maximum concurrent invocation of `fn` to call
     on the stream at once. **Default:** `1`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows destroying the stream if the signal is
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows destroying the stream if the signal is
     aborted.
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) a promise for when the stream has finished.
 
@@ -1996,7 +1996,7 @@ Experimental
 </Stability>
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows cancelling the toArray operation if the
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows cancelling the toArray operation if the
     signal is aborted.
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) a promise containing an array with the contents of the
   stream.
@@ -2038,12 +2038,12 @@ Experimental
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) a function to call on each chunk of the stream.
   * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) a chunk of data from the stream.
   * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-    * `signal` [`AbortSignal`](/api/globals#abortsignal) aborted if the stream is destroyed allowing to
+    * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) aborted if the stream is destroyed allowing to
       abort the `fn` call early.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `concurrency` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the maximum concurrent invocation of `fn` to call
     on the stream at once. **Default:** `1`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows destroying the stream if the signal is
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows destroying the stream if the signal is
     aborted.
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) a promise evaluating to `true` if `fn` returned a truthy
   value for at least one of the chunks.
@@ -2089,12 +2089,12 @@ Experimental
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) a function to call on each chunk of the stream.
   * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) a chunk of data from the stream.
   * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-    * `signal` [`AbortSignal`](/api/globals#abortsignal) aborted if the stream is destroyed allowing to
+    * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) aborted if the stream is destroyed allowing to
       abort the `fn` call early.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `concurrency` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the maximum concurrent invocation of `fn` to call
     on the stream at once. **Default:** `1`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows destroying the stream if the signal is
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows destroying the stream if the signal is
     aborted.
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) a promise evaluating to the first chunk for which `fn`
   evaluated with a truthy value, or `undefined` if no element was found.
@@ -2141,12 +2141,12 @@ Experimental
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) a function to call on each chunk of the stream.
   * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) a chunk of data from the stream.
   * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-    * `signal` [`AbortSignal`](/api/globals#abortsignal) aborted if the stream is destroyed allowing to
+    * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) aborted if the stream is destroyed allowing to
       abort the `fn` call early.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `concurrency` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the maximum concurrent invocation of `fn` to call
     on the stream at once. **Default:** `1`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows destroying the stream if the signal is
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows destroying the stream if the signal is
     aborted.
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) a promise evaluating to `true` if `fn` returned a truthy
   value for all of the chunks.
@@ -2193,14 +2193,14 @@ Experimental
   every chunk in the stream.
   * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) a chunk of data from the stream.
   * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-    * `signal` [`AbortSignal`](/api/globals#abortsignal) aborted if the stream is destroyed allowing to
+    * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) aborted if the stream is destroyed allowing to
       abort the `fn` call early.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `concurrency` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the maximum concurrent invocation of `fn` to call
     on the stream at once. **Default:** `1`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows destroying the stream if the signal is
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows destroying the stream if the signal is
     aborted.
-* Returns: [`Readable`](/api/stream#streamreadable) a stream flat-mapped with the function `fn`.
+* Returns: [`Readable`](/api/v18/stream#streamreadable) a stream flat-mapped with the function `fn`.
 
 This method returns a new stream by applying the given callback to each
 chunk of the stream and then flattening the result.
@@ -2242,9 +2242,9 @@ Experimental
 
 * `limit` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the number of chunks to drop from the readable.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows destroying the stream if the signal is
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows destroying the stream if the signal is
     aborted.
-* Returns: [`Readable`](/api/stream#streamreadable) a stream with `limit` chunks dropped.
+* Returns: [`Readable`](/api/v18/stream#streamreadable) a stream with `limit` chunks dropped.
 
 This method returns a new stream with the first `limit` chunks dropped.
 
@@ -2266,9 +2266,9 @@ Experimental
 
 * `limit` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the number of chunks to take from the readable.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows destroying the stream if the signal is
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows destroying the stream if the signal is
     aborted.
-* Returns: [`Readable`](/api/stream#streamreadable) a stream with `limit` chunks taken.
+* Returns: [`Readable`](/api/v18/stream#streamreadable) a stream with `limit` chunks taken.
 
 This method returns a new stream with the first `limit` chunks.
 
@@ -2289,9 +2289,9 @@ Experimental
 </Stability>
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows destroying the stream if the signal is
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows destroying the stream if the signal is
     aborted.
-* Returns: [`Readable`](/api/stream#streamreadable) a stream of indexed pairs.
+* Returns: [`Readable`](/api/v18/stream#streamreadable) a stream of indexed pairs.
 
 This method returns a new stream with chunks of the underlying stream paired
 with a counter in the form `[index, chunk]`. The first index value is 0 and it
@@ -2320,11 +2320,11 @@ Experimental
     `initial` value if specified or the first chunk of the stream otherwise.
   * `data` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) a chunk of data from the stream.
   * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-    * `signal` [`AbortSignal`](/api/globals#abortsignal) aborted if the stream is destroyed allowing to
+    * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) aborted if the stream is destroyed allowing to
       abort the `fn` call early.
 * `initial` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) the initial value to use in the reduction.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows destroying the stream if the signal is
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows destroying the stream if the signal is
     aborted.
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) a promise for the final value of the reduction.
 
@@ -2416,7 +2416,7 @@ further errors except from `_destroy()` may be emitted as `'error'`.
 
 <Metadata data={{"changes":[{"version":"v15.11.0","pr-url":"https://github.com/nodejs/node/pull/37354","description":"The `signal` option was added."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/32158","description":"The `finished(stream, cb)` will wait for the `'close'` event before invoking the callback. The implementation tries to detect legacy streams and only apply this behavior to streams which are expected to emit `'close'`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31545","description":"Emitting `'close'` before `'end'` on a `Readable` stream will cause an `ERR_STREAM_PREMATURE_CLOSE` error."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31509","description":"Callback will be invoked on streams which have already finished before the call to `finished(stream, cb)`."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `stream` [`Stream`](/api/stream#stream) A readable and/or writable stream.
+* `stream` [`Stream`](/api/v18/stream#stream) A readable and/or writable stream.
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `error` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If set to `false`, then a call to `emit('error', err)` is
@@ -2427,7 +2427,7 @@ further errors except from `_destroy()` may be emitted as `'error'`.
   * `writable` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When set to `false`, the callback will be called when
     the stream ends even though the stream might still be writable.
     **Default:** `true`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows aborting the wait for the stream finish. The
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows aborting the wait for the stream finish. The
     underlying stream will _not_ be aborted if the signal is aborted. The
     callback will get called with an `AbortError`. All registered
     listeners added by this function will also be removed.
@@ -2487,18 +2487,18 @@ const cleanup = finished(rs, (err) => {
 <Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/32158","description":"The `pipeline(..., cb)` will wait for the `'close'` event before invoking the callback. The implementation tries to detect legacy streams and only apply this behavior to streams which are expected to emit `'close'`."},{"version":"v13.10.0","pr-url":"https://github.com/nodejs/node/pull/31223","description":"Add support for async generators."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `streams` Stream\[]|Iterable\[]|AsyncIterable\[]|Function\[]
-* `source` [`Stream`](/api/stream#stream) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+* `source` [`Stream`](/api/v18/stream#stream) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * Returns: [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
-* `...transforms` [`Stream`](/api/stream#stream) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+* `...transforms` [`Stream`](/api/v18/stream#stream) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `source` [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
   * Returns: [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
-* `destination` [`Stream`](/api/stream#stream) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+* `destination` [`Stream`](/api/v18/stream#stream) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `source` [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
   * Returns: [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called when the pipeline is fully done.
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
   * `val` Resolved value of `Promise` returned by `destination`.
-* Returns: [`Stream`](/api/stream#stream)
+* Returns: [`Stream`](/api/v18/stream#stream)
 
 A module method to pipe between streams and generators forwarding errors and
 properly cleaning up and provide a callback when the pipeline is complete.
@@ -2573,7 +2573,7 @@ const server = http.createServer((req, res) => {
 </Stability>
 
 * `streams` Stream\[]|Iterable\[]|AsyncIterable\[]|Function\[]
-* Returns: [`stream.Duplex`](/api/stream#streamduplex)
+* Returns: [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 Combines two or more streams into a `Duplex` stream that writes to the
 first stream and reads from the last. Each provided stream is piped into
@@ -2666,7 +2666,7 @@ See [`readable.compose(stream)`][] for `stream.compose` as operator.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Options provided to `new stream.Readable([options])`.
   By default, `Readable.from()` will set `options.objectMode` to `true`, unless
   this is explicitly opted out by setting `options.objectMode` to `false`.
-* Returns: [`stream.Readable`](/api/stream#streamreadable)
+* Returns: [`stream.Readable`](/api/v18/stream#streamreadable)
 
 A utility method for creating readable streams out of iterators.
 
@@ -2711,13 +2711,13 @@ Experimental
 
 </Stability>
 
-* `readableStream` [`ReadableStream`](/api/webstreams#readablestream)
+* `readableStream` [`ReadableStream`](/api/v18/webstreams#readablestream)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `highWaterMark` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
   * `objectMode` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal)
-* Returns: [`stream.Readable`](/api/stream#streamreadable)
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal)
+* Returns: [`stream.Readable`](/api/v18/stream#streamreadable)
 
 #### <DataTag tag="M" /> `stream.Readable.isDisturbed(stream)`
 
@@ -2729,7 +2729,7 @@ Experimental
 
 </Stability>
 
-* `stream` [`stream.Readable`](/api/stream#streamreadable) | [`ReadableStream`](/api/webstreams#readablestream)
+* `stream` [`stream.Readable`](/api/v18/stream#streamreadable) | [`ReadableStream`](/api/v18/webstreams#readablestream)
 * Returns: `boolean`
 
 Returns whether the stream has been read from or cancelled.
@@ -2744,7 +2744,7 @@ Experimental
 
 </Stability>
 
-* `stream` [`Readable`](/api/stream#streamreadable) | [`Writable`](/api/stream#streamwritable) | [`Duplex`](/api/stream#streamduplex) | [`WritableStream`](/api/webstreams#writablestream) | [`ReadableStream`](/api/webstreams#readablestream)
+* `stream` [`Readable`](/api/v18/stream#streamreadable) | [`Writable`](/api/v18/stream#streamwritable) | [`Duplex`](/api/v18/stream#streamduplex) | [`WritableStream`](/api/v18/webstreams#writablestream) | [`ReadableStream`](/api/v18/webstreams#readablestream)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Returns whether the stream has encountered an error.
@@ -2759,7 +2759,7 @@ Experimental
 
 </Stability>
 
-* `stream` [`Readable`](/api/stream#streamreadable) | [`Duplex`](/api/stream#streamduplex) | [`ReadableStream`](/api/webstreams#readablestream)
+* `stream` [`Readable`](/api/v18/stream#streamreadable) | [`Duplex`](/api/v18/stream#streamduplex) | [`ReadableStream`](/api/v18/webstreams#readablestream)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Returns whether the stream is readable.
@@ -2774,12 +2774,12 @@ Experimental
 
 </Stability>
 
-* `streamReadable` [`stream.Readable`](/api/stream#streamreadable)
+* `streamReadable` [`stream.Readable`](/api/v18/stream#streamreadable)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `strategy` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
     * `highWaterMark` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
     * `size` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`ReadableStream`](/api/webstreams#readablestream)
+* Returns: [`ReadableStream`](/api/v18/webstreams#readablestream)
 
 #### <DataTag tag="M" /> `stream.Writable.fromWeb(writableStream[, options])`
 
@@ -2791,13 +2791,13 @@ Experimental
 
 </Stability>
 
-* `writableStream` [`WritableStream`](/api/webstreams#writablestream)
+* `writableStream` [`WritableStream`](/api/v18/webstreams#writablestream)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `decodeStrings` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
   * `highWaterMark` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
   * `objectMode` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal)
-* Returns: [`stream.Writable`](/api/stream#streamwritable)
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal)
+* Returns: [`stream.Writable`](/api/v18/stream#streamwritable)
 
 #### <DataTag tag="M" /> `stream.Writable.toWeb(streamWritable)`
 
@@ -2809,14 +2809,14 @@ Experimental
 
 </Stability>
 
-* `streamWritable` [`stream.Writable`](/api/stream#streamwritable)
-* Returns: [`WritableStream`](/api/webstreams#writablestream)
+* `streamWritable` [`stream.Writable`](/api/v18/stream#streamwritable)
+* Returns: [`WritableStream`](/api/v18/webstreams#writablestream)
 
 #### <DataTag tag="M" /> `stream.Duplex.from(src)`
 
 <Metadata data={{"update":{"type":"added","version":["v16.8.0"]}}} />
 
-* `src` [`Stream`](/api/stream#stream) | [`Blob`](/api/buffer#blob) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`AsyncGeneratorFunction`](https://tc39.es/proposal-async-iteration/#sec-asyncgeneratorfunction-constructor) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) | [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+* `src` [`Stream`](/api/v18/stream#stream) | [`Blob`](/api/v18/buffer#blob) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`AsyncGeneratorFunction`](https://tc39.es/proposal-async-iteration/#sec-asyncgeneratorfunction-constructor) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) | [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 A utility method for creating duplex streams.
 
@@ -2836,7 +2836,7 @@ A utility method for creating duplex streams.
   `writable` into `Stream` and then combines them into `Duplex` where the
   `Duplex` will write to the `writable` and read from the `readable`.
 * `Promise` converts into readable `Duplex`. Value `null` is ignored.
-* Returns: [`stream.Duplex`](/api/stream#streamduplex)
+* Returns: [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 If an `Iterable` object containing promises is passed as an argument,
 it might result in unhandled rejection.
@@ -2861,16 +2861,16 @@ Experimental
 </Stability>
 
 * `pair` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `readable` [`ReadableStream`](/api/webstreams#readablestream)
-  * `writable` [`WritableStream`](/api/webstreams#writablestream)
+  * `readable` [`ReadableStream`](/api/v18/webstreams#readablestream)
+  * `writable` [`WritableStream`](/api/v18/webstreams#writablestream)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `allowHalfOpen` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
   * `decodeStrings` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `highWaterMark` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
   * `objectMode` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal)
-* Returns: [`stream.Duplex`](/api/stream#streamduplex)
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal)
+* Returns: [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 ```mjs
 import { Duplex } from 'node:stream';
@@ -2943,10 +2943,10 @@ Experimental
 
 </Stability>
 
-* `streamDuplex` [`stream.Duplex`](/api/stream#streamduplex)
+* `streamDuplex` [`stream.Duplex`](/api/v18/stream#streamduplex)
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `readable` [`ReadableStream`](/api/webstreams#readablestream)
-  * `writable` [`WritableStream`](/api/webstreams#writablestream)
+  * `readable` [`ReadableStream`](/api/v18/webstreams#readablestream)
+  * `writable` [`WritableStream`](/api/v18/webstreams#writablestream)
 
 ```mjs
 import { Duplex } from 'node:stream';
@@ -2997,8 +2997,8 @@ readable.getReader().read().then((result) => {
 
 <Metadata data={{"update":{"type":"added","version":["v15.4.0"]}}} />
 
-* `signal` [`AbortSignal`](/api/globals#abortsignal) A signal representing possible cancellation
-* `stream` [`Stream`](/api/stream#stream) a stream to attach a signal to
+* `signal` [`AbortSignal`](/api/v18/globals#abortsignal) A signal representing possible cancellation
+* `stream` [`Stream`](/api/v18/stream#stream) a stream to attach a signal to
 
 Attaches an AbortSignal to a readable or writeable stream. This lets code
 control stream destruction using an `AbortController`.
@@ -3164,7 +3164,7 @@ method.
     [`stream._construct()`][writable-_construct] method.
   * `autoDestroy` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether this stream should automatically call
     `.destroy()` on itself after ending. **Default:** `true`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) A signal representing possible cancellation.
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) A signal representing possible cancellation.
 
 ```js
 const { Writable } = require('node:stream');
@@ -3281,7 +3281,7 @@ class WriteStream extends Writable {
 
 <Metadata data={{"changes":[{"version":"v12.11.0","pr-url":"https://github.com/nodejs/node/pull/29639","description":"_write() is optional when providing _writev()."}]}} />
 
-* `chunk` [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The `Buffer` to be written, converted from the
+* `chunk` [`Buffer`](/api/v18/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The `Buffer` to be written, converted from the
   `string` passed to [`stream.write()`][stream-write]. If the stream's
   `decodeStrings` option is `false` or the stream is operating in object mode,
   the chunk will not be converted & will be whatever was passed to
@@ -3332,7 +3332,7 @@ user programs.
 * `chunks` Object\[] The data to be written. The value is an array of [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   that each represent a discrete chunk of data to write. The properties of
   these objects are:
-  * `chunk` [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A buffer instance or string containing the data to
+  * `chunk` [`Buffer`](/api/v18/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A buffer instance or string containing the data to
     be written. The `chunk` will be a string if the `Writable` was created with
     the `decodeStrings` option set to `false` and a string was passed to `write()`.
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The character encoding of the `chunk`. If `chunk` is
@@ -3497,7 +3497,7 @@ constructor and implement the [`readable._read()`][] method.
     [`stream._construct()`][readable-_construct] method.
   * `autoDestroy` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether this stream should automatically call
     `.destroy()` on itself after ending. **Default:** `true`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) A signal representing possible cancellation.
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) A signal representing possible cancellation.
 
 ```js
 const { Readable } = require('node:stream');
@@ -3662,7 +3662,7 @@ It can be overridden by child classes but it **must not** be called directly.
 
 <Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11608","description":"The `chunk` argument can now be a `Uint8Array` instance."}]}} />
 
-* `chunk` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Chunk of data to push into the
+* `chunk` [`Buffer`](/api/v18/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Chunk of data to push into the
   read queue. For streams not operating in object mode, `chunk` must be a
   string, `Buffer` or `Uint8Array`. For object mode streams, `chunk` may be
   any JavaScript value.
@@ -4095,7 +4095,7 @@ user programs.
 
 ##### <DataTag tag="M" /> `transform._transform(chunk, encoding, callback)`
 
-* `chunk` [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The `Buffer` to be transformed, converted from
+* `chunk` [`Buffer`](/api/v18/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The `Buffer` to be transformed, converted from
   the `string` passed to [`stream.write()`][stream-write]. If the stream's
   `decodeStrings` option is `false` or the stream is operating in object mode,
   the chunk will not be converted & will be whatever was passed to

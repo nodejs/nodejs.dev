@@ -270,11 +270,11 @@ serverDomain.run(() => {
 
 ### <DataTag tag="M" /> `domain.create()`
 
-* Returns: [`Domain`](/api/domain#domain)
+* Returns: [`Domain`](/api/v16/domain#domain)
 
 ### <DataTag tag="C" /> `Domain`
 
-* Extends: [`EventEmitter`](/api/events#eventemitter)
+* Extends: [`EventEmitter`](/api/v16/events#eventemitter)
 
 The `Domain` class encapsulates the functionality of routing errors and
 uncaught exceptions to the active `Domain` object.
@@ -290,7 +290,7 @@ to the domain.
 
 #### <DataTag tag="M" /> `domain.add(emitter)`
 
-* `emitter` [`EventEmitter`](/api/events#eventemitter) | [`Timer`](/api/timers#timers) emitter or timer to be added to the domain
+* `emitter` [`EventEmitter`](/api/v16/events#eventemitter) | [`Timer`](/api/v16/timers#timers) emitter or timer to be added to the domain
 
 Explicitly adds an emitter to the domain. If any event handlers called by
 the emitter throw an error, or if the emitter emits an `'error'` event, it
@@ -394,7 +394,7 @@ d.on('error', (er) => {
 
 #### <DataTag tag="M" /> `domain.remove(emitter)`
 
-* `emitter` [`EventEmitter`](/api/events#eventemitter) | [`Timer`](/api/timers#timers) emitter or timer to be removed from the domain
+* `emitter` [`EventEmitter`](/api/v16/events#eventemitter) | [`Timer`](/api/v16/timers#timers) emitter or timer to be removed from the domain
 
 The opposite of [`domain.add(emitter)`][]. Removes domain handling from the
 specified emitter.

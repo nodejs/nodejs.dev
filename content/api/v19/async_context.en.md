@@ -483,7 +483,7 @@ then restore the original execution context.
 
 #### <DataTag tag="M" /> `asyncResource.emitDestroy()`
 
-* Returns: [`AsyncResource`](/api/async_hooks#asyncresource) A reference to `asyncResource`.
+* Returns: [`AsyncResource`](/api/v19/async_hooks#asyncresource) A reference to `asyncResource`.
 
 Call all `destroy` hooks. This should only ever be called once. An error will
 be thrown if it is called more than once. This **must** be manually called. If

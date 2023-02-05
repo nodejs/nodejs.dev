@@ -186,7 +186,7 @@ Enables this `Tracing` object for the set of categories covered by the
   * `categories` string\[] An array of trace category names. Values included
     in the array are coerced to a string when possible. An error will be
     thrown if the value cannot be coerced.
-* Returns: [`Tracing`](/api/tracing#tracing-object).
+* Returns: [`Tracing`](/api/v16/tracing#tracing-object).
 
 Creates and returns a `Tracing` object for the given set of `categories`.
 

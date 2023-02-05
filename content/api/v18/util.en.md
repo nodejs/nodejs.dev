@@ -1768,7 +1768,7 @@ Experimental
 
 </Stability>
 
-Creates and returns an [`AbortController`](/api/globals#abortcontroller) instance whose [`AbortSignal`](/api/globals#abortsignal) is marked
+Creates and returns an [`AbortController`](/api/v18/globals#abortcontroller) instance whose [`AbortSignal`](/api/v18/globals#abortsignal) is marked
 as transferable and can be used with `structuredClone()` or `postMessage()`.
 
 ### <DataTag tag="M" /> `util.transferableAbortSignal(signal)`
@@ -1781,10 +1781,10 @@ Experimental
 
 </Stability>
 
-* `signal` [`AbortSignal`](/api/globals#abortsignal)
-* Returns: [`AbortSignal`](/api/globals#abortsignal)
+* `signal` [`AbortSignal`](/api/v18/globals#abortsignal)
+* Returns: [`AbortSignal`](/api/v18/globals#abortsignal)
 
-Marks the given [`AbortSignal`](/api/globals#abortsignal) as transferable so that it can be used with
+Marks the given [`AbortSignal`](/api/v18/globals#abortsignal) as transferable so that it can be used with
 `structuredClone()` and `postMessage()`.
 
 ```js
@@ -1966,7 +1966,7 @@ util.types.isBoxedPrimitive(Object(BigInt(5))); // Returns true
 * `value` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if `value` is a [`CryptoKey`](/api/webcrypto#cryptokey), `false` otherwise.
+Returns `true` if `value` is a [`CryptoKey`](/api/v18/webcrypto#cryptokey), `false` otherwise.
 
 #### <DataTag tag="M" /> `util.types.isDataView(value)`
 
@@ -2160,7 +2160,7 @@ util.types.isInt32Array(new Float64Array());  // Returns false
 * `value` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if `value` is a [`KeyObject`](/api/crypto#keyobject), `false` otherwise.
+Returns `true` if `value` is a [`KeyObject`](/api/v18/crypto#keyobject), `false` otherwise.
 
 #### <DataTag tag="M" /> `util.types.isMap(value)`
 

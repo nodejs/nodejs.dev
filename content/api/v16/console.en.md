@@ -98,8 +98,8 @@ const { Console } = console;
 <Metadata data={{"changes":[{"version":["v14.2.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32964","description":"The `groupIndentation` option was introduced."},{"version":"v11.7.0","pr-url":"https://github.com/nodejs/node/pull/24978","description":"The `inspectOptions` option is introduced."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19372","description":"The `Console` constructor now supports an `options` argument, and the `colorMode` option was introduced."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/9744","description":"The `ignoreErrors` option was introduced."}]}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `stdout` [`stream.Writable`](/api/stream#streamwritable)
-  * `stderr` [`stream.Writable`](/api/stream#streamwritable)
+  * `stdout` [`stream.Writable`](/api/v16/stream#streamwritable)
+  * `stderr` [`stream.Writable`](/api/v16/stream#streamwritable)
   * `ignoreErrors` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Ignore errors when writing to the underlying
     streams. **Default:** `true`.
   * `colorMode` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Set color support for this `Console` instance.

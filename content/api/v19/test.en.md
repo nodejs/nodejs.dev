@@ -490,7 +490,7 @@ a custom reporter is a module that exports a value
 accepted by [stream.compose][].
 Reporters should transform events emitted by a TestsStream
 
-Example of a custom reporter using [`stream.Transform`](/api/stream#streamtransform):
+Example of a custom reporter using [`stream.Transform`](/api/v19/stream#streamtransform):
 
 ```mjs
 import { Transform } from 'node:stream';
@@ -638,7 +638,7 @@ unless a destination is explicitly provided.
     **Default:** `true`.
   * `files`: [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) An array containing the list of files to run.
     **Default** matching files from [test runner execution model][].
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress test execution.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress test execution.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the test execution will
     fail after.
     If unspecified, subtests inherit this value from their parent.
@@ -675,7 +675,7 @@ run({ files: [path.resolve('./tests/test.js')] })
   * `only` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If truthy, and the test context is configured to run
     `only` tests, then this test will be run. Otherwise, the test is skipped.
     **Default:** `false`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress test.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress test.
   * `skip` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If truthy, the test is skipped. If a string is
     provided, that string is displayed in the test results as the reason for
     skipping the test. **Default:** `false`.
@@ -782,7 +782,7 @@ same as [`it([name], { todo: true }[, fn])`][it options].
   function.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
   properties are supported:
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress hook.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `Infinity`.
@@ -808,7 +808,7 @@ describe('tests', async () => {
   function.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
   properties are supported:
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress hook.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `Infinity`.
@@ -834,7 +834,7 @@ describe('tests', async () => {
   function.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
   properties are supported:
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress hook.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `Infinity`.
@@ -861,7 +861,7 @@ describe('tests', async () => {
   function.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
   properties are supported:
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress hook.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `Infinity`.
@@ -1155,7 +1155,7 @@ set to `true`.
 
 <Metadata data={{"update":{"type":"added","version":["v18.9.0"]}}} />
 
-* Extends [`ReadableStream`](/api/webstreams#readablestream)
+* Extends [`ReadableStream`](/api/v19/webstreams#readablestream)
 
 A successful call to [`run()`][] method will return a new TestsStream
 object, streaming a series of events representing the execution of the tests.
@@ -1240,7 +1240,7 @@ exposed as part of the API.
   function.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
   properties are supported:
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress hook.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `Infinity`.
@@ -1270,7 +1270,7 @@ test('top level test', async (t) => {
   function.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
   properties are supported:
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress hook.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `Infinity`.
@@ -1295,7 +1295,7 @@ test('top level test', async (t) => {
   function.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
   properties are supported:
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress hook.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `Infinity`.
@@ -1363,7 +1363,7 @@ test('top level test', (t) => {
 
 <Metadata data={{"update":{"type":"added","version":["v18.7.0","v16.17.0"]}}} />
 
-* [`AbortSignal`](/api/globals#abortsignal) Can be used to abort test subtasks when the test has been
+* [`AbortSignal`](/api/v19/globals#abortsignal) Can be used to abort test subtasks when the test has been
   aborted.
 
 ```js
@@ -1422,7 +1422,7 @@ test('top level test', (t) => {
   * `only` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If truthy, and the test context is configured to run
     `only` tests, then this test will be run. Otherwise, the test is skipped.
     **Default:** `false`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress test.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress test.
   * `skip` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If truthy, the test is skipped. If a string is
     provided, that string is displayed in the test results as the reason for
     skipping the test. **Default:** `false`.
@@ -1471,7 +1471,7 @@ The name of the suite.
 
 <Metadata data={{"update":{"type":"added","version":["v18.7.0","v16.17.0"]}}} />
 
-* [`AbortSignal`](/api/globals#abortsignal) Can be used to abort test subtasks when the test has been
+* [`AbortSignal`](/api/v19/globals#abortsignal) Can be used to abort test subtasks when the test has been
   aborted.
 
 [TAP]: https://testanything.org/

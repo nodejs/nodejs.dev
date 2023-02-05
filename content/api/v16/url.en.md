@@ -524,7 +524,7 @@ and [`url.format()`][] methods would produce.
 
 ##### <DataTag tag="M" /> `url.searchParams`
 
-* [`URLSearchParams`](/api/url#urlsearchparams)
+* [`URLSearchParams`](/api/v16/url#urlsearchparams)
 
 Gets the [`URLSearchParams`][] object representing the query parameters of the
 URL. This property is read-only but the `URLSearchParams` object it provides
@@ -607,10 +607,10 @@ Experimental
 
 </Stability>
 
-* `blob` [`Blob`](/api/buffer#blob)
+* `blob` [`Blob`](/api/v16/buffer#blob)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
-Creates a `'blob:nodedata:...'` URL string that represents the given [`Blob`](/api/buffer#blob)
+Creates a `'blob:nodedata:...'` URL string that represents the given [`Blob`](/api/v16/buffer#blob)
 object and can be used to retrieve the `Blob` later.
 
 ```js
@@ -628,7 +628,7 @@ const otherBlob = resolveObjectURL(id);
 console.log(otherBlob.size);
 ```
 
-The data stored by the registered [`Blob`](/api/buffer#blob) will be retained in memory until
+The data stored by the registered [`Blob`](/api/v16/buffer#blob) will be retained in memory until
 `URL.revokeObjectURL()` is called to remove it.
 
 `Blob` objects are registered within the current thread. If using Worker
@@ -648,7 +648,7 @@ Experimental
 * `id` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A `'blob:nodedata:...` URL string returned by a prior call to
   `URL.createObjectURL()`.
 
-Removes the stored [`Blob`](/api/buffer#blob) identified by the given ID. Attempting to revoke a
+Removes the stored [`Blob`](/api/v16/buffer#blob) identified by the given ID. Attempting to revoke a
 ID that isn't registered will silently fail.
 
 #### <DataTag tag="C" /> `URLSearchParams`
@@ -1032,7 +1032,7 @@ console.log(url.domainToUnicode('xn--iñvalid.com'));
 
 <Metadata data={{"update":{"type":"added","version":["v10.12.0"]}}} />
 
-* `url` [`URL`](/api/url#the-whatwg-url-api) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The file URL string or URL object to convert to a path.
+* `url` [`URL`](/api/v16/url#the-whatwg-url-api) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The file URL string or URL object to convert to a path.
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The fully-resolved platform-specific Node.js file path.
 
 This function ensures the correct decodings of percent-encoded characters as
@@ -1075,7 +1075,7 @@ fileURLToPath('file:///hello world');      // Correct:   /hello world (POSIX)
 
 <Metadata data={{"update":{"type":"added","version":["v7.6.0"]}}} />
 
-* `URL` [`URL`](/api/url#the-whatwg-url-api) A [WHATWG URL][] object
+* `URL` [`URL`](/api/v16/url#the-whatwg-url-api) A [WHATWG URL][] object
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `auth` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` if the serialized URL string should include the
     username and password, `false` otherwise. **Default:** `true`.
@@ -1129,7 +1129,7 @@ console.log(url.format(myURL, { fragment: false, unicode: true, auth: false }));
 <Metadata data={{"update":{"type":"added","version":["v10.12.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The path to convert to a File URL.
-* Returns: [`URL`](/api/url#the-whatwg-url-api) The file URL object.
+* Returns: [`URL`](/api/v16/url#the-whatwg-url-api) The file URL object.
 
 This function ensures that `path` is resolved absolutely, and that the URL
 control characters are correctly encoded when converting into a File URL.
@@ -1162,7 +1162,7 @@ pathToFileURL('/some/path%.c');       // Correct:   file:///some/path%25.c (POSI
 
 <Metadata data={{"update":{"type":"added","version":["v15.7.0"]}}} />
 
-* `url` [`URL`](/api/url#the-whatwg-url-api) The [WHATWG URL][] object to convert to an options object.
+* `url` [`URL`](/api/v16/url#the-whatwg-url-api) The [WHATWG URL][] object to convert to an options object.
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Options object
   * `protocol` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Protocol to use.
   * `hostname` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A domain name or IP address of the server to issue the

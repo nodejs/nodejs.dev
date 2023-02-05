@@ -72,7 +72,7 @@ executed in specific contexts.
     in stack traces produced by this script. **Default:** `0`.
   * `columnOffset` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Specifies the first-line column number offset that
     is displayed in stack traces produced by this script. **Default:** `0`.
-  * `cachedData` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
+  * `cachedData` [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
     `TypedArray`, or `DataView` with V8's code cache data for the supplied
     source. When supplied, the `cachedDataRejected` value will be set to
     either `true` or `false` depending on acceptance of the data by V8.
@@ -90,11 +90,11 @@ executed in specific contexts.
     This option is part of the experimental modules API. We do not recommend
     using it in a production environment.
     * `specifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) specifier passed to `import()`
-    * `script` [`vm.Script`](/api/vm#vmscript)
+    * `script` [`vm.Script`](/api/v18/vm#vmscript)
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/v18/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 
@@ -118,7 +118,7 @@ Otherwise the value is `undefined`.
 
 <Metadata data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
-* Returns: [`Buffer`](/api/buffer#buffer)
+* Returns: [`Buffer`](/api/v18/buffer#buffer)
 
 Creates a code cache that can be used with the `Script` constructor's
 `cachedData` option. Returns a `Buffer`. This method may be called at any
@@ -580,7 +580,7 @@ The identifier of the current module, as set in the constructor.
     //              ^^^^^ the module specifier
     ```
 
-  * `referencingModule` [`vm.Module`](/api/vm#vmmodule) The `Module` object `link()` is called on.
+  * `referencingModule` [`vm.Module`](/api/v18/vm#vmmodule) The `Module` object `link()` is called on.
 
   * `extra` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
     * `assert` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The data from the assertion:
@@ -593,7 +593,7 @@ The identifier of the current module, as set in the constructor.
       support, as opposed to, for example, triggering an error if an
       unsupported assertion is present.
 
-  * Returns: [`vm.Module`](/api/vm#vmmodule) | [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+  * Returns: [`vm.Module`](/api/v18/vm#vmmodule) | [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 Link module dependencies. This method must be called before evaluation, and
@@ -679,7 +679,7 @@ Experimental
 This feature is only available with the `--experimental-vm-modules` command
 flag enabled.
 
-* Extends: [`vm.Module`](/api/vm#vmmodule)
+* Extends: [`vm.Module`](/api/v18/vm#vmmodule)
 
 The `vm.SourceTextModule` class provides the [Source Text Module Record][] as
 defined in the ECMAScript specification.
@@ -693,7 +693,7 @@ defined in the ECMAScript specification.
   * `identifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) String used in stack traces.
     **Default:** `'vm:module(i)'` where `i` is a context-specific ascending
     index.
-  * `cachedData` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
+  * `cachedData` [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
     `TypedArray`, or `DataView` with V8's code cache data for the supplied
     source. The `code` must be the same as the module from which this
     `cachedData` was created.
@@ -705,17 +705,17 @@ defined in the ECMAScript specification.
     is displayed in stack traces produced by this `Module`. **Default:** `0`.
   * `initializeImportMeta` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called during evaluation of this `Module`
     to initialize the `import.meta`.
-    * `meta` [`import.meta`](/api/esm#importmeta)
-    * `module` [`vm.SourceTextModule`](/api/vm#vmsourcetextmodule)
+    * `meta` [`import.meta`](/api/v18/esm#importmeta)
+    * `module` [`vm.SourceTextModule`](/api/v18/vm#vmsourcetextmodule)
   * `importModuleDynamically` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called during evaluation of this module
     when `import()` is called. If this option is not specified, calls to
     `import()` will reject with [`ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING`][].
     * `specifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) specifier passed to `import()`
-    * `module` [`vm.Module`](/api/vm#vmmodule)
+    * `module` [`vm.Module`](/api/v18/vm#vmmodule)
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/v18/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 
@@ -784,7 +784,7 @@ const contextifiedObject = vm.createContext({ secret: 42 });
 
 <Metadata data={{"update":{"type":"added","version":["v13.7.0","v12.17.0"]}}} />
 
-* Returns: [`Buffer`](/api/buffer#buffer)
+* Returns: [`Buffer`](/api/v18/buffer#buffer)
 
 Creates a code cache that can be used with the `SourceTextModule` constructor's
 `cachedData` option. Returns a `Buffer`. This method may be called any number
@@ -824,7 +824,7 @@ Experimental
 This feature is only available with the `--experimental-vm-modules` command
 flag enabled.
 
-* Extends: [`vm.Module`](/api/vm#vmmodule)
+* Extends: [`vm.Module`](/api/v18/vm#vmmodule)
 
 The `vm.SyntheticModule` class provides the [Synthetic Module Record][] as
 defined in the WebIDL specification. The purpose of synthetic modules is to
@@ -913,7 +913,7 @@ const vm = require('node:vm');
     in stack traces produced by this script. **Default:** `0`.
   * `columnOffset` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Specifies the first-line column number offset that
     is displayed in stack traces produced by this script. **Default:** `0`.
-  * `cachedData` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
+  * `cachedData` [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
     `TypedArray`, or `DataView` with V8's code cache data for the supplied
     source.
   * `produceCachedData` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Specifies whether to produce new cache data.
@@ -933,7 +933,7 @@ const vm = require('node:vm');
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/v18/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 * Returns: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -1119,7 +1119,7 @@ vm.measureMemory({ mode: 'detailed', execution: 'eager' })
     [`Error`][]. Existing handlers for the event that have been attached via
     `process.on('SIGINT')` are disabled during script execution, but continue to
     work after that. **Default:** `false`.
-  * `cachedData` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
+  * `cachedData` [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
     `TypedArray`, or `DataView` with V8's code cache data for the supplied
     source.
   * `importModuleDynamically` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called during evaluation of this module
@@ -1128,11 +1128,11 @@ vm.measureMemory({ mode: 'detailed', execution: 'eager' })
     This option is part of the experimental modules API. We do not recommend
     using it in a production environment.
     * `specifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) specifier passed to `import()`
-    * `script` [`vm.Script`](/api/vm#vmscript)
+    * `script` [`vm.Script`](/api/v18/vm#vmscript)
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/v18/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 * Returns: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) the result of the very last statement executed in the script.
@@ -1200,7 +1200,7 @@ console.log(contextObject);
       `EvalError`. **Default:** `true`.
     * `wasm` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If set to false any attempt to compile a WebAssembly
       module will throw a `WebAssembly.CompileError`. **Default:** `true`.
-  * `cachedData` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
+  * `cachedData` [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
     `TypedArray`, or `DataView` with V8's code cache data for the supplied
     source.
   * `importModuleDynamically` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called during evaluation of this module
@@ -1209,11 +1209,11 @@ console.log(contextObject);
     This option is part of the experimental modules API. We do not recommend
     using it in a production environment.
     * `specifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) specifier passed to `import()`
-    * `script` [`vm.Script`](/api/vm#vmscript)
+    * `script` [`vm.Script`](/api/v18/vm#vmscript)
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/v18/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
   * `microtaskMode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If set to `afterEvaluate`, microtasks (tasks
@@ -1268,7 +1268,7 @@ console.log(contextObject);
     [`Error`][]. Existing handlers for the event that have been attached via
     `process.on('SIGINT')` are disabled during script execution, but continue to
     work after that. **Default:** `false`.
-  * `cachedData` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
+  * `cachedData` [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
     `TypedArray`, or `DataView` with V8's code cache data for the supplied
     source.
   * `importModuleDynamically` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called during evaluation of this module
@@ -1277,11 +1277,11 @@ console.log(contextObject);
     This option is part of the experimental modules API. We do not recommend
     using it in a production environment.
     * `specifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) specifier passed to `import()`
-    * `script` [`vm.Script`](/api/vm#vmscript)
+    * `script` [`vm.Script`](/api/v18/vm#vmscript)
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/v18/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 * Returns: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) the result of the very last statement executed in the script.

@@ -121,7 +121,7 @@ assert.deepEqual(/a/gi, new Date());
 
 ### <DataTag tag="C" /> assert.AssertionError
 
-* Extends: [`errors.Error`](/api/errors#error)
+* Extends: [`errors.Error`](/api/v18/errors#error)
 
 Indicates the failure of an assertion. All errors thrown by the `node:assert`
 module will be instances of the `AssertionError` class.

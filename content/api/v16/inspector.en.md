@@ -92,7 +92,7 @@ An exception will be thrown if there is no active inspector.
 
 ### <DataTag tag="C" /> `inspector.Session`
 
-* Extends: [`EventEmitter`](/api/events#eventemitter)
+* Extends: [`EventEmitter`](/api/v16/events#eventemitter)
 
 The `inspector.Session` is used for dispatching messages to the V8 inspector
 back-end and receiving message responses and notifications.

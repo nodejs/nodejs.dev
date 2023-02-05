@@ -57,13 +57,13 @@ the `'abort'` event.
 
 <Metadata data={{"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
 
-* Type: [`AbortSignal`](/api/globals#abortsignal)
+* Type: [`AbortSignal`](/api/v19/globals#abortsignal)
 
 #### <DataTag tag="C" /> `AbortSignal`
 
 <Metadata data={{"update":{"type":"added","version":["v15.0.0","v14.17.0"]}}} />
 
-* Extends: [`EventTarget`](/api/events#eventtarget)
+* Extends: [`EventTarget`](/api/v19/events#eventtarget)
 
 The `AbortSignal` is used to notify observers when the
 `abortController.abort()` method is called.
@@ -73,7 +73,7 @@ The `AbortSignal` is used to notify observers when the
 <Metadata data={{"changes":[{"version":["v17.2.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40807","description":"Added the new optional reason argument."}],"update":{"type":"added","version":["v15.12.0","v14.17.0"]}}} />
 
 * `reason`: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
-* Returns: [`AbortSignal`](/api/globals#abortsignal)
+* Returns: [`AbortSignal`](/api/v19/globals#abortsignal)
 
 Returns a new already aborted `AbortSignal`.
 
@@ -160,7 +160,7 @@ If `abortSignal.aborted` is `true`, throws `abortSignal.reason`.
 
 <Metadata data={{"type":"global"}} />
 
-See [`Blob`](/api/buffer#blob).
+See [`Blob`](/api/v19/buffer#blob).
 
 ### <DataTag tag="C" /> `Buffer`
 
@@ -208,7 +208,7 @@ Global alias for [`buffer.atob()`][].
 
 <Metadata data={{"update":{"type":"added","version":["v18.0.0"]}}} />
 
-See [`BroadcastChannel`](/api/worker_threads#broadcastchannel-extends-eventtarget).
+See [`BroadcastChannel`](/api/v19/worker_threads#broadcastchannel-extends-eventtarget).
 
 ### <DataTag tag="M" /> `btoa(data)`
 
@@ -290,7 +290,7 @@ Experimental. Disable this API with the [`--no-experimental-global-webcrypto`][]
 
 </Stability>
 
-A browser-compatible implementation of [`Crypto`](/api/webcrypto#crypto). This global is available
+A browser-compatible implementation of [`Crypto`](/api/v19/webcrypto#crypto). This global is available
 only if the Node.js binary was compiled with including support for the
 `node:crypto` module.
 
@@ -316,7 +316,7 @@ Experimental. Disable this API with the [`--no-experimental-global-webcrypto`][]
 
 </Stability>
 
-A browser-compatible implementation of [`CryptoKey`](/api/webcrypto#cryptokey). This global is available
+A browser-compatible implementation of [`CryptoKey`](/api/v19/webcrypto#cryptokey). This global is available
 only if the Node.js binary was compiled with including support for the
 `node:crypto` module.
 
@@ -691,7 +691,7 @@ Experimental. Disable this API with the [`--no-experimental-global-webcrypto`][]
 
 </Stability>
 
-A browser-compatible implementation of [`SubtleCrypto`](/api/webcrypto#subtlecrypto). This global is available
+A browser-compatible implementation of [`SubtleCrypto`](/api/v19/webcrypto#subtlecrypto). This global is available
 only if the Node.js binary was compiled with including support for the
 `node:crypto` module.
 

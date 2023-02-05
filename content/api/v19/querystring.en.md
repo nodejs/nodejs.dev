@@ -24,8 +24,8 @@ query strings. It can be accessed using:
 const querystring = require('node:querystring');
 ```
 
-`querystring` is more performant than [`URLSearchParams`](/api/url#urlsearchparams) but is not a
-standardized API. Use [`URLSearchParams`](/api/url#urlsearchparams) when performance is not critical or
+`querystring` is more performant than [`URLSearchParams`](/api/v19/url#urlsearchparams) but is not a
+standardized API. Use [`URLSearchParams`](/api/v19/url#urlsearchparams) when performance is not critical or
 when compatibility with browser code is desirable.
 
 ### <DataTag tag="M" /> `querystring.decode()`

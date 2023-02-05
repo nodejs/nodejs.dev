@@ -497,7 +497,7 @@ certificate used is properly authorized.
 
 <Metadata data={{"update":{"type":"added","version":["v0.3.2"]}}} />
 
-* Extends: [`net.Server`](/api/net#netserver)
+* Extends: [`net.Server`](/api/v18/net#netserver)
 
 Accepts encrypted connections using TLS or SSL.
 
@@ -505,7 +505,7 @@ Accepts encrypted connections using TLS or SSL.
 
 <Metadata data={{"update":{"type":"added","version":["v0.3.2"]}}} />
 
-* `socket` [`stream.Duplex`](/api/stream#streamduplex)
+* `socket` [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 This event is emitted when a new TCP stream is established, before the TLS
 handshake begins. `socket` is typically an object of type [`net.Socket`][] but
@@ -519,8 +519,8 @@ into the TLS server. In that case, any [`Duplex`][] stream can be passed.
 
 <Metadata data={{"update":{"type":"added","version":["v12.3.0","v10.20.0"]}}} />
 
-* `line` [`Buffer`](/api/buffer#buffer) Line of ASCII text, in NSS `SSLKEYLOGFILE` format.
-* `tlsSocket` [`tls.TLSSocket`](/api/tls#tlstlssocket) The `tls.TLSSocket` instance on which it was
+* `line` [`Buffer`](/api/v18/buffer#buffer) Line of ASCII text, in NSS `SSLKEYLOGFILE` format.
+* `tlsSocket` [`tls.TLSSocket`](/api/v18/tls#tlstlssocket) The `tls.TLSSocket` instance on which it was
   generated.
 
 The `keylog` event is emitted when key material is generated or received by
@@ -552,8 +552,8 @@ the [`'resumeSession'`][] callback.
 
 The listener callback is passed three arguments when called:
 
-* `sessionId` [`Buffer`](/api/buffer#buffer) The TLS session identifier
-* `sessionData` [`Buffer`](/api/buffer#buffer) The TLS session data
+* `sessionId` [`Buffer`](/api/v18/buffer#buffer) The TLS session identifier
+* `sessionData` [`Buffer`](/api/v18/buffer#buffer) The TLS session data
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A callback function taking no arguments that must be
   invoked in order for data to be sent or received over the secure connection.
 
@@ -567,8 +567,8 @@ after the addition of the event listener.
 The `'OCSPRequest'` event is emitted when the client sends a certificate status
 request. The listener callback is passed three arguments when called:
 
-* `certificate` [`Buffer`](/api/buffer#buffer) The server certificate
-* `issuer` [`Buffer`](/api/buffer#buffer) The issuer's certificate
+* `certificate` [`Buffer`](/api/v18/buffer#buffer) The server certificate
+* `issuer` [`Buffer`](/api/v18/buffer#buffer) The issuer's certificate
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A callback function that must be invoked to provide
   the results of the OCSP request.
 
@@ -614,11 +614,11 @@ The `'resumeSession'` event is emitted when the client requests to resume a
 previous TLS session. The listener callback is passed two arguments when
 called:
 
-* `sessionId` [`Buffer`](/api/buffer#buffer) The TLS session identifier
+* `sessionId` [`Buffer`](/api/v18/buffer#buffer) The TLS session identifier
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A callback function to be called when the prior session
   has been recovered: `callback([err[, sessionData]])`
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `sessionData` [`Buffer`](/api/buffer#buffer)
+  * `sessionData` [`Buffer`](/api/v18/buffer#buffer)
 
 The event listener should perform a lookup in external storage for the
 `sessionData` saved by the [`'newSession'`][] event handler using the given
@@ -652,7 +652,7 @@ The `'secureConnection'` event is emitted after the handshaking process for a
 new connection has successfully completed. The listener callback is passed a
 single argument when called:
 
-* `tlsSocket` [`tls.TLSSocket`](/api/tls#tlstlssocket) The established TLS socket.
+* `tlsSocket` [`tls.TLSSocket`](/api/v18/tls#tlstlssocket) The established TLS socket.
 
 The `tlsSocket.authorized` property is a `boolean` indicating whether the
 client has been verified by one of the supplied Certificate Authorities for the
@@ -676,7 +676,7 @@ connection is established. The listener callback is passed two arguments when
 called:
 
 * `exception` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) The `Error` object describing the error
-* `tlsSocket` [`tls.TLSSocket`](/api/tls#tlstlssocket) The `tls.TLSSocket` instance from which the
+* `tlsSocket` [`tls.TLSSocket`](/api/v18/tls#tlstlssocket) The `tls.TLSSocket` instance from which the
   error originated.
 
 #### <DataTag tag="M" /> `server.addContext(hostname, context)`
@@ -710,7 +710,7 @@ more information.
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A listener callback that will be registered to listen
   for the server instance's `'close'` event.
-* Returns: [`tls.Server`](/api/tls#tlsserver)
+* Returns: [`tls.Server`](/api/v18/tls#tlsserver)
 
 The `server.close()` method stops the server from accepting new connections.
 
@@ -721,7 +721,7 @@ when the server has no more open connections.
 
 <Metadata data={{"update":{"type":"added","version":["v3.0.0"]}}} />
 
-* Returns: [`Buffer`](/api/buffer#buffer) A 48-byte buffer containing the session ticket keys.
+* Returns: [`Buffer`](/api/v18/buffer#buffer) A 48-byte buffer containing the session ticket keys.
 
 Returns the session ticket keys.
 
@@ -747,7 +747,7 @@ existing server. Existing connections to the server are not interrupted.
 
 <Metadata data={{"update":{"type":"added","version":["v3.0.0"]}}} />
 
-* `keys` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A 48-byte buffer containing the session
+* `keys` [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A 48-byte buffer containing the session
   ticket keys.
 
 Sets the session ticket keys.
@@ -761,7 +761,7 @@ See [Session Resumption][] for more information.
 
 <Metadata data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
-* Extends: [`net.Socket`](/api/net#netsocket)
+* Extends: [`net.Socket`](/api/v18/net#netsocket)
 
 Performs transparent encryption of written data and all required TLS
 negotiation.
@@ -776,7 +776,7 @@ connection is open.
 
 <Metadata data={{"changes":[{"version":"v12.2.0","pr-url":"https://github.com/nodejs/node/pull/27497","description":"The `enableTrace` option is now supported."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2564","description":"ALPN options are supported now."}],"update":{"type":"added","version":["v0.11.4"]}}} />
 
-* `socket` [`net.Socket`](/api/net#netsocket) | [`stream.Duplex`](/api/stream#streamduplex)
+* `socket` [`net.Socket`](/api/v18/net#netsocket) | [`stream.Duplex`](/api/v18/stream#streamduplex)
   On the server side, any `Duplex` stream. On the client side, any
   instance of [`net.Socket`][] (for generic `Duplex` stream support
   on the client side, [`tls.connect()`][] must be used).
@@ -785,7 +785,7 @@ connection is open.
   * `isServer`: The SSL/TLS protocol is asymmetrical, TLSSockets must know if
     they are to behave as a server or a client. If `true` the TLS socket will be
     instantiated as a server. **Default:** `false`.
-  * `server` [`net.Server`](/api/net#netserver) A [`net.Server`][] instance.
+  * `server` [`net.Server`](/api/v18/net#netserver) A [`net.Server`][] instance.
   * `requestCert`: Whether to authenticate the remote peer by requesting a
     certificate. Clients always request a server certificate. Servers
     (`isServer` is true) may set `requestCert` to true to request a client
@@ -793,7 +793,7 @@ connection is open.
   * `rejectUnauthorized`: See [`tls.createServer()`][]
   * `ALPNProtocols`: See [`tls.createServer()`][]
   * `SNICallback`: See [`tls.createServer()`][]
-  * `session` [`Buffer`](/api/buffer#buffer) A `Buffer` instance containing a TLS session.
+  * `session` [`Buffer`](/api/v18/buffer#buffer) A `Buffer` instance containing a TLS session.
   * `requestOCSP` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If `true`, specifies that the OCSP status request
     extension will be added to the client hello and an `'OCSPResponse'` event
     will be emitted on the socket before establishing a secure communication
@@ -810,7 +810,7 @@ Construct a new `tls.TLSSocket` object from an existing TCP socket.
 
 <Metadata data={{"update":{"type":"added","version":["v12.3.0","v10.20.0"]}}} />
 
-* `line` [`Buffer`](/api/buffer#buffer) Line of ASCII text, in NSS `SSLKEYLOGFILE` format.
+* `line` [`Buffer`](/api/v18/buffer#buffer) Line of ASCII text, in NSS `SSLKEYLOGFILE` format.
 
 The `keylog` event is emitted on a `tls.TLSSocket` when key material
 is generated or received by the socket. This keying material can be stored
@@ -834,7 +834,7 @@ The `'OCSPResponse'` event is emitted if the `requestOCSP` option was set
 when the `tls.TLSSocket` was created and an OCSP response has been received.
 The listener callback is passed a single argument when called:
 
-* `response` [`Buffer`](/api/buffer#buffer) The server's OCSP response
+* `response` [`Buffer`](/api/v18/buffer#buffer) The server's OCSP response
 
 Typically, the `response` is a digitally signed object from the server's CA that
 contains information about server's certificate revocation status.
@@ -853,14 +853,14 @@ determine if the server certificate was signed by one of the specified CAs. If
 `tlsSocket.alpnProtocol` property can be checked to determine the negotiated
 protocol.
 
-The `'secureConnect'` event is not emitted when a [`tls.TLSSocket`](/api/tls#tlstlssocket) is created
+The `'secureConnect'` event is not emitted when a [`tls.TLSSocket`](/api/v18/tls#tlstlssocket) is created
 using the `new tls.TLSSocket()` constructor.
 
 #### <DataTag tag="E" /> `'session'`
 
 <Metadata data={{"update":{"type":"added","version":["v11.10.0"]}}} />
 
-* `session` [`Buffer`](/api/buffer#buffer)
+* `session` [`Buffer`](/api/v18/buffer#buffer)
 
 The `'session'` event is emitted on a client `tls.TLSSocket` when a new session
 or TLS ticket is available. This may or may not be before the handshake is
@@ -956,9 +956,9 @@ Always returns `true`. This may be used to distinguish TLS sockets from regular
   value from the
   [IANA Exporter Label Registry](https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#exporter-labels).
 
-* `context` [`Buffer`](/api/buffer#buffer) Optionally provide a context.
+* `context` [`Buffer`](/api/v18/buffer#buffer) Optionally provide a context.
 
-* Returns: [`Buffer`](/api/buffer#buffer) requested bytes of the keying material
+* Returns: [`Buffer`](/api/v18/buffer#buffer) requested bytes of the keying material
 
 Keying material is used for validations to prevent different kind of attacks in
 network protocols, for example in the specifications of IEEE 802.1X.
@@ -1041,7 +1041,7 @@ For example: `{ type: 'ECDH', name: 'prime256v1', size: 256 }`.
 
 <Metadata data={{"update":{"type":"added","version":["v9.9.0"]}}} />
 
-* Returns: [`Buffer`](/api/buffer#buffer) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) The latest `Finished` message that has been
+* Returns: [`Buffer`](/api/v18/buffer#buffer) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) The latest `Finished` message that has been
   sent to the socket as part of a SSL/TLS handshake, or `undefined` if
   no `Finished` message has been sent yet.
 
@@ -1077,7 +1077,7 @@ A certificate object has properties corresponding to the fields of the
 certificate.
 
 * `ca` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` if a Certificate Authority (CA), `false` otherwise.
-* `raw` [`Buffer`](/api/buffer#buffer) The DER encoded X.509 certificate data.
+* `raw` [`Buffer`](/api/v18/buffer#buffer) The DER encoded X.509 certificate data.
 * `subject` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The certificate subject, described in terms of
   Country (`C`), StateOrProvince (`ST`), Locality (`L`), Organization (`O`),
   OrganizationalUnit (`OU`), and CommonName (`CN`). The CommonName is typically
@@ -1115,11 +1115,11 @@ For RSA keys, the following properties may be defined:
   notation. Example: `'0x010001'`.
 * `modulus` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The RSA modulus, as a hexadecimal string. Example:
   `'B56CE45CB7...'`.
-* `pubkey` [`Buffer`](/api/buffer#buffer) The public key.
+* `pubkey` [`Buffer`](/api/v18/buffer#buffer) The public key.
 
 For EC keys, the following properties may be defined:
 
-* `pubkey` [`Buffer`](/api/buffer#buffer) The public key.
+* `pubkey` [`Buffer`](/api/v18/buffer#buffer) The public key.
 * `bits` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The key size in bits. Example: `256`.
 * `asn1Curve` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) (Optional) The ASN.1 name of the OID of the elliptic
   curve. Well-known curves are identified by an OID. While it is unusual, it is
@@ -1163,7 +1163,7 @@ Example certificate:
 
 <Metadata data={{"update":{"type":"added","version":["v9.9.0"]}}} />
 
-* Returns: [`Buffer`](/api/buffer#buffer) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) The latest `Finished` message that is expected
+* Returns: [`Buffer`](/api/v18/buffer#buffer) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) The latest `Finished` message that is expected
   or has actually been received from the socket as part of a SSL/TLS handshake,
   or `undefined` if there is no `Finished` message so far.
 
@@ -1179,9 +1179,9 @@ to implement the `tls-unique` channel binding from [RFC 5929][].
 
 <Metadata data={{"update":{"type":"added","version":["v15.9.0"]}}} />
 
-* Returns: [`X509Certificate`](/api/crypto#x509certificate)
+* Returns: [`X509Certificate`](/api/v18/crypto#x509certificate)
 
-Returns the peer certificate as an [`X509Certificate`](/api/crypto#x509certificate) object.
+Returns the peer certificate as an [`X509Certificate`](/api/v18/crypto#x509certificate) object.
 
 If there is no peer certificate, or the socket has been destroyed,
 `undefined` will be returned.
@@ -1211,7 +1211,7 @@ See the OpenSSL [`SSL_get_version`][] documentation for more information.
 
 <Metadata data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
-* [`Buffer`](/api/buffer#buffer)
+* [`Buffer`](/api/v18/buffer#buffer)
 
 Returns the TLS session data or `undefined` if no session was
 negotiated. On the client, the data can be provided to the `session` option of
@@ -1238,7 +1238,7 @@ for more information.
 
 <Metadata data={{"update":{"type":"added","version":["v0.11.4"]}}} />
 
-* [`Buffer`](/api/buffer#buffer)
+* [`Buffer`](/api/v18/buffer#buffer)
 
 For a client, returns the TLS session ticket if one is available, or
 `undefined`. For a server, always returns `undefined`.
@@ -1251,9 +1251,9 @@ See [Session Resumption][] for more information.
 
 <Metadata data={{"update":{"type":"added","version":["v15.9.0"]}}} />
 
-* Returns: [`X509Certificate`](/api/crypto#x509certificate)
+* Returns: [`X509Certificate`](/api/v18/crypto#x509certificate)
 
-Returns the local certificate as an [`X509Certificate`](/api/crypto#x509certificate) object.
+Returns the local certificate as an [`X509Certificate`](/api/v18/crypto#x509certificate) object.
 
 If there is no local certificate, or the socket has been destroyed,
 `undefined` will be returned.
@@ -1401,7 +1401,7 @@ was present (see [CVE-2021-44531][]). Applications that wish to accept
   * `port` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Port the client should connect to.
   * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Creates Unix socket connection to path. If this option is
     specified, `host` and `port` are ignored.
-  * `socket` [`stream.Duplex`](/api/stream#streamduplex) Establish secure connection on a given socket
+  * `socket` [`stream.Duplex`](/api/v18/stream#streamduplex) Establish secure connection on a given socket
     rather than creating a new socket. Typically, this is an instance of
     [`net.Socket`][], but any `Duplex` stream is allowed.
     If this option is specified, `path`, `host`, and `port` are ignored,
@@ -1437,7 +1437,7 @@ was present (see [CVE-2021-44531][]). Applications that wish to accept
     of the server against the certificate but that's not applicable for PSK
     because there won't be a certificate present.
     More information can be found in the [RFC 4279][].
-  * `ALPNProtocols`: [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+  * `ALPNProtocols`: [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
     An array of strings, `Buffer`s, `TypedArray`s, or `DataView`s, or a
     single `Buffer`, `TypedArray`, or `DataView` containing the supported ALPN
     protocols. `Buffer`s should have the format `[len][name][len][name]...`
@@ -1456,7 +1456,7 @@ was present (see [CVE-2021-44531][]). Applications that wish to accept
     explicitly set) against the certificate. This should return an [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) if
     verification fails. The method should return `undefined` if the `servername`
     and `cert` are verified.
-  * `session` [`Buffer`](/api/buffer#buffer) A `Buffer` instance, containing TLS session.
+  * `session` [`Buffer`](/api/v18/buffer#buffer) A `Buffer` instance, containing TLS session.
   * `minDHSize` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Minimum size of the DH parameter in bits to accept a
     TLS connection. When a server offers a DH parameter with a size less
     than `minDHSize`, the TLS connection is destroyed and an error is thrown.
@@ -1475,7 +1475,7 @@ was present (see [CVE-2021-44531][]). Applications that wish to accept
     `secureContext` option is missing, otherwise they are ignored.
   * ...: Any [`socket.connect()`][] option not already listed.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`tls.TLSSocket`](/api/tls#tlstlssocket)
+* Returns: [`tls.TLSSocket`](/api/v18/tls#tlstlssocket)
 
 The `callback` function, if specified, will be added as a listener for the
 [`'secureConnect'`][] event.
@@ -1530,7 +1530,7 @@ socket.on('end', () => {
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Default value for `options.path`.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) See [`tls.connect()`][].
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) See [`tls.connect()`][].
-* Returns: [`tls.TLSSocket`](/api/tls#tlstlssocket)
+* Returns: [`tls.TLSSocket`](/api/v18/tls#tlstlssocket)
 
 Same as [`tls.connect()`][] except that `path` can be provided
 as an argument instead of an option.
@@ -1545,7 +1545,7 @@ A path option, if specified, will take precedence over the path argument.
 * `host` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Default value for `options.host`.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) See [`tls.connect()`][].
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) See [`tls.connect()`][].
-* Returns: [`tls.TLSSocket`](/api/tls#tlstlssocket)
+* Returns: [`tls.TLSSocket`](/api/v18/tls#tlstlssocket)
 
 Same as [`tls.connect()`][] except that `port` and `host` can be provided
 as arguments instead of options.
@@ -1558,7 +1558,7 @@ argument.
 <Metadata data={{"changes":[{"version":"v12.12.0","pr-url":"https://github.com/nodejs/node/pull/28973","description":"Added `privateKeyIdentifier` and `privateKeyEngine` options to get private key from an OpenSSL engine."},{"version":"v12.11.0","pr-url":"https://github.com/nodejs/node/pull/29598","description":"Added `sigalgs` option to override supported signature algorithms."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26209","description":"TLSv1.3 support added."},{"version":"v11.5.0","pr-url":"https://github.com/nodejs/node/pull/24733","description":"The `ca:` option now supports `BEGIN TRUSTED CERTIFICATE`."},{"version":["v11.4.0","v10.16.0"],"pr-url":"https://github.com/nodejs/node/pull/24405","description":"The `minVersion` and `maxVersion` can be used to restrict the allowed TLS protocol versions."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19794","description":"The `ecdhCurve` cannot be set to `false` anymore due to a change in OpenSSL."},{"version":"v9.3.0","pr-url":"https://github.com/nodejs/node/pull/14903","description":"The `options` parameter can now include `clientCertEngine`."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15206","description":"The `ecdhCurve` option can now be multiple `':'` separated curve names or `'auto'`."},{"version":"v7.3.0","pr-url":"https://github.com/nodejs/node/pull/10294","description":"If the `key` option is an array, individual entries do not need a `passphrase` property anymore. `Array` entries can also just be `string`s or `Buffer`s now."},{"version":"v5.2.0","pr-url":"https://github.com/nodejs/node/pull/4099","description":"The `ca` option can now be a single string containing multiple CA certificates."}],"update":{"type":"added","version":["v0.11.13"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `ca` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) Optionally override the trusted CA
+  * `ca` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) Optionally override the trusted CA
     certificates. Default is to trust the well-known CAs curated by Mozilla.
     Mozilla's CAs are completely replaced when CAs are explicitly specified
     using this option. The value can be a string or `Buffer`, or an `Array` of
@@ -1576,7 +1576,7 @@ argument.
     For PEM encoded certificates, supported types are "TRUSTED CERTIFICATE",
     "X509 CERTIFICATE", and "CERTIFICATE".
     See also [`tls.rootCertificates`][].
-  * `cert` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) Cert chains in PEM format. One
+  * `cert` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) Cert chains in PEM format. One
     cert chain should be provided per private key. Each cert chain should
     consist of the PEM formatted certificate for a provided private `key`,
     followed by the PEM formatted intermediate certificates (if any), in order,
@@ -1597,9 +1597,9 @@ argument.
     uppercased in order for OpenSSL to accept them.
   * `clientCertEngine` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Name of an OpenSSL engine which can provide the
     client certificate.
-  * `crl` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) PEM formatted CRLs (Certificate
+  * `crl` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) PEM formatted CRLs (Certificate
     Revocation Lists).
-  * `dhparam` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) Diffie-Hellman parameters, required for
+  * `dhparam` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) Diffie-Hellman parameters, required for
     [perfect forward secrecy][]. Use `openssl dhparam` to create the parameters.
     The key length must be greater than or equal to 1024 bits or else an error
     will be thrown. Although 1024 bits is permissible, use 2048 bits or larger
@@ -1616,7 +1616,7 @@ argument.
     preferences instead of the client's. When `true`, causes
     `SSL_OP_CIPHER_SERVER_PREFERENCE` to be set in `secureOptions`, see
     [OpenSSL Options][] for more information.
-  * `key` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) Private keys in PEM
+  * `key` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) Private keys in PEM
     format. PEM allows the option of private keys being encrypted. Encrypted
     keys will be decrypted with `options.passphrase`. Multiple keys using
     different algorithms can be provided either as an array of unencrypted key
@@ -1643,7 +1643,7 @@ argument.
     **Default:** [`tls.DEFAULT_MIN_VERSION`][].
   * `passphrase` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Shared passphrase used for a single private key and/or
     a PFX.
-  * `pfx` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) PFX or PKCS12 encoded
+  * `pfx` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) PFX or PKCS12 encoded
     private key and certificate chain. `pfx` is an alternative to providing
     `key` and `cert` individually. PFX is usually encrypted, if it is,
     `passphrase` will be used to decrypt it. Multiple PFX can be provided either
@@ -1667,7 +1667,7 @@ argument.
     **Default:** none, see `minVersion`.
   * `sessionIdContext` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Opaque identifier used by servers to ensure
     session state is not shared between applications. Unused by clients.
-  * `ticketKeys`: [`Buffer`](/api/buffer#buffer) 48-bytes of cryptographically strong pseudorandom
+  * `ticketKeys`: [`Buffer`](/api/v18/buffer#buffer) 48-bytes of cryptographically strong pseudorandom
     data. See [Session Resumption][] for more information.
   * `sessionTimeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of seconds after which a TLS session
     created by the server will no longer be resumable. See
@@ -1714,12 +1714,12 @@ Deprecated: Use [`tls.TLSSocket`][] instead.
   * `secureContext`: A TLS context object from [`tls.createSecureContext()`][]
   * `isServer`: If `true` the TLS socket will be instantiated in server-mode.
     **Default:** `false`.
-  * `server` [`net.Server`](/api/net#netserver) A [`net.Server`][] instance
+  * `server` [`net.Server`](/api/v18/net#netserver) A [`net.Server`][] instance
   * `requestCert`: See [`tls.createServer()`][]
   * `rejectUnauthorized`: See [`tls.createServer()`][]
   * `ALPNProtocols`: See [`tls.createServer()`][]
   * `SNICallback`: See [`tls.createServer()`][]
-  * `session` [`Buffer`](/api/buffer#buffer) A `Buffer` instance containing a TLS session.
+  * `session` [`Buffer`](/api/v18/buffer#buffer) A `Buffer` instance containing a TLS session.
   * `requestOCSP` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If `true`, specifies that the OCSP status request
     extension will be added to the client hello and an `'OCSPResponse'` event
     will be emitted on the socket before establishing a secure communication.
@@ -1757,7 +1757,7 @@ where `secureSocket` has the same API as `pair.cleartext`.
 <Metadata data={{"changes":[{"version":"v12.3.0","pr-url":"https://github.com/nodejs/node/pull/27665","description":"The `options` parameter now supports `net.createServer()` options."},{"version":"v9.3.0","pr-url":"https://github.com/nodejs/node/pull/14903","description":"The `options` parameter can now include `clientCertEngine`."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11984","description":"The `ALPNProtocols` option can be a `TypedArray` or `DataView` now."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/2564","description":"ALPN options are supported now."}],"update":{"type":"added","version":["v0.3.2"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `ALPNProtocols`: [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+  * `ALPNProtocols`: [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
     An array of strings, `Buffer`s, `TypedArray`s, or `DataView`s, or a single
     `Buffer`, `TypedArray`, or `DataView` containing the supported ALPN
     protocols. `Buffer`s should have the format `[len][name][len][name]...`
@@ -1792,14 +1792,14 @@ where `secureSocket` has the same API as `pair.cleartext`.
     If `callback` is called with a falsy `ctx` argument, the default secure
     context of the server will be used. If `SNICallback` wasn't provided the
     default callback with high-level API will be used (see below).
-  * `ticketKeys`: [`Buffer`](/api/buffer#buffer) 48-bytes of cryptographically strong pseudorandom
+  * `ticketKeys`: [`Buffer`](/api/v18/buffer#buffer) 48-bytes of cryptographically strong pseudorandom
     data. See [Session Resumption][] for more information.
   * `pskCallback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
-    * socket: [`tls.TLSSocket`](/api/tls#tlstlssocket) the server [`tls.TLSSocket`][] instance for
+    * socket: [`tls.TLSSocket`](/api/v18/tls#tlstlssocket) the server [`tls.TLSSocket`][] instance for
       this connection.
     * identity: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) identity parameter sent from the client.
-    * Returns: [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) pre-shared key that must either be
+    * Returns: [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) pre-shared key that must either be
       a buffer or `null` to stop the negotiation process. Returned PSK must be
       compatible with the selected cipher's digest.
 
@@ -1822,7 +1822,7 @@ where `secureSocket` has the same API as `pair.cleartext`.
     are usually required.
   * ...: Any [`net.createServer()`][] option can be provided.
 * `secureConnectionListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`tls.Server`](/api/tls#tlsserver)
+* Returns: [`tls.Server`](/api/v18/tls#tlsserver)
 
 Creates a new [`tls.Server`][]. The `secureConnectionListener`, if provided, is
 automatically set as a listener for the [`'secureConnection'`][] event.

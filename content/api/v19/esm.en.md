@@ -273,7 +273,7 @@ This feature is only available with the `--experimental-import-meta-resolve`
 command flag enabled.
 
 * `specifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The module specifier to resolve relative to `parent`.
-* `parent` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) The absolute parent module URL to resolve from. If none
+* `parent` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v19/url#the-whatwg-url-api) The absolute parent module URL to resolve from. If none
   is specified, the value of `import.meta.url` is used as the default.
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
@@ -839,7 +839,7 @@ source to a supported one (see [Examples](#examples) below).
 > `getGlobalPreloadCode`.
 
 * `context` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Information to assist the preload code
-  * `port` [`MessagePort`](/api/worker_threads#messageport)
+  * `port` [`MessagePort`](/api/v19/worker_threads#messageport)
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Code to run before application startup
 
 Sometimes it might be necessary to run some code inside of the same global

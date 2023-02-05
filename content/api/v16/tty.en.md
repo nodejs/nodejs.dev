@@ -45,7 +45,7 @@ classes.
 
 <Metadata data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
-* Extends: [`net.Socket`](/api/net#netsocket)
+* Extends: [`net.Socket`](/api/v16/net#netsocket)
 
 Represents the readable side of a TTY. In normal circumstances
 [`process.stdin`][] will be the only `tty.ReadStream` instance in a Node.js
@@ -86,7 +86,7 @@ in this mode.
 
 <Metadata data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
-* Extends: [`net.Socket`](/api/net#netsocket)
+* Extends: [`net.Socket`](/api/v16/net#netsocket)
 
 Represents the writable side of a TTY. In normal circumstances,
 [`process.stdout`][] and [`process.stderr`][] will be the only

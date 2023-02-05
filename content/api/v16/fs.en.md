@@ -146,31 +146,31 @@ concurrent modifications on the same file or data corruption may occur.
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-A [`FileHandle`](/api/fs#filehandle) object is an object wrapper for a numeric file descriptor.
+A [`FileHandle`](/api/v16/fs#filehandle) object is an object wrapper for a numeric file descriptor.
 
-Instances of the [`FileHandle`](/api/fs#filehandle) object are created by the `fsPromises.open()`
+Instances of the [`FileHandle`](/api/v16/fs#filehandle) object are created by the `fsPromises.open()`
 method.
 
-All [`FileHandle`](/api/fs#filehandle) objects are [`EventEmitter`](/api/events#eventemitter)s.
+All [`FileHandle`](/api/v16/fs#filehandle) objects are [`EventEmitter`](/api/v16/events#eventemitter)s.
 
-If a [`FileHandle`](/api/fs#filehandle) is not closed using the `filehandle.close()` method, it will
+If a [`FileHandle`](/api/v16/fs#filehandle) is not closed using the `filehandle.close()` method, it will
 try to automatically close the file descriptor and emit a process warning,
 helping to prevent memory leaks. Please do not rely on this behavior because
 it can be unreliable and the file may not be closed. Instead, always explicitly
-close [`FileHandle`](/api/fs#filehandle)s. Node.js may change this behavior in the future.
+close [`FileHandle`](/api/v16/fs#filehandle)s. Node.js may change this behavior in the future.
 
 ##### <DataTag tag="E" /> `'close'`
 
 <Metadata data={{"update":{"type":"added","version":["v15.4.0"]}}} />
 
-The `'close'` event is emitted when the [`FileHandle`](/api/fs#filehandle) has been closed and can no
+The `'close'` event is emitted when the [`FileHandle`](/api/v16/fs#filehandle) has been closed and can no
 longer be used.
 
 ##### <DataTag tag="M" /> `filehandle.appendFile(data[, options])`
 
 <Metadata data={{"changes":[{"version":["v15.14.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37490","description":"The `data` argument supports `AsyncIterable`, `Iterable`, and `Stream`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`Stream`](/api/stream#stream)
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`Stream`](/api/v16/stream#stream)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `'utf8'`
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
@@ -231,9 +231,9 @@ try {
   * `start` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
   * `end` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `Infinity`
   * `highWaterMark` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `64 * 1024`
-* Returns: [`fs.ReadStream`](/api/fs#fsreadstream)
+* Returns: [`fs.ReadStream`](/api/v16/fs#fsreadstream)
 
-Unlike the 16 KiB default `highWaterMark` for a [`stream.Readable`](/api/stream#streamreadable), the stream
+Unlike the 16 KiB default `highWaterMark` for a [`stream.Readable`](/api/v16/stream#streamreadable), the stream
 returned by this method has a default `highWaterMark` of 64 KiB.
 
 `options` can include `start` and `end` values to read a range of bytes from
@@ -242,7 +242,7 @@ start counting at 0, allowed values are in the
 \[0, [`Number.MAX_SAFE_INTEGER`][]] range. If `start` is
 omitted or `undefined`, `filehandle.createReadStream()` reads sequentially from
 the current file position. The `encoding` can be any one of those accepted by
-[`Buffer`](/api/buffer#buffer).
+[`Buffer`](/api/v16/buffer#buffer).
 
 If the `FileHandle` points to a character device that only supports blocking
 reads (such as keyboard or sound card), read operations do not finish until data
@@ -294,13 +294,13 @@ fd.createReadStream({ start: 90, end: 99 });
   * `autoClose` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `true`
   * `emitClose` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `true`
   * `start` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-* Returns: [`fs.WriteStream`](/api/fs#fswritestream)
+* Returns: [`fs.WriteStream`](/api/v16/fs#fswritestream)
 
 `options` may also include a `start` option to allow writing data at some
 position past the beginning of the file, allowed values are in the
 \[0, [`Number.MAX_SAFE_INTEGER`][]] range. Modifying a file rather than
 replacing it may require the `flags` `open` option to be set to `r+` rather than
-the default `r`. The `encoding` can be any one of those accepted by [`Buffer`](/api/buffer#buffer).
+the default `r`. The `encoding` can be any one of those accepted by [`Buffer`](/api/v16/buffer#buffer).
 
 If `autoClose` is set to true (default behavior) on `'error'` or `'finish'`
 the file descriptor will be closed automatically. If `autoClose` is false,
@@ -327,13 +327,13 @@ Unlike `filehandle.sync` this method does not flush modified metadata.
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The numeric file descriptor managed by the [`FileHandle`](/api/fs#filehandle) object.
+* [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The numeric file descriptor managed by the [`FileHandle`](/api/v16/fs#filehandle) object.
 
 ##### <DataTag tag="M" /> `filehandle.read(buffer, offset, length, position)`
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A buffer that will be filled with the
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A buffer that will be filled with the
   file data read.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The location in the buffer at which to start filling.
 * `length` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of bytes to read.
@@ -343,7 +343,7 @@ Unlike `filehandle.sync` this method does not flush modified metadata.
   file position will remain unchanged.
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills upon success with an object with two properties:
   * `bytesRead` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of bytes read
-  * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A reference to the passed in `buffer`
+  * `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A reference to the passed in `buffer`
     argument.
 
 Reads data from the file and stores that in the given buffer.
@@ -356,7 +356,7 @@ number of bytes read is zero.
 <Metadata data={{"update":{"type":"added","version":["v13.11.0","v12.17.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A buffer that will be filled with the
+  * `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A buffer that will be filled with the
     file data read. **Default:** `Buffer.alloc(16384)`
   * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The location in the buffer at which to start filling.
     **Default:** `0`
@@ -368,7 +368,7 @@ number of bytes read is zero.
     file position will remain unchanged. **Default:**: `null`
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills upon success with an object with two properties:
   * `bytesRead` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of bytes read
-  * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A reference to the passed in `buffer`
+  * `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A reference to the passed in `buffer`
     argument.
 
 Reads data from the file and stores that in the given buffer.
@@ -380,7 +380,7 @@ number of bytes read is zero.
 
 <Metadata data={{"update":{"type":"added","version":["v16.17.0"]}}} />
 
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A buffer that will be filled with the
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A buffer that will be filled with the
   file data read.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The location in the buffer at which to start filling.
@@ -393,7 +393,7 @@ number of bytes read is zero.
     file position will remain unchanged. **Default:**: `null`
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills upon success with an object with two properties:
   * `bytesRead` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of bytes read
-  * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A reference to the passed in `buffer`
+  * `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A reference to the passed in `buffer`
     argument.
 
 Reads data from the file and stores that in the given buffer.
@@ -407,16 +407,16 @@ number of bytes read is zero.
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `null`
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows aborting an in-progress readFile
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) allows aborting an in-progress readFile
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills upon a successful read with the contents of the
   file. If no encoding is specified (using `options.encoding`), the data is
-  returned as a [`Buffer`](/api/buffer#buffer) object. Otherwise, the data will be a string.
+  returned as a [`Buffer`](/api/v16/buffer#buffer) object. Otherwise, the data will be a string.
 
 Asynchronously reads the entire contents of a file.
 
 If `options` is a string, then it specifies the `encoding`.
 
-The [`FileHandle`](/api/fs#filehandle) has to support reading.
+The [`FileHandle`](/api/v16/fs#filehandle) has to support reading.
 
 If one or more `filehandle.read()` calls are made on a file handle and then a
 `filehandle.readFile()` call is made, the data will be read from the current
@@ -444,8 +444,8 @@ Read from a file and write to an array of [`ArrayBufferView`](https://developer.
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the numeric values in the returned
-    [`fs.Stats`](/api/fs#fsstats) object should be `bigint`. **Default:** `false`.
-* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with an [`fs.Stats`](/api/fs#fsstats) for the file.
+    [`fs.Stats`](/api/v16/fs#fsstats) object should be `bigint`. **Default:** `false`.
+* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with an [`fs.Stats`](/api/v16/fs#fsstats) for the file.
 
 ##### <DataTag tag="M" /> `filehandle.sync()`
 
@@ -496,14 +496,14 @@ If `len` is negative then `0` will be used.
 * `mtime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
-Change the file system timestamps of the object referenced by the [`FileHandle`](/api/fs#filehandle)
+Change the file system timestamps of the object referenced by the [`FileHandle`](/api/v16/fs#filehandle)
 then resolves the promise with no arguments upon success.
 
 ##### <DataTag tag="M" /> `filehandle.write(buffer, offset[, length[, position]])`
 
 <Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `buffer` parameter won't coerce unsupported input to buffers anymore."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The start position from within `buffer` where the data
   to write begins.
 * `length` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of bytes from `buffer` to write. **Default:**
@@ -519,7 +519,7 @@ Write `buffer` to the file.
 The promise is resolved with an object containing two properties:
 
 * `bytesWritten` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the number of bytes written
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) a reference to the
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) a reference to the
   `buffer` written.
 
 It is unsafe to use `filehandle.write()` multiple times on the same file
@@ -534,7 +534,7 @@ the end of the file.
 
 <Metadata data={{"update":{"type":"added","version":["v16.17.0"]}}} />
 
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
   * `length` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `buffer.byteLength - offset`
@@ -579,7 +579,7 @@ the end of the file.
 
 <Metadata data={{"changes":[{"version":"v15.14.0","pr-url":"https://github.com/nodejs/node/pull/37490","description":"The `data` argument supports `AsyncIterable`, `Iterable`, and `Stream`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`Stream`](/api/stream#stream)
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`Stream`](/api/v16/stream#stream)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) The expected character encoding when `data` is a
     string. **Default:** `'utf8'`
@@ -591,7 +591,7 @@ The promise is resolved with no arguments upon success.
 
 If `options` is a string, then it specifies the `encoding`.
 
-The [`FileHandle`](/api/fs#filehandle) has to support writing.
+The [`FileHandle`](/api/v16/fs#filehandle) has to support writing.
 
 It is unsafe to use `filehandle.writeFile()` multiple times on the same file
 without waiting for the promise to be resolved (or rejected).
@@ -630,7 +630,7 @@ the end of the file.
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `fs.constants.F_OK`
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
 
@@ -668,8 +668,8 @@ the error raised if the file is not accessible.
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`FileHandle`](/api/fs#filehandle) filename or [`FileHandle`](/api/fs#filehandle)
-* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) | [`FileHandle`](/api/v16/fs#filehandle) filename or [`FileHandle`](/api/v16/fs#filehandle)
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `'utf8'`
   * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0o666`
@@ -677,21 +677,21 @@ the error raised if the file is not accessible.
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
 
 Asynchronously append data to a file, creating the file if it does not yet
-exist. `data` can be a string or a [`Buffer`](/api/buffer#buffer).
+exist. `data` can be a string or a [`Buffer`](/api/v16/buffer#buffer).
 
 If `options` is a string, then it specifies the `encoding`.
 
 The `mode` option only affects the newly created file. See [`fs.open()`][]
 for more details.
 
-The `path` may be specified as a [`FileHandle`](/api/fs#filehandle) that has been opened
+The `path` may be specified as a [`FileHandle`](/api/v16/fs#filehandle) that has been opened
 for appending (using `fsPromises.open()`).
 
 #### <DataTag tag="M" /> `fsPromises.chmod(path, mode)`
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
 
@@ -701,7 +701,7 @@ Changes the permissions of a file.
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `gid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
@@ -712,8 +712,8 @@ Changes the ownership of a file.
 
 <Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/27044","description":"Changed 'flags' argument to 'mode' and imposed stricter type validation."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) source filename to copy
-* `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) destination filename of the copy operation
+* `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) source filename to copy
+* `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) destination filename of the copy operation
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Optional modifiers that specify the behavior of the copy
   operation. It is possible to create a mask consisting of the bitwise OR of
   two or more values (e.g.
@@ -765,8 +765,8 @@ Experimental
 
 </Stability>
 
-* `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) source path to copy.
-* `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) destination path to copy to.
+* `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v16/url#the-whatwg-url-api) source path to copy.
+* `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v16/url#the-whatwg-url-api) destination path to copy to.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `dereference` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) dereference symlinks. **Default:** `false`.
   * `errorOnExist` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) when `force` is `false`, and the destination
@@ -795,7 +795,7 @@ behavior is similar to `cp dir1/ dir2/`.
 
 <Metadata data={{"update":{"type":"deprecated","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
 
@@ -807,7 +807,7 @@ This method is only implemented on macOS.
 
 <Metadata data={{"changes":[{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/21498","description":"This API is no longer deprecated."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `gid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)  Fulfills with `undefined` upon success.
@@ -818,7 +818,7 @@ Changes the ownership on a symbolic link.
 
 <Metadata data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * `mtime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)  Fulfills with `undefined` upon success.
@@ -832,8 +832,8 @@ the symbolic link itself are changed.
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `existingPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
-* `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `existingPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
+* `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)  Fulfills with `undefined` upon success.
 
 Creates a new link from the `existingPath` to the `newPath`. See the POSIX
@@ -843,11 +843,11 @@ link(2) documentation for more detail.
 
 <Metadata data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the numeric values in the returned
-    [`fs.Stats`](/api/fs#fsstats) object should be `bigint`. **Default:** `false`.
-* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)  Fulfills with the [`fs.Stats`](/api/fs#fsstats) object for the given
+    [`fs.Stats`](/api/v16/fs#fsstats) object should be `bigint`. **Default:** `false`.
+* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)  Fulfills with the [`fs.Stats`](/api/v16/fs#fsstats) object for the given
   symbolic link `path`.
 
 Equivalent to [`fsPromises.stat()`][] unless `path` refers to a symbolic link,
@@ -858,7 +858,7 @@ Refer to the POSIX lstat(2) document for more detail.
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
   * `recursive` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `false`
   * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Not supported on Windows. **Default:** `0o777`.
@@ -940,14 +940,14 @@ characters directly to the `prefix` string. For instance, given a directory
 
 <Metadata data={{"changes":[{"version":"v11.1.0","pr-url":"https://github.com/nodejs/node/pull/23767","description":"The `flags` argument is now optional and defaults to `'r'`."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `flags` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) See [support of file system `flags`][].
   **Default:** `'r'`.
 * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Sets the file mode (permission and sticky bits)
   if the file is created. **Default:** `0o666` (readable and writable)
-* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with a [`FileHandle`](/api/fs#filehandle) object.
+* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with a [`FileHandle`](/api/v16/fs#filehandle) object.
 
-Opens a [`FileHandle`](/api/fs#filehandle).
+Opens a [`FileHandle`](/api/v16/fs#filehandle).
 
 Refer to the POSIX open(2) documentation for more detail.
 
@@ -960,18 +960,18 @@ a colon, Node.js will open a file system stream, as described by
 
 <Metadata data={{"changes":[{"version":["v13.1.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30114","description":"The `bufferSize` option was introduced."}],"update":{"type":"added","version":["v12.12.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `'utf8'`
   * `bufferSize` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of directory entries that are buffered
     internally when reading from the directory. Higher values lead to better
     performance but higher memory usage. **Default:** `32`
-* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)  Fulfills with an [`fs.Dir`](/api/fs#fsdir).
+* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)  Fulfills with an [`fs.Dir`](/api/v16/fs#fsdir).
 
 Asynchronously open a directory for iterative scanning. See the POSIX
 opendir(3) documentation for more detail.
 
-Creates an [`fs.Dir`](/api/fs#fsdir), which contains all further functions for reading from
+Creates an [`fs.Dir`](/api/v16/fs#fsdir), which contains all further functions for reading from
 and cleaning up the directory.
 
 The `encoding` option sets the encoding for the `path` while opening the
@@ -991,14 +991,14 @@ try {
 }
 ```
 
-When using the async iterator, the [`fs.Dir`](/api/fs#fsdir) object will be automatically
+When using the async iterator, the [`fs.Dir`](/api/v16/fs#fsdir) object will be automatically
 closed after the iterator exits.
 
 #### <DataTag tag="M" /> `fsPromises.readdir(path[, options])`
 
 <Metadata data={{"changes":[{"version":"v10.11.0","pr-url":"https://github.com/nodejs/node/pull/22020","description":"New option `withFileTypes` was added."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
   * `withFileTypes` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `false`
@@ -1010,10 +1010,10 @@ Reads the contents of a directory.
 The optional `options` argument can be a string specifying an encoding, or an
 object with an `encoding` property specifying the character encoding to use for
 the filenames. If the `encoding` is set to `'buffer'`, the filenames returned
-will be passed as [`Buffer`](/api/buffer#buffer) objects.
+will be passed as [`Buffer`](/api/v16/buffer#buffer) objects.
 
 If `options.withFileTypes` is set to `true`, the resolved array will contain
-[`fs.Dirent`](/api/fs#fsdirent) objects.
+[`fs.Dirent`](/api/v16/fs#fsdirent) objects.
 
 ```mjs
 import { readdir } from 'node:fs/promises';
@@ -1031,17 +1031,17 @@ try {
 
 <Metadata data={{"changes":[{"version":["v15.2.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/35911","description":"The options argument may include an AbortSignal to abort an ongoing readFile request."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`FileHandle`](/api/fs#filehandle) filename or `FileHandle`
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) | [`FileHandle`](/api/v16/fs#filehandle) filename or `FileHandle`
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `null`
   * `flag` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) See [support of file system `flags`][]. **Default:** `'r'`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows aborting an in-progress readFile
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) allows aborting an in-progress readFile
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)  Fulfills with the contents of the file.
 
 Asynchronously reads the entire contents of a file.
 
 If no encoding is specified (using `options.encoding`), the data is returned
-as a [`Buffer`](/api/buffer#buffer) object. Otherwise, the data will be a string.
+as a [`Buffer`](/api/v16/buffer#buffer) object. Otherwise, the data will be a string.
 
 If `options` is a string, then it specifies the encoding.
 
@@ -1050,7 +1050,7 @@ platform-specific. On macOS, Linux, and Windows, the promise will be rejected
 with an error. On FreeBSD, a representation of the directory's contents will be
 returned.
 
-It is possible to abort an ongoing `readFile` using an [`AbortSignal`](/api/globals#abortsignal). If a
+It is possible to abort an ongoing `readFile` using an [`AbortSignal`](/api/v16/globals#abortsignal). If a
 request is aborted the promise returned is rejected with an `AbortError`:
 
 ```mjs
@@ -1074,13 +1074,13 @@ try {
 Aborting an ongoing request does not abort individual operating
 system requests but rather the internal buffering `fs.readFile` performs.
 
-Any specified [`FileHandle`](/api/fs#filehandle) has to support reading.
+Any specified [`FileHandle`](/api/v16/fs#filehandle) has to support reading.
 
 #### <DataTag tag="M" /> `fsPromises.readlink(path[, options])`
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with the `linkString` upon success.
@@ -1092,13 +1092,13 @@ readlink(2) documentation for more detail. The promise is resolved with the
 The optional `options` argument can be a string specifying an encoding, or an
 object with an `encoding` property specifying the character encoding to use for
 the link path returned. If the `encoding` is set to `'buffer'`, the link path
-returned will be passed as a [`Buffer`](/api/buffer#buffer) object.
+returned will be passed as a [`Buffer`](/api/v16/buffer#buffer) object.
 
 #### <DataTag tag="M" /> `fsPromises.realpath(path[, options])`
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)  Fulfills with the resolved path upon success.
@@ -1111,7 +1111,7 @@ Only paths that can be converted to UTF8 strings are supported.
 The optional `options` argument can be a string specifying an encoding, or an
 object with an `encoding` property specifying the character encoding to use for
 the path. If the `encoding` is set to `'buffer'`, the path returned will be
-passed as a [`Buffer`](/api/buffer#buffer) object.
+passed as a [`Buffer`](/api/v16/buffer#buffer) object.
 
 On Linux, when Node.js is linked against musl libc, the procfs file system must
 be mounted on `/proc` in order for this function to work. Glibc does not have
@@ -1121,8 +1121,8 @@ this restriction.
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `oldPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
-* `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `oldPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
+* `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
 
 Renames `oldPath` to `newPath`.
@@ -1131,7 +1131,7 @@ Renames `oldPath` to `newPath`.
 
 <Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fsPromises.rmdir(path, { recursive: true })` on a `path` that is a file is no longer permitted and results in an `ENOENT` error on Windows and an `ENOTDIR` error on POSIX."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fsPromises.rmdir(path, { recursive: true })` on a `path` that does not exist is no longer permitted and results in a `ENOENT` error."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37302","description":"The `recursive` option is deprecated, using it triggers a deprecation warning."},{"version":"v14.14.0","pr-url":"https://github.com/nodejs/node/pull/35579","description":"The `recursive` option is deprecated, use `fsPromises.rm` instead."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30644","description":"The `maxBusyTries` option is renamed to `maxRetries`, and its default is 0. The `emfileWait` option has been removed, and `EMFILE` errors use the same retry logic as other errors. The `retryDelay` option is now supported. `ENFILE` errors are now retried."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29168","description":"The `recursive`, `maxBusyTries`, and `emfileWait` options are now supported."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `maxRetries` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) If an `EBUSY`, `EMFILE`, `ENFILE`, `ENOTEMPTY`, or
     `EPERM` error is encountered, Node.js retries the operation with a linear
@@ -1159,7 +1159,7 @@ To get a behavior similar to the `rm -rf` Unix command, use
 
 <Metadata data={{"update":{"type":"added","version":["v14.14.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `force` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When `true`, exceptions will be ignored if `path` does
     not exist. **Default:** `false`.
@@ -1181,19 +1181,19 @@ Removes files and directories (modeled on the standard POSIX `rm` utility).
 
 <Metadata data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the numeric values in the returned
-    [`fs.Stats`](/api/fs#fsstats) object should be `bigint`. **Default:** `false`.
-* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)  Fulfills with the [`fs.Stats`](/api/fs#fsstats) object for the
+    [`fs.Stats`](/api/v16/fs#fsstats) object should be `bigint`. **Default:** `false`.
+* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)  Fulfills with the [`fs.Stats`](/api/v16/fs#fsstats) object for the
   given `path`.
 
 #### <DataTag tag="M" /> `fsPromises.symlink(target, path[, type])`
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `target` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `target` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'file'`
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
 
@@ -1208,7 +1208,7 @@ automatically be normalized to absolute path.
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `len` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
 
@@ -1219,7 +1219,7 @@ bytes.
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
 
 If `path` refers to a symbolic link, then the link is removed without affecting
@@ -1231,7 +1231,7 @@ documentation for more detail.
 
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * `mtime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
@@ -1249,7 +1249,7 @@ The `atime` and `mtime` arguments follow these rules:
 
 <Metadata data={{"update":{"type":"added","version":["v15.9.0"]}}} />
 
-* `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `persistent` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Indicates whether the process should continue to run
     as long as files are being watched. **Default:** `true`.
@@ -1259,11 +1259,11 @@ The `atime` and `mtime` arguments follow these rules:
     `false`.
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Specifies the character encoding to be used for the
     filename passed to the listener. **Default:** `'utf8'`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) An [`AbortSignal`](/api/globals#abortsignal) used to signal when the watcher
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) An [`AbortSignal`](/api/v16/globals#abortsignal) used to signal when the watcher
     should stop.
 * Returns: [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface) of objects with the properties:
   * `eventType` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The type of change
-  * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) The name of the file changed.
+  * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) The name of the file changed.
 
 Returns an async iterator that watches for changes on `filename`, where `filename`
 is either a file or a directory.
@@ -1297,13 +1297,13 @@ All the [caveats][] for `fs.watch()` also apply to `fsPromises.watch()`.
 
 <Metadata data={{"changes":[{"version":"v15.14.0","pr-url":"https://github.com/nodejs/node/pull/37490","description":"The `data` argument supports `AsyncIterable`, `Iterable`, and `Stream`."},{"version":["v15.2.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/35993","description":"The options argument may include an AbortSignal to abort an ongoing writeFile request."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`FileHandle`](/api/fs#filehandle) filename or `FileHandle`
-* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`Stream`](/api/stream#stream)
+* `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) | [`FileHandle`](/api/v16/fs#filehandle) filename or `FileHandle`
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`Stream`](/api/v16/stream#stream)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `'utf8'`
   * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0o666`
   * `flag` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) See [support of file system `flags`][]. **Default:** `'w'`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows aborting an in-progress writeFile
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) allows aborting an in-progress writeFile
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with `undefined` upon success.
 
 Asynchronously writes data to a file, replacing the file if it already exists.
@@ -1316,7 +1316,7 @@ If `options` is a string, then it specifies the encoding.
 The `mode` option only affects the newly created file. See [`fs.open()`][]
 for more details.
 
-Any specified [`FileHandle`](/api/fs#filehandle) has to support writing.
+Any specified [`FileHandle`](/api/v16/fs#filehandle) has to support writing.
 
 It is unsafe to use `fsPromises.writeFile()` multiple times on the same file
 without waiting for the promise to be settled.
@@ -1326,7 +1326,7 @@ method that performs multiple `write` calls internally to write the buffer
 passed to it. For performance sensitive code consider using
 [`fs.createWriteStream()`][] or [`filehandle.createWriteStream()`][].
 
-It is possible to use an [`AbortSignal`](/api/globals#abortsignal) to cancel an `fsPromises.writeFile()`.
+It is possible to use an [`AbortSignal`](/api/v16/globals#abortsignal) to cancel an `fsPromises.writeFile()`.
 Cancelation is "best effort", and some amount of data is likely still
 to be written.
 
@@ -1375,7 +1375,7 @@ concurrent modifications on the same file or data corruption may occur.
 
 <Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6534","description":"The constants like `fs.R_OK`, etc which were present directly on `fs` were moved into `fs.constants` as a soft deprecation. Thus for Node.js `< v6.3.0` use `fs` to access those constants, or do something like `(fs.constants || fs).R_OK` to work with all versions."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `fs.constants.F_OK`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
@@ -1545,8 +1545,8 @@ the user from reading or writing to it.
 
 <Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `file` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.6.7"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
-* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `'utf8'`
   * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0o666`
@@ -1555,7 +1555,7 @@ the user from reading or writing to it.
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
 Asynchronously append data to a file, creating the file if it does not yet
-exist. `data` can be a string or a [`Buffer`](/api/buffer#buffer).
+exist. `data` can be a string or a [`Buffer`](/api/v16/buffer#buffer).
 
 The `mode` option only affects the newly created file. See [`fs.open()`][]
 for more details.
@@ -1609,7 +1609,7 @@ open('message.txt', 'a', (err, fd) => {
 
 <Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.30"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
@@ -1682,7 +1682,7 @@ implemented.
 
 <Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.97"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `gid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -1713,8 +1713,8 @@ See the POSIX close(2) documentation for more detail.
 
 <Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/27044","description":"Changed 'flags' argument to 'mode' and imposed stricter type validation."}],"update":{"type":"added","version":["v8.5.0"]}}} />
 
-* `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) source filename to copy
-* `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) destination filename of the copy operation
+* `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) source filename to copy
+* `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) destination filename of the copy operation
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) modifiers for copy operation. **Default:** `0`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
@@ -1763,8 +1763,8 @@ Experimental
 
 </Stability>
 
-* `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) source path to copy.
-* `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) destination path to copy to.
+* `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v16/url#the-whatwg-url-api) source path to copy.
+* `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v16/url#the-whatwg-url-api) destination path to copy to.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `dereference` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) dereference symlinks. **Default:** `false`.
   * `errorOnExist` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) when `force` is `false`, and the destination
@@ -1793,12 +1793,12 @@ behavior is similar to `cp dir1/ dir2/`.
 
 <Metadata data={{"changes":[{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/40013","description":"The `fs` option does not need `open` method if an `fd` was provided."},{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/40013","description":"The `fs` option does not need `close` method if `autoClose` is `false`."},{"version":["v15.4.0"],"pr-url":"https://github.com/nodejs/node/pull/35922","description":"The `fd` option accepts FileHandle arguments."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31408","description":"Change `emitClose` default to `true`."},{"version":["v13.6.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29083","description":"The `fs` options allow overriding the used `fs` implementation."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29212","description":"Enable `emitClose` option."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/19898","description":"Impose new restrictions on `start` and `end`, throwing more appropriate errors in cases when we cannot reasonably handle the input values."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."},{"version":"v2.3.0","pr-url":"https://github.com/nodejs/node/pull/1845","description":"The passed `options` object can be a string now."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `flags` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) See [support of file system `flags`][]. **Default:**
     `'r'`.
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `null`
-  * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`FileHandle`](/api/fs#filehandle) **Default:** `null`
+  * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`FileHandle`](/api/v16/fs#filehandle) **Default:** `null`
   * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0o666`
   * `autoClose` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `true`
   * `emitClose` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `true`
@@ -1806,9 +1806,9 @@ behavior is similar to `cp dir1/ dir2/`.
   * `end` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `Infinity`
   * `highWaterMark` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `64 * 1024`
   * `fs` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `null`
-* Returns: [`fs.ReadStream`](/api/fs#fsreadstream)
+* Returns: [`fs.ReadStream`](/api/v16/fs#fsreadstream)
 
-Unlike the 16 KiB default `highWaterMark` for a [`stream.Readable`](/api/stream#streamreadable), the stream
+Unlike the 16 KiB default `highWaterMark` for a [`stream.Readable`](/api/v16/stream#streamreadable), the stream
 returned by this method has a default `highWaterMark` of 64 KiB.
 
 `options` can include `start` and `end` values to read a range of bytes from
@@ -1817,12 +1817,12 @@ start counting at 0, allowed values are in the
 \[0, [`Number.MAX_SAFE_INTEGER`][]] range. If `fd` is specified and `start` is
 omitted or `undefined`, `fs.createReadStream()` reads sequentially from the
 current file position. The `encoding` can be any one of those accepted by
-[`Buffer`](/api/buffer#buffer).
+[`Buffer`](/api/v16/buffer#buffer).
 
 If `fd` is specified, `ReadStream` will ignore the `path` argument and will use
 the specified file descriptor. This means that no `'open'` event will be
 emitted. `fd` should be blocking; non-blocking `fd`s should be passed to
-[`net.Socket`](/api/net#netsocket).
+[`net.Socket`](/api/v16/net#netsocket).
 
 If `fd` points to a character device that only supports blocking reads
 (such as keyboard or sound card), read operations do not finish until data is
@@ -1878,24 +1878,24 @@ If `options` is a string, then it specifies the encoding.
 
 <Metadata data={{"changes":[{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/40013","description":"The `fs` option does not need `open` method if an `fd` was provided."},{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/40013","description":"The `fs` option does not need `close` method if `autoClose` is `false`."},{"version":["v15.4.0"],"pr-url":"https://github.com/nodejs/node/pull/35922","description":"The `fd` option accepts FileHandle arguments."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31408","description":"Change `emitClose` default to `true`."},{"version":["v13.6.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29083","description":"The `fs` options allow overriding the used `fs` implementation."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29212","description":"Enable `emitClose` option."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."},{"version":"v5.5.0","pr-url":"https://github.com/nodejs/node/pull/3679","description":"The `autoClose` option is supported now."},{"version":"v2.3.0","pr-url":"https://github.com/nodejs/node/pull/1845","description":"The passed `options` object can be a string now."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `flags` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) See [support of file system `flags`][]. **Default:**
     `'w'`.
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
-  * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`FileHandle`](/api/fs#filehandle) **Default:** `null`
+  * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`FileHandle`](/api/v16/fs#filehandle) **Default:** `null`
   * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0o666`
   * `autoClose` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `true`
   * `emitClose` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `true`
   * `start` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
   * `fs` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `null`
-* Returns: [`fs.WriteStream`](/api/fs#fswritestream)
+* Returns: [`fs.WriteStream`](/api/v16/fs#fswritestream)
 
 `options` may also include a `start` option to allow writing data at some
 position past the beginning of the file, allowed values are in the
 \[0, [`Number.MAX_SAFE_INTEGER`][]] range. Modifying a file rather than
 replacing it may require the `flags` option to be set to `r+` rather than the
-default `w`. The `encoding` can be any one of those accepted by [`Buffer`](/api/buffer#buffer).
+default `w`. The `encoding` can be any one of those accepted by [`Buffer`](/api/v16/buffer#buffer).
 
 If `autoClose` is set to true (default behavior) on `'error'` or `'finish'`
 the file descriptor will be closed automatically. If `autoClose` is false,
@@ -1914,10 +1914,10 @@ will be disabled. When providing the `fs` option, overrides for at least one of
 for `open` is also required. If `autoClose` is `true`, an override for `close`
 is also required.
 
-Like [`fs.ReadStream`](/api/fs#fsreadstream), if `fd` is specified, [`fs.WriteStream`](/api/fs#fswritestream) will ignore the
+Like [`fs.ReadStream`](/api/v16/fs#fsreadstream), if `fd` is specified, [`fs.WriteStream`](/api/v16/fs#fswritestream) will ignore the
 `path` argument and will use the specified file descriptor. This means that no
 `'open'` event will be emitted. `fd` should be blocking; non-blocking `fd`s
-should be passed to [`net.Socket`](/api/net#netsocket).
+should be passed to [`net.Socket`](/api/v16/net#netsocket).
 
 If `options` is a string, then it specifies the encoding.
 
@@ -1931,7 +1931,7 @@ Deprecated: Use [`fs.stat()`][] or [`fs.access()`][] instead.
 
 </Stability>
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `exists` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -2112,12 +2112,12 @@ exception are given to the completion callback.
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the numeric values in the returned
-    [`fs.Stats`](/api/fs#fsstats) object should be `bigint`. **Default:** `false`.
+    [`fs.Stats`](/api/v16/fs#fsstats) object should be `bigint`. **Default:** `false`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `stats` [`fs.Stats`](/api/fs#fsstats)
+  * `stats` [`fs.Stats`](/api/v16/fs#fsstats)
 
-Invokes the callback with the [`fs.Stats`](/api/fs#fsstats) for the file descriptor.
+Invokes the callback with the [`fs.Stats`](/api/v16/fs#fsstats) for the file descriptor.
 
 See the POSIX fstat(2) documentation for more detail.
 
@@ -2200,7 +2200,7 @@ descriptor. See [`fs.utimes()`][].
 
 <Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37460","description":"The error returned may be an `AggregateError` if more than one error is returned."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"deprecated","version":["v0.4.7"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) | [`AggregateError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AggregateError)
@@ -2216,7 +2216,7 @@ See the POSIX lchmod(2) documentation for more detail.
 
 <Metadata data={{"changes":[{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/21498","description":"This API is no longer deprecated."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v0.4.7","description":"Documentation-only deprecation."}]}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `gid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -2231,7 +2231,7 @@ See the POSIX lchown(2) documentation for more detail.
 
 <Metadata data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * `mtime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -2249,8 +2249,8 @@ callback.
 
 <Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `existingPath` and `newPath` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
-* `existingPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
-* `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `existingPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
+* `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
@@ -2262,16 +2262,16 @@ exception are given to the completion callback.
 
 <Metadata data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.30"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the numeric values in the returned
-    [`fs.Stats`](/api/fs#fsstats) object should be `bigint`. **Default:** `false`.
+    [`fs.Stats`](/api/v16/fs#fsstats) object should be `bigint`. **Default:** `false`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `stats` [`fs.Stats`](/api/fs#fsstats)
+  * `stats` [`fs.Stats`](/api/v16/fs#fsstats)
 
-Retrieves the [`fs.Stats`](/api/fs#fsstats) for the symbolic link referred to by the path.
-The callback gets two arguments `(err, stats)` where `stats` is a [`fs.Stats`](/api/fs#fsstats)
+Retrieves the [`fs.Stats`](/api/v16/fs#fsstats) for the symbolic link referred to by the path.
+The callback gets two arguments `(err, stats)` where `stats` is a [`fs.Stats`](/api/v16/fs#fsstats)
 object. `lstat()` is identical to `stat()`, except that if `path` is a symbolic
 link, then the link itself is stat-ed, not the file that it refers to.
 
@@ -2281,7 +2281,7 @@ See the POSIX lstat(2) documentation for more details.
 
 <Metadata data={{"changes":[{"version":["v13.11.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31530","description":"In `recursive` mode, the callback now receives the first created path as an argument."},{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/21875","description":"The second argument can now be an `options` object with `recursive` and `mode` properties."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.8"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
   * `recursive` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `false`
   * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Not supported on Windows. **Default:** `0o777`.
@@ -2397,7 +2397,7 @@ mkdtemp(`${tmpDir}${sep}`, (err, directory) => {
 
 <Metadata data={{"changes":[{"version":"v11.1.0","pr-url":"https://github.com/nodejs/node/pull/23767","description":"The `flags` argument is now optional and defaults to `'r'`."},{"version":"v9.9.0","pr-url":"https://github.com/nodejs/node/pull/18801","description":"The `as` and `as+` flags are supported now."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `flags` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) See [support of file system `flags`][].
   **Default:** `'r'`.
 * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0o666` (readable and writable)
@@ -2425,7 +2425,7 @@ Functions based on `fs.open()` exhibit this behavior as well:
 
 <Metadata data={{"changes":[{"version":["v13.1.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30114","description":"The `bufferSize` option was introduced."}],"update":{"type":"added","version":["v12.12.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `'utf8'`
   * `bufferSize` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of directory entries that are buffered
@@ -2433,12 +2433,12 @@ Functions based on `fs.open()` exhibit this behavior as well:
     performance but higher memory usage. **Default:** `32`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `dir` [`fs.Dir`](/api/fs#fsdir)
+  * `dir` [`fs.Dir`](/api/v16/fs#fsdir)
 
 Asynchronously open a directory. See the POSIX opendir(3) documentation for
 more details.
 
-Creates an [`fs.Dir`](/api/fs#fsdir), which contains all further functions for reading from
+Creates an [`fs.Dir`](/api/v16/fs#fsdir), which contains all further functions for reading from
 and cleaning up the directory.
 
 The `encoding` option sets the encoding for the `path` while opening the
@@ -2449,7 +2449,7 @@ directory and subsequent read operations.
 <Metadata data={{"changes":[{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `buffer` parameter can now be any `TypedArray`, or a `DataView`."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `buffer` parameter can now be a `Uint8Array`."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4518","description":"The `length` parameter can now be `0`."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) The buffer that the data will be
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) The buffer that the data will be
   written to.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The position in `buffer` to write the data to.
 * `length` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of bytes to read.
@@ -2460,7 +2460,7 @@ directory and subsequent read operations.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
   * `bytesRead` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-  * `buffer` [`Buffer`](/api/buffer#buffer)
+  * `buffer` [`Buffer`](/api/v16/buffer#buffer)
 
 Read data from the file specified by `fd`.
 
@@ -2478,14 +2478,14 @@ a promise for an `Object` with `bytesRead` and `buffer` properties.
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) **Default:** `Buffer.alloc(16384)`
+  * `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) **Default:** `Buffer.alloc(16384)`
   * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
   * `length` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `buffer.byteLength - offset`
   * `position` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `null`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
   * `bytesRead` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-  * `buffer` [`Buffer`](/api/buffer#buffer)
+  * `buffer` [`Buffer`](/api/v16/buffer#buffer)
 
 Similar to the [`fs.read()`][] function, this version takes an optional
 `options` object. If no `options` object is specified, it will default with the
@@ -2496,7 +2496,7 @@ above values.
 <Metadata data={{"update":{"type":"added","version":["v16.17.0"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) The buffer that the data will be
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) The buffer that the data will be
   written to.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
@@ -2505,7 +2505,7 @@ above values.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
   * `bytesRead` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-  * `buffer` [`Buffer`](/api/buffer#buffer)
+  * `buffer` [`Buffer`](/api/v16/buffer#buffer)
 
 Similar to the [`fs.read()`][] function, this version takes an optional
 `options` object. If no `options` object is specified, it will default with the
@@ -2515,7 +2515,7 @@ above values.
 
 <Metadata data={{"changes":[{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22020","description":"New option `withFileTypes` was added."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5616","description":"The `options` parameter was added."}],"update":{"type":"added","version":["v0.1.8"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
   * `withFileTypes` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `false`
@@ -2532,23 +2532,23 @@ See the POSIX readdir(3) documentation for more details.
 The optional `options` argument can be a string specifying an encoding, or an
 object with an `encoding` property specifying the character encoding to use for
 the filenames passed to the callback. If the `encoding` is set to `'buffer'`,
-the filenames returned will be passed as [`Buffer`](/api/buffer#buffer) objects.
+the filenames returned will be passed as [`Buffer`](/api/v16/buffer#buffer) objects.
 
 If `options.withFileTypes` is set to `true`, the `files` array will contain
-[`fs.Dirent`](/api/fs#fsdirent) objects.
+[`fs.Dirent`](/api/v16/fs#fsdirent) objects.
 
 #### <DataTag tag="M" /> `fs.readFile(path[, options], callback)`
 
 <Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37460","description":"The error returned may be an `AggregateError` if more than one error is returned."},{"version":"v15.2.0","pr-url":"https://github.com/nodejs/node/pull/35911","description":"The options argument may include an AbortSignal to abort an ongoing readFile request."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v5.1.0","pr-url":"https://github.com/nodejs/node/pull/3740","description":"The `callback` will always be called with `null` as the `error` parameter in case of success."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `path` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.1.29"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `null`
   * `flag` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) See [support of file system `flags`][]. **Default:** `'r'`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows aborting an in-progress readFile
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) allows aborting an in-progress readFile
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) | [`AggregateError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AggregateError)
-  * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
+  * `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer)
 
 Asynchronously reads the entire contents of a file.
 
@@ -2650,12 +2650,12 @@ different Node.js versions.
 
 <Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `linkString` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
+  * `linkString` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer)
 
 Reads the contents of the symbolic link referred to by `path`. The callback gets
 two arguments `(err, linkString)`.
@@ -2665,7 +2665,7 @@ See the POSIX readlink(2) documentation for more details.
 The optional `options` argument can be a string specifying an encoding, or an
 object with an `encoding` property specifying the character encoding to use for
 the link path passed to the callback. If the `encoding` is set to `'buffer'`,
-the link path returned will be passed as a [`Buffer`](/api/buffer#buffer) object.
+the link path returned will be passed as a [`Buffer`](/api/v16/buffer#buffer) object.
 
 #### <DataTag tag="M" /> `fs.readv(fd, buffers[, position], callback)`
 
@@ -2696,12 +2696,12 @@ a promise for an `Object` with `bytesRead` and `buffers` properties.
 
 <Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/13028","description":"Pipe/Socket resolve support was added."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7899","description":"Calling `realpath` now works again for various edge cases on Windows."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/3594","description":"The `cache` parameter was removed."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `resolvedPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
+  * `resolvedPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer)
 
 Asynchronously computes the canonical pathname by resolving `.`, `..`, and
 symbolic links.
@@ -2724,7 +2724,7 @@ Only paths that can be converted to UTF8 strings are supported.
 The optional `options` argument can be a string specifying an encoding, or an
 object with an `encoding` property specifying the character encoding to use for
 the path passed to the callback. If the `encoding` is set to `'buffer'`,
-the path returned will be passed as a [`Buffer`](/api/buffer#buffer) object.
+the path returned will be passed as a [`Buffer`](/api/v16/buffer#buffer) object.
 
 If `path` resolves to a socket or a pipe, the function will return a system
 dependent name for that object.
@@ -2733,12 +2733,12 @@ dependent name for that object.
 
 <Metadata data={{"update":{"type":"added","version":["v9.2.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `resolvedPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
+  * `resolvedPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer)
 
 Asynchronous realpath(3).
 
@@ -2749,7 +2749,7 @@ Only paths that can be converted to UTF8 strings are supported.
 The optional `options` argument can be a string specifying an encoding, or an
 object with an `encoding` property specifying the character encoding to use for
 the path passed to the callback. If the `encoding` is set to `'buffer'`,
-the path returned will be passed as a [`Buffer`](/api/buffer#buffer) object.
+the path returned will be passed as a [`Buffer`](/api/v16/buffer#buffer) object.
 
 On Linux, when Node.js is linked against musl libc, the procfs file system must
 be mounted on `/proc` in order for this function to work. Glibc does not have
@@ -2759,8 +2759,8 @@ this restriction.
 
 <Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `oldPath` and `newPath` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
-* `oldPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
-* `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `oldPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
+* `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
@@ -2785,7 +2785,7 @@ rename('oldFile.txt', 'newFile.txt', (err) => {
 
 <Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fs.rmdir(path, { recursive: true })` on a `path` that is a file is no longer permitted and results in an `ENOENT` error on Windows and an `ENOTDIR` error on POSIX."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fs.rmdir(path, { recursive: true })` on a `path` that does not exist is no longer permitted and results in a `ENOENT` error."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37302","description":"The `recursive` option is deprecated, using it triggers a deprecation warning."},{"version":"v14.14.0","pr-url":"https://github.com/nodejs/node/pull/35579","description":"The `recursive` option is deprecated, use `fs.rm` instead."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30644","description":"The `maxBusyTries` option is renamed to `maxRetries`, and its default is 0. The `emfileWait` option has been removed, and `EMFILE` errors use the same retry logic as other errors. The `retryDelay` option is now supported. `ENFILE` errors are now retried."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29168","description":"The `recursive`, `maxBusyTries`, and `emfileWait` options are now supported."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameters can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `maxRetries` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) If an `EBUSY`, `EMFILE`, `ENFILE`, `ENOTEMPTY`, or
     `EPERM` error is encountered, Node.js retries the operation with a linear
@@ -2814,7 +2814,7 @@ with options `{ recursive: true, force: true }`.
 
 <Metadata data={{"changes":[{"version":"v16.14.0","pr-url":"https://github.com/nodejs/node/pull/41132","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v14.14.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `force` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When `true`, exceptions will be ignored if `path` does
     not exist. **Default:** `false`.
@@ -2839,16 +2839,16 @@ completion callback.
 
 <Metadata data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the numeric values in the returned
-    [`fs.Stats`](/api/fs#fsstats) object should be `bigint`. **Default:** `false`.
+    [`fs.Stats`](/api/v16/fs#fsstats) object should be `bigint`. **Default:** `false`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `stats` [`fs.Stats`](/api/fs#fsstats)
+  * `stats` [`fs.Stats`](/api/v16/fs#fsstats)
 
 Asynchronous stat(2). The callback gets two arguments `(err, stats)` where
-`stats` is an [`fs.Stats`](/api/fs#fsstats) object.
+`stats` is an [`fs.Stats`](/api/v16/fs#fsstats) object.
 
 In case of an error, the `err.code` will be one of [Common System Errors][].
 
@@ -2934,8 +2934,8 @@ Stats {
 
 <Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23724","description":"If the `type` argument is left undefined, Node will autodetect `target` type and automatically select `dir` or `file`."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `target` and `path` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
-* `target` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `target` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `null`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
@@ -2974,7 +2974,7 @@ $ tree .
 
 <Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37460","description":"The error returned may be an `AggregateError` if more than one error is returned."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.8.6"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `len` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) | [`AggregateError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AggregateError)
@@ -3010,7 +3010,7 @@ See the POSIX truncate(2) documentation for more details.
 
 <Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
@@ -3035,7 +3035,7 @@ See the POSIX unlink(2) documentation for more details.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.31"]}}} />
 
-* `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Optional, a listener previously attached using
   `fs.watchFile()`
 
@@ -3054,7 +3054,7 @@ and `fs.unwatchFile()` when possible.
 
 <Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11919","description":"`NaN`, `Infinity`, and `-Infinity` are no longer valid time specifiers."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v4.1.0","pr-url":"https://github.com/nodejs/node/pull/2387","description":"Numeric strings, `NaN`, and `Infinity` are now allowed time specifiers."}],"update":{"type":"added","version":["v0.4.2"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * `mtime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -3073,7 +3073,7 @@ The `atime` and `mtime` arguments follow these rules:
 
 <Metadata data={{"changes":[{"version":"v15.9.0","pr-url":"https://github.com/nodejs/node/pull/37190","description":"Added support for closing the watcher with an AbortSignal."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `filename` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."}],"update":{"type":"added","version":["v0.5.10"]}}} />
 
-* `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `persistent` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Indicates whether the process should continue to run
     as long as files are being watched. **Default:** `true`.
@@ -3083,11 +3083,11 @@ The `atime` and `mtime` arguments follow these rules:
     `false`.
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Specifies the character encoding to be used for the
     filename passed to the listener. **Default:** `'utf8'`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows closing the watcher with an AbortSignal.
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) allows closing the watcher with an AbortSignal.
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) **Default:** `undefined`
   * `eventType` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-  * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
-* Returns: [`fs.FSWatcher`](/api/fs#fsfswatcher)
+  * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer)
+* Returns: [`fs.FSWatcher`](/api/v16/fs#fsfswatcher)
 
 Watch for changes on `filename`, where `filename` is either a file or a
 directory.
@@ -3103,11 +3103,11 @@ On most platforms, `'rename'` is emitted whenever a filename appears or
 disappears in the directory.
 
 The listener callback is attached to the `'change'` event fired by
-[`fs.FSWatcher`](/api/fs#fsfswatcher), but it is not the same thing as the `'change'` value of
+[`fs.FSWatcher`](/api/v16/fs#fsfswatcher), but it is not the same thing as the `'change'` value of
 `eventType`.
 
 If a `signal` is passed, aborting the corresponding AbortController will close
-the returned [`fs.FSWatcher`](/api/fs#fsfswatcher).
+the returned [`fs.FSWatcher`](/api/v16/fs#fsfswatcher).
 
 ##### Caveats
 
@@ -3187,15 +3187,15 @@ watch('somedir', (eventType, filename) => {
 
 <Metadata data={{"changes":[{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"The `bigint` option is now supported."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `filename` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
-* `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `false`
   * `persistent` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `true`
   * `interval` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `5007`
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-  * `current` [`fs.Stats`](/api/fs#fsstats)
-  * `previous` [`fs.Stats`](/api/fs#fsstats)
-* Returns: [`fs.StatWatcher`](/api/fs#fsstatwatcher)
+  * `current` [`fs.Stats`](/api/v16/fs#fsstats)
+  * `previous` [`fs.Stats`](/api/v16/fs#fsstats)
+* Returns: [`fs.StatWatcher`](/api/v16/fs#fsstatwatcher)
 
 Watch for changes on `filename`. The callback `listener` will be called each
 time the file is accessed.
@@ -3249,14 +3249,14 @@ This happens when:
 <Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `buffer` parameter won't coerce unsupported input to strings anymore."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `buffer` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `buffer` parameter can now be a `Uint8Array`."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/7856","description":"The `offset` and `length` parameters are optional now."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."}],"update":{"type":"added","version":["v0.0.2"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
 * `length` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `buffer.byteLength - offset`
 * `position` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `null`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
   * `bytesWritten` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-  * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+  * `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 
 Write `buffer` to the file specified by `fd`.
 
@@ -3286,7 +3286,7 @@ the end of the file.
 <Metadata data={{"update":{"type":"added","version":["v16.17.0"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
   * `length` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `buffer.byteLength - offset`
@@ -3294,7 +3294,7 @@ the end of the file.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
   * `bytesWritten` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-  * `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+  * `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 
 Write `buffer` to the file specified by `fd`.
 
@@ -3348,13 +3348,13 @@ details.
 
 <Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37460","description":"The error returned may be an `AggregateError` if more than one error is returned."},{"version":"v15.2.0","pr-url":"https://github.com/nodejs/node/pull/35993","description":"The options argument may include an AbortSignal to abort an ongoing writeFile request."},{"version":"v14.12.0","pr-url":"https://github.com/nodejs/node/pull/34993","description":"The `data` parameter will stringify an object with an explicit `toString` function."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `data` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/12562","description":"The `callback` parameter is no longer optional. Not passing it will throw a `TypeError` at runtime."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `data` parameter can now be a `Uint8Array`."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"The `callback` parameter is no longer optional. Not passing it will emit a deprecation warning with id DEP0013."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `file` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.1.29"]}}} />
 
-* `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
-* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+* `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `'utf8'`
   * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0o666`
   * `flag` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) See [support of file system `flags`][]. **Default:** `'w'`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows aborting an in-progress writeFile
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) allows aborting an in-progress writeFile
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) | [`AggregateError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AggregateError)
 
@@ -3400,7 +3400,7 @@ Similarly to `fs.readFile` - `fs.writeFile` is a convenience method that
 performs multiple `write` calls internally to write the buffer passed to it.
 For performance sensitive code consider using [`fs.createWriteStream()`][].
 
-It is possible to use an [`AbortSignal`](/api/globals#abortsignal) to cancel an `fs.writeFile()`.
+It is possible to use an [`AbortSignal`](/api/v16/globals#abortsignal) to cancel an `fs.writeFile()`.
 Cancelation is "best effort", and some amount of data is likely still
 to be written.
 
@@ -3491,7 +3491,7 @@ event loop until the operation completes or fails.
 
 <Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.11.15"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `fs.constants.F_OK`
 
 Synchronously tests a user's permissions for the file or directory specified
@@ -3520,15 +3520,15 @@ try {
 
 <Metadata data={{"changes":[{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7831","description":"The passed `options` object will never be modified."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `file` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.6.7"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
-* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `'utf8'`
   * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0o666`
   * `flag` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) See [support of file system `flags`][]. **Default:** `'a'`.
 
 Synchronously append data to a file, creating the file if it does not yet
-exist. `data` can be a string or a [`Buffer`](/api/buffer#buffer).
+exist. `data` can be a string or a [`Buffer`](/api/v16/buffer#buffer).
 
 The `mode` option only affects the newly created file. See [`fs.open()`][]
 for more details.
@@ -3576,7 +3576,7 @@ try {
 
 <Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.6.7"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 For detailed information, see the documentation of the asynchronous version of
@@ -3588,7 +3588,7 @@ See the POSIX chmod(2) documentation for more detail.
 
 <Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.97"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `gid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -3614,8 +3614,8 @@ See the POSIX close(2) documentation for more detail.
 
 <Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/27044","description":"Changed 'flags' argument to 'mode' and imposed stricter type validation."}],"update":{"type":"added","version":["v8.5.0"]}}} />
 
-* `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) source filename to copy
-* `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) destination filename of the copy operation
+* `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) source filename to copy
+* `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) destination filename of the copy operation
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) modifiers for copy operation. **Default:** `0`.
 
 Synchronously copies `src` to `dest`. By default, `dest` is overwritten if it
@@ -3658,8 +3658,8 @@ Experimental
 
 </Stability>
 
-* `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) source path to copy.
-* `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) destination path to copy to.
+* `src` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v16/url#the-whatwg-url-api) source path to copy.
+* `dest` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v16/url#the-whatwg-url-api) destination path to copy to.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `dereference` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) dereference symlinks. **Default:** `false`.
   * `errorOnExist` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) when `force` is `false`, and the destination
@@ -3686,7 +3686,7 @@ behavior is similar to `cp dir1/ dir2/`.
 
 <Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
 Returns `true` if the path exists, `false` otherwise.
@@ -3745,10 +3745,10 @@ fdatasync(2) documentation for details. Returns `undefined`.
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the numeric values in the returned
-    [`fs.Stats`](/api/fs#fsstats) object should be `bigint`. **Default:** `false`.
-* Returns: [`fs.Stats`](/api/fs#fsstats)
+    [`fs.Stats`](/api/v16/fs#fsstats) object should be `bigint`. **Default:** `false`.
+* Returns: [`fs.Stats`](/api/v16/fs#fsstats)
 
-Retrieves the [`fs.Stats`](/api/fs#fsstats) for the file descriptor.
+Retrieves the [`fs.Stats`](/api/v16/fs#fsstats) for the file descriptor.
 
 See the POSIX fstat(2) documentation for more detail.
 
@@ -3788,7 +3788,7 @@ Synchronous version of [`fs.futimes()`][]. Returns `undefined`.
 
 <Metadata data={{"update":{"type":"deprecated","version":["v0.4.7"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
 Changes the permissions on a symbolic link. Returns `undefined`.
@@ -3801,7 +3801,7 @@ See the POSIX lchmod(2) documentation for more detail.
 
 <Metadata data={{"changes":[{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/21498","description":"This API is no longer deprecated."},{"version":"v0.4.7","description":"Documentation-only deprecation."}]}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `uid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The file's new owner's user id.
 * `gid` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The file's new group's group id.
 
@@ -3813,7 +3813,7 @@ See the POSIX lchown(2) documentation for more details.
 
 <Metadata data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * `mtime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
@@ -3825,8 +3825,8 @@ the operation fails. This is the synchronous version of [`fs.lutimes()`][].
 
 <Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `existingPath` and `newPath` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
-* `existingPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
-* `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `existingPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
+* `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 
 Creates a new link from the `existingPath` to the `newPath`. See the POSIX
 link(2) documentation for more detail. Returns `undefined`.
@@ -3835,16 +3835,16 @@ link(2) documentation for more detail. Returns `undefined`.
 
 <Metadata data={{"changes":[{"version":["v15.3.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/33716","description":"Accepts a `throwIfNoEntry` option to specify whether an exception should be thrown if the entry does not exist."},{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.30"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the numeric values in the returned
-    [`fs.Stats`](/api/fs#fsstats) object should be `bigint`. **Default:** `false`.
+    [`fs.Stats`](/api/v16/fs#fsstats) object should be `bigint`. **Default:** `false`.
   * `throwIfNoEntry` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether an exception will be thrown
     if no file system entry exists, rather than returning `undefined`.
     **Default:** `true`.
-* Returns: [`fs.Stats`](/api/fs#fsstats)
+* Returns: [`fs.Stats`](/api/v16/fs#fsstats)
 
-Retrieves the [`fs.Stats`](/api/fs#fsstats) for the symbolic link referred to by `path`.
+Retrieves the [`fs.Stats`](/api/v16/fs#fsstats) for the symbolic link referred to by `path`.
 
 See the POSIX lstat(2) documentation for more details.
 
@@ -3852,7 +3852,7 @@ See the POSIX lstat(2) documentation for more details.
 
 <Metadata data={{"changes":[{"version":["v13.11.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31530","description":"In `recursive` mode, the first created path is returned now."},{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/21875","description":"The second argument can now be an `options` object with `recursive` and `mode` properties."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
   * `recursive` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `false`
   * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Not supported on Windows. **Default:** `0o777`.
@@ -3885,17 +3885,17 @@ object with an `encoding` property specifying the character encoding to use.
 
 <Metadata data={{"changes":[{"version":["v13.1.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30114","description":"The `bufferSize` option was introduced."}],"update":{"type":"added","version":["v12.12.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `'utf8'`
   * `bufferSize` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of directory entries that are buffered
     internally when reading from the directory. Higher values lead to better
     performance but higher memory usage. **Default:** `32`
-* Returns: [`fs.Dir`](/api/fs#fsdir)
+* Returns: [`fs.Dir`](/api/v16/fs#fsdir)
 
 Synchronously open a directory. See opendir(3).
 
-Creates an [`fs.Dir`](/api/fs#fsdir), which contains all further functions for reading from
+Creates an [`fs.Dir`](/api/v16/fs#fsdir), which contains all further functions for reading from
 and cleaning up the directory.
 
 The `encoding` option sets the encoding for the `path` while opening the
@@ -3905,7 +3905,7 @@ directory and subsequent read operations.
 
 <Metadata data={{"changes":[{"version":"v11.1.0","pr-url":"https://github.com/nodejs/node/pull/23767","description":"The `flags` argument is now optional and defaults to `'r'`."},{"version":"v9.9.0","pr-url":"https://github.com/nodejs/node/pull/18801","description":"The `as` and `as+` flags are supported now."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `flags` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `'r'`.
   See [support of file system `flags`][].
 * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0o666`
@@ -3920,7 +3920,7 @@ this API: [`fs.open()`][].
 
 <Metadata data={{"changes":[{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22020","description":"New option `withFileTypes` was added."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
   * `withFileTypes` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) **Default:** `false`
@@ -3933,20 +3933,20 @@ See the POSIX readdir(3) documentation for more details.
 The optional `options` argument can be a string specifying an encoding, or an
 object with an `encoding` property specifying the character encoding to use for
 the filenames returned. If the `encoding` is set to `'buffer'`,
-the filenames returned will be passed as [`Buffer`](/api/buffer#buffer) objects.
+the filenames returned will be passed as [`Buffer`](/api/v16/buffer#buffer) objects.
 
 If `options.withFileTypes` is set to `true`, the result will contain
-[`fs.Dirent`](/api/fs#fsdirent) objects.
+[`fs.Dirent`](/api/v16/fs#fsdirent) objects.
 
 #### <DataTag tag="M" /> `fs.readFileSync(path[, options])`
 
 <Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `path` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.1.8"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `null`
   * `flag` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) See [support of file system `flags`][]. **Default:** `'r'`.
-* Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
+* Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer)
 
 Returns the contents of the `path`.
 
@@ -3974,10 +3974,10 @@ readFileSync('<directory>'); // => <data>
 
 <Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
-* Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
+* Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer)
 
 Returns the symbolic link's string value.
 
@@ -3986,14 +3986,14 @@ See the POSIX readlink(2) documentation for more details.
 The optional `options` argument can be a string specifying an encoding, or an
 object with an `encoding` property specifying the character encoding to use for
 the link path returned. If the `encoding` is set to `'buffer'`,
-the link path returned will be passed as a [`Buffer`](/api/buffer#buffer) object.
+the link path returned will be passed as a [`Buffer`](/api/v16/buffer#buffer) object.
 
 #### <DataTag tag="M" /> `fs.readSync(fd, buffer, offset, length[, position])`
 
 <Metadata data={{"changes":[{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `buffer` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4518","description":"The `length` parameter can now be `0`."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `length` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `position` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `null`
@@ -4009,7 +4009,7 @@ this API: [`fs.read()`][].
 <Metadata data={{"changes":[{"version":["v13.13.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32460","description":"Options object can be passed in to make offset, length, and position optional."}],"update":{"type":"added","version":["v13.13.0","v12.17.0"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
   * `length` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `buffer.byteLength - offset`
@@ -4040,10 +4040,10 @@ this API: [`fs.readv()`][].
 
 <Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/13028","description":"Pipe/Socket resolve support was added."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7899","description":"Calling `realpathSync` now works again for various edge cases on Windows."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/3594","description":"The `cache` parameter was removed."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
-* Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
+* Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer)
 
 Returns the resolved pathname.
 
@@ -4054,10 +4054,10 @@ this API: [`fs.realpath()`][].
 
 <Metadata data={{"update":{"type":"added","version":["v9.2.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
-* Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
+* Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer)
 
 Synchronous realpath(3).
 
@@ -4066,7 +4066,7 @@ Only paths that can be converted to UTF8 strings are supported.
 The optional `options` argument can be a string specifying an encoding, or an
 object with an `encoding` property specifying the character encoding to use for
 the path returned. If the `encoding` is set to `'buffer'`,
-the path returned will be passed as a [`Buffer`](/api/buffer#buffer) object.
+the path returned will be passed as a [`Buffer`](/api/v16/buffer#buffer) object.
 
 On Linux, when Node.js is linked against musl libc, the procfs file system must
 be mounted on `/proc` in order for this function to work. Glibc does not have
@@ -4076,8 +4076,8 @@ this restriction.
 
 <Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `oldPath` and `newPath` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
-* `oldPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
-* `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `oldPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
+* `newPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 
 Renames the file from `oldPath` to `newPath`. Returns `undefined`.
 
@@ -4087,7 +4087,7 @@ See the POSIX rename(2) documentation for more details.
 
 <Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fs.rmdirSync(path, { recursive: true })` on a `path` that is a file is no longer permitted and results in an `ENOENT` error on Windows and an `ENOTDIR` error on POSIX."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37216","description":"Using `fs.rmdirSync(path, { recursive: true })` on a `path` that does not exist is no longer permitted and results in a `ENOENT` error."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37302","description":"The `recursive` option is deprecated, using it triggers a deprecation warning."},{"version":"v14.14.0","pr-url":"https://github.com/nodejs/node/pull/35579","description":"The `recursive` option is deprecated, use `fs.rmSync` instead."},{"version":["v13.3.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30644","description":"The `maxBusyTries` option is renamed to `maxRetries`, and its default is 0. The `emfileWait` option has been removed, and `EMFILE` errors use the same retry logic as other errors. The `retryDelay` option is now supported. `ENFILE` errors are now retried."},{"version":"v12.10.0","pr-url":"https://github.com/nodejs/node/pull/29168","description":"The `recursive`, `maxBusyTries`, and `emfileWait` options are now supported."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameters can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `maxRetries` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) If an `EBUSY`, `EMFILE`, `ENFILE`, `ENOTEMPTY`, or
     `EPERM` error is encountered, Node.js retries the operation with a linear
@@ -4113,7 +4113,7 @@ with options `{ recursive: true, force: true }`.
 
 <Metadata data={{"changes":[{"version":"v16.14.0","pr-url":"https://github.com/nodejs/node/pull/41132","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v14.14.0"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `force` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When `true`, exceptions will be ignored if `path` does
     not exist. **Default:** `false`.
@@ -4135,23 +4135,23 @@ utility). Returns `undefined`.
 
 <Metadata data={{"changes":[{"version":["v15.3.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/33716","description":"Accepts a `throwIfNoEntry` option to specify whether an exception should be thrown if the entry does not exist."},{"version":"v10.5.0","pr-url":"https://github.com/nodejs/node/pull/20220","description":"Accepts an additional `options` object to specify whether the numeric values returned should be bigint."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the numeric values in the returned
-    [`fs.Stats`](/api/fs#fsstats) object should be `bigint`. **Default:** `false`.
+    [`fs.Stats`](/api/v16/fs#fsstats) object should be `bigint`. **Default:** `false`.
   * `throwIfNoEntry` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether an exception will be thrown
     if no file system entry exists, rather than returning `undefined`.
     **Default:** `true`.
-* Returns: [`fs.Stats`](/api/fs#fsstats)
+* Returns: [`fs.Stats`](/api/v16/fs#fsstats)
 
-Retrieves the [`fs.Stats`](/api/fs#fsstats) for the path.
+Retrieves the [`fs.Stats`](/api/v16/fs#fsstats) for the path.
 
 #### <DataTag tag="M" /> `fs.symlinkSync(target, path[, type])`
 
 <Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23724","description":"If the `type` argument is left undefined, Node will autodetect `target` type and automatically select `dir` or `file`."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `target` and `path` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."}],"update":{"type":"added","version":["v0.1.31"]}}} />
 
-* `target` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `target` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `null`
 
 Returns `undefined`.
@@ -4163,7 +4163,7 @@ this API: [`fs.symlink()`][].
 
 <Metadata data={{"update":{"type":"added","version":["v0.8.6"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `len` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
 
 Truncates the file. Returns `undefined`. A file descriptor can also be
@@ -4176,7 +4176,7 @@ in the future.
 
 <Metadata data={{"changes":[{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 
 Synchronous unlink(2). Returns `undefined`.
 
@@ -4184,7 +4184,7 @@ Synchronous unlink(2). Returns `undefined`.
 
 <Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11919","description":"`NaN`, `Infinity`, and `-Infinity` are no longer valid time specifiers."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `path` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":"v4.1.0","pr-url":"https://github.com/nodejs/node/pull/2387","description":"Numeric strings, `NaN`, and `Infinity` are now allowed time specifiers."}],"update":{"type":"added","version":["v0.4.2"]}}} />
 
-* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api)
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api)
 * `atime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * `mtime` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
@@ -4197,8 +4197,8 @@ this API: [`fs.utimes()`][].
 
 <Metadata data={{"changes":[{"version":"v14.12.0","pr-url":"https://github.com/nodejs/node/pull/34993","description":"The `data` parameter will stringify an object with an explicit `toString` function."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `data` parameter won't coerce unsupported input to strings anymore."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `data` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `data` parameter can now be a `Uint8Array`."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3163","description":"The `file` parameter can be a file descriptor now."}],"update":{"type":"added","version":["v0.1.29"]}}} />
 
-* `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`URL`](/api/url#the-whatwg-url-api) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
-* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+* `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`URL`](/api/v16/url#the-whatwg-url-api) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) filename or file descriptor
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `'utf8'`
   * `mode` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0o666`
@@ -4220,7 +4220,7 @@ this API: [`fs.writeFile()`][].
 <Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31030","description":"The `buffer` parameter won't coerce unsupported input to strings anymore."},{"version":"v10.10.0","pr-url":"https://github.com/nodejs/node/pull/22150","description":"The `buffer` parameter can now be any `TypedArray` or a `DataView`."},{"version":"v7.4.0","pr-url":"https://github.com/nodejs/node/pull/10382","description":"The `buffer` parameter can now be a `Uint8Array`."},{"version":"v7.2.0","pr-url":"https://github.com/nodejs/node/pull/7856","description":"The `offset` and `length` parameters are optional now."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
 * `length` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `buffer.byteLength - offset`
 * `position` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) **Default:** `null`
@@ -4234,7 +4234,7 @@ this API: [`fs.write(fd, buffer...)`][].
 <Metadata data={{"update":{"type":"added","version":["v16.17.0"]}}} />
 
 * `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
   * `length` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `buffer.byteLength - offset`
@@ -4295,7 +4295,7 @@ try {
 }
 ```
 
-When using the async iterator, the [`fs.Dir`](/api/fs#fsdir) object will be automatically
+When using the async iterator, the [`fs.Dir`](/api/v16/fs#fsdir) object will be automatically
 closed after the iterator exits.
 
 ##### <DataTag tag="M" /> `dir.close()`
@@ -4342,12 +4342,12 @@ The read-only path of this directory as was provided to [`fs.opendir()`][],
 
 <Metadata data={{"update":{"type":"added","version":["v12.12.0"]}}} />
 
-* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) containing [`fs.Dirent`](/api/fs#fsdirent) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type)
+* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) containing [`fs.Dirent`](/api/v16/fs#fsdirent) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type)
 
 Asynchronously read the next directory entry via readdir(3) as an
-[`fs.Dirent`](/api/fs#fsdirent).
+[`fs.Dirent`](/api/v16/fs#fsdirent).
 
-A promise is returned that will be resolved with an [`fs.Dirent`](/api/fs#fsdirent), or `null`
+A promise is returned that will be resolved with an [`fs.Dirent`](/api/v16/fs#fsdirent), or `null`
 if there are no more directory entries to read.
 
 Directory entries returned by this function are in no particular order as
@@ -4361,13 +4361,13 @@ included in the iteration results.
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
   * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `dirent` [`fs.Dirent`](/api/fs#fsdirent) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type)
+  * `dirent` [`fs.Dirent`](/api/v16/fs#fsdirent) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type)
 
 Asynchronously read the next directory entry via readdir(3) as an
-[`fs.Dirent`](/api/fs#fsdirent).
+[`fs.Dirent`](/api/v16/fs#fsdirent).
 
 After the read is completed, the `callback` will be called with an
-[`fs.Dirent`](/api/fs#fsdirent), or `null` if there are no more directory entries to read.
+[`fs.Dirent`](/api/v16/fs#fsdirent), or `null` if there are no more directory entries to read.
 
 Directory entries returned by this function are in no particular order as
 provided by the operating system's underlying directory mechanisms.
@@ -4378,9 +4378,9 @@ included in the iteration results.
 
 <Metadata data={{"update":{"type":"added","version":["v12.12.0"]}}} />
 
-* Returns: [`fs.Dirent`](/api/fs#fsdirent) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type)
+* Returns: [`fs.Dirent`](/api/v16/fs#fsdirent) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type)
 
-Synchronously read the next directory entry as an [`fs.Dirent`](/api/fs#fsdirent). See the
+Synchronously read the next directory entry as an [`fs.Dirent`](/api/v16/fs#fsdirent). See the
 POSIX readdir(3) documentation for more detail.
 
 If there are no more directory entries to read, `null` will be returned.
@@ -4394,15 +4394,15 @@ included in the iteration results.
 
 <Metadata data={{"update":{"type":"added","version":["v12.12.0"]}}} />
 
-* Returns: [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface) of [`fs.Dirent`](/api/fs#fsdirent)
+* Returns: [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface) of [`fs.Dirent`](/api/v16/fs#fsdirent)
 
 Asynchronously iterates over the directory until all entries have
 been read. Refer to the POSIX readdir(3) documentation for more detail.
 
-Entries returned by the async iterator are always an [`fs.Dirent`](/api/fs#fsdirent).
+Entries returned by the async iterator are always an [`fs.Dirent`](/api/v16/fs#fsdirent).
 The `null` case from `dir.read()` is handled internally.
 
-See [`fs.Dir`](/api/fs#fsdir) for an example.
+See [`fs.Dir`](/api/v16/fs#fsdir) for an example.
 
 Directory entries returned by this iterator are in no particular order as
 provided by the operating system's underlying directory mechanisms.
@@ -4414,12 +4414,12 @@ included in the iteration results.
 <Metadata data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
 A representation of a directory entry, which can be a file or a subdirectory
-within the directory, as returned by reading from an [`fs.Dir`](/api/fs#fsdir). The
+within the directory, as returned by reading from an [`fs.Dir`](/api/v16/fs#fsdir). The
 directory entry is a combination of the file name and file type pairs.
 
 Additionally, when [`fs.readdir()`][] or [`fs.readdirSync()`][] is called with
 the `withFileTypes` option set to `true`, the resulting array is filled with
-[`fs.Dirent`](/api/fs#fsdirent) objects, rather than strings or [`Buffer`](/api/buffer#buffer)s.
+[`fs.Dirent`](/api/v16/fs#fsdirent) objects, rather than strings or [`Buffer`](/api/v16/buffer#buffer)s.
 
 ##### <DataTag tag="M" /> `dirent.isBlockDevice()`
 
@@ -4427,7 +4427,7 @@ the `withFileTypes` option set to `true`, the resulting array is filled with
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a block device.
+Returns `true` if the [`fs.Dirent`](/api/v16/fs#fsdirent) object describes a block device.
 
 ##### <DataTag tag="M" /> `dirent.isCharacterDevice()`
 
@@ -4435,7 +4435,7 @@ Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a block d
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a character device.
+Returns `true` if the [`fs.Dirent`](/api/v16/fs#fsdirent) object describes a character device.
 
 ##### <DataTag tag="M" /> `dirent.isDirectory()`
 
@@ -4443,7 +4443,7 @@ Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a charact
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a file system
+Returns `true` if the [`fs.Dirent`](/api/v16/fs#fsdirent) object describes a file system
 directory.
 
 ##### <DataTag tag="M" /> `dirent.isFIFO()`
@@ -4452,7 +4452,7 @@ directory.
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a first-in-first-out
+Returns `true` if the [`fs.Dirent`](/api/v16/fs#fsdirent) object describes a first-in-first-out
 (FIFO) pipe.
 
 ##### <DataTag tag="M" /> `dirent.isFile()`
@@ -4461,7 +4461,7 @@ Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a first-i
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a regular file.
+Returns `true` if the [`fs.Dirent`](/api/v16/fs#fsdirent) object describes a regular file.
 
 ##### <DataTag tag="M" /> `dirent.isSocket()`
 
@@ -4469,7 +4469,7 @@ Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a regular
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a socket.
+Returns `true` if the [`fs.Dirent`](/api/v16/fs#fsdirent) object describes a socket.
 
 ##### <DataTag tag="M" /> `dirent.isSymbolicLink()`
 
@@ -4477,15 +4477,15 @@ Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a socket.
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if the [`fs.Dirent`](/api/fs#fsdirent) object describes a symbolic link.
+Returns `true` if the [`fs.Dirent`](/api/v16/fs#fsdirent) object describes a symbolic link.
 
 ##### <DataTag tag="M" /> `dirent.name`
 
 <Metadata data={{"update":{"type":"added","version":["v10.10.0"]}}} />
 
-* [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
+* [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer)
 
-The file name that this [`fs.Dirent`](/api/fs#fsdirent) object refers to. The type of this
+The file name that this [`fs.Dirent`](/api/v16/fs#fsdirent) object refers to. The type of this
 value is determined by the `options.encoding` passed to [`fs.readdir()`][] or
 [`fs.readdirSync()`][].
 
@@ -4493,12 +4493,12 @@ value is determined by the `options.encoding` passed to [`fs.readdir()`][] or
 
 <Metadata data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
-* Extends [`EventEmitter`](/api/events#eventemitter)
+* Extends [`EventEmitter`](/api/v16/events#eventemitter)
 
-A successful call to [`fs.watch()`][] method will return a new [`fs.FSWatcher`](/api/fs#fsfswatcher)
+A successful call to [`fs.watch()`][] method will return a new [`fs.FSWatcher`](/api/v16/fs#fsfswatcher)
 object.
 
-All [`fs.FSWatcher`](/api/fs#fsfswatcher) objects emit a `'change'` event whenever a specific watched
+All [`fs.FSWatcher`](/api/v16/fs#fsfswatcher) objects emit a `'change'` event whenever a specific watched
 file is modified.
 
 ##### <DataTag tag="E" /> `'change'`
@@ -4506,13 +4506,13 @@ file is modified.
 <Metadata data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
 * `eventType` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The type of change event that has occurred
-* `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) The filename that changed (if relevant/available)
+* `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) The filename that changed (if relevant/available)
 
 Emitted when something changes in a watched directory or file.
 See more details in [`fs.watch()`][].
 
 The `filename` argument may not be provided depending on operating system
-support. If `filename` is provided, it will be provided as a [`Buffer`](/api/buffer#buffer) if
+support. If `filename` is provided, it will be provided as a [`Buffer`](/api/v16/buffer#buffer) if
 `fs.watch()` is called with its `encoding` option set to `'buffer'`, otherwise
 `filename` will be a UTF-8 string.
 
@@ -4532,7 +4532,7 @@ watch('./tmp', { encoding: 'buffer' }, (eventType, filename) => {
 <Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 Emitted when the watcher stops watching for changes. The closed
-[`fs.FSWatcher`](/api/fs#fsfswatcher) object is no longer usable in the event handler.
+[`fs.FSWatcher`](/api/v16/fs#fsfswatcher) object is no longer usable in the event handler.
 
 ##### <DataTag tag="E" /> `'error'`
 
@@ -4541,26 +4541,26 @@ Emitted when the watcher stops watching for changes. The closed
 * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
 Emitted when an error occurs while watching the file. The errored
-[`fs.FSWatcher`](/api/fs#fsfswatcher) object is no longer usable in the event handler.
+[`fs.FSWatcher`](/api/v16/fs#fsfswatcher) object is no longer usable in the event handler.
 
 ##### <DataTag tag="M" /> `watcher.close()`
 
 <Metadata data={{"update":{"type":"added","version":["v0.5.8"]}}} />
 
-Stop watching for changes on the given [`fs.FSWatcher`](/api/fs#fsfswatcher). Once stopped, the
-[`fs.FSWatcher`](/api/fs#fsfswatcher) object is no longer usable.
+Stop watching for changes on the given [`fs.FSWatcher`](/api/v16/fs#fsfswatcher). Once stopped, the
+[`fs.FSWatcher`](/api/v16/fs#fsfswatcher) object is no longer usable.
 
 ##### <DataTag tag="M" /> `watcher.ref()`
 
 <Metadata data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
 
-* Returns: [`fs.FSWatcher`](/api/fs#fsfswatcher)
+* Returns: [`fs.FSWatcher`](/api/v16/fs#fsfswatcher)
 
 When called, requests that the Node.js event loop _not_ exit so long as the
-[`fs.FSWatcher`](/api/fs#fsfswatcher) is active. Calling `watcher.ref()` multiple times will have
+[`fs.FSWatcher`](/api/v16/fs#fsfswatcher) is active. Calling `watcher.ref()` multiple times will have
 no effect.
 
-By default, all [`fs.FSWatcher`](/api/fs#fsfswatcher) objects are "ref'ed", making it normally
+By default, all [`fs.FSWatcher`](/api/v16/fs#fsfswatcher) objects are "ref'ed", making it normally
 unnecessary to call `watcher.ref()` unless `watcher.unref()` had been
 called previously.
 
@@ -4568,11 +4568,11 @@ called previously.
 
 <Metadata data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
 
-* Returns: [`fs.FSWatcher`](/api/fs#fsfswatcher)
+* Returns: [`fs.FSWatcher`](/api/v16/fs#fsfswatcher)
 
-When called, the active [`fs.FSWatcher`](/api/fs#fsfswatcher) object will not require the Node.js
+When called, the active [`fs.FSWatcher`](/api/v16/fs#fsfswatcher) object will not require the Node.js
 event loop to remain active. If there is no other activity keeping the
-event loop running, the process may exit before the [`fs.FSWatcher`](/api/fs#fsfswatcher) object's
+event loop running, the process may exit before the [`fs.FSWatcher`](/api/v16/fs#fsfswatcher) object's
 callback is invoked. Calling `watcher.unref()` multiple times will have
 no effect.
 
@@ -4580,22 +4580,22 @@ no effect.
 
 <Metadata data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
 
-* Extends [`EventEmitter`](/api/events#eventemitter)
+* Extends [`EventEmitter`](/api/v16/events#eventemitter)
 
-A successful call to `fs.watchFile()` method will return a new [`fs.StatWatcher`](/api/fs#fsstatwatcher)
+A successful call to `fs.watchFile()` method will return a new [`fs.StatWatcher`](/api/v16/fs#fsstatwatcher)
 object.
 
 ##### <DataTag tag="M" /> `watcher.ref()`
 
 <Metadata data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
 
-* Returns: [`fs.StatWatcher`](/api/fs#fsstatwatcher)
+* Returns: [`fs.StatWatcher`](/api/v16/fs#fsstatwatcher)
 
 When called, requests that the Node.js event loop _not_ exit so long as the
-[`fs.StatWatcher`](/api/fs#fsstatwatcher) is active. Calling `watcher.ref()` multiple times will have
+[`fs.StatWatcher`](/api/v16/fs#fsstatwatcher) is active. Calling `watcher.ref()` multiple times will have
 no effect.
 
-By default, all [`fs.StatWatcher`](/api/fs#fsstatwatcher) objects are "ref'ed", making it normally
+By default, all [`fs.StatWatcher`](/api/v16/fs#fsstatwatcher) objects are "ref'ed", making it normally
 unnecessary to call `watcher.ref()` unless `watcher.unref()` had been
 called previously.
 
@@ -4603,11 +4603,11 @@ called previously.
 
 <Metadata data={{"update":{"type":"added","version":["v14.3.0","v12.20.0"]}}} />
 
-* Returns: [`fs.StatWatcher`](/api/fs#fsstatwatcher)
+* Returns: [`fs.StatWatcher`](/api/v16/fs#fsstatwatcher)
 
-When called, the active [`fs.StatWatcher`](/api/fs#fsstatwatcher) object will not require the Node.js
+When called, the active [`fs.StatWatcher`](/api/v16/fs#fsstatwatcher) object will not require the Node.js
 event loop to remain active. If there is no other activity keeping the
-event loop running, the process may exit before the [`fs.StatWatcher`](/api/fs#fsstatwatcher) object's
+event loop running, the process may exit before the [`fs.StatWatcher`](/api/v16/fs#fsstatwatcher) object's
 callback is invoked. Calling `watcher.unref()` multiple times will have
 no effect.
 
@@ -4615,30 +4615,30 @@ no effect.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
-* Extends: [`stream.Readable`](/api/stream#streamreadable)
+* Extends: [`stream.Readable`](/api/v16/stream#streamreadable)
 
-Instances of [`fs.ReadStream`](/api/fs#fsreadstream) are created and returned using the
+Instances of [`fs.ReadStream`](/api/v16/fs#fsreadstream) are created and returned using the
 [`fs.createReadStream()`][] function.
 
 ##### <DataTag tag="E" /> `'close'`
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
-Emitted when the [`fs.ReadStream`](/api/fs#fsreadstream)'s underlying file descriptor has been closed.
+Emitted when the [`fs.ReadStream`](/api/v16/fs#fsreadstream)'s underlying file descriptor has been closed.
 
 ##### <DataTag tag="E" /> `'open'`
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
-* `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Integer file descriptor used by the [`fs.ReadStream`](/api/fs#fsreadstream).
+* `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Integer file descriptor used by the [`fs.ReadStream`](/api/v16/fs#fsreadstream).
 
-Emitted when the [`fs.ReadStream`](/api/fs#fsreadstream)'s file descriptor has been opened.
+Emitted when the [`fs.ReadStream`](/api/v16/fs#fsreadstream)'s file descriptor has been opened.
 
 ##### <DataTag tag="E" /> `'ready'`
 
 <Metadata data={{"update":{"type":"added","version":["v9.11.0"]}}} />
 
-Emitted when the [`fs.ReadStream`](/api/fs#fsreadstream) is ready to be used.
+Emitted when the [`fs.ReadStream`](/api/v16/fs#fsreadstream) is ready to be used.
 
 Fires immediately after `'open'`.
 
@@ -4654,12 +4654,12 @@ The number of bytes that have been read so far.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
-* [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
+* [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer)
 
 The path to the file the stream is reading from as specified in the first
 argument to `fs.createReadStream()`. If `path` is passed as a string, then
-`readStream.path` will be a string. If `path` is passed as a [`Buffer`](/api/buffer#buffer), then
-`readStream.path` will be a [`Buffer`](/api/buffer#buffer). If `fd` is specified, then
+`readStream.path` will be a string. If `path` is passed as a [`Buffer`](/api/v16/buffer#buffer), then
+`readStream.path` will be a [`Buffer`](/api/v16/buffer#buffer). If `fd` is specified, then
 `readStream.path` will be `undefined`.
 
 ##### <DataTag tag="M" /> `readStream.pending`
@@ -4675,7 +4675,7 @@ i.e. before the `'ready'` event is emitted.
 
 <Metadata data={{"changes":[{"version":"v8.1.0","pr-url":"https://github.com/nodejs/node/pull/13173","description":"Added times as numbers."}],"update":{"type":"added","version":["v0.1.21"]}}} />
 
-A [`fs.Stats`](/api/fs#fsstats) object provides information about a file.
+A [`fs.Stats`](/api/v16/fs#fsstats) object provides information about a file.
 
 Objects returned from [`fs.stat()`][], [`fs.lstat()`][], [`fs.fstat()`][], and
 their synchronous counterparts are of this type.
@@ -4739,7 +4739,7 @@ BigIntStats {
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a block device.
+Returns `true` if the [`fs.Stats`](/api/v16/fs#fsstats) object describes a block device.
 
 ##### <DataTag tag="M" /> `stats.isCharacterDevice()`
 
@@ -4747,7 +4747,7 @@ Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a block dev
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a character device.
+Returns `true` if the [`fs.Stats`](/api/v16/fs#fsstats) object describes a character device.
 
 ##### <DataTag tag="M" /> `stats.isDirectory()`
 
@@ -4755,9 +4755,9 @@ Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a character
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a file system directory.
+Returns `true` if the [`fs.Stats`](/api/v16/fs#fsstats) object describes a file system directory.
 
-If the [`fs.Stats`](/api/fs#fsstats) object was obtained from [`fs.lstat()`][], this method will
+If the [`fs.Stats`](/api/v16/fs#fsstats) object was obtained from [`fs.lstat()`][], this method will
 always return `false`. This is because [`fs.lstat()`][] returns information
 about a symbolic link itself and not the path it resolves to.
 
@@ -4767,7 +4767,7 @@ about a symbolic link itself and not the path it resolves to.
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a first-in-first-out (FIFO)
+Returns `true` if the [`fs.Stats`](/api/v16/fs#fsstats) object describes a first-in-first-out (FIFO)
 pipe.
 
 ##### <DataTag tag="M" /> `stats.isFile()`
@@ -4776,7 +4776,7 @@ pipe.
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a regular file.
+Returns `true` if the [`fs.Stats`](/api/v16/fs#fsstats) object describes a regular file.
 
 ##### <DataTag tag="M" /> `stats.isSocket()`
 
@@ -4784,7 +4784,7 @@ Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a regular f
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a socket.
+Returns `true` if the [`fs.Stats`](/api/v16/fs#fsstats) object describes a socket.
 
 ##### <DataTag tag="M" /> `stats.isSymbolicLink()`
 
@@ -4792,7 +4792,7 @@ Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a socket.
 
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if the [`fs.Stats`](/api/fs#fsstats) object describes a symbolic link.
+Returns `true` if the [`fs.Stats`](/api/v16/fs#fsstats) object describes a symbolic link.
 
 This method is only valid when using [`fs.lstat()`][].
 
@@ -5015,30 +5015,30 @@ of 0.12, `ctime` is not "creation time", and on Unix systems, it never was.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
-* Extends [`stream.Writable`](/api/stream#streamwritable)
+* Extends [`stream.Writable`](/api/v16/stream#streamwritable)
 
-Instances of [`fs.WriteStream`](/api/fs#fswritestream) are created and returned using the
+Instances of [`fs.WriteStream`](/api/v16/fs#fswritestream) are created and returned using the
 [`fs.createWriteStream()`][] function.
 
 ##### <DataTag tag="E" /> `'close'`
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
-Emitted when the [`fs.WriteStream`](/api/fs#fswritestream)'s underlying file descriptor has been closed.
+Emitted when the [`fs.WriteStream`](/api/v16/fs#fswritestream)'s underlying file descriptor has been closed.
 
 ##### <DataTag tag="E" /> `'open'`
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
 
-* `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Integer file descriptor used by the [`fs.WriteStream`](/api/fs#fswritestream).
+* `fd` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Integer file descriptor used by the [`fs.WriteStream`](/api/v16/fs#fswritestream).
 
-Emitted when the [`fs.WriteStream`](/api/fs#fswritestream)'s file is opened.
+Emitted when the [`fs.WriteStream`](/api/v16/fs#fswritestream)'s file is opened.
 
 ##### <DataTag tag="E" /> `'ready'`
 
 <Metadata data={{"update":{"type":"added","version":["v9.11.0"]}}} />
 
-Emitted when the [`fs.WriteStream`](/api/fs#fswritestream) is ready to be used.
+Emitted when the [`fs.WriteStream`](/api/v16/fs#fswritestream) is ready to be used.
 
 Fires immediately after `'open'`.
 
@@ -5066,8 +5066,8 @@ is closed.
 
 The path to the file the stream is writing to as specified in the first
 argument to [`fs.createWriteStream()`][]. If `path` is passed as a string, then
-`writeStream.path` will be a string. If `path` is passed as a [`Buffer`](/api/buffer#buffer), then
-`writeStream.path` will be a [`Buffer`](/api/buffer#buffer).
+`writeStream.path` will be a string. If `path` is passed as a [`Buffer`](/api/v16/buffer#buffer), then
+`writeStream.path` will be a [`Buffer`](/api/v16/buffer#buffer).
 
 ##### <DataTag tag="M" /> `writeStream.pending`
 
@@ -5277,7 +5277,7 @@ On Windows, only `O_APPEND`, `O_CREAT`, `O_EXCL`, `O_RDONLY`, `O_RDWR`,
 
 ###### File type constants
 
-The following constants are meant for use with the [`fs.Stats`](/api/fs#fsstats) object's
+The following constants are meant for use with the [`fs.Stats`](/api/v16/fs#fsstats) object's
 `mode` property for determining a file's type.
 
 <table>
@@ -5324,7 +5324,7 @@ are available.
 
 ###### File mode constants
 
-The following constants are meant for use with the [`fs.Stats`](/api/fs#fsstats) object's
+The following constants are meant for use with the [`fs.Stats`](/api/v16/fs#fsstats) object's
 `mode` property for determining the access permissions for a file.
 
 <table>
@@ -5468,7 +5468,7 @@ rename('/tmp/hello', '/tmp/world', (err) => {
 #### File paths
 
 Most `fs` operations accept file paths that may be specified in the form of
-a string, a [`Buffer`](/api/buffer#buffer), or a [`URL`](/api/url#the-whatwg-url-api) object using the `file:` protocol.
+a string, a [`Buffer`](/api/v16/buffer#buffer), or a [`URL`](/api/v16/url#the-whatwg-url-api) object using the `file:` protocol.
 
 ##### String paths
 
@@ -5509,7 +5509,7 @@ try {
 <Metadata data={{"update":{"type":"added","version":["v7.6.0"]}}} />
 
 For most `node:fs` module functions, the `path` or `filename` argument may be
-passed as a [`URL`](/api/url#the-whatwg-url-api) object using the `file:` protocol.
+passed as a [`URL`](/api/v16/url#the-whatwg-url-api) object using the `file:` protocol.
 
 ```mjs
 import { readFileSync } from 'node:fs';
@@ -5521,8 +5521,8 @@ readFileSync(new URL('file:///tmp/hello'));
 
 ###### Platform-specific considerations
 
-On Windows, `file:` [`URL`](/api/url#the-whatwg-url-api)s with a host name convert to UNC paths, while `file:`
-[`URL`](/api/url#the-whatwg-url-api)s with drive letters convert to local absolute paths. `file:` [`URL`](/api/url#the-whatwg-url-api)s
+On Windows, `file:` [`URL`](/api/v16/url#the-whatwg-url-api)s with a host name convert to UNC paths, while `file:`
+[`URL`](/api/v16/url#the-whatwg-url-api)s with drive letters convert to local absolute paths. `file:` [`URL`](/api/v16/url#the-whatwg-url-api)s
 with no host name and no drive letter will result in an error:
 
 ```mjs
@@ -5543,10 +5543,10 @@ readFileSync(new URL('file:///c/p/a/t/h/file'));
 // TypeError [ERR_INVALID_FILE_URL_PATH]: File URL path must be absolute
 ```
 
-`file:` [`URL`](/api/url#the-whatwg-url-api)s with drive letters must use `:` as a separator just after
+`file:` [`URL`](/api/v16/url#the-whatwg-url-api)s with drive letters must use `:` as a separator just after
 the drive letter. Using another separator will result in an error.
 
-On all other platforms, `file:` [`URL`](/api/url#the-whatwg-url-api)s with a host name are unsupported and
+On all other platforms, `file:` [`URL`](/api/v16/url#the-whatwg-url-api)s with a host name are unsupported and
 will result in an error:
 
 ```mjs
@@ -5563,7 +5563,7 @@ readFileSync(new URL('file://hostname/p/a/t/h/file'));
 readFileSync(new URL('file:///tmp/hello'));
 ```
 
-A `file:` [`URL`](/api/url#the-whatwg-url-api) having encoded slash characters will result in an error on all
+A `file:` [`URL`](/api/v16/url#the-whatwg-url-api) having encoded slash characters will result in an error on all
 platforms:
 
 ```mjs
@@ -5582,7 +5582,7 @@ readFileSync(new URL('file:///p/a/t/h/%2f'));
 / characters */
 ```
 
-On Windows, `file:` [`URL`](/api/url#the-whatwg-url-api)s having encoded backslash will result in an error:
+On Windows, `file:` [`URL`](/api/v16/url#the-whatwg-url-api)s having encoded backslash will result in an error:
 
 ```mjs
 import { readFileSync } from 'node:fs';
@@ -5596,10 +5596,10 @@ readFileSync(new URL('file:///C:/path/%5c'));
 
 ##### Buffer paths
 
-Paths specified using a [`Buffer`](/api/buffer#buffer) are useful primarily on certain POSIX
+Paths specified using a [`Buffer`](/api/v16/buffer#buffer) are useful primarily on certain POSIX
 operating systems that treat file paths as opaque byte sequences. On such
 systems, it is possible for a single file path to contain sub-sequences that
-use multiple character encodings. As with string paths, [`Buffer`](/api/buffer#buffer) paths may
+use multiple character encodings. As with string paths, [`Buffer`](/api/v16/buffer#buffer) paths may
 be relative or absolute:
 
 Example using an absolute path on POSIX:
@@ -5674,7 +5674,7 @@ open('/open/some/file.txt', 'r', (err, fd) => {
 });
 ```
 
-The promise-based APIs use a [`FileHandle`](/api/fs#filehandle) object in place of the numeric
+The promise-based APIs use a [`FileHandle`](/api/v16/fs#filehandle) object in place of the numeric
 file descriptor. These objects are better managed by the system to ensure
 that resources are not leaked. However, it is still required that they are
 closed when operations are completed:

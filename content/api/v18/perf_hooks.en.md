@@ -260,7 +260,7 @@ Performance Timeline manually with `performance.clearMeasures`.
 
 <Metadata data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
-* [`PerformanceNodeTiming`](/api/perf_hooks#performancenodetiming)
+* [`PerformanceNodeTiming`](/api/v18/perf_hooks#performancenodetiming)
 
 _This property is an extension by Node.js. It is not available in Web browsers._
 
@@ -300,7 +300,7 @@ which the current `node` process began, measured in Unix time.
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `histogram` [`RecordableHistogram`](/api/perf_hooks#recordablehistogram-extends-histogram) A histogram object created using
+  * `histogram` [`RecordableHistogram`](/api/v18/perf_hooks#recordablehistogram-extends-histogram) A histogram object created using
     `perf_hooks.createHistogram()` that will record runtime durations in
     nanoseconds.
 
@@ -561,7 +561,7 @@ same as the result of `queryxxx` or `getHostByAddr`.
 
 <Metadata data={{"update":{"type":"added","version":["v8.5.0"]}}} />
 
-* Extends: [`PerformanceEntry`](/api/perf_hooks#performanceentry)
+* Extends: [`PerformanceEntry`](/api/v18/perf_hooks#performanceentry)
 
 _This property is an extension by Node.js. It is not available in Web browsers._
 
@@ -641,7 +641,7 @@ initialized.
 
 <Metadata data={{"update":{"type":"added","version":["v18.2.0"]}}} />
 
-* Extends: [`PerformanceEntry`](/api/perf_hooks#performanceentry)
+* Extends: [`PerformanceEntry`](/api/v18/perf_hooks#performanceentry)
 
 Provides detailed network timing data regarding the loading of an application's
 resources.
@@ -804,8 +804,8 @@ Get supported types.
 <Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."}],"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-  * `list` [`PerformanceObserverEntryList`](/api/perf_hooks#performanceobserverentrylist)
-  * `observer` [`PerformanceObserver`](/api/perf_hooks#perf_hooksperformanceobserver)
+  * `list` [`PerformanceObserverEntryList`](/api/v18/perf_hooks#performanceobserverentrylist)
+  * `observer` [`PerformanceObserver`](/api/v18/perf_hooks#perf_hooksperformanceobserver)
 
 `PerformanceObserver` objects provide notifications when new
 `PerformanceEntry` instances have been added to the Performance Timeline.
@@ -849,18 +849,18 @@ Disconnects the `PerformanceObserver` instance from all notifications.
 <Metadata data={{"changes":[{"version":"v16.7.0","pr-url":"https://github.com/nodejs/node/pull/39297","description":"Updated to conform to Performance Timeline Level 2. The buffered option has been added back."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Updated to conform to User Timing Level 3. The buffered option has been removed."}],"update":{"type":"added","version":["v8.5.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A single [`PerformanceEntry`](/api/perf_hooks#performanceentry) type. Must not be given
+  * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A single [`PerformanceEntry`](/api/v18/perf_hooks#performanceentry) type. Must not be given
     if `entryTypes` is already specified.
   * `entryTypes` string\[] An array of strings identifying the types of
-    [`PerformanceEntry`](/api/perf_hooks#performanceentry) instances the observer is interested in. If not
+    [`PerformanceEntry`](/api/v18/perf_hooks#performanceentry) instances the observer is interested in. If not
     provided an error will be thrown.
   * `buffered` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If true, the observer callback is called with a
     list global `PerformanceEntry` buffered entries. If false, only
     `PerformanceEntry`s created after the time point are sent to the
     observer callback. **Default:** `false`.
 
-Subscribes the [`PerformanceObserver`](/api/perf_hooks#perf_hooksperformanceobserver) instance to notifications of new
-[`PerformanceEntry`](/api/perf_hooks#performanceentry) instances identified either by `options.entryTypes`
+Subscribes the [`PerformanceObserver`](/api/v18/perf_hooks#perf_hooksperformanceobserver) instance to notifications of new
+[`PerformanceEntry`](/api/v18/perf_hooks#performanceentry) instances identified either by `options.entryTypes`
 or `options.type`:
 
 ```js
@@ -1043,9 +1043,9 @@ performance.mark('meow');
     **Default:** `Number.MAX_SAFE_INTEGER`.
   * `figures` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of accuracy digits. Must be a number between
     `1` and `5`. **Default:** `3`.
-* Returns [`RecordableHistogram`](/api/perf_hooks#recordablehistogram-extends-histogram)
+* Returns [`RecordableHistogram`](/api/v18/perf_hooks#recordablehistogram-extends-histogram)
 
-Returns a [`RecordableHistogram`](/api/perf_hooks#recordablehistogram-extends-histogram).
+Returns a [`RecordableHistogram`](/api/v18/perf_hooks#recordablehistogram-extends-histogram).
 
 ### <DataTag tag="M" /> `perf_hooks.monitorEventLoopDelay([options])`
 
@@ -1054,7 +1054,7 @@ Returns a [`RecordableHistogram`](/api/perf_hooks#recordablehistogram-extends-hi
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `resolution` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The sampling rate in milliseconds. Must be greater
     than zero. **Default:** `10`.
-* Returns: [`IntervalHistogram`](/api/perf_hooks#intervalhistogram-extends-histogram)
+* Returns: [`IntervalHistogram`](/api/v18/perf_hooks#intervalhistogram-extends-histogram)
 
 _This property is an extension by Node.js. It is not available in Web browsers._
 
@@ -1232,8 +1232,8 @@ started, `false` if it was already started.
 
 #### Cloning an `IntervalHistogram`
 
-[`IntervalHistogram`](/api/perf_hooks#intervalhistogram-extends-histogram) instances can be cloned via [`MessagePort`](/api/worker_threads#messageport). On the receiving
-end, the histogram is cloned as a plain [`Histogram`](/api/perf_hooks#histogram) object that does not
+[`IntervalHistogram`](/api/v18/perf_hooks#intervalhistogram-extends-histogram) instances can be cloned via [`MessagePort`](/api/v18/worker_threads#messageport). On the receiving
+end, the histogram is cloned as a plain [`Histogram`](/api/v18/perf_hooks#histogram) object that does not
 implement the `enable()` and `disable()` methods.
 
 ### <DataTag tag="C" /> `RecordableHistogram extends Histogram`
@@ -1244,7 +1244,7 @@ implement the `enable()` and `disable()` methods.
 
 <Metadata data={{"update":{"type":"added","version":["v17.4.0","v16.14.0"]}}} />
 
-* `other` [`RecordableHistogram`](/api/perf_hooks#recordablehistogram-extends-histogram)
+* `other` [`RecordableHistogram`](/api/v18/perf_hooks#recordablehistogram-extends-histogram)
 
 Adds the values from `other` to this histogram.
 

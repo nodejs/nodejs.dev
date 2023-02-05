@@ -78,7 +78,7 @@ received on the `input` stream.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.104"]}}} />
 
-* Extends: [`EventEmitter`](/api/events#eventemitter)
+* Extends: [`EventEmitter`](/api/v19/events#eventemitter)
 
 Instances of the `InterfaceConstructor` class are constructed using the
 `readlinePromises.createInterface()` or `readline.createInterface()` method.
@@ -451,7 +451,7 @@ Experimental
 
 <Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-* Extends: [`readline.InterfaceConstructor`](/api/readline#interfaceconstructor)
+* Extends: [`readline.InterfaceConstructor`](/api/v19/readline#interfaceconstructor)
 
 Instances of the `readlinePromises.Interface` class are constructed using the
 `readlinePromises.createInterface()` method. Every instance is associated with a
@@ -466,7 +466,7 @@ and is read from, the `input` stream.
 * `query` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A statement or query to write to `output`, prepended to the
   prompt.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Optionally allows the `question()` to be canceled
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Optionally allows the `question()` to be canceled
     using an `AbortSignal`.
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) A promise that is fulfilled with the user's
   input in response to the `query`.
@@ -511,7 +511,7 @@ console.log(`Oh, so your favorite food is ${answer}`);
 
 <Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-* `stream` [`stream.Writable`](/api/stream#streamwritable) A [TTY][] stream.
+* `stream` [`stream.Writable`](/api/v19/stream#streamwritable) A [TTY][] stream.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `autoCommit` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If `true`, no need to call `rl.commit()`.
 
@@ -593,9 +593,9 @@ sending it to the associated `stream`.
 <Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `input` [`stream.Readable`](/api/stream#streamreadable) The [Readable][] stream to listen to. This option
+  * `input` [`stream.Readable`](/api/v19/stream#streamreadable) The [Readable][] stream to listen to. This option
     is _required_.
-  * `output` [`stream.Writable`](/api/stream#streamwritable) The [Writable][] stream to write readline data
+  * `output` [`stream.Writable`](/api/v19/stream#streamwritable) The [Writable][] stream to write readline data
     to.
   * `completer` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) An optional function used for Tab autocompletion.
   * `terminal` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` if the `input` and `output` streams should be
@@ -627,7 +627,7 @@ sending it to the associated `stream`.
     **Default:** `500`.
   * `tabSize` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of spaces a tab is equal to (minimum 1).
     **Default:** `8`.
-* Returns: [`readlinePromises.Interface`](/api/readline#readlinepromisesinterface)
+* Returns: [`readlinePromises.Interface`](/api/v19/readline#readlinepromisesinterface)
 
 The `readlinePromises.createInterface()` method creates a new `readlinePromises.Interface`
 instance.
@@ -690,7 +690,7 @@ async function completer(linePartial) {
 
 <Metadata data={{"changes":[{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/37947","description":"The class `readline.Interface` now inherits from `Interface`."}],"update":{"type":"added","version":["v0.1.104"]}}} />
 
-* Extends: [`readline.InterfaceConstructor`](/api/readline#interfaceconstructor)
+* Extends: [`readline.InterfaceConstructor`](/api/v19/readline#interfaceconstructor)
 
 Instances of the `readline.Interface` class are constructed using the
 `readline.createInterface()` method. Every instance is associated with a
@@ -705,7 +705,7 @@ and is read from, the `input` stream.
 * `query` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A statement or query to write to `output`, prepended to the
   prompt.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Optionally allows the `question()` to be canceled
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Optionally allows the `question()` to be canceled
     using an `AbortController`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A callback function that is invoked with the user's
   input in response to the `query`.
@@ -755,7 +755,7 @@ setTimeout(() => ac.abort(), 10000);
 
 <Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28674","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
-* `stream` [`stream.Writable`](/api/stream#streamwritable)
+* `stream` [`stream.Writable`](/api/v19/stream#streamwritable)
 * `dir` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
   * `-1`: to the left from cursor
   * `1`: to the right from cursor
@@ -772,7 +772,7 @@ in a specified direction identified by `dir`.
 
 <Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28641","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
-* `stream` [`stream.Writable`](/api/stream#streamwritable)
+* `stream` [`stream.Writable`](/api/v19/stream#streamwritable)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Invoked once the operation completes.
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `false` if `stream` wishes for the calling code to wait for
   the `'drain'` event to be emitted before continuing to write additional data;
@@ -786,9 +786,9 @@ the current position of the cursor down.
 <Metadata data={{"changes":[{"version":["v15.14.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37932","description":"The `signal` option is supported now."},{"version":["v15.8.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/33662","description":"The `history` option is supported now."},{"version":"v13.9.0","pr-url":"https://github.com/nodejs/node/pull/31318","description":"The `tabSize` option is supported now."},{"version":["v8.3.0","v6.11.4"],"pr-url":"https://github.com/nodejs/node/pull/13497","description":"Remove max limit of `crlfDelay` option."},{"version":"v6.6.0","pr-url":"https://github.com/nodejs/node/pull/8109","description":"The `crlfDelay` option is supported now."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/7125","description":"The `prompt` option is supported now."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6352","description":"The `historySize` option can be `0` now."}],"update":{"type":"added","version":["v0.1.98"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `input` [`stream.Readable`](/api/stream#streamreadable) The [Readable][] stream to listen to. This option
+  * `input` [`stream.Readable`](/api/v19/stream#streamreadable) The [Readable][] stream to listen to. This option
     is _required_.
-  * `output` [`stream.Writable`](/api/stream#streamwritable) The [Writable][] stream to write readline data
+  * `output` [`stream.Writable`](/api/v19/stream#streamwritable) The [Writable][] stream to write readline data
     to.
   * `completer` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) An optional function used for Tab autocompletion.
   * `terminal` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` if the `input` and `output` streams should be
@@ -820,9 +820,9 @@ the current position of the cursor down.
     **Default:** `500`.
   * `tabSize` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of spaces a tab is equal to (minimum 1).
     **Default:** `8`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows closing the interface using an AbortSignal.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows closing the interface using an AbortSignal.
     Aborting the signal will internally call `close` on the interface.
-* Returns: [`readline.Interface`](/api/readline#readlineinterface)
+* Returns: [`readline.Interface`](/api/v19/readline#readlineinterface)
 
 The `readline.createInterface()` method creates a new `readline.Interface`
 instance.
@@ -885,7 +885,7 @@ function completer(linePartial, callback) {
 
 <Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28674","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
-* `stream` [`stream.Writable`](/api/stream#streamwritable)
+* `stream` [`stream.Writable`](/api/v19/stream#streamwritable)
 * `x` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `y` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Invoked once the operation completes.
@@ -900,7 +900,7 @@ given [TTY][] `stream`.
 
 <Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28674","description":"The stream's write() callback and return value are exposed."}],"update":{"type":"added","version":["v0.7.7"]}}} />
 
-* `stream` [`stream.Writable`](/api/stream#streamwritable)
+* `stream` [`stream.Writable`](/api/v19/stream#streamwritable)
 * `dx` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `dy` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Invoked once the operation completes.
@@ -915,8 +915,8 @@ position in a given [TTY][] `stream`.
 
 <Metadata data={{"update":{"type":"added","version":["v0.7.7"]}}} />
 
-* `stream` [`stream.Readable`](/api/stream#streamreadable)
-* `interface` [`readline.InterfaceConstructor`](/api/readline#interfaceconstructor)
+* `stream` [`stream.Readable`](/api/v19/stream#streamreadable)
+* `interface` [`readline.InterfaceConstructor`](/api/v19/readline#interfaceconstructor)
 
 The `readline.emitKeypressEvents()` method causes the given [Readable][]
 stream to begin emitting `'keypress'` events corresponding to received input.

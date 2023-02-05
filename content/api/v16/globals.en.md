@@ -57,13 +57,13 @@ the `'abort'` event.
 
 <Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-* Type: [`AbortSignal`](/api/globals#abortsignal)
+* Type: [`AbortSignal`](/api/v16/globals#abortsignal)
 
 #### <DataTag tag="C" /> `AbortSignal`
 
 <Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
-* Extends: [`EventTarget`](/api/events#eventtarget)
+* Extends: [`EventTarget`](/api/v16/events#eventtarget)
 
 The `AbortSignal` is used to notify observers when the
 `abortController.abort()` method is called.
@@ -73,7 +73,7 @@ The `AbortSignal` is used to notify observers when the
 <Metadata data={{"changes":[{"version":"v16.14.0","pr-url":"https://github.com/nodejs/node/pull/40807","description":"Added the new optional reason argument."}],"update":{"type":"added","version":["v15.12.0","v14.17.0"]}}} />
 
 * `reason`: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
-* Returns: [`AbortSignal`](/api/globals#abortsignal)
+* Returns: [`AbortSignal`](/api/v16/globals#abortsignal)
 
 Returns a new already aborted `AbortSignal`.
 
@@ -240,7 +240,7 @@ Experimental. Enable this API with the [`--experimental-global-webcrypto`][] CLI
 
 </Stability>
 
-A browser-compatible implementation of [`Crypto`](/api/webcrypto#crypto). This global is available
+A browser-compatible implementation of [`Crypto`](/api/v16/webcrypto#crypto). This global is available
 only if the Node.js binary was compiled with including support for the
 `node:crypto` module.
 
@@ -266,7 +266,7 @@ Experimental. Enable this API with the [`--experimental-global-webcrypto`][] CLI
 
 </Stability>
 
-A browser-compatible implementation of [`CryptoKey`](/api/webcrypto#cryptokey). This global is available
+A browser-compatible implementation of [`CryptoKey`](/api/v16/webcrypto#cryptokey). This global is available
 only if the Node.js binary was compiled with including support for the
 `node:crypto` module.
 
@@ -499,7 +499,7 @@ Experimental. Enable this API with the [`--experimental-global-webcrypto`][] CLI
 
 </Stability>
 
-A browser-compatible implementation of [`SubtleCrypto`](/api/webcrypto#subtlecrypto). This global is available
+A browser-compatible implementation of [`SubtleCrypto`](/api/v16/webcrypto#subtlecrypto). This global is available
 only if the Node.js binary was compiled with including support for the
 `node:crypto` module.
 

@@ -103,13 +103,13 @@ const stream = new ReadableStream({
 * `underlyingSource` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `start` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A user-defined function that is invoked immediately when
     the `ReadableStream` is created.
-    * `controller` [`ReadableStreamDefaultController`](/api/webstreams#readablestreamdefaultcontroller) | [`ReadableByteStreamController`](/api/webstreams#readablebytestreamcontroller)
+    * `controller` [`ReadableStreamDefaultController`](/api/v18/webstreams#readablestreamdefaultcontroller) | [`ReadableByteStreamController`](/api/v18/webstreams#readablebytestreamcontroller)
     * Returns: `undefined` or a promise fulfilled with `undefined`.
   * `pull` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A user-defined function that is called repeatedly when the
     `ReadableStream` internal queue is not full. The operation may be sync or
     async. If async, the function will not be called again until the previously
     returned promise is fulfilled.
-    * `controller` [`ReadableStreamDefaultController`](/api/webstreams#readablestreamdefaultcontroller) | [`ReadableByteStreamController`](/api/webstreams#readablebytestreamcontroller)
+    * `controller` [`ReadableStreamDefaultController`](/api/v18/webstreams#readablestreamdefaultcontroller) | [`ReadableByteStreamController`](/api/v18/webstreams#readablebytestreamcontroller)
     * Returns: A promise fulfilled with `undefined`.
   * `cancel` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A user-defined function that is called when the
     `ReadableStream` is canceled.
@@ -131,7 +131,7 @@ const stream = new ReadableStream({
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Set to `true` if there is an active reader for this
-  [`ReadableStream`](/api/webstreams#readablestream).
+  [`ReadableStream`](/api/v18/webstreams#readablestream).
 
 The `readableStream.locked` property is `false` by default, and is
 switched to `true` while there is an active reader consuming the
@@ -151,7 +151,7 @@ stream's data.
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) `'byob'` or `undefined`
-* Returns: [`ReadableStreamDefaultReader`](/api/webstreams#readablestreamdefaultreader) | [`ReadableStreamBYOBReader`](/api/webstreams#readablestreambyobreader)
+* Returns: [`ReadableStreamDefaultReader`](/api/v18/webstreams#readablestreamdefaultreader) | [`ReadableStreamBYOBReader`](/api/v18/webstreams#readablestreambyobreader)
 
 ```mjs
 import { ReadableStream } from 'node:stream/web';
@@ -180,10 +180,10 @@ Causes the `readableStream.locked` to be `true`.
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `transform` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `readable` [`ReadableStream`](/api/webstreams#readablestream) The `ReadableStream` to which
+  * `readable` [`ReadableStream`](/api/v18/webstreams#readablestream) The `ReadableStream` to which
     `transform.writable` will push the potentially modified data
     is receives from this `ReadableStream`.
-  * `writable` [`WritableStream`](/api/webstreams#writablestream) The `WritableStream` to which this
+  * `writable` [`WritableStream`](/api/v18/webstreams#writablestream) The `WritableStream` to which this
     `ReadableStream`'s data will be written.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `preventAbort` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When `true`, errors in this `ReadableStream`
@@ -193,13 +193,13 @@ Causes the `readableStream.locked` to be `true`.
     canceled.
   * `preventClose` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When `true`, closing this `ReadableStream`
     does not cause `transform.writable` to be closed.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows the transfer of data to be canceled
-    using an [`AbortController`](/api/globals#abortcontroller).
-* Returns: [`ReadableStream`](/api/webstreams#readablestream) From `transform.readable`.
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) Allows the transfer of data to be canceled
+    using an [`AbortController`](/api/v18/globals#abortcontroller).
+* Returns: [`ReadableStream`](/api/v18/webstreams#readablestream) From `transform.readable`.
 
-Connects this [`ReadableStream`](/api/webstreams#readablestream) to the pair of [`ReadableStream`](/api/webstreams#readablestream) and
-[`WritableStream`](/api/webstreams#writablestream) provided in the `transform` argument such that the
-data from this [`ReadableStream`](/api/webstreams#readablestream) is written in to `transform.writable`,
+Connects this [`ReadableStream`](/api/v18/webstreams#readablestream) to the pair of [`ReadableStream`](/api/v18/webstreams#readablestream) and
+[`WritableStream`](/api/v18/webstreams#writablestream) provided in the `transform` argument such that the
+data from this [`ReadableStream`](/api/v18/webstreams#readablestream) is written in to `transform.writable`,
 possibly transformed, then pushed to `transform.readable`. Once the
 pipeline is configured, `transform.readable` is returned.
 
@@ -260,7 +260,7 @@ const transformedStream = stream.pipeThrough(transform);
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-* `destination` [`WritableStream`](/api/webstreams#writablestream) A [`WritableStream`](/api/webstreams#writablestream) to which this
+* `destination` [`WritableStream`](/api/v18/webstreams#writablestream) A [`WritableStream`](/api/v18/webstreams#writablestream) to which this
   `ReadableStream`'s data will be written.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `preventAbort` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When `true`, errors in this `ReadableStream`
@@ -269,8 +269,8 @@ const transformedStream = stream.pipeThrough(transform);
     will not cause this `ReadableStream` to be canceled.
   * `preventClose` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When `true`, closing this `ReadableStream`
     does not cause `destination` to be closed.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows the transfer of data to be canceled
-    using an [`AbortController`](/api/globals#abortcontroller).
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) Allows the transfer of data to be canceled
+    using an [`AbortController`](/api/v18/globals#abortcontroller).
 * Returns: A promise fulfilled with `undefined`
 
 Causes the `readableStream.locked` to be `true` while the pipe operation
@@ -282,7 +282,7 @@ is active.
 
 * Returns: ReadableStream\[]
 
-Returns a pair of new [`ReadableStream`](/api/webstreams#readablestream) instances to which this
+Returns a pair of new [`ReadableStream`](/api/v18/webstreams#readablestream) instances to which this
 `ReadableStream`'s data will be forwarded. Each will receive the
 same data.
 
@@ -293,7 +293,7 @@ Causes the `readableStream.locked` to be `true`.
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `preventCancel` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When `true`, prevents the [`ReadableStream`](/api/webstreams#readablestream)
+  * `preventCancel` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When `true`, prevents the [`ReadableStream`](/api/v18/webstreams#readablestream)
     from being closed when the async iterator abruptly terminates.
     **Default**: `false`.
 
@@ -314,7 +314,7 @@ for await (const chunk of stream.values({ preventCancel: true }))
 
 ##### Async Iteration
 
-The [`ReadableStream`](/api/webstreams#readablestream) object supports the async iterator protocol using
+The [`ReadableStream`](/api/v18/webstreams#readablestream) object supports the async iterator protocol using
 `for await` syntax.
 
 ```mjs
@@ -326,20 +326,20 @@ for await (const chunk of stream)
   console.log(Buffer.from(chunk).toString());
 ```
 
-The async iterator will consume the [`ReadableStream`](/api/webstreams#readablestream) until it terminates.
+The async iterator will consume the [`ReadableStream`](/api/v18/webstreams#readablestream) until it terminates.
 
 By default, if the async iterator exits early (via either a `break`,
-`return`, or a `throw`), the [`ReadableStream`](/api/webstreams#readablestream) will be closed. To prevent
-automatic closing of the [`ReadableStream`](/api/webstreams#readablestream), use the `readableStream.values()`
+`return`, or a `throw`), the [`ReadableStream`](/api/v18/webstreams#readablestream) will be closed. To prevent
+automatic closing of the [`ReadableStream`](/api/v18/webstreams#readablestream), use the `readableStream.values()`
 method to acquire the async iterator and set the `preventCancel` option to
 `true`.
 
-The [`ReadableStream`](/api/webstreams#readablestream) must not be locked (that is, it must not have an existing
-active reader). During the async iteration, the [`ReadableStream`](/api/webstreams#readablestream) will be locked.
+The [`ReadableStream`](/api/v18/webstreams#readablestream) must not be locked (that is, it must not have an existing
+active reader). During the async iteration, the [`ReadableStream`](/api/v18/webstreams#readablestream) will be locked.
 
 ##### Transferring with `postMessage()`
 
-A [`ReadableStream`](/api/webstreams#readablestream) instance can be transferred using a [`MessagePort`](/api/worker_threads#messageport).
+A [`ReadableStream`](/api/v18/webstreams#readablestream) instance can be transferred using a [`MessagePort`](/api/v18/worker_threads#messageport).
 
 ```js
 const stream = new ReadableStream(getReadableSourceSomehow());
@@ -362,17 +362,17 @@ port2.postMessage(stream, [stream]);
 By default, calling `readableStream.getReader()` with no arguments
 will return an instance of `ReadableStreamDefaultReader`. The default
 reader treats the chunks of data passed through the stream as opaque
-values, which allows the [`ReadableStream`](/api/webstreams#readablestream) to work with generally any
+values, which allows the [`ReadableStream`](/api/v18/webstreams#readablestream) to work with generally any
 JavaScript value.
 
 ##### <DataTag tag="M" /> `new ReadableStreamDefaultReader(stream)`
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-* `stream` [`ReadableStream`](/api/webstreams#readablestream)
+* `stream` [`ReadableStream`](/api/v18/webstreams#readablestream)
 
-Creates a new [`ReadableStreamDefaultReader`](/api/webstreams#readablestreamdefaultreader) that is locked to the
-given [`ReadableStream`](/api/webstreams#readablestream).
+Creates a new [`ReadableStreamDefaultReader`](/api/v18/webstreams#readablestreamdefaultreader) that is locked to the
+given [`ReadableStream`](/api/v18/webstreams#readablestream).
 
 ##### <DataTag tag="M" /> `readableStreamDefaultReader.cancel([reason])`
 
@@ -381,7 +381,7 @@ given [`ReadableStream`](/api/webstreams#readablestream).
 * `reason` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: A promise fulfilled with `undefined`.
 
-Cancels the [`ReadableStream`](/api/webstreams#readablestream) and returns a promise that is fulfilled
+Cancels the [`ReadableStream`](/api/v18/webstreams#readablestream) and returns a promise that is fulfilled
 when the underlying stream has been canceled.
 
 ##### <DataTag tag="M" /> `readableStreamDefaultReader.closed`
@@ -389,7 +389,7 @@ when the underlying stream has been canceled.
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfilled with `undefined` when the associated
-  [`ReadableStream`](/api/webstreams#readablestream) is closed or rejected if the stream errors or the reader's
+  [`ReadableStream`](/api/v18/webstreams#readablestream) is closed or rejected if the stream errors or the reader's
   lock is released before the stream finishes closing.
 
 ##### <DataTag tag="M" /> `readableStreamDefaultReader.read()`
@@ -400,7 +400,7 @@ when the underlying stream has been canceled.
   * `value` [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
   * `done` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Requests the next chunk of data from the underlying [`ReadableStream`](/api/webstreams#readablestream)
+Requests the next chunk of data from the underlying [`ReadableStream`](/api/v18/webstreams#readablestream)
 and returns a promise that is fulfilled with the data once it is
 available.
 
@@ -408,14 +408,14 @@ available.
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-Releases this reader's lock on the underlying [`ReadableStream`](/api/webstreams#readablestream).
+Releases this reader's lock on the underlying [`ReadableStream`](/api/v18/webstreams#readablestream).
 
 #### <DataTag tag="C" /> `ReadableStreamBYOBReader`
 
 <Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
 The `ReadableStreamBYOBReader` is an alternative consumer for
-byte-oriented [`ReadableStream`](/api/webstreams#readablestream)s (those that are created with
+byte-oriented [`ReadableStream`](/api/v18/webstreams#readablestream)s (those that are created with
 `underlyingSource.type` set equal to `'bytes'` when the
 `ReadableStream` was created).
 
@@ -485,10 +485,10 @@ console.log(Buffer.from(data).toString());
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-* `stream` [`ReadableStream`](/api/webstreams#readablestream)
+* `stream` [`ReadableStream`](/api/v18/webstreams#readablestream)
 
 Creates a new `ReadableStreamBYOBReader` that is locked to the
-given [`ReadableStream`](/api/webstreams#readablestream).
+given [`ReadableStream`](/api/v18/webstreams#readablestream).
 
 ##### <DataTag tag="M" /> `readableStreamBYOBReader.cancel([reason])`
 
@@ -497,7 +497,7 @@ given [`ReadableStream`](/api/webstreams#readablestream).
 * `reason` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: A promise fulfilled with `undefined`.
 
-Cancels the [`ReadableStream`](/api/webstreams#readablestream) and returns a promise that is fulfilled
+Cancels the [`ReadableStream`](/api/v18/webstreams#readablestream) and returns a promise that is fulfilled
 when the underlying stream has been canceled.
 
 ##### <DataTag tag="M" /> `readableStreamBYOBReader.closed`
@@ -505,23 +505,23 @@ when the underlying stream has been canceled.
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfilled with `undefined` when the associated
-  [`ReadableStream`](/api/webstreams#readablestream) is closed or rejected if the stream errors or the reader's
+  [`ReadableStream`](/api/v18/webstreams#readablestream) is closed or rejected if the stream errors or the reader's
   lock is released before the stream finishes closing.
 
 ##### <DataTag tag="M" /> `readableStreamBYOBReader.read(view)`
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-* `view` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+* `view` [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 * Returns: A promise fulfilled with an object:
   * `value` [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
   * `done` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Requests the next chunk of data from the underlying [`ReadableStream`](/api/webstreams#readablestream)
+Requests the next chunk of data from the underlying [`ReadableStream`](/api/v18/webstreams#readablestream)
 and returns a promise that is fulfilled with the data once it is
 available.
 
-Do not pass a pooled [`Buffer`](/api/buffer#buffer) object instance in to this method.
+Do not pass a pooled [`Buffer`](/api/v18/buffer#buffer) object instance in to this method.
 Pooled `Buffer` objects are created using `Buffer.allocUnsafe()`,
 or `Buffer.from()`, or are often returned by various `node:fs` module
 callbacks. These types of `Buffer`s use a shared underlying
@@ -536,13 +536,13 @@ can have disastrous consequences for your application.
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-Releases this reader's lock on the underlying [`ReadableStream`](/api/webstreams#readablestream).
+Releases this reader's lock on the underlying [`ReadableStream`](/api/v18/webstreams#readablestream).
 
 #### <DataTag tag="C" /> `ReadableStreamDefaultController`
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-Every [`ReadableStream`](/api/webstreams#readablestream) has a controller that is responsible for
+Every [`ReadableStream`](/api/v18/webstreams#readablestream) has a controller that is responsible for
 the internal state and management of the stream's queue. The
 `ReadableStreamDefaultController` is the default controller
 implementation for `ReadableStream`s that are not byte-oriented.
@@ -551,7 +551,7 @@ implementation for `ReadableStream`s that are not byte-oriented.
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-Closes the [`ReadableStream`](/api/webstreams#readablestream) to which this controller is associated.
+Closes the [`ReadableStream`](/api/v18/webstreams#readablestream) to which this controller is associated.
 
 ##### <DataTag tag="M" /> `readableStreamDefaultController.desiredSize`
 
@@ -559,7 +559,7 @@ Closes the [`ReadableStream`](/api/webstreams#readablestream) to which this cont
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-Returns the amount of data remaining to fill the [`ReadableStream`](/api/webstreams#readablestream)'s
+Returns the amount of data remaining to fill the [`ReadableStream`](/api/v18/webstreams#readablestream)'s
 queue.
 
 ##### <DataTag tag="M" /> `readableStreamDefaultController.enqueue(chunk)`
@@ -568,7 +568,7 @@ queue.
 
 * `chunk` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
-Appends a new chunk of data to the [`ReadableStream`](/api/webstreams#readablestream)'s queue.
+Appends a new chunk of data to the [`ReadableStream`](/api/v18/webstreams#readablestream)'s queue.
 
 ##### <DataTag tag="M" /> `readableStreamDefaultController.error(error)`
 
@@ -576,13 +576,13 @@ Appends a new chunk of data to the [`ReadableStream`](/api/webstreams#readablest
 
 * `error` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
-Signals an error that causes the [`ReadableStream`](/api/webstreams#readablestream) to error and close.
+Signals an error that causes the [`ReadableStream`](/api/v18/webstreams#readablestream) to error and close.
 
 #### <DataTag tag="C" /> `ReadableByteStreamController`
 
 <Metadata data={{"changes":[{"version":"v18.10.0","pr-url":"https://github.com/nodejs/node/pull/44702","description":"Support handling a BYOB pull request from a released reader."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
-Every [`ReadableStream`](/api/webstreams#readablestream) has a controller that is responsible for
+Every [`ReadableStream`](/api/v18/webstreams#readablestream) has a controller that is responsible for
 the internal state and management of the stream's queue. The
 `ReadableByteStreamController` is for byte-oriented `ReadableStream`s.
 
@@ -590,13 +590,13 @@ the internal state and management of the stream's queue. The
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-* Type: [`ReadableStreamBYOBRequest`](/api/webstreams#readablestreambyobrequest)
+* Type: [`ReadableStreamBYOBRequest`](/api/v18/webstreams#readablestreambyobrequest)
 
 ##### <DataTag tag="M" /> `readableByteStreamController.close()`
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-Closes the [`ReadableStream`](/api/webstreams#readablestream) to which this controller is associated.
+Closes the [`ReadableStream`](/api/v18/webstreams#readablestream) to which this controller is associated.
 
 ##### <DataTag tag="M" /> `readableByteStreamController.desiredSize`
 
@@ -604,16 +604,16 @@ Closes the [`ReadableStream`](/api/webstreams#readablestream) to which this cont
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-Returns the amount of data remaining to fill the [`ReadableStream`](/api/webstreams#readablestream)'s
+Returns the amount of data remaining to fill the [`ReadableStream`](/api/v18/webstreams#readablestream)'s
 queue.
 
 ##### <DataTag tag="M" /> `readableByteStreamController.enqueue(chunk)`
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-* `chunk`: [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+* `chunk`: [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 
-Appends a new chunk of data to the [`ReadableStream`](/api/webstreams#readablestream)'s queue.
+Appends a new chunk of data to the [`ReadableStream`](/api/v18/webstreams#readablestream)'s queue.
 
 ##### <DataTag tag="M" /> `readableByteStreamController.error(error)`
 
@@ -621,7 +621,7 @@ Appends a new chunk of data to the [`ReadableStream`](/api/webstreams#readablest
 
 * `error` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
-Signals an error that causes the [`ReadableStream`](/api/webstreams#readablestream) to error and close.
+Signals an error that causes the [`ReadableStream`](/api/v18/webstreams#readablestream) to error and close.
 
 #### <DataTag tag="C" /> `ReadableStreamBYOBRequest`
 
@@ -650,7 +650,7 @@ to `readableStreamBYOBRequest.view`.
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-* `view` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+* `view` [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 
 Signals that the request has been fulfilled with bytes written
 to a new `Buffer`, `TypedArray`, or `DataView`.
@@ -659,7 +659,7 @@ to a new `Buffer`, `TypedArray`, or `DataView`.
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-* Type: [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+* Type: [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 
 #### <DataTag tag="C" /> `WritableStream`
 
@@ -688,12 +688,12 @@ await stream.getWriter().write('Hello World');
 * `underlyingSink` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `start` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A user-defined function that is invoked immediately when
     the `WritableStream` is created.
-    * `controller` [`WritableStreamDefaultController`](/api/webstreams#writablestreamdefaultcontroller)
+    * `controller` [`WritableStreamDefaultController`](/api/v18/webstreams#writablestreamdefaultcontroller)
     * Returns: `undefined` or a promise fulfilled with `undefined`.
   * `write` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A user-defined function that is invoked when a chunk of
     data has been written to the `WritableStream`.
     * `chunk` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
-    * `controller` [`WritableStreamDefaultController`](/api/webstreams#writablestreamdefaultcontroller)
+    * `controller` [`WritableStreamDefaultController`](/api/v18/webstreams#writablestreamdefaultcontroller)
     * Returns: A promise fulfilled with `undefined`.
   * `close` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A user-defined function that is called when the
     `WritableStream` is closed.
@@ -734,7 +734,7 @@ Closes the `WritableStream` when no additional writes are expected.
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-* Returns: [`WritableStreamDefaultWriter`](/api/webstreams#writablestreamdefaultwriter)
+* Returns: [`WritableStreamDefaultWriter`](/api/v18/webstreams#writablestreamdefaultwriter)
 
 Creates and creates a new writer instance that can be used to write
 data into the `WritableStream`.
@@ -751,7 +751,7 @@ switched to `true` while there is an active writer attached to this
 
 ##### Transferring with postMessage()
 
-A [`WritableStream`](/api/webstreams#writablestream) instance can be transferred using a [`MessagePort`](/api/worker_threads#messageport).
+A [`WritableStream`](/api/v18/webstreams#writablestream) instance can be transferred using a [`MessagePort`](/api/v18/worker_threads#messageport).
 
 ```js
 const stream = new WritableStream(getWritableSinkSomehow());
@@ -773,7 +773,7 @@ port2.postMessage(stream, [stream]);
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-* `stream` [`WritableStream`](/api/webstreams#writablestream)
+* `stream` [`WritableStream`](/api/v18/webstreams#writablestream)
 
 Creates a new `WritableStreamDefaultWriter` that is locked to the given
 `WritableStream`.
@@ -801,7 +801,7 @@ Closes the `WritableStream` when no additional writes are expected.
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
 * Type: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfilled with `undefined` when the associated
-  [`WritableStream`](/api/webstreams#writablestream) is closed or rejected if the stream errors or the writer's
+  [`WritableStream`](/api/v18/webstreams#writablestream) is closed or rejected if the stream errors or the writer's
   lock is released before the stream finishes closing.
 
 ##### <DataTag tag="M" /> `writableStreamDefaultWriter.desiredSize`
@@ -810,7 +810,7 @@ Closes the `WritableStream` when no additional writes are expected.
 
 * Type: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-The amount of data required to fill the [`WritableStream`](/api/webstreams#writablestream)'s queue.
+The amount of data required to fill the [`WritableStream`](/api/v18/webstreams#writablestream)'s queue.
 
 ##### <DataTag tag="M" /> `writableStreamDefaultWriter.ready`
 
@@ -823,7 +823,7 @@ The amount of data required to fill the [`WritableStream`](/api/webstreams#writa
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-Releases this writer's lock on the underlying [`ReadableStream`](/api/webstreams#readablestream).
+Releases this writer's lock on the underlying [`ReadableStream`](/api/v18/webstreams#readablestream).
 
 ##### <DataTag tag="M" /> `writableStreamDefaultWriter.write([chunk])`
 
@@ -832,13 +832,13 @@ Releases this writer's lock on the underlying [`ReadableStream`](/api/webstreams
 * `chunk`: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 * Returns: A promise fulfilled with `undefined`.
 
-Appends a new chunk of data to the [`WritableStream`](/api/webstreams#writablestream)'s queue.
+Appends a new chunk of data to the [`WritableStream`](/api/v18/webstreams#writablestream)'s queue.
 
 #### <DataTag tag="C" /> `WritableStreamDefaultController`
 
 <Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
-The `WritableStreamDefaultController` manage's the [`WritableStream`](/api/webstreams#writablestream)'s
+The `WritableStreamDefaultController` manage's the [`WritableStream`](/api/v18/webstreams#writablestream)'s
 internal state.
 
 ##### <DataTag tag="M" /> `writableStreamDefaultController.error(error)`
@@ -848,19 +848,19 @@ internal state.
 * `error` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
 Called by user-code to signal that an error has occurred while processing
-the `WritableStream` data. When called, the [`WritableStream`](/api/webstreams#writablestream) will be aborted,
+the `WritableStream` data. When called, the [`WritableStream`](/api/v18/webstreams#writablestream) will be aborted,
 with currently pending writes canceled.
 
 ##### <DataTag tag="M" /> `writableStreamDefaultController.signal`
 
-* Type: [`AbortSignal`](/api/globals#abortsignal) An `AbortSignal` that can be used to cancel pending
-  write or close operations when a [`WritableStream`](/api/webstreams#writablestream) is aborted.
+* Type: [`AbortSignal`](/api/v18/globals#abortsignal) An `AbortSignal` that can be used to cancel pending
+  write or close operations when a [`WritableStream`](/api/v18/webstreams#writablestream) is aborted.
 
 #### <DataTag tag="C" /> `TransformStream`
 
 <Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42225","description":"This class is now exposed on the global object."}],"update":{"type":"added","version":["v16.5.0"]}}} />
 
-A `TransformStream` consists of a [`ReadableStream`](/api/webstreams#readablestream) and a [`WritableStream`](/api/webstreams#writablestream) that
+A `TransformStream` consists of a [`ReadableStream`](/api/v18/webstreams#readablestream) and a [`WritableStream`](/api/v18/webstreams#writablestream) that
 are connected such that the data written to the `WritableStream` is received,
 and potentially transformed, before being pushed into the `ReadableStream`'s
 queue.
@@ -889,18 +889,18 @@ await Promise.all([
 * `transformer` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `start` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A user-defined function that is invoked immediately when
     the `TransformStream` is created.
-    * `controller` [`TransformStreamDefaultController`](/api/webstreams#transformstreamdefaultcontroller)
+    * `controller` [`TransformStreamDefaultController`](/api/v18/webstreams#transformstreamdefaultcontroller)
     * Returns: `undefined` or a promise fulfilled with `undefined`
   * `transform` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A user-defined function that receives, and
     potentially modifies, a chunk of data written to `transformStream.writable`,
     before forwarding that on to `transformStream.readable`.
     * `chunk` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
-    * `controller` [`TransformStreamDefaultController`](/api/webstreams#transformstreamdefaultcontroller)
+    * `controller` [`TransformStreamDefaultController`](/api/v18/webstreams#transformstreamdefaultcontroller)
     * Returns: A promise fulfilled with `undefined`.
   * `flush` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A user-defined function that is called immediately before
     the writable side of the `TransformStream` is closed, signaling the end of
     the transformation process.
-    * `controller` [`TransformStreamDefaultController`](/api/webstreams#transformstreamdefaultcontroller)
+    * `controller` [`TransformStreamDefaultController`](/api/v18/webstreams#transformstreamdefaultcontroller)
     * Returns: A promise fulfilled with `undefined`.
   * `readableType` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) the `readableType` option is reserved for future use
     and _must_ be `undefined`.
@@ -925,17 +925,17 @@ await Promise.all([
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-* Type: [`ReadableStream`](/api/webstreams#readablestream)
+* Type: [`ReadableStream`](/api/v18/webstreams#readablestream)
 
 ##### <DataTag tag="M" /> `transformStream.writable`
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
-* Type: [`WritableStream`](/api/webstreams#writablestream)
+* Type: [`WritableStream`](/api/v18/webstreams#writablestream)
 
 ##### Transferring with postMessage()
 
-A [`TransformStream`](/api/webstreams#transformstream) instance can be transferred using a [`MessagePort`](/api/worker_threads#messageport).
+A [`TransformStream`](/api/v18/webstreams#transformstream) instance can be transferred using a [`MessagePort`](/api/v18/worker_threads#messageport).
 
 ```js
 const stream = new TransformStream();
@@ -1062,13 +1062,13 @@ The encoding supported by the `TextEncoderStream` instance.
 
 <Metadata data={{"update":{"type":"added","version":["v16.6.0"]}}} />
 
-* Type: [`ReadableStream`](/api/webstreams#readablestream)
+* Type: [`ReadableStream`](/api/v18/webstreams#readablestream)
 
 ##### <DataTag tag="M" /> `textEncoderStream.writable`
 
 <Metadata data={{"update":{"type":"added","version":["v16.6.0"]}}} />
 
-* Type: [`WritableStream`](/api/webstreams#writablestream)
+* Type: [`WritableStream`](/api/v18/webstreams#writablestream)
 
 #### <DataTag tag="C" /> `TextDecoderStream`
 
@@ -1119,13 +1119,13 @@ mark.
 
 <Metadata data={{"update":{"type":"added","version":["v16.6.0"]}}} />
 
-* Type: [`ReadableStream`](/api/webstreams#readablestream)
+* Type: [`ReadableStream`](/api/v18/webstreams#readablestream)
 
 ##### <DataTag tag="M" /> `textDecoderStream.writable`
 
 <Metadata data={{"update":{"type":"added","version":["v16.6.0"]}}} />
 
-* Type: [`WritableStream`](/api/webstreams#writablestream)
+* Type: [`WritableStream`](/api/v18/webstreams#writablestream)
 
 #### <DataTag tag="C" /> `CompressionStream`
 
@@ -1141,13 +1141,13 @@ mark.
 
 <Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-* Type: [`ReadableStream`](/api/webstreams#readablestream)
+* Type: [`ReadableStream`](/api/v18/webstreams#readablestream)
 
 ##### <DataTag tag="M" /> `compressionStream.writable`
 
 <Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-* Type: [`WritableStream`](/api/webstreams#writablestream)
+* Type: [`WritableStream`](/api/v18/webstreams#writablestream)
 
 #### <DataTag tag="C" /> `DecompressionStream`
 
@@ -1163,13 +1163,13 @@ mark.
 
 <Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-* Type: [`ReadableStream`](/api/webstreams#readablestream)
+* Type: [`ReadableStream`](/api/v18/webstreams#readablestream)
 
 ##### <DataTag tag="M" /> `decompressionStream.writable`
 
 <Metadata data={{"update":{"type":"added","version":["v17.0.0"]}}} />
 
-* Type: [`WritableStream`](/api/webstreams#writablestream)
+* Type: [`WritableStream`](/api/v18/webstreams#writablestream)
 
 #### Utility Consumers
 
@@ -1204,7 +1204,7 @@ const {
 
 <Metadata data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
-* `stream` [`ReadableStream`](/api/webstreams#readablestream) | [`stream.Readable`](/api/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
+* `stream` [`ReadableStream`](/api/v18/webstreams#readablestream) | [`stream.Readable`](/api/v18/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with an `ArrayBuffer` containing the full
   contents of the stream.
 
@@ -1238,8 +1238,8 @@ arrayBuffer(readable).then((data) => {
 
 <Metadata data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
-* `stream` [`ReadableStream`](/api/webstreams#readablestream) | [`stream.Readable`](/api/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
-* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with a [`Blob`](/api/buffer#blob) containing the full contents
+* `stream` [`ReadableStream`](/api/v18/webstreams#readablestream) | [`stream.Readable`](/api/v18/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
+* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with a [`Blob`](/api/v18/buffer#blob) containing the full contents
   of the stream.
 
 ```mjs
@@ -1267,8 +1267,8 @@ blob(readable).then((data) => {
 
 <Metadata data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
-* `stream` [`ReadableStream`](/api/webstreams#readablestream) | [`stream.Readable`](/api/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
-* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with a [`Buffer`](/api/buffer#buffer) containing the full
+* `stream` [`ReadableStream`](/api/v18/webstreams#readablestream) | [`stream.Readable`](/api/v18/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
+* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with a [`Buffer`](/api/v18/buffer#buffer) containing the full
   contents of the stream.
 
 ```mjs
@@ -1300,7 +1300,7 @@ buffer(readable).then((data) => {
 
 <Metadata data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
-* `stream` [`ReadableStream`](/api/webstreams#readablestream) | [`stream.Readable`](/api/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
+* `stream` [`ReadableStream`](/api/v18/webstreams#readablestream) | [`stream.Readable`](/api/v18/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with the contents of the stream parsed as a
   UTF-8 encoded string that is then passed through `JSON.parse()`.
 
@@ -1345,7 +1345,7 @@ json(readable).then((data) => {
 
 <Metadata data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
-* `stream` [`ReadableStream`](/api/webstreams#readablestream) | [`stream.Readable`](/api/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
+* `stream` [`ReadableStream`](/api/v18/webstreams#readablestream) | [`stream.Readable`](/api/v18/stream#streamreadable) | [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with the contents of the stream parsed as a
   UTF-8 encoded string.
 

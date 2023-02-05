@@ -407,14 +407,14 @@ loop tick.
 
 ### <DataTag tag="C" /> `AssertionError`
 
-* Extends: [`errors.Error`](/api/errors#error)
+* Extends: [`errors.Error`](/api/v19/errors#error)
 
 Indicates the failure of an assertion. For details, see
 [`Class: assert.AssertionError`][].
 
 ### <DataTag tag="C" /> `RangeError`
 
-* Extends: [`errors.Error`](/api/errors#error)
+* Extends: [`errors.Error`](/api/v19/errors#error)
 
 Indicates that a provided argument was not within the set or range of
 acceptable values for a function; whether that is a numeric range, or
@@ -430,7 +430,7 @@ of argument validation.
 
 ### <DataTag tag="C" /> `ReferenceError`
 
-* Extends: [`errors.Error`](/api/errors#error)
+* Extends: [`errors.Error`](/api/v19/errors#error)
 
 Indicates that an attempt is being made to access a variable that is not
 defined. Such errors commonly indicate typos in code, or an otherwise broken
@@ -449,7 +449,7 @@ Unless an application is dynamically generating and running code,
 
 ### <DataTag tag="C" /> `SyntaxError`
 
-* Extends: [`errors.Error`](/api/errors#error)
+* Extends: [`errors.Error`](/api/v19/errors#error)
 
 Indicates that a program is not valid JavaScript. These errors may only be
 generated and propagated as a result of code evaluation. Code evaluation may
@@ -469,7 +469,7 @@ they may only be caught by other contexts.
 
 ### <DataTag tag="C" /> `SystemError`
 
-* Extends: [`errors.Error`](/api/errors#error)
+* Extends: [`errors.Error`](/api/v19/errors#error)
 
 Node.js generates system errors when exceptions occur within its runtime
 environment. These usually occur when an application violates an operating
@@ -613,7 +613,7 @@ program. For a comprehensive list, see the [`errno`(3) man page][].
 
 ### <DataTag tag="C" /> `TypeError`
 
-* Extends [`errors.Error`](/api/errors#error)
+* Extends [`errors.Error`](/api/v19/errors#error)
 
 Indicates that a provided argument is not an allowable type. For example,
 passing a function to a parameter which expects a string would be a `TypeError`.

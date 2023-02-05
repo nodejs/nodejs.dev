@@ -154,7 +154,7 @@ function promiseResolve(asyncId) { }
   * `after` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The [`after` callback][].
   * `destroy` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The [`destroy` callback][].
   * `promiseResolve` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The [`promiseResolve` callback][].
-* Returns: [`AsyncHook`](/api/async_hooks#async_hookscreatehookcallbacks) Instance used for disabling and enabling hooks
+* Returns: [`AsyncHook`](/api/v19/async_hooks#async_hookscreatehookcallbacks) Instance used for disabling and enabling hooks
 
 Registers functions to be called for different lifetime events of each async
 operation.
@@ -265,7 +265,7 @@ of asynchronous operations.
 
 #### <DataTag tag="M" /> `asyncHook.enable()`
 
-* Returns: [`AsyncHook`](/api/async_hooks#async_hookscreatehookcallbacks) A reference to `asyncHook`.
+* Returns: [`AsyncHook`](/api/v19/async_hooks#async_hookscreatehookcallbacks) A reference to `asyncHook`.
 
 Enable the callbacks for a given `AsyncHook` instance. If no callbacks are
 provided, enabling is a no-op.
@@ -287,7 +287,7 @@ const hook = async_hooks.createHook(callbacks).enable();
 
 #### <DataTag tag="M" /> `asyncHook.disable()`
 
-* Returns: [`AsyncHook`](/api/async_hooks#async_hookscreatehookcallbacks) A reference to `asyncHook`.
+* Returns: [`AsyncHook`](/api/v19/async_hooks#async_hookscreatehookcallbacks) A reference to `asyncHook`.
 
 Disable the callbacks for a given `AsyncHook` instance from the global pool of
 `AsyncHook` callbacks to be executed. Once a hook has been disabled it will not

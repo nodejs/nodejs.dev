@@ -507,7 +507,7 @@ console.log(util.inspect(server.listeners('connection')));
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`EventEmitter`](/api/events#eventemitter)
+* Returns: [`EventEmitter`](/api/v16/events#eventemitter)
 
 Alias for [`emitter.removeListener()`][].
 
@@ -517,7 +517,7 @@ Alias for [`emitter.removeListener()`][].
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The name of the event.
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The callback function
-* Returns: [`EventEmitter`](/api/events#eventemitter)
+* Returns: [`EventEmitter`](/api/v16/events#eventemitter)
 
 Adds the `listener` function to the end of the listeners array for the
 event named `eventName`. No checks are made to see if the `listener` has
@@ -553,7 +553,7 @@ myEE.emit('foo');
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The name of the event.
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The callback function
-* Returns: [`EventEmitter`](/api/events#eventemitter)
+* Returns: [`EventEmitter`](/api/v16/events#eventemitter)
 
 Adds a **one-time** `listener` function for the event named `eventName`. The
 next time `eventName` is triggered, this listener is removed and then invoked.
@@ -586,7 +586,7 @@ myEE.emit('foo');
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The name of the event.
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The callback function
-* Returns: [`EventEmitter`](/api/events#eventemitter)
+* Returns: [`EventEmitter`](/api/v16/events#eventemitter)
 
 Adds the `listener` function to the _beginning_ of the listeners array for the
 event named `eventName`. No checks are made to see if the `listener` has
@@ -608,7 +608,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The name of the event.
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The callback function
-* Returns: [`EventEmitter`](/api/events#eventemitter)
+* Returns: [`EventEmitter`](/api/v16/events#eventemitter)
 
 Adds a **one-time** `listener` function for the event named `eventName` to the
 _beginning_ of the listeners array. The next time `eventName` is triggered, this
@@ -627,7 +627,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 <Metadata data={{"update":{"type":"added","version":["v0.1.26"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
-* Returns: [`EventEmitter`](/api/events#eventemitter)
+* Returns: [`EventEmitter`](/api/v16/events#eventemitter)
 
 Removes all listeners, or those of the specified `eventName`.
 
@@ -643,7 +643,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
 * `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`EventEmitter`](/api/events#eventemitter)
+* Returns: [`EventEmitter`](/api/v16/events#eventemitter)
 
 Removes the specified `listener` from the listener array for the event named
 `eventName`.
@@ -731,7 +731,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 <Metadata data={{"update":{"type":"added","version":["v0.3.5"]}}} />
 
 * `n` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-* Returns: [`EventEmitter`](/api/events#eventemitter)
+* Returns: [`EventEmitter`](/api/v16/events#eventemitter)
 
 By default `EventEmitter`s will print a warning if more than `10` listeners are
 added for a particular event. This is a useful default that helps finding
@@ -882,7 +882,7 @@ regular `'error'` listener is installed.
 
 <Metadata data={{"update":{"type":"added","version":["v15.2.0"]}}} />
 
-* `emitterOrTarget` [`EventEmitter`](/api/events#eventemitter) | [`EventTarget`](/api/events#eventtarget)
+* `emitterOrTarget` [`EventEmitter`](/api/v16/events#eventemitter) | [`EventTarget`](/api/v16/events#eventtarget)
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type)
 * Returns: Function\[]
 
@@ -932,10 +932,10 @@ const { getEventListeners, EventEmitter } = require('node:events');
 
 <Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34912","description":"The `signal` option is supported now."}],"update":{"type":"added","version":["v11.13.0","v10.16.0"]}}} />
 
-* `emitter` [`EventEmitter`](/api/events#eventemitter)
+* `emitter` [`EventEmitter`](/api/v16/events#eventemitter)
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Can be used to cancel waiting for the event.
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) Can be used to cancel waiting for the event.
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 Creates a `Promise` that is fulfilled when the `EventEmitter` emits the given
@@ -1033,7 +1033,7 @@ ee.emit('error', new Error('boom'));
 // Prints: ok boom
 ```
 
-An [`AbortSignal`](/api/globals#abortsignal) can be used to cancel waiting for the event:
+An [`AbortSignal`](/api/v16/globals#abortsignal) can be used to cancel waiting for the event:
 
 ```mjs
 import { EventEmitter, once } from 'node:events';
@@ -1206,7 +1206,7 @@ Deprecated: Use [`emitter.listenerCount()`][] instead.
 
 </Stability>
 
-* `emitter` [`EventEmitter`](/api/events#eventemitter) The emitter to query
+* `emitter` [`EventEmitter`](/api/v16/events#eventemitter) The emitter to query
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The event name
 
 A class method that returns the number of listeners for the given `eventName`
@@ -1236,10 +1236,10 @@ console.log(listenerCount(myEmitter, 'event'));
 
 <Metadata data={{"update":{"type":"added","version":["v13.6.0","v12.16.0"]}}} />
 
-* `emitter` [`EventEmitter`](/api/events#eventemitter)
+* `emitter` [`EventEmitter`](/api/v16/events#eventemitter)
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The name of the event being listened for
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Can be used to cancel awaiting events.
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) Can be used to cancel awaiting events.
 * Returns: [`AsyncIterator`](https://tc39.github.io/ecma262/#sec-asynciterator-interface) that iterates `eventName` events emitted by the `emitter`
 
 ```mjs
@@ -1290,7 +1290,7 @@ if the `EventEmitter` emits `'error'`. It removes all listeners when
 exiting the loop. The `value` returned by each iteration is an array
 composed of the emitted event arguments.
 
-An [`AbortSignal`](/api/globals#abortsignal) can be used to cancel waiting on events:
+An [`AbortSignal`](/api/v16/globals#abortsignal) can be used to cancel waiting on events:
 
 ```mjs
 import { on, EventEmitter } from 'node:events';
@@ -1351,9 +1351,9 @@ process.nextTick(() => ac.abort());
 
 * `n` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A non-negative number. The maximum number of listeners per
   `EventTarget` event.
-* `...eventsTargets` EventTarget\[]|EventEmitter\[] Zero or more [`EventTarget`](/api/events#eventtarget)
-  or [`EventEmitter`](/api/events#eventemitter) instances. If none are specified, `n` is set as the default
-  max for all newly created [`EventTarget`](/api/events#eventtarget) and [`EventEmitter`](/api/events#eventemitter) objects.
+* `...eventsTargets` EventTarget\[]|EventEmitter\[] Zero or more [`EventTarget`](/api/v16/events#eventtarget)
+  or [`EventEmitter`](/api/v16/events#eventemitter) instances. If none are specified, `n` is set as the default
+  max for all newly created [`EventTarget`](/api/v16/events#eventtarget) and [`EventEmitter`](/api/v16/events#eventemitter) objects.
 
 ```mjs
 import { setMaxListeners, EventEmitter } from 'node:events';
@@ -1380,7 +1380,7 @@ setMaxListeners(5, target, emitter);
 
 <Metadata data={{"update":{"type":"added","version":["v16.14.0"]}}} />
 
-Integrates `EventEmitter` with [`AsyncResource`](/api/async_hooks#asyncresource) for `EventEmitter`s that
+Integrates `EventEmitter` with [`AsyncResource`](/api/v16/async_hooks#asyncresource) for `EventEmitter`s that
 require manual async tracking. Specifically, all events emitted by instances
 of `events.EventEmitterAsyncResource` will run within its [async context][].
 
@@ -1469,7 +1469,7 @@ same options as `EventEmitter` and `AsyncResource` themselves.
 
 #### <DataTag tag="M" /> `eventemitterasyncresource.asyncResource`
 
-* Type: The underlying [`AsyncResource`](/api/async_hooks#asyncresource).
+* Type: The underlying [`AsyncResource`](/api/v16/async_hooks#asyncresource).
 
 The returned `AsyncResource` object has an additional `eventEmitter` property
 that provides a reference to this `EventEmitterAsyncResource`.
@@ -1657,7 +1657,7 @@ Node.js and is provided purely for completeness.
 
 <Metadata data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
-* Type: [`EventTarget`](/api/events#eventtarget) The `EventTarget` dispatching the event.
+* Type: [`EventTarget`](/api/v16/events#eventtarget) The `EventTarget` dispatching the event.
 
 Alias for `event.target`.
 
@@ -1685,7 +1685,7 @@ This is not used in Node.js and is provided purely for completeness.
 
 * Type: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-The [`AbortSignal`](/api/globals#abortsignal) `"abort"` event is emitted with `isTrusted` set to `true`. The
+The [`AbortSignal`](/api/v16/globals#abortsignal) `"abort"` event is emitted with `isTrusted` set to `true`. The
 value is `false` in all other cases.
 
 ##### <DataTag tag="M" /> `event.preventDefault()`
@@ -1706,7 +1706,7 @@ This is not used in Node.js and is provided purely for completeness.
 
 <Metadata data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
-* Type: [`EventTarget`](/api/events#eventtarget) The `EventTarget` dispatching the event.
+* Type: [`EventTarget`](/api/v16/events#eventtarget) The `EventTarget` dispatching the event.
 
 Alias for `event.target`.
 
@@ -1726,7 +1726,7 @@ This is not used in Node.js and is provided purely for completeness.
 
 <Metadata data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
-* Type: [`EventTarget`](/api/events#eventtarget) The `EventTarget` dispatching the event.
+* Type: [`EventTarget`](/api/v16/events#eventtarget) The `EventTarget` dispatching the event.
 
 ##### <DataTag tag="M" /> `event.timeStamp`
 
@@ -1753,7 +1753,7 @@ The event type identifier.
 <Metadata data={{"changes":[{"version":"v15.4.0","pr-url":"https://github.com/nodejs/node/pull/36258","description":"add support for `signal` option."}],"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/events#listener)
+* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/v16/events#listener)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `once` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When `true`, the listener is automatically removed
     when it is first invoked. **Default:** `false`.
@@ -1762,7 +1762,7 @@ The event type identifier.
     **Default:** `false`.
   * `capture` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Not directly used by Node.js. Added for API
     completeness. **Default:** `false`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) The listener will be removed when the given
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) The listener will be removed when the given
     AbortSignal object's `abort()` method is called.
 
 Adds a new handler for the `type` event. Any given `listener` is added
@@ -1795,7 +1795,7 @@ target.removeEventListener('foo', handler, { capture: true });
 
 <Metadata data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
-* `event` [`Event`](/api/events#event)
+* `event` [`Event`](/api/v16/events#event)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` if either event's `cancelable` attribute value is
   false or its `preventDefault()` method was not invoked, otherwise `false`.
 
@@ -1809,7 +1809,7 @@ were registered.
 <Metadata data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/events#listener)
+* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/v16/events#listener)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `capture` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1825,7 +1825,7 @@ Experimental.
 
 </Stability>
 
-* Extends: [`Event`](/api/events#event)
+* Extends: [`Event`](/api/v16/events#event)
 
 The `CustomEvent` object is an adaptation of the [`CustomEvent` Web API][].
 Instances are created internally by Node.js.
@@ -1848,7 +1848,7 @@ Read-only.
 
 <Metadata data={{"update":{"type":"added","version":["v14.5.0"]}}} />
 
-* Extends: [`EventTarget`](/api/events#eventtarget)
+* Extends: [`EventTarget`](/api/v16/events#eventtarget)
 
 The `NodeEventTarget` is a Node.js-specific extension to `EventTarget`
 that emulates a subset of the `EventEmitter` API.
@@ -1859,12 +1859,12 @@ that emulates a subset of the `EventEmitter` API.
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
-* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/events#listener)
+* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/v16/events#listener)
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `once` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-* Returns: [`EventTarget`](/api/events#eventtarget) this
+* Returns: [`EventTarget`](/api/v16/events#eventtarget) this
 
 Node.js-specific extension to the `EventTarget` class that emulates the
 equivalent `EventEmitter` API. The only difference between `addListener()` and
@@ -1897,9 +1897,9 @@ of event listeners registered for the `type`.
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
-* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/events#listener)
+* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/v16/events#listener)
 
-* Returns: [`EventTarget`](/api/events#eventtarget) this
+* Returns: [`EventTarget`](/api/v16/events#eventtarget) this
 
 Node.js-specific alias for `eventTarget.removeListener()`.
 
@@ -1909,12 +1909,12 @@ Node.js-specific alias for `eventTarget.removeListener()`.
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
-* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/events#listener)
+* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/v16/events#listener)
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `once` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-* Returns: [`EventTarget`](/api/events#eventtarget) this
+* Returns: [`EventTarget`](/api/v16/events#eventtarget) this
 
 Node.js-specific alias for `eventTarget.addListener()`.
 
@@ -1924,11 +1924,11 @@ Node.js-specific alias for `eventTarget.addListener()`.
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
-* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/events#listener)
+* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/v16/events#listener)
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
-* Returns: [`EventTarget`](/api/events#eventtarget) this
+* Returns: [`EventTarget`](/api/v16/events#eventtarget) this
 
 Node.js-specific extension to the `EventTarget` class that adds a `once`
 listener for the given event `type`. This is equivalent to calling `on`
@@ -1940,7 +1940,7 @@ with the `once` option set to `true`.
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
-* Returns: [`EventTarget`](/api/events#eventtarget) this
+* Returns: [`EventTarget`](/api/v16/events#eventtarget) this
 
 Node.js-specific extension to the `EventTarget` class. If `type` is specified,
 removes all registered listeners for `type`, otherwise removes all registered
@@ -1952,9 +1952,9 @@ listeners.
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
-* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/events#listener)
+* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`EventListener`](/api/v16/events#listener)
 
-* Returns: [`EventTarget`](/api/events#eventtarget) this
+* Returns: [`EventTarget`](/api/v16/events#eventtarget) this
 
 Node.js-specific extension to the `EventTarget` class that removes the
 `listener` for the given `type`. The only difference between `removeListener()`

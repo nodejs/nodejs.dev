@@ -160,14 +160,14 @@ exec('"my script.cmd" a b', (err, stdout, stderr) => {
 
 * `command` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The command to run, with space-separated arguments.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `cwd` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) Current working directory of the child process.
+  * `cwd` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api) Current working directory of the child process.
     **Default:** `process.cwd()`.
   * `env` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Environment key-value pairs. **Default:** `process.env`.
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
   * `shell` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Shell to execute the command with. See
     [Shell requirements][] and [Default Windows shell][]. **Default:**
     `'/bin/sh'` on Unix, `process.env.ComSpec` on Windows.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows aborting the child process using an
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows aborting the child process using an
     AbortSignal.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
   * `maxBuffer` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Largest amount of data in bytes allowed on stdout or
@@ -181,9 +181,9 @@ exec('"my script.cmd" a b', (err, stdout, stderr) => {
     normally be created on Windows systems. **Default:** `false`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) called with the output when process terminates.
   * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `stdout` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
-  * `stderr` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
-* Returns: [`ChildProcess`](/api/child_process#childprocess)
+  * `stdout` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer)
+  * `stderr` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer)
+* Returns: [`ChildProcess`](/api/v18/child_process#childprocess)
 
 Spawns a shell then executes the `command` within that shell, buffering any
 generated output. The `command` string passed to the exec function is processed
@@ -278,7 +278,7 @@ controller.abort();
 * `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name or path of the executable file to run.
 * `args` string\[] List of string arguments.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `cwd` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) Current working directory of the child process.
+  * `cwd` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api) Current working directory of the child process.
   * `env` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Environment key-value pairs. **Default:** `process.env`.
   * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** `0`
@@ -297,13 +297,13 @@ controller.abort();
     `'/bin/sh'` on Unix, and `process.env.ComSpec` on Windows. A different
     shell can be specified as a string. See [Shell requirements][] and
     [Default Windows shell][]. **Default:** `false` (no shell).
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows aborting the child process using an
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows aborting the child process using an
     AbortSignal.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called with the output when process terminates.
   * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-  * `stdout` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
-  * `stderr` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer)
-* Returns: [`ChildProcess`](/api/child_process#childprocess)
+  * `stdout` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer)
+  * `stderr` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer)
+* Returns: [`ChildProcess`](/api/v18/child_process#childprocess)
 
 The `child_process.execFile()` function is similar to [`child_process.exec()`][]
 except that it does not spawn a shell by default. Rather, the specified
@@ -370,10 +370,10 @@ controller.abort();
 
 <Metadata data={{"changes":[{"version":["v17.4.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/41225","description":"The `modulePath` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":["v16.4.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/38862","description":"The `cwd` option can be a WHATWG `URL` object using `file:` protocol."},{"version":["v15.13.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37256","description":"timeout was added."},{"version":["v15.11.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/37325","description":"killSignal for AbortSignal was added."},{"version":["v15.6.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36603","description":"AbortSignal support was added."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30162","description":"The `serialization` option is supported now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10866","description":"The `stdio` option can now be a string."},{"version":"v6.4.0","pr-url":"https://github.com/nodejs/node/pull/7811","description":"The `stdio` option is supported now."}],"update":{"type":"added","version":["v0.5.0"]}}} />
 
-* `modulePath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) The module to run in the child.
+* `modulePath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api) The module to run in the child.
 * `args` string\[] List of string arguments.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `cwd` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) Current working directory of the child process.
+  * `cwd` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api) Current working directory of the child process.
   * `detached` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Prepare child to run independently of its parent
     process. Specific behavior depends on the platform, see
     [`options.detached`][]).
@@ -385,7 +385,7 @@ controller.abort();
   * `serialization` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Specify the kind of serialization used for sending
     messages between processes. Possible values are `'json'` and `'advanced'`.
     See [Advanced serialization][] for more details. **Default:** `'json'`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows closing the child process using an
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) Allows closing the child process using an
     AbortSignal.
   * `killSignal` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The signal value to be used when the spawned
     process will be killed by timeout or abort signal. **Default:** `'SIGTERM'`.
@@ -402,7 +402,7 @@ controller.abort();
     done on Windows. Ignored on Unix. **Default:** `false`.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) In milliseconds the maximum amount of time the process
     is allowed to run. **Default:** `undefined`.
-* Returns: [`ChildProcess`](/api/child_process#childprocess)
+* Returns: [`ChildProcess`](/api/v18/child_process#childprocess)
 
 The `child_process.fork()` method is a special case of
 [`child_process.spawn()`][] used specifically to spawn new Node.js processes.
@@ -460,7 +460,7 @@ if (process.argv[2] === 'child') {
 * `command` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The command to run.
 * `args` string\[] List of string arguments.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `cwd` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) Current working directory of the child process.
+  * `cwd` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api) Current working directory of the child process.
   * `env` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Environment key-value pairs. **Default:** `process.env`.
   * `argv0` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Explicitly set the value of `argv[0]` sent to the child
     process. This will be set to `command` if not specified.
@@ -483,13 +483,13 @@ if (process.argv[2] === 'child') {
     when `shell` is specified and is CMD. **Default:** `false`.
   * `windowsHide` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Hide the subprocess console window that would
     normally be created on Windows systems. **Default:** `false`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) allows aborting the child process using an
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) allows aborting the child process using an
     AbortSignal.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) In milliseconds the maximum amount of time the process
     is allowed to run. **Default:** `undefined`.
   * `killSignal` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The signal value to be used when the spawned
     process will be killed by timeout or abort signal. **Default:** `'SIGTERM'`.
-* Returns: [`ChildProcess`](/api/child_process#childprocess)
+* Returns: [`ChildProcess`](/api/v18/child_process#childprocess)
 
 The `child_process.spawn()` method spawns a new process using the given
 `command`, with command-line arguments in `args`. If omitted, `args` defaults
@@ -723,7 +723,7 @@ pipes between the parent and child. The value is one of the following:
    parent process. In the first three positions, this is equivalent to
    `process.stdin`, `process.stdout`, and `process.stderr`, respectively. In
    any other position, equivalent to `'ignore'`.
-6. [`Stream`](/api/stream#stream) object: Share a readable or writable stream that refers to a tty,
+6. [`Stream`](/api/v18/stream#stream) object: Share a readable or writable stream that refers to a tty,
    file, socket, or a pipe with the child process. The stream's underlying
    file descriptor is duplicated in the child process to the fd that
    corresponds to the index in the `stdio` array. The stream must have an
@@ -731,7 +731,7 @@ pipes between the parent and child. The value is one of the following:
    occurred).
 7. Positive integer: The integer value is interpreted as a file descriptor
    that is open in the parent process. It is shared with the child
-   process, similar to how [`Stream`](/api/stream#stream) objects can be shared. Passing sockets
+   process, similar to how [`Stream`](/api/v18/stream#stream) objects can be shared. Passing sockets
    is not supported on Windows.
 8. `null`, `undefined`: Use default value. For stdio fds 0, 1, and 2 (in other
    words, stdin, stdout, and stderr) a pipe is created. For fd 3 and up, the
@@ -784,8 +784,8 @@ configuration at startup.
 * `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name or path of the executable file to run.
 * `args` string\[] List of string arguments.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `cwd` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) Current working directory of the child process.
-  * `input` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) The value which will be passed
+  * `cwd` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api) Current working directory of the child process.
+  * `input` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) The value which will be passed
     as stdin to the spawned process. Supplying this value will override
     `stdio[0]`.
   * `stdio` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) Child's stdio configuration. `stderr` by default will
@@ -809,7 +809,7 @@ configuration at startup.
     `'/bin/sh'` on Unix, and `process.env.ComSpec` on Windows. A different
     shell can be specified as a string. See [Shell requirements][] and
     [Default Windows shell][]. **Default:** `false` (no shell).
-* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The stdout from the command.
+* Returns: [`Buffer`](/api/v18/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The stdout from the command.
 
 The `child_process.execFileSync()` method is generally identical to
 [`child_process.execFile()`][] with the exception that the method will not
@@ -835,8 +835,8 @@ arbitrary command execution.**
 
 * `command` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The command to run.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `cwd` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) Current working directory of the child process.
-  * `input` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) The value which will be passed
+  * `cwd` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api) Current working directory of the child process.
+  * `input` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) The value which will be passed
     as stdin to the spawned process. Supplying this value will override
     `stdio[0]`.
   * `stdio` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) Child's stdio configuration. `stderr` by default will
@@ -860,7 +860,7 @@ arbitrary command execution.**
     **Default:** `'buffer'`.
   * `windowsHide` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Hide the subprocess console window that would
     normally be created on Windows systems. **Default:** `false`.
-* Returns: [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The stdout from the command.
+* Returns: [`Buffer`](/api/v18/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The stdout from the command.
 
 The `child_process.execSync()` method is generally identical to
 [`child_process.exec()`][] with the exception that the method will not return
@@ -884,8 +884,8 @@ metacharacters may be used to trigger arbitrary command execution.**
 * `command` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The command to run.
 * `args` string\[] List of string arguments.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `cwd` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) Current working directory of the child process.
-  * `input` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) The value which will be passed
+  * `cwd` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api) Current working directory of the child process.
+  * `input` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) The value which will be passed
     as stdin to the spawned process. Supplying this value will override
     `stdio[0]`.
   * `argv0` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Explicitly set the value of `argv[0]` sent to the child
@@ -916,8 +916,8 @@ metacharacters may be used to trigger arbitrary command execution.**
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `pid` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Pid of the child process.
   * `output` [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) Array of results from stdio output.
-  * `stdout` [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The contents of `output[1]`.
-  * `stderr` [`Buffer`](/api/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The contents of `output[2]`.
+  * `stdout` [`Buffer`](/api/v18/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The contents of `output[1]`.
+  * `stderr` [`Buffer`](/api/v18/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The contents of `output[2]`.
   * `status` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) The exit code of the subprocess, or `null` if the
     subprocess terminated due to a signal.
   * `signal` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) The signal used to kill the subprocess, or `null` if
@@ -940,7 +940,7 @@ arbitrary command execution.**
 
 <Metadata data={{"update":{"type":"added","version":["v2.2.0"]}}} />
 
-* Extends: [`EventEmitter`](/api/events#eventemitter)
+* Extends: [`EventEmitter`](/api/v18/events#eventemitter)
 
 Instances of the `ChildProcess` represent spawned child processes.
 
@@ -1033,7 +1033,7 @@ See waitpid(2).
 <Metadata data={{"update":{"type":"added","version":["v0.5.9"]}}} />
 
 * `message` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) A parsed JSON object or primitive value.
-* `sendHandle` [`Handle`](/api/net#serverlistenhandle-backlog-callback) A [`net.Socket`][] or [`net.Server`][] object, or
+* `sendHandle` [`Handle`](/api/v18/net#serverlistenhandle-backlog-callback) A [`net.Socket`][] or [`net.Server`][] object, or
   undefined.
 
 The `'message'` event is triggered when a child process uses
@@ -1241,7 +1241,7 @@ subprocess.ref();
 <Metadata data={{"changes":[{"version":"v5.8.0","pr-url":"https://github.com/nodejs/node/pull/5283","description":"The `options` parameter, and the `keepOpen` option in particular, is supported now."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3516","description":"This method returns a boolean for flow control now."},{"version":"v4.0.0","pr-url":"https://github.com/nodejs/node/pull/2620","description":"The `callback` parameter is supported now."}],"update":{"type":"added","version":["v0.5.9"]}}} />
 
 * `message` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-* `sendHandle` [`Handle`](/api/net#serverlistenhandle-backlog-callback)
+* `sendHandle` [`Handle`](/api/v18/net#serverlistenhandle-backlog-callback)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `options` argument, if present, is an object used to
   parameterize the sending of certain types of handles. `options` supports
   the following properties:
@@ -1435,7 +1435,7 @@ in which the child process is launched.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* [`stream.Readable`](/api/stream#streamreadable) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
+* [`stream.Readable`](/api/v18/stream#streamreadable) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
 A `Readable Stream` that represents the child process's `stderr`.
 
@@ -1452,7 +1452,7 @@ if the child process could not be successfully spawned.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* [`stream.Writable`](/api/stream#streamwritable) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
+* [`stream.Writable`](/api/v18/stream#streamwritable) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
 A `Writable Stream` that represents the child process's `stdin`.
 
@@ -1514,7 +1514,7 @@ not be successfully spawned.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* [`stream.Readable`](/api/stream#streamreadable) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
+* [`stream.Readable`](/api/v18/stream#streamreadable) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
 A `Readable Stream` that represents the child process's `stdout`.
 

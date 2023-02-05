@@ -1583,7 +1583,7 @@ util.types.isBoxedPrimitive(Object(BigInt(5))); // Returns true
 * `value` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if `value` is a [`CryptoKey`](/api/webcrypto#cryptokey), `false` otherwise.
+Returns `true` if `value` is a [`CryptoKey`](/api/v16/webcrypto#cryptokey), `false` otherwise.
 
 #### <DataTag tag="M" /> `util.types.isDataView(value)`
 
@@ -1777,7 +1777,7 @@ util.types.isInt32Array(new Float64Array());  // Returns false
 * `value` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
-Returns `true` if `value` is a [`KeyObject`](/api/crypto#keyobject), `false` otherwise.
+Returns `true` if `value` is a [`KeyObject`](/api/v16/crypto#keyobject), `false` otherwise.
 
 #### <DataTag tag="M" /> `util.types.isMap(value)`
 

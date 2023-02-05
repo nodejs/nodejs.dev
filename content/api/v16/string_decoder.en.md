@@ -68,7 +68,7 @@ Creates a new `StringDecoder` instance.
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.3"]}}} />
 
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A `Buffer`, or `TypedArray`, or
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A `Buffer`, or `TypedArray`, or
   `DataView` containing the bytes to decode.
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -84,7 +84,7 @@ After `end()` is called, the `stringDecoder` object can be reused for new input.
 
 <Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/9618","description":"Each invalid character is now replaced by a single replacement character instead of one for each individual byte."}],"update":{"type":"added","version":["v0.1.99"]}}} />
 
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A `Buffer`, or `TypedArray`, or
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) A `Buffer`, or `TypedArray`, or
   `DataView` containing the bytes to decode.
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 

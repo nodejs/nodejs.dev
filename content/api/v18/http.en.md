@@ -185,7 +185,7 @@ http.request(options, onResponseCallback);
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Options containing connection details. Check
   [`net.createConnection()`][] for the format of the options
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Callback function that receives the created socket
-* Returns: [`stream.Duplex`](/api/stream#streamduplex)
+* Returns: [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 Produces a socket/stream to be used for HTTP requests.
 
@@ -195,9 +195,9 @@ custom agents may override this method in case greater flexibility is desired.
 A socket/stream can be supplied in one of two ways: by returning the
 socket/stream from this function, or by passing the socket/stream to `callback`.
 
-This method is guaranteed to return an instance of the [`net.Socket`](/api/net#netsocket) class,
-a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specifies a socket
-type other than [`net.Socket`](/api/net#netsocket).
+This method is guaranteed to return an instance of the [`net.Socket`](/api/v18/net#netsocket) class,
+a subclass of [`stream.Duplex`](/api/v18/stream#streamduplex), unless the user specifies a socket
+type other than [`net.Socket`](/api/v18/net#netsocket).
 
 `callback` has a signature of `(err, stream)`.
 
@@ -205,7 +205,7 @@ type other than [`net.Socket`](/api/net#netsocket).
 
 <Metadata data={{"update":{"type":"added","version":["v8.1.0"]}}} />
 
-* `socket` [`stream.Duplex`](/api/stream#streamduplex)
+* `socket` [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 Called when `socket` is detached from a request and could be persisted by the
 `Agent`. Default behavior is to:
@@ -220,15 +220,15 @@ This method can be overridden by a particular `Agent` subclass. If this
 method returns a falsy value, the socket will be destroyed instead of persisting
 it for use with the next request.
 
-The `socket` argument can be an instance of [`net.Socket`](/api/net#netsocket), a subclass of
-[`stream.Duplex`](/api/stream#streamduplex).
+The `socket` argument can be an instance of [`net.Socket`](/api/v18/net#netsocket), a subclass of
+[`stream.Duplex`](/api/v18/stream#streamduplex).
 
 #### <DataTag tag="M" /> `agent.reuseSocket(socket, request)`
 
 <Metadata data={{"update":{"type":"added","version":["v8.1.0"]}}} />
 
-* `socket` [`stream.Duplex`](/api/stream#streamduplex)
-* `request` [`http.ClientRequest`](/api/http#httpclientrequest)
+* `socket` [`stream.Duplex`](/api/v18/stream#streamduplex)
+* `request` [`http.ClientRequest`](/api/v18/http#httpclientrequest)
 
 Called when `socket` is attached to `request` after being persisted because of
 the keep-alive options. Default behavior is to:
@@ -239,8 +239,8 @@ socket.ref();
 
 This method can be overridden by a particular `Agent` subclass.
 
-The `socket` argument can be an instance of [`net.Socket`](/api/net#netsocket), a subclass of
-[`stream.Duplex`](/api/stream#streamduplex).
+The `socket` argument can be an instance of [`net.Socket`](/api/v18/net#netsocket), a subclass of
+[`stream.Duplex`](/api/v18/stream#streamduplex).
 
 #### <DataTag tag="M" /> `agent.destroy()`
 
@@ -335,7 +335,7 @@ agent. Do not modify.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.17"]}}} />
 
-* Extends: [`http.OutgoingMessage`](/api/http#httpoutgoingmessage)
+* Extends: [`http.OutgoingMessage`](/api/v18/http#httpoutgoingmessage)
 
 This object is created internally and returned from [`http.request()`][]. It
 represents an _in-progress_ request whose header has already been queued. The
@@ -394,17 +394,17 @@ terminated prematurely (before the response completion).
 
 <Metadata data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
-* `response` [`http.IncomingMessage`](/api/http#httpincomingmessage)
-* `socket` [`stream.Duplex`](/api/stream#streamduplex)
-* `head` [`Buffer`](/api/buffer#buffer)
+* `response` [`http.IncomingMessage`](/api/v18/http#httpincomingmessage)
+* `socket` [`stream.Duplex`](/api/v18/stream#streamduplex)
+* `head` [`Buffer`](/api/v18/buffer#buffer)
 
 Emitted each time a server responds to a request with a `CONNECT` method. If
 this event is not being listened for, clients receiving a `CONNECT` method will
 have their connections closed.
 
-This event is guaranteed to be passed an instance of the [`net.Socket`](/api/net#netsocket) class,
-a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specifies a socket
-type other than [`net.Socket`](/api/net#netsocket).
+This event is guaranteed to be passed an instance of the [`net.Socket`](/api/v18/net#netsocket) class,
+a subclass of [`stream.Duplex`](/api/v18/stream#streamduplex), unless the user specifies a socket
+type other than [`net.Socket`](/api/v18/net#netsocket).
 
 A client and server pair demonstrating how to listen for the `'connect'` event:
 
@@ -525,7 +525,7 @@ upgrades, or HTTP 2.0. To be notified of 101 Upgrade notices, listen for the
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.0"]}}} />
 
-* `response` [`http.IncomingMessage`](/api/http#httpincomingmessage)
+* `response` [`http.IncomingMessage`](/api/v18/http#httpincomingmessage)
 
 Emitted when a response is received to this request. This event is emitted only
 once.
@@ -534,11 +534,11 @@ once.
 
 <Metadata data={{"update":{"type":"added","version":["v0.5.3"]}}} />
 
-* `socket` [`stream.Duplex`](/api/stream#streamduplex)
+* `socket` [`stream.Duplex`](/api/v18/stream#streamduplex)
 
-This event is guaranteed to be passed an instance of the [`net.Socket`](/api/net#netsocket) class,
-a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specifies a socket
-type other than [`net.Socket`](/api/net#netsocket).
+This event is guaranteed to be passed an instance of the [`net.Socket`](/api/v18/net#netsocket) class,
+a subclass of [`stream.Duplex`](/api/v18/stream#streamduplex), unless the user specifies a socket
+type other than [`net.Socket`](/api/v18/net#netsocket).
 
 #### <DataTag tag="E" /> `'timeout'`
 
@@ -553,18 +553,18 @@ See also: [`request.setTimeout()`][].
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.94"]}}} />
 
-* `response` [`http.IncomingMessage`](/api/http#httpincomingmessage)
-* `socket` [`stream.Duplex`](/api/stream#streamduplex)
-* `head` [`Buffer`](/api/buffer#buffer)
+* `response` [`http.IncomingMessage`](/api/v18/http#httpincomingmessage)
+* `socket` [`stream.Duplex`](/api/v18/stream#streamduplex)
+* `head` [`Buffer`](/api/v18/buffer#buffer)
 
 Emitted each time a server responds to a request with an upgrade. If this
 event is not being listened for and the response status code is 101 Switching
 Protocols, clients receiving an upgrade header will have their connections
 closed.
 
-This event is guaranteed to be passed an instance of the [`net.Socket`](/api/net#netsocket) class,
-a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specifies a socket
-type other than [`net.Socket`](/api/net#netsocket).
+This event is guaranteed to be passed an instance of the [`net.Socket`](/api/v18/net#netsocket) class,
+a subclass of [`stream.Duplex`](/api/v18/stream#streamduplex), unless the user specifies a socket
+type other than [`net.Socket`](/api/v18/net#netsocket).
 
 A client server pair demonstrating how to listen for the `'upgrade'` event.
 
@@ -647,7 +647,7 @@ Deprecated. Use [`request.socket`][].
 
 </Stability>
 
-* [`stream.Duplex`](/api/stream#streamduplex)
+* [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 See [`request.socket`][].
 
@@ -661,7 +661,7 @@ See [`writable.cork()`][].
 
 <Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33155","description":"The `data` parameter can now be a `Uint8Array`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18780","description":"This method now returns a reference to `ClientRequest`."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -982,7 +982,7 @@ Once a socket is assigned to this request and is connected
 * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Milliseconds before a request times out.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Optional function to be called when a timeout occurs.
   Same as binding to the `'timeout'` event.
-* Returns: [`http.ClientRequest`](/api/http#httpclientrequest)
+* Returns: [`http.ClientRequest`](/api/v18/http#httpclientrequest)
 
 Once a socket is assigned to this request and is connected
 [`socket.setTimeout()`][] will be called.
@@ -991,7 +991,7 @@ Once a socket is assigned to this request and is connected
 
 <Metadata data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
-* [`stream.Duplex`](/api/stream#streamduplex)
+* [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 Reference to the underlying socket. Usually users will not want to access
 this property. In particular, the socket will not emit `'readable'` events
@@ -1012,9 +1012,9 @@ req.once('response', (res) => {
 });
 ```
 
-This property is guaranteed to be an instance of the [`net.Socket`](/api/net#netsocket) class,
-a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specified a socket
-type other than [`net.Socket`](/api/net#netsocket).
+This property is guaranteed to be an instance of the [`net.Socket`](/api/v18/net#netsocket) class,
+a subclass of [`stream.Duplex`](/api/v18/stream#streamduplex), unless the user specified a socket
+type other than [`net.Socket`](/api/v18/net#netsocket).
 
 #### <DataTag tag="M" /> `request.uncork()`
 
@@ -1045,7 +1045,7 @@ before the [`'finish'`][] event is emitted.
 
 <Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33155","description":"The `chunk` parameter can now be a `Uint8Array`."}],"update":{"type":"added","version":["v0.1.29"]}}} />
 
-* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
+* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1073,14 +1073,14 @@ nothing and waits for more input.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.17"]}}} />
 
-* Extends: [`net.Server`](/api/net#netserver)
+* Extends: [`net.Server`](/api/v18/net#netserver)
 
 #### <DataTag tag="E" /> `'checkContinue'`
 
 <Metadata data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
-* `request` [`http.IncomingMessage`](/api/http#httpincomingmessage)
-* `response` [`http.ServerResponse`](/api/http#httpserverresponse)
+* `request` [`http.IncomingMessage`](/api/v18/http#httpincomingmessage)
+* `response` [`http.ServerResponse`](/api/v18/http#httpserverresponse)
 
 Emitted each time a request with an HTTP `Expect: 100-continue` is received.
 If this event is not listened for, the server will automatically respond
@@ -1098,8 +1098,8 @@ not be emitted.
 
 <Metadata data={{"update":{"type":"added","version":["v5.5.0"]}}} />
 
-* `request` [`http.IncomingMessage`](/api/http#httpincomingmessage)
-* `response` [`http.ServerResponse`](/api/http#httpserverresponse)
+* `request` [`http.IncomingMessage`](/api/v18/http#httpincomingmessage)
+* `response` [`http.ServerResponse`](/api/v18/http#httpserverresponse)
 
 Emitted each time a request with an HTTP `Expect` header is received, where the
 value is not `100-continue`. If this event is not listened for, the server will
@@ -1113,16 +1113,16 @@ not be emitted.
 <Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25605","description":"The default behavior will return a 431 Request Header Fields Too Large if a HPE_HEADER_OVERFLOW error occurs."},{"version":"v9.4.0","pr-url":"https://github.com/nodejs/node/pull/17672","description":"The `rawPacket` is the current buffer that just parsed. Adding this buffer to the error object of `'clientError'` event is to make it possible that developers can log the broken packet."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4557","description":"The default action of calling `.destroy()` on the `socket` will no longer take place if there are listeners attached for `'clientError'`."}],"update":{"type":"added","version":["v0.1.94"]}}} />
 
 * `exception` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
-* `socket` [`stream.Duplex`](/api/stream#streamduplex)
+* `socket` [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 If a client connection emits an `'error'` event, it will be forwarded here.
 Listener of this event is responsible for closing/destroying the underlying
 socket. For example, one may wish to more gracefully close the socket with a
 custom HTTP response instead of abruptly severing the connection.
 
-This event is guaranteed to be passed an instance of the [`net.Socket`](/api/net#netsocket) class,
-a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specifies a socket
-type other than [`net.Socket`](/api/net#netsocket).
+This event is guaranteed to be passed an instance of the [`net.Socket`](/api/v18/net#netsocket) class,
+a subclass of [`stream.Duplex`](/api/v18/stream#streamduplex), unless the user specifies a socket
+type other than [`net.Socket`](/api/v18/net#netsocket).
 
 Default behavior is to try close the socket with a HTTP '400 Bad Request',
 or a HTTP '431 Request Header Fields Too Large' in the case of a
@@ -1180,18 +1180,18 @@ Emitted when the server closes.
 
 <Metadata data={{"update":{"type":"added","version":["v0.7.0"]}}} />
 
-* `request` [`http.IncomingMessage`](/api/http#httpincomingmessage) Arguments for the HTTP request, as it is in
+* `request` [`http.IncomingMessage`](/api/v18/http#httpincomingmessage) Arguments for the HTTP request, as it is in
   the [`'request'`][] event
-* `socket` [`stream.Duplex`](/api/stream#streamduplex) Network socket between the server and client
-* `head` [`Buffer`](/api/buffer#buffer) The first packet of the tunneling stream (may be empty)
+* `socket` [`stream.Duplex`](/api/v18/stream#streamduplex) Network socket between the server and client
+* `head` [`Buffer`](/api/v18/buffer#buffer) The first packet of the tunneling stream (may be empty)
 
 Emitted each time a client requests an HTTP `CONNECT` method. If this event is
 not listened for, then clients requesting a `CONNECT` method will have their
 connections closed.
 
-This event is guaranteed to be passed an instance of the [`net.Socket`](/api/net#netsocket) class,
-a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specifies a socket
-type other than [`net.Socket`](/api/net#netsocket).
+This event is guaranteed to be passed an instance of the [`net.Socket`](/api/v18/net#netsocket) class,
+a subclass of [`stream.Duplex`](/api/v18/stream#streamduplex), unless the user specifies a socket
+type other than [`net.Socket`](/api/v18/net#netsocket).
 
 After this event is emitted, the request's socket will not have a `'data'`
 event listener, meaning it will need to be bound in order to handle data
@@ -1201,7 +1201,7 @@ sent to the server on that socket.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.0"]}}} />
 
-* `socket` [`stream.Duplex`](/api/stream#streamduplex)
+* `socket` [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 This event is emitted when a new TCP stream is established. `socket` is
 typically an object of type [`net.Socket`][]. Usually users will not want to
@@ -1216,17 +1216,17 @@ If `socket.setTimeout()` is called here, the timeout will be replaced with
 `server.keepAliveTimeout` when the socket has served a request (if
 `server.keepAliveTimeout` is non-zero).
 
-This event is guaranteed to be passed an instance of the [`net.Socket`](/api/net#netsocket) class,
-a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specifies a socket
-type other than [`net.Socket`](/api/net#netsocket).
+This event is guaranteed to be passed an instance of the [`net.Socket`](/api/v18/net#netsocket) class,
+a subclass of [`stream.Duplex`](/api/v18/stream#streamduplex), unless the user specifies a socket
+type other than [`net.Socket`](/api/v18/net#netsocket).
 
 #### <DataTag tag="E" /> `'dropRequest'`
 
 <Metadata data={{"update":{"type":"added","version":["v18.7.0"]}}} />
 
-* `request` [`http.IncomingMessage`](/api/http#httpincomingmessage) Arguments for the HTTP request, as it is in
+* `request` [`http.IncomingMessage`](/api/v18/http#httpincomingmessage) Arguments for the HTTP request, as it is in
   the [`'request'`][] event
-* `socket` [`stream.Duplex`](/api/stream#streamduplex) Network socket between the server and client
+* `socket` [`stream.Duplex`](/api/v18/stream#streamduplex) Network socket between the server and client
 
 When the number of requests on a socket reaches the threshold of
 `server.maxRequestsPerSocket`, the server will drop new requests
@@ -1236,8 +1236,8 @@ and emit `'dropRequest'` event instead, then send `503` to client.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.0"]}}} />
 
-* `request` [`http.IncomingMessage`](/api/http#httpincomingmessage)
-* `response` [`http.ServerResponse`](/api/http#httpserverresponse)
+* `request` [`http.IncomingMessage`](/api/v18/http#httpincomingmessage)
+* `response` [`http.ServerResponse`](/api/v18/http#httpserverresponse)
 
 Emitted each time there is a request. There may be multiple requests
 per connection (in the case of HTTP Keep-Alive connections).
@@ -1246,10 +1246,10 @@ per connection (in the case of HTTP Keep-Alive connections).
 
 <Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19981","description":"Not listening to this event no longer causes the socket to be destroyed if a client sends an Upgrade header."}],"update":{"type":"added","version":["v0.1.94"]}}} />
 
-* `request` [`http.IncomingMessage`](/api/http#httpincomingmessage) Arguments for the HTTP request, as it is in
+* `request` [`http.IncomingMessage`](/api/v18/http#httpincomingmessage) Arguments for the HTTP request, as it is in
   the [`'request'`][] event
-* `socket` [`stream.Duplex`](/api/stream#streamduplex) Network socket between the server and client
-* `head` [`Buffer`](/api/buffer#buffer) The first packet of the upgraded stream (may be empty)
+* `socket` [`stream.Duplex`](/api/v18/stream#streamduplex) Network socket between the server and client
+* `head` [`Buffer`](/api/v18/buffer#buffer) The first packet of the upgraded stream (may be empty)
 
 Emitted each time a client requests an HTTP upgrade. Listening to this event
 is optional and clients cannot insist on a protocol change.
@@ -1258,9 +1258,9 @@ After this event is emitted, the request's socket will not have a `'data'`
 event listener, meaning it will need to be bound in order to handle data
 sent to the server on that socket.
 
-This event is guaranteed to be passed an instance of the [`net.Socket`](/api/net#netsocket) class,
-a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specifies a socket
-type other than [`net.Socket`](/api/net#netsocket).
+This event is guaranteed to be passed an instance of the [`net.Socket`](/api/v18/net#netsocket) class,
+a subclass of [`stream.Duplex`](/api/v18/stream#streamduplex), unless the user specifies a socket
+type other than [`net.Socket`](/api/v18/net#netsocket).
 
 #### <DataTag tag="M" /> `server.close([callback])`
 
@@ -1340,7 +1340,7 @@ reverse proxy in front.
 
 * `msecs` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) **Default:** 0 (no timeout)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`http.Server`](/api/http#httpserver)
+* Returns: [`http.Server`](/api/v18/http#httpserver)
 
 Sets the timeout value for sockets, and emits a `'timeout'` event on
 the Server object, passing the socket as an argument, if a timeout
@@ -1406,7 +1406,7 @@ affects new connections to the server, not any existing connections.
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.17"]}}} />
 
-* Extends: [`http.OutgoingMessage`](/api/http#httpoutgoingmessage)
+* Extends: [`http.OutgoingMessage`](/api/v18/http#httpoutgoingmessage)
 
 This object is created internally by an HTTP server, not by the user. It is
 passed as the second parameter to the [`'request'`][] event.
@@ -1464,7 +1464,7 @@ Deprecated. Use [`response.socket`][].
 
 </Stability>
 
-* [`stream.Duplex`](/api/stream#streamduplex)
+* [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 See [`response.socket`][].
 
@@ -1478,7 +1478,7 @@ See [`writable.cork()`][].
 
 <Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33155","description":"The `data` parameter can now be a `Uint8Array`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18780","description":"This method now returns a reference to `ServerResponse`."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
+* `data` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -1617,7 +1617,7 @@ response.removeHeader('Content-Encoding');
 
 <Metadata data={{"update":{"type":"added","version":["v15.7.0"]}}} />
 
-* [`http.IncomingMessage`](/api/http#httpincomingmessage)
+* [`http.IncomingMessage`](/api/v18/http#httpincomingmessage)
 
 A reference to the original HTTP `request` object.
 
@@ -1639,7 +1639,7 @@ in responses.
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
-* Returns: [`http.ServerResponse`](/api/http#httpserverresponse)
+* Returns: [`http.ServerResponse`](/api/v18/http#httpserverresponse)
 
 Returns the response object.
 
@@ -1691,7 +1691,7 @@ is desired with potential future retrieval and modification, use
 
 * `msecs` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`http.ServerResponse`](/api/http#httpserverresponse)
+* Returns: [`http.ServerResponse`](/api/v18/http#httpserverresponse)
 
 Sets the Socket's timeout value to `msecs`. If a callback is
 provided, then it is added as a listener on the `'timeout'` event on
@@ -1706,7 +1706,7 @@ timed out sockets must be handled explicitly.
 
 <Metadata data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
-* [`stream.Duplex`](/api/stream#streamduplex)
+* [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 Reference to the underlying socket. Usually users will not want to access
 this property. In particular, the socket will not emit `'readable'` events
@@ -1722,9 +1722,9 @@ const server = http.createServer((req, res) => {
 }).listen(3000);
 ```
 
-This property is guaranteed to be an instance of the [`net.Socket`](/api/net#netsocket) class,
-a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specified a socket
-type other than [`net.Socket`](/api/net#netsocket).
+This property is guaranteed to be an instance of the [`net.Socket`](/api/v18/net#netsocket) class,
+a subclass of [`stream.Duplex`](/api/v18/stream#streamduplex), unless the user specified a socket
+type other than [`net.Socket`](/api/v18/net#netsocket).
 
 #### <DataTag tag="M" /> `response.statusCode`
 
@@ -1790,7 +1790,7 @@ before the [`'finish'`][] event is emitted.
 
 <Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33155","description":"The `chunk` parameter can now be a `Uint8Array`."}],"update":{"type":"added","version":["v0.1.29"]}}} />
 
-* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
+* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default:** `'utf8'`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1873,7 +1873,7 @@ response.writeEarlyHints({
 * `statusCode` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `statusMessage` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `headers` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-* Returns: [`http.ServerResponse`](/api/http#httpserverresponse)
+* Returns: [`http.ServerResponse`](/api/v18/http#httpserverresponse)
 
 Sends a response header to the request. The status code is a 3-digit HTTP
 status code, like `404`. The last argument, `headers`, are the response headers.
@@ -1943,15 +1943,15 @@ the request body should be sent.
 
 <Metadata data={{"changes":[{"version":"v15.5.0","pr-url":"https://github.com/nodejs/node/pull/33035","description":"The `destroyed` value returns `true` after the incoming data is consumed."},{"version":["v13.1.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30135","description":"The `readableHighWaterMark` value mirrors that of the socket."}],"update":{"type":"added","version":["v0.1.17"]}}} />
 
-* Extends: [`stream.Readable`](/api/stream#streamreadable)
+* Extends: [`stream.Readable`](/api/v18/stream#streamreadable)
 
 An `IncomingMessage` object is created by [`http.Server`][] or
 [`http.ClientRequest`][] and passed as the first argument to the [`'request'`][]
 and [`'response'`][] event respectively. It may be used to access response
 status, headers, and data.
 
-Different from its `socket` value which is a subclass of [`stream.Duplex`](/api/stream#streamduplex), the
-`IncomingMessage` itself extends [`stream.Readable`](/api/stream#streamreadable) and is created separately to
+Different from its `socket` value which is a subclass of [`stream.Duplex`](/api/v18/stream#streamduplex), the
+`IncomingMessage` itself extends [`stream.Readable`](/api/v18/stream#streamreadable) and is created separately to
 parse and emit the incoming HTTP headers and payload, as the underlying socket
 may be reused multiple times in case of keep-alive.
 
@@ -2156,7 +2156,7 @@ received. Only populated at the `'end'` event.
 
 * `msecs` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`http.IncomingMessage`](/api/http#httpincomingmessage)
+* Returns: [`http.IncomingMessage`](/api/v18/http#httpincomingmessage)
 
 Calls `message.socket.setTimeout(msecs, callback)`.
 
@@ -2164,16 +2164,16 @@ Calls `message.socket.setTimeout(msecs, callback)`.
 
 <Metadata data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
-* [`stream.Duplex`](/api/stream#streamduplex)
+* [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 The [`net.Socket`][] object associated with the connection.
 
 With HTTPS support, use [`request.socket.getPeerCertificate()`][] to obtain the
 client's authentication details.
 
-This property is guaranteed to be an instance of the [`net.Socket`](/api/net#netsocket) class,
-a subclass of [`stream.Duplex`](/api/stream#streamduplex), unless the user specified a socket
-type other than [`net.Socket`](/api/net#netsocket) or internally nulled.
+This property is guaranteed to be an instance of the [`net.Socket`](/api/v18/net#netsocket) class,
+a subclass of [`stream.Duplex`](/api/v18/stream#streamduplex), unless the user specified a socket
+type other than [`net.Socket`](/api/v18/net#netsocket) or internally nulled.
 
 #### <DataTag tag="M" /> `message.statusCode`
 
@@ -2262,7 +2262,7 @@ URL {
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.17"]}}} />
 
-* Extends: [`Stream`](/api/stream#stream)
+* Extends: [`Stream`](/api/v18/stream#stream)
 
 This class serves as the parent class of [`http.ClientRequest`][]
 and [`http.ServerResponse`][]. It is an abstract outgoing message from
@@ -2365,7 +2365,7 @@ and is connected, that socket will be destroyed as well.
 
 <Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33155","description":"The `chunk` parameter can now be a `Uint8Array`."},{"version":"v0.11.6","description":"add `callback` argument."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
+* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Optional, **Default**: `utf8`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Optional
 * Returns: [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
@@ -2512,7 +2512,7 @@ Once a socket is associated with the message and is connected,
 
 <Metadata data={{"update":{"type":"added","version":["v0.3.0"]}}} />
 
-* [`stream.Duplex`](/api/stream#streamduplex)
+* [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 Reference to the underlying socket. Usually, users will not want to access
 this property.
@@ -2580,7 +2580,7 @@ Always `false`.
 
 <Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33155","description":"The `chunk` parameter can now be a `Uint8Array`."},{"version":"v0.11.6","description":"The `callback` argument was added."}],"update":{"type":"added","version":["v0.1.29"]}}} />
 
-* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
+* `chunk` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) **Default**: `utf8`
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * Returns [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -2631,7 +2631,7 @@ Found'`.
     invalid HTTP headers when `true`. Using the insecure parser should be
     avoided. See [`--insecure-http-parser`][] for more information.
     **Default:** `false`.
-  * `IncomingMessage` [`http.IncomingMessage`](/api/http#httpincomingmessage) Specifies the `IncomingMessage`
+  * `IncomingMessage` [`http.IncomingMessage`](/api/v18/http#httpincomingmessage) Specifies the `IncomingMessage`
     class to be used. Useful for extending the original `IncomingMessage`.
     **Default:** `IncomingMessage`.
   * `keepAlive` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If set to `true`, it enables keep-alive functionality
@@ -2648,7 +2648,7 @@ Found'`.
     headers in a request with `, ` instead of discarding the duplicates.
     See [`message.headers`][] for more information.
     **Default:** `false`.
-  * `ServerResponse` [`http.ServerResponse`](/api/http#httpserverresponse) Specifies the `ServerResponse` class
+  * `ServerResponse` [`http.ServerResponse`](/api/v18/http#httpserverresponse) Specifies the `ServerResponse` class
     to be used. Useful for extending the original `ServerResponse`. **Default:**
     `ServerResponse`.
     **Default:** `300000`.
@@ -2658,7 +2658,7 @@ Found'`.
 
 * `requestListener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
-* Returns: [`http.Server`](/api/http#httpserver)
+* Returns: [`http.Server`](/api/v18/http#httpserver)
 
 Returns a new instance of [`http.Server`][].
 
@@ -2702,12 +2702,12 @@ server.listen(8000);
 
 <Metadata data={{"changes":[{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
 
-* `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api)
+* `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Accepts the same `options` as
   [`http.request()`][], with the `method` always set to `GET`.
   Properties that are inherited from the prototype are ignored.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`http.ClientRequest`](/api/http#httpclientrequest)
+* Returns: [`http.ClientRequest`](/api/v18/http#httpclientrequest)
 
 Since most requests are GET requests without bodies, Node.js provides this
 convenience method. The only difference between this method and
@@ -2772,7 +2772,7 @@ server.listen(8000);
 
 <Metadata data={{"update":{"type":"added","version":["v0.5.9"]}}} />
 
-* [`http.Agent`](/api/http#httpagent)
+* [`http.Agent`](/api/v18/http#httpagent)
 
 Global instance of `Agent` which is used as the default for all HTTP client
 requests.
@@ -2796,9 +2796,9 @@ This can be overridden for servers and client requests by passing the
 
 <Metadata data={{"changes":[{"version":["v16.7.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/39310","description":"When using a `URL` object parsed username and password will now be properly URI decoded."},{"version":["v15.3.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36048","description":"It is possible to abort a request with an AbortSignal."},{"version":["v13.8.0","v12.15.0","v10.19.0"],"pr-url":"https://github.com/nodejs/node/pull/31448","description":"The `insecureHTTPParser` option is supported now."},{"version":"v13.3.0","pr-url":"https://github.com/nodejs/node/pull/30570","description":"The `maxHeaderSize` option is supported now."},{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/21616","description":"The `url` parameter can now be passed along with a separate `options` object."},{"version":"v7.5.0","pr-url":"https://github.com/nodejs/node/pull/10638","description":"The `options` parameter can be a WHATWG `URL` object."}],"update":{"type":"added","version":["v0.3.6"]}}} />
 
-* `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api)
+* `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `agent` [`http.Agent`](/api/http#httpagent) | [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Controls [`Agent`][] behavior. Possible
+  * `agent` [`http.Agent`](/api/v18/http#httpagent) | [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Controls [`Agent`][] behavior. Possible
     values:
     * `undefined` (default): use [`http.globalAgent`][] for this host and port.
     * `Agent` object: explicitly use the passed in `Agent`.
@@ -2843,7 +2843,7 @@ This can be overridden for servers and client requests by passing the
   * `protocol` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Protocol to use. **Default:** `'http:'`.
   * `setHost` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type): Specifies whether or not to automatically add the
     `Host` header. Defaults to `true`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal): An AbortSignal that may be used to abort an ongoing
+  * `signal` [`AbortSignal`](/api/v18/globals#abortsignal): An AbortSignal that may be used to abort an ongoing
     request.
   * `socketPath` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Unix domain socket. Cannot be used if one of `host`
     or `port` is specified, as those specify a TCP Socket.
@@ -2857,7 +2857,7 @@ This can be overridden for servers and client requests by passing the
     the duplicates. See [`message.headers`][] for more information.
     **Default:** `false`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* Returns: [`http.ClientRequest`](/api/http#httpclientrequest)
+* Returns: [`http.ClientRequest`](/api/v18/http#httpclientrequest)
 
 `options` in [`socket.connect()`][] are also supported.
 

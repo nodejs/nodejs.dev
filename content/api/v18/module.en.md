@@ -45,10 +45,10 @@ const builtin = require('node:module').builtinModules;
 
 <Metadata data={{"update":{"type":"added","version":["v12.2.0"]}}} />
 
-* `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/url#the-whatwg-url-api) Filename to be used to construct the require
+* `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api) Filename to be used to construct the require
   function. Must be a file URL object, file URL string, or absolute path
   string.
-* Returns: [`require`](/api/modules#requireid) Require function
+* Returns: [`require`](/api/v18/modules#requireid) Require function
 
 ```mjs
 import { createRequire } from 'node:module';
@@ -146,7 +146,7 @@ const { findSourceMap, SourceMap } = require('node:module');
 <Metadata data={{"update":{"type":"added","version":["v13.7.0","v12.17.0"]}}} />
 
 * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* Returns: [`module.SourceMap`](/api/module#modulesourcemap) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) Returns `module.SourceMap` if a source
+* Returns: [`module.SourceMap`](/api/v18/module#modulesourcemap) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) Returns `module.SourceMap` if a source
   map is found, `undefined` otherwise.
 
 `path` is the resolved path for the file for which a corresponding source map

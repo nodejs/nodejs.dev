@@ -132,7 +132,7 @@ if (diagnostics_channel.hasSubscribers('my-channel')) {
 <Metadata data={{"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The channel name
-* Returns: [`Channel`](/api/diagnostics_channel#channel) The named channel object
+* Returns: [`Channel`](/api/v18/diagnostics_channel#channel) The named channel object
 
 This is the primary entry-point for anyone wanting to publish to a named
 channel. It produces a channel object which is optimized to reduce overhead at
@@ -385,50 +385,50 @@ independently.
 
 `http.client.request.start`
 
-* `request` [`http.ClientRequest`](/api/http#httpclientrequest)
+* `request` [`http.ClientRequest`](/api/v18/http#httpclientrequest)
 
 Emitted when client starts a request.
 
 `http.client.response.finish`
 
-* `request` [`http.ClientRequest`](/api/http#httpclientrequest)
-* `response` [`http.IncomingMessage`](/api/http#httpincomingmessage)
+* `request` [`http.ClientRequest`](/api/v18/http#httpclientrequest)
+* `response` [`http.IncomingMessage`](/api/v18/http#httpincomingmessage)
 
 Emitted when client receives a response.
 
 `http.server.request.start`
 
-* `request` [`http.IncomingMessage`](/api/http#httpincomingmessage)
-* `response` [`http.ServerResponse`](/api/http#httpserverresponse)
-* `socket` [`net.Socket`](/api/net#netsocket)
-* `server` [`http.Server`](/api/http#httpserver)
+* `request` [`http.IncomingMessage`](/api/v18/http#httpincomingmessage)
+* `response` [`http.ServerResponse`](/api/v18/http#httpserverresponse)
+* `socket` [`net.Socket`](/api/v18/net#netsocket)
+* `server` [`http.Server`](/api/v18/http#httpserver)
 
 Emitted when server receives a request.
 
 `http.server.response.finish`
 
-* `request` [`http.IncomingMessage`](/api/http#httpincomingmessage)
-* `response` [`http.ServerResponse`](/api/http#httpserverresponse)
-* `socket` [`net.Socket`](/api/net#netsocket)
-* `server` [`http.Server`](/api/http#httpserver)
+* `request` [`http.IncomingMessage`](/api/v18/http#httpincomingmessage)
+* `response` [`http.ServerResponse`](/api/v18/http#httpserverresponse)
+* `socket` [`net.Socket`](/api/v18/net#netsocket)
+* `server` [`http.Server`](/api/v18/http#httpserver)
 
 Emitted when server sends a response.
 
 `net.client.socket`
 
-* `socket` [`net.Socket`](/api/net#netsocket)
+* `socket` [`net.Socket`](/api/v18/net#netsocket)
 
 Emitted when a new TCP or pipe client socket is created.
 
 `net.server.socket`
 
-* `socket` [`net.Socket`](/api/net#netsocket)
+* `socket` [`net.Socket`](/api/v18/net#netsocket)
 
 Emitted when a new TCP or pipe connection is received.
 
 `udp.socket`
 
-* `socket` [`dgram.Socket`](/api/dgram#dgramsocket)
+* `socket` [`dgram.Socket`](/api/v18/dgram#dgramsocket)
 
 Emitted when a new UDP socket is created.
 

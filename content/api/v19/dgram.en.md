@@ -68,7 +68,7 @@ server.bind(41234);
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.99"]}}} />
 
-* Extends: [`EventEmitter`](/api/events#eventemitter)
+* Extends: [`EventEmitter`](/api/v19/events#eventemitter)
 
 Encapsulates the datagram functionality.
 
@@ -115,7 +115,7 @@ exist and calls such as `socket.address()` and `socket.setTTL()` will fail.
 The `'message'` event is emitted when a new datagram is available on a socket.
 The event handler function is passed two arguments: `msg` and `rinfo`.
 
-* `msg` [`Buffer`](/api/buffer#buffer) The message.
+* `msg` [`Buffer`](/api/v19/buffer#buffer) The message.
 * `rinfo` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Remote address information.
   * `address` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The sender address.
   * `family` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The address family (`'IPv4'` or `'IPv6'`).
@@ -434,7 +434,7 @@ This method throws [`ERR_SOCKET_BUFFER_SIZE`][] if called on an unbound socket.
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-* Returns: [`dgram.Socket`](/api/dgram#dgramsocket)
+* Returns: [`dgram.Socket`](/api/v19/dgram#dgramsocket)
 
 By default, binding a socket will cause it to block the Node.js process from
 exiting as long as the socket is open. The `socket.unref()` method can be used
@@ -461,7 +461,7 @@ if the socket is not connected.
 
 <Metadata data={{"changes":[{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/39190","description":"The `address` parameter now only accepts a `string`, `null` or `undefined`."},{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/22413","description":"The `msg` parameter can now be any `TypedArray` or `DataView`."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26871","description":"Added support for sending data on connected sockets."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11985","description":"The `msg` parameter can be an `Uint8Array` now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10473","description":"The `address` parameter is always optional now."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5929","description":"On success, `callback` will now be called with an `error` argument of `null` rather than `0`."},{"version":"v5.7.0","pr-url":"https://github.com/nodejs/node/pull/4374","description":"The `msg` parameter can be an array now. Also, the `offset` and `length` parameters are optional now."}],"update":{"type":"added","version":["v0.1.99"]}}} />
 
-* `msg` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) Message to be sent.
+* `msg` [`Buffer`](/api/v19/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) Message to be sent.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Offset in the buffer where the message starts.
 * `length` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes in the message.
 * `port` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Destination port.
@@ -782,7 +782,7 @@ This method throws `EBADF` if called on an unbound socket.
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-* Returns: [`dgram.Socket`](/api/dgram#dgramsocket)
+* Returns: [`dgram.Socket`](/api/v19/dgram#dgramsocket)
 
 By default, binding a socket will cause it to block the Node.js process from
 exiting as long as the socket is open. The `socket.unref()` method can be used
@@ -813,9 +813,9 @@ chained.
   * `recvBufferSize` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Sets the `SO_RCVBUF` socket value.
   * `sendBufferSize` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Sets the `SO_SNDBUF` socket value.
   * `lookup` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Custom lookup function. **Default:** [`dns.lookup()`][].
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) An AbortSignal that may be used to close a socket.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) An AbortSignal that may be used to close a socket.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Attached as a listener for `'message'` events. Optional.
-* Returns: [`dgram.Socket`](/api/dgram#dgramsocket)
+* Returns: [`dgram.Socket`](/api/v19/dgram#dgramsocket)
 
 Creates a `dgram.Socket` object. Once the socket is created, calling
 [`socket.bind()`][] will instruct the socket to begin listening for datagram
@@ -845,7 +845,7 @@ controller.abort();
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Either `'udp4'` or `'udp6'`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Attached as a listener to `'message'` events.
-* Returns: [`dgram.Socket`](/api/dgram#dgramsocket)
+* Returns: [`dgram.Socket`](/api/v19/dgram#dgramsocket)
 
 Creates a `dgram.Socket` object of the specified `type`.
 

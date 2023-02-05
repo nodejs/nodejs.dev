@@ -157,7 +157,7 @@ process.on('exit', (code) => {
 
 * `message` { Object | boolean | number | string | null } a parsed JSON object
   or a serializable primitive value.
-* `sendHandle` [`net.Server`](/api/net#netserver) | [`net.Socket`](/api/net#netsocket) a [`net.Server`][] or [`net.Socket`][]
+* `sendHandle` [`net.Server`](/api/v16/net#netserver) | [`net.Socket`](/api/v16/net#netsocket) a [`net.Server`][] or [`net.Socket`][]
   object, or undefined.
 
 If the Node.js process is spawned with an IPC channel (see the [Child Process][]
@@ -621,9 +621,9 @@ The `*-deprecation` command-line flags only affect warnings that use the name
 
 <Metadata data={{"update":{"type":"added","version":["v16.2.0"]}}} />
 
-* `worker` [`Worker`](/api/worker_threads#worker) The [`Worker`](/api/worker_threads#worker) that was created.
+* `worker` [`Worker`](/api/v16/worker_threads#worker) The [`Worker`](/api/v16/worker_threads#worker) that was created.
 
-The `'worker'` event is emitted after a new [`Worker`](/api/worker_threads#worker) thread has been created.
+The `'worker'` event is emitted after a new [`Worker`](/api/v16/worker_threads#worker) thread has been created.
 
 ##### Emitting custom warnings
 
@@ -1152,7 +1152,7 @@ If the Node.js process was not spawned with an IPC channel,
 
 * `module` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
-* `flags` [`os.constants.dlopen`](/api/os#dlopen-constants) **Default:** `os.constants.dlopen.RTLD_LAZY`
+* `flags` [`os.constants.dlopen`](/api/v16/os#dlopen-constants) **Default:** `os.constants.dlopen.RTLD_LAZY`
 
 The `process.dlopen()` method allows dynamically loading shared objects. It is
 primarily used by `require()` to load C++ Addons, and should not be used
@@ -2900,7 +2900,7 @@ console.log(resourceUsage());
 <Metadata data={{"update":{"type":"added","version":["v0.5.9"]}}} />
 
 * `message` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-* `sendHandle` [`net.Server`](/api/net#netserver) | [`net.Socket`](/api/net#netsocket)
+* `sendHandle` [`net.Server`](/api/v16/net#netserver) | [`net.Socket`](/api/v16/net#netsocket)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) used to parameterize the sending of certain types of
   handles.`options` supports the following properties:
   * `keepOpen` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) A value that can be used when passing instances of
@@ -3180,7 +3180,7 @@ Using this function is mutually exclusive with using the deprecated
 
 ### <DataTag tag="M" /> `process.stderr`
 
-* [`Stream`](/api/stream#stream)
+* [`Stream`](/api/v16/stream#stream)
 
 The `process.stderr` property returns a stream connected to
 `stderr` (fd `2`). It is a [`net.Socket`][] (which is a [Duplex][]
@@ -3200,7 +3200,7 @@ this field does not exist.
 
 ### <DataTag tag="M" /> `process.stdin`
 
-* [`Stream`](/api/stream#stream)
+* [`Stream`](/api/v16/stream#stream)
 
 The `process.stdin` property returns a stream connected to
 `stdin` (fd `0`). It is a [`net.Socket`][] (which is a [Duplex][]
@@ -3227,7 +3227,7 @@ this field does not exist.
 
 ### <DataTag tag="M" /> `process.stdout`
 
-* [`Stream`](/api/stream#stream)
+* [`Stream`](/api/v16/stream#stream)
 
 The `process.stdout` property returns a stream connected to
 `stdout` (fd `1`). It is a [`net.Socket`][] (which is a [Duplex][]

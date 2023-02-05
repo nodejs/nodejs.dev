@@ -453,7 +453,7 @@ multiple worker threads.
 <Metadata data={{"changes":[{"version":"v16.7.0","pr-url":"https://github.com/nodejs/node/pull/39708","description":"Added the standard `endings` option to replace line-endings, and removed the non-standard `encoding` option."}],"update":{"type":"added","version":["v15.7.0"]}}} />
 
 * `sources` string\[]|ArrayBuffer\[]|TypedArray\[]|DataView\[]|Blob\[] An
-  array of string, [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer), [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray), [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView), or [`Blob`](/api/buffer#blob) objects,
+  array of string, [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer), [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray), [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView), or [`Blob`](/api/v16/buffer#blob) objects,
   or any mix of such objects, that will be stored within the `Blob`.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `endings` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) One of either `'transparent'` or `'native'`. When set
@@ -465,7 +465,7 @@ multiple worker threads.
 
 Creates a new `Blob` object containing a concatenation of the given sources.
 
-[`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer), [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray), [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView), and [`Buffer`](/api/buffer#buffer) sources are copied into
+[`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer), [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray), [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView), and [`Buffer`](/api/v16/buffer#buffer) sources are copied into
 the 'Blob' and can therefore be safely modified after the 'Blob' is created.
 
 String sources are encoded as UTF-8 byte sequences and copied into the Blob.
@@ -502,7 +502,7 @@ data. The original `Blob` is not altered.
 
 <Metadata data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
-* Returns: [`ReadableStream`](/api/webstreams#readablestream)
+* Returns: [`ReadableStream`](/api/v16/webstreams#readablestream)
 
 Returns a new `ReadableStream` that allows the content of the `Blob` to be read.
 
@@ -525,7 +525,7 @@ The content-type of the `Blob`.
 
 #### <DataTag tag="M" /> `Blob` objects and `MessageChannel`
 
-Once a [`Blob`](/api/buffer#blob) object is created, it can be sent via `MessagePort` to multiple
+Once a [`Blob`](/api/v16/buffer#blob) object is created, it can be sent via `MessagePort` to multiple
 destinations without transferring or immediately copying the data. The data
 contained by the `Blob` is copied only when the `arrayBuffer()` or `text()`
 methods are called.
@@ -594,7 +594,7 @@ It can be constructed in a variety of ways.
 <Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/34682","description":"Throw ERR_INVALID_ARG_VALUE instead of ERR_INVALID_OPT_VALUE for invalid input arguments."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18129","description":"Attempting to fill a non-zero length buffer with a zero length buffer triggers a thrown exception."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17427","description":"Specifying an invalid string for `fill` triggers a thrown exception."},{"version":"v8.9.3","pr-url":"https://github.com/nodejs/node/pull/17428","description":"Specifying an invalid string for `fill` now results in a zero-filled buffer."}],"update":{"type":"added","version":["v5.10.0"]}}} />
 
 * `size` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The desired length of the new `Buffer`.
-* `fill` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A value to pre-fill the new `Buffer`
+* `fill` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A value to pre-fill the new `Buffer`
   with. **Default:** `0`.
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If `fill` is a string, this is its encoding.
   **Default:** `'utf8'`.
@@ -806,7 +806,7 @@ A `TypeError` will be thrown if `size` is not a number.
 
 <Metadata data={{"changes":[{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8946","description":"Passing invalid input will now throw an error."},{"version":"v5.10.0","pr-url":"https://github.com/nodejs/node/pull/5255","description":"The `string` parameter can now be any `TypedArray`, `DataView` or `ArrayBuffer`."}],"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) A
+* `string` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) A
   value to calculate the length of.
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If `string` is a string, this is its encoding.
   **Default:** `'utf8'`.
@@ -849,8 +849,8 @@ is returned.
 
 <Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The arguments can now be `Uint8Array`s."}],"update":{"type":"added","version":["v0.11.13"]}}} />
 
-* `buf1` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
-* `buf2` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
+* `buf1` [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
+* `buf2` [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 * Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Either `-1`, `0`, or `1`, depending on the result of the
   comparison. See [`buf.compare()`][] for details.
 
@@ -890,7 +890,7 @@ console.log(arr.sort(Buffer.compare));
   instances to concatenate.
 * `totalLength` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Total length of the `Buffer` instances in `list`
   when concatenated.
-* Returns: [`Buffer`](/api/buffer#buffer)
+* Returns: [`Buffer`](/api/v16/buffer#buffer)
 
 Returns a new `Buffer` which is the result of concatenating all the `Buffer`
 instances in the `list` together.
@@ -1097,7 +1097,7 @@ console.log(buf);
 
 <Metadata data={{"update":{"type":"added","version":["v5.10.0"]}}} />
 
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) An existing `Buffer` or [`Uint8Array`][] from
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) An existing `Buffer` or [`Uint8Array`][] from
   which to copy data.
 
 Copies the passed `buffer` data onto a new `Buffer` instance.
@@ -1432,7 +1432,7 @@ new Int8Array(nodeBuffer.buffer, nodeBuffer.byteOffset, nodeBuffer.length);
 
 <Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The `target` parameter can now be a `Uint8Array`."},{"version":"v5.11.0","pr-url":"https://github.com/nodejs/node/pull/5880","description":"Additional parameters for specifying offsets are supported now."}],"update":{"type":"added","version":["v0.11.13"]}}} />
 
-* `target` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) A `Buffer` or [`Uint8Array`][] with which to
+* `target` [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) A `Buffer` or [`Uint8Array`][] with which to
   compare `buf`.
 * `targetStart` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The offset within `target` at which to begin
   comparison. **Default:** `0`.
@@ -1535,7 +1535,7 @@ console.log(buf1.compare(buf2, 5, 6, 5));
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.90"]}}} />
 
-* `target` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) A `Buffer` or [`Uint8Array`][] to copy into.
+* `target` [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) A `Buffer` or [`Uint8Array`][] to copy into.
 * `targetStart` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The offset within `target` at which to begin
   writing. **Default:** `0`.
 * `sourceStart` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The offset within `buf` from which to begin copying.
@@ -1682,7 +1682,7 @@ for (const pair of buf.entries()) {
 
 <Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The arguments can now be `Uint8Array`s."}],"update":{"type":"added","version":["v0.11.13"]}}} />
 
-* `otherBuffer` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) A `Buffer` or [`Uint8Array`][] with which to
+* `otherBuffer` [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) A `Buffer` or [`Uint8Array`][] with which to
   compare `buf`.
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -1720,14 +1720,14 @@ console.log(buf1.equals(buf3));
 
 <Metadata data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22969","description":"Throws `ERR_OUT_OF_RANGE` instead of `ERR_INDEX_OUT_OF_RANGE`."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18790","description":"Negative `end` values throw an `ERR_INDEX_OUT_OF_RANGE` error."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18129","description":"Attempting to fill a non-zero length buffer with a zero length buffer triggers a thrown exception."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17427","description":"Specifying an invalid string for `value` triggers a thrown exception."},{"version":"v5.7.0","pr-url":"https://github.com/nodejs/node/pull/4935","description":"The `encoding` parameter is supported now."}],"update":{"type":"added","version":["v0.5.0"]}}} />
 
-* `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The value with which to fill `buf`.
+* `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The value with which to fill `buf`.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes to skip before starting to fill `buf`.
   **Default:** `0`.
 * `end` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where to stop filling `buf` (not inclusive). **Default:**
   [`buf.length`][].
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The encoding for `value` if `value` is a string.
   **Default:** `'utf8'`.
-* Returns: [`Buffer`](/api/buffer#buffer) A reference to `buf`.
+* Returns: [`Buffer`](/api/v16/buffer#buffer) A reference to `buf`.
 
 Fills `buf` with the specified `value`. If the `offset` and `end` are not given,
 the entire `buf` will be filled:
@@ -1812,7 +1812,7 @@ console.log(buf.fill('zz', 'hex'));
 
 <Metadata data={{"update":{"type":"added","version":["v5.3.0"]}}} />
 
-* `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) What to search for.
+* `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) What to search for.
 * `byteOffset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where to begin searching in `buf`. If negative, then
   offset is calculated from the end of `buf`. **Default:** `0`.
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If `value` is a string, this is its encoding.
@@ -1867,7 +1867,7 @@ console.log(buf.includes('this', 4));
 
 <Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The `value` can now be a `Uint8Array`."},{"version":["v5.7.0","v4.4.0"],"pr-url":"https://github.com/nodejs/node/pull/4803","description":"When `encoding` is being passed, the `byteOffset` parameter is no longer required."}],"update":{"type":"added","version":["v1.5.0"]}}} />
 
-* `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) What to search for.
+* `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) What to search for.
 * `byteOffset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where to begin searching in `buf`. If negative, then
   offset is calculated from the end of `buf`. **Default:** `0`.
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If `value` is a string, this is the encoding used to
@@ -2031,7 +2031,7 @@ for (const key of buf.keys()) {
 
 <Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The `value` can now be a `Uint8Array`."}],"update":{"type":"added","version":["v6.0.0"]}}} />
 
-* `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) What to search for.
+* `value` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) | [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) What to search for.
 * `byteOffset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where to begin searching in `buf`. If negative, then
   offset is calculated from the end of `buf`. **Default:**
   `buf.length - 1`.
@@ -2910,7 +2910,7 @@ console.log(buf.readUIntLE(0, 6).toString(16));
 * `start` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where the new `Buffer` will start. **Default:** `0`.
 * `end` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where the new `Buffer` will end (not inclusive).
   **Default:** [`buf.length`][].
-* Returns: [`Buffer`](/api/buffer#buffer)
+* Returns: [`Buffer`](/api/v16/buffer#buffer)
 
 Returns a new `Buffer` that references the same memory as the original, but
 offset and cropped by the `start` and `end` indices.
@@ -3017,7 +3017,7 @@ console.log(buf.subarray(-5, -2).toString());
 * `start` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where the new `Buffer` will start. **Default:** `0`.
 * `end` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Where the new `Buffer` will end (not inclusive).
   **Default:** [`buf.length`][].
-* Returns: [`Buffer`](/api/buffer#buffer)
+* Returns: [`Buffer`](/api/v16/buffer#buffer)
 
 <Stability stability={0}>
 
@@ -3080,7 +3080,7 @@ console.log(buf.toString());
 
 <Metadata data={{"update":{"type":"added","version":["v5.10.0"]}}} />
 
-* Returns: [`Buffer`](/api/buffer#buffer) A reference to `buf`.
+* Returns: [`Buffer`](/api/v16/buffer#buffer) A reference to `buf`.
 
 Interprets `buf` as an array of unsigned 16-bit integers and swaps the
 byte order _in-place_. Throws [`ERR_INVALID_BUFFER_SIZE`][] if [`buf.length`][]
@@ -3145,7 +3145,7 @@ buf.swap16(); // Convert to big-endian UTF-16 text.
 
 <Metadata data={{"update":{"type":"added","version":["v5.10.0"]}}} />
 
-* Returns: [`Buffer`](/api/buffer#buffer) A reference to `buf`.
+* Returns: [`Buffer`](/api/v16/buffer#buffer) A reference to `buf`.
 
 Interprets `buf` as an array of unsigned 32-bit integers and swaps the
 byte order _in-place_. Throws [`ERR_INVALID_BUFFER_SIZE`][] if [`buf.length`][]
@@ -3193,7 +3193,7 @@ buf2.swap32();
 
 <Metadata data={{"update":{"type":"added","version":["v6.3.0"]}}} />
 
-* Returns: [`Buffer`](/api/buffer#buffer) A reference to `buf`.
+* Returns: [`Buffer`](/api/v16/buffer#buffer) A reference to `buf`.
 
 Interprets `buf` as an array of 64-bit numbers and swaps byte order _in-place_.
 Throws [`ERR_INVALID_BUFFER_SIZE`][] if [`buf.length`][] is not a multiple of 8.
@@ -4328,7 +4328,7 @@ Deprecated: Use [`Buffer.from(buffer)`][] instead.
 
 </Stability>
 
-* `buffer` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) An existing `Buffer` or [`Uint8Array`][] from
+* `buffer` [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) An existing `Buffer` or [`Uint8Array`][] from
   which to copy data.
 
 See [`Buffer.from(buffer)`][].
@@ -4455,19 +4455,19 @@ Experimental
 
 * `id` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) A `'blob:nodedata:...` URL string returned by a prior call to
   `URL.createObjectURL()`.
-* Returns: [`Blob`](/api/buffer#blob)
+* Returns: [`Blob`](/api/v16/buffer#blob)
 
-Resolves a `'blob:nodedata:...'` an associated [`Blob`](/api/buffer#blob) object registered using
+Resolves a `'blob:nodedata:...'` an associated [`Blob`](/api/v16/buffer#blob) object registered using
 a prior call to `URL.createObjectURL()`.
 
 #### <DataTag tag="M" /> `buffer.transcode(source, fromEnc, toEnc)`
 
 <Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10236","description":"The `source` parameter can now be a `Uint8Array`."}],"update":{"type":"added","version":["v7.1.0"]}}} />
 
-* `source` [`Buffer`](/api/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) A `Buffer` or `Uint8Array` instance.
+* `source` [`Buffer`](/api/v16/buffer#buffer) | [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) A `Buffer` or `Uint8Array` instance.
 * `fromEnc` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The current encoding.
 * `toEnc` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) To target encoding.
-* Returns: [`Buffer`](/api/buffer#buffer)
+* Returns: [`Buffer`](/api/v16/buffer#buffer)
 
 Re-encodes the given `Buffer` or `Uint8Array` instance from one character
 encoding to another. Returns a new `Buffer` instance.

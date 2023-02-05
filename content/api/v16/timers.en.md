@@ -46,7 +46,7 @@ If true, the `Immediate` object will keep the Node.js event loop active.
 
 <Metadata data={{"update":{"type":"added","version":["v9.7.0"]}}} />
 
-* Returns: [`Immediate`](/api/timers#immediate) a reference to `immediate`
+* Returns: [`Immediate`](/api/v16/timers#immediate) a reference to `immediate`
 
 When called, requests that the Node.js event loop _not_ exit so long as the
 `Immediate` is active. Calling `immediate.ref()` multiple times will have no
@@ -59,7 +59,7 @@ to call `immediate.ref()` unless `immediate.unref()` had been called previously.
 
 <Metadata data={{"update":{"type":"added","version":["v9.7.0"]}}} />
 
-* Returns: [`Immediate`](/api/timers#immediate) a reference to `immediate`
+* Returns: [`Immediate`](/api/v16/timers#immediate) a reference to `immediate`
 
 When called, the active `Immediate` object will not require the Node.js event
 loop to remain active. If there is no other activity keeping the event loop
@@ -88,7 +88,7 @@ Legacy: Use [`clearTimeout()`][] instead.
 
 </Stability>
 
-* Returns: [`Timeout`](/api/timers#timeout) a reference to `timeout`
+* Returns: [`Timeout`](/api/v16/timers#timeout) a reference to `timeout`
 
 Cancels the timeout.
 
@@ -104,7 +104,7 @@ If true, the `Timeout` object will keep the Node.js event loop active.
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-* Returns: [`Timeout`](/api/timers#timeout) a reference to `timeout`
+* Returns: [`Timeout`](/api/v16/timers#timeout) a reference to `timeout`
 
 When called, requests that the Node.js event loop _not_ exit so long as the
 `Timeout` is active. Calling `timeout.ref()` multiple times will have no effect.
@@ -116,7 +116,7 @@ to call `timeout.ref()` unless `timeout.unref()` had been called previously.
 
 <Metadata data={{"update":{"type":"added","version":["v10.2.0"]}}} />
 
-* Returns: [`Timeout`](/api/timers#timeout) a reference to `timeout`
+* Returns: [`Timeout`](/api/v16/timers#timeout) a reference to `timeout`
 
 Sets the timer's start time to the current time, and reschedules the timer to
 call its callback at the previously specified duration adjusted to the current
@@ -130,7 +130,7 @@ timer.
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-* Returns: [`Timeout`](/api/timers#timeout) a reference to `timeout`
+* Returns: [`Timeout`](/api/v16/timers#timeout) a reference to `timeout`
 
 When called, the active `Timeout` object will not require the Node.js event loop
 to remain active. If there is no other activity keeping the event loop running,
@@ -164,7 +164,7 @@ event loop is doing.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to call at the end of this turn of
   the Node.js [Event Loop][]
 * `...args` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Optional arguments to pass when the `callback` is called.
-* Returns: [`Immediate`](/api/timers#immediate) for use with [`clearImmediate()`][]
+* Returns: [`Immediate`](/api/v16/timers#immediate) for use with [`clearImmediate()`][]
 
 Schedules the "immediate" execution of the `callback` after I/O events'
 callbacks.
@@ -188,7 +188,7 @@ This method has a custom variant for promises that is available using
 * `delay` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of milliseconds to wait before calling the
   `callback`. **Default:** `1`.
 * `...args` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Optional arguments to pass when the `callback` is called.
-* Returns: [`Timeout`](/api/timers#timeout) for use with [`clearInterval()`][]
+* Returns: [`Timeout`](/api/v16/timers#timeout) for use with [`clearInterval()`][]
 
 Schedules repeated execution of `callback` every `delay` milliseconds.
 
@@ -208,7 +208,7 @@ This method has a custom variant for promises that is available using
 * `delay` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of milliseconds to wait before calling the
   `callback`. **Default:** `1`.
 * `...args` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) Optional arguments to pass when the `callback` is called.
-* Returns: [`Timeout`](/api/timers#timeout) for use with [`clearTimeout()`][]
+* Returns: [`Timeout`](/api/v16/timers#timeout) for use with [`clearTimeout()`][]
 
 Schedules execution of a one-time `callback` after `delay` milliseconds.
 
@@ -275,7 +275,7 @@ ac.abort();
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-* `immediate` [`Immediate`](/api/timers#immediate) An `Immediate` object as returned by
+* `immediate` [`Immediate`](/api/v16/timers#immediate) An `Immediate` object as returned by
   [`setImmediate()`][].
 
 Cancels an `Immediate` object created by [`setImmediate()`][].
@@ -284,7 +284,7 @@ Cancels an `Immediate` object created by [`setImmediate()`][].
 
 <Metadata data={{"update":{"type":"added","version":["v0.0.1"]}}} />
 
-* `timeout` [`Timeout`](/api/timers#timeout) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A `Timeout` object as returned by [`setInterval()`][]
+* `timeout` [`Timeout`](/api/v16/timers#timeout) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A `Timeout` object as returned by [`setInterval()`][]
   or the [primitive][] of the `Timeout` object as a string or a number.
 
 Cancels a `Timeout` object created by [`setInterval()`][].
@@ -293,7 +293,7 @@ Cancels a `Timeout` object created by [`setInterval()`][].
 
 <Metadata data={{"update":{"type":"added","version":["v0.0.1"]}}} />
 
-* `timeout` [`Timeout`](/api/timers#timeout) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A `Timeout` object as returned by [`setTimeout()`][]
+* `timeout` [`Timeout`](/api/v16/timers#timeout) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A `Timeout` object as returned by [`setTimeout()`][]
   or the [primitive][] of the `Timeout` object as a string or a number.
 
 Cancels a `Timeout` object created by [`setTimeout()`][].
@@ -333,7 +333,7 @@ const {
   * `ref` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Set to `false` to indicate that the scheduled `Timeout`
     should not require the Node.js event loop to remain active.
     **Default:** `true`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) An optional `AbortSignal` that can be used to
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) An optional `AbortSignal` that can be used to
     cancel the scheduled `Timeout`.
 
 ```mjs
@@ -365,7 +365,7 @@ setTimeout(100, 'result').then((res) => {
   * `ref` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Set to `false` to indicate that the scheduled `Immediate`
     should not require the Node.js event loop to remain active.
     **Default:** `true`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) An optional `AbortSignal` that can be used to
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) An optional `AbortSignal` that can be used to
     cancel the scheduled `Immediate`.
 
 ```mjs
@@ -402,7 +402,7 @@ Returns an async iterator that generates values in an interval of `delay` ms.
     between iterations should not require the Node.js event loop to
     remain active.
     **Default:** `true`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) An optional `AbortSignal` that can be used to
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) An optional `AbortSignal` that can be used to
     cancel the scheduled `Timeout` between operations.
 
 ```mjs
@@ -450,7 +450,7 @@ Experimental
 * `delay` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of milliseconds to wait before resolving the
   promise.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) An optional `AbortSignal` that can be used to
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) An optional `AbortSignal` that can be used to
     cancel waiting.
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
