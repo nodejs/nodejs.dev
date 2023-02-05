@@ -122,11 +122,11 @@ async function fetchRandomContributor(): Promise<Contributor> {
   return new Promise((resolve, reject) => {
     try {
       if (contributors && contributors.length > 0 && !needToRefetch) {
-        const contributor: any = contributors.shift();
+        const contributor = contributors.shift();
         if (window.localStorage) {
           localStorage.setItem('contributors', JSON.stringify(contributors));
         }
-        resolve(contributor);
+        resolve(contributor as Contributor);
       }
 
       if (maxContributors && !needToRefetch) {
