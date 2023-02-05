@@ -1,7 +1,8 @@
+/* eslint-disable camelcase */
 import { useEffect, useState } from 'react';
 
 const CONTRIBUTORS_API_URI =
-  'https://api.github.com/repos/nodejs/node/contributors?per_page=1';
+  'https://api.github.com/repos/nodejs/node/contributors?per_page=5';
 
 /**
  * Parses "Link" response header from node/contributors API
@@ -14,7 +15,7 @@ function linkParser(linkHeader: string): {
     page: number;
   };
 } {
-  const regex = /<([^?]+\?per_page=1&[a-z]+=([\d]+))>;[\s]*rel="([a-z]+)"/g;
+  const regex = /<([^?]+\?per_page=5&[a-z]+=([\d]+))>;[\s]*rel="([a-z]+)"/g;
   let array: RegExpExecArray | null = null;
   const object = {};
 
@@ -54,19 +55,34 @@ async function getMaxContributors(): Promise<[number, number]> {
 
 /**
  * Retrieves a contributor's object by it's index in API
+ * It stores contributors in localStorage in order to do less consequent requests
  * @param randomPage
  */
 async function getContributor(randomPage: number): Promise<Contributor> {
-  const response = await fetch(`${CONTRIBUTORS_API_URI}&page=${randomPage}`);
-  const contributor = (await response.json())[0] as ContributorApiResponse;
+  const response = (await (
+    await fetch(`${CONTRIBUTORS_API_URI}&page=${randomPage}`)
+  ).json()) as ContributorApiResponse[];
 
-  return {
-    avatarUri: contributor.avatar_url,
-    commitsListUri: `https://github.com/nodejs/node/commits?author=${contributor.login}`,
-    contributionsCount: contributor.contributions,
-    login: contributor.login,
-    profileUri: contributor.html_url,
-  };
+  const contributorData: Contributor[] = response.map(
+    ({ avatar_url, login, contributions, html_url }) => ({
+      avatarUri: avatar_url,
+      login,
+      contributionsCount: contributions,
+      profileUri: html_url,
+      commitsListUri: `https://github.com/nodejs/node/commits?author=${login}`,
+    })
+  );
+
+  const contributor = contributorData.shift() as Contributor;
+
+  if (window.localStorage) {
+    window.localStorage.setItem(
+      'contributors',
+      JSON.stringify(contributorData)
+    );
+  }
+
+  return contributor;
 }
 
 /**
@@ -77,12 +93,17 @@ async function fetchRandomContributor() {
   let maxContributors: number | null = null;
   let fetchDate: number | null = null;
   let needToRefetch = false;
+  let contributors: Contributor[] = [];
   const ONE_MONTH_MS = 2592000000;
 
   if (window.localStorage) {
     const maxContributorsStored =
       window.localStorage.getItem('max_contributors');
     const fetchDateStored = window.localStorage.getItem('fetch_date');
+
+    contributors = JSON.parse(
+      window.localStorage.getItem('contributors') || '[]'
+    );
 
     maxContributors = maxContributorsStored
       ? parseInt(maxContributorsStored, 10)
@@ -94,8 +115,15 @@ async function fetchRandomContributor() {
     needToRefetch = true;
   }
 
-  // If localStorage and data is less than 1 month old, fetch 1 time
   try {
+    if (contributors && contributors.length > 0 && !needToRefetch) {
+      const contributor = contributors.shift();
+      if (window.localStorage) {
+        localStorage.setItem('contributors', JSON.stringify(contributors));
+      }
+      return contributor;
+    }
+
     if (maxContributors && !needToRefetch) {
       return await getContributor(
         Math.floor(Math.random() * Math.floor(maxContributors)) + 1
@@ -119,8 +147,10 @@ async function fetchRandomContributor() {
 
 export function useNodeJsContributorsApi(
   isVisible: boolean
-): Contributor | null {
-  const [contributor, setContributor] = useState<Contributor | null>(null);
+): Contributor | null | undefined {
+  const [contributor, setContributor] = useState<
+    Contributor | null | undefined
+  >(null);
 
   useEffect(() => {
     if (isVisible) {
@@ -151,7 +181,6 @@ export interface ContributorApiResponse {
   events_url: string;
   received_events_url: string;
   site_admin: boolean;
-  /* eslint-enable camelcase */
 }
 
 export interface Contributor {
