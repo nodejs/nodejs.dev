@@ -74,7 +74,7 @@
   "docs.api.sourceLink": "קוד מקור:",
   "docs.api.history.version": "גרסה",
   "docs.api.history.changes": "שינויים",
-  "docs.api.stability": "יציבות: {level}{text}",
+  "docs.api.stability": "יציבות: {level} - ",
   "components.header.links.about": "אודות",
   "components.header.links.certification": "אישורים",
   "components.author.githubLinkLabel": "{username} Github - opens in new tab",

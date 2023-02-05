@@ -129,17 +129,12 @@ function createApiDocsFrontmatter(firstLine, { version, name }) {
 
 // Utility to replace the `> Stability: XXXXXX` blockquotes and their following lines
 // into a proper metadata with the information (index number) and any other accompanying text
-function replaceStabilityIndex(metadata) {
+function replaceStabilityIndex() {
   return (_, __, level, text) => {
-    const sanitizedText = text
-      .replace(/(\n)>/g, '')
-      .replace(/\[(.+)\]\[\]/g, (___, piece) => piece);
+    const sanitizedText = text.replace(/(\n)>/g, '').replace(/^ - /, '');
+    const stability = Number(level);
 
-    const data = safeJSON.toString({
-      stability: { level: Number(level), text: sanitizedText },
-    });
-
-    return `<Metadata version="${metadata.fullVersion}" data={${data}} />`;
+    return `<Stability stability={${stability}}>\n\n${sanitizedText}\n\n</Stability>`;
   };
 }
 
@@ -185,8 +180,8 @@ function replaceLinksToMarkdownLinks() {
 // Within a proper link referencing either to its MDN specification
 // Or if it is another API doc (e.g.: `fs.something`) then to its
 // respective API page
-function replaceTypeToLinks() {
-  return source => typeParser(source);
+function replaceTypeToLinks(metadata) {
+  return source => typeParser(metadata, source);
 }
 
 // This utility replaces `<pre>` tags with ``` so that it is Markdown compatible
@@ -234,7 +229,11 @@ function replaceMarkdownMetadata(metadata, navigationCreator) {
 
         const stringifiedData = safeJSON.toString(parsedYaml);
 
-        return `<Metadata version="${metadata.fullVersion}" data={${stringifiedData}} />`;
+        if (parsedYaml.source_link) {
+          return `<Metadata version="${metadata.fullVersion}" data={${stringifiedData}} />`;
+        }
+
+        return `<Metadata data={${stringifiedData}} />`;
       }
     } catch (e) {
       // eslint-disable-next-line no-console
