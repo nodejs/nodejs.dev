@@ -1,14 +1,9 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import styles from './index.module.scss';
 
-interface Props {
-  stability: {
-    level: number;
-    text: string;
-  };
-}
+type Props = PropsWithChildren<{ stability: number }>;
 
 const getStabilityClass = (stability: number) => {
   switch (stability) {
@@ -23,9 +18,10 @@ const getStabilityClass = (stability: number) => {
   }
 };
 
-const Stability = ({ stability: { level, text } }: Props) => (
-  <div className={`${styles.stability} ${getStabilityClass(level)}`}>
-    <FormattedMessage id="docs.api.stability" values={{ level, text }} />
+const Stability = ({ stability, children }: Props) => (
+  <div className={`${styles.stability} ${getStabilityClass(stability)}`}>
+    <FormattedMessage id="docs.api.stability" values={{ level: stability }} />
+    {children}
   </div>
 );
 

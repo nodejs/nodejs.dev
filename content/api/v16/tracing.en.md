@@ -5,9 +5,13 @@ category: 'api'
 version: 'v16'
 ---
 
-<Metadata version="v16.19.0" data={{"update":{"type":"introduced_in","version":["v7.7.0"]}}} />
+<Metadata data={{"update":{"type":"introduced_in","version":["v7.7.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 <Metadata version="v16.19.0" data={{"source_link":"lib/trace_events.js"}} />
 
@@ -112,11 +116,11 @@ The features from this module are not available in [`Worker`][] threads.
 
 ### The `node:trace_events` module
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 #### <DataTag tag="M" /> `Tracing` object
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 The `Tracing` object is used to enable or disable tracing for sets of
 categories. Instances are created using the `trace_events.createTracing()`
@@ -129,7 +133,7 @@ set of enabled trace event categories.
 
 ##### <DataTag tag="M" /> `tracing.categories`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -138,7 +142,7 @@ A comma-separated list of the trace event categories covered by this
 
 ##### <DataTag tag="M" /> `tracing.disable()`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 Disables this `Tracing` object.
 
@@ -163,26 +167,26 @@ console.log(trace_events.getEnabledCategories());
 
 ##### <DataTag tag="M" /> `tracing.enable()`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 Enables this `Tracing` object for the set of categories covered by the
 `Tracing` object.
 
 ##### <DataTag tag="M" /> `tracing.enabled`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` only if the `Tracing` object has been enabled.
 
 #### <DataTag tag="M" /> `trace_events.createTracing(options)`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `categories` string\[] An array of trace category names. Values included
     in the array are coerced to a string when possible. An error will be
     thrown if the value cannot be coerced.
-* Returns: [`Tracing`](/api/tracing#tracing-object).
+* Returns: [`Tracing`](/api/v16/tracing#tracing-object).
 
 Creates and returns a `Tracing` object for the given set of `categories`.
 
@@ -197,7 +201,7 @@ tracing.disable();
 
 #### <DataTag tag="M" /> `trace_events.getEnabledCategories()`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.0.0"]}}} />
 
 * Returns: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 

@@ -5,11 +5,15 @@ category: 'api'
 version: 'v16'
 ---
 
-<Metadata version="v16.19.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Stability stability={2}>
 
-<Metadata version="v16.19.0" data={{"name":"dgram"}} />
+Stable
+
+</Stability>
+
+<Metadata data={{"name":"dgram"}} />
 
 <Metadata version="v16.19.0" data={{"source_link":"lib/dgram.js"}} />
 
@@ -62,9 +66,9 @@ server.bind(41234);
 
 ### <DataTag tag="C" /> `dgram.Socket`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.1.99"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.99"]}}} />
 
-* Extends: [`EventEmitter`](/api/events#eventemitter)
+* Extends: [`EventEmitter`](/api/v16/events#eventemitter)
 
 Encapsulates the datagram functionality.
 
@@ -73,21 +77,21 @@ The `new` keyword is not to be used to create `dgram.Socket` instances.
 
 #### <DataTag tag="E" /> `'close'`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.1.99"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.99"]}}} />
 
 The `'close'` event is emitted after a socket is closed with [`close()`][].
 Once triggered, no new `'message'` events will be emitted on this socket.
 
 #### <DataTag tag="E" /> `'connect'`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v12.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.0.0"]}}} />
 
 The `'connect'` event is emitted after a socket is associated to a remote
 address as a result of a successful [`connect()`][] call.
 
 #### <DataTag tag="E" /> `'error'`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.1.99"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.99"]}}} />
 
 * `exception` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
@@ -96,7 +100,7 @@ function is passed a single `Error` object.
 
 #### <DataTag tag="E" /> `'listening'`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.1.99"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.99"]}}} />
 
 The `'listening'` event is emitted once the `dgram.Socket` is addressable and
 can receive data. This happens either explicitly with `socket.bind()` or
@@ -106,12 +110,12 @@ exist and calls such as `socket.address()` and `socket.setTTL()` will fail.
 
 #### <DataTag tag="E" /> `'message'`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.1.99"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.99"]}}} />
 
 The `'message'` event is emitted when a new datagram is available on a socket.
 The event handler function is passed two arguments: `msg` and `rinfo`.
 
-* `msg` [`Buffer`](/api/buffer#buffer) The message.
+* `msg` [`Buffer`](/api/v16/buffer#buffer) The message.
 * `rinfo` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Remote address information.
   * `address` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The sender address.
   * `family` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The address family (`'IPv4'` or `'IPv6'`).
@@ -126,7 +130,7 @@ is the interface name as a zone ID suffix.
 
 #### <DataTag tag="M" /> `socket.addMembership(multicastAddress[, multicastInterface])`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.6.9"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.6.9"]}}} />
 
 * `multicastAddress` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `multicastInterface` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -176,7 +180,7 @@ if (cluster.isPrimary) {
 
 #### <DataTag tag="M" /> `socket.addSourceSpecificMembership(sourceAddress, groupAddress[, multicastInterface])`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v13.1.0","v12.16.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.1.0","v12.16.0"]}}} />
 
 * `sourceAddress` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `groupAddress` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -194,7 +198,7 @@ port, listening on all interfaces.
 
 #### <DataTag tag="M" /> `socket.address()`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.1.99"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.99"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -206,7 +210,7 @@ This method throws `EBADF` if called on an unbound socket.
 
 #### <DataTag tag="M" /> `socket.bind([port][, address][, callback])`
 
-<Metadata version="v16.19.0" data={{"changes":[{"version":"v0.9.1","commit":"332fea5ac1816e498030109c4211bca24a7fa667","description":"The method was changed to an asynchronous execution model. Legacy code would need to be changed to pass a callback function to the method call."}],"update":{"type":"added","version":["v0.1.99"]}}} />
+<Metadata data={{"changes":[{"version":"v0.9.1","commit":"332fea5ac1816e498030109c4211bca24a7fa667","description":"The method was changed to an asynchronous execution model. Legacy code would need to be changed to pass a callback function to the method call."}],"update":{"type":"added","version":["v0.1.99"]}}} />
 
 * `port` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `address` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -279,7 +283,7 @@ server.bind(41234);
 
 #### <DataTag tag="M" /> `socket.bind(options[, callback])`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.11.14"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.11.14"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Required. Supports the following properties:
   * `port` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
@@ -331,7 +335,7 @@ socket.bind({
 
 #### <DataTag tag="M" /> `socket.close([callback])`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.1.99"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.99"]}}} />
 
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called when the socket has been closed.
 
@@ -340,7 +344,7 @@ provided, it is added as a listener for the [`'close'`][] event.
 
 #### <DataTag tag="M" /> `socket.connect(port[, address][, callback])`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v12.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.0.0"]}}} />
 
 * `port` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * `address` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -358,7 +362,7 @@ the `callback` is called or, failing this, an `'error'` event is emitted.
 
 #### <DataTag tag="M" /> `socket.disconnect()`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v12.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.0.0"]}}} />
 
 A synchronous function that disassociates a connected `dgram.Socket` from
 its remote address. Trying to call `disconnect()` on an unbound or already
@@ -367,7 +371,7 @@ exception.
 
 #### <DataTag tag="M" /> `socket.dropMembership(multicastAddress[, multicastInterface])`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.6.9"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.6.9"]}}} />
 
 * `multicastAddress` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `multicastInterface` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -382,7 +386,7 @@ drop membership on all valid interfaces.
 
 #### <DataTag tag="M" /> `socket.dropSourceSpecificMembership(sourceAddress, groupAddress[, multicastInterface])`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v13.1.0","v12.16.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.1.0","v12.16.0"]}}} />
 
 * `sourceAddress` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `groupAddress` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -399,7 +403,7 @@ drop membership on all valid interfaces.
 
 #### <DataTag tag="M" /> `socket.getRecvBufferSize()`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v8.7.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v8.7.0"]}}} />
 
 * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the `SO_RCVBUF` socket receive buffer size in bytes.
 
@@ -407,7 +411,7 @@ This method throws [`ERR_SOCKET_BUFFER_SIZE`][] if called on an unbound socket.
 
 #### <DataTag tag="M" /> `socket.getSendBufferSize()`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v8.7.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v8.7.0"]}}} />
 
 * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) the `SO_SNDBUF` socket send buffer size in bytes.
 
@@ -415,22 +419,22 @@ This method throws [`ERR_SOCKET_BUFFER_SIZE`][] if called on an unbound socket.
 
 #### <DataTag tag="M" /> `socket.getSendQueueSize()`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v16.19.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.19.0"]}}} />
 
 * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes queued for sending.
 
 #### <DataTag tag="M" /> `socket.getSendQueueCount()`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v16.19.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.19.0"]}}} />
 
 * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of send requests currently in the queue awaiting
   to be processed.
 
 #### <DataTag tag="M" /> `socket.ref()`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.9.1"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-* Returns: [`dgram.Socket`](/api/dgram#dgramsocket)
+* Returns: [`dgram.Socket`](/api/v16/dgram#dgramsocket)
 
 By default, binding a socket will cause it to block the Node.js process from
 exiting as long as the socket is open. The `socket.unref()` method can be used
@@ -445,7 +449,7 @@ chained.
 
 #### <DataTag tag="M" /> `socket.remoteAddress()`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v12.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.0.0"]}}} />
 
 * Returns: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -455,9 +459,9 @@ if the socket is not connected.
 
 #### <DataTag tag="M" /> `socket.send(msg[, offset, length][, port][, address][, callback])`
 
-<Metadata version="v16.19.0" data={{"changes":[{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/22413","description":"The `msg` parameter can now be any `TypedArray` or `DataView`."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26871","description":"Added support for sending data on connected sockets."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11985","description":"The `msg` parameter can be an `Uint8Array` now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10473","description":"The `address` parameter is always optional now."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5929","description":"On success, `callback` will now be called with an `error` argument of `null` rather than `0`."},{"version":"v5.7.0","pr-url":"https://github.com/nodejs/node/pull/4374","description":"The `msg` parameter can be an array now. Also, the `offset` and `length` parameters are optional now."}],"update":{"type":"added","version":["v0.1.99"]}}} />
+<Metadata data={{"changes":[{"version":["v14.5.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/22413","description":"The `msg` parameter can now be any `TypedArray` or `DataView`."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26871","description":"Added support for sending data on connected sockets."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11985","description":"The `msg` parameter can be an `Uint8Array` now."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10473","description":"The `address` parameter is always optional now."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5929","description":"On success, `callback` will now be called with an `error` argument of `null` rather than `0`."},{"version":"v5.7.0","pr-url":"https://github.com/nodejs/node/pull/4374","description":"The `msg` parameter can be an array now. Also, the `offset` and `length` parameters are optional now."}],"update":{"type":"added","version":["v0.1.99"]}}} />
 
-* `msg` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) Message to be sent.
+* `msg` [`Buffer`](/api/v16/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) Message to be sent.
 * `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Offset in the buffer where the message starts.
 * `length` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Number of bytes in the message.
 * `port` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Destination port.
@@ -619,7 +623,7 @@ source that the data did not reach its intended recipient.
 
 #### <DataTag tag="M" /> `socket.setBroadcast(flag)`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.6.9"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.6.9"]}}} />
 
 * `flag` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -630,7 +634,7 @@ This method throws `EBADF` if called on an unbound socket.
 
 #### <DataTag tag="M" /> `socket.setMulticastInterface(multicastInterface)`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v8.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v8.6.0"]}}} />
 
 * `multicastInterface` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -710,7 +714,7 @@ for future multicast packets.
 
 #### <DataTag tag="M" /> `socket.setMulticastLoopback(flag)`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.3.8"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.3.8"]}}} />
 
 * `flag` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 
@@ -721,7 +725,7 @@ This method throws `EBADF` if called on an unbound socket.
 
 #### <DataTag tag="M" /> `socket.setMulticastTTL(ttl)`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.3.8"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.3.8"]}}} />
 
 * `ttl` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -737,7 +741,7 @@ This method throws `EBADF` if called on an unbound socket.
 
 #### <DataTag tag="M" /> `socket.setRecvBufferSize(size)`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v8.7.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v8.7.0"]}}} />
 
 * `size` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -748,7 +752,7 @@ This method throws [`ERR_SOCKET_BUFFER_SIZE`][] if called on an unbound socket.
 
 #### <DataTag tag="M" /> `socket.setSendBufferSize(size)`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v8.7.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v8.7.0"]}}} />
 
 * `size` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -759,7 +763,7 @@ This method throws [`ERR_SOCKET_BUFFER_SIZE`][] if called on an unbound socket.
 
 #### <DataTag tag="M" /> `socket.setTTL(ttl)`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.1.101"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.101"]}}} />
 
 * `ttl` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
@@ -776,9 +780,9 @@ This method throws `EBADF` if called on an unbound socket.
 
 #### <DataTag tag="M" /> `socket.unref()`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.9.1"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.9.1"]}}} />
 
-* Returns: [`dgram.Socket`](/api/dgram#dgramsocket)
+* Returns: [`dgram.Socket`](/api/v16/dgram#dgramsocket)
 
 By default, binding a socket will cause it to block the Node.js process from
 exiting as long as the socket is open. The `socket.unref()` method can be used
@@ -795,7 +799,7 @@ chained.
 
 #### <DataTag tag="M" /> `dgram.createSocket(options[, callback])`
 
-<Metadata version="v16.19.0" data={{"changes":[{"version":"v15.8.0","pr-url":"https://github.com/nodejs/node/pull/37026","description":"AbortSignal support was added."},{"version":"v11.4.0","pr-url":"https://github.com/nodejs/node/pull/23798","description":"The `ipv6Only` option is supported."},{"version":"v8.7.0","pr-url":"https://github.com/nodejs/node/pull/13623","description":"The `recvBufferSize` and `sendBufferSize` options are supported now."},{"version":"v8.6.0","pr-url":"https://github.com/nodejs/node/pull/14560","description":"The `lookup` option is supported."}],"update":{"type":"added","version":["v0.11.13"]}}} />
+<Metadata data={{"changes":[{"version":"v15.8.0","pr-url":"https://github.com/nodejs/node/pull/37026","description":"AbortSignal support was added."},{"version":"v11.4.0","pr-url":"https://github.com/nodejs/node/pull/23798","description":"The `ipv6Only` option is supported."},{"version":"v8.7.0","pr-url":"https://github.com/nodejs/node/pull/13623","description":"The `recvBufferSize` and `sendBufferSize` options are supported now."},{"version":"v8.6.0","pr-url":"https://github.com/nodejs/node/pull/14560","description":"The `lookup` option is supported."}],"update":{"type":"added","version":["v0.11.13"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Available options are:
   * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The family of socket. Must be either `'udp4'` or `'udp6'`.
@@ -809,9 +813,9 @@ chained.
   * `recvBufferSize` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Sets the `SO_RCVBUF` socket value.
   * `sendBufferSize` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Sets the `SO_SNDBUF` socket value.
   * `lookup` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Custom lookup function. **Default:** [`dns.lookup()`][].
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) An AbortSignal that may be used to close a socket.
+  * `signal` [`AbortSignal`](/api/v16/globals#abortsignal) An AbortSignal that may be used to close a socket.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Attached as a listener for `'message'` events. Optional.
-* Returns: [`dgram.Socket`](/api/dgram#dgramsocket)
+* Returns: [`dgram.Socket`](/api/v16/dgram#dgramsocket)
 
 Creates a `dgram.Socket` object. Once the socket is created, calling
 [`socket.bind()`][] will instruct the socket to begin listening for datagram
@@ -837,11 +841,11 @@ controller.abort();
 
 #### <DataTag tag="M" /> `dgram.createSocket(type[, callback])`
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v0.1.99"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.1.99"]}}} />
 
 * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Either `'udp4'` or `'udp6'`.
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Attached as a listener to `'message'` events.
-* Returns: [`dgram.Socket`](/api/dgram#dgramsocket)
+* Returns: [`dgram.Socket`](/api/v16/dgram#dgramsocket)
 
 Creates a `dgram.Socket` object of the specified `type`.
 

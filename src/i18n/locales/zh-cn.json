@@ -74,7 +74,7 @@
   "docs.api.sourceLink": "源代码：",
   "docs.api.history.version": "版本",
   "docs.api.history.changes": "历史变更",
-  "docs.api.stability": "稳定级别：{level}{text}",
+  "docs.api.stability": "稳定级别：{level} - ",
   "components.header.links.about": "关于",
   "components.header.links.certification": "认证",
   "components.author.githubLinkLabel": "Github 的用户“{username}”以新窗口方式打开",

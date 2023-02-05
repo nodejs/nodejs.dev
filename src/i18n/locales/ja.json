@@ -74,7 +74,7 @@
   "docs.api.sourceLink": "ソースコード:",
   "docs.api.history.version": "バージョン",
   "docs.api.history.changes": "変更",
-  "docs.api.stability": "安定性: {level}{text}",
+  "docs.api.stability": "安定性: {level} - ",
   "components.header.links.about": "Node.js とは",
   "components.header.links.certification": "認定",
   "components.author.githubLinkLabel": "{username} Github - 新しいタブで開く",

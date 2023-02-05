@@ -14,7 +14,7 @@ const updateRedirects = redirects => {
     firebaseRedirects[key] = {
       source: key,
       destination: value,
-      type: '301',
+      type: '302',
     };
   });
 

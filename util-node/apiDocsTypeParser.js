@@ -253,7 +253,7 @@ const customTypesMap = {
 
 const arrayPart = /(?:\[])+$/;
 
-function toLink(source) {
+function toLink(metadata, source) {
   const typeLinks = [];
 
   let typeInput = source;
@@ -286,7 +286,7 @@ function toLink(source) {
         // Then adds a prefix. Otherwise the link refers to another page
         typeUrl = /^https?:\/\//.test(customTypesMap[typeText])
           ? customTypesMap[typeText]
-          : `${apiPath}${customTypesMap[typeText]}`;
+          : `${apiPath}${metadata.version}/${customTypesMap[typeText]}`;
       }
 
       if (typeUrl) {
