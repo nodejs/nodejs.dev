@@ -7,7 +7,7 @@ exports[`SearchBar component should render correctly 1`] = `
     <div>
       <div
         class="searchBarContainer"
-        style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
+        style="min-height: 0em; width: 100%; max-width: min-content; box-shadow: none;"
       >
         <div
           class="searchInputContainer"
@@ -46,7 +46,7 @@ exports[`SearchBar component should render correctly 1`] = `
   "container": <div>
     <div
       class="searchBarContainer"
-      style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
+      style="min-height: 0em; width: 100%; max-width: min-content; box-shadow: none;"
     >
       <div
         class="searchInputContainer"

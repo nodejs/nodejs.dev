@@ -5,13 +5,17 @@ category: 'api'
 version: 'v16'
 ---
 
-<Metadata version="v16.19.0" data={{"update":{"type":"introduced_in","version":["v16.9.0"]}}} />
+<Metadata data={{"update":{"type":"introduced_in","version":["v16.9.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
-<Metadata version="v16.19.0" data={{"update":{"type":"added","version":["v16.9.0","v14.19.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.9.0","v14.19.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 _[Corepack][]_ is an experimental tool to help with
 managing versions of your package managers. It exposes binary proxies for

@@ -22,13 +22,17 @@ If you find a potential security vulnerability, please refer to our
 
 #### Policies
 
-<Metadata version="v19.6.0" data={{"update":{"type":"introduced_in","version":["v11.8.0"]}}} />
+<Metadata data={{"update":{"type":"introduced_in","version":["v11.8.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
 
-<Metadata version="v19.6.0" data={{"name":"policy"}} />
+Experimental
+
+</Stability>
+
+<Metadata data={{"name":"policy"}} />
 
 Node.js contains experimental support for creating policies on loading code.
 
@@ -46,7 +50,7 @@ and granting read permissions to the user id running Node.js.
 
 ##### Enabling
 
-<Metadata version="v19.6.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
 The `--experimental-policy` flag can be used to enable features for policies
 when loading modules.

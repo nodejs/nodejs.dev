@@ -6,11 +6,16 @@
   padding: 1rem;
 
   p {
+    display: inline;
     margin: 0;
   }
 
   a {
     color: #fff;
+
+    code {
+      color: #fff !important;
+    }
   }
 
   &__level-0 {

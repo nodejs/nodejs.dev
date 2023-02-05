@@ -74,7 +74,7 @@
   "docs.api.sourceLink": "Código-Fonte:",
   "docs.api.history.version": "Version Versão",
   "docs.api.history.changes": "Mudanças",
-  "docs.api.stability": "Estabilidade: {level}{text}",
+  "docs.api.stability": "Estabilidade: {level} - ",
   "components.header.links.about": "Sobre",
   "components.header.links.certification": "Certificação",
   "components.author.githubLinkLabel": "GitHub {username} - abrir em uma nova aba",

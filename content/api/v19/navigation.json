@@ -1,4 +1,1829 @@
 {
   "version": "v19",
-  "items": []
+  "items": [
+    {
+      "slug": "/api/v19/addons/",
+      "title": "C addons",
+      "type": "module",
+      "name": "addons"
+    },
+    {
+      "slug": "/api/v19/assert/",
+      "title": "Assert",
+      "type": "module",
+      "name": "assert"
+    },
+    {
+      "slug": "/api/v19/assert/#assertassertionerror",
+      "title": "assertAssertionError",
+      "type": "class",
+      "name": "assert"
+    },
+    {
+      "slug": "/api/v19/assert/#assertcalltracker",
+      "title": "assertCallTracker",
+      "type": "class",
+      "name": "assert"
+    },
+    {
+      "slug": "/api/v19/async_context/",
+      "title": "Asynchronous context tracking",
+      "type": "module",
+      "name": "async_context"
+    },
+    {
+      "slug": "/api/v19/async_context/#asynclocalstorage",
+      "title": "AsyncLocalStorage",
+      "type": "class",
+      "name": "async_context"
+    },
+    {
+      "slug": "/api/v19/async_context/#asyncresource",
+      "title": "AsyncResource",
+      "type": "class",
+      "name": "async_context"
+    },
+    {
+      "slug": "/api/v19/async_hooks/",
+      "title": "Async hooks",
+      "type": "module",
+      "name": "async_hooks"
+    },
+    {
+      "slug": "/api/v19/async_hooks/#asynchook",
+      "title": "AsyncHook",
+      "type": "class",
+      "name": "async_hooks"
+    },
+    {
+      "slug": "/api/v19/async_hooks/#asynclocalstorage",
+      "title": "AsyncLocalStorage",
+      "type": "class",
+      "name": "async_hooks"
+    },
+    {
+      "slug": "/api/v19/async_hooks/#asyncresource",
+      "title": "AsyncResource",
+      "type": "class",
+      "name": "async_hooks"
+    },
+    {
+      "slug": "/api/v19/buffer/",
+      "title": "Buffer",
+      "type": "module",
+      "name": "buffer"
+    },
+    {
+      "slug": "/api/v19/buffer/#blob",
+      "title": "Blob",
+      "type": "class",
+      "name": "buffer"
+    },
+    {
+      "slug": "/api/v19/buffer/#buffer",
+      "title": "Buffer",
+      "type": "class",
+      "name": "buffer"
+    },
+    {
+      "slug": "/api/v19/buffer/#file",
+      "title": "File",
+      "type": "class",
+      "name": "buffer"
+    },
+    {
+      "slug": "/api/v19/buffer/#slowbuffer",
+      "title": "SlowBuffer",
+      "type": "class",
+      "name": "buffer"
+    },
+    {
+      "slug": "/api/v19/child_process/",
+      "title": "Child process",
+      "type": "module",
+      "name": "child_process"
+    },
+    {
+      "slug": "/api/v19/child_process/#childprocess",
+      "title": "ChildProcess",
+      "type": "class",
+      "name": "child_process"
+    },
+    {
+      "slug": "/api/v19/cli/",
+      "title": "Command-line API",
+      "type": "module",
+      "name": "cli"
+    },
+    {
+      "slug": "/api/v19/cluster/",
+      "title": "Cluster",
+      "type": "module",
+      "name": "cluster"
+    },
+    {
+      "slug": "/api/v19/cluster/#worker",
+      "title": "Worker",
+      "type": "class",
+      "name": "cluster"
+    },
+    {
+      "slug": "/api/v19/console/",
+      "title": "Console",
+      "type": "module",
+      "name": "console"
+    },
+    {
+      "slug": "/api/v19/console/#console",
+      "title": "Console",
+      "type": "class",
+      "name": "console"
+    },
+    {
+      "slug": "/api/v19/console/#console",
+      "title": "Console",
+      "type": "class",
+      "name": "console"
+    },
+    {
+      "slug": "/api/v19/corepack/",
+      "title": "Corepack",
+      "type": "module",
+      "name": "corepack"
+    },
+    {
+      "slug": "/api/v19/crypto/",
+      "title": "Crypto",
+      "type": "module",
+      "name": "crypto"
+    },
+    {
+      "slug": "/api/v19/crypto/#certificate",
+      "title": "Certificate",
+      "type": "class",
+      "name": "crypto"
+    },
+    {
+      "slug": "/api/v19/crypto/#cipher",
+      "title": "Cipher",
+      "type": "class",
+      "name": "crypto"
+    },
+    {
+      "slug": "/api/v19/crypto/#decipher",
+      "title": "Decipher",
+      "type": "class",
+      "name": "crypto"
+    },
+    {
+      "slug": "/api/v19/crypto/#diffiehellman",
+      "title": "DiffieHellman",
+      "type": "class",
+      "name": "crypto"
+    },
+    {
+      "slug": "/api/v19/crypto/#diffiehellmangroup",
+      "title": "DiffieHellmanGroup",
+      "type": "class",
+      "name": "crypto"
+    },
+    {
+      "slug": "/api/v19/crypto/#ecdh",
+      "title": "ECDH",
+      "type": "class",
+      "name": "crypto"
+    },
+    {
+      "slug": "/api/v19/crypto/#hash",
+      "title": "Hash",
+      "type": "class",
+      "name": "crypto"
+    },
+    {
+      "slug": "/api/v19/crypto/#hmac",
+      "title": "Hmac",
+      "type": "class",
+      "name": "crypto"
+    },
+    {
+      "slug": "/api/v19/crypto/#keyobject",
+      "title": "KeyObject",
+      "type": "class",
+      "name": "crypto"
+    },
+    {
+      "slug": "/api/v19/crypto/#sign",
+      "title": "Sign",
+      "type": "class",
+      "name": "crypto"
+    },
+    {
+      "slug": "/api/v19/crypto/#verify",
+      "title": "Verify",
+      "type": "class",
+      "name": "crypto"
+    },
+    {
+      "slug": "/api/v19/crypto/#x509certificate",
+      "title": "X509Certificate",
+      "type": "class",
+      "name": "crypto"
+    },
+    {
+      "slug": "/api/v19/debugger/",
+      "title": "Debugger",
+      "type": "module",
+      "name": "debugger"
+    },
+    {
+      "slug": "/api/v19/deprecations/",
+      "title": "Deprecated APIs",
+      "type": "module",
+      "name": "deprecations"
+    },
+    {
+      "slug": "/api/v19/dgram/",
+      "title": "UDPdatagram sockets",
+      "type": "module",
+      "name": "dgram"
+    },
+    {
+      "slug": "/api/v19/dgram/#dgramsocket",
+      "title": "dgramSocket",
+      "type": "class",
+      "name": "dgram"
+    },
+    {
+      "slug": "/api/v19/diagnostics_channel/",
+      "title": "Diagnostics Channel",
+      "type": "module",
+      "name": "diagnostics_channel"
+    },
+    {
+      "slug": "/api/v19/diagnostics_channel/#channel",
+      "title": "Channel",
+      "type": "class",
+      "name": "diagnostics_channel"
+    },
+    {
+      "slug": "/api/v19/dns/",
+      "title": "DNS",
+      "type": "module",
+      "name": "dns"
+    },
+    {
+      "slug": "/api/v19/dns/#dnspromisesresolver",
+      "title": "dnsPromisesResolver",
+      "type": "class",
+      "name": "dns"
+    },
+    {
+      "slug": "/api/v19/dns/#dnsresolver",
+      "title": "dnsResolver",
+      "type": "class",
+      "name": "dns"
+    },
+    {
+      "slug": "/api/v19/documentation/",
+      "title": "About this documentation",
+      "type": "module",
+      "name": "documentation"
+    },
+    {
+      "slug": "/api/v19/domain/",
+      "title": "Domain",
+      "type": "module",
+      "name": "domain"
+    },
+    {
+      "slug": "/api/v19/domain/#domain",
+      "title": "Domain",
+      "type": "class",
+      "name": "domain"
+    },
+    {
+      "slug": "/api/v19/embedding/",
+      "title": "C embedder API",
+      "type": "module",
+      "name": "embedding"
+    },
+    {
+      "slug": "/api/v19/errors/",
+      "title": "Errors",
+      "type": "module",
+      "name": "errors"
+    },
+    {
+      "slug": "/api/v19/errors/#assertionerror",
+      "title": "AssertionError",
+      "type": "class",
+      "name": "errors"
+    },
+    {
+      "slug": "/api/v19/errors/#error",
+      "title": "Error",
+      "type": "class",
+      "name": "errors"
+    },
+    {
+      "slug": "/api/v19/errors/#rangeerror",
+      "title": "RangeError",
+      "type": "class",
+      "name": "errors"
+    },
+    {
+      "slug": "/api/v19/errors/#referenceerror",
+      "title": "ReferenceError",
+      "type": "class",
+      "name": "errors"
+    },
+    {
+      "slug": "/api/v19/errors/#syntaxerror",
+      "title": "SyntaxError",
+      "type": "class",
+      "name": "errors"
+    },
+    {
+      "slug": "/api/v19/errors/#systemerror",
+      "title": "SystemError",
+      "type": "class",
+      "name": "errors"
+    },
+    {
+      "slug": "/api/v19/errors/#typeerror",
+      "title": "TypeError",
+      "type": "class",
+      "name": "errors"
+    },
+    {
+      "slug": "/api/v19/esm/",
+      "title": "ECMAScript modules",
+      "type": "module",
+      "name": "esm"
+    },
+    {
+      "slug": "/api/v19/events/",
+      "title": "Events",
+      "type": "module",
+      "name": "events"
+    },
+    {
+      "slug": "/api/v19/events/#customevent",
+      "title": "CustomEvent",
+      "type": "class",
+      "name": "events"
+    },
+    {
+      "slug": "/api/v19/events/#event",
+      "title": "Event",
+      "type": "class",
+      "name": "events"
+    },
+    {
+      "slug": "/api/v19/events/#eventemitter",
+      "title": "EventEmitter",
+      "type": "class",
+      "name": "events"
+    },
+    {
+      "slug": "/api/v19/events/#eventseventemitterasyncresource-extends-eventemitter",
+      "title": "eventsEventEmitterAsyncResource extends EventEmitter",
+      "type": "class",
+      "name": "events"
+    },
+    {
+      "slug": "/api/v19/events/#eventtarget",
+      "title": "EventTarget",
+      "type": "class",
+      "name": "events"
+    },
+    {
+      "slug": "/api/v19/events/#nodeeventtarget",
+      "title": "NodeEventTarget",
+      "type": "class",
+      "name": "events"
+    },
+    {
+      "slug": "/api/v19/fs/",
+      "title": "File system",
+      "type": "module",
+      "name": "fs"
+    },
+    {
+      "slug": "/api/v19/fs/#filehandle",
+      "title": "FileHandle",
+      "type": "class",
+      "name": "fs"
+    },
+    {
+      "slug": "/api/v19/fs/#fsdir",
+      "title": "fsDir",
+      "type": "class",
+      "name": "fs"
+    },
+    {
+      "slug": "/api/v19/fs/#fsdirent",
+      "title": "fsDirent",
+      "type": "class",
+      "name": "fs"
+    },
+    {
+      "slug": "/api/v19/fs/#fsfswatcher",
+      "title": "fsFSWatcher",
+      "type": "class",
+      "name": "fs"
+    },
+    {
+      "slug": "/api/v19/fs/#fsreadstream",
+      "title": "fsReadStream",
+      "type": "class",
+      "name": "fs"
+    },
+    {
+      "slug": "/api/v19/fs/#fsstatfs",
+      "title": "fsStatFs",
+      "type": "class",
+      "name": "fs"
+    },
+    {
+      "slug": "/api/v19/fs/#fsstats",
+      "title": "fsStats",
+      "type": "class",
+      "name": "fs"
+    },
+    {
+      "slug": "/api/v19/fs/#fsstatwatcher",
+      "title": "fsStatWatcher",
+      "type": "class",
+      "name": "fs"
+    },
+    {
+      "slug": "/api/v19/fs/#fswritestream",
+      "title": "fsWriteStream",
+      "type": "class",
+      "name": "fs"
+    },
+    {
+      "slug": "/api/v19/globals/",
+      "title": "Global objects",
+      "type": "module",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#abortcontroller",
+      "title": "AbortController",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#abortcontroller",
+      "title": "AbortController",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#abortsignal",
+      "title": "AbortSignal",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#blob",
+      "title": "Blob",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#blob",
+      "title": "Blob",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#buffer",
+      "title": "Buffer",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#buffer",
+      "title": "Buffer",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#bytelengthqueuingstrategy",
+      "title": "ByteLengthQueuingStrategy",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#clearimmediateimmediateobject",
+      "title": "clearImmediate",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#clearintervalintervalobject",
+      "title": "clearInterval",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#cleartimeouttimeoutobject",
+      "title": "clearTimeout",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#compressionstream",
+      "title": "CompressionStream",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#console",
+      "title": "console",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#countqueuingstrategy",
+      "title": "CountQueuingStrategy",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#customevent",
+      "title": "CustomEvent",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#decompressionstream",
+      "title": "DecompressionStream",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#domexception",
+      "title": "DOMException",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#event",
+      "title": "Event",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#eventtarget",
+      "title": "EventTarget",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#global",
+      "title": "global",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#messagechannel",
+      "title": "MessageChannel",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#messageevent",
+      "title": "MessageEvent",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#messageport",
+      "title": "MessagePort",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#performanceentry",
+      "title": "PerformanceEntry",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#performancemark",
+      "title": "PerformanceMark",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#performancemeasure",
+      "title": "PerformanceMeasure",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#performanceobserver",
+      "title": "PerformanceObserver",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#performanceobserverentrylist",
+      "title": "PerformanceObserverEntryList",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#performanceresourcetiming",
+      "title": "PerformanceResourceTiming",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#process",
+      "title": "process",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#queuemicrotaskcallback",
+      "title": "queueMicrotask",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#readablebytestreamcontroller",
+      "title": "ReadableByteStreamController",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#readablestream",
+      "title": "ReadableStream",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#readablestreambyobreader",
+      "title": "ReadableStreamBYOBReader",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#readablestreambyobrequest",
+      "title": "ReadableStreamBYOBRequest",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#readablestreamdefaultcontroller",
+      "title": "ReadableStreamDefaultController",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#readablestreamdefaultreader",
+      "title": "ReadableStreamDefaultReader",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#setimmediatecallback-args",
+      "title": "setImmediate",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#setintervalcallback-delay-args",
+      "title": "setInterval",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#settimeoutcallback-delay-args",
+      "title": "setTimeout",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#structuredclonevalue-options",
+      "title": "structuredClone",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#textdecoder",
+      "title": "TextDecoder",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#textdecoderstream",
+      "title": "TextDecoderStream",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#textencoder",
+      "title": "TextEncoder",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#textencoderstream",
+      "title": "TextEncoderStream",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#transformstream",
+      "title": "TransformStream",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#transformstreamdefaultcontroller",
+      "title": "TransformStreamDefaultController",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#url",
+      "title": "URL",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#urlsearchparams",
+      "title": "URLSearchParams",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#webassembly",
+      "title": "WebAssembly",
+      "type": "global",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#writablestream",
+      "title": "WritableStream",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#writablestreamdefaultcontroller",
+      "title": "WritableStreamDefaultController",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/globals/#writablestreamdefaultwriter",
+      "title": "WritableStreamDefaultWriter",
+      "type": "class",
+      "name": "globals"
+    },
+    {
+      "slug": "/api/v19/http/",
+      "title": "HTTP",
+      "type": "module",
+      "name": "http"
+    },
+    {
+      "slug": "/api/v19/http/#httpagent",
+      "title": "httpAgent",
+      "type": "class",
+      "name": "http"
+    },
+    {
+      "slug": "/api/v19/http/#httpclientrequest",
+      "title": "httpClientRequest",
+      "type": "class",
+      "name": "http"
+    },
+    {
+      "slug": "/api/v19/http/#httpincomingmessage",
+      "title": "httpIncomingMessage",
+      "type": "class",
+      "name": "http"
+    },
+    {
+      "slug": "/api/v19/http/#httpoutgoingmessage",
+      "title": "httpOutgoingMessage",
+      "type": "class",
+      "name": "http"
+    },
+    {
+      "slug": "/api/v19/http/#httpserver",
+      "title": "httpServer",
+      "type": "class",
+      "name": "http"
+    },
+    {
+      "slug": "/api/v19/http/#httpserverresponse",
+      "title": "httpServerResponse",
+      "type": "class",
+      "name": "http"
+    },
+    {
+      "slug": "/api/v19/http2/",
+      "title": "HTTP2",
+      "type": "module",
+      "name": "http2"
+    },
+    {
+      "slug": "/api/v19/http2/#clienthttp2session",
+      "title": "ClientHttp2Session",
+      "type": "class",
+      "name": "http2"
+    },
+    {
+      "slug": "/api/v19/http2/#clienthttp2stream",
+      "title": "ClientHttp2Stream",
+      "type": "class",
+      "name": "http2"
+    },
+    {
+      "slug": "/api/v19/http2/#http2http2serverrequest",
+      "title": "http2Http2ServerRequest",
+      "type": "class",
+      "name": "http2"
+    },
+    {
+      "slug": "/api/v19/http2/#http2http2serverresponse",
+      "title": "http2Http2ServerResponse",
+      "type": "class",
+      "name": "http2"
+    },
+    {
+      "slug": "/api/v19/http2/#http2secureserver",
+      "title": "Http2SecureServer",
+      "type": "class",
+      "name": "http2"
+    },
+    {
+      "slug": "/api/v19/http2/#http2server",
+      "title": "Http2Server",
+      "type": "class",
+      "name": "http2"
+    },
+    {
+      "slug": "/api/v19/http2/#http2session",
+      "title": "Http2Session",
+      "type": "class",
+      "name": "http2"
+    },
+    {
+      "slug": "/api/v19/http2/#http2stream",
+      "title": "Http2Stream",
+      "type": "class",
+      "name": "http2"
+    },
+    {
+      "slug": "/api/v19/http2/#serverhttp2session",
+      "title": "ServerHttp2Session",
+      "type": "class",
+      "name": "http2"
+    },
+    {
+      "slug": "/api/v19/http2/#serverhttp2stream",
+      "title": "ServerHttp2Stream",
+      "type": "class",
+      "name": "http2"
+    },
+    {
+      "slug": "/api/v19/https/",
+      "title": "HTTPS",
+      "type": "module",
+      "name": "https"
+    },
+    {
+      "slug": "/api/v19/https/#httpsagent",
+      "title": "httpsAgent",
+      "type": "class",
+      "name": "https"
+    },
+    {
+      "slug": "/api/v19/https/#httpsserver",
+      "title": "httpsServer",
+      "type": "class",
+      "name": "https"
+    },
+    {
+      "slug": "/api/v19/inspector/",
+      "title": "Inspector",
+      "type": "module",
+      "name": "inspector"
+    },
+    {
+      "slug": "/api/v19/inspector/#inspectorsession",
+      "title": "inspectorSession",
+      "type": "class",
+      "name": "inspector"
+    },
+    {
+      "slug": "/api/v19/inspector/#inspectorsession",
+      "title": "inspectorSession",
+      "type": "class",
+      "name": "inspector"
+    },
+    {
+      "slug": "/api/v19/intl/",
+      "title": "Internationalization support",
+      "type": "module",
+      "name": "intl"
+    },
+    {
+      "slug": "/api/v19/module/",
+      "title": "nodemodule API",
+      "type": "module",
+      "name": "module"
+    },
+    {
+      "slug": "/api/v19/module/#modulesourcemap",
+      "title": "moduleSourceMap",
+      "type": "class",
+      "name": "module"
+    },
+    {
+      "slug": "/api/v19/modules/",
+      "title": "CommonJS modules",
+      "type": "module",
+      "name": "modules"
+    },
+    {
+      "slug": "/api/v19/n-api/",
+      "title": "Node-API",
+      "type": "module",
+      "name": "n-api"
+    },
+    {
+      "slug": "/api/v19/net/",
+      "title": "Net",
+      "type": "module",
+      "name": "net"
+    },
+    {
+      "slug": "/api/v19/net/#netblocklist",
+      "title": "netBlockList",
+      "type": "class",
+      "name": "net"
+    },
+    {
+      "slug": "/api/v19/net/#netserver",
+      "title": "netServer",
+      "type": "class",
+      "name": "net"
+    },
+    {
+      "slug": "/api/v19/net/#netsocket",
+      "title": "netSocket",
+      "type": "class",
+      "name": "net"
+    },
+    {
+      "slug": "/api/v19/net/#netsocketaddress",
+      "title": "netSocketAddress",
+      "type": "class",
+      "name": "net"
+    },
+    {
+      "slug": "/api/v19/os/",
+      "title": "OS",
+      "type": "module",
+      "name": "os"
+    },
+    {
+      "slug": "/api/v19/packages/",
+      "title": "Packages",
+      "type": "module",
+      "name": "packages"
+    },
+    {
+      "slug": "/api/v19/path/",
+      "title": "Path",
+      "type": "module",
+      "name": "path"
+    },
+    {
+      "slug": "/api/v19/perf_hooks/",
+      "title": "Performance measurement APIs",
+      "type": "module",
+      "name": "perf_hooks"
+    },
+    {
+      "slug": "/api/v19/perf_hooks/#histogram",
+      "title": "Histogram",
+      "type": "class",
+      "name": "perf_hooks"
+    },
+    {
+      "slug": "/api/v19/perf_hooks/#intervalhistogram-extends-histogram",
+      "title": "IntervalHistogram extends Histogram",
+      "type": "class",
+      "name": "perf_hooks"
+    },
+    {
+      "slug": "/api/v19/perf_hooks/#performanceentry",
+      "title": "PerformanceEntry",
+      "type": "class",
+      "name": "perf_hooks"
+    },
+    {
+      "slug": "/api/v19/perf_hooks/#performancemark",
+      "title": "PerformanceMark",
+      "type": "class",
+      "name": "perf_hooks"
+    },
+    {
+      "slug": "/api/v19/perf_hooks/#performancemeasure",
+      "title": "PerformanceMeasure",
+      "type": "class",
+      "name": "perf_hooks"
+    },
+    {
+      "slug": "/api/v19/perf_hooks/#performancenodeentry",
+      "title": "PerformanceNodeEntry",
+      "type": "class",
+      "name": "perf_hooks"
+    },
+    {
+      "slug": "/api/v19/perf_hooks/#performancenodetiming",
+      "title": "PerformanceNodeTiming",
+      "type": "class",
+      "name": "perf_hooks"
+    },
+    {
+      "slug": "/api/v19/perf_hooks/#performanceobserver",
+      "title": "PerformanceObserver",
+      "type": "class",
+      "name": "perf_hooks"
+    },
+    {
+      "slug": "/api/v19/perf_hooks/#performanceobserverentrylist",
+      "title": "PerformanceObserverEntryList",
+      "type": "class",
+      "name": "perf_hooks"
+    },
+    {
+      "slug": "/api/v19/perf_hooks/#performanceresourcetiming",
+      "title": "PerformanceResourceTiming",
+      "type": "class",
+      "name": "perf_hooks"
+    },
+    {
+      "slug": "/api/v19/perf_hooks/#recordablehistogram-extends-histogram",
+      "title": "RecordableHistogram extends Histogram",
+      "type": "class",
+      "name": "perf_hooks"
+    },
+    {
+      "slug": "/api/v19/permissions/",
+      "title": "Permissions",
+      "type": "module",
+      "name": "permissions"
+    },
+    {
+      "slug": "/api/v19/policy/",
+      "title": "Policies",
+      "type": "module",
+      "name": "policy"
+    },
+    {
+      "slug": "/api/v19/process/",
+      "title": "Process",
+      "type": "module",
+      "name": "process"
+    },
+    {
+      "slug": "/api/v19/punycode/",
+      "title": "Punycode",
+      "type": "module",
+      "name": "punycode"
+    },
+    {
+      "slug": "/api/v19/querystring/",
+      "title": "Query string",
+      "type": "module",
+      "name": "querystring"
+    },
+    {
+      "slug": "/api/v19/readline/",
+      "title": "Readline",
+      "type": "module",
+      "name": "readline"
+    },
+    {
+      "slug": "/api/v19/readline/#interfaceconstructor",
+      "title": "InterfaceConstructor",
+      "type": "class",
+      "name": "readline"
+    },
+    {
+      "slug": "/api/v19/readline/#readlineinterface",
+      "title": "readlineInterface",
+      "type": "class",
+      "name": "readline"
+    },
+    {
+      "slug": "/api/v19/readline/#readlinepromisesinterface",
+      "title": "readlinePromisesInterface",
+      "type": "class",
+      "name": "readline"
+    },
+    {
+      "slug": "/api/v19/readline/#readlinepromisesreadline",
+      "title": "readlinePromisesReadline",
+      "type": "class",
+      "name": "readline"
+    },
+    {
+      "slug": "/api/v19/repl/",
+      "title": "REPL",
+      "type": "module",
+      "name": "repl"
+    },
+    {
+      "slug": "/api/v19/repl/#replserver",
+      "title": "REPLServer",
+      "type": "class",
+      "name": "repl"
+    },
+    {
+      "slug": "/api/v19/report/",
+      "title": "Diagnostic report",
+      "type": "module",
+      "name": "report"
+    },
+    {
+      "slug": "/api/v19/stream/",
+      "title": "Stream",
+      "type": "module",
+      "name": "stream"
+    },
+    {
+      "slug": "/api/v19/stream/#streamduplex",
+      "title": "streamDuplex",
+      "type": "class",
+      "name": "stream"
+    },
+    {
+      "slug": "/api/v19/stream/#streamduplex",
+      "title": "streamDuplex",
+      "type": "class",
+      "name": "stream"
+    },
+    {
+      "slug": "/api/v19/stream/#streampassthrough",
+      "title": "streamPassThrough",
+      "type": "class",
+      "name": "stream"
+    },
+    {
+      "slug": "/api/v19/stream/#streamreadable",
+      "title": "streamReadable",
+      "type": "class",
+      "name": "stream"
+    },
+    {
+      "slug": "/api/v19/stream/#streamreadable",
+      "title": "streamReadable",
+      "type": "class",
+      "name": "stream"
+    },
+    {
+      "slug": "/api/v19/stream/#streamtransform",
+      "title": "streamTransform",
+      "type": "class",
+      "name": "stream"
+    },
+    {
+      "slug": "/api/v19/stream/#streamtransform",
+      "title": "streamTransform",
+      "type": "class",
+      "name": "stream"
+    },
+    {
+      "slug": "/api/v19/stream/#streamwritable",
+      "title": "streamWritable",
+      "type": "class",
+      "name": "stream"
+    },
+    {
+      "slug": "/api/v19/stream/#streamwritable",
+      "title": "streamWritable",
+      "type": "class",
+      "name": "stream"
+    },
+    {
+      "slug": "/api/v19/string_decoder/",
+      "title": "String decoder",
+      "type": "module",
+      "name": "string_decoder"
+    },
+    {
+      "slug": "/api/v19/string_decoder/#stringdecoder",
+      "title": "StringDecoder",
+      "type": "class",
+      "name": "string_decoder"
+    },
+    {
+      "slug": "/api/v19/synopsis/",
+      "title": "Usage and example",
+      "type": "module",
+      "name": "synopsis"
+    },
+    {
+      "slug": "/api/v19/test/",
+      "title": "Test runner",
+      "type": "module",
+      "name": "test"
+    },
+    {
+      "slug": "/api/v19/test/#mockfunctioncontext",
+      "title": "MockFunctionContext",
+      "type": "class",
+      "name": "test"
+    },
+    {
+      "slug": "/api/v19/test/#mocktracker",
+      "title": "MockTracker",
+      "type": "class",
+      "name": "test"
+    },
+    {
+      "slug": "/api/v19/test/#suitecontext",
+      "title": "SuiteContext",
+      "type": "class",
+      "name": "test"
+    },
+    {
+      "slug": "/api/v19/test/#testcontext",
+      "title": "TestContext",
+      "type": "class",
+      "name": "test"
+    },
+    {
+      "slug": "/api/v19/test/#testsstream",
+      "title": "TestsStream",
+      "type": "class",
+      "name": "test"
+    },
+    {
+      "slug": "/api/v19/timers/",
+      "title": "Timers",
+      "type": "module",
+      "name": "timers"
+    },
+    {
+      "slug": "/api/v19/timers/#immediate",
+      "title": "Immediate",
+      "type": "class",
+      "name": "timers"
+    },
+    {
+      "slug": "/api/v19/timers/#timeout",
+      "title": "Timeout",
+      "type": "class",
+      "name": "timers"
+    },
+    {
+      "slug": "/api/v19/tls/",
+      "title": "TLS ",
+      "type": "module",
+      "name": "tls"
+    },
+    {
+      "slug": "/api/v19/tls/#tlscryptostream",
+      "title": "tlsCryptoStream",
+      "type": "class",
+      "name": "tls"
+    },
+    {
+      "slug": "/api/v19/tls/#tlssecurepair",
+      "title": "tlsSecurePair",
+      "type": "class",
+      "name": "tls"
+    },
+    {
+      "slug": "/api/v19/tls/#tlsserver",
+      "title": "tlsServer",
+      "type": "class",
+      "name": "tls"
+    },
+    {
+      "slug": "/api/v19/tls/#tlstlssocket",
+      "title": "tlsTLSSocket",
+      "type": "class",
+      "name": "tls"
+    },
+    {
+      "slug": "/api/v19/tracing/",
+      "title": "Trace events",
+      "type": "module",
+      "name": "tracing"
+    },
+    {
+      "slug": "/api/v19/tty/",
+      "title": "TTY",
+      "type": "module",
+      "name": "tty"
+    },
+    {
+      "slug": "/api/v19/tty/#ttyreadstream",
+      "title": "ttyReadStream",
+      "type": "class",
+      "name": "tty"
+    },
+    {
+      "slug": "/api/v19/tty/#ttywritestream",
+      "title": "ttyWriteStream",
+      "type": "class",
+      "name": "tty"
+    },
+    {
+      "slug": "/api/v19/url/",
+      "title": "URL",
+      "type": "module",
+      "name": "url"
+    },
+    {
+      "slug": "/api/v19/url/#url",
+      "title": "URL",
+      "type": "class",
+      "name": "url"
+    },
+    {
+      "slug": "/api/v19/url/#urlsearchparams",
+      "title": "URLSearchParams",
+      "type": "class",
+      "name": "url"
+    },
+    {
+      "slug": "/api/v19/util/",
+      "title": "Util",
+      "type": "module",
+      "name": "util"
+    },
+    {
+      "slug": "/api/v19/util/#utilmimeparams",
+      "title": "utilMIMEParams",
+      "type": "class",
+      "name": "util"
+    },
+    {
+      "slug": "/api/v19/util/#utilmimetype",
+      "title": "utilMIMEType",
+      "type": "class",
+      "name": "util"
+    },
+    {
+      "slug": "/api/v19/util/#utiltextdecoder",
+      "title": "utilTextDecoder",
+      "type": "class",
+      "name": "util"
+    },
+    {
+      "slug": "/api/v19/util/#utiltextencoder",
+      "title": "utilTextEncoder",
+      "type": "class",
+      "name": "util"
+    },
+    {
+      "slug": "/api/v19/v8/",
+      "title": "V8",
+      "type": "module",
+      "name": "v8"
+    },
+    {
+      "slug": "/api/v19/v8/#v8defaultdeserializer",
+      "title": "v8DefaultDeserializer",
+      "type": "class",
+      "name": "v8"
+    },
+    {
+      "slug": "/api/v19/v8/#v8defaultserializer",
+      "title": "v8DefaultSerializer",
+      "type": "class",
+      "name": "v8"
+    },
+    {
+      "slug": "/api/v19/v8/#v8deserializer",
+      "title": "v8Deserializer",
+      "type": "class",
+      "name": "v8"
+    },
+    {
+      "slug": "/api/v19/v8/#v8gcprofiler",
+      "title": "v8GCProfiler",
+      "type": "class",
+      "name": "v8"
+    },
+    {
+      "slug": "/api/v19/v8/#v8serializer",
+      "title": "v8Serializer",
+      "type": "class",
+      "name": "v8"
+    },
+    {
+      "slug": "/api/v19/vm/",
+      "title": "VM ",
+      "type": "module",
+      "name": "vm"
+    },
+    {
+      "slug": "/api/v19/vm/#vmmodule",
+      "title": "vmModule",
+      "type": "class",
+      "name": "vm"
+    },
+    {
+      "slug": "/api/v19/vm/#vmscript",
+      "title": "vmScript",
+      "type": "class",
+      "name": "vm"
+    },
+    {
+      "slug": "/api/v19/vm/#vmsourcetextmodule",
+      "title": "vmSourceTextModule",
+      "type": "class",
+      "name": "vm"
+    },
+    {
+      "slug": "/api/v19/vm/#vmsyntheticmodule",
+      "title": "vmSyntheticModule",
+      "type": "class",
+      "name": "vm"
+    },
+    {
+      "slug": "/api/v19/wasi/",
+      "title": "WebAssembly System Interface ",
+      "type": "module",
+      "name": "wasi"
+    },
+    {
+      "slug": "/api/v19/wasi/#wasi",
+      "title": "WASI",
+      "type": "class",
+      "name": "wasi"
+    },
+    {
+      "slug": "/api/v19/webcrypto/",
+      "title": "Web Crypto API",
+      "type": "module",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#aescbcparams",
+      "title": "AesCbcParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#aesctrparams",
+      "title": "AesCtrParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#aesgcmparams",
+      "title": "AesGcmParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#aeskeygenparams",
+      "title": "AesKeyGenParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#algorithmidentifier",
+      "title": "AlgorithmIdentifier",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#crypto",
+      "title": "Crypto",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#cryptokey",
+      "title": "CryptoKey",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#cryptokeypair",
+      "title": "CryptoKeyPair",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#ecdhkeyderiveparams",
+      "title": "EcdhKeyDeriveParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#ecdsaparams",
+      "title": "EcdsaParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#eckeygenparams",
+      "title": "EcKeyGenParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#eckeyimportparams",
+      "title": "EcKeyImportParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#ed448params",
+      "title": "Ed448Params",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#hkdfparams",
+      "title": "HkdfParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#hmacimportparams",
+      "title": "HmacImportParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#hmackeygenparams",
+      "title": "HmacKeyGenParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#pbkdf2params",
+      "title": "Pbkdf2Params",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#rsahashedimportparams",
+      "title": "RsaHashedImportParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#rsahashedkeygenparams",
+      "title": "RsaHashedKeyGenParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#rsaoaepparams",
+      "title": "RsaOaepParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#rsapssparams",
+      "title": "RsaPssParams",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webcrypto/#subtlecrypto",
+      "title": "SubtleCrypto",
+      "type": "class",
+      "name": "webcrypto"
+    },
+    {
+      "slug": "/api/v19/webstreams/",
+      "title": "Web Streams API",
+      "type": "module",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#bytelengthqueuingstrategy",
+      "title": "ByteLengthQueuingStrategy",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#compressionstream",
+      "title": "CompressionStream",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#countqueuingstrategy",
+      "title": "CountQueuingStrategy",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#decompressionstream",
+      "title": "DecompressionStream",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#readablebytestreamcontroller",
+      "title": "ReadableByteStreamController",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#readablestream",
+      "title": "ReadableStream",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#readablestreambyobreader",
+      "title": "ReadableStreamBYOBReader",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#readablestreambyobrequest",
+      "title": "ReadableStreamBYOBRequest",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#readablestreamdefaultcontroller",
+      "title": "ReadableStreamDefaultController",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#readablestreamdefaultreader",
+      "title": "ReadableStreamDefaultReader",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#textdecoderstream",
+      "title": "TextDecoderStream",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#textencoderstream",
+      "title": "TextEncoderStream",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#transformstream",
+      "title": "TransformStream",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#transformstreamdefaultcontroller",
+      "title": "TransformStreamDefaultController",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#writablestream",
+      "title": "WritableStream",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#writablestreamdefaultcontroller",
+      "title": "WritableStreamDefaultController",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/webstreams/#writablestreamdefaultwriter",
+      "title": "WritableStreamDefaultWriter",
+      "type": "class",
+      "name": "webstreams"
+    },
+    {
+      "slug": "/api/v19/worker_threads/",
+      "title": "Worker threads",
+      "type": "module",
+      "name": "worker_threads"
+    },
+    {
+      "slug": "/api/v19/worker_threads/#broadcastchannel-extends-eventtarget",
+      "title": "BroadcastChannel extends EventTarget",
+      "type": "class",
+      "name": "worker_threads"
+    },
+    {
+      "slug": "/api/v19/worker_threads/#messagechannel",
+      "title": "MessageChannel",
+      "type": "class",
+      "name": "worker_threads"
+    },
+    {
+      "slug": "/api/v19/worker_threads/#messageport",
+      "title": "MessagePort",
+      "type": "class",
+      "name": "worker_threads"
+    },
+    {
+      "slug": "/api/v19/worker_threads/#worker",
+      "title": "Worker",
+      "type": "class",
+      "name": "worker_threads"
+    },
+    {
+      "slug": "/api/v19/zlib/",
+      "title": "Zlib",
+      "type": "module",
+      "name": "zlib"
+    },
+    {
+      "slug": "/api/v19/zlib/#brotlioptions",
+      "title": "BrotliOptions",
+      "type": "class",
+      "name": "zlib"
+    },
+    {
+      "slug": "/api/v19/zlib/#options",
+      "title": "Options",
+      "type": "class",
+      "name": "zlib"
+    },
+    {
+      "slug": "/api/v19/zlib/#zlibbrotlicompress",
+      "title": "zlibBrotliCompress",
+      "type": "class",
+      "name": "zlib"
+    },
+    {
+      "slug": "/api/v19/zlib/#zlibbrotlidecompress",
+      "title": "zlibBrotliDecompress",
+      "type": "class",
+      "name": "zlib"
+    },
+    {
+      "slug": "/api/v19/zlib/#zlibdeflate",
+      "title": "zlibDeflate",
+      "type": "class",
+      "name": "zlib"
+    },
+    {
+      "slug": "/api/v19/zlib/#zlibdeflateraw",
+      "title": "zlibDeflateRaw",
+      "type": "class",
+      "name": "zlib"
+    },
+    {
+      "slug": "/api/v19/zlib/#zlibgunzip",
+      "title": "zlibGunzip",
+      "type": "class",
+      "name": "zlib"
+    },
+    {
+      "slug": "/api/v19/zlib/#zlibgzip",
+      "title": "zlibGzip",
+      "type": "class",
+      "name": "zlib"
+    },
+    {
+      "slug": "/api/v19/zlib/#zlibinflate",
+      "title": "zlibInflate",
+      "type": "class",
+      "name": "zlib"
+    },
+    {
+      "slug": "/api/v19/zlib/#zlibinflateraw",
+      "title": "zlibInflateRaw",
+      "type": "class",
+      "name": "zlib"
+    },
+    {
+      "slug": "/api/v19/zlib/#zlibunzip",
+      "title": "zlibUnzip",
+      "type": "class",
+      "name": "zlib"
+    },
+    {
+      "slug": "/api/v19/zlib/#zlibzlibbase",
+      "title": "zlibZlibBase",
+      "type": "class",
+      "name": "zlib"
+    }
+  ]
 }

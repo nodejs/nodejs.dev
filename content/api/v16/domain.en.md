@@ -5,11 +5,15 @@ category: 'api'
 version: 'v16'
 ---
 
-<Metadata version="v16.19.0" data={{"changes":[{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15695","description":"Any `Promise`s created in VM contexts no longer have a `.domain` property. Their handlers are still executed in the proper domain, however, and `Promise`s created in the main context still possess a `.domain` property."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12489","description":"Handlers for `Promise`s are now invoked in the domain in which the first promise of a chain was created."}],"update":{"type":"deprecated","version":["v1.4.2"]}}} />
+<Metadata data={{"changes":[{"version":"v8.8.0","pr-url":"https://github.com/nodejs/node/pull/15695","description":"Any `Promise`s created in VM contexts no longer have a `.domain` property. Their handlers are still executed in the proper domain, however, and `Promise`s created in the main context still possess a `.domain` property."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12489","description":"Handlers for `Promise`s are now invoked in the domain in which the first promise of a chain was created."}],"update":{"type":"deprecated","version":["v1.4.2"]}}} />
 
-<Metadata version="v16.19.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v16.19.0" data={{"stability":{"level":0,"text":" - Deprecated"}}} />
+<Stability stability={0}>
+
+Deprecated
+
+</Stability>
 
 <Metadata version="v16.19.0" data={{"source_link":"lib/domain.js"}} />
 
@@ -29,7 +33,7 @@ exit immediately with an error code.
 
 ### Warning: Don't ignore errors!
 
-<Metadata version="v16.19.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
 Domain error handlers are not a substitute for closing down a
 process when an error occurs.
@@ -183,7 +187,7 @@ function handleRequest(req, res) {
 
 ### Additions to `Error` objects
 
-<Metadata version="v16.19.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
 Any time an `Error` object is routed through a domain, a few extra fields
 are added to it.
@@ -198,7 +202,7 @@ are added to it.
 
 ### Implicit binding
 
-<Metadata version="v16.19.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
 If domains are in use, then all **new** `EventEmitter` objects (including
 Stream objects, requests, responses, etc.) will be implicitly bound to
@@ -224,7 +228,7 @@ Implicit binding only takes care of thrown errors and `'error'` events.
 
 ### Explicit binding
 
-<Metadata version="v16.19.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
 Sometimes, the domain in use is not the one that ought to be used for a
 specific event emitter. Or, the event emitter could have been created
@@ -266,11 +270,11 @@ serverDomain.run(() => {
 
 ### <DataTag tag="M" /> `domain.create()`
 
-* Returns: [`Domain`](/api/domain#domain)
+* Returns: [`Domain`](/api/v16/domain#domain)
 
 ### <DataTag tag="C" /> `Domain`
 
-* Extends: [`EventEmitter`](/api/events#eventemitter)
+* Extends: [`EventEmitter`](/api/v16/events#eventemitter)
 
 The `Domain` class encapsulates the functionality of routing errors and
 uncaught exceptions to the active `Domain` object.
@@ -286,7 +290,7 @@ to the domain.
 
 #### <DataTag tag="M" /> `domain.add(emitter)`
 
-* `emitter` [`EventEmitter`](/api/events#eventemitter) | [`Timer`](/api/timers#timers) emitter or timer to be added to the domain
+* `emitter` [`EventEmitter`](/api/v16/events#eventemitter) | [`Timer`](/api/v16/timers#timers) emitter or timer to be added to the domain
 
 Explicitly adds an emitter to the domain. If any event handlers called by
 the emitter throw an error, or if the emitter emits an `'error'` event, it
@@ -390,7 +394,7 @@ d.on('error', (er) => {
 
 #### <DataTag tag="M" /> `domain.remove(emitter)`
 
-* `emitter` [`EventEmitter`](/api/events#eventemitter) | [`Timer`](/api/timers#timers) emitter or timer to be removed from the domain
+* `emitter` [`EventEmitter`](/api/v16/events#eventemitter) | [`Timer`](/api/v16/timers#timers) emitter or timer to be removed from the domain
 
 The opposite of [`domain.add(emitter)`][]. Removes domain handling from the
 specified emitter.
