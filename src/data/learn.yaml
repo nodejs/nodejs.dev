@@ -13,6 +13,7 @@
     - getting-started/v8-engine
     - getting-started/npm
     - getting-started/node-es6
+    - getting-started/esm-cjs
     - getting-started/node-difference-dev-prod
     - getting-started/node-with-typescript
     - getting-started/node-with-web-assembly
