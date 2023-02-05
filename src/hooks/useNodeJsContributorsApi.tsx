@@ -95,7 +95,7 @@ async function getContributor(randomPage: number): Promise<Contributor> {
  * Calls relative APIs and returns random contributor for Node.js main repo.
  * Trying to store cached data in localStorage in order to do less consequent requests
  */
-async function fetchRandomContributor(): Promise<Contributor> {
+export async function fetchRandomContributor(): Promise<Contributor> {
   let maxContributors: number | null = null;
   let fetchDate: number | null = null;
   let needToRefetch = false;
