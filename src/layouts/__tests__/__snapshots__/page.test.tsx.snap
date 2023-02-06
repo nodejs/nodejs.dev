@@ -86,7 +86,7 @@ exports[`PageLayout component renders correctly with data 1`] = `
               </span>
               <div
                 class="searchBarContainer"
-                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
+                style="min-height: 0em; width: 100%; max-width: min-content; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
@@ -204,6 +204,14 @@ exports[`PageLayout component renders correctly with data 1`] = `
                     style="font-weight: normal;"
                     type="button"
                   >
+                    Português
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
                     简体中文
                   </button>
                 </li>
@@ -249,11 +257,13 @@ exports[`PageLayout component renders correctly with data 1`] = `
       <article
         class="article"
       >
-        <h1
-          class="headline"
-        >
-          mock-title
-        </h1>
+        <header>
+          <h1
+            class="headline"
+          >
+            mock-title
+          </h1>
+        </header>
         <div
           class="authorList"
         >

@@ -83,7 +83,7 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
             </span>
             <div
               class="searchBarContainer"
-              style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
+              style="min-height: 0em; width: 100%; max-width: min-content; box-shadow: none;"
             >
               <div
                 class="searchInputContainer"
@@ -194,6 +194,14 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
                   type="button"
                 >
                   Français
+                </button>
+              </li>
+              <li>
+                <button
+                  style="font-weight: normal;"
+                  type="button"
+                >
+                  Português
                 </button>
               </li>
               <li>
@@ -326,7 +334,7 @@ exports[`Tests for Header component renders correctly 1`] = `
             </span>
             <div
               class="searchBarContainer"
-              style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
+              style="min-height: 0em; width: 100%; max-width: min-content; box-shadow: none;"
             >
               <div
                 class="searchInputContainer"
@@ -437,6 +445,14 @@ exports[`Tests for Header component renders correctly 1`] = `
                   type="button"
                 >
                   Français
+                </button>
+              </li>
+              <li>
+                <button
+                  style="font-weight: normal;"
+                  type="button"
+                >
+                  Português
                 </button>
               </li>
               <li>
@@ -569,7 +585,7 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
             </span>
             <div
               class="searchBarContainer"
-              style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
+              style="min-height: 0em; width: 100%; max-width: min-content; box-shadow: none;"
             >
               <div
                 class="searchInputContainer"
@@ -680,6 +696,14 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
                   type="button"
                 >
                   Français
+                </button>
+              </li>
+              <li>
+                <button
+                  style="font-weight: normal;"
+                  type="button"
+                >
+                  Português
                 </button>
               </li>
               <li>

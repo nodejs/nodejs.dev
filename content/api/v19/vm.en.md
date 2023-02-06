@@ -5,13 +5,17 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.4.0" data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
+<Metadata data={{"update":{"type":"introduced_in","version":["v0.10.0"]}}} />
 
-<Metadata version="v19.4.0" data={{"stability":{"level":2,"text":" - Stable"}}} />
+<Stability stability={2}>
 
-<Metadata version="v19.4.0" data={{"name":"vm"}} />
+Stable
 
-<Metadata version="v19.4.0" data={{"source_link":"lib/vm.js"}} />
+</Stability>
+
+<Metadata data={{"name":"vm"}} />
+
+<Metadata version="v19.6.0" data={{"source_link":"lib/vm.js"}} />
 
 The `node:vm` module enables compiling and running code within V8 Virtual
 Machine contexts.
@@ -51,14 +55,14 @@ console.log(x); // 1; y is not defined.
 
 ### <DataTag tag="C" /> `vm.Script`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.3.1"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.3.1"]}}} />
 
 Instances of the `vm.Script` class contain precompiled scripts that can be
 executed in specific contexts.
 
 #### <DataTag tag="M" /> `new vm.Script(code[, options])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/20300","description":"The `produceCachedData` is deprecated in favour of `script.createCachedData()`."},{"version":"v5.7.0","pr-url":"https://github.com/nodejs/node/pull/4777","description":"The `cachedData` and `produceCachedData` options are supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<Metadata data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/20300","description":"The `produceCachedData` is deprecated in favour of `script.createCachedData()`."},{"version":"v5.7.0","pr-url":"https://github.com/nodejs/node/pull/4777","description":"The `cachedData` and `produceCachedData` options are supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `code` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The JavaScript code to compile.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -68,7 +72,7 @@ executed in specific contexts.
     in stack traces produced by this script. **Default:** `0`.
   * `columnOffset` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Specifies the first-line column number offset that
     is displayed in stack traces produced by this script. **Default:** `0`.
-  * `cachedData` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
+  * `cachedData` [`Buffer`](/api/v19/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
     `TypedArray`, or `DataView` with V8's code cache data for the supplied
     source. When supplied, the `cachedDataRejected` value will be set to
     either `true` or `false` depending on acceptance of the data by V8.
@@ -86,11 +90,11 @@ executed in specific contexts.
     This option is part of the experimental modules API. We do not recommend
     using it in a production environment.
     * `specifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) specifier passed to `import()`
-    * `script` [`vm.Script`](/api/vm#vmscript)
+    * `script` [`vm.Script`](/api/v19/vm#vmscript)
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/v19/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 
@@ -102,7 +106,7 @@ any global object; rather, it is bound before each run, just for that run.
 
 #### <DataTag tag="M" /> `script.cachedDataRejected`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v5.7.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v5.7.0"]}}} />
 
 * [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -112,9 +116,9 @@ Otherwise the value is `undefined`.
 
 #### <DataTag tag="M" /> `script.createCachedData()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v10.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v10.6.0"]}}} />
 
-* Returns: [`Buffer`](/api/buffer#buffer)
+* Returns: [`Buffer`](/api/v19/buffer#buffer)
 
 Creates a code cache that can be used with the `Script` constructor's
 `cachedData` option. Returns a `Buffer`. This method may be called at any
@@ -151,7 +155,7 @@ const cacheWithAdd = script.createCachedData();
 
 #### <DataTag tag="M" /> `script.runInContext(contextifiedObject[, options])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<Metadata data={{"changes":[{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `contextifiedObject` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) A [contextified][] object as returned by the
   `vm.createContext()` method.
@@ -202,7 +206,7 @@ overhead.
 
 #### <DataTag tag="M" /> `script.runInNewContext([contextObject[, options]])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":"v14.6.0","pr-url":"https://github.com/nodejs/node/pull/34023","description":"The `microtaskMode` option is supported now."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19016","description":"The `contextCodeGeneration` option is supported now."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<Metadata data={{"changes":[{"version":"v14.6.0","pr-url":"https://github.com/nodejs/node/pull/34023","description":"The `microtaskMode` option is supported now."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19016","description":"The `contextCodeGeneration` option is supported now."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `contextObject` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An object that will be [contextified][]. If
   `undefined`, a new object will be created.
@@ -263,7 +267,7 @@ console.log(contexts);
 
 #### <DataTag tag="M" /> `script.runInThisContext([options])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<Metadata data={{"changes":[{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `displayErrors` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) When `true`, if an [`Error`][] occurs
@@ -304,7 +308,7 @@ console.log(globalVar);
 
 #### <DataTag tag="M" /> `script.sourceMapURL`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 * [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
 
@@ -337,9 +341,13 @@ console.log(script.sourceMapURL);
 
 ### <DataTag tag="C" /> `vm.Module`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
 
-<Metadata version="v19.4.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 This feature is only available with the `--experimental-vm-modules` command
 flag enabled.
@@ -572,7 +580,7 @@ The identifier of the current module, as set in the constructor.
     //              ^^^^^ the module specifier
     ```
 
-  * `referencingModule` [`vm.Module`](/api/vm#vmmodule) The `Module` object `link()` is called on.
+  * `referencingModule` [`vm.Module`](/api/v19/vm#vmmodule) The `Module` object `link()` is called on.
 
   * `extra` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
     * `assert` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The data from the assertion:
@@ -585,7 +593,7 @@ The identifier of the current module, as set in the constructor.
       support, as opposed to, for example, triggering an error if an
       unsupported assertion is present.
 
-  * Returns: [`vm.Module`](/api/vm#vmmodule) | [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+  * Returns: [`vm.Module`](/api/v19/vm#vmmodule) | [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 Link module dependencies. This method must be called before evaluation, and
@@ -660,28 +668,32 @@ value that is not `undefined`.
 
 ### <DataTag tag="C" /> `vm.SourceTextModule`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v9.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v9.6.0"]}}} />
 
-<Metadata version="v19.4.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 This feature is only available with the `--experimental-vm-modules` command
 flag enabled.
 
-* Extends: [`vm.Module`](/api/vm#vmmodule)
+* Extends: [`vm.Module`](/api/v19/vm#vmmodule)
 
 The `vm.SourceTextModule` class provides the [Source Text Module Record][] as
 defined in the ECMAScript specification.
 
 #### <DataTag tag="M" /> `new vm.SourceTextModule(code[, options])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."}]}} />
+<Metadata data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."}]}} />
 
 * `code` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) JavaScript Module code to parse
 * `options`
   * `identifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) String used in stack traces.
     **Default:** `'vm:module(i)'` where `i` is a context-specific ascending
     index.
-  * `cachedData` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
+  * `cachedData` [`Buffer`](/api/v19/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
     `TypedArray`, or `DataView` with V8's code cache data for the supplied
     source. The `code` must be the same as the module from which this
     `cachedData` was created.
@@ -693,17 +705,17 @@ defined in the ECMAScript specification.
     is displayed in stack traces produced by this `Module`. **Default:** `0`.
   * `initializeImportMeta` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called during evaluation of this `Module`
     to initialize the `import.meta`.
-    * `meta` [`import.meta`](/api/esm#importmeta)
-    * `module` [`vm.SourceTextModule`](/api/vm#vmsourcetextmodule)
+    * `meta` [`import.meta`](/api/v19/esm#importmeta)
+    * `module` [`vm.SourceTextModule`](/api/v19/vm#vmsourcetextmodule)
   * `importModuleDynamically` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called during evaluation of this module
     when `import()` is called. If this option is not specified, calls to
     `import()` will reject with [`ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING`][].
     * `specifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) specifier passed to `import()`
-    * `module` [`vm.Module`](/api/vm#vmmodule)
+    * `module` [`vm.Module`](/api/v19/vm#vmmodule)
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/v19/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 
@@ -770,9 +782,9 @@ const contextifiedObject = vm.createContext({ secret: 42 });
 
 #### <DataTag tag="M" /> `sourceTextModule.createCachedData()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v13.7.0","v12.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.7.0","v12.17.0"]}}} />
 
-* Returns: [`Buffer`](/api/buffer#buffer)
+* Returns: [`Buffer`](/api/v19/buffer#buffer)
 
 Creates a code cache that can be used with the `SourceTextModule` constructor's
 `cachedData` option. Returns a `Buffer`. This method may be called any number
@@ -801,14 +813,18 @@ const module2 = new vm.SourceTextModule('const a = 1;', { cachedData });
 
 ### <DataTag tag="C" /> `vm.SyntheticModule`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
 
-<Metadata version="v19.4.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 This feature is only available with the `--experimental-vm-modules` command
 flag enabled.
 
-* Extends: [`vm.Module`](/api/vm#vmmodule)
+* Extends: [`vm.Module`](/api/v19/vm#vmmodule)
 
 The `vm.SyntheticModule` class provides the [Synthetic Module Record][] as
 defined in the WebIDL specification. The purpose of synthetic modules is to
@@ -829,7 +845,7 @@ const module = new vm.SyntheticModule(['default'], function() {
 
 #### <DataTag tag="M" /> `new vm.SyntheticModule(exportNames, evaluateCallback[, options])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
 
 * `exportNames` string\[] Array of names that will be exported from the
   module.
@@ -849,7 +865,7 @@ the module to access information outside the specified `context`. Use
 
 #### <DataTag tag="M" /> `syntheticModule.setExport(name, value)`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.0.0","v12.16.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Name of the export to set.
 * `value` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) The value to set the export to.
@@ -885,7 +901,7 @@ const vm = require('node:vm');
 
 ### <DataTag tag="M" /> `vm.compileFunction(code[, params[, options]])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v15.9.0","pr-url":"https://github.com/nodejs/node/pull/35431","description":"Added `importModuleDynamically` option again."},{"version":"v14.3.0","pr-url":"https://github.com/nodejs/node/pull/33364","description":"Removal of `importModuleDynamically` due to compatibility issues."},{"version":["v14.1.0","v13.14.0"],"pr-url":"https://github.com/nodejs/node/pull/32985","description":"The `importModuleDynamically` option is now supported."}],"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata data={{"changes":[{"version":["v19.6.0"],"pr-url":"https://github.com/nodejs/node/pull/46320","description":"The return value now includes `cachedDataRejected` with the same semantics as the `vm.Script` version if the `cachedData` option was passed."},{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v15.9.0","pr-url":"https://github.com/nodejs/node/pull/35431","description":"Added `importModuleDynamically` option again."},{"version":"v14.3.0","pr-url":"https://github.com/nodejs/node/pull/33364","description":"Removal of `importModuleDynamically` due to compatibility issues."},{"version":["v14.1.0","v13.14.0"],"pr-url":"https://github.com/nodejs/node/pull/32985","description":"The `importModuleDynamically` option is now supported."}],"update":{"type":"added","version":["v10.10.0"]}}} />
 
 * `code` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The body of the function to compile.
 * `params` string\[] An array of strings containing all parameters for the
@@ -897,7 +913,7 @@ const vm = require('node:vm');
     in stack traces produced by this script. **Default:** `0`.
   * `columnOffset` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) Specifies the first-line column number offset that
     is displayed in stack traces produced by this script. **Default:** `0`.
-  * `cachedData` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
+  * `cachedData` [`Buffer`](/api/v19/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
     `TypedArray`, or `DataView` with V8's code cache data for the supplied
     source.
   * `produceCachedData` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Specifies whether to produce new cache data.
@@ -917,7 +933,7 @@ const vm = require('node:vm');
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/v19/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 * Returns: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
@@ -928,7 +944,7 @@ function with the given `params`.
 
 ### <DataTag tag="M" /> `vm.createContext([contextObject[, options]])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":"v14.6.0","pr-url":"https://github.com/nodejs/node/pull/34023","description":"The `microtaskMode` option is supported now."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19398","description":"The first argument can no longer be a function."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19016","description":"The `codeGeneration` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<Metadata data={{"changes":[{"version":"v14.6.0","pr-url":"https://github.com/nodejs/node/pull/34023","description":"The `microtaskMode` option is supported now."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19398","description":"The first argument can no longer be a function."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19016","description":"The `codeGeneration` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `contextObject` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -992,7 +1008,7 @@ Inspector API.
 
 ### <DataTag tag="M" /> `vm.isContext(object)`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v0.11.7"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.11.7"]}}} />
 
 * `object` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
@@ -1002,9 +1018,13 @@ Returns `true` if the given `object` object has been [contextified][] using
 
 ### <DataTag tag="M" /> `vm.measureMemory([options])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v13.10.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.10.0"]}}} />
 
-<Metadata version="v19.4.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 Measure the memory known to V8 and used by all contexts known to the
 current V8 isolate, or the main context.
@@ -1076,7 +1096,7 @@ vm.measureMemory({ mode: 'detailed', execution: 'eager' })
 
 ### <DataTag tag="M" /> `vm.runInContext(code, contextifiedObject[, options])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<Metadata data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `code` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The JavaScript code to compile and run.
 * `contextifiedObject` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The [contextified][] object that will be used
@@ -1099,7 +1119,7 @@ vm.measureMemory({ mode: 'detailed', execution: 'eager' })
     [`Error`][]. Existing handlers for the event that have been attached via
     `process.on('SIGINT')` are disabled during script execution, but continue to
     work after that. **Default:** `false`.
-  * `cachedData` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
+  * `cachedData` [`Buffer`](/api/v19/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
     `TypedArray`, or `DataView` with V8's code cache data for the supplied
     source.
   * `importModuleDynamically` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called during evaluation of this module
@@ -1108,11 +1128,11 @@ vm.measureMemory({ mode: 'detailed', execution: 'eager' })
     This option is part of the experimental modules API. We do not recommend
     using it in a production environment.
     * `specifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) specifier passed to `import()`
-    * `script` [`vm.Script`](/api/vm#vmscript)
+    * `script` [`vm.Script`](/api/v19/vm#vmscript)
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/v19/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 * Returns: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) the result of the very last statement executed in the script.
@@ -1142,7 +1162,7 @@ console.log(contextObject);
 
 ### <DataTag tag="M" /> `vm.runInNewContext(code[, contextObject[, options]])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v14.6.0","pr-url":"https://github.com/nodejs/node/pull/34023","description":"The `microtaskMode` option is supported now."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19016","description":"The `contextCodeGeneration` option is supported now."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<Metadata data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v14.6.0","pr-url":"https://github.com/nodejs/node/pull/34023","description":"The `microtaskMode` option is supported now."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19016","description":"The `contextCodeGeneration` option is supported now."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `code` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The JavaScript code to compile and run.
 * `contextObject` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An object that will be [contextified][]. If
@@ -1180,7 +1200,7 @@ console.log(contextObject);
       `EvalError`. **Default:** `true`.
     * `wasm` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If set to false any attempt to compile a WebAssembly
       module will throw a `WebAssembly.CompileError`. **Default:** `true`.
-  * `cachedData` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
+  * `cachedData` [`Buffer`](/api/v19/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
     `TypedArray`, or `DataView` with V8's code cache data for the supplied
     source.
   * `importModuleDynamically` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called during evaluation of this module
@@ -1189,11 +1209,11 @@ console.log(contextObject);
     This option is part of the experimental modules API. We do not recommend
     using it in a production environment.
     * `specifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) specifier passed to `import()`
-    * `script` [`vm.Script`](/api/vm#vmscript)
+    * `script` [`vm.Script`](/api/v19/vm#vmscript)
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/v19/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
   * `microtaskMode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If set to `afterEvaluate`, microtasks (tasks
@@ -1227,7 +1247,7 @@ console.log(contextObject);
 
 ### <DataTag tag="M" /> `vm.runInThisContext(code[, options])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
+<Metadata data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6635","description":"The `breakOnSigint` option is supported now."}],"update":{"type":"added","version":["v0.3.1"]}}} />
 
 * `code` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The JavaScript code to compile and run.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -1248,7 +1268,7 @@ console.log(contextObject);
     [`Error`][]. Existing handlers for the event that have been attached via
     `process.on('SIGINT')` are disabled during script execution, but continue to
     work after that. **Default:** `false`.
-  * `cachedData` [`Buffer`](/api/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
+  * `cachedData` [`Buffer`](/api/v19/buffer#buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) | [`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView) Provides an optional `Buffer` or
     `TypedArray`, or `DataView` with V8's code cache data for the supplied
     source.
   * `importModuleDynamically` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called during evaluation of this module
@@ -1257,11 +1277,11 @@ console.log(contextObject);
     This option is part of the experimental modules API. We do not recommend
     using it in a production environment.
     * `specifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) specifier passed to `import()`
-    * `script` [`vm.Script`](/api/vm#vmscript)
+    * `script` [`vm.Script`](/api/v19/vm#vmscript)
     * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The `"assert"` value passed to the
       [`optionsExpression`][] optional parameter, or an empty object if no value
       was provided.
-    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/vm#vmmodule) Returning a `vm.Module` is
+    * Returns: [`Module Namespace Object`](https://tc39.github.io/ecma262/#sec-module-namespace-exotic-objects) | [`vm.Module`](/api/v19/vm#vmmodule) Returning a `vm.Module` is
       recommended in order to take advantage of error tracking, and to avoid
       issues with namespaces that contain `then` function exports.
 * Returns: [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types) the result of the very last statement executed in the script.

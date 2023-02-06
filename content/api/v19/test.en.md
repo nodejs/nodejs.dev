@@ -5,14 +5,18 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.4.0" data={{"update":{"type":"introduced_in","version":["v18.0.0"]}}} />
+<Metadata data={{"update":{"type":"introduced_in","version":["v18.0.0"]}}} />
 
-<Metadata version="v19.4.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
 
-<Metadata version="v19.4.0" data={{"source_link":"lib/test.js"}} />
+Experimental
 
-The `node:test` module facilitates the creation of JavaScript tests that
-report results in [TAP][] format. To access it:
+</Stability>
+
+<Metadata version="v19.6.0" data={{"source_link":"lib/test.js"}} />
+
+The `node:test` module facilitates the creation of JavaScript tests.
+To access it:
 
 ```mjs
 import test from 'node:test';
@@ -96,9 +100,7 @@ test('callback failing test', (t, done) => {
 });
 ```
 
-As a test file executes, TAP is written to the standard output of the Node.js
-process. This output can be interpreted by any test harness that understands
-the TAP format. If any tests fail, the process exit code is set to `1`.
+If any tests fail, the process exit code is set to `1`.
 
 ### Subtests
 
@@ -127,8 +129,7 @@ test to fail.
 ### Skipping tests
 
 Individual tests can be skipped by passing the `skip` option to the test, or by
-calling the test context's `skip()` method. Both of these options support
-including a message that is displayed in the TAP output as shown in the
+calling the test context's `skip()` method as shown in the
 following example.
 
 ```js
@@ -263,7 +264,7 @@ Test name patterns do not change the set of files that the test runner executes.
 
 ### Extraneous asynchronous activity
 
-Once a test function finishes executing, the TAP results are output as quickly
+Once a test function finishes executing, the results are reported as quickly
 as possible while maintaining the order of the tests. However, it is possible
 for the test function to generate asynchronous activity that outlives the test
 itself. The test runner handles this type of activity, but does not delay the
@@ -272,13 +273,13 @@ reporting of test results in order to accommodate it.
 In the following example, a test completes with two `setImmediate()`
 operations still outstanding. The first `setImmediate()` attempts to create a
 new subtest. Because the parent test has already finished and output its
-results, the new subtest is immediately marked as failed, and reported in the
-top level of the file's TAP output.
+results, the new subtest is immediately marked as failed, and reported later
+to the TestsStream.
 
 The second `setImmediate()` creates an `uncaughtException` event.
 `uncaughtException` and `unhandledRejection` events originating from a completed
 test are marked as failed by the `test` module and reported as diagnostic
-warnings in the top level of the file's TAP output.
+warnings at the top level by the TestsStream.
 
 ```js
 test('a test that creates asynchronous activity', (t) => {
@@ -298,9 +299,13 @@ test('a test that creates asynchronous activity', (t) => {
 
 ### Watch mode
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.2.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.2.0"]}}} />
 
-<Metadata version="v19.4.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 The Node.js test runner supports running in watch mode by passing the `--watch` flag:
 
@@ -457,9 +462,170 @@ test('spies on an object method', (t) => {
 });
 ```
 
+### Test reporters
+
+<Metadata data={{"update":{"type":"added","version":["v19.6.0"]}}} />
+
+The `node:test` module supports passing [`--test-reporter`][]
+flags for the test runner to use a specific reporter.
+
+The following built-reporters are supported:
+
+* `tap`
+  The `tap` reporter is the default reporter used by the test runner. It outputs
+  the test results in the [TAP][] format.
+
+* `spec`
+  The `spec` reporter outputs the test results in a human-readable format.
+
+* `dot`
+  The `dot` reporter outputs the test results in a compact format,
+  where each passing test is represented by a `.`,
+  and each failing test is represented by a `X`.
+
+#### Custom reporters
+
+[`--test-reporter`][] can be used to specify a path to custom reporter.
+a custom reporter is a module that exports a value
+accepted by [stream.compose][].
+Reporters should transform events emitted by a TestsStream
+
+Example of a custom reporter using [`stream.Transform`](/api/v19/stream#streamtransform):
+
+```mjs
+import { Transform } from 'node:stream';
+
+const customReporter = new Transform({
+  writableObjectMode: true,
+  transform(event, encoding, callback) {
+    switch (event.type) {
+      case 'test:start':
+        callback(null, `test ${event.data.name} started`);
+        break;
+      case 'test:pass':
+        callback(null, `test ${event.data.name} passed`);
+        break;
+      case 'test:fail':
+        callback(null, `test ${event.data.name} failed`);
+        break;
+      case 'test:plan':
+        callback(null, 'test plan');
+        break;
+      case 'test:diagnostic':
+        callback(null, event.data.message);
+        break;
+    }
+  },
+});
+
+export default customReporter;
+```
+
+```cjs
+const { Transform } = require('node:stream');
+
+const customReporter = new Transform({
+  writableObjectMode: true,
+  transform(event, encoding, callback) {
+    switch (event.type) {
+      case 'test:start':
+        callback(null, `test ${event.data.name} started`);
+        break;
+      case 'test:pass':
+        callback(null, `test ${event.data.name} passed`);
+        break;
+      case 'test:fail':
+        callback(null, `test ${event.data.name} failed`);
+        break;
+      case 'test:plan':
+        callback(null, 'test plan');
+        break;
+      case 'test:diagnostic':
+        callback(null, event.data.message);
+        break;
+    }
+  },
+});
+
+module.exports = customReporter;
+```
+
+Example of a custom reporter using a generator function:
+
+```mjs
+export default async function * customReporter(source) {
+  for await (const event of source) {
+    switch (event.type) {
+      case 'test:start':
+        yield `test ${event.data.name} started\n`;
+        break;
+      case 'test:pass':
+        yield `test ${event.data.name} passed\n`;
+        break;
+      case 'test:fail':
+        yield `test ${event.data.name} failed\n`;
+        break;
+      case 'test:plan':
+        yield 'test plan';
+        break;
+      case 'test:diagnostic':
+        yield `${event.data.message}\n`;
+        break;
+    }
+  }
+}
+```
+
+```cjs
+module.exports = async function * customReporter(source) {
+  for await (const event of source) {
+    switch (event.type) {
+      case 'test:start':
+        yield `test ${event.data.name} started\n`;
+        break;
+      case 'test:pass':
+        yield `test ${event.data.name} passed\n`;
+        break;
+      case 'test:fail':
+        yield `test ${event.data.name} failed\n`;
+        break;
+      case 'test:plan':
+        yield 'test plan\n';
+        break;
+      case 'test:diagnostic':
+        yield `${event.data.message}\n`;
+        break;
+    }
+  }
+};
+```
+
+The value provided to `--test-reporter` should be a string like one used in an
+`import()` in JavaScript code, or a value provided for [`--import`][].
+
+#### Multiple reporters
+
+The [`--test-reporter`][] flag can be specified multiple times to report test
+results in several formats. In this situation
+it is required to specify a destination for each reporter
+using [`--test-reporter-destination`][].
+Destination can be `stdout`, `stderr`, or a file path.
+Reporters and destinations are paired according
+to the order they were specified.
+
+In the following example, the `spec` reporter will output to `stdout`,
+and the `dot` reporter will output to `file.txt`:
+
+```bash
+node --test-reporter=spec --test-reporter=dot --test-reporter-destination=stdout --test-reporter-destination=file.txt
+```
+
+When a single reporter is specified, the destination will default to `stdout`,
+unless a destination is explicitly provided.
+
 ### <DataTag tag="M" /> `run([options])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.9.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.9.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for running tests. The following
   properties are supported:
@@ -472,7 +638,7 @@ test('spies on an object method', (t) => {
     **Default:** `true`.
   * `files`: [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) An array containing the list of files to run.
     **Default** matching files from [test runner execution model][].
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress test execution.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress test execution.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the test execution will
     fail after.
     If unspecified, subtests inherit this value from their parent.
@@ -482,7 +648,7 @@ test('spies on an object method', (t) => {
     number. If a nullish value is provided, each process gets its own port,
     incremented from the primary's `process.debugPort`.
     **Default:** `undefined`.
-* Returns: [`TapStream`](/api/test#tapstream)
+* Returns: TestsStream
 
 ```js
 run({ files: [path.resolve('./tests/test.js')] })
@@ -491,7 +657,7 @@ run({ files: [path.resolve('./tests/test.js')] })
 
 ### <DataTag tag="M" /> `test([name][, options][, fn])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":["v18.8.0","v16.18.0"],"pr-url":"https://github.com/nodejs/node/pull/43554","description":"Add a `signal` option."},{"version":["v18.7.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/43505","description":"Add a `timeout` option."}],"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+<Metadata data={{"changes":[{"version":["v18.8.0","v16.18.0"],"pr-url":"https://github.com/nodejs/node/pull/43554","description":"Add a `signal` option."},{"version":["v18.7.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/43505","description":"Add a `timeout` option."}],"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name of the test, which is displayed when reporting test
   results. **Default:** The `name` property of `fn`, or `'<anonymous>'` if `fn`
@@ -509,7 +675,7 @@ run({ files: [path.resolve('./tests/test.js')] })
   * `only` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If truthy, and the test context is configured to run
     `only` tests, then this test will be run. Otherwise, the test is skipped.
     **Default:** `false`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress test.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress test.
   * `skip` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If truthy, the test is skipped. If a string is
     provided, that string is displayed in the test results as the reason for
     skipping the test. **Default:** `false`.
@@ -526,12 +692,11 @@ run({ files: [path.resolve('./tests/test.js')] })
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Resolved with `undefined` once the test completes.
 
 The `test()` function is the value imported from the `test` module. Each
-invocation of this function results in the creation of a test point in the TAP
-output.
+invocation of this function results in reporting the test to the TestsStream.
 
 The `TestContext` object passed to the `fn` argument can be used to perform
 actions related to the current test. Examples include skipping the test, adding
-additional TAP diagnostic information, or creating subtests.
+additional diagnostic information, or creating subtests.
 
 `test()` returns a `Promise` that resolves once the test completes. The return
 value can usually be discarded for top level tests. However, the return value
@@ -570,8 +735,7 @@ thus prevent the scheduled cancellation.
 * Returns: `undefined`.
 
 The `describe()` function imported from the `node:test` module. Each
-invocation of this function results in the creation of a Subtest
-and a test point in the TAP output.
+invocation of this function results in the creation of a Subtest.
 After invocation of top level `describe` functions,
 all top level tests and suites will execute.
 
@@ -597,8 +761,6 @@ Shorthand for marking a suite as `TODO`, same as
 * Returns: `undefined`.
 
 The `it()` function is the value imported from the `node:test` module.
-Each invocation of this function results in the creation of a test point in the
-TAP output.
 
 ### <DataTag tag="M" /> `it.skip([name][, options][, fn])`
 
@@ -612,7 +774,7 @@ same as [`it([name], { todo: true }[, fn])`][it options].
 
 ### <DataTag tag="M" /> `before([fn][, options])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function.
   If the hook uses callbacks,
@@ -620,7 +782,7 @@ same as [`it([name], { todo: true }[, fn])`][it options].
   function.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
   properties are supported:
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress hook.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `Infinity`.
@@ -638,7 +800,7 @@ describe('tests', async () => {
 
 ### <DataTag tag="M" /> `after([fn][, options])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function.
   If the hook uses callbacks,
@@ -646,7 +808,7 @@ describe('tests', async () => {
   function.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
   properties are supported:
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress hook.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `Infinity`.
@@ -664,7 +826,7 @@ describe('tests', async () => {
 
 ### <DataTag tag="M" /> `beforeEach([fn][, options])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function.
   If the hook uses callbacks,
@@ -672,7 +834,7 @@ describe('tests', async () => {
   function.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
   properties are supported:
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress hook.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `Infinity`.
@@ -691,7 +853,7 @@ describe('tests', async () => {
 
 ### <DataTag tag="M" /> `afterEach([fn][, options])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function.
   If the hook uses callbacks,
@@ -699,7 +861,7 @@ describe('tests', async () => {
   function.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
   properties are supported:
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress hook.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `Infinity`.
@@ -718,14 +880,14 @@ describe('tests', async () => {
 
 ### <DataTag tag="C" /> `MockFunctionContext`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 The `MockFunctionContext` class is used to inspect or manipulate the behavior of
 mocks created via the [`MockTracker`][] APIs.
 
 #### <DataTag tag="M" /> `ctx.calls`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 * [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
@@ -745,7 +907,7 @@ mock. Each entry in the array is an object with the following properties.
 
 #### <DataTag tag="M" /> `ctx.callCount()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 * Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of times that this mock has been invoked.
 
@@ -755,7 +917,7 @@ is a getter that creates a copy of the internal call tracking array.
 
 #### <DataTag tag="M" /> `ctx.mockImplementation(implementation)`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 * `implementation` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The function to be used as the
   mock's new implementation.
@@ -790,7 +952,7 @@ test('changes a mock behavior', (t) => {
 
 #### <DataTag tag="M" /> `ctx.mockImplementationOnce(implementation[, onCall])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 * `implementation` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The function to be used as the
   mock's implementation for the invocation number specified by `onCall`.
@@ -832,20 +994,20 @@ test('changes a mock behavior once', (t) => {
 
 #### <DataTag tag="M" /> `ctx.resetCalls()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.3.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.3.0"]}}} />
 
 Resets the call history of the mock function.
 
 #### <DataTag tag="M" /> `ctx.restore()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 Resets the implementation of the mock function to its original behavior. The
 mock can still be used after calling this function.
 
 ### <DataTag tag="C" /> `MockTracker`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 The `MockTracker` class is used to manage mocking functionality. The test runner
 module provides a top level `mock` export which is a `MockTracker` instance.
@@ -854,7 +1016,7 @@ Each test also provides its own `MockTracker` instance via the test context's
 
 #### <DataTag tag="M" /> `mock.fn([original[, implementation]][, options])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 * `original` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) An optional function to create a mock on.
   **Default:** A no-op function.
@@ -903,14 +1065,14 @@ test('mocks a counting function', (t) => {
 
 #### <DataTag tag="M" /> `mock.getter(object, methodName[, implementation][, options])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.3.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.3.0"]}}} />
 
 This function is syntax sugar for [`MockTracker.method`][] with `options.getter`
 set to `true`.
 
 #### <DataTag tag="M" /> `mock.method(object, methodName[, implementation][, options])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 * `object` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) The object whose method is being mocked.
 * `methodName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The identifier of the method on `object` to mock.
@@ -962,7 +1124,7 @@ test('spies on an object method', (t) => {
 
 #### <DataTag tag="M" /> `mock.reset()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 This function restores the default behavior of all mocks that were previously
 created by this `MockTracker` and disassociates the mocks from the
@@ -976,7 +1138,7 @@ function manually is recommended.
 
 #### <DataTag tag="M" /> `mock.restoreAll()`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.1.0"]}}} />
 
 This function restores the default behavior of all mocks that were previously
 created by this `MockTracker`. Unlike `mock.reset()`, `mock.restoreAll()` does
@@ -984,24 +1146,28 @@ not disassociate the mocks from the `MockTracker` instance.
 
 #### <DataTag tag="M" /> `mock.setter(object, methodName[, implementation][, options])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.3.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.3.0"]}}} />
 
 This function is syntax sugar for [`MockTracker.method`][] with `options.setter`
 set to `true`.
 
-### <DataTag tag="C" /> `TapStream`
+### <DataTag tag="C" /> `TestsStream`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.9.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.9.0"]}}} />
 
-* Extends [`ReadableStream`](/api/webstreams#readablestream)
+* Extends [`ReadableStream`](/api/v19/webstreams#readablestream)
 
-A successful call to [`run()`][] method will return a new [`TapStream`](/api/test#tapstream)
-object, streaming a [TAP][] output
-`TapStream` will emit events, in the order of the tests definition
+A successful call to [`run()`][] method will return a new TestsStream
+object, streaming a series of events representing the execution of the tests.
+`TestsStream` will emit events, in the order of the tests definition
 
 #### <DataTag tag="E" /> `'test:diagnostic'`
 
-* `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The diagnostic message.
+* `data` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+  * `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) The path of the test file,
+    undefined if test is not ran through a file.
+  * `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The diagnostic message.
+  * `nesting` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The nesting level of the test.
 
 Emitted when [`context.diagnostic`][] is called.
 
@@ -1009,10 +1175,15 @@ Emitted when [`context.diagnostic`][] is called.
 
 * `data` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `details` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Additional execution metadata.
+    * `duration` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The duration of the test in milliseconds.
+    * `error` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) The error thrown by the test.
+  * `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) The path of the test file,
+    undefined if test is not ran through a file.
   * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The test name.
+  * `nesting` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The nesting level of the test.
   * `testNumber` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The ordinal number of the test.
-  * `todo` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) Present if [`context.todo`][] is called
-  * `skip` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) Present if [`context.skip`][] is called
+  * `todo` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) Present if [`context.todo`][] is called
+  * `skip` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) Present if [`context.skip`][] is called
 
 Emitted when a test fails.
 
@@ -1020,16 +1191,40 @@ Emitted when a test fails.
 
 * `data` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `details` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Additional execution metadata.
+    * `duration` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The duration of the test in milliseconds.
+  * `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) The path of the test file,
+    undefined if test is not ran through a file.
   * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The test name.
+  * `nesting` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The nesting level of the test.
   * `testNumber` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The ordinal number of the test.
-  * `todo` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) Present if [`context.todo`][] is called
-  * `skip` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) Present if [`context.skip`][] is called
+  * `todo` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) Present if [`context.todo`][] is called
+  * `skip` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) Present if [`context.skip`][] is called
 
 Emitted when a test passes.
 
+#### <DataTag tag="E" /> `'test:plan'`
+
+* `data` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+  * `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) The path of the test file,
+    undefined if test is not ran through a file.
+  * `nesting` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The nesting level of the test.
+  * `count` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of subtests that have ran.
+
+Emitted when all subtests have completed for a given test.
+
+#### <DataTag tag="E" /> `'test:start'`
+
+* `data` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+  * `file` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) The path of the test file,
+    undefined if test is not ran through a file.
+  * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The test name.
+  * `nesting` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The nesting level of the test.
+
+Emitted when a test starts.
+
 ### <DataTag tag="C" /> `TestContext`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
 
 An instance of `TestContext` is passed to each test function in order to
 interact with the test runner. However, the `TestContext` constructor is not
@@ -1037,7 +1232,7 @@ exposed as part of the API.
 
 #### <DataTag tag="M" /> `context.beforeEach([fn][, options])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function. The first argument
   to this function is a [`TestContext`][] object. If the hook uses callbacks,
@@ -1045,7 +1240,7 @@ exposed as part of the API.
   function.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
   properties are supported:
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress hook.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `Infinity`.
@@ -1067,7 +1262,7 @@ test('top level test', async (t) => {
 
 #### <DataTag tag="M" /> `context.after([fn][, options])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v19.3.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v19.3.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function. The first argument
   to this function is a [`TestContext`][] object. If the hook uses callbacks,
@@ -1075,7 +1270,7 @@ test('top level test', async (t) => {
   function.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
   properties are supported:
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress hook.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `Infinity`.
@@ -1092,7 +1287,7 @@ test('top level test', async (t) => {
 
 #### <DataTag tag="M" /> `context.afterEach([fn][, options])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 * `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The hook function. The first argument
   to this function is a [`TestContext`][] object. If the hook uses callbacks,
@@ -1100,7 +1295,7 @@ test('top level test', async (t) => {
   function.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the hook. The following
   properties are supported:
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress hook.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress hook.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the hook will fail after.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `Infinity`.
@@ -1122,11 +1317,11 @@ test('top level test', async (t) => {
 
 #### <DataTag tag="M" /> `context.diagnostic(message)`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
 
-* `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Message to be displayed as a TAP diagnostic.
+* `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Message to be reported.
 
-This function is used to write TAP diagnostics to the output. Any diagnostic
+This function is used to write diagnostics to the output. Any diagnostic
 information is included at the end of the test's results. This function does
 not return a value.
 
@@ -1138,13 +1333,13 @@ test('top level test', (t) => {
 
 #### <DataTag tag="M" /> `context.name`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 The name of the test.
 
 #### <DataTag tag="M" /> `context.runOnly(shouldRunOnlyTests)`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
 
 * `shouldRunOnlyTests` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether or not to run `only` tests.
 
@@ -1166,9 +1361,9 @@ test('top level test', (t) => {
 
 #### <DataTag tag="M" /> `context.signal`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.7.0","v16.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.7.0","v16.17.0"]}}} />
 
-* [`AbortSignal`](/api/globals#abortsignal) Can be used to abort test subtasks when the test has been
+* [`AbortSignal`](/api/v19/globals#abortsignal) Can be used to abort test subtasks when the test has been
   aborted.
 
 ```js
@@ -1179,12 +1374,12 @@ test('top level test', async (t) => {
 
 #### <DataTag tag="M" /> `context.skip([message])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
 
-* `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Optional skip message to be displayed in TAP output.
+* `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Optional skip message.
 
 This function causes the test's output to indicate the test as skipped. If
-`message` is provided, it is included in the TAP output. Calling `skip()` does
+`message` is provided, it is included in the output. Calling `skip()` does
 not terminate execution of the test function. This function does not return a
 value.
 
@@ -1197,12 +1392,12 @@ test('top level test', (t) => {
 
 #### <DataTag tag="M" /> `context.todo([message])`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
 
-* `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Optional `TODO` message to be displayed in TAP output.
+* `message` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) Optional `TODO` message.
 
 This function adds a `TODO` directive to the test's output. If `message` is
-provided, it is included in the TAP output. Calling `todo()` does not terminate
+provided, it is included in the output. Calling `todo()` does not terminate
 execution of the test function. This function does not return a value.
 
 ```js
@@ -1214,7 +1409,7 @@ test('top level test', (t) => {
 
 #### <DataTag tag="M" /> `context.test([name][, options][, fn])`
 
-<Metadata version="v19.4.0" data={{"changes":[{"version":["v18.8.0","v16.18.0"],"pr-url":"https://github.com/nodejs/node/pull/43554","description":"Add a `signal` option."},{"version":["v18.7.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/43505","description":"Add a `timeout` option."}],"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+<Metadata data={{"changes":[{"version":["v18.8.0","v16.18.0"],"pr-url":"https://github.com/nodejs/node/pull/43554","description":"Add a `signal` option."},{"version":["v18.7.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/43505","description":"Add a `timeout` option."}],"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
 
 * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name of the subtest, which is displayed when reporting
   test results. **Default:** The `name` property of `fn`, or `'<anonymous>'` if
@@ -1227,7 +1422,7 @@ test('top level test', (t) => {
   * `only` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If truthy, and the test context is configured to run
     `only` tests, then this test will be run. Otherwise, the test is skipped.
     **Default:** `false`.
-  * `signal` [`AbortSignal`](/api/globals#abortsignal) Allows aborting an in-progress test.
+  * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress test.
   * `skip` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) If truthy, the test is skipped. If a string is
     provided, that string is displayed in the test results as the reason for
     skipping the test. **Default:** `false`.
@@ -1260,7 +1455,7 @@ test('top level test', async (t) => {
 
 ### <DataTag tag="C" /> `SuiteContext`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.7.0","v16.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.7.0","v16.17.0"]}}} />
 
 An instance of `SuiteContext` is passed to each suite function in order to
 interact with the test runner. However, the `SuiteContext` constructor is not
@@ -1268,20 +1463,23 @@ exposed as part of the API.
 
 #### <DataTag tag="M" /> `context.name`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.8.0","v16.18.0"]}}} />
 
 The name of the suite.
 
 #### <DataTag tag="M" /> `context.signal`
 
-<Metadata version="v19.4.0" data={{"update":{"type":"added","version":["v18.7.0","v16.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.7.0","v16.17.0"]}}} />
 
-* [`AbortSignal`](/api/globals#abortsignal) Can be used to abort test subtasks when the test has been
+* [`AbortSignal`](/api/v19/globals#abortsignal) Can be used to abort test subtasks when the test has been
   aborted.
 
 [TAP]: https://testanything.org/
+[`--import`]: /api/v19/cli#--importmodule
 [`--test-name-pattern`]: /api/v19/cli#--test-name-pattern
 [`--test-only`]: /api/v19/cli#--test-only
+[`--test-reporter-destination`]: /api/v19/cli#--test-reporter-destination
+[`--test-reporter`]: /api/v19/cli#--test-reporter
 [`--test`]: /api/v19/cli#--test
 [`MockFunctionContext`]: #class-mockfunctioncontext
 [`MockTracker.method`]: #mockmethodobject-methodname-implementation-options
@@ -1295,4 +1493,5 @@ The name of the suite.
 [`test()`]: #testname-options-fn
 [describe options]: #describename-options-fn
 [it options]: #testname-options-fn
+[stream.compose]: /api/v19/stream#streamcomposestreams
 [test runner execution model]: #test-runner-execution-model

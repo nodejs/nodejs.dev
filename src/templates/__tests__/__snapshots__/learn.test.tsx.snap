@@ -86,7 +86,7 @@ exports[`Learn Template renders correctly 1`] = `
               </span>
               <div
                 class="searchBarContainer"
-                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
+                style="min-height: 0em; width: 100%; max-width: min-content; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
@@ -197,6 +197,14 @@ exports[`Learn Template renders correctly 1`] = `
                     type="button"
                   >
                     Français
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Português
                   </button>
                 </li>
                 <li>
@@ -358,9 +366,14 @@ exports[`Learn Template renders correctly 1`] = `
       <article
         class="article"
       >
-        <h1
-          class="headline"
-        />
+        <header>
+          <h1
+            class="headline"
+          />
+          <p>
+            test-description
+          </p>
+        </header>
         <div
           class="authorList"
         >

@@ -23,7 +23,7 @@ const containerVariants = {
   collapsed: {
     minHeight: '0em',
     width: '100%',
-    maxWidth: '100px',
+    maxWidth: 'min-content',
     boxShadow: 'none',
   },
 };

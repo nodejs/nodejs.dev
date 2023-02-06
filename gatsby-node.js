@@ -182,11 +182,6 @@ exports.createPages = async ({ graphql, actions }) => {
   pageRedirects[latestApiPath] = `${latestApiPath}documentation/`;
   pageRedirects[apiPathWithLatest] = `${latestApiPath}documentation/`;
 
-  // Updates `firebase.json` with new redirects
-  // This is used for our static hosting redirects (npm run build)
-  // When using `npm run serve` or `npm run start` this will not be needed
-  generateRedirects(pageRedirects);
-
   apiRedirects.forEach(({ from, to }) => {
     pageRedirects[`${apiPath}${from}`] = `${apiPath}${to}`;
 
@@ -195,6 +190,8 @@ exports.createPages = async ({ graphql, actions }) => {
     pageRedirects[`${apiPath}${from.slice(0, -1)}.html`] = `${apiPath}${to}`;
   });
 
+  const fireBaseRedirects = {};
+
   // Create Redirects for Pages
   Object.keys(pageRedirects).forEach(from => {
     const metadata = {
@@ -202,10 +199,12 @@ exports.createPages = async ({ graphql, actions }) => {
       toPath: pageRedirects[from],
       isPermanent: true,
       redirectInBrowser: true,
-      statusCode: 200,
+      statusCode: 302,
     };
 
-    createRedirect(metadata);
+    fireBaseRedirects[from] = getRedirectForLocale('en', metadata.toPath);
+
+    createRedirect({ ...metadata, toPath: fireBaseRedirects[from] });
 
     // Creates Redirects for Locales
     nodeLocales.locales.forEach(({ code }) =>
@@ -216,6 +215,11 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     );
   });
+
+  // Updates `firebase.json` with new redirects
+  // This is used for our static hosting redirects (npm run build)
+  // When using `npm run serve` or `npm run start` this will not be needed
+  generateRedirects(fireBaseRedirects);
 };
 
 exports.onCreatePage = ({ page, actions }) => {

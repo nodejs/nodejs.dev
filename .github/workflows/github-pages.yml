@@ -19,7 +19,7 @@ jobs:
           ref: main
 
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -30,7 +30,7 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - uses: jongwooo/gatsby-cache@v1.4.0
+      - uses: jongwooo/gatsby-cache@v1.4.1
         with:
           key: github-pages-gatsby-ubuntu-latest
 

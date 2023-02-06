@@ -121,6 +121,7 @@ const gatsbyConfig = {
           'displayTitle',
           'description',
           'category',
+          'locale',
           'tableOfContents',
         ],
         resolvers: {
@@ -131,6 +132,7 @@ const gatsbyConfig = {
             description: node => node.frontmatter.description,
             slug: node => node.fields.slug,
             category: node => node.fields.categoryName,
+            locale: node => node.fields.locale,
             tableOfContents: node => {
               if (node.frontmatter.category === 'api') {
                 // We only do the Table of Contents resolution for API pages as for Learn pages searching by the title and description should be enough

@@ -86,7 +86,7 @@ exports[`Download page renders correctly 1`] = `
               </span>
               <div
                 class="searchBarContainer"
-                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
+                style="min-height: 0em; width: 100%; max-width: min-content; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
@@ -197,6 +197,14 @@ exports[`Download page renders correctly 1`] = `
                     type="button"
                   >
                     Français
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Português
                   </button>
                 </li>
                 <li>
@@ -1131,7 +1139,7 @@ exports[`Download page should handle LTS to Current switch 1`] = `
               </span>
               <div
                 class="searchBarContainer"
-                style="min-height: 0em; width: 100%; max-width: 100px; box-shadow: none;"
+                style="min-height: 0em; width: 100%; max-width: min-content; box-shadow: none;"
               >
                 <div
                   class="searchInputContainer"
@@ -1242,6 +1250,14 @@ exports[`Download page should handle LTS to Current switch 1`] = `
                     type="button"
                   >
                     Français
+                  </button>
+                </li>
+                <li>
+                  <button
+                    style="font-weight: normal;"
+                    type="button"
+                  >
+                    Português
                   </button>
                 </li>
                 <li>
