@@ -5,9 +5,9 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.14.0" data={{"update":{"type":"introduced_in","version":["v7.7.0"]}}} />
+<Metadata data={{"update":{"type":"introduced_in","version":["v7.7.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
 Node.js APIs might be deprecated for any of the following reasons:
 
@@ -48,7 +48,7 @@ However, the deprecation identifier will not be modified.
 
 #### DEP0001: `http.OutgoingMessage.prototype.flush`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31164","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v1.6.0","pr-url":"https://github.com/nodejs/node/pull/1156","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31164","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v1.6.0","pr-url":"https://github.com/nodejs/node/pull/1156","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -57,7 +57,7 @@ Type: End-of-Life
 
 #### DEP0002: `require('_linklist')`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12113","description":"End-of-Life."},{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3078","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12113","description":"End-of-Life."},{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v5.0.0","pr-url":"https://github.com/nodejs/node/pull/3078","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -65,7 +65,7 @@ The `_linklist` module is deprecated. Please use a userland alternative.
 
 #### DEP0003: `_writableState.buffer`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31165","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.15","pr-url":"https://github.com/nodejs/node-v0.x-archive/pull/8826","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31165","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.15","pr-url":"https://github.com/nodejs/node-v0.x-archive/pull/8826","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -74,7 +74,7 @@ instead.
 
 #### DEP0004: `CryptoStream.prototype.readyState`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17882","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.4.0","commit":"9c7f89bf56abd37a796fea621ad2e47dd33d2b82","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17882","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.4.0","commit":"9c7f89bf56abd37a796fea621ad2e47dd33d2b82","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -82,7 +82,7 @@ The `CryptoStream.prototype.readyState` property was removed.
 
 #### DEP0005: `Buffer()` constructor
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Runtime deprecation."},{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4682","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19524","description":"Runtime deprecation."},{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4682","description":"Documentation-only deprecation."}]}} />
 
 Type: Runtime (supports [`--pending-deprecation`][])
 
@@ -112,7 +112,7 @@ warning results no matter where the `Buffer()` usage occurs.
 
 #### DEP0006: `child_process` `options.customFds`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25279","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.14","description":"Runtime deprecation."},{"version":"v0.5.10","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25279","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.14","description":"Runtime deprecation."},{"version":"v0.5.10","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -122,7 +122,7 @@ option should be used instead.
 
 #### DEP0007: Replace `cluster` `worker.suicide` with `worker.exitedAfterDisconnect`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/13702","description":"End-of-Life."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/3747","description":"Runtime deprecation."},{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/3743","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/13702","description":"End-of-Life."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/3747","description":"Runtime deprecation."},{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/3743","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -135,7 +135,7 @@ precisely describe the actual semantics and was unnecessarily emotion-laden.
 
 #### DEP0008: `require('node:constants')`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6534","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.3.0","pr-url":"https://github.com/nodejs/node/pull/6534","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -146,7 +146,7 @@ to the `constants` property exposed by the relevant module. For instance,
 
 #### DEP0009: `crypto.pbkdf2` without digest
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31166","description":"End-of-Life (for `digest === null`)."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22861","description":"Runtime deprecation (for `digest === null`)."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11305","description":"End-of-Life (for `digest === undefined`)."},{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4047","description":"Runtime deprecation (for `digest === undefined`)."}]}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31166","description":"End-of-Life (for `digest === null`)."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22861","description":"Runtime deprecation (for `digest === null`)."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11305","description":"End-of-Life (for `digest === undefined`)."},{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4047","description":"Runtime deprecation (for `digest === undefined`)."}]}} />
 
 Type: End-of-Life
 
@@ -164,7 +164,7 @@ Now, however, passing either `undefined` or `null` will throw a `TypeError`.
 
 #### DEP0010: `crypto.createCredentials`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/21153","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.13","pr-url":"https://github.com/nodejs/node-v0.x-archive/pull/7265","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/21153","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.13","pr-url":"https://github.com/nodejs/node-v0.x-archive/pull/7265","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -173,7 +173,7 @@ The `crypto.createCredentials()` API was removed. Please use
 
 #### DEP0011: `crypto.Credentials`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/21153","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.13","pr-url":"https://github.com/nodejs/node-v0.x-archive/pull/7265","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/21153","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.13","pr-url":"https://github.com/nodejs/node-v0.x-archive/pull/7265","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -182,7 +182,7 @@ instead.
 
 #### DEP0012: `Domain.dispose`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15412","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.7","pr-url":"https://github.com/nodejs/node-v0.x-archive/pull/5021","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15412","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.7","pr-url":"https://github.com/nodejs/node-v0.x-archive/pull/5021","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -191,7 +191,7 @@ explicitly via error event handlers set on the domain instead.
 
 #### DEP0013: `fs` asynchronous function without callback
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18668","description":"End-of-Life."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18668","description":"End-of-Life."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7897","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -200,7 +200,7 @@ in Node.js 10.0.0 onwards. See [https://github.com/nodejs/node/pull/12562](https
 
 #### DEP0014: `fs.read` legacy String interface
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/9683","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4525","description":"Runtime deprecation."},{"version":"v0.1.96","commit":"c93e0aaf062081db3ec40ac45b3e2c979d5759d6","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/9683","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4525","description":"Runtime deprecation."},{"version":"v0.1.96","commit":"c93e0aaf062081db3ec40ac45b3e2c979d5759d6","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -209,7 +209,7 @@ API as mentioned in the documentation instead.
 
 #### DEP0015: `fs.readSync` legacy String interface
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/9683","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4525","description":"Runtime deprecation."},{"version":"v0.1.96","commit":"c93e0aaf062081db3ec40ac45b3e2c979d5759d6","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/9683","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4525","description":"Runtime deprecation."},{"version":"v0.1.96","commit":"c93e0aaf062081db3ec40ac45b3e2c979d5759d6","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -218,7 +218,7 @@ The [`fs.readSync()`][] legacy `String` interface is deprecated. Use the
 
 #### DEP0016: `GLOBAL`/`root`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31167","description":"End-of-Life."},{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/1838","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31167","description":"End-of-Life."},{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/1838","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -227,7 +227,7 @@ in Node.js 6.0.0 and have since been removed.
 
 #### DEP0017: `Intl.v8BreakIterator`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15238","description":"End-of-Life."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8908","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15238","description":"End-of-Life."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8908","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -236,7 +236,7 @@ See [`Intl.Segmenter`](https://github.com/tc39/proposal-intl-segmenter).
 
 #### DEP0018: Unhandled promise rejections
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35316","description":"End-of-Life."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8217","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35316","description":"End-of-Life."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/8217","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -247,7 +247,7 @@ code. To change the way Node.js treats unhandled rejections, use the
 
 #### DEP0019: `require('.')` resolved outside directory
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26973","description":"Removed functionality."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v1.8.1","pr-url":"https://github.com/nodejs/node/pull/1363","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26973","description":"Removed functionality."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v1.8.1","pr-url":"https://github.com/nodejs/node/pull/1363","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -256,7 +256,7 @@ This behavior has been removed.
 
 #### DEP0020: `Server.connections`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33647","description":"Server.connections has been removed."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.9.7","pr-url":"https://github.com/nodejs/node-v0.x-archive/pull/4595","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33647","description":"Server.connections has been removed."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.9.7","pr-url":"https://github.com/nodejs/node-v0.x-archive/pull/4595","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -265,7 +265,7 @@ been removed. Please use the [`Server.getConnections()`][] method instead.
 
 #### DEP0021: `Server.listenFD`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/27127","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.7.12","commit":"41421ff9da1288aa241a5e9dcf915b685ade1c23","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/27127","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.7.12","commit":"41421ff9da1288aa241a5e9dcf915b685ade1c23","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -274,7 +274,7 @@ The `Server.listenFD()` method was deprecated and removed. Please use
 
 #### DEP0022: `os.tmpDir()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31169","description":"End-of-Life."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/6739","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/31169","description":"End-of-Life."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/6739","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -283,7 +283,7 @@ removed. Please use [`os.tmpdir()`][] instead.
 
 #### DEP0023: `os.getNetworkInterfaces()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25280","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.6.0","commit":"37bb37d151fb6ee4696730e63ff28bb7a4924f97","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25280","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.6.0","commit":"37bb37d151fb6ee4696730e63ff28bb7a4924f97","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -292,7 +292,7 @@ The `os.getNetworkInterfaces()` method is deprecated. Please use the
 
 #### DEP0024: `REPLServer.prototype.convertToContext()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/13434","description":"End-of-Life."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7829","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/13434","description":"End-of-Life."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7829","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -300,7 +300,7 @@ The `REPLServer.prototype.convertToContext()` API has been removed.
 
 #### DEP0025: `require('node:sys')`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v1.0.0","pr-url":"https://github.com/nodejs/node/pull/317","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v1.0.0","pr-url":"https://github.com/nodejs/node/pull/317","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -308,7 +308,7 @@ The `node:sys` module is deprecated. Please use the [`util`][] module instead.
 
 #### DEP0026: `util.print()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25377","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.3","commit":"896b2aa7074fc886efd7dd0a397d694763cac7ce","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25377","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.3","commit":"896b2aa7074fc886efd7dd0a397d694763cac7ce","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -316,7 +316,7 @@ Type: End-of-Life
 
 #### DEP0027: `util.puts()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25377","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.3","commit":"896b2aa7074fc886efd7dd0a397d694763cac7ce","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25377","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.3","commit":"896b2aa7074fc886efd7dd0a397d694763cac7ce","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -324,7 +324,7 @@ Type: End-of-Life
 
 #### DEP0028: `util.debug()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25377","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.3","commit":"896b2aa7074fc886efd7dd0a397d694763cac7ce","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25377","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.3","commit":"896b2aa7074fc886efd7dd0a397d694763cac7ce","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -332,7 +332,7 @@ Type: End-of-Life
 
 #### DEP0029: `util.error()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25377","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.3","commit":"896b2aa7074fc886efd7dd0a397d694763cac7ce","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25377","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.3","commit":"896b2aa7074fc886efd7dd0a397d694763cac7ce","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -340,7 +340,7 @@ Type: End-of-Life
 
 #### DEP0030: `SlowBuffer`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5833","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/5833","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -349,7 +349,7 @@ The [`SlowBuffer`][] class is deprecated. Please use
 
 #### DEP0031: `ecdh.setPublicKey()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v5.2.0","pr-url":"https://github.com/nodejs/node/pull/3511","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v5.2.0","pr-url":"https://github.com/nodejs/node/pull/3511","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -358,7 +358,7 @@ API is not useful.
 
 #### DEP0032: `node:domain` module
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v1.4.2","pr-url":"https://github.com/nodejs/node/pull/943","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v1.4.2","pr-url":"https://github.com/nodejs/node/pull/943","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -366,7 +366,7 @@ The [`domain`][] module is deprecated and should not be used.
 
 #### DEP0033: `EventEmitter.listenerCount()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v3.2.0","pr-url":"https://github.com/nodejs/node/pull/2349","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v3.2.0","pr-url":"https://github.com/nodejs/node/pull/2349","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -375,7 +375,7 @@ deprecated. Please use [`emitter.listenerCount(eventName)`][] instead.
 
 #### DEP0034: `fs.exists(path, callback)`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v1.0.0","pr-url":"https://github.com/nodejs/node/pull/166","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v1.0.0","pr-url":"https://github.com/nodejs/node/pull/166","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -384,7 +384,7 @@ The [`fs.exists(path, callback)`][] API is deprecated. Please use
 
 #### DEP0035: `fs.lchmod(path, mode, callback)`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.4.7","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.4.7","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -392,7 +392,7 @@ The [`fs.lchmod(path, mode, callback)`][] API is deprecated.
 
 #### DEP0036: `fs.lchmodSync(path, mode)`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.4.7","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.4.7","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -400,7 +400,7 @@ The [`fs.lchmodSync(path, mode)`][] API is deprecated.
 
 #### DEP0037: `fs.lchown(path, uid, gid, callback)`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/21498","description":"Deprecation revoked."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.4.7","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/21498","description":"Deprecation revoked."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.4.7","description":"Documentation-only deprecation."}]}} />
 
 Type: Deprecation revoked
 
@@ -410,7 +410,7 @@ libuv.
 
 #### DEP0038: `fs.lchownSync(path, uid, gid)`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/21498","description":"Deprecation revoked."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.4.7","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/21498","description":"Deprecation revoked."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.4.7","description":"Documentation-only deprecation."}]}} />
 
 Type: Deprecation revoked
 
@@ -419,7 +419,7 @@ revoked because the requisite supporting APIs were added in libuv.
 
 #### DEP0039: `require.extensions`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.10.6","commit":"7bd8a5a2a60b75266f89f9a32877d55294a3881c","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.10.6","commit":"7bd8a5a2a60b75266f89f9a32877d55294a3881c","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -427,7 +427,7 @@ The [`require.extensions`][] property is deprecated.
 
 #### DEP0040: `node:punycode` module
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v16.6.0","pr-url":"https://github.com/nodejs/node/pull/38444","description":"Added support for `--pending-deprecation`."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7941","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v16.6.0","pr-url":"https://github.com/nodejs/node/pull/38444","description":"Added support for `--pending-deprecation`."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/7941","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only (supports [`--pending-deprecation`][])
 
@@ -436,7 +436,7 @@ instead.
 
 #### DEP0041: `NODE_REPL_HISTORY_FILE` environment variable
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/13876","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v3.0.0","pr-url":"https://github.com/nodejs/node/pull/2224","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/13876","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v3.0.0","pr-url":"https://github.com/nodejs/node/pull/2224","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -445,7 +445,7 @@ The `NODE_REPL_HISTORY_FILE` environment variable was removed. Please use
 
 #### DEP0042: `tls.CryptoStream`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17882","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.3","commit":"af80e7bc6e6f33c582eb1f7d37c7f5bbe9f910f7","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17882","description":"End-of-Life."},{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v0.11.3","commit":"af80e7bc6e6f33c582eb1f7d37c7f5bbe9f910f7","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -454,7 +454,7 @@ The [`tls.CryptoStream`][] class was removed. Please use
 
 #### DEP0043: `tls.SecurePair`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11349","description":"Runtime deprecation."},{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6063","description":"Documentation-only deprecation."},{"version":"v0.11.15","pr-url":["https://github.com/nodejs/node-v0.x-archive/pull/8695","https://github.com/nodejs/node-v0.x-archive/pull/8700"],"description":"Deprecation revoked."},{"version":"v0.11.3","commit":"af80e7bc6e6f33c582eb1f7d37c7f5bbe9f910f7","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11349","description":"Runtime deprecation."},{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6063","description":"Documentation-only deprecation."},{"version":"v0.11.15","pr-url":["https://github.com/nodejs/node-v0.x-archive/pull/8695","https://github.com/nodejs/node-v0.x-archive/pull/8700"],"description":"Deprecation revoked."},{"version":"v0.11.3","commit":"af80e7bc6e6f33c582eb1f7d37c7f5bbe9f910f7","description":"Runtime deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -463,7 +463,7 @@ The [`tls.SecurePair`][] class is deprecated. Please use
 
 #### DEP0044: `util.isArray()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -472,7 +472,7 @@ instead.
 
 #### DEP0045: `util.isBoolean()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -480,7 +480,7 @@ The [`util.isBoolean()`][] API is deprecated.
 
 #### DEP0046: `util.isBuffer()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -489,7 +489,7 @@ The [`util.isBuffer()`][] API is deprecated. Please use
 
 #### DEP0047: `util.isDate()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -497,7 +497,7 @@ The [`util.isDate()`][] API is deprecated.
 
 #### DEP0048: `util.isError()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -505,7 +505,7 @@ The [`util.isError()`][] API is deprecated.
 
 #### DEP0049: `util.isFunction()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -513,7 +513,7 @@ The [`util.isFunction()`][] API is deprecated.
 
 #### DEP0050: `util.isNull()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -521,7 +521,7 @@ The [`util.isNull()`][] API is deprecated.
 
 #### DEP0051: `util.isNullOrUndefined()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -529,7 +529,7 @@ The [`util.isNullOrUndefined()`][] API is deprecated.
 
 #### DEP0052: `util.isNumber()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -537,7 +537,7 @@ The [`util.isNumber()`][] API is deprecated.
 
 #### DEP0053: `util.isObject()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -545,7 +545,7 @@ The [`util.isObject()`][] API is deprecated.
 
 #### DEP0054: `util.isPrimitive()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -553,7 +553,7 @@ The [`util.isPrimitive()`][] API is deprecated.
 
 #### DEP0055: `util.isRegExp()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -561,7 +561,7 @@ The [`util.isRegExp()`][] API is deprecated.
 
 #### DEP0056: `util.isString()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -569,7 +569,7 @@ The [`util.isString()`][] API is deprecated.
 
 #### DEP0057: `util.isSymbol()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -577,7 +577,7 @@ The [`util.isSymbol()`][] API is deprecated.
 
 #### DEP0058: `util.isUndefined()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v6.12.0","v4.8.6"],"pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":["v4.0.0","v3.3.1"],"pr-url":"https://github.com/nodejs/node/pull/2447","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -585,7 +585,7 @@ The [`util.isUndefined()`][] API is deprecated.
 
 #### DEP0059: `util.log()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6161","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6161","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -593,7 +593,7 @@ The [`util.log()`][] API is deprecated.
 
 #### DEP0060: `util._extend()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4903","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/4903","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -601,7 +601,7 @@ The [`util._extend()`][] API is deprecated.
 
 #### DEP0061: `fs.SyncWriteStream`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/20735","description":"End-of-Life."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10467","description":"Runtime deprecation."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/6749","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/20735","description":"End-of-Life."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10467","description":"Runtime deprecation."},{"version":"v7.0.0","pr-url":"https://github.com/nodejs/node/pull/6749","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -611,7 +611,7 @@ alternative.
 
 #### DEP0062: `node --debug`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25828","description":"End-of-Life."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10970","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25828","description":"End-of-Life."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10970","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -621,7 +621,7 @@ instead.
 
 #### DEP0063: `ServerResponse.prototype.writeHeader()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11355","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11355","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -633,7 +633,7 @@ officially supported API.
 
 #### DEP0064: `tls.createSecurePair()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11349","description":"Runtime deprecation."},{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6063","description":"Documentation-only deprecation."},{"version":"v0.11.15","pr-url":["https://github.com/nodejs/node-v0.x-archive/pull/8695","https://github.com/nodejs/node-v0.x-archive/pull/8700"],"description":"Deprecation revoked."},{"version":"v0.11.3","commit":"af80e7bc6e6f33c582eb1f7d37c7f5bbe9f910f7","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11349","description":"Runtime deprecation."},{"version":"v6.12.0","pr-url":"https://github.com/nodejs/node/pull/10116","description":"A deprecation code has been assigned."},{"version":"v6.0.0","pr-url":"https://github.com/nodejs/node/pull/6063","description":"Documentation-only deprecation."},{"version":"v0.11.15","pr-url":["https://github.com/nodejs/node-v0.x-archive/pull/8695","https://github.com/nodejs/node-v0.x-archive/pull/8700"],"description":"Deprecation revoked."},{"version":"v0.11.3","commit":"af80e7bc6e6f33c582eb1f7d37c7f5bbe9f910f7","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -642,7 +642,7 @@ The `tls.createSecurePair()` API was deprecated in documentation in Node.js
 
 #### DEP0065: `repl.REPL_MODE_MAGIC` and `NODE_REPL_MODE=magic`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19187","description":"End-of-Life."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11599","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19187","description":"End-of-Life."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11599","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -657,7 +657,7 @@ removed. Please use `sloppy` instead.
 
 #### DEP0066: `OutgoingMessage.prototype._headers, OutgoingMessage.prototype._headerNames`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/24167","description":"Runtime deprecation."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10941","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/24167","description":"Runtime deprecation."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10941","description":"Documentation-only deprecation."}]}} />
 
 Type: Runtime
 
@@ -677,7 +677,7 @@ officially supported properties.
 
 #### DEP0067: `OutgoingMessage.prototype._renderHeaders`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10941","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/10941","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -689,7 +689,7 @@ an officially supported API.
 
 #### DEP0068: `node debug`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33648","description":"The legacy `node debug` command was removed."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11441","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33648","description":"The legacy `node debug` command was removed."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/11441","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -698,7 +698,7 @@ a V8-inspector based CLI debugger available through `node inspect`.
 
 #### DEP0069: `vm.runInDebugContext(string)`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/13295","description":"End-of-Life."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/12815","description":"Runtime deprecation."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12243","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/13295","description":"End-of-Life."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/12815","description":"Runtime deprecation."},{"version":"v8.0.0","pr-url":"https://github.com/nodejs/node/pull/12243","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -708,7 +708,7 @@ DebugContext was an experimental API.
 
 #### DEP0070: `async_hooks.currentId()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/14414","description":"End-of-Life."},{"version":"v8.2.0","pr-url":"https://github.com/nodejs/node/pull/13490","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/14414","description":"End-of-Life."},{"version":"v8.2.0","pr-url":"https://github.com/nodejs/node/pull/13490","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -719,7 +719,7 @@ This change was made while `async_hooks` was an experimental API.
 
 #### DEP0071: `async_hooks.triggerId()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/14414","description":"End-of-Life."},{"version":"v8.2.0","pr-url":"https://github.com/nodejs/node/pull/13490","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/14414","description":"End-of-Life."},{"version":"v8.2.0","pr-url":"https://github.com/nodejs/node/pull/13490","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -730,7 +730,7 @@ This change was made while `async_hooks` was an experimental API.
 
 #### DEP0072: `async_hooks.AsyncResource.triggerId()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/14414","description":"End-of-Life."},{"version":"v8.2.0","pr-url":"https://github.com/nodejs/node/pull/13490","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/14414","description":"End-of-Life."},{"version":"v8.2.0","pr-url":"https://github.com/nodejs/node/pull/13490","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -741,7 +741,7 @@ This change was made while `async_hooks` was an experimental API.
 
 #### DEP0073: Several internal properties of `net.Server`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17141","description":"End-of-Life."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/14449","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17141","description":"End-of-Life."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/14449","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -753,7 +753,7 @@ code, no replacement API is provided.
 
 #### DEP0074: `REPLServer.bufferedCommand`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33286","description":"End-of-Life."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/13687","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33286","description":"End-of-Life."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/13687","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -762,7 +762,7 @@ The `REPLServer.bufferedCommand` property was deprecated in favor of
 
 #### DEP0075: `REPLServer.parseREPLKeyword()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33286","description":"End-of-Life."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/14223","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33286","description":"End-of-Life."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/14223","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -770,7 +770,7 @@ Type: End-of-Life
 
 #### DEP0076: `tls.parseCertString()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41479","description":"End-of-Life."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/14249","description":"Runtime deprecation."},{"version":"v8.6.0","pr-url":"https://github.com/nodejs/node/pull/14245","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41479","description":"End-of-Life."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/14249","description":"Runtime deprecation."},{"version":"v8.6.0","pr-url":"https://github.com/nodejs/node/pull/14245","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -784,7 +784,7 @@ not handle all certificate subjects correctly and should not be used.
 
 #### DEP0077: `Module._debug()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/13948","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/13948","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -795,7 +795,7 @@ supported API.
 
 #### DEP0078: `REPLServer.turnOffEditorMode()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33286","description":"End-of-Life."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15136","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33286","description":"End-of-Life."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15136","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -803,7 +803,7 @@ Type: End-of-Life
 
 #### DEP0079: Custom inspection function on objects via `.inspect()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/20722","description":"End-of-Life."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/16393","description":"Runtime deprecation."},{"version":"v8.7.0","pr-url":"https://github.com/nodejs/node/pull/15631","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/20722","description":"End-of-Life."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/16393","description":"Runtime deprecation."},{"version":"v8.7.0","pr-url":"https://github.com/nodejs/node/pull/15631","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -814,7 +814,7 @@ can be specified.
 
 #### DEP0080: `path._makeLong()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/14956","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/14956","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -824,7 +824,7 @@ and replaced with an identical, public `path.toNamespacedPath()` method.
 
 #### DEP0081: `fs.truncate()` using a file descriptor
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15990","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/15990","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -834,7 +834,7 @@ file descriptors.
 
 #### DEP0082: `REPLServer.prototype.memory()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33286","description":"End-of-Life."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/16242","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33286","description":"End-of-Life."},{"version":"v9.0.0","pr-url":"https://github.com/nodejs/node/pull/16242","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -843,7 +843,7 @@ the `REPLServer` itself. Do not use this function.
 
 #### DEP0083: Disabling ECDH by setting `ecdhCurve` to `false`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19794","description":"End-of-Life."},{"version":"v9.2.0","pr-url":"https://github.com/nodejs/node/pull/16130","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19794","description":"End-of-Life."},{"version":"v9.2.0","pr-url":"https://github.com/nodejs/node/pull/16130","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life.
 
@@ -854,7 +854,7 @@ the client and is now unsupported. Use the `ciphers` parameter instead.
 
 #### DEP0084: requiring bundled internal dependencies
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25138","description":"This functionality has been removed."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/16392","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25138","description":"This functionality has been removed."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/16392","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -886,7 +886,7 @@ code modification is necessary if that is done.
 
 #### DEP0085: AsyncHooks sensitive API
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17147","description":"End-of-Life."},{"version":["v9.4.0","v8.10.0"],"pr-url":"https://github.com/nodejs/node/pull/16972","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17147","description":"End-of-Life."},{"version":["v9.4.0","v8.10.0"],"pr-url":"https://github.com/nodejs/node/pull/16972","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -896,7 +896,7 @@ Use the `AsyncResource` API instead. See
 
 #### DEP0086: Remove `runInAsyncIdScope`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17147","description":"End-of-Life."},{"version":["v9.4.0","v8.10.0"],"pr-url":"https://github.com/nodejs/node/pull/16972","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17147","description":"End-of-Life."},{"version":["v9.4.0","v8.10.0"],"pr-url":"https://github.com/nodejs/node/pull/16972","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -905,7 +905,7 @@ cause a lot of issues. See [https://github.com/nodejs/node/issues/14328](https:/
 
 #### DEP0089: `require('node:assert')`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.8.0","pr-url":"https://github.com/nodejs/node/pull/28892","description":"Deprecation revoked."},{"version":["v9.9.0","v8.13.0"],"pr-url":"https://github.com/nodejs/node/pull/17002","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.8.0","pr-url":"https://github.com/nodejs/node/pull/28892","description":"Deprecation revoked."},{"version":["v9.9.0","v8.13.0"],"pr-url":"https://github.com/nodejs/node/pull/17002","description":"Documentation-only deprecation."}]}} />
 
 Type: Deprecation revoked
 
@@ -916,7 +916,7 @@ confusion.
 
 #### DEP0090: Invalid GCM authentication tag lengths
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/17825","description":"End-of-Life."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18017","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/17825","description":"End-of-Life."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18017","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -928,7 +928,7 @@ bits are allowed. Authentication tags of other lengths are invalid per
 
 #### DEP0091: `crypto.DEFAULT_ENCODING`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18333","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18333","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -936,7 +936,7 @@ The [`crypto.DEFAULT_ENCODING`][] property is deprecated.
 
 #### DEP0092: Top-level `this` bound to `module.exports`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/16878","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/16878","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -946,7 +946,7 @@ or `module.exports` instead.
 
 #### DEP0093: `crypto.fips` is deprecated and replaced
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18335","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18335","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -955,7 +955,7 @@ and `crypto.getFips()` instead.
 
 #### DEP0094: Using `assert.fail()` with more than one argument
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18418","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18418","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -965,7 +965,7 @@ method.
 
 #### DEP0095: `timers.enroll()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18066","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18066","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -974,7 +974,7 @@ Type: Runtime
 
 #### DEP0096: `timers.unenroll()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18066","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18066","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -983,7 +983,7 @@ Type: Runtime
 
 #### DEP0097: `MakeCallback` with `domain` property
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17417","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/17417","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -993,7 +993,7 @@ should start using the `async_context` variant of `MakeCallback` or
 
 #### DEP0098: AsyncHooks embedder `AsyncResource.emitBefore` and `AsyncResource.emitAfter` APIs
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26530","description":"End-of-Life."},{"version":["v10.0.0","v9.6.0","v8.12.0"],"pr-url":"https://github.com/nodejs/node/pull/18632","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26530","description":"End-of-Life."},{"version":["v10.0.0","v9.6.0","v8.12.0"],"pr-url":"https://github.com/nodejs/node/pull/18632","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -1007,7 +1007,7 @@ safer, and more convenient, alternative. See
 
 #### DEP0099: Async context-unaware `node::MakeCallback` C++ APIs
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18632","description":"Compile-time deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18632","description":"Compile-time deprecation."}]}} />
 
 Type: Compile-time
 
@@ -1017,7 +1017,7 @@ parameter.
 
 #### DEP0100: `process.assert()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18666","description":"Runtime deprecation."},{"version":"v0.3.7","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18666","description":"Runtime deprecation."},{"version":"v0.3.7","description":"Documentation-only deprecation."}]}} />
 
 Type: Runtime
 
@@ -1027,7 +1027,7 @@ This was never a documented feature.
 
 #### DEP0101: `--with-lttng`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18982","description":"End-of-Life."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18982","description":"End-of-Life."}]}} />
 
 Type: End-of-Life
 
@@ -1035,7 +1035,7 @@ The `--with-lttng` compile-time option has been removed.
 
 #### DEP0102: Using `noAssert` in `Buffer#(read|write)` operations
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"End-of-Life."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18395","description":"End-of-Life."}]}} />
 
 Type: End-of-Life
 
@@ -1045,7 +1045,7 @@ could lead to hard-to-find errors and crashes.
 
 #### DEP0103: `process.binding('util').is[...]` typechecks
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/22004","description":"Superseded by [DEP0111](#DEP0111)."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18415","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/22004","description":"Superseded by [DEP0111](#DEP0111)."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18415","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only (supports [`--pending-deprecation`][])
 
@@ -1057,7 +1057,7 @@ This deprecation has been superseded by the deprecation of the
 
 #### DEP0104: `process.env` string coercion
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18990","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/18990","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only (supports [`--pending-deprecation`][])
 
@@ -1069,7 +1069,7 @@ assigning it to `process.env`.
 
 #### DEP0105: `decipher.finaltol`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/19941","description":"End-of-Life."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19353","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/19941","description":"End-of-Life."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19353","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -1079,7 +1079,7 @@ Type: End-of-Life
 
 #### DEP0106: `crypto.createCipher` and `crypto.createDecipher`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22089","description":"Runtime deprecation."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19343","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22089","description":"Runtime deprecation."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19343","description":"Documentation-only deprecation."}]}} />
 
 Type: Runtime
 
@@ -1092,7 +1092,7 @@ initialization vectors. It is recommended to derive a key using
 
 #### DEP0107: `tls.convertNPNProtocols()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/20736","description":"End-of-Life."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19403","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/20736","description":"End-of-Life."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19403","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -1101,7 +1101,7 @@ core and obsoleted by the removal of NPN (Next Protocol Negotiation) support.
 
 #### DEP0108: `zlib.bytesRead`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/23308","description":"Runtime deprecation."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19414","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/23308","description":"Runtime deprecation."},{"version":"v10.0.0","pr-url":"https://github.com/nodejs/node/pull/19414","description":"Documentation-only deprecation."}]}} />
 
 Type: Runtime
 
@@ -1112,7 +1112,7 @@ expose values under these names.
 
 #### DEP0109: `http`, `https`, and `tls` support for invalid URLs
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36853","description":"End-of-Life."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/20270","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36853","description":"End-of-Life."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/20270","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -1125,7 +1125,7 @@ deprecated and support will be removed in the future.
 
 #### DEP0110: `vm.Script` cached data
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/20300","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v10.6.0","pr-url":"https://github.com/nodejs/node/pull/20300","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1134,7 +1134,7 @@ The `produceCachedData` option is deprecated. Use
 
 #### DEP0111: `process.binding()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.12.0","pr-url":"https://github.com/nodejs/node/pull/26500","description":"Added support for `--pending-deprecation`."},{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/22004","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.12.0","pr-url":"https://github.com/nodejs/node/pull/26500","description":"Added support for `--pending-deprecation`."},{"version":"v10.9.0","pr-url":"https://github.com/nodejs/node/pull/22004","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only (supports [`--pending-deprecation`][])
 
@@ -1142,7 +1142,7 @@ Type: Documentation-only (supports [`--pending-deprecation`][])
 
 #### DEP0112: `dgram` private APIs
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22011","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22011","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -1155,7 +1155,7 @@ to accessed outside of Node.js core: `Socket.prototype._handle`,
 
 #### DEP0113: `Cipher.setAuthTag()`, `Decipher.getAuthTag()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26249","description":"End-of-Life."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22126","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26249","description":"End-of-Life."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22126","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -1164,7 +1164,7 @@ were never documented and would throw when called.
 
 #### DEP0114: `crypto._toBuf()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25338","description":"End-of-Life."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22501","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25338","description":"End-of-Life."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22501","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -1173,7 +1173,7 @@ of Node.js core and was removed.
 
 #### DEP0115: `crypto.prng()`, `crypto.pseudoRandomBytes()`, `crypto.rng()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.0.0","pr-url":["https://github.com/nodejs/node/pull/22519","https://github.com/nodejs/node/pull/23017"],"description":"Added documentation-only deprecation with `--pending-deprecation` support."}]}} />
+<Metadata data={{"changes":[{"version":"v11.0.0","pr-url":["https://github.com/nodejs/node/pull/22519","https://github.com/nodejs/node/pull/23017"],"description":"Added documentation-only deprecation with `--pending-deprecation` support."}]}} />
 
 Type: Documentation-only (supports [`--pending-deprecation`][])
 
@@ -1185,7 +1185,7 @@ future release.
 
 #### DEP0116: Legacy URL API
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v18.13.0","pr-url":"https://github.com/nodejs/node/pull/44919","description":"\\`url.parse()` is deprecated again in DEP0169."},{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v18.13.0","pr-url":"https://github.com/nodejs/node/pull/44919","description":"\\`url.parse()` is deprecated again in DEP0169."},{"version":["v15.13.0","v14.17.0"],"pr-url":"https://github.com/nodejs/node/pull/37784","description":"Deprecation revoked. Status changed to \"Legacy\"."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22715","description":"Documentation-only deprecation."}]}} />
 
 Type: Deprecation revoked
 
@@ -1195,7 +1195,7 @@ use the [WHATWG URL API][] instead.
 
 #### DEP0117: Native crypto handles
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/27011","description":"End-of-Life."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22747","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/27011","description":"End-of-Life."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22747","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -1207,7 +1207,7 @@ object can lead to crashing the application.
 
 #### DEP0118: `dns.lookup()` support for a falsy host name
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/23173","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/23173","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -1218,7 +1218,7 @@ It will become an error in future versions of Node.js.
 
 #### DEP0119: `process.binding('uv').errname()` private API
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/23597","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/23597","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only (supports [`--pending-deprecation`][])
 
@@ -1227,7 +1227,7 @@ Type: Documentation-only (supports [`--pending-deprecation`][])
 
 #### DEP0120: Windows Performance Counter support
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/24862","description":"End-of-Life."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22485","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/24862","description":"End-of-Life."},{"version":"v11.0.0","pr-url":"https://github.com/nodejs/node/pull/22485","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -1239,7 +1239,7 @@ undocumented `COUNTER_NET_SERVER_CONNECTION()`,
 
 #### DEP0121: `net._setSimultaneousAccepts()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23760","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23760","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -1251,7 +1251,7 @@ generally useful and is being removed. See discussion here:
 
 #### DEP0122: `tls` `Server.prototype.setOptions()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23820","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23820","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -1259,7 +1259,7 @@ Please use `Server.prototype.setSecureContext()` instead.
 
 #### DEP0123: setting the TLS ServerName to an IP address
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23329","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23329","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -1268,7 +1268,7 @@ Setting the TLS ServerName to an IP address is not permitted by
 
 #### DEP0124: using `REPLServer.rli`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33286","description":"End-of-Life."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26260","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/33286","description":"End-of-Life."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26260","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -1276,7 +1276,7 @@ This property is a reference to the instance itself.
 
 #### DEP0125: `require('node:_stream_wrap')`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26245","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26245","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -1284,7 +1284,7 @@ The `node:_stream_wrap` module is deprecated.
 
 #### DEP0126: `timers.active()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.14.0","pr-url":"https://github.com/nodejs/node/pull/26760","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.14.0","pr-url":"https://github.com/nodejs/node/pull/26760","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -1295,7 +1295,7 @@ with no performance impact since Node.js 10.
 
 #### DEP0127: `timers._unrefActive()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v11.14.0","pr-url":"https://github.com/nodejs/node/pull/26760","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v11.14.0","pr-url":"https://github.com/nodejs/node/pull/26760","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -1306,7 +1306,7 @@ with no performance impact since Node.js 10.
 
 #### DEP0128: modules with an invalid `main` entry and an `index.js` file
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37204","description":"Runtime deprecation."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26823","description":"Documentation-only."}]}} />
+<Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37204","description":"Runtime deprecation."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26823","description":"Documentation-only."}]}} />
 
 Type: Runtime
 
@@ -1317,7 +1317,7 @@ Node.js versions.
 
 #### DEP0129: `ChildProcess._channel`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27949","description":"Runtime deprecation."},{"version":"v11.14.0","pr-url":"https://github.com/nodejs/node/pull/26982","description":"Documentation-only."}]}} />
+<Metadata data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27949","description":"Runtime deprecation."},{"version":"v11.14.0","pr-url":"https://github.com/nodejs/node/pull/26982","description":"Documentation-only."}]}} />
 
 Type: Runtime
 
@@ -1327,7 +1327,7 @@ instead.
 
 #### DEP0130: `Module.createRequireFromPath()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37201","description":"End-of-life."},{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27951","description":"Runtime deprecation."},{"version":"v12.2.0","pr-url":"https://github.com/nodejs/node/pull/27405","description":"Documentation-only."}]}} />
+<Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37201","description":"End-of-life."},{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/27951","description":"Runtime deprecation."},{"version":"v12.2.0","pr-url":"https://github.com/nodejs/node/pull/27405","description":"Documentation-only."}]}} />
 
 Type: End-of-Life
 
@@ -1335,7 +1335,7 @@ Use [`module.createRequire()`][] instead.
 
 #### DEP0131: Legacy HTTP parser
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/29589","description":"This feature has been removed."},{"version":"v12.22.0","pr-url":"https://github.com/nodejs/node/pull/37603","description":"Runtime deprecation."},{"version":"v12.3.0","pr-url":"https://github.com/nodejs/node/pull/27498","description":"Documentation-only."}]}} />
+<Metadata data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/29589","description":"This feature has been removed."},{"version":"v12.22.0","pr-url":"https://github.com/nodejs/node/pull/37603","description":"Runtime deprecation."},{"version":"v12.3.0","pr-url":"https://github.com/nodejs/node/pull/27498","description":"Documentation-only."}]}} />
 
 Type: End-of-Life
 
@@ -1346,7 +1346,7 @@ legacy parser.
 
 #### DEP0132: `worker.terminate()` with callback
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.5.0","pr-url":"https://github.com/nodejs/node/pull/28021","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.5.0","pr-url":"https://github.com/nodejs/node/pull/28021","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -1355,7 +1355,7 @@ Passing a callback to [`worker.terminate()`][] is deprecated. Use the returned
 
 #### DEP0133: `http` `connection`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.12.0","pr-url":"https://github.com/nodejs/node/pull/29015","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.12.0","pr-url":"https://github.com/nodejs/node/pull/29015","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1364,7 +1364,7 @@ Prefer [`response.socket`][] over [`response.connection`][] and
 
 #### DEP0134: `process._tickCallback`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.12.0","pr-url":"https://github.com/nodejs/node/pull/29781","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v12.12.0","pr-url":"https://github.com/nodejs/node/pull/29781","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only (supports [`--pending-deprecation`][])
 
@@ -1373,7 +1373,7 @@ an officially supported API.
 
 #### DEP0135: `WriteStream.open()` and `ReadStream.open()` are internal
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/29061","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v13.0.0","pr-url":"https://github.com/nodejs/node/pull/29061","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -1384,7 +1384,7 @@ and [`fs.createReadStream()`][]) or by passing a file descriptor in options.
 
 #### DEP0136: `http` `finished`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v13.4.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/28679","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v13.4.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/28679","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1400,7 +1400,7 @@ To maintain existing behavior `response.finished` should be replaced with
 
 #### DEP0137: Closing fs.FileHandle on garbage collection
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/28396","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/28396","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -1426,7 +1426,7 @@ async function openAndClose() {
 
 #### DEP0138: `process.mainModule`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/32232","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/32232","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1439,7 +1439,7 @@ purpose and is only available on CommonJS environment.
 
 #### DEP0139: `process.umask()` with no arguments
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v14.0.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/32499","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v14.0.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/32499","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1450,7 +1450,7 @@ API.
 
 #### DEP0140: Use `request.destroy()` instead of `request.abort()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v14.1.0","v13.14.0"],"pr-url":"https://github.com/nodejs/node/pull/32807","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v14.1.0","v13.14.0"],"pr-url":"https://github.com/nodejs/node/pull/32807","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1458,7 +1458,7 @@ Use [`request.destroy()`][] instead of [`request.abort()`][].
 
 #### DEP0141: `repl.inputStream` and `repl.outputStream`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.3.0","pr-url":"https://github.com/nodejs/node/pull/33294","description":"Documentation-only (supports [`--pending-deprecation`][])."}]}} />
+<Metadata data={{"changes":[{"version":"v14.3.0","pr-url":"https://github.com/nodejs/node/pull/33294","description":"Documentation-only (supports [`--pending-deprecation`][])."}]}} />
 
 Type: Documentation-only (supports [`--pending-deprecation`][])
 
@@ -1467,7 +1467,7 @@ instead of `.inputStream` and `.output` instead of `.outputStream`.
 
 #### DEP0142: `repl._builtinLibs`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.3.0","pr-url":"https://github.com/nodejs/node/pull/33294","description":"Documentation-only (supports [`--pending-deprecation`][])."}]}} />
+<Metadata data={{"changes":[{"version":"v14.3.0","pr-url":"https://github.com/nodejs/node/pull/33294","description":"Documentation-only (supports [`--pending-deprecation`][])."}]}} />
 
 Type: Documentation-only
 
@@ -1477,7 +1477,7 @@ upon `require('node:module').builtinModules`.
 
 #### DEP0143: `Transform._transformState`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.5.0","pr-url":"https://github.com/nodejs/node/pull/33126","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v14.5.0","pr-url":"https://github.com/nodejs/node/pull/33126","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 `Transform._transformState` will be removed in future versions where it is
@@ -1485,7 +1485,7 @@ no longer required due to simplification of the implementation.
 
 #### DEP0144: `module.parent`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v14.6.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/32217","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v14.6.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/32217","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only (supports [`--pending-deprecation`][])
 
@@ -1513,7 +1513,7 @@ const moduleParents = Object.values(require.cache)
 
 #### DEP0145: `socket.bufferSize`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.6.0","pr-url":"https://github.com/nodejs/node/pull/34088","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v14.6.0","pr-url":"https://github.com/nodejs/node/pull/34088","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1521,7 +1521,7 @@ Type: Documentation-only
 
 #### DEP0146: `new crypto.Certificate()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v14.9.0","pr-url":"https://github.com/nodejs/node/pull/34697","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v14.9.0","pr-url":"https://github.com/nodejs/node/pull/34697","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1530,7 +1530,7 @@ The [`crypto.Certificate()` constructor][] is deprecated. Use
 
 #### DEP0147: `fs.rmdir(path, { recursive: true })`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37302","description":"Runtime deprecation."},{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35562","description":"Runtime deprecation for permissive behavior."},{"version":"v14.14.0","pr-url":"https://github.com/nodejs/node/pull/35579","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37302","description":"Runtime deprecation."},{"version":"v15.0.0","pr-url":"https://github.com/nodejs/node/pull/35562","description":"Runtime deprecation for permissive behavior."},{"version":"v14.14.0","pr-url":"https://github.com/nodejs/node/pull/35579","description":"Documentation-only deprecation."}]}} />
 
 Type: Runtime
 
@@ -1543,7 +1543,7 @@ Use `fs.rm(path, { recursive: true, force: true })`,
 
 #### DEP0148: Folder mappings in `"exports"` (trailing `"/"`)
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/40121","description":"End-of-Life."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37215","description":"Runtime deprecation."},{"version":"v15.1.0","pr-url":"https://github.com/nodejs/node/pull/35747","description":"Runtime deprecation for self-referencing imports."},{"version":"v14.13.0","pr-url":"https://github.com/nodejs/node/pull/34718","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/40121","description":"End-of-Life."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37215","description":"Runtime deprecation."},{"version":"v15.1.0","pr-url":"https://github.com/nodejs/node/pull/35747","description":"Runtime deprecation for self-referencing imports."},{"version":"v14.13.0","pr-url":"https://github.com/nodejs/node/pull/34718","description":"Documentation-only deprecation."}]}} />
 
 Type: Runtime
 
@@ -1553,7 +1553,7 @@ Using a trailing `"/"` to define subpath folder mappings in the
 
 #### DEP0149: `http.IncomingMessage#connection`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/33768","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/33768","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only.
 
@@ -1561,7 +1561,7 @@ Prefer [`message.socket`][] over [`message.connection`][].
 
 #### DEP0150: Changing the value of `process.config`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/43627","description":"End-of-Life."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36902","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/43627","description":"End-of-Life."},{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/36902","description":"Runtime deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -1571,7 +1571,7 @@ to change the value will be removed in a future version of Node.js.
 
 #### DEP0151: Main index lookup and extension searching
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37206","description":"Runtime deprecation."},{"version":["v15.8.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/36918","description":"Documentation-only deprecation with `--pending-deprecation` support."}]}} />
+<Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37206","description":"Runtime deprecation."},{"version":["v15.8.0","v14.18.0"],"pr-url":"https://github.com/nodejs/node/pull/36918","description":"Documentation-only deprecation with `--pending-deprecation` support."}]}} />
 
 Type: Runtime
 
@@ -1583,11 +1583,11 @@ an explicit [`"exports"` or `"main"` entry][] with the exact file extension.
 
 #### DEP0152: Extension PerformanceEntry properties
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v16.0.0","pr-url":"https://github.com/nodejs/node/pull/37136","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
-The `'gc'`, `'http2'`, and `'http'` [`PerformanceEntry`](/api/perf_hooks#performanceentry) object types have
+The `'gc'`, `'http2'`, and `'http'` [`PerformanceEntry`](/api/v18/perf_hooks#performanceentry) object types have
 additional properties assigned to them that provide additional information.
 These properties are now available within the standard `detail` property
 of the `PerformanceEntry` object. The existing accessors have been
@@ -1595,7 +1595,7 @@ deprecated and should no longer be used.
 
 #### DEP0153: `dns.lookup` and `dnsPromises.lookup` options type coercion
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41431","description":"End-of-Life."},{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/39793","description":"Runtime deprecation."},{"version":"v16.8.0","pr-url":"https://github.com/nodejs/node/pull/38906","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41431","description":"End-of-Life."},{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/39793","description":"Runtime deprecation."},{"version":"v16.8.0","pr-url":"https://github.com/nodejs/node/pull/38906","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -1607,7 +1607,7 @@ option, or a non-nullish non-boolean value for `verbatim` option in
 
 #### DEP0154: RSA-PSS generate key pair options
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/39927","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/39927","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only (supports [`--pending-deprecation`][])
 
@@ -1616,7 +1616,7 @@ and `'mgf1HashAlgorithm'`.
 
 #### DEP0155: Trailing slashes in pattern specifier resolutions
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/40117","description":"Runtime deprecation."},{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/40039","description":"Documentation-only deprecation with `--pending-deprecation` support."}]}} />
+<Metadata data={{"changes":[{"version":"v17.0.0","pr-url":"https://github.com/nodejs/node/pull/40117","description":"Runtime deprecation."},{"version":"v16.10.0","pr-url":"https://github.com/nodejs/node/pull/40039","description":"Documentation-only deprecation with `--pending-deprecation` support."}]}} />
 
 Type: Runtime
 
@@ -1625,11 +1625,11 @@ for package `"exports"` and `"imports"` pattern resolutions.
 
 #### DEP0156: `.aborted` property and `'abort'`, `'aborted'` event in `http`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/36670","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/36670","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
-Move to [`Stream`](/api/stream#stream) API instead, as the [`http.ClientRequest`][],
+Move to [`Stream`](/api/v18/stream#stream) API instead, as the [`http.ClientRequest`][],
 [`http.ServerResponse`][], and [`http.IncomingMessage`][] are all stream-based.
 Check `stream.destroyed` instead of the `.aborted` property, and listen for
 `'close'` instead of `'abort'`, `'aborted'` event.
@@ -1643,7 +1643,7 @@ it was an aborted or graceful destroy.
 
 #### DEP0157: Thenable support in streams
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/40773","description":"End-of-life."},{"version":["v17.2.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40860","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/40773","description":"End-of-life."},{"version":["v17.2.0","v16.14.0"],"pr-url":"https://github.com/nodejs/node/pull/40860","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -1666,7 +1666,7 @@ const w = new Writable({
 
 #### DEP0158: `buffer.slice(start, end)`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v17.5.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41596","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v17.5.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41596","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1677,7 +1677,7 @@ Use [`buffer.subarray`][] which does the same thing instead.
 
 #### DEP0159: `ERR_INVALID_CALLBACK`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"End-of-Life."}]}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"End-of-Life."}]}} />
 
 Type: End-of-Life
 
@@ -1686,7 +1686,7 @@ the errors used for value type validation.
 
 #### DEP0160: `process.on('multipleResolves', handler)`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41896","description":"Runtime deprecation."},{"version":["v17.6.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41872","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41896","description":"Runtime deprecation."},{"version":["v17.6.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41872","description":"Documentation-only deprecation."}]}} />
 
 Type: Runtime.
 
@@ -1695,7 +1695,7 @@ which diminished its usefulness.
 
 #### DEP0161: `process._getActiveRequests()` and `process._getActiveHandles()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v17.6.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41587","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v17.6.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41587","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1708,7 +1708,7 @@ resources and not the actual references.
 
 #### DEP0162: `fs.write()`, `fs.writeFileSync()` coercion to string
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/42796","description":"End-of-Life."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42607","description":"Runtime deprecation."},{"version":["v17.8.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/42149","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/42796","description":"End-of-Life."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/42607","description":"Runtime deprecation."},{"version":["v17.8.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/42149","description":"Documentation-only deprecation."}]}} />
 
 Type: End-of-Life
 
@@ -1719,7 +1719,7 @@ Convert them to primitive strings.
 
 #### DEP0163: `channel.subscribe(onMessage)`, `channel.unsubscribe(onMessage)`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v18.7.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/42714","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v18.7.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/42714","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1732,7 +1732,7 @@ thing instead.
 
 #### DEP0164: `process.exit(code)`, `process.exitCode` coercion to integer
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v18.10.0","pr-url":"https://github.com/nodejs/node/pull/44714","description":"Documentation-only deprecation of `process.exitCode` integer coercion."},{"version":["v18.7.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/43738","description":"Documentation-only deprecation of `process.exit(code)` integer coercion."}]}} />
+<Metadata data={{"changes":[{"version":"v18.10.0","pr-url":"https://github.com/nodejs/node/pull/44714","description":"Documentation-only deprecation of `process.exitCode` integer coercion."},{"version":["v18.7.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/43738","description":"Documentation-only deprecation of `process.exit(code)` integer coercion."}]}} />
 
 Type: Documentation-only
 
@@ -1742,7 +1742,7 @@ Values other than `undefined`, `null`, integer numbers, and integer strings
 
 #### DEP0165: `--trace-atomics-wait`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v18.8.0","pr-url":"https://github.com/nodejs/node/pull/44093","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v18.8.0","pr-url":"https://github.com/nodejs/node/pull/44093","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1750,7 +1750,7 @@ The [`--trace-atomics-wait`][] flag is deprecated.
 
 #### DEP0166: Double slashes in imports and exports targets
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/44495","description":"Runtime deprecation."},{"version":"v18.10.0","pr-url":"https://github.com/nodejs/node/pull/44477","description":"Documentation-only deprecation with `--pending-deprecation` support."}]}} />
+<Metadata data={{"changes":[{"version":"v19.0.0","pr-url":"https://github.com/nodejs/node/pull/44495","description":"Runtime deprecation."},{"version":"v18.10.0","pr-url":"https://github.com/nodejs/node/pull/44477","description":"Documentation-only deprecation with `--pending-deprecation` support."}]}} />
 
 Type: Runtime
 
@@ -1761,7 +1761,7 @@ starting or ending in a slash.
 
 #### DEP0167: Weak `DiffieHellmanGroup` instances (`modp1`, `modp2`, `modp5`)
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v18.10.0","pr-url":"https://github.com/nodejs/node/pull/44588","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":"v18.10.0","pr-url":"https://github.com/nodejs/node/pull/44588","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1774,7 +1774,7 @@ rely on these groups should evaluate using stronger MODP groups instead.
 
 #### DEP0168: Unhandled exception in Node-API callbacks
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v18.3.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36510","description":"Runtime deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v18.3.0","v16.17.0"],"pr-url":"https://github.com/nodejs/node/pull/36510","description":"Runtime deprecation."}]}} />
 
 Type: Runtime
 
@@ -1787,7 +1787,7 @@ Node-API callbacks.
 
 #### DEP0169: Insecure url.parse()
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v18.13.0"],"pr-url":"https://github.com/nodejs/node/pull/44919","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v18.13.0"],"pr-url":"https://github.com/nodejs/node/pull/44919","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1797,7 +1797,7 @@ issued for `url.parse()` vulnerabilities.
 
 #### DEP0170: Invalid port when using `url.parse()`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v18.13.0"],"pr-url":"https://github.com/nodejs/node/pull/45576","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v18.13.0"],"pr-url":"https://github.com/nodejs/node/pull/45576","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 
@@ -1807,7 +1807,7 @@ an error in future versions of Node.js, as the [WHATWG URL API][] does already.
 
 #### DEP0171: Setters for `http.IncomingMessage` headers and trailers
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v18.13.0"],"pr-url":"https://github.com/nodejs/node/pull/45697","description":"Documentation-only deprecation."}]}} />
+<Metadata data={{"changes":[{"version":["v18.13.0"],"pr-url":"https://github.com/nodejs/node/pull/45697","description":"Documentation-only deprecation."}]}} />
 
 Type: Documentation-only
 

@@ -5,9 +5,9 @@ category: 'api'
 version: 'v18'
 ---
 
-<Metadata version="v18.14.0" data={{"update":{"type":"introduced_in","version":["v4.0.0"]}}} />
+<Metadata data={{"update":{"type":"introduced_in","version":["v4.0.0"]}}} />
 
-<Metadata version="v18.14.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
 Applications running in Node.js will generally experience four categories of
 errors:
@@ -28,7 +28,7 @@ to provide _at least_ the properties available on that class.
 
 ### Error propagation and interception
 
-<Metadata version="v18.14.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
 Node.js supports several mechanisms for propagating and handling errors that
 occur while an application is running. How these errors are reported and
@@ -132,7 +132,7 @@ exactly how errors raised by those methods are propagated.
 
 #### Error-first callbacks
 
-<Metadata version="v18.14.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
 Most asynchronous methods exposed by the Node.js core API follow an idiomatic
 pattern referred to as an _error-first callback_. With this pattern, a callback
@@ -186,7 +186,7 @@ cases. If [domains][] are enabled, or a handler has been registered with
 
 ### <DataTag tag="C" /> `Error`
 
-<Metadata version="v18.14.0" data={{"type":"class"}} />
+<Metadata data={{"type":"class"}} />
 
 A generic JavaScript [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) object that does not denote any specific
 circumstance of why the error occurred. `Error` objects capture a "stack trace"
@@ -263,7 +263,7 @@ not capture any frames.
 
 #### <DataTag tag="M" /> `error.cause`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.9.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.9.0"]}}} />
 
 * [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
 
@@ -407,14 +407,14 @@ loop tick.
 
 ### <DataTag tag="C" /> `AssertionError`
 
-* Extends: [`errors.Error`](/api/errors#error)
+* Extends: [`errors.Error`](/api/v18/errors#error)
 
 Indicates the failure of an assertion. For details, see
 [`Class: assert.AssertionError`][].
 
 ### <DataTag tag="C" /> `RangeError`
 
-* Extends: [`errors.Error`](/api/errors#error)
+* Extends: [`errors.Error`](/api/v18/errors#error)
 
 Indicates that a provided argument was not within the set or range of
 acceptable values for a function; whether that is a numeric range, or
@@ -430,7 +430,7 @@ of argument validation.
 
 ### <DataTag tag="C" /> `ReferenceError`
 
-* Extends: [`errors.Error`](/api/errors#error)
+* Extends: [`errors.Error`](/api/v18/errors#error)
 
 Indicates that an attempt is being made to access a variable that is not
 defined. Such errors commonly indicate typos in code, or an otherwise broken
@@ -449,7 +449,7 @@ Unless an application is dynamically generating and running code,
 
 ### <DataTag tag="C" /> `SyntaxError`
 
-* Extends: [`errors.Error`](/api/errors#error)
+* Extends: [`errors.Error`](/api/v18/errors#error)
 
 Indicates that a program is not valid JavaScript. These errors may only be
 generated and propagated as a result of code evaluation. Code evaluation may
@@ -469,7 +469,7 @@ they may only be caught by other contexts.
 
 ### <DataTag tag="C" /> `SystemError`
 
-* Extends: [`errors.Error`](/api/errors#error)
+* Extends: [`errors.Error`](/api/v18/errors#error)
 
 Node.js generates system errors when exceptions occur within its runtime
 environment. These usually occur when an application violates an operating
@@ -613,7 +613,7 @@ program. For a comprehensive list, see the [`errno`(3) man page][].
 
 ### <DataTag tag="C" /> `TypeError`
 
-* Extends [`errors.Error`](/api/errors#error)
+* Extends [`errors.Error`](/api/v18/errors#error)
 
 Indicates that a provided argument is not an allowable type. For example,
 passing a function to a parameter which expects a string would be a `TypeError`.
@@ -628,7 +628,7 @@ of argument validation.
 
 ### Exceptions vs. errors
 
-<Metadata version="v18.14.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
 A JavaScript exception is a value that is thrown as a result of an invalid
 operation or as the target of a `throw` statement. While it is not required
@@ -671,7 +671,7 @@ A human-readable string describing the reason for the error.
 
 #### <DataTag tag="M" /> `ABORT_ERR`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 Used when an operation has been aborted (typically using an `AbortController`).
 
@@ -788,7 +788,7 @@ STDERR/STDOUT, and the data's length is longer than the `maxBuffer` option.
 
 #### <DataTag tag="M" /> `ERR_CLOSED_MESSAGE_PORT`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"11.12.0","pr-url":"https://github.com/nodejs/node/pull/26487","description":"The error message was removed."},{"version":["v16.2.0","v14.17.1"],"pr-url":"https://github.com/nodejs/node/pull/38510","description":"The error message was reintroduced."}],"update":{"type":"added","version":["v16.2.0","v14.17.1"]}}} />
+<Metadata data={{"changes":[{"version":"11.12.0","pr-url":"https://github.com/nodejs/node/pull/26487","description":"The error message was removed."},{"version":["v16.2.0","v14.17.1"],"pr-url":"https://github.com/nodejs/node/pull/38510","description":"The error message was reintroduced."}],"update":{"type":"added","version":["v16.2.0","v14.17.1"]}}} />
 
 There was an attempt to use a `MessagePort` instance in a closed
 state, usually after `.close()` has been called.
@@ -804,7 +804,7 @@ non-writable `stdout` or `stderr` stream.
 
 #### <DataTag tag="M" /> `ERR_CONSTRUCT_CALL_INVALID`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v12.5.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.5.0"]}}} />
 
 A class constructor was called that is not callable.
 
@@ -895,7 +895,7 @@ The selected public or private key encoding is incompatible with other options.
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_INITIALIZATION_FAILED`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 Initialization of the crypto subsystem failed.
 
@@ -903,7 +903,7 @@ Initialization of the crypto subsystem failed.
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_INVALID_AUTH_TAG`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 An invalid authentication tag was provided.
 
@@ -911,7 +911,7 @@ An invalid authentication tag was provided.
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_INVALID_COUNTER`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 An invalid counter was provided for a counter-mode cipher.
 
@@ -919,7 +919,7 @@ An invalid counter was provided for a counter-mode cipher.
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_INVALID_CURVE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 An invalid elliptic-curve was provided.
 
@@ -933,7 +933,7 @@ An invalid [crypto digest algorithm][] was specified.
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_INVALID_IV`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 An invalid initialization vector was provided.
 
@@ -941,7 +941,7 @@ An invalid initialization vector was provided.
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_INVALID_JWK`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 An invalid JSON Web Key was provided.
 
@@ -955,7 +955,7 @@ The given crypto key object's type is invalid for the attempted operation.
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_INVALID_KEYLEN`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 An invalid key length was provided.
 
@@ -963,7 +963,7 @@ An invalid key length was provided.
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_INVALID_KEYPAIR`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 An invalid key pair was provided.
 
@@ -971,7 +971,7 @@ An invalid key pair was provided.
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_INVALID_KEYTYPE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 An invalid key type was provided.
 
@@ -979,7 +979,7 @@ An invalid key type was provided.
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_INVALID_MESSAGELEN`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 An invalid message length was provided.
 
@@ -987,7 +987,7 @@ An invalid message length was provided.
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_INVALID_SCRYPT_PARAMS`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 Invalid scrypt algorithm parameters were provided.
 
@@ -1002,7 +1002,7 @@ instance, calling [`cipher.getAuthTag()`][] before calling `cipher.final()`.
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_INVALID_TAG_LENGTH`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 An invalid authentication tag length was provided.
 
@@ -1010,7 +1010,7 @@ An invalid authentication tag length was provided.
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_JOB_INIT_FAILED`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 Initialization of an asynchronous crypto operation failed.
 
@@ -1032,7 +1032,7 @@ Key's Asymmetric Key Type is not registered for use in the
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_OPERATION_FAILED`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 A crypto operation failed for an otherwise unspecified reason.
 
@@ -1087,7 +1087,7 @@ An unknown Diffie-Hellman group name was given. See
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_UNSUPPORTED_OPERATION`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
 
 An attempt to invoke an unsupported crypto operation was made.
 
@@ -1095,7 +1095,7 @@ An attempt to invoke an unsupported crypto operation was made.
 
 #### <DataTag tag="M" /> `ERR_DEBUGGER_ERROR`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.4.0","v14.17.4"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.4.0","v14.17.4"]}}} />
 
 An error occurred with the [debugger][].
 
@@ -1103,7 +1103,7 @@ An error occurred with the [debugger][].
 
 #### <DataTag tag="M" /> `ERR_DEBUGGER_STARTUP_ERROR`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.4.0","v14.17.4"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.4.0","v14.17.4"]}}} />
 
 The [debugger][] timed out waiting for the required host/port to be free.
 
@@ -1111,7 +1111,7 @@ The [debugger][] timed out waiting for the required host/port to be free.
 
 #### <DataTag tag="M" /> `ERR_DLOPEN_DISABLED`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.10.0","v14.19.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.10.0","v14.19.0"]}}} />
 
 Loading native addons has been disabled using [`--no-addons`][].
 
@@ -1119,7 +1119,7 @@ Loading native addons has been disabled using [`--no-addons`][].
 
 #### <DataTag tag="M" /> `ERR_DLOPEN_FAILED`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 A call to `process.dlopen()` failed.
 
@@ -1133,7 +1133,7 @@ The [`fs.Dir`][] was previously closed.
 
 #### <DataTag tag="M" /> `ERR_DIR_CONCURRENT_OPERATION`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v14.3.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v14.3.0"]}}} />
 
 A synchronous read or close call was attempted on an [`fs.Dir`][] which has
 ongoing asynchronous operations.
@@ -1215,7 +1215,7 @@ falsy value.
 
 #### <DataTag tag="M" /> `ERR_FEATURE_UNAVAILABLE_ON_PLATFORM`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v14.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v14.0.0"]}}} />
 
 Used when a feature that is not available
 to the current platform which is running Node.js is used.
@@ -1224,7 +1224,7 @@ to the current platform which is running Node.js is used.
 
 #### <DataTag tag="M" /> `ERR_FS_CP_DIR_TO_NON_DIR`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 An attempt was made to copy a directory to a non-directory (file, symlink,
 etc.) using [`fs.cp()`][].
@@ -1233,7 +1233,7 @@ etc.) using [`fs.cp()`][].
 
 #### <DataTag tag="M" /> `ERR_FS_CP_EEXIST`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 An attempt was made to copy over a file that already existed with
 [`fs.cp()`][], with the `force` and `errorOnExist` set to `true`.
@@ -1242,7 +1242,7 @@ An attempt was made to copy over a file that already existed with
 
 #### <DataTag tag="M" /> `ERR_FS_CP_EINVAL`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 When using [`fs.cp()`][], `src` or `dest` pointed to an invalid path.
 
@@ -1256,7 +1256,7 @@ Response body size doesn't match with the specified content-length header value.
 
 #### <DataTag tag="M" /> `ERR_FS_CP_FIFO_PIPE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 An attempt was made to copy a named pipe with [`fs.cp()`][].
 
@@ -1264,7 +1264,7 @@ An attempt was made to copy a named pipe with [`fs.cp()`][].
 
 #### <DataTag tag="M" /> `ERR_FS_CP_NON_DIR_TO_DIR`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 An attempt was made to copy a non-directory (file, symlink, etc.) to a directory
 using [`fs.cp()`][].
@@ -1273,7 +1273,7 @@ using [`fs.cp()`][].
 
 #### <DataTag tag="M" /> `ERR_FS_CP_SOCKET`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 An attempt was made to copy to a socket with [`fs.cp()`][].
 
@@ -1281,7 +1281,7 @@ An attempt was made to copy to a socket with [`fs.cp()`][].
 
 #### <DataTag tag="M" /> `ERR_FS_CP_SYMLINK_TO_SUBDIRECTORY`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 When using [`fs.cp()`][], a symlink in `dest` pointed to a subdirectory
 of `src`.
@@ -1290,7 +1290,7 @@ of `src`.
 
 #### <DataTag tag="M" /> `ERR_FS_CP_UNKNOWN`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v16.7.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.7.0"]}}} />
 
 An attempt was made to copy to an unknown file type with [`fs.cp()`][].
 
@@ -1638,7 +1638,7 @@ made to mark a stream and dependent of itself.
 
 #### <DataTag tag="M" /> `ERR_HTTP2_TOO_MANY_INVALID_FRAMES`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.14.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.14.0"]}}} />
 
 The limit of acceptable invalid HTTP/2 protocol frames sent by the peer,
 as specified through the `maxSessionInvalidFrames` option, has been exceeded.
@@ -1675,7 +1675,7 @@ An attempt was made to construct an object using a non-public constructor.
 
 #### <DataTag tag="M" /> `ERR_IMPORT_ASSERTION_TYPE_FAILED`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.1.0","v16.14.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.1.0","v16.14.0"]}}} />
 
 An import assertion has failed, preventing the specified module to be imported.
 
@@ -1683,7 +1683,7 @@ An import assertion has failed, preventing the specified module to be imported.
 
 #### <DataTag tag="M" /> `ERR_IMPORT_ASSERTION_TYPE_MISSING`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.1.0","v16.14.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.1.0","v16.14.0"]}}} />
 
 An import assertion is missing, preventing the specified module to be imported.
 
@@ -1691,7 +1691,7 @@ An import assertion is missing, preventing the specified module to be imported.
 
 #### <DataTag tag="M" /> `ERR_IMPORT_ASSERTION_TYPE_UNSUPPORTED`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v17.1.0","v16.14.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v17.1.0","v16.14.0"]}}} />
 
 An import assertion is not supported by this version of Node.js.
 
@@ -1706,7 +1706,11 @@ time.
 
 #### <DataTag tag="M" /> `ERR_INPUT_TYPE_NOT_ALLOWED`
 
-<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 The `--input-type` flag was used to attempt to execute a file. This flag can
 only be used with input via `--eval`, `--print`, or `STDIN`.
@@ -1876,7 +1880,7 @@ The syntax of a MIME is not valid.
 
 #### <DataTag tag="M" /> `ERR_INVALID_MODULE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0","v14.18.0"]}}} />
 
 An attempt was made to load a module that does not exist or was otherwise not
 valid.
@@ -1960,7 +1964,7 @@ type on execution, such as when a function is expected to return a promise.
 
 #### <DataTag tag="M" /> `ERR_INVALID_STATE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 Indicates that an operation cannot be completed due to an invalid state.
 For instance, an object may have already been destroyed, or may be
@@ -2061,7 +2065,7 @@ for more information.
 
 #### <DataTag tag="M" /> `ERR_LOADER_CHAIN_INCOMPLETE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v18.6.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.6.0"]}}} />
 
 An ESM loader hook returned without calling `next()` and without explicitly
 signaling a short circuit.
@@ -2139,7 +2143,7 @@ failed.
 
 #### <DataTag tag="M" /> `ERR_MESSAGE_TARGET_CONTEXT_UNAVAILABLE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v14.5.0","v12.19.0"]}}} />
 
 A message posted to a [`MessagePort`][] could not be deserialized in the target
 [vm][] `Context`. Not all Node.js objects can be successfully instantiated in
@@ -2187,7 +2191,7 @@ this error will not occur with standard builds of Node.js.
 
 #### <DataTag tag="M" /> `ERR_MISSING_TRANSFERABLE_IN_TRANSFER_LIST`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 An object that needs to be explicitly listed in the `transferList` argument
 is in the object passed to a [`postMessage()`][] call, but is not provided
@@ -2323,7 +2327,7 @@ cannot be imported through the package resolution, unless using an absolute URL.
 
 #### <DataTag tag="M" /> `ERR_PARSE_ARGS_INVALID_OPTION_VALUE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v18.3.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.3.0"]}}} />
 
 When `strict` set to `true`, thrown by [`util.parseArgs()`][] if a [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 value is provided for an option of type [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type), or if a [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
@@ -2333,7 +2337,7 @@ value is provided for an option of type [`boolean`](https://developer.mozilla.or
 
 #### <DataTag tag="M" /> `ERR_PARSE_ARGS_UNEXPECTED_POSITIONAL`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v18.3.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.3.0"]}}} />
 
 Thrown by [`util.parseArgs()`][], when a positional argument is provided and
 `allowPositionals` is set to `false`.
@@ -2342,7 +2346,7 @@ Thrown by [`util.parseArgs()`][], when a positional argument is provided and
 
 #### <DataTag tag="M" /> `ERR_PARSE_ARGS_UNKNOWN_OPTION`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v18.3.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.3.0"]}}} />
 
 When `strict` set to `true`, thrown by [`util.parseArgs()`][] if an argument
 is not configured in `options`.
@@ -2372,7 +2376,11 @@ object.
 
 #### <DataTag tag="M" /> `ERR_REQUIRE_ESM`
 
-<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 An attempt was made to `require()` an [ES Module][].
 
@@ -2631,7 +2639,7 @@ connection.
 
 #### <DataTag tag="M" /> `ERR_TLS_INVALID_CONTEXT`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v13.3.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.3.0"]}}} />
 
 The context must be a `SecureContext`.
 
@@ -2652,7 +2660,7 @@ Valid TLS protocol versions are `'TLSv1'`, `'TLSv1.1'`, or `'TLSv1.2'`.
 
 #### <DataTag tag="M" /> `ERR_TLS_INVALID_STATE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
 The TLS socket must be connected and securely established. Ensure the 'secure'
 event is emitted before continuing.
@@ -2784,7 +2792,11 @@ An invalid or unknown encoding option was passed to an API.
 
 #### <DataTag tag="M" /> `ERR_UNKNOWN_FILE_EXTENSION`
 
-<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 An attempt was made to load a module with an unknown or unsupported file
 extension.
@@ -2793,7 +2805,11 @@ extension.
 
 #### <DataTag tag="M" /> `ERR_UNKNOWN_MODULE_FORMAT`
 
-<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 An attempt was made to load a module with an unknown or unsupported format.
 
@@ -2828,7 +2844,11 @@ import 'package-name'; // supported
 
 #### <DataTag tag="M" /> `ERR_USE_AFTER_CLOSE`
 
-<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 An attempt was made to use something that was already closed.
 
@@ -2910,7 +2930,7 @@ The WASI instance has not been started.
 
 #### <DataTag tag="M" /> `ERR_WEBASSEMBLY_RESPONSE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v18.1.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v18.1.0"]}}} />
 
 The `Response` that has been passed to `WebAssembly.compileStreaming` or to
 `WebAssembly.instantiateStreaming` is not a valid WebAssembly response.
@@ -2969,7 +2989,7 @@ Creation of a [`zlib`][] object failed due to incorrect configuration.
 
 #### <DataTag tag="M" /> `HPE_HEADER_OVERFLOW`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":["v11.4.0","v10.15.0"],"commit":"186035243fad247e3955f","pr-url":"https://github.com/nodejs-private/node-private/pull/143","description":"Max header size in `http_parser` was set to 8 KiB."}]}} />
+<Metadata data={{"changes":[{"version":["v11.4.0","v10.15.0"],"commit":"186035243fad247e3955f","pr-url":"https://github.com/nodejs-private/node-private/pull/143","description":"Max header size in `http_parser` was set to 8 KiB."}]}} />
 
 Too much HTTP header data was received. In order to protect against malicious or
 malconfigured clients, if more than 8 KiB of HTTP header data is received then
@@ -2992,20 +3012,24 @@ Use `Content-Length` or `Transfer-Encoding: chunked`.
 
 #### <DataTag tag="M" /> `MODULE_NOT_FOUND`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25690","description":"Added `requireStack` property."}]}} />
+<Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/25690","description":"Added `requireStack` property."}]}} />
 
 A module file could not be resolved by the CommonJS modules loader while
 attempting a [`require()`][] operation or when loading the program entry point.
 
 ### Legacy Node.js error codes
 
-<Metadata version="v18.14.0" data={{"stability":{"level":0,"text":" - Deprecated. These error codes are either inconsistent, or have been removed."}}} />
+<Stability stability={0}>
+
+Deprecated. These error codes are either inconsistent, or have been removed.
+
+</Stability>
 
 <a id="ERR_CANNOT_TRANSFER_OBJECT"></a>
 
 #### <DataTag tag="M" /> `ERR_CANNOT_TRANSFER_OBJECT`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v12.5.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v12.5.0"]}}} />
 
 The value passed to `postMessage()` contained an object that is not supported
 for transferring.
@@ -3014,7 +3038,7 @@ for transferring.
 
 #### <DataTag tag="M" /> `ERR_CRYPTO_HASH_DIGEST_NO_UTF16`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v12.12.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v12.12.0"]}}} />
 
 The UTF-16 encoding was used with [`hash.digest()`][]. While the
 `hash.digest()` method does allow an `encoding` argument to be passed in,
@@ -3025,7 +3049,7 @@ encoding (e.g. `ucs` or `utf16le`) is not supported.
 
 #### <DataTag tag="M" /> `ERR_HTTP2_FRAME_ERROR`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
 
 Used when a failure occurs sending an individual frame on the HTTP/2
 session.
@@ -3034,7 +3058,7 @@ session.
 
 #### <DataTag tag="M" /> `ERR_HTTP2_HEADERS_OBJECT`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
 
 Used when an HTTP/2 Headers Object is expected.
 
@@ -3042,7 +3066,7 @@ Used when an HTTP/2 Headers Object is expected.
 
 #### <DataTag tag="M" /> `ERR_HTTP2_HEADER_REQUIRED`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
 
 Used when a required header is missing in an HTTP/2 message.
 
@@ -3050,7 +3074,7 @@ Used when a required header is missing in an HTTP/2 message.
 
 #### <DataTag tag="M" /> `ERR_HTTP2_INFO_HEADERS_AFTER_RESPOND`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
 
 HTTP/2 informational headers must only be sent _prior_ to calling the
 `Http2Stream.prototype.respond()` method.
@@ -3059,7 +3083,7 @@ HTTP/2 informational headers must only be sent _prior_ to calling the
 
 #### <DataTag tag="M" /> `ERR_HTTP2_STREAM_CLOSED`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
 
 Used when an action has been performed on an HTTP/2 Stream that has already
 been closed.
@@ -3068,7 +3092,7 @@ been closed.
 
 #### <DataTag tag="M" /> `ERR_HTTP_INVALID_CHAR`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
 
 Used when an invalid character is found in an HTTP response status message
 (reason phrase).
@@ -3077,7 +3101,7 @@ Used when an invalid character is found in an HTTP response status message
 
 #### <DataTag tag="M" /> `ERR_INDEX_OUT_OF_RANGE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v11.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v11.0.0"]}}} />
 
 A given index was out of the accepted range (e.g. negative offsets).
 
@@ -3085,7 +3109,7 @@ A given index was out of the accepted range (e.g. negative offsets).
 
 #### <DataTag tag="M" /> `ERR_INVALID_OPT_VALUE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v15.0.0"]}}} />
 
 An invalid or unexpected value was passed in an options object.
 
@@ -3093,7 +3117,7 @@ An invalid or unexpected value was passed in an options object.
 
 #### <DataTag tag="M" /> `ERR_INVALID_OPT_VALUE_ENCODING`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v15.0.0"]}}} />
 
 An invalid or unknown file encoding was passed.
 
@@ -3101,7 +3125,7 @@ An invalid or unknown file encoding was passed.
 
 #### <DataTag tag="M" /> `ERR_MISSING_MESSAGE_PORT_IN_TRANSFER_LIST`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v15.0.0"]}}} />
 
 This error code was replaced by [`ERR_MISSING_TRANSFERABLE_IN_TRANSFER_LIST`][]
 in Node.js v15.0.0, because it is no longer accurate as other types of
@@ -3111,7 +3135,7 @@ transferable objects also exist now.
 
 #### <DataTag tag="M" /> `ERR_NAPI_CONS_PROTOTYPE_OBJECT`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
 
 Used by the `Node-API` when `Constructor.prototype` is not an object.
 
@@ -3119,7 +3143,11 @@ Used by the `Node-API` when `Constructor.prototype` is not an object.
 
 #### <DataTag tag="M" /> `ERR_NETWORK_IMPORT_BAD_RESPONSE`
 
-<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 Response was received but was invalid when importing a module over the network.
 
@@ -3127,7 +3155,11 @@ Response was received but was invalid when importing a module over the network.
 
 #### <DataTag tag="M" /> `ERR_NETWORK_IMPORT_DISALLOWED`
 
-<Metadata version="v18.14.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 A network module attempted to load another module that it is not allowed to
 load. Likely this restriction is for security reasons.
@@ -3143,7 +3175,7 @@ A Node.js API was called in an unsupported manner, such as
 
 #### <DataTag tag="M" /> `ERR_OPERATION_FAILED`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"added","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v15.0.0"]}}} />
 
 An operation failed. This is typically used to signal the general failure
 of an asynchronous operation.
@@ -3152,7 +3184,7 @@ of an asynchronous operation.
 
 #### <DataTag tag="M" /> `ERR_OUTOFMEMORY`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
 
 Used generically to identify that an operation caused an out of memory
 condition.
@@ -3161,7 +3193,7 @@ condition.
 
 #### <DataTag tag="M" /> `ERR_PARSE_HISTORY_DATA`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
 
 The `node:repl` module was unable to parse data from the REPL history file.
 
@@ -3169,7 +3201,7 @@ The `node:repl` module was unable to parse data from the REPL history file.
 
 #### <DataTag tag="M" /> `ERR_SOCKET_CANNOT_SEND`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v14.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v14.0.0"]}}} />
 
 Data could not be sent on a socket.
 
@@ -3177,7 +3209,7 @@ Data could not be sent on a socket.
 
 #### <DataTag tag="M" /> `ERR_STDERR_CLOSE`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/23053","description":"Rather than emitting an error, `process.stderr.end()` now only closes the stream side but not the underlying resource, making this error obsolete."}],"update":{"type":"removed","version":["v10.12.0"]}}} />
+<Metadata data={{"changes":[{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/23053","description":"Rather than emitting an error, `process.stderr.end()` now only closes the stream side but not the underlying resource, making this error obsolete."}],"update":{"type":"removed","version":["v10.12.0"]}}} />
 
 An attempt was made to close the `process.stderr` stream. By design, Node.js
 does not allow `stdout` or `stderr` streams to be closed by user code.
@@ -3186,7 +3218,7 @@ does not allow `stdout` or `stderr` streams to be closed by user code.
 
 #### <DataTag tag="M" /> `ERR_STDOUT_CLOSE`
 
-<Metadata version="v18.14.0" data={{"changes":[{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/23053","description":"Rather than emitting an error, `process.stderr.end()` now only closes the stream side but not the underlying resource, making this error obsolete."}],"update":{"type":"removed","version":["v10.12.0"]}}} />
+<Metadata data={{"changes":[{"version":"v10.12.0","pr-url":"https://github.com/nodejs/node/pull/23053","description":"Rather than emitting an error, `process.stderr.end()` now only closes the stream side but not the underlying resource, making this error obsolete."}],"update":{"type":"removed","version":["v10.12.0"]}}} />
 
 An attempt was made to close the `process.stdout` stream. By design, Node.js
 does not allow `stdout` or `stderr` streams to be closed by user code.
@@ -3195,7 +3227,7 @@ does not allow `stdout` or `stderr` streams to be closed by user code.
 
 #### <DataTag tag="M" /> `ERR_STREAM_READ_NOT_IMPLEMENTED`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
 
 Used when an attempt is made to use a readable stream that has not implemented
 [`readable._read()`][].
@@ -3204,7 +3236,7 @@ Used when an attempt is made to use a readable stream that has not implemented
 
 #### <DataTag tag="M" /> `ERR_TLS_RENEGOTIATION_FAILED`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
 
 Used when a TLS renegotiation request has failed in a non-specific way.
 
@@ -3212,7 +3244,7 @@ Used when a TLS renegotiation request has failed in a non-specific way.
 
 #### <DataTag tag="M" /> `ERR_TRANSFERRING_EXTERNALIZED_SHAREDARRAYBUFFER`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v14.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v14.0.0"]}}} />
 
 A `SharedArrayBuffer` whose memory is not managed by the JavaScript engine
 or by Node.js was encountered during serialization. Such a `SharedArrayBuffer`
@@ -3225,7 +3257,7 @@ This can only happen when native addons create `SharedArrayBuffer`s in
 
 #### <DataTag tag="M" /> `ERR_UNKNOWN_STDIN_TYPE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v11.7.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v11.7.0"]}}} />
 
 An attempt was made to launch a Node.js process with an unknown `stdin` file
 type. This error is usually an indication of a bug within Node.js itself,
@@ -3235,7 +3267,7 @@ although it is possible for user code to trigger it.
 
 #### <DataTag tag="M" /> `ERR_UNKNOWN_STREAM_TYPE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v11.7.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v11.7.0"]}}} />
 
 An attempt was made to launch a Node.js process with an unknown `stdout` or
 `stderr` file type. This error is usually an indication of a bug within Node.js
@@ -3251,7 +3283,7 @@ The V8 `BreakIterator` API was used but the full ICU data set is not installed.
 
 #### <DataTag tag="M" /> `ERR_VALUE_OUT_OF_RANGE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
 
 Used when a given value is out of the accepted range.
 
@@ -3265,7 +3297,7 @@ The module must be successfully linked before instantiation.
 
 #### <DataTag tag="M" /> `ERR_VM_MODULE_LINKING_ERRORED`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v18.1.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v18.1.0"]}}} />
 
 The linker function returned a module for which linking has failed.
 
@@ -3273,7 +3305,7 @@ The linker function returned a module for which linking has failed.
 
 #### <DataTag tag="M" /> `ERR_WORKER_UNSUPPORTED_EXTENSION`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v16.9.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v16.9.0"]}}} />
 
 The pathname used for the main script of a worker has an
 unknown file extension.
@@ -3282,7 +3314,7 @@ unknown file extension.
 
 #### <DataTag tag="M" /> `ERR_ZLIB_BINDING_CLOSED`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v10.0.0"]}}} />
 
 Used when an attempt is made to use a `zlib` object after it has already been
 closed.
@@ -3291,7 +3323,7 @@ closed.
 
 #### <DataTag tag="M" /> `ERR_CPU_USAGE`
 
-<Metadata version="v18.14.0" data={{"update":{"type":"removed","version":["v15.0.0"]}}} />
+<Metadata data={{"update":{"type":"removed","version":["v15.0.0"]}}} />
 
 The native call from `process.cpuUsage` could not be processed.
 

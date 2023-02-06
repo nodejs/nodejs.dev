@@ -5,11 +5,11 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata version="v19.6.0" data={{"update":{"type":"introduced_in","version":["v12.20.0"]}}} />
+<Metadata data={{"update":{"type":"introduced_in","version":["v12.20.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"type":"misc"}} />
+<Metadata data={{"type":"misc"}} />
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v14.13.0","v12.20.0"],"pr-url":"https://github.com/nodejs/node/pull/34718","description":"Add support for `\"exports\"` patterns."},{"version":["v14.6.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34117","description":"Add package `\"imports\"` field."},{"version":["v13.7.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29866","description":"Unflag conditional exports."},{"version":["v13.7.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/31001","description":"Remove the `--experimental-conditional-exports` option. In 12.16.0, conditional exports are still behind `--experimental-modules`."},{"version":["v13.6.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/31002","description":"Unflag self-referencing a package using its name."},{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28568","description":"Introduce `\"exports\"` `package.json` field as a more powerful alternative to the classic `\"main\"` field."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26745","description":"Add support for ES modules using `.js` file extension via `package.json` `\"type\"` field."}]}} />
+<Metadata data={{"changes":[{"version":["v14.13.0","v12.20.0"],"pr-url":"https://github.com/nodejs/node/pull/34718","description":"Add support for `\"exports\"` patterns."},{"version":["v14.6.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34117","description":"Add package `\"imports\"` field."},{"version":["v13.7.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29866","description":"Unflag conditional exports."},{"version":["v13.7.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/31001","description":"Remove the `--experimental-conditional-exports` option. In 12.16.0, conditional exports are still behind `--experimental-modules`."},{"version":["v13.6.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/31002","description":"Unflag self-referencing a package using its name."},{"version":"v12.7.0","pr-url":"https://github.com/nodejs/node/pull/28568","description":"Introduce `\"exports\"` `package.json` field as a more powerful alternative to the classic `\"main\"` field."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/26745","description":"Add support for ES modules using `.js` file extension via `package.json` `\"type\"` field."}]}} />
 
 ### Introduction
 
@@ -157,7 +157,7 @@ package:
 
 #### <DataTag tag="M" /> `--input-type` flag
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.0.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.0.0"]}}} />
 
 Strings passed in as an argument to `--eval` (or `-e`), or piped to `node` via
 `STDIN`, are treated as [ES modules][] when the `--input-type=module` flag
@@ -175,7 +175,11 @@ unspecified.
 
 ### Determining package manager
 
-<Metadata version="v19.6.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 While all Node.js projects are expected to be installable by all package
 managers once published, their development teams are often required to use one
@@ -311,7 +315,7 @@ alongside `"exports"` pointing to the same module:
 
 #### Subpath exports
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.7.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.7.0"]}}} />
 
 When using the [`"exports"`][] field, custom subpaths can be defined along
 with the main entry point by treating the main entry point as the
@@ -362,7 +366,7 @@ in relative and absolute import specifiers.
 
 #### Exports sugar
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v12.11.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v12.11.0"]}}} />
 
 If the `"."` export is the only export, the [`"exports"`][] field provides sugar
 for this case being the direct [`"exports"`][] field value.
@@ -385,7 +389,7 @@ can be written:
 
 #### Subpath imports
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v14.6.0","v12.19.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v14.6.0","v12.19.0"]}}} />
 
 In addition to the [`"exports"`][] field, there is a package `"imports"` field
 to create private mappings that only apply to import specifiers from within the
@@ -424,7 +428,7 @@ exports field.
 
 #### Subpath patterns
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v16.10.0","v14.19.0"],"pr-url":"https://github.com/nodejs/node/pull/40041","description":"Support pattern trailers in \"imports\" field."},{"version":["v16.9.0","v14.19.0"],"pr-url":"https://github.com/nodejs/node/pull/39635","description":"Support pattern trailers."}],"update":{"type":"added","version":["v14.13.0","v12.20.0"]}}} />
+<Metadata data={{"changes":[{"version":["v16.10.0","v14.19.0"],"pr-url":"https://github.com/nodejs/node/pull/40041","description":"Support pattern trailers in \"imports\" field."},{"version":["v16.9.0","v14.19.0"],"pr-url":"https://github.com/nodejs/node/pull/39635","description":"Support pattern trailers."}],"update":{"type":"added","version":["v14.13.0","v12.20.0"]}}} />
 
 For packages with a small number of exports or imports, we recommend
 explicitly listing each exports subpath entry. But for packages that have
@@ -494,7 +498,7 @@ import featureX from 'es-module-package/features/x.js';
 
 #### Conditional exports
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v13.7.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/31001","description":"Unflag conditional exports."}],"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
+<Metadata data={{"changes":[{"version":["v13.7.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/31001","description":"Unflag conditional exports."}],"update":{"type":"added","version":["v13.2.0","v12.16.0"]}}} />
 
 Conditional exports provide a way to map to different paths depending on
 certain conditions. They are supported for both CommonJS and ES module imports.
@@ -603,7 +607,7 @@ conditions behave analogously to nested JavaScript `if` statements.
 
 #### Resolving user conditions
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v14.9.0","v12.19.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v14.9.0","v12.19.0"]}}} />
 
 When running Node.js, custom user conditions can be added with the
 `--conditions` flag:
@@ -664,7 +668,7 @@ course.
 
 #### Self-referencing a package using its name
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v13.6.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/31002","description":"Unflag self-referencing a package using its name."}],"update":{"type":"added","version":["v13.1.0","v12.16.0"]}}} />
+<Metadata data={{"changes":[{"version":["v13.6.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/31002","description":"Unflag self-referencing a package using its name."}],"update":{"type":"added","version":["v13.1.0","v12.16.0"]}}} />
 
 Within a package, the values defined in the package's
 `package.json` [`"exports"`][] field can be referenced via the package's name.
@@ -1018,7 +1022,7 @@ The following fields in `package.json` files are used in Node.js:
 
 #### <DataTag tag="M" /> `"name"`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v13.6.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/31002","description":"Remove the `--experimental-resolve-self` option."}],"update":{"type":"added","version":["v13.1.0","v12.16.0"]}}} />
+<Metadata data={{"changes":[{"version":["v13.6.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/31002","description":"Remove the `--experimental-resolve-self` option."}],"update":{"type":"added","version":["v13.1.0","v12.16.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1037,7 +1041,7 @@ The `"name"` field can be used in addition to the [`"exports"`][] field to
 
 #### <DataTag tag="M" /> `"main"`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v0.4.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v0.4.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1063,9 +1067,13 @@ require('./path/to/directory');
 
 #### <DataTag tag="M" /> `"packageManager"`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v16.9.0","v14.19.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v16.9.0","v14.19.0"]}}} />
 
-<Metadata version="v19.6.0" data={{"stability":{"level":1,"text":" - Experimental"}}} />
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1086,7 +1094,7 @@ This field is currently experimental and needs to be opted-in; check the
 
 #### <DataTag tag="M" /> `"type"`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v13.2.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29866","description":"Unflag `--experimental-modules`."}],"update":{"type":"added","version":["v12.0.0"]}}} />
+<Metadata data={{"changes":[{"version":["v13.2.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29866","description":"Unflag `--experimental-modules`."}],"update":{"type":"added","version":["v12.0.0"]}}} />
 
 * Type: [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
@@ -1131,7 +1139,7 @@ as ES modules and `.cjs` files are always treated as CommonJS.
 
 #### <DataTag tag="M" /> `"exports"`
 
-<Metadata version="v19.6.0" data={{"changes":[{"version":["v14.13.0","v12.20.0"],"pr-url":"https://github.com/nodejs/node/pull/34718","description":"Add support for `\"exports\"` patterns."},{"version":["v13.7.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29866","description":"Unflag conditional exports."},{"version":["v13.7.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/31008","description":"Implement logical conditional exports ordering."},{"version":["v13.7.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/31001","description":"Remove the `--experimental-conditional-exports` option. In 12.16.0, conditional exports are still behind `--experimental-modules`."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/29978","description":"Implement conditional exports."}],"update":{"type":"added","version":["v12.7.0"]}}} />
+<Metadata data={{"changes":[{"version":["v14.13.0","v12.20.0"],"pr-url":"https://github.com/nodejs/node/pull/34718","description":"Add support for `\"exports\"` patterns."},{"version":["v13.7.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/29866","description":"Unflag conditional exports."},{"version":["v13.7.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/31008","description":"Implement logical conditional exports ordering."},{"version":["v13.7.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/31001","description":"Remove the `--experimental-conditional-exports` option. In 12.16.0, conditional exports are still behind `--experimental-modules`."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/29978","description":"Implement conditional exports."}],"update":{"type":"added","version":["v12.7.0"]}}} />
 
 * Type: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | string\[]
 
@@ -1156,7 +1164,7 @@ All paths defined in the `"exports"` must be relative file URLs starting with
 
 #### <DataTag tag="M" /> `"imports"`
 
-<Metadata version="v19.6.0" data={{"update":{"type":"added","version":["v14.6.0","v12.19.0"]}}} />
+<Metadata data={{"update":{"type":"added","version":["v14.6.0","v12.19.0"]}}} />
 
 * Type: [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 

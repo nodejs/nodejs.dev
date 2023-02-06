@@ -12,6 +12,7 @@ export const mdxComponents = {
 };
 
 export const apiMdxComponents = {
+  Stability: ApiComponents.Stability,
   DataTag: ArticleComponents.DataTag,
   a: ApiComponents.ApiLink,
   h3: ApiComponents.H3,
