@@ -154,9 +154,7 @@ export async function fetchRandomContributor(): Promise<Contributor> {
 export function useNodeJsContributorsApi(
   isVisible: boolean
 ): Contributor | null | undefined {
-  const [contributor, setContributor] = useState<
-    Contributor | null 
-  >(null);
+  const [contributor, setContributor] = useState<Contributor | null>(null);
 
   useEffect(() => {
     if (isVisible) {
