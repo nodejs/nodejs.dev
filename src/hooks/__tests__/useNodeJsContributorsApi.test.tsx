@@ -1,18 +1,24 @@
-import { getMaxContributors, getContributor, fetchRandomContributor, linkParser } from '../useNodeJsContributorsApi';
+import {
+  getMaxContributors,
+  getContributor,
+  fetchRandomContributor,
+  linkParser,
+} from '../useNodeJsContributorsApi';
 
 describe('linkParser', () => {
   it('should parse the Link header correctly', () => {
-    const linkHeader = '<https://api.github.com/repos/nodejs/node/contributors?per_page=5&page=2>; rel="next", <https://api.github.com/repos/nodejs/node/contributors?per_page=5&page=3>; rel="last"';
+    const linkHeader =
+      '<https://api.github.com/repos/nodejs/node/contributors?per_page=5&page=2>; rel="next", <https://api.github.com/repos/nodejs/node/contributors?per_page=5&page=3>; rel="last"';
     const parsedLinks = linkParser(linkHeader);
     expect(parsedLinks).toEqual({
       next: {
         url: 'https://api.github.com/repos/nodejs/node/contributors?per_page=5&page=2',
-        page: 2
+        page: 2,
       },
       last: {
         url: 'https://api.github.com/repos/nodejs/node/contributors?per_page=5&page=3',
-        page: 3
-      }
+        page: 3,
+      },
     });
   });
 });
