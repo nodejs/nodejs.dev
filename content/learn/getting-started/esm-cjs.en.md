@@ -32,7 +32,7 @@ The main difference between ESM and CJS is that ESM is asynchronous by default a
 
 ## ESM is asynchronous by default
 
-ESM is asynchronous by default. This means that when you import a module, you get a promise. This promise resolves to the module exports.
+ESM is asynchronous by default. This means that when you import a module, you get a promise. This promise resolves the module exports.
 
 ```js
 import { readFile } from 'fs/promises'
