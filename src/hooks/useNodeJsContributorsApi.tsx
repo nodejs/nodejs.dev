@@ -67,10 +67,8 @@ async function getMaxContributors(): Promise<[number, number]> {
  * @param randomPage
  */
 async function getContributor(randomPage: number): Promise<Contributor> {
-  const response = await fetch(
-    `${CONTRIBUTORS_API_URI}&page=${randomPage}`
-  );
-  const jsonResponse = await response.json() as ContributorApiResponse[];
+  const response = await fetch(`${CONTRIBUTORS_API_URI}&page=${randomPage}`);
+  const jsonResponse = (await response.json()) as ContributorApiResponse[];
 
   const contributorData: Contributor[] = jsonResponse.map(
     ({ avatar_url, login, contributions, html_url }) => ({
