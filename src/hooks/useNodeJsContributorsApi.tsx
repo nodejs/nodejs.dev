@@ -5,7 +5,7 @@ import type {
   ContributorApiResponse,
 } from '../types/nodejsContributors';
 
-const limitContributors = 5;
+const LIMIT_CONTRIBUTORS = 5;
 const CONTRIBUTORS_API_URI = `https://api.github.com/repos/nodejs/node/contributors?per_page=${limitContributors}`;
 
 /**
