@@ -6,7 +6,7 @@ import type {
 } from '../types/nodejsContributors';
 
 const LIMIT_CONTRIBUTORS = 5;
-const CONTRIBUTORS_API_URI = `https://api.github.com/repos/nodejs/node/contributors?per_page=${limitContributors}`;
+const CONTRIBUTORS_API_URI = `https://api.github.com/repos/nodejs/node/contributors?per_page=${LIMIT_CONTRIBUTORS}`;
 
 /**
  * Parses "Link" response header from node/contributors API
@@ -20,7 +20,7 @@ function linkParser(linkHeader: string): {
   };
 } {
   const regex = new RegExp(
-    `<([^?]+\\?per_page=${limitContributors}&[a-z]+=([\\d]+))>;[\\s]*rel="([a-z]+)"`,
+    `<([^?]+\\?per_page=${LIMIT_CONTRIBUTORS}&[a-z]+=([\\d]+))>;[\\s]*rel="([a-z]+)"`,
     'g'
   );
   let array: RegExpExecArray | null = null;
@@ -67,38 +67,12 @@ async function getMaxContributors(): Promise<[number, number]> {
  * @param randomPage
  */
 async function getContributor(randomPage: number): Promise<Contributor> {
-async function getContributor(randomPage: number): Promise<Contributor> {
   const response = await fetch(
     `${CONTRIBUTORS_API_URI}&page=${randomPage}`
   );
   const jsonResponse = await response.json() as ContributorApiResponse[];
 
   const contributorData: Contributor[] = jsonResponse.map(
-    ({ avatar_url, login, contributions, html_url }) => ({
-      avatarUri: avatar_url,
-      login,
-      contributionsCount: contributions,
-      profileUri: html_url,
-      commitsListUri: `https://github.com/nodejs/node/commits?author=${login}`,
-    })
-  );
-
-  const contributor = contributorData.shift() as Contributor;
-
-  if (window.localStorage) {
-    window.localStorage.setItem(
-      'contributors',
-      JSON.stringify(contributorData)
-    );
-  }
-
-  return contributor;
-}
-
-    `${CONTRIBUTORS_API_URI}&page=${randomPage}`
-  ).then(data => data.json() as Promise<ContributorApiResponse[]>);
-
-  const contributorData: Contributor[] = response.map(
     ({ avatar_url, login, contributions, html_url }) => ({
       avatarUri: avatar_url,
       login,
