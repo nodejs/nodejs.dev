@@ -14,7 +14,7 @@ const CONTRIBUTORS_API_URI = `https://api.github.com/repos/nodejs/node/contribut
  * @param linkHeader
  */
 export function linkParser(linkHeader: string): {
-  [keu: string]: {
+  [key: string]: {
     url: string;
     page: number;
   };
