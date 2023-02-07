@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import { useEffect, useState } from 'react';
+import fetch from 'node-fetch';
 import type {
   Contributor,
   ContributorApiResponse,
