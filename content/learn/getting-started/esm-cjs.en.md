@@ -8,7 +8,7 @@ category: learn
 
 To understand the difference between ESM and CJS, we need to understand the difference between the two module systems.
 
-## Bit of history
+## Bit of History
 
 CJS was introduced in Node.js `V0.1.90`. ESM was introduced in Node.js `V12.17` It was introduced as an experimental feature. It was made stable in Node.js `V14`.
 
