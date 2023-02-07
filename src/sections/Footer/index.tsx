@@ -6,6 +6,7 @@ import {
   faGithub,
   faSlack,
   faTwitter,
+  faMastodon,
 } from '@fortawesome/free-brands-svg-icons';
 import styles from './index.module.scss';
 
@@ -71,6 +72,19 @@ const Footer = (): JSX.Element => (
         >
           <FontAwesomeIcon
             icon={faGithub}
+            color="var(--color-text-secondary)"
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          target="_blank"
+          href="https://mastodon.social/@nodejs@social.lfx.dev"
+          rel="noopener noreferrer"
+          aria-label="Node.js Mastodon (opens in new tab)"
+        >
+          <FontAwesomeIcon
+            icon={faMastodon}
             color="var(--color-text-secondary)"
           />
         </a>
