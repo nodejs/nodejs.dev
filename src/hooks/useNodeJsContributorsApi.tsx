@@ -15,7 +15,7 @@ const CONTRIBUTORS_API_URI = `https://api.github.com/repos/nodejs/node/contribut
  * @param linkHeader
  */
 export function linkParser(linkHeader: string): {
-  [keu: string]: {
+  [key: string]: {
     url: string;
     page: number;
   };
@@ -155,7 +155,7 @@ export function useNodeJsContributorsApi(
   isVisible: boolean
 ): Contributor | null | undefined {
   const [contributor, setContributor] = useState<
-    Contributor | null | undefined
+    Contributor | null 
   >(null);
 
   useEffect(() => {
