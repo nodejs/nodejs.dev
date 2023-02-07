@@ -125,48 +125,6 @@ async function getContributor(randomPage: number): Promise<Contributor> {
  * Trying to store cached data in localStorage in order to do less consequent requests
  */
 export async function fetchRandomContributor(): Promise<Contributor> {
-  const ONE_MONTH_MS = 2592000000;
-
-  let maxContributors = null;
-  let fetchDate = null;
-  let contributors: Contributor[] = [];
-  if (window.localStorage) {
-    maxContributors = parseInt(
-      window.localStorage.getItem('max_contributors') || '',
-      10
-    );
-    fetchDate = parseInt(
-      window.localStorage.getItem('fetch_date') || '',
-      10
-    );
-    contributors = JSON.parse(
-      window.localStorage.getItem('contributors') || '[]'
-    );
-  }
-
-  const needToRefetch = fetchDate && Date.now() - fetchDate >= ONE_MONTH_MS;
-
-  if (contributors.length > 0 && !needToRefetch) {
-    const contributor = contributors.shift();
-    if (window.localStorage) {
-      localStorage.setItem('contributors', JSON.stringify(contributors));
-    }
-    return contributor;
-  }
-
-  if (maxContributors && !needToRefetch) {
-    return await getContributor(
-      Math.floor(Math.random() * Math.floor(maxContributors)) + 1
-    );
-  }
-
-  const [randomPage] = await getMaxContributors();
-  const contributor = await getContributor(randomPage);
-  if (window.localStorage) {
-    window.localStorage.setItem('fetch_date', String(Date.now()));
-  }
-  return contributor;
-}
   let maxContributors: number | null = null;
   let fetchDate: number | null = null;
   let needToRefetch = false;
