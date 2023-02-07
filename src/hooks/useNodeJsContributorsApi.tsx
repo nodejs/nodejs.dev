@@ -13,7 +13,7 @@ const CONTRIBUTORS_API_URI = `https://api.github.com/repos/nodejs/node/contribut
  * Returns page values for "next" and "last" API URLs
  * @param linkHeader
  */
-function linkParser(linkHeader: string): {
+export function linkParser(linkHeader: string): {
   [keu: string]: {
     url: string;
     page: number;
@@ -44,7 +44,7 @@ function linkParser(linkHeader: string): {
  * Retrieves max amount of contributors for Node.js main repo.
  * Returns array with random contributor index and max contributors found.
  */
-async function getMaxContributors(): Promise<[number, number]> {
+export async function getMaxContributors(): Promise<[number, number]> {
   const response = await fetch(CONTRIBUTORS_API_URI);
   const linksHeaderValue = response.headers.get('Link');
 
@@ -66,7 +66,7 @@ async function getMaxContributors(): Promise<[number, number]> {
  * Retrieves a contributor's object by it's index in API
  * @param randomPage
  */
-async function getContributor(randomPage: number): Promise<Contributor> {
+export async function getContributor(randomPage: number): Promise<Contributor> {
   const response = await fetch(`${CONTRIBUTORS_API_URI}&page=${randomPage}`);
   const jsonResponse = (await response.json()) as ContributorApiResponse[];
 
