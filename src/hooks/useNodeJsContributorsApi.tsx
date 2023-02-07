@@ -154,7 +154,7 @@ export function useNodeJsContributorsApi(
   isVisible: boolean
 ): Contributor | null | undefined {
   const [contributor, setContributor] = useState<
-    Contributor | null | undefined
+    Contributor | null 
   >(null);
 
   useEffect(() => {
