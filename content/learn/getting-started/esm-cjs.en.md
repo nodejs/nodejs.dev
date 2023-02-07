@@ -1,7 +1,7 @@
 ---
 title: esm-cjs
 displayTitle: 'Differences between ESM and CJS'
-description: 'What is the differences between ESM and CJS?'
+description: 'What are the differences between ESM and CJS?'
 authors: AugustinMauroy
 category: learn
 ---
