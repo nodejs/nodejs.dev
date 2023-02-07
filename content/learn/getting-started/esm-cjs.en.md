@@ -14,7 +14,7 @@ CJS was introduced in Node.js `V0.1.90`. ESM was introduced in Node.js `V12.17` 
 
 The IO.js project was created in 2014, it's a fork of node.js. The goal of this project was to add new features to node.js. The ESM feature was added to the IO.js project in 2015. The ESM feature was added to the Node.js project in 2019.
 
-## What is ESM ?
+## What is ESM?
 
 ESM is the acronym for ECMAScript Modules. It is a module system that is part of the ECMAScript standard. It is the default module system in Node.js `V14` and above.
 
