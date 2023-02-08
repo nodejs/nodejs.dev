@@ -1,6 +1,5 @@
 /* eslint-disable camelcase */
 import { useEffect, useState } from 'react';
-import fetch from 'node-fetch';
 import type {
   Contributor,
   ContributorApiResponse,
@@ -45,7 +44,7 @@ export function linkParser(linkHeader: string): {
  * Retrieves max amount of contributors for Node.js main repo.
  * Returns array with random contributor index and max contributors found.
  */
-export async function getMaxContributors(): Promise<[number, number]> {
+async function getMaxContributors(): Promise<[number, number]> {
   const response = await fetch(CONTRIBUTORS_API_URI);
   const linksHeaderValue = response.headers.get('Link');
 

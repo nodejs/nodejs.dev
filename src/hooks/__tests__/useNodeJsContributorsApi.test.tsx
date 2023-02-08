@@ -1,9 +1,5 @@
-import {
-  getMaxContributors,
-  getContributor,
-  fetchRandomContributor,
-  linkParser,
-} from '../useNodeJsContributorsApi';
+import fetchMock from 'jest-fetch-mock';
+import { linkParser, getContributor } from '../useNodeJsContributorsApi';
 
 describe('linkParser', () => {
   it('should parse the Link header correctly', () => {
@@ -23,36 +19,30 @@ describe('linkParser', () => {
   });
 });
 
-describe('getMaxContributors', () => {
-  it('should return an array with a random page number and the maximum number of contributors', async () => {
-    const maxContributors = await getMaxContributors();
-    expect(Array.isArray(maxContributors)).toBe(true);
-    expect(typeof maxContributors[0]).toBe('number');
-    expect(typeof maxContributors[1]).toBe('number');
-  });
-});
-
 describe('getContributor', () => {
-  it('should retrieve a contributor object by its index in the API', async () => {
-    const randomPage = 1;
-    const contributor = await getContributor(randomPage);
-    expect(typeof contributor).toBe('object');
-    expect(contributor).toHaveProperty('avatarUri');
-    expect(contributor).toHaveProperty('login');
-    expect(contributor).toHaveProperty('contributionsCount');
-    expect(contributor).toHaveProperty('profileUri');
-    expect(contributor).toHaveProperty('commitsListUri');
+  beforeEach(() => {
+    fetchMock.resetMocks();
   });
-});
 
-describe('fetchRandomContributor', () => {
-  it('should return a random contributor for the Node.js main repo', async () => {
-    const contributor = await fetchRandomContributor();
-    expect(typeof contributor).toBe('object');
-    expect(contributor).toHaveProperty('avatarUri');
-    expect(contributor).toHaveProperty('login');
-    expect(contributor).toHaveProperty('contributionsCount');
-    expect(contributor).toHaveProperty('profileUri');
-    expect(contributor).toHaveProperty('commitsListUri');
+  it('returns a contributor object by its index in API', async () => {
+    fetchMock.mockResponseOnce(
+      JSON.stringify([
+        {
+          avatar_url: 'https://avatars.githubusercontent.com/u/2512748?v=4',
+          login: 'cjihrig',
+          contributions: 1045,
+          html_url: 'https://github.com/cjihrig',
+        },
+      ])
+    );
+
+    const result = await getContributor(2);
+    expect(result).toEqual({
+      avatarUri: 'https://avatars.githubusercontent.com/u/2512748?v=4',
+      login: 'cjihrig',
+      contributionsCount: 1045,
+      profileUri: 'https://github.com/cjihrig',
+      commitsListUri: 'https://github.com/nodejs/node/commits?author=cjihrig',
+    });
   });
 });
