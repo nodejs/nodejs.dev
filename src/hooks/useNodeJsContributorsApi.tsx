@@ -121,21 +121,19 @@ export async function fetchRandomContributor(): Promise<Contributor> {
   if (fetchDate && Date.now() - fetchDate >= ONE_MONTH_MS) needToRefetch = true;
 
   return new Promise((resolve, reject) => {
-    try {
-      if (contributors && contributors.length > 0 && !needToRefetch) {
-        const contributor = contributors.shift();
-        if (window.localStorage) {
-          localStorage.setItem('contributors', JSON.stringify(contributors));
-        }
-        resolve(contributor as Contributor);
+    if (contributors && contributors.length > 0 && !needToRefetch) {
+      const contributor = contributors.shift();
+      if (window.localStorage) {
+        localStorage.setItem('contributors', JSON.stringify(contributors));
       }
-
-      if (maxContributors && !needToRefetch) {
-        getContributor(
-          Math.floor(Math.random() * Math.floor(maxContributors)) + 1
-        ).then(contributor => resolve(contributor));
-      }
-
+      resolve(contributor as Contributor);
+    } else if (maxContributors && !needToRefetch) {
+      getContributor(
+        Math.floor(Math.random() * Math.floor(maxContributors)) + 1
+      )
+        .then(contributor => resolve(contributor))
+        .catch(error => reject(error));
+    } else {
       getMaxContributors()
         .then(([randomPage]) => getContributor(randomPage))
         .then(contributor => {
@@ -143,9 +141,8 @@ export async function fetchRandomContributor(): Promise<Contributor> {
             window.localStorage.setItem('fetch_date', String(Date.now()));
           }
           resolve(contributor);
-        });
-    } catch {
-      reject(new Error('Failed to fetch random contributor'));
+        })
+        .catch(error => reject(error));
     }
   });
 }
