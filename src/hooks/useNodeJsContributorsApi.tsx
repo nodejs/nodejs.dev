@@ -44,7 +44,7 @@ export function linkParser(linkHeader: string): {
  * Retrieves max amount of contributors for Node.js main repo.
  * Returns array with random contributor index and max contributors found.
  */
-async function getMaxContributors(): Promise<[number, number]> {
+export async function getMaxContributors(): Promise<[number, number]> {
   const response = await fetch(CONTRIBUTORS_API_URI);
   const linksHeaderValue = response.headers.get('Link');
 
@@ -52,10 +52,7 @@ async function getMaxContributors(): Promise<[number, number]> {
     const links = linkParser(linksHeaderValue);
 
     const randomPage =
-      Math.floor(
-        Math.random() * Math.floor(links?.last?.page ?? 1))
-      ) + 1;
-
+      Math.floor(Math.random() * Math.floor(links?.last?.page ?? 1)) + 1;
     return [randomPage, links?.last?.page ?? 1];
   }
 

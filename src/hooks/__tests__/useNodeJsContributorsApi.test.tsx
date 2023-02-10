@@ -1,5 +1,10 @@
 import fetchMock from 'jest-fetch-mock';
-import { linkParser, getContributor } from '../useNodeJsContributorsApi';
+import {
+  linkParser,
+  getContributor,
+  fetchRandomContributor,
+  getMaxContributors,
+} from '../useNodeJsContributorsApi';
 
 describe('linkParser', () => {
   it('should parse the Link header correctly', () => {
@@ -16,6 +21,12 @@ describe('linkParser', () => {
         page: 3,
       },
     });
+  });
+
+  it('should return an empty object if the Link header is not present', () => {
+    const linkHeader = '';
+    const parsedLinks = linkParser(linkHeader);
+    expect(parsedLinks).toEqual({});
   });
 });
 
@@ -44,5 +55,65 @@ describe('getContributor', () => {
       profileUri: 'https://github.com/cjihrig',
       commitsListUri: 'https://github.com/nodejs/node/commits?author=cjihrig',
     });
+  });
+});
+
+describe('fetchRandomContributor', () => {
+  it('returns a random contributor', async () => {
+    const randomContributor = await fetchRandomContributor();
+    expect(randomContributor).toHaveProperty('login');
+    expect(randomContributor).toHaveProperty('avatarUri');
+    expect(randomContributor).toHaveProperty('contributionsCount');
+    expect(randomContributor).toHaveProperty('profileUri');
+    expect(randomContributor).toHaveProperty('commitsListUri');
+  });
+
+  it('returns a random contributor from the local storage', async () => {
+    const randomContributor = await fetchRandomContributor();
+    expect(randomContributor).toHaveProperty('login');
+    expect(randomContributor).toHaveProperty('avatarUri');
+    expect(randomContributor).toHaveProperty('contributionsCount');
+    expect(randomContributor).toHaveProperty('profileUri');
+    expect(randomContributor).toHaveProperty('commitsListUri');
+  });
+
+  it('returns a random contributor from the local storage if the API call fails', async () => {
+    fetchMock.mockRejectOnce(new Error('Failed to fetch'));
+
+    const randomContributor = await fetchRandomContributor();
+    expect(randomContributor).toHaveProperty('login');
+    expect(randomContributor).toHaveProperty('avatarUri');
+    expect(randomContributor).toHaveProperty('contributionsCount');
+    expect(randomContributor).toHaveProperty('profileUri');
+    expect(randomContributor).toHaveProperty('commitsListUri');
+  });
+
+  it('returns a random contributor from the local storage if the API call returns an empty array', async () => {
+    fetchMock.mockResponseOnce(JSON.stringify([]));
+
+    const randomContributor = await fetchRandomContributor();
+    expect(randomContributor).toHaveProperty('login');
+    expect(randomContributor).toHaveProperty('avatarUri');
+    expect(randomContributor).toHaveProperty('contributionsCount');
+    expect(randomContributor).toHaveProperty('profileUri');
+    expect(randomContributor).toHaveProperty('commitsListUri');
+  });
+});
+
+describe('getMaxContributors', () => {
+  it('returns the max number of contributors and the page number', async () => {
+    const maxContributors = await getMaxContributors();
+    expect(maxContributors).toHaveLength(2);
+    expect(maxContributors[0]).toBeGreaterThan(0);
+    expect(maxContributors[1]).toBeGreaterThan(0);
+  });
+
+  it('returns the max number of contributors and the page number', async () => {
+    fetchMock.mockRejectOnce(new Error('Failed to fetch'));
+
+    const maxContributors = await getMaxContributors();
+    expect(maxContributors).toHaveLength(2);
+    expect(maxContributors[0]).toBeGreaterThan(0);
+    expect(maxContributors[1]).toBeGreaterThan(0);
   });
 });
