@@ -56,7 +56,7 @@ async function getMaxContributors(): Promise<[number, number]> {
         Math.random() * (links && links.last ? Math.floor(links.last.page) : 1)
       ) + 1;
 
-    return [randomPage, links && links.last ? links.last.page : 1];
+    return [randomPage, links?.last?.page ?? 1];
   }
 
   throw new Error('Failed to get amount if max contributors');
