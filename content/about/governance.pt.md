@@ -1,30 +1,28 @@
 ---
 title: governance
-displayTitle: Governance
-description: 'Project Governance | Node.js'
-authors: XhmikosR, fhemberger, thefourtheye, ryanmurakami, refack
+displayTitle: Governação
+description: 'Governação do Projeto | Node.js'
+authors: XhmikosR, fhemberger, thefourtheye, ryanmurakami, refack, nazarepiedady
 category: about
 ---
 
-## Consensus Seeking Process
+## Processo de Procura de Consenso
 
-The Node.js project follows a [Consensus Seeking][] decision making model.
+O projeto da Node.js segue um modelo de tomada de decisão conhecido como [Procura de Consenso][consensus seeking].
 
-## Collaborators
+## Colaboradores
 
-The [nodejs/node][] core GitHub repository is maintained by the Collaborators who are added by the Technical Steering Committee ([TSC][]) on an ongoing basis.
+O repositório principal [nodejs/node][] da GitHub é mantido pelos Colaboradores que são adicionados pelo Comissão Diretiva Técnica ([TSC, sigla em Inglês][tsc]) sobre uma base em curso.
 
-Individuals making significant and valuable contributions are made Collaborators
-and given commit-access to the project. These individuals are identified by the TSC and their nomination is discussed with the existing Collaborators.
+Os indivíduos fazendo contribuições significantes e valiosas são feitos Colaboradores e dado acesso de envio ao projeto. Estes indivíduos são identificados pela TSC e suas nomeações são discutidas com os Colaboradores existente.
 
-For the current list of Collaborators, see the project's [README.md][].
+Para ter a atual lista de Colaboradores, consulte o [README.md][] do projeto.
 
-A guide for Collaborators is maintained at [collaborator-guide.md][].
+Um guia para os Colaboradores é mantido no [collaborator-guide.md][].
 
-## Top Level Committees
+## Comissões de Alto Nível
 
-The project is governed by the [Technical Steering Committee (TSC)][]
-which is responsible for high-level guidance of the project.
+O projeto é governado pela [Comissão Diretiva Técnica (TSC, sigla em Inglês)][technical steering committee (tsc)] que é responsável pela diretriz de alto nível do projeto.
 
 [consensus seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
