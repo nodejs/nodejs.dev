@@ -27,7 +27,7 @@
   "components.downloadToggle.recommendation": "{selected, select, LTS {Recomendado para a maioria dos utilizadores}other {Com as funcionalidades mais recentes}}",
   "components.editLink.title": "Edite esta página na GitHub",
   "components.jsonLink.title": "Visualizar como JSON",
-  "components.footer.links.trademark": "Política da Marca Comercial",
+  "components.footer.links.trademark": "Política Comercial da Marca",
   "components.footer.links.privacy": "Política de Privacidade",
   "components.footer.links.codeOfConduct": "Código de Conduta",
   "components.footer.links.security": "Segurança",
