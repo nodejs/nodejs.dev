@@ -1,12 +1,11 @@
 ---
 title: releases
-displayTitle: Releases
-description: 'Releases | Node.js'
-authors: ZYSzys, nstanard,  mikeal, fhemberger, garybernhardt, piepmatz, boneskull, bjb568
+displayTitle: Lançamentos
+description: 'Lançamentos | Node.js'
+authors: ZYSzys, nstanard,  mikeal, fhemberger, garybernhardt, piepmatz, boneskull, bjb568, nazarepiedady
 category: about
 ---
 
-Major Node.js versions enter _Current_ release status for six months, which gives library authors time to add support for them.
-After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to _Active LTS_ status and are ready for general use. _LTS_ release status is "long-term support", which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use _Active LTS_ or _Maintenance LTS_ releases.
+As versões principais da Node.js entram em estado de lançamento _Atual_ por seis meses, o que dá aos autores de biblioteca tempo para adicionar suporte para elas. Depois de seis meses, os lançamentos numerados com ímpares (9, 11, etc.) tornam-se insuportáveis, e os lançamentos numerados com pares (10, 12, etc) movem-se para o estado _LTS Ativa_ e estão prontas para uso geral. O estado de lançamento _LTS_ é "long-term support" ou "suporte a longo prazo" em Português, o qual garante tipicamente que os bugs críticos serão corrigidos por um total de 30 meses. As aplicações de produção deveriam apenas usar os lançamentos de _LTS Ativa_ ou _LTS de Manutenção_.
 
-![Releases](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)
+![Lançamentos](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)
