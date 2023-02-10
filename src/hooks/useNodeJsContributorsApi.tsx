@@ -53,7 +53,7 @@ async function getMaxContributors(): Promise<[number, number]> {
 
     const randomPage =
       Math.floor(
-        Math.random() * (links && links.last ? Math.floor(links.last.page) : 1)
+        Math.random() * Math.floor(links?.last?.page ?? 1))
       ) + 1;
 
     return [randomPage, links?.last?.page ?? 1];
