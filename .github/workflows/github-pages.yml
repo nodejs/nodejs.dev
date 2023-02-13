@@ -30,7 +30,7 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - uses: jongwooo/gatsby-cache@v1.4.1
+      - uses: jongwooo/gatsby-cache@v1.4.2
         with:
           key: github-pages-gatsby-ubuntu-latest
 
