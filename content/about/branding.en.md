@@ -55,89 +55,109 @@ The following colors are the color palette for the Node.js website. And should b
 ### Logos with JS hexagon at right
 
 <table>
-    <!-- logo dark -->
     <tr>
-        <td><a href="/static/images/brand/logos-js-right/dark-no-background.svg">Nodejs logo dark without background</a></td>
-        <td><a href="/static/images/brand/logos-js-right/dark-background.svg">Node.js logo dark with background</a></td>
+        <td>
+            <h4><a href='/static/images/brand/logos-js-right/dark.svg' alt="Node.js dark">Node.js dark</a></h4>
+        </td>
+        <td>
+            <a href='/static/images/brand/logos-js-right/dark.svg' download><img src='/static/images/brand/logos-js-right/dark.svg' alt="Node.js dark"></a>
+        </td>
     </tr>
     <tr>
-        <td><a href="/static/images/brand/logos-js-right/dark-background.svg" download><img src="/static/images/brand/logos-js-right/dark-no-background.svg"></a></td>
-        <td><a href="/static/images/brand/logos-js-right/dark-background.svg" download><img src="/static/images/brand/logos-js-right/dark-background.svg" class="with-bg"></a></td>
-    <tr>
-    <!-- logo light -->
-    <tr>
-        <td><a href="/static/images/brand/logos-js-right/light-no-background.svg">Nodejs logo light without background</a></td>
-        <td><a href="/static/images/brand/logos-js-right/light-background.svg">Nodejs logo light with background</a></td>
+        <td>
+            <h4><a href='/static/images/brand/logos-js-right/light.svg' alt="Node.js light">Node.js light</a></h4>
+        </td>
+        <td>
+            <a href='/static/images/brand/logos-js-right/light.svg' download><img src='/static/images/brand/logos-js-right/light.svg' alt="Node.js light" class='dark-bg'></a>
+        </td>
     </tr>
-    <tr>
-        <td><a href="/static/images/brand/logos-js-right/light-background.svg" download><img src="/static/images/brand/logos-js-right/light-no-background.svg" class="with-bg"></a></td>
-        <td><a href="/static/images/brand/logos-js-right/light-background.svg" download><img src="/static/images/brand/logos-js-right/light-background.svg" class="with-bg"></a></td>
-    <tr>
 </table>
 
 ### Logos with JS hexagon at bottom
 
 <table>
-    <!-- logo white -->
-    <tr>
-        <td><a href="/static/images/brand/logos-js-bottom/black-no-background.svg">Nodejs logo black without background</a></td>
-        <td><a href="/static/images/brand/logos-js-bottom/black-background.svg">Nodejs logo black with background</a></td>
+   <tr>
+        <td>
+            <h4><a href='/static/images/brand/logos-js-bottom/dark.svg' alt="Node.js dark">Node.js dark</a></h4>
+        </td>
+        <td>
+            <a href='/static/images/brand/logos-js-bottom/dark.svg' download><img src='/static/images/brand/logos-js-bottom/dark.svg' alt="Node.js dark"></a>
+        </td>
     </tr>
     <tr>
-        <td><a href="/static/images/brand/logos-js-bottom/black-no-background.svg" download><img src="/static/images/brand/logos-js-bottom/black-no-background.svg"></a></td>
-        <td><a href="/static/images/brand/logos-js-bottom/black-background.svg" download><img src="/static/images/brand/logos-js-bottom/black-background.svg" class="with-bg"></a></td>
-    <tr>
-    <!-- logo dark -->
-    <tr>
-        <td><a href="/static/images/brand/logos-js-bottom/dark-no-background.svg">Nodejs logo dark without background</a></td>
-        <td><a href="/static/images/brand/logos-js-bottom/dark-background.svg">Nodejs logo dark with background</a></td>
+        <td>
+            <h4><a href='/static/images/brand/logos-js-bottom/light.svg' alt="Node.js light">Node.js light</a></h4>
+        </td>
+        <td>
+            <a href='/static/images/brand/logos-js-bottom/light.svg' download><img src='/static/images/brand/logos-js-bottom/light.svg' alt="Node.js light" class='dark-bg'></a>
+        </td>
     </tr>
     <tr>
-        <td><a href="/static/images/brand/logos-js-bottom/dark-background.svg" download><img src="/static/images/brand/logos-js-bottom/dark-no-background.svg"></a></td>
-        <td><a href="/static/images/brand/logos-js-bottom/dark-background.svg" download><img src="/static/images/brand/logos-js-bottom/dark-background.svg" class="with-bg"></a></td>
-    <tr>
-    <!-- logo light -->
-    <tr>
-        <td><a href="/static/images/brand/logos-js-bottom/light-no-background.svg">Nodejs logo light without background</a></td>
-        <td><a href="/static/images/brand/logos-js-bottom/light-background.svg">Nodejs logo light with background</a></td>
+        <td>
+            <h4><a href='/static/images/brand/logos-js-bottom/black.svg' alt="Node.js black">Node.js black</a></h4>
+        </td>
+        <td>
+            <a href='/static/images/brand/logos-js-bottom/black.svg' download><img src='/static/images/brand/logos-js-bottom/black.svg' alt="Node.js black"></a>
+        </td>
     </tr>
     <tr>
-        <td><a href="/static/images/brand/logos-js-bottom/light-background.svg" download><img src="/static/images/brand/logos-js-bottom/light-no-background.svg" class="with-bg"></a></td>
-        <td><a href="/static/images/brand/logos-js-bottom/light-background.svg" download><img src="/static/images/brand/logos-js-bottom/light-background.svg" class="with-bg"></a></td>
-    <tr>
-    <!-- logo white -->
-    <tr>
-        <td><a href="/static/images/brand/logos-js-bottom/white-no-background.svg">Nodejs logo white without background</a></td>
-        <td><a href="/static/images/brand/logos-js-bottom/white-background.svg">Nodejs logo white with background</a></td>
-    </tr>
-    <tr>
-        <td><a href="/static/images/brand/logos-js-bottom/white-background.svg" download><img src="/static/images/brand/logos-js-bottom/white-no-background.svg" class="with-bg"></a></td>
-        <td><a href="/static/images/brand/logos-js-bottom/white-background.svg" download><img src="/static/images/brand/logos-js-bottom/white-background.svg" class="with-bg"></a></td>
-    <tr>
+        <td>
+            <h4><a href='/static/images/brand/logos-js-bottom/white.svg' alt="Node.js white">Node.js white</a></h4>
+        </td>
+        <td>
+            <a href='/static/images/brand/logos-js-bottom/white.svg' download><img src='/static/images/brand/logos-js-bottom/white.svg' alt="Node.js white" class='dark-bg'></a>
+        </td>
 </table>
 
 ## Assets
 
 ### Hexagon
 
-**Green hexagon**
+<table>
+    <tr>
+        <td>
+            <h4><a href="/static/images/brand/hexagon/black.svg">Black hexagon</a></h4>
+        </td>
+        <td>
+            <a href="/static/images/brand/hexagon/black.svg" download><img src="/static/images/brand/hexagon/black.svg"></a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><a href="/static/images/brand/hexagon/green.svg">Green hexagon</a></h4>
+        </td>
+        <td>
+            <a href="/static/images/brand/hexagon/green.svg" download><img src="/static/images/brand/hexagon/green.svg"></a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+           <h4><a href="/static/images/brand/hexagon/white.svg">White hexagon</a></h4>
+        </td>
+        <td>
+            <a href="/static/images/brand/hexagon/white.svg" download><img src="/static/images/brand/hexagon/white.svg" class='dark-bg'></a>
+        </td>
+    <tr>
+</table>
 
-![Green hexagon](/static/images/brand/hexagon/green.svg)
-
-**White hexagon**
-
-![White hexagon](/static/images/brand/hexagon/white.svg)
-
-**Black hexagon**
-
-![Black hexagon](/static/images/brand/hexagon/black.svg)
 
 ### JS from Node.js logo
 
-**Green JS**
-
-![Green JS](/static/images/brand/hexagon/js-green.svg)
-
-**White JS**
-
-<img src="/static/images/brand/hexagon/js-white.svg" alt="White JS" class="with-bg">
+<table>
+    <tr>
+        <td>
+            <h4><a href="/static/images/brand/hexagon/js-green.svg">Green JS</a></h4>
+        </td>
+        <td>
+            <a href="/static/images/brand/hexagon/js-green.svg" download><img src="/static/images/brand/hexagon/js-green.svg"></a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><a href="/static/images/brand/hexagon/js-white.svg">White JS</a></h4>
+        </td>
+        <td>
+            <a href="/static/images/brand/hexagon/js-white.svg" download><img src="/static/images/brand/hexagon/js-white.svg" class='dark-bg'></a>
+        </td>
+    <tr>
+</table>
