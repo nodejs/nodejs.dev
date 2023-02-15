@@ -12,7 +12,7 @@ O projeto da Node.js segue um modelo de tomada de decisão conhecido como [Procu
 
 ## Colaboradores
 
-O repositório principal [nodejs/node][] da GitHub é mantido pelos Colaboradores que são adicionados pelo Comissão Diretiva Técnica ([TSC, sigla em Inglês][tsc]) sobre uma base em curso.
+O repositório principal [nodejs/node][] da GitHub é mantido pelos Colaboradores que são adicionados pela Comissão Diretiva Técnica ([TSC, sigla em Inglês][tsc]) sobre uma base em curso.
 
 Os indivíduos fazendo contribuições significantes e valiosas são feitos Colaboradores e dado acesso de envio ao projeto. Estes indivíduos são identificados pela TSC e suas nomeações são discutidas com os Colaboradores existentes.
 
