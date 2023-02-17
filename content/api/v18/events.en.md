@@ -15,7 +15,7 @@ Stable
 
 <Metadata data={{"type":"module"}} />
 
-<Metadata version="v18.14.0" data={{"source_link":"lib/events.js"}} />
+<Metadata version="v18.14.1" data={{"source_link":"lib/events.js"}} />
 
 Much of the Node.js core API is built around an idiomatic asynchronous
 event-driven architecture in which certain kinds of objects (called "emitters")

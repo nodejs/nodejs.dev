@@ -13,7 +13,7 @@ Experimental
 
 </Stability>
 
-<Metadata version="v19.6.0" data={{"source_link":"lib/test.js"}} />
+<Metadata version="v19.6.1" data={{"source_link":"lib/test.js"}} />
 
 The `node:test` module facilitates the creation of JavaScript tests.
 To access it:

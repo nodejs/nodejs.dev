@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.14.0" data={{"source_link":"lib/console.js"}} />
+<Metadata version="v18.14.1" data={{"source_link":"lib/console.js"}} />
 
 The `node:console` module provides a simple debugging console that is similar to
 the JavaScript console mechanism provided by web browsers.
