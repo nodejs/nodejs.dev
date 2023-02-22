@@ -15,7 +15,7 @@ Stable
 
 <Metadata data={{"name":"dgram"}} />
 
-<Metadata version="v19.6.1" data={{"source_link":"lib/dgram.js"}} />
+<Metadata version="v19.7.0" data={{"source_link":"lib/dgram.js"}} />
 
 The `node:dgram` module provides an implementation of UDP datagram sockets.
 

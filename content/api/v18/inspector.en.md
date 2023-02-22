@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.14.1" data={{"source_link":"lib/inspector.js"}} />
+<Metadata version="v18.14.2" data={{"source_link":"lib/inspector.js"}} />
 
 The `node:inspector` module provides an API for interacting with the V8
 inspector.

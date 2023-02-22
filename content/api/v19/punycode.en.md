@@ -15,7 +15,7 @@ Deprecated
 
 </Stability>
 
-<Metadata version="v19.6.1" data={{"source_link":"lib/punycode.js"}} />
+<Metadata version="v19.7.0" data={{"source_link":"lib/punycode.js"}} />
 
 **The version of the punycode module bundled in Node.js is being deprecated.**
 In a future major version of Node.js this module will be removed. Users

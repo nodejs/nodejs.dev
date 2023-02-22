@@ -15,7 +15,7 @@ Stable
 
 <Metadata data={{"name":"querystring"}} />
 
-<Metadata version="v18.14.1" data={{"source_link":"lib/querystring.js"}} />
+<Metadata version="v18.14.2" data={{"source_link":"lib/querystring.js"}} />
 
 The `node:querystring` module provides utilities for parsing and formatting URL
 query strings. It can be accessed using:

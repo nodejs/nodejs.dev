@@ -15,7 +15,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.6.1" data={{"source_link":"lib/diagnostics_channel.js"}} />
+<Metadata version="v19.7.0" data={{"source_link":"lib/diagnostics_channel.js"}} />
 
 The `node:diagnostics_channel` module provides an API to create named channels
 to report arbitrary message data for diagnostics purposes.

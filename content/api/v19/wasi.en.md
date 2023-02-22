@@ -13,7 +13,7 @@ Experimental
 
 </Stability>
 
-<Metadata version="v19.6.1" data={{"source_link":"lib/wasi.js"}} />
+<Metadata version="v19.7.0" data={{"source_link":"lib/wasi.js"}} />
 
 The WASI API provides an implementation of the [WebAssembly System Interface][]
 specification. WASI gives sandboxed WebAssembly applications access to the

@@ -13,7 +13,7 @@ Experimental
 
 </Stability>
 
-<Metadata version="v19.6.1" data={{"source_link":"lib/test.js"}} />
+<Metadata version="v19.7.0" data={{"source_link":"lib/test.js"}} />
 
 The `node:test` module facilitates the creation of JavaScript tests.
 To access it:
@@ -379,6 +379,56 @@ Otherwise, the test is considered to be a failure. Test files must be
 executable by Node.js, but are not required to use the `node:test` module
 internally.
 
+### Collecting code coverage
+
+When Node.js is started with the [`--experimental-test-coverage`][]
+command-line flag, code coverage is collected and statistics are reported once
+all tests have completed. If the [`NODE_V8_COVERAGE`][] environment variable is
+used to specify a code coverage directory, the generated V8 coverage files are
+written to that directory. Node.js core modules and files within
+`node_modules/` directories are not included in the coverage report. If
+coverage is enabled, the coverage report is sent to any [test reporters][] via
+the `'test:coverage'` event.
+
+Coverage can be disabled on a series of lines using the following
+comment syntax:
+
+```js
+/* node:coverage disable */
+if (anAlwaysFalseCondition) {
+  // Code in this branch will never be executed, but the lines are ignored for
+  // coverage purposes. All lines following the 'disable' comment are ignored
+  // until a corresponding 'enable' comment is encountered.
+  console.log('this is never executed');
+}
+/* node:coverage enable */
+```
+
+Coverage can also be disabled for a specified number of lines. After the
+specified number of lines, coverage will be automatically reenabled. If the
+number of lines is not explicitly provided, a single line is ignored.
+
+```js
+/* node:coverage ignore next */
+if (anAlwaysFalseCondition) { console.log('this is never executed'); }
+
+/* node:coverage ignore next 3 */
+if (anAlwaysFalseCondition) {
+  console.log('this is never executed');
+}
+```
+
+The test runner's code coverage functionality has the following limitations,
+which will be addressed in a future Node.js release:
+
+* Although coverage data is collected for child processes, this information is
+  not included in the coverage report. Because the command line test runner uses
+  child processes to execute test files, it cannot be used with
+  `--experimental-test-coverage`.
+* Source maps are not supported.
+* Excluding specific files or directories from the coverage report is not
+  supported.
+
 ### Mocking
 
 The `node:test` module supports mocking during testing via a top-level `mock`
@@ -631,11 +681,10 @@ unless a destination is explicitly provided.
   properties are supported:
   * `concurrency` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If a number is provided,
     then that many files would run in parallel.
-    If truthy, it would run (number of cpu cores - 1)
-    files in parallel.
-    If falsy, it would only run one file at a time.
-    If unspecified, subtests inherit this value from their parent.
-    **Default:** `true`.
+    If `true`, it would run `os.availableParallelism() - 1` test files in
+    parallel.
+    If `false`, it would only run one test file at a time.
+    **Default:** `false`.
   * `files`: [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) An array containing the list of files to run.
     **Default** matching files from [test runner execution model][].
   * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress test execution.
@@ -666,10 +715,9 @@ run({ files: [path.resolve('./tests/test.js')] })
   properties are supported:
   * `concurrency` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If a number is provided,
     then that many tests would run in parallel.
-    If truthy, it would run (number of cpu cores - 1)
-    tests in parallel.
+    If `true`, it would run `os.availableParallelism() - 1` tests in parallel.
     For subtests, it will be `Infinity` tests in parallel.
-    If falsy, it would only run one test at a time.
+    If `false`, it would only run one test at a time.
     If unspecified, subtests inherit this value from their parent.
     **Default:** `false`.
   * `only` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If truthy, and the test context is configured to run
@@ -844,7 +892,7 @@ before each subtest of the current suite.
 
 ```js
 describe('tests', async () => {
-  beforeEach(() => t.diagnostic('about to run a test'));
+  beforeEach(() => console.log('about to run a test'));
   it('is a subtest', () => {
     assert.ok('some relevant assertion here');
   });
@@ -871,7 +919,7 @@ after each subtest of the current test.
 
 ```js
 describe('tests', async () => {
-  afterEach(() => t.diagnostic('about to run a test'));
+  afterEach(() => console.log('finished running a test'));
   it('is a subtest', () => {
     assert.ok('some relevant assertion here');
   });
@@ -1161,6 +1209,42 @@ A successful call to [`run()`][] method will return a new TestsStream
 object, streaming a series of events representing the execution of the tests.
 `TestsStream` will emit events, in the order of the tests definition
 
+#### <DataTag tag="E" /> `'test:coverage'`
+
+* `data` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+  * `summary` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An object containing the coverage report.
+    * `files` [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) An array of coverage reports for individual files. Each
+      report is an object with the following schema:
+      * `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The absolute path of the file.
+      * `totalLineCount` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The total number of lines.
+      * `totalBranchCount` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The total number of branches.
+      * `totalFunctionCount` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The total number of functions.
+      * `coveredLineCount` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of covered lines.
+      * `coveredBranchCount` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of covered branches.
+      * `coveredFunctionCount` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of covered functions.
+      * `coveredLinePercent` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The percentage of lines covered.
+      * `coveredBranchPercent` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The percentage of branches covered.
+      * `coveredFunctionPercent` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The percentage of functions covered.
+      * `uncoveredLineNumbers` [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) An array of integers representing line
+        numbers that are uncovered.
+    * `totals` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An object containing a summary of coverage for all
+      files.
+      * `totalLineCount` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The total number of lines.
+      * `totalBranchCount` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The total number of branches.
+      * `totalFunctionCount` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The total number of functions.
+      * `coveredLineCount` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of covered lines.
+      * `coveredBranchCount` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of covered branches.
+      * `coveredFunctionCount` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of covered functions.
+      * `coveredLinePercent` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The percentage of lines covered.
+      * `coveredBranchPercent` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The percentage of branches covered.
+      * `coveredFunctionPercent` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The percentage of functions covered.
+    * `workingDirectory` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The working directory when code coverage
+      began. This is useful for displaying relative path names in case the tests
+      changed the working directory of the Node.js process.
+  * `nesting` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The nesting level of the test.
+
+Emitted when code coverage is enabled and all tests have completed.
+
 #### <DataTag tag="E" /> `'test:diagnostic'`
 
 * `data` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -1416,9 +1500,12 @@ test('top level test', (t) => {
   `fn` does not have a name.
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the subtest. The following
   properties are supported:
-  * `concurrency` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of tests that can be run at the same time.
+  * `concurrency` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) If a number is provided,
+    then that many tests would run in parallel.
+    If `true`, it would run all subtests in parallel.
+    If `false`, it would only run one test at a time.
     If unspecified, subtests inherit this value from their parent.
-    **Default:** `1`.
+    **Default:** `null`.
   * `only` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) If truthy, and the test context is configured to run
     `only` tests, then this test will be run. Otherwise, the test is skipped.
     **Default:** `false`.
@@ -1475,6 +1562,7 @@ The name of the suite.
   aborted.
 
 [TAP]: https://testanything.org/
+[`--experimental-test-coverage`]: /api/v19/cli#--experimental-test-coverage
 [`--import`]: /api/v19/cli#--importmodule
 [`--test-name-pattern`]: /api/v19/cli#--test-name-pattern
 [`--test-only`]: /api/v19/cli#--test-only
@@ -1484,6 +1572,7 @@ The name of the suite.
 [`MockFunctionContext`]: #class-mockfunctioncontext
 [`MockTracker.method`]: #mockmethodobject-methodname-implementation-options
 [`MockTracker`]: #class-mocktracker
+[`NODE_V8_COVERAGE`]: /api/v19/cli#node_v8_coveragedir
 [`SuiteContext`]: #class-suitecontext
 [`TestContext`]: #class-testcontext
 [`context.diagnostic`]: #contextdiagnosticmessage
@@ -1494,4 +1583,5 @@ The name of the suite.
 [describe options]: #describename-options-fn
 [it options]: #testname-options-fn
 [stream.compose]: /api/v19/stream#streamcomposestreams
+[test reporters]: #test-reporters
 [test runner execution model]: #test-runner-execution-model
