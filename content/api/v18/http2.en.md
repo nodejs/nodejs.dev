@@ -15,7 +15,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.14.0" data={{"source_link":"lib/http2.js"}} />
+<Metadata version="v18.14.2" data={{"source_link":"lib/http2.js"}} />
 
 The `node:http2` module provides an implementation of the [HTTP/2][] protocol.
 It can be accessed using:

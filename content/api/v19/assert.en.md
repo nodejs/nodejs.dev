@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.6.0" data={{"source_link":"lib/assert.js"}} />
+<Metadata version="v19.7.0" data={{"source_link":"lib/assert.js"}} />
 
 The `node:assert` module provides a set of assertion functions for verifying
 invariants.

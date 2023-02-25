@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.14.0" data={{"source_link":"lib/timers.js"}} />
+<Metadata version="v18.14.2" data={{"source_link":"lib/timers.js"}} />
 
 The `timer` module exposes a global API for scheduling functions to
 be called at some future period of time. Because the timer functions are
