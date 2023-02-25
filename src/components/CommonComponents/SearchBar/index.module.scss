@@ -87,7 +87,13 @@
         margin: 0;
         padding: 5px 0;
 
+        &:hover {
+          background-color: var(--black2);
+          font-weight: bold;
+        }
+
         > a {
+          display: block;
           text-decoration: none;
           text-overflow: ellipsis;
 

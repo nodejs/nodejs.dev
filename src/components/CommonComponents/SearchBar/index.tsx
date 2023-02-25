@@ -235,8 +235,8 @@ const SearchBar = (): JSX.Element => {
                       {(result.wrapInCode && <code>{displayTitle}</code>) || (
                         <span>{displayTitle}</span>
                       )}
+                      <SectionTitle path={sectionPath} />
                     </Link>
-                    <SectionTitle path={sectionPath} />
                   </li>
                 );
               })}
