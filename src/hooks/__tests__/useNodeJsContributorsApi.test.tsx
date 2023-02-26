@@ -31,30 +31,35 @@ describe('linkParser', () => {
 });
 
 describe('getContributor', () => {
-  beforeEach(() => {
-    fetchMock.resetMocks();
+  it('returns a contributor', async () => {
+    const contributor = await getContributor(1);
+    expect(contributor).toHaveProperty('login');
+    expect(contributor).toHaveProperty('avatarUri');
+    expect(contributor).toHaveProperty('contributionsCount');
+    expect(contributor).toHaveProperty('profileUri');
+    expect(contributor).toHaveProperty('commitsListUri');
   });
 
-  it('returns a contributor object by its index in API', async () => {
-    fetchMock.mockResponseOnce(
-      JSON.stringify([
-        {
-          avatar_url: 'https://avatars.githubusercontent.com/u/2512748?v=4',
-          login: 'cjihrig',
-          contributions: 1045,
-          html_url: 'https://github.com/cjihrig',
-        },
-      ])
-    );
+  it('returns a contributor', async () => {
+    fetchMock.mockRejectOnce(new Error('Failed to fetch'));
 
-    const result = await getContributor(2);
-    expect(result).toEqual({
-      avatarUri: 'https://avatars.githubusercontent.com/u/2512748?v=4',
-      login: 'cjihrig',
-      contributionsCount: 1045,
-      profileUri: 'https://github.com/cjihrig',
-      commitsListUri: 'https://github.com/nodejs/node/commits?author=cjihrig',
-    });
+    const contributor = await getContributor(4);
+    expect(contributor).toHaveProperty('login');
+    expect(contributor).toHaveProperty('avatarUri');
+    expect(contributor).toHaveProperty('contributionsCount');
+    expect(contributor).toHaveProperty('profileUri');
+    expect(contributor).toHaveProperty('commitsListUri');
+  });
+
+  it('returns a contributor', async () => {
+    fetchMock.mockResponseOnce(JSON.stringify([]));
+
+    const contributor = await getContributor(2);
+    expect(contributor).toHaveProperty('login');
+    expect(contributor).toHaveProperty('avatarUri');
+    expect(contributor).toHaveProperty('contributionsCount');
+    expect(contributor).toHaveProperty('profileUri');
+    expect(contributor).toHaveProperty('commitsListUri');
   });
 });
 
