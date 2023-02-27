@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.14.0" data={{"source_link":"lib/worker_threads.js"}} />
+<Metadata version="v18.14.2" data={{"source_link":"lib/worker_threads.js"}} />
 
 The `node:worker_threads` module enables the use of threads that execute
 JavaScript in parallel. To access it:

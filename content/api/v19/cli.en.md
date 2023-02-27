@@ -162,7 +162,7 @@ $ node --completion-bash > node_bash_completion
 $ source node_bash_completion
 ```
 
-#### <DataTag tag="M" /> `-C=condition`, `--conditions=condition`
+#### <DataTag tag="M" /> `-C condition`, `--conditions=condition`
 
 <Metadata data={{"update":{"type":"added","version":["v14.9.0","v12.19.0"]}}} />
 
@@ -183,7 +183,7 @@ The default Node.js conditions of `"node"`, `"default"`, `"import"`, and
 For example, to run a module with "development" resolutions:
 
 ```console
-$ node -C=development app.js
+$ node -C development app.js
 ```
 
 #### <DataTag tag="M" /> `--cpu-prof`
@@ -385,6 +385,15 @@ Use this flag to disable top-level await in REPL.
 <Metadata data={{"update":{"type":"added","version":["v19.0.0"]}}} />
 
 Use this flag to enable [ShadowRealm][] support.
+
+#### <DataTag tag="M" /> `--experimental-test-coverage`
+
+<Metadata data={{"update":{"type":"added","version":["v19.7.0"]}}} />
+
+When used in conjunction with the `node:test` module, a code coverage report is
+generated as part of the test runner output. If no tests are run, a coverage
+report is not generated. See the documentation on
+[collecting code coverage from tests][] for more details.
 
 #### <DataTag tag="M" /> `--experimental-vm-modules`
 
@@ -1959,6 +1968,7 @@ done
 [`unhandledRejection`]: /api/v19/process#event-unhandledrejection
 [`v8.startupSnapshot` API]: v8.md#startup-snapshot-api
 [`worker_threads.threadId`]: worker_threads.md#workerthreadid
+[collecting code coverage from tests]: /api/v19/test#collecting-code-coverage
 [conditional exports]: /api/v19/packages#conditional-exports
 [context-aware]: /api/v19/addons#context-aware-addons
 [debugger]: /api/v19/debugger

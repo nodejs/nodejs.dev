@@ -15,7 +15,7 @@ Stable
 
 <Metadata data={{"name":"vm"}} />
 
-<Metadata version="v18.14.0" data={{"source_link":"lib/vm.js"}} />
+<Metadata version="v18.14.2" data={{"source_link":"lib/vm.js"}} />
 
 The `node:vm` module enables compiling and running code within V8 Virtual
 Machine contexts.

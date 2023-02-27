@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v16.19.0" data={{"source_link":"lib/crypto.js"}} />
+<Metadata version="v16.19.1" data={{"source_link":"lib/crypto.js"}} />
 
 The `node:crypto` module provides cryptographic functionality that includes a
 set of wrappers for OpenSSL's hash, HMAC, cipher, decipher, sign, and verify

@@ -662,6 +662,16 @@
       "type": "301"
     },
     {
+      "source": "/api/single-executable-applications/",
+      "destination": "/en/api/v19/single-executable-applications/",
+      "type": "301"
+    },
+    {
+      "source": "/api/single-executable-applications.html",
+      "destination": "/en/api/v19/single-executable-applications/",
+      "type": "301"
+    },
+    {
       "source": "/api/stream/",
       "destination": "/en/api/v19/stream/",
       "type": "301"
