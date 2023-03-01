@@ -1,148 +1,124 @@
-import React from 'react';
 import fetchMock from 'jest-fetch-mock';
-import { render, screen, waitFor } from '@testing-library/react';
-import { useNodeJsContributorsApi } from '../useNodeJsContributorsApi';
-import { createRandomContributorApiData } from '../../__fixtures__/hooks';
+import {
+  linkParser,
+  getContributor,
+  fetchRandomContributor,
+  getMaxContributors,
+} from '../useNodeJsContributorsApi';
 
-describe('useNodeJsContributorsApi', () => {
-  const HookRenderer = ({ isVisible }: { isVisible: boolean }): JSX.Element => {
-    const result = useNodeJsContributorsApi(isVisible);
-
-    return result === null ? <>null</> : <>{JSON.stringify(result)}</>;
-  };
-
-  const linkResponseHeaderMock =
-    '<https://api.github.com/repositories/27193779/contributors?per_page=1&page=2>; rel="next", <https://api.github.com/repositories/27193779/contributors?per_page=1&page=438>; rel="last"';
-
-  beforeEach(() => {
-    fetchMock.enableMocks();
-  });
-
-  afterEach(() => {
-    fetchMock.resetMocks();
-    localStorage.setItem('max_contributors', '');
-    localStorage.setItem('fetch_date', '');
-  });
-
-  it('should return null in case no visible', () => {
-    render(<HookRenderer isVisible={false} />);
-    const linkElement = screen.getByText(/null/i);
-    expect(linkElement).toBeInTheDocument();
-  });
-
-  it('should return null in case no local storage found', async () => {
-    fetchMock.mockResponses(
-      // mock first call to contributors API
-      [
-        '',
-        {
-          headers: {
-            link: linkResponseHeaderMock,
-          },
-        },
-      ],
-      // mock second request and return contributor mocked object
-      JSON.stringify([createRandomContributorApiData()])
-    );
-
-    render(<HookRenderer isVisible />);
-    await waitFor(() => {
-      expect(screen.getByText(/login_mock/i)).toBeInTheDocument();
-    });
-    await waitFor(() => {
-      expect(screen.getByText(/avatar_url_mock/i)).toBeInTheDocument();
-    });
-    await waitFor(() => {
-      expect(fetchMock.mock.calls[0][0]).toBe(
-        'https://api.github.com/repos/nodejs/node/contributors?per_page=1'
-      );
-    });
-    await waitFor(() => {
-      expect(
-        (fetchMock.mock.calls[1][0] as string).includes(
-          'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page='
-        )
-      ).toBe(true);
+describe('linkParser', () => {
+  it('should parse the Link header correctly', () => {
+    const linkHeader =
+      '<https://api.github.com/repos/nodejs/node/contributors?per_page=5&page=2>; rel="next", <https://api.github.com/repos/nodejs/node/contributors?per_page=5&page=3>; rel="last"';
+    const parsedLinks = linkParser(linkHeader);
+    expect(parsedLinks).toEqual({
+      next: {
+        url: 'https://api.github.com/repos/nodejs/node/contributors?per_page=5&page=2',
+        page: 2,
+      },
+      last: {
+        url: 'https://api.github.com/repos/nodejs/node/contributors?per_page=5&page=3',
+        page: 3,
+      },
     });
   });
 
-  it('should skip retrieving max pages for fresh data in localStorage', async () => {
-    localStorage.setItem('max_contributors', '100');
-    localStorage.setItem('fetch_date', String(Date.now() + 5000));
+  it('should return an empty object if the Link header is not present', () => {
+    const linkHeader = '';
+    const parsedLinks = linkParser(linkHeader);
+    expect(parsedLinks).toEqual({});
+  });
+});
 
-    fetchMock.mockResponse(JSON.stringify([createRandomContributorApiData()]));
-
-    render(<HookRenderer isVisible />);
-
-    await waitFor(() => {
-      expect(screen.getByText(/login_mock/i)).toBeInTheDocument();
-    });
-    await waitFor(() => {
-      expect(screen.getByText(/avatar_url_mock/i)).toBeInTheDocument();
-    });
-
-    // expect first call will be to random page instead of extra request for
-    // getting max pages
-    await waitFor(() => {
-      expect(
-        (fetchMock.mock.calls[0][0] as string).includes(
-          'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page='
-        )
-      ).toBe(true);
-    });
+describe('getContributor', () => {
+  it('returns a contributor', async () => {
+    const contributor = await getContributor(1);
+    expect(contributor).toHaveProperty('login');
+    expect(contributor).toHaveProperty('avatarUri');
+    expect(contributor).toHaveProperty('contributionsCount');
+    expect(contributor).toHaveProperty('profileUri');
+    expect(contributor).toHaveProperty('commitsListUri');
   });
 
-  it('should refetch expired data', async () => {
-    localStorage.setItem('fetch_date', '1');
+  it('returns a contributor', async () => {
+    fetchMock.mockRejectOnce(new Error('Failed to fetch'));
 
-    fetchMock.mockResponses(
-      // mock first call to contributors API
-      [
-        '',
-        {
-          headers: {
-            link: linkResponseHeaderMock,
-          },
-        },
-      ],
-      // mock second request and return contributor mocked object
-      JSON.stringify([createRandomContributorApiData()])
-    );
-
-    render(<HookRenderer isVisible />);
-    await waitFor(() => {
-      expect(screen.getByText(/login_mock/i)).toBeInTheDocument();
-    });
-    await waitFor(() => {
-      expect(screen.getByText(/avatar_url_mock/i)).toBeInTheDocument();
-    });
-    await waitFor(() => {
-      expect(fetchMock.mock.calls[0][0]).toBe(
-        'https://api.github.com/repos/nodejs/node/contributors?per_page=1'
-      );
-    });
-    await waitFor(() => {
-      expect(
-        (fetchMock.mock.calls[1][0] as string).includes(
-          'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page='
-        )
-      ).toBe(true);
-    });
+    const contributor = await getContributor(4);
+    expect(contributor).toHaveProperty('login');
+    expect(contributor).toHaveProperty('avatarUri');
+    expect(contributor).toHaveProperty('contributionsCount');
+    expect(contributor).toHaveProperty('profileUri');
+    expect(contributor).toHaveProperty('commitsListUri');
   });
 
-  describe('error handling', () => {
-    it('should return null on error', async () => {
-      fetchMock.mockReject(new Error('fake error message'));
-      render(<HookRenderer isVisible />);
-      const linkElement = screen.getByText(/null/i);
-      expect(linkElement).toBeInTheDocument();
-    });
+  it('returns a contributor', async () => {
+    fetchMock.mockResponseOnce(JSON.stringify([]));
 
-    it('should return null on unexpected link header from API', async () => {
-      fetchMock.mockResponseOnce('');
-      render(<HookRenderer isVisible />);
-      const linkElement = screen.getByText(/null/i);
-      expect(linkElement).toBeInTheDocument();
-    });
+    const contributor = await getContributor(2);
+    expect(contributor).toHaveProperty('login');
+    expect(contributor).toHaveProperty('avatarUri');
+    expect(contributor).toHaveProperty('contributionsCount');
+    expect(contributor).toHaveProperty('profileUri');
+    expect(contributor).toHaveProperty('commitsListUri');
+  });
+});
+
+describe('fetchRandomContributor', () => {
+  it('returns a random contributor', async () => {
+    const randomContributor = await fetchRandomContributor();
+    expect(randomContributor).toHaveProperty('login');
+    expect(randomContributor).toHaveProperty('avatarUri');
+    expect(randomContributor).toHaveProperty('contributionsCount');
+    expect(randomContributor).toHaveProperty('profileUri');
+    expect(randomContributor).toHaveProperty('commitsListUri');
+  });
+
+  it('returns a random contributor from the local storage', async () => {
+    const randomContributor = await fetchRandomContributor();
+    expect(randomContributor).toHaveProperty('login');
+    expect(randomContributor).toHaveProperty('avatarUri');
+    expect(randomContributor).toHaveProperty('contributionsCount');
+    expect(randomContributor).toHaveProperty('profileUri');
+    expect(randomContributor).toHaveProperty('commitsListUri');
+  });
+
+  it('returns a random contributor from the local storage if the API call fails', async () => {
+    fetchMock.mockRejectOnce(new Error('Failed to fetch'));
+
+    const randomContributor = await fetchRandomContributor();
+    expect(randomContributor).toHaveProperty('login');
+    expect(randomContributor).toHaveProperty('avatarUri');
+    expect(randomContributor).toHaveProperty('contributionsCount');
+    expect(randomContributor).toHaveProperty('profileUri');
+    expect(randomContributor).toHaveProperty('commitsListUri');
+  });
+
+  it('returns a random contributor from the local storage if the API call returns an empty array', async () => {
+    fetchMock.mockResponseOnce(JSON.stringify([]));
+
+    const randomContributor = await fetchRandomContributor();
+    expect(randomContributor).toHaveProperty('login');
+    expect(randomContributor).toHaveProperty('avatarUri');
+    expect(randomContributor).toHaveProperty('contributionsCount');
+    expect(randomContributor).toHaveProperty('profileUri');
+    expect(randomContributor).toHaveProperty('commitsListUri');
+  });
+});
+
+describe('getMaxContributors', () => {
+  it('returns the max number of contributors and the page number', async () => {
+    const maxContributors = await getMaxContributors();
+    expect(maxContributors).toHaveLength(2);
+    expect(maxContributors[0]).toBeGreaterThan(0);
+    expect(maxContributors[1]).toBeGreaterThan(0);
+  });
+
+  it('returns the max number of contributors and the page number', async () => {
+    fetchMock.mockRejectOnce(new Error('Failed to fetch'));
+
+    const maxContributors = await getMaxContributors();
+    expect(maxContributors).toHaveLength(2);
+    expect(maxContributors[0]).toBeGreaterThan(0);
+    expect(maxContributors[1]).toBeGreaterThan(0);
   });
 });
