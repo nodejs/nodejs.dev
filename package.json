@@ -5,7 +5,7 @@
   "author": "Node.js Dev Team <https://github.com/nodejs/nodejs.dev#the-nodejsdev-team>",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.10.4",
+    "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.4",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
