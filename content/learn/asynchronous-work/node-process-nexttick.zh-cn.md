@@ -24,7 +24,8 @@ process.nextTick(() => {
 
 当你想确保在下一次事件循环迭代中该代码已被执行时，请使用 `nextTick()`。
 
-#### 一个事件顺序的示例：
+#### 一个事件顺序的示例
+
 ```js
 console.log("Hello => number 1");
 
@@ -39,9 +40,10 @@ setImmediate(() => {
 process.nextTick(() => {
   console.log("Running at next tick => number 2");
 });
-
 ```
-#### 输出:
+
+#### 输出
+
 ```bash
 Hello => number 1
 Running at next tick => number 2
