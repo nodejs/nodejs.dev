@@ -41,8 +41,8 @@
     flex-direction: row;
     justify-content: space-between;
 
-    span,
-    button {
+    .lang,
+    .copy {
       align-items: center;
       display: inherit;
       font-size: var(--font-size-code);
@@ -51,13 +51,14 @@
       width: 86px;
     }
 
-    span {
+    .lang {
       background-color: var(--black4);
       border-radius: 0 0 0.3rem 0;
+      border-width: 0;
       color: var(--black9);
     }
 
-    button {
+    .copy {
       background-color: var(--black9);
       border-radius: 0 0 0 0.3rem;
       border-width: 0;
