@@ -22,6 +22,10 @@
 
     &--selected {
       border-bottom: 4px solid var(--brand5);
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 
