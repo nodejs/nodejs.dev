@@ -1,7 +1,7 @@
 import {
   ContributorApiResponse,
   Contributor,
-} from '../hooks/useNodeJsContributorsApi';
+} from '../types/nodejsContributors';
 
 export const createRandomContributorApiData = (): ContributorApiResponse => ({
   login: 'login_mock',
