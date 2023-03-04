@@ -210,6 +210,636 @@
       "source": "/api/latest/",
       "destination": "/en/api/v19/documentation/",
       "type": "301"
+    },
+    {
+      "source": "/api/addons/",
+      "destination": "/en/api/v19/addons/",
+      "type": "301"
+    },
+    {
+      "source": "/api/addons.html",
+      "destination": "/en/api/v19/addons/",
+      "type": "301"
+    },
+    {
+      "source": "/api/assert/",
+      "destination": "/en/api/v19/assert/",
+      "type": "301"
+    },
+    {
+      "source": "/api/assert.html",
+      "destination": "/en/api/v19/assert/",
+      "type": "301"
+    },
+    {
+      "source": "/api/async_context/",
+      "destination": "/en/api/v19/async_context/",
+      "type": "301"
+    },
+    {
+      "source": "/api/async_context.html",
+      "destination": "/en/api/v19/async_context/",
+      "type": "301"
+    },
+    {
+      "source": "/api/async_hooks/",
+      "destination": "/en/api/v19/async_hooks/",
+      "type": "301"
+    },
+    {
+      "source": "/api/async_hooks.html",
+      "destination": "/en/api/v19/async_hooks/",
+      "type": "301"
+    },
+    {
+      "source": "/api/buffer/",
+      "destination": "/en/api/v19/buffer/",
+      "type": "301"
+    },
+    {
+      "source": "/api/buffer.html",
+      "destination": "/en/api/v19/buffer/",
+      "type": "301"
+    },
+    {
+      "source": "/api/child_process/",
+      "destination": "/en/api/v19/child_process/",
+      "type": "301"
+    },
+    {
+      "source": "/api/child_process.html",
+      "destination": "/en/api/v19/child_process/",
+      "type": "301"
+    },
+    {
+      "source": "/api/cli/",
+      "destination": "/en/api/v19/cli/",
+      "type": "301"
+    },
+    {
+      "source": "/api/cli.html",
+      "destination": "/en/api/v19/cli/",
+      "type": "301"
+    },
+    {
+      "source": "/api/cluster/",
+      "destination": "/en/api/v19/cluster/",
+      "type": "301"
+    },
+    {
+      "source": "/api/cluster.html",
+      "destination": "/en/api/v19/cluster/",
+      "type": "301"
+    },
+    {
+      "source": "/api/console/",
+      "destination": "/en/api/v19/console/",
+      "type": "301"
+    },
+    {
+      "source": "/api/console.html",
+      "destination": "/en/api/v19/console/",
+      "type": "301"
+    },
+    {
+      "source": "/api/corepack/",
+      "destination": "/en/api/v19/corepack/",
+      "type": "301"
+    },
+    {
+      "source": "/api/corepack.html",
+      "destination": "/en/api/v19/corepack/",
+      "type": "301"
+    },
+    {
+      "source": "/api/crypto/",
+      "destination": "/en/api/v19/crypto/",
+      "type": "301"
+    },
+    {
+      "source": "/api/crypto.html",
+      "destination": "/en/api/v19/crypto/",
+      "type": "301"
+    },
+    {
+      "source": "/api/debugger/",
+      "destination": "/en/api/v19/debugger/",
+      "type": "301"
+    },
+    {
+      "source": "/api/debugger.html",
+      "destination": "/en/api/v19/debugger/",
+      "type": "301"
+    },
+    {
+      "source": "/api/deprecations/",
+      "destination": "/en/api/v19/deprecations/",
+      "type": "301"
+    },
+    {
+      "source": "/api/deprecations.html",
+      "destination": "/en/api/v19/deprecations/",
+      "type": "301"
+    },
+    {
+      "source": "/api/dgram/",
+      "destination": "/en/api/v19/dgram/",
+      "type": "301"
+    },
+    {
+      "source": "/api/dgram.html",
+      "destination": "/en/api/v19/dgram/",
+      "type": "301"
+    },
+    {
+      "source": "/api/diagnostics_channel/",
+      "destination": "/en/api/v19/diagnostics_channel/",
+      "type": "301"
+    },
+    {
+      "source": "/api/diagnostics_channel.html",
+      "destination": "/en/api/v19/diagnostics_channel/",
+      "type": "301"
+    },
+    {
+      "source": "/api/dns/",
+      "destination": "/en/api/v19/dns/",
+      "type": "301"
+    },
+    {
+      "source": "/api/dns.html",
+      "destination": "/en/api/v19/dns/",
+      "type": "301"
+    },
+    {
+      "source": "/api/documentation/",
+      "destination": "/en/api/v19/documentation/",
+      "type": "301"
+    },
+    {
+      "source": "/api/documentation.html",
+      "destination": "/en/api/v19/documentation/",
+      "type": "301"
+    },
+    {
+      "source": "/api/domain/",
+      "destination": "/en/api/v19/domain/",
+      "type": "301"
+    },
+    {
+      "source": "/api/domain.html",
+      "destination": "/en/api/v19/domain/",
+      "type": "301"
+    },
+    {
+      "source": "/api/embedding/",
+      "destination": "/en/api/v19/embedding/",
+      "type": "301"
+    },
+    {
+      "source": "/api/embedding.html",
+      "destination": "/en/api/v19/embedding/",
+      "type": "301"
+    },
+    {
+      "source": "/api/errors/",
+      "destination": "/en/api/v19/errors/",
+      "type": "301"
+    },
+    {
+      "source": "/api/errors.html",
+      "destination": "/en/api/v19/errors/",
+      "type": "301"
+    },
+    {
+      "source": "/api/esm/",
+      "destination": "/en/api/v19/esm/",
+      "type": "301"
+    },
+    {
+      "source": "/api/esm.html",
+      "destination": "/en/api/v19/esm/",
+      "type": "301"
+    },
+    {
+      "source": "/api/events/",
+      "destination": "/en/api/v19/events/",
+      "type": "301"
+    },
+    {
+      "source": "/api/events.html",
+      "destination": "/en/api/v19/events/",
+      "type": "301"
+    },
+    {
+      "source": "/api/fs/",
+      "destination": "/en/api/v19/fs/",
+      "type": "301"
+    },
+    {
+      "source": "/api/fs.html",
+      "destination": "/en/api/v19/fs/",
+      "type": "301"
+    },
+    {
+      "source": "/api/globals/",
+      "destination": "/en/api/v19/globals/",
+      "type": "301"
+    },
+    {
+      "source": "/api/globals.html",
+      "destination": "/en/api/v19/globals/",
+      "type": "301"
+    },
+    {
+      "source": "/api/http/",
+      "destination": "/en/api/v19/http/",
+      "type": "301"
+    },
+    {
+      "source": "/api/http.html",
+      "destination": "/en/api/v19/http/",
+      "type": "301"
+    },
+    {
+      "source": "/api/http2/",
+      "destination": "/en/api/v19/http2/",
+      "type": "301"
+    },
+    {
+      "source": "/api/http2.html",
+      "destination": "/en/api/v19/http2/",
+      "type": "301"
+    },
+    {
+      "source": "/api/https/",
+      "destination": "/en/api/v19/https/",
+      "type": "301"
+    },
+    {
+      "source": "/api/https.html",
+      "destination": "/en/api/v19/https/",
+      "type": "301"
+    },
+    {
+      "source": "/api/inspector/",
+      "destination": "/en/api/v19/inspector/",
+      "type": "301"
+    },
+    {
+      "source": "/api/inspector.html",
+      "destination": "/en/api/v19/inspector/",
+      "type": "301"
+    },
+    {
+      "source": "/api/intl/",
+      "destination": "/en/api/v19/intl/",
+      "type": "301"
+    },
+    {
+      "source": "/api/intl.html",
+      "destination": "/en/api/v19/intl/",
+      "type": "301"
+    },
+    {
+      "source": "/api/module/",
+      "destination": "/en/api/v19/module/",
+      "type": "301"
+    },
+    {
+      "source": "/api/module.html",
+      "destination": "/en/api/v19/module/",
+      "type": "301"
+    },
+    {
+      "source": "/api/modules/",
+      "destination": "/en/api/v19/modules/",
+      "type": "301"
+    },
+    {
+      "source": "/api/modules.html",
+      "destination": "/en/api/v19/modules/",
+      "type": "301"
+    },
+    {
+      "source": "/api/n-api/",
+      "destination": "/en/api/v19/n-api/",
+      "type": "301"
+    },
+    {
+      "source": "/api/n-api.html",
+      "destination": "/en/api/v19/n-api/",
+      "type": "301"
+    },
+    {
+      "source": "/api/net/",
+      "destination": "/en/api/v19/net/",
+      "type": "301"
+    },
+    {
+      "source": "/api/net.html",
+      "destination": "/en/api/v19/net/",
+      "type": "301"
+    },
+    {
+      "source": "/api/os/",
+      "destination": "/en/api/v19/os/",
+      "type": "301"
+    },
+    {
+      "source": "/api/os.html",
+      "destination": "/en/api/v19/os/",
+      "type": "301"
+    },
+    {
+      "source": "/api/packages/",
+      "destination": "/en/api/v19/packages/",
+      "type": "301"
+    },
+    {
+      "source": "/api/packages.html",
+      "destination": "/en/api/v19/packages/",
+      "type": "301"
+    },
+    {
+      "source": "/api/path/",
+      "destination": "/en/api/v19/path/",
+      "type": "301"
+    },
+    {
+      "source": "/api/path.html",
+      "destination": "/en/api/v19/path/",
+      "type": "301"
+    },
+    {
+      "source": "/api/perf_hooks/",
+      "destination": "/en/api/v19/perf_hooks/",
+      "type": "301"
+    },
+    {
+      "source": "/api/perf_hooks.html",
+      "destination": "/en/api/v19/perf_hooks/",
+      "type": "301"
+    },
+    {
+      "source": "/api/permissions/",
+      "destination": "/en/api/v19/permissions/",
+      "type": "301"
+    },
+    {
+      "source": "/api/permissions.html",
+      "destination": "/en/api/v19/permissions/",
+      "type": "301"
+    },
+    {
+      "source": "/api/policy/",
+      "destination": "/en/api/v19/policy/",
+      "type": "301"
+    },
+    {
+      "source": "/api/policy.html",
+      "destination": "/en/api/v19/policy/",
+      "type": "301"
+    },
+    {
+      "source": "/api/process/",
+      "destination": "/en/api/v19/process/",
+      "type": "301"
+    },
+    {
+      "source": "/api/process.html",
+      "destination": "/en/api/v19/process/",
+      "type": "301"
+    },
+    {
+      "source": "/api/punycode/",
+      "destination": "/en/api/v19/punycode/",
+      "type": "301"
+    },
+    {
+      "source": "/api/punycode.html",
+      "destination": "/en/api/v19/punycode/",
+      "type": "301"
+    },
+    {
+      "source": "/api/querystring/",
+      "destination": "/en/api/v19/querystring/",
+      "type": "301"
+    },
+    {
+      "source": "/api/querystring.html",
+      "destination": "/en/api/v19/querystring/",
+      "type": "301"
+    },
+    {
+      "source": "/api/readline/",
+      "destination": "/en/api/v19/readline/",
+      "type": "301"
+    },
+    {
+      "source": "/api/readline.html",
+      "destination": "/en/api/v19/readline/",
+      "type": "301"
+    },
+    {
+      "source": "/api/repl/",
+      "destination": "/en/api/v19/repl/",
+      "type": "301"
+    },
+    {
+      "source": "/api/repl.html",
+      "destination": "/en/api/v19/repl/",
+      "type": "301"
+    },
+    {
+      "source": "/api/report/",
+      "destination": "/en/api/v19/report/",
+      "type": "301"
+    },
+    {
+      "source": "/api/report.html",
+      "destination": "/en/api/v19/report/",
+      "type": "301"
+    },
+    {
+      "source": "/api/single-executable-applications/",
+      "destination": "/en/api/v19/single-executable-applications/",
+      "type": "301"
+    },
+    {
+      "source": "/api/single-executable-applications.html",
+      "destination": "/en/api/v19/single-executable-applications/",
+      "type": "301"
+    },
+    {
+      "source": "/api/stream/",
+      "destination": "/en/api/v19/stream/",
+      "type": "301"
+    },
+    {
+      "source": "/api/stream.html",
+      "destination": "/en/api/v19/stream/",
+      "type": "301"
+    },
+    {
+      "source": "/api/string_decoder/",
+      "destination": "/en/api/v19/string_decoder/",
+      "type": "301"
+    },
+    {
+      "source": "/api/string_decoder.html",
+      "destination": "/en/api/v19/string_decoder/",
+      "type": "301"
+    },
+    {
+      "source": "/api/synopsis/",
+      "destination": "/en/api/v19/synopsis/",
+      "type": "301"
+    },
+    {
+      "source": "/api/synopsis.html",
+      "destination": "/en/api/v19/synopsis/",
+      "type": "301"
+    },
+    {
+      "source": "/api/test/",
+      "destination": "/en/api/v19/test/",
+      "type": "301"
+    },
+    {
+      "source": "/api/test.html",
+      "destination": "/en/api/v19/test/",
+      "type": "301"
+    },
+    {
+      "source": "/api/timers/",
+      "destination": "/en/api/v19/timers/",
+      "type": "301"
+    },
+    {
+      "source": "/api/timers.html",
+      "destination": "/en/api/v19/timers/",
+      "type": "301"
+    },
+    {
+      "source": "/api/tls/",
+      "destination": "/en/api/v19/tls/",
+      "type": "301"
+    },
+    {
+      "source": "/api/tls.html",
+      "destination": "/en/api/v19/tls/",
+      "type": "301"
+    },
+    {
+      "source": "/api/tracing/",
+      "destination": "/en/api/v19/tracing/",
+      "type": "301"
+    },
+    {
+      "source": "/api/tracing.html",
+      "destination": "/en/api/v19/tracing/",
+      "type": "301"
+    },
+    {
+      "source": "/api/tty/",
+      "destination": "/en/api/v19/tty/",
+      "type": "301"
+    },
+    {
+      "source": "/api/tty.html",
+      "destination": "/en/api/v19/tty/",
+      "type": "301"
+    },
+    {
+      "source": "/api/url/",
+      "destination": "/en/api/v19/url/",
+      "type": "301"
+    },
+    {
+      "source": "/api/url.html",
+      "destination": "/en/api/v19/url/",
+      "type": "301"
+    },
+    {
+      "source": "/api/util/",
+      "destination": "/en/api/v19/util/",
+      "type": "301"
+    },
+    {
+      "source": "/api/util.html",
+      "destination": "/en/api/v19/util/",
+      "type": "301"
+    },
+    {
+      "source": "/api/v8/",
+      "destination": "/en/api/v19/v8/",
+      "type": "301"
+    },
+    {
+      "source": "/api/v8.html",
+      "destination": "/en/api/v19/v8/",
+      "type": "301"
+    },
+    {
+      "source": "/api/vm/",
+      "destination": "/en/api/v19/vm/",
+      "type": "301"
+    },
+    {
+      "source": "/api/vm.html",
+      "destination": "/en/api/v19/vm/",
+      "type": "301"
+    },
+    {
+      "source": "/api/wasi/",
+      "destination": "/en/api/v19/wasi/",
+      "type": "301"
+    },
+    {
+      "source": "/api/wasi.html",
+      "destination": "/en/api/v19/wasi/",
+      "type": "301"
+    },
+    {
+      "source": "/api/webcrypto/",
+      "destination": "/en/api/v19/webcrypto/",
+      "type": "301"
+    },
+    {
+      "source": "/api/webcrypto.html",
+      "destination": "/en/api/v19/webcrypto/",
+      "type": "301"
+    },
+    {
+      "source": "/api/webstreams/",
+      "destination": "/en/api/v19/webstreams/",
+      "type": "301"
+    },
+    {
+      "source": "/api/webstreams.html",
+      "destination": "/en/api/v19/webstreams/",
+      "type": "301"
+    },
+    {
+      "source": "/api/worker_threads/",
+      "destination": "/en/api/v19/worker_threads/",
+      "type": "301"
+    },
+    {
+      "source": "/api/worker_threads.html",
+      "destination": "/en/api/v19/worker_threads/",
+      "type": "301"
+    },
+    {
+      "source": "/api/zlib/",
+      "destination": "/en/api/v19/zlib/",
+      "type": "301"
+    },
+    {
+      "source": "/api/zlib.html",
+      "destination": "/en/api/v19/zlib/",
+      "type": "301"
     }
   ]
 }
