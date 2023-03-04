@@ -8,7 +8,7 @@ category: about
 
 Node.js は、非同期のイベントドリブン JavaScript ランタイムとして、スケーラブルなネットワークアプリケーションを構築するために設計されています。次の "hello world" の例では、多くの接続を同時に処理できます。接続を並列に処理することができます。各接続の際に、コールバックが呼び出されます。しかし、何もすることがない場合は、Node.js はスリープします。
 
-```javascript
+```js
 const http = require('http');
 
 const hostname = '127.0.0.1';

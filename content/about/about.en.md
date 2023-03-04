@@ -11,7 +11,7 @@ scalable network applications. In the following "hello world" example, many
 connections can be handled concurrently. Upon each connection, the callback is
 fired, but if there is no work to be done, Node.js will sleep.
 
-```javascript
+```js
 const http = require('http');
 
 const hostname = '127.0.0.1';
