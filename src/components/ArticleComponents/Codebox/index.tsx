@@ -24,61 +24,47 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   const [parsedCode, setParsedCode] = useState('');
   const [copied, copyText] = useCopyToClipboard();
   const [langIndex, setLangIndex] = useState(0);
-  const [labelLang, setLabelLang] = useState('LANG');
   const [stringCode, setStringCode] = useState('');
-
   // eslint-disable-next-line react/prop-types
-  const className = props.className || 'LANG';
+  const className = props.className || 'text';
   // Language Matches in class
   const matches = className.match(/language-(?<lang>.*)/);
-  // Language name from classname
-  const language = matches?.groups?.lang || 'text';
-  const LabelArray = language.split('|') || ['LANG'];
-  const codeArray = props.children
-    ? props.children.toString().split('------\n')
-    : [''];
+  const languageOptions = (matches?.groups?.lang || 'text').split('|');
+  const language = languageOptions[langIndex];
+  const codeArray = props.children?props.children.toString().split('-------\n'): [''];
 
-  const setLabel = () => {
-    setLabelLang(LabelArray[langIndex]);
-  };
-
-  const setCode = () => {
-    setStringCode(codeArray[langIndex]);
-    setParsedCode(
-      sanitize(
-        highlight(codeArray[langIndex], languages.javascript, 'javascript')
-      )
-    );
-  };
-
-  const handleLangChange = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    setLangIndex((langIndex + 1) % LabelArray.length);
-    setLabel();
-    setCode();
-  };
-
-  const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>): Promise<void> => {
     event.preventDefault();
     copyText(stringCode);
   };
+  
+  useEffect(():void => {
+    setStringCode(codeArray[langIndex]);
 
-  useEffect(() => {
-    setLabel();
-    setCode();
+    const parsedLanguage = replaceLanguages(language);
+    const prismLanguage = languages[parsedLanguage] || languages.text;
+
+    setParsedCode(
+      highlight(stringCode, prismLanguage, parsedLanguage)
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [langIndex]);
 
   return (
     <pre className={classnames(styles.pre, replaceLanguages(className))}>
       <div className={styles.top}>
-        <button
-          type="button"
-          className={styles.lang}
-          onClick={handleLangChange}
-        >
-          {labelLang}
-        </button>
+        <div className={styles.langBox}>
+          {languageOptions.map((lang, index) => (
+            <button
+              type="button"
+              key={lang}
+              className={styles.lang}
+              onClick={() => setLangIndex(index)}
+            >
+              {lang}
+            </button>
+          ))}
+        </div>
         <button type="button" className={styles.copy} onClick={handleCopyCode}>
           <FormattedMessage id="components.codeBox.copy" values={{ copied }} />
         </button>
@@ -88,6 +74,11 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: parsedCode }}
       />
+      <div>
+      language: {language}<br />
+      index: {langIndex}<br />
+      string code:{stringCode}<br />
+      </div>
     </pre>
   );
 };

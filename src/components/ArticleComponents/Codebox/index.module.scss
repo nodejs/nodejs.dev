@@ -50,12 +50,20 @@
       justify-content: center;
       width: 86px;
     }
-
-    .lang {
+    .langBox {
       background-color: var(--black4);
       border-radius: 0 0 0.3rem 0;
-      border-width: 0;
-      color: var(--black9);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 86px;
+
+      .lang {
+        background-color: var(--black4);
+        border-width: 0;
+        color: var(--black9);
+        width: max-content;
+      }
     }
 
     .copy {
