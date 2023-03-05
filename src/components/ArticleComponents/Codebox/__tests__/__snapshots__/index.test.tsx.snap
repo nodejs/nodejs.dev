@@ -8,12 +8,16 @@ exports[`Codebox component renders correctly 1`] = `
     <div
       class="top"
     >
-      <button
-        class="lang"
-        type="button"
+      <div
+        class="langBox"
       >
-        html
-      </button>
+        <button
+          class="lang"
+          type="button"
+        >
+          html
+        </button>
+      </div>
       <button
         class="copy"
         type="button"
@@ -24,17 +28,10 @@ exports[`Codebox component renders correctly 1`] = `
     <div
       class="content"
     >
-      <span
-        class="token punctuation"
-      >
-        [
-      </span>
-      object Object
-      <span
-        class="token punctuation"
-      >
-        ]
-      </span>
+      const a = 1;
+    </div>
+    <div>
+      [object Object]
     </div>
   </pre>
 </div>

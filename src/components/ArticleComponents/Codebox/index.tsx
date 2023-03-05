@@ -24,28 +24,29 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   const [parsedCode, setParsedCode] = useState('');
   const [copied, copyText] = useCopyToClipboard();
   const [langIndex, setLangIndex] = useState(0);
-  const [stringCode, setStringCode] = useState('');
   // eslint-disable-next-line react/prop-types
   const className = props.className || 'text';
   // Language Matches in class
   const matches = className.match(/language-(?<lang>.*)/);
   const languageOptions = (matches?.groups?.lang || 'text').split('|');
   const language = languageOptions[langIndex];
-  const codeArray = props.children?props.children.toString().split('-------\n'): [''];
+  const codeArray = props.children
+    ? props.children.toString().split('-------\n')
+    : [''];
 
-  const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>): Promise<void> => {
+  const handleCopyCode = async (
+    event: React.MouseEvent<HTMLButtonElement>
+  ): Promise<void> => {
     event.preventDefault();
-    copyText(stringCode);
+    copyText(codeArray[langIndex]);
   };
-  
-  useEffect(():void => {
-    setStringCode(codeArray[langIndex]);
 
+  useEffect((): void => {
     const parsedLanguage = replaceLanguages(language);
     const prismLanguage = languages[parsedLanguage] || languages.text;
 
     setParsedCode(
-      highlight(stringCode, prismLanguage, parsedLanguage)
+      sanitize(highlight(codeArray[langIndex], prismLanguage, parsedLanguage))
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [langIndex]);
@@ -61,7 +62,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
               className={styles.lang}
               onClick={() => setLangIndex(index)}
             >
-              {lang}
+              {lang.toLowerCase()}
             </button>
           ))}
         </div>
@@ -74,11 +75,6 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: parsedCode }}
       />
-      <div>
-      language: {language}<br />
-      index: {langIndex}<br />
-      string code:{stringCode}<br />
-      </div>
     </pre>
   );
 };
