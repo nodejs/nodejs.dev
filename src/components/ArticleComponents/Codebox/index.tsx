@@ -15,10 +15,10 @@ interface Props {
   };
 }
 
-const replaceLabelLanguages = (language: string) =>
-  language.replace(/console/i, 'bash')
+export const replaceLabelLanguages = (language: string) =>
+  language.replace(/console/i, 'bash');
 
-const replaceLanguages = (language: string) =>
+export const replaceLanguages = (language: string) =>
   language
     .replace(/sync|async|mjs|cjs|javascript/i, 'js')
     .replace(/console|shell/i, 'bash');
@@ -37,9 +37,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
     ? props.children.toString().split('-------\n')
     : [''];
 
-  const handleCopyCode = async (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     copyText(codeArray[langIndex]);
   };
