@@ -44,7 +44,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
     copyText(codeArray[langIndex]);
   };
 
-  useEffect((): void => {
+  useEffect(() => {
     const parsedLanguage = replaceLanguages(language);
     const prismLanguage = languages[parsedLanguage] || languages.text;
 
