@@ -15,6 +15,9 @@ interface Props {
   };
 }
 
+const replaceLabelLanguages = (language: string) =>
+  language.replace(/console/i, 'bash')
+
 const replaceLanguages = (language: string) =>
   language
     .replace(/mjs|cjs|javascript/i, 'js')
@@ -36,7 +39,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
 
   const handleCopyCode = async (
     event: React.MouseEvent<HTMLButtonElement>
-  ): Promise<void> => {
+  ) => {
     event.preventDefault();
     copyText(codeArray[langIndex]);
   };
@@ -62,7 +65,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
               className={styles.lang}
               onClick={() => setLangIndex(index)}
             >
-              {lang.toLowerCase()}
+              {replaceLabelLanguages(lang.toLowerCase())}
             </button>
           ))}
         </div>
