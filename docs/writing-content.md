@@ -39,3 +39,14 @@ You can have multiple languages in the same code block. For example:
 
 You have to use `|` to separate the languages (the "lang" mustn't contains space).
 And we use seven dashes (`------`) to separate the code blocks.
+
+You can switch between `sync` and `async` code blocks. For example:
+
+```md
+    '''js
+    const foo = 'bar';
+    '''
+    '''js async
+    const foo = await 'bar';
+    '''
+```
