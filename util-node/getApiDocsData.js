@@ -21,7 +21,7 @@ const progressBarOptions = {
     'Syncing API || {bar} {percentage}% || Remaining: {remaining} || Processing: {started}',
 };
 
-const getApiDocsData = async (releaseVersions, callback) => {
+async function getApiDocsData(releaseVersions, callback) {
   const progressBar = new cliProgress.SingleBar(
     progressBarOptions,
     cliProgress.Presets.shades_classic
@@ -159,6 +159,6 @@ const getApiDocsData = async (releaseVersions, callback) => {
 
     callback();
   });
-};
+}
 
 module.exports = getApiDocsData;
