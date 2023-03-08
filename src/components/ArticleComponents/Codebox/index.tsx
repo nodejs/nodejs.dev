@@ -34,7 +34,7 @@ const Codebox = ({ children: { props } }: Props): JSX.Element => {
   const languageOptions = (matches?.groups?.lang || 'text').split('|');
   const language = languageOptions[langIndex];
   const codeArray = props.children
-    ? props.children.toString().split('-------\n')
+    ? props.children.toString().split('--------------\n')
     : [''];
 
   const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>) => {
