@@ -15,7 +15,7 @@ Stable
 
 <Metadata data={{"name":"vm"}} />
 
-<Metadata version="v18.14.2" data={{"source_link":"lib/vm.js"}} />
+<Metadata version="v18.15.0" data={{"source_link":"lib/vm.js"}} />
 
 The `node:vm` module enables compiling and running code within V8 Virtual
 Machine contexts.
@@ -901,7 +901,7 @@ const vm = require('node:vm');
 
 ### <DataTag tag="M" /> `vm.compileFunction(code[, params[, options]])`
 
-<Metadata data={{"changes":[{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v15.9.0","pr-url":"https://github.com/nodejs/node/pull/35431","description":"Added `importModuleDynamically` option again."},{"version":"v14.3.0","pr-url":"https://github.com/nodejs/node/pull/33364","description":"Removal of `importModuleDynamically` due to compatibility issues."},{"version":["v14.1.0","v13.14.0"],"pr-url":"https://github.com/nodejs/node/pull/32985","description":"The `importModuleDynamically` option is now supported."}],"update":{"type":"added","version":["v10.10.0"]}}} />
+<Metadata data={{"changes":[{"version":["v18.15.0"],"pr-url":"https://github.com/nodejs/node/pull/46320","description":"The return value now includes `cachedDataRejected` with the same semantics as the `vm.Script` version if the `cachedData` option was passed."},{"version":["v17.0.0","v16.12.0"],"pr-url":"https://github.com/nodejs/node/pull/40249","description":"Added support for import assertions to the `importModuleDynamically` parameter."},{"version":"v15.9.0","pr-url":"https://github.com/nodejs/node/pull/35431","description":"Added `importModuleDynamically` option again."},{"version":"v14.3.0","pr-url":"https://github.com/nodejs/node/pull/33364","description":"Removal of `importModuleDynamically` due to compatibility issues."},{"version":["v14.1.0","v13.14.0"],"pr-url":"https://github.com/nodejs/node/pull/32985","description":"The `importModuleDynamically` option is now supported."}],"update":{"type":"added","version":["v10.10.0"]}}} />
 
 * `code` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The body of the function to compile.
 * `params` string\[] An array of strings containing all parameters for the
