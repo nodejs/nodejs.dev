@@ -13,7 +13,7 @@ Experimental. Please migrate away from this API, if you can. We do not recommend
 
 </Stability>
 
-<Metadata version="v18.14.2" data={{"source_link":"lib/async_hooks.js"}} />
+<Metadata version="v18.15.0" data={{"source_link":"lib/async_hooks.js"}} />
 
 We strongly discourage the use of the `async_hooks` API.
 Other APIs that can cover most of its use cases include:
