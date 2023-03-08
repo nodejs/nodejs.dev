@@ -77,7 +77,7 @@ fs.writeFile('/Users/joe/test.txt', content, { flag: 'a+' }, err => {});
 
 ## Appending content to a file
 
-Appending to files is handy when you don't want to overwrite a filewith new content, but rather add to it.
+Appending to files is handy when you don't want to overwrite a file with new content, but rather add to it.
 
 ### Examples
 

@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.6.0" data={{"source_link":"lib/https.js"}} />
+<Metadata version="v19.7.0" data={{"source_link":"lib/https.js"}} />
 
 HTTPS is the HTTP protocol over TLS/SSL. In Node.js this is implemented as a
 separate module.

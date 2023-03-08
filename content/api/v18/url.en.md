@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.14.0" data={{"source_link":"lib/url.js"}} />
+<Metadata version="v18.15.0" data={{"source_link":"lib/url.js"}} />
 
 The `node:url` module provides utilities for URL resolution and parsing. It can
 be accessed using:

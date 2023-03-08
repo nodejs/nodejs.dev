@@ -15,7 +15,7 @@ Stable
 
 <Metadata data={{"name":"fs"}} />
 
-<Metadata version="v18.14.0" data={{"source_link":"lib/fs.js"}} />
+<Metadata version="v18.15.0" data={{"source_link":"lib/fs.js"}} />
 
 The `node:fs` module enables interacting with the file system in a
 way modeled on standard POSIX functions.
@@ -1305,6 +1305,17 @@ Removes files and directories (modeled on the standard POSIX `rm` utility).
   * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the numeric values in the returned
     [`fs.Stats`](/api/v18/fs#fsstats) object should be `bigint`. **Default:** `false`.
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)  Fulfills with the [`fs.Stats`](/api/v18/fs#fsstats) object for the
+  given `path`.
+
+#### <DataTag tag="M" /> `fsPromises.statfs(path[, options])`
+
+<Metadata data={{"update":{"type":"added","version":["v18.15.0"]}}} />
+
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`URL`](/api/v18/url#the-whatwg-url-api)
+* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+  * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the numeric values in the returned
+    fs.StatFs object should be `bigint`. **Default:** `false`.
+* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with the fs.StatFs object for the
   given `path`.
 
 #### <DataTag tag="M" /> `fsPromises.symlink(target, path[, type])`
@@ -3054,6 +3065,24 @@ Stats {
 }
 ```
 
+#### <DataTag tag="M" /> `fs.statfs(path[, options], callback)`
+
+<Metadata data={{"update":{"type":"added","version":["v18.15.0"]}}} />
+
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`URL`](/api/v18/url#the-whatwg-url-api)
+* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+  * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the numeric values in the returned
+    fs.StatFs object should be `bigint`. **Default:** `false`.
+* `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+  * `err` [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
+  * `stats` fs.StatFs
+
+Asynchronous statfs(2). Returns information about the mounted file system which
+contains `path`. The callback gets two arguments `(err, stats)` where `stats`
+is an fs.StatFs object.
+
+In case of an error, the `err.code` will be one of [Common System Errors][].
+
 #### <DataTag tag="M" /> `fs.symlink(target, path[, type], callback)`
 
 <Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23724","description":"If the `type` argument is left undefined, Node will autodetect `target` type and automatically select `dir` or `file`."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `target` and `path` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."}],"update":{"type":"added","version":["v0.1.31"]}}} />
@@ -4270,6 +4299,21 @@ utility). Returns `undefined`.
 
 Retrieves the [`fs.Stats`](/api/v18/fs#fsstats) for the path.
 
+#### <DataTag tag="M" /> `fs.statfsSync(path[, options])`
+
+<Metadata data={{"update":{"type":"added","version":["v18.15.0"]}}} />
+
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v18/buffer#buffer) | [`URL`](/api/v18/url#the-whatwg-url-api)
+* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+  * `bigint` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) Whether the numeric values in the returned
+    fs.StatFs object should be `bigint`. **Default:** `false`.
+* Returns: fs.StatFs
+
+Synchronous statfs(2). Returns information about the mounted file system which
+contains `path`.
+
+In case of an error, the `err.code` will be one of [Common System Errors][].
+
 #### <DataTag tag="M" /> `fs.symlinkSync(target, path[, type])`
 
 <Metadata data={{"changes":[{"version":"v12.0.0","pr-url":"https://github.com/nodejs/node/pull/23724","description":"If the `type` argument is left undefined, Node will autodetect `target` type and automatically select `dir` or `file`."},{"version":"v7.6.0","pr-url":"https://github.com/nodejs/node/pull/10739","description":"The `target` and `path` parameters can be WHATWG `URL` objects using `file:` protocol. Support is currently still *experimental*."}],"update":{"type":"added","version":["v0.1.31"]}}} />
@@ -5132,6 +5176,98 @@ The times in the stat object have the following semantics:
 Prior to Node.js 0.12, the `ctime` held the `birthtime` on Windows systems. As
 of 0.12, `ctime` is not "creation time", and on Unix systems, it never was.
 
+#### <DataTag tag="C" /> `fs.StatFs`
+
+<Metadata data={{"update":{"type":"added","version":["v18.15.0"]}}} />
+
+Provides information about a mounted file system.
+
+Objects returned from [`fs.statfs()`][] and its synchronous counterpart are of
+this type. If `bigint` in the `options` passed to those methods is `true`, the
+numeric values will be `bigint` instead of `number`.
+
+```console
+StatFs {
+  type: 1397114950,
+  bsize: 4096,
+  blocks: 121938943,
+  bfree: 61058895,
+  bavail: 61058895,
+  files: 999,
+  ffree: 1000000
+}
+```
+
+`bigint` version:
+
+```console
+StatFs {
+  type: 1397114950n,
+  bsize: 4096n,
+  blocks: 121938943n,
+  bfree: 61058895n,
+  bavail: 61058895n,
+  files: 999n,
+  ffree: 1000000n
+}
+```
+
+##### <DataTag tag="M" /> `statfs.bavail`
+
+<Metadata data={{"update":{"type":"added","version":["v18.15.0"]}}} />
+
+* [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
+
+Free blocks available to unprivileged users.
+
+##### <DataTag tag="M" /> `statfs.bfree`
+
+<Metadata data={{"update":{"type":"added","version":["v18.15.0"]}}} />
+
+* [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
+
+Free blocks in file system.
+
+##### <DataTag tag="M" /> `statfs.blocks`
+
+<Metadata data={{"update":{"type":"added","version":["v18.15.0"]}}} />
+
+* [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
+
+Total data blocks in file system.
+
+##### <DataTag tag="M" /> `statfs.bsize`
+
+<Metadata data={{"update":{"type":"added","version":["v18.15.0"]}}} />
+
+* [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
+
+Optimal transfer block size.
+
+##### <DataTag tag="M" /> `statfs.ffree`
+
+<Metadata data={{"update":{"type":"added","version":["v18.15.0"]}}} />
+
+* [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
+
+Free file nodes in file system.
+
+##### <DataTag tag="M" /> `statfs.files`
+
+<Metadata data={{"update":{"type":"added","version":["v18.15.0"]}}} />
+
+* [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
+
+Total file nodes in file system.
+
+##### <DataTag tag="M" /> `statfs.type`
+
+<Metadata data={{"update":{"type":"added","version":["v18.15.0"]}}} />
+
+* [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`bigint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
+
+Type of file system.
+
 #### <DataTag tag="C" /> `fs.WriteStream`
 
 <Metadata data={{"update":{"type":"added","version":["v0.1.93"]}}} />
@@ -5957,6 +6093,7 @@ the file contents.
 [`fs.rmSync()`]: #fsrmsyncpath-options
 [`fs.rmdir()`]: #fsrmdirpath-options-callback
 [`fs.stat()`]: #fsstatpath-options-callback
+[`fs.statfs()`]: #fsstatfspath-options-callback
 [`fs.symlink()`]: #fssymlinktarget-path-type-callback
 [`fs.utimes()`]: #fsutimespath-atime-mtime-callback
 [`fs.watch()`]: #fswatchfilename-options-listener

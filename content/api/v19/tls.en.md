@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.6.0" data={{"source_link":"lib/tls.js"}} />
+<Metadata version="v19.7.0" data={{"source_link":"lib/tls.js"}} />
 
 The `node:tls` module provides an implementation of the Transport Layer Security
 (TLS) and Secure Socket Layer (SSL) protocols that is built on top of OpenSSL.

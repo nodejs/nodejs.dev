@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.6.0" data={{"source_link":"lib/tty.js"}} />
+<Metadata version="v19.7.0" data={{"source_link":"lib/tty.js"}} />
 
 The `node:tty` module provides the `tty.ReadStream` and `tty.WriteStream`
 classes. In most cases, it will not be necessary or possible to use this module

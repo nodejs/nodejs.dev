@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.14.0" data={{"source_link":"lib/buffer.js"}} />
+<Metadata version="v18.15.0" data={{"source_link":"lib/buffer.js"}} />
 
 `Buffer` objects are used to represent a fixed-length sequence of bytes. Many
 Node.js APIs support `Buffer`s.
@@ -4475,6 +4475,18 @@ binary data and predate the introduction of typed arrays in JavaScript.
 For code running using Node.js APIs, converting between base64-encoded strings
 and binary data should be performed using `Buffer.from(str, 'base64')` and
 `buf.toString('base64')`.**
+
+#### <DataTag tag="M" /> `buffer.isAscii(input)`
+
+<Metadata data={{"update":{"type":"added","version":["v18.15.0"]}}} />
+
+* input [`Buffer`](/api/v18/buffer#buffer) | [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) The input to validate.
+* Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
+
+This function returns `true` if `input` contains only valid ASCII-encoded data,
+including the case in which `input` is empty.
+
+Throws if the `input` is a detached array buffer.
 
 #### <DataTag tag="M" /> `buffer.isUtf8(input)`
 

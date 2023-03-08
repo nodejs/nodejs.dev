@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.14.0" data={{"source_link":"lib/http.js"}} />
+<Metadata version="v18.15.0" data={{"source_link":"lib/http.js"}} />
 
 To use the HTTP server and client one must `require('node:http')`.
 
@@ -2496,6 +2496,46 @@ Sets a single header value. If the header already exists in the to-be-sent
 headers, its value will be replaced. Use an array of strings to send multiple
 headers with the same name.
 
+#### <DataTag tag="M" /> `outgoingMessage.setHeaders(headers)`
+
+<Metadata data={{"update":{"type":"added","version":["v18.15.0"]}}} />
+
+* `headers` [`Headers`](https://developer.mozilla.org/en-US/docs/Web/API/Headers) | [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+* Returns: [`http.ServerResponse`](/api/v18/http#httpserverresponse)
+
+Returns the response object.
+
+Sets multiple header values for implicit headers.
+`headers` must be an instance of [`Headers`][] or `Map`,
+if a header already exists in the to-be-sent headers,
+its value will be replaced.
+
+```js
+const headers = new Headers({ foo: 'bar' });
+response.setHeaders(headers);
+```
+
+or
+
+```js
+const headers = new Map([['foo', 'bar']]);
+res.setHeaders(headers);
+```
+
+When headers have been set with [`outgoingMessage.setHeaders()`][],
+they will be merged with any headers passed to [`response.writeHead()`][],
+with the headers passed to [`response.writeHead()`][] given precedence.
+
+```js
+// Returns content-type = text/plain
+const server = http.createServer((req, res) => {
+  const headers = new Headers({ 'Content-Type': 'text/html' });
+  res.setHeaders(headers);
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('ok');
+});
+```
+
 #### <DataTag tag="M" /> `outgoingMessage.setTimeout(msesc[, callback])`
 
 <Metadata data={{"update":{"type":"added","version":["v0.9.12"]}}} />
@@ -3149,6 +3189,7 @@ Set the maximum number of idle HTTP parsers.
 [`Buffer.byteLength()`]: /api/v18/buffer#static-method-bufferbytelengthstring-encoding
 [`Duplex`]: /api/v18/stream#class-streamduplex
 [`HPE_HEADER_OVERFLOW`]: /api/v18/errors#hpe_header_overflow
+[`Headers`]: /api/v18/globals#class-headers
 [`TypeError`]: /api/v18/errors#class-typeerror
 [`URL`]: /api/v18/url#the-whatwg-url-api
 [`agent.createConnection()`]: #agentcreateconnectionoptions-callback
@@ -3175,6 +3216,7 @@ Set the maximum number of idle HTTP parsers.
 [`net.createConnection()`]: /api/v18/net#netcreateconnectionoptions-connectlistener
 [`new URL()`]: /api/v18/url#new-urlinput-base
 [`outgoingMessage.setHeader(name, value)`]: #outgoingmessagesetheadername-value
+[`outgoingMessage.setHeaders()`]: #outgoingmessagesetheadersheaders
 [`outgoingMessage.socket`]: #outgoingmessagesocket
 [`removeHeader(name)`]: #requestremoveheadername
 [`request.destroy()`]: #requestdestroyerror

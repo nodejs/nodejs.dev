@@ -9,7 +9,7 @@ version: 'v18'
 
 <Metadata data={{"type":"global"}} />
 
-<Metadata version="v18.14.0" data={{"source_link":"lib/process.js"}} />
+<Metadata version="v18.15.0" data={{"source_link":"lib/process.js"}} />
 
 The `process` object provides information about, and control over, the current
 Node.js process.
@@ -1042,6 +1042,25 @@ and [Cluster][] documentation), the `process.connected` property will return
 
 Once `process.connected` is `false`, it is no longer possible to send messages
 over the IPC channel using `process.send()`.
+
+### <DataTag tag="M" /> `process.constrainedMemory()`
+
+<Metadata data={{"update":{"type":"added","version":["v18.15.0"]}}} />
+
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
+
+* [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type)
+
+Gets the amount of memory available to the process (in bytes) based on
+limits imposed by the OS. If there is no such constraint, or the constraint
+is unknown, `undefined` is returned.
+
+See [`uv_get_constrained_memory`][uv_get_constrained_memory] for more
+information.
 
 ### <DataTag tag="M" /> `process.cpuUsage([previousValue])`
 
@@ -3604,6 +3623,7 @@ cases:
 [process_warning]: #event-warning
 [report documentation]: /api/v18/report
 [terminal raw mode]: /api/v18/tty#readstreamsetrawmodemode
+[uv_get_constrained_memory]: https://docs.libuv.org/en/v1.x/misc.html#c.uv_get_constrained_memory
 [uv_rusage_t]: https://docs.libuv.org/en/v1.x/misc.html#c.uv_rusage_t
 [wikipedia_major_fault]: https://en.wikipedia.org/wiki/Page_fault#Major
 [wikipedia_minor_fault]: https://en.wikipedia.org/wiki/Page_fault#Minor

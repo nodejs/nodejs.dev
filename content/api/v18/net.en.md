@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.14.0" data={{"source_link":"lib/net.js"}} />
+<Metadata version="v18.15.0" data={{"source_link":"lib/net.js"}} />
 
 The `node:net` module provides an asynchronous network API for creating stream-based
 TCP or [IPC][] servers ([`net.createServer()`][]) and clients
@@ -864,6 +864,14 @@ See [`writable.destroy()`][] for further details.
   connection is destroyed no further data can be transferred using it.
 
 See [`writable.destroyed`][] for further details.
+
+#### <DataTag tag="M" /> `socket.destroySoon()`
+
+<Metadata data={{"update":{"type":"added","version":["v0.3.4"]}}} />
+
+Destroys the socket after all data is written. If the `'finish'` event was
+already emitted the socket is destroyed immediately. If the socket is still
+writable it implicitly calls `socket.end()`.
 
 #### <DataTag tag="M" /> `socket.end([data[, encoding]][, callback])`
 

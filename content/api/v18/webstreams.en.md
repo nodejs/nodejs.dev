@@ -562,7 +562,7 @@ Closes the [`ReadableStream`](/api/v18/webstreams#readablestream) to which this 
 Returns the amount of data remaining to fill the [`ReadableStream`](/api/v18/webstreams#readablestream)'s
 queue.
 
-##### <DataTag tag="M" /> `readableStreamDefaultController.enqueue(chunk)`
+##### <DataTag tag="M" /> `readableStreamDefaultController.enqueue([chunk])`
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
@@ -570,7 +570,7 @@ queue.
 
 Appends a new chunk of data to the [`ReadableStream`](/api/v18/webstreams#readablestream)'s queue.
 
-##### <DataTag tag="M" /> `readableStreamDefaultController.error(error)`
+##### <DataTag tag="M" /> `readableStreamDefaultController.error([error])`
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
@@ -615,7 +615,7 @@ queue.
 
 Appends a new chunk of data to the [`ReadableStream`](/api/v18/webstreams#readablestream)'s queue.
 
-##### <DataTag tag="M" /> `readableByteStreamController.error(error)`
+##### <DataTag tag="M" /> `readableByteStreamController.error([error])`
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
@@ -841,7 +841,7 @@ Appends a new chunk of data to the [`WritableStream`](/api/v18/webstreams#writab
 The `WritableStreamDefaultController` manage's the [`WritableStream`](/api/v18/webstreams#writablestream)'s
 internal state.
 
-##### <DataTag tag="M" /> `writableStreamDefaultController.error(error)`
+##### <DataTag tag="M" /> `writableStreamDefaultController.error([error])`
 
 <Metadata data={{"update":{"type":"added","version":["v16.5.0"]}}} />
 
@@ -1227,7 +1227,7 @@ const { Readable } = require('node:stream');
 const { TextEncoder } = require('node:util');
 
 const encoder = new TextEncoder();
-const dataArray = encoder.encode(['hello world from consumers!']);
+const dataArray = encoder.encode('hello world from consumers!');
 const readable = Readable.from(dataArray);
 arrayBuffer(readable).then((data) => {
   console.log(`from readable: ${data.byteLength}`);
