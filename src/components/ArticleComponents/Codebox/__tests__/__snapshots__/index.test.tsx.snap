@@ -73,6 +73,50 @@ exports[`Codebox component (multiple langs) renders correctly 1`] = `
       </span>
       
   
+      <span
+        class="token operator"
+      >
+        --
+      </span>
+      <span
+        class="token operator"
+      >
+        --
+      </span>
+      <span
+        class="token operator"
+      >
+        --
+      </span>
+      <span
+        class="token operator"
+      >
+        -
+      </span>
+      
+  
+      <span
+        class="token keyword"
+      >
+        import
+      </span>
+       http 
+      <span
+        class="token keyword"
+      >
+        from
+      </span>
+       
+      <span
+        class="token string"
+      >
+        'http'
+      </span>
+      <span
+        class="token punctuation"
+      >
+        ;
+      </span>
     </div>
   </pre>
 </div>

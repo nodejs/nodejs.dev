@@ -20,7 +20,7 @@ export const replaceLabelLanguages = (language: string) =>
 
 export const replaceLanguages = (language: string) =>
   language
-    .replace(/sync|async|mjs|cjs|javascript/i, 'js')
+    .replace(/mjs|cjs|javascript/i, 'js')
     .replace(/console|shell/i, 'bash');
 
 const Codebox = ({ children: { props } }: Props): JSX.Element => {

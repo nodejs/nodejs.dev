@@ -24,8 +24,6 @@ describe('Replacer tests', (): void => {
   });
 
   it('replaceLanguages', (): void => {
-    expect(replaceLanguages('language-sync')).toBe('language-js');
-    expect(replaceLanguages('language-async')).toBe('language-js');
     expect(replaceLanguages('language-mjs')).toBe('language-js');
     expect(replaceLanguages('language-cjs')).toBe('language-js');
     expect(replaceLanguages('language-javascript')).toBe('language-js');
