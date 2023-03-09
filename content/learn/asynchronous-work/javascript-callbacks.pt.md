@@ -88,7 +88,7 @@ xhr.send();
 
 ### Manipulando erros em funções de resposta
 
-Como lidas com erros usando as funções de resposta? Um estratégia muito comum é usar o que a Node.js adotou: o primeiro parâmetro em qualquer função de resposta é o objeto do erro: **funções de resposta que primeiro erram (ou error-first callbacks em Inglês)**.
+Como lidas com erros usando as funções de resposta? Um estratégia muito comum é usar o que a Node.js adotou: o primeiro parâmetro em qualquer função de resposta é o objeto do erro: **funções de resposta que erram primeiro (ou error-first callbacks em Inglês)**.
 
 Se não houver erro, o objeto é `null`. Se houver um erro, ele contém alguma descrição do erro e outras informações:
 
@@ -131,4 +131,4 @@ Como resolvemos isto?
 
 ### Alternativas às funções de resposta
 
-Desde a ES6, a JavaScript introduziu várias funcionalidades que ajudam-nos com o código assíncrono que não envolve o uso de funções de resposta: Promessas (`Promise`) no ES2015 e Assincronizar/Esperar (`async`/`await`) no ES2017.
+Desde a ES6, a JavaScript introduziu várias funcionalidades que ajudam-nos com o código assíncrono que não envolve o uso de funções de resposta: Promessas (`Promise`) na ES2015 e Assincronizar/Esperar (`async`/`await`) na ES2017.
