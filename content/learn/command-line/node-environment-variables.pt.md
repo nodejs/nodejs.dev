@@ -8,7 +8,7 @@ category: learn
 
 O módulo de centro `process` da Node.js fornece a propriedade `env` que hospeda todas as variáveis de ambiente que foram definidas no momento que o processo foi iniciado.
 
-O código abaixo executa `app.js` e define as variáveis `USER_ID` e `USER_KEY`:
+O código abaixo executa o `app.js` e define as variáveis `USER_ID` e `USER_KEY`:
 
 ```bash
 USER_ID=239482 USER_KEY=foobar node app.js
@@ -30,7 +30,7 @@ Da mesma maneira podes acessar qualquer variável de ambiente que definires.
 Se tiveres várias variáveis de ambiente no teu projeto de node, também podes criar um ficheiro `.env` na diretório raiz do teu projeto, e então usar o pacote [`dotenv`](https://www.npmjs.com/package/dotenv) para carregá-las durante a execução:
 
 ```bash
-# .env file
+# ficheiro .env
 USER_ID="239482"
 USER_KEY="foobar"
 NODE_ENV="development"
