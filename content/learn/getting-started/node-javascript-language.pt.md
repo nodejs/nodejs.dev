@@ -25,7 +25,7 @@ Como um principiante, é difícil chegar a um ponto onde estás suficientemente 
 * [Modo Estrito](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 * [ECMAScript 2015 (ES6) e além](/learn/ecmascript-2015-es6-and-beyond/)
 
-Com estes conceitos em mente, estás bem no teu camino para tornares-te um programador de JavaScript hábil, tanto no navegador e na Node.js.
+Com estes conceitos em mente, tens o que precisas para tornares-te um programador de JavaScript habilidoso, tanto no navegador e na Node.js.
 
 #### Programação Assíncrona
 
