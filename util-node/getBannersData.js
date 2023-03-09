@@ -7,7 +7,7 @@ function getBannersData() {
   // And retrieves the `banners` data to display on the website
   return fetch(nodeBannersData)
     .then(response => response.json())
-    .then(({ banners }) => banners);
+    .then(({ websiteBanners }) => websiteBanners);
 }
 
 module.exports = getBannersData;
