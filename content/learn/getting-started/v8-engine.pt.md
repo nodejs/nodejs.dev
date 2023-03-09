@@ -8,7 +8,7 @@ category: learn
 
 V8 é o nome do motor de JavaScript que alimenta o Google Chrome. É a coisa que pega o nosso código de JavaScript e executa-o enquanto navegamos com o Chrome.
 
-O V8 é o motor de JavaScript que por exemplo, analisa e executa o código de JavaScript. O DOM, e as outras APIs da Plataforma da Web (eles são todos ambientes de execução e composição) são fornecidos pelo navegador.
+O V8 é o motor de JavaScript que por exemplo, analisa e executa o código de JavaScript. O DOM, e as outras APIs da Plataforma da Web (o quais são ambientes de execução e composição) são fornecidos pelo navegador.
 
 A coisa espantosa é que o motor de JavaScript é independente do navegador no qual está hospedado. Esta funcionalidade chave permitiu a ascensão da Node.js. O V8 foi escolhido para ser o motor que alimentou a Node.js em 2009, e conforma a popularidade da Node.js explodiu, o V8 tornou-se o motor que agora alimenta uma quantidade incrível de código de lado do servidor escrito em JavaScript.
 
@@ -22,7 +22,7 @@ Outros navegadores também têm o seu próprio motor de JavaScript:
 * Apple Safari tem o [**JavaScriptCore**](https://developer.apple.com/documentation/javascriptcore) (também chamado de Nitro).
 * Microsoft Edge foi originalmente baseado no [**Chakra**](https://github.com/Microsoft/ChakraCore) mas foi recentemente [reconstruido usando o Chromium](https://support.microsoft.com/en-us/help/4501095/download-the-new-microsoft-edge-based-on-chromium).
 
-e também existe muitos outros.
+e também é possível encontrar outros por aí fora.
 
 Todos estes motores implementam o [padrão ECMA ES-262](https://www.ecma-international.org/publications/standards/Ecma-262.htm), também chamado de ECMAScript, o padrão usado pela JavaScript.
 
