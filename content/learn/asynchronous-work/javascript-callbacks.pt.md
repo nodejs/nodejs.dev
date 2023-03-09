@@ -88,10 +88,8 @@ xhr.send();
 
 ### Manipulando erros em funções de resposta
 
-How do you handle errors with callbacks? One very common strategy is to use what Node.js adopted: the first parameter in any callback function is the error object: **error-first callbacks**
 Como lidas com erros usando as funções de resposta? Um estratégia muito comum é usar o que a Node.js adotou: o primeiro parâmetro em qualquer função de resposta é o objeto do erro: **funções de resposta que primeiro erram (ou error-first callbacks em Inglês)**.
 
-If there is no error, the object is `null`. If there is an error, it contains some description of the error and other information:
 Se não houver erro, o objeto é `null`. Se houver um erro, ele contém alguma descrição do erro e outras informações:
 
 ```js
