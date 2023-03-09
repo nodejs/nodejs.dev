@@ -44,7 +44,6 @@ const id = setTimeout(() => {
 clearTimeout(id);
 ```
 
-### Zero delay
 ### Atraso Zero
 
 Se especificares o atraso da pausa para `0`, a função de resposta será executada o mais cedo possível, mas depois da execução da função atual:
