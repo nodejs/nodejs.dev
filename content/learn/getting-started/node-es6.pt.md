@@ -15,7 +15,7 @@ Todas as funcionalidades da ECMAScript 2015 (ES6) estão divididas em três grup
 
 ### Quais funcionalidades disponibilizam com qual versão da Node.js por padrão?
 
-A página [node.green](https://node.green/) fornece uma excelente visão de conjunto sobre as funcionalidades de ECMAScript suportas em várias versões da Node.js, baseada na tabela de compatibilidade de kangax.
+A página [node.green](https://node.green/) fornece uma excelente visão de conjunto sobre as funcionalidades de ECMAScript suportas em várias versões da Node.js, baseada na tabela de compatibilidade de `kangax`.
 
 ### Quais funcionalidades estão em progresso?
 
@@ -31,9 +31,9 @@ node --v8-options | grep "in progress"
 
 O comportamento atual da opção `--harmony` na Node.js é apenas ativar funcionalidades **encenadas**. Afinal de contas, agora é um sinónimo de `--es_staging`. Conforme mencionado acima, estas são funcionalidades concluídas que ainda não foram consideradas estáveis. Se quiseres jogar pelo seguro, especialmente em ambientes de produção, considere remover esta opção em tempo de execução até ser entregada por padrão na V8 e, consequentemente, na Node.js. Se manteres isto ativado, deves estar preparado para as próximas atualizações da Node.js que quebrarão o teu código se a V8 mudar as suas semânticas para seguir meticulosamente o padrão.
 
-### Como eu descubro qual versão da V8 é entregada com uma versão em particular da Node.js?
+### Como eu descubro qual versão do V8 é entregado com uma versão em particular da Node.js?
 
-A Node.js fornece uma maneira simples de listar todas as dependências e respetivas versões que entregadas com um binário específico através do objeto global `process`. No caso do motor V8, digite o seguinte conteúdo no teu terminal para extrair a sua versão:
+A Node.js fornece uma maneira simples de listar todas as dependências e respetivas versões que são entregadas com um binário específico através do objeto global `process`. No caso do motor V8, digite o seguinte conteúdo no teu terminal para extrair a sua versão:
 
 ```bash
 node -p process.versions.v8
