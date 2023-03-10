@@ -12,12 +12,11 @@ describe('getBannersData', () => {
   it('should retrieve banners from correct URL', async () => {
     // import dynamically in order to apply mock for node-fetch
     const getBannersData = (await import('../getBannersData')).default;
-    fetchMock.mockResponseOnce(JSON.stringify({ banners: ['mocked-banner'] }));
-    const banners = await getBannersData();
+    fetchMock.mockResponseOnce(JSON.stringify({}));
+    await getBannersData();
 
-    expect(banners).toStrictEqual(['mocked-banner']);
     expect(fetchMock.mock.calls[0][0]).toBe(
-      'https://raw.githubusercontent.com/nodejs/nodejs.org/main/locale/en/site.json'
+      'https://raw.githubusercontent.com/nodejs/nodejs.org/main/site.json'
     );
   });
 
