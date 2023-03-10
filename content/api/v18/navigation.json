@@ -440,6 +440,12 @@
       "name": "fs"
     },
     {
+      "slug": "/api/v18/fs/#fsstatfs",
+      "title": "fsStatFs",
+      "type": "class",
+      "name": "fs"
+    },
+    {
       "slug": "/api/v18/fs/#fsstats",
       "title": "fsStats",
       "type": "class",
@@ -1196,14 +1202,14 @@
       "name": "test"
     },
     {
-      "slug": "/api/v18/test/#tapstream",
-      "title": "TapStream",
+      "slug": "/api/v18/test/#testcontext",
+      "title": "TestContext",
       "type": "class",
       "name": "test"
     },
     {
-      "slug": "/api/v18/test/#testcontext",
-      "title": "TestContext",
+      "slug": "/api/v18/test/#testsstream",
+      "title": "TestsStream",
       "type": "class",
       "name": "test"
     },
@@ -1348,6 +1354,12 @@
     {
       "slug": "/api/v18/v8/#v8deserializer",
       "title": "v8Deserializer",
+      "type": "class",
+      "name": "v8"
+    },
+    {
+      "slug": "/api/v18/v8/#v8gcprofiler",
+      "title": "v8GCProfiler",
       "type": "class",
       "name": "v8"
     },
