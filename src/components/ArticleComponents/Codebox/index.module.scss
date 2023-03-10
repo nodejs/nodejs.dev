@@ -41,8 +41,8 @@
     flex-direction: row;
     justify-content: space-between;
 
-    span,
-    button {
+    .lang,
+    .copy {
       align-items: center;
       display: inherit;
       font-size: var(--font-size-code);
@@ -50,14 +50,23 @@
       justify-content: center;
       width: 86px;
     }
-
-    span {
+    .langBox {
       background-color: var(--black4);
       border-radius: 0 0 0.3rem 0;
-      color: var(--black9);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 100px;
+
+      .lang {
+        background-color: var(--black4);
+        border-width: 0;
+        color: var(--black9);
+        width: max-content;
+      }
     }
 
-    button {
+    .copy {
       background-color: var(--black9);
       border-radius: 0 0 0 0.3rem;
       border-width: 0;

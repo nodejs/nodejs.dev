@@ -15,54 +15,59 @@ interface Props {
   };
 }
 
-const replaceLanguages = (language: string) =>
+export const replaceLabelLanguages = (language: string) =>
+  language.replace(/console/i, 'bash');
+
+export const replaceLanguages = (language: string) =>
   language
     .replace(/mjs|cjs|javascript/i, 'js')
     .replace(/console|shell/i, 'bash');
 
-const replaceLabelLanguages = (language: string) =>
-  language
-    .replace(/javascript/i, 'cjs')
-    .replace(/console|shell/i, 'bash')
-    .toUpperCase();
-
 const Codebox = ({ children: { props } }: Props): JSX.Element => {
   const [parsedCode, setParsedCode] = useState('');
   const [copied, copyText] = useCopyToClipboard();
-
+  const [langIndex, setLangIndex] = useState(0);
   // eslint-disable-next-line react/prop-types
   const className = props.className || 'text';
-
   // Language Matches in class
   const matches = className.match(/language-(?<lang>.*)/);
-
-  // Language name from classname
-  const language = matches?.groups?.lang || 'text';
-
-  // Actual Code into a stringified format
-  const stringCode = props.children?.toString() || '';
+  const languageOptions = (matches?.groups?.lang || 'text').split('|');
+  const language = languageOptions[langIndex];
+  const codeArray = props.children
+    ? props.children.toString().split('--------------\n')
+    : [''];
 
   const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    copyText(stringCode);
+    copyText(codeArray[langIndex]);
   };
 
   useEffect(() => {
     const parsedLanguage = replaceLanguages(language);
-
     const prismLanguage = languages[parsedLanguage] || languages.text;
 
     setParsedCode(
-      sanitize(highlight(stringCode, prismLanguage, parsedLanguage))
+      sanitize(highlight(codeArray[langIndex], prismLanguage, parsedLanguage))
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [langIndex]);
 
   return (
     <pre className={classnames(styles.pre, replaceLanguages(className))}>
       <div className={styles.top}>
-        <span>{replaceLabelLanguages(language)}</span>
-        <button type="button" onClick={handleCopyCode}>
+        <div className={styles.langBox}>
+          {languageOptions.map((lang, index) => (
+            <button
+              type="button"
+              key={lang}
+              className={styles.lang}
+              onClick={() => setLangIndex(index)}
+            >
+              {replaceLabelLanguages(lang.toLowerCase())}
+            </button>
+          ))}
+        </div>
+        <button type="button" className={styles.copy} onClick={handleCopyCode}>
           <FormattedMessage id="components.codeBox.copy" values={{ copied }} />
         </button>
       </div>
