@@ -8,7 +8,7 @@ category: about
 
 Como executor de JavaScript orientado a eventos assíncronos, a Node está desenhada para construir aplicações de rede escaláveis. No seguinte exemplo "hello world" ou "olá mundo" em Português, várias conexões podem ser manipuladas simultaneamente. Sobre cada conexão, uma função de resposta é disparada, mas se não existe nada a ser feito, a Node.js adormecerá.
 
-```javascript
+```js
 const http = require('http');
 
 const hostname = '127.0.0.1';
