@@ -5,7 +5,7 @@ authors: ovflowd, nazarepiedady
 category: learn
 ---
 
-A Node.js é construída contra versões modernas do [V8](https://v8.dev/). Ao manter atualizado com os lançamentos mais recentes deste motor, garantimos novas funcionalidades da [especificação ECMA-262 da JavaScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm) são trazidas para os programadores da Node.js de uma maneira oportuna, bem como melhorias ininterrupta do desempenho e estabilidade.
+A Node.js é construída contra versões modernas do [V8](https://v8.dev/). Ao manter atualizado com os lançamentos mais recentes deste motor, garantimos novas funcionalidades da [especificação ECMA-262 da JavaScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm) são trazidas para os programadores da Node.js de uma maneira oportuna, bem como melhorias ininterruptas do desempenho e estabilidade.
 
 Todas as funcionalidades da ECMAScript 2015 (ES6) estão divididas em três grupos para funcionalidades de **envio**, **encenadas**, e **em progresso**:
 
