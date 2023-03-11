@@ -83,11 +83,9 @@ The `Console` class can be used to create a simple logger with configurable
 output streams and can be accessed using either `require('node:console').Console`
 or `console.Console` (or their destructured counterparts):
 
-```js
+```js|js
 const { Console } = require('node:console');
-```
-
-```js
+--------------
 const { Console } = console;
 ```
 

@@ -54,12 +54,10 @@ following `node-addon-api` code. The first section shows the
 `node-addon-api` code and the second section shows what actually gets
 used in the addon.
 
-```cpp
+```cpp|cpp
 Object obj = Object::New(env);
 obj["foo"] = String::New(env, "bar");
-```
-
-```cpp
+--------------
 napi_status status;
 napi_value object, string;
 status = napi_create_object(env, &object);
@@ -391,16 +389,14 @@ implementation of Node-API or any implementation of Node-API outside of Node.js.
 to the addon and which instantiates the addon by calling into `addon.c` when the
 addon is loaded into a Node.js environment.
 
-```c
+```c|c
 // addon.h
 #ifndef _ADDON_H_
 #define _ADDON_H_
 #include <js_native_api.h>
 napi_value create_addon(napi_env env);
 #endif  // _ADDON_H_
-```
-
-```c
+--------------
 // addon.c
 #include "addon.h"
 
@@ -5727,11 +5723,9 @@ Experimental
 
 </Stability>
 
-```c
+```c|text
 NAPI_EXTERN napi_status
 node_api_get_module_file_name(napi_env env, const char** result);
-
-```
 
 * `[in] env`: The environment that the API is invoked under.
 * `[out] result`: A URL containing the absolute path of the

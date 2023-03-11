@@ -306,15 +306,13 @@ The `timers/promises` API provides an alternative set of timer functions
 that return `Promise` objects. The API is accessible via
 `require('node:timers/promises')`.
 
-```mjs
+```mjs|cjs
 import {
   setTimeout,
   setImmediate,
   setInterval,
 } from 'timers/promises';
-```
-
-```cjs
+--------------
 const {
   setTimeout,
   setImmediate,
@@ -336,7 +334,7 @@ const {
   * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) An optional `AbortSignal` that can be used to
     cancel the scheduled `Timeout`.
 
-```mjs
+```mjs|cjs
 import {
   setTimeout,
 } from 'timers/promises';
@@ -344,9 +342,7 @@ import {
 const res = await setTimeout(100, 'result');
 
 console.log(res);  // Prints 'result'
-```
-
-```cjs
+--------------
 const {
   setTimeout,
 } = require('node:timers/promises');
@@ -368,7 +364,7 @@ setTimeout(100, 'result').then((res) => {
   * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) An optional `AbortSignal` that can be used to
     cancel the scheduled `Immediate`.
 
-```mjs
+```mjs|cjs
 import {
   setImmediate,
 } from 'timers/promises';
@@ -376,9 +372,7 @@ import {
 const res = await setImmediate('result');
 
 console.log(res);  // Prints 'result'
-```
-
-```cjs
+--------------
 const {
   setImmediate,
 } = require('node:timers/promises');
@@ -407,7 +401,7 @@ or implicitly to keep the event loop alive.
   * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) An optional `AbortSignal` that can be used to
     cancel the scheduled `Timeout` between operations.
 
-```mjs
+```mjs|cjs
 import {
   setInterval,
 } from 'timers/promises';
@@ -420,9 +414,7 @@ for await (const startTime of setInterval(interval, Date.now())) {
     break;
 }
 console.log(Date.now());
-```
-
-```cjs
+--------------
 const {
   setInterval,
 } = require('node:timers/promises');

@@ -29,13 +29,11 @@ if a module is maintained by a third party or not.
 `module` in this context isn't the same object that's provided
 by the [module wrapper][]. To access it, require the `Module` module:
 
-```mjs
+```mjs|cjs
 // module.mjs
 // In an ECMAScript module
 import { builtinModules as builtin } from 'node:module';
-```
-
-```cjs
+--------------
 // module.cjs
 // In a CommonJS module
 const builtin = require('node:module').builtinModules;
@@ -127,13 +125,11 @@ To enable source map parsing, Node.js must be run with the flag
 [`--enable-source-maps`][], or with code coverage enabled by setting
 [`NODE_V8_COVERAGE=dir`][].
 
-```mjs
+```mjs|cjs
 // module.mjs
 // In an ECMAScript module
 import { findSourceMap, SourceMap } from 'node:module';
-```
-
-```cjs
+--------------
 // module.cjs
 // In a CommonJS module
 const { findSourceMap, SourceMap } = require('node:module');

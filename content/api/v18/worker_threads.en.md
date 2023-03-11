@@ -1081,7 +1081,7 @@ with `stdio`. This means that `stdio` output originating from a `Worker` can
 get blocked by synchronous code on the receiving end that is blocking the
 Node.js event loop.
 
-```mjs
+```mjs|cjs
 import {
   Worker,
   isMainThread,
@@ -1096,9 +1096,7 @@ if (isMainThread) {
   // This output will be blocked by the for loop in the main thread.
   console.log('foo');
 }
-```
-
-```cjs
+--------------
 'use strict';
 
 const {

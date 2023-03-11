@@ -23,7 +23,7 @@ allows running multiple application threads within a single Node.js instance.
 The cluster module allows easy creation of child processes that all share
 server ports.
 
-```mjs
+```mjs|cjs
 import cluster from 'node:cluster';
 import http from 'node:http';
 import { availableParallelism } from 'node:os';
@@ -52,9 +52,7 @@ if (cluster.isPrimary) {
 
   console.log(`Worker ${process.pid} started`);
 }
-```
-
-```cjs
+--------------
 const cluster = require('node:cluster');
 const http = require('node:http');
 const numCPUs = require('node:os').availableParallelism();
@@ -195,7 +193,7 @@ Within a worker, `process.on('error')` may also be used.
 
 Similar to the `cluster.on('exit')` event, but specific to this worker.
 
-```mjs
+```mjs|cjs
 import cluster from 'node:cluster';
 
 if (cluster.isPrimary) {
@@ -210,9 +208,7 @@ if (cluster.isPrimary) {
     }
   });
 }
-```
-
-```cjs
+--------------
 const cluster = require('node:cluster');
 
 if (cluster.isPrimary) {
@@ -237,13 +233,11 @@ if (cluster.isPrimary) {
 
 Similar to the `cluster.on('listening')` event, but specific to this worker.
 
-```mjs
+```mjs|cjs
 cluster.fork().on('listening', (address) => {
   // Worker is listening
 });
-```
-
-```cjs
+--------------
 cluster.fork().on('listening', (address) => {
   // Worker is listening
 });
@@ -267,7 +261,7 @@ See [`process` event: `'message'`][].
 Here is an example using the message system. It keeps a count in the primary
 process of the number of HTTP requests received by the workers:
 
-```mjs
+```mjs|cjs
 import cluster from 'node:cluster';
 import http from 'node:http';
 import { availableParallelism } from 'node:os';
@@ -309,9 +303,7 @@ if (cluster.isPrimary) {
     process.send({ cmd: 'notifyRequest' });
   }).listen(8000);
 }
-```
-
-```cjs
+--------------
 const cluster = require('node:cluster');
 const http = require('node:http');
 const process = require('node:process');
@@ -485,7 +477,7 @@ has been created. It is disconnected after the `'disconnect'` event is emitted.
 This function returns `true` if the worker's process has terminated (either
 because of exiting or being signaled). Otherwise, it returns `false`.
 
-```mjs
+```mjs|cjs
 import cluster from 'node:cluster';
 import http from 'node:http';
 import { availableParallelism } from 'node:os';
@@ -516,9 +508,7 @@ if (cluster.isPrimary) {
     process.kill(process.pid);
   }).listen(8000);
 }
-```
-
-```cjs
+--------------
 const cluster = require('node:cluster');
 const http = require('node:http');
 const numCPUs = require('node:os').availableParallelism();
@@ -892,7 +882,7 @@ the `env` passed to [`.fork()`][].
 The defaults above apply to the first call only; the defaults for later
 calls are the current values at the time of `cluster.setupPrimary()` is called.
 
-```mjs
+```mjs|cjs
 import cluster from 'node:cluster';
 
 cluster.setupPrimary({
@@ -906,9 +896,7 @@ cluster.setupPrimary({
   args: ['--use', 'http'],
 });
 cluster.fork(); // http worker
-```
-
-```cjs
+--------------
 const cluster = require('node:cluster');
 
 cluster.setupPrimary({
@@ -934,7 +922,7 @@ This can only be called from the primary process.
 
 A reference to the current worker object. Not available in the primary process.
 
-```mjs
+```mjs|cjs
 import cluster from 'node:cluster';
 
 if (cluster.isPrimary) {
@@ -944,9 +932,7 @@ if (cluster.isPrimary) {
 } else if (cluster.isWorker) {
   console.log(`I am worker #${cluster.worker.id}`);
 }
-```
-
-```cjs
+--------------
 const cluster = require('node:cluster');
 
 if (cluster.isPrimary) {
@@ -973,15 +959,13 @@ _and_ exited. The order between these two events cannot be determined in
 advance. However, it is guaranteed that the removal from the `cluster.workers`
 list happens before the last `'disconnect'` or `'exit'` event is emitted.
 
-```mjs
+```mjs|cjs
 import cluster from 'node:cluster';
 
 for (const worker of Object.values(cluster.workers)) {
   worker.send('big announcement to all workers');
 }
-```
-
-```cjs
+--------------
 const cluster = require('node:cluster');
 
 for (const worker of Object.values(cluster.workers)) {

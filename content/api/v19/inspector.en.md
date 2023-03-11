@@ -20,21 +20,17 @@ inspector.
 
 It can be accessed using:
 
-```mjs
+```mjs|cjs
 import * as inspector from 'node:inspector/promises';
-```
-
-```cjs
+--------------
 const inspector = require('node:inspector/promises');
 ```
 
 or
 
-```mjs
+```mjs|cjs
 import * as inspector from 'node:inspector';
-```
-
-```cjs
+--------------
 const inspector = require('node:inspector');
 ```
 

@@ -206,12 +206,10 @@ The default export can be used for, among other things, modifying the named
 exports. Named exports of builtin modules are updated only by calling
 [`module.syncBuiltinESMExports()`][].
 
-```js
+```js|js
 import EventEmitter from 'node:events';
 const e = new EventEmitter();
-```
-
-```js
+--------------
 import { readFile } from 'node:fs';
 readFile('./foo.txt', (err, source) => {
   if (err) {
@@ -513,13 +511,11 @@ export const five = await Promise.resolve(5);
 
 And a `b.mjs` with
 
-```js
+```js|bash
 import { five } from './a.mjs';
 
 console.log(five); // Logs `5`
-```
-
-```bash
+--------------
 node b.mjs # works
 ```
 
@@ -583,14 +579,12 @@ These modules cannot access other modules that are not over `http:` or `https:`.
 To still access local modules while avoiding the security concern, pass in
 references to the local dependencies:
 
-```mjs
+```mjs|mjs
 // file.mjs
 import worker_threads from 'node:worker_threads';
 import { configure, resize } from 'https://example.com/imagelib.mjs';
 configure({ worker_threads });
-```
-
-```mjs
+--------------
 // https://example.com/imagelib.mjs
 let worker_threads;
 export function configure(opts) {
@@ -908,7 +902,7 @@ functionality, there are substantial downsides to actually using this loader:
 performance is much slower than loading files from disk, there is no caching,
 and there is no security.
 
-```js
+```js|js
 // https-loader.mjs
 import { get } from 'node:https';
 
@@ -956,9 +950,7 @@ export function load(url, context, nextLoad) {
   // Let Node.js handle all other URLs.
   return nextLoad(url);
 }
-```
-
-```js
+--------------
 // main.mjs
 import { VERSION } from 'https://coffeescript.org/browser-compiler-modern/coffeescript.js';
 
@@ -981,7 +973,7 @@ This is less performant than transpiling source files before running
 Node.js; a transpiler loader should only be used for development and testing
 purposes.
 
-```js
+```js|coffee
 // coffeescript-loader.mjs
 import { readFile } from 'node:fs/promises';
 import { dirname, extname, resolve as resolvePath } from 'node:path';
@@ -1079,9 +1071,7 @@ async function getPackageType(url) {
   // If at the root, stop and return false
   return dir.length > 1 && getPackageType(resolvePath(dir, '..'));
 }
-```
-
-```coffee
+--------------
 # main.coffee
 import { scream } from './scream.coffee'
 console.log scream 'hello, world'

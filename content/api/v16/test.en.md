@@ -18,22 +18,18 @@ Experimental
 The `node:test` module facilitates the creation of JavaScript tests that
 report results in [TAP][] format. To access it:
 
-```mjs
+```mjs|cjs
 import test from 'node:test';
-```
-
-```cjs
+--------------
 const test = require('node:test');
 ```
 
 This module is only available under the `node:` scheme. The following will not
 work:
 
-```mjs
+```mjs|cjs
 import test from 'test';
-```
-
-```cjs
+--------------
 const test = require('test');
 ```
 
@@ -185,11 +181,9 @@ describe('A thing', () => {
 
 `describe` and `it` are imported from the `node:test` module.
 
-```mjs
+```mjs|cjs
 import { describe, it } from 'node:test';
-```
-
-```cjs
+--------------
 const { describe, it } = require('node:test');
 ```
 

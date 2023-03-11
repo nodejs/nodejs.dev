@@ -86,7 +86,7 @@ or `require('node:stream').promises`.
   * `end` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type)
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills when the pipeline is complete.
 
-```cjs
+```cjs|mjs
 const { pipeline } = require('node:stream/promises');
 const fs = require('node:fs');
 const zlib = require('node:zlib');
@@ -101,9 +101,7 @@ async function run() {
 }
 
 run().catch(console.error);
-```
-
-```mjs
+--------------
 import { pipeline } from 'node:stream/promises';
 import { createReadStream, createWriteStream } from 'node:fs';
 import { createGzip } from 'node:zlib';
@@ -120,7 +118,7 @@ To use an `AbortSignal`, pass it inside an options object, as the last argument.
 When the signal is aborted, `destroy` will be called on the underlying pipeline,
 with an `AbortError`.
 
-```cjs
+```cjs|mjs
 const { pipeline } = require('node:stream/promises');
 const fs = require('node:fs');
 const zlib = require('node:zlib');
@@ -139,9 +137,7 @@ async function run() {
 }
 
 run().catch(console.error); // AbortError
-```
-
-```mjs
+--------------
 import { pipeline } from 'node:stream/promises';
 import { createReadStream, createWriteStream } from 'node:fs';
 import { createGzip } from 'node:zlib';
@@ -163,7 +159,7 @@ try {
 
 The `pipeline` API also supports async generators:
 
-```cjs
+```cjs|mjs
 const { pipeline } = require('node:stream/promises');
 const fs = require('node:fs');
 
@@ -182,9 +178,7 @@ async function run() {
 }
 
 run().catch(console.error);
-```
-
-```mjs
+--------------
 import { pipeline } from 'node:stream/promises';
 import { createReadStream, createWriteStream } from 'node:fs';
 
@@ -205,7 +199,7 @@ Remember to handle the `signal` argument passed into the async generator.
 Especially in the case where the async generator is the source for the
 pipeline (i.e. first argument) or the pipeline will never complete.
 
-```cjs
+```cjs|mjs
 const { pipeline } = require('node:stream/promises');
 const fs = require('node:fs');
 
@@ -221,9 +215,7 @@ async function run() {
 }
 
 run().catch(console.error);
-```
-
-```mjs
+--------------
 import { pipeline } from 'node:stream/promises';
 import fs from 'node:fs';
 await pipeline(
@@ -251,7 +243,7 @@ The `pipeline` API provides [callback version][stream-pipeline]:
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills when the stream is no
   longer readable or writable.
 
-```cjs
+```cjs|mjs
 const { finished } = require('node:stream/promises');
 const fs = require('node:fs');
 
@@ -264,9 +256,7 @@ async function run() {
 
 run().catch(console.error);
 rs.resume(); // Drain the stream.
-```
-
-```mjs
+--------------
 import { finished } from 'node:stream/promises';
 import { createReadStream } from 'node:fs';
 
@@ -618,7 +608,7 @@ This is a destructive and immediate way to destroy a stream. Previous calls to
 Use `end()` instead of destroy if data should flush before close, or wait for
 the `'drain'` event before destroying the stream.
 
-```cjs
+```cjs|cjs
 const { Writable } = require('node:stream');
 
 const myStream = new Writable();
@@ -626,9 +616,7 @@ const myStream = new Writable();
 const fooErr = new Error('foo error');
 myStream.destroy(fooErr);
 myStream.on('error', (fooErr) => console.error(fooErr.message)); // foo error
-```
-
-```cjs
+--------------
 const { Writable } = require('node:stream');
 
 const myStream = new Writable();
@@ -2877,7 +2865,7 @@ Experimental
   * `signal` [`AbortSignal`](/api/v19/globals#abortsignal)
 * Returns: [`stream.Duplex`](/api/v19/stream#streamduplex)
 
-```mjs
+```mjs|cjs
 import { Duplex } from 'node:stream';
 import {
   ReadableStream,
@@ -2907,9 +2895,7 @@ duplex.write('hello');
 for await (const chunk of duplex) {
   console.log('readable', chunk);
 }
-```
-
-```cjs
+--------------
 const { Duplex } = require('node:stream');
 const {
   ReadableStream,
@@ -2953,7 +2939,7 @@ Experimental
   * `readable` [`ReadableStream`](/api/v19/webstreams#readablestream)
   * `writable` [`WritableStream`](/api/v19/webstreams#writablestream)
 
-```mjs
+```mjs|cjs
 import { Duplex } from 'node:stream';
 
 const duplex = Duplex({
@@ -2973,9 +2959,7 @@ writable.getWriter().write('hello');
 
 const { value } = await readable.getReader().read();
 console.log('readable', value);
-```
-
-```cjs
+--------------
 const { Duplex } = require('node:stream');
 
 const duplex = Duplex({

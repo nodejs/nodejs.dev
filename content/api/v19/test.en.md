@@ -18,22 +18,18 @@ Experimental
 The `node:test` module facilitates the creation of JavaScript tests.
 To access it:
 
-```mjs
+```mjs|cjs
 import test from 'node:test';
-```
-
-```cjs
+--------------
 const test = require('node:test');
 ```
 
 This module is only available under the `node:` scheme. The following will not
 work:
 
-```mjs
+```mjs|cjs
 import test from 'test';
-```
-
-```cjs
+--------------
 const test = require('test');
 ```
 
@@ -182,11 +178,9 @@ describe('A thing', () => {
 
 `describe` and `it` are imported from the `node:test` module.
 
-```mjs
+```mjs|cjs
 import { describe, it } from 'node:test';
-```
-
-```cjs
+--------------
 const { describe, it } = require('node:test');
 ```
 
@@ -436,7 +430,7 @@ object. The following example creates a spy on a function that adds two numbers
 together. The spy is then used to assert that the function was called as
 expected.
 
-```mjs
+```mjs|cjs
 import assert from 'node:assert';
 import { mock, test } from 'node:test';
 
@@ -457,9 +451,7 @@ test('spies on a function', () => {
   // Reset the globally tracked mocks.
   mock.reset();
 });
-```
-
-```cjs
+--------------
 'use strict';
 const assert = require('node:assert');
 const { mock, test } = require('node:test');
@@ -542,7 +534,7 @@ Reporters should transform events emitted by a TestsStream
 
 Example of a custom reporter using [`stream.Transform`](/api/v19/stream#streamtransform):
 
-```mjs
+```mjs|cjs
 import { Transform } from 'node:stream';
 
 const customReporter = new Transform({
@@ -569,9 +561,7 @@ const customReporter = new Transform({
 });
 
 export default customReporter;
-```
-
-```cjs
+--------------
 const { Transform } = require('node:stream');
 
 const customReporter = new Transform({
@@ -602,7 +592,7 @@ module.exports = customReporter;
 
 Example of a custom reporter using a generator function:
 
-```mjs
+```mjs|cjs
 export default async function * customReporter(source) {
   for await (const event of source) {
     switch (event.type) {
@@ -624,9 +614,7 @@ export default async function * customReporter(source) {
     }
   }
 }
-```
-
-```cjs
+--------------
 module.exports = async function * customReporter(source) {
   for await (const event of source) {
     switch (event.type) {
