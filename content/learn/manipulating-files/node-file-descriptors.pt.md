@@ -37,7 +37,7 @@ Aquela opção significa que abrimos o ficheiro para leitura.
   </tr>
   <tr>
     <td><code>w+</code></td>
-    <td>Esta opção abre o ficheiro para <b>leitura</b> e <b>escrita</b> e também posiciona o lina no <b>princípio</b> do ficheiro</td>
+    <td>Esta opção abre o ficheiro para <b>leitura</b> e <b>escrita</b> e também posiciona a linha no <b>princípio</b> do ficheiro</td>
     <td style="text-align: center;">✅</td>
   </tr>
   <tr>
