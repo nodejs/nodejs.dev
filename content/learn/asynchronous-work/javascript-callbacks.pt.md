@@ -131,4 +131,4 @@ Como resolvemos isto?
 
 ### Alternativas às funções de resposta
 
-Desde a ES6, a JavaScript introduziu várias funcionalidades que ajudam-nos a escrever código assíncrono que não envolve o uso de funções de resposta: Promessas (`Promise`) na ES2015 e Assincronizar/Esperar (`async`/`await`) na ES2017.
+Desde a ES6, a JavaScript introduziu várias funcionalidades que ajudam-nos a escrever código assíncrono que não envolve o uso de funções de resposta: promessas (`Promise`) na ES2015 e assincronizar/esperar (`async`/`await`) na ES2017.
