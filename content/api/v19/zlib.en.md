@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/zlib.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/zlib.js"}} />
 
 The `node:zlib` module provides compression functionality implemented using
 Gzip, Deflate/Inflate, and Brotli.
@@ -147,7 +147,7 @@ Using `zlib` encoding can be expensive, and the results ought to be cached.
 See [Memory usage tuning][] for more information on the speed/memory/compression
 tradeoffs involved in `zlib` usage.
 
-```js
+```js|js
 // Client request example
 const zlib = require('node:zlib');
 const http = require('node:http');
@@ -184,9 +184,7 @@ request.on('response', (response) => {
       break;
   }
 });
-```
-
-```js
+--------------
 // server example
 // Running a gzip operation on every request is quite expensive.
 // It would be much more efficient to cache the compressed buffer.

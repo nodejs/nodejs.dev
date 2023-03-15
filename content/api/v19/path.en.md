@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/path.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/path.js"}} />
 
 The `node:path` module provides utilities for working with file and directory
 paths. It can be accessed using:
@@ -383,7 +383,7 @@ The returned object will have the following properties:
 
 For example, on POSIX:
 
-```js
+```js|text
 path.parse('/home/user/dir/file.txt');
 // Returns:
 // { root: '/',
@@ -391,9 +391,7 @@ path.parse('/home/user/dir/file.txt');
 //   base: 'file.txt',
 //   ext: '.txt',
 //   name: 'file' }
-```
-
-```text
+--------------
 ┌─────────────────────┬────────────┐
 │          dir        │    base    │
 ├──────┬              ├──────┬─────┤
@@ -405,7 +403,7 @@ path.parse('/home/user/dir/file.txt');
 
 On Windows:
 
-```js
+```js|text
 path.parse('C:\\path\\dir\\file.txt');
 // Returns:
 // { root: 'C:\\',
@@ -413,9 +411,7 @@ path.parse('C:\\path\\dir\\file.txt');
 //   base: 'file.txt',
 //   ext: '.txt',
 //   name: 'file' }
-```
-
-```text
+--------------
 ┌─────────────────────┬────────────┐
 │          dir        │    base    │
 ├──────┬              ├──────┬─────┤

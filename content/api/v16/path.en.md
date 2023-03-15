@@ -375,7 +375,7 @@ The returned object will have the following properties:
 
 For example, on POSIX:
 
-```js
+```js|text
 path.parse('/home/user/dir/file.txt');
 // Returns:
 // { root: '/',
@@ -383,9 +383,7 @@ path.parse('/home/user/dir/file.txt');
 //   base: 'file.txt',
 //   ext: '.txt',
 //   name: 'file' }
-```
-
-```text
+--------------
 ┌─────────────────────┬────────────┐
 │          dir        │    base    │
 ├──────┬              ├──────┬─────┤
@@ -397,7 +395,7 @@ path.parse('/home/user/dir/file.txt');
 
 On Windows:
 
-```js
+```js|text
 path.parse('C:\\path\\dir\\file.txt');
 // Returns:
 // { root: 'C:\\',
@@ -405,9 +403,7 @@ path.parse('C:\\path\\dir\\file.txt');
 //   base: 'file.txt',
 //   ext: '.txt',
 //   name: 'file' }
-```
-
-```text
+--------------
 ┌─────────────────────┬────────────┐
 │          dir        │    base    │
 ├──────┬              ├──────┬─────┤

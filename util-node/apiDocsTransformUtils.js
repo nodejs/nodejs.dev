@@ -5,6 +5,11 @@ const typeParser = require('./apiDocsTypeParser');
 const createSlug = require('./createSlug');
 const { apiPath } = require('../pathPrefixes');
 
+const CODE_BLOCK = {
+  openingTag: '```',
+  separatorTag: '--------------',
+};
+
 const FEATURES_REGEX = {
   // Fixes the references to Markdown pages into the API documentation
   markdownFootnoteUrls: /(^\[.+\]:) ([a-z]+)\.md([#-_]+)?/gim,
@@ -23,6 +28,10 @@ const FEATURES_REGEX = {
   stabilityIndex: /^> (.*:)\s*(\d)([\s\S]*)/,
   // ReGeX for non-valid Markdown Links
   fixLinks: /<(https:\/\/.+)>/gm,
+  // ReGeX for Code Block Starting Tag
+  codeBlockLanguage: /^```(\w+)?/,
+  // ReGex for Code Block Closing Tag
+  codeBlockClosingTag: /```$/,
 };
 
 const YAML_FEATURES = {
@@ -251,36 +260,101 @@ function replaceUrlReferences(metadata) {
 }
 
 function calculateCodeBlockIntersection() {
-  let codeBlockEndingIndex = -1;
+  const codeBlocksMetadata = [];
 
-  return (lines, index) => {
-    const linesStartWithCodeBlock = lines.startsWith('```');
-    const linesEndsWithCodeBlock = lines.endsWith('```');
+  let codeBlockStartingIndex = -1;
 
-    if (linesStartWithCodeBlock) {
-      if (!linesEndsWithCodeBlock) {
-        // If the current block starts with a codeblock but doesn't end with one
-        // We have a multiple line code block then
-        codeBlockEndingIndex = index;
+  return {
+    isCurrentLinesCodeBlock: (lines, index) => {
+      const linesStartWithCodeBlock = lines.startsWith(CODE_BLOCK.openingTag);
+      const linesEndsWithCodeBlock = lines.endsWith(CODE_BLOCK.openingTag);
+
+      if (linesStartWithCodeBlock) {
+        // Infers the code block syntax highlighting language based on the code block
+        // opening tag, this is then stored for compiling the multi-language block
+        const language =
+          FEATURES_REGEX.codeBlockLanguage.exec(lines)[1] || 'text';
+
+        // Ads the metadata for the current line within the collection of code blocks
+        // this is used so we can evaluate multi-language code blocks
+        codeBlocksMetadata.push({ start: index, end: index, lang: language });
+
+        if (!linesEndsWithCodeBlock) {
+          // If the current block starts with a codeblock but doesn't end with one
+          // We have a multiple line code block then
+          codeBlockStartingIndex = index;
+        }
+
+        return true;
       }
 
-      return true;
-    }
+      if (codeBlockStartingIndex !== -1) {
+        // This means we're currently iterating inside a code block
+        // We should ignore parsing all lines until we reach the
+        // end of the code block
+        if (linesEndsWithCodeBlock) {
+          // Defines the ending index of a multi-line code block
+          codeBlocksMetadata[codeBlocksMetadata.length - 1].end = index;
 
-    if (codeBlockEndingIndex !== -1) {
-      // This means we're currently iterating inside a code block
-      // We should ignore parsing all lines until we reach the
-      // end of the code block
-      if (linesEndsWithCodeBlock) {
-        // If we have a ending code block, stop ignoring the code loop
-        // And go back to normal business starting the next block
-        codeBlockEndingIndex = -1;
+          // If we have a ending code block, stop ignoring the code loop
+          // and go back to normal business starting the next block
+          codeBlockStartingIndex = -1;
+        }
+
+        return true;
       }
 
-      return true;
-    }
+      return false;
+    },
+    processAllCodeBlocks: originalContent => {
+      const mutatedContent = [...originalContent];
 
-    return false;
+      // Registers where our current iterator for retrieving API docs content is at
+      // we have an external variable to allow having non-linear progression.
+      for (let currentIndex = 0; currentIndex < codeBlocksMetadata.length; ) {
+        const { start, end, lang } = codeBlocksMetadata[currentIndex];
+
+        const { start: sStart, lang: sLang } =
+          codeBlocksMetadata[currentIndex + 1] || {};
+
+        const isSiblingNode = sStart === end + 1;
+
+        // This operation cheks if the immediate sibling code block in the array
+        // is also the next immediate sibling within the markdown content
+        if (isSiblingNode) {
+          // This replaces the languages mapping of the first code block
+          // to match the multi language one
+          mutatedContent[start] = mutatedContent[start].replace(
+            FEATURES_REGEX.codeBlockLanguage,
+            `${CODE_BLOCK.openingTag}${lang}|${sLang}`
+          );
+
+          // We replace the end of each code block except the last one to be
+          // the separator tag for multi-line code blocks
+          mutatedContent[end] = mutatedContent[end].replace(
+            FEATURES_REGEX.codeBlockClosingTag,
+            CODE_BLOCK.separatorTag
+          );
+
+          // We replace the end of each code block except the last one to be
+          // the separator tag for multi-line code blocks
+          // and then we append the start of the next code block to the end of
+          // the previous code block to make it just one code block
+          mutatedContent[end] += mutatedContent[sStart].replace(
+            FEATURES_REGEX.codeBlockLanguage,
+            ''
+          );
+
+          // Removes the original ending line start as it gets appended to the
+          // previous code block so that we don't have extra whitespaces
+          mutatedContent[sStart] = '';
+        }
+
+        currentIndex += isSiblingNode ? 2 : 1;
+      }
+
+      return mutatedContent;
+    },
   };
 }
 
@@ -299,7 +373,7 @@ function createMarkdownParser(markdownContent, metadata) {
 
   return {
     getNavigationEntries,
-    parseMarkdown: () => {
+    parseMarkdown: async () => {
       const [, ...markdownContents] = markdownContent.split('\n\n');
 
       const firstLine = markdownContent.split('\n', 1)[0];
@@ -313,7 +387,8 @@ function createMarkdownParser(markdownContent, metadata) {
       moduleCreator.addType('module');
       moduleCreator.create();
 
-      const calculateBlockIntersection = calculateCodeBlockIntersection();
+      const { isCurrentLinesCodeBlock, processAllCodeBlocks } =
+        calculateCodeBlockIntersection();
 
       // Iterate between chunks of paragraphs instead of the whole document
       // As this is way more perfomatic for regex queries
@@ -329,7 +404,7 @@ function createMarkdownParser(markdownContent, metadata) {
 
         // This verifies if the current lines are part of a multi-line code block
         // This allows us to simply ignore any modification during this time
-        if (calculateBlockIntersection(lines, index)) {
+        if (isCurrentLinesCodeBlock(lines, index)) {
           return lines;
         }
 
@@ -384,8 +459,12 @@ function createMarkdownParser(markdownContent, metadata) {
         return parsedLines;
       });
 
+      const contentWithCodeBlocks = processAllCodeBlocks(parsedContent);
+
       // Removes empty lines to reduce the footprint of the Markdown file
-      const filteredContent = parsedContent.filter(l => l.trim().length);
+      const filteredContent = contentWithCodeBlocks.filter(
+        l => l.trim().length
+      );
 
       return `${frontmatter}${filteredContent.join('\n\n')}`;
     },

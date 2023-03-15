@@ -401,7 +401,7 @@ This is a destructive and immediate way to destroy a stream. Previous calls to
 Use `end()` instead of destroy if data should flush before close, or wait for
 the `'drain'` event before destroying the stream.
 
-```cjs
+```cjs|cjs
 const { Writable } = require('node:stream');
 
 const myStream = new Writable();
@@ -409,9 +409,7 @@ const myStream = new Writable();
 const fooErr = new Error('foo error');
 myStream.destroy(fooErr);
 myStream.on('error', (fooErr) => console.error(fooErr.message)); // foo error
-```
-
-```cjs
+--------------
 const { Writable } = require('node:stream');
 
 const myStream = new Writable();

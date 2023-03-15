@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/console.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/console.js"}} />
 
 The `node:console` module provides a simple debugging console that is similar to
 the JavaScript console mechanism provided by web browsers.
@@ -83,11 +83,9 @@ The `Console` class can be used to create a simple logger with configurable
 output streams and can be accessed using either `require('node:console').Console`
 or `console.Console` (or their destructured counterparts):
 
-```js
+```js|js
 const { Console } = require('node:console');
-```
-
-```js
+--------------
 const { Console } = console;
 ```
 

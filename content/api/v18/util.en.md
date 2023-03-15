@@ -896,13 +896,11 @@ properties for each of these components.
 
 Creates a new `MIMEType` object by parsing the `input`.
 
-```mjs
+```mjs|cjs
 import { MIMEType } from 'node:util';
 
 const myMIME = new MIMEType('text/plain');
-```
-
-```cjs
+--------------
 const { MIMEType } = require('node:util');
 
 const myMIME = new MIMEType('text/plain');
@@ -912,14 +910,12 @@ A `TypeError` will be thrown if the `input` is not a valid MIME. Note
 that an effort will be made to coerce the given values into strings. For
 instance:
 
-```mjs
+```mjs|cjs
 import { MIMEType } from 'node:util';
 const myMIME = new MIMEType({ toString: () => 'text/plain' });
 console.log(String(myMIME));
 // Prints: text/plain
-```
-
-```cjs
+--------------
 const { MIMEType } = require('node:util');
 const myMIME = new MIMEType({ toString: () => 'text/plain' });
 console.log(String(myMIME));
@@ -932,7 +928,7 @@ console.log(String(myMIME));
 
 Gets and sets the type portion of the MIME.
 
-```mjs
+```mjs|cjs
 import { MIMEType } from 'node:util';
 
 const myMIME = new MIMEType('text/javascript');
@@ -943,9 +939,7 @@ console.log(myMIME.type);
 // Prints: application
 console.log(String(myMIME));
 // Prints: application/javascript
-```
-
-```cjs
+--------------
 const { MIMEType } = require('node:util');
 
 const myMIME = new MIMEType('text/javascript');
@@ -964,7 +958,7 @@ console.log(String(myMIME));
 
 Gets and sets the subtype portion of the MIME.
 
-```mjs
+```mjs|cjs
 import { MIMEType } from 'node:util';
 
 const myMIME = new MIMEType('text/ecmascript');
@@ -975,9 +969,7 @@ console.log(myMIME.subtype);
 // Prints: javascript
 console.log(String(myMIME));
 // Prints: text/javascript
-```
-
-```cjs
+--------------
 const { MIMEType } = require('node:util');
 
 const myMIME = new MIMEType('text/ecmascript');
@@ -997,7 +989,7 @@ console.log(String(myMIME));
 Gets the essence of the MIME. This property is read only.
 Use `mime.type` or `mime.subtype` to alter the MIME.
 
-```mjs
+```mjs|cjs
 import { MIMEType } from 'node:util';
 
 const myMIME = new MIMEType('text/javascript;key=value');
@@ -1008,9 +1000,7 @@ console.log(myMIME.essence);
 // Prints: application/javascript
 console.log(String(myMIME));
 // Prints: application/javascript;key=value
-```
-
-```cjs
+--------------
 const { MIMEType } = require('node:util');
 
 const myMIME = new MIMEType('text/javascript;key=value');
@@ -1049,7 +1039,7 @@ Alias for [`mime.toString()`][].
 This method is automatically called when an `MIMEType` object is serialized
 with [`JSON.stringify()`][].
 
-```mjs
+```mjs|cjs
 import { MIMEType } from 'node:util';
 
 const myMIMES = [
@@ -1058,9 +1048,7 @@ const myMIMES = [
 ];
 console.log(JSON.stringify(myMIMES));
 // Prints: ["image/png", "image/gif"]
-```
-
-```cjs
+--------------
 const { MIMEType } = require('node:util');
 
 const myMIMES = [
@@ -1082,13 +1070,11 @@ The `MIMEParams` API provides read and write access to the parameters of a
 
 Creates a new `MIMEParams` object by with empty parameters
 
-```mjs
+```mjs|cjs
 import { MIMEParams } from 'node:util';
 
 const myParams = new MIMEParams();
-```
-
-```cjs
+--------------
 const { MIMEParams } = require('node:util');
 
 const myParams = new MIMEParams();
@@ -1130,7 +1116,7 @@ Returns `true` if there is at least one name-value pair whose name is `name`.
 
 Returns an iterator over the names of each name-value pair.
 
-```mjs
+```mjs|cjs
 import { MIMEType } from 'node:util';
 
 const { params } = new MIMEType('text/plain;foo=0;bar=1');
@@ -1140,9 +1126,7 @@ for (const name of params.keys()) {
 // Prints:
 //   foo
 //   bar
-```
-
-```cjs
+--------------
 const { MIMEType } = require('node:util');
 
 const { params } = new MIMEType('text/plain;foo=0;bar=1');
@@ -1163,7 +1147,7 @@ Sets the value in the `MIMEParams` object associated with `name` to
 `value`. If there are any pre-existing name-value pairs whose names are `name`,
 set the first such pair's value to `value`.
 
-```mjs
+```mjs|cjs
 import { MIMEType } from 'node:util';
 
 const { params } = new MIMEType('text/plain;foo=0;bar=1');
@@ -1171,9 +1155,7 @@ params.set('foo', 'def');
 params.set('baz', 'xyz');
 console.log(params.toString());
 // Prints: foo=def&bar=1&baz=xyz
-```
-
-```cjs
+--------------
 const { MIMEType } = require('node:util');
 
 const { params } = new MIMEType('text/plain;foo=0;bar=1');
@@ -1195,7 +1177,7 @@ Returns an iterator over the values of each name-value pair.
 
 Alias for [`mimeParams.entries()`][].
 
-```mjs
+```mjs|cjs
 import { MIMEType } from 'node:util';
 
 const { params } = new MIMEType('text/plain;foo=bar;xyz=baz');
@@ -1205,9 +1187,7 @@ for (const [name, value] of params) {
 // Prints:
 //   foo bar
 //   xyz baz
-```
-
-```cjs
+--------------
 const { MIMEType } = require('node:util');
 
 const { params } = new MIMEType('text/plain;foo=bar;xyz=baz');
@@ -1267,7 +1247,7 @@ Provides a higher level API for command-line argument parsing than interacting
 with `process.argv` directly. Takes a specification for the expected arguments
 and returns a structured object with the parsed options and positionals.
 
-```mjs
+```mjs|cjs
 import { parseArgs } from 'node:util';
 const args = ['-f', '--bar', 'b'];
 const options = {
@@ -1285,9 +1265,7 @@ const {
 } = parseArgs({ args, options });
 console.log(values, positionals);
 // Prints: [Object: null prototype] { foo: true, bar: 'b' } []
-```
-
-```cjs
+--------------
 const { parseArgs } = require('node:util');
 const args = ['-f', '--bar', 'b'];
 const options = {
@@ -1340,7 +1318,7 @@ For example to use the returned tokens to add support for a negated option
 like `--no-color`, the tokens can be reprocessed to change the value stored
 for the negated option.
 
-```mjs
+```mjs|cjs
 import { parseArgs } from 'node:util';
 
 const options = {
@@ -1370,9 +1348,7 @@ const color = values.color;
 const logfile = values.logfile ?? 'default.log';
 
 console.log({ logfile, color });
-```
-
-```cjs
+--------------
 const { parseArgs } = require('node:util');
 
 const options = {
@@ -2013,7 +1989,7 @@ properties. Such objects are created either by Node.js internals or native
 addons. In JavaScript, they are [frozen][`Object.freeze()`] objects with a
 `null` prototype.
 
-```c
+```c|js
 #include <js_native_api.h>
 #include <stdlib.h>
 napi_value result;
@@ -2029,9 +2005,7 @@ static napi_value MyNapi(napi_env env, napi_callback_info info) {
 ...
 DECLARE_NAPI_PROPERTY("myNapi", MyNapi)
 ...
-```
-
-```js
+--------------
 const native = require('napi_addon.node');
 const data = native.myNapi();
 util.types.isExternal(data); // returns true

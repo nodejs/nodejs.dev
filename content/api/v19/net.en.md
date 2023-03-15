@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/net.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/net.js"}} />
 
 The `node:net` module provides an asynchronous network API for creating stream-based
 TCP or [IPC][] servers ([`net.createServer()`][]) and clients
@@ -775,7 +775,7 @@ For TCP connections, available `options` are:
 * `autoSelectFamilyAttemptTimeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type): The amount of time in milliseconds to wait
   for a connection attempt to finish before trying the next address when using the `autoSelectFamily` option.
   If set to a positive integer less than `10`, then the value `10` will be used instead.
-  **Default:** `250`.
+  **Default:** initially `250`, but it can be changed at runtime using [`net.setDefaultAutoSelectFamilyAttemptTimeout(value)`][]
 
 For [IPC][] connections, available `options` are:
 
@@ -1288,22 +1288,6 @@ immediately initiates connection with
 [`socket.connect(port[, host][, connectListener])`][`socket.connect(port)`],
 then returns the `net.Socket` that starts the connection.
 
-### <DataTag tag="M" /> `net.setDefaultAutoSelectFamily(value)`
-
-<Metadata data={{"update":{"type":"added","version":["v19.4.0"]}}} />
-
-Sets the default value of the `autoSelectFamily` option of [`socket.connect(options)`][].
-
-* `value` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) The new default value. The initial default value is `false`.
-
-### <DataTag tag="M" /> `net.getDefaultAutoSelectFamily()`
-
-<Metadata data={{"update":{"type":"added","version":["v19.4.0"]}}} />
-
-Gets the current default value of the `autoSelectFamily` option of [`socket.connect(options)`][].
-
-* Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) The current default value of the `autoSelectFamily` option.
-
 ### <DataTag tag="M" /> `net.createServer([options][, connectionListener])`
 
 <Metadata data={{"changes":[{"version":["v17.7.0","v16.15.0"],"pr-url":"https://github.com/nodejs/node/pull/41310","description":"The `noDelay`, `keepAlive`, and `keepAliveInitialDelay` options are supported now."}],"update":{"type":"added","version":["v0.5.0"]}}} />
@@ -1389,6 +1373,39 @@ Use `nc` to connect to a Unix domain socket server:
 $ nc -U /tmp/echo.sock
 ```
 
+### <DataTag tag="M" /> `net.getDefaultAutoSelectFamily()`
+
+<Metadata data={{"update":{"type":"added","version":["v19.4.0"]}}} />
+
+Gets the current default value of the `autoSelectFamily` option of [`socket.connect(options)`][].
+
+* Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) The current default value of the `autoSelectFamily` option.
+
+### <DataTag tag="M" /> `net.setDefaultAutoSelectFamily(value)`
+
+<Metadata data={{"update":{"type":"added","version":["v19.4.0"]}}} />
+
+Sets the default value of the `autoSelectFamily` option of [`socket.connect(options)`][].
+
+* `value` [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) The new default value. The initial default value is `false`.
+
+### <DataTag tag="M" /> `net.getDefaultAutoSelectFamilyAttemptTimeout()`
+
+<Metadata data={{"update":{"type":"added","version":["v19.8.0"]}}} />
+
+Gets the current default value of the `autoSelectFamilyAttemptTimeout` option of [`socket.connect(options)`][].
+
+* Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The current default value of the `autoSelectFamilyAttemptTimeout` option.
+
+### <DataTag tag="M" /> `net.setDefaultAutoSelectFamilyAttemptTimeout(value)`
+
+<Metadata data={{"update":{"type":"added","version":["v19.8.0"]}}} />
+
+Sets the default value of the `autoSelectFamilyAttemptTimeout` option of [`socket.connect(options)`][].
+
+* `value` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The new default value, which must be a positive number. If the number is less than `10`,
+  the value `10` is used instead. The initial default value is `250`.
+
 ### <DataTag tag="M" /> `net.isIP(input)`
 
 <Metadata data={{"update":{"type":"added","version":["v0.3.0"]}}} />
@@ -1468,6 +1485,7 @@ net.isIPv6('fhqwhgads'); // returns false
 [`net.createConnection(port, host)`]: #netcreateconnectionport-host-connectlistener
 [`net.createServer()`]: #netcreateserveroptions-connectionlistener
 [`net.setDefaultAutoSelectFamily(value)`]: #netsetdefaultautoselectfamilyvalue
+[`net.setDefaultAutoSelectFamilyAttemptTimeout(value)`]: #netsetdefaultautoselectfamilyattempttimeoutvalue
 [`new net.Socket(options)`]: #new-netsocketoptions
 [`readable.setEncoding()`]: /api/v19/stream#readablesetencodingencoding
 [`server.close()`]: #serverclosecallback

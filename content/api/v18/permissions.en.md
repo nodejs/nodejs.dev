@@ -395,7 +395,7 @@ The following example, would allow access to `fs` for all `data:` resources:
 
 Given an import map:
 
-```json
+```json|json
 {
   "imports": {
     "react": "./app/node_modules/react/index.js"
@@ -406,9 +406,7 @@ Given an import map:
     }
   }
 }
-```
-
-```json
+--------------
 {
   "dependencies": true,
   "scopes": {

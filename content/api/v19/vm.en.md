@@ -15,7 +15,7 @@ Stable
 
 <Metadata data={{"name":"vm"}} />
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/vm.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/vm.js"}} />
 
 The `node:vm` module enables compiling and running code within V8 Virtual
 Machine contexts.
@@ -315,7 +315,7 @@ console.log(globalVar);
 When the script is compiled from a source that contains a source map magic
 comment, this property will be set to the URL of the source map.
 
-```mjs
+```mjs|cjs
 import vm from 'node:vm';
 
 const script = new vm.Script(`
@@ -325,9 +325,7 @@ function myFunc() {}
 
 console.log(script.sourceMapURL);
 // Prints: sourcemap.json
-```
-
-```cjs
+--------------
 const vm = require('node:vm');
 
 const script = new vm.Script(`
@@ -370,7 +368,7 @@ This implementation lies at a lower level than the [ECMAScript Module
 loader][]. There is also no way to interact with the Loader yet, though
 support is planned.
 
-```mjs
+```mjs|cjs
 import vm from 'node:vm';
 
 const contextifiedObject = vm.createContext({
@@ -439,9 +437,7 @@ await bar.link(linker);
 
 // Prints 42.
 await bar.evaluate();
-```
-
-```cjs
+--------------
 const vm = require('node:vm');
 
 const contextifiedObject = vm.createContext({
@@ -725,7 +721,7 @@ Properties assigned to the `import.meta` object that are objects may
 allow the module to access information outside the specified `context`. Use
 `vm.runInContext()` to create objects in a specific context.
 
-```mjs
+```mjs|cjs
 import vm from 'node:vm';
 
 const contextifiedObject = vm.createContext({ secret: 42 });
@@ -751,9 +747,7 @@ await module.evaluate();
 //     meta.prop = {};
 // above with
 //     meta.prop = vm.runInContext('{}', contextifiedObject);
-```
-
-```cjs
+--------------
 const vm = require('node:vm');
 const contextifiedObject = vm.createContext({ secret: 42 });
 (async () => {
@@ -874,7 +868,7 @@ This method is used after the module is linked to set the values of exports. If
 it is called before the module is linked, an [`ERR_VM_MODULE_STATUS`][] error
 will be thrown.
 
-```mjs
+```mjs|cjs
 import vm from 'node:vm';
 
 const m = new vm.SyntheticModule(['x'], () => {
@@ -885,9 +879,7 @@ await m.link(() => {});
 await m.evaluate();
 
 assert.strictEqual(m.namespace.x, 1);
-```
-
-```cjs
+--------------
 const vm = require('node:vm');
 (async () => {
   const m = new vm.SyntheticModule(['x'], () => {

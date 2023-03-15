@@ -13,35 +13,31 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/readline.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/readline.js"}} />
 
 The `node:readline` module provides an interface for reading data from a
 [Readable][] stream (such as [`process.stdin`][]) one line at a time.
 
 To use the promise-based APIs:
 
-```mjs
+```mjs|cjs
 import * as readline from 'node:readline/promises';
-```
-
-```cjs
+--------------
 const readline = require('node:readline/promises');
 ```
 
 To use the callback and sync APIs:
 
-```mjs
+```mjs|cjs
 import * as readline from 'node:readline';
-```
-
-```cjs
+--------------
 const readline = require('node:readline');
 ```
 
 The following simple example illustrates the basic use of the `node:readline`
 module.
 
-```mjs
+```mjs|cjs
 import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 
@@ -52,9 +48,7 @@ const answer = await rl.question('What do you think of Node.js? ');
 console.log(`Thank you for your valuable feedback: ${answer}`);
 
 rl.close();
-```
-
-```cjs
+--------------
 const readline = require('node:readline');
 const { stdin: input, stdout: output } = require('node:process');
 
