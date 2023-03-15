@@ -478,7 +478,7 @@ targets, this expansion is dependent on only the files of the package itself.
 
 To exclude private subfolders from patterns, `null` targets can be used:
 
-```json
+```json|js
 // ./node_modules/es-module-package/package.json
 {
   "exports": {
@@ -486,9 +486,7 @@ To exclude private subfolders from patterns, `null` targets can be used:
     "./features/private-internal/*": null
   }
 }
-```
-
-```js
+--------------
 import featureInternal from 'es-module-package/features/private-internal/m.js';
 // Throws: ERR_PACKAGE_PATH_NOT_EXPORTED
 
@@ -714,25 +712,21 @@ const { something } = require('a-package/foo.js'); // Loads from ./foo.js.
 Finally, self-referencing also works with scoped packages. For example, this
 code will also work:
 
-```json
+```json|cjs
 // package.json
 {
   "name": "@my/package",
   "exports": "./index.js"
 }
-```
-
-```cjs
+--------------
 // ./index.js
 module.exports = 42;
 ```
 
-```cjs
+```cjs|console
 // ./other.js
 console.log(require('@my/package'));
-```
-
-```console
+--------------
 $ node other.js
 42
 ```
@@ -870,12 +864,10 @@ to be treated as ES modules, just as `"type": "commonjs"` would cause them
 to be treated as CommonJS.
 See [Enabling](esm.md#enabling).
 
-```cjs
+```cjs|js
 // ./node_modules/pkg/index.cjs
 exports.name = 'value';
-```
-
-```js
+--------------
 // ./node_modules/pkg/wrapper.mjs
 import cjsModule from './index.cjs';
 export const name = cjsModule.name;
@@ -1142,14 +1134,12 @@ The nearest parent `package.json` is defined as the first `package.json` found
 when searching in the current folder, that folder's parent, and so on up
 until a node\_modules folder or the volume root is reached.
 
-```json
+```json|bash
 // package.json
 {
   "type": "module"
 }
-```
-
-```bash
+--------------
 # In same folder as preceding package.json
 node my-app.js # Runs as ES module
 ```

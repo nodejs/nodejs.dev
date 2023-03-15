@@ -919,7 +919,7 @@ Provides a higher level API for command-line argument parsing than interacting
 with `process.argv` directly. Takes a specification for the expected arguments
 and returns a structured object with the parsed options and positionals.
 
-```mjs
+```mjs|cjs
 import { parseArgs } from 'node:util';
 const args = ['-f', '--bar', 'b'];
 const options = {
@@ -937,9 +937,7 @@ const {
 } = parseArgs({ args, options });
 console.log(values, positionals);
 // Prints: [Object: null prototype] { foo: true, bar: 'b' } []
-```
-
-```cjs
+--------------
 const { parseArgs } = require('node:util');
 const args = ['-f', '--bar', 'b'];
 const options = {
@@ -992,7 +990,7 @@ For example to use the returned tokens to add support for a negated option
 like `--no-color`, the tokens can be reprocessed to change the value stored
 for the negated option.
 
-```mjs
+```mjs|cjs
 import { parseArgs } from 'node:util';
 
 const options = {
@@ -1022,9 +1020,7 @@ const color = values.color;
 const logfile = values.logfile ?? 'default.log';
 
 console.log({ logfile, color });
-```
-
-```cjs
+--------------
 const { parseArgs } = require('node:util');
 
 const options = {
@@ -1630,7 +1626,7 @@ properties. Such objects are created either by Node.js internals or native
 addons. In JavaScript, they are [frozen][`Object.freeze()`] objects with a
 `null` prototype.
 
-```c
+```c|js
 #include <js_native_api.h>
 #include <stdlib.h>
 napi_value result;
@@ -1646,9 +1642,7 @@ static napi_value MyNapi(napi_env env, napi_callback_info info) {
 ...
 DECLARE_NAPI_PROPERTY("myNapi", MyNapi)
 ...
-```
-
-```js
+--------------
 const native = require('napi_addon.node');
 const data = native.myNapi();
 util.types.isExternal(data); // returns true

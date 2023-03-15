@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/http.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/http.js"}} />
 
 To use the HTTP server and client one must `require('node:http')`.
 
@@ -2741,7 +2741,7 @@ Returns a new instance of [`http.Server`][].
 The `requestListener` is a function which is automatically
 added to the [`'request'`][] event.
 
-```cjs
+```cjs|cjs
 const http = require('node:http');
 
 // Create a local server to receive data from
@@ -2753,9 +2753,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(8000);
-```
-
-```cjs
+--------------
 const http = require('node:http');
 
 // Create a local server to receive data from

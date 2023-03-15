@@ -36,7 +36,7 @@ This example creates a simple `ReadableStream` that pushes the current
 `performance.now()` timestamp once every second forever. An async iterable
 is used to read the data from the stream.
 
-```mjs
+```mjs|cjs
 import {
   ReadableStream,
 } from 'node:stream/web';
@@ -60,9 +60,7 @@ const stream = new ReadableStream({
 
 for await (const value of stream)
   console.log(value);
-```
-
-```cjs
+--------------
 const {
   ReadableStream,
 } = require('node:stream/web');
@@ -153,7 +151,7 @@ stream's data.
   * `mode` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) `'byob'` or `undefined`
 * Returns: [`ReadableStreamDefaultReader`](/api/v19/webstreams#readablestreamdefaultreader) | [`ReadableStreamBYOBReader`](/api/v19/webstreams#readablestreambyobreader)
 
-```mjs
+```mjs|cjs
 import { ReadableStream } from 'node:stream/web';
 
 const stream = new ReadableStream();
@@ -161,9 +159,7 @@ const stream = new ReadableStream();
 const reader = stream.getReader();
 
 console.log(await reader.read());
-```
-
-```cjs
+--------------
 const { ReadableStream } = require('node:stream/web');
 
 const stream = new ReadableStream();
@@ -206,7 +202,7 @@ pipeline is configured, `transform.readable` is returned.
 Causes the `readableStream.locked` to be `true` while the pipe operation
 is active.
 
-```mjs
+```mjs|cjs
 import {
   ReadableStream,
   TransformStream,
@@ -228,9 +224,7 @@ const transformedStream = stream.pipeThrough(transform);
 
 for await (const chunk of transformedStream)
   console.log(chunk);
-```
-
-```cjs
+--------------
 const {
   ReadableStream,
   TransformStream,
@@ -1180,7 +1174,7 @@ streams.
 
 They are accessed using:
 
-```mjs
+```mjs|cjs
 import {
   arrayBuffer,
   blob,
@@ -1188,9 +1182,7 @@ import {
   json,
   text,
 } from 'node:stream/consumers';
-```
-
-```cjs
+--------------
 const {
   arrayBuffer,
   blob,
@@ -1208,7 +1200,7 @@ const {
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with an `ArrayBuffer` containing the full
   contents of the stream.
 
-```mjs
+```mjs|cjs
 import { buffer as arrayBuffer } from 'node:stream/consumers';
 import { Readable } from 'node:stream';
 import { TextEncoder } from 'node:util';
@@ -1219,9 +1211,7 @@ const dataArray = encoder.encode('hello world from consumers!');
 const readable = Readable.from(dataArray);
 const data = await arrayBuffer(readable);
 console.log(`from readable: ${data.byteLength}`);
-```
-
-```cjs
+--------------
 const { arrayBuffer } = require('node:stream/consumers');
 const { Readable } = require('node:stream');
 const { TextEncoder } = require('node:util');
@@ -1242,7 +1232,7 @@ arrayBuffer(readable).then((data) => {
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with a [`Blob`](/api/v19/buffer#blob) containing the full contents
   of the stream.
 
-```mjs
+```mjs|cjs
 import { blob } from 'node:stream/consumers';
 
 const dataBlob = new Blob(['hello world from consumers!']);
@@ -1250,9 +1240,7 @@ const dataBlob = new Blob(['hello world from consumers!']);
 const readable = dataBlob.stream();
 const data = await blob(readable);
 console.log(`from readable: ${data.size}`);
-```
-
-```cjs
+--------------
 const { blob } = require('node:stream/consumers');
 
 const dataBlob = new Blob(['hello world from consumers!']);
@@ -1271,7 +1259,7 @@ blob(readable).then((data) => {
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with a [`Buffer`](/api/v19/buffer#buffer) containing the full
   contents of the stream.
 
-```mjs
+```mjs|cjs
 import { buffer } from 'node:stream/consumers';
 import { Readable } from 'node:stream';
 import { Buffer } from 'node:buffer';
@@ -1281,9 +1269,7 @@ const dataBuffer = Buffer.from('hello world from consumers!');
 const readable = Readable.from(dataBuffer);
 const data = await buffer(readable);
 console.log(`from readable: ${data.length}`);
-```
-
-```cjs
+--------------
 const { buffer } = require('node:stream/consumers');
 const { Readable } = require('node:stream');
 const { Buffer } = require('node:buffer');
@@ -1304,7 +1290,7 @@ buffer(readable).then((data) => {
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with the contents of the stream parsed as a
   UTF-8 encoded string that is then passed through `JSON.parse()`.
 
-```mjs
+```mjs|cjs
 import { json } from 'node:stream/consumers';
 import { Readable } from 'node:stream';
 
@@ -1320,9 +1306,7 @@ const items = Array.from(
 const readable = Readable.from(JSON.stringify(items));
 const data = await json(readable);
 console.log(`from readable: ${data.length}`);
-```
-
-```cjs
+--------------
 const { json } = require('node:stream/consumers');
 const { Readable } = require('node:stream');
 
@@ -1349,16 +1333,14 @@ json(readable).then((data) => {
 * Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Fulfills with the contents of the stream parsed as a
   UTF-8 encoded string.
 
-```mjs
+```mjs|cjs
 import { text } from 'node:stream/consumers';
 import { Readable } from 'node:stream';
 
 const readable = Readable.from('Hello world from consumers!');
 const data = await text(readable);
 console.log(`from readable: ${data.length}`);
-```
-
-```cjs
+--------------
 const { text } = require('node:stream/consumers');
 const { Readable } = require('node:stream');
 

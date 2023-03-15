@@ -1,5 +1,4 @@
 const fs = require('fs');
-const fsPromises = require('fs/promises');
 const path = require('path');
 const async = require('async');
 const cliProgress = require('cli-progress');
@@ -19,7 +18,7 @@ const filterOutInvalidFiles = file =>
 
 const progressBarOptions = {
   format:
-    'Syncing API || {bar} {percentage}% || Remaining: {remaining} || Processing: {started} || Finished: {finished}',
+    'Syncing API || {bar} {percentage}% || Remaining: {remaining} || Processing: {started}',
 };
 
 async function getApiDocsData(releaseVersions, callback) {
@@ -33,7 +32,7 @@ async function getApiDocsData(releaseVersions, callback) {
   // This creates an asynchronous queue that fetches the directory listing of the
   // /doc/api/ directory on the Node.js repository with the contents of a specific version (Git Tag)
   // Then the worker creates a new queue that dispatches a list of files (their metadata and the release version)
-  const apiDownloadListQueue = async.queue((releaseData, cb) => {
+  const getAllApiVersions = (releaseData, cb) => {
     const pushToDocsQueue = files => {
       const markdownFiles = files.filter(filterOutInvalidFiles);
 
@@ -52,10 +51,7 @@ async function getApiDocsData(releaseVersions, callback) {
         fs.mkdirSync(currentVersionPath);
       }
 
-      // Here we create a new queue to parse each one of the Markdown files
-      // We first iterate through the contents with mostly Regex and string interpolation instead of AST
-      // As we don't want to overcomplicate things. There are definitel drawbacks of using ReGeX
-      const apiDocsParser = async.queue((file, dCb) => {
+      const processMarkdownFile = (file, dCb) => {
         remainingFilesToParse += 1;
 
         progressBar.update({
@@ -77,46 +73,39 @@ async function getApiDocsData(releaseVersions, callback) {
             }
           );
 
-          const resultingContent = parseMarkdown();
+          const parseMarkdownPromise = parseMarkdown();
 
-          // Our Navigation Sidebar is generated from within the Markdown Parser
-          // And it has a format that matches the <NavigationItem> type
-          navigationEntry.items.push(...getNavigationEntries());
+          // eslint-disable-next-line no-console
+          parseMarkdownPromise.catch(console.error);
 
-          const currentFilePath = path.resolve(
-            currentVersionPath,
-            // Creates the file path for English version of the file
-            `${getFileName(file)}.en.md`
-          );
+          parseMarkdownPromise.then(resultingContent => {
+            // Our Navigation Sidebar is generated from within the Markdown Parser
+            // And it has a format that matches the <NavigationItem> type
+            navigationEntry.items.push(...getNavigationEntries());
 
-          // Creates the File within the File System
-          return fsPromises.writeFile(currentFilePath, resultingContent, {
-            encoding: 'utf8',
+            const currentFilePath = path.resolve(
+              currentVersionPath,
+              // Creates the file path for English version of the file
+              `${getFileName(file)}.en.md`
+            );
+
+            fs.writeFile(currentFilePath, resultingContent, () => {
+              remainingFilesToParse -= 1;
+
+              progressBar.update({ remaining: remainingFilesToParse });
+
+              dCb();
+            });
           });
-        };
-
-        const finishedItemCallback = () => {
-          remainingFilesToParse -= 1;
-
-          progressBar.update({
-            remaining: remainingFilesToParse,
-            finished: `${file.name}@${releaseData.version}`,
-          });
-
-          dCb();
         };
 
         fetch(file.download_url)
           .then(response => response.text())
           .then(parseMarkdownCallback)
-          .finally(finishedItemCallback);
-      }, 8);
+          .catch(() => dCb());
+      };
 
-      // Add files to be Downloaded and Parsed to Text
-      apiDocsParser.push([...markdownFiles]);
-
-      // We finished processing all files for this release
-      apiDocsParser.drain(() => {
+      const writeNavigationAfterSuccess = () => {
         const navigationDataPath = path.resolve(
           currentVersionPath,
           'navigation.json'
@@ -135,11 +124,19 @@ async function getApiDocsData(releaseVersions, callback) {
 
         fs.writeFile(
           navigationDataPath,
-          // Stringifies and Pretty-Prints the JSON
           safeJSON.toString(sortedNavigationEntry, null, 2),
           cb
         );
-      });
+      };
+
+      // This creates an asynchronous iteration stack that applies the callback (2nd argument) on all
+      // the markdown files (1st argument) and then once all are processed it writes the navigation
+      // index for the respective version of the API docs on the 3rd argument.
+      async.each(
+        markdownFiles,
+        processMarkdownFile,
+        writeNavigationAfterSuccess
+      );
     };
 
     // This fetches a JSON containing the metadata of the files within the API Folder
@@ -149,19 +146,15 @@ async function getApiDocsData(releaseVersions, callback) {
       .then(files => (Array.isArray(files) ? files : []))
       .then(pushToDocsQueue)
       .catch(cb);
-  }, 2);
+  };
 
   progressBar.start(releaseVersions.length, 0, {
     remaining: 0,
     started: 'N/A',
-    finished: 'N/A',
   });
 
-  // Retrieves all the Lists of the Documentation files for that Node.js version
-  apiDownloadListQueue.push([...releaseVersions]);
-
-  // After the whole queue ends we call the callback with our Navigation entries
-  apiDownloadListQueue.drain(() => {
+  async.each(releaseVersions, getAllApiVersions, () => {
+    progressBar.update({ started: 'N/A' });
     progressBar.stop();
 
     callback();

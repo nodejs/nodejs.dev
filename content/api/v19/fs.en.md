@@ -15,28 +15,24 @@ Stable
 
 <Metadata data={{"name":"fs"}} />
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/fs.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/fs.js"}} />
 
 The `node:fs` module enables interacting with the file system in a
 way modeled on standard POSIX functions.
 
 To use the promise-based APIs:
 
-```mjs
+```mjs|cjs
 import * as fs from 'node:fs/promises';
-```
-
-```cjs
+--------------
 const fs = require('node:fs/promises');
 ```
 
 To use the callback and sync APIs:
 
-```mjs
+```mjs|cjs
 import * as fs from 'node:fs';
-```
-
-```cjs
+--------------
 const fs = require('node:fs');
 ```
 
@@ -48,7 +44,7 @@ forms, and are accessible using both CommonJS syntax and ES6 Modules (ESM).
 Promise-based operations return a promise that is fulfilled when the
 asynchronous operation is complete.
 
-```mjs
+```mjs|cjs
 import { unlink } from 'node:fs/promises';
 
 try {
@@ -57,9 +53,7 @@ try {
 } catch (error) {
   console.error('there was an error:', error.message);
 }
-```
-
-```cjs
+--------------
 const { unlink } = require('node:fs/promises');
 
 (async function(path) {
@@ -80,16 +74,14 @@ the completion callback depend on the method, but the first argument is always
 reserved for an exception. If the operation is completed successfully, then
 the first argument is `null` or `undefined`.
 
-```mjs
+```mjs|cjs
 import { unlink } from 'node:fs';
 
 unlink('/tmp/hello', (err) => {
   if (err) throw err;
   console.log('successfully deleted /tmp/hello');
 });
-```
-
-```cjs
+--------------
 const { unlink } = require('node:fs');
 
 unlink('/tmp/hello', (err) => {
@@ -108,7 +100,7 @@ The synchronous APIs block the Node.js event loop and further JavaScript
 execution until the operation is complete. Exceptions are thrown immediately
 and can be handled using `try…catch`, or can be allowed to bubble up.
 
-```mjs
+```mjs|cjs
 import { unlinkSync } from 'node:fs';
 
 try {
@@ -117,9 +109,7 @@ try {
 } catch (err) {
   // handle the error
 }
-```
-
-```cjs
+--------------
 const { unlinkSync } = require('node:fs');
 
 try {
@@ -418,7 +408,7 @@ Returns a `ReadableStream` that may be used to read the files data.
 An error will be thrown if this method is called more than once or is called
 after the `FileHandle` is closed or closing.
 
-```mjs
+```mjs|cjs
 import {
   open,
 } from 'node:fs/promises';
@@ -429,9 +419,7 @@ for await (const chunk of file.readableWebStream())
   console.log(chunk);
 
 await file.close();
-```
-
-```cjs
+--------------
 const {
   open,
 } = require('node:fs/promises');
@@ -488,7 +476,7 @@ of the file.
 Convenience method to create a `readline` interface and stream over the file.
 See [`filehandle.createReadStream()`][] for the options.
 
-```mjs
+```mjs|cjs
 import { open } from 'node:fs/promises';
 
 const file = await open('./some/file/to/read');
@@ -496,9 +484,7 @@ const file = await open('./some/file/to/read');
 for await (const line of file.readLines()) {
   console.log(line);
 }
-```
-
-```cjs
+--------------
 const { open } = require('node:fs/promises');
 
 (async () => {
@@ -963,7 +949,7 @@ property indicating whether parent directories should be created. Calling
 `fsPromises.mkdir()` when `path` is a directory that exists results in a
 rejection only when `recursive` is false.
 
-```mjs
+```mjs|cjs
 import { mkdir } from 'node:fs/promises';
 
 try {
@@ -974,11 +960,9 @@ try {
 } catch (err) {
   console.error(err.message);
 }
-```
-
-```cjs
+--------------
 const { mkdir } = require('node:fs/promises');
-const { resolve, join } = require('node:path');
+const { join } = require('node:path');
 
 async function makeDirectory() {
   const projectFolder = join(__dirname, 'test', 'project');
@@ -1012,9 +996,11 @@ object with an `encoding` property specifying the character encoding to use.
 
 ```mjs
 import { mkdtemp } from 'node:fs/promises';
+import { join } from 'node:path';
+import { tmpdir } from 'node:os';
 
 try {
-  await mkdtemp(path.join(os.tmpdir(), 'foo-'));
+  await mkdtemp(join(tmpdir(), 'foo-'));
 } catch (err) {
   console.error(err);
 }
@@ -1143,7 +1129,7 @@ returned.
 An example of reading a `package.json` file located in the same directory of the
 running code:
 
-```mjs
+```mjs|cjs
 import { readFile } from 'node:fs/promises';
 try {
   const filePath = new URL('./package.json', import.meta.url);
@@ -1152,9 +1138,7 @@ try {
 } catch (err) {
   console.error(err.message);
 }
-```
-
-```cjs
+--------------
 const { readFile } = require('node:fs/promises');
 const { resolve } = require('node:path');
 async function logFile() {
@@ -2498,8 +2482,10 @@ object with an `encoding` property specifying the character encoding to use.
 
 ```mjs
 import { mkdtemp } from 'node:fs';
+import { join } from 'node:path';
+import { tmpdir } from 'node:os';
 
-mkdtemp(path.join(os.tmpdir(), 'foo-'), (err, directory) => {
+mkdtemp(join(tmpdir(), 'foo-'), (err, directory) => {
   if (err) throw err;
   console.log(directory);
   // Prints: /tmp/foo-itXde2 or C:\Users\...\AppData\Local\Temp\foo-itXde2
@@ -2566,6 +2552,45 @@ a colon, Node.js will open a file system stream, as described by
 
 Functions based on `fs.open()` exhibit this behavior as well:
 `fs.writeFile()`, `fs.readFile()`, etc.
+
+#### <DataTag tag="M" /> `fs.openAsBlob(path[, options])`
+
+<Metadata data={{"update":{"type":"added","version":["v19.8.0"]}}} />
+
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
+
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v19/buffer#buffer) | [`URL`](/api/v19/url#the-whatwg-url-api)
+* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+  * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) An optional mime type for the blob.
+* Return: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) containing [`Blob`](/api/v19/buffer#blob)
+
+Returns a [`Blob`](/api/v19/buffer#blob) whose data is backed by the given file.
+
+The file must not be modified after the [`Blob`](/api/v19/buffer#blob) is created. Any modifications
+will cause reading the [`Blob`](/api/v19/buffer#blob) data to fail with a `DOMException`.
+error. Synchronous stat operations on the file when the `Blob` is created, and
+before each read in order to detect whether the file data has been modified
+on disk.
+
+```mjs|cjs
+import { openAsBlob } from 'node:fs';
+
+const blob = await openAsBlob('the.file.txt');
+const ab = await blob.arrayBuffer();
+blob.stream();
+--------------
+const { openAsBlob } = require('node:fs');
+
+(async () => {
+  const blob = await openAsBlob('the.file.txt');
+  const ab = await blob.arrayBuffer();
+  blob.stream();
+})();
+```
 
 #### <DataTag tag="M" /> `fs.opendir(path[, options], callback)`
 
@@ -3147,16 +3172,14 @@ Truncates the file. No arguments other than a possible exception are
 given to the completion callback. A file descriptor can also be passed as the
 first argument. In this case, `fs.ftruncate()` is called.
 
-```mjs
+```mjs|cjs
 import { truncate } from 'node:fs';
 // Assuming that 'path/file.txt' is a regular file.
 truncate('path/file.txt', (err) => {
   if (err) throw err;
   console.log('path/file.txt was truncated');
 });
-```
-
-```cjs
+--------------
 const { truncate } = require('node:fs');
 // Assuming that 'path/file.txt' is a regular file.
 truncate('path/file.txt', (err) => {
@@ -5660,6 +5683,8 @@ For example, the following is prone to error because the `fs.stat()`
 operation might complete before the `fs.rename()` operation:
 
 ```js
+const fs = require('node:fs');
+
 fs.rename('/tmp/hello', '/tmp/world', (err) => {
   if (err) throw err;
   console.log('renamed complete');
@@ -5673,28 +5698,26 @@ fs.stat('/tmp/world', (err, stats) => {
 It is important to correctly order the operations by awaiting the results
 of one before invoking the other:
 
-```mjs
+```mjs|cjs
 import { rename, stat } from 'node:fs/promises';
 
-const from = '/tmp/hello';
-const to = '/tmp/world';
+const oldPath = '/tmp/hello';
+const newPath = '/tmp/world';
 
 try {
-  await rename(from, to);
-  const stats = await stat(to);
+  await rename(oldPath, newPath);
+  const stats = await stat(newPath);
   console.log(`stats: ${JSON.stringify(stats)}`);
 } catch (error) {
   console.error('there was an error:', error.message);
 }
-```
-
-```cjs
+--------------
 const { rename, stat } = require('node:fs/promises');
 
-(async function(from, to) {
+(async function(oldPath, newPath) {
   try {
-    await rename(from, to);
-    const stats = await stat(to);
+    await rename(oldPath, newPath);
+    const stats = await stat(newPath);
     console.log(`stats: ${JSON.stringify(stats)}`);
   } catch (error) {
     console.error('there was an error:', error.message);
@@ -5705,7 +5728,7 @@ const { rename, stat } = require('node:fs/promises');
 Or, when using the callback APIs, move the `fs.stat()` call into the callback
 of the `fs.rename()` operation:
 
-```mjs
+```mjs|cjs
 import { rename, stat } from 'node:fs';
 
 rename('/tmp/hello', '/tmp/world', (err) => {
@@ -5715,9 +5738,7 @@ rename('/tmp/hello', '/tmp/world', (err) => {
     console.log(`stats: ${JSON.stringify(stats)}`);
   });
 });
-```
-
-```cjs
+--------------
 const { rename, stat } = require('node:fs/promises');
 
 rename('/tmp/hello', '/tmp/world', (err) => {
@@ -5750,7 +5771,7 @@ try {
   fd = await open('/open/some/file.txt', 'r');
   // Do something with the file
 } finally {
-  await fd.close();
+  await fd?.close();
 }
 ```
 
@@ -5764,7 +5785,7 @@ try {
   fd = await open('file.txt', 'r');
   // Do something with the file
 } finally {
-  await fd.close();
+  await fd?.close();
 }
 ```
 
@@ -5877,7 +5898,7 @@ try {
   fd = await open(Buffer.from('/open/some/file.txt'), 'r');
   // Do something with the file
 } finally {
-  await fd.close();
+  await fd?.close();
 }
 ```
 

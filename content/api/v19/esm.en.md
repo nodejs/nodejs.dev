@@ -206,12 +206,10 @@ The default export can be used for, among other things, modifying the named
 exports. Named exports of builtin modules are updated only by calling
 [`module.syncBuiltinESMExports()`][].
 
-```js
+```js|js
 import EventEmitter from 'node:events';
 const e = new EventEmitter();
-```
-
-```js
+--------------
 import { readFile } from 'node:fs';
 readFile('./foo.txt', (err, source) => {
   if (err) {
@@ -513,13 +511,11 @@ export const five = await Promise.resolve(5);
 
 And a `b.mjs` with
 
-```js
+```js|bash
 import { five } from './a.mjs';
 
 console.log(five); // Logs `5`
-```
-
-```bash
+--------------
 node b.mjs # works
 ```
 
@@ -583,14 +579,12 @@ These modules cannot access other modules that are not over `http:` or `https:`.
 To still access local modules while avoiding the security concern, pass in
 references to the local dependencies:
 
-```mjs
+```mjs|mjs
 // file.mjs
 import worker_threads from 'node:worker_threads';
 import { configure, resize } from 'https://example.com/imagelib.mjs';
 configure({ worker_threads });
-```
-
-```mjs
+--------------
 // https://example.com/imagelib.mjs
 let worker_threads;
 export function configure(opts) {
@@ -667,7 +661,8 @@ prevent unintentional breaks in the chain.
 * `specifier` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 * `context` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `conditions` string\[] Export conditions of the relevant `package.json`
-  * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+  * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) An object whose key-value pairs represent the
+    assertions for the module to import
   * `parentURL` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) The module importing this one, or undefined
     if this is the Node.js entry point
 * `nextResolve` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The subsequent `resolve` hook in the chain, or the
@@ -678,23 +673,24 @@ prevent unintentional breaks in the chain.
   * `format` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) A hint to the load hook (it might be
     ignored)
     `'builtin' | 'commonjs' | 'json' | 'module' | 'wasm'`
+  * `importAssertions` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) The import assertions to use when
+    caching the module (optional; if excluded the input will be used)
   * `shortCircuit` [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Undefined_type) | [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) A signal that this hook intends to
     terminate the chain of `resolve` hooks. **Default:** `false`
   * `url` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The absolute URL to which this input resolves
 
-The `resolve` hook chain is responsible for resolving file URL for a given
-module specifier and parent URL, and optionally its format (such as `'module'`)
-as a hint to the `load` hook. If a format is specified, the `load` hook is
-ultimately responsible for providing the final `format` value (and it is free to
-ignore the hint provided by `resolve`); if `resolve` provides a `format`, a
-custom `load` hook is required even if only to pass the value to the Node.js
-default `load` hook.
+The `resolve` hook chain is responsible for telling Node.js where to find and
+how to cache a given `import` statement or expression. It can optionally return
+its format (such as `'module'`) as a hint to the `load` hook. If a format is
+specified, the `load` hook is ultimately responsible for providing the final
+`format` value (and it is free to ignore the hint provided by `resolve`); if
+`resolve` provides a `format`, a custom `load` hook is required even if only to
+pass the value to the Node.js default `load` hook.
 
-The module specifier is the string in an `import` statement or
-`import()` expression.
-
-The parent URL is the URL of the module that imported this one, or `undefined`
-if this is the main entry point for the application.
+Import type assertions are part of the cache key for saving loaded modules into
+the internal module cache. The `resolve` hook is responsible for
+returning an `importAssertions` object if the module should be cached with
+different assertions than were present in the source code.
 
 The `conditions` property in `context` is an array of conditions for
 [package exports conditions][Conditional Exports] that apply to this resolution
@@ -909,7 +905,7 @@ functionality, there are substantial downsides to actually using this loader:
 performance is much slower than loading files from disk, there is no caching,
 and there is no security.
 
-```js
+```js|js
 // https-loader.mjs
 import { get } from 'node:https';
 
@@ -957,9 +953,7 @@ export function load(url, context, nextLoad) {
   // Let Node.js handle all other URLs.
   return nextLoad(url);
 }
-```
-
-```js
+--------------
 // main.mjs
 import { VERSION } from 'https://coffeescript.org/browser-compiler-modern/coffeescript.js';
 
@@ -982,7 +976,7 @@ This is less performant than transpiling source files before running
 Node.js; a transpiler loader should only be used for development and testing
 purposes.
 
-```js
+```js|coffee
 // coffeescript-loader.mjs
 import { readFile } from 'node:fs/promises';
 import { dirname, extname, resolve as resolvePath } from 'node:path';
@@ -1024,7 +1018,7 @@ export async function load(url, context, nextLoad) {
     // file, search up the file system for the nearest parent package.json file
     // and read its "type" field.
     const format = await getPackageType(url);
-    // When a hook returns a format of 'commonjs', `source` is be ignored.
+    // When a hook returns a format of 'commonjs', `source` is ignored.
     // To handle CommonJS files, a handler needs to be registered with
     // `require.extensions` in order to process the files with the CommonJS
     // loader. Avoiding the need for a separate CommonJS handler is a future
@@ -1080,9 +1074,7 @@ async function getPackageType(url) {
   // If at the root, stop and return false
   return dir.length > 1 && getPackageType(resolvePath(dir, '..'));
 }
-```
-
-```coffee
+--------------
 # main.coffee
 import { scream } from './scream.coffee'
 console.log scream 'hello, world'

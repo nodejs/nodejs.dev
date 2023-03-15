@@ -13,28 +13,24 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/inspector.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/inspector.js"}} />
 
 The `node:inspector` module provides an API for interacting with the V8
 inspector.
 
 It can be accessed using:
 
-```mjs
+```mjs|cjs
 import * as inspector from 'node:inspector/promises';
-```
-
-```cjs
+--------------
 const inspector = require('node:inspector/promises');
 ```
 
 or
 
-```mjs
+```mjs|cjs
 import * as inspector from 'node:inspector';
-```
-
-```cjs
+--------------
 const inspector = require('node:inspector');
 ```
 

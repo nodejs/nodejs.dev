@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/async_hooks.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/async_hooks.js"}} />
 
 ### Introduction
 
@@ -26,11 +26,9 @@ in other languages.
 The `AsyncLocalStorage` and `AsyncResource` classes are part of the
 `node:async_hooks` module:
 
-```mjs
+```mjs|cjs
 import { AsyncLocalStorage, AsyncResource } from 'node:async_hooks';
-```
-
-```cjs
+--------------
 const { AsyncLocalStorage, AsyncResource } = require('node:async_hooks');
 ```
 
@@ -49,7 +47,7 @@ The following example uses `AsyncLocalStorage` to build a simple logger
 that assigns IDs to incoming HTTP requests and includes them in messages
 logged within each request.
 
-```mjs
+```mjs|cjs
 import http from 'node:http';
 import { AsyncLocalStorage } from 'node:async_hooks';
 
@@ -79,9 +77,7 @@ http.get('http://localhost:8080');
 //   1: start
 //   0: finish
 //   1: finish
-```
-
-```cjs
+--------------
 const http = require('node:http');
 const { AsyncLocalStorage } = require('node:async_hooks');
 
@@ -123,6 +119,60 @@ with each other's data.
 
 Creates a new instance of `AsyncLocalStorage`. Store is only provided within a
 `run()` call or after an `enterWith()` call.
+
+#### Static method: `AsyncLocalStorage.bind(fn)`
+
+<Metadata data={{"update":{"type":"added","version":["v19.8.0"]}}} />
+
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
+
+* `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to bind to the current execution context.
+* Returns: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A new function that calls `fn` within the captured
+  execution context.
+
+Binds the given function to the current execution context.
+
+#### Static method: `AsyncLocalStorage.snapshot()`
+
+<Metadata data={{"update":{"type":"added","version":["v19.8.0"]}}} />
+
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
+
+* Returns: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A new function with the signature
+  `(fn: (...args) : R, ...args) : R`.
+
+Captures the current execution context and returns a function that accepts a
+function as an argument. Whenever the returned function is called, it
+calls the function passed to it within the captured context.
+
+```js
+const asyncLocalStorage = new AsyncLocalStorage();
+const runInAsyncScope = asyncLocalStorage.run(123, () => asyncLocalStorage.snapshot());
+const result = asyncLocalStorage.run(321, () => runInAsyncScope(() => asyncLocalStorage.getStore()));
+console.log(result);  // returns 123
+```
+
+AsyncLocalStorage.snapshot() can replace the use of AsyncResource for simple
+async context tracking purposes, for example:
+
+```js
+class Foo {
+  #runInAsyncScope = AsyncLocalStorage.snapshot();
+
+  get() { return this.#runInAsyncScope(() => asyncLocalStorage.getStore()); }
+}
+
+const foo = asyncLocalStorage.run(123, () => new Foo());
+console.log(asyncLocalStorage.run(321, () => foo.get())); // returns 123
+```
 
 #### <DataTag tag="M" /> `asyncLocalStorage.disable()`
 
@@ -331,7 +381,7 @@ The `init` hook will trigger when an `AsyncResource` is instantiated.
 
 The following is an overview of the `AsyncResource` API.
 
-```mjs
+```mjs|cjs
 import { AsyncResource, executionAsyncId } from 'node:async_hooks';
 
 // AsyncResource() is meant to be extended. Instantiating a
@@ -357,9 +407,7 @@ asyncResource.asyncId();
 
 // Return the trigger ID for the AsyncResource instance.
 asyncResource.triggerAsyncId();
-```
-
-```cjs
+--------------
 const { AsyncResource, executionAsyncId } = require('node:async_hooks');
 
 // AsyncResource() is meant to be extended. Instantiating a
@@ -492,14 +540,12 @@ database connection pools, can follow a similar model.
 Assuming that the task is adding two numbers, using a file named
 `task_processor.js` with the following content:
 
-```mjs
+```mjs|cjs
 import { parentPort } from 'node:worker_threads';
 parentPort.on('message', (task) => {
   parentPort.postMessage(task.a + task.b);
 });
-```
-
-```cjs
+--------------
 const { parentPort } = require('node:worker_threads');
 parentPort.on('message', (task) => {
   parentPort.postMessage(task.a + task.b);
@@ -508,7 +554,7 @@ parentPort.on('message', (task) => {
 
 a Worker pool around it could use the following structure:
 
-```mjs
+```mjs|cjs
 import { AsyncResource } from 'node:async_hooks';
 import { EventEmitter } from 'node:events';
 import path from 'node:path';
@@ -594,9 +640,7 @@ export default class WorkerPool extends EventEmitter {
     for (const worker of this.workers) worker.terminate();
   }
 }
-```
-
-```cjs
+--------------
 const { AsyncResource } = require('node:async_hooks');
 const { EventEmitter } = require('node:events');
 const path = require('node:path');
@@ -694,7 +738,7 @@ were scheduled.
 
 This pool could be used as follows:
 
-```mjs
+```mjs|cjs
 import WorkerPool from './worker_pool.js';
 import os from 'node:os';
 
@@ -708,9 +752,7 @@ for (let i = 0; i < 10; i++) {
       pool.close();
   });
 }
-```
-
-```cjs
+--------------
 const WorkerPool = require('./worker_pool.js');
 const os = require('node:os');
 
@@ -736,7 +778,7 @@ The following example shows how to use the `AsyncResource` class to properly
 associate an event listener with the correct execution context. The same
 approach can be applied to a [`Stream`][] or a similar event-driven class.
 
-```mjs
+```mjs|cjs
 import { createServer } from 'node:http';
 import { AsyncResource, executionAsyncId } from 'node:async_hooks';
 
@@ -749,9 +791,7 @@ const server = createServer((req, res) => {
   });
   res.end();
 }).listen(3000);
-```
-
-```cjs
+--------------
 const { createServer } = require('node:http');
 const { AsyncResource, executionAsyncId } = require('node:async_hooks');
 

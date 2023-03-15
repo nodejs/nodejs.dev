@@ -22,21 +22,17 @@ way modeled on standard POSIX functions.
 
 To use the promise-based APIs:
 
-```mjs
+```mjs|cjs
 import * as fs from 'node:fs/promises';
-```
-
-```cjs
+--------------
 const fs = require('node:fs/promises');
 ```
 
 To use the callback and sync APIs:
 
-```mjs
+```mjs|cjs
 import * as fs from 'node:fs';
-```
-
-```cjs
+--------------
 const fs = require('node:fs');
 ```
 
@@ -48,7 +44,7 @@ forms, and are accessible using both CommonJS syntax and ES6 Modules (ESM).
 Promise-based operations return a promise that is fulfilled when the
 asynchronous operation is complete.
 
-```mjs
+```mjs|cjs
 import { unlink } from 'node:fs/promises';
 
 try {
@@ -57,9 +53,7 @@ try {
 } catch (error) {
   console.error('there was an error:', error.message);
 }
-```
-
-```cjs
+--------------
 const { unlink } = require('node:fs/promises');
 
 (async function(path) {
@@ -80,16 +74,14 @@ the completion callback depend on the method, but the first argument is always
 reserved for an exception. If the operation is completed successfully, then
 the first argument is `null` or `undefined`.
 
-```mjs
+```mjs|cjs
 import { unlink } from 'node:fs';
 
 unlink('/tmp/hello', (err) => {
   if (err) throw err;
   console.log('successfully deleted /tmp/hello');
 });
-```
-
-```cjs
+--------------
 const { unlink } = require('node:fs');
 
 unlink('/tmp/hello', (err) => {
@@ -108,7 +100,7 @@ The synchronous APIs block the Node.js event loop and further JavaScript
 execution until the operation is complete. Exceptions are thrown immediately
 and can be handled using `try…catch`, or can be allowed to bubble up.
 
-```mjs
+```mjs|cjs
 import { unlinkSync } from 'node:fs';
 
 try {
@@ -117,9 +109,7 @@ try {
 } catch (err) {
   // handle the error
 }
-```
-
-```cjs
+--------------
 const { unlinkSync } = require('node:fs');
 
 try {
@@ -873,7 +863,7 @@ property indicating whether parent directories should be created. Calling
 `fsPromises.mkdir()` when `path` is a directory that exists results in a
 rejection only when `recursive` is false.
 
-```mjs
+```mjs|cjs
 import { mkdir } from 'node:fs/promises';
 
 try {
@@ -884,9 +874,7 @@ try {
 } catch (err) {
   console.error(err.message);
 }
-```
-
-```cjs
+--------------
 const { mkdir } = require('node:fs/promises');
 const { resolve, join } = require('node:path');
 
@@ -2983,16 +2971,14 @@ Truncates the file. No arguments other than a possible exception are
 given to the completion callback. A file descriptor can also be passed as the
 first argument. In this case, `fs.ftruncate()` is called.
 
-```mjs
+```mjs|cjs
 import { truncate } from 'node:fs';
 // Assuming that 'path/file.txt' is a regular file.
 truncate('path/file.txt', (err) => {
   if (err) throw err;
   console.log('path/file.txt was truncated');
 });
-```
-
-```cjs
+--------------
 const { truncate } = require('node:fs');
 // Assuming that 'path/file.txt' is a regular file.
 truncate('path/file.txt', (err) => {
@@ -5409,7 +5395,7 @@ fs.stat('/tmp/world', (err, stats) => {
 It is important to correctly order the operations by awaiting the results
 of one before invoking the other:
 
-```mjs
+```mjs|cjs
 import { rename, stat } from 'node:fs/promises';
 
 const from = '/tmp/hello';
@@ -5422,9 +5408,7 @@ try {
 } catch (error) {
   console.error('there was an error:', error.message);
 }
-```
-
-```cjs
+--------------
 const { rename, stat } = require('node:fs/promises');
 
 (async function(from, to) {
@@ -5441,7 +5425,7 @@ const { rename, stat } = require('node:fs/promises');
 Or, when using the callback APIs, move the `fs.stat()` call into the callback
 of the `fs.rename()` operation:
 
-```mjs
+```mjs|cjs
 import { rename, stat } from 'node:fs';
 
 rename('/tmp/hello', '/tmp/world', (err) => {
@@ -5451,9 +5435,7 @@ rename('/tmp/hello', '/tmp/world', (err) => {
     console.log(`stats: ${JSON.stringify(stats)}`);
   });
 });
-```
-
-```cjs
+--------------
 const { rename, stat } = require('node:fs/promises');
 
 rename('/tmp/hello', '/tmp/world', (err) => {

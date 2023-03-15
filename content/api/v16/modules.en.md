@@ -757,11 +757,9 @@ See ["Accessing the main module"](#accessing-the-main-module).
 
 In `entry.js` script:
 
-```js
+```js|bash
 console.log(require.main);
-```
-
-```bash
+--------------
 node entry.js
 ```
 
