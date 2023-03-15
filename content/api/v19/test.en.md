@@ -7,13 +7,15 @@ version: 'v19'
 
 <Metadata data={{"update":{"type":"introduced_in","version":["v18.0.0"]}}} />
 
+<Metadata data={{"update":{"type":"added","version":["v18.0.0","v16.17.0"]}}} />
+
 <Stability stability={1}>
 
 Experimental
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/test.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/test.js"}} />
 
 The `node:test` module facilitates the creation of JavaScript tests.
 To access it:
@@ -155,8 +157,7 @@ test('skip() method with message', (t) => {
 Running tests can also be done using `describe` to declare a suite
 and `it` to declare a test.
 A suite is used to organize and group related tests together.
-`it` is an alias for `test`, except there is no test context passed,
-since nesting is done using suites.
+`it` is a shorthand for [`test()`][].
 
 ```js
 describe('A thing', () => {
@@ -514,8 +515,7 @@ flags for the test runner to use a specific reporter.
 The following built-reporters are supported:
 
 * `tap`
-  The `tap` reporter is the default reporter used by the test runner. It outputs
-  the test results in the [TAP][] format.
+  The `tap` reporter outputs the test results in the [TAP][] format.
 
 * `spec`
   The `spec` reporter outputs the test results in a human-readable format.
@@ -525,10 +525,13 @@ The following built-reporters are supported:
   where each passing test is represented by a `.`,
   and each failing test is represented by a `X`.
 
+When `stdout` is a [TTY][], the `spec` reporter is used by default.
+Otherwise, the `tap` reporter is used by default.
+
 #### Custom reporters
 
 [`--test-reporter`][] can be used to specify a path to custom reporter.
-a custom reporter is a module that exports a value
+A custom reporter is a module that exports a value
 accepted by [stream.compose][].
 Reporters should transform events emitted by a TestsStream
 
@@ -556,6 +559,11 @@ const customReporter = new Transform({
       case 'test:diagnostic':
         callback(null, event.data.message);
         break;
+      case 'test:coverage': {
+        const { totalLineCount } = event.data.summary.totals;
+        callback(null, `total line count: ${totalLineCount}\n`);
+        break;
+      }
     }
   },
 });
@@ -583,6 +591,11 @@ const customReporter = new Transform({
       case 'test:diagnostic':
         callback(null, event.data.message);
         break;
+      case 'test:coverage': {
+        const { totalLineCount } = event.data.summary.totals;
+        callback(null, `total line count: ${totalLineCount}\n`);
+        break;
+      }
     }
   },
 });
@@ -611,6 +624,11 @@ export default async function * customReporter(source) {
       case 'test:diagnostic':
         yield `${event.data.message}\n`;
         break;
+      case 'test:coverage': {
+        const { totalLineCount } = event.data.summary.totals;
+        yield `total line count: ${totalLineCount}\n`;
+        break;
+      }
     }
   }
 }
@@ -633,6 +651,11 @@ module.exports = async function * customReporter(source) {
       case 'test:diagnostic':
         yield `${event.data.message}\n`;
         break;
+      case 'test:coverage': {
+        const { totalLineCount } = event.data.summary.totals;
+        yield `total line count: ${totalLineCount}\n`;
+        break;
+      }
     }
   }
 };
@@ -675,6 +698,9 @@ unless a destination is explicitly provided.
     **Default:** `false`.
   * `files`: [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) An array containing the list of files to run.
     **Default** matching files from [test runner execution model][].
+  * `setup` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A function that accepts the `TestsStream` instance
+    and can be used to setup listeners before any tests are run.
+    **Default:** `undefined`.
   * `signal` [`AbortSignal`](/api/v19/globals#abortsignal) Allows aborting an in-progress test execution.
   * `timeout` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) A number of milliseconds the test execution will
     fail after.
@@ -725,7 +751,8 @@ run({ files: [path.resolve('./tests/test.js')] })
   to this function is a [`TestContext`][] object. If the test uses callbacks,
   the callback function is passed as the second argument. **Default:** A no-op
   function.
-* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Resolved with `undefined` once the test completes.
+* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Resolved with `undefined` once
+  the test completes, or immediately if the test runs within [`describe()`][].
 
 The `test()` function is the value imported from the `test` module. Each
 invocation of this function results in reporting the test to the TestsStream.
@@ -734,10 +761,12 @@ The `TestContext` object passed to the `fn` argument can be used to perform
 actions related to the current test. Examples include skipping the test, adding
 additional diagnostic information, or creating subtests.
 
-`test()` returns a `Promise` that resolves once the test completes. The return
-value can usually be discarded for top level tests. However, the return value
-from subtests should be used to prevent the parent test from finishing first
-and cancelling the subtest as shown in the following example.
+`test()` returns a `Promise` that resolves once the test completes.
+if `test()` is called within a `describe()` block, it resolve immediately.
+The return value can usually be discarded for top level tests.
+However, the return value from subtests should be used to prevent the parent
+test from finishing first and cancelling the subtest
+as shown in the following example.
 
 ```js
 test('top level test', async (t) => {
@@ -784,19 +813,20 @@ Shorthand for skipping a suite, same as [`describe([name], { skip: true }[, fn])
 Shorthand for marking a suite as `TODO`, same as
 [`describe([name], { todo: true }[, fn])`][describe options].
 
+### <DataTag tag="M" /> `describe.only([name][, options][, fn])`
+
+<Metadata data={{"update":{"type":"added","version":["v19.8.0"]}}} />
+
+Shorthand for marking a suite as `only`, same as
+[`describe([name], { only: true }[, fn])`][describe options].
+
 ### <DataTag tag="M" /> `it([name][, options][, fn])`
 
-* `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The name of the test, which is displayed when reporting test
-  results. **Default:** The `name` property of `fn`, or `'<anonymous>'` if `fn`
-  does not have a name.
-* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Configuration options for the suite.
-  supports the same options as `test([name][, options][, fn])`.
-* `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`AsyncFunction`](https://tc39.es/ecma262/#sec-async-function-constructor) The function under test.
-  If the test uses callbacks, the callback function is passed as an argument.
-  **Default:** A no-op function.
-* Returns: `undefined`.
+<Metadata data={{"changes":[{"version":"v19.8.0","pr-url":"https://github.com/nodejs/node/pull/46889","description":"Calling `it()` is now equivalent to calling `test()`."}],"update":{"type":"added","version":["v18.6.0","v16.17.0"]}}} />
 
-The `it()` function is the value imported from the `node:test` module.
+Shorthand for [`test()`][].
+
+The `it()` function is imported from the `node:test` module.
 
 ### <DataTag tag="M" /> `it.skip([name][, options][, fn])`
 
@@ -807,6 +837,13 @@ same as [`it([name], { skip: true }[, fn])`][it options].
 
 Shorthand for marking a test as `TODO`,
 same as [`it([name], { todo: true }[, fn])`][it options].
+
+### <DataTag tag="M" /> `it.only([name][, options][, fn])`
+
+<Metadata data={{"update":{"type":"added","version":["v19.8.0"]}}} />
+
+Shorthand for marking a test as `only`,
+same as [`it([name], { only: true }[, fn])`][it options].
 
 ### <DataTag tag="M" /> `before([fn][, options])`
 
@@ -1550,6 +1587,7 @@ The name of the suite.
   aborted.
 
 [TAP]: https://testanything.org/
+[TTY]: /api/v19/tty
 [`--experimental-test-coverage`]: /api/v19/cli#--experimental-test-coverage
 [`--import`]: /api/v19/cli#--importmodule
 [`--test-name-pattern`]: /api/v19/cli#--test-name-pattern
@@ -1566,6 +1604,7 @@ The name of the suite.
 [`context.diagnostic`]: #contextdiagnosticmessage
 [`context.skip`]: #contextskipmessage
 [`context.todo`]: #contexttodomessage
+[`describe()`]: #describename-options-fn
 [`run()`]: #runoptions
 [`test()`]: #testname-options-fn
 [describe options]: #describename-options-fn

@@ -5,7 +5,7 @@ category: 'api'
 version: 'v19'
 ---
 
-<Metadata data={{"changes":[{"version":"v19.2.0","pr-url":"https://github.com/nodejs/node/pull/45290","description":"diagnostics_channel is now Stable."}],"update":{"type":"added","version":["v15.1.0"]}}} />
+<Metadata data={{"changes":[{"version":"v19.2.0","pr-url":"https://github.com/nodejs/node/pull/45290","description":"diagnostics_channel is now Stable."}],"update":{"type":"added","version":["v15.1.0","v14.17.0"]}}} />
 
 <Metadata data={{"update":{"type":"introduced_in","version":["v15.1.0"]}}} />
 
@@ -15,7 +15,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/diagnostics_channel.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/diagnostics_channel.js"}} />
 
 The `node:diagnostics_channel` module provides an API to create named channels
 to report arbitrary message data for diagnostics purposes.

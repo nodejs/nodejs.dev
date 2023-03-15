@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/http.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/http.js"}} />
 
 To use the HTTP server and client one must `require('node:http')`.
 

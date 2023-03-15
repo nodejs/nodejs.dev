@@ -13,7 +13,7 @@ Experimental
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/wasi.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/wasi.js"}} />
 
 The WASI API provides an implementation of the [WebAssembly System Interface][]
 specification. WASI gives sandboxed WebAssembly applications access to the
@@ -25,6 +25,7 @@ import { WASI } from 'wasi';
 import { argv, env } from 'node:process';
 
 const wasi = new WASI({
+  version: 'preview1',
   args: argv,
   env,
   preopens: {
@@ -32,14 +33,10 @@ const wasi = new WASI({
   },
 });
 
-// Some WASI binaries require:
-//   const importObject = { wasi_unstable: wasi.wasiImport };
-const importObject = { wasi_snapshot_preview1: wasi.wasiImport };
-
 const wasm = await WebAssembly.compile(
   await readFile(new URL('./demo.wasm', import.meta.url)),
 );
-const instance = await WebAssembly.instantiate(wasm, importObject);
+const instance = await WebAssembly.instantiate(wasm, wasi.getImportObject());
 
 wasi.start(instance);
 --------------
@@ -50,6 +47,7 @@ const { argv, env } = require('node:process');
 const { join } = require('node:path');
 
 const wasi = new WASI({
+  version: 'preview1',
   args: argv,
   env,
   preopens: {
@@ -57,15 +55,11 @@ const wasi = new WASI({
   },
 });
 
-// Some WASI binaries require:
-//   const importObject = { wasi_unstable: wasi.wasiImport };
-const importObject = { wasi_snapshot_preview1: wasi.wasiImport };
-
 (async () => {
   const wasm = await WebAssembly.compile(
     await readFile(join(__dirname, 'demo.wasm')),
   );
-  const instance = await WebAssembly.instantiate(wasm, importObject);
+  const instance = await WebAssembly.instantiate(wasm, wasi.getImportObject());
 
   wasi.start(instance);
 })();
@@ -125,7 +119,7 @@ sandbox directory structure configured explicitly.
 
 #### <DataTag tag="M" /> `new WASI([options])`
 
-<Metadata data={{"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
+<Metadata data={{"changes":[{"version":"v19.8.0","pr-url":"https://github.com/nodejs/node/pull/46469","description":"version field added to options."}],"update":{"type":"added","version":["v13.3.0","v12.16.0"]}}} />
 
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `args` [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) An array of strings that the WebAssembly application will
@@ -147,6 +141,28 @@ sandbox directory structure configured explicitly.
     WebAssembly application. **Default:** `1`.
   * `stderr` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The file descriptor used as standard error in the
     WebAssembly application. **Default:** `2`.
+  * `version` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The version of WASI requested. Currently the only
+    supported versions are `unstable` and `preview1`. **Default:** `preview1`.
+
+#### <DataTag tag="M" /> `wasi.getImportObject()`
+
+<Metadata data={{"update":{"type":"added","version":["v19.8.0"]}}} />
+
+Return an import object that can be passed to `WebAssembly.instantiate()` if
+no other WASM imports are needed beyond those provided by WASI.
+
+If version `unstable` was passed into the constructor it will return:
+
+```json
+{ wasi_unstable: wasi.wasiImport }
+```
+
+If version `preview1` was passed into the constructor or no version was
+specified it will return:
+
+```json
+{ wasi_snapshot_preview1: wasi.wasiImport }
+```
 
 #### <DataTag tag="M" /> `wasi.start(instance)`
 

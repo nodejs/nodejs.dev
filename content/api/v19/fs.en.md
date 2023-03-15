@@ -15,7 +15,7 @@ Stable
 
 <Metadata data={{"name":"fs"}} />
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/fs.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/fs.js"}} />
 
 The `node:fs` module enables interacting with the file system in a
 way modeled on standard POSIX functions.
@@ -962,7 +962,7 @@ try {
 }
 --------------
 const { mkdir } = require('node:fs/promises');
-const { resolve, join } = require('node:path');
+const { join } = require('node:path');
 
 async function makeDirectory() {
   const projectFolder = join(__dirname, 'test', 'project');
@@ -996,9 +996,11 @@ object with an `encoding` property specifying the character encoding to use.
 
 ```mjs
 import { mkdtemp } from 'node:fs/promises';
+import { join } from 'node:path';
+import { tmpdir } from 'node:os';
 
 try {
-  await mkdtemp(path.join(os.tmpdir(), 'foo-'));
+  await mkdtemp(join(tmpdir(), 'foo-'));
 } catch (err) {
   console.error(err);
 }
@@ -2480,8 +2482,10 @@ object with an `encoding` property specifying the character encoding to use.
 
 ```mjs
 import { mkdtemp } from 'node:fs';
+import { join } from 'node:path';
+import { tmpdir } from 'node:os';
 
-mkdtemp(path.join(os.tmpdir(), 'foo-'), (err, directory) => {
+mkdtemp(join(tmpdir(), 'foo-'), (err, directory) => {
   if (err) throw err;
   console.log(directory);
   // Prints: /tmp/foo-itXde2 or C:\Users\...\AppData\Local\Temp\foo-itXde2
@@ -2548,6 +2552,45 @@ a colon, Node.js will open a file system stream, as described by
 
 Functions based on `fs.open()` exhibit this behavior as well:
 `fs.writeFile()`, `fs.readFile()`, etc.
+
+#### <DataTag tag="M" /> `fs.openAsBlob(path[, options])`
+
+<Metadata data={{"update":{"type":"added","version":["v19.8.0"]}}} />
+
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
+
+* `path` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`Buffer`](/api/v19/buffer#buffer) | [`URL`](/api/v19/url#the-whatwg-url-api)
+* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+  * `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) An optional mime type for the blob.
+* Return: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) containing [`Blob`](/api/v19/buffer#blob)
+
+Returns a [`Blob`](/api/v19/buffer#blob) whose data is backed by the given file.
+
+The file must not be modified after the [`Blob`](/api/v19/buffer#blob) is created. Any modifications
+will cause reading the [`Blob`](/api/v19/buffer#blob) data to fail with a `DOMException`.
+error. Synchronous stat operations on the file when the `Blob` is created, and
+before each read in order to detect whether the file data has been modified
+on disk.
+
+```mjs|cjs
+import { openAsBlob } from 'node:fs';
+
+const blob = await openAsBlob('the.file.txt');
+const ab = await blob.arrayBuffer();
+blob.stream();
+--------------
+const { openAsBlob } = require('node:fs');
+
+(async () => {
+  const blob = await openAsBlob('the.file.txt');
+  const ab = await blob.arrayBuffer();
+  blob.stream();
+})();
+```
 
 #### <DataTag tag="M" /> `fs.opendir(path[, options], callback)`
 
@@ -5640,6 +5683,8 @@ For example, the following is prone to error because the `fs.stat()`
 operation might complete before the `fs.rename()` operation:
 
 ```js
+const fs = require('node:fs');
+
 fs.rename('/tmp/hello', '/tmp/world', (err) => {
   if (err) throw err;
   console.log('renamed complete');
@@ -5656,12 +5701,12 @@ of one before invoking the other:
 ```mjs|cjs
 import { rename, stat } from 'node:fs/promises';
 
-const from = '/tmp/hello';
-const to = '/tmp/world';
+const oldPath = '/tmp/hello';
+const newPath = '/tmp/world';
 
 try {
-  await rename(from, to);
-  const stats = await stat(to);
+  await rename(oldPath, newPath);
+  const stats = await stat(newPath);
   console.log(`stats: ${JSON.stringify(stats)}`);
 } catch (error) {
   console.error('there was an error:', error.message);
@@ -5669,10 +5714,10 @@ try {
 --------------
 const { rename, stat } = require('node:fs/promises');
 
-(async function(from, to) {
+(async function(oldPath, newPath) {
   try {
-    await rename(from, to);
-    const stats = await stat(to);
+    await rename(oldPath, newPath);
+    const stats = await stat(newPath);
     console.log(`stats: ${JSON.stringify(stats)}`);
   } catch (error) {
     console.error('there was an error:', error.message);
@@ -5726,7 +5771,7 @@ try {
   fd = await open('/open/some/file.txt', 'r');
   // Do something with the file
 } finally {
-  await fd.close();
+  await fd?.close();
 }
 ```
 
@@ -5740,7 +5785,7 @@ try {
   fd = await open('file.txt', 'r');
   // Do something with the file
 } finally {
-  await fd.close();
+  await fd?.close();
 }
 ```
 
@@ -5853,7 +5898,7 @@ try {
   fd = await open(Buffer.from('/open/some/file.txt'), 'r');
   // Do something with the file
 } finally {
-  await fd.close();
+  await fd?.close();
 }
 ```
 

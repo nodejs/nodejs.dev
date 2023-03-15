@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/stream.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/stream.js"}} />
 
 A stream is an abstract interface for working with streaming data in Node.js.
 The `node:stream` module provides an API for implementing the stream interface.
@@ -2058,7 +2058,7 @@ const anyBigFile = await Readable.from([
   'file3',
 ]).some(async (fileName) => {
   const stats = await stat(fileName);
-  return stat.size > 1024 * 1024;
+  return stats.size > 1024 * 1024;
 }, { concurrency: 2 });
 console.log(anyBigFile); // `true` if any file in the list is bigger than 1MB
 console.log('done'); // Stream has finished
@@ -2110,7 +2110,7 @@ const foundBigFile = await Readable.from([
   'file3',
 ]).find(async (fileName) => {
   const stats = await stat(fileName);
-  return stat.size > 1024 * 1024;
+  return stats.size > 1024 * 1024;
 }, { concurrency: 2 });
 console.log(foundBigFile); // File name of large file, if any file in the list is bigger than 1MB
 console.log('done'); // Stream has finished
@@ -2160,7 +2160,7 @@ const allBigFiles = await Readable.from([
   'file3',
 ]).every(async (fileName) => {
   const stats = await stat(fileName);
-  return stat.size > 1024 * 1024;
+  return stats.size > 1024 * 1024;
 }, { concurrency: 2 });
 // `true` if all files in the list are bigger than 1MiB
 console.log(allBigFiles);
@@ -2555,7 +2555,7 @@ const server = http.createServer((req, res) => {
 
 #### <DataTag tag="M" /> `stream.compose(...streams)`
 
-<Metadata data={{"update":{"type":"added","version":["v16.9.0"]}}} />
+<Metadata data={{"changes":[{"version":"v19.8.0","pr-url":"https://github.com/nodejs/node/pull/46675","description":"Added support for webstreams."}],"update":{"type":"added","version":["v16.9.0"]}}} />
 
 <Stability stability={1}>
 
@@ -2563,7 +2563,8 @@ const server = http.createServer((req, res) => {
 
 </Stability>
 
-* `streams` Stream\[]|Iterable\[]|AsyncIterable\[]|Function\[]
+* `streams` Stream\[]|Iterable\[]|AsyncIterable\[]|Function\[]|
+  ReadableStream\[]|WritableStream\[]|TransformStream\[]
 * Returns: [`stream.Duplex`](/api/v19/stream#streamduplex)
 
 Combines two or more streams into a `Duplex` stream that writes to the
@@ -2768,8 +2769,14 @@ Experimental
 * `streamReadable` [`stream.Readable`](/api/v19/stream#streamreadable)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `strategy` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-    * `highWaterMark` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-    * `size` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+    * `highWaterMark` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The maximum internal queue size (of the created
+      `ReadableStream`) before backpressure is applied in reading from the given
+      `stream.Readable`. If no value is provided, it will be taken from the
+      given `stream.Readable`.
+    * `size` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A function that size of the given chunk of data.
+      If no value is provided, the size will be `1` for all the chunks.
+      * `chunk` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
+      * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * Returns: [`ReadableStream`](/api/v19/webstreams#readablestream)
 
 #### <DataTag tag="M" /> `stream.Writable.fromWeb(writableStream[, options])`

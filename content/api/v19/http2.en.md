@@ -15,7 +15,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/http2.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/http2.js"}} />
 
 The `node:http2` module provides an implementation of the [HTTP/2][] protocol.
 It can be accessed using:
@@ -328,7 +328,7 @@ server.on('stream', (stream, headers) => {
   stream.end('<h1>Hello World</h1>');
 });
 
-server.listen(80);
+server.listen(8000);
 ```
 
 Even though HTTP/2 streams and network sockets are not in a 1:1 correspondence,
@@ -2167,7 +2167,7 @@ server.on('stream', (stream, headers) => {
   stream.end('<h1>Hello World</h1>');
 });
 
-server.listen(80);
+server.listen(8000);
 ```
 
 #### <DataTag tag="M" /> `http2.createSecureServer(options[, onRequestHandler])`
@@ -2264,7 +2264,7 @@ server.on('stream', (stream, headers) => {
   stream.end('<h1>Hello World</h1>');
 });
 
-server.listen(80);
+server.listen(8443);
 ```
 
 #### <DataTag tag="M" /> `http2.connect(authority[, options][, listener])`
@@ -2666,7 +2666,7 @@ const client = http2.connect('http://localhost:8001');
 // for CONNECT requests or an error will be thrown.
 const req = client.request({
   ':method': 'CONNECT',
-  ':authority': `localhost:${port}`,
+  ':authority': 'localhost:8000',
 });
 
 req.on('response', (headers) => {

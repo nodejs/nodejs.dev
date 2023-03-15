@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/readline.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/readline.js"}} />
 
 The `node:readline` module provides an interface for reading data from a
 [Readable][] stream (such as [`process.stdin`][]) one line at a time.

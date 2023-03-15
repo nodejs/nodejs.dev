@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.7.0" data={{"source_link":"lib/async_hooks.js"}} />
+<Metadata version="v19.8.0" data={{"source_link":"lib/async_hooks.js"}} />
 
 ### Introduction
 
@@ -119,6 +119,60 @@ with each other's data.
 
 Creates a new instance of `AsyncLocalStorage`. Store is only provided within a
 `run()` call or after an `enterWith()` call.
+
+#### Static method: `AsyncLocalStorage.bind(fn)`
+
+<Metadata data={{"update":{"type":"added","version":["v19.8.0"]}}} />
+
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
+
+* `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to bind to the current execution context.
+* Returns: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A new function that calls `fn` within the captured
+  execution context.
+
+Binds the given function to the current execution context.
+
+#### Static method: `AsyncLocalStorage.snapshot()`
+
+<Metadata data={{"update":{"type":"added","version":["v19.8.0"]}}} />
+
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
+
+* Returns: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A new function with the signature
+  `(fn: (...args) : R, ...args) : R`.
+
+Captures the current execution context and returns a function that accepts a
+function as an argument. Whenever the returned function is called, it
+calls the function passed to it within the captured context.
+
+```js
+const asyncLocalStorage = new AsyncLocalStorage();
+const runInAsyncScope = asyncLocalStorage.run(123, () => asyncLocalStorage.snapshot());
+const result = asyncLocalStorage.run(321, () => runInAsyncScope(() => asyncLocalStorage.getStore()));
+console.log(result);  // returns 123
+```
+
+AsyncLocalStorage.snapshot() can replace the use of AsyncResource for simple
+async context tracking purposes, for example:
+
+```js
+class Foo {
+  #runInAsyncScope = AsyncLocalStorage.snapshot();
+
+  get() { return this.#runInAsyncScope(() => asyncLocalStorage.getStore()); }
+}
+
+const foo = asyncLocalStorage.run(123, () => new Foo());
+console.log(asyncLocalStorage.run(321, () => foo.get())); // returns 123
+```
 
 #### <DataTag tag="M" /> `asyncLocalStorage.disable()`
 
