@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.8.0" data={{"source_link":"lib/zlib.js"}} />
+<Metadata version="v19.8.1" data={{"source_link":"lib/zlib.js"}} />
 
 The `node:zlib` module provides compression functionality implemented using
 Gzip, Deflate/Inflate, and Brotli.
