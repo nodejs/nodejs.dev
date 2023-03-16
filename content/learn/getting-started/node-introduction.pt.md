@@ -61,7 +61,6 @@ O primeiro fornece os detalhes da requisição. Neste exemplo simples, isto não
 
 O segundo é usando para retornar dados para o chamador.
 
-In this case with:
 Neste caso com:
 
 ```js
