@@ -4,15 +4,15 @@ import connectGraphQlArticle from '../../connectGraphQlArticle';
 import { AboutNavigationKeys } from '../../types';
 
 export default connectGraphQlArticle(ArticleLayout, {
-  editPath: 'content/about/resources.md',
-  currentSlug: AboutNavigationKeys.resources,
+  editPath: 'content/about/branding.md',
+  currentSlug: AboutNavigationKeys.branding,
   hideArticleComponents: true,
 });
 
 export const query = graphql`
   query ($locale: String!, $defaultLocale: String!) {
     articleCurrentLanguage: mdx(
-      fields: { slug: { eq: "resources" }, locale: { eq: $locale } }
+      fields: { slug: { eq: "branding" }, locale: { eq: $locale } }
     ) {
       body
       tableOfContents
@@ -26,7 +26,7 @@ export const query = graphql`
       }
     }
     articleDefaultLanguage: mdx(
-      fields: { slug: { eq: "resources" }, locale: { eq: $defaultLocale } }
+      fields: { slug: { eq: "branding" }, locale: { eq: $defaultLocale } }
     ) {
       body
       tableOfContents

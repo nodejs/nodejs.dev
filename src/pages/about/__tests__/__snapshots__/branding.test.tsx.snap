@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Resources page renders correctly 1`] = `
+exports[`Branding page renders correctly 1`] = `
 <div>
   <div
     class="layout-container"
@@ -307,10 +307,10 @@ exports[`Resources page renders correctly 1`] = `
             </a>
             <a
               class="t-body2 navigationItem"
-              href="/about/resources/"
-              id="/about/resources/"
+              href="/about/branding/"
+              id="/about/branding/"
             >
-              Resources
+              Branding
             </a>
             <a
               class="t-body2 navigationItem"

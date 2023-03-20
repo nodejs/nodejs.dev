@@ -1,22 +1,9 @@
 // Styled MDX/Markdown Elements within the `content/` folder
 
-// used on content/about/resources.xx.md
-.resources-logos {
-  img {
-    width: 100%;
-  }
-
-  td {
-    padding: 20px;
-  }
-}
-
-// used on content/about/resources.xx.md
-.bg-white {
-  background-color: #fff;
-}
-
-// used on content/about/resources.xx.md
-.bg-node-gray {
-  background-color: #333;
+// used on content/about/branding.xx.md
+.dark-bg {
+  background-color: #090c15;
+  border-radius: 10px;
+  margin: -10px;
+  padding: 10px;
 }

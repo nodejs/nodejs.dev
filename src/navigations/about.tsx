@@ -22,8 +22,8 @@ const aboutNavigation = {
       slug: AboutNavigationKeys.releases,
     },
     {
-      title: 'navigation.about.items.resources',
-      slug: AboutNavigationKeys.resources,
+      title: 'navigation.about.items.branding',
+      slug: AboutNavigationKeys.branding,
     },
     {
       title: 'navigation.about.items.privacy',

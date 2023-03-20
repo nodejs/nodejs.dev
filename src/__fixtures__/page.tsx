@@ -227,7 +227,7 @@ export const createGeneralPageData = () => ({
   },
 });
 
-export const createResourcesData = () => ({
+export const createBrandingData = () => ({
   data: {
     articleCurrentLanguage: {
       fields: {

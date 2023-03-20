@@ -3,7 +3,7 @@ export enum AboutNavigationKeys {
   about = '/about/',
   governance = '/about/governance/',
   releases = '/about/releases/',
-  resources = '/about/resources/',
+  branding = '/about/branding/',
   privacy = 'https://privacy-policy.openjsf.org/',
   security = '/about/security/',
   getInvolved = '/get-involved/',
