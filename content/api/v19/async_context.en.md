@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v19.8.0" data={{"source_link":"lib/async_hooks.js"}} />
+<Metadata version="v19.8.1" data={{"source_link":"lib/async_hooks.js"}} />
 
 ### Introduction
 

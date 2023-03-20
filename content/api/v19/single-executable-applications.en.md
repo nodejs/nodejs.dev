@@ -13,7 +13,7 @@ Experimental: This feature is being designed and will change.
 
 </Stability>
 
-<Metadata version="v19.8.0" data={{"source_link":"lib/internal/main/single_executable_application.js"}} />
+<Metadata version="v19.8.1" data={{"source_link":"lib/internal/main/single_executable_application.js"}} />
 
 This feature allows the distribution of a Node.js application conveniently to a
 system that does not have Node.js installed.
