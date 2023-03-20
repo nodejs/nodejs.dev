@@ -1,3 +1,11 @@
+### Repository Archival Notice ⚠️
+
+This repository is discontinued and archived. Please follow-up the recent announcement [here](https://github.com/nodejs/nodejs.org/discussions/5131) as development continues on the [`nodejs/nodejs.org`](https://github.com/nodejs/nodejs.org) repository.
+
+Thank you all for your contributions over the years!
+
+----------
+
 <p align="center">
   <br />
   <a href="https://nodejs.dev">
