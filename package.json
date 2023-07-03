@@ -35,7 +35,7 @@
     "gatsby-plugin-mdx": "^3.20.0",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-sass": "^5.22.0",
-    "gatsby-plugin-sharp": "^4.23.0",
+    "gatsby-plugin-sharp": "^4.25.1",
     "gatsby-plugin-sitemap": "^5.22.0",
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
     "gatsby-plugin-typescript": "^4.22.0",
