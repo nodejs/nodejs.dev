@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v16.19.1" data={{"source_link":"lib/crypto.js"}} />
+<Metadata version="v16.20.1" data={{"source_link":"lib/crypto.js"}} />
 
 The `node:crypto` module provides cryptographic functionality that includes a
 set of wrappers for OpenSSL's hash, HMAC, cipher, decipher, sign, and verify
@@ -954,11 +954,16 @@ If `outputEncoding` is given a string is returned; otherwise, a
 * `encoding` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) The [encoding][] of the return value.
 * Returns: [`Buffer`](/api/v16/buffer#buffer) | [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
 
-Generates private and public Diffie-Hellman key values, and returns
+Generates private and public Diffie-Hellman key values unless they have been
+generated or computed already, and returns
 the public key in the specified `encoding`. This key should be
 transferred to the other party.
 If `encoding` is provided a string is returned; otherwise a
 [`Buffer`][] is returned.
+
+This function is a thin wrapper around [`DH_generate_key()`][]. In particular,
+once a private key has been generated or set, calling this function only updates
+the public key but does not generate a new private key.
 
 #### <DataTag tag="M" /> `diffieHellman.getGenerator([encoding])`
 
@@ -1015,6 +1020,10 @@ Sets the Diffie-Hellman private key. If the `encoding` argument is provided,
 `privateKey` is expected
 to be a string. If no `encoding` is provided, `privateKey` is expected
 to be a [`Buffer`][], `TypedArray`, or `DataView`.
+
+This function does not automatically compute the associated public key. Either
+[`diffieHellman.setPublicKey()`][] or [`diffieHellman.generateKeys()`][] can be
+used to manually provide the public key or to automatically derive it.
 
 #### <DataTag tag="M" /> `diffieHellman.setPublicKey(publicKey[, encoding])`
 
@@ -5094,6 +5103,7 @@ See the [list of SSL OP Flags][] for details.
 [Web Crypto API documentation]: /api/v16/webcrypto
 [`BN_is_prime_ex`]: https://www.openssl.org/docs/man1.1.1/man3/BN_is_prime_ex.html
 [`Buffer`]: /api/v16/buffer
+[`DH_generate_key()`]: https://www.openssl.org/docs/man3.0/man3/DH_generate_key.html
 [`DiffieHellmanGroup`]: #class-diffiehellmangroup
 [`EVP_BytesToKey`]: https://www.openssl.org/docs/man1.1.0/crypto/EVP_BytesToKey.html
 [`KeyObject`]: #class-keyobject
@@ -5128,6 +5138,7 @@ See the [list of SSL OP Flags][] for details.
 [`crypto.scrypt()`]: #cryptoscryptpassword-salt-keylen-options-callback
 [`decipher.final()`]: #decipherfinaloutputencoding
 [`decipher.update()`]: #decipherupdatedata-inputencoding-outputencoding
+[`diffieHellman.generateKeys()`]: #diffiehellmangeneratekeysencoding
 [`diffieHellman.setPublicKey()`]: #diffiehellmansetpublickeypublickey-encoding
 [`ecdh.generateKeys()`]: #ecdhgeneratekeysencoding-format
 [`ecdh.setPrivateKey()`]: #ecdhsetprivatekeyprivatekey-encoding

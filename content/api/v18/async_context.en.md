@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.15.0" data={{"source_link":"lib/async_hooks.js"}} />
+<Metadata version="v18.16.1" data={{"source_link":"lib/async_hooks.js"}} />
 
 ### Introduction
 
@@ -113,30 +113,66 @@ Each instance of `AsyncLocalStorage` maintains an independent storage context.
 Multiple instances can safely exist simultaneously without risk of interfering
 with each other's data.
 
-#### <DataTag tag="M" /> `new AsyncLocalStorage([options])`
+#### <DataTag tag="M" /> `new AsyncLocalStorage()`
 
-<Metadata data={{"changes":[{"version":"v18.13.0","pr-url":"https://github.com/nodejs/node/pull/45386","description":"Add option onPropagate."}],"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
-
-<Stability stability={1}>
-
-`options.onPropagate` is experimental.
-
-</Stability>
-
-* `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  * `onPropagate` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Optional callback invoked before a store is
-    propagated to a new async resource. Returning `true` allows propagation,
-    returning `false` avoids it. Default is to propagate always.
+<Metadata data={{"changes":[{"version":"v18.16.0","pr-url":"https://github.com/nodejs/node/pull/46386","description":"Removed experimental onPropagate option."},{"version":"v18.13.0","pr-url":"https://github.com/nodejs/node/pull/45386","description":"Add option onPropagate."}],"update":{"type":"added","version":["v13.10.0","v12.17.0"]}}} />
 
 Creates a new instance of `AsyncLocalStorage`. Store is only provided within a
 `run()` call or after an `enterWith()` call.
 
-The `onPropagate` is called during creation of an async resource. Throwing at
-this time will print the stack trace and exit. See
-[`async_hooks` Error handling][] for details.
+#### Static method: `AsyncLocalStorage.bind(fn)`
 
-Creating an async resource within the `onPropagate` callback will result in
-a recursive call to `onPropagate`.
+<Metadata data={{"update":{"type":"added","version":["v18.16.0"]}}} />
+
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
+
+* `fn` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The function to bind to the current execution context.
+* Returns: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A new function that calls `fn` within the captured
+  execution context.
+
+Binds the given function to the current execution context.
+
+#### Static method: `AsyncLocalStorage.snapshot()`
+
+<Metadata data={{"update":{"type":"added","version":["v18.16.0"]}}} />
+
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
+
+* Returns: [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A new function with the signature
+  `(fn: (...args) : R, ...args) : R`.
+
+Captures the current execution context and returns a function that accepts a
+function as an argument. Whenever the returned function is called, it
+calls the function passed to it within the captured context.
+
+```js
+const asyncLocalStorage = new AsyncLocalStorage();
+const runInAsyncScope = asyncLocalStorage.run(123, () => asyncLocalStorage.snapshot());
+const result = asyncLocalStorage.run(321, () => runInAsyncScope(() => asyncLocalStorage.getStore()));
+console.log(result);  // returns 123
+```
+
+AsyncLocalStorage.snapshot() can replace the use of AsyncResource for simple
+async context tracking purposes, for example:
+
+```js
+class Foo {
+  #runInAsyncScope = AsyncLocalStorage.snapshot();
+
+  get() { return this.#runInAsyncScope(() => asyncLocalStorage.getStore()); }
+}
+
+const foo = asyncLocalStorage.run(123, () => new Foo());
+console.log(asyncLocalStorage.run(321, () => foo.get())); // returns 123
+```
 
 #### <DataTag tag="M" /> `asyncLocalStorage.disable()`
 
@@ -774,5 +810,4 @@ const server = createServer((req, res) => {
 [`EventEmitter`]: /api/v18/events#class-eventemitter
 [`Stream`]: /api/v18/stream#stream
 [`Worker`]: worker_threads.md#class-worker
-[`async_hooks` Error handling]: async_hooks.md#error-handling
 [`util.promisify()`]: /api/v18/util#utilpromisifyoriginal

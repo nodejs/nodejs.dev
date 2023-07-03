@@ -1100,6 +1100,12 @@
       "name": "report"
     },
     {
+      "slug": "/api/v18/single-executable-applications/",
+      "title": "Single executable applications",
+      "type": "module",
+      "name": "single-executable-applications"
+    },
+    {
       "slug": "/api/v18/stream/",
       "title": "Stream",
       "type": "module",

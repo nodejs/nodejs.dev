@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.15.0" data={{"source_link":"lib/worker_threads.js"}} />
+<Metadata version="v18.16.1" data={{"source_link":"lib/worker_threads.js"}} />
 
 The `node:worker_threads` module enables the use of threads that execute
 JavaScript in parallel. To access it:
@@ -789,7 +789,7 @@ if (isMainThread) {
 
 #### <DataTag tag="M" /> `new Worker(filename[, options])`
 
-<Metadata data={{"changes":[{"version":"v14.9.0","pr-url":"https://github.com/nodejs/node/pull/34584","description":"The `filename` parameter can be a WHATWG `URL` object using `data:` protocol."},{"version":"v14.9.0","pr-url":"https://github.com/nodejs/node/pull/34394","description":"The `trackUnmanagedFds` option was set to `true` by default."},{"version":["v14.6.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34303","description":"The `trackUnmanagedFds` option was introduced."},{"version":["v13.13.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32278","description":"The `transferList` option was introduced."},{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31664","description":"The `filename` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":["v13.4.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30559","description":"The `argv` option was introduced."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/26628","description":"The `resourceLimits` option was introduced."}],"update":{"type":"added","version":["v10.5.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.16.0","pr-url":"https://github.com/nodejs/node/pull/46832","description":"Added support for a `name` option, which allows adding a name to worker title for debugging."},{"version":"v14.9.0","pr-url":"https://github.com/nodejs/node/pull/34584","description":"The `filename` parameter can be a WHATWG `URL` object using `data:` protocol."},{"version":"v14.9.0","pr-url":"https://github.com/nodejs/node/pull/34394","description":"The `trackUnmanagedFds` option was set to `true` by default."},{"version":["v14.6.0","v12.19.0"],"pr-url":"https://github.com/nodejs/node/pull/34303","description":"The `trackUnmanagedFds` option was introduced."},{"version":["v13.13.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/32278","description":"The `transferList` option was introduced."},{"version":["v13.12.0","v12.17.0"],"pr-url":"https://github.com/nodejs/node/pull/31664","description":"The `filename` parameter can be a WHATWG `URL` object using `file:` protocol."},{"version":["v13.4.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/30559","description":"The `argv` option was introduced."},{"version":["v13.2.0","v12.16.0"],"pr-url":"https://github.com/nodejs/node/pull/26628","description":"The `resourceLimits` option was introduced."}],"update":{"type":"added","version":["v10.5.0"]}}} />
 
 * `filename` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`URL`](/api/v18/url#the-whatwg-url-api) The path to the Worker's main script or module. Must
   be either an absolute path or a relative path (i.e. relative to the
@@ -854,6 +854,9 @@ if (isMainThread) {
       used for generated code.
     * `stackSizeMb` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The default maximum stack size for the thread.
       Small values may lead to unusable Worker instances. **Default:** `4`.
+  * `name` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) An optional `name` to be appended to the worker title
+    for debuggin/identification purposes, making the final title as
+    `[worker $id] $name`. **Default:** `''`.
 
 #### <DataTag tag="E" /> `'error'`
 

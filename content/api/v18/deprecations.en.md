@@ -1864,7 +1864,7 @@ In a future version of Node.js, [`message.headers`][],
 [`dnsPromises.lookup()`]: /api/v18/dns#dnspromiseslookuphostname-options
 [`domain`]: /api/v18/domain
 [`ecdh.setPublicKey()`]: /api/v18/crypto#ecdhsetpublickeypublickey-encoding
-[`emitter.listenerCount(eventName)`]: /api/v18/events#emitterlistenercounteventname
+[`emitter.listenerCount(eventName)`]: /api/v18/events#emitterlistenercounteventname-listener
 [`events.listenerCount(emitter, eventName)`]: /api/v18/events#eventslistenercountemitter-eventname
 [`fs.FileHandle`]: /api/v18/fs#class-filehandle
 [`fs.access()`]: /api/v18/fs#fsaccesspath-mode-callback

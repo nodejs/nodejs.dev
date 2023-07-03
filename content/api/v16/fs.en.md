@@ -15,7 +15,7 @@ Stable
 
 <Metadata data={{"name":"fs"}} />
 
-<Metadata version="v16.19.1" data={{"source_link":"lib/fs.js"}} />
+<Metadata version="v16.20.1" data={{"source_link":"lib/fs.js"}} />
 
 The `node:fs` module enables interacting with the file system in a
 way modeled on standard POSIX functions.

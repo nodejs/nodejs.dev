@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v16.19.1" data={{"source_link":"lib/dns.js"}} />
+<Metadata version="v16.20.1" data={{"source_link":"lib/dns.js"}} />
 
 The `node:dns` module enables name resolution. For example, use it to look up IP
 addresses of host names.

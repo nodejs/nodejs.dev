@@ -15,7 +15,7 @@ Deprecated
 
 </Stability>
 
-<Metadata version="v18.15.0" data={{"source_link":"lib/domain.js"}} />
+<Metadata version="v18.16.1" data={{"source_link":"lib/domain.js"}} />
 
 **This module is pending deprecation.** Once a replacement API has been
 finalized, this module will be fully deprecated. Most developers should

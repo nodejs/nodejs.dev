@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.15.0" data={{"source_link":"lib/string_decoder.js"}} />
+<Metadata version="v18.16.1" data={{"source_link":"lib/string_decoder.js"}} />
 
 The `node:string_decoder` module provides an API for decoding `Buffer` objects
 into strings in a manner that preserves encoded multi-byte UTF-8 and UTF-16

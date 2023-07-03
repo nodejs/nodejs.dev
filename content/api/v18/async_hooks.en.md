@@ -13,7 +13,7 @@ Experimental. Please migrate away from this API, if you can. We do not recommend
 
 </Stability>
 
-<Metadata version="v18.15.0" data={{"source_link":"lib/async_hooks.js"}} />
+<Metadata version="v18.16.1" data={{"source_link":"lib/async_hooks.js"}} />
 
 We strongly discourage the use of the `async_hooks` API.
 Other APIs that can cover most of its use cases include:
@@ -361,6 +361,7 @@ The following is a simple demonstration of `triggerAsyncId`:
 import { createHook, executionAsyncId } from 'node:async_hooks';
 import { stdout } from 'node:process';
 import net from 'node:net';
+import fs from 'node:fs';
 
 createHook({
   init(asyncId, type, triggerAsyncId) {
@@ -376,6 +377,7 @@ net.createServer((conn) => {}).listen(8080);
 const { createHook, executionAsyncId } = require('node:async_hooks');
 const { stdout } = require('node:process');
 const net = require('node:net');
+const fs = require('node:fs');
 
 createHook({
   init(asyncId, type, triggerAsyncId) {
@@ -690,6 +692,7 @@ const server = createServer((req, res) => {
 
 ```mjs|cjs
 import { executionAsyncId } from 'node:async_hooks';
+import fs from 'node:fs';
 
 console.log(executionAsyncId());  // 1 - bootstrap
 fs.open(path, 'r', (err, fd) => {
@@ -697,6 +700,7 @@ fs.open(path, 'r', (err, fd) => {
 });
 --------------
 const async_hooks = require('node:async_hooks');
+const fs = require('node:fs');
 
 console.log(async_hooks.executionAsyncId());  // 1 - bootstrap
 fs.open(path, 'r', (err, fd) => {

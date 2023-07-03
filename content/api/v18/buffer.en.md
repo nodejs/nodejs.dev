@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.15.0" data={{"source_link":"lib/buffer.js"}} />
+<Metadata version="v18.16.1" data={{"source_link":"lib/buffer.js"}} />
 
 `Buffer` objects are used to represent a fixed-length sequence of bytes. Many
 Node.js APIs support `Buffer`s.
@@ -915,6 +915,26 @@ console.log(bufA.length);
 
 `Buffer.concat()` may also use the internal `Buffer` pool like
 [`Buffer.allocUnsafe()`][] does.
+
+#### Static method: `Buffer.copyBytesFrom(view[, offset[, length]])`
+
+<Metadata data={{"update":{"type":"added","version":["v18.16.0"]}}} />
+
+* `view` [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) The [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) to copy.
+* `offset` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The starting offset within `view`. **Default:**: `0`.
+* `length` [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The number of elements from `view` to copy.
+  **Default:** `view.length - offset`.
+
+Copies the underlying memory of `view` into a new `Buffer`.
+
+```js
+const u16 = new Uint16Array([0, 0xffff]);
+const buf = Buffer.copyBytesFrom(u16, 0, 1);
+u16[1] = 0;
+console.log(buf.length); // 2
+console.log(buf[0]); // 255
+console.log(buf[1]); // 255
+```
 
 #### Static method: `Buffer.from(array)`
 

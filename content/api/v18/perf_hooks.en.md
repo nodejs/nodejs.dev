@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.15.0" data={{"source_link":"lib/perf_hooks.js"}} />
+<Metadata version="v18.16.1" data={{"source_link":"lib/perf_hooks.js"}} />
 
 This module provides an implementation of a subset of the W3C
 [Web Performance APIs][] as well as additional APIs for

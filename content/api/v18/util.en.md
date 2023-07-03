@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.15.0" data={{"source_link":"lib/util.js"}} />
+<Metadata version="v18.16.1" data={{"source_link":"lib/util.js"}} />
 
 The `node:util` module supports the needs of Node.js internal APIs. Many of the
 utilities are useful for application and module developers as well. To access
@@ -1767,6 +1767,51 @@ Marks the given [`AbortSignal`](/api/v18/globals#abortsignal) as transferable so
 const signal = transferableAbortSignal(AbortSignal.timeout(100));
 const channel = new MessageChannel();
 channel.port2.postMessage(signal, [signal]);
+```
+
+### <DataTag tag="M" /> `util.aborted(signal, resource)`
+
+<Metadata data={{"update":{"type":"added","version":["v18.16.0"]}}} />
+
+<Stability stability={1}>
+
+Experimental
+
+</Stability>
+
+* `signal` [`AbortSignal`](/api/v18/globals#abortsignal)
+* `resource` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) Any non-null entity, reference to which is held weakly.
+* Returns: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
+Listens to abort event on the provided `signal` and
+returns a promise that is fulfilled when the `signal` is
+aborted. If the passed `resource` is garbage collected before the `signal` is
+aborted, the returned promise shall remain pending indefinitely.
+
+```cjs|mjs
+const { aborted } = require('node:util');
+
+const dependent = obtainSomethingAbortable();
+
+aborted(dependent.signal, dependent).then(() => {
+  // Do something when dependent is aborted.
+});
+
+dependent.on('event', () => {
+  dependent.abort();
+});
+--------------
+import { aborted } from 'node:util';
+
+const dependent = obtainSomethingAbortable();
+
+aborted(dependent.signal, dependent).then(() => {
+  // Do something when dependent is aborted.
+});
+
+dependent.on('event', () => {
+  dependent.abort();
+});
 ```
 
 ### <DataTag tag="M" /> `util.types`

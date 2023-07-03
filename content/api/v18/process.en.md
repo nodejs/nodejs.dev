@@ -9,7 +9,7 @@ version: 'v18'
 
 <Metadata data={{"type":"global"}} />
 
-<Metadata version="v18.15.0" data={{"source_link":"lib/process.js"}} />
+<Metadata version="v18.16.1" data={{"source_link":"lib/process.js"}} />
 
 The `process` object provides information about, and control over, the current
 Node.js process.

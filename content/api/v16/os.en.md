@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v16.19.1" data={{"source_link":"lib/os.js"}} />
+<Metadata version="v16.20.1" data={{"source_link":"lib/os.js"}} />
 
 The `node:os` module provides operating system-related utility methods and
 properties. It can be accessed using:

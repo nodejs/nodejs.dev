@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.15.0" data={{"source_link":"lib/stream.js"}} />
+<Metadata version="v18.16.1" data={{"source_link":"lib/stream.js"}} />
 
 A stream is an abstract interface for working with streaming data in Node.js.
 The `node:stream` module provides an API for implementing the stream interface.
@@ -2058,7 +2058,7 @@ const anyBigFile = await Readable.from([
   'file3',
 ]).some(async (fileName) => {
   const stats = await stat(fileName);
-  return stat.size > 1024 * 1024;
+  return stats.size > 1024 * 1024;
 }, { concurrency: 2 });
 console.log(anyBigFile); // `true` if any file in the list is bigger than 1MB
 console.log('done'); // Stream has finished
@@ -2110,7 +2110,7 @@ const foundBigFile = await Readable.from([
   'file3',
 ]).find(async (fileName) => {
   const stats = await stat(fileName);
-  return stat.size > 1024 * 1024;
+  return stats.size > 1024 * 1024;
 }, { concurrency: 2 });
 console.log(foundBigFile); // File name of large file, if any file in the list is bigger than 1MB
 console.log('done'); // Stream has finished
@@ -2160,7 +2160,7 @@ const allBigFiles = await Readable.from([
   'file3',
 ]).every(async (fileName) => {
   const stats = await stat(fileName);
-  return stat.size > 1024 * 1024;
+  return stats.size > 1024 * 1024;
 }, { concurrency: 2 });
 // `true` if all files in the list are bigger than 1MiB
 console.log(allBigFiles);
@@ -2472,15 +2472,16 @@ const cleanup = finished(rs, (err) => {
 
 #### <DataTag tag="M" /> `stream.pipeline(streams, callback)`
 
-<Metadata data={{"changes":[{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/32158","description":"The `pipeline(..., cb)` will wait for the `'close'` event before invoking the callback. The implementation tries to detect legacy streams and only apply this behavior to streams which are expected to emit `'close'`."},{"version":"v13.10.0","pr-url":"https://github.com/nodejs/node/pull/31223","description":"Add support for async generators."}],"update":{"type":"added","version":["v10.0.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.16.0","pr-url":"https://github.com/nodejs/node/pull/46307","description":"Added support for webstreams."},{"version":"v18.0.0","pr-url":"https://github.com/nodejs/node/pull/41678","description":"Passing an invalid callback to the `callback` argument now throws `ERR_INVALID_ARG_TYPE` instead of `ERR_INVALID_CALLBACK`."},{"version":"v14.0.0","pr-url":"https://github.com/nodejs/node/pull/32158","description":"The `pipeline(..., cb)` will wait for the `'close'` event before invoking the callback. The implementation tries to detect legacy streams and only apply this behavior to streams which are expected to emit `'close'`."},{"version":"v13.10.0","pr-url":"https://github.com/nodejs/node/pull/31223","description":"Add support for async generators."}],"update":{"type":"added","version":["v10.0.0"]}}} />
 
-* `streams` Stream\[]|Iterable\[]|AsyncIterable\[]|Function\[]
-* `source` [`Stream`](/api/v18/stream#stream) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+* `streams` Stream\[]|Iterable\[]|AsyncIterable\[]|Function\[]|
+  ReadableStream\[]|WritableStream\[]|TransformStream\[]
+* `source` [`Stream`](/api/v18/stream#stream) | [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`ReadableStream`](/api/v18/webstreams#readablestream)
   * Returns: [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) | [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
-* `...transforms` [`Stream`](/api/v18/stream#stream) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+* `...transforms` [`Stream`](/api/v18/stream#stream) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`TransformStream`](/api/v18/webstreams#transformstream)
   * `source` [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
   * Returns: [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
-* `destination` [`Stream`](/api/v18/stream#stream) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+* `destination` [`Stream`](/api/v18/stream#stream) | [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) | [`WritableStream`](/api/v18/webstreams#writablestream)
   * `source` [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface)
   * Returns: [`AsyncIterable`](https://tc39.github.io/ecma262/#sec-asynciterable-interface) | [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 * `callback` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) Called when the pipeline is fully done.
@@ -2552,7 +2553,7 @@ const server = http.createServer((req, res) => {
 
 #### <DataTag tag="M" /> `stream.compose(...streams)`
 
-<Metadata data={{"update":{"type":"added","version":["v16.9.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.16.0","pr-url":"https://github.com/nodejs/node/pull/46675","description":"Added support for webstreams."}],"update":{"type":"added","version":["v16.9.0"]}}} />
 
 <Stability stability={1}>
 
@@ -2560,7 +2561,8 @@ const server = http.createServer((req, res) => {
 
 </Stability>
 
-* `streams` Stream\[]|Iterable\[]|AsyncIterable\[]|Function\[]
+* `streams` Stream\[]|Iterable\[]|AsyncIterable\[]|Function\[]|
+  ReadableStream\[]|WritableStream\[]|TransformStream\[]
 * Returns: [`stream.Duplex`](/api/v18/stream#streamduplex)
 
 Combines two or more streams into a `Duplex` stream that writes to the
@@ -2765,8 +2767,14 @@ Experimental
 * `streamReadable` [`stream.Readable`](/api/v18/stream#streamreadable)
 * `options` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
   * `strategy` [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-    * `highWaterMark` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
-    * `size` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+    * `highWaterMark` [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type) The maximum internal queue size (of the created
+      `ReadableStream`) before backpressure is applied in reading from the given
+      `stream.Readable`. If no value is provided, it will be taken from the
+      given `stream.Readable`.
+    * `size` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) A function that size of the given chunk of data.
+      If no value is provided, the size will be `1` for all the chunks.
+      * `chunk` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
+      * Returns: [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 * Returns: [`ReadableStream`](/api/v18/webstreams#readablestream)
 
 #### <DataTag tag="M" /> `stream.Writable.fromWeb(writableStream[, options])`
@@ -2979,17 +2987,19 @@ readable.getReader().read().then((result) => {
 
 #### <DataTag tag="M" /> `stream.addAbortSignal(signal, stream)`
 
-<Metadata data={{"update":{"type":"added","version":["v15.4.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.16.0","pr-url":"https://github.com/nodejs/node/pull/46273","description":"Added support for `ReadableStream` and `WritableStream`."}],"update":{"type":"added","version":["v15.4.0"]}}} />
 
 * `signal` [`AbortSignal`](/api/v18/globals#abortsignal) A signal representing possible cancellation
-* `stream` [`Stream`](/api/v18/stream#stream) a stream to attach a signal to
+* `stream` [`Stream`](/api/v18/stream#stream) | [`ReadableStream`](/api/v18/webstreams#readablestream) | [`WritableStream`](/api/v18/webstreams#writablestream)
+
+A stream to attach a signal to.
 
 Attaches an AbortSignal to a readable or writeable stream. This lets code
 control stream destruction using an `AbortController`.
 
 Calling `abort` on the `AbortController` corresponding to the passed
 `AbortSignal` will behave the same way as calling `.destroy(new AbortError())`
-on the stream.
+on the stream, and `controller.error(new AbortError())` for webstreams.
 
 ```js
 const fs = require('node:fs');
@@ -3025,6 +3035,37 @@ const stream = addAbortSignal(
     }
   }
 })();
+```
+
+Or using an `AbortSignal` with a ReadableStream:
+
+```js
+const controller = new AbortController();
+const rs = new ReadableStream({
+  start(controller) {
+    controller.enqueue('hello');
+    controller.enqueue('world');
+    controller.close();
+  },
+});
+
+addAbortSignal(controller.signal, rs);
+
+finished(rs, (err) => {
+  if (err) {
+    if (err.name === 'AbortError') {
+      // The operation was cancelled
+    }
+  }
+});
+
+const reader = rs.getReader();
+
+reader.read().then(({ value, done }) => {
+  console.log(value); // hello
+  console.log(done); // false
+  controller.abort();
+});
 ```
 
 ### API for stream implementers

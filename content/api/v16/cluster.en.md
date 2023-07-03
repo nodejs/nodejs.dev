@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v16.19.1" data={{"source_link":"lib/cluster.js"}} />
+<Metadata version="v16.20.1" data={{"source_link":"lib/cluster.js"}} />
 
 Clusters of Node.js processes can be used to run multiple instances of Node.js
 that can distribute workloads among their application threads. When process

@@ -13,7 +13,7 @@ Experimental
 
 </Stability>
 
-<Metadata version="v16.19.1" data={{"source_link":"lib/async_hooks.js"}} />
+<Metadata version="v16.20.1" data={{"source_link":"lib/async_hooks.js"}} />
 
 The `node:async_hooks` module provides an API to track asynchronous resources.
 It can be accessed using:

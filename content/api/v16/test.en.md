@@ -13,7 +13,7 @@ Experimental
 
 </Stability>
 
-<Metadata version="v16.19.1" data={{"source_link":"lib/test.js"}} />
+<Metadata version="v16.20.1" data={{"source_link":"lib/test.js"}} />
 
 The `node:test` module facilitates the creation of JavaScript tests that
 report results in [TAP][] format. To access it:

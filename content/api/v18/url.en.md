@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.15.0" data={{"source_link":"lib/url.js"}} />
+<Metadata version="v18.16.1" data={{"source_link":"lib/url.js"}} />
 
 The `node:url` module provides utilities for URL resolution and parsing. It can
 be accessed using:
@@ -529,14 +529,14 @@ instance, the `URL` object will not percent encode the ASCII tilde (`~`)
 character, while `URLSearchParams` will always encode it:
 
 ```js
-const myUrl = new URL('https://example.org/abc?foo=~bar');
+const myURL = new URL('https://example.org/abc?foo=~bar');
 
-console.log(myUrl.search);  // prints ?foo=~bar
+console.log(myURL.search);  // prints ?foo=~bar
 
 // Modify the URL via searchParams...
-myUrl.searchParams.sort();
+myURL.searchParams.sort();
 
-console.log(myUrl.search);  // prints ?foo=%7Ebar
+console.log(myURL.search);  // prints ?foo=%7Ebar
 ```
 
 ##### <DataTag tag="M" /> `url.username`
@@ -896,6 +896,12 @@ console.log(params.toString());
 // Prints foo=def&abc=def&xyz=opq
 ```
 
+##### <DataTag tag="M" /> `urlSearchParams.size`
+
+<Metadata data={{"update":{"type":"added","version":["v18.16.0"]}}} />
+
+The total number of parameter entries.
+
 ##### <DataTag tag="M" /> `urlSearchParams.sort()`
 
 <Metadata data={{"update":{"type":"added","version":["v7.7.0","v6.13.0"]}}} />
@@ -1185,7 +1191,7 @@ console.log(urlToHttpOptions(myURL));
 const { urlToHttpOptions } = require('node:url');
 const myURL = new URL('https://a:b@測試?abc#foo');
 
-console.log(urlToHttpOptions(myUrl));
+console.log(urlToHttpOptions(myURL));
 /*
 {
   protocol: 'https:',

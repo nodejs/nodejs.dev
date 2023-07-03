@@ -1334,7 +1334,7 @@ json(readable).then((data) => {
   UTF-8 encoded string.
 
 ```mjs|cjs
-import { json, text, blob, buffer } from 'node:stream/consumers';
+import { text } from 'node:stream/consumers';
 import { Readable } from 'node:stream';
 
 const readable = Readable.from('Hello world from consumers!');

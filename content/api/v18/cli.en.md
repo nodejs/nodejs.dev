@@ -162,7 +162,7 @@ $ node --completion-bash > node_bash_completion
 $ source node_bash_completion
 ```
 
-#### <DataTag tag="M" /> `-C=condition`, `--conditions=condition`
+#### <DataTag tag="M" /> `-C condition`, `--conditions=condition`
 
 <Metadata data={{"update":{"type":"added","version":["v14.9.0","v12.19.0"]}}} />
 
@@ -183,7 +183,7 @@ The default Node.js conditions of `"node"`, `"default"`, `"import"`, and
 For example, to run a module with "development" resolutions:
 
 ```console
-$ node -C=development app.js
+$ node -C development app.js
 ```
 
 #### <DataTag tag="M" /> `--cpu-prof`

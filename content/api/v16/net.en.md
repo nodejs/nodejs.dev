@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v16.19.1" data={{"source_link":"lib/net.js"}} />
+<Metadata version="v16.20.1" data={{"source_link":"lib/net.js"}} />
 
 The `node:net` module provides an asynchronous network API for creating stream-based
 TCP or [IPC][] servers ([`net.createServer()`][]) and clients

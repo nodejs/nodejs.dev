@@ -15,7 +15,7 @@ Stable
 
 <Metadata data={{"type":"module"}} />
 
-<Metadata version="v18.15.0" data={{"source_link":"lib/events.js"}} />
+<Metadata version="v18.16.1" data={{"source_link":"lib/events.js"}} />
 
 Much of the Node.js core API is built around an idiomatic asynchronous
 event-driven architecture in which certain kinds of objects (called "emitters")
@@ -596,14 +596,17 @@ Returns the current max listener value for the `EventEmitter` which is either
 set by [`emitter.setMaxListeners(n)`][] or defaults to
 [`events.defaultMaxListeners`][].
 
-#### <DataTag tag="M" /> `emitter.listenerCount(eventName)`
+#### <DataTag tag="M" /> `emitter.listenerCount(eventName[, listener])`
 
-<Metadata data={{"update":{"type":"added","version":["v3.2.0"]}}} />
+<Metadata data={{"changes":[{"version":"v18.16.0","pr-url":"https://github.com/nodejs/node/pull/46523","description":"Added the `listener` argument."}],"update":{"type":"added","version":["v3.2.0"]}}} />
 
 * `eventName` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type) | [`symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Symbol_type) The name of the event being listened for
+* `listener` [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) The event handler function
 * Returns: [`integer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type)
 
-Returns the number of listeners listening to the event named `eventName`.
+Returns the number of listeners listening for the event named `eventName`.
+If `listener` is provided, it will return how many times the listener is found
+in the list of the listeners of the event.
 
 #### <DataTag tag="M" /> `emitter.listeners(eventName)`
 
@@ -2086,6 +2089,18 @@ equivalent `EventEmitter` API. The only difference between `addListener()` and
 `addEventListener()` is that `addListener()` will return a reference to the
 `EventTarget`.
 
+##### <DataTag tag="M" /> `nodeEventTarget.emit(type, arg)`
+
+<Metadata data={{"update":{"type":"added","version":["v15.2.0"]}}} />
+
+* `type` [`string`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
+* `arg` [`any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types)
+* Returns: [`boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type) `true` if event listeners registered for the `type` exist,
+  otherwise `false`.
+
+Node.js-specific extension to the `EventTarget` class that dispatches the
+`arg` to the list of handlers for `type`.
+
 ##### <DataTag tag="M" /> `nodeEventTarget.eventNames()`
 
 <Metadata data={{"update":{"type":"added","version":["v14.5.0"]}}} />
@@ -2137,7 +2152,7 @@ of max event listeners.
 
 * Returns: [`EventTarget`](/api/v18/events#eventtarget) this
 
-Node.js-specific alias for `eventTarget.removeListener()`.
+Node.js-specific alias for `eventTarget.removeEventListener()`.
 
 ##### <DataTag tag="M" /> `nodeEventTarget.on(type, listener)`
 
@@ -2149,7 +2164,7 @@ Node.js-specific alias for `eventTarget.removeListener()`.
 
 * Returns: [`EventTarget`](/api/v18/events#eventtarget) this
 
-Node.js-specific alias for `eventTarget.addListener()`.
+Node.js-specific alias for `eventTarget.addEventListener()`.
 
 ##### <DataTag tag="M" /> `nodeEventTarget.once(type, listener)`
 
@@ -2202,7 +2217,7 @@ to the `EventTarget`.
 [`EventTarget` error handling]: #eventtarget-error-handling
 [`Event` Web API]: https://dom.spec.whatwg.org/#event
 [`domain`]: /api/v18/domain
-[`emitter.listenerCount()`]: #emitterlistenercounteventname
+[`emitter.listenerCount()`]: #emitterlistenercounteventname-listener
 [`emitter.removeListener()`]: #emitterremovelistenereventname-listener
 [`emitter.setMaxListeners(n)`]: #emittersetmaxlistenersn
 [`event.defaultPrevented`]: #eventdefaultprevented

@@ -13,7 +13,7 @@ Experimental
 
 </Stability>
 
-<Metadata version="v16.19.1" data={{"source_link":"lib/diagnostics_channel.js"}} />
+<Metadata version="v16.20.1" data={{"source_link":"lib/diagnostics_channel.js"}} />
 
 The `node:diagnostics_channel` module provides an API to create named channels
 to report arbitrary message data for diagnostics purposes.

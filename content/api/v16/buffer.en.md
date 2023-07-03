@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v16.19.1" data={{"source_link":"lib/buffer.js"}} />
+<Metadata version="v16.20.1" data={{"source_link":"lib/buffer.js"}} />
 
 `Buffer` objects are used to represent a fixed-length sequence of bytes. Many
 Node.js APIs support `Buffer`s.

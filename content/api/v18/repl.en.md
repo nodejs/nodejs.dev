@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v18.15.0" data={{"source_link":"lib/repl.js"}} />
+<Metadata version="v18.16.1" data={{"source_link":"lib/repl.js"}} />
 
 The `node:repl` module provides a Read-Eval-Print-Loop (REPL) implementation
 that is available both as a standalone program or includible in other

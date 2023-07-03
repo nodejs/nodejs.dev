@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v16.19.1" data={{"source_link":"lib/util.js"}} />
+<Metadata version="v16.20.1" data={{"source_link":"lib/util.js"}} />
 
 The `node:util` module supports the needs of Node.js internal APIs. Many of the
 utilities are useful for application and module developers as well. To access

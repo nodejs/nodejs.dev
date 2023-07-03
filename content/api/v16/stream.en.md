@@ -13,7 +13,7 @@ Stable
 
 </Stability>
 
-<Metadata version="v16.19.1" data={{"source_link":"lib/stream.js"}} />
+<Metadata version="v16.20.1" data={{"source_link":"lib/stream.js"}} />
 
 A stream is an abstract interface for working with streaming data in Node.js.
 The `node:stream` module provides an API for implementing the stream interface.
