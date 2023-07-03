@@ -27,7 +27,7 @@
     "dotenv": "^16.0.2",
     "elasticlunr": "^0.9.5",
     "framer-motion": "^7.3.2",
-    "gatsby": "^4.25.4",
+    "gatsby": "^5.11.0",
     "gatsby-link": "^4.22.0",
     "gatsby-plugin-canonical-urls": "^4.22.0",
     "gatsby-plugin-catch-links": "^4.22.0",
